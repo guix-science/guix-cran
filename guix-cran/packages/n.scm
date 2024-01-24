@@ -254,6 +254,32 @@ deviation (SCAD) penalty of Breheny and Huang (2015)
 <doi:10.1007/s11222-013-9424-2>.")
     (license license:gpl3)))
 
+(define-public r-nvar
+  (package
+    (name "r-nvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NVAR" version))
+       (sha256
+        (base32 "0nr29jcybg42dx9339yvpd587dsq41yiabnhg9j6ps1zw3g1bfin"))))
+    (properties `((upstream-name . "NVAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (home-page "https://github.com/Sciurus365/NVAR")
+    (synopsis "Nonlinear Vector Autoregression Models")
+    (description
+     "Estimate nonlinear vector autoregression models (also known as the next
+generation reservoir computing) for nonlinear dynamic systems.  The algorithm
+was described by Gauthier et al. (2021) <doi:10.1038/s41467-021-25801-2>.")
+    (license license:gpl3+)))
+
 (define-public r-nutrition
   (package
     (name "r-nutrition")
@@ -2928,6 +2954,22 @@ reliable results, actigraphy data should cover a reasonable number of days.")
         (base32 "0fanf7cl8dlb8iqw8ww03dd5s6mrpr97m2c511clqkaavbd0yzkp"))))
     (properties `((upstream-name . "Nozzle.R1")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (native-inputs (list esbuild))
     (home-page "http://github.com/parklab/nozzle")
     (synopsis "Nozzle Reports")
@@ -5438,13 +5480,13 @@ workflows by users to help with analyzing and interpreting NMR data.")
 (define-public r-nmrphasing
   (package
     (name "r-nmrphasing")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMRphasing" version))
        (sha256
-        (base32 "0c0hg4zamr33qll6la55gi97gh4ri1zy0hln3cmj221yimj6h9f4"))))
+        (base32 "0rg2y26bnksp2hjbjn3xplnpi2hgc4ghlw796rqhjkmnrq9h1hrs"))))
     (properties `((upstream-name . "NMRphasing")))
     (build-system r-build-system)
     (propagated-inputs (list r-massspecwavelet r-baseline))
@@ -11050,50 +11092,6 @@ implements the methodological developments in Behrouzi and Wit (2017)
 <doi:10.1093/bioinformatics/bty777>.")
     (license license:gpl3)))
 
-(define-public r-netgsa
-  (package
-    (name "r-netgsa")
-    (version "4.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netgsa" version))
-       (sha256
-        (base32 "1m9myxsbvbljr038azxzakpbh20a21qhiy20d0ipvjc5asq3kfla"))))
-    (properties `((upstream-name . "netgsa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpp
-                             r-quadprog
-                             r-org-hs-eg-db
-                             r-msigdbr
-                             r-matrix
-                             r-magrittr
-                             r-igraph
-                             r-httr
-                             r-graphite
-                             r-graph
-                             r-glmnet
-                             r-glassofast
-                             r-genefilter
-                             r-dplyr
-                             r-data-table
-                             r-corpcor
-                             r-annotationdbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mikehellstern/netgsa")
-    (synopsis "Network-Based Gene Set Analysis")
-    (description
-     "Carry out network-based gene set analysis by incorporating external information
-about interactions among genes, as well as novel interactions learned from data.
- Implements methods described in Shojaie A, Michailidis G (2010)
-<doi:10.1093/biomet/asq038>, Shojaie A, Michailidis G (2009)
-<doi:10.1089/cmb.2008.0081>, and Ma J, Shojaie A, Michailidis G (2016)
-<doi:10.1093/bioinformatics/btw410>.")
-    (license license:gpl3+)))
-
 (define-public r-netgen
   (package
     (name "r-netgen")
@@ -11174,6 +11172,22 @@ V., & Hager, J. C. (2002). \"Facial action coding system - investigator's guide\
         (base32 "0k8jhl0p2dp45lx4h77r0bkcff8vn1f9gvr475cshpmyipziiwnq"))))
     (properties `((upstream-name . "NetExplorer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=NetExplorer")
     (synopsis "Network Explorer")
@@ -11719,6 +11733,22 @@ parsnip and workflows packages.  Allows any model to be fit to nested data.")
         (base32 "1115wgzpbkgyvccngg0pigq52xnsi86b08ykycnlrpy1sjj7qfp6"))))
     (properties `((upstream-name . "NestedMenu")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jquerylib r-htmlwidgets r-htmltools
                              r-fontawesome))
     (native-inputs (list esbuild))
@@ -12219,13 +12249,13 @@ management of data on the Neo4J server and basic local server admin.")
 (define-public r-neo2r
   (package
     (name "r-neo2r")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neo2R" version))
        (sha256
-        (base32 "185x98616kpc7zk9ifka22g8v4zyck0v5svl3swajf605rpgqzmp"))))
+        (base32 "1y7sjjz0ychjqi22x0vcinw35ldabm9m74qciav3qrqzjynvhgnd"))))
     (properties `((upstream-name . "neo2R")))
     (build-system r-build-system)
     (inputs (list))
@@ -12723,6 +12753,29 @@ dynamic visualizations.")
 Test described in Signorelli et al. (2016, <DOI:10.1186/s12859-016-1203-6>).")
     (license license:gpl3)))
 
+(define-public r-nearfar
+  (package
+    (name "r-nearfar")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nearfar" version))
+       (sha256
+        (base32 "0lzh68dxp7v47j1kk32adcgj9wrvggc6ww9bjizh386y778x290s"))))
+    (properties `((upstream-name . "nearfar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nbpmatching r-mass r-gensa r-car))
+    (home-page "https://cran.r-project.org/package=nearfar")
+    (synopsis "Near-Far Matching")
+    (description
+     "Near-far matching is a study design technique for preprocessing observational
+data to mimic a pair-randomized trial.  Individuals are matched to be near on
+measured confounders and far on levels of an instrumental variable.  Methods
+outlined in further detail in Rigdon, Baiocchi, and Basu (2018)
+<doi:10.18637/jss.v086.c05>.")
+    (license license:gpl3)))
+
 (define-public r-ndtv
   (package
     (name "r-ndtv")
@@ -12735,6 +12788,22 @@ Test described in Signorelli et al. (2016, <DOI:10.1186/s12859-016-1203-6>).")
         (base32 "05kaqd7p77rfls0s1gqv74j3svh5xdvqni0jin5vxl8y900yc56j"))))
     (properties `((upstream-name . "ndtv")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-statnet-common
                              r-sna
                              r-networkdynamic
@@ -12799,13 +12868,13 @@ based on the Rescorla-Wagner equations and their equilibrium equations.")
 (define-public r-ndi
   (package
     (name "r-ndi")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ndi" version))
        (sha256
-        (base32 "1ydj6lvycm6awvrddmq9a9s24rd4xw86mzk8hfhrqx8plz8pj4k4"))))
+        (base32 "0gfjh6wsdcbjw6xyyr863gc7rxridm84d6x05b0yk105yxhi5vpk"))))
     (properties `((upstream-name . "ndi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

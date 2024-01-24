@@ -407,6 +407,22 @@ and application examples, see Hill, T.D. and S.C. Anisfeld (2021)
         (base32 "07l1q5dgwplcfcp1ipbcx2i4d54f7fn4rclb71yb7ms2g98lq1gw"))))
     (properties `((upstream-name . "vueR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/vue-r/vueR")
@@ -1325,6 +1341,22 @@ Requires installation of Vorteks software.")
         (base32 "1wvnqdrvba4ss4f3k8gzb720irdq2brv2aaq16ywifv8fnjf02r3"))))
     (properties `((upstream-name . "voronoiTreemap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinyjs
                              r-shiny
                              r-rlang
@@ -1524,13 +1556,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0f6zjrsi7slw7wx84q4iq1afmwclmwjq8ly1r4m9l2hkfg3nclim"))))
+        (base32 "1mfyhr3z97b9gayx5fvzbbh85afjam28zcky4l62zgwirv15j5ib"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (inputs (list zlib proj hdf5 gsl))
@@ -2045,6 +2077,22 @@ based in Russia.")
         (base32 "1swf1xk6l086my4gknb9q4gyc3a37vs9z2p2484zf5ba9inzwix1"))))
     (properties `((upstream-name . "vizdraws")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr r-magrittr r-htmlwidgets r-dplyr))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ignacio82/vizdraws")
@@ -3246,13 +3294,13 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 (define-public r-viralx
   (package
     (name "r-viralx")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralx" version))
        (sha256
-        (base32 "054w54m0k1z6jlfz6pp3nlarnady9kndvmmr5ibp7j14jyg7jhxy"))))
+        (base32 "03zjyajr790cpv92rfdjn6llc80hf03zqyycqxd8649p15przc6v"))))
     (properties `((upstream-name . "viralx")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -3263,6 +3311,7 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
                              r-plotrix
                              r-plotmo
                              r-parsnip
+                             r-kknn
                              r-formula
                              r-earth
                              r-dplyr
@@ -3284,13 +3333,13 @@ and computational biology for the benefit of understanding HIV dynamics.")
 (define-public r-viralmodels
   (package
     (name "r-viralmodels")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralmodels" version))
        (sha256
-        (base32 "0k5hmg52zkmqvf8wk0hiyykvm179a29w4969ajjnf4qrsgiiaia0"))))
+        (base32 "0azpydlvbkbsaj7zcvl95s5y8d8pj72rkv4zna2851046yz170jl"))))
     (properties `((upstream-name . "viralmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -3302,7 +3351,7 @@ and computational biology for the benefit of understanding HIV dynamics.")
                              r-recipes
                              r-parsnip
                              r-nnet
-                             r-kernlab
+                             r-kknn
                              r-earth
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=viralmodels")
@@ -3327,13 +3376,13 @@ populations.")
 (define-public r-viraldomain
   (package
     (name "r-viraldomain")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viraldomain" version))
        (sha256
-        (base32 "0wcardcv3r0v9v80c93wmkkmqr3abb60cn1yny4vv0ls41a08g14"))))
+        (base32 "10lk3rjfr2faj8wdxd0v1c0xk22bzsrl1arz6ab5xxsd0zzc9kxh"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -3341,6 +3390,7 @@ populations.")
                              r-recipes
                              r-parsnip
                              r-nnet
+                             r-kknn
                              r-ggplot2
                              r-earth
                              r-dplyr
@@ -3775,6 +3825,22 @@ diacritics and different spellings.")
         (base32 "0h500mpbjiwggx1m8zfydhr9n4v27is9s46ay9856d2lgv2srlfg"))))
     (properties `((upstream-name . "video")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ashbaldry/video")
@@ -4254,6 +4320,22 @@ treatment of patients.")
         (base32 "10fh6ybsqy9xm7gwl0kska0pgk810sgq9kvf86gmnm0pmrcqzsdh"))))
     (properties `((upstream-name . "vfinputs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-scales r-jsonlite r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/rhenkin/vfinputs")
@@ -4750,26 +4832,6 @@ managing capitalisations in tidy data.")
     (description "Calculates and displays Venn and Euler Diagrams.")
     (license (license:fsdg-compatible "MPL-1.1"))))
 
-(define-public r-venn
-  (package
-    (name "r-venn")
-    (version "1.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "venn" version))
-       (sha256
-        (base32 "07bjv0m21gljdr3sj1z9rp6xhgxspah9j1m3a8rskvlwv6dvd1pd"))))
-    (properties `((upstream-name . "venn")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-admisc))
-    (home-page "https://github.com/dusadrian/venn")
-    (synopsis "Draw Venn Diagrams")
-    (description
-     "This package provides a close to zero dependency package to draw and display
-Venn diagrams up to 7 sets, and any Boolean union of set intersections.")
-    (license license:gpl3+)))
-
 (define-public r-vembedr
   (package
     (name "r-vembedr")
@@ -4964,6 +5026,22 @@ composition (De Caceres et al, 2013) <doi:10.1111/2041-210X.12116>.")
         (base32 "1rar2a4rwzw3qvcazjvxqa0bmcrssqkxyqymdsyghl6kds8kx604"))))
     (properties `((upstream-name . "vegawidget")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rlang
                              r-magrittr
                              r-jsonlite
@@ -5014,6 +5092,22 @@ analysis, especially with the vegan package.")
         (base32 "0dlzhvrg3nj6knyycdgg3d1vzq3dn9vxb34fjin9hzilszqmarbk"))))
     (properties `((upstream-name . "vegalite")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-webshot
                              r-magrittr
                              r-jsonlite
@@ -5672,13 +5766,13 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
 (define-public r-vca
   (package
     (name "r-vca")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VCA" version))
        (sha256
-        (base32 "07r2vdmg94knz2mjvrw1jisajjsv1nsyx80y20wwc8msxkp8lijh"))))
+        (base32 "0p413smyd271zfysqy71m8b4pjxq2khnk9v64vkkzqzhylsrg5nk"))))
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrix r-lme4))

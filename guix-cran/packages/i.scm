@@ -1757,6 +1757,22 @@ normal profiles.")
         (base32 "0spjw26xv33qy7zpyk5yga690wr0ibsm8m7adm1709v8l4s9vbv4"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinylight r-isoplotr))
     (native-inputs (list esbuild))
     (home-page "https://www.ucl.ac.uk/~ucfbpve/isoplotr/")
@@ -2419,13 +2435,13 @@ Statistical Learning with Applications in R'.")
 (define-public r-islasso
   (package
     (name "r-islasso")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "islasso" version))
        (sha256
-        (base32 "1dq8i1b7n78nl1hnx0g80gc16ryqpf7x6mv4pz4f6n5fc24c6vx3"))))
+        (base32 "100sb5795xk45cm7zb0zmqy3flz0hy32alqqi1wfv10v06dbdlbd"))))
     (properties `((upstream-name . "islasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-glmnet))
@@ -5103,6 +5119,25 @@ or Particular Items? Example Analysis of Personality Facets and BMI\",European
 Journal of Personality DOI: <10.1002/per.2009> .")
     (license license:gpl2+)))
 
+(define-public r-ionet
+  (package
+    (name "r-ionet")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ionet" version))
+       (sha256
+        (base32 "1r9mqqvl447pplc1wgm7xkqgc5s8v3bi8iicjvaly1j3j5cc4v0r"))))
+    (properties `((upstream-name . "ionet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/Carol-seven/ionet")
+    (synopsis "Network Analysis for Input-Output Tables")
+    (description
+     "Network functionalities specialized for data generated from input-output tables.")
+    (license license:gpl3+)))
+
 (define-public r-ioncopy
   (package
     (name "r-ioncopy")
@@ -5263,27 +5298,34 @@ structure creation.")
 (define-public r-inzightts
   (package
     (name "r-inzightts")
-    (version "1.5.9")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightTS" version))
        (sha256
-        (base32 "0mzyyl5a6ii7s84bzm7wqm0amdxpjc421vka28bd7884f5f5v791"))))
+        (base32 "1wzzzkl64m7mk0mpkvgkj7ahlqdja9hyhwficprd4kyqxrv00f0r"))))
     (properties `((upstream-name . "iNZightTS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-urca
+                             r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-stringr
                              r-rlang
                              r-patchwork
-                             r-magrittr
-                             r-gridextra
+                             r-lubridate
                              r-glue
                              r-ggtext
                              r-ggplot2
                              r-forcats
+                             r-feasts
+                             r-fabletools
+                             r-fable
+                             r-evaluate
                              r-dplyr
                              r-colorspace))
-    (home-page "http://inzight.nz")
+    (home-page "https://inzight.nz")
     (synopsis "Time Series for 'iNZight'")
     (description
      "This package provides a collection of functions for working with time series
@@ -5412,13 +5454,13 @@ online versions.")
 (define-public r-inzightmr
   (package
     (name "r-inzightmr")
-    (version "2.2.7")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightMR" version))
        (sha256
-        (base32 "0c37bdpypl4kv3s4hxc7xzxiwa6fsbqxwhyi98hh3mfdj329p1m8"))))
+        (base32 "162gw11lfg53m5iw18vr9kvbklr6601mi53fbczcv4ppfpnc5qwq"))))
     (properties `((upstream-name . "iNZightMR")))
     (build-system r-build-system)
     (home-page "https://inzight.nz")
@@ -6691,13 +6733,13 @@ entries, the example(s) attached to senses, etc.")
 (define-public r-interleave
   (package
     (name "r-interleave")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interleave" version))
        (sha256
-        (base32 "0316nzcms9hawjvslvbkpb5rg3jbmzsy1dzvmy1hi80zlyrm891v"))))
+        (base32 "09ba3sk1s34agihwgf06k7kvwrzh1v2mzxsxzj58k0fa0cfljrzs"))))
     (properties `((upstream-name . "interleave")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-geometries))
@@ -6940,17 +6982,17 @@ Markos, and Thanopoulos, 2022; <doi:10.1108/ACI-07-2022-0191>).")
 (define-public r-interatrix
   (package
     (name "r-interatrix")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Interatrix" version))
        (sha256
-        (base32 "1pjyfg5p6081hng9h6wcmfnlfkcs300c3x9ksdj01587b97ph9s1"))))
+        (base32 "13r0algx8rhbkwjwj8s49d65p50ivsp7ki0vbs38z9whs24njmxk"))))
     (properties `((upstream-name . "Interatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=Interatrix")
+    (home-page "https://github.com/lbbe-software/Interatrix")
     (synopsis "Compute Chi-Square Measures with Corrections")
     (description "Chi-square tests are computed with corrections.")
     (license license:gpl2+)))
@@ -11611,6 +11653,22 @@ distributions for claim amounts.")
         (base32 "1rsrwy5v0gnsmbay1zqijhvll2l1bs844m52w65588j9nlx4fci9"))))
     (properties `((upstream-name . "imageviewer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/yapus/imageviewer")
@@ -12958,6 +13016,22 @@ AUTHORS for a list of copyright holders and authors.")
         (base32 "16xf3165gkmh3f9843m0n4wqdwwdfs6rjh64qcpz8srsm2z5y3l2"))))
     (properties `((upstream-name . "ifaTools")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rpf r-reshape2 r-openmx r-ggplot2))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/jpritikin/ifaTools")
@@ -13711,6 +13785,22 @@ simulations on composite scores.")
         (base32 "0d4jf219x1l5978yx1k2ynkcx1b5xwbbba2lcd67s80y6s1q1jhv"))))
     (properties `((upstream-name . "idiogramFISH")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list pandoc))
     (propagated-inputs (list r-tidyr
                              r-scales
@@ -14013,6 +14103,22 @@ freely delivered under formal request through the official web page
         (base32 "1nwsq5jy374f2sdnrxw79kq3wklydrygm4qsd6v6npdqw55jli2l"))))
     (properties `((upstream-name . "IDEAFilter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinytime
                              r-shiny
                              r-rcolorbrewer
@@ -16259,6 +16365,22 @@ splines, Duchon splines or low rank splines.")
         (base32 "09gdd72nvmwv65gfblv038wgfslapkkwrj5m72bjahipf3acgg51"))))
     (properties `((upstream-name . "ibmsunburst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/jumpingrivers/ibmsunburst")
@@ -16512,13 +16634,13 @@ analysis of the simulated genomes.")
 (define-public r-ibd
   (package
     (name "r-ibd")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibd" version))
        (sha256
-        (base32 "0rxvy4hn4fpbv6y214ggkmgfvzwns5mkanp4h8201rjk3v84mk2r"))))
+        (base32 "110fq9a9w0ffbg78zdhwnk9ylrcccq0vhjxnbz00ylp9dr4y4g7d"))))
     (properties `((upstream-name . "ibd")))
     (build-system r-build-system)
     (propagated-inputs (list r-multcomp r-lpsolve r-emmeans r-car))
@@ -16526,16 +16648,16 @@ analysis of the simulated genomes.")
     (synopsis "Incomplete Block Designs")
     (description
      "This package provides a collection of several utility functions related to
-binary incomplete block designs.  The package contains function to generate A-
-and D-efficient binary incomplete block designs with given numbers of
-treatments, number of blocks and block size.  The package also contains function
-to generate an incomplete block design with specified concurrence matrix.  There
-are functions to generate balanced treatment incomplete block designs and
-incomplete block designs for test versus control treatments comparisons with
-specified concurrence matrix.  Package also allows performing analysis of
-variance of data and computing estimated marginal means of factors from
-experiments using a connected incomplete block design.  Tests of hypothesis of
-treatment contrasts in incomplete block design set up is supported.")
+binary incomplete block designs.  Contains function to generate A- and
+D-efficient binary incomplete block designs with given numbers of treatments,
+number of blocks and block size.  Contains function to generate an incomplete
+block design with specified concurrence matrix.  There are functions to generate
+balanced treatment incomplete block designs and incomplete block designs for
+test versus control treatments comparisons with specified concurrence matrix.
+Allows performing analysis of variance of data and computing estimated marginal
+means of factors from experiments using a connected incomplete block design.
+Tests of hypothesis of treatment contrasts in incomplete block design set up is
+supported.")
     (license license:gpl2+)))
 
 (define-public r-ibcf-mtme
@@ -16912,6 +17034,31 @@ and Steam (IAPWS).  More specifically, the releases R1-76(2014), R5-85(1994),
 R6-95(2018), R7-97(2012), R8-97, R9-97, R10-06(2009), R11-07(2019), R12-08,
 R15-11, R16-17(2018), R17-20 and R18-21 at <http://iapws.org>.")
     (license license:gpl3+)))
+
+(define-public r-ials
+  (package
+    (name "r-ials")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IALS" version))
+       (sha256
+        (base32 "0968j7npfm8x0swilwcrcgb1mnyb0xkjrx58q0lxag3fw0flw1rw"))))
+    (properties `((upstream-name . "IALS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-pracma r-hdmfa))
+    (home-page "https://cran.r-project.org/package=IALS")
+    (synopsis
+     "Iterative Alternating Least Square Algorithm for Large-Dimensional Matrix Factor Model")
+    (description
+     "The matrix factor model has drawn growing attention for its advantage in
+achieving two-directional dimension reduction simultaneously for
+matrix-structured observations.  In contrast to the Principal Component Analysis
+(PCA)-based methods, we propose a simple Iterative Alternating Least Squares
+(IALS) algorithm for matrix factor models, see the details in He et al. (2023)
+<@code{arXiv:2301.00360>}.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ialiquor
   (package

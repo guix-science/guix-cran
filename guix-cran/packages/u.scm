@@ -534,13 +534,13 @@ Census bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmap" version))
        (sha256
-        (base32 "0vc8v37j4srjayay3yg2zm1142jcw8b15j7pk04880l66v7nfz2r"))))
+        (base32 "1w3y2bnnm3xqqqlvch9mkd0gr3lqxkdicvmqn50gq0wxq420drvz"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))
@@ -551,7 +551,8 @@ Census bureau.")
      "Obtain United States map data frames of varying region types (e.g. county,
 state).  The map data frames include Alaska and Hawaii conveniently placed to
 the bottom left, as they appear in most maps of the US. Convenience functions
-for plotting choropleths and working with FIPS codes are also provided.")
+for plotting choropleths, visualizing spatial data, and working with FIPS codes
+are also provided.")
     (license license:gpl3+)))
 
 (define-public r-usl
@@ -1713,13 +1714,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unrtf" version))
        (sha256
-        (base32 "1jm2rwik6vxbvzal98h8631csln7plwk5jcaaw4yvgwssmp141mk"))))
+        (base32 "06a4h3iaa8rms601li8y9i18bmw8m98imymnkm076jxshfwhbxa4"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
@@ -2647,13 +2648,13 @@ diverse range of color palettes for creating scientific visualizations.")
 (define-public r-uniah
   (package
     (name "r-uniah")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uniah" version))
        (sha256
-        (base32 "0yjjn08aizqq6j5f9pnsjwdfqdmqrj1s8vjja97gzisfy1xscwfa"))))
+        (base32 "0hv7zgj55am1mlb8vl8k690z641lwsnsxdcvg7zzkhfpj58p7wai"))))
     (properties `((upstream-name . "uniah")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso r-ahaz))
@@ -3391,13 +3392,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "07g73jbamm70x3j3fgzjqbi78xqaf46sqvnrhcmq6rf0y5cdxj8c"))))
+        (base32 "0kwlwvmchz6sfx18xs620y7xy5kc16c4v82gl4yqphrncfwhjlci"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3888,6 +3889,22 @@ explored and downloaded.")
         (base32 "1jnmi3d1h31fx50lrsb1nl49p50jrx0vxmjsg6q6wdhwjnfxizd9"))))
     (properties `((upstream-name . "UCSCXenaShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-ucscxenatools
                              r-tidyr
                              r-tibble
@@ -4237,6 +4254,22 @@ block feature selection.")
         (base32 "0jv0ls8wbxciv6lhr7qvzarg4s3gckkc1n4w833sfpr0sk4gakaj"))))
     (properties `((upstream-name . "uavRmp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-sp
                              r-sf

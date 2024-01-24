@@ -528,6 +528,29 @@ time-fractional differential equations.  References: Cahoy and Minkabo (2017)
 Pagnini (2010) <doi:10.1155/2010/104505>.")
     (license license:gpl3+)))
 
+(define-public r-mwlaxeref
+  (package
+    (name "r-mwlaxeref")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mwlaxeref" version))
+       (sha256
+        (base32 "1rpm2l10xipggva5ghlvg0h9w0nvwkpc9a2ai1j4skp3f30zgczz"))))
+    (properties `((upstream-name . "mwlaxeref")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mwlaxeref")
+    (synopsis "Cross-References Lake Identifiers Between Different Data Sets")
+    (description
+     "Handy helper package for cross-referencing lake identifiers among different data
+sets in the Midwestern United States.  There are multiple different state,
+regional, and federal agencies that have different identifiers on lakes.  This
+package helps you to go between them.")
+    (license license:expat)))
+
 (define-public r-mwcsr
   (package
     (name "r-mwcsr")
@@ -2216,29 +2239,6 @@ conversion between SO/PAVE and MAF terms and selection of the most severe
 consequence where multiple ampersand (&) delimited impacts are given.")
     (license license:lgpl3+)))
 
-(define-public r-mustashe
-  (package
-    (name "r-mustashe")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mustashe" version))
-       (sha256
-        (base32 "1rj5vh8bi88c0q4gq2lvbqcg3k63z8pgwylqli8zyq9xb3argab1"))))
-    (properties `((upstream-name . "mustashe")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-qs r-here r-formatr r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mustashe")
-    (synopsis "Stash and Load Objects")
-    (description
-     "This package provides a simple system for saving and loading objects in R. Long
-running computations can be stashed after the first run and then reloaded the
-next time.  Dependencies can be added to ensure that a computation is re-run if
-any of its dependencies or inputs have changed.")
-    (license license:gpl3)))
-
 (define-public r-musicnmr
   (package
     (name "r-musicnmr")
@@ -2552,13 +2552,13 @@ L.J Wei & J.M Lachin (1984) and Persson et al. (2019).")
 (define-public r-multordrs
   (package
     (name "r-multordrs")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultOrdRS" version))
        (sha256
-        (base32 "0bra4z37njkcgah3a1k6mxcnmxq85188jywhgx3fdb1wnv5ic549"))))
+        (base32 "1f23im0m77y8aqdnmkcgdgfx77z84wlwih1wv74by15m4ysj4l2h"))))
     (properties `((upstream-name . "MultOrdRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rcpparmadillo r-rcpp))
@@ -3230,13 +3230,13 @@ outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
 (define-public r-multiscaledtm
   (package
     (name "r-multiscaledtm")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiscaleDTM" version))
        (sha256
-        (base32 "1xk13q3if8ln7jiyqg8wci5j0c7qxd4znlpnahp6pzxrnq1iaa38"))))
+        (base32 "13kslxxbyil5y4ci5s9r0n0ymsrh8c65wvsdzhcgafh9ldr6l1ww"))))
     (properties `((upstream-name . "MultiscaleDTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -10420,6 +10420,45 @@ among others functions to calculate dynamic Brownian Bridge Movement Models.
 Move helps addressing movement ecology questions.")
     (license license:gpl3+)))
 
+(define-public r-mousetrap
+  (package
+    (name "r-mousetrap")
+    (version "3.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mousetrap" version))
+       (sha256
+        (base32 "05dxbzwghm8gj6jwwy9wyz0xwyrj614x7db00zlb3gwz1kkyd9sz"))))
+    (properties `((upstream-name . "mousetrap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-psych
+                             r-pracma
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-fields
+                             r-fastcluster
+                             r-dplyr
+                             r-diptest
+                             r-cstab))
+    (home-page "https://pascalkieslich.github.io/mousetrap/")
+    (synopsis "Process and Analyze Mouse-Tracking Data")
+    (description
+     "Mouse-tracking, the analysis of mouse movements in computerized experiments, is
+a method that is becoming increasingly popular in the cognitive sciences.  The
+mousetrap package offers functions for importing, preprocessing, analyzing,
+aggregating, and visualizing mouse-tracking data.  An introduction into
+mouse-tracking analyses using mousetrap can be found in Wulff, Kieslich,
+Henninger, Haslbeck, & Schulte-Mecklenbeck (2023) <doi:10.31234/osf.io/v685r>
+(preprint: <https://osf.io/preprints/psyarxiv/v685r>).")
+    (license license:gpl3)))
+
 (define-public r-mousetrajectory
   (package
     (name "r-mousetrajectory")
@@ -12121,13 +12160,13 @@ an overview of the available methods in the package:
 (define-public r-mondrian
   (package
     (name "r-mondrian")
-    (version "1.1.0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mondrian" version))
        (sha256
-        (base32 "1x40cdry6dwixwqx10kv42xr4254kj1f17va186haw9m949xn5gd"))))
+        (base32 "0di35qc1hgx3l8gnr2l6gv87yhqsw9b7wi2wc497ydby6c9m3307"))))
     (properties `((upstream-name . "Mondrian")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -12234,6 +12273,22 @@ statistical analysis of social networks.")
         (base32 "109m9rvy39bp7j3jj8y6qdr4dran0qqvcx267mvil9c8ipxr89ms"))))
     (properties `((upstream-name . "monaco")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rstudioapi r-htmlwidgets r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/stla/monaco")
@@ -12861,13 +12916,13 @@ a paper published in the Journal of Statistical Software
 (define-public r-modules
   (package
     (name "r-modules")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modules" version))
        (sha256
-        (base32 "1sm4knfli0brqzqd1hhky7rxylalghz0lk991csx5wd8sy10m9lb"))))
+        (base32 "1z67nyjxcvz8hrmzbj2igvb43lgrn7s977r7wmfjdnr7cvr44fsm"))))
     (properties `((upstream-name . "modules")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13238,13 +13293,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.11")
+    (version "3.13.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "0dl8a7lg03ipcjz570id8kb5fp12csy6a4f5qcfwvpb3cjpwc1gc"))))
+        (base32 "1j1i9dyanv23szfsn0v1s4is2w5a5gvf9blg29q28ymn7v4xhig9"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -13690,6 +13745,22 @@ Details can be found in Arel-Bundock (2022) <doi:10.18637/jss.v103.i01>.")
         (base32 "10d1z0l5wfbyl2dm4n705bmj8wa5a99jnp4w6z66bx7cqamxapa3"))))
     (properties `((upstream-name . "modelStudio")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-r2d3
                              r-progress
                              r-jsonlite
@@ -14651,6 +14722,31 @@ functional connectivity networks across multiple subjects.  This package also
 contains an implementation of a novel algorithm through which to simulate
 multiple related precision matrices which exhibit properties frequently reported
 in neuroimaging analysis.")
+    (license license:gpl2)))
+
+(define-public r-mnreadr
+  (package
+    (name "r-mnreadr")
+    (version "2.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mnreadR" version))
+       (sha256
+        (base32 "0dr1xvvz16g7zvq9kqz9701mxdp0wh2lpkimcad43k395ngw1g2g"))))
+    (properties `((upstream-name . "mnreadR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-nlme r-ggplot2 r-dplyr))
+    (home-page "https://legge.psych.umn.edu/mnread-acuity-charts")
+    (synopsis "MNREAD Parameters Estimation and Curve Plotting")
+    (description
+     "Allows to analyze the reading data obtained with the MNREAD Acuity Chart, a
+continuous-text reading acuity chart for normal and low vision.  Provides the
+necessary functions to plot the MNREAD curve and estimate automatically the four
+MNREAD parameters: Maximum Reading Speed, Critical Print Size, Reading Acuity
+and Reading Accessibility Index.  Parameters can be estimated either with the
+standard method or with a nonlinear mixed-effects (NLME) modeling.  See
+Calabrese et al.  2018 for more details <doi:10.1167/18.1.8>.")
     (license license:gpl2)))
 
 (define-public r-mnp
@@ -16274,40 +16370,6 @@ models ('GSE36594').  Deena Gendoo et al. (2015)
 <doi:10.1016/j.ygeno.2015.05.002>.")
     (license license:gpl3)))
 
-(define-public r-mm2s
-  (package
-    (name "r-mm2s")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MM2S" version))
-       (sha256
-        (base32 "1knr15vjc81cp7j67nc2gwkgds6ar3ribi1h0ihg0ch6rfz5c5zs"))))
-    (properties `((upstream-name . "MM2S")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pheatmap r-lattice r-kknn r-gsva))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://scfbm.biomedcentral.com/articles/10.1186/s13029-016-0053-y")
-    (synopsis
-     "Single-Sample Classifier of Medulloblastoma Subtypes for Medulloblastoma Patient Samples, Mouse Models, and Cell Lines")
-    (description
-     "This package provides a single-sample classifier that generates Medulloblastoma
-(MB) subtype predictions for single-samples of human Medulloblastoma (MB)
-patients and model systems, including cell lines and mouse-models.  The MM2S
-algorithm uses a systems-based methodology that facilitates application of the
-algorithm on samples irrespective of their platform or source of origin.  MM2S
-demonstrates > 96% accuracy for patients of well-characterized normal
-cerebellum, Wingless (WNT), or Sonic hedgehog (SHH) subtypes, and the
-less-characterized Group4 (86%) and Group3 (78.2%).  MM2S also enables
-classification of MB cell lines and mouse models into their human
-counterparts.This package contains function for implementing the classifier onto
-human data and mouse data, as well as graphical rendering of the results as PCA
-(Principal Component Analysis) plots and heatmaps.  Deena Gendoo and Benjamin
-Haibe-Kains (2016) <doi:10.1186/s13029-016-0053-y>.")
-    (license license:gpl3)))
-
 (define-public r-mm
   (package
     (name "r-mm")
@@ -16860,13 +16922,13 @@ for a wide range of data sets.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatiotempcv" version))
        (sha256
-        (base32 "0iv8jj96csnkd4ghk1qivmkqjz0f72qlkvikqp4qv0z703962km5"))))
+        (base32 "0a9vkq0s1g0sav78gmg0wz5yq871151rzavg6prhn4yqiznr0rwm"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -19119,13 +19181,13 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "1chjmmbw69ab8ibhn9r4iirrmrnrc6qwddncaxzgp12ikk7pi1db"))))
+        (base32 "1pjj99ycxpcmcj5xng6hakw08qa1hmhlb164g1ybvslvxfxdg939"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
@@ -19153,13 +19215,13 @@ and Symmetric Hyperbolic.")
 (define-public r-mixture
   (package
     (name "r-mixture")
-    (version "2.0.6")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixture" version))
        (sha256
-        (base32 "08p1nziyflkz992i74br4mpc0j1npp947jwvy9hvmxir0mnzchi8"))))
+        (base32 "178a7cfmva2pjcc5ihxv8rjlcczha414sq03brq2cgiw1axnh33g"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -19680,36 +19742,6 @@ normal and t mixture models.")
 adding the function r() to formulas of lm() and glm().  A collection of
 text-book statistics for higher education is also included, e.g. modifications
 of the functions lm(), glm() and associated summaries from the package stats'.")
-    (license license:gpl2+)))
-
-(define-public r-mixl
-  (package
-    (name "r-mixl")
-    (version "1.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixl" version))
-       (sha256
-        (base32 "0vxvs6lvnkijhdy78lw19hp11ylf4afyg0v5xc5izbhwk3cp5nga"))))
-    (properties `((upstream-name . "mixl")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-sandwich
-                             r-readr
-                             r-rcpp
-                             r-randtoolbox
-                             r-numderiv
-                             r-maxlik))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/joemolloy/fast-mixed-mnl")
-    (synopsis
-     "Simulated Maximum Likelihood Estimation of Mixed Logit Models for Large Datasets")
-    (description
-     "Specification and estimation of multinomial logit models.  Large datasets and
-complex models are supported, with an intuitive syntax.  Multinomial Logit
-Models, Mixed models, random coefficients and Hybrid Choice are all supported.
-For more information, see Molloy et al. (2019) <doi:10.3929/ethz-b-000334289>.")
     (license license:gpl2+)))
 
 (define-public r-mixkernel
@@ -20419,13 +20451,13 @@ documentation.")
 (define-public r-mixall
   (package
     (name "r-mixall")
-    (version "1.5.1")
+    (version "1.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixAll" version))
        (sha256
-        (base32 "1jsh29ygy1n7lbz93ks725li9hnvfa0kp1qik13m72nmgw7g7q5a"))))
+        (base32 "07ipgm42ch5045s0hzwjg87v8qah1xrwcfrq5z2gx5sm12sp6g0m"))))
     (properties `((upstream-name . "MixAll")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtkore r-rcpp))
@@ -20436,8 +20468,7 @@ documentation.")
 supports various types of data: continuous, categorical and counting and can
 handle mixed data of these types.  It can fit Gaussian (with diagonal covariance
 structure), gamma, categorical and Poisson models.  The algorithms also support
-missing values.  This package can be used as an independent alternative to the
-(not free) mixtcomp software available at <https://massiccc.lille.inria.fr/>.")
+missing values.")
     (license license:gpl2+)))
 
 (define-public r-mixak
@@ -20626,13 +20657,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0l1w253w0hhfjavcjyc8xhbwzxvfrgac7gpnbwz208k79dhza13r"))))
+        (base32 "1s3yn6hsykyn4r6cs5dpiiaf91y9pxfvh764qsnq47x3qxqqx1r6"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -20644,7 +20675,6 @@ DNA Heteroplasmy calculated from single-cell datasets
                              r-lavaan
                              r-haven
                              r-ggplot2))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=misty")
     (synopsis "Miscellaneous Functions 'T. Yanagida'")
     (description
@@ -20668,13 +20698,13 @@ variance, latent class analysis, t-test, z-test, sample size determination).")
 (define-public r-mistral
   (package
     (name "r-mistral")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mistral" version))
        (sha256
-        (base32 "19iq9a3k7xyxafvm73ib8mj1k7ys69aznplqhidl5z8vdl92dmb7"))))
+        (base32 "1ssgglw2y1bkhlwcrmw8bv8ic6vl5nj4l482hlq8kv1dgyrnbsas"))))
     (properties `((upstream-name . "mistral")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -20684,7 +20714,6 @@ variance, latent class analysis, t-test, z-test, sample size determination).")
                              r-iterators
                              r-ggplot2
                              r-foreach
-                             r-emoa
                              r-e1071
                              r-doparallel
                              r-dicekriging))
@@ -20692,11 +20721,9 @@ variance, latent class analysis, t-test, z-test, sample size determination).")
     (home-page "https://cran.r-project.org/package=mistral")
     (synopsis "Methods in Structural Reliability")
     (description
-     "Various reliability analysis methods for rare event inference:1) computing
-failure probability (probability that the output of a numerical model exceeds a
-threshold), 2) computing quantile of low or high-order, 3) Wilks formula to
-compute quantile(s) from a sample or the size of the required i.i.d.  sample.")
-    (license license:cecill)))
+     "Various reliability analysis methods for rare event inference (computing failure
+probability and quantile from model/function outputs).")
+    (license license:gpl2)))
 
 (define-public r-mistr
   (package
@@ -23750,13 +23777,13 @@ are constrained to be non-negative.")
 (define-public r-micsim
   (package
     (name "r-micsim")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MicSim" version))
        (sha256
-        (base32 "1pkwhp81gi0pzs1sypk7ckhd79gz977n2ly9lwlsm5l3xs72v5cy"))))
+        (base32 "1l9dd3ina9zasnxvkqn8rbrcvnp8lwfqnzxm516adg9x0ng2bimg"))))
     (properties `((upstream-name . "MicSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-rlecuyer))
@@ -24067,6 +24094,22 @@ Proportional Overlap.")
         (base32 "0qf5ckfcnkviilb2la8la9sjfcir7c79v4981jrpsxfy9n6y39vm"))))
     (properties `((upstream-name . "micromodal")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/kennedymwavu/micromodal")
@@ -24232,13 +24275,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "16w52vyikcl971mg519jg7g4s2imml5hz904cm6kf0vz65xcls3c"))))
+        (base32 "08nvi2wd5bgr89qaiw40d0l1hdi4jsclqxhgdh5626fv6jb49w0x"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -26817,6 +26860,22 @@ Furthermore, dplyr chains are supported.")
         (base32 "1zbx82b34y0rr4w7rzvyc1nzk95w6cdkg0j1kkshbmkvplq6v9i4"))))
     (properties `((upstream-name . "metricsgraphics")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-magrittr r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "http://github.com/hrbrmstr/metricsgraphics")
@@ -29836,6 +29895,22 @@ framework, though can be run locally and with the user's own data.")
         (base32 "155xc313hvxy7n45rn9kmhhnkilfrazq5fgs2jbzhpgz3ddxfqkc"))))
     (properties `((upstream-name . "meta4diag")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-sp r-shinybs r-shiny r-catools))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=meta4diag")
@@ -34779,23 +34854,30 @@ Cauchy distributions.")
 (define-public r-mcartest
   (package
     (name "r-mcartest")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCARtest" version))
        (sha256
-        (base32 "15by2cs73fpsfcd5jh39yiwbxppydjph04xmm51fd50hmcwb67mr"))))
+        (base32 "1q3242vdy91f623vnkw2pk7kalaadbxl06p0hyai2zq63vmxr93y"))))
     (properties `((upstream-name . "MCARtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
+                             r-rcsdp
                              r-rcpp
                              r-rcdd
+                             r-pracma
+                             r-norm
+                             r-misty
+                             r-missmethods
                              r-matrix
+                             r-mass
                              r-lpsolve
                              r-highs
                              r-gtools
-                             r-epi))
+                             r-epi
+                             r-copula))
     (home-page "https://cran.r-project.org/package=MCARtest")
     (synopsis "Optimal Nonparametric Testing of Missing Completely at Random")
     (description
@@ -35587,13 +35669,13 @@ zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 (define-public r-mazamatimeseries
   (package
     (name "r-mazamatimeseries")
-    (version "0.2.15")
+    (version "0.2.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaTimeSeries" version))
        (sha256
-        (base32 "04dqwky6cyvas2ygmnc3r6rb302dc2flrgljl9k9vc71xs0d2w57"))))
+        (base32 "0rxrymlllv7prhmqn6y7jd3abclxkp886r0lzzdxvaffag90rc7y"))))
     (properties `((upstream-name . "MazamaTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -36670,43 +36752,6 @@ list of formulae.  Provides additional matrix operators and dedicated plotting
 function.")
     (license license:expat)))
 
-(define-public r-matric
-  (package
-    (name "r-matric")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "matric" version))
-       (sha256
-        (base32 "16mwn81g6s10fjyc0f2npsck3aggh643xmcwqy49kyf5jvs188c5"))))
-    (properties `((upstream-name . "matric")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-logger
-                             r-jsonlite
-                             r-glue
-                             r-ggplot2
-                             r-future
-                             r-furrr
-                             r-foreach
-                             r-dplyr
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cytomining/matric")
-    (synopsis "Metrics for Similarity Matrices")
-    (description
-     "Calculate quality metrics for readouts from high-throughput profiling
-experiments.")
-    (license license:bsd-3)))
-
 (define-public r-matrans
   (package
     (name "r-matrans")
@@ -36854,6 +36899,12 @@ to R.matlab', which creates a MATLAB server.")
         (base32 "0fzp9l34mc0bfl3a9phq4rh9idbb22a2d4j00rvxb4b7yzj2p553"))))
     (properties `((upstream-name . "matlab2r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-styler))
     (home-page "https://ocbe-uio.github.io/matlab2r/")
     (synopsis "Translation Layer from MATLAB to R")
@@ -37390,13 +37441,13 @@ Reckase (2009) <doi:10.1007/978-0-387-89976-3>, and Mulder & van der Linden
 (define-public r-mastif
   (package
     (name "r-mastif")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mastif" version))
        (sha256
-        (base32 "1jfb46f28pkf14xj16n37hbnxg57vjlz7gjhr01bb82dhd293mxw"))))
+        (base32 "09bac47n4z4mhfh6l1alyfh5yidj5l1rpw5f3d8knlyxmg7ai5s3"))))
     (properties `((upstream-name . "mastif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -37407,7 +37458,8 @@ Reckase (2009) <doi:10.1007/978-0-387-89976-3>, and Mulder & van der Linden
                              r-rcpparmadillo
                              r-rcpp
                              r-rann
-                             r-corrplot))
+                             r-corrplot
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mastif")
     (synopsis "Mast Inference and Forecasting")
@@ -37641,13 +37693,13 @@ model fitting and posterior computation.")
 (define-public r-mase
   (package
     (name "r-mase")
-    (version "0.1.5.1")
+    (version "0.1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mase" version))
        (sha256
-        (base32 "1arsl4apsmhawi8ykqvf7y24wapimzza1irjmlbyhbinrb8hni7b"))))
+        (base32 "0fvbsw6y5whysm70wr74pzj5knnw91gzpihi9snq69q1axg7yc17"))))
     (properties `((upstream-name . "mase")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -39558,6 +39610,22 @@ data.")
         (base32 "0agbf6bs3z7gwx1dj9jqlq6cllq5b65x89lkplm5mwhr20lzwvhr"))))
     (properties `((upstream-name . "mapdeck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-spatialwidget
                              r-shiny
                              r-sfheaders
@@ -40708,13 +40776,13 @@ analysis of MALDI mass spectrometry data (Palarea-Albaladejo et al. (2018)
 (define-public r-maldiquantforeign
   (package
     (name "r-maldiquantforeign")
-    (version "0.14")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MALDIquantForeign" version))
        (sha256
-        (base32 "1lf9kl97grql3hyrcx2qa5ms9r3hb4y8mymja66nizm8dg12vp68"))))
+        (base32 "0504a755mccz174g5zcldblwbyg3y11hpxxwpj9bhw937h55zxng"))))
     (properties `((upstream-name . "MALDIquantForeign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -40724,7 +40792,7 @@ analysis of MALDI mass spectrometry data (Palarea-Albaladejo et al. (2018)
                              r-digest
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MALDIquantForeign")
+    (home-page "https://strimmerlab.github.io/software/maldiquant/")
     (synopsis "Import/Export Routines for 'MALDIquant'")
     (description
      "This package provides functions for reading (tab, csv, Bruker fid, Ciphergen
@@ -41118,6 +41186,22 @@ movement.")
         (base32 "1pfjic2lsar8ghbb6byr4rqrs30qrgfih092z4rxdpsiwkk3y7l1"))))
     (properties `((upstream-name . "MakefileR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr esbuild))
     (home-page "http://krlmlr.github.io/MakefileR")
@@ -41437,13 +41521,13 @@ version is its slenderized form for compatable and flexible implementation.")
 (define-public r-magree
   (package
     (name "r-magree")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magree" version))
        (sha256
-        (base32 "0q0v1mx4k1hry0l21611z9jx967l89xpjddvw2v1v9c3kl11kfi6"))))
+        (base32 "01jnl2lq6s9l25yz4c66h7icyiwa4lggiwwa3383z1x4ac1fgw2q"))))
     (properties `((upstream-name . "magree")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -41684,13 +41768,13 @@ proposed in Wang et al. (2020) <DOI:10.1002/gepi.22351>.")
 (define-public r-magclass
   (package
     (name "r-magclass")
-    (version "6.13.1")
+    (version "6.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magclass" version))
        (sha256
-        (base32 "15l9vjgzs4xl51id6ifflci2rypgwrfi61j2n59mask6lifzjibf"))))
+        (base32 "1nv500vlmrl4d8rkmrk0fkklwigablb7ybgwr42zx50vjd9wz850"))))
     (properties `((upstream-name . "magclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-abind))

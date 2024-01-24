@@ -810,6 +810,44 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 <http://prometheuswiki.org/tiki-index.php?page=Minimum+epidermal+conductance+%28gmin%2C+a.k.a.+cuticular+conductance%29>.")
     (license license:expat)))
 
+(define-public r-pvda
+  (package
+    (name "r-pvda")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pvda" version))
+       (sha256
+        (base32 "1jmm256jfr904ifg6ixwbzk2xavzi415m647fpc1dglp5cz106sl"))))
+    (properties `((upstream-name . "pvda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-glue
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://oskargauffin.github.io/pvda/")
+    (synopsis "Disproportionality Functions for Pharmacovigilance")
+    (description
+     "This package provides tools for performing disproportionality analysis using the
+information component, proportional reporting rate and the reporting odds ratio.
+ The anticipated use is passing data to the da() function, which executes the
+disproportionality analysis.  See @code{NorÃ©n} G.N., Hopstadius J. and Bate A.
+(2011) <doi:10.1177/0962280211403604> and Montastruc J.-L., Sommet A., Bagheri
+H. and Lapeyre-Mestre, M. (2011) <doi:10.1111/j.1365-2125.2011.04037.x> for
+further details.")
+    (license license:gpl3+)))
+
 (define-public r-pvcurveanalysis
   (package
     (name "r-pvcurveanalysis")
@@ -919,13 +957,13 @@ ISBN:9781451190052); Amrhein V, Trafimow D, Greenland S. (2019)
 (define-public r-pvaclone
   (package
     (name "r-pvaclone")
-    (version "0.1-6")
+    (version "0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PVAClone" version))
        (sha256
-        (base32 "0fj5p3z2cwnyshrr4rq88wpij2xax5p4aq0x4p342kadx9d6x2ga"))))
+        (base32 "1fp4ivjs1980456gyzamwpwwy2rc2sv6xwb2mbk12qkpghgdgssl"))))
     (properties `((upstream-name . "PVAClone")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -2278,30 +2316,6 @@ on preprocessing and determining triangles, Computer-Aided Design
 42(12):1143-1150.")
     (license license:gpl2)))
 
-(define-public r-ptf
-  (package
-    (name "r-ptf")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ptf" version))
-       (sha256
-        (base32 "1s9nzn823z2capil83vcfs7frg8f6bpygx8aw1zz4sacnhvryr52"))))
-    (properties `((upstream-name . "ptf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-rarpack r-plyr r-matrix))
-    (home-page "https://cran.r-project.org/package=ptf")
-    (synopsis "Probit Tensor Factorization")
-    (description
-     "Efficient algorithms to implement Probit Tensor Factorization (PTF) model for
-statistical relational learning, which not only inherits the computation
-efficiency from the classic tensor factorization model but also accounts for the
-binary nature of relational data.  The methodology is based on Ye Liu (2021)
-<https://repository.lib.ncsu.edu/bitstream/handle/1840.20/37507/etd.pdf?sequence=1>
-\"Computational Methods for Complex Models with Latent Structure\".")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-ptest
   (package
     (name "r-ptest")
@@ -2650,13 +2664,13 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "0fh5h5srchr886inigjvn5hb7hv17h0jdn99mi2cs5bp8paislmn"))))
+        (base32 "14n3vvblj8a5k8lmcc7sbzq04n18z0ls5mk1nlzx7065d3d1rc8s"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-foreign))
@@ -3649,13 +3663,13 @@ minimum test.  For details on this method see: Sulewski (2017)
 (define-public r-psidread
   (package
     (name "r-psidread")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidread" version))
        (sha256
-        (base32 "0y7kp0hw9pg7hq40a1xh053aw8s2x494vbv1vjicrp48fybasldz"))))
+        (base32 "0r2i2z4lwlw6acbmgdpld0jgmaj9sa9rflnnj6dnj0bks62l94wd"))))
     (properties `((upstream-name . "psidread")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringr r-dplyr r-asciisetupreader))
@@ -5063,6 +5077,22 @@ distributions.")
         (base32 "0ms8sy8p5cd8vg82m7pny6jcg5mis1l7548m2g392gjcf3hf1sf7"))))
     (properties `((upstream-name . "protoshiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinythemes
                              r-shinycssloaders
                              r-shiny
@@ -6786,13 +6816,13 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "0pzp6mnh0b8h9n3mfqn5a9dqylfdxx0r5cxkrvmkw7f6iy92w4d2"))))
+        (base32 "1b2i3f11ayby86ip8zn0agk6r8wz1ygrphacc2ihy4x8gpk16mvr"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-saslm r-reporter r-fmtr r-common))
@@ -7010,6 +7040,22 @@ and exclusiveness (and and exclusive choice between activities).")
         (base32 "054m578ifb4hhlalijkdmjxifn36vy61sdzjgcr1gg4yxfi2fbx3"))))
     (properties `((upstream-name . "processanimateR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
@@ -8671,6 +8717,22 @@ prettier versions of the originals.")
         (base32 "0ncj10j1ygc1dhlqdg5vklzf258bjbg6mry8i8vqqh1dxvl2djwr"))))
     (properties `((upstream-name . "prettifyAddins")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xrjulia
                              r-xml2
                              r-webdriver
@@ -10047,19 +10109,18 @@ can be used in place of base::stopifnot().")
 (define-public r-precommit
   (package
     (name "r-precommit")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precommit" version))
        (sha256
-        (base32 "0a8ps21g1k9qsfjy3kakr3j9c4d348zrvf3pllf4cwc798488vhl"))))
+        (base32 "08fxmxvi4dg93y5k60wy8fqy6admfh6cpdjji0kxfljaibjixdcm"))))
     (properties `((upstream-name . "precommit")))
     (build-system r-build-system)
     (inputs (list git))
     (propagated-inputs (list r-yaml
                              r-withr
-                             r-rstudioapi
                              r-rprojroot
                              r-rlang
                              r-r-cache
@@ -10886,13 +10947,13 @@ Luo and Chen (2021, <doi:10.4310/21-SII706>).")
 (define-public r-ppseq
   (package
     (name "r-ppseq")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppseq" version))
        (sha256
-        (base32 "1n3ij7dl4g5ky3s52hlfcmbza0vcb6bymka6hyqhycndzws005v7"))))
+        (base32 "0kvsspzcnpc1asvy72imifx184m102027m5r8z38v58hvmzgl8mm"))))
     (properties `((upstream-name . "ppseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12095,6 +12156,50 @@ family of power and reversal power distributions.")
     (description "Fast exponentiation when the exponent is an integer.")
     (license license:gpl3+)))
 
+(define-public r-povmap
+  (package
+    (name "r-povmap")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "povmap" version))
+       (sha256
+        (base32 "1qr4i7ph17mzhjamssc6h4q02mw6jykl2kqc5n3i7vfp88q4frcp"))))
+    (properties `((upstream-name . "povmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey
+                             r-stringr
+                             r-spdep
+                             r-sf
+                             r-saerobust
+                             r-reshape2
+                             r-readods
+                             r-parallelmap
+                             r-openxlsx
+                             r-nlme
+                             r-mumin
+                             r-moments
+                             r-mass
+                             r-hlmdiag
+                             r-gridextra
+                             r-ggplot2
+                             r-formula-tools
+                             r-boot
+                             r-bestnormalize))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/SSA-Statistical-Team-Projects/povmap")
+    (synopsis "Extension to the 'emdi' Package")
+    (description
+     "The R package povmap supports small area estimation of means and poverty
+headcount rates.  It adds several new features to the emdi package (see \"The R
+Package emdi for Estimating and Mapping Regionally Disaggregated Indicators\" by
+Kreutzmann et al. (2019) <doi:10.18637/jss.v091.i07>).  These include new
+options for incorporating survey weights, ex-post benchmarking of estimates, two
+additional transformations, several new convenient functions to assist with
+reporting results, and a wrapper function to facilitate access from Stata'.")
+    (license license:gpl2)))
+
 (define-public r-pov
   (package
     (name "r-pov")
@@ -12781,13 +12886,13 @@ deprivation\", Social Indicators Research <DOI:10.1007/s11205-016-1501-4>.")
 (define-public r-portvine
   (package
     (name "r-portvine")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portvine" version))
        (sha256
-        (base32 "1lhr4nxlr47sr77gk1q790rl7lwxs58gsaacl9rq7lyw24h8w7rs"))))
+        (base32 "0ikz7lcrj3sky9ybbnpnlzxqbv004d7rl5sqdx90gvx1lvbs8aaq"))))
     (properties `((upstream-name . "portvine")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -14161,16 +14266,16 @@ the accuracy of ABC estimates and model choice.  Carvalho et al., (2022)
 (define-public r-pool
   (package
     (name "r-pool")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pool" version))
        (sha256
-        (base32 "1gxdvlgq9ya12a9n2ry8qhrfj26g1xbi47s0i3dxl3z8apyxzmbk"))))
+        (base32 "1qip10kswl6k7sx2banfr5pzkxhrfax1p40i0d9j412prpmsdixy"))))
     (properties `((upstream-name . "pool")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr r-rlang r-r6 r-later r-dbi))
+    (propagated-inputs (list r-rlang r-r6 r-later r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rstudio/pool")
     (synopsis "Object Pooling")
@@ -16116,6 +16221,22 @@ in the neighborhood.")
         (base32 "08ljvbwzykj48hnslw3haqn1ibs6fdfh40i5vypblzvwa32j7zvj"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml
                              r-tidyselect
                              r-tidyr
@@ -17673,13 +17794,13 @@ constructions are also available.")
 (define-public r-plspm
   (package
     (name "r-plspm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plspm" version))
        (sha256
-        (base32 "0r8c7pl54nj60176nbrzm6gmqjqk7jqi8r0d8kx4548xgniwc33s"))))
+        (base32 "00kbyi5qqm51wsli3h8kfshjs99wa602rbmi1jss65vw3p1jhsqs"))))
     (properties `((upstream-name . "plspm")))
     (build-system r-build-system)
     (propagated-inputs (list r-turner r-tester r-shape r-diagram r-amap))
@@ -19659,16 +19780,16 @@ Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "0pam4jmclsl2hn2mm9aymyqbxzqga9kfm3c0rws2rl9gmarg80g1"))))
+        (base32 "0v2lb7py5wmdcq6xqv4yaqqh0zncxv9hmcfw7k87zlygqnqx6xzk"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpproll r-magrittr r-dplyr))
+    (propagated-inputs (list r-rcpproll r-magrittr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nguyennico/planr")
     (synopsis "Tools for Supply Chain Management, Demand and Supply Planning")
@@ -20359,6 +20480,22 @@ information.")
         (base32 "1llpizr2wkhfgygr9fd79qxym0xcrxfvz8w5n0kwvkvlq3iqid44"))))
     (properties `((upstream-name . "pkgndep")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-hash
                              r-globaloptions
                              r-getoptlong
@@ -21812,6 +21949,22 @@ training/validation data heterogeneity\".")
         (base32 "1n7h1lvrivy7czzhisd9p3g187ivcyhzyjj7ahkimyb296gy8z1b"))))
     (properties `((upstream-name . "picker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/hms-dbmi/picker")
@@ -23602,6 +23755,36 @@ denoising.  Background and details about the method can be found at Yu et al.
 (2018) <doi:10.1093/jamia/ocx111>.")
     (license license:gpl3)))
 
+(define-public r-phenopix
+  (package
+    (name "r-phenopix")
+    (version "2.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phenopix" version))
+       (sha256
+        (base32 "12nd5jfg70ysv51shkn00bdjaa1xm9891qyn9vvgq1k3fqnrr2n9"))))
+    (properties `((upstream-name . "phenopix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-strucchange
+                             r-stringr
+                             r-sp
+                             r-raster
+                             r-plyr
+                             r-jpeg
+                             r-iterators
+                             r-gtools
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=phenopix")
+    (synopsis "Process Digital Images of a Vegetation Cover")
+    (description
+     "This package provides a collection of functions to process digital images,
+depict greenness index trajectories and extract relevant phenological stages.")
+    (license license:gpl2)))
+
 (define-public r-phenomap
   (package
     (name "r-phenomap")
@@ -23680,13 +23863,13 @@ scientific use.  Use for commercial purposes shall not be allowed.")
 (define-public r-phenofit
   (package
     (name "r-phenofit")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenofit" version))
        (sha256
-        (base32 "0rnjlhqwjcdmskx58wzh0drhnili4jhkr88lrafa6hi8mc1ppcjz"))))
+        (base32 "1b6laz7idd4cbliidv0xqz0k1h5f2f0v9lz82qhsy7p7pm9zagi6"))))
     (properties `((upstream-name . "phenofit")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29056,13 +29239,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.7")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDE" version))
        (sha256
-        (base32 "1nkgvcsg8yix76whcr9kn4glg0yh4n1nkp8kz0x2pzp3lra1fx2b"))))
+        (base32 "0ryhy3nayy8zagqjnr8hng7k7q2z74x6n1mqavgdm6d5nx0l7k3c"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -31526,13 +31709,13 @@ data related to gene sets and example input/output data.")
 (define-public r-pathfindr
   (package
     (name "r-pathfindr")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathfindR" version))
        (sha256
-        (base32 "06r8cxgp1bypvls5g7q56kr18in6z878givwn5daz44qhl84zz77"))))
+        (base32 "152n1kjmaplykcxrnjf9ms7abamy0aisinbwf61j1gwxg7j6ddq3"))))
     (properties `((upstream-name . "pathfindR")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -32982,6 +33165,22 @@ instruments.  Based on a paper by Hutton (1992) <doi:10.1017/S0956796800000411>.
         (base32 "1imlifi6zdyv1wnvasw8n7cxwq06hj6rr1g2xc1d8j2ic3dbk4ig"))))
     (properties `((upstream-name . "parcats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
@@ -33249,6 +33448,22 @@ by time-resolved spectroscopy via a Shiny GUI.")
         (base32 "12rpzcz1nc8c9rnsdg7kx6gh98plhp2jv22h58gg5gyl0pcsh2hx"))))
     (properties `((upstream-name . "parallelPlot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://gitlab.com/drti/parallelplot")
@@ -34442,23 +34657,23 @@ plot(), and predict() functions for PALM trees.")
 (define-public r-palmr
   (package
     (name "r-palmr")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PaLMr" version))
        (sha256
-        (base32 "0aj8c2w27plcp3vj70ci742slqlkr0rirfz4hp2fb5bldwhhdcw1"))))
+        (base32 "1i1kzd41payn0vpplnj5wdf83y00ga5r4y86vc38xkpxymaa7i4r"))))
     (properties `((upstream-name . "PaLMr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
-    (home-page "https://palmr.r.ly.gd.edu.kg/")
-    (synopsis "Interface for 'Google Pathways Language Model (PaLM)'")
+    (home-page "https://palmr.ly.gd.edu.kg/")
+    (synopsis "Interface for 'Google Pathways Language Model 2 (PaLM 2)'")
     (description
-     "Google's @code{PaLM} <https://developers.generativeai.google/> as a coding and
-writing assistant designed for R and RStudio.  With a range of functions,
-including natural language processing and coding optimization, to assist R
-developers in simplifying tedious coding tasks and content searching.")
+     "Google Pathways Language Model 2 (@code{PaLM} 2) as a coding and writing
+assistant designed for R'.  With a range of functions, including natural
+language processing and coding optimization, to assist R developers in
+simplifying tedious coding tasks and content searching.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-palm
@@ -35320,6 +35535,22 @@ Hurley and R.W. Oldford (2011) <doi:10.1007/s00180-011-0229-5>.")
         (base32 "1w1i9d5pls07zs95ikfzmdm3dr6yw3dy6k1rbkhfqb5g2y9g82zr"))))
     (properties `((upstream-name . "pairsD3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/garthtarr/pairsD3/")
@@ -35548,6 +35779,22 @@ graphics.")
         (base32 "1rwspbk7xmp27iadrd1471a7z71qyzlb0vnkw4ssjk7wi8q48fnj"))))
     (properties `((upstream-name . "pagemap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/swsoyee/pagemapR")
@@ -35977,26 +36224,6 @@ analysis (deterministic and probabilistic).  The package allows estimation of
 parameters for the Markov model from a given individual patient level data,
 provided the data file follows some standard data entry rules.")
     (license license:gpl3)))
-
-(define-public r-packagetrackr
-  (package
-    (name "r-packagetrackr")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "packagetrackr" version))
-       (sha256
-        (base32 "1dgpll7ycn6c8qj9xndi2xrnwsg0mp3ifg11jnlrw4n270444hwi"))))
-    (properties `((upstream-name . "packagetrackr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rappdirs r-magrittr r-httr r-dplyr))
-    (home-page "https://cran.r-project.org/package=packagetrackr")
-    (synopsis "Track R Package Downloads from RStudio's CRAN Mirror")
-    (description
-     "Allows to get and cache R package download log files from RStudio's CRAN mirror
-for analyzing package usage.")
-    (license license:gpl3+)))
 
 (define-public r-packagerank
   (package

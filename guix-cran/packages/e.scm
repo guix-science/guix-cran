@@ -1242,6 +1242,22 @@ Extended Batch Data\" of Cowen et al. (2017) <doi:10.1111/biom.12701>.")
         (base32 "0vj60rchhrc5q6x1kv7b95fcmh2a5qynli2w54rrrw1nx54xm8c2"))))
     (properties `((upstream-name . "exreport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=exreport")
@@ -2730,13 +2746,13 @@ designed to be a companion to the macro-enabled Excel template available on the
 (define-public r-excel-link
   (package
     (name "r-excel-link")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excel.link" version))
        (sha256
-        (base32 "05j1bqpchghlvayn803q85wc92sx0kpg2rqbcxhnj1ydddlsy44p"))))
+        (base32 "0r9f18f3c6jkf6m59c432i7xckd62f3q4xphzrw7j3kiggcbns80"))))
     (properties `((upstream-name . "excel.link")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -2906,6 +2922,12 @@ scanned, and automatically evaluated.")
         (base32 "06vyrb6zhzmiwbiwgzjfgzzf04fznjqv5fpfgf06ir1p0wjgrnk6"))))
     (properties `((upstream-name . "exampletestr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-withr
                              r-usethis
                              r-styler
@@ -3397,6 +3419,34 @@ extreme value index.  High quantiles and value at risk estimators based on these
 estimators are implemented.")
     (license license:gpl2+)))
 
+(define-public r-evsim
+  (package
+    (name "r-evsim")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evsim" version))
+       (sha256
+        (base32 "15wcb1dn6jp2nh3znrfbxlc4p7di9cfz5n25wq9x0x5kb3xxp8vz"))))
+    (properties `((upstream-name . "evsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr))
+    (home-page "https://github.com/mcanigueral/evsim/")
+    (synopsis "Electric Vehicle Charging Sessions Simulation")
+    (description
+     "Simulation of Electric Vehicles charging sessions using Gaussian models,
+together with time-series power demand calculations.  The simulation methodology
+is published in @code{CaÃ±igueral} et al. (2023, ISBN:0957-4174)
+<doi:10.1016/j.eswa.2023.120318>.")
+    (license license:gpl3)))
+
 (define-public r-evreg
   (package
     (name "r-evreg")
@@ -3423,6 +3473,42 @@ cross-validation or the hold-out method, and making predictions.  It also
 contains utilities for making calculations with Gaussian random fuzzy numbers
 (such as, e.g., computing the degrees of belief and plausibility of an interval,
 or combining Gaussian random fuzzy numbers).")
+    (license license:gpl3)))
+
+(define-public r-evprof
+  (package
+    (name "r-evprof")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evprof" version))
+       (sha256
+        (base32 "19izks5mzfjk5lj8jbz5ahzhf49c4vddcipz08dzny3bfxbrb6yn"))))
+    (properties `((upstream-name . "evprof")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-mclust
+                             r-mass
+                             r-lubridate
+                             r-jsonlite
+                             r-ggplot2
+                             r-dplyr
+                             r-dbscan
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mcanigueral/evprof/")
+    (synopsis "Electric Vehicle Charging Sessions Profiling and Modelling")
+    (description
+     "This package provides tools for modelling electric vehicle charging sessions
+into generic groups with similar connection patterns called \"user profiles\",
+using Gaussian Mixture Models clustering.  The clustering and profiling
+methodology is described in @code{CaÃ±igueral} and @code{MelÃ©ndez} (2021,
+ISBN:0142-0615) <doi:10.1016/j.ijepes.2021.107195>.")
     (license license:gpl3)))
 
 (define-public r-evots
@@ -3645,6 +3731,22 @@ quantitative genetics tools.  Melo D, Garcia G, Hubbe A, Assis A P, Marroig G.
         (base32 "1wcm6d96mvp8yr6qjm3610rzdxjq6vjwz3zmbrimc1q4pwxg0rvd"))))
     (properties `((upstream-name . "evolMap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-sf r-jsonlite r-curl))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=evolMap")
@@ -4186,16 +4288,17 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "1kc8szppic8igmc1sbi922fkngcgrl7mvg1mj3fvcfrk2km9qvmr"))))
+        (base32 "18sx4nwwb30qzvgxbn063gg92cch261j259577g4hs4n4x1y64z2"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
+                             r-shiny
                              r-rstpm2
                              r-rlang
                              r-purrr
@@ -4206,6 +4309,7 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
                              r-flexsurv
                              r-erify
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/kaifenglu/eventPred")
     (synopsis "Event Prediction")
     (description
@@ -5856,13 +5960,13 @@ estimators and functions for diagnostics of their finite-sample performance.")
 (define-public r-estimatr
   (package
     (name "r-estimatr")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimatr" version))
        (sha256
-        (base32 "1px9j7nlxgx5g7fi57hpx0fsjxhkwjcxbkic0lqf1m3pgxxcxj59"))))
+        (base32 "1mq1xp9ckc47d1i67dbymz968vfvy4x71y813qjy19p10sxfci66"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-generics r-formula))
@@ -6236,6 +6340,22 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
         (base32 "05c8vvdji8rcmxxahhxxsddvv9qh2naym4r67rdgicam7w7km60s"))))
     (properties `((upstream-name . "esquisse")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinywidgets
                              r-shinybusy
                              r-shiny
@@ -7509,6 +7629,30 @@ distribution, together with an automatic threshold selection algorithm.  See del
 Castillo, J, Daoudi, J and Lockhart, R (2014) <doi:10.1111/sjos.12037>.")
     (license license:gpl2+)))
 
+(define-public r-erboost
+  (package
+    (name "r-erboost")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "erboost" version))
+       (sha256
+        (base32 "1fq55pq4y6b4jdjagg8b9q05hx7l5i51z98bdgbmn5b7y99vm0hy"))))
+    (properties `((upstream-name . "erboost")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=erboost")
+    (synopsis "Nonparametric Multiple Expectile Regression via ER-Boost")
+    (description
+     "Expectile regression is a nice tool for estimating the conditional expectiles of
+a response variable given a set of covariates.  This package implements a
+regression tree based gradient boosting estimator for nonparametric multiple
+expectile regression, proposed by Yang, Y., Qian, W. and Zou, H. (2018)
+<doi:10.1080/00949655.2013.876024>.  The code is based on the gbm package
+originally developed by Greg Ridgeway.")
+    (license license:gpl3)))
+
 (define-public r-erah
   (package
     (name "r-erah")
@@ -8186,6 +8330,22 @@ quantitative treatments.")
         (base32 "0z725l7m5pymnrvww2anqg2bsvd887jdk0ggs0s2bf2jjd7wy84n"))))
     (properties `((upstream-name . "epoxy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-whisker
                              r-scales
                              r-rmarkdown
@@ -9217,13 +9377,13 @@ Studies\".  Bioinformatics. <doi:10.1002/sim.4780120902>.")
 (define-public r-epikit
   (package
     (name "r-epikit")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epikit" version))
        (sha256
-        (base32 "06hzs5bzv53qyiqa197qk5gykg1llxb1dh9f8xiald8wk5xxq0z6"))))
+        (base32 "1lw1hiccxw705pa9kkyc7gvyg3vggaqri4nfxhasjxhxp2wy6bfz"))))
     (properties `((upstream-name . "epikit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10430,13 +10590,13 @@ environmental analysis.")
 (define-public r-envi
   (package
     (name "r-envi")
-    (version "0.1.17")
+    (version "0.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envi" version))
        (sha256
-        (base32 "1fsw4rq2ri60w4hgzfxqva4b3b8xsvnkzraj288xacphhm3hamjx"))))
+        (base32 "04hh4fgkaw8zzsjf2bzwwy3iyknfaipqd7p5icysx6il5i8hd79y"))))
     (properties `((upstream-name . "envi")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -12234,13 +12394,13 @@ Flack LK (2010) <doi:10.1109/TPAMI.2009.149> Baek J, @code{McLachlan} GJ (2011)
 (define-public r-emmixgene
   (package
     (name "r-emmixgene")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMMIXgene" version))
        (sha256
-        (base32 "0a5q78s9y6ba1641lrv87kglg39x9wbk5xg7ihzbpl4adrb5sz4f"))))
+        (base32 "1k82r5ly0rnivvw803jibgsdjmk5nfzqqzcx0yv41i3f60pflv8x"))))
     (properties `((upstream-name . "EMMIXgene")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -12250,7 +12410,6 @@ Flack LK (2010) <doi:10.1109/TPAMI.2009.149> Baek J, @code{McLachlan} GJ (2011)
                              r-mclust
                              r-ggplot2
                              r-bh))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=EMMIXgene")
     (synopsis
      "Mixture Model-Based Approach to the Clustering of Microarray Expression Data")
@@ -12354,6 +12513,22 @@ serializations such as RDF and SPARQL queries.")
         (base32 "1k2chfz6qixa6jsikqgilqp8j49mcshn725ck1h77bacfxfhf7za"))))
     (properties `((upstream-name . "EML")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml2
                              r-uuid
                              r-rmarkdown
@@ -15229,13 +15404,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "0dizs77mcmzj44alpafd9jzdcyw1fkq1lqab7cj8a6znbvwndrl8"))))
+        (base32 "1s9dqbdqa6aml5wm3mlmx8px7phszmbs3wh1win1j98k386gkvq4"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -16922,6 +17097,22 @@ risk adjustment and the HHS-HCC model can be found here:
         (base32 "0pajr95qqppk2m4l7rfi46rll32z8a7lmq0vmb3p8n0aks5ajn1n"))))
     (properties `((upstream-name . "edgebundleR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rjson r-igraph r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/garthtarr/edgebundleR")
@@ -17394,17 +17585,16 @@ comparison between two estimation results.")
 (define-public r-ecv
   (package
     (name "r-ecv")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eCV" version))
        (sha256
-        (base32 "03gns9gdy4r155lq3h97da12cclfcf13davbmxpy6h6k1yg280g8"))))
+        (base32 "12p20sfz5q16n24fjz7z5bv54wf20z6lp9gn6fvrilfy9w18as1k"))))
     (properties `((upstream-name . "eCV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-matrixgenerics r-idr r-future-apply
-                             r-future))
+    (propagated-inputs (list r-mvtnorm r-idr r-future-apply r-future))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eclipsebio/eCV")
     (synopsis
@@ -18739,13 +18929,13 @@ downloads of weather forecasts and climate reanalysis data in R.")
 (define-public r-ecm
   (package
     (name "r-ecm")
-    (version "7.0.0")
+    (version "7.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecm" version))
        (sha256
-        (base32 "1l254xhvfx7f83lm0jh2sfdy6ffxqmdm7mij37f36bgvagyssclp"))))
+        (base32 "180nys3fwk948f409p0zg4fp407j8jdd780jmqllryj80bnzf2c5"))))
     (properties `((upstream-name . "ecm")))
     (build-system r-build-system)
     (propagated-inputs (list r-earth r-car))
@@ -19074,6 +19264,22 @@ clusters using echelon scan method proposed by Kurihara (2003)
         (base32 "0qw555xq4lig4ni0mb9lzqyvs5g5a7rzrplm4zk3xlx8xjlkixjb"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/helgasoft/echarty")
@@ -19095,6 +19301,22 @@ build R lists for ECharts API. Lean set of powerful commands.")
         (base32 "1j7ad6p0xrfwri13px1av5whd7pkfvblnms0v5a879ikzdwff66q"))))
     (properties `((upstream-name . "echarts4r")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny
                              r-scales
                              r-rstudioapi

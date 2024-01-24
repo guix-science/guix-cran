@@ -5,6 +5,7 @@
   #:use-module ((guix licenses)
                 #:prefix license:)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages gcc)
   #:use-module (guix-cran packages z)
@@ -32,6 +33,31 @@
   #:use-module (guix-cran packages c)
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
+
+(define-public r-yyjsonr
+  (package
+    (name "r-yyjsonr")
+    (version "0.1.18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yyjsonr" version))
+       (sha256
+        (base32 "0z31rw7ls1qnfk4ww7l87jc1blgba229r1yd6i70mn80p7k7yy30"))))
+    (properties `((upstream-name . "yyjsonr")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/yyjsonr")
+    (synopsis "Fast JSON Parser and Generator")
+    (description
+     "This package provides a fast JSON parser, generator and validator which converts
+JSON data to/from R objects.  The standard R data types are supported (e.g.
+logical, numeric, integer) with configurable handling of NULL and NA values.
+Data frames, atomic vectors and lists are all supported as data containers
+translated to/from JSON. This implementation is a wrapper around the yyjson C
+library which is available from <https://github.com/ibireme/yyjson>.")
+    (license license:expat)))
 
 (define-public r-yum
   (package

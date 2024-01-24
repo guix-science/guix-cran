@@ -854,6 +854,22 @@ during the current session.")
         (base32 "025qshp3q7h54mwxx6707x24dciisf7rh6z7sbzchikrk1gh5wij"))))
     (properties `((upstream-name . "tweetcheck")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8 r-tibble))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=tweetcheck")
@@ -1909,6 +1925,22 @@ confidence intervals.")
         (base32 "0pqaj80bvpccw6g8kvvlc4bkkzrrh0nvl4gbfz7b582lzd41xjyn"))))
     (properties `((upstream-name . "tTOlr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-latticeextra r-lattice))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=tTOlr")
@@ -2086,16 +2118,17 @@ and Spike Time metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mate
 (define-public r-ttainterfacetrendanalysis
   (package
     (name "r-ttainterfacetrendanalysis")
-    (version "1.5.9")
+    (version "1.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TTAinterfaceTrendAnalysis" version))
        (sha256
-        (base32 "1gc162j8pm0qfhlwfyg8hdp8wqni9qn0jq6vh6ip7wh6h490hg4x"))))
+        (base32 "16d37qjz8qcr3j6sz4sxxmv789qkr22gpq5808npbpk9wry723wh"))))
     (properties `((upstream-name . "TTAinterfaceTrendAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-wql
                              r-tcltk2
                              r-stlplus
                              r-rkt
@@ -2346,13 +2379,13 @@ life\" functions, such as treating time series for trailing and leading values."
 (define-public r-tstools
   (package
     (name "r-tstools")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tstools" version))
        (sha256
-        (base32 "0hmx53rgqha3fj9rnv0s2k0ashv8dyl745gng0kq3044jbh1wrln"))))
+        (base32 "1wwxbc27yspal4yhck0pw5fz99nck0jdd6hrry90957zyxshyrw7"))))
     (properties `((upstream-name . "tstools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-yaml r-xts r-jsonlite r-data-table))
@@ -5920,6 +5953,22 @@ data in a structured way.")
         (base32 "16i1km57yz8bl4ni919d3qmj8aj5l88l7byhd6ksh88ygpfl7wq8"))))
     (properties `((upstream-name . "trelliscopejs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-webshot
                              r-tidyr
                              r-rlang
@@ -6249,6 +6298,30 @@ function sim.genespeciestree() simulates coalescent gene trees within
 birth-death species trees, and sim.genetree() simulates coalescent gene trees.")
     (license license:gpl2)))
 
+(define-public r-treeshap
+  (package
+    (name "r-treeshap")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treeshap" version))
+       (sha256
+        (base32 "1ipj5k9dgrnbny0z2ydsdvdzg5ba53alyidnh90a08y2dhd4wffs"))))
+    (properties `((upstream-name . "treeshap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-ggplot2 r-data-table))
+    (home-page "https://modeloriented.github.io/treeshap/")
+    (synopsis
+     "Compute SHAP Values for Your Tree-Based Models Using the 'TreeSHAP' Algorithm")
+    (description
+     "An efficient implementation of the @code{TreeSHAP} algorithm introduced by
+Lundberg et al., (2020) <doi:10.1038/s42256-019-0138-9>.  It is capable of
+calculating SHAP (SHapley Additive @code{exPlanations}) values for tree-based
+models in polynomial time.  Currently supported models include gbm',
+@code{randomForest}', ranger', xgboost', lightgbm'.")
+    (license license:gpl3)))
+
 (define-public r-treesearch
   (package
     (name "r-treesearch")
@@ -6296,13 +6369,13 @@ criteria are implemented.")
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treePlotArea" version))
        (sha256
-        (base32 "1a4r6zbyhicj1ywjxaxd3khx22wqgphp3r7ycd3rlx5rv02fk21i"))))
+        (base32 "1k2xcjhv0sqgndn44y52qlaccdsz0lbgykiac83rn01yjv20055i"))))
     (properties `((upstream-name . "treePlotArea")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-fritools))
@@ -6802,6 +6875,22 @@ Schmidt, Erdfelder, & Heck (2022) <DOI:10.31234/osf.io/gh8md>.")
         (base32 "1bx31jahb0wy2g8wl1z71vy659lfi8fq1sbbaxvyixzcwymix1wq"))))
     (properties `((upstream-name . "treebase")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml r-rcurl r-httr r-ape))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ropensci/treebase")
@@ -8440,6 +8529,22 @@ tags deployed on northern fur seals.")
         (base32 "1y6n9hgzybz5860qpzj9rdb9yl4k6b9h13d91fqn3qarpnx9n5qr"))))
     (properties `((upstream-name . "trackeRapp")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-v8
                              r-tracker
@@ -8858,6 +8963,39 @@ flexible tpn model.")
     (description
      "Estimation of transition probabilities for the illness-death model and or the
 three-state progressive model.")
+    (license license:gpl3)))
+
+(define-public r-tpmplt
+  (package
+    (name "r-tpmplt")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TPMplt" version))
+       (sha256
+        (base32 "0zy6y9k7cqyflzma5567sn2jkvbmvl86zlrxiqlnga03hvsvw8a0"))))
+    (properties `((upstream-name . "TPMplt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vbtree
+                             r-rgl
+                             r-rcolorbrewer
+                             r-metr
+                             r-ggplot2
+                             r-e1071
+                             r-dlm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CubicZebra/TPMplt")
+    (synopsis
+     "Tool-Kit for Dynamic Materials Model and Thermal Processing Maps")
+    (description
+     "This package provides a simple approach for constructing dynamic materials
+modeling suggested by Prasad and Gegel (1984) <doi:10.1007/BF02664902>.  It can
+easily generate various processing-maps based on this model as well.  The
+calculation result in this package contains full materials constants,
+information about power dissipation efficiency factor, and rheological
+properties, can be exported completely also, through which further analysis and
+customized plots will be applicable as well.")
     (license license:gpl3)))
 
 (define-public r-tplyr
@@ -9550,13 +9688,13 @@ is available on @code{gitHub}: <https://github.com/Docma-TU/@code{toscaData>}.")
 (define-public r-tornado
   (package
     (name "r-tornado")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tornado" version))
        (sha256
-        (base32 "1fzcqpd5imhphx4cmmcjfiz38fbmhbb15bf51z6g7v51m2c3c18y"))))
+        (base32 "0bbbrsdnb77svji981py33hq2z27if5qsv5xpmpl29sf3h1s1yjc"))))
     (properties `((upstream-name . "tornado")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11984,6 +12122,22 @@ unmeasured confounder may tip our result to insignificance.")
         (base32 "00c9v07ax7l0x5wpx3ca8hqvdqs3p62d58igp51rsbh9x1ylgjcn"))))
     (properties `((upstream-name . "tippy")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://tippy.john-coene.com/")
@@ -12202,6 +12356,29 @@ needs to be converted to JUnit XML format.  tinytest2JUnit enables this
 conversion while keeping the zero-dependency nature.")
     (license license:gpl3)))
 
+(define-public r-tinytable
+  (package
+    (name "r-tinytable")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinytable" version))
+       (sha256
+        (base32 "19n4qsq45jfpcqbd2k0vm1pgwvb77w1xlxpdg1gv4np1i0y5d1li"))))
+    (properties `((upstream-name . "tinytable")))
+    (build-system r-build-system)
+    (home-page "https://vincentarelbundock.github.io/tinytable/")
+    (synopsis
+     "Simple and Configurable Tables in 'HTML', 'LaTeX', 'Markdown', 'Word', and 'PNG' Formats")
+    (description
+     "Create highly customized tables with this simple and dependency-free package.
+Data frames can be converted to HTML', @code{LaTeX}', Markdown', Word or PNG
+tables.  The user interface is minimalist and the syntax concise.  HTML tables
+can be customized using the flexible Bootstrap framework, and @code{LaTeX} code
+with the tabularray package.")
+    (license license:gpl3+)))
+
 (define-public r-tinyspotifyr
   (package
     (name "r-tinyspotifyr")
@@ -12344,13 +12521,13 @@ stringi'.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyarray" version))
        (sha256
-        (base32 "1cwywxz0ndaw6vpgs89ywya6p00q5ngchm5aky8nhqvjipmibsk8"))))
+        (base32 "0m2nmkf8ql8v61l6g5j1gl9cjgic98pidr5dl9rvk3xqchp4rmrj"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12581,6 +12758,22 @@ Program/Honolulu Asia Aging Study (HHP/HAAS).")
         (base32 "16b2iwf1lrw5b8am8c5xqkyg6inwac09qgbp0yigf3isd3qqs829"))))
     (properties `((upstream-name . "timevis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny
                              r-rmarkdown
                              r-magrittr
@@ -12884,13 +13077,13 @@ efficiency of data.table and speed of collapse'.")
 (define-public r-timeperiodsr
   (package
     (name "r-timeperiodsr")
-    (version "0.7.1")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeperiodsR" version))
        (sha256
-        (base32 "0fb9xwpdg38nnghjarlp2svjs225ng3h8p7vxnsy7rh0g3qck450"))))
+        (base32 "1ah3am6fyyp3hp3n2028iysx7qv3bbg7mwcvviq7hqi6xrwq7qqi"))))
     (properties `((upstream-name . "timeperiodsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -13633,6 +13826,40 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 get tidy data frames in response, and cache data in a local database.")
     (license license:expat)))
 
+(define-public r-tidyvpc
+  (package
+    (name "r-tidyvpc")
+    (version "1.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyvpc" version))
+       (sha256
+        (base32 "1i7dsmji1kjjs7lncpdxg5kpy0r4rc9ylb197fnbgkkz8yxjb8q3"))))
+    (properties `((upstream-name . "tidyvpc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-quantreg
+                             r-mgcv
+                             r-magrittr
+                             r-ggplot2
+                             r-fastdummies
+                             r-egg
+                             r-data-table
+                             r-cluster
+                             r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/certara/tidyvpc")
+    (synopsis "VPC Percentiles and Prediction Intervals")
+    (description
+     "Perform a Visual Predictive Check (VPC), while accounting for stratification,
+censoring, and prediction correction.  Using piping from magrittr', the
+intuitive syntax gives users a flexible and powerful method to generate VPCs
+using both traditional binning and a new binless approach Jamsen et al. (2018)
+<doi:10.1002/psp4.12319> with Additive Quantile Regression (AQR) and Locally
+Estimated Scatterplot Smoothing (LOESS) prediction correction.")
+    (license license:expat)))
+
 (define-public r-tidyusda
   (package
     (name "r-tidyusda")
@@ -13836,13 +14063,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "0ipn709sd6znjmzg6p0zlzq1ccjy578jhf11j5ln17ih8jsxr973"))))
+        (base32 "1bi7xy2c8iqfn22bqd8gf5cip7p8axj0fh3fqswbvpxj3z4j7161"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13863,34 +14090,6 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
      "Extension of the tidyverse for @code{SpatRaster} and @code{SpatVector} objects
 of the terra package.  It includes also new geom_ functions that provide a
 convenient way of visualizing terra objects with ggplot2'.")
-    (license license:expat)))
-
-(define-public r-tidytags
-  (package
-    (name "r-tidytags")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidytags" version))
-       (sha256
-        (base32 "0x4gv6k9ccs9r6s73xsk25ixwgmz5818s6jpndg0yqczybw3y5dm"))))
-    (properties `((upstream-name . "tidytags")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rtweet r-rlang r-googlesheets4
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/tidytags/https://github.com/ropensci/tidytags")
-    (synopsis
-     "Importing and Analyzing 'Twitter' Data Collected with 'Twitter Archiving Google Sheets'")
-    (description
-     "The tidytags package coordinates the simplicity of collecting tweets over time
-with a Twitter Archiving Google Sheet (TAGS; <https://tags.hawksey.info/>) and
-the utility of the rtweet package (<https://docs.ropensci.org/rtweet/>) for
-processing and preparing additional Twitter metadata.  tidytags also introduces
-functions developed to facilitate systematic yet flexible analyses of data from
-Twitter'.")
     (license license:expat)))
 
 (define-public r-tidytable
@@ -14162,13 +14361,13 @@ to estimate latent class analyses.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "1c0mc35r4qmqfdic9kx6dvah6d9698x8f6n5lasn6irqrrs45jqk"))))
+        (base32 "1fbvjvzhywd67xmm2mv428ync3dihy5p3b2k35wzjrw50613nbkv"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14537,6 +14736,12 @@ of standard microplate formats such as 6-well, 12-well, 24-well, 48-well,
         (base32 "18z3w068q011a8xw75qm7wd6hqc358q38a5hd2lmm29p65c8mjxj"))))
     (properties `((upstream-name . "tidypaleo")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-withr
                              r-vctrs
                              r-tidyselect
@@ -15047,13 +15252,13 @@ fuzzyjoin package.")
 (define-public r-tidygate
   (package
     (name "r-tidygate")
-    (version "0.4.9")
+    (version "0.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidygate" version))
        (sha256
-        (base32 "0zs2z4xf76d9hw7zwwpd3bisjvq672smbmxl0qgjb7xdzh66cqsf"))))
+        (base32 "046ylczm0fh493j2xl3f4klrj3c3gccdipc25nnn4r0a7vlx1wsz"))))
     (properties `((upstream-name . "tidygate")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -15410,6 +15615,33 @@ distribution functions.  All data is returned in a tidy and structured format
 making working with the data simple and straight forward.  Given that the data
 is returned in a tidy tibble it lends itself to working with the rest of the
 tidyverse'.")
+    (license license:expat)))
+
+(define-public r-tidydenovix
+  (package
+    (name "r-tidydenovix")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyDenovix" version))
+       (sha256
+        (base32 "0lm5yr86l7vnx11fn7abydsc6jpvj4jyzzk8q9jwhi4sjy8jp0wl"))))
+    (properties `((upstream-name . "tidyDenovix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-janitor
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/AlphaPrime7/tidyDenovix")
+    (synopsis
+     "Cleans Spectrophotometry Data Obtained from the Denovix DS-11 Instrument")
+    (description
+     "Cleans spectrophotometry data obtained from the Denovix instrument.  The package
+also provides an option to normalize the data in order to compare the quality of
+the samples obtained.")
     (license license:expat)))
 
 (define-public r-tidydatatutor
@@ -16595,6 +16827,22 @@ Gerber, Green, Kaplan, and Kern (2010).")
         (base32 "0pg5azxjqvwjl6235f0vnic04rz8vvaski0ac17mjn5ny1l0qnc1"))))
     (properties `((upstream-name . "threeBrain")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-shiny
@@ -16716,6 +16964,22 @@ the input data and the estimated heights for any missing values.  Ogana et al.
         (base32 "0sybjqwv9al5khkhhc7khbgr7n2vy6aggarh9n75mxpa8hn7j2qr"))))
     (properties `((upstream-name . "thorn")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/stla/thorn")
@@ -18891,13 +19155,13 @@ threshold selection and to diagnose estimation convergence.")
 (define-public r-texexamrandomizer
   (package
     (name "r-texexamrandomizer")
-    (version "1.2.3")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TexExamRandomizer" version))
        (sha256
-        (base32 "0l0vpx4rkib2m8hwhwy9j8pqyf7gpb9qg8wpnh3238snwpadgy3a"))))
+        (base32 "0anvlss8j4nlc9n8hswm5ljfpmbxfcl4rm5y53k0q04apx3q3gg8"))))
     (properties `((upstream-name . "TexExamRandomizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp r-jsonlite r-assertthat))
@@ -19180,13 +19444,13 @@ plenty of choices for the model types are available, which can be found in the
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.3.1")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "1f7ackd1hmcrmb9w59xd8f8c1rpv6yn2z46yfmyk7ihlc0bkssi1"))))
+        (base32 "06dwd6kxnmrs1lzxaf91mhpdi9p92mzykrzwnaqbc8wfh4racxjb"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -19220,13 +19484,13 @@ form.")
 (define-public r-testfunctions
   (package
     (name "r-testfunctions")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestFunctions" version))
        (sha256
-        (base32 "018nkz8r6vqahrzq3d588i3ffb1bmd1pdk87j4ivcdsx99mq15sn"))))
+        (base32 "0119ajbmgcfwd7axvx47x3aw3j1hnc2i3fvgrixfd1rgj99hz2vj"))))
     (properties `((upstream-name . "TestFunctions")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19237,8 +19501,7 @@ form.")
      "Test functions are often used to test computer code.  They are used in
 optimization to test algorithms and in metamodeling to evaluate model
 predictions.  This package provides test functions that can be used for any
-purpose.  Some functions are taken from <https://www.sfu.ca/~ssurjano>, but
-their R code is not used.")
+purpose.")
     (license license:gpl3)))
 
 (define-public r-testfordep
@@ -20743,13 +21006,13 @@ represented by characters in R, or can themselves be R-expressions or functions.
 (define-public r-templateicar
   (package
     (name "r-templateicar")
-    (version "0.6.2")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templateICAr" version))
        (sha256
-        (base32 "0krkxcykgj239xx2gzww7x3xwdg8a90ysmrkisx8546admwxyj7z"))))
+        (base32 "15f2bv4vcsnqcb2rnpa1ylhxj8a511ab3mil3b8n9icffpzgahy0"))))
     (properties `((upstream-name . "templateICAr")))
     (build-system r-build-system)
     (propagated-inputs (list r-squarem
@@ -21312,6 +21575,12 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
         (base32 "0qdjc1w1kh0k155vp0w0rs5yh26lmds9i6xv4dhrgnn7h2gaqgv1"))))
     (properties `((upstream-name . "teal.widgets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-styler
                              r-shinywidgets
                              r-shinyjs
@@ -21790,6 +22059,29 @@ TDCMs with item parameters constrained to be equal across all items), and
 multi-threaded TDCMs.")
     (license license:gpl2+)))
 
+(define-public r-tdboost
+  (package
+    (name "r-tdboost")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDboost" version))
+       (sha256
+        (base32 "1lx5g6yrp43m0dhhs0iig9chlvqbbim5xq5i2bxy4frs2afka22g"))))
+    (properties `((upstream-name . "TDboost")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=TDboost")
+    (synopsis "Boosted Tweedie Compound Poisson Model")
+    (description
+     "An implementation of a boosted Tweedie compound Poisson model proposed by Yang,
+Y., Qian, W. and Zou, H. (2018) <doi:10.1080/07350015.2016.1200981>.  It is
+capable of fitting a flexible nonlinear Tweedie compound Poisson model (or a
+gamma model) and capturing high-order interactions among predictors.  This
+package is based on the gbm package originally developed by Greg Ridgeway.")
+    (license license:gpl3)))
+
 (define-public r-tdbook
   (package
     (name "r-tdbook")
@@ -21915,6 +22207,40 @@ learn more about how TDAstats calculates persistent homology, you can visit the
 @code{GitHub} repository for Ripser, the software that works behind the scenes
 at <https://github.com/Ripser/ripser>.  This package has been published as
 Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
+    (license license:gpl3)))
+
+(define-public r-tdapplied
+  (package
+    (name "r-tdapplied")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDApplied" version))
+       (sha256
+        (base32 "1nvh4jx101ly94ki03fnkiqw7yjl0nbkyfvdbjp1w5wib6h5sbb1"))))
+    (properties `((upstream-name . "TDApplied")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdist
+                             r-rcpp
+                             r-parallelly
+                             r-kernlab
+                             r-iterators
+                             r-foreach
+                             r-doparallel
+                             r-clue))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/shaelebrown/TDApplied")
+    (synopsis "Machine Learning and Inference for Topological Data Analysis")
+    (description
+     "Topological data analysis is a powerful tool for finding non-linear global
+structure in whole datasets.  The main tool of topological data analysis is
+persistent homology, which computes a topological shape descriptor of a dataset
+called a persistence diagram.  TDApplied provides useful and efficient methods
+for analyzing groups of persistence diagrams with machine learning and
+statistical inference, and these functions can also interface with other data
+science packages to form flexible and integrated topological data analysis
+pipelines.")
     (license license:gpl3)))
 
 (define-public r-tdakit
@@ -22361,16 +22687,16 @@ RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
 (define-public r-tcgaretriever
   (package
     (name "r-tcgaretriever")
-    (version "1.7")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCGAretriever" version))
        (sha256
-        (base32 "1ajwv12chhz8s7m6m072jr6vg0kavdvhnmq6zhrkdv8di28w6p3a"))))
+        (base32 "1x97yr6z1krykvwis90z7vyk9rhz96lkvgbmb32l4h1h5lqdwxny"))))
     (properties `((upstream-name . "TCGAretriever")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr))
+    (propagated-inputs (list r-reshape2 r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://www.data-pulse.com/dev_site/TCGAretriever/")
     (synopsis
@@ -22379,8 +22705,8 @@ RNA-seq gene-level expression from The Cancer Genome Atlas (TCGA;
      "The Cancer Genome Atlas (TCGA) is a program aimed at improving our understanding
 of Cancer Biology.  Several TCGA Datasets are available online.  TCGAretriever
 helps accessing and downloading TCGA data hosted on @code{cBioPortal} via its
-Web Interface (see <http://www.cbioportal.org/> for more information).")
-    (license license:gpl2)))
+Web Interface (see <https://www.cbioportal.org/> for more information).")
+    (license license:gpl3)))
 
 (define-public r-tcftt
   (package
@@ -24158,6 +24484,49 @@ calculation of cut-off values (Aizenstein et al.  2008
 <doi:10.1001/archneur.65.11.1509>).  Please see the walkthrough vignette for a
 detailed overview of tacmagic functions.")
     (license license:gpl3)))
+
+(define-public r-tabxplor
+  (package
+    (name "r-tabxplor")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabxplor" version))
+       (sha256
+        (base32 "18dc5zfjmld9mrxcgb1mrz90qhlisjqiqmp7rnvlvrdlzj36r8bm"))))
+    (properties `((upstream-name . "tabxplor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-magrittr
+                             r-kableextra
+                             r-forcats
+                             r-dplyr
+                             r-desctools
+                             r-data-table
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BriceNocenti/tabxplor")
+    (synopsis "User-Friendly Tables with Color Helpers for Data Exploration")
+    (description
+     "Make it easy to deal with multiple cross-tables in data exploration, by creating
+them, manipulating them, and adding color helpers to highlight important
+informations (differences from totals, comparisons between lines or columns,
+contributions to variance, margins of error, etc.).  All functions are
+pipe-friendly and render data frames which can be easily manipulated.  In the
+same time, time-taking operations are done with data.table to go faster with big
+dataframes.  Tables can be exported to Excel and in html with formats and
+colors.")
+    (license license:gpl3+)))
 
 (define-public r-tabusearch
   (package

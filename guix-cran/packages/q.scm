@@ -795,6 +795,12 @@ genetic information.")
         (base32 "1abbnxnmljnn6ak55l4yrihr6fwrhzsb1rd7h8r0dijjwsgyawmg"))))
     (properties `((upstream-name . "questionr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (inputs (list xclip))
     (propagated-inputs (list r-styler
                              r-shiny
@@ -1674,13 +1680,13 @@ al.(2019) <doi:10.1186/s12874-019-0666-3>.")
 (define-public r-quantbondcurves
   (package
     (name "r-quantbondcurves")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantBondCurves" version))
        (sha256
-        (base32 "035dd5q1jg3m2208khkg92k6ypskh85j04g9v4b83qff8lq91fg0"))))
+        (base32 "07rq5nhwn286aqk54pz3x2dq9d2kgszm0biyshjz8hvps9yismj2"))))
     (properties `((upstream-name . "QuantBondCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))
@@ -2299,13 +2305,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "1d95zdqsdman9qb24p48safhdj9np9x6fzispgkv1igldb7302jc"))))
+        (base32 "0y6zcyrgj9fz8idhc9ryplw3fh2pkm47japlwhqc51v4iwijfy3v"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))
@@ -2353,6 +2359,22 @@ Kao (2021) <doi: 10.1093/g3journal/jkab056>.")
         (base32 "1bf7cdcbbxblsx357pymq54yr4aa7iaxpq4f73nbxdal9nbcqkda"))))
     (properties `((upstream-name . "qtlcharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-qtl r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://kbroman.org/qtlcharts/")
@@ -2760,6 +2782,22 @@ provides a function to compute @code{GrÃ¶bner} bases (reference
         (base32 "0zln3w2qx8ck9631hkq8ig5bc2l55wg5mdp3i0fm9amg8mhzq37i"))))
     (properties `((upstream-name . "qsplines")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rcpp r-onion r-bh))
     (native-inputs (list esbuild))
     (home-page "https://github.com/stla/qsplines")
@@ -3308,13 +3346,13 @@ friendly QR codes.")
 (define-public r-qrcmnp
   (package
     (name "r-qrcmnp")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcmNP" version))
        (sha256
-        (base32 "0hxg9w4k4k14fan6hb476wnnnpf4y6xywc2vbjka7cmpl1ydw1p4"))))
+        (base32 "10yqksn9761fryjvx6srv2z1pzmlr5m69bch16j256j9k2lknsr4"))))
     (properties `((upstream-name . "qrcmNP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-qrcm))
@@ -4558,13 +4596,13 @@ algorithm based on the numerical inversion of Mellin transforms.")
 (define-public r-qest
   (package
     (name "r-qest")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qest" version))
        (sha256
-        (base32 "02q0j4vynk3hhfg1xfgdvp3piicc4cc1s1i1q710d06r8mmfz1cj"))))
+        (base32 "0vl5nhnjijzqvk2s8l9rr6f7hqjh867w7b3w3j1b4kwzfpzsfcqc"))))
     (properties `((upstream-name . "Qest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pch r-matrixstats))
@@ -5192,6 +5230,22 @@ diversity of the cases under analysis within and across partitions (see
         (base32 "1z5jpgnpxkbpac85k1hz6vxc1ycl0z6z171i7k0p8jaj15rh616x"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-venn r-shiny r-lpsolve r-admisc))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=QCA")

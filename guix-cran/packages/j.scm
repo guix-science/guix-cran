@@ -290,6 +290,22 @@ corresponding article <doi:10.18637/jss.v101.i06>.")
         (base32 "036rxp2lygvpxpykpxx2lqyyzidzzi95lv6g30n70hzy0agjym4j"))))
     (properties `((upstream-name . "JuliaCall")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list))
     (propagated-inputs (list r-rjson r-rcpp r-knitr))
     (native-inputs (list r-knitr esbuild))
@@ -566,6 +582,22 @@ the Golden Section Search Method for Numerical Optimization\",
         (base32 "0qkywv3var6ash1vsl684pjhwrn7hmw3nl6i5kcqvb7xijs20cwp"))))
     (properties `((upstream-name . "jsTreeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinyace
                              r-shiny
                              r-rstudioapi
@@ -603,6 +635,22 @@ server side file system.")
         (base32 "06mmz55brm6w19vnlk1w8qaz0n3czlyl4fs62nzgdlsdjn8pad1h"))))
     (properties `((upstream-name . "jsTree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools r-data-table))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/yonicd/jsTree")
@@ -799,6 +847,22 @@ provides RStudio addins for the same purpose.")
         (base32 "0bplz2s97wl9yp383jazykh5647iw6kbr1zanqai2s0sxp1xbwn8"))))
     (properties `((upstream-name . "jsonld")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8 r-jsonlite r-curl))
     (native-inputs (list esbuild))
     (home-page "https://docs.ropensci.org/jsonld")
@@ -1106,6 +1170,22 @@ selected lines.  This is useful to test the code.")
         (base32 "0s5rj845255a4fzv4h76gcnnqyl5cg3c03r2ay3f00jxnxvvigcg"))))
     (properties `((upstream-name . "js")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/jeroen/js")
@@ -1316,6 +1396,22 @@ Bootstrap.")
         (base32 "1afraa18zwv3lbgxpqj4zkvlhzmv5ziajww1iccpkr7ca1rn4zk3"))))
     (properties `((upstream-name . "jqbr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/hfshr/jqbr")
@@ -1864,19 +1960,21 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "19x39mw7m7a05n7yx42h9dvzgcgxx7nk27n0vvdaw0kqfyj5ng8m"))))
+        (base32 "1g6b35i4lvwizg6ji7kg9m7lmi81zz1rrd0qsvssphmbh7i5p58s"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
+                             r-statmod
                              r-rstpm2
                              r-rmutil
                              r-rlang
+                             r-matrixstats
                              r-lifecycle
                              r-data-table
                              r-cli))
@@ -3694,13 +3792,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "0xncq9hvalswra687wpm6jzf1iv4fxay7mr1935qs9gcrdy4vi8h"))))
+        (base32 "1cxfv6afk8s16sv2p48k6ph98z0n5836mlzxmplvflah2hc6g6q3"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

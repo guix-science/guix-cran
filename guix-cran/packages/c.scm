@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -413,6 +413,22 @@ movement data and copulas.")
         (base32 "1p3ifmaxbw5g57pp4v8hnvq3fsy7frpny9jgp0q1b3klg3dhsjwj"))))
     (properties `((upstream-name . "cyjShiny")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonlite r-htmlwidgets r-graph
                              r-base64enc))
     (native-inputs (list r-knitr esbuild))
@@ -2267,6 +2283,22 @@ is tested with yeast genome and gene expression data of Yassour, et al. (2009)
         (base32 "1352hi2j9x9rx4iy3xvsca86nsh39x1vnymd17f5qc8c3plfm8db"))))
     (properties `((upstream-name . "cubeview")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridislite
                              r-stars
                              r-raster
@@ -2544,16 +2576,21 @@ function as well as at <https://kartikeyab.shinyapps.io/CTShiny/>.")
 (define-public r-ctsfeatures
   (package
     (name "r-ctsfeatures")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsfeatures" version))
        (sha256
-        (base32 "0ws1s5qssk2kgr2n6da6ix49s3p068spl4c6x8pfdqkhfbanz5z8"))))
+        (base32 "1bqcp9044s79c6wrkpv08zxis89xpzj2j9bhhcjg7fz2akikwq23"))))
     (properties `((upstream-name . "ctsfeatures")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-latex2exp r-ggplot2 r-bolstad2 r-astsa))
+    (propagated-inputs (list r-tsibble
+                             r-rdpack
+                             r-latex2exp
+                             r-ggplot2
+                             r-bolstad2
+                             r-astsa))
     (home-page "https://cran.r-project.org/package=ctsfeatures")
     (synopsis "Analyzing Categorical Time Series")
     (description
@@ -3989,13 +4026,13 @@ the model fit, test the model fit etc.).")
 (define-public r-csdata
   (package
     (name "r-csdata")
-    (version "2023.12.22")
+    (version "2024.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csdata" version))
        (sha256
-        (base32 "13ddw1c0jsgq0dbpyql5n2sbmf253vc6r8niqi22v99d14y7x39x"))))
+        (base32 "0y1jjrw7z2ycs6njq56nny7dxjddk44cc1hyliv1zbs7rhjam5iv"))))
     (properties `((upstream-name . "csdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -4563,13 +4600,13 @@ for use in RStudio'.")
 (define-public r-crunch
   (package
     (name "r-crunch")
-    (version "1.30.3")
+    (version "1.30.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crunch" version))
        (sha256
-        (base32 "03x9scapg0anf8fm058609w70giql960px05xmwrlv5rld7qcijb"))))
+        (base32 "0wbj4w50mh0l2wmvl1wzii41n0jp6pkqawwj36k0g66wjgxq07yq"))))
     (properties `((upstream-name . "crunch")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite
@@ -7066,13 +7103,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "1nl6mdqfv2wvdmkld1aiysl16mx96l5mdmwhzh0ql9jly5j6a86v"))))
+        (base32 "0mbgjalx79d1vk7bvsnzx5364qzdnnmrjvgl8v1f36p8mlg2h2am"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7620,6 +7657,22 @@ equality operations are calculated using cpp11'.")
         (base32 "1f3b8gadpiyxwxp34pd3i7s715dkm23427fp86vvnqvy9schg3ga"))))
     (properties `((upstream-name . "cppcheckR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list cppcheck))
     (propagated-inputs (list r-xml2
                              r-v8
@@ -9041,46 +9094,6 @@ data, typically updated daily and at the county level.  All data sources are
 documented at <https://cmu-delphi.github.io/delphi-epidata/api/covidcast.html>.")
     (license license:expat)))
 
-(define-public r-covid19wastewater
-  (package
-    (name "r-covid19wastewater")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Covid19Wastewater" version))
-       (sha256
-        (base32 "1cqr9phfn5b2lsy2bm4kcgqb1zq1f961w9063synbwk4jzz36ql7"))))
-    (properties `((upstream-name . "Covid19Wastewater")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyselect
-                             r-tidyr
-                             r-signal
-                             r-scales
-                             r-rsample
-                             r-rlang
-                             r-reshape2
-                             r-rcpproll
-                             r-randomforest
-                             r-plyr
-                             r-plotly
-                             r-patchwork
-                             r-partykit
-                             r-gridextra
-                             r-ggplot2
-                             r-forecast
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/UW-Madison-DSI/Covid19Wastewater")
-    (synopsis "Prepare, Analyze, and Visualize Covid-19 Wastewater Data")
-    (description
-     "Intended to make the process of analyzing epidemiological wastewater data easier
-and more insightful.  Includes tools for preparing, analyzing, and visualizing
-data.  It additionally includes Wisconsin's Covid19 data.")
-    (license license:expat)))
-
 (define-public r-covid19us
   (package
     (name "r-covid19us")
@@ -9529,13 +9542,13 @@ distribution by Johnstone (2008) <DOI:10.1214/08-AOS605>.")
 (define-public r-coveffectsplot
   (package
     (name "r-coveffectsplot")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coveffectsplot" version))
        (sha256
-        (base32 "172spmc5x5ln38rrybafa4143mhddlv6602r9njc6lbzswhlpcml"))))
+        (base32 "0arh7i7dyz67q6lmq9hf4wws0712mmmlip62bcwrxw8aiy1mn5nz"))))
     (properties `((upstream-name . "coveffectsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-ggplot2 r-egg r-data-table
@@ -9907,13 +9920,13 @@ convert between coding schemes, and assign region descriptors.")
 (define-public r-countries
   (package
     (name "r-countries")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countries" version))
        (sha256
-        (base32 "1kv2agw33sgwnlwqkbhiaywkkln0gbvp00g3h5vdilpc4hf13dlf"))))
+        (base32 "15fpw101jiw0fx2jl0ak0bq7dsy6w1iw7mvn72s24ycb3fnpwfz5"))))
     (properties `((upstream-name . "countries")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -11097,16 +11110,21 @@ new version.")
 (define-public r-correlplot
   (package
     (name "r-correlplot")
-    (version "1.0.8")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Correlplot" version))
        (sha256
-        (base32 "1hvnhb1qk4zqic8ngdk34hwp573s3al418gsq5ia3aklfd834f7d"))))
+        (base32 "1kpan2ifpqhw6nzkx1ww6k5xwr624jysz6l6i9xg35np4xfcgrwz"))))
     (properties `((upstream-name . "Correlplot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-mass r-lsei r-corrplot r-calibrate))
+    (propagated-inputs (list r-xtable
+                             r-mass
+                             r-lsei
+                             r-ggplot2
+                             r-corrplot
+                             r-calibrate))
     (native-inputs (list r-knitr))
     (home-page "https://www.r-project.org")
     (synopsis "Collection of Functions for Graphing Correlation Matrices")
@@ -11600,6 +11618,22 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
         (base32 "038133msw161684bzxkwc9z4jkjnsmh13wf4nydphn0hsm961bi5"))))
     (properties `((upstream-name . "coronavirus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-devtools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RamiKrispin/coronavirus")
@@ -13322,6 +13356,22 @@ Bioconductor.")
         (base32 "1dpil57grnqn34b682fakzsrh2xghc566nhqdgnrjd7ly59v0z3x"))))
     (properties `((upstream-name . "cookies")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-vctrs
                              r-shiny
                              r-rlang
@@ -13637,6 +13687,46 @@ determine the most likely current Gene Symbol.")
      "Calculate the theoretical value of convertible bonds by given parameters,
 including B-S theory and Monte Carlo method.")
     (license license:gpl2)))
+
+(define-public r-convergeu
+  (package
+    (name "r-convergeu")
+    (version "0.7.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "convergEU" version))
+       (sha256
+        (base32 "01ajzjj0ahlbv0q708hj7cw98b0dahnhkxrd79nrs1wb06rr2j9x"))))
+    (properties `((upstream-name . "convergEU")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-leaflet
+                             r-ggpubr
+                             r-ggplot2
+                             r-eurostat
+                             r-dplyr
+                             r-catools
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://www.eurofound.europa.eu/system/files/2022-04/introduction-to-the-convergeu-package-0.6.4-tutorial-v2-apr2022.pdf")
+    (synopsis "Monitoring Convergence of EU Countries")
+    (description
+     "Indicators and measures by country and time describe what happens at economic
+and social levels.  This package provides functions to calculate several
+measures of convergence after imputing missing values.  The automated
+downloading of Eurostat data, followed by the production of country fiches and
+indicator fiches, makes possible to produce automated reports.  The Eurofound
+report (<doi:10.2806/68012>) \"Upward convergence in the EU: Concepts,
+measurements and indicators\", 2018, is a detailed presentation of convergence.")
+    (license (list license:gpl3 license:bsd-3))))
 
 (define-public r-convergenceconcepts
   (package
@@ -14683,6 +14773,22 @@ the methods are general and useful for terrestrial systems as well.")
         (base32 "0lgr36699hnjwkjx56akwwnzkl5qm587yhqamxr6a53nh1j3h11y"))))
     (properties `((upstream-name . "connectwidgets")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tibble
                              r-sass
                              r-rlang
@@ -16424,6 +16530,35 @@ of C++ (that hides balanced trees).  This package is a wrapper on such a class
 based on Rcpp modules.")
     (license license:gpl2+)))
 
+(define-public r-conconianaerobicthresholdtest
+  (package
+    (name "r-conconianaerobicthresholdtest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConconiAnaerobicThresholdTest" version))
+       (sha256
+        (base32 "0lx1pz40l4qc755lxxvrvkjv6297q61m5vqdix8pw9j4h0wzyxll"))))
+    (properties `((upstream-name . "ConconiAnaerobicThresholdTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tracker r-sizer r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/waldronlab/ConconiAnaerobicThresholdTest")
+    (synopsis "Conconi Estimate of Anaerobic Threshold from a TCX File")
+    (description
+     "Analyzes data from a Conconi et al. (1996) <doi:10.1055/s-2007-972887> treadmill
+fitness test where speed is augmented by a constant amount every set number of
+seconds to estimate the anaerobic (lactate) threshold speed and heart rate.  It
+reads a TCX file, allows optional removal observations from before and after the
+actual test, fits a change-point linear model where the change-point is the
+estimate of the lactate threshold, and plots the data points and fit model.
+Details of administering the fitness test are provided in the package vignette.
+Functions work by default for Garmin Connect TCX exports but may require
+additional data preparation for heart rate, time, and speed data from other
+sources.")
+    (license license:gpl3+)))
+
 (define-public r-concom
   (package
     (name "r-concom")
@@ -18139,13 +18274,13 @@ observing T(M) exclusive alterations using an exact statistical test.")
 (define-public r-comclim
   (package
     (name "r-comclim")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comclim" version))
        (sha256
-        (base32 "1s6zh16j0q2n7gkvhd4bym9w3hyg4b9n5lpgspqp2nlygdl6jxxb"))))
+        (base32 "0dw3s3xbkfn38m7xg49cbn70qj0j4hsxj6m72p1diirrcy2sn07c"))))
     (properties `((upstream-name . "comclim")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=comclim")
@@ -18968,28 +19103,6 @@ or density) across space and time and can be used to address questions about
 where, when, and how consistently a species, group, or individual is likely to
 be found.")
     (license license:gpl3)))
-
-(define-public r-colorhex
-  (package
-    (name "r-colorhex")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "colorhex" version))
-       (sha256
-        (base32 "0k045p28ll0kb0zcwifxn9ami89izrsn1swmd1ayf8kqgjab6qh9"))))
-    (properties `((upstream-name . "colorhex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-httr2 r-ggplot2 r-curl r-cli))
-    (home-page "https://github.com/drmowinckels/colorhex")
-    (synopsis "Colors and Palettes from Color-Hex")
-    (description
-     "The website <https://www.color-hex.com> is a great resource of hex colour codes
-and palettes.  This package allows you to retrieve palettes and colour
-information from the website directly from R. There are also custom
-scale-functions for ggplot2'.")
-    (license license:expat)))
 
 (define-public r-colorhcplot
   (package
@@ -23876,13 +23989,13 @@ format and use them as input in a different graphical interface.")
 (define-public r-clusteff
   (package
     (name "r-clusteff")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustEff" version))
        (sha256
-        (base32 "1j8v0qm6mqbh08kq8jahpgg6ygab6ac22lzzpcc2h72zm7r7cacr"))))
+        (base32 "1zgj7nq0rba51xkm88vj9w70glk8z8g3y1awlfv38kf37s2yrs5c"))))
     (properties `((upstream-name . "clustEff")))
     (build-system r-build-system)
     (propagated-inputs (list r-qrcm r-ggpubr r-ggplot2 r-fda r-cluster))
@@ -24888,6 +25001,29 @@ References for the Elston-Stewart algorithm are Elston & Stewart (1971)
 Cannings et al. (1978) <doi:10.2307/1426718>.")
     (license license:gpl3)))
 
+(define-public r-cliot
+  (package
+    (name "r-cliot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cliot" version))
+       (sha256
+        (base32 "1p5bansha53wwamp312j0daixx2hyn5h0rv3q20vn3ba868y4f2q"))))
+    (properties `((upstream-name . "cliot")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cliot")
+    (synopsis "Clinical Indices and Outcomes Tools")
+    (description
+     "Collection of indices and tools relating to cardiovascular, nephrology, and
+hepatic research that aid epidemiological or retrospective review.  All indices
+and tools take commonly used lab values and patient demographics and
+measurements to compute various risk and predictive values for survival.
+References to original literature and validation contained in each function
+documentation.")
+    (license license:gpl3)))
+
 (define-public r-clinutils
   (package
     (name "r-clinutils")
@@ -25229,6 +25365,22 @@ posterior predictive distributions derived from these references.")
         (base32 "17ffdz410fniiybzw8rka0rgv8jqqsmsmp3b9yzlpsjcpx0z55s9"))))
     (properties `((upstream-name . "clinDataReview")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list pandoc))
     (propagated-inputs (list r-yaml
                              r-xml2
@@ -27798,6 +27950,22 @@ to calculate circular-circular and circular-linear distance correlations.")
         (base32 "0j2c369icz864fjgd393wbvv1shmrwgvcqfzwps778lzv59f869h"))))
     (properties `((upstream-name . "circletyper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny))
     (native-inputs (list esbuild))
     (home-page "https://github.com/etiennebacher/circletyper")
@@ -28246,13 +28414,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.12.2")
+    (version "0.13.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "0cmfw9wzv85xzdr1pa4y1n3hyp90dfyiwprksi2vvxmkrf0yjhw3"))))
+        (base32 "0h43074fqar9xnyyrbxym9aq4jyxysyj3vhkignc6xivyk2rb0pw"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -28436,6 +28604,22 @@ curves.  Details are given in Schomaker, @code{McIlleron}, Denti, Diaz (2023)
         (base32 "1z3i720970kmczg01wxwbyqwd9zby69lchw3pgqwpn2bjr66jimh"))))
     (properties `((upstream-name . "cicerone")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-r6 r-assertthat))
     (native-inputs (list esbuild))
     (home-page "https://cicerone.john-coene.com/")
@@ -30496,13 +30680,13 @@ or any other Luhn based number is correct.  For more info see:
 (define-public r-checkhelper
   (package
     (name "r-checkhelper")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checkhelper" version))
        (sha256
-        (base32 "01sgw7cmdbjab7k501akh1ab5mr757mn2lbckc74yhrng1rxh6n1"))))
+        (base32 "0lhrhygma1n98f2k7ly29ildxl5zg5qwrlflrhf19xdi9qmzzvmz"))))
     (properties `((upstream-name . "checkhelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -31394,13 +31578,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.6.5")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "1h0102vmxhk1hzdb5apxilv5n0fcc0m0p3c3apf4yzgwwarkyg0b"))))
+        (base32 "0xr3c0806pvsv2ywcm8c5b9h96xs2sdclrifffg6vfillzrn2pqy"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2))
@@ -31410,10 +31594,14 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
     (description
      "Find multiple solutions of a nonlinear least squares problem.  Cluster
 Gauss-Newton method does not assume uniqueness of the solution of the nonlinear
-least squares problem and compute approximate multiple minimizers.  Please cite
-the following paper when this software is used in your research: Aoki et al.
-(2020) <doi:10.1007/s11081-020-09571-2>.  Cluster GaussâNewton method.
-Optimization and Engineering, 1-31.")
+least squares problem and compute multiple minimizers.  Please cite the
+following paper when this software is used in your research: Aoki et al. (2020)
+<doi:10.1007/s11081-020-09571-2>.  Cluster GaussâNewton method.  Optimization
+and Engineering, 1-31.  Please cite the following paper when profile likelihood
+plot is drawn with this software and used in your research: Aoki and Sugiyama
+(2024) <doi:10.1002/psp4.13055>.  Cluster Gauss-Newton method for a quick
+approximation of profile likelihood: With application to physiologically-based
+pharmacokinetic models.  CPT Pharmacometrics Syst Pharmacol.13(1):54-67.")
     (license license:expat)))
 
 (define-public r-cgmquantify
@@ -31571,13 +31759,13 @@ Stadler et al. (2012) <doi: 10.1007/s11222-010-9219-7>.")
 (define-public r-cggp
   (package
     (name "r-cggp")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGGP" version))
        (sha256
-        (base32 "1g70hjpc33dnr6yw42kjhy9ngba05qzk5mr7md6pqhmbx0ykhr6g"))))
+        (base32 "01jnq0bxacz5vlacmizanc54ms0fdbs9whapqlzdw4jrjlxnwnxa"))))
     (properties `((upstream-name . "CGGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -32473,13 +32661,13 @@ deserialize JSON back to the correct object prototypes.")
 (define-public r-ceramic
   (package
     (name "r-ceramic")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ceramic" version))
        (sha256
-        (base32 "03hjvqj7j0c0kg1jdxl4vr5rlrb4kvpakz223r7nf95f4gnnhcz9"))))
+        (base32 "17vy0zdaw1mvfjsvqf4a39wazrrfm6hr4byrf0r3hbnzfxlmp30m"))))
     (properties `((upstream-name . "ceramic")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -32497,7 +32685,7 @@ deserialize JSON back to the correct object prototypes.")
                              r-dplyr
                              r-curl
                              r-crsmeta))
-    (home-page "https://github.com/hypertidy/ceramic")
+    (home-page "https://hypertidy.github.io/ceramic/")
     (synopsis "Download Online Imagery Tiles")
     (description
      "Download imagery tiles to a standard cache and load the data into raster
@@ -32627,6 +32815,22 @@ The reference article for these datasets is Mayer and Zignago (2011)
         (base32 "1wjm6nyjaz3z0g2dxk1k82va86qxx2xsgx02y9ipyzf1ldxclm1s"))))
     (properties `((upstream-name . "CePa")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rgraphviz r-igraph r-graph))
     (native-inputs (list esbuild))
     (home-page "https://github.com/jokergoo/CePa")
@@ -33819,13 +34023,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1sx3n6vbps0843a00wzqfmjl9qhxn51saxsk75lqn8gaxas40823"))))
+        (base32 "0694fzfqiwg9g5nycd69j2q8hqjizxz3pbj6zj5k00x9mwslbfnm"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -33834,10 +34038,10 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
                              r-tidyr
                              r-stringr
                              r-stringi
+                             r-snakecase
                              r-rlang
                              r-readr
                              r-purrr
-                             r-pool
                              r-lifecycle
                              r-jsonlite
                              r-glue
@@ -35432,6 +35636,28 @@ Huber (2014) <doi:10.1002/jae.2341>, Froelich and Huber (2017)
 <doi:10.1002/jae.2765>, and others.")
     (license license:expat)))
 
+(define-public r-causalslse
+  (package
+    (name "r-causalslse")
+    (version "0.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalSLSE" version))
+       (sha256
+        (base32 "0qi3mnkdcirj4dyrvvgs2r9752x8zfkiq5rzqaj1501w2k9kwir9"))))
+    (properties `((upstream-name . "causalSLSE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-texreg r-sandwich))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=causalSLSE")
+    (synopsis "Semiparametric Least Squares Inference for Causal Effects")
+    (description
+     "Several causal effects are measured using least squares regressions and basis
+function approximations.  Backward and forward selection methods based on
+different criteria are used to select the basis functions.")
+    (license license:gpl2+)))
+
 (define-public r-causalsens
   (package
     (name "r-causalsens")
@@ -35582,6 +35808,22 @@ the help files.")
         (base32 "0daghglhk4jngv242s1vdi8l1dwcp23gn47vacrs55in5mmpqraj"))))
     (properties `((upstream-name . "causaloptim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rcpp r-rcdd r-igraph))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/sachsmc/causaloptim")
@@ -36626,13 +36868,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "0rfyc30k2l9r2vm8dq3ahffcb0zz0bp9d6ik0agz0k66hz4v73k6"))))
+        (base32 "1rdpgp1rav82ksfikc57zf7wqa8zd4gzxmnmrlg2jjiv404wwm42"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -36705,13 +36947,13 @@ NÃ¦s (2023) <doi:10.1111/joss.12860>.")
 (define-public r-cat2cat
   (package
     (name "r-cat2cat")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cat2cat" version))
        (sha256
-        (base32 "1hc656848fhkgdyi7jrnahyqfzlmkrbpinv89k169i46gvs6011x"))))
+        (base32 "0bfrl4mzkl7diigzksdri7kl549bxf767hl7s0whs6n7dyif0ap8"))))
     (properties `((upstream-name . "cat2cat")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -38556,6 +38798,22 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
         (base32 "0zb6cgpxzd9245jzabvw9x09ziihkfjc3gx1qclpqkvdbyq85qx6"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-httr r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/neuhausi/canvasXpress")
@@ -39962,33 +40220,6 @@ provided that aim to produce interpretation-oriented scatterplots.  Reference:
 Alberti 2015 <doi:10.1016/j.softx.2015.07.001>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-caic4
-  (package
-    (name "r-caic4")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cAIC4" version))
-       (sha256
-        (base32 "1qg73g0g029wkzpmp0fgvyfz8p1k3x38yqx0404cpb3dxj4n4hcg"))))
-    (properties `((upstream-name . "cAIC4")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlrsim
-                             r-nlme
-                             r-mvtnorm
-                             r-mgcv
-                             r-matrix
-                             r-lme4))
-    (home-page "https://cran.r-project.org/package=cAIC4")
-    (synopsis "Conditional Akaike Information Criterion for 'lme4' and 'nlme'")
-    (description
-     "This package provides functions for the estimation of the conditional Akaike
-information in generalized mixed-effect models fitted with (g)lmer() from lme4',
-lme() from nlme and gamm() from mgcv'.  For a manual on how to use
-@code{cAIC4}', see Saefken et al. (2021) <doi:10.18637/jss.v099.i08>.")
-    (license license:gpl2+)))
-
 (define-public r-cagr
   (package
     (name "r-cagr")
@@ -40413,6 +40644,22 @@ microarray expression data using C3NET.")
         (base32 "1c2k7ml153bby749qi3a6nckhwwr71mvvps9dkbzkxkwnmlwpz1h"))))
     (properties `((upstream-name . "c3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridis
                              r-lazyeval
                              r-jsonlite

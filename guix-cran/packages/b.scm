@@ -1626,13 +1626,13 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 (define-public r-btllasso
   (package
     (name "r-btllasso")
-    (version "0.1-11")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTLLasso" version))
        (sha256
-        (base32 "1nz90jg74xzcwjxi9ppp7a78bg4976h2cmvlz140ss5403pnfbsk"))))
+        (base32 "1cfxdp5j1ickrayfymfzlhjpimpr2c2ndsi2i6173wjrbxdarrqx"))))
     (properties `((upstream-name . "BTLLasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-teachingdemos
@@ -1872,13 +1872,13 @@ R. There is also an interactive shiny app for monitoring the job status.")
 (define-public r-bsts
   (package
     (name "r-bsts")
-    (version "0.9.9")
+    (version "0.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsts" version))
        (sha256
-        (base32 "0zaic91yw214bq3285kw7wj8h1jf4g1z9lahgpmikvlqhgy5744g"))))
+        (base32 "1cbiha8pgb2xmpwqbgb16d1dpjj9x41wx3dzly1xxy2fs04bq0m3"))))
     (properties `((upstream-name . "bsts")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-boomspikeslab r-boom))
@@ -2532,6 +2532,22 @@ available from the brms package.")
         (base32 "055hqa5w4gaqz9mms9yj85wg0pgl6xa568nbjxm4qc75rsy91qg5"))))
     (properties `((upstream-name . "bSims")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-pbapply r-mefa4 r-mass r-intrval r-deldir))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/psolymos/bSims")
@@ -2691,6 +2707,22 @@ faster lookups on sorted vectors.")
         (base32 "0ks8jnbdxbf6wbiwj3jc5iyx2qkxqk0icqhg4b0hvnd74h7zkagi"))))
     (properties `((upstream-name . "bscui")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-webshot2 r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://patzaw.github.io/bscui/")
@@ -2809,6 +2841,22 @@ trials with the objective of equivalence assessment.")
         (base32 "09dzcpqzlkak9ilx79h2hpad20ck6857middbkn7j3mhrbqq0m51"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-waiter
                              r-shiny
                              r-lifecycle
@@ -4833,13 +4881,13 @@ time-to-event setting.")
 (define-public r-bpr
   (package
     (name "r-bpr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpr" version))
        (sha256
-        (base32 "1j8b6d8k2czsi02gyy1kgf4jdi4s9wr881c3j4xg359hrrx7fnz8"))))
+        (base32 "11hli3xsc432g8kppjxbim6nij7p1lbbv8ns075jpgdyd4i1piva"))))
     (properties `((upstream-name . "bpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-coda r-bh))
@@ -4849,7 +4897,7 @@ time-to-event setting.")
      "Posterior sampling and inference for Bayesian Poisson regression models.  The
 model specification makes use of Gaussian (or conditionally Gaussian) prior
 distributions on the regression coefficients.  Details on the algorithm are
-found in D'Angelo and Canale (2022) <doi:10.1080/10618600.2022.2123337>.")
+found in D'Angelo and Canale (2023) <doi:10.1080/10618600.2022.2123337>.")
     (license license:gpl2+)))
 
 (define-public r-bpp
@@ -4915,6 +4963,22 @@ provided.  See Cremers, Mulder & Klugkist (2018) <doi:10.1111/bmsp.12108> and
         (base32 "135afhq1x2aqdmn609vfk0248wsqbp66lkw7wqqzsb6czpap1q90"))))
     (properties `((upstream-name . "bpmnVisualizationR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml2 r-rlang r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://process-analytics.github.io/bpmn-visualization-R/")
@@ -4937,6 +5001,22 @@ with the bpmn-visualization @code{TypeScript} library.")
         (base32 "0cskqfib5fw34zfqms4dp53cwb7z0cricr452a4cjfw563kjhmqf"))))
     (properties `((upstream-name . "bpmnR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml2
                              r-uuid
                              r-tidyr
@@ -5117,13 +5197,13 @@ and the treatment/phenotype and instrument are measured in another study
 (define-public r-bpacc
   (package
     (name "r-bpacc")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpAcc" version))
        (sha256
-        (base32 "1q0gn6n215720d0c39awdjpxpp5ijv4yp6wah9snw1jhiphdl68q"))))
+        (base32 "0341mndgl9jybmkgqa3pfgk9ryn8738j04d1gy2yjacbs68xxhn8"))))
     (properties `((upstream-name . "bpAcc")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=bpAcc")
@@ -5136,7 +5216,7 @@ by the AAMI Sphygmomanometer Committee for indirect measurement of blood
 pressure, incorporated into IS0 81060-2.  The @code{bpAcc} package gives the
 exact probability of accepting a device D derived from the join distribution of
 the sample standard deviation and a non-linear transformation of the sample mean
-for a specified sample size introduced by Chandel et al. (2022) and by the
+for a specified sample size introduced by Chandel et al. (2023) and by the
 Association for the Advancement of Medical Instrumentation (2003,
 ISBN:1-57020-183-8).")
     (license license:gpl2)))
@@ -8973,13 +9053,13 @@ Perrot-@code{DockÃ¨s} et al. (2019) <@code{arXiv:1806.10093>}.")
 (define-public r-blockcluster
   (package
     (name "r-blockcluster")
-    (version "4.5.3")
+    (version "4.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockcluster" version))
        (sha256
-        (base32 "09f3b8q0vz2184njsisr0h5j6l96cm0kcrvn9xw077xg5y4vif0i"))))
+        (base32 "1vfwfd2wz6ivhlashxpz4h5ll8y7zrqxfw5763prgaiff793cxc5"))))
     (properties `((upstream-name . "blockcluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtkore r-rcpp))
@@ -9248,13 +9328,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blavaan" version))
        (sha256
-        (base32 "0n07qjn76fac2fn5cqvn8shqnyd7jwrxqbf3353m5nx0haq3llpk"))))
+        (base32 "1xldcssvrb8wy1spw5j29mxxixb3x08in6xfscwmbwnhj3c6xma7"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -9273,7 +9353,7 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
                              r-coda
                              r-bh
                              r-bayesplot))
-    (home-page "https://cran.r-project.org/package=blavaan")
+    (home-page "https://ecmerkle.github.io/blavaan/")
     (synopsis "Bayesian Latent Variable Analysis")
     (description
      "Fit a variety of Bayesian latent variable models, including confirmatory factor
@@ -17511,13 +17591,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.4.13")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BED" version))
        (sha256
-        (base32 "0icfp0mgmqv4g66q2sr8y04j6xh2ja88ajjq0ng7zfjpm92rrdks"))))
+        (base32 "07pa4ljw6qzayzjms22gi19axq6hasb9j3r8m34z3j30n9iwq2g4"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -17550,10 +17630,9 @@ tools.  The third challenge is related to the automation of the mapping process
 according to the relationships between the biological entities of interest.
 Indeed, mapping between gene and protein ID scopes should not be done the same
 way than between two scopes regarding gene ID. Also, converting identifiers from
-different organisms should be possible using gene orthologs information.  A
-ready to use database is provided as a Docker image
-<https://hub.docker.com/r/patzaw/bed-ucb-human/>.  The method has been published
-by Godard and van Eyll (2018) <doi:10.12688/f1000research.13925.3>.")
+different organisms should be possible using gene orthologs information.  The
+method has been published by Godard and van Eyll (2018)
+<doi:10.12688/f1000research.13925.3>.")
     (license license:gpl3)))
 
 (define-public r-beautier
@@ -21651,13 +21730,13 @@ of specific algorithms.")
 (define-public r-bayesianvars
   (package
     (name "r-bayesianvars")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianVARs" version))
        (sha256
-        (base32 "0cc9wxfdlywpf9gxzag5wwd81l428sla0br6626kpj9l1sr70psq"))))
+        (base32 "05vx1v7znj12b1h1wks7azi2xrwhdzxjljjsshp3x5zmjm5kg169"))))
     (properties `((upstream-name . "bayesianVARs")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -24541,31 +24620,6 @@ the data set for analysis as well as to calculate and visualize several
 degradation metrics, including blur ratio, signal-to-noise ratio, excess
 attenuation and envelope correlation among others (Dabelsteen et al 1993
 <doi:10.1121/1.406682>).")
-    (license license:gpl2+)))
-
-(define-public r-bartmixvs
-  (package
-    (name "r-bartmixvs")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BartMixVs" version))
-       (sha256
-        (base32 "0i7h6srzlmbjwyqgfwkq1azxai5hxicfkdxyxs9nzng3zi2ls6i2"))))
-    (properties `((upstream-name . "BartMixVs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-nnet r-nlme r-mvtnorm r-loo))
-    (home-page "https://cran.r-project.org/package=BartMixVs")
-    (synopsis "Variable Selection Using Bayesian Additive Regression Trees")
-    (description
-     "Bayesian additive regression trees (BART) provides flexible non-parametric
-modeling of mixed-type predictors for continuous and binary responses.  This
-package is built upon CRAN R package BART', version 2.7
-(<https://github.com/cran/BART>).  It implements the three proposed variable
-selection approaches in the paper: Luo, C and Daniels, M. J. (2021), \"Variable
-Selection Using Bayesian Additive Regression Trees.\" <@code{arXiv:2112.13998>},
-and other three existing BART-based variable selection approaches.")
     (license license:gpl2+)))
 
 (define-public r-bartmachinejars

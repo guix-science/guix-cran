@@ -1144,13 +1144,13 @@ R objects are returned.")
 (define-public r-otp
   (package
     (name "r-otp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otp" version))
        (sha256
-        (base32 "0l0r56kn8jmjxhzz646fimi91blpgpynrrgfd03rh3dbifd5xhdz"))))
+        (base32 "19fi2a4gi6fjhhkybrlx9chph2adjqqx4h1mc214cjn6m5bg37mq"))))
     (properties `((upstream-name . "otp")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-openssl r-base64url))
@@ -1159,8 +1159,8 @@ R objects are returned.")
     (description
      "Generating and validating One-time Password based on Hash-based Message
 Authentication Code (HOTP) and Time Based One-time Password (TOTP) according to
-RFC 4226 <https://tools.ietf.org/html/rfc4226> and RFC 6238
-<https://tools.ietf.org/html/rfc6238>.")
+RFC 4226 <https://datatracker.ietf.org/doc/html/rfc4226> and RFC 6238
+<https://datatracker.ietf.org/doc/html/rfc6238>.")
     (license license:expat)))
 
 (define-public r-otinference
@@ -3517,44 +3517,6 @@ healthcare provider.")
 interface for the ROracle package.")
     (license license:gpl2+)))
 
-(define-public r-opvar
-  (package
-    (name "r-opvar")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OpVaR" version))
-       (sha256
-        (base32 "1923p60yzh8fycwl1fwy01r7ml5yx0kx01ckhgii7slm4cachf5f"))))
-    (properties `((upstream-name . "OpVaR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vinecopula
-                             r-truncnorm
-                             r-tea
-                             r-reins
-                             r-pracma
-                             r-mass
-                             r-evmix
-                             r-actuar))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=OpVaR")
-    (synopsis "Statistical Methods for Modelling Operational Risk")
-    (description
-     "This package provides functions for computing the value-at-risk in compound
-Poisson models.  The implementation comprises functions for modeling loss
-frequencies and loss severities with plain, mixed (Frigessi et al. (2012)
-<doi:10.1023/A:1024072610684>) or spliced distributions using Maximum Likelihood
-estimation and Bayesian approaches (Ergashev et al. (2013)
-<doi:10.21314/JOP.2013.131>).  In particular, the parametrization of tail
-distributions includes the fitting of Tukey-type distributions (Kuo and Headrick
-(2014) <doi:10.1155/2014/645823>).  Furthermore, the package contains the
-modeling of bivariate dependencies between loss severities and frequencies,
-Monte Carlo simulation for total loss estimation as well as a closed-form
-approximation based on Degen (2010) <doi:10.21314/JOP.2010.084> to determine the
-value-at-risk.")
-    (license license:gpl3)))
-
 (define-public r-opusminer
   (package
     (name "r-opusminer")
@@ -5464,6 +5426,36 @@ and visualize aviation data.  It includes a client interface to the
 information, as well as aircraft state vectors.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
 
+(define-public r-openscoring
+  (package
+    (name "r-openscoring")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openscoring" version))
+       (sha256
+        (base32 "0cyay8gahv8xyssyjhc18myvzi060rvlkakf69w2xpfkrfjsk2rf"))))
+    (properties `((upstream-name . "openscoring")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-cli))
+    (home-page "https://github.com/jakub-jedrusiak/openscoring")
+    (synopsis "'Open Scoring' API Client")
+    (description
+     "Creativity research involves the need to score open-ended problems.  Usually
+done by humans, automatic scoring using AI becomes more and more accurate.  This
+package provides a simple interface to the Open Scoring API
+<https://openscoring.du.edu/docs>, leading creativity scoring technology by
+Organiscak et al. (2023) <doi:10.1016/j.tsc.2023.101356>.  With it, you can
+score your own data directly from an R script.")
+    (license license:expat)))
+
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")
@@ -6092,17 +6084,17 @@ API.")
 (define-public r-openaistream
   (package
     (name "r-openaistream")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaistream" version))
        (sha256
-        (base32 "16g7l9z2473wwaai7ynl4d6b3cdwizida4kmjnbya3np8chw10kh"))))
+        (base32 "1wafn299pv6bwk3qbzvfqi0l3x8639dx3cgz99a8vkrv5n68y47c"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))
-    (home-page "https://cran.r-project.org/package=openaistream")
+    (home-page "https://github.com/libingfei/openaistream")
     (synopsis "Streaming Capabilities for 'OpenAI API' Interactions")
     (description
      "Based on the httr2 framework, the @code{OpenAI} interface supports streaming
@@ -7852,6 +7844,36 @@ different solvers.  It currently only supports linear constraints and objective
 functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
+
+(define-public r-omopgenerics
+  (package
+    (name "r-omopgenerics")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omopgenerics" version))
+       (sha256
+        (base32 "1p28cszj7rzbqvk5zdwddlindqmmyvc770m2rxwk9m6k241pvnqp"))))
+    (properties `((upstream-name . "omopgenerics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/omopgenerics/")
+    (synopsis "Methods and Classes for the OMOP Common Data Model")
+    (description
+     "This package provides definitions of core classes and methods used by analytic
+pipelines that query the OMOP (Observational Medical Outcomes Partnership)
+common data model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-omnibusfisher
   (package
@@ -9785,17 +9807,18 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "1brlf16klj4r2iz5c1d2hm5ipg6swhv41y65ys3yb9n4b035fzxd"))))
+        (base32 "00x6cwfga2x3mbjf849wj96v3mwaa1nz1kr6pa9k3bm1k32zkym7"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-rcpp
+                             r-lifecycle
                              r-hms
                              r-dbi
                              r-blob
@@ -11181,13 +11204,13 @@ orbit-aware counts are computed respective each of the edges and nodes.")
 (define-public r-oaii
   (package
     (name "r-oaii")
-    (version "0.1.9")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oaii" version))
        (sha256
-        (base32 "1r57f5sx58n18js2sl2gj7p8ylzfcs572ms8ya7lg8cd5mx5m793"))))
+        (base32 "09ql40afq6lx15vp9blsk3djihq4fmhvfwjd5a57lavpsr4m4yp7"))))
     (properties `((upstream-name . "oaii")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-httr r-checkmate))

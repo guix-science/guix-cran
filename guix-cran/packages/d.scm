@@ -2586,38 +2586,6 @@ methods includes simulation and estimation of the parameters.")
 design, i.e.  when each test is applied to each subject in the study.")
     (license license:gpl3+)))
 
-(define-public r-dtcomb
-  (package
-    (name "r-dtcomb")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtComb" version))
-       (sha256
-        (base32 "1syygvgv05ah6hj2cs22ghb4aszwn0mzibb7b13a6jwjq1sv6plx"))))
-    (properties `((upstream-name . "dtComb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-proc
-                             r-optimalcutpoints
-                             r-glmnet
-                             r-ggpubr
-                             r-ggplot2
-                             r-gam
-                             r-epir
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gokmenzararsiz/dtComb")
-    (synopsis "Statistical Combination of Diagnostic Tests")
-    (description
-     "This package provides a system for combining two diagnostic tests using various
-approaches that include statistical and machine-learning-based methodologies.
-These approaches are divided into four groups: linear combination methods,
-non-linear combination methods, mathematical operators, and machine learning
-algorithms.  See the <http://biosoft.erciyes.edu.tr/app/@code{dtComb>} website
-for more information, documentation, and examples.")
-    (license license:expat)))
-
 (define-public r-dtbm
   (package
     (name "r-dtbm")
@@ -3465,23 +3433,23 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "11ba06rj31xqppdci3114nppsbmw86f0fbm5xjndi4iys35ar0s9"))))
+        (base32 "1nc1pb4k1zf9zyz1l72wi37s8r4p42v792jsybpx520nn32ybcjb"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dsem")
+    (home-page "https://james-thorson-noaa.github.io/dsem/")
     (synopsis "Fit Dynamic Structural Equation Models")
     (description
      "Applies dynamic structural equation models to time-series data with generic and
 simplified specification for simultaneous and lagged effects.  Methods are
-described in Thorson et al. (In revision) \"Dynamic structural equation models
+described in Thorson et al. (In press) \"Dynamic structural equation models
 synthesize ecosystem dynamics constrained by ecological mechanisms.\"")
     (license license:gpl3)))
 
@@ -4978,6 +4946,22 @@ random walk with restarts, performed on the above subnetwork.")
         (base32 "165w0lk6kp0hw85y1q3wj50jn5jbi4rn00vgz8q0wy68qw2ymhh5"))))
     (properties `((upstream-name . "drawer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr
                              r-shiny
                              r-magrittr
@@ -5116,6 +5100,22 @@ and more, is available at the reference website
         (base32 "1cw5v7m1b4pxsizsjb3zdzhydxj577p6q5fcjklsvpzmiixzlyav"))))
     (properties `((upstream-name . "dragulaR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinyjs r-shiny r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://dragular.zstat.pl/")
@@ -6564,6 +6564,31 @@ this package.  One using overlapping samples while the other use nonoverlapping
 samples.")
     (license license:gpl3)))
 
+(define-public r-dosesens
+  (package
+    (name "r-dosesens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doseSens" version))
+       (sha256
+        (base32 "1srxxfadxsrxpd2ksn59ilmijw5iifjik3mz9q38rsvjdxqls5d6"))))
+    (properties `((upstream-name . "doseSens")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gtools r-dplyr))
+    (home-page "https://cran.r-project.org/package=doseSens")
+    (synopsis
+     "Conduct Sensitivity Analysis with Continuous Exposures and Binary Outcomes")
+    (description
+     "This package performs sensitivity analysis for the sharp null and attributable
+effects in matched studies with continuous exposures and binary outcomes as
+described in Zhang, Small, Heng (2024) <@code{arXiv:2401.06909>}.  Two of the
+functions require installation of the Gurobi optimizer.  Please see
+<https://www.gurobi.com/documentation/9.0/refman/ins_the_r_package.html> for
+guidance.")
+    (license license:expat)))
+
 (define-public r-doseminer
   (package
     (name "r-doseminer")
@@ -7617,13 +7642,13 @@ inside this Dockerfile.")
 (define-public r-doc2concrete
   (package
     (name "r-doc2concrete")
-    (version "0.5.6")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doc2concrete" version))
        (sha256
-        (base32 "11dv5vcgk5f24f5fr79js9slmwbzg6c49ax2gbmzqmkgscd60fwq"))))
+        (base32 "13rgh3s13bbjgw3svh4sxz3kpv08p9gwxi9g55lb377nxachdzxr"))))
     (properties `((upstream-name . "doc2concrete")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -8572,15 +8597,31 @@ as given in Barnett, W. A. (1980) (<DOI:10.1016/0304-4076(80)90070-6>).")
 (define-public r-dm
   (package
     (name "r-dm")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dm" version))
        (sha256
-        (base32 "1xrsmdnkq52wp56f9j3506vy9xfqr8hcy6xabcdbj065kd3zpr13"))))
+        (base32 "0ngh74kkzngpq6qrz8aabsv7jgmbxggbplin5jbgjalyi21gfm40"))))
     (properties `((upstream-name . "dm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
@@ -9840,6 +9881,22 @@ special computational programs.")
         (base32 "1phl1nj1l69l6aj9hsv0yqllvhh6msv2ss9la8zikl3m2s0f6ymw"))))
     (properties `((upstream-name . "distreg.vis")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny
                              r-rhandsontable
                              r-magrittr
@@ -10034,6 +10091,22 @@ Saarinen, Jasjeet S. Sekhon, Simon Walter.")
         (base32 "15lx82dyxxlp2w6lnfs3kvd9pq6pjhjhpv0v1y218lg9y5k6h3s6"))))
     (properties `((upstream-name . "distill")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml
                              r-xml2
                              r-xfun
@@ -10747,13 +10820,13 @@ gene expressions.")
 (define-public r-diseasystore
   (package
     (name "r-diseasystore")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diseasystore" version))
        (sha256
-        (base32 "1vnrrm1al3k6348qmd4znb7mfvfvdsjpz2fkr18q5vwh1cb7khbk"))))
+        (base32 "0iifj8sd9n0423xn8mjkkv4yww8vfllgvnjz1h33l25i0g84x1hj"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12890,6 +12963,22 @@ changes than first-order differences across heterogeneous patterns.")
         (base32 "01phkaaa0zylyi23siwam18i1ggfgq2m66d69lnz9ips1yh12yca"))))
     (properties `((upstream-name . "diffviewer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://diffviewer.r-lib.org")
@@ -12999,6 +13088,22 @@ complex networks.  For more details see: De Domenico, M. (2017)
         (base32 "0ydwnpyzirynffsnvip667y0jqzy7yfqlfpqhb38xvmd9rmwfbp8"))))
     (properties `((upstream-name . "diffr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=diffr")
@@ -13333,13 +13438,13 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
 (define-public r-diffcor
   (package
     (name "r-diffcor")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffcor" version))
        (sha256
-        (base32 "14m19ngrxxckx4idh5954a517bn2i01mbdm3s7jff5vicd9y6q6l"))))
+        (base32 "0jpvrdahnpsm5h9qmnz440jx7ja59b164hfp9nlg44yxffv7dh2r"))))
     (properties `((upstream-name . "diffcor")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -13811,13 +13916,13 @@ experiments designs, surrogates or test functions.")
 (define-public r-dicer
   (package
     (name "r-dicer")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diceR" version))
        (sha256
-        (base32 "0cilag911w2awypr7wj21n4cppm273458wrivvclr9zdkh8hf7m9"))))
+        (base32 "1pfb1wxwh9li3z06hrx1zy5vwqmlmq4rjqjh1pi8i6jkbshf702m"))))
     (properties `((upstream-name . "diceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -14105,6 +14210,22 @@ approach.")
         (base32 "0j2cm1mx3zrb2k3pcrb96z2z3kws61gyyjsjjv5rqcb5lzdgi65k"))))
     (properties `((upstream-name . "DiagrammeRsvg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8))
     (native-inputs (list esbuild))
     (home-page "https://github.com/rich-iannone/DiagrammeRsvg")
@@ -14125,6 +14246,22 @@ approach.")
         (base32 "147q7zgwhd7vc0l134sqkkf6n6s6bznxvcmsrdx2f5df12bsixkj"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-visnetwork
                              r-viridis
                              r-tidyr
@@ -14944,6 +15081,28 @@ about the methodology and data can be found in Diewert and Fox (2018)
 <https://www.business.unsw.edu.au/research-site/centreforappliedeconomicresearch-site/Documents/emg2018-6_SZeng_EMG-Slides.pdf>.")
     (license license:gpl2)))
 
+(define-public r-dfsaneacc
+  (package
+    (name "r-dfsaneacc")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfsaneacc" version))
+       (sha256
+        (base32 "05svhlssm1jy9skk0cn6qqy2wnqa9wjrfxarhzg1jhdclz7gsxdq"))))
+    (properties `((upstream-name . "dfsaneacc")))
+    (build-system r-build-system)
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=dfsaneacc")
+    (synopsis
+     "Accelerated Derivative-Free Method for Large-Scale Nonlinear Systems of Equations")
+    (description
+     "Secant acceleration applied to derivative-free Spectral Residual Methods for
+solving large-scale nonlinear systems of equations.  The main reference follows:
+E. G. Birgin and J. M. Martinez (2022) <doi:10.1137/20M1388024>.")
+    (license license:gpl3)))
+
 (define-public r-dfrr
   (package
     (name "r-dfrr")
@@ -15584,6 +15743,22 @@ profile analysis.  See Robert J. Zwitser and Gunter Maris
         (base32 "10v3djwani0zd27cjlf7lch7rfipnmb2p5wa7n2y5qxjqxli9z3x"))))
     (properties `((upstream-name . "dextergui")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-tibble
@@ -15618,13 +15793,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "11cn6ij402dqccjz6bv43c8b3xk25ljr8c0r6wwwxp2vd3c9fwlg"))))
+        (base32 "1dx9wvhvbrh0l8jrv02jmwz054r3nvaz4cz81m3iqviydi3hcbf6"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16462,6 +16637,22 @@ parameters, such as effect size, sample size, and assignment probabilities.")
         (base32 "0fsvlrciym2g9mp96kwb04md1jnqxwj39zd8q5dihijj0p1ib5mi"))))
     (properties `((upstream-name . "designer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinyscreenshot
                              r-shiny
                              r-shinipsum
@@ -18167,13 +18358,13 @@ Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
 (define-public r-demic
   (package
     (name "r-demic")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "demic" version))
        (sha256
-        (base32 "1h97vbkq8wl0agy3l1727ilji5r22nd8m2451s3g0k8yk01vm3by"))))
+        (base32 "1vxh8rlmq3jnrv0gzaywilqhn60vq8b56skbqgzghzk5qg95gi0k"))))
     (properties `((upstream-name . "demic")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-matrix r-lme4))
@@ -18618,33 +18809,6 @@ parametric, using stable distributions, and another one- non-parametric, using
 the squared Mahalanobis distance.  The package also contains functions for data
 handling and building of new classifiers as well as some test data set.")
     (license license:gpl3)))
-
-(define-public r-defm
-  (package
-    (name "r-defm")
-    (version "0.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "defm" version))
-       (sha256
-        (base32 "1pq89pma7gmahjhd6l5cjxd1768v7xjnv206ghls8w495xnl6qjs"))))
-    (properties `((upstream-name . "defm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=defm")
-    (synopsis "Estimation and Simulation of Multi-Binary Response Models")
-    (description
-     "Multi-binary response models are a class of models that allow for the estimation
-of multiple binary outcomes simultaneously.  This package provides functions to
-estimate and simulate these models using the Discrete Exponential-Family Models
-[DEFM] framework.  In it, we implement the models described in Vega Yon,
-Valente, and Pugh (2023) <doi:10.48550/@code{arXiv.2211.00627>}.  DEFMs include
-Exponential-Family Random Graph Models [ERGMs], which characterize graphs using
-sufficient statistics, which is also the core of DEFMs. Using sufficient
-statistics, we can describe the data through meaningful motifs, for example,
-transitions between different states, joint distribution of the outcomes, etc.")
-    (license license:expat)))
 
 (define-public r-deflist
   (package
@@ -19692,13 +19856,13 @@ CO-expression and Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeclareDesign" version))
        (sha256
-        (base32 "1pk9xin8fqjrwknpvd1b3ff5slahs1003l985pd6ynz5cpzbfi4d"))))
+        (base32 "02z9b8f4h56bmb6sad1ibqiyddifpgxg1x83gdxsdhs31p1r4sbf"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr
@@ -19752,6 +19916,22 @@ alternative in the objects of class \"declared\".")
         (base32 "0cjvmdiqknrq8mlqxmhkhcib40asdyl2bpllx8v1jz3h1d62zs04"))))
     (properties `((upstream-name . "deckgl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml
                              r-tibble
                              r-readr
@@ -22847,6 +23027,22 @@ nominal durations such as seconds, hours, days, and weeks.  See ?datetime and
         (base32 "03y8r1n31ipapfbbg12myrnqd961ra3fb6r4mjxqfkppxcj9c6mi"))))
     (properties `((upstream-name . "daterangepicker")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonify r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/trafficonese/daterangepicker/")
@@ -23033,6 +23229,22 @@ Brazilian Amazon region from a variety of official sources.")
         (base32 "1dr5nvdzc63x9ymlysvv5i8b7zcffq13pa39q0ychdwr1s3x7vzw"))))
     (properties `((upstream-name . "DataViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tibble r-rcpp))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=DataViz")
@@ -23655,6 +23867,22 @@ information.")
         (base32 "0paxrc9fi4p93mp4rr0ip0kn9gsm0hmplsl8icwxx980dmhxxyz9"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-scales
                              r-robustbase
                              r-rlang
@@ -23985,13 +24213,13 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "0ksi6bsx324sizhxi9w46v7pd4rvvwx1k5xxwgqdx3qqhd86s926"))))
+        (base32 "1dfi96l3cj1pmj747pznrp5glpibkngzwwcs8y3ihk8p1vqjj7sp"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-lubridate r-dplyr))
@@ -26439,6 +26667,22 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
         (base32 "142bc6gdmhzaikdfyxb1pq9nlybgkrgi2kjgk40w4wbxzx5mwkbh"))))
     (properties `((upstream-name . "d3Tree")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr r-plyr r-magrittr r-htmlwidgets r-dplyr))
     (native-inputs (list esbuild))
     (home-page "https://github.com/yonicd/d3Tree")
@@ -26464,6 +26708,22 @@ used as a reactive filter of structured data.")
         (base32 "1fyk0152x9zsbf7qm02wixrk9fldl0jlrg33fnbx06jjg1s431r7"))))
     (properties `((upstream-name . "d3po")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rlang
                              r-purrr
                              r-magrittr
@@ -26491,6 +26751,22 @@ fast and beautiful interactive visualization for Markdown and Shiny'.")
         (base32 "0kadz83pals03n0v3zqhmhf6visigk52yn58xckhb57fid4xzj5w"))))
     (properties `((upstream-name . "d3plus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-magrittr r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=d3plus")
@@ -26513,6 +26789,22 @@ examples provided here are taken from the official D3Plus website
         (base32 "10067rdgbpjzgw2wiq75kdd0gd7bl41hp16sxc0k2p72ybqfpw03"))))
     (properties `((upstream-name . "D3partitionR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-titanic
                              r-rcolorbrewer
                              r-magrittr

@@ -2474,13 +2474,13 @@ spectral density operator in frequencies and along the curve length.")
 (define-public r-ftsa
   (package
     (name "r-ftsa")
-    (version "6.3")
+    (version "6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftsa" version))
        (sha256
-        (base32 "00cb82cd692ni2ys55v6kkzz924gc3lsibgr2zaqw1f9iywkbnic"))))
+        (base32 "14s3qr8czycqgn6a462bmy575mn77lrhrb4ahpaa67m2xlcqpw4v"))))
     (properties `((upstream-name . "ftsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -6263,13 +6263,13 @@ Regression Analysis, First Edition.  New York: Springer.")
 (define-public r-fortls
   (package
     (name "r-fortls")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FORTLS" version))
        (sha256
-        (base32 "00qjp916zqjj9w42bmlb7s72dcyrimg16545p9f0rsmlyiy8qs6n"))))
+        (base32 "0h5ninw5hkrkbri8yazy5wfv4yslp303iq6fyiwv7nd3wda8wln5"))))
     (properties `((upstream-name . "FORTLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -6277,6 +6277,7 @@ Regression Analysis, First Edition.  New York: Springer.")
                              r-tidyr
                              r-sf
                              r-scales
+                             r-reticulate
                              r-rcsf
                              r-rcppeigen
                              r-rcpp
@@ -6288,23 +6289,21 @@ Regression Analysis, First Edition.  New York: Springer.")
                              r-htmlwidgets
                              r-distance
                              r-dbscan
-                             r-data-table
-                             r-circular))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Molina-Valero/FORTLS")
     (synopsis
      "Automatic Processing of Terrestrial-Based Technologies Point Cloud Data for Forestry Purposes")
     (description
      "Process automation of point cloud data derived from terrestrial-based
-technologies such as Terrestrial Laser Scanner (TLS) or Simultaneous
-Localization and Mapping (SLAM).  FORTLS enables (i) detection of trees and
-estimation of tree-level attributes (e.g. diameters and heights), (ii)
-estimation of stand-level variables (e.g. density, basal area, mean and dominant
-height), (iii) computation of metrics related to important forest attributes
-estimated in Forest Inventories at stand-level, and (iv) optimization of plot
-design for combining TLS data and field measured data.  Documentation about
-FORTLS is described in Molina-Valero et al. (2022,
-<doi:10.1016/j.envsoft.2022.105337>).")
+technologies such as Terrestrial Laser Scanner (TLS) or Mobile Laser Scanner.
+FORTLS enables (i) detection of trees and estimation of tree-level attributes
+(e.g. diameters and heights), (ii) estimation of stand-level variables (e.g.
+density, basal area, mean and dominant height), (iii) computation of metrics
+related to important forest attributes estimated in Forest Inventories at
+stand-level, and (iv) optimization of plot design for combining TLS data and
+field measured data.  Documentation about FORTLS is described in Molina-Valero
+et al. (2022, <doi:10.1016/j.envsoft.2022.105337>).")
     (license license:gpl3)))
 
 (define-public r-forstringr
@@ -7535,6 +7534,22 @@ supported to evaluate model accuracy.")
         (base32 "0pwgkkzyfzjjp9qrx4xx3b68617a18i3an3gcpprkg4mwpsvcj0x"))))
     (properties `((upstream-name . "forecasteR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-stringr
                              r-shinyjs
@@ -8033,6 +8048,22 @@ Population Health center.  References : Reshef et al. (2011)
         (base32 "0zj50v036zal51b7744bp62c1bzjwdvzw1qwy0lyhgjxly6kb2hy"))))
     (properties `((upstream-name . "fomantic.plus")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny-semantic r-shiny r-jsonlite r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ashbaldry/fomantic.plus")
@@ -8186,13 +8217,13 @@ processes and to simulate different types of chaotic time series maps.")
 (define-public r-fnets
   (package
     (name "r-fnets")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fnets" version))
        (sha256
-        (base32 "0fybpicc95ql89j09s48bnfsbh3spw26vh1m2xd2y5qv4mj1ff8q"))))
+        (base32 "138r081mpgw1csm93xcrci3djd7mrcl6drsdr6cpjz1fdzv1whjy"))))
     (properties `((upstream-name . "fnets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -8209,8 +8240,8 @@ processes and to simulate different types of chaotic time series maps.")
      "This package implements methods for network estimation and forecasting of
 high-dimensional time series exhibiting strong serial and cross-sectional
 correlations under a factor-adjusted vector autoregressive model.  See
-Barigozzi, Cho and Owens (2022) <@code{arXiv:2201.06110>} for further
-descriptions of FNETS methodology and Owens, Cho and Barigozzi (2023)
+Barigozzi, Cho and Owens (2024+) <doi:10.1080/07350015.2023.2257270> for further
+descriptions of FNETS methodology and Owens, Cho and Barigozzi (2024+)
 <@code{arXiv:2301.11675>} accompanying the R package.")
     (license license:gpl3+)))
 
@@ -9330,6 +9361,12 @@ re-producibility in the context of machine-learning.")
         (base32 "171csdpp445lxhh7ph59h7xxqxdpjlkf35nrjy74282m9xmqdlz9"))))
     (properties `((upstream-name . "flow")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-webshot
                              r-styler
                              r-rstudioapi
@@ -9666,6 +9703,22 @@ with the convenience of htmlwidgets'.")
         (base32 "18z6y9anwg264gwqpxvm8mmv7xvc4m323mkg9db424vd1ji560f3"))))
     (properties `((upstream-name . "flipdownr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmltools r-glue r-checkmate))
     (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/flipdownr")
@@ -12157,13 +12210,13 @@ Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
 (define-public r-fipio
   (package
     (name "r-fipio")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fipio" version))
        (sha256
-        (base32 "0wvx64nazbv44hdsj3q6mz70m81asmwgxp28sapaaal36l180jfs"))))
+        (base32 "1zvfjq3bxgayimic03z6gwnxgxbl2lz1ln4am1m2rc0g7llwmsbx"))))
     (properties `((upstream-name . "fipio")))
     (build-system r-build-system)
     (home-page "https://fipio.justinsingh.me")
@@ -13211,6 +13264,36 @@ tags and proper file extensions.")
     (description "Simple key-value database using SQLite as the back end.")
     (license license:gpl2+)))
 
+(define-public r-filecacher
+  (package
+    (name "r-filecacher")
+    (version "0.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filecacher" version))
+       (sha256
+        (base32 "1d33hhq4k4d86aak8h701c38vc8gv3pjnxdc4mxarh0ah2kh2fc5"))))
+    (properties `((upstream-name . "filecacher")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-rlang
+                             r-purrr
+                             r-here
+                             r-glue
+                             r-cachem))
+    (home-page "https://github.com/orgadish/filecacher")
+    (synopsis "File Cacher")
+    (description
+     "The main functions in this package are with_cache() and cached_read().  The
+former is a simple way to cache an R object into a file on disk, using cachem'.
+The latter is a wrapper around any standard read function, but caches both the
+output and the file list info.  If the input file list info hasn't changed, the
+cache is used; otherwise, the original files are re-read.  This can save time if
+the original operation requires reading from many files, and/or involves lots of
+processing.")
+    (license license:expat)))
+
 (define-public r-filebin
   (package
     (name "r-filebin")
@@ -13417,13 +13500,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "1c1pwabvgn4h7gmk1m4vslbaqp7qklvandy285947k911hixrdlq"))))
+        (base32 "1vch13a75gc2d5z6q3axxck7w76xya1l6v8rlyszcyvl8gzxwv6k"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -13455,13 +13538,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "0k6qa64zq4v99jqrg6paqprkcdyacihqgvjba4df0nvi0707lfdl"))))
+        (base32 "1nmyhmq8i5x7i53qm4q7l48kxlyz7s7gv35jfppc4ymdhcwkvgf1"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -13633,6 +13716,22 @@ in C++ for scalability.  fido replaces the previous package stray'.")
         (base32 "18dsw069j3jzl0splgjjdsybny1hq0dmiyygri8nlfwshijkw15h"))))
     (properties `((upstream-name . "fidelius")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-whisker
                              r-sodium
                              r-rstudioapi
@@ -13709,13 +13808,13 @@ ISBN:9780521852258).")
 (define-public r-fiberld
   (package
     (name "r-fiberld")
-    (version "0.1-7")
+    (version "0.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiberLD" version))
        (sha256
-        (base32 "04rqqg8zr6adhcls0d381fjrrc797aqy84gzl9gx3qiwlwcw8x0d"))))
+        (base32 "03f6gx8scpvb06im6m1vd5nakr16925504w4n44fwrbkbmmx48kx"))))
     (properties `((upstream-name . "fiberLD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -18155,13 +18254,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5-77")
+    (version "0.5-772")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "11035qsr4b1dsn73mf4zxq5w1c5p9qgyyimwfi9qs2d0aprsin0d"))))
+        (base32 "0mcwzwr2cam48fmb5di04jxwscq2ixw0ikwwvb2ngx2rkap1nq3j"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -18181,9 +18280,8 @@ and conjugate gradients methods), ridge regression (with optimal selection of
 the ridge parameter considering several procedures), omnibus tests for
 univariate normality, functions to compute the multivariate skewness, kurtosis,
 the Mahalanobis distance (checking the positive defineteness), and the
-Wilson-Hilferty transformation of chi squared variables.  Furthermore, the
-package provides interfaces to C code callable by another C code from other R
-packages.")
+Wilson-Hilferty transformation of gamma variables.  Furthermore, the package
+provides interfaces to C code callable by another C code from other R packages.")
     (license license:gpl3)))
 
 (define-public r-fastmatmr
@@ -21154,6 +21252,22 @@ published in Statistics and Computing <doi: 10.1007/s11222-017-9744-8>.")
         (base32 "0ynvnxzxx1iybyy5pvwfsj5y9jjixyrpji9vcl5fq5mjnpg8mpqk"))))
     (properties `((upstream-name . "fabricerin")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmltools r-glue))
     (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/fabricerin")

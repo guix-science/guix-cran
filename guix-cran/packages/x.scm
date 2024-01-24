@@ -13,6 +13,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
+  #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1537,6 +1538,22 @@ associated collection of files that defines its Discoverable Taxonomy Set
         (base32 "074lq9m61647ac7crjmpf8qjj4l60ps0ic4c4b83g47drar79v2z"))))
     (properties `((upstream-name . "xaringanthemer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-whisker r-purrr r-glue r-colorspace))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://pkg.garrickadenbuie.com/xaringanthemer/")
@@ -1561,6 +1578,22 @@ script.")
         (base32 "1snj4yf5mxn419d3qbm2pixj7gvhmf133sxvjbirjrr3ib6iyn84"))))
     (properties `((upstream-name . "xaringanExtra")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-uuid r-knitr r-jsonlite r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://pkg.garrickadenbuie.com/xaringanExtra/")
@@ -1658,15 +1691,16 @@ to the 3D surface measurements.")
 (define-public r-x13binary
   (package
     (name "r-x13binary")
-    (version "1.1.57-4")
+    (version "1.1.60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x13binary" version))
        (sha256
-        (base32 "00g94lxj3a4kzsfir7c7dqi9p3gxb4rc45aa0h712l19c286pmqd"))))
+        (base32 "1hc5knakha9pwlm9irrrjav012a53x97jv2wpw4lwhfnp6lwy118"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
+    (native-inputs (list gfortran))
     (home-page "https://github.com/x13org/x13binary")
     (synopsis "Provide the 'x13ashtml' Seasonal Adjustment Binary")
     (description

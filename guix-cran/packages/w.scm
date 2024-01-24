@@ -927,13 +927,13 @@ Wasserstein autoregressive models.")
 (define-public r-wrgraph
   (package
     (name "r-wrgraph")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrGraph" version))
        (sha256
-        (base32 "0ssqwxlhy92646d311ay014czzxsjj1170crlpyx3q9c9qyds9s5"))))
+        (base32 "127s4i73ww817q9k7x463633rlk8fj0kjvpwqwcaxswdc7a3ks7b"))))
     (properties `((upstream-name . "wrGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-rcolorbrewer r-lattice))
@@ -1283,6 +1283,53 @@ sample approximately monthly, quarterly or annually at discrete stations, a
 feature of many legacy data sets.  Most of the functions should be useful for
 analysis of similar-frequency time series regardless of the subject matter.")
     (license license:gpl2)))
+
+(define-public r-wpproj
+  (package
+    (name "r-wpproj")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WpProj" version))
+       (sha256
+        (base32 "1nbnlbzgzd927hkv4i2srn00xj14jg59lbbgsdh7yrbgmj34b10z"))))
+    (properties `((upstream-name . "WpProj")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slam
+                             r-rspectra
+                             r-rqpen
+                             r-roi-plugin-lpsolve
+                             r-roi-plugin-ecos
+                             r-roi
+                             r-rlang
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcppcgal
+                             r-rcpp
+                             r-quantreg
+                             r-oem
+                             r-matrix
+                             r-magrittr
+                             r-lifecycle
+                             r-glmnet
+                             r-ggsci
+                             r-ggridges
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-dorng
+                             r-doparallel
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=WpProj")
+    (synopsis "Linear p-Wasserstein Projections")
+    (description
+     "This package performs Wasserstein projections from the predictive distributions
+of any model into the space of predictive distributions of linear models.  We
+utilize L1 penalties to also reduce the complexity of the model space.  This
+package employs the methods as described in Dunipace, Eric and Lorenzo Trippa
+(2020) <@code{arXiv:2012.09999>}.")
+    (license (license:fsdg-compatible "GPL (== 3.0)"))))
 
 (define-public r-wppexplorer
   (package
@@ -3715,6 +3762,22 @@ mathematically convenient on wide matrices.")
         (base32 "0j0d73m72nzfc1wyrgsqr99ldx72adis6pd57mpim55hz0n9l224"))))
     (properties `((upstream-name . "widgetframe")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-purrr r-magrittr r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/bhaskarvk/widgetframe")
@@ -5726,6 +5789,22 @@ or webmorph templates.")
         (base32 "1v6m9d3y9x2vqz7cbm6vknp5006v6vn7h2acjqddwinbjvvadzi9"))))
     (properties `((upstream-name . "webmap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-checkmate))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://rconnect.usgs.gov/INLPO/webmap-main/")
@@ -5852,6 +5931,22 @@ R Markdown that students can use in self-guided learning.")
         (base32 "0k87any9rvv367p2zwy89r3rxszsq3w78pzdq36by4ijn659la2l"))))
     (properties `((upstream-name . "webdriver")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list))
     (propagated-inputs (list r-withr
                              r-showimage
@@ -7771,13 +7866,13 @@ this package.")
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.29")
+    (version "1.1.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "1r45syh0j0p23yqnc4fjcznrgaaw2qk2vwpl105nhin5fx8khbyc"))))
+        (base32 "1fdlivdqawk4g9xb1zc4hdbdd0v44kpdzfb8z75i09zg2nqhgpw1"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (inputs (list sox libsndfile ghostscript gdal fftw))
@@ -8262,6 +8357,22 @@ archives.  It can also read models in MDL and MD2 formats.")
         (base32 "0ya92qr25ssfkzn888b7rr8rn0304f3gz4h4pnc2a95rknbmxhls"))))
     (properties `((upstream-name . "waiter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-r6 r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://waiter.john-coene.com/")

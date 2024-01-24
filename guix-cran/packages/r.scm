@@ -815,6 +815,40 @@ evaluation.")
 be plotted in rworldmap.")
     (license license:gpl2+)))
 
+(define-public r-rworkflows
+  (package
+    (name "r-rworkflows")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rworkflows" version))
+       (sha256
+        (base32 "1ys66dcl5k61bkzvz8pxw08hr987jy3xpgm8akha5s4vp3jdkpqc"))))
+    (properties `((upstream-name . "rworkflows")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-renv
+                             r-here
+                             r-desc
+                             r-data-table
+                             r-biocmanager
+                             r-badger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/rworkflows")
+    (synopsis "Test, Document, Containerise, and Deploy R Packages")
+    (description
+     "Reproducibility is essential to the progress of research, yet achieving it
+remains elusive even in computational fields.  Continuous Integration (CI)
+platforms offer a powerful way to launch automated workflows to check and
+document code, but often require considerable time, effort, and technical
+expertise to setup.  We therefore developed the rworkflows suite to make robust
+CI workflows easy and freely accessible to all R package developers.  rworkflows
+consists of 1) a CRAN/Bioconductor-compatible R package template, 2) an R
+package to quickly implement a standardised workflow, and 3) a centrally
+maintained @code{GitHub} Action.")
+    (license license:gpl3)))
+
 (define-public r-rwofost
   (package
     (name "r-rwofost")
@@ -2026,38 +2060,6 @@ RU method and to improve efficiency.  In the multivariate case rotation of axes
 can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
-
-(define-public r-rusquant
-  (package
-    (name "r-rusquant")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rusquant" version))
-       (sha256
-        (base32 "1z1v038d5bzb48f4xa75ypj0lf88x7sf87l90z8q46i8b4iawai8"))))
-    (properties `((upstream-name . "rusquant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-xml
-                             r-stringr
-                             r-rvest
-                             r-quantmod
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-data-table))
-    (home-page "https://rusquant.ru")
-    (synopsis "Quantitative Trading Framework")
-    (description
-     "Collection of functions to retrieve financial data from various sources,
-including brokerage and exchange platforms, financial websites, and data
-providers.  Includes functions to retrieve account information, portfolio
-information, and place/cancel orders from different brokers.  Additionally,
-allows users to download historical data such as earnings, dividends, stock
-splits.")
-    (license license:gpl3)))
 
 (define-public r-rusk
   (package
@@ -4666,6 +4668,22 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
         (base32 "01q3b8mlgy4qf56ql808yi18msq9c4qafmnzmvq1jc8lfqkqszqp"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list zlib
                   pandoc
                   zstd
@@ -4780,13 +4798,13 @@ Available at: <http://epitools.ausvet.com.au>.")
 (define-public r-rsurrogate
   (package
     (name "r-rsurrogate")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsurrogate" version))
        (sha256
-        (base32 "1l80xl7q6w97m80wj2639rhbqvxyl87r9lisk8cjf2bvcmf0spmb"))))
+        (base32 "0xl3hgl09zcign5q6424wlmg93r0s73gvj0ak5q75dajyv0knz3y"))))
     (properties `((upstream-name . "Rsurrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix))
@@ -4970,6 +4988,39 @@ Package RStorm implements a streaming architecture modeled on Storm for easy
 development and testing of streaming algorithms in [R].  RStorm is not intended
 as a production package, but rather a development tool for streaming algorithms.")
     (license license:gpl2)))
+
+(define-public r-rstoolbox
+  (package
+    (name "r-rstoolbox")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RStoolbox" version))
+       (sha256
+        (base32 "1b1h2nkm3dbhym8bf7sa3gcbgflfx4mw5ramhrxczlzqsc9g37zi"))))
+    (properties `((upstream-name . "RStoolbox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-exactextractr
+                             r-dplyr
+                             r-caret))
+    (home-page "https://bleutner.github.io/RStoolbox/")
+    (synopsis "Remote Sensing Data Analysis")
+    (description
+     "Toolbox for remote sensing image processing and analysis such as calculating
+spectral indexes, principal component transformation, unsupervised and
+supervised classification or fractional cover analyses.")
+    (license license:gpl3+)))
 
 (define-public r-rstiefel
   (package
@@ -6374,13 +6425,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "0bfd8jbn5fphbbypcascdrr7krr9kn7sbi7ar3j7wvmdhcxka6n5"))))
+        (base32 "1idn7cndq77jdnr23mpq9b4iqhvmss07fzkiwcdg93fxjzfc5fbw"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8706,13 +8757,13 @@ to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "1.1-1")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "0884zrmpwaap5iyfks7rdr0wh225j4anyn60ng46fp361ygjf3lq"))))
+        (base32 "0vyz4q239dvbgkhq8jsdxc8blygaa3hk0whm7fff4bhmadqi7wbw"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mass))
@@ -8728,7 +8779,7 @@ easy-to-handle function to implement these analyses by simple commands.  Also,
 recent studies have shown the ordinary robust variance estimator possibly has
 serious bias under small or moderate sample size situations for these methods.
 This package also provides computational tools to calculate alternative accurate
-confidence intervals (Noma et al. (2024) <Forthcoming>).")
+confidence intervals (Noma and Gosho (2024) <Forthcoming>).")
     (license license:gpl3)))
 
 (define-public r-rqentangle
@@ -9014,13 +9065,13 @@ Lindy Hop and West Coast Swing dance contests.")
 (define-public r-rprotobuf
   (package
     (name "r-rprotobuf")
-    (version "0.4.21")
+    (version "0.4.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RProtoBuf" version))
        (sha256
-        (base32 "0dskki6q5qmd2b53qgqhx4lzlji07g8q46aalkvj52pwisscm2x6"))))
+        (base32 "0zldxpc1nmwpv3ngrqgjp1pyhki0z7gnmcy6y8g2s192cwbh5f3m"))))
     (properties `((upstream-name . "RProtoBuf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -9886,6 +9937,22 @@ could include data columns for showing confidence intervals.")
         (base32 "0ndhsw4nnz6wf0v8dh4sz8867m01jjkzw6aq7f490z1ypa3d9fv5"))))
     (properties `((upstream-name . "rpivotTable")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/smartinsightsfromdata")
@@ -9947,6 +10014,40 @@ in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 to fetch silhouette images of organisms.  Includes functions for adding
 silhouettes to both base R plots and ggplot2 plots.")
     (license license:gpl3+)))
+
+(define-public r-rphylopars
+  (package
+    (name "r-rphylopars")
+    (version "0.3.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rphylopars" version))
+       (sha256
+        (base32 "081sirrrqs42hvap4scwba3g8ciyqss11g8xipzqk96a9wfqcdf6"))))
+    (properties `((upstream-name . "Rphylopars")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-phytools
+                             r-phylolm
+                             r-numderiv
+                             r-matrix
+                             r-mass
+                             r-doby
+                             r-ape))
+    (home-page "https://github.com/ericgoolsby/Rphylopars/wiki")
+    (synopsis
+     "Phylogenetic Comparative Tools for Missing Data and Within-Species Variation")
+    (description
+     "This package provides tools for performing phylogenetic comparative methods for
+datasets with with multiple observations per species (intraspecific variation or
+measurement error) and/or missing data (Goolsby et al.  2017).  Performs
+ancestral state reconstruction and missing data imputation on the estimated
+evolutionary model, which can be specified as Brownian Motion,
+Ornstein-Uhlenbeck, Early-Burst, Pagel's lambda, kappa, or delta, or a star
+phylogeny.")
+    (license license:gpl2+)))
 
 (define-public r-rphosfate
   (package
@@ -10183,6 +10284,37 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 September 2018.  Superseded by rsoi package which includes the historical and
 most recent monthly PDO index values together with related climate indices.")
     (license license:cc0)))
+
+(define-public r-rpdbapi
+  (package
+    (name "r-rpdbapi")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rPDBapi" version))
+       (sha256
+        (base32 "1mzv5spr7z2khr9vvhy6pmn7mswz1rjqw0hs7jhhxay7lv636xyz"))))
+    (properties `((upstream-name . "rPDBapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-bio3d))
+    (home-page "https://cran.r-project.org/package=rPDBapi")
+    (synopsis "Comprehensive Interface for Accessing the Protein Data Bank")
+    (description
+     "Streamlines the interaction with the RCSB Protein Data Bank (PDB)
+<https://www.rcsb.org/>.  This interface offers an intuitive and powerful tool
+for searching and retrieving a diverse range of data types from the PDB. It
+includes advanced functionalities like BLAST and sequence motif queries.  Built
+upon the existing XML-based API of the PDB, it simplifies the creation of custom
+requests, thereby enhancing usability and flexibility for researchers.")
+    (license license:gpl2+)))
 
 (define-public r-rpdb
   (package
@@ -10863,13 +10995,13 @@ hand-drawn-like maps.")
 (define-public r-roughsets
   (package
     (name "r-roughsets")
-    (version "1.3-7")
+    (version "1.3-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoughSets" version))
        (sha256
-        (base32 "0g6nx0cak6619hxv1fq3b30xv0bdwxb776qkdj6ihig6nhkm2hkj"))))
+        (base32 "0pd19pv5zk771i4qbzgcahns4g3w5ihyrs9wpq1csbi6fmmr9fkn"))))
     (properties `((upstream-name . "RoughSets")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11627,13 +11759,13 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.90.0")
+    (version "4.90.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "0rfa0g6ywp0ykazckgk3axc23ip8f52abg4kpk7xy933yvdv3bcf"))))
+        (base32 "0kmz4vfpwpjhbx12qvpwz9vhz3ab61kf6sz4mmpzcr54r5v8l71r"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (inputs (list cmake))
@@ -11713,33 +11845,6 @@ A q-value for each potential variable is also returned.  The input, variable
 selection counts over many bootstraps for several levels of penalization, is
 modeled as coming from a beta-binomial mixture distribution.")
     (license license:gpl3)))
-
-(define-public r-rootwishart
-  (package
-    (name "r-rootwishart")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rootWishart" version))
-       (sha256
-        (base32 "1l9pr3i20hi5k02qnlb3blxhlvp2j0njn74xslw3gcjvyzjlr12j"))))
-    (properties `((upstream-name . "rootWishart")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-bh))
-    (home-page "http://github.com/turgeonmaxime/rootWishart")
-    (synopsis
-     "Distribution of Largest Root for Single and Double Wishart Settings")
-    (description
-     "This package provides functions for hypothesis testing in single and double
-Wishart settings, based on Roy's largest root.  This test statistic is
-especially useful in multivariate analysis.  The computations are based on
-results by Chiani (2014) <DOI:10.1016/j.jmva.2014.04.002> and Chiani (2016)
-<DOI:10.1016/j.jmva.2015.10.007>.  They use the fact that the CDF is related to
-the Pfaffian of a matrix that can be computed in a finite number of iterations.
-This package takes advantage of the Boost and Eigen C++ libraries to perform
-multi-precision linear algebra.")
-    (license license:gpl2+)))
 
 (define-public r-rootsextremainflections
   (package
@@ -12072,13 +12177,13 @@ specifications to colour names.")
 (define-public r-roloc
   (package
     (name "r-roloc")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roloc" version))
        (sha256
-        (base32 "0xynj12gp010c23f6ll9p343vwgxwa22s771p1w2pi65cj2ixhas"))))
+        (base32 "1f229racpdh12zyqwy8q1nbfkqzw90fdz2dkiycbv0j39rl6qkp8"))))
     (properties `((upstream-name . "roloc")))
     (build-system r-build-system)
     (propagated-inputs (list r-colorspace))
@@ -12149,6 +12254,22 @@ detection of events or structural breaks.")
         (base32 "1awr8lcxz7y9mjhia4p85jvixc72gj525gk2jjl13njgq6shp0b5"))))
     (properties `((upstream-name . "rolldown")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmltools r-bookdown))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=rolldown")
@@ -13246,13 +13367,13 @@ intuitive object allowing straightforward handling of SQL databases.")
 (define-public r-rock
   (package
     (name "r-rock")
-    (version "0.6.7")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rock" version))
        (sha256
-        (base32 "0ms21446jd6imrb9j9ncy7p94gqxi408wgp7b0l8g1h5f027qfsc"))))
+        (base32 "04byjz2k1wnjxbj22b307ghdrp7zz2ik5cxkxa0v980isfq5dv9i"))))
     (properties `((upstream-name . "rock")))
     (build-system r-build-system)
     (propagated-inputs (list r-yum
@@ -13277,44 +13398,8 @@ specific applications have been implemented, specifically an interface to the
 @code{rENA} package that implements Epistemic Network Analysis ('ENA'), means to
 process notes from Cognitive Interviews ('CIs'), and means to work with
 decentralized construct taxonomies ('DCTs').  The ROCK and this rock package are
-described in the ROCK book <https:rockbook.org>.")
-    (license license:gpl3)))
-
-(define-public r-rocit
-  (package
-    (name "r-rocit")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ROCit" version))
-       (sha256
-        (base32 "0sd6ckh7k8aqwhzzp3qff6g7d03klbr0mbp403pib3823c8pqa55"))))
-    (properties `((upstream-name . "ROCit")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ROCit")
-    (synopsis "Performance Assessment of Binary Classifier with Visualization")
-    (description
-     "Sensitivity (or recall or true positive rate), false positive rate, specificity,
-precision (or positive predictive value), negative predictive value,
-misclassification rate, accuracy, F-score- these are popular metrics for
-assessing performance of binary classifier for certain threshold.  These metrics
-are calculated at certain threshold values.  Receiver operating characteristic
-(ROC) curve is a common tool for assessing overall diagnostic ability of the
-binary classifier.  Unlike depending on a certain threshold, area under ROC
-curve (also known as AUC), is a summary statistic about how well a binary
-classifier performs overall for the classification task.  ROCit package provides
-flexibility to easily evaluate threshold-bound metrics.  Also, ROC curve, along
-with AUC, can be obtained using different methods, such as empirical, binormal
-and non-parametric.  ROCit encompasses a wide variety of methods for
-constructing confidence interval of ROC curve and AUC. ROCit also features the
-option of constructing empirical gains table, which is a handy tool for direct
-marketing.  The package offers options for commonly used visualization, such as,
-ROC curve, KS plot, lift plot.  Along with in-built default graphics setting,
-there are rooms for manual tweak by providing the necessary values as function
-arguments.  ROCit is a powerful tool offering a range of things, yet it is very
-easy to use.")
+described in the ROCK book <https://rockbook.org> and more information, such as
+tutorials, is available at <https://rock.science>.")
     (license license:gpl3)))
 
 (define-public r-rocftp-mms
@@ -13739,13 +13824,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustmatrix
   (package
     (name "r-robustmatrix")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustmatrix" version))
        (sha256
-        (base32 "0x804m2pqjhqh7ld8zwdz3pk7c43wrw7d8avwagh2wc40s7gzmy8"))))
+        (base32 "0c3j2bvpf494k7axr8j9zi49myqg9ry7yl9nzzxflkzavwa5229j"))))
     (properties `((upstream-name . "robustmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
@@ -15063,13 +15148,13 @@ bootstrap procedure of Trucios, Hotta and Ruiz (2017)
 (define-public r-robflreg
   (package
     (name "r-robflreg")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robflreg" version))
        (sha256
-        (base32 "03vz43phq805am0d38lyqfn969dl3fqnfivb9l46k9vbcqmdsx1y"))))
+        (base32 "1zhc2m8j4yzd5z54jx2lqks1bvvf4w0w3i7hr4hd46k8i3iy2cj2"))))
     (properties `((upstream-name . "robflreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -15497,6 +15582,22 @@ and no registration is required.")
         (base32 "13l5vcbcm88jfsc11ijkvr1s8qk8fflclazs4kl1k2wzpnlr6z6a"))))
     (properties `((upstream-name . "Rnvd3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridislite
                              r-lubridate
                              r-lazyeval
@@ -18048,6 +18149,22 @@ new functions as I add utility functions for myself.")
         (base32 "00iccwxlks1y4v6m3abzkb0hcpk4cgagigzgy98xaja846lc8acz"))))
     (properties `((upstream-name . "rmdformats")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rmarkdown r-knitr r-htmltools r-bookdown))
     (native-inputs (list esbuild))
     (home-page "https://github.com/juba/rmdformats")
@@ -18602,6 +18719,22 @@ provider who implements the Mapzen API.")
         (base32 "01c1sd02ws3k2dmlj964c4j5jg93x192s3brhmaw4pi4qfjzc21x"))))
     (properties `((upstream-name . "rmapshaper")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8
                              r-sp
                              r-sf
@@ -19500,6 +19633,22 @@ Based on \"Robust Likelihood Cross-Validation for Kernel Density Estimation,\" W
         (base32 "1n13hlspsb118md6nh1w09gww4b58kxqf3lcp8g3zv14hr2dgwkr"))))
     (properties `((upstream-name . "rlc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-stringr
                              r-r6
                              r-plyr
@@ -20134,6 +20283,22 @@ supported, especially the extensive metadata features of JSON-stat'.")
         (base32 "02q5isc137nx7qil2p3903xfsjwk54507rs72dfaiy6a8scys5j9"))))
     (properties `((upstream-name . "RJSplot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (native-inputs (list esbuild))
     (home-page "https://rjsplot.usal.es")
     (synopsis "Interactive Graphs with R")
@@ -20488,6 +20653,22 @@ others discovered during ongoing testing and code simplification.")
         (base32 "0wv1vpy8ql1r9ya5mfqxdj7jv5wk029g8hjjp0xqp8dm507vj11x"))))
     (properties `((upstream-name . "rjade")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=rjade")
@@ -20673,13 +20854,13 @@ reliance on external software.")
 (define-public r-riverconn
   (package
     (name "r-riverconn")
-    (version "0.3.28")
+    (version "0.3.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riverconn" version))
        (sha256
-        (base32 "063sjfp3p9ahfm9w5pb6p7hs4948fc57yw3i10mf5lcd6v12nxzx"))))
+        (base32 "094w6mkndpvwldmlak2z1dm7n093n3s81mnz4x9dac6mrdl63s19"))))
     (properties `((upstream-name . "riverconn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -20693,7 +20874,7 @@ reliance on external software.")
                              r-doparallel
                              r-dodgr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=riverconn")
+    (home-page "https://github.com/damianobaldan/riverconn")
     (synopsis "Fragmentation and Connectivity Indices for Riverscapes")
     (description
      "Indices for assessing riverscape fragmentation, including the Dendritic
@@ -21235,18 +21416,18 @@ described in detail by Ahern, Hubbard, and Galea (2009)
 (define-public r-riskclustr
   (package
     (name "r-riskclustr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskclustr" version))
        (sha256
-        (base32 "1b5pjnfz6n716fn1va4kl4y3jzf48sm0i2xaxw0225vmmvq06d9g"))))
+        (base32 "0c5gc4kllhf8i5x0dw0lkdkp40r6smv5hkiq57pih9ahz18did9i"))))
     (properties `((upstream-name . "riskclustr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-mlogit r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "http://www.emilyzabor.com/riskclustr/")
+    (home-page "https://www.emilyzabor.com/riskclustr/")
     (synopsis "Functions to Study Etiologic Heterogeneity")
     (description
      "This package provides a collection of functions related to the study of
@@ -21530,6 +21711,22 @@ Quaternary science data.")
         (base32 "0jzs4mdwpzbpl0wchyhl3cpywk25ayaxalr12p4cnjl7vnmdm7dp"))))
     (properties `((upstream-name . "rintimg")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmltools r-glue))
     (native-inputs (list esbuild))
     (home-page "https://github.com/feddelegrand7/rintimg")
@@ -23063,6 +23260,12 @@ Monte Carlo.  Automatic parameter selection is not supported.")
         (base32 "0r5yxp1hrsxqqgw0r2xzzsaxnqksp2lz51vpwfqw55wmxdqjasdj"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-testthat
@@ -23971,13 +24174,13 @@ format is used by several Virtual Learning Environments such as Moodle.")
 (define-public r-rgho
   (package
     (name "r-rgho")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgho" version))
        (sha256
-        (base32 "19am8xhflib4062rkidn1501hq5wlj3mjx2hm4vf3jpzgqiqdj59"))))
+        (base32 "1j46pkb8n2hn1isz5xgfagwn77cxs48wv3rs4qqvq2nq1r5bpa4x"))))
     (properties `((upstream-name . "rgho")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24405,13 +24608,13 @@ armadillo through a header file approach.")
 (define-public r-rgeedim
   (package
     (name "r-rgeedim")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgeedim" version))
        (sha256
-        (base32 "0ywv2azzfg6pjy4341949r2317mpicyb2mgkrvlhlxgn3apy0ah3"))))
+        (base32 "17vxxhkmafm6vlgb5b6lp2mq316gph84i9r58xvx6sya7ckyi8dh"))))
     (properties `((upstream-name . "rgeedim")))
     (build-system r-build-system)
     (inputs (list python))
@@ -25689,37 +25892,6 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 <doi:10.1023/A:1023949509487> .")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-rfcca
-  (package
-    (name "r-rfcca")
-    (version "1.0.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RFCCA" version))
-       (sha256
-        (base32 "033a2dx8h469rksyjrh2fgxlrpz4n06bixla3rjg024cz10a4pfg"))))
-    (properties `((upstream-name . "RFCCA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pma r-cca))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/calakus/RFCCA")
-    (synopsis "Random Forest with Canonical Correlation Analysis")
-    (description
-     "Random Forest with Canonical Correlation Analysis (RFCCA) is a random forest
-method for estimating the canonical correlations between two sets of variables
-depending on the subject-related covariates.  The trees are built with a
-splitting rule specifically designed to partition the data to maximize the
-canonical correlation heterogeneity between child nodes.  The method is
-described in Alakus et al. (2021) <doi:10.1093/bioinformatics/btab158>.  RFCCA
-uses @code{randomForestSRC} package (Ishwaran and Kogalur, 2020) by freezing at
-the version 2.9.3.  The custom splitting rule feature is utilised to apply the
-proposed splitting rule.  LAPACK and BLAS libraries are used for matrix
-decompositions.  The âRFCCAâ package includes the header files
-âlapacke.hâ and âcblas.hâ from the LAPACK and BLAS libraries.  The
-LAPACK library is licensed under modified BSD license.")
-    (license license:gpl3+)))
-
 (define-public r-rfast2
   (package
     (name "r-rfast2")
@@ -26361,6 +26533,22 @@ has substantial potentials for microbial community ecological analysis.")
         (base32 "0h4csxrcl1rzmj3g01nf0mr990zc8swrf4jvmxwqsyzx9v2cqbnc"))))
     (properties `((upstream-name . "revealjs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rmarkdown))
     (native-inputs (list esbuild))
     (home-page "https://github.com/rstudio/revealjs")
@@ -26472,13 +26660,13 @@ and retrieving biological data.")
 (define-public r-retry
   (package
     (name "r-retry")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retry" version))
        (sha256
-        (base32 "1yfcfvszfjnvvnjcywgchyiyj3jk9nmvk3h40g6bc24xapfkfl2p"))))
+        (base32 "0vjfck3yf52zxpllp8ffqcm0cqps84p0kr1b89kih5068dxl3kr3"))))
     (properties `((upstream-name . "retry")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-later))
@@ -26648,6 +26836,29 @@ from Names\" by Fangzhou Xie (2021) <@code{arXiv:2109.09228>}.")
     (synopsis "RethinkDB Client")
     (description "Simple, native @code{RethinkDB} client.")
     (license license:gpl3)))
+
+(define-public r-retel
+  (package
+    (name "r-retel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "retel" version))
+       (sha256
+        (base32 "1rajv6y3zsk7hd9wr7szxi685rh377hhvj69rvg77fn0pk56g40b"))))
+    (properties `((upstream-name . "retel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr r-matrixcalc r-matrix r-checkmate))
+    (home-page "https://github.com/markean/retel")
+    (synopsis "Regularized Exponentially Tilted Empirical Likelihood")
+    (description
+     "This package implements the regularized exponentially tilted empirical
+likelihood method.  Details of the methods are given in Kim, @code{MacEachern},
+and Peruggia (2023) <doi:10.48550/@code{arXiv.2312.17015>}.  This work was
+supported by the U.S. National Science Foundation under Grants No.  SES-1921523
+and DMS-2015552.")
+    (license license:gpl3+)))
 
 (define-public r-resumer
   (package
@@ -28330,6 +28541,22 @@ ratio), NLR (negative likelihood ratio), PPV (positive predictive value), NPV
         (base32 "0z0k6g0dxxni78x9z6h29ybgdj38cyb8ywn1b1lbjqb1nkjc9phs"))))
     (properties `((upstream-name . "reportRmd")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-survival
                              r-scales
                              r-rstatix
@@ -30464,6 +30691,22 @@ becomes stronger/weaker as Z increases).")
         (base32 "0c7kxhkcy02vlb0fabf70bzkrk6l7rsvj7ppx3nxhjrhfp7p8j2m"))))
     (properties `((upstream-name . "regressoR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-trainer
                              r-shinyjs
                              r-shinydashboardplus
@@ -32193,13 +32436,13 @@ based and day-time based approaches (Lasslop et al. (2010)
 (define-public r-reddprec
   (package
     (name "r-reddprec")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reddPrec" version))
        (sha256
-        (base32 "0c1yxiqx98rns6g0nwr12s980az06f9rg75aszm913z2azwdqwk2"))))
+        (base32 "0qi81d0yjjw7iqzi88zrdiixmiw0a06arlc7yxl3nv0q35dgmapz"))))
     (properties `((upstream-name . "reddPrec")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-reshape r-qmap r-foreach r-doparallel))
@@ -33034,6 +33277,22 @@ analysis packages (pavo, patternize, colordistance).")
         (base32 "0hirzw446r192gdvscgqmm7n3bh2fy0qkf9pqnqm2vziv1cqf1bq"))))
     (properties `((upstream-name . "recogito")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmlwidgets r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/DIGI-VUB/recogito")
@@ -34346,16 +34605,16 @@ using the open-source experiment builder @code{OpenSesame}
 (define-public r-readbrukerflexdata
   (package
     (name "r-readbrukerflexdata")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readBrukerFlexData" version))
        (sha256
-        (base32 "0bhqrsxaq9s39m763a79pvi1qq2c0qa1yp03p9caqlmcm58dnlk7"))))
+        (base32 "1zp7ml0rf7ary0lmg6b3hjpivpws4fn3gg4ppg842zcq5nrrzy0i"))))
     (properties `((upstream-name . "readBrukerFlexData")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=readBrukerFlexData")
+    (home-page "https://strimmerlab.github.io/software/maldiquant/")
     (synopsis "Reads Mass Spectrometry Data in Bruker *flex Format")
     (description
      "Reads data files acquired by Bruker Daltonics matrix-assisted laser
@@ -34525,6 +34784,22 @@ porous media, in estuaries, and in bodies with variable shape.")
         (base32 "14pi2wc25qa9q0hp8jby07798l53phyj1zifj46fg2pjq8vkz7p7"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/react-R/reactR")
@@ -35949,13 +36224,13 @@ DDI Codebook 2.5 with flexible API creation.")
 (define-public r-rddensity
   (package
     (name "r-rddensity")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rddensity" version))
        (sha256
-        (base32 "0zg2xa3lgp0gbvmpap7f1k16mhw464fncn7nggb2hfvf0kxfb5db"))))
+        (base32 "07pzj4gi94nl4zd75xxkhiqfzy75zfwl8ps7x5whpg7qp1j48dqh"))))
     (properties `((upstream-name . "rddensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpdensity r-ggplot2))
@@ -36189,6 +36464,22 @@ Evolution,13: 782-788 <DOI:10.1111/2041-210X.13800>.")
         (base32 "03zcmxjpa6zz1aw6yaijdhzxv3sar04w3kaz59asmcg8f8r0ghys"))))
     (properties `((upstream-name . "rD3plot")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-igraph))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=rD3plot")
@@ -37582,13 +37873,13 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "5.6.0")
+    (version "5.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "114xwy3z7ca5xiv0dgk9n4qmynj68fdil3kp3w3yhbdqs36sismj"))))
+        (base32 "0mg71gwgifn5kircj498bhi09q47hi4i4vpgjmfvh7lkkgsfxkx1"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -39262,6 +39553,22 @@ al. (2013) <doi:10.1007/978-3-642-35638-4_21>.")
         (base32 "18dj35vi5xdg0yhdm58vdgklwyl2zsjkvz01jcvwy7nvhkqm6c82"))))
     (properties `((upstream-name . "rclipboard")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-bslib))
     (native-inputs (list esbuild))
     (home-page "https://github.com/sbihorel/rclipboard/")
@@ -39305,6 +39612,33 @@ data.  This package enables the user to query the core layers of the time line
 interface of the Climacell v4 API <https://www.climacell.co/weather-api/>.  This
 package requires a valid API key.  See vignettes for instructions on use.")
     (license license:expat)))
+
+(define-public r-rclickhouse
+  (package
+    (name "r-rclickhouse")
+    (version "0.6.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RClickhouse" version))
+       (sha256
+        (base32 "06r3xn3xjhr2adpmh4cpykbx1ly5i7aw4izcg2xci7cm5xbg2vzl"))))
+    (properties `((upstream-name . "RClickhouse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-bit64))
+    (home-page "https://github.com/IMSMWU/RClickhouse")
+    (synopsis "'Yandex Clickhouse' Interface for R with Basic 'dplyr' Support")
+    (description
+     "Yandex Clickhouse (<https://clickhouse.com/>) is a high-performance relational
+column-store database to enable big data exploration and analytics scaling to
+petabytes of data.  Methods are provided that enable working with Yandex
+Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
+    (license license:gpl2)))
 
 (define-public r-rclabels
   (package
@@ -42477,13 +42811,13 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "05ziry3vxk4blsykvqj73kgfdbvdpi771xfz2xv2873bxkna12xf"))))
+        (base32 "1il05pg1paa7y2y9jcsca8g4sh3l6hmdqw16bkww0a0l5yzzdg60"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-png))
@@ -43053,6 +43387,37 @@ for large datasets.  The complete set of functions also makes the entire process
 of tuning regularization parameters and visualizing results hassle-free.")
     (license license:gpl3)))
 
+(define-public r-rar
+  (package
+    (name "r-rar")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rar" version))
+       (sha256
+        (base32 "0cryyf8h2lf6qcf4wywpfzkr5aqnd7y5wh5sak8yxhxk16fpagdr"))))
+    (properties `((upstream-name . "rar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-testthat
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-dplyr
+                             r-cpp11))
+    (home-page "https://rar.jgaeb.com")
+    (synopsis "Risk-Adjusted Regression")
+    (description
+     "Perform risk-adjusted regression and sensitivity analysis as developed in
+\"Mitigating Omitted- and Included-Variable Bias in Estimates of Disparate
+Impact\" Jung et al. (2024) <@code{arXiv:1809.05651>}.")
+    (license license:expat)))
+
 (define-public r-raquifer
   (package
     (name "r-raquifer")
@@ -43207,21 +43572,22 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-rapsimng
   (package
     (name "r-rapsimng")
-    (version "0.3.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng" version))
        (sha256
-        (base32 "1zykznmb6qipkj8yxkf33vrvyqhsp0ajk34hnz7js1zvy5n8rd5l"))))
+        (base32 "1rgwan04j0ah7d9p0kypigf3xl4idy9g5qj0kfq0h1kg3cfk7b21"))))
     (properties `((upstream-name . "rapsimng")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
+    (propagated-inputs (list r-tibble
+                             r-rsqlite
                              r-rlang
                              r-magrittr
                              r-jsonlite
-                             r-dplyr))
+                             r-dplyr
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://rapsimng.bangyou.me/")
     (synopsis "APSIM Next Generation")
@@ -43270,6 +43636,22 @@ designed to create, modify and run apsimx files in the APSIM Next Generation
         (base32 "14cbi3yag91lnr1yrbk8ra6j615z5a6h136dj3r6v628qahrhmsg"))))
     (properties `((upstream-name . "rapport")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml r-stringr r-rapportools r-pander))
     (native-inputs (list esbuild))
     (home-page "https://rapporter.github.io/rapport/")
@@ -43464,6 +43846,22 @@ without a test dataset\".")
         (base32 "1nzwf4wx8syl9xpvmqn3mz72nhj80ssnm6wbfwnasg003ccfi43c"))))
     (properties `((upstream-name . "rapidoc")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (native-inputs (list esbuild))
     (home-page "https://github.com/meztez/rapidoc")
     (synopsis
@@ -44960,13 +45358,13 @@ spectrometry data <DOI: 10.1021/ac501530d>.")
 (define-public r-ramchoice
   (package
     (name "r-ramchoice")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ramchoice" version))
        (sha256
-        (base32 "1sckdbiy9j9bw8fshjgsfw9ibw7r92hav3lw8174fckanbgv9nkh"))))
+        (base32 "020a4n44vbbdx9j6nzl12hwp6xs1aj7hxjvj315rkd2g82fvvfj4"))))
     (properties `((upstream-name . "ramchoice")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -45031,6 +45429,22 @@ chart, gauge chart, boxplot chart, pie chart, and 100% stacked bar chart.")
         (base32 "0fcspbmzyyk6hinpjp29dv2banm0gssn9vy2zjf2p498hmysy3db"))))
     (properties `((upstream-name . "rAmCharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-piper
@@ -45508,6 +45922,22 @@ supporting functions to employ these estimators in a graphical modeling setting.
         (base32 "0crnpd75lyhd0awzqzqy7bzw4ydgxpyhy1ybb1ff4qsnisbjdbba"))))
     (properties `((upstream-name . "RagGrid")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-knitr r-htmlwidgets r-htmltools r-crosstalk))
     (native-inputs (list esbuild))
     (home-page "https://github.com/no-types/RagGrid/")
@@ -46070,6 +46500,22 @@ radionuclides of 97 elements.")
         (base32 "0gcxnbgj8ja1m4wzhbjy67m6zphf0c5ni9yx7sr7f0abm03ry753"))))
     (properties `((upstream-name . "radarchart")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/mangothecat/radarchart")
@@ -46200,6 +46646,22 @@ getting data by deals, contacts, accounts, campaigns and messages.")
         (base32 "0csrbmri44ykrrx25a21hnqca74w6hvsiza43k7jix26bchysynl"))))
     (properties `((upstream-name . "Racmacs")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-vctrs
                              r-shinyjs
                              r-shinyfiles
@@ -46941,6 +47403,22 @@ mixed-species forests) described in Forrester & Tang (2016)
         (base32 "1qkk6h2i15mg4ylq30znxyc0la3940263k1w6a17fy2vs26j6n3h"))))
     (properties `((upstream-name . "r3js")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-vctrs r-jsonlite r-htmlwidgets r-htmltools
                              r-ellipsis))
     (native-inputs (list r-knitr esbuild))
@@ -46965,6 +47443,22 @@ supported.")
         (base32 "06wzszqcy50gks1bss81j1l2a4adi271pnz6310w57g681q1ng19"))))
     (properties `((upstream-name . "r3dmol")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-magrittr r-htmlwidgets r-bio3d))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/swsoyee/r3dmol")
@@ -47731,6 +48225,22 @@ environment.")
         (base32 "15mphywsr0603ipbgzac65n1nj7m77fmw3ypc33p9ng4fllg035r"))))
     (properties `((upstream-name . "r2d3")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rstudioapi r-jsonlite r-htmlwidgets r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://rstudio.github.io/r2d3/")

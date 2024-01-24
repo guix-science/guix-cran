@@ -15,6 +15,7 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages video)
+  #:use-module (gnu packages package-management)
   #:use-module (gnu packages backup)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
@@ -510,6 +511,22 @@ family of packages.")
         (base32 "09a53anvllap85cs2qg1vdjcyr50vlirlhigrn4x47zilrjsm0xx"))))
     (properties `((upstream-name . "AzureAppInsights")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-rlang r-lubridate r-jsonlite
                              r-assertthat))
     (native-inputs (list esbuild))
@@ -872,6 +889,22 @@ API <https://windsor.ai/api-fields/>.")
         (base32 "0nfbn7rgazvc5nljf8i7bwpxy5j0w404bnrvi02k97jvmrra1dyb"))))
     (properties `((upstream-name . "aweSOM")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-viridis
                              r-shiny
                              r-rmarkdown
@@ -1597,6 +1630,41 @@ to be comparable with the standard Rasch analysis (Feri Wijayanto et al. (2021)
 <doi:10.3758/s13428-022-01947-9>, Feri Wijayanto et al. (2022)
 <doi:10.1177/01466216221125178>).")
     (license license:gpl2)))
+
+(define-public r-autoplots
+  (package
+    (name "r-autoplots")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AutoPlots" version))
+       (sha256
+        (base32 "0fw90l1dc7s488yn7m45ivkg3l97bx7cks8vd66984zhqp0g66jd"))))
+    (properties `((upstream-name . "AutoPlots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-nortest
+                             r-lubridate
+                             r-echarts4r
+                             r-e1071
+                             r-dplyr
+                             r-data-table
+                             r-combinat))
+    (home-page "https://github.com/AdrianAntico/AutoPlots")
+    (synopsis "Creating Echarts Visualizations as Easy as Possible")
+    (description
+     "Create beautiful and interactive visualizations in a single function call.  The
+data.table package is utilized to perform the data wrangling necessary to
+prepare your data for the plot types you wish to build, along with allowing fast
+processing for big data.  There are two broad classes of plots available:
+standard plots and machine learning evaluation plots.  There are lots of
+parameters available in each plot type function for customizing the plots (such
+as faceting) and data wrangling (such as variable transformations and
+aggregation).")
+    (license license:agpl3+)))
 
 (define-public r-autoplotprotein
   (package
@@ -2936,13 +3004,13 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "10icxxxg3xrq6gcb6mhd0krg2f9m4zi4smin5icgbqqf5023lyjv"))))
+        (base32 "1ba5116193psx8yzfw00v4l441a5wdwsxi03wkizqccmc2j62b6g"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -3724,13 +3792,13 @@ Gamma, Exponential or Weibull.  For details see Chen (2000), Scaillet (2004)
 (define-public r-asv
   (package
     (name "r-asv")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASV" version))
        (sha256
-        (base32 "1cwsfc5mylivg65mb93d0v8kalirq5vwjx78fjyylsdc4w33gzqb"))))
+        (base32 "1am6j2smyp3g1b9mbmc3610wiysny5b1pv8z6308zcq0q005gvpx"))))
     (properties `((upstream-name . "ASV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-freqdom))
@@ -5004,15 +5072,31 @@ Kroitor.")
 (define-public r-asciicast
   (package
     (name "r-asciicast")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asciicast" version))
        (sha256
-        (base32 "1nz0gbfk92p8c4940wmhm28l1jvgx459hspjbjl6b52v897wv3q2"))))
+        (base32 "0gvdl2yc2fdfl2r5304c6f13qzzcgjaac7gic0pas8j7abrji1ss"))))
     (properties `((upstream-name . "asciicast")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-withr
                              r-v8
                              r-tibble
@@ -5022,7 +5106,7 @@ Kroitor.")
                              r-curl
                              r-cli))
     (native-inputs (list esbuild))
-    (home-page "https://github.com/r-lib/asciicast")
+    (home-page "https://asciicast.r-lib.org/")
     (synopsis "Create 'Ascii' Screen Casts from R Scripts")
     (description
      "Record asciicast screen casts from R scripts.  Convert them to animated SVG
@@ -5034,13 +5118,13 @@ Rmarkdown documents.")
 (define-public r-ascii
   (package
     (name "r-ascii")
-    (version "2.4")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ascii" version))
        (sha256
-        (base32 "0k675an7sl00bslx4yb6vvvgnp1kl244cfjljv632asqdm3rkmrv"))))
+        (base32 "1wp330cspv5f63jcwldg59i8anv8p30kbr635p3i8l5jd9x9wi8k"))))
     (properties `((upstream-name . "ascii")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-digest r-codetools))
@@ -5076,13 +5160,13 @@ with the book.")
 (define-public r-asbio
   (package
     (name "r-asbio")
-    (version "1.9-6")
+    (version "1.9-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asbio" version))
        (sha256
-        (base32 "1q21khpamhjz136ns76ixglvhlmjxmy5jrx3njsbc88k4hcp4995"))))
+        (base32 "05as9c0x20wyzzysbpr4mabyfbvhy0c0irdndv33j73psish15y2"))))
     (properties `((upstream-name . "asbio")))
     (build-system r-build-system)
     (inputs (list))
@@ -5126,13 +5210,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.6")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "1smv7aiqdk60aq9lna33a7hdykjdgfakaycpqkjj711b3pixcd34"))))
+        (base32 "09m8wil95saf2n68bpx4vdp7a50kvi4kaapsgnxyli8p9f9nnj5c"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-httr))
@@ -5998,13 +6082,13 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "05ghvcqyb5l1x718hnza60ybi3pc4jvpxf5z1hk8062vpb6cgn8x"))))
+        (base32 "1zkdgmn0mwryhmgfqjpvdq4v5ppcf2dal51k2mn0972ds9lcwnh8"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -6255,13 +6339,13 @@ predominantly of low-quality.")
 (define-public r-argos
   (package
     (name "r-argos")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARGOS" version))
        (sha256
-        (base32 "0bp0gqlcsi57zzqgcj337jdhqvpcn6kjk1q8axdcyz3g1lkpbyd1"))))
+        (base32 "0qjngax72mz4zhqlb7s8zzl0n3524crp67vmz3mpy2s5hdl3kz83"))))
     (properties `((upstream-name . "ARGOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -6299,6 +6383,22 @@ for system behavior analysis.")
         (base32 "15hlvansqnky9bnq4r7xza3hb1hzylmhz8117wxz9lxa1wiky2is"))))
     (properties `((upstream-name . "argonR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rstudioapi r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/argonR")
@@ -6319,6 +6419,22 @@ for system behavior analysis.")
         (base32 "1wykr7y5375g1nb18ynybccxmd948xrr0gdwxxqsfjf782vlgd2d"))))
     (properties `((upstream-name . "argonDash")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-htmltools r-argonr))
     (native-inputs (list esbuild))
     (home-page "https://github.com/RinteRface/argonDash")
@@ -6801,6 +6917,31 @@ activity counts data and extract commonly used physical activity volume and
 fragmentation metrics.")
     (license license:gpl3)))
 
+(define-public r-arcpy
+  (package
+    (name "r-arcpy")
+    (version "0.4-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcpy" version))
+       (sha256
+        (base32 "02axfyblrsljsi2mkll9qz9f8i1q65am9m5pm3ph37r1nksmwsid"))))
+    (properties `((upstream-name . "arcpy")))
+    (build-system r-build-system)
+    (inputs (list conda))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mkoohafkan/arcpy")
+    (synopsis "Interface to 'ArcGIS' 'Python' Modules")
+    (description
+     "An interface to the @code{ArcGIS} arcpy and arcgis python API
+<https://pro.arcgis.com/en/pro-app/latest/arcpy/get-started/arcgis-api-for-python.htm>.
+ Provides various tools for installing and configuring a Conda environment for
+accessing @code{ArcGIS} geoprocessing functions.  Helper functions for
+manipulating and converting @code{ArcGIS} objects from R are also provided.")
+    (license license:gpl3+)))
+
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
@@ -7271,13 +7412,13 @@ with or without radiocarbon calibration.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "1vg8zadwfjibipahls96a8ya36khshmr5whgfyfg6jbdcprrlcjp"))))
+        (base32 "13jzp2xybnmbg4nimj1iq785v7qh0dizj9cl08m9f2ajh9nwgx6k"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -7294,7 +7435,7 @@ with or without radiocarbon calibration.")
 of R packages that work with @code{ArcGIS} Location Services.  It provides
 functionality for authorization, Esri JSON construction and parsing, as well as
 other utilities pertaining to geometry and Esri type conversions.  To support
-@code{ArcGIS} Pro users, authorization can done via arcgisbinding'.
+@code{ArcGIS} Pro users, authorization can be done via arcgisbinding'.
 Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
@@ -9170,13 +9311,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "1jhxag774s2gyv6w9111xg1l1ackzxnl6g906d520g7yxdl5wgm2"))))
+        (base32 "1lcbvdw27za5g44i62a5w2pa4z319nfcircz9s46cni13yzng0hq"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
@@ -9317,13 +9458,13 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "0cr9rz6v5snabbjlvvb80gpyp007p4r7hdm71xf8dl2fdxprwbyn"))))
+        (base32 "1qb0yfwhmk0mhszr1xvgihgh9cp01wan4dbn4wna28xd3ffyb8fv"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -9832,6 +9973,22 @@ online: <https://www.who.int/tools/child-growth-standards>.")
         (base32 "1lffsxv8fy3yq6rx6520rizp9f74d8bd78by5n209yr9yhw1629r"))))
     (properties `((upstream-name . "antaresViz")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-webshot
                              r-spmaps
                              r-sp
@@ -10316,6 +10473,22 @@ et al. (2017) <doi:10.1007/978-3-319-54819-7_16>.  Cruz Rambaud et al. (2015)
         (base32 "17jbr414wamxczsnxldz3la4n15d0b4lbhlhk8na9hniidin4f9b"))))
     (properties `((upstream-name . "annotator")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xfun r-shiny r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://github.com/valcu/annotator")
@@ -10629,6 +10802,22 @@ a second model trained on the classes of interest.")
         (base32 "1y7wz6v3m4kbwfqb5zghp9jal591408an1w7gcanjzp7qrb0fpv3"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-scales
                              r-rjsonio
                              r-reshape2
@@ -10691,6 +10880,22 @@ Providing the function for preparing, plotting, and animating the data.")
         (base32 "1pzgxz3xdp7c1swd5sxzlpyvvqv3shw8dxnbjwv1cr5g406p8970"))))
     (properties `((upstream-name . "animate")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-r6
                              r-r-utils
                              r-jsonlite
@@ -10935,13 +11140,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "0z4ajmgahgf07rr0z884i57lbr7miygapzknmjy7ibl317cl975y"))))
+        (base32 "06wqrdipcgbzlnd5h5f3q3rjd9l1imhwig7xig7rm9ikg19q9wd2"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -15699,13 +15904,13 @@ method).  Silva, Teixeira, and Manzione (2019)
 (define-public r-agriutilities
   (package
     (name "r-agriutilities")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agriutilities" version))
        (sha256
-        (base32 "1ynd3cy9ak6ns8vzknz790q4pz63gbj4v9992p3igihw56vx9znn"))))
+        (base32 "17707cdhrzpxcr0xm6kavy3p762yzrjxg4anwgfrhdmrhvygpirf"))))
     (properties `((upstream-name . "agriutilities")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15816,16 +16021,26 @@ multi-environment trials, uniformity trials, yield monitors, and more.")
 (define-public r-agricolaeplotr
   (package
     (name "r-agricolaeplotr")
-    (version "0.3.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agricolaeplotr" version))
        (sha256
-        (base32 "1z1p6f4xwky9mglm5bdpvzp3na4wkal6kvf2xscyrcm9slasxvay"))))
+        (base32 "0fy9h4r55dn7yxnjlxhy74sf9lcg22mllcg6nwaivp92w03vkccy"))))
     (properties `((upstream-name . "agricolaeplotr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster r-ggplot2 r-fieldhub r-agricolae))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stplanr
+                             r-sp
+                             r-sf
+                             r-raster
+                             r-ggspatial
+                             r-ggplot2
+                             r-fieldhub
+                             r-dplyr
+                             r-agricolae))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jensharbers/agricolaeplotr")
     (synopsis
@@ -18848,6 +19063,22 @@ allows you to customize additional searches.")
         (base32 "0gis7485m7gz3xz5wfxxm3136cg2j9i6f6zq8gbv206w261y1nfb"))))
     (properties `((upstream-name . "addinslist")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-xml2
                              r-shinyjs
                              r-shiny
@@ -19031,13 +19262,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.9.0")
+    (version "0.9.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1wgsdlama9982mrq1cbxy0h94w1ln6ll8di1r78jp4hd51539xwr"))))
+        (base32 "0xxaix8xvyw8qaf7yy7a6j417dwz5vlbxki4k2lp671ks6xg0c9m"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -20230,6 +20461,22 @@ brings together dictionaries from different sources.")
         (base32 "1qdxs20si1smjn24dlgq46x6qwjdwsa0f5lzh1vrbgv4kk9j1rfb"))))
     (properties `((upstream-name . "aceEditor")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rstudioapi r-reactr r-htmlwidgets r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/stla/aceEditor")

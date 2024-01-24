@@ -2196,6 +2196,22 @@ co-authorship networks).")
         (base32 "1g2q6h3cbm8v3gqz0f6v8bl5na9972k38d94czjfxmx4cv7wfgx8"))))
     (properties `((upstream-name . "klustR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-htmlwidgets))
     (native-inputs (list esbuild))
     (home-page "https://mckaymdavis.github.io/klustR/")
@@ -3489,6 +3505,22 @@ build lists of words.")
         (base32 "0jq7c70hyxpaxkrciy2jz4bf2mdcbcnmpjniwqffk1lkaxr0ni9b"))))
     (properties `((upstream-name . "keys")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-jsonlite r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/r4fun/keys")
@@ -4695,6 +4727,22 @@ energy supply.")
         (base32 "18cziglz8qy1v9gfcjiixq2d3l3na5p51zrxpy3x8asjiddq13d3"))))
     (properties `((upstream-name . "katex")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-v8))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://docs.ropensci.org/katex/")
@@ -4862,13 +4910,13 @@ is the first package implementing Karel in R.")
 (define-public r-karaoke
   (package
     (name "r-karaoke")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "karaoke" version))
        (sha256
-        (base32 "1kx11lijdffhhh8prjgsamshgg2v29b2i129fjqi079waa335352"))))
+        (base32 "09fxf2pgs7nj96p8cfwc8ghwl8aqk6zal8njizbrz19m6l7ygxmk"))))
     (properties `((upstream-name . "karaoke")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner r-seewave))

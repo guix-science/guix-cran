@@ -691,6 +691,33 @@ flexible time series plot, and spatial map generation.  It is a good pre-
 processing and post-processing tool for hydrological and hydraulic modellers.")
     (license license:gpl2)))
 
+(define-public r-hydrotsm
+  (package
+    (name "r-hydrotsm")
+    (version "0.7-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroTSM" version))
+       (sha256
+        (base32 "13jaz7mrjmfvankncfmnwxa0m2r78a9p686h0my3m3sv9bvz1qd6"))))
+    (properties `((upstream-name . "hydroTSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-xts r-lattice r-e1071 r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hzambran/hydroTSM")
+    (synopsis "Time Series Management and Analysis for Hydrological Modelling")
+    (description
+     "S3 functions for management, analysis, interpolation and plotting of time series
+used in hydrology and related environmental sciences.  In particular, this
+package is highly oriented to hydrological modelling tasks.  The focus of this
+package has been put in providing a collection of tools useful for the daily
+work of hydrologists (although an effort was made to optimise each function as
+much as possible, functionality has had priority over speed).  Bugs / comments /
+questions / collaboration of any kind are very welcomed, and in particular,
+datasets that can be included in this package for academic purposes.")
+    (license license:gpl2+)))
+
 (define-public r-hydrotoolkit
   (package
     (name "r-hydrotoolkit")
@@ -907,6 +934,32 @@ documented in Moore et al. (2019) <doi:10.3133/ofr20191096>), Cormen and
 Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
 <doi:10.1016/S0022-1694(99)00011-6>.")
     (license license:cc0)))
+
+(define-public r-hydrogof
+  (package
+    (name "r-hydrogof")
+    (version "0.5-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroGOF" version))
+       (sha256
+        (base32 "0fif5kwpkxkwfw00whfprwibg21bgyk2a93k6323k7gax2c3r5ff"))))
+    (properties `((upstream-name . "hydroGOF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-xts r-hydrotsm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hzambran/hydroGOF")
+    (synopsis
+     "Goodness-of-Fit Functions for Comparison of Simulated and Observed Hydrological Time Series")
+    (description
+     "S3 functions implementing both statistical and graphical goodness-of-fit
+measures between observed and simulated values, mainly oriented to be used
+during the calibration, validation, and application of hydrological models.
+Missing values in observed and/or simulated values can be removed before
+computations.  Comments / questions / collaboration of any kind are very
+welcomed.")
+    (license license:gpl2+)))
 
 (define-public r-hydrogeo
   (package
@@ -2384,6 +2437,22 @@ obsolete are not included.")
         (base32 "1zdnwbqlpjh8r2xcl83da9pzh9cb8h908krnrs61vqhka7zb82ng"))))
     (properties `((upstream-name . "html2R")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shinythemes r-shinyjqui r-shinyace r-shiny
                              r-glue))
     (native-inputs (list esbuild))
@@ -3409,6 +3478,22 @@ imputations are needed, following the work of von Hippel (2020)
         (base32 "00l1952hf2ngypg67y88rgn0xiicsjsyl6xf8r9r65ar9k0fl3yb"))))
     (properties `((upstream-name . "howler")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ashbaldry/howler")
@@ -4309,13 +4394,13 @@ R., & Grassi, R. (2023) <doi:10.48550/@code{arXiv.2304.01737>}.")
 (define-public r-hoardr
   (package
     (name "r-hoardr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoardr" version))
        (sha256
-        (base32 "0z34hgiwlgaljrfg0clmzx3fws1pdqq2hlg54awpvphz1qsx3r5r"))))
+        (base32 "0dws91z1a25ynkdjj3f1lgp6qbgvfgnqi0mw14f4b13m670il0sf"))))
     (properties `((upstream-name . "hoardr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-r6 r-digest))
@@ -5063,27 +5148,6 @@ of the methods, see, \"Latent Regression in Higher-Order Item Response Theory
 with the R Package hlt\"
 <https://mkleinsa.github.io/doc/hlt_proof_draft_brmic.pdf>.")
     (license license:gpl2+)))
-
-(define-public r-hlsm
-  (package
-    (name "r-hlsm")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HLSM" version))
-       (sha256
-        (base32 "1nvjgv8lbqpig9snnxm3k1qs1r7bf43gw7a3prj9l3kmqdd0i4j3"))))
-    (properties `((upstream-name . "HLSM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-igraph r-coda r-abind))
-    (home-page "https://cran.r-project.org/package=HLSM")
-    (synopsis "Hierarchical Latent Space Network Model")
-    (description
-     "This package implements Hierarchical Latent Space Network Model (HLSM) for
-ensemble of networks as described in Sweet, Thomas & Junker (2013).
-<DOI:10.3102/1076998612458702>.")
-    (license (license:fsdg-compatible "GPL (> 3)"))))
 
 (define-public r-hlmdiag
   (package
@@ -6623,6 +6687,22 @@ as zwl_test() in this package, provide a reliable and powerful test.")
         (base32 "02yyzfhzgkrp8hgdp2gyqrrvxzh9wqn3c90lyd9nlavn4qn4789z"))))
     (properties `((upstream-name . "highcharter")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-zoo
                              r-yaml
                              r-xts
@@ -6922,13 +7002,13 @@ regionalization results, and exporting region map and mean timeseries into
 (define-public r-hibayes
   (package
     (name "r-hibayes")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hibayes" version))
        (sha256
-        (base32 "1hl3p1vhknsdawds65yx95ghpj4rwyfgwhlln8xmxkfaw0rc7ymj"))))
+        (base32 "1n87xmpjl982xc2b2p63k1h4m9mmd24xn63lsaah140zgwnwaf7k"))))
     (properties `((upstream-name . "hibayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7624,13 +7704,13 @@ for easy rendering of the glyphs in an R terminal or graphics device.")
 (define-public r-hexfinder
   (package
     (name "r-hexfinder")
-    (version "0.8.0")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hexFinder" version))
        (sha256
-        (base32 "1lz3a08rrdiprs5ghbalyk5zn6g404yxqvzrqg89n2hsciqnbqlm"))))
+        (base32 "184fv8xbgaygsb8bxd0gzi1r5girc2i0s8816i7y5pb1ps8bqvzp"))))
     (properties `((upstream-name . "hexFinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9586,20 +9666,20 @@ challenge.  Methods used in the package refer to James Y. Dai, Janet L. Stanford
 (define-public r-hdmfa
   (package
     (name "r-hdmfa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDMFA" version))
        (sha256
-        (base32 "01gsz862m038y0b4y5aqq08n5514cjz9lxvqh0ybv2rd4gjmvnxs"))))
+        (base32 "19s3zflc7fhd2bwf8m7h5n4scd45li9izgw8aqv4prly46isnn3y"))))
     (properties `((upstream-name . "HDMFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-mass))
     (home-page "https://cran.r-project.org/package=HDMFA")
     (synopsis "High-Dimensional Matrix Factor Analysis")
     (description
-     "Hign-dimensional matrix factor models have drawn much attention in view of the
+     "High-dimensional matrix factor models have drawn much attention in view of the
 fact that observations are usually well structured to be an array such as in
 macroeconomics and finance.  In addition, data often exhibit heavy-tails and
 thus it is also important to develop robust procedures.  We aim to address this
@@ -9610,8 +9690,9 @@ norm, which leads to a weighted iterative projection approach to compute and
 learn the parameters and thereby named as Robust-Matrix-Factor-Analysis (RMFA),
 see the details in He et al. (2023)<doi:10.1080/07350015.2023.2191676>.  The
 other one is based on minimizing the element-wise Huber loss, which can be
-solved by an iterative Huber regression algorithm (IHR).  In this package, we
-also provide the algorithm for alpha-PCA by Chen & Fan (2021)
+solved by an iterative Huber regression algorithm (IHR), see the details in He
+et al. (2023) <@code{arXiv:2306.03317>}.  In this package, we also provide the
+algorithm for alpha-PCA by Chen & Fan (2021)
 <doi:10.1080/01621459.2021.1970569>, the Projected estimation (PE) method by Yu
 et al. (2022)<doi:10.1016/j.jeconom.2021.04.001>.  In addition, the methods for
 determining the pair of factor numbers are also given.")
@@ -10646,6 +10727,22 @@ Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
         (base32 "1pia593g50zf3286f9g51slkvrpj1iy7lws9d7a3nqgb2v3yji1y"))))
     (properties `((upstream-name . "hchinamap")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/czxa/hchinamap")
@@ -10871,13 +10968,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "1n4lz92mnk6wna7q3bln1w4lafsgfnqv03jkz0vj8kpv9d5gq03g"))))
+        (base32 "1jzadj50q45fb9awyqmy00aaaspkf91id88x4nv5swlj8nmai3mi"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10897,7 +10994,7 @@ various computational models with a single line of coding (Ahn et al., 2017)
                              r-dplyr
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jbolstad/hbamr/")
+    (home-page "https://jbolstad.github.io/hbamr/")
     (synopsis "Hierarchical Bayesian Aldrich-McKelvey Scaling via 'Stan'")
     (description
      "Perform hierarchical Bayesian Aldrich-@code{McKelvey} scaling using Hamiltonian
@@ -10909,7 +11006,8 @@ terms of yielding meaningful posterior distributions for respondent positions
 and in terms of recovering true respondent positions in simulations.  The
 package contains functions for preparing data, fitting models, extracting
 estimates, plotting key results, and comparing models using cross-validation.
-The default model is described in BÃ¸lstad (2023) <doi:10.1017/pan.2023.18>.")
+The original version of the default model is described in BÃ¸lstad (2024)
+<doi:10.1017/pan.2023.18>.")
     (license license:gpl3+)))
 
 (define-public r-hbal
@@ -11283,13 +11381,13 @@ default from 1995 to 2022 and of PC8 from 2001 to 2021, respectively.")
 (define-public r-harmonicmeanp
   (package
     (name "r-harmonicmeanp")
-    (version "3.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harmonicmeanp" version))
        (sha256
-        (base32 "17irfw8788yhh36698p9w8wab6wcin1yzfinlbs3gdg70d42zcnd"))))
+        (base32 "11lxiafclihb49j6psqrdb143sz1xv9v45fafj8dfm8r2yr5hp1g"))))
     (properties `((upstream-name . "harmonicmeanp")))
     (build-system r-build-system)
     (propagated-inputs (list r-fmstable))

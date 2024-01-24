@@ -4485,26 +4485,28 @@ Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 (define-public r-logicdt
   (package
     (name "r-logicdt")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logicDT" version))
        (sha256
-        (base32 "0bgbllrvjlrhr2cb65z741m07vpk02y7vwmxi2whivwfdnxqw0dc"))))
+        (base32 "0i60wqhhmscwhbcyril4n2g1hxja5w225s4vvnk778kd7s1ig6g2"))))
     (properties `((upstream-name . "logicDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet))
     (home-page "https://cran.r-project.org/package=logicDT")
     (synopsis "Identifying Interactions Between Binary Predictors")
     (description
-     "This package provides a global statistical learning method which tries to find
-the best set of predictors and interactions between predictors for modeling
-binary or quantitative response data.  Several search algorithms and ensembling
-techniques are implemented allowing for finetuning the method to the specific
-problem.  Interactions with single quantitative covariables can be properly
-taken into account by also splitting after those or by fitting local four
-parameter logistic models.")
+     "This package provides a statistical learning method that tries to find the best
+set of predictors and interactions between predictors for modeling binary or
+quantitative response data in a decision tree.  Several search algorithms and
+ensembling techniques are implemented allowing for finetuning the method to the
+specific problem.  Interactions with quantitative covariables can be properly
+taken into account by fitting local regression models.  Moreover, a variable
+importance measure for assessing marginal and interaction effects is provided.
+Implements the procedures proposed by Lau et al. (2024,
+<doi:10.1007/s10994-023-06488-6>).")
     (license license:expat)))
 
 (define-public r-logibin
@@ -7399,6 +7401,22 @@ default values to be inherited from another list.")
         (base32 "0hffp82mdk4rp34l3l50ph540mv0pdq6x9racmlcvis5lfpjicby"))))
     (properties `((upstream-name . "listviewer")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-shiny r-htmlwidgets r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://github.com/timelyportfolio/listviewer")
@@ -8497,37 +8515,6 @@ returns minimum distance estimator of parameter b in the model.")
      "This package provides functions to access and test results from a linear model.")
     (license license:expat)))
 
-(define-public r-lineardetect
-  (package
-    (name "r-lineardetect")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LinearDetect" version))
-       (sha256
-        (base32 "0i79k42avcv2nhk9p71a74zv8d204jgqzrs2mni6zp8brhwmxlki"))))
-    (properties `((upstream-name . "LinearDetect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsevar
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-glmnet
-                             r-ggplot2
-                             r-factoextra))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LinearDetect")
-    (synopsis
-     "Change Point Detection in High-Dimensional Linear Regression Models")
-    (description
-     "This package provides a unified framework for simultaneous structural break
-detection and parameter estimation in high-dimensional linear models.  The
-proposed method can handle a wide range of models, including change-in-mean
-model, multiple linear regression model, Vector auto-regressive model and
-Gaussian graphical model.")
-    (license license:gpl2)))
-
 (define-public r-lindleypowerseries
   (package
     (name "r-lindleypowerseries")
@@ -8965,6 +8952,7 @@ method are available in Plana-Ripoll et al. (2020)
                              r-rweka
                              r-reticulate
                              r-reshape
+                             r-rcy3
                              r-proc
                              r-princurve
                              r-preprocesscore
@@ -9891,39 +9879,6 @@ various loadable data files such call number / subject crosswalks and code
 tables.")
     (license license:gpl3)))
 
-(define-public r-liayson
-  (package
-    (name "r-liayson")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "liayson" version))
-       (sha256
-        (base32 "1h3xyy40zvmllqlskgnmm755m0xds66hgpgk48zc9i2i3qj6165j"))))
-    (properties `((upstream-name . "liayson")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer
-                             r-proxy
-                             r-plyr
-                             r-phangorn
-                             r-matlab
-                             r-gplots
-                             r-e1071
-                             r-distances
-                             r-biomart
-                             r-arules
-                             r-ape))
-    (home-page "https://github.com/noemiandor/liayson")
-    (synopsis
-     "Linking Singe-Cell Transcriptomes Atween Contemporary Subpopulation Genomes")
-    (description
-     "Given an RNA-seq derived cell-by-gene matrix and an DNA-seq derived copy number
-segmentation, LIAYSON predicts the number of clones present in a tumor, their
-size, the copy number profile of each clone and the clone membership of each
-single cell (Andor, N. & Lau, B., et al. (2018) <doi:10.1101/445932>).")
-    (license license:gpl2)))
-
 (define-public r-lhmixr
   (package
     (name "r-lhmixr")
@@ -10790,13 +10745,13 @@ originals.")
 (define-public r-lesssem
   (package
     (name "r-lesssem")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessSEM" version))
        (sha256
-        (base32 "1i15acfav9jx5l9ky75ir4r9axv746wgx18sppp6xsx2i8dcd67a"))))
+        (base32 "10wh8rx3rbr3gprmd5x633k68hxc1afqm6m5l3cinib4acdp0r22"))))
     (properties `((upstream-name . "lessSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11470,25 +11425,6 @@ for anyone wishing to understand PCA better.  A few convenience functions are
 provided as well.")
     (license license:gpl3)))
 
-(define-public r-learnn
-  (package
-    (name "r-learnn")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "learNN" version))
-       (sha256
-        (base32 "0q0j25vi7hrwaf38y10m24czf3rsvj937jvkz3ns12bd8srlflah"))))
-    (properties `((upstream-name . "learNN")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=learNN")
-    (synopsis "Examples of Neural Networks")
-    (description
-     "Implementations of several basic neural network concepts in R, as based on posts
-on \\url{http://qua.st/}.")
-    (license license:gpl3)))
-
 (define-public r-learningtower
   (package
     (name "r-learningtower")
@@ -11658,6 +11594,22 @@ explains non expert users how hierarchical clustering algorithms work.")
         (base32 "0kga9n0ia2zljyw4xa9n572zmxpwql8xd3ys4p9jp02h432pfkpp"))))
     (properties `((upstream-name . "LeArEst")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-opencpu r-jpeg r-foreach r-doparallel
                              r-conicfit))
     (native-inputs (list esbuild))
@@ -11890,6 +11842,22 @@ htmlwidgets'.")
         (base32 "06d2k5x6bnv7bf4aw2bayi8sh5bw8z6akwnp7da5s7454hyqn0vv"))))
     (properties `((upstream-name . "leafpm")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-sf
                              r-leaflet
                              r-jsonlite
@@ -11920,6 +11888,22 @@ lines or to enable/disable snapping to align shapes.")
         (base32 "0pmgr9c3z5zdm13kb17ldjdl3i792mv20gbxzn1asfyf7csp7jxi"))))
     (properties `((upstream-name . "leaflet.minicharts")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-leaflet r-htmltools))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://cran.r-project.org/package=leaflet.minicharts")
@@ -11943,6 +11927,22 @@ single map.")
         (base32 "0r17wj2qg85y6wcszmbq6nf49k5ddsfprqdscqg2bwdszxrvw2c9"))))
     (properties `((upstream-name . "leaflet.extras2")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-magrittr r-leaflet r-htmltools))
     (native-inputs (list esbuild))
     (home-page "https://trafficonese.github.io/leaflet.extras2/")
@@ -12055,6 +12055,22 @@ browser using @code{WebGl}'.")
         (base32 "1qvmygxm5957k7mnbi05vs3sjcwng9f18hbxx6143nl38fm5pzfy"))))
     (properties `((upstream-name . "leafem")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-sf
                              r-raster
                              r-png
@@ -12451,13 +12467,13 @@ follows closely the book: \"Hidden Markov Models for Time Series\", by Zucchini,
 (define-public r-lddmm
   (package
     (name "r-lddmm")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lddmm" version))
        (sha256
-        (base32 "1y8zcjdfwqknw5r1y7lypmrwkm4yf2a2riqqpmvw6immiilcb40w"))))
+        (base32 "1xnqmhhv9yqkjbwbpz5s25bvzjy99zs6hmy1grbx6f324k3bapq7"))))
     (properties `((upstream-name . "lddmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13975,13 +13991,13 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavasearch2
   (package
     (name "r-lavasearch2")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaSearch2" version))
        (sha256
-        (base32 "04rd1r4qy1jiqmmda3h1gbihsyva88djq1apfil89v4lqr0za0b8"))))
+        (base32 "16h3i577b0nxqmm1zk0g8yr30xdl66i96abjjdkr2z20852z264n"))))
     (properties `((upstream-name . "lavaSearch2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -14693,13 +14709,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.4")
+    (version "5.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "0qyzxg68ihsgp7sd8iyjhsa3jhlvj88hwnnq2kz97znw5gfd6rx2"))))
+        (base32 "0nri8k87yr49p3h6szjsj73v6dlf1w62dd59vmj47sr1c83avnla"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -14715,10 +14731,8 @@ visualization tools.")
                              r-lubridate
                              r-jsonlite
                              r-httr
-                             r-h2o
                              r-ggplot2
                              r-dplyr))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/laresbernardo/lares")
     (synopsis "Analytics & Machine Learning Sidekick")
     (description
@@ -14834,6 +14848,22 @@ statistics using R'', Cambridge University Press, 2008.")
         (base32 "1q82shdcdd84nr6bnfwgyyb81z8dycvj1i3vhwvdg710s15rgiyk"))))
     (properties `((upstream-name . "languagelayeR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-jsonlite r-httr r-curl r-attempt))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/ColinFay/languagelayer")
