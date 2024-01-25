@@ -2586,6 +2586,38 @@ methods includes simulation and estimation of the parameters.")
 design, i.e.  when each test is applied to each subject in the study.")
     (license license:gpl3+)))
 
+(define-public r-dtcomb
+  (package
+    (name "r-dtcomb")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtComb" version))
+       (sha256
+        (base32 "1s1g6viw5nr0yfgk2wmxdr8jm1bvhgclwm4cwq7017q67lhy7hgw"))))
+    (properties `((upstream-name . "dtComb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc
+                             r-optimalcutpoints
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-gam
+                             r-epir
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gokmenzararsiz/dtComb")
+    (synopsis "Statistical Combination of Diagnostic Tests")
+    (description
+     "This package provides a system for combining two diagnostic tests using various
+approaches that include statistical and machine-learning-based methodologies.
+These approaches are divided into four groups: linear combination methods,
+non-linear combination methods, mathematical operators, and machine learning
+algorithms.  See the <http://biosoft.erciyes.edu.tr/app/@code{dtComb>} website
+for more information, documentation, and examples.")
+    (license license:expat)))
+
 (define-public r-dtbm
   (package
     (name "r-dtbm")
@@ -8479,47 +8511,6 @@ summary ROC curve and some related AUC-based inference methods are available
 (Noma et al. (2021) <doi:10.1080/23737484.2021.1894408>).")
     (license license:gpl3)))
 
-(define-public r-dmcfun
-  (package
-    (name "r-dmcfun")
-    (version "3.5.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DMCfun" version))
-       (sha256
-        (base32 "19975m3bclj1gzwp86cv0bc36aknhzkd25bnvvdqk89s0sfkzbaq"))))
-    (properties `((upstream-name . "DMCfun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcpp
-                             r-pbapply
-                             r-dplyr
-                             r-deoptim
-                             r-bh))
-    (home-page "https://github.com/igmmgi/DMCfun")
-    (synopsis "Diffusion Model of Conflict (DMC) in Reaction Time Tasks")
-    (description
-     "DMC model simulation detailed in Ulrich, R., Schroeter, H., Leuthold, H., &
-Birngruber, T. (2015).  Automatic and controlled stimulus processing in conflict
-tasks: Superimposed diffusion processes and delta functions.  Cognitive
-Psychology, 78, 148-174.  Ulrich et al. (2015)
-<doi:10.1016/j.cogpsych.2015.02.005>.  Decision processes within choice
-reaction-time (CRT) tasks are often modelled using evidence accumulation models
-(EAMs), a variation of which is the Diffusion Decision Model (DDM, for a review,
-see Ratcliff & @code{McKoon}, 2008).  Ulrich et al. (2015) introduced a
-Diffusion Model for Conflict tasks (DMC).  The DMC model combines common
-features from within standard diffusion models with the addition of superimposed
-controlled and automatic activation.  The DMC model is used to explain
-distributional reaction time (and error rate) patterns in common behavioural
-conflict-like tasks (e.g., Flanker task, Simon task).  This R-package implements
-the DMC model and provides functionality to fit the model to observed data.
-Further details are provided in the following paper: Mackenzie, I.G., &
-Dudschig, C. (2021).  DMCfun: An R package for fitting Diffusion Model of
-Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
-100074. <doi:10.1016/j.metip.2021.100074>.")
-    (license license:expat)))
-
 (define-public r-dmbc
   (package
     (name "r-dmbc")
@@ -9416,13 +9407,13 @@ and installs all these related packages in a single step.")
 (define-public r-divemove
   (package
     (name "r-divemove")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diveMove" version))
        (sha256
-        (base32 "1jq24qys802s9cab3r9fag9jq994wjg6vni6sxd2psng846hixic"))))
+        (base32 "04naajbri3jrdcggh7ja1niyqb4l2afawpcw5nay0bx7823i5nhq"))))
     (properties `((upstream-name . "diveMove")))
     (build-system r-build-system)
     (propagated-inputs (list r-unireg r-quantreg r-plotly r-kernsmooth
@@ -9990,6 +9981,35 @@ univariate distributions.")
 theoretical background of distory is published in Billera et al. (2001)
 \"Geometry of the space of phylogenetic trees.\" <doi:10.1006/aama.2001.0759>.")
     (license license:bsd-3)))
+
+(define-public r-distops
+  (package
+    (name "r-distops")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distops" version))
+       (sha256
+        (base32 "02r6zf4jmk29879gvlxg7mh0lf9r8d340vb48md2swis25nidgx1"))))
+    (properties `((upstream-name . "distops")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-rcppparallel
+                             r-rcpp
+                             r-glue
+                             r-fs
+                             r-desc
+                             r-cli))
+    (home-page "https://github.com/lmjl-alea/distops")
+    (synopsis "Usual Operations for Distance Matrices in R")
+    (description
+     "It provides the subset operator for dist objects and a function to compute
+medoid(s) that are fully parallelized leveraging the @code{RcppParallel}
+package.  It also provides functions for package developers to easily implement
+their own parallelized dist() function using a custom C++'-based distance
+function.")
+    (license license:expat)))
 
 (define-public r-disto
   (package
@@ -12511,16 +12531,16 @@ Dooley et al. (2015) <doi:10.1111/ele.12504>.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodels" version))
        (sha256
-        (base32 "0fkflbv3ayhvwlixh4fpzx9fkz6hd6vzq2zdb3gzbr31nrfcdaxx"))))
+        (base32 "0zhqdy1f8mzq73xhi5h14bjncbxx9qv13v9sb718va0mn1a41ljv"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-multcomp r-hnp))
+    (propagated-inputs (list r-rootsolve r-multcomp r-hnp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DImodels")
     (synopsis "Diversity-Interactions (DI) Models")
@@ -24448,13 +24468,13 @@ sample preserving source structure.")
 (define-public r-dataexplorer
   (package
     (name "r-dataexplorer")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataExplorer" version))
        (sha256
-        (base32 "0451fnlaqvyzpqhn25g6lj2svjfsfaxii9vmwhqw7p29fl71zaln"))))
+        (base32 "11a0b6jrvf81sa0a8595q48j66qky4xya3mvr3vr41vj0k98p90y"))))
     (properties `((upstream-name . "DataExplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

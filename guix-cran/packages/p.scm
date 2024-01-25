@@ -241,55 +241,6 @@ interpolation algorithm.  The result is a @code{SpatialGridDataFrame}.  Methods
 are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
     (license license:gpl2+)))
 
-(define-public r-pxwebapidata
-  (package
-    (name "r-pxwebapidata")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PxWebApiData" version))
-       (sha256
-        (base32 "1zp66rl61wcylbs2piqc3gj8n1d0z1z5hpc4gfm6rxqgav9ii9kb"))))
-    (properties `((upstream-name . "PxWebApiData")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjstat r-pxweb r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/statisticsnorway/PxWebApiData")
-    (synopsis "PX-Web Data by API")
-    (description
-     "Function to read PX-Web data into R via API. The example code reads data from
-the three national statistical institutes, Statistics Norway, Statistics Sweden
-and Statistics Finland.")
-    (license (list license:asl2.0
-                   (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-pxweb
-  (package
-    (name "r-pxweb")
-    (version "0.16.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pxweb" version))
-       (sha256
-        (base32 "08lwi9adf5wavpc2cbqgyyf3cygih79wkrzf2naydnlf8xn3jcm4"))))
-    (properties `((upstream-name . "pxweb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/rOpenGov/pxweb/")
-    (synopsis "R Interface to PXWEB APIs")
-    (description
-     "Generic interface for the PX-Web/PC-Axis API. The PX-Web/PC-Axis API is used by
-organizations such as Statistics Sweden and Statistics Finland to disseminate
-data.  The R package can interact with all PX-Web/PC-Axis APIs to fetch
-information about the data hierarchy, extract metadata and extract and parse
-statistics to R data.frame format.  PX-Web is a solution to disseminate PC-Axis
-data files in dynamic tables on the web.  Since 2013 PX-Web contains an API to
-disseminate PC-Axis files.")
-    (license license:bsd-2)))
-
 (define-public r-pxr
   (package
     (name "r-pxr")
@@ -6091,13 +6042,13 @@ index (PI) from an RNA-seq dataset.  As described in Ramaker & Lasseigne, et al.
 (define-public r-projmgr
   (package
     (name "r-projmgr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "projmgr" version))
        (sha256
-        (base32 "1iysxcl6awvp7zbm04zyq4d9659fcz3sy711jnycsxhsk8hsvmc2"))))
+        (base32 "0wj96zvvhpnh6cn2sm3n4nv746v76ybv7blx0lsq98xwk4abqp8k"))))
     (properties `((upstream-name . "projmgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-gh))
@@ -10317,13 +10268,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "14mvvxx2780l7sl0kwsldgvzi9xpn9vbq0kdnqr5x0b8qk8mwg8m"))))
+        (base32 "1gxcsjh3nqqn8qdm6qy29ghzmgja43iba52a9vggx0594fwk9qa3"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -25206,17 +25157,17 @@ Econometrics with R, ISBN:978-1-118-94918-4.")
 (define-public r-pgirmess
   (package
     (name "r-pgirmess")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgirmess" version))
        (sha256
-        (base32 "1wdfybi6s976sqa8n1q7jni99xbwdmbi0zycl4nqk4kl1nqixlbm"))))
+        (base32 "1c1sccpc31xxrdmvybl1xviwfwq05mdhfk2brfaf0mq8kb7p2lkn"))))
     (properties `((upstream-name . "pgirmess")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sp r-sf r-boot))
-    (home-page "https://giraudoux.pagesperso-orange.fr")
+    (home-page "https://github.com/pgiraudoux/pgirmess")
     (synopsis "Spatial Analysis and Data Mining for Field Ecologists")
     (description
      "Set of tools for reading, writing and transforming spatial and seasonal data,
@@ -28403,17 +28354,17 @@ random detachment.")
 (define-public r-peaksegoptimal
   (package
     (name "r-peaksegoptimal")
-    (version "2018.05.25")
+    (version "2024.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegOptimal" version))
        (sha256
-        (base32 "0j39jzy4r0h787vs3klgbpcmb096ds3hzhvv5w3xs53kl0qkypj4"))))
+        (base32 "0xh7z8h74jiz5yaj3hkgm1j3my6518fyj5235w54462ahdsafz7m"))))
     (properties `((upstream-name . "PeakSegOptimal")))
     (build-system r-build-system)
     (propagated-inputs (list r-penaltylearning))
-    (home-page "https://cran.r-project.org/package=PeakSegOptimal")
+    (home-page "https://github.com/tdhock/PeakSegOptimal")
     (synopsis "Optimal Segmentation Subject to Up-Down Constraints")
     (description
      "Computes optimal changepoint models using the Poisson likelihood for
@@ -28427,13 +28378,13 @@ al.")
 (define-public r-peaksegjoint
   (package
     (name "r-peaksegjoint")
-    (version "2023.4.24")
+    (version "2024.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegJoint" version))
        (sha256
-        (base32 "0yak9dyy3a6jncgdh4p6q4xxc2pddb0zifs68ivmpq4gf38lksj3"))))
+        (base32 "0jq6ch623vgxmg8z6jwgprk6szqp8qbjzy743yl7qgj906pdg79v"))))
     (properties `((upstream-name . "PeakSegJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-penaltylearning r-peakerror))
@@ -28450,16 +28401,16 @@ detection via joint segmentation of multiple count data samples\"
 (define-public r-peaksegdp
   (package
     (name "r-peaksegdp")
-    (version "2017.08.15")
+    (version "2024.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegDP" version))
        (sha256
-        (base32 "1ndf4d4ikcyqi0k51kil2jw777z4c1m4pda3dahrjmjyz0jhrhkw"))))
+        (base32 "0kqbjxprvxswkmvqzzzb4yxihz2cn6z40y021cfh6sr0k8hydd2a"))))
     (properties `((upstream-name . "PeakSegDP")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=PeakSegDP")
+    (home-page "https://github.com/tdhock/PeakSegDP")
     (synopsis
      "Dynamic Programming Algorithm for Peak Detection in ChIP-Seq Data")
     (description
@@ -32276,13 +32227,13 @@ Hothorn et al. (2006) <doi:10.1198/106186006X133933>, Zeileis et al. (2008)
 (define-public r-parttime
   (package
     (name "r-parttime")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parttime" version))
        (sha256
-        (base32 "0xmxbvar4xazhnzmq9fdpyczsywjjc9dif350h9y77ydrj5i5xcz"))))
+        (base32 "0n8yyi2c14b0rharb2afj9xkmjjfqalzyl164m5arzscwpxl9y2i"))))
     (properties `((upstream-name . "parttime")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-pillar r-lubridate r-crayon))
@@ -32419,13 +32370,13 @@ al. (2019) <doi:10.1111/2041-210X.13285>.")
 (define-public r-partition
   (package
     (name "r-partition")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "partition" version))
        (sha256
-        (base32 "19f1j6hm35c57r2x51nh2kns3jyd85xxg06lgd94kb13brr1hk2v"))))
+        (base32 "0h58dzwmndvaz535hshv50c657gjpadv2g60mylj4rb064li51lk"))))
     (properties `((upstream-name . "partition")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -32435,6 +32386,7 @@ al. (2019) <doi:10.1111/2041-210X.13285>.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
+                             r-progress
                              r-pillar
                              r-mass
                              r-magrittr
@@ -32454,8 +32406,8 @@ Each reduced variable is also interpretable: the original variables map to one
 and only one variable in the reduced data set.  partition is flexible, as well:
 how variables are selected to reduce, how information loss is measured, and the
 way data is reduced can all be customized.  partition is based on the Partition
-framework discussed in Millstein et al. (2020) <doi:
-10.1093/bioinformatics/btz661>.")
+framework discussed in Millstein et al. (2020)
+<doi:10.1093/bioinformatics/btz661>.")
     (license license:expat)))
 
 (define-public r-particles
@@ -33719,39 +33671,6 @@ close to 100%.  There is a lack of R package for PPV CI calculation.  we
 developed a publicly available R package along with this shiny app to implement
 the proposed approach and some other existing methods.")
     (license license:gpl3)))
-
-(define-public r-papaja
-  (package
-    (name "r-papaja")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "papaja" version))
-       (sha256
-        (base32 "08ydk9fws5x37q120cdjdx1dsib0y2g9bp826vxzxcaymlwx3dl7"))))
-    (properties `((upstream-name . "papaja")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-yaml
-                             r-tinylabels
-                             r-rmdfiltr
-                             r-rmarkdown
-                             r-knitr
-                             r-glue
-                             r-broom
-                             r-bookdown))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/crsh/papaja")
-    (synopsis
-     "Prepare American Psychological Association Journal Articles with R Markdown")
-    (description
-     "This package provides tools to create dynamic, submission-ready manuscripts,
-which conform to American Psychological Association manuscript guidelines.  We
-provide R Markdown document formats for manuscripts (PDF and Word) and revision
-letters (PDF).  Helper functions facilitate reporting statistical analyses or
-create publication-ready tables and plots.")
-    (license license:expat)))
 
 (define-public r-pantarhei
   (package

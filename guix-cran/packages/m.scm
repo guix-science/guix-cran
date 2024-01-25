@@ -3975,18 +3975,19 @@ available at <DOI:10.18637/jss.v005.i06>.")
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "083xwcvciap9la97zk9af2phsvakmh4lamn43a9dsvj93w2sv2rv"))))
+        (base32 "0kjh65c6hb7y1j68qk312avs7w0x86m8nyar1fynar508va1npjz"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
                              r-tidyr
                              r-tibble
+                             r-survival
                              r-stringr
                              r-stanheaders
                              r-rstantools
@@ -6776,13 +6777,13 @@ database and examine individual tables and views.")
 (define-public r-msspchelpr
   (package
     (name "r-msspchelpr")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msSPChelpR" version))
        (sha256
-        (base32 "1ak1zh57z4j97ih79w739a4h9pkz641gna7lk2gpmjkcpva5rrxs"))))
+        (base32 "0m2cijzdgxq3f0ncqvk8klb2hvndm5rzl4swwh62wck12n7z250g"))))
     (properties `((upstream-name . "msSPChelpR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -6792,10 +6793,10 @@ database and examine individual tables and views.")
                              r-sjlabelled
                              r-rlang
                              r-purrr
-                             r-progress
                              r-magrittr
                              r-lubridate
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://marianschmidt.github.io/msSPChelpR/")
     (synopsis "Helper Functions for Second Primary Cancer Analyses")
@@ -10904,50 +10905,6 @@ and quadratic discriminant analysis, and models produced by the caret package's
 train().  It's straightforward to add in other other model architectures.")
     (license license:expat)))
 
-(define-public r-mosaiccalc
-  (package
-    (name "r-mosaiccalc")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mosaicCalc" version))
-       (sha256
-        (base32 "15i1gw0pyywm28k5cf8q2lwp4g0brxyc3xrwn3fz2w7gxhmmmjyy"))))
-    (properties `((upstream-name . "mosaicCalc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-sp
-                             r-ryacas
-                             r-rlang
-                             r-plotly
-                             r-orthopolynom
-                             r-mosaiccore
-                             r-mosaic
-                             r-metr
-                             r-matrix
-                             r-mass
-                             r-glue
-                             r-ggplot2
-                             r-ggformula
-                             r-dplyr
-                             r-deriv
-                             r-cubature))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ProjectMOSAIC/mosaicCalc")
-    (synopsis "R-Language Based Calculus Operations for Teaching")
-    (description
-     "Software to support the introductory *MOSAIC Calculus* textbook
-<https://www.mosaic-web.org/MOSAIC-Calculus/>), one of many data- and
-modeling-oriented educational resources developed by Project MOSAIC
-(<https://www.mosaic-web.org/>).  Provides symbolic and numerical
-differentiation and integration, as well as support for applied linear algebra
-(for data science), and differential equations/dynamics.  Includes
-grammar-of-graphics-based functions for drawing vector fields, trajectories,
-etc.  The software is suitable for general use, but intended mainly for teaching
-calculus.")
-    (license license:gpl2+)))
-
 (define-public r-mortcast
   (package
     (name "r-mortcast")
@@ -12980,13 +12937,13 @@ method.")
 (define-public r-modtools
   (package
     (name "r-modtools")
-    (version "0.9.4")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModTools" version))
        (sha256
-        (base32 "111rhdw917rynwsh6l6nsma5pjyi3ix9gjy5fx620d6ywcq7b227"))))
+        (base32 "0f5afik98wg1yv722k3aycm35h3lv0pbd6zlsy4nvrnd51pdda4c"))))
     (properties `((upstream-name . "ModTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -12996,7 +12953,6 @@ method.")
                              r-robustbase
                              r-relaimpo
                              r-randomforest
-                             r-pscl
                              r-proc
                              r-nnet
                              r-neuralnettools
@@ -15241,13 +15197,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "18ka7g55q59cwr0hmdwy9wfi9vclzghqk4r3l0vdxnpb1p78rlr0"))))
+        (base32 "09g4rs615l80m2crsqpndbwyic2k00kmmnwk8rxnkz5bp179mwr5"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -20985,6 +20941,30 @@ al. (2019) <doi:10.1177/0013164418805532> and Kim et al. (2005)
 <doi:10.1093/bioinformatics/bth499>.")
     (license license:gpl3)))
 
+(define-public r-missmech
+  (package
+    (name "r-missmech")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MissMech" version))
+       (sha256
+        (base32 "0qxdmqnwahp1m7kgckp1cv4asjb2b8ngyhqps4vxy6qaha15cnk2"))))
+    (properties `((upstream-name . "MissMech")))
+    (build-system r-build-system)
+    (home-page "https://github.com/indenkun/MissMech")
+    (synopsis
+     "Testing Homoscedasticity, Multivariate Normality, and Missing Completely at Random")
+    (description
+     "To test whether the missing data mechanism, in a set of incompletely observed
+data, is one of missing completely at random (MCAR).  For detailed description
+see Jamshidian, M. Jalal, S., and Jansen, C. (2014). \"@code{MissMech}: An R
+Package for Testing Homoscedasticity, Multivariate Normality, and Missing
+Completely at Random (MCAR)\", Journal of Statistical Software, 56(6), 1-31.
+<https://www.jstatsoft.org/v56/i06/> <doi:10.18637/jss.v056.i06>.")
+    (license license:gpl2+)))
+
 (define-public r-missmda
   (package
     (name "r-missmda")
@@ -21803,13 +21783,13 @@ mixture, and zero-inflated response models are supported.")
 (define-public r-mirsea
   (package
     (name "r-mirsea")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiRSEA" version))
        (sha256
-        (base32 "0jpl6ws5yx1qjzdnip9a37nmvx81az4cbsjm57x613qjpwmg6by3"))))
+        (base32 "1pjahnsaiw2rcfcdhavq65d4gkp224aw8w69l731dlkb9iiydbgf"))))
     (properties `((upstream-name . "MiRSEA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MiRSEA")
@@ -25250,13 +25230,13 @@ allowed) considered from multiple layers of categories.")
 (define-public r-mhd
   (package
     (name "r-mhd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MHD" version))
        (sha256
-        (base32 "0gm80ags0916j0iynr2zbn539bafrx4ni0407v222g04c323vs7c"))))
+        (base32 "0ghl1ah8b1k1czj01dfqms2k2gvzp09mn3qrl8qv3q3mwa8xs4i8"))))
     (properties `((upstream-name . "MHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-plyr r-nloptr r-manifold r-distory))
@@ -28244,13 +28224,13 @@ promote workflow scalability.")
 (define-public r-metapack
   (package
     (name "r-metapack")
-    (version "0.2.0")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metapack" version))
        (sha256
-        (base32 "0npyjj93kk8zc2xcsyfm3v09my89zw9f1smrnl4kpcpwyk3g1q6a"))))
+        (base32 "17j3xivpyq17is5vzmca9zck6dryzfnrzddvppik4ml3xq122br9"))))
     (properties `((upstream-name . "metapack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -28261,7 +28241,7 @@ promote workflow scalability.")
                              r-formula
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "http://merlot.stat.uconn.edu/packages/metapack/")
+    (home-page "https://events.stat.uconn.edu/metapack/")
     (synopsis "Bayesian Meta-Analysis and Network Meta-Analysis")
     (description
      "This package contains functions performing Bayesian inference for meta-analytic
@@ -34616,13 +34596,13 @@ threshold of binary classification.")
 (define-public r-mccca
   (package
     (name "r-mccca")
-    (version "1.1.0")
+    (version "1.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mccca" version))
        (sha256
-        (base32 "0iw4pgypdhxwny93b80y69kwwpqvmbv71qa05jlhylx7lqbsnbyb"))))
+        (base32 "1bmcncm53pbmc9dv61rwmp8xk9zf70ihw2gg6d0lmd1sgmf5i4hz"))))
     (properties `((upstream-name . "mccca")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -35782,13 +35762,13 @@ of data processing systems for environmental time series.")
 (define-public r-mazamalocationutils
   (package
     (name "r-mazamalocationutils")
-    (version "0.4.1")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaLocationUtils" version))
        (sha256
-        (base32 "0p3brfsbjlpzi2dnvd8iyg9w19hgyj4ipvm5jcabrq0wdb142bli"))))
+        (base32 "0adzwzykp410d63dxn3izkf7nmpvlxabzzw80d0205gbs3624yrd"))))
     (properties `((upstream-name . "MazamaLocationUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygeocoder
@@ -38678,13 +38658,13 @@ regression models.")
 (define-public r-mareymap
   (package
     (name "r-mareymap")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MareyMap" version))
        (sha256
-        (base32 "0zbg72vck9p14zk1924407n5ap84qiisqhbq1vr715sw67fwdcxi"))))
+        (base32 "0d98pammyqa69cqgihinfbg2zay7akzvh92fy77s3vbdfnk8svg5"))))
     (properties `((upstream-name . "MareyMap")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MareyMap")
@@ -39048,13 +39028,13 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "0nfik6a7qmwb62xq4l6z9jj12qiihk4mfqn545nw2pvkmszcyhjz"))))
+        (base32 "15ww2b9n3vd41dm6iz13ir2z477smabyc7417rvbnjr09jr7h37w"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-giscor r-countrycode))
@@ -39989,31 +39969,32 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.3.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1mp8bmangw5bczwhj8rfa6dyky1c6i5dm1d8qnk6vgl36d1iacb8"))))
+        (base32 "16g5wg44pb69df7b7rhzabq0krn9pynq1zz46kvdimd9dsr9v0mx"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
+                             r-pillar
                              r-network
                              r-igraph
                              r-ggraph
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://snlab-ch.github.io/manynet/")
-    (synopsis "Many Ways to Make, Modify, and Map Myriad Networks")
+    (home-page "https://stocnet.github.io/manynet/")
+    (synopsis "Many Ways to Make, Modify, Mark, and Map Myriad Networks")
     (description
-     "This package provides a set of tools for making, modifying, and mapping many
-different types of networks.  All functions operate with matrices, edge lists,
-and igraph', network', and tidygraph objects, and on one-mode, two-mode
+     "This package provides a set of tools for making, modifying, marking, and mapping
+many different types of networks.  All functions operate with matrices, edge
+lists, and igraph', network', and tidygraph objects, and on one-mode, two-mode
 (bipartite), and sometimes three-mode networks.  The package includes functions
-for importing and exporting, creating and generating networks, molding and
-manipulating networks and node and tie attributes, and describing and
-visualizing networks with sensible defaults.")
+for importing and exporting, creating and generating networks, modifying
+networks and node and tie attributes, and describing and visualizing networks
+with sensible defaults.")
     (license license:expat)))
 
 (define-public r-manymome-table
@@ -41578,24 +41559,24 @@ described in Chaston, J.M. et al. (2014) <doi:10.1128/@code{mBio.01631-14>}.")
 (define-public r-magmar
   (package
     (name "r-magmar")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magmaR" version))
        (sha256
-        (base32 "19jnzggjqnlv3gnc3zjfmphkwjy1y5xp6bgc2nnr6mwfs4rfxscn"))))
+        (base32 "04c1wvz8r6msc6jq6xv5w75sqza8xcfnawzayniyzdg6k2lr7hr5"))))
     (properties `((upstream-name . "magmaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-crul))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=magmaR")
-    (synopsis "R-Client for 'Magma' of the 'UCSF Mount Etna Data Library'")
+    (synopsis "R-Client for Interacting with the 'UCSF Data Library'")
     (description
      "This package provides a client for interacting with magma', the data warehouse
-of the UCSF Mount Etna Data Library'. @code{magmaR} includes functions for
-querying and downloading data from magma', in order to enable working with such
-data in R, as well as for uploading local data to magma'.")
+of the UCSF Data Library'. @code{magmaR} includes functions for querying and
+downloading data from magma', in order to enable working with such data in R, as
+well as for uploading local data to magma'.")
     (license license:gpl2)))
 
 (define-public r-magmaclustr

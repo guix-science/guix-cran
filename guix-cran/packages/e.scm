@@ -4148,13 +4148,13 @@ exponential.")
 (define-public r-eventstudyr
   (package
     (name "r-eventstudyr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventstudyr" version))
        (sha256
-        (base32 "1yv7l9p3l68jmbhywi3dw1inyjkpjjcx8zq1j2ndm48h60vk8527"))))
+        (base32 "11amh8v741hzjm1rb01mil030ax8nnv7l46nqikz978f39pb4xla"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18254,13 +18254,13 @@ and quantify the dissimilarity between two or more ecological dynamic regimes.")
 (define-public r-ecoreg
   (package
     (name "r-ecoreg")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoreg" version))
        (sha256
-        (base32 "1bhh4bnvrvgz49wim5r0b4awfsn9l23wvl4kl0vny0s4hm7cgahc"))))
+        (base32 "09iyzl4d68angcrqifpl62y4y4flhib34g8wgq2xxaggmbhvyzwa"))))
     (properties `((upstream-name . "ecoreg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ecoreg")

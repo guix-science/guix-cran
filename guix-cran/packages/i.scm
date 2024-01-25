@@ -4779,13 +4779,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "1bvsy5078qsv0jsyfdf6mpih2jibnqp2a8gsdi9z6gvk7vq7zpjk"))))
+        (base32 "1l5lfmrr36whbvzxnlrzhy8wphsmkk8ffry7cghvsf0cw8sala8m"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -12859,6 +12859,28 @@ Instagram is a web photo sharing service.  It can be found at:
      "Iterated Function Systems Estimator as in Iacus and La Torre (2005)
 <doi:10.1155/JAMDS.2005.33>.")
     (license license:gpl2+)))
+
+(define-public r-ifpd
+  (package
+    (name "r-ifpd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifpd" version))
+       (sha256
+        (base32 "06vylxzwk2p5wprxvzwj6wydsa1v9pfzd1v03m0jwgwk272slfg6"))))
+    (properties `((upstream-name . "ifpd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-readxl))
+    (home-page "https://github.com/mubarakfadhlul/ifpd")
+    (synopsis "Indonesia Food Prices Data")
+    (description
+     "Imputation of missing values using the last observation carried forward
+technique on Indonesia food prices data that is time series data.  Also, this
+technique applies imputation to data whose dates do not appear directly.  So
+that the series assumptions in the time series data are met.")
+    (license license:gpl3)))
 
 (define-public r-ifp
   (package

@@ -3598,46 +3598,6 @@ observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-survivalsl
-  (package
-    (name "r-survivalsl")
-    (version "0.91")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalSL" version))
-       (sha256
-        (base32 "036iwx6rr27n9g5fiy3ydm81wcsmyvmz9h6846pgzp65gw0bfi93"))))
-    (properties `((upstream-name . "survivalSL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tune
-                             r-timeroc
-                             r-survivalmodels
-                             r-survival
-                             r-superlearner
-                             r-rpart
-                             r-reticulate
-                             r-randomforestsrc
-                             r-prodlim
-                             r-nnet
-                             r-mosaiccalc
-                             r-mosaic
-                             r-mass
-                             r-kernlab
-                             r-hdnom
-                             r-glmnetutils
-                             r-glmnet
-                             r-flexsurv
-                             r-date
-                             r-cubature
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=survivalSL")
-    (synopsis "Super Learner for Survival Prediction from Censored Data")
-    (description
-     "Several functions and S3 methods to construct a super learner in the presence of
-censored times-to-event and to evaluate its prognostic capacities.")
-    (license license:gpl2+)))
-
 (define-public r-survivalrec
   (package
     (name "r-survivalrec")
@@ -20997,24 +20957,24 @@ available.")
 (define-public r-speccurvier
   (package
     (name "r-speccurvier")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speccurvieR" version))
        (sha256
-        (base32 "0sf992nmvfw2f3izb3p43jpnh6x9shvmas4cxx5gmsfbf597si3h"))))
+        (base32 "01lxyc2v7schci37m1lafjqxqas9dxy614ia742i1g4mb530cch8"))))
     (properties `((upstream-name . "speccurvieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-pbapply
                              r-magrittr
-                             r-lfe
                              r-ggplot2
+                             r-fixest
                              r-dplyr
                              r-combinat))
-    (home-page "https://cran.r-project.org/package=speccurvieR")
+    (home-page "https://github.com/zaynesember/speccurvieR")
     (synopsis "Easy, Fast, and Pretty Specification Curve Analysis")
     (description
      "Making specification curve analysis easy, fast, and pretty.  It improves upon
@@ -25037,13 +24997,13 @@ difference metrics are included.")
 (define-public r-spacesrgb
   (package
     (name "r-spacesrgb")
-    (version "1.4-0")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spacesRGB" version))
        (sha256
-        (base32 "1py93g7wglszcrkm09y0am2iia972q0jbgwb2wmickw3xsgip8p5"))))
+        (base32 "1v4az4qn965p0xds10ff7f4565j5n9pqc44501l6fi5j7h819hsc"))))
     (properties `((upstream-name . "spacesRGB")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -43729,13 +43689,13 @@ anomaly scores.")
 (define-public r-sgmodel
   (package
     (name "r-sgmodel")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgmodel" version))
        (sha256
-        (base32 "1i13vp91i8s61ylsyg0iij1sfclwif7v91slr2srl8ddz6lm23nx"))))
+        (base32 "1aq2klppwv1hn1nmicfxmb3vnkfw5jnmaa8gxxz4gnkk59k5rxpr"))))
     (properties `((upstream-name . "sgmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtauchen r-ramify r-ggplot2))
@@ -53697,13 +53657,13 @@ Tsutsumida, Yoshida, Nakaya, and Lu (2019) <@code{arXiv:1905.00266>}.")
 (define-public r-scgoclust
   (package
     (name "r-scgoclust")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scGOclust" version))
        (sha256
-        (base32 "1flidrc83bpkpwbj8nck0kdv09nn9j9hl3lxyd0xwwipqkx00n1h"))))
+        (base32 "0jbmjrc5xmxvkc6q93blbryqvyxcy6ia6bmca03vq05l6isybal6"))))
     (properties `((upstream-name . "scGOclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -55898,13 +55858,13 @@ designed to load, count, extract, remove, and summarise components of SAS code."
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "0n6rprwhbsi9ii4xq2l7ymnbbhk616kn4cp8bk4x2d0saaqzbp66"))))
+        (base32 "1cjnw81iycf20y6pz5c4jh260h4npba0499lfavx1rf58z4zfm5m"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

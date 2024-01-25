@@ -3466,13 +3466,13 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
 (define-public r-longpower
   (package
     (name "r-longpower")
-    (version "1.0.24")
+    (version "1.0.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longpower" version))
        (sha256
-        (base32 "121nzgn5y7zmnc58xz0fxs168bxy6ywjgm2xcf42zlfc8dkh8rvp"))))
+        (base32 "023s4ckc6695l51025qji2ggkad8cj0gz5h4zmk7i5d3pwk7g14y"))))
     (properties `((upstream-name . "longpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lme4))
@@ -4284,13 +4284,13 @@ details can be found in Helveston (2023) <doi:10.18637/jss.v105.i10>.")
 (define-public r-logitnorm
   (package
     (name "r-logitnorm")
-    (version "0.8.38")
+    (version "0.8.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logitnorm" version))
        (sha256
-        (base32 "01svs20dr0f1h66j5vn3ychjlgwzak96f8p9lmzd29anjlkm9x9q"))))
+        (base32 "17lizqrw2fs2kj32x6kv2iajcy629d69y77a84s5pv1qb8c4avjy"))))
     (properties `((upstream-name . "logitnorm")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9198,6 +9198,27 @@ Avantes <https://www.avantes.com/>, CRAIC <https://www.microspectra.com/>, and
 <https://www.oceaninsight.com/> brands.")
     (license license:gpl2+)))
 
+(define-public r-lightparser
+  (package
+    (name "r-lightparser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lightparser" version))
+       (sha256
+        (base32 "176lsx2qmy3iqwg1ashf81hj8biwvplcs4y5fbw0mb34fw93n876"))))
+    (properties `((upstream-name . "lightparser")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-tibble r-rlang r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ThinkR-open/lightparser")
+    (synopsis "From 'Rmarkdown' and 'Quarto' Files to Tibble and Back")
+    (description
+     "Split your rmarkdown or quarto files by sections into a tibble: titles, text,
+chunks.  Rebuild the file from the tibble.")
+    (license license:expat)))
+
 (define-public r-lightningr
   (package
     (name "r-lightningr")
@@ -11126,13 +11147,13 @@ Naming conventions for color mapping include those from @code{BrickLink}
 (define-public r-legit
   (package
     (name "r-legit")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LEGIT" version))
        (sha256
-        (base32 "1ynzm630c3wl8y9j058qgdkss5ngmmylhdw13032v53pss0vwlx3"))))
+        (base32 "0rwcbckkpmm849yl4rrk97ai31wb89sizbp7974rrfrjb707xl4i"))))
     (properties `((upstream-name . "LEGIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-snow
@@ -16203,6 +16224,36 @@ for atomic vectors in a light-weight design that is suitable for use in other
 packages.")
     (license license:expat)))
 
+(define-public r-labelr
+  (package
+    (name "r-labelr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "labelr" version))
+       (sha256
+        (base32 "0ss4amkj7hfwj84qr5y29hf198k2ji9yaqdnj6kyaqijnkdgpsdi"))))
+    (properties `((upstream-name . "labelr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=labelr")
+    (synopsis "Label Data Frames, Variables, and Values")
+    (description
+     "Create and use data frame labels for data frame objects (frame labels), their
+columns (name labels), and individual values of a column (value labels).  Value
+labels include one-to-one and many-to-one labels for nominal and ordinal
+variables, as well as numerical range-based value labels for continuous
+variables.  Convert value-labeled variables so each value is replaced by its
+corresponding value label.  Add values-converted-to-labels columns to a
+value-labeled data frame while preserving parent columns.  Filter and subset a
+value-labeled data frame using labels, while returning results in terms of
+values.  Overlay labels in place of values in common R commands to increase
+interpretability.  Generate tables of value frequencies, with categories
+expressed as raw values or as labels.  Access data frames that show
+value-to-label mappings for easy reference.")
+    (license license:gpl3+)))
+
 (define-public r-labelmachine
   (package
     (name "r-labelmachine")
@@ -16224,6 +16275,30 @@ packages.")
 assignment rules in yaml files and makes it easy to use the same labels in
 multiple projects.")
     (license license:gpl3)))
+
+(define-public r-labeler
+  (package
+    (name "r-labeler")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "labeleR" version))
+       (sha256
+        (base32 "0a70jq7r9nvh84kaqig05qgv1yliv8vgf45f2nbpdq4slr5aq3rc"))))
+    (properties `((upstream-name . "labeleR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown))
+    (home-page "https://github.com/EcologyR/labeleR/")
+    (synopsis
+     "Automate the Production of Custom Labels, Badges, Certificates, and Other Documents")
+    (description
+     "Create custom labels, badges, certificates and other documents.  Automate the
+production of potentially large numbers of accreditation badges, attendance and
+participation certificates, herbarium and collection labels, etc.  Documents are
+generated in PDF format, which requires a working installation of @code{LaTeX}',
+such as @code{TinyTeX}'.")
+    (license license:expat)))
 
 (define-public r-label-switching
   (package

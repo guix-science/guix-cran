@@ -3515,13 +3515,13 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
 (define-public r-ukb-covid19
   (package
     (name "r-ukb-covid19")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKB.COVID19" version))
        (sha256
-        (base32 "053hsdaa7xnzk95bdp0i1jr6pzq50zvfn1m5sm0znsrk59m5xhgm"))))
+        (base32 "0f684nkyrk9dl7hz9mzbb3x8gza5prd8zrg8ajfyjiqif7c6hkbg"))))
     (properties `((upstream-name . "UKB.COVID19")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

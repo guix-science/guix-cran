@@ -3723,18 +3723,19 @@ tools for converting the Jalali and Gregorian dates.")
 (define-public r-jagsui
   (package
     (name "r-jagsui")
-    (version "1.5.2")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagsUI" version))
        (sha256
-        (base32 "1ig2v5k1xjggh694azr96cv80qapq8al7dhsjhvkx0dihp8kgad2"))))
+        (base32 "12k315c998fgf9sp9gq1vszk7pf7ll1iyx4hgvjs4c959grxfp76"))))
     (properties `((upstream-name . "jagsUI")))
     (build-system r-build-system)
     (inputs (list jags))
     (propagated-inputs (list r-rjags r-coda))
-    (home-page "https://github.com/kenkellner/jagsUI")
+    (native-inputs (list r-knitr))
+    (home-page "https://kenkellner.com/jagsUI/")
     (synopsis "Wrapper Around 'rjags' to Streamline 'JAGS' Analyses")
     (description
      "This package provides a set of wrappers around rjags functions to run Bayesian

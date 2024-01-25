@@ -5468,13 +5468,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.3.2")
+    (version "0.0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "0w6cj85da9dmpymmjr2p0962p3gd8nkbdbnpynnqcjslzxwwjdm1"))))
+        (base32 "05gm3fpwdam3cnm0x6s4mzpjvb98yfi4alxgdanmscvx44c5ry8i"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -12472,26 +12472,6 @@ provides functions to manage data, scripts and output files.  Also provides a
 project template for Rstudio'.")
     (license license:gpl2+)))
 
-(define-public r-tinylabels
-  (package
-    (name "r-tinylabels")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tinylabels" version))
-       (sha256
-        (base32 "01pvnirma3wzfqnnz8zvyqajjyysjm3sd6813bgdhz199lcg7hhz"))))
-    (properties `((upstream-name . "tinylabels")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mariusbarth/tinylabels")
-    (synopsis "Lightweight Variable Labels")
-    (description
-     "Assign, extract, or remove variable labels from R vectors.  Lightweight and
-dependency-free.")
-    (license license:expat)))
-
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
@@ -13528,13 +13508,13 @@ be inserted into the output stream.")
 (define-public r-tigris
   (package
     (name "r-tigris")
-    (version "2.0.4")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigris" version))
        (sha256
-        (base32 "1jhz18ysr26fgm89ky39fqiaxx7spadysishyaml5f2pbam13r27"))))
+        (base32 "15zxsqxwns9vm8ymk2nadxjh3h91pxr69206sqakhch3w1nfssvr"))))
     (properties `((upstream-name . "tigris")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -19067,6 +19047,38 @@ can find an old version in the CRAN Archive at
 <https://cran.r-project.org/src/contrib/Archive/mnlogit/>.)")
     (license license:gpl3)))
 
+(define-public r-texpreview
+  (package
+    (name "r-texpreview")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "texPreview" version))
+       (sha256
+        (base32 "0qkl91638qw2gjk05h07bfly87yk283cg4wlq531i1wi5dc41r92"))))
+    (properties `((upstream-name . "texPreview")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-whisker
+                             r-tinytex
+                             r-svgpanzoom
+                             r-rstudioapi
+                             r-rematch2
+                             r-magick
+                             r-knitr
+                             r-htmltools
+                             r-fs
+                             r-details
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yonicd/texPreview")
+    (synopsis "Compile and Preview Snippets of 'LaTeX'")
+    (description
+     "Compile snippets of @code{LaTeX} directly into images from the R console to view
+in the RStudio viewer pane, Shiny apps and RMarkdown documents.")
+    (license license:expat)))
+
 (define-public r-texposition
   (package
     (name "r-texposition")
@@ -22277,13 +22289,13 @@ the topic.")
 (define-public r-tda
   (package
     (name "r-tda")
-    (version "1.9")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDA" version))
        (sha256
-        (base32 "0gk058mbbywdpmjif3zl0g4a4sn3jr5bxksmqwhk3h881rsjic6h"))))
+        (base32 "1zf01dlc95mi59yrwz98w6qridmixgm399r0dq4g02xinz7dnar3"))))
     (properties `((upstream-name . "TDA")))
     (build-system r-build-system)
     (inputs (list gmp))

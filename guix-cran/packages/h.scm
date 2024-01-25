@@ -8,14 +8,10 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages gtk)
-  #:use-module (gnu packages fontutils)
-  #:use-module (gnu packages image)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages bash)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages java)
@@ -2004,13 +2000,13 @@ without access to a live server.")
 (define-public r-httptest
   (package
     (name "r-httptest")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httptest" version))
        (sha256
-        (base32 "1d97n6h15vad7z96w37b9dl0q7n4j9yksn32vxnx26iik8q2jic3"))))
+        (base32 "0c370jxkd9dzqg5pdf2mcv2kjzr9zp9qai9riivjgygj6jhlcjav"))))
     (properties `((upstream-name . "httptest")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-jsonlite r-httr r-digest r-curl))
@@ -2089,32 +2085,6 @@ servers in a standard way.")
      "This package provides a suite of functions to ping URLs and to time HTTP
 requests'.  Designed to work with httr'.")
     (license license:expat)))
-
-(define-public r-httpgd
-  (package
-    (name "r-httpgd")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "httpgd" version))
-       (sha256
-        (base32 "1vns7bqzlgsgl45l4ijd14xh615ndf0q12i6jaxll00ayymf7gvd"))))
-    (properties `((upstream-name . "httpgd")))
-    (build-system r-build-system)
-    (inputs (list zlib libpng freetype fontconfig cairo))
-    (propagated-inputs (list r-systemfonts r-later r-cpp11 r-bh))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/nx10/httpgd")
-    (synopsis "'HTTP' Server Graphics Device")
-    (description
-     "This package provides a graphics device for R that is accessible via network
-protocols.  This package was created to make it easier to embed live R graphics
-in integrated development environments and other applications.  The included
-HTML/@code{JavaScript} client (plot viewer) aims to provide a better overall
-user experience when dealing with R graphics.  The device asynchronously serves
-graphics via HTTP and @code{WebSockets}'.")
-    (license license:gpl2+)))
 
 (define-public r-httpcache
   (package
@@ -5706,18 +5676,17 @@ estimation method.")
 (define-public r-histdawass
   (package
     (name "r-histdawass")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HistDAWass" version))
        (sha256
-        (base32 "1qasds1w4fiih7d11rns2y4lrrym7cwsj2iv5d55jw52m8m8wrsc"))))
+        (base32 "001ranvb4lfjh9lmh5d031g0k6r3yxzwaxvyacxh07hlf9fh7kvn"))))
     (properties `((upstream-name . "HistDAWass")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
-                             r-plyr
                              r-histogram
                              r-ggridges
                              r-ggplot2

@@ -10608,13 +10608,13 @@ and robust PCA based on the Gmedian covariation matrix.")
 (define-public r-gmdhreg
   (package
     (name "r-gmdhreg")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GMDHreg" version))
        (sha256
-        (base32 "1q583l0nsd4x1zm4fhh1q3kw3rh1v1vlaczkc59kzfs1h0l83hp2"))))
+        (base32 "1h0ysi0wkigjysqgzzw3za7nyfpmw71abdfl4hxanwihm7gaayxy"))))
     (properties `((upstream-name . "GMDHreg")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11659,13 +11659,13 @@ Smyth.")
 (define-public r-glmpathcr
   (package
     (name "r-glmpathcr")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmpathcr" version))
        (sha256
-        (base32 "0b796jvcvq0bbm2j8ldbn8n6am2746b62wdwv296b8032vf8zzgx"))))
+        (base32 "03kjj1wcx8p2jcdqb70fsdz2ljiz37xaaahqadawr3vjs7x441q3"))))
     (properties `((upstream-name . "glmpathcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmpath))
@@ -11675,7 +11675,8 @@ Smyth.")
     (description
      "This package provides a function for fitting a penalized constrained
 continuation ratio model using the glmpath algorithm and methods for extracting
-coefficient estimates, predicted class, class probabilities, and plots.")
+coefficient estimates, predicted class, class probabilities, and plots as
+described by Archer and Williams (2012) <doi:10.1002/sim.4484>.")
     (license license:gpl2)))
 
 (define-public r-glmpath
@@ -12636,13 +12637,13 @@ al.  AJE (2018) <doi:10.1093/aje/kwy177>.")
 (define-public r-gldrm
   (package
     (name "r-gldrm")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gldrm" version))
        (sha256
-        (base32 "1mbdxqjw6sa47kigwrjq1gn6vi36zhg9j2lck144iwa10ms0y9xp"))))
+        (base32 "02xgkrh2wybf9prcrb55w5ingf6x8f5xzdcnh2fv4skr0ixn0gp8"))))
     (properties `((upstream-name . "gldrm")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=gldrm")
@@ -17156,13 +17157,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "0ml24m0lnh0v4fykzni4q1xhyzfjyyrnancwf9nikywcxbi358fn"))))
+        (base32 "01indzna0z8rlcc29b4hfssn0xl07brwxpk3ysdanla32qa67slc"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matlab r-bitops))
@@ -17171,10 +17172,9 @@ regression curves.")
     (description
      "Reads data collected from wearable acceleratometers as used in sleep and
 physical activity research.  Currently supports file formats: binary data from
-GENEActiv <https://activinsights.com/>, binary data from GENEA devices (not for
-sale), and .cwa-format and .wav-format data from Axivity <https://axivity.com>.
-Primarily designed to complement R package GGIR
-<https://CRAN.R-project.org/package=GGIR>.")
+GENEActiv <https://activinsights.com/>, .bin-format from GENEA devices (not for
+sale), and .cwa-format from Axivity <https://axivity.com>.  Primarily designed
+to complement R package GGIR <https://CRAN.R-project.org/package=GGIR>.")
     (license license:asl2.0)))
 
 (define-public r-ggiraphextra
@@ -18102,13 +18102,13 @@ regions instead of the traditional height of the estimated density surface.")
 (define-public r-ggdemetra
   (package
     (name "r-ggdemetra")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdemetra" version))
        (sha256
-        (base32 "0faxbb05wl3075n21nr3b6jqjyh332fy05r4vk3jy0w9qs15ih0p"))))
+        (base32 "04micyxiblwlq1sn4jlws11qckjgbza38pwjidydqasq39pkakpr"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -18152,13 +18152,13 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdag" version))
        (sha256
-        (base32 "1vn93yys6lnv0nrhxhnfjb6p12wzhkc9dx8fxn7jci1zyqkb5kb6"))))
+        (base32 "1ndvsy4axrizisqy04467zzsxrrf94sr66r7vkkjjpynvszmj7wc"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -18180,10 +18180,11 @@ invert_geom_defaults().")
     (synopsis "Analyze and Create Elegant Directed Acyclic Graphs")
     (description
      "Tidy, analyze, and plot directed acyclic graphs (DAGs).  ggdag is built on top
-of dagitty', an R package that uses the DAGitty web tool (<http://dagitty.net>)
-for creating and analyzing DAGs.  ggdag makes it easy to tidy and plot dagitty
-objects using ggplot2 and ggraph', as well as common analytic and graphical
-functions, such as determining adjustment sets and node relationships.")
+of dagitty', an R package that uses the DAGitty web tool
+(<https://dagitty.net/>) for creating and analyzing DAGs.  ggdag makes it easy
+to tidy and plot dagitty objects using ggplot2 and ggraph', as well as common
+analytic and graphical functions, such as determining adjustment sets and node
+relationships.")
     (license license:expat)))
 
 (define-public r-ggcorset
@@ -21669,13 +21670,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.11")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "1jfqwr2gw0h7i58lwsvpmxd0kacazn1sk0jp95f9srdisvkb4l67"))))
+        (base32 "020j899jhk5mv4h4pgr28gjvpj57zvmv8c4ms3c7j7mn06q2rjxz"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21692,12 +21693,12 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (synopsis "Access Finnish Geospatial Data")
     (description
      "Designed to simplify geospatial data access from the Statistics Finland Web
-Feature Service API <http://geo.stat.fi/geoserver/wfs>, the geofi package offers
-researchers and analysts a set of tools to obtain and harmonize administrative
-spatial data for a wide range of applications, from urban planning to
-environmental research.  The package contains annually updated time series of
-municipality key datasets that can be used for data aggregation and language
-translations.")
+Feature Service API <https://geo.stat.fi/geoserver/index.html>, the geofi
+package offers researchers and analysts a set of tools to obtain and harmonize
+administrative spatial data for a wide range of applications, from urban
+planning to environmental research.  The package contains annually updated time
+series of municipality key datasets that can be used for data aggregation and
+language translations.")
     (license license:bsd-2)))
 
 (define-public r-geofd
@@ -29002,44 +29003,6 @@ graphic parameters.")
      "Scale abbreviation using Genetic Algorithms that maximally capture the variance
 in the original data.")
     (license license:gpl2+)))
-
-(define-public r-g3viz
-  (package
-    (name "r-g3viz")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "g3viz" version))
-       (sha256
-        (base32 "0pjn1rgqbrkbdrcnf01j9lm3257fnp7b0p5p3hyhg8srd990wp61"))))
-    (properties `((upstream-name . "g3viz")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-stringr r-jsonlite r-htmlwidgets))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/G3viz/g3viz")
-    (synopsis
-     "Interactively Visualize Genetic Mutation Data using a Lollipop-Diagram")
-    (description
-     "Interface for g3-lollipop @code{JavaScript} library.  Visualize genetic mutation
-data using an interactive lollipop diagram in Studio or your browser.")
-    (license license:expat)))
 
 (define-public r-g2sd
   (package

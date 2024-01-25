@@ -1376,13 +1376,13 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voluModel" version))
        (sha256
-        (base32 "1ym9cpx4ygzh9956y7sg1zl5kagamkg1wmr3ydzff1gz6ldg7gam"))))
+        (base32 "1kkqgbsjsgwia03v7mfbn2zc830hfsayx4q6f4qmrv6ql6x5imcg"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

@@ -4713,13 +4713,13 @@ broad- and sharp-crested weirs.")
 (define-public r-weird
   (package
     (name "r-weird")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weird" version))
        (sha256
-        (base32 "0cjg3dci1ly63f3xi24802gzc31mmq4rpjhkmkb5xb4w26mqdlzz"))))
+        (base32 "1xn1a7ssdwjvqynh5crr9dqf81smm1ldix1xlgfm42mpc478wplb"))))
     (properties `((upstream-name . "weird")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4729,7 +4729,7 @@ broad- and sharp-crested weirs.")
                              r-rlang
                              r-purrr
                              r-ks
-                             r-interp
+                             r-interpolation
                              r-ggplot2
                              r-evd
                              r-dplyr

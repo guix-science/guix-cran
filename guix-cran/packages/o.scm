@@ -5094,16 +5094,16 @@ data.  Further examples can be found in the vignette of the package.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "2.11.1")
+    (version "2.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "0dddfnhzd10yn6n9s1kzzlzad0bgg3jkh6mh8dvdi3c5ps1pz4p0"))))
+        (base32 "0r1v1l04y39w5p99szwhrh1n0vjvk99pdnrc4c72rvlzcaq11zzx"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-abind))
+    (propagated-inputs (list r-rfast r-openssl r-abind))
     (home-page "https://people.eng.unimelb.edu.au/aturpin/opi/index.html")
     (synopsis "Open Perimetry Interface")
     (description
@@ -8907,6 +8907,31 @@ combines the strengths of the fixed- and random-effects meta-analysis with
 meta-filtering.  It can also analyze data from multiple ethnic groups.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-offsetreg
+  (package
+    (name "r-offsetreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "offsetreg" version))
+       (sha256
+        (base32 "1bnb41q8n3bmh73r44mlf70icy7mma1rixdhxkz6xmmss5cs88zp"))))
+    (properties `((upstream-name . "offsetreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-poissonreg r-parsnip r-glue r-generics))
+    (home-page "https://github.com/mattheaphy/offsetreg/")
+    (synopsis "An Extension of 'Tidymodels' Supporting Offset Terms")
+    (description
+     "Extend the tidymodels ecosystem <https://www.tidymodels.org/> to enable the
+creation of predictive models with offset terms.  Models with offsets are most
+useful when working with count data or when fitting an adjustment model on top
+of an existing model with a prior expectation.  The former situation is common
+in insurance where data is often weighted by exposures.  The latter is common in
+life insurance where industry mortality tables are often used as a starting
+point for setting assumptions.")
+    (license license:expat)))
+
 (define-public r-offlinechange
   (package
     (name "r-offlinechange")
@@ -11204,13 +11229,13 @@ orbit-aware counts are computed respective each of the edges and nodes.")
 (define-public r-oaii
   (package
     (name "r-oaii")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oaii" version))
        (sha256
-        (base32 "09ql40afq6lx15vp9blsk3djihq4fmhvfwjd5a57lavpsr4m4yp7"))))
+        (base32 "0xdgkfkgl9p5b0lwvgazvrjjfskimpb5nwnnb4pq6hm9vmjfpfjz"))))
     (properties `((upstream-name . "oaii")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-httr r-checkmate))

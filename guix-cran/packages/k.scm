@@ -1511,19 +1511,20 @@ background with administrative areas.")
 (define-public r-knotr
   (package
     (name "r-knotr")
-    (version "1.0-2")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knotR" version))
        (sha256
-        (base32 "0kd1b9wibpwyaanz9ny61qgfvcg4d3rzpy05sfshlpp0b1y8d3xj"))))
+        (base32 "03c7fbk7v56b7vqiq6rm4j9i71zj7nsd520gpsccs00i4zs2kldj"))))
     (properties `((upstream-name . "knotR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=knotR")
     (synopsis "Knot Diagrams using Bezier Curves")
     (description
-     "Makes nice pictures of knots using Bezier curves and numerical optimization.")
+     "Makes visually pleasing diagrams of knot projections using optimized Bezier
+curves.")
     (license license:gpl2)))
 
 (define-public r-knockofftrio
@@ -2589,6 +2590,27 @@ model.  Providing accessibility from an origin or previous distribution for
 niche-based species distribution models.  Nobis & Normand (2014)
 <doi:10.1111/ecog.00930>.")
     (license license:gpl3+)))
+
+(define-public r-kisopenapi
+  (package
+    (name "r-kisopenapi")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kisopenapi" version))
+       (sha256
+        (base32 "0vyz546nwxpz88hbjqp2q8ad9zqp1syln4yzmfdpzj8aqkdc3b0h"))))
+    (properties `((upstream-name . "kisopenapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr2 r-data-table r-cli))
+    (home-page "https://cran.r-project.org/package=kisopenapi")
+    (synopsis "Korea Investment & Securities (KIS) Open Trading API")
+    (description
+     "API Wrapper to use Korea Investment & Securities (KIS) trading system that
+provides various financial services like stock price check, orders and balance
+check <https://apiportal.koreainvestment.com/>.")
+    (license license:expat)))
 
 (define-public r-kirby21-t1
   (package

@@ -3319,13 +3319,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2023.3.31")
+    (version "2024.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "15kx7pxa4yb5ivlfxkwqlr1d6fw0yd506grmz27bj27wkjaw75j3"))))
+        (base32 "1nbiw7wdc7r47bm580zxa3kw9zrghgmn9rk9lajvyxby19w98b06"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -6530,17 +6530,16 @@ version of this package lives; it can be installed using devtools.")
 (define-public r-arf
   (package
     (name "r-arf")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arf" version))
        (sha256
-        (base32 "0x5r8b76lzd6a7dzrnr63z7zjfhg75vwjzlzafw652wh2pc37fqk"))))
+        (base32 "1jcvlg1f4y32lg5dfpm0xrp63fbm9xhr82izgmxp0f2mccy6rn4g"))))
     (properties `((upstream-name . "arf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm r-ranger r-matrixstats r-foreach
-                             r-data-table))
+    (propagated-inputs (list r-truncnorm r-ranger r-foreach r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bips-hb/arf")
     (synopsis "Adversarial Random Forests")
@@ -10793,13 +10792,13 @@ a second model trained on the classes of interest.")
 (define-public r-animint2
   (package
     (name "r-animint2")
-    (version "2023.11.21")
+    (version "2024.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "animint2" version))
        (sha256
-        (base32 "1y7wz6v3m4kbwfqb5zghp9jal591408an1w7gcanjzp7qrb0fpv3"))))
+        (base32 "03zff0c7iz819js5iknx33kbfnqisfqbdji16bzd047y0s767rck"))))
     (properties `((upstream-name . "animint2")))
     (build-system r-build-system)
     (arguments
@@ -10818,7 +10817,8 @@ a second model trained on the classes of interest.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-servr
+                             r-scales
                              r-rjsonio
                              r-reshape2
                              r-plyr

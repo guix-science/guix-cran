@@ -116,13 +116,13 @@ Optimization methods are taken from Heckbert (1985)
 (define-public r-zoid
   (package
     (name "r-zoid")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoid" version))
        (sha256
-        (base32 "0c23ji48bq5qhsjshfai9srivn7lhjrzcs4fpysiw4245a2psyrr"))))
+        (base32 "1yr958iqk2w0r2cmvh4v2k1d20lrz6l7h9vdmah12krc04nma675"))))
     (properties `((upstream-name . "zoid")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -132,10 +132,9 @@ Optimization methods are taken from Heckbert (1985)
                              r-rcppeigen
                              r-rcpp
                              r-gtools
-                             r-compositions
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://nwfsc-cb.github.io/zoid/")
+    (home-page "https://noaa-nwfsc.github.io/zoid/")
     (synopsis "Bayesian Zero-and-One Inflated Dirichlet Regression Modelling")
     (description
      "Fits Dirichlet regression and zero-and-one inflated Dirichlet regression with

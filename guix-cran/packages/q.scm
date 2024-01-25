@@ -1776,16 +1776,17 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
 (define-public r-qualtrics
   (package
     (name "r-qualtrics")
-    (version "3.1.7")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualtRics" version))
        (sha256
-        (base32 "0jfzghqj8qz5wz13j4v0h58l7mflmz7jm324j2agr109q2kl2vma"))))
+        (base32 "1sxpvi2cyasmq2ywg979l75qg8g9ahzzhxjxi8rnx5qmvzlj7br8"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-withr
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-sjlabelled
@@ -1797,6 +1798,7 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
                              r-jsonlite
                              r-httr
                              r-glue
+                             r-fs
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -3874,13 +3876,13 @@ Statistics, 16, 2206-2251.")
 (define-public r-qlifetable
   (package
     (name "r-qlifetable")
-    (version "0.0.1-15")
+    (version "0.0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlifetable" version))
        (sha256
-        (base32 "0mqwlvkrd3sfnjx3vwc1pr6wzjwk7gz6mgmakxhh6gbh0v3swf0d"))))
+        (base32 "01p5gkadmfw2hc9h1gdg88k2g7rq204km9ncldmpf10vnglpiww0"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qlifetable")
@@ -3889,7 +3891,14 @@ Statistics, 16, 2206-2251.")
      "Manages, builds and computes statistics and datasets for the construction of
 quarterly (sub-annual) life tables by exploiting micro-data from either a
 general or an insured population.  References: @code{PavÃ­a} and @code{LledÃ³}
-(2022) <doi:10.1111/rssa.12769>.")
+(2022) <doi:10.1111/rssa.12769>. @code{PavÃ­a} and @code{LledÃ³} (2023)
+<doi:10.1017/asb.2023.16>.  Acknowledgements: The authors wish to thank
+@code{ConsellerÃ­a} de @code{EducaciÃ³n}, Universidades y Empleo, Generalitat
+Valenciana (grant AICO/2021/257), Ministerio de @code{EconomÃ­a} e
+@code{InnovaciÃ³n} (grant PID2021-128228NB-I00) and @code{FundaciÃ³n} Mapfre
+(grant @code{ModelizaciÃ³n} espacial e intra-anual de la mortalidad en
+@code{EspaÃ±a}.  Una herramienta @code{automÃ¡tica} para el @code{cÃ¡lculo} de
+productos de vida') for supporting this research.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-qlearning
@@ -3915,13 +3924,13 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcal
   (package
     (name "r-qlcal")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcal" version))
        (sha256
-        (base32 "1pl7bs0v9qh89j0r9nqygfr2g3hq9c285nbvfsmxncxqwvpgcxv3"))))
+        (base32 "1kw1xgxkzvjwdk4wg8h9r0kd31d6vwrblhxgysz5d490q80np6sr"))))
     (properties `((upstream-name . "qlcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

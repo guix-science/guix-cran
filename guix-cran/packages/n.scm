@@ -3243,13 +3243,13 @@ continuity correction and to identify the presence of Simpson's paradox.")
 (define-public r-nortstest
   (package
     (name "r-nortstest")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nortsTest" version))
        (sha256
-        (base32 "17z7wy0anvj14wxq03bnvswg75527xjn1xpzijs1wgymfjc50a7l"))))
+        (base32 "1vjg6ykpjidj4cy2rl49sh1ja1578mvgjsmfp468wrzvv1w2kc3k"))))
     (properties `((upstream-name . "nortsTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3259,7 +3259,8 @@ continuity correction and to identify the presence of Simpson's paradox.")
                              r-mass
                              r-gridextra
                              r-ggplot2
-                             r-forecast))
+                             r-forecast
+                             r-cowplot))
     (home-page "https://github.com/asael697/nortsTest")
     (synopsis "Assessing Normality of Stationary Process")
     (description
@@ -5312,6 +5313,35 @@ neighbor.  This is a methodology commonly used in phytosociology or marine
 benthos ecology to analyze the species distribution (random, uniform or clumped
 patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
     (license license:gpl2+)))
+
+(define-public r-nn2poly
+  (package
+    (name "r-nn2poly")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nn2poly" version))
+       (sha256
+        (base32 "125x5wq0x9bk5q57xwz86hfr7lcnk94dvwsfld2zkxyqj0fs78c8"))))
+    (properties `((upstream-name . "nn2poly")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma r-matrixstats
+                             r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://ibidat.github.io/nn2poly/")
+    (synopsis
+     "Neural Network Weights Transformation into Polynomial Coefficients")
+    (description
+     "This package implements a method that builds the coefficients of a polynomial
+model that performs almost equivalently as a given neural network (densely
+connected).  This is achieved using Taylor expansion at the activation
+functions.  The obtained polynomial coefficients can be used to explain features
+(and their interactions) importance in the neural network, therefore working as
+a tool for interpretability or @code{eXplainable} Artificial Intelligence (XAI).
+ See Morala et al.  2021 <doi:10.1016/j.neunet.2021.04.036>, and 2023
+<doi:10.1109/TNNLS.2023.3330328>.")
+    (license license:expat)))
 
 (define-public r-nmw
   (package
@@ -12052,13 +12082,13 @@ that are far to big to fit into memory.")
 (define-public r-neonplantecology
   (package
     (name "r-neonplantecology")
-    (version "1.3.5")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonPlantEcology" version))
        (sha256
-        (base32 "1q8cc62vd08jhnsbbijmz369r3fp2chh8kjiim560rj6r0dgpqxv"))))
+        (base32 "08hdw4ki69spdvs3cm1dwc5axhjs0l1zx0yb38sdpkfixxap8iia"))))
     (properties `((upstream-name . "neonPlantEcology")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -14916,29 +14946,6 @@ predefined designs or via custom CSS'.  This package is not intended as
 replacement for proper reference manager packages, but a tool to enrich
 scientific presentation slides and conference posters.")
     (license license:expat)))
-
-(define-public r-namedcapture
-  (package
-    (name "r-namedcapture")
-    (version "2020.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "namedCapture" version))
-       (sha256
-        (base32 "0zdw3h3n4qjv9cpidb3g523ld6rrh49l2c1yhfqhk5wb7vddrs46"))))
-    (properties `((upstream-name . "namedCapture")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tdhock/namedCapture")
-    (synopsis "Named Capture Regular Expressions")
-    (description
-     "User-friendly wrappers for named capture regular expressions.  Introduction and
-comparison in research paper by Hocking (2019), R Journal.
-<doi:10.32614/RJ-2019-050> RE2 engine ('re2r package)
-<https://github.com/qinwf/re2r> was removed from CRAN in Mar 2020 so must be
-installed from github.")
-    (license license:gpl3)))
 
 (define-public r-name
   (package

@@ -2662,13 +2662,13 @@ captures the salient features of the series to predict its behavior.")
 (define-public r-rubias
   (package
     (name "r-rubias")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rubias" version))
        (sha256
-        (base32 "0xphah4axkchscxcxx7231cb67pqfi4smvy3lazlzbyysgwmr1kk"))))
+        (base32 "1b36w3mqfazv62zb542b3c4h2xwjrjqx1azxhl0daw57x2lfh01b"))))
     (properties `((upstream-name . "rubias")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15697,13 +15697,13 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.2.6")
+    (version "1.2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "00bj78zmfwvgl8byr92n0mbzwvgn2a5k16y55n7dcrsnh8xhnir4"))))
+        (base32 "0v656p06g338m7c3gfm5m4ckmad668jnhia04mfvzd4jn2v7v5rz"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -15717,7 +15717,7 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
                              r-data-table
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/usa-npn/rnpn/")
+    (home-page "https://github.com/usa-npn/rnpn")
     (synopsis "Interface to the National 'Phenology' Network 'API'")
     (description
      "Programmatic interface to the Web Service methods provided by the National
@@ -18175,28 +18175,6 @@ such as automatic table of contents, lightboxed figures, dynamic crosstab
 helper.")
     (license license:gpl2+)))
 
-(define-public r-rmdfiltr
-  (package
-    (name "r-rmdfiltr")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmdfiltr" version))
-       (sha256
-        (base32 "0llnn4pdfznidalm4f7fpyxbhzsqv1096fkbsl1pgf4f7ll6w7a7"))))
-    (properties `((upstream-name . "rmdfiltr")))
-    (build-system r-build-system)
-    (inputs (list pandoc))
-    (propagated-inputs (list r-rmarkdown r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/crsh/rmdfiltr")
-    (synopsis "'Lua'-Filters for R Markdown")
-    (description
-     "This package provides a collection of Lua filters that extend the functionality
-of R Markdown templates (e.g., count words or post-process citations).")
-    (license license:expat)))
-
 (define-public r-rmdconcord
   (package
     (name "r-rmdconcord")
@@ -19821,13 +19799,13 @@ Theil-Sen's slope estimator.")
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
-    (version "0.7.7")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RKorAPClient" version))
        (sha256
-        (base32 "1y43bf9skc33lj1krad5p72pa5fbqlr49rv6agg6zb0yy3gjf9rd"))))
+        (base32 "13231pc2irg2jzpna6zklj1pj5jfzvrp5dp3anl8iskcl81p78mg"))))
     (properties `((upstream-name . "RKorAPClient")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -21517,62 +21495,6 @@ technology-mediated courses by synthesizing information about access to course
 content and performance on assessments.")
     (license license:expat)))
 
-(define-public r-risca
-  (package
-    (name "r-risca")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RISCA" version))
-       (sha256
-        (base32 "1mhydhr6a0wywr0pml7jw0sra2iavzbkxm3gs0w9p53ssdipnw49"))))
-    (properties `((upstream-name . "RISCA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tune
-                             r-timeroc
-                             r-survivalmodels
-                             r-survival
-                             r-superlearner
-                             r-statmod
-                             r-rpart
-                             r-reticulate
-                             r-relsurv
-                             r-randomforestsrc
-                             r-prodlim
-                             r-nnet
-                             r-nlme
-                             r-mvtnorm
-                             r-mosaiccalc
-                             r-mosaic
-                             r-mass
-                             r-kernlab
-                             r-hdnom
-                             r-glmnetutils
-                             r-glmnet
-                             r-foreach
-                             r-flexsurv
-                             r-doparallel
-                             r-date
-                             r-cubature
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=RISCA")
-    (synopsis "Causal Inference and Prediction in Cohort-Based Analyses")
-    (description
-     "Numerous functions for cohort-based analyses, either for prediction or causal
-inference.  For causal inference, it includes Inverse Probability Weighting and
-G-computation for marginal estimation of an exposure effect when confounders are
-expected.  We deal with binary outcomes, times-to-events, competing events, and
-multi-state data.  For multistate data, semi-Markov model with interval
-censoring may be considered, and we propose the possibility to consider the
-excess of mortality related to the disease compared to reference lifetime
-tables.  For predictive studies, we propose a set of functions to estimate
-time-dependent receiver operating characteristic (ROC) curves with the possible
-consideration of right-censoring times-to-events or the presence of confounders.
- Finally, several functions are available to assess time-dependent ROC curves or
-survival curves from aggregated data.")
-    (license license:gpl2+)))
-
 (define-public r-rirt
   (package
     (name "r-rirt")
@@ -23251,13 +23173,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "0r5yxp1hrsxqqgw0r2xzzsaxnqksp2lz51vpwfqw55wmxdqjasdj"))))
+        (base32 "0rsjzh64q5rrg632iw8zi89scqgjmd4nrm8rl0clpzk4mf0wzq00"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -29216,16 +29138,17 @@ repayment/mortgage plans.")
 (define-public r-repana
   (package
     (name "r-repana")
-    (version "1.23.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repana" version))
        (sha256
-        (base32 "1wic76sln37qjdrviaz689c5gjf4pc3ffdgvzcvjh0kjvl7d8jfh"))))
+        (base32 "0pxhg66x5rfnjpmmd280p0fj103b6hdrdh6mg6mv4b9yh6a7pvsw"))))
     (properties `((upstream-name . "repana")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi
+    (propagated-inputs (list r-yaml
+                             r-rstudioapi
                              r-rmarkdown
                              r-readr
                              r-processx
@@ -29234,6 +29157,7 @@ repayment/mortgage plans.")
                              r-magrittr
                              r-lubridate
                              r-dplyr
+                             r-digest
                              r-dbi
                              r-config))
     (native-inputs (list r-knitr))
@@ -29243,7 +29167,7 @@ repayment/mortgage plans.")
      "Set of utilities to facilitate the reproduction of analysis in R. It allow to
 make_structure(), clean_structure(), and run and log programs in a predefined
 order to allow secondary files, analysis and reports be constructed in an
-ordered form.")
+ordered and reproducible form.")
     (license license:gpl3+)))
 
 (define-public r-repairdata
@@ -39010,13 +38934,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.63")
+    (version "1.64")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "16bh5dl2mp377kvizsh56bgj4n71wq0fbg9x14g828xfb9qfwpp6"))))
+        (base32 "0h0pz5y79q3inq45shd785v6cz2i46x0c88v65szrqrv9rnrm1d2"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -43390,13 +43314,13 @@ of tuning regularization parameters and visualizing results hassle-free.")
 (define-public r-rar
   (package
     (name "r-rar")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rar" version))
        (sha256
-        (base32 "0cryyf8h2lf6qcf4wywpfzkr5aqnd7y5wh5sak8yxhxk16fpagdr"))))
+        (base32 "12fjp390nai5jymxdly5p4zi3b7qs1n0xvh8rxr5myq0pd904fcv"))))
     (properties `((upstream-name . "rar")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -43875,13 +43799,13 @@ Specification: <https://mrin9.github.io/@code{RapiDoc/>}.")
 (define-public r-rapidatetime
   (package
     (name "r-rapidatetime")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RApiDatetime" version))
        (sha256
-        (base32 "07zp27124pavqxc7arxnhphyi3c5y7ig4ampylw84z4h532gvsv4"))))
+        (base32 "1s8dmv8phzr635z7l1af39jn5i3zs3hbnfij4m0rjs3mrq4fckpy"))))
     (properties `((upstream-name . "RApiDatetime")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/rapidatetime")

@@ -505,13 +505,13 @@ the @code{FuzzyNumbers} package.")
 (define-public r-fuzzysim
   (package
     (name "r-fuzzysim")
-    (version "4.10.5")
+    (version "4.10.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuzzySim" version))
        (sha256
-        (base32 "1mqsy5mhq61yzpwbqawxgx58rv2ypi1acl56sn7xqkasrlcywgkq"))))
+        (base32 "1xfq2il2d44a99yp2lnsmmna52spqk92sv29farmxwppfvghg942"))))
     (properties `((upstream-name . "fuzzySim")))
     (build-system r-build-system)
     (propagated-inputs (list r-modeva))
@@ -1843,26 +1843,32 @@ structural parameter optimization is described in
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.3")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fungible" version))
        (sha256
-        (base32 "05yc3g53mpi3ifxqy0r0zaphsb7k16yxhjbrzg6n6wc5mkh2aywp"))))
+        (base32 "0v1pf7q95s72kvax40fshp2i556k4ygydnhk7j8r3yfxdv0x52q2"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rspectra
+    (propagated-inputs (list r-sem
+                             r-rspectra
                              r-rcsdp
                              r-pbmcapply
                              r-nleqslv
                              r-mvtnorm
+                             r-mcmcpack
+                             r-mbess
                              r-mass
                              r-lattice
                              r-gparotation
+                             r-ga
                              r-deoptim
                              r-cvxr
+                             r-crayon
                              r-clue))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fungible")
     (synopsis "Psychometric Functions from the Waller Lab")
     (description
@@ -1874,13 +1880,12 @@ Extrema of Fungible Regression Weights.  Psychometrika, 74(4), 589-602,
 <DOI:10.1007/s11336-008-9087-7>.  Waller, N. G. (2016).  Fungible Correlation
 Matrices: A Method for Generating Nonsingular, Singular, and Improper
 Correlation Matrices for Monte Carlo Research.  Multivariate Behavioral
-Research, 51(4), 554-568, <DOI:10.1080/00273171.2016.1178566>.  Jones, J. A. &
-Waller, N. G. (2015).  The normal-theory and asymptotic distribution-free (ADF)
-covariance matrix of standardized regression coefficients: theoretical
-extensions and finite sample behavior.  Psychometrika, 80, 365-378,
-<DOI:10.1007/s11336-013-9380-y>.  Waller, N. G. (2018).  Direct Schmid-Leiman
-transformations and rank-deficient loadings matrices.  Psychometrika, 83,
-858-870. <DOI:10.1007/s11336-017-9599-0>.")
+Research, 51(4), 554-568.  Jones, J. A. & Waller, N. G. (2015).  The
+normal-theory and asymptotic distribution-free (ADF) covariance matrix of
+standardized regression coefficients: theoretical extensions and finite sample
+behavior.  Psychometrika, 80, 365-378, <DOI:10.1007/s11336-013-9380-y>.  Waller,
+N. G. (2018).  Direct Schmid-Leiman transformations and rank-deficient loadings
+matrices.  Psychometrika, 83, 858-870. <DOI:10.1007/s11336-017-9599-0>.")
     (license license:gpl2+)))
 
 (define-public r-funfem
@@ -16063,13 +16068,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1y078ynrby25k09wd4i6pghk7n69cmf3a184fzqp28s1xgv1vyfb"))))
+        (base32 "1dkwhb5in9dqw5wh2zx05s8ijk351ln2nr05bfkbymx9rdfrqbg5"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18856,13 +18861,13 @@ and discussed in the preprint available from Researchgate by Simone R. (2020)
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.10.1")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "15s15ykqagx9ixmfh09hkqfgnx5wv75pijiw550kgrk05kx34d2x"))))
+        (base32 "0m4njjrp49vc8y7pwxy6xzar63lrlksgzgv6xr6hchz4v0rfgikh"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -19947,13 +19952,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.4.1")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "0nm000lbq1va7r1x12q1yzy4mqzr8zc4ac2nlvw9cn3l9jmgdyj7"))))
+        (base32 "1992sn148cahnv8dzdcibc8ny6jp8iw39555mk66flvr0z4jv9rh"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))
@@ -21623,13 +21628,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "0ky84g4s454inl0px9x6qr3ki0z8cwhalrhikvv77q9kgv0fnzxz"))))
+        (base32 "12rqq3kdbywjw16n4viqrhyrmynyh30wqg1lgwxn5vhwnhfjk596"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

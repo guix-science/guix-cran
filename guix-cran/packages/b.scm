@@ -545,16 +545,17 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "2.4.0")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "0rw5xhbgc703d4llqlipkjg4j1axg8qvzbpxhjk2pmk0k7hqwmin"))))
+        (base32 "04na2yiykcnbscg5ibrkynjhp0ywdlc11fpz2p68bzz928bp9zyx"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-scales
+                             r-rlang
                              r-riskregression
                              r-rcpparmadillo
                              r-rcpp
@@ -562,7 +563,7 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
                              r-lava
                              r-ggplot2
                              r-foreach
-                             r-doparallel
+                             r-dosnow
                              r-data-table))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/bozenne/BuyseTest")
@@ -2582,6 +2583,40 @@ based on Matsuoka et al. (2012) <doi:10.1525/auk.2012.11190>, Solymos et al.
 generally, icons can be inserted in any htmltools document through inline SVG'.")
     (license license:expat)))
 
+(define-public r-bsi
+  (package
+    (name "r-bsi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bSi" version))
+       (sha256
+        (base32 "06ncvxf75khbwv5xg399717n3havj2ip0z07wzh9sjzx5irfw42v"))))
+    (properties `((upstream-name . "bSi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bSi")
+    (synopsis
+     "Modeling and Computing Biogenic Silica ('bSi') from Inland and Pelagic Sediments")
+    (description
+     "This package provides a collection of integrated tools designed to seamlessly
+interact with each other for the analysis of biogenic silica @code{bSi} in
+inland and marine sediments.  These tools share common data representations and
+follow a consistent API design.  The primary goal of the @code{bSi} package is
+to simplify the installation process, facilitate data loading, and enable the
+analysis of multiple samples for biogenic silica fluxes.  This package is
+designed to enhance the efficiency and coherence of the entire @code{bSi}
+analytic workflow, from data loading to model construction and visualization
+tailored towards reconstructing productivity in aquatic ecosystems.")
+    (license license:gpl3)))
+
 (define-public r-bshazard
   (package
     (name "r-bshazard")
@@ -2832,13 +2867,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dash
   (package
     (name "r-bs4dash")
-    (version "2.3.0")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bs4Dash" version))
        (sha256
-        (base32 "09dzcpqzlkak9ilx79h2hpad20ck6857middbkn7j3mhrbqq0m51"))))
+        (base32 "1vhjrgy3344fgbqxadj16sncrgkkcy1xrg69nmjizn9s757gyvri"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
     (arguments
@@ -3905,13 +3940,13 @@ same author.  Stan functions are refactored here for easier testing.")
 (define-public r-breathtestcore
   (package
     (name "r-breathtestcore")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breathtestcore" version))
        (sha256
-        (base32 "1nkimschjyf8cl8cwg0kv06wagimarag92gvnq03wppbcqm560ak"))))
+        (base32 "0i5mih2v6397g0glgdhn5lrz3j0l6yv3pmlvs9pkg2vbjppif2sc"))))
     (properties `((upstream-name . "breathtestcore")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -15770,41 +15805,6 @@ regression, geometric mean regression or Deming regression are special cases of
 the bfsl solution.")
     (license license:expat)))
 
-(define-public r-bfs
-  (package
-    (name "r-bfs")
-    (version "0.5.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BFS" version))
-       (sha256
-        (base32 "0f09r3m10a55xriajpnwpjnahkh09s87jxrik9icwmc9d3wfj9q4"))))
-    (properties `((upstream-name . "BFS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-xml2
-                             r-tidyrss
-                             r-tibble
-                             r-sf
-                             r-rvest
-                             r-rstac
-                             r-pxweb
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-janitor
-                             r-httr2
-                             r-fs
-                             r-dplyr
-                             r-curl))
-    (home-page "https://felixluginbuhl.com/BFS/")
-    (synopsis "Get Data from the Swiss Federal Statistical Office")
-    (description
-     "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
-<https://www.bfs.admin.ch/>.")
-    (license license:gpl3+)))
-
 (define-public r-bfpack
   (package
     (name "r-bfpack")
@@ -18375,75 +18375,6 @@ lower.limit and upper.limit are values that can be set by the user.")
 Core compatible.")
     (license license:gpl3)))
 
-(define-public r-bdclean
-  (package
-    (name "r-bdclean")
-    (version "0.1.15")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdclean" version))
-       (sha256
-        (base32 "14cy8yaqd6bg2zyh2wvndydk9sigaydavxl4cfypqz5kqdhj82z9"))))
-    (properties `((upstream-name . "bdclean")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spocc
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shiny
-                             r-rmarkdown
-                             r-rgbif
-                             r-leaflet
-                             r-knitr
-                             r-finch
-                             r-dt
-                             r-data-table
-                             r-bddwc
-                             r-bdchecks))
-    (home-page "https://github.com/bd-R/bdclean")
-    (synopsis
-     "User-Friendly Biodiversity Data Cleaning App for the Inexperienced R User")
-    (description
-     "This package provides features to manage the complete workflow for biodiversity
-data cleaning.  Uploading data, gathering input from users (in order to adjust
-cleaning procedures), cleaning data and finally, generating various reports and
-several versions of the data.  Facilitates user-level data cleaning, designed
-for the inexperienced R user.  T Gueta et al (2018) <doi:10.3897/biss.2.25564>.
-T Gueta et al (2017) <doi:10.3897/tdwgproceedings.1.20311>.")
-    (license license:gpl3)))
-
-(define-public r-bdchecks
-  (package
-    (name "r-bdchecks")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdchecks" version))
-       (sha256
-        (base32 "1pzsvn1m1f9bdmhxmh57pvn9jm4z41rkvv6h60hq2lfgkapnjy7q"))))
-    (properties `((upstream-name . "bdchecks")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-spocc
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybs
-                             r-shiny
-                             r-rgbif
-                             r-knitr
-                             r-finch
-                             r-dt
-                             r-data-table
-                             r-bddwc))
-    (home-page "https://github.com/bd-R/bdchecks")
-    (synopsis "Biodiversity Data Checks")
-    (description
-     "Supplies a Shiny app and a set of functions to perform and managing data checks
-for biodiversity data.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-bdc
   (package
     (name "r-bdc")
@@ -18790,13 +18721,13 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
 (define-public r-bcmaps
   (package
     (name "r-bcmaps")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcmaps" version))
        (sha256
-        (base32 "017d9bip8vv8n385h4pxd2bnl8yg8dymzkfav94gzdamrlnmcfn6"))))
+        (base32 "0cpghf8acq7dpmiaw314n1h2aa310513f3qwnl8p74pyr940gwvn"))))
     (properties `((upstream-name . "bcmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18813,11 +18744,11 @@ by Maruo et al. (2017) <doi:10.1002/sim.7279>.")
     (description
      "Various layers of B.C., including administrative boundaries, natural resource
 management boundaries, census boundaries etc.  All layers are available in BC
-Albers (<https://spatialreference.org/ref/epsg/nad83-bc-albers/>) equal-area
-projection, which is the B.C. government standard.  The layers are sourced from
-the British Columbia and Canadian government under open licenses, including B.C.
-Data Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data
-Portal (<https://open.canada.ca/en/using-open-data>), and Statistics Canada
+Albers (<https://spatialreference.org/ref/epsg/3005/>) equal-area projection,
+which is the B.C. government standard.  The layers are sourced from the British
+Columbia and Canadian government under open licenses, including B.C. Data
+Catalogue (<https://data.gov.bc.ca>), the Government of Canada Open Data Portal
+(<https://open.canada.ca/en/using-open-data>), and Statistics Canada
 (<https://www.statcan.gc.ca/en/reference/licence>).")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -20757,31 +20688,6 @@ a fast approach to compute a projection direction for multivariate changepoint
 detection, as well as the sum-cusum and max-cusum methods, and a wild binary
 segmentation wrapper for all algorithms.")
     (license license:gpl2+)))
-
-(define-public r-bayesppdsurv
-  (package
-    (name "r-bayesppdsurv")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesPPDSurv" version))
-       (sha256
-        (base32 "19c9q9hnh08389rw63hqgyd7z32s731qm8lz75qjy227ybvjkg0s"))))
-    (properties `((upstream-name . "BayesPPDSurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
-    (home-page "https://cran.r-project.org/package=BayesPPDSurv")
-    (synopsis "Bayesian Power Prior Design for Survival Data")
-    (description
-     "Bayesian power/type I error calculation and model fitting using the power prior
-and the normalized power prior for proportional hazards models with piecewise
-constant hazard.  The Bayesian clinical trial design methodology is described in
-Chen et al. (2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and
-Ibrahim (2019) <doi:10.1093/biostatistics/kxy009>.  The proportional hazards
-model with piecewise constant hazard is detailed in Ibrahim et al. (2001)
-<doi:10.1007/978-1-4757-3447-8>.")
-    (license license:gpl3+)))
 
 (define-public r-bayesppd
   (package
@@ -24669,13 +24575,13 @@ features for data analysis and visualization.")
 (define-public r-bartcs
   (package
     (name "r-bartcs")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartcs" version))
        (sha256
-        (base32 "11y4bal4acqcdc48hqbxmqq2kgdjkj4l4z2nadcgalflwjdzlbhw"))))
+        (base32 "1336v6kzxca7sdb96jizp4fzspqv36y4z9zdf652a5fn0mxb4a6m"))))
     (properties `((upstream-name . "bartcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -26229,13 +26135,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "0zd8v9922l1jjya04833frhd6fk66rdlfwxwl9rqhwgm9h6lq3mh"))))
+        (base32 "1ap95s9156ivywbmzyz1f82qhyj5dy3kn5bg596kqj61dgi6zak0"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-igraph))
@@ -26245,8 +26151,8 @@ add-in that can be bound to a keyboard shortcut.")
     (description
      "An implementation of methods for extracting an unweighted unipartite graph (i.e.
  a backbone) from an unweighted unipartite graph, a weighted unipartite graph,
-the projection of an unweighted bipartite graph , or the projection of a
-weighted bipartite graph (Neal, 2022 <doi:10.1371/journal.pone.0269137>).")
+the projection of an unweighted bipartite graph, or the projection of a weighted
+bipartite graph (Neal, 2022 <doi:10.1371/journal.pone.0269137>).")
     (license license:gpl3)))
 
 (define-public r-bacistool

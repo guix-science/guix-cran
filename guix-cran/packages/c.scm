@@ -3510,13 +3510,13 @@ slice.")
 (define-public r-csranks
   (package
     (name "r-csranks")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csranks" version))
        (sha256
-        (base32 "142kni1c0yfinwjwd9s6lfihwy9s1ss85nqgmkblm7b859l7bmls"))))
+        (base32 "0rnwgi7446cz54lsgpnl6j6qdd4hfcwhcvvbks2hxyq5a0hr3gh3"))))
     (properties `((upstream-name . "csranks")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-mass r-lifecycle r-ggplot2 r-cli))
@@ -3530,7 +3530,7 @@ sets of various kinds for positions of populations in a ranking based on values
 of a certain feature and their estimation errors.  Theory based on Mogstad,
 Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006> and Chetverikov
 and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-csppdata
   (package
@@ -3786,17 +3786,18 @@ without any geolibraries.")
 (define-public r-csindicators
   (package
     (name "r-csindicators")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSIndicators" version))
        (sha256
-        (base32 "0kqq8fdidp9mynbqk4xg2s199n2b2ylsh5bv5a666c9fvfaq305k"))))
+        (base32 "062v23vm2yz0dr2s0d6p7iwccdkgywn8k9gfp4jc8kr56ff3hvvr"))))
     (properties `((upstream-name . "CSIndicators")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-spei
+                             r-s2dv
                              r-multiapply
                              r-lmomco
                              r-lmom
@@ -5957,13 +5958,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "1djpkvl2d8k0s5a9qj5jamp3r7c9g8w9ki9f4ny85m8lghbvl2zr"))))
+        (base32 "072mglj9wj2klhg8v9a7xgk96g0ands74jlqza7sscqiyaypklbv"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags
@@ -8831,38 +8832,6 @@ appropriate for mixed data is used otherwise.")
 neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 <DOI:10.1198/016214502388618780>.")
     (license license:gpl2+)))
-
-(define-public r-covregrf
-  (package
-    (name "r-covregrf")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CovRegRF" version))
-       (sha256
-        (base32 "0qdaiqq1cwagzcpwziblrd2j0vzxriklxk38nc48fv3gky0ilq7y"))))
-    (properties `((upstream-name . "CovRegRF")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CovRegRF")
-    (synopsis "Covariance Regression with Random Forests")
-    (description
-     "Covariance Regression with Random Forests ('@code{CovRegRF}') is a random forest
-method for estimating the covariance matrix of a multivariate response given a
-set of covariates.  Random forest trees are built with a new splitting rule
-which is designed to maximize the distance between the sample covariance matrix
-estimates of the child nodes.  The method is described in Alakus et al. (2023)
-<doi:10.1186/s12859-023-05377-y>. @code{CovRegRF} uses @code{randomForestSRC}
-package (Ishwaran and Kogalur, 2022)
-<https://cran.r-project.org/package=@code{randomForestSRC>} by freezing at the
-version 3.1.0.  The custom splitting rule feature is utilised to apply the
-proposed splitting rule.  LAPACK and BLAS libraries are used for matrix
-decompositions.  The @code{CovRegRF} package includes the header files lapacke.h
-and cblas.h from the LAPACK and BLAS libraries.  The LAPACK library is licensed
-under modified BSD license.")
-    (license license:gpl3+)))
 
 (define-public r-covkcd
   (package
@@ -13779,13 +13748,13 @@ Pizzuto (2019).")
 (define-public r-convdistr
   (package
     (name "r-convdistr")
-    (version "1.5.3")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convdistr" version))
        (sha256
-        (base32 "1cp2qpyl0jxp0lwznlc94mcigfgysyq9xmi1z7ihd7jxd9mk8aw9"))))
+        (base32 "1jkd5d257qaby99n7f2vyiqchg2zfnnm01bw9qp2cg92bi7ac22d"))))
     (properties `((upstream-name . "convdistr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31222,13 +31191,13 @@ written in C++ for improved performance.")
 (define-public r-changepointsvar
   (package
     (name "r-changepointsvar")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointsVar" version))
        (sha256
-        (base32 "0kj9m9jik1dm5fx4c4hb559f5irpl1mvxk4wwajd5577a2fdqxb5"))))
+        (base32 "0a5g0bafvb1rbw31y8b8plwhxw5svlh4qfjwvdzafbcrp3rn1cs4"))))
     (properties `((upstream-name . "changepointsVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lars))
@@ -34235,6 +34204,33 @@ conducts conditional distance covariance test for conditional independence
 assumption of two multivariate variable.")
     (license license:gpl2+)))
 
+(define-public r-cdcplaces
+  (package
+    (name "r-cdcplaces")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDCPLACES" version))
+       (sha256
+        (base32 "09khg9fp93p184wyh1nw1p1v01zmdif6h6lh87wya13mapjbb3l1"))))
+    (properties `((upstream-name . "CDCPLACES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (home-page "https://github.com/brendensm/CDCPLACES")
+    (synopsis "Access the 'CDC PLACES' API")
+    (description
+     "Allows users to seamlessly query several CDC PLACES APIs
+(<https://data.cdc.gov/browse?q=PLACES%20&@code{sortBy=relevance>}) by
+geography, state, measure, and release year.  This package also contains a
+function to explore the available measures for each release year.")
+    (license license:expat)))
+
 (define-public r-cdcatr
   (package
     (name "r-cdcatr")
@@ -35599,13 +35595,13 @@ by the gut bacteria.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "0pm5m9gmjzfbh9zspj2asaa7fwhflfhi9j48132lsd5h09n7iwma"))))
+        (base32 "1i01909zfvrxyjpl1zl58s2y3b27xd1rbi3yhmzqlw9q0yxlbnn8"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -36154,6 +36150,36 @@ randomization, which is described in Charpignon et al. (2022)
 <doi:10.1038/s41467-022-35157-w>.")
     (license license:gpl2+)))
 
+(define-public r-causalbatch
+  (package
+    (name "r-causalbatch")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalBatch" version))
+       (sha256
+        (base32 "024mhfakv7j98xn4nkzm7xvdn76bi5ymknr5v60g3n70i2id98xk"))))
+    (properties `((upstream-name . "causalBatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sva
+                             r-nnet
+                             r-matchit
+                             r-magrittr
+                             r-dplyr
+                             r-cdcsis))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurodata/causal_batch")
+    (synopsis "Causal Batch Effects")
+    (description
+     "Software for using causal techniques to detect and correct for group/batch
+effects in high-dimensional scientific data sets, as-described in our
+manuscripts Bridgeford et al. (2024) <doi:10.1101/2021.09.03.458920> and
+Bridgeford et al. (2023) <@code{arXiv:2307.13868>}.  Also provides a number of
+useful utilities for generating simulations and balancing covariates across
+multiple groups/batches of data.")
+    (license license:expat)))
+
 (define-public r-causal-decomp
   (package
     (name "r-causal-decomp")
@@ -36256,16 +36282,16 @@ trait reconstruction.  See Bastide and Didier (2023)
 (define-public r-cauchypca
   (package
     (name "r-cauchypca")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cauchypca" version))
        (sha256
-        (base32 "0zrxrbzdfkdjqa02ba7d3mjlfbq84464k8c5ja15xqgmgpvsd1x3"))))
+        (base32 "157ydm2vizv7cwvxi7id7wws7v0h3iymgwsbvk13q4jlk8ygnnqn"))))
     (properties `((upstream-name . "cauchypca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-foreach r-doparallel))
+    (propagated-inputs (list r-rfast2 r-rfast r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=cauchypca")
     (synopsis
      "Robust Principal Component Analysis Using the Cauchy Distribution")
@@ -36274,9 +36300,9 @@ trait reconstruction.  See Bastide and Didier (2023)
 implemented that relies upon the Cauchy Distribution.  The algorithm is suitable
 for high dimensional data even if the sample size is less than the number of
 variables.  The methodology is described in this paper: Fayomi A., Pantazis Y.,
-Tsagris M. and Wood A.T.A. (2022). \"Cauchy robust principal component analysis
-with applications to high-dimensional data sets\".  Statistics and Computing
-(Accepted for publication). <@code{arXiv:2211.03181>}.")
+Tsagris M. and Wood A.T.A. (2024). \"Cauchy robust principal component analysis
+with applications to high-dimensional data sets\".  Statistics and Computing, 34:
+26. <doi:10.1007/s11222-023-10328-x>.")
     (license license:gpl2+)))
 
 (define-public r-cauchycp
