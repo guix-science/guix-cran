@@ -2918,16 +2918,17 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.5")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "0iv2mn4w3agqd921sf44rq6plwcrb4sxazyf455nysdmjbcbsc86"))))
+        (base32 "0inzasy6ya9s9lrz6npyp5my8mbyvnnvsb98a1w546wqwwrfklny"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
+                             r-sparsechol
                              r-sf
                              r-rstantools
                              r-rstan
@@ -2936,22 +2937,23 @@ ISBN:9780849303166).")
                              r-rcpp
                              r-r6
                              r-lubridate
+                             r-glmmrbase
                              r-bh))
-    (home-page "http://www.sam-watson.xyz/vignette.html")
+    (home-page "https://cran.r-project.org/package=rts2")
     (synopsis "Real-Time Disease Surveillance")
     (description
      "Supports modelling real-time case data to facilitate the real-time surveillance
-of infectious disease.  A simple grid class structure is provided to generate a
-computational grid over an area of interest with methods to map covariates
-between geographies.  An approximate log-Gaussian Cox Process model is fit using
-rstan or cmdstanr and provides output and analysis as sf objects for simple
-visualisation.  cmdstanr can be downloaded at <https://mc-stan.org/cmdstanr/>.
-Log-Gaussian Cox Processes are described by Diggle et al. (2013)
-<doi:10.1214/13-STS441> and we provide both the low-rank approximation for
-Gaussian processes described by Solin and SÃ¤@code{rkkÃ¤} (2020)
-<doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2020)
+of infectious diseases and other point phenomena.  The package provides
+automated computational grid generation over an area of interest with methods to
+map covariates between geographies, model fitting including spatially aggregated
+case counts, and predictions and visualisation.  Both Bayesian and maximum
+likelihood methods are provided.  Log-Gaussian Cox Processes are described by
+Diggle et al. (2013) <doi:10.1214/13-STS441> and we provide both the low-rank
+approximation for Gaussian processes described by Solin and SÃ¤@code{rkkÃ¤}
+(2020) <doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2020)
 <@code{arXiv:2004.11408>} and the nearest neighbour Gaussian process described
-by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.")
+by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.  cmdstanr can be
+downloaded at <https://mc-stan.org/cmdstanr/>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-rts
@@ -4659,13 +4661,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.17.1")
+    (version "9.1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "01q3b8mlgy4qf56ql808yi18msq9c4qafmnzmvq1jc8lfqkqszqp"))))
+        (base32 "1qf2svv634jg2gx9zv2sha81x14dbnxdlgj2kkgqlxdikkcgn5wb"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -4694,7 +4696,7 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
                   libarchive
                   cmake))
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list esbuild))
+    (native-inputs (list pkg-config esbuild))
     (home-page "https://github.com/mgondan/rswipl")
     (synopsis "Embed 'SWI'-'Prolog'")
     (description
@@ -9508,13 +9510,13 @@ quantitation of Reverse-Phase Protein Array data'.  Bioinformatics Nov
 (define-public r-rppanalyzer
   (package
     (name "r-rppanalyzer")
-    (version "1.4.8")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPPanalyzer" version))
        (sha256
-        (base32 "08p1cc5vxhyp71zn3pjc2l5xwc8qcq3ghvn33rskwb7wqizn6a1j"))))
+        (base32 "1lw28cfi397klxxhs97dwzsfk7ykggbh4p82yg73sq6yq3liha1a"))))
     (properties `((upstream-name . "RPPanalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -10665,17 +10667,17 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.4.0")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "0x1np14hvgj9h8spy50j8c8kaxi097asf10vs450fz23acpi8zj4"))))
+        (base32 "09phw8vj108p7m6dqrjrpg12nj0dikrkaaji0fa7r6ljxhkg2wv1"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-knitr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://www.rpact.org")
     (synopsis "Confirmatory Adaptive Clinical Trial Design and Analysis")
     (description
@@ -24336,35 +24338,6 @@ data analysis.  The @code{GeoDa} software and its documentation are available at
 <https://geodacenter.github.io>.")
     (license license:gpl2+)))
 
-(define-public r-rgeoboundaries
-  (package
-    (name "r-rgeoboundaries")
-    (version "1.2.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgeoboundaries" version))
-       (sha256
-        (base32 "1xzh80niwdl9zw8skidfl5g025w3sh66pia65sm7inqvzslszppy"))))
-    (properties `((upstream-name . "rgeoboundaries")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-memoise
-                             r-lifecycle
-                             r-jsonlite
-                             r-hoardr
-                             r-glue
-                             r-crul
-                             r-countrycode))
-    (home-page "https://github.com/wmgeolab/rgeoboundaries")
-    (synopsis
-     "Client to 'geoBoundaries', a Political Administrative Boundaries Dataset")
-    (description
-     "Client the access data from the @code{geoBoundaries} API
-<https://www.geoboundaries.org/api/current/> who provides country political
-administrative boundaries dataset.")
-    (license license:expat)))
-
 (define-public r-rgenoud
   (package
     (name "r-rgenoud")
@@ -25902,13 +25875,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.9.9")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "1k8qlqwjlbaq6xx18srrinz1cc0vwhs7cshq2km2asazv2qj54rp"))))
+        (base32 "179wwpyzhli8h1skn7y3jjms3rigfrgxsv9v0n0npwr1g0r5sv8r"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -30070,13 +30043,13 @@ event models.")
 (define-public r-relevance
   (package
     (name "r-relevance")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relevance" version))
        (sha256
-        (base32 "1n6b8b0mg60i4zmj9008wz49jq0i6b7wbs9hz0lr7d2cjvfnhf07"))))
+        (base32 "1x6abdraxzyf1anmxsx82g4am4hamj0cpayvhbph51dcf49wkvh0"))))
     (properties `((upstream-name . "relevance")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -32316,13 +32289,13 @@ convenient way.")
 (define-public r-reddyproc
   (package
     (name "r-reddyproc")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REddyProc" version))
        (sha256
-        (base32 "1irclh991wp1ns2wb9dd88kqd5vg1kd8vk83a7w0kjpf20yqnkvp"))))
+        (base32 "0ss8zyvvhkkw42vk3v4qx21i9navb74kjlgj3dikz0a19z93nrrz"))))
     (properties `((upstream-name . "REddyProc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -32331,6 +32304,7 @@ convenient way.")
                              r-readr
                              r-rcpp
                              r-purrr
+                             r-mlegp
                              r-magrittr
                              r-dplyr
                              r-bigleaf))
@@ -41530,13 +41504,13 @@ multivariate T2 control chart.  Plot and summary functions.  Kosztyan et.  al.
 (define-public r-rbcb
   (package
     (name "r-rbcb")
-    (version "0.1.13")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcb" version))
        (sha256
-        (base32 "1a2afcghpf7qy79azrisxi6rq4b2lw6sbl1g65sn256zk68w0gr3"))))
+        (base32 "1i6gxcz90r536sp9khafzb5lfbqymh61nvaancvl8jl8wqindxp4"))))
     (properties `((upstream-name . "rbcb")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

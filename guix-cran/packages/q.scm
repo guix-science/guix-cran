@@ -1542,13 +1542,13 @@ quanteda package and are specially designed for sparse textual data.")
 (define-public r-quanteda-textplots
   (package
     (name "r-quanteda-textplots")
-    (version "0.94.3")
+    (version "0.94.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textplots" version))
        (sha256
-        (base32 "05dz3llp79i1giz0b7lm6kb14qf2rp26xz33skb71iiks290zp19"))))
+        (base32 "0adl3dahr51f2sqdr0fng99r87pq4mknlqmhg6nfjx617rni9w2a"))))
     (properties `((upstream-name . "quanteda.textplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi

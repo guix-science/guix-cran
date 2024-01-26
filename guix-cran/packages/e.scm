@@ -560,13 +560,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "0cv1ykpd9m9afd6gacp4cm8i5fc2djpgf4hrsh97wqv5nn272ncn"))))
+        (base32 "1gr7wxg1b03qh10269v62qfljzx0gprjcd4z99kdivvb1wng55q4"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -3138,13 +3138,13 @@ visualizing results.")
 (define-public r-exact2x2
   (package
     (name "r-exact2x2")
-    (version "1.6.8")
+    (version "1.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exact2x2" version))
        (sha256
-        (base32 "1wcqgfh859acw5gpcgvvkh40qrjgk07qc4d6w51b51mabcx965wp"))))
+        (base32 "0lqxnljrlwc94sb6niiass7k2xb6gcl4ysh5ap25d9dy4mkymkl2"))))
     (properties `((upstream-name . "exact2x2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv r-exactci))
@@ -12360,13 +12360,13 @@ specified by Bayesâ rule.")
 (define-public r-emmixmfa
   (package
     (name "r-emmixmfa")
-    (version "2.0.11")
+    (version "2.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMMIXmfa" version))
        (sha256
-        (base32 "06lfmpw908chhzx512anqacixvvx3y02wm1n4wmpb890rd85n11r"))))
+        (base32 "1a3zwjwj746rmbx4mkk7fs946ybbvbds3slh06v70szqhkpc1ajr"))))
     (properties `((upstream-name . "EMMIXmfa")))
     (build-system r-build-system)
     (home-page "https://github.com/suren-rathnayake/EMMIXmfa")
@@ -14174,13 +14174,13 @@ least absolute shrinkage and selection operator for regression model.")
 (define-public r-elasdics
   (package
     (name "r-elasdics")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elasdics" version))
        (sha256
-        (base32 "1zpwkch4h463d1ad681iid668909w74xb0wyfjqshdvznb4pxp5i"))))
+        (base32 "03zfklxnh66kzlkw5yf8p859hkfhbvh5pgmi9lcwy0izi32sjx86"))))
     (properties `((upstream-name . "elasdics")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -14191,7 +14191,8 @@ least absolute shrinkage and selection operator for regression model.")
 on the elastic distance defined in the square-root-velocity framework.  For more
 details on this framework see Srivastava and Klassen (2016,
 <doi:10.1007/978-1-4939-4020-2>).  For more theoretical details on our methods
-and algorithms see Steyer et al. (2021, <@code{arXiv:2104.11039>}).")
+and algorithms see Steyer et al. (2023, <doi:10.1111/biom.13706>) and Steyer et
+al. (2023, <@code{arXiv:2305.02075>}).")
     (license license:gpl3)))
 
 (define-public r-elaborator

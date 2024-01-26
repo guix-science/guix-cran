@@ -24072,13 +24072,13 @@ quantile estimates, mean estimates, or any statistical function of interest.")
 (define-public r-pheindicatormethods
   (package
     (name "r-pheindicatormethods")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHEindicatormethods" version))
        (sha256
-        (base32 "0ypvzg7y7wh167pzblvjjah911kj29w2fr8ycqk03wf8ch9fay1c"))))
+        (base32 "0gjlq8vnfgc5hlscy64ypx08vafwvc2xbk971nznby4v2fkkm1h3"))))
     (properties `((upstream-name . "PHEindicatormethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

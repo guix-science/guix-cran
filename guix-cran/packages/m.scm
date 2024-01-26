@@ -8808,13 +8808,13 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
 (define-public r-mrfdepth
   (package
     (name "r-mrfdepth")
-    (version "1.0.15")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrfDepth" version))
        (sha256
-        (base32 "08dc5xq3spv1zb5yfqmwldiw7sflq1nfpkn0cqapw4i4csx31qsl"))))
+        (base32 "1xxq8in957zk04n4zha05p65y0h72gvfgmbqdv7b6cmwdmmms3hj"))))
     (properties `((upstream-name . "mrfDepth")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -14203,23 +14203,25 @@ policy of not spanning more than two child processes by default.")
 (define-public r-modacdc
   (package
     (name "r-modacdc")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modACDC" version))
        (sha256
-        (base32 "0l7gs96wkm09yflqnzas2axdc7ca29x6g7azxsaxfi3max2ns797"))))
+        (base32 "0yly524nvpwvwbvz17fdp7dlbivj4zli8k1j4xdzmr58v7dxy4il"))))
     (properties `((upstream-name . "modACDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-partition
                              r-ggplot2
+                             r-genio
+                             r-genieclust
                              r-foreach
                              r-doparallel
                              r-data-table
-                             r-ccp
-                             r-cca))
+                             r-ccp))
     (home-page "https://github.com/USCbiostats/ACDC")
     (synopsis
      "Association of Covariance for Detecting Differential Co-Expression")
@@ -14231,10 +14233,10 @@ multiple phenotypes or exposures with binary, ordinal, or continuous data types.
  Users can use the default method which identifies modules by Partition or may
 supply their own modules.  Also included are functions to choose an information
 loss criterion (ILC) for Partition using @code{OmicS-data-based} Complex trait
-Analysis (OSCA).  The manuscript describing these methods is as follows: Queen
-K, Nguyen MN, Gilliland F, Chun S, Raby BA, Millstein J. \"ACDC: a general
-approach for detecting phenotype or exposure associated co-expression\" (2023)
-<https://www.frontiersin.org/articles/10.3389/fmed.2023.1118824/abstract>.")
+Analysis (OSCA) and Genome-wide Complex trait Analysis (GCTA).  The manuscript
+describing these methods is as follows: Queen K, Nguyen MN, Gilliland F, Chun S,
+Raby BA, Millstein J. \"ACDC: a general approach for detecting phenotype or
+exposure associated co-expression\" (2023) <doi:10.3389/fmed.2023.1118824>.")
     (license license:expat)))
 
 (define-public r-mod2rm
@@ -14363,13 +14365,13 @@ deprecated testthat::with_mock() and testthat::local_mock()'.")
 (define-public r-mocha
   (package
     (name "r-mocha")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MOCHA" version))
        (sha256
-        (base32 "1ncl1xvrb5gy9k3z54ymb55vxfnqyix0yq316h8wd5ppl1qq3fk0"))))
+        (base32 "1v0pvpzc635bz63ywzpb39h7f6qrk3yvxf21i13y5abhmyjppdmi"))))
     (properties `((upstream-name . "MOCHA")))
     (build-system r-build-system)
     (propagated-inputs (list r-wcorr
@@ -14384,7 +14386,6 @@ deprecated testthat::with_mock() and testthat::local_mock()'.")
                              r-qvalue
                              r-plyranges
                              r-pbapply
-                             r-organismdbi
                              r-multiassayexperiment
                              r-matrixstats
                              r-magrittr
@@ -14401,7 +14402,6 @@ deprecated testthat::with_mock() and testthat::local_mock()'.")
                              r-dplyr
                              r-data-table
                              r-bsgenome
-                             r-biovizbase
                              r-biocgenerics
                              r-assertthat
                              r-annotationdbi))
@@ -15197,13 +15197,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "09g4rs615l80m2crsqpndbwyic2k00kmmnwk8rxnkz5bp179mwr5"))))
+        (base32 "0g8sxp7alw2gb4hf5c370s88gxfd1vwcvn5ak43wxc02k1wkb7wl"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22390,13 +22390,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "11yky5v76x690cbpi4fxpfazymi9v0h4ix18d4vcccg3pgzvjrn3"))))
+        (base32 "1qwbf6wqc5kdhxymp264phznmc6krpjza7bprx4zvbjdjyg938pv"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -23265,13 +23265,13 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.2.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "13qalqdik8pqn20s9vj56p1jis8k8jy43ggz311782jn0ysya7nc"))))
+        (base32 "1lgcavl5zq3hghvwscpsskfihbswkab53g8p7gdvwprd796khbka"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23288,8 +23288,8 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
                              r-future
                              r-furrr
                              r-dplyr))
-    (home-page "https://snlab-ch.github.io/migraph/")
-    (synopsis "Multimodal Network Analysis and More")
+    (home-page "https://stocnet.github.io/migraph/")
+    (synopsis "Many Network Measures, Motifs, Members, and Models")
     (description
      "This package provides a set of tools for analysing multimodal networks.  It
 includes functions for measuring centrality, centralization, cohesion, closure,
@@ -27625,13 +27625,13 @@ for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
 (define-public r-metaumbrella
   (package
     (name "r-metaumbrella")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaumbrella" version))
        (sha256
-        (base32 "1sly9ivzjyrp0d2rha7ry3xlk6l5m69scyacjsx6yqfyrbf5w3kx"))))
+        (base32 "0laa4qvj5vgvfwv775fgcx9wv7rdlc0pvcdp0aqmhz9lv3smxjfb"))))
     (properties `((upstream-name . "metaumbrella")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -40733,13 +40733,13 @@ package uses the @code{rJava} package to connect to a JVM.")
 (define-public r-maldirppa
   (package
     (name "r-maldirppa")
-    (version "1.1.0-1")
+    (version "1.1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MALDIrppa" version))
        (sha256
-        (base32 "1gm5w614r66av6bvfiad5964hsr6hb0c03c90ck9lb251bns98wm"))))
+        (base32 "1afwkc8dyq51z610z7wnhm95f5j04yj90pxxa33mhdnm2dwsc963"))))
     (properties `((upstream-name . "MALDIrppa")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim r-signal r-robustbase r-maldiquant

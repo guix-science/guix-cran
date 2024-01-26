@@ -2319,13 +2319,13 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 (define-public r-htmlutils
   (package
     (name "r-htmlutils")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTMLUtils" version))
        (sha256
-        (base32 "1jfhcyibvxqc96sig81a2fj2gplmwxm5h000xlihkbjk7k9fdsrz"))))
+        (base32 "1i4f78c5g9j9n6bahga4mqg91p5c39yvw9mpm8hxz6isfi2jvs8l"))))
     (properties `((upstream-name . "HTMLUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2html))
@@ -10937,13 +10937,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "1jzadj50q45fb9awyqmy00aaaspkf91id88x4nv5swlj8nmai3mi"))))
+        (base32 "05pyn4xv7s0bbjzsf3f9mwxsk6npm6lx21xi0rg2nr3wfx8kmpfm"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10955,11 +10955,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
                              r-rcppeigen
                              r-rcpp
                              r-rcolorbrewer
+                             r-progressr
                              r-plyr
-                             r-pbmcapply
                              r-matrixstats
                              r-loo
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-dplyr
                              r-bh))
     (native-inputs (list r-knitr))

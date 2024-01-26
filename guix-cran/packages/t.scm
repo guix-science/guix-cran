@@ -7045,13 +7045,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "0mighny8r60vg98x0fl3vchnhqx5givjnzlnqygd6slipinmgjcg"))))
+        (base32 "01z4h5d9976g7axlapmvsl09b2wq7xqyn1q096b0z2asr9s6xmrq"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15907,13 +15907,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "1macaf6zfklbk8f5zhj6diicfbqnipg8xraclail657p1ii3pfb6"))))
+        (base32 "06c0xz4amnpajvca8k6rjcw7ijmp88s2h3131q3yzj95f189h9w1"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

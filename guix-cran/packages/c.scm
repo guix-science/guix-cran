@@ -3336,13 +3336,13 @@ details.")
 (define-public r-cstools
   (package
     (name "r-cstools")
-    (version "5.1.1")
+    (version "5.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSTools" version))
        (sha256
-        (base32 "0mh50wz0c7x00mi5a5h474v5l5pimgpijdywkh1rsix7a0gj8fzj"))))
+        (base32 "0yyzc76x45pf3r84jdpxj2zplibf6zb1q3gb8jv5ncpcw3s9i3c9"))))
     (properties `((upstream-name . "CSTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-verification
@@ -3360,6 +3360,7 @@ details.")
                              r-lubridate
                              r-ggplot2
                              r-easyverification
+                             r-easyncdf
                              r-data-table
                              r-climprojdiags
                              r-abind))
@@ -12919,13 +12920,13 @@ details see Manipur et al (2023) <doi:10.1101/2023.06.29.546856>.")
 (define-public r-copernicusmarine
   (package
     (name "r-copernicusmarine")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusMarine" version))
        (sha256
-        (base32 "0h8vr3kv5i17psnqaq9gs1r87fsji4z5d46lw0aln3hxrd40pc4r"))))
+        (base32 "09kv2c7lkbnpzfs0i48dp3gvx6mwn89q0y3f4hbmm9iiyksrdw2i"))))
     (properties `((upstream-name . "CopernicusMarine")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -20740,6 +20741,44 @@ as detailed at <https://codemeta.github.io>.  This package provides core
 utilities to generate this metadata with a minimum of dependencies.")
     (license license:gpl3)))
 
+(define-public r-codelistgenerator
+  (package
+    (name "r-codelistgenerator")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CodelistGenerator" version))
+       (sha256
+        (base32 "18jxfpkibyhq1schabgg9mmqgjvqyprlkbgd5zn72ylahqjvwzsa"))))
+    (properties `((upstream-name . "CodelistGenerator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-rjsonio
+                             r-purrr
+                             r-patientprofiles
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu.github.io/CodelistGenerator/")
+    (synopsis "Identify Relevant Clinical Codes and Evaluate Their Use")
+    (description
+     "Generate a candidate code list for the Observational Medical Outcomes
+Partnership (OMOP) common data model based on string matching.  For a given
+search strategy, a candidate code list will be returned.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-codecountr
   (package
     (name "r-codecountr")
@@ -25445,13 +25484,13 @@ combined to construct new indices.")
 (define-public r-climmobtools
   (package
     (name "r-climmobtools")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimMobTools" version))
        (sha256
-        (base32 "05s887c7rywrqhrm7h8ikm70nsagbxjq06ymyjbmcws2bxysas8q"))))
+        (base32 "1kx1hkyn96bhw237hvzrkr1hc8nf02p90lz9gg0rzcjx0zhks4s7"))))
     (properties `((upstream-name . "ClimMobTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-matrix r-lpsolve r-jsonlite r-httr))
@@ -29177,13 +29216,13 @@ the ratio between the largest and the smallest weights after resampling.")
 (define-public r-choplump
   (package
     (name "r-choplump")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choplump" version))
        (sha256
-        (base32 "14sssw57jfvff1s9h7pfgazg50xmblj0c2cljcmbdy19ynlkr43g"))))
+        (base32 "16a6qwnh08qdx3n5abgjrnmyiqqf3i1pap3y965ikb2r1jfr9b3f"))))
     (properties `((upstream-name . "choplump")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=choplump")

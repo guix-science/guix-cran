@@ -16615,13 +16615,13 @@ Details on the least-squares estimation can be found in Chiou et al. (2014)
 (define-public r-africamonitor
   (package
     (name "r-africamonitor")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "africamonitor" version))
        (sha256
-        (base32 "13pwrbz0ap13a4di3zc1z5j4jk4q9vcpn4g8n41nyminbsg1vl5j"))))
+        (base32 "0nqxvyv6hipadyfzc6mvr2pns3m7n7h3i87lzvgx8fj2rlcigqkq"))))
     (properties `((upstream-name . "africamonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql r-dbi r-data-table r-collapse))
@@ -16634,7 +16634,7 @@ international sources, grouped into 50 macroeconomic and development-related
 topics.  Series are carefully selected on the basis of data coverage for Africa,
 frequency, and relevance to the macro-development context.  The project is part
 of the Kiel Institute Africa Initiative
-<https://www.ifw-kiel.de/institute/initiatives/kielinstituteafricainitiative/>,
+<https://www.ifw-kiel.de/institute/initiatives/kiel-institute-africa-initiative/>,
 which, amongst other things, aims to develop a parsimonious database with highly
 relevant indicators to monitor macroeconomic developments in Africa, accessible
 through a fast API and a web-based platform at
@@ -19214,13 +19214,13 @@ algorithms are described and reviewed in Zhang and Ball (2017)
 (define-public r-adbi
   (package
     (name "r-adbi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbi" version))
        (sha256
-        (base32 "05cgkxjcgrcvmq7h5am5zxr32s7narar7f612by246fbhxlkv2s7"))))
+        (base32 "17w74ggng77yvpqn0vw1s1gylmchrv2dq6s19fl56dl6nqp6bfpa"))))
     (properties `((upstream-name . "adbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow r-dbi r-adbcdrivermanager))

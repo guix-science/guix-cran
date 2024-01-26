@@ -17917,13 +17917,13 @@ state/ province/ country.")
 (define-public r-dendrotools
   (package
     (name "r-dendrotools")
-    (version "1.2.10")
+    (version "1.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendroTools" version))
        (sha256
-        (base32 "1kr6x2nhzkzrcamig4cmvibjb4zrb5c12wv57shmb4ia83kg71y0"))))
+        (base32 "0p1z7fqfak491djf09fvcixd67z78qsh7818xzqchq2njbrcxpcq"))))
     (properties `((upstream-name . "dendroTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

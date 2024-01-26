@@ -5773,13 +5773,13 @@ estimated variance.")
 (define-public r-fpdclustering
   (package
     (name "r-fpdclustering")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPDclustering" version))
        (sha256
-        (base32 "0h9yfiyf8xhvdyzjwgh9s8immnfx6yidz4irn8nyp14ifhq1ad61"))))
+        (base32 "1d96x9a5r9j8liqsl8bnk6ygwq0ys0hr3zzsa463lmyixyfpgjs5"))))
     (properties `((upstream-name . "FPDclustering")))
     (build-system r-build-system)
     (propagated-inputs (list r-threeway
@@ -5788,11 +5788,12 @@ estimated variance.")
                              r-mass
                              r-klar
                              r-ggplot2
+                             r-ggeasy
                              r-ggally
                              r-exposition
                              r-cluster))
     (home-page "https://cran.r-project.org/package=FPDclustering")
-    (synopsis "PD-Clustering and Factor PD-Clustering")
+    (synopsis "PD-Clustering and Related Methods")
     (description
      "Probabilistic distance clustering (PD-clustering) is an iterative, distribution
 free, probabilistic clustering method.  PD-clustering assigns units to a cluster

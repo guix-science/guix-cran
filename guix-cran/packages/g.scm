@@ -13062,13 +13062,13 @@ distributions.")
 (define-public r-gjrm
   (package
     (name "r-gjrm")
-    (version "0.2-6.4")
+    (version "0.2-6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GJRM" version))
        (sha256
-        (base32 "0mzcisxw6487ckpw0ac538dcs6dhjw74n8aki6w6zp699jn4jnin"))))
+        (base32 "0j69lh8hbdcmgj6bwg67s1mlgffcmc045z6sm6p3jifcg8ri18sw"))))
     (properties `((upstream-name . "GJRM")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula
@@ -13088,7 +13088,6 @@ distributions.")
                              r-ggplot2
                              r-gamlss-dist
                              r-evd
-                             r-distrex
                              r-copula))
     (home-page "https://www.ucl.ac.uk/statistics/people/giampieromarra")
     (synopsis "Generalised Joint Regression Modelling")
@@ -17836,6 +17835,51 @@ tidyverse collection of packages.  The package contains references to
 @code{FishBase} (Froese R., Pauly.  D., 2023) <https://www.fishbase.se/>.")
     (license license:gpl3)))
 
+(define-public r-ggfacto
+  (package
+    (name "r-ggfacto")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfacto" version))
+       (sha256
+        (base32 "000bznpjvr8g5zjfn6cilm8cvr30g9c1n24h4zr86056skg96qvp"))))
+    (properties `((upstream-name . "ggfacto")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-widgetframe
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-tabxplor
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-htmlwidgets
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggiraph
+                             r-forcats
+                             r-factominer
+                             r-dplyr))
+    (home-page "https://github.com/BriceNocenti/ggfacto")
+    (synopsis "Graphs for Correspondence Analysis")
+    (description
+     "Readable, complete and pretty graphs for correspondence analysis made with
+@code{FactoMineR}'.  They can be rendered as interactive HTML plots, showing
+useful informations at mouse hover.  The interest is not mainly visual but
+statistical: it helps the reader to keep in mind the data contained in the
+cross-table or Burt table while reading the correspondence analysis, thus
+preventing over-interpretation.  Graphs are made with ggplot2', which means that
+you can use the + syntax to manually add as many graphical pieces you want, or
+change theme elements.")
+    (license license:gpl3+)))
+
 (define-public r-ggetho
   (package
     (name "r-ggetho")
@@ -18889,13 +18933,13 @@ details can be found in Hong Zhang and Zheyang Wu (2020)
 (define-public r-gfilogisreg
   (package
     (name "r-gfilogisreg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfilogisreg" version))
        (sha256
-        (base32 "1825xaz4xjnhpmfrim6c9sfr50wyvpbmbnzbvvjqrn8d2gwcmim6"))))
+        (base32 "1x9j2ac7lk2gkcwxkvyc3bj23z5bibhx64lj4nwsgdjq14677502"))))
     (properties `((upstream-name . "gfilogisreg")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -18955,13 +18999,13 @@ close to frequentist results.  Reference: Cisewski and Hannig (2012)
 (define-public r-gfiextremes
   (package
     (name "r-gfiextremes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfiExtremes" version))
        (sha256
-        (base32 "1ys7vrd5kpyqj42m384r2b91w53rlx6hcznpb0a0mnniqj4wc61r"))))
+        (base32 "0iljf63pwwxzj0syvj7p13m6q82y7nf1kq5xpgyczkbrrbb59p7n"))))
     (properties `((upstream-name . "gfiExtremes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -26474,13 +26518,13 @@ local and remote access are described in <https://duckdb.org/why_duckdb> and
 (define-public r-gbfs
   (package
     (name "r-gbfs")
-    (version "1.3.8")
+    (version "1.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbfs" version))
        (sha256
-        (base32 "0ric1qr9byc3l75s3jf63mhhsmywxj95rm2sk68q7ff8c63xp5vz"))))
+        (base32 "0748gicg4mf3csgf75rcpkcsf0c8md4clyavh3kxs77jhq8h6j48"))))
     (properties `((upstream-name . "gbfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

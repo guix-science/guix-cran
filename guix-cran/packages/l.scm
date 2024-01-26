@@ -205,13 +205,13 @@ modeling; RNM).  For details, see Epskamp, Rhemtulla and Borsboom (2017)
 (define-public r-lvmisc
   (package
     (name "r-lvmisc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lvmisc" version))
        (sha256
-        (base32 "06ry1azfpqdh1hblhnc47n9265dkzhm96rajl8y7xnvqmv6ad8jj"))))
+        (base32 "1yrcrgz38ql3w870agcjldr4b5ibi5g2vm8nabbgkp33wmbk3hgs"))))
     (properties `((upstream-name . "lvmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

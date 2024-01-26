@@ -3243,13 +3243,13 @@ continuity correction and to identify the presence of Simpson's paradox.")
 (define-public r-nortstest
   (package
     (name "r-nortstest")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nortsTest" version))
        (sha256
-        (base32 "1vjg6ykpjidj4cy2rl49sh1ja1578mvgjsmfp468wrzvv1w2kc3k"))))
+        (base32 "0z3ganmaz3p0s957g123gcmcf6x01gvsmrl6ddi3n588hysscqsy"))))
     (properties `((upstream-name . "nortsTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -7327,13 +7327,13 @@ at-site parameters.  The methods are described in Winkler et al. (2021)
 (define-public r-nivm
   (package
     (name "r-nivm")
-    (version "0.3")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nivm" version))
        (sha256
-        (base32 "111jkgirgsl1j36xgwi81wzwxial3vdw8mqzi1faldxxd9a2cixm"))))
+        (base32 "194kc743hqjalvkvh80y2rj25b8caklcb15pi72d6r02apyvw43d"))))
     (properties `((upstream-name . "nivm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssanv r-bpcp))
@@ -7341,7 +7341,8 @@ at-site parameters.  The methods are described in Winkler et al. (2021)
     (synopsis "Noninferiority Tests with Variable Margins")
     (description
      "Noninferiority tests for difference in failure rates at a prespecified control
-rate or prespecified time.")
+rate or prespecified time.  For details, see Fay and Follmann, 2016
+<DOI:10.1177/1740774516654861>.")
     (license license:gpl3+)))
 
 (define-public r-nitrogenuptake2016
@@ -13237,16 +13238,21 @@ printed header output or to navigate nested lists of raw metadata.")
 (define-public r-ncdfgeom
   (package
     (name "r-ncdfgeom")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncdfgeom" version))
        (sha256
-        (base32 "0v53nns8xq2w6rbn11man8kgr4dqpy2glj2rhn9817lvk9pz8x18"))))
+        (base32 "1scbcysklqi761xbjxkdb54m3k31hps58lyg2l01m9pk117ywkz5"))))
     (properties `((upstream-name . "ncdfgeom")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stars r-sf r-rnetcdf r-ncmeta r-dplyr))
+    (propagated-inputs (list r-stars
+                             r-sf
+                             r-rnetcdf
+                             r-ncmeta
+                             r-dplyr
+                             r-areal))
     (native-inputs (list r-knitr))
     (home-page "https://code.usgs.gov/water/ncdfgeom")
     (synopsis "'NetCDF' Geometry and Time Series")

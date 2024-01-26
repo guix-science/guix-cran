@@ -11861,6 +11861,42 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 <doi:10.1175%2F1520-0450%281996%29035%3C0601%3AIMFAOS%3E2.0.CO%3B2>.")
     (license license:expat)))
 
+(define-public r-statgraph
+  (package
+    (name "r-statgraph")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "statGraph" version))
+       (sha256
+        (base32 "04m678ricwbrs64zrs36bzygkf5g6frsisyzyfxml9i40fzdv8pa"))))
+    (properties `((upstream-name . "statGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rarpack
+                             r-mass
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-cluster))
+    (home-page "https://www.ime.usp.br/~fujita/software.html")
+    (synopsis "Statistical Methods for Graphs")
+    (description
+     "This package contains statistical methods to analyze graphs, such as graph
+parameter estimation, model selection based on the Graph Information Criterion,
+statistical tests to discriminate two or more populations of graphs, correlation
+between graphs, and clustering of graphs.  References: Takahashi et al. (2012)
+<doi:10.1371/journal.pone.0049949>, Fujita et al. (2017)
+<doi:10.3389/fnins.2017.00066>, Fujita et al. (2017)
+<doi:10.1016/j.csda.2016.11.016>, Tang et al. (2017) <doi:10.3150/15-BEJ789>,
+Tang et al. (2017) <doi:10.1080/10618600.2016.1193505>, Ghoshdastidar et al.
+(2017) <@code{arXiv:1705.06168>}, Ghoshdastidar et al. (2017)
+<@code{arXiv:1707.00833>}, Cerqueira et al. (2017)
+<doi:10.1109/TNSE.2017.2674026>, Fraiman and Fraiman (2018)
+<doi:10.1038/s41598-018-23152-5>, Fujita et al. (2019)
+<doi:10.1093/comnet/cnz028>.")
+    (license license:gpl3+)))
+
 (define-public r-statgensta
   (package
     (name "r-statgensta")
@@ -23119,13 +23155,13 @@ Design.")
 (define-public r-spas
   (package
     (name "r-spas")
-    (version "2023.3.31")
+    (version "2024.1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPAS" version))
        (sha256
-        (base32 "1khblwl0b80c3hfizhcrlaxd2gcyjh7784gjc10mi21iy0q6pd2x"))))
+        (base32 "06axnkq22jyc208ndvmiyp13vfr9sxg85rsdzdi6mm70rzgwba6c"))))
     (properties `((upstream-name . "SPAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -23146,15 +23182,13 @@ stratified.  This is a generalization of the simple Lincoln-Petersen estimator.
 Strata may be defined in time or in space or both, and the s strata in which
 marking takes place may differ from the t strata in which recoveries take place.
  When s=t, SPAS reduces to the method described by Darroch (1961)
-<https://www.jstor.org/stable/2332748>.  When s<t, SPAS implements the methods
-described in Plante, Rivest, and Tremblay (1988)
-<https://www.jstor.org/stable/2533994>.  Schwarz and Taylor (1998)
-<https://cdnsciencepub.com/doi/10.1139/f97-238> describe the use of SPAS in
-estimating return of salmon stratified by time and geography.  A related
-package, BTSPAS, deals with temporal stratification where a spline is used to
-model the distribution of the population over time as it passes the second
-capture location.  This is the R-version of the (now obsolete) standalone
-Windows program available at
+<doi:10.2307/2332748>.  When s<t, SPAS implements the methods described in
+Plante, Rivest, and Tremblay (1988) <doi:10.2307/2533994>.  Schwarz and Taylor
+(1998) <doi:10.1139/f97-238> describe the use of SPAS in estimating return of
+salmon stratified by time and geography.  A related package, BTSPAS, deals with
+temporal stratification where a spline is used to model the distribution of the
+population over time as it passes the second capture location.  This is the
+R-version of the (now obsolete) standalone Windows program available at
 <https://home.cs.umanitoba.ca/~popan/spas/spas_home.html>.")
     (license license:gpl2+)))
 
@@ -26144,17 +26178,18 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
 (define-public r-sombrero
   (package
     (name "r-sombrero")
-    (version "1.4-1")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SOMbrero" version))
        (sha256
-        (base32 "0b9w8xr067hz2lzvxn7xz3llzhyqynskh08rsx7d73gnm56kdcp2"))))
+        (base32 "15bwdw3awwqq6d4b8ja8lsvcyr2v37l5jc3ja3df3y0ziazdllpn"))))
     (properties `((upstream-name . "SOMbrero")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
                              r-scatterplot3d
+                             r-rlang
                              r-metr
                              r-markdown
                              r-interp
@@ -26162,7 +26197,7 @@ dedicated to the visualization of time-dependent variables Licen et al. (2020)
                              r-ggwordcloud
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SOMbrero")
+    (home-page "http://sombrero.clementine.wf/")
     (synopsis "SOM Bound to Realize Euclidean and Relational Outputs")
     (description
      "The stochastic (also called on-line) version of the Self-Organising Map (SOM)
@@ -27468,6 +27503,26 @@ when collapsing levels to coarser strata.  Details are described in Groemping
      "Allows objects to be stored on disc and automatically recalled into memory, as
 required, by delayed assignment.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-snvlfdr
+  (package
+    (name "r-snvlfdr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SNVLFDR" version))
+       (sha256
+        (base32 "1nl414b1x5inp3bld5aipygz3d36x4z0jg3jirwyq9mdl9w3qbvw"))))
+    (properties `((upstream-name . "SNVLFDR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SNVLFDR")
+    (synopsis "Empirical Bayes Single Nucleotide Variant Calling")
+    (description
+     "Identifies single nucleotide variants in next-generation sequencing data by
+estimating their local false discovery rates.  For more details, see
+Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
+    (license license:gpl3+)))
 
 (define-public r-snvecr
   (package
@@ -31201,17 +31256,17 @@ Course in Methods of Data Analysis (3rd ed)\", Cengage Learning.")
 (define-public r-sleuth2
   (package
     (name "r-sleuth2")
-    (version "2.0-5")
+    (version "2.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sleuth2" version))
        (sha256
-        (base32 "18rp23dr55p2zqxqj5i86gi8j25b0y7hc2p88rxqszgmbyn5ynhi"))))
+        (base32 "12dq3zknninigildvzn7cbs28r55pbp6cxn2ni1kwk9b8ycgwwpn"))))
     (properties `((upstream-name . "Sleuth2")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://r-forge.r-project.org/projects/sleuth2/")
+    (home-page "https://r-forge.r-project.org/projects/sleuth2/")
     (synopsis
      "Data Sets from Ramsey and Schafer's \"Statistical Sleuth (2nd Ed)\"")
     (description
@@ -54687,13 +54742,13 @@ online book Analyzing single-case data with R and scan', Juergen Wilbert (2023)
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-14")
+    (version "1.2-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "0w9pm52hrky879ibxa96bav9fvz7swg1kbv0jybf3l1mmfm8cl6c"))))
+        (base32 "04sx23w7w379rsawc2sk4xymyaqqxadmaq16d209yh17h520mcvg"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-matrix))
