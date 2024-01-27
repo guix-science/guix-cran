@@ -698,13 +698,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0vfm6c41xy38b212fqha7v8668q6v5964sdvh6jxs7nc279lfr6w"))))
+        (base32 "1vckdy9s060rpxaqr7vq7rxi2q768yndn6zym3n6nrs93ap6qhqv"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1045,16 +1045,21 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "059hyagi20saqwdwhpaz8ra8yf5y4ihz974285sr15skgr7y1kv2"))))
+        (base32 "078aij3n53q1pj5wb32bvmzncw9hhwxxp3s0lg8iqgpcyb4cgbj0"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-survey r-scales r-ggpubr r-ggplot2))
+    (propagated-inputs (list r-survival
+                             r-survey
+                             r-scales
+                             r-patchwork
+                             r-ggpubr
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jinseob2kim/jskm")
     (synopsis "Kaplan-Meier Plot with 'ggplot2'")

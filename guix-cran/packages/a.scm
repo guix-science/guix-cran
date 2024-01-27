@@ -560,43 +560,6 @@ be configured to be collected.  Logging messages are displayed on console and
 optionally they are sent to Azure Log Analytics workspace in real-time.")
     (license license:expat)))
 
-(define-public r-aziad
-  (package
-    (name "r-aziad")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AZIAD" version))
-       (sha256
-        (base32 "0w5s367zkf857hzs1lczjgnd8ydnam8k5fwf155drxxdr5c3gm2z"))))
-    (properties `((upstream-name . "AZIAD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve
-                             r-rmutil
-                             r-qrm
-                             r-mixall
-                             r-matrixcalc
-                             r-lqmm
-                             r-foreach
-                             r-extradistr
-                             r-envstats
-                             r-dplyr
-                             r-doparallel
-                             r-corpcor))
-    (home-page "https://cran.r-project.org/package=AZIAD")
-    (synopsis "Analyzing Zero-Inflated and Zero-Altered Data")
-    (description
-     "Computes maximum likelihood estimate of general, zero inflated, and zero altered
-models for discrete and continuous distributions.  Computes Kolmogorov-Smirnov
-(KS) test and likelihood ratio test for general, zero-inflated, and zero-altered
-data.  It obtains the inverse of fisher information matrix and confidence
-interval for the parameters of general, zero inflated, and zero altered models.
-It simulate random deviates from zero inflated or hurdle models to obtain
-maximum likelihood estimate.  It is based on the work of Aldirawi et al. (2022)
-<doi:10.1007/s42519-021-00230-y>.")
-    (license license:expat)))
-
 (define-public r-aws-translate
   (package
     (name "r-aws-translate")
@@ -10525,13 +10488,13 @@ where gene names may vary among accessions.  Borstein & O'Meara (2018)
 (define-public r-annotater
   (package
     (name "r-annotater")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "annotater" version))
        (sha256
-        (base32 "1yzsamy4zrr7v0kjnc3x034a7ffw1zj7cc5dx11pcwyhk88yba7z"))))
+        (base32 "0ziwkc7z3v8awm7smq38mdj61vjq4qh99d0fmr63sibmg6l3pf7p"))))
     (properties `((upstream-name . "annotater")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12517,13 +12480,13 @@ guarantees.  Chen, S., Ma, S., Xue, L., & Zou, H. (2020)
 (define-public r-amanida
   (package
     (name "r-amanida")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amanida" version))
        (sha256
-        (base32 "0vi1x43s9xbr6ggx6km342qfqn2yppinsgn50gm73vckvb8672gs"))))
+        (base32 "1177nadl66xmbvp474951rfyf4lczhmwxq3bwxzivh0gzcq80bys"))))
     (properties `((upstream-name . "amanida")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
@@ -19517,13 +19480,13 @@ the proposal distributions to a user defined acceptance rate.")
 (define-public r-adaptivpt
   (package
     (name "r-adaptivpt")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptIVPT" version))
        (sha256
-        (base32 "1zjz61zk0q9d1ih3ghzmiz1sxjpdypbx1vl72iw51sqz0nl89n95"))))
+        (base32 "1gw0608452cbyfcsf3950vxg960k297qxhbxp6s11hz8f190bxmy"))))
     (properties `((upstream-name . "adaptIVPT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcppprogress r-rcpparmadillo r-rcpp))
@@ -19535,11 +19498,12 @@ scaling approach to establish bioequivalence for in-vitro permeation test (IVPT)
 data.  Currently, the package provides procedures based on parallel replicate
 design and balanced data, according to the U.S. Food and Drug Administration's
 \"Draft Guidance on Acyclovir\"
-<https:www.accessdata.fda.gov/drugsatfda_docs/psg/Acyclovir_topical cream_RLD
-21478_RV12-16.pdf>.  Potvin et al. (2008) <doi:10.1002/pst.294> provides the
-basis for our adaptive design (see Method B).  This package reflects the views
-of the authors and should not be construed to represent the views or policies of
-the U.S. Food and Drug Administration.")
+<https://www.accessdata.fda.gov/drugsatfda_docs/psg/Acyclovir_topical%20cream_RLD%2021478_RV12-16.pdf>.
+ Potvin et al. (2008) <doi:10.1002/pst.294> provides the basis for our adaptive
+design (see Method B).  For a comprehensive overview of the method, refer to Lim
+et al. (2023) <doi:10.1002/pst.2333>.  This package reflects the views of the
+authors and should not be construed to represent the views or policies of the
+U.S. Food and Drug Administration.")
     (license license:gpl3+)))
 
 (define-public r-adaptivetau

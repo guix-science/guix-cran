@@ -14926,13 +14926,13 @@ Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
 (define-public r-ehrtemporalvariability
   (package
     (name "r-ehrtemporalvariability")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EHRtemporalVariability" version))
        (sha256
-        (base32 "1cf2wgw3xxf2b02gpb9jak4r27l52rny7n94icqmn1rkn97xc210"))))
+        (base32 "12d1dzmcrp81dh54zkg9zwv11fnc4f8qzc2gngihmlrp1bzq76fi"))))
     (properties `((upstream-name . "EHRtemporalVariability")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15742,13 +15742,13 @@ continuous and categorical covariates.")
 (define-public r-eff2
   (package
     (name "r-eff2")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eff2" version))
        (sha256
-        (base32 "0872xms2i8k128h3cn2n9dwa4apdyvxhb1h759cmyw63fw4wm8kx"))))
+        (base32 "19mq2klxyy9xjyz5zmfqjhh2cdbhf5s6ylm36x3cjx6f28f2y1fd"))))
     (properties `((upstream-name . "eff2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbgl r-pcalg r-igraph))

@@ -3855,13 +3855,13 @@ Hochreiter, S., & Schmidhuber, J. (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-lomb
   (package
     (name "r-lomb")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lomb" version))
        (sha256
-        (base32 "1hgf28bs5g07v7j05qxahs0q3j683401ssqk1r256pvk8x9j445l"))))
+        (base32 "0hb9ilybd9b4i0b5778b4lin899gnix2xwxlcqiy05lhb8qxzzij"))))
     (properties `((upstream-name . "lomb")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-plotly r-gridextra r-ggplot2))
@@ -15671,13 +15671,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-ladderfuelsr
   (package
     (name "r-ladderfuelsr")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LadderFuelsR" version))
        (sha256
-        (base32 "15lklffky66fwbakilngaawy3hi40g8mw4dyhrl0zknq3r7dyiff"))))
+        (base32 "1pvbggf80iml01sb4vcq33dc4i06qvqz1ibg2zmdh2fgpnh1smf4"))))
     (properties `((upstream-name . "LadderFuelsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

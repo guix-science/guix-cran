@@ -15368,16 +15368,16 @@ provided - following Bai and Ng (2002) <doi:10.1111/1468-0262.00273>.")
 (define-public r-dfmirror
   (package
     (name "r-dfmirror")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfmirroR" version))
        (sha256
-        (base32 "0s3hvvqv5rw7axpr62996qa1yqws5a9qy3y4hzqmhv4ka6pmv90c"))))
+        (base32 "0npd9yllsjbb49mqdwaw75lbgx4lr8qgga70yybd6c16wdfkg396"))))
     (properties `((upstream-name . "dfmirroR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-fitdistrplus))
+    (propagated-inputs (list r-mass r-fitdistrplus r-e1071))
     (home-page "https://github.com/jacobpstein/dfmirroR")
     (synopsis
      "Simulate a Data Frame Mirroring an Input and Produce Shareable Simulation Code")
@@ -21939,13 +21939,13 @@ functions must be read into the R environment (perhaps using base::source()).")
 (define-public r-dbstats
   (package
     (name "r-dbstats")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbstats" version))
        (sha256
-        (base32 "1sa33ir8hj0z0d2ry4w7bhilx94alhdvjc4bzaj09alv6w39gpcn"))))
+        (base32 "1rnjgzil98rys9fa0jkamfqrkski3vd7wi59mqg8xk26xw0v5c96"))))
     (properties `((upstream-name . "dbstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-pls r-cluster))

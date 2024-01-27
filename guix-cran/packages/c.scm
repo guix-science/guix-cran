@@ -21056,13 +21056,13 @@ dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda4microbiome" version))
        (sha256
-        (base32 "0v7szj1hp5ld5b2yhvrir93dsd888vfr7w17lhslxrdny708q2fv"))))
+        (base32 "1vsd78zx4zkdnjp8l6nw5gsn65zh711yr0mh5fh6qamhrllzxv6k"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -22109,13 +22109,13 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafvis" version))
        (sha256
-        (base32 "1p2sbm7k5d7yj0hphhq0f3s567wkf0p95qqabzl3dc7f9skm4rjv"))))
+        (base32 "0vqk5pbz9bhq7ddzrdibp03ddi5mqblqig014z2zsdnr4qswckc9"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -25458,16 +25458,16 @@ de Pol et al. (2016) <doi:10.1111/2041-210X.12590> and Bailey and van de Pol
 (define-public r-climprojdiags
   (package
     (name "r-climprojdiags")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClimProjDiags" version))
        (sha256
-        (base32 "1dn1hyc8p2c1nikd1z9frfy96khhzx8i55av02zgghjnv9g7hkr8"))))
+        (base32 "039rnjpsbq90x6h9snz9iy37bwhapcmw9v98ngh82bsh19h8hwb1"))))
     (properties `((upstream-name . "ClimProjDiags")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-pcict r-multiapply))
+    (propagated-inputs (list r-pcict r-multiapply))
     (native-inputs (list r-knitr))
     (home-page "https://earth.bsc.es/gitlab/es/ClimProjDiags")
     (synopsis "Set of Tools to Compute Various Climate Indices")

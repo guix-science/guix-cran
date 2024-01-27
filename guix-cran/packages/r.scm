@@ -6296,31 +6296,6 @@ clustering algorithm.")
 population mean and variance on samples drawn by r-size biased sampling schemes.")
     (license license:gpl2+)))
 
-(define-public r-rsitecatalyst
-  (package
-    (name "r-rsitecatalyst")
-    (version "1.4.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSiteCatalyst" version))
-       (sha256
-        (base32 "1plcmxj6sahdy3vvcmxry8cbq1j23bqzhnhn593bkwmzczka24cy"))))
-    (properties `((upstream-name . "RSiteCatalyst")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-plyr
-                             r-jsonlite
-                             r-httr
-                             r-digest
-                             r-base64enc))
-    (home-page "https://cran.r-project.org/package=RSiteCatalyst")
-    (synopsis "R Client for Adobe Analytics API V1.4")
-    (description
-     "This package provides functions for interacting with the Adobe Analytics API
-V1.4 (<https://api.omniture.com/admin/1.4/rest/>).")
-    (license license:expat)))
-
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
@@ -20290,13 +20265,13 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
 (define-public r-rjsoncons
   (package
     (name "r-rjsoncons")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjsoncons" version))
        (sha256
-        (base32 "0l6p38szihl4wv7vag0bgkqqfgyqicnhz7aqd1jdfzfyzi0q77mr"))))
+        (base32 "17mhik2hkiwqv90prylva0aajigx0xp9r76yz67v5ijbhlkpkccn"))))
     (properties `((upstream-name . "rjsoncons")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -20306,10 +20281,12 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
     (description
      "The jsoncons <https://danielaparker.github.io/jsoncons/> C++ header-only library
 constructs representations from a JSON character vector, and provides extensions
-for flexible queries and other operations on JSON objects.  This package has
-simple R wrappers to support JSONpath and JMESpath queries into JSON strings or
-R objects.  The jsoncons library is also be easily linked to other packages for
-direct access to C++ functionality.")
+for flexible queries and other operations on JSON objects.  This package
+provides R functions to query (filter or transform) and pivot (convert from
+array-of-objects to object-of-arrays, for easy import into R') JSON or NDJSON
+strings or files using JSONpointer', JSONpath or JMESpath expression.  The
+jsoncons library is also be easily linked to other packages for direct access to
+C++ functionality.")
     (license (license:fsdg-compatible "BSL-1.0"))))
 
 (define-public r-rjsdmx

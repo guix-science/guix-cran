@@ -9325,6 +9325,28 @@ genetic trends.  The framework is described in Simianer, H., Heise, J., Rensing,
 S., Pook, T. Geibel, J. and Reimer, C. (2023) <doi:10.1186/s12711-023-00807-0>.")
     (license license:expat)))
 
+(define-public r-indexthis
+  (package
+    (name "r-indexthis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "indexthis" version))
+       (sha256
+        (base32 "11j2p9qw0nmvsy6pnk6nrafgsilm68jndb77r2gk9v6vxqjn3q38"))))
+    (properties `((upstream-name . "indexthis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=indexthis")
+    (synopsis "Quick Indexation")
+    (description
+     "Quick indexation of any type of vector or of any combination of those.
+Indexation turns a vector into an integer vector going from 1 to the number of
+unique elements.  Indexes are important building blocks for many algorithms.
+The method is described at <https://github.com/lrberge/indexthis/>.")
+    (license license:gpl3)))
+
 (define-public r-indexnumr
   (package
     (name "r-indexnumr")

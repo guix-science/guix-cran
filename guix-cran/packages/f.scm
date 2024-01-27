@@ -3716,13 +3716,13 @@ may depend on packages with priority base').")
 (define-public r-fritools
   (package
     (name "r-fritools")
-    (version "4.2.0")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fritools" version))
        (sha256
-        (base32 "0h0nx5jvp3mnddzl5if0dwdrlhikd70gx09r2zm264y3mnddq8y5"))))
+        (base32 "0l8h605c00a6fgkp4qr6rddwdrjs1ywjw982n90cjx2s6znrv966"))))
     (properties `((upstream-name . "fritools")))
     (build-system r-build-system)
     (native-inputs (list))
@@ -12236,13 +12236,13 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fints
   (package
     (name "r-fints")
-    (version "0.4-8")
+    (version "0.4-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinTS" version))
        (sha256
-        (base32 "0wa1jn1qjqsajahkf1ildajzcmwr8rwgnr0v34qvc86nkyhdd8sp"))))
+        (base32 "1vxpz45bf85mmbzif0jm3rbvw4bya8sf8y0k4apc9bycyrlk368a"))))
     (properties `((upstream-name . "FinTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))

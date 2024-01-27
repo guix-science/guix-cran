@@ -5215,13 +5215,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "16p168i802w0cr39l5gqsl12kzcgxlr8jpl6sg1xdkngwcy68pfd"))))
+        (base32 "0rg7d5p4yv5g85ymws7dfzg03kbzwy23p71q87csp3iip9vyf6js"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -15197,13 +15197,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0g8sxp7alw2gb4hf5c370s88gxfd1vwcvn5ak43wxc02k1wkb7wl"))))
+        (base32 "05n204j70daagj53jh8cx1dznm33pf4aazjvcmmgd68vjx0rkhy5"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -20402,29 +20402,6 @@ frequentist (EM) and Bayesian methods for estimation, prediction and model
 evaluation.  See Wong and Li (2002) <doi:10.1111/1467-9868.00222>, Boshnakov
 (2009) <doi:10.1016/j.spl.2009.04.009>), and the extensive references in the
 documentation.")
-    (license license:gpl2+)))
-
-(define-public r-mixall
-  (package
-    (name "r-mixall")
-    (version "1.5.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MixAll" version))
-       (sha256
-        (base32 "07ipgm42ch5045s0hzwjg87v8qah1xrwcfrq5z2gx5sm12sp6g0m"))))
-    (properties `((upstream-name . "MixAll")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtkore r-rcpp))
-    (home-page "https://cran.r-project.org/package=MixAll")
-    (synopsis "Clustering and Classification using Model-Based Mixture Models")
-    (description
-     "Algorithms and methods for model-based clustering and classification.  It
-supports various types of data: continuous, categorical and counting and can
-handle mixed data of these types.  It can fit Gaussian (with diagonal covariance
-structure), gamma, categorical and Poisson models.  The algorithms also support
-missing values.")
     (license license:gpl2+)))
 
 (define-public r-mixak
@@ -29045,13 +29022,13 @@ models.")
 (define-public r-metaforest
   (package
     (name "r-metaforest")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaforest" version))
        (sha256
-        (base32 "1q6m60cd7gl7y0gdjd10ky25hwv5jc4x5g5sr5w61xc3j2hnw8in"))))
+        (base32 "1b578s08621x5g2sqgi88sdlknq3zaql5xbhdggzml8c0n7lhbc1"))))
     (properties `((upstream-name . "metaforest")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-metafor r-gtable r-ggplot2
@@ -29069,12 +29046,11 @@ substantial heterogeneity between studies on the same topic.  Classic
 meta-analysis lacks the power to assess more than a handful of univariate
 moderators. @code{MetaForest}, by contrast, has substantial power to explore
 heterogeneity in meta-analysis.  It can identify important moderators from a
-larger set of potential candidates, even with as little as 20 studies (Van
-Lissa, in preparation).  This is an appealing quality, because many
-meta-analyses have small sample sizes.  Moreover, @code{MetaForest} yields a
-measure of variable importance which can be used to identify important
-moderators, and offers partial prediction plots to explore the shape of the
-marginal relationship between moderators and effect size.")
+larger set of potential candidates (Van Lissa, 2020).  This is an appealing
+quality, because many meta-analyses have small sample sizes.  Moreover,
+@code{MetaForest} yields a measure of variable importance which can be used to
+identify important moderators, and offers partial prediction plots to explore
+the shape of the marginal relationship between moderators and effect size.")
     (license license:gpl3)))
 
 (define-public r-metafolio
@@ -39069,13 +39045,13 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "0fj7s180i1pxk0j5ysfxm9zm3pw6j5whpxjyk9dcw8mfiby387gl"))))
+        (base32 "16ynjfydwipg7x1l9l5hkqvrqz2a4yxs756il43hhgpz9i13pnqv"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-s2 r-maplegend r-classint))

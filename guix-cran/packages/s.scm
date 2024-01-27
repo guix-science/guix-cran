@@ -10228,13 +10228,13 @@ obtained/free fonts, simple forms of which are included in this package.")
 (define-public r-stevetemplates
   (package
     (name "r-stevetemplates")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevetemplates" version))
        (sha256
-        (base32 "0dbph1wpb07m73jx3avayncq8682yjpdjinlzhc4z1czlkj4wdm4"))))
+        (base32 "1q9wj132y5ms7wdsxv90c6hawni5b2vynsxnym3rzr5wmif5a7v0"))))
     (properties `((upstream-name . "stevetemplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown))
@@ -14143,13 +14143,13 @@ support vector machine, the contamination of a sample can be detected.")
 (define-public r-sss
   (package
     (name "r-sss")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sss" version))
        (sha256
-        (base32 "134l6vl6lbd5n89mafjhwpd5xcr5hj56gifc0dxsbzz6m8q515g0"))))
+        (base32 "1v2y3mykbh09573jdadl7rjdv1dy7f86pc98sdvkfz2g1ivwnnc3"))))
     (properties `((upstream-name . "sss")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-assertthat))
@@ -14161,7 +14161,7 @@ support vector machine, the contamination of a sample can be detected.")
      "This package provides tools to import survey files in the .sss (triple-s)
 format.  The package provides the function read.sss() that reads the .asc (or
 .csv') and .sss files of a triple-s survey data file.  See also
-<https://www.triple-s.org/>.")
+<https://triple-s.org/>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ssrtcalc
@@ -27527,13 +27527,13 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.7.7")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "1raxilpafib8fnm8vcz8s4vbfkbkc3gxnrqilksjxvgfs9a50ssz"))))
+        (base32 "15nm98ziqf55kw3w1xk09978gdcccijib0g9z1pgsiqss5v4zsdc"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -27549,7 +27549,8 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
                              r-dplyr
                              r-desolve
                              r-curl
-                             r-cli))
+                             r-cli
+                             r-astrochron))
     (native-inputs (list r-knitr))
     (home-page "https://japhir.github.io/snvecR/")
     (synopsis "Calculate Earthâs Obliquity and Precession in the Past")
@@ -30421,13 +30422,13 @@ Embedded Brownian Motions.")
 (define-public r-smallstuff
   (package
     (name "r-smallstuff")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smallstuff" version))
        (sha256
-        (base32 "0zqwxmazk4nb8sgwwkymaap3l9pfzw3mqbmfzvj0wn7wzjsx10cx"))))
+        (base32 "17x73fcrvnw71bn52mg6lgpm9is99djy5avpnyqsffhqa8x6mzsv"))))
     (properties `((upstream-name . "smallstuff")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr
@@ -31235,17 +31236,17 @@ distribution for the spike part of the mixture.")
 (define-public r-sleuth3
   (package
     (name "r-sleuth3")
-    (version "1.0-3")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sleuth3" version))
        (sha256
-        (base32 "0ngwri80cwqs50wjza8qyzzwign4ag1ck7fa1x7q5x08w9x6w08m"))))
+        (base32 "1llhf4hgyichzllzh74v63xw9zba25r0p87vfnhbhlf9q456mr6y"))))
     (properties `((upstream-name . "Sleuth3")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://r-forge.r-project.org/projects/sleuth2/")
+    (home-page "https://r-forge.r-project.org/projects/sleuth2/")
     (synopsis
      "Data Sets from Ramsey and Schafer's \"Statistical Sleuth (3rd Ed)\"")
     (description
@@ -48395,13 +48396,13 @@ negative rate and symptom based administration of diagnostic tests.
 (define-public r-sei
   (package
     (name "r-sei")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEI" version))
        (sha256
-        (base32 "0wb2r98m8h2z0pa6d8k20bjdg4y4y6zg0b0ppqf8jfm9vn8m4fdc"))))
+        (base32 "0ncrsqai3zp7f0yx3h905645kd31zcf3qlcy08ah5v4qbdzdb7fh"))))
     (properties `((upstream-name . "SEI")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-ggplot2 r-fitdistrplus))
@@ -50908,53 +50909,6 @@ observed sample counts in cells formed by key variables and their interactions.
 Funded by the National Center for Education Statistics.  See Skinner and Shlomo
 (2008) <doi:10.1198/016214507000001328> for a description of the file-level risk
 measures and the loglinear model approach.")
-    (license license:gpl2)))
-
-(define-public r-sdcmicro
-  (package
-    (name "r-sdcmicro")
-    (version "5.7.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdcMicro" version))
-       (sha256
-        (base32 "0q6278ppbip2j9c79x6vjchiygxjqwqj71n8x6rl9676821ivwp0"))))
-    (properties `((upstream-name . "sdcMicro")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-vim
-                             r-shinybs
-                             r-shiny
-                             r-robustbase
-                             r-rmarkdown
-                             r-rhandsontable
-                             r-rcpp
-                             r-prettydoc
-                             r-mass
-                             r-knitr
-                             r-haven
-                             r-ggplot2
-                             r-e1071
-                             r-dt
-                             r-data-table
-                             r-cluster
-                             r-cardata
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sdcTools/sdcMicro")
-    (synopsis
-     "Statistical Disclosure Control Methods for Anonymization of Data and Risk Estimation")
-    (description
-     "Data from statistical agencies and other institutions are mostly confidential.
-This package (see also Templ, Kowarik and Meindl (2017)
-<doi:10.18637/jss.v067.i04>) can be used for the generation of anonymized
-(micro)data, i.e.  for the creation of public- and scientific-use files.  The
-theoretical basis for the methods implemented can be found in Templ (2017)
-<doi:10.1007/978-3-319-50272-4>.  Various risk estimation and anonymisation
-methods are included.  Note that the package includes a graphical user interface
-(Meindl and Templ, 2019 <doi:10.3390/a12090191>) that allows to use various
-methods of this package.")
     (license license:gpl2)))
 
 (define-public r-sdclog
@@ -56222,6 +56176,51 @@ computation of all pairwise ratio, construction of a p-value matrix of all
 pairwise tests of these ratios between conditions, conversion of this matrix to
 a network.")
     (license license:artistic2.0)))
+
+(define-public r-saros
+  (package
+    (name "r-saros")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saros" version))
+       (sha256
+        (base32 "03hcllfxz3504w0s0sk5fdhpgvfmpgrpyy8kq5piw88bwvg9rxjs"))))
+    (properties `((upstream-name . "saros")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-stringi
+                             r-rvest
+                             r-rstudioapi
+                             r-rlang
+                             r-officer
+                             r-mschart
+                             r-glue
+                             r-ggplot2
+                             r-ggiraph
+                             r-fs
+                             r-forcats
+                             r-dplyr
+                             r-clipr
+                             r-cli
+                             r-bcrypt))
+    (home-page "https://nifu-no.github.io/saros/")
+    (synopsis "Semi-Automatic Reporting of Ordinary Surveys")
+    (description
+     "This package produces highly customized reports, primarily intended for survey
+research.  Building on Quarto (<https://quarto.org>), it generates draft
+chapters of all specified dependent/independent variables, which can be further
+edited by hand, containing figures, tables and analyses (currently only
+uni-/bivariate tests of equivalent means/proportions).  The feature
+mesos'-reports offer tailor-made batch report production where e.g. an
+institution can compare itself to all other participants.  Publication tools are
+also included, such as password generation for mesos'-report sections on a
+Quarto Website.")
+    (license license:expat)))
 
 (define-public r-sarima
   (package

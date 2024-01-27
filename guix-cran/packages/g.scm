@@ -8063,13 +8063,13 @@ Jennrich (2005) <doi:10.1177/0013164404272507>.")
 (define-public r-gpareto
   (package
     (name "r-gpareto")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPareto" version))
        (sha256
-        (base32 "05hb6x3hh7h3dy9750gryk3f169b2shhl93gkb370g7h9y87vmi1"))))
+        (base32 "1grs7pxxl9nymmg1qx8a7ln25c2bz47bv06pahq7ackhsh6zlvk9"))))
     (properties `((upstream-name . "GPareto")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl

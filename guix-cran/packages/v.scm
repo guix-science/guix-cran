@@ -5255,6 +5255,43 @@ multiple which, when set to FALSE, reverts them to the base::sets (alias for all
 the items) tools functionality.")
     (license license:lgpl3)))
 
+(define-public r-vecctmvn
+  (package
+    (name "r-vecctmvn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VeccTMVN" version))
+       (sha256
+        (base32 "1kyq2wgdc3gdg2c3j8j578yhkhiw9r7c6q1z4k2r2vhbakr4fg7f"))))
+    (properties `((upstream-name . "VeccTMVN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-truncatednormal
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-gpvecchia
+                             r-gpgp))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=VeccTMVN")
+    (synopsis "Multivariate Normal Probabilities using Vecchia Approximation")
+    (description
+     "Under a different representation of the multivariate normal (MVN) probability,
+we can use the Vecchia approximation to sample the integrand at a linear
+complexity with respect to n.  Additionally, both the SOV algorithm from Genz
+(92) and the exponential-tilting method from Botev (2017) can be adapted to
+linear complexity.  The reference for the method implemented in this package is
+Jian Cao and Matthias Katzfuss (2024) \"Linear-Cost Vecchia Approximation of
+Multivariate Normal Probabilities\" <@code{arXiv:2311.09426>}.  Two major
+references for the development of our method are Alan Genz (1992) \"Numerical
+Computation of Multivariate Normal Probabilities\"
+<doi:10.1080/10618600.1992.10477010> and Z. I. Botev (2017) \"The Normal Law
+Under Linear Restrictions: Simulation and Estimation via Minimax Tilting\"
+<@code{arXiv:1603.04166>}.")
+    (license license:gpl2+)))
+
 (define-public r-veccompare
   (package
     (name "r-veccompare")

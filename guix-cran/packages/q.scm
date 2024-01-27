@@ -185,13 +185,13 @@ Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
 (define-public r-qurve
   (package
     (name "r-qurve")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QurvE" version))
        (sha256
-        (base32 "1i1cmwndi8vkl2hs06mlad53l1q19fmrg32vciyllvv3s9r45mgz"))))
+        (base32 "0md97jgyl7lkq46zsl6svgdhyg95is92f8yn5szkaylfdb2cglg3"))))
     (properties `((upstream-name . "QurvE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -201,6 +201,7 @@ Giacobino et al. (2017) <doi:10.1214/17-EJS1366>.  Sardy et al. (2017)
                              r-rmarkdown
                              r-readxl
                              r-rcolorbrewer
+                             r-purrr
                              r-plyr
                              r-minpack-lm
                              r-magrittr

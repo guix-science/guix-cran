@@ -4500,13 +4500,13 @@ Nagler (2018) <doi:10.18637/jss.v084.i07>.")
 (define-public r-kde1d
   (package
     (name "r-kde1d")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kde1d" version))
        (sha256
-        (base32 "0s14dw0l6869a7zasda7hkdwqky6kbrxzbqhxvg1jy2a75mbgymm"))))
+        (base32 "1z6g54qhiry04hx39akz1ll78rw49w7gwkcbjagxyrfq8gswa2yn"))))
     (properties `((upstream-name . "kde1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-randtoolbox r-bh))

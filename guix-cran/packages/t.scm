@@ -7045,13 +7045,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.3")
+    (version "2.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "01z4h5d9976g7axlapmvsl09b2wq7xqyn1q096b0z2asr9s6xmrq"))))
+        (base32 "1z5qwjjh5x88x7khm31hfxj68x17rfgvdyvw00mjy9a7vmxyxddi"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12359,13 +12359,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "19n4qsq45jfpcqbd2k0vm1pgwvb77w1xlxpdg1gv4np1i0y5d1li"))))
+        (base32 "1b9jab35sv42kw356r5x1liizvhh5sldrrx8ybhhb30sdzps88f7"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -13673,25 +13673,24 @@ which are therefore listed as dependencies.")
 (define-public r-tigers
   (package
     (name "r-tigers")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigers" version))
        (sha256
-        (base32 "1skwg878zwi1j2k70m0m9njq8zpj799y4526kvqmd17xin5yxggk"))))
+        (base32 "00gb3nzilbsarf2rccry8aijpnwi3da6hfx08ccdj6pfs49h01y1"))))
     (properties `((upstream-name . "tigers")))
     (build-system r-build-system)
     (home-page "https://github.com/emmanuelparadis/tigers")
     (synopsis "Integration of Geography, Environment, and Remote Sensing")
     (description
      "Handling and manipulation polygons, coordinates, and other geographical objects.
- The tools include: polygon areas (Chamberlain and Duquette, 2007,
-<doi:2014/41271>), barycentric and trilinear coordinates (Hormann and Floater,
-2006, <doi:10.1145/1183287.1183295>), convex hull for polygons (Graham and Yao,
-1983, <doi:10.1016/0196-6774(83)90013-5>), polygon triangulation (Toussaint,
-1991, <doi:10.1007/BF01905693>), great circle and geodesic distances, Hausdorff
-distance, and reduced major axis.")
+ The tools include: polygon areas, barycentric and trilinear coordinates
+(Hormann and Floater, 2006, <doi:10.1145/1183287.1183295>), convex hull for
+polygons (Graham and Yao, 1983, <doi:10.1016/0196-6774(83)90013-5>), polygon
+triangulation (Toussaint, 1991, <doi:10.1007/BF01905693>), great circle and
+geodesic distances, Hausdorff distance, and reduced major axis.")
     (license license:gpl3)))
 
 (define-public r-tigerr
@@ -24948,13 +24947,13 @@ Respects original column order, column labels, and factor level order.  See
 (define-public r-tablesgg
   (package
     (name "r-tablesgg")
-    (version "0.8-1")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablesgg" version))
        (sha256
-        (base32 "0vkl9386qnalr5d0libqs2ihszggs0qyx6ffyjn8j8ab3kczzxhr"))))
+        (base32 "1gw6pfqa64xq4akbzzn5d1nd9wd505k8lqldy46b40h6ahkr1k78"))))
     (properties `((upstream-name . "tablesgg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tables r-ggplot2))

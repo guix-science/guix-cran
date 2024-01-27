@@ -7158,32 +7158,6 @@ from the POLYMOD survey.  This package contains the data and code to reproduce
 the results from the paper, see demo(\"hhh4contacts\")'.")
     (license license:gpl2)))
 
-(define-public r-hhg
-  (package
-    (name "r-hhg")
-    (version "2.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HHG" version))
-       (sha256
-        (base32 "037bq1b14332i5pdmxjfm6bcyz4pcq40rh2vd3wrxpkq224g80v4"))))
-    (properties `((upstream-name . "HHG")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/barakbri/HHG")
-    (synopsis
-     "Heller-Heller-Gorfine Tests of Independence and Equality of Distributions")
-    (description
-     "Heller-Heller-Gorfine tests are a set of powerful statistical tests of
-multivariate k-sample homogeneity and independence (Heller et.  al., 2013,
-<doi:10.1093/biomet/ass070>).  For the univariate case, the package also offers
-implementations of the @code{MinP} DDP and @code{MinP} ADP tests by Heller et.
-al. (2016), which are consistent against all continuous alternatives but are
-distribution-free, and are thus much faster to apply.")
-    (license license:gpl3)))
-
 (define-public r-hh
   (package
     (name "r-hh")

@@ -4596,13 +4596,13 @@ based on MS1 or MS2 signal distributions.")
 (define-public r-proxirr
   (package
     (name "r-proxirr")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proxirr" version))
        (sha256
-        (base32 "0ffnzmd9zy43vzp0mc0ncjwfj5d7p2gzwk8gcwhk1f9yvgiw4wc1"))))
+        (base32 "0fknabfdvcmcpxai9sasnqay9ymy1vm9bvghiw9awx1lvn85024r"))))
     (properties `((upstream-name . "proxirr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=proxirr")
@@ -23332,13 +23332,13 @@ elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
 (define-public r-phm
   (package
     (name "r-phm")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phm" version))
        (sha256
-        (base32 "12g3pppy5hq5lwwbv511fx523cwn7gqg9fr861p8kmbvjwgpw1pp"))))
+        (base32 "05ymrynv5zzrbj3vsdrijay841hv5jbkn8c0v4l6dqndysl9xis4"))))
     (properties `((upstream-name . "phm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -23584,26 +23584,27 @@ Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 (define-public r-phenthauproc
   (package
     (name "r-phenthauproc")
-    (version "0.9.9")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHENTHAUproc" version))
        (sha256
-        (base32 "0xw4smyyx399j1d4mk45c0q1my0847jn67w0lijjy8h4fwz8v599"))))
+        (base32 "0zjbklrgp1n0j3wx6yr2pkcsf6nrj8f046xdidjh81z80y93ykp9"))))
     (properties `((upstream-name . "PHENTHAUproc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-lubridate))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PHENTHAUproc")
-    (synopsis "Modelling Phenology of Oak Processionary Moth")
+    (synopsis "Phenology Modelling of Thaumetopoea Processionea")
     (description
      "This package provides methods to calculate and present PHENTHAUproc', an early
 warning and decision support system for hazard assessment and control of oak
-processionary moth (Thaumetopoea processionea) using local and spatial
-temperature data.  It was created by Halbig et al.  2023 (in submission) at the
-FVA (<https://www.fva-bw.de>) a forest research institute in Baden-Wuerttemberg,
-Germany.")
+processionary moth (OPM) using local and spatial temperature data.  It was
+created by Halbig et al.  2024 (<doi:10.1016/j.foreco.2023.121525>) at FVA
+(<https://www.fva-bw.de/en/homepage/>) Forest Research Institute
+Baden-Wuerttemberg, Germany and at BOKU - University of Natural Ressources and
+Life Sciences, Vienna, Austria.")
     (license license:expat)))
 
 (define-public r-phenotypesimulator
@@ -26658,28 +26659,6 @@ agreement/disagreement/dependability statistics, U3, ZU3, NCI, Ht).  PFSs
 suitable to polytomous data include extensions of lz, U3, and (normed) number of
 Guttman errors.")
     (license license:gpl2+)))
-
-(define-public r-perfectphylor
-  (package
-    (name "r-perfectphylor")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "perfectphyloR" version))
-       (sha256
-        (base32 "1i1h5k2aqaqygd8gzq2bmz266mjzdi2mfikkz6hzmhi2il8708w9"))))
-    (properties `((upstream-name . "perfectphyloR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-phytools r-ape))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=perfectphyloR")
-    (synopsis "Reconstruct Perfect Phylogenies from DNA Sequence Data")
-    (description
-     "Reconstructs perfect phylogeny at a user-given focal point and to depict and
-test association in a genomic region based on the reconstructed partitions.
-Charith B Karunarathna and Jinko Graham (2019) <@code{bioRxiv:10.1101/674523>}.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-perccalc
   (package

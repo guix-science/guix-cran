@@ -1170,13 +1170,13 @@ al., 2021 <doi:10.1111/biom.13501>).")
 (define-public r-wqtrends
   (package
     (name "r-wqtrends")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wqtrends" version))
        (sha256
-        (base32 "0zj9p24s4dwvyryzfgcjhfrp5dw4wyy6zzcsrhiqvbbjx9y631my"))))
+        (base32 "17hgh4kp5nlq5n8nrd0zrjj87rlk8ny67nbdlqnr9q0y5yxbyw63"))))
     (properties `((upstream-name . "wqtrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1190,7 +1190,7 @@ al., 2021 <doi:10.1111/biom.13501>).")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=wqtrends")
+    (home-page "<https://github.com/tbep-tech/wqtrends/>")
     (synopsis "Assess Water Quality Trends with Generalized Additive Models")
     (description
      "Assess Water Quality Trends for Long-Term Monitoring Data in Estuaries using

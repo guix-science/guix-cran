@@ -6002,13 +6002,13 @@ resamples, and confidence intervals.")
 (define-public r-bootur
   (package
     (name "r-bootur")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootUR" version))
        (sha256
-        (base32 "0wqirnj01jfn0q9sa36qixmzf8n8m1x5rrp348brzfbasm0gl9j6"))))
+        (base32 "024d1dlwdn2jv9sbsb05lscr7inn8xmnsr2kiwhs5n47x7p6vrns"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca
