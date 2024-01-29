@@ -320,13 +320,13 @@ implemented method see Nowok, Raab and Dibben (2016)
 (define-public r-synthetic
   (package
     (name "r-synthetic")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SynthETIC" version))
        (sha256
-        (base32 "0rdq3ry932bg272j3rdz5ykbydr5yqglxkfl9d5cxanczf1fvfsv"))))
+        (base32 "1nrqfy2gl2x9fz5vh7c3rlnk1zw9pghv1fqlsndzs5nwr5ww8db5"))))
     (properties `((upstream-name . "SynthETIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-ggplot2 r-dplyr))
@@ -8539,13 +8539,13 @@ trees.")
 (define-public r-stranslate
   (package
     (name "r-stranslate")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stranslate" version))
        (sha256
-        (base32 "09ps012v63m66ibmlcz3nbvizzq7v7lc0laf8x6fspswvb7a2zpb"))))
+        (base32 "10a2xrpg1vw9mci9w9hwcjnic942s3j5658wd5nw14ndxm1xhv79"))))
     (properties `((upstream-name . "stranslate")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-knitr r-crayon))
@@ -45157,16 +45157,22 @@ methods even for such large sample sizes.")
 (define-public r-seqtrie
   (package
     (name "r-seqtrie")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqtrie" version))
        (sha256
-        (base32 "1bawix2b1m4pqxxljf8ljl44x37px9snr9q1x9hz6c0dy6ipwlij"))))
+        (base32 "17kpj96vmgy9rhfk64mzcpm3cdfq73z2m4j8qx8g4l46zyv3cr1i"))))
     (properties `((upstream-name . "seqtrie")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpp r-r6 r-bh))
+    (propagated-inputs (list r-stringi
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpp
+                             r-r6
+                             r-dplyr
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/traversc/seqtrie")
     (synopsis "Radix Tree and Trie-Based String Distances")
@@ -47900,13 +47906,13 @@ Allows a web browser to be automated from R'.")
 (define-public r-selenider
   (package
     (name "r-selenider")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selenider" version))
        (sha256
-        (base32 "1nq61p2vv6d57kqhq3dkl76j12xxbigbiqvxkpkrx0blz7f63ydr"))))
+        (base32 "13ay90p6andlwzsg60d67yl2ma1zaib66iir6gpgmw3y32gdqnhn"))))
     (properties `((upstream-name . "selenider")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -53597,13 +53603,13 @@ predicting future h-index values.")
 (define-public r-schoenberg
   (package
     (name "r-schoenberg")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schoenberg" version))
        (sha256
-        (base32 "17pbw9266r9lv9blygmvq9285kcrcy07jaqrj3zfa2pg0zyvhjvm"))))
+        (base32 "1d6pflj7kafcx4xwcqyxgvxgygnf51zk9b0a28fiz05gxnb4bhp6"))))
     (properties `((upstream-name . "schoenberg")))
     (build-system r-build-system)
     (propagated-inputs (list r-crayon))

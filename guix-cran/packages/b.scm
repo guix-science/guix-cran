@@ -4458,20 +4458,20 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "04s0r078cfx2wbn0m3blx1krbw9m4nd7jp6fd4dhfyq4grd4y4ny"))))
+        (base32 "0p46n5yq56pvs73xyxkkdi8pnrr555dmc1br9a4709fdpm5hf5z9"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JacobSeedorff21/BranchGLM")
     (synopsis
-     "Efficient Branch and Bound Variable Selection for GLMs using 'RcppArmadillo'")
+     "Efficient Best Subset Selection for GLMs via Branch and Bound Algorithms")
     (description
      "This package performs efficient and scalable glm best subset selection using a
 novel implementation of a branch and bound algorithm.  To speed up the model
@@ -10394,6 +10394,39 @@ Bayesian models.  The bisque package allows approximate posterior inference for
 custom models; users only need to specify the conditional densities required for
 the approximation.")
     (license license:gpl3)))
+
+(define-public r-bispdep
+  (package
+    (name "r-bispdep")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bispdep" version))
+       (sha256
+        (base32 "18rbzfp5ql0qhglmibzvdj1lbq48cvkzz4rpjgam43xkknhyivra"))))
+    (properties `((upstream-name . "bispdep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-spdata
+                             r-spatialreg
+                             r-sp
+                             r-sf
+                             r-rcolorbrewer
+                             r-ggplot2
+                             r-combinat
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=bispdep")
+    (synopsis "Statistical Tools for Bivariate Spatial Dependence Analysis")
+    (description
+     "This package provides a collection of functions to test spatial autocorrelation
+between variables, including Moran I, Geary C and Getis G together with scatter
+plots, functions for mapping and identifying clusters and outliers, functions
+associated with the moments of the previous statistics that will allow testing
+whether there is bivariate spatial autocorrelation, and a function that allows
+identifying (visualizing neighbours) on the map, the neighbors of any region
+once the scheme of the spatial weights matrix has been established.")
+    (license license:gpl2+)))
 
 (define-public r-bisep
   (package
@@ -19914,13 +19947,13 @@ are required in spatial analyses performed with @code{BayesX}.")
 (define-public r-bayeswatch
   (package
     (name "r-bayeswatch")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesWatch" version))
        (sha256
-        (base32 "0x2jmv46q7prlzbzygzr709mbfj7fz3ay2i1fx0p1vv7nf0k44h8"))))
+        (base32 "04kfx68cq5cjg1ykzl8i55prnw2mvqgnmgbjav5nv2rmh9psny61"))))
     (properties `((upstream-name . "bayesWatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -19933,6 +19966,7 @@ are required in spatial analyses performed with @code{BayesX}.")
                              r-ggplot2
                              r-ess
                              r-cholwishart
+                             r-bh
                              r-bdgraph))
     (home-page "https://cran.r-project.org/package=bayesWatch")
     (synopsis

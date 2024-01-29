@@ -13753,13 +13753,13 @@ the elements in the final ranking.")
 (define-public r-robustrank
   (package
     (name "r-robustrank")
-    (version "2019.9-10")
+    (version "2024.1-28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustrank" version))
        (sha256
-        (base32 "1xikknrmnh95wpvyljdl7v510ddi1g7a88aw3l630s789nq5i02h"))))
+        (base32 "1sa4k43zqj4xx4ph7kjklkkjh4xmhdi3z83zz1j7kvf77pif0bpr"))))
     (properties `((upstream-name . "robustrank")))
     (build-system r-build-system)
     (propagated-inputs (list r-kyotil))
@@ -22510,27 +22510,6 @@ cluster level.  User may also input as many covariates as they want to fit the
 data.  Methods are described by Dylan S Small et al., (2012)
 <doi:10.1198/016214507000000897>.")
     (license license:expat)))
-
-(define-public r-rich
-  (package
-    (name "r-rich")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rich" version))
-       (sha256
-        (base32 "0kasr9gb85qhngfayqy3fvrsr0a066krwxsx21nsxcnss0mrqygr"))))
-    (properties `((upstream-name . "rich")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan r-boot))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rich")
-    (synopsis "Computes and Compares Species Richnesses")
-    (description
-     "Computes rarefaction curves, cumulated and mean species richness.  Compares
-these estimates by means of randomization tests.")
-    (license license:gpl2+)))
 
 (define-public r-riceware
   (package
@@ -34977,13 +34956,13 @@ or during a console session.  The output is a text file in PROV-JSON format.")
 (define-public r-rdta
   (package
     (name "r-rdta")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdta" version))
        (sha256
-        (base32 "1zmyh61wrzqwyfjbfcxg41cri7hy9r0jfwnixcvd086y0vxq7fdn"))))
+        (base32 "0a9n78kn6vf6nkv83v2vn5hha0l7d8sdvpl7320kgs29vd2nrwzm"))))
     (properties `((upstream-name . "Rdta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mvtnorm r-mcmcpack))
@@ -34994,9 +34973,8 @@ or during a console session.  The output is a text file in PROV-JSON format.")
 data transforming augmentation.  Users can also fit these models via typical
 data augmentation for a comparison.  It returns either maximum likelihood
 estimates of unknown model parameters (hyper-parameters) via an EM algorithm or
-posterior samples of those parameters via a Markov chain Monte Carlo method.
-Also see Tak, You, Ghosh, Su, and Kelly (2019+)
-<doi:10.1080/10618600.2019.1704295> <@code{arXiv:1911.02748>}.")
+posterior samples of those parameters via MCMC. Also see Tak et al. (2019)
+<doi:10.1080/10618600.2019.1704295>.")
     (license license:gpl2)))
 
 (define-public r-rdstreeboot
@@ -43375,13 +43353,13 @@ API with options to comply with the API rate limits.  See
 (define-public r-raptr
   (package
     (name "r-raptr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raptr" version))
        (sha256
-        (base32 "07p1z8qi991aqy4nx142b4kblx15j1bc22yx1hf3s3cnbcrdfnzl"))))
+        (base32 "01l5047xdjr3hq2d3hfcs7yb27wm0abmx3jxszq9lm4yic9zjr76"))))
     (properties `((upstream-name . "raptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

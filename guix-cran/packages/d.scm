@@ -23634,13 +23634,13 @@ Dataset JSON schema file, as described in CDISC (2023)
 (define-public r-dataset
   (package
     (name "r-dataset")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataset" version))
        (sha256
-        (base32 "0isk6c16sli3wb2x9kf09virrn31j2r9y8mim8s8x9kyglz3r7j3"))))
+        (base32 "1b2mps95mn9q85z3xy2w64wivl61crlx95w37qz5h54capgngava"))))
     (properties `((upstream-name . "dataset")))
     (build-system r-build-system)
     (propagated-inputs (list r-isocodes r-assertthat))

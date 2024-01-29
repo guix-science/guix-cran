@@ -9132,26 +9132,6 @@ prefixed with aux (auxiliary) are independent implementations of published
 algorithms for solving optimization problems less relevant to Subset Sum.")
     (license license:gpl3)))
 
-(define-public r-flsa
-  (package
-    (name "r-flsa")
-    (version "1.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "flsa" version))
-       (sha256
-        (base32 "1a5mdiy1dn2b2x9s5rbfcb8il4x7dxcz5py2x055m1mdar8ivcf4"))))
-    (properties `((upstream-name . "flsa")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=flsa")
-    (synopsis "Path Algorithm for the General Fused Lasso Signal Approximator")
-    (description
-     "This package implements a path algorithm for the Fused Lasso Signal
-Approximator.  For more details see the help files or the article by Hoefling
-(2009) <@code{arXiv:0910.0526>}.")
-    (license license:gpl2)))
-
 (define-public r-flr
   (package
     (name "r-flr")
@@ -14090,13 +14070,13 @@ Rico (<https://forestgeo.si.edu/sites/north-america/luquillo>).")
 (define-public r-fgeo-tool
   (package
     (name "r-fgeo-tool")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fgeo.tool" version))
        (sha256
-        (base32 "1yp3513rqpv38bi79xyq83dblrmcpm7h0411hlr1a2n4qjdzpzc5"))))
+        (base32 "1sslx635xr3ll3040dzqhv4n270b7pbfdg563f9yn5dx3kpmx03y"))))
     (properties `((upstream-name . "fgeo.tool")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

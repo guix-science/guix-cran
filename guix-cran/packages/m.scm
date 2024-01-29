@@ -5315,13 +5315,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "1mlc84cpphg9cwd8a1i7jrms6k89ij5szqp5w0l8yqkg7p3pgi3r"))))
+        (base32 "0zm0hamwrdhqclaqq783lm42smpz6qmwhrrqi4ci3w3r40jllfpf"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -17521,13 +17521,13 @@ underlying methods in Train (2009) <doi:10.1017/CBO9780511805271>.")
 (define-public r-mlmusingr
   (package
     (name "r-mlmusingr")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLMusingR" version))
        (sha256
-        (base32 "0d05amwsc4zg474676qma20bba8ihq8dmh1md9r3wdqwilhsb4bh"))))
+        (base32 "0ra3r9qrjv6pl36c0imvwzkkm12jk0xpm60n08siys3pj57ljh8z"))))
     (properties `((upstream-name . "MLMusingR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -19703,13 +19703,13 @@ of the functions lm(), glm() and associated summaries from the package stats'.")
 (define-public r-mixkernel
   (package
     (name "r-mixkernel")
-    (version "0.9")
+    (version "0.9-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixKernel" version))
        (sha256
-        (base32 "1sinbq30f57ihqy57vf69hq0c6f54j7w4dbx46vz39b7kx5319nz"))))
+        (base32 "0vak6qfhva666mjqwn16ivcdjsw31qic36g62g4p3ng2jvv57f32"))))
     (properties `((upstream-name . "mixKernel")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -38501,13 +38501,13 @@ the method.")
 (define-public r-marginalizedrisk
   (package
     (name "r-marginalizedrisk")
-    (version "2021.2-4")
+    (version "2024.1-27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginalizedRisk" version))
        (sha256
-        (base32 "0kagl9xghq9nsh9qvx165j1a5plh08zxhb6nm8j402mnl8pq7a4z"))))
+        (base32 "0lsa4q0jmc9ldjsfpbw7kxg2wd0gca9w2299j38md3x5lb2k87g5"))))
     (properties `((upstream-name . "marginalizedRisk")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))

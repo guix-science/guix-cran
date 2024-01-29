@@ -4390,6 +4390,30 @@ with data are available, including some which are discussed in Faber (2015,
 ISBN:9780988679924).")
     (license license:gpl3+)))
 
+(define-public r-assessor
+  (package
+    (name "r-assessor")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "assessor" version))
+       (sha256
+        (base32 "16159dwdpbk38319143kmb78fq64zi1szspsn5ijqwvcwyzi88ca"))))
+    (properties `((upstream-name . "assessor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-tweedie r-mass))
+    (home-page "https://github.com/jhlee1408/assessor")
+    (synopsis
+     "Assessment Tools for Regression Models with Discrete and Semicontinuous Outcomes")
+    (description
+     "This package provides assessment tools for regression models with discrete and
+semicontinuous outcomes proposed in Yang (2023)
+<doi:10.48550/@code{arXiv.2308.15596>}.  It calculates the double probability
+integral transform (DPIT) residuals, constructs QQ plots of residuals and the
+ordered curve for assessing mean structures.")
+    (license license:expat)))
+
 (define-public r-assertions
   (package
     (name "r-assertions")
@@ -7990,32 +8014,6 @@ functions are available for linear and nonlinear threshold cointegration, and
 furthermore, symmetric and asymmetric error correction model.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-apsimx
-  (package
-    (name "r-apsimx")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apsimx" version))
-       (sha256
-        (base32 "1d1ipzf9ahdb3540zjcyzj4dwx5v8b73av790ahhbmc128vdmspj"))))
-    (properties `((upstream-name . "apsimx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rsqlite r-knitr r-jsonlite r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=apsimx")
-    (synopsis
-     "Inspect, Read, Edit and Run 'APSIM' \"Next Generation\" and 'APSIM' Classic")
-    (description
-     "The functions in this package inspect, read, edit and run files for APSIM \"Next
-Generation\" ('JSON') and APSIM \"Classic\" ('XML').  The files with an apsim
-extension correspond to APSIM Classic (7.x) - Windows only - and the ones with
-an apsimx extension correspond to APSIM \"Next Generation\".  For more information
-about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
-(<https://apsimnextgeneration.netlify.app/>).")
-    (license license:gpl3)))
-
 (define-public r-aprof
   (package
     (name "r-aprof")
@@ -11287,6 +11285,37 @@ snakemake'.  Finally, incorporate results for visualization and interpretation."
 It combines the tabular and graphical visualization for easier usability.  This
 package also creates an R Notebook with detailed data exploration with one
 function call.  The notebook can be made interactive.")
+    (license license:expat)))
+
+(define-public r-analysislin
+  (package
+    (name "r-analysislin")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AnalysisLin" version))
+       (sha256
+        (base32 "14himqamdiynbn8w6xmk16xihxz4g7wvnymazrbg5m7fwj68hn8b"))))
+    (properties `((upstream-name . "AnalysisLin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rann
+                             r-plotly
+                             r-magrittr
+                             r-htmltools
+                             r-hmisc
+                             r-ggplot2
+                             r-dt
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=AnalysisLin")
+    (synopsis "Exploratory Data Analysis")
+    (description
+     "This package provides a quick and effective data exploration toolkit.  It
+provides essential features, including a descriptive statistics table for a
+quick overview of your dataset, interactive distribution plots to visualize
+variable patterns, Principal Component Analysis for dimensionality reduction and
+feature analysis, missing value imputation methods, and correlation analysis.")
     (license license:expat)))
 
 (define-public r-analogue

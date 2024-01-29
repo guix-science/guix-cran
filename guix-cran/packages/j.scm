@@ -3997,26 +3997,6 @@ intervals based on the methodology discussed by Quenouille (1956)
 <doi:10.1016/0167-7152(88)90011-9>.")
     (license license:gpl3+)))
 
-(define-public r-jackknifekme
-  (package
-    (name "r-jackknifekme")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jackknifeKME" version))
-       (sha256
-        (base32 "0c5shl6s46kz7a623gccqk2plrrf2g29nwr6vbny6009pq3jvzam"))))
-    (properties `((upstream-name . "jackknifeKME")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-imputeyn))
-    (home-page "https://cran.r-project.org/package=jackknifeKME")
-    (synopsis "Jackknife Estimates of Kaplan-Meier Estimators or Integrals")
-    (description
-     "Computing the original and modified jackknife estimates of Kaplan-Meier
-estimators.")
-    (license license:gpl2)))
-
 (define-public r-jackalope
   (package
     (name "r-jackalope")

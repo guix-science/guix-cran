@@ -651,6 +651,27 @@ of a rare disease assuming independence or simple dependence of genetic and
 non-genetic covariates.")
     (license license:gpl2)))
 
+(define-public r-luajr
+  (package
+    (name "r-luajr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "luajr" version))
+       (sha256
+        (base32 "06pqkzmv53pp2clwvq3mhksl5b99mskamnwngn6s23h7zwkgkpn2"))))
+    (properties `((upstream-name . "luajr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicholasdavies/luajr")
+    (synopsis "'LuaJIT' Scripting")
+    (description
+     "An interface to @code{LuaJIT} (<https://luajit.org>), a just-in-time compiler
+for the Lua scripting language (<https://www.lua.org>).  Allows users to run Lua
+code from R'.")
+    (license license:expat)))
+
 (define-public r-ltxsparklines
   (package
     (name "r-ltxsparklines")
@@ -11246,19 +11267,18 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.1.3")
+    (version "6.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "0mpzwn7sadfa8vscmmf34jagqnldhmhyl0mbhsri0zj4g5mjzflf"))))
+        (base32 "1s3plvnc5zwg7bvqzk50xjvy90ylpf6f33mxj7phgwhf0vkzn9cx"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
                              r-rcpparmadillo
                              r-rcpp
-                             r-pscl
                              r-mumin
                              r-matrix
                              r-mass

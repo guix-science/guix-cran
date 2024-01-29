@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -1275,13 +1275,13 @@ level citizen voting age population from block group data.")
 (define-public r-cv
   (package
     (name "r-cv")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cv" version))
        (sha256
-        (base32 "0jy7dp31j3kn053b5bcx3yha4g3rsia48ayxa6zlfgkspxh7i5fa"))))
+        (base32 "18h7ivmicjdmnp9f1m2q21qlp9qdbh139x77xqa94v9kyb5w3d96"))))
     (properties `((upstream-name . "cv")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
@@ -13727,13 +13727,13 @@ his/her own sequences of random variables.")
 (define-public r-convergenceclubs
   (package
     (name "r-convergenceclubs")
-    (version "2.2.4")
+    (version "2.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConvergenceClubs" version))
        (sha256
-        (base32 "1kzkipaxjpr2x0hynbzh46rgq3vw8szf5sgr8vaqgg429pxf2dkn"))))
+        (base32 "0vlfkxipcqapffs57kjy3agcqx8bpl12ypgwvmkxlrpr8lsf12p4"))))
     (properties `((upstream-name . "ConvergenceClubs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-lmtest))
@@ -18790,13 +18790,13 @@ custom colour palettes.")
 (define-public r-colorspec
   (package
     (name "r-colorspec")
-    (version "1.4-0")
+    (version "1.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorSpec" version))
        (sha256
-        (base32 "02k2264kc9104jayjf4j7kniwxialw7f1f3l3fvzz3nmwv71bhw3"))))
+        (base32 "0vqh6nnp6myv46x520hisfz4ggfyhki88d1bggf9kq7p0723w4lk"))))
     (properties `((upstream-name . "colorSpec")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20069,13 +20069,13 @@ multiple filter types and reproducible R code.  Works standalone or with
 (define-public r-cohortalgebra
   (package
     (name "r-cohortalgebra")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortAlgebra" version))
        (sha256
-        (base32 "0bpmszbkjmsxbcwryrr229ji59r2m3srajvpkimlay3b7hv7lmrq"))))
+        (base32 "1aqafccdxivg21bb7pxy47yfk7d5gbiyby8hm472n1vrznmiq4b6"))))
     (properties `((upstream-name . "CohortAlgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -33546,13 +33546,13 @@ Andrian, Westermann, de Boer, and Beltman (2014)
 (define-public r-cellpypes
   (package
     (name "r-cellpypes")
-    (version "0.1.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cellpypes" version))
        (sha256
-        (base32 "0wyf0p5x7dz8qy7xayp8n52cvk73fai13vzsknfk1qvs8wygnlfp"))))
+        (base32 "1px7p1xly71p48w72m5fcs2krxba72slnh638wpd98a52clbgz6l"))))
     (properties `((upstream-name . "cellpypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -33645,13 +33645,13 @@ which was extended and enhanced by Giessing and Tent (2019)
 (define-public r-cego
   (package
     (name "r-cego")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEGO" version))
        (sha256
-        (base32 "00nc6c1b6ylqlh6hm8lh8nasz7q12pqckdqbf1yq21khki9ldbll"))))
+        (base32 "0pr3mkygnwcaslf0z8np7vhf7y70l9xqbx61bp98my5gq8gfzcxg"))))
     (properties `((upstream-name . "CEGO")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog
@@ -33659,7 +33659,8 @@ which was extended and enhanced by Giessing and Tent (2019)
                              r-matrix
                              r-mass
                              r-fastmatch
-                             r-deoptim))
+                             r-deoptim
+                             r-anticlust))
     (home-page "https://cran.r-project.org/package=CEGO")
     (synopsis "Combinatorial Efficient Global Optimization")
     (description
@@ -37612,13 +37613,13 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (define-public r-cartographer
   (package
     (name "r-cartographer")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartographer" version))
        (sha256
-        (base32 "0il0wc5mlz9qrb0lsbvcn4ha11wmm7hy40gbhvv86rfmh2jpp5nk"))))
+        (base32 "0jdnwrzxrvwcjf80dn0alhgz3713vfhwd4cs7k386x188y38l8ia"))))
     (properties `((upstream-name . "cartographer")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-dplyr r-cli))

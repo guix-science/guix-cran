@@ -24,6 +24,7 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
+  #:use-module (gnu packages xml)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages pcre)
@@ -2895,16 +2896,16 @@ Klopp and Robin (2019) <@code{arXiv:1911.13122>}.")
 (define-public r-gsbdesign
   (package
     (name "r-gsbdesign")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsbDesign" version))
        (sha256
-        (base32 "1q958l9f03lk0wpcgqxqwcbj6jlgkmj6vj4gyj51pp8kfkxal59x"))))
+        (base32 "07a5dpwfw052hx0ryrl54z4w71l9q6grh9cx5nf2h3v0lz45n6bp"))))
     (properties `((upstream-name . "gsbDesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-gsdesign))
+    (propagated-inputs (list r-lattice r-gsdesign r-ggplot2))
     (home-page "https://cran.r-project.org/package=gsbDesign")
     (synopsis "Group Sequential Bayes Design")
     (description
@@ -5956,32 +5957,6 @@ simulated datasets using this framework.  This also allows for pathway
 structures to be considered as a confounding variable when simulating gene
 expression data to test the performance of genomic analyses.")
     (license license:gpl3)))
-
-(define-public r-graphseg
-  (package
-    (name "r-graphseg")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "graphseg" version))
-       (sha256
-        (base32 "0rgr9k0imif79prw5kkcnkpw3hx8ndzh1bvd0wxgqga8f9vr1cgk"))))
-    (properties `((upstream-name . "graphseg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-matrix r-magrittr r-igraph r-flsa))
-    (home-page "https://github.com/goepp/graphseg")
-    (synopsis "Segmentation of Graph-Based Signals")
-    (description
-     "Perform segmentation of graph-based signals.  Assume a noisy observation of a
-signal two values correspond to vertices on a graph.  Assume the true value of
-the signal is piece-wise constant (where each piece is a connected subgraph).
-The main function, agraph(), computes the segmentation of the signal.  The
-package also includes a wrapper around the competing method flsa() (from package
-flsa').  More information about this method in Goepp and van de Kassteele (2022)
-\"Graph-Based Spatial Segmentation of Health-Related Areal Data\"
-<doi:10.48550/@code{arXiv.2206.06752>}.")
-    (license license:gpl3+)))
 
 (define-public r-graphql
   (package
@@ -25550,21 +25525,21 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "18a1kw31hs5qa03jj6ddxvv0hpjr6c5g3nbwgrgs48kjrqwbdc6z"))))
+        (base32 "1byqpn1pr2m1dkm6f0af976c8rbh79ijwdsjp249vs2z8vnh1h5v"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
-                  sqlite
                   proj
                   pcre2
                   openssl
                   openssh
+                  libxml2
                   gdal
                   curl))
     (propagated-inputs (list r-xml2 r-rcpp))
@@ -28111,17 +28086,17 @@ distribution.")
 (define-public r-gamlss-add
   (package
     (name "r-gamlss-add")
-    (version "5.1-6")
+    (version "5.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.add" version))
        (sha256
-        (base32 "0g80bn0nszs2nmka6dypyvqnsgxp7mzhf5nd82n5x4jm3ca3dbdj"))))
+        (base32 "1xprccwlnv0rjhgmgz7v0n95gsxzi8cig15drkcpira3nb0m83xc"))))
     (properties `((upstream-name . "gamlss.add")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-nnet r-mgcv r-gamlss-dist r-gamlss))
-    (home-page "http://www.gamlss.org/")
+    (home-page "https://www.gamlss.com/")
     (synopsis
      "Extra Additive Terms for Generalized Additive Models for Location Scale and Shape")
     (description

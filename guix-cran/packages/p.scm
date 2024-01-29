@@ -27389,27 +27389,6 @@ L2-norm') penalties are available.  The tuning parameters can be found using
 either a fixed grid or a interval search.")
     (license license:gpl2+)))
 
-(define-public r-penalizedlda
-  (package
-    (name "r-penalizedlda")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "penalizedLDA" version))
-       (sha256
-        (base32 "1bw5wiixmmg1vr3v0d59vh67f0gy2rvr30bi58skvrkb25qcjq6l"))))
-    (properties `((upstream-name . "penalizedLDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-flsa))
-    (home-page "https://cran.r-project.org/package=penalizedLDA")
-    (synopsis "Penalized Classification using Fisher's Linear Discriminant")
-    (description
-     "This package implements the penalized LDA proposal of \"Witten and Tibshirani
-(2011), Penalized classification using Fisher's linear discriminant, to appear
-in Journal of the Royal Statistical Society, Series B\".")
-    (license license:gpl2+)))
-
 (define-public r-penalizedclr
   (package
     (name "r-penalizedclr")

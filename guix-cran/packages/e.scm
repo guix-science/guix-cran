@@ -117,13 +117,13 @@ variables.")
 (define-public r-ezplot
   (package
     (name "r-ezplot")
-    (version "0.7.11")
+    (version "0.7.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ezplot" version))
        (sha256
-        (base32 "1ga122wk6iggysbpb8x0dvzlfgdaqg1dsdaa6ksbq18441lirrqs"))))
+        (base32 "1apfchy9s09hvympq1ipvxsqizwgx05sza8k38yf9vl8nphcdpkc"))))
     (properties `((upstream-name . "ezplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-ggplot2 r-forcats r-dplyr))
@@ -8175,39 +8175,6 @@ algorithm.  Please see Tomal et al. (2015) <doi:10.1214/14-AOAS778>, Tomal et
 al. (2016) <doi:10.1021/acs.jcim.5b00663>, and Tomal et al. (2019)
 <@code{arXiv:1706.06971>} for more details.")
     (license license:gpl3)))
-
-(define-public r-epwshiftr
-  (package
-    (name "r-epwshiftr")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "epwshiftr" version))
-       (sha256
-        (base32 "11vfs2r2fzbdd3r0s8ikafgq9ins06ym73wqxyijz60h75py4ic7"))))
-    (properties `((upstream-name . "epwshiftr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-rnetcdf
-                             r-rappdirs
-                             r-psychrolib
-                             r-progressr
-                             r-jsonlite
-                             r-future-apply
-                             r-fst
-                             r-eplusr
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://github.com/ideas-lab-nus/epwshiftr")
-    (synopsis "Create Future 'EnergyPlus' Weather Files using 'CMIP6' Data")
-    (description
-     "Query, download climate change projection data from the CMIP6 (Coupled Model
-Intercomparison Project Phase 6) project <https://pcmdi.llnl.gov/CMIP6/> in the
-ESGF (Earth System Grid Federation) platform <https://esgf.llnl.gov>, and create
-future @code{EnergyPlus} <https://energyplus.net> Weather ('EPW') files adjusted
-from climate changes using data from Global Climate Models ('GCM').")
-    (license license:expat)))
 
 (define-public r-epubr
   (package
