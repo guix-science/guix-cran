@@ -2213,40 +2213,6 @@ wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
 
-(define-public r-wordbankr
-  (package
-    (name "r-wordbankr")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wordbankr" version))
-       (sha256
-        (base32 "151n0jc4v9g41dvlnxfspjq3r8wjfah65gx6wjrzp1q60xcwdmp9"))))
-    (properties `((upstream-name . "wordbankr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-robustbase
-                             r-rmysql
-                             r-rlang
-                             r-quantreggrowth
-                             r-purrr
-                             r-lifecycle
-                             r-jsonlite
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://langcog.github.io/wordbankr/")
-    (synopsis "Accessing the Wordbank Database")
-    (description
-     "Connecting to Wordbank, an open repository for developmental vocabulary data.
-For more information on the underlying data, see <http://wordbank.stanford.edu>.")
-    (license license:gpl3)))
-
 (define-public r-word-alignment
   (package
     (name "r-word-alignment")
@@ -4282,18 +4248,17 @@ multiple languages.")
 (define-public r-whatsr
   (package
     (name "r-whatsr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WhatsR" version))
        (sha256
-        (base32 "1j6nc0vlgbsgyx18iknxf2r19f8wir8w1iwxnv48w0fmxzwjpa1a"))))
+        (base32 "0i6mhc3cm7m885v5sznci7bqr6h2bfgnv466v5jwdwidisnzrhgx"))))
     (properties `((upstream-name . "WhatsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
                              r-tokenizers
-                             r-stringr
                              r-stringi
                              r-readr
                              r-ragg
@@ -4303,6 +4268,7 @@ multiple languages.")
                              r-lubridate
                              r-ggwordcloud
                              r-ggplot2
+                             r-ggmap
                              r-dplyr
                              r-data-table
                              r-checkmate
@@ -8265,13 +8231,13 @@ Vihola, Helske, Franks (2020, <doi:10.1111/sjos.12492>).")
 (define-public r-walkboutr
   (package
     (name "r-walkboutr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "walkboutr" version))
        (sha256
-        (base32 "0mpblg13sqpnp7gw44m1wka8ciyrw5fwaz5vwkpn1mx9d0ax963f"))))
+        (base32 "1h5fxl8ylnfdxwshjn9zp0zbiaz3qr15z7333wicvjp7ibzglqrj"))))
     (properties `((upstream-name . "walkboutr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

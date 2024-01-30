@@ -829,13 +829,13 @@ the number of vowel sequences for words not found.")
 (define-public r-nswgeo
   (package
     (name "r-nswgeo")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nswgeo" version))
        (sha256
-        (base32 "0nny1dh0c3nkwglqi6rgwgri8hx1h66bzfpy388bjcyc31nkmihr"))))
+        (base32 "18s7mkcf32h7si5b9n1djqz9jl24n6f6pg38ifafb1a5jnkwqs2f"))))
     (properties `((upstream-name . "nswgeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-cartographer))
@@ -2985,13 +2985,13 @@ user-friendly reports need to be created.")
 (define-public r-noweb
   (package
     (name "r-noweb")
-    (version "1.1-2")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "noweb" version))
        (sha256
-        (base32 "1h0v92l5jzgiy5rz33pan1l6rb3mykckmvn5c8jm3hhph6ipgqad"))))
+        (base32 "16425n0cqfkjqs8wv1vkxbdm5xlryvsa2sxwa3nqjsfj6d7pc6mv"))))
     (properties `((upstream-name . "noweb")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=noweb")
@@ -6346,13 +6346,13 @@ global minimum.")
 (define-public r-nlrx
   (package
     (name "r-nlrx")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlrx" version))
        (sha256
-        (base32 "1ki8jhaa6ngqk046p61ssi0q9bskvc7vlz9j3d5ax0n118j5gx2q"))))
+        (base32 "046ivv90h0dsk5g2l7mal1cf64ff2y3wmc9h5ql3hffziqs0hd27"))))
     (properties `((upstream-name . "nlrx")))
     (build-system r-build-system)
     (inputs (list udunits

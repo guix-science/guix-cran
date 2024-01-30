@@ -15408,13 +15408,13 @@ of model fits and imputation of censored data.")
 (define-public r-icellr
   (package
     (name "r-icellr")
-    (version "1.6.5")
+    (version "1.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iCellR" version))
        (sha256
-        (base32 "0jdm61mbjl0m4d9p6yc4b1pvbdzlk5qgably1y5ck8r9sk426vdn"))))
+        (base32 "043ic1ijp9qycap1bh4s07ql1irzpxzyyk68qryjvqsgf8m33rl0"))))
     (properties `((upstream-name . "iCellR")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot

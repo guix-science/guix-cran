@@ -3478,13 +3478,13 @@ or combining Gaussian random fuzzy numbers).")
 (define-public r-evprof
   (package
     (name "r-evprof")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evprof" version))
        (sha256
-        (base32 "19izks5mzfjk5lj8jbz5ahzhf49c4vddcipz08dzny3bfxbrb6yn"))))
+        (base32 "16hw0rbvajgn7nlba62jr12aghsjcvf88c01yscmc1fgp1m5xcmp"))))
     (properties `((upstream-name . "evprof")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7264,6 +7264,37 @@ among tests and combines adaptively the estimation of the signal and the
 updating of the dependence modelling (see Sheu et al., 2016,
 <DOI:10.1214/15-AOAS888> for further details).")
     (license license:gpl2+)))
+
+(define-public r-ern
+  (package
+    (name "r-ern")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ern" version))
+       (sha256
+        (base32 "0f1nkjb1ra89rz2pz1ayyrv0x91wpzs0rhsrxj9kipl1ryd4lamn"))))
+    (properties `((upstream-name . "ern")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-runjags
+                             r-rjags
+                             r-patchwork
+                             r-lubridate
+                             r-ggplot2
+                             r-epiestim
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ern")
+    (synopsis "Effective Reproduction Number Estimation")
+    (description
+     "Estimate the effective reproduction number from wastewater and clinical data
+sources.")
+    (license license:expat)))
 
 (define-public r-erify
   (package
@@ -11461,13 +11492,13 @@ parameters for elastic net penalties are done via cross-validation.")
 (define-public r-enerscape
   (package
     (name "r-enerscape")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enerscape" version))
        (sha256
-        (base32 "103zikp56kbr64y6198xic401dc1nal34walfzwry73y0g7gmz69"))))
+        (base32 "098xjzrh5drwh5ylfhdd0spxf6zi678irq5q1nqvn7q7xz3vspjc"))))
     (properties `((upstream-name . "enerscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpp))
@@ -14968,13 +14999,13 @@ Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
 (define-public r-ehof
   (package
     (name "r-ehof")
-    (version "1.12")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eHOF" version))
        (sha256
-        (base32 "1797bf4wh8qy2qqhfmgi22a89zr39rsfmvbnvrfdvvpaf1zlrp2n"))))
+        (base32 "0i7iki5sgwa5ngjs86jhkc3iw2x9ph43ksn9gq84rlm5hgimwb8v"))))
     (properties `((upstream-name . "eHOF")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-lattice))
@@ -14986,7 +15017,7 @@ Denny, and Van Driest (2018) <doi:10.1093/bioinformatics/bty306>.")
 Huisman-Olff-Fresco in biology, see Huisman et al.  1993 Journal of Vegetation
 Science <doi:10.1111/jvs.12050>) models.  Response curves along one-dimensional
 gradients including no response, monotone, plateau, unimodal and bimodal models.")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-ehelp
   (package

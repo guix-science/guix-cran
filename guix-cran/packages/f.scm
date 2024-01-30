@@ -2321,13 +2321,13 @@ performance\".  Perspectives on Psychological Science, 15(3), 589-607.
 (define-public r-fullfact
   (package
     (name "r-fullfact")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fullfact" version))
        (sha256
-        (base32 "1p2f4rf54hd0icy49fkq6p973rqisjjmmr1brwcv0fg22nv2kidg"))))
+        (base32 "036bnjzhpdf18ks8r1gvg0rb4f8qyzj0fz2zwk2sc58083d38mw6"))))
     (properties `((upstream-name . "fullfact")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-afex))
@@ -2336,7 +2336,7 @@ performance\".  Perspectives on Psychological Science, 15(3), 589-607.
     (synopsis "Full Factorial Breeding Analysis")
     (description
      "We facilitate the analysis of full factorial mating designs with mixed-effects
-models.  There are now six vignettes containing detailed examples.")
+models.  The package contains six vignettes containing detailed examples.")
     (license license:gpl2+)))
 
 (define-public r-fuj
@@ -3310,13 +3310,13 @@ exploratory data analysis.")
 (define-public r-fsdam
   (package
     (name "r-fsdam")
-    (version "2020.11-18")
+    (version "2024.1-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSDAM" version))
        (sha256
-        (base32 "09l7zvmbvmbcr5pxizdhs5fn79r6cl4ic0hsz2bazdymsqv3s3nm"))))
+        (base32 "1jikdfhqb985a1g0r1z70n9wwnlw1ag32jdc74938ny65gqnp5sb"))))
     (properties `((upstream-name . "FSDAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-kyotil))
@@ -5773,13 +5773,13 @@ estimated variance.")
 (define-public r-fpdclustering
   (package
     (name "r-fpdclustering")
-    (version "2.3")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FPDclustering" version))
        (sha256
-        (base32 "1d96x9a5r9j8liqsl8bnk6ygwq0ys0hr3zzsa463lmyixyfpgjs5"))))
+        (base32 "04m75z320x9bxa3qi3yi60pl6b8fb1lxvx83q81iv42qw4998kd0"))))
     (properties `((upstream-name . "FPDclustering")))
     (build-system r-build-system)
     (propagated-inputs (list r-threeway

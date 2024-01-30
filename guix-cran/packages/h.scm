@@ -3844,13 +3844,13 @@ of squares.")
 (define-public r-hopit
   (package
     (name "r-hopit")
-    (version "0.11.5")
+    (version "0.11.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hopit" version))
        (sha256
-        (base32 "0cvka7r66c8divszvjxd0p1r7xyn9r3qgsrvc3vmzj2f43wdjlhv"))))
+        (base32 "13hzzjfj26kk5sfwrbi9lv1yczhnv0z0nlvlnp0y4xm3p0vkiyqp"))))
     (properties `((upstream-name . "hopit")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -6073,13 +6073,13 @@ Studies.  Bioinformatics. (2016) <doi:10.1093/bioinformatics/btw351>.  PMID:
 (define-public r-hillshader
   (package
     (name "r-hillshader")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hillshader" version))
        (sha256
-        (base32 "12phdpkjc4gyk9ri33x86dzxb03llhpqf43vin9ssfr23sbblnqh"))))
+        (base32 "15rvl5fisqnbs8gnvcc3l0ip8a6mwgaz5c6ads012pk497jv88ck"))))
     (properties `((upstream-name . "hillshader")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rayshader r-raster))
@@ -10050,13 +10050,13 @@ forecast.  The methods are explained in detail in Adaemmer et al. (2023)
 (define-public r-hdf5r-extra
   (package
     (name "r-hdf5r-extra")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdf5r.Extra" version))
        (sha256
-        (base32 "1p9r577k4fakn0j3bdamq8wswga4xpasj1d3f0iq73xpwydk6vk0"))))
+        (base32 "0mz7ilgs2zldvij7927l651lvwrb7zdfyakc55rvj9ij9nwnvpfx"))))
     (properties `((upstream-name . "hdf5r.Extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

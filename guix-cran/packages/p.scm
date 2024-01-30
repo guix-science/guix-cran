@@ -241,6 +241,55 @@ interpolation algorithm.  The result is a @code{SpatialGridDataFrame}.  Methods
 are described in Tobler Waldo R. (1979) <doi:10.1080/01621459.1979.10481647>.")
     (license license:gpl2+)))
 
+(define-public r-pxwebapidata
+  (package
+    (name "r-pxwebapidata")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PxWebApiData" version))
+       (sha256
+        (base32 "0xch2l9c3dana419p9zfs6vwcqgacxamzjx1c6v8bpnb49gc3dp8"))))
+    (properties `((upstream-name . "PxWebApiData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjstat r-pxweb r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/statisticsnorway/PxWebApiData")
+    (synopsis "PX-Web Data by API")
+    (description
+     "Function to read PX-Web data into R via API. The example code reads data from
+the three national statistical institutes, Statistics Norway, Statistics Sweden
+and Statistics Finland.")
+    (license (list license:asl2.0
+                   (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-pxweb
+  (package
+    (name "r-pxweb")
+    (version "0.17.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pxweb" version))
+       (sha256
+        (base32 "10c3cdlgjkp0bfr6xdn5h1221krv4c4i1j4mgbh38ykrzrm4d6am"))))
+    (properties `((upstream-name . "pxweb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-curl r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rOpenGov/pxweb/")
+    (synopsis "R Interface to PXWEB APIs")
+    (description
+     "Generic interface for the PX-Web/PC-Axis API. The PX-Web/PC-Axis API is used by
+organizations such as Statistics Sweden and Statistics Finland to disseminate
+data.  The R package can interact with all PX-Web/PC-Axis APIs to fetch
+information about the data hierarchy, extract metadata and extract and parse
+statistics to R data.frame format.  PX-Web is a solution to disseminate PC-Axis
+data files in dynamic tables on the web.  Since 2013 PX-Web contains an API to
+disseminate PC-Axis files.")
+    (license license:bsd-2)))
+
 (define-public r-pxr
   (package
     (name "r-pxr")
@@ -13252,6 +13301,35 @@ functionality for ridge-type estimation of the generalized linear model (as
 presented in van Wieringen, Binder, 2022, <doi:10.1080/10618600.2022.2035231>).")
     (license license:gpl2+)))
 
+(define-public r-popvar
+  (package
+    (name "r-popvar")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PopVar" version))
+       (sha256
+        (base32 "165c6gfj8qgpvv7ybl571abzf011c738l7xk5lkq9fbvbdqgdc5d"))))
+    (properties `((upstream-name . "PopVar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rrblup r-qtl r-bglr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PopVar")
+    (synopsis
+     "Genomic Breeding Tools: Genetic Variance Prediction and Cross-Validation")
+    (description
+     "The main attribute of @code{PopVar} is the prediction of genetic variance in
+bi-parental populations, from which the package derives its name. @code{PopVar}
+contains a set of functions that use phenotypic and genotypic data from a set of
+candidate parents to 1) predict the mean, genetic variance, and superior progeny
+value of all, or a defined set of pairwise bi-parental crosses, and 2) perform
+cross-validation to estimate genome-wide prediction accuracy of multiple
+statistical models.  More details are available in Mohammadi, Tiede, and Smith
+(2015, <doi:10.2135/cropsci2015.01.0030>).  A dataset think_barley.rda is
+included for reference and examples.")
+    (license license:gpl3)))
+
 (define-public r-populr
   (package
     (name "r-populr")
@@ -17441,13 +17519,13 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "1wgxsqn6bxraj6y4r5ff1lbcfvp6wmpafdrfpjxbyvpk2im834pd"))))
+        (base32 "0vrrx7jw75xqplcm1mjsxqbd4fvys8sm6r53n691kx56xcp79m0p"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -17466,7 +17544,7 @@ specialized needs.  Core functionality is based on a @code{JavaScript} library,
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/arnaudgallou/plume")
+    (home-page "https://arnaudgallou.github.io/plume/")
     (synopsis "Simple Author Handler for Scientific Writing")
     (description
      "Handles and formats author information in scientific writing in R Markdown and
@@ -23584,13 +23662,13 @@ Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 (define-public r-phenthauproc
   (package
     (name "r-phenthauproc")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHENTHAUproc" version))
        (sha256
-        (base32 "0zjbklrgp1n0j3wx6yr2pkcsf6nrj8f046xdidjh81z80y93ykp9"))))
+        (base32 "1kwaz54y1k8paca91pipg9vjy6yyqddz3h7ym99dfggq14di3q6b"))))
     (properties `((upstream-name . "PHENTHAUproc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-lubridate))
@@ -31063,17 +31141,18 @@ block design.")
 (define-public r-pbatr
   (package
     (name "r-pbatr")
-    (version "2.2-16")
+    (version "2.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbatR" version))
        (sha256
-        (base32 "1sgglw357igphrfrsqbwfk44b31p2vz0d3nr1qivrjp8rqia8b7n"))))
+        (base32 "1i4rjq8p6j5d7nh9lyrz5zh2s7jf81ljl0jgam2nkrzx3vagy91r"))))
     (properties `((upstream-name . "pbatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rootsolve))
-    (home-page "https://cran.r-project.org/package=pbatR")
+    (home-page
+     "https://academic.oup.com/bioinformatics/article-abstract/22/24/3103/208723")
     (synopsis
      "Pedigree/Family-Based Genetic Association Tests Analysis and Power")
     (description

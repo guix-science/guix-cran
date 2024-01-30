@@ -3344,13 +3344,13 @@ results to an Excel sheet.")
 (define-public r-survobj
   (package
     (name "r-survobj")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survobj" version))
        (sha256
-        (base32 "0nli5w2hxddximwx87hjn29dww1sy9lnwcz5nfb0ka0rdga7qqvb"))))
+        (base32 "0nwa3yk6pi1pmbd3asm519kqkp9w8w06rd7n4yh76zvbl7yl87y5"))))
     (properties `((upstream-name . "survobj")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-survival r-ggplot2 r-dplyr))
@@ -19134,17 +19134,16 @@ options for message passing and feature embedding.")
 (define-public r-spinifex
   (package
     (name "r-spinifex")
-    (version "0.3.6")
+    (version "0.3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinifex" version))
        (sha256
-        (base32 "09agdcvdq6cmg7nvr1p9njvixnqmn134wn6kc9v7hiqpiy8s7ldx"))))
+        (base32 "1hw7kc4shmclx8i4794w8mlhl7awfrz0nr2k33nbk4pzdy0c02hk"))))
     (properties `((upstream-name . "spinifex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-transformr
-                             r-tourr
+    (propagated-inputs (list r-tourr
                              r-shiny
                              r-rdimtools
                              r-plotly
@@ -21069,16 +21068,22 @@ likelihood inference for Spearman's rho (de Carvalho and Marques (2012)
 (define-public r-speakr
   (package
     (name "r-speakr")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakr" version))
        (sha256
-        (base32 "0gq8bqpxdjpaziwm1zqb2vglh2af1xwxm0x5d1zkxldbhky8g9fc"))))
+        (base32 "159ir49i2fdw5fcq93rqdhf5ij5s9sfr2ygdy2snbgnx3rgi1sfc"))))
     (properties `((upstream-name . "speakr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-stringr r-readr r-lifecycle r-ggplot2))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-quarto
+                             r-lifecycle
+                             r-ggplot2
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/stefanocoretta/speakr")
     (synopsis "Wrapper for the Phonetic Software 'Praat'")

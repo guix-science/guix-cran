@@ -468,13 +468,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.17")
+    (version "2.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2parse" version))
        (sha256
-        (base32 "085wr1l2qksph7kpcwq1i4w7cvnhcvbig4ambjdqkckc04p7rrg0"))))
+        (base32 "180af1lfvm8zqkdihvij8x25gid3zagjpg46455iy4hb05ms2byv"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -2060,6 +2060,39 @@ RU method and to improve efficiency.  In the multivariate case rotation of axes
 can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
+
+(define-public r-rusquant
+  (package
+    (name "r-rusquant")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rusquant" version))
+       (sha256
+        (base32 "0x9l5hy9jp41gks33g6ls9axvbi0z18vn07aa2xaxr4aj6yh1xbv"))))
+    (properties `((upstream-name . "rusquant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-xml
+                             r-stringr
+                             r-rvest
+                             r-quantmod
+                             r-jsonlite
+                             r-jose
+                             r-httr
+                             r-data-table
+                             r-base64enc))
+    (home-page "https://rusquant.ru")
+    (synopsis "Quantitative Trading Framework")
+    (description
+     "Collection of functions to retrieve financial data from various sources,
+including brokerage and exchange platforms, financial websites, and data
+providers.  Includes functions to retrieve account information, portfolio
+information, and place/cancel orders from different brokers.  Additionally,
+allows users to download historical data such as earnings, dividends, stock
+splits.")
+    (license license:gpl3)))
 
 (define-public r-rusk
   (package
@@ -12276,6 +12309,35 @@ detection of events or structural breaks.")
 <https://rollbar.com>.")
     (license license:expat)))
 
+(define-public r-rollama
+  (package
+    (name "r-rollama")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollama" version))
+       (sha256
+        (base32 "11shm2s936dng90mlsykvr72dbjknlrbz27lshnqybs30iir19jm"))))
+    (properties `((upstream-name . "rollama")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-prettyunits
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-cli
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jbgruber.github.io/rollama/")
+    (synopsis "Communicate with 'Ollama'")
+    (description
+     "Wraps the Ollama <https://ollama.ai> API, which can be used to communicate with
+generative large language models locally.")
+    (license license:gpl3+)))
+
 (define-public r-roll
   (package
     (name "r-roll")
@@ -13801,13 +13863,13 @@ the meta-analysis methods are developed by Noma et al. (2022) <forthcoming>.")
 (define-public r-robustmatrix
   (package
     (name "r-robustmatrix")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustmatrix" version))
        (sha256
-        (base32 "0c3j2bvpf494k7axr8j9zi49myqg9ry7yl9nzzxflkzavwa5229j"))))
+        (base32 "1lq7gniz41sidc6i6clbrq7hyw6dj2y886a24w90ls7f5cgyd0dl"))))
     (properties `((upstream-name . "robustmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp))
@@ -15414,16 +15476,16 @@ are partially sampled and/or with missing values.")
 (define-public r-robastrda
   (package
     (name "r-robastrda")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobAStRDA" version))
        (sha256
-        (base32 "1s84j5in4av9zbbszv8j2rpigrd9ws9h4hz64jw7xagsj3xb49kz"))))
+        (base32 "156cdx2l3q5ccaan3knfb4khsmr0n2vf7j7yiq5z24z493l2g65w"))))
     (properties `((upstream-name . "RobAStRDA")))
     (build-system r-build-system)
-    (home-page "http://robast.r-forge.r-project.org/")
+    (home-page "https://r-forge.r-project.org/projects/robast/")
     (synopsis
      "Interpolation Grids for Packages of the 'RobASt' - Family of Packages")
     (description
@@ -19197,13 +19259,13 @@ used when displaying large datasets in that context.")
 (define-public r-rlinkedinads
   (package
     (name "r-rlinkedinads")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlinkedinads" version))
        (sha256
-        (base32 "06c8xlllvcgy8kxpnwdzrsg4csabazm30hwkm73nr5jh849vgsi2"))))
+        (base32 "1d35imrikv94ldsf0c3x5hilzrsdyisshbw7hby1d76ki40gcj03"))))
     (properties `((upstream-name . "rlinkedinads")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -37726,13 +37788,13 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "5.6.1")
+    (version "5.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "0mg71gwgifn5kircj498bhi09q47hi4i4vpgjmfvh7lkkgsfxkx1"))))
+        (base32 "0mqwlalgddgybf2j1f54lj1d1lxgjcsh6275512cg0xjvss8mkln"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -39496,13 +39558,13 @@ Clickhouse databases via DBI methods and using dplyr'/'dbplyr idioms.")
 (define-public r-rclabels
   (package
     (name "r-rclabels")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCLabels" version))
        (sha256
-        (base32 "0g8gfq9k5xskq87x5my928pmgz98629wg6pkzvl93sq5da7gdqmp"))))
+        (base32 "0nb1032mlqbs9aslq4hsmahfn3bp1qvg26pfbgk784rj64ibd6gz"))))
     (properties `((upstream-name . "RCLabels")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-magrittr r-hmisc r-assertthat))
@@ -40594,13 +40656,13 @@ creation and content analysis of the blockchain.")
 (define-public r-rbscci
   (package
     (name "r-rbscci")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbscCI" version))
        (sha256
-        (base32 "12r1f4yy5hx0sx1q77yzq3wxhbx8zgj9d1jfpa1hagvwcyd8bdxb"))))
+        (base32 "13cfk4i4h5m9js9q1pp7m5jxgf883qj6466s5847cqkqp1p5yyhn"))))
     (properties `((upstream-name . "rbscCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -43425,13 +43487,13 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-rapsimng
   (package
     (name "r-rapsimng")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng" version))
        (sha256
-        (base32 "1rgwan04j0ah7d9p0kypigf3xl4idy9g5qj0kfq0h1kg3cfk7b21"))))
+        (base32 "0s1rzhbs81ipxvdbnf6pysirsklb35gw6z9gmd10krhikz096szx"))))
     (properties `((upstream-name . "rapsimng")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -43873,19 +43935,19 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 (define-public r-rankinma
   (package
     (name "r-rankinma")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankinma" version))
        (sha256
-        (base32 "04vgvnrmd78vi88iznq6pgznfb3wi5qm7y32h9dyci7mmcb2wfwl"))))
+        (base32 "14iw0jl37p96zv3s5nc5ziiip9z05xhlrxhajsynf8vlckk0fl95"))))
     (properties `((upstream-name . "rankinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-netmeta r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://rankinma.shinyapps.io/rankinma/")
-    (synopsis "Ranking in Network Meta-Analysis")
+    (synopsis "Rank in Network Meta-Analysis")
     (description
      "This package provides a supportive collection of functions for gathering and
 plotting treatment ranking metrics after network meta-analysis.")
@@ -47766,13 +47828,13 @@ easy access in R.")
 (define-public r-r2mlwin
   (package
     (name "r-r2mlwin")
-    (version "0.8-8")
+    (version "0.8-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2MLwiN" version))
        (sha256
-        (base32 "0gik3n95469c4cdqam3a37smcf77arxac0d8ryd2xf9nq1zw6nlk"))))
+        (base32 "0zzvpsmcfvnr6v0dg5dbfz8sx2h2m6krkb0q8bxxlj552nn2qvgr"))))
     (properties `((upstream-name . "R2MLwiN")))
     (build-system r-build-system)
     (inputs (list))

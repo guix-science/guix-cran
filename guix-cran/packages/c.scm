@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -2576,13 +2576,13 @@ function as well as at <https://kartikeyab.shinyapps.io/CTShiny/>.")
 (define-public r-ctsfeatures
   (package
     (name "r-ctsfeatures")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsfeatures" version))
        (sha256
-        (base32 "1bqcp9044s79c6wrkpv08zxis89xpzj2j9bhhcjg7fz2akikwq23"))))
+        (base32 "0nmqx56mbmanq6y3msdkii144srgxvyl0lzwhixm719xhjii39w3"))))
     (properties `((upstream-name . "ctsfeatures")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
@@ -4421,13 +4421,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "0j4n13c9qcm1f6fwbvr72pqdvfvxrhnakk19dpn2hlxfdmmsk79g"))))
+        (base32 "0jpnks935n18yk1936643m01wj2b8hy19limnkpwny6qlyjrlzy2"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17647,13 +17647,13 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.7.2")
+    (version "4.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "16vpfa3h01k5mcdz6ymprc8sdvpvy6lvrjv7x3w28g78v163wgx8"))))
+        (base32 "0v747rxg864gml937zizp80sf15jw2v4svcafdysna62shp4rypv"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -17666,7 +17666,7 @@ pages, including providing new figure components.")
                              r-flextable
                              r-chron))
     (native-inputs (list r-knitr))
-    (home-page "www.comparegroups.eu")
+    (home-page "https://isubirana.github.io/compareGroups/")
     (synopsis "Descriptive Analysis by Groups")
     (description
      "Create data summaries for quality control, extensive reports for exploring data,
@@ -18171,16 +18171,16 @@ etc.  More functions will be added later.")
 (define-public r-comf
   (package
     (name "r-comf")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comf" version))
        (sha256
-        (base32 "17hby9qah3bd4p3rfhd1lf3yaz5qxxd4p5aaq1ql7jdixb9p51q0"))))
+        (base32 "1239lj29y2hiqgsf507i535d8adgsmzh2a1b1h896cxlbvpjn3ls"))))
     (properties `((upstream-name . "comf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape r-plyr))
+    (propagated-inputs (list r-reshape r-plyr r-jsonlite))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=comf")
     (synopsis "Models and Equations for Human Comfort Research")
@@ -20240,13 +20240,13 @@ Carvalho, Henrik Molina & Rune Matthiesen, Scientific Reports
 (define-public r-coffee
   (package
     (name "r-coffee")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coffee" version))
        (sha256
-        (base32 "12xf3v2h33pqcahz74sv3hppvzqjlg6gh75sx4qjkqdq29j8s7k4"))))
+        (base32 "0vq9mwlc014vfbwyn4id99gx2dm3hyazy0qas0bv30x4fk2z2822"))))
     (properties `((upstream-name . "coffee")))
     (build-system r-build-system)
     (propagated-inputs (list r-rintcal r-data-table))
@@ -33089,41 +33089,6 @@ details can be found in Ordonez et al. (2018)
 cross-sectional and panel data.")
     (license license:gpl2+)))
 
-(define-public r-censored
-  (package
-    (name "r-censored")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "censored" version))
-       (sha256
-        (base32 "1ps5f32047b1yyagk6v8b8p7wq7pi3nsygz2mmirbi0ps31d43l6"))))
-    (properties `((upstream-name . "censored")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-rlang
-                             r-purrr
-                             r-prettyunits
-                             r-parsnip
-                             r-mboost
-                             r-lifecycle
-                             r-hardhat
-                             r-glue
-                             r-generics
-                             r-dplyr
-                             r-dials))
-    (home-page "https://github.com/tidymodels/censored")
-    (synopsis "'parsnip' Engines for Survival Models")
-    (description
-     "Engines for survival models from the parsnip package.  These include parametric
-models (e.g., Jackson (2016) <doi:10.18637/jss.v070.i08>), semi-parametric
-(e.g., Simon et al (2011) <doi:10.18637/jss.v039.i05>), and tree-based models
-(e.g., Buehlmann and Hothorn (2007) <doi:10.1214/07-STS242>).")
-    (license license:expat)))
-
 (define-public r-censorcopula
   (package
     (name "r-censorcopula")
@@ -34941,13 +34906,13 @@ rec().  LÃ¼decke D (2018). \"sjmisc: Data and Variable Transformation Function
 (define-public r-cchs
   (package
     (name "r-cchs")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cchs" version))
        (sha256
-        (base32 "18zk50g7rw8cb09fczpcdgzjl1b06rgf6lwy99sg7nq4scnzgzm8"))))
+        (base32 "1ghccigv4mni39pp6b5f378swa5lb51cx95xg778irprz0da1cfm"))))
     (properties `((upstream-name . "cchs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

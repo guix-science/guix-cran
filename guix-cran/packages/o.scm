@@ -3948,13 +3948,13 @@ options.")
 (define-public r-options
   (package
     (name "r-options")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "options" version))
        (sha256
-        (base32 "11x18vicg7g3hpjiyhn4hb20g7zccn1bj74q39sh5il3v0wpkbg9"))))
+        (base32 "0pprbp2pxvgh120f8dahswws44gpdm4f4nlq3h3nvqrlhnspwnb8"))))
     (properties `((upstream-name . "options")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5228,13 +5228,13 @@ writing, styling and editing worksheets.")
 (define-public r-openva
   (package
     (name "r-openva")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openVA" version))
        (sha256
-        (base32 "1qnp9p25xlphf4ns6p27l0ylk169zi831l5ww2pw4ilw1dvmhk21"))))
+        (base32 "0ywf9hh4liz992ym1xdqpk4pnywy9azasyvqdy3ih8idmj3y5h0d"))))
     (properties `((upstream-name . "openVA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tariff

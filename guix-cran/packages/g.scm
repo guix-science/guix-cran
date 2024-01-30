@@ -4798,13 +4798,13 @@ traditional methods are also implemented, as described in Yang, Knoke (2001)
 (define-public r-greta-gp
   (package
     (name "r-greta-gp")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta.gp" version))
        (sha256
-        (base32 "0fwl4cxq3gsr1y84plc1v48l5achmd5czqza4n4qxlcgf72rd6kb"))))
+        (base32 "0r33lbg9zjgq4pkzllr9vadfk8jm24avf68dnhm1n5j5ahzpc242"))))
     (properties `((upstream-name . "greta.gp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensorflow r-greta r-glue r-cli))
@@ -5009,13 +5009,13 @@ model.")
 (define-public r-greg
   (package
     (name "r-greg")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Greg" version))
        (sha256
-        (base32 "1c6bplnw7baya2jgqbhwl5rbd8mjrzhq9k8ljd0hwp1z4cxq5m4c"))))
+        (base32 "13rsah8vf9s8wpkr5hlayyqa8v728cz80bvpg8vmlvnam8isb30s"))))
     (properties `((upstream-name . "Greg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15677,13 +15677,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.3.5")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "1p58i8a0n1pgp08mss0l4y27fwcihafhza66zssr7x9lmfkiqyhk"))))
+        (base32 "02zvg802wq7nr4ksm0kngi3ka7jv8rc0xsc6d3wgvkk33vvr2902"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))
@@ -16439,17 +16439,17 @@ the architectural layout of the legislative chamber.")
 (define-public r-ggparallel
   (package
     (name "r-ggparallel")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggparallel" version))
        (sha256
-        (base32 "0zxaff0jbqkbavsmh1yyp3vdrxsam6a66hjw8lamv9pksdw1s2wf"))))
+        (base32 "067m77c7pjqwcbm7ggpasxsqrdxddcwhs3w0rw77mrxv2s670hrf"))))
     (properties `((upstream-name . "ggparallel")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-plyr r-ggplot2))
-    (home-page "http://github.com/heike/ggparallel")
+    (home-page "https://github.com/heike/ggparallel/")
     (synopsis "Variations of Parallel Coordinate Plots for Categorical Data")
     (description
      "Create hammock plots, parallel sets, and common angle plots with ggplot2'.")

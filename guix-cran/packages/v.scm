@@ -4957,19 +4957,18 @@ based on daily mean temperatures and the day of the year.")
 (define-public r-vegdata
   (package
     (name "r-vegdata")
-    (version "0.9.11.4")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegdata" version))
        (sha256
-        (base32 "14vmxxpnq3kasciqzxipl21kdlqv7m3dmcr4v8wlm6q2l9cnpzdy"))))
+        (base32 "1fgha0sxgymiqnr6gwa3pjmbvb76iwxnpxs666zifscch4fz3z99"))))
     (properties `((upstream-name . "vegdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-stringr
                              r-rsqlite
-                             r-rcurl
                              r-plyr
                              r-magrittr
                              r-indicspecies

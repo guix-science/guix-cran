@@ -82,13 +82,13 @@ Transforms.")
 (define-public r-kyotil
   (package
     (name "r-kyotil")
-    (version "2023.11-27")
+    (version "2024.1-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kyotil" version))
        (sha256
-        (base32 "029hac2sw58raipgwcnza9290ka3vk0f8ccclnzlix8ra4ldsqv6"))))
+        (base32 "1gp9ijpar560ysssdf1xc96h4a1fvdi130pmaqdxq0r2wfxyn1m3"))))
     (properties `((upstream-name . "kyotil")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -2514,13 +2514,13 @@ metadata to specific time series values.  All data is returned as tidy tibbles."
 (define-public r-kitagawa
   (package
     (name "r-kitagawa")
-    (version "3.1.0")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kitagawa" version))
        (sha256
-        (base32 "190xi88zc3vybpyawayh8m78sgcn951n3axmc2fc67sic458r02s"))))
+        (base32 "0xn1gwa0whw6glypsf8wwrw0rlzy3xglqr7gdl5c7ldd5v1dffq9"))))
     (properties `((upstream-name . "kitagawa")))
     (build-system r-build-system)
     (propagated-inputs (list r-psd r-kelvin r-bessel))

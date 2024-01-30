@@ -18060,17 +18060,17 @@ Studies.  3rd ed. (2009, ISBN:978-1-58488-668-6).")
 (define-public r-bdwreg
   (package
     (name "r-bdwreg")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BDWreg" version))
        (sha256
-        (base32 "07j6dy69q1as1nwgp2790wzpzmjich2256cddhl7n3h2rs1dja74"))))
+        (base32 "0di2ll2sjj6js9fg3gx20kmjjzkqwhwq9g319jfwzzwxbclqs5ky"))))
     (properties `((upstream-name . "BDWreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-foreach r-dwreg r-doparallel r-coda))
-    (home-page "http://hamedhaseli.webs.com")
+    (home-page "https://cran.r-project.org/package=BDWreg")
     (synopsis "Bayesian Inference for Discrete Weibull Regression")
     (description
      "This package provides a Bayesian regression model for discrete response, where

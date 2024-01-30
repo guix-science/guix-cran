@@ -4485,13 +4485,13 @@ principal components using singular spectrum analysis (de Carvalho and Rua
 (define-public r-asrgenomics
   (package
     (name "r-asrgenomics")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASRgenomics" version))
        (sha256
-        (base32 "1yl3q1fjfyl0v0wpbgnbh8zj5j8zi1imf19cj66fdvji3i4c4lsi"))))
+        (base32 "1k6qyp5ac8q3z7ifbqv2kkryh27ii0zbfmlcjl6i3y7s1mfyigg8"))))
     (properties `((upstream-name . "ASRgenomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-superheat
@@ -4505,7 +4505,7 @@ principal components using singular spectrum analysis (de Carvalho and Rua
                              r-cowplot
                              r-aghmatrix))
     (home-page "https://cran.r-project.org/package=ASRgenomics")
-    (synopsis "'ASReml-R' Genomics Tools")
+    (synopsis "Complementary Genomic Functions")
     (description
      "Presents a series of molecular and genetic routines in the R environment with
 the aim of assisting in analytical pipelines before and after the use of asreml
@@ -8014,6 +8014,32 @@ functions are available for linear and nonlinear threshold cointegration, and
 furthermore, symmetric and asymmetric error correction model.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-apsimx
+  (package
+    (name "r-apsimx")
+    (version "2.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apsimx" version))
+       (sha256
+        (base32 "0wmgyfrpyiqsqvb5avrakai244wnnq8w0w0njqv16g0wcq3kfff4"))))
+    (properties `((upstream-name . "apsimx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rsqlite r-knitr r-jsonlite r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=apsimx")
+    (synopsis
+     "Inspect, Read, Edit and Run 'APSIM' \"Next Generation\" and 'APSIM' Classic")
+    (description
+     "The functions in this package inspect, read, edit and run files for APSIM \"Next
+Generation\" ('JSON') and APSIM \"Classic\" ('XML').  The files with an apsim
+extension correspond to APSIM Classic (7.x) - Windows only - and the ones with
+an apsimx extension correspond to APSIM \"Next Generation\".  For more information
+about APSIM see (<https://www.apsim.info/>) and for APSIM next generation
+(<https://apsimnextgeneration.netlify.app/>).")
+    (license license:gpl3)))
+
 (define-public r-aprof
   (package
     (name "r-aprof")
@@ -9490,13 +9516,13 @@ permission.")
 (define-public r-aoptbdtvc
   (package
     (name "r-aoptbdtvc")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Aoptbdtvc" version))
        (sha256
-        (base32 "1bygvf8vgzz3wa4485x2xxpk784zmw1nwsjjjysm12brrldh8zzh"))))
+        (base32 "19prbak6ssmzqaa88mw0h0bdsj8s6hvcsgrmlgq4h6iyp959yj73"))))
     (properties `((upstream-name . "Aoptbdtvc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lpsolve))
@@ -11290,13 +11316,13 @@ function call.  The notebook can be made interactive.")
 (define-public r-analysislin
   (package
     (name "r-analysislin")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnalysisLin" version))
        (sha256
-        (base32 "14himqamdiynbn8w6xmk16xihxz4g7wvnymazrbg5m7fwj68hn8b"))))
+        (base32 "1mf77l74lfjlr856w48spjnn7pvjf9zygy1xcaj3fmi335h77j2x"))))
     (properties `((upstream-name . "AnalysisLin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -19485,13 +19511,13 @@ algorithms.  See Lei, Lihua and Fithian, William (2016)
 (define-public r-adaptmcmc
   (package
     (name "r-adaptmcmc")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptMCMC" version))
        (sha256
-        (base32 "0yydliqhkz1y8lm4sb2biikbk8wmcyfqmamhm059843yk46nr6an"))))
+        (base32 "1inw339n2rb1g2n9zkmv8gp43lifil3plv82x9sxrq468ihzng4f"))))
     (properties `((upstream-name . "adaptMCMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-ramcmc r-matrix r-coda))

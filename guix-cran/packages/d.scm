@@ -621,13 +621,13 @@ and derivatives.")
 (define-public r-dynconfir
   (package
     (name "r-dynconfir")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynConfiR" version))
        (sha256
-        (base32 "1jr9ykpwjvpr3260ksn1l0kf53jn8qig8s7xr993z9galf2cyqr6"))))
+        (base32 "1ql8c712g7jx0j1aw7qrfsp81abiajigzvwwlq6v96ar5ag5jrgy"))))
     (properties `((upstream-name . "dynConfiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -3622,13 +3622,13 @@ distribution is not needed.  Posterior summaries are compared with those by
 (define-public r-dsam
   (package
     (name "r-dsam")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSAM" version))
        (sha256
-        (base32 "1zyhbfigpgn86d3vyl6hib1h4bqnafysj0374nhrz91ln5qg4gzs"))))
+        (base32 "1bm7wicpq372xnwlib18434cid90vy575zc4f4xgsy2vsm8f87ym"))))
     (properties `((upstream-name . "DSAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost r-proc r-matrix r-kohonen r-caret))
@@ -9911,13 +9911,13 @@ explored and visualized.")
 (define-public r-distr
   (package
     (name "r-distr")
-    (version "2.9.2")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distr" version))
        (sha256
-        (base32 "0c1fkb9jqj5mhs766hrwys9zd1xbf9j98bwy03xxwxbbsrz82amm"))))
+        (base32 "0n6vsyyw8fakxd0qmj6kfvc3n6hmz0ssnbz43w990nyabf1prb0m"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-sfsmisc r-mass))
@@ -14362,24 +14362,28 @@ with several cutpoints.")
 (define-public r-diagl1
   (package
     (name "r-diagl1")
-    (version "0.0.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diagL1" version))
        (sha256
-        (base32 "0488zb7hy6681psfx0ypksyh738cyhw9flxn34ikfz4r54g1b5qv"))))
+        (base32 "1rl51a5gjzf41la0rbigz4n8brn1prji6hp862hlxwscdni9w2f9"))))
     (properties `((upstream-name . "diagL1")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
                              r-matrixmodels
                              r-matrix
+                             r-mass
                              r-lawstat
                              r-greekletters
+                             r-foreach
+                             r-doparallel
+                             r-cubature
                              r-conquer))
     (home-page "https://cran.r-project.org/package=diagL1")
     (synopsis
-     "Routines for Fit, Inference and Diagnostics in Linear L1 Models")
+     "Routines for Fit, Inference and Diagnostics in Linear L1 and LAD Models")
     (description
      "Diagnostics for linear L1 regression (also known as LAD - Least Absolute
 Deviations), including: estimation, confidence intervals, tests of hypotheses,
@@ -14391,7 +14395,7 @@ This package builds on the quantreg package, which is a well-established package
 for tuning quantile regression models.  There are also tests to verify if the
 errors have a Laplace distribution based on the work of Puig and Stephens (2000)
 <doi:10.2307/1270952>.")
-    (license license:gpl3+)))
+    (license license:gpl2+)))
 
 (define-public r-diagis
   (package
@@ -26678,13 +26682,13 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
 (define-public r-d3tree
   (package
     (name "r-d3tree")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d3Tree" version))
        (sha256
-        (base32 "142bc6gdmhzaikdfyxb1pq9nlybgkrgi2kjgk40w4wbxzx5mwkbh"))))
+        (base32 "13qvwmv5nfiv0c3545f2jlhmvgavqnc0jclvm5razjs4hv4kai7i"))))
     (properties `((upstream-name . "d3Tree")))
     (build-system r-build-system)
     (arguments
@@ -26703,7 +26707,7 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-stringr r-plyr r-magrittr r-htmlwidgets r-dplyr))
+    (propagated-inputs (list r-tidyselect r-tibble r-htmlwidgets r-dplyr))
     (native-inputs (list esbuild))
     (home-page "https://github.com/yonicd/d3Tree")
     (synopsis
@@ -26714,7 +26718,7 @@ management (upload/update/deletion/sharing), and listing of stored resources.")
 directly from the R console, from RStudio', in Shiny apps and R Markdown
 documents.  When in Shiny the tree layout is observed by the server and can be
 used as a reactive filter of structured data.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:expat)))
 
 (define-public r-d3po
   (package

@@ -12425,17 +12425,17 @@ method.")
 (define-public r-mombf
   (package
     (name "r-mombf")
-    (version "3.4.2")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mombf" version))
        (sha256
-        (base32 "12rzr2rppzp0l6sq7iixhpqjjzkhch9h1inx2w4ym1ja6blkx8v2"))))
+        (base32 "0npfqslp7hppgv5crw18scy97k29c30fm0023qv826inhjxzm01z"))))
     (properties `((upstream-name . "mombf")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
-                             r-sgd
+                             r-sparsematrixstats
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma
@@ -12443,8 +12443,10 @@ method.")
                              r-mvtnorm
                              r-mgcv
                              r-mclust
+                             r-matrix
                              r-intervals
                              r-glmnet
+                             r-glasso
                              r-dplyr))
     (home-page "https://github.com/davidrusi/mombf")
     (synopsis "Model Selection with Bayesian Methods and Information Criteria")
@@ -17668,13 +17670,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1vh3cy8n3dlzb6wb2xkkjs3jd1gdxjbch09lhfq2sclk19h1ryy4"))))
+        (base32 "1y9h1c83ladymy09hm5wbmpy9zm91zf33x0sa3jhs7cnlg5fr6jn"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -19171,13 +19173,13 @@ and Symmetric Hyperbolic.")
 (define-public r-mixture
   (package
     (name "r-mixture")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixture" version))
        (sha256
-        (base32 "178a7cfmva2pjcc5ihxv8rjlcczha414sq03brq2cgiw1axnh33g"))))
+        (base32 "0a7dy6p5lhs4sff5w1p6fha9w2vwd39fav34b0zsmyw0k4fjg2ah"))))
     (properties `((upstream-name . "mixture")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -38189,13 +38191,13 @@ Golding (2016) <doi:10.1093/bioinformatics/btv541> for more details.")
 (define-public r-markmyassignment
   (package
     (name "r-markmyassignment")
-    (version "0.8.6")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markmyassignment" version))
        (sha256
-        (base32 "1w96jmb6iiw4ghmc73l721fdrq5k197fv21fz7spiapaa5xzbkrb"))))
+        (base32 "07jhcw662ihx4ykmjsbrs6spvq0b2kdwd6slqzky3zk47dkrsv1r"))))
     (properties `((upstream-name . "markmyassignment")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -39557,13 +39559,13 @@ data.")
 (define-public r-mapdeck
   (package
     (name "r-mapdeck")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapdeck" version))
        (sha256
-        (base32 "0agbf6bs3z7gwx1dj9jqlq6cllq5b65x89lkplm5mwhr20lzwvhr"))))
+        (base32 "17z3fd0k5qlmy7yzdlbi105kadak86nwmb6zw39rd10in6j3vfc2"))))
     (properties `((upstream-name . "mapdeck")))
     (build-system r-build-system)
     (arguments
@@ -39589,6 +39591,7 @@ data.")
                              r-rapidjsonr
                              r-magrittr
                              r-jsonify
+                             r-interleave
                              r-htmlwidgets
                              r-googlepolylines
                              r-geometries

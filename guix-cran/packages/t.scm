@@ -3160,13 +3160,13 @@ tidied, visualised, and forecasted.")
 (define-public r-tsibble
   (package
     (name "r-tsibble")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsibble" version))
        (sha256
-        (base32 "0qb5ksj366l253rhkjpq7cpancplx2q81xn95b4ddwpnz3p16hhz"))))
+        (base32 "17zdlrp9rfh61q23k21yqzs6q7c0g5r93cxxqa3ig5ibmvhsfsrl"))))
     (properties `((upstream-name . "tsibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -6369,13 +6369,13 @@ criteria are implemented.")
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treePlotArea" version))
        (sha256
-        (base32 "1k2xcjhv0sqgndn44y52qlaccdsz0lbgykiac83rn01yjv20055i"))))
+        (base32 "1wi39lbsml9zg2pp52x81l27iq1780036vfq5zmhxv26zn6bajf9"))))
     (properties `((upstream-name . "treePlotArea")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-fritools))
@@ -8643,13 +8643,13 @@ contributions, the final document can be downloaded and rendered locally.")
 (define-public r-trackdf
   (package
     (name "r-trackdf")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trackdf" version))
        (sha256
-        (base32 "1rb3q5nwj88rxrh8g8vabawws5d75qvjxkrmya0ppfdxfpysn6d0"))))
+        (base32 "0ymg8ykr02qvkkp2avrfg384bhgzaqj3wff8shwnhkiaabi50d7b"))))
     (properties `((upstream-name . "trackdf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-lubridate r-dplyr r-data-table))
@@ -16093,13 +16093,13 @@ automatically summarize the properties of the binned columns.")
 (define-public r-tidybde
   (package
     (name "r-tidybde")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyBdE" version))
        (sha256
-        (base32 "1jfkcpg42ndclkiarqh1qx2g1mk8mf7n65rbgi0liwvlv770kvy6"))))
+        (base32 "0mzl8bckfgz7qfdnb1xa0b6i45jx881cf94cf6kw3m4dmixh056k"))))
     (properties `((upstream-name . "tidyBdE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19243,13 +19243,13 @@ files.")
 (define-public r-tetrascatt
   (package
     (name "r-tetrascatt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tetrascatt" version))
        (sha256
-        (base32 "1bm6as0indwpfw8j2x4wavjjkkz0430hh226flg5jdzhfmg5m2aq"))))
+        (base32 "0zx0pg97mgrqfcdmv9f4ydn15lnkgd1x979chxd9ai4xgg5pbb9f"))))
     (properties `((upstream-name . "tetrascatt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -19262,7 +19262,10 @@ composed of tetrahedrons.  This computation is done efficiently through an
 analytical 3D integration that allows for a solution which is expressed in terms
 of elementary functions for each tetrahedron.  It is important to note that this
 method is only valid for objects whose acoustic properties, such as density and
-sound speed, do not vary significantly compared to the surrounding medium.")
+sound speed, do not vary significantly compared to the surrounding medium. (See
+Lavia, Cascallares and Gonzalez, J. D. (2023). @code{TetraScatt} model: Born
+approximation for the estimation of acoustic dispersion of fluid-like objects of
+arbitrary geometries. @code{arXiv} preprint <@code{arXiv:2312.16721>}).")
     (license license:gpl2+)))
 
 (define-public r-tetragon

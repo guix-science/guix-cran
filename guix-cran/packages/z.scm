@@ -604,6 +604,26 @@ Li (2016) <doi:10.1093/bioinformatics/btw308>.")
      "Improve the usage of model fitting functions within a piped work flow.")
     (license license:expat)))
 
+(define-public r-zfa
+  (package
+    (name "r-zfa")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zfa" version))
+       (sha256
+        (base32 "02xbyfc972i73006wxsblsf0mfl706vrfanq93igfpayfbwcbp07"))))
+    (properties `((upstream-name . "zfa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-skat))
+    (home-page "https://cran.r-project.org/package=zfa")
+    (synopsis "Zoom-Focus Algorithm")
+    (description
+     "This package performs Zoom-Focus Algorithm (ZFA) to optimize testing regions for
+rare variant association tests in exome sequencing data.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-zetasuite
   (package
     (name "r-zetasuite")
