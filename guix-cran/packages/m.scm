@@ -3018,13 +3018,13 @@ the results.")
 (define-public r-multistatm
   (package
     (name "r-multistatm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiStatM" version))
        (sha256
-        (base32 "0xb865jq04vg5xzh9710w55p99k470mjl63q38bsvrg3aqmqxvpq"))))
+        (base32 "0b0wk2zz8p0zqhv6f5030jpl4wxlnx3yya5i1jh7bm0rxyyx6d18"))))
     (properties `((upstream-name . "MultiStatM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-mass r-arrangements))
@@ -9872,18 +9872,17 @@ efficiently in R'.")
 (define-public r-mplusautomation
   (package
     (name "r-mplusautomation")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MplusAutomation" version))
        (sha256
-        (base32 "011sd6v0zd5yr842k69fc8fn12lf7vw3v0rqmjwp6b2c8drw1b51"))))
+        (base32 "0a95m9m7m988ky4sswqyzmyh0fhbbfz1kzsf9mnaswm5xh1gwh4k"))))
     (properties `((upstream-name . "MplusAutomation")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-texreg
-                             r-rlang
                              r-plyr
                              r-pander
                              r-lattice
@@ -13928,6 +13927,29 @@ derived threshold and slope, and their standard deviations and confidence
 intervals.")
     (license license:lgpl3+)))
 
+(define-public r-modelfactory
+  (package
+    (name "r-modelfactory")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modelfactory" version))
+       (sha256
+        (base32 "1bdcfcbd1lnx683npvwbxigqg3mbgnm2ji46nfywbay6disrc15h"))))
+    (properties `((upstream-name . "modelfactory")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-mass r-dplyr))
+    (home-page "https://willtirone.github.io/modelfactory/")
+    (synopsis "Combine Statistical Models into a Tibble for Comparison")
+    (description
+     "Statisticians often want to compare the fit of different models on the same data
+set.  However, this usually involves a lot of manual code to fish items out of
+summary() or plain model objects.  modelfactory offers the capability to pass
+multiple models in and get out metrics or coefficients for quick comparison with
+easy-to-remember syntax.")
+    (license license:expat)))
+
 (define-public r-modeler
   (package
     (name "r-modeler")
@@ -14205,13 +14227,13 @@ policy of not spanning more than two child processes by default.")
 (define-public r-modacdc
   (package
     (name "r-modacdc")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modACDC" version))
        (sha256
-        (base32 "0yly524nvpwvwbvz17fdp7dlbivj4zli8k1j4xdzmr58v7dxy4il"))))
+        (base32 "1djgkch4lyca46vy8djqfk3qwi8zx21j4hkwylkydlgl9fzk59j3"))))
     (properties `((upstream-name . "modACDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16429,13 +16451,13 @@ inter-level represents an affiliation relationship.")
 (define-public r-mlvar
   (package
     (name "r-mlvar")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlVAR" version))
        (sha256
-        (base32 "0q902qcynkbwg9bnv0w24vzyqwky0skqck728id943lrvqi92667"))))
+        (base32 "0xvkhbjkzrvg9x5rd1yn9kzk27f4khwil1837l83jyd33hlyfsj3"))))
     (properties `((upstream-name . "mlVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -16974,13 +16996,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2024.1.8")
+    (version "2024.1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "0fzh0b3bpg2llqgl0bm7v72h0ffy3dgr310gw8lsgv28b9i7sc1g"))))
+        (base32 "0n9y0xlahksn7cpgdssj17xv17n51q4lbldw9xpkg4hkl3m3gv7k"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -22831,13 +22853,13 @@ observations into different clusters.  See De Santiago (2023, ISBN:
 (define-public r-mimir
   (package
     (name "r-mimir")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiMIR" version))
        (sha256
-        (base32 "0gy4mp4dc25jzks62rw1w3xwrr4zs4q4cix2mlcmhh807km0g3xf"))))
+        (base32 "18z825r866yj9jadhdc5rlp8ykxrfbkdz5bpgpazm8r9w1ypk6hx"))))
     (properties `((upstream-name . "MiMIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -29518,13 +29540,13 @@ acquired in a certain period of time.  At least three QC per day are required.")
 (define-public r-metabolomicsbasics
   (package
     (name "r-metabolomicsbasics")
-    (version "1.4.3")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetabolomicsBasics" version))
        (sha256
-        (base32 "10myw7fc4r9ly4nyi62v5qhfjbjaja6i3v124bv7h8dsd3qdsvzp"))))
+        (base32 "09yfakahah88sqranw56mr56jkqx6bgq52rcaj2bablr7bxswwvh"))))
     (properties `((upstream-name . "MetabolomicsBasics")))
     (build-system r-build-system)
     (propagated-inputs (list r-webchem
@@ -32020,13 +32042,13 @@ allows sending HTTP tracking events from R code.")
 (define-public r-measr
   (package
     (name "r-measr")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "measr" version))
        (sha256
-        (base32 "002x784ganw4gny134ijpmssl1iq5yxfwral8q319395r6x2c90l"))))
+        (base32 "1w2b1g7zivilc4pip09yi5fyx052g835vax5ja6bl36725h8giwk"))))
     (properties `((upstream-name . "measr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36233,13 +36255,13 @@ with a total of 196 variations.")
 (define-public r-matsindf
   (package
     (name "r-matsindf")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsindf" version))
        (sha256
-        (base32 "1l3gxrc9srwlxc2grvihv7zdc9vxg6rff08xmcszyzpapnwwrpy6"))))
+        (base32 "0jvgf87zrd1mrs3rrk4g1mfmf5ja1ww0pqf5cjvdw2id9vvc11jq"))))
     (properties `((upstream-name . "matsindf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36262,13 +36284,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "0lkw6s4qpay45abawklp0hc3vwcyna0pmp98mi7l34b0ni0cmy46"))))
+        (base32 "03vj7ank154n7lx4na0yf03ybim119bv0xsgm3yr11qwvy8z0r9k"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -38281,13 +38303,13 @@ and Net Promoter Score <https://www.netpromoter.com/know/>.")
 (define-public r-marketmatching
   (package
     (name "r-marketmatching")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MarketMatching" version))
        (sha256
-        (base32 "075maishssvjrx0jfmxcfiv2rlhnm0c4dnp6ija3bn5z80i6z91m"))))
+        (base32 "0ggs8b4zi1q0sqicjp8dzhhbwmdfypbmadajw6wjq0vi1ilylfb0"))))
     (properties `((upstream-name . "MarketMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

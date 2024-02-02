@@ -1717,13 +1717,13 @@ Informations-, Dokumentations- und Administrations-System'), see
 (define-public r-unrtf
   (package
     (name "r-unrtf")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unrtf" version))
        (sha256
-        (base32 "06a4h3iaa8rms601li8y9i18bmw8m98imymnkm076jxshfwhbxa4"))))
+        (base32 "17n9n9ld6ylg20p8zw57jc4q22h7plrhf1zk0ca7pxr099g8pj6r"))))
     (properties `((upstream-name . "unrtf")))
     (build-system r-build-system)
     (inputs (list pcre2))
@@ -2510,13 +2510,13 @@ simplices.")
 (define-public r-unifir
   (package
     (name "r-unifir")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unifir" version))
        (sha256
-        (base32 "1l563qxym1srjj5xzcz8jks3577jpk33k1gb95lcyg7r9bh35j85"))))
+        (base32 "02d9h1yalha7b7bdsjqpq1xa3gg0spfk42q2wxv1bjsizzbnbq2r"))))
     (properties `((upstream-name . "unifir")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-proceduralnames r-glue))
@@ -2779,13 +2779,13 @@ recommendations.")
 (define-public r-ungroup
   (package
     (name "r-ungroup")
-    (version "1.4.2")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ungroup" version))
        (sha256
-        (base32 "0rdh5h1jfc0nv6alf648vd93gfiqc10l0jgfd4i2v2b7jnypwf4q"))))
+        (base32 "12dqhysz26l1jrnf4sz43hdpsxch8g1iah7cxsx7rcac42lhzwdk"))))
     (properties `((upstream-name . "ungroup")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppeigen r-rcpp r-pbapply r-matrix))

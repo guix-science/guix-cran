@@ -549,13 +549,13 @@ diagnostics.")
 (define-public r-xpose
   (package
     (name "r-xpose")
-    (version "0.4.17")
+    (version "0.4.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose" version))
        (sha256
-        (base32 "09c2l89gvlc8wm6i5ykkya5n2i4iifqfn30fymik6asl91q0n7vl"))))
+        (base32 "18l8dcg9zng47gzmyxf3ksz22xqxsyqz64bqlxg2yl6d068sk3k9"))))
     (properties `((upstream-name . "xpose")))
     (build-system r-build-system)
     (propagated-inputs (list r-vpc
@@ -1157,13 +1157,13 @@ output.")
 (define-public r-xlconnect
   (package
     (name "r-xlconnect")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XLConnect" version))
        (sha256
-        (base32 "0xz65nrp82cxa77bff66hhch1p75a6di29bmbr2lfc9w3hivl7c2"))))
+        (base32 "1lc6lfvvai92n7pi4m0xqy0wf78qijpzs6mcksrc45wx9474w9ap"))))
     (properties `((upstream-name . "XLConnect")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -1661,22 +1661,28 @@ genomic admixture data and generating customizable stacked barplots.")
 (define-public r-x3ptools
   (package
     (name "r-x3ptools")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x3ptools" version))
        (sha256
-        (base32 "04j40nkwlsaga6kp60rf1grk76dw2i1sqivfm2sj017n0v6mj017"))))
+        (base32 "1gl7bpbkww98c8khcyjbydsfg55fa08wcsxf5f0jk1i49ap2q1ii"))))
     (properties `((upstream-name . "x3ptools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-yaml
                              r-xml2
+                             r-tidyr
+                             r-scales
                              r-rgl
                              r-readr
+                             r-purrr
                              r-pracma
                              r-png
                              r-mass
+                             r-magrittr
+                             r-imager
                              r-dplyr
                              r-digest
                              r-assertthat))

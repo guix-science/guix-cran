@@ -2748,6 +2748,29 @@ continuous-time stochastic models to phylogenetic data.  The package is based on
 methods introduced in Noonan et al. (2021) <doi:10.1101/2021.05.21.445056>.")
     (license license:gpl3)))
 
+(define-public r-ctost
+  (package
+    (name "r-ctost")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cTOST" version))
+       (sha256
+        (base32 "15vynxc2zyqv0wly4paa4b2j5z0yw0qqkm2adsj9cm5x7cfv1k4p"))))
+    (properties `((upstream-name . "cTOST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-powertost r-owenq r-knitr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yboulag/cTOST")
+    (synopsis
+     "Finite Sample Correction of the Two One-Sided Tests in the Univariate Framework")
+    (description
+     "This package provides a system containing easy-to-use tools to compute the
+bioequivalence assessment in the univariate framework using the methods proposed
+in Boulaguiem et al. (2023) <doi:10.1101/2023.03.11.532179>.")
+    (license license:agpl3)))
+
 (define-public r-ctnote
   (package
     (name "r-ctnote")
@@ -9001,13 +9024,13 @@ assays in large-sized samples.  Mercatelli, D. and Giorgi, F. M. (2020)
 (define-public r-covidibge
   (package
     (name "r-covidibge")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COVIDIBGE" version))
        (sha256
-        (base32 "06hqkpwbm8hnpr90w93v4dw4fiyvcp3z9nz6qm10h8n2azscd626"))))
+        (base32 "1clbqpaz9awkhsglwbv84j277hh92141sla67dlzrs6j5iv4zkcs"))))
     (properties `((upstream-name . "COVIDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -9023,11 +9046,11 @@ assays in large-sized samples.  Mercatelli, D. and Giorgi, F. M. (2020)
     (home-page "https://cran.r-project.org/package=COVIDIBGE")
     (synopsis "Downloading, Reading and Analyzing PNAD COVID19 Microdata")
     (description
-     "This package provides tools for downloading, reading and analyzing the PNAD
-COVID19, a household survey from Brazilian Institute of Geography and Statistics
-- IBGE. The data must be downloaded from the official website
-<https://www.ibge.gov.br/>.  Further analysis must be made using package
-survey'.")
+     "This package provides tools for downloading, reading and analyzing the COVID19
+National Household Sample Survey - PNAD COVID19, a household survey from
+Brazilian Institute of Geography and Statistics - IBGE. The data must be
+downloaded from the official website <https://www.ibge.gov.br/>.  Further
+analysis must be made using package survey'.")
     (license license:gpl3)))
 
 (define-public r-covidcast
@@ -9988,17 +10011,17 @@ It can also provide empirical and plugin estimates of these metrics.")
 (define-public r-countland
   (package
     (name "r-countland")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countland" version))
        (sha256
-        (base32 "0rphpsxfssvrrh8y2kfqzy6im9ga8isl86j0kg7418b6v260l3sh"))))
+        (base32 "1nlnri7l8v2h35r7ps8byv8mmwnir1pyimaa937wr73f1mk9m0l9"))))
     (properties `((upstream-name . "countland")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-ggplot2))
-    (home-page "https://cran.r-project.org/package=countland")
+    (home-page "https://github.com/shchurch/countland")
     (synopsis
      "Analysis of Biological Count Data, Especially from Single-Cell RNA-Seq")
     (description
@@ -20121,13 +20144,13 @@ within-subject, and single-group design).  Cousineau (2022)
 (define-public r-cognitor
   (package
     (name "r-cognitor")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cognitoR" version))
        (sha256
-        (base32 "0yxhmr5969ahbhlckvf2xwpi9fmmjahpzr9r9fjw3za91d43i9gz"))))
+        (base32 "1ik2cdw1vigiplsrxy2mbv3l2w9wlzw6xkgrdm4l3pg9x6hhcx6s"))))
     (properties `((upstream-name . "cognitoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -30037,6 +30060,46 @@ package.")
 to build a forecast.")
     (license license:gpl3)))
 
+(define-public r-chevron
+  (package
+    (name "r-chevron")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chevron" version))
+       (sha256
+        (base32 "0djd3zx4g5m8jkys8dbmxypdlnl0lnbg6qrjyyf0qbjsqipwp1yi"))))
+    (properties `((upstream-name . "chevron")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-tern
+                             r-stringr
+                             r-rtables
+                             r-rlistings
+                             r-rlang
+                             r-purrr
+                             r-nestcolor
+                             r-magrittr
+                             r-lifecycle
+                             r-glue
+                             r-ggplot2
+                             r-formatters
+                             r-forcats
+                             r-dunlin
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/chevron/")
+    (synopsis "Standard TLGs for Clinical Trials Reporting")
+    (description
+     "Provide standard tables, listings, and graphs (TLGs) libraries used in clinical
+trials.  This package implements a structure to reformat the data with dunlin',
+create reporting tables using rtables and tern with standardized input arguments
+to enable quick generation of standard outputs.  In addition, it also provides
+comprehensive data checks and script generation functionality.")
+    (license license:asl2.0)))
+
 (define-public r-chest
   (package
     (name "r-chest")
@@ -30199,13 +30262,13 @@ two-sided Brownian motion minus quadratic drift.  That is, Z = argmax
 (define-public r-chemospecutils
   (package
     (name "r-chemospecutils")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpecUtils" version))
        (sha256
-        (base32 "1y1sbsh60kv33b4hnb1r15z8q6hx21zsfmyq8aw3cby5q1my2hj3"))))
+        (base32 "1s62xf621prln3pv748kmif38fzxqh9vih63fpz783n7nzm94ka9"))))
     (properties `((upstream-name . "ChemoSpecUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-magrittr r-ggrepel r-ggplot2
@@ -33089,6 +33152,43 @@ details can be found in Ordonez et al. (2018)
 cross-sectional and panel data.")
     (license license:gpl2+)))
 
+(define-public r-censored
+  (package
+    (name "r-censored")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "censored" version))
+       (sha256
+        (base32 "10vsba7c7zcqgm3xzhkyaxhv6hdg69gxa5xsqyn6ycx692a97rjy"))))
+    (properties `((upstream-name . "censored")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-purrr
+                             r-prodlim
+                             r-prettyunits
+                             r-parsnip
+                             r-mboost
+                             r-lifecycle
+                             r-hardhat
+                             r-glue
+                             r-generics
+                             r-dplyr
+                             r-dials
+                             r-cli))
+    (home-page "https://github.com/tidymodels/censored")
+    (synopsis "'parsnip' Engines for Survival Models")
+    (description
+     "Engines for survival models from the parsnip package.  These include parametric
+models (e.g., Jackson (2016) <doi:10.18637/jss.v070.i08>), semi-parametric
+(e.g., Simon et al (2011) <doi:10.18637/jss.v039.i05>), and tree-based models
+(e.g., Buehlmann and Hothorn (2007) <doi:10.1214/07-STS242>).")
+    (license license:expat)))
+
 (define-public r-censorcopula
   (package
     (name "r-censorcopula")
@@ -34906,13 +35006,13 @@ rec().  LÃ¼decke D (2018). \"sjmisc: Data and Variable Transformation Function
 (define-public r-cchs
   (package
     (name "r-cchs")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cchs" version))
        (sha256
-        (base32 "1ghccigv4mni39pp6b5f378swa5lb51cx95xg778irprz0da1cfm"))))
+        (base32 "14qmh4jb9i0imjkb33x61q074zsrng3acy52cw9p0zsxrbh4gdf5"))))
     (properties `((upstream-name . "cchs")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -36586,16 +36686,16 @@ Meira-Machado, C Esteban, I Arostegui (2017)
 (define-public r-catmaply
   (package
     (name "r-catmaply")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catmaply" version))
        (sha256
-        (base32 "0bw3s4k7ffh7kzk78v69wga6w4jh3k6sgdb0313pj7rwdbmfdg2n"))))
+        (base32 "1vjnh0qvqdfsv4p28yg5r4s9m0l0d7f1r07vamlhvhshb5cfnmsy"))))
     (properties `((upstream-name . "catmaply")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-plotly r-magrittr r-dplyr))
+    (propagated-inputs (list r-tidyr r-rlang r-plotly r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/VerkehrsbetriebeZuerich/catmaply")
     (synopsis "Heatmap for Categorical Data using 'plotly'")
@@ -37333,13 +37433,13 @@ similar cases.  The underlying concept is inspired by the work of Dippon J.
 (define-public r-casebase
   (package
     (name "r-casebase")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "casebase" version))
        (sha256
-        (base32 "0my4vsirm4n8qd3b81ml1hkllimz41l0819njc92znfyg7y6pj63"))))
+        (base32 "0i9szaalszrlk77wgh5fkiaxqacnx42bpj0410fpx0z3k0g608k2"))))
     (properties `((upstream-name . "casebase")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
@@ -38260,6 +38360,32 @@ by a searcher are provided.  Further functions calculate the posterior
 distribution of the number of fatalities based on the number of carcasses found
 and the estimated detection probability.")
     (license license:gpl2)))
+
+(define-public r-carbondate
+  (package
+    (name "r-carbondate")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "carbondate" version))
+       (sha256
+        (base32 "03hsss66gxkxp8zpjg6qy6mvjlcy5bchw0idzmwj37ls79g0zczr"))))
+    (properties `((upstream-name . "carbondate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/TJHeaton/carbondate")
+    (synopsis "Calibration and Summarisation of Radiocarbon Dates")
+    (description
+     "This package performs Bayesian non-parametric calibration of multiple related
+radiocarbon determinations, and summarises the calendar age information to plot
+their joint calendar age density (see Heaton (2022) <doi:10.1111/rssc.12599>).
+Also models the occurrence of radiocarbon samples as a variable-rate
+(inhomogeneous) Poisson process, plotting the posterior estimate for the
+occurrence rate of the samples over calendar time, and providing information
+about potential change points.")
+    (license license:gpl3+)))
 
 (define-public r-carbonate
   (package

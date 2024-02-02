@@ -8723,13 +8723,13 @@ the Limit of Quantification.\" Statistics in Biopharmaceutical Research (2020):
 (define-public r-blogdown
   (package
     (name "r-blogdown")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blogdown" version))
        (sha256
-        (base32 "189sc0rvxlbsslsjywnwwdpnl427r1zyj0h85xdz5v7y988naxfy"))))
+        (base32 "0glxgks9aql3k5hxjr9yfinvp4n69fdh99v7q33mgjk7n2ja88q5"))))
     (properties `((upstream-name . "blogdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20092,17 +20092,17 @@ of my master thesis (expected 2016).")
 (define-public r-bayestree
   (package
     (name "r-bayestree")
-    (version "0.3-1.4")
+    (version "0.3-1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTree" version))
        (sha256
-        (base32 "0saca1ln582szqzc2c78z24b1lszzhc9hvsin73kb7r2dlg5ciii"))))
+        (base32 "0nq0587j9n7c83m3mw2wglz58dayfsbgrlvyfslf8jmfhgi5lqqx"))))
     (properties `((upstream-name . "BayesTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
-    (home-page "http://www.r-project.org")
+    (home-page "https://www.r-project.org")
     (synopsis "Bayesian Additive Regression Trees")
     (description
      "This is an implementation of BART:Bayesian Additive Regression Trees, by
@@ -20845,13 +20845,13 @@ probabilistic components, such as total fertility rate and life expectancy
 (define-public r-bayespo
   (package
     (name "r-bayespo")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesPO" version))
        (sha256
-        (base32 "0i2wmxagzfic6vpac58dzc7acpjslnk551am549527nzrs4lnmkd"))))
+        (base32 "0dav6kjasb7p0ks8fwd3r8pb7q8il39rmvpbgdb80c7k49azirhd"))))
     (properties `((upstream-name . "bayesPO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp r-coda))
@@ -20860,8 +20860,9 @@ probabilistic components, such as total fertility rate and life expectancy
     (synopsis "Bayesian Inference for Presence-Only Data")
     (description
      "Presence-Only data is best modelled with a Point Process Model.  The work of
-Moreira (2020) provides a way to use exact Bayesian inference to model this type
-of data, which is implemented in this package.")
+Moreira and Gamerman (2022) <doi:10.1214/21-AOAS1569> provides a way to use
+exact Bayesian inference to model this type of data, which is implemented in
+this package.")
     (license license:gpl3)))
 
 (define-public r-bayespm
@@ -22254,13 +22255,13 @@ Fit\" (<https://www.nature.com/articles/s41598-018-28130-5 >).")
 (define-public r-bayesgmed
   (package
     (name "r-bayesgmed")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesGmed" version))
        (sha256
-        (base32 "0clyjdp0306wgj1jbrh2bzhzzyn8wp56m3j4pphyxn15z7j9pmy9"))))
+        (base32 "1bfrvrpf0qiwy720hjrmp007z7xd7ylpl68v9gr2g0i4mjz3szdi"))))
     (properties `((upstream-name . "BayesGmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -25699,13 +25700,13 @@ detect batch effects are also provided.")
 (define-public r-baker
   (package
     (name "r-baker")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baker" version))
        (sha256
-        (base32 "07ah24n5j5xdppfmgcgn96h8f55zxzfmi9bj1n9yyhd3rh6p06s9"))))
+        (base32 "0k564q7v6pvf6w3qs5cmdbhxjjqg2kqm9yr7ckvd23wbl0gm5rdv"))))
     (properties `((upstream-name . "baker")))
     (build-system r-build-system)
     (inputs (list jags))

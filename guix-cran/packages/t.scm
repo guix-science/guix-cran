@@ -3719,13 +3719,13 @@ Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tsdyn
   (package
     (name "r-tsdyn")
-    (version "11.0.4")
+    (version "11.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsDyn" version))
        (sha256
-        (base32 "0clwvgqsklmq9h5mx7g9lsw6f09cqglb77zb9xlbjh4brh2f3ljl"))))
+        (base32 "04w7kf66q9bspyh62g8r9xzcb6mj6nd11za63b0h5jyj6rv6kbrq"))))
     (properties `((upstream-name . "tsDyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -6107,13 +6107,13 @@ Dennis, A., & Didelot, X. (2020) <doi:10.1093/sysbio/syaa009>.")
 (define-public r-treestats
   (package
     (name "r-treestats")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestats" version))
        (sha256
-        (base32 "0kj23wk44nzb5j2l00j2rp8l4jlkhl1m4dz0g5h6197prw43va3a"))))
+        (base32 "0j4bsag1fha3rnysidhd937vpxzvmq3vm1q4brqjpl08pniy9f9f"))))
     (properties `((upstream-name . "treestats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-rcpp r-nloptr r-matrix r-ape))
@@ -6127,7 +6127,8 @@ includes umbrella functions to calculate all statistics, all balance associated
 statistics, or all branching time related statistics.  Furthermore, the
 treestats package supports summary statistic calculations on Ltables, provides
 speed-improved coding of branching times, Ltable conversion and includes
-algorithms to create intermediately balanced trees.")
+algorithms to create intermediately balanced trees.  Full description can be
+found in Janzen (2023) <doi:10.1101/2024.01.24.576848>.")
     (license license:gpl3)))
 
 (define-public r-treestartr
@@ -8056,13 +8057,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0d6k8zycsjv47wkvfqrqwp9a7qwzw9946wavljq8lg0ni22185qv"))))
+        (base32 "1kl4hcjpp52xx2z0xk0wd0zibqrxb1smigxsvfgrzr8djvm4si3b"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -9320,13 +9321,13 @@ all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxEval" version))
        (sha256
-        (base32 "06lzxni750d5lxlnc1wc7rrfcgc4m61blfvdb1lv60npx1iji8fl"))))
+        (base32 "1bn2hl2fyyqp22s12jmvwr6vamsifwxwbpjv8dbriaxp98q5a2l5"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9355,7 +9356,8 @@ understanding of the potential biological relevance of environmental chemistry
 data.  Results can be used to prioritize which chemicals at which sites may be
 of greatest concern.  These methods are meant to be used as a screening
 technique to predict potential for biological influence from chemicals that
-ultimately need to be validated with direct biological assays.")
+ultimately need to be validated with direct biological assays.  A description of
+the analysis can be found in Blackwell (2017) <doi:10.1021/acs.est.7b01613>.")
     (license license:cc0)))
 
 (define-public r-toxcrit
@@ -12359,24 +12361,24 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1b9jab35sv42kw356r5x1liizvhh5sldrrx8ybhhb30sdzps88f7"))))
+        (base32 "0hcahb3743yf69w3snnw954crmi3bp708l45lrss8bcj94r3lf5a"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
     (synopsis
-     "Simple and Configurable Tables in 'HTML', 'LaTeX', 'Markdown', 'Word', and 'PNG' Formats")
+     "Simple and Configurable Tables in 'HTML', 'LaTeX', 'Markdown', 'Word', 'PNG', 'PDF', and 'Typst' Formats")
     (description
      "Create highly customized tables with this simple and dependency-free package.
-Data frames can be converted to HTML', @code{LaTeX}', Markdown', Word or PNG
-tables.  The user interface is minimalist and the syntax concise.  HTML tables
-can be customized using the flexible Bootstrap framework, and @code{LaTeX} code
-with the tabularray package.")
+Data frames can be converted to HTML', @code{LaTeX}', Markdown', Word', PNG',
+PDF', or Typst tables.  The user interface is minimalist and easy to learn.  The
+syntax concise.  HTML tables can be customized using the flexible Bootstrap
+framework, and @code{LaTeX} code with the tabularray package.")
     (license license:gpl3+)))
 
 (define-public r-tinyspotifyr
@@ -13673,13 +13675,13 @@ which are therefore listed as dependencies.")
 (define-public r-tigers
   (package
     (name "r-tigers")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tigers" version))
        (sha256
-        (base32 "00gb3nzilbsarf2rccry8aijpnwi3da6hfx08ccdj6pfs49h01y1"))))
+        (base32 "1df1j509mgy8vx2jsa071rg7989qhv105569z9nnrc8db3z8f99i"))))
     (properties `((upstream-name . "tigers")))
     (build-system r-build-system)
     (home-page "https://github.com/emmanuelparadis/tigers")
@@ -15403,26 +15405,6 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
      "An extension to the R tidy data environment for automated machine learning.  The
 package allows fitting and cross validation of linear regression and
 classification algorithms on grouped data.")
-    (license license:gpl3)))
-
-(define-public r-tidyfast
-  (package
-    (name "r-tidyfast")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyfast" version))
-       (sha256
-        (base32 "1bfs2wma705nx1lpndq75ama5dr9kkg8hwpklb20csnccnfrlvf6"))))
-    (properties `((upstream-name . "tidyfast")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-data-table))
-    (home-page "https://cran.r-project.org/package=tidyfast")
-    (synopsis "Fast Tidying of Data")
-    (description
-     "Tidying functions built on data.table to provide quick and efficient data
-manipulation with minimal overhead.")
     (license license:gpl3)))
 
 (define-public r-tidyestimate
@@ -17821,6 +17803,43 @@ Results Datasets (ARDs).  The use of tfrmt allows users to define table format
 and styling without the data, and later apply the format to the data.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-tfre
+  (package
+    (name "r-tfre")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TFRE" version))
+       (sha256
+        (base32 "0d1s113xkmzk7qkqgb7idp0pj7akaqvm84s66zwl3zzla0pbk05a"))))
+    (properties `((upstream-name . "TFRE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=TFRE")
+    (synopsis
+     "Tuning-Free Robust and Efficient Approach to High-Dimensional Regression")
+    (description
+     "Provide functions to estimate the coefficients in high-dimensional linear
+regressions via a tuning-free and robust approach.  The method was published in
+Wang, L., Peng, B., Bradic, J., Li, R. and Wu, Y. (2020), \"A Tuning-free Robust
+and Efficient Approach to High-dimensional Regression\", Journal of the American
+Statistical Association, 115:532, 1700-1714(JASAâs discussion paper),
+<doi:10.1080/01621459.2020.1840989>.  See also Wang, L., Peng, B., Bradic, J.,
+Li, R. and Wu, Y. (2020), \"Rejoinder to âA tuning-free robust and efficient
+approach to high-dimensional regression\".  Journal of the American Statistical
+Association, 115, 1726-1729, <doi:10.1080/01621459.2020.1843865>; Peng, B. and
+Wang, L. (2015), \"An Iterative Coordinate Descent Algorithm for High-Dimensional
+Nonconvex Penalized Quantile Regression\", Journal of Computational and Graphical
+Statistics, 24:3, 676-694, <doi:10.1080/10618600.2014.913516>;
+@code{ClÃ©menÃ§on}, S., Colin, I., and Bellet, A. (2016), \"Scaling-up empirical
+risk minimization: optimization of incomplete u-statistics\", The Journal of
+Machine Learning Research, 17(1):2682â2717; Fan, J. and Li, R. (2001),
+\"Variable Selection via Nonconcave Penalized Likelihood and its Oracle
+Properties\", Journal of the American Statistical Association, 96:456, 1348-1360,
+<doi:10.1198/016214501753382273>.")
+    (license license:gpl2+)))
+
 (define-public r-tframeplus
   (package
     (name "r-tframeplus")
@@ -19454,6 +19473,36 @@ plenty of choices for the model types are available, which can be found in the
 @code{DoseFinding} package, which is used for the fitting of the models.  See
 <doi:10.1080/01621459.2017.1281813> for details.")
     (license license:gpl3)))
+
+(define-public r-testgenerator
+  (package
+    (name "r-testgenerator")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestGenerator" version))
+       (sha256
+        (base32 "0gx6s8s9dqjpinkifmgwiqry15pl8kr56yjakaisa1fwdsqj2jzp"))))
+    (properties `((upstream-name . "TestGenerator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-readxl
+                             r-jsonlite
+                             r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/darwin-eu-dev/TestGenerator")
+    (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
+    (description
+     "Push a sample population for unit testing on data mapped to the Observational
+Medical Outcomes Partnership (OMOP) Common Data Model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-testgardener
   (package
@@ -21666,6 +21715,27 @@ teal family of packages.  Supports logging namespaces, hierarchical logging,
 various log destinations, vectorization, and more.")
     (license license:asl2.0)))
 
+(define-public r-teal-data
+  (package
+    (name "r-teal-data")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.data" version))
+       (sha256
+        (base32 "1qc45gkfv7vmlqg7jsn17liczxk14z3d6w00bx4as7cbaba42cdf"))))
+    (properties `((upstream-name . "teal.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-teal-code r-rlang r-lifecycle r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.data/")
+    (synopsis "Data Model for 'teal' Applications")
+    (description
+     "This package provides a teal_data class as a unified data model for teal
+applications focusing on reproducibility and relational data.")
+    (license license:asl2.0)))
+
 (define-public r-teal-code
   (package
     (name "r-teal-code")
@@ -22870,36 +22940,6 @@ approach.  Samples are drawn from observed data with some samples appearing more
 frequently than others.  May also be used for simulating from a joint Bayesian
 distribution along with clinical trials based on the Bayesian distribution.")
     (license license:gpl3)))
-
-(define-public r-tbma
-  (package
-    (name "r-tbma")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tbma" version))
-       (sha256
-        (base32 "066p3szfayyimwblghm1lipjf21xgscq1fzbzpqz16lqjpb99ni1"))))
-    (properties `((upstream-name . "tbma")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-rcpproll r-ranger r-data-table))
-    (home-page "https://cran.r-project.org/package=tbma")
-    (synopsis "Tree-Based Moving Average Forecasting Model")
-    (description
-     "We provide a forecasting model for time series forecasting problems with
-predictors.  The offered model, which is based on a submitted research and
-called tree-based moving average (TBMA), is based on the integration of the
-moving average approach to tree-based ensemble approach.  The tree-based
-ensemble models can capture the complex correlations between the predictors and
-response variable but lack in modelling time series components.  The integration
-of the moving average approach to the tree-based ensemble approach helps the
-TBMA model to handle both correlations and autocorrelations in time series data.
- This package provides a tbma() forecasting function that utilizes the ranger()
-function from the ranger package.  With the help of the ranger() function,
-various types of tree-based ensemble models, such as extremely randomized trees
-and random forests, can be used in the TBMA model.")
-    (license license:gpl2+)))
 
 (define-public r-tbm
   (package

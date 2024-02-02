@@ -440,13 +440,13 @@ study with RNA-seq data.")
 (define-public r-rxode2random
   (package
     (name "r-rxode2random")
-    (version "2.0.12")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2random" version))
        (sha256
-        (base32 "1fh5231lrns38d4h6qyiyai764g7j57gi56dhdwmjijh5aram1ng"))))
+        (base32 "0c6nwb7f61yb98zg7gzbyk2xzbr8k780l8ns444qc17a9ad74wqd"))))
     (properties `((upstream-name . "rxode2random")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo
@@ -533,13 +533,13 @@ estimation.")
 (define-public r-rxode2et
   (package
     (name "r-rxode2et")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2et" version))
        (sha256
-        (base32 "0vmzqy2qqwlh6kd8jvnh4dllwyfpvv51cd9qv7q1x59jifripi3a"))))
+        (base32 "07hjw31i2fczxi3hzpx6rbhg85sgzg7gln0qnmq9520fnsklixba"))))
     (properties `((upstream-name . "rxode2et")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2random
@@ -562,13 +562,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "10dzqln32ap19bsrr3g20wx22bqs6bb5pg2zn9hsvwwqi5c4bn3f"))))
+        (base32 "1g9g36pjpmcsz3f5g7swwhq065x6cj5gaxwd2hgq3maqqxlhvlss"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -3372,13 +3372,13 @@ performing calculations in CPUs as well as GPUs to accelerate tensor operations.
 (define-public r-rtop
   (package
     (name "r-rtop")
-    (version "0.6-8")
+    (version "0.6-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtop" version))
        (sha256
-        (base32 "0ryha7sxw14z6msrg10xp7ajjpcn9w78y8j08448h84iybr9girk"))))
+        (base32 "0ksvjyrcyygv68sp8ygnh2fd1vpp1vf10xviclnlm2rm829hjmr1"))))
     (properties `((upstream-name . "rtop")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sp r-sf r-gstat))
@@ -4648,13 +4648,13 @@ what) and clauses (who did what).  Method proposed in Van Atteveldt et al.
 (define-public r-rsyncrosim
   (package
     (name "r-rsyncrosim")
-    (version "1.4.9")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsyncrosim" version))
        (sha256
-        (base32 "1px8az162hiz5615x49m67y1ymcqla5cbnz5q7n13fahl8z6hrm1"))))
+        (base32 "0pg7i40m8qjcfwamb9prhkzyf4571jgnamqibxzd35n6vm6s9npy"))))
     (properties `((upstream-name . "rsyncrosim")))
     (build-system r-build-system)
     (inputs (list))
@@ -8713,13 +8713,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.20")
+    (version "0.4.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "0pl4ggr09drzr60935j4md597fdp53p6cjd1885knm78syh5ansn"))))
+        (base32 "06xj6cl17j821jbs8dk1hadzn18k10lqq6550dj65d837dx63hnj"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -10376,13 +10376,13 @@ implements this decomposition algorithm resulting with Robust PCA approach.")
 (define-public r-rpbk
   (package
     (name "r-rpbk")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPBK" version))
        (sha256
-        (base32 "1g63gz7zhwx5icabcm15n2hpnp3v932b63k0jgl8623dwdybw15d"))))
+        (base32 "1fi3wlww3gva1xch8lnwdkkz1qmdr6zl9y0hzhv216nr205z6llk"))))
     (properties `((upstream-name . "rPBK")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -15129,13 +15129,13 @@ interacting with watch lists.")
 (define-public r-robin
   (package
     (name "r-robin")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robin" version))
        (sha256
-        (base32 "1mvv2snvfizwxc743m8kxm3amwgb31079wjc6dlbgdah9f7fja7n"))))
+        (base32 "1xzcq81a08mpj7nx11z8vq0g1w8jq2257glvm5jgzz9z4spcc0xz"))))
     (properties `((upstream-name . "robin")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -22380,13 +22380,13 @@ and pain-rating scales.")
 (define-public r-ridigbio
   (package
     (name "r-ridigbio")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ridigbio" version))
        (sha256
-        (base32 "0nbd182hjs0minn7vn0b9mphc4yc027pb2qpy96dxghgm6l90amg"))))
+        (base32 "1202w1gf77xnbgiwjyajjf2bvi879q4nlfnq6fwd03bzmypdn675"))))
     (properties `((upstream-name . "ridigbio")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-jsonlite r-httr))
@@ -23638,13 +23638,13 @@ defined in Chapter 8.")
 (define-public r-rgraph6
   (package
     (name "r-rgraph6")
-    (version "2.0-3")
+    (version "2.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgraph6" version))
        (sha256
-        (base32 "148ii731s7r1pgmsvnciinlf1ciabs2b9i77v1xbv58lw2yjahxn"))))
+        (base32 "1kyny6a70rarw0p79w8lp09b42178m37lsch3wdrqskphc9gl3cn"))))
     (properties `((upstream-name . "rgraph6")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -26157,13 +26157,13 @@ similar R objects.  To download \"@code{RevBayes}\", go to
 (define-public r-revss
   (package
     (name "r-revss")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revss" version))
        (sha256
-        (base32 "1dyz4hswkg16k0lr2phcmyq9x3wm09sdg4kvq663qhb42i54yjfs"))))
+        (base32 "0c7yh3fyzhb5fxdmdwc04n26alca3l8g34fca20af9sn93s3bvih"))))
     (properties `((upstream-name . "revss")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/revss")
@@ -29129,13 +29129,13 @@ repayment/mortgage plans.")
 (define-public r-repana
   (package
     (name "r-repana")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repana" version))
        (sha256
-        (base32 "0pxhg66x5rfnjpmmd280p0fj103b6hdrdh6mg6mv4b9yh6a7pvsw"))))
+        (base32 "11yp1l9s9j9spm1nvz0zc55ajnjm96wm1gik0h63ynnhv2yfcsn3"))))
     (properties `((upstream-name . "repana")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -32506,13 +32506,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "17acpzv4m09am2q0cckkbwspkfjh2f5487nyf6v2nzgdvgfilrrd"))))
+        (base32 "0caw3hnpa0b11idxa09g37fpcyccyd2kxhr0rywrdlx7xrc1ir29"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32531,17 +32531,18 @@ default reports are generated as vignettes in the resulting package.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://ubidi.github.io/REDCapDM/")
+    (home-page "https://bruigtp.github.io/REDCapDM/")
     (synopsis "'REDCap' Data Management")
     (description
-     "Access and manage REDCap data.  REDCap (Research Electronic Data CAPture;
-<https://projectredcap.org>) is a web application for building and managing
-online surveys and databases developed at Vanderbilt University.  The API allows
-users to programmatic access data and project meta data (such as the data
-dictionary) from the web.  This package allows us to read REDCap data, exported
-or using an API connection, identify missing or extreme values, identify missing
-REDCap events in each observation, do a follow-up of the queries initially
-identified and it also facilitates the process of data management.")
+     "REDCap Data Management - RED@code{CapDM} is a comprehensive package that enables
+users to seamlessly handle data exported directly from REDCap or through API
+connections.  This tool facilitates various functions, including data
+preprocessing, report generation for queries such as outliers or missing values,
+and tracking of identified queries.  REDCap (Research Electronic Data CAPture;
+<https://projectredcap.org>) is a web application developed at Vanderbilt
+University, designed for creating and managing online surveys and databases.
+The API connection provides users with the capability to programmatically access
+both data and project metadata, including the data dictionary, from the web.")
     (license license:expat)))
 
 (define-public r-redcapcast
@@ -32584,13 +32585,13 @@ data integration and interoperability with external sources (Harris et al (2009)
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.8.0")
+    (version "2.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "1nsjfwvhdpaxknjrm56fqllz2ynrc4k97b0rp261bg7k931q6465"))))
+        (base32 "1a1vxw290ff1h5qv02139lxp1im5cfybhcg3ws8yghra4237y1bg"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -33336,13 +33337,13 @@ at <https://github.com/leondap/recluster>.")
 (define-public r-reclin2
   (package
     (name "r-reclin2")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reclin2" version))
        (sha256
-        (base32 "1amwglzn2hpc8xzkpsavc98jd7yq6j02b2d5mynidpy3h3rikgzy"))))
+        (base32 "0vdp4kbivmfgvi1fh8d96ks27nh3xlsafwjkj3g2xbmhpb5d4gkq"))))
     (properties `((upstream-name . "reclin2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-rcpp r-lpsolve r-data-table))
@@ -35081,41 +35082,6 @@ high variability of the RDS process.")
 power calculation in Respondent-Driven Sampling.")
     (license license:gpl3)))
 
-(define-public r-rdss
-  (package
-    (name "r-rdss")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdss" version))
-       (sha256
-        (base32 "05sm8ha7rb0wxl0wmvjsckr0gyar8jyah2vpy8s9rqrjkayzcdd5"))))
-    (properties `((upstream-name . "rdss")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-randomizr
-                             r-purrr
-                             r-prediction
-                             r-ggplot2
-                             r-generics
-                             r-estimatr
-                             r-dplyr
-                             r-dataverse
-                             r-broom))
-    (home-page "https://cran.r-project.org/package=rdss")
-    (synopsis
-     "Companion Datasets and Functions for Research Design in the Social Sciences")
-    (description
-     "Helper functions to accompany the Blair, Coppock, and Humphreys (2022) \"Research
-Design in the Social Sciences: Declaration, Diagnosis, and Redesign\"
-<https://book.declaredesign.org>.  rdss includes datasets, helper functions, and
-plotting components to enable use and replication of the book.")
-    (license license:expat)))
-
 (define-public r-rdsdp
   (package
     (name "r-rdsdp")
@@ -35141,13 +35107,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-7")
+    (version "0.9-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDS" version))
        (sha256
-        (base32 "0xq190as7vza2fim7b4qhk7x3kckqpca7pp8klh14vkjhix9yias"))))
+        (base32 "02gd6jara1hi6h9rqcxb0an9dvnvajdi1x10cf3kqfvaa0i64igf"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -35169,8 +35135,9 @@ collected using Respondent-Driven Sampling.  This includes Heckathorn's RDS-I
 and RDS-II estimators as well as Gile's Sequential Sampling estimator.  The
 package is part of the \"RDS Analyst\" suite of packages for the analysis of
 respondent-driven sampling data.  See Gile and Handcock (2010)
-<doi:10.1111/j.1467-9531.2010.01223.x> and Gile and Handcock (2015)
-<doi:10.1111/rssa.12091>.")
+<doi:10.1111/j.1467-9531.2010.01223.x>, Gile and Handcock (2015)
+<doi:10.1111/rssa.12091> and Gile and Beaudry and Handcock and Ott (2018)
+<doi:10.1146/annurev-statistics-031017-100704>.")
     (license license:lgpl2.1)))
 
 (define-public r-rdryad
@@ -41548,6 +41515,35 @@ functions and can be obtained in different data structures common to R
 ('tibble', data.frame', xts', ...).")
     (license license:expat)))
 
+(define-public r-rbbnp
+  (package
+    (name "r-rbbnp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rbbnp" version))
+       (sha256
+        (base32 "0lpzccb645lbzplwq8rvxd9jx90k3wy70ijwx8c7gdpn9kxb13jr"))))
+    (properties `((upstream-name . "rbbnp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-purrr
+                             r-pracma
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://doi.org/10.1093/restud/rdz065")
+    (synopsis "Bias Bound Approach to Non-Parametric Inference")
+    (description
+     "This package provides a novel bias-bound approach for non-parametric inference
+is introduced, focusing on both density and conditional expectation estimation.
+It constructs valid confidence intervals that account for the presence of a
+non-negligible bias and thus make it possible to perform inference with optimal
+mean squared error minimizing bandwidths.  This package is based on Schennach
+(2020) <doi:10.1093/restud/rdz065>.")
+    (license license:gpl3+)))
+
 (define-public r-rbayesianoptimization
   (package
     (name "r-rbayesianoptimization")
@@ -43487,13 +43483,13 @@ validated for Picea abies, Larix Siberica, Pinus cembra and Pinus sylvestris.")
 (define-public r-rapsimng
   (package
     (name "r-rapsimng")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapsimng" version))
        (sha256
-        (base32 "0s1rzhbs81ipxvdbnf6pysirsklb35gw6z9gmd10krhikz096szx"))))
+        (base32 "0nlvagjilzjbnpy7h7k6kc1jlg589g74dak8f5pksin3kch1bbb0"))))
     (properties `((upstream-name . "rapsimng")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -44356,6 +44352,25 @@ information from various R-hub web services <https://blog.r-hub.io/>.  The
 dependency graph can then be used to reconstruct the R computational environment
 with Rocker <https://rocker-project.org>.")
     (license license:gpl3+)))
+
+(define-public r-randvar
+  (package
+    (name "r-randvar")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RandVar" version))
+       (sha256
+        (base32 "00zpbbf7b3g38lh1krvwhfyxlz3f9cklfg9z2adi65lwqc27w54b"))))
+    (properties `((upstream-name . "RandVar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg r-distrex r-distr))
+    (home-page "https://r-forge.r-project.org/projects/robast/")
+    (synopsis "Implementation of Random Variables")
+    (description
+     "This package implements random variables by means of S4 classes and methods.")
+    (license license:lgpl3)))
 
 (define-public r-randtests
   (package

@@ -5746,13 +5746,13 @@ or webmorph templates.")
 (define-public r-webmap
   (package
     (name "r-webmap")
-    (version "1.0.3")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webmap" version))
        (sha256
-        (base32 "1v6m9d3y9x2vqz7cbm6vknp5006v6vn7h2acjqddwinbjvvadzi9"))))
+        (base32 "0md00ahy6v8rhr1ch6nikqgjs86arbal48d7k2hl3q75f15jx0v9"))))
     (properties `((upstream-name . "webmap")))
     (build-system r-build-system)
     (arguments
@@ -5772,7 +5772,7 @@ or webmorph templates.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-checkmate))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list esbuild))
     (home-page "https://rconnect.usgs.gov/INLPO/webmap-main/")
     (synopsis "Create Interactive Web Maps Using 'The National Map' Services")
     (description

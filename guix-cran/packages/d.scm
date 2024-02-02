@@ -2105,13 +2105,13 @@ and reference).")
 (define-public r-dtts
   (package
     (name "r-dtts")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtts" version))
        (sha256
-        (base32 "0h1jb37zsvqz8ij4y70d5if02hpxn6r3d5dvkq3pvxhqz2l2swij"))))
+        (base32 "1qlk2rk43nwgr2z1dkv6fi0llq0wvzb59a5m5n79fqnf7hv2fp8k"))))
     (properties `((upstream-name . "dtts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdate
@@ -2589,13 +2589,13 @@ design, i.e.  when each test is applied to each subject in the study.")
 (define-public r-dtcomb
   (package
     (name "r-dtcomb")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtComb" version))
        (sha256
-        (base32 "1s1g6viw5nr0yfgk2wmxdr8jm1bvhgclwm4cwq7017q67lhy7hgw"))))
+        (base32 "1ww0lw7j77ww1scd99ddasnxp7icbwbadiv3sl4zm8i1bb2mqmyr"))))
     (properties `((upstream-name . "dtComb")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc
@@ -2614,7 +2614,7 @@ design, i.e.  when each test is applied to each subject in the study.")
 approaches that include statistical and machine-learning-based methodologies.
 These approaches are divided into four groups: linear combination methods,
 non-linear combination methods, mathematical operators, and machine learning
-algorithms.  See the <http://biosoft.erciyes.edu.tr/app/@code{dtComb>} website
+algorithms.  See the <https://biotools.erciyes.edu.tr/@code{dtComb/>} website
 for more information, documentation, and examples.")
     (license license:expat)))
 
@@ -3953,26 +3953,25 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0lr2k7mbymwrbpyaj1k352hiljyhpif79fd3bwgy2lcdfvlh5w7y"))))
+        (base32 "1yafj0pljnmix3b6sf6mhfrqi5q6lmvw8mr505nrfvljbp8dqpp5"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
                              r-magrittr
-                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DrugExposureDiagnostics")
+    (home-page "https://darwin-eu.github.io/DrugExposureDiagnostics/")
     (synopsis "Diagnostics for OMOP Common Data Model Drug Records")
     (description
      "Ingredient specific diagnostics for drug exposure records in the Observational
@@ -4218,17 +4217,21 @@ datasets, thereby enhancing the quality and reliability of research findings.")
 (define-public r-dromics
   (package
     (name "r-dromics")
-    (version "2.5-0")
+    (version "2.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRomics" version))
        (sha256
-        (base32 "1vzjynl8wyivvbh87r7jms2v5ah09z9b5h55sqviyrm7cpd201z3"))))
+        (base32 "0nzxrsgid7w63ybya389nqn8bqkbp29fiz2g6v3nhk5l2hr001p6"))))
     (properties `((upstream-name . "DRomics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-summarizedexperiment r-limma r-ggplot2
-                             r-ggfortify r-deseq2))
+    (propagated-inputs (list r-summarizedexperiment
+                             r-rlang
+                             r-limma
+                             r-ggplot2
+                             r-ggfortify
+                             r-deseq2))
     (native-inputs (list r-knitr))
     (home-page "https://lbbe.univ-lyon1.fr/fr/dromics")
     (synopsis "Dose Response for Omics")
@@ -4248,8 +4251,8 @@ continuous omics data (such as metabolomic data) in log scale.  In order to link
 responses across biological levels based on a common method, DRomics also
 handles apical data as long as they are continuous and follow a normal
 distribution for each dose or concentration, with a common standard error.  For
-further details see Larras et al (2018) <DOI:10.1021/acs.est.8b04752> at
-<https://hal.archives-ouvertes.fr/hal-02309919>.")
+further details see Delignette-Muller et al (2023) <DOI:10.24072/pcjournal.325>
+and Larras et al (2018) <DOI:10.1021/acs.est.8b04752>.")
     (license license:gpl2+)))
 
 (define-public r-droll
@@ -5204,59 +5207,6 @@ language around its contents.")
 dragon kings (DKs).  The statistical methods in this package were reviewed in
 Wheatley & Sornette (2015) <doi:10.2139/ssrn.2645709>.")
     (license license:gpl3)))
-
-(define-public r-dragon
-  (package
-    (name "r-dragon")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dragon" version))
-       (sha256
-        (base32 "03y92kmbc3n1qf6h63fxkv1x1mq0sm6hi8b9y34489rib65rynx5"))))
-    (properties `((upstream-name . "dragon")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-visnetwork
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shinywidgets
-                             r-shinydashboard
-                             r-shiny
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-promises
-                             r-openxlsx
-                             r-magrittr
-                             r-lubridate
-                             r-igraph
-                             r-htmltools
-                             r-golem
-                             r-ggplot2
-                             r-ggforce
-                             r-future
-                             r-dt
-                             r-dplyr
-                             r-curl
-                             r-cowplot
-                             r-config
-                             r-colourpicker
-                             r-colorspace
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sjspielman/dragon")
-    (synopsis "Deep Time Redox Analysis of the Geobiology Ontology Network")
-    (description
-     "Create, visualize, manipulate, and analyze bipartite mineral-chemistry networks
-for set of focal element(s) across deep-time on Earth.  The method is described
-in Spielman and Moore (2020) <doi:10.3389/feart.2020.585087>.")
-    (license license:expat)))
 
 (define-public r-dracor
   (package
@@ -7959,39 +7909,6 @@ approximate the transformation functions and two R functions including
 estimates of the regression coefficients.")
     (license license:gpl3)))
 
-(define-public r-dnet
-  (package
-    (name "r-dnet")
-    (version "1.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dnet" version))
-       (sha256
-        (base32 "05mqgp8x2h6vjf8j9466kpng7bbga134c2y808qgdmjdnv9fcaxc"))))
-    (properties `((upstream-name . "dnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgraphviz r-matrix r-igraph r-graph))
-    (home-page "http://dnet.r-forge.r-project.org")
-    (synopsis
-     "Integrative Analysis of Omics Data in Terms of Network, Evolution and Ontology")
-    (description
-     "The focus of the dnet by Fang and Gough (2014) <doi:10.1186/s13073-014-0064-8>
-is to make sense of omics data (such as gene expression and mutations) from
-different angles including: integration with molecular networks, enrichments
-using ontologies, and relevance to gene evolutionary ages.  Integration is
-achieved to identify a gene subnetwork from the whole gene network whose
-nodes/genes are labelled with informative data (such as the significant levels
-of differential expression or survival risks).  To help make sense of identified
-gene networks, enrichment analysis is also supported using a wide variety of
-pre-compiled ontologies and phylostratific gene age information in major
-organisms including: human, mouse, rat, chicken, C.elegans, fruit fly, zebrafish
-and arabidopsis.  Add-on functionalities are supports for calculating semantic
-similarity between ontology terms (and between genes) and for calculating
-network affinity based on random walk; both can be done via high-performance
-parallel computing.")
-    (license license:gpl2)))
-
 (define-public r-dndr
   (package
     (name "r-dndr")
@@ -9519,13 +9436,13 @@ Brouwer (2020) <doi:10.1002/9781119632757>.")
 (define-public r-dittoviz
   (package
     (name "r-dittoviz")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittoViz" version))
        (sha256
-        (base32 "04xap95v15h8zvylbkdidpggyrsdii1m32zmmv40z61ad7xkvbaf"))))
+        (base32 "1ma06cc4bdrmp9r7yxa3mrqzys5ap6i1sifsgsr31zjnl6yxfk0w"))))
     (properties `((upstream-name . "dittoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggridges r-ggrepel r-ggplot2 r-cowplot))
@@ -9624,6 +9541,87 @@ build upon the paper by del Castillo, Joan & Daoudi, Jalila & Serra, Isabel.
 (2012) <doi:10.1017/asb.2017.9>.")
     (license license:gpl3)))
 
+(define-public r-distrtest
+  (package
+    (name "r-distrtest")
+    (version "2.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrTEst" version))
+       (sha256
+        (base32 "1fj0llq75hxy15wg1q4z10jmdxak2jcip62nl73fs25k1v9hr416"))))
+    (properties `((upstream-name . "distrTEst")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg r-setrng r-distrsim))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "Estimation and Testing Classes Based on Package 'distr'")
+    (description
+     "Evaluation (S4-)classes based on package distr for evaluating procedures
+(estimators/tests) at data/simulation in a unified way.")
+    (license license:lgpl3)))
+
+(define-public r-distrteach
+  (package
+    (name "r-distrteach")
+    (version "2.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrTeach" version))
+       (sha256
+        (base32 "0xfnq012hr1ngw6c5zdl8459qf908h6dpgdk6csnbpm9a706xypq"))))
+    (properties `((upstream-name . "distrTeach")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg r-distrex r-distr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis
+     "Extensions of Package 'distr' for Teaching Stochastics/Statistics in Secondary School")
+    (description
+     "This package provides flexible examples of LLN and CLT for teaching purposes in
+secondary school.")
+    (license license:lgpl3)))
+
+(define-public r-distrsim
+  (package
+    (name "r-distrsim")
+    (version "2.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrSim" version))
+       (sha256
+        (base32 "11dd09v8fx19xglmpkhc0j3gdrzh94cpidjks54g8lkzgv5ichr7"))))
+    (properties `((upstream-name . "distrSim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg r-setrng r-distr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "Simulation Classes Based on Package 'distr'")
+    (description
+     "S4-classes for setting up a coherent framework for simulation within the distr
+family of packages.")
+    (license license:lgpl3)))
+
+(define-public r-distrrmetrics
+  (package
+    (name "r-distrrmetrics")
+    (version "2.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrRmetrics" version))
+       (sha256
+        (base32 "12zrgaqs3cb7zpr3zjlm9s9x2d7qqhgcy9yaf9zgjbq5rnffrrx7"))))
+    (properties `((upstream-name . "distrRmetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg r-fgarch r-fbasics r-distr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "Distribution Classes for Distributions from Rmetrics")
+    (description
+     "S4-distribution classes based on package distr for distributions from packages
+@code{fBasics} and @code{fGarch}'.")
+    (license license:lgpl3)))
+
 (define-public r-distrr
   (package
     (name "r-distrr")
@@ -9687,6 +9685,31 @@ package wraps the various files and commands that may exist on a system.  It is
 similar in spirit to the lsb_release command and the Python package of the same
 name.")
     (license license:asl2.0)))
+
+(define-public r-distrmod
+  (package
+    (name "r-distrmod")
+    (version "2.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrMod" version))
+       (sha256
+        (base32 "0gpa19xdw4gl8impn9lq8xxc8qwzs1wygfglzfn7hjin8l588avj"))))
+    (properties `((upstream-name . "distrMod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-sfsmisc
+                             r-randvar
+                             r-mass
+                             r-distrex
+                             r-distr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "Object Oriented Implementation of Probability Models")
+    (description
+     "This package implements S4 classes for probability models based on packages
+distr and @code{distrEx}'.")
+    (license license:lgpl3)))
 
 (define-public r-distributiontest
   (package
@@ -9844,13 +9867,13 @@ special computational programs.")
 (define-public r-distrex
   (package
     (name "r-distrex")
-    (version "2.9.0")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEx" version))
        (sha256
-        (base32 "0dgv81bilq5yhwqd7qnp30q8nsaw7vpmh27xw2sl20a0mm3ihz88"))))
+        (base32 "1r7k81vlryjglf6i5z1xh71dn234czaddcn8yxszfbmmrjhwlsyh"))))
     (properties `((upstream-name . "distrEx")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-distr))
@@ -9858,6 +9881,31 @@ special computational programs.")
     (synopsis "Extensions of Package 'distr'")
     (description
      "Extends package distr by functionals, distances, and conditional distributions.")
+    (license license:lgpl3)))
+
+(define-public r-distrellipse
+  (package
+    (name "r-distrellipse")
+    (version "2.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrEllipse" version))
+       (sha256
+        (base32 "1k42wspzq73mxa2y9szcryx6284qbw23z1rjlfj0zfbl62qvq3p7"))))
+    (properties `((upstream-name . "distrEllipse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-setrng
+                             r-mvtnorm
+                             r-distrsim
+                             r-distrex
+                             r-distr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "S4 Classes for Elliptically Contoured Distributions")
+    (description
+     "Distribution (S4-)classes for elliptically contoured distributions (based on
+package distr').")
     (license license:lgpl3)))
 
 (define-public r-distreg-vis
@@ -9907,6 +9955,36 @@ fitted using the gamlss', bamlss or betareg R package.  The core of the package
 consists of a shiny application, where the model results can be interactively
 explored and visualized.")
     (license license:gpl3)))
+
+(define-public r-distrdoc
+  (package
+    (name "r-distrdoc")
+    (version "2.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distrDoc" version))
+       (sha256
+        (base32 "0acbmh2lxf82527gm4i3vvh8gqfdnycsmdnf0s5pwz29zs6ql12z"))))
+    (properties `((upstream-name . "distrDoc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-randvar
+                             r-mass
+                             r-distrtest
+                             r-distrteach
+                             r-distrsim
+                             r-distrmod
+                             r-distrex
+                             r-distr))
+    (native-inputs (list r-knitr))
+    (home-page "http://distr.r-forge.r-project.org/")
+    (synopsis "Documentation for 'distr' Family of R Packages")
+    (description
+     "This package provides documentation in form of a common vignette to packages
+distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
+@code{distrTeach}', and @code{distrEllipse}'.")
+    (license license:lgpl3)))
 
 (define-public r-distr
   (package
@@ -18681,22 +18759,23 @@ for details.")
 (define-public r-degreenet
   (package
     (name "r-degreenet")
-    (version "1.3-3")
+    (version "1.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "degreenet" version))
        (sha256
-        (base32 "07mkj2sdp09624mmb1x3djjypnrzn43qn2j4m93blli51j6zchm3"))))
+        (base32 "0mv3zp5yzyf19ph6pi550g1bd2vw1hds2nfj42hidjdzjj5wqm1j"))))
     (properties `((upstream-name . "degreenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-network r-igraph))
     (home-page "https://statnet.org")
     (synopsis "Models for Skewed Count Distributions Relevant to Networks")
     (description
-     "Likelihood-based inference for skewed count distributions used in network
-modeling. \"degreenet\" is a part of the \"statnet\" suite of packages for network
-analysis.")
+     "Likelihood-based inference for skewed count distributions, typically of degrees
+used in network modeling. \"degreenet\" is a part of the \"statnet\" suite of
+packages for network analysis.  See Jones and Handcock
+<doi:10.1098/rspb.2003.2369>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-degre
@@ -20504,27 +20583,29 @@ find various tests for exponent, Gaussian, Gumbel and uniform distribution.")
 (define-public r-ddspls
   (package
     (name "r-ddspls")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddsPLS" version))
        (sha256
-        (base32 "0b35znfd56lcswygq4h5k5zlsdazpva3pq4anvr96wljf4gwnffn"))))
+        (base32 "0l5dcpqs57bp6b6b718annnhilkv6n4imynylg0wimik27ipmfwl"))))
     (properties `((upstream-name . "ddsPLS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcppeigen r-rcpp r-foreach r-doparallel))
+    (propagated-inputs (list r-shiny
+                             r-rcppeigen
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-foreach
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ddsPLS")
     (synopsis "Data-Driven Sparse Partial Least Squares")
     (description
-     "Allows to build Data-Driven Sparse Partial Least Squares models with
-high-dimensional settings.  Number of components and regularization coefficients
-are automatically set.  It comes with visualization functions and uses Rcpp
-functions for fast computations and @code{doParallel} to parallelize bootstrap
-operations.  An applet has been developed to apply this procedure.  This is
-based on H Lorenzo, O Cloarec, R Thiebaut, J Saracco (2021)
-<doi:10.1002/sam.11558>.")
+     "This package provides a sparse Partial Least Squares implementation which uses
+soft-threshold estimation of the covariance matrices and therein introduces
+sparsity.  Number of components and regularization coefficients are
+automatically set.")
     (license license:expat)))
 
 (define-public r-ddpna

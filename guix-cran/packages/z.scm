@@ -6,6 +6,7 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages bioconductor)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -64,19 +65,46 @@ documentation is available at <https://developers.zoom.us/docs/api/>.  This
 package is not supported by Zoom (owner of the software).")
     (license license:cc0)))
 
+(define-public r-zoomerjoin
+  (package
+    (name "r-zoomerjoin")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zoomerjoin" version))
+       (sha256
+        (base32 "00ckdb9nxvxwk8rw8dxa7craq1hah26bnhl70cgrhw72mmxggvmb"))))
+    (properties `((upstream-name . "zoomerjoin")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-tidyr r-tibble r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://beniamino.org/zoomerjoin/")
+    (synopsis "Superlatively Fast Fuzzy Joins")
+    (description
+     "Empowers users to fuzzily-merge data frames with millions or tens of millions of
+rows in minutes with low memory usage.  The package uses the locality sensitive
+hashing algorithms developed by Datar, Immorlica, Indyk and Mirrokni (2004)
+<doi:10.1145/997817.997857>, and Broder (1998) <doi:10.1109/SEQUEN.1997.666900>
+to avoid having to compare every pair of records in each dataset, resulting in
+fuzzy-merges that finish in linear time.")
+    (license license:gpl3+)))
+
 (define-public r-zooid
   (package
     (name "r-zooid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZooID" version))
        (sha256
-        (base32 "1i0kp5f4amczamajx5l56m63lmcgsjsvdakzncmllbsyg6nkqj0p"))))
+        (base32 "0717gyn5r8gvrww840h592avqqxgf88wnabjnqvmqkaflzib5smy"))))
     (properties `((upstream-name . "ZooID")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=ZooID")
+    (propagated-inputs (list r-magick))
+    (home-page "https://github.com/arickGrootveld/ZooID_RPackage")
     (synopsis "Load, Segment and Classify Zooplankton Images")
     (description
      "This tool provides functions to load, segment and classify zooplankton images.

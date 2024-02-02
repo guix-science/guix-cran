@@ -2024,6 +2024,26 @@ binary response variables and partially ordered covariates.  See Henzi, Ziegel,
 Gneiting (2020) <@code{arXiv:1909.03725>}.")
     (license license:gpl2+)))
 
+(define-public r-isocountry
+  (package
+    (name "r-isocountry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "isocountry" version))
+       (sha256
+        (base32 "0z9m666h86zjzbfv1fvnhajcqzywc0bswvhj5rax2x1gzg2rc4fc"))))
+    (properties `((upstream-name . "isocountry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble))
+    (home-page "https://m-muecke.github.io/isocountry/")
+    (synopsis "ISO 3166-1 Country Codes")
+    (description
+     "ISO 3166-1 country codes provided by the International Organization for
+Standardization.")
+    (license license:expat)))
+
 (define-public r-isocor
   (package
     (name "r-isocor")
@@ -4779,13 +4799,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "1l5lfmrr36whbvzxnlrzhy8wphsmkk8ffry7cghvsf0cw8sala8m"))))
+        (base32 "09g8s76sjy3d8cnavmna1g2g9vz5dif1m9jaxwpzmgfpbp2k12cv"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -6542,22 +6562,22 @@ plots for (cross-validated) @code{randomForest} and ada models.")
 (define-public r-interpretmsspectrum
   (package
     (name "r-interpretmsspectrum")
-    (version "1.3.8")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InterpretMSSpectrum" version))
        (sha256
-        (base32 "0rw2zlqa3r0f4s0nji1k7lw23a9kg3ghb9gcifyh5q6k2308g6dc"))))
+        (base32 "0lzgq87dybmbhip8v0m70x751sky4chyvxyznahl5f5l7nrwr5c0"))))
     (properties `((upstream-name . "InterpretMSSpectrum")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-envipat))
-    (home-page "<doi:10.1021/acs.analchem.6b02743>")
+    (home-page "https://github.com/janlisec/InterpretMSSpectrum")
     (synopsis "Interpreting High Resolution Mass Spectra")
     (description
      "High resolution mass spectrometry yields often large data sets of spectra from
 compounds which are not present in available libraries.  These spectra need to
-be annotated and interpreted.'@code{InterpretMSSpectrum} provides a set of
+be annotated and interpreted. @code{InterpretMSSpectrum} provides a set of
 functions to perform such tasks for Electrospray-Ionization and
 Atmospheric-Pressure-Chemical-Ionization derived data in positive and negative
 ionization mode.")
@@ -6884,13 +6904,13 @@ created.")
 (define-public r-interep
   (package
     (name "r-interep")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interep" version))
        (sha256
-        (base32 "1c2s018h2r9xf5d1bywg4ml1kxszlc6fnrzddfc17wc20l31sw5b"))))
+        (base32 "11g33j14493kr03qviv8nr1x7kj7p61fhm8slmab0nzbfcbwfwih"))))
     (properties `((upstream-name . "interep")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -8167,13 +8187,13 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inlcolor
   (package
     (name "r-inlcolor")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlcolor" version))
        (sha256
-        (base32 "0998smgzkspij2fa5si1sk5dfpas3645crk5hqkdg9ip228cqn16"))))
+        (base32 "0yhhy7yrycxg58shfwrja2zfdixss2wldi6qg262dfa9w6j68brj"))))
     (properties `((upstream-name . "inlcolor")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-checkmate))
@@ -9328,17 +9348,17 @@ S., Pook, T. Geibel, J. and Reimer, C. (2023) <doi:10.1186/s12711-023-00807-0>."
 (define-public r-indexthis
   (package
     (name "r-indexthis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "indexthis" version))
        (sha256
-        (base32 "11j2p9qw0nmvsy6pnk6nrafgsilm68jndb77r2gk9v6vxqjn3q38"))))
+        (base32 "0z66w8bcl4iycs4386ss0f5lck3xnk0r1bq5jygbqp9mr6ijavsa"))))
     (properties `((upstream-name . "indexthis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=indexthis")
+    (home-page "https://github.com/lrberge/indexthis")
     (synopsis "Quick Indexation")
     (description
      "Quick indexation of any type of vector or of any combination of those.

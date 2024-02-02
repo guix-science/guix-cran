@@ -3728,13 +3728,13 @@ tools for converting the Jalali and Gregorian dates.")
 (define-public r-jagsui
   (package
     (name "r-jagsui")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagsUI" version))
        (sha256
-        (base32 "12k315c998fgf9sp9gq1vszk7pf7ll1iyx4hgvjs4c959grxfp76"))))
+        (base32 "012s8dcfaxvswwyjjff0x5c7cpvqqqx0zav0wjqm8gzq9pyv0lsn"))))
     (properties `((upstream-name . "jagsUI")))
     (build-system r-build-system)
     (inputs (list jags))

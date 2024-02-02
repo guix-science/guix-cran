@@ -1737,17 +1737,19 @@ history using conventional commit messages
 (define-public r-automrp
   (package
     (name "r-automrp")
-    (version "1.0.3")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoMrP" version))
        (sha256
-        (base32 "0fb2qsz4ibx2m21hsak87jmgrngal23y1yr4phs66vkn037pvkim"))))
+        (base32 "00shy2yjkhys59nvxwd0smr5bzkfrg55xq6rcmc5z7f6c07wygci"))))
     (properties `((upstream-name . "autoMrP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vglmer
+                             r-tidyr
                              r-tibble
+                             r-stringr
                              r-rlang
                              r-purrr
                              r-lme4
@@ -1770,8 +1772,8 @@ history using conventional commit messages
 multilevel regression with post-stratification (@code{MrP}) by combining a
 number of machine learning methods.  For information on the method, please refer
 to Broniecki, WÃ¼est, Leemann (2020) Improving Multilevel Regression with
-Post-Stratification Through Machine Learning (@code{autoMrP}) forthcoming in
-Journal of Politics'.  Final pre-print version:
+Post-Stratification Through Machine Learning (@code{autoMrP}) in the Journal of
+Politics'.  Final pre-print version:
 <https://lucasleemann.files.wordpress.com/2020/07/automrp-r2pa.pdf>.")
     (license license:gpl3)))
 
@@ -3282,13 +3284,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.1.24")
+    (version "2024.1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1nbiw7wdc7r47bm580zxa3kw9zrghgmn9rk9lajvyxby19w98b06"))))
+        (base32 "0fgqdvxhmdhpm5xcwgxqv13la316gvvk7anxd4607601lvximj4s"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -4902,6 +4904,53 @@ Graubard, 2023 <doi:10.48550/@code{arXiv.2205.13494>}).  The focus is on
 hypothesis tests that have compatible confidence intervals, but some functions
 only have confidence intervals (e.g., @code{prevSeSp}).")
     (license license:gpl3)))
+
+(define-public r-ashapesampler
+  (package
+    (name "r-ashapesampler")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ashapesampler" version))
+       (sha256
+        (base32 "03x0vffik7k0cccr4m70ap4nl1zw2zp5iy3nr260dgivxlj49kxk"))))
+    (properties `((upstream-name . "ashapesampler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-tda
+                             r-rvcg
+                             r-pracma
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-alphashape3d
+                             r-alphahull))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ashapesampler")
+    (synopsis "Generating Alpha Shapes")
+    (description
+     "Understanding morphological variation is an important task in many applications.
+ Recent studies in computational biology have focused on developing
+computational tools for the task of sub-image selection which aims at
+identifying structural features that best describe the variation between classes
+of shapes.  A major part in assessing the utility of these approaches is to
+demonstrate their performance on both simulated and real datasets.  However,
+when creating a model for shape statistics, real data can be difficult to access
+and the sample sizes for these data are often small due to them being expensive
+to collect.  Meanwhile, the landscape of current shape simulation methods has
+been mostly limited to approaches that use black-box inference---making it
+difficult to systematically assess the power and calibration of sub-image
+models.  In this R package, we introduce the alpha-shape sampler: a
+probabilistic framework for simulating realistic 2D and 3D shapes based on
+probability distributions which can be learned from real data or explicitly
+stated by the user.  The ashapesampler package supports two mechanisms for
+sampling shapes in two and three dimensions.  The first, empirically sampling
+based on an existing data set, was highlighted in the original main text of the
+paper.  The second, probabilistic sampling from a known distribution, is the
+computational implementation of the theory derived in that paper.  Work based on
+Winn-Nunez et al. (2024) <doi:10.1101/2024.01.09.574919>.")
+    (license license:gpl3+)))
 
 (define-public r-asgs-foyer
   (package
@@ -6765,20 +6814,23 @@ analysis in a common tabular data structure.")
 (define-public r-ardl-nardl
   (package
     (name "r-ardl-nardl")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ardl.nardl" version))
        (sha256
-        (base32 "0havazgn9vblnp0sy8hc9r42sngj7lbm0ni13h148a9pcnpc8ax3"))))
+        (base32 "0pcqh69fvvsjmrfjq5x7b9yn5s30cqv0fkf1b3j3m9l2xp8f3k8g"))))
     (properties `((upstream-name . "ardl.nardl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
+                             r-tidyselect
                              r-texreg
                              r-stringr
                              r-sandwich
                              r-rlist
+                             r-purrr
+                             r-plyr
                              r-nardl
                              r-lmtest
                              r-gets
@@ -7217,13 +7269,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.3.2")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeoViz" version))
        (sha256
-        (base32 "0nvaj7p1nd3h620r8cf2pm3vjlyqq2d66jy4didvb5ackc93yfqx"))))
+        (base32 "12hrj059gavzydzywdn6knzyh75d5q34mi16a9jmbf2i3bm4fj5s"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -7237,17 +7289,19 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
                              r-ggplot2
                              r-cxhull))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/sebastien-plutniak/archeoviz")
+    (home-page "https://archeoviz.hypotheses.org")
     (synopsis
      "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
     (description
      "An R Shiny application for the visualisation, interactive exploration, and web
 communication of archaeological spatial data.  It includes interactive 3D and 2D
-visualisations, generation of cross sections and maps of the remains, basic
-spatial analysis methods (convex hull, regression surfaces, 2D kernel density
-estimation), and excavation timeline visualisation. @code{archeoViz} can be used
-locally or deployed on a server, either with interactive input of data or with a
-static data set.")
+visualisations, generation of cross sections and maps of the remains, and
+display an interactive timeline of the work made in a site.  Simple spatial
+statistics can be performed (convex hull, regression surfaces, 2D kernel density
+estimation), as well as exporting data to other online applications for more
+complex methods. @code{archeoViz} can be used locally or deployed on a server,
+either with interactive input of data or with a static data set.  Example is
+provided at <https://analytics.huma-num.fr/archeoviz/en>.")
     (license license:gpl3)))
 
 (define-public r-archeofrag
@@ -8134,13 +8188,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-approxot
   (package
     (name "r-approxot")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "approxOT" version))
        (sha256
-        (base32 "06wvvxn37bk5cd4l93i8rvv81zzx4jv373mjgkzzsgvvhh3an6bw"))))
+        (base32 "1l0grr9158d0lscnxd191h3vbal93sl25r982c5w32iyajcjn71h"))))
     (properties `((upstream-name . "approxOT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcppcgal r-rcpp r-bh))
@@ -8886,6 +8940,29 @@ visualizations with simple API. Apexcharts examples and documentation are
 available here: <https://apexcharts.com/>.")
     (license license:expat)))
 
+(define-public r-apex
+  (package
+    (name "r-apex")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apex" version))
+       (sha256
+        (base32 "1cz51g7s4xfr7fvjq0cc9iwy9sb3wwdfrblcjr9pacj09bk2myh7"))))
+    (properties `((upstream-name . "apex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-phangorn r-ape r-adegenet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thibautjombart/apex")
+    (synopsis "Phylogenetic Methods for Multiple Gene Data")
+    (description
+     "Toolkit for the analysis of multiple gene data (Jombart et al.  2017)
+<doi:10.1111/1755-0998.12567>.  apex implements the new S4 classes multidna',
+@code{multiphyDat} and associated methods to handle aligned DNA sequences from
+multiple genes.")
+    (license license:gpl2+)))
+
 (define-public r-apercu
   (package
     (name "r-apercu")
@@ -9038,13 +9115,13 @@ Issue 13, 4099-4101.")
 (define-public r-apci
   (package
     (name "r-apci")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCI" version))
        (sha256
-        (base32 "0lfbx067vqh2yn15jmiicva8h38k0vgdr3s6m2jgswfbp11a8pjh"))))
+        (base32 "1a3ghbxsvlq3z8nk6xr5jvmpxala9axfm3wd8i6mhjbsfyq8ijv6"))))
     (properties `((upstream-name . "APCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -9621,13 +9698,13 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "0707j2lwaiy60s5zc35irmf4dnxv7wcfvngacpri7fazd6b6sd97"))))
+        (base32 "03vvf3rlg5zrdvx7bvi3praz9lb5fsyywa1pkcal5qll6v094jvg"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimizer r-checkmate))
@@ -18104,13 +18181,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0qyvp2q5x0zhb3gq5ycx635ikpmrq6chj73ikgw59cc9jlbyx097"))))
+        (base32 "0j3qaj0zn10rvjg80jvbbxg4223dhkf0l912y158cmx6ap2k2cca"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

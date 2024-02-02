@@ -7161,13 +7161,13 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hh
   (package
     (name "r-hh")
-    (version "3.1-49")
+    (version "3.1-51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HH" version))
        (sha256
-        (base32 "0yxqh0699x0vfk18p9850wziyglif0lywnljdl14biq71b5z1khj"))))
+        (base32 "0lqcqj1ffyxam4ad5a643hbjj61smby395b472wprd52yfa8l21r"))))
     (properties `((upstream-name . "HH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -8454,13 +8454,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.0.3")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "1k8b4zlhipc91a0g81q0l5fjg45yvl51vhcv331yjcrjr9blb74m"))))
+        (base32 "1cggzna2gdl8pxdj2s0swlbwxs9qzz276x43inr87i9yxfqwv5q8"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -8662,16 +8662,17 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heemod
   (package
     (name "r-heemod")
-    (version "0.16.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heemod" version))
        (sha256
-        (base32 "0mwaxm0f6iqh6g85xib0sgc5sbmajnq40pmpsfl13k8nz4igjkb1"))))
+        (base32 "09kj8gy74dklkbvxxh95qa5s7iaksvyamggppcpnp5c115625rrb"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-vctrs
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-mvnfast
@@ -8681,7 +8682,7 @@ Australia's higher education system, as well as a range of relevant information.
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=heemod")
+    (home-page "https://aphp.github.io/heemod/")
     (synopsis "Markov Models for Health Economic Evaluations")
     (description
      "An implementation of the modelling and reporting features described in reference
@@ -12499,13 +12500,13 @@ and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
 (define-public r-h3lib
   (package
     (name "r-h3lib")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "h3lib" version))
        (sha256
-        (base32 "1lm89ngdhcgi9i2fx17fk38acpyv343m2djk38fzs7aipn95qyli"))))
+        (base32 "1zrda5g2b50iz6qxk1dz18dnanp1dr6d5wldiwh1ap5qclz7w9b4"))))
     (properties `((upstream-name . "h3lib")))
     (build-system r-build-system)
     (home-page "https://github.com/symbolixau/h3lib")

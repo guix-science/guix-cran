@@ -7702,13 +7702,13 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forceplate
   (package
     (name "r-forceplate")
-    (version "1.0-0")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forceplate" version))
        (sha256
-        (base32 "01h8fmxnxzgc20jw3mb4kmf5ghrlj604in0kn6y97h84qwbyair4"))))
+        (base32 "1qhfwcc780g3l2yrlmysa95qrc47lmf69cbvk41irzcagwhmig1x"))))
     (properties `((upstream-name . "forceplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-signal r-data-table))
@@ -10815,13 +10815,13 @@ in general, a faster Kalman filter/smoother.")
 (define-public r-fkf
   (package
     (name "r-fkf")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FKF" version))
        (sha256
-        (base32 "0zbd8qdyck7cr4bwksgzxg63kl83a4m15n76rqk2yinyxpi0xazp"))))
+        (base32 "0mfz03yv8h7nfw3xqy88j49yj035px9z88w7kjjqwkpkb9lib92w"))))
     (properties `((upstream-name . "FKF")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14238,13 +14238,13 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fgarch
   (package
     (name "r-fgarch")
-    (version "4031.90")
+    (version "4032.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fGarch" version))
        (sha256
-        (base32 "06ilj6nkmc7d4dhbh3zd9f5nyiq4x9win9qkyvcgm5yc8qslnw5z"))))
+        (base32 "0jl76w657hlx1mf977dcm2yv1sv1fsy1nfiqnfnccqscyx9iz0z5"))))
     (properties `((upstream-name . "fGarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -18652,6 +18652,38 @@ inference for latent variable Gaussian process models with elliptical slice
 sampling (Murray, Adams, and @code{MacKay} 2010).")
     (license license:gpl2)))
 
+(define-public r-fastglmpca
+  (package
+    (name "r-fastglmpca")
+    (version "0.1-103")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastglmpca" version))
+       (sha256
+        (base32 "1yzk91g9aszazfm4gp70wfs21dbdi9dxlh95ylh839pivs78cvrc"))))
+    (properties `((upstream-name . "fastglmpca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrixextra
+                             r-matrix
+                             r-distr
+                             r-daarem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stephenslab/fastglmpca")
+    (synopsis "Fast Algorithms for Generalized Principal Component Analysis")
+    (description
+     "This package implements fast, scalable optimization algorithms for fitting
+generalized principal components analysis (GLM-PCA) models, as described in \"A
+Generalization of Principal Components Analysis to the Exponential Family\"
+Collins M, Dasgupta S, Schapire RE (2002, ISBN:9780262271738), and subsequently
+\"Feature Selection and Dimension Reduction for Single-Cell RNA-Seq Based on a
+Multinomial Model\" Townes FW, Hicks SC, Aryee MJ, Irizarry RA (2019)
+<doi:10.1186/s13059-019-1861-6>.")
+    (license license:gpl2+)))
+
 (define-public r-fastglm
   (package
     (name "r-fastglm")
@@ -20957,6 +20989,39 @@ existing outliers, identification of the informative components, graphical views
 and dimensions description are performed threw dedicated functions.  The
 Investigate() function performs all these functions in one, and returns the
 result as a report document (Word, PDF or HTML).")
+    (license license:gpl2+)))
+
+(define-public r-factoclass
+  (package
+    (name "r-factoclass")
+    (version "1.2.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FactoClass" version))
+       (sha256
+        (base32 "1i42mwmkh7lip01x5qkw03xrcqqbsfsa7qs2xrpr9hzfp61f1xcm"))))
+    (properties `((upstream-name . "FactoClass")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-scatterplot3d
+                             r-kernsmooth
+                             r-ggrepel
+                             r-ggplot2
+                             r-ade4))
+    (home-page "https://cran.r-project.org/package=FactoClass")
+    (synopsis "Combination of Factorial Methods and Cluster Analysis")
+    (description
+     "Some functions of ade4 and stats are combined in order to obtain a partition of
+the rows of a data table, with columns representing variables of scales:
+quantitative, qualitative or frequency.  First, a principal axes method is
+performed and then, a combination of Ward agglomerative hierarchical
+classification and K-means is performed, using some of the first coordinates
+obtained from the previous principal axes method.  In order to permit different
+weights of the elements to be clustered, the function @code{kmeansW}',
+programmed in C++, is included.  It is a modification of kmeans'.  Some
+graphical functions include the option: gg=FALSE'.  When gg=TRUE', they use the
+ggplot2 and ggrepel packages to avoid the super-position of the labels.")
     (license license:gpl2+)))
 
 (define-public r-factmle

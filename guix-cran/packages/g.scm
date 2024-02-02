@@ -515,13 +515,13 @@ sparse non-negative principal components analyses
 (define-public r-gwmodel
   (package
     (name "r-gwmodel")
-    (version "2.3-1")
+    (version "2.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWmodel" version))
        (sha256
-        (base32 "13f09dlgzji3412lgzc6fg0zfhzfqj3d2g2hlda4caidppc4x4zq"))))
+        (base32 "16brnvq9r5qcyk5rxrak85hsp76z6l6q0vwg40pyd6444n6qkxhx"))))
     (properties `((upstream-name . "GWmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -2754,40 +2754,6 @@ based on methods described in Jennison, Christopher and Turnbull, Bruce W.,
 0-8493-0316-8.")
     (license license:gpl3+)))
 
-(define-public r-gsdensity
-  (package
-    (name "r-gsdensity")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gsdensity" version))
-       (sha256
-        (base32 "0qaigqwlaf03ski08hv3jbqxg3h7zyj7bwaff4kl0q2x95k0pyd4"))))
-    (properties `((upstream-name . "gsdensity")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seurat
-                             r-rgraphviz
-                             r-reshape2
-                             r-rann
-                             r-philentropy
-                             r-multimode
-                             r-matrix
-                             r-mass
-                             r-infotheo
-                             r-igraph
-                             r-future-apply
-                             r-dplyr
-                             r-dnet
-                             r-cellid
-                             r-anticlust))
-    (home-page "https://cran.r-project.org/package=gsdensity")
-    (synopsis "Density-Based Gene Set Specificity Evaluation")
-    (description
-     "Analysis frameworks for pathway heterogeneity and pathway activity evaluation in
-single-cell data, including @code{scRNA-seq} data and spatial genomics data.")
-    (license license:gpl3)))
-
 (define-public r-gsda
   (package
     (name "r-gsda")
@@ -3552,35 +3518,6 @@ time, the carrying capacity, the area under the logistic curve, and the time to
 the inflection point.  Method described in Sprouffske and Wagner (2016)
 <doi:10.1186/s12859-016-1016-7>.")
     (license license:gpl2+)))
-
-(define-public r-growthcleanr
-  (package
-    (name "r-growthcleanr")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "growthcleanr" version))
-       (sha256
-        (base32 "18aj6wvr26srs3cfrj7rkf2d3vxqy4kn82dmfc8mazlf4f2plrra"))))
-    (properties `((upstream-name . "growthcleanr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-r-utils
-                             r-plyr
-                             r-magrittr
-                             r-labelled
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table))
-    (home-page "https://carriedaymont.github.io/growthcleanr/index.html")
-    (synopsis "Data Cleaner for Anthropometric Measurements")
-    (description
-     "Identifies implausible anthropometric (e.g., height, weight) measurements in
-irregularly spaced longitudinal datasets, such as those from electronic health
-records.")
-    (license license:expat)))
 
 (define-public r-growth
   (package
@@ -4555,13 +4492,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grfa
   (package
     (name "r-grfa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrFA" version))
        (sha256
-        (base32 "00iya5aqff0f6r0rz0axgfjq41fmxzli5zymz4l7ddnxxp78mxdc"))))
+        (base32 "1gbvcv8al6zay4zr3vcfiycywk7j191srkzfkllwm79bqwh55lmp"))))
     (properties `((upstream-name . "GrFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -4573,7 +4510,7 @@ Correlation-based Estimation by Choi et al. (2021)
 <doi:10.1016/j.jeconom.2021.09.008> , Generalised Canonical Correlation
 Estimation by Lin and Shin (2022) <doi:10.2139/ssrn.4295429>, Circularly
 Projected Estimation by Chen (2022) <doi:10.1080/07350015.2022.2051520>, and the
-approach we recently proposed, named Weighted Projection Estimation.")
+approach we recently proposed, named Aggregated Projection Method.")
     (license license:gpl3)))
 
 (define-public r-grf
@@ -4845,13 +4782,13 @@ differential equations.  This is an extension to the greta software, Golding
 (define-public r-greta
   (package
     (name "r-greta")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta" version))
        (sha256
-        (base32 "17s90053sjr9w8rylwwf1knvsp9scv5hf7vvx2kpsgzpy45myn1v"))))
+        (base32 "1xrfbx1j2qdccfn6fhap1jnibhrfih10garakxndrl9j527lv5lm"))))
     (properties `((upstream-name . "greta")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -5055,13 +4992,13 @@ Cox regressions.")
 (define-public r-greener
   (package
     (name "r-greener")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GREENeR" version))
        (sha256
-        (base32 "0194cggs12bm2s9dzxy2f81r3ply9pi63vmkxaxn8fz96bba0kqj"))))
+        (base32 "18li2xs12gi4c1wsjxdqbjfyw81xsmgnljdrlgj9fdw91w3f9bzw"))))
     (properties `((upstream-name . "GREENeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -5145,13 +5082,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "08mflxga4gkb2nhs7rqcg74jjyq1ips70bq33i8pv2bzqvi3crl2"))))
+        (base32 "1c4w55s8793axkd4fg34hqwp9ssxwxz07ggic7v9j6vbi54rcl51"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13998,24 +13935,24 @@ graphics in R.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-15")
+    (version "0.7-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "0qg6zkik72pqgkkbqd7c2zn4l6k7fs91cnawk7m2hsw1naiksjjn"))))
+        (base32 "0vimpnzvls4344wpx28iv2p91vsv74nkl0wwwgfnz6l5nfywdrqa"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
-    (propagated-inputs (list r-qgraph
+    (propagated-inputs (list r-tseries
+                             r-qgraph
                              r-nloptr
                              r-miivsem
                              r-mass
                              r-lavaan
                              r-imputets
                              r-igraph
-                             r-data-tree
-                             r-atsa))
+                             r-data-tree))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/GatesLab/gimme/")
     (synopsis "Group Iterative Multiple Model Estimation")
@@ -18795,13 +18732,13 @@ analysed using rules developed for analysing multiple synthetic datasets.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfoRmula" version))
        (sha256
-        (base32 "1f6wddkj3mshk68qbkjfimwb8ws3xflnldilgy8h0dbcf7f14hyz"))))
+        (base32 "0g9d3z031f4ya3xkm82c4qy0548p38x8c6j0m3vdfx414y4k8mih"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -24804,13 +24741,13 @@ variance estimators for improving the finite small-sample performance.")
 (define-public r-geepack
   (package
     (name "r-geepack")
-    (version "1.3.9")
+    (version "1.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geepack" version))
        (sha256
-        (base32 "1ryd1l28b71f4yx6y9l1mqmlp5g3ykq1f09g84y28w3hkbwzs1m1"))))
+        (base32 "0hjz45ixpxv9x503mrr3jai9a0gi7sv28lh7i1j5xzcp6qxr4f2a"))))
     (properties `((upstream-name . "geepack")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-magrittr r-broom))
@@ -25796,13 +25733,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "0ff07m7pddw494p7xj7d3hvvwyd3k0cqwyfmyidnv37il6ap9iir"))))
+        (base32 "0wl19rj0lkmqpip2zqsk23ksjgmp826scnk35n6a571iyss71ma7"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -25810,13 +25747,13 @@ to quantify model sensitivities.")
     (home-page "https://mikeblazanin.github.io/gcplyr/")
     (synopsis "Manipulate and Analyze Growth Curve Data")
     (description
-     "Easy import, manipulation, and model-free analysis of microbial growth curve
-data, as commonly output by plate readers.  Tools for reshaping common plate
-reader outputs into tidy formats and merging them with design information,
-making data easy to work with using gcplyr and other packages.  Also streamlines
-common growth curve processing steps, like smoothing and calculating
-derivatives, and facilitates model-free characterization and analysis of growth
-data.  See methods at <https://mikeblazanin.github.io/gcplyr/>.")
+     "Easy import, reshaping, and model-free analysis of microbial growth curve data,
+as commonly output by plate readers.  Tools for reshaping common plate reader
+outputs into tidy formats and merging them with design information, making data
+easy to work with using gcplyr and other packages.  Also streamlines common
+growth curve processing steps, like smoothing and calculating derivatives, and
+facilitates model-free characterization and analysis of growth data.  See
+methods at <https://mikeblazanin.github.io/gcplyr/>.")
     (license license:expat)))
 
 (define-public r-gcpbayes
@@ -26431,13 +26368,13 @@ using this package.")
 (define-public r-gbj
   (package
     (name "r-gbj")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GBJ" version))
        (sha256
-        (base32 "12lsddkcxz37hn2fvjq158wb1bc6b3hx6wj8q8nj21zpmyl3n2qh"))))
+        (base32 "0vi4zv59g4fjq28gq6b8mn5gmddwvq9sijjilcd6wr7jl67c0fbs"))))
     (properties `((upstream-name . "GBJ")))
     (build-system r-build-system)
     (propagated-inputs (list r-skat r-rcpp r-mvtnorm r-bh))
@@ -26454,8 +26391,8 @@ of these other methods (except for SKAT) are also implemented in this package,
 and we additionally provide an omnibus test (OMNI) which integrates information
 from each of the tests.  The GBJ has been shown to outperform other tests in
 genetic association studies when signals are correlated and moderately sparse.
-Please see the vignette for a quickstart guide or the paper at
-<doi:10.1080/01621459.2019.1660170> for full details.")
+Please see the vignette for a quickstart guide or Sun and Lin (2017)
+<@code{arXiv:1710.02469>} for more details.")
     (license license:gpl3)))
 
 (define-public r-gbifdb
@@ -27884,17 +27821,17 @@ bimodal skew symmetric normal distribution of Hassan and El-Bassiouni (2016)
 (define-public r-gamlss-tr
   (package
     (name "r-gamlss-tr")
-    (version "5.1-7")
+    (version "5.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.tr" version))
        (sha256
-        (base32 "0drimqfy22v3lbb6wclia9dkij2r1r4syz9i74fhn07qxay7b6cg"))))
+        (base32 "1r5pd19r4nbxqx7jbi14iyyhn220dz914fa6v000rl0bwqdya379"))))
     (properties `((upstream-name . "gamlss.tr")))
     (build-system r-build-system)
     (propagated-inputs (list r-gamlss-dist r-gamlss))
-    (home-page "http://www.gamlss.org/")
+    (home-page "https://www.gamlss.com/")
     (synopsis "Generating and Fitting Truncated `gamlss.family' Distributions")
     (description
      "This is an add on package to GAMLSS. The purpose of this package is to allow
@@ -27927,13 +27864,13 @@ Models for Location Scale and Shape algorithms.")
 (define-public r-gamlss-mx
   (package
     (name "r-gamlss-mx")
-    (version "6.0-0")
+    (version "6.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.mx" version))
        (sha256
-        (base32 "0b06nb6nq36ay0p5z57j5d4hrly5917wcsal7986mp1270iwnpip"))))
+        (base32 "0r19705wxc9wj4ji2plws9q7xn2nm53sb3x4z9c0ycymv9fkblb6"))))
     (properties `((upstream-name . "gamlss.mx")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet r-gamlss-dist r-gamlss))
@@ -29076,13 +29013,13 @@ the sample size.")
 (define-public r-g-data
   (package
     (name "r-g-data")
-    (version "2.4")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "g.data" version))
        (sha256
-        (base32 "14a4m0v38p3j1k1kymkxwydlgm8b73hlx9m80sg1l4aj38fvflzl"))))
+        (base32 "1v2sn117hmawgsa6f7nrpv2bpg6zzjd1ss356qjqp7kdwmifqlrq"))))
     (properties `((upstream-name . "g.data")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=g.data")

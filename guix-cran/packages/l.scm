@@ -651,27 +651,6 @@ of a rare disease assuming independence or simple dependence of genetic and
 non-genetic covariates.")
     (license license:gpl2)))
 
-(define-public r-luajr
-  (package
-    (name "r-luajr")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "luajr" version))
-       (sha256
-        (base32 "06pqkzmv53pp2clwvq3mhksl5b99mskamnwngn6s23h7zwkgkpn2"))))
-    (properties `((upstream-name . "luajr")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nicholasdavies/luajr")
-    (synopsis "'LuaJIT' Scripting")
-    (description
-     "An interface to @code{LuaJIT} (<https://luajit.org>), a just-in-time compiler
-for the Lua scripting language (<https://www.lua.org>).  Allows users to run Lua
-code from R'.")
-    (license license:expat)))
-
 (define-public r-ltxsparklines
   (package
     (name "r-ltxsparklines")
@@ -9606,24 +9585,22 @@ contingencies insurances calculations are contained therein.  See Spedicato
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.0.4")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "0zd5ygnv6ikgkvipyg1s7g0qf79fx58hwr7gs9lz6c7g71awm04k"))))
+        (base32 "1x0f638h8333ih25jd4hmlcifccvjwhks4lrckx8izl8m23cgckm"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-stars
-                             r-sp
                              r-sf
                              r-rlas
                              r-rgl
                              r-rcpparmadillo
                              r-rcpp
-                             r-raster
                              r-lazyeval
                              r-glue
                              r-data-table

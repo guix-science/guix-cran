@@ -1875,20 +1875,20 @@ to find knee points.")
 (define-public r-knapsacksampling
   (package
     (name "r-knapsacksampling")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KnapsackSampling" version))
        (sha256
-        (base32 "17yzmd11k1n5iy54vbcvpzvkm8ypbl6n1kfi931wwrrcq9y7hg22"))))
+        (base32 "1yiakgzmh72lans1mwp42lch9x9gg2g6ww2hrjdma3w1bbsidlwf"))))
     (properties `((upstream-name . "KnapsackSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
     (home-page "https://github.com/chinsoon12/KnapsackSampling")
     (synopsis "Generate Feasible Samples of a Knapsack Problem")
     (description
-     "The sampl.mcmc() function creates samples of the feasible region of a knapsack
+     "The sampl.mcmc function creates samples of the feasible region of a knapsack
 problem with both equalities and inequalities constraints.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -2245,6 +2245,55 @@ Fienberg (2014) <DOI:10.1007/978-3-319-11257-2_20>, which is a k-means variant
 of locality sensitive hashing.  The method is illustrated with examples and a
 vignette.")
     (license license:gpl3)))
+
+(define-public r-klovan
+  (package
+    (name "r-klovan")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "klovan" version))
+       (sha256
+        (base32 "0fd1p6dhvaa00h8ij3bj1brqbc21yqni3bfg265yqf7paqbmxnkv"))))
+    (properties `((upstream-name . "klovan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-sp
+                             r-pracma
+                             r-metr
+                             r-mass
+                             r-magrittr
+                             r-gstat
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggforce
+                             r-ggally
+                             r-fields
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=klovan")
+    (synopsis "Geostatistics Methods and Klovan Data")
+    (description
+     "This package provides a comprehensive set of geostatistical, visual, and
+analytical methods, in conjunction with the expanded version of the acclaimed
+J.E. Klovan's mining dataset, are included in klovan'.  This makes the package
+an excellent learning resource for Principal Component Analysis (PCA), Factor
+Analysis (FA), kriging, and other geostatistical techniques.  Originally
+published in the 1976 book Geological Factor Analysis', the included mining
+dataset was assembled by Professor J. E. Klovan of the University of Calgary.
+Being one of the first applications of FA in the geosciences, this dataset has
+significant historical importance.  As a well-regarded and published dataset, it
+is an excellent resource for demonstrating the capabilities of PCA, FA, kriging,
+and other geostatistical techniques in geosciences.  For those interested in
+these methods, the klovan datasets provide a valuable and illustrative resource.
+ Note that some methods require the RGeostats package.  Please refer to the
+README or Additional_repositories for installation instructions.  This material
+is based upon research in the Materials Data Science for Stockpile Stewardship
+Center of Excellence (MDS3-COE), and supported by the Department of Energy's
+National Nuclear Security Administration under Award Number DE-NA0004104.")
+    (license license:expat)))
 
 (define-public r-klink
   (package
@@ -4346,6 +4395,27 @@ analysis of air pollution, weather and health data.")
      "This package provides arrays with flexible control over dimension dropping when
 subscripting.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-kedd
+  (package
+    (name "r-kedd")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kedd" version))
+       (sha256
+        (base32 "09jvqh97ifcincvfy9d73h5705kczyh3isfx7fxj5zqwls4l755v"))))
+    (properties `((upstream-name . "kedd")))
+    (build-system r-build-system)
+    (home-page "https://gitlab.com/iagogv/kedd")
+    (synopsis
+     "Kernel Estimator and Bandwidth Selection for Density and Its Derivatives")
+    (description
+     "Smoothing techniques and computing bandwidth selectors of the nth derivative of
+a probability density for one-dimensional data (described in Arsalane Chouaib
+Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
+    (license license:gpl2+)))
 
 (define-public r-kdry
   (package

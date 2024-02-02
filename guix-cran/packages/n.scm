@@ -2999,16 +2999,42 @@ user-friendly reports need to be created.")
     (description "The noweb system for source code, implemented in R.")
     (license license:lgpl2.0)))
 
+(define-public r-novicedeveloperresources2
+  (package
+    (name "r-novicedeveloperresources2")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NoviceDeveloperResources2" version))
+       (sha256
+        (base32 "0k6x65mgbglbnjj99rimvv19jzfk1h5n3j7ignh3hnqlhi769qa1"))))
+    (properties `((upstream-name . "NoviceDeveloperResources2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-packrat r-novicedeveloperresources))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NoviceDeveloperResources2")
+    (synopsis "Further Resources to Assist Novice Developers")
+    (description
+     "Assist novice developers when preparing a single package or a set of integrated
+packages to submit to CRAN. Provide additional resources to facilitate the
+automation of the following individual or batch processing: check local source
+packages; build local .tar.gz source files; install packages from local .tar.gz
+files; detect conflicts between function names in the environment.  The
+additional resources include determining the identity and ordering of the
+packages to process when updating an imported package.")
+    (license license:gpl2+)))
+
 (define-public r-novicedeveloperresources
   (package
     (name "r-novicedeveloperresources")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NoviceDeveloperResources" version))
        (sha256
-        (base32 "0gflyws6p868nwjq8wq523mn3k75220ihwp067ckgf805qsq6znb"))))
+        (base32 "0m77n3xqwfy00mcl490cih4rp00wa7c8wyc6qanp0r11smzrahgf"))))
     (properties `((upstream-name . "NoviceDeveloperResources")))
     (build-system r-build-system)
     (propagated-inputs (list r-devtools))
@@ -5086,13 +5112,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnlib2Rcpp" version))
        (sha256
-        (base32 "02vjfidbpkd38zsikd63wkx091rm481js3a7pgryv768ddia728g"))))
+        (base32 "1v258vgj4bwa6dq0nybm5qpsiphi0lbmfxxdp6xn1c9jb6w9myqh"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5317,13 +5343,13 @@ patterns).  Ludwig & Reynolds (1988, ISBN:0471832359).")
 (define-public r-nn2poly
   (package
     (name "r-nn2poly")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nn2poly" version))
        (sha256
-        (base32 "125x5wq0x9bk5q57xwz86hfr7lcnk94dvwsfld2zkxyqj0fs78c8"))))
+        (base32 "03p3asvx1913lkmi6f1bq71wxm83qc0lbniv4s9s9fcv13md3xml"))))
     (properties `((upstream-name . "nn2poly")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pracma r-matrixstats
@@ -6794,13 +6820,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "0bpb9pxdjpwg3kqldbmw8vlq2w843dgyv0q13265kbcpwqhqmnma"))))
+        (base32 "0w6y80ih5fj9s0in46wgdwfy479pnv4r8k5l722kzkn70wr14gx6"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgxr
@@ -6849,13 +6875,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "1sxbkqwhj6lg49c3ah4kylvak1lgj2was6mqsh82klvp72fd61fd"))))
+        (base32 "154i98p0zavl5jl7rrincxrchrzd52454ma2jd2cjxhns7nwz3c5"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -6865,6 +6891,7 @@ composition and modification functions to make model updates easier.")
                              r-nlmixr2est
                              r-nlme
                              r-lotri
+                             r-knitr
                              r-ggtext
                              r-ggplot2
                              r-digest
@@ -6889,13 +6916,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1a56h5d1914kkh6sxcbvv2rp7s6zf0k8680l02g7ncngab1yxszm"))))
+        (base32 "0k279z2lm0dw5pkjj9s8dwg4wisbc29s5xff8hwafdiq0jnxngr4"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -6933,13 +6960,13 @@ C code provided in the rxode2 package (Wang, Hallow, and James 2015
 (define-public r-nlmixr2data
   (package
     (name "r-nlmixr2data")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2data" version))
        (sha256
-        (base32 "1szf14wda6gagp32qm3w7dv5yyk91vs105q69b29x6nc6zi1zkxv"))))
+        (base32 "0m1ymsx509zs6w9h92q9h8xyrbv4y7vhdcvfnvw1j4z0055592wg"))))
     (properties `((upstream-name . "nlmixr2data")))
     (build-system r-build-system)
     (home-page "https://nlmixr2.github.io/nlmixr2data/")
@@ -6956,13 +6983,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "0hd2bqwc7p5wl1akpii86nsxz14kq8a358aqm8vm7k8a1isg3dq8"))))
+        (base32 "1br3q49ikx50brca5n6y7kmzxzjjl767hy3gg6as6y9khsaclazc"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -7684,13 +7711,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "0f2jshyvs40284bhv837aziw7k3f6yfh7kkrcyh8vyabmy6yfzqh"))))
+        (base32 "16f1ljp6kiirc8kihib4d076k7czjhlh4bavrlhi1nllaf6q5p8b"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-pracma r-numderiv r-igraph r-coda))
@@ -7702,16 +7729,17 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 largely compatible with BUGS and JAGS', writing @code{nimbleFunctions} to
 operate models and do basic R-style math, and compiling both models and
 @code{nimbleFunctions} via custom-generated C++.  NIMBLE includes default
-methods for MCMC, Monte Carlo Expectation Maximization, and some other tools.
-The @code{nimbleFunction} system makes it easy to do things like implement new
-MCMC samplers from R, customize the assignment of samplers to different parts of
-a model from R, and compile the new samplers automatically via C++ alongside the
-samplers NIMBLE provides.  NIMBLE extends the BUGS'/'JAGS language by making it
-extensible: New distributions and functions can be added, including as calls to
-external compiled code.  Although most people think of MCMC as the main goal of
-the BUGS'/'JAGS language for writing models, one can use NIMBLE for writing
-arbitrary other kinds of model-generic algorithms as well.  A full User Manual
-is available at <https://r-nimble.org>.")
+methods for MCMC, Laplace Approximation, Monte Carlo Expectation Maximization,
+and some other tools.  The @code{nimbleFunction} system makes it easy to do
+things like implement new MCMC samplers from R, customize the assignment of
+samplers to different parts of a model from R, and compile the new samplers
+automatically via C++ alongside the samplers NIMBLE provides.  NIMBLE extends
+the BUGS'/'JAGS language by making it extensible: New distributions and
+functions can be added, including as calls to external compiled code.  Although
+most people think of MCMC as the main goal of the BUGS'/'JAGS language for
+writing models, one can use NIMBLE for writing arbitrary other kinds of
+model-generic algorithms as well.  A full User Manual is available at
+<https://r-nimble.org>.")
     (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimaa
@@ -12766,13 +12794,13 @@ dynamic visualizations.")
 (define-public r-neat
   (package
     (name "r-neat")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neat" version))
        (sha256
-        (base32 "0mdv47l50wzxnjfk1sway7gzpkyf57svqip16fqn0hrc1fsrifbn"))))
+        (base32 "0sqzkl75wdj6bha341lkndl35fccj2bk41a9nl9bm9d17lvyyp3r"))))
     (properties `((upstream-name . "neat")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -13450,13 +13478,13 @@ or output).  A quick start guide for using this package can be found here:
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2023.8.24")
+    (version "2024.1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "158vn3ivypx6gpbx1mpz1kw7lv9ifk76k1hcz4zv84jss2a1q135"))))
+        (base32 "0g0qw40dh0njg0mn5wdxk0ncicpj287zxmmsq67q326m7hc3j1yg"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -13501,13 +13529,13 @@ we refer the reader to the paper Gomtsyan (2023), <@code{arXiv:2307.00929>}.")
 (define-public r-nbtransmission
   (package
     (name "r-nbtransmission")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nbTransmission" version))
        (sha256
-        (base32 "1pyyaydjnk48qvjbdiw5zs5hzx58d33f01z7vafa6w9xjpx2z8cd"))))
+        (base32 "0ij7c6r4l1f2yq5qqyd3hirkhhzy45h0vhd0b3fh6idmww47dich"))))
     (properties `((upstream-name . "nbTransmission")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14785,13 +14813,13 @@ signalled by concurrent threads.")
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.3.0.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoarrow" version))
        (sha256
-        (base32 "015p7nz3rz1yqdyhg4afy8waimnyj9pgzbyhgrszsdwch7nqn8c6"))))
+        (base32 "0zwa54iah6wdv9nblmnhh2dk7vl0irs2184nlkcv7r2bhqc92nqc"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://github.com/apache/arrow-nanoarrow")

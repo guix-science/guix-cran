@@ -2743,6 +2743,26 @@ designed to be a companion to the macro-enabled Excel template available on the
 @code{GitHub} site, but works with any similarly-formatted Excel data.")
     (license license:expat)))
 
+(define-public r-excel2eprime
+  (package
+    (name "r-excel2eprime")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "excel2eprime" version))
+       (sha256
+        (base32 "179ijsdnq9cas4ps0zx9vaj3cc7xb13rwz0h0sm4wpx1cc2xi0b0"))))
+    (properties `((upstream-name . "excel2eprime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-stringr r-readxl r-magrittr r-dplyr))
+    (home-page "https://github.com/wujackwill/excel2eprime")
+    (synopsis "Split Sentences by Factors")
+    (description
+     "Split experiment sentences by different experiment design given by the user and
+the result can be used in E-prime (<https://pstnet.com/products/e-prime/>).")
+    (license license:expat)))
+
 (define-public r-excel-link
   (package
     (name "r-excel-link")
@@ -8117,13 +8137,13 @@ polynomials).")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.1")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1flm66xyq5pa306zc5jpnqnq19d0npzh1a8shg201aqyg9f996jg"))))
+        (base32 "1bra1jbayjdpr663lacmgj8yik670y82wi3zmc0iy5vz9hssjfwi"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8138,16 +8158,17 @@ components: health state description and evaluation.  For the description
 component a subject self-rates their health in terms of five dimensions;
 mobility, self-care, usual activities, pain/discomfort, and anxiety/depression
 using either a three-level (EQ-5D-3L,
-<https://euroqol.org/eq-5d-instruments/eq-5d-3l-about/>) or a five-level
-(EQ-5D-5L, <https://euroqol.org/eq-5d-instruments/eq-5d-5l-about/>) scale.
-Frequently the scores on these five dimensions are converted to a single utility
-index using country specific value sets, which can be used in the clinical and
-economic evaluation of health care as well as in population health surveys.  The
-eq5d package provides methods to calculate index scores from a subject's
-dimension scores.  30 TTO and 11 VAS EQ-5D-3L value sets including those for
-countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and Szende et al
-(2014) <doi:10.1007/978-94-007-7596-1>, 40 EQ-5D-5L EQ-VT value sets, the
-EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
+<https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-3l/>) or
+a five-level (EQ-5D-5L,
+<https://euroqol.org/information-and-support/euroqol-instruments/eq-5d-5l/>)
+scale.  Frequently the scores on these five dimensions are converted to a single
+utility index using country specific value sets, which can be used in the
+clinical and economic evaluation of health care as well as in population health
+surveys.  The eq5d package provides methods to calculate index scores from a
+subject's dimension scores.  30 TTO and 11 VAS EQ-5D-3L value sets including
+those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 40 EQ-5D-5L EQ-VT value
+sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
 <doi:10.1016/j.jval.2012.02.008>, the crosswalk value set for Russia and reverse
 crosswalk value sets.  Nine EQ-5D-Y value sets are also included as are the NICE
 DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.
@@ -10466,6 +10487,30 @@ obtain simplified information about function calling chains and to get an
 object's memory address.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-enviropra2
+  (package
+    (name "r-enviropra2")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EnviroPRA2" version))
+       (sha256
+        (base32 "0r73l4f221ryyh2nfp0whcmhq06rzim447lqa56rmv00hcsmda52"))))
+    (properties `((upstream-name . "EnviroPRA2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist r-mass r-ksamples r-fitdistrplus))
+    (home-page "https://cran.r-project.org/package=EnviroPRA2")
+    (synopsis "Environmental Probabilistic Risk Assessment Tools")
+    (description
+     "It contains functions for dose calculation for different routes, fitting data to
+probability distributions, random number generation (Monte Carlo simulation) and
+calculation of systemic and carcinogenic risks.  For more information see the
+publication: Barrio-Parra et al. (2019) \"Human-health probabilistic risk
+assessment: the role of exposure factors in an urban garden scenario\"
+<doi:10.1016/j.landurbplan.2019.02.005>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-enviropra
   (package
     (name "r-enviropra")
@@ -10630,13 +10675,13 @@ using kernel density estimation can be found in J. F. Bithell (1991)
 (define-public r-enveomics-r
   (package
     (name "r-enveomics-r")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enveomics.R" version))
        (sha256
-        (base32 "16c6w3nhv53yp72w8hss3s1lhhlbaiylcvkc93a83zzcpx37i23b"))))
+        (base32 "1vw7pb5m13swwxql2c7raygs7rr5nrxbs93alhbv9bbmd01ga5zv"))))
     (properties `((upstream-name . "enveomics.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn r-investr r-fitdistrplus))
@@ -20758,47 +20803,6 @@ points are located and click points on/off to easily label them.  Labels can be
 dragged around the plot to place them optimally.  Plots can be exported directly
 to PDF for publication.")
     (license license:expat)))
-
-(define-public r-easydifferentialgenecoexpression
-  (package
-    (name "r-easydifferentialgenecoexpression")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easyDifferentialGeneCoexpression" version))
-       (sha256
-        (base32 "1dzm01hscq8dyb2kpra3bh9hfh6pjwvxbf4dip18sjgsl8vn058r"))))
-    (properties `((upstream-name . "easyDifferentialGeneCoexpression")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringi
-                             r-r-utils
-                             r-magrittr
-                             r-limma
-                             r-jetset
-                             r-geoquery
-                             r-geneexpressionfromgeo
-                             r-biobase
-                             r-annotate))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/davidechicco/easyDifferentialGeneCoexpression")
-    (synopsis "Easily Performs Differential Coexpression Analysis")
-    (description
-     "This package provides a function that reads in the GEO code of a list of
-probesets or gene symbols, a gene expression dataset GEO accession code, the
-name of the dataset feature discriminating the two conditions for the
-differential coexpression, and the values of the two different conditions for
-the differential coexpression, and returns the significant pairs of
-genes/probesets with highest differential coexpression (p-value < 0.005).  If
-the input gene list is made of gene symbols, this package associates the
-probesets to these gene symbols, if found.  Platforms available: GPL80, GPL8300,
-GPL80, GPL96, GPL570, GPL571, GPL20115, GPL1293, GPL6102, GPL6104, GPL6883,
-GPL6884, GPL13497, GPL14550, GPL17077, GPL6480.  GEO: Gene Expression Omnibus.
-ID: identifier code.  The GEO datasets are downloaded from the URL
-<https://ftp.ncbi.nlm.nih.gov/geo/series/>.")
-    (license license:gpl3)))
 
 (define-public r-easydescribe
   (package

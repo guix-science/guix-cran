@@ -927,13 +927,13 @@ with the OTTR Template repository to create courses.")
 (define-public r-ottr
   (package
     (name "r-ottr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ottr" version))
        (sha256
-        (base32 "0wl1053xk94ra4y24cnwpixz8igj7c3qy05yhfcb5wkpkvj52k9s"))))
+        (base32 "1b1p957plsx09xfa4qwqk2bnib1hnbikrsdn2cll17b8pfwrp29k"))))
     (properties `((upstream-name . "ottr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-testthat r-r6 r-jsonlite))
@@ -2437,20 +2437,20 @@ obtained from short time-course or dose-response microarray experiments.")
 (define-public r-orgutils
   (package
     (name "r-orgutils")
-    (version "0.4-1")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orgutils" version))
        (sha256
-        (base32 "1yc3avhq3786his7nd60zfbzd9inkfrfz938r8378z59zbb1mzqq"))))
+        (base32 "1gvj82m67xmi0kwd883zmqgxnc621q30bgbnnszm5fnb3y2ni7d6"))))
     (properties `((upstream-name . "orgutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-textutils))
-    (home-page "https://cran.r-project.org/package=orgutils")
+    (home-page "http://enricoschumann.net/R/packages/orgutils/")
     (synopsis "Helper Functions for Org Files")
     (description
-     "Helper functions for Org files (<http://orgmode.org/>): a generic function
+     "Helper functions for Org files (<https://orgmode.org/>): a generic function
 @code{toOrg} for transforming R objects into Org markup (most useful for data
 frames; there are also methods for Dates/POSIXt) and a function to read Org
 tables into data frames.")
@@ -4158,13 +4158,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "0cy53qbfq2xzxmds0mlvdjrqlfz5i5shxpqc84ikpn28r6mllfpj"))))
+        (base32 "04mbvqb00xsyap6k2ycn0idzpq4175bayx54jyq3h0jf0p18s00s"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-testfunctions r-r6 r-oeli r-cli r-checkmate))
@@ -7848,13 +7848,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1p28cszj7rzbqvk5zdwddlindqmmyvc770m2rxwk9m6k241pvnqp"))))
+        (base32 "1wzk17n9lmi1kni1ks65hh8h36lyxp6nisgx1w8qqqdd1wislrhj"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

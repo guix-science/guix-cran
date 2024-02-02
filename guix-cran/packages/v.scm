@@ -129,13 +129,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "027fq4mh3ls9a8mb5lpr12dxncwmz1dl9p5ajv5ig2f18s9saq9z"))))
+        (base32 "0g3r1qlx2fqc89yxg2vxb57z5qvs14ykymw798srvygbigdlg4qr"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -2358,13 +2358,13 @@ computation of evaluation criteria.")
 (define-public r-visvow
   (package
     (name "r-visvow")
-    (version "1.3.10")
+    (version "1.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visvow" version))
        (sha256
-        (base32 "0c5gwc8p3kb36kcfswn7k6v8bvm2d9dw4hxd61gvq28s1j2f1492"))))
+        (base32 "1my0gvp63lri56hkqrs7xsr5i6ji9w17xm94mrrc9lgwy5sj3vf0"))))
     (properties `((upstream-name . "visvow")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -3133,6 +3133,43 @@ results of analysis in the ggplot2 style.")
 viruses, worms, trojans etc., provides category of the content hosted by a
 domain from a variety of prominent services, provides passive DNS information,
 among other things.  See <http://www.virustotal.com> for more information.")
+    (license license:expat)))
+
+(define-public r-viruslearner
+  (package
+    (name "r-viruslearner")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viruslearner" version))
+       (sha256
+        (base32 "1x8d3zs6dzl34y7lamkxsn7f9pxy5034yn2q79g3fwzmvvrnniy5"))))
+    (properties `((upstream-name . "viruslearner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflowsets
+                             r-workflows
+                             r-tune
+                             r-tidyselect
+                             r-stacks
+                             r-rsample
+                             r-recipes
+                             r-parsnip
+                             r-hardhat
+                             r-dplyr
+                             r-dials))
+    (home-page "https://github.com/juanv66x/viruslearner")
+    (synopsis "Ensemble Learning for HIV-Related Metrics")
+    (description
+     "Advanced statistical modeling techniques for ensemble learning, specifically
+tailored to the analysis of lymphocyte counts and viral load data in the context
+of HIV research.  Empowering researchers and practitioners, this tool provides a
+comprehensive solution for tasks such as analysis, prediction and risk
+calculation related to key viral metrics.  The package incorporates cutting-edge
+ensemble learning principles, inspired by model stacking techniques of Simon P.
+Couch and Max Kuhn (2022) <doi:10.21105/joss.04471> and adhering to tidy data
+principles, offering a robust and reproducible framework for HIV research.")
     (license license:expat)))
 
 (define-public r-virtuoso

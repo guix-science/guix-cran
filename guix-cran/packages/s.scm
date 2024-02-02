@@ -4881,6 +4881,33 @@ observed up to a selected landmark time, and (3) IV.event() which calculates the
 incremental value of the surrogate outcome information.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-surrogatebma
+  (package
+    (name "r-surrogatebma")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurrogateBMA" version))
+       (sha256
+        (base32 "19q63rdrm4y03xmjmjqvsq8s1fx48jalxshzrdyzms9dacbshr0z"))))
+    (properties `((upstream-name . "SurrogateBMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsurrogate
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-mcmcpack))
+    (home-page "https://cran.r-project.org/package=SurrogateBMA")
+    (synopsis
+     "Flexible Evaluation of Surrogate Markers with Bayesian Model Averaging")
+    (description
+     "This package provides functions to estimate the proportion of treatment effect
+explained by the surrogate marker using a Bayesian Model Averaging approach.
+Duan and Parast (2023) <doi:10.1002/sim.9986>.")
+    (license license:gpl2+)))
+
 (define-public r-surrogate
   (package
     (name "r-surrogate")
@@ -5193,13 +5220,13 @@ CEs, and Aizaki (2012) <doi:10.18637/jss.v050.c02> for the package.")
 (define-public r-support-bws3
   (package
     (name "r-support-bws3")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "support.BWS3" version))
        (sha256
-        (base32 "012kcvscz7m2is92r71731zc7xnp7pwyx30vivwjazrigp9bq1kl"))))
+        (base32 "074h4c0c42mq6b7kkv1slwsjx0ig9i2mxqf1sqf90c6afsdkzmg3"))))
     (properties `((upstream-name . "support.BWS3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=support.BWS3")
@@ -6479,33 +6506,6 @@ subgroup specific time to event continual reassessment method.  Chapple, A.G.,
 Thall, P.F. (2018) <doi:10.1002/pst.1891>.")
     (license license:gpl2)))
 
-(define-public r-subtee
-  (package
-    (name "r-subtee")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "subtee" version))
-       (sha256
-        (base32 "090k3p1j9fj7qk121qb488vzfgzxnvqp7z60jhcyy8l47aazf5g0"))))
-    (properties `((upstream-name . "subtee")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-matrixstats r-mass r-httr r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=subtee")
-    (synopsis "Subgroup Treatment Effect Estimation in Clinical Trials")
-    (description
-     "Naive and adjusted treatment effect estimation for subgroups.  Model averaging
-(Bornkamp et.al, 2016 <doi:10.1002/pst.1796>) and bagging (Rosenkranz, 2016
-<doi:10.1002/bimj.201500147>) are proposed to address the problem of selection
-bias in treatment effect estimates for subgroups.  The package can be used for
-all commonly encountered type of outcomes in clinical trials (continuous,
-binary, survival, count).  Additional functions are provided to build the
-subgroup variables to be used and to plot the results using forest plots.  For
-details, see Ballarini et.al. (2021) <doi:10.18637/jss.v099.i14>.")
-    (license license:gpl2)))
-
 (define-public r-subspace
   (package
     (name "r-subspace")
@@ -7667,6 +7667,35 @@ related to the query and its graphical presentation.  The list includes the time
 series data as an xts object.  The package provides four lattice time series
 plots to render the time series data in a manner similar to the bank's own
 presentation.")
+    (license license:expat)))
+
+(define-public r-stressor
+  (package
+    (name "r-stressor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stressor" version))
+       (sha256
+        (base32 "0dr6i9p7zv8lz4l4c7l71c5l9kfabjlymalaa24dkkvqlzzrwvyx"))))
+    (properties `((upstream-name . "stressor")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=stressor")
+    (synopsis "Algorithms for Testing Models under Stress")
+    (description
+     "Traditional model evaluation metrics fail to capture model performance under
+less than ideal conditions.  This package employs techniques to evaluate models
+\"under-stress\".  This includes testing models extrapolation ability, or testing
+accuracy on specific sub-samples of the overall model space.  Details describing
+stress-testing methods in this package are provided in Haycock (2023)
+<doi:10.26076/2am5-9f67>.  The other primary contribution of this package is
+provided to R users access to the Python library @code{PyCaret}
+<https://pycaret.org/> for quick and easy access to auto-tuned machine learning
+models.")
     (license license:expat)))
 
 (define-public r-stressaddition
@@ -17192,13 +17221,13 @@ indices, but each function can also be run separately.  Allstadt et al. (2015)
 (define-public r-springer
   (package
     (name "r-springer")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "springer" version))
        (sha256
-        (base32 "13gg1xj84fkrkmyrw0h478qg8q2ig0axv1433n05fwy2mzp22yjp"))))
+        (base32 "0kb11yn9cl48kmni452knfyibi88gn1jc98m3cdbpqlfhflj4gm5"))))
     (properties `((upstream-name . "springer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
@@ -20628,13 +20657,13 @@ Clustering, see F. Mbuga and, C. Tortora (2022) <doi:10.3390/stats5010001>.")
 (define-public r-spectralanalysis
   (package
     (name "r-spectralanalysis")
-    (version "4.3.1")
+    (version "4.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spectralAnalysis" version))
        (sha256
-        (base32 "17d8b27v4d2557hgkk169xkvv4ffkkk7xr4h3wxb6rkvn2pzl9gi"))))
+        (base32 "0b2f992p7vpzhzncrvpdkifbgymyiqxz66yk6md3j39wmx3ijkjw"))))
     (properties `((upstream-name . "spectralAnalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22065,13 +22094,13 @@ transition (Genin et al. (2018) <doi:10.1111/2041-210X.13058>).")
 (define-public r-spatialvx
   (package
     (name "r-spatialvx")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialVx" version))
        (sha256
-        (base32 "06l2p3p24s08diq6g6301hk8fmc4wd43wc94a4jl31lq6zjihiwc"))))
+        (base32 "108mpxpk03gmak69fkd7snhls11hh31fwmva9kqh71rh5g3a47fw"))))
     (properties `((upstream-name . "SpatialVx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waveslim
@@ -27607,13 +27636,13 @@ pp.3723-3732 <doi:10.1002/sim.7900>.")
 (define-public r-snsfdatasets
   (package
     (name "r-snsfdatasets")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNSFdatasets" version))
        (sha256
-        (base32 "0wqx2xxgz97z9vlxkqla1zsmxxdcpc9byzbd0wjgfkvq0mr0vfaf"))))
+        (base32 "1jam5j2s9imfrfdc3w80v4j0gnb09jkpq41lhrz636xw1wm2cids"))))
     (properties `((upstream-name . "SNSFdatasets")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/SNSFdatasets/")
@@ -30285,13 +30314,13 @@ and other sources.")
 (define-public r-smarteda
   (package
     (name "r-smarteda")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmartEDA" version))
        (sha256
-        (base32 "0fmqi3kl20xdrnpbbsk22rrhj2xqckb777mcwdjgwxvc77r88bjf"))))
+        (base32 "05m96kp1ylbxslf9y9n063r807wz3wxf6whqmysb7bgyjpsnbzlb"))))
     (properties `((upstream-name . "SmartEDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -30730,13 +30759,13 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slr
   (package
     (name "r-slr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slr" version))
        (sha256
-        (base32 "0zn9zs0i07f8qf0sm4szcrh2y95syv9idmxm26ydnz998ljpjzdg"))))
+        (base32 "1pj23nxp5c12z37fssqc5vyyig9qsa7q4ziyygmj1gm7di313hdc"))))
     (properties `((upstream-name . "slr")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ibd r-gmp))
@@ -30748,7 +30777,7 @@ any cell size (preferably up to ten) with given number of treatments, see Uto,
 N.P. and Bailey, R.A. (2020). \"Balanced Semi-Latin rectangles: properties,
 existence and constructions for block size two\".  Journal of Statistical Theory
 and Practice, 14(3), 1-11, <doi:10.1007/s42519-020-00118-3>.  It also provides
-facility to generate partially balanced semi-Latin rectangles for cell size 2,3
+facility to generate partially balanced semi-Latin rectangles for cell size 2, 3
 and 4 for any number of treatments.")
     (license license:gpl2+)))
 
@@ -32101,6 +32130,35 @@ for the data obtained from block designs with missing observations occurring
 randomly.  A resulting p-value is based on the chi-squared distribution and
 Monte Carlo method.")
     (license license:gpl2+)))
+
+(define-public r-skfcpd
+  (package
+    (name "r-skfcpd")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SKFCPD" version))
+       (sha256
+        (base32 "0bqz6w2r423kpvbqs56nacyvj2ckw33rq83ynkzc7r0c5pincx6i"))))
+    (properties `((upstream-name . "SKFCPD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2
+                             r-fastgasp))
+    (home-page "https://cran.r-project.org/package=SKFCPD")
+    (synopsis
+     "Fast Online Changepoint Detection for Temporally Correlated Data")
+    (description
+     "Sequential Kalman filter for scalable online changepoint detection by temporally
+correlated data.  It enables fast single and multiple change points with missing
+values.  See the reference: Hanmo Li, Yuedong Wang, Mengyang Gu (2023),
+<@code{arXiv:2310.18611>}.")
+    (license license:gpl3+)))
 
 (define-public r-skewt
   (package
@@ -33578,13 +33636,13 @@ for a comprehensive characterization of breath samples.")
 (define-public r-sipdibge
   (package
     (name "r-sipdibge")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIPDIBGE" version))
        (sha256
-        (base32 "1s7mdw00sdmyf9ji9h1ix1mrkzm9v2nxxy2b36zcp76kpxyyxs5n"))))
+        (base32 "1scrr08fpyv2qk8yqccwbvzslxp0cjv3939kkcs3v577l6ywb414"))))
     (properties `((upstream-name . "SIPDIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -33592,6 +33650,7 @@ for a comprehensive characterization of breath samples.")
                              r-purrr
                              r-pnsibge
                              r-png
+                             r-pndsibge
                              r-pnadcibge
                              r-covidibge
                              r-cli))
@@ -33599,9 +33658,10 @@ for a comprehensive characterization of breath samples.")
     (synopsis "Collection of Household Survey Packages Conducted by IBGE")
     (description
      "This package provides access to packages developed for downloading, reading and
-analyzing microdata from household surveys conducted by Brazilian Institute of
-Geography and Statistics - IBGE. More information can be obtained from the
-official website <https://www.ibge.gov.br/>.")
+analyzing microdata from household surveys in Integrated System of Household
+Surveys - SIPD conducted by Brazilian Institute of Geography and Statistics -
+IBGE. More information can be obtained from the official website
+<https://www.ibge.gov.br/>.")
     (license license:gpl3)))
 
 (define-public r-sinib
@@ -40235,13 +40295,13 @@ amplification/melting plots with fast hiding and highlighting individual curves.
 (define-public r-shinymodels
   (package
     (name "r-shinymodels")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinymodels" version))
        (sha256
-        (base32 "177c8ksv17ywyrdyxfr872hc1ajr0l3b9ra8as9q36qcpzl24v7i"))))
+        (base32 "1ydj4ny94y77akbsq0asaz29s3hnkb237icbxsnrh18z2wnyhhll"))))
     (properties `((upstream-name . "shinymodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -43967,13 +44027,13 @@ Millions of Observations\".")
 (define-public r-sgd
   (package
     (name "r-sgd")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgd" version))
        (sha256
-        (base32 "055khw3jr7kr8la3jpzq1q25gk0qcclkv7g0q1sylhyqq2qdriwb"))))
+        (base32 "0spcv9dysl2vlgrpjxicai9nkg7hylf2wci45pjpl8jph6yj8c70"))))
     (properties `((upstream-name . "sgd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -49485,13 +49545,13 @@ specified during encryption.")
 (define-public r-secretbase
   (package
     (name "r-secretbase")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secretbase" version))
        (sha256
-        (base32 "0pn8v3ic5lmliq0783j9c3n5csb4768665jw02m92mpvjca0cgh2"))))
+        (base32 "1z0ddzdimma8rgd47fn5mma09d5c7vrl5b7gdlvfk8l047yihyb6"))))
     (properties `((upstream-name . "secretbase")))
     (build-system r-build-system)
     (home-page "https://shikokuchuo.net/secretbase/")
@@ -55244,13 +55304,13 @@ topic, see the paper by Minsker (2015) <doi:10.3150/14-BEJ645>.")
 (define-public r-sbm
   (package
     (name "r-sbm")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbm" version))
        (sha256
-        (base32 "0asqdf9431cqznlnsaysh8nws0ryl6drb8qx52cbqfc9846yr8ms"))))
+        (base32 "1cnf4d5xrfsvsy56sh4nz83j82j8yp09hlnvddfgi15zf4md7glx"))))
     (properties `((upstream-name . "sbm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -640,13 +640,13 @@ Memorial Medal'.  Users can provide recipients of other prizes.")
 (define-public r-pwexp
   (package
     (name "r-pwexp")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWEXP" version))
        (sha256
-        (base32 "0nxnshm8mfd2wcgjg8dgjsnnragb3v0xy1nwfi0vnywsp408822r"))))
+        (base32 "0ci09pbnm4f5gqlcq0frzgig71djjmkxv5y3i8ww8ns2mh43qwbb"))))
     (properties `((upstream-name . "PWEXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch
@@ -7201,13 +7201,13 @@ as at <https://analyticmodels.shinyapps.io/@code{BayesShiny/>}.")
 (define-public r-probsamplingi
   (package
     (name "r-probsamplingi")
-    (version "0.1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbSamplingI" version))
        (sha256
-        (base32 "1s72jvzayrscn5k43gwip28lax4k24b6piy1wmwvkmpf2xx57wiv"))))
+        (base32 "0hmrl7p89rrzjhxrv088yhs8yqw32iwjnfplpcrm67gmmsj87cj3"))))
     (properties `((upstream-name . "ProbSamplingI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ProbSamplingI")
@@ -10261,13 +10261,13 @@ on the work of Rothman and Greenland (2018).")
 (define-public r-precipe
   (package
     (name "r-precipe")
-    (version "3.0.1-2")
+    (version "3.0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pRecipe" version))
        (sha256
-        (base32 "13i8mk7d5zxmym13hbgx60085jcx4rnp9qk2yypbra587p66mdg2"))))
+        (base32 "0mwv2xrxp4iws19dwph713xqnkgq3fnwfq1vmw68934qacyjmk79"))))
     (properties `((upstream-name . "pRecipe")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -11172,13 +11172,13 @@ individual level data, the other is PMR_summary() for summary data.")
 (define-public r-ppmlasso
   (package
     (name "r-ppmlasso")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppmlasso" version))
        (sha256
-        (base32 "1kqqb7wxqdmymfn4hkdmqakj3n64bbg2acf671asm2civ94rmc1m"))))
+        (base32 "082f5ij43iyfw1i864va4cdklfnv5zs4i21f1kcai2dlcqs5kc0v"))))
     (properties `((upstream-name . "ppmlasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-model
@@ -16622,13 +16622,13 @@ Knight and Harper (2013) <doi:10.1016/j.ejor.2013.04.003> for more information."
 (define-public r-pnsibge
   (package
     (name "r-pnsibge")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNSIBGE" version))
        (sha256
-        (base32 "1v7i9666613avz0p4ydlwizrwh11mqw7l9dg0sbg44ialr3wza4d"))))
+        (base32 "19p8gky9ilcz8bw4hk16bprykghjvl0vhlhy37kq01lsz3hxvpaj"))))
     (properties `((upstream-name . "PNSIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -16644,9 +16644,9 @@ Knight and Harper (2013) <doi:10.1016/j.ejor.2013.04.003> for more information."
     (home-page "https://cran.r-project.org/package=PNSIBGE")
     (synopsis "Downloading, Reading and Analyzing PNS Microdata")
     (description
-     "This package provides tools for downloading, reading and analyzing the PNS, a
-household survey from Brazilian Institute of Geography and Statistics - IBGE.
-The data must be downloaded from the official website
+     "This package provides tools for downloading, reading and analyzing the National
+Survey of Health - PNS, a household survey from Brazilian Institute of Geography
+and Statistics - IBGE. The data must be downloaded from the official website
 <https://www.ibge.gov.br/>.  Further analysis must be made using package
 survey'.")
     (license license:gpl3)))
@@ -16654,13 +16654,13 @@ survey'.")
 (define-public r-pndsibge
   (package
     (name "r-pndsibge")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNDSIBGE" version))
        (sha256
-        (base32 "1v2mvq1ks2lwhr8wqa9sp1lxpvsaiibh01y6zc617zmgscrhwi4k"))))
+        (base32 "16shzhxp9vmlimp3r94ff652ca0ap7skb7iga6saynhnlk2fbm6b"))))
     (properties `((upstream-name . "PNDSIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -16677,11 +16677,11 @@ survey'.")
     (synopsis
      "Downloading, Reading and Analyzing PNDS Microdata - Package in Development")
     (description
-     "This package provides tools for downloading, reading and analyzing the PNDS, a
-household survey from Brazilian Institute of Geography and Statistics - IBGE.
-The data must be downloaded from the official website
-<https://www.ibge.gov.br/>.  Further analysis must be made using package
-survey'.")
+     "This package provides tools for downloading, reading and analyzing the National
+Survey of Demographic and Health - PNDS, a household survey from Brazilian
+Institute of Geography and Statistics - IBGE. The data must be downloaded from
+the official website <https://www.ibge.gov.br/>.  Further analysis must be made
+using package survey'.")
     (license license:gpl3)))
 
 (define-public r-pnar
@@ -16720,13 +16720,13 @@ series. <@code{arXiv:2211.02582>}.")
 (define-public r-pnadcibge
   (package
     (name "r-pnadcibge")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNADcIBGE" version))
        (sha256
-        (base32 "0x23dffl7mjbqqddzby63lcglbh7l07igwlfjwb5lp64fw6lhmai"))))
+        (base32 "1pj482lanhkw389f9dwdh5h24icdcrqhnsadbbbidcaij02yraym"))))
     (properties `((upstream-name . "PNADcIBGE")))
     (build-system r-build-system)
     (propagated-inputs (list r-timedate
@@ -16742,11 +16742,11 @@ series. <@code{arXiv:2211.02582>}.")
     (home-page "https://cran.r-project.org/package=PNADcIBGE")
     (synopsis "Downloading, Reading and Analyzing PNADC Microdata")
     (description
-     "This package provides tools for downloading, reading and analyzing the PNADC, a
-household survey from Brazilian Institute of Geography and Statistics - IBGE.
-The data must be downloaded from the official website
-<https://www.ibge.gov.br/>.  Further analysis must be made using package
-survey'.")
+     "This package provides tools for downloading, reading and analyzing the
+Continuous National Household Sample Survey - PNADC, a household survey from
+Brazilian Institute of Geography and Statistics - IBGE. The data must be
+downloaded from the official website <https://www.ibge.gov.br/>.  Further
+analysis must be made using package survey'.")
     (license license:gpl3)))
 
 (define-public r-pmxtools
@@ -16881,22 +16881,18 @@ returns, analysing trades, handling lists of transactions, reporting, and more."
 (define-public r-pmwg
   (package
     (name "r-pmwg")
-    (version "0.2.0")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmwg" version))
        (sha256
-        (base32 "1f1r66ml24ys7nx5558c189a4gcaqkr16y87dmi4ravick9l5yfi"))))
+        (base32 "17q2w48bgk7m4jp5567ig0gvvcz14rswf36q8561ykd0kyaxq2vj"))))
     (properties `((upstream-name . "pmwg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm
-                             r-mcmcpack
-                             r-mass
-                             r-condmvnorm
-                             r-coda
-                             r-checkmate))
-    (home-page "https://github.com/newcastlecl/pmwg")
+    (propagated-inputs (list r-mvtnorm r-mass r-condmvnorm r-coda r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/university-of-newcastle-research/pmwg")
     (synopsis "Particle Metropolis Within Gibbs")
     (description
      "This package provides an R implementation of the Particle Metropolis within
@@ -16904,7 +16900,8 @@ Gibbs sampler for model parameter, covariance matrix and random effect
 estimation.  A more general implementation of the sampler based on the paper by
 Gunawan, D., Hawkins, G. E., Tran, M. N., Kohn, R., & Brown, S. D. (2020)
 <doi:10.1016/j.jmp.2020.102368>.  An HTML tutorial document describing the
-package is available at <https://newcastlecl.github.io/@code{samplerDoc/>} and
+package is available at
+<https://university-of-newcastle-research.github.io/@code{samplerDoc/>} and
 includes several detailed examples, some background and troubleshooting steps.")
     (license license:gpl3)))
 
@@ -22461,13 +22458,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosem" version))
        (sha256
-        (base32 "1cpnq6jdf03ssb3yslb4jk29h0s0yi2wqzgrw9sinm9rr1n7x5zi"))))
+        (base32 "13yyvja5ayznbk751l0al2j0d7jpbv0jfkqrsfw73913r0b6w6kb"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -22680,13 +22677,13 @@ phylogenetically based analyses using GLS.")
 (define-public r-phylogeneticem
   (package
     (name "r-phylogeneticem")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhylogeneticEM" version))
        (sha256
-        (base32 "0a02m128hg55q50y6x11lw6yrmll2mzc2aa5byc8j2m492f769n5"))))
+        (base32 "1yxg13jm6jhciip76wh9936d10hxhjqdvlj15f249jzn7vfs6pyx"))))
     (properties `((upstream-name . "PhylogeneticEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -27420,13 +27417,13 @@ Signorelli (2023) <doi:10.48550/@code{arXiv.2309.15600>}.")
 (define-public r-penaltylearning
   (package
     (name "r-penaltylearning")
-    (version "2023.8.31")
+    (version "2024.1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penaltyLearning" version))
        (sha256
-        (base32 "1akajydxzq03pvhmgr3zr69wz6skfgf893dc8krm2aqcdn5b4i9a"))))
+        (base32 "0nvh5szn27dsvdr80ldgq9d2bqvfplp4hdcwgv5f6g2lfcsmiil8"))))
     (properties `((upstream-name . "penaltyLearning")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -33123,13 +33120,13 @@ another.")
 (define-public r-parcr
   (package
     (name "r-parcr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcr" version))
        (sha256
-        (base32 "17yy3h64rh52g4357l9k4y1ajvlbvgh55g6f3n733fq1921kc4kk"))))
+        (base32 "10ww3m0nhs5lx4bf34iyb00w3pdik3z3lmp843lz87nqwnh5farc"))))
     (properties `((upstream-name . "parcr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
