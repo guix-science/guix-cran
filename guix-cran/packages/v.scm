@@ -3959,13 +3959,13 @@ bcdata R package <doi:10.21105/joss.02927>.")
 (define-public r-vici
   (package
     (name "r-vici")
-    (version "0.7.0")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vici" version))
        (sha256
-        (base32 "0fwqp5avnsyi07b9zw26qw30vkya28mlc3v1anhf6zq7hc7mgp54"))))
+        (base32 "0gghmn7bs4wr2r24s794ljvz2r3qv0clvgj54b6hxmgn1b48bxg0"))))
     (properties `((upstream-name . "vici")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

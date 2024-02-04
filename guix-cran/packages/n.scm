@@ -8261,6 +8261,32 @@ functions, and an additional dataset is provided for running example with the
 dedicated SCAN function.")
     (license license:gpl2)))
 
+(define-public r-nhppp
+  (package
+    (name "r-nhppp")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nhppp" version))
+       (sha256
+        (base32 "07arj7i9d51b7v0wk7dpvgy09rzyd3infybhj3x4ipcgp5zh18kj"))))
+    (properties `((upstream-name . "nhppp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstream r-lifecycle))
+    (home-page "https://github.com/bladder-ca/nhppp-fast")
+    (synopsis "Simulating Nonhomogeneous Poisson Point Processes")
+    (description
+     "Simulates events from one dimensional nonhomogeneous Poisson point processes
+(NHPPPs).  Functions are based on three algorithms that provably sample from a
+target NHPPP: the time-transformation of a homogeneous Poisson process (of
+intensity one) via the inverse of the integrated intensity function (Cinlar E,
+\"Theory of stochastic processes\" (1975, ISBN:0486497996)); the generation of a
+Poisson number of order statistics from a fixed density function; and the
+thinning of a majorizing NHPPP via an acceptance-rejection scheme (Lewis PAW,
+Shedler, GS (1979) <doi:10.1002/nav.3800260304>).")
+    (license license:gpl3+)))
+
 (define-public r-nhpoisson
   (package
     (name "r-nhpoisson")
@@ -14525,13 +14551,13 @@ number of useful other related data sets.")
 (define-public r-nasapower
   (package
     (name "r-nasapower")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nasapower" version))
        (sha256
-        (base32 "175ih2z83gp54lxn6459bgqj2bgh87bvqn4sjsy19i5qlr9aphqw"))))
+        (base32 "1lrrpqjhq6s3bj905zkakri2l8igczchmvqp8lm5r93v1s8kbxyf"))))
     (properties `((upstream-name . "nasapower")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

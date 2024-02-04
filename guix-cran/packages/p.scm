@@ -9470,6 +9470,37 @@ These weights can be rank existing alternatives or to define a multi-objective
 utility function for optimization.")
     (license license:expat)))
 
+(define-public r-pref
+  (package
+    (name "r-pref")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pref" version))
+       (sha256
+        (base32 "1cxq5cdif2w4syb46vaa58jf06lw7hqqsn6isib5i28di096fp8g"))))
+    (properties `((upstream-name . "pref")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jpeg))
+    (home-page "https://github.com/denismollison/pref")
+    (synopsis "Preference Voting with Explanatory Graphics")
+    (description
+     "This package implements the Single Transferable Vote (STV) electoral system,
+with clear explanatory graphics.  The core function stv() uses Meek's method,
+the purest expression of the simple principles of STV, but which requires
+electronic counting.  It can handle votes expressing equal preferences for
+subsets of the candidates.  A function stv.wig() implementing the Weighted
+Inclusive Gregory method, as used in Scottish council elections, is also
+provided, and with the same options, as described in the manual.  The required
+vote data format is as an R list: a function pref.data() is provided to
+transform some commonly used data formats into this format.  References for
+methodology: Hill, Wichmann and Woodall (1987) <doi:10.1093/comjnl/30.3.277>,
+Hill, David (2006) <https://www.votingmatters.org.uk/ISSUE22/I22P2.pdf>,
+Mollison, Denis (2023) <@code{arXiv:2303.15310>}, (see also the package manual
+pref_pkg_manual.pdf).")
+    (license license:expat)))
+
 (define-public r-predtoolsts
   (package
     (name "r-predtoolsts")
@@ -16175,13 +16206,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "110il94xy36wiylfq7d3bh24508ca90j88c66k2a50x26y4n31y5"))))
+        (base32 "1279zjjzxfyqaqwz9qji58rr4gjniplfb9hyg7kfqx062nlac49a"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -18605,6 +18636,28 @@ graphic using base plot command if it is printed.")
 causal inference modeling process.  Supplements the @code{bartCause} package.")
     (license license:expat)))
 
+(define-public r-plot4fun
+  (package
+    (name "r-plot4fun")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plot4fun" version))
+       (sha256
+        (base32 "1al093spwww8wzgx3rh2v597c1zs8ajagl09ww1xw7r6wcz5b9hy"))))
+    (properties `((upstream-name . "plot4fun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-pcutils r-magrittr r-ggplot2))
+    (home-page "https://cran.r-project.org/package=plot4fun")
+    (synopsis "Just Plot for Fun")
+    (description
+     "Explore the world of R graphics with fun and interesting plot functions! Use
+make_LED() to create dynamic LED screens, draw interconnected rings with
+Olympic_rings(), and make festive Chinese couplets with chunlian().  Unleash
+your creativity and turn data into exciting visuals!")
+    (license license:gpl3)))
+
 (define-public r-plot3logit
   (package
     (name "r-plot3logit")
@@ -20635,16 +20688,16 @@ based on ggnetwork and plotd3 function produces an interactive D3 plot based on
 (define-public r-pkgfilecache
   (package
     (name "r-pkgfilecache")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgfilecache" version))
        (sha256
-        (base32 "1fr650yb4wjz6flq4f8p2p5bck5q4kkrhlhlwjn832payq9p4zsp"))))
+        (base32 "0nzikz51444s6fpr3yvzshs2wv4nja6v0a44i791i4djm1qkyibb"))))
     (properties `((upstream-name . "pkgfilecache")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rappdirs r-downloader))
+    (propagated-inputs (list r-rappdirs r-downloader r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dfsp-spirit/pkgfilecache")
     (synopsis "Download and Manage Optional Package Data")
@@ -30093,6 +30146,28 @@ right-censored, left-truncated, and interval-censored data.")
 variable groups, i.e., gene sets, with respect to the principal components of
 genomic data.")
     (license license:gpl2+)))
+
+(define-public r-pcgii
+  (package
+    (name "r-pcgii")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PCGII" version))
+       (sha256
+        (base32 "0bh37354qk2hj90f9l2908466bvwzjmxr70nyivhqkx2ffp5j42n"))))
+    (properties `((upstream-name . "PCGII")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-igraph r-glmnet r-dplyr r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://haowang47.github.io/PCGII/")
+    (synopsis "Partial Correlation Graph with Information Incorporation")
+    (description
+     "Large-scale gene expression studies allow gene network construction to uncover
+associations among genes.  This package is developed for estimating and testing
+partial correlation graphs with prior information incorporated.")
+    (license license:expat)))
 
 (define-public r-pcgen
   (package

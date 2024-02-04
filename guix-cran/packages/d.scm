@@ -914,13 +914,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.4.5")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "0zvhcws7sgxmiamf09rm4la20b1q1grmxbz2qbgb15ycncwn9a8h"))))
+        (base32 "0azbknsxca7cgwvlnayfm5xdwa84swjd864i4c5lsmv5qnsshm6w"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3465,13 +3465,13 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "1nc1pb4k1zf9zyz1l72wi37s8r4p42v792jsybpx520nn32ybcjb"))))
+        (base32 "1xrb19c68m0qn0bzyqr4d6bflkzg3cjfck580idxzmd8ymdjrdrq"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
@@ -13699,6 +13699,50 @@ Purchase as the attributes.  The function returns a data frame with RFM data for
 the sales information.")
     (license license:gpl2)))
 
+(define-public r-didmultiplegt
+  (package
+    (name "r-didmultiplegt")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIDmultiplegt" version))
+       (sha256
+        (base32 "1r5ydh5y17spdlp0g8cdr0sqd0dh97nm55hbz5779iw8v8kmp90j"))))
+    (properties `((upstream-name . "DIDmultiplegt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wooldridge
+                             r-stringr
+                             r-sampling
+                             r-plotrix
+                             r-fixest
+                             r-dplyr
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=DIDmultiplegt")
+    (synopsis "Estimation in DID with Multiple Groups and Periods")
+    (description
+     "Estimate the effect of a treatment on an outcome in sharp
+Difference-in-Difference designs with multiple groups and periods.  It computes
+the DIDM estimator introduced in Section 4 of \"Two-Way Fixed Effects Estimators
+with Heterogeneous Treatment Effects\" (Chaisemartin, D'Haultfoeuille (2020)
+<doi:10.1257/aer.20181169>), which generalizes the standard DID estimator with
+two groups, two periods and a binary treatment to situations with many
+groups,many periods and a potentially non-binary treatment.  For each pair of
+consecutive time periods t-1 and t and for each value of the treatment d, the
+package computes a DID estimator comparing the outcome evolution among the
+switchers, the groups whose treatment changes from d to some other value between
+t-1 and t, to the same evolution among control groups whose treatment is equal
+to d both in t-1 and t.  Then the DIDM estimator is equal to the average of
+those DIDs across all pairs of consecutive time periods and across all values of
+the treatment.  Under a parallel trends assumption, DIDM is an unbiased and
+consistent estimator of the average treatment effect among switchers, at the
+time period when they switch.  The package can also compute placebo estimators
+that can be used to test the parallel trends assumption.  Finally, in staggered
+adoption designs where each group's treatment is weakly increasing over time, it
+can compute estimators of switchers dynamic treatment effects, one time period
+or more after they have started receiving the treatment.")
+    (license license:expat)))
+
 (define-public r-didimputation
   (package
     (name "r-didimputation")
@@ -14335,13 +14379,13 @@ approach.")
 (define-public r-diagrammer
   (package
     (name "r-diagrammer")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiagrammeR" version))
        (sha256
-        (base32 "147q7zgwhd7vc0l134sqkkf6n6s6bznxvcmsrdx2f5df12bsixkj"))))
+        (base32 "1py4yii88lsyj8y71d2v0rb9lk5hvhfh0q8n2q4288wqw7bf6wz8"))))
     (properties `((upstream-name . "DiagrammeR")))
     (build-system r-build-system)
     (arguments
@@ -14361,7 +14405,7 @@ approach.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-visnetwork
-                             r-viridis
+                             r-viridislite
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -14377,9 +14421,9 @@ approach.")
                              r-htmltools
                              r-glue
                              r-dplyr
-                             r-downloader))
+                             r-cli))
     (native-inputs (list esbuild))
-    (home-page "https://github.com/rich-iannone/DiagrammeR")
+    (home-page "https://rich-iannone.github.io/DiagrammeR/")
     (synopsis "Graph/Network Visualization")
     (description
      "Build graph/network structures using functions for stepwise addition and
@@ -16050,13 +16094,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.4-1")
+    (version "4.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devEMF" version))
        (sha256
-        (base32 "0jsi27ncxmgi1ijp21vxvc5fvqkc19dzjjp9w10vd5dqxj53mpxm"))))
+        (base32 "10gk60irfpflshzshl4vad1dynfj1hnyjycsnfa8bn0gq20ipj5x"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))
@@ -22681,13 +22725,13 @@ classification step.")
 (define-public r-dbarts
   (package
     (name "r-dbarts")
-    (version "0.9-25")
+    (version "0.9-26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbarts" version))
        (sha256
-        (base32 "0w6qh90jn1q9kkxfvh5vghma44l4i2f9apzyi2yr4z6ix8l859rr"))))
+        (base32 "1l751zj413xwn6qmvvdlrbx1h9vz0bvz81dqfnsn2xv47hrbp9dy"))))
     (properties `((upstream-name . "dbarts")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))

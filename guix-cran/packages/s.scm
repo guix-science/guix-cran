@@ -1170,6 +1170,47 @@ The main methods are vectorized by document, and scores for multiple documents
 are computed in parallel via @code{OpenMP}'.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
 
+(define-public r-swtools
+  (package
+    (name "r-swtools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SWTools" version))
+       (sha256
+        (base32 "10hj8y19s7bi4grchn574z26f42pi7mdls75bzmy8n81phk6482d"))))
+    (properties `((upstream-name . "SWTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-segmented
+                             r-rmarkdown
+                             r-rlang
+                             r-reshape2
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-hydrotsm
+                             r-httr
+                             r-ggplot2
+                             r-ggmap
+                             r-forcats
+                             r-dplyr))
+    (home-page "https://github.com/matt-s-gibbs/SWTools")
+    (synopsis "Helper Tools for Australian Hydrologists")
+    (description
+     "This package provides functions to speed up work flow for hydrological analysis.
+ Focused on Australian climate data (SILO climate data), hydrological models
+(@code{eWater} Source) and in particular South Australia
+(<https://water.data.sa.gov.au> hydrological data).")
+    (license license:gpl3)))
+
 (define-public r-swmprextension
   (package
     (name "r-swmprextension")
@@ -6813,6 +6854,36 @@ analysis based on subsets by incorporating gene-environment interactions into
 the testing procedure.")
     (license license:gpl3)))
 
+(define-public r-subgrpid
+  (package
+    (name "r-subgrpid")
+    (version "0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SubgrpID" version))
+       (sha256
+        (base32 "0x25n5gm1fl5s157g5a7jszy1rj16151r0jpf61vvsw0c9c58707"))))
+    (properties `((upstream-name . "SubgrpID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rpart
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=SubgrpID")
+    (synopsis "Patient Subgroup Identification for Clinical Drug Development")
+    (description
+     "Implementation of Sequential BATTing (bootstrapping and aggregating of
+thresholds from trees) for developing threshold-based multivariate
+(prognostic/predictive) biomarker signatures.  Variable selection is
+automatically built-in.  Final signatures are returned with interaction plots
+for predictive signatures.  Cross-validation performance evaluation and testing
+dataset results are also output.  Detail algorithms are described in Huang et al
+(2017) <doi:10.1002/sim.7236>.")
+    (license license:gpl2+)))
+
 (define-public r-subgroup
   (package
     (name "r-subgroup")
@@ -9327,6 +9398,29 @@ Reichert, P. and Schuwirth, N., A generic framework for deriving process
 stoichiometry in enviromental models, Environmental Modelling and Software 25,
 1241-1251, 2010 for more details.)")
     (license license:gpl2+)))
+
+(define-public r-stodom
+  (package
+    (name "r-stodom")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stodom" version))
+       (sha256
+        (base32 "065m94xp0qsh00f451a90g6dn8p9iksjqj5w7dzyjcbqxvmbadww"))))
+    (properties `((upstream-name . "stodom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-pracma r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=stodom")
+    (synopsis "Estimating Consistent Tests for Stochastic Dominance")
+    (description
+     "Stochastic dominance tests help ranking different distributions.  The package
+implements the consistent test for stochastic dominance by Barrett and Donald
+(2003) <doi:10.1111/1468-0262.00390>.  Specifically, it implements Barrett and
+Donald's Kolmogorov-Smirnov type tests for first- and second-order stochastic
+dominance based on bootstrapping 2 and 1.")
+    (license license:expat)))
 
 (define-public r-stocks
   (package
@@ -12029,16 +12123,17 @@ mixed model approach for QTL Mapping as described in Li et al.
 (define-public r-statgenibd
   (package
     (name "r-statgenibd")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenIBD" version))
        (sha256
-        (base32 "10avfpm8l2l0yflb979plnijb1gfpk9lsqrc5nri1gsfgqfv7v8p"))))
+        (base32 "1dw0riwycd59hcidnxczy61xib8if8m2hv6dni2qd6n2i99vfbpc"))))
     (properties `((upstream-name . "statgenIBD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
+                             r-statgengwas
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
@@ -18924,13 +19019,13 @@ Rcpp.  See Wang and Yan (2021) <doi:10.6339/21-JDS1020> for details.")
 (define-public r-splice
   (package
     (name "r-splice")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPLICE" version))
        (sha256
-        (base32 "0nsh89qjp9gl0pgsvvink9bf3lgrkdvwyyyplb45lh47gh8f53rj"))))
+        (base32 "1vzacbgb2z6b7cbcn6l5zjminl8gr5irzva0l8shq7g8cqggrvwm"))))
     (properties `((upstream-name . "SPLICE")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-synthetic r-lifecycle))
@@ -32379,13 +32474,13 @@ package for converting a photo into a sketch style image.
 (define-public r-sketch
   (package
     (name "r-sketch")
-    (version "1.1.19")
+    (version "1.1.20.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sketch" version))
        (sha256
-        (base32 "0dq5llbjnvpgzwwp14fqddmmrw6lsis23g21lx4glwmh23j4m1qp"))))
+        (base32 "03ssz4vwrcfcqs5lvnrkm7yqc8ir62kz3zp8aycgl88rw5qm9003"))))
     (properties `((upstream-name . "sketch")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -42934,13 +43029,13 @@ illustrate function usage.")
 (define-public r-sharp
   (package
     (name "r-sharp")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharp" version))
        (sha256
-        (base32 "0ql3pz5chnflzzrszpj6agyy5md2ykk4yl5biwlv2si64cil8mmq"))))
+        (base32 "0sa0l5bnglmbm4ykmna1z1b1janggpah8g29505n4pfabw0r4lpl"))))
     (properties `((upstream-name . "sharp")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -44659,6 +44754,41 @@ and share data pipelines through it's interface and visualizations.")
      "Customise Shiny disconnected screens as well as sanitize error messages to make
 them clearer and friendlier to the user.")
     (license license:expat)))
+
+(define-public r-sevenbridges2
+  (package
+    (name "r-sevenbridges2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sevenbridges2" version))
+       (sha256
+        (base32 "1z3sp85jvqzzf6szi2bz69wyp44spvc0r2gm81shak2fk5z8460f"))))
+    (properties `((upstream-name . "sevenbridges2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-desctools
+                             r-data-table
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.sevenbridges.com")
+    (synopsis "The 'Seven Bridges Platform' API Client")
+    (description
+     "R client and utilities for Seven Bridges Platform API, from Cancer Genomics
+Cloud to other Seven Bridges supported platforms.  API documentation is hosted
+publicly at <https://docs.sevenbridges.com/docs/the-api>.")
+    (license license:asl2.0)))
 
 (define-public r-settings
   (package
@@ -54973,13 +55103,13 @@ Python'.")
 (define-public r-sca
   (package
     (name "r-sca")
-    (version "0.9-1")
+    (version "0.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sca" version))
        (sha256
-        (base32 "051k2axp1d5mfldmskpd2vhksa32rdmvvy39rka52c4298csy8nx"))))
+        (base32 "037fm92wry9njwlyn7qvd34k4k5x5k1v6isvmkzicmxfk8y94a2h"))))
     (properties `((upstream-name . "sca")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sca")

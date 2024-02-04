@@ -7109,6 +7109,39 @@ predictor substitution and two-stage residual inclusion estimators explained by
 Terza et al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
     (license license:gpl3+)))
 
+(define-public r-onesamplelogranktest
+  (package
+    (name "r-onesamplelogranktest")
+    (version "0.9.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OneSampleLogRankTest" version))
+       (sha256
+        (base32 "1z09nmwp4v4rhr5aqx7k4dg9xvp9nm4djr2kbkivd7hph4fks0qs"))))
+    (properties `((upstream-name . "OneSampleLogRankTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OneSampleLogRankTest")
+    (synopsis "One-Sample Log-Rank Test")
+    (description
+     "The log-rank test is performed to assess the survival outcomes between two
+group.  When there is no proper control group or obtaining such data is
+cumbersome, one sample log-rank test can be applied.  This package performs one
+sample log-rank test as described in Finkelstein et al.
+(2003)<doi:10.1093/jnci/djt227> and variation of the test for small sample sizes
+which is detailed in FD Liddell (1984)<doi:10.1136/jech.38.1.85> paper.
+Visualization function in the package generates Kaplan-Meier Curve comparing
+survival curve of the general population against that of the population of
+interest.")
+    (license license:gpl3+)))
+
 (define-public r-oner
   (package
     (name "r-oner")

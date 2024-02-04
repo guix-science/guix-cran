@@ -15407,6 +15407,26 @@ package allows fitting and cross validation of linear regression and
 classification algorithms on grouped data.")
     (license license:gpl3)))
 
+(define-public r-tidyfast
+  (package
+    (name "r-tidyfast")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyfast" version))
+       (sha256
+        (base32 "0218avgj27mn47vdk5yf34ckkmywdz2mzarvlhxn5l0x7pf8zn68"))))
+    (properties `((upstream-name . "tidyfast")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table r-cpp11))
+    (home-page "https://cran.r-project.org/package=tidyfast")
+    (synopsis "Fast Tidying of Data")
+    (description
+     "Tidying functions built on data.table to provide quick and efficient data
+manipulation with minimal overhead.")
+    (license license:gpl3)))
+
 (define-public r-tidyestimate
   (package
     (name "r-tidyestimate")
@@ -19207,13 +19227,13 @@ versions without much extra effort when creating the document.")
 (define-public r-texcheckr
   (package
     (name "r-texcheckr")
-    (version "0.7.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TeXCheckR" version))
        (sha256
-        (base32 "0r85yhk3p4ibkzkbjm7j9zpryp1dhajbmaqyfwr4bv1zh29smrxa"))))
+        (base32 "0kkq14kanwpgpychww5kcmm3fg0q578n75hs5agbc7jw4i54xclz"))))
     (properties `((upstream-name . "TeXCheckR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24485,6 +24505,26 @@ reproducible analyses, TAF is designed to have no package dependencies.  TAF
 forms a base layer for the @code{icesTAF} package and other scientific
 applications.")
     (license license:gpl3)))
+
+(define-public r-tada
+  (package
+    (name "r-tada")
+    (version "2024.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tada" version))
+       (sha256
+        (base32 "112ib6qf55kshv7cgcrqjfxjh9x4877275am7k62c64a02vjvmh1"))))
+    (properties `((upstream-name . "tada")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-cli))
+    (home-page "https://github.com/tadascience/tada")
+    (synopsis "Supporting Tools for Tada Science")
+    (description
+     "Suite of tools to support the practice of tada science.  It includes an engaging
+package roulette that is designed to facilitate learning about new packages.")
+    (license license:expat)))
 
 (define-public r-tactile
   (package

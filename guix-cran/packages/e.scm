@@ -2027,13 +2027,13 @@ representative sample.")
 (define-public r-expectreg
   (package
     (name "r-expectreg")
-    (version "0.52")
+    (version "0.53")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expectreg" version))
        (sha256
-        (base32 "1cb2k3ndzxw9sd9znmmd0f2pfpa1lvvvm9vvj3z44b4vcb2lf9vl"))))
+        (base32 "0g5py2096dyrcnvgmmba6g796ky150xk63ny6h6ylmajqfcypm1a"))))
     (properties `((upstream-name . "expectreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -10937,6 +10937,31 @@ alpha.  Elastic Net @code{SearcheR} automates the simultaneous selection of both
 lambda and alpha.  Developed, in part, with support by NICHD R03 HD094912.")
     (license license:gpl2)))
 
+(define-public r-enshuman
+  (package
+    (name "r-enshuman")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "enshuman" version))
+       (sha256
+        (base32 "19jni9zcrlka41d6w7264b52nyakzy52ycsy5fk93x1wavjc5miy"))))
+    (properties `((upstream-name . "enshuman")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=enshuman")
+    (synopsis "Human Gene Annotation Data from 'Ensembl'")
+    (description
+     "Gene information from Ensembl genome builds GRCh38.p14 and GRCh37.p13 to use
+with the topr package.  The datasets were originally downloaded from
+<https://ftp.ensembl.org/pub/current/gtf/homo_sapiens/Homo_sapiens.GRCh38.111.gtf.gz>
+and
+<https://ftp.ensembl.org/pub/grch37/current/gtf/homo_sapiens/Homo_sapiens.GRCh37.87.gtf.gz>
+and converted into the format required by the topr package.  See
+<https://github.com/totajuliusd/topr?tab=readme-ov-file#how-to-use-topr-with-other-species-than-human>
+to see the required format.")
+    (license license:lgpl3+)))
+
 (define-public r-ensembletax
   (package
     (name "r-ensembletax")
@@ -15301,13 +15326,13 @@ Season (WRTDS).")
 (define-public r-egor
   (package
     (name "r-egor")
-    (version "1.23.3")
+    (version "1.24.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "egor" version))
        (sha256
-        (base32 "05y412qlrsrbr0r6bkac72pvvxkhsgapj9l46sr2485azvbyzl7n"))))
+        (base32 "1dsgkqib20abi4qr9kinsjf3fxad6ybvc22nxs28c10rqwivzzjc"))))
     (properties `((upstream-name . "egor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

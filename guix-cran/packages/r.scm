@@ -3987,16 +3987,17 @@ telegram channel analytics data.")
 (define-public r-rtg
   (package
     (name "r-rtg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTG" version))
        (sha256
-        (base32 "1wsas7wvyzbiw31iv0qazjmnxj7al84y5kpvglf1f0dd444y4hc0"))))
+        (base32 "1zg8ly42z7dy2b7iaggfc1wgf7hw2fsaj0ixbf5kw0gqmf7gxzss"))))
     (properties `((upstream-name . "rTG")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mgcv
+    (propagated-inputs (list r-minpack-lm
+                             r-mgcv
                              r-magrittr
                              r-knitr
                              r-ggplot2
@@ -4008,11 +4009,11 @@ telegram channel analytics data.")
      "This package provides methods for comparing different regression algorithms for
 describing the temporal dynamics of secondary tree growth (xylem and phloem).
 Users can compare the accuracy of the most common fitting methods usually used
-to analyse xylem and phloem data, i.e., Gompertz function and General Additive
-Models (GAMs); and an algorithm newly introduced to the field, i.e., Bayesian
-Regularised Neural Networks (brnn).  The core function of the package is
-XPSgrowth(), while the results can be interpreted using implemented generic S3
-methods, such as plot() and summary().")
+to analyse xylem and phloem data, i.e., Gompertz function, Double Gompertz
+function, General Additive Models (GAMs); and an algorithm newly introduced to
+the field, i.e., Bayesian Regularised Neural Networks (brnn).  The core function
+of the package is XPSgrowth(), while the results can be interpreted using
+implemented generic S3 methods, such as plot() and summary().")
     (license license:gpl3)))
 
 (define-public r-rtfa
@@ -7387,6 +7388,50 @@ rsatscan package provides functions for writing R data frames in
 @code{SaTScan'-readable} formats, for setting @code{SaTScan} parameters, for
 running @code{SaTScan} in the OS, and for reading the files that @code{SaTScan}
 creates.")
+    (license license:gpl3)))
+
+(define-public r-rsat
+  (package
+    (name "r-rsat")
+    (version "0.1.21")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsat" version))
+       (sha256
+        (base32 "1fi2xy9q49w77b0xgqqny8y5v53jxybdpysv0mw4nlfq0q8glvgx"))))
+    (properties `((upstream-name . "rsat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-xml
+                             r-tmap
+                             r-terra
+                             r-stars
+                             r-sp
+                             r-sf
+                             r-rvest
+                             r-rjson
+                             r-rdpack
+                             r-raster
+                             r-leaflet
+                             r-leafem
+                             r-httr
+                             r-fields
+                             r-curl
+                             r-calendr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rsat")
+    (synopsis "Dealing with Multiplatform Satellite Images")
+    (description
+     "Downloading, customizing, and processing time series of satellite images for a
+region of interest.  rsat functions allow a unified access to multispectral
+images from Landsat, MODIS and Sentinel repositories.  rsat also offers
+capabilities for customizing satellite images, such as tile mosaicking, image
+cropping and new variables computation.  Finally, rsat covers the processing,
+including cloud masking, compositing and gap-filling/smoothing time series of
+images (Militino et al., 2018 <doi:10.3390/rs10030398> and Militino et al., 2019
+<doi:10.1109/TGRS.2019.2904193>).")
     (license license:gpl3)))
 
 (define-public r-rsampling
@@ -15493,6 +15538,30 @@ are partially sampled and/or with missing values.")
 packages; is currently used by package @code{RobExtremes} only.")
     (license license:lgpl3)))
 
+(define-public r-robastbase
+  (package
+    (name "r-robastbase")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobAStBase" version))
+       (sha256
+        (base32 "16sl3nlb1cl3xyski05l0qhrl23w615sbdmvnnzxnkva6sppxqcx"))))
+    (properties `((upstream-name . "RobAStBase")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-rrcov
+                             r-randvar
+                             r-distrmod
+                             r-distrex
+                             r-distr))
+    (home-page "https://r-forge.r-project.org/projects/robast/")
+    (synopsis "Robust Asymptotic Statistics")
+    (description
+     "Base S4-classes and functions for robust asymptotic statistics.")
+    (license license:lgpl3)))
+
 (define-public r-roauth
   (package
     (name "r-roauth")
@@ -19215,13 +19284,13 @@ regarding homoscedastic framework.")
 (define-public r-rllama
   (package
     (name "r-rllama")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rllama" version))
        (sha256
-        (base32 "11r1s34z5ys9fwg19fl80qm2zycmb6i9sc1nmmb48ar2327ymx92"))))
+        (base32 "0waxh1di0ga9ya40n3gs9r12vwsb2nq9hd38nqcasy98y2x9p5b7"))))
     (properties `((upstream-name . "rllama")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr r-data-table))
@@ -20494,18 +20563,18 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJDemetra" version))
        (sha256
-        (base32 "168if9s8zwmfcaj3mw7r2ksk0ri12cxqxfljs5ficcnxrm65vfn6"))))
+        (base32 "1wwb7y153irkwraqis51ma3ygyp08h732vwcqph0zqp15ycn09pi"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
-    (home-page "https://github.com/jdemetra/rjdemetra")
+    (home-page "https://jdemetra.github.io/rjdemetra/")
     (synopsis "Interface to 'JDemetra+' Seasonal Adjustment Software")
     (description
      "Interface around JDemetra+ (<https://github.com/jdemetra/jdemetra-app>), the
@@ -23608,6 +23677,31 @@ was succeeded by spgrass6 for GRASS 6 (2006-2016) and rgrass7 for GRASS 7
 still permitting the use of GRASS 7'.")
     (license license:gpl2+)))
 
+(define-public r-rgraphspace
+  (package
+    (name "r-rgraphspace")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RGraphSpace" version))
+       (sha256
+        (base32 "122b60nvxayfijzk8v5z47w8b1v3pzz7mjj3fpczf64nmd4a7ind"))))
+    (properties `((upstream-name . "RGraphSpace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-igraph r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sysbiolab/RGraphSpace")
+    (synopsis
+     "Lightweight Package for Representing Large 'igraph' Objects in a Normalized Coordinate System")
+    (description
+     "Interface to integrate igraph and ggplot2 graphics within spatial maps.
+R@code{GraphSpace} implements new geometric objects using ggplot2 prototypes,
+customized for representing large igraph objects in a normalized coordinate
+system.  By scaling shapes and graph elements, R@code{GraphSpace} can provide a
+framework for layered visualizations.")
+    (license license:artistic2.0)))
+
 (define-public r-rgraphics
   (package
     (name "r-rgraphics")
@@ -23663,17 +23757,17 @@ formats and methods are described in @code{McKay}, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgplates" version))
        (sha256
-        (base32 "07yyd00lijzm1ym2zi4h74wm6d4lynm57k71g0za50fmch2jhqyp"))))
+        (base32 "1yrqx0m9va1izszpz6s2vd3hx5db9p4hsbj3i1ismd5pryb4xk1j"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
-    (home-page "https://adamkocsis.github.io/rgplates/")
+    (home-page "https://adamtkocsis.com/rgplates/")
     (synopsis
      "R Interface for the GPlates Web Service and Desktop Application")
     (description
@@ -27324,6 +27418,27 @@ is described by a URL and credentials.  This package proposes a Resource model
 with \"resolver\" and \"client\" classes to facilitate the access and the usage of
 the resources.")
     (license license:lgpl2.1+)))
+
+(define-public r-resmush
+  (package
+    (name "r-resmush")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resmush" version))
+       (sha256
+        (base32 "1zfjnih4x452i3wnnw796qwq9qy89nlimj2lhn4xqkvkgi7ilk00"))))
+    (properties `((upstream-name . "resmush")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2 r-curl r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://dieghernan.github.io/resmush/")
+    (synopsis "Optimize and Compress Image Files with 'reSmush.it'")
+    (description
+     "Compress local and online images using the @code{reSmush.it} API service
+<https://resmush.it/>.")
+    (license license:expat)))
 
 (define-public r-reslr
   (package
@@ -31726,6 +31841,37 @@ Additional guidance on the usage of the algorithm is given in Ammer et al.
 (2023) <doi:10.1093/jalm/jfac101>.")
     (license license:gpl3+)))
 
+(define-public r-reffectivepred
+  (package
+    (name "r-reffectivepred")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REffectivePred" version))
+       (sha256
+        (base32 "1ahaxwgbyfnq2gii24gg8kzhy5822v5hvdmsw2g7p9jndz7xrrkg"))))
+    (properties `((upstream-name . "REffectivePred")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-yaml r-config))
+    (home-page "https://cran.r-project.org/package=REffectivePred")
+    (synopsis "Pandemic Prediction Model in an SIRS Framework")
+    (description
+     "This package provides a suite of methods to fit and predict case count data
+using a compartmental SIRS (Susceptible â Infectious â Recovered â
+Susceptible) model, based on an assumed specification of the effective
+reproduction number.  The significance of this approach is that it relates
+epidemic progression to the average number of contacts of infected individuals,
+which decays as a function of the total susceptible fraction remaining in the
+population.  The main functions are pred.curve(), which computes the epidemic
+curve for a set of parameters, and estimate.mle(), which finds the best fitting
+curve to observed data.  The easiest way to pass arguments to the functions is
+via a config file, which contains input settings required for prediction, and
+the package offers two methods, navigate_to_config() which points the user to
+the configuration file, and re_predict() for starting the fit-predict process.
+Razvan G. Romanescu et al. (2023) <doi:10.1016/j.epidem.2023.100708>.")
+    (license license:gpl2+)))
+
 (define-public r-referenceintervals
   (package
     (name "r-referenceintervals")
@@ -34861,6 +35007,27 @@ library.  Provides an HTML widget that can be used in R Markdown or Quarto
 documents, Shiny applications, or viewed from an R console.")
     (license license:expat)))
 
+(define-public r-react
+  (package
+    (name "r-react")
+    (version "2024.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "react" version))
+       (sha256
+        (base32 "07z1kw35xhqnqg8z4ixhx18d0c7gsz69xp37rnan4dhl7n9na7rz"))))
+    (properties `((upstream-name . "react")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-glue r-cli))
+    (home-page "https://github.com/tadascience/react")
+    (synopsis "Reactivity Helper for 'shiny'")
+    (description
+     "This package provides tools to help with shiny reactivity.  The react object
+offers an alternative way to call reactive expressions to better identify them
+in the server code.")
+    (license license:expat)))
+
 (define-public r-re2
   (package
     (name "r-re2")
@@ -35955,6 +36122,28 @@ supports the newer and more developer friendly JSON-LD format through the jsonld
 package.  The package interface takes inspiration from the Python rdflib
 library.")
     (license license:expat)))
+
+(define-public r-rdeps
+  (package
+    (name "r-rdeps")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdeps" version))
+       (sha256
+        (base32 "0zcik1lf3b37h089sx8pvcdkdilkx832gjwsvzach5mdg1sv3plc"))))
+    (properties `((upstream-name . "rdeps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cli))
+    (home-page "https://github.com/frbcesab/rdeps")
+    (synopsis "Identify External Packages Used in a Project")
+    (description
+     "Screens all .R', .Rmd', and .qmd files to extract the name of packages used in a
+project.  This package detects packages called with library(foo)',
+require(foo)', and foo::bar() and adds these dependencies in the DESCRIPTION
+file in the sections Depends, Imports, and Suggests.")
+    (license license:gpl2+)))
 
 (define-public r-rdecode
   (package
@@ -45451,17 +45640,18 @@ several spectra of plastic colorants.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.3.7")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "0jjvdawl6p07qc6s363pgfxjrzj565gdmws467070qylsh4rglm3"))))
+        (base32 "0wj5qz8ar4z05vh7ldxdxzcnbpdn9sm41fz0fmfrrygcrvzmrqaa"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-stringi
+                             r-shinywidgets
                              r-shinyjs
                              r-shinyfiles
                              r-shinydashboard
@@ -45472,6 +45662,7 @@ several spectra of plastic colorants.")
                              r-openxlsx
                              r-import
                              r-hmisc
+                             r-haven
                              r-ggplot2
                              r-foreign
                              r-dt

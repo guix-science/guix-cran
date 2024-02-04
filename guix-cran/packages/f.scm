@@ -3353,13 +3353,13 @@ This work was funded by Poland-Singapore bilateral cooperation project no
 (define-public r-fsbrain
   (package
     (name "r-fsbrain")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsbrain" version))
        (sha256
-        (base32 "0cy7f2k58lvsmp2qd24qqavq7d2bnf0r7s7j75nx9z1mp7x4cm1q"))))
+        (base32 "0zm6gyc0a0ymx40qpwpm8v51mnp3m9si72smpwznnpgymlwh7r0s"))))
     (properties `((upstream-name . "fsbrain")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -4344,16 +4344,16 @@ computational efficiency.")
 (define-public r-freesurferformats
   (package
     (name "r-freesurferformats")
-    (version "0.1.17")
+    (version "0.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freesurferformats" version))
        (sha256
-        (base32 "125vmx9gw9czlp86c2byv1fdslzhjn8q0plgqnk065sjhbla46cn"))))
+        (base32 "17g58abcp6fk20zdx0lzvb989g359nk1vl5drlfinfp6p1jjvsbj"))))
     (properties `((upstream-name . "freesurferformats")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rmarkdown r-pkgfilecache))
+    (propagated-inputs (list r-xml2 r-pkgfilecache))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dfsp-spirit/freesurferformats")
     (synopsis "Read and Write 'FreeSurfer' Neuroimaging File Formats")
@@ -8122,13 +8122,13 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
 (define-public r-foghorn
   (package
     (name "r-foghorn")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foghorn" version))
        (sha256
-        (base32 "0fbr38hxl2qwr1pbvbwwnkr9dk8saq13w0ld6waky70g7k7va8m4"))))
+        (base32 "1xmyl4m2chv2z6adfyzmv93zqjl0pxk364zy0jfym8vgnzrmcb26"))))
     (properties `((upstream-name . "foghorn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8140,7 +8140,7 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
                              r-crayon
                              r-clisymbols))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/fmichonneau/foghorn")
+    (home-page "https://fmichonneau.github.io/foghorn/")
     (synopsis "Summarize CRAN Check Results in the Terminal")
     (description
      "The CRAN check results and where your package stands in the CRAN submission
@@ -14507,13 +14507,13 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-fflr
   (package
     (name "r-fflr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fflr" version))
        (sha256
-        (base32 "0rynn1gia0cpab573yjmijafb6ywv5xjlg6wd2qjwnrr947qkf5r"))))
+        (base32 "1ysbqs1qr5cqg5rg22w29j93akgqlj4xbc6pwwr83ny2qw1zzkvs"))))
     (properties `((upstream-name . "fflr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
@@ -17292,18 +17292,17 @@ manuscript is currently under review.")
 (define-public r-fbati
   (package
     (name "r-fbati")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbati" version))
        (sha256
-        (base32 "1wgcahd46h2q3ihd8hjav6qvlar7iglxg8njbnl5h7zix7h0q7c6"))))
+        (base32 "0i44a5mbcc5bj7d92k7cp8ljc66rrgzsa8flqx3sn017lq8smljv"))))
     (properties `((upstream-name . "fbati")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-pbatr r-fgui))
-    (home-page
-     "https://sites.google.com/site/thomashoffmannproject/software/fbati")
+    (home-page "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3120904/")
     (synopsis
      "Gene by Environment Interaction and Conditional Gene Tests for Nuclear Families")
     (description
@@ -18761,13 +18760,13 @@ Mengyang Gu and Yanxun Xu (2017), <@code{arXiv:1711.11501>}.")
 (define-public r-fastfmm
   (package
     (name "r-fastfmm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFMM" version))
        (sha256
-        (base32 "0yfh09v8syifa5xnyp5z6ba13y8b9v24r7f298a4kx8gzykbxpdi"))))
+        (base32 "1crgl5961c0k1bq4d3xsl38hrwi3cayf1lj7pprbvdd1y3nyvz8b"))))
     (properties `((upstream-name . "fastFMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18787,7 +18786,7 @@ Mengyang Gu and Yanxun Xu (2017), <@code{arXiv:1711.11501>}.")
                              r-dplyr
                              r-caic4))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fastFMM")
+    (home-page "https://github.com/gloewing/fastFMM")
     (synopsis "Fast Functional Mixed Models using Fast Univariate Inference")
     (description
      "Implementation of the fast univariate inference approach (Cui et al. (2022)

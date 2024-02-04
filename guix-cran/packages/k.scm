@@ -1397,6 +1397,29 @@ best solutions from one generation to the next.  Population objective function
 values may optionally be evaluated in parallel.")
     (license license:gpl2)))
 
+(define-public r-kofdata
+  (package
+    (name "r-kofdata")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kofdata" version))
+       (sha256
+        (base32 "0slqs58flcj1z7a9fz71v99lnr9jphc9qkdph7q7iihx3qxri41g"))))
+    (properties `((upstream-name . "kofdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-xts r-jsonlite r-httr))
+    (home-page "https://github.com/KOF-ch/kofdata")
+    (synopsis "Get Data from the 'KOF Datenservice' API")
+    (description
+     "Read Swiss time series data from the KOF Data API,
+<https://datenservice.kof.ethz.ch>.  The API provides macro economic time series
+data mostly about Switzerland.  The package itself is a set of wrappers around
+the KOF Datenservice API. The kofdata package is able to consume public
+information as well as data that requires an API token.")
+    (license license:gpl2)))
+
 (define-public r-kodama
   (package
     (name "r-kodama")

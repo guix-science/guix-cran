@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -1894,13 +1894,13 @@ A dataset of crashes in Washington state is available for illustrative purposes.
 (define-public r-curephem
   (package
     (name "r-curephem")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "curephEM" version))
        (sha256
-        (base32 "1s0wrjzkp8wn8k0p5k9m7ljh104ay50izsyyvgb9qlb9yaggv1iz"))))
+        (base32 "0c24xasgyr9dcbnmscfc9zj3lh1ja03xnzww0qd9rd5ax7hrciks"))))
     (properties `((upstream-name . "curephEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix))
@@ -6834,13 +6834,13 @@ Interpretable Discovery and Inference of Heterogeneous Treatment Effects.
 (define-public r-crctstepdown
   (package
     (name "r-crctstepdown")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crctStepdown" version))
        (sha256
-        (base32 "0kac3mj3zyhz2dpvdv4x4c5y4p4iavkawifjnnbapbf65jm2wi9b"))))
+        (base32 "0jjskjr3nwxsg6fz317nyb0r6vj1m82adlc06pyhazyhb7hh1gzl"))))
     (properties `((upstream-name . "crctStepdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8020,13 +8020,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1pjycw5l05r8nw4yczm76i1i6dribi14gb3b7k3r5n740a38x387"))))
+        (base32 "1qycjsnm8hlf7r1dpgrg99ina2azynwik63hamdkibkfs09k5w7c"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rda
@@ -8042,8 +8042,8 @@ sites.")
     (description
      "Classification using Richard A. Harshman's Parallel Factor Analysis-1 (Parafac)
 model or Parallel Factor Analysis-2 (Parafac2) model fit to a three-way or
-four-way data tensor/array.  See Harshman and Lundy (1994):
-<doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of the
+four-way data array.  See Harshman and Lundy (1994):
+<doi:10.1016/0167-9473(94)90132-5>.  Uses component weights from one mode of a
 Parafac or Parafac2 model as features to tune parameters for one or more
 classification methods via a k-fold cross-validation procedure.  Allows for
 constraints on different tensor modes.  Supports penalized logistic regression,
@@ -16924,13 +16924,13 @@ Malwane M.A. Ananda (2023) <@code{arXiv:2309.16443>}.")
 (define-public r-compoundevents
   (package
     (name "r-compoundevents")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompoundEvents" version))
        (sha256
-        (base32 "0dlkkr26f07g0q3kcg0byvvlnf2hd5i8h9p1mkba333wh6af21ic"))))
+        (base32 "184dqy6dw6mrw1xpim335fmfnv0a8gmn2siqb4d5fa2rn5vghmcn"))))
     (properties `((upstream-name . "CompoundEvents")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompoundEvents")
@@ -30314,18 +30314,17 @@ and tries to create consistent graphical output and to be very user friendly.")
 (define-public r-chemospec
   (package
     (name "r-chemospec")
-    (version "6.1.9")
+    (version "6.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChemoSpec" version))
        (sha256
-        (base32 "1z1iicckkm0mzjq9vmgq7fx0h3cqlayal7mlpxhv0kfqx973n31d"))))
+        (base32 "0yxjhnbmvjf5kr0l3vq5j5s46c0498gfmrxm9czl7k082ibkznmg"))))
     (properties `((upstream-name . "ChemoSpec")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
                              r-readjdx
-                             r-plyr
                              r-plotly
                              r-patchwork
                              r-magrittr

@@ -636,13 +636,13 @@ generalized variation index (GVI) with its marginal one (MVI) too.")
 (define-public r-gwex
   (package
     (name "r-gwex")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWEX" version))
        (sha256
-        (base32 "0klwiknlngdxyp42wvxiph965pa90qn97rf2bra1y7bn063r7lns"))))
+        (base32 "17yd7c8qiqkfhzllrcrrf1az0rq1g6xkggp35zyd04idcjz4c6hf"))))
     (properties `((upstream-name . "GWEX")))
     (build-system r-build-system)
     (propagated-inputs (list r-renext
@@ -3717,13 +3717,13 @@ discovery rate and within-group false discovery rate.")
 (define-public r-groupseq
   (package
     (name "r-groupseq")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GroupSeq" version))
        (sha256
-        (base32 "01207wc0z9z7m38lnmaf4hml6nva5bcld52clpr2dy9pfcd1x1pd"))))
+        (base32 "0051sihgnr0m60rkx3mqk2gsp2niff7bmd934czbxzrm3ki5jp6n"))))
     (properties `((upstream-name . "GroupSeq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2 r-mvtnorm))
@@ -3957,13 +3957,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.1.2")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "17zav0fdblmwp3zq4hd1dkgidmm25gjs39z106r7cvm80h5hd9iy"))))
+        (base32 "1pswzqn15dz4b0s2a79pi5y45jn1l3amsn3qpfm47nmb80dynfgh"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -8115,6 +8115,29 @@ package provides functions for the three different GO ontology.  We discussed
 the methods explicitly in the following article
 <doi:10.1038/s41598-020-73326-3>.")
     (license license:gpl2)))
+
+(define-public r-goweragreement
+  (package
+    (name "r-goweragreement")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "goweragreement" version))
+       (sha256
+        (base32 "1z0a0z920r51kyq15jkdypyp0hq3vsbhs40vn4gkg5way95zqf85"))))
+    (properties `((upstream-name . "goweragreement")))
+    (build-system r-build-system)
+    (home-page "http://www.johnhughes.org")
+    (synopsis "Bayesian Gower Agreement for Categorical Data")
+    (description
+     "This package provides tools for applying the Bayesian Gower agreement
+methodology (presented in the package vignette) to nominal or ordinal data.  The
+framework can accommodate any number of units, any number of coders, and
+missingness; and can handle both one-way and two-way random study designs.
+Influential units and/or coders can be identified easily using leave-one-out
+statistics.")
+    (license license:gpl2+)))
 
 (define-public r-govstatjpn
   (package
@@ -17173,13 +17196,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.0-3")
+    (version "3.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1mdrmfnnn2nyzdx6ka63q3zw0ad6a517nsdivqval1qrqpx026xc"))))
+        (base32 "1sll3a55jkiq7hbcm6cvk8xmffsxap37si5kvna41278rqr9xn4d"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -17746,6 +17769,30 @@ data.  The plots are created using ggplot2', and calculations done using the
 tidyverse collection of packages.  The package contains references to
 @code{FishBase} (Froese R., Pauly.  D., 2023) <https://www.fishbase.se/>.")
     (license license:gpl3)))
+
+(define-public r-ggfields
+  (package
+    (name "r-ggfields")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfields" version))
+       (sha256
+        (base32 "1c84acsnhykdiqk5yqaq66g6pl05bzrgzhb2h5zvlv2s5alxwzmi"))))
+    (properties `((upstream-name . "ggfields")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-scales r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pepijn-devries.github.io/ggfields/")
+    (synopsis "Add Vector Field Layers to Ggplots")
+    (description
+     "Add vector field layers to ggplots.  Ideal for visualising wind speeds, water
+currents, electric/magnetic fields, etc.  Accepts data.frames simple features
+(sf) and spatiotemporal arrays (stars) objects as input.  Vector fields are
+depicted as arrows starting at specified locations, and with specified angles
+and radii.")
+    (license license:gpl3+)))
 
 (define-public r-ggfacto
   (package
@@ -20735,6 +20782,44 @@ Finally, facilities to import and export geometry vectors to other spatial
 formats are provided.")
     (license license:expat)))
 
+(define-public r-georob
+  (package
+    (name "r-georob")
+    (version "0.3-17")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "georob" version))
+       (sha256
+        (base32 "0ih327r306fsvfba150v0c0rw1xmlpjz5hvglv4y731hi3gmr2ap"))))
+    (properties `((upstream-name . "georob")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-snowfall
+                             r-robustbase
+                             r-quantreg
+                             r-nlme
+                             r-nleqslv
+                             r-lmtest
+                             r-fields
+                             r-constrainedkriging
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=georob")
+    (synopsis "Robust Geostatistical Analysis of Spatial Data")
+    (description
+     "This package provides functions for efficiently fitting linear models with
+spatially correlated errors by robust (Kuensch et al. (2011)
+<doi:10.3929/ethz-a-009900710>) and Gaussian (Harville (1977)
+<doi:10.1080/01621459.1977.10480998>) (Restricted) Maximum Likelihood and for
+computing robust and customary point and block external-drift Kriging
+predictions (Cressie (1993) <doi:10.1002/9781119115151>), along with utility
+functions for variogram modelling in ad hoc geostatistical analyses, model
+building, model evaluation by cross-validation, (conditional) simulation of
+Gaussian processes (Davies and Bryant (2013) <doi:10.18637/jss.v055.i09>),
+unbiased back-transformation of Kriging predictions of log-transformed data
+(Cressie (2006) <doi:10.1007/s11004-005-9022-8>).")
+    (license (list license:gpl2+ license:lgpl2.0+))))
+
 (define-public r-georefdatar
   (package
     (name "r-georefdatar")
@@ -22830,18 +22915,18 @@ Markov chain.")
 (define-public r-genlogis
   (package
     (name "r-genlogis")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genlogis" version))
        (sha256
-        (base32 "01av5invhviii7adqihh10ib47rjzwfsqdgw3lfg1c72kzrqywgr"))))
+        (base32 "1d6ni84rdbqyi2052kzfm8v2kvmki84vp8lfjip8c9bp0crig52i"))))
     (properties `((upstream-name . "genlogis")))
     (build-system r-build-system)
     (propagated-inputs (list r-manipulate r-ggplot2 r-foreach r-doparallel
                              r-distr))
-    (home-page "https://cran.r-project.org/package=genlogis")
+    (home-page "https://pinduzera.github.io/genlogis/")
     (synopsis "Generalized Logistic Distribution")
     (description
      "This package provides basic distribution functions for a generalized logistic
@@ -23286,13 +23371,13 @@ description.")
 (define-public r-geneselectr
   (package
     (name "r-geneselectr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneSelectR" version))
        (sha256
-        (base32 "1gwh6yzs7w6vrfli4rcqvapy7pgvab15n6jwd9psplggnwpwa0kv"))))
+        (base32 "0hxdnfhah3a29f00ycanf7ssxm2z7inp9sf72l61ilcrg9bx22hq"))))
     (properties `((upstream-name . "GeneSelectR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmod
@@ -24998,6 +25083,29 @@ Ananda (2022) <doi:10.3390/math10111895>, and Bowen Liu, Malwane M.A. Ananda
 (2022) <doi:10.3390/app13010645>.")
     (license license:gpl3)))
 
+(define-public r-geboes-score
+  (package
+    (name "r-geboes-score")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geboes.score" version))
+       (sha256
+        (base32 "1i7ivcbrk1kyvh98xjs2v4zph85qrfsila50wx4vjxclaqp7afzl"))))
+    (properties `((upstream-name . "geboes.score")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://billdenney.github.io/geboes.score/")
+    (synopsis "Evaluate the Geboes Score for Histology in Ulcerative Colitis")
+    (description
+     "Evaluate and validate the Geboes score for histological assessment of
+inflammation in ulcerative colitis.  The original Geboes score from Geboes, et
+al. (2000) <doi:10.1136/gut.47.3.404>, binary version from Li, et al. (2019)
+<doi:10.1093/ecco-jcc/jjz022>, and continuous version from Magro, et al. (2020)
+<doi:10.1093/ecco-jcc/jjz123> are all described and implemented.")
+    (license license:gpl3+)))
+
 (define-public r-gear
   (package
     (name "r-gear")
@@ -26644,13 +26752,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "0vddpsw8cjx0ipybywrzjgvb3k966ij53wv1hlh9vj15q9fp2x5h"))))
+        (base32 "1skl1556yd3srlqwsd3jk74hmjrxpw0gahx38zrpzhz359sdv219"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
@@ -27060,13 +27168,13 @@ Computer Model Via Analysis of Variance and Visualization\",
 (define-public r-gasmodel
   (package
     (name "r-gasmodel")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasmodel" version))
        (sha256
-        (base32 "1q98hyn45k0r2zv8dd7f952jhl8xynpv9wkvijdync2hhi8hy6qi"))))
+        (base32 "16wxv0fkaayxvd5h436wyp9is8y47k7ivim5f9md4g4acy3ca3cb"))))
     (properties `((upstream-name . "gasmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27077,6 +27185,7 @@ Computer Model Via Analysis of Variance and Visualization\",
                              r-matrix
                              r-ggplot2
                              r-dplyr
+                             r-copula
                              r-circstats
                              r-arrangements
                              r-abind))
@@ -27091,8 +27200,7 @@ various data types and distributions, different parametrizations, exogenous
 variables, joint and separate modeling of exogenous variables and dynamics,
 higher score and autoregressive orders, custom and unconditional initial values
 of time-varying parameters, fixed and bounded values of coefficients, and
-missing values.  Model estimation is performed by the maximum likelihood method
-and the Hessian matrix.")
+missing values.  Model estimation is performed by the maximum likelihood method.")
     (license license:gpl3)))
 
 (define-public r-gasfluxes

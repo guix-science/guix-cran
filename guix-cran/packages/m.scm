@@ -2120,13 +2120,13 @@ Calculus.")
 (define-public r-mutualinf
   (package
     (name "r-mutualinf")
-    (version "1.1.3")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutualinf" version))
        (sha256
-        (base32 "0w6hzmvda2gipgrbglcbb11kn94i92v3p07hihlx0bsdgsh3scph"))))
+        (base32 "1k878nvsgs05krzndabi7aghzq2fzf0ncqj2sxy4czx4gf0ii3zv"))))
     (properties `((upstream-name . "mutualinf")))
     (build-system r-build-system)
     (propagated-inputs (list r-runner r-data-table))
@@ -13636,13 +13636,13 @@ forecasting at scale\"
 (define-public r-modeltests
   (package
     (name "r-modeltests")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltests" version))
        (sha256
-        (base32 "0ii5sh8yz5yvf0gq41ia55dvbg8x9042x82j52ck6haxa0w8zpfy"))))
+        (base32 "032rd168blk73147fvxxxfnzwwmb92252qpdk5ljcb2mzv3id7x3"))))
     (properties `((upstream-name . "modeltests")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-testthat r-purrr r-generics r-dplyr))
@@ -18101,13 +18101,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.9.2")
+    (version "2.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "181r5mrb6bz2krbh435yn1i79kq9ql73m37qcsv8mqq7m8dg6v1h"))))
+        (base32 "0f4wjkhammhqsvwfggpnpzp3k02czniagbi09l3vicpv3f3cvsjj"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -22058,13 +22058,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0mk9nh9bi8d0cgsrvl6c8w79w73crhp1w95664mnfqf22917kd5l"))))
+        (base32 "0565cx9gl1wzkapcy102yicyhpw3wc4xcjxsk58585zdxjvpr2ym"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -26870,6 +26870,43 @@ bar charts.  Support for laying out multiple charts into a grid layout is also
 provided.  All charts are interactive and many have an option for line, label
 and region annotations.")
     (license license:expat)))
+
+(define-public r-metricminer
+  (package
+    (name "r-metricminer")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metricminer" version))
+       (sha256
+        (base32 "156fzmcwgabi95qdjy7pq415l505y5mzcc99l77ykbf56w9fa9qs"))))
+    (properties `((upstream-name . "metricminer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-openssl
+                             r-lubridate
+                             r-jsonlite
+                             r-janitor
+                             r-httr
+                             r-googlesheets4
+                             r-googledrive
+                             r-gh
+                             r-getpass
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fhdsl/metricminer")
+    (synopsis "Mine Metrics from Common Places on the Web")
+    (description
+     "Mine metrics on common places on the web through the power of their APIs
+(application programming interfaces).  It also helps make the data in a format
+that is easily used for a dashboard or other purposes.  There is an associated
+dashboard template and tutorials that are underdevelopment that help you fully
+utilize metricminer'.")
+    (license license:gpl3)))
 
 (define-public r-metricgraph
   (package
@@ -35461,6 +35498,46 @@ to fit the distribution to empirical data.  See, e.g., Bernegger (1997)
 <doi:10.2143/AST.27.1.563208> freely available on-line.")
     (license license:gpl2)))
 
+(define-public r-mbbe
+  (package
+    (name "r-mbbe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mbbe" version))
+       (sha256
+        (base32 "0m6nn4vv7lxr5y3bbpqjab8ahal9qbl7v6fxr848s1ida3zvkkxm"))))
+    (properties `((upstream-name . "mbbe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tictoc
+                             r-stringr
+                             r-ps
+                             r-processx
+                             r-pknca
+                             r-nlme
+                             r-magrittr
+                             r-jsonlite
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-emmeans
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/certara/mbbe")
+    (synopsis "Model Based Bio-Equivalence")
+    (description
+     "Uses several Nonlinear Mixed effect (NONMEM) models (as NONMEM control files) to
+perform bootstrap model averaging and Monte Carlo Simulation for Model Based
+Bio-Equivalence (MBBE).  Power is returned as the fraction of the simulations
+with successful bioequivalence (BE) test, for maximum concentration (Cmax), Area
+under the curve to the last observed value (AUClast) and Area under the curve
+extrapolate to infinity (AUCinf).  See Hooker, A. (2020) Improved bioequivalence
+assessment through model-informed and model-based strategies
+<https://www.fda.gov/media/138035/download>.")
+    (license license:lgpl3)))
+
 (define-public r-mbanalysis
   (package
     (name "r-mbanalysis")
@@ -36209,29 +36286,6 @@ metrics implemented in this package refer to Khamis, H. J., & Roche, A. F.
 <https://pubmed.ncbi.nlm.nih.gov/11932580/> and Cumming, Sean P. et al., (2017)
 <doi:10.1519/SSC.0000000000000281>.")
     (license license:expat)))
-
-(define-public r-mattransmix
-  (package
-    (name "r-mattransmix")
-    (version "0.1.16")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MatTransMix" version))
-       (sha256
-        (base32 "1jvxwbs2914hqd5vr9kfwazh9d0vqpw7dhbpjdh3q4rgqk80gwpd"))))
-    (properties `((upstream-name . "MatTransMix")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=MatTransMix")
-    (synopsis
-     "Clustering with Matrix Gaussian and Matrix Transformation Mixture Models")
-    (description
-     "This package provides matrix Gaussian mixture models, matrix transformation
-mixture models and their model-based clustering results.  The parsimonious
-models of the mean matrices and variance covariance matrices are implemented
-with a total of 196 variations.")
-    (license license:gpl2+)))
 
 (define-public r-matskew
   (package

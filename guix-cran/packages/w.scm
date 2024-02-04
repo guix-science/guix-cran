@@ -1287,13 +1287,13 @@ analysis of similar-frequency time series regardless of the subject matter.")
 (define-public r-wpproj
   (package
     (name "r-wpproj")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WpProj" version))
        (sha256
-        (base32 "1nbnlbzgzd927hkv4i2srn00xj14jg59lbbgsdh7yrbgmj34b10z"))))
+        (base32 "17vczldqgqc8wl6yyz06zc3jdkgcxdf2s28bh83vzj98i1521ls2"))))
     (properties `((upstream-name . "WpProj")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam
@@ -1321,7 +1321,7 @@ analysis of similar-frequency time series regardless of the subject matter.")
                              r-dorng
                              r-doparallel
                              r-bh))
-    (home-page "https://cran.r-project.org/package=WpProj")
+    (home-page "https://github.com/ericdunipace/WpProj")
     (synopsis "Linear p-Wasserstein Projections")
     (description
      "This package performs Wasserstein projections from the predictive distributions
@@ -8271,13 +8271,13 @@ cardioprotective behavior.  Kang B, Moudon AV, Hurvitz PM, Saelens BE (2017)
 (define-public r-wal
   (package
     (name "r-wal")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wal" version))
        (sha256
-        (base32 "0n81c2i2wzmy33kk1k4zjjgv1irh8xqw05clif8n86qr4m0a01sv"))))
+        (base32 "07igmqpyif0hn0x1ydv0ia1fb8zy9l86v51j445qn7jwc0rvxzvp"))))
     (properties `((upstream-name . "wal")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacesxyz r-png r-jpeg r-imager

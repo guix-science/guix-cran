@@ -4940,13 +4940,13 @@ International Human Epigenomic Consortium (IHEC).")
 (define-public r-qcpm
   (package
     (name "r-qcpm")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qcpm" version))
        (sha256
-        (base32 "0k440xi951v6jaknwz0x0rwkin1r034l2i93cchlglf0r9a0l8yc"))))
+        (base32 "0yjqbhazmdgw08yn1r8pxafgwxzhb76nmxzb8k68risd2r49jikj"))))
     (properties `((upstream-name . "qcpm")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-csem r-broom))

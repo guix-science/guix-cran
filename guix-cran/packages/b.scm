@@ -6653,13 +6653,13 @@ explanation of the Gaussian case.")
 (define-public r-boom
   (package
     (name "r-boom")
-    (version "0.9.14")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Boom" version))
        (sha256
-        (base32 "103x5hxmnb1zvq47hixmkk8070k6wyxswiyfmvyn0kd0nij1sb91"))))
+        (base32 "00fn41sk0fdv8xv98j3wzc30vkhrw48clkqwpymvrh57rjdh4q2k"))))
     (properties `((upstream-name . "Boom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -13842,30 +13842,6 @@ regularized Gaussian MLE inverse covariance matrix estimation problem.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-bigqueryr
-  (package
-    (name "r-bigqueryr")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bigQueryR" version))
-       (sha256
-        (base32 "051c8rkj77dm78237dzhf3lcdawv0xv72pwfiim9bi89z9mp6f9m"))))
-    (properties `((upstream-name . "bigQueryR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-googlecloudstorager
-                             r-googleauthr r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "http://code.markedmondson.me/bigQueryR/")
-    (synopsis "Interface with Google BigQuery with Shiny Compatibility")
-    (description
-     "Interface with Google @code{BigQuery}', see <https://cloud.google.com/bigquery/>
-for more information.  This package uses @code{googleAuthR} so is compatible
-with similar packages, including Google Cloud Storage
-(<https://cloud.google.com/storage/>) for result extracts.")
-    (license license:expat)))
-
 (define-public r-bigqf
   (package
     (name "r-bigqf")
@@ -15844,6 +15820,41 @@ commonly used errors-in-variables methods, such as orthogonal distance
 regression, geometric mean regression or Deming regression are special cases of
 the bfsl solution.")
     (license license:expat)))
+
+(define-public r-bfs
+  (package
+    (name "r-bfs")
+    (version "0.5.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BFS" version))
+       (sha256
+        (base32 "0k2p002b35lz3idwbsypc0rzbkd62j6l7syh6lpblw8c8gjqdcrb"))))
+    (properties `((upstream-name . "BFS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-tidyrss
+                             r-tibble
+                             r-sf
+                             r-rvest
+                             r-rstac
+                             r-pxweb
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-janitor
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-curl))
+    (home-page "https://felixluginbuhl.com/BFS/")
+    (synopsis "Get Data from the Swiss Federal Statistical Office")
+    (description
+     "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
+<https://www.bfs.admin.ch/>.")
+    (license license:gpl3+)))
 
 (define-public r-bfpack
   (package
@@ -21243,18 +21254,19 @@ details regarding part of this framework can be found in Cullen et al. (2021)
 (define-public r-bayesmortalityplus
   (package
     (name "r-bayesmortalityplus")
-    (version "0.1.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMortalityPlus" version))
        (sha256
-        (base32 "1ynsjk82ppdqh1qq9xk0rs3m5d0aj375zaj9w54v80r2sq6k5pzm"))))
+        (base32 "06hwlbvm5gyxp60rzm6bwi24zkmwmni9pqvmkb0zayp0aackn8p6"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-progress
+                             r-mvtnorm
                              r-mass
                              r-magrittr
                              r-ggplot2

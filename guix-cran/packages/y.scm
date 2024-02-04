@@ -452,25 +452,23 @@ from Cricsheet <https://cricsheet.org/>.")
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "1z7hbv8sl8sdkczrfqjxdalxcpgfhpb2cx4bpmjh7y98a5xn2g6s"))))
+        (base32 "1pksi1927n6y9m27mh3nyrzf9z01i0ws117h2i2nbm4n6srm3fmi"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
-    (home-page "https://github.com/TimTaylor/ympes")
+    (home-page "https://sr.ht/~tim-taylor/ympes/")
     (synopsis "Collection of Helper Functions")
     (description
      "This package provides a collection of lightweight helper functions (imps) both
 for interactive use and for inclusion within other packages.  These include
-minimal assertion functions with a focus on informative error messaging for both
-missing and incorrect function arguments as well as other functions for
-visualising colour palettes, quoting user input and searching rows of a data
-frame.")
-    (license license:gpl2)))
+functions for visualising colour palettes, quoting user input, searching rows of
+a data frame and capturing string tokens.")
+    (license license:gpl3)))
 
 (define-public r-ymlthis
   (package
@@ -946,13 +944,13 @@ and building ensemble imputations, and mapping results.")
 (define-public r-yahoofinancer
   (package
     (name "r-yahoofinancer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yahoofinancer" version))
        (sha256
-        (base32 "1wmxz2xmy39167kx9lfps9wq1ci9hqzpzc5xymnlrazbdviw1isy"))))
+        (base32 "197pidwi69hqrw6qpjg5d2y5mqp2rma4p8wsr2h51957qqql4z5d"))))
     (properties `((upstream-name . "yahoofinancer")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -10782,23 +10782,20 @@ correlation and regression analysis of the local network metrics.")
 (define-public r-anipaths
   (package
     (name "r-anipaths")
-    (version "0.10.2")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anipaths" version))
        (sha256
-        (base32 "1fip68xj7zlznxsdjvwyh959nhryp0ikym3ng9ji8gz6d7yb0jyq"))))
+        (base32 "03vhxva67b0nr75dr8ddz661jr1ha3kryibqy2nhqk851jx5vywx"))))
     (properties `((upstream-name . "anipaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
-                             r-sp
                              r-sf
-                             r-scales
                              r-rcolorbrewer
-                             r-raster
                              r-mvtnorm
                              r-mgcv
                              r-magrittr
@@ -12044,13 +12041,13 @@ list of citations for the methods implemented.")
 (define-public r-ammibayes
   (package
     (name "r-ammibayes")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ammiBayes" version))
        (sha256
-        (base32 "1m60pg84nhrlhj3kgja766xms2i9dkx0r5vggskfx82mynnlhj9y"))))
+        (base32 "0mj14n882jcg7p7rldb0d7yndp1dv3vma9g7f7f0vabhwm6d1jkd"))))
     (properties `((upstream-name . "ammiBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -15114,13 +15111,13 @@ other people.")
 (define-public r-aides
   (package
     (name "r-aides")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aides" version))
        (sha256
-        (base32 "0yvvyj64hibd9710v1fg663mmib91r75qmvbshx5q2kznlji8q2c"))))
+        (base32 "0q70197f36ddd21lzljkfyqzz4hlpdwbl05cl5amisf4w8c9nh7v"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta r-boot))
@@ -19687,18 +19684,19 @@ to microbiome data and a shiny app for interactive visualization.")
 (define-public r-adaptgauss
   (package
     (name "r-adaptgauss")
-    (version "1.5.6")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AdaptGauss" version))
        (sha256
-        (base32 "076jjnqp4ayq4kh95qns4kfzfvl6mjllhsq6hfp66bww7w976xxh"))))
+        (base32 "04w0v2fv9ixfz148d8f5vv7w5ypdywwf1qysk2ypc7a7md4vv9qz"))))
     (properties `((upstream-name . "AdaptGauss")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-pracma r-datavisualizations))
+    (propagated-inputs (list r-shiny r-rcpp r-pracma r-plotly
+                             r-datavisualizations))
     (native-inputs (list r-knitr))
-    (home-page "https://www.uni-marburg.de/fb12/datenbionik/software-en")
+    (home-page "https://www.deepbionics.org")
     (synopsis "Gaussian Mixture Models (GMM)")
     (description
      "Multimodal distributions can be modelled as a mixture of components.  The model

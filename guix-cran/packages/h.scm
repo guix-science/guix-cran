@@ -2547,13 +2547,13 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "08r9gdgw1z3w9gl0wrzdvw0kxr1slwi03mb9p4mrvvr6gd70w71f"))))
+        (base32 "00rjki2gb1rhmp4hbhdzpygjzq4j3dnilrg6pmnspqwzja5cfbbj"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -6968,53 +6968,6 @@ regionalization results, and exporting region map and mean timeseries into
 <doi:10.1007/s12145-015-0221-7>.")
     (license license:gpl3)))
 
-(define-public r-hibayes
-  (package
-    (name "r-hibayes")
-    (version "3.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hibayes" version))
-       (sha256
-        (base32 "1n87xmpjl982xc2b2p63k1h4m9mmd24xn63lsaah140zgwnwaf7k"))))
-    (properties `((upstream-name . "hibayes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-cmplot
-                             r-bigmemory
-                             r-bh))
-    (home-page "https://github.com/YinLiLin/hibayes")
-    (synopsis
-     "Individual-Level, Summary-Level and Single-Step Bayesian Regression Model")
-    (description
-     "This package provides a user-friendly tool to fit Bayesian regression models.
-It can fit 3 types of Bayesian models using individual-level, summary-level, and
-individual plus pedigree-level (single-step) data for both Genomic
-prediction/selection (GS) and Genome-Wide Association Study (GWAS), it was
-designed to estimate joint effects and genetic parameters for a complex trait,
-including: (1) fixed effects and coefficients of covariates, (2) environmental
-random effects, and its corresponding variance, (3) genetic variance, (4)
-residual variance, (5) heritability, (6) genomic estimated breeding values
-(GEBV) for both genotyped and non-genotyped individuals, (7) SNP effect size,
-(8) phenotype/genetic variance explained (PVE) for single or multiple SNPs, (9)
-posterior probability of association of the genomic window (WPPA), (10)
-posterior inclusive probability (PIP).  The functions are not limited, we will
-keep on going in enriching it with more features.  References: Meuwissen et al.
-(2001) <doi:10.1093/genetics/157.4.1819>; Gustavo et al. (2013)
-<doi:10.1534/genetics.112.143313>; Habier et al. (2011)
-<doi:10.1186/1471-2105-12-186>; Yi et al. (2008)
-<doi:10.1534/genetics.107.085589>; Zhou et al. (2013)
-<doi:10.1371/journal.pgen.1003264>; Moser et al. (2015)
-<doi:10.1371/journal.pgen.1004969>; Lloyd-Jones et al. (2019)
-<doi:10.1038/s41467-019-12653-0>; Henderson (1976) <doi:10.2307/2529339>;
-Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
-    (license license:gpl3)))
-
 (define-public r-hht
   (package
     (name "r-hht")
@@ -10721,6 +10674,37 @@ Based on Hierarchical Composite Endpoints: Insights from the DARE-19 Trial.\"
 Therapeutic Innovation & Regulatory Science 56: 785â794.
 <doi:10.1007/s43441-022-00420-1>.")
     (license license:expat)))
+
+(define-public r-hcd
+  (package
+    (name "r-hcd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HCD" version))
+       (sha256
+        (base32 "0f0kn2n1g25akwdbysy5xpxfcnpfdxgjzyd7ji6f58cs40q6gl28"))))
+    (properties `((upstream-name . "HCD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rspectra
+                             r-randnet
+                             r-matrix
+                             r-irlba
+                             r-dendextend
+                             r-data-tree
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=HCD")
+    (synopsis "Hierarchical Community Detection by Recursive Partitioning")
+    (description
+     "Hierarchical community detection on networks by a recursive spectral
+partitioning strategy, which is shown to be effective and efficient in Li, Lei,
+Bhattacharyya, Sarkar, Bickel, and Levina (2018) <@code{arXiv:1810.01509>}.  The
+package also includes a data generating function for a binary tree stochastic
+block model, a special case of stochastic block model that admits hierarchy
+between communities.")
+    (license license:gpl2+)))
 
 (define-public r-hcandersenr
   (package
