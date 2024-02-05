@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -5982,13 +5982,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "072mglj9wj2klhg8v9a7xgk96g0ands74jlqza7sscqiyaypklbv"))))
+        (base32 "086r12vfp1am7aavmq5yvbgg4w7vjdabjvzlnd5la92y01dcs32h"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags

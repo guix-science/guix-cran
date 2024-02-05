@@ -3846,6 +3846,30 @@ February 2020, with bibliographic details to follow at that point.  Until such
 time, further information can be obtained by emailing James Curran.")
     (license license:gpl2+)))
 
+(define-public r-jage
+  (package
+    (name "r-jage")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jage" version))
+       (sha256
+        (base32 "159qgsj0syk6vg4sn4y2kk18hsm1xcp5i2cfjq8srgq14cdh91bd"))))
+    (properties `((upstream-name . "jage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-mvtnorm r-data-table))
+    (home-page "https://cran.r-project.org/package=jage")
+    (synopsis "Estimation of Developmental Age")
+    (description
+     "Bayesian methods for estimating developmental age from ordinal dental data.  For
+an explanation of the model used, see Konigsberg (2015)
+<doi:10.3109/03014460.2015.1045430>.  For details on the conditional correlation
+correction, see Sgheiza (2022) <doi:10.1016/j.forsciint.2021.111135>.  Dental
+scoring is based on Moorrees, Fanning, and Hunt (1963)
+<doi:10.1177/00220345630420062701>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-jadelizardoptions
   (package
     (name "r-jadelizardoptions")

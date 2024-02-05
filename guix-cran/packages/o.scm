@@ -7355,6 +7355,45 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 <doi:10.1002/pst.1983>.")
     (license license:gpl3+)))
 
+(define-public r-one4all
+  (package
+    (name "r-one4all")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "One4All" version))
+       (sha256
+        (base32 "1lcdi2sfpl7yl1kl8lr84mf2i4150ysszw3pgnhz2lr1z1s4xpy5"))))
+    (properties `((upstream-name . "One4All")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-validate
+                             r-tibble
+                             r-shiny
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-openxlsx
+                             r-mongolite
+                             r-lexicon
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-digest
+                             r-data-table
+                             r-ckanr
+                             r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/Moore-Institute-4-Plastic-Pollution-Res/One4All")
+    (synopsis "Validate, Share, and Download Data")
+    (description
+     "Designed to enhance data validation and management processes by employing a set
+of functions that read a set of rules from a CSV or Excel file and apply them to
+a dataset.  Funded by the National Renewable Energy Laboratory and Possibility
+Lab, maintained by the Moore Institute for Plastic Pollution Research.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-ondisc
   (package
     (name "r-ondisc")
@@ -9168,13 +9207,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "04ijws6jc6xdnwvphlwvzh1pz6i2nq02kfinw9dl5k4ggi0vzs80"))))
+        (base32 "1sh380fskqq4w5z9fb2kr62d7j0vx9f69cygfz3zlrq731nkw771"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -9188,7 +9227,8 @@ code interface is described in Huling and Chien (2022)
                              r-hexsticker
                              r-ggplot2
                              r-cli
-                             r-checkmate))
+                             r-checkmate
+                             r-benchmarkme))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/loelschlaeger/oeli")
     (synopsis "My Utilities for Developing Data Science Software")

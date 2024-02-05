@@ -8235,16 +8235,16 @@ available vignettes and from the URL bellow.")
 (define-public r-inlajoint
   (package
     (name "r-inlajoint")
-    (version "23.10.28")
+    (version "24.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAjoint" version))
        (sha256
-        (base32 "1h1xwd968c60bl7mkpf2cvq9i19xb32ms95kfi0r6pks3rq0ghzd"))))
+        (base32 "0q7wpm058qzzah8bxsghx3v88vijzhpxp30rbbrlq2xznhhsjksk"))))
     (properties `((upstream-name . "INLAjoint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-lme4 r-ggplot2))
+    (propagated-inputs (list r-numderiv r-matrix r-lme4 r-ggplot2))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/DenisRustand/INLAjoint")
     (synopsis

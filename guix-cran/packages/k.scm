@@ -3788,13 +3788,13 @@ publication.")
 (define-public r-keyatm
   (package
     (name "r-keyatm")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keyATM" version))
        (sha256
-        (base32 "1xrwdpv5jsak0ss45qlyifksg3bja6dcm00xdvg4rq55gax4885v"))))
+        (base32 "00zwjhp0ghw9zbdrn7l6v8kb3ir9abck8328abz7x54xv80v9rlb"))))
     (properties `((upstream-name . "keyATM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

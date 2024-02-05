@@ -3741,6 +3741,40 @@ related to response variables) among the given explanatory variables in
 different ways (i.e., model structures).")
     (license license:expat)))
 
+(define-public r-viewscape
+  (package
+    (name "r-viewscape")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "viewscape" version))
+       (sha256
+        (base32 "1hjr6r6p5n4knmbdd38dpdlwdpycq8k5im0i0rfk28xnix7769mv"))))
+    (properties `((upstream-name . "viewscape")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-rcpp
+                             r-pbmcapply
+                             r-foresttools
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=viewscape")
+    (synopsis "Viewscape Analysis")
+    (description
+     "This package provides a collection of functions to make R a more effective
+viewscape analysis tool for calculating viewscape metrics based on computing the
+viewable area for given a point/multiple viewpoints and a digital elevation
+model.The method of calculating viewscape metrics implemented in this package
+are based on the work of Tabrizian et al. (2020)
+<doi:10.1016/j.landurbplan.2019.103704>.  The algorithm of computing viewshed is
+based on the work of Franklin & Ray. (1994)
+<https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=555780f6f5d7e537eb1edb28862c86d1519af2be>.")
+    (license license:gpl3)))
+
 (define-public r-viewpoly
   (package
     (name "r-viewpoly")

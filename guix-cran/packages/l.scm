@@ -8198,13 +8198,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.15")
+    (version "1.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "1bb2igk5d8sq7fw942i99xiz7vvgxd1f9d9s520jla5k5br2fgjp"))))
+        (base32 "0h8p0j9g2rs43wm7raxqf9lky5vhrgvqf94qxqajrizplgq8jzwc"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet

@@ -3442,23 +3442,25 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "15wcb1dn6jp2nh3znrfbxlc4p7di9cfz5n25wq9x0x5kb3xxp8vz"))))
+        (base32 "0acwxr2yw7d11j36bs2hnipp788xirfmxdvnplng547r4i0x8a5p"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xts
+                             r-tidyr
                              r-rlang
                              r-purrr
                              r-mass
                              r-lubridate
                              r-jsonlite
+                             r-dygraphs
                              r-dplyr))
-    (home-page "https://github.com/mcanigueral/evsim/")
+    (home-page "https://mcanigueral.github.io/evsim/")
     (synopsis "Electric Vehicle Charging Sessions Simulation")
     (description
      "Simulation of Electric Vehicles charging sessions using Gaussian models,
@@ -13809,6 +13811,31 @@ there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
      "This package provides a tool to draw samples from a Empirical Likelihood
 Bayesian posterior of parameters using Hamiltonian Monte Carlo.")
     (license license:gpl2)))
+
+(define-public r-elgbd
+  (package
+    (name "r-elgbd")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elgbd" version))
+       (sha256
+        (base32 "06pl1bmsnvprglm0gzg5azxlhmlvslh5bppn02sj82s5p3ydvg8g"))))
+    (properties `((upstream-name . "elgbd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcppeigen r-rcpp))
+    (home-page "https://github.com/markean/elgbd")
+    (synopsis "Empirical Likelihood for General Block Designs")
+    (description
+     "This package performs hypothesis testing for general block designs with
+empirical likelihood.  The core computational routines are implemented using the
+Eigen C++ library and @code{RcppEigen} interface, with @code{OpenMP} for
+parallel computation.  Details of the methods are given in Kim,
+@code{MacEachern}, and Peruggia (2023) <doi:10.1080/10485252.2023.2206919>.
+This work was supported by the U.S. National Science Foundation under Grants No.
+ SES-1921523 and DMS-2015552.")
+    (license license:gpl3+)))
 
 (define-public r-elfgen
   (package

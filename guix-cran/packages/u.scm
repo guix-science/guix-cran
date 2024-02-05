@@ -514,13 +514,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "13q125bbbb6cp05cygx9vajri14mn4dgbmamkggmhgdvisgxs18p"))))
+        (base32 "0svdp2v4v988jkymmmnhi81ann84rwrcmrrf35xii6x9nl7plvwl"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang))
@@ -530,7 +530,7 @@ non-asymptotic Type I error control at the nominal level.")
      "This package provides a container for data used by the usmap package.  The data
 used by usmap has been extracted into this package so that the file size of the
 usmap package can be reduced greatly.  The data in this package will be updated
-roughly once per year (plus bug fixes) as new shape files are provided by the US
+roughly once per year (plus bug fixes) as new shapefiles are provided by the US
 Census bureau.")
     (license license:gpl3+)))
 

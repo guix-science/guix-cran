@@ -2321,13 +2321,13 @@ performance\".  Perspectives on Psychological Science, 15(3), 589-607.
 (define-public r-fullfact
   (package
     (name "r-fullfact")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fullfact" version))
        (sha256
-        (base32 "036bnjzhpdf18ks8r1gvg0rb4f8qyzj0fz2zwk2sc58083d38mw6"))))
+        (base32 "1x62zxqi99i91n1j8rsmxp6k614rq34r8l9qhszz3a9z32yi9mf6"))))
     (properties `((upstream-name . "fullfact")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-afex))

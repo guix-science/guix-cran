@@ -158,6 +158,34 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
 measures of approximation error.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-qval
+  (package
+    (name "r-qval")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qval" version))
+       (sha256
+        (base32 "1kvnm4kcmj1fynyg8c05l4p4p92zz9pixh5fcpxk35pajx71mfn6"))))
+    (properties `((upstream-name . "Qval")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plyr r-nloptr r-matrix r-glmnet r-gdina))
+    (home-page "https://cran.r-project.org/package=Qval")
+    (synopsis "The Q-Matrix Validation Methods Framework")
+    (description
+     "Provide a variety of Q-matrix validation methods for the generalized cognitive
+diagnosis models, including the method based on the generalized deterministic
+input, noisy, âandâ gate model (G-DINA) by de la Torre (2011)
+<DOI:10.1007/s11336-011-9207-7> discrimination index (the GDI method) by de la
+Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the step-wise Wald test
+method (the Wald method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>,
+the Hull method by Najera et al. (2021) <DOI:10.1111/bmsp.12228>, the multiple
+logistic regressionâbased Qâmatrix validation method (the MLR-B method) by
+Tu et al. (2022) <DOI:10.3758/s13428-022-01880-x>.  Different research methods
+during Q-matrix validating are available.")
+    (license license:gpl3)))
+
 (define-public r-qut
   (package
     (name "r-qut")

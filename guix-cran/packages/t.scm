@@ -1418,6 +1418,28 @@ programming.")
 turning them into other indexed data structures.")
     (license license:gpl3)))
 
+(define-public r-turkeyelections
+  (package
+    (name "r-turkeyelections")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "turkeyelections" version))
+       (sha256
+        (base32 "07plalp9f7vxb49h1b0waqa6dxgrami4bw3i34mp0wx563mcs7sl"))))
+    (properties `((upstream-name . "turkeyelections")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-ggplot2 r-ggparliament r-dplyr))
+    (home-page "https://github.com/ozancanozdemir/turkeyelections")
+    (synopsis "The Most Comprehensive R Package for Turkish Election Results")
+    (description
+     "Includes the results of general, local, and presidential elections held in
+Turkey between 1995 and 2023, broken down by provinces and overall national
+results.  It facilitates easy processing of this data and the creation of visual
+representations based on these election results.")
+    (license license:expat)))
+
 (define-public r-turboem
   (package
     (name "r-turboem")
@@ -3009,13 +3031,13 @@ details can be found in Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>."
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "146vp6mhwbk5y2dk4392b7kz7nykmd797g11z6xc11l3c8wcg43v"))))
+        (base32 "0mb0w0lw9arbfxnq190ssmdcm4w8d7nf6nc0l8gfvlwam71wc0i5"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsutils r-tensorflow r-keras r-abind))
@@ -9964,23 +9986,23 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "1.1.10")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topr" version))
        (sha256
-        (base32 "13gwqv7bdphpfhbm86851cnibbhrwfd7mzgyrcj4jdg36b2dqgx9"))))
+        (base32 "0a8p87fsqir82qb9f2mnrzig2pppb6k9gzzm54vgbips2yqb9bqg"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-toprdata
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-scales
                              r-magrittr
                              r-gridextra
                              r-ggrepel
                              r-ggplot2
+                             r-enshuman
                              r-egg
                              r-dplyr))
     (home-page "https://github.com/totajuliusd/topr")
@@ -14677,13 +14699,13 @@ str_detect2().")
 (define-public r-tidyplate
   (package
     (name "r-tidyplate")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyplate" version))
        (sha256
-        (base32 "1b7vfnk97fbrh6c7k0zjs6cw5jqlchkf2bhvsia4g4s5wndj1yj1"))))
+        (base32 "0gkjncv23cq4mmlr1s9vsddy3dm1gkg6ch8sk8j9shhs5cv011zz"))))
     (properties `((upstream-name . "tidyplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15507,6 +15529,29 @@ for plotting with ggplot2', users can map aesthetics to subject scales and all
 plausible values will be used.  This package supports student level data; to
 work with school or teacher level data, see ?@code{EdSurvey::getData}'.")
     (license license:gpl2)))
+
+(define-public r-tidyedgar
+  (package
+    (name "r-tidyedgar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyedgar" version))
+       (sha256
+        (base32 "1ax2rq7dp7ik3bqxjs1wph4mhvmicgbnfgz8ypgs0da057j6fmga"))))
+    (properties `((upstream-name . "tidyedgar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=tidyedgar")
+    (synopsis "Tidy Fundamental Financial Data from 'SEC's 'EDGAR' 'API'")
+    (description
+     "Streamline the process of accessing fundamental financial data from the United
+States Securities and Exchange Commission's ('SEC') Electronic Data Gathering,
+Analysis, and Retrieval system ('EDGAR') API
+<https://www.sec.gov/edgar/sec-api-documentation>, transforming it into a tidy,
+analysis-ready format.")
+    (license license:expat)))
 
 (define-public r-tidydr
   (package

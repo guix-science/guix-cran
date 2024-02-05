@@ -42471,13 +42471,13 @@ distribution.")
 (define-public r-shide
   (package
     (name "r-shide")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shide" version))
        (sha256
-        (base32 "0iqx6g0a3a5spa6cg1m20xw2xqapw6jsbzjhc0q7lxywi8qvivwp"))))
+        (base32 "1c0fwshybrbaxnvs1ahmjjjcznpr25h8m18jznzr8mlqizpdc78z"))))
     (properties `((upstream-name . "shide")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11))
@@ -50172,17 +50172,17 @@ graphics.")
 (define-public r-searcher
   (package
     (name "r-searcher")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "searcher" version))
        (sha256
-        (base32 "03q9nq5zkj344swq3ppliz6dhwaddls8xv633s6brccmrcgdaivm"))))
+        (base32 "09h2jzm7y5c79z8an2nm392xmcn2ay7brcch7h1a7h9dbaakf1fb"))))
     (properties `((upstream-name . "searcher")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/r-assist/searcher")
+    (home-page "https://github.com/coatless-rpkg/searcher")
     (synopsis "Query Search Interfaces")
     (description
      "This package provides a search interface to look up terms on Google', Bing',

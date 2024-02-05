@@ -5728,6 +5728,32 @@ vectors across columns and rows and thus provides scalable solution for dealing
 with missing values.  Tomic et al. (2019) <doi:10.1101/545186>.")
     (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
+(define-public r-mulsem
+  (package
+    (name "r-mulsem")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mulSEM" version))
+       (sha256
+        (base32 "00lx8w3xxm7zdwv07pc3z5vsl4l1rj95s9wwil9y55bpf2ih4yp2"))))
+    (properties `((upstream-name . "mulSEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openmx))
+    (home-page "https://github.com/mikewlcheung/mulsem")
+    (synopsis "Some Multivariate Analyses using Structural Equation Modeling")
+    (description
+     "This package provides a set of functions for some multivariate analyses
+utilizing a structural equation modeling (SEM) approach through the
+@code{OpenMx} package.  These analyses include canonical correlation analysis
+(CANCORR), redundancy analysis (RDA), and multivariate principal component
+regression (MPCR).  It implements procedures discussed in Gu and Cheung (2023)
+<doi:10.1111/bmsp.12301>, Gu, Yung, and Cheung (2019)
+<doi:10.1080/00273171.2018.1512847>, and Gu et al. (2023)
+<doi:10.1080/00273171.2022.2141675>.")
+    (license license:gpl2+)))
+
 (define-public r-mully
   (package
     (name "r-mully")

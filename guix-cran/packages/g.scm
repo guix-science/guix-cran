@@ -7932,13 +7932,13 @@ implementation to allow easy specification of various GPs'.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2023.11-1")
+    (version "2024.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPArotation" version))
        (sha256
-        (base32 "0gsb6n23iwvnxqak6rnc003bzj2xbnz9k05m8jgc6vb9whp1rmz2"))))
+        (base32 "0as8swmv6akxyx4k92cigpr8lzm6jcg0cfjs0cr9n9aav92s2d5d"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
@@ -18105,19 +18105,19 @@ regions instead of the traditional height of the estimated density surface.")
 (define-public r-ggdemetra
   (package
     (name "r-ggdemetra")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdemetra" version))
        (sha256
-        (base32 "04micyxiblwlq1sn4jlws11qckjgbza38pwjidydqasq39pkakpr"))))
+        (base32 "18i96jkbc0zm9xgn5250v2316kccr5vcxag2gii7lag7bhj6fq51"))))
     (properties `((upstream-name . "ggdemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjdemetra r-gridextra r-ggrepel r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/AQLT/ggdemetra")
+    (home-page "https://aqlt.github.io/ggdemetra/")
     (synopsis
      "'ggplot2' Extension for Seasonal and Trading Day Adjustment with 'RJDemetra'")
     (description

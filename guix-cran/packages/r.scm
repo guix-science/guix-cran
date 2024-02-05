@@ -8386,13 +8386,13 @@ High Breakdown Point for Incomplete Data (missing values) (Todorov et al. (2010)
 (define-public r-rrcovhd
   (package
     (name "r-rrcovhd")
-    (version "0.2-7")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcovHD" version))
        (sha256
-        (base32 "1srxgw5qcgpmxqfplvbrlryxvkx0mic5y7v5lxgfvqvlmcb3rm3f"))))
+        (base32 "13g2akydz05933jv9fgc8jpqi8lcm506pcrdpjs88yapb4p5ar4j"))))
     (properties `((upstream-name . "rrcovHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -8402,7 +8402,7 @@ High Breakdown Point for Incomplete Data (missing values) (Todorov et al. (2010)
                              r-rcpp
                              r-pls
                              r-pcapp))
-    (home-page "https://cran.r-project.org/package=rrcovHD")
+    (home-page "https://github.com/valentint/rrcovHD")
     (synopsis "Robust Multivariate Methods for High Dimensional Data")
     (description
      "Robust multivariate methods for high dimensional data including outlier
@@ -8411,7 +8411,7 @@ sparse PCA (Croux et al. (2013) <doi:10.1080/00401706.2012.727746>, Todorov and
 Filzmoser (2013) <doi:10.1007/978-3-642-33042-1_31>), robust PLS (Todorov and
 Filzmoser (2014) <doi:10.17713/ajs.v43i4.44>), and robust sparse classification
 (Ortner et al. (2020) <doi:10.1007/s10618-019-00666-8>).")
-    (license license:gpl2+)))
+    (license license:gpl3+)))
 
 (define-public r-rrcov3way
   (package
@@ -20519,18 +20519,18 @@ combinations, fast transformations, and more...")
 (define-public r-rjdqa
   (package
     (name "r-rjdqa")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdqa" version))
        (sha256
-        (base32 "1pxdavk9806zmc5l201ir753sngg3djm7knsl34jnjqbdys621h5"))))
+        (base32 "05wxp9sp5y182x11418ncalh638c0kicsln1m8sj038k6j8db55w"))))
     (properties `((upstream-name . "rjdqa")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjdemetra r-plotrix r-ggdemetra))
-    (home-page "https://github.com/AQLT/rjdqa")
+    (home-page "https://aqlt.github.io/rjdqa/")
     (synopsis "Quality Assessment for Seasonal Adjustment")
     (description
      "Add-in to the RJDemetra package on seasonal adjustments.  It allows to produce

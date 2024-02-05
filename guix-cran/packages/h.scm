@@ -6936,6 +6936,32 @@ variance tables and p-values from several other tests of non-additivity.")
 problem as a two-dimensional segmentation issue.")
     (license license:gpl2)))
 
+(define-public r-hicp
+  (package
+    (name "r-hicp")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hicp" version))
+       (sha256
+        (base32 "0y799w7bm0fnk22ahayp9byh7m1lylz52724n73ag5zjibbk1gym"))))
+    (properties `((upstream-name . "hicp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-restatapi r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eurostat/hicp")
+    (synopsis "Harmonised Index of Consumer Prices")
+    (description
+     "The Harmonised Index of Consumer Prices (HICP) is the key economic figure to
+measure inflation in the euro area.  The methodology underlying the HICP is
+documented in the HICP Methodological Manual
+(<https://ec.europa.eu/eurostat/de/web/products-manuals-and-guidelines/-/ks-gq-17-015>).
+ Based on the manual, this package provides functions to access and work with
+HICP data from Eurostat's public database
+(<https://ec.europa.eu/eurostat/data/database>).")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-hiclimr
   (package
     (name "r-hiclimr")
