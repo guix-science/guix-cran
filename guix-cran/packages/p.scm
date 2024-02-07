@@ -1764,6 +1764,43 @@ implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
 
+(define-public r-publicworksfinanceit
+  (package
+    (name "r-publicworksfinanceit")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PublicWorksFinanceIT" version))
+       (sha256
+        (base32 "0bp4cg70m781kf7sgq1yqds0z5z3ykrpfkkbzjf2hlbxfx1ck8mn"))))
+    (properties `((upstream-name . "PublicWorksFinanceIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-scales
+                             r-rvest
+                             r-rlang
+                             r-magrittr
+                             r-leaflet
+                             r-httr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=PublicWorksFinanceIT")
+    (synopsis
+     "Soil Defense Investments in Italy: Data Retrieval, Analysis, Visualization")
+    (description
+     "Facilitates the retrieval and analysis of financial data related to public works
+in Italy, focusing on soil defense investments.  It extracts data from
+@code{OpenCoesione}', @code{OpenBDAP}', and the @code{ReNDiS} database,
+eliminating the need for direct access to these platforms.  The package boasts a
+user-friendly design, featuring real time updates and a set of functions
+tailored for data retrieval and visualization.  See the webpages for further
+information <http://www.rendis.isprambiente.it/rendisweb/>,
+<https://opencoesione.gov.it/en/>, and <https://bdap-opendata.rgs.mef.gov.it/>.")
+    (license license:gpl3+)))
+
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
@@ -3663,13 +3700,13 @@ minimum test.  For details on this method see: Sulewski (2017)
 (define-public r-psidread
   (package
     (name "r-psidread")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidread" version))
        (sha256
-        (base32 "0r2i2z4lwlw6acbmgdpld0jgmaj9sa9rflnnj6dnj0bks62l94wd"))))
+        (base32 "0k1rk5bsdhf9x7znmq99snw8p5qfnysz7hlh7s7adg7hn79rifx4"))))
     (properties `((upstream-name . "psidread")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringr r-dplyr r-asciisetupreader))
@@ -22486,17 +22523,16 @@ phylogenetic clustering method.")
 (define-public r-phyloseqgraphtest
   (package
     (name "r-phyloseqgraphtest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyloseqGraphTest" version))
        (sha256
-        (base32 "0y1hxj68dcic4i7ihnw9hgf28qp6s6kpq4c08dy7gv19gq7sllgd"))))
+        (base32 "0kp7ll92zcgzjlipp75xz0x1jiyp6d96qg8nzpj8f3y4dvhkppf5"))))
     (properties `((upstream-name . "phyloseqGraphTest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-phyloseq r-intergraph r-igraph r-ggplot2
-                             r-ggnetwork))
+    (propagated-inputs (list r-phyloseq r-igraph r-ggplot2 r-ggnetwork))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jfukuyama/phyloseqGraphTest")
     (synopsis "Graph-Based Permutation Tests for Microbiome Data")
@@ -30592,13 +30628,13 @@ tests and the F-test.")
 (define-public r-pcalg
   (package
     (name "r-pcalg")
-    (version "2.7-9")
+    (version "2.7-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcalg" version))
        (sha256
-        (base32 "05hi5j42x63l2py9iyrrdiladi8xkvwk1dwms6av96wswy9d5cdq"))))
+        (base32 "1lqw0n9fiad8ixmllfv7xda94zz4168qpljhcwx0z3mnqf2jbhwf"))))
     (properties `((upstream-name . "pcalg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -33678,13 +33714,13 @@ visualization of economic inequalities.")
 (define-public r-parabar
   (package
     (name "r-parabar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parabar" version))
        (sha256
-        (base32 "19zzp6d86plyy7clwhq8yp40b38niy3bnk7da39xblp01wbc3sak"))))
+        (base32 "1hhhcxaap1ih4chf5l2c8mqkv9i4bsqml64ak3nfydsi4znymha4"))))
     (properties `((upstream-name . "parabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-progress r-filelock r-callr))
@@ -34799,13 +34835,13 @@ GPL3 (<https://www.gimp.org/about/COPYING>), and Inkscape distributed under GPL2
 (define-public r-palettes
   (package
     (name "r-palettes")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palettes" version))
        (sha256
-        (base32 "1ahang7c5g4n7wyk6g8abhimzm95281wgyn8wgvs4vmy2was3zgh"))))
+        (base32 "1clgzlhyg2iw1mgf7v6nx6vs4bvqs83c6431i59vgkmz0qbgqfik"))))
     (properties `((upstream-name . "palettes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -35954,13 +35990,13 @@ approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
 (define-public r-pacvr
   (package
     (name "r-pacvr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PACVr" version))
        (sha256
-        (base32 "1a31byfjjfqqz47s3mj52g20an42cy0s2rdjw697plpvx2hch9fl"))))
+        (base32 "1kcssvik7mzhpy68g085q4prv2l89j3n58cppf0xb1fx9lagr69l"))))
     (properties `((upstream-name . "PACVr")))
     (build-system r-build-system)
     (propagated-inputs (list r-read-gb
@@ -35971,7 +36007,7 @@ approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
                              r-genomicalignments
                              r-dplyr
                              r-biostrings))
-    (home-page "https://cran.r-project.org/package=PACVr")
+    (home-page "https://github.com/michaelgruenstaeudl/PACVr")
     (synopsis "Plastome Assembly Coverage Visualization")
     (description
      "Visualizes the coverage depth of a complete plastid genome as well as the

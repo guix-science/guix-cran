@@ -4520,13 +4520,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.24")
+    (version "4.4.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "1yvy94g4pmzr9y2wq16zlw9bcyc0siz81qjgxy2yi5vcyr2li5bl"))))
+        (base32 "1xbczpqfa13jsmiavm3r75d2phjg3ziikd3i1700q6fmpbxlfysi"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -4549,25 +4549,25 @@ Galli, and Murray (2022)
      "Augments 'ASReml-R' in Fitting Mixed Models and Packages Generally in Exploring Prediction Differences")
     (description
      "Assists in automating the selection of terms to include in mixed models when
-asreml is used to fit the models.  Also used to display, in tables and graphs,
-predictions obtained using any model fitting function and to explore differences
-between predictions.  The content falls into the following natural groupings:
-(i) Data, (ii) Object manipulation functions, (iii) Model modification
-functions, (iv) Model selection functions, (v) Model diagnostics and simulation
-functions, (vi) Prediction production and presentation functions, (vii) Response
-transformation functions, and (viii) Miscellaneous functions (for further
-details see @code{asremlPlus-package} in help).  A history of the fitting of a
-sequence of models is kept in a data frame.  Procedures are available for
-choosing models that conform to the hierarchy or marginality principle, for
-fitting and choosing between two-dimensional spatial models using correlation,
-natural cubic smoothing spline and P-spline models, for displaying predictions
-for significant terms in tables and graphs.  The asreml package provides a
-computationally efficient algorithm for fitting a wide range of linear mixed
-models using Residual Maximum Likelihood.  It is a commercial package that can
-be purchased from VSNi <https://vsni.co.uk/> as asreml-R', who will supply a zip
-file for local installation/updating (see <https://asreml.kb.vsni.co.uk/>).  It
-is not needed for functions that are methods for alldiffs and data.frame
-objects.  The package @code{asremPlus} can also be installed from
+asreml is used to fit the models.  Procedures are available for choosing models
+that conform to the hierarchy or marginality principle, for fitting and choosing
+between two-dimensional spatial models using correlation, natural cubic
+smoothing spline and P-spline models.  A history of the fitting of a sequence of
+models is kept in a data frame.  Also used to compute functions and contrasts
+of, to investigate differences between and to plot predictions obtained using
+any model fitting function.  The content falls into the following natural
+groupings: (i) Data, (ii) Model modification functions, (iii) Model selection
+and description functions, (iv) Model diagnostics and simulation functions, (v)
+Prediction production and presentation functions, (vi) Response transformation
+functions, (vii) Object manipulation functions, and (viii) Miscellaneous
+functions (for further details see @code{asremlPlus-package} in help).  The
+asreml package provides a computationally efficient algorithm for fitting a wide
+range of linear mixed models using Residual Maximum Likelihood.  It is a
+commercial package and a license for it can be purchased from VSNi
+<https://vsni.co.uk/> as asreml-R', who will supply a zip file for local
+installation/updating (see <https://asreml.kb.vsni.co.uk/>).  It is not needed
+for functions that are methods for alldiffs and data.frame objects.  The package
+@code{asremPlus} can also be installed from
 <http://chris.brien.name/rpackages/>.")
     (license license:expat)))
 
@@ -9698,13 +9698,13 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "03vvf3rlg5zrdvx7bvi3praz9lb5fsyywa1pkcal5qll6v094jvg"))))
+        (base32 "1z4jd2qrhw9qvydbf4zmm17cj5nw3kwj9wlaph1zcyrs02x9divv"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimizer r-checkmate))
@@ -13177,13 +13177,13 @@ sample of points and its dual Voronoi diagram in one single object.")
 (define-public r-alphaci
   (package
     (name "r-alphaci")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alphaci" version))
        (sha256
-        (base32 "1zkj47s1k9qrnbzk6z7rb79yj0sqz7jwzy6m0marzkrakvivqw8k"))))
+        (base32 "19ndi5xw3i4hpcklpxx379nnilccyz98rp9qqr8ag9xkv5jvq8si"))))
     (properties `((upstream-name . "alphaci")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixcalc r-future-apply))
@@ -16092,13 +16092,13 @@ Haralick (1973) <doi:10.1109/TSMC.1973.4309314>.")
 (define-public r-agridat
   (package
     (name "r-agridat")
-    (version "1.22")
+    (version "1.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agridat" version))
        (sha256
-        (base32 "1pa738c86f36vnjl2k8il2igvvhv5r6vchywmmcdbc98ay1kzazn"))))
+        (base32 "17xq0ihjg2z61dy1nrz5vwxwzmwrk3wmc01n2c6rwgyfa5ijfplq"))))
     (properties `((upstream-name . "agridat")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

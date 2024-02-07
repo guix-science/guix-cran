@@ -15245,6 +15245,33 @@ slope and for identifying broader landform types.")
 using a landmark estimation approach.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-landcomp
+  (package
+    (name "r-landcomp")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LandComp" version))
+       (sha256
+        (base32 "0lf9hypqhcic83r7xsb3w602sf4qgq2358n7rpiqisrpflh7w1pd"))))
+    (properties `((upstream-name . "LandComp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-future-apply r-future))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ladylavender/LandComp")
+    (synopsis
+     "Analysing Landscape Composition and Structure at Multiple Scales")
+    (description
+     "Changes of landscape diversity and structure can be detected soon if relying on
+landscape class combinations and analysing patterns at multiple scales.
+@code{LandComp} provides such an opportunity, based on @code{JuhÃ¡sz-Nagy's}
+functions (@code{JuhÃ¡sz-Nagy} P, Podani J 1983 <doi:10.1007/BF00129432>).
+Functions can handle multilayered data.  Requirements of the input: binary data
+contained by a regular square or hexagonal grid, and the grid should have
+projected coordinates.")
+    (license license:expat)))
+
 (define-public r-lamme
   (package
     (name "r-lamme")

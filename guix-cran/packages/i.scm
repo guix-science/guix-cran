@@ -345,29 +345,22 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "1xng1im5g8dadql0fmk7b3z1hy1zfl8kaqzj38vf5s9q42nimbi5"))))
+        (base32 "1r0075a3jb5ckjxyzlva5m71fld753ds5p4av94z0pijlmgbxxaq"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-purrr
-                             r-openxlsx
-                             r-officer
-                             r-flextable
-                             r-dplyr
-                             r-checkmate))
-    (home-page "https://cran.r-project.org/package=ivo.table")
+    (propagated-inputs (list r-tidyr r-officer r-flextable r-dplyr r-checkmate))
+    (home-page "https://github.com/mthulin/ivo.table")
     (synopsis "Nicely Formatted Contingency Tables and Frequency Tables")
     (description
      "Nicely formatted frequency tables and contingency tables (1-way, 2-way, 3-way
-and 4-way tables), that can easily be exported to HTML or Office documents,
-including Excel'.  Designed to work with pipes.")
+and 4-way tables), that can easily be exported to HTML or Office documents.
+Designed to work with pipes.")
     (license license:expat)))
 
 (define-public r-ivmte
@@ -6278,13 +6271,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "0bhayfhzlrx9rxxrg704ddvfdazj6wckf1zh7rpdr5sclj88kj31"))))
+        (base32 "0rfz3mipacp76dhn63616npn89jhhagmzx60r8l30kaarjm37y83"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7608,16 +7601,16 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-instantiate
   (package
     (name "r-instantiate")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "instantiate" version))
        (sha256
-        (base32 "08qqxwi3zasydlsqv4b103nhpk9jvfr96dhigsd4sa1fyh65316h"))))
+        (base32 "0wbybhy5hyqsac6pmyzd788nhl16dgpnvd106v1b8wx0rdrny094"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-fs))
+    (propagated-inputs (list r-rlang r-fs r-callr))
     (home-page "https://wlandau.github.io/instantiate/")
     (synopsis "Pre-Compiled 'CmdStan' Models in R Packages")
     (description
@@ -8183,6 +8176,40 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 (2) function argument names are not repeated in comments, and (3) examples are
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-inldata
+  (package
+    (name "r-inldata")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inldata" version))
+       (sha256
+        (base32 "0b1lnbb21knr33yy6a2lswxhhxxdm6nw9zw1h7chmba9gb7gf24m"))))
+    (properties `((upstream-name . "inldata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
+    (home-page "https://code.usgs.gov/inl/inldata")
+    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
+    (description
+     "This package provides a collection of analysis-ready datasets for the U.S.
+Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
+surface-water monitoring networks, administered by the USGS-INL Project Office
+in cooperation with the U.S. Department of Energy.  The data collected from
+wells and surface-water stations at the Idaho National Laboratory and
+surrounding areas have been used to describe the effects of waste disposal on
+water contained in the eastern Snake River Plain aquifer, located in the
+southeastern part of Idaho, and the availability of water for long-term
+consumptive and industrial use.  The package includes long-term monitoring
+records dating back to measurements from 1922.  Geospatial data describing the
+areas from which samples were collected or observations were made are also
+included in the package.  Bundling this data into a single package significantly
+reduces the magnitude of data processing for researchers and provides a way to
+distribute the data along with its documentation in a standard format.
+Geospatial datasets are made available in a common projection and datum, and
+geohydrologic data have been structured to facilitate analysis.")
+    (license license:cc0)))
 
 (define-public r-inlcolor
   (package
@@ -10634,13 +10661,13 @@ Attention and non-attention levels (DEMOLIN-LEITE,2024) <DOI:
 (define-public r-implyr
   (package
     (name "r-implyr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "implyr" version))
        (sha256
-        (base32 "0rblsmx1z2n4g3fims5wa3wyf5znr0gkwd2yfz3130bcm6346da0"))))
+        (base32 "0kl4zsa1aw86mgj5kds8xxn3z9hgdb7nf5wrwhzn3wpa4yawx4r8"))))
     (properties `((upstream-name . "implyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11172,41 +11199,6 @@ of genomics data.  IMIX features statistically-principled model selection,
 global FDR control and computational efficiency.  Details are described in
 Ziqiao Wang and Peng Wei (2020) <doi:10.1093/bioinformatics/btaa1001>.")
     (license license:gpl2)))
-
-(define-public r-imifa
-  (package
-    (name "r-imifa")
-    (version "2.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IMIFA" version))
-       (sha256
-        (base32 "08h53w1axvmvnd4z1nf5bsps5sr6g8a77q6pvg39ss7jcfqm800v"))))
-    (properties `((upstream-name . "IMIFA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-slam
-                             r-rfast
-                             r-mvnfast
-                             r-mclust
-                             r-matrixstats))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=IMIFA")
-    (synopsis
-     "Infinite Mixtures of Infinite Factor Analysers and Related Models")
-    (description
-     "This package provides flexible Bayesian estimation of Infinite Mixtures of
-Infinite Factor Analysers and related models, for nonparametrically clustering
-high-dimensional data, introduced by Murphy et al. (2020)
-<doi:10.1214/19-BA1179>.  The IMIFA model conducts Bayesian nonparametric
-model-based clustering with factor analytic covariance structures without
-recourse to model selection criteria to choose the number of clusters or
-cluster-specific latent factors, mostly via efficient Gibbs updates.
-Model-specific diagnostic tools are also provided, as well as many options for
-plotting results, conducting posterior inference on parameters of interest,
-posterior predictive checking, and quantifying uncertainty.")
-    (license license:gpl3+)))
 
 (define-public r-imhd
   (package
@@ -12675,13 +12667,13 @@ elsewhere.")
 (define-public r-igor
   (package
     (name "r-igor")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igoR" version))
        (sha256
-        (base32 "1sqkxf6mp77hf15jg992krgpkw36mx9c2fqg4xzz88s47wwwg5wy"))))
+        (base32 "06f9f363zf1k026a0xg5myydzhgl6kgkqp74sz0jwgl44j2zp44s"))))
     (properties `((upstream-name . "igoR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14965,18 +14957,19 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.4.13")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "1jk9pny05x6zpxnn735kiggljp0mgrjjj8m7xq2ng16bi52gdvpf"))))
+        (base32 "037w2mijv7srisypjydr6iwxf432gbcvvbmdghffax5lzh9lw266"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-shiny
+                             r-secretbase
                              r-rcppsimdjson
                              r-nanonext
                              r-mirai

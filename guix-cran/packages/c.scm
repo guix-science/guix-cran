@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -2803,13 +2803,13 @@ team), UDS and UOS are largely interchangeable.")
 (define-public r-ctmva
   (package
     (name "r-ctmva")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctmva" version))
        (sha256
-        (base32 "197r3rjiqchpfxip0706q8rp7dbgfni7gh19g2k54bf7k3lc7y0p"))))
+        (base32 "0nfn6l31bsifrb1szsrig6l4023svsr81lqnq072yi6441klyf81"))))
     (properties `((upstream-name . "ctmva")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-fda))
@@ -7161,16 +7161,16 @@ distribution <@code{arXiv:2008.03073>}, of which functions are provided.")
 (define-public r-cramer
   (package
     (name "r-cramer")
-    (version "0.9-3")
+    (version "0.9-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cramer" version))
        (sha256
-        (base32 "1kdad8nndhics4282gfy9ncllk2kpawdy8ybq71vcd7hc7kf0zq5"))))
+        (base32 "0i5qg912rp8m1br00kd3iidy1v1yrmzj21xmy2wbjyyqrzakykc3"))))
     (properties `((upstream-name . "cramer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-boot))
+    (propagated-inputs (list r-rcpp r-boot))
     (home-page "https://cran.r-project.org/package=cramer")
     (synopsis
      "Multivariate Nonparametric Cramer-Test for the Two-Sample-Problem")
@@ -16730,6 +16730,42 @@ PM2.5, PM10, CO, SO2, and NO2 are available currently.  The method can be
 referenced at Environmental Protection Agency, United States as follows: EPA
 (2016)
 <https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf>.")
+    (license license:gpl3)))
+
+(define-public r-comtradr
+  (package
+    (name "r-comtradr")
+    (version "0.4.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comtradr" version))
+       (sha256
+        (base32 "0hlvfz3xg05hfhpm1i4wzprqhyric57n2rmc25mr9q047r6bl3mh"))))
+    (properties `((upstream-name . "comtradr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-purrr
+                             r-poorman
+                             r-memoise
+                             r-lubridate
+                             r-lifecycle
+                             r-httr2
+                             r-fs
+                             r-cli
+                             r-cachem
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/comtradr/")
+    (synopsis "Interface with the United Nations 'Comtrade' API")
+    (description
+     "Interface with and extract data from the United Nations Comtrade API
+<https://comtradeplus.un.org/>.  Comtrade provides country level shipping data
+for a variety of commodities, these functions allow for easy API query and data
+returned as a tidy data frame.")
     (license license:gpl3)))
 
 (define-public r-comsimitv
@@ -28707,13 +28743,13 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
 (define-public r-cica
   (package
     (name "r-cica")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICA" version))
        (sha256
-        (base32 "0b1q1np2sqjq7ijnm196nj86vz35ngbifpzy0qws2yxbsjf8xzf0"))))
+        (base32 "1z584rdmr5m8sqvymb12fv7i7gc6b9kj3ddl38j2qvjf668zw1dc"))))
     (properties `((upstream-name . "CICA")))
     (build-system r-build-system)
     (propagated-inputs (list r-servr
@@ -34096,13 +34132,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "0694fzfqiwg9g5nycd69j2q8hqjizxz3pbj6zj5k00x9mwslbfnm"))))
+        (base32 "09vdcj7nqyqavyhm8sa1ncn8zjyk320jq278m1ca3hqyap0p5v21"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -34111,10 +34147,10 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
                              r-tidyr
                              r-stringr
                              r-stringi
-                             r-snakecase
                              r-rlang
                              r-readr
                              r-purrr
+                             r-omopgenerics
                              r-lifecycle
                              r-jsonlite
                              r-glue
@@ -35142,13 +35178,13 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.0.6")
+    (version "4.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCAMLRGIS" version))
        (sha256
-        (base32 "1gbrrsxyfykzpng02sxk07j9afs1w550xawvaw7qrzx9yhr660qc"))))
+        (base32 "0xv3qv0vl0xnbzfl26gjyqr4asf3j3mia2fjk30385drijxiv8wb"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

@@ -7568,13 +7568,13 @@ et al. (2020) <doi:10.1016/j.dss.2021.113556>.")
 (define-public r-rsae
   (package
     (name "r-rsae")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsae" version))
        (sha256
-        (base32 "0gi7igaymsikxx73dw3ak9pg2vhlvcz5xlbxz8clfxy1d66g58hd"))))
+        (base32 "1722vv5c0qbksb22yhsx28wxhsl7i7pc0y5w2bzfaksls3nk2knf"))))
     (properties `((upstream-name . "rsae")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr gfortran))
@@ -7585,8 +7585,7 @@ et al. (2020) <doi:10.1016/j.dss.2021.113556>.")
 area-level means under the basic unit-level model.  The model can be fitted by
 maximum likelihood or a (robust) M-estimator.  Mean square prediction error is
 computed by a parametric bootstrap.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "FreeBSD")))))
+    (license license:gpl3)))
 
 (define-public r-rsadbe
   (package
@@ -7845,13 +7844,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "1.4.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "1h305zmks2403g76y5r5g31mgck6vmjcm0ziz7k958qbmck0jqg6"))))
+        (base32 "02gd17x1504q87xzw384fd5249xd6kpfqib257fqbdhcrd64bw0r"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -8363,13 +8362,13 @@ purposes.")
 (define-public r-rrcovna
   (package
     (name "r-rrcovna")
-    (version "0.5-0")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcovNA" version))
        (sha256
-        (base32 "16bm9gvmx89d4ji4kzxim8gpgfx1zq5zv2q5wcx5f3shkip0kvkg"))))
+        (base32 "0bf3r5j37pfv84fmmgsaq4ddrq7f290w8673fapqrirci7dnawxc"))))
     (properties `((upstream-name . "rrcovNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-norm r-lattice r-cluster))
@@ -8416,13 +8415,13 @@ Filzmoser (2014) <doi:10.17713/ajs.v43i4.44>), and robust sparse classification
 (define-public r-rrcov3way
   (package
     (name "r-rrcov3way")
-    (version "0.3-0")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcov3way" version))
        (sha256
-        (base32 "1pvgfwar52wfxvfkzjmxrny22ha8n11g8yv7wqs0gssij78xzijx"))))
+        (base32 "1n4wjxb5irgsm9yfhg5aav161ca2s1cgzhggxgf8xxyy1yw3xnk0"))))
     (properties `((upstream-name . "rrcov3way")))
     (build-system r-build-system)
     (propagated-inputs (list r-threeway r-rrcov r-robustbase r-pracma r-nnls))
@@ -23680,20 +23679,19 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "122b60nvxayfijzk8v5z47w8b1v3pzz7mjj3fpczf64nmd4a7ind"))))
+        (base32 "1w1dflh35j44ypdy8nd6l9i9la49hjvwkrlk74mch5knafgb8xzw"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-igraph r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/sysbiolab/RGraphSpace")
-    (synopsis
-     "Lightweight Package for Representing Large 'igraph' Objects in a Normalized Coordinate System")
+    (synopsis "Lightweight Interface Between 'ggplot2' and 'igraph' Objects")
     (description
      "Interface to integrate igraph and ggplot2 graphics within spatial maps.
 R@code{GraphSpace} implements new geometric objects using ggplot2 prototypes,
@@ -29788,13 +29786,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "1dzpgrmmy7ag93prdfiqmhj7d7hlaiiwk897xgrkxzni20r1ck4h"))))
+        (base32 "0l0haz3g9x6ycsiiz760dmcq5kclxyyhba69qvp7s9jhcacf6y12"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))
@@ -32652,13 +32650,13 @@ default reports are generated as vignettes in the resulting package.")
 (define-public r-redcapdm
   (package
     (name "r-redcapdm")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapDM" version))
        (sha256
-        (base32 "0caw3hnpa0b11idxa09g37fpcyccyd2kxhr0rywrdlx7xrc1ir29"))))
+        (base32 "11b183zxyy3r7k831fmbggzf6y9zwibf9rl0kqd7hzp658bn94s6"))))
     (properties `((upstream-name . "REDCapDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -38849,13 +38847,13 @@ outcome using BUGS code from Bristol University (Lu and Ades).")
 (define-public r-rcmdrplugin-riskdemo
   (package
     (name "r-rcmdrplugin-riskdemo")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.RiskDemo" version))
        (sha256
-        (base32 "03mqjb5jnpnbvbrliv6bk7kmlwbbhgf3fpbmb8vhncpld19lfsgp"))))
+        (base32 "07v15wnmqqa69gy2kl2jkdgn9nzjj2fz5yy56gkhxczw7j6516ij"))))
     (properties `((upstream-name . "RcmdrPlugin.RiskDemo")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -47595,13 +47593,13 @@ the visualization into R. Based on the 3dmol.js and the htmlwidgets R package.")
 (define-public r-r2winbugs
   (package
     (name "r-r2winbugs")
-    (version "2.1-22")
+    (version "2.1-22.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2WinBUGS" version))
        (sha256
-        (base32 "0yc1s7ccz9vghpavs92mj9q759jmaprap2w277qjqmf4qybl1mxf"))))
+        (base32 "199qkp4ar0kkdf7a2fn9aq17253ss97mddaivydcywvbp50n53j3"))))
     (properties `((upstream-name . "R2WinBUGS")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda r-boot))
@@ -48105,13 +48103,13 @@ interval functionality, download bootmlm from
 (define-public r-r2jags
   (package
     (name "r-r2jags")
-    (version "0.7-1")
+    (version "0.7-1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2jags" version))
        (sha256
-        (base32 "0si2f0lmnpjcsmy54k51kwj1fkx24dshiidv46h8j2xjq1hp429v"))))
+        (base32 "05qdhgf8cpkw51zw3krk6xvyb27h8wza1js371f6qig5gjl0xhfl"))))
     (properties `((upstream-name . "R2jags")))
     (build-system r-build-system)
     (inputs (list jags))

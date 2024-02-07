@@ -4158,13 +4158,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "04mbvqb00xsyap6k2ycn0idzpq4175bayx54jyq3h0jf0p18s00s"))))
+        (base32 "1jhzw09xjj7hrnvznp9fqw444x86apr54v6qryr9h4hkirsgpyd9"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-testfunctions r-r6 r-oeli r-cli r-checkmate))
@@ -7677,13 +7677,13 @@ data with a single line of code.")
 (define-public r-onbrand
   (package
     (name "r-onbrand")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onbrand" version))
        (sha256
-        (base32 "01wvv7dzjdpwyj4rfks2z442f4nh3y9jl6v9ykcl4jqzj4d0agvv"))))
+        (base32 "1iyizky2vrdpl325qg4mllzgs2aabshpp7cshvldfyxnlw4dxvrn"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8258,13 +8258,13 @@ of @code{OmegaG} do not necessarily represent the policy of the ALSAC.")
 (define-public r-olympicrshiny
   (package
     (name "r-olympicrshiny")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlympicRshiny" version))
        (sha256
-        (base32 "17caq517hqd89qvlsmirrcb7l9ny55rqyfrwhx037s30005mxq9f"))))
+        (base32 "1pal80qcj8jb0a0yd95qb56mkm99m9kyfcn44d63k769hkfx43fi"))))
     (properties `((upstream-name . "OlympicRshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarytools
@@ -8494,13 +8494,13 @@ validating, encoding and decoding entries that follow this standard.")
 (define-public r-olcpm
   (package
     (name "r-olcpm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OLCPM" version))
        (sha256
-        (base32 "0bylr62ma4wbbkjnp67whlndch1vwilm083wlkrfdnmhwqigzjz0"))))
+        (base32 "1iq0avlrxpj9qfi90im1k845grqrr512ysdi5fpfy0s8zjalsxnh"))))
     (properties `((upstream-name . "OLCPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-laplacesdemon))
@@ -8519,7 +8519,9 @@ increases.  Based on this, we propose two families of procedures - one based on
 the fluctuations of partial sums, and one based on extreme value theory - to
 monitor whether the first non-spiked eigenvalue diverges after a point in time
 in the monitoring horizon, thereby indicating the presence of a change point.
-See more details in He et al. (2021)<@code{arXiv:2112.13479>}.")
+This package also provides some simple functions for detecting and removing
+outliers, imputing missing entries and testing moments.  See more details in He
+et al. (2021)<@code{arXiv:2112.13479>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-okxapi
@@ -10353,13 +10355,13 @@ Waterway, Port, Coastal, and Ocean Division, Vol 105, pp 457-459.")
 (define-public r-oceanview
   (package
     (name "r-oceanview")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OceanView" version))
        (sha256
-        (base32 "1ww6xhpvs3y0zx7pgj8083a8v4l4cm0b0b497b4gsjbcbnbnal9c"))))
+        (base32 "0s615mrbwamd85h1q8rg5mciwq0hcjzl5rqjaq578nz5ikr3px9a"))))
     (properties `((upstream-name . "OceanView")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-rgl r-plot3drgl r-plot3d))

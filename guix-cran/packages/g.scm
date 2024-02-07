@@ -2301,13 +2301,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "3.1.9")
+    (version "3.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "0pjiblwjsy13cv6sivqhgjbrh9an3rm84mbm8c4v7z560q4y50ij"))))
+        (base32 "1fb9m9j0x4bv3pcnmndy25lliwagivw88nsm7j49rv3sbyhr439v"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))
@@ -2774,6 +2774,38 @@ based on methods described in Jennison, Christopher and Turnbull, Bruce W.,
      "The gene-set distance analysis of omic data is implemented by generalizing
 distance correlations to evaluate the association of a gene set with categorical
 and censored event-time variables.")
+    (license license:gpl2+)))
+
+(define-public r-gsd
+  (package
+    (name "r-gsd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GSD" version))
+       (sha256
+        (base32 "0qfn797wllkv44d55nhvm9mf4mxnxihckfbcd6l15irildnj9llg"))))
+    (properties `((upstream-name . "GSD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-igraph r-ggplot2 r-ebayesthresh))
+    (home-page "https://cran.r-project.org/package=GSD")
+    (synopsis "Graph Signal Decomposition")
+    (description
+     "Graph signals residing on the vertices of a graph have recently gained
+prominence in research in various fields.  Many methodologies have been proposed
+to analyze graph signals by adapting classical signal processing tools.
+Recently, several notable graph signal decomposition methods have been proposed,
+which include graph Fourier decomposition based on graph Fourier transform,
+graph empirical mode decomposition, and statistical graph empirical mode
+decomposition.  This package efficiently implements multiscale analysis
+applicable to various fields, and offers an effective tool for visualizing and
+decomposing graph signals.  For the detailed methodology, see Ortega et al.
+(2018) <doi:10.1109/JPROC.2018.2820126>, Shuman et al. (2013)
+<doi:10.1109/MSP.2012.2235192>, Tremblay et al. (2014)
+<https://www.eurasip.org/Proceedings/Eusipco/Eusipco2014/HTML/papers/1569922141.pdf>,
+and Cho et al. (2024) \"Statistical graph empirical mode decomposition by graph
+denoising and boundary treatment\".")
     (license license:gpl2+)))
 
 (define-public r-gscounts
@@ -9460,13 +9492,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goeveg" version))
        (sha256
-        (base32 "1dzfigsx3gx7ixqsx3yqi06jcs9k33rbz4wxjjc7sfffb7l09xby"))))
+        (base32 "12q18ns0j5lwlq7ahvbv8rfwx50b9mc7w6wkm6w5rg2byjw7b354"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -21079,13 +21111,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "13zwclvwilygzvyqpiarj5g6wgjy7rkb4m0bahd6r638sy6ys13z"))))
+        (base32 "1m7fqlx01pgyx4ff5r6k2a56rx2j61xhmq1mdj1ps200isv62ayi"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21711,13 +21743,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "020j899jhk5mv4h4pgr28gjvpj57zvmv8c4ms3c7j7mn06q2rjxz"))))
+        (base32 "07w7lfdspnsqlnvjm7svi7lzi5a30l3zsj49d27gwfh0aizjzwjl"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -26382,32 +26414,6 @@ values, and provides several functionalities for prediction and graphical
 representation.")
     (license license:gpl2)))
 
-(define-public r-gbm3
-  (package
-    (name "r-gbm3")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gbm3" version))
-       (sha256
-        (base32 "1gz4v4l4ib5z6x4c7dvdvchcpml8ix805lx9qi0yd8ffhcmbiw7a"))))
-    (properties `((upstream-name . "gbm3")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpp r-lattice))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/gbm-developers/gbm3")
-    (synopsis "Generalized Boosted Regression Models")
-    (description
-     "Extensions to Freund and Schapire's @code{AdaBoost} algorithm, Y. Freund and R.
-Schapire (1997) <doi:10.1006/jcss.1997.1504> and Friedman's gradient boosting
-machine, J.H. Friedman (2001) <doi:10.1214/aos/1013203451>.  Includes regression
-methods for least squares, absolute loss, t-distribution loss, quantile
-regression, logistic, Poisson, Cox proportional hazards partial likelihood,
-@code{AdaBoost} exponential loss, Huberized hinge loss, and Learning to Rank
-measures (@code{LambdaMART}).")
-    (license license:gpl2+)))
-
 (define-public r-gbm2sas
   (package
     (name "r-gbm2sas")
@@ -28672,13 +28678,13 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "1vh2w3jza5vm7w2j3zix83syrvkm8d3jy77pknsncnv5wljikh84"))))
+        (base32 "0q37f8qpqrhbxaq1gjqvrhqz9ak41mlijria49p9fhmsz8fv0zz4"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

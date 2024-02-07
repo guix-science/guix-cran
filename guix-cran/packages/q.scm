@@ -4244,13 +4244,13 @@ ISBN:978-0972072427).")
 (define-public r-qgisprocess
   (package
     (name "r-qgisprocess")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgisprocess" version))
        (sha256
-        (base32 "0f3aidzvib91sisv483wgxk3zxk3zhw0gdybjf5y0a76cskifd0b"))))
+        (base32 "0l7696hl728vcjapsczkj3lvip23b1n22skk6cinwkjb8hyc7h9y"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

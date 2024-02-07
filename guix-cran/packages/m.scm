@@ -1292,30 +1292,6 @@ data.")
      "Package for moving grid adjustment in plant breeding field trials.")
     (license license:gpl2+)))
 
-(define-public r-mvnfast
-  (package
-    (name "r-mvnfast")
-    (version "0.2.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mvnfast" version))
-       (sha256
-        (base32 "1869xqq2wd7yw23q4ma5qawcnbdp7myafk6rdxazqymqak7f0wc8"))))
-    (properties `((upstream-name . "mvnfast")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mfasiolo/mvnfast/")
-    (synopsis "Fast Multivariate Normal and Student's t Methods")
-    (description
-     "This package provides computationally efficient tools related to the
-multivariate normal and Student's t distributions.  The main functionalities
-are: simulating multivariate random vectors, evaluating multivariate normal or
-Student's t densities and Mahalanobis distances.  These tools are very efficient
-thanks to the use of C++ code and of the @code{OpenMP} API.")
-    (license license:gpl2+)))
-
 (define-public r-mvnbayesian
   (package
     (name "r-mvnbayesian")
@@ -1968,6 +1944,33 @@ manufacturing process modeling, spectroscopic analyses, and data mining.")
      "Permutation tests for variance components for 2-level, 3-level and 4-level data
 with univariate or multivariate responses.")
     (license license:gpl3)))
+
+(define-public r-mvcauchy
+  (package
+    (name "r-mvcauchy")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvcauchy" version))
+       (sha256
+        (base32 "1szrzlyg1bsdbkmix4b8z301m5i7z38lba1wv1a8cw7v5hv74kjx"))))
+    (properties `((upstream-name . "mvcauchy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2 r-rfast))
+    (home-page "https://cran.r-project.org/package=mvcauchy")
+    (synopsis "Multivariate Cauchy Distribution")
+    (description
+     "The Cauchy distribution is a special case of the t distribution when the degrees
+of freedom are equal to 1.  The functions are related to the multivariate Cauchy
+distribution and include simulation, computation of the density, maximum
+likelihood estimation, contour plot of the bivariate Cauchy distribution, and
+discriminant analysis.  References include: Nadarajah S. and Kotz S. (2008).
+\"Estimation methods for the multivariate t distribution\".  Acta Applicandae
+Mathematicae, 102(1): 99--118. <doi:10.1007/s10440-008-9212-8>, and Kanti V.
+Mardia, John T. Kent and John M. Bibby (1979). \"Multivariate analysis\",
+ISBN:978-0124712522.  Academic Press, London.")
+    (license license:gpl2+)))
 
 (define-public r-mvbutils
   (package
@@ -5992,6 +5995,27 @@ z-scores and percentiles based on LMS method for children and adolescents up to
 risk of adverse health events.")
     (license license:gpl3)))
 
+(define-public r-mtvc
+  (package
+    (name "r-mtvc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtvc" version))
+       (sha256
+        (base32 "0jri7i6vyj8mlcd5hjrfbcwl4sfgd3lw0vkf8rgq5sbixkmbpv1b"))))
+    (properties `((upstream-name . "mtvc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (home-page "https://github.com/egonzato/mtvc")
+    (synopsis "Multiple Counting Process Structure for Survival Analysis")
+    (description
+     "Counting process structure is fundamental to model time varying covariates.
+This package restructures dataframes in the counting process format for one or
+more variables.  F. W. Dekker, et al. (2008) <doi:10.1038/ki.2008.328>.")
+    (license license:expat)))
+
 (define-public r-mtsys
   (package
     (name "r-mtsys")
@@ -7479,13 +7503,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "1zs7n6yvk6fj25w8srhn5359qk9lr7d7ms1pzzvg2i6w78wfw32c"))))
+        (base32 "16m8q5h9ciydlg6gqpvwaxam2q7d327v7z40h7cwc0chh43wjysz"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -10258,6 +10282,49 @@ representations of multidimensional data sets.")
      "Fit and simulate mixtures of von Mises-Fisher distributions.")
     (license license:gpl2)))
 
+(define-public r-movieroc
+  (package
+    (name "r-movieroc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "movieROC" version))
+       (sha256
+        (base32 "1afdb2hb3cmbfgx70xnm1xzjsk855847824qrfaa4ldh9hg403yb"))))
+    (properties `((upstream-name . "movieROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-rsolnp
+                             r-robustbase
+                             r-rms
+                             r-ks
+                             r-intrval
+                             r-gtools
+                             r-e1071
+                             r-animation))
+    (home-page "https://cran.r-project.org/package=movieROC")
+    (synopsis
+     "Visualizing the Decision Rules Underlying Binary Classification")
+    (description
+     "Visualization of decision rules for binary classification and Receiver Operating
+Characteristic (ROC) curve estimation under different generalizations: - making
+the classification subsets flexible to cover those scenarios where both extremes
+of the marker are associated with a higher risk of being positive, considering
+two thresholds (@code{gROC} curve); - transforming the marker by a function
+either defined by the user or resulting from a logistic regression model
+(@code{hROC} curve); - considering a linear transformation with some fixed
+parameters introduced by the user, dynamic parameters or empirically maximizing
+TPR for each FPR for a bivariate marker.  Also a quadratic transformation with
+particular coefficients or a function fitted by a logistic regression model can
+be considered (@code{biROC} curve); - considering a linear transformation with
+some fixed parameters introduced by the user, dynamic parameters or a function
+fitted by a logistic regression model (@code{multiROC} curve).  The
+classification regions behind each point of the ROC curve are displayed in both
+fixed graphics (plot.@code{buildROC}(), plot.regions() or plot.funregions()
+function) or videos (@code{movieROC}() function).")
+    (license license:gpl3)))
+
 (define-public r-movewindspeed
   (package
     (name "r-movewindspeed")
@@ -12169,13 +12236,13 @@ painter as the graphical output recalls Mondrianâs paintings.")
 (define-public r-mondate
   (package
     (name "r-mondate")
-    (version "0.10.02")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mondate" version))
        (sha256
-        (base32 "18nsqldj1vvv882nh2dyilqvz1jbhqkz3q69cpjq1xfcj0z88qxz"))))
+        (base32 "1spz3xv450mw0i984hjp6r4lk653nmjawf9cipv9z7isc4zv3ac3"))))
     (properties `((upstream-name . "mondate")))
     (build-system r-build-system)
     (home-page "https://www.R-project.org")
@@ -12221,13 +12288,13 @@ submit tips directly to the competition from R.")
 (define-public r-monan
   (package
     (name "r-monan")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoNAn" version))
        (sha256
-        (base32 "1dl3c0x3cmraav05b9mi4h8d0mlsiykshdrf54n83p3b3glc78bc"))))
+        (base32 "1n9vxmh1vx6p5cw91960cgvg7h9ga79lpdcz22cds74zxrnprpi9"))))
     (properties `((upstream-name . "MoNAn")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall))
@@ -12450,13 +12517,13 @@ method.")
 (define-public r-mombf
   (package
     (name "r-mombf")
-    (version "3.5.2")
+    (version "3.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mombf" version))
        (sha256
-        (base32 "0npfqslp7hppgv5crw18scy97k29c30fm0023qv826inhjxzm01z"))))
+        (base32 "0pyq8jlx36075b77p5kalq5fn0y8f3s7l8crn3gvpjmp9shqv22y"))))
     (properties `((upstream-name . "mombf")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20239,18 +20306,19 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1ialhbsxfzr8nf97zlbqi2nry028ykih6naf7ahzjm6n32c2vxdy"))))
+        (base32 "1sgn0g1rv2iz85bsg4n6s4rm81vy4jffqgj6k5fmvqga8i89c6k0"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/kunfa/mixedBayes")
-    (synopsis "Bayesian Longitudinal Regularized Quantile Mixed Model")
+    (synopsis
+     "Bayesian Regularized Quantile Mixed Model for G - E Interactions")
     (description
      "In longitudinal studies, the same subjects are measured repeatedly over time,
 leading to correlations among the repeated measurements.  Properly accounting
@@ -20640,13 +20708,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "1s3yn6hsykyn4r6cs5dpiiaf91y9pxfvh764qsnq47x3qxqqx1r6"))))
+        (base32 "1jhmpw6hn11yqwx6iw8p7zfw28m60p8gdqhp1sc0wwhvz86ywns5"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -21716,13 +21784,13 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
 (define-public r-mirtest
   (package
     (name "r-mirtest")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miRtest" version))
        (sha256
-        (base32 "1r29vrx999wsplp6fm4cfikc8fmzl1x0si1y4bwq2ancrl8jjry9"))))
+        (base32 "1qgyldf3yhny8dmix6drisrrn64s5h58yvmk5pch6irdddq3i053"))))
     (properties `((upstream-name . "miRtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-limma r-globaltest r-globalancova
@@ -24207,17 +24275,17 @@ in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 (define-public r-micromap
   (package
     (name "r-micromap")
-    (version "1.9.7")
+    (version "1.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromap" version))
        (sha256
-        (base32 "1lkzh7bwmvabvn2qavxmfd2lcn1xv85vq0g6qpbfls4jfy9qxd7g"))))
+        (base32 "129q0a6jywxmhgddyacjl150zfxr04qdv17pqngp4xl0rd9r5zcz"))))
     (properties `((upstream-name . "micromap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-ggplot2))
-    (home-page "https://cran.r-project.org/package=micromap")
+    (home-page "<https://github.com/fawda123/micromap>")
     (synopsis "Linked Micromap Plots")
     (description
      "This group of functions simplifies the creation of linked micromap plots.
@@ -33038,6 +33106,37 @@ multivariate data used in chemometrics.  S. Kucheryavskiy (2020)
 data.")
     (license license:gpl2+)))
 
+(define-public r-md4r
+  (package
+    (name "r-md4r")
+    (version "0.5.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "md4r" version))
+       (sha256
+        (base32 "1kdy6izd4gxqf4bdrb3hav3mhn1gw9bjgmdk4r6j9qhm7mmkkkps"))))
+    (properties `((upstream-name . "md4r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-textutils
+                             r-stringr
+                             r-rcpp
+                             r-purrr
+                             r-glue
+                             r-cli
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=md4r")
+    (synopsis "Markdown Parser Implemented using the 'MD4C' Library")
+    (description
+     "This package provides an R wrapper for the MD4C (Markdown for C') library.
+Functions exist for parsing markdown ('@code{CommonMark} compliant) along with
+support for other common markdown extensions (e.g. @code{GitHub} flavored
+markdown, @code{LaTeX} equation support, etc.).  The package also provides a
+number of higher level functions for exploring and manipulating markdown
+abstract syntax trees as well as translating and displaying the documents.")
+    (license license:expat)))
+
 (define-public r-md-log
   (package
     (name "r-md-log")
@@ -33728,6 +33827,40 @@ Boshnakov (2002) <doi:10.1016/S0024-3795(01)00475-X> and Boshnakov & Iqelan
 <DOI:10.1002/for.3980010202> and the 3003 time series from the IJF-M3
 competition (Makridakis and Hibon, 2000) <DOI:10.1016/S0169-2070(00)00057-1>.")
     (license license:gpl3)))
+
+(define-public r-mcoe
+  (package
+    (name "r-mcoe")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MCOE" version))
+       (sha256
+        (base32 "1ajijv3zl01am5qrkb6fdgrynnw31hgqdg8ph7bvm3z2y7z8zrbr"))))
+    (properties `((upstream-name . "MCOE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-odbc
+                             r-magick
+                             r-keyring
+                             r-googlesheets4
+                             r-ggthemes
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-dbi))
+    (home-page "https://github.com/dobrowski/MCOE")
+    (synopsis
+     "Creates New Folders and Loads Standard Practices for Monterey County Office of Education")
+    (description
+     "Basic Setup for Projects in R for Monterey County Office of Education.  It
+contains functions often used in the analysis of education data in the county
+office including seeing if an item is not in a list, rounding in the manner the
+general public expects, including logos for districts, switching between
+district names and their county-district-school codes, accessing the local SQL
+table and making thematically consistent graphs.")
+    (license license:expat)))
 
 (define-public r-mco
   (package
@@ -38075,6 +38208,31 @@ estimation from the individual or \"best\" model (determined via model selection
 can be retrieved.")
     (license license:expat)))
 
+(define-public r-marmot
+  (package
+    (name "r-marmot")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MARMoT" version))
+       (sha256
+        (base32 "0mykzfs7kyyxsmjzvp4gc8pz3z1j9vs5f81qlxhkmk96pqdjp4d9"))))
+    (properties `((upstream-name . "MARMoT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-parsec))
+    (home-page "https://cran.r-project.org/package=MARMoT")
+    (synopsis
+     "Matching on Poset-Based Average Rank for Multiple Treatments (MARMoT)")
+    (description
+     "It contains the function to apply MAR@code{MoT} balancing technique discussed
+in: Silan, Boccuzzo, Arpino (2021) <DOI:10.1002/sim.9192>, Silan, Belloni,
+Boccuzzo, (2023) <DOI:10.1007/s10260-023-00695-0>; furthermore it contains a
+function for computing the Deloof's approximation of the average rank (and also
+a parallelized version) and a function to compute the Absolute Standardized
+Bias.")
+    (license license:gpl3+)))
+
 (define-public r-marmap
   (package
     (name "r-marmap")
@@ -38625,13 +38783,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "1h5vdd2rqs0d261qdj79h6z1gbz5xhig25wprxvzk6z1lnhdpb2h"))))
+        (base32 "1q8jlhwka0ji70agj98c3g01894xnl5cj9khhr1imk3ljx72fxrp"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -39379,13 +39537,13 @@ build-in functions provided in mapping or with other packages already available.
 (define-public r-mapmisc
   (package
     (name "r-mapmisc")
-    (version "2.0.3")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapmisc" version))
        (sha256
-        (base32 "0pddmc76lb3wxyq49b7kjipyr2gpfsdix0vz9cj13aibljxy49xw"))))
+        (base32 "1s8sp1yrdx43jwzxcqvkj74h33xrb9wh70gkgcs608z7l4rliam3"))))
     (properties `((upstream-name . "mapmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-geosphere))

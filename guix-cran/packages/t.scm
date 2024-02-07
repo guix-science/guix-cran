@@ -22,6 +22,7 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages tex)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -4013,6 +4014,41 @@ and directories, and for coercing series from and to other data types (such as
 zoo series).")
     (license license:gpl3)))
 
+(define-public r-tsdataleaks
+  (package
+    (name "r-tsdataleaks")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsdataleaks" version))
+       (sha256
+        (base32 "1phkgkvly0zwm545yabc3p8wpgkyarq7w1nglghv962mslql3mkr"))))
+    (properties `((upstream-name . "tsdataleaks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-slider
+                             r-purrr
+                             r-plyr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thiyangt/tsdataleaks")
+    (synopsis "Exploit Data Leakages in Time Series Forecasting Competitions")
+    (description
+     "Forecasting competitions are of increasing importance as a mean to learn best
+practices and gain knowledge.  Data leakage is one of the most common issues
+that can often be found in competitions.  Data leaks can happen when the
+training data contains information about the test data.  For example: randomly
+chosen blocks of time series are concatenated to form a new time series,
+scale-shifts, repeating patterns in time series, white noise is added in the
+original time series to form a new time series, etc.  tsdataleaks package can be
+used to detect data leakages in a collection of time series.")
+    (license license:gpl2+)))
+
 (define-public r-tscs
   (package
     (name "r-tscs")
@@ -7183,13 +7219,13 @@ personalisation and delivers a more relevant search.")
 (define-public r-traudem
   (package
     (name "r-traudem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traudem" version))
        (sha256
-        (base32 "0qxvh5zfj14yaywjzf83v01v6n064iq16ba8g72yh0pbb8i98w9i"))))
+        (base32 "11bwmn1fgymya5scsbby815mvaa037nnvb2y1l9h4jy1q3g8zwga"))))
     (properties `((upstream-name . "traudem")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-sys r-rlang r-purrr r-cli))
@@ -8477,21 +8513,22 @@ latest version.")
 (define-public r-trader
   (package
     (name "r-trader")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRADER" version))
        (sha256
-        (base32 "1w9m2b866dyj82s118m64q8j9a1chpq2km2pnn9mfwwj8sivgdgn"))))
+        (base32 "0r1mv76biy0zc8ksq0dvqgspph5gxjlpvh6pv7lw2wgcn5zid79d"))))
     (properties `((upstream-name . "TRADER")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplr))
     (home-page "https://github.com/pavel-fibich/TRADER")
     (synopsis "Tree Ring Analysis of Disturbance Events in R")
     (description
-     "Tree Ring Analysis of Disturbance Events in R (TRADER) package provides only one
-way for disturbance reconstruction from tree-ring data.")
+     "Tree Ring Analysis of Disturbance Events in R (TRADER) package provides
+functions for disturbance reconstruction from tree-ring data, e.g. boundary
+line, absolute increase, growth averaging methods.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-trade
@@ -12106,17 +12143,22 @@ are described in Danesh G et al (2022) <doi:10.1111/2041-210X.14038>.")
 (define-public r-tipr
   (package
     (name "r-tipr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipr" version))
        (sha256
-        (base32 "0lx6s0yiyl26gn49xlydyl49b7qb3rl94lahlcyhryayp8sns2ni"))))
+        (base32 "1vbcgh40j20x8r8f005g1i6iwwrr9sdb68sc4ql8nyddm5bk3rx3"))))
     (properties `((upstream-name . "tipr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-sensemakr r-purrr r-glue))
-    (home-page "https://cran.r-project.org/package=tipr")
+    (propagated-inputs (list r-tibble
+                             r-sensemakr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-cli))
+    (home-page "https://r-causal.github.io/tipr/")
     (synopsis "Tipping Point Analyses")
     (description
      "The strength of evidence provided by epidemiological and observational studies
@@ -19474,6 +19516,27 @@ addition, testthis provides function to manage and run tests in subdirectories
 of the test/testthat directory.")
     (license license:expat)))
 
+(define-public r-testthatmulti
+  (package
+    (name "r-testthatmulti")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "testthatmulti" version))
+       (sha256
+        (base32 "1w1bwqjk721g4zvz3chx65rfvr47w3z2savx0qnh0sk09rj0zx50"))))
+    (properties `((upstream-name . "testthatmulti")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=testthatmulti")
+    (synopsis "Testing for R Packages with Multiple Attempts for Noisy Tests")
+    (description
+     "Runs tests using the testthat package but allows for multiple attempts for a
+single test.  This is useful for noisy or flaky tests that generally pass but
+can fail due to occasional random errors, such as numeric instability or using
+random data.")
+    (license license:gpl3+)))
+
 (define-public r-testscorer
   (package
     (name "r-testscorer")
@@ -20277,13 +20340,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "0mspvqhbw76hxq6bcx1lspmwjar5a0fdk4ps572mq4jg7pa37c45"))))
+        (base32 "0amdyg41mhny74zdl8xm9f4ljii4w6lncq57xgw7qlq946dfp8zg"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-sp r-shiny r-rcpphungarian
@@ -21727,6 +21790,43 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
 manipulation of application layout and plot or table settings.")
     (license license:asl2.0)))
 
+(define-public r-teal-slice
+  (package
+    (name "r-teal-slice")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.slice" version))
+       (sha256
+        (base32 "0i797v717jy7w6qcg82pl1rmr6hdp750wxzigynv6mcipibfms4r"))))
+    (properties `((upstream-name . "teal.slice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-teal-widgets
+                             r-teal-logger
+                             r-teal-data
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-r6
+                             r-plotly
+                             r-logger
+                             r-lifecycle
+                             r-jsonlite
+                             r-htmltools
+                             r-dplyr
+                             r-checkmate
+                             r-bslib))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.slice/")
+    (synopsis "Filter Module for 'teal' Applications")
+    (description
+     "Data filtering module for teal applications.  Allows for interactive filtering
+of data stored in data.frame and @code{MultiAssayExperiment} objects.  Also
+displays filtered and unfiltered observation counts.")
+    (license license:asl2.0)))
+
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
@@ -22207,6 +22307,35 @@ supports automating the creation of Stan code for TDCMs, fungible TDCMs (i.e.,
 TDCMs with item parameters constrained to be equal across all items), and
 multi-threaded TDCMs.")
     (license license:gpl2+)))
+
+(define-public r-tdcm
+  (package
+    (name "r-tdcm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDCM" version))
+       (sha256
+        (base32 "0wvm92y7slx69kri8kxf05ran9sbg3mkfm9h2wny7g5lwv627mvq"))))
+    (properties `((upstream-name . "TDCM")))
+    (build-system r-build-system)
+    (inputs (list pandoc))
+    (propagated-inputs (list r-stringr r-polycor r-gtools r-cdm))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cotterell/tdcm")
+    (synopsis "The Transition Diagnostic Classification Model Framework")
+    (description
+     "Estimate the transition diagnostic classification model (TDCM) described in
+Madison & Bradshaw (2018) <doi:10.1007/s11336-018-9638-5>, a longitudinal
+extension of the log-linear cognitive diagnosis model (LCDM) in Henson, Templin
+& Willse (2009) <doi:10.1007/s11336-008-9089-5>.  As the LCDM subsumes many
+other diagnostic classification models (DCMs), many other DCMs can be estimated
+longitudinally via the TDCM. The TDCM package includes functions to estimate the
+single-group and multigroup TDCM, summarize results of interest including item
+parameters, growth proportions, transition probabilities, transitional
+reliability, attribute correlations, model fit, and growth plots.")
+    (license license:expat)))
 
 (define-public r-tdboost
   (package

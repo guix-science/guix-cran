@@ -9132,6 +9132,26 @@ prefixed with aux (auxiliary) are independent implementations of published
 algorithms for solving optimization problems less relevant to Subset Sum.")
     (license license:gpl3)))
 
+(define-public r-flsa
+  (package
+    (name "r-flsa")
+    (version "1.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flsa" version))
+       (sha256
+        (base32 "000al9xan9brrg5c010csyg06jan55x7lg6zxsxc65dcxz4hmzg2"))))
+    (properties `((upstream-name . "flsa")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=flsa")
+    (synopsis "Path Algorithm for the General Fused Lasso Signal Approximator")
+    (description
+     "This package implements a path algorithm for the Fused Lasso Signal
+Approximator.  For more details see the help files or the article by Hoefling
+(2009) <@code{arXiv:0910.0526>}.")
+    (license license:gpl2)))
+
 (define-public r-flr
   (package
     (name "r-flr")
@@ -9335,6 +9355,38 @@ this package can easily be integrated into computation pipelines (e.g. nextflow
 re-producibility in the context of machine-learning.")
     (license license:gpl3+)))
 
+(define-public r-flowchart
+  (package
+    (name "r-flowchart")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowchart" version))
+       (sha256
+        (base32 "003miaakn8bbx6fnhlwvl2p3303hygckma2fdwkzgmzd44xwv36k"))))
+    (properties `((upstream-name . "flowchart")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-gmisc
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=flowchart")
+    (synopsis "Tidy Flowchart Generator")
+    (description
+     "This package creates participant flow diagrams directly from a dataframe.
+Representing the flow of participants through each stage of a study, especially
+in clinical trials, is essential to assess the generalisability and validity of
+the results.  This package provides a set of functions that can be combined with
+a pipe operator to create all kinds of flowcharts from a data frame in an easy
+way.")
+    (license license:expat)))
+
 (define-public r-flow
   (package
     (name "r-flow")
@@ -9512,6 +9564,43 @@ based on homogeneity assumptions and computed from multivariate observations
 (multiple measurement stations).  For details see Kinsvater et al. (2017)
 <@code{arXiv:1701.06455>}.")
     (license license:gpl2+)))
+
+(define-public r-flocker
+  (package
+    (name "r-flocker")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flocker" version))
+       (sha256
+        (base32 "19029by01jgwdlc0m4d05cfia8v0zfxf6k4aqm6wpvlbi7ap6hi6"))))
+    (properties `((upstream-name . "flocker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-matrixstats
+                             r-mass
+                             r-loo
+                             r-brms
+                             r-boot
+                             r-assertthat
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jsocolar/flocker")
+    (synopsis "Flexible Occupancy Estimation with Stan")
+    (description
+     "Fit occupancy models in Stan via brms'.  The full variety of brms formula-based
+effects structures are available to use in multiple classes of occupancy model,
+including single-season models, models with data augmentation for never-observed
+species, dynamic (multiseason) models with explicit colonization and extinction
+processes, and dynamic models with autologistic occupancy dynamics.  Formulas
+can be specified for all relevant distributional terms, including detection and
+one or more of occupancy, colonization, extinction, and autologistic depending
+on the model type.  Several important forms of model post-processing are
+provided.  References: BÃ¼rkner (2017) <doi:10.18637/jss.v080.i01>; Carpenter et
+al. (2017) <doi:10.18637/jss.v076.i01>; Socolar & Mills (2023)
+<doi:10.1101/2023.10.26.564080>.")
+    (license license:bsd-3)))
 
 (define-public r-flobr
   (package
@@ -13486,13 +13575,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "1vch13a75gc2d5z6q3axxck7w76xya1l6v8rlyszcyvl8gzxwv6k"))))
+        (base32 "0p78fkc1fw12nv0y7lzdp0df39rcpja7xwqkbzi6i38f3pmw22f1"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -13552,13 +13641,13 @@ Service, Forest Inventory and Analysis (FIA) Program.")
 (define-public r-fiery
   (package
     (name "r-fiery")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fiery" version))
        (sha256
-        (base32 "12mw8rha0mmv6r2s42k4gddafsnff29ijwsxyhcn0nc48qqniszd"))))
+        (base32 "127ighz937rgqbg0kiq7wrms7z3r5pf77ixcfa7if35mcv7yrg8s"))))
     (properties `((upstream-name . "fiery")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -14709,17 +14798,17 @@ standardisation of fishing effort in unit base.")
 (define-public r-fertnet
   (package
     (name "r-fertnet")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FertNet" version))
        (sha256
-        (base32 "1hhhsiva6nqqyjimmla2s4iv2lm3j20m55d7bwm8zr79lnj72nj9"))))
+        (base32 "0rcxh0hxrmc3hj0gmk2sqd7hqr9dyhv0nx17ipwsg13v7ghvp2h4"))))
     (properties `((upstream-name . "FertNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-haven))
-    (home-page "https://cran.r-project.org/package=FertNet")
+    (home-page "https://github.com/gertstulp/FertNet")
     (synopsis "Process Data from the Social Networks and Fertility Survey")
     (description
      "Processes data from The Social Networks and Fertility Survey, downloaded from
@@ -15694,6 +15783,34 @@ Mustapha, K. B. (2018).  Finite Element Computations in Mechanics with R. [ISBN
      "Multiple testing procedures for heterogeneous and discrete tests as described in
 DÃ¶hler and Roquain (2019) <@code{arXiv:1912.04607v1>}.  The main algorithms of
 the paper are available as continuous, discrete and weighted versions.")
+    (license license:gpl3)))
+
+(define-public r-fdwasserstein
+  (package
+    (name "r-fdwasserstein")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdWasserstein" version))
+       (sha256
+        (base32 "1lqmmyh5dizj26s9qdsnca58k1ai40j4vgy1bymp50ijrnpjjyn8"))))
+    (properties `((upstream-name . "fdWasserstein")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=fdWasserstein")
+    (synopsis "Application of Optimal Transport to Functional Data Analysis")
+    (description
+     "These functions were developed to support statistical analysis on functional
+covariance operators.  The package contains functions to: - compute
+2-Wasserstein distances between Gaussian Processes as in Masarotto, Panaretos &
+Zemel (2019) <doi:10.1007/s13171-018-0130-1>; - compute the Wasserstein
+barycenter (Frechet mean) as in Masarotto, Panaretos & Zemel (2019)
+<doi:10.1007/s13171-018-0130-1>; - perform analysis of variance testing
+procedures for functional covariances and tangent space principal component
+analysis of covariance operators as in Masarotto, Panaretos & Zemel (2022)
+<@code{arXiv:2212.04797>}. - perform a soft-clustering based on the Wasserstein
+distance where functional data are classified based on their covariance
+structure as in Masarotto & Masarotto (2023) <doi:10.1111/sjos.12692>.")
     (license license:gpl3)))
 
 (define-public r-fdth
@@ -18386,6 +18503,29 @@ employs the @code{fastLR}() method in the @code{RcppNumerical} package by Yixuan
 Qiu et al.  This package allows their work to be more useful to a wider
 community that consumes inference.")
     (license license:gpl3)))
+
+(define-public r-fastliu
+  (package
+    (name "r-fastliu")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastliu" version))
+       (sha256
+        (base32 "1ykcqm1l8674hmp7j62skla9735gs15mqcd3q628vjvrwgcq0mxl"))))
+    (properties `((upstream-name . "fastliu")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=fastliu")
+    (synopsis
+     "Fast Functions for Liu Regression with Regularization Parameter and Statistics")
+    (description
+     "Efficient computation of the Liu regression coefficient paths, Liu-related
+statistics and information criteria for a grid of the regularization parameter.
+The computations are based on the C++ library Armadillo through the R package
+Rcpp'.")
+    (license license:gpl3+)))
 
 (define-public r-fastlink
   (package

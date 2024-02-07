@@ -436,6 +436,34 @@ named in a way that is consistent with usage, making their names easy to
 remember and easy to deploy.")
     (license license:gpl2)))
 
+(define-public r-numero
+  (package
+    (name "r-numero")
+    (version "1.9.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Numero" version))
+       (sha256
+        (base32 "1g66cdg6y07f2n02ngx54yj42ss4nashhd7avcfxl4ajjfh6wavc"))))
+    (properties `((upstream-name . "Numero")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=Numero")
+    (synopsis "Statistical Framework to Define Subgroups in Complex Datasets")
+    (description
+     "High-dimensional datasets that do not exhibit a clear intrinsic clustered
+structure pose a challenge to conventional clustering algorithms.  For this
+reason, we developed an unsupervised framework that helps scientists to better
+subgroup their datasets based on visual cues, please see Gao S, Mutter S, Casey
+A, Makinen V-P (2019) Numero: a statistical framework to define multivariable
+subgroups in complex population-based datasets, Int J Epidemiology, 48:369-37,
+<doi:10.1093/ije/dyy113>.  The framework includes the necessary functions to
+construct a self-organizing map of the data, to evaluate the statistical
+significance of the observed data patterns, and to visualize the results.")
+    (license license:gpl2+)))
+
 (define-public r-numbersbr
   (package
     (name "r-numbersbr")
@@ -778,6 +806,30 @@ More examples and details about this package can be found in the book \"Nonlinea
 Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
 (ISBN: 978-1-119-26407-1).")
     (license license:gpl2+)))
+
+(define-public r-ntlkwiex
+  (package
+    (name "r-ntlkwiex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NTLKwIEx" version))
+       (sha256
+        (base32 "1pdqcbiznil97s8m3yc3f251mii0w9qpa1ayw6bnx6bm9brgd4my"))))
+    (properties `((upstream-name . "NTLKwIEx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=NTLKwIEx")
+    (synopsis "Computation of NTLKwIEx Distribution Properties")
+    (description
+     "This package implements statistical tools for analyzing, simulating, and
+computing properties of the New Topp-Leone Kumaraswamy Inverse Exponential
+(NTL@code{KwIEx}) distribution.  See @code{AtchadÃ©} M, Otodji T, and Djibril A
+(2024) <doi:10.1063/5.0179458> and @code{AtchadÃ©} M, Otodji T, Djibril A, and
+N'@code{boukÃ©} M (2023) <doi:10.1515/phys-2023-0151> for details.")
+    (license license:gpl2)))
 
 (define-public r-ntdr
   (package
@@ -1148,13 +1200,13 @@ values (promises), \"...\" lists, and active calls.")
 (define-public r-nser
   (package
     (name "r-nser")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nser" version))
        (sha256
-        (base32 "0l03qkh6b2n2vq4piz583vb3b8jmgh1m5rm47fs2w2faqxxs2y9f"))))
+        (base32 "1bsdq4hym492hw6sq7swbxqbk7x7q085crqd7f8ch4s9zxfijj5l"))))
     (properties `((upstream-name . "nser")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3407,13 +3459,13 @@ Lin Liu, Jishou Ruan and Shan Gao (2018) <doi:10.1101/251140>.")
 (define-public r-normdata
   (package
     (name "r-normdata")
-    (version "0.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormData" version))
        (sha256
-        (base32 "122l1v4kmgbamix2gdbz2zdv4ng7zba05rxh1j4z0ffficmax4nq"))))
+        (base32 "0is0i7fj1n1ibsxrl468znysnzn8k3ab6rlfq4bryqj0chgqk89k"))))
     (properties `((upstream-name . "NormData")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -3431,7 +3483,10 @@ score in the population.  This package allows for deriving regression-based
 normative data.  It includes functions that enable the fitting of regression
 models for the mean and residual (or variance) structures, test the model
 assumptions, derive the normative data in the form of normative tables or
-automatic scoring sheets, and estimate confidence intervals for the norms.")
+automatic scoring sheets, and estimate confidence intervals for the norms.  This
+package accompanies the book Van der Elst, W. (2024).  Regression-based
+normative data for psychological assessment.  A hands-on approach using R.
+Springer Nature.")
     (license license:gpl2+)))
 
 (define-public r-normalr
@@ -10960,13 +11015,13 @@ et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 (define-public r-netmediate
   (package
     (name "r-netmediate")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmediate" version))
        (sha256
-        (base32 "13yrc0sfq5vl6md3jwmzyrzqnkr68f6hksvlj834md1gx29rwj2q"))))
+        (base32 "02dv74qyzl6wb7yqki3y7gfcgl9gcdsvzzw4yrkf6q00ks1jbq5a"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -10991,7 +11046,9 @@ effects (AMME).  URL: <https://github.com/sduxbury/netmediate>.
 Garry, Phillipa Pattison, and Jodie Woolcock (2005) <doi:10.1086/427322>.
 Snijders, Tom A. B., and Christian E. G. Steglich (2015)
 <doi:10.1177/0049124113494573>.  Imai, Kosuke, Luke Keele, and Dustin Tingley
-(2010) <doi:10.1037/a0020761>.")
+(2010) <doi:10.1037/a0020761>.  Duxbury, Scott (2023)
+<doi:10.1177/00811750231209040>.  Duxbury, Scott (2024)
+<doi:10.1177/00811750231220950>.")
     (license license:gpl2+)))
 
 (define-public r-netmap
@@ -14172,13 +14229,13 @@ system in real-world conditions.")
 (define-public r-naturalist
   (package
     (name "r-naturalist")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naturaList" version))
        (sha256
-        (base32 "0692bd7sdf3rlcp7sgjkvm7w5gyd3qv4390f7bz286krimsxaqzq"))))
+        (base32 "0fh4cx7zh0kr0flvlfafxwxr9j74d9h74vpfa8mbn2ibgz63j65p"))))
     (properties `((upstream-name . "naturaList")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -14443,13 +14500,13 @@ NBLAST-related functions for neuronal morphology comparison (Costa et al. (2016)
 (define-public r-nat
   (package
     (name "r-nat")
-    (version "1.8.23")
+    (version "1.8.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nat" version))
        (sha256
-        (base32 "0wcn2dz44vfn475frir9fgj7hb45jvpkf2sxz7pd2m9a9p9idraf"))))
+        (base32 "1r3p5vwk96d93z8qm1lrb6g16l9fm2gcwy4h4n8clmxnpnimkj3k"))))
     (properties `((upstream-name . "nat")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

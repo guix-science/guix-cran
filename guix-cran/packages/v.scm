@@ -46,6 +46,49 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-vyos
+  (package
+    (name "r-vyos")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vyos" version))
+       (sha256
+        (base32 "0mqhxib04frcwqxq8qchmxm4d4kr4q2pjf3ki99q5dillihhk2fs"))))
+    (properties `((upstream-name . "vyos")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlist
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-crayon))
+    (home-page "https://github.com/spvyos/vyos")
+    (synopsis "Interface for Multiple Data Providers 'EDDS' and 'FRED'")
+    (description
+     "Interface for multiple data sources, such as the EDDS API
+<https://evds2.tcmb.gov.tr/index.php?/evds/@code{userDocs>} of the Central Bank
+of the Republic of TÃ¼rkiye and the FRED API
+<https://fred.stlouisfed.org/docs/api/fred/> of the Federal Reserve Bank.  Both
+data providers require API keys for access, which users can easily obtain by
+creating accounts on their respective websites.  The package provides caching
+ability with the selection of periods to increase the speed and efficiency of
+requests.  It combines datasets requested from different sources, helping users
+when the data has common frequencies.  While combining data frames whenever
+possible, it also keeps all requested data available as separate data frames to
+increase efficiency.")
+    (license license:expat)))
+
 (define-public r-vwpre
   (package
     (name "r-vwpre")
@@ -2783,6 +2826,37 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 <doi:10.1002/psp4.12455>, and \"Morris et al. (2019)\"
 <doi:10.1136/bmjopen-2019-030215>.")
     (license license:expat)))
+
+(define-public r-visomopresults
+  (package
+    (name "r-visomopresults")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "visOmopResults" version))
+       (sha256
+        (base32 "117y4zadp7js2j49x5qk9mb0kik4aczw8j5jbmk7iyrjx0p6jh8g"))))
+    (properties `((upstream-name . "visOmopResults")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-omopgenerics
+                             r-officer
+                             r-gt
+                             r-glue
+                             r-flextable
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (home-page "https://oxford-pharmacoepi.github.io/visOmopResults/")
+    (synopsis "Graphs and Tables for OMOP Results")
+    (description
+     "This package provides methods to transform omop_result objects into formatted
+tables and figures, facilitating the visualization of study results working with
+the Observational Medical Outcomes Partnership (OMOP) Common Data Model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-vismeteor
   (package

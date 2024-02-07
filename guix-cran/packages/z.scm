@@ -310,6 +310,30 @@ details for the method at the following preprint e.g.:
 cbind.")
     (license license:gpl3)))
 
+(define-public r-zipg
+  (package
+    (name "r-zipg")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ZIPG" version))
+       (sha256
+        (base32 "1g5viqqyl36xl43z7sbr9q4qgkwvv0pq308qw1rzdig4n1yxlwpj"))))
+    (properties `((upstream-name . "ZIPG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pscl r-mass))
+    (home-page "https://github.com/roulan2000/ZIPG")
+    (synopsis "Zero-Inflated Poisson-Gamma Regression")
+    (description
+     "We provide a flexible Zero-inflated Poisson-Gamma Model (ZIPG) by connecting
+both the mean abundance and the variability to different covariates, and build
+valid statistical inference procedures for both parameter estimation and
+hypothesis testing.  These functions can be used to analyze microbiome count
+data with zero-inflation and overdispersion.  The model is discussed in Jiang et
+al (2023) <doi:10.1080/01621459.2022.2151447>.")
+    (license license:gpl2+)))
+
 (define-public r-zipfr
   (package
     (name "r-zipfr")

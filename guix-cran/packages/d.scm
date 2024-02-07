@@ -1602,6 +1602,35 @@ methods for combining plots, such as layout()'.  See Khan & @code{McLean} (2023)
 files.")
     (license license:expat)))
 
+(define-public r-dupnodes
+  (package
+    (name "r-dupnodes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dupNodes" version))
+       (sha256
+        (base32 "17y292866nx2r0q5vymzwy6hrfa19kgp7xvsdhasrj537i6f794n"))))
+    (properties `((upstream-name . "dupNodes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-rdpack
+                             r-qpdf
+                             r-knitr
+                             r-igraph
+                             r-dogesr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dupNodes")
+    (synopsis
+     "Creates an 'igraph' Object that Duplicates Nodes with Self-Loops")
+    (description
+     "This package creates a new graph from an existing one, duplicating nodes with
+self-loops.  This can be used for a computation of betweenness centrality that
+does not drop this essential information.  Implements Merelo & Molinari (2021)
+<doi:10.1007/s42001-023-00245-4>.")
+    (license license:gpl3)))
+
 (define-public r-dunlin
   (package
     (name "r-dunlin")
@@ -4322,23 +4351,22 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRIP" version))
        (sha256
-        (base32 "11kmklkgsngf8viqmh4i6pdfv2mnk8anssgmnwglrd6sqqdhvblw"))))
+        (base32 "0zpk80rs2w0yizfyz9hs1npbajyvz883zwbhylipp52wyzzq62m2"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=DRIP")
     (synopsis "Discontinuous Regression and Image Processing")
     (description
-     "This is a collection of functions for discontinuous regression analysis and
-image processing (DRIP).  This version removes the dependence on the GNU
-Scientific Library.")
-    (license license:gpl3+)))
+     "This package provides a collection of functions that perform jump regression and
+image analysis such as denoising, deblurring and jump detection.")
+    (license license:gpl2+)))
 
 (define-public r-drimmr
   (package
@@ -6971,6 +6999,36 @@ service that makes it easy to run your code on scalable hardware, with
 integrated version control and collaboration features designed for analytical
 workflows (see <http://www.dominodatalab.com> for more information).")
     (license license:expat)))
+
+(define-public r-dominanceanalysis
+  (package
+    (name "r-dominanceanalysis")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dominanceanalysis" version))
+       (sha256
+        (base32 "1kp8x77j20ak5xgp67f2ny00s22q6yr8qz5lc5kdmvdrimqkpnah"))))
+    (properties `((upstream-name . "dominanceanalysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dominanceanalysis")
+    (synopsis "Dominance Analysis")
+    (description
+     "Dominance analysis is a method that allows to compare the relative importance of
+predictors in multiple regression models: ordinary least squares, generalized
+linear models, hierarchical linear models, beta regression and dynamic linear
+models.  The main principles and methods of dominance analysis are described in
+Budescu, D. V. (1993) <doi:10.1037/0033-2909.114.3.542> and Azen, R., & Budescu,
+D. V. (2003) <doi:10.1037/1082-989X.8.2.129> for ordinary least squares
+regression.  Subsequently, the extensions for multivariate regression, logistic
+regression and hierarchical linear models were described in Azen, R., & Budescu,
+D. V. (2006) <doi:10.3102/10769986031002157>, Azen, R., & Traxel, N. (2009)
+<doi:10.3102/1076998609332754> and Luo, W., & Azen, R. (2013)
+<doi:10.3102/1076998612458319>, respectively.")
+    (license license:gpl2)))
 
 (define-public r-dogesr
   (package
@@ -10953,28 +11011,6 @@ features to a given stratification level.  These feature stores are
 automatically time-versioned (powered by the SCDB package) and allows you to
 easily and dynamically compute features as part of your continuous integration.")
     (license license:gpl3+)))
-
-(define-public r-diseasemapping
-  (package
-    (name "r-diseasemapping")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diseasemapping" version))
-       (sha256
-        (base32 "0zn6cp55szrfmkymaml55jf4zzvvzdfjcv1h309xr1vi1488q5yj"))))
-    (properties `((upstream-name . "diseasemapping")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=diseasemapping")
-    (synopsis "Modelling Spatial Variation in Disease Risk for Areal Data")
-    (description
-     "Formatting of population and case data, calculation of Standardized Incidence
-Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
-<doi:10.18637/jss.v063.i12>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-disdat
   (package
@@ -21575,13 +21611,13 @@ zero-inflated models.  These methods are described in V. GÃ³mez-Rubio et al.
 (define-public r-dcluster
   (package
     (name "r-dcluster")
-    (version "0.2-9")
+    (version "0.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DCluster" version))
        (sha256
-        (base32 "1qy5dd3v7f05s0qisj2qmxla4d7b7wqxslagfzs2rzj1b9szrhmc"))))
+        (base32 "01m41vaw26nlsisbwp627hmfxs823wcnzrmchxnp3rx4n40j82di"))))
     (properties `((upstream-name . "DCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-mass r-boot))

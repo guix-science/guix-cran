@@ -2588,13 +2588,13 @@ unifed distribution (Quijano Xacur, 2019; <doi:10.1186/s40488-019-0102-6>).")
 (define-public r-unifdag
   (package
     (name "r-unifdag")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unifDAG" version))
        (sha256
-        (base32 "052qjrnj04imhj6i62k8jdx9rs8r70n0qrmd2z45x4fimn5py6j5"))))
+        (base32 "0h620q5cy6x4f7fnf65vq6xjyjk1frc2b0sbia5da2y1ppk4y48a"))))
     (properties `((upstream-name . "unifDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-graph r-gmp))

@@ -3207,6 +3207,39 @@ calculate scores for each dimension of the KHQ; converts KHQ item scores to
 KHQ5D scores; and also calculates the utility index of the KHQ5D.")
     (license license:expat)))
 
+(define-public r-khisr
+  (package
+    (name "r-khisr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "khisr" version))
+       (sha256
+        (base32 "0kaq64iz9wz38gh207lr6qw4ljiszh8ra1xg1p8zz1vs1vsip2dg"))))
+    (properties `((upstream-name . "khisr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://khisr.damurka.com")
+    (synopsis "Retrieve Data from Kenya Health Information System (KHIS)")
+    (description
+     "Simplify data retrieval from Kenya's health system with a powerful interface for
+efficient data retrieval from the Kenya Health Information System
+(KHIS)<https://hiskenya.org>.  Empower researchers, analysts, and healthcare
+professionals to access critical health data efficiently.")
+    (license license:expat)))
+
 (define-public r-kgschart
   (package
     (name "r-kgschart")
@@ -4162,13 +4195,13 @@ Reference: Wang and Zou (2018) <doi:10.1111/rssb.12244>.")
 (define-public r-kergp
   (package
     (name "r-kergp")
-    (version "0.5.5")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kergp" version))
        (sha256
-        (base32 "0qkjjrjgny8jvklgbddx0n1fq2bwr434shdn7xzdp0krxxnh7h64"))))
+        (base32 "0cf6acz09cbzhnl26x2z0s674mvikl9lq31mdl2s10y6ah00cpsk"))))
     (properties `((upstream-name . "kergp")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

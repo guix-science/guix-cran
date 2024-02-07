@@ -2289,6 +2289,53 @@ but without notable impact on computing speed.")
      "Bayesian inference on the (discrete) power spectrum of time series.")
     (license license:gpl2+)))
 
+(define-public r-bspcov
+  (package
+    (name "r-bspcov")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bspcov" version))
+       (sha256
+        (base32 "1zxdcqydhzisfp2bkvw585z3qfcpy0yjra91qyxwdf0lvdvqwbqx"))))
+    (properties `((upstream-name . "bspcov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra
+                             r-purrr
+                             r-progress
+                             r-plyr
+                             r-mvtnorm
+                             r-mvnfast
+                             r-matrixstats
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-magrittr
+                             r-ks
+                             r-gigrvg
+                             r-ggplot2
+                             r-ggmcmc
+                             r-future
+                             r-furrr
+                             r-fincovregularization
+                             r-dplyr
+                             r-coda
+                             r-cholwishart
+                             r-caret
+                             r-bayesfactor))
+    (home-page "https://github.com/statjs/bspcov")
+    (synopsis "Bayesian Sparse Estimation of a Covariance Matrix")
+    (description
+     "This package provides functions which perform Bayesian estimations of a
+covariance matrix for multivariate normal data.  Assumes that the covariance
+matrix is sparse or band matrix and positive-definite.  This software has been
+developed using funding supported by Basic Science Research Program through the
+National Research Foundation of Korea ('NRF') funded by the Ministry of
+Education ('RS-2023-00211979', NRF-2022R1A5A7033499', NRF-2020R1A4A1018207 and
+NRF-2020R1C1C1A01013338').")
+    (license license:gpl2)))
+
 (define-public r-bspbss
   (package
     (name "r-bspbss")
@@ -2740,13 +2787,13 @@ faster lookups on sorted vectors.")
 (define-public r-bscui
   (package
     (name "r-bscui")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bscui" version))
        (sha256
-        (base32 "0ks8jnbdxbf6wbiwj3jc5iyx2qkxqk0icqhg4b0hvnd74h7zkagi"))))
+        (base32 "0xpy1xj0ajj0swnl55ahy3fja9dp4lv7vcz1zk12im175b0b2iqn"))))
     (properties `((upstream-name . "bscui")))
     (build-system r-build-system)
     (arguments
@@ -3896,13 +3943,13 @@ downstream analyses.")
 (define-public r-breeze
   (package
     (name "r-breeze")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bReeze" version))
        (sha256
-        (base32 "17nc6qvw9l6sq8knd1mk193md2y3z1jlcjymqzl389yxj8s0i2il"))))
+        (base32 "1zx933iaxqp91s41dham2chzf0f4rxs0d1ww564gg352fs3gi1vn"))))
     (properties `((upstream-name . "bReeze")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
@@ -5490,13 +5537,13 @@ random effects.")
 (define-public r-box
   (package
     (name "r-box")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box" version))
        (sha256
-        (base32 "0nqvgbs47xlkq5gq1jdx3ikvwzvq71q44ddyz8pbh0bibayhkz52"))))
+        (base32 "00g5ik3f6260m38jl8k4s8nycmy7mzdwr7qslrl66phpg84xzmln"))))
     (properties `((upstream-name . "box")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19204,13 +19251,13 @@ bias-corrected maximum likelihood estimator.")
 (define-public r-bcclong
   (package
     (name "r-bcclong")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCClong" version))
        (sha256
-        (base32 "1dsiwrz1r0wab0pif33b7ds5d6v89fapb0w9safz45qmxkafs2z6"))))
+        (base32 "06i77iz6i79dbwnjic7x7dgysbh4x22ixhzlpkmpb47yx7c2qmvf"))))
     (properties `((upstream-name . "BCClong")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -19228,7 +19275,8 @@ bias-corrected maximum likelihood estimator.")
                              r-label-switching
                              r-ggplot2
                              r-coda
-                             r-cluster))
+                             r-cluster
+                             r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BCClong")
     (synopsis
@@ -21140,19 +21188,18 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "1sa843sypgqrlcc9f3clzab52i0hvmdjiqai6g408np80n78al56"))))
+        (base32 "1cgfqk7bnifss58syk53sjvinhwvf6pac9j4k2ivkzd1i73ir7zj"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-sn
-                             r-scales
                              r-rdpack
                              r-posterior
                              r-mvtnorm

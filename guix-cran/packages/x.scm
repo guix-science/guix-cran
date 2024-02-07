@@ -1497,6 +1497,115 @@ Wenstop, Fred (1980) <doi:10.1016/0165-0114(80)90031-7>, Whitley, Darrell (1989,
 ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
     (license license:expat)))
 
+(define-public r-xegapermgene
+  (package
+    (name "r-xegapermgene")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaPermGene" version))
+       (sha256
+        (base32 "02f97ddz9lzkc762qazn9ybrvl4qya9m02c7cs0l7wmpgl93mbx6"))))
+    (properties `((upstream-name . "xegaPermGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene))
+    (home-page "<https://github.com/ageyerschulz/xegaPermGene>")
+    (synopsis "Operations on Permutation Genes")
+    (description
+     "An implementation of representation-dependent gene level operations for genetic
+algorithms with genes which represent permutations: initialization of genes,
+mutation and crossover.  The crossover operation provided is position-based
+crossover (Syswerda, G., Chap.  21 in Davis, L. (1991, ISBN:0-442-00173-8).  For
+mutation, several variants are included: Order-based mutation (Syswerda, G.,
+Chap.  21 in Davis, L. (1991, ISBN:0-442-00173-8), randomized Lin-Kernighan
+heuristics (Croes, G. A. (1958) <doi:10.1287/opre.6.6.791> and Lin, S. and
+Kernighan.  B. W. (1973) <doi:10.1287/opre.21.2.498>), and randomized greedy
+operators.  A random mix operator for mutation selects a mutation variant
+randomly.")
+    (license license:expat)))
+
+(define-public r-xegagagene
+  (package
+    (name "r-xegagagene")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaGaGene" version))
+       (sha256
+        (base32 "1spl4jhvnkz00m63pycvk6fznksnxfysq7lbsjybws87hcaf95x1"))))
+    (properties `((upstream-name . "xegaGaGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene))
+    (home-page "<https://github.com/ageyerschulz/xegaGaGene>")
+    (synopsis "Binary Gene Operations for Genetic Algorithms")
+    (description
+     "Representation-dependent gene level operations of a genetic algorithm with
+binary coded genes: Initialization of random binary genes, several gene maps for
+binary genes, several mutation operators, several crossover operators with 1 and
+2 kids, and replication pipelines for 1 and 2 kids, last but not least, function
+factories for configuration.  See Goldberg, D. E. (1989, ISBN:0-201-15767-5).
+For crossover operators, see Syswerda, G. (1989, ISBN:1-55860-066-3), Spears, W.
+and De Jong, K. (1991, ISBN:1-55860-208-9).  For mutation operators, see
+Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).")
+    (license license:expat)))
+
+(define-public r-xegadfgene
+  (package
+    (name "r-xegadfgene")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaDfGene" version))
+       (sha256
+        (base32 "1xvq7grff6iz9254shhjakwaba1qlfii361ydarzsxsjwgx4b8al"))))
+    (properties `((upstream-name . "xegaDfGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene))
+    (home-page "<https://github.com/ageyerschulz/xegaDfGene>")
+    (synopsis "Gene Operations for Real-Coded Genes")
+    (description
+     "Representation-dependent gene level operations for genetic and evolutionary
+algorithms with real-coded genes are collected in this package.  The common
+feature of the gene operations is that all of them are useful for
+derivation-free optimization algorithms.  At the moment the package implements
+initialization, mutation, crossover, and replication operations for differential
+evolution as described in Price, Kenneth V., Storn, Rainer M. and Lampinen,
+Jouni A. (2005) <doi:10.1007/3-540-31306-0>.")
+    (license license:expat)))
+
+(define-public r-xegabnf
+  (package
+    (name "r-xegabnf")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaBNF" version))
+       (sha256
+        (base32 "0r1ac8h0ah3jsphrh8lbvm8gphkprycs9nib2nih6l522par4pma"))))
+    (properties `((upstream-name . "xegaBNF")))
+    (build-system r-build-system)
+    (home-page "<https://github.com/ageyerschulz/xegaBNF>")
+    (synopsis
+     "Compile a Backus-Naur Form Specification into an R Grammar Object")
+    (description
+     "Translates a BNF (Backus-Naur Form) specification of a context-free language
+into an R grammar object which consists of the start symbol, the symbol table,
+the production table, and a short production table.  The short production table
+is non-recursive.  The grammar object contains the file name from which it was
+generated (without a path).  In addition, it provides functions to determine the
+type of a symbol (@code{isTerminal}() and @code{isNonterminal}()) and functions
+to access the production table (rules() and derives()).  For the BNF
+specification, see Backus, John et al. (1962) \"Revised Report on the Algorithmic
+Language ALGOL 60\". (ALGOL60 standards page
+<http://www.algol60.org/2standards.htm>, html-edition
+<https://www.masswerk.at/algol60/report.htm>) The grammar compiler is based on
+the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
+    (license license:expat)))
+
 (define-public r-xefun
   (package
     (name "r-xefun")

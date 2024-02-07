@@ -2230,6 +2230,29 @@ package contains functions to create the nomogram, validate it using bootstrap,
 as well as produce the calibration plots.")
     (license license:gpl2)))
 
+(define-public r-svylme
+  (package
+    (name "r-svylme")
+    (version "1.5-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svylme" version))
+       (sha256
+        (base32 "1bbg6ha0crg166856h65aly9l5x8y18wv39jymbaczqhs0ba5w1s"))))
+    (properties `((upstream-name . "svylme")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-minqa r-matrix r-lme4))
+    (home-page "https://cran.r-project.org/package=svylme")
+    (synopsis "Linear Mixed Models for Complex Survey Data")
+    (description
+     "Linear mixed models for complex survey data, by pairwise composite likelihood,
+as described in Lumley & Huang (2023) <@code{arXiv:2311.13048>}.  Supports
+nested and crossed random effects, and correlated random effects as in genetic
+models.  Allows for multistage sampling and for other designs where pairwise
+sampling probabilities are specified or can be calculated.")
+    (license license:gpl3)))
+
 (define-public r-svydiags
   (package
     (name "r-svydiags")
@@ -2985,13 +3008,13 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 (define-public r-survstan
   (package
     (name "r-survstan")
-    (version "0.0.6")
+    (version "0.0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survstan" version))
        (sha256
-        (base32 "0cwlnampv2lxn3g9g3dm2rp3hn5vp6i1c4qmmhq2kzwij5g9m3zd"))))
+        (base32 "1956h03jy5plcfcq0gvx0rxq3gz8kfccy2dxh1p08xn3s580zxnh"))))
     (properties `((upstream-name . "survstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17516,31 +17539,15 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
 (define-public r-spqdep
   (package
     (name "r-spqdep")
-    (version "0.1.2")
+    (version "0.1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spqdep" version))
        (sha256
-        (base32 "0q2sp76kgrmw2w033m9i69vx0shziazr31akjmighcy1pdz3b695"))))
+        (base32 "03lzp368ylkf1hrnl00kndlkmp9lwma0j9w9b3hn5glzdljhalxl"))))
     (properties `((upstream-name . "spqdep")))
     (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-spdep
                              r-spatialreg
@@ -17559,7 +17566,7 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
                              r-ggplot2
                              r-dplyr
                              r-broom))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://f8l5h9.github.io/spqdep/")
     (synopsis
      "Testing for Spatial Independence of Qualitative Data in Cross Section")
@@ -22493,13 +22500,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.3-1")
+    (version "1.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialreg" version))
        (sha256
-        (base32 "0j8gw66xgqgq9sni4sjq0m5vyvk8q45wby7ry7aja56bc07x7bjj"))))
+        (base32 "0qvf85l287qak2cs0l87rl4vacphnanvj8cgs82aiq6vkl52igp3"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -23761,13 +23768,13 @@ Erichson et al. (2018) <@code{arXiv:1804.00341>}.")
 (define-public r-sparsenet
   (package
     (name "r-sparsenet")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsenet" version))
        (sha256
-        (base32 "1hvl17r1r87cig4dyv9fczb7gadb6zh331knnxw6c0wwxnvxwi09"))))
+        (base32 "1r3p14qbwkmb8hmgfh0ymzz52lqxgc9cnp8yh8y8la1sm3hxc92n"))))
     (properties `((upstream-name . "sparsenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-shape r-matrix))
@@ -31991,13 +31998,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "12hh7ws15rdiwd2fjl81f5rvfryzhdxnj1rkgj2cwd3mns8izrlq"))))
+        (base32 "0hc3lk9d1c92cfv7cvk85jb9pp8ilh8sgwjg3vgr11yxnzay7hmk"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -33442,13 +33449,13 @@ selection.")
 (define-public r-sirt
   (package
     (name "r-sirt")
-    (version "4.0-32")
+    (version "4.1-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sirt" version))
        (sha256
-        (base32 "02y2k8rxkwslyh44x22k3wa5hjcpv1iwrhhj8gf4gbyw79ln7r33"))))
+        (base32 "0rihmkpnd6hdvb2qga387nw9hxz5ydhjbh9lgaf58nza7fwgqby1"))))
     (properties `((upstream-name . "sirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tam
@@ -35356,18 +35363,18 @@ et al. (2016, ISBN: 9780262035613) \"Deep Learning\".")
 (define-public r-simplemh
   (package
     (name "r-simplemh")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpleMH" version))
        (sha256
-        (base32 "02arll0w39b4cz7gslka26lvjg90xy83kqiyvm4gxnsbw7s9hkyr"))))
+        (base32 "0yxc509qmxrcg4kvpkfy1nz8q3k1kvhhwyf93zg3alqf2nnjs50i"))))
     (properties `((upstream-name . "simpleMH")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=simpleMH")
+    (home-page "https://github.com/Bisaloo/simpleMH")
     (synopsis "Simple Metropolis-Hastings MCMC Algorithm")
     (description
      "This package provides a very bare-bones interface to use the Metropolis-Hastings
@@ -38937,6 +38944,27 @@ applied.  Global, parameterwise and joint shrinkage for models fitted by lm(),
 glm(), coxph(), or mfp() is available.")
     (license license:gpl3)))
 
+(define-public r-shp2graph
+  (package
+    (name "r-shp2graph")
+    (version "1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shp2graph" version))
+       (sha256
+        (base32 "140rzcy2swfh8k0b94azs04vfhpzv3cxyv0vfb85d2f674dwq3ns"))))
+    (properties `((upstream-name . "shp2graph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-igraph))
+    (home-page "https://cran.r-project.org/package=shp2graph")
+    (synopsis
+     "Convert a 'SpatialLinesDataFrame' -Class Object to an 'igraph'-Class Object")
+    (description
+     "This package provides functions for converting and processing network data from
+a @code{SpatialLinesDataFrame} -Class object to an igraph'-Class object.")
+    (license license:gpl2+)))
+
 (define-public r-showimage
   (package
     (name "r-showimage")
@@ -41271,13 +41299,13 @@ popovers or tooltips.")
 (define-public r-shinyexprportal
   (package
     (name "r-shinyexprportal")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyExprPortal" version))
        (sha256
-        (base32 "0kf53k6p87nh2pa3fjh22j1cblfw88rkh1049lirpak3zw30vwh9"))))
+        (base32 "0740qzwz2wcl5avby2x50kjg51la6nfzz92lfk2ysnfvq58ph6aa"))))
     (properties `((upstream-name . "shinyExprPortal")))
     (build-system r-build-system)
     (arguments
@@ -41299,6 +41327,7 @@ popovers or tooltips.")
     (propagated-inputs (list r-yaml
                              r-vegawidget
                              r-tidyr
+                             r-shinyhelper
                              r-shiny
                              r-rlang
                              r-rfast
@@ -47732,19 +47761,20 @@ with as few dependencies as possible.")
 (define-public r-semgraph
   (package
     (name "r-semgraph")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMgraph" version))
        (sha256
-        (base32 "1v106i7wzaq0656wzngj1xhh9ivs3kc7kyj78f44x6fi3brs71ab"))))
+        (base32 "1ch82mqhmjyk7lz8hxzl17w342bcviyhsja50gm0j99bh6a8gwz7"))))
     (properties `((upstream-name . "SEMgraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz
                              r-rbgl
                              r-protoclust
                              r-pbapply
+                             r-mvtnorm
                              r-mgcv
                              r-lavaan
                              r-igraph
@@ -47756,7 +47786,8 @@ with as few dependencies as possible.")
                              r-flip
                              r-dagitty
                              r-corpcor
-                             r-boot))
+                             r-boot
+                             r-aspect))
     (home-page "https://github.com/fernandoPalluzzi/SEMgraph")
     (synopsis
      "Network Analysis and Causal Inference Through Structural Equation Modeling")
@@ -47764,7 +47795,7 @@ with as few dependencies as possible.")
      "Estimate networks and causal relationships in complex systems through Structural
 Equation Modeling.  This package also includes functions to import, weight,
 manipulate, and fit biological network models within the Structural Equation
-Modeling framework described in Grassi M, Palluzzi F, Tarantino B (2022)
+Modeling framework proposed in Grassi M, Palluzzi F, Tarantino B (2022)
 <doi:10.1093/bioinformatics/btac567>.")
     (license license:gpl3)))
 
@@ -57773,6 +57804,41 @@ data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
     (license license:expat)))
 
+(define-public r-sampbias
+  (package
+    (name "r-sampbias")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sampbias" version))
+       (sha256
+        (base32 "09pr2cdlpxml2dxs27gy5s5i76ff3q8x1ja09f3is0mg98c872as"))))
+    (properties `((upstream-name . "sampbias")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rnaturalearth
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/azizka/sampbias")
+    (synopsis "Evaluating Geographic Sampling Bias in Biological Collections")
+    (description
+     "Evaluating the biasing impact of geographic features such as airports, cities,
+roads, rivers in datasets of coordinates based biological collection datasets,
+by Bayesian estimation of the parameters of a Poisson process.  Enables also
+spatial visualization of sampling bias and includes a set of convenience
+functions for publication level plotting.  Also available as shiny app.  The
+reference for the methodology is: Zizka et al. (2020) <doi:10.1111/ecog.05102>.")
+    (license license:gpl3)))
+
 (define-public r-samon
   (package
     (name "r-samon")
@@ -58280,13 +58346,13 @@ plotting functionality to assist with this process.")
 (define-public r-sagm
   (package
     (name "r-sagm")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAGM" version))
        (sha256
-        (base32 "0a46b9k1zgvyr9j8dl7m5r25xdh0yxnz3bhqavcn5s6rd3bbzsbr"))))
+        (base32 "10hxj5ic7mq6wzpqizkxyqc165dmpc2wqc9naf6b9r560pk52hv6"))))
     (properties `((upstream-name . "SAGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gigrvg r-fastmatrix))

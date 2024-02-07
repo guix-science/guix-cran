@@ -1272,44 +1272,26 @@ tests and generation of common plots and tables with publish-ready quality.")
 (define-public r-expstudy
   (package
     (name "r-expstudy")
-    (version "1.0.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expstudy" version))
        (sha256
-        (base32 "0xvrwhgfwddgn943shpmh8ifsa7hyandrpgp1yg9n9iqwmmddg77"))))
+        (base32 "1hrcbw9yfq2c8y6z7lqklbk7rmhmm8ns0l05s4kymwh2d8j4pqjg"))))
     (properties `((upstream-name . "expstudy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-magrittr
-                             r-lifecycle
-                             r-glue
-                             r-dtplyr
-                             r-dplyr
-                             r-data-table
-                             r-checkmate
-                             r-assertthat))
+    (propagated-inputs (list r-rlang r-lifecycle r-dplyr r-cli))
     (home-page "https://github.com/cb12991/expstudy")
-    (synopsis "Experience Study Tools for Analytics and Communications")
+    (synopsis "Tools for Actuarial Experience Studies")
     (description
-     "This package provides a data class of tbl_es to help aid in the formation and
-analyses of recurrent or novel experience studies.  A tbl_es has attributes
-which identify the key variables used for calculating metrics under an actuarial
-perspective.  Common metrics (such as actual-to-expected analysis) can be
-quickly generated in aggregate or according to different qualitative factors.
-If multiple factors are of interest, grouped metrics can be automatically
-computed for each factor individually as well as for all possible combinations.
-All resulting output can then be formatted for presentations or left unformatted
-for subsequent analyses.  Ultimately, this package aims to reduce time spent
-completing repetitive code therefore increasing time for analysis and insight.")
-    (license license:expat)))
+     "Experiences studies are an integral component of the actuarial control cycle.
+Regardless of the decrement or policyholder behavior of interest, the analyses
+conducted is often the same.  Ultimately, this package aims to reduce time spent
+writing the same code used for different experience studies, therefore
+increasing the time for to uncover new insights inherit within the relevant
+experience.")
+    (license license:gpl3+)))
 
 (define-public r-expss
   (package
@@ -3500,13 +3482,13 @@ or combining Gaussian random fuzzy numbers).")
 (define-public r-evprof
   (package
     (name "r-evprof")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evprof" version))
        (sha256
-        (base32 "16hw0rbvajgn7nlba62jr12aghsjcvf88c01yscmc1fgp1m5xcmp"))))
+        (base32 "1qgnbp66h4y197ap00kjqxgwnmvbf5nab9pcw77h3kpi4b36irbi"))))
     (properties `((upstream-name . "evprof")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10281,13 +10263,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhd
   (package
     (name "r-eodhd")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhd" version))
        (sha256
-        (base32 "0rq6xn198l5a0kzygb1mdghvax73v5s815vylmak3khz02lc8i00"))))
+        (base32 "0hm66d9dm3l87pdkv7154x7gp24v1d1aqm22p6bkzqwis1vc1rph"))))
     (properties `((upstream-name . "eodhd")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))
@@ -14013,16 +13995,22 @@ resource utilisation.")
 (define-public r-electionsbr
   (package
     (name "r-electionsbr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "electionsBR" version))
        (sha256
-        (base32 "05wxzfgh0f3n6w8ah32q2v4f67g6w4qri4dv1linmlax77clv9fn"))))
+        (base32 "0sqdrh7q24dwgz418gbv7i8fhy6vlf4dwals13prsjrn24zp0fj3"))))
     (properties `((upstream-name . "electionsBR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readr r-magrittr r-haven r-dplyr r-data-table))
+    (propagated-inputs (list r-readr
+                             r-magrittr
+                             r-httr
+                             r-haven
+                             r-dplyr
+                             r-data-table
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "http://electionsbr.com/")
     (synopsis "R Functions to Download and Clean Brazilian Electoral Data")
@@ -20855,6 +20843,45 @@ points are located and click points on/off to easily label them.  Labels can be
 dragged around the plot to place them optimally.  Plots can be exported directly
 to PDF for publication.")
     (license license:expat)))
+
+(define-public r-easydifferentialgenecoexpression
+  (package
+    (name "r-easydifferentialgenecoexpression")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyDifferentialGeneCoexpression" version))
+       (sha256
+        (base32 "1isln1bbav2zxqbia8616f1ywnpywcx3772bxws5hphx64x6bqfh"))))
+    (properties `((upstream-name . "easyDifferentialGeneCoexpression")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-magrittr
+                             r-limma
+                             r-jetset
+                             r-geoquery
+                             r-geneexpressionfromgeo
+                             r-biobase
+                             r-annotate))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/davidechicco/easyDifferentialGeneCoexpression")
+    (synopsis "Easily Performs Differential Coexpression Analysis")
+    (description
+     "This package provides a function that reads in the GEO code of a list of
+probesets or gene symbols, a gene expression dataset GEO accession code, the
+name of the dataset feature discriminating the two conditions for the
+differential coexpression, and the values of the two different conditions for
+the differential coexpression, and returns the significant pairs of
+genes/probesets with highest differential coexpression (p-value < 0.005).  If
+the input gene list is made of gene symbols, this package associates the
+probesets to these gene symbols, if found.  Platforms available: GPL80, GPL8300,
+GPL80, GPL96, GPL570, GPL571, GPL20115, GPL1293, GPL6102, GPL6104, GPL6883,
+GPL6884, GPL13497, GPL14550, GPL17077, GPL6480.  GEO: Gene Expression Omnibus.
+ID: identifier code.  The GEO datasets are downloaded from the URL
+<https://ftp.ncbi.nlm.nih.gov/geo/series/>.")
+    (license license:gpl3)))
 
 (define-public r-easydescribe
   (package
