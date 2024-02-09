@@ -6333,13 +6333,13 @@ population mean and variance on samples drawn by r-size biased sampling schemes.
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
-    (version "0.6.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsinaica" version))
        (sha256
-        (base32 "1ba19b2fgnnl50qp6hgjppgxbadghq68qap9f0m51k2k3ijgfiwn"))))
+        (base32 "0ndskcgzd38mblk3xfazszhh3f5fjlmz6rmc297nka2c8rw56lz2"))))
     (properties `((upstream-name . "rsinaica")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-jsonlite r-httr r-dplyr))
@@ -9244,21 +9244,23 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 (define-public r-rprobitb
   (package
     (name "r-rprobitb")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RprobitB" version))
        (sha256
-        (base32 "1acxgxv4v7id7smrg9f8dfxx9y17pvqwsbfg0n8zdd99q724bpx5"))))
+        (base32 "07agg1mxir82ngbcwhipq369ha9qpb3w6m8gq2alc1lzmv3z7vrx"))))
     (properties `((upstream-name . "RprobitB")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-rlang
+                             r-rdpack
                              r-rcpparmadillo
                              r-rcpp
                              r-progress
                              r-plotroc
+                             r-oeli
                              r-mvtnorm
                              r-mixtools
                              r-mass
@@ -9267,7 +9269,8 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
                              r-foreach
                              r-dosnow
                              r-crayon
-                             r-cli))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/RprobitB/")
     (synopsis "Bayesian Probit Choice Modeling")
@@ -11590,6 +11593,35 @@ Exchange Monte Carlo Optimisation.  In each case, the system pseudo-temperature
 is dynamically adjusted such that the observed acceptance ratio is kept near to
 the desired (fixed or changing) acceptance ratio.")
     (license license:gpl3+)))
+
+(define-public r-roptest
+  (package
+    (name "r-roptest")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROptEst" version))
+       (sha256
+        (base32 "0mid70i7mjic6s5vswbggpln9iv78sm9h8lrqqg2a0g379n9brbp"))))
+    (properties `((upstream-name . "ROptEst")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-robastbase
+                             r-randvar
+                             r-mass
+                             r-distrmod
+                             r-distrex
+                             r-distr))
+    (home-page "http://robast.r-forge.r-project.org/")
+    (synopsis "Optimally Robust Estimation")
+    (description
+     "R infrastructure for optimally robust estimation in general smoothly
+parameterized models using S4 classes and methods as decribed Kohl, M.,
+Ruckdeschel, P., and Rieder, H. (2010), <doi:10.1007/s10260-010-0133-0>, and in
+Rieder, H., Kohl, M., and Ruckdeschel, P. (2008),
+<doi:10.1007/s10260-007-0047-7>.")
+    (license license:lgpl3)))
 
 (define-public r-roprov
   (package
@@ -14064,13 +14096,13 @@ sparse least trimmed squares regression (Alfons, Croux & Gelper, 2013;
 (define-public r-robustgasp
   (package
     (name "r-robustgasp")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustGaSP" version))
        (sha256
-        (base32 "16nw0z3xbvqi4zyb0lsaw1mnyizmw945xvz86h6syfpx388rglhf"))))
+        (base32 "1pcy0n4krshjw9c4g41m7487qydrjbh45yqg77i74s5bvwd47fnp"))))
     (properties `((upstream-name . "RobustGaSP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr))
@@ -15293,6 +15325,39 @@ replacement and shift detection is provided; see Fried (2004)
 <doi:10.1080/10485250410001656444>.")
     (license license:gpl2+)))
 
+(define-public r-robextremes
+  (package
+    (name "r-robextremes")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobExtremes" version))
+       (sha256
+        (base32 "0dziaykrnhy8ijbq0pxwl5p9xjlbz3kxkmwl3s21kmjnv7nm8sx4"))))
+    (properties `((upstream-name . "RobExtremes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-startupmsg
+                             r-roptest
+                             r-robustbase
+                             r-robastrda
+                             r-robastbase
+                             r-randvar
+                             r-evd
+                             r-distrmod
+                             r-distrex
+                             r-distr
+                             r-actuar))
+    (home-page "https://r-forge.r-project.org/projects/robast/")
+    (synopsis "Optimally Robust Estimation for Extreme Value Distributions")
+    (description
+     "Optimally robust estimation for extreme value distributions using S4 classes and
+methods (based on packages distr', @code{distrEx}', @code{distrMod}',
+@code{RobAStBase}', and R@code{OptEst}'); the underlying theoretic results can
+be found in Ruckdeschel and Horbenko, (2013 and 2012),
+\\doi{10.1080/02331888.2011.628022} and \\doi{10.1007/s00184-011-0366-4}.")
+    (license license:lgpl3)))
+
 (define-public r-robeth
   (package
     (name "r-robeth")
@@ -15486,13 +15551,13 @@ responses.")
 (define-public r-robber
   (package
     (name "r-robber")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robber" version))
        (sha256
-        (base32 "1yvhd9zxs3jfz72gqz6db3xj3xpvgch6n5gy6jvwppx3xjfwxg7j"))))
+        (base32 "0db1cnf8f3f1i0mnp58cjq46cr0x6ffx6yzqnsdg6v7mwppdranb"))))
     (properties `((upstream-name . "robber")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -15804,13 +15869,13 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.2.7.0")
+    (version "1.2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "0v656p06g338m7c3gfm5m4ckmad668jnhia04mfvzd4jn2v7v5rz"))))
+        (base32 "1svamnpfs76551cil1grch4nr6716j2qncdq7nqzp3ni5ia8522w"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -18047,13 +18112,13 @@ useful for exploratory and probabilistic analysis.")
 (define-public r-rmerec
   (package
     (name "r-rmerec")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmerec" version))
        (sha256
-        (base32 "0kwxddr4ca5i2kvrrnxk41gnjl8qac20afhgagyfv2yrcs08mma4"))))
+        (base32 "096pifh9f3ml9zmqwqhi15cfpkhpbni88j075cpqja8ybl390lly"))))
     (properties `((upstream-name . "rmerec")))
     (build-system r-build-system)
     (home-page "https://github.com/lucassp/rmerec")
@@ -19886,13 +19951,13 @@ datasets.  Alam, M. A, Fukumizu, K., Wang Y.-P. (2018)
 (define-public r-rkt
   (package
     (name "r-rkt")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rkt" version))
        (sha256
-        (base32 "1sqij8ivjrrb1lii3jwvgsx9zqv47ib1lhrh6zvvh5a67didwrih"))))
+        (base32 "1hzbrfpp10xfvmrl0wqqf21d886mar8jvipzaiki76ms2a1yp78j"))))
     (properties `((upstream-name . "rkt")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rkt")
@@ -25897,6 +25962,37 @@ Steve Horvath (2006) <doi:10.1198/106186006X94072> & Monti et al (2003)
 <doi:10.1023/A:1023949509487> .")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-rfcca
+  (package
+    (name "r-rfcca")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RFCCA" version))
+       (sha256
+        (base32 "004lgbdfk04vnmdjs02z72awz6mspcd3psd19a2qk85i6hxkycsh"))))
+    (properties `((upstream-name . "RFCCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pma r-cca))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/calakus/RFCCA")
+    (synopsis "Random Forest with Canonical Correlation Analysis")
+    (description
+     "Random Forest with Canonical Correlation Analysis (RFCCA) is a random forest
+method for estimating the canonical correlations between two sets of variables
+depending on the subject-related covariates.  The trees are built with a
+splitting rule specifically designed to partition the data to maximize the
+canonical correlation heterogeneity between child nodes.  The method is
+described in Alakus et al. (2021) <doi:10.1093/bioinformatics/btab158>.  RFCCA
+uses @code{randomForestSRC} package (Ishwaran and Kogalur, 2020) by freezing at
+the version 2.9.3.  The custom splitting rule feature is utilised to apply the
+proposed splitting rule.  The @code{randomForestSRC} package implements
+@code{OpenMP} by default, contingent upon the support provided by the target
+architecture and operating system.  In this package, LAPACK and BLAS libraries
+are used for matrix decompositions.")
+    (license license:gpl3+)))
+
 (define-public r-rfast2
   (package
     (name "r-rfast2")
@@ -30006,13 +30102,13 @@ also offers some useful tools for exploring other forensic DNA situations.")
 (define-public r-relliptical
   (package
     (name "r-relliptical")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "relliptical" version))
        (sha256
-        (base32 "1dldvzgnkf9lvzc775aybr7xa91r6c6xqmnnmmwhmfx040yvbw15"))))
+        (base32 "1d978ig1k6drb4imz04j28l1xbb04vl8l5iirhmlm096i7bn3psx"))))
     (properties `((upstream-name . "relliptical")))
     (build-system r-build-system)
     (propagated-inputs (list r-ryacas0
@@ -30026,19 +30122,20 @@ also offers some useful tools for exploring other forensic DNA situations.")
     (description
      "It offers random numbers generation from members of the truncated multivariate
 elliptical family of distribution such as the truncated versions of the Normal,
-Student-t, Pearson VII, Slash, Logistic, among others.  Particular distributions
-can be provided by specifying the density generating function.  It also computes
-the first two moments (covariance matrix as well) for some particular
-distributions.  References used for this package: Galarza, C. E., Matos, L. A.,
-Castro, L. M., & Lachos, V. H. (2022).  Moments of the doubly truncated
-selection elliptical distributions with emphasis on the unified multivariate
-skew-t distribution.  Journal of Multivariate Analysis, 189, 104944
-<doi:10.1016/j.jmva.2021.104944>; Ho, H. J., Lin, T. I., Chen, H. Y., & Wang, W.
-L. (2012).  Some results on the truncated multivariate t distribution.  Journal
-of Statistical Planning and Inference, 142(1), 25-40
-<doi:10.1016/j.jspi.2011.06.006>; Valeriano, K. A., Galarza, C. E., & Matos, L.
-A. (2021).  Moments and random number generation for the truncated elliptical
-family of distributions. @code{arXiv} preprint <@code{arXiv:2112.09319>}.")
+Student-t, Laplace, Pearson VII, Slash, Logistic, among others.  Particular
+distributions can be provided by specifying the density generating function.  It
+also computes the first two moments (covariance matrix as well) for some
+particular distributions.  References used for this package: Galarza, C. E.,
+Matos, L. A., Castro, L. M., and Lachos, V. H. (2022).  Moments of the doubly
+truncated selection elliptical distributions with emphasis on the unified
+multivariate skew-t distribution.  Journal of Multivariate Analysis, 189, 104944
+<doi:10.1016/j.jmva.2021.104944>; Ho, H. J., Lin, T. I., Chen, H. Y., and Wang,
+W. L. (2012).  Some results on the truncated multivariate t distribution.
+Journal of Statistical Planning and Inference, 142(1), 25-40
+<doi:10.1016/j.jspi.2011.06.006>; Valeriano, K. A., Galarza, C. E., and Matos,
+L. A. (2021).  Moments and random number generation for the truncated elliptical
+family of distributions.  Statistics and Computing, 33(1), 32
+<doi:10.1007/s11222-022-10200-4>.")
     (license license:gpl2+)))
 
 (define-public r-relimppcr
@@ -32808,13 +32905,13 @@ angewandte Statistik (second edition).")
 (define-public r-redamor
   (package
     (name "r-redamor")
-    (version "0.7.2")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReDaMoR" version))
        (sha256
-        (base32 "1p63kmf7442i0iw4f6hj6h6vs4kqgz6v9wj88vp63nb1w9r8l9av"))))
+        (base32 "14msbr297haj1v8aq61m0zbj98sphcx0q8g3883lnrabjsshkws2"))))
     (properties `((upstream-name . "ReDaMoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -33902,13 +33999,13 @@ Protection Agency (1991).")
 (define-public r-rearrr
   (package
     (name "r-rearrr")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rearrr" version))
        (sha256
-        (base32 "1fmmfji3r5q95ssvjmc9hxhxvh808cib5571mi4l57bp4z703wy1"))))
+        (base32 "1inx1gikiqxaf6a8g10b02l1qs2y0zxs2yrxn6dyx9n6xlra3rnr"))))
     (properties `((upstream-name . "rearrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -34303,13 +34400,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "0m2bxnn3ac8qb7860268d2krxvdj4aw9v3ckd3ccqza0cspihhf1"))))
+        (base32 "0hvz8zss5gh7r2w9ar3qh66k7vgbdikz942fp8pbzag8khah5rza"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -35392,35 +35489,6 @@ at the 	cutoff in Sharp, Fuzzy and Kink RD settings, rdbwselect() to perform
 bandwidth selection for the different procedures implemented, and rdplot() to
 conduct exploratory data analysis (RD plots).")
     (license license:gpl2)))
-
-(define-public r-rdracor
-  (package
-    (name "r-rdracor")
-    (version "0.7.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rdracor" version))
-       (sha256
-        (base32 "1zjd5w2kmpqbnm4j4w72r8bdy3hnvbvvckv3azdjsarbhnpqyfvw"))))
-    (properties `((upstream-name . "rdracor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rdpack
-                             r-purrr
-                             r-jsonlite
-                             r-igraph
-                             r-httr
-                             r-data-table))
-    (home-page "https://github.com/dracor-org/rdracor")
-    (synopsis "Access to the 'DraCor' API")
-    (description
-     "Provide an interface for Drama Corpora Project ('@code{DraCor}') API:
-<https://dracor.org/documentation/api>.")
-    (license license:gpl3+)))
 
 (define-public r-rdpower
   (package
@@ -39512,13 +39580,13 @@ package in the R Commander GUI for R.")
 (define-public r-rcmdr
   (package
     (name "r-rcmdr")
-    (version "2.9-1")
+    (version "2.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcmdr" version))
        (sha256
-        (base32 "03b7jg75sq9sv0yi5ish0pp028av9v7pnjxb8m11swacw635m0yh"))))
+        (base32 "175c5iqgp2j7x5vjijnklc35nbnyz0s83rzmf7qq8kxv8fv2jmw8"))))
     (properties `((upstream-name . "Rcmdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tcltk2

@@ -6252,13 +6252,13 @@ using @code{treespaceServer}().  For further details see Jombart et al. (2017)
 (define-public r-treeslicer
   (package
     (name "r-treeslicer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesliceR" version))
        (sha256
-        (base32 "1ncck3v6yx5gf92i0694znp6mi0v8skkb7pl0pa2iy8ih5nxxhvb"))))
+        (base32 "1hsb4rjl7kl2q9z4mkpsnwf6a8r0j1m6y4sl112rssrwrk836gb8"))))
     (properties `((upstream-name . "treesliceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-ggplot2 r-foreach r-doparallel r-ape))
@@ -8941,6 +8941,29 @@ The TR8 name, inspired by \"car plates\" jokes, was chosen since it both reminds
 of the main object of the package and is extremely short to type.")
     (license license:gpl2+)))
 
+(define-public r-tr-iatgen
+  (package
+    (name "r-tr-iatgen")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tr.iatgen" version))
+       (sha256
+        (base32 "0bwr6c5mg41avsjj55wql0nyvb9pix8n5rpzlqjsq93xwixapy5s"))))
+    (properties `((upstream-name . "tr.iatgen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/iatgen/tr.iatgen")
+    (synopsis "Translate 'iatgen' Generated QSF Files")
+    (description
+     "Automates translating the instructions of iatgen generated qsf (Qualtrics survey
+files) to other languages using either officially supported or user-supplied
+translations (for tutorial see Santos et al., 2023
+<doi:10.17504/protocols.io.kxygx34jdg8j/v1>).")
+    (license license:expat)))
+
 (define-public r-tqk
   (package
     (name "r-tqk")
@@ -9380,13 +9403,13 @@ all differences.  The vignettes download example files from
 (define-public r-toxeval
   (package
     (name "r-toxeval")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxEval" version))
        (sha256
-        (base32 "1bn2hl2fyyqp22s12jmvwr6vamsifwxwbpjv8dbriaxp98q5a2l5"))))
+        (base32 "1dyrbvb2l7bdz6d0lph7s8m3ydy6wz9k01qd9ilvkdqcf3y05ih0"))))
     (properties `((upstream-name . "toxEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20046,13 +20069,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "0riiypwvskpx4mzc5md8mmarknghcy64lmq3fa0rybl28qhl2mp9"))))
+        (base32 "0h37jvvw3k291kwkq77b15ypvzh80wmh6jpgjhdcs9lid2k3iq2b"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysem
@@ -20776,23 +20799,26 @@ information from the projected data.  See Chen and Lam (2023)
 (define-public r-tensorevd
   (package
     (name "r-tensorevd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorEVD" version))
        (sha256
-        (base32 "0jh32siw83czgn5k330c8srmn5pa2jwsyi2nrn3vpl10n607xay2"))))
+        (base32 "024127fv1gc631i8dfczg350gaqims4i6amhbq7v8ws2g1sf1hi9"))))
     (properties `((upstream-name . "tensorEVD")))
     (build-system r-build-system)
-    (native-inputs (list r-rmarkdown))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=tensorEVD")
     (synopsis
      "Fast Algorithm to Factorize High-Dimensional Tensor Product Matrices")
     (description
      "Here we provide tools for the computation and factorization of high-dimensional
 tensor products that are formed by smaller matrices.  The methods are based on
-properties of Kronecker products (Searle 1982, p.  265, ISBN-10: 0470009616).")
+properties of Kronecker products (Searle 1982, p.  265, ISBN-10: 0470009616).
+We evaluated this methodology by benchmark testing and illustrated its use in
+Gaussian Linear Models ('Lopez-Cruz et al., 2024')
+<doi:10.1093/g3journal/jkae001>.")
     (license license:gpl3)))
 
 (define-public r-tensorcomplete
@@ -21920,6 +21946,42 @@ applications focusing on reproducibility and relational data.")
     (description
      "Introduction of qenv S4 class, that facilitates code execution and
 reproducibility in teal applications.")
+    (license license:asl2.0)))
+
+(define-public r-teal
+  (package
+    (name "r-teal")
+    (version "0.15.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal" version))
+       (sha256
+        (base32 "0qk2kxq8c0kmi8bi24bydyl1vy41hl0ib37gp6vd5l2447llkpaa"))))
+    (properties `((upstream-name . "teal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-teal-widgets
+                             r-teal-slice
+                             r-teal-reporter
+                             r-teal-logger
+                             r-teal-data
+                             r-teal-code
+                             r-shinyjs
+                             r-shiny
+                             r-rlang
+                             r-magrittr
+                             r-logger
+                             r-lifecycle
+                             r-jsonlite
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal/")
+    (synopsis "Exploratory Web Apps for Analyzing Clinical Trials Data")
+    (description
+     "This package provides a shiny based interactive exploration framework for
+analyzing clinical trials data.  teal currently provides a dynamic filtering
+facility and different data viewers.  teal shiny applications are built using
+standard shiny modules.")
     (license license:asl2.0)))
 
 (define-public r-teachnet
@@ -24756,13 +24818,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "18dc5zfjmld9mrxcgb1mrz90qhlisjqiqmp7rnvlvrdlzj36r8bm"))))
+        (base32 "0796ri98ybrh86n0ssinm2v2yg6nrvfzhqa9rqn57kz0kvr1fl6a"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

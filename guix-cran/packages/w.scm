@@ -6600,13 +6600,13 @@ model.")
 (define-public r-wbacon
   (package
     (name "r-wbacon")
-    (version "0.6")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wbacon" version))
        (sha256
-        (base32 "0b91h71fs07knnqrbr167wdlb1iakafbadzr4zznndwplx3ygpbz"))))
+        (base32 "1589ds5n25k6mii75k83yr7rc5kkk1xvhg2jrzd5i1hm31dhv3rp"))))
     (properties `((upstream-name . "wbacon")))
     (build-system r-build-system)
     (propagated-inputs (list r-hexbin))

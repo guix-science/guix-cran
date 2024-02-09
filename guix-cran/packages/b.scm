@@ -9139,38 +9139,6 @@ respect to the dimension of the matrix.  The method is described in the paper
 Perrot-@code{DockÃ¨s} et al. (2019) <@code{arXiv:1806.10093>}.")
     (license license:gpl2+)))
 
-(define-public r-blockcluster
-  (package
-    (name "r-blockcluster")
-    (version "4.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blockcluster" version))
-       (sha256
-        (base32 "1vfwfd2wz6ivhlashxpz4h5ll8y7zrqxfw5763prgaiff793cxc5"))))
-    (properties `((upstream-name . "blockcluster")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rtkore r-rcpp))
-    (home-page "https://gitlab.inria.fr/iovleff/blockcluster")
-    (synopsis
-     "Co-Clustering Package for Binary, Categorical, Contingency and Continuous Data-Sets")
-    (description
-     "Simultaneous clustering of rows and columns, usually designated by biclustering,
-co-clustering or block clustering, is an important technique in two way data
-analysis.  It consists of estimating a mixture model which takes into account
-the block clustering problem on both the individual and variables sets.  The
-blockcluster package provides a bridge between the C++ core library build on top
-of the STK++ library, and the R statistical computing environment.  This package
-allows to co-cluster binary <doi:10.1016/j.csda.2007.09.007>, contingency
-<doi:10.1080/03610920903140197>, continuous <doi:10.1007/s11634-013-0161-3> and
-categorical data-sets <doi:10.1007/s11222-014-9472-2>.  It also provides utility
-functions to visualize the results.  This package may be useful for various
-applications in fields of Data mining, Information retrieval, Biology, computer
-vision and many more.  More information about the project and comprehensive
-tutorial can be found on the link mentioned in URL.")
-    (license license:gpl3+)))
-
 (define-public r-blmodel
   (package
     (name "r-blmodel")

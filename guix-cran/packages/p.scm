@@ -8387,6 +8387,30 @@ day exchange rates for 171 currencies from the European Central Bank Statistical
 Data Warehouse (2020) <https://sdw.ecb.europa.eu/@code{curConverter.do>}.")
     (license license:expat)))
 
+(define-public r-pricelevels
+  (package
+    (name "r-pricelevels")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pricelevels" version))
+       (sha256
+        (base32 "06997bxch7klpkibpszpwm2lr6kyl6fnxrphnw379hx3vac2p4zx"))))
+    (properties `((upstream-name . "pricelevels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minpack-lm r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sweinand/pricelevels")
+    (synopsis "Spatial Price Level Comparisons")
+    (description
+     "Price comparisons within or between countries provide an overall measure of the
+relative difference in prices, often denoted as price levels.  This package
+provides index number methods for such price comparisons (e.g., The World Bank,
+2011, <doi:10.1596/978-0-8213-9728-2>).  Moreover, it contains functions for
+sampling and characterizing price data.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-priceindices
   (package
     (name "r-priceindices")
@@ -11992,16 +12016,15 @@ data, apply various data checks, and deal with conflicting columns.")
 (define-public r-powerindexr
   (package
     (name "r-powerindexr")
-    (version "1.0.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerindexR" version))
        (sha256
-        (base32 "0afq28mm602pyr543n6akwiaf682q9i93qks5mqx6n3khc809q9i"))))
+        (base32 "1dj5mnwx1wbygxjn538niwai5yxp6wry41l33j5xip10f2lbyzc3"))))
     (properties `((upstream-name . "powerindexR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-coopgame))
     (home-page "https://cran.r-project.org/package=powerindexR")
     (synopsis "Measuring the Power in Voting Systems")
     (description
@@ -19160,23 +19183,23 @@ plots, information plots, and comparison plots for examining parameter drift.")
 (define-public r-plindleyroc
   (package
     (name "r-plindleyroc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLindleyROC" version))
        (sha256
-        (base32 "0k7vkk6c6y0larvp5bm0f8dzafjs7g1s2m7kla6h612jhkqpngwl"))))
+        (base32 "09skjwl71p8374h48mqdgwlbqivgjalgbf69nfqaz7p0cifal6lc"))))
     (properties `((upstream-name . "PLindleyROC")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ErtanSU/PLindleyROC")
     (synopsis
-     "Receiver Operating Characteristic for Power Lindley Distribution")
+     "Receiver Operating Characteristic Based on Power Lindley Distribution")
     (description
-     "Receiver operating characteristic (ROC) analysis is carried out from the Power
-Lindley distribution.  Specificity, sensitivity, area under the curve, and ROC
-curve are evaluated.")
+     "Receiver Operating Characteristic (ROC) analysis is performed assuming samples
+are from the Power Lindley distribution.  Specificity, sensitivity, area under
+the curve and ROC curve are provided.")
     (license license:gpl3)))
 
 (define-public r-pliman
@@ -25319,6 +25342,39 @@ ISBN-13:978-1-118-67232-7, Hsiao (2014) Analysis of Panel Data
 Econometrics with R, ISBN:978-1-118-94918-4.")
     (license license:gpl2+)))
 
+(define-public r-pgkdesphere
+  (package
+    (name "r-pgkdesphere")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pgKDEsphere" version))
+       (sha256
+        (base32 "01ck72mjzpkihkifsg2ca3xxivq7xq47483pl7dwy8xfjm2s0csd"))))
+    (properties `((upstream-name . "pgKDEsphere")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rotasym
+                             r-rgl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-movmf
+                             r-matrixstats
+                             r-dirstats
+                             r-directional
+                             r-circular))
+    (home-page "https://cran.r-project.org/package=pgKDEsphere")
+    (synopsis
+     "Parametrically Guided Kernel Density Estimator for Spherical Data")
+    (description
+     "Nonparametric density estimation for (hyper)spherical data by means of a
+parametrically guided kernel estimator (adaptation of the method of Hjort and
+Glad (1995) <doi:10.1214/aos/1176324627> to the spherical setting).  The package
+also allows the data-driven selection of the smoothing parameter and the
+representation of the estimated density for circular and spherical data.
+Estimators of the density without guide can also be obtained.")
+    (license license:gpl2+)))
+
 (define-public r-pgirmess
   (package
     (name "r-pgirmess")
@@ -28434,13 +28490,13 @@ with asymmetric sources but it works for symmetric sources as well.")
 (define-public r-pearsonds
   (package
     (name "r-pearsonds")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PearsonDS" version))
        (sha256
-        (base32 "1dap7f096ayp27pf6p9chc30sphd1hdivqn3yv7mgm0ar8w1qzyk"))))
+        (base32 "1s07zdqa769rx0b0nhr3jrx5siy5ywc43kgm1574gzqck3dkqpa1"))))
     (properties `((upstream-name . "PearsonDS")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PearsonDS")
@@ -31572,24 +31628,25 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0r1fa2i4l715qj76hl0a2b3ysmk260yh86hbk2fa1mdr8m48545w"))))
+        (base32 "1yx2qk7l6njnpmqx68kifhgzpk3r5yhyxn73xa60w710czzb9wcs"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
                              r-stringr
                              r-rlang
-                             r-pillar
+                             r-omopgenerics
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-gt
                              r-dplyr
-                             r-dbi
                              r-cli
                              r-checkmate
                              r-cdmconnector))

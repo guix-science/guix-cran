@@ -2463,13 +2463,13 @@ the input.")
 (define-public r-npde
   (package
     (name "r-npde")
-    (version "3.4")
+    (version "3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npde" version))
        (sha256
-        (base32 "1zhf48wg8cfki5z0mv7k56s03km2n7c9gr2q70lvm2k7lz57amwq"))))
+        (base32 "04bksbziqapj1nx0xnjrhgapfd6mxfh5kbyvf86k02jszmxlzr4d"))))
     (properties `((upstream-name . "npde")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-mclust r-gridextra r-ggplot2))
@@ -3104,13 +3104,13 @@ names in the environment.")
 (define-public r-novelqualcodes
   (package
     (name "r-novelqualcodes")
-    (version "0.13.0")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "novelqualcodes" version))
        (sha256
-        (base32 "0mgmjd7zrknnsg8a4kjkdk98pnm0z1k73mim40ivb1qfp0pxmn0g"))))
+        (base32 "0126nkn68hgw258zqpp0abcq1a3s0v2x0b3nc9brrzvfl2ynpnpm"))))
     (properties `((upstream-name . "novelqualcodes")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-naturalsort r-ggplot2 r-ggpattern))
@@ -5542,16 +5542,21 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.0.7")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "0ciypdpwr694sjkvl1hq7lg22zp39ifb5f0va9vdhyss7lvx32xi"))))
+        (base32 "1hwlgzlhq1czy3rpkabdbig39z87izdb6302lx6b29mjcfdyjq4m"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-nmdata r-mass r-fst r-data-table))
+    (propagated-inputs (list r-xfun
+                             r-r-utils
+                             r-nmdata
+                             r-mass
+                             r-fst
+                             r-data-table))
     (home-page "https://philipdelff.github.io/NMsim/")
     (synopsis "Seamless 'Nonmem' Simulation Platform")
     (description
@@ -7661,13 +7666,13 @@ increased MCMC efficiency.")
 (define-public r-nimblehmc
   (package
     (name "r-nimblehmc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleHMC" version))
        (sha256
-        (base32 "09cnfnrm7f8zdih5f7d8zsxlr8bxhymk5cji812s658m2g8w9n6n"))))
+        (base32 "1id9pqs1phc2vf8mwz2gdgirhmki4shw8h77828nbj10b3zik3zj"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -10027,6 +10032,33 @@ Bernard, H. R., Shelley, G. A., and Johnsen, E. C. (1998)
      "This package implements some risk measures for (financial) networks, such as
 @code{DebtRank}, Impact Susceptibility, Impact Diffusion and Impact Fluidity.")
     (license license:gpl3)))
+
+(define-public r-networkreg
+  (package
+    (name "r-networkreg")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NetworkReg" version))
+       (sha256
+        (base32 "19z5m5hn2frqrfv3lymjwfy6b2vp6mfyanynzbb6g3xkafh6mnad"))))
+    (properties `((upstream-name . "NetworkReg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra r-randnet r-matrix))
+    (home-page "https://cran.r-project.org/package=NetworkReg")
+    (synopsis
+     "Regression Model on Network-Linked Data with Statistical Inference")
+    (description
+     "Linear regression model with nonparametric network effects on network-linked
+observations.  The model is proposed by Le and Li (2022)
+<@code{arXiv:2007.00803>} and is assumed on observations that are connected by a
+network or similar relational data structure.  The model does not assume that
+the relational data or network structure to be precisely observed; thus, the
+method is provably robust to a certain level of perturbation of the network
+structure.  The package contains the estimation and inference function for the
+model.")
+    (license license:gpl2+)))
 
 (define-public r-networkr
   (package
@@ -14869,13 +14901,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "04za4lb0r3607fwq7ssm87znk2pjh352vj79b0z2s7h0gs83w8mn"))))
+        (base32 "0dni3xdss51xi00bmpm8i4q4l12sdzrjsmz3inxhc7hdd53pp42b"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

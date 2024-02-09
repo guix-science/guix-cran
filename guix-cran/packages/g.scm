@@ -7033,13 +7033,13 @@ R.")
 (define-public r-gpvecchia
   (package
     (name "r-gpvecchia")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvecchia" version))
        (sha256
-        (base32 "1ag1j3r5q14wp3s3qyq63aw7iydhm4bidi46qsbgg836vkwiqn54"))))
+        (base32 "0jd01sa643gk8hbhy3mlacxi3bfnv2n4wmb472vzdpp8da870bj1"))))
     (properties `((upstream-name . "GPvecchia")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparseinv
@@ -7048,8 +7048,7 @@ R.")
                              r-matrix
                              r-gpgp
                              r-fnn
-                             r-fields
-                             r-bh))
+                             r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPvecchia")
     (synopsis "Scalable Gaussian-Process Approximations")
@@ -11730,13 +11729,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "16ln0zpc92kmkmksyfi6ky4s8h0fdzfjbzwm00j968fx0hxlqv79"))))
+        (base32 "0lznd283a3vy6ksgk53gmry6vlzszyf2lawdvs6m4bqzvl9m4gsh"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11757,24 +11756,17 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
      "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
 gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
 Recursive Partitioning ('RPART') or step wise regression models are fit.  Nested
-cross validation to estimate and compare performances between these models is
-also performed.  For some datasets, for example when the design matrix is not of
-full rank, glmnet may have very long run times when fitting the relaxed lasso
-model, from our experience when fitting Cox models on data with many predictors
-and many patients, making it difficult to get solutions from either glmnet() or
+cross validation (or analogous for the random forest) to estimate and compare
+performances between these models is used to describe model performances.  For
+some datasets, for example when the design matrix is not of full rank, glmnet
+may have very long run times when fitting the relaxed lasso model, from our
+experience when fitting Cox models on data with many predictors and many
+patients, making it difficult to get solutions from either glmnet() or
 cv.glmnet().  This may be remedied with the path=TRUE options when calling
-cv.glmnet().  This option is not described in the glmnet Reference Manual but is
-described in the glmnet \"The Relaxed Lasso\" vignette.  In this package,
-glmnetr', we provide a similar workaround and solve for the non penalized
-relaxed model where gamma=0 for model structures analogue to R functions like
-glm() or coxph() of the survival package.  If you are not fitting relaxed lasso
-models, or if you are able to get convergence using glmnet', then the glmnetr()
-and cv.glmnetr() functions may not be of much benefit to you.  Note, while this
-package may allow one to fit relaxed lasso models that have difficulties
-converging using glmnet', and provides some different functionality beyond that
-of cv.glmnet(), it does not afford the some of the versatility of glmnet'.  When
-fitting not a relaxed lasso model but an elastic-net model, then the R-packages
-nestedcv <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
+glmnet() and cv.glmnet().  Within the glmnetr package the approach of path=TRUE
+is taken by default.  When fitting not a relaxed lasso model but an elastic-net
+model, then the R-packages nestedcv
+<https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. As with the glmnet package,
 this package passes most relevant output to the output object and tabular and
@@ -14954,6 +14946,36 @@ with dense datasets that are prone to overplotting.")
 or relative plot coordinates.")
     (license license:expat)))
 
+(define-public r-ggtibble
+  (package
+    (name "r-ggtibble")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtibble" version))
+       (sha256
+        (base32 "0mqwcy5gyb2dwnpkjzkyg9b3jy6jh9ck1h8z9ghvfssr2mkd17zz"))))
+    (properties `((upstream-name . "ggtibble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-knitr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://billdenney.github.io/ggtibble/")
+    (synopsis "Create Tibbles and Lists of 'ggplot' Figures for Reporting")
+    (description
+     "Create tibbles and lists of ggplot figures that can be modified as easily as
+regular ggplot figures.  Typical use cases are for creating reports or web pages
+where many figures are needed with different data and similar formatting.")
+    (license license:gpl3+)))
+
 (define-public r-ggthemeul
   (package
     (name "r-ggthemeul")
@@ -16034,25 +16056,22 @@ several other useful visualizations.")
 (define-public r-ggpointless
   (package
     (name "r-ggpointless")
-    (version "0.0.3")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpointless" version))
        (sha256
-        (base32 "1gladyzmfipmjqzpcz0xjc5fjc8sw9nrmnzw0dcz516a1wy8wys9"))))
+        (base32 "1qzd5jcac3syl9pgxzq2r7vmrp7kzd2h56xa1y6hich2rhzywva9"))))
     (properties `((upstream-name . "ggpointless")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://flrd.github.io/ggpointless/")
-    (synopsis "Small Collection of Geometries, and Stats for 'ggplot2'")
+    (synopsis "Additional Geometries and Stats for 'ggplot2'")
     (description
-     "This package provides a collection of geometries and stats for ggplot2'.
-Currently it supports geom_pointless() which adds minimal emphasis to your
-plots.  Or just some visual sugar.  geom_lexis() draws a 45Â° lifeline of an
-event that mimics lexis diagrams.  geom_chaikin() applies Chaikin's corner
-cutting algorithm to a path.")
+     "An (aspirational) collection of additional geometries and statistics for
+ggplot2'.")
     (license license:expat)))
 
 (define-public r-ggpmx

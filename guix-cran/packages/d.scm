@@ -3163,6 +3163,36 @@ import, process, validate, query, analyze, report, and export data.  Opal is the
 reference implementation of the @code{DataSHIELD} infrastructure.")
     (license license:lgpl2.1+)))
 
+(define-public r-dsmsearch
+  (package
+    (name "r-dsmsearch")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsmSearch" version))
+       (sha256
+        (base32 "19r5d61bc4n434sxnndp0nf318pj420skghkiadipbmf2j871h69"))))
+    (properties `((upstream-name . "dsmSearch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-sf
+                             r-lidr
+                             r-imager
+                             r-httr2
+                             r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=dsmSearch")
+    (synopsis "DSM and LiDAR downloader")
+    (description
+     "This package provides a collection of functions to search and donwload DSM
+(Digital Surface Model) and @code{LiDAR} (Light Detection and Ranging) data via
+APIs, including @code{OpenTopography}
+<https://portal.opentopography.org/apidocs/> and TNMAccess
+<https://apps.nationalmap.gov/tnmaccess/#/>.")
+    (license license:gpl3)))
+
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
@@ -8703,6 +8733,54 @@ principal component analysis.  The philosophy of the package is described in Guo
 G. (2020) <doi:10.1080/02331888.2020.1823979>.")
     (license license:expat)))
 
+(define-public r-dlookr
+  (package
+    (name "r-dlookr")
+    (version "0.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dlookr" version))
+       (sha256
+        (base32 "047f616pcjvv9bd7crphrbvql5qn6j50495px9244fl50vyklzx6"))))
+    (properties `((upstream-name . "dlookr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-sysfonts
+                             r-showtext
+                             r-shiny
+                             r-rpart
+                             r-rmarkdown
+                             r-rlang
+                             r-reactable
+                             r-purrr
+                             r-pagedown
+                             r-mice
+                             r-knitr
+                             r-kableextra
+                             r-htmltools
+                             r-hrbrthemes
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/choonghyunryu/dlookr/")
+    (synopsis "Tools for Data Diagnosis, Exploration, Transformation")
+    (description
+     "This package provides a collection of tools that support data diagnosis,
+exploration, and transformation.  Data diagnostics provides information and
+visualization of missing values, outliers, and unique and negative values to
+help you understand the distribution and quality of your data.  Data exploration
+provides information and visualization of the descriptive statistics of
+univariate variables, normality tests and outliers, correlation of two
+variables, and the relationship between the target variable and predictor.  Data
+transformation supports binning for categorizing continuous variables, imputes
+missing values and outliers, and resolves skewness.  And it creates automated
+reports that support these three tasks.")
+    (license license:gpl2)))
+
 (define-public r-dlnm
   (package
     (name "r-dlnm")
@@ -11296,16 +11374,16 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
 (define-public r-discretefdr
   (package
     (name "r-discretefdr")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteFDR" version))
        (sha256
-        (base32 "06z9phxg3wjxvndcl3fnh99wbs2j8j2m7wndm0hskhcgijab5cgg"))))
+        (base32 "0yph01q0aw7dfv3cmhv6mjb0vcphifzj1z9iddpw9zhkryadj7gg"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-lifecycle))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/DISOhda/DiscreteFDR")
     (synopsis "Multiple Testing Procedures with Adaptation for Discrete Tests")
@@ -12833,13 +12911,13 @@ sensitivity and the copy number per well in the initial dilute.")
 (define-public r-digitaldlsorter
   (package
     (name "r-digitaldlsorter")
-    (version "0.3.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digitalDLSorteR" version))
        (sha256
-        (base32 "1wglj3vg2d233wv431b7zla27sj9gbv1k5h66547v079qb8zvm1d"))))
+        (base32 "05wcvv68p55hxf9babr19528khky1pmgfbvm502qhk7ba1arzivf"))))
     (properties `((upstream-name . "digitalDLSorteR")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
@@ -12848,15 +12926,17 @@ sensitivity and the copy number per well in the initial dilute.")
                              r-tensorflow
                              r-summarizedexperiment
                              r-singlecellexperiment
+                             r-scuttle
+                             r-scran
                              r-s4vectors
                              r-rlang
                              r-reticulate
                              r-reshape2
-                             r-rcolorbrewer
                              r-pbapply
                              r-matrix
                              r-keras
                              r-gtools
+                             r-grr
                              r-ggpubr
                              r-ggplot2
                              r-dplyr))
@@ -24365,13 +24445,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "1v20k03ga19g3l4xb3ql7lk29qb6shk670z28n3vdandip20cvb9"))))
+        (base32 "1jicyh63cwxnzh26x989sj0xriwnfjvdvcyisgndkwxjxvn75cjq"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -25929,6 +26009,47 @@ assembly that takes into account phylogenetic history.")
      "Interactively train neural networks on Numerai, <https://numer.ai/>, data.
 Generate tournament predictions and write them to a CSV.")
     (license license:gpl3)))
+
+(define-public r-damaoi
+  (package
+    (name "r-damaoi")
+    (version "0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "damAOI" version))
+       (sha256
+        (base32 "1vfc1nwzr76djmwriln9dh8hj6iq5ji9vxfnpzydl34niqckscf0"))))
+    (properties `((upstream-name . "damAOI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-smoothr
+                             r-shinydashboard
+                             r-shiny
+                             r-sf
+                             r-magrittr
+                             r-leaflet
+                             r-fnn
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=damAOI")
+    (synopsis
+     "Create an 'Area of Interest' Around a Constructed Dam for Comparative Impact Evaluations")
+    (description
+     "Define a spatial Area of Interest (AOI) around a constructed dam using hydrology
+data.  Dams have environmental and social impacts, both positive and negative.
+Current analyses of dams have no consistent way to specify at what spatial
+extent we should evaluate these impacts. @code{damAOI} implements methods to
+adjust reservoir polygons to match satellite-observed surface water areas, plot
+upstream and downstream rivers using elevation data and accumulated river flow,
+and draw buffers clipped by river basins around reservoirs and relevant rivers.
+This helps to consistently determine the areas which could be impacted by dam
+construction, facilitating comparative analysis and informed infrastructure
+investments.")
+    (license license:gpl3+)))
 
 (define-public r-dam
   (package

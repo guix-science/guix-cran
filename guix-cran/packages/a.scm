@@ -1309,13 +1309,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autostsm" version))
        (sha256
-        (base32 "05nsvxcybckpv4y289ddh6rkzfmbjhf49db4nkwj9il2429c9v6c"))))
+        (base32 "1flrh6kyqm5slc36mb6bk7nm9dfr53lxvpnmc2qkii4r2rmgb1lk"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
@@ -18368,13 +18368,13 @@ and specificity as well as AUC and AUCPR can be evaluated.")
 (define-public r-adjclust
   (package
     (name "r-adjclust")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjclust" version))
        (sha256
-        (base32 "005d18vqr3kd492mcbcdc4jb176a9s5rxj4y8r8iy0s2hc4kyl3l"))))
+        (base32 "1iq0pfw0kdi792iigpj4vq8phbcs9bid09bdvpxwwxcq65djni41"))))
     (properties `((upstream-name . "adjclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsematrixstats
@@ -19426,13 +19426,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "057pynwvs921s2q74rx4cirszbpz1cl15sh07b7sx1l8dj5m88a6"))))
+        (base32 "0ficdvfpb6lhhbyifvy9r9z6lvxp4ric2aiarfij7r38a8m83j06"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-triebeard r-rcpp))

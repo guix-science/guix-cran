@@ -1518,13 +1518,13 @@ package.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.3")
+    (version "5.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "14ib3rbzkgv100d0p7s6688wyqg8dyn4z647m37n0nf4ncpszpji"))))
+        (base32 "094by5q478hqpsp1vihrf77j8i3jcdbc1by17ca9sv7r3pz0lrhw"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list calc))
@@ -9070,6 +9070,40 @@ amounts by service lines just to name a few.  The aim is to provide a simple and
 consistent verb framework that takes the guesswork out of everything.")
     (license license:expat)))
 
+(define-public r-healthyaddress
+  (package
+    (name "r-healthyaddress")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthyAddress" version))
+       (sha256
+        (base32 "0lw8r4cw1axgkb23ikzsn7jkqplp8cpydmww1pklp3cp4arkddmy"))))
+    (properties `((upstream-name . "healthyAddress")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qs
+                             r-magrittr
+                             r-hutilscpp
+                             r-hutils
+                             r-fst
+                             r-fastmatch
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=healthyAddress")
+    (synopsis "Convert Addresses to Standard Inputs")
+    (description
+     "Efficient tools for parsing and standardizing Australian addresses from textual
+data.  It utilizes optimized algorithms to accurately identify and extract
+components of addresses, such as street names, types, and postcodes, especially
+for large batched data in contexts where sending addresses to internet services
+may be slow or inappropriate.  The core functionality is built on fast string
+processing techniques to handle variations in address formats and abbreviations
+commonly found in Australian address data.  Designed for data scientists, urban
+planners, and logistics analysts, the package facilitates the cleaning and
+normalization of address information, supporting better data integration and
+analysis in urban studies, geography, and related fields.")
+    (license license:gpl2)))
+
 (define-public r-healthfinance
   (package
     (name "r-healthfinance")
@@ -10922,13 +10956,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "05pyn4xv7s0bbjzsf3f9mwxsk6npm6lx21xi0rg2nr3wfx8kmpfm"))))
+        (base32 "05hxwz8g63idqxc0yhxh1x0kpnzj96zb4vkhy8sfkck8ls3iqj0b"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11653,18 +11687,18 @@ French et al. (2006) <doi:10.1002/gepi.20161>.")
 (define-public r-haplin
   (package
     (name "r-haplin")
-    (version "7.3.0")
+    (version "7.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Haplin" version))
        (sha256
-        (base32 "1glvg7jnkaxff6frkhshlljgw8lw5flvn5sl4aqa4rv5j82zakn6"))))
+        (base32 "0vyykbq2f5w4h7nai8w8krpax8q6v2hx76rr6xqy938rza5rfm79"))))
     (properties `((upstream-name . "Haplin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mgcv r-mass r-ff))
     (native-inputs (list r-knitr))
-    (home-page "https://people.uib.no/gjessing/genetics/software/haplin/")
+    (home-page "https://haplin.bitbucket.io")
     (synopsis
      "Analyzing Case-Parent Triad and/or Case-Control Data with SNP Haplotypes")
     (description

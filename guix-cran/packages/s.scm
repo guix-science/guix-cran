@@ -1431,13 +1431,13 @@ Federal Assembly via an open, machine-readable interface (see
 (define-public r-swissair
   (package
     (name "r-swissair")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SwissAir" version))
        (sha256
-        (base32 "0lh69924vhyilgn562jqn8m7z4dq3xmdj09501sbs7hbxfaiiyly"))))
+        (base32 "03fj00py8h4pb10br2pnaxh00dcfpcrh1yyld3if7cv0dwc76xvc"))))
     (properties `((upstream-name . "SwissAir")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SwissAir")
@@ -5541,13 +5541,13 @@ by high-throughput technologies.")
 (define-public r-supernova
   (package
     (name "r-supernova")
-    (version "2.5.8")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supernova" version))
        (sha256
-        (base32 "0cahgyn9z5nkr21a83j6vps39qp5vas78c0w6ybsp6hs4l3nqhjf"))))
+        (base32 "14wnn0vmswc8drrn28385zman5rm2qq4phxfp5kd2k37q2gn9mpj"))))
     (properties `((upstream-name . "supernova")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -5556,11 +5556,7 @@ by high-throughput technologies.")
                              r-rlang
                              r-purrr
                              r-pillar
-                             r-magrittr
-                             r-lifecycle
-                             r-ggplot2
-                             r-cli
-                             r-backports))
+                             r-cli))
     (home-page "https://github.com/UCLATALL/supernova")
     (synopsis "Judd, McClelland, & Ryan Formatting for ANOVA Output")
     (description
@@ -5568,7 +5564,7 @@ by high-throughput technologies.")
 @code{McClelland}, and Ryan (2017, ISBN: 978-1138819832) in their introductory
 textbook, Data Analysis.  This includes proportional reduction in error and
 formatting to improve ease the transition between the book and R.")
-    (license license:agpl3+)))
+    (license license:gpl3+)))
 
 (define-public r-superml
   (package
@@ -11647,13 +11643,13 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "1v02mlpk513jakvljwf0a1qjlaij1w37abs4la2isjlvfdsjc9i8"))))
+        (base32 "001bmwkr07lv0r02i5glssqw2kf6b6n8m3bwgz3rpljqz07y0j80"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr))
@@ -11669,7 +11665,7 @@ Britain from 1979 to present.  Tables are available on colissions with the
 circumstances (e.g. speed limit of road), information about vehicles involved
 (e.g. type of vehicle), and casualties (e.g. age).  The statistics relate only
 to events on public roads that were reported to the police, and subsequently
-recorded, using the STATS19 accident reporting form.  See the Department for
+recorded, using the STATS19 collision reporting form.  See the Department for
 Transport website
 <https://www.data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data>
 for more information on these datasets.  The package is described in a paper in
@@ -21253,20 +21249,19 @@ communities.  For more detailed info see: Martinez-Lopez et al. (2015)
 (define-public r-spduration
   (package
     (name "r-spduration")
-    (version "0.17.1")
+    (version "0.17.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spduration" version))
        (sha256
-        (base32 "1hsz4hcw85f1rj2pd8ppzsd1r8fh4yf6axc11yf2hd287ghzzxzy"))))
+        (base32 "1cgrpfljb43qay38qjhb2xccawh8llrp545bm5bv29k7h1nsa9cb"))))
     (properties `((upstream-name . "spduration")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-separationplot
                              r-rcpparmadillo
                              r-rcpp
-                             r-plyr
                              r-mass
                              r-forecast
                              r-corpcor))
@@ -21280,9 +21275,8 @@ that accommodate the presence of a sub-population that is not at risk for
 failure, e.g. cancer patients who have been cured by treatment.  This package
 implements Weibull and Loglogistic forms for the duration component, and focuses
 on data with time-varying covariates.  These models were originally formulated
-in Boag (1949) <http://www.jstor.org/stable/2983694> and Berkson and Gage (1952)
-<http://www.jstor.org/stable/2281318>, and extended in Schmidt and Witte (1989)
-<doi:10.1016/0304-4076(89)90034-1>.")
+in Boag (1949) and Berkson and Gage (1952), and extended in Schmidt and Witte
+(1989).")
     (license license:gpl3)))
 
 (define-public r-spdownscale
@@ -31414,13 +31408,13 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
 (define-public r-slendr
   (package
     (name "r-slendr")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slendr" version))
        (sha256
-        (base32 "0k9rs5pwsh172kklzrhbrwxhhjrllsyg3sf0g3kgvd1i8m8nd2x7"))))
+        (base32 "0hglc8cp7qn3s9alnqb84ha1jalk99fcmkp8z70v8ajlghr306r1"))))
     (properties `((upstream-name . "slendr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31435,6 +31429,7 @@ Course in Methods of Data Analysis (2nd ed)\", Duxbury.")
                              r-ijtiff
                              r-ggplot2
                              r-dplyr
+                             r-digest
                              r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bodkan/slendr")
@@ -33026,13 +33021,13 @@ functions.")
 (define-public r-sitree
   (package
     (name "r-sitree")
-    (version "0.1-13")
+    (version "0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sitree" version))
        (sha256
-        (base32 "0v0qbzdgh1lcg7m6b5vzfwy74hvj1b61c49lq8c4az740sf34sx6"))))
+        (base32 "0b2dzws3n9q5ss8bna8prq0r0xg5ngqgkrwg92q51r9cv83vw1rf"))))
     (properties `((upstream-name . "sitree")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -33789,13 +33784,13 @@ sum of independent non-identical binomial distribution with parameters
 (define-public r-singr
   (package
     (name "r-singr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singR" version))
        (sha256
-        (base32 "0spxdlf9r454jw37iw978fnibzlwh252sk5w6hfnxva7njs566pp"))))
+        (base32 "1xfmgavcm63imc5a57vk9x3yvdsf2y9599ipmimivdi6q0cxv7bc"))))
     (properties `((upstream-name . "singR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -37506,13 +37501,13 @@ described by Zhang, X., and Cheng, G. (2017)
 (define-public r-sillyputty
   (package
     (name "r-sillyputty")
-    (version "0.3.2")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SillyPutty" version))
        (sha256
-        (base32 "1mb35y5w5nhn9n1lgqa1nyjapn0bn8fwagc8lszkppj1lmkak7zv"))))
+        (base32 "18qc7dwd29zghx9klsslvr2pianbf3av0pvc0wc09781hiv3xksg"))))
     (properties `((upstream-name . "SillyPutty")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresher r-polychrome r-oompabase r-cluster))
@@ -37521,7 +37516,7 @@ described by Zhang, X., and Cheng, G. (2017)
     (synopsis "Silly Putty Clustering")
     (description
      "This package implements a simple, novel clustering algorithm based on optimizing
-the silhouette width.")
+the silhouette width.  See <doi:10.1101/2023.11.07.566055> for details.")
     (license license:asl2.0)))
 
 (define-public r-silicate
@@ -45939,6 +45934,28 @@ assigned to treatment arms upon entry into the experiment.  The schemes are
 evaluated for balance on covariates and on predictability (i.e., how well could
 a site worker guess the treatment of the next unit enrolled).")
     (license license:gpl2)))
+
+(define-public r-seqalignr
+  (package
+    (name "r-seqalignr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeqAlignR" version))
+       (sha256
+        (base32 "1p5gbvndl73kj4bdxqga2brw88zlk4bh5c86wy0jqz2y01rc1611"))))
+    (properties `((upstream-name . "SeqAlignR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plot-matrix))
+    (home-page "https://cran.r-project.org/package=SeqAlignR")
+    (synopsis "Sequence Alignment and Visualization Tool")
+    (description
+     "Computes the optimal alignment of two character sequences.  Visualizes the
+result of the alignment in a matrix plot.  Needleman, Saul B.; Wunsch, Christian
+D. (1970) \"A general method applicable to the search for similarities in the
+amino acid sequence of two proteins\" <doi:10.1016/0022-2836(70)90057-4>.")
+    (license license:gpl3)))
 
 (define-public r-sepkoski
   (package
@@ -55982,13 +55999,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "0485qa549svfb268djycbp4xa99fm1vhglpqlzm4k7szhfb6pkbq"))))
+        (base32 "11h2pwg29nlpbzb0dys6xhbjvar2igwqbhh8x4n5spkiccn6l4cj"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reporter
@@ -56305,18 +56322,18 @@ Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
 (define-public r-sarp-snowprofile-alignment
   (package
     (name "r-sarp-snowprofile-alignment")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarp.snowprofile.alignment" version))
        (sha256
-        (base32 "11c9wq7rr05jq6v6rcg3wy3h7w44clbxx2mysrqj50w38ih3r29b"))))
+        (base32 "1cjs31m3y9971m5zq9fpv4p2l6wjm5kb1wj6r42yj5p27yajv3vy"))))
     (properties `((upstream-name . "sarp.snowprofile.alignment")))
     (build-system r-build-system)
     (propagated-inputs (list r-sarp-snowprofile r-dtw r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "http://www.avalancheresearch.ca/")
+    (home-page "https://avalancheresearch.ca/")
     (synopsis "Snow Profile Alignment, Aggregation, and Clustering")
     (description
      "Snow profiles describe the vertical (1D) stratigraphy of layered snow with
@@ -58240,6 +58257,38 @@ documentation, and examples.")
 paths of the sparse and coupled sparse asymmetric least squares, including the
 (adaptive) elastic net and Lasso penalized SALES and COSALES regressions.")
     (license license:gpl2+)))
+
+(define-public r-saive
+  (package
+    (name "r-saive")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SAiVE" version))
+       (sha256
+        (base32 "1k77671ycw9152lnj25mx634cmgqhnpppfyvdxsvmwgjshhp57fb"))))
+    (properties `((upstream-name . "SAiVE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vsurf
+                             r-terra
+                             r-rlang
+                             r-proxy
+                             r-doparallel
+                             r-crayon
+                             r-caret))
+    (home-page "https://github.com/UO-SAiVE/SAiVE")
+    (synopsis
+     "Functions Used for SAiVE Group Research, Collaborations, and Publications")
+    (description
+     "Holds functions developed by the University of Ottawa's S@code{AiVE}
+(Spatio-temporal Analysis of isotope Variations in the Environment) research
+group with the intention of facilitating the re-use of code, foster good code
+writing practices, and to allow others to benefit from the work done by the
+S@code{AiVE} group.  Contributions are welcome via the @code{GitHub} repository
+<https://github.com/UO-S@code{AiVE/SAiVE>} by group members as well as
+non-members.")
+    (license license:expat)))
 
 (define-public r-sailor
   (package

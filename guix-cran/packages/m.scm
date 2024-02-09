@@ -2979,13 +2979,13 @@ methods at the masters program of Applied Statistics at University of Ljubljana.
 (define-public r-multitool
   (package
     (name "r-multitool")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multitool" version))
        (sha256
-        (base32 "15162y6dbpjgpx3y5fys3bb3c60lxzf4vfn2pw31z5rswi4b3km8"))))
+        (base32 "1z8yby5prfmp0p9gia8pmr54sw017rqbpblhxk6qxz3w9vnl4zp8"))))
     (properties `((upstream-name . "multitool")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3974,56 +3974,6 @@ confidence intervals for multinomial proportions for small counts in a large
 number of cells.  Journal of Statistical Software 5(6) (2000).  Paper and code
 available at <DOI:10.18637/jss.v005.i06>.")
     (license license:lgpl3+)))
-
-(define-public r-multinma
-  (package
-    (name "r-multinma")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multinma" version))
-       (sha256
-        (base32 "0kjh65c6hb7y1j68qk312avs7w0x86m8nyar1fynar508va1npjz"))))
-    (properties `((upstream-name . "multinma")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncdist
-                             r-tidyr
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-randtoolbox
-                             r-purrr
-                             r-matrix
-                             r-igraph
-                             r-glue
-                             r-ggraph
-                             r-ggplot2
-                             r-ggdist
-                             r-forcats
-                             r-dplyr
-                             r-copula
-                             r-bh
-                             r-bayesplot))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://dmphillippo.github.io/multinma/")
-    (synopsis
-     "Bayesian Network Meta-Analysis of Individual and Aggregate Data")
-    (description
-     "Network meta-analysis and network meta-regression models for aggregate data,
-individual patient data, and mixtures of both individual and aggregate data
-using multilevel network meta-regression as described by Phillippo et al. (2020)
-<doi:10.1111/rssa.12579>.  Models are estimated in a Bayesian framework using
-Stan'.")
-    (license license:gpl3)))
 
 (define-public r-multinets
   (package
@@ -5998,13 +5948,13 @@ risk of adverse health events.")
 (define-public r-mtvc
   (package
     (name "r-mtvc")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtvc" version))
        (sha256
-        (base32 "0jri7i6vyj8mlcd5hjrfbcwl4sfgd3lw0vkf8rgq5sbixkmbpv1b"))))
+        (base32 "0d4rwgp36q94maq1yyms3lcf1m3r17s6rpdgq8ifhdapbz2d5sv6"))))
     (properties `((upstream-name . "mtvc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -8743,13 +8693,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "1rzd6angkkmagwid41gwhh8pi6zxzs5wyrj9lq81mna3nym2m7h2"))))
+        (base32 "1wpw5vjabzvnc5z4vx4qfk7rwnjf5dbyahkvhb0mbhwh0zipdv5f"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11924,17 +11874,21 @@ impute non-monotonic data that is outside of a prespecified range.")
 (define-public r-monographar
   (package
     (name "r-monographar")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monographaR" version))
        (sha256
-        (base32 "0yjyyi8y5gdf3xxyi604vcjhv57xr10vgrvfsmbdrw6nmnnbgzzg"))))
+        (base32 "0sqhz3zpbk57s2sm56csqr198fclk9x8zq3bfamzardpax8r2cjr"))))
     (properties `((upstream-name . "monographaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-sp
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinydashboard
+                             r-shiny
                              r-sf
                              r-rpart
                              r-rnaturalearth
@@ -11948,10 +11902,10 @@ impute non-monotonic data that is outside of a prespecified range.")
     (description
      "This package contains functions intended to facilitate the production of plant
 taxonomic monographs.  The package includes functions to convert tables into
-taxonomic descriptions, lists of collectors, examined specimens, dichotomous
-keys, and can generate a monograph skeleton.  Additionally, wrapper functions to
-batch the production of phenology charts and distributional and diversity maps
-are also available.")
+taxonomic descriptions, lists of collectors, examined specimens, identification
+keys (dichotomous and interactive), and can generate a monograph skeleton.
+Additionally, wrapper functions to batch the production of phenology histograms
+and distributional and diversity maps are also available.")
     (license license:gpl2+)))
 
 (define-public r-monoclust
@@ -19817,6 +19771,37 @@ text-book statistics for higher education is also included, e.g. modifications
 of the functions lm(), glm() and associated summaries from the package stats'.")
     (license license:gpl2+)))
 
+(define-public r-mixl
+  (package
+    (name "r-mixl")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixl" version))
+       (sha256
+        (base32 "1j3mqbrjgib57cyirmqgsx6livm63bx9xzps2j4fa6wgivwbk5xr"))))
+    (properties `((upstream-name . "mixl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sandwich
+                             r-readr
+                             r-rcpp
+                             r-randtoolbox
+                             r-numderiv
+                             r-maxlik))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/joemolloy/fast-mixed-mnl")
+    (synopsis
+     "Simulated Maximum Likelihood Estimation of Mixed Logit Models for Large Datasets")
+    (description
+     "Specification and estimation of multinomial logit models.  Large datasets and
+complex models are supported, with an intuitive syntax.  Multinomial Logit
+Models, Mixed models, random coefficients and Hybrid Choice are all supported.
+For more information, see Molloy et al. (2021)
+<https://www.research-collection.ethz.ch/handle/20.500.11850/477416>.")
+    (license license:gpl2+)))
+
 (define-public r-mixkernel
   (package
     (name "r-mixkernel")
@@ -27095,13 +27080,13 @@ visit the vignettes <https://adriancorrendo.github.io/metrica/>.")
 (define-public r-metr
   (package
     (name "r-metr")
-    (version "0.14.1")
+    (version "0.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metR" version))
        (sha256
-        (base32 "1scp7camgip7dcjvw68dch7cf3d05rhbvsrq3jr1860pb2cbwi8l"))))
+        (base32 "17qhx6jx8h9dxfzxgg4nx3nx4xjnjpz9r0cix0qqbgngri55lap0"))))
     (properties `((upstream-name . "metR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -30289,13 +30274,13 @@ R01ES028804.")
 (define-public r-mertools
   (package
     (name "r-mertools")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "merTools" version))
        (sha256
-        (base32 "09mr4gzrfxxq3ll76d90nywzp4f47rd8awaq826mc3hnjphh33md"))))
+        (base32 "0wxiflkqhl40rr6ibzk4c362m8jxd97jkskdxghqa45lc5vgn1qh"))))
     (properties `((upstream-name . "merTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -36034,13 +36019,13 @@ at stationary sites.")
 (define-public r-mazamacoreutils
   (package
     (name "r-mazamacoreutils")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaCoreUtils" version))
        (sha256
-        (base32 "0c0z9wbfcr2climkap97bxwqb5qpi6svkjw42gdzq56mgqng3asl"))))
+        (base32 "1j698zjvpzynh1zsb39fs4d2vmgn0fsiaqjn1rx9vvppl5dgagar"))))
     (properties `((upstream-name . "MazamaCoreUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

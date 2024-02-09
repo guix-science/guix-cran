@@ -5687,13 +5687,13 @@ analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
 (define-public r-loader
   (package
     (name "r-loader")
-    (version "1.1.6")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loadeR" version))
        (sha256
-        (base32 "0zkwq704q8n8rrrgf961axgv1jjnwl34aiz7axw0rdm98c9hrpvh"))))
+        (base32 "0bh5c16sdgirw0pmpmg6mvglv9zlaz9l2mfmk85rxvg00zw0qrq4"))))
     (properties `((upstream-name . "loadeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -5920,22 +5920,22 @@ are described in Li (2019) <doi:10.1186/s12864-019-5926-4>.")
 (define-public r-lmw
   (package
     (name "r-lmw")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmw" version))
        (sha256
-        (base32 "0v5p7886q6gy0m3cqq01r3cwbjpwypg3m0hqxjbrpsbfgzvi7phv"))))
+        (base32 "1ij9jdf8zr0pq4q5qxgvnvjf4ciqr86p39ajq5v6zlinbcs7qaiq"))))
     (properties `((upstream-name . "lmw")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-backports))
+    (propagated-inputs (list r-sandwich r-chk r-backports))
     (home-page "https://github.com/ngreifer/lmw")
     (synopsis "Linear Model Weights")
     (description
      "Computes the implied weights of linear regression models for estimating average
 causal effects and provides diagnostics based on these weights.  These
-diagnostics rely on the analyses in Chattopadhyay and Zubizarreta (2022)
+diagnostics rely on the analyses in Chattopadhyay and Zubizarreta (2023)
 <doi:10.1093/biomet/asac058> where several regression estimators are represented
 as weighting estimators, in connection to inverse probability weighting.  lmw
 provides tools to diagnose representativeness, balance, extrapolation, and

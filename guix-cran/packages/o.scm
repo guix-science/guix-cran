@@ -2259,13 +2259,13 @@ Research, 167, pg.  7-41, 2009. <DOI:10.1007/s10479-008-0352-z>.")
 (define-public r-orloca
   (package
     (name "r-orloca")
-    (version "5.3")
+    (version "5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orloca" version))
        (sha256
-        (base32 "09xsas6qpv00p63n17yd95p88v4rcwwmp187n3y3p0nx9q3y3vrf"))))
+        (base32 "0zfi64whis248fi5fggjqym7jhyh7ix7l371kchkdxcib3xylnps"))))
     (properties `((upstream-name . "orloca")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-rmarkdown r-png r-knitr))
@@ -2592,29 +2592,6 @@ standard econometric models for ordered choice.  The core forest algorithm
 relies on the fast C++ forest implementation from the ranger package (Wright &
 Ziegler, 2017) <@code{arXiv:1508.04409>}.")
     (license license:gpl3)))
-
-(define-public r-ores
-  (package
-    (name "r-ores")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ores" version))
-       (sha256
-        (base32 "0xzc0d38z7h5ghab3kqsv0r2cl3888j7vn94p51xlwcbhnq10kip"))))
-    (properties `((upstream-name . "ores")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Ironholds/ores")
-    (synopsis "Connector to the Objective Revision Evaluation Service (ORES)")
-    (description
-     "This package provides a connector to ORES (<https://ores.wmflabs.org/>), an AI
-project to provide edit scoring for content on Wikipedia and other Wikimedia
-projects.  This lets a researcher identify if edits are likely to be reverted,
-damaging, or made in good faith.")
-    (license license:expat)))
 
 (define-public r-oreo
   (package
@@ -6335,13 +6312,13 @@ pairwise likelihood comparison of theories, calibrated with pre-existing data.")
 (define-public r-oosse
   (package
     (name "r-oosse")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oosse" version))
        (sha256
-        (base32 "186vj059bxlywka1y8i4pgh4xbl3mx1mwh9c1wfb4dd37yirp35k"))))
+        (base32 "08nx25j5m6vqg9hqns6psldfdmsb81ixjlzdhxpx392ad0j4yfbx"))))
     (properties `((upstream-name . "oosse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix r-doparallel r-biocparallel))
@@ -6730,6 +6707,29 @@ functions for spatial point patterns.  For a detailed description of all null
 models and summary functions, see Wiegand and Moloney (2014,
 ISBN:9781420082548).")
     (license license:gpl3+)))
+
+(define-public r-onomasticdiversity
+  (package
+    (name "r-onomasticdiversity")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OnomasticDiversity" version))
+       (sha256
+        (base32 "11v8zk4xvy7a3mfglj7d96d03nsnc2i23ms73v9dci8wdnwnskp1"))))
+    (properties `((upstream-name . "OnomasticDiversity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sqldf))
+    (home-page "https://cran.r-project.org/package=OnomasticDiversity")
+    (synopsis "Onomastic Diversity Measures")
+    (description
+     "Different measures which can be used to quantify similarities between regions.
+These measures are isonymy, isonymy between, Lasker distance, coefficients of
+Hedrick and Nei.  In addition, it calculates biodiversity indices such as
+Margalef, Menhinick, Simpson, Shannon, Shannon-Wiener, Sheldon, Heip, Hill
+Numbers, Geometric Mean and Cressie and Read statistics.")
+    (license license:gpl2)))
 
 (define-public r-onnx
   (package

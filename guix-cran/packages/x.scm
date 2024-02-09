@@ -1528,13 +1528,13 @@ randomly.")
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")
-    (version "1.0.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xegaGaGene" version))
        (sha256
-        (base32 "1spl4jhvnkz00m63pycvk6fznksnxfysq7lbsjybws87hcaf95x1"))))
+        (base32 "110nhig9jp79mk9mq3pk3imqyg05pmd45r2b7bdr0wl6y6v7j9zm"))))
     (properties `((upstream-name . "xegaGaGene")))
     (build-system r-build-system)
     (propagated-inputs (list r-xegaselectgene))
@@ -1544,11 +1544,12 @@ randomly.")
      "Representation-dependent gene level operations of a genetic algorithm with
 binary coded genes: Initialization of random binary genes, several gene maps for
 binary genes, several mutation operators, several crossover operators with 1 and
-2 kids, and replication pipelines for 1 and 2 kids, last but not least, function
-factories for configuration.  See Goldberg, D. E. (1989, ISBN:0-201-15767-5).
-For crossover operators, see Syswerda, G. (1989, ISBN:1-55860-066-3), Spears, W.
-and De Jong, K. (1991, ISBN:1-55860-208-9).  For mutation operators, see
-Stanhope, S. A. and Daida, J. M. (1996, ISBN:0-18-201-031-7).")
+2 kids, replication pipelines for 1 and 2 kids, and, last but not least,
+function factories for configuration.  See Goldberg, D. E. (1989,
+ISBN:0-201-15767-5).  For crossover operators, see Syswerda, G. (1989,
+ISBN:1-55860-066-3), Spears, W. and De Jong, K. (1991, ISBN:1-55860-208-9).  For
+mutation operators, see Stanhope, S. A. and Daida, J. M. (1996,
+ISBN:0-18-201-031-7).")
     (license license:expat)))
 
 (define-public r-xegadfgene

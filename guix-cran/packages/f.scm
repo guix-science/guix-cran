@@ -1843,13 +1843,13 @@ structural parameter optimization is described in
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fungible" version))
        (sha256
-        (base32 "0v1pf7q95s72kvax40fshp2i556k4ygydnhk7j8r3yfxdv0x52q2"))))
+        (base32 "1crl8xwk2m60n95p0z0w8gd94x1n0gh44kakwy9zq5h312y2jrwp"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
     (propagated-inputs (list r-sem
@@ -11668,13 +11668,13 @@ surfaces\", Computer Vision, Editor S. R. Yoshida, Nova Science Publishers, pp.
 (define-public r-fitbitviz
   (package
     (name "r-fitbitviz")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitbitViz" version))
        (sha256
-        (base32 "04kpx6h4kj0b92ick5kkihs2x9fjycxsi8fky8jpwdvvrivnk620"))))
+        (base32 "021ggcfgcwr3l6ppjwfm3q489k9rni20f00mqpfsbh1xjvlrg0rz"))))
     (properties `((upstream-name . "fitbitViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -13613,13 +13613,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.6.1")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "1nmyhmq8i5x7i53qm4q7l48kxlyz7s7gv35jfppc4ymdhcwkvgf1"))))
+        (base32 "00vfh6wclihglgldzqs2zsr37r5a7h51ia3vxmyq5vkk51jqlgrm"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -17757,6 +17757,40 @@ larger-than-memory processing, and compilation of R code are listed in the
 README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
     (license license:gpl3)))
 
+(define-public r-fastts
+  (package
+    (name "r-fastts")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastTS" version))
+       (sha256
+        (base32 "13ra8v54ccznvj6jn5bmdmkb5g34flj7zcjci9qw4vb11l7qlnmw"))))
+    (properties `((upstream-name . "fastTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://petersonr.github.io/fastTS/")
+    (synopsis "Fast Time Series Modeling with the Sparsity Ranked Lasso")
+    (description
+     "An implementation of sparsity-ranked lasso and related methods for time series
+data.  This methodology is especially useful for large time series with
+exogenous features and/or complex seasonality.  Originally described in Peterson
+and Cavanaugh (2022) <doi:10.1007/s10182-021-00431-7> in the context of variable
+selection with interactions and/or polynomials, ranked sparsity is a philosophy
+with methods useful for variable selection in the presence of prior
+informational asymmetry.  This situation exists for time series data with
+complex seasonality, as shown in Peterson and Cavanaugh (2023+)
+<doi:10.48550/@code{arXiv.2211.01492>}, which also describes this package in
+greater detail.  The sparsity-ranked methods for Time Series implemented in
+@code{fastTS} can fit large/complex/high-frequency time series quickly, even
+with a high-dimensional exogenous feature set.  The method is considerably
+faster than its competitors, while often producing more accurate predictions.
+Also included is a long hourly series of arrivals into the University of Iowa
+Emergency Department with concurrent local temperature.")
+    (license license:gpl3+)))
+
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
@@ -19403,21 +19437,21 @@ between-series correlation (2015) <@code{arXiv:1505.05660>}.")
 (define-public r-fasano-franceschini-test
   (package
     (name "r-fasano-franceschini-test")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasano.franceschini.test" version))
        (sha256
-        (base32 "1d4ai05c81sslkvxsis4pvzigx306nly120k67jlj8vn7p8wdlhy"))))
+        (base32 "18vpvynpzjmqhz8a2db2f3v5qvkd6a2q7xan1rryay20wgn7aj00"))))
     (properties `((upstream-name . "fasano.franceschini.test")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp))
     (home-page "https://github.com/braunlab-nu/fasano.franceschini.test")
     (synopsis
-     "Fasano-Franceschini Test: A Multidimensional Kolmogorov-Smirnov Two-Sample Test")
+     "Fasano-Franceschini Test: A Multivariate Kolmogorov-Smirnov Two-Sample Test")
     (description
-     "An implementation of the two-sample multidimensional Kolmogorov-Smirnov test
+     "An implementation of the two-sample multivariate Kolmogorov-Smirnov test
 described by Fasano and Franceschini (1987) <doi:10.1093/mnras/225.1.155>.  This
 test evaluates the null hypothesis that two i.i.d.  random samples were drawn
 from the same underlying probability distribution.  The data can be of any

@@ -16450,13 +16450,13 @@ Insights service output.")
 (define-public r-ibmpopsim
   (package
     (name "r-ibmpopsim")
-    (version "0.4.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IBMPopSim" version))
        (sha256
-        (base32 "03q65ysg2najjqqrjd9jnm7069q8gxhkyqwb7r7l6171wipwdi3y"))))
+        (base32 "0dxw3ibvfnqva3f0nk5w9q8y2sx0hla619f6yq6b31apxnbxp72p"))))
     (properties `((upstream-name . "IBMPopSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -16469,13 +16469,20 @@ Insights service output.")
     (home-page "https://github.com/DaphneGiorgi/IBMPopSim")
     (synopsis "Individual Based Model Population Simulation")
     (description
-     "Simulation of the random evolution of structured population dynamics, called
-stochastic Individual Based Models (IBMs) (see e.g. @code{FerriÃ¨re} and Tran
-(2009) <doi:10.1051/proc/2009033>, Bansaye and MÃ©@code{lÃ©ard} (2015)
-<doi:10.1007/978-3-319-21711-6>, Boumezoued (2016)).  The package allows users
-to simulate the random evolution of a population in which individuals are
-characterised by their date of birth, a set of attributes, and their potential
-date of death.")
+     "Simulation of the random evolution of heterogeneous populations using stochastic
+Individual-Based Models (IBMs) <doi:10.48550/@code{arXiv.2303.06183>}.  The
+package enables users to simulate population evolution, in which individuals are
+characterized by their age and some characteristics, and the population is
+modified by different types of events, including births/arrivals, death/exit
+events, or changes of characteristics.  The frequency at which an event can
+occur to an individual can depend on their age and characteristics, but also on
+the characteristics of other individuals (interactions).  Such models have a
+wide range of applications.  For instance, IBMs can be used for simulating the
+evolution of a heterogeneous insurance portfolio with selection or for
+validating mortality forecasts.  This package overcomes the limitations of
+time-consuming IBMs simulations by implementing new efficient algorithms based
+on thinning methods, which are compiled using the Rcpp package while providing a
+user-friendly interface.")
     (license license:expat)))
 
 (define-public r-ibmdbr

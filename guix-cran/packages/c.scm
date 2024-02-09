@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -6467,13 +6467,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "0sv73n5zm94fypncnrnz53mc23qjbr20jxdri282q0jnaq2wchaz"))))
+        (base32 "06rlk464c059rdjzqh0bn49ndjw14gkkpn8qd47k6r87dx3yl1b8"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6502,13 +6502,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "1aky42l6imwnwcm3y9aylncynql2x4q4x1sv7xfai3a0pi3k93j8"))))
+        (base32 "1gssnvmszq89cfprwrgiq1gajf9q2s8kdj03gbza194p4646lj6p"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6537,13 +6537,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "1x5jg4k2p5g82bq7nzdl9598fjs3z3wvdzs9dz87bhgqbp7v1jmf"))))
+        (base32 "17g1sdjlkj7ck5y5k7la2skxkvjd474rkqzq01fgqhiixkygignk"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6551,9 +6551,11 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
                              r-rlang
                              r-r6
                              r-ps
+                             r-promises
                              r-processx
                              r-nanonext
                              r-mirai
+                             r-later
                              r-getip
                              r-data-table
                              r-cli))
@@ -18050,6 +18052,36 @@ for details under the FGM and general copulas, respectively.")
      "Useful libraries for building a Java based GUI under R are provided.")
     (license license:gpl2)))
 
+(define-public r-commondatamodel
+  (package
+    (name "r-commondatamodel")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CommonDataModel" version))
+       (sha256
+        (base32 "1yxksxv9dma2f6l3asg165f6hn9f6w4ws04xfprnb100sm0zq1z0"))))
+    (properties `((upstream-name . "CommonDataModel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sqlrender
+                             r-rmarkdown
+                             r-rjava
+                             r-readr
+                             r-dplyr
+                             r-dbi
+                             r-databaseconnector))
+    (home-page "https://cran.r-project.org/package=CommonDataModel")
+    (synopsis "OMOP CDM DDL and Documentation Generator")
+    (description
+     "Generates the scripts required to create an Observational Medical Outcomes
+Partnership (OMOP) Common Data Model (CDM) database and associated documentation
+for supported database platforms.  Leverages the @code{SqlRender} package to
+convert the Data Definition Language (DDL) script written in parameterized
+Structured Query Language (SQL) to the other supported dialects.")
+    (license license:asl2.0)))
+
 (define-public r-common
   (package
     (name "r-common")
@@ -19963,13 +19995,13 @@ data.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "0d6k75icfr4k3hb7pliqsvn62ncd446pd7nxfnx4vhgalq6sxdxr"))))
+        (base32 "1kppnk97iyl2g4iby8n4f2b7ix5n340igr3z0ilmnnm7nad3r9h6"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19979,6 +20011,7 @@ data.")
                              r-scales
                              r-rlang
                              r-patientprofiles
+                             r-omopgenerics
                              r-magrittr
                              r-lubridate
                              r-dplyr
@@ -20803,13 +20836,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "18jxfpkibyhq1schabgg9mmqgjvqyprlkbgd5zn72ylahqjvwzsa"))))
+        (base32 "0hh4w69vfq5536ab82y1srwc8yk45vrasyf96hcgzdivxvdsymil"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -20820,6 +20853,7 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-rjsonio
                              r-purrr
                              r-patientprofiles
+                             r-omopgenerics
                              r-magrittr
                              r-lubridate
                              r-glue

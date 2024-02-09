@@ -4474,13 +4474,13 @@ Spring 2015.")
 (define-public r-qfratio
   (package
     (name "r-qfratio")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qfratio" version))
        (sha256
-        (base32 "1rdvdx6j1s2fq9frrghw1d2jhjr3m9nzzqhik293ix332wvwpy45"))))
+        (base32 "06d0ixwp29h1xjdrdwv52ngpg1wszpkjhjqlax1r56c5mdjbrx19"))))
     (properties `((upstream-name . "qfratio")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -4493,13 +4493,14 @@ Spring 2015.")
      "Evaluates moments of ratios (and products) of quadratic forms in normal
 variables, specifically using recursive algorithms developed by Bao and Kan
 (2013) <doi:10.1016/j.jmva.2013.03.002> and Hillier et al. (2014)
-<doi:10.1017/S0266466613000364>.  Also provides distribution and probability
-density functions of simple ratios of quadratic forms in normal variables with
-several algorithms.  Originally developed as a supplement to Watanabe (2023)
-<doi:10.1007/s00285-023-01930-8> for evaluating average evolvability measures in
-evolutionary quantitative genetics, but can be used for a broader class of
-statistics.  Generating functions for these moments are also closely related to
-the top-order zonal and invariant polynomials of matrix arguments.")
+<doi:10.1017/S0266466613000364>.  Also provides distribution, quantile, and
+probability density functions of simple ratios of quadratic forms in normal
+variables with several algorithms.  Originally developed as a supplement to
+Watanabe (2023) <doi:10.1007/s00285-023-01930-8> for evaluating average
+evolvability measures in evolutionary quantitative genetics, but can be used for
+a broader class of statistics.  Generating functions for these moments are also
+closely related to the top-order zonal and invariant polynomials of matrix
+arguments.")
     (license license:gpl3+)))
 
 (define-public r-qfasar

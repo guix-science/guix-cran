@@ -18257,13 +18257,13 @@ models, for running these models, and for visualizing their results.")
 (define-public r-ecos
   (package
     (name "r-ecos")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecos" version))
        (sha256
-        (base32 "1vnlbylbi70rw3rxrbld35z3g9mfdqrdgsil35ghimx6d2y1ch3c"))))
+        (base32 "1syqh2ivznz5swify1gc34m1iqgnp10rhk7b8giil7fwdzifalfj"))))
     (properties `((upstream-name . "ecos")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-stringr r-jsonlite r-httr))
