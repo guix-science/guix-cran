@@ -628,13 +628,13 @@ survreg', and ivreg outputs.")
 (define-public r-outliertree
   (package
     (name "r-outliertree")
-    (version "1.8.2")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliertree" version))
        (sha256
-        (base32 "020vb9j9layf8ml1mvnzzsjz6sjsj5wc4hn976ksch83yrv0mc0j"))))
+        (base32 "1sk4bdkqd4i47zh0hlaviyif936v608qrgirpi6pdry3r24jgwbl"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcereal))

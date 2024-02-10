@@ -33578,13 +33578,13 @@ at <https://github.com/leondap/recluster>.")
 (define-public r-reclin2
   (package
     (name "r-reclin2")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reclin2" version))
        (sha256
-        (base32 "0vdp4kbivmfgvi1fh8d96ks27nh3xlsafwjkj3g2xbmhpb5d4gkq"))))
+        (base32 "08jf6r74fmsj2bvhz76vf74hphg8543x4wj1dnbsj44xjzh6abi4"))))
     (properties `((upstream-name . "reclin2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-rcpp r-lpsolve r-data-table))

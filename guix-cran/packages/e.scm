@@ -8634,6 +8634,35 @@ time-dependent exposures.  See Wang et al (2020)
 <doi:10.1186/s12940-020-00644-4> for an overview.")
     (license license:expat)))
 
+(define-public r-epiworldr
+  (package
+    (name "r-epiworldr")
+    (version "0.0-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiworldR" version))
+       (sha256
+        (base32 "1p9yvxphk9kr743g9cj5yq5g1h1j094aih6nq4xd6i9lx7amfiyz"))))
+    (properties `((upstream-name . "epiworldR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/UofUEpiBio/epiworldR")
+    (synopsis "Fast Agent-Based Epi Models")
+    (description
+     "This package provides a flexible framework for Agent-Based Models (ABM), the
+@code{epiworldR} package provides methods for prototyping disease outbreaks and
+transmission models using a C++ backend, making it very fast.  It supports
+multiple epidemiological models, including the Susceptible-Infected-Susceptible
+(SIS), Susceptible-Infected-Removed (SIR), Susceptible-Exposed-Infected-Removed
+(SEIR), and others, involving arbitrary mitigation policies and multiple-disease
+models.  Users can specify infectiousness/susceptibility rates as a function of
+agents features, providing great complexity for the model dynamics.
+Furthermore, @code{epiworldR} is ideal for simulation studies featuring large
+populations.")
+    (license license:expat)))
+
 (define-public r-epitweetr
   (package
     (name "r-epitweetr")
@@ -19317,22 +19346,22 @@ package is to provide tools for use in courses in analytical chemistry.")
 (define-public r-echelon
   (package
     (name "r-echelon")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echelon" version))
        (sha256
-        (base32 "0dw15igx8jwgfr1f7p5pspxjiqhqmfp7shdhq8g07f4bj76irzm4"))))
+        (base32 "179s8s8wgii89676s98pb4rhh3ikdspavl3aifc5pl12an4hc5gr"))))
     (properties `((upstream-name . "echelon")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=echelon")
     (synopsis
      "The Echelon Analysis and the Detection of Spatial Clusters using Echelon Scan Method")
     (description
-     "This package provides functions for the echelon analysis developed proposed by
-Myers et al. (1997) <doi:10.1023/A:1018518327329>, and the detection of spatial
-clusters using echelon scan method proposed by Kurihara (2003)
+     "This package provides functions for the echelon analysis proposed by Myers et
+al. (1997) <doi:10.1023/A:1018518327329>, and the detection of spatial clusters
+using echelon scan method proposed by Kurihara (2003)
 <doi:10.20551/jscswabun.15.2_171>.")
     (license license:gpl3)))
 

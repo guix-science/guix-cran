@@ -1764,13 +1764,13 @@ whole lot more!")
 (define-public r-xaringan
   (package
     (name "r-xaringan")
-    (version "0.28")
+    (version "0.29")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xaringan" version))
        (sha256
-        (base32 "1cv1bplk4awzqr5dwmndf4ig75a3bwvx8lfbyv0q0nxzd759d3za"))))
+        (base32 "0g78s4kwr0fq8x2m3l0sh05rnkhs785wj8v9zzk52cl4bchffnn9"))))
     (properties `((upstream-name . "xaringan")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-servr r-rmarkdown r-knitr r-htmltools))

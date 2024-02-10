@@ -3336,17 +3336,16 @@ ISBN:013850363X).")
 (define-public r-wikkitidy
   (package
     (name "r-wikkitidy")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikkitidy" version))
        (sha256
-        (base32 "150zhpdwfvmai9nczmb64vkwcxg1sja84by4nxk2kwb4cv66dxpn"))))
+        (base32 "11i9spgl9zicy980a9r93277b7y6zqixnn8cks8yfh0phvazfgvj"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang

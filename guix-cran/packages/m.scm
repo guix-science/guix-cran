@@ -28109,13 +28109,13 @@ Replicability-analysis with or without the common-effect assumption.")
 (define-public r-metarange
   (package
     (name "r-metarange")
-    (version "1.0.1")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaRange" version))
        (sha256
-        (base32 "002vnnbvnhwy7qs3iqnw57nch342mz30rf05yxmxp6dkiqf3xiyx"))))
+        (base32 "05x7rs4ah42326xmpm4spm2ysmlw2c6cs1fxgngy9ndz6k2dmb64"))))
     (properties `((upstream-name . "metaRange")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-r6 r-checkmate))
@@ -41848,6 +41848,51 @@ process.  User-oriented functions in the package are decomposed into training,
 prediction and plotting functions.  Some basic features (classic kernels,
 training, prediction) of standard Gaussian processes are also implemented.")
     (license license:expat)))
+
+(define-public r-magma-r
+  (package
+    (name "r-magma-r")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MAGMA.R" version))
+       (sha256
+        (base32 "0sif7w25f2nrd41ryv6xky7vswqpls2s10p26xk0c4s61cx1vh9b"))))
+    (properties `((upstream-name . "MAGMA.R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyselect
+                             r-tibble
+                             r-robumeta
+                             r-rlang
+                             r-purrr
+                             r-psych
+                             r-overlapping
+                             r-metafor
+                             r-janitor
+                             r-ggplot2
+                             r-foreach
+                             r-flextable
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MAGMA.R")
+    (synopsis "MAny-Group MAtching")
+    (description
+     "Balancing quasi-experimental field research for effects of covariates is
+fundamental for drawing causal inference.  Propensity Score Matching deals with
+this issue but current techniques are restricted to binary treatment variables.
+Moreover, they provide several solutions without providing a comprehensive
+framework on choosing the best model.  The MAGMA.R -package addresses these
+restrictions by offering nearest neighbor matching for two to four groups.  It
+also includes the option to match data of a 2x2 design.  In addition, MAGMA.R
+includes a framework for evaluating the post-matching balance.  The package
+includes functions for the matching process and matching reporting.  We provide
+a tutorial on MAGMA.R as vignette.  More information on MAGMA.R can be found in
+Feuchter, M. D., Urban, J., Scherrer V., Breit, M. L., and Preckel F. (2022)
+<https://osf.io/p47nc/>.")
+    (license license:gpl3)))
 
 (define-public r-magiclamp
   (package

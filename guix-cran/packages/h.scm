@@ -2295,13 +2295,13 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
 (define-public r-htrx
   (package
     (name "r-htrx")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HTRX" version))
        (sha256
-        (base32 "1zr0j1j8qqr5jm6r6s8z86wfzf1gwhy10zjlhvcd00lhlz5l5lm4"))))
+        (base32 "1ggmqz3a0r5cilpynjmr52hjk88vq83wk1akcg6hkn3bzrwgcgmd"))))
     (properties `((upstream-name . "HTRX")))
     (build-system r-build-system)
     (propagated-inputs (list r-tune r-recipes r-glmnet r-fastglm r-caret))
@@ -2312,8 +2312,8 @@ top-down, optimal combination reconciliation (Hyndman et al.  2011)
      "Detection of haplotype patterns that include single nucleotide polymorphisms
 (SNPs) and non-contiguous haplotypes that are associated with a phenotype.
 Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
-<doi:10.1093/bioadv/vbad038> and Barrie W, Yang Y, Attfield K E, et al (2022)
-<doi:10.1101/2022.09.23.509097>.")
+<doi:10.1093/bioadv/vbad038> and Barrie W, Yang Y, Irving-Pease E.K, et al
+(2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
 
 (define-public r-htmlutils

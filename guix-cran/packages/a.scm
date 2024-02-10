@@ -560,6 +560,31 @@ be configured to be collected.  Logging messages are displayed on console and
 optionally they are sent to Azure Log Analytics workspace in real-time.")
     (license license:expat)))
 
+(define-public r-aws-wrfsmn
+  (package
+    (name "r-aws-wrfsmn")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aws.wrfsmn" version))
+       (sha256
+        (base32 "1zqxz0a0b2s15wgc3ndgh5vki6yghazmrwn7dsf2ihf90929qzw4"))))
+    (properties `((upstream-name . "aws.wrfsmn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-qpdf r-aws-s3))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=aws.wrfsmn")
+    (synopsis "Data Processing of SMN Hi-Res Weather Forecast from 'AWS'")
+    (description
+     "Exploration of Weather Research & Forecasting ('WRF') Model data of Servicio
+Meteorologico Nacional (SMN) from Amazon Web Services
+(<https://registry.opendata.aws/smn-ar-wrf-dataset/>) cloud.  The package
+provides the possibility of data downloading and processing.  It also has map
+management and series exploration of available meteorological variables of WRF
+forecast.")
+    (license license:gpl3+)))
+
 (define-public r-aws-translate
   (package
     (name "r-aws-translate")

@@ -2773,21 +2773,24 @@ information on dtangle see Hunt et al. (2019)
 (define-public r-dswe
   (package
     (name "r-dswe")
-    (version "1.7.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSWE" version))
        (sha256
-        (base32 "04vgfwlz4m1j3931p5lw48xhdwjlw9nk5w3ah9yznylzm8vpbxmi"))))
+        (base32 "0ag4hv1nk8r1c8m4vby8a4cksaf56khvnajvcraiancb87b11igw"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-xgboost
+                             r-rcpparmadillo
                              r-rcpp
                              r-mixtools
                              r-matrixstats
                              r-kernsmooth
                              r-gss
+                             r-gpvecchia
+                             r-gpgp
                              r-fnn
                              r-e1071
                              r-dplyr))
@@ -11090,6 +11093,28 @@ automatically time-versioned (powered by the SCDB package) and allows you to
 easily and dynamically compute features as part of your continuous integration.")
     (license license:gpl3+)))
 
+(define-public r-diseasemapping
+  (package
+    (name "r-diseasemapping")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diseasemapping" version))
+       (sha256
+        (base32 "1qjzyicz9wg63vqkkxpiqj991sirkpgax6cl9b6hr939rf2axs8j"))))
+    (properties `((upstream-name . "diseasemapping")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=diseasemapping")
+    (synopsis "Modelling Spatial Variation in Disease Risk for Areal Data")
+    (description
+     "Formatting of population and case data, calculation of Standardized Incidence
+Ratios, and fitting the BYM model using INLA'.  For details see Brown (2015)
+<doi:10.18637/jss.v063.i12>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-disdat
   (package
     (name "r-disdat")
@@ -11949,13 +11974,13 @@ indicator matrices.")
 (define-public r-disaggr
   (package
     (name "r-disaggr")
-    (version "1.0.5.1")
+    (version "1.0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disaggR" version))
        (sha256
-        (base32 "1ac25lp7kp5hf4h57g1w84byw8b3bk6x965w5iny09qkri3li859"))))
+        (base32 "11lj0x7mq3lmsg03anyk3jnkl0calgipyar2d76rb2x13b33v3kd"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -25006,16 +25031,16 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "0jnnwzhbyy1mm5mmqdr36p4v4sd16m1g7p4nckffmai2fb70yjgf"))))
+        (base32 "023c7psxjh751iyjaj033m7kq6xbbby7l2jz9nh968q14il2b7mj"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-xfun
                              r-tibble
                              r-stringr
                              r-rvest
@@ -25025,6 +25050,7 @@ extra layer of validation around input and output data.")
                              r-lifecycle
                              r-keyring
                              r-jsonlite
+                             r-httr2
                              r-httr
                              r-getpass
                              r-dplyr

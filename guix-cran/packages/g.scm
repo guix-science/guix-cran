@@ -2689,24 +2689,25 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "04n0nlkw1zab3m802a8jrwgic4g8likv7x3zba92qipppfvjzqph"))))
+        (base32 "12wydy7gx2aml2i82adsqafqaq7sg6zvab38xwqp46jnmqc1isyk"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-rlang
                              r-rcpp
+                             r-r2rtf
                              r-npsurvss
                              r-mvtnorm
                              r-gt
                              r-gsdesign
                              r-dplyr
+                             r-data-table
                              r-corpcor))
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/gsDesign2/")

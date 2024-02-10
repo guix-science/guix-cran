@@ -19191,6 +19191,33 @@ formats, and query geospatial data available via the B.C. government Web Feature
 Service ('WFS') using dplyr syntax.")
     (license license:asl2.0)))
 
+(define-public r-bcdag
+  (package
+    (name "r-bcdag")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BCDAG" version))
+       (sha256
+        (base32 "0v3qxqlm5p1n0lx995xncp6793lm794i8r7nnng00w7xhynhfm43"))))
+    (properties `((upstream-name . "BCDAG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgraphviz r-mvtnorm r-lattice r-grbase r-graph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alesmascaro/BCDAG")
+    (synopsis
+     "Bayesian Structure and Causal Learning of Gaussian Directed Graphs")
+    (description
+     "This package provides a collection of functions for structure learning of causal
+networks and estimation of joint causal effects from observational Gaussian
+data.  Main algorithm consists of a Markov chain Monte Carlo scheme for
+posterior inference of causal structures, parameters and causal effects between
+variables.  References: F. Castelletti and A. Mascaro (2021)
+<doi:10.1007/s10260-021-00579-1>, F. Castelletti and A. Mascaro (2022)
+<@code{arXiv:2201.12003>}.")
+    (license license:expat)))
+
 (define-public r-bccp
   (package
     (name "r-bccp")

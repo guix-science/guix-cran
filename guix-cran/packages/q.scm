@@ -1008,13 +1008,13 @@ Causal Quartets\" (Gelman et al.  2023) <doi:10.48550/@code{arXiv.2302.12878>}."
 (define-public r-quartet
   (package
     (name "r-quartet")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Quartet" version))
        (sha256
-        (base32 "1chbn80y04hhcii1b58s7l1vak85ihdpl5q833mszrqili5zrmb1"))))
+        (base32 "1qrhjxqg3899kw58irnqs7sj6n9ixyx71gaf1whld8xpj89dsz7f"))))
     (properties `((upstream-name . "Quartet")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

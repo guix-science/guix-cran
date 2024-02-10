@@ -3269,13 +3269,13 @@ quantile plots, density plots, image plots, and contour plots.")
 (define-public r-nosoi
   (package
     (name "r-nosoi")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nosoi" version))
        (sha256
-        (base32 "1b7csrgax5ig9ibiwbhh2cl357hvdc6my4408vld498c8jjf0lyw"))))
+        (base32 "15s2asw2jn890dyjnx4rnv499wv6ks9k7vfpbcm2sznw95rmwc67"))))
     (properties `((upstream-name . "nosoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-data-table))

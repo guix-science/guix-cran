@@ -10125,13 +10125,13 @@ method can be referenced at: Toshiro Tango and Kunihiko Takahashi (2005)
 (define-public r-flexrsurv
   (package
     (name "r-flexrsurv")
-    (version "2.0.17")
+    (version "2.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexrsurv" version))
        (sha256
-        (base32 "06d3vdi3bas9hjzkjinspwfwa5js3rpb9pm5rbax2w4fdx2zp7f2"))))
+        (base32 "10l1xh43c7lkgxjpxis5zy66dji2ifxhc41vzqhpj8h6hqw052bv"))))
     (properties `((upstream-name . "flexrsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11486,6 +11486,33 @@ gradients of ODE trajectories with respect to underlying parameters, which in
 turn allows for more stable fitting.  Other fitting methods, such as MCMC
 (Markov chain Monte Carlo), are also available.")
     (license license:gpl2+)))
+
+(define-public r-fitodbodrshiny
+  (package
+    (name "r-fitodbodrshiny")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fitODBODRshiny" version))
+       (sha256
+        (base32 "1gdxmyj6rr8k9alfk38lc2fl12c3wkj1l166xihjr9sqwsr2xc5p"))))
+    (properties `((upstream-name . "fitODBODRshiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyscreenshot
+                             r-shinydashboard
+                             r-shiny
+                             r-golem
+                             r-ggplot2
+                             r-flextable
+                             r-config
+                             r-bslib))
+    (home-page "https://github.com/Amalan-ConStat/fitODBODRshiny")
+    (synopsis "'Shiny' Application for R Package 'fitODBOD'")
+    (description
+     "For binomial outcome data Alternate Binomial Distributions and Binomial Mixture
+Distributions are fitted when overdispersion is available.")
+    (license license:expat)))
 
 (define-public r-fitodbod
   (package
@@ -21618,13 +21645,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "01pjwkxn9v9jgxi3vw5fgl5j74yp2gh5vj7a6vg31ivlgd014jy5"))))
+        (base32 "0j4ra8wzbpargdd8gqd8iva4kjl6xk8jxh9mal15gdhfq6njfl02"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21632,11 +21659,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-scales
                              r-rlang
                              r-r6
                              r-progressr
                              r-lifecycle
                              r-ggplot2
+                             r-ggdist
                              r-generics
                              r-dplyr
                              r-distributional))

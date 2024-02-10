@@ -9023,13 +9023,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "0.99.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "1lfawb31ljf3rfa1zavfqalkqy0rha1wsvi1x23jh1n8nj393jq2"))))
+        (base32 "17h0jmdchw1gimi44jkzwlff0g55ribw87136ma69x1mzchwlxxp"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -9742,13 +9742,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0yaq43zkj86csc5xrqfkbggd6f50vbyihc08dgxwqz4f6lkgqdq4"))))
+        (base32 "04c2a2mrhr83m3z9kr8k4aib61x4qfagns83myjmv3m5gkb0g2pp"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9759,6 +9759,7 @@ delay distribution.")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-omopgenerics
                              r-magrittr
                              r-lubridate
                              r-glue
@@ -16111,13 +16112,13 @@ al. (2017) <doi:10.1016/j.csda.2016.06.014> and Masoudi et al. (2019)
 (define-public r-icams
   (package
     (name "r-icams")
-    (version "2.3.10")
+    (version "2.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICAMS" version))
        (sha256
-        (base32 "0kkxn45addgl7mg8w4ybna7xaj11dgrwax06l0ml3bnk8h0nrgi5"))))
+        (base32 "0nnmnbh02d5miyk6fr07jrrnv3h7ws72xkwr92apvcx9m5ql6ll0"))))
     (properties `((upstream-name . "ICAMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -16145,7 +16146,8 @@ stands for In-depth Characterization and Analysis of Mutational Signatures.
 ICAMS has functions to read in variant call files (VCFs) and to collate the
 corresponding catalogs of mutational spectra and to analyze and plot catalogs of
 mutational spectra and signatures.  Handles both \"counts-based\" and
-\"density-based\" catalogs of mutational spectra or signatures.")
+\"density-based\" (i.e.  representation as mutations per megabase) mutational
+spectra or signatures.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 

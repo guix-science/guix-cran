@@ -5774,13 +5774,13 @@ number of robust (or super) biclusters with none or low overlap.")
 (define-public r-superb
   (package
     (name "r-superb")
-    (version "0.95.7")
+    (version "0.95.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superb" version))
        (sha256
-        (base32 "02pc8wwkhvkrfmvv2cqmpwkiwyy6xyps7kdhiwkph1jagw5l6qgk"))))
+        (base32 "1amqfmkn7zfpsmq1r7xdc8x4kpshpjd54jpdwbbwj0mw8qzs2g7n"))))
     (properties `((upstream-name . "superb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -22578,6 +22578,30 @@ external GIS software ensures replicability and raises the standard for spatial
 RDDs.")
     (license license:gpl3)))
 
+(define-public r-spatialprobit
+  (package
+    (name "r-spatialprobit")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatialprobit" version))
+       (sha256
+        (base32 "0smb4k366xf7yzxxbk85963vi0jrk9jz83v7b2l1djhk4gxp7qm4"))))
+    (properties `((upstream-name . "spatialprobit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnorm r-spdep r-spatialreg r-mvtnorm
+                             r-matrix))
+    (home-page "https://www.r-project.org")
+    (synopsis "Spatial Probit Models")
+    (description
+     "This package provides a collection of methods for the Bayesian estimation of
+Spatial Probit, Spatial Ordered Probit and Spatial Tobit Models.  Original
+implementations from the works of @code{LeSage} and Pace (2009, ISBN:
+1420064258) were ported and adjusted for R, as described in Wilhelm and de Matos
+(2013) <doi:10.32614/RJ-2013-013>.")
+    (license license:gpl2+)))
+
 (define-public r-spatialposition
   (package
     (name "r-spatialposition")
@@ -37269,13 +37293,13 @@ package vignette for more information, documentation and examples.")
 (define-public r-simboot
   (package
     (name "r-simboot")
-    (version "0.2-6")
+    (version "0.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simboot" version))
        (sha256
-        (base32 "0bgibrqb9j62p1chldi1lvdsgc6sgsr7afyq4lvyrc2h861f3j9d"))))
+        (base32 "1kw2sy13vsys2rs0ss7016y8k8ykcbp6v959ylbp86dl9bnh3vpr"))))
     (properties `((upstream-name . "simboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-boot))
@@ -42391,13 +42415,13 @@ git references.")
 (define-public r-shinipsum
   (package
     (name "r-shinipsum")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinipsum" version))
        (sha256
-        (base32 "0d94189hmg0bl8x0s8fpba5gcvb95sr9k9lbp3kk8482fc5h147n"))))
+        (base32 "1l6skq9y5417x174l7svbvvlh10vv5kdnp2s4q7g76l62y710ks4"))))
     (properties `((upstream-name . "shinipsum")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly
@@ -42407,11 +42431,9 @@ git references.")
                              r-dt
                              r-attempt))
     (home-page "https://github.com/Thinkr-open/shinipsum")
-    (synopsis "Lorem-Ipsum Helper Function for 'shiny' Prototyping")
+    (synopsis "Lorem-Ipsum-Like Helpers for Fast Shiny Prototyping")
     (description
-     "Prototype your shiny apps quickly with these Lorem-Ipsum helper functions.
-Generate random elements for shiny outputs that can be used as placeholder in
-your application.")
+     "Prototype your shiny apps quickly with these Lorem-Ipsum-like Helpers.")
     (license license:expat)))
 
 (define-public r-shiftsharese
@@ -54525,6 +54547,33 @@ implements procedures such as dwell-time correction and defining bursts with a
 critical time, and provides tools for analysis of bursts, such as tools for
 sorting and plotting.")
     (license license:lgpl2.1)))
+
+(define-public r-scbsp
+  (package
+    (name "r-scbsp")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scBSP" version))
+       (sha256
+        (base32 "14c150xn0zmdra8ycqcv5dl6s904zbbn8glpjy24y7z0g75vq9lf"))))
+    (properties `((upstream-name . "scBSP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsematrixstats r-spam r-rann r-matrix
+                             r-fitdistrplus))
+    (home-page "https://cran.r-project.org/package=scBSP")
+    (synopsis
+     "Fast Tool for Single-Cell Spatially Variable Genes Identifications on Large-Scale Data")
+    (description
+     "Identifying spatially variable genes is critical in linking molecular cell
+functions with tissue phenotypes.  This package utilizes a granularity-based
+dimension-agnostic tool, single-cell big-small patch (@code{scBSP}),
+implementing sparse matrix operation and KD tree method for distance
+calculation, for the identification of spatially variable genes on large-scale
+data.  The detailed description of this method is available at Wang, J. and Li,
+J. et al.  2023 (Wang, J. and Li, J. (2023), <doi:10.1038/s41467-023-43256-5>).")
+    (license license:gpl2+)))
 
 (define-public r-scbmeanfd
   (package

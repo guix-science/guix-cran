@@ -10853,13 +10853,13 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 (define-public r-toastui
   (package
     (name "r-toastui")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toastui" version))
        (sha256
-        (base32 "1v535ml9m9sz2pviv3983lnini147rfsz56s4hfnq2ydb9f1vmay"))))
+        (base32 "0wxkg2y3vydpj75cj69rg4q3abkhgcdhhk6s7dpj2wi206pk2ngx"))))
     (properties `((upstream-name . "toastui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -14163,13 +14163,13 @@ convenient way of visualizing terra objects with ggplot2'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.10.2")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytable" version))
        (sha256
-        (base32 "1jl89sbsn5xzb6khrhq1kk84mvnqd2lpiyvsiq6kl6i0lwxpjicn"))))
+        (base32 "09xcjh9vpkz6bcv8rg8g25rpirvsjvbl282ys6y1r1npgb3mrdgm"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15598,17 +15598,17 @@ work with school or teacher level data, see ?@code{EdSurvey::getData}'.")
 (define-public r-tidyedgar
   (package
     (name "r-tidyedgar")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyedgar" version))
        (sha256
-        (base32 "1ax2rq7dp7ik3bqxjs1wph4mhvmicgbnfgz8ypgs0da057j6fmga"))))
+        (base32 "1xg56slll4pjqfxi23jpfg4n68b5a14jk6jibc0vcmr05fvd04lr"))))
     (properties `((upstream-name . "tidyedgar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-jsonlite r-httr r-dplyr))
-    (home-page "https://cran.r-project.org/package=tidyedgar")
+    (home-page "https://gerardgimenezadsuar.github.io/tidyedgar/")
     (synopsis "Tidy Fundamental Financial Data from 'SEC's 'EDGAR' 'API'")
     (description
      "Streamline the process of accessing fundamental financial data from the United

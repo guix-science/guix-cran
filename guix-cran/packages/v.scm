@@ -3617,13 +3617,13 @@ function evaluation, and simulation.")
 (define-public r-vinereg
   (package
     (name "r-vinereg")
-    (version "0.9.2")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vinereg" version))
        (sha256
-        (base32 "1abfshyg61faar7hk2357wic7hy4m39g7f7zwccil2h0ihr3dngv"))))
+        (base32 "0r4xg3a2mk7030z2vc1w5g0390vkhbnq757cj9j5imki2ii2xfnz"))))
     (properties `((upstream-name . "vinereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm

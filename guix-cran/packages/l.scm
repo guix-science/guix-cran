@@ -12901,13 +12901,13 @@ Galindo-Villardon P(1986)
 (define-public r-ldaandldas
   (package
     (name "r-ldaandldas")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDAandLDAS" version))
        (sha256
-        (base32 "0p4q4n6hhsy9jmxg91cpxw8qhf4644rbflghfgwhdhhxnxzdhg9l"))))
+        (base32 "05mwml83bi24bg1ldqpr5khmh747s3n6vbkbbnj1ck6b91dxs1gc"))))
     (properties `((upstream-name . "LDAandLDAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -12918,7 +12918,7 @@ Galindo-Villardon P(1986)
 disequilibrium of ancestry score (LDAS).  LDA calculates the pairwise linkage
 disequilibrium of ancestry between single nucleotide polymorphisms (SNPs).  LDAS
 calculates the LDA score of SNPs.  The methods are described in Barrie W, Yang
-Y, Attfield K E, et al (2022) <doi:10.1101/2022.09.23.509097>.")
+Y, Irving-Pease E.K, et al (2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
 
 (define-public r-lcyanalysis

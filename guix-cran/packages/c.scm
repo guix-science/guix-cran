@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -2929,6 +2929,33 @@ described in Hanks et al. (2015) <DOI:10.1214/14-AOAS803> , this allows flexible
 modeling of movement in response to covariates (or covariate gradients) with
 model fitting possible within a Poisson GLM framework.")
     (license license:gpl2)))
+
+(define-public r-ctmcd
+  (package
+    (name "r-ctmcd")
+    (version "1.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctmcd" version))
+       (sha256
+        (base32 "0w0dhxw9qdh7p59d4xkm3h5zhmvawgy9lsw84nh9vphrqrzbfghm"))))
+    (properties `((upstream-name . "ctmcd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-expm r-coda))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://cran.r-project.org/package=ctmcd")
+    (synopsis
+     "Estimating the Parameters of a Continuous-Time Markov Chain from Discrete-Time Data")
+    (description
+     "Estimation of Markov generator matrices from discrete-time observations.  The
+implemented approaches comprise diagonal and weighted adjustment of matrix
+logarithm based candidate solutions as in Israel (2001)
+<doi:10.1111/1467-9965.00114> as well as a quasi-optimization approach.
+Moreover, the expectation-maximization algorithm and the Gibbs sampling approach
+of Bladt and Sorensen (2005) <doi:10.1111/j.1467-9868.2005.00508.x> are
+included.")
+    (license license:gpl3)))
 
 (define-public r-ctm
   (package
@@ -39365,13 +39392,13 @@ and can be further refined as needed by the user.")
 (define-public r-cancensus
   (package
     (name "r-cancensus")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancensus" version))
        (sha256
-        (base32 "0alvwl6jy86rqqw77j0wq0xvw9c52k7w6lxa7f79l5zc87ql6709"))))
+        (base32 "02392bbyzdn2nacjsc3rjv6f3y0mczacpa96azrm300l1j6zsszr"))))
     (properties `((upstream-name . "cancensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-jsonlite r-httr r-dplyr r-digest))

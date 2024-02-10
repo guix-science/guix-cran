@@ -4287,6 +4287,54 @@ parametric accelerated failure time models with group/ordinary lasso prior (Lee
 et al.  Comput Stat Data Anal, 2017 <doi:10.1016/j.csda.2017.02.014>).")
     (license license:gpl2+)))
 
+(define-public r-psbayesborrow
+  (package
+    (name "r-psbayesborrow")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psBayesborrow" version))
+       (sha256
+        (base32 "07h4yg9c4hz29iy10dyliazr0bx1gi2wzpn7iq8sm9v7p1g76kwr"))))
+    (properties `((upstream-name . "psBayesborrow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-overlapping
+                             r-optmatch
+                             r-matchit
+                             r-e1071
+                             r-copula
+                             r-boot
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=psBayesborrow")
+    (synopsis "Bayesian Information Borrowing with Propensity Score Matching")
+    (description
+     "Hybrid control design is a way to borrow information from external controls to
+augment concurrent controls in a randomized controlled trial and is expected to
+overcome the feasibility issue when adequate randomized controlled trials cannot
+be conducted.  A major challenge in the hybrid control design is its inability
+to eliminate a prior-data conflict caused by systematic imbalances in measured
+or unmeasured confounding factors between patients in the concurrent
+treatment/control group and external controls.  To prevent the prior-data
+conflict, a combined use of propensity score matching and Bayesian commensurate
+prior has been proposed in the context of hybrid control design.  The propensity
+score matching is first performed to guarantee the balance in baseline
+characteristics, and then the Bayesian commensurate prior is constructed while
+discounting the information based on the similarity in outcomes between the
+concurrent and external controls. @code{psBayesborrow} is a package to implement
+the propensity score matching and the Bayesian analysis with commensurate prior,
+as well as to conduct a simulation study to assess operating characteristics of
+the hybrid control design, where users can choose design parameters in flexible
+and straightforward ways depending on their own application.")
+    (license license:expat)))
+
 (define-public r-psawr
   (package
     (name "r-psawr")
@@ -12901,13 +12949,13 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
 (define-public r-posologyr
   (package
     (name "r-posologyr")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "posologyr" version))
        (sha256
-        (base32 "0a04yqf4vxcwpmlc8h1hrf3116vg8qwj56ffyk3zds2wkx0k4xdd"))))
+        (base32 "1m05cs72npvsz1pj44q1sn80gwd2fzlb3mira3wdqqy91f02qd00"))))
     (properties `((upstream-name . "posologyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-mvtnorm r-data-table))
@@ -30200,13 +30248,13 @@ Tsagris M. (2022).  The FEDHC Bayesian Network Learning Algorithm.  Mathematics
 (define-public r-pch
   (package
     (name "r-pch")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pch" version))
        (sha256
-        (base32 "1nnawsc6mscwd4z62hhilpn04a9iapx551vvjm3alwk2makhj0wf"))))
+        (base32 "15dvrcrbcql54wf011r1a3pl3v2b551mq0pf4wcr7wjrf330h1w3"))))
     (properties `((upstream-name . "pch")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-hmisc))
