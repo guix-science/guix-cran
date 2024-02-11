@@ -376,41 +376,6 @@ continuous, binomial, multinomial, Poisson, quasi-Poisson and negative binomial
 outcomes.")
     (license license:gpl2+)))
 
-(define-public r-gwpr-light
-  (package
-    (name "r-gwpr-light")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GWPR.light" version))
-       (sha256
-        (base32 "0ilgmdsfdrbam86vvlzm1avd337rqq1al0cvrl6i5cjpwaffncih"))))
-    (properties `((upstream-name . "GWPR.light")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-plm
-                             r-lmtest
-                             r-iterators
-                             r-gwmodel
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MichaelChaoLi-cpu/GWPR.light")
-    (synopsis "Geographically Weighted Panel Regression")
-    (description
-     "Geographically weighted panel regression is grounded in a branch of spatial
-statistics.  Using geographically weights, the geographically weighted panel
-regression is try to solve the residuals from panel regression clustering
-spatially.  To investigate whether the residuals cluster spatially, the Moran's
-I test is also improved.  Furthermore, three local statistic tests are contained
-to help the users select model.  The major references are Fotheringham et al.
-(2003, ISBN:978-0-470-85525-6) and Beenstock and Felsenstein (2019,
-ISBN:978-3-030-03614-0).")
-    (license license:agpl3+)))
-
 (define-public r-gwpcormapper
   (package
     (name "r-gwpcormapper")
@@ -18080,13 +18045,13 @@ reformed heatmap, while inheriting ggplot2 features.")
 (define-public r-ggdoe
   (package
     (name "r-ggdoe")
-    (version "0.7.9")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggDoE" version))
        (sha256
-        (base32 "0vbmrgd7ak7ksw1ah681a1hhvlm646a0pgblmvm4s23gy3499rz7"))))
+        (base32 "0r857z5iw30b8wq8ry0kgwgagb77jzk4n2qc8wy316gn7dq2y12c"))))
     (properties `((upstream-name . "ggDoE")))
     (build-system r-build-system)
     (propagated-inputs (list r-insight r-ggplot2))
@@ -20319,46 +20284,6 @@ implemented on high dimensional datasets in practice.  See Robbins (2021)
      "Geometric objects defined in geozoo can be simulated or displayed in the R
 package tourr'.")
     (license license:gpl2)))
-
-(define-public r-geoweightedmodel
-  (package
-    (name "r-geoweightedmodel")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeoWeightedModel" version))
-       (sha256
-        (base32 "0nff8whj5306mbi668y3i31sfbdslyd7cdm6rxafxhii643bm93a"))))
-    (properties `((upstream-name . "GeoWeightedModel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sp
-                             r-shinywidgets
-                             r-shinyjs
-                             r-shinydashboard
-                             r-shinybusy
-                             r-shinybs
-                             r-shinyalert
-                             r-shiny
-                             r-readxl
-                             r-raster
-                             r-gwmodel
-                             r-dt
-                             r-dplyr
-                             r-cartography
-                             r-beepr))
-    (home-page "https://cran.r-project.org/package=GeoWeightedModel")
-    (synopsis "User-Friendly Interface for Geographically-Weighted Models")
-    (description
-     "This package contains the development of a tool that provides a web-based
-graphical user interface (GUI) to perform Techniques from a subset of spatial
-statistics known as geographically weighted (GW) models.  Contains methods
-described by Brunsdon et al., 1996 <doi:10.1111/j.1538-4632.1996.tb00936.x>,
-Brunsdon et al., 2002 <doi:10.1016/s0198-9715(01)00009-6>, Harris et al., 2011
-<doi:10.1080/13658816.2011.554838>, Brunsdon et al., 2007
-<doi:10.1111/j.1538-4632.2007.00709.x>.")
-    (license license:gpl3)))
 
 (define-public r-geovol
   (package
@@ -23922,47 +23847,6 @@ implements an automatic approach for the identification of gene families based
 on the conserved domains that specifically define that family.  See Die et al.
 (2018) <doi:10.1101/436659> for more information and examples.")
     (license license:expat)))
-
-(define-public r-genehapr
-  (package
-    (name "r-genehapr")
-    (version "1.1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geneHapR" version))
-       (sha256
-        (base32 "1fkf41llhmf2rlb1aj5y8qcrq6wn4860bsfp9y6xz1xinjpgi8w7"))))
-    (properties `((upstream-name . "geneHapR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vcfr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-shinyjs
-                             r-shiny
-                             r-rtracklayer
-                             r-rlang
-                             r-reshape2
-                             r-pegas
-                             r-maps
-                             r-lolliplot
-                             r-iranges
-                             r-ggpubr
-                             r-ggplot2
-                             r-genomicranges
-                             r-genetics
-                             r-biostrings
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geneHapR")
-    (synopsis
-     "Gene Haplotype Statistics, Phenotype Association and Visualization")
-    (description
-     "Import genome variants data and perform gene haplotype Statistics, visualization
-and phenotype association with R'.")
-    (license license:gpl3)))
 
 (define-public r-genef
   (package

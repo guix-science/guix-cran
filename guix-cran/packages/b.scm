@@ -7659,13 +7659,13 @@ H. Chan, A. Darwiche (2002) <doi:10.1613/jair.967>; C. Goergen, M. Leonelli
 (define-public r-bnma
   (package
     (name "r-bnma")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnma" version))
        (sha256
-        (base32 "178gnbpcram9b4fsim6qgvypvzp5wsg9jzvg8nf004jkm4abb37l"))))
+        (base32 "0z2kd9x5hi192dlr36r4vh9c66dzprm63y1l9v8av6dfnz63sj5b"))))
     (properties `((upstream-name . "bnma")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags r-igraph r-ggplot2 r-coda))
@@ -24384,32 +24384,6 @@ frequent class in the training set).  The functions in the package can be used
 on their own, or introduce methods named dummy_regressor or dummy_classifier
 that can be used within the caret package pipeline.")
     (license license:expat)))
-
-(define-public r-basemaps
-  (package
-    (name "r-basemaps")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "basemaps" version))
-       (sha256
-        (base32 "02rk613abn1919hm5kgj1jpl5aldiq282wwadxjrz9gdb782lwrk"))))
-    (properties `((upstream-name . "basemaps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-slippymath
-                             r-sf
-                             r-pbapply
-                             r-magick
-                             r-httr
-                             r-curl))
-    (home-page "https://cran.r-project.org/package=basemaps")
-    (synopsis "Accessing Spatial Basemaps in R")
-    (description
-     "This package provides a lightweight package to access spatial basemaps from open
-sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
-    (license license:gpl3)))
 
 (define-public r-basefun
   (package

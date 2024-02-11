@@ -10886,30 +10886,6 @@ with corporate buzzwords, intended to be used as corporate lorem ipsum (see
 currently portuguese-only.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-leri
-  (package
-    (name "r-leri")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "leri" version))
-       (sha256
-        (base32 "1309v58xdw3p6y2wpnl64vgsds5kvfiary2a3fa041kz23jzbp3c"))))
-    (properties `((upstream-name . "leri")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-raster r-ncdf4))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/earthlab/leri")
-    (synopsis "Access Landscape Evaporative Response Index Raster Data")
-    (description
-     "Finds and downloads Landscape Evaporative Response Index (LERI) data, then reads
-the data into R using the raster package.  The LERI product measures anomalies
-in actual evapotranspiration, to support drought monitoring and early warning
-systems.  More info on LERI is available at
-<https://www.esrl.noaa.gov/psd/leri/>.")
-    (license license:gpl3)))
-
 (define-public r-leptokurticmixture
   (package
     (name "r-leptokurticmixture")

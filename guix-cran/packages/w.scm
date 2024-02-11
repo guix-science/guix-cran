@@ -3778,27 +3778,6 @@ main HTML content where CSS of the main HTML could interfere with the widget.")
 temporal-spacial data.")
     (license license:gpl2+)))
 
-(define-public r-wiad
-  (package
-    (name "r-wiad")
-    (version "0.0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wiad" version))
-       (sha256
-        (base32 "1yr1cng5659n8chfghpyfxvqzl8b57vdjzv5m22cbcvrlq6m6p4j"))))
-    (properties `((upstream-name . "wiad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-dt r-dplyr r-data-table r-abind))
-    (home-page "https://cran.r-project.org/package=wiad")
-    (synopsis "Wood Image Analysis and Dataset")
-    (description
-     "Providing a user-friendly interface to digitize wood imagery such as tree ring
-scans.  The package offers a web-based application that the user can run locally
-from their computers to analyze wood characteristics.")
-    (license license:agpl3)))
-
 (define-public r-whsample
   (package
     (name "r-whsample")

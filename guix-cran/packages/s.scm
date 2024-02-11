@@ -6802,28 +6802,6 @@ through integrating @code{lncRNA-mRNA} expression profile and pathway
 topologies.")
     (license license:gpl2+)))
 
-(define-public r-subniche
-  (package
-    (name "r-subniche")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "subniche" version))
-       (sha256
-        (base32 "1w5xsfqq1y9gy8wrxmfxk02jhzmyg2cdky7vm7qdcg9l63dhracj"))))
-    (properties `((upstream-name . "subniche")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wordcloud r-siber r-polyclip r-ade4))
-    (home-page "https://cran.r-project.org/package=subniche")
-    (synopsis "Within Outlying Mean Indexes: Refining the OMI Analysis")
-    (description
-     "Complementary indexes calculation to the Outlying Mean Index analysis to explore
-niche shift of a community and biological constraint within an Euclidean space,
-with graphical displays.  For details see Karasiewicz et al. (2017)
-<doi:10.7717/Peerj.3364>.")
-    (license license:gpl2+)))
-
 (define-public r-submax
   (package
     (name "r-submax")
@@ -8229,39 +8207,6 @@ Right-triangular, Weibull, Gamma, Exponential, Uniform, Normal, Log-normal and
 Cauchy distributions.")
     (license license:gpl2)))
 
-(define-public r-stratifiedsampling
-  (package
-    (name "r-stratifiedsampling")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "StratifiedSampling" version))
-       (sha256
-        (base32 "15gg1qc2znyba2y6kq8qq6wz69lq3kkpps0a3j9jdq8n67x65zkp"))))
-    (properties `((upstream-name . "StratifiedSampling")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-transport
-                             r-sampling
-                             r-rglpk
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proxy
-                             r-matrix
-                             r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RJauslin/StratifiedSampling")
-    (synopsis "Different Methods for Stratified Sampling")
-    (description
-     "Integrating a stratified structure in the population in a sampling design can
-considerably reduce the variance of the Horvitz-Thompson estimator.  We propose
-in this package different methods to handle the selection of a balanced sample
-in stratified population.  For more details see @code{RaphaÃ«l} Jauslin, Esther
-Eustache and Yves @code{TillÃ©} (2021) <doi:10.1007/s42081-021-00134-y>.  The
-package propose also a method based on optimal transport and balanced sampling,
-see @code{RaphaÃ«l} Jauslin and Yves @code{TillÃ©} <@code{arXiv:2105.08379>}.")
-    (license license:gpl2+)))
-
 (define-public r-stratifiedrf
   (package
     (name "r-stratifiedrf")
@@ -8456,16 +8401,15 @@ certain input and output so they can be called from the Strategy-constructor.")
 (define-public r-strategicplayers
   (package
     (name "r-strategicplayers")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "strategicplayers" version))
        (sha256
-        (base32 "19vijrlzawd701vvk9ig7yhzbirh39dxxcwfz8ywwvxxiaky5x55"))))
+        (base32 "0fpmmnv6w9zd17gbk44kkwx2znvdgqkclgjpahalns8abqm1cvyl"))))
     (properties `((upstream-name . "strategicplayers")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sna))
     (home-page "https://cran.r-project.org/package=strategicplayers")
     (synopsis "Strategic Players")
     (description
@@ -20438,13 +20382,13 @@ intervention of a single legislator.")
 (define-public r-spedinstabr
   (package
     (name "r-spedinstabr")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPEDInstabR" version))
        (sha256
-        (base32 "1jzsv53yzgg3k7mbm62hxswpsirk59yajy82b87mkhvar93gpmwl"))))
+        (base32 "1365ridi0mf5391l3jsp9djfkpimlamqflqd0l5pja3hyxvci51l"))))
     (properties `((upstream-name . "SPEDInstabR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SPEDInstabR")
@@ -30509,33 +30453,6 @@ size for a SMART design in the Bayesian setting with binary outcomes.  Please
 see Artman (2020) <@code{arXiv:2008.02341>}.")
     (license license:gpl3)))
 
-(define-public r-smapr
-  (package
-    (name "r-smapr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smapr" version))
-       (sha256
-        (base32 "1gcq66gs6968c5h303dqd2jyw2rcdwxv642ki1cmpdj6ix665dpr"))))
-    (properties `((upstream-name . "smapr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-rvest
-                             r-rhdf5
-                             r-raster
-                             r-rappdirs
-                             r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/smapr")
-    (synopsis
-     "Acquisition and Processing of NASA Soil Moisture Active-Passive (SMAP) Data")
-    (description
-     "Facilitates programmatic access to NASA Soil Moisture Active Passive (SMAP) data
-with R. It includes functions to search for, acquire, and extract SMAP data.")
-    (license license:gpl3)))
-
 (define-public r-smam
   (package
     (name "r-smam")
@@ -35227,43 +35144,6 @@ addition, GEE method can be applied to longitudinal data to model the
 correlation.  Residual analysis is also involved.  Some subroutines are written
 in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
     (license license:gpl2)))
-
-(define-public r-simplevis
-  (package
-    (name "r-simplevis")
-    (version "7.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simplevis" version))
-       (sha256
-        (base32 "1x2lignyqyd9l7sq1gxgb98jav6r3pvai3hgqzpwn982lr8x2k9b"))))
-    (properties `((upstream-name . "simplevis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-stars
-                             r-snakecase
-                             r-shiny
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-magrittr
-                             r-leafpop
-                             r-leaflet
-                             r-leafem
-                             r-htmlwidgets
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://StatisticsNZ.github.io/simplevis/")
-    (synopsis "Wrappers to Simplify 'leaflet' Visualisation")
-    (description
-     "Wrapper functions around the amazing leaflet package that aims to simplify
-leaflet visualisation.  See the ggblanket package for ggplot2 wrappers.")
-    (license license:expat)))
 
 (define-public r-simplesetup
   (package
@@ -50864,70 +50744,6 @@ ENVIREM <https://envirem.github.io/>, Bio-ORACLE <https://bio-oracle.org/> and
 MARSPEC <http://www.marspec.org/>.")
     (license license:expat)))
 
-(define-public r-sdmplay
-  (package
-    (name "r-sdmplay")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SDMPlay" version))
-       (sha256
-        (base32 "1qdvpa57p4p3949rjmvvvz41a3hm3jb34dnn8s2pi04rzrjkys0f"))))
-    (properties `((upstream-name . "SDMPlay")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-raster r-dismo))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SDMPlay")
-    (synopsis "Species Distribution Modelling Playground")
-    (description
-     "Species distribution modelling (SDM) has been developed for several years to
-address conservation issues, assess the direct impact of human activities on
-ecosystems and predict the potential distribution shifts of invasive species
-(see Elith et al.  2006, Pearson 2007, Elith and Leathwick 2009).  SDM relates
-species occurrences with environmental information and can predict species
-distribution on their entire occupied space.  This approach has been
-increasingly applied to Southern Ocean case studies, but requires corrections in
-such a context, due to the broad scale area, the limited number of presence
-records available and the spatial and temporal aggregations of these datasets.
-SDMPlay is a pedagogic package that will allow you to compute SDMs, to
-understand the overall method, and to produce model outputs.  The package, along
-with its associated vignettes, highlights the different steps of model
-calibration and describes how to choose the best methods to generate accurate
-and relevant outputs.  SDMPlay proposes codes to apply a popular machine
-learning approach, BRT (Boosted Regression Trees) and introduces @code{MaxEnt}
-(Maximum Entropy).  It contains occurrences of marine species and environmental
-descriptors datasets as examples associated to several vignette tutorials
-available at
-<https://github.com/charleneguillaumot/THESIS/tree/master/SDMPLAY_R_PACKAGE>.")
-    (license license:gpl3)))
-
-(define-public r-sdmapp
-  (package
-    (name "r-sdmapp")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sdmApp" version))
-       (sha256
-        (base32 "1rfzy3bbdya7amyr43dhhv4cvmrxcan0fv167ldpbf0m9snqrnrx"))))
-    (properties `((upstream-name . "sdmApp")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-sp r-shiny r-raster))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/Abson-dev/sdmApp")
-    (synopsis "User-Friendly Application for Species Distribution Modeling")
-    (description
-     "This package provides a shiny application that allows non-expert R users to
-easily model species distribution.  It offers a reproducible work flow for
-species distribution modeling into a single and user friendly environment.
-@code{sdmApp} takes raster data (in format supported by the raster package') and
-species occurrence data (several format supported) as input argument.  It
-provides an interactive graphical user interface (GUI).")
-    (license license:gpl3)))
-
 (define-public r-sdm
   (package
     (name "r-sdm")
@@ -55959,18 +55775,18 @@ Global Ocean Physical Reanalysis and Global Ocean Biogeochemistry Hindcast.")
 (define-public r-satellite
   (package
     (name "r-satellite")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "satellite" version))
        (sha256
-        (base32 "0z6wh0nmzxgizd8rzafkq8hkxx9s8lkaqins68697284lxvrbrwr"))))
+        (base32 "1bd1f8mimx53dcy3fnlhjk7yam08jvr3lhh39zcb5c2yj0pkhk1y"))))
     (properties `((upstream-name . "satellite")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpp r-raster r-plyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=satellite")
+    (home-page "https://github.com/environmentalinformatics-marburg/satellite")
     (synopsis "Handling and Manipulating Remote Sensing Data")
     (description
      "Herein, we provide a broad variety of functions which are useful for handling,

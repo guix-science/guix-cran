@@ -11517,16 +11517,16 @@ Distributions are fitted when overdispersion is available.")
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBOD" version))
        (sha256
-        (base32 "0nr2ljnk2glrayainm4dnpyw2bp8vfyjws2p7nry6x4f8vvw9y0v"))))
+        (base32 "001lc33w3s6liyq558l44kd877bz6js1rkafbz1blgp8csb8ljxy"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-hypergeo r-bbmle))
+    (propagated-inputs (list r-mvtnorm r-mass r-hypergeo r-bbmle))
     (home-page "https://github.com/Amalan-ConStat/fitODBOD")
     (synopsis
      "Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD")
@@ -14765,13 +14765,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-fetch
   (package
     (name "r-fetch")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fetch" version))
        (sha256
-        (base32 "0xkaj5a0fiq0ph3702d6nc5fwjk1phngkkrckdv3v4pshii46a4y"))))
+        (base32 "09w76yraw2p2sdwq4wp5cklpzqxd69fgfm2wyz96jdv1c9hyb5cn"))))
     (properties `((upstream-name . "fetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14779,7 +14779,8 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
                              r-readr
                              r-haven
                              r-foreign
-                             r-crayon))
+                             r-crayon
+                             r-common))
     (native-inputs (list r-knitr))
     (home-page "https://fetch.r-sassy.org")
     (synopsis "Fetch Data from Various Data Sources")

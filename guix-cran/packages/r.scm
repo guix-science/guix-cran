@@ -15104,6 +15104,35 @@ package provides convenient functions for summary, visualizations, and fit
 diagnostics.")
     (license license:gpl3)))
 
+(define-public r-roblox
+  (package
+    (name "r-roblox")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobLox" version))
+       (sha256
+        (base32 "0dc1hrzx63wv85djzivzimzkjj4ywilm3xm5kmqlmrkfpzsm9qs2"))))
+    (properties `((upstream-name . "RobLox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robastbase
+                             r-rcolorbrewer
+                             r-randvar
+                             r-lattice
+                             r-distrmod
+                             r-distr
+                             r-biobase))
+    (home-page "http://robast.r-forge.r-project.org/")
+    (synopsis
+     "Optimally Robust Influence Curves and Estimators for Location and Scale")
+    (description
+     "This package provides functions for the determination of optimally robust
+influence curves and estimators in case of normal location and/or scale (see
+Chapter 8 in Kohl (2005)
+<https://epub.uni-bayreuth.de/839/2/@code{DissMKohl.pdf>}).")
+    (license license:lgpl3)))
+
 (define-public r-robkf
   (package
     (name "r-robkf")
@@ -24383,42 +24412,6 @@ which also includes a Multi-core implementation (@code{FastRGF})
 <https://github.com/RGF-team/rgf/tree/master/@code{FastRGF>}.")
     (license license:expat)))
 
-(define-public r-rgeoprofile
-  (package
-    (name "r-rgeoprofile")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rgeoprofile" version))
-       (sha256
-        (base32 "1nk3qzwcvvq3n1da480zk047wl738fjyvarakm00wwrbnb3ax70j"))))
-    (properties `((upstream-name . "rgeoprofile")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-splancs
-                             r-spatstat-geom
-                             r-sp
-                             r-raster
-                             r-rann
-                             r-pals
-                             r-leaflet
-                             r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rgeoprofile")
-    (synopsis "Geographic Profiling Methods for Serial Crime Analysis")
-    (description
-     "An implementation of functions for the analysis of serial crime incidents.  The
-package implements algorithms for the geographical profiling of serial incidents
-in attempt to prioritize the area in which the anchor point or home base of the
-perpetrator is located.  The geographic profiling methods in the package are
-implemented based upon the Dragnet software by Canter, Coffey, Huntley, and
-Missen (2000) <doi:10.1023/A:1007551316253>, the @code{CrimeStat} software by
-Levine (2013)
-<https://nij.ojp.gov/topics/articles/crimestat-spatial-statistics-program-analysis-crime-incident-locations>,
-and the criminal geographic targeting model outlined in Rossmo (2000,
-ISBN:978-0849381294) and Rossmo (1995) <http://summit.sfu.ca/item/6820>.")
-    (license license:gpl3)))
-
 (define-public r-rgeopat2
   (package
     (name "r-rgeopat2")
@@ -27379,22 +27372,24 @@ responses and identify those that may be problematic.  See Gottfried et al.
 (define-public r-respirometry
   (package
     (name "r-respirometry")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respirometry" version))
        (sha256
-        (base32 "0cb83xdd7b4mnipchqjdaf5lfbh9475gxpk7dbr9g26b4byrg7cc"))))
+        (base32 "17sfg3c1y7yhyyvq7krii2vazyvnqf1l0ifcdqsr477wwlnwyynr"))))
     (properties `((upstream-name . "respirometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented
                              r-seacarb
-                             r-pknca
+                             r-rlang
+                             r-plyr
                              r-minpack-lm
                              r-measurements
                              r-marelac
                              r-lubridate
+                             r-dplyr
                              r-birk))
     (home-page "https://cran.r-project.org/package=respirometry")
     (synopsis "Tools for Conducting and Analyzing Respirometry Experiments")

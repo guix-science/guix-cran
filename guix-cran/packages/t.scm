@@ -21398,44 +21398,6 @@ their manuscript description, but have not been reviewed by the authors for
 accuracy.  It is included here as is, without warranty.")
     (license license:gpl3+)))
 
-(define-public r-telemac
-  (package
-    (name "r-telemac")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "telemac" version))
-       (sha256
-        (base32 "12wkhya49yi0qqm73sizgnf6r5lkssg07wc6pq9iychjjd0cxfly"))))
-    (properties `((upstream-name . "telemac")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-sys
-                             r-stringr
-                             r-sp
-                             r-sf
-                             r-rlang
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-raster
-                             r-purrr
-                             r-magrittr
-                             r-gstat
-                             r-fs
-                             r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/tpilz/telemac")
-    (synopsis "R Interface to the TELEMAC Model Suite")
-    (description
-     "An R interface to the TELEMAC suite for modelling of free surface flow.  This
-includes methods for model initialisation, simulation, and visualisation.  So
-far only the TELEMAC-2D module for 2-dimensional hydrodynamic modelling is
-implemented.")
-    (license license:gpl3+)))
-
 (define-public r-telegram-bot
   (package
     (name "r-telegram-bot")
@@ -22028,13 +21990,13 @@ population based on several sampling designs.")
 (define-public r-teachingdemos
   (package
     (name "r-teachingdemos")
-    (version "2.12")
+    (version "2.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TeachingDemos" version))
        (sha256
-        (base32 "0i46d7269zhvr3c2a2w1lb3jnhc1cgwhcppqdmnl1ymgw5f40x9y"))))
+        (base32 "1a7km8dbipqywkwhviw0xq6bzrp0n7jbfy76ia098rdpcz3qkcgm"))))
     (properties `((upstream-name . "TeachingDemos")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TeachingDemos")

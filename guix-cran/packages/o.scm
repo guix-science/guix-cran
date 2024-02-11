@@ -6419,28 +6419,28 @@ patterns including Abstract and Decorator classes.")
 (define-public r-oolong
   (package
     (name "r-oolong")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oolong" version))
        (sha256
-        (base32 "1if27qswf17614pn94vx5pcmg1j55wvjkmrf63zdyfw4a7sapsc8"))))
+        (base32 "1siqix9npnhk7flc1dafpg6xpvn8i1fkvid2yfpk966qx4cg2ggk"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-shiny
+                             r-seededlda
                              r-r6
                              r-quanteda
                              r-purrr
-                             r-keyatm
                              r-irr
                              r-ggplot2
                              r-digest
                              r-cowplot
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/chainsawriot/oolong")
+    (home-page "https://gesistsa.github.io/oolong/")
     (synopsis "Create Validation Tests for Automated Content Analysis")
     (description
      "Intended to create standard human-in-the-loop validity tests for typical
@@ -7164,39 +7164,6 @@ classification algorithm (Holte, R.C. (1993) <doi:10.1023/A:1022631118932>) with
 enhancements for sophisticated handling of numeric data and missing values
 together with extensive diagnostic functions.  It is useful as a baseline for
 machine learning models and the rules are often helpful heuristics.")
-    (license license:expat)))
-
-(define-public r-onemapsgapi
-  (package
-    (name "r-onemapsgapi")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "onemapsgapi" version))
-       (sha256
-        (base32 "0q1i17dkgcxqswa9wckxzsf1wr118zsw7yhbrbkbikvm27hqrrva"))))
-    (properties `((upstream-name . "onemapsgapi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-httr
-                             r-future
-                             r-furrr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=onemapsgapi")
-    (synopsis "R Wrapper for the 'OneMap.Sg API'")
-    (description
-     "An R wrapper for the @code{OneMap.Sg} API <https://www.onemap.gov.sg/docs/>.
-Functions help users query data from the API and return raw JSON data in \"tidy\"
-formats.  Support is also available for users to retrieve data from multiple API
-calls and integrate results into single dataframes, without needing to clean and
-merge the data themselves.  This package is best suited for users who would like
-to perform analyses with Singapore's spatial data without having to perform
-excessive data cleaning.")
     (license license:expat)))
 
 (define-public r-onemap

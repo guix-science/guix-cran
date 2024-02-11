@@ -14699,13 +14699,13 @@ License.")
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
-    (version "0.3.12")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AirMonitor" version))
        (sha256
-        (base32 "15ai03z3h44llwzynvbs0kxd5ik11hfacxgn2wzj8fbaihy332pr"))))
+        (base32 "1lxdnplv06g5j5lwiydgx3yimrpkm85i88cxq7yrpv2gcffalj4p"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

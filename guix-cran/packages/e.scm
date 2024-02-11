@@ -1541,13 +1541,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "02ki798jzcnb7vg99m6fzw2wwmvy2gmsk62cdhh6gr0n2gxw4khy"))))
+        (base32 "06pwl69chir4056admnimzprlpsz4bmzdbz7xk82wmf512mfapf3"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1563,7 +1563,8 @@ remove as much redundant typing as possible.")
                              r-ggplot2
                              r-forcats
                              r-dt
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://rolkra.github.io/explore/")
     (synopsis "Simplifies Exploratory Data Analysis")

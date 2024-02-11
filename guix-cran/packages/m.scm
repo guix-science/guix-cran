@@ -8967,40 +8967,6 @@ Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
 Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
     (license license:gpl3)))
 
-(define-public r-mregions
-  (package
-    (name "r-mregions")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mregions" version))
-       (sha256
-        (base32 "16z610j01nf9k1hamsxydk2j6qdqpbyj29b5hm9r3fi8fm3smhd6"))))
-    (properties `((upstream-name . "mregions")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-sp
-                             r-sf
-                             r-rappdirs
-                             r-jsonlite
-                             r-httr
-                             r-geojsonsf
-                             r-geojsonio
-                             r-geojson
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/mregions/")
-    (synopsis "Marine Regions Data from 'Marineregions.org'")
-    (description
-     "This package provides tools to get marine regions data from
-<https://www.marineregions.org/>.  Includes tools to get region metadata, as
-well as data in @code{GeoJSON} format, as well as Shape files.  Use cases
-include using data downstream to visualize geospatial data by marine region,
-mapping variation among different regions, and more.")
-    (license license:expat)))
-
 (define-public r-mreg
   (package
     (name "r-mreg")

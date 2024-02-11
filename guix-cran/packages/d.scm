@@ -3916,22 +3916,26 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "14mqvd3xkdjn578jcj4ij0nk2lwd7j859fy8dk4p11nrrwcdg6a0"))))
+        (base32 "00ia9mwbd0xxrj72k56mv904kqlymiczphrp57lj0nkfc4fxwd4n"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-tictoc
                              r-rlang
                              r-rjsonio
                              r-purrr
                              r-patientprofiles
+                             r-omopgenerics
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr
@@ -9267,37 +9271,6 @@ systems.")
      "This package provides tools to sort DICOM-format medical image files, and
 convert them to N@code{IfTI-1} format.")
     (license (license:fsdg-compatible "BSD_3_clause + file LICENCE"))))
-
-(define-public r-diversityoccupancy
-  (package
-    (name "r-diversityoccupancy")
-    (version "1.0.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DiversityOccupancy" version))
-       (sha256
-        (base32 "16x3fpchgd12mccvr1k11vjka97sy5vjvjcyd5y3pskgnpycc2sv"))))
-    (properties `((upstream-name . "DiversityOccupancy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-unmarked
-                             r-raster
-                             r-qpcr
-                             r-mumin
-                             r-glmulti
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DiversityOccupancy")
-    (synopsis
-     "Building Diversity Models from Multiple Species Occupancy Models")
-    (description
-     "Predictions of alpha diversity are fitted from presence data, first abundance is
-modeled from occupancy models and then, several diversity indices are calculated
-and finally GLM models are used to predict diversity in different environments
-and select priority areas.")
-    (license license:gpl3)))
 
 (define-public r-diversityforest
   (package

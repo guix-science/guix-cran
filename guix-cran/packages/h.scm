@@ -7140,13 +7140,13 @@ the results from the paper, see demo(\"hhh4contacts\")'.")
 (define-public r-hh
   (package
     (name "r-hh")
-    (version "3.1-51")
+    (version "3.1-52")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HH" version))
        (sha256
-        (base32 "0lqcqj1ffyxam4ad5a643hbjj61smby395b472wprd52yfa8l21r"))))
+        (base32 "10q3im2y5r9f5d80c35r2mmp89xclaf74hywkcyn3pk5vwc5wjfm"))))
     (properties `((upstream-name . "HH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd

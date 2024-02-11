@@ -9757,13 +9757,13 @@ reading/writing and also other manipulation functions.")
 (define-public r-neuralsens
   (package
     (name "r-neuralsens")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralSens" version))
        (sha256
-        (base32 "0xhxvava2q1j9giljz0ayl7ddjknzxfp5sww8kqkfqj3qr0a1a7l"))))
+        (base32 "0inp0r22x4l2r2d69swm8631f07knfkf0xw5m191y4biy23jd1dv"))))
     (properties `((upstream-name . "NeuralSens")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
