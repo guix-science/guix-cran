@@ -13420,44 +13420,6 @@ regression, used in \"Statistical Inference via Data Science: A @code{ModernDive
 into R and the Tidyverse\" available at <https://moderndive.com/>.")
     (license license:gpl3)))
 
-(define-public r-moderate-mediation
-  (package
-    (name "r-moderate-mediation")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moderate.mediation" version))
-       (sha256
-        (base32 "0nlsz84wd3apzsif99zq51k76vdbwflaysdllqrqbxp6vb2rs4hz"))))
-    (properties `((upstream-name . "moderate.mediation")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-mvtnorm
-                             r-ggplot2
-                             r-foreach
-                             r-earth
-                             r-dosnow
-                             r-distr
-                             r-cowplot))
-    (home-page "https://cran.r-project.org/package=moderate.mediation")
-    (synopsis "Causal Moderated Mediation Analysis")
-    (description
-     "Causal moderated mediation analysis using the methods proposed by Qin and Wang
-(2023) <doi:10.3758/s13428-023-02095-4>.  Causal moderated mediation analysis is
-crucial for investigating how, for whom, and where a treatment is effective by
-assessing the heterogeneity of mediation mechanism across individuals and
-contexts.  This package enables researchers to estimate and test the conditional
-and moderated mediation effects, assess their sensitivity to unmeasured
-pre-treatment confounding, and visualize the results.  The package is built
-based on the quasi-Bayesian Monte Carlo method, because it has relatively better
-performance at small sample sizes, and its running speed is the fastest.  The
-package is applicable to a treatment of any scale, a binary or continuous
-mediator, a binary or continuous outcome, and one or more moderators of any
-scale.")
-    (license license:gpl2)))
-
 (define-public r-moder
   (package
     (name "r-moder")
@@ -14930,13 +14892,13 @@ Wittenberg (2000) <doi:10.2307/2669316> and Hanmer and Ozan Kalkan (2016)
 (define-public r-mnlfa
   (package
     (name "r-mnlfa")
-    (version "0.2-4")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mnlfa" version))
        (sha256
-        (base32 "0m3phcskg8pwxg1p8ph2g43rbd6p3v8rysys60q5kv4457hgwqpx"))))
+        (base32 "1bcs4v02n5vwcmvij4isia1vv2mcx1gllkzzx2r29p24cmi21fgb"))))
     (properties `((upstream-name . "mnlfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-cdm))

@@ -8089,13 +8089,13 @@ Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
 (define-public r-hesim
   (package
     (name "r-hesim")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hesim" version))
        (sha256
-        (base32 "115c6f0i0j7i4k2rf5m6f4a9v8mz99mfvv560v0v12g9gjj9lncb"))))
+        (base32 "1fx55wwzk2w3zxnk96821bxrsklln7r6px19m7iv0f376iaamiq7"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -29507,17 +29507,17 @@ function of unit characteristics variables.")
 (define-public r-chnosz
   (package
     (name "r-chnosz")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CHNOSZ" version))
        (sha256
-        (base32 "02srw868nvi4cs147gz2vm02gghibh1d2r31x7ljj6fcc66z4g9y"))))
+        (base32 "1iwg6pfnkq5ap0p3nscadfx6fyakvvjgmgx2wkva65bgkbhs6x9v"))))
     (properties `((upstream-name . "CHNOSZ")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
-    (home-page "http://www.chnosz.net/")
+    (home-page "https://www.chnosz.net/")
     (synopsis "Thermodynamic Calculations and Diagrams for Geochemistry")
     (description
      "An integrated set of tools for thermodynamic calculations in aqueous

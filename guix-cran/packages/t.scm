@@ -12448,13 +12448,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0hcahb3743yf69w3snnw954crmi3bp708l45lrss8bcj94r3lf5a"))))
+        (base32 "1z4pri6zivz1d90chgxqxj2y1p0kai5512g7fp43074cyg0qdizr"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")

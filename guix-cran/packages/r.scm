@@ -6433,40 +6433,6 @@ An overview of these models is given in Snijders (2017),
     (license (list license:gpl2 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-rsi
-  (package
-    (name "r-rsi")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsi" version))
-       (sha256
-        (base32 "1idn7cndq77jdnr23mpq9b4iqhvmss07fzkiwcdg93fxjzfc5fbw"))))
-    (properties `((upstream-name . "rsi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-terra
-                             r-sf
-                             r-rstac
-                             r-rlang
-                             r-proceduralnames
-                             r-jsonlite
-                             r-glue
-                             r-future-apply))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Permian-Global-Research/rsi")
-    (synopsis "Efficiently Retrieve and Process Satellite Imagery")
-    (description
-     "Downloads spatial data from spatiotemporal asset catalogs ('STAC'), computes
-standard spectral indices from the Awesome Spectral Indices project (Montero et
-al. (2023) <doi:10.1038/s41597-023-02096-0>) against raster data, and glues the
-outputs together into predictor bricks.  Methods focus on interoperability with
-the broader spatial ecosystem; function arguments and outputs use classes from
-sf and terra', and data downloading functions support complex CQL2 queries using
-rstac'.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-rshift
   (package
     (name "r-rshift")
@@ -12284,13 +12250,13 @@ different colour metrics for the conversion.")
 (define-public r-rollmatch
   (package
     (name "r-rollmatch")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollmatch" version))
        (sha256
-        (base32 "1bm1yc2z9byj4m9gz0il47y8drd3qzsb5lwb22a22axy306lqfqj"))))
+        (base32 "099nc02gxcd8vma9lpdiw449bcq7shp8p5z5ldj9bawll32k91sz"))))
     (properties `((upstream-name . "rollmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-dplyr))
@@ -12300,7 +12266,7 @@ different colour metrics for the conversion.")
      "This package provides functions to perform propensity score matching on rolling
 entry interventions for which a suitable \"entry\" date is not observed for
 nonparticipants.  For more details, please reference Witman et al. (2018)
-<https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-6773.13086>.")
+<doi:10.1111/1475-6773.13086>.")
     (license license:expat)))
 
 (define-public r-rollinglda
@@ -15103,6 +15069,37 @@ publication bias components (including selection models and PET-PEESE).  The
 package provides convenient functions for summary, visualizations, and fit
 diagnostics.")
     (license license:gpl3)))
+
+(define-public r-robloxbioc
+  (package
+    (name "r-robloxbioc")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RobLoxBioC" version))
+       (sha256
+        (base32 "1fhf5svfb1sf792aj9xydaj8r9d99ia68b9n5g4nha1ia8jcixwl"))))
+    (properties `((upstream-name . "RobLoxBioC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roblox
+                             r-rcolorbrewer
+                             r-lattice
+                             r-distrmod
+                             r-distr
+                             r-biocgenerics
+                             r-biobase
+                             r-beadarray
+                             r-annotationdbi
+                             r-affy))
+    (home-page "https://r-forge.r-project.org/projects/robast/")
+    (synopsis
+     "Infinitesimally Robust Estimators for Preprocessing -Omics Data")
+    (description
+     "This package provides functions for the determination of optimally robust
+influence curves and estimators for preprocessing omics data, in particular gene
+expression data (Kohl and Deigner (2010), <doi:10.1186/1471-2105-11-583>).")
+    (license license:lgpl3)))
 
 (define-public r-roblox
   (package

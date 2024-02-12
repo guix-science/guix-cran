@@ -20285,6 +20285,46 @@ implemented on high dimensional datasets in practice.  See Robbins (2021)
 package tourr'.")
     (license license:gpl2)))
 
+(define-public r-geoweightedmodel
+  (package
+    (name "r-geoweightedmodel")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoWeightedModel" version))
+       (sha256
+        (base32 "1ylfggfqylqi76z3ac95cnxmmw3gzddq2r5qx5w0gjyjvrxr8wsv"))))
+    (properties `((upstream-name . "GeoWeightedModel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sp
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinybusy
+                             r-shinybs
+                             r-shinyalert
+                             r-shiny
+                             r-readxl
+                             r-raster
+                             r-gwmodel
+                             r-dt
+                             r-dplyr
+                             r-cartography
+                             r-beepr))
+    (home-page "https://cran.r-project.org/package=GeoWeightedModel")
+    (synopsis "User-Friendly Interface for Geographically-Weighted Models")
+    (description
+     "This package contains the development of a tool that provides a web-based
+graphical user interface (GUI) to perform Techniques from a subset of spatial
+statistics known as geographically weighted (GW) models.  Contains methods
+described by Brunsdon et al., 1996 <doi:10.1111/j.1538-4632.1996.tb00936.x>,
+Brunsdon et al., 2002 <doi:10.1016/s0198-9715(01)00009-6>, Harris et al., 2011
+<doi:10.1080/13658816.2011.554838>, Brunsdon et al., 2007
+<doi:10.1111/j.1538-4632.2007.00709.x>.")
+    (license license:gpl3)))
+
 (define-public r-geovol
   (package
     (name "r-geovol")

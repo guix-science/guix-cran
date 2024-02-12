@@ -5769,13 +5769,13 @@ the model with a more experimental version.")
 (define-public r-invacost
   (package
     (name "r-invacost")
-    (version "1.1-5")
+    (version "1.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "invacost" version))
        (sha256
-        (base32 "0qh1illwkcr2hi9hcns08xw8xpqd9d9134mdznw91a5qisnl9wkk"))))
+        (base32 "015w23vwwy8mn9mfk9pa0j6ca99cmyjvk6a93g06qcifjiqx7d9x"))))
     (properties `((upstream-name . "invacost")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

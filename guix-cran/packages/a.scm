@@ -13322,6 +13322,52 @@ Stammann, and Wanner (2020) <@code{arXiv:2004.12655>}.")
 samples.")
     (license license:gpl2)))
 
+(define-public r-alookr
+  (package
+    (name "r-alookr")
+    (version "0.3.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alookr" version))
+       (sha256
+        (base32 "13lvbfgqb6ivrik1jcbfz3zn6p41aqwq68bk9ric3xnyjnczc5wg"))))
+    (properties `((upstream-name . "alookr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rpart
+                             r-rocr
+                             r-rlang
+                             r-ranger
+                             r-randomforest
+                             r-purrr
+                             r-party
+                             r-parallelly
+                             r-mlmetrics
+                             r-mass
+                             r-glmnet
+                             r-ggplot2
+                             r-ggmosaic
+                             r-future
+                             r-dplyr
+                             r-dlookr
+                             r-cli
+                             r-catools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=alookr")
+    (synopsis "Model Classifier for Binary Classification")
+    (description
+     "This package provides a collection of tools that support data splitting,
+predictive modeling, and model evaluation.  A typical function is to split a
+dataset into a training dataset and a test dataset.  Then compare the data
+distribution of the two datasets.  Another feature is to support the development
+of predictive models and to compare the performance of several predictive
+models, helping to select the best model.")
+    (license license:gpl2)))
+
 (define-public r-alone
   (package
     (name "r-alone")

@@ -9769,13 +9769,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "1crvizk2llfr08giq5il0rpjjm5vn50sjbk35w57c5lyb611lxk1"))))
+        (base32 "1k9yw5sgfg3pmhagpspmwq7g2frgcmkdf07i5msg9vgc54vwgxh6"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12386,17 +12386,16 @@ details, please see Machiela et al. (2015) <doi:10.1093/bioinformatics/btv402>."
 (define-public r-ldlcalc
   (package
     (name "r-ldlcalc")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDLcalc" version))
        (sha256
-        (base32 "1x3g95fi7lhcqb9jbvr6v0xhfy44migf81avfnnvf3asz1gqnajr"))))
+        (base32 "0bw0a7dh8j215y09n17w1zvnx72s9i5pv509wayl46wl2v6zz4rx"))))
     (properties `((upstream-name . "LDLcalc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sets
-                             r-resample
+    (propagated-inputs (list r-resample
                              r-rcolorbrewer
                              r-philentropy
                              r-moments
@@ -12409,8 +12408,7 @@ details, please see Machiela et al. (2015) <doi:10.1093/bioinformatics/btv402>."
                              r-caretensemble
                              r-caret))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://sciencesandresearch.com/ldlcalc-calculate-and-predict-the-low-density-lipoprotein-values")
+    (home-page "https://cran.r-project.org/package=LDLcalc")
     (synopsis "Calculate and Predict the Low Density Lipoprotein Values")
     (description
      "This package provides a wide variety of ways to calculate (through equations) or

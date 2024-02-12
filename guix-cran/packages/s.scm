@@ -625,13 +625,13 @@ in C++ (by Valerio Pillar, available at
 (define-public r-syncrng
   (package
     (name "r-syncrng")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SyncRNG" version))
        (sha256
-        (base32 "11v383acl2b9fjmi59rmckwjgl2f69wr5fgcym2zjvizpfp97h1z"))))
+        (base32 "0ndfd1ikd7ha30b2fk2qh27idnkga7fbarw7cm4rzj3bhdami55m"))))
     (properties `((upstream-name . "SyncRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SyncRNG")
@@ -5723,13 +5723,13 @@ U.S. National Science Foundation (NSF) grant CMMI-1921646.")
 (define-public r-supercells
   (package
     (name "r-supercells")
-    (version "0.9.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supercells" version))
        (sha256
-        (base32 "1695dsd6l3mxa7wpzmxarpll1rm70cq9l5vkbz4gyf1238vqlqjz"))))
+        (base32 "1r08mny63w9gichi78jfif2jbpl484p5gdl4yb8h5c2l70r7q258"))))
     (properties `((upstream-name . "supercells")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-philentropy r-future-apply r-cpp11))

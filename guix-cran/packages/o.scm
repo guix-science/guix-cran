@@ -9810,13 +9810,13 @@ Probability are covered in this package.")
 (define-public r-oddnet
   (package
     (name "r-oddnet")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oddnet" version))
        (sha256
-        (base32 "00r6pl0s715gk7sybl725sriqdpddabxhnjjz4y51vzl5fwwfcyv"))))
+        (base32 "0wa3vjjsn9f60b4c2l43sy41x0qhkbsg0yjy1ki6pgflgavr9ldg"))))
     (properties `((upstream-name . "oddnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
