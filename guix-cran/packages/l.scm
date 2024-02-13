@@ -854,6 +854,47 @@ Gamma, Weibull, and Lognormal Distributions.  Blostein, Martin & Miljkovic,
 Tatjana. (2019) <doi:10.1016/j.insmatheco.2018.12.001>.")
     (license license:gpl3)))
 
+(define-public r-ltfhplus
+  (package
+    (name "r-ltfhplus")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LTFHPlus" version))
+       (sha256
+        (base32 "0f8xww6n2r54c26idi6ixfk89dff7c14dljvpaa71yxm0rb0isff"))))
+    (properties `((upstream-name . "LTFHPlus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-tmvtnorm
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-igraph
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-batchmeans))
+    (home-page "https://github.com/EmilMiP/LTFHPlus")
+    (synopsis "Implementation of LT-FH++")
+    (description
+     "Implementation of LT-FH++, an extension of the liability threshold family
+history (LT-FH) model.  LT-FH++ uses a Gibbs sampler for sampling from the
+truncated multivariate normal distribution and allows for flexible family
+structures.  LT-FH++ was first described in Pedersen, Emil M., et al. (2022)
+<https://pure.au.dk/ws/portalfiles/portal/353346245/> as an extension to LT-FH
+with more flexible family structures, and again as the age-dependent liability
+threshold (A@code{DuLT}) model Pedersen, Emil M., et al. (2023)
+<https://www.nature.com/articles/s41467-023-41210-z> as an alternative to
+traditional time-to-event genome-wide association studies, where family history
+was not considered.")
+    (license license:gpl3)))
+
 (define-public r-lterpalettefinder
   (package
     (name "r-lterpalettefinder")

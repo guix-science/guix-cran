@@ -14531,13 +14531,13 @@ solve other tasks in text mining as well.")
 (define-public r-aiuq
   (package
     (name "r-aiuq")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIUQ" version))
        (sha256
-        (base32 "12nb5zgq62qx5am0q26xjr6hfpjzqh0s1sd02alxkd4c6dmbsjsq"))))
+        (base32 "00l6cqwnnxlvccx2fzy4nbww51m2jal90xm6071p5fy5d67h96ld"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-supergauss r-plot3d r-fftwtools))
@@ -14930,13 +14930,13 @@ included.  Use help(@code{airGR}) for package description and references.")
 (define-public r-aire-zmvm
   (package
     (name "r-aire-zmvm")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aire.zmvm" version))
        (sha256
-        (base32 "0z9knqdl7ihx2vph154qi1lh4s6yvlcw6kwry8k47mhh3p7pynsd"))))
+        (base32 "1jb86dkqj8vbbg7iq4852bjdlc4i9mn0x6rc7lhl81nf6rfi9wql"))))
     (properties `((upstream-name . "aire.zmvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

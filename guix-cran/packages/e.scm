@@ -15432,13 +15432,13 @@ semi-variogram fitting process.")
 (define-public r-eglhmm
   (package
     (name "r-eglhmm")
-    (version "0.1-1")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eglhmm" version))
        (sha256
-        (base32 "1dwz36aq095pbhh9iklv4iizwg27pri3zh7klmnh3rxqkl9xng3h"))))
+        (base32 "09d04wl90wgys5qx2zwy2q4jliaxzswl7avix202x1r09agzw61c"))))
     (properties `((upstream-name . "eglhmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet r-dbd))

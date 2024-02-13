@@ -15210,13 +15210,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "0nmkrb7hhldn35jmh12pikba9xjpz0afjh0irqdgck9z495pyhbp"))))
+        (base32 "0s4lb934il8h49gnjicw5iq00x7x62shiyl1rbxs0b6fc4qn2hip"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -15227,6 +15227,7 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
                              r-rcurl
                              r-purrr
                              r-magrittr
+                             r-jsonlite
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -30732,13 +30733,13 @@ tests and the F-test.")
 (define-public r-pcalg
   (package
     (name "r-pcalg")
-    (version "2.7-10")
+    (version "2.7-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcalg" version))
        (sha256
-        (base32 "1lqw0n9fiad8ixmllfv7xda94zz4168qpljhcwx0z3mnqf2jbhwf"))))
+        (base32 "14709561m2vz3y0qx1jwnxq0z464j9ddmvr8p765aclm97n87rvm"))))
     (properties `((upstream-name . "pcalg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -31427,21 +31428,21 @@ timescales\" <doi:10.7554/@code{eLife.57258>}.")
 (define-public r-pawacc
   (package
     (name "r-pawacc")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pawacc" version))
        (sha256
-        (base32 "0d5k0bq8zmb7sjvba3ljp97mba2iycnw44rnsnn2aajs02l1c2xg"))))
+        (base32 "150bvmnv5myq856x19kg1ca9favcsh1cid70y8hv3wd9f25w9r8c"))))
     (properties `((upstream-name . "pawacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem))
-    (home-page "https://CRAN.R-project.org/package=pawacc")
+    (home-page "https://cran.r-project.org/package=pawacc")
     (synopsis "Physical Activity with Accelerometers")
     (description
-     "This is a collection of functions to process, format and store accelerometer
-data.")
+     "This package provides functions to process, format and store @code{ActiGraph}
+GT1M and GT3X accelerometer data.")
     (license license:gpl2+)))
 
 (define-public r-pavo

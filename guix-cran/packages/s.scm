@@ -11114,28 +11114,6 @@ estimator, originally introduced by Judge and Mittelhammer (2004)
 <DOI:10.1198/016214504000000430>.")
     (license license:gpl2+)))
 
-(define-public r-steinernet
-  (package
-    (name "r-steinernet")
-    (version "3.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SteinerNet" version))
-       (sha256
-        (base32 "03wr746dkwp8vg91y986q0xvgz1y9b5q25g0kig2sx6m75li3yif"))))
-    (properties `((upstream-name . "SteinerNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/krashkov/SteinerNet")
-    (synopsis "Steiner Tree Approach for Graph Analysis")
-    (description
-     "This package provides a set of functions for finding and analysing Steiner
-trees.  It has applications in biological pathway network analysis.  Sadeghi
-(2013) <doi:10.1186/1471-2105-14-144>.")
-    (license license:gpl3)))
-
 (define-public r-steepness
   (package
     (name "r-steepness")
@@ -12725,13 +12703,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startupmsg
   (package
     (name "r-startupmsg")
-    (version "0.9.6")
+    (version "0.9.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startupmsg" version))
        (sha256
-        (base32 "0vkqxir4ady4dn9s70dfg1fxck2xg8vnmrmxjzvk01i6pc9zyq0x"))))
+        (base32 "10aqls30yqi2mzy1ph8s67rji4kww95cs94ba4hz9wg9bzm4w6s3"))))
     (properties `((upstream-name . "startupmsg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=startupmsg")
@@ -17458,13 +17436,13 @@ to simulate spreading activation in a network.  Behavior Research Methods, 51,
 (define-public r-spray
   (package
     (name "r-spray")
-    (version "1.0-24")
+    (version "1.0-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spray" version))
        (sha256
-        (base32 "0c0kbaf8d9rf87s7aps89vwzq88f8i6cy3lwz7yi9vacp01nykkk"))))
+        (base32 "1mdnabkrj10r4bqll0qd2h7nqpmalbwfs8kzry1wxxy0j1886fv3"))))
     (properties `((upstream-name . "spray")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-partitions r-mathjaxr r-magic r-disordr))
@@ -29524,13 +29502,13 @@ in super-resolution plant micro-tubule image segmentation.")
 (define-public r-smle
   (package
     (name "r-smle")
-    (version "2.1-0")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMLE" version))
        (sha256
-        (base32 "0rvbdknsb2ndzpp55kd8a9ya09zrgxdhxwlfnf3vk62y4x8ipb0q"))))
+        (base32 "1kfbvdimxrm8s5sizhb5r3mw2aiib75yxrcpz4drdaw5bd5mv8lf"))))
     (properties `((upstream-name . "SMLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvnfast r-matrixcalc r-glmnet))

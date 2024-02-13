@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages llvm)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -20171,20 +20170,28 @@ M.-L. (2019) <@code{arXiv:1905.13695>}).")
 (define-public r-rkeops
   (package
     (name "r-rkeops")
-    (version "1.4.2.2")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rkeops" version))
        (sha256
-        (base32 "1b2sdbhx1ar1325mf1xgc561as9x8q8vjqslly9xms2h572c8yn3"))))
+        (base32 "1iz8dpy9yjbh7ldwxb7hvz83rrw685v4rnxif4jyw3ixinm59w1f"))))
     (properties `((upstream-name . "rkeops")))
     (build-system r-build-system)
-    (inputs (list cmake clang))
-    (propagated-inputs (list r-stringr r-rhpcblasctl r-rcppeigen r-rcpp
-                             r-openssl))
+    (inputs (list python))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rhpcblasctl
+                             r-reticulate
+                             r-rdpack
+                             r-lifecycle
+                             r-future
+                             r-data-table
+                             r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://www.kernel-operations.io/")
+    (home-page "https://www.kernel-operations.io/rkeops/")
     (synopsis
      "Kernel Operations on GPU or CPU, with Autodiff, without Memory Overflows")
     (description
@@ -25433,17 +25440,17 @@ Discovery Data Mining, pp.  2210-2218.  ACM, 2018.
 (define-public r-rfold
   (package
     (name "r-rfold")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfold" version))
        (sha256
-        (base32 "037vpnqvxfnfpiskyv43v7iv2k6w5aaas3kmajsjrs0axjv711fm"))))
+        (base32 "1p83sj362ggwip6hvpbqahhlrh60fb42jqniybwv5f4x86vgrzd1"))))
     (properties `((upstream-name . "rfold")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis r-here r-fs r-cli))
-    (home-page "https://cran.r-project.org/package=rfold")
+    (propagated-inputs (list r-usethis r-here r-glue r-fs r-cli))
+    (home-page "https://github.com/feddelegrand7/rfold")
     (synopsis "Working with many R Folders Within an R Package")
     (description
      "Allows developers to work with many R folders inside a package.  It offers

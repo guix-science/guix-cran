@@ -1627,20 +1627,16 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 (define-public r-btllasso
   (package
     (name "r-btllasso")
-    (version "0.1-12")
+    (version "0.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTLLasso" version))
        (sha256
-        (base32 "1cfxdp5j1ickrayfymfzlhjpimpr2c2ndsi2i6173wjrbxdarrqx"))))
+        (base32 "19r45qm1iq3sjb6r5ficgv8q9zwpbilxwrf6rxvqdl333xcnnjy4"))))
     (properties `((upstream-name . "BTLLasso")))
     (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-psychotools
+    (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-psychotools
                              r-matrix))
     (home-page "https://cran.r-project.org/package=BTLLasso")
     (synopsis "Modelling Heterogeneity in Paired Comparison Data")
@@ -9915,13 +9911,13 @@ support by NSF DMS-1925119 and DMS-212324.")
 (define-public r-bizdays
   (package
     (name "r-bizdays")
-    (version "1.0.15")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bizdays" version))
        (sha256
-        (base32 "104ygyi3yx7l03wq0v9rvlw6s0j8ipqq10lf7psxyy1fjp5ifxl1"))))
+        (base32 "0drdmry39k6rxyy4x7d667znsv8r8ias66z0bvxkfk5vamsv744i"))))
     (properties `((upstream-name . "bizdays")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))
@@ -24692,38 +24688,6 @@ estimates using Bayesian Additive Regression Trees (BART) as the underlying
 regression model (Hill (2012) <doi:10.1198/jcgs.2010.08162>).")
     (license license:gpl2+)))
 
-(define-public r-bartbma
-  (package
-    (name "r-bartbma")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bartBMA" version))
-       (sha256
-        (base32 "15syk5a3lgzfyp17wk8mk14317yxsr47br26kyah5jg3dq4cyqdg"))))
-    (properties `((upstream-name . "bartBMA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-mvnfast r-bh))
-    (home-page "https://cran.r-project.org/package=bartBMA")
-    (synopsis
-     "Bayesian Additive Regression Trees using Bayesian Model Averaging")
-    (description
-     "\"BART-BMA Bayesian Additive Regression Trees using Bayesian Model Averaging\"
-(Hernandez B, Raftery A.E., Parnell A.C. (2018) <doi:10.1007/s11222-017-9767-1>)
-is an extension to the original BART sum-of-trees model (Chipman et al 2010).
-BART-BMA differs to the original BART model in two main aspects in order to
-implement a greedy model which will be computationally feasible for high
-dimensional data.  Firstly BART-BMA uses a greedy search for the best split
-points and variables when growing decision trees within each sum-of-trees model.
- This means trees are only grown based on the most predictive set of split
-rules.  Also rather than using Markov chain Monte Carlo (MCMC), BART-BMA uses a
-greedy implementation of Bayesian Model Averaging called Occam's Window which
-take a weighted average over multiple sum-of-trees models to form its overall
-prediction.  This means that only the set of sum-of-trees for which there is
-high support from the data are saved to memory and used in the final model.")
-    (license license:gpl2+)))
-
 (define-public r-bart
   (package
     (name "r-bart")
@@ -25936,13 +25900,13 @@ can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
 (define-public r-baggr
   (package
     (name "r-baggr")
-    (version "0.7.6")
+    (version "0.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baggr" version))
        (sha256
-        (base32 "1mc6awkfjbkv8wqx0y6h1wn7l8wj6gxrkpzgwyslyy8rfi9n1hxy"))))
+        (base32 "18faz6b8llzxsrm60bnsanplc8d7knb8cmcz34nyai7i7022061k"))))
     (properties `((upstream-name . "baggr")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -25953,6 +25917,8 @@ can be found in Zhang, Ding and Yang (2021) <@code{arXiv:1911.03063v2>}.")
                              r-rcppeigen
                              r-rcpp
                              r-gridextra
+                             r-ggrepel
+                             r-ggplotify
                              r-ggplot2
                              r-forestplot
                              r-crayon

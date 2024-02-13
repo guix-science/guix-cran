@@ -8291,21 +8291,20 @@ the resampling processes.")
 (define-public r-olsrr
   (package
     (name "r-olsrr")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "olsrr" version))
        (sha256
-        (base32 "0rh1jb0z0ypspzcp4vbpzjz960yj76myk2j4zb1vi9gnnj3clw8y"))))
+        (base32 "1jnp7dirjgg49v958fwcmcz1nalkgmr15kr4pqbxylmi45bqkqr6"))))
     (properties `((upstream-name . "olsrr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp
+    (propagated-inputs (list r-xplorerr
                              r-nortest
                              r-gridextra
                              r-goftest
                              r-ggplot2
-                             r-data-table
                              r-car))
     (native-inputs (list r-knitr))
     (home-page "https://olsrr.rsquaredacademy.com/")
@@ -9579,25 +9578,6 @@ able to define different external triggers to manipulate the trajectory.  The
 method is described by Surmann, Ligges, and Weihs (2014)
 <doi:10.1109/ENERGYCON.2014.6850482>.")
     (license license:lgpl3)))
-
-(define-public r-odeintr
-  (package
-    (name "r-odeintr")
-    (version "1.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "odeintr" version))
-       (sha256
-        (base32 "0wfb5lgv10p0qyfbn9hdg14bda37v43lpgbwv6nbw63zzbsbazqi"))))
-    (properties `((upstream-name . "odeintr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/thk686/odeintr")
-    (synopsis "C++ ODE Solvers Compiled on-Demand")
-    (description
-     "Wraps the Boost odeint library for integration of differential equations.")
-    (license license:gpl2+)))
 
 (define-public r-odeguts
   (package

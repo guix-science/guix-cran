@@ -676,16 +676,16 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "0cs11xqnayvpqhy4srdmj9hl8rwz8360cbzb48mkcjrx8ah6njaw"))))
+        (base32 "0dwwxywvixr1808f8mixbkjjk8a60rn2zjlwv50jimjjsv777589"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-ecp r-dplyr))
+    (propagated-inputs (list r-tidyr r-reshape2 r-ggplot2 r-ecp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FuzzyPovertyR")
     (synopsis "Estimation of Fuzzy Poverty Measures")
@@ -18493,28 +18493,6 @@ algorithm is described in Duembgen, Nordhausen and Schuhmacher (2016)
 <doi:10.1016/j.jmva.2015.11.009>.")
     (license license:gpl2+)))
 
-(define-public r-fastlogranktest
-  (package
-    (name "r-fastlogranktest")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastlogranktest" version))
-       (sha256
-        (base32 "1j5mgvi3nwnlarj31cknx2cikypql370qds2h0877vmm80942z25"))))
-    (properties `((upstream-name . "fastlogranktest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/compsysmed/fastlogranktest.git")
-    (synopsis
-     "Fast Way to Calculate the p-Value of One or Multiple Log-Rank-Tests")
-    (description
-     "This package provides a very fast Log-Rank-Test implementation that is several
-orders of magnitude faster than the implementation in the survival package.
-Log-Rank-Tests can be computed individually or concurrently using threading.")
-    (license license:gpl3)))
-
 (define-public r-fastlogitme
   (package
     (name "r-fastlogitme")
@@ -21121,13 +21099,13 @@ variables such as age, years, states, countries, or education levels.")
 (define-public r-factor-switching
   (package
     (name "r-factor-switching")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "factor.switching" version))
        (sha256
-        (base32 "1hd2m9yyk9vbpknm7gyhgr6ywv84a1q5w46cspxp92nal784b5x3"))))
+        (base32 "1w1diks1ar4nncfz8in7h9vdndsadnanqamxahsbx3d2fjga5vh2"))))
     (properties `((upstream-name . "factor.switching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack r-lpsolve r-hdinterval r-coda))
@@ -21596,13 +21574,13 @@ munging, assessment and visualization of data frame-like material.")
 (define-public r-fabmix
   (package
     (name "r-fabmix")
-    (version "5.0")
+    (version "5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabMix" version))
        (sha256
-        (base32 "1gii3mdii9nw423xxn9mhv1pjbw967wdarn828w04zm9dkdcwm48"))))
+        (base32 "12d19qjjrdpihprqjd5x2iirn33rmfkl6i9zcyani7vv6b8cpaxp"))))
     (properties `((upstream-name . "fabMix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -21639,7 +21617,7 @@ parameterization and number of factors is selected according to the Bayesian
 Information Criterion.  Identifiability issues related to label switching are
 dealt by post-processing the simulated output with the Equivalence Classes
 Representatives algorithm (Papastamoulis and Iliopoulos (2010)
-<https://www.jstor.org/stable/25703571>, Papastamoulis (2016)
+<DOI:10.1198/jcgs.2010.09008>, Papastamoulis (2016)
 <DOI:10.18637/jss.v069.c01>).")
     (license license:gpl2)))
 

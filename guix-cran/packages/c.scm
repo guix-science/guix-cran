@@ -2711,13 +2711,13 @@ housekeeping genes is implemented in this package.")
 (define-public r-ctqr
   (package
     (name "r-ctqr")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctqr" version))
        (sha256
-        (base32 "0srrlgqxpp4a46wqr83zpb3xr49pf70b0n8bv9qp8ffak20d2hpj"))))
+        (base32 "050v5am4cmr6y35ygppabs32hlzpngfqy1wdpqwc76kc3m097mlr"))))
     (properties `((upstream-name . "ctqr")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pch))
@@ -4681,13 +4681,13 @@ team members, managers, and clients who prefer a point-and-click interface.")
 (define-public r-crtspat
   (package
     (name "r-crtspat")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRTspat" version))
        (sha256
-        (base32 "0a2pwnfja66gvb10mb84z69xxwcpsm6i0yghs3gn6biywwp4jg5n"))))
+        (base32 "1qhb4kzdq588hvd05dz9np4zhdbbp77d6ihjkkn1x1niz61n5bmp"))))
     (properties `((upstream-name . "CRTspat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp
@@ -4709,8 +4709,8 @@ team members, managers, and clients who prefer a point-and-click interface.")
     (synopsis "Workflow for Cluster Randomised Trials with Spillover")
     (description
      "Design, workflow and statistical analysis of Cluster Randomised Trials of
-(health) interventions where there may be geographical contamination between the
-arms (see <https://thomasasmith.github.io/index.html>).")
+(health) interventions where there may be spillover between the arms (see
+<https://thomasasmith.github.io/index.html>).")
     (license license:expat)))
 
 (define-public r-crtsize
@@ -29090,13 +29090,13 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "1fnqhq47gr3qgdw484zg1s1lmbb2hsmi36fhrxglmbfvp04py4f0"))))
+        (base32 "0x888796760gglxqzd0i5mqim3j878dkyip64m26irprl9ksyxm3"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (propagated-inputs (list r-websocket
@@ -31309,13 +31309,13 @@ automates this task.")
 (define-public r-changepointtests
   (package
     (name "r-changepointtests")
-    (version "0.1.1")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointTests" version))
        (sha256
-        (base32 "0sbs9sl4p4l3h9ih007p166slayfj66ppqw01xxkxcdqciqw0ra0"))))
+        (base32 "1s6vi879h96qds2khfcv4n2rh5vp09m074mr5knlhhm0lhxf111g"))))
     (properties `((upstream-name . "changepointTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -31894,13 +31894,13 @@ in conditional generalized linear models for clustered data.")
 (define-public r-cglasso
   (package
     (name "r-cglasso")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cglasso" version))
        (sha256
-        (base32 "1pfrrm7pkg31c0y7rnxy3h1brqksbqif8xkd2qx2kjnz5vh279ai"))))
+        (base32 "18j50f6ghk7vjr3xfw8j1nh42l6rm8kd5c6jcvll2rjbvq5vn571"))))
     (properties `((upstream-name . "cglasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-igraph))
@@ -36354,13 +36354,13 @@ randomization, which is described in Charpignon et al. (2022)
 (define-public r-causalbatch
   (package
     (name "r-causalbatch")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalBatch" version))
        (sha256
-        (base32 "024mhfakv7j98xn4nkzm7xvdn76bi5ymknr5v60g3n70i2id98xk"))))
+        (base32 "1724gq4f4jjwbaksma5085anrf3170rpzhling6q30vl7da4zg6n"))))
     (properties `((upstream-name . "causalBatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva
@@ -36373,12 +36373,14 @@ randomization, which is described in Charpignon et al. (2022)
     (home-page "https://github.com/neurodata/causal_batch")
     (synopsis "Causal Batch Effects")
     (description
-     "Software for using causal techniques to detect and correct for group/batch
-effects in high-dimensional scientific data sets, as-described in our
+     "Software which provides numerous functionalities for detecting and removing
+group-level effects from high-dimensional scientific data which, when combined
+with additional assumptions, allow for causal conclusions, as-described in our
 manuscripts Bridgeford et al. (2024) <doi:10.1101/2021.09.03.458920> and
 Bridgeford et al. (2023) <@code{arXiv:2307.13868>}.  Also provides a number of
 useful utilities for generating simulations and balancing covariates across
-multiple groups/batches of data.")
+multiple groups/batches of data via matching and propensity trimming for more
+than two groups.")
     (license license:expat)))
 
 (define-public r-causal-decomp

@@ -9255,13 +9255,13 @@ systems.")
 (define-public r-divest
   (package
     (name "r-divest")
-    (version "0.10.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "divest" version))
        (sha256
-        (base32 "1blg70i3v7269jlgrzdqdvi3f64ly8zhzmsl2fl3jzf3nigxbkhp"))))
+        (base32 "1qm2m4dxh1rlxbr9y1vpyhngxyawi2ll72s5ayiaik6rgr5jd2cp"))))
     (properties `((upstream-name . "divest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcpp))
@@ -26279,13 +26279,13 @@ al. (2015) <doi:10.1111/ele.12461>.")
 (define-public r-dair
   (package
     (name "r-dair")
-    (version "0.9.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daiR" version))
        (sha256
-        (base32 "19rl58ns28wc3bwv8fs68zdcl59css9rwrfpfdjw4vay4dczfb6h"))))
+        (base32 "110car64pgpg71dcqnbkj91md0xwikpmd6iy90nj84nglycc5v00"))))
     (properties `((upstream-name . "daiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -26294,6 +26294,7 @@ al. (2015) <doi:10.1111/ele.12461>.")
                              r-purrr
                              r-pdftools
                              r-magick
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-googlecloudstorager
@@ -26301,6 +26302,7 @@ al. (2015) <doi:10.1111/ele.12461>.")
                              r-gargle
                              r-fs
                              r-data-table
+                             r-cli
                              r-beepr
                              r-base64enc))
     (native-inputs (list r-knitr))
@@ -26310,8 +26312,8 @@ al. (2015) <doi:10.1111/ele.12461>.")
      "R interface for the Google Cloud Services Document AI API
 <https://cloud.google.com/document-ai/> with additional tools for output file
 parsing and text reconstruction.  Document AI is a powerful server-based OCR
-processor that extracts text and tables from images and PDF files with high
-accuracy. @code{daiR} gives R users programmatic access to this processor and
+service that extracts text and tables from images and PDF files with high
+accuracy. @code{daiR} gives R users programmatic access to this service and
 additional tools to handle and visualize the output.  See the package website
 <https://dair.info/> for more information and examples.")
     (license license:expat)))

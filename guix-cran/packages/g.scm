@@ -9051,35 +9051,6 @@ applications.  The animations are activated using the Animate.css library.  See
 similarity between samples visually in a low (2 or 3) dimensional space.")
     (license license:gpl2+)))
 
-(define-public r-goldilocks
-  (package
-    (name "r-goldilocks")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "goldilocks" version))
-       (sha256
-        (base32 "1h16kfalyklc7i3rix1ml83wjcbi9wv3z3rwxa83gp2h6nfpzpwl"))))
-    (properties `((upstream-name . "goldilocks")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-rlang
-                             r-pweall
-                             r-pbmcapply
-                             r-fastlogranktest
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=goldilocks")
-    (synopsis "Goldilocks Adaptive Trial Designs for Time-to-Event Endpoints")
-    (description
-     "This package implements the Goldilocks adaptive trial design for a time to event
-outcome using a piecewise exponential model and conjugate Gamma prior
-distributions.  The method closely follows the article by Broglio and colleagues
-<doi:10.1080/10543406.2014.888569>, which allows users to explore the operating
-characteristics of different trial designs.")
-    (license license:gpl3)))
-
 (define-public r-goldfish
   (package
     (name "r-goldfish")
@@ -20802,13 +20773,13 @@ formats are provided.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-17")
+    (version "0.3-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "0ih327r306fsvfba150v0c0rw1xmlpjz5hvglv4y731hi3gmr2ap"))))
+        (base32 "1dmm2yyigh1jb88gqw7b19scav6pld4fa4l22wj110yhpvygph85"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

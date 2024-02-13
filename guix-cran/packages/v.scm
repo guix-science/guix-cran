@@ -2079,40 +2079,6 @@ for longitudinal data visuals analysis (see
 for more information).")
     (license license:expat)))
 
-(define-public r-vlad
-  (package
-    (name "r-vlad")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vlad" version))
-       (sha256
-        (base32 "0c3zfjm5nj7iisfnl822sk8wdszv6hcsaf51sn7aqnlp579hq2jk"))))
-    (properties `((upstream-name . "vlad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-magrittr
-                             r-dplyr
-                             r-checkmate
-                             r-bh))
-    (home-page "https://github.com/wittenberg/vlad")
-    (synopsis
-     "Variable Life Adjusted Display and Other Risk-Adjusted Quality Control Charts")
-    (description
-     "This package contains functions to set up risk-adjusted quality control charts
-in health care.  For the variable life adjusted display (VLAD) proposed by
-Lovegrove et al. (1997) <doi:10.1016/S0140-6736(97)06507-0> signaling rules
-derived in Wittenberg et al. (2018) <doi:10.1002/sim.7647> are implemented.
-Additionally, for the risk-adjusted cumulative sum chart based on log-likelihood
-ratio statistic introduced by Steiner et al. (2000)
-<doi:10.1093/biostatistics/1.4.441> average run length and control limits can be
-computed with fast and accurate Markov chain approximations developed in Knoth
-et al. (2019) <doi:10.1002/sim.8104>.")
-    (license license:gpl2+)))
-
 (define-public r-vkr
   (package
     (name "r-vkr")
@@ -4722,32 +4688,6 @@ with them, like: - Arithmetic and logic operators - Modular-arithmetic operators
 Factorization algorithms - Random generators of diferent types of integers.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-vertexsort
-  (package
-    (name "r-vertexsort")
-    (version "0.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VertexSort" version))
-       (sha256
-        (base32 "0n9m5l85ylin6756rsksak94nv0626qd7czhhj6plz4nfrr27sgl"))))
-    (properties `((upstream-name . "VertexSort")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-snowfall r-igraph))
-    (home-page "https://cran.r-project.org/package=VertexSort")
-    (synopsis "Network Hierarchical Structure and Randomization")
-    (description
-     "Permits to apply the Vertex Sort algorithm (Jothi et al. (2009)
-<10.1038/msb.2009.52>) to a graph in order to elucidate its hierarchical
-structure.  It also allows graphic visualization of the sorted graph by
-exporting the results to a cytoscape friendly format.  Moreover, it offers five
-different algorithms of graph randomization: 1) Randomize a graph with
-preserving node degrees, 2) with preserving similar node degrees, 3) without
-preserving node degrees, 4) with preserving node in-degrees and 5) with
-preserving node out-degrees.")
-    (license license:gpl2+)))
-
 (define-public r-vertexsimilarity
   (package
     (name "r-vertexsimilarity")
@@ -6005,13 +5945,13 @@ description of the features.")
 (define-public r-vc2copula
   (package
     (name "r-vc2copula")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VC2copula" version))
        (sha256
-        (base32 "1r2y2j16dcx63aapp0hcbzx6l1ampna3disf6bfva41v2nfxnpg6"))))
+        (base32 "1ipzjmxlc4mj1afprrx6z5hvs2w0bbibm84mb34fa6av7pi9v5lm"))))
     (properties `((upstream-name . "VC2copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula r-copula))

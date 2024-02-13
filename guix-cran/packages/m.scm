@@ -3596,13 +3596,13 @@ delineamento estatistico (Hair JF, 2016) <ISBN: 13: 978-0138132637>.")
 (define-public r-multiplencc
   (package
     (name "r-multiplencc")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multipleNCC" version))
        (sha256
-        (base32 "1fzg4cc2zmysq8a3jnqspw3w2v8b7h7s884razqva4yn8rlhl36m"))))
+        (base32 "0vgldg31mb57l5lig9l4clv060fiwx842adv1qbdirfrpyrg295i"))))
     (properties `((upstream-name . "multipleNCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mgcv))
@@ -6468,13 +6468,13 @@ showcasing their reliable performance in finite-sample cases.")
 (define-public r-mt
   (package
     (name "r-mt")
-    (version "2.0-1.19")
+    (version "2.0-1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mt" version))
        (sha256
-        (base32 "184lksilj5q1bhlwsh850gm2qzjcpyaa4gj20r5m1smmhdcdwd1d"))))
+        (base32 "12r7hs83ijn7vw1qqgfrmd5ff7x6p3hxmaxnr3bjr5h2gd6sj42l"))))
     (properties `((upstream-name . "mt")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest
@@ -9276,13 +9276,13 @@ simultaneously.  See Xu S., Wang P., Fung W.K. and Liu Z. (2022)
 (define-public r-mqrcm
   (package
     (name "r-mqrcm")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mqrcm" version))
        (sha256
-        (base32 "1alfv76b90frimihjcq8whzqkwvhnnw2fd92nrfpnfj5dw0b56f5"))))
+        (base32 "14fdwjqvw9kq4ghgj7wzis5ipvnlbh1z2m14vrjrzjkz7q9pkwgw"))))
     (properties `((upstream-name . "Mqrcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-pch r-hmisc))
@@ -10336,13 +10336,13 @@ process, etc. <doi:10.1111/2041-210X.12578>.")
 (define-public r-movecost
   (package
     (name "r-movecost")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movecost" version))
        (sha256
-        (base32 "0ii2n6xy646h45wf8cv83qbryjipz4mx2gkx57zx8b944as9hkd8"))))
+        (base32 "1rq0q8myszcssdxn77lrf7z6yisc5318k32qxaj98rpggr7pfs93"))))
     (properties `((upstream-name . "movecost")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -11534,6 +11534,35 @@ more information about Moodle, visit <https://moodle.org>.")
 examples and a shiny app.")
     (license license:gpl2+)))
 
+(define-public r-moodef
+  (package
+    (name "r-moodef")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moodef" version))
+       (sha256
+        (base32 "0x8ldyk4251nkclg61f3hyd5l067h9gyslv8fp3vpws61a9qbm6z"))))
+    (properties `((upstream-name . "moodef")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-snakecase
+                             r-readr
+                             r-purrr
+                             r-magick
+                             r-glue
+                             r-blastula))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/moodef/")
+    (synopsis "Defining 'Moodle' Elements from R")
+    (description
+     "The main objective of this package is to support the definition of Moodle
+elements taking advantage of the power that R offers.  In this first version, it
+allows the definition of questions to be included in the question bank.")
+    (license license:expat)))
+
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
@@ -12467,55 +12496,6 @@ method.")
 model selection and information criteria (BIC, EBIC, AIC, GIC).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-molnet
-  (package
-    (name "r-molnet")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "molnet" version))
-       (sha256
-        (base32 "1ha1jyh3mmbv2zgr2zrrjmslwd1gyy04hvqjk4d3ap2kna35wlgk"))))
-    (properties `((upstream-name . "molnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wgcna
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rfast
-                             r-readr
-                             r-magrittr
-                             r-igraph
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=molnet")
-    (synopsis
-     "Predicting Differential Drug Response using Multi-Omics Networks")
-    (description
-     "Networks provide a means to incorporate molecular interactions into reasoning,
-but on the omics-level, they are currently mainly used to combine genomic and
-proteomic information.  We here present a novel network analysis pipeline that
-enables integrative analysis of multi-omics data including metabolomics.  It
-allows for comparative conclusions between two different conditions, such as
-tumor subgroups, healthy vs. disease, or generally control vs. perturbed.  Our
-approach focuses on interactions and their strength instead of on node
-properties and includes molecules with low abundance and unknown function.  We
-use correlation-induced networks that are reduced and combined to form
-heterogeneous, multi-omics molecular networks.  Prior information such as
-metabolite-protein interactions are incorporated.  A semi-local, path-based
-integration step denoises the network and ensures integrative conclusions.  As
-case studies, we investigate differential drug response in breast cancer tumor
-datasets providing proteomics, transcriptomics, phospho-proteomics and
-metabolomics data and contrasting patients with different estrogen receptor
-status.  Our proposed pipeline leverages multi-omics data for differential
-predictions, e.g. on drug response, and includes prior information on
-interactions.  The case study presented in the vignette uses data published by
-Krug (2020) <doi:10.1016/j.cell.2020.10.036>.  The package license applies only
-to the software and explicitly not to the included data.")
-    (license license:expat)))
 
 (define-public r-molhd
   (package
@@ -27978,34 +27958,6 @@ methods).  A vignette is provided to explain how to perform a meta-analysis from
 two independent RNA-seq experiments.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-metarmst
-  (package
-    (name "r-metarmst")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metaRMST" version))
-       (sha256
-        (base32 "1mq9j7iczjh7d3cps9g1bh0f8k388bdn8d5lkjs2s8y9fq1kxzmx"))))
-    (properties `((upstream-name . "metaRMST")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survrm2 r-survival r-rstpm2 r-mvmeta r-meta))
-    (home-page "https://github.com/iweir/metaRMST")
-    (synopsis "Meta-Analysis of RMSTD")
-    (description
-     "R implementation of a multivariate meta-analysis of randomized controlled trials
-(RCT) with the difference in restricted mean survival times (RMSTD).  Use this
-package with individual patient level data from an RCT for a time-to-event
-outcome to determine combined effect estimates according to 4 methods: 1) a
-univariate meta-analysis using observed treatment effects, 2) a univariate
-meta-analysis using effects predicted by fitted Royston-Parmar flexible
-parametric models, 3) multivariate meta-analysis with analytically derived
-covariance, 4) multivariate meta-analysis with bootstrap derived covariance.
-This package computes all combined effects and provides an RMSTD curve with
-combined effect estimates and their confidence intervals.")
-    (license license:gpl2)))
-
 (define-public r-metarep
   (package
     (name "r-metarep")
@@ -36410,13 +36362,13 @@ data frame and expand a data frame of matrices into a tidy data frame.")
 (define-public r-matsbyname
   (package
     (name "r-matsbyname")
-    (version "0.6.9")
+    (version "0.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matsbyname" version))
        (sha256
-        (base32 "03vj7ank154n7lx4na0yf03ybim119bv0xsgm3yr11qwvy8z0r9k"))))
+        (base32 "1444a6gl24ra64p5zldia0kyn4hq01g5r49rc2mv0zq0gygxv67d"))))
     (properties `((upstream-name . "matsbyname")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

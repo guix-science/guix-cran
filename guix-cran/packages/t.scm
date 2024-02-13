@@ -2874,13 +2874,13 @@ can also be computed straightforwardly.")
 (define-public r-tsoutliers
   (package
     (name "r-tsoutliers")
-    (version "0.6-8")
+    (version "0.6-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsoutliers" version))
        (sha256
-        (base32 "02qd7ky416yp2l4cfl2yl7ckr2aidkps9cxkk03r9r7c5247c6zh"))))
+        (base32 "0q05bv2y1zrjbzrwrnqs09fi0879lwasjmsy38h6f7l6v2y317hf"))))
     (properties `((upstream-name . "tsoutliers")))
     (build-system r-build-system)
     (propagated-inputs (list r-forecast))
@@ -12448,13 +12448,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1z4pri6zivz1d90chgxqxj2y1p0kai5512g7fp43074cyg0qdizr"))))
+        (base32 "0n6dcg68m8w702ff27c2vd1xisp50a6hvm69d09kqz2gmghzxakp"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")

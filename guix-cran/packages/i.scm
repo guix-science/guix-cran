@@ -9052,6 +9052,47 @@ package is based on methods described in Sasieni (2003) <doi:
 network from single-cell sequencing data.")
     (license license:expat)))
 
+(define-public r-inext-3d
+  (package
+    (name "r-inext-3d")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNEXT.3D" version))
+       (sha256
+        (base32 "18yy33ss76ljdr53zczf82rq9i5dz3y1dmhry6a226cgrq5ccjm8"))))
+    (properties `((upstream-name . "iNEXT.3D")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytree
+                             r-tibble
+                             r-reshape2
+                             r-rcpp
+                             r-phyclust
+                             r-ggplot2
+                             r-dplyr
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://sites.google.com/view/chao-lab-website/software/inext-3d")
+    (synopsis
+     "Interpolation and Extrapolation for Three Dimensions of Biodiversity")
+    (description
+     "Biodiversity is a multifaceted concept covering different levels of organization
+from genes to ecosystems. @code{iNEXT.3D} extends @code{iNEXT} to include three
+dimensions (3D) of biodiversity, i.e., taxonomic diversity (TD), phylogenetic
+diversity (PD) and functional diversity (FD).  This package provides functions
+to compute standardized 3D diversity estimates with a common sample size or
+sample coverage.  A unified framework based on Hill numbers and their
+generalizations (Hill-Chao numbers) are used to quantify 3D. All 3D estimates
+are in the same units of species/lineage equivalents and can be meaningfully
+compared.  The package features size- and coverage-based rarefaction and
+extrapolation sampling curves to facilitate rigorous comparison of 3D diversity
+across individual assemblages.  Asymptotic 3D diversity estimates are also
+provided.  See Chao et al. (2021) <doi:10.1111/2041-210X.13682> for more
+details.")
+    (license license:gpl3+)))
+
 (define-public r-inet
   (package
     (name "r-inet")
@@ -12543,28 +12584,6 @@ standard spherical harmonic representation of the Earth's main field.")
     (synopsis "Convert iGraph graps to SoNIA .son files")
     (description
      "This program facilitates exporting igraph graphs to the @code{SoNIA} file format")
-    (license license:gpl2+)))
-
-(define-public r-igraphmatch
-  (package
-    (name "r-igraphmatch")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iGraphMatch" version))
-       (sha256
-        (base32 "1fp3x8xikc1992jgba5d5snjzgsczp5iy87m9qinbv7f9a94sfnq"))))
-    (properties `((upstream-name . "iGraphMatch")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-matrix r-irlba r-igraph r-clue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dpmcsuss/iGraphMatch")
-    (synopsis "Tools for Graph Matching")
-    (description
-     "Versatile tools and data for graph matching analysis with various forms of prior
-information that supports working with igraph objects, matrix objects, or lists
-of either.")
     (license license:gpl2+)))
 
 (define-public r-igraphinshiny
