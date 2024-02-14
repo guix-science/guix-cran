@@ -17451,13 +17451,13 @@ majority cases using @code{NearMiss} 2003
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thematic" version))
        (sha256
-        (base32 "10p4fk6ljwcyy5xs2wffdx27pjmmgwasb5jj24c1chqsf5cwrhvf"))))
+        (base32 "1ims007m3h9qhfbav21hinqmkgs8kblslr22pvqp19ndlsibllki"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -19122,13 +19122,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "1dhq3i9q3frmjl6p7c29g7xvkbb7bpm3sv1hy9r7glymqjqgf718"))))
+        (base32 "17cy9napn2ffh91klv1chp61mxk6ddcdq82bcgfi17mapplfp2hk"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (inputs (list python))
@@ -21871,13 +21871,13 @@ various log destinations, vectorization, and more.")
 (define-public r-teal-data
   (package
     (name "r-teal-data")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.data" version))
        (sha256
-        (base32 "1qc45gkfv7vmlqg7jsn17liczxk14z3d6w00bx4as7cbaba42cdf"))))
+        (base32 "1ifp9pzd4a396f1kqgf79h31wfw9dhva16lwyq7im3dwqwrji3xi"))))
     (properties `((upstream-name . "teal.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-teal-code r-rlang r-lifecycle r-checkmate))

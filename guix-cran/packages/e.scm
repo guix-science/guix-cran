@@ -698,17 +698,17 @@ confidence bands for the extremograms.")
 (define-public r-extremevalues
   (package
     (name "r-extremevalues")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extremevalues" version))
        (sha256
-        (base32 "0ijha5zzmv3qr0czm4qxk28kg3ql5jh3nk9fr0flzl8d9n3z0jx6"))))
+        (base32 "0ka4j43b8h2h5289wdbwsvcrmrasnhwxv3s9zz3v1z40li9yvmm6"))))
     (properties `((upstream-name . "extremevalues")))
     (build-system r-build-system)
     (propagated-inputs (list r-gwidgets2tcltk r-gwidgets2))
-    (home-page "https://www.github.com/markvanderloo/extremevalues")
+    (home-page "https://github.com/markvanderloo/extremevalues")
     (synopsis "Univariate Outlier Detection")
     (description "Detect outliers in one-dimensional data.")
     (license license:gpl2)))
@@ -7933,13 +7933,13 @@ kindly provided by Dr. John Lieske of the Mayo Clinic.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "0daj3dnxh383kk86bxwgmnxg1pfx996080k59nyl5ryb8wcbqc85"))))
+        (base32 "150srrf8msr6jzyri6632xws0g2lnj34kvj7hqrvbiwkad1aqq7m"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-rcpparmadillo r-rcpp r-numderiv

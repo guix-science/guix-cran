@@ -1577,6 +1577,39 @@ evolution as described in Price, Kenneth V., Storn, Rainer M. and Lampinen,
 Jouni A. (2005) <doi:10.1007/3-540-31306-0>.")
     (license license:expat)))
 
+(define-public r-xegaderivationtrees
+  (package
+    (name "r-xegaderivationtrees")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaDerivationTrees" version))
+       (sha256
+        (base32 "0wkv14k73xf4sc86jj4zpbv99ic4q45bbyafmz4mrff85c33srlh"))))
+    (properties `((upstream-name . "xegaDerivationTrees")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegabnf))
+    (home-page "<https://github.com/ageyerschulz/xegaDerivationTrees>")
+    (synopsis "Generating and Manipulating Derivation Trees")
+    (description
+     "Derivation tree operations are needed for implementing grammar-based genetic
+programming and grammatical evolution: Generating of a random derivation trees
+of a context-free grammar of bounded depth, decoding a derivation tree, choosing
+a random node in a derivation tree, extracting a tree whose root is a specified
+node, and inserting a subtree into a derivation tree at a specified node.  These
+operations are necessary for the initializiation and for decoders of a random
+population of programs, as well as for implementing crossover and mutation
+operators.  Depth-bounds are guaranteed by switching to a grammar without
+recursive production rules.  For executing the examples, the package BNF is
+needed.  The basic tree operations of generating, extracting, and inserting of
+derivation trees as well as the conditions for guaranteeing complete derivation
+trees have been presented in Geyer-Schulz (1997, ISBN:978-3-7908-0830-X).  The
+use of random integer vectors for the generation of derivation trees has been
+introduced in Ryan, C., Collins, J. J., and O'Neill, M. (1998)
+<doi:10.1007/BFb0055930>.")
+    (license license:expat)))
+
 (define-public r-xegabnf
   (package
     (name "r-xegabnf")

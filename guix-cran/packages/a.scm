@@ -8279,13 +8279,13 @@ process, originally proposed by Kennedy and O'Hagan (2000), Biometrika 87(1):1."
 (define-public r-appriori
   (package
     (name "r-appriori")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "appRiori" version))
        (sha256
-        (base32 "18hvrn5zdcp7q64pcbg3jgssiyi4m4cy7bkm4al1f8m4p46j7qbq"))))
+        (base32 "1phy2v2dxk4gdzx1m2a3gghcwyb7iaj0csybpvpk3vl99difkfxd"))))
     (properties `((upstream-name . "appRiori")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -14151,27 +14151,35 @@ Dependence (PD) plots, given a fitted supervised learning model.")
 (define-public r-ale
   (package
     (name "r-ale")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ale" version))
        (sha256
-        (base32 "0h06vr023qv4s55yvn4ffgg4g3f6d8y4yv3391lpi6y5j1cnlfmi"))))
+        (base32 "1s3nym0zcp80yf7vw7m0mvii2d0y9hnxjxzfzl6ff5my5p84vy9i"))))
     (properties `((upstream-name . "ale")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaimpute
+                             r-univariateml
                              r-tidyr
                              r-stringr
+                             r-rlang
                              r-purrr
+                             r-progressr
                              r-labeling
+                             r-insight
+                             r-glue
+                             r-ggpubr
                              r-ggplot2
+                             r-future
+                             r-furrr
                              r-ellipsis
                              r-dplyr
                              r-broom
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Tripartio/ale")
+    (home-page "https://github.com/tripartio/ale")
     (synopsis
      "Interpretable Machine Learning and Statistical Inference with Accumulated Local Effects (ALE)")
     (description
@@ -18329,13 +18337,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "01929d6nyyj8l2abr4qk2ycp74m3b1ffzwjl6r32wqb9qkzd8b4i"))))
+        (base32 "1fw76s86zs9fxaifiy647wvj8y5bxlfcn9g7a6am2qcifrwq0yb6"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -18352,13 +18360,13 @@ space for ease of reuse.")
      "Estimate and plot confounder-adjusted survival curves using either Direct
 Adjustment', Direct Adjustment with Pseudo-Values', various forms of Inverse
 Probability of Treatment Weighting', two forms of Augmented Inverse Probability
-of Treatment Weighting and Empirical Likelihood Estimation'.  Also includes a
-significance test for the difference between two adjusted survival curves and
-the calculation of adjusted restricted mean survival times.  Additionally
-enables the user to estimate and plot cause-specific confounder-adjusted
-cumulative incidence functions in the competing risks setting using the same
-methods (with some exceptions).  For details, see Denz et.  al (2023)
-<doi:10.1002/sim.9681>.")
+of Treatment Weighting', Empirical Likelihood Estimation or Targeted Maximum
+Likelihood Estimation'.  Also includes a significance test for the difference
+between two adjusted survival curves and the calculation of adjusted restricted
+mean survival times.  Additionally enables the user to estimate and plot
+cause-specific confounder-adjusted cumulative incidence functions in the
+competing risks setting using the same methods (with some exceptions).  For
+details, see Denz et.  al (2023) <doi:10.1002/sim.9681>.")
     (license license:gpl3+)))
 
 (define-public r-adjustedcranlogs
@@ -20855,30 +20863,29 @@ functions) and different floating catchment area methods.")
 (define-public r-accelstab
   (package
     (name "r-accelstab")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AccelStab" version))
        (sha256
-        (base32 "0bjbxnbi809hf57inf09y0635917spw1l0mmpjx89ncrvngvzkxx"))))
+        (base32 "1rkcg29ps2hx4v4v5zdxpy3b62amjcbqhl3y08sjp02vmyw9vwd0"))))
     (properties `((upstream-name . "AccelStab")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
     (home-page "https://github.com/AccelStab/AccelStab")
     (synopsis "Accelerated Stability Kinetic Modelling")
     (description
      "Estimate the Å @code{estÃ¡kâBerggren} kinetic model (degradation model) from
-experimental data.  A closed-form (analytic) solution to the degradation model
+experimental data.  A A closed-form (analytic) solution to the degradation model
 is implemented as a non-linear fit, allowing for the extrapolation of the
-degradation of a drug product - both in time and temperature (Campa C. et al,
-2021 <doi:10.3390/vaccines9101114>).  Parametric bootstrap, with kinetic
-parameters drawn from the multivariate t-distribution, and analytical formulae
-(the delta method) are available options to calculate the confidence and
-prediction intervals.  The results (modelling, extrapolations and statistical
-intervals) can be visualised with multiple plots.  The examples illustrate the
-accelerated stability modelling in drugs and vaccines development.")
+degradation of a drug product - both in time and temperature.  Parametric
+bootstrap, with kinetic parameters drawn from the multivariate t-distribution,
+and analytical formulae (the delta method) are available options to calculate
+the confidence and prediction intervals.  The results (modelling, extrapolations
+and statistical intervals) can be visualised with multiple plots.  The examples
+illustrate the accelerated stability modelling in drugs and vaccines
+development.")
     (license license:agpl3+)))
 
 (define-public r-acca

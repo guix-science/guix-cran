@@ -59059,6 +59059,39 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
 <doi:10.1214/aos/1043351257>.")
     (license license:gpl2)))
 
+(define-public r-saeczi
+  (package
+    (name "r-saeczi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saeczi" version))
+       (sha256
+        (base32 "0dd082nmik3k36lhg0nd80c5n5gqqlh8p0hywhp3gpphfisc2pbn"))))
+    (properties `((upstream-name . "saeczi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-progressr
+                             r-lme4
+                             r-future
+                             r-furrr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=saeczi")
+    (synopsis "Small Area Estimation for Continuous Zero Inflated Data")
+    (description
+     "Simplifies the process of fitting a zero-inflated estimator onto a dataset.
+This estimator is a combination of a linear mixed effects regression model and a
+logistic mixed effects regression model which is summarized by White and others
+(2024, <@code{arXiv:2402.03263>}).  The variance is estimated through a
+parametric bootstrapping method which is given by Chandra and others (2012,
+<doi:10.1080/03610918.2011.598991>).")
+    (license license:cc0)))
+
 (define-public r-saebnocov
   (package
     (name "r-saebnocov")

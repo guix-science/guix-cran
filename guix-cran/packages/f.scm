@@ -1393,16 +1393,17 @@ notebooks.")
 (define-public r-funspace
   (package
     (name "r-funspace")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funspace" version))
        (sha256
-        (base32 "10yvjx5iydpkn3pjh7f874sjcxg5fzadan7j0rdczm2l64iy6a5m"))))
+        (base32 "07xamf26vrzmqxkg0yxwh4rh8v01wya774rz70qlydfwdqq7gs3s"))))
     (properties `((upstream-name . "funspace")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
+                             r-vegan
                              r-phytools
                              r-paran
                              r-missforest
@@ -13280,6 +13281,37 @@ assumptions and models.  We provide a collection of methods from multiple
 disciplines under Matrix Completion, Imputation, and Inpainting.  See Davenport
 and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the
 topic.")
+    (license license:expat)))
+
+(define-public r-filibustr
+  (package
+    (name "r-filibustr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filibustr" version))
+       (sha256
+        (base32 "0kx29jq6mcyyrd9yvsjpq24fkqzxf2m3lp39zy0vf3frhyvxx3q4"))))
+    (properties `((upstream-name . "filibustr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-lifecycle
+                             r-dplyr))
+    (home-page "https://github.com/feinleib/filibustr")
+    (synopsis "Data Utilities for Congressional Research")
+    (description
+     "This package provides easy-to-understand and consistent interfaces for accessing
+data on the U.S. Congress.  The functions in filibustr streamline the process
+for importing data on Congress into R, removing the need to download and work
+from CSV files and the like.  Data sources include Voteview
+(<https://voteview.com/>), the U.S. Senate website (<https://www.senate.gov/>),
+and more.")
     (license license:expat)))
 
 (define-public r-filest

@@ -8693,13 +8693,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "1wpw5vjabzvnc5z4vx4qfk7rwnjf5dbyahkvhb0mbhwh0zipdv5f"))))
+        (base32 "035k5qlpkxyn2fj5kc9i0kfbmdan33mjw9ig8rg5mibsgw5r0iry"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9082,13 +9082,13 @@ Schumacher-Eschmeyer multi-visit mark-recapture estimators based on Dettloff
 (define-public r-mrbsizer
   (package
     (name "r-mrbsizer")
-    (version "1.2.1.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbsizeR" version))
        (sha256
-        (base32 "0v06sd5sh7ghlr8lgrv6l4glmv7chj3951pw4ssxrly4hz2rh6i0"))))
+        (base32 "150ipzlkfzl3dpl4pkjdnrcxr82x9pb2rzhmgl3f02xd35x6am5z"))))
     (properties `((upstream-name . "mrbsizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-maps r-fields))
@@ -9105,8 +9105,8 @@ multiresolution analysis has three steps: (1) Bayesian signal reconstruction.
 (2) Using differences of smooths, scale-dependent features of the reconstructed
 signal can be found. (3) Posterior credibility analysis of the differences of
 smooths created.  The method has first been proposed by Holmstrom, Pasanen,
-Furrer, Sain (2011) <DOI:10.1016/j.csda.2011.04.011>.  Matlab code is available
-under <http://cc.oulu.fi/~lpasanen/MRB@code{SiZer/>}.")
+Furrer, Sain (2011) <DOI:10.1016/j.csda.2011.04.011> and extended in Flury,
+Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
     (license license:gpl2)))
 
 (define-public r-mrbin
@@ -20140,13 +20140,13 @@ order model, (Norman R. Draper and Friedrich Pukelsheim(1990)
 (define-public r-mixedindtests
   (package
     (name "r-mixedindtests")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixedIndTests" version))
        (sha256
-        (base32 "0fh4hh8481wcjkcfvy0r84m3s0kkpx1psg4vc2gdx089724hzjk0"))))
+        (base32 "0gbjjfj9h4zx5hxzdrbphpk0flzwrg7jb3xxjbvyfd3n038zxqxz"))))
     (properties `((upstream-name . "MixedIndTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-ggplot2 r-foreach r-doparallel
@@ -20160,7 +20160,7 @@ and for testing independence between random variables with arbitrary
 distributions.  The test statistics are based on the multilinear empirical
 copula and multipliers are used to compute P-values.  The test of independence
 between random variables appeared in Genest, @code{NeÅ¡lehovÃ}¡, RÃ©millard &
-Murphy (2019).")
+Murphy (2019) and the test of randomness appeared in Nasri (2022).")
     (license license:gpl3)))
 
 (define-public r-mixedcca

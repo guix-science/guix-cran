@@ -12586,6 +12586,28 @@ standard spherical harmonic representation of the Earth's main field.")
      "This program facilitates exporting igraph graphs to the @code{SoNIA} file format")
     (license license:gpl2+)))
 
+(define-public r-igraphmatch
+  (package
+    (name "r-igraphmatch")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iGraphMatch" version))
+       (sha256
+        (base32 "1p0cp581h3pdarg9pglxsazdxdmnjwkib77cll71havjyl7i9b0z"))))
+    (properties `((upstream-name . "iGraphMatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-matrix r-irlba r-igraph r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dpmcsuss/iGraphMatch")
+    (synopsis "Tools for Graph Matching")
+    (description
+     "Versatile tools and data for graph matching analysis with various forms of prior
+information that supports working with igraph objects, matrix objects, or lists
+of either.")
+    (license license:gpl2+)))
+
 (define-public r-igraphinshiny
   (package
     (name "r-igraphinshiny")

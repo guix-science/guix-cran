@@ -19550,13 +19550,13 @@ prediction on new data. <doi:10.18637/jss.v101.i05>.")
 (define-public r-bbknnr
   (package
     (name "r-bbknnr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbknnR" version))
        (sha256
-        (base32 "10piswg0206vicna7zm3xnpa890rii3x04izkg3p4y7xwip3l2mn"))))
+        (base32 "0zwsk491pgfr0dxbpkw1zqa4fi4d8j1bdfiridxq6f07aypx8nmg"))))
     (properties `((upstream-name . "bbknnR")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -25843,13 +25843,13 @@ Reactive Global Minimum Variance Portfolios with k-BAHC covariance cleaning
 (define-public r-baguette
   (package
     (name "r-baguette")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baguette" version))
        (sha256
-        (base32 "0y298la45hgw7f58ydq198ycga8bzxh0czv9l3xdrprd1bhmdn1x"))))
+        (base32 "01pxk9angq2yrw3j5c748qhcdq92axpml5lr9cpf74a8hpg6ddjb"))))
     (properties `((upstream-name . "baguette")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -25864,7 +25864,6 @@ Reactive Global Minimum Variance Portfolios with k-BAHC covariance cleaning
                              r-hardhat
                              r-generics
                              r-furrr
-                             r-earth
                              r-dplyr
                              r-dials
                              r-c50

@@ -3399,16 +3399,16 @@ functions.  Sottile G, Frumento P, Chiodi M and Bottai M (2020)
 (define-public r-qrcm
   (package
     (name "r-qrcm")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcm" version))
        (sha256
-        (base32 "0y1na936vk5qsir5plzjrbv39jpnq01qplza32z31x6y28is2fz9"))))
+        (base32 "0ia1dbb6yfaagpkb90qhdfni1qizysvw7sapbfff2mkd569hin6y"))))
     (properties `((upstream-name . "qrcm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-pch))
+    (propagated-inputs (list r-survival r-pch r-icenreg))
     (home-page "https://cran.r-project.org/package=qrcm")
     (synopsis "Quantile Regression Coefficients Modeling")
     (description

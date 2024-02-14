@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -8885,6 +8885,38 @@ appropriate for mixed data is used otherwise.")
 neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 <DOI:10.1198/016214502388618780>.")
     (license license:gpl2+)))
+
+(define-public r-covregrf
+  (package
+    (name "r-covregrf")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CovRegRF" version))
+       (sha256
+        (base32 "17wr2k6ws1l8lf4gfq59l7c2p95181sk5r2acay21pnh7q39x8wd"))))
+    (properties `((upstream-name . "CovRegRF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-diagrammer r-data-tree r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CovRegRF")
+    (synopsis "Covariance Regression with Random Forests")
+    (description
+     "Covariance Regression with Random Forests (@code{CovRegRF}) is a random forest
+method for estimating the covariance matrix of a multivariate response given a
+set of covariates.  Random forest trees are built with a new splitting rule
+which is designed to maximize the distance between the sample covariance matrix
+estimates of the child nodes.  The method is described in Alakus et al. (2023)
+<doi:10.1186/s12859-023-05377-y>. @code{CovRegRF} uses @code{randomForestSRC}
+package (Ishwaran and Kogalur, 2022)
+<https://cran.r-project.org/package=@code{randomForestSRC>} by freezing at the
+version 3.1.0.  The custom splitting rule feature is utilised to apply the
+proposed splitting rule.  The @code{randomForestSRC} package implements
+@code{OpenMP} by default, contingent upon the support provided by the target
+architecture and operating system.  In this package, LAPACK and BLAS libraries
+are used for matrix decompositions.")
+    (license license:gpl3+)))
 
 (define-public r-covkcd
   (package
@@ -37337,13 +37369,13 @@ confidence intervals for common ecological network metrics.")
 (define-public r-casmi
   (package
     (name "r-casmi")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CASMI" version))
        (sha256
-        (base32 "1mpqjspl5ly0p6qpvcpx77a4x85f3531567blhkrf5iycdygfyvz"))))
+        (base32 "0sp5c9ddx010l418fy44psnpa78zlpclpz3hrss2zqkmh3qa0svc"))))
     (properties `((upstream-name . "CASMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-entropyestimation r-entropy))

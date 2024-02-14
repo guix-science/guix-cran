@@ -14746,13 +14746,13 @@ multiple phenotypes, for details see Kim and Pan (2017)
 (define-public r-pomade
   (package
     (name "r-pomade")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POMADE" version))
        (sha256
-        (base32 "1f9r7bmmc1lblvmb834ss38x2ki4c19mkx9h8i8ygkcdsb931xdv"))))
+        (base32 "0jiiqgifdqicxh4dgpqhmizkazjgpsqp46ic7b78i7pdhlan2zj3"))))
     (properties `((upstream-name . "POMADE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

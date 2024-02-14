@@ -214,13 +214,13 @@ it will be skipped.")
 (define-public r-junctions
   (package
     (name "r-junctions")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "junctions" version))
        (sha256
-        (base32 "0lm3n8n9dfi9nsdazj74pd57kxm2kzrd1gxdzd0izzwgkjnsrsqc"))))
+        (base32 "1jv8vn826ii1mvpcikg5bhm2arjgr180y0rqy0qkmn4bsm3cbnqx"))))
     (properties `((upstream-name . "junctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcppparallel r-rcpp r-nloptr))

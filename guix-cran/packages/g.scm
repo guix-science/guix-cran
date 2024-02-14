@@ -2691,13 +2691,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "0jydax7gmhn2qx51w0d4ykyx4vl0klnz2dccl3d0cas7kkpfbj1y"))))
+        (base32 "065nyxkcvfdxinbh03jayrh1fqf0pd0ppy5550wcrdlc66628swg"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

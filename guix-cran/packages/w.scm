@@ -798,13 +798,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.14.0")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "05b5983xg2lxkx20ngywvyxcflsl4nxsjqrk6nm296qjjymzia05"))))
+        (base32 "0b4yx9zmdk87br7pbbi9g52v91xy4wbg8zrkbm5xaag65rfrxbgw"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -1781,6 +1781,28 @@ calculated distance matrices from figshare <https://figshare.com>.")
 meteorological sites around the world managed by the National Oceanic and
 Atmospheric Administration (NOAA) Integrated Surface Database (ISD).")
     (license license:gpl2+)))
+
+(define-public r-worldmapr
+  (package
+    (name "r-worldmapr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WorldMapR" version))
+       (sha256
+        (base32 "0wanh3i5wk5by55kzs7n3vkk64x1pgvwj70fgbsrxm565711b6vk"))))
+    (properties `((upstream-name . "WorldMapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rnaturalearth r-ggplot2 r-dplyr
+                             r-countrycode))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Luigi-Annic/WorldMapR/")
+    (synopsis "Worldwide or Coordinates-Based Heat Maps")
+    (description
+     "Easily plot heat maps of the world, based on continuous or categorical data.
+Country labels can also be added to the map.")
+    (license license:gpl3)))
 
 (define-public r-worldfootballr
   (package
@@ -6448,13 +6470,13 @@ cubic regression splines.")
 (define-public r-wcde
   (package
     (name "r-wcde")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wcde" version))
        (sha256
-        (base32 "18zvb21wi2ywvf413dnyrmnrrg0vmd5hjy0k9d6z91jcxgkvirp3"))))
+        (base32 "1wyq4m6ziv4b8zkzg3gjjnyhj2bg18ikfxz98q9c2nxqdiq4kbir"))))
     (properties `((upstream-name . "wcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

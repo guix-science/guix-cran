@@ -6207,17 +6207,17 @@ research using the National Longitudinal Survey of Youth (NLSY;
 (define-public r-nlstools
   (package
     (name "r-nlstools")
-    (version "2.0-1")
+    (version "2.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlstools" version))
        (sha256
-        (base32 "1pbsdmg1gaf0v0w5ij75l381f8h91dnc7vlbl8za3aws1cxhjaw5"))))
+        (base32 "1b6v30cn6a92slca3vrq116snir144ymdz9vxby33x51p6jniiiv"))))
     (properties `((upstream-name . "nlstools")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/aursiber/nlstools")
+    (home-page "https://github.com/lbbe-software/nlstools")
     (synopsis "Tools for Nonlinear Regression Analysis")
     (description
      "Several tools for assessing the quality of fit of a gaussian nonlinear model are
@@ -6297,18 +6297,18 @@ details in Garay, Lachos and Abanto-Valle (2011)
 (define-public r-nlsmicrobio
   (package
     (name "r-nlsmicrobio")
-    (version "0.0-3")
+    (version "1.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlsMicrobio" version))
        (sha256
-        (base32 "0vn0yv1h8idv91g7qhx8qfyvsvw4rbx7i8r8kfv13d40j1w4cfab"))))
+        (base32 "1hxkqasyqkppw25b8pmcw33px8ykf0mbyh0vlhmzkfxa4blwc7fl"))))
     (properties `((upstream-name . "nlsMicrobio")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlstools))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nlsMicrobio")
+    (home-page "https://github.com/lbbe-software/nlsMicrobio")
     (synopsis "Nonlinear Regression in Predictive Microbiology")
     (description
      "Data sets and nonlinear regression models dedicated to predictive microbiology.")
@@ -11086,13 +11086,13 @@ Snijders, Tom A. B., and Christian E. G. Steglich (2015)
 (define-public r-netmap
   (package
     (name "r-netmap")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmap" version))
        (sha256
-        (base32 "02b3qb0yk6hawd23x44p5d14dvxryf0c7ydlj6d75dgpsddnfj1n"))))
+        (base32 "19n13ndv1968sy6cc2mrflc1jh440zbikjypwm4kfha761rm73hf"))))
     (properties `((upstream-name . "netmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna

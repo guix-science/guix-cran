@@ -1736,13 +1736,13 @@ workbooks.")
 (define-public r-rvertnet
   (package
     (name "r-rvertnet")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvertnet" version))
        (sha256
-        (base32 "09lja7dd1rdln7cpd4rn4l3fynm223as3k295dcwf4x26gna7s9d"))))
+        (base32 "1xwpw4gh4vs79fsp0h8vy21wmm66ynxa6xf6qvicgjgw68s02jda"))))
     (properties `((upstream-name . "rvertnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1751,12 +1751,12 @@ workbooks.")
                              r-ggplot2
                              r-dplyr
                              r-crul))
-    (home-page
-     "https://github.com/ropensci/rvertnethttps://docs.ropensci.org/rvertnet/")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/rvertnet")
     (synopsis "Search 'Vertnet', a 'Database' of Vertebrate Specimen Records")
     (description
      "Retrieve, map and summarize data from the @code{VertNet.org} archives
-(<http://vertnet.org/>).  Functions allow searching by many parameters,
+(<https://vertnet.org/>).  Functions allow searching by many parameters,
 including taxonomic names, places, and dates.  In addition, there is an
 interface for conducting spatially delimited searches, and another for
 requesting large datasets via email.")
@@ -6431,6 +6431,40 @@ An overview of these models is given in Snijders (2017),
 <doi:10.1146/annurev-statistics-060116-054035>.")
     (license (list license:gpl2 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-rsi
+  (package
+    (name "r-rsi")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsi" version))
+       (sha256
+        (base32 "11in248gaixjm6g9qrnl4l60lghiclrgzijqcgncz4bd9v47d3rv"))))
+    (properties `((upstream-name . "rsi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-sf
+                             r-rstac
+                             r-rlang
+                             r-proceduralnames
+                             r-jsonlite
+                             r-glue
+                             r-future-apply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Permian-Global-Research/rsi")
+    (synopsis "Efficiently Retrieve and Process Satellite Imagery")
+    (description
+     "Downloads spatial data from spatiotemporal asset catalogs ('STAC'), computes
+standard spectral indices from the Awesome Spectral Indices project (Montero et
+al. (2023) <doi:10.1038/s41597-023-02096-0>) against raster data, and glues the
+outputs together into predictor bricks.  Methods focus on interoperability with
+the broader spatial ecosystem; function arguments and outputs use classes from
+sf and terra', and data downloading functions support complex CQL2 queries using
+rstac'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rshift
   (package

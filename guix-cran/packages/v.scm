@@ -316,16 +316,21 @@ of Student Analytics.")
 (define-public r-vvconverter
   (package
     (name "r-vvconverter")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvconverter" version))
        (sha256
-        (base32 "12bnrrvbad7njgqvkb0hp1a041qnyvfiqlg1aaqkym29wlc2zwk3"))))
+        (base32 "1hrdqlnlafdkrggzqfj7zinsz0w47ikzf098fbjcssgchfp91g8m"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-lubridate r-dplyr))
+    (propagated-inputs (list r-stringr
+                             r-polyglotr
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-checkmate))
     (home-page "https://cran.r-project.org/package=vvconverter")
     (synopsis "Apply Transformations to Data")
     (description
@@ -7877,6 +7882,28 @@ difference and associated p-values across different user-defined groups of
 single cells are presented in the form of a line graph using the ggplot2 package
 by Wickham (2007) <https://CRAN.R-project.org/package=ggplot2>.")
     (license license:gpl3)))
+
+(define-public r-valentine
+  (package
+    (name "r-valentine")
+    (version "2024.2.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valentine" version))
+       (sha256
+        (base32 "028sm53cvsspbjdyr74xzbwjn96542x9vglhnlk531v6a6xscwg5"))))
+    (properties `((upstream-name . "valentine")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-openai r-glue))
+    (home-page "https://github.com/tadascience/valentine")
+    (synopsis "Spread the Love for R Packages with Poetry")
+    (description
+     "Uses @code{ChatGPT} <https://openai.com/> to create poems about R packages.
+Currently contains the roses() function to make \"roses are red, ...\" style poems
+and the prompt() function to only assemble the prompt without submitting it to
+@code{ChatGPT}'.")
+    (license license:expat)))
 
 (define-public r-valection
   (package
