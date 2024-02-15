@@ -5228,17 +5228,22 @@ stack may contain arbitrary objects.")
 (define-public r-rstac
   (package
     (name "r-rstac")
-    (version "0.9.2-5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstac" version))
        (sha256
-        (base32 "06wq2ck99i4fg6jli04968nqzjh9z8sb18yn2d734gibxf229a42"))))
+        (base32 "0ivd7ahaynfwz5w1cr2qvz2bhjx710pgj533gi8l9akln59fqzzf"))))
     (properties `((upstream-name . "rstac")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-lifecycle r-jsonlite r-httr r-crayon))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-sf
+                             r-png
+                             r-magrittr
+                             r-jsonlite
+                             r-jpeg
+                             r-httr
+                             r-crayon))
     (home-page "https://brazil-data-cube.github.io/rstac/")
     (synopsis "Client Library for SpatioTemporal Asset Catalog")
     (description
@@ -15870,13 +15875,13 @@ for your user.")
 (define-public r-rnrfa
   (package
     (name "r-rnrfa")
-    (version "2.1.0")
+    (version "2.1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnrfa" version))
        (sha256
-        (base32 "1x0kqk060kjw84jlrbcp1z6agc5d96xy0ydfbgvh60cg9v1q8kpr"))))
+        (base32 "1fqfcj4z05p6lxc9708pbal7fkwhdqrm4c2cx2jb76s09rc840ci"))))
     (properties `((upstream-name . "rnrfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31682,13 +31687,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-34")
+    (version "0.1-35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund" version))
        (sha256
-        (base32 "1210zxd0wsrhlhwv2jypgnskm2y01x021yrjknvmsqc26p6kqrfw"))))
+        (base32 "0hdm8ycgxzmmpgp885w49fxzvn6j5078x42gf7hh1ms7w0k4k72g"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -31705,7 +31710,7 @@ object-specific set of plots based on the object class using S3.")
                              r-gamm4
                              r-fda
                              r-boot))
-    (home-page "https://cran.r-project.org/package=refund")
+    (home-page "https://github.com/refunders/refund")
     (synopsis "Regression with Functional Data")
     (description
      "This package provides methods for regression for functional data, including

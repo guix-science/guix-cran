@@ -2298,6 +2298,55 @@ please see the GSOD readme.txt file available from,
 <https://www1.ncdc.noaa.gov/pub/data/gsod/readme.txt>.")
     (license license:expat)))
 
+(define-public r-gsna
+  (package
+    (name "r-gsna")
+    (version "0.1.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GSNA" version))
+       (sha256
+        (base32 "1bal1c7b132kknjbins63pyai9a08lnvwf8yp5n1mc2nz2fqglqz"))))
+    (properties `((upstream-name . "GSNA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tmod
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rcpp
+                             r-raster
+                             r-psych
+                             r-matrix
+                             r-igraph
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-dendextend
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GSNA")
+    (synopsis "Gene Set Networking Analysis Package")
+    (description
+     "Create networks of gene sets, infer clusters of functionally-related gene sets
+based on similarity statistics, and visualize the results.  This package
+simplifies and accelerates interpretation of pathways analysis data sets.  It is
+designed to work in tandem with standard pathways analysis methods, such as the
+GSEA program (Gene Set Enrichment Analysis), CERNO (Coincident Extreme Ranks in
+Numerical Observations, implemented in the tmod package) and others.  Inputs to
+GSNA are the outputs of pathways analysis methods: a list of gene sets (or
+\"modules\"), pathways or GO-terms with associated p-values.  Since pathways
+analysis methods may be used to analyze many different types of data including
+transcriptomic, epigenetic, and high-throughput screen data sets, the GSNA
+pipeline is applicable to these data as well.  The use of GSNA has been
+described in the following papers: Collins DR, Urbach JM, Racenet ZJ, Arshad U,
+Power KA, Newman RM, et al. (2021) <doi:10.1016/j.immuni.2021.08.007>, Collins
+DR, Hitschfel J, Urbach JM, Mylvaganam GH, Ly NL, Arshad U, et al. (2023)
+<doi:10.1126/sciimmunol.ade5872>.")
+    (license license:gpl3+)))
+
 (define-public r-gsmx
   (package
     (name "r-gsmx")
@@ -23233,6 +23282,37 @@ includes robust versions of the AMMI model ('Rodrigues 2016,
 specifically developed for this kind of data ('Arciniegas-@code{AlarcÃ³n} 2014,
 <doi:10.2478/bile-2014-0006>).")
     (license license:gpl2)))
+
+(define-public r-genetic-algo-optimizer
+  (package
+    (name "r-genetic-algo-optimizer")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genetic.algo.optimizeR" version))
+       (sha256
+        (base32 "12gqirkpm6g7xpxx0nhm0xasyk6sd2vhwgrnms24b7p0172jmyc5"))))
+    (properties `((upstream-name . "genetic.algo.optimizeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinytex
+                             r-stringr
+                             r-rsconnect
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-biocviews))
+    (native-inputs (list r-knitr))
+    (home-page "https://danymukesha.github.io/genetic.algo.optimizeR/")
+    (synopsis "Genetic Algorithm Optimization")
+    (description
+     "Genetic algorithm are a class of optimization algorithms inspired by the process
+of natural selection and genetics.  This package is for learning purposes and
+allows users to optimize various functions or parameters by mimicking biological
+evolution processes such as selection, crossover, and mutation.  Ideal for tasks
+like machine learning parameter tuning, mathematical function optimization, and
+solving combinatorial problems.")
+    (license license:expat)))
 
 (define-public r-genesysr
   (package

@@ -4654,19 +4654,19 @@ run the tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "17z0ax3vjyghsb0byd5hjcrbcn5irnqq2q9dc6l4nnm3hpk3b2j2"))))
+        (base32 "1gppj2y5za85j63wgf1xi2gdvxhl4dj1gyfdnbnfj10xvmnvkvgy"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
     (native-inputs (list r-knitr))
-    (home-page "https://eitsupi.github.io/prqlr/")
-    (synopsis "R Bindings for the 'prql-compiler' Rust Library")
+    (home-page "https://prql.github.io/prqlc-r/")
+    (synopsis "R Bindings for the 'prqlc' Rust Library")
     (description
      "This package provides a function to convert PRQL strings to SQL strings.
 Combined with other R functions that take SQL as an argument, PRQL can be used
@@ -14434,13 +14434,13 @@ the accuracy of ABC estimates and model choice.  Carvalho et al., (2022)
 (define-public r-pool
   (package
     (name "r-pool")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pool" version))
        (sha256
-        (base32 "1qip10kswl6k7sx2banfr5pzkxhrfax1p40i0d9j412prpmsdixy"))))
+        (base32 "1v0w396cszpyi6p59bmvbbpzb8gk0qj0s5hq42jj9rf351lzjqf4"))))
     (properties `((upstream-name . "pool")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r6 r-later r-dbi))
@@ -14563,13 +14563,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.5")
+    (version "5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "0l7q4xpccnfl2gnxbsnygwig31432y5lal54n8hsx69n1byv96r9"))))
+        (base32 "0flpd1ayh39bfalvw3w3111z5ca79rp42znfskzdy5gfh4b4wcqc"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -19359,13 +19359,13 @@ formats of an image.")
 (define-public r-plfm
   (package
     (name "r-plfm")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plfm" version))
        (sha256
-        (base32 "0vcr1abzslsds0w4y2gyrrlbmqmxi5007km5fbj1xq2mrwjmngpp"))))
+        (base32 "1h4076hyxrbczhwm507cqbdphxis6hqp3srkgrxwqjsph6l7c02k"))))
     (properties `((upstream-name . "plfm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-abind))
@@ -33130,34 +33130,6 @@ statistics and probabilities.")
      "Provision of a set of models and methods for use in the allocation and
 management of capital in financial portfolios.")
     (license license:gpl3)))
-
-(define-public r-parlitools
-  (package
-    (name "r-parlitools")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "parlitools" version))
-       (sha256
-        (base32 "05xii25acmbdbhrkwgw812352vhxqpp5m8qbl346bp6v74ixi8aj"))))
-    (properties `((upstream-name . "parlitools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-snakecase
-                             r-sf
-                             r-readr
-                             r-mnis
-                             r-hansard
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.evanodell.com/parlitools")
-    (synopsis "Tools for Analysing UK Politics")
-    (description
-     "This package provides various tools for analysing UK political data, including
-election result datasets, hexagonal cartograms and functions to retrieve council
-member data.")
-    (license license:expat)))
 
 (define-public r-pari
   (package

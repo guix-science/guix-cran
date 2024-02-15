@@ -7687,13 +7687,13 @@ information, please visit
 (define-public r-validate
   (package
     (name "r-validate")
-    (version "1.1.3")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "validate" version))
        (sha256
-        (base32 "020l46qd4fyqr7hksgvsvzlh2ibppwgpfasv8a0schl4vjf29a7j"))))
+        (base32 "0c7f33cm6v0rngbpgdkkqzjf3v024lzk6fjn6xd5sbnlbfrrkiqz"))))
     (properties `((upstream-name . "validate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-settings))
@@ -8155,13 +8155,13 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "17lr8hrxihrg6046zq8zzyp60w0i2kdajyp16y9vc8qkp0n3wp62"))))
+        (base32 "0cp35lkhr0x853ygjfpmdr18g3v839q82xivgv5n8ri1yaph85wq"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -8171,11 +8171,11 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
                              r-simest
                              r-rsolnp
                              r-rlang
-                             r-glmnet
+                             r-ranger
                              r-ggpubr
                              r-ggplot2
+                             r-gam
                              r-fdrtool
-                             r-earth
                              r-e1071
                              r-dplyr))
     (native-inputs (list r-knitr))

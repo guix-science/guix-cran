@@ -9769,13 +9769,13 @@ Boyd, S., Parikh, N., Chu, E., Peleato, B., & Eckstein, J. (2011).
 (define-public r-hdm
   (package
     (name "r-hdm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdm" version))
        (sha256
-        (base32 "1kibfc1fc94y1vk06nn0yfvpdzcm30a1jn89lqqfma70x5jpa25s"))))
+        (base32 "0spy2a23b6hxw6dm6zjqya066ar0224b64lckh6hrapha8kv4m1k"))))
     (properties `((upstream-name . "hdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-glmnet r-ggplot2 r-formula r-checkmate))
@@ -10956,13 +10956,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.1.2")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "05hxwz8g63idqxc0yhxh1x0kpnzj96zb4vkhy8sfkck8ls3iqj0b"))))
+        (base32 "13r56c1hf99fd1zwv4s358c14yzhah8kfl42iqprpxvjw0y7267l"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

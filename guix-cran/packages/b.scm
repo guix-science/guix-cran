@@ -386,13 +386,13 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "1i4dfmb1w539fz4mgv2ldr9pwxzry5fdiz6ryx9f3af83y9z4xgg"))))
+        (base32 "1miwlsih85s9j3scj22vlgsagnv834d15xlk0si0zm7s7mhjzgr4"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -407,7 +407,7 @@ bounded-variable least squares")
                              r-ggplot2
                              r-foreach
                              r-dplyr
-                             r-dorng
+                             r-bh
                              r-bayesplot))
     (native-inputs (list r-knitr))
     (home-page "https://ygeunkim.github.io/package/bvhar/")
@@ -3042,13 +3042,13 @@ with FORTRAN.")
 (define-public r-brulee
   (package
     (name "r-brulee")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brulee" version))
        (sha256
-        (base32 "136dzg00and00h94w75yc5hr4xxci59ydns203ilys08hlnmjqvh"))))
+        (base32 "1lzn06q1i575n9b7axqxfp0ngycx2mdmh0cqw6zz80z3ikbi7hq9"))))
     (properties `((upstream-name . "brulee")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -5529,27 +5529,6 @@ Almohaimeed (2018) <http://etheses.dur.ac.uk/12831/> and Almohaimeed and Einbeck
 for linear models with random effects and boxcoxtype() for logistic models with
 random effects.")
     (license license:gpl3+)))
-
-(define-public r-box
-  (package
-    (name "r-box")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "box" version))
-       (sha256
-        (base32 "00g5ik3f6260m38jl8k4s8nycmy7mzdwr7qslrl66phpg84xzmln"))))
-    (properties `((upstream-name . "box")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://klmr.me/box/")
-    (synopsis "Write Reusable, Composable and Modular R Code")
-    (description
-     "This package provides a modern module system for R. Organise code into
-hierarchical, composable, reusable modules, and use it effortlessly across
-projects via a flexible, declarative dependency loading syntax.")
-    (license license:expat)))
 
 (define-public r-boutroslab-plotting-general
   (package
@@ -17561,13 +17540,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1v5wknw6d7dfcj3cqj1774v07838xpda75ai9mhrjd536c74rc1a"))))
+        (base32 "0bd6458w89hq3vknibk8dqdy9qrag1v3nc95hk68j34ryyd03pgg"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

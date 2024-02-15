@@ -8176,6 +8176,38 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 <doi:10.1111/eth.12739>.")
     (license license:expat)))
 
+(define-public r-trajmsm
+  (package
+    (name "r-trajmsm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trajmsm" version))
+       (sha256
+        (base32 "1nxklv2hsv4kry3zzyga2qgjjb0jhsx4f3l8a0k1j6lx2p7ysjah"))))
+    (properties `((upstream-name . "trajmsm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-sandwich
+                             r-ggplot2
+                             r-geepack
+                             r-flexmix
+                             r-e1071
+                             r-class))
+    (home-page "https://github.com/awamaeva/R-package-trajmsm")
+    (synopsis
+     "Marginal Structural Models with Latent Class Growth Analysis of Treatment Trajectories")
+    (description
+     "This package implements marginal structural models combined with a latent class
+growth analysis framework for assessing the causal effect of treatment
+trajectories.  Based on the approach described in \"Marginal Structural Models
+with Latent Class Growth Analysis of Treatment Trajectories\" Diop, A., Sirois,
+C., Guertin, J.R., Schnitzer, M.E., Candas, B., Cossette, B., Poirier, P.,
+Brophy, J., MÃ©sidor, M., Blais, C. and Hamel, D., (2023)
+<doi:10.1177/09622802231202384>.")
+    (license license:gpl3+)))
+
 (define-public r-trajectories
   (package
     (name "r-trajectories")
@@ -8462,16 +8494,21 @@ traffic speed or the car entries for a selected time date.")
 (define-public r-trading
   (package
     (name "r-trading")
-    (version "2.5")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Trading" version))
        (sha256
-        (base32 "0k048pn06qc1kvz0bj3bgfvaf3nqw6flqn4kvxj6vxhzlz3km9qs"))))
+        (base32 "1xf3qr6g8vxdwrx57pazr79k86d3mdhqaps0vj8iz4dr172gms8k"))))
     (properties `((upstream-name . "Trading")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate r-performanceanalytics r-data-table))
+    (propagated-inputs (list r-reticulate
+                             r-readxl
+                             r-rcppalgos
+                             r-performanceanalytics
+                             r-ggplot2
+                             r-data-table))
     (home-page "https://openriskcalculator.com/")
     (synopsis "CCR, Advanced Correlation & Beta Estimates, Betting Strategies")
     (description
@@ -8486,8 +8523,9 @@ follows an object oriented logic whereby each trade inherits from more abstract
 classes while also the curves/tables are objects.  Furthermore, odds calculators
 and P&L back-testing functionality has been implemented for the most widely used
 betting/trading strategies including martingale, DAlembert, Labouchere and
-Fibonacci.  Some basic functionality about climate risk was also added in the
-latest version.")
+Fibonacci.  Back-testing has also been included for the @code{EuroMillions} and
+@code{EuroJackpot} lotteries.  Furthermore, some basic functionality about
+climate risk has been included.")
     (license license:gpl3)))
 
 (define-public r-tradestatistics
@@ -9084,13 +9122,13 @@ customized plots will be applicable as well.")
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tplyr" version))
        (sha256
-        (base32 "077xhbhn00g265x6aciay75cziw2jhx2pkwgx64slhaksgyd3idm"))))
+        (base32 "07y1hzklgzfi93n84v7w46ins1jn4qdb6zgyjhy0r1j0p7ggm7g1"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

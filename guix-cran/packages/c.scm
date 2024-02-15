@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -20895,13 +20895,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0hh4w69vfq5536ab82y1srwc8yk45vrasyf96hcgzdivxvdsymil"))))
+        (base32 "1smfcgp1ndpkhxxyg4ah8lzww72ddkmxdfw14h3xwl2db39j4q6s"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21008,13 +21008,13 @@ in the 1970s.  Can you break the code?")
 (define-public r-codebookr
   (package
     (name "r-codebookr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codebookr" version))
        (sha256
-        (base32 "0yrm9kv3ar1lw90ly83y2pzc9233jxyabyrni8fddijg3c3gi802"))))
+        (base32 "0z9236x2zivml4mnipdink2k0fgv138yhk7w1pkypc39l6gfd29p"))))
     (properties `((upstream-name . "codebookr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23469,13 +23469,13 @@ qualitative or a mixture of both.")
 (define-public r-clustnet
   (package
     (name "r-clustnet")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustNet" version))
        (sha256
-        (base32 "1pr2wmlwhgdw4dvgbcx977aaagpp1j5lw5v49dxq4nv2k5vw2f1p"))))
+        (base32 "05yphmjjkc42k945b8qhdrlws5bzr3f0wbancyibn8xh5697wqsx"))))
     (properties `((upstream-name . "clustNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rbgl
@@ -26075,20 +26075,20 @@ than processx::run().")
 (define-public r-clidamonger
   (package
     (name "r-clidamonger")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clidamonger" version))
        (sha256
-        (base32 "1vxhibvdb92hhj40k8vg5vr0a8wy73jj8kyczs4rrn0zk1sj61dq"))))
+        (base32 "1kpfldyadrk7ayg9kjbs1kswdvzsy3qb5qr5mqrprx7mm8plsz6s"))))
     (properties `((upstream-name . "clidamonger")))
     (build-system r-build-system)
     (home-page "https://github.com/IWUGERMANY/clidamonger")
     (synopsis
      "Monthly Climate Data for Germany, Usable for Heating and Cooling Calculations")
     (description
-     "This data package contains monthly climate data for Germany, it can be used for
+     "This data package contains monthly climate data in Germany, it can be used for
 heating and cooling calculations (external temperature, heating / cooling days,
 solar radiation).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
@@ -28131,6 +28131,28 @@ to calculate circular-circular and circular-linear distance correlations.")
     (home-page "https://github.com/etiennebacher/circletyper")
     (synopsis "Curve Text Elements in 'Shiny' Using 'CircleType.js'")
     (description "Enables curving text elements in Shiny apps.")
+    (license license:expat)))
+
+(define-public r-circlesplot
+  (package
+    (name "r-circlesplot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circlesplot" version))
+       (sha256
+        (base32 "07wmnrihqhdgjgln31zvih7c6ipdb440ssppphldr31nk9xpbsh5"))))
+    (properties `((upstream-name . "circlesplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plotrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BenSt099/circlesplot")
+    (synopsis "Visualize Proportions with Circles in a Plot")
+    (description
+     "Method for visualizing proportions between objects of different sizes.  The
+proportions are drawn as circles with different diameters, which makes them
+ideal for visualizing proportions between planets.")
     (license license:expat)))
 
 (define-public r-circlesintersections
@@ -40133,27 +40155,42 @@ estimation for the calibration parameters is of interest.")
 (define-public r-calibrar
   (package
     (name "r-calibrar")
-    (version "0.2.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calibrar" version))
        (sha256
-        (base32 "1544bc5rhhc6d1mky7ngza00wwh63q07dkbzlwfgyavly8m9cplb"))))
+        (base32 "10ig891vbxc9wqpmf5pmqyz9pi7mp4nicipmwgjbsygrqkqy0m0v"))))
     (properties `((upstream-name . "calibrar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimx r-foreach r-cmaes))
-    (home-page "http://roliveros-ramos.github.io/calibrar")
-    (synopsis "Automated Parameter Estimation for Complex (Ecological) Models")
+    (propagated-inputs (list r-stringr
+                             r-soma
+                             r-rgenoud
+                             r-pso
+                             r-optimx
+                             r-minqa
+                             r-lbfgsb3c
+                             r-gensa
+                             r-foreach
+                             r-dfoptim
+                             r-deoptim
+                             r-cmaes
+                             r-bb))
+    (native-inputs (list r-knitr))
+    (home-page "https://roliveros-ramos.github.io/calibrar/")
+    (synopsis "Automated Parameter Estimation for Complex Models")
     (description
-     "Automated parameter estimation for complex (ecological) models in R. This
-package allows the parameter estimation or calibration of complex models,
-including stochastic ones.  It is a generic tool that can be used for fitting
-any type of models, especially those with non-differentiable objective
-functions.  It supports multiple phases and constrained optimization.  It
-implements maximum likelihood estimation methods and automated construction of
-the objective function from simulated model outputs.  See
-<http://roliveros-ramos.github.io/calibrar> for more details.")
+     "General optimisation and specific tools for the parameter estimation (i.e.
+calibration) of complex models, including stochastic ones.  It implements
+generic functions that can be used for fitting any type of models, especially
+those with non-differentiable objective functions, with the same syntax as
+base::optim.  It supports multiple phases estimation (sequential parameter
+masking), constrained optimization (bounding box restrictions) and automatic
+parallel computation of numerical gradients.  Some common maximum likelihood
+estimation methods and automated construction of the objective function from
+simulated model outputs is provided.  See
+<https://roliveros-ramos.github.io/calibrar/> for more details.")
     (license license:gpl2)))
 
 (define-public r-calibmsm

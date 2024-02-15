@@ -676,13 +676,13 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "0dwwxywvixr1808f8mixbkjjk8a60rn2zjlwv50jimjjsv777589"))))
+        (base32 "1v5vnk8r7vhwgmp5hbpwzn0cks4i8z3jm7r3rbbdfjjf4fba2vkd"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-reshape2 r-ggplot2 r-ecp r-dplyr))
@@ -872,16 +872,17 @@ new prediction object individually.")
 (define-public r-fuzzyclass
   (package
     (name "r-fuzzyclass")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyClass" version))
        (sha256
-        (base32 "02jnvzjp6aid6vznb4z2xlh6yn8qk1y9igsbvxyy09q7rvjq18db"))))
+        (base32 "1ld40qaiig743x21iwzpiabc1ky72hqrdnh855wfgvkmln9jc9by"))))
     (properties `((upstream-name . "FuzzyClass")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve
+    (propagated-inputs (list r-trapezoid
+                             r-rootsolve
                              r-rdpack
                              r-purrr
                              r-mvtnorm
@@ -1938,13 +1939,13 @@ to compute functional diversity indices (preprint: <doi:10.32942/osf.io/dg7hw>).
 (define-public r-fundata
   (package
     (name "r-fundata")
-    (version "1.3-8")
+    (version "1.3-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funData" version))
        (sha256
-        (base32 "146mnv09mbjr7vwvwlds1jc91vzbj7df0kb70qmiav0a8bvslngi"))))
+        (base32 "0kf1q60z10f3gcw9132i9q3qd3z3idxw34cdklv3w56v8j14g63b"))))
     (properties `((upstream-name . "funData")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-fields r-abind))

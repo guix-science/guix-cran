@@ -13533,25 +13533,27 @@ stage-structured species...")
 (define-public r-stagedtrees
   (package
     (name "r-stagedtrees")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stagedtrees" version))
        (sha256
-        (base32 "1hpli4zbqhswrnpzygg53zfw1rawmbj1cygvc4zprr37x0ijcjvv"))))
+        (base32 "1xvik7wk8kccdrnzxxqw3vga4498bm2k50bz4hmfx4xrrq3bapwg"))))
     (properties `((upstream-name . "stagedtrees")))
     (build-system r-build-system)
-    (home-page "https://github.com/gherardovarando/stagedtrees")
+    (propagated-inputs (list r-rlang r-matrixstats r-cli))
+    (home-page "https://github.com/stagedtrees/stagedtrees")
     (synopsis "Staged Event Trees")
     (description
      "This package creates and fits staged event tree probability models, which are
 probabilistic graphical models capable of representing asymmetric conditional
 independence statements for categorical variables.  Includes functions to
 create, plot and fit staged event trees from data, as well as many efficient
-structure learning algorithms.  References: Collazo R. A., GÃ¶rgen C. and Smith
-J. Q. (2018, ISBN:9781498729604).  GÃ¶rgen C., Bigatti A., Riccomagno E. and
-Smith J. Q. (2018) <@code{arXiv:1705.09457>}.  Thwaites P. A., Smith, J. Q.
+structure learning algorithms.  References: Carli F, Leonelli M, Riccomagno E,
+Varando G (2022). <doi: 10.18637/jss.v102.i06>.  Collazo R. A., GÃ¶rgen C. and
+Smith J. Q. (2018, ISBN:9781498729604).  GÃ¶rgen C., Bigatti A., Riccomagno E.
+and Smith J. Q. (2018) <@code{arXiv:1705.09457>}.  Thwaites P. A., Smith, J. Q.
 (2017) <@code{arXiv:1510.00186>}.  Barclay L. M., Hutton J. L. and Smith J. Q.
 (2013) <doi:10.1016/j.ijar.2013.05.006>.  Smith J. Q. and Anderson P. E. (2008)
 <doi:10.1016/j.artint.2007.05.004>.")
@@ -15957,13 +15959,13 @@ minimizing requirements on the runtime environment.")
 (define-public r-sra
   (package
     (name "r-sra")
-    (version "0.1.4")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sra" version))
        (sha256
-        (base32 "1djnkcykslrnxpm1mqyqgik5pnp54m93ddycqx36vy58pcjrvag4"))))
+        (base32 "080pdhzsf1bawi9l1bbvzdk7s9733sdlx4cpcm3whf9ffdbg6ahz"))))
     (properties `((upstream-name . "sra")))
     (build-system r-build-system)
     (home-page "https://github.com/lerouzic/sra")
@@ -43007,13 +43009,13 @@ Appl Ecol.  2020; 57; 1847â1860. <doi:10.1111/1365-2664.13659>.")
 (define-public r-shar
   (package
     (name "r-shar")
-    (version "2.2.1")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shar" version))
        (sha256
-        (base32 "0zhvbgg3db42bk7xzxg2m99q2nbrb4dckfqkcb1w3xffrbiiyz5v"))))
+        (base32 "1j2sxlym7n6l1phgwww1fapgp6ndll18i2385z1fx2nz4l22kd4h"))))
     (properties `((upstream-name . "shar")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -49380,13 +49382,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "1br3a28cjsr214ms5ij8rr9an0wp0151i2wa8a4h2hjcjjqcrz7m"))))
+        (base32 "0znpg9zxrxl298z7sv7pvqws0nwkqnfirggj7rsy0fj4r17z0ba4"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance

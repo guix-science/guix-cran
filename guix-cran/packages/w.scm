@@ -745,13 +745,13 @@ Operating Policy (SOP).")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.10.1")
+    (version "1.11.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "0dx3ylmkysa5cy6525g7p5x99rq13cdsc7dbfxwzfhi080qg65r5"))))
+        (base32 "0v9a62r4881aax5h5mnzgjzk2mgkrfa14lvy2w8i9mhcz5q6dg7k"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -767,25 +767,28 @@ multiple annotation types (like species origin, abbreviated gene names, etc)
 extracted.  Initial results from multiple software for protein (and peptide)
 quantitation can be imported (to a common format): @code{MaxQuant} (Tyanova et
 al 2016 <doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
-<doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020,
-<doi:10.1038/s41592-020-0912-y>), @code{MassChroq} (Valot et al 2011]
-<doi:10.1002/pmic.201100120>), @code{OpenMS} (<doi:10.1038/nmeth.3959>),
-@code{ProteomeDiscoverer}, Proline (Bouyssie et al 2020
-<doi:10.1093/bioinformatics/btaa118>) and Wombat-P. Meta-data provided by
-initial analysis software and/or in sdrf format can be integrated to the
-analysis.  Quantitative proteomics measurements frequently contain multiple NA
-values, due to physical absence of given peptides in some samples, limitations
-in sensitivity or other reasons.  Help is provided to inspect the data
-graphically to investigate the nature of NA-values via their respective
-replicate measurements and to help/confirm the choice of NA-replacement
-algorithms.  Meta-data in sdrf-format (Perez-Riverol et al 2020
-<doi:10.1021/acs.jproteome.0c00376>) or similar tabular formats can be imported
-and included.  Missing values can be inspected and imputed based on the concept
-of NA-neighbours or other methods.  Dedicated filtering and statistical testing
-using the framework of package limma <doi:10.18129/B9.bioc.limma> can be run,
-enhanced by multiple rounds of NA-replacements to provide robustness towards
-rare stochastic events.  Multi-species samples, as frequently used in
-benchmark-tests (eg Navarro et al 2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
+<doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020
+<doi:10.1038/s41592-020-0912-y>), @code{MassChroq} (Valot et al 2011
+<doi:10.1002/pmic.201100120>), @code{OpenMS} (Strauss et al 2021
+<doi:10.1038/nmeth.3959>), @code{ProteomeDiscoverer} (Orsburn 2021
+<doi:10.3390/proteomes9010015>), Proline (Bouyssie et al 2020
+<doi:10.1093/bioinformatics/btaa118>), @code{AlphaPept} (preprint Strauss et al
+<doi:10.1101/2021.07.23.453379>) and Wombat-P (Bouyssie et al 2023
+<doi:10.1021/acs.jproteome.3c00636>.  Meta-data provided by initial analysis
+software and/or in sdrf format can be integrated to the analysis.  Quantitative
+proteomics measurements frequently contain multiple NA values, due to physical
+absence of given peptides in some samples, limitations in sensitivity or other
+reasons.  Help is provided to inspect the data graphically to investigate the
+nature of NA-values via their respective replicate measurements and to
+help/confirm the choice of NA-replacement algorithms.  Meta-data in sdrf-format
+(Perez-Riverol et al 2020 <doi:10.1021/acs.jproteome.0c00376>) or similar
+tabular formats can be imported and included.  Missing values can be inspected
+and imputed based on the concept of NA-neighbours or other methods.  Dedicated
+filtering and statistical testing using the framework of package limma
+<doi:10.18129/B9.bioc.limma> can be run, enhanced by multiple rounds of
+NA-replacements to provide robustness towards rare stochastic events.
+Multi-species samples, as frequently used in benchmark-tests (eg Navarro et al
+2016 <doi:10.1038/nbt.3685>, Ramus et al 2016
 <doi:10.1016/j.jprot.2015.11.011>), can be run with special options considering
 such sub-groups during normalization and testing.  Subsequently, ROC curves
 (Hand and Till 2001 <doi:10.1023/A:1010920819831>) can be constructed to compare
@@ -7337,16 +7340,16 @@ and Paul (2017) <DOI: 10.1007/s00521-017-3289-9>.")
 (define-public r-waved
   (package
     (name "r-waved")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waved" version))
        (sha256
-        (base32 "0zv4rgazk9s295pggzfa7sc062zv68dgds1ngxcz7vg1fx0qkgxg"))))
+        (base32 "120dh64288daiq3k9ixcqxscy3brafwvv1964ndab1am0w466bqc"))))
     (properties `((upstream-name . "waved")))
     (build-system r-build-system)
-    (home-page "http://www.jstatsoft.org/v21/i02")
+    (home-page "https://www.jstatsoft.org/v21/i02")
     (synopsis "Wavelet Deconvolution")
     (description
      "Makes available code necessary to reproduce figures and tables in papers on the

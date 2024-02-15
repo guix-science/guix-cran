@@ -5551,6 +5551,29 @@ both applied for differences and extended to ratios of means.  A related
 single-step procedure is also available.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-multe
+  (package
+    (name "r-multe")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multe" version))
+       (sha256
+        (base32 "05hp59lsf0zdbp6lkyf9yq1i0isi68zgqwxxkssgw4r6w5yfh84g"))))
+    (properties `((upstream-name . "multe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kolesarm/multe")
+    (synopsis "Multiple Treatment Effects Regression")
+    (description
+     "This package implements contamination bias diagnostics and alternative
+estimators for regressions with multiple treatments.  The implementation is
+based on Goldsmith-Pinkham, Hull, and @code{KolesÃ¡r} (2022)
+<@code{arXiv:2106.05024>}.")
+    (license license:expat)))
+
 (define-public r-multdm
   (package
     (name "r-multdm")
@@ -7036,13 +7059,13 @@ A.P. 2013.  Methods of Statistical Model Estimation.  Chapman & Hall / CRC.")
 (define-public r-msma
   (package
     (name "r-msma")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msma" version))
        (sha256
-        (base32 "03aal2l3qxzg25bwav11fmlyps7fbkvr7wzgbqnixjjbmp0c70nk"))))
+        (base32 "173gi1j313z5kakvh24432j3f2mg8c9bvvi3rj5w3n4d6qk7s5cj"))))
     (properties `((upstream-name . "msma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

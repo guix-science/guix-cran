@@ -942,13 +942,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0v93667slfc84shnfzv3622xnzgz6jhh74h9kd16wnma949gqw4f"))))
+        (base32 "0v0vv8chk3sd976sd5zwy37n9dhm3ks6r6qy01kbhhaxjhgqgyxk"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -978,6 +978,7 @@ available at the following URL:
                              r-ggplot2
                              r-ggally
                              r-geepack
+                             r-forestploter
                              r-epidisplay
                              r-dt
                              r-data-table))

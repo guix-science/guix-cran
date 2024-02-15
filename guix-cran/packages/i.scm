@@ -16614,23 +16614,23 @@ supported by IBM'.")
 (define-public r-ibm
   (package
     (name "r-ibm")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibm" version))
        (sha256
-        (base32 "0g6wg2qpa4q142xw2vq5pca4ll6pb8hyll5g0c93kk8crddk51s7"))))
+        (base32 "0gl9w31xjb0r09isxsv10wac3vg97j863dc3h916j714md7pls6f"))))
     (properties `((upstream-name . "ibm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "http://roliveros-ramos.github.io/ibm")
+    (home-page "https://roliveros-ramos.github.io/ibm/")
     (synopsis "Individual Based Models in R")
     (description
-     "Implementation of some (simple) Individual Based Models and methods to create
-new ones, particularly for population dynamics models (reproduction, mortality
-and movement).  The basic operations for the simulations are implemented in Rcpp
-for speed.")
+     "Implementation of some Individual Based Models (IBMs, sensu Grimm and Railsback
+2005) and methods to create new ones, particularly for population dynamics
+models (reproduction, mortality and movement).  The basic operations for the
+simulations are implemented in Rcpp for speed.")
     (license license:gpl2)))
 
 (define-public r-ibfs

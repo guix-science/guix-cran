@@ -5354,13 +5354,13 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
 (define-public r-kalmanfilter
   (package
     (name "r-kalmanfilter")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kalmanfilter" version))
        (sha256
-        (base32 "0kxc9lwjdan5q1xikagfmwbbxxjqvqjcs1hq6514j8av0lrn6hpq"))))
+        (base32 "0q1zijmcfif0q1hjyg7v67y8570v7fqfs8s8dnh59fvyn8y4jh41"))))
     (properties `((upstream-name . "kalmanfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -5370,8 +5370,9 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
     (description
      "Rcpp implementation of the multivariate Kalman filter for state space models
 that can handle missing values and exogenous data in the observation and state
-equations.  Kim, Chang-Jin and Charles R. Nelson (1999) \"State-Space Models with
-Regime Switching: Classical and Gibbs-Sampling Approaches with Applications\"
+equations.  There is also a function to handle time varying parameters.  Kim,
+Chang-Jin and Charles R. Nelson (1999) \"State-Space Models with Regime
+Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 <doi:10.7551/mitpress/6444.001.0001><http://econ.korea.ac.kr/~cjkim/>.")
     (license license:gpl2+)))
 

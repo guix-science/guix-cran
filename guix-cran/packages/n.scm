@@ -5140,6 +5140,36 @@ Viole, F. and Nawrocki, D. (2013), Nonlinear Nonparametric Statistics: Using
 Partial Moments (ISBN: 1490523995).")
     (license license:gpl3)))
 
+(define-public r-nnr
+  (package
+    (name "r-nnr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nnR" version))
+       (sha256
+        (base32 "1wxryfkmachsv5m3bbb7ym70p55l36b218q8r2wjy4bl0cwi83jp"))))
+    (properties `((upstream-name . "nnR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/2shakilrafi/nnR/")
+    (synopsis "Neural Networks Made Algebraic")
+    (description
+     "Do algebraic operations on neural networks.  We seek here to implement in R,
+operations on neural networks and their resulting approximations.  Our
+operations derive their descriptions mainly from Rafi S., Padgett, J.L., and
+Nakarmi, U. (2024), \"Towards an Algebraic Framework For Approximating Functions
+Using Neural Network Polynomials\", <doi:10.48550/@code{arXiv.2402.01058>}, Grohs
+P., Hornung, F., Jentzen, A. et al. (2023), \"Space-time error estimates for deep
+neural network approximations for differential equations\",
+<doi:10.1007/s10444-022-09970-2>, Jentzen A., Kuckuck B., von Wurstemberger, P.
+(2023), \"Mathematical Introduction to Deep Learning Methods, Implementations,
+and Theory\" <doi:10.48550/@code{arXiv.2310.20360>}.  Our implementation is meant
+mainly as a pedagogical tool, and proof of concept.  Faster implementations with
+deeper vectorizations may be made in future versions.")
+    (license license:gpl3)))
+
 (define-public r-nnmis
   (package
     (name "r-nnmis")

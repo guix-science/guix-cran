@@ -1632,13 +1632,13 @@ classifications for each vote.")
 (define-public r-unusualprofile
   (package
     (name "r-unusualprofile")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unusualprofile" version))
        (sha256
-        (base32 "06z44hkmylp29vdb3l99zai58kvvrgxdji6x0cpiv6cx9216lcp3"))))
+        (base32 "0c2jcnl0aj45dw0rcryjcr24mbsf7r39xxv4gcli583czj3grp4g"))))
     (properties `((upstream-name . "unusualprofile")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

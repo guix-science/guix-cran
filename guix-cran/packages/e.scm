@@ -6713,13 +6713,13 @@ seismic data, and generate reports of the processing history.")
 (define-public r-esdm
   (package
     (name "r-esdm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eSDM" version))
        (sha256
-        (base32 "1416pd8z9nydsh7x3w9fm66dn2d0r9r6apri6hgg4fjjil9w07np"))))
+        (base32 "0xlqgsk6anpan996q9lxh8c3i6n6vg070g9z9j3z66mh6riyn9rq"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -6731,7 +6731,7 @@ seismic data, and generate reports of the processing history.")
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://smwoodman.github.io/eSDM/")
+    (home-page "https://github.com/smwoodman/eSDM/")
     (synopsis "Ensemble Tool for Predictions from Species Distribution Models")
     (description
      "This package provides a tool which allows users to create and evaluate ensembles
