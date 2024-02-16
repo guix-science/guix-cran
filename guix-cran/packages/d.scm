@@ -6255,13 +6255,13 @@ piping operators of different precedence, and flexible syntaxes.")
 (define-public r-doubleml
   (package
     (name "r-doubleml")
-    (version "0.5.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoubleML" version))
        (sha256
-        (base32 "1s1zpq5yz6l4b65p9mdpb91fsvhw6wifh3dvhwzyj7xn4nraaayv"))))
+        (base32 "159j9iq3kdpa0s6x4acvl8002lgbnw5j4wh9jbr3dqndpixq965l"))))
     (properties `((upstream-name . "DoubleML")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13
@@ -6286,7 +6286,8 @@ allows estimation of the nuisance parts in these models by machine learning
 methods and computation of the Neyman orthogonal score functions.
 @code{DoubleML} is built on top of mlr3 and the mlr3 ecosystem.  The
 object-oriented implementation of @code{DoubleML} based on the R6 package is
-very flexible.")
+very flexible.  More information available in the publication in the Journal of
+Statistical Software: <doi:10.18637/jss.v108.i03>.")
     (license license:expat)))
 
 (define-public r-doubleexpseq
@@ -17684,13 +17685,13 @@ examples and applications.")
 (define-public r-deplogo
   (package
     (name "r-deplogo")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DepLogo" version))
        (sha256
-        (base32 "13y3akmrj5x1mn1sgha1jryzswg4kqxwswbm3m5z92mcm2zw4r9l"))))
+        (base32 "13mk52ssiig76rnc02fq3b2g986b161gvncnr6krk7v9a4s5cjqk"))))
     (properties `((upstream-name . "DepLogo")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -26556,13 +26557,13 @@ can follow the tutorial in the vignette available at
 (define-public r-daff
   (package
     (name "r-daff")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daff" version))
        (sha256
-        (base32 "0lii8ijahfjxyqq1vqyz3axl6sca27dn05q2l2303klz6l9gss57"))))
+        (base32 "0zbh3p7d2r04j9kzfk32j2zw9f745dk7yl2dx8lflrm0zidwbxc4"))))
     (properties `((upstream-name . "daff")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8 r-jsonlite))

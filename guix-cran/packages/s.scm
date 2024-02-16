@@ -3574,13 +3574,13 @@ of GSE1992, GSE3143 and GSE4335.")
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "183g05zm1wlc3k038yzvw0p3ydbypr8qi47nmc49xdkzy836dw35"))))
+        (base32 "19yrk1qvpfqq7nqph9gmzyjb28a785gfq4kdbbdam9jmbyjijf9g"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3661,6 +3661,38 @@ the objective to maximize the concordance index for comparable pairs of
 observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-survivalsl
+  (package
+    (name "r-survivalsl")
+    (version "0.92")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalSL" version))
+       (sha256
+        (base32 "1yv8jadrn20kavz6irpjp98aan7y2w9amd3jfvs8ymjg2rmmz78g"))))
+    (properties `((upstream-name . "survivalSL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survivalmodels
+                             r-survival
+                             r-rpart
+                             r-reticulate
+                             r-randomforestsrc
+                             r-mass
+                             r-hdnom
+                             r-glmnetutils
+                             r-glmnet
+                             r-flexsurv
+                             r-dplyr
+                             r-date
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=survivalSL")
+    (synopsis "Super Learner for Survival Prediction from Censored Data")
+    (description
+     "Several functions and S3 methods to construct a super learner in the presence of
+censored times-to-event and to evaluate its prognostic capacities.")
+    (license license:gpl2+)))
 
 (define-public r-survivalrec
   (package
@@ -17783,19 +17815,19 @@ amount of resources.")
 (define-public r-sportyr
   (package
     (name "r-sportyr")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sportyR" version))
        (sha256
-        (base32 "1az2w2imm54xr6076fip7b881ydyvbj24if2w992ca3d39qggn6i"))))
+        (base32 "1br7wbxr488pknqq3ik6w86rrkx5cn61jrm2b8az27zh8k362dv6"))))
     (properties `((upstream-name . "sportyR")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
     (propagated-inputs (list r-rlang r-glue r-ggplot2 r-ggfittext))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/sportsdataverse/sportyR")
+    (home-page "https://sportyr.sportsdataverse.org/")
     (synopsis
      "Plot Scaled 'ggplot' Representations of Sports Playing Surfaces")
     (description
@@ -30867,18 +30899,18 @@ documents without any training data.")
 (define-public r-slouch
   (package
     (name "r-slouch")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "slouch" version))
        (sha256
-        (base32 "09ffx657hs913prv0rifhsz60h39lk0h4z28myx6yzxcfdk4f48d"))))
+        (base32 "129824gl4wqckmjddv0bnw8pjvbqvx4xkcb399dffgqgs07qvbcq"))))
     (properties `((upstream-name . "slouch")))
     (build-system r-build-system)
     (propagated-inputs (list r-memoise r-crayon r-ape))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/kopperud/slouch")
+    (home-page "https://github.com/kopperud/slouch")
     (synopsis "Stochastic Linear Ornstein-Uhlenbeck Comparative Hypotheses")
     (description
      "An implementation of a phylogenetic comparative method.  It can fit univariate
@@ -32148,35 +32180,6 @@ for the data obtained from block designs with missing observations occurring
 randomly.  A resulting p-value is based on the chi-squared distribution and
 Monte Carlo method.")
     (license license:gpl2+)))
-
-(define-public r-skfcpd
-  (package
-    (name "r-skfcpd")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SKFCPD" version))
-       (sha256
-        (base32 "0bqz6w2r423kpvbqs56nacyvj2ckw33rq83ynkzc7r0c5pincx6i"))))
-    (properties `((upstream-name . "SKFCPD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-rcppeigen
-                             r-rcpp
-                             r-ggpubr
-                             r-ggplot2
-                             r-fastgasp))
-    (home-page "https://cran.r-project.org/package=SKFCPD")
-    (synopsis
-     "Fast Online Changepoint Detection for Temporally Correlated Data")
-    (description
-     "Sequential Kalman filter for scalable online changepoint detection by temporally
-correlated data.  It enables fast single and multiple change points with missing
-values.  See the reference: Hanmo Li, Yuedong Wang, Mengyang Gu (2023),
-<@code{arXiv:2310.18611>}.")
-    (license license:gpl3+)))
 
 (define-public r-skewt
   (package
@@ -49602,28 +49605,6 @@ resulting text can be decoded using decode() function and the two numeric keys
 specified during encryption.")
     (license license:expat)))
 
-(define-public r-secretbase
-  (package
-    (name "r-secretbase")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "secretbase" version))
-       (sha256
-        (base32 "1z0ddzdimma8rgd47fn5mma09d5c7vrl5b7gdlvfk8l047yihyb6"))))
-    (properties `((upstream-name . "secretbase")))
-    (build-system r-build-system)
-    (home-page "https://shikokuchuo.net/secretbase/")
-    (synopsis "Cryptographic Hash and Extendable-Output Functions")
-    (description
-     "SHA-3 cryptographic hash and SHAKE256 extendable-output functions (XOF).  The
-SHA-3 Secure Hash Standard was published by the National Institute of Standards
-and Technology (NIST) in 2015 at <doi:10.6028/NIST.FIPS.202>.  Fast and
-memory-efficient implementation using the core algorithm from Mbed TLS under the
-Trusted Firmware Project <https://www.trustedfirmware.org/projects/mbed-tls/>.")
-    (license license:gpl3+)))
-
 (define-public r-secret
   (package
     (name "r-secret")
@@ -50246,13 +50227,13 @@ found at Chi, Ipsen, Hsiao, Lin, Wang, Lee, Lu, and Tzeng. (2021+)
 (define-public r-seacarb
   (package
     (name "r-seacarb")
-    (version "3.3.2")
+    (version "3.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seacarb" version))
        (sha256
-        (base32 "11jp08s9kjf4aqw1i9rdy9fba14pafqm00bhxx9ixhw60bb7zb4a"))))
+        (base32 "1xrwvkal60dkj4i6h27dskbliizkz6q476s06627asjacy8vdls3"))))
     (properties `((upstream-name . "seacarb")))
     (build-system r-build-system)
     (propagated-inputs (list r-solvesaphe r-oce r-gsw))
@@ -57119,13 +57100,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "06sq9862098mwf2inamhjf3v9qf3w790sahmcsblvlik3mh9qs8f"))))
+        (base32 "187j6i0giq45mgg1bb33ssiryipdk7ahc8jpimij3icxy9v73d4b"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars

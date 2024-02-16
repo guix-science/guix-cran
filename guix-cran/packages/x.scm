@@ -1525,6 +1525,33 @@ operators.  A random mix operator for mutation selects a mutation variant
 randomly.")
     (license license:expat)))
 
+(define-public r-xegagpgene
+  (package
+    (name "r-xegagpgene")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaGpGene" version))
+       (sha256
+        (base32 "058sp2w1mhrnbcq3r5fgkmrq7b0mp4kbkf3v3q7k0i3akr95vrci"))))
+    (properties `((upstream-name . "xegaGpGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf))
+    (home-page "<https://github.com/ageyerschulz/xegaGpGene>")
+    (synopsis "Genetic Operations for Grammar-Based Genetic Programming")
+    (description
+     "An implementation of the representation-dependent gene level operations of
+grammar-based genetic programming with genes which are derivation trees of a
+context-free grammar: Initialization of a gene with a complete random derivation
+tree, decoding of a derivation tree.  Crossover is implemented by exchanging
+subtrees.  Depth-bounds for the minimal and the maximal depth of the roots of
+the subtrees exchanged by crossover can be set.  Mutation is implemented by
+replacing a subtree by a random subtree.  The depth of the random subtree and
+the insertion node are configurable.  For details, see Geyer-Schulz (1997,
+ISBN:978-3-7908-0830-X).")
+    (license license:expat)))
+
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")

@@ -7620,16 +7620,17 @@ continuous outcome\", BMC Medical Research Methodology.")
 (define-public r-cpr
   (package
     (name "r-cpr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpr" version))
        (sha256
-        (base32 "1vs9726v1qv099sbsfhny32qhz7w6y3smlrkfm6vnyx648l1d85z"))))
+        (base32 "1vv7cmjf08accdpp5qjw9rad8yb9izc6bw440366ckh4q87306q4"))))
     (properties `((upstream-name . "cpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
+                             r-rgl
                              r-rcpparmadillo
                              r-rcpp
                              r-plot3d
@@ -8049,13 +8050,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-1")
+    (version "1.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "1qycjsnm8hlf7r1dpgrg99ina2azynwik63hamdkibkfs09k5w7c"))))
+        (base32 "04b2v4ilhpqpkl61hmqvfwbsjd44nb5mgyw2a0av0i5sh4m7c2ln"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rda
@@ -17834,13 +17835,13 @@ changed in addition to summary statistics.")
 (define-public r-comparedesign
   (package
     (name "r-comparedesign")
-    (version "2.2")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompAREdesign" version))
        (sha256
-        (base32 "1dgwwamxw1407lfmla151a5lb0w5ijrwqpflvaakqsf1yd050d2c"))))
+        (base32 "0jdfrn8p13d369gwfkyiydwv6451gvz8qiiij74bj2zjpq7z6kc7"))))
     (properties `((upstream-name . "CompAREdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-numderiv r-ggpubr r-ggplot2
@@ -17850,11 +17851,10 @@ changed in addition to summary statistics.")
      "Statistical Functions for the Design of Studies with Composite Endpoints")
     (description
      "It has been designed to calculate the required sample size in randomized
-clinical trials with composite endpoints.  This package also includes functions
-to calculate the probability of observing the composite endpoint and the
-expected effect on the composite endpoint, among others.  The methods
-implemented can be found in Bofill & GÃ³mez (2019) <doi:10.1002/sim.8092> and
-GÃ³mez & Lagakos (2013) <doi:10.1002/sim.5547>.")
+clinical trials with composite endpoints.  It also calculates the expected
+effect and the probability of observing the composite endpoint, among others.
+The methodology can be found in Bofill & GÃ³mez (2019) <doi:10.1002/sim.8092>
+and GÃ³mez & Lagakos (2013) <doi:10.1002/sim.5547>.")
     (license license:gpl3)))
 
 (define-public r-comparecausalnetworks

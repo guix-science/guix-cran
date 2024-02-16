@@ -2165,23 +2165,30 @@ identify any library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "1ag07wzphsqgaha0h4ya9n68rc79j4y9hhqnppwqphbyj8i029kn"))))
+        (base32 "14qk8favhfy9cj0f9v1ibdmp4jsckgfl5ilpkz61ibksyi1sgps7"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rspectra
+                             r-rrcov
+                             r-rofanova
+                             r-robustbase
                              r-roahd
                              r-rlang
                              r-patchwork
+                             r-mvtnorm
                              r-matrixstats
+                             r-matrix
+                             r-mass
                              r-ggplot2
+                             r-fda-usc
                              r-fda
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -17247,13 +17254,13 @@ forward-pipe operator, %>%.")
 (define-public r-fbst
   (package
     (name "r-fbst")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fbst" version))
        (sha256
-        (base32 "15d73hngw8607la36cpl5z7ac18cpwkmqzp67ga2c5n94z2h8asc"))))
+        (base32 "143jd6lk2q8xzkdwrh7qy1vdvn2q07svl2zbpm5qaac14rh1kzg7"))))
     (properties `((upstream-name . "fbst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis r-rstanarm r-ks r-cubature r-bayestestr))

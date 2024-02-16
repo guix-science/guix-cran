@@ -12757,20 +12757,22 @@ Guarino (2022) <@code{arXiv:2208.06855>}.")
 (define-public r-nebula
   (package
     (name "r-nebula")
-    (version "1.4.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nebula" version))
        (sha256
-        (base32 "11z8b3vzpi3iahyf7idy2l1a24w7zz9pg8hxz24h00rbkqxawxq3"))))
+        (base32 "1al5cw4s2gsjfmrq0pgzz2y3xnvmibma01q8k6923k2wfwgnlkkn"))))
     (properties `((upstream-name . "nebula")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
-                             r-rspectra
+                             r-singlecellexperiment
+                             r-seurat
                              r-rfast
                              r-rcppeigen
                              r-rcpp
+                             r-parallelly
                              r-nloptr
                              r-matrix
                              r-future
@@ -12778,7 +12780,7 @@ Guarino (2022) <@code{arXiv:2208.06855>}.")
                              r-dorng
                              r-dofuture))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=nebula")
+    (home-page "https://github.com/lhe17/nebula")
     (synopsis
      "Negative Binomial Mixed Models Using Large-Sample Approximation for Differential Expression Analysis of ScRNA-Seq Data")
     (description
@@ -13575,34 +13577,6 @@ or output).  A quick start guide for using this package can be found here:
 <https://repub.eur.nl/pub/78323/> or
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2624981>.")
     (license license:gpl3+)))
-
-(define-public r-nc
-  (package
-    (name "r-nc")
-    (version "2024.1.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nc" version))
-       (sha256
-        (base32 "0g0qw40dh0njg0mn5wdxk0ncicpj287zxmmsq67q326m7hc3j1yg"))))
-    (properties `((upstream-name . "nc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tdhock/nc")
-    (synopsis "Named Capture to Data Tables")
-    (description
-     "User-friendly functions for extracting a data table (row for each match, column
-for each group) from non-tabular text data using regular expressions, and for
-melting columns that match a regular expression.  Patterns are defined using a
-readable syntax that makes it easy to build complex patterns in terms of
-simpler, re-usable sub-patterns.  Named R arguments are translated to column
-names in the output; capture groups without names are used internally in order
-to provide a standard interface to three regular expression C libraries (PCRE,
-RE2, ICU).  Output can also include numeric columns via user-specified type
-conversion functions.")
-    (license license:gpl3)))
 
 (define-public r-nbtsvarsel
   (package

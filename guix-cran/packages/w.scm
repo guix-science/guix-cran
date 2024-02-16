@@ -6448,17 +6448,16 @@ Nabipoor M, Westerhout CM, Rathwell S, and Bakal JA (2023)
 (define-public r-wce
   (package
     (name "r-wce")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WCE" version))
        (sha256
-        (base32 "105pwpd9ikm0gwz4r12jl6cgs1riwsk9pn5qk9cn3msgwa0sdynx"))))
+        (base32 "0wg4nigvry53mb89b89c1yrdlk5z0s1qqmlskwsrlbbkwd11sjch"))))
     (properties `((upstream-name . "WCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-plyr))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=WCE")
     (synopsis "Weighted Cumulative Exposure Models")
     (description
@@ -6468,7 +6467,7 @@ and represented by time-dependent covariates.  The current implementation
 estimates the weight function in the Cox proportional hazards model.  The
 function that assigns weights to doses taken in the past is estimated using
 cubic regression splines.")
-    (license license:gpl2+)))
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-wcde
   (package

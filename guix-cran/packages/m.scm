@@ -124,16 +124,16 @@ genes contributing to a transcriptome of interest (Drost et al. (2016)
 (define-public r-mycran
   (package
     (name "r-mycran")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myCRAN" version))
        (sha256
-        (base32 "0lx0l5z3z20xfil6f3c94by334girhca7ixyix88k5jn46a2s373"))))
+        (base32 "1b92jyk2nwlqx0sx05b1gj3ivy33rjz1394gazl0xm98jj1c1vkx"))))
     (properties `((upstream-name . "myCRAN")))
     (build-system r-build-system)
-    (propagated-inputs (list r-cranlogs))
+    (propagated-inputs (list r-pkgsearch r-cranlogs))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=myCRAN")
     (synopsis "Graph of Daily and Cumulative Downloads of your Packages")
@@ -4896,13 +4896,13 @@ package, both methodological and graphical.")
 (define-public r-multid
   (package
     (name "r-multid")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multid" version))
        (sha256
-        (base32 "0bzihahlrlwgph48ckwb6z8vm20rhj0rqzhwc2q5crhz8n7wnksb"))))
+        (base32 "0nx8gfsypg00v1hvqzjsbka86j8d1m5nl1y34ir425byzr26gx9v"))))
     (properties `((upstream-name . "multid")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -4911,6 +4911,8 @@ package, both methodological and graphical.")
                              r-lme4
                              r-lavaan
                              r-glmnet
+                             r-ggpubr
+                             r-ggplot2
                              r-emmeans
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -4920,7 +4922,7 @@ package, both methodological and graphical.")
      "Estimation of multivariate differences between two groups (e.g., multivariate
 sex differences) with regularized regression methods and predictive approach.
 See LÃ¶nnqvist & Ilmarinen (2021) <doi:10.1007/s11109-021-09681-2> and Ilmarinen
-et al. (2022) <doi:10.1177/08902070221088155>.  Includes tools that help in
+et al. (2023) <doi:10.1177/08902070221088155>.  Includes tools that help in
 understanding difference score reliability, predictions of difference score
 variables, conditional intra-class correlations, and heterogeneity of variance
 estimates.  Package development was supported by the Academy of Finland research
@@ -14120,13 +14122,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0l8jhmainrc30n30aq5pcpwk6n13qwiy5a4xb0ndgfj401y37c78"))))
+        (base32 "0xzayaxqlmzgpsc80gabmhwy1mv1cdn1zp9mkq9bmcgh6p3635vw"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance

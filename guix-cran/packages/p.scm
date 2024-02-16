@@ -5075,17 +5075,17 @@ Proteome Discover can be easily used due to flexibility of functions.")
 (define-public r-protrackr
   (package
     (name "r-protrackr")
-    (version "0.3.8")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProTrackR" version))
        (sha256
-        (base32 "02r8ax3wajk4fim15r6xkdzn4flw9a76a0gkd7sd7g2ym68rpcp2"))))
+        (base32 "08c53ndrfgaw8hxvrw13ypcbm62nlxgfnip7p9pivvlrjpiiryvj"))))
     (properties `((upstream-name . "ProTrackR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-tuner r-signal r-lattice r-audio))
-    (home-page "https://cran.r-project.org/package=ProTrackR")
+    (home-page "https://pepijn-devries.github.io/ProTrackR/")
     (synopsis "Manipulate and Play 'ProTracker' Modules")
     (description
      "@code{ProTracker} is a popular music tracker to sequence music on a Commodore
@@ -5094,7 +5094,7 @@ manipulate and play @code{ProTracker} module files.  Even though the file format
 could be considered archaic, it still remains popular to this date.  This
 package intends to contribute to this popularity and therewith keeping the
 legacy of @code{ProTracker} and the Commodore Amiga alive.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-protr
   (package
@@ -35112,13 +35112,13 @@ community networks and displays of cohesion against distance.")
 (define-public r-palasso
   (package
     (name "r-palasso")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palasso" version))
        (sha256
-        (base32 "0cgxfzhp394c8xprc2k0qx9c274bbp0cpazk7xilfrgcgk08156i"))))
+        (base32 "1qx6xa1csa4dz4vjr0q83pr22yxy01dzzqrjp5mxqqm6265wxqdh"))))
     (properties `((upstream-name . "palasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix r-glmnet))

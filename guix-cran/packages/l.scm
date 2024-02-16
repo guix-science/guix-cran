@@ -6890,28 +6890,6 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 <doi:10.1214/aos/1176345338>.")
     (license license:gpl2)))
 
-(define-public r-lm-br
-  (package
-    (name "r-lm-br")
-    (version "2.9.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lm.br" version))
-       (sha256
-        (base32 "1gy6j7fk8maa98c0srx03jsjrhj8gcxq32gszxh95zl268hnyspy"))))
-    (properties `((upstream-name . "lm.br")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=lm.br")
-    (synopsis "Linear Model with Breakpoint")
-    (description
-     "Exact significance tests for a changepoint in linear or multiple linear
-regression.  Confidence regions with exact coverage probabilities for the
-changepoint.  Based on Knowles, Siegmund and Zhang (1991)
-<doi:10.1093/biomet/78.1.15>.")
-    (license license:gpl2+)))
-
 (define-public r-lm-beta
   (package
     (name "r-lm-beta")
@@ -13291,13 +13269,13 @@ and edge-step normalization parameters.")
 (define-public r-lcda
   (package
     (name "r-lcda")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcda" version))
        (sha256
-        (base32 "0zd0692qspya0ynh5722pbn9mpyf48474pm10dzg4qhl3k4rmmsh"))))
+        (base32 "19s9rn7wg8acr74hsias81rz9yg8s35l1awr6jmw7ldjpfl22sj5"))))
     (properties `((upstream-name . "lcda")))
     (build-system r-build-system)
     (propagated-inputs (list r-polca))

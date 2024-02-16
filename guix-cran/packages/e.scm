@@ -5076,39 +5076,6 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 @code{netCDF} files.")
     (license license:gpl3)))
 
-(define-public r-eurlex
-  (package
-    (name "r-eurlex")
-    (version "0.4.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eurlex" version))
-       (sha256
-        (base32 "0sd9bhsb5b2w5h7rqsqc6xqmr3aiwwc3a6rhanwimm4ipxiddn9v"))))
-    (properties `((upstream-name . "eurlex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-pdftools
-                             r-magrittr
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-antiword))
-    (native-inputs (list r-knitr))
-    (home-page "https://michalovadek.github.io/eurlex/")
-    (synopsis "Retrieve Data on European Union Law")
-    (description
-     "Access to data on European Union laws and court decisions made easy with
-pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
-<doi:10.1080/2474736X.2020.1870150> .")
-    (license license:gpl3)))
-
 (define-public r-eunis-habitats
   (package
     (name "r-eunis-habitats")

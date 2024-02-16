@@ -1518,13 +1518,13 @@ package.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.5")
+    (version "5.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "094by5q478hqpsp1vihrf77j8i3jcdbc1by17ca9sv7r3pz0lrhw"))))
+        (base32 "04hbnc8gij28523b6kiyibc05sjn1z4y1r8z9j4f5ghyl8hm0mdx"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list calc))
@@ -4211,13 +4211,13 @@ vocational choices.  A theory of vocational personalities and work environments.
 (define-public r-holiglm
   (package
     (name "r-holiglm")
-    (version "0.2.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holiglm" version))
        (sha256
-        (base32 "0002md0kmai9nbsgab47bcfdf1cmr8kgp7qyqbqcny76l3zzjwhx"))))
+        (base32 "02i6smmwmvbkx351ahjzz247kky377r6ara06c5wk5jrfsfjbbr7"))))
     (properties `((upstream-name . "holiglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -4227,14 +4227,14 @@ vocational choices.  A theory of vocational personalities and work environments.
                              r-mass
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://arxiv.org/abs/2205.15447")
+    (home-page "https://cran.r-project.org/package=holiglm")
     (synopsis "Holistic Generalized Linear Models")
     (description
      "Holistic generalized linear models (HGLMs) extend generalized linear models
 (GLMs) by enabling the possibility to add further constraints to the model.  The
 holiglm package simplifies estimating HGLMs using convex optimization.
 Additional information about the package can be found in the reference manual,
-the README and the accompanying paper <doi:10.48550/@code{arXiv.2205.15447>}.")
+the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
     (license license:gpl3)))
 
 (define-public r-holdem
@@ -8306,13 +8306,13 @@ routes and isolines are returned as sf objects.")
 (define-public r-heplots
   (package
     (name "r-heplots")
-    (version "1.6.0")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heplots" version))
        (sha256
-        (base32 "01c4f2b7ja1q5cdzndgchf0ibrysd3m4d793diz680a8w47w11dh"))))
+        (base32 "09s3ys12p6rzyaza9dwvz83yifkbhkvfwcb0cwb3swd70zh9biml"))))
     (properties `((upstream-name . "heplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

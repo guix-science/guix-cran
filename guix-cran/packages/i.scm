@@ -2125,13 +2125,13 @@ Mendivil (2019) <doi:10.1007/s42519-019-0064-5>.")
 (define-public r-isocat
   (package
     (name "r-isocat")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocat" version))
        (sha256
-        (base32 "1d6pi2l1lfi4226890lsfa02v0df1mc8gi214icsbk4fid4jygsx"))))
+        (base32 "0y6b7pgg20lgcl2bwvc76ha02qzra76g2jchbfzrc4np8hdd75ma"))))
     (properties `((upstream-name . "isocat")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-raster r-plyr r-magrittr r-foreach))
@@ -9783,13 +9783,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "04c2a2mrhr83m3z9kr8k4aib61x4qfagns83myjmv3m5gkb0g2pp"))))
+        (base32 "19ns3c4pi2s0vp5lvwk4zqsvs5wg2kc79h6zhlcq7xh6l4q3f0v3"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9803,6 +9803,7 @@ delay distribution.")
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-glue
                              r-ggplot2
                              r-dplyr

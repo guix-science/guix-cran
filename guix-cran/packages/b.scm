@@ -3426,13 +3426,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "1l8sy9ckcq56j9wshgs55mdpr266scz43r5zqylcgr231v5zg3z2"))))
+        (base32 "1iqp6915blbzjvfkqj9sa3gpads8qbhq19vi8isiszadi40218bk"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21427,13 +21427,13 @@ split population survival estimator is described in Bagozzi et al. (2019)
 (define-public r-bayesmeta
   (package
     (name "r-bayesmeta")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesmeta" version))
        (sha256
-        (base32 "004m85gsxs0hzwyn3p24r917pp9451wmfk8ggnnc4kv5bls30dm6"))))
+        (base32 "1w9xz0wix4nggp6d1az8i9m1r7s288n1cksnnrdan0f3lpk5aai4"))))
     (properties `((upstream-name . "bayesmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-metafor r-forestplot))
@@ -22677,23 +22677,30 @@ asymptotic Bayesian distribution regression inference.")
 (define-public r-bayesdissolution
   (package
     (name "r-bayesdissolution")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesDissolution" version))
        (sha256
-        (base32 "1h3npy56k3npn1ddh766hrx7haq2xvqmryw58mpmi9a50cf8vs2f"))))
+        (base32 "0wn0yibymlxjc7aqiy6x3aaylpg0izvny82cialb27iaf11kbrzl"))))
     (properties `((upstream-name . "BayesDissolution")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pscl r-mnormt r-mcmcpack r-geor))
+    (propagated-inputs (list r-shiny
+                             r-pscl
+                             r-mnormt
+                             r-mcmcpack
+                             r-geor
+                             r-coda))
     (home-page "https://cran.r-project.org/package=BayesDissolution")
     (synopsis "Bayesian Models for Dissolution Testing")
     (description
-     "Fits Bayesian models to dissolution data sets that can be used for dissolution
-testing.  Currently the package includes the Bayesian models outlined in
-Pourmohamad et al. (2022) <doi:10.1111/rssc.12535>, but more models may be added
-over time.")
+     "Fits Bayesian models (amongst others) to dissolution data sets that can be used
+for dissolution testing.  The package was originally constructed to include only
+the Bayesian models outlined in Pourmohamad et al. (2022)
+<doi:10.1111/rssc.12535>.  However, additional Bayesian and non-Bayesian models
+(based on bootstrapping and generalized pivotal quanties) have also been added.
+More models may be added over time.")
     (license license:gpl2)))
 
 (define-public r-bayesdip
@@ -23700,13 +23707,13 @@ downloading and uploading and record operation log.")
 (define-public r-batchmix
   (package
     (name "r-batchmix")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "batchmix" version))
        (sha256
-        (base32 "18m0c6v5mjij9msnhy00lq6yjndb9b5cxjhzd6wqkvrykdl72q79"))))
+        (base32 "1pwfs892dqnh7zk90sbhrpa2k8vlzjnrp0jwscr2dw2z81qxgwqx"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

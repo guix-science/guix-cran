@@ -3340,13 +3340,13 @@ plotted.")
 (define-public r-tsfgrnn
   (package
     (name "r-tsfgrnn")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsfgrnn" version))
        (sha256
-        (base32 "02sxbf1j2p0j2pqwsdzfpm63dgm2wn0bxlifms3kb18qjsssnjiz"))))
+        (base32 "0pbscnz2mr7nnxvgcs7sw3awq78p5r4h0nwwycn6fi7wq7ngpd92"))))
     (properties `((upstream-name . "tsfgrnn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))
@@ -9872,17 +9872,17 @@ surface model.")
 (define-public r-torchvisionlib
   (package
     (name "r-torchvisionlib")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvisionlib" version))
        (sha256
-        (base32 "18fb3lc90267pmslc2wrafpdhdmrmrrgrz8b5yqbm6yc8p776bvn"))))
+        (base32 "1n9gvidi3lvcq730c70mzh94w42asv903708fqyqp2wrs68884na"))))
     (properties `((upstream-name . "torchvisionlib")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-torch r-rlang r-rcpp r-glue))
-    (home-page "https://cran.r-project.org/package=torchvisionlib")
+    (home-page "https://github.com/mlverse/torchvisionlib")
     (synopsis "Additional Operators for Image Models")
     (description
      "This package implements additional operators for computer vision models,
@@ -10810,16 +10810,17 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
 (define-public r-togglr
   (package
     (name "r-togglr")
-    (version "0.1.99")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "togglr" version))
        (sha256
-        (base32 "0cvlsza4jbh14knq4if8r5r4xvj1pzwa66i14g8h3qc89m4nvckr"))))
+        (base32 "1xq2sw0fy9isv4d0wlqhpcz83pz6jsq4xm5z18x0181g9iz3byqi"))))
     (properties `((upstream-name . "togglr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
+                             r-rappdirs
                              r-purrr
                              r-prettyunits
                              r-parsedate
@@ -10832,6 +10833,7 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
                              r-glue
                              r-getpass
                              r-dplyr
+                             r-cachem
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ThinkR-open/togglr")

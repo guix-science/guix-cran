@@ -6578,13 +6578,13 @@ Montanari, 2018 <@code{arXiv:1803.00374>}.")
 (define-public r-grandr
   (package
     (name "r-grandr")
-    (version "0.2.2")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grandR" version))
        (sha256
-        (base32 "1jxw2isjdgxyr9lf71zpn1bzpy1qs7v0918m846s0a71k6dlqr6f"))))
+        (base32 "1cb8mkckbwkdi3zy108z3yhq3mssshhx1l9yb1j8rhgfg9abirly"))))
     (properties `((upstream-name . "grandR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -20910,13 +20910,13 @@ degree cells occupied.")
 (define-public r-geor
   (package
     (name "r-geor")
-    (version "1.9-3")
+    (version "1.9-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoR" version))
        (sha256
-        (base32 "07p0q8q61irbxql7jxi7djklm1l9az6588sk709yjdqlg9npsglr"))))
+        (base32 "1ggbswsw01r3cfx88khprx6rhrq40rnqsbsljcjkpyg0xdy9g7df"))))
     (properties `((upstream-name . "geoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-sp r-mass))
@@ -21390,13 +21390,13 @@ databases, interactive plotting and selection of focus regions.")
 (define-public r-geomander
   (package
     (name "r-geomander")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomander" version))
        (sha256
-        (base32 "1nbh40ijm27ycm147ldjrv3yccbl9wb41r3k3czy014v32vgdh07"))))
+        (base32 "1w47ln4vxxlp45rqmr6diglwmyadhrq7n6smbgipznwkfkr975jm"))))
     (properties `((upstream-name . "geomander")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytiger
@@ -23286,13 +23286,13 @@ specifically developed for this kind of data ('Arciniegas-@code{AlarcÃ³n} 2014
 (define-public r-genetic-algo-optimizer
   (package
     (name "r-genetic-algo-optimizer")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genetic.algo.optimizeR" version))
        (sha256
-        (base32 "12gqirkpm6g7xpxx0nhm0xasyk6sd2vhwgrnms24b7p0172jmyc5"))))
+        (base32 "08jc17nwvycfgkzqisgyj741ykwsm0q8kh3f464zzwp5s6612ajy"))))
     (properties `((upstream-name . "genetic.algo.optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytex
@@ -24374,16 +24374,23 @@ features.")
 (define-public r-genai
   (package
     (name "r-genai")
-    (version "0.1.15")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenAI" version))
        (sha256
-        (base32 "19kyjjf2vwyx6m4v4v5wzmqx2slx8f3c9vkqvkw7r7a2ja3401g4"))))
+        (base32 "0qwls17p5nv24wx17yyq42sg903119s5z4hi91czas0l4wh9lnif"))))
     (properties `((upstream-name . "GenAI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-base64enc))
+    (propagated-inputs (list r-r6
+                             r-magrittr
+                             r-magick
+                             r-listenv
+                             r-jsonlite
+                             r-httr
+                             r-ggplotify
+                             r-base64enc))
     (home-page "https://genai.gd.edu.kg/")
     (synopsis "Generative Artificial Intelligence")
     (description

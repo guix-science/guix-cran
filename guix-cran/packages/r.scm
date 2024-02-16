@@ -1736,13 +1736,13 @@ workbooks.")
 (define-public r-rvertnet
   (package
     (name "r-rvertnet")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvertnet" version))
        (sha256
-        (base32 "1xwpw4gh4vs79fsp0h8vy21wmm66ynxa6xf6qvicgjgw68s02jda"))))
+        (base32 "06khqs7p9zvrvx573i2afiigwc1msba8xdpja8bm8h1nyfcni0mi"))))
     (properties `((upstream-name . "rvertnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -20206,42 +20206,6 @@ and approximates its sensitivity indices (see Kamari, H., Huet, S. and Taupin,
 M.-L. (2019) <@code{arXiv:1905.13695>}).")
     (license license:gpl2+)))
 
-(define-public r-rkeops
-  (package
-    (name "r-rkeops")
-    (version "2.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rkeops" version))
-       (sha256
-        (base32 "1iz8dpy9yjbh7ldwxb7hvz83rrw685v4rnxif4jyw3ixinm59w1f"))))
-    (properties `((upstream-name . "rkeops")))
-    (build-system r-build-system)
-    (inputs (list python))
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rhpcblasctl
-                             r-reticulate
-                             r-rdpack
-                             r-lifecycle
-                             r-future
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.kernel-operations.io/rkeops/")
-    (synopsis
-     "Kernel Operations on GPU or CPU, with Autodiff, without Memory Overflows")
-    (description
-     "The @code{KeOps} library lets you compute generic reductions of very large
-arrays whose entries are given by a mathematical formula with CPU and GPU
-computing support.  It combines a tiled reduction scheme with an automatic
-differentiation engine.  It is perfectly suited to the efficient computation of
-Kernel dot products and the associated gradients, even when the full kernel
-matrix does not fit into the GPU memory.")
-    (license license:expat)))
-
 (define-public r-rkenyaforex
   (package
     (name "r-rkenyaforex")
@@ -26055,13 +26019,13 @@ the functions.")
 (define-public r-rfars
   (package
     (name "r-rfars")
-    (version "0.3.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfars" version))
        (sha256
-        (base32 "0cbq37x0c045ld50bpsgh59nr5pb34r5g584bf8rcqylvdnkpa6s"))))
+        (base32 "06wxphwsb1cy5i36zsyi7mlibc9vsgyp36nx3xj1z451fgbc29l0"))))
     (properties `((upstream-name . "rfars")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -26081,10 +26045,10 @@ the functions.")
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/s87jackson/rfars")
-    (synopsis "Download and Analyze Fatal Crash Data")
+    (synopsis "Download and Analyze Crash Data")
     (description
-     "Download raw data from the Fatality Analysis Reporting System and prepare it for
-research.")
+     "Download crash data from the National Highway Traffic Safety Administration and
+prepare it for research.")
     (license license:cc0)))
 
 (define-public r-rfacts
@@ -27096,13 +27060,13 @@ function body from the R script.  Particularly convenient in combination with
 (define-public r-restorenet
   (package
     (name "r-restorenet")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RestoreNet" version))
        (sha256
-        (base32 "015j8kw0msixjxljhpj4hnj67k9z89zcsyga0jva4ig5ri24rj34"))))
+        (base32 "1lgdx6kqd5hqrj36p3vhgy42haj74dwb75gdjka61ms4j7l514hf"))))
     (properties `((upstream-name . "RestoreNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

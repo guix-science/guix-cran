@@ -3782,13 +3782,13 @@ Gamma, Exponential or Weibull.  For details see Chen (2000), Scaillet (2004)
 (define-public r-asv
   (package
     (name "r-asv")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ASV" version))
        (sha256
-        (base32 "1am6j2smyp3g1b9mbmc3610wiysny5b1pv8z6308zcq0q005gvpx"))))
+        (base32 "15k6gls2bcwnvpkqyz6jnhzk96rcnjdnxv63kh7zzp2qbidh27hb"))))
     (properties `((upstream-name . "ASV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-freqdom))
