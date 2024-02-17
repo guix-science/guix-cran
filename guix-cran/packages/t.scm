@@ -1276,13 +1276,13 @@ PARTICULAR PURPOSE. See the GNU General Public License for more details.")
 (define-public r-tv
   (package
     (name "r-tv")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tv" version))
        (sha256
-        (base32 "01b8rzjixy0byxrjs408rlvn96akszmgjgnfs967m6n3fix4lvwl"))))
+        (base32 "152yigfmfwwsykh8v2y86cl1ybz4p17msxcva8iiqg0ijnhrxhg2"))))
     (properties `((upstream-name . "tv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-lubridate r-dplyr))
@@ -4095,18 +4095,19 @@ are allowed.  The conditional distribution can be Poisson or Negative Binomial."
 (define-public r-tscopula
   (package
     (name "r-tscopula")
-    (version "0.3.1")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tscopula" version))
        (sha256
-        (base32 "0cbc90mzdl9rzf9p75whxqf5j2al5w8zacycs800kylkgv6cyanc"))))
+        (base32 "1cx761pigb3dakyz8587giq22vxzz2nr25x1ivdpdyshsaqj5sxq"))))
     (properties `((upstream-name . "tscopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-rvinecopulib
+                             r-polynom
                              r-matrix
                              r-ltsa
                              r-kdensity
@@ -4120,7 +4121,7 @@ are allowed.  The conditional distribution can be Poisson or Negative Binomial."
 models.  The package is based on methodology described in the following
 references. @code{McNeil}, A.J. (2021) <doi:10.3390/risks9010014>, Bladt, M., &
 @code{McNeil}, A.J. (2021) <doi:10.1016/j.ecosta.2021.07.004>, Bladt, M., &
-@code{McNeil}, A.J. (2021) <@code{arXiv:2107.00960>}.")
+@code{McNeil}, A.J. (2022) <doi:10.1515/demo-2022-0105>.")
     (license license:gpl3)))
 
 (define-public r-tsclust
@@ -6925,34 +6926,18 @@ Schmidt, Erdfelder, & Heck (2022) <DOI:10.31234/osf.io/gh8md>.")
 (define-public r-treebase
   (package
     (name "r-treebase")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treebase" version))
        (sha256
-        (base32 "1bx31jahb0wy2g8wl1z71vy659lfi8fq1sbbaxvyixzcwymix1wq"))))
+        (base32 "07rggigdgjbmz9wvbkxs6xcwg6k53zb4j4rvlfrgb5b4mq44s0wj"))))
     (properties `((upstream-name . "treebase")))
     (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
     (propagated-inputs (list r-xml r-rcurl r-httr r-ape))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/ropensci/treebase")
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/treebase/")
     (synopsis "Discovery, Access and Manipulation of 'TreeBASE' Phylogenies")
     (description
      "Interface to the API for @code{TreeBASE} <http://treebase.org> from R.
@@ -17169,13 +17154,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "0gf1859dgp5z0wj0xbv3ri8pg8bwng4j2nhfzlhy0k7zlhhwrv3p"))))
+        (base32 "10zll3bh20wc3swk5y0if1bgx40pjz87yk9z7np5g3wgxp0wzcdv"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -17184,9 +17169,9 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
      "Determine the path of the executing script.  Compatible with a few popular GUIs:
 Rgui', RStudio', VSCode', Jupyter', Emacs', and Rscript (shell).  Compatible
 with several functions and packages: source()', sys.source()',
-@code{debugSource}() in RStudio', compiler::loadcmp()', box::use()',
-knitr::knit()', plumber::plumb()', shiny::@code{runApp}()', package:targets',
-and testthat::source_file()'.")
+@code{debugSource}() in RStudio', compiler::loadcmp()', utils::Sweave()',
+box::use()', knitr::knit()', plumber::plumb()', shiny::@code{runApp}()',
+package:targets', and testthat::source_file()'.")
     (license license:expat)))
 
 (define-public r-thinkr
@@ -21858,13 +21843,13 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "0jwc5vrlgxkbahcr4rww1l12cbkrrdda4xrcx6p6lwxbx2m847jg"))))
+        (base32 "1q541sm4xg9l79p8f429m335jpmvhhfjnwxi31v0ay37bpnq2lsm"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -21876,6 +21861,7 @@ displays filtered and unfiltered observation counts.")
                              r-lifecycle
                              r-knitr
                              r-htmltools
+                             r-flextable
                              r-checkmate
                              r-bslib))
     (native-inputs (list r-knitr))
@@ -22030,13 +22016,13 @@ population based on several sampling designs.")
 (define-public r-teachingdemos
   (package
     (name "r-teachingdemos")
-    (version "2.12.1")
+    (version "2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TeachingDemos" version))
        (sha256
-        (base32 "1a7km8dbipqywkwhviw0xq6bzrp0n7jbfy76ia098rdpcz3qkcgm"))))
+        (base32 "1k7vq3l8brqikapv42ajcczsmkly9sf2y5fqpviwv86inx9bj3pq"))))
     (properties `((upstream-name . "TeachingDemos")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=TeachingDemos")
@@ -25236,13 +25222,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.3")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "16wwwwcwwc18imv1zjvw5dvdaqqgscsp4z2xgvdqaa6ljx1l5snj"))))
+        (base32 "0vqzql4103qfbsy0ryncznmrrk7dsr28awgrrrgccsvkp8fgh7hf"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet

@@ -192,13 +192,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.0.12")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "1ygv7y2rh2jnksn7shjvz86dsjfw5bqyrsl6qnmhscrad4ld5ajr"))))
+        (base32 "1wy5yzx4z2c9n9bq3imih339h20wigwy7120kk3wclpfxvhfi2b4"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -208,6 +208,7 @@ of this package.")
                              r-tibble
                              r-stringr
                              r-purrr
+                             r-progress
                              r-plotly
                              r-lubridate
                              r-ggplot2
@@ -15568,6 +15569,46 @@ for modeling, and the trained model can be applied to predict metabolites of
 analogous environments using new microbial feature abundances.")
     (license license:gpl3+)))
 
+(define-public r-mmicats
+  (package
+    (name "r-mmicats")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmiCATs" version))
+       (sha256
+        (base32 "1wghad4xk3qw41f23f3r4bv2kn3dsgyq3ndyif52v1ngi1z59aqr"))))
+    (properties `((upstream-name . "mmiCATs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-robustbase
+                             r-robust
+                             r-mmcards
+                             r-mass
+                             r-lmertest
+                             r-dt
+                             r-clusterses
+                             r-broom-mixed
+                             r-broom))
+    (home-page "https://github.com/mightymetrika/mmiCATs")
+    (synopsis "Cluster Adjusted t Statistic Applications")
+    (description
+     "Simulation results detailed in Esarey and Menger (2019)
+<doi:10.1017/psrm.2017.42> demonstrate that cluster adjusted t statistics (CATs)
+are an effective method for correcting standard errors in scenarios with a small
+number of clusters.  The @code{mmiCATs} package offers a suite of tools for
+working with CATs.  The @code{mmiCATs}() function initiates a shiny web
+application, facilitating the analysis of data utilizing CATs, as implemented in
+the cluster.im.glm() function from the @code{clusterSEs} package.  Additionally,
+the pwr_func_lmer() function is designed to simplify the process of conducting
+simulations to compare mixed effects models with CATs models.  For educational
+purposes, the @code{CloseCATs}() function launches a shiny application card
+game, aimed at enhancing users understanding of the conditions under which CATs
+should be preferred over random intercept models.")
+    (license license:expat)))
+
 (define-public r-mmibain
   (package
     (name "r-mmibain")
@@ -18081,13 +18122,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.10.0")
+    (version "2.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0f4wjkhammhqsvwfggpnpzp3k02czniagbi09l3vicpv3f3cvsjj"))))
+        (base32 "1d4im48h6zlq2s1aapfwjd93k8k4bxq54gz325cc110fs3i78s6p"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -20224,19 +20265,18 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "1sgn0g1rv2iz85bsg4n6s4rm81vy4jffqgj6k5fmvqga8i89c6k0"))))
+        (base32 "0aywgn8qhnkcq45w6vsrwarjm7mqfh4x7vqpwcp3vkygr3ykvcla"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/kunfa/mixedBayes")
-    (synopsis
-     "Bayesian Regularized Quantile Mixed Model for G - E Interactions")
+    (synopsis "Bayesian Longitudinal Regularized Quantile Mixed Model")
     (description
      "In longitudinal studies, the same subjects are measured repeatedly over time,
 leading to correlations among the repeated measurements.  Properly accounting
@@ -26698,13 +26738,13 @@ is possible with or without available data from a pilot study.")
 (define-public r-mets
   (package
     (name "r-mets")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mets" version))
        (sha256
-        (base32 "05shlwm3ay5klsnszlx2j7gyx9chnrzaadcidl0pdbnzdqgqisiz"))))
+        (base32 "0yisa6v0apxxw5ycjhc3hcghlmvzzaq431z8nzsrw5jc2g13c0ca"))))
     (properties `((upstream-name . "mets")))
     (build-system r-build-system)
     (propagated-inputs (list r-timereg
@@ -36783,13 +36823,13 @@ private practitioners, scholars as well as policymakers.")
 (define-public r-matriks
   (package
     (name "r-matriks")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matRiks" version))
        (sha256
-        (base32 "1wnsg7ks5dg52xy4nfv6xsqjqc1yhj6z9wjfjc45rs8rwpg960ys"))))
+        (base32 "0npl1dkjc4q4rgfhqd80xg7v751dkxbfc3rnj93rw3z2mdwkk50i"))))
     (properties `((upstream-name . "matRiks")))
     (build-system r-build-system)
     (propagated-inputs (list r-desctools))
@@ -37524,13 +37564,13 @@ Reckase (2009) <doi:10.1007/978-0-387-89976-3>, and Mulder & van der Linden
 (define-public r-mastif
   (package
     (name "r-mastif")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mastif" version))
        (sha256
-        (base32 "09bac47n4z4mhfh6l1alyfh5yidj5l1rpw5f3d8knlyxmg7ai5s3"))))
+        (base32 "19i6hpwc6shyz9gr6xakg9s79crv1zwn8sqraf9k62scc22dl1p9"))))
     (properties `((upstream-name . "mastif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -40150,13 +40190,13 @@ with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.1.13")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "1izyi7hx266f7zj4rlpm9ijwj3yajlqrvdnc9899nvzl6g2whgqc"))))
+        (base32 "0w8gf920qj46y62ga017rk0f4306jasqprplfn7j3vdnx8l9qmdr"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply

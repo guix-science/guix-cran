@@ -3527,13 +3527,13 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "1xrb19c68m0qn0bzyqr4d6bflkzg3cjfck580idxzmd8ymdjrdrq"))))
+        (base32 "12zls470an7zf9h8anab2fadg93s1rp9zh8krpxpwlp1djxgaxdx"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
@@ -3543,7 +3543,7 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
     (description
      "Applies dynamic structural equation models to time-series data with generic and
 simplified specification for simultaneous and lagged effects.  Methods are
-described in Thorson et al. (In press) \"Dynamic structural equation models
+described in Thorson et al. (2024) \"Dynamic structural equation models
 synthesize ecosystem dynamics constrained by ecological mechanisms.\"")
     (license license:gpl3)))
 
@@ -22279,13 +22279,13 @@ calculate bins.")
 (define-public r-dbparser
   (package
     (name "r-dbparser")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbparser" version))
        (sha256
-        (base32 "0n8hbra1mjrlbzpxlpalx5w84w6xq38v3v3x5rsgkkyzmnk4r5jf"))))
+        (base32 "1zid7dnx1fsxs09sk76vywqqnhdaz53gh7r4i81abziisaa13i73"))))
     (properties `((upstream-name . "dbparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-tibble r-purrr r-progress r-dplyr))

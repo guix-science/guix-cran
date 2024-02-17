@@ -601,23 +601,26 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
 (define-public r-wru
   (package
     (name "r-wru")
-    (version "1.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wru" version))
        (sha256
-        (base32 "1z7issqzrqykqhmxbny0h39s28xrrwxdx8jmaw0flxyyn96gbcw0"))))
+        (base32 "09i47hm601lc6fv793fx8x5i9l6na5v9f66b7n2c9fb7nddqwy57"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rcpparmadillo
                              r-rcpp
                              r-purrr
                              r-pl94171
                              r-piggyback
                              r-future
                              r-furrr
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/kosukeimai/wru")
     (synopsis
      "Who are You? Bayesian Prediction of Racial Category Using Surname, First Name, Middle Name, and Geolocation")
@@ -628,7 +631,12 @@ Bayes Rule (with optional measurement error correction) to compute the posterior
 probability of each racial category for any given individual.  The package
 implements methods described in Imai and Khanna (2016) \"Improving Ecological
 Inference by Predicting Individual Ethnicity from Voter Registration Records\"
-Political Analysis <DOI:10.1093/pan/mpw001>.")
+Political Analysis <DOI:10.1093/pan/mpw001> and Imai, Olivella, and Rosenman
+(2022) \"Addressing census data problems in race imputation via fully Bayesian
+Improved Surname Geocoding and name supplements\" <DOI:10.1126/sciadv.adc9824>.
+The package also incorporates the data described in Rosenman, Olivella, and Imai
+(2023) \"Race and ethnicity data for first, middle, and surnames\"
+<DOI:10.1038/s41597-023-02202-2>.")
     (license license:gpl3+)))
 
 (define-public r-wrtopdownfrag

@@ -14325,22 +14325,40 @@ Requires a compatible installation of pdflatex', e.g. <https://miktex.org/>.")
 (define-public r-latexdiffr
   (package
     (name "r-latexdiffr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latexdiffr" version))
        (sha256
-        (base32 "021lhswy8nik2h1951h1affg8x5lchsa2amyx7fwrajp4bgq72yk"))))
+        (base32 "02myc3pgf8zmfd6ljknqlqakhhgb1dna2rbfa89v85gmf4fhsshh"))))
     (properties `((upstream-name . "latexdiffr")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (inputs (list))
-    (propagated-inputs (list r-rprojroot r-fs))
-    (home-page "https://cran.r-project.org/package=latexdiffr")
-    (synopsis "Diff 'rmarkdown' Files Using the 'latexdiff' Utility")
+    (propagated-inputs (list r-rprojroot r-fs r-assertthat))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/hughjonesd/latexdiffr")
+    (synopsis
+     "Diff TeX, 'rmarkdown' or 'quarto' Files Using the 'latexdiff' Utility")
     (description
-     "This package produces a PDF diff of two rmarkdown', Sweave or @code{TeX} files,
-using the external latexdiff utility.")
+     "This package produces a PDF diff of two rmarkdown', quarto', Sweave or
+@code{TeX} files, using the external latexdiff utility.")
     (license license:expat)))
 
 (define-public r-laterality

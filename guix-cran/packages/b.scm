@@ -494,13 +494,13 @@ distributions and impulse responses.")
 (define-public r-bvar
   (package
     (name "r-bvar")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BVAR" version))
        (sha256
-        (base32 "12bbqnycdw53rha6kb5s3wmzbyp5z3mzdq77akfq6w8q4iwy6324"))))
+        (base32 "05bf78pjf7bzhfnaq5pn8jfl25k4qdvhrl7m7fnfdmdj5bf46cml"))))
     (properties `((upstream-name . "BVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -14127,6 +14127,52 @@ distributed covariance matrices, including Cholesky decomposition,
 back/forwardsolve, crossproduct, and matrix multiplication.")
     (license license:gpl2+)))
 
+(define-public r-bigergm
+  (package
+    (name "r-bigergm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigergm" version))
+       (sha256
+        (base32 "19rxm6vfr9gh5k76jfpsyxvk4hl3ir760dhdk1hh2ky2pjsnwd5w"))))
+    (properties `((upstream-name . "bigergm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-statnet-common
+                             r-rlang
+                             r-reticulate
+                             r-readr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-network
+                             r-memoise
+                             r-matrix
+                             r-magrittr
+                             r-intergraph
+                             r-igraph
+                             r-glue
+                             r-foreach
+                             r-ergm
+                             r-dplyr
+                             r-doparallel
+                             r-cachem))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bigergm")
+    (synopsis
+     "Fit, Simulate, and Diagnose Hierarchical Exponential-Family Models for Big Networks")
+    (description
+     "This package provides a toolbox to analyze and simulate large networks based on
+hierarchical exponential-family random graph models (HERGMs).'bigergm implements
+the estimation for large networks efficiently on large networks building on the
+lighthergm package.  Moreover, the package contains tools for simulating
+networks with local dependence to assess the estimates goodness-of-fit.")
+    (license license:gpl3)))
+
 (define-public r-bigdm
   (package
     (name "r-bigdm")
@@ -16813,13 +16859,13 @@ complementarity of the primal and dual variables.")
 (define-public r-berryfunctions
   (package
     (name "r-berryfunctions")
-    (version "1.22.0")
+    (version "1.22.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "berryFunctions" version))
        (sha256
-        (base32 "166lx47z4m5spi4yapsda18mwg30z2gx9cdhvshzgr788vbpi1cd"))))
+        (base32 "1kd1r8ha1dggqmpiiwxvgfk5igshkfaqnkhkrjn7s79xqz2bsq1k"))))
     (properties `((upstream-name . "berryFunctions")))
     (build-system r-build-system)
     (propagated-inputs (list r-abind))
@@ -19026,17 +19072,16 @@ exposures and outcomes.  For more details, see Talbot et al. (2015)
 (define-public r-bcea
   (package
     (name "r-bcea")
-    (version "2.4.5")
+    (version "2.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCEA" version))
        (sha256
-        (base32 "04mccrbm35wp2ibjcqyiynwcvdyrnxp0574waljy40kwwrami1mn"))))
+        (base32 "0qmnwh3j0mksgvnfnbkym7fpcngdnf1j83lqfilp5gn46akdqyvn"))))
     (properties `((upstream-name . "BCEA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-voi
-                             r-scales
+    (propagated-inputs (list r-scales
                              r-rstan
                              r-rlang
                              r-reshape2
@@ -24219,6 +24264,31 @@ to plot, and saving plots to file.  Functions interface with the NIMBLE software
 package, see de Valpine, Turek, Paciorek, Anderson-Bergman, Temple Lang and
 Bodik (2017) <doi:10.1080/10618600.2016.1172487>.")
     (license license:gpl3)))
+
+(define-public r-basicdrm
+  (package
+    (name "r-basicdrm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basicdrm" version))
+       (sha256
+        (base32 "14hf2hjh3nfjmq6d7c1y442fh9kzj6fjk5v5r5kyq5hsgvlhazd6"))))
+    (properties `((upstream-name . "basicdrm")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=basicdrm")
+    (synopsis "Fit Hill Dose Response Models")
+    (description
+     "Evaluate, fit, and analyze Hill dose response models (Goutelle et al., 2008
+<doi:10.1111/j.1472-8206.2008.00633.x>), also sometimes referred to as
+four-parameter log-logistic models.  Includes tools to invert Hill models,
+select models based on the Akaike information criterion (Akaike, 1974
+<doi:10.1109/TAC.1974.1100705>) or Bayesian information criterion (Schwarz, 1978
+<https://www.jstor.org/stable/2958889>), and construct bootstrapped confidence
+intervals both on the Hill model parameters and values derived from the Hill
+model parameters.")
+    (license license:gpl3+)))
 
 (define-public r-basf
   (package

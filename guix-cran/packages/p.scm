@@ -35889,6 +35889,33 @@ description of the implemented data structure and methods, see Ferres & Iraola
 (2020), <doi:10.1101/2020.07.29.226951>.")
     (license license:gpl3)))
 
+(define-public r-pagfl
+  (package
+    (name "r-pagfl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAGFL" version))
+       (sha256
+        (base32 "0qlzbknbvxin1jahrz5xkb5gvjm5j02gqj6c1vx69jcaxravp5w3"))))
+    (properties `((upstream-name . "PAGFL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))
+    (home-page "https://github.com/Paul-Haimerl/PAGFL")
+    (synopsis
+     "Joint Estimation and Identification of Latent Groups in Panel Data Models")
+    (description
+     "In panel data analysis, unobservable group structures are a common challenge.
+Disregarding group-level heterogeneity by assuming an entirely homogeneous panel
+can introduce bias.  Conversely, estimating individual coefficients for each
+cross-sectional unit is inefficient and may lead to high uncertainty.  This
+package addresses this issue by implementing the pairwise adaptive group fused
+Lasso (PAGFL) by Mehrabani (2023) <doi:10.1016/j.jeconom.2022.12.002>.  PAGFL is
+an efficient methodology to identify latent group structures and estimate
+group-specific coefficients simultaneously.")
+    (license license:agpl3+)))
+
 (define-public r-pagenum
   (package
     (name "r-pagenum")

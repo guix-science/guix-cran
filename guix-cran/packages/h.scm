@@ -2704,13 +2704,13 @@ Bivand and Piras, (2015) <doi:10.18637/jss.v063.i18>, Drukker et al., (2013)
 (define-public r-hsphase
   (package
     (name "r-hsphase")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hsphase" version))
        (sha256
-        (base32 "1b62k9sc6604djy37anslvqjpbrj9wsc9mvnfbrnmhqf4g0nnpdq"))))
+        (base32 "18fd5g79m0d2f5b7j289wz6z5ypq2404vhnvv9jk45897f5mc4lf"))))
     (properties `((upstream-name . "hsphase")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall r-rcpparmadillo r-rcpp))

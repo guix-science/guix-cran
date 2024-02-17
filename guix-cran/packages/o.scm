@@ -6307,17 +6307,18 @@ on the R server side. @code{DataSHIELD} administration tools are also provided."
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opa" version))
        (sha256
-        (base32 "1dh7lzprcaz0j24npvmx7rr8yn8nlr5dp77zr4mmhwgv6912mv24"))))
+        (base32 "16qghf8izh2f4ljsiib8fdnbah0bhlybs5n6aa34vb82p0mrqijq"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/timbeechey/opa")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://timbeechey.github.io/opa/")
     (synopsis "An Implementation of Ordinal Pattern Analysis")
     (description
      "Quantifies hypothesis to data fit for repeated measures and longitudinal data,

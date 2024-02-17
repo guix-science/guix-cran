@@ -4870,29 +4870,6 @@ models; see Bischl et al. (2016) <doi:10.1016/j.artint.2016.04.003>.")
 @code{OpenAI} (<https://platform.openai.com/>) to answer questions (about R).")
     (license license:gpl3+)))
 
-(define-public r-asioheaders
-  (package
-    (name "r-asioheaders")
-    (version "1.22.1-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AsioHeaders" version))
-       (sha256
-        (base32 "192qxayrpvi02wrqq2h5cjc92aaxrsgw7z32r8qk5imqg3mc0a8n"))))
-    (properties `((upstream-name . "AsioHeaders")))
-    (build-system r-build-system)
-    (home-page "https://github.com/eddelbuettel/asioheaders")
-    (synopsis "'Asio' C++ Header Files")
-    (description
-     "Asio is a cross-platform C++ library for network and low-level I/O programming
-that provides developers with a consistent asynchronous model using a modern C++
-approach.  It is also included in Boost but requires linking when used with
-Boost.  Standalone it can be used header-only (provided a recent compiler).
-Asio is written and maintained by Christopher M. Kohlhoff, and released under
-the Boost Software License', Version 1.0.")
-    (license (license:fsdg-compatible "BSL-1.0"))))
-
 (define-public r-asht
   (package
     (name "r-asht")

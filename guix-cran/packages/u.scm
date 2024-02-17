@@ -10,9 +10,6 @@
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
-  #:use-module (gnu packages gtk)
-  #:use-module (gnu packages fontutils)
-  #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
@@ -2461,29 +2458,6 @@ input vector.  Reference: Quentin F. Stout (2008)
 <doi:10.1016/j.csda.2008.08.005>.  Spouge, J., Wan, H. & Wilbur, W.(2003)
 <doi:10.1023/A:1023901806339>.  Q.F. Stout (2013)
 <doi:10.1007/s00453-012-9628-4>.")
-    (license license:gpl2+)))
-
-(define-public r-unigd
-  (package
-    (name "r-unigd")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "unigd" version))
-       (sha256
-        (base32 "0519v2p4jzfpilai022blvyxi56kfdidafwjpa1g6lnmwmpk4isq"))))
-    (properties `((upstream-name . "unigd")))
-    (build-system r-build-system)
-    (inputs (list zlib libpng freetype fontconfig cairo))
-    (propagated-inputs (list r-systemfonts r-cpp11))
-    (native-inputs (list pkg-config r-knitr))
-    (home-page "https://github.com/nx10/unigd")
-    (synopsis "Universal Graphics Device")
-    (description
-     "This package provides a unified R graphics backend.  Render R graphics fast and
-easy to many common file formats.  Provides a thread safe C interface for
-asynchronous rendering of R graphics.")
     (license license:gpl2+)))
 
 (define-public r-uniformly

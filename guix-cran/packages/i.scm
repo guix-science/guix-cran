@@ -1780,13 +1780,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.0")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "0mbsyifasl5x4rwfgjyxn58id25yvz5ryiannlv4drd1hjg03kz7"))))
+        (base32 "04fx5240fiq4wm1335p1dz65avjgspmdljfsvkr9nvl724gfm3md"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -17146,25 +17146,25 @@ R15-11, R16-17(2018), R17-20 and R18-21 at <http://iapws.org>.")
 (define-public r-ials
   (package
     (name "r-ials")
-    (version "0.1.0")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IALS" version))
        (sha256
-        (base32 "0968j7npfm8x0swilwcrcgb1mnyb0xkjrx58q0lxag3fw0flw1rw"))))
+        (base32 "1gmsn428r923clq4zphl24wxbrhrn2mpbdkw38kaklxhwwf8lzki"))))
     (properties `((upstream-name . "IALS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-pracma r-hdmfa))
     (home-page "https://cran.r-project.org/package=IALS")
     (synopsis
-     "Iterative Alternating Least Square Algorithm for Large-Dimensional Matrix Factor Model")
+     "Iterative Alternating Least Square Estimation for Large-Dimensional Matrix Factor Model")
     (description
      "The matrix factor model has drawn growing attention for its advantage in
 achieving two-directional dimension reduction simultaneously for
 matrix-structured observations.  In contrast to the Principal Component Analysis
 (PCA)-based methods, we propose a simple Iterative Alternating Least Squares
-(IALS) algorithm for matrix factor models, see the details in He et al. (2023)
+(IALS) algorithm for matrix factor model, see the details in He et al. (2023)
 <@code{arXiv:2301.00360>}.")
     (license (list license:gpl2 license:gpl3))))
 

@@ -21525,24 +21525,24 @@ Cabassi and Kirk (2020) <doi:10.1093/bioinformatics/btaa593>.")
 (define-public r-cobiclust
   (package
     (name "r-cobiclust")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobiclust" version))
        (sha256
-        (base32 "068cqrhx7lxsvcjb62rgrca7y20cybz4445bl1qc6k16ca4bh0m9"))))
+        (base32 "04vwf3gawc02czqa3zk5lfklrqivsqlhbvfa2drsysbipy933zny"))))
     (properties `((upstream-name . "cobiclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-cluster))
-    (home-page "https://cran.r-project.org/package=cobiclust")
+    (propagated-inputs (list r-testthat r-cluster r-assertthat))
+    (home-page "https://github.com/julieaubert/cobiclust")
     (synopsis
      "Biclustering via Latent Block Model Adapted to Overdispersed Count Data")
     (description
      "Implementation of a probabilistic method for biclustering adapted to
 overdispersed count data.  It is a Gamma-Poisson Latent Block Model.  It also
 implements two selection criteria in order to select the number of biclusters.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-cobalt
   (package
@@ -37391,13 +37391,13 @@ confidence intervals for common ecological network metrics.")
 (define-public r-casmi
   (package
     (name "r-casmi")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CASMI" version))
        (sha256
-        (base32 "0sp5c9ddx010l418fy44psnpa78zlpclpz3hrss2zqkmh3qa0svc"))))
+        (base32 "1xj2d2p75hf6ypz57vbkrlcmf1gk52pv1fadyv9d40lzy8rc3667"))))
     (properties `((upstream-name . "CASMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-entropyestimation r-entropy))
@@ -37407,10 +37407,11 @@ confidence intervals for common ecological network metrics.")
      "This package contains Coverage Adjusted Standardized Mutual Information
 ('CASMI')-based functions.  CASMI is a fundamental concept of a series of
 methods.  For more information about CASMI and CASMI'-related methods, please
-refer to the corresponding publications (for example, a feature selection
-method, Shi, J., Zhang, J., & Ge, Y. (2019) <doi:10.3390/e21121179>, and a
-dataset quality measurement method, Shi, J., Zhang, J., & Ge, Y. (2019)
-<doi:10.1109/ICHI.2019.8904553>) or contact the package author.")
+refer to the corresponding publications (e.g., a feature selection method, Shi,
+J., Zhang, J., & Ge, Y. (2019) <doi:10.3390/e21121179>, and a dataset quality
+measurement method, Shi, J., Zhang, J., & Ge, Y. (2019)
+<doi:10.1109/ICHI.2019.8904553>) or contact the package author for the latest
+updates.")
     (license license:gpl3)))
 
 (define-public r-casmap
@@ -39583,13 +39584,13 @@ and to create an account, please see
 (define-public r-campsismod
   (package
     (name "r-campsismod")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsismod" version))
        (sha256
-        (base32 "0f3pw5v9mjqgf7l9hnwas3w5mh8cx6f8ayiyxwyffh833a7j43dp"))))
+        (base32 "0d3bdfx4jcnpzbnz6ymgz10s4137van6bcg5s4a3yzf90f02lbns"))))
     (properties `((upstream-name . "campsismod")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -39619,13 +39620,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "1ipdlp1034qlz3iyiw0fshjfqcg0rxc5vjbqxln3w8pyg862s2mf"))))
+        (base32 "1njz9qhrsf5nca4v2ph94lxc5l2k5ayhbv768rhv9r4maxilpjfw"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

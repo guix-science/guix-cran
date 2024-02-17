@@ -2446,6 +2446,26 @@ A., Slaoui, Y., Solier, C., & Perret, C. (2021)
 (1995) <doi:10.2307/2986138>.")
     (license license:gpl2)))
 
+(define-public r-executablepacker
+  (package
+    (name "r-executablepacker")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "executablePackeR" version))
+       (sha256
+        (base32 "05jy9sc4lxbiaklzrhjgs44syh3n003i44v5wcpy29rkjg3kdkpb"))))
+    (properties `((upstream-name . "executablePackeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-cli r-automagic))
+    (home-page "https://cran.r-project.org/package=executablePackeR")
+    (synopsis "Make 'shiny' App to Executable Program")
+    (description
+     "Make your shiny application as executable program.  Users do not need to install
+R and shiny on their system.")
+    (license license:gpl3)))
+
 (define-public r-exdqlm
   (package
     (name "r-exdqlm")

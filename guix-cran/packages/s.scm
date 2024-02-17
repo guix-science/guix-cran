@@ -4050,13 +4050,13 @@ for a Markov model, as often done by modellers and practitioners).
 (define-public r-surveyvoi
   (package
     (name "r-surveyvoi")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyvoi" version))
        (sha256
-        (base32 "1nvyp8cz2x0ld79zgpcs7bdynd6g02iklzy1qgs8nmygwi3drdwy"))))
+        (base32 "0lkws90jlvr4l40l8h7fkck0skpf9yp4989a3bsqvm670l8qvc1w"))))
     (properties `((upstream-name . "surveyvoi")))
     (build-system r-build-system)
     (inputs (list mpfr
@@ -4100,7 +4100,8 @@ evaluated using conditions) and maximizing value of information.  Please note
 that several functions depend on the Gurobi optimization software (available
 from <https://www.gurobi.com>).  Additionally, the JAGS software (available from
 <https://mcmc-jags.sourceforge.io/>) is required to fit hierarchical generalized
-linear models.")
+linear models.  For further details, see Hanson et al. (2022)
+<doi:10.1111/1365-2664.14309>.")
     (license license:gpl3)))
 
 (define-public r-surveytable
@@ -9992,13 +9993,13 @@ diagnostics.")
 (define-public r-stlnpp
   (package
     (name "r-stlnpp")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stlnpp" version))
        (sha256
-        (base32 "0d8afddz7gwdmrciz8bvwfxil7bfpf9h81rcb52mmr7j9da36mp4"))))
+        (base32 "1xhg3ksgdaazlp2k4ff9af6lv64acrskjbqn5z42qj0fvz91qr5a"))))
     (properties `((upstream-name . "stlnpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-linnet
@@ -17916,16 +17917,16 @@ Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
 (define-public r-spork
   (package
     (name "r-spork")
-    (version "0.2.3")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spork" version))
        (sha256
-        (base32 "1dvww617kcy8x483nclkvbkbafrv7a2c3n0yfd88bc5vhvwcgz81"))))
+        (base32 "0p9r203nnvannghlr3vggg30nmyz5j902dr7p2p2d3f1gh9vf3ss"))))
     (properties `((upstream-name . "spork")))
     (build-system r-build-system)
-    (propagated-inputs (list r-png r-latexpdf r-ggplot2))
+    (propagated-inputs (list r-png r-latexpdf r-kableextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=spork")
     (synopsis "Generalized Label Formatting")
     (description
@@ -26657,13 +26658,13 @@ Welk GJ (2018) <doi:10.1249/MSS.0000000000001486>.")
 (define-public r-soiltexture
   (package
     (name "r-soiltexture")
-    (version "1.5.1")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soiltexture" version))
        (sha256
-        (base32 "1l9npvk910488qzd45ibc7ss557hnkb78lx1p6fs3nhl8sacgyxh"))))
+        (base32 "1jrmcb7n3jcvf3ybwf9rg6mmlvkwy960a365ny86746viiw3zaq1"))))
     (properties `((upstream-name . "soiltexture")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mass))
@@ -34469,13 +34470,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "16vq6lbzwga5mj3xzdxfcvnhjc8dg92w08rvfg81yg09g8mg7b6b"))))
+        (base32 "1da0zsyqpnpnndz10yk0ccfhmldg263qr83760zf3pa14fzcxb7s"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -35557,17 +35558,17 @@ production-constrained, and attraction-constrained models (Wilson 1979)
 (define-public r-simode
   (package
     (name "r-simode")
-    (version "1.2.0")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simode" version))
        (sha256
-        (base32 "0wlnd01xfdqvjfvmkhkj6nvkrnv5ghjv4md5nhaqsjc8bycawyl0"))))
+        (base32 "13irkbjnzmz1mgs4rl7laix216xk4dwg6c1lvd3cjm64mx5bbxif"))))
     (properties `((upstream-name . "simode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quadprog r-pracma r-desolve))
-    (native-inputs (list r-r-rsp))
+    (propagated-inputs (list r-quadprog r-pracma r-ncvreg r-glmnet r-desolve))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=simode")
     (synopsis
      "Statistical Inference for Systems of Ordinary Differential Equations using Separable Integral-Matching")
@@ -38929,13 +38930,13 @@ this package is based on the works of Furusawa K, Hill AV, Parkinson JL (1927)
 (define-public r-shortirt
   (package
     (name "r-shortirt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shortIRT" version))
        (sha256
-        (base32 "1z8z3py2f6dd7bbhxgy0skm2lhsla1xniym3si27kkgh4lds9qrc"))))
+        (base32 "1z2db31r332dayaprdjrm9r3yihj7jnpk7j106m74q5ckwsaw859"))))
     (properties `((upstream-name . "shortIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tam r-ggplot2 r-dplyr))
@@ -42402,13 +42403,13 @@ and arithmetic.")
 (define-public r-shidashi
   (package
     (name "r-shidashi")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shidashi" version))
        (sha256
-        (base32 "133pm4chyp9gm050bgccpfi9g4b83m76g23jc59761z229v868p7"))))
+        (base32 "1zdyn0vsz5mnpbv3cj66q6y38h9gh5s02vnidhanwzz9c79q4ylj"))))
     (properties `((upstream-name . "shidashi")))
     (build-system r-build-system)
     (arguments
@@ -55487,6 +55488,29 @@ BA (2020). \"Quantifying the Bias due to Observed Individual Confounders in
 Causal Treatment Effect Estimates\".  Statistics in Medicine, 39(18): 2447- 2476
 <doi: 10.1002/sim.8549>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-sbde
+  (package
+    (name "r-sbde")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbde" version))
+       (sha256
+        (base32 "0npsf2s3j87j6gxjbpf46qndazjm2al43pxbhnx0jd6gd8fmr631"))))
+    (properties `((upstream-name . "sbde")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-extremefit r-coda))
+    (home-page "https://cran.r-project.org/package=sbde")
+    (synopsis "Semiparametric Bayesian Density Estimation")
+    (description
+     "Offers Bayesian semiparametric density estimation and tail-index estimation for
+heavy tailed data, by using a parametric, tail-respecting transformation of the
+data to the unit interval and then modeling the transformed data with a purely
+nonparametric logistic Gaussian process density prior.  Based on Tokdar et al.
+(2022) <doi:10.1080/01621459.2022.2104727>.")
+    (license license:gpl2)))
 
 (define-public r-sbck
   (package

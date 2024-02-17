@@ -8155,13 +8155,13 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 (define-public r-vaccine
   (package
     (name "r-vaccine")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vaccine" version))
        (sha256
-        (base32 "0cp35lkhr0x853ygjfpmdr18g3v839q82xivgv5n8ri1yaph85wq"))))
+        (base32 "0pqgavah2bjb0mw8irgri9sglaff3assx10xmhqnixb4jig8d87r"))))
     (properties `((upstream-name . "vaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -8179,7 +8179,7 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
                              r-e1071
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=vaccine")
+    (home-page "https://github.com/Avi-Kenny/vaccine")
     (synopsis
      "Statistical Tools for Immune Correlates Analysis of Vaccine Clinical Trial Data")
     (description

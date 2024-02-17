@@ -15996,13 +15996,13 @@ quantitative trait analysis in genome-wide association studies\"
 (define-public r-rnomads
   (package
     (name "r-rnomads")
-    (version "2.5.1")
+    (version "2.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rNOMADS" version))
        (sha256
-        (base32 "0zv0b8v67g71c8c9212zsj4bwld173s930p3qxdp23ax3l7l3igi"))))
+        (base32 "196iwdwin73kva9jrjjzx9kgl91h7a3d04p9i3r1rzp3v9xj4gpp"))))
     (properties `((upstream-name . "rNOMADS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -22227,24 +22227,21 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "1.1.8")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "02fmz4jla151w6bz0zg766q4d34kz1jf43156yr2f90zj8x4jjx4"))))
+        (base32 "1kcrwxnd3y80x5lf1lk5bkll5k8h520r3ryxvg6m2wa8p7mcc7yx"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-tidyr
                              r-tibble
                              r-stringr
                              r-readr
-                             r-rcurl
                              r-plyr
                              r-haven
-                             r-dt
                              r-dplyr
                              r-data-table))
     (home-page "https://ilostat.github.io/Rilostat/")
@@ -27897,13 +27894,13 @@ persistence using the Hurst coefficient.")
 (define-public r-resemble
   (package
     (name "r-resemble")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resemble" version))
        (sha256
-        (base32 "1qf1g0cq593lnvzac4z1v04bjp10aza786pfaivs74m726ihmzq6"))))
+        (base32 "1m27y1wmig4d7gxmli1n8mbqid9sh6vij0aj7vi1wk4vnwxgnq6w"))))
     (properties `((upstream-name . "resemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -37782,13 +37779,13 @@ package currently does not cover all the features in the package.  The site
 (define-public r-rcppensmallen
   (package
     (name "r-rcppensmallen")
-    (version "0.2.21.0.1")
+    (version "0.2.21.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppEnsmallen" version))
        (sha256
-        (base32 "1rmvsysgvjmbasq0nc1vvm9v84yg5jsczb085z9yd9zh70g2zxnv"))))
+        (base32 "0mhr2sv4wf6691ylx31s6607i3555n8ms9f401x7kj36jqjnwfc7"))))
     (properties `((upstream-name . "RcppEnsmallen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -40680,13 +40677,13 @@ and time, such as age-specific trends, bar chart and period-cohort trends.")
 (define-public r-rcali
   (package
     (name "r-rcali")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCALI" version))
        (sha256
-        (base32 "0wvpypp724rnzbs01y8md660ckj2r0xb9n96hz8rzai2f84rbjif"))))
+        (base32 "1w9g5wph5l6agrlzrb8axv4ldv4aid745vkm1r5ndsmssrbgf7v9"))))
     (properties `((upstream-name . "RCALI")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs))

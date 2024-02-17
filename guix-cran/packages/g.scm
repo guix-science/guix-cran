@@ -7850,13 +7850,13 @@ and that both continuous and categorical variables can be used to detect DIF.")
 (define-public r-gpcerf
   (package
     (name "r-gpcerf")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPCERF" version))
        (sha256
-        (base32 "1hf07jgw9nhv0i2dwi05h8bman3kgzyhpaq2k7dans65vxspc64h"))))
+        (base32 "0jzn64y06vaqnx7zb459lzjaa9bj4fajpg2ymrxaabh6fxa4m7v4"))))
     (properties `((upstream-name . "GPCERF")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

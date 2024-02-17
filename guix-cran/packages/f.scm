@@ -6348,13 +6348,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "5.0.0")
+    (version "5.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "0g7kf92vb9mmzhv1yzvbkfqjidv965nww7kw192s8swksh0d8l8f"))))
+        (base32 "1nbm127dpb8488234fspbpcl1nz8xdn2f7nxkh6ld3jy9m3f24sa"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -8711,6 +8711,27 @@ from package @code{rootSolve}'.  However, the methods can also be used with
 other types of functions.")
     (license license:gpl2+)))
 
+(define-public r-fmdu
+  (package
+    (name "r-fmdu")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmdu" version))
+       (sha256
+        (base32 "191ars9634svw5lazsrsxfam2pghkra620yqyfnmjgwhw91yvcp6"))))
+    (properties `((upstream-name . "fmdu")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-smacof))
+    (home-page "https://cran.r-project.org/package=fmdu")
+    (synopsis "(Restricted) [external] Multidimensional Unfolding")
+    (description
+     "This package provides functions for performing (external) multidimensional
+unfolding.  Restrictions (fixed coordinates or model restrictions) are available
+for both row and column coordinates in all combinations.")
+    (license license:bsd-2)))
+
 (define-public r-fmdates
   (package
     (name "r-fmdates")
@@ -9314,13 +9335,13 @@ any field where a series of steps (shell commands) are to be executed in a
 (define-public r-flowml
   (package
     (name "r-flowml")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowml" version))
        (sha256
-        (base32 "1fssgx06fz4bvprghl9kf8x80jg3g8w04hhdgvml86w4vhi1vz0v"))))
+        (base32 "1v26lncq6qqx7x2wnvaxwb88s7hgdwj9cv16kkzn4fnybwsmkw5g"))))
     (properties `((upstream-name . "flowml")))
     (build-system r-build-system)
     (propagated-inputs (list r-vip
@@ -12190,16 +12211,16 @@ work is available on github and @code{PyPi} ('@code{FiShPy}').")
 (define-public r-first
   (package
     (name "r-first")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "first" version))
        (sha256
-        (base32 "0qrmmrc2g9194vvbzlh42lqh915h2sgxc8i04m2cy7pvwj3zrf40"))))
+        (base32 "13gzjxgbqjn227981sijkksbjkyh8fca9735zjq93w2mv2af3y87"))))
     (properties `((upstream-name . "first")))
     (build-system r-build-system)
-    (propagated-inputs (list r-twinning r-pdist r-fnn))
+    (propagated-inputs (list r-twinning r-fnn))
     (home-page "https://cran.r-project.org/package=first")
     (synopsis "Factor Importance Ranking and Selection using Total Indices")
     (description
@@ -12448,6 +12469,47 @@ While it can be applied outside of the finance domain, Finn was built to meet
 the needs of financial analysts to better forecast their businesses within a
 company, and has a lot of built in features that are specific to the needs of
 financial forecasters.  Happy forecasting!")
+    (license license:expat)))
+
+(define-public r-finnsurveytext
+  (package
+    (name "r-finnsurveytext")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "finnsurveytext" version))
+       (sha256
+        (base32 "0hi0b6i37lpfs2xhb0k1qdlm91mils1kl2dl9gz3qx5hz8f9342s"))))
+    (properties `((upstream-name . "finnsurveytext")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud
+                             r-udpipe
+                             r-tidyr
+                             r-tibble
+                             r-textrank
+                             r-stringr
+                             r-stopwords
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-igraph
+                             r-gridextra
+                             r-ggraph
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://dariah-fi-survey-concept-network.github.io/finnsurveytext/")
+    (synopsis "Analyse Open-Ended Survey Responses in Finnish")
+    (description
+     "Annotates Finnish textual survey responses into @code{CoNLL-U} format using
+Finnish treebanks from <https://universaldependencies.org/format.html> using
+UDPipe as described in Straka and @code{StrakovÃ}¡ (2017)
+<doi:10.18653/v1/K17-3009>.  Formatted data is then analysed using single or
+comparison n-gram plots, wordclouds, summary tables and Concept Network plots.
+The Concept Network plots use the @code{TextRank} algorithm as outlined in
+Mihalcea, Rada & Tarau, Paul (2004) <https://aclanthology.org/W04-3252/>.")
     (license license:expat)))
 
 (define-public r-finnishgrid
