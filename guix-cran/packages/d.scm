@@ -2773,13 +2773,13 @@ information on dtangle see Hunt et al. (2019)
 (define-public r-dswe
   (package
     (name "r-dswe")
-    (version "1.8.1")
+    (version "1.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSWE" version))
        (sha256
-        (base32 "0ag4hv1nk8r1c8m4vby8a4cksaf56khvnajvcraiancb87b11igw"))))
+        (base32 "0xbhbiiq0mhqspxlgzlnrq2zm3gnb8n4rj285rdgq4cbpmfrly6l"))))
     (properties `((upstream-name . "DSWE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -2789,8 +2789,6 @@ information on dtangle see Hunt et al. (2019)
                              r-matrixstats
                              r-kernsmooth
                              r-gss
-                             r-gpvecchia
-                             r-gpgp
                              r-fnn
                              r-e1071
                              r-dplyr))
@@ -23874,36 +23872,6 @@ Dataset JSON (@code{JavaScript} Object Notation) files, while validating per the
 Dataset JSON schema file, as described in CDISC (2023)
 <https://www.cdisc.org/dataset-json>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-dataset
-  (package
-    (name "r-dataset")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dataset" version))
-       (sha256
-        (base32 "1b2mps95mn9q85z3xy2w64wivl61crlx95w37qz5h54capgngava"))))
-    (properties `((upstream-name . "dataset")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-isocodes r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dataobservatory-eu/dataset")
-    (synopsis "Create Data Frames that are Easier to Exchange and Reuse")
-    (description
-     "The aim of the dataset package is to make tidy datasets easier to release,
-exchange and reuse.  It organizes and formats data frame R objects into
-well-referenced, well-described, interoperable datasets into release and reuse
-ready form.  A subjective interpretation of the W3C @code{DataSet}
-recommendation and the datacube model <https://www.w3.org/TR/vocab-data-cube/>,
-which is also used in the global Statistical Data and Metadata @code{eXchange}
-standards, the application of the connected Dublin Core
-<https://www.dublincore.org/specifications/dublin-core/dcmi-terms/> and
-@code{DataCite} <https://support.datacite.org/docs/datacite-metadata-schema-44/>
-standards preferred by European open science repositories to improve the
-findability, accessibility, interoperability and reusability of the datasets.")
-    (license license:gpl3+)))
 
 (define-public r-dataseries
   (package

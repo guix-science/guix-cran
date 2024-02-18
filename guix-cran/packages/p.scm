@@ -2085,13 +2085,13 @@ from the Portuguese Wikipedia (<https://pt.wikipedia.org/>).")
 (define-public r-ptvapi
   (package
     (name "r-ptvapi")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ptvapi" version))
        (sha256
-        (base32 "0qz1ras2xbmph9hkxy9hpzw1abf2lrfs38jfw2yfxhhdv0frdcga"))))
+        (base32 "1if28cczy7vj18q4cy9dnynjdka7dgzpy5p2jxh1b3kklxbdwgcx"))))
     (properties `((upstream-name . "ptvapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -5032,13 +5032,13 @@ Prisonniere\", \"Albertine disparue\", and \"Le Temps retrouve\".")
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protti" version))
        (sha256
-        (base32 "175r4ifhmh7djdr9kwyvmfaf21x89qzr758pjkcyiza42a6fvyzf"))))
+        (base32 "1k05z9c8801gylmv4d0n5baqmzdhv38jpkmxm4qm34y2gyh10n0l"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5318,6 +5318,28 @@ al. (2015) <DOI:10.1109/tnb.2015.2457906> and Saini et al. (2015)
      "Seq2seq time-feature analysis based on variational model, with a wide range of
 distributions available for the latent variable.")
     (license license:gpl3)))
+
+(define-public r-proteomicscv
+  (package
+    (name "r-proteomicscv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "proteomicsCV" version))
+       (sha256
+        (base32 "0yf1shzqmvsvaywv7xxidx3dw2wfx6vm1kgnygdfvq0hqkj0c5n7"))))
+    (properties `((upstream-name . "proteomicsCV")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=proteomicsCV")
+    (synopsis
+     "Calculates the Percentage CV for Mass Spectrometry-Based Proteomics Data")
+    (description
+     "Calculates the percentage coefficient of variation (CV) for mass
+spectrometry-based proteomic data.  Intensity based quantification is log
+normal, there the CV is calculated with the lognormal function.  This package
+currently does not reference any academic publication.")
+    (license license:expat)))
 
 (define-public r-proteobayes
   (package
@@ -35892,13 +35914,13 @@ description of the implemented data structure and methods, see Ferres & Iraola
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "0qlzbknbvxin1jahrz5xkb5gvjm5j02gqj6c1vx69jcaxravp5w3"))))
+        (base32 "0qkpkls49ssrr6yib9j1az5yi8amd6hg99bap6pcv99l088078l6"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))

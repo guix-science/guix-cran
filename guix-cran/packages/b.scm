@@ -15857,41 +15857,6 @@ regression, geometric mean regression or Deming regression are special cases of
 the bfsl solution.")
     (license license:expat)))
 
-(define-public r-bfs
-  (package
-    (name "r-bfs")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BFS" version))
-       (sha256
-        (base32 "0k2p002b35lz3idwbsypc0rzbkd62j6l7syh6lpblw8c8gjqdcrb"))))
-    (properties `((upstream-name . "BFS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-xml2
-                             r-tidyrss
-                             r-tibble
-                             r-sf
-                             r-rvest
-                             r-rstac
-                             r-pxweb
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-janitor
-                             r-httr2
-                             r-fs
-                             r-dplyr
-                             r-curl))
-    (home-page "https://felixluginbuhl.com/BFS/")
-    (synopsis "Get Data from the Swiss Federal Statistical Office")
-    (description
-     "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
-<https://www.bfs.admin.ch/>.")
-    (license license:gpl3+)))
-
 (define-public r-bfpack
   (package
     (name "r-bfpack")
@@ -23918,13 +23883,13 @@ that will install Github starred R packages whether available on CRAN or not.")
 (define-public r-bat
   (package
     (name "r-bat")
-    (version "2.9.5")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAT" version))
        (sha256
-        (base32 "14g0k90061is0p8p4y41m536zf2jdapvvfjnxzni31y2mqd1id2h"))))
+        (base32 "04wsr8sz70z7z6cqhmc4npqvh6ay9r1x5ghkp2ick58s0f6sagbf"))))
     (properties `((upstream-name . "BAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

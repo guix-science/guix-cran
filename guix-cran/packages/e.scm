@@ -3081,6 +3081,31 @@ possible interactions are calculated, we use an operator matrix presented in
 Poelwijk, Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
     (license license:expat)))
 
+(define-public r-exactcione
+  (package
+    (name "r-exactcione")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExactCIone" version))
+       (sha256
+        (base32 "0mi3n215c9zxsg6xjjj6l3g9lfwnglr1d47b6m0giyds80y9s7l6"))))
+    (properties `((upstream-name . "ExactCIone")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ExactCIone")
+    (synopsis
+     "Admissible Exact Intervals for One-Dimensional Discrete Distributions")
+    (description
+     "Construct the admissible exact intervals for the binomial proportion, the
+Poisson mean and the total number of subjects with a certain attribute or the
+total number of the subjects for the hypergeometric distribution.  Both
+one-sided and two-sided intervals are of interest.  This package can be used to
+calculate the intervals constructed methods developed by Wang (2014)
+<doi:10.5705/ss.2012.257> and Wang (2015) <doi:10.1111/biom.12360>.")
+    (license license:agpl3+)))
+
 (define-public r-exactcidiff
   (package
     (name "r-exactcidiff")
@@ -5029,6 +5054,46 @@ Martin, et al.  The europeana data model (edm).  World Library and Information
 Congress: 76th IFLA general conference and assembly.  Vol.  10.  2010.).  The
 package also provides methods for bulk downloads of specific subsets of items,
 including both their metadata and their associated media files.")
+    (license license:expat)))
+
+(define-public r-euronext
+  (package
+    (name "r-euronext")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Euronext" version))
+       (sha256
+        (base32 "1sdj9f4f9p2cnbxmvpz50hz70axk0d2093mv50h4rbmj40irvix2"))))
+    (properties `((upstream-name . "Euronext")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-highcharter
+                             r-flextable
+                             r-dplyr))
+    (home-page "https://rpubs.com/Fredysessie/euronext")
+    (synopsis
+     "Retrieve Historical Data of Companies Listed on the 'Euronext' Stock Exchange")
+    (description
+     "This package provides seamless access to historical data of companies listed on
+the Euronext Stock Exchange(<https://live.euronext.com/en>), enabling users to
+retrieve real-time information directly within the R environment.  With
+functions tailored for data retrieval and manipulation, users can effortlessly
+access a wide range of financial data, including stock prices, trading volumes,
+and more.  Leveraging the power of R, this package facilitates efficient
+analysis and visualization of stock market trends, aiding investors, analysts,
+and researchers in making informed decisions.  By combining ease of use with
+comprehensive data access, Euronext empowers R users to delve deep into the
+dynamics of European financial markets, offering valuable insights for various
+financial applications.")
     (license license:expat)))
 
 (define-public r-eurodata
@@ -13836,40 +13901,6 @@ This work was supported by the U.S. National Science Foundation under Grants No.
  SES-1921523 and DMS-2015552.")
     (license license:gpl3+)))
 
-(define-public r-elfgen
-  (package
-    (name "r-elfgen")
-    (version "2.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "elfgen" version))
-       (sha256
-        (base32 "0j6m3qvgknmgc93p4629hyvxmdn6v9f54x9bbp5g2f7pfp44bkf0"))))
-    (properties `((upstream-name . "elfgen")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testit
-                             r-stringr
-                             r-sqldf
-                             r-scales
-                             r-sbtools
-                             r-quantreg
-                             r-nhdplustools
-                             r-ggplot2
-                             r-curl))
-    (home-page "https://github.com/HARPgroup/elfgen")
-    (synopsis
-     "Ecological Limit Function Model Generation and Analysis Toolkit")
-    (description
-     "This package provides a toolset for generating Ecological Limit Function (ELF)
-models and evaluating potential species loss resulting from flow change, based
-on the elfgen framework.  ELFs describe the relation between aquatic species
-richness (fish or benthic macroinvertebrates) and stream size characteristics
-(streamflow or drainage area).  Journal publications are available outlining
-framework methodology (Kleiner et al. (2020) <doi:10.1111/1752-1688.12876>) and
-application (Rapp et al. (2020) <doi:10.1111/1752-1688.12877>).")
-    (license license:expat)))
-
 (define-public r-elfdistr
   (package
     (name "r-elfdistr")
@@ -14905,6 +14936,34 @@ alongside the effects of missing covariates, modelled as latent factors.  The
 package includes a penalized maximum likelihood fitting function, and a genetic
 algorithm for selecting the most parsimonious species interaction network
 topology.")
+    (license license:gpl2+)))
+
+(define-public r-eicircles
+  (package
+    (name "r-eicircles")
+    (version "0.0.1-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eiCircles" version))
+       (sha256
+        (base32 "17myh4acljhzq3p3da7h99l3qga362f1fkkask1n6vxqn6p4iy1s"))))
+    (properties `((upstream-name . "eiCircles")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=eiCircles")
+    (synopsis
+     "Ecological Inference of RxC Tables by Overdispersed-Multinomial Models")
+    (description
+     "Estimates @code{RxC} (R by C) vote transfer matrices (ecological contingency
+tables) from aggregate data using the model described in Forcina et al. (2012),
+as extension of the model proposed in Brown and Payne (1986).  Allows
+incorporation of covariates.  References: Brown, P. and Payne, C. (1986).
+Aggregate data, ecological regression and voting transitions''.  Journal of the
+American Statistical Association, 81, 453â460.
+<DOI:10.1080/01621459.1986.10478290>.  Forcina, A., Gnaldi, M. and Bracalente,
+B. (2012).  A revised Brown and Payne model of voting behaviour applied to the
+2009 elections in Italy''.  Statistical Methods & Applications, 21, 109â119.
+<DOI:10.1007/s10260-011-0184-x>.")
     (license license:gpl2+)))
 
 (define-public r-eiaapi

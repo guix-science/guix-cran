@@ -6,10 +6,10 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
@@ -113,47 +113,6 @@ generalized ensembles).")
      "This package provides a tool for checking how much information is disclosed when
 reporting summary statistics.")
     (license license:gpl3)))
-
-(define-public r-utr-annotation
-  (package
-    (name "r-utr-annotation")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "utr.annotation" version))
-       (sha256
-        (base32 "0lldkd5fw86qxngjfvigmkdzynz0712wsk9p51xliqlavivvnpny"))))
-    (properties `((upstream-name . "utr.annotation")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-vcfr
-                             r-tidyr
-                             r-stringr
-                             r-rtracklayer
-                             r-readr
-                             r-keras
-                             r-iranges
-                             r-genomicranges
-                             r-genomicfeatures
-                             r-foreach
-                             r-ensembldb
-                             r-dplyr
-                             r-doparallel
-                             r-data-table
-                             r-biostrings
-                             r-biomart
-                             r-biocgenerics
-                             r-annotationhub
-                             r-annotationfilter))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=utr.annotation")
-    (synopsis "Annotate Variants in the Untranslated Regions")
-    (description
-     "This package provides a fast, user-friendly tool for annotating potential
-deleterious variants in the untranslated regions for both human and mouse
-species.  Y Liu, JD Dougherty (2021) <doi:10.1101/2021.06.23.449510>.")
-    (license license:gpl3+)))
 
 (define-public r-utiml
   (package

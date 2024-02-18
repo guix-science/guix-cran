@@ -2534,34 +2534,6 @@ change point detection, k-sample testing, and so on.  The primary reference is
 Mukhopadhyay, S. and Wang, K. (2018, Technical Report).")
     (license license:gpl2)))
 
-(define-public r-lpdynr
-  (package
-    (name "r-lpdynr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LPDynR" version))
-       (sha256
-        (base32 "1ghiy5cc3s4bc2vrl2kxhpa9hvcp37hbdx56mligggk504w6mphy"))))
-    (properties `((upstream-name . "LPDynR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-virtualspecies r-terra r-magrittr r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/xavi-rp/LPDynR")
-    (synopsis "Land Productivity Dynamics Indicator")
-    (description
-     "It uses phenological and productivity-related variables derived from time series
-of vegetation indexes, such as the Normalized Difference Vegetation Index, to
-assess ecosystem dynamics and change, which eventually might drive to land
-degradation.  The final result of the Land Productivity Dynamics indicator is a
-categorical map with 5 classes of land productivity dynamics, ranging from
-declining to increasing productivity.  See
-<https://www.sciencedirect.com/science/article/pii/S1470160X21010517/> for a
-description of the methods used in the package to calculate the indicator.")
-    (license license:gpl3)))
-
 (define-public r-lpdensity
   (package
     (name "r-lpdensity")
@@ -5028,13 +5000,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "0ihm23z3a0nnrq9hhn4aqmv349y03lpa3xya9zdwg4xpsdbd8hr1"))))
+        (base32 "0ydz82vrqv5kwchsafnq15kfdz8vd7jzaxa3b8v7s7r2qfh23603"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5044,6 +5016,7 @@ package has no external dependencies.")
                              r-memoise
                              r-ldlinkr
                              r-iranges
+                             r-ggrepel
                              r-ggplot2
                              r-gggrid
                              r-genomicranges
@@ -6889,6 +6862,28 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 <doi:10.2307/2332914>, and the Bayesian bootstrap by Rubin (1981)
 <doi:10.1214/aos/1176345338>.")
     (license license:gpl2)))
+
+(define-public r-lm-br
+  (package
+    (name "r-lm-br")
+    (version "2.9.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lm.br" version))
+       (sha256
+        (base32 "15ddkfy4166qkll6sf23v139mkgv67vw45haiqvf1zxfi5gc53md"))))
+    (properties `((upstream-name . "lm.br")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=lm.br")
+    (synopsis "Linear Model with Breakpoint")
+    (description
+     "Exact significance tests for a changepoint in linear or multiple linear
+regression.  Confidence regions with exact coverage probabilities for the
+changepoint.  Based on Knowles, Siegmund and Zhang (1991)
+<doi:10.1093/biomet/78.1.15>.")
+    (license license:gpl2+)))
 
 (define-public r-lm-beta
   (package

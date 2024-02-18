@@ -698,13 +698,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0s1i5j93l74081bhqqgm00jdqxr90zyvk5lvy1131nrhwbq84ch1"))))
+        (base32 "1v0cljb5hqbvfpzhpv4r43h65a9fqrh67iqhz1cv0vgprkbbfbc9"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2857,13 +2857,13 @@ estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlmerclusterperm" version))
        (sha256
-        (base32 "1y5qjk33sgrfipv2zdmwq85v0px2fl6vhdbvblb408p6014dxkvs"))))
+        (base32 "0rpjjj2qrr9j2vh4v8b1shxcm5h0vi0mrfrvbb7nni19hbqvblzj"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))

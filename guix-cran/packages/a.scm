@@ -560,6 +560,25 @@ be configured to be collected.  Logging messages are displayed on console and
 optionally they are sent to Azure Log Analytics workspace in real-time.")
     (license license:expat)))
 
+(define-public r-axisandallies
+  (package
+    (name "r-axisandallies")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "axisandallies" version))
+       (sha256
+        (base32 "0z1b17vy9vb8fm2vrhk4nf94ndqrpcpy8isfyb5n8xbm2mygr45m"))))
+    (properties `((upstream-name . "axisandallies")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=axisandallies")
+    (synopsis "Axis and Allies Spring")
+    (description
+     "Simulates battles in the board game Axis and Allies Spring 1942, and calculates
+your probability of winning a battle.  This speeds the game up significantly.")
+    (license license:expat)))
+
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
@@ -2117,16 +2136,24 @@ include a stationary structure in the spatial covariance, which utilizes
 (define-public r-autofc
   (package
     (name "r-autofc")
-    (version "0.1.2")
+    (version "0.2.0.1001")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autoFC" version))
        (sha256
-        (base32 "1hxpmd753qpzlyjivn37m1kij3gpp9x6xyw1x6090h9n4girnya2"))))
+        (base32 "08q3d2gcjwg36wy7lk8bkhv9i8cayckayslx30zbkypbhabh8bqm"))))
     (properties `((upstream-name . "autoFC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-irrcac))
+    (propagated-inputs (list r-tidyr
+                             r-thurstonianirt
+                             r-simdesign
+                             r-mplusautomation
+                             r-mass
+                             r-lavaan
+                             r-irrcac
+                             r-glue
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tspsyched/autoFC")
     (synopsis "Automatic Construction of Forced-Choice Tests")
@@ -2149,12 +2176,16 @@ that we often need to simultaneously meet multiple objectives, manual pairing
 becomes impractical or even not feasible once the number of latent traits and/or
 number of items per trait are relatively large.  To address these problems,
 @code{autoFC} is developed as a practical tool for facilitating the automatic
-construction of FC tests, essentially exempting users from the burden of manual
-item pairing and reducing the computational costs and biases induced by simple
-ranking methods.  Given characteristics of each item (and item responses), FC
-tests can be automatically constructed based on user-defined pairing criteria
-and weights as well as customized optimization behavior.  Users can also
-construct parallel forms of the same test following the same pairing rules.")
+construction of FC tests (Li et al., 2022 <doi:10.1177/01466216211051726>),
+essentially exempting users from the burden of manual item pairing and reducing
+the computational costs and biases induced by simple ranking methods.  Given
+characteristics of each item (and item responses), FC measures can be
+constructed either automatically based on user-defined pairing criteria and
+weights, or based on exact specifications of each block (i.e., blueprint; see Li
+et al., 2024 <doi:10.1177/10944281241229784>).  Users can also generate
+simulated responses based on the Thurstonian Item Response Theory model (Brown &
+Maydeu-Olivares, 2011 <doi:10.1177/0013164410375112>) and predict trait scores
+of simulated/actual respondents based on an estimated model.")
     (license license:gpl3)))
 
 (define-public r-autoensemble
@@ -5915,13 +5946,13 @@ Project, e.g. aroma.affymetrix and aroma.cn'.")
 (define-public r-aroma-cn
   (package
     (name "r-aroma-cn")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.cn" version))
        (sha256
-        (base32 "0d4wgc9vyr89i1588zh61f5wjsizv9j5y0j8zhrw65r9y8ffwa0w"))))
+        (base32 "0mfdwq4qsca80vcak56vnwgkhmjvdgj8dvpmv2a83z7ishk52kk4"))))
     (properties `((upstream-name . "aroma.cn")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -20437,13 +20468,13 @@ Europe Expert Meeting on Statistical Data Confidentiality, see
 (define-public r-acne
   (package
     (name "r-acne")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ACNE" version))
        (sha256
-        (base32 "1mkm5pa7cf3qhzcvaf3775mvsi3r0rgpm0ndpiikmjpcmrv5rd2z"))))
+        (base32 "12i1b5bbdn4wz80p8v6xygap7pkgdvidxmsd927ks7qf1yvaq93k"))))
     (properties `((upstream-name . "ACNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils

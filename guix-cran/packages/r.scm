@@ -2417,13 +2417,13 @@ broadly available while creating reproducible results.")
 (define-public r-rumidas
   (package
     (name "r-rumidas")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rumidas" version))
        (sha256
-        (base32 "1hnkjj689kn7sx5gvjrh1x3n5pickb9d0adb5n0grjq4j5ympbns"))))
+        (base32 "1y2fahyffdmnybj3hi4826sc7m5q9vvrcbz4xvd9dmm1zpgjqajx"))))
     (properties `((upstream-name . "rumidas")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2432,18 +2432,19 @@ broadly available while creating reproducible results.")
                              r-roll
                              r-rdpack
                              r-maxlik
-                             r-lubridate
-                             r-highfrequency))
+                             r-lubridate))
     (home-page "https://cran.r-project.org/package=rumidas")
     (synopsis
      "Univariate GARCH-MIDAS, Double-Asymmetric GARCH-MIDAS and MEM-MIDAS")
     (description
      "Adds the MIxing-Data Sampling (MIDAS, Ghysels et al. (2007)
 <doi:10.1080/07474930600972467>) components to a variety of GARCH and MEM (Engle
-(2002) <doi:10.1002/jae.683>) models, with the aim of predicting the volatility
-with additional low-frequency (that is, MIDAS) terms.  The estimation takes
-place through simple functions, which provide in-sample and (if present) and
-out-of-sample evaluations.  rumidas also offers a summary tool, which
+(2002) <doi:10.1002/jae.683>, Engle and Gallo (2006)
+<doi:10.1016/j.jeconom.2005.01.018>, and Amendola et al. (2024)
+<doi:10.1016/j.seps.2023.101764>) models, with the aim of predicting the
+volatility with additional low-frequency (that is, MIDAS) terms.  The estimation
+takes place through simple functions, which provide in-sample and (if present)
+and out-of-sample evaluations.  rumidas also offers a summary tool, which
 synthesizes the main information of the estimated model.  There is also the
 possibility of generating one-step-ahead and multi-step-ahead forecasts.")
     (license license:gpl3)))
@@ -6409,33 +6410,6 @@ the tiles from a folder of images directly through R, without the need of any
 external code.  At this moment only the JPEG format is supported, either as
 input (image and tiles) or output (mosaic transformed image).")
     (license license:gpl2+)))
-
-(define-public r-rsiena
-  (package
-    (name "r-rsiena")
-    (version "1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RSiena" version))
-       (sha256
-        (base32 "1ysxy6kikyxklvfa95mn61wr0ny7wc849qw4wxadxg8wdx98z53x"))))
-    (properties `((upstream-name . "RSiena")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-matrix r-mass r-lattice))
-    (home-page "https://www.stats.ox.ac.uk/~snijders/siena/")
-    (synopsis
-     "Siena - Simulation Investigation for Empirical Network Analysis")
-    (description
-     "The main purpose of this package is to perform simulation-based estimation of
-stochastic actor-oriented models for longitudinal network data collected as
-panel data.  Dependent variables can be single or multivariate networks, which
-can be directed, non-directed, or two-mode; and associated actor variables.
-There are also functions for testing parameters and checking goodness of fit.
-An overview of these models is given in Snijders (2017),
-<doi:10.1146/annurev-statistics-060116-054035>.")
-    (license (list license:gpl2 license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-rsi
   (package
@@ -30193,6 +30167,36 @@ importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
 
+(define-public r-reliabilitytheory
+  (package
+    (name "r-reliabilitytheory")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliabilityTheory" version))
+       (sha256
+        (base32 "1vj09a2gc36cp98kai4m0wyjg6h9yldawhjimjqr5nrf70i60bg5"))))
+    (properties `((upstream-name . "ReliabilityTheory")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sfsmisc
+                             r-phasetype
+                             r-mcmc
+                             r-igraph
+                             r-fraction
+                             r-combinat
+                             r-actuar))
+    (home-page "https://www.louisaslett.com/")
+    (synopsis "Structural Reliability Analysis")
+    (description
+     "Perform structural reliability analysis, including computation and simulation
+with system signatures, Samaniego (2007) <doi:10.1007/978-0-387-71797-5>, and
+survival signatures, Coolen and Coolen-Maturi (2013)
+<doi:10.1007/978-3-642-30662-4_8>.  Additionally supports parametric and
+topological inference given system lifetime data, Aslett (2012)
+<https://www.louisaslett.com/@code{PhD_Thesis.pdf>}.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-reliabilitydiag
   (package
     (name "r-reliabilitydiag")
@@ -34475,13 +34479,13 @@ in a form directly compatible with the rgl package.")
 (define-public r-readnsx
   (package
     (name "r-readnsx")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readNSx" version))
        (sha256
-        (base32 "1zi9s9v9q7scfgx4c0kq9f4shvfcxvl4499d853x9hyn3aby1x04"))))
+        (base32 "01hbmrp14a5kv464fh8b3wc09mygwhd4c7n0f7bnbq7hrapxdyzs"))))
     (properties `((upstream-name . "readNSx")))
     (build-system r-build-system)
     (inputs (list hdf5))
@@ -38470,13 +38474,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.34")
+    (version "2.4.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompanion" version))
        (sha256
-        (base32 "0idv0gy1b2qfa0ayzf53mnv0mmk2nq7ykc5n8g7f2zrmfpwb9hcb"))))
+        (base32 "184fsaandg34ijg1826r10bbm9wq2a02j68zb37hsm8zrggzm8jc"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr

@@ -5819,13 +5819,13 @@ Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
 (define-public r-openeo
   (package
     (name "r-openeo")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openeo" version))
        (sha256
-        (base32 "002zrvrm417ix80vrqnl2wygqh0vjymfi5hl88v6ajfspp9r73qn"))))
+        (base32 "02rm34mgjhcb3pp71x0rspyz7cmpmj4g5rs93xnly304il8v0rx2"))))
     (properties `((upstream-name . "openeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -9431,28 +9431,6 @@ dynamic principal components are defined as the linear combinations of the
 present and past values of the series that minimize the reconstruction mean
 squared error.")
     (license license:gpl2+)))
-
-(define-public r-odns
-  (package
-    (name "r-odns")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "odns" version))
-       (sha256
-        (base32 "0a2ifmyrsfih5a7jwc0b6l9wl7c1s5x08fq5bfm27xm9jnb8fwsn"))))
-    (properties `((upstream-name . "odns")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-glue r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jrh-dev/odns")
-    (synopsis "Access Scottish Health and Social Care Open Data")
-    (description
-     "Allows potential users of Scottish Health and Social Care Open Data
-(<https://www.opendata.nhs.scot/>) to easily explore and extract the available
-data.")
-    (license license:gpl3+)))
 
 (define-public r-odmeans
   (package

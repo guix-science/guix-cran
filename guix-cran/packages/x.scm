@@ -1552,6 +1552,30 @@ the insertion node are configurable.  For details, see Geyer-Schulz (1997,
 ISBN:978-3-7908-0830-X).")
     (license license:expat)))
 
+(define-public r-xegagegene
+  (package
+    (name "r-xegagegene")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaGeGene" version))
+       (sha256
+        (base32 "15ng9n6fi0cbk8zda7cwbs5niiy3fb8h941fws4xcli3h6l5krwg"))))
+    (properties `((upstream-name . "xegaGeGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene r-xegaderivationtrees r-xegabnf
+                             r-numbers))
+    (home-page "<https://github.com/ageyerschulz/xegaGeGene>")
+    (synopsis "Grammatical Evolution")
+    (description
+     "Grammatical evolution (see O'Neil, M. and Ryan, C. (2003,ISBN:1-4020-7444-1))
+uses decoders to convert linear (binary or integer genes) into programs.  In
+addition, automatic determination of codon precision with a limited rule choice
+bias is provided.  For a recent survey of grammatical evolution, see Ryan, C.,
+O'Neill, M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>.")
+    (license license:expat)))
+
 (define-public r-xegagagene
   (package
     (name "r-xegagagene")

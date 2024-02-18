@@ -6652,13 +6652,13 @@ dynamics and pathway expression specificity.")
 (define-public r-treediff
   (package
     (name "r-treediff")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treediff" version))
        (sha256
-        (base32 "0vd4b3d5a72zlql3wljh280lxabir7ksmpxng7n124dr4x5aza64"))))
+        (base32 "00yhqbxgz35fnz940zkqr0kylzqb55l1yhilphw1yzks3wmsd4id"))))
     (properties `((upstream-name . "treediff")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -12589,13 +12589,13 @@ project template for Rstudio'.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0kyp6j6hdspilbzlvdzgv2l004wcln0mgs21par1pxfm17mp4fda"))))
+        (base32 "0s0hq77vk754hwzyqdjs6z7vd0xkwgh3a0zgma755aq6x8i83cdf"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rcpp))
@@ -17398,6 +17398,51 @@ calculations.  v.4.1.3 changed to @code{frameLocates} to reflect change to
 as.character() to format().")
     (license license:gpl2+)))
 
+(define-public r-thermalsampler
+  (package
+    (name "r-thermalsampler")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ThermalSampleR" version))
+       (sha256
+        (base32 "1s1hxfssh7d0c4v4phvqpkr4asfrflg84hznz2qgjrn9k0dbkljj"))))
+    (properties `((upstream-name . "ThermalSampleR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-sn
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-janitor
+                             r-ggplot2
+                             r-envstats
+                             r-dplyr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ThermalSampleR")
+    (synopsis
+     "Calculate Sample Sizes Required for Critical Thermal Limits Experiments")
+    (description
+     "We present a range of simulations to aid researchers in determining appropriate
+sample sizes when performing critical thermal limits studies (e.g. CTmin/CTmin
+experiments).  A number of wrapper functions are provided for plotting and
+summarising outputs from these simulations.  This package is presented in van
+Steenderen, C.J.M., Sutton, G.F., Owen, C.A., Martin, G.D., and Coetzee, J.A.
+Sample size assessments for thermal physiology studies: An R package and R Shiny
+application.  2023.  Physiological Entomology. <doi:10.1111/phen.12416>.  The
+GUI version of this package is available on the R Shiny online server at:
+<https://clarkevansteenderen.shinyapps.io/@code{ThermalSampleR_Shiny/>} , or it
+is accessible via @code{GitHub} at
+<https://github.com/clarkevansteenderen/@code{ThermalSampleR_Shiny/>}.  We would
+like to thank Grant Duffy (University of Otago, Dundedin, New Zealand) for
+granting us permission to use the source code for the Test of Total Equivalency
+function.")
+    (license license:gpl3)))
+
 (define-public r-theopenair
   (package
     (name "r-theopenair")
@@ -21801,6 +21846,40 @@ Okajima et al. (2012) <doi:10.1007/s11284-011-0905-5>.")
     (description
      "Collection of shiny widgets to support teal applications.  Enables the
 manipulation of application layout and plot or table settings.")
+    (license license:asl2.0)))
+
+(define-public r-teal-transform
+  (package
+    (name "r-teal-transform")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.transform" version))
+       (sha256
+        (base32 "0g171h3lqym99w6h4msm00xx88fc23fq67n8lxal55zdrvv1flg0"))))
+    (properties `((upstream-name . "teal.transform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-teal-widgets
+                             r-teal-logger
+                             r-teal-data
+                             r-shinyvalidate
+                             r-shinyjs
+                             r-shiny
+                             r-rlang
+                             r-logger
+                             r-lifecycle
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.transform/")
+    (synopsis
+     "Functions for Extracting and Merging Data in the 'teal' Framework")
+    (description
+     "This package provides a standardized user interface for column selection, that
+facilitates dataset merging in teal framework.")
     (license license:asl2.0)))
 
 (define-public r-teal-slice

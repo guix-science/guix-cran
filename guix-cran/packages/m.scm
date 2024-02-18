@@ -5684,6 +5684,32 @@ help of each procedure.")
 Allocation Problems.")
     (license license:gpl2)))
 
+(define-public r-mult-latent-reg
+  (package
+    (name "r-mult-latent-reg")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mult.latent.reg" version))
+       (sha256
+        (base32 "1c17yn6hyc4kqbg0773kj6ispkrdkh43kgq6zg2cp66fxmv0p8g0"))))
+    (properties `((upstream-name . "mult.latent.reg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixstats r-lme4))
+    (home-page "https://cran.r-project.org/package=mult.latent.reg")
+    (synopsis "Regression and Clustering in Multivariate Response Scenarios")
+    (description
+     "Fitting multivariate response models with random effects on one or two levels;
+whereby the (one-dimensional) random effect represents a latent variable
+approximating the multivariate space of outcomes, after possible adjustment for
+covariates.  The method is particularly useful for multivariate, highly
+correlated outcome variables with unobserved heterogeneities.  Applications
+include regression with multivariate responses, as well as multivariate
+clustering or ranking problems.  See Zhang and Einbeck (2024)
+<doi:10.1007/s42519-023-00357-0>.")
+    (license license:gpl3)))
+
 (define-public r-mulset
   (package
     (name "r-mulset")
@@ -13640,16 +13666,17 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.4.3")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "0sm4d7rgq1dl04gi0qsws7lyh4mczm05d04cd5yd8nva24z5lbla"))))
+        (base32 "1jams44j0alfpk2lza4w2yfmq2h12kxnbhznndyz57pfajyh7glx"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tables
+    (propagated-inputs (list r-tinytable
+                             r-tables
                              r-performance
                              r-parameters
                              r-kableextra
@@ -21564,6 +21591,38 @@ useful wrappers of common base R functions, which extend S3 generics or provide
 default values for important parameters.")
     (license license:gpl3)))
 
+(define-public r-miscmetabar
+  (package
+    (name "r-miscmetabar")
+    (version "0.7.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MiscMetabar" version))
+       (sha256
+        (base32 "1gk9qdg7hi5dp4429diaym5h2v505y3scw3cmdiyc0kbziwgznch"))))
+    (properties `((upstream-name . "MiscMetabar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-phyloseq
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr
+                             r-dada2
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adrientaudiere/MiscMetabar")
+    (synopsis "Miscellaneous Functions for Metabarcoding Analysis")
+    (description
+     "Facilitate the description, transformation, exploration, and reproducibility of
+metabarcoding analyses. @code{MiscMetabar} is mainly built on top of the
+phyloseq', dada2 and targets R packages.  It helps to build reproducible and
+robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
+analysis of alpha and beta-diversity easier, more reproducible and more powerful
+by integrating a large number of tools.  Important features are described in
+@code{TaudiÃ¨re} A. (2023) <doi:10.21105/joss.06038>.")
+    (license license:agpl3)))
+
 (define-public r-misclassglm
   (package
     (name "r-misclassglm")
@@ -23165,6 +23224,30 @@ examples.")
 instrumental variables.")
     (license license:gpl2)))
 
+(define-public r-miivefa
+  (package
+    (name "r-miivefa")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MIIVefa" version))
+       (sha256
+        (base32 "1727xhnc1hxphid54nzzd2iaz1x3ivphidxkb47r3ck0njd43rwk"))))
+    (properties `((upstream-name . "MIIVefa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-miivsem))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lluo0/MIIVefa/")
+    (synopsis
+     "Exploratory Factor Analysis Using Model Implied Instrumental Variables")
+    (description
+     "Data-driven approach for Exploratory Factor Analysis (EFA) that uses Model
+Implied Instrumental Variables (MIIVs).  The method starts with a one factor
+model and arrives at a suggested model with enhanced interpretability that
+allows cross-loadings and correlated errors.")
+    (license license:expat)))
+
 (define-public r-miipw
   (package
     (name "r-miipw")
@@ -23782,6 +23865,43 @@ References Carrion-i-Silvestre J.J & @code{SansÃ³} A (2023)
 Carrion-i-Silvestre J.L (2004)
 <https://dspace.uib.es/xmlui/bitstream/handle/11201/152078/524035.pdf>.")
     (license license:gpl2)))
+
+(define-public r-micsr
+  (package
+    (name "r-micsr")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "micsr" version))
+       (sha256
+        (base32 "1rjny19h7h2zj2c186dws557h4yy0pcsr14dsbg25nmxplsbz0ml"))))
+    (properties `((upstream-name . "micsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-sandwich
+                             r-rlang
+                             r-rdpack
+                             r-purrr
+                             r-magrittr
+                             r-knitr
+                             r-ggplot2
+                             r-generics
+                             r-formula
+                             r-dplyr))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://www.r-project.org")
+    (synopsis "Microeconometrics with R")
+    (description
+     "Functions, data sets and examples for the book: Yves Croissant (2024)
+\"Microeconometrics with R\", Chapman and Hall/CRC The R Series.  The package
+includes a set of estimators for models used in microeconometrics, especially
+for count data and limited dependent variables.  Test functions include score
+test, Hausman test, Vuong test, Sargan test and conditional moment test.  A
+small subset of the data set used in the book is also included.")
+    (license license:gpl2+)))
 
 (define-public r-micsplines
   (package
@@ -31012,29 +31132,30 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melt" version))
        (sha256
-        (base32 "0rg2vm9gp65h4hgwhyrfhyh5h08dpffxhxg4hhzslai4f5yv7385"))))
+        (base32 "18ar0j8yhmpwpbh0cz4cyhby2sxirwdsz6dafxnc3cy69mwn88q0"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-bh))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/melt/")
     (synopsis "Multiple Empirical Likelihood Tests")
     (description
-     "This package performs multiple empirical likelihood tests for linear and
-generalized linear models.  The package offers an easy-to-use interface and
-flexibility in specifying hypotheses and calibration methods, extending the
-framework to simultaneous inferences.  The core computational routines are
-implemented using the Eigen C++ library and @code{RcppEigen} interface, with
-@code{OpenMP} for parallel computation.  Details of the testing procedures are
-given in Kim, @code{MacEachern}, and Peruggia (2023)
-<doi:10.1080/10485252.2023.2206919>.  This work was supported by the U.S.
-National Science Foundation under Grants No.  SES-1921523 and DMS-2015552.")
+     "This package performs multiple empirical likelihood tests.  It offers an
+easy-to-use interface and flexibility in specifying hypotheses and calibration
+methods, extending the framework to simultaneous inferences.  The core
+computational routines are implemented using the Eigen C++ library and
+@code{RcppEigen} interface, with @code{OpenMP} for parallel computation.
+Details of the testing procedures are provided in Kim, @code{MacEachern}, and
+Peruggia (2023) <doi:10.1080/10485252.2023.2206919>.  A companion paper by Kim,
+@code{MacEachern}, and Peruggia (2024) <doi:10.18637/jss.v108.i05> is available
+for further information.  This work was supported by the U.S. National Science
+Foundation under Grants No.  SES-1921523 and DMS-2015552.")
     (license license:gpl2+)))
 
 (define-public r-mekko
@@ -38407,13 +38528,13 @@ test suites.")
 (define-public r-markets
   (package
     (name "r-markets")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "markets" version))
        (sha256
-        (base32 "1s2c991m11c28xff7h5dg09qzs28f6gizn1frsxqfdddp03x70cg"))))
+        (base32 "1by2cm3hlw6jgdd5l30frjm5q83llizp09z6v1ajmb51lkrdnqf5"))))
     (properties `((upstream-name . "markets")))
     (build-system r-build-system)
     (inputs (list tbb))
@@ -38433,15 +38554,17 @@ test suites.")
 disequilibrium.  Supports the estimation of an equilibrium and four
 disequilibrium models with both correlated and independent shocks.  Also
 provides post-estimation analysis tools, such as aggregation, marginal effect,
-and shortage calculations.  The estimation methods are based on full information
-maximum likelihood techniques given in Maddala and Nelson (1974)
-<doi:10.2307/1914215>.  They are implemented using the analytic derivative
-expressions calculated in Karapanagiotis (2020) <doi:10.2139/ssrn.3525622>.
-Standard errors can be estimated by adjusting for heteroscedasticity or
-clustering.  The equilibrium estimation constitutes a case of a system of
-linear, simultaneous equations.  Instead, the disequilibrium models replace the
-market-clearing condition with a non-linear, short-side rule and allow for
-different specifications of price dynamics.")
+and shortage calculations.  See Karapanagiotis (2024)
+<doi:10.18637/jss.v108.i02> for an overview of the functionality and examples.
+The estimation methods are based on full information maximum likelihood
+techniques given in Maddala and Nelson (1974) <doi:10.2307/1914215>.  They are
+implemented using the analytic derivative expressions calculated in
+Karapanagiotis (2020) <doi:10.2139/ssrn.3525622>.  Standard errors can be
+estimated by adjusting for heteroscedasticity or clustering.  The equilibrium
+estimation constitutes a case of a system of linear, simultaneous equations.
+Instead, the disequilibrium models replace the market-clearing condition with a
+non-linear, short-side rule and allow for different specifications of price
+dynamics.")
     (license license:expat)))
 
 (define-public r-marketr
@@ -39354,13 +39477,13 @@ handling, and result caching.")
 (define-public r-mappoly
   (package
     (name "r-mappoly")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mappoly" version))
        (sha256
-        (base32 "0rfp4b5flc4ip2c6z6wq4yyqj99jnl1vrwv6277vhlfpv91fxjr1"))))
+        (base32 "0iqmyk6pinzgxj9pyr0k6sm77sz58wll7qk7bh5i4synifaf2422"))))
     (properties `((upstream-name . "mappoly")))
     (build-system r-build-system)
     (inputs (list zlib))

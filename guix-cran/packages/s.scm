@@ -32182,6 +32182,35 @@ randomly.  A resulting p-value is based on the chi-squared distribution and
 Monte Carlo method.")
     (license license:gpl2+)))
 
+(define-public r-skfcpd
+  (package
+    (name "r-skfcpd")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SKFCPD" version))
+       (sha256
+        (base32 "115afbld15c8av179c023mvhzb9cmwc0mgv2s86vv3ldy6l2s39d"))))
+    (properties `((upstream-name . "SKFCPD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggpubr
+                             r-ggplot2
+                             r-fastgasp))
+    (home-page "https://cran.r-project.org/package=SKFCPD")
+    (synopsis
+     "Fast Online Changepoint Detection for Temporally Correlated Data")
+    (description
+     "Sequential Kalman filter for scalable online changepoint detection by temporally
+correlated data.  It enables fast single and multiple change points with missing
+values.  See the reference: Hanmo Li, Yuedong Wang, Mengyang Gu (2023),
+<@code{arXiv:2310.18611>}.")
+    (license license:gpl3+)))
+
 (define-public r-skewt
   (package
     (name "r-skewt")
@@ -49659,13 +49688,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.4")
+    (version "4.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1c5nrilm2f2dj6byxkssr7y47rlb16i0934vnvmw53i2zh8ab3a4"))))
+        (base32 "1nwcq5psqk2n3f8cd6risx95gnh959wn175zyb04p8zf4h7xw7li"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

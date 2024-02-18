@@ -1178,13 +1178,13 @@ randomized trials.")
 (define-public r-cvcovest
   (package
     (name "r-cvcovest")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvCovEst" version))
        (sha256
-        (base32 "1kjv381g8g81x09cpy8dp1zxbh7q6vaxmgfb6i8cxz40nc2zq9rv"))))
+        (base32 "148qb2995h9an2zp6rn0lvy8c6x1iiqx4cdfhzx6jdixra3593im"))))
     (properties `((upstream-name . "cvCovEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11257,30 +11257,6 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 <doi:10.1145/2637484>.")
     (license license:expat)))
 
-(define-public r-corregp
-  (package
-    (name "r-corregp")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "corregp" version))
-       (sha256
-        (base32 "1v048dibn2x3y5mi2damcsr9i5kdig5n53g5j9gf31lqkzzjmnh3"))))
-    (properties `((upstream-name . "corregp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-gplots r-ellipse r-diagram r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=corregp")
-    (synopsis "Functions and Methods for Correspondence Regression")
-    (description
-     "This package provides a collection of tools for correspondence regression, i.e.
-the correspondence analysis of the crosstabulation of a categorical variable Y
-in function of another one X, where X can in turn be made up of the combination
-of various categorical variables.  Consequently, correspondence regression can
-be used to analyze the effects for a polytomous or multinomial outcome variable.")
-    (license license:gpl3)))
-
 (define-public r-correctr
   (package
     (name "r-correctr")
@@ -14709,16 +14685,17 @@ dialects that are identified by locale.")
 (define-public r-conquestr
   (package
     (name "r-conquestr")
-    (version "1.1.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conquestr" version))
        (sha256
-        (base32 "1vydlqbwdq5jj86rl4sq1inv2js0264lp57q5xiijrhsb06nxp7g"))))
+        (base32 "0f7mrx9ss9ja0maci2ydffz90i7v6p9x8wsgbz78dlw8zv2vc630"))))
     (properties `((upstream-name . "conquestr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-zlib
+                             r-tidyselect
                              r-tidyr
                              r-stringr
                              r-rlang
@@ -24406,13 +24383,13 @@ We refer readers to the articles cited above for all details.")
 (define-public r-clusrank
   (package
     (name "r-clusrank")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusrank" version))
        (sha256
-        (base32 "0m5yggbmp3kjh98nkmwy4k8lnd2jxp4c5gyysgvpp5zypakjc1cc"))))
+        (base32 "194h15ggymnzm70wm5w6xwjdjl0d7k2hnr5b93zhhncy3jrd590g"))))
     (properties `((upstream-name . "clusrank")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass))
@@ -37203,13 +37180,13 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.0.10.12")
+    (version "0.1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "09sir9j942arrv9vhf8fd22h9sdf6hn6n26nj4wnx5xdm1b51yy2"))))
+        (base32 "12525qqwh12cbbdma351jxabj0c5l8p02dl9vv2pxw1i7ka8xiqn"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cata")

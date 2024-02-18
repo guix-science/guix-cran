@@ -11074,45 +11074,6 @@ et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 <doi:10.1002/sim.9346>.")
     (license license:gpl2+)))
 
-(define-public r-netmediate
-  (package
-    (name "r-netmediate")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netmediate" version))
-       (sha256
-        (base32 "02dv74qyzl6wb7yqki3y7gfcgl9gcdsvzzw4yrkf6q00ks1jbq5a"))))
-    (properties `((upstream-name . "netmediate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-sna
-                             r-rsiena
-                             r-plyr
-                             r-plm
-                             r-network
-                             r-mass
-                             r-lme4
-                             r-intergraph
-                             r-gam
-                             r-ergmargins
-                             r-ergm
-                             r-btergm))
-    (home-page "https://cran.r-project.org/package=netmediate")
-    (synopsis "Micro-Macro Analysis for Social Networks")
-    (description
-     "Estimates micro effects on macro structures (MEMS) and average micro mediated
-effects (AMME).  URL: <https://github.com/sduxbury/netmediate>.
-@code{BugReports}: <https://github.com/sduxbury/netmediate/issues>.  Robins,
-Garry, Phillipa Pattison, and Jodie Woolcock (2005) <doi:10.1086/427322>.
-Snijders, Tom A. B., and Christian E. G. Steglich (2015)
-<doi:10.1177/0049124113494573>.  Imai, Kosuke, Luke Keele, and Dustin Tingley
-(2010) <doi:10.1037/a0020761>.  Duxbury, Scott (2023)
-<doi:10.1177/00811750231209040>.  Duxbury, Scott (2024)
-<doi:10.1177/00811750231220950>.")
-    (license license:gpl2+)))
-
 (define-public r-netmap
   (package
     (name "r-netmap")
@@ -15557,22 +15518,22 @@ etc.  of NAs'.")
 (define-public r-n2h4
   (package
     (name "r-n2h4")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "N2H4" version))
        (sha256
-        (base32 "1bqkjfw14jlk3hr10g5djp358qj07c8x4xyjsrcs86zx6yq2gbda"))))
+        (base32 "0bw1zj4a2rqp5pl1gqqxrv9psnl7qk0kl47ppd2k6xpqhpn4hg38"))))
     (properties `((upstream-name . "N2H4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-rvest
-                             r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-jsonlite
                              r-httr2))
-    (home-page "https://github.com/forkonlp/N2H4")
+    (home-page "https://forkonlp.github.io/N2H4/")
     (synopsis "Handling Methods for Naver News Text Crawling")
     (description
      "This package provides some functions to get Korean text sample from news

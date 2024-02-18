@@ -18013,13 +18013,13 @@ for text classification and to learn word vectors.  An example how to use
 (define-public r-fasttext
   (package
     (name "r-fasttext")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastText" version))
        (sha256
-        (base32 "1kb0ig17rq4iyqqlppf39ixgfqgm22wmv27xji2rknsq9df3c4kr"))))
+        (base32 "1mrdiqj8pplyygsga1plx8b731i915lzjxhzslkbz6qk2jrj7632"))))
     (properties `((upstream-name . "fastText")))
     (build-system r-build-system)
     (inputs (list))

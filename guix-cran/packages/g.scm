@@ -14302,13 +14302,13 @@ the sf and sp packages and for types in the trip and silicate packages.")
 (define-public r-gibasa
   (package
     (name "r-gibasa")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gibasa" version))
        (sha256
-        (base32 "1jmyagh0hi0d0v691v1ycgqsiz4cnqdd0x286asjqc2mjsqlgabv"))))
+        (base32 "1biy8vqvbc3mbf2p8kffpifdagyv7k5p28kdwyp9hgp996lj5pqk"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
     (inputs (list mecab))

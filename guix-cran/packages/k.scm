@@ -4302,6 +4302,38 @@ makes moving from a base model to a hypertuned one quick and easy by only
 requiring you to change a few lines of code.")
     (license license:asl2.0)))
 
+(define-public r-keras3
+  (package
+    (name "r-keras3")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "keras3" version))
+       (sha256
+        (base32 "017rdqpgxg28zpxdx4r63k51qz4sm4nzhdms0gh8cp7fafa34nkv"))))
+    (properties `((upstream-name . "keras3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zeallot
+                             r-tfruns
+                             r-tensorflow
+                             r-rlang
+                             r-reticulate
+                             r-magrittr
+                             r-glue
+                             r-generics
+                             r-fastmap
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://keras.posit.co/")
+    (synopsis "R Interface to 'Keras'")
+    (description
+     "Interface to Keras <https://keras.io>, a high-level neural networks API. Keras
+was developed with a focus on enabling fast experimentation, supports both
+convolution based networks and recurrent networks (as well as combinations of
+the two), and runs seamlessly on both CPU and GPU devices.")
+    (license license:expat)))
+
 (define-public r-kequate
   (package
     (name "r-kequate")

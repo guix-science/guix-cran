@@ -1741,13 +1741,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.0")
+    (version "6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "0spjw26xv33qy7zpyk5yga690wr0ibsm8m7adm1709v8l4s9vbv4"))))
+        (base32 "0l9wnw3pfrcsbn8ky33a0zlyzzr70yk8fb4qcpiz52k61nzpy4cy"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments
@@ -15579,13 +15579,13 @@ version release name: \"Good work squirrels\".")
 (define-public r-icecream
   (package
     (name "r-icecream")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icecream" version))
        (sha256
-        (base32 "0pd78w28x1q1faxarsb0wm9jcqvjfpahm62d4wdywv8vh57crh5w"))))
+        (base32 "0fn24i3psfslq7vqndqh74s95f6jqm980180dw1pqrpgvgx7ik4m"))))
     (properties `((upstream-name . "icecream")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-purrr r-pillar r-glue r-cli))
