@@ -10826,24 +10826,24 @@ tags.")
 (define-public r-roxygen2md
   (package
     (name "r-roxygen2md")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roxygen2md" version))
        (sha256
-        (base32 "1gvrfy0sk5qi8d93zxj5f7xgnnw0w38zyxdik4ckf0pkk0zdm27a"))))
+        (base32 "1pqdk13s507fwcv7jx20gpbgkm3yl2snsvrlscjch5kz5lls06iv"))))
     (properties `((upstream-name . "roxygen2md")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-usethis
+    (propagated-inputs (list r-usethis
                              r-tibble
                              r-rlang
                              r-rex
-                             r-enc
                              r-devtools
-                             r-desc))
-    (home-page "https://roxygen2md.r-lib.org")
+                             r-desc
+                             r-cli
+                             r-brio))
+    (home-page "https://roxygen2md.r-lib.org/")
     (synopsis "'Roxygen' to 'Markdown'")
     (description "Converts elements of roxygen documentation to markdown'.")
     (license license:gpl3)))
@@ -33005,13 +33005,13 @@ according to the IUCN (International Union for Conservation of Nature, see
 (define-public r-recurse
   (package
     (name "r-recurse")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recurse" version))
        (sha256
-        (base32 "01l30ypwaj7i2cwb0dy2sapp7mvvkm1k99sib5bdxpyww4zkpiqm"))))
+        (base32 "05x2qcabxw0xgirvb39si1j8szrz328fx1f3v8yvdysmfa3bg408"))))
     (properties `((upstream-name . "recurse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -42220,42 +42220,6 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-ravetools
-  (package
-    (name "r-ravetools")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ravetools" version))
-       (sha256
-        (base32 "145f86yzd492l6q3nqqjvgykr3riw6v86h80wd84ca1xian5lhd3"))))
-    (properties `((upstream-name . "ravetools")))
-    (build-system r-build-system)
-    (inputs (list pkg-config fftw))
-    (propagated-inputs (list r-waveslim
-                             r-signal
-                             r-rvcg
-                             r-rniftyreg
-                             r-rcpp
-                             r-r6
-                             r-pracma
-                             r-filearray
-                             r-digest))
-    (native-inputs (list pkg-config))
-    (home-page "https://dipterix.org/ravetools/")
-    (synopsis
-     "Signal and Image Processing Toolbox for Analyzing Intracranial 'Electroencephalography' Data")
-    (description
-     "Implemented fast and memory-efficient Notch'-filter, Welch-periodogram',
-discrete wavelet transform algorithm for hours of high-resolution signals, fast
-3D convolution, and image alignment; providing fundamental toolbox for
-@code{iEEG} pipelines.  Documentation and examples about RAVE project are
-provided at <https://openwetware.org/wiki/RAVE>, and the paper by John F.
-Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
-<doi:10.1016/j.neuroimage.2020.117341>; see citation(\"ravetools\") for details.")
-    (license license:gpl3)))
-
 (define-public r-raverage
   (package
     (name "r-raverage")
@@ -42369,87 +42333,6 @@ files, as well as serialize/deserialize data.frames/@code{DataFrames}.")
 from Ravelry.com', an organizational tool for crocheters, knitters, spinners,
 and weavers.  You can retrieve pattern, yarn, author, and shop information by
 search or by a given id.")
-    (license license:expat)))
-
-(define-public r-raveio
-  (package
-    (name "r-raveio")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "raveio" version))
-       (sha256
-        (base32 "13nzhhlwv1wmhgbgsdpznhcvj6k289dsmcirx7a803w9yqk9ssnd"))))
-    (properties `((upstream-name . "raveio")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-threebrain
-                             r-targets
-                             r-stringr
-                             r-rpymat
-                             r-remotes
-                             r-ravetools
-                             r-r6
-                             r-r-matlab
-                             r-promises
-                             r-jsonlite
-                             r-hdf5r
-                             r-glue
-                             r-globals
-                             r-fst
-                             r-filearray
-                             r-edfreader
-                             r-dipsaus
-                             r-data-table
-                             r-callr))
-    (home-page "https://beauchamplab.github.io/raveio/")
-    (synopsis "File-System Toolbox for RAVE Project")
-    (description
-     "Includes multiple cross-platform read/write interfaces for RAVE project.  RAVE
-stands for \"R analysis and visualization of human intracranial
-electroencephalography data\".  The whole project aims at providing powerful
-free-source package that analyze brain recordings from patients with electrodes
-placed on the cortical surface or inserted into the brain.  raveio as part of
-this project provides tools to read/write neurophysiology data from/to RAVE file
-structure, as well as several popular formats including EDF(+)', Matlab',
-BIDS-@code{iEEG}', and HDF5', etc.  Documentation and examples about RAVE
-project are provided at <https://openwetware.org/wiki/RAVE>, and the paper by
-John F. Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
-<doi:10.1016/j.neuroimage.2020.117341>; see citation(\"raveio\") for details.")
-    (license license:gpl3)))
-
-(define-public r-ravedash
-  (package
-    (name "r-ravedash")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ravedash" version))
-       (sha256
-        (base32 "1hlsg2dcbsk8gpiw7s66n39jzjzdsh0hv9h4vzmasq2mvwjfqyaz"))))
-    (properties `((upstream-name . "ravedash")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-threebrain
-                             r-shinywidgets
-                             r-shinyvalidate
-                             r-shiny
-                             r-shidashi
-                             r-rpymat
-                             r-raveio
-                             r-logger
-                             r-htmlwidgets
-                             r-dipsaus))
-    (native-inputs (list r-knitr))
-    (home-page "https://dipterix.org/ravedash/")
-    (synopsis "Dashboard System for Reproducible Visualization of 'iEEG'")
-    (description
-     "Dashboard system to display the analysis results produced by RAVE (Magnotti
-J.F., Wang Z., Beauchamp M.S. (2020), R analysis and visualizations of
-@code{iEEG} <doi:10.1016/j.neuroimage.2020.117341>).  Provides infrastructure to
-integrate customized analysis pipelines into dashboard modules, including file
-structures, front-end widgets, and event handlers.")
     (license license:expat)))
 
 (define-public r-ravages

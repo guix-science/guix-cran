@@ -7382,13 +7382,13 @@ running the vignette, install fwelnet from @code{GitHub}
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.14-6")
+    (version "0.14-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transport" version))
        (sha256
-        (base32 "0806w66na5nj8v8czrjqnyhfz8r76rhx8jn76n5p9j7pgmbrn4f6"))))
+        (base32 "05l7slph5as2kzxv1s81v7pjc83w8ak7d8cxndc2pqny14sx07n0"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
@@ -16931,67 +16931,6 @@ and treatment groups (three-group) experiments with non-compliance proposed by
 Gerber, Green, Kaplan, and Kern (2010).")
     (license license:gpl2)))
 
-(define-public r-threebrain
-  (package
-    (name "r-threebrain")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "threeBrain" version))
-       (sha256
-        (base32 "0pg5azxjqvwjl6235f0vnic04rz8vvaski0ac17mjn5ny1l0qnc1"))))
-    (properties `((upstream-name . "threeBrain")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-shiny
-                             r-servr
-                             r-ravetools
-                             r-r6
-                             r-oro-nifti
-                             r-jsonlite
-                             r-htmlwidgets
-                             r-gifti
-                             r-freesurferformats
-                             r-dipsaus
-                             r-digest))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://dipterix.org/threeBrain/")
-    (synopsis "3D Brain Visualization")
-    (description
-     "This package provides a fast, interactive cross-platform, and easy to share
-@code{WebGL'-based} 3D brain viewer that visualizes @code{FreeSurfer} and/or
-AFNI/SUMA surfaces.  The viewer widget can be either standalone or embedded into
-R-shiny applications.  The standalone version only require a web browser with
-@code{WebGL2} support (for example, Chrome', Firefox', Safari'), and can be
-inserted into any websites.  The R-shiny support allows the 3D viewer to be
-dynamically generated from reactive user inputs.  This feature has been fully
-adopted by RAVE <https://openwetware.org/wiki/RAVE>, an interactive toolbox to
-analyze @code{iEEG} data.  Documentation about @code{threeBrain} is provided by
-<https://dipterix.org/@code{threeBrain/>} and several vignettes included in this
-package.  To cite the package, please check our @code{NeuroImage} paper by
-Magnotti, Wang, and Beauchamp (2020, <doi:10.1016/j.neuroimage.2020.117341>), or
-see citation(\"@code{threeBrain}\") for details.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-threearmedtrials
   (package
     (name "r-threearmedtrials")
@@ -18043,13 +17982,13 @@ Properties\", Journal of the American Statistical Association, 96:456, 1348-1360
 (define-public r-tframeplus
   (package
     (name "r-tframeplus")
-    (version "2022.3-1")
+    (version "2024.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tframePlus" version))
        (sha256
-        (base32 "1axrvfigdmwmas0q3qlmk4m7jybqcssjgmyww2knp8jw7kp212vy"))))
+        (base32 "02c4fjgwywqi6s7g42rpzz070j28cjr4bs94298jv2x14zkwf4v8"))))
     (properties `((upstream-name . "tframePlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-tframe))

@@ -6005,13 +6005,13 @@ not be used elsewhere.)")
 (define-public r-aroma-affymetrix
   (package
     (name "r-aroma-affymetrix")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.affymetrix" version))
        (sha256
-        (base32 "1yzmqh7f3x5mzws7azxa6rgqv8kcm861y9pc5ppc0vsgz7fvpvvs"))))
+        (base32 "0h4w7i7hrkfvlkphxz9c0hbaxz455pzx0sb7y3zvsh9ykr3wkq8q"))))
     (properties `((upstream-name . "aroma.affymetrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils
@@ -15147,17 +15147,18 @@ to illustrate methods, not to draw substantive conclusions.")
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0lxnpq6ais28gmps01q41b8nhkz7kmv3wxzm3llf51490798hv83"))))
+        (base32 "0anrhcvrmr7fr5c3zsbg1lhhq9r4m2yjidxy91dc9qi37rx7662d"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-smotefamily
+                             r-rlang
                              r-reticulate
                              r-reshape2
                              r-rcpparmadillo
@@ -15173,15 +15174,17 @@ to illustrate methods, not to draw substantive conclusions.")
     (synopsis "Artificial Intelligence for Education")
     (description
      "In social and educational settings, the use of Artificial Intelligence (AI) is a
-challenging task.  Relevant data is often only available in handwritten forms or
-the use of data is restricted by privacy policies, often leading to small data
-sets.  Furthermore, data in the educational and social sciences is often
+challenging task.  Relevant data is often only available in handwritten forms,
+or the use of data is restricted by privacy policies.  This often leads to small
+data sets.  Furthermore, in the educational and social sciences, data is often
 unbalanced in terms of frequencies.  To support educators as well as educational
 and social researchers in using the potentials of AI for their work, this
 package provides a unified interface for neural nets in keras', tensorflow', and
-pytorch to deal with natural language problems.  The tools integrate existing
-mathematical and statistical methods for dealing with small data sets via
-pseudo-labeling (e.g. Lee (2013)
+pytorch to deal with natural language problems.  In addition, the package ships
+with a shiny app, providing a graphical user interface.  This allows the usage
+of AI for people without skills in writing python/R scripts.  The tools
+integrate existing mathematical and statistical methods for dealing with small
+data sets via pseudo-labeling (e.g. Lee (2013)
 <https://www.researchgate.net/publication/280581078_Pseudo-Label_The_Simple_and_Efficient_Semi-Supervised_Learning_Method_for_Deep_Neural_Networks>,
 Cascante-Bonilla et al. (2020) <doi:10.48550/@code{arXiv.2001.06001>}) and
 imbalanced data via the creation of synthetic cases (e.g. Bunkhumpornpat et al.
@@ -15190,9 +15193,9 @@ connected to measures from content analysis which educational and social
 researchers are generally more familiar with (e.g. Berding & Pargmann (2022)
 <doi:10.30819/5581>, Gwet (2014) <ISBN:978-0-9708062-8-4>, Krippendorff (2019)
 <doi:10.4135/9781071878781>).  Estimation of energy consumption and CO2
-emissions during training models is done with the python library codecarbon'.
-Finally, all objects created with this package allow to share trained AI with
-other people.")
+emissions during model training is done with the python library codecarbon'.
+Finally, all objects created with this package allow to share trained AI models
+with other people.")
     (license license:gpl3)))
 
 (define-public r-aides

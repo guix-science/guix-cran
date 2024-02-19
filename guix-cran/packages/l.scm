@@ -6499,13 +6499,13 @@ diagnostic plots for the model class.")
 (define-public r-lmhelprs
   (package
     (name "r-lmhelprs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmhelprs" version))
        (sha256
-        (base32 "03fxj1kkxahc8x1mnavgvdxjhy5kq2v75kns8g3qdhqpxcagx6qb"))))
+        (base32 "1q7awxnl0ll3ds8hshflw1s1mwdrw7d4nh8ibjci4ds2lgvhyjgm"))))
     (properties `((upstream-name . "lmhelprs")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14259,13 +14259,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latrend" version))
        (sha256
-        (base32 "1a6dkxkrslbl99nyhwivh0wmr8axr8iqgy7cax952bzv38s30038"))))
+        (base32 "06q23pl3x4fgxfaypl0xp74mmhwf31rq2yqp4fipcscyqcf1223c"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -14288,8 +14288,7 @@ transparent analyses.  Additionally, standard tools are provided to support
 cluster analyses, including repeated estimation, model validation, and model
 assessment.  The interface enables users to compare results between methods, and
 to implement and evaluate new methods with ease.  The akmedoids package is
-available from <https://github.com/MAnalytics/akmedoids>.  The
-@code{clusterCrit} package is available from the CRAN archive.")
+available from <https://github.com/MAnalytics/akmedoids>.")
     (license license:gpl2+)))
 
 (define-public r-latexpdf

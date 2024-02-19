@@ -28364,13 +28364,13 @@ Baker and Jackson, 2008 <doi:10.1007/s10729-007-9041-8>) or mixtures of normals
 (define-public r-metaplot
   (package
     (name "r-metaplot")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaplot" version))
        (sha256
-        (base32 "1zw8bq2fy9m15dfc92ag0dz2k9dqrf5jbvfaycizcgsgaqd79s1c"))))
+        (base32 "1ywr26sqbj0gqcyn4nqj0xi9018dzxwvm663xdrm31wnchh8iivg"))))
     (properties `((upstream-name . "metaplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

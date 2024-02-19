@@ -7698,13 +7698,13 @@ ISBN:978-1-51354-298-0).")
 (define-public r-gpgp
   (package
     (name "r-gpgp")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GpGp" version))
        (sha256
-        (base32 "1b8cda2k67bpxllq94mmr6nn50884v9laci5n9kd7hmiky16q8na"))))
+        (base32 "0rx22sc911s2wkqapsgzwmspmxshm84rrwp70rlpczgvylyvzh53"))))
     (properties `((upstream-name . "GpGp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-fnn r-bh))
@@ -23605,13 +23605,13 @@ given, even the generalized linear model output in each group.")
 (define-public r-generalizedwendland
   (package
     (name "r-generalizedwendland")
-    (version "0.5-2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneralizedWendland" version))
        (sha256
-        (base32 "04f52ilvijjm740vciys4vhcsxj9j10p7y4pphqawh4yvdc6fanv"))))
+        (base32 "1mwinkjnf7wvsa077nzq641fkrj9y44gzmihhkkfgkjddcjnk4s4"))))
     (properties `((upstream-name . "GeneralizedWendland")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -27727,13 +27727,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "14q5mrj7jqn8jxy2rjd46ps89wfgqa6jrvn8k1hh2s1m0wsf3bra"))))
+        (base32 "1b3gwzjsbwq7cbghv7pykgj2bd2j4m38jsxfbv8ly0qb5khisn6g"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

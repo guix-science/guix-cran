@@ -14467,13 +14467,13 @@ autoregressive parameters as described in Elbayoumi and Mostafa (2023)
 (define-public r-bifiesurvey
   (package
     (name "r-bifiesurvey")
-    (version "3.4-15")
+    (version "3.5-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIFIEsurvey" version))
        (sha256
-        (base32 "0dm2yq2mmpiksmd1r248dv64sn72gazlsrjjwb0bsblivk69s21j"))))
+        (base32 "0lxjh3yg2b3z9vfil18q6sgs0090haqhwc2ympwafgskigai64n6"))))
     (properties `((upstream-name . "BIFIEsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-miceadds))

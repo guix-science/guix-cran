@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -24252,13 +24252,13 @@ typical in single-cell data analysis.")
 (define-public r-clustanalytics
   (package
     (name "r-clustanalytics")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustAnalytics" version))
        (sha256
-        (base32 "0wqlajy69vvmjmwmbbcaxyymyaz0z6v83lscr18g4wkrzxz8vmxw"))))
+        (base32 "063n6s1q2kc7a42fajd2z0rd0v6dxs443hv1vlaq6xhli8l8cylk"))))
     (properties `((upstream-name . "clustAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -24272,7 +24272,7 @@ typical in single-cell data analysis.")
                              r-boot
                              r-aricode))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=clustAnalytics")
+    (home-page "https://github.com/martirm/clustAnalytics")
     (synopsis "Cluster Evaluation on Graphs")
     (description
      "Evaluates the stability and significance of clusters on igraph graphs.  Supports
@@ -35989,13 +35989,13 @@ plot format.")
 (define-public r-causalot
   (package
     (name "r-causalot")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalOT" version))
        (sha256
-        (base32 "0mj3sisj4b2r7dlz7ckl4q91fzyd6qh75ijlavwb56hw8c09k8w0"))))
+        (base32 "10fvmhv4g791xhrxdfhyjn02fk0b80z4n9y73l1hhc3fr4vzphz3"))))
     (properties `((upstream-name . "causalOT")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch

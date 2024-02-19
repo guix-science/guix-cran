@@ -4854,13 +4854,13 @@ Imai and Li (2019) <@code{arXiv:1905.05389>}.")
 (define-public r-evalest
   (package
     (name "r-evalest")
-    (version "2021.2-1")
+    (version "2024.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EvalEst" version))
        (sha256
-        (base32 "0ws7x0dkzb3h2m801dkzx2as146whm63mcipy4iia90jd9944zir"))))
+        (base32 "0hbmqd9xncpcq8hvxkha6pj7msn5gzqgzb28byzacr0yq93rz7p9"))))
     (properties `((upstream-name . "EvalEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tframe r-tfplot r-setrng r-dse))
@@ -9110,13 +9110,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.67")
+    (version "2.0.68")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "1386kn6b8xn8qr8ppr88i6cin49w1qs7a3ff1qprsblsmvicijd7"))))
+        (base32 "0kqkridlz633cb750dimg7zw6xfamshl7ddnmlk0ir7mg5a94xmg"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14700,13 +14700,13 @@ effective information, effectiveness and causal emergence.")
 (define-public r-eimpute
   (package
     (name "r-eimpute")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eimpute" version))
        (sha256
-        (base32 "11bjvzmf252m3440z5wlsx92ybay5g76j2af0xbcybhqz7wpkk0l"))))
+        (base32 "02zsz7hrcfypvpkvjyzfmwxpbr03chj2qcqmxkn3dr3zffwp93fq"))))
     (properties `((upstream-name . "eimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))

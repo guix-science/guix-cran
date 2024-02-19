@@ -10478,13 +10478,13 @@ information about the methods, please see Williamson and Huang (2023+)
 (define-public r-fledge
   (package
     (name "r-fledge")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fledge" version))
        (sha256
-        (base32 "1nq0180vjq7jmawd42r8w3hgrccs9k013yni0wkldkc73p6526gd"))))
+        (base32 "0x6f4xvaz6j86gn05hffimqpk5amhwqkvfzhk6252qp92x6rx33f"))))
     (properties `((upstream-name . "fledge")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -10495,9 +10495,9 @@ information about the methods, please see Williamson and Huang (2023+)
                              r-rematch2
                              r-purrr
                              r-gert
-                             r-enc
                              r-desc
-                             r-cli))
+                             r-cli
+                             r-brio))
     (native-inputs (list r-knitr))
     (home-page "https://fledge.cynkra.com/")
     (synopsis "Smoother Change Tracking and Versioning for R Packages")

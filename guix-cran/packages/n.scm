@@ -6074,17 +6074,17 @@ University of Bern.")
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "1.4-1")
+    (version "1.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "0n9i1ph4pikf7nwsybn7s33h9s20qhvzggrjgj3njzadam47rvgx"))))
+        (base32 "0lwsys3imcr7n2bnyg9isp8jj00mz0ng8zzp79d1ann791dvsb3z"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))
-    (home-page "https://cran.r-project.org/package=NMA")
+    (home-page "https://www.ism.ac.jp/~noma/file/software/NMA.r")
     (synopsis
      "Network Meta-Analysis Based on Multivariate Meta-Analysis Models")
     (description

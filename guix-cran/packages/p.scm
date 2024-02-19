@@ -11061,26 +11061,24 @@ tree for the analysis of circular data (Nieto-Barajas and Nunez-Antonio (2019)
 (define-public r-ppsr
   (package
     (name "r-ppsr")
-    (version "0.0.2")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppsr" version))
        (sha256
-        (base32 "1dk62b08sxp87kll8wjfby3iq9l3akiprarh8agjdv6s43c9h2sg"))))
+        (base32 "0k8y8vk8y0nnp1w26h7q9xyfbdx2q61ijnwh202j76wq6znr8yva"))))
     (properties `((upstream-name . "ppsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rpart r-parsnip r-gridextra r-ggplot2))
     (home-page "https://cran.r-project.org/package=ppsr")
     (synopsis "Predictive Power Score")
     (description
-     "The PPS is an asymmetric, data-type-agnostic score that can detect linear or
-non-linear relationships between two columns.  The score ranges from 0 (no
-predictive power) to 1 (perfect predictive power).  It can be useful for data
-exploration purposes, in the same way correlation analysis is.  For more
-information on PPS, see Wetschoreck (2020)
-<https://towardsdatascience.com/rip-correlation-introducing-the-predictive-power-score-3d90808b9598>
-or github <https://github.com/paulvanderlaken/ppsr>.")
+     "The Predictive Power Score (PPS) is an asymmetric, data-type-agnostic score that
+can detect linear or non-linear relationships between two variables.  The score
+ranges from 0 (no predictive power) to 1 (perfect predictive power).  PPS can be
+useful for data exploration purposes, in the same way correlation analysis is.
+For more information on PPS, see <https://github.com/paulvanderlaken/ppsr>.")
     (license license:gpl3+)))
 
 (define-public r-ppsfs
@@ -16976,13 +16974,13 @@ pharmacometric models.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "0gzx142xi03mydlrzjzvl378jcqpp7a69p0j6zd8dggc4zva8c2q"))))
+        (base32 "0qa0g3fz2dqccpf059m5jygicvl6a7qcmjn9dq0afv16y6w9074a"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -17005,7 +17003,8 @@ pharmacometric models.")
                              r-glue
                              r-dplyr
                              r-config
-                             r-bslib))
+                             r-bslib
+                             r-bsicons))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=pmxcode")
     (synopsis "Create Pharmacometric Models")

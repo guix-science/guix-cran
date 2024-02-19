@@ -5602,13 +5602,13 @@ formatting to improve ease the transition between the book and R.")
 (define-public r-superml
   (package
     (name "r-superml")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "superml" version))
        (sha256
-        (base32 "159a80v9a1z2xq0xriqaa5xb7r5slww899vhng5l73c14615jzqw"))))
+        (base32 "0r2xp520j8w395b272681g9d7vzinmf4cl627xxcsw8575k89lpf"))))
     (properties `((upstream-name . "superml")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -21107,13 +21107,13 @@ applications of specification curve analysis see Simonsohn, Simmons, and Nelson
 (define-public r-spec
   (package
     (name "r-spec")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spec" version))
        (sha256
-        (base32 "0zgs9yki11wysvjnx88gl8iv0mcsbrasg29sbasp0855x5l8cg8k"))))
+        (base32 "0jsl37m912pg3dcphs8l83ywj5rr9q0s9si57nkvz64skdkypcav"))))
     (properties `((upstream-name . "spec")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-encode r-csv))
@@ -21967,13 +21967,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.34.0")
+    (version "0.34.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "13nrn8c6p31n2hpjrka9f0s3ihw8v4q3agp7bw1vqjc2chi56ap9"))))
+        (base32 "1d4zdwxd2sy6c3z316izm9g0rp42q09694h4m0cid0m04779qs2a"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -38745,18 +38745,19 @@ deprecated 2023-05-31.")
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
-    (version "2.1.1")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shrinkTVP" version))
        (sha256
-        (base32 "1a49g5lcpl27k0j4f15a7gz58332qzbxxq9hsq4adx70dv4hp3ni"))))
+        (base32 "0fcvx7pz4mn89g9g8x32wgqil9xyh29vjxx8hlvv5385ig2wd4lw"))))
     (properties `((upstream-name . "shrinkTVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-stochvol
                              r-rcppprogress
+                             r-rcppgsl
                              r-rcpparmadillo
                              r-rcpp
                              r-gigrvg
@@ -38767,11 +38768,13 @@ deprecated 2023-05-31.")
      "Efficient Bayesian Inference for Time-Varying Parameter Models with Shrinkage")
     (description
      "Efficient Markov chain Monte Carlo (MCMC) algorithms for fully Bayesian
-estimation of time-varying parameter models with shrinkage priors.  Details on
-the algorithms used are provided in Bitto and @code{FrÃ¼hwirth-Schnatter} (2019)
-<doi:10.1016/j.jeconom.2018.11.006> and Cadonna et al. (2020)
-<doi:10.3390/econometrics8020020>.  For details on the package, please see Knaus
-et al. (2021) <doi:10.18637/jss.v100.i13>.")
+estimation of time-varying parameter models with shrinkage priors, both dynamic
+and static.  Details on the algorithms used are provided in Bitto and
+@code{FrÃ¼hwirth-Schnatter} (2019) <doi:10.1016/j.jeconom.2018.11.006> and
+Cadonna et al. (2020) <doi:10.3390/econometrics8020020> and Knaus and
+@code{FrÃ¼hwirth-Schnatter} (2023) <doi:10.48550/@code{arXiv.2312.10487>}.  For
+details on the package, please see Knaus et al. (2021)
+<doi:10.18637/jss.v100.i13>.")
     (license license:gpl2+)))
 
 (define-public r-shrinkdsm
