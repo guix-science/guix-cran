@@ -2818,13 +2818,13 @@ function.")
 (define-public r-uncorbets
   (package
     (name "r-uncorbets")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uncorbets" version))
        (sha256
-        (base32 "19awl797accbqv1l0g1inrxvfvvkrskfv3j9czq2p465ac4qhbgw"))))
+        (base32 "1kp1rglxz4p38y399ym6q1p5i3xmb38px44bc4bba4r7x7b47n1x"))))
     (properties `((upstream-name . "uncorbets")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlcoptim r-assertthat))

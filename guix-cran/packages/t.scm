@@ -7089,26 +7089,23 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.4")
+    (version "2.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "1z5qwjjh5x88x7khm31hfxj68x17rfgvdyvw00mjy9a7vmxyxddi"))))
+        (base32 "0prsf1qhdvh524sdw396d2dflg8nm9kf6g0i8nczd0kjzd5jf95m"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-sunburstr
                              r-stringr
-                             r-stringi
                              r-shinydashboard
                              r-shiny
-                             r-rjson
                              r-r6
                              r-networkd3
                              r-htmlwidgets
-                             r-googlevis
                              r-dplyr
                              r-checkmate
                              r-andromeda))
@@ -10795,13 +10792,13 @@ computed by in Algeri and van Dyk (2018) <@code{arXiv:1803.03858>}.")
 (define-public r-togglr
   (package
     (name "r-togglr")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "togglr" version))
        (sha256
-        (base32 "1xq2sw0fy9isv4d0wlqhpcz83pz6jsq4xm5z18x0181g9iz3byqi"))))
+        (base32 "12fmj6h8vx8f46qhadgwcaq0cn55jwi8kvnci1hw7cld46f4s50l"))))
     (properties `((upstream-name . "togglr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -11777,6 +11774,34 @@ pretty in an RMarkdown document.  The package also provides a wrapper for the
 @code{CreateTableOne}() function in the tableone package to make the results
 knit-able.")
     (license license:gpl3)))
+
+(define-public r-tlcar
+  (package
+    (name "r-tlcar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TLCAR" version))
+       (sha256
+        (base32 "18wzr7lgzffalvacbr1617d4v50mhd13wqbyr9iyhgc07z2pfncn"))))
+    (properties `((upstream-name . "TLCAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=TLCAR")
+    (synopsis
+     "Computation of Topp-Leone Cauchy Rayleigh (TLCAR ) distribution's properties")
+    (description
+     "This package provides a comprehensive suite of statistical tools for analyzing,
+simulating, and computing properties of the Topp-Leone Cauchy Rayleigh (TLCAR)
+distribution, a versatile distribution amalgamating features of the Topp-Leone,
+Cauchy, and Rayleigh distributions, ideal for modeling intricate, heterogeneous
+data across scientific domains.  See @code{AtchadÃ©}, M.N., Bogninou, M.J., and
+Djibril, A.M. (2023) <doi:10.1007/s44199-023-00066-4> and @code{AtchadÃ©}, M.N.,
+Bogninou, M.J., and Djibril, A.M. (2024) <doi:10.1007/s44199-023-00069-1> for
+further insights.")
+    (license license:gpl2)))
 
 (define-public r-tlasso
   (package

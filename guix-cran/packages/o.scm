@@ -5436,13 +5436,13 @@ score your own data directly from an R script.")
 (define-public r-openrepgrid-ic
   (package
     (name "r-openrepgrid-ic")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRepGrid.ic" version))
        (sha256
-        (base32 "1h6n44szm5fa04fsnq0yvqp3m8djxsh5v3y409hzjgvb90vjzmyz"))))
+        (base32 "1v8sqlid97xnp0nddn4yr6im8zah1pclirvmz1n7qmc91656plx6"))))
     (properties `((upstream-name . "OpenRepGrid.ic")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

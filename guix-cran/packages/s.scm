@@ -49941,22 +49941,25 @@ seasonal package.")
 (define-public r-seasonalityplot
   (package
     (name "r-seasonalityplot")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seasonalityPlot" version))
        (sha256
-        (base32 "0y8wv8j8r215j53bx3c7nclxbvcg022f96sc3p2j9nysh3ybibk6"))))
+        (base32 "03gfbpzy97kjw1mxm9xqh384ilyap2nqn4j5ir22rdyg60rfj2mp"))))
     (properties `((upstream-name . "seasonalityPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-ttr
                              r-quantmod
                              r-plotrix
                              r-magrittr
                              r-lubridate
                              r-htmltools
-                             r-dygraphs))
+                             r-dygraphs
+                             r-crypto2
+                             r-assertthat))
     (home-page "https://github.com/kumeS/seasonalityPlot")
     (synopsis
      "Seasonality Variation Plots of Stock Prices and Cryptocurrencies")
@@ -55975,26 +55978,6 @@ Institute.")
     (description "Settings and functions to extend the knitr SAS engine.")
     (license license:expat)))
 
-(define-public r-sasmap
-  (package
-    (name "r-sasmap")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sasMap" version))
-       (sha256
-        (base32 "11vhhxhakqm1gsb3p4s4966sapmrqfyw79zfppbx5lnqi3xr0ngn"))))
-    (properties `((upstream-name . "sasMap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-stringi r-readr))
-    (home-page "https://github.com/MangoTheCat/sasMap")
-    (synopsis "Static 'SAS' Code Analysis")
-    (description
-     "This package provides a static code analysis tool for SAS scripts.  It is
-designed to load, count, extract, remove, and summarise components of SAS code.")
-    (license license:expat)))
-
 (define-public r-saslm
   (package
     (name "r-saslm")
@@ -57345,13 +57328,13 @@ population using simple random, stratified, systematic and cluster sampling.")
 (define-public r-samplingin
   (package
     (name "r-samplingin")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplingin" version))
        (sha256
-        (base32 "1z3x4f9bqcn0a4ks82176mpcxj4c9pi7cc2d2i1ymj5lriqx17ca"))))
+        (base32 "19z393g6dd6d7mia4827nqpz834i4r1lhyq9h51cqqayplh17qjb"))))
     (properties `((upstream-name . "samplingin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr r-data-table))

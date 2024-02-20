@@ -20985,13 +20985,13 @@ in the 1970s.  Can you break the code?")
 (define-public r-codebookr
   (package
     (name "r-codebookr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codebookr" version))
        (sha256
-        (base32 "0z9236x2zivml4mnipdink2k0fgv138yhk7w1pkypc39l6gfd29p"))))
+        (base32 "1y5daii4qms0sj0mqa0lrxfqagxbmd7wc94j8h33szmip7ivqp6v"))))
     (properties `((upstream-name . "codebookr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31502,13 +31502,13 @@ This package extends the changepoint package (see Killick, R and Eckley, I
 (define-public r-changepoint-influence
   (package
     (name "r-changepoint-influence")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepoint.influence" version))
        (sha256
-        (base32 "03m7vyqy0qdvkrr0cgxc2g019rjkmsc0fwnzkp2gxbbhvwhs4qzd"))))
+        (base32 "0mlr1k7mbi2v4vd0ry4if5j6x638znj0kbfvwr20p6m6wmd0ln0a"))))
     (properties `((upstream-name . "changepoint.influence")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-gridextra r-ggplot2 r-data-table
@@ -31519,10 +31519,10 @@ This package extends the changepoint package (see Killick, R and Eckley, I
     (description
      "Allows users to input their data, segmentation and function used for the
 segmentation (and additional arguments) and the package calculates the influence
-of the data on the changepoint locations, see Wilms et al. (2021)
-<@code{arXiv:2107.10572>}.  Currently this can only be used with the changepoint
-package functions to identify changes, but we plan to extend this.  There are
-options for different types of graphics to assess the influence.")
+of the data on the changepoint locations, see Wilms et al. (2022)
+<doi:10.1080/10618600.2021.2000873>.  Currently this can only be used with the
+changepoint package functions to identify changes, but we plan to extend this.
+There are options for different types of graphics to assess the influence.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-changepoint-geo

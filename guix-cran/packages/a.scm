@@ -5913,13 +5913,13 @@ et al, 2021 <doi:10.1002/ajpa.24340>).")
 (define-public r-aroma-core
   (package
     (name "r-aroma-core")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aroma.core" version))
        (sha256
-        (base32 "12118xdb74c4b2ca5dq57zxkrrcjjji10b5a1qxpixkrc36bfskv"))))
+        (base32 "0i2yh0w7hjljgsbn00vy9wyh03470f5xgqnahm7b83km16jvq9ps"))))
     (properties `((upstream-name . "aroma.core")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer
@@ -18493,13 +18493,13 @@ efficient.  This algorithm is described in Ambroise et al (2019)
 (define-public r-adiv
   (package
     (name "r-adiv")
-    (version "2.2")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adiv" version))
        (sha256
-        (base32 "0qmykswwirhas4rrwb4jaqicjkqsmq6k11718hzk65h3xdnpg6kr"))))
+        (base32 "0wq54nyjpcqxlvhv98yxxqv1vvnmgyzg3qzhw37r18l6xwvz5pk4"))))
     (properties `((upstream-name . "adiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl
@@ -21259,25 +21259,6 @@ here are designed to be basic and clear to the reader.")
      "Multi-category angle-based large-margin classifiers.  See Zhang and Liu (2014)
 <doi:10.1093/biomet/asu017> for details.")
     (license license:gpl3+)))
-
-(define-public r-abbreviate
-  (package
-    (name "r-abbreviate")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "abbreviate" version))
-       (sha256
-        (base32 "1cvjdbi17qz8gr5898zchm5fyz4n51z66lwps25v8a9mhwab8imi"))))
-    (properties `((upstream-name . "abbreviate")))
-    (build-system r-build-system)
-    (home-page "https://github.com/sigbertklinke/abbreviate")
-    (synopsis "Readable String Abbreviation")
-    (description
-     "Strings are abbreviated to at least \"minlength\" characters, such that they
-remain unique (if they were).  The abbreviations should be recognisable.")
-    (license license:gpl3)))
 
 (define-public r-abasequence
   (package

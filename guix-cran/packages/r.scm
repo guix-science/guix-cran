@@ -10803,6 +10803,31 @@ static analysis tools as checking parameter documentation consistency and
 others.")
     (license license:gpl2+)))
 
+(define-public r-roxylint
+  (package
+    (name "r-roxylint")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roxylint" version))
+       (sha256
+        (base32 "03pfianwlax9v9p1ciq80hzkswksca96vmcpn24nsjkqwam9nzgz"))))
+    (properties `((upstream-name . "roxylint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roxygen2 r-cli))
+    (home-page "https://github.com/openpharma/roxylint")
+    (synopsis "Lint 'roxygen2'-Generated Documentation")
+    (description
+     "This package provides formatting linting to roxygen2 tags.  Linters report
+roxygen2 tags that do not conform to a standard style.  These linters can be a
+helpful check for building more consistent documentation and to provide
+reminders about best practices or checks for typos.  Default linting suites are
+provided for common style guides such as the one followed by the tidyverse',
+though custom linters can be registered by other packages or be custom-tailored
+to a specific package.")
+    (license license:expat)))
+
 (define-public r-roxyglobals
   (package
     (name "r-roxyglobals")
@@ -18600,13 +18625,13 @@ values in the sample (see Gonzalez, Maronna, Yohai and Zamar (2021)
 (define-public r-rmbayes
   (package
     (name "r-rmbayes")
-    (version "0.1.15")
+    (version "0.1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmBayes" version))
        (sha256
-        (base32 "1x8ndabs445p7pvg7m6wwz9bcfd2288wpgzrl6by4xs6cq6zalx7"))))
+        (base32 "1a32xghqphnyx8w8dy6970f5d30m5ghjgwxa5g7qbzw3fc0b7ic3"))))
     (properties `((upstream-name . "rmBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -18623,12 +18648,12 @@ values in the sample (see Gonzalez, Maronna, Yohai and Zamar (2021)
 to posterior probability, and this interpretation is far more intuitive than
 that of a frequentist confidence interval.  However, standard highest-density
 intervals can be wide due to between-subjects variability and tends to hide
-within-subjects effects, rendering its relationship with the Bayes factor less
-clear in within-subjects (repeated-measures) designs.  This urgent issue can be
-addressed by using within-subjects intervals in within-subjects designs, which
-integrate four methods including the Loftus-Masson (1994)
-<doi:10.3758/BF03210951>, the Rouder-Morey-Speckman-Province (2012)
-<doi:10.1016/j.jmp.2012.08.001>, the Nathoo-Kilshaw-Masson (2018)
+within-subject effects, rendering its relationship with the Bayes factor less
+clear in within-subject (repeated-measures) designs.  This urgent issue can be
+addressed by using within-subject intervals in within-subject designs, which
+integrate four methods including the Wei-Nathoo-Masson (2023)
+<doi:10.3758/s13423-023-02295-1>, the Loftus-Masson (1994)
+<doi:10.3758/BF03210951>, the Nathoo-Kilshaw-Masson (2018)
 <doi:10.1016/j.jmp.2018.07.005>, and the Heck (2019) <doi:10.31234/osf.io/whp8t>
 interval estimates.")
     (license license:gpl3+)))
@@ -41128,13 +41153,13 @@ Roeder, A. Ngonga (2019) <@code{arXiv:1903.10326>}.")
 (define-public r-rblt
   (package
     (name "r-rblt")
-    (version "0.2.4.6")
+    (version "0.2.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rblt" version))
        (sha256
-        (base32 "066clmmlmczafzfgh6hbiz9grlfr613bfbr0j79kfdh8b0ga1v1s"))))
+        (base32 "1abz6mzknyyii3bn8nxsfsikx2gp0960bhv506261va3p5ls4y1d"))))
     (properties `((upstream-name . "rblt")))
     (build-system r-build-system)
     (inputs (list))
@@ -41143,13 +41168,10 @@ Roeder, A. Ngonga (2019) <@code{arXiv:1903.10326>}.")
     (home-page "https://github.com/sg4r/rblt")
     (synopsis "Bio-Logging Toolbox")
     (description
-     "An R-shiny application to plot datalogger time series at a microsecond precision
-as Acceleration, Temperature, Pressure, Light intensity from CATS, AXY-TREK LUL
-and WACU bio-loggers.  It is possible to link behavioral labels extracted from
-BORIS software <http://www.boris.unito.it> or manually written in a csv file.
-CATS bio-logger are manufactured by <https://cats.is/>, AXY-TREK are
-manufactured by <https://www.technosmart.eu> and LUL and WACU are manufactured
-by <https://www.iphc.cnrs.fr/-MIBE-.html>.")
+     "An R-shiny application to visualize bio-loggers time series at a microsecond
+precision as Acceleration, Temperature, Pressure, Light intensity.  It is
+possible to link behavioral labels extracted from BORIS software
+<http://www.boris.unito.it> or manually written in a csv file.")
     (license license:gpl3+)))
 
 (define-public r-rblpapi
@@ -47840,23 +47862,25 @@ non-nested model.")
 (define-public r-r2resize
   (package
     (name "r-r2resize")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2resize" version))
        (sha256
-        (base32 "0cc6bwk5gahik787z7xbcdr2mbrxvkywsrgc34s9mlxz8x4n1qym"))))
+        (base32 "19dsc3ljvgi8f4na71gbkz7fgq63y7vvwknzbwfrgz2ygpd0vyqg"))))
     (properties `((upstream-name . "r2resize")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-nextgenshinyapps r-dt))
+    (propagated-inputs (list r-shiny r-quickcode r-nextgenshinyapps
+                             r-htmltools r-dt))
     (native-inputs (list r-knitr))
     (home-page "https://r2resize.obi.obianom.com")
     (synopsis
-     "In-Text Resizer for Images, Tables and Fancy Resizable Containers in 'Shiny', 'Rmarkdown' and 'Quarto' Documents")
+     "In-Text Resizer for Images, Tables and Fancy Resizable Containers in 'shiny', 'rmarkdown' and 'quarto' Documents")
     (description
-     "Automatic resizing toolbar for containers, images and tables.  Most suitable to
-include resize functionality in Markdown', Rmarkdown and Quarto documents.")
+     "Automatic resizing toolbar for containers, images and tables.  Various resizable
+or expandable container functionalities are also included.  Most suitable to
+include in shiny', markdown and quarto documents.")
     (license license:expat)))
 
 (define-public r-r2redux

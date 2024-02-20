@@ -3037,13 +3037,13 @@ estimating animal/plant abundance with distance sampling at
 (define-public r-dssat
   (package
     (name "r-dssat")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSSAT" version))
        (sha256
-        (base32 "04s4k7rbnk2xi73jiss8zaz777zz1bvirr8y4jbb72qvhi1jrrna"))))
+        (base32 "0ws1s8gccn3qhb7jalj3lv4qpgy2hdan63wpp6fsvlqmd202wfa3"))))
     (properties `((upstream-name . "DSSAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12683,6 +12683,45 @@ Variable Potential Market model, in which the Guseo-Guidolin has a particular
 specification for the market function.  The UCRCD model (Unbalanced Competition
 and Regime Change Diachronic) is a diffusion model used to capture the dynamics
 of the competitive or collaborative transition.")
+    (license license:gpl3+)))
+
+(define-public r-dimodelsvis
+  (package
+    (name "r-dimodelsvis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DImodelsVis" version))
+       (sha256
+        (base32 "1wcpyi7whm9x0wb48zxj5v2dglzifhx1i4dl07q4g9m1dcndad8z"))))
+    (properties `((upstream-name . "DImodelsVis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-plotwidgets
+                             r-pieglyph
+                             r-metr
+                             r-insight
+                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-ggfortify
+                             r-forcats
+                             r-dplyr
+                             r-dimodels
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rishvish.github.io/DImodelsVis/")
+    (synopsis
+     "Visualising and Interpreting Statistical Models Fit to Compositional Data")
+    (description
+     "Statistical models fit to compositional data are often difficult to interpret
+due to the sum to 1 constraint on data variables.  D@code{ImodelsVis} provides
+novel visualisations tools to aid with the interpretation of models fit to
+compositional data.  All visualisations in the package are created using the
+ggplot2 plotting framework and can be extended like every other ggplot object.")
     (license license:gpl3+)))
 
 (define-public r-dimodelsmulti

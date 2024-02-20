@@ -6205,13 +6205,13 @@ values.")
 (define-public r-lmomco
   (package
     (name "r-lmomco")
-    (version "2.4.13")
+    (version "2.4.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomco" version))
        (sha256
-        (base32 "1i3d9dva1vijmrjpm5kv7dqzdizs0wgwm2a95y20zn8297wn1k8s"))))
+        (base32 "09adqsf70jz1rhwlzq8f9cwr1gf36l80l2vfhrsw3hh18cszs44k"))))
     (properties `((upstream-name . "lmomco")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmoments r-goftest))
@@ -7750,13 +7750,13 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "0i7b9lw40i6hrbzzqs9jncw9qx2hm8z7xc4jnn3nyjlw2qps5asg"))))
+        (base32 "0z0zyv1br938nnng0w2k79ymlb9rsz7ayv68a8ll1512in3w04fn"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -14380,13 +14380,13 @@ non-human primates.")
 (define-public r-latentnet
   (package
     (name "r-latentnet")
-    (version "2.10.6")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latentnet" version))
        (sha256
-        (base32 "0zkh75cvsiprxfbrzyqi72wvsljxzsifcd71kyrr2m761v3sqm16"))))
+        (base32 "1vd004bqcgjip2wrs5znk15yy45ay07cv4pa94x93kyri64v1g2g"))))
     (properties `((upstream-name . "latentnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common

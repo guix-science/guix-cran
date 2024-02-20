@@ -3111,13 +3111,13 @@ truncated distribution functions.")
 (define-public r-winch
   (package
     (name "r-winch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winch" version))
        (sha256
-        (base32 "0v2kyfr5rm4nbh99ii17qh08i88yv0phyf3d59dxfhq1q8wrl6xb"))))
+        (base32 "1ib3qz09r40gwxvzsapi6xs80phxxn2x04f6vgsvrbplfy5nxg6k"))))
     (properties `((upstream-name . "winch")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -4125,17 +4125,16 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
 (define-public r-whippr
   (package
     (name "r-whippr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whippr" version))
        (sha256
-        (base32 "16xmbsjzzdf2s19ix655jqpy8v98c39lkllh390zsv9xb12rgryr"))))
+        (base32 "17r1wcgpriynpd3z7l6wa4al72x4ad07y1mr5jjafxgms6l554lx"))))
     (properties `((upstream-name . "whippr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-usethis
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -4153,7 +4152,7 @@ citation: Lindsay (2016) <doi:10.1016/j.cageo.2016.07.003>.")
                              r-dplyr
                              r-cli
                              r-broom))
-    (home-page "https://github.com/fmmattioni/whippr")
+    (home-page "https://fmmattioni.github.io/whippr/")
     (synopsis "Tools for Manipulating Gas Exchange Data")
     (description
      "Set of tools for manipulating gas exchange data from cardiopulmonary exercise

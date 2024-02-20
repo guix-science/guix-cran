@@ -9055,13 +9055,13 @@ network from single-cell sequencing data.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "18yy33ss76ljdr53zczf82rq9i5dz3y1dmhry6a226cgrq5ccjm8"))))
+        (base32 "103l8rm7sf3xqv4li6qlzw8kq55dp3w5rhh7113wbhvz762fqqdz"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree

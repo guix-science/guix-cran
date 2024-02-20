@@ -12692,30 +12692,6 @@ to the x and y axes, and perpendicular to the z axis.  The files should also be
 simplified, and smoothed in some other software prior to uploading into R.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-moko
-  (package
-    (name "r-moko")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moko" version))
-       (sha256
-        (base32 "1igrz0k9gfs4lmwh20bvmx8176d22g8gha7iv36mrpqgcynfdzh0"))))
-    (properties `((upstream-name . "moko")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mco r-gpareto r-gensa r-emoa r-dicekriging))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/coldfir3/moko")
-    (synopsis "Multi-Objective Kriging Optimization")
-    (description
-     "Multi-Objective optimization based on the Kriging metamodel.  Important
-functions: mkm() (builder for the multiobjective models), MVPF() (sequential
-minimizator using variance reduction), MEGO() (generalization of @code{ParEgo})
-and HEGO() (minimizator using the expected hypervolume improvement).  References
-are Passos and Luersen (2018) <doi:10.1590/1679-78254324>.")
-    (license license:gpl3)))
-
 (define-public r-mokken
   (package
     (name "r-mokken")
@@ -34625,13 +34601,13 @@ diagnostic.")
 (define-public r-mcgf
   (package
     (name "r-mcgf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcgf" version))
        (sha256
-        (base32 "1c5qvww12b8w54a48dsjygqd6chiimn7d9s18hkl2k1gm88nq2jd"))))
+        (base32 "0yk0981qkd0irgifqh9i6pkca4yp7hn35ckyiicq3khyyy3hmbw7"))))
     (properties `((upstream-name . "mcgf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mass))
@@ -38101,13 +38077,13 @@ variables.")
 (define-public r-marss
   (package
     (name "r-marss")
-    (version "3.11.8")
+    (version "3.11.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MARSS" version))
        (sha256
-        (base32 "0cmnybj6dqrmasc3y89azs10iq521p86l5sf0w3arypk6jjvif9g"))))
+        (base32 "0iipvlf6franhvbpg5c7wdnyzl9wl27xhnl1k66mi9m8ihjcczrm"))))
     (properties `((upstream-name . "MARSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-mvtnorm r-kfas r-generics))

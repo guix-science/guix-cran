@@ -7606,16 +7606,17 @@ Accession and ENTREZID <http://www.ncbi.nlm.nih.gov/gene>.")
 (define-public r-gpkg
   (package
     (name "r-gpkg")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpkg" version))
        (sha256
-        (base32 "0b4dg5jqp6c3bwk3zkfv2bwnnx61mr6pfx8dqb08xf23v0xpkb6i"))))
+        (base32 "0bx6mjvbzlli3fykrakkm8554hi4arf1ym1z9gcagybcjp4dbia1"))))
     (properties `((upstream-name . "gpkg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
+    (native-inputs (list r-knitr))
     (home-page "https://humus.rocks/gpkg/")
     (synopsis
      "Utilities for the Open Geospatial Consortium 'GeoPackage' Format")
@@ -7912,13 +7913,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "19w1vmbygn19dsqqjg00rmjb7n04kysd24009mz33a5vlfjvk8vk"))))
+        (base32 "0zd195kfl15bgbgnd4rlal5cd7ldxdibi2rp79mc0s8y4nrcbx80"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -21116,13 +21117,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1m7fqlx01pgyx4ff5r6k2a56rx2j61xhmq1mdj1ps200isv62ayi"))))
+        (base32 "04l5hnpr5qrp0qn835ri7bbraq90bppxbz314nsy9q50dbpc1psv"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22976,13 +22977,13 @@ initial values for ease of included optimization and simulating.")
 (define-public r-genlib
   (package
     (name "r-genlib")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENLIB" version))
        (sha256
-        (base32 "16xh46150gy6kcyr5v5i3hhghdm0dqjl4hql708yiyra6qj37l7f"))))
+        (base32 "1h0digaa1szgwq0qzf3114id7bx7q6zmgar591jlxgyihihk4x9j"))))
     (properties `((upstream-name . "GENLIB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -24068,13 +24069,13 @@ GENEActiv device.")
 (define-public r-geneaclassify
   (package
     (name "r-geneaclassify")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAclassify" version))
        (sha256
-        (base32 "147pks1cz0fvxxhsnvpwqqbzsxr7lrbdh9qjvs6a86fn8167vv41"))))
+        (base32 "0iy75m31i0wb27kvknx3ln9crbllpgdc6j2qsx6hwn4gxddl9lv0"))))
     (properties `((upstream-name . "GENEAclassify")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-rpart r-mass r-genearead r-changepoint))
@@ -24952,13 +24953,13 @@ fraction.  A reference is Yi Niu and Yingwei Peng (2014)
 (define-public r-geecrt
   (package
     (name "r-geecrt")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeCRT" version))
        (sha256
-        (base32 "0gqwyf6r3cyzfr6rcl5id5x937asllyc61vrs6416j1awb6d2yn3"))))
+        (base32 "08gcifq3gv8b6j7mdgf2y2s9gdcza96681wkzmq7skcj9430m7dm"))))
     (properties `((upstream-name . "geeCRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-mvtnorm r-mass))
@@ -24972,7 +24973,7 @@ population-averaged models in CRTs, the package implements the generalized
 estimating equations (GEE) and matrix-adjusted estimating equations (MAEE)
 approaches to jointly estimate the marginal mean models correlation models both
 for general CRTs and stepped wedge CRTs.  Despite the general GEE/MAEE approach,
-the package also implements a fast cluster-period GEE method by Li et al. (2021)
+the package also implements a fast cluster-period GEE method by Li et al. (2022)
 <doi:10.1093/biostatistics/kxaa056> specifically for stepped wedge CRTs with
 large and variable cluster-period sizes and gives a simple and efficient
 estimating equations approach based on the cluster-period means to estimate the

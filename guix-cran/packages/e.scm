@@ -1988,13 +1988,13 @@ statistical approaches in applied experience research to human readable output."
 (define-public r-experdesign
   (package
     (name "r-experdesign")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "experDesign" version))
        (sha256
-        (base32 "1p1d1bhb04qhzbgnhmrqdiviwy0al9ivfq3wsrymhqakym3gfbdw"))))
+        (base32 "19rxfmvc7mamywm43ixwj0kca1y61k8xk9wdmhhyqq6y0wbvhxdg"))))
     (properties `((upstream-name . "experDesign")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5059,13 +5059,13 @@ including both their metadata and their associated media files.")
 (define-public r-euronext
   (package
     (name "r-euronext")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Euronext" version))
        (sha256
-        (base32 "1sdj9f4f9p2cnbxmvpz50hz70axk0d2093mv50h4rbmj40irvix2"))))
+        (base32 "09pj10rc3rhwpdxyh6np4978jjg74k8c7m8di7c7j70ran270ybq"))))
     (properties `((upstream-name . "Euronext")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -5084,7 +5084,7 @@ including both their metadata and their associated media files.")
      "Retrieve Historical Data of Companies Listed on the 'Euronext' Stock Exchange")
     (description
      "This package provides seamless access to historical data of companies listed on
-the Euronext Stock Exchange(<https://live.euronext.com/en>), enabling users to
+the Euronext Stock Exchange (<https://live.euronext.com/en>), enabling users to
 retrieve real-time information directly within the R environment.  With
 functions tailored for data retrieval and manipulation, users can effortlessly
 access a wide range of financial data, including stock prices, trading volumes,
@@ -10126,13 +10126,13 @@ of this type of generation.
 (define-public r-epcr
   (package
     (name "r-epcr")
-    (version "0.9.9-11")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ePCR" version))
        (sha256
-        (base32 "0bkvjvygdnzcc23sslgkcrx11mzwgsqss37lwnbr7rq0jp1sw46s"))))
+        (base32 "07fr702w5k7561w42g07hxvvzyiz51vvq5gwby5gbp03pp9hja3h"))))
     (properties `((upstream-name . "ePCR")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -10142,7 +10142,7 @@ of this type of generation.
                              r-hamlet
                              r-glmnet
                              r-bolstad2))
-    (native-inputs (list r-r-rsp))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ePCR")
     (synopsis "Ensemble Penalized Cox Regression for Survival Prediction")
     (description
@@ -11875,6 +11875,30 @@ additional software.  Using the package you can encrypt arbitrary html files and
 also directly create encrypted rmarkdown html reports.")
     (license license:expat)))
 
+(define-public r-encompasstest
+  (package
+    (name "r-encompasstest")
+    (version "0.22")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EncompassTest" version))
+       (sha256
+        (base32 "1pk5b272k4flv07mjjg7jyj0v3qg5j5hhk3sgwh0wwvc83nadi7r"))))
+    (properties `((upstream-name . "EncompassTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (home-page "https://cran.r-project.org/package=EncompassTest")
+    (synopsis
+     "Direct Multi-Step Forecast Based Comparison of Nested Models via an Encompassing Test")
+    (description
+     "The encompassing test is developed based on multi-step-ahead predictions of two
+nested models as in Pitarakis, J. (2023) <doi:10.48550/@code{arXiv.2312.16099>}.
+ The statistics are standardised to a normal distribution, and the null
+hypothesis is that the larger model contains no additional useful information.
+P-values will be provided in the output.")
+    (license license:gpl3+)))
+
 (define-public r-encode
   (package
     (name "r-encode")
@@ -11949,27 +11973,6 @@ length.  These encoding schemes will help the computational biologist working in
 the field of classification (binary or multiclass) or prediction involving
 nucleic acid sequences of equal length.")
     (license license:gpl2+)))
-
-(define-public r-enc
-  (package
-    (name "r-enc")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "enc" version))
-       (sha256
-        (base32 "16x8cckw0ah2yfczvv4j1jy4f8m23fkac38fz068964sv4l8z645"))))
-    (properties `((upstream-name . "enc")))
-    (build-system r-build-system)
-    (home-page "https://github.com/krlmlr/enc")
-    (synopsis "Portable Tools for 'UTF-8' Character Data")
-    (description
-     "This package implements an S3 class for storing UTF-8 strings, based on regular
-character vectors.  Also contains routines to portably read and write UTF-8
-encoded text files, to convert all strings in an object to UTF-8', and to create
-character vectors with various encodings.")
-    (license license:gpl3)))
 
 (define-public r-emur
   (package
