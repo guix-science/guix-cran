@@ -7496,13 +7496,13 @@ superior performance and stability is also provided.")
 (define-public r-probably
   (package
     (name "r-probably")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probably" version))
        (sha256
-        (base32 "0bckm3gbavy6wq7f2m4cp34dkdpd3mfcikglrdci9dpmk8fx0s5p"))))
+        (base32 "1ck84r63n72nf8w4v5kfyvhk7b8r6j1hq3sdcclar1k965yphl8n"))))
     (properties `((upstream-name . "probably")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -7523,8 +7523,8 @@ superior performance and stability is also provided.")
                              r-cli
                              r-butcher))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tidymodels/probably/")
-    (synopsis "Tools for Post-Processing Class Probability Estimates")
+    (home-page "https://github.com/tidymodels/probably")
+    (synopsis "Tools for Post-Processing Predicted Values")
     (description
      "Models can be improved by post-processing class probabilities, by:
 recalibration, conversion to hard probabilities, assessment of equivocal zones,
@@ -8406,13 +8406,13 @@ simplex method, see Haotian Pang (2017)
 (define-public r-pricesensitivitymeter
   (package
     (name "r-pricesensitivitymeter")
-    (version "1.2.2")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricesensitivitymeter" version))
        (sha256
-        (base32 "0clbc1p809rjgqilv548ck7pfbyajkp2i47vxx8yrrdgkx824gpn"))))
+        (base32 "136y3dfm6chznp8bnyw6xd9wkv265j3ykqicxib1vwgwaprg6zdm"))))
     (properties `((upstream-name . "pricesensitivitymeter")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-rlang r-ggplot2))
@@ -8718,13 +8718,13 @@ reshaping data frames and formatting R output as HTML.")
 (define-public r-prettymapr
   (package
     (name "r-prettymapr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prettymapr" version))
        (sha256
-        (base32 "1fg2j6qx828qrg46clrvln2004nlk22yx7wvhr8vig66nc1lm7bd"))))
+        (base32 "03dlycmbd7hd3jq1n7x3nz87qwhxxj1nc4ai6yxmbgxbdasgs4y0"))))
     (properties `((upstream-name . "prettymapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-plyr r-httr r-digest))
@@ -10174,18 +10174,18 @@ training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "1.2.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy" version))
        (sha256
-        (base32 "1m0c35r3h63vdimixskqviyqfblj8cxaf5b1085wb72fasanak5n"))))
+        (base32 "00p75lxs2fy1815c3hb5qifhv210vxi4kr650rhiig6bh5bhb9il"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
-                             r-randomforest
                              r-pls
+                             r-lightgbm
                              r-glmnet
                              r-foreach
                              r-doparallel
@@ -10194,10 +10194,10 @@ training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
     (synopsis "Genomic Prediction of Hybrid Performance")
     (description
      "This package performs genomic prediction of hybrid performance using eight GS
-methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, Elastic net, Random
-forest and XGBoost.  It also provides fast cross-validation and mating design
-scheme for training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S
-(2017) <doi:10.1534/g3.116.038059>).")
+methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, Elastic net,
+@code{LightGBM} and XGBoost.  It also provides fast cross-validation and mating
+design scheme for training population (Xu S et al (2016)
+<doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
     (license license:gpl3)))
 
 (define-public r-predfairness
@@ -13422,13 +13422,13 @@ and (6) requires no configuration.")
 (define-public r-porridge
   (package
     (name "r-porridge")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "porridge" version))
        (sha256
-        (base32 "1x8js6drbkp5qbd48xn3pay1r00vdz7z5abm44k1fvc1mk3svrah"))))
+        (base32 "0zya6zv8rsmbwv330jmx2pz1cn97m359nb0a7cjiyjgbggygxryf"))))
     (properties `((upstream-name . "porridge")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -13780,6 +13780,28 @@ Models: Applications to Fluorescence-Activated Cell Sorting Data\"
 from a large set of biallelic SNPs, and extract inbreeding coefficients and the
 generalized FST (Wright's fixation index).  Method described in Ochoa and Storey
 (2021) <doi:10.1371/journal.pgen.1009241>.")
+    (license license:gpl3)))
+
+(define-public r-popinf
+  (package
+    (name "r-popinf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "POPInf" version))
+       (sha256
+        (base32 "1h8fjl87srg2vs4p3pk0az4nr7zzcw08mvw99c6j9j344kzp2p49"))))
+    (properties `((upstream-name . "POPInf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest r-mass))
+    (home-page "https://arxiv.org/abs/2311.14220")
+    (synopsis "Assumption-Lean and Data-Adaptive Post-Prediction Inference")
+    (description
+     "Implementation of assumption-lean and data-adaptive post-prediction inference
+(POPInf), for valid and efficient statistical inference based on data predicted
+by machine learning.  See Miao, Miao, Wu, Zhao, and Lu (2023)
+<@code{arXiv:2311.14220>}.")
     (license license:gpl3)))
 
 (define-public r-popgenreport
@@ -19614,6 +19636,51 @@ which gets data from FBref <https://fbref.com/en>, Transfermarkt
 <https://www.fotmob.com/>.")
     (license license:expat)))
 
+(define-public r-platypus
+  (package
+    (name "r-platypus")
+    (version "3.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Platypus" version))
+       (sha256
+        (base32 "03ymh011wyhlc4pisnrac1nijfw08gc793dj2pzwxzkcwk7g3q99"))))
+    (properties `((upstream-name . "Platypus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-useful
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-seuratobject
+                             r-seurat
+                             r-seqinr
+                             r-reshape2
+                             r-plyr
+                             r-matrix
+                             r-magrittr
+                             r-knitr
+                             r-jsonlite
+                             r-ggtree
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Platypus")
+    (synopsis "Single-Cell Immune Repertoire and Gene Expression Analysis")
+    (description
+     "We present Platypus', an open-source software platform providing a user-friendly
+interface to investigate B-cell receptor and T-cell receptor repertoires from
+@code{scSeq} experiments.  Platypus provides a framework to automate and ease
+the analysis of single-cell immune repertoires while also incorporating
+transcriptional information involving unsupervised clustering, gene expression
+and gene ontology.  This R version of Platypus is part of the @code{ePlatypus}
+ecosystem for computational analysis of immunogenomics data: Yermanos et al.
+(2021) <doi:10.1093/nargab/lqab023>, Cotet et al. (2023)
+<doi:10.1093/bioinformatics/btad553>.")
+    (license license:gpl2)))
+
 (define-public r-plattice
   (package
     (name "r-plattice")
@@ -19985,6 +20052,42 @@ stomatal conductance models, leaf energy balance using Penman-Monteith,
 Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 <doi:10.1371/journal.pone.0143346>.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-planscorer
+  (package
+    (name "r-planscorer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "planscorer" version))
+       (sha256
+        (base32 "0jyjbi36bn6biw6h99w6s8zx7wllx5argfhhx8lqq5wmh9vb8vl1"))))
+    (properties `((upstream-name . "planscorer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (home-page "http://christophertkenny.com/planscorer/")
+    (synopsis "Score Redistricting Plans with 'PlanScore'")
+    (description
+     "This package provides access to the @code{PlanScore} Application Programming
+Interface (<https://github.com/@code{PlanScore/PlanScore/blob/main/API.md>}) for
+scoring redistricting plans.  Allows for upload of plans from block assignment
+files and shape files.  For shapes in memory, such as from sf or redist', it
+processes them to save and upload.  Includes tools for tidying responses and
+saving output from the website.")
+    (license license:expat)))
 
 (define-public r-planr
   (package
@@ -20733,13 +20836,13 @@ CRAN/Bioconductor ecosystems for many old R versions.")
 (define-public r-pkglite
   (package
     (name "r-pkglite")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkglite" version))
        (sha256
-        (base32 "0kc2h9d0kszvgc5bhzar4h4y604msmdmcc1agvn9irffm54x848d"))))
+        (base32 "1781gkzz5p1rbksyxaznqp7n0ixig8lzjg88bj3v24r0zg5wwdwc"))))
     (properties `((upstream-name . "pkglite")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-magrittr r-crayon))
@@ -31698,13 +31801,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1yx2qk7l6njnpmqx68kifhgzpk3r5yhyxn73xa60w710czzb9wcs"))))
+        (base32 "12k1qcng5ygmryiy528gxbg0sn4gmnbp145qz278vsm2ya3hh86b"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -33074,13 +33177,13 @@ sized, but split files.")
 (define-public r-paropt
   (package
     (name "r-paropt")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paropt" version))
        (sha256
-        (base32 "0awy0v98s1v0rx7k96zq1prgfvn9jmwnha4082fjx626g7zakwj6"))))
+        (base32 "0rmiamj3s0s9qcymx74lmk266mrja3mxkflf32dpahnric9rvpsl"))))
     (properties `((upstream-name . "paropt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -34586,13 +34689,13 @@ Baumann-Pickering et al (2010) <doi:10.1121/1.3479549>.")
 (define-public r-pammtools
   (package
     (name "r-pammtools")
-    (version "0.5.92")
+    (version "0.5.93")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pammtools" version))
        (sha256
-        (base32 "00g4ffzwj4rc2nl507yzh5zj6pqjksw0igw23m26vxqsa8qdkyfc"))))
+        (base32 "0xihvszndsnzzh3kzn67yqqdxms5pba609lvlg68k3gfxbxk104l"))))
     (properties `((upstream-name . "pammtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

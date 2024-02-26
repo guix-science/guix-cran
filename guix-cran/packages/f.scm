@@ -17,9 +17,9 @@
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
-  #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages geo)
   #:use-module (guix-cran packages z)
@@ -2165,13 +2165,13 @@ identify any library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "14qk8favhfy9cj0f9v1ibdmp4jsckgfl5ilpkz61ibksyi1sgps7"))))
+        (base32 "0rxj7cpvl0ng1drqp5iyg7j39pn3pss2zg3zk8kf0vc6ajzfvr5g"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3208,13 +3208,13 @@ to each item and the report of the responses of a few subjects.")
 (define-public r-fsemipar
   (package
     (name "r-fsemipar")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsemipar" version))
        (sha256
-        (base32 "0xvhnb5fw0q5h1d9fkhm4i9ig476gc6gvp6qzvxnmrwzdpjmhdk2"))))
+        (base32 "0fj088wggbqjxsj1k143k0xwc62j5i082flmz808f728p7c5hrjk"))))
     (properties `((upstream-name . "fsemipar")))
     (build-system r-build-system)
     (propagated-inputs (list r-gtools r-grpreg r-dicekriging))
@@ -3358,6 +3358,32 @@ constraints.")
 This work was funded by Poland-Singapore bilateral cooperation project no
 2/3/POL-SIN/2012.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-fscache
+  (package
+    (name "r-fscache")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fscache" version))
+       (sha256
+        (base32 "0fxrz0mhhb38imk8hvngyzmvyagx1yhd4jfkrplwcrpyfbxbbdq5"))))
+    (properties `((upstream-name . "fscache")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-r6 r-r-utils r-lgr r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/dbapis/r-fscache")
+    (synopsis "File System Cache")
+    (description
+     "Manages a file system cache.  Regular files can be moved or copied to the cache
+folder.  Sub-folders can be created in order to organize the files.  Files can
+be located inside the cache using a glob function.  Text contents can be easily
+stored in and retrieved from the cache using dedicated functions.  It can be
+used for an application or a package, as a global cache, or as a per-user cache,
+in which case the standard OS user cache folder will be used (e.g.: on Linux
+$HOME/.cache/R/my_app_or_pkg_cache_folder).")
+    (license license:agpl3)))
 
 (define-public r-fsbrain
   (package
@@ -7711,13 +7737,13 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forceplate
   (package
     (name "r-forceplate")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forceplate" version))
        (sha256
-        (base32 "1qhfwcc780g3l2yrlmysa95qrc47lmf69cbvk41irzcagwhmig1x"))))
+        (base32 "00jl2vy90k76l7va2xvg57vd47zipd4igj6vaajpym76liz495pd"))))
     (properties `((upstream-name . "forceplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-signal r-data-table))
@@ -9121,16 +9147,38 @@ DLNM methodology in Gasparrini et al. <doi:10.1002/sim.3940> (DLNMs),
 <doi:10.1002/sim.5471> (multivariate meta-analysis).")
     (license license:gpl2+)))
 
+(define-public r-fluidsynth
+  (package
+    (name "r-fluidsynth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluidsynth" version))
+       (sha256
+        (base32 "04jn17rxafrw47gc98c5k4jzsbdsml0brq85zr7xvijirnd15yxn"))))
+    (properties `((upstream-name . "fluidsynth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rappdirs r-av))
+    (native-inputs (list pkg-config))
+    (home-page "https://cran.r-project.org/package=fluidsynth")
+    (synopsis "Read and Play Digital Music (MIDI)")
+    (description
+     "Bindings to libfluidsynth to parse and synthesize MIDI files.  It can read MIDI
+into a data frame, play it on the local audio device, or convert into an audio
+file.")
+    (license license:expat)))
+
 (define-public r-flsss
   (package
     (name "r-flsss")
-    (version "9.1.1")
+    (version "9.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLSSS" version))
        (sha256
-        (base32 "0k7lglmwrhzmdfkn6inx362y7knmgxlzfbli2n5ssznbblix7kwa"))))
+        (base32 "1mjjnasc5f3l44dch7wjxl0b6jbcyjkk6m5b3xgjrir5qyy7fmdk"))))
     (properties `((upstream-name . "FLSSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp))
@@ -14070,13 +14118,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "0vh9p6kxgysnzq0181xj2c2yh6mrrpiml2r1x16b4aq81nl2nizs"))))
+        (base32 "1133gnxyyb2dpid6b9y89kwxb01gblk4bb1k78pjnr0yh8r2v13x"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -20335,13 +20383,13 @@ Software 97 (7), 1-30.")
 (define-public r-fameta
   (package
     (name "r-fameta")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAMetA" version))
        (sha256
-        (base32 "0s963nk5igwv14mnw8pp0snaiygq3xrx1irfzb2r4pgs04sn38an"))))
+        (base32 "0hn4g0qqiy15jg42g27v0rmplm8gh84fr0kpp7q56c21mcs5w4h3"))))
     (properties `((upstream-name . "FAMetA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

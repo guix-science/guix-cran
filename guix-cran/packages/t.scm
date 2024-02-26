@@ -5649,13 +5649,13 @@ restrictions.")
 (define-public r-trexselector
   (package
     (name "r-trexselector")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRexSelector" version))
        (sha256
-        (base32 "1iwyy6jmg4nxkdsybjwsc8h5f74yq6kf708pslr9ss82b2xmd0q1"))))
+        (base32 "1jxf4zxlhyinfa7w5h5zby7wy3bxbpcran5jy9byysgq5k8bqb5w"))))
     (properties `((upstream-name . "TRexSelector")))
     (build-system r-build-system)
     (propagated-inputs (list r-tlars
@@ -5663,15 +5663,16 @@ restrictions.")
                              r-glmnet
                              r-foreach
                              r-dorng
-                             r-doparallel))
+                             r-doparallel
+                             r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jasinmachkour/trex")
+    (home-page "https://github.com/jasinmachkour/TRexSelector")
     (synopsis
      "T-Rex Selector: High-Dimensional Variable Selection & FDR Control")
     (description
      "This package performs fast variable selection in high-dimensional settings while
 controlling the false discovery rate (FDR) at a user-defined target level.  The
-package is based on the paper Machkour, Muma, and Palomar (2021)
+package is based on the paper Machkour, Muma, and Palomar (2022)
 <@code{arXiv:2110.06048>}.")
     (license license:gpl3+)))
 
@@ -9104,13 +9105,13 @@ customized plots will be applicable as well.")
 (define-public r-tplyr
   (package
     (name "r-tplyr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Tplyr" version))
        (sha256
-        (base32 "07y1hzklgzfi93n84v7w46ins1jn4qdb6zgyjhy0r1j0p7ggm7g1"))))
+        (base32 "092lazly5l2891x7yriii19ifck0rhlwk0ic8n6yjpp2ibwg6dbz"))))
     (properties `((upstream-name . "Tplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11829,13 +11830,13 @@ for support recovery of the precision matrices.")
 (define-public r-tlars
   (package
     (name "r-tlars")
-    (version "0.0.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tlars" version))
        (sha256
-        (base32 "1q4hq4fp7hldgnvyd6nzif231x85j16gwa69cljixfhgyxs95rlf"))))
+        (base32 "1hahhyw9imhkf1aq48m8prrm46cj9r6ibnrq9k1l5zxy4gzw630g"))))
     (properties `((upstream-name . "tlars")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11846,9 +11847,9 @@ for support recovery of the precision matrices.")
     (description
      "Computes the solution path of the Terminating-LARS (T-LARS) algorithm.  The
 T-LARS algorithm is a major building block of the T-Rex selector (see R package
-trex').  The package is based on the papers Machkour, Muma, and Palomar (2021)
-<@code{arXiv:2110.06048>}, Efron, Hastie, Johnstone, and Tibshirani (2004)
-<doi:10.1214/009053604000000067>, and Tibshirani (1996)
+T@code{RexSelector}').  The package is based on the papers Machkour, Muma, and
+Palomar (2022) <@code{arXiv:2110.06048>}, Efron, Hastie, Johnstone, and
+Tibshirani (2004) <doi:10.1214/009053604000000067>, and Tibshirani (1996)
 <doi:10.1111/j.2517-6161.1996.tb02080.x>.")
     (license license:gpl3+)))
 
@@ -12540,13 +12541,13 @@ framework, and @code{LaTeX} code with the tabularray package.")
 (define-public r-tinysnapshot
   (package
     (name "r-tinysnapshot")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinysnapshot" version))
        (sha256
-        (base32 "1f8j5v9j3n6nv9lsp05jfjq8hph91lx61vbqmw7iizqcwgqfhxbx"))))
+        (base32 "1w9p7fkp7shcks8p1g6y3liqjhcqpydw116x3d0bchwmlra7zpcs"))))
     (properties `((upstream-name . "tinysnapshot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytest r-magick r-diffobj))
@@ -13570,13 +13571,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.23.0")
+    (version "0.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0bdl3p16ngqi127dz965i38lfdii0g8wmg3db328lzzrnf44lqfs"))))
+        (base32 "1gscky6mp8c2ph3njhqxjyd80nw2gxhqvdvj17frzyzyrwqr70i8"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -15367,42 +15368,6 @@ is inspired by the popular bedtools and the genome_join() method from the
 fuzzyjoin package.")
     (license license:gpl3)))
 
-(define-public r-tidygate
-  (package
-    (name "r-tidygate")
-    (version "0.4.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidygate" version))
-       (sha256
-        (base32 "046ylczm0fh493j2xl3f4klrj3c3gccdipc25nnn4r0a7vlx1wsz"))))
-    (properties `((upstream-name . "tidygate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scales
-                             r-rlang
-                             r-rcolorbrewer
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stemangiola/tidygate")
-    (synopsis "Add Gate Information to Your Tibble")
-    (description
-     "It interactively or programmatically label points within custom gates on two
-dimensions <https://github.com/stemangiola/tidygate>.  The information is added
-to your tibble.  It is based on the package gatepoints from Wajid Jawaid (who is
-also author of this package).  The code of gatepoints was nto integrated in
-tidygate'.  The benefits are (i) in interactive mode you can draw your gates on
-extensive ggplot'-like scatter plots; (ii) you can draw multiple gates; and
-(iii) you can save your gates and apply the programmatically.")
-    (license license:gpl3)))
-
 (define-public r-tidygapminder
   (package
     (name "r-tidygapminder")
@@ -15885,26 +15850,35 @@ dependencies.")
 (define-public r-tidycomm
   (package
     (name "r-tidycomm")
-    (version "0.2.1")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycomm" version))
        (sha256
-        (base32 "1h1xixa7fbijp1iifpwl689b1pz1vvpy7v4sc9wnkqgw0q31b3iy"))))
+        (base32 "07izzm2ywdjs8z4yfkrrdy0mn54vqc3gnpiymgag8wkxsmxqpz64"))))
     (properties `((upstream-name . "tidycomm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-pillar
+                             r-misty
                              r-mbess
+                             r-mass
                              r-magrittr
+                             r-lubridate
+                             r-lm-beta
                              r-glue
+                             r-ggplot2
+                             r-ggally
                              r-forcats
+                             r-fastdummies
                              r-dplyr
-                             r-broom))
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://joon-e.github.io/tidycomm/")
     (synopsis "Data Modification and Analysis for Communication Research")
@@ -21915,6 +21889,57 @@ displays filtered and unfiltered observation counts.")
 supporting reproducible research and analysis.")
     (license license:asl2.0)))
 
+(define-public r-teal-modules-clinical
+  (package
+    (name "r-teal-modules-clinical")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.modules.clinical" version))
+       (sha256
+        (base32 "1f8dz6lvv0syr2f1qkwk365d8i936hd8i464svmawmcjzvs5mac6"))))
+    (properties `((upstream-name . "teal.modules.clinical")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vistime
+                             r-tern-mmrm
+                             r-tern-gee
+                             r-tern
+                             r-teal-widgets
+                             r-teal-transform
+                             r-teal-reporter
+                             r-teal-logger
+                             r-teal-data
+                             r-teal-code
+                             r-teal
+                             r-shinywidgets
+                             r-shinyvalidate
+                             r-shinyjs
+                             r-shiny
+                             r-scales
+                             r-rtables
+                             r-rmarkdown
+                             r-rlistings
+                             r-logger
+                             r-lifecycle
+                             r-ggrepel
+                             r-ggplot2
+                             r-formatters
+                             r-dt
+                             r-dplyr
+                             r-checkmate
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.modules.clinical/")
+    (synopsis "'teal' Modules for Standard Clinical Outputs")
+    (description
+     "This package provides user-friendly tools for creating and customizing clinical
+trial reports.  By leveraging the teal framework, this package provides teal
+modules to easily create an interactive panel that allows for seamless
+adjustments to data presentation, thereby streamlining the creation of detailed
+and accurate reports.")
+    (license license:asl2.0)))
+
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
@@ -21982,13 +22007,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "0.15.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "0qk2kxq8c0kmi8bi24bydyl1vy41hl0ib37gp6vd5l2447llkpaa"))))
+        (base32 "18mixn4gy8d5a0y5m9w0b77y30a1208wnzwijq14v0irkypii1h8"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (propagated-inputs (list r-teal-widgets
@@ -23735,13 +23760,13 @@ authorities and provides functions that can quickly query this data.")
 (define-public r-taxa
   (package
     (name "r-taxa")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxa" version))
        (sha256
-        (base32 "1vb3igz24xkgsds5145h3hqlc7grn3l2kpslg87j4hsw66i86py3"))))
+        (base32 "1vvvj7gm0xh42bd1zh6zl14lpvyi5naxp8qsm59aynahw02s6w49"))))
     (properties `((upstream-name . "taxa")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -24031,13 +24056,13 @@ implementation and the implementation available from IHME.")
 (define-public r-targeted
   (package
     (name "r-targeted")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "targeted" version))
        (sha256
-        (base32 "08js8l51j03w2zy7fnm3wq9dcy9r2f0j6wcr9cxl2qh8sx8n9j78"))))
+        (base32 "176h4zswxf33394ngf4kczcan4acs91jnpk5pyz5fw49l5yhkqlg"))))
     (properties `((upstream-name . "targeted")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

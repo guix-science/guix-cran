@@ -2670,32 +2670,6 @@ provides a similar summary output as that of glm() function.  Both parametric
 and empirical SIMEX are considered in the package.")
     (license license:gpl2+)))
 
-(define-public r-augmenterr
-  (package
-    (name "r-augmenterr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AugmenterR" version))
-       (sha256
-        (base32 "0hi501p8ksaqzc9dq16dbmkz50kakgw3k0awdkbpci5can2sqvfl"))))
-    (properties `((upstream-name . "AugmenterR")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=AugmenterR")
-    (synopsis "Data Augmentation for Machine Learning on Tabular Data")
-    (description
-     "Implementation of a data augmentation technique based on conditional entropy It
-was devised by both authors during their masters and is discussed in detail in
-the second author dissertation.  It is able to create novel samples conditioned
-on a desired value of a categorical attribute, as a way to augment data for
-classification tasks Tests discussed in the dissertation and future paper
-present that the technique satisfies several statistical assumptions for the
-novel samples.  It also shows significant improvement for machine learning
-models trained on small data.")
-    (license license:expat)))
-
 (define-public r-augmentedrcbd
   (package
     (name "r-augmentedrcbd")
@@ -3060,13 +3034,13 @@ development.")
 (define-public r-atsa
   (package
     (name "r-atsa")
-    (version "3.1.2")
+    (version "3.1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aTSA" version))
        (sha256
-        (base32 "1p3spas0sxj08hkb8p6k2fy64w86prlw1hbnrqnrklr0hnkg2g54"))))
+        (base32 "1kzkpbiycpdc07kb0j5yhjx9bjpn1s7zh0h3fgwghg071yqkd4if"))))
     (properties `((upstream-name . "aTSA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=aTSA")
@@ -5834,13 +5808,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARPALData" version))
        (sha256
-        (base32 "0vkrh31dki4ff4yfi5d4ywgs07gpga24dby516ydg6hryxrbzsq7"))))
+        (base32 "09c3qh0nzs1k95qb4zgj53a3dhm8688171jkrihlw9jmqyg8g56f"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -6151,13 +6125,13 @@ treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "1zkdgmn0mwryhmgfqjpvdq4v5ppcf2dal51k2mn0972ds9lcwnh8"))))
+        (base32 "0d6di3a17zjr468prj2bpi1ls0cqg46gks10irn2qdjifwiy6r4z"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -7485,13 +7459,13 @@ with or without radiocarbon calibration.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "13jzp2xybnmbg4nimj1iq785v7qh0dizj9cl08m9f2ajh9nwgx6k"))))
+        (base32 "05kx133vs99vfb69vp06vhmkg6fd3lqxw1cha30sd6annaylrsyq"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -7500,7 +7474,8 @@ with or without radiocarbon calibration.")
                              r-rcpp
                              r-jsonify
                              r-httr2
-                             r-dbplyr))
+                             r-dbplyr
+                             r-cli))
     (home-page "https://github.com/R-ArcGIS/arcgisutils")
     (synopsis "ArcGIS Utility Functions")
     (description
@@ -9727,28 +9702,6 @@ methods such as generalized estimating equations (GEE) or generalized linear
 mixed effect models (GLMM).  aods3 is an S3 re-implementation of the deprecated
 S4 package aod.")
     (license license:gpl2+)))
-
-(define-public r-ao
-  (package
-    (name "r-ao")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ao" version))
-       (sha256
-        (base32 "1z4jd2qrhw9qvydbf4zmm17cj5nw3kwj9wlaph1zcyrs02x9divv"))))
-    (properties `((upstream-name . "ao")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-optimizer r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://loelschlaeger.de/ao/")
-    (synopsis "Alternating Optimization")
-    (description
-     "Alternating optimization of (high-dimensional) functions is an iterative
-procedure for optimizing jointly over all parameters by alternately optimizing
-parameter subsets.")
-    (license license:gpl3)))
 
 (define-public r-anylib
   (package
@@ -12272,13 +12225,13 @@ are meant to represent standard cases of analytical and numerical solution.")
 (define-public r-amen
   (package
     (name "r-amen")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amen" version))
        (sha256
-        (base32 "00c4dw6s8yxagbgadvcpw4ima89aqjqgpm3460zi97xwq9404f1d"))))
+        (base32 "0nqgb25y8zmmas3i1abzv3w5m4cnxjsdqcqxxrhngj3ajz4dmyc7"))))
     (properties `((upstream-name . "amen")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12813,35 +12766,25 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "0bxb08pmpgbbqchsdmvgcvcp93ln3mly14vhwqlqfnr318iv93k3"))))
+        (base32 "1d5p61ffnldprlk87mvhx81byv7p5502pahlval2g3y8g3byya4w"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-usethis
-                             r-tinkr
-                             r-servr
-                             r-rstudioapi
-                             r-rmarkdown
-                             r-htmltools
-                             r-here
-                             r-fs
-                             r-desc
-                             r-cli))
-    (home-page "https://github.com/etiennebacher/altdoc")
+    (propagated-inputs (list r-quarto r-fs r-desc r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://altdoc.etiennebacher.com")
     (synopsis
-     "Use 'Docsify.js', 'Docute', or 'Mkdocs' to Generate a Package Documentation")
+     "Package Documentation Websites with 'Quarto', 'Docsify', 'Docute', or 'MkDocs'")
     (description
-     "Most developers use pkgdown to create a website for their packages.  Other
-documentation generators exist, such as Docute', Docsify.js', or Mkdocs'.  The
-aim of altdoc is to provide helpers to create, populate, update, and preview
-websites made with these tools.")
+     "This is a simple and powerful package to create, render, preview, and deploy
+documentation websites for R packages.  It is a lightweight and flexible
+alternative to pkgdown', with support for many documentation generators,
+including Quarto', Docute', Docsify', and @code{MkDocs}'.")
     (license license:expat)))
 
 (define-public r-altair
@@ -19420,13 +19363,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1h7gsf9pswdjdjgm3imjxm1c3kmzp0gxrkrsyv01f5wcing68am6"))))
+        (base32 "1jgydhi1fnb0dlqksw58lvacakqjsksl32358dvzlkgihvjqzfds"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -19444,13 +19387,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.9.0.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "0xxaix8xvyw8qaf7yy7a6j417dwz5vlbxki4k2lp671ks6xg0c9m"))))
+        (base32 "1xz4hxv0vn6vi6k07qwvbiws9ywj4cxnf2spnlcp0ajjxy4p6xlv"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -19469,13 +19412,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.9.0.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1y9pnjq6c3a4r1gyjv8rm0bhwp16i9mi4p25fdclcyr29fzzhnv2"))))
+        (base32 "1mg2m14jc8wd3w9pb0ayqqm28dgdmwqhgs811m1hc1jywr0hlmbv"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))
@@ -21040,6 +20983,36 @@ and open source tool for simulating urban transport systems and scenarios of
 change <doi:10.1007/s10109-020-00342-2>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-absorber
+  (package
+    (name "r-absorber")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "absorber" version))
+       (sha256
+        (base32 "1s8dn0y0igxaxa1q6cakc28fb1dvf0zljmw7gbn68pdimyrvdh0g"))))
+    (properties `((upstream-name . "absorber")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsegl
+                             r-matrix
+                             r-mass
+                             r-irlba
+                             r-ggplot2
+                             r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=absorber")
+    (synopsis "Variable Selection in Nonparametric Models using B-Splines")
+    (description
+     "This package provides a variable selection method using B-Splines in
+multivariate @code{nOnparametric} Regression models Based on partial
+@code{dErivatives} Regularization (ABSORBER) implements a novel variable
+selection method in a nonlinear multivariate model using B-splines.  For further
+details we refer the reader to the paper Savino, M. E. and LÃ©vy-Leduc, C.
+(2024), <https://hal.science/hal-04434820>.")
+    (license license:gpl2)))
+
 (define-public r-abseil
   (package
     (name "r-abseil")
@@ -21213,6 +21186,27 @@ subset of group selection <doi:10.1287/ijoc.2022.1241> and sure independence
 screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-aberrance
+  (package
+    (name "r-aberrance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aberrance" version))
+       (sha256
+        (base32 "0wjckww2dc3q17ln4r0sjgbvi5zxbsh5cz383x02xkkq5va7lrb3"))))
+    (properties `((upstream-name . "aberrance")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/kyliegorney/aberrance")
+    (synopsis "Detect Aberrant Behavior in Test Data")
+    (description
+     "Detect several types of aberrant behavior, including answer copying, answer
+similarity, nonparametric misfit, parametric misfit, preknowledge, rapid
+guessing, and test tampering.")
+    (license license:gpl3+)))
 
 (define-public r-abdiv
   (package

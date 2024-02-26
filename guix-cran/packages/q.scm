@@ -1992,6 +1992,51 @@ selection purpose (cross-validation, stability selection).")
 equation.")
     (license license:gpl2)))
 
+(define-public r-quadratik
+  (package
+    (name "r-quadratik")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuadratiK" version))
+       (sha256
+        (base32 "1yn8hs2cpf6dsaqnva2k0l9i4g3ccmzg0vrn4xrynqz3ncrzikwy"))))
+    (properties `((upstream-name . "QuadratiK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinflex
+                             r-sn
+                             r-rrcov
+                             r-rlecuyer
+                             r-rgl
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-movmf
+                             r-moments
+                             r-mclust
+                             r-mass
+                             r-ggpubr
+                             r-ggpp
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-clusterrepro
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=QuadratiK")
+    (synopsis
+     "Collection of Methods Constructed using Kernel-Based Quadratic Distances")
+    (description
+     "It includes test for multivariate normality, test for uniformity on the Sphere,
+non-parametric two- and k-sample tests, random generation of points from the
+Poisson kernel-based density and clustering algorithm for spherical data.  For
+more information see Saraceno, G., Markatou, M., Mukhopadhyay, R., Golzy, M.
+(2024) <arxiv:2402.02290>, Ding, Y., Markatou, M., Saraceno, G. (2023)
+<doi:10.5705/ss.202022.0347>, and Golzy, M., Markatou, M. (2020)
+<doi:10.1080/10618600.2020.1740713>.")
+    (license license:gpl3+)))
+
 (define-public r-quadraticsd
   (package
     (name "r-quadraticsd")

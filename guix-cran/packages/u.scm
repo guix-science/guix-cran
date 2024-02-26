@@ -1880,13 +1880,13 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unix" version))
        (sha256
-        (base32 "1f8rk9davqhbmwxwxdnvmrrmfi76xzf1n4kl6d0lb0jrczb74qap"))))
+        (base32 "11h8z2k2p42kjj76wx4gj9ghgd5z0gc0lxs8h6y1ikprgy5xaw32"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list apparmor))

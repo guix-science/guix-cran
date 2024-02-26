@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -2411,13 +2411,13 @@ tables found in NCBI, as well as custom genetic code tables.")
 (define-public r-cub
   (package
     (name "r-cub")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CUB" version))
        (sha256
-        (base32 "1l47fkfvd91mbfzgl0vwaahbyi53jv3md6zah9ns85ns6xlwap7n"))))
+        (base32 "0i9fpjasvmsprgfp28f46xvwmd71qqmvwqaibvc8kh47ghjnfpzv"))))
     (properties `((upstream-name . "CUB")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula))
@@ -2427,7 +2427,7 @@ tables found in NCBI, as well as custom genetic code tables.")
     (description
      "For ordinal rating data, estimate and test models within the family of CUB
 models and their extensions (where CUB stands for Combination of a discrete
-Uniform and a shifted Binomial distributions).  Simulation routines, plotting
+Uniform and a shifted Binomial distributions); Simulation routines, plotting
 facilities and fitting measures are also provided.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -7683,13 +7683,13 @@ Algorithm-B (R. B. Dial (2006) <doi:10.1016/j.trb.2006.02.008>).")
 (define-public r-cppdoubles
   (package
     (name "r-cppdoubles")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cppdoubles" version))
        (sha256
-        (base32 "0ggm9nah0cwzgzxb10gflpdbrgpzz5xk1ifiq0k5jk8zlg8slcpx"))))
+        (base32 "1m5d4lwji6yrbzb68m61zkrkchj9mv7m0sdqg2vnxzr5799whckh"))))
     (properties `((upstream-name . "cppdoubles")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))
@@ -10184,13 +10184,13 @@ data set.")
 (define-public r-counternull
   (package
     (name "r-counternull")
-    (version "0.2.0")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Counternull" version))
        (sha256
-        (base32 "137vnq4lk2z54x6dbbps8vpa6p5cx21wjriaq9sp5b2s39m6hi0m"))))
+        (base32 "0kr9xaci7mdh9qgs9h1anpjv6ii2y2gpijs9kz1ywdg1iqwk8bf1"))))
     (properties `((upstream-name . "Counternull")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-randomizr r-ggplot2 r-effsize r-dplyr))
@@ -12679,13 +12679,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "1sashpxwbw0a5q8qvs8pwgxk0h5d3njw7j4gqrc8fh7bx71bqq7l"))))
+        (base32 "18ymf1ncl9zpnagglxxzm89myxy5jlrani562dxhhdmqz580ciz0"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Copula.surv")
@@ -15210,13 +15210,13 @@ hypergraph structure.  The method used in the package refers to Klaus et al
 (define-public r-congrevelamsdell2016
   (package
     (name "r-congrevelamsdell2016")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CongreveLamsdell2016" version))
        (sha256
-        (base32 "0fs0r3k1hvnp241fa0ymq00868skcigizqr68sp3lsmvzsdyxha9"))))
+        (base32 "06vfcl65zn3xwpai33xxmp54r5hny8cr18ad3w8laa6fii5rfyhb"))))
     (properties `((upstream-name . "CongreveLamsdell2016")))
     (build-system r-build-system)
     (propagated-inputs (list r-ternary))
@@ -16805,6 +16805,30 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 <https://comtradeplus.un.org/>.  Comtrade provides country level shipping data
 for a variety of commodities, these functions allow for easy API query and data
 returned as a tidy data frame.")
+    (license license:gpl3)))
+
+(define-public r-comstab
+  (package
+    (name "r-comstab")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comstab" version))
+       (sha256
+        (base32 "0sri4v7cc4xpxkpn8yjpqjkfffqzm3a76hk9sj2h3sld7d2cyx2i"))))
+    (properties `((upstream-name . "comstab")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ternary))
+    (home-page "https://github.com/jsegrestin/comstab")
+    (synopsis
+     "Partitioning the Drivers of Stability of Ecological Communities")
+    (description
+     "This package contains the basic functions to apply the unified framework for
+partitioning the drivers of stability of ecological communities.  J. Segrestin,
+L. GÃ¶tzenberger, E. Valencia, F. de Bello & J. @code{LepÅ}¡ (2024) \"A unified
+framework for partitioning the drivers of stability of ecological communities\"
+<minor revisions>.")
     (license license:gpl3)))
 
 (define-public r-comsimitv
@@ -18913,6 +18937,46 @@ API, which offers color inspiration and color palettes.")
 palette of the most frequent colours used in the image.  Also provides some
 custom colour palettes.")
     (license license:gpl2+)))
+
+(define-public r-colossus
+  (package
+    (name "r-colossus")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Colossus" version))
+       (sha256
+        (base32 "0fvjfc9kn2svf997nrlxvvmq01jwimhkwgq4j8c8vgvvsdvfl6bg"))))
+    (properties `((upstream-name . "Colossus")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-testthat
+                             r-rlang
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ericgiunta/Colossus")
+    (synopsis
+     "\"Risk Model Regression and Analysis with Complex Non-Linear Models\"")
+    (description
+     "This package performs survival analysis using general non-linear models.  Risk
+models can be the sum or product of terms.  Each term is the product of
+exponential/linear functions of covariates.  Additionally sub-terms can be
+defined as a sum of exponential, linear threshold, and step functions.  Cox
+Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
+Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Grey
+competing risks
+<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
+regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
+through a subcontract from the National Council on Radiation Protection and
+Measurements (NCRP).  The computing for this project was performed on the Beocat
+Research Cluster at Kansas State University, which is funded in part by NSF
+grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548, CHE-1726332, and NIH
+P20GM113109.")
+    (license license:gpl3+)))
 
 (define-public r-colorspec
   (package
@@ -21185,13 +21249,13 @@ dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda4microbiome" version))
        (sha256
-        (base32 "1vsd78zx4zkdnjp8l6nw5gsn65zh711yr0mh5fh6qamhrllzxv6k"))))
+        (base32 "1nr2xq7pal90dnc76y9hj3qfy5anxjihrlb8sfxnvx5pz590m2wb"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -23032,6 +23096,34 @@ plot.")
     (description
      "This package contains the Commercial Modular Aero-Propulsion System Simulation
 (C-MAPSS) data set.")
+    (license license:gpl3)))
+
+(define-public r-cmahalanobis
+  (package
+    (name "r-cmahalanobis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cmahalanobis" version))
+       (sha256
+        (base32 "0iry0jifvvlam7szhsmrsz2mqim0pmkfk50n97c1q9r84n6rfxlj"))))
+    (properties `((upstream-name . "cmahalanobis")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cmahalanobis")
+    (synopsis
+     "Calculate the Mahalanobis Distance for a Given List of Data Frames with Factors")
+    (description
+     "It provides a function that calculates the Mahalanobis distance between each
+pair of species in a list of data frames.  Each data frame contains the
+observations of a species with some factors.  Mahalanobis distance is a measure
+of dissimilarity between two vectors of multivariate random variables, based on
+the covariance matrix.  This distance is useful for statistical matching or
+fusion of data, that is the integration of two data sources that refer to the
+same target population and that share some variables. - \"Fisher, R.A. (1922) On
+the mathematical foundations of theoretical statistics.
+<doi:10.1098/rsta.1922.0009>\". - \"Mahalanobis, P.C. (1936) On the generalized
+distance in statistics. <doi:10.1007/s13171-019-00164-5>\".")
     (license license:gpl3)))
 
 (define-public r-cmaesr
@@ -25302,24 +25394,24 @@ negative predictive values, and Youden index.")
 (define-public r-clinpk
   (package
     (name "r-clinpk")
-    (version "0.11.1")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinPK" version))
        (sha256
-        (base32 "1mzws5pgczdghxl2h0zgrp44in80kplnhy3gc7g4g8wssjwywbb3"))))
+        (base32 "1mfm4z0gbwmk2pvwmrk2z00zjl580mbf3z38zpsb3nx8xlxvsv1b"))))
     (properties `((upstream-name . "clinPK")))
     (build-system r-build-system)
     (home-page "https://github.com/InsightRX/clinPK")
     (synopsis "Clinical Pharmacokinetics Toolkit")
     (description
-     "Calculates equations commonly used in clinical pharmacokinetics and clinical
-pharmacology, such as equations for dose individualization, compartmental
-pharmacokinetics, drug exposure, anthropomorphic calculations, clinical
-chemistry, and conversion of common clinical parameters.  Where possible and
-relevant, it provides multiple published and peer-reviewed equations within the
-respective R function.")
+     "This package provides equations commonly used in clinical pharmacokinetics and
+clinical pharmacology, such as equations for dose individualization,
+compartmental pharmacokinetics, drug exposure, anthropomorphic calculations,
+clinical chemistry, and conversion of common clinical parameters.  Where
+possible and relevant, it provides multiple published and peer-reviewed
+equations within the respective R function.")
     (license license:expat)))
 
 (define-public r-clinmon
@@ -28113,13 +28205,13 @@ to calculate circular-circular and circular-linear distance correlations.")
 (define-public r-circlesplot
   (package
     (name "r-circlesplot")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circlesplot" version))
        (sha256
-        (base32 "07wmnrihqhdgjgln31zvih7c6ipdb440ssppphldr31nk9xpbsh5"))))
+        (base32 "0ghryi31g0ah24h6qznxx082n2g4hs70aplfzzil5fkwpsk5wx0b"))))
     (properties `((upstream-name . "circlesplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix))
@@ -28573,13 +28665,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.13.4")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "0h43074fqar9xnyyrbxym9aq4jyxysyj3vhkignc6xivyk2rb0pw"))))
+        (base32 "0any2442p9jmlzmhh5blclp7w07ff1m266sbjqx5yjw92hvxc311"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -32365,6 +32457,37 @@ and machine readable file format which provides citation metadata for software.
 This package provides core utilities to generate and validate this metadata.")
     (license license:gpl3+)))
 
+(define-public r-cffdrs
+  (package
+    (name "r-cffdrs")
+    (version "1.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cffdrs" version))
+       (sha256
+        (base32 "0y4w045fgn1q63w9bk4qwzzxij34agjsg396vmydljz3w86insib"))))
+    (properties `((upstream-name . "cffdrs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-geosphere
+                             r-foreach
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://r-forge.r-project.org/projects/cffdrs/")
+    (synopsis "Canadian Forest Fire Danger Rating System")
+    (description
+     "This project provides a group of new functions to calculate the outputs of the
+two main components of the Canadian Forest Fire Danger Rating System (CFFDRS)
+Van Wagner and Pickett (1985) <https://cfs.nrcan.gc.ca/publications?id=19973>)
+at various time scales: the Fire Weather Index (FWI) System Wan Wagner (1985)
+<https://cfs.nrcan.gc.ca/publications?id=19927> and the Fire Behaviour
+Prediction (FBP) System Forestry Canada Fire Danger Group (1992)
+<https://cfs.nrcan.gc.ca/pubwarehouse/pdfs/10068.pdf>.  Some functions have two
+versions, table and raster based.")
+    (license license:gpl2)))
+
 (define-public r-cff
   (package
     (name "r-cff")
@@ -32588,27 +32711,6 @@ model-agnostic fashion, they are working for any predictive Machine Learning
 model and allow for model comparisons.  Ceteris Paribus Plots supplement the
 Break Down Plots from @code{breakDown} package.")
     (license license:gpl2)))
-
-(define-public r-cetcolor
-  (package
-    (name "r-cetcolor")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cetcolor" version))
-       (sha256
-        (base32 "0kygdcr9ldanr0z4qpygwh0padki7s2ad0j6myky601g4228z79q"))))
-    (properties `((upstream-name . "cetcolor")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/coatless/cetcolor")
-    (synopsis "CET Perceptually Uniform Colour Maps")
-    (description
-     "Collection of perceptually uniform colour maps made by Peter Kovesi (2015) \"Good
-Colour Maps: How to Design Them\" <@code{arXiv:1509.03700>} at the Centre for
-Exploration Targeting (CET).")
-    (license license:cc-by-sa4.0)))
 
 (define-public r-cesr
   (package
@@ -33339,16 +33441,16 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "0m0ijqbwrikr2rj51gsyy9fapxnf64iixdylr6a3qrgmlmbwcjjk"))))
+        (base32 "1wpm7hwi8dny6y92hn56xh4scjnrk7mlx70c19a78w0i1v1kk3ky"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
+    (propagated-inputs (list r-httr r-dplyr r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/censobr")
     (synopsis "Download Data from Brazil's Population Census")
@@ -36449,13 +36551,13 @@ R-squared values as sensitivity parameters (Park, Kang, Lee, and Ma, 2023).")
 (define-public r-causact
   (package
     (name "r-causact")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causact" version))
        (sha256
-        (base32 "1ax5nhrdkfcflqsif8r4dbyj0n68kd7yz7bfq8yk8z52vpkbh4is"))))
+        (base32 "089cl591xxyi8ryfv2c2gp5r74p653qcaspxysn8sgmsyg7jz4qr"))))
     (properties `((upstream-name . "causact")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

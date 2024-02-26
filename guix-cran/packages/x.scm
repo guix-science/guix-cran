@@ -486,13 +486,13 @@ Described in the book \"Extending R\".")
 (define-public r-xpose4
   (package
     (name "r-xpose4")
-    (version "4.7.2")
+    (version "4.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xpose4" version))
        (sha256
-        (base32 "149ridxvbbkyxlnyhvw31gh2574cdycrrn89qwzvi4b5wb0p7psi"))))
+        (base32 "0w670g9y8nsdjcdxnvwpx8j9yfr7xhb5x3a171z1xizdfgpcpjxz"))))
     (properties `((upstream-name . "xpose4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -37,13 +37,13 @@
 (define-public r-zoomr
   (package
     (name "r-zoomr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomr" version))
        (sha256
-        (base32 "0i0b4v204p9cpgpw3dn5b29hvmf7r2k7swld0n9iy77asmf5gnvs"))))
+        (base32 "0yaxxv5jiv25rx737zqz901pmbfys7rpqpngnhy1w6wgfq2pfdnp"))))
     (properties `((upstream-name . "zoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

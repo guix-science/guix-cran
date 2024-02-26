@@ -3015,6 +3015,49 @@ score variance and beta=error variance (Tanzer & Harlow, 2020)
 <doi:10.1080/00273171.2020.1854082>.")
     (license license:expat)))
 
+(define-public r-brvm
+  (package
+    (name "r-brvm")
+    (version "5.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BRVM" version))
+       (sha256
+        (base32 "0vkx0lbamfkmpcpd7kp85jqzf2fivp898yw0dvkgan8kkfqclra5"))))
+    (properties `((upstream-name . "BRVM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-xml2
+                             r-tseries
+                             r-timedate
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-nortest
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-httr
+                             r-highcharter
+                             r-gsheet
+                             r-goftest
+                             r-formattable
+                             r-fbasics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://rpubs.com/Fredysessie/Readme_BRVM_Stock")
+    (synopsis
+     "Retrieve Historical Data of Companies Listed on the 'BRVM' Stock Exchange")
+    (description
+     "Provide real-time access to data from the Regional Securities Exchange
+SA(<https://www.brvm.org/en>), commonly known as the BRVM stock exchange.  The
+goal is to facilitate data access for users of the R programming language.  The
+package includes a variety of data that can be accessed by calling functions.")
+    (license license:expat)))
+
 (define-public r-brunnermunzel
   (package
     (name "r-brunnermunzel")
@@ -3072,13 +3115,13 @@ regression as well as multilayer perceptrons.")
 (define-public r-brugs
   (package
     (name "r-brugs")
-    (version "0.9-2")
+    (version "0.9-2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BRugs" version))
        (sha256
-        (base32 "19gyh6lambhwi7bx7hqa9nqp2xzjryi84npvd9m9mr3bzbv8mgz2"))))
+        (base32 "002x1qliy2ziqgj56f10yw6n7n8rn60brzi1m0gayy3zb0jps9qm"))))
     (properties `((upstream-name . "BRugs")))
     (build-system r-build-system)
     (inputs (list))
@@ -6225,13 +6268,13 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
 (define-public r-bootnet
   (package
     (name "r-bootnet")
-    (version "1.5.6")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootnet" version))
        (sha256
-        (base32 "1lkk237ps4sgljsy3m17119ggyglai1kb1sz2shjwg7a38zb2278"))))
+        (base32 "0r7ad6ybzr3jm5s2791sv402293wi4wy59n7dv5q5ss1vykpsk6h"))))
     (properties `((upstream-name . "bootnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6254,7 +6297,7 @@ al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
                              r-dplyr
                              r-corpcor
                              r-abind))
-    (home-page "https://cran.r-project.org/package=bootnet")
+    (home-page "https://github.com/SachaEpskamp/bootnet")
     (synopsis "Bootstrap Methods for Various Network Estimation Routines")
     (description
      "Bootstrap methods to assess accuracy and stability of estimated network
@@ -9114,6 +9157,38 @@ respect to the dimension of the matrix.  The method is described in the paper
 Perrot-@code{DockÃ¨s} et al. (2019) <@code{arXiv:1806.10093>}.")
     (license license:gpl2+)))
 
+(define-public r-blockcluster
+  (package
+    (name "r-blockcluster")
+    (version "4.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blockcluster" version))
+       (sha256
+        (base32 "03149z73d19fg5cgsgvkj2m5vb0jssxwxp83bc76q7nq8mm4rwnr"))))
+    (properties `((upstream-name . "blockcluster")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtkore r-rcpp))
+    (home-page "https://gitlab.inria.fr/iovleff/blockcluster")
+    (synopsis
+     "Co-Clustering Package for Binary, Categorical, Contingency and Continuous Data-Sets")
+    (description
+     "Simultaneous clustering of rows and columns, usually designated by biclustering,
+co-clustering or block clustering, is an important technique in two way data
+analysis.  It consists of estimating a mixture model which takes into account
+the block clustering problem on both the individual and variables sets.  The
+blockcluster package provides a bridge between the C++ core library build on top
+of the STK++ library, and the R statistical computing environment.  This package
+allows to co-cluster binary <doi:10.1016/j.csda.2007.09.007>, contingency
+<doi:10.1080/03610920903140197>, continuous <doi:10.1007/s11634-013-0161-3> and
+categorical data-sets <doi:10.1007/s11222-014-9472-2>.  It also provides utility
+functions to visualize the results.  This package may be useful for various
+applications in fields of Data mining, Information retrieval, Biology, computer
+vision and many more.  More information about the project and comprehensive
+tutorial can be found on the link mentioned in URL.")
+    (license license:gpl3+)))
+
 (define-public r-blmodel
   (package
     (name "r-blmodel")
@@ -9478,13 +9553,13 @@ estimates the loglinear cognitive diagnosis model of Henson, Templin, and Willse
 (define-public r-blastula
   (package
     (name "r-blastula")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blastula" version))
        (sha256
-        (base32 "0adflcar5vly97al072pjgb187f1kw64ddna6mm5p4rihq7ckryl"))))
+        (base32 "1ppn3lyzdrarcq1laz0r8b018p0yxzs2ji1q82lg9nnmghqzs24b"))))
     (properties `((upstream-name . "blastula")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -13739,13 +13814,13 @@ arrays. @code{PrivÃ©} et al. (2018) <doi:10.1093/bioinformatics/bty185>.")
 (define-public r-bigsimr
   (package
     (name "r-bigsimr")
-    (version "0.11.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsimr" version))
        (sha256
-        (base32 "1mygsc865hki6z2bilvbnymk8r4p73ams7iah9qpqi0ap6cqqz8p"))))
+        (base32 "1cvj6p5g2g8ldi3g6d1mvhsf8xcsxgqd71frghdqybz6f1vdbs34"))))
     (properties `((upstream-name . "bigsimr")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -13753,10 +13828,10 @@ arrays. @code{PrivÃ©} et al. (2018) <doi:10.1093/bioinformatics/bty185>.")
     (home-page "https://github.com/SchisslerGroup/r-bigsimr")
     (synopsis "Fast Generation of High-Dimensional Random Vectors")
     (description
-     "Simulate multivariate data with arbitrary marginal distributions.  bigsimr is an
+     "Simulate multivariate data with arbitrary marginal distributions.  bigsimr is a
 package for simulating high-dimensional multivariate data with a target
 correlation and arbitrary marginal distributions via Gaussian copula.  It
-utilizes a Julia package named Bigsimr.jl for its core routines.")
+utilizes the Julia package Bigsimr.jl for its core routines.")
     (license license:gpl3)))
 
 (define-public r-bigreg
@@ -15493,20 +15568,20 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "1zycs2zp27kcf2q34s6am8i4hxqkj7vdb13blla7qr64l0085y8v"))))
+        (base32 "194xvv80d0vlb03kj36qhp036pyj57ansilkqf4aiwvxg63a5fzg"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://maartenmarsman.github.io/bgms/")
     (synopsis
-     "Bayesian Variable Selection for Networks of Binary and/or Ordinal Variables")
+     "Bayesian Analysis of Networks of Binary and/or Ordinal Variables")
     (description
      "Bayesian variable selection methods for analyzing the structure of a Markov
 Random Field model for a network of binary and/or ordinal variables.  Details of
@@ -15625,6 +15700,46 @@ post-processing and parameter estimation functions, and plotting utilities for
 the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 <doi:10.1177/01466216000241001>.")
     (license license:gpl2+)))
+
+(define-public r-bggm
+  (package
+    (name "r-bggm")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BGGM" version))
+       (sha256
+        (base32 "1k83x9x48vls5ahvl4fm3salss4vf27z23iiylkj7fcrf4br6q27"))))
+    (properties `((upstream-name . "BGGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sna
+                             r-reshape
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-network
+                             r-mvnfast
+                             r-mass
+                             r-ggridges
+                             r-ggplot2
+                             r-ggally
+                             r-bfpack))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BGGM")
+    (synopsis "Bayesian Gaussian Graphical Models")
+    (description
+     "Fit Bayesian Gaussian graphical models.  The methods are separated into two
+Bayesian approaches for inference: hypothesis testing and estimation.  There are
+extensions for confirmatory hypothesis testing, comparing Gaussian graphical
+models, and node wise predictability.  These methods were recently introduced in
+the Gaussian graphical model literature, including Williams (2019)
+<doi:10.31234/osf.io/x8dpr>, Williams and Mulder (2019)
+<doi:10.31234/osf.io/ypxd8>, Williams, Rast, Pericchi, and Mulder (2019)
+<doi:10.31234/osf.io/yt386>.")
+    (license license:gpl2)))
 
 (define-public r-bgge
   (package
@@ -15856,6 +15971,41 @@ commonly used errors-in-variables methods, such as orthogonal distance
 regression, geometric mean regression or Deming regression are special cases of
 the bfsl solution.")
     (license license:expat)))
+
+(define-public r-bfs
+  (package
+    (name "r-bfs")
+    (version "0.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BFS" version))
+       (sha256
+        (base32 "0s3q9v61msb5cn7pjbkppdf6bcfn6r40jjr8d289m95q1rr5wkn5"))))
+    (properties `((upstream-name . "BFS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-xml2
+                             r-tidyrss
+                             r-tibble
+                             r-sf
+                             r-rvest
+                             r-rstac
+                             r-pxweb
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-janitor
+                             r-httr2
+                             r-fs
+                             r-dplyr
+                             r-curl))
+    (home-page "https://felixluginbuhl.com/BFS/")
+    (synopsis "Get Data from the Swiss Federal Statistical Office")
+    (description
+     "Search and download data from the Swiss Federal Statistical Office (BFS) APIs
+<https://www.bfs.admin.ch/>.")
+    (license license:gpl3+)))
 
 (define-public r-bfpack
   (package
@@ -19682,13 +19832,13 @@ others ('erase', %nin%', unwhich', top', bot', normalize').")
 (define-public r-baytrends
   (package
     (name "r-baytrends")
-    (version "2.0.9")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baytrends" version))
        (sha256
-        (base32 "1xkkww2mf961wdpyyxngz51i2yyhimca48vnm7s1j58p7zv3vsyz"))))
+        (base32 "1kvp17a6q6d59lhpxs702403rp7hsl77l69vs6injrffzpz9si79"))))
     (properties `((upstream-name . "baytrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20151,13 +20301,13 @@ Chipman, George, @code{McCulloch} (2010).")
 (define-public r-bayestools
   (package
     (name "r-bayestools")
-    (version "0.2.16")
+    (version "0.2.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesTools" version))
        (sha256
-        (base32 "1mm7byhi24i81n6hg18wki4912qxn3zmjyf40996b0darkb5rl3m"))))
+        (base32 "1vwc64s1a10d2haw7bi5896hhipbb1y7aks4mzjpfrp4zavbzlpn"))))
     (properties `((upstream-name . "BayesTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -20768,6 +20918,31 @@ a fast approach to compute a projection direction for multivariate changepoint
 detection, as well as the sum-cusum and max-cusum methods, and a wild binary
 segmentation wrapper for all algorithms.")
     (license license:gpl2+)))
+
+(define-public r-bayesppdsurv
+  (package
+    (name "r-bayesppdsurv")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesPPDSurv" version))
+       (sha256
+        (base32 "12nazb5dd60vwp7by6an646kg7h0p1141jnk6wgv5f9lj6g45r4y"))))
+    (properties `((upstream-name . "BayesPPDSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
+    (home-page "https://cran.r-project.org/package=BayesPPDSurv")
+    (synopsis "Bayesian Power Prior Design for Survival Data")
+    (description
+     "Bayesian power/type I error calculation and model fitting using the power prior
+and the normalized power prior for proportional hazards models with piecewise
+constant hazard.  The Bayesian clinical trial design methodology is described in
+Chen et al. (2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and
+Ibrahim (2019) <doi:10.1093/biostatistics/kxy009>.  The proportional hazards
+model with piecewise constant hazard is detailed in Ibrahim et al. (2001)
+<doi:10.1007/978-1-4757-3447-8>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesppd
   (package
@@ -23717,20 +23892,16 @@ downloading and uploading and record operation log.")
 (define-public r-batchmix
   (package
     (name "r-batchmix")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "batchmix" version))
        (sha256
-        (base32 "1pwfs892dqnh7zk90sbhrpa2k8vlzjnrp0jwscr2dw2z81qxgwqx"))))
+        (base32 "0afbklw9nslxnqa1264qa4a7igzhmz2irqn4px1n98gsq97d3097"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-testthat
-                             r-salso
-                             r-rcpparmadillo
-                             r-rcpp
+    (propagated-inputs (list r-tidyr r-testthat r-rcpparmadillo r-rcpp
                              r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/stcolema/batchmix")
@@ -25615,17 +25786,17 @@ which a statistical decision can be made.  See Berg and Popescu for details
 (define-public r-balancedsampling
   (package
     (name "r-balancedsampling")
-    (version "1.6.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BalancedSampling" version))
        (sha256
-        (base32 "0sarc0xmlg7w4j125i1igbwrqdwfxxb5jcdl44b70q672y6z30vr"))))
+        (base32 "0d1irx0iqiz4wij4y6dgjpp73z6hpfrsxcpf3gab9a01f43gb7ww"))))
     (properties `((upstream-name . "BalancedSampling")))
     (build-system r-build-system)
-    (propagated-inputs (list r-samplingbigdata r-rcpp))
-    (home-page "http://www.antongrafstrom.se/balancedsampling/")
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://www.envisim.se/")
     (synopsis "Balanced and Spatially Balanced Sampling")
     (description
      "Select balanced and spatially balanced probability samples in multi-dimensional

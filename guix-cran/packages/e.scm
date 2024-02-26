@@ -3856,13 +3856,13 @@ thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
 (define-public r-evinf
   (package
     (name "r-evinf")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evinf" version))
        (sha256
-        (base32 "0y57rraprwf7yzhj6fal9c4x0bp34j5xlgbdqa84fajjd29jjvac"))))
+        (base32 "1v1g0lkabplyyv5h9cj7vnnncbgjwhx5gdy865zba27sjb8b8lrg"))))
     (properties `((upstream-name . "evinf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5094,6 +5094,36 @@ and researchers in making informed decisions.  By combining ease of use with
 comprehensive data access, Euronext empowers R users to delve deep into the
 dynamics of European financial markets, offering valuable insights for various
 financial applications.")
+    (license license:expat)))
+
+(define-public r-euroleaguer
+  (package
+    (name "r-euroleaguer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "euroleaguer" version))
+       (sha256
+        (base32 "0w0ffhm20yp2nfisc38hm9da1529i3fab0rxmhn1d7lsqs2f42f4"))))
+    (properties `((upstream-name . "euroleaguer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/FlavioLeccese92/euroleaguer/")
+    (synopsis "'Euroleague basketball API'")
+    (description
+     "Unofficial API wrapper for Euroleague and Eurocup basketball API
+(<https://www.euroleaguebasketball.net/en/euroleague/>), it allows to retrieve
+real-time and historical standard and advanced statistics about competitions,
+teams, players and games.")
     (license license:expat)))
 
 (define-public r-eurodata
@@ -6866,13 +6896,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-escalation
   (package
     (name "r-escalation")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "escalation" version))
        (sha256
-        (base32 "0667zmyvgr5lmshgxf1j5yny0kkij6z8d7gj0jcsdl0cq8g8pjm4"))))
+        (base32 "14nvjrzkfr9ijn7z9absdw0d8814xm6al8lwnirdhq96jvlqh05n"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -6882,9 +6912,12 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
                              r-tibble
                              r-stringr
                              r-rcolorbrewer
+                             r-r6
                              r-purrr
+                             r-mvtnorm
                              r-magrittr
                              r-gtools
+                             r-ggplot2
                              r-dplyr
                              r-diagrammer
                              r-dfcrm
@@ -6892,7 +6925,7 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
                              r-binom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=escalation")
-    (synopsis "Modular Approach to Dose Finding Clinical Trials")
+    (synopsis "Modular Approach to Dose-Finding Clinical Trials")
     (description
      "This package provides methods for working with dose-finding clinical trials.  We
 provide implementations of many dose-finding clinical trial designs, including
@@ -7459,13 +7492,13 @@ functions for hazard calculation and timing calibration.")
 (define-public r-ergmargins
   (package
     (name "r-ergmargins")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergMargins" version))
        (sha256
-        (base32 "0p5pcbl4l6z58lkqhbynyzvcbina6457i2x97vpck41mrzhji8jh"))))
+        (base32 "0rxd7aldvkn5b106ni93gcr1501wcc759s85za1za4k11hrig0fm"))))
     (properties `((upstream-name . "ergMargins")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -7520,13 +7553,13 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 (define-public r-ergm-multi
   (package
     (name "r-ergm-multi")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.multi" version))
        (sha256
-        (base32 "0npvfkzba1ik5h6s5rqkkway0jhf6smcqvywng7hjzq8kfjppqhk"))))
+        (base32 "00hrl0cz81kjfp49sc3ma4jxxxgnjc6aald2drs190ks43bx17g0"))))
     (properties `((upstream-name . "ergm.multi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7548,7 +7581,7 @@ networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
 multilayer/multiplex/multirelational networks and samples of multiple networks.
 ergm.multi is a part of the Statnet suite of packages for network analysis.  See
 Krivitsky, Koehly, and Marcum (2020) <doi:10.1007/s11336-020-09720-7> and
-Krivitsky, Coletti, and Hens (2022) <doi:10.48550/@code{arXiv.2202.03685>}.")
+Krivitsky, Coletti, and Hens (2023) <doi:10.1080/01621459.2023.2242627>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm-ego
@@ -12824,6 +12857,38 @@ Gaussian and exponential distribution.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-emery
+  (package
+    (name "r-emery")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emery" version))
+       (sha256
+        (base32 "1x0x1f2i0yxkq8xl6vm2w2nb8blpa6dkns07d1n9qj43rnwljv5s"))))
+    (properties `((upstream-name . "emery")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-mvtnorm
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=emery")
+    (synopsis "Accuracy Statistic Estimation for Imperfect Gold Standards")
+    (description
+     "Produce maximum likelihood estimates of common accuracy statistics for multiple
+measurement methods when a gold standard is not available.  An R implementation
+of the expectation maximization algorithms described in Zhou et al. (2011)
+<doi:10.1002/9780470906514> with additional functions for creating simulated
+data and visualizing results.  Supports binary, ordinal, and continuous
+measurement methods.")
+    (license license:gpl3+)))
+
 (define-public r-emdsvrhybrid
   (package
     (name "r-emdsvrhybrid")
@@ -16871,13 +16936,13 @@ Rahman(2018)<https://hdl.handle.net/10012/13365>.")
 (define-public r-edlibr
   (package
     (name "r-edlibr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edlibR" version))
        (sha256
-        (base32 "0ibl8zcaf2p2xb3498zbin7g4ipanyxc9m9zkcj43h2r0304xgsk"))))
+        (base32 "0pncj573n95g6vnjnyihhac94qxq63p15lxy1xy7pd2p63p5hs4f"))))
     (properties `((upstream-name . "edlibR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rcpp))
@@ -18945,13 +19010,13 @@ graphical models.  Methods described in Popovic, GC., Hui, FKC., Warton, DI.,
 (define-public r-ecocomdp
   (package
     (name "r-ecocomdp")
-    (version "1.2.2")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecocomDP" version))
        (sha256
-        (base32 "01yml6l8fpq4vznfvmfa84pwq976q2c4346lrsxcnaqif4if3hlm"))))
+        (base32 "0gvqrcan27hsykwshvs76v5gh79bmlbmsmfhxk0yrpnwh2qrbl03"))))
     (properties `((upstream-name . "ecocomDP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -18962,6 +19027,7 @@ graphical models.  Methods described in Popovic, GC., Hui, FKC., Warton, DI.,
                              r-rlang
                              r-rcolorbrewer
                              r-neonutilities
+                             r-neonos
                              r-magrittr
                              r-lubridate
                              r-httr
@@ -19816,13 +19882,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "0fllc0z671g56pnym8vr60bk1fk3f60p8apwdrzplkg7mk9680bj"))))
+        (base32 "15yhc8q0cnkw37amm5nq806jrmm9f9iayddzjnvv8mvaijf5ia52"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -19835,6 +19901,7 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
                              r-ncdf4
                              r-memuse
                              r-jsonlite
+                             r-httr
                              r-hdf5array
                              r-ggplot2
                              r-delayedarray
@@ -20105,13 +20172,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "3.2022.1")
+    (version "3.2022.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "1zvx5630ka8ik350ikxcmaxqrphs71nh4f86sijxz1csvslqphpm"))))
+        (base32 "0mh1pkpkik22312h5x1z5rg1ynjp17n91id5hfrpkm9gfiql4zz4"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -20122,10 +20189,9 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
                              r-rcolorbrewer
                              r-magrittr
                              r-jsonlite
-                             r-dplyr
-                             r-arrow))
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ebird/ebirdst")
+    (home-page "https://ebird.github.io/ebirdst/")
     (synopsis "Access and Analyze eBird Status and Trends Data Products")
     (description
      "This package provides tools for accessing and analyzing @code{eBird} Status and

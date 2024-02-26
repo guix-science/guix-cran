@@ -651,6 +651,27 @@ of a rare disease assuming independence or simple dependence of genetic and
 non-genetic covariates.")
     (license license:gpl2)))
 
+(define-public r-luajr
+  (package
+    (name "r-luajr")
+    (version "0.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "luajr" version))
+       (sha256
+        (base32 "171bzic19brmrvd201xr1jaj56a830iflkzb9xxbly4rh0kagqxx"))))
+    (properties `((upstream-name . "luajr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nicholasdavies/luajr")
+    (synopsis "'LuaJIT' Scripting")
+    (description
+     "An interface to @code{LuaJIT} <https://luajit.org>, a just-in-time compiler for
+the Lua scripting language <https://www.lua.org>.  Allows users to run Lua code
+from R'.")
+    (license license:expat)))
+
 (define-public r-ltxsparklines
   (package
     (name "r-ltxsparklines")
@@ -835,13 +856,13 @@ data.")
 (define-public r-ltmix
   (package
     (name "r-ltmix")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltmix" version))
        (sha256
-        (base32 "03i0gr79xiqnny57g0y9w5dfpw51gqhrkff2rh8rggsni20pzm1h"))))
+        (base32 "11da87dr040021rkiv9qa28psw4j6wivmnh0g27gav60hmgzwbvh"))))
     (properties `((upstream-name . "ltmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-gtools))
@@ -894,6 +915,37 @@ threshold (A@code{DuLT}) model Pedersen, Emil M., et al. (2023)
 traditional time-to-event genome-wide association studies, where family history
 was not considered.")
     (license license:gpl3)))
+
+(define-public r-ltertools
+  (package
+    (name "r-ltertools")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ltertools" version))
+       (sha256
+        (base32 "1jfldvhhzxnpvssgzwjyjg442hwkg04zw7f1g2723mij73byk3dd"))))
+    (properties `((upstream-name . "ltertools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-generics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lter.github.io/ltertools/")
+    (synopsis "Tools Developed by the Long Term Ecological Research Community")
+    (description
+     "Set of the data science tools created by various members of the Long Term
+Ecological Research (LTER) community.  These functions were initially written
+largely as standalone operations and have later been aggregated into this
+package.")
+    (license license:bsd-3)))
 
 (define-public r-lterpalettefinder
   (package
@@ -1128,6 +1180,38 @@ relates to the algorithm in Sumanta, Li, and Michailidis (2019)
      "This package provides a set of functions that allow stationary analysis and
 locally stationary time series analysis.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-lstbook
+  (package
+    (name "r-lstbook")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSTbook" version))
+       (sha256
+        (base32 "140b0zd8zqlx5qqyq39nq0dhnamvh92lgix0zx4x57x46bzp5rs9"))))
+    (properties `((upstream-name . "LSTbook")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-rlang
+                             r-mass
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://dtkaplan.github.io/LSTbook/")
+    (synopsis "Data and Software for \"Lessons in Statistical Thinking\"")
+    (description
+     "\"Lessons in Statistical Thinking\" D.T. Kaplan (2014)
+<https://dtkaplan.github.io/Lessons-in-statistical-thinking/> is a textbook for
+a first or second course in statistics that embraces data wrangling, causal
+reasoning, modeling, statistical adjustment, and simulation.  LSTbook supports
+the student-centered, tidy, pipeline-oriented computing style featured in the
+book.")
+    (license license:expat)))
 
 (define-public r-lst
   (package
@@ -2487,13 +2571,13 @@ polynomial method.")
 (define-public r-lphom
   (package
     (name "r-lphom")
-    (version "0.3.1-1")
+    (version "0.3.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lphom" version))
        (sha256
-        (base32 "18scyg2rd30haawmnlxrkxvg6d8w9qqs7vj9cxvkg9flalsd8isg"))))
+        (base32 "1czpxbl40iijnmcyx3gblizclnw5a39hadrgppw7ijy58yh6mway"))))
     (properties `((upstream-name . "lphom")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -2502,11 +2586,18 @@ polynomial method.")
     (description
      "This package provides a bunch of algorithms based on linear programming for
 estimating, under the homogeneity hypothesis, @code{RxC} ecological contingency
-tables (or vote transition matrices) using exclusively aggregate data (from
-voting units).  References: Romero, @code{PavÃ­a}, @code{MartÃ­n} and Romero
-(2020) <doi:10.1080/02664763.2020.1804842>. @code{PavÃ­a} and Romero (2021a)
-<doi:10.31124/advance.14716638.v1>. @code{PavÃ­a} and Romero (2021b) Symmetry
-estimating RÃC vote transfer matrices from aggregate data.")
+tables (or vote transition matrices) using mainly aggregate data (from voting
+units).  References: @code{PavÃ­a} and Romero (2022)
+<doi:10.1177/00491241221092725>. @code{PavÃ­a} (2023)
+<doi:10.1007/s43545-023-00658-y>. @code{PavÃ­a} and Romero (2024)
+<doi:10.1093/jrsssa/qnae013>. @code{PavÃ­a} (2024) A local convergent ecological
+inference algorithm for @code{RxC} tables. @code{PavÃ­a} and @code{PenadÃ©s}
+(2024).  A bottom-up approach for ecological inference.  Romero, @code{PavÃ­a},
+@code{MartÃ­n} and Romero (2020) <doi:10.1080/02664763.2020.1804842>.
+Acknowledgements: The authors wish to thank @code{ConsellerÃ­a} de
+@code{EducaciÃ³n}, Universidades y Empleo, Generalitat Valenciana (grant
+AICO/2021/257) and Ministerio de @code{EconomÃ­a} e @code{InnovaciÃ³n} (grant
+PID2021-128228NB-I00) for supporting this research.")
     (license (list (license:fsdg-compatible "EPL")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -4098,13 +4189,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "0h7a2pp1kar2l2qpga1f31sd7x4kidfjp0y478np9ban9nrxqrlm"))))
+        (base32 "1ndipzwlmql6qrkb9x0h1lw22rgr71vf0q2xr67a1gdqjn758vqg"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-common))
@@ -11234,18 +11325,19 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.2.0")
+    (version "6.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "1s3plvnc5zwg7bvqzk50xjvy90ylpf6f33mxj7phgwhf0vkzn9cx"))))
+        (base32 "027x9k6wl59mbwfi1pd8jjhj60sbxi4gw27xb47rksbwkqbp0q4d"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
                              r-rcpparmadillo
                              r-rcpp
+                             r-pscl
                              r-mumin
                              r-matrix
                              r-mass
@@ -13886,13 +13978,13 @@ applying a function one row at a time.")
 (define-public r-lax
   (package
     (name "r-lax")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lax" version))
        (sha256
-        (base32 "0s5mzpf4g74mlpsbxrvfkqh1q6zc3ibya9lig4l2vkaar94rb8x5"))))
+        (base32 "1ddl7vgf8xmp4scpiifxvjzzqifcp9q6xiw7kg4cl204scm5z39w"))))
     (properties `((upstream-name . "lax")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-revdbayes r-numderiv r-exdex
@@ -13997,13 +14089,13 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavasearch2
   (package
     (name "r-lavasearch2")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaSearch2" version))
        (sha256
-        (base32 "16h3i577b0nxqmm1zk0g8yr30xdl66i96abjjdkr2z20852z264n"))))
+        (base32 "1z5aaajlgmn6i9jvziz2blrxkrnqfsyfgpflblxac5ljwmnw7yvn"))))
     (properties `((upstream-name . "lavaSearch2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -14905,13 +14997,13 @@ powerful language detection API.")
 (define-public r-langevitour
   (package
     (name "r-langevitour")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "langevitour" version))
        (sha256
-        (base32 "0l63w2y0dfn98nkzf2lhc6wkvg6hrqhcl4p9492pg80kwdsyvz1a"))))
+        (base32 "1q1g2rz5z7wpk5fb0d2rcxw8hi8frs9360n2z6zv8d376r9i1lfr"))))
     (properties `((upstream-name . "langevitour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-htmlwidgets r-crosstalk r-assertthat))
@@ -15497,13 +15589,13 @@ models).")
 (define-public r-lair
   (package
     (name "r-lair")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LAIr" version))
        (sha256
-        (base32 "1fd4mfr3xxg6dr8qs9959mg6s97jg7k3qmg5axv1kkk8abda9l5x"))))
+        (base32 "092dk6fhp0fkd2fxhwqxfhrm4im1z8dvyd9kg4m2dbyyn17h5i1c"))))
     (properties `((upstream-name . "LAIr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringr r-purrr r-dplyr))
@@ -16262,17 +16354,17 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "0ss4amkj7hfwj84qr5y29hf198k2ji9yaqdnj6kyaqijnkdgpsdi"))))
+        (base32 "0naalvy2bzi0hqnzr1aqm3r4dkkz293n7f9djvy9i4y0qv5gl9pj"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=labelr")
+    (home-page "https://github.com/rhartmano/labelr")
     (synopsis "Label Data Frames, Variables, and Values")
     (description
      "Create and use data frame labels for data frame objects (frame labels), their

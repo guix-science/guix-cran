@@ -593,6 +593,36 @@ skew-Laplace distribution.  Additional functionality is provided for the
 hyperbolic distribution, including fitting of the hyperbolic to data.")
     (license license:gpl2+)))
 
+(define-public r-hyperbolicdea
+  (package
+    (name "r-hyperbolicdea")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyperbolicDEA" version))
+       (sha256
+        (base32 "0wfqy3grzdzfqwzy3fpfqj4dcdhwmpdxck22gn8prvgr5ymmyfqc"))))
+    (properties `((upstream-name . "hyperbolicDEA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr
+                             r-lpsolveapi
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-benchmarking))
+    (home-page "https://cran.r-project.org/package=hyperbolicDEA")
+    (synopsis "Hyperbolic DEA Estimation")
+    (description
+     "This package implements Data Envelopment Analysis (DEA) with a hyperbolic
+orientation using a non-linear programming solver.  It enables flexible
+estimations with weight restrictions, non-discretionary variables, and a
+generalized distance function.  Additionally, it allows for the calculation of
+slacks and super-efficiency scores.  The methods are detailed in Ãttl et al.
+(2023), <doi:10.1016/j.dajour.2023.100343>.  Furthermore, the package provides a
+non-linear profitability estimation built upon the DEA framework.")
+    (license license:expat)))
+
 (define-public r-hyper2
   (package
     (name "r-hyper2")
@@ -1759,13 +1789,13 @@ measures are also provided.")
 (define-public r-humanleague
   (package
     (name "r-humanleague")
-    (version "2.2.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "humanleague" version))
        (sha256
-        (base32 "07zss9mkrpvbbh08a7wjd7k06w6mp34kwfcgsdfhzvzacpnmxyn3"))))
+        (base32 "0nkpn7cafy2rk6181g4z90kg9il99p40h0wa2hjgi0kg6y16wmgg"))))
     (properties `((upstream-name . "humanleague")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6844,17 +6874,17 @@ meaningful relational structure.")
 (define-public r-hidimda
   (package
     (name "r-hidimda")
-    (version "0.2-4")
+    (version "0.2-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiDimDA" version))
        (sha256
-        (base32 "0gxkxzys9mcy33xvsim8klaqmb2xwvy5bvgkn9r400j4qfjd3cgg"))))
+        (base32 "1128xf7jf2jwbkpczc9d56kzkn41m9hvqys4qawv3z80hpm91is5"))))
     (properties `((upstream-name . "HiDimDA")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
-    (home-page "http://www.r-project.org")
+    (home-page "https://cran.r-project.org/package=HiDimDA")
     (synopsis "High Dimensional Discriminant Analysis")
     (description
      "This package performs linear discriminant analysis in high dimensional problems
@@ -6992,6 +7022,53 @@ multivariate clustering (MVC), cluster validation, visualization of
 regionalization results, and exporting region map and mean timeseries into
 @code{NetCDF-4} file.  The technical details are described in Badr et al. (2015)
 <doi:10.1007/s12145-015-0221-7>.")
+    (license license:gpl3)))
+
+(define-public r-hibayes
+  (package
+    (name "r-hibayes")
+    (version "3.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hibayes" version))
+       (sha256
+        (base32 "04vkvqha82cpmjflxir83208d9mxwip7wlbc3zd12apvrg2c91x6"))))
+    (properties `((upstream-name . "hibayes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-cmplot
+                             r-bigmemory
+                             r-bh))
+    (home-page "https://github.com/YinLiLin/hibayes")
+    (synopsis
+     "Individual-Level, Summary-Level and Single-Step Bayesian Regression Model")
+    (description
+     "This package provides a user-friendly tool to fit Bayesian regression models.
+It can fit 3 types of Bayesian models using individual-level, summary-level, and
+individual plus pedigree-level (single-step) data for both Genomic
+prediction/selection (GS) and Genome-Wide Association Study (GWAS), it was
+designed to estimate joint effects and genetic parameters for a complex trait,
+including: (1) fixed effects and coefficients of covariates, (2) environmental
+random effects, and its corresponding variance, (3) genetic variance, (4)
+residual variance, (5) heritability, (6) genomic estimated breeding values
+(GEBV) for both genotyped and non-genotyped individuals, (7) SNP effect size,
+(8) phenotype/genetic variance explained (PVE) for single or multiple SNPs, (9)
+posterior probability of association of the genomic window (WPPA), (10)
+posterior inclusive probability (PIP).  The functions are not limited, we will
+keep on going in enriching it with more features.  References: Meuwissen et al.
+(2001) <doi:10.1093/genetics/157.4.1819>; Gustavo et al. (2013)
+<doi:10.1534/genetics.112.143313>; Habier et al. (2011)
+<doi:10.1186/1471-2105-12-186>; Yi et al. (2008)
+<doi:10.1534/genetics.107.085589>; Zhou et al. (2013)
+<doi:10.1371/journal.pgen.1003264>; Moser et al. (2015)
+<doi:10.1371/journal.pgen.1004969>; Lloyd-Jones et al. (2019)
+<doi:10.1038/s41467-019-12653-0>; Henderson (1976) <doi:10.2307/2529339>;
+Fernando et al. (2014) <doi:10.1186/1297-9686-46-50>.")
     (license license:gpl3)))
 
 (define-public r-hht
@@ -7448,22 +7525,24 @@ Research 15(Oct):3297-3331.")
 (define-public r-hfr
   (package
     (name "r-hfr")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hfr" version))
        (sha256
-        (base32 "151pm2w7imkqgi3417pa6x67bsjw8lhn29r99f1saj96f43ig70a"))))
+        (base32 "03fn5h323bdh0q8fiivvs2mqbv1n0jvj80m0mpls0dkdd6y4rqj6"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))
-    (home-page "https://cran.r-project.org/package=hfr")
+    (home-page "https://hfr.residualmetrics.com")
     (synopsis "Estimate Hierarchical Feature Regression Models")
     (description
      "This package provides functions for the estimation, plotting, predicting and
 cross-validation of hierarchical feature regression models as described in
-Pfitzinger (2021) <@code{arXiv:2107.04831>}.")
+Pfitzinger (2024).  Cluster Regularization via a Hierarchical Feature
+Regression.  Journal of Econometrics and Statistics (in press).
+<doi:10.1016/j.ecosta.2024.01.003>.")
     (license license:gpl2)))
 
 (define-public r-hflights
@@ -10956,13 +11035,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "13r56c1hf99fd1zwv4s358c14yzhah8kfl42iqprpxvjw0y7267l"))))
+        (base32 "0szxmzjwcz83s9qb062xl6nbxiwhk19d550ghjdb7xnv5p7zxmss"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -2028,17 +2028,17 @@ and plots.")
 (define-public r-wordpuzzler
   (package
     (name "r-wordpuzzler")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordPuzzleR" version))
        (sha256
-        (base32 "147038i7rr1nr0ippvm7q7brjk9jvyv5pgafsqm3s4hcy1dgh43w"))))
+        (base32 "04cxniagz9y2szq2b9qhz8lfjsmbdc6d928rfayy22yigy6mwi1i"))))
     (properties `((upstream-name . "wordPuzzleR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-scales r-purrr))
-    (home-page "https://cran.r-project.org/package=wordPuzzleR")
+    (home-page "https://github.com/zhuxr11/wordPuzzleR")
     (synopsis "Word Puzzle Game")
     (description
      "The word puzzle game requires you to find out the letters in a word within a
@@ -2577,13 +2577,13 @@ smaller than the number of predictors.  For more information see Faisal and Tutz
 (define-public r-wnl
   (package
     (name "r-wnl")
-    (version "0.7.3")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnl" version))
        (sha256
-        (base32 "1fsvf4rf1ih40d32i9s7gyqfy5lxrqqny95ydrp3pnfrqcxrrr3h"))))
+        (base32 "06vq8pwszh3nplh7j7lb65amnf0l0pzsnpg1icsyralc8gmzv91h"))))
     (properties `((upstream-name . "wnl")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -3182,51 +3182,6 @@ strategies to visualize and analyze multi-omics data.  This package utilizes the
 shiny and plotly frameworks to provide a user friendly dashboard for interactive
 plotting.")
     (license license:expat)))
-
-(define-public r-wildviz
-  (package
-    (name "r-wildviz")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wildviz" version))
-       (sha256
-        (base32 "03vhacaxp5fahq5afcf1q0qvmndpqc6a63pnins7h3p8ryvlpx14"))))
-    (properties `((upstream-name . "wildviz")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-shinythemes
-                             r-shiny
-                             r-rsqlite
-                             r-rnoaa
-                             r-purrr
-                             r-plotly
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-ggthemes
-                             r-ggplot2
-                             r-dplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/bradraff/wildviz")
-    (synopsis
-     "Compiles and Visualizes Wildfire, Climate, and Air Quality Data")
-    (description
-     "Fetches data from three disparate data sources and allows user to perform
-analyses on them.  It offers two core components: 1.  A robust data retrieval
-and preparation infrastructure for wildfire, climate, and air quality index data
-and 2.  A simple, informative, and interactive visualizations of the
-aforementioned datasets for California counties from 2011 through 2015.  The
-sources of data are: wildfire data from Kaggle
-<https://www.kaggle.com/rtatman/188-million-us-wildfires>, climate data from the
-National Oceanic and Atmospheric Administration
-<https://www.ncdc.noaa.gov/cdo-web/token>, and air quality data from the
-Environmental Protection Agency
-<https://aqs.epa.gov/aqsweb/documents/data_api.html>.")
-    (license license:gpl2)))
 
 (define-public r-wildrwolf
   (package

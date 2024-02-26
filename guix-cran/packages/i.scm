@@ -174,6 +174,27 @@ use git.")
 for causal inference and missing data problems.")
     (license license:gpl2+)))
 
+(define-public r-iwaqr
+  (package
+    (name "r-iwaqr")
+    (version "1.8.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iwaqr" version))
+       (sha256
+        (base32 "00l4136207qfzhi32saf0dvqmgpq1xms75prhwvlbb1fj7csvy6i"))))
+    (properties `((upstream-name . "iwaqr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggthemes r-ggrepel r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iwaqr")
+    (synopsis "Irrigation Water Quality Assessment and Visualizations")
+    (description
+     "Calculates irrigation water quality ratios and has functions that could be used
+to plot several popular diagrams for irrigation water quality classification.")
+    (license license:gpl3+)))
+
 (define-public r-ivyplot
   (package
     (name "r-ivyplot")
@@ -3154,13 +3175,13 @@ Theory.")
 (define-public r-irt
   (package
     (name "r-irt")
-    (version "0.2.7")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irt" version))
        (sha256
-        (base32 "1qckf91pady8gbp0bdbskijyqmmv2d9icb6ihmf0d2r49f37q4fh"))))
+        (base32 "0b55dhhpxrvifc4hw7kbdq7dk8l0znn5ic0q1yrxrrlqxalb3k3a"))))
     (properties `((upstream-name . "irt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6366,13 +6387,13 @@ and Seier (2003) <doi:10.1198/0003130032323>, and Lemm (2006)
 (define-public r-intervalsurgeon
   (package
     (name "r-intervalsurgeon")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IntervalSurgeon" version))
        (sha256
-        (base32 "02l2r83mz4x9x40p8gxwyrqa25qk0cy22k39lv93plvcpadcs8a5"))))
+        (base32 "1bg3s9sr7ls05yz75wxx3z29fpdfh29lhdpz0851a9m6p4nqj4zw"))))
     (properties `((upstream-name . "IntervalSurgeon")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6711,6 +6732,36 @@ the C++ library CGAL (<https://www.cgal.org/>).")
      "Plots the conditional coefficients (\"marginal effects\") of variables included in
 multiplicative interaction terms.")
     (license license:expat)))
+
+(define-public r-interplex
+  (package
+    (name "r-interplex")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interplex" version))
+       (sha256
+        (base32 "0gb6q40s3q2h7400zvyz87666snrn9m4r0hz3ddygprcaf9wdvaa"))))
+    (properties `((upstream-name . "interplex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simplextree r-reticulate r-network r-intergraph
+                             r-igraph))
+    (home-page "https://github.com/tdaverse/interplex")
+    (synopsis "Coercion Methods for Simplicial Complex Data Structures")
+    (description
+     "Computational topology, which enables topological data analysis (TDA), makes
+pervasive use of abstract mathematical objects called simplicial complexes; see
+Edelsbrunner and Harer (2010) <doi:10.1090/mbk/069>.  Several R packages and
+other software libraries used through an R interface construct and use data
+structures that represent simplicial complexes, including mathematical graphs
+viewed as 1-dimensional complexes.  This package provides coercers (converters)
+between these data structures.  Currently supported structures are complete
+lists of simplices as used by TDA'; the simplex trees of Boissonnat and Maria
+(2014) <doi:10.1007/s00453-014-9887-3> as implemented in simplextree and in
+Python GUDHI (by way of reticulate'); and the graph classes of igraph and
+network', by way of the intergraph package.")
+    (license license:gpl3+)))
 
 (define-public r-interlinear
   (package
@@ -9052,6 +9103,46 @@ package is based on methods described in Sasieni (2003) <doi:
 network from single-cell sequencing data.")
     (license license:expat)))
 
+(define-public r-inext-beta3d
+  (package
+    (name "r-inext-beta3d")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNEXT.beta3D" version))
+       (sha256
+        (base32 "1ia5midwraq1im0gh61fcpg2whq43mlby80b92y5fjdhh0ghbx8f"))))
+    (properties `((upstream-name . "iNEXT.beta3D")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytree
+                             r-tidyr
+                             r-tibble
+                             r-phyclust
+                             r-magrittr
+                             r-inext-3d
+                             r-ggplot2
+                             r-future-apply
+                             r-dplyr
+                             r-ape
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://sites.google.com/view/chao-lab-website/software/inext-beta3d")
+    (synopsis
+     "Interpolation and Extrapolation with Beta Diversity for Three Dimensions of Biodiversity")
+    (description
+     "As a sequel to @code{iNEXT}', the @code{iNEXT.beta3D} package provides functions
+to compute standardized taxonomic, phylogenetic, and functional diversity (3D)
+estimates with a common sample size (for alpha and gamma diversity) or sample
+coverage (for alpha, beta, gamma diversity as well as dissimilarity or turnover
+indices).  Hill numbers and their generalizations are used to quantify 3D and to
+make multiplicative decomposition (gamma = alpha x beta).  The package also
+features size- and coverage-based rarefaction and extrapolation sampling curves
+to facilitate rigorous comparison of beta diversity across datasets.  See Chao
+et al. (2023) <doi:10.1002/ecm.1588> for more details.")
+    (license license:gpl3+)))
+
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
@@ -9783,13 +9874,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "19ns3c4pi2s0vp5lvwk4zqsvs5wg2kc79h6zhlcq7xh6l4q3f0v3"))))
+        (base32 "1djaln5ygjzzhhcc0bwdvlhzb9vkci4mwk4d09v0w5lymqba81x0"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11842,19 +11933,19 @@ filtering, and plotting.")
 (define-public r-imagefluency
   (package
     (name "r-imagefluency")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imagefluency" version))
        (sha256
-        (base32 "1kssg6lj29f7c2isnzw98crygpj761q0qp38i7zs8008cwbch4cy"))))
+        (base32 "1vvr66a3mr6gyhs0acymics9k6k9lq6kbmpy0k86z91fb34pipfz"))))
     (properties `((upstream-name . "imagefluency")))
     (build-system r-build-system)
     (propagated-inputs (list r-readbitmap r-r-utils r-pracma r-openimager
                              r-magick))
     (native-inputs (list r-knitr))
-    (home-page "https://stm.github.io/imagefluency/")
+    (home-page "https://imagefluency.com")
     (synopsis "Image Statistics Based on Processing Fluency")
     (description
      "Get image statistics based on processing fluency theory.  The functions provide
@@ -12732,13 +12823,13 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "3.5.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglu" version))
        (sha256
-        (base32 "0nxdr09c3sb3fr970nakdh0vygn0g96w3wvgd1c064zr0ylprahz"))))
+        (base32 "0gcw15pw54dngqlimdxl6jhq9pbaapw1zqyb6xf6pxxg6gb3k2fs"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

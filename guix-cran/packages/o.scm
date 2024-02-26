@@ -1246,13 +1246,13 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 (define-public r-otargen
   (package
     (name "r-otargen")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "otargen" version))
        (sha256
-        (base32 "0sikcvg1v3sac72fxkd1vxx2rhqi20skw28nll4s8p44k4kpva2j"))))
+        (base32 "0hdnxwrlqchmbbg3fvcbfdr6m3igdcmd1i0plmhh2vy5xg3fn1r9"))))
     (properties `((upstream-name . "otargen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3922,27 +3922,6 @@ functions to calculate the option premium and option greeks of European-style
 options.")
     (license license:gpl3)))
 
-(define-public r-options
-  (package
-    (name "r-options")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "options" version))
-       (sha256
-        (base32 "0pprbp2pxvgh120f8dahswws44gpdm4f4nlq3h3nvqrlhnspwnb8"))))
-    (properties `((upstream-name . "options")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://dgkf.github.io/options/")
-    (synopsis "Simple, Consistent Package Options")
-    (description
-     "Simple mechanisms for defining and interpreting package options.  Provides
-helpers for interpreting environment variables, global options, defining default
-values and more.")
-    (license license:expat)))
-
 (define-public r-optionpricing
   (package
     (name "r-optionpricing")
@@ -4107,13 +4086,13 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 (define-public r-optimlanduse
   (package
     (name "r-optimlanduse")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimLanduse" version))
        (sha256
-        (base32 "16dd6sq9ss0k2kzqp02jcxsmg3qi5mvvk85nqy2hlpij2hdmh8bj"))))
+        (base32 "03y3cw07ya9q15aybjcaiqa2ghs1id2k55crkpf8xh0yn4mylhh4"))))
     (properties `((upstream-name . "optimLanduse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-lpsolveapi r-future-apply r-future
@@ -4131,28 +4110,6 @@ Knoke et al. (2016) <doi:10.1038/ncomms11877> and the post-hoc calculation of
 the portfolio performance as presented by Gosling et al. (2020)
 <doi:10.1016/j.jenvman.2020.110248>.")
     (license license:expat)))
-
-(define-public r-optimizer
-  (package
-    (name "r-optimizer")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optimizeR" version))
-       (sha256
-        (base32 "1jhzw09xjj7hrnvznp9fqw444x86apr54v6qryr9h4hkirsgpyd9"))))
-    (properties `((upstream-name . "optimizeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testfunctions r-r6 r-oeli r-cli r-checkmate))
-    (home-page "https://loelschlaeger.de/optimizeR/")
-    (synopsis "Unified Framework for Numerical Optimizers")
-    (description
-     "This package provides a unified object-oriented framework for numerical
-optimizers in R. Allows for both minimization and maximization with any
-optimizer, optimization over more than one function argument, measuring of
-computation time, setting a time limit for long optimization tasks.")
-    (license license:gpl3+)))
 
 (define-public r-optimization
   (package
@@ -6595,13 +6552,13 @@ similarity in the context of a collection of terms sets - Greene et al.  2017
 (define-public r-ontologyplot
   (package
     (name "r-ontologyplot")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ontologyPlot" version))
        (sha256
-        (base32 "0n51x2im134wq3a54wrv02j1pgkpm1qcgb9hd0y6fchz43i039j1"))))
+        (base32 "06ynryr4yx2mg85v12vhggx795hwwwfniskv3dgmb5nmrxhvh26m"))))
     (properties `((upstream-name . "ontologyPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-paintmap r-ontologyindex))
@@ -7079,23 +7036,25 @@ very first time.")
 (define-public r-onestep
   (package
     (name "r-onestep")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneStep" version))
        (sha256
-        (base32 "06gnw364p74nnb9rx3ghyfavd02xmnvzy94hzdwgxqs86z30b2gz"))))
+        (base32 "1mnmji4pb2qbg0amgy5kkgyn8xg8ny0n7fi8xqr9pgi5zx5c63r4"))))
     (properties `((upstream-name . "OneStep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-fitdistrplus))
-    (home-page "https://cran.r-project.org/package=OneStep")
+    (propagated-inputs (list r-numderiv r-fitdistrplus r-extradistr))
+    (home-page "https://journal.r-project.org/archive/2021/RJ-2021-044/")
     (synopsis "One-Step Estimation")
     (description
-     "Provide principally an eponymic function that numerically computes the Le Cam
-one-step estimator which is asymptotically efficient (see e.g. L. Le Cam (1956)
+     "Provide principally an eponymic function that numerically computes the Le Cam's
+one-step estimator for an independent and identically distributed sample.
+One-step estimation is asymptotically efficient (see L. Le Cam (1956)
 <https://projecteuclid.org/euclid.bsmsp/1200501652>) and can be computed faster
-than the maximum likelihood estimator for large observation samples.")
+than the maximum likelihood estimator for large observation samples, see e.g.
+Brouste et al. (2021) <doi:10.32614/RJ-2021-044>.")
     (license license:gpl2+)))
 
 (define-public r-onest
@@ -7928,13 +7887,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1wzk17n9lmi1kni1ks65hh8h36lyxp6nisgx1w8qqqdd1wislrhj"))))
+        (base32 "0isda53g0ibij3hghhmw718jhxq308b9yhnb1kqvnnpzlsr7sl4j"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8433,13 +8392,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.6.2")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "1g21lg7iyblv4j7h3f8jwhndjay207bw57nph2fldzhdnq5md362"))))
+        (base32 "0rj57ipm2lk11ysscgqaa38hgysyxr9nb5zvp17kxf5cla17dskc"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9216,13 +9175,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "1sh380fskqq4w5z9fb2kr62d7j0vx9f69cygfz3zlrq731nkw771"))))
+        (base32 "0jmzi65d565p2cifsj20c5q08v79hzda766g2afr698fxhvdjkrw"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -9242,10 +9201,10 @@ code interface is described in Huling and Chien (2022)
     (home-page "https://github.com/loelschlaeger/oeli")
     (synopsis "My Utilities for Developing Data Science Software")
     (description
-     "Some general utilities (helper functions) that I and maybe others find useful
-when developing data science software.  Functionality includes argument
-validation, density calculation, sampling, matrix printing, user interaction,
-storage helpers and more.  The vignettes illustrate use cases.")
+     "Some general helper functions that I and maybe others find useful when
+developing data science software.  Functionality includes argument validation,
+density calculation, sampling, matrix printing, user interaction, storage
+helpers and more.  The vignettes illustrate use cases.")
     (license license:gpl3+)))
 
 (define-public r-oefpil
@@ -11182,32 +11141,6 @@ et al. (2020) <@code{arXiv:2004.04341>}.")
      "An implementation of the Blinder-Oaxaca decomposition for linear regression
 models.")
     (license license:gpl2+)))
-
-(define-public r-oasisr
-  (package
-    (name "r-oasisr")
-    (version "3.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OasisR" version))
-       (sha256
-        (base32 "0jni6l3fbrd3pz34lis6zf6pqm3r29z32mxvkdfp4x9ncg68dlrs"))))
-    (properties `((upstream-name . "OasisR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sf
-                             r-seg
-                             r-outliers
-                             r-measurements
-                             r-lwgeom))
-    (home-page "https://cran.r-project.org/package=OasisR")
-    (synopsis
-     "Outright Tool for the Analysis of Spatial Inequalities and Segregation")
-    (description
-     "This package provides a set of indexes and tests for the analysis of social
-segregation.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-oarray
   (package

@@ -3861,13 +3861,13 @@ on the development website.")
 (define-public r-multinomineq
   (package
     (name "r-multinomineq")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinomineq" version))
        (sha256
-        (base32 "1lm5b3c8z6dqyipr9rwqsh0far4a9v9dfxdvrjlg0iyf723rr39k"))))
+        (base32 "0ip5ax1s7bk98hq9yqvhx0hiawxbac901zw41v0issq302dhvylk"))))
     (properties `((upstream-name . "multinomineq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk
@@ -4257,13 +4257,13 @@ python'.")
 (define-public r-multilevlca
   (package
     (name "r-multilevlca")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevLCA" version))
        (sha256
-        (base32 "1x0flgzx33nf4nr9599y6y7d7gv3w291m4adbajfycms9w13ap1g"))))
+        (base32 "10fwcyvq5a820ji2n2m2smd450yw31lqjmd1aaxi7lr30sv7ijv8"))))
     (properties `((upstream-name . "multilevLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4630,13 +4630,13 @@ visualize data with a group structure.")
 (define-public r-multigraphr
   (package
     (name "r-multigraphr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multigraphr" version))
        (sha256
-        (base32 "018kwpphwkpm07by7pvrwp5wvrasnpaxbs67pdrbfxzc139d15q9"))))
+        (base32 "13ac16zghccdapr0kmkcrj11b0ipgaajdpps867sgk6yqd7pyizx"))))
     (properties `((upstream-name . "multigraphr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9650,13 +9650,13 @@ for example, proportional hazards.  See Burke & @code{MacKenzie} (2016)
 (define-public r-mppr
   (package
     (name "r-mppr")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mppR" version))
        (sha256
-        (base32 "1w2jldamfb2vl0v2f5wz7gj1zgr3a0cxrmj27x9rkhpqjfrik4ly"))))
+        (base32 "0ghpsckphrhnjdsxjvbq9v5c3mdpkq14wp9m7g7w9gf5izpa989s"))))
     (properties `((upstream-name . "mppR")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl
@@ -9676,8 +9676,9 @@ of crosses between a set of at least three parents (e.g. factorial design,
 diallel', or nested association mapping).  The functions cover data processing,
 QTL detection, and results visualization.  The implemented methodology is
 described in Garin, Wimmer, Mezmouk, Malosetti and van Eeuwijk (2017)
-<doi:10.1007/s00122-017-2923-3> as well as in Garin, Malosetti and van Eeuwijk
-(2020) <doi: 10.1007/s00122-020-03621-0>.")
+<doi:10.1007/s00122-017-2923-3>, in Garin, Malosetti and van Eeuwijk (2020)
+<doi: 10.1007/s00122-020-03621-0>, and in Garin, Diallo, Tekete, Thera, ..., and
+Rami (2024) <doi: 10.1093/genetics/iyae003>.")
     (license license:gpl3)))
 
 (define-public r-mpower
@@ -10138,13 +10139,13 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.1.3")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathsenser" version))
        (sha256
-        (base32 "0hjq8ka85yxlzjlln7ravwcrrw85gw0a671v3rjzww9nx1h5gp8h"))))
+        (base32 "04yhhwphkrsbrlmalzknf7n4x1kc3pfjpsz4zkhj4g1h7ajviq5j"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10152,7 +10153,6 @@ is implemented.")
                              r-rsqlite
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
@@ -10167,9 +10167,9 @@ is implemented.")
     (description
      "Overcomes one of the major challenges in mobile (passive) sensing, namely being
 able to pre-process the raw data that comes from a mobile sensing app,
-specifically \"m-Path Sense\" <https://m-path.io>.  The main task of mpathsenser
-is therefore to read \"m-Path Sense\" JSON files into a database and provide
-several convenience functions to aid in data processing.")
+specifically m-Path Sense <https://m-path.io>.  The main task of mpathsenser is
+therefore to read m-Path Sense JSON files into a database and provide several
+convenience functions to aid in data processing.")
     (license license:gpl3+)))
 
 (define-public r-mpath
@@ -14103,13 +14103,13 @@ supported.")
 (define-public r-modelbpp
   (package
     (name "r-modelbpp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbpp" version))
        (sha256
-        (base32 "17hfy7g6ydj28fqs4s523px8cvnnp8pc80b4z9qlilg9jxq3r9xf"))))
+        (base32 "1mji4i8xpl833lhs6prbvfy6vz4276qhi4zidy8rhdl6szvq8r6s"))))
     (properties `((upstream-name . "modelbpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-lavaan r-igraph))
@@ -14511,45 +14511,6 @@ programs and compare their economic and genetic impact.  The package is also
 used as the background simulator for our a web-based interface
 <http:www.mobps.de>.  Associated publication: Pook et al. (2020)
 <doi:10.1534/g3.120.401193>.")
-    (license license:gpl3+)))
-
-(define-public r-mobirep
-  (package
-    (name "r-mobirep")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mobirep" version))
-       (sha256
-        (base32 "06f7vn3ndkadwp60qvvh3yikdx97r6fkqldn67l1506vdr60pxfm"))))
-    (properties `((upstream-name . "mobirep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-viridis
-                             r-texmex
-                             r-spatialextremes
-                             r-lattice
-                             r-ks
-                             r-ggplot2
-                             r-copula
-                             r-copbasic))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mobirep")
-    (synopsis
-     "Models Bivariate Dependence and Produces Bivariate Return Periods")
-    (description
-     "Models the dependence between two variables in the extremes, identifies most
-relevant models among six models: the conditional extremes model, the Jt-KDE
-model and four copulae (Gumbel, Galambos, Normal, FGM).  Bivariate return
-periods for the six models and bivariate level curves can be created.  Methods
-used in the package are described in the following reference: Tilloy, Malamud,
-Winter and Joly-Laugel (2020) <doi:10.5194/nhess-20-2091-2020> Supporting
-references for the conditional extremes model, Jt-KDE model and for copula
-modelling are the following: Heffernan and Tawn (2004)
-<doi:10.1111/j.1467-9868.2004.02050.x> Cooley, Thibaud, Castillo and Wehner
-(2019) <doi:10.1007/s10687-019-00348-0> Nelsen (2006)
-<doi:10.1007/0-387-28678-0>.")
     (license license:gpl3+)))
 
 (define-public r-mobilityindexr
@@ -15575,13 +15536,13 @@ analogous environments using new microbial feature abundances.")
 (define-public r-mmicats
   (package
     (name "r-mmicats")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmiCATs" version))
        (sha256
-        (base32 "1wghad4xk3qw41f23f3r4bv2kn3dsgyq3ndyif52v1ngi1z59aqr"))))
+        (base32 "1dnh77ac2m8sbv3ly1wny2nn86f13bs90f91gzzy83x2r4a3bvfj"))))
     (properties `((upstream-name . "mmiCATs")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -16803,13 +16764,13 @@ parameters of @code{mlrMBO} are faithfully reproduced as a paradox
 (define-public r-mlrcpo
   (package
     (name "r-mlrcpo")
-    (version "0.3.7-6")
+    (version "0.3.7-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrCPO" version))
        (sha256
-        (base32 "1xvfh5b1806ycdh8brnl63cd3fzr919sdi82acq5n59pz39fz4cc"))))
+        (base32 "0nia2f8j5vgiradlcqi618mlv7146ml2pvbzh4p89p1pk75p6v0l"))))
     (properties `((upstream-name . "mlrCPO")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -17497,13 +17458,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.3.0")
+    (version "4.3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "1v631q7n3qn7zrfj6j7dnsmr419qs2in8kx0czwh9gkkms7inwp6"))))
+        (base32 "0sam788qzqqqxs06hrzyndbkvpkyfsz4l2dfl1zrchyws7qk2rdd"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
@@ -20429,13 +20390,13 @@ effects.")
 (define-public r-mixbox
   (package
     (name "r-mixbox")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixbox" version))
        (sha256
-        (base32 "1g7pph2p4vxvsysc6lfi5sh7khcbsjhaljfrd1qp6msrbkn34bmp"))))
+        (base32 "1mns85bp9qm8xvkay672qwwjjvrav682afnf5c1aa6qzpsradx08"))))
     (properties `((upstream-name . "mixbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist r-gigrvg))
@@ -22848,13 +22809,13 @@ M., Wu, M., & Ma, S. (2023) <@code{arXiv:2309.15585>}.")
 (define-public r-mimsy
   (package
     (name "r-mimsy")
-    (version "0.6.2")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mimsy" version))
        (sha256
-        (base32 "01dy1fryrgq07jdfnxcnks97h0gq632dvqk7hnfs0f5fnx0k0vvf"))))
+        (base32 "1hbgjrgm4d4bvdkr8wvirvvv87f1wcnasd0909x38zjivr57dgda"))))
     (properties `((upstream-name . "mimsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-magrittr r-lubridate r-dplyr))
@@ -22867,12 +22828,10 @@ M., Wu, M., & Ma, S. (2023) <@code{arXiv:2309.15585>}.")
 Spectrometer) signal data.  Use mimsy() on a formatted CSV file to return
 dissolved gas concentrations (mg and @code{microMole}) of N2, O2, Ar based on
 gas solubility at temperature, pressure, and salinity.  See references Benson
-and Krause (1984) <DOI:10.4319/lo.1992.37.6.1307>, Garcia and Gordon (1992)
-<DOI:10.4319/lo.1984.29.3.0620>, Stull (1947) <DOI:10.1021/ie50448a022>, and
-Hamme and Emerson (2004) <DOI:10.1016/j.dsr.2004.06.009> for more information.
-Easily save the output to a nicely-formatted multi-tab Excel workbook with
-mimsy.save().  Supports dual-temperature standard calibration for dual-bath MIMS
-setups.")
+and Krause (1984), Garcia and Gordon (1992), Stull (1947), and Hamme and Emerson
+(2004) for more information.  Easily save the output to a nicely-formatted
+multi-tab Excel workbook with mimsy.save().  Supports dual-temperature standard
+calibration for dual-bath MIMS setups.")
     (license license:expat)))
 
 (define-public r-mimsunit
@@ -25552,6 +25511,38 @@ Zhao, S. (2019, ISBN: 978-1-4822-5657-4), CRC Press.")
 Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
 <doi:10.1016/j.regsciurbeco.2017.04.001>.")
     (license license:gpl2+)))
+
+(define-public r-mgwnbr
+  (package
+    (name "r-mgwnbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgwnbr" version))
+       (sha256
+        (base32 "0c9y3jfg1s5cvpw6yjjcq80shdx1khx799qpcvba534vgz3mkh49"))))
+    (properties `((upstream-name . "mgwnbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp))
+    (home-page "https://cran.r-project.org/package=mgwnbr")
+    (synopsis
+     "Multiscale Geographically Weighted Negative Binomial Regression")
+    (description
+     "Fits a geographically weighted regression model with different scales for each
+covariate.  Uses the negative binomial distribution as default, but also accepts
+the normal, Poisson, or logistic distributions.  Can fit the global versions of
+each regression and also the geographically weighted alternatives with only one
+scale, since they are all particular cases of the multiscale approach.  Hanchen
+Yu (2024).  Exploring Multiscale Geographically Weighted Negative Binomial
+Regression, Annals of the American Association of Geographers
+<doi:10.1080/24694452.2023.2289986>.  Fotheringham AS, Yang W, Kang W (2017).
+Multiscale Geographically Weighted Regression (MGWR), Annals of the American
+Association of Geographers <doi:10.1080/24694452.2017.1352480>.  Da Silva AR,
+Rodrigues TCV (2014).  Geographically Weighted Negative Binomial Regression -
+incorporating overdispersion, Statistics and Computing
+<doi:10.1007/s11222-013-9401-9>.")
+    (license license:gpl3)))
 
 (define-public r-mgss
   (package
@@ -28990,6 +28981,29 @@ The proposed estimators are more efficient than the naive analysis of the
 internal data and other naive combinations of external estimators.")
     (license license:gpl2)))
 
+(define-public r-metainc
+  (package
+    (name "r-metainc")
+    (version "0.2-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metainc" version))
+       (sha256
+        (base32 "12kli07sh2b2ynpaasqmx2vfxnvv50brfcqnrgsk9abapy8ckfag"))))
+    (properties `((upstream-name . "metainc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-meta r-ggplot2 r-confintr))
+    (home-page "https://cran.r-project.org/package=metainc")
+    (synopsis
+     "Assessment of Inconsistency in Meta-Analysis using Decision Thresholds")
+    (description
+     "Assessment of inconsistency in meta-analysis by calculating the Decision
+Inconsistency index (DI) and the Across-Studies Inconsistency (ASI) index.
+These indices quantify inconsistency taking into account outcome-level decision
+thresholds.")
+    (license license:gpl2+)))
+
 (define-public r-metaheuristicopt
   (package
     (name "r-metaheuristicopt")
@@ -29557,13 +29571,13 @@ as a replacement to boundary clumping.")
 (define-public r-metacoder
   (package
     (name "r-metacoder")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metacoder" version))
        (sha256
-        (base32 "15pqqnyxv82dg00skq100j2p2zkpl7kw8x3s0bvlp3xhw5srdax2"))))
+        (base32 "0f7y7yzkqblqal71lp2kip8lzismdzlj3cpw0mb15hvca9dz12x4"))))
     (properties `((upstream-name . "metacoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -40354,31 +40368,28 @@ read syntax.  Kuhn(2014) <@code{arXiv:1405.6974>}.")
 (define-public r-manydata
   (package
     (name "r-manydata")
-    (version "0.8.3")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manydata" version))
        (sha256
-        (base32 "11rmdj6wqjcq1lll8s38qya4ahjfx88jybkif1791fhw3l0nmkx3"))))
+        (base32 "1pd8fdj2sccqakyf2d2mdnkbsdx5pjb3pr81y7hxy557fahhxbff"))))
     (properties `((upstream-name . "manydata")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-usethis
                              r-tidyr
-                             r-tibble
                              r-stringr
-                             r-rlang
                              r-remotes
                              r-purrr
                              r-plyr
                              r-messydates
                              r-jsonlite
-                             r-janitor
                              r-httr
                              r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/globalgov/manydata")
     (synopsis "Portal for Global Governance Data")
     (description
@@ -41253,30 +41264,27 @@ starting at 1 and allowing users to customise suffix format.")
 (define-public r-maketools
   (package
     (name "r-maketools")
-    (version "1.2.5")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maketools" version))
        (sha256
-        (base32 "0168y16kn98781k54d6qbb73828lggg0l04s69sf3fgy6s6scl3q"))))
+        (base32 "06n14v9wrvbdplb42w7yqjjf8r995335fs2pn2b5848m0mrknsbv"))))
     (properties `((upstream-name . "maketools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jeroen/maketools")
+    (home-page "https://jeroen.r-universe.dev/maketools")
     (synopsis "Exploring and Testing the Toolchain and System Libraries")
     (description
-     "This package provides a collection of helper functions that interface with the
-appropriate system utilities to learn about the build environment.  Lets you
-explore make rules to test the local configuration, or query pkg-config to find
-compiler flags and libs needed for building packages with external dependencies.
- Also contains tools to analyze which libraries that a installed R package
-linked to by inspecting output from ldd in combination with information from
-your distribution package manager, e.g. rpm or dpkg'.  Finally the package
-provides Windows-specific utilities to automatically find or install the
-suitable version of the Rtools build environment, and diagnose some common
-problems.")
+     "Helper functions that interface with the system utilities to learn about the
+local build environment.  Lets you explore make rules to test the local
+configuration, or query pkg-config to find compiler flags and libs needed for
+building packages with external dependencies.  Also contains tools to analyze
+which libraries that a installed R package linked to by inspecting output from
+ldd in combination with information from your distribution package manager, e.g.
+rpm or dpkg'.")
     (license license:expat)))
 
 (define-public r-makeproject
@@ -42875,6 +42883,30 @@ marginal-likelihood or a two-stage method.  See Zhao, Y., & Luo, X. (2014),
 Estimating Mediation Effects under Correlated Errors with an Application to
 @code{fMRI}, <@code{arXiv:1410.7217>} for details.")
     (license license:gpl2+)))
+
+(define-public r-macbehaviour
+  (package
+    (name "r-macbehaviour")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MacBehaviour" version))
+       (sha256
+        (base32 "03psrcb5lss1d441bzyk6jis63qj4b4xm1kif3k94a8jkk2i5gjh"))))
+    (properties `((upstream-name . "MacBehaviour")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=MacBehaviour")
+    (synopsis "Behavioural Studies of Large Language Models")
+    (description
+     "We provide an efficient way to design and conduct psycholinguistic experiments
+for testing the performance of large language models.  It simplifies the process
+of setting up experiments, and data collection via large language models API,
+streamlining workflow for researchers in the field of machine behavior.  For
+methodology details, see Duan, X., Li, S., & Cai, Z. G. (2023)
+<doi:10.31234/osf.io/ywtfd>.")
+    (license license:lgpl3)))
 
 (define-public r-maboust
   (package

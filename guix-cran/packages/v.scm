@@ -1483,6 +1483,50 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (extracted automatically from the official match reports).")
     (license license:cc0)))
 
+(define-public r-volker
+  (package
+    (name "r-volker")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "volker" version))
+       (sha256
+        (base32 "00f4qzi8r9nm3b05lw4sbrajw9srnz7gqfzi8pvixvbi8ks91wpg"))))
+    (properties `((upstream-name . "volker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-skimr
+                             r-scales
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-psych
+                             r-magrittr
+                             r-lifecycle
+                             r-knitr
+                             r-kableextra
+                             r-janitor
+                             r-glue
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/strohne/volker")
+    (synopsis
+     "High-Level Functions for Tabulating, Charting and Reporting Survey Data")
+    (description
+     "Craft polished tables and plots in Markdown reports.  Simply choose whether to
+treat your data as counts or metrics, and the package will automatically
+generate well-designed default tables and plots for you.  Boiled down to the
+basics, with labeling features and simple interactive reports.  All functions
+are tidyverse compatible.")
+    (license license:expat)))
+
 (define-public r-volesti
   (package
     (name "r-volesti")
@@ -3663,6 +3707,28 @@ Transportation (DOT) National Highway Transportation Safety Administration
 identification numbers in one call, and provides manufacturer information about
 the vehicles, including make, model, model year, and gross vehicle weight rating
 (GVWR).")
+    (license license:expat)))
+
+(define-public r-vimps
+  (package
+    (name "r-vimps")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIMPS" version))
+       (sha256
+        (base32 "13r8g9k216fjsnw4ymqdsrx08z6rr2i3cwafrv1j93lgl0d3lnj4"))))
+    (properties `((upstream-name . "VIMPS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rocr r-ranger r-knockoff r-ggplot2 r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=VIMPS")
+    (synopsis "Calculate Variable Importance with Knock Off Variables")
+    (description
+     "The variable importance is calculated using knock off variables.  Then output
+can be provided in numerical and graphical form.  Meredith L Wallace (2023)
+<doi:10.1186/s12874-023-01965-x>.")
     (license license:expat)))
 
 (define-public r-vimpclust
@@ -5950,13 +6016,13 @@ description of the features.")
 (define-public r-vc2copula
   (package
     (name "r-vc2copula")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VC2copula" version))
        (sha256
-        (base32 "1ipzjmxlc4mj1afprrx6z5hvs2w0bbibm84mb34fa6av7pi9v5lm"))))
+        (base32 "1kadz36cw12qipf25dqykm58hh775wk3aq793ckphl7y9vqpvl36"))))
     (properties `((upstream-name . "VC2copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula r-copula))

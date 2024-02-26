@@ -1627,13 +1627,13 @@ used with machine learning methods such as @code{AdaBoost}, random forests, etc.
 (define-public r-journalabbr
   (package
     (name "r-journalabbr")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "journalabbr" version))
        (sha256
-        (base32 "17b9igqnd9f9pp1wkpg9zvkmvzhhhnr4nrkgzpvlb0f9hihaj60s"))))
+        (base32 "0cp319v6r70kralxblfwvii8glx040fxwiqbfrdq50cpyvf7vv5k"))))
     (properties `((upstream-name . "journalabbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -2503,16 +2503,17 @@ provides the p-value for dependence tests.  See Zeng, X., Xia, Y. and Tong, H.
 (define-public r-jmh
   (package
     (name "r-jmh")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMH" version))
        (sha256
-        (base32 "0085ka230hz9qxl7r907mwny9m5hdd15wnw7vy9j3z9c2lv2nhpb"))))
+        (base32 "1n41vhr07ylqb393bsw8lrv1h77a10qshwfxrkyx2y1hsq1bh3iy"))))
     (properties `((upstream-name . "JMH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-timeroc
+                             r-survival
                              r-statmod
                              r-rcppeigen
                              r-rcpp

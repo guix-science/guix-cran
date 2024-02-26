@@ -8522,6 +8522,47 @@ summary ROC curve and some related AUC-based inference methods are available
 (Noma et al. (2021) <doi:10.1080/23737484.2021.1894408>).")
     (license license:gpl3)))
 
+(define-public r-dmcfun
+  (package
+    (name "r-dmcfun")
+    (version "3.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DMCfun" version))
+       (sha256
+        (base32 "0kw0hzg5hwj76yz02ws62dmji7ggjm5isnh4blfhw55fsn7b6aic"))))
+    (properties `((upstream-name . "DMCfun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rcpp
+                             r-pbapply
+                             r-dplyr
+                             r-deoptim
+                             r-bh))
+    (home-page "https://github.com/igmmgi/DMCfun")
+    (synopsis "Diffusion Model of Conflict (DMC) in Reaction Time Tasks")
+    (description
+     "DMC model simulation detailed in Ulrich, R., Schroeter, H., Leuthold, H., &
+Birngruber, T. (2015).  Automatic and controlled stimulus processing in conflict
+tasks: Superimposed diffusion processes and delta functions.  Cognitive
+Psychology, 78, 148-174.  Ulrich et al. (2015)
+<doi:10.1016/j.cogpsych.2015.02.005>.  Decision processes within choice
+reaction-time (CRT) tasks are often modelled using evidence accumulation models
+(EAMs), a variation of which is the Diffusion Decision Model (DDM, for a review,
+see Ratcliff & @code{McKoon}, 2008).  Ulrich et al. (2015) introduced a
+Diffusion Model for Conflict tasks (DMC).  The DMC model combines common
+features from within standard diffusion models with the addition of superimposed
+controlled and automatic activation.  The DMC model is used to explain
+distributional reaction time (and error rate) patterns in common behavioural
+conflict-like tasks (e.g., Flanker task, Simon task).  This R-package implements
+the DMC model and provides functionality to fit the model to observed data.
+Further details are provided in the following paper: Mackenzie, I.G., &
+Dudschig, C. (2021).  DMCfun: An R package for fitting Diffusion Model of
+Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
+100074. <doi:10.1016/j.metip.2021.100074>.")
+    (license license:expat)))
+
 (define-public r-dmbc
   (package
     (name "r-dmbc")
@@ -8875,6 +8916,27 @@ a wide range of domains including robotics, embedded devices, mobile phones, and
 large high performance computing environments.  This package allows R users to
 use dlib through Rcpp'.")
     (license (license:fsdg-compatible "BSL-1.0"))))
+
+(define-public r-dlegfm
+  (package
+    (name "r-dlegfm")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DLEGFM" version))
+       (sha256
+        (base32 "1k7dpr9kq3rmvh6dvvgldmx4ar3vcs1l1gsj7piqqb811d90mh47"))))
+    (properties `((upstream-name . "DLEGFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-elasticnet))
+    (home-page "https://cran.r-project.org/package=DLEGFM")
+    (synopsis "Distributed Loading Estimation for General Factor Model")
+    (description
+     "The load estimation method is based on a general factor model to solve the
+estimates of load and specific variance.  The philosophy of the package is
+described in Guangbao Guo. (2022). <doi:10.1007/s00180-022-01270-z>.")
+    (license license:expat)))
 
 (define-public r-dlbayes
   (package
@@ -12810,13 +12872,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1plx27zvddh9amgkvi9y9w0h5mv15bn0ncg3mqbxnwch9gnampyy"))))
+        (base32 "1g81ywl3i0wa86w2d8489hlxavnimd8jrry8ipmf67vm73sxl2p8"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))
@@ -12828,8 +12890,8 @@ Digital Science Dimensions using DSL API
 Analysis (CA) based on the Singular Value Decomposition (SVD).  This package
 provides S4 classes and methods to compute, extract, summarize and visualize
 results of multivariate data analysis.  It also includes methods for partial
-bootstrap validation described in Greenacre (1984) <isbn:978-0-12-299050-2> and
-Lebart et al. (2006) <isbn:978-2-10-049616-7>.")
+bootstrap validation described in Greenacre (1984, ISBN: 978-0-12-299050-2) and
+Lebart et al. (2006, ISBN: 978-2-10-049616-7).")
     (license license:gpl3+)))
 
 (define-public r-dime
@@ -13850,6 +13912,39 @@ Transaction Number, Customer ID, Date of Purchase (in date format) and Amount of
 Purchase as the attributes.  The function returns a data frame with RFM data for
 the sales information.")
     (license license:gpl2)))
+
+(define-public r-didmultiplegtdyn
+  (package
+    (name "r-didmultiplegtdyn")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIDmultiplegtDYN" version))
+       (sha256
+        (base32 "050676004nnwgzy0nyz57agzpyqj4lkxlr7avn5z1idniffdczb4"))))
+    (properties `((upstream-name . "DIDmultiplegtDYN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-sandwich
+                             r-rlang
+                             r-plm
+                             r-matlib
+                             r-magrittr
+                             r-lmtest
+                             r-haven
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-car))
+    (home-page "https://cran.r-project.org/package=DIDmultiplegtDYN")
+    (synopsis
+     "Estimation in Difference-in-Difference Designs with Multiple Groups and Periods")
+    (description
+     "Estimation of event-study Difference-in-Difference (DID) estimators in designs
+with multiple groups and periods, and with a potentially non-binary treatment
+that may increase or decrease multiple times.")
+    (license license:expat)))
 
 (define-public r-didmultiplegt
   (package
@@ -15949,25 +16044,26 @@ Tabachnik & Fidell (2019, ISBN:9780134790541).")
 (define-public r-dfa
   (package
     (name "r-dfa")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFA" version))
        (sha256
-        (base32 "0nk8k6xxqbbk1zhq3xsm59azvkj9499vp92pjl9xygasarim90rl"))))
+        (base32 "1ilfkwn8r841byl1kn7rn2d6jdda3r7mm7ixvvyx6szqbmyhp8zd"))))
     (properties `((upstream-name . "DFA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=DFA")
     (synopsis "Detrended Fluctuation Analysis")
     (description
-     "This package contains the Detrended Fluctuation Analysis (DFA), Detrended
-Cross-Correlation Analysis (DCCA), Detrended Cross-Correlation Coefficient
-(@code{rhoDCCA}), Delta Amplitude Detrended Cross-Correlation Coefficient
-(@code{DeltarhoDCCA}), log amplitude Detrended Fluctuation Analysis
-(@code{DeltalogDFA}), two DFA automatic methods for identification of crossover
-points and a Deltalog automatic method for identification of reference channels.")
-    (license license:gpl3)))
+     "Containing the Detrended Fluctuation Analysis (DFA), Detrended Cross-Correlation
+Analysis (DCCA), Detrended Cross-Correlation Coefficient (@code{rhoDCCA}), Delta
+Amplitude Detrended Cross-Correlation Coefficient (@code{DeltarhoDCCA}), log
+amplitude Detrended Fluctuation Analysis (@code{DeltalogDFA}), and the Activity
+Balance Index, it also includes two DFA automatic methods for identifying
+crossover points and a Deltalog automatic method for identifying reference
+channels.")
+    (license license:asl2.0)))
 
 (define-public r-df2yaml
   (package
@@ -22066,29 +22162,27 @@ speed up the computation.")
 (define-public r-dccmidas
   (package
     (name "r-dccmidas")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dccmidas" version))
        (sha256
-        (base32 "0ng46i9rv4aw26af03ryhmcrb8xhhd8d72zbqiwrzhhkh18azbgx"))))
+        (base32 "0ws853yb669hki7wrfwnj7bd75xvcb63njn1iza8q58sa6bmg6vc"))))
     (properties `((upstream-name . "dccmidas")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
-                             r-tseries
                              r-rumidas
                              r-rugarch
                              r-roll
                              r-rdpack
                              r-rcpparmadillo
                              r-rcpp
-                             r-maxlik
-                             r-lubridate))
+                             r-maxlik))
     (home-page "https://cran.r-project.org/package=dccmidas")
     (synopsis
-     "DCC Models with GARCH-MIDAS Specifications in the Univariate Step")
+     "DCC Models with GARCH and GARCH-MIDAS Specifications in the Univariate Step, RiskMetrics, Moving Covariance and Scalar and Diagonal BEKK Models")
     (description
      "Estimates a variety of Dynamic Conditional Correlation (DCC) models.  More in
 detail, the dccmidas package allows the estimation of the corrected DCC
@@ -22100,8 +22194,10 @@ Equicorrelation (DECO) of Engle and Kelly (2012)
 including standard GARCH <doi:10.1016/0304-4076(86)90063-1>, GARCH-MIDAS
 <doi:10.1162/REST_a_00300> and Double Asymmetric GARCH-MIDAS
 <doi:10.1016/j.econmod.2018.07.025> models in the univariate estimation.
-Finally, the package calculates also the var-cov matrix under two non-parametric
-models: the Moving Covariance and the @code{RiskMetrics} specifications.")
+Moreover, also the scalar and diagonal BEKK <doi:10.1017/S0266466600009063>
+models can be estimated.  Finally, the package calculates also the var-cov
+matrix under two non-parametric models: the Moving Covariance and the
+@code{RiskMetrics} specifications.")
     (license license:gpl3)))
 
 (define-public r-dcchoice
@@ -24019,13 +24115,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.14")
+    (version "2.7.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "0wk939w72ndfb9v1bkcc229hdk2l6q4yxjzxii5zdkvmwgm1rmfc"))))
+        (base32 "0h5k68541nqg03hmfzfg4bqwjggl95yk9s2hlmfjxx3gxg4g5719"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25012,13 +25108,13 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "023c7psxjh751iyjaj033m7kq6xbbby7l2jz9nh968q14il2b7mj"))))
+        (base32 "0nlcna97l9j32kv8ikg2p35lr708v93qn22dwr5mcgf5sjyvysy4"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -25027,6 +25123,7 @@ extra layer of validation around input and output data.")
                              r-rvest
                              r-purrr
                              r-plyr
+                             r-magrittr
                              r-magick
                              r-lifecycle
                              r-keyring
@@ -25037,7 +25134,7 @@ extra layer of validation around input and output data.")
                              r-dplyr
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/databrary/databraryr")
+    (home-page "https://databrary.github.io/databraryr/")
     (synopsis "Interact with the 'Databrary.org' API")
     (description
      "Databrary.org is a restricted access repository for research data, especially

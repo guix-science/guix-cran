@@ -1484,54 +1484,6 @@ Lohr and Riddles (2016)
 provide an overview of the methods implemented in this package.")
     (license license:gpl3+)))
 
-(define-public r-nrahdltp
-  (package
-    (name "r-nrahdltp")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NRAHDLTP" version))
-       (sha256
-        (base32 "1dryd9riba3gch7z6ylszbrzw7j40b7cp1z2kyllhk4w2hzrkxm7"))))
-    (properties `((upstream-name . "NRAHDLTP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readr r-rdpack r-rcpparmadillo r-rcpp r-expm))
-    (home-page "https://cran.r-project.org/package=NRAHDLTP")
-    (synopsis
-     "Location Tests for High-Dimensional Problems Including Normal-Reference Approach")
-    (description
-     "We provide a collection of various classical tests and latest normal-reference
-approach tests for comparing high-dimensional mean vectors including two-sample
-and general linear hypothesis testing (GLHT) problem.  The othersâ tests for
-two-sample problem [see Bai, Zhidong, and Hewa Saranadasa.(1996)
-<https://www.jstor.org/stable/24306018>; Chen, Song Xi, and Ying-Li Qin.(2010)
-<doi:10.1214/09-aos716>; Srivastava, Muni S., and Meng Du.(2008)
-<doi:10.1016/j.jmva.2006.11.002>; Srivastava, Muni S., Shota Katayama, and
-Yutaka Kano.(2013)<doi:10.1016/j.jmva.2012.08.014>].  Normal-reference approach
-based tests for two-sample problem [see Zhang, Jin-Ting, Jia Guo, Bu Zhou, and
-Ming-Yen Cheng.(2020) <doi:10.1080/01621459.2019.1604366>; Zhang, Jin-Ting, Bu
-Zhou, Jia Guo, and Tianming Zhu.(2021) <doi:10.1016/j.jspi.2020.11.008>; Zhang,
-Liang, Tianming Zhu, and Jin-Ting Zhang.(2020)
-<doi:10.1016/j.ecosta.2019.12.002>; Zhang, Liang, Tianming Zhu, and Jin-Ting
-Zhang.(2023) <doi:10.1080/02664763.2020.1834516>; Zhang, Jin-Ting, and Tianming
-Zhu.(2022) <doi:10.1080/10485252.2021.2015768>; Zhang, Jin-Ting, and Tianming
-Zhu.(2022) <doi:10.1007/s42519-021-00232-w>; Zhu, Tianming, Pengfei Wang, and
-Jin-Ting Zhang.(2023) <doi:10.1007/s00180-023-01433-6>].  The othersâ tests
-for GLHT problem [see Fujikoshi, Yasunori, Tetsuto Himeno, and Hirofumi
-Wakaki.(2004) <doi:10.14490/jjss.34.19>; Srivastava, Muni S., and Yasunori
-Fujikoshi.(2006) <doi:10.1016/j.jmva.2005.08.010>; Yamada, Takayuki, and Muni S.
-Srivastava.(2012) <doi:10.1080/03610926.2011.581786>; Schott, James R.(2007)
-<doi:10.1016/j.jmva.2006.11.007>; Zhou, Bu, Jia Guo, and Jin-Ting Zhang.(2017)
-<doi:10.1016/j.jspi.2017.03.005>].  Normal-reference approach based tests for
-GLHT problem [see Zhang, Jin-Ting, Jia Guo, and Bu Zhou.(2017)
-<doi:10.1016/j.jmva.2017.01.002>; Zhang, Jin-Ting, Bu Zhou, and Jia Guo.(2022)
-<doi:10.1016/j.jmva.2021.104816>; Zhu, Tianming, Liang Zhang, and Jin-Ting
-Zhang.(2022) <doi:10.5705/ss.202020.0362>; Zhu, Tianming, and Jin-Ting
-Zhang.(2022) <doi:10.1007/s00180-021-01110-6>; Zhang, Jin-Ting, and Tianming
-Zhu.(2022) <doi:10.1016/j.csda.2021.107385>].")
-    (license license:gpl3+)))
-
 (define-public r-npwbs
   (package
     (name "r-npwbs")
@@ -2787,13 +2739,13 @@ empirical applications and simulated examples.")
 (define-public r-npboottprmfbar
   (package
     (name "r-npboottprmfbar")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprmFBar" version))
        (sha256
-        (base32 "0qi6jd5xpg27h6hk65xr51hvd1vdy6jhyiq1zl07jc2r2kifr74i"))))
+        (base32 "039da7k4mbw08siwicfvfn12v7ngc9989rw4f1rsyqskgj7s4h4g"))))
     (properties `((upstream-name . "npboottprmFBar")))
     (build-system r-build-system)
     (propagated-inputs (list r-restriktor r-npboottprm r-lmperm r-fgarch))
@@ -2817,13 +2769,13 @@ error and statistical power.")
 (define-public r-npboottprm
   (package
     (name "r-npboottprm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprm" version))
        (sha256
-        (base32 "17ml1m91i95k87h0aijbskah2wz9lybvgp7dc0918j69cm12zp6s"))))
+        (base32 "1g139xrry2j14jcs36hqa3y72y5vlnmn8vxkv7yh0jcgj0czl7d0"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -5130,13 +5082,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.5")
+    (version "10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "1nyml005mk8p8i3ahfn9iwdp430ibd4w35scl8m0kwv9sbd7vvmg"))))
+        (base32 "17w3knn198nbzjkyphwd2jd6iz8kfnz8lr629mf03ilcxdv02jwl"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5599,13 +5551,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.0.10")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1hwlgzlhq1czy3rpkabdbig39z87izdb6302lx6b29mjcfdyjq4m"))))
+        (base32 "1lmfb6h78vj6r6n6br9awkxrq445f9cgzhsz06rzkydnb10xldrk"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -5863,13 +5815,13 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "088wbj4i6mfrdmd0rna182izdjjl4d73npzyqgmgn1v02nfrp67d"))))
+        (base32 "0lmnfwrdngqkam1kw8kcb9wk4gk7dxrnfwdjwgfh0dnvr0lnp863"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -8998,13 +8950,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "0rnzhfp1msmiqci6g37l9half8bc410g5vmbkzqk8v35vxml6r49"))))
+        (base32 "11rmfwgpa5r0n98r4prngbfgdvk55vxkzp7pl5qlddhbh5jjcl9y"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -9012,18 +8964,19 @@ repositories of the nflverse project.")
                              r-rappdirs
                              r-nflreadr
                              r-memoise
-                             r-magrittr
                              r-magick
+                             r-lifecycle
+                             r-gt
                              r-ggplot2
                              r-ggpath
                              r-data-table
                              r-cli
                              r-cachem))
     (home-page "https://nflplotr.nflverse.com")
-    (synopsis "NFL Logo Plots in 'ggplot2'")
+    (synopsis "NFL Logo Plots in 'ggplot2' and 'gt'")
     (description
      "This package provides a set of functions to visualize National Football League
-analysis in ggplot2'.")
+analysis in ggplot2 plots and gt tables.")
     (license license:expat)))
 
 (define-public r-nflfastr
@@ -9962,13 +9915,13 @@ the partitioned data.  For details see Jones, Mair, Simon, & Zeileis (2020)
 (define-public r-networktools
   (package
     (name "r-networktools")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networktools" version))
        (sha256
-        (base32 "0y5sfqn0ijgclm191kxfkqs6l8vnmdjsnjjsawq3nl4ziw7zlpfy"))))
+        (base32 "0w2q5ncni5nv7lg9vm3bpxj64pg0f6w0rxknli0dy1q0asq4aw47"))))
     (properties `((upstream-name . "networktools")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -10038,13 +9991,13 @@ network analysis.")
 (define-public r-networkscaleup
   (package
     (name "r-networkscaleup")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "networkscaleup" version))
        (sha256
-        (base32 "02ywmmj95xlgdavs81m0gbzyfwf9ac2wrbfwq2kcxgc0la4aimvc"))))
+        (base32 "0fvh65750iq2wsjypr35axfdb85ncflc0nmmzl7n5jcyqkfgl5j0"))))
     (properties `((upstream-name . "networkscaleup")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10787,6 +10740,38 @@ computational companion to Bojanowski & Corten (2014)
 <doi:10.1016/j.socnet.2014.04.001>.")
     (license license:gpl2)))
 
+(define-public r-netseer
+  (package
+    (name "r-netseer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netseer" version))
+       (sha256
+        (base32 "0bqwiv7n396myk73rqycx1d4i0nak9gsrda5pxqzr0j82k62vkqx"))))
+    (properties `((upstream-name . "netseer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-matrix
+                             r-lpsolve
+                             r-igraph
+                             r-fabletools
+                             r-fable
+                             r-dplyr))
+    (home-page "https://sevvandi.github.io/netseer/")
+    (synopsis "Graph Prediction from a Graph Time Series")
+    (description
+     "Predicting the structure of a graph including new nodes and edges using a time
+series of graphs.  Flux balance analysis, a linear and integer programming
+technique used in biochemistry is used with time series prediction methods to
+predict the graph structure at a future time point Kandanaarachchi (2024)
+<doi:10.48550/@code{arXiv.2401.04280>}.")
+    (license license:gpl3+)))
+
 (define-public r-netsci
   (package
     (name "r-netsci")
@@ -11099,6 +11084,45 @@ Bruggemann, 2014) <doi:10.1002/cem.2569>; (RÃ¼cker & Schwarzer, 2017)
 <doi:10.1002/jrsm.1270>; - contribution matrix as described in Papakonstantinou
 et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 <doi:10.1002/sim.9346>.")
+    (license license:gpl2+)))
+
+(define-public r-netmediate
+  (package
+    (name "r-netmediate")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netmediate" version))
+       (sha256
+        (base32 "17h2nc9ixfi7ngybinnpm05s41iiwncz53jj90kbvp55qk1a3s2k"))))
+    (properties `((upstream-name . "netmediate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-sna
+                             r-rsiena
+                             r-plyr
+                             r-plm
+                             r-network
+                             r-mass
+                             r-lme4
+                             r-intergraph
+                             r-gam
+                             r-ergmargins
+                             r-ergm
+                             r-btergm))
+    (home-page "https://cran.r-project.org/package=netmediate")
+    (synopsis "Micro-Macro Analysis for Social Networks")
+    (description
+     "Estimates micro effects on macro structures (MEMS) and average micro mediated
+effects (AMME).  URL: <https://github.com/sduxbury/netmediate>.
+@code{BugReports}: <https://github.com/sduxbury/netmediate/issues>.  Robins,
+Garry, Phillipa Pattison, and Jodie Woolcock (2005) <doi:10.1086/427322>.
+Snijders, Tom A. B., and Christian E. G. Steglich (2015)
+<doi:10.1177/0049124113494573>.  Imai, Kosuke, Luke Keele, and Dustin Tingley
+(2010) <doi:10.1037/a0020761>.  Duxbury, Scott (2023)
+<doi:10.1177/00811750231209040>.  Duxbury, Scott (2024)
+<doi:10.1177/00811750231220950>.")
     (license license:gpl2+)))
 
 (define-public r-netmap
@@ -13498,13 +13522,13 @@ using NCA metrics.")
 (define-public r-nca
   (package
     (name "r-nca")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NCA" version))
        (sha256
-        (base32 "0f90v1yy55ysfp88krbsycppz5v7nmmmly3bflpq7dnf2rzvrh8l"))))
+        (base32 "0r7m6aklidi6dplv42xmaq38ifxs8zj495rs7pfidwx7z5iw0n84"))))
     (properties `((upstream-name . "NCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -13538,6 +13562,34 @@ or output).  A quick start guide for using this package can be found here:
 <https://repub.eur.nl/pub/78323/> or
 <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2624981>.")
     (license license:gpl3+)))
+
+(define-public r-nc
+  (package
+    (name "r-nc")
+    (version "2024.2.21")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nc" version))
+       (sha256
+        (base32 "00m2128n3mpl9i77qcdrr49swpj2lr5wif8xxkfimhm3fciw2fgh"))))
+    (properties `((upstream-name . "nc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdhock/nc")
+    (synopsis "Named Capture to Data Tables")
+    (description
+     "User-friendly functions for extracting a data table (row for each match, column
+for each group) from non-tabular text data using regular expressions, and for
+melting columns that match a regular expression.  Patterns are defined using a
+readable syntax that makes it easy to build complex patterns in terms of
+simpler, re-usable sub-patterns.  Named R arguments are translated to column
+names in the output; capture groups without names are used internally in order
+to provide a standard interface to three regular expression C libraries ('PCRE',
+RE2', ICU').  Output can also include numeric columns via user-specified type
+conversion functions.")
+    (license license:gpl3)))
 
 (define-public r-nbtsvarsel
   (package
@@ -14849,13 +14901,13 @@ signalled by concurrent threads.")
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.4.0")
+    (version "0.4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoarrow" version))
        (sha256
-        (base32 "0zwa54iah6wdv9nblmnhh2dk7vl0irs2184nlkcv7r2bhqc92nqc"))))
+        (base32 "16vspbc31585f5wys634i4nyr43f6fzj6fgss8f5rdvvf73d2h4p"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://github.com/apache/arrow-nanoarrow")
@@ -15517,13 +15569,13 @@ etc.  of NAs'.")
 (define-public r-n2h4
   (package
     (name "r-n2h4")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "N2H4" version))
        (sha256
-        (base32 "0bw1zj4a2rqp5pl1gqqxrv9psnl7qk0kl47ppd2k6xpqhpn4hg38"))))
+        (base32 "0g46xsjny8icqjis99ggk4h2v3x1nzh9sl5s255abj6nl5w89zi9"))))
     (properties `((upstream-name . "N2H4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
