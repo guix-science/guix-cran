@@ -14,6 +14,8 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages bioinformatics)
@@ -13834,6 +13836,36 @@ correlation and arbitrary marginal distributions via Gaussian copula.  It
 utilizes the Julia package Bigsimr.jl for its core routines.")
     (license license:gpl3)))
 
+(define-public r-bigrquerystorage
+  (package
+    (name "r-bigrquerystorage")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bigrquerystorage" version))
+       (sha256
+        (base32 "1lzam3vvc72ns1zr0n9nnmgjwvx4f9h000g7g74hkimh442rvpvn"))))
+    (properties `((upstream-name . "bigrquerystorage")))
+    (build-system r-build-system)
+    (inputs (list zlib openssl))
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-rcpp
+                             r-lifecycle
+                             r-dbi
+                             r-bit64
+                             r-bigrquery
+                             r-assertthat
+                             r-arrow))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/meztez/bigrquerystorage")
+    (synopsis "An Interface to Google's 'BigQuery Storage' API")
+    (description
+     "Easily talk to Google's @code{BigQuery} Storage API from R
+(<https://cloud.google.com/bigquery/docs/reference/storage/rpc>).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-bigreg
   (package
     (name "r-bigreg")
@@ -15619,18 +15651,18 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.0.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "0r44n75n19x2dwi7ysisl49309pwimq3nz66a0041ibhclf1rzvr"))))
+        (base32 "1s3y76wbwln18xdn3fcb9kj8pa038c47ghvryvcxim93f0m339fh"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-kinship2 r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BGmisc")
+    (home-page "https://github.com/R-Computing-Lab/BGmisc/")
     (synopsis "An R Package for Extended Behavior Genetics Analysis")
     (description
      "The BGmisc R package offers a comprehensive suite of functions tailored for
@@ -22916,13 +22948,13 @@ Sabo RT (2014) <doi:10.1080/10543406.2014.888441>.")
 (define-public r-bayesdfa
   (package
     (name "r-bayesdfa")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesdfa" version))
        (sha256
-        (base32 "0win6b3cwsr99va66jijpcvid6gyvk0x0gs5yafdsdkcghimfwgl"))))
+        (base32 "1xmvpkg30nk4sldzy3rp12ivnj4phzdw08hmk5nh5b70mqapvkra"))))
     (properties `((upstream-name . "bayesdfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -23017,6 +23049,37 @@ Andrade-Filho, M.G., (2014). <doi:10.1080/02664763.2013.839635>.")
 the book \"Bayesian data Analysis (second edition)\" by Gelman, Carlin, Stern and
 Rubin.  Not all datasets yet, hopefully completed soon.")
     (license license:gpl2+)))
+
+(define-public r-bayescvi
+  (package
+    (name "r-bayescvi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesCVI" version))
+       (sha256
+        (base32 "1vm3nkgq7nc3d8zpxhb6p62yf4bhk2xdqkivdw94ml0npd4xsppb"))))
+    (properties `((upstream-name . "BayesCVI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-universalcvi r-mclust r-ggplot2 r-e1071))
+    (home-page "https://cran.r-project.org/package=BayesCVI")
+    (synopsis "Bayesian Cluster Validity Index")
+    (description
+     "Algorithms for computing and generating plots with and without error bars for
+Bayesian cluster validity index (BCVI) (N. Wiroonsri, O. Preedasawakul (2024)
+<@code{arXiv:2402.02162>}) based on several underlying cluster validity indexes
+(CVIs) including Calinski-Harabasz, Chou-Su-Lai, Davies-Bouldin, Dunn,
+Pakhira-Bandyopadhyay-Maulik, Point biserial correlation, the score function,
+Starczewski, and Wiroonsri indices for hard clustering, and Correlation Cluster
+Validity, the generalized C, HF, KWON, KWON2, Modified
+Pakhira-Bandyopadhyay-Maulik, Pakhira-Bandyopadhyay-Maulik, Tang,
+Wiroonsri-Preedasawakul, Wu-Li, and Xie-Beni indices for soft clustering.  The
+package is compatible with K-means, fuzzy C means, EM clustering, and
+hierarchical clustering (single, average, and complete linkage).  Though BCVI is
+compatible with any underlying existing CVIs, we recommend users to use either
+WI or WP as the underlying CVI.")
+    (license license:gpl3+)))
 
 (define-public r-bayesctdesign
   (package

@@ -20905,13 +20905,13 @@ manage and reshape the format in which data is provided on the client side.")
 (define-public r-academicthemes
   (package
     (name "r-academicthemes")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AcademicThemes" version))
        (sha256
-        (base32 "04c9hshsq1wq5v6005zhmnp2sgy06fxxxb7gnxpvvmslnq644sb2"))))
+        (base32 "10v7li7d26kaj5v608bnyrgqxsx12rq3czyb59hbrb5428vsv99x"))))
     (properties `((upstream-name . "AcademicThemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

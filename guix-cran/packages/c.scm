@@ -20,6 +20,7 @@
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -728,13 +729,13 @@ Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
 (define-public r-cwbtools
   (package
     (name "r-cwbtools")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cwbtools" version))
        (sha256
-        (base32 "0hgkm90b7x8w4xn1ajq1bk5bh3jxmjvhs9zz7gsnvy06s78pl75m"))))
+        (base32 "1py9frp2aq3q4iq5130izbxx6k1xq7rgz1knzpxkhy8h5afx8ywc"))))
     (properties `((upstream-name . "cwbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zen4r
@@ -7157,13 +7158,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "0mbgjalx79d1vk7bvsnzx5364qzdnnmrjvgl8v1f36p8mlg2h2am"))))
+        (base32 "1wdyfyz2lk3icygqp0mm3cy3bni48hqazymnvhgl9pzy29sp6i2w"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7171,7 +7172,9 @@ sorting.")
                              r-rvest
                              r-rcpparmadillo
                              r-rcpp
+                             r-pracma
                              r-igraph
+                             r-gsl
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/clement-lee/crandep")
@@ -14848,6 +14851,26 @@ Grid, Table, Search, and Filter can be used to produce a showcase page or
 gallery contained within a static or interactive R Markdown page.")
     (license license:expat)))
 
+(define-public r-connectomoda
+  (package
+    (name "r-connectomoda")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "connectoModa" version))
+       (sha256
+        (base32 "0gnmrx6li9yx231nn73m921sp8wwxrd9pbmni37gsqjj7lcyglp8"))))
+    (properties `((upstream-name . "connectoModa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-jsonlite r-httr))
+    (home-page "https://cran.r-project.org/package=connectoModa")
+    (synopsis "Download Data from Moda")
+    (description
+     "Connect to WFP's Moda platform to R, download data, and obtain the list of
+individuals with access to the project along with their access level.")
+    (license license:expat)))
+
 (define-public r-connections
   (package
     (name "r-connections")
@@ -18341,6 +18364,30 @@ mean vote or the two node model.  Converts physical variables such as relative
 to absolute humidity and evaluates the performance of comfort indices.")
     (license license:gpl2)))
 
+(define-public r-comets
+  (package
+    (name "r-comets")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comets" version))
+       (sha256
+        (base32 "1qxy0cdp8cjkwlgii00lq5qzcimlrb8fqlg2xrw8rn6ik1nrmhs0"))))
+    (properties `((upstream-name . "comets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-glmnet r-formula))
+    (home-page "https://cran.r-project.org/package=comets")
+    (synopsis "Covariance Measure Tests for Conditional Independence")
+    (description
+     "Covariance measure tests for conditional independence testing against
+conditional covariance and nonlinear conditional mean alternatives.  Contains
+versions of the generalised covariance measure test (Shah and Peters, 2020,
+<doi:10.1214/19-aos1857>) and projected covariance measure test (Lundborg et
+al., 2023, <doi:10.48550/@code{arXiv.2211.02039>}).  Applications can be found
+in Kook and Lundborg (2024, <doi:10.48550/@code{arXiv.2402.14416>}).")
+    (license license:gpl3)))
+
 (define-public r-cometr
   (package
     (name "r-cometr")
@@ -18941,13 +18988,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0fvjfc9kn2svf997nrlxvvmq01jwimhkwgq4j8c8vgvvsdvfl6bg"))))
+        (base32 "1mnjsl9v24dnk7qc5hhgsl56zhb86cjvaaqqqnqgqzy4h1vfc3vc"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (inputs (list))
@@ -21378,13 +21425,13 @@ product model.")
 (define-public r-cocorresp
   (package
     (name "r-cocorresp")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocorresp" version))
        (sha256
-        (base32 "0lqab8f0l24hdvgnfrvvzpi969f35g5i95mq3vj7kxx0xhhz1z08"))))
+        (base32 "1njn1zwlm0ibn2vc20q99ih3iqlbks0psq7vrhqak6rmnsvjqjia"))))
     (properties `((upstream-name . "cocorresp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan))
@@ -24519,6 +24566,36 @@ group variable is missing while group-related variables are available.
 Parametric and semi-parametric approaches described in Marbac et al. (2020)
 <@code{arXiv:2012.14159>} are implemented.")
     (license license:gpl2+)))
+
+(define-public r-clusevol
+  (package
+    (name "r-clusevol")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusEvol" version))
+       (sha256
+        (base32 "192zi43flpwfazgjd5ci0620hbad77z6s527vp6qwywcly3aqxmw"))))
+    (properties `((upstream-name . "clusEvol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-plotly
+                             r-ggplot2
+                             r-fpc
+                             r-dplyr
+                             r-clustersim
+                             r-cluster))
+    (home-page "https://github.com/vmoprojs/clusEvol")
+    (synopsis "Procedure for Cluster Evolution Analytics")
+    (description
+     "Cluster Evolution Analytics allows us to use exploratory what if questions in
+the sense that the present information of an object is plugged-in a dataset in a
+previous time frame so that we can explore its evolution (and of its neighbors)
+to the present.  See the URL for the papers associated with this package, as for
+instance, Morales-OÃ±ate and Morales-OÃ±ate (2024)
+<https://mpra.ub.uni-muenchen.de/120220>.")
+    (license license:gpl3+)))
 
 (define-public r-cluscov
   (package
@@ -31784,28 +31861,6 @@ including head', tail ,'pushd ,and popd'.  Various other goodies included as
 well.")
     (license license:lgpl3)))
 
-(define-public r-cgrcusum
-  (package
-    (name "r-cgrcusum")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cgrcusum" version))
-       (sha256
-        (base32 "1pmni0bw7yp8alqyd88ysl858jkp926my2c5g6z31izzyih29s0z"))))
-    (properties `((upstream-name . "cgrcusum")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-ggplot2))
-    (home-page "https://github.com/d-gomon/cgrcusum")
-    (synopsis "Continuous Time Generalized Rapid Response CUSUM")
-    (description
-     "Allows users to construct the Continuous Time Generalized Rapid Response CUSUM
-(CGR-CUSUM), Biswas & Kalbfleisch (2008) <doi:10.1002/sim.3296> CUSUM, Binary
-CUSUM and risk-adjusted funnel plot for survival data.  These procedures can be
-used to monitor survival processes and detect problems in their quality.")
-    (license license:gpl3+)))
-
 (define-public r-cgpfunctions
   (package
     (name "r-cgpfunctions")
@@ -32343,6 +32398,44 @@ Nishiura et al. (2009) <doi:10.1371/journal.pone.0006852>.")
      "This package performs forward model selection, using the C-index/concordance in
 survival analysis models.")
     (license license:gpl3)))
+
+(define-public r-cfo
+  (package
+    (name "r-cfo")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CFO" version))
+       (sha256
+        (base32 "10kk92qrg3pgj1g5di0dhf6liwf9mas1vjpgagks7gzsk01h2jq5"))))
+    (properties `((upstream-name . "CFO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-iso r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=CFO")
+    (synopsis "CFO-Type Designs in Phase I Clinical Trials")
+    (description
+     "In phase I clinical trials, the primary objective is to ascertain the maximum
+tolerated dose (MTD) corresponding to a specified target toxicity rate.  The CFO
+package facilitates the implementation of dose-finding trials by utilizing
+calibration-free odds type (CFO-type) designs.  Specifically, it encompasses the
+calibration-free odds (CFO) (Jin and Yin (2022)
+<doi:10.1177/09622802221079353>), two-dimensional CFO (2@code{dCFO}) (Wang et
+al. (2023) <doi:10.3389/fonc.2023.1294258>), time-to-event CFO (TITE-CFO) (Jin
+and Yin (2023) <doi:10.1002/pst.2304>), fractional CFO (@code{fCFO}),
+accumulative CFO (@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs.
+The âCFO package accommodates diverse CFO-type designs, allowing users to
+tailor the approach based on factors such as dose information inclusion,
+handling of late-onset toxicity, and the nature of the target drug (single-drug
+or drug-combination).  The functionalities embedded in CFO package include the
+determination of the dose level for the next cohort, the selection of the MTD
+for a real trial, and the execution of single or multiple simulations to obtain
+operating characteristics.  Moreover, these functions are equipped with early
+stopping and dose elimination rules to address safety considerations.  Users
+have the flexibility to choose different distributions, thresholds, and cohort
+sizes among others for their specific needs.  The output of the CFO package can
+be summary statistics as well as various plots for better visualization.")
+    (license license:gpl2)))
 
 (define-public r-cfmortality
   (package
@@ -38501,6 +38594,34 @@ variable selection using CAR scores, and for estimating corresponding regression
 coefficients.  Both shrinkage as well as empirical estimators are available.")
     (license license:gpl3+)))
 
+(define-public r-cards
+  (package
+    (name "r-cards")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cards" version))
+       (sha256
+        (base32 "1a7khr8jzzvhb3lxb088d3akpq0jd7mjnb2y3z445mxl55wqgk2c"))))
+    (properties `((upstream-name . "cards")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/insightsengineering/cards")
+    (synopsis "Analysis Results Data")
+    (description
+     "Construct Clinical Data Interchange Standards Consortium (CDISC) compliant
+Analysis Results Data objects.  These objects are used and re-used to construct
+summary tables, visualizations, and written reports.  The package also exports
+utilities for working with these objects and creating new Analysis Results Data
+objects.")
+    (license license:asl2.0)))
+
 (define-public r-cardidates
   (package
     (name "r-cardidates")
@@ -39631,6 +39752,38 @@ subdivisions using the popular ggplot2 package.")
      "Terrestrial maps with simplified topologies for Census Divisions, Agricultural
 Regions, Economic Regions, Federal Electoral Divisions and Provinces.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-camtrapr
+  (package
+    (name "r-camtrapr")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "camtrapR" version))
+       (sha256
+        (base32 "02y4y19v2kgc0mazpk4dxfivln7bylgqqwllz2rw7x0wgjab3l3y"))))
+    (properties `((upstream-name . "camtrapR")))
+    (build-system r-build-system)
+    (inputs (list perl-image-exiftool))
+    (propagated-inputs (list r-sf
+                             r-secr
+                             r-lubridate
+                             r-ggplot2
+                             r-generics
+                             r-data-table))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/jniedballa/camtrapR")
+    (synopsis
+     "Camera Trap Data Management and Preparation of Occupancy and Spatial Capture-Recapture Analyses")
+    (description
+     "Management of and data extraction from camera trap data in wildlife studies.
+The package provides a workflow for storing and sorting camera trap photos (and
+videos), tabulates records of species and individuals, and creates
+detection/non-detection matrices for occupancy and spatial capture-recapture
+analyses with great flexibility.  In addition, it can visualise species activity
+data and provides simple mapping functions with GIS export.")
+    (license license:gpl2+)))
 
 (define-public r-camsrad
   (package

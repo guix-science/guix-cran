@@ -8650,6 +8650,27 @@ package, see Giorgi and Diggle (2017) <doi:10.18637/jss.v078.i08>.")
 <https://prevision.io/>.")
     (license license:expat)))
 
+(define-public r-preventr
+  (package
+    (name "r-preventr")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "preventr" version))
+       (sha256
+        (base32 "06rl3xm8h5zmpmf9v7ibs12i2b4i8r9vlk56d4iyzbsww2hh13a7"))))
+    (properties `((upstream-name . "preventr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://martingmayer.com/preventr")
+    (synopsis "An Implementation of the AHA PREVENT Equations")
+    (description
+     "This package implements the American Heart Association (AHA) Predicting Risk of
+cardiovascular disease EVENTs (PREVENT) equations from Khan SS, Matsushita K,
+Sang Y, and colleagues (2024) <doi:10.1161/CIRCULATIONAHA.123.067626>.")
+    (license license:expat)))
+
 (define-public r-prevederer
   (package
     (name "r-prevederer")
@@ -17510,13 +17531,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "13ss0j5ml8p3i79lz90ysgj3h6fk1cv5rlpzm5y6ddlp9af0i823"))))
+        (base32 "03dl56j4dc8756d0aq6p4kczmargff3jn0z9gd92kp9yk6iszpxd"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17526,7 +17547,6 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
                              r-rcpp
                              r-rcolorbrewer
                              r-purrr
-                             r-plotly
                              r-pcamethods
                              r-patchwork
                              r-parallelly
@@ -17540,7 +17560,7 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
                              r-doparallel
                              r-data-table
                              r-bh))
-    (home-page "https://github.com/pmartR/pmartR")
+    (home-page "https://pmartr.github.io/pmartR/")
     (synopsis
      "Panomics Marketplace - Quality Control and Statistical Analysis for Panomics Data")
     (description
@@ -18406,16 +18426,16 @@ site is completed.")
 (define-public r-plotmo
   (package
     (name "r-plotmo")
-    (version "3.6.2")
+    (version "3.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotmo" version))
        (sha256
-        (base32 "0g1mznijbi1ggn4pk6sqxqjqlrznfcg57l6p2672vcaqqn73mqyd"))))
+        (base32 "0ywv334n0f9x8iy0vxwcf0dkznd8wvwxw57vk0liyprjhn0ws5v9"))))
     (properties `((upstream-name . "plotmo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos r-plotrix r-formula))
+    (propagated-inputs (list r-plotrix r-formula))
     (home-page "http://www.milbo.users.sonic.net")
     (synopsis
      "Plot a Model's Residuals, Response, and Partial Dependence Plots")
@@ -23569,13 +23589,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "15x6nzl2pgs1bz37z5zn9gphi93c1gibps7gjf10v9rw0ll4gj8q"))))
+        (base32 "014192fikcb9q0bb0d8q7qxrw47kziwhfp2fbskh6n0npi2djvay"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29648,21 +29668,16 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
 (define-public r-pcutils
   (package
     (name "r-pcutils")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcutils" version))
        (sha256
-        (base32 "1vxni0ysih1v6w8mdk5s2ikpznzx36797zdsgfxj1mv2yhjyaymy"))))
+        (base32 "1m6rsyacml39zkn405dzwn58w0dcq2y0xrqlpr0rwqi6i36n02d8"))))
     (properties `((upstream-name . "pcutils")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
-                             r-reshape2
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-agricolae))
+    (propagated-inputs (list r-scales r-reshape2 r-magrittr r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Asa12138/pcutils")
     (synopsis "Some Useful Functions for Statistics and Visualization")
@@ -34422,13 +34437,13 @@ survey researchers.")
 (define-public r-pandora
   (package
     (name "r-pandora")
-    (version "23.12.0")
+    (version "24.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pandora" version))
        (sha256
-        (base32 "1my5whx937l7717qsb0xqg8q7dswjc4ph1rdpf288lmqjblwgmsn"))))
+        (base32 "0zqsqc1wqmps3dd79w4qwxyl4idmrl1zn24s5nmsazk5l1i984p1"))))
     (properties `((upstream-name . "Pandora")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

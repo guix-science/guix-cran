@@ -3012,13 +3012,13 @@ Approaches with Applications\"
 (define-public r-kim
   (package
     (name "r-kim")
-    (version "0.5.421")
+    (version "0.5.422")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kim" version))
        (sha256
-        (base32 "0liw4x3fv2cs2x6s2ydpmv7x9bbbcly08my376kidhf56510yr4v"))))
+        (base32 "1fmih9w46a68dd025kk27s8rkyls5q2jvypfv40d764rmc6fpkvg"))))
     (properties `((upstream-name . "kim")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-data-table))
@@ -5411,13 +5411,13 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kairos" version))
        (sha256
-        (base32 "0ywn90d7bn159zvlmp70yf9gbkcb9s3gmx180zp0kc6mw43jxp6v"))))
+        (base32 "1n59sicqffj7gn3l2726w0dnfxx4j8h16jkjv5lp4h3acpdnx6c9"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))

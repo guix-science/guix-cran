@@ -9208,21 +9208,16 @@ are also included in this package.")
 (define-public r-epiomics
   (package
     (name "r-epiomics")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiomics" version))
        (sha256
-        (base32 "06rk2ccnzanxjy0y1lrjya8w2mrnkki12s2mcp4pqn42a664clkx"))))
+        (base32 "1rabliw91lz9b18x9ml2g0i402p9k256qblmg2vr56pzjq5gnyq2"))))
     (properties `((upstream-name . "epiomics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-qgcomp
-                             r-lmertest
-                             r-lme4
-                             r-ggrepel
-                             r-ggplot2
+    (propagated-inputs (list r-survival r-qgcomp r-ggrepel r-ggplot2
                              r-data-table))
     (home-page "https://cran.r-project.org/package=epiomics")
     (synopsis "Analysis of Omics Data in Observational Studies")
@@ -9633,28 +9628,38 @@ in the tibble data frame format.")
 (define-public r-epiforsk
   (package
     (name "r-epiforsk")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiForsk" version))
        (sha256
-        (base32 "1z28d6xgkpzn9i10ha50qpxrcmn8s3lzmfckmsvqa6rhklc5r9xg"))))
+        (base32 "0p8znwcx11sa5rqljsa38iwqwd91pvkw01g674grw2705cagjdnj"))))
     (properties `((upstream-name . "EpiForsk")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-vgam
                              r-tidyr
-                             r-tibble
+                             r-svyvgam
+                             r-survival
+                             r-survey
                              r-stringr
                              r-rlang
                              r-purrr
+                             r-progressr
+                             r-policytree
+                             r-patchwork
+                             r-nnet
+                             r-matchit
+                             r-hmisc
+                             r-gridextra
+                             r-grf
                              r-glue
                              r-ggplot2
-                             r-foreach
+                             r-forcats
                              r-dplyr
-                             r-doparallel
                              r-data-table
-                             r-cowplot))
+                             r-cowplot
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=EpiForsk")
     (synopsis
@@ -9662,9 +9667,12 @@ in the tibble data frame format.")
     (description
      "This is a collection of assorted functions and examples collected from various
 projects.  Currently we have functionalities for simplifying overlapping time
-intervals, Charlson comorbidity score constructors for Danish data, sibling
-design linear regression functionalities, and a method for calculating the
-confidence intervals for functions of parameters from a GLM.")
+intervals, Charlson comorbidity score constructors for Danish data, getting
+frequency for multiple variables, getting standardized output from logistic and
+log-linear regressions, sibling design linear regression functionalities a
+method for calculating the confidence intervals for functions of parameters from
+a GLM, Bayes equivalent for hypothesis testing with asymptotic Bayes factor, and
+several help functions for generalized random forest analysis using grf'.")
     (license license:expat)))
 
 (define-public r-epiflows
@@ -21518,16 +21526,16 @@ terra', sf', etc.)")
 (define-public r-earth
   (package
     (name "r-earth")
-    (version "5.3.2")
+    (version "5.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "earth" version))
        (sha256
-        (base32 "1shbmh730fkn6zh5glzyygvarndahx1fs1dv26lhc9wsvxgdfi68"))))
+        (base32 "0wpmsa2r85g7z0k7kjcvncq105vyrg61x9jb1873xc9xpg50yskq"))))
     (properties `((upstream-name . "earth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos r-plotmo r-formula))
+    (propagated-inputs (list r-plotmo r-formula))
     (native-inputs (list gfortran))
     (home-page "http://www.milbo.users.sonic.net/earth/")
     (synopsis "Multivariate Adaptive Regression Splines")

@@ -9154,13 +9154,13 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "0k0q6jq768gjnc0znnw5zbg98jcvqbjla5bs56zv8z8sgirhakn0"))))
+        (base32 "0dyhgd18kz7yfdziycxkmqb58zx99fr99wxp3dfjfxip537sx1sn"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-isopleuros r-dimensio r-arkhe))
@@ -11128,13 +11128,13 @@ Snijders, Tom A. B., and Christian E. G. Steglich (2015)
 (define-public r-netmap
   (package
     (name "r-netmap")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmap" version))
        (sha256
-        (base32 "19n13ndv1968sy6cc2mrflc1jh440zbikjypwm4kfha761rm73hf"))))
+        (base32 "1asicbmp6hymh4l4c74n2h75li6sixjmnnz1006lnwikbnd27l0v"))))
     (properties `((upstream-name . "netmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -15418,13 +15418,13 @@ trained on the test set and impute test data).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NADA2" version))
        (sha256
-        (base32 "15jv7pr36l5n3anf772vz5w5aj0lxx6fswsyj59rh54ap8a77jxb"))))
+        (base32 "1kz1rvzjp18avm2jbsswnzz9jsdmk20h0vj9gs5bvjl56llih48q"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

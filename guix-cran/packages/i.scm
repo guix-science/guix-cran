@@ -1132,13 +1132,13 @@ any measurement textbook such as Crocker and Algina (2006, ISBN:9780495395911)."
 (define-public r-itdr
   (package
     (name "r-itdr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itdr" version))
        (sha256
-        (base32 "1aaqpyl6j1zxmy60a1zgkcnmnrp9i44kiiy976baq5l2n10md6x4"))))
+        (base32 "1mjqh25bipzmwvs6aq7846vwvrdis3q0nm9p830w0kbq8l5p2555"))))
     (properties `((upstream-name . "itdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-mass r-magic r-geigen r-energy))
@@ -1146,17 +1146,18 @@ any measurement textbook such as Crocker and Algina (2006, ISBN:9780495395911)."
     (home-page "https://cran.r-project.org/package=itdr")
     (synopsis "Integral Transformation Methods for SDR in Regression")
     (description
-     "The routine, itdr(), which allows to estimate the sufficient dimension reduction
-subspaces, i.e., central mean subspace or central subspace in regression, using
-Fourier transformation proposed by Zhu and Zeng (2006)
-<doi:10.1198/016214506000000140>, convolution transformation proposed by Zeng
-and Zhu (2010) <doi:10.1016/j.jmva.2009.08.004> and iterative Hessian
-transformation methods proposed by Cook and Li (2002)
-<doi:10.1214/aos/1021379861>.  The function fm_xire() function provides optimal
-estimators by optimizing a discrepancy function using a Fourier transform
-approach proposed by Weng and Yin (2022) <doi:10.5705/ss.202020.0312>.  The
-admmft() function selects the sufficient variables using a Fourier transform
-sparse inverse regression estimators proposed by Weng (2022)
+     "The itdr() routine allows for the estimation of sufficient dimension reduction
+subspaces in univariate regression such as the central mean subspace or central
+subspace in regression.  This is achieved using Fourier transformation methods
+proposed by Zhu and Zeng (2006) <doi:10.1198/016214506000000140>, convolution
+transformation methods proposed by Zeng and Zhu (2010)
+<doi:10.1016/j.jmva.2009.08.004>, and iterative Hessian transformation methods
+proposed by Cook and Li (2002) <doi:10.1214/aos/1021379861>.  Additionally,
+mitdr() function provides optimal estimators for sufficient dimension reduction
+subspaces in multivariate regression by optimizing a discrepancy function using
+a Fourier transform approach proposed by Weng and Yin (2022)
+<doi:10.5705/ss.202020.0312>, and selects the sufficient variables using Fourier
+transform sparse inverse regression estimators proposed by Weng (2022)
 <doi:10.1016/j.csda.2021.107380>.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -3989,13 +3990,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "1sdy0gvwpa4gwaj7yzn9hbk47sai8nifrhdfdaq6rrpansjgjjv3"))))
+        (base32 "1fqgpy2mdnx8gj143sl4nrnap66lyx2549lxq33fpdgrhhawv711"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -10919,13 +10920,13 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
 (define-public r-impactr
   (package
     (name "r-impactr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "impactr" version))
        (sha256
-        (base32 "08pb38wk5g6vy0iq2xajycdfv0h0pflxlbai4l0q8i1h8ssgb54z"))))
+        (base32 "1lqvq3fa4n6nnq1fb4bbq5ql4aph5r8m9y0d87kk2k93fvw06yvx"))))
     (properties `((upstream-name . "impactr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -10948,7 +10949,7 @@ Endres, Fink and Augustin (2018, <doi:10.5282/ubm/epub.42423>).")
      "This package provides functions to read, process and analyse accelerometer data
 related to mechanical loading variables.  This package is developed and tested
 for use with raw accelerometer data from triaxial @code{ActiGraph}
-<https://actigraphcorp.com> accelerometers.")
+<https://theactigraph.com> accelerometers.")
     (license license:expat)))
 
 (define-public r-impactflu

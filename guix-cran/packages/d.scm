@@ -12750,13 +12750,13 @@ of the competitive or collaborative transition.")
 (define-public r-dimodelsvis
   (package
     (name "r-dimodelsvis")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsVis" version))
        (sha256
-        (base32 "1wcpyi7whm9x0wb48zxj5v2dglzifhx1i4dl07q4g9m1dcndad8z"))))
+        (base32 "1j224j3xj1scf1smy2zk0dwv3calkx3jzpn989w9hjck96x657n5"))))
     (properties `((upstream-name . "DImodelsVis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

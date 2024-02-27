@@ -2604,6 +2604,42 @@ diverse range of color palettes for creating scientific visualizations.")
     (description "Data from Unicode 15.1.0 and related utilities.")
     (license license:gpl2)))
 
+(define-public r-unico
+  (package
+    (name "r-unico")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Unico" version))
+       (sha256
+        (base32 "16zp9fdd1a0w3zisqyiklhhn2y84f3aq63wzzqkfg0hsf2sdcvya"))))
+    (properties `((upstream-name . "Unico")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testit
+                             r-pracma
+                             r-pbapply
+                             r-nloptr
+                             r-mgcv
+                             r-matrixstats
+                             r-matrixcalc
+                             r-mass
+                             r-futile-logger
+                             r-data-table
+                             r-config
+                             r-compositions))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cozygene.github.io/Unico/")
+    (synopsis "Unified Cross-Omics Deconvolution")
+    (description
+     "UNIfied Cross-Omics deconvolution (Unico) deconvolves standard 2-dimensional
+bulk matrices of samples by features into a 3-dimensional tensors representing
+samples by features by cell types.  Unico stands out as the first principled
+model-based deconvolution method that is theoretically justified for any
+heterogeneous genomic data.  For more details see Chen and Rahmani et al. (2024)
+<doi:10.1101/2024.01.27.577588>.")
+    (license license:gpl3)))
+
 (define-public r-uniah
   (package
     (name "r-uniah")

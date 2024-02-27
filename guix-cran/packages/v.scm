@@ -271,17 +271,17 @@ needs.")
 (define-public r-vvmover
   (package
     (name "r-vvmover")
-    (version "1.5.10")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvmover" version))
        (sha256
-        (base32 "1aaky8vs9yl9k3qfd3lm4wj234gp5z0pgff1lfqj2p0av18q6nn8"))))
+        (base32 "0bg7mc8wz3d9ibp2kbc8lc0zdbbf8i2rj3hxsrnk0yrzxbb6czdg"))))
     (properties `((upstream-name . "vvmover")))
     (build-system r-build-system)
-    (propagated-inputs (list r-readxl r-readr r-dplyr))
-    (home-page "https://cran.r-project.org/package=vvmover")
+    (propagated-inputs (list r-readxl r-readr r-magrittr r-dplyr))
+    (home-page "https://vusaverse.github.io/vvmover/")
     (synopsis "Read and Write Data")
     (description
      "Offers a wide range of functions for reading and writing data in various file
@@ -375,16 +375,27 @@ API.")
 (define-public r-vvauditor
   (package
     (name "r-vvauditor")
-    (version "0.5.8")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvauditor" version))
        (sha256
-        (base32 "0b8gflvvhxasaxhkyc45qr6z07xk22kh3g4n9rgbsl4816g8x64m"))))
+        (base32 "10f9ylb7kpm28smw8nsnlmiqk8pp9zdfvkrk4qxk6pfyriv341jb"))))
     (properties `((upstream-name . "vvauditor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-magrittr r-findr r-dplyr))
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-kit
+                             r-janitor
+                             r-findr
+                             r-dplyr
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=vvauditor")
     (synopsis "Creates Assertion Tests")
     (description
@@ -5894,13 +5905,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "08zkphqkjcdvxy69r3875d7ig4jr94sbv2b17rw14hnydy9ydfii"))))
+        (base32 "10z2v4hagwmxpk3asn45bvv2p3n18978fqdshrm6pd1blbcx0gj3"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

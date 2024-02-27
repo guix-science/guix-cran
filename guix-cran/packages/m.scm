@@ -22439,13 +22439,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "1qwbf6wqc5kdhxymp264phznmc6krpjza7bprx4zvbjdjyg938pv"))))
+        (base32 "00i3bga195x28xfgm7pilf2j0vy65crh0yy12jiwvmxrx7j7qsfa"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -26503,13 +26503,13 @@ storing fisheries data and aggregating ready for use within a Gadget
 (define-public r-mfd
   (package
     (name "r-mfd")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFD" version))
        (sha256
-        (base32 "1n5jli7q2a6b1ncnj9ppwh5yfviq7jlhf5f53r5hgw7xhipazxr2"))))
+        (base32 "1jr5d5669mz4ifacaghnj7109ypfrikagjgxi2a33iqj0g63x3hp"))))
     (properties `((upstream-name . "mFD")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -30743,20 +30743,20 @@ HTML theme will be added in the future.")
 (define-public r-memoir
   (package
     (name "r-memoir")
-    (version "1.2-4")
+    (version "1.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memoiR" version))
        (sha256
-        (base32 "1c4vld3g14gcw1z5h9j3hdxibv4mccjyhq76w0dkvwy9rzpijwfr"))))
+        (base32 "132pf6phcrwkwky6pr7k5g5zbh2qx1vp420j38blilh2phvgdhl6"))))
     (properties `((upstream-name . "memoiR")))
     (build-system r-build-system)
     (inputs (list pandoc))
     (propagated-inputs (list r-usethis r-rmdformats r-rmarkdown r-distill
                              r-bookdown))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/EricMarcon/memoiR")
+    (home-page "https://ericmarcon.github.io/memoiR/")
     (synopsis "R Markdown and Bookdown Templates to Publish Documents")
     (description
      "Producing high-quality documents suitable for publication directly from R is
@@ -34093,13 +34093,13 @@ plotting Monte Carlo estimates versus sample size.")
 (define-public r-mcmcsae
   (package
     (name "r-mcmcsae")
-    (version "0.7.6")
+    (version "0.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcsae" version))
        (sha256
-        (base32 "0zi99lv691f3d5n8qbpjbai3b0g40p3q566gxd5k4rd9wbnsb4i7"))))
+        (base32 "0q3rw6xbx5wqpa0hf0jldplcs9ry80bck95bn9g6bhzj0128ysm4"))))
     (properties `((upstream-name . "mcmcsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -42244,13 +42244,13 @@ outcome model be within a specified, possibly large, class of models.")
 (define-public r-madpop
   (package
     (name "r-madpop")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MADPop" version))
        (sha256
-        (base32 "136x5shddix3qzr841hx5q5qc1cnm63j4d35h3km5ydw3qki9cyd"))))
+        (base32 "0qmn6spp6vfn60h32s58yxngv8gmp1hpl8xni55v6ari0kczw90x"))))
     (properties `((upstream-name . "MADPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

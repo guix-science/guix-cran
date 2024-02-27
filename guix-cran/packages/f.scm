@@ -3675,13 +3675,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "0nh8lfx361n992ha203qc306wsjc6gk8y2323lvdf4wi4gb42csv"))))
+        (base32 "19a4zqqwkjpyssj98qmvzzpgyq988ndvqwh2gjcm5v6q0qpwwc87"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -8117,13 +8117,13 @@ format similar to shiny', form validation and more.")
 (define-public r-folio
   (package
     (name "r-folio")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "folio" version))
        (sha256
-        (base32 "1jkix4hjb6whv1bz8gjrclwlsc415vccvldvi5l998r0bsnbm04c"))))
+        (base32 "1ny0psm4awdf6jk9dnd15w2706rl99smpacydy106f252qmqm79m"))))
     (properties `((upstream-name . "folio")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/folio/")
@@ -11568,13 +11568,13 @@ turn allows for more stable fitting.  Other fitting methods, such as MCMC
 (define-public r-fitodbodrshiny
   (package
     (name "r-fitodbodrshiny")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBODRshiny" version))
        (sha256
-        (base32 "1gdxmyj6rr8k9alfk38lc2fl12c3wkj1l166xihjr9sqwsr2xc5p"))))
+        (base32 "1598zri7fw133l7z1bzkgy9x9phy33ar6ib1a97v49vn8b5g14sj"))))
     (properties `((upstream-name . "fitODBODRshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyscreenshot

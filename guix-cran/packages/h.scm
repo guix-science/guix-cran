@@ -5848,18 +5848,18 @@ matrix.")
 (define-public r-hirestec
   (package
     (name "r-hirestec")
-    (version "0.62")
+    (version "0.62.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiResTEC" version))
        (sha256
-        (base32 "10wiviaib93md82xvizqv7973j97d5sq607q8mfb9iqc5g3a8vaq"))))
+        (base32 "1wswcd68zy03qcajkywgrgi7c06v1kyj2rmvdxj1s4yc0pcw657q"))))
     (properties `((upstream-name . "HiResTEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-openxlsx r-interpretmsspectrum r-cormid
                              r-beeswarm))
-    (home-page "https://CRAN.R-project.org/package=HiResTEC")
+    (home-page "https://github.com/janlisec/HiResTEC")
     (synopsis
      "Non-Targeted Fluxomics on High-Resolution Mass-Spectrometry Data")
     (description
@@ -9418,21 +9418,22 @@ Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDSinRdata" version))
        (sha256
-        (base32 "071ywrxw2qhiqb7djd71y20zw5mja6c7abkkrk04nsdsl9m98793"))))
+        (base32 "0svaly9wjym3bfdg19fjrwya73rnn5lfanx12lziq84f5ms3j4f3"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDSinRdata")
-    (synopsis "Data for the 'Health Data Science in R' Online Textbook")
+    (synopsis
+     "Data for the 'Mastering Health Data Science Using R' Online Textbook")
     (description
-     "This package contains seven datasets used in the chapters and exercises of Paul,
+     "This package contains nine datasets used in the chapters and exercises of Paul,
 Alice (2023) \"Health Data Science in R\"
-<https://alicepaul.github.io/health-data-science-in-r/>.")
+<https://alicepaul.github.io/health-data-science-using-r/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-hdshop

@@ -9222,6 +9222,54 @@ groups or related samples; Ruscio & Gera, 2013). <DOI:
 10.1080/00273171.2012.738184>.")
     (license license:expat)))
 
+(define-public r-rprobitb
+  (package
+    (name "r-rprobitb")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RprobitB" version))
+       (sha256
+        (base32 "0345cq3kjkhlbykwqzdjagixjdlw6a0ipckchky1hfm8kb4nkyzy"))))
+    (properties `((upstream-name . "RprobitB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-rlang
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-plotroc
+                             r-oeli
+                             r-mvtnorm
+                             r-mixtools
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-foreach
+                             r-dosnow
+                             r-crayon
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://loelschlaeger.de/RprobitB/")
+    (synopsis "Bayesian Probit Choice Modeling")
+    (description
+     "Bayes estimation of probit choice models, both in the cross-sectional and panel
+setting.  The package can analyze binary, multivariate, ordered, and ranked
+choices, as well as heterogeneity of choice behavior among deciders.  The main
+functionality includes model fitting via Markov chain Monte Carlo m ethods,
+tools for convergence diagnostic, choice data simulation, in-sample and
+out-of-sample choice prediction, and model selection using information criteria
+and Bayes factors.  The latent class model extension facilitates
+preference-based decider classification, where the number of latent classes can
+be inferred via the Dirichlet process or a weight-based updating heuristic.
+This allows for flexible modeling of choice behavior without the need to impose
+structural constraints.  For a reference on the method see Oelschlaeger and
+Bauer (2021) <https://trid.trb.org/view/1759753>.")
+    (license license:gpl3)))
+
 (define-public r-rprintf
   (package
     (name "r-rprintf")
@@ -10319,13 +10367,13 @@ implements this decomposition algorithm resulting with Robust PCA approach.")
 (define-public r-rpbk
   (package
     (name "r-rpbk")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPBK" version))
        (sha256
-        (base32 "1fi3wlww3gva1xch8lnwdkkz1qmdr6zl9y0hzhv216nr205z6llk"))))
+        (base32 "0sbnxhbv7gi1y1in96cw875sgbr54w5i43al2ivwj6kkdds0i91i"))))
     (properties `((upstream-name . "rPBK")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10337,7 +10385,7 @@ implements this decomposition algorithm resulting with Robust PCA approach.")
                              r-ggplot2
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/qonfluens/model/rPBK")
+    (home-page "https://gitlab.in2p3.fr/mosaic-software/rPBK/")
     (synopsis
      "Inference and Prediction of Generic Physiologically-Based Kinetic Models")
     (description
@@ -10381,13 +10429,13 @@ misclassification cost.")
 (define-public r-rpart-plot
   (package
     (name "r-rpart-plot")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpart.plot" version))
        (sha256
-        (base32 "0k826fr6zvx4kbxlxg5347aj3y1qv68s04h9s6b1mwld0m064wrh"))))
+        (base32 "1ci2nks8knx84f42lpxnpx0s4bvbbyfcxvynkw9baplf39fjmjix"))))
     (properties `((upstream-name . "rpart.plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -25346,23 +25394,21 @@ and source type maps are included for statistical analysis of moment tensors.")
 (define-public r-rfm
   (package
     (name "r-rfm")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfm" version))
        (sha256
-        (base32 "1s8h9ll4l5xq3m7ib83zrab49p5q4wclk8qiy2hgjr2hq1sb7wak"))))
+        (base32 "0n0sbf9c3p0df0vdymyp6pbfvyf0nh90fxjxwkdg3l5hm8m26hkp"))))
     (properties `((upstream-name . "rfm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xplorerr
-                             r-tidyr
-                             r-tibble
+                             r-treemapify
+                             r-scales
                              r-rlang
                              r-rcolorbrewer
                              r-magrittr
-                             r-lubridate
-                             r-ggthemes
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -41230,13 +41276,13 @@ periodically.  Feel free to suggest any databases or services you often use.")
 (define-public r-rbioacc
   (package
     (name "r-rbioacc")
-    (version "1.2-0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbioacc" version))
        (sha256
-        (base32 "0a2kbkmj0bv1b4bgqrc4kcvffh7a5bhbqpa8xd9r2ws3kzhgr2lh"))))
+        (base32 "0yz3mlkz6869rlg56m49bl5bq16gnmr69lznlvcsz7vmwli2ic4x"))))
     (properties `((upstream-name . "rbioacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -41253,7 +41299,7 @@ periodically.  Feel free to suggest any databases or services you often use.")
                              r-ggally
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/qonfluens/model/rbioacc")
+    (home-page "https://gitlab.in2p3.fr/mosaic-software/rbioacc")
     (synopsis "Inference and Prediction of ToxicoKinetic (TK) Models")
     (description
      "The MOSAICbioacc application is a turnkey package providing bioaccumulation
@@ -42040,6 +42086,35 @@ Accepts both filename inputs and in-memory array representations of images and
 matrices.  Includes functions to perform 2D convolutions, reorient and resize
 images/matrices, add image overlays, generate camera vignette effects, and add
 titles to images.")
+    (license license:gpl3)))
+
+(define-public r-raybevel
+  (package
+    (name "r-raybevel")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raybevel" version))
+       (sha256
+        (base32 "00dwy6p9zn19il2mc302pvj5lwp3ig2i6i47f7lfbrn78adlxwap"))))
+    (properties `((upstream-name . "raybevel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rcppthread
+                             r-rcppcgal
+                             r-rcpp
+                             r-rayvertex
+                             r-progress
+                             r-digest
+                             r-decido
+                             r-bh))
+    (home-page "https://www.raybevel.com")
+    (synopsis "Generates Polygon Straight Skeletons and 3D Bevels")
+    (description
+     "Generates polygon straight skeletons and 3D models.  Provides functions to
+create and visualize interior polygon offsets, 3D beveled polygons, and 3D roof
+models.")
     (license license:gpl3)))
 
 (define-public r-raws-profile
@@ -43878,6 +43953,49 @@ include a single header R@code{ApiDatetime.h} provided by this package, and also
 import it.  The R Core group is the original author of the code made available
 with slight modifications by this package.")
     (license license:gpl2+)))
+
+(define-public r-rapi
+  (package
+    (name "r-rapi")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rapi" version))
+       (sha256
+        (base32 "04hfp2v43dh6lix9kaczl02204qigv4xkkxfldz02c5k33r120ac"))))
+    (properties `((upstream-name . "Rapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlist
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr2
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-crayon))
+    (home-page "https://github.com/DataRapi/Rapi")
+    (synopsis "Interface for Multiple Data Providers 'EDDS' and 'FRED'")
+    (description
+     "Interface for multiple data sources, such as the EDDS API
+<https://evds2.tcmb.gov.tr/index.php?/evds/@code{userDocs>} of the Central Bank
+of the Republic of TÃ¼rkiye and the FRED API
+<https://fred.stlouisfed.org/docs/api/fred/> of the Federal Reserve Bank.  Both
+data providers require API keys for access, which users can easily obtain by
+creating accounts on their respective websites.  The package provides caching
+ability with the selection of periods to increase the speed and efficiency of
+requests.  It combines datasets requested from different sources, helping users
+when the data has common frequencies.  While combining data frames whenever
+possible, it also keeps all requested data available as separate data frames to
+increase efficiency.")
+    (license license:expat)))
 
 (define-public r-ranktreeensemble
   (package

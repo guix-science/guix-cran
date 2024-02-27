@@ -30023,6 +30023,30 @@ data types based on Yang, D., & Dalton, J. E. (2012)
      "An R-package for Estimating Semiparametric PH and AFT Mixture Cure Models.")
     (license license:gpl2)))
 
+(define-public r-smcryptor
+  (package
+    (name "r-smcryptor")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smcryptoR" version))
+       (sha256
+        (base32 "1bjasxx292195k0hjs02v7mbmgfsaxxw9bjmnymllmpfm0w78ygv"))))
+    (properties `((upstream-name . "smcryptoR")))
+    (build-system r-build-system)
+    (inputs (list))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zhuobie/smcryptoR")
+    (synopsis "ShangMi(SM) Cryptographic Algorithms(SM2/SM3/SM4)")
+    (description
+     "Bindings to smcrypto <https://github.com/zhuobie/smcrypto>: a Rust
+implementation of China's Standards of Encryption Algorithms, which is usually
+called @code{ShangMi(SM}) algorithms.  It contains SM3 message digest algorithm,
+SM2 asymmetric encryption algorithm and SM4 symmetric encryption algorithm.
+Users can do message hash, encrypt/decrypt, sign/verify, key exchange and more.")
+    (license license:expat)))
+
 (define-public r-smcrm
   (package
     (name "r-smcrm")
@@ -56829,6 +56853,31 @@ sankey diagrams.")
     (synopsis "Illustrate the Flow of Information or Material")
     (description "Plots that illustrate the flow of information or material.")
     (license license:gpl2+)))
+
+(define-public r-sanketphonetictranslator
+  (package
+    (name "r-sanketphonetictranslator")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sanketphonetictranslator" version))
+       (sha256
+        (base32 "028cipwfj2v2czv04b6vn8f11ix9s0rg6fgs4561i767bmw069rb"))))
+    (properties `((upstream-name . "sanketphonetictranslator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-stringi r-readr r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sanketphonetictranslator")
+    (synopsis "Phonetic Transliteration Between Hindi and English")
+    (description
+     "Facilitate phonetic transliteration between different languages.  With support
+for both Hindi and English, this package provides a way to convert text between
+Hindi and English dataset.  Whether you're working with multilingual data or
+need to convert dataset for analysis or presentation purposes, it offers a
+simple and efficient solution and harness the power of phonetic transliteration
+in your projects with this versatile package.")
+    (license license:agpl3+)))
 
 (define-public r-sanitytracker
   (package

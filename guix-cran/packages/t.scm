@@ -4461,13 +4461,13 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncExpFam" version))
        (sha256
-        (base32 "1mc2ykcm3cfajln55prik6nc9r1i17klrn2arnixp56cp2y98wf3"))))
+        (base32 "0y5vlfv5q1fphamwr3as14hc1rvz3f15x7vl0kimmmkk0pvpdxya"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil r-invgamma))
@@ -7682,13 +7682,13 @@ al. (2016) <doi:10.1002/2016WR018716>.")
 (define-public r-transformr
   (package
     (name "r-transformr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transformr" version))
        (sha256
-        (base32 "0h0zcsqyjxkc5g6zg79h7nq5z2rzfj93i1livwrkjj622y1br4y1"))))
+        (base32 "125y99wpgvp92qsg7934nzjqy6irjzaj21c0dcq7apqd2hqamfxw"))))
     (properties `((upstream-name . "transformr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15477,16 +15477,17 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.6.5")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfit" version))
        (sha256
-        (base32 "1vka4j87pgk7hs1z4nj8yqrdzfwcqx74qwvlf0dv8z0xz2f8b78y"))))
+        (base32 "0b242ipgp0mvc7r9bwvp3qsqlgijx2kwm6zzqvki2glxk5nk6d60"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
+                             r-vctrs
                              r-tidyr
                              r-tibble
                              r-rsample
@@ -15495,6 +15496,7 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
                              r-progressr
                              r-mass
                              r-magrittr
+                             r-generics
                              r-furrr
                              r-dplyr
                              r-dials

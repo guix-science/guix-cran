@@ -3566,6 +3566,35 @@ the inflection point.  Method described in Sprouffske and Wagner (2016)
 <doi:10.1186/s12859-016-1016-7>.")
     (license license:gpl2+)))
 
+(define-public r-growthcleanr
+  (package
+    (name "r-growthcleanr")
+    (version "2.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "growthcleanr" version))
+       (sha256
+        (base32 "0wlpaqjw44xa7z95ngiihgvmcrif6d2j7mfzjlzjgc04sjsb6y1v"))))
+    (properties `((upstream-name . "growthcleanr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-r-utils
+                             r-plyr
+                             r-magrittr
+                             r-labelled
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-data-table))
+    (home-page "https://carriedaymont.github.io/growthcleanr/index.html")
+    (synopsis "Data Cleaner for Anthropometric Measurements")
+    (description
+     "Identifies implausible anthropometric (e.g., height, weight) measurements in
+irregularly spaced longitudinal datasets, such as those from electronic health
+records.")
+    (license license:expat)))
+
 (define-public r-growth
   (package
     (name "r-growth")
@@ -9490,13 +9519,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.7.2")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goeveg" version))
        (sha256
-        (base32 "12q18ns0j5lwlq7ahvbv8rfwx50b9mc7w6wkm6w5rg2byjw7b354"))))
+        (base32 "0ckklmjbyfyz2ng9rz5aiy7c6klw1gb1sqs826x2q2rbbbwy96cx"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -11897,16 +11926,19 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.6.2")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "18n0b6l2ph8ssmw4mxdzfvvaih47z6iwbqggy0b1kijvn4xd0zbr"))))
+        (base32 "1g4hs75z5z5wp2jkwvpigyqc0lzmj47jasbiv4pjxvfmipj8mz3b"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparsechol
+    (propagated-inputs (list r-stanheaders
+                             r-sparsechol
+                             r-rstantools
+                             r-rstan
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
@@ -17804,13 +17836,13 @@ tidyverse collection of packages.  The package contains references to
 (define-public r-ggfields
   (package
     (name "r-ggfields")
-    (version "0.0.3")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfields" version))
        (sha256
-        (base32 "1c84acsnhykdiqk5yqaq66g6pl05bzrgzhb2h5zvlv2s5alxwzmi"))))
+        (base32 "1b23hxi9g5fcmrw63pmksayk9j7xsi0j23qkfkchlcx258yrf7la"))))
     (properties `((upstream-name . "ggfields")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-scales r-rlang r-ggplot2 r-dplyr))
@@ -17819,8 +17851,8 @@ tidyverse collection of packages.  The package contains references to
     (synopsis "Add Vector Field Layers to Ggplots")
     (description
      "Add vector field layers to ggplots.  Ideal for visualising wind speeds, water
-currents, electric/magnetic fields, etc.  Accepts data.frames simple features
-(sf) and spatiotemporal arrays (stars) objects as input.  Vector fields are
+currents, electric/magnetic fields, etc.  Accepts data.frames, simple features
+(sf), and spatiotemporal arrays (stars) objects as input.  Vector fields are
 depicted as arrows starting at specified locations, and with specified angles
 and radii.")
     (license license:gpl3+)))
@@ -17966,16 +17998,17 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
 (define-public r-ggedit
   (package
     (name "r-ggedit")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggedit" version))
        (sha256
-        (base32 "10fbjqq6l7wfibi65mq423w7v8gymr541if749qhsnd9b2jyhaj5"))))
+        (base32 "1v07czbq86nl0ag7gr20qigy34hblz5qrlcsrdia5620lqym7jgz"))))
     (properties `((upstream-name . "ggedit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-shinybs
                              r-shinyace
                              r-shiny
@@ -17985,7 +18018,6 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
                              r-purrr
                              r-plyr
                              r-miniui
-                             r-magrittr
                              r-ggplot2
                              r-dplyr
                              r-colourpicker))
