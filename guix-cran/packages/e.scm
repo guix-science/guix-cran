@@ -1541,13 +1541,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "06pwl69chir4056admnimzprlpsz4bmzdbz7xk82wmf512mfapf3"))))
+        (base32 "0sbrzng90pqda99jh53lbf342aj5dp8dxq9jyv9apj095n2yh5lf"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2449,13 +2449,13 @@ A., Slaoui, Y., Solier, C., & Perret, C. (2021)
 (define-public r-executablepacker
   (package
     (name "r-executablepacker")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "executablePackeR" version))
        (sha256
-        (base32 "05jy9sc4lxbiaklzrhjgs44syh3n003i44v5wcpy29rkjg3kdkpb"))))
+        (base32 "1510lhcdzlss96lpmvzv8apnb774y6ayij9cdihl5sa5kzap0nbp"))))
     (properties `((upstream-name . "executablePackeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-cli r-automagic))
@@ -4338,13 +4338,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "18sx4nwwb30qzvgxbn063gg92cch261j259577g4hs4n4x1y64z2"))))
+        (base32 "1zpl609aka3pnxvam2l94ja4j5mskml7p7gbx7s6zpj49aggkvcf"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5191,6 +5191,39 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 @code{netCDF} files.")
     (license license:gpl3)))
 
+(define-public r-eurlex
+  (package
+    (name "r-eurlex")
+    (version "0.4.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eurlex" version))
+       (sha256
+        (base32 "1arpixy6hcqdfn83rkb23s5zgvhkw1nv2hjv09k2k0g8s642y6yf"))))
+    (properties `((upstream-name . "eurlex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-pdftools
+                             r-magrittr
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-antiword))
+    (native-inputs (list r-knitr))
+    (home-page "https://michalovadek.github.io/eurlex/")
+    (synopsis "Retrieve Data on European Union Law")
+    (description
+     "Access to data on European Union laws and court decisions made easy with
+pre-defined SPARQL queries and GET requests.  See Ovadek (2021)
+<doi:10.1080/2474736X.2020.1870150> .")
+    (license license:gpl3)))
+
 (define-public r-eunis-habitats
   (package
     (name "r-eunis-habitats")
@@ -5438,13 +5471,13 @@ asked to correct it.")
 (define-public r-etwfe
   (package
     (name "r-etwfe")
-    (version "0.3.5")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "etwfe" version))
        (sha256
-        (base32 "16zd86b50fv42jxq4dd4ah08avyp62h585852qrkqcjnb82dk761"))))
+        (base32 "06y9xw8fdfijxv4kh0fxin6dgj6vavnjnyh9a75m14i0i69hd8bd"))))
     (properties `((upstream-name . "etwfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-marginaleffects r-formula r-fixest r-data-table))

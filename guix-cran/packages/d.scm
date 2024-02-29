@@ -1804,18 +1804,24 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "1fvcq4a1r5las5xip28f7wcqnijd6r79s4bbp5c5yxd2xgccwvsa"))))
+        (base32 "0d23ji2pwg5xmqj584174194yh4sn74skqjmz2s1vzzgpprazclh"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-duckdb r-dplyr r-dbplyr r-dbi))
+    (propagated-inputs (list r-glue
+                             r-fs
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
     (home-page "https://github.com/cboettig/duckdbfs")
-    (synopsis "High Performance Remote File System Access Using 'duckdb'")
+    (synopsis
+     "High Performance Remote File System, Database and 'Geospatial' Access Using 'duckdb'")
     (description
      "This package provides friendly wrappers for creating duckdb'-backed connections
 to tabular datasets ('csv', parquet, etc) on local or remote file systems.  This
@@ -3914,13 +3920,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "00ia9mwbd0xxrj72k56mv904kqlymiczphrp57lj0nkfc4fxwd4n"))))
+        (base32 "1kxswrw5lirmzhn8jhrq08n1pg2i97fq3q4ykzl38c4yvv0b4jz5"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -4083,27 +4089,25 @@ complex settings with bias correction (Preussler S et al. (2020)
 (define-public r-drugdemand
   (package
     (name "r-drugdemand")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drugDemand" version))
        (sha256
-        (base32 "161d0ix5sn00j4w8kg8s02yvk6gpjvailivjh873rifsiyx50r9d"))))
+        (base32 "1gmpvcrcs1j2m98dxppa0jss781dpscw89ffh8d6yamm385p0951"))))
     (properties `((upstream-name . "drugDemand")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tictoc
-                             r-survival
+    (propagated-inputs (list r-survival
+                             r-stringr
                              r-rlang
                              r-rcpp
                              r-purrr
-                             r-pscl
                              r-plotly
                              r-nlme
                              r-mvtnorm
                              r-mass
                              r-l1pack
-                             r-icenreg
                              r-foreach
                              r-eventpred
                              r-erify
@@ -12821,13 +12825,13 @@ Dooley et al. (2015) <doi:10.1111/ele.12504>.")
 (define-public r-dimodels
   (package
     (name "r-dimodels")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodels" version))
        (sha256
-        (base32 "0zhqdy1f8mzq73xhi5h14bjncbxx9qv13v9sb718va0mn1a41ljv"))))
+        (base32 "1ykdjqbli32awx6fwyff0l522dclhfyjp83svsjrfnm0517rlg4w"))))
     (properties `((upstream-name . "DImodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-multcomp r-hnp r-ggplot2))
@@ -24547,13 +24551,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "1jicyh63cwxnzh26x989sj0xriwnfjvdvcyisgndkwxjxvn75cjq"))))
+        (base32 "1qirnkzrskrf95vdj9pbnj8f04b2aiclhk4b0wz6bx2bmm02mg7n"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -916,13 +916,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "02cxhvhf5bfxj3nmpl8911dzxrvfbbli5ix1qz31lx0h8spg83a4"))))
+        (base32 "0iwg6biy700lgn038ws0dk0qqfl7nws1nxcgkhdd4wm6ki4qb1pq"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1939,6 +1939,28 @@ times, with Weibull and piecewise exponential marginal distributions.
 Theoretical details regarding the models implemented in the package can be found
 in Schneider et al. (2022) <doi:10.1007/s10651-022-00549-0>.")
     (license license:gpl3+)))
+
+(define-public r-cureauxsp
+  (package
+    (name "r-cureauxsp")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CureAuxSP" version))
+       (sha256
+        (base32 "1aay2hhciq6f79dz5cnqsfrvw6hlfidw4gvy7hyrnbqqlnqjwyr2"))))
+    (properties `((upstream-name . "CureAuxSP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tcgabiolinks r-survival r-mvtnorm r-mass r-lars))
+    (home-page "<https://github.com/biostat-jieding/CureAuxSP>")
+    (synopsis
+     "Mixture Cure Models with Auxiliary Subgroup Survival Probabilities")
+    (description
+     "Estimate mixture cure models with subgroup survival probabilities as auxiliary
+information.  A reference of the underlying methods is Jie Ding, Jialiang Li and
+Xiaoguang Wang (2024) <doi:10.1093/jrsssc/qlad106>.")
+    (license license:gpl2+)))
 
 (define-public r-cure
   (package
@@ -19372,13 +19394,13 @@ created.")
 (define-public r-colorednoise
   (package
     (name "r-colorednoise")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorednoise" version))
        (sha256
-        (base32 "1q6khnnv2m50fddq6hmr0kiwf46gabd91d4r8f491r76536im37i"))))
+        (base32 "1wyqliwy64hxbhhij8m5f9s4ranjpqc3qzlkr9m37c9z70lgjril"))))
     (properties `((upstream-name . "colorednoise")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-purrr r-data-table))
@@ -21635,13 +21657,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.3")
+    (version "4.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "0x8f3rpba1v3qd7drngi7161irhrly46rw81clr6zfhmlvdpid7i"))))
+        (base32 "0nxxh31fznv4dn33psvshggyriq7l5i022706dz97vg12m8lblpx"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -32297,13 +32319,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "0ywqps6p53nyy5x4qvyki94gmk5ax30b3qpcjrby4aixdr8ns85h"))))
+        (base32 "06h7pmabwh7lc7hcp0lb6kb3qg7pj50yi5a8gpnndm00aba3xgqi"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33054,13 +33076,13 @@ deserialize JSON back to the correct object prototypes.")
 (define-public r-ceramic
   (package
     (name "r-ceramic")
-    (version "0.9.0")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ceramic" version))
        (sha256
-        (base32 "17vy0zdaw1mvfjsvqf4a39wazrrfm6hr4byrf0r3hbnzfxlmp30m"))))
+        (base32 "04mywwl8hm2plcs7m4p5sjhadvgfpy42pagn2cxajpcpl7gqskfc"))))
     (properties `((upstream-name . "ceramic")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -34127,13 +34149,13 @@ time series forecasting.  More information may be obtained from Garai and Paul
 (define-public r-ceda
   (package
     (name "r-ceda")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CEDA" version))
        (sha256
-        (base32 "1m03l552zql3cqra1r1zdjcw6abpfdhvn3dkbhdhmnmg59fb6bfb"))))
+        (base32 "1bpqlqak48crqsz3sg6qcli1f3vhn38p421wcigfvd5f1hm3gdvg"))))
     (properties `((upstream-name . "CEDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mixtools
@@ -38534,13 +38556,13 @@ using recall number.")
 (define-public r-care4cmodel
   (package
     (name "r-care4cmodel")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "care4cmodel" version))
        (sha256
-        (base32 "1c6giyg0d7fy0g1ny6yypgjpxlamakh30ghfk75r7nrlbw64cnx6"))))
+        (base32 "0d54bnjgbzb1yvrkb9q1p83l29dbg4q49a3ahyxrghnxkzlrc695"))))
     (properties `((upstream-name . "care4cmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

@@ -2823,6 +2823,41 @@ and Cho et al. (2024) \"Statistical graph empirical mode decomposition by graph
 denoising and boundary treatment\".")
     (license license:gpl2+)))
 
+(define-public r-gscramble
+  (package
+    (name "r-gscramble")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gscramble" version))
+       (sha256
+        (base32 "0i62zngk2n4jx9bk378xakzr1fjb2f8p2x4larx38jg511is2lq1"))))
+    (properties `((upstream-name . "gscramble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eriqande/gscramble")
+    (synopsis "Simulating Admixed Genotypes Without Replacement")
+    (description
+     "This package provides a genomic simulation approach for creating biologically
+informed individual genotypes from empirical data that 1) samples alleles from
+populations without replacement, 2) segregates alleles based on species-specific
+recombination rates.  gscramble is a flexible simulation approach that allows
+users to create pedigrees of varying complexity in order to simulate admixed
+genotypes.  Furthermore, it allows users to track haplotype blocks from the
+source populations through the pedigrees.")
+    (license license:cc0)))
+
 (define-public r-gscounts
   (package
     (name "r-gscounts")
@@ -5792,13 +5827,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "1b9njc07wxrfbk4l286dflj44lf154vcgymrgmh7zy6691bigbjv"))))
+        (base32 "171mfnhn4sf1f7zs1i94kh5kfncd9kf5p9z11qn9b9lyriqzbprp"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7906,13 +7941,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0zd195kfl15bgbgnd4rlal5cd7ldxdibi2rp79mc0s8y4nrcbx80"))))
+        (base32 "0m79rm97n7hg7qjxcvywc0kk9dq56xsagci4jbfy41q9flrzilnh"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -9071,13 +9106,13 @@ explicitly discussed in the following article : Manjang et al (2020)
 (define-public r-gompertztrunc
   (package
     (name "r-gompertztrunc")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gompertztrunc" version))
        (sha256
-        (base32 "1af0fz501lzhr4gn435c5379zd38krr7sxgv3kdv2ip7q35b1y2x"))))
+        (base32 "0m1xnjn5fm3s475gjqpkdc589z3qbplzjd4f8ay3sy38pg8j48gz"))))
     (properties `((upstream-name . "gompertztrunc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9099,7 +9134,8 @@ explicitly discussed in the following article : Manjang et al (2020)
      "Conducting Maximum Likelihood Estimation with Truncated Mortality Data")
     (description
      "Estimates hazard ratios and mortality differentials for doubly-truncated data
-without population denominators.")
+without population denominators.  This method is described in Goldstein et al.
+(2023) <doi:10.1007/s11113-023-09785-z>.")
     (license license:gpl3+)))
 
 (define-public r-gomogomonomi
@@ -9786,13 +9822,13 @@ basic plots.")
 (define-public r-gnn
   (package
     (name "r-gnn")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gnn" version))
        (sha256
-        (base32 "0hk05g8kbsl03wy929y9wnhyfimmkz4yy5qkza2y1v7mcggpjjhx"))))
+        (base32 "0kwizsqzrb0q6nailnh6k3mzqwxv0d0phrqn7dp97rkgg2qq1kxa"))))
     (properties `((upstream-name . "gnn")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -14194,13 +14230,13 @@ imaging data.")
 (define-public r-gift
   (package
     (name "r-gift")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GIFT" version))
        (sha256
-        (base32 "0fwqf6xxb3nk3rfirkw4a4525xm7n5k4cjr90904zwr8mmnwpfj2"))))
+        (base32 "0ngrci818f0k21aiy7dnzpip33sikjf2kp7j9l3r7mwp35h6q2qd"))))
     (properties `((upstream-name . "GIFT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14298,6 +14334,36 @@ problem (Dempster (1972) <doi:10.2307/2528966>).  Our package is computationally
 efficient and can solve ultra-high-dimensional problems, e.g. p > 10,000, in a
 few minutes.")
     (license license:gpl2+)))
+
+(define-public r-gie
+  (package
+    (name "r-gie")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gie" version))
+       (sha256
+        (base32 "1r3limgw4mql9zjsc085shbds7gdr1zlcwphxk96chmzsc693sdr"))))
+    (properties `((upstream-name . "gie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=gie")
+    (synopsis
+     "API Wrapper for the Natural Gas Transparency Platforms of Gas Infrastructure Europe")
+    (description
+     "Providing access to the API for Gas Infrastructure Europe's natural gas
+transparency platforms <https://agsi.gie.eu/> and <https://alsi.gie.eu/>.  Lets
+the user easily download metadata on companies and gas storage units covered by
+the API as well as the respective data on regional, country, company or facility
+level.")
+    (license license:expat)))
 
 (define-public r-gic
   (package
@@ -20814,21 +20880,23 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.6-7")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosapi" version))
        (sha256
-        (base32 "1cxjg9zg4ayli18rx0wdr709fi67xvqg56z41r3j13235qbnrqjb"))))
+        (base32 "11f4q93c3j6vf3bd25c389n98bwn719kd3jzj6yy4py6ks6ygq24"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml
+    (propagated-inputs (list r-xml2
                              r-readr
                              r-r6
                              r-openssl
+                             r-magrittr
                              r-keyring
-                             r-httr))
+                             r-httr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eblondel/geosapi")
     (synopsis "GeoServer REST API R Interface")
@@ -21630,13 +21698,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "1xms1w8qlw54cgb65hnspyzvb8j4ixl67clqav1bwv18a72idgr6"))))
+        (base32 "1fzdif3m80pfj53wax7j7i5342261jkz7zh4ivyiz10m1l2x6kid"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21646,41 +21714,69 @@ libraries.")
                              r-rnaturalearth
                              r-rlang
                              r-memoise
+                             r-magrittr
                              r-igraph
                              r-geosphere
                              r-geodata
+                             r-future-apply
+                             r-future
                              r-easycsv
                              r-config
                              r-beepr))
     (native-inputs (list r-knitr))
-    (home-page "https://garrettlab.github.io/CroplandConnectivity/")
-    (synopsis "Analysis of Cropland Connectivity")
+    (home-page "https://garrettlab.github.io/HabitatConnectivity/")
+    (synopsis "Geographical Risk Analysis Based on Habitat Connectivity")
     (description
-     "Geographical spatial analysis of cropland connectivity.  Allows users to
-visualize risk index plots for a given set of crops.  The functions are
-developed as an extension to analysis from Xing et al (2021)
-<doi:10.1093/biosci/biaa067>.  The primary function is sean() and is indicative
-of how sensitive the risk analysis is to parameters using kernel models.  The
-Package currently supports crops sourced from Monfreda, C., N. Ramankutty, and
-J. A. Foley (2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.
-Geographic distribution of crop areas, yields, physiological types, and net
-primary production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
+     "The geohabnet package is designed to perform a geographically or spatially
+explicit risk analysis of habitat connectivity.  Xing et al (2021)
+<doi:10.1093/biosci/biaa067> proposed the concept of cropland connectivity as a
+risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
+were initially developed thinking on cropland connectivity, users are
+recommended to first be familiar with the concept by looking at the Xing et al
+paper.  In a nutshell, a cropland connectivity analysis combines information
+from maps of cropland density, estimates the relative likelihood of pathogen
+movement between cropland locations in the area of interest, and applies network
+analysis to calculate the connectivity of cropland locations.  The functions of
+geohabnet are built to conduct a cropland connectivity analysis relying on
+geographic parameters (spatial resolution and spatial extent), dispersal
+parameters (in two commonly used dispersal kernels: inverse power law and
+negative exponential models), and network parameters (link weight thresholds and
+network metrics).  The functionality and main extensions provided by the
+functions in geohabnet to cropland connectivity analysis are a) Capability to
+easily calculate the connectivity of locations in a landscape using a single
+function, such as sensitivity_analysis() or msean().  b) As backbone datasets,
+the geohabnet package supports the use of two publicly available global datasets
+to calculate cropland density.  The backbone datasets in the geohabnet package
+include crop distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley
+(2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic
+distribution of crop areas, yields, physiological types, and net primary
+production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
 International Food Policy Research Institute (2019) <doi:10.7910/DVN/PRFF8V>
 \"Global Spatially-Disaggregated Crop Production Statistics Data for 2010 Version
-2.0, Harvard Dataverse, V4\".  This analysis produces 3 maps - mean, variance,
-and difference for the crop risk index.  It applies distance functions and graph
-operations on a network to calculate risk index.  There are multiple ways in
-which functions can be used - generate final outcome and then the intermediate
-outcomes for more sophisticated use cases.  Refer to vignettes.  sean() will set
-some global variables which can be accessed using $ prefix.  These values are
-propagated to other functions for performing operations such as distance matrix
-calculation.  parameters.yaml stores the parameters and values and can be
-accessed using get_parameters().  Refer it's usage.  The objective of this
-package is to support risk analysis using cropland connectivity on 10 parameters
-- host crops, density threshold, aggregation and distance method, resolution,
-geographic extent, link threshold, kernel models, network metrics and maps.
-These parameters serves as an input and are used different phases of analysis
-workflow.")
+2.0, Harvard Dataverse, V4\".  Users can also provide any other geographic
+dataset that represents host density.  c) Because the geohabnet package allows R
+users to provide maps of cropland density (as originally in Xing et al (2021)),
+host landscape density (representing the geographic distribution of either crops
+or wild species), or habitat distribution (such as host landscape density
+adjusted by climate suitability) as inputs, we propose the term habitat
+connectivity.  d) The geohabnet package allows R users to customize parameter
+values in the habitat connectivity analysis, facilitating context-specific
+(pathogen- or pest-specific) analyses.  e) The geohabnet package allows users to
+automatically visualize maps of the habitat connectivity of locations resulting
+from a sensitivity analysis across all customized parameter combinations.  The
+primary function is sean() and sensitivity analysis().  Most functions in
+geohabnet provide as three main outcomes: i) A map of mean habitat connectivity
+across parameters selected by the user, ii) a map of variance of habitat
+connectivity across the selected parameters, and iii) a map of the difference
+between the ranks of habitat connectivity and habitat density.  Each function
+can be used to generate these maps as final outcomes.  Each function can also
+provide intermediate outcomes, such as the adjacency matrices built to perform
+the analysis, which can be used in other network analysis.  Refer to article at
+<https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
+to see examples of each function and how to access each of these outcome types.
+To change parameter values, the file called parameters.yaml stores the
+parameters and their values, can be accessed using get_parameters() and set new
+parameter values with set_parameters().  Users can modify up to ten parameters.")
     (license license:gpl3)))
 
 (define-public r-geogrid
@@ -22654,13 +22750,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "11cycy2ans4l6jilr8ga9z6a1r2j0spsmdb5xrxrnwbbwl85czyk"))))
+        (base32 "0pfq3k4szmkk3swzkcxm99qnmnw1ikknjg21pghgnr3g7437vlmp"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27192,13 +27288,13 @@ computes derived parameters such as t50 and AUC.")
 (define-public r-gasper
   (package
     (name "r-gasper")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasper" version))
        (sha256
-        (base32 "0ds0lsv3wy4mb8y3pld0dhl9k6fcn85z1ij7cswfqafm7gv72bhr"))))
+        (base32 "1ksvgccl4kqnsgrmaxj8daww5f2r9a4p6p2hsnsg3c5iqwnj6i35"))))
     (properties `((upstream-name . "gasper")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra

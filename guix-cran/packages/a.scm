@@ -6084,6 +6084,33 @@ probability distribution specified by its (potentially unnormalised) log
 density.")
     (license license:expat)))
 
+(define-public r-armalstm
+  (package
+    (name "r-armalstm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARMALSTM" version))
+       (sha256
+        (base32 "0qb0ll79n7j2zcgb0ng5mqzlcil6rg5mfpyygk8rkvqf05l8fxkl"))))
+    (properties `((upstream-name . "ARMALSTM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries r-tensorflow r-rugarch r-reticulate
+                             r-keras))
+    (home-page "https://cran.r-project.org/package=ARMALSTM")
+    (synopsis "Fitting of Hybrid ARMA-LSTM Models")
+    (description
+     "The real-life time series data are hardly pure linear or nonlinear.  Merging a
+linear time series model like the autoregressive moving average (ARMA) model
+with a nonlinear neural network model such as the Long Short-Term Memory (LSTM)
+model can be used as a hybrid model for more accurate modeling purposes.  Both
+the autoregressive integrated moving average (ARIMA) and autoregressive
+fractionally integrated moving average (ARFIMA) models can be implemented.
+Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
+Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
+    (license license:gpl3)))
+
 (define-public r-armada
   (package
     (name "r-armada")
@@ -7486,6 +7513,36 @@ other utilities pertaining to geometry and Esri type conversions.  To support
 @code{ArcGIS} Pro users, authorization can be done via arcgisbinding'.
 Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-arcgislayers
+  (package
+    (name "r-arcgislayers")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgislayers" version))
+       (sha256
+        (base32 "0micx725r6ln7i0xnrw4543qfrynvjqhg8081vi4falj2zbniz48"))))
+    (properties `((upstream-name . "arcgislayers")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rlang
+                             r-rcppsimdjson
+                             r-lifecycle
+                             r-jsonify
+                             r-httr2
+                             r-cli
+                             r-arcgisutils))
+    (home-page "https://cran.r-project.org/package=arcgislayers")
+    (synopsis "An Interface to ArcGIS Data Services")
+    (description
+     "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
+@code{ArcGIS} Platform to read, write, publish, or manage vector and raster data
+via @code{ArcGIS} location services REST API endpoints
+<https://developers.arcgis.com/rest/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgeocoder
@@ -8921,13 +8978,13 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "0wic3190agd9z1jb2dsq4a6s1glgnfn2137vmfjkbbf242div0gi"))))
+        (base32 "1ykppskq8dvn1jnw6mgcx5ja00gqxq6kvhnw9qdsgmv2fppwbvy6"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -14298,6 +14355,46 @@ asymptotic validity of the methodology is established in Li et al. (2019
 likelihood estimation for interval censored and possibly left truncated data is
 also available.")
     (license license:gpl3+)))
+
+(define-public r-alarmdata
+  (package
+    (name "r-alarmdata")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alarmdata" version))
+       (sha256
+        (base32 "1gx4s4dbhqvbj5y8qxgvm2x4a5n22llwiqm8a6iavg1yd3sqhzg0"))))
+    (properties `((upstream-name . "alarmdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinytiger
+                             r-tidyselect
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-redistmetrics
+                             r-redist
+                             r-readr
+                             r-rappdirs
+                             r-geomander
+                             r-dplyr
+                             r-dataverse
+                             r-curl
+                             r-cli
+                             r-censable))
+    (home-page "https://github.com/alarm-redist/alarmdata/")
+    (synopsis "Download, Merge, and Process Redistricting Data")
+    (description
+     "Utility functions to download and process data produced by the ALARM Project,
+including 2020 redistricting files Kenny and @code{McCartan} (2021)
+<https://alarm-redist.org/posts/2021-08-10-census-2020/> and the 50-State
+Redistricting Simulations of @code{McCartan}, Kenny, Simko, Garcia, Wang, Wu,
+Kuriwaki, and Imai (2022) <doi:10.7910/DVN/SLCD3E>.  The package extends the
+data introduced in @code{McCartan}, Kenny, Simko, Garcia, Wang, Wu, Kuriwaki,
+and Imai (2022) <doi:10.1038/s41597-022-01808-2> to also include states with
+only a single district.")
+    (license license:expat)))
 
 (define-public r-alakazam
   (package
@@ -20813,34 +20910,6 @@ opportunities (using either travel cost cutoffs or intervals), minimum travel
 cost to closest N number of activities, gravity-based (with different decay
 functions) and different floating catchment area methods.")
     (license license:expat)))
-
-(define-public r-accelstab
-  (package
-    (name "r-accelstab")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AccelStab" version))
-       (sha256
-        (base32 "1rkcg29ps2hx4v4v5zdxpy3b62amjcbqhl3y08sjp02vmyw9vwd0"))))
-    (properties `((upstream-name . "AccelStab")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
-    (home-page "https://github.com/AccelStab/AccelStab")
-    (synopsis "Accelerated Stability Kinetic Modelling")
-    (description
-     "Estimate the Å @code{estÃ¡kâBerggren} kinetic model (degradation model) from
-experimental data.  A A closed-form (analytic) solution to the degradation model
-is implemented as a non-linear fit, allowing for the extrapolation of the
-degradation of a drug product - both in time and temperature.  Parametric
-bootstrap, with kinetic parameters drawn from the multivariate t-distribution,
-and analytical formulae (the delta method) are available options to calculate
-the confidence and prediction intervals.  The results (modelling, extrapolations
-and statistical intervals) can be visualised with multiple plots.  The examples
-illustrate the accelerated stability modelling in drugs and vaccines
-development.")
-    (license license:agpl3+)))
 
 (define-public r-acca
   (package

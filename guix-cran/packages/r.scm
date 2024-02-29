@@ -9167,22 +9167,29 @@ common resources (in particular renv') are also set up correctly.")
 (define-public r-rprofet
   (package
     (name "r-rprofet")
-    (version "2.2.1")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rprofet" version))
        (sha256
-        (base32 "150123vxdd31p96f3vsri46ryfng2xvnjgm6mdiqczg48xyfpbdp"))))
+        (base32 "1czz920hw18afvyjm8fm9r4dzmini1qniyhsvx949qr74aj1gmal"))))
     (properties `((upstream-name . "Rprofet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-sqldf
+                             r-rocit
+                             r-reshape2
+                             r-purrr
                              r-plyr
+                             r-kableextra
                              r-gridextra
                              r-ggplot2
+                             r-dplyr
+                             r-corrplot
                              r-clustofvar
                              r-binr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=Rprofet")
     (synopsis "WOE Transformation and Scorecard Builder")
     (description
@@ -10673,13 +10680,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.5.0")
+    (version "3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "09phw8vj108p7m6dqrjrpg12nj0dikrkaaji0fa7r6ljxhkg2wv1"))))
+        (base32 "0fn2hxikhwj2qzxj9d1dzay4kfjndbvfr9iykw4rbn0fy7qcixh2"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-knitr))
@@ -20414,13 +20421,13 @@ C++ functionality.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.0-6")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "036ixsa2vymlmq3wb9yaclwkql30jgrycmfq8k0n6gxl309x5z2y"))))
+        (base32 "0rbvm8g5az45rh371vg6ammyl3m960hiziajixy52avgw8zbashr"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -24175,6 +24182,37 @@ type, and taxonomic name.")
 provides read and write functions to work with it.")
     (license license:gpl2)))
 
+(define-public r-rgl-cry
+  (package
+    (name "r-rgl-cry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgl.cry" version))
+       (sha256
+        (base32 "0yj0gx0k5q6lhc5ifpdbn4pdqmzr38mjln8jqm20nhpd57iwqg2p"))))
+    (properties `((upstream-name . "rgl.cry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-cry))
+    (home-page "https://github.com/SaitouToshihide/rgl.cry/")
+    (synopsis "'cry' and 'rgl' â Applications in Crystallography")
+    (description
+     "Visualizing crystal structures and selected area electron diffraction (SAED)
+patterns.  It provides functions cry_demo() and dp_demo() to load a file in CIF
+(Crystallographic Information Framework) formats and display crystal structures
+and electron diffraction patterns.  The function dp_demo() also performs simple
+simulation of powder X-ray diffraction (PXRD) patterns, and the results can be
+saved to a file in the working directory.  The package has been tested on
+several platforms, including Linux on Crostini with a Coreâ¢ m3-8100Y
+Chromebook, I found that even on this low-powered platform, the performance was
+acceptable.  T. Hanashima (2001)
+<https://www2.kek.jp/imss/pf/tools/sasaki/sinram/sinram.html> Todd Helmenstine
+(2019) <https://sciencenotes.org/molecule-atom-colors-cpk-colors/> Wikipedia
+contributors (2023)
+<https://en.wikipedia.org/w/index.php?title=Atomic_radius&oldid=1179864711>.")
+    (license license:gpl2+)))
+
 (define-public r-rgift
   (package
     (name "r-rgift")
@@ -26668,13 +26706,13 @@ could happen.")
 (define-public r-retrosheet
   (package
     (name "r-retrosheet")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retrosheet" version))
        (sha256
-        (base32 "0d4s2c3jya5pnq3mcdxai3wv32149rr3d1q5qrzvk4f771s3l34m"))))
+        (base32 "0j4c3a7rm26gx0avn4wgz0jzgff23hxb35j04hdly2h36vhw38xf"))))
     (properties `((upstream-name . "retrosheet")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-stringi r-rvest r-httr))
@@ -32743,38 +32781,42 @@ both data and project metadata, including the data dictionary, from the web.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "24.1.1")
+    (version "24.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "1dvbwbnpzzrbvk2f765k2p1g9bzqmx0wrng8nkya100b0ipc196i"))))
+        (base32 "0zd2lnr6gzjf1zmrzb0l0ynmvpa842lf3kaz7rscmjkdr8p6sjg1"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-shiny
+                             r-rsconnect
                              r-redcapr
+                             r-readr
                              r-purrr
+                             r-openxlsx2
                              r-keyring
+                             r-haven
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agdamsbo/REDCapCAST")
     (synopsis "REDCap Castellated Data Handling")
     (description
      "Originally forked from the R part of RED@code{CapRITS} by Paul Egeler.  See
-<https://github.com/pegeler/RED@code{CapRITS>}.  Handles castellated datasets
-from REDCap projects with repeating instruments.  Assists in casting tidy tables
-from raw REDCap data exports for each repeated instrument.  Keeps a focused data
-export approach, by allowing to only export required data from the database.
-REDCap (Research Electronic Data Capture) is a secure, web-based software
-platform designed to support data capture for research studies, providing 1) an
-intuitive interface for validated data capture; 2) audit trails for tracking
-data manipulation and export procedures; 3) automated export procedures for
-seamless data downloads to common statistical packages; and 4) procedures for
-data integration and interoperability with external sources (Harris et al (2009)
-<doi:10.1016/j.jbi.2008.08.010>; Harris et al (2019)
-<doi:10.1016/j.jbi.2019.103208>).")
+<https://github.com/pegeler/RED@code{CapRITS>}.  REDCap database casting and
+handling of castellated data when using repeated instruments and longitudinal
+projects.  Keeps a focused data export approach, by allowing to only export
+required data from the database.  REDCap (Research Electronic Data Capture) is a
+secure, web-based software platform designed to support data capture for
+research studies, providing 1) an intuitive interface for validated data
+capture; 2) audit trails for tracking data manipulation and export procedures;
+3) automated export procedures for seamless data downloads to common statistical
+packages; and 4) procedures for data integration and interoperability with
+external sources (Harris et al (2009) <doi:10.1016/j.jbi.2008.08.010>; Harris et
+al (2019) <doi:10.1016/j.jbi.2019.103208>).")
     (license license:gpl3+)))
 
 (define-public r-redcapapi
@@ -33465,6 +33507,36 @@ flexible: it allows for the use of any (environmental) predictor variable.
 Predictors can be either static (for example, soil @code{pH}) or dynamic (for
 example, monthly precipitation).")
     (license license:gpl3+)))
+
+(define-public r-recmetrics
+  (package
+    (name "r-recmetrics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recmetrics" version))
+       (sha256
+        (base32 "1a38nmyb9c8lfqx4j9bm63vvfsns8nhvyw67kak6nqvpr4blb9mx"))))
+    (properties `((upstream-name . "recmetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-magrittr r-lifecycle r-dplyr))
+    (home-page "https://noah-padgett.github.io/recmetrics/")
+    (synopsis "Psychometric Evaluation Using Relative Excess Correlations")
+    (description
+     "Modern results of psychometric theory are implemented to provide users with a
+way of evaluating the internal structure of a set of items guided by theory.
+These methods are discussed in detail in @code{VanderWeele} and Padgett (2024)
+<doi:10.31234/osf.io/rnbk5>.  The relative excess correlation matrices will,
+generally, have numerous negative entries even if all of the raw correlations
+between each pair of indicators are positive.  The positive deviations of the
+relative excess correlation matrix entries help identify clusters of indicators
+that are more strongly related to one another, providing insights somewhat
+analogous to factor analysis, but without the need for rotations or decisions
+concerning the number of factors.  A goal similar to exploratory/confirmatory
+factor analysis, but recmetrics uses novel methods that do not rely on
+assumptions of latent variables or latent variable structures.")
+    (license license:expat)))
 
 (define-public r-recmap
   (package
@@ -39608,13 +39680,13 @@ see <https://www.lri.fr/~hansen/cmaes_inmatlab.html#java>.")
 (define-public r-rclustool
   (package
     (name "r-rclustool")
-    (version "0.91.5")
+    (version "0.91.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RclusTool" version))
        (sha256
-        (base32 "1ni3ykd7klmw1cs49n22x4p6k2ghqqs7fd1hq5xjlwdwdnh9ssxm"))))
+        (base32 "03qz4k6h0z1sj2gyyq5sk7hilmynvqvvj35mrml629rxhgjyyhgs"))))
     (properties `((upstream-name . "RclusTool")))
     (build-system r-build-system)
     (propagated-inputs (list r-tkrplot
@@ -42091,13 +42163,13 @@ titles to images.")
 (define-public r-raybevel
   (package
     (name "r-raybevel")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raybevel" version))
        (sha256
-        (base32 "00dwy6p9zn19il2mc302pvj5lwp3ig2i6i47f7lfbrn78adlxwap"))))
+        (base32 "0kvc0kw7n3ndrbiwh1gq8f0s2l5wdlmpydrjpqy9w2gfdgpgjz75"))))
     (properties `((upstream-name . "raybevel")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf

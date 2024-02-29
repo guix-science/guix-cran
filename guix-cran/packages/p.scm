@@ -1613,13 +1613,13 @@ of the database.")
 (define-public r-pubmedtk
   (package
     (name "r-pubmedtk")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmedtk" version))
        (sha256
-        (base32 "01jxqki4gnigcssqqprjfsxr8bsb5c1ag7ivvr07x5i169kwqgvc"))))
+        (base32 "15s082qy27mvgqd8ys1qhb27p7r0nh9fgdpwcnaz8qzw3x8w6z3c"))))
     (properties `((upstream-name . "pubmedtk")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17531,13 +17531,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "03dl56j4dc8756d0aq6p4kczmargff3jn0z9gd92kp9yk6iszpxd"))))
+        (base32 "1ns65iglnz9kpc14jnwb6z7jn0drlqnqblg8ibf4y405kv7mw3zy"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23564,13 +23564,13 @@ packages.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiologyfilters
   (package
     (name "r-photobiologyfilters")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyFilters" version))
        (sha256
-        (base32 "0n987klwyj06xikmvg9cvsjzrxll1d7p358jw4ls0j46byki98s5"))))
+        (base32 "03shhykqwmmcpkzpy42kb3rn5n5kwahhjmbmspqnli5vfdvq4gim"))))
     (properties `((upstream-name . "photobiologyFilters")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -28315,13 +28315,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "0.8.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "0fkr1lsw1aj6010xnjkqd514gpkz88xjw52i6ic47f6pyl0m6irz"))))
+        (base32 "0vir7x7qm4hjpcilcsqv9rpxky6fpjig0ybjv2m9nk4jpcszh8c8"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))
@@ -29733,6 +29733,40 @@ moving average models.  Some original methods including Boshnakov & Iqelan
 (2009) <doi:10.1111/j.1467-9892.2009.00617.x>, Boshnakov (1996)
 <doi:10.1111/j.1467-9892.1996.tb00281.x>.")
     (license license:gpl2+)))
+
+(define-public r-pctax
+  (package
+    (name "r-pctax")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pctax" version))
+       (sha256
+        (base32 "1caq9ignjgw6sqapiqx4gqj07pyxqsynxznir0sjnn91k6frccj6"))))
+    (properties `((upstream-name . "pctax")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pcutils
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/pctax")
+    (synopsis "Professional Comprehensive Omics Data Analysis")
+    (description
+     "This package provides a comprehensive suite of tools for analyzing omics data.
+It includes functionalities for alpha diversity analysis, beta diversity
+analysis, differential abundance analysis, community assembly analysis,
+visualization of phylogenetic tree, and functional enrichment analysis.  With a
+progressive approach, the package offers a range of analysis methods to explore
+and understand the complex communities.  It is designed to support researchers
+and practitioners in conducting in-depth and professional omics data analysis.")
+    (license license:gpl3)))
 
 (define-public r-pct
   (package
@@ -36234,16 +36268,17 @@ approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
 (define-public r-pacvr
   (package
     (name "r-pacvr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PACVr" version))
        (sha256
-        (base32 "1kcssvik7mzhpy68g085q4prv2l89j3n58cppf0xb1fx9lagr69l"))))
+        (base32 "11izhw8j9axjfa7g3kgmm9gxkmh6nsv5asph3lmwffnfrqmc5m1y"))))
     (properties `((upstream-name . "PACVr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-read-gb
+    (propagated-inputs (list r-tidyr
+                             r-read-gb
                              r-rcircos
                              r-logger
                              r-iranges

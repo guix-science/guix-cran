@@ -11420,47 +11420,6 @@ or visualizing volcano plots to check the results of whole genome analyses for
 gene differential expression.")
     (license license:gpl2+)))
 
-(define-public r-statteacherassistant
-  (package
-    (name "r-statteacherassistant")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "StatTeacherAssistant" version))
-       (sha256
-        (base32 "0n9na9mzjzcgkq97ix1v3dxhzbc6c9s8g3rm4ikwsa2j4asrfbrd"))))
-    (properties `((upstream-name . "StatTeacherAssistant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-teachingapps
-                             r-stringr
-                             r-stringi
-                             r-sortable
-                             r-shinyjs
-                             r-shinybs
-                             r-shinyalert
-                             r-shiny
-                             r-rmatio
-                             r-rio
-                             r-rhandsontable
-                             r-plotly
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-desctools))
-    (home-page "https://github.com/ccasement/StatTeacherAssistant")
-    (synopsis
-     "An App that Assists Intro Statistics Instructors with Data Sets")
-    (description
-     "Includes an interactive application designed to support educators in
-wide-ranging disciplines, with a particular focus on those teaching introductory
-statistical methods (descriptive and/or inferential) for data analysis.  Users
-are able to randomly generate data, make new versions of existing data through
-common adjustments (e.g., add random normal noise and perform transformations),
-and check the suitability of the resulting data for statistical analyses.")
-    (license license:expat)))
-
 (define-public r-statswalesr
   (package
     (name "r-statswalesr")
@@ -36448,23 +36407,21 @@ original data to determine model fit.")
 (define-public r-simfinapi
   (package
     (name "r-simfinapi")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simfinapi" version))
        (sha256
-        (base32 "1lkqk3pc00hplgr568d34p5cy3zwcbl4za5pfqbfl2ai5ldnchc9"))))
+        (base32 "1i9zf17nn9xbyccmr8blrlybqakrlzrxxm961bgrsb2pzawn6f6j"))))
     (properties `((upstream-name . "simfinapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppsimdjson
-                             r-progressr
                              r-memoise
-                             r-httr
-                             r-future-apply
+                             r-lifecycle
+                             r-httr2
                              r-data-table
-                             r-checkmate
-                             r-bit64))
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/matthiasgomolka/simfinapi")
     (synopsis "Accessing 'SimFin' Data")
@@ -50636,13 +50593,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "1j41bszmb9b86agly7443hi97v1k94724g4llnh29y405bi3y5gb"))))
+        (base32 "0qfnf3mcx80rrpzpmnn9c6n808s92ixhnwdzvf22060rfy3b7vav"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -56283,13 +56240,13 @@ a network.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.0.1")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "03hcllfxz3504w0s0sk5fdhpgvfmpgrpyy8kq5piw88bwvg9rxjs"))))
+        (base32 "1b43hzvhagv43g7p2xqzk3ay3ylph41l4d69zm7hvbq6sdm69s27"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

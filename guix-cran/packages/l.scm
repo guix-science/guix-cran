@@ -297,13 +297,13 @@ Northwestern University.")
 (define-public r-luzlogr
   (package
     (name "r-luzlogr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luzlogr" version))
        (sha256
-        (base32 "0n0cm94aianwcypa0gwdjvyy3dwbkfv6zi1gq2jn57b41fg20lq5"))))
+        (base32 "0x9dzkhshnsspj0pisjn11b76422akj3jl6s109m60kq7rykcqyp"))))
     (properties `((upstream-name . "luzlogr")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))
@@ -1949,19 +1949,20 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "0a3gfbr92nhcs9mvig1mfa6d22sarc9845mgrncym8yllv67avaj"))))
+        (base32 "11kvqjrw485kii9qjmirh1hayar1a6635ar4b9mb5zxsx13nzldw"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-mvtnorm))
+    (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lrstat")
-    (synopsis "Power and Sample Size Calculation for Non-Proportional Hazards")
+    (synopsis
+     "Power and Sample Size Calculation for Non-Proportional Hazards and Beyond")
     (description
      "This package performs power and sample size calculation for non-proportional
 hazards model using the Fleming-Harrington family of weighted log-rank tests.
@@ -1971,7 +1972,18 @@ independent increments as characterized in Anastasios A. Tsiatis (1982)
 score statistics are calculated based on Kaifeng Lu (2021)
 <doi:10.1002/pst.2069>.  The boundary crossing probabilities are calculated
 using the recursive integration algorithm described in Christopher Jennison and
-Bruce W. Turnbull (2000, ISBN:0849303168).")
+Bruce W. Turnbull (2000, ISBN:0849303168).  The package can also be used for
+continuous, binary, and count data.  For continuous data, it can handle missing
+data through mixed-model for repeated measures (MMRM).  In crossover designs, it
+can estimate direct treatment effects while accounting for carryover effects.
+For binary data, it can design Simon's 2-stage, modified toxicity probability-2
+(@code{mTPI-2}), and Bayesian optimal interval (BOIN) trials.  For count data,
+it can design group sequential trials for negative binomial endpoints with
+censoring.  Additionally, it facilitates group sequential equivalence trials for
+all supported data types.  Moreover, it can design adaptive group sequential
+trials for changes in sample size, error spending function, number and spacing
+or future looks.  Finally, it offers various options for adjusted p-values,
+including graphical and gatekeeping procedures.")
     (license license:gpl2+)))
 
 (define-public r-lrmf3
@@ -8521,16 +8533,17 @@ linemap() displays a map made of lines using a raster or gridded data.")
 (define-public r-linelist
   (package
     (name "r-linelist")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linelist" version))
        (sha256
-        (base32 "0bq2j5gw2arv6v83k1mhidp52rq3wk00lx6fxn42zy09ji2fdiv9"))))
+        (base32 "1f9alw5vvrb6nyzy2mfhyc4vqn2q05gwgr0hw9rajm84ym0l0g2r"))))
     (properties `((upstream-name . "linelist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect r-lifecycle r-dplyr r-checkmate))
+    (propagated-inputs (list r-tidyselect r-rlang r-lifecycle r-dplyr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://epiverse-trace.github.io/linelist/")
     (synopsis "Tagging and Validating Epidemiological Data")

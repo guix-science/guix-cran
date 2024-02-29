@@ -19193,6 +19193,36 @@ approach given in Iachine (1995) and lognormal fit is based on the approach by
 Ripatti and Palmgren (2000) <doi:10.1111/j.0006-341X.2000.01016.x>.")
     (license license:gpl2+)))
 
+(define-public r-bcf
+  (package
+    (name "r-bcf")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bcf" version))
+       (sha256
+        (base32 "0a7279h7f3v23zbzqkpaxl9s2q1igfc3c5wcjpins8d7nk5hgfj4"))))
+    (properties `((upstream-name . "bcf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrixstats
+                             r-hmisc
+                             r-foreach
+                             r-doparallel
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bcf")
+    (synopsis "Causal Inference using Bayesian Causal Forests")
+    (description
+     "Causal inference for a binary treatment and continuous outcome using Bayesian
+Causal Forests.  See Hahn, Murray and Carvalho (2020) <doi:10.1214/19-BA1195>
+for additional information.  This implementation relies on code originally
+accompanying Pratola et.  al. (2013) <@code{arXiv:1309.1906>}.")
+    (license license:gpl3)))
+
 (define-public r-bcee
   (package
     (name "r-bcee")
@@ -22742,13 +22772,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "0.0.2")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "1ii3gvjpyglnvl88v3dh93cr47c9qgq12i65nx8a68fj21ljzb8h"))))
+        (base32 "1mkz9viwjf9syfgb5dnzknc96qypsjdkwijky4ybyankzg8nwwrs"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -22765,7 +22795,8 @@ to use and research on Bayesian Neural Networks.")
      "Allows Bayesian borrowing from a historical dataset for time-to- event data.  A
 flexible baseline hazard function is achieved via a piecewise exponential
 likelihood with time varying split points and smoothing prior on the historic
-baseline hazards.")
+baseline hazards.  The method is described in Scott and Lewin (2024)
+<@code{arXiv:2401.06082>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesess

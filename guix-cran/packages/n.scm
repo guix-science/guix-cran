@@ -12086,13 +12086,13 @@ nephrology based on different biomechimal traits.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "120alfpd3k53pc0rwqz0d5z4mgsqzcfvg0z550p3sy3iagz9c02v"))))
+        (base32 "1a7qcpypbr7vakrzl039ckv3cdy040gl6m3jpya1s284r30b12fx"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -12103,7 +12103,6 @@ nephrology based on different biomechimal traits.")
                              r-rlang
                              r-purrr
                              r-progress
-                             r-mapview
                              r-magrittr
                              r-lubridate
                              r-leaflet
@@ -12196,13 +12195,13 @@ that are far to big to fit into memory.")
 (define-public r-neonplantecology
   (package
     (name "r-neonplantecology")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonPlantEcology" version))
        (sha256
-        (base32 "08hdw4ki69spdvs3cm1dwc5axhjs0l1zx0yb38sdpkfixxap8iia"))))
+        (base32 "1g3j07jrmh9hdalnlbkrawk5gqyhs6y8yhnl1wi7lp6m2vvcgr15"))))
     (properties `((upstream-name . "neonPlantEcology")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -12211,6 +12210,7 @@ that are far to big to fit into memory.")
                              r-stringr
                              r-sf
                              r-neonutilities
+                             r-lubridate
                              r-ggpubr
                              r-ggplot2
                              r-dtplyr

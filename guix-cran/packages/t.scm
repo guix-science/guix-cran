@@ -1017,13 +1017,13 @@ nonresponse weighting, and diagnosis of the weights.")
 (define-public r-tvthemes
   (package
     (name "r-tvthemes")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvthemes" version))
        (sha256
-        (base32 "15m1g191nw1bfz1jgcab316c8jzvam2zc5vnlz8k9b6lcqqnv3nl"))))
+        (base32 "0q7rbq6ajvl2b3x8bcfxggdzfawc7p1dlfm4ydwvl74iighvq8sp"))))
     (properties `((upstream-name . "tvthemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-magick r-ggplot2 r-extrafont))
@@ -2891,6 +2891,46 @@ can also be computed straightforwardly.")
 <DOI:10.2307/2290724> procedure.  Innovational outliers, additive outliers,
 level shifts, temporary changes and seasonal level shifts are considered.")
     (license license:gpl2)))
+
+(define-public r-tsnet
+  (package
+    (name "r-tsnet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsnet" version))
+       (sha256
+        (base32 "14wy4mfzxkigdm3abfybijqicfqxl0gfbf72asadwipaqyw91nf6"))))
+    (properties `((upstream-name . "tsnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-ggplot2
+                             r-ggokabeito
+                             r-ggdist
+                             r-dplyr
+                             r-cowplot
+                             r-bh))
+    (home-page "https://github.com/bsiepe/tsnet")
+    (synopsis
+     "Fitting, Comparing, and Visualizing Networks Based on Time Series Data")
+    (description
+     "Fit, compare, and visualize Bayesian graphical vector autoregressive (GVAR)
+network models using Stan'.  These models are commonly used in psychology to
+represent temporal and contemporaneous relationships between multiple variables
+in intensive longitudinal data.  Fitted models can be compared with a test based
+on matrix norm differences of posterior point estimates to quantify the
+differences between two estimated networks.  See also Siepe, Kloft & Heck (2024)
+<doi:10.31234/osf.io/uwfjc>.")
+    (license license:gpl3)))
 
 (define-public r-tsna
   (package
@@ -9393,6 +9433,63 @@ Aalen-Johansen estimator for a Markov model and a novel non-Markovian estimator
 by de Una-Alvarez and Meira-Machado (2015) <doi:10.1111/biom.12288>, see also
 Balboa and de Una-Alvarez (2018) <doi:10.18637/jss.v083.i10>, are included.")
     (license license:gpl2)))
+
+(define-public r-toxsummary
+  (package
+    (name "r-toxsummary")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "toxSummary" version))
+       (sha256
+        (base32 "1pxd8sgbby2n6bpcfxng0mj60xx5mx5m0svmqn355cl49vfccsbg"))))
+    (properties `((upstream-name . "toxSummary")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-stringr
+                             r-shinydisconnect
+                             r-shinycssloaders
+                             r-shiny
+                             r-scales
+                             r-rsqlite
+                             r-rlang
+                             r-patchwork
+                             r-magrittr
+                             r-htmltools
+                             r-ggplot2
+                             r-ggiraph
+                             r-fs
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-dbi
+                             r-data-table
+                             r-cicerone))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/phuse-org/toxSummary")
+    (synopsis "Visualize and Summarize Repeat-Dose Toxicology Study Results")
+    (description
+     "This package provides a shiny app that generates plots and summary tables from
+repeat-dose toxicology study results to facilitate holistic evaluation of the
+drug safety of active pharmaceutical ingredients (API) prior to initiation of
+clinical trials.")
+    (license license:expat)))
 
 (define-public r-toxpir
   (package
@@ -15966,13 +16063,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyclust" version))
        (sha256
-        (base32 "1zsy329z29j2ad413i7h24aijgqpjvl8imffq4pcqnxydwbf2z0d"))))
+        (base32 "0v4hlgmjya6w0jb091qh1hv47xgqx79xvr0ddlz9hnv23rxrrbsf"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -22102,48 +22199,6 @@ population based on several sampling designs.")
 statistical concepts, or on your own to better understand the concepts or the
 programming.")
     (license license:artistic2.0)))
-
-(define-public r-teachingapps
-  (package
-    (name "r-teachingapps")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "teachingApps" version))
-       (sha256
-        (base32 "161l9nvgi22ihp3l87x4alk22m9451h45n7s3ic60y26sr3zlv3k"))))
-    (properties `((upstream-name . "teachingApps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-shinythemes
-                             r-shinydashboard
-                             r-shiny
-                             r-scales
-                             r-rprojroot
-                             r-rcppnumerical
-                             r-rcppeigen
-                             r-rcpp
-                             r-pacman
-                             r-miniui
-                             r-markdown
-                             r-magrittr
-                             r-knitr
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-devtools
-                             r-data-table
-                             r-bh
-                             r-actuar))
-    (home-page "https://github.com/Auburngrads/teachingApps")
-    (synopsis
-     "Apps for Teaching Statistics, R Programming, and Shiny App Development")
-    (description
-     "This package contains apps and gadgets for teaching data analysis and statistics
-concepts along with how to implement them in R. Includes tools to make app
-development easier and faster by nesting apps together.")
-    (license license:gpl2+)))
 
 (define-public r-teachhist
   (package

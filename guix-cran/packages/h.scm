@@ -67,13 +67,13 @@ provides pedestrian counts in different cities in Germany.")
 (define-public r-hysteresis
   (package
     (name "r-hysteresis")
-    (version "2.7")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hysteresis" version))
        (sha256
-        (base32 "1nnfr50nafhimj2j5xpxly3i8xvkwwddz864gklwm9jzdpmv02yh"))))
+        (base32 "0jn8glihvnf6l6gf91cisqi4h1iscp7qqvchkbcvz0mv8cvklmg8"))))
     (properties `((upstream-name . "hysteresis")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-mass r-car))
@@ -84,7 +84,9 @@ provides pedestrian counts in different cities in Germany.")
     (description
      "Fit, summarize and plot sinusoidal hysteretic processes using: two-step simple
 harmonic least squares, ellipse-specific non-linear least squares, the direct
-method, geometric least squares or linear least squares.")
+method, geometric least squares or linear least squares.  See Yang, F and A.
+Parkhurst, \"Efficient Estimation of Elliptical Hysteresis with Application to
+the Characterization of Heat Stress\" <DOI:10.1007/s13253-015-0213-6>.")
     (license license:gpl2+)))
 
 (define-public r-hystar
@@ -6969,13 +6971,13 @@ problem as a two-dimensional segmentation issue.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "0y799w7bm0fnk22ahayp9byh7m1lylz52724n73ag5zjibbk1gym"))))
+        (base32 "0pqghxvby1ppjg1qx3wigak997a4rr9lpkxdwp2nq5z277znnrbl"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (propagated-inputs (list r-restatapi r-data-table))
@@ -6986,7 +6988,7 @@ problem as a two-dimensional segmentation issue.")
      "The Harmonised Index of Consumer Prices (HICP) is the key economic figure to
 measure inflation in the euro area.  The methodology underlying the HICP is
 documented in the HICP Methodological Manual
-(<https://ec.europa.eu/eurostat/de/web/products-manuals-and-guidelines/-/ks-gq-17-015>).
+(<https://ec.europa.eu/eurostat/web/products-manuals-and-guidelines/w/ks-gq-24-003>).
  Based on the manual, this package provides functions to access and work with
 HICP data from Eurostat's public database
 (<https://ec.europa.eu/eurostat/data/database>).")
@@ -7525,13 +7527,13 @@ Research 15(Oct):3297-3331.")
 (define-public r-hfr
   (package
     (name "r-hfr")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hfr" version))
        (sha256
-        (base32 "03fn5h323bdh0q8fiivvs2mqbv1n0jvj80m0mpls0dkdd6y4rqj6"))))
+        (base32 "0xcmin49sbkl3c9xrvq7spp5qnfdf7v6fscv3a85dhd5b5adhpm7"))))
     (properties `((upstream-name . "hfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-quadprog r-dendextend r-corpcor))
@@ -7541,7 +7543,7 @@ Research 15(Oct):3297-3331.")
      "This package provides functions for the estimation, plotting, predicting and
 cross-validation of hierarchical feature regression models as described in
 Pfitzinger (2024).  Cluster Regularization via a Hierarchical Feature
-Regression.  Journal of Econometrics and Statistics (in press).
+Regression.  Econometrics and Statistics (in press).
 <doi:10.1016/j.ecosta.2024.01.003>.")
     (license license:gpl2)))
 
@@ -9633,6 +9635,54 @@ uses probabilities to determine outliers.")
 distance designs in two, four, eight, and sixteen levels from rotating the
 Kronecker product of sub-Hadamard matrices.")
     (license license:lgpl2.1)))
+
+(define-public r-hdnra
+  (package
+    (name "r-hdnra")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDNRA" version))
+       (sha256
+        (base32 "17c2bck5s68kn7b67g5pgxd14n13313899waynn79vnkl319czq9"))))
+    (properties `((upstream-name . "HDNRA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr r-rdpack r-rcpparmadillo r-rcpp r-expm))
+    (home-page "https://nie23wp8738.github.io/HDNRA/")
+    (synopsis
+     "High-Dimensional Location Testing with Normal-Reference Approaches")
+    (description
+     "We provide a collection of various classical tests and latest normal-reference
+tests for comparing high-dimensional mean vectors including two-sample and
+general linear hypothesis testing (GLHT) problem.  Some existing tests for
+two-sample problem [see Bai, Zhidong, and Hewa Saranadasa.(1996)
+<https://www.jstor.org/stable/24306018>; Chen, Song Xi, and Ying-Li Qin.(2010)
+<doi:10.1214/09-aos716>; Srivastava, Muni S., and Meng Du.(2008)
+<doi:10.1016/j.jmva.2006.11.002>; Srivastava, Muni S., Shota Katayama, and
+Yutaka Kano.(2013)<doi:10.1016/j.jmva.2012.08.014>].  Normal-reference tests for
+two-sample problem [see Zhang, Jin-Ting, Jia Guo, Bu Zhou, and Ming-Yen
+Cheng.(2020) <doi:10.1080/01621459.2019.1604366>; Zhang, Jin-Ting, Bu Zhou, Jia
+Guo, and Tianming Zhu.(2021) <doi:10.1016/j.jspi.2020.11.008>; Zhang, Liang,
+Tianming Zhu, and Jin-Ting Zhang.(2020) <doi:10.1016/j.ecosta.2019.12.002>;
+Zhang, Liang, Tianming Zhu, and Jin-Ting Zhang.(2023)
+<doi:10.1080/02664763.2020.1834516>; Zhang, Jin-Ting, and Tianming Zhu.(2022)
+<doi:10.1080/10485252.2021.2015768>; Zhang, Jin-Ting, and Tianming Zhu.(2022)
+<doi:10.1007/s42519-021-00232-w>; Zhu, Tianming, Pengfei Wang, and Jin-Ting
+Zhang.(2023) <doi:10.1007/s00180-023-01433-6>].  Some existing tests for GLHT
+problem [see Fujikoshi, Yasunori, Tetsuto Himeno, and Hirofumi Wakaki.(2004)
+<doi:10.14490/jjss.34.19>; Srivastava, Muni S., and Yasunori Fujikoshi.(2006)
+<doi:10.1016/j.jmva.2005.08.010>; Yamada, Takayuki, and Muni S.
+Srivastava.(2012) <doi:10.1080/03610926.2011.581786>; Schott, James R.(2007)
+<doi:10.1016/j.jmva.2006.11.007>; Zhou, Bu, Jia Guo, and Jin-Ting Zhang.(2017)
+<doi:10.1016/j.jspi.2017.03.005>].  Normal-reference tests for GLHT problem [see
+Zhang, Jin-Ting, Jia Guo, and Bu Zhou.(2017) <doi:10.1016/j.jmva.2017.01.002>;
+Zhang, Jin-Ting, Bu Zhou, and Jia Guo.(2022) <doi:10.1016/j.jmva.2021.104816>;
+Zhu, Tianming, Liang Zhang, and Jin-Ting Zhang.(2022)
+<doi:10.5705/ss.202020.0362>; Zhu, Tianming, and Jin-Ting Zhang.(2022)
+<doi:10.1007/s00180-021-01110-6>; Zhang, Jin-Ting, and Tianming Zhu.(2022)
+<doi:10.1016/j.csda.2021.107385>].")
+    (license license:gpl3+)))
 
 (define-public r-hdnom
   (package

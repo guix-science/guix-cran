@@ -1075,13 +1075,13 @@ in the corresponding help files.")
 (define-public r-mvord
   (package
     (name "r-mvord")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvord" version))
        (sha256
-        (base32 "1fxm2yfribwxnpfwzf6rlg362pd6wphpnvmz709khinqc8b37ycq"))))
+        (base32 "15ln55a1lxpfka4lva84nsznbl8wgi95hvbr8wisqh05c5940s3x"))))
     (properties `((upstream-name . "mvord")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -9274,6 +9274,39 @@ logit, sine, and hazard.  Model selection, model averaging, plot, and simulation
 routines included.  Open population size by the Horvitz-Thompson (1959)
 <doi:10.2307/2280784> estimator.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mr-rgm
+  (package
+    (name "r-mr-rgm")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MR.RGM" version))
+       (sha256
+        (base32 "0k0l1pia2m4dfriqi883nzral234qmznjnl11jvfdczl8jab9dsp"))))
+    (properties `((upstream-name . "MR.RGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://github.com/bitansa/MR.RGM")
+    (synopsis "Multivariate Bidirectional Mendelian Randomization Networks")
+    (description
+     "Addressing a central challenge encountered in Mendelian randomization (MR)
+studies, where MR primarily focuses on discerning the effects of individual
+exposures on specific outcomes and establishes causal links between them.  Using
+a network-based methodology, the intricacy involving interdependent outcomes due
+to numerous factors has been tackled through this routine.  Based on Ni et al.
+(2018) <doi:10.1214/17-BA1087>, MR.RGM extends to a broader exploration of the
+causal landscape by leveraging on network structures and involves the
+construction of causal graphs that capture interactions between response
+variables and consequently between responses and instrument variables.  MR.RGM
+facilitates the navigation of various data availability scenarios effectively by
+accommodating three input formats, i.e., individual-level data and two types of
+summary-level data.  In the process, causal effects, adjacency matrices, and
+other essential parameters of the complex biological networks, are estimated.
+Besides, MR.RGM provides uncertainty quantification for specific network
+structures among response variables.")
+    (license license:gpl3+)))
 
 (define-public r-mr-raps
   (package
@@ -27050,17 +27083,16 @@ utilize metricminer'.")
 (define-public r-metricgraph
   (package
     (name "r-metricgraph")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetricGraph" version))
        (sha256
-        (base32 "0zccshl9vlaqgqmdmmicp0lnzhngiarbymf2wq8b49qr35iwgwb3"))))
+        (base32 "1pd10pxqvdvqh1jml6rpn2j5w6j0hw87wd9f272yfwd4q9d2c29r"))))
     (properties `((upstream-name . "MetricGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-viridis
                              r-tidyr
                              r-sp
                              r-sf
@@ -27073,6 +27105,7 @@ utilize metricminer'.")
                              r-lifecycle
                              r-igraph
                              r-ggplot2
+                             r-ggnewscale
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
@@ -27088,10 +27121,9 @@ models including random field components can be fitted to data based on
 computationally efficient sparse matrix representations.  Interfaces to the R
 packages INLA and inlabru are also provided, which facilitate working with
 Bayesian statistical models on metric graphs.  The main references for the
-methods are Bolin, Simas and Wallin (2022)
-<doi:10.48550/@code{arXiv.2205.06163>}, Bolin, Kovacs, Kumar and Simas (2023)
-<doi:10.48550/@code{arXiv.2302.03995>} and Bolin, Simas and Wallin (2023)
-<doi:10.48550/@code{arXiv.2304.03190>} and
+methods are Bolin, Simas and Wallin (2024) <doi:10.3150/23-BEJ1647>, Bolin,
+Kovacs, Kumar and Simas (2023) <doi:10.1090/mcom/3929> and Bolin, Simas and
+Wallin (2023) <doi:10.48550/@code{arXiv.2304.03190>} and
 <doi:10.48550/@code{arXiv.2304.10372>}.")
     (license license:gpl2+)))
 

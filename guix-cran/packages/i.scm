@@ -8190,17 +8190,16 @@ Vanilla Gradient'.")
 (define-public r-inlpubs
   (package
     (name "r-inlpubs")
-    (version "1.0.6")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlpubs" version))
        (sha256
-        (base32 "0al6a4lidc9hk7l2r233kyq7fcwsd7cbfcm813jqy89nn187cmis"))))
+        (base32 "0gg39mkid9s57hd9r5y5pa8228m965diz61s94v38qyix8pjdj37"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-checkmate))
-    (native-inputs (list r-knitr))
     (home-page "https://rconnect.usgs.gov/INLPO/inlpubs-main/")
     (synopsis "USGS INL Project Office Publications")
     (description
@@ -15932,13 +15931,13 @@ individual score prior to computation of the double-entry intraclass correlation
 (define-public r-icccounts
   (package
     (name "r-icccounts")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccCounts" version))
        (sha256
-        (base32 "0h1bjnyl24i2y8z1pys4k89q2dy5cfd808bc7w54j1vyyap0k899"))))
+        (base32 "1g9fb42pdfa4jwwp789v22xzr9y69vf4ff06g2avxcv5s792i84w"))))
     (properties `((upstream-name . "iccCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -16549,13 +16548,13 @@ splines, Duchon splines or low rank splines.")
 (define-public r-ibmsunburst
   (package
     (name "r-ibmsunburst")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibmsunburst" version))
        (sha256
-        (base32 "09gdd72nvmwv65gfblv038wgfslapkkwrj5m72bjahipf3acgg51"))))
+        (base32 "08ss2k95hfrplzj3v3z5n9dbvvmpq1xyq8sxg9w3knihfz43skq5"))))
     (properties `((upstream-name . "ibmsunburst")))
     (build-system r-build-system)
     (arguments

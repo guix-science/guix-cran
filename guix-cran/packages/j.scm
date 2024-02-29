@@ -993,16 +993,17 @@ survival analysis.")
 (define-public r-jsmediation
   (package
     (name "r-jsmediation")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSmediation" version))
        (sha256
-        (base32 "1y6s8fwdyaixvqa1p8nn1jf75k2dgv4p9kv59rwjrckq70s026x2"))))
+        (base32 "0lgd00gvg4g6sbsnaaqzqa8c3wjf2h8mkijghx926p3591b19nv8"))))
     (properties `((upstream-name . "JSmediation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
                              r-rlang
                              r-purrr
                              r-mass
@@ -2304,13 +2305,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.2")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "1anvbgwwgpn0ksiywzfg5qmhq5vnb4q7drrl02awa89fs2bnzxba"))))
+        (base32 "13c4ja0b5162j19pkiwk3lvn41ak5ckwvhb9zh8p2l2hdnw48zgh"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))

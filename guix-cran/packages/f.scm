@@ -2586,13 +2586,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftExtra" version))
        (sha256
-        (base32 "102afklfr6lz4vby9ify8ix19y6q4hqbl36ksal6cgx10jasn6pg"))))
+        (base32 "0b21pm2aac24m79f6lh2si51s0i5ixzx36dva0m4wqwcvclg94ri"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10743,6 +10743,31 @@ Stephens (2021) <https://jmlr.org/papers/v22/20-589.html>.")
 application.")
     (license license:expat)))
 
+(define-public r-flap
+  (package
+    (name "r-flap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flap" version))
+       (sha256
+        (base32 "0aa1ylzq6a5nbkzlyyydw213qfmd3nc8xk8acsrhjg6nxhw8lc5b"))))
+    (properties `((upstream-name . "flap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-corpcor))
+    (home-page "https://github.com/FinYang/flap")
+    (synopsis "Forecast Linear Augmented Projection")
+    (description
+     "The Forecast Linear Augmented Projection (flap) method reduces forecast variance
+by adjusting the forecasts of multivariate time series to be consistent with the
+forecasts of linear combinations (components) of the series by projecting all
+forecasts onto the space where the linear constraints are satisfied.  The
+forecast variance can be reduced monotonically by including more components.
+For a given number of components, the flap method achieves maximum forecast
+variance reduction among linear projections.")
+    (license license:gpl3+)))
+
 (define-public r-flan
   (package
     (name "r-flan")
@@ -14631,37 +14656,6 @@ well as the classic cumulative sum ('CUSUM') and exponentially weighted moving
 average ('EWMA') methods, are included.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-ffsimulator
-  (package
-    (name "r-ffsimulator")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ffsimulator" version))
-       (sha256
-        (base32 "0vl8sr32l5l4v6jb59ch98fg850d6w8zqqy2v8zay7v04qwbwqiz"))))
-    (properties `((upstream-name . "ffsimulator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidytable
-                             r-rlang
-                             r-rglpk
-                             r-nflreadr
-                             r-magrittr
-                             r-glue
-                             r-ffscrapr
-                             r-data-table
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ffsimulator.ffverse.com")
-    (synopsis "Simulate Fantasy Football Seasons")
-    (description
-     "Uses bootstrap resampling to run fantasy football season simulations supported
-by historical rankings and @code{nflfastR} data, calculating optimal lineups,
-and returning aggregated results.")
-    (license license:expat)))
-
 (define-public r-ffscrapr
   (package
     (name "r-ffscrapr")
@@ -16035,13 +16029,13 @@ significance.")
 (define-public r-fdrsamplesize2
   (package
     (name "r-fdrsamplesize2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FDRsamplesize2" version))
        (sha256
-        (base32 "1rh7ni0ylzr2cyls7i4d39csqdlc9yljv7z49y5n7yg1v4gxxyr2"))))
+        (base32 "0bkisjjm01hag5pmdr1cl4k3v9ncdxsbwn9nskfwch60g09zvaqn"))))
     (properties `((upstream-name . "FDRsamplesize2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=FDRsamplesize2")
@@ -16404,6 +16398,40 @@ Majorizing-Minimizing (MM) and Alternating Direction Method of Multipliers
 (ADMM) techniques.  See Boyd et al (2010) <doi:10.1561/2200000016> for complete
 introduction to the method.")
     (license license:gpl3+)))
+
+(define-public r-fdarep
+  (package
+    (name "r-fdarep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdarep" version))
+       (sha256
+        (base32 "1yn2ynjgkbjd52v3qk9jw1jmx70dlmbigml1wip0fjn592g52lhb"))))
+    (properties `((upstream-name . "fdarep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-pracma
+                             r-numderiv
+                             r-matrix
+                             r-mass
+                             r-hmisc
+                             r-fdapace))
+    (home-page "https://github.com/functionaldata/tFDArep")
+    (synopsis
+     "Two-Dimensional FPCA, Marginal FPCA, and Product FPCA for Repeated Functional Data")
+    (description
+     "This package provides an implementation of two-dimensional functional principal
+component analysis (FPCA), Marginal FPCA, and Product FPCA for repeated
+functional data.  Marginal and Product FPCA implementations are done for both
+dense and sparsely observed functional data.  References: Chen, K., Delicado,
+P., & MÃ¼ller, H. G. (2017) <doi:10.1111/rssb.12160>.  Chen, K., & MÃ¼ller, H.
+G. (2012) <doi:10.1080/01621459.2012.734196>.  Hall, P., MÃ¼ller, H.G. and Wang,
+J.L. (2006) <doi:10.1214/009053606000000272>.  Yao, F., MÃ¼ller, H. G., & Wang,
+J. L. (2005) <doi:10.1198/016214504000001745>.")
+    (license license:bsd-3)))
 
 (define-public r-fdapoifd
   (package
@@ -19680,13 +19708,13 @@ Bogetoft & Otto (2011) <doi:10.1007/978-1-4419-7961-2>.")
 (define-public r-farr
   (package
     (name "r-farr")
-    (version "0.2.39")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "farr" version))
        (sha256
-        (base32 "0zs74q5a7mikkvfhz3j1m1z5pdhc3pcjlbzrn4saf05rd2w59x07"))))
+        (base32 "0y7vmxva1wjsplh7wfpz9jm26hz5qinbrp7na2gbmdwj78z4d38q"))))
     (properties `((upstream-name . "farr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22001,6 +22029,51 @@ Adaptive multigroup confidence intervals with constant coverage by Yu and Hoff
 <DOI:10.1093/biomet/asy009> and Exact adaptive confidence intervals for linear
 regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
     (license license:gpl3)))
+
+(define-public r-faasr
+  (package
+    (name "r-faasr")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FaaSr" version))
+       (sha256
+        (base32 "0497ywlsi97hr8b01yjp5dflgghkwa3m6a5w0lfd16ryg7wild3c"))))
+    (properties `((upstream-name . "FaaSr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-sodium
+                             r-paws-storage
+                             r-paws-security-identity
+                             r-paws-compute
+                             r-paws-application-integration
+                             r-jsonvalidate
+                             r-jsonlite
+                             r-httr
+                             r-cli
+                             r-base64enc))
+    (home-page "https://github.com/FaaSr/FaaSr-package")
+    (synopsis "FaaS (Function as a Service) Package")
+    (description
+     "Allows users to create and deploy the workflow with multiple functions in
+Function-as-a-Service (@code{FaaS}) cloud computing platforms.  The @code{FaaSr}
+package makes it simpler for R developers to use @code{FaaS} platforms by
+providing the following functionality: 1) Parsing and validating a JSON-based
+payload compliant to @code{FaaSr} schema supporting multiple @code{FaaS}
+platforms 2) Invoking user functions written in R in a Docker container (derived
+from rocker), using a list generated from the parser as argument 3)
+Downloading/uploading of files from/to S3 buckets using simple primitives 4)
+Logging to files in S3 buckets 5) Triggering downstream actions supporting
+multiple @code{FaaS} platforms 6) Generating @code{FaaS-specific} API calls to
+simplify the registering of a user's workflow with a @code{FaaS} platform
+Supported @code{FaaS} platforms: Apache @code{OpenWhisk}
+<https://openwhisk.apache.org/> @code{GitHub} Actions
+<https://github.com/features/actions> Amazon Web Services (AWS) Lambda
+<https://aws.amazon.com/lambda/> Supported cloud data storage for persistent
+storage: Amazon Web Services (AWS) Simple Storage Service (S3)
+<https://aws.amazon.com/s3/>.")
+    (license license:expat)))
 
 (define-public r-f1datar
   (package

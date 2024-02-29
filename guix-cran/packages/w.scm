@@ -601,13 +601,13 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
 (define-public r-wru
   (package
     (name "r-wru")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wru" version))
        (sha256
-        (base32 "09i47hm601lc6fv793fx8x5i9l6na5v9f66b7n2c9fb7nddqwy57"))))
+        (base32 "13vxhipyy5cl3i0gn7d8f5ljn0qxhjh35gy5kj2i2yczp1sfrnq1"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -809,13 +809,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.14.1")
+    (version "1.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0b4yx9zmdk87br7pbbi9g52v91xy4wbg8zrkbm5xaag65rfrxbgw"))))
+        (base32 "0y8g33vsrlzr6x0mpk7vr01wbv96w4xhg8byvmi817lwvmfzl5pm"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2935,6 +2935,45 @@ of outcomes can be analyzed: survival \"failure-time\" events, repeated survival
 \"failure-time\" events and continuous or ordinal \"non-failure time\" events that
 are captured at specific time-points in the study.")
     (license license:gpl2+)))
+
+(define-public r-wingen
+  (package
+    (name "r-wingen")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wingen" version))
+       (sha256
+        (base32 "1jd2zk3qrhj0k1n63qv60212ap1b5rk37h39i29b0vfx5sl0flqq"))))
+    (properties `((upstream-name . "wingen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-vcfr
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-sf
+                             r-rlang
+                             r-raster
+                             r-purrr
+                             r-pegas
+                             r-magrittr
+                             r-hierfstat
+                             r-ggplot2
+                             r-gdistance
+                             r-furrr
+                             r-dplyr
+                             r-crayon
+                             r-automap))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wingen")
+    (synopsis "Continuous Mapping of Genetic Diversity")
+    (description
+     "Generate continuous maps of genetic diversity using moving windows with options
+for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
+<doi:10.1111/2041-210X.14090>.")
+    (license license:expat)))
 
 (define-public r-winfapreader
   (package
