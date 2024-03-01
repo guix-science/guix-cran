@@ -11699,13 +11699,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "05alizwf5l45klpsgc3gid87pkqpd4vv0jj4dlnq6v3vvnzb1fc1"))))
+        (base32 "1mgh3cin28a1cjfkld8n57x3psqb1z5q8g3l61gjjrngds8a0sj4"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -11717,7 +11717,6 @@ under perturbation, and the other on higher criticism.")
                              r-mlr3verse
                              r-mlr3
                              r-jiebar
-                             r-intergraph
                              r-igraph
                              r-htmlwidgets
                              r-ggthemes
@@ -11726,6 +11725,7 @@ under perturbation, and the other on higher criticism.")
                              r-ggpubr
                              r-ggplot2
                              r-ggnetwork
+                             r-ggforce
                              r-cmplot
                              r-caret))
     (home-page "https://cran.r-project.org/package=BioM2")

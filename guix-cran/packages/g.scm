@@ -3517,13 +3517,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "2.1.23")
+    (version "2.1.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "12am1q374ckkz0cp31473i0zqjp7z78bywjb191hwaksrv8cpp5c"))))
+        (base32 "0cwdxd47jpgvr9i7xj7hibaa8l8n7gm91i3qv5ikp9p2y93qwbzs"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -10058,13 +10058,13 @@ maximisation algorithm.  Bernhardt (2015) <doi:10.1016/j.csda.2014.11.011>.")
 (define-public r-gmvarkit
   (package
     (name "r-gmvarkit")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmvarkit" version))
        (sha256
-        (base32 "1ajq7mchd317lipwiis2837ss4zq882pv09d6l6ihf92iypbmf5l"))))
+        (base32 "06w822gq2zigynzmqndd3wilqyh1clbx2a52c9x5mg9km4pp95mb"))))
     (properties `((upstream-name . "gmvarkit")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply r-mvnfast r-gsl r-brobdingnag))
@@ -10080,8 +10080,8 @@ models, quantile residual tests, graphical diagnostics, simulations,
 forecasting, and estimation of generalized impulse response function and
 generalized forecast error variance decomposition.  Leena Kalliovirta, Mika
 Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
-Virolainen (2022) <@code{arXiv:2007.04713>}, Savi Virolainen (2022)
-<@code{arXiv:2109.13648>}.")
+Virolainen (forthcoming) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen
+(2022) <@code{arXiv:2109.13648>}.")
     (license license:gpl3)))
 
 (define-public r-gmt
@@ -20678,50 +20678,6 @@ Theoretical background and worked examples are available at
 <https://tinyurl.com/UCLgeostats/>.")
     (license license:gpl3)))
 
-(define-public r-geostan
-  (package
-    (name "r-geostan")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geostan" version))
-       (sha256
-        (base32 "1h2vrdx43lji2n67dx4r6qcsy0qb30z0dyivmy1bqqw41a0hcf6z"))))
-    (properties `((upstream-name . "geostan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-stanheaders
-                             r-spdep
-                             r-signs
-                             r-sf
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-gridextra
-                             r-ggplot2
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://connordonegan.github.io/geostan/")
-    (synopsis "Bayesian Spatial Analysis")
-    (description
-     "For Bayesian inference with spatial data, provides exploratory spatial analysis
-tools, multiple spatial model specifications, spatial model diagnostics, and
-special methods for inference with small area survey data (e.g., the America
-Community Survey (ACS)) and censored population health surveillance data.
-Models are pre-specified using the Stan programming language, a platform for
-Bayesian inference using Markov chain Monte Carlo (MCMC).  References: Carpenter
-et al. (2017) <doi:10.18637/jss.v076.i01>; Donegan (2021)
-<doi:10.31219/osf.io/3ey65>; Donegan (2022) <doi:10.21105/joss.04716>; Donegan,
-Chun and Hughes (2020) <doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and
-Griffith (2021) <doi:10.3390/ijerph18136856>; Morris et al. (2019)
-<doi:10.1016/j.sste.2019.100301>.")
-    (license license:gpl3+)))
-
 (define-public r-geosptdb
   (package
     (name "r-geosptdb")
@@ -24021,6 +23977,34 @@ functions to calculate haplotype specific odds ratio and the power of two stage
 design for GWAS studies.")
     (license license:gpl2+)))
 
+(define-public r-genenmf
+  (package
+    (name "r-genenmf")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeneNMF" version))
+       (sha256
+        (base32 "0bfqxy7zxd1vdpxnn6sj8xzpmmsn2rcvnac0prqxbd0byj1shfra"))))
+    (properties `((upstream-name . "GeneNMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-seurat
+                             r-rcppml
+                             r-pheatmap
+                             r-nmf
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/carmonalab/GeneNMF")
+    (synopsis "Non-Negative Matrix Factorization for Single-Cell Omics")
+    (description
+     "This package provides a collection of methods to extract gene programs from
+single-cell gene expression data using non-negative matrix factorization (NMF).
+@code{GeneNMF} contains functions to directly interact with the Seurat toolkit
+and derive interpretable gene program signatures.")
+    (license license:gpl3)))
+
 (define-public r-genemodel
   (package
     (name "r-genemodel")
@@ -27069,39 +27053,51 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "0j9cnj2bpmv5vma7c2ihc5fa1ly5n7ll13fi1bqlvivjm981zss0"))))
+        (base32 "12l8gvckaa43g4cl39bvmz92gzracl659bh0h58szx6z49905j90"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=gausscov")
     (synopsis "The Gaussian Covariate Method for Variable Selection")
     (description
-     "Given the standard linear model the traditional way of deciding whether to
-include the jth covariate is to apply the F-test to decide whether the
-corresponding beta coefficient is zero.  The Gaussian covariate method is
-completely different.  The question as to whether the beta coefficient is or is
-not zero is replaced by the question as to whether the covariate is better or
-worse than i.i.d.  Gaussian noise.  The P-value for the covariate is the
-probability that Gaussian noise is better.  Surprisingly this can be given
-exactly and it is the same a the P-value for the classical model based on the
-F-distribution.  The Gaussian covariate P-value is model free, it is the same
-for any data set.  Using the idea it is possible to do covariate selection for a
-small number of covariates 25 by considering all subsets.  Post selection
-inference causes no problems as the P-values hold whatever the data.  The idea
-extends to stepwise regression again with exact probabilities.  In the simplest
-version the only parameter is a specified cut-off P-value which can be
-interpreted as the probability of a false positive being included in the final
-selection.  For more information see the web site below and the accompanying
-papers: L. Davies and L. Duembgen, \"Covariate Selection Based on a Model-free
-Approach to Linear Regression with Exact Probabilities\", 2022,
-<arxiv:2202.01553>.  L. Davies, \"Linear Regression, Covariate Selection and the
-Failure of Modelling\", 2022, <@code{arXiv:2112.08738>}.")
+     "The standard linear regression theory whether frequentist or Bayesian is based
+on an assumed (revealed?) truth (John Tukey) attitude to models.  This is
+reflected in the language of statistical inference which involves a concept of
+truth, for example confidence intervals, hypothesis testing and consistency.
+The motivation behind this package was to remove the word true from the theory
+and practice of linear regression and to replace it by approximation.  The
+approximations considered are the least squares approximations.  An
+approximation is called valid if it contains no irrelevant covariates.  This is
+operationalized using the concept of a Gaussian P-value which is the probability
+that pure Gaussian noise is better in term of least squares than the covariate.
+The precise definition given in the paper, it is intuitive and requires only
+four simple equations.  Its overwhelming advantage compared with a standard F
+P-value is that is is exact and valid whatever the data.  In contrast F P-values
+are only valid for specially designed simulations.  Given this a valid
+approximation is one where all the Gaussian P-values are less than a threshold
+p0 specified by the statistician, in this package with the default value 0.01.
+This approximations approach is not only much simpler it is overwhelmingly
+better than the standard model based approach.  The will be demonstrated using
+six real data sets, four from high dimensional regression and two from vector
+autoregression.  The simplicity and superiority of Gaussian P-values derive from
+their universal exactness and validity.  This is in complete contrast to
+standard F P-values which are valid only for carefully designed simulations.
+The function f1st is the most important function.  It is a greedy forward
+selection procedure which results in either just one or no approximations which
+may however not be valid.  If the size is less than than a threshold with
+default value 21 then an all subset procedure is called which returns the best
+valid subset.  A good default start is f1st(y,x,kmn=15) The best function for
+returning multiple approximations is f3st which repeatedly calls f1st.  For more
+information see the web site below and the accompanying papers: L. Davies and L.
+Duembgen, \"Covariate Selection Based on a Model-free Approach to Linear
+Regression with Exact Probabilities\", 2022, <arxiv:2202.01553>.  L. Davies, \"An
+Approximation Based Theory of Linear Regression\", 2024, <arxiv:2402.09858>.")
     (license license:gpl3)))
 
 (define-public r-gauser

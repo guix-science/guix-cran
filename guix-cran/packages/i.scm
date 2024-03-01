@@ -7279,13 +7279,13 @@ carbon intensity of the electricity system in Great Britain.")
 (define-public r-intendo
   (package
     (name "r-intendo")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intendo" version))
        (sha256
-        (base32 "1qkgb0yrlq2k9cg934v5pj8bb6kla911v3z7sadd1p7m8a10kdyw"))))
+        (base32 "1wvxm8dq659akd0pczcydsayjk7w129ax9gg4qqiq8cz0ln8fyk6"))))
     (properties `((upstream-name . "intendo")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=intendo")

@@ -10164,13 +10164,13 @@ more information, see the reference manual
 (define-public r-hdflex
   (package
     (name "r-hdflex")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdflex" version))
        (sha256
-        (base32 "1kq11mfx5npxhakfkb3iyf9xxdr2nsa5p770fw0fz1si5bgzb5js"))))
+        (base32 "1f02gkgry8zilrk3sl4dl2jkbnvqn9700lv8k5zlh4cangq5jp9n"))))
     (properties `((upstream-name . "hdflex")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

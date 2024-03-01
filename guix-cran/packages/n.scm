@@ -3613,6 +3613,28 @@ jointly.")
 visually.")
     (license license:expat)))
 
+(define-public r-normaliser
+  (package
+    (name "r-normaliser")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "normaliseR" version))
+       (sha256
+        (base32 "03avka4b2k7cdiinrvys0y3i1kpvj6mfj89l02sk3p6hj51v15k6"))))
+    (properties `((upstream-name . "normaliseR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://hendersontrent.github.io/normaliseR/")
+    (synopsis "Re-Scale Vectors and Time-Series Features")
+    (description
+     "This package provides standardized access to a range of re-scaling methods for
+numerical vectors and time-series features calculated within the theft
+ecosystem.")
+    (license license:expat)))
+
 (define-public r-norma
   (package
     (name "r-norma")
@@ -4619,13 +4641,13 @@ attributes and both simultaneously.")
 (define-public r-noise
   (package
     (name "r-noise")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "noise" version))
        (sha256
-        (base32 "0xqcg79v03d5x783pby6gqxrhylm67xk4ic9ib4jmjyrrbqklad1"))))
+        (base32 "0b3djn63l3ygll1j5n5l71inysbb8xyvfxk8fgszga0y8ldqzh6g"))))
     (properties `((upstream-name . "noise")))
     (build-system r-build-system)
     (propagated-inputs (list r-preprocesscore))
@@ -14988,13 +15010,13 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
 (define-public r-namer
   (package
     (name "r-namer")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "namer" version))
        (sha256
-        (base32 "1h3nfxdhvjjiki1rqjpmiih9vj1hz9j8m5wkazskz8asza23898i"))))
+        (base32 "1rv885vahmd2hym7w52lhf05asja38dhr9sq0qk85zhmjdjlc9h7"))))
     (properties `((upstream-name . "namer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15010,7 +15032,7 @@ Markov model which is described in Strakova J., Straka M. and Hajic J. (2013)
     (synopsis "Names Your 'R Markdown' Chunks")
     (description
      "It names the R Markdown chunks of files based on the filename.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-nameneedle
   (package

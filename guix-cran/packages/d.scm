@@ -8898,6 +8898,37 @@ or applied to fishery data to provide management recommendations.")
 the function of interest under the high-dimensional sparse additive model.")
     (license license:gpl3)))
 
+(define-public r-dlim
+  (package
+    (name "r-dlim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dlim" version))
+       (sha256
+        (base32 "12sa1bpslans836v9fvma2wj8qspnc521saaw02q9iygkh7kf1sy"))))
+    (properties `((upstream-name . "dlim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tsmodel
+                             r-rlang
+                             r-reshape2
+                             r-mgcv
+                             r-ggplot2
+                             r-dlnm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=dlim")
+    (synopsis "Distributed Lag Interaction Model")
+    (description
+     "Collection of functions for fitting and interpreting distributed lag interaction
+models (DLIM).  A DLIM regresses a scalar outcome on repeated measures of
+exposure and allows for modification by a continuous variable.  Includes a
+dlim() function for fitting, predict() function for inference, and plotting
+functions for visualization.  Details on methodology are described in Demateis
+et al. (2024) <doi:10.1002/env.2843>.")
+    (license license:gpl3)))
+
 (define-public r-dlib
   (package
     (name "r-dlib")
@@ -12212,13 +12243,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.4")
+    (version "6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0p22czrl2m9vzls58qvxih0g2pl36ffyqxd5n17wk9ilzj39f02j"))))
+        (base32 "1cxp34vr9g2y7yn7gkb8m523q3ci3s0ycwn4p9xrp9fk8g6ymhm0"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -12249,10 +12280,10 @@ Communications in Statistics: Case Studies, Data Analysis and Applications
 Preston, M. Tsagris and Andrew T. A. Wood (2020). \"Spherical regression models
 with general covariates and anisotropic errors\".  Statistics and Computing
 30(1): 153--165. <doi:10.1007/s11222-019-09872-2>.  d) Tsagris M. and Alenazi A.
-(2022). \"An investigation of hypothesis testing procedures for circular and
+(2024). \"An investigation of hypothesis testing procedures for circular and
 spherical mean vectors\".  Communications in Statistics-Simulation and
-Computation (Accepted for publication). <doi:10.1080/03610918.2022.2045499>.  e)
-Tsagris M. and Alzeley O. (2023). \"Circular and spherical projected Cauchy
+Computation, 53(3): 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Tsagris
+M. and Alzeley O. (2023). \"Circular and spherical projected Cauchy
 distributions: A Novel Framework for Circular and Directional Data Modeling\".
 <doi:10.48550/@code{arXiv.2302.02468>}.")
     (license license:gpl2+)))
@@ -13953,13 +13984,13 @@ that may increase or decrease multiple times.")
 (define-public r-didmultiplegt
   (package
     (name "r-didmultiplegt")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegt" version))
        (sha256
-        (base32 "1r5ydh5y17spdlp0g8cdr0sqd0dh97nm55hbz5779iw8v8kmp90j"))))
+        (base32 "0msjpxh7ic8ail7i85g972c0d49m588wkch8qzrpq27xfhxvkxsd"))))
     (properties `((upstream-name . "DIDmultiplegt")))
     (build-system r-build-system)
     (propagated-inputs (list r-wooldridge

@@ -4371,39 +4371,39 @@ Models include longitudinal generalized linear models (Liang and Zeger, 1986)
 <doi:10.1007/978-1-4419-0318-1_1>.")
     (license license:expat)))
 
-(define-public r-multilevelcoda
+(define-public r-multilevelmediation
   (package
-    (name "r-multilevelcoda")
-    (version "1.2.1")
+    (name "r-multilevelmediation")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "multilevelcoda" version))
+       (uri (cran-uri "multilevelmediation" version))
        (sha256
-        (base32 "1ifrsd1s9fralxd2yjf13c2fhr7y1l2rf5xf9h6033sps6fkqxij"))))
-    (properties `((upstream-name . "multilevelcoda")))
+        (base32 "0aq38qz4i05sn3qa1f0lwpf57r4aya30i028gfdj66w0nh766pg0"))))
+    (properties `((upstream-name . "multilevelmediation")))
     (build-system r-build-system)
-    (propagated-inputs (list r-insight
-                             r-ggplot2
-                             r-foreach
-                             r-extraoperators
-                             r-emmeans
-                             r-dofuture
-                             r-data-table
-                             r-compositions
-                             r-brms
-                             r-bayestestr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://florale.github.io/multilevelcoda/")
-    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
+    (propagated-inputs (list r-tidyr
+                             r-posterior
+                             r-parallelly
+                             r-nlme
+                             r-mcmcpack
+                             r-matrixcalc
+                             r-future
+                             r-furrr
+                             r-brms))
+    (home-page "https://cran.r-project.org/package=multilevelmediation")
+    (synopsis "Utility Functions for Multilevel Mediation Analysis")
     (description
-     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
-framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
-at between and within-person levels, fit Bayesian multilevel models for
-compositional predictors and outcomes, and run post-hoc analyses such as
-isotemporal substitution models.")
-    (license license:gpl3+)))
+     "The ultimate goal is to support 2-2-1, 2-1-1, and 1-1-1 models for multilevel
+mediation, the option of a moderating variable for either the a, b, or both
+paths, and covariates.  Currently the 1-1-1 model is supported and several
+options of random effects; the initial code for bootstrapping was evaluated in
+simulations by Falk, Vogel, Hammami, and @code{MioÄeviÄ} (2024)
+<doi:10.3758/s13428-023-02079-4>.  Support for Bayesian estimation using brms
+comprises ongoing work.  Currently only continuous mediators and outcomes are
+supported.  Factors for any predictors must be numerically represented.")
+    (license license:gpl3)))
 
 (define-public r-multilevel
   (package
@@ -6948,13 +6948,13 @@ information for the same.")
 (define-public r-msoutcomes
   (package
     (name "r-msoutcomes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSoutcomes" version))
        (sha256
-        (base32 "1xdfk55rvnyi0w52m3yzl05w9isil2xxln8w15009m8l6w3imgas"))))
+        (base32 "037kpsi24anid9brf9s4yrknyxi5c9xyxnckvh2f5m1wxbl7bmlj"))))
     (properties `((upstream-name . "MSoutcomes")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -6964,9 +6964,11 @@ information for the same.")
      "Enable operationalized evaluation of disease outcomes in multiple sclerosis.
 âMSoutcomesâ requires longitudinally recorded clinical data structured in
 long format.  The package is based on the research developed at Clinical
-Outcomes Research unit (CORe), University of Melbourne.  Lorscheider et al.
-(2016) <doi:10.1093/brain/aww173>.  Kalincik et al. (2015)
-<doi:10.1093/brain/awv258>.")
+Outcomes Research unit (CORe), University of Melbourne and Neuroimmunology
+Centre, Royal Melbourne Hospital.  Kalincik et al. (2015)
+<doi:10.1093/brain/awv258>.  Lorscheider et al. (2016)
+<doi:10.1093/brain/aww173>.  Sharmin et al. (2022) <doi:10.1111/ene.15406>.
+Dzau et al. (2023) <doi:10.1136/jnnp-2023-331748>.")
     (license license:expat)))
 
 (define-public r-msos
@@ -13461,6 +13463,44 @@ regression, used in \"Statistical Inference via Data Science: A @code{ModernDive
 into R and the Tidyverse\" available at <https://moderndive.com/>.")
     (license license:gpl3)))
 
+(define-public r-moderate-mediation
+  (package
+    (name "r-moderate-mediation")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moderate.mediation" version))
+       (sha256
+        (base32 "1rzn9s9zxwwwamgjrr925q59h3pywvsl4k0wahm1b5m9cii0g1bl"))))
+    (properties `((upstream-name . "moderate.mediation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-reshape2
+                             r-mvtnorm
+                             r-ggplot2
+                             r-foreach
+                             r-earth
+                             r-dosnow
+                             r-distr
+                             r-cowplot))
+    (home-page "https://cran.r-project.org/package=moderate.mediation")
+    (synopsis "Causal Moderated Mediation Analysis")
+    (description
+     "Causal moderated mediation analysis using the methods proposed by Qin and Wang
+(2023) <doi:10.3758/s13428-023-02095-4>.  Causal moderated mediation analysis is
+crucial for investigating how, for whom, and where a treatment is effective by
+assessing the heterogeneity of mediation mechanism across individuals and
+contexts.  This package enables researchers to estimate and test the conditional
+and moderated mediation effects, assess their sensitivity to unmeasured
+pre-treatment confounding, and visualize the results.  The package is built
+based on the quasi-Bayesian Monte Carlo method, because it has relatively better
+performance at small sample sizes, and its running speed is the fastest.  The
+package is applicable to a treatment of any scale, a binary or continuous
+mediator, a binary or continuous outcome, and one or more moderators of any
+scale.")
+    (license license:gpl2)))
+
 (define-public r-moder
   (package
     (name "r-moder")
@@ -17010,47 +17050,6 @@ and prediction are supported for packages terra', raster and stars'.")
 steps of a machine learning workflow.  It uses the functionalities of the mlr3
 framework.")
     (license license:bsd-2)))
-
-(define-public r-mlr3resampling
-  (package
-    (name "r-mlr3resampling")
-    (version "2024.1.23")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlr3resampling" version))
-       (sha256
-        (base32 "0n9y0xlahksn7cpgdssj17xv17n51q4lbldw9xpkg4hkl3m3gv7k"))))
-    (properties `((upstream-name . "mlr3resampling")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6
-                             r-paradox
-                             r-mlr3misc
-                             r-mlr3
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tdhock/mlr3resampling")
-    (synopsis "Resampling Algorithms for 'mlr3' Framework")
-    (description
-     "This package provides a supervised learning algorithm inputs a train set, and
-outputs a prediction function, which can be used on a test set.  If each data
-point belongs to a group (such as geographic region, year, etc), then how do we
-know if it is possible to train on one group, and predict accurately on another
-group? Cross-validation can be used to determine the extent to which this is
-possible, by first assigning fold IDs from 1 to K to all data (possibly using
-stratification, usually by group and label).  Then we loop over test sets
-(group/fold combinations), train sets (same group, other groups, all groups),
-and compute test/prediction accuracy for each combination.  Comparing
-test/prediction accuracy between same and other, we can determine the extent to
-which it is possible (perfect if same/other have similar test accuracy for each
-group; other is usually somewhat less accurate than same; other can be just as
-bad as featureless baseline when the groups have different patterns).  For more
-information, <https://tdhock.github.io/blog/2023/R-gen-new-subsets/> describes
-the method in depth.  How many train samples are required to get accurate
-predictions on a test set? Cross-validation can be used to answer this question,
-with variable size train sets.")
-    (license license:gpl3)))
 
 (define-public r-mlr3oml
   (package
@@ -22472,13 +22471,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "00i3bga195x28xfgm7pilf2j0vy65crh0yy12jiwvmxrx7j7qsfa"))))
+        (base32 "01jcj0hx3iab06wdb17ngjdx4npdz64jjngm1d9vxixl4gipr30k"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -29512,6 +29511,37 @@ community by interacting with the Metaculus API, currently located at
 enabling programming activities and functionality of other packages within the
 clinical programming workflow.")
     (license license:expat)))
+
+(define-public r-metaconvert
+  (package
+    (name "r-metaconvert")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaConvert" version))
+       (sha256
+        (base32 "0akn9y8h2f7fnxi9sbvnhqzvvnysr4q9rssj4gysnj9b9pqb7gra"))))
+    (properties `((upstream-name . "metaConvert")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rio
+                             r-numderiv
+                             r-mvtnorm
+                             r-metafor
+                             r-estimraw
+                             r-comparedf))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=metaConvert")
+    (synopsis
+     "An Automatic Suite for Estimation of Various Effect Size Measures")
+    (description
+     "Automatically estimate 11 effect size measures from a well-formatted dataset.
+Various other functions can help, for example, removing dependency between
+several effect sizes, or identifying differences between two datasets.  This
+package is mainly designed to assist in conducting a systematic review with a
+meta-analysis but can be useful to any researcher interested in estimating an
+effect size.")
+    (license license:gpl3+)))
 
 (define-public r-metaconfoundr
   (package

@@ -18904,13 +18904,13 @@ computing to reduce overall processing time.")
 (define-public r-fastjm
   (package
     (name "r-fastjm")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastJM" version))
        (sha256
-        (base32 "0ckk8705d37mbym09nl2vckkgg9zc9x7izaw7zhh0dcb7fyqxr3w"))))
+        (base32 "0h5kywvbwxd13ghgvfgx1sr7k4ywgk4c51xfpr8dvqig9nnvrav8"))))
     (properties `((upstream-name . "FastJM")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc

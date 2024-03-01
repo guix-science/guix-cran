@@ -17119,13 +17119,13 @@ sensitivity analyses under dependent censoring (Yeh et al 2023)
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "6.6")
+    (version "6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "17mhk1k6v7y3icyd5b0xlmmi98fs8hz4049n2wiabsn8si59z99k"))))
+        (base32 "0f9fq9b38jgylzbgszalnwmw5l1a5yviin22am848gicy98sz22x"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -21769,6 +21769,30 @@ files are included in the package.  See Reich et al. (2009)
 <doi:10.1111/j.1541-0420.2011.01709.x>, and Lessler et al. (2009)
 <doi:10.1016/S1473-3099(09)70069-6>.")
     (license license:gpl2+)))
+
+(define-public r-coap
+  (package
+    (name "r-coap")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COAP" version))
+       (sha256
+        (base32 "0zk8y8nnn33wby70hsc3qn1z58rh1bmwhc3a5md9xf1ivirqlxmg"))))
+    (properties `((upstream-name . "COAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feiyoung/COAP")
+    (synopsis
+     "High-Dimensional Covariate-Augmented Overdispersed Poisson Factor Model")
+    (description
+     "This package provides a covariate-augmented overdispersed Poisson factor model
+is proposed to jointly perform a high-dimensional Poisson factor analysis and
+estimate a large coefficient matrix for overdispersed count data.  More details
+can be referred to Liu et al. (2024) <doi:10.48550/@code{arXiv.2402.15071>}.")
+    (license license:gpl3)))
 
 (define-public r-coalitions
   (package
@@ -29410,6 +29434,28 @@ Entab <https://github.com/bovee/entab>, and @code{ThermoRawFileParser}
 the cards can be generated in three languages (English, Catalan and Spanish).
 The collection started in 2009.")
     (license license:gpl2)))
+
+(define-public r-chouca
+  (package
+    (name "r-chouca")
+    (version "0.0.999")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chouca" version))
+       (sha256
+        (base32 "0rzrip6wdhfg95nafrkq81hmldx4ky8rb227hc9nz2ixxy5p2srz"))))
+    (properties `((upstream-name . "chouca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=chouca")
+    (synopsis "Stochastic Cellular Automaton Engine")
+    (description
+     "An engine for stochastic cellular automata.  It provides a high-level interface
+to declare a model, which can then be simulated by various backends (Genin et
+al. (2023) <doi:10.1101/2023.11.08.566206>).")
+    (license license:gpl3+)))
 
 (define-public r-choroplethrmaps
   (package

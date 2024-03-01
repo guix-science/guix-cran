@@ -10761,6 +10761,30 @@ topographer, to compute the irregularity indices mentioned before, and to
 display summary plots that are easy to interpret for a clinician.")
     (license license:gpl3)))
 
+(define-public r-roxytypes
+  (package
+    (name "r-roxytypes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roxytypes" version))
+       (sha256
+        (base32 "02i2ki8s2dfnr3qdvgmklgsh0aidrymi46gp2x1xx2xfs6bi4mrv"))))
+    (properties `((upstream-name . "roxytypes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roxygen2 r-glue r-cli))
+    (home-page "https://github.com/openpharma/roxytypes")
+    (synopsis "Typed Parameter Tags for Integration with 'roxygen2'")
+    (description
+     "This package provides typed parameter documentation tags for integration with
+roxygen2'.  Typed parameter tags provide a consistent interface for annotating
+expected types for parameters and returned values.  Tools for converting from
+existing styles are also provided to easily adapt projects which implement typed
+documentation by convention rather than tag.  Use the default format or provide
+your own.")
+    (license license:expat)))
+
 (define-public r-roxytest
   (package
     (name "r-roxytest")
@@ -16757,6 +16781,47 @@ level are nonlinearly correlated.  The hyperparameters in the model are
 estimated by maximum likelihood estimation.")
     (license license:expat)))
 
+(define-public r-rnacrosslinkoo
+  (package
+    (name "r-rnacrosslinkoo")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rnaCrosslinkOO" version))
+       (sha256
+        (base32 "146595ib0730ppx4dxfq7vmvxwgf1vs1w3vkhb8ylrc8id3lki4z"))))
+    (properties `((upstream-name . "rnaCrosslinkOO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-topdom
+                             r-tidyverse
+                             r-seqinr
+                             r-s4vectors
+                             r-rrna
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-r4rna
+                             r-patchwork
+                             r-mixtools
+                             r-mass
+                             r-iranges
+                             r-igraph
+                             r-heatmap3
+                             r-ggrepel
+                             r-ggplot2
+                             r-genomicranges
+                             r-foreach
+                             r-doparallel
+                             r-classdiscovery))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rnaCrosslinkOO")
+    (synopsis "Analysis of RNA Crosslinking Data")
+    (description
+     "Analysis of RNA crosslinking data for RNA structure prediction.  The package is
+suitable for the analysis of RNA structure cross-linking data and chemical
+probing data.")
+    (license license:gpl3)))
+
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
@@ -20762,46 +20827,6 @@ others discovered during ongoing testing and code simplification.")
     (description
      "Jade is a high performance template engine heavily influenced by Haml and
 implemented with @code{JavaScript} for node and browsers.")
-    (license license:expat)))
-
-(define-public r-rivretrieve
-  (package
-    (name "r-rivretrieve")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RivRetrieve" version))
-       (sha256
-        (base32 "12h7d5xgwsh4798khh6sa9a6ysqxpwy6ygymwdls4pg45g3c6621"))))
-    (properties `((upstream-name . "RivRetrieve")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tidyhydat
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rselenium
-                             r-rlist
-                             r-rlang
-                             r-readr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-devtools
-                             r-dataretrieval
-                             r-bbmisc))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Ryan-Riggs/RivRetrieve")
-    (synopsis "Retrieve Global River Gauge Data")
-    (description
-     "This package provides access to global river gauge data from a variety of
-national-level river agencies.  The package interfaces with the national-level
-agency websites to provide access to river gauge locations, river discharge, and
-river stage.  Currently, the package is available for the following countries:
-Australia, Brazil, Canada, Chile, France, Japan, South Africa, the United
-Kingdom, and the United States.")
     (license license:expat)))
 
 (define-public r-rivr
@@ -37916,13 +37941,13 @@ needed.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "04r66z6xy6m9rsf0vj3yy0aijrgkcnl2r8nznc5fqwvcnx0lgx46"))))
+        (base32 "17w4jz6rngwm3kqwz0v547s43xvjlxc86y9yy4hnc7blkqcp4w2g"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (inputs (list pcre2 pcre2))
@@ -48249,13 +48274,13 @@ interest for working with data.table objects are included.")
 (define-public r-r2dii-plot
   (package
     (name "r-r2dii-plot")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.plot" version))
        (sha256
-        (base32 "090nb09dypsh13mridxiib32vm3fc49r1237rws5wzj4w3icyy6n"))))
+        (base32 "0gfqhqkp9dnzjipgzf665am9mzyv5p7l13ahcw44bpmya4zrsifg"))))
     (properties `((upstream-name . "r2dii.plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -48263,11 +48288,9 @@ interest for working with data.table objects are included.")
                              r-rlang
                              r-r2dii-data
                              r-magrittr
-                             r-lifecycle
                              r-glue
                              r-ggrepel
                              r-ggplot2
-                             r-forcats
                              r-dplyr))
     (home-page "https://github.com/RMI-PACTA/r2dii.plot")
     (synopsis

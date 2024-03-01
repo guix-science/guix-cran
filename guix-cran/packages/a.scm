@@ -3311,30 +3311,6 @@ knowledge of the temporal language to be able to efficiently construct a query.
 More information available at <https://shahlab.stanford.edu/start>.")
     (license license:gpl3)))
 
-(define-public r-atime
-  (package
-    (name "r-atime")
-    (version "2024.1.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "atime" version))
-       (sha256
-        (base32 "0fgqdvxhmdhpm5xcwgxqv13la316gvvk7anxd4607601lvximj4s"))))
-    (properties `((upstream-name . "atime")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tdhock/atime")
-    (synopsis "Asymptotic Timing")
-    (description
-     "Computing and visualizing comparative asymptotic timings of different algorithms
-and code versions.  Also includes functionality for comparing empirical timings
-with expected references such as linear or quadratic,
-<https://en.wikipedia.org/wiki/Asymptotic_computational_complexity> Also
-includes functionality for measuring asymptotic memory and other quantities.")
-    (license license:gpl3)))
-
 (define-public r-atemevs
   (package
     (name "r-atemevs")
@@ -5253,13 +5229,13 @@ Dirk F. Moore, Springer, 2016, ISBN: 978-3-319-31243-9,
 (define-public r-arxiv
   (package
     (name "r-arxiv")
-    (version "0.8")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aRxiv" version))
        (sha256
-        (base32 "09m8wil95saf2n68bpx4vdp7a50kvi4kaapsgnxyli8p9f9nnj5c"))))
+        (base32 "0fm22lcifq2lmbv2il0jkkp7b426924vwph7yrcqprvlvb3g33id"))))
     (properties `((upstream-name . "aRxiv")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-httr))
@@ -9760,6 +9736,28 @@ mixed effect models (GLMM).  aods3 is an S3 re-implementation of the deprecated
 S4 package aod.")
     (license license:gpl2+)))
 
+(define-public r-ao
+  (package
+    (name "r-ao")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ao" version))
+       (sha256
+        (base32 "0jh5kw7z13bx6mbsnsc5ac1mscazril7m357lc25nlb2s0nvxisd"))))
+    (properties `((upstream-name . "ao")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-optimizer r-oeli r-cli r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://loelschlaeger.de/ao/")
+    (synopsis "Alternating Optimization")
+    (description
+     "Alternating optimization of (high-dimensional) functions is an iterative
+procedure for optimizing jointly over all parameters by alternately optimizing
+parameter subsets.")
+    (license license:gpl3)))
+
 (define-public r-anylib
   (package
     (name "r-anylib")
@@ -12137,17 +12135,17 @@ instruments simultaneously.")
 (define-public r-amigaffh
   (package
     (name "r-amigaffh")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AmigaFFH" version))
        (sha256
-        (base32 "0if2dzmpf9xyqabi7calfkzj1vfv7hafczbhswdz03zbl5zi9zba"))))
+        (base32 "09227l3sq4bcph9x2w2qqh9zy2xrjr0makjyfx2vlp76r2xw394h"))))
     (properties `((upstream-name . "AmigaFFH")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tuner))
-    (home-page "https://cran.r-project.org/package=AmigaFFH")
+    (home-page "https://pepijn-devries.github.io/AmigaFFH/")
     (synopsis "Commodore Amiga File Format Handler")
     (description
      "Modern software often poorly support older file formats.  This package intends
@@ -16697,6 +16695,47 @@ table from a gamlss object, to calculate the standard deviation scores and its
 inverse, and to superpose two wormplots from different models.  The package
 contains a some varieties of reference tables, especially for The Netherlands.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-agcounts
+  (package
+    (name "r-agcounts")
+    (version "0.6.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "agcounts" version))
+       (sha256
+        (base32 "1q993a7m639zn5cl8lv300qbqgh8wycqckaynvv9lc6a6j60ygjv"))))
+    (properties `((upstream-name . "agcounts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-stringr
+                             r-shiny
+                             r-rsqlite
+                             r-reticulate
+                             r-read-gt3x
+                             r-reactable
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-magrittr
+                             r-lubridate
+                             r-gsignal
+                             r-ggplot2
+                             r-ggir
+                             r-dplyr
+                             r-dbi
+                             r-data-table
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=agcounts")
+    (synopsis "Calculate 'ActiGraph' Counts from Accelerometer Data")
+    (description
+     "Calculate @code{ActiGraph} counts from the X, Y, and Z axes of a triaxial
+accelerometer.  This work was inspired by Neishabouri et al.  who published the
+article \"Quantification of Acceleration as Activity Counts in @code{ActiGraph}
+Wearables\" on February 24, 2022.  The link to the article
+(<https://pubmed.ncbi.nlm.nih.gov/35831446>) and python implementation of this
+code (<https://github.com/actigraph/agcounts>).")
+    (license license:expat)))
 
 (define-public r-ag5tools
   (package

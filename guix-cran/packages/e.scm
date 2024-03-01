@@ -9877,18 +9877,20 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "0vyzgansl9gkydadddhi5jayyakr11d0cjxjplfnx5jrwxds92l1"))))
+        (base32 "03zalwb5jjp3dv45xlig6wy37l99kfrlcmj3xw2zk3jxgylwxifk"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-usethis
                              r-tibble
                              r-readr
+                             r-rappdirs
                              r-purrr
                              r-openssl
                              r-mmwrweek

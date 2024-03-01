@@ -2712,13 +2712,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpcde" version))
        (sha256
-        (base32 "0jnwh677icjx781c330qmm8bz95470rvzggi5rygf0kvw9zr1biv"))))
+        (base32 "1i20ipc96anm40j10j9098sy7jhz7zcjslr12va2i47fhw1mfy88"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -2735,7 +2735,7 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
     (description
      "This package provides tools for estimation and inference of conditional
 densities, derivatives and functions.  This is the companion software for
-Cattaneo, Chandak, Jansson and Ma (2022).")
+Cattaneo, Chandak, Jansson and Ma (2024).")
     (license license:gpl2)))
 
 (define-public r-lpc
@@ -9469,6 +9469,32 @@ appropriate alpha level based on a desired life expectancy at birth, produce a
 model mortality pattern based on family and level as well as plot the results.")
     (license license:gpl2+)))
 
+(define-public r-lifertable
+  (package
+    (name "r-lifertable")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Lifertable" version))
+       (sha256
+        (base32 "0k7mgzhz92mrkhw8p87c4qy84vm3rjj8asm753xxw0h6z7fgvy3c"))))
+    (properties `((upstream-name . "Lifertable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-ggplot2))
+    (home-page "https://cran.r-project.org/package=Lifertable")
+    (synopsis "Life and Fertility Tables Specially for Insects")
+    (description
+     "Life and Fertility Tables are appropriate to study the dynamics of arthropods
+populations.  This package provides utilities for constructing Life Tables and
+Fertility Tables, related demographic parameters, and some simple graphs of
+interest.  It also offers functions to transform the obtained data into a known
+format for better manipulation.  This document is based on the article by Maia,
+Luiz, and Campanhola \"Statistical Inference on Associated Fertility Life Table
+Parameters Using Jackknife Technique Computational Aspects\" (April 2000, Journal
+of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
+    (license license:expat)))
+
 (define-public r-lifer
   (package
     (name "r-lifer")
@@ -10453,18 +10479,18 @@ integrals and fuzzy transform.")
 (define-public r-lfe
   (package
     (name "r-lfe")
-    (version "2.9-0")
+    (version "3.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfe" version))
        (sha256
-        (base32 "0g12097a6vyv5vx51vfp04nkfzlx80j6ksvpfjv6b36r9bbrr6kw"))))
+        (base32 "16838gqglnc2l5hnyv46fpikh6h0l5yy59rmbisxpl1j571hab9l"))))
     (properties `((upstream-name . "lfe")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-sandwich r-matrix r-formula))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/MatthieuStigler/lfe")
+    (home-page "https://github.com/r-econometrics/lfe")
     (synopsis "Linear Group Fixed Effects")
     (description
      "Transforms away factors with many levels prior to doing an OLS. Useful for
@@ -10473,10 +10499,9 @@ linear models which uses factors with many levels as pure control variables.
 See Gaure (2013) <doi:10.1016/j.csda.2013.03.024> Includes support for
 instrumental variables, conditional F statistics for weak instruments, robust
 and multi-way clustered standard errors, as well as limited mobility bias
-correction (Gaure 2014 <doi:10.1002/sta4.68>).  WARNING: This package is NOT
-under active development anymore, no further improvements are to be expected,
-and the package is at risk of being removed from CRAN.")
-    (license license:artistic2.0)))
+correction (Gaure 2014 <doi:10.1002/sta4.68>).  Since version 3.0, it provides
+dedicated functions to estimate Poisson models.")
+    (license license:expat)))
 
 (define-public r-lfdrempiricalbayes
   (package

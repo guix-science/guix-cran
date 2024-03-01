@@ -10,7 +10,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages compression)
@@ -1088,6 +1087,32 @@ tables below.  svyjskm() provides plot for weighted Kaplan-Meier estimator.")
     (description
      "Allow to run jshint on @code{JavaScript} files with a R command or a RStudio
 addin.  The report appears in the RStudio viewer pane.")
+    (license license:gpl3)))
+
+(define-public r-jsdne
+  (package
+    (name "r-jsdne")
+    (version "4.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JSDNE" version))
+       (sha256
+        (base32 "1607icsdscn1ryqd2r81s2gh46ddy72grcxzz9vwzmc32msbd1sn"))))
+    (properties `((upstream-name . "JSDNE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvcg r-nnet r-molar r-mass r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=JSDNE")
+    (synopsis "Estimating the Age using Auricular Surface by DNE")
+    (description
+     "The age is estimated by calculating the Dirichlet Normal Energy (DNE) on the
+whole auricular surface and the apex of the auricular surface.  It involves
+three estimation methods: principal component discriminant analysis (PCQDA),
+principal component regression analysis (PCR), and principal component logistic
+regression analysis (PCLR) methods.  The package is created with the data from
+the Louis Lopes Collection in Lisbon, the 21st Century Identified Human Remains
+Collection in Coimbra, and the CAL Milano Cemetery Skeletal Collection in Milan.")
     (license license:gpl3)))
 
 (define-public r-jsdm
@@ -2769,48 +2794,6 @@ package allows the creation and manipulation of full, sparse and symmetric
 matrices of any standard data type.")
     (license license:gpl2+)))
 
-(define-public r-jmastats
-  (package
-    (name "r-jmastats")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jmastats" version))
-       (sha256
-        (base32 "1x9x9wpmjjaxq4rk9m6mlkydpmsxc9y68cqnp4viajghhjmabvqz"))))
-    (properties `((upstream-name . "jmastats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-units
-                             r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-purrr
-                             r-lubridate
-                             r-lifecycle
-                             r-ggplot2
-                             r-forcats
-                             r-dplyr
-                             r-crayon
-                             r-cli))
-    (home-page "https://github.com/uribo/jmastats")
-    (synopsis "Download Weather Data from Japan Meteorological Agency Website")
-    (description
-     "This package provides features that allow users to download weather data
-published by the Japan Meteorological Agency (JMA) website
-(<https://www.jma.go.jp/jma/index.html>).  The data includes information dating
-back to 1976 and aligns with the categories available on the website.
-Additionally, users can process the best track data of typhoons and easily
-handle earthquake record files.")
-    (license license:expat)))
-
 (define-public r-jm
   (package
     (name "r-jm")
@@ -2855,37 +2838,6 @@ curvilinear) and ordinal outcomes while proportional hazard models are used for
 the survival part.  We propose a frequentist approach using maximum likelihood
 estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
     (license license:gpl2+)))
-
-(define-public r-jlmerclusterperm
-  (package
-    (name "r-jlmerclusterperm")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "jlmerclusterperm" version))
-       (sha256
-        (base32 "0rpjjj2qrr9j2vh4v8b1shxcm5h0vi0mrfrvbb7nni19hbqvblzj"))))
-    (properties `((upstream-name . "jlmerclusterperm")))
-    (build-system r-build-system)
-    (inputs (list julia))
-    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli
-                             r-backports))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yjunechoe/jlmerclusterperm")
-    (synopsis
-     "Cluster-Based Permutation Analysis for Densely Sampled Time Data")
-    (description
-     "An implementation of fast cluster-based permutation analysis (CPA) for
-densely-sampled time data developed in Maris & Oostenveld, 2007
-<doi:10.1016/j.jneumeth.2007.03.024>.  Supports (generalized, mixed-effects)
-regression models for the calculation of timewise statistics.  Provides both a
-wholesale and a piecemeal interface to the CPA procedure with an emphasis on
-interpretability and diagnostics.  Integrates Julia libraries
-@code{MixedModels.jl} and GLM.jl for performance improvements, with additional
-functionalities for interfacing with Julia from R powered by the
-@code{JuliaConnectoR} package.")
-    (license license:expat)))
 
 (define-public r-jlctree
   (package

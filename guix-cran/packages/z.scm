@@ -951,16 +951,17 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
 (define-public r-zdeskr
   (package
     (name "r-zdeskr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zdeskR" version))
        (sha256
-        (base32 "0a22yhsvzc0z4xbj7cfy33gf73zi1a8ryp0x4na3kximwiiw6v09"))))
+        (base32 "15kb85xmn133yby4p03afkib3wrv5baswsdalj8sigyv452id7k6"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-purrr
                              r-plyr
                              r-magrittr

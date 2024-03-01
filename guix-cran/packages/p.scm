@@ -1349,13 +1349,13 @@ model data fitting.")
 (define-public r-pump
   (package
     (name "r-pump")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PUMP" version))
        (sha256
-        (base32 "0q1yx46vfpdm5n5ci49aqfiiccv9g4dw6f2a8sn2m0b06r7kag0h"))))
+        (base32 "1s1aqma0p32y9db3xf9yrfgg12i3skdgzcvw3kg9s5z1msx4gax7"))))
     (properties `((upstream-name . "PUMP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1383,7 +1383,7 @@ requirements.  The context is multilevel randomized experiments with multiple
 outcomes.  The estimation takes into account the use of multiple testing
 procedures.  Development of this package was supported by a grant from the
 Institute of Education Sciences (R305D170030).  For a full package description,
-including a detailed technical appendix, see <@code{arXiv:2112.15273>}.")
+including a detailed technical appendix, see <doi:10.18637/jss.v108.i06>.")
     (license license:gpl3)))
 
 (define-public r-pumilior
@@ -9983,13 +9983,13 @@ Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
 (define-public r-predictmeans
   (package
     (name "r-predictmeans")
-    (version "1.0.9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictmeans" version))
        (sha256
-        (base32 "0dfmdwqlxzsksidynw0lqg88i9jwvcfh5b3kn296isx6a3bg98cx"))))
+        (base32 "1010s79c55vndv3v4my0xrmdxvgpy7vhp46j1anxvr3xzgx1279q"))))
     (properties `((upstream-name . "predictmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -10014,7 +10014,8 @@ Net Monetary Benefit.  Details can be viewed in Parsons et al. (2023)
      "Providing functions to diagnose and make inferences from various linear models,
 such as those obtained from aov', lm', glm', gls', lme', lmer', @code{glmmTMB}
 and semireg'.  Inferences include predicted means and standard errors,
-contrasts, multiple comparisons, permutation tests and graphs.")
+contrasts, multiple comparisons, permutation tests, adjusted R-square and
+graphs.")
     (license license:gpl2+)))
 
 (define-public r-predictme
@@ -13418,13 +13419,13 @@ forecast package, Hyndman RJ, Khandakar Y (2008) <doi:10.18637/jss.v027.i03>.")
 (define-public r-port4me
   (package
     (name "r-port4me")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "port4me" version))
        (sha256
-        (base32 "1xrwp0vy4317nxinsy6x8xh6l8pri27dj9s503fysh5p67y78q8f"))))
+        (base32 "1rvp9aj0m2dbkw03xl8sa4qvl20n5smik8dbq5cj0254rwcvmahd"))))
     (properties `((upstream-name . "port4me")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -35254,6 +35255,27 @@ scenarios implemented only here, can allow for robust and easy simulations for
 novel situations.  Environmental data modified from that in RPANDA': Morlon H.
 et al (2016) <doi:10.1111/2041-210X.12526>.")
     (license license:gpl3)))
+
+(define-public r-paleobiodb
+  (package
+    (name "r-paleobiodb")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paleobioDB" version))
+       (sha256
+        (base32 "146p6pn3y6ca9vrdbkg3gyqfpb9drvbkkzq50y3qnzwiz15hmxq5"))))
+    (properties `((upstream-name . "paleobioDB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rjson r-maps r-gtools r-curl))
+    (home-page "https://docs.ropensci.org/paleobioDB/")
+    (synopsis "Download and Process Data from the Paleobiology Database")
+    (description
+     "Includes functions to wrap most endpoints of the @code{PaleobioDB} API and
+functions to visualize and process the fossil data.  The API documentation for
+the Paleobiology Database can be found at <https://paleobiodb.org/data1.2/>.")
+    (license license:gpl2)))
 
 (define-public r-pald
   (package

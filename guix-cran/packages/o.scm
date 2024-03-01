@@ -4715,6 +4715,28 @@ optimal hedging and Monte Carlo method, from Chapter 3 of Statistical Methods
 for Financial Engineering', by Bruno Remillard, CRC Press, (2013).")
     (license license:gpl2+)))
 
+(define-public r-optgs
+  (package
+    (name "r-optgs")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptGS" version))
+       (sha256
+        (base32 "0rpnn38w3a15agv0hkr77w6jpdb75ahnxq487vy35yxv9mvh75nn"))))
+    (properties `((upstream-name . "OptGS")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=OptGS")
+    (synopsis "Near-Optimal Group-Sequential Designs for Continuous Outcomes")
+    (description
+     "Optimal group-sequential designs minimise some function of the expected and
+maximum sample size whilst controlling the type I error rate and power at a
+specified level. @code{OptGS} provides functions to quickly search for
+near-optimal group-sequential designs for normally distributed outcomes.  The
+methods used are described in Wason, JMS (2015) <doi:10.18637/jss.v066.i02>.")
+    (license license:gpl2)))
+
 (define-public r-optextras
   (package
     (name "r-optextras")
@@ -7353,13 +7375,13 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 (define-public r-one4all
   (package
     (name "r-one4all")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "One4All" version))
        (sha256
-        (base32 "1lcdi2sfpl7yl1kl8lr84mf2i4150ysszw3pgnhz2lr1z1s4xpy5"))))
+        (base32 "1f0gymlpdyz9dm71mj99cyp58c1nwxr8d4g9c976mf5mimz2rhyn"))))
     (properties `((upstream-name . "One4All")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate

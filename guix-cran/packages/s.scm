@@ -2366,13 +2366,13 @@ bookdown or quarto'.  Supporting functions for using Sweave and Knitr with
 (define-public r-svsocket
   (package
     (name "r-svsocket")
-    (version "1.1.0")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svSocket" version))
        (sha256
-        (base32 "0wqy5y8rgacvj8va4cqa55c3bf2c80ksba32nckmkyhmqpdvznyg"))))
+        (base32 "1ir9fpw1v5n4ygyydclh2g0bijzd7lm7nl8nfg7d0f2bhp3p18s7"))))
     (properties `((upstream-name . "svSocket")))
     (build-system r-build-system)
     (propagated-inputs (list r-svmisc))
@@ -5006,13 +5006,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.2.2")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "18h1qkv0viski9xqlfbl4wyaj574jxqv5qg3k3wilpfpflvpklqy"))))
+        (base32 "1wmxn0qxa3vhqy0h6nzj0l0cvmiqm1rp17vgqijydmlnq8sgx7in"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20834,6 +20834,35 @@ for the SPECS FP7 project.  The emphasis is on comparative verification of
 ensemble forecasts of weather and climate.")
     (license license:gpl2+)))
 
+(define-public r-specs
+  (package
+    (name "r-specs")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "specs" version))
+       (sha256
+        (base32 "0x1s783b25x37f2a74fh0g2jc9ypbrfkm42j8yx67hmxlggsch8d"))))
+    (properties `((upstream-name . "specs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (home-page "https://cran.r-project.org/package=specs")
+    (synopsis "Single-Equation Penalized Error-Correction Selector (SPECS)")
+    (description
+     "Implementation of SPECS, your favourite Single-Equation Penalized
+Error-Correction Selector developed in Smeekes and Wijler (2021)
+<doi:10.1016/j.jeconom.2020.07.021>.  SPECS provides a fully automated
+estimation procedure for large and potentially (co)integrated datasets.  The
+dataset in levels is converted to a conditional error-correction model, either
+by the user or by means of the functions included in this package, and various
+specialised forms of penalized regression can be applied to the model.
+Automated options for initializing and selecting a sequence of penalties, as
+well as the construction of penalty weights via an initial estimator, are
+available.  Moreover, the user may choose from a number of pre-specified
+deterministic configurations to further simplify the model building process.")
+    (license license:gpl2+)))
+
 (define-public r-specr
   (package
     (name "r-specr")
@@ -31189,6 +31218,28 @@ created directly from the R console, and viewed in the RStudio internal viewer,
 in Shiny apps and R Markdown documents.")
     (license license:expat)))
 
+(define-public r-slicedlhd
+  (package
+    (name "r-slicedlhd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SlicedLHD" version))
+       (sha256
+        (base32 "17jv8ky2qn15l2ppx5xfnwzf15bhwd31s4ci8r05wlyvnmqqgbfh"))))
+    (properties `((upstream-name . "SlicedLHD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SlicedLHD")
+    (synopsis "Sliced Latin Hypercube Designs")
+    (description
+     "This package provides a facility to generate sliced (orthogonal) Latin hypercube
+designs with four and five slices.  For details about sliced and orthogonal
+Latin hypercube designs, see Yang, J. F., Lin, C. D., Qian, P. Z., and Lin, D.
+K. (2013). \"Construction of sliced orthogonal Latin hypercube designs\".
+Statistica Sinica, 1117-1130, <doi:10.5705/ss.2012.037>.")
+    (license license:gpl2+)))
+
 (define-public r-slhd
   (package
     (name "r-slhd")
@@ -33682,6 +33733,36 @@ analyzing microdata from household surveys in Integrated System of Household
 Surveys - SIPD conducted by Brazilian Institute of Geography and Statistics -
 IBGE. More information can be obtained from the official website
 <https://www.ibge.gov.br/>.")
+    (license license:gpl3)))
+
+(define-public r-sinrelef-ld
+  (package
+    (name "r-sinrelef-ld")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SINRELEF.LD" version))
+       (sha256
+        (base32 "11pjn5b4s4sv18313zvlpszlr6503p0aysrl6lv28s1342ymgz4l"))))
+    (properties `((upstream-name . "SINRELEF.LD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SINRELEF.LD")
+    (synopsis
+     "Reliability and Relative Efficiency in Locally-Dependent Measures")
+    (description
+     "This package implements an approach aimed at assessing the accuracy and
+effectiveness of raw scores obtained in scales that contain locally dependent
+items.  The program uses as input the calibration (structural) item estimates
+obtained from fitting extended unidimensional factor-analytic solutions in which
+the existing local dependencies are included.  Measures of reliability (Omega)
+and information are proposed at three levels: (a) total score, (b)
+bivariate-doublet, and (c) item-by-item deletion, and are compared to those that
+would be obtained if all the items had been locally independent.  All the
+implemented procedures can be obtained from: (a) linear factor-analytic
+solutions in which the item scores are treated as approximately continuous, and
+(b) non-linear solutions in which the item scores are treated as
+ordered-categorical.")
     (license license:gpl3)))
 
 (define-public r-sinib
@@ -36269,13 +36350,13 @@ unknown but known to fall between two time points.")
 (define-public r-simhelpers
   (package
     (name "r-simhelpers")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simhelpers" version))
        (sha256
-        (base32 "0nqccj77jx2py0y2c8cs83mfyfyfyzamk4jdkcqaidjfm6npi01b"))))
+        (base32 "0awj430nmwgh2v19zy9sfkq06kjnbr7hp9mrnz4ziwlzm7bzv9wk"))))
     (properties `((upstream-name . "simhelpers")))
     (build-system r-build-system)
     (inputs (list))
@@ -47346,6 +47427,37 @@ illustrated by Pek and Wu (2018) <doi:10.1037/met0000163>, and supports the
 robust LBCI proposed by Falk (2018) <doi:10.1080/10705511.2017.1367254>.")
     (license license:gpl3)))
 
+(define-public r-semipar-depcens
+  (package
+    (name "r-semipar-depcens")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SemiPar.depCens" version))
+       (sha256
+        (base32 "08z73bw7qjns16zci0m0wq2i4f60v7xmcrsa9iy692xpijqp30lh"))))
+    (properties `((upstream-name . "SemiPar.depCens")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-pbivnorm r-foreach r-doparallel
+                             r-copula))
+    (home-page "https://github.com/Nago2020/SemiPar.depCens")
+    (synopsis
+     "Copula Based Cox Proportional Hazards Models for Dependent Censoring")
+    (description
+     "Copula based Cox proportional hazards models for survival data subject to
+dependent censoring.  This approach does not assume that the parameter defining
+the copula is known.  The dependency parameter is estimated with other finite
+model parameters by maximizing a Pseudo likelihood function.  The cumulative
+hazard function is estimated via estimating equations derived based on
+martingale ideas.  Available copula functions include Frank, Gumbel and Normal
+copulas.  Only Weibull and lognormal models are allowed for the censoring model,
+even though any parametric model that satisfies certain identifiability
+conditions could be used.  Implemented methods are described in the article
+\"Copula based Cox proportional hazards models for dependent censoring\" by Deresa
+and Van Keilegom (2023) <doi:10.1080/01621459.2022.2161387>.")
+    (license license:gpl3)))
+
 (define-public r-semipar
   (package
     (name "r-semipar")
@@ -49602,13 +49714,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.5")
+    (version "4.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1nwcq5psqk2n3f8cd6risx95gnh959wn175zyb04p8zf4h7xw7li"))))
+        (base32 "128ihlaf63q2mk4qkyd13lfna5isw8r83iz1lqrdv7q3gi7wl4w0"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

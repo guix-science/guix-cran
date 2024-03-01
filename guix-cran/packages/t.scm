@@ -15365,6 +15365,34 @@ diagnostics and construction of relevant quantities of interest about the
 variability of treatment effects.")
     (license license:expat)))
 
+(define-public r-tidyheatmaps
+  (package
+    (name "r-tidyheatmaps")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyheatmaps" version))
+       (sha256
+        (base32 "158vr8miwmg7i673vk0kpvr79k4ad4ivj8gy612ffqjsg31ws2dn"))))
+    (properties `((upstream-name . "tidyheatmaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-rcolorbrewer
+                             r-pheatmap
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jbengler/tidyheatmaps")
+    (synopsis "Heatmaps from Tidy Data")
+    (description
+     "The goal of tidyheatmaps is to simplify the generation of publication-ready
+heatmaps from tidy data.  By offering an interface to the powerful pheatmap
+package, it allows for the effortless creation of intricate heatmaps with
+minimal code.")
+    (license license:expat)))
+
 (define-public r-tidyheatmap
   (package
     (name "r-tidyheatmap")
