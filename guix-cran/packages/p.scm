@@ -813,13 +813,13 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
 (define-public r-pvda
   (package
     (name "r-pvda")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pvda" version))
        (sha256
-        (base32 "1jmm256jfr904ifg6ixwbzk2xavzi415m647fpc1dglp5cz106sl"))))
+        (base32 "0m7lw5wplwv3w7bwcflk6ijw83rv85zdch3flvcnx8slqxzaidrg"))))
     (properties `((upstream-name . "pvda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -842,10 +842,9 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
      "This package provides tools for performing disproportionality analysis using the
 information component, proportional reporting rate and the reporting odds ratio.
  The anticipated use is passing data to the da() function, which executes the
-disproportionality analysis.  See @code{NorÃ©n} G.N., Hopstadius J. and Bate A.
-(2011) <doi:10.1177/0962280211403604> and Montastruc J.-L., Sommet A., Bagheri
-H. and Lapeyre-Mestre, M. (2011) <doi:10.1111/j.1365-2125.2011.04037.x> for
-further details.")
+disproportionality analysis.  See @code{NorÃ©n} et al (2011)
+<doi:10.1177/0962280211403604> and Montastruc et al (2011)
+<doi:10.1111/j.1365-2125.2011.04037.x> for further details.")
     (license license:gpl3+)))
 
 (define-public r-pvcurveanalysis
@@ -16445,13 +16444,13 @@ in the neighborhood.")
 (define-public r-pointblank
   (package
     (name "r-pointblank")
-    (version "0.11.4")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pointblank" version))
        (sha256
-        (base32 "08ljvbwzykj48hnslw3haqn1ibs6fdfh40i5vypblzvwa32j7zvj"))))
+        (base32 "0ysd78ad00a08knw5lmd09rq7sr41p8grfq5f7f2xr487q67mzgk"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
     (arguments
@@ -16491,7 +16490,7 @@ in the neighborhood.")
                              r-blastula
                              r-base64enc))
     (native-inputs (list esbuild))
-    (home-page "https://rich-iannone.github.io/pointblank/")
+    (home-page "https://rstudio.github.io/pointblank/")
     (synopsis
      "Data Validation and Organization of Metadata for Local and Remote Tables")
     (description

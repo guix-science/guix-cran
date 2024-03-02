@@ -8108,6 +8108,35 @@ robust LOESS signal correction) algorithm is used for normalization.  Dunn et
 al. (2011) <doi:10.1038/nprot.2011.335>.")
     (license license:expat)))
 
+(define-public r-omicsqc
+  (package
+    (name "r-omicsqc")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmicsQC" version))
+       (sha256
+        (base32 "1hfdv3cv1ws03x93vah3alpv619dwq40sbl35b2nra3wsix8zcan"))))
+    (properties `((upstream-name . "OmicsQC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lsa r-fitdistrplus
+                             r-boutroslab-plotting-general))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OmicsQC")
+    (synopsis
+     "Nominating Quality Control Outliers in Genomic Profiling Studies")
+    (description
+     "This package provides a method that analyzes quality control metrics from
+multi-sample genomic sequencing studies and nominates poor quality samples for
+exclusion.  Per sample quality control data are transformed into z-scores and
+aggregated.  The distribution of aggregated z-scores are modelled using
+parametric distributions.  The parameters of the optimal model, selected either
+by goodness-of-fit statistics or user-designation, are used for outlier
+nomination.  Two implementations of the Cosine Similarity Outlier Detection
+algorithm are provided with flexible parameters for dataset customization.")
+    (license license:gpl2)))
+
 (define-public r-omicspls
   (package
     (name "r-omicspls")

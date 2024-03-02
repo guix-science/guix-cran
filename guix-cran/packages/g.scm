@@ -7131,13 +7131,13 @@ either \"G-side\" or \"R-side\" effects.")
 (define-public r-gpumatrix
   (package
     (name "r-gpumatrix")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPUmatrix" version))
        (sha256
-        (base32 "1clcyni54cdfhrnqqjyllc34ilf43yh1yrx2jb4x8m4zk7j42hm8"))))
+        (base32 "07s5p6miidc8sldnjmn11zwg4rahx43skwjzw4bhwdvbd5fssd20"))))
     (properties `((upstream-name . "GPUmatrix")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8007,13 +8007,13 @@ implementation to allow easy specification of various GPs'.")
 (define-public r-gparotation
   (package
     (name "r-gparotation")
-    (version "2024.2-1")
+    (version "2024.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPArotation" version))
        (sha256
-        (base32 "0as8swmv6akxyx4k92cigpr8lzm6jcg0cfjs0cr9n9aav92s2d5d"))))
+        (base32 "1njl4qg5jgmx14r41q1kzfmhf4zga3yjkig0h7ar35bq56pmgxl8"))))
     (properties `((upstream-name . "GPArotation")))
     (build-system r-build-system)
     (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
@@ -15577,6 +15577,34 @@ rolling summaries such as rolling average on the fly for time series.")
      "The function combines a scatter plot with ridgelines to better visualise the
 distribution between sample groups.  The plot is created with ggplot2'.")
     (license license:gpl3)))
+
+(define-public r-ggsankeyfier
+  (package
+    (name "r-ggsankeyfier")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsankeyfier" version))
+       (sha256
+        (base32 "1ddzjqcc4g6h8gryipa21gwjqza73cq2qchmh2pmm65mj1xip5k5"))))
+    (properties `((upstream-name . "ggsankeyfier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vwline
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-gridbezier
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pepijn-devries.github.io/ggsankeyfier/")
+    (synopsis "Create Sankey and Alluvial Diagrams Using 'ggplot2'")
+    (description
+     "Sankey and alluvial diagrams visualise flows of quantities across stages in
+stacked bars.  This package makes it easy to create such diagrams using
+ggplot2'.")
+    (license license:gpl3+)))
 
 (define-public r-ggrtsy
   (package
@@ -24091,6 +24119,48 @@ implements an automatic approach for the identification of gene families based
 on the conserved domains that specifically define that family.  See Die et al.
 (2018) <doi:10.1101/436659> for more information and examples.")
     (license license:expat)))
+
+(define-public r-genehapr
+  (package
+    (name "r-genehapr")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geneHapR" version))
+       (sha256
+        (base32 "1yairrndrggvkiwwamqv3qwjs8sci4jc6k53rqs766n752vsbisz"))))
+    (properties `((upstream-name . "geneHapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vcfr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-shinyjs
+                             r-shiny
+                             r-sf
+                             r-rtracklayer
+                             r-rlang
+                             r-reshape2
+                             r-pegas
+                             r-maps
+                             r-lolliplot
+                             r-iranges
+                             r-ggpubr
+                             r-ggplot2
+                             r-genomicranges
+                             r-genetics
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geneHapR")
+    (synopsis
+     "Gene Haplotype Statistics, Phenotype Association and Visualization")
+    (description
+     "Import genome variants data and perform gene haplotype Statistics, visualization
+and phenotype association with R'.")
+    (license license:gpl3)))
 
 (define-public r-genef
   (package

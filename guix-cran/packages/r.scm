@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -2953,13 +2954,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.6.1")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "0inzasy6ya9s9lrz6npyp5my8mbyvnnvsb98a1w546wqwwrfklny"))))
+        (base32 "19m46iz2i0f12fjbyvfw4z0givhc3kpwlxbnajcdxss6bqb75id3"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -18929,28 +18930,6 @@ simplification, as well as other operations such as clipping, erasing,
 dissolving, and converting multi-part to single-part geometries.")
     (license license:expat)))
 
-(define-public r-rmangal
-  (package
-    (name "r-rmangal")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmangal" version))
-       (sha256
-        (base32 "1sh3ggbp5f4p8jqjr7l5an32ikr4gcdll2d7gl7mqjayq497c865"))))
-    (properties `((upstream-name . "rmangal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-memoise r-jsonlite r-igraph r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/rmangal/")
-    (synopsis "'Mangal' Client")
-    (description
-     "An interface to the Mangal database - a collection of ecological networks.  This
-package includes functions to work with the Mangal RESTful API methods
-(<https://mangal-interactions.github.io/mangal-api/>).")
-    (license license:expat)))
-
 (define-public r-rmalschains
   (package
     (name "r-rmalschains")
@@ -34659,20 +34638,20 @@ medications, patient history, diagnostics, payment, and readmission.")
 (define-public r-readmet
   (package
     (name "r-readmet")
-    (version "1.6.9")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readmet" version))
        (sha256
-        (base32 "17l1ran8ckaqqf9dm7bgny5qjaq5yllmy7pjakxvjzgdxhqkpadm"))))
+        (base32 "1q6d37d6s420ns8pdmqj002z2df35ci3jjvpjr5z53ii6fsf21mz"))))
     (properties `((upstream-name . "readmet")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=readmet")
     (synopsis "Read some less Popular Formats Used in Meteorology")
     (description
-     "This package contains tools for reading and writing data from or to files in
-dmna, Scintec Format-1, and Campbell Scientific TOA5 formats.")
+     "This package contains tools for reading and writing data from or to files in the
+formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
     (license license:gpl3)))
 
 (define-public r-readjdx

@@ -4430,24 +4430,24 @@ API documentation.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "1lz4bnml9vs8rc7p71kiwwr0g38lvawbhsfj62a5cy8g1fxpghjw"))))
+        (base32 "1pxajzf5pbqr7klzsd3kry7fxvs3va2si45irz07v3v7nr2a1id8"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-jsonlite r-dplyr))
+    (propagated-inputs (list r-sf r-lifecycle r-jsonlite r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://dieghernan.github.io/nominatimlite/")
     (synopsis "Interface with 'Nominatim' API Service")
     (description
      "Lite interface for getting data from OSM service Nominatim
 <https://nominatim.org/release-docs/latest/>.  Extract coordinates from
-addresses, find places near a set of coordinates, search for amenities and
-return spatial objects on sf format.")
+addresses, find places near a set of coordinates and return spatial objects on
+sf format.")
     (license license:expat)))
 
 (define-public r-nomclust
@@ -8183,13 +8183,13 @@ COVID-19 scale, NIAID OS.")
 (define-public r-nhstplot
   (package
     (name "r-nhstplot")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhstplot" version))
        (sha256
-        (base32 "1m06w5mys5qwhah7hg3fwrzlbpckgvhn17jqzg36cyprpd02zx52"))))
+        (base32 "162v85h9prl2kcchm219577ljw2an2hjapxyqxiv6xymp06cw4bn"))))
     (properties `((upstream-name . "nhstplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -14896,13 +14896,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.13.0")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "0dni3xdss51xi00bmpm8i4q4l12sdzrjsmz3inxhc7hdd53pp42b"))))
+        (base32 "1ylf8qrsapzkyprpxhrdj4nzfdgpb33srbc2kj732dcpzh6gs5ld"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

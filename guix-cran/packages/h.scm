@@ -12599,6 +12599,36 @@ articles and other items in form of convenient R objects.")
 methods and structural plots of Hierarchical Archimedean Copulae (HAC).")
     (license license:gpl3+)))
 
+(define-public r-habtools
+  (package
+    (name "r-habtools")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "habtools" version))
+       (sha256
+        (base32 "1y0pjx16272dknmp2lpc69fmj5h4s4hsl2kchlrcwxpdyfyz7yb2"))))
+    (properties `((upstream-name . "habtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sp
+                             r-rvcg
+                             r-raster
+                             r-purrr
+                             r-magrittr
+                             r-geometry
+                             r-dplyr
+                             r-concaveman))
+    (native-inputs (list r-knitr))
+    (home-page "https://jmadinlab.github.io/habtools/")
+    (synopsis "Tools and Metrics for 3D Surfaces and Objects")
+    (description
+     "This package provides a collection of functions for sampling and simulating 3D
+surfaces and objects and estimating metrics like rugosity, fractal dimension,
+convexity, sphericity, circularity, second moments of area and volume, and more.")
+    (license license:expat)))
+
 (define-public r-hablar
   (package
     (name "r-hablar")

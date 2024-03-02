@@ -4795,6 +4795,38 @@ permutations, combinations and subsets of objects taken from a vector.
 Simplifies working with structures commonly encountered in combinatorics.")
     (license license:gpl3)))
 
+(define-public r-tropfishr
+  (package
+    (name "r-tropfishr")
+    (version "1.6.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TropFishR" version))
+       (sha256
+        (base32 "0y4bqy27f5ngpz9z24fbl209gg9mlrj8gryn8774abvhvv62z6k0"))))
+    (properties `((upstream-name . "TropFishR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-propagate
+                             r-msm
+                             r-matrix
+                             r-mass
+                             r-gensa
+                             r-ga
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tokami/TropFishR")
+    (synopsis "Tropical Fisheries Analysis")
+    (description
+     "This package provides a compilation of fish stock assessment methods for the
+analysis of length-frequency data in the context of data-poor fisheries.
+Includes methods and examples included in the FAO Manual by P. Sparre and S.C.
+Venema (1998), \"Introduction to tropical fish stock assessment\"
+(<https://www.fao.org/documents/card/en/c/9bb12a06-2f05-5dcb-a6ca-2d6dd3080f65/>),
+as well as other more recent methods.")
+    (license license:gpl3)))
+
 (define-public r-tropalgebra
   (package
     (name "r-tropalgebra")
@@ -19694,6 +19726,32 @@ single test.  This is useful for noisy or flaky tests that generally pass but
 can fail due to occasional random errors, such as numeric instability or using
 random data.")
     (license license:gpl3+)))
+
+(define-public r-testssymmetry
+  (package
+    (name "r-testssymmetry")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestsSymmetry" version))
+       (sha256
+        (base32 "0dbgw14m4nk1x9y186v3ynqrv14z8irr7yyq4087sqmpj6y79sb5"))))
+    (properties `((upstream-name . "TestsSymmetry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart r-rcpp r-mass r-e1071))
+    (home-page "https://cran.r-project.org/package=TestsSymmetry")
+    (synopsis "Tests for Symmetry when the Center of Symmetry is Unknown")
+    (description
+     "This package provides functionality of a statistical testing implementation
+whether a dataset comes from a symmetric distribution when the center of
+symmetry is unknown, including Wilcoxon test and sign test procedure.  In
+addition, sample size determination for both tests is provided.  The Wilcoxon
+test procedure is described in Vexler et al. (2023)
+<https://www.sciencedirect.com/science/article/abs/pii/S0167947323000579>, and
+the sign test is outlined in Gastwirth (1971)
+<https://www.jstor.org/stable/2284233>.")
+    (license license:gpl3)))
 
 (define-public r-testscorer
   (package

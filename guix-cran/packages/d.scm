@@ -3369,13 +3369,13 @@ non-parametric hypothesis testing and gene set enrichment analysis.")
 (define-public r-dslabs
   (package
     (name "r-dslabs")
-    (version "0.7.6")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dslabs" version))
        (sha256
-        (base32 "0076g4z3g5wqi3gbn18959lzhgi4ym9zbbg57rkd4qq1fxd2v5dn"))))
+        (base32 "19nx8jjjadwhkk4wp3lv7xddq8pbj6l405xaxk4fhvgcvlxa65zk"))))
     (properties `((upstream-name . "dslabs")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -13951,13 +13951,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "050676004nnwgzy0nyz57agzpyqj4lkxlr7avn5z1idniffdczb4"))))
+        (base32 "1ilxq75cl8f7r73zvf1s2f3lnkh83w9vbp0rz28083xyls9jb18v"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx

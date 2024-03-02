@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -3751,13 +3751,13 @@ Hall/CRC, Boca Raton, FL, pp.  25-42.")
 (define-public r-csmpv
   (package
     (name "r-csmpv")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csmpv" version))
        (sha256
-        (base32 "0w9h6780qrq3mnf89lzmdxyjd00j5g0plh8gfhpixjm9ja73w7q3"))))
+        (base32 "13b7i4ri0a3cjnhn14m72rff4gxxda556h38gjwp900mnjaqrwbj"))))
     (properties `((upstream-name . "csmpv")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -8477,33 +8477,6 @@ making use of the weighting option.")
     (description
      "Estimate coefficients of Cox proportional hazards model using stochastic
 gradient descent algorithm for batch data.")
-    (license license:gpl2)))
-
-(define-public r-coxphmic
-  (package
-    (name "r-coxphmic")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "coxphMIC" version))
-       (sha256
-        (base32 "0lmma5wzcczr762xqa4yamvwvyviqxk8gdrps3sydg3n14hckp6d"))))
-    (properties `((upstream-name . "coxphMIC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-numderiv))
-    (home-page "https://cran.r-project.org/package=coxphMIC")
-    (synopsis
-     "Sparse Estimation of Cox Proportional Hazards Models via Approximated Information Criterion")
-    (description
-     "Sparse estimation for Cox PH models is done via Minimum approximated Information
-Criterion (MIC) by Su, Wijayasinghe, Fan, and Zhang (2016)
-<DOI:10.1111/biom.12484>.  MIC mimics the best subset selection using a
-penalized likelihood approach yet with no need of a tuning parameter.  The
-problem is further reformulated with a re-parameterization step so that it
-reduces to one unconstrained non-convex yet smooth programming problem, which
-can be solved efficiently.  Furthermore, the re-parameterization tactic yields
-an additional advantage in terms of circumventing post-selection inference.")
     (license license:gpl2)))
 
 (define-public r-coxphf
@@ -29501,13 +29474,13 @@ package.")
 (define-public r-choroplethr
   (package
     (name "r-choroplethr")
-    (version "3.7.2")
+    (version "3.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "choroplethr" version))
        (sha256
-        (base32 "1ylwx78d4ypaciyp20wm3i7xvlf6p45yh5s9y32qf1z6n9ijnshi"))))
+        (base32 "053zs3bxr38izdkm1mhwqnrg7j5mb1dwjdx0dvsbv9l3nrb39par"))))
     (properties `((upstream-name . "choroplethr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -29525,7 +29498,6 @@ package.")
                              r-ggmap
                              r-dplyr
                              r-acs))
-    (native-inputs (list r-knitr))
     (home-page "www.choroplethr.com")
     (synopsis "Simplify the Creation of Choropleth Maps in R")
     (description
@@ -36648,13 +36620,13 @@ randomization, which is described in Charpignon et al. (2022)
 (define-public r-causalbatch
   (package
     (name "r-causalbatch")
-    (version "1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalBatch" version))
        (sha256
-        (base32 "1724gq4f4jjwbaksma5085anrf3170rpzhling6q30vl7da4zg6n"))))
+        (base32 "0jq5a6ch12v55x8fwz6as43wb4q5nc56hqb97jcsgksvsy9cn2g3"))))
     (properties `((upstream-name . "causalBatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva
@@ -40349,13 +40321,13 @@ especially simple one dimensional examples appears in inst/doc/one.dim/.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "0h6mnsl5zak7x2gcjja0rbdq87bjr6qqjbaal509f7gzy6jg3ql0"))))
+        (base32 "0clpmvkh77sjg7f66fgsc3crrimqslw1b8ymv6bq66yc5yp6kqfh"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rms r-hmisc r-ggplot2 r-bookdown))
@@ -40915,39 +40887,6 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
      "Encrypts and decrypts strings using either the Caesar cipher or a pseudorandom
 number generation (using set.seed()) method.")
     (license license:expat)))
-
-(define-public r-cadstat
-  (package
-    (name "r-cadstat")
-    (version "3.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CADStat" version))
-       (sha256
-        (base32 "0wdglw1vyd5gz70r9ma0mwshvizv39nb4ahp8pvr70c4qqzsfhc0"))))
-    (properties `((upstream-name . "CADStat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-rpart
-                             r-rjava
-                             r-quantreg
-                             r-mass
-                             r-lattice
-                             r-jgr
-                             r-javagd
-                             r-gmodels
-                             r-gdata
-                             r-car
-                             r-bio-infer))
-    (home-page "http://www.rforge.net/CADStat/")
-    (synopsis "Provides a GUI to Several Statistical Methods")
-    (description
-     "Using Java GUI for R (JGR), CADStat provides a user interface for several
-statistical methods - scatterplot, boxplot, linear regression, generalized
-linear regression, quantile regression, conditional probability calculations,
-and regression trees.")
-    (license license:gpl2+)))
 
 (define-public r-cadftest
   (package

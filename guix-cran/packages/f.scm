@@ -13429,13 +13429,13 @@ topic.")
 (define-public r-filibustr
   (package
     (name "r-filibustr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filibustr" version))
        (sha256
-        (base32 "0kx29jq6mcyyrd9yvsjpq24fkqzxf2m3lp39zy0vf3frhyvxx3q4"))))
+        (base32 "1arq7i2dhzb9260kk830jpxaavz3j0a1sz7yql0s6ik4ww40a9d7"))))
     (properties `((upstream-name . "filibustr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13445,6 +13445,7 @@ topic.")
                              r-rlang
                              r-readr
                              r-lifecycle
+                             r-haven
                              r-dplyr))
     (home-page "https://github.com/feinleib/filibustr")
     (synopsis "Data Utilities for Congressional Research")
@@ -20371,42 +20372,6 @@ testing centers belonging to the Huber family.  Testing is carried out using the
 Bayesian bootstrap.  One- and two-sample tests are supported, as are directional
 tests.  Methods for visualizing output are provided.")
     (license license:gpl3)))
-
-(define-public r-famevent
-  (package
-    (name "r-famevent")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FamEvent" version))
-       (sha256
-        (base32 "1f2cfbd799gkva0jyf7x6x37x95nlg1zv85h85irkwh0kfwk55gh"))))
-    (properties `((upstream-name . "FamEvent")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-survival
-                             r-pracma
-                             r-mass
-                             r-kinship2
-                             r-eha
-                             r-cmprsk))
-    (home-page "https://cran.r-project.org/package=FamEvent")
-    (synopsis "Family Age-at-Onset Data Simulation and Penetrance Estimation")
-    (description
-     "Simulates age-at-onset traits associated with a segregating major gene in family
-data obtained from population-based, clinic-based, or multi-stage designs.
-Appropriate ascertainment correction is utilized to estimate age-dependent
-penetrance functions either parametrically from the fitted model or
-nonparametrically from the data.  The Expectation and Maximization algorithm can
-infer missing genotypes and carrier probabilities estimated from family's
-genotype and phenotype information or from a fitted model.  Plot functions
-include pedigrees of simulated families and predicted penetrance curves based on
-specified parameter values.  For more information see Choi, Y.-H., Briollais,
-L., He, W. and Kopciuk, K. (2021) @code{FamEvent}: An R Package for Generating
-and Modeling Time-to-Event Data in Family Designs, Journal of Statistical
-Software 97 (7), 1-30.")
-    (license license:gpl2+)))
 
 (define-public r-fameta
   (package

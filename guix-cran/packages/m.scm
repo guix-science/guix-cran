@@ -17089,13 +17089,13 @@ with more upload options, see the @code{OpenML} package.")
 (define-public r-mlr3mbo
   (package
     (name "r-mlr3mbo")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3mbo" version))
        (sha256
-        (base32 "10z3595114kl3yc0kyxk9ca0ahsxmml4di7pvh4z20iv8n57xgc6"))))
+        (base32 "0jdj5dx6jb7n0g950h0j8jhafdj5mcalv5vxfiyf07myr6mjipri"))))
     (properties `((upstream-name . "mlr3mbo")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacefillr
@@ -19496,26 +19496,6 @@ The package is tailored for but not limited to imputing multitissue expression
 data, in which a gene's expression is measured on the collected tissues of an
 individual but missing on the uncollected tissues.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-mixreg
-  (package
-    (name "r-mixreg")
-    (version "2.0-10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixreg" version))
-       (sha256
-        (base32 "1vmidnhb899lmprybym71w0l869msrgvlqr3099kwj05sph85pwm"))))
-    (properties `((upstream-name . "mixreg")))
-    (build-system r-build-system)
-    (home-page "http://www.stat.auckland.ac.nz/~rolf/")
-    (synopsis "Functions to Fit Mixtures of Regressions")
-    (description
-     "Fits mixtures of (possibly multivariate) regressions (which has been described
-as doing ANCOVA when you don't know the levels).  Turner (2000)
-<doi:10.1111/1467-9876.00198>.")
-    (license license:gpl2+)))
 
 (define-public r-mixraschtools
   (package
@@ -31184,16 +31164,16 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.11.0")
+    (version "1.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melt" version))
        (sha256
-        (base32 "18ar0j8yhmpwpbh0cz4cyhby2sxirwdsz6dafxnc3cy69mwn88q0"))))
+        (base32 "1nd1g7wndlnvjm8bs62b0vylf08ygzfw84dq0clyak9bmgsc6a27"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-bh))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-checkmate r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/melt/")
     (synopsis "Multiple Empirical Likelihood Tests")
@@ -34502,13 +34482,13 @@ detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
 (define-public r-mclustaddons
   (package
     (name "r-mclustaddons")
-    (version "0.7.2")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustAddons" version))
        (sha256
-        (base32 "1sj1fbw5afhf6h92riw8wk79fzchiaw6rrkfwjq4fx1n87vp4s6q"))))
+        (base32 "12wlj1rl5d384fydk27rpm62ghmwv3iax4nfsrcpczxrfk8zshc9"))))
     (properties `((upstream-name . "mclustAddons")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-iterators

@@ -6074,27 +6074,31 @@ to sum their own low level functions as well.  Based on the paper by Braden
 (define-public r-summer
   (package
     (name "r-summer")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SUMMER" version))
        (sha256
-        (base32 "082ziawqkqgq18ghy46fgk7l5d1k9ls135qbzqkmb4xwiy1v2avm"))))
+        (base32 "0x93mppdaah7sznzk1rrw76ia07fnjmb676q1rrya6bzkv5fbf5z"))))
     (properties `((upstream-name . "SUMMER")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
+                             r-terra
                              r-survival
                              r-survey
                              r-spdep
                              r-sp
                              r-shadowtext
+                             r-sf
                              r-scales
                              r-reshape2
                              r-rcolorbrewer
                              r-matrix
+                             r-haven
                              r-ggridges
                              r-ggplot2
+                             r-fields
                              r-data-table))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/richardli/SUMMER")
@@ -6105,8 +6109,8 @@ to sum their own low level functions as well.  Based on the paper by Braden
 demographic and health indicators using survey data, with particular focus on
 estimating and projecting under-five mortality rates, described in Mercer et al.
 (2015) <doi:10.1214/15-AOAS872>, Li et al. (2019)
-<doi:10.1371/journal.pone.0210645> and Li et al. (2020)
-<@code{arXiv:2007.05117>}.")
+<doi:10.1371/journal.pone.0210645>, Wu et al. (DHS Spatial Analysis Reports No.
+21, 2021), and Li et al. (2023) <@code{arXiv:2007.05117>}.")
     (license license:gpl2+)))
 
 (define-public r-summclust
@@ -26032,13 +26036,13 @@ plot function to simplify data analysis for the visually impaired.")
 (define-public r-sonicscrewdriver
   (package
     (name "r-sonicscrewdriver")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sonicscrewdriver" version))
        (sha256
-        (base32 "1y4l6hz699f6kwxpmlbx0760j6yjn579aak6k6wnh1i4xb18b3ak"))))
+        (base32 "061yk6z9b4d2hb40zvj22sdk9dgjsc6vp6lgjh0j75623nw2ggim"))))
     (properties `((upstream-name . "sonicscrewdriver")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
@@ -27612,13 +27616,13 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.8.0")
+    (version "3.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "15nm98ziqf55kw3w1xk09978gdcccijib0g9z1pgsiqss5v4zsdc"))))
+        (base32 "0zspkjmsbbjkzw1pzifdqdj7ysk9vj9q9fwh0hvcy3svx4w8hmb3"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -30698,13 +30702,13 @@ implicit ratio, interval or non-metric optimal scaling of the input proximities.
 (define-public r-smacof
   (package
     (name "r-smacof")
-    (version "2.1-5")
+    (version "2.1-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacof" version))
        (sha256
-        (base32 "1i9a3637m943sw6s0hx2b99kny0sv8niywqi9l12pjxx9flnj0zv"))))
+        (base32 "06mdvkbc9q8b5sbqnx4c5mq06jkqspvc4bb7zn15byz8ybv5h7aa"))))
     (properties `((upstream-name . "smacof")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -39247,13 +39251,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "09bj2z9gzkdhbpiwdzw0pkcw4zrj0nrvvppfqqi9hynwl64f4bim"))))
+        (base32 "0a0wlhhkzm103vr9sd92xb97n4wl1d66rngdi3s96yx10qg3miqn"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments
@@ -40410,13 +40414,13 @@ poorly predicted points.")
 (define-public r-shinymobile
   (package
     (name "r-shinymobile")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMobile" version))
        (sha256
-        (base32 "0wwmcirnmdwz43900c8x93ycbrypx40xqvm2hpafmkzlljav47fb"))))
+        (base32 "1nsvqcv6bspmbgkjrw4ysm08g1d2qf68rh8bdk0kvc27shzyw33z"))))
     (properties `((upstream-name . "shinyMobile")))
     (build-system r-build-system)
     (arguments
@@ -42717,13 +42721,13 @@ for most of the methods are included.")
 (define-public r-sheetreader
   (package
     (name "r-sheetreader")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SheetReader" version))
        (sha256
-        (base32 "1l6agw4s7ak6cbgpidjz0rc1g34x4vv3731c8n5b5w1bj9s448kq"))))
+        (base32 "1da9p1y7vxkmkflighjgxd1f7sjcbq24m68igr77vqga4wd0v72d"))))
     (properties `((upstream-name . "SheetReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -45211,13 +45215,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.8.3")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "0dd6haiimdf77mzx163simhn0dc57nmgagj914ypbynf2g19yv24"))))
+        (base32 "0fqmhhcwpa8ikp94qzxnl0pyp3mkjfp7hp8qwfinfjxvawnm26ph"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
@@ -50857,16 +50861,16 @@ alternative probability-based approach as described in Shimada et al. (2021)
 (define-public r-sdetorus
   (package
     (name "r-sdetorus")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdetorus" version))
        (sha256
-        (base32 "186zq6ngii16447sj0r8aw07phq8a431xl77xpp4g3c00v0lxkic"))))
+        (base32 "09y23s5pxrhfv2l4q08vi8rf1nwainyy7dm0aij10sfwr86k0brn"))))
     (properties `((upstream-name . "sdetorus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-colorramps))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm))
     (home-page "https://github.com/egarpor/sdetorus")
     (synopsis "Statistical Tools for Toroidal Diffusions")
     (description
@@ -54248,32 +54252,6 @@ of life improvements for working on SQL databases with R. For reference see
 Ralph Kimball and Margy Ross (2013, ISBN 9781118530801).")
     (license license:gpl3)))
 
-(define-public r-sccs
-  (package
-    (name "r-sccs")
-    (version "1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SCCS" version))
-       (sha256
-        (base32 "03737abfpg4bpbmgxryls9vfhhmx3kw02kw36y3rd3pnn2mcfd4v"))))
-    (properties `((upstream-name . "SCCS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-r-methodss3 r-gnm r-fda r-corpcor))
-    (home-page "https://cran.r-project.org/package=SCCS")
-    (synopsis "The Self-Controlled Case Series Method")
-    (description
-     "Various self-controlled case series models used to investigate associations
-between time-varying exposures such as vaccines or other drugs or non drug
-exposures and an adverse event can be fitted.  Detailed information on the
-self-controlled case series method and its extensions with more examples can be
-found in Farrington, P., Whitaker, H., and Ghebremichael Weldeselassie, Y.
-(2018, ISBN: 978-1-4987-8159-6.  Self-controlled Case Series studies: A
-modelling Guide with R. Boca Raton: Chapman & Hall/CRC Press) and
-<https://sccs-studies.info/index.html>.")
-    (license license:gpl2+)))
-
 (define-public r-sccr
   (package
     (name "r-sccr")
@@ -54340,6 +54318,28 @@ Stochastic Complexity-based Conditional Independence criterium (Marx and
 Vreeken, 2019).  SCCI is an asymptotically unbiased and L2 consistent estimator
 of (conditional) mutual information for discrete data.")
     (license license:gpl2+)))
+
+(define-public r-sccca
+  (package
+    (name "r-sccca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sccca" version))
+       (sha256
+        (base32 "03dyfiznf623hjq2ipx2cbs96qdhrs1gq276vrlxp3gdga25awc2"))))
+    (properties `((upstream-name . "sccca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat r-plyr r-dplyr))
+    (home-page "https://cran.r-project.org/package=sccca")
+    (synopsis "Single-Cell Correlation Based Cell Type Annotation")
+    (description
+     "Performing cell type annotation based on cell markers from a unified database.
+The approach utilizes correlation-based approach combined with association
+analysis using Fisher-exact and phyper statistical tests (Upton, Graham JG.
+(1992) <DOI:10.2307/2982890>).")
+    (license license:gpl3)))
 
 (define-public r-sccatch
   (package
@@ -56397,13 +56397,13 @@ Quarto Website.")
 (define-public r-sarima
   (package
     (name "r-sarima")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarima" version))
        (sha256
-        (base32 "0gj3z7471153g1cyclmkh9lcc2zqpv2d4yzq6k6hi2pxmb5hihsq"))))
+        (base32 "0zya0qpqvyiyq9lv8y2kcyd3v0hqw8n3chlqn2v24pyiq94h7kqg"))))
     (properties `((upstream-name . "sarima")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -56415,7 +56415,7 @@ Quarto Website.")
                              r-lagged
                              r-formula))
     (home-page
-     "https://github.com/GeoBosh/sarimahttps://geobosh.github.io/sarima/")
+     "https://geobosh.github.io/sarima/https://github.com/GeoBosh/sarima")
     (synopsis "Simulation and Prediction with Seasonal ARIMA Models")
     (description
      "Functions, classes and methods for time series modelling with ARIMA and related

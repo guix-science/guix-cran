@@ -1418,31 +1418,39 @@ soon as they are finalized.")
 (define-public r-expowo
   (package
     (name "r-expowo")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expowo" version))
        (sha256
-        (base32 "0qxwm8fxiwg8fad870fjrf5cax9bvzi2b36c6g7ffqq2cnjdk4xh"))))
+        (base32 "08w64l73vc83dk7himn7sr487ivjhn5cgql8vqw30vdksxz3nyi5"))))
     (properties `((upstream-name . "expowo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp
+    (propagated-inputs (list r-viridislite
+                             r-tibble
+                             r-sp
                              r-sf
+                             r-scales
                              r-rnaturalearth
                              r-rcolorbrewer
+                             r-r-utils
+                             r-pupillometryr
+                             r-plyr
                              r-magrittr
                              r-ggplot2
+                             r-flora
                              r-dplyr
-                             r-data-table))
-    (native-inputs (list r-knitr))
+                             r-data-table
+                             r-cowplot))
     (home-page "https://dboslab.github.io/expowo/")
-    (synopsis "Data Mining of Plant Diversity and Distribution for R")
+    (synopsis "Data Mining of Plant Diversity and Distribution")
     (description
      "This package produces diversity estimates and species lists with associated
-global distribution for any angiosperm family and genus from Plants of the World
-Online database <https://powo.science.kew.org/>, by interacting with the source
-code of each plant taxon page, and creates global maps of species richness.")
+global distribution for any vascular plant family and genus from Plants of the
+World Online database <https://powo.science.kew.org/>, by interacting with the
+source code of each plant taxon page.  It also creates global maps of species
+richness, graphics of species discoveries and nomenclatural changes over time.")
     (license license:expat)))
 
 (define-public r-exposr

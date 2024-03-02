@@ -17987,22 +17987,23 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "0pnmzkln92dqfjyx8rvs37845anpasfzk0xkqwmpb6w4bghjgywp"))))
+        (base32 "11xp0zcv0qj0l4nq1c5wc4w6zc569qfhd4ir6knwynq68n89p8c2"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
+    (propagated-inputs (list r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MindTheGap-ERC/admtools")
     (synopsis "Estimate and Manipulate Age-Depth Models")
     (description
      "Estimate age-depth models from stratigraphic and sedimentological data, and
 transform data between the time and stratigraphic domain.")
-    (license license:asl2.0)))
+    (license license:gpl3+)))
 
 (define-public r-admmsigma
   (package

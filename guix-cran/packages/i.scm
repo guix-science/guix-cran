@@ -4814,13 +4814,13 @@ can find the full API documentation at <https://ipbase.com/docs> .")
 (define-public r-ipanema
   (package
     (name "r-ipanema")
-    (version "0.6.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipanema" version))
        (sha256
-        (base32 "09g8s76sjy3d8cnavmna1g2g9vz5dif1m9jaxwpzmgfpbp2k12cv"))))
+        (base32 "0fs9mddhzr1pq7mv08602w6rqmx2sjnj0lcp56hawcjfszczdzzn"))))
     (properties `((upstream-name . "ipanema")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmysql
@@ -5245,13 +5245,13 @@ which can be visualized using the IOHanalyzer module.")
 (define-public r-iohanalyzer
   (package
     (name "r-iohanalyzer")
-    (version "0.1.8.6")
+    (version "0.1.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IOHanalyzer" version))
        (sha256
-        (base32 "136h8iz70b7b1c0zhn1xwb0wbc2vpbm3ghmq87gkaw94cxfknimv"))))
+        (base32 "1a92lzq2m9yrgaajlybpib6awnf2p7qzbfanlzg86x9z4hcdiyzr"))))
     (properties `((upstream-name . "IOHanalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -5269,8 +5269,7 @@ which can be visualized using the IOHanalyzer module.")
                              r-eaf
                              r-dplyr
                              r-data-table
-                             r-colorspace
-                             r-colorramps))
+                             r-colorspace))
     (home-page "https://iohanalyzer.liacs.nl")
     (synopsis "Data Analysis Part of 'IOHprofiler'")
     (description

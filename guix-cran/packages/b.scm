@@ -388,13 +388,13 @@ bounded-variable least squares")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "1miwlsih85s9j3scj22vlgsagnv834d15xlk0si0zm7s7mhjzgr4"))))
+        (base32 "1qbws3xa93ladgwfqdyk3qzmijhdam3lhdzwpbb5q5397mqkyfbp"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7787,45 +7787,6 @@ using auxiliary data.")
 package makes it easy to import data from the bank into
 R.<https://www.bndes.gov.br/@code{SiteBNDES/bndes/bndes_en>}.")
     (license license:expat)))
-
-(define-public r-bnclustomics
-  (package
-    (name "r-bnclustomics")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bnClustOmics" version))
-       (sha256
-        (base32 "1pmg0q5jay8wkn24yv3j7xrdd8k6y8yjq6crjxg22yzfbbb0ws8g"))))
-    (properties `((upstream-name . "bnClustOmics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcolorbrewer
-                             r-rbgl
-                             r-plotrix
-                             r-mclust
-                             r-grbase
-                             r-graph
-                             r-clue
-                             r-bidag))
-    (home-page "https://cran.r-project.org/package=bnClustOmics")
-    (synopsis "Bayesian Network-Based Clustering of Multi-Omics Data")
-    (description
-     "Unsupervised Bayesian network-based clustering of multi-omics data.  Both binary
-and continuous data types are allowed as inputs.  The package serves a dual
-purpose: it clusters (patient) samples and learns the multi-omics networks that
-characterize discovered clusters.  Prior network knowledge (e.g., public
-interaction databases) can be included via blacklisting and penalization
-matrices.  For clustering, the EM algorithm is employed.  For structure search
-at the M-step, the Bayesian approach is used.  The output includes membership
-assignments of samples, cluster-specific MAP networks, and posterior
-probabilities of all edges in the discovered networks.  In addition to
-likelihood, AIC and BIC scores are returned.  They can be used for choosing the
-number of clusters.  References: P. Suter et al. (2021)
-<doi:10.1101/2021.12.16.473083>, J. Kuipers and P. Suter and G. Moffa (2022)
-<doi:10.1080/10618600.2021.2020127>, J. Kuipers et al. (2018)
-<doi:10.1038/s41467-018-06867-x>.")
-    (license license:gpl3)))
 
 (define-public r-bmtar
   (package
@@ -25880,13 +25841,13 @@ which a statistical decision can be made.  See Berg and Popescu for details
 (define-public r-balancedsampling
   (package
     (name "r-balancedsampling")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BalancedSampling" version))
        (sha256
-        (base32 "0d1irx0iqiz4wij4y6dgjpp73z6hpfrsxcpf3gab9a01f43gb7ww"))))
+        (base32 "1qkbsihk776h5na7dv68kab6qqbymfci9yvq0pnrlb5zb92fw32b"))))
     (properties `((upstream-name . "BalancedSampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
