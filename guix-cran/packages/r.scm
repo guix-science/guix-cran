@@ -20808,6 +20808,46 @@ others discovered during ongoing testing and code simplification.")
 implemented with @code{JavaScript} for node and browsers.")
     (license license:expat)))
 
+(define-public r-rivretrieve
+  (package
+    (name "r-rivretrieve")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RivRetrieve" version))
+       (sha256
+        (base32 "0ghg329qszrcr5s36243l0h8qbkh3sd5jpgnm059dd81sgcsa0qc"))))
+    (properties `((upstream-name . "RivRetrieve")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tidyhydat
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rselenium
+                             r-rlist
+                             r-rlang
+                             r-readr
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-devtools
+                             r-dataretrieval
+                             r-bbmisc))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ryan-Riggs/RivRetrieve")
+    (synopsis "Retrieve Global River Gauge Data")
+    (description
+     "This package provides access to global river gauge data from a variety of
+national-level river agencies.  The package interfaces with the national-level
+agency websites to provide access to river gauge locations, river discharge, and
+river stage.  Currently, the package is available for the following countries:
+Australia, Brazil, Canada, Chile, France, Japan, South Africa, the United
+Kingdom, and the United States.")
+    (license license:expat)))
+
 (define-public r-rivr
   (package
     (name "r-rivr")
@@ -35370,13 +35410,13 @@ power calculation in Respondent-Driven Sampling.")
 (define-public r-rdss
   (package
     (name "r-rdss")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdss" version))
        (sha256
-        (base32 "08fka3b5vzhp3b2hdg5rzx596y1cchhic4kwkkr6vnan2cskb004"))))
+        (base32 "0wzmiq53x5mid2lqvqgjgp8m7kz2wzlwkki1q561qmqbkkgk4ma8"))))
     (properties `((upstream-name . "rdss")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -40055,13 +40095,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.3.2.0")
+    (version "4.3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1h51mwigl6jvz4mgn2vf5c9gb2cr94l1li2arpws3020q84yrvhm"))))
+        (base32 "0q1n6ivzab7kjlakbx1v9fqf7w1i0gg646pd043mvvaacqispai7"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -45323,13 +45363,13 @@ kernel learning.  C. Zhang, Y. Liu, J. Wang and H. Zhu. (2016)
 (define-public r-rams
   (package
     (name "r-rams")
-    (version "1.3.4")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaMS" version))
        (sha256
-        (base32 "10r59h8dxv39gl432rs3xwasym94xbdpwdclsbzfyxm0cyi2vfmm"))))
+        (base32 "0bhp4sibym8gbzcqzhplfkln31z7b06v4ycd46rg4167yivm2xxc"))))
     (properties `((upstream-name . "RaMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-data-table r-base64enc))
@@ -47759,13 +47799,13 @@ by incorporating HTML hex codes.")
 (define-public r-r2swf
   (package
     (name "r-r2swf")
-    (version "0.9-8")
+    (version "0.9-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R2SWF" version))
        (sha256
-        (base32 "1nlb2fshc5g53yqbq92z899mv9rknwah0p0s2l5r0rzp3v2np5yd"))))
+        (base32 "0bd1lh8f16mvgvrzk080jpqajzl0fzmiq5d2f2k3lgf0hda0x4gl"))))
     (properties `((upstream-name . "R2SWF")))
     (build-system r-build-system)
     (inputs (list zlib zlib libpng freetype))

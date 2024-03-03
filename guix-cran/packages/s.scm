@@ -3662,36 +3662,6 @@ observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-survivalsl
-  (package
-    (name "r-survivalsl")
-    (version "0.93")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalSL" version))
-       (sha256
-        (base32 "0wvdd69bdm2fhbnxys94cbhab0zg48rar014pmm164by1bx1almd"))))
-    (properties `((upstream-name . "survivalSL")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-rpart
-                             r-randomforestsrc
-                             r-mass
-                             r-hdnom
-                             r-glmnetutils
-                             r-glmnet
-                             r-flexsurv
-                             r-dplyr
-                             r-date
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=survivalSL")
-    (synopsis "Super Learner for Survival Prediction from Censored Data")
-    (description
-     "Several functions and S3 methods to construct a super learner in the presence of
-censored times-to-event and to evaluate its prognostic capacities.")
-    (license license:gpl2+)))
-
 (define-public r-survivalrec
   (package
     (name "r-survivalrec")
@@ -3768,38 +3738,6 @@ hazard Cox models with left, right or interval censored survival data using
 maximum penalised likelihood.  A non-parametric smooth estimate of the baseline
 hazard function is provided.")
     (license license:lgpl2.0+)))
-
-(define-public r-survivalmodels
-  (package
-    (name "r-survivalmodels")
-    (version "0.1.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survivalmodels" version))
-       (sha256
-        (base32 "0d5bfmvfwf3i1iim5cjrqq5vlja92znpzv1csrk488rb582zaza7"))))
-    (properties `((upstream-name . "survivalmodels")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/RaphaelS1/survivalmodels/")
-    (synopsis "Models for Survival Analysis")
-    (description
-     "Implementations of classical and machine learning models for survival analysis,
-including deep neural networks via keras and tensorflow'.  Each model includes a
-separated fit and predict interface with consistent prediction types for
-predicting risk, survival probabilities, or survival distributions with distr6
-<https://CRAN.R-project.org/package=distr6>.  Models are either implemented from
-Python via reticulate <https://CRAN.R-project.org/package=reticulate>, from code
-in @code{GitHub} packages, or novel implementations using Rcpp
-<https://CRAN.R-project.org/package=Rcpp>.  Novel machine learning survival
-models wil be included in the package in near-future updates.  Neural networks
-are implemented from the Python package pycox <https://github.com/havakv/pycox>
-and are detailed by Kvamme et al. (2019)
-<https://jmlr.org/papers/v20/18-424.html>.  The Akritas estimator is defined in
-Akritas (1994) <doi:10.1214/aos/1176325630>.  DNNSurv is defined in Zhao and
-Feng (2020) <@code{arXiv:1908.02337>}.")
-    (license license:expat)))
 
 (define-public r-survivalclusteringtree
   (package
@@ -18225,6 +18163,37 @@ on network, reachable area calculation, and graph generation References: Okabe
 et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
 ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
     (license license:gpl2)))
+
+(define-public r-spnaf
+  (package
+    (name "r-spnaf")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spnaf" version))
+       (sha256
+        (base32 "06gz7gxh3r0ci1v46hgcs5a1837vqlqbg6vkcv1m5r4vp2n4hkc8"))))
+    (properties `((upstream-name . "spnaf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-spdep
+                             r-sf
+                             r-rlang
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spnaf")
+    (synopsis "Spatial Network Autocorrelation for Flow Data")
+    (description
+     "Identify statistically significant flow clusters using the local spatial network
+autocorrelation statistic G_ij* proposed by Berglund and @code{KarlstrÃ¶m}
+(1999) <doi:10.1007/s101090050013>.  The metric, an extended statistic of
+Getis/Ord G ('Getis and Ord 1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>,
+detects a group of flows having similar traits in terms of directionality.  You
+provide OD data and the associated polygon to get results with several
+parameters, some of which are defined by spdep package.")
+    (license license:expat)))
 
 (define-public r-spmoran
   (package
@@ -39480,13 +39449,13 @@ browser.")
 (define-public r-shinytest
   (package
     (name "r-shinytest")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest" version))
        (sha256
-        (base32 "1dmmz8r24jh8mnv9q3k62nd6hfmx1f9dyyr6j0ps6cnyjv97xnn7"))))
+        (base32 "16nb6xyk941a8vxk79416j7f4165gwf84w5a64i0rcaxyx5i66b6"))))
     (properties `((upstream-name . "shinytest")))
     (build-system r-build-system)
     (arguments
@@ -49690,13 +49659,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.8.2")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrdesign" version))
        (sha256
-        (base32 "1qldq9f4jgyqwsa0yn3q877680qp8nhg8kfcd62n1wr66mmd8f45"))))
+        (base32 "02nm4psgcfv93qq2bgrmx8f3z1b9rgx7gff3rkldkbd80pqz2iwp"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -50771,16 +50740,16 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdm
   (package
     (name "r-sdm")
-    (version "1.1-8")
+    (version "1.2-32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdm" version))
        (sha256
-        (base32 "130zkhhq1l99r16dii21i87wphb4n10xq70rgimm4x0q7zn0jv5y"))))
+        (base32 "124j571lfr0nhycl4p1k0pl8ylh2cbigf6qs5az4zj29mqarspz9"))))
     (properties `((upstream-name . "sdm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster))
+    (propagated-inputs (list r-terra r-sp r-raster))
     (native-inputs (list r-r-rsp))
     (home-page "https://www.biogeoinformatics.org")
     (synopsis "Species Distribution Modelling")

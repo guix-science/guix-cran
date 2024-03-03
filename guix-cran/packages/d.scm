@@ -3551,34 +3551,6 @@ described in Thorson et al. (2024) \"Dynamic structural equation models
 synthesize ecosystem dynamics constrained by ecological mechanisms.\"")
     (license license:gpl3)))
 
-(define-public r-dse
-  (package
-    (name "r-dse")
-    (version "2020.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dse" version))
-       (sha256
-        (base32 "170rxrniszs8h59ah4mn4mz8d7kzix4g3vlz4icd8w6bl40c6ykc"))))
-    (properties `((upstream-name . "dse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tframe r-tfplot r-setrng))
-    (native-inputs (list gfortran))
-    (home-page "http://tsanalysis.r-forge.r-project.org/")
-    (synopsis "Dynamic Systems Estimation (Time Series Package)")
-    (description
-     "This package provides tools for multivariate, linear, time-invariant, time
-series models.  This includes ARMA and state-space representations, and methods
-for converting between them.  It also includes simulation methods and several
-estimation functions.  The package has functions for looking at model roots,
-stability, and forecasts at different horizons.  The ARMA model representation
-is general, so that VAR, VARX, ARIMA, ARMAX, ARIMAX can all be considered to be
-special cases.  Kalman filter and smoother estimates can be obtained from the
-state space model, and state-space model reduction techniques are implemented.
-An introduction and User's Guide is available in a vignette.")
-    (license license:gpl2)))
-
 (define-public r-dsdp
   (package
     (name "r-dsdp")

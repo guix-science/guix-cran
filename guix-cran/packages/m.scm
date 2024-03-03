@@ -555,13 +555,13 @@ package helps you to go between them.")
 (define-public r-mwcsr
   (package
     (name "r-mwcsr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mwcsr" version))
        (sha256
-        (base32 "18idrn160m4yf24cbdgvjjawcw1hjxnsnc04jqqp7phlbfzcwi13"))))
+        (base32 "0vyvxw708c2m832jwsnfd8jfig5qbnixfl85frpch1c9qqp3238p"))))
     (properties `((upstream-name . "mwcsr")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -9280,13 +9280,13 @@ routines included.  Open population size by the Horvitz-Thompson (1959)
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "0k0l1pia2m4dfriqi883nzral234qmznjnl11jvfdczl8jab9dsp"))))
+        (base32 "0m1v1nrnd944l5hr6h7jxai6rjx8m3p09yjl2k8q2hd0kancbqdd"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

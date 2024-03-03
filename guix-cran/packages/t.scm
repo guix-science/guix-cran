@@ -11005,13 +11005,13 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 (define-public r-toastui
   (package
     (name "r-toastui")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toastui" version))
        (sha256
-        (base32 "0wxkg2y3vydpj75cj69rg4q3abkhgcdhhk6s7dpj2wi206pk2ngx"))))
+        (base32 "0hkww0q39skcah6mvbbs0pdlnzac3jwjgwkidp9as99qb1l4bzj8"))))
     (properties `((upstream-name . "toastui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -12744,13 +12744,13 @@ project template for Rstudio'.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.4.1")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "0s0hq77vk754hwzyqdjs6z7vd0xkwgh3a0zgma755aq6x8i83cdf"))))
+        (base32 "1c4mgawxk54d7m1zalf53a9ipfnx6bv5l0wjx9v3r7filzisvhh2"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rcpp))

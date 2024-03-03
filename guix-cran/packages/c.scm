@@ -8508,13 +8508,13 @@ confidence intervals.")
 (define-public r-coxme
   (package
     (name "r-coxme")
-    (version "2.2-18.1")
+    (version "2.2-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxme" version))
        (sha256
-        (base32 "1x9i0nn4bivjv7xfxa29ng7q44v405zb4skv7p29al779vbr3xmf"))))
+        (base32 "11igflhn21vq5d9f073cdcfjgq37fwj4hd7g2cj1qj72q2xzh6xp"))))
     (properties `((upstream-name . "coxme")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nlme r-matrix r-bdsmatrix))
@@ -40820,13 +40820,13 @@ Alberti 2015 <doi:10.1016/j.softx.2015.07.001>.")
 (define-public r-cagr
   (package
     (name "r-cagr")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAGR" version))
        (sha256
-        (base32 "1b01kzs36q6i0l47qy5krlc2whxqlq8xhdllghw7sff560ikng7d"))))
+        (base32 "1qyk43x8i0z2bl0ahj34d02zinsnp11716385y209l7c0ws9ynaa"))))
     (properties `((upstream-name . "CAGR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CAGR")

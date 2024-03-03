@@ -161,13 +161,13 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1kvnm4kcmj1fynyg8c05l4p4p92zz9pixh5fcpxk35pajx71mfn6"))))
+        (base32 "1dkiz3ra3yf02i31xg0hpd2n90cl0484q1n0vav7vfc539jpx67v"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-nloptr r-matrix r-glmnet r-gdina))
@@ -176,7 +176,7 @@ measures of approximation error.")
     (description
      "Provide a variety of Q-matrix validation methods for the generalized cognitive
 diagnosis models, including the method based on the generalized deterministic
-input, noisy, âandâ gate model (G-DINA) by de la Torre (2011)
+input, noisy, and gate model (G-DINA) by de la Torre (2011)
 <DOI:10.1007/s11336-011-9207-7> discrimination index (the GDI method) by de la
 Torre and Chiu (2016) <DOI:10.1007/s11336-015-9467-8>, the step-wise Wald test
 method (the Wald method) by Ma and de la Torre (2020) <DOI:10.1111/bmsp.12156>,

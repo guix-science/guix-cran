@@ -9145,13 +9145,13 @@ et al. (2023) <doi:10.1002/ecm.1588> for more details.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "103l8rm7sf3xqv4li6qlzw8kq55dp3w5rhh7113wbhvz762fqqdz"))))
+        (base32 "09m4r8j5c56l7qxzz5kxx8pzbf7lri40vqz4s4arpj9b7b5imfl7"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree

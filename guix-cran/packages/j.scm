@@ -2794,6 +2794,48 @@ package allows the creation and manipulation of full, sparse and symmetric
 matrices of any standard data type.")
     (license license:gpl2+)))
 
+(define-public r-jmastats
+  (package
+    (name "r-jmastats")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jmastats" version))
+       (sha256
+        (base32 "1k82iwb8sjhha1r4vzrnncvzjjpnl8css6b2mscp26wg593q9hd3"))))
+    (properties `((upstream-name . "jmastats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr
+                             r-crayon
+                             r-cli))
+    (home-page "https://uribo.github.io/jmastats/")
+    (synopsis "Download Weather Data from Japan Meteorological Agency Website")
+    (description
+     "This package provides features that allow users to download weather data
+published by the Japan Meteorological Agency (JMA) website
+(<https://www.jma.go.jp/jma/index.html>).  The data includes information dating
+back to 1976 and aligns with the categories available on the website.
+Additionally, users can process the best track data of typhoons and easily
+handle earthquake record files.")
+    (license license:expat)))
+
 (define-public r-jm
   (package
     (name "r-jm")

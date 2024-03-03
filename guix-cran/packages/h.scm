@@ -9687,13 +9687,13 @@ Zhu, Tianming, Liang Zhang, and Jin-Ting Zhang.(2022)
 (define-public r-hdnom
   (package
     (name "r-hdnom")
-    (version "6.0.2")
+    (version "6.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdnom" version))
        (sha256
-        (base32 "0i6wzffi5jww4wjp3f7vgnb8b9zfpsam2wyz9p7376r297j3hv66"))))
+        (base32 "0n6wvjkg4dyq140a5grpnv526v2z5m7w726cnslrshcj31mngr46"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

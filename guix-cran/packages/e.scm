@@ -4859,29 +4859,6 @@ Individualized Treatment Rules under budget constraints.  Detailed reference in
 Imai and Li (2019) <@code{arXiv:1905.05389>}.")
     (license license:gpl2+)))
 
-(define-public r-evalest
-  (package
-    (name "r-evalest")
-    (version "2024.2-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EvalEst" version))
-       (sha256
-        (base32 "0hbmqd9xncpcq8hvxkha6pj7msn5gzqgzb28byzacr0yq93rz7p9"))))
-    (properties `((upstream-name . "EvalEst")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tframe r-tfplot r-setrng r-dse))
-    (home-page "http://tsanalysis.r-forge.r-project.org/")
-    (synopsis "Dynamic Systems Estimation - Extensions")
-    (description
-     "This package provides functions for evaluating (time series) model estimation
-methods.  These facilitate Monte Carlo experiments of repeated simulations and
-estimations.  Also provides methods for looking at the distribution of the
-results from these experiments, including model roots (which are an equivalence
-class invariant).")
-    (license license:gpl2)))
-
 (define-public r-evacluster
   (package
     (name "r-evacluster")
@@ -14974,51 +14951,6 @@ rights and redistricting litigation.  The package implements methods described
 in Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2022).
 \"Estimating Candidate Support in Voting Rights Act Cases: Comparing Iterative EI
 and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
-    (license license:gpl3)))
-
-(define-public r-eicompare
-  (package
-    (name "r-eicompare")
-    (version "3.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "eiCompare" version))
-       (sha256
-        (base32 "15s75hy6dp7pqsp5rhh9lqyy8z8cd7gq4hxl08ah4jki82cf877d"))))
-    (properties `((upstream-name . "eiCompare")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wru
-                             r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-overlapping
-                             r-mcmcse
-                             r-magrittr
-                             r-ggplot2
-                             r-foreach
-                             r-eipack
-                             r-ei
-                             r-dplyr
-                             r-dosnow
-                             r-data-table
-                             r-coda
-                             r-bayestestr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RPVote/eiCompare")
-    (synopsis "Compares Different Ecological Inference Methods")
-    (description
-     "This package provides a comprehensive suite of tools for estimating the
-candidate preferences of racial/ethnic voting blocs in elections.  Includes
-functions for predicting voter race/ethnicity and conducting ecological
-inference.  Race/ethnicity prediction builds on race prediction developed by
-Imai et al. (2016) <doi:10.1093/pan/mpw001>.  Ecological inference methods are
-based on King (1997) <ISBN: 0691012407>,
-<https://gking.harvard.edu/eicamera/kinroot.html>; King et.  al. (2004) <ISBN:
-0521542804>, <https://gking.harvard.edu/files/abs/ecinf04-abs.shtml>.")
     (license license:gpl3)))
 
 (define-public r-eicm

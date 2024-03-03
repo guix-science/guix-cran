@@ -21767,13 +21767,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "0j4ra8wzbpargdd8gqd8iva4kjl6xk8jxh9mal15gdhfq6njfl02"))))
+        (base32 "0zw643g0mfypic4f2d1vi29n5pfc39z59jp5z40kzpjqc97vsqj6"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

@@ -15262,13 +15262,13 @@ summarizing the most relevant patterns in time sequences.")
 (define-public r-nair
   (package
     (name "r-nair")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NAIR" version))
        (sha256
-        (base32 "1v1hs9mi02d2rnmn2pif4j6xyvcjixna7ihwn39y21dsbj5ivlfb"))))
+        (base32 "0xxps6ri53i6fw0wd58v593jqcsiwr36lgqnx7bnf1b47pqnqc64"))))
     (properties `((upstream-name . "NAIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
