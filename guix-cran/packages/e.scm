@@ -5800,13 +5800,13 @@ parameters of the 2-D spatial and temporal ETAS model.")
 (define-public r-etas
   (package
     (name "r-etas")
-    (version "0.5.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETAS" version))
        (sha256
-        (base32 "03721z7fsbkqv5wiybm01nxbl99x8wf2214y3w139k0zr42xk94s"))))
+        (base32 "1ivnv05cfbrrmglz319202nssghaq15h6l35k1pbal9gg7izd7xm"))))
     (properties `((upstream-name . "ETAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random

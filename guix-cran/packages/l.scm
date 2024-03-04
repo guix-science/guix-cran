@@ -2583,13 +2583,13 @@ polynomial method.")
 (define-public r-lphom
   (package
     (name "r-lphom")
-    (version "0.3.5-4")
+    (version "0.3.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lphom" version))
        (sha256
-        (base32 "1czpxbl40iijnmcyx3gblizclnw5a39hadrgppw7ijy58yh6mway"))))
+        (base32 "08rnymy72p0c06mx6n70s2xirigp21d7g3dwnapad7w7iajw7iqf"))))
     (properties `((upstream-name . "lphom")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))

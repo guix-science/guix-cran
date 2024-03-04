@@ -5193,13 +5193,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.3.2")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "1c4w55s8793axkd4fg34hqwp9ssxwxz07ggic7v9j6vbi54rcl51"))))
+        (base32 "10i3v4rkbw3njpm86ss3r47k79yqp2j45k53rxvc56kxx9dsaqz4"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5211,7 +5211,7 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
                              r-ggplot2
                              r-dqrng))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=greeks")
+    (home-page "https://github.com/ahudde/greeks")
     (synopsis
      "Sensitivities of Prices of Financial Options and Implied Volatilities")
     (description
@@ -11794,13 +11794,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.4-2")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "0lznd283a3vy6ksgk53gmry6vlzszyf2lawdvs6m4bqzvl9m4gsh"))))
+        (base32 "1hnj3rykmapk1xfm8swrbdavizfhd1ndmx3mxm48drk9mk2rba9f"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11821,23 +11821,22 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
      "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
 gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
 Recursive Partitioning ('RPART') or step wise regression models are fit.  Nested
-cross validation (or analogous for the random forest) to estimate and compare
-performances between these models is used to describe model performances.  For
-some datasets, for example when the design matrix is not of full rank, glmnet
-may have very long run times when fitting the relaxed lasso model, from our
-experience when fitting Cox models on data with many predictors and many
-patients, making it difficult to get solutions from either glmnet() or
-cv.glmnet().  This may be remedied with the path=TRUE options when calling
-glmnet() and cv.glmnet().  Within the glmnetr package the approach of path=TRUE
-is taken by default.  When fitting not a relaxed lasso model but an elastic-net
-model, then the R-packages nestedcv
+cross validation (or analogous for the random forest) is used to estimate and
+compare performances between these models.  For some datasets, for example when
+the design matrix is not of full rank, glmnet may have very long run times when
+fitting the relaxed lasso model, from our experience when fitting Cox models on
+data with many predictors and many patients, making it difficult to get
+solutions from either glmnet() or cv.glmnet().  This may be remedied with the
+path=TRUE options when calling glmnet() and cv.glmnet().  Within the glmnetr
+package the approach of path=TRUE is taken by default.  When fitting not a
+relaxed lasso model but an elastic-net model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. As with the glmnet package,
 this package passes most relevant output to the output object and tabular and
 graphical summaries can be generated using the summary and plot functions.  Use
 of the glmnetr has many similarities to the glmnet package and it is recommended
-that the user of glmnetr first become familiar with the glmnet package
+that the user of glmnetr also become familiar with the glmnet package
 <https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
 glmnet'\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
     (license license:gpl3)))
@@ -20706,6 +20705,50 @@ Theoretical background and worked examples are available at
 <https://tinyurl.com/UCLgeostats/>.")
     (license license:gpl3)))
 
+(define-public r-geostan
+  (package
+    (name "r-geostan")
+    (version "0.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geostan" version))
+       (sha256
+        (base32 "1m1xxx12ry244nkx0sn7cvlxxi2p7ms9n4irb2qqrgliq24db9v6"))))
+    (properties `((upstream-name . "geostan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-stanheaders
+                             r-spdep
+                             r-signs
+                             r-sf
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://connordonegan.github.io/geostan/")
+    (synopsis "Bayesian Spatial Analysis")
+    (description
+     "For Bayesian inference with spatial data, provides exploratory spatial analysis
+tools, multiple spatial model specifications, spatial model diagnostics, and
+special methods for inference with small area survey data (e.g., the America
+Community Survey (ACS)) and censored population health surveillance data.
+Models are pre-specified using the Stan programming language, a platform for
+Bayesian inference using Markov chain Monte Carlo (MCMC).  References: Carpenter
+et al. (2017) <doi:10.18637/jss.v076.i01>; Donegan (2021)
+<doi:10.31219/osf.io/3ey65>; Donegan (2022) <doi:10.21105/joss.04716>; Donegan,
+Chun and Hughes (2020) <doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and
+Griffith (2021) <doi:10.3390/ijerph18136856>; Morris et al. (2019)
+<doi:10.1016/j.sste.2019.100301>.")
+    (license license:gpl3+)))
+
 (define-public r-geosptdb
   (package
     (name "r-geosptdb")
@@ -22343,6 +22386,43 @@ Conjugate priors are assumed on some parameters while inference on the other
 parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
+
+(define-public r-geoar
+  (package
+    (name "r-geoar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoAr" version))
+       (sha256
+        (base32 "06vj4r764cwnc131vlfvd3qhy959z49mw24sg3r1dq20frs195di"))))
+    (properties `((upstream-name . "geoAr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-sf
+                             r-purrr
+                             r-magrittr
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-curl
+                             r-attempt
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PoliticaArgentina/geoAr")
+    (synopsis "Argentina's Spatial Data Toolbox")
+    (description
+     "Collection of tools that facilitates data access and workflow for spatial
+analysis of Argentina.  Includes historical information from censuses,
+administrative limits at different levels of aggregation, location of human
+settlements, among others.  Since it is expected that the majority of users will
+be Spanish-speaking, the documentation of the package prioritizes this language,
+although an effort is made to also offer annotations in English.")
+    (license license:expat)))
 
 (define-public r-geoadjust
   (package

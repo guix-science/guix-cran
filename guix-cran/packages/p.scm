@@ -15140,13 +15140,13 @@ numbers not known).")
 (define-public r-polynomf
   (package
     (name "r-polynomf")
-    (version "2.0-5")
+    (version "2.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PolynomF" version))
        (sha256
-        (base32 "0asv2ggf5j4ihndv9fbd1y03iq1r599m4w9s42jn34wcfs67lvx8"))))
+        (base32 "1xr47i0vizz98xdkyb7pca34x6yd8xa9kwj9bcrylr5ixrs52rvj"))))
     (properties `((upstream-name . "PolynomF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

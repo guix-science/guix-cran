@@ -17839,13 +17839,13 @@ Limnios, (2007, ISBN: 9780470612484) <DOI: 10.1002/9780470612484>.")
 (define-public r-fattailsr
   (package
     (name "r-fattailsr")
-    (version "1.8-0")
+    (version "1.8-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FatTailsR" version))
        (sha256
-        (base32 "10js4vbg9f4ql2panzwb5vxzzb8qb2hl6xyx7nhindhwncga8q33"))))
+        (base32 "0zqwh3x40qbjsbkmac8zr722vrmyd4p2jwp0qaiqzd4ypkhgnix0"))))
     (properties `((upstream-name . "FatTailsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-minpack-lm))

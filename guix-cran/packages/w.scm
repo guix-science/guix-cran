@@ -6232,13 +6232,13 @@ Department of Natural Resources @code{ArcGIS} REST APIs
 (define-public r-wdnet
   (package
     (name "r-wdnet")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wdnet" version))
        (sha256
-        (base32 "163yx18xg6q09n07kbvigklr4y0mdnav76hafsf2i56fz1x5b632"))))
+        (base32 "02sz8rdj3wy2lj5zxb3znc4hymahmpxmsi1n3bg30naz7492k9pk"))))
     (properties `((upstream-name . "wdnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -6252,17 +6252,10 @@ Department of Natural Resources @code{ArcGIS} REST APIs
     (home-page "https://gitlab.com/wdnetwork/wdnet")
     (synopsis "Weighted and Directed Networks")
     (description
-     "Implementations of network analysis including (1) assortativity coefficient of
-weighted and directed networks, Yuan, Yan and Zhang (2021)
-<doi:10.1093/comnet/cnab017>, (2) centrality measures for weighted and directed
-networks, Opsahl, Agneessens and Skvoretz (2010)
-<doi:10.1016/j.socnet.2010.03.006>, Zhang, Wang and Yan (2022)
-<doi:10.1016/j.physa.2021.126438>, (3) clustering coefficient of weighted and
-directed networks, Fagiolo (2007) <doi:10.1103/@code{PhysRevE.76.026107>} and
-Clemente and Grassi (2018) <doi:10.1016/j.chaos.2017.12.007>, (4) rewiring
-networks with given assortativity coefficients, Wang, Yan, Yuan and Zhang (2022)
-<doi:10.1007/s11222-022-10161-8>, (5) preferential attachment network
-generation, Yuan, Wang, Yan and Zhang (2023) <doi:10.6339/23-JDS1110>.")
+     "Assortativity coefficients, centrality measures, and clustering coefficients for
+weighted and directed networks.  Rewiring unweighted networks with given
+assortativity coefficients.  Generating general preferential attachment
+networks.")
     (license license:gpl3+)))
 
 (define-public r-wdm

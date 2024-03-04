@@ -9504,13 +9504,13 @@ approximation.  The models are fitted via TMB (Template Model Builder)
 (define-public r-stochvol
   (package
     (name "r-stochvol")
-    (version "3.2.3")
+    (version "3.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stochvol" version))
        (sha256
-        (base32 "0h3xjbf2882ga5zy0fyarqgdnd0p71n6ib662sqhifqiadz4dddq"))))
+        (base32 "1cr8rn4nzdbvgjhsahyijn2kgbndiyvycbn6rjxc0x5prc99j52w"))))
     (properties `((upstream-name . "stochvol")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-coda))
@@ -13533,13 +13533,13 @@ versions of @code{stacomiR} are available in R-forge.")
 (define-public r-stacomir
   (package
     (name "r-stacomir")
-    (version "0.6.0.7")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacomiR" version))
        (sha256
-        (base32 "1w44rvjikvj6fjansg0l06rrhym6icrv1fr8bpq9hrx3h870nrz8"))))
+        (base32 "0ik0804j8fvqmpj0xyzmjdsykw3672a5vyb4dhiss7dc1g4la20f"))))
     (properties `((upstream-name . "stacomiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -13559,9 +13559,10 @@ versions of @code{stacomiR} are available in R-forge.")
                              r-intervals
                              r-hmisc
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "http://stacomir.r-forge.r-project.org/")
+    (home-page "https://forgemia.inra.fr/stacomi/stacomir")
     (synopsis "Fish Migration Monitoring")
     (description
      "Graphical outputs and treatment for a database of fish pass monitoring.  It is a
@@ -43558,13 +43559,13 @@ Setiawan(2016)<https://www.researchgate.net/publication/316517889_S-GSTAR-SUR_mo
 (define-public r-sgsr
   (package
     (name "r-sgsr")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgsR" version))
        (sha256
-        (base32 "0c5cy2kmx37d76ywad13wzmpghxvavvpxb26a2rrnn399m1dgjg2"))))
+        (base32 "1ircbwlc6ysv8v8vxn5snjqx47qhi5rdqyd3vvf3cx54jndsnvah"))))
     (properties `((upstream-name . "sgsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

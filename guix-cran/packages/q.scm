@@ -647,13 +647,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0vkpqlf1y5sczjpq539s3rwpqy3wv824nc2lh82rrfcpv7kxgn5m"))))
+        (base32 "1v3vipcxzvz8radbkj7rq8v4l4pmx38cyyz5a042k2v7fzj24bw3"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-polychrome))

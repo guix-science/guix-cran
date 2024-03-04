@@ -4968,13 +4968,13 @@ IP2Location to install the module.")
 (define-public r-ip
   (package
     (name "r-ip")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IP" version))
        (sha256
-        (base32 "0i9518pk8y2ls2bx7d6jzxc647n5m576y88in4bbiwyzldy9gqqj"))))
+        (base32 "155nrx5ika5vl1gxfqa13fr3w05449vgijm8xdqd68982bsvcp10"))))
     (properties `((upstream-name . "IP")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi))
@@ -4985,7 +4985,7 @@ IP2Location to install the module.")
      "This package provides S4 classes for Internet Protocol (IP) versions 4 and 6
 addresses and efficient methods for IP addresses comparison, arithmetic, bit
 manipulation and lookup.  Both IPv4 and IPv6 arbitrary ranges are also supported
-as well as domain lookup and whois query.")
+as well as internationalized (IDN) domain lookup with and whois query.")
     (license license:gpl2+)))
 
 (define-public r-iotarelr
@@ -14939,13 +14939,13 @@ techniques.")
 (define-public r-icr
   (package
     (name "r-icr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icr" version))
        (sha256
-        (base32 "18avxzbnpw53vgidyjfck970k3x77366x0b73xn2b1iczmfi0qj4"))))
+        (base32 "1plkqhz6kgsykvpx1m4n515s1idzmp6qx2xc8rq3x5080yavz278"))))
     (properties `((upstream-name . "icr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

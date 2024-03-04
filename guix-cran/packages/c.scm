@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -4414,13 +4414,13 @@ cryptocurrencies.")
 (define-public r-cryptotrackr
   (package
     (name "r-cryptotrackr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptotrackr" version))
        (sha256
-        (base32 "1n7af1d9c0nw3v6s38yj782y9gbbzq1d8w8mrcvhjglzgcs50abd"))))
+        (base32 "0y2fd2v23vc06g8wfs2h4v5b2z0599wjz5ws4yhw3kfq82969fn8"))))
     (properties `((upstream-name . "cryptotrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-openssl r-jsonlite r-httr r-digest))

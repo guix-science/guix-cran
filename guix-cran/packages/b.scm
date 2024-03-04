@@ -256,13 +256,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.5")
+    (version "2.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "1cxypw6fdg0myk2idhl9jgx40yfrg5hh9bcciw9fg2d6p337w602"))))
+        (base32 "0ly3ll52l3202xczvw7zy5ajkqd7wg0c6g749x6gzv47bisbykmj"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -24627,6 +24627,33 @@ frequent class in the training set).  The functions in the package can be used
 on their own, or introduce methods named dummy_regressor or dummy_classifier
 that can be used within the caret package pipeline.")
     (license license:expat)))
+
+(define-public r-basemaps
+  (package
+    (name "r-basemaps")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basemaps" version))
+       (sha256
+        (base32 "0dc1pwzipp1rj3xjmgf4h4i01wrm253mrv7v4jhdk8xh9l4ipl5g"))))
+    (properties `((upstream-name . "basemaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-stars
+                             r-slippymath
+                             r-sf
+                             r-pbapply
+                             r-magick
+                             r-httr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=basemaps")
+    (synopsis "Accessing Spatial Basemaps in R")
+    (description
+     "This package provides a lightweight package to access spatial basemaps from open
+sources such as @code{OpenStreetMap}', Carto', Mapbox and others in R.")
+    (license license:gpl3)))
 
 (define-public r-basefun
   (package

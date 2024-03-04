@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -764,13 +763,13 @@ retrieving a time series based on spatial location and temporal filters.")
 (define-public r-rwsearch
   (package
     (name "r-rwsearch")
-    (version "5.0.5")
+    (version "5.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RWsearch" version))
        (sha256
-        (base32 "161fnkl0dzk11wvzj7vz4807pjq33gvnhniw8ms2ipz0vmd0pk7c"))))
+        (base32 "09rkq84ppy6f6ak229wim5y0zd295saabh3q4lmv23zi6z3a9ngh"))))
     (properties `((upstream-name . "RWsearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2233,13 +2232,13 @@ the result from the stored file instead of running the code again.")
 (define-public r-runner
   (package
     (name "r-runner")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runner" version))
        (sha256
-        (base32 "0pad6czgjcpipb4n8qn4psa1nd1li0f9dkgh8ab7g7c8qwjb6yfz"))))
+        (base32 "0vhqjnwcx3z3i74p26divx6palx1rwvk4jpqn64jrqlzaw9qich4"))))
     (properties `((upstream-name . "runner")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -6370,13 +6369,13 @@ throughout Mexico.  See <https://sinaica.inecc.gob.mx> for more information.")
 (define-public r-rsimsum
   (package
     (name "r-rsimsum")
-    (version "0.11.3")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsimsum" version))
        (sha256
-        (base32 "1pncp138ch69pb21lks8ziwhn2vhb5y812g2i9zfpdmfnprhg2d6"))))
+        (base32 "1crxqx3vhnwrjwr556dw6qq9789jgccvv9z2bbqi003h7w483q5k"))))
     (properties `((upstream-name . "rsimsum")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -27732,13 +27731,13 @@ rotation and pesticide application regimes.")
 (define-public r-reset
   (package
     (name "r-reset")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESET" version))
        (sha256
-        (base32 "19rlmyljhiwiwh66xnqrz3m605jiy7kdaigivwmln7cvypzblzvk"))))
+        (base32 "0jqnyq63a83anz3r8bjj0qsa9diji3sl7hkjw33zg7pzigcg2yk3"))))
     (properties `((upstream-name . "RESET")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -40290,17 +40289,17 @@ information systems.")
 (define-public r-rcdklibs
   (package
     (name "r-rcdklibs")
-    (version "2.8")
+    (version "2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcdklibs" version))
        (sha256
-        (base32 "0j8r0aqvdmajglyc3zld1d2g2cggg6i3qms1ghalxxdgph555jzw"))))
+        (base32 "1hdln6530xs8jinshn78gcmpi6dbidn9hfy0rspmnp7k242av4gg"))))
     (properties `((upstream-name . "rcdklibs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
-    (home-page "https://cran.r-project.org/package=rcdklibs")
+    (home-page "https://cdk-r.github.io/rcdklibs/")
     (synopsis "The CDK Libraries Packaged for R")
     (description
      "An R interface to the Chemistry Development Kit, a Java library for
@@ -46019,13 +46018,13 @@ Ranking with Incomplete Information, Technical Report.")
 (define-public r-rainbowr
   (package
     (name "r-rainbowr")
-    (version "0.1.33")
+    (version "0.1.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAINBOWR" version))
        (sha256
-        (base32 "1rzi0hys891qwfdfbckpk12ahg7cv9jx9p9n8hdgkwk2jva4qynq"))))
+        (base32 "0cpjjnjfv53q0cwgia5fbay4n02z0q26jjr2p7c7rpykd382lr7c"))))
     (properties `((upstream-name . "RAINBOWR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
