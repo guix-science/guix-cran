@@ -1495,6 +1495,39 @@ Wenstop, Fred (1980) <doi:10.1016/0165-0114(80)90031-7>, Whitley, Darrell (1989,
 ISBN:1-55860-066-3), Wickham, Hadley (2019, ISBN:978-815384571).")
     (license license:expat)))
 
+(define-public r-xegapopulation
+  (package
+    (name "r-xegapopulation")
+    (version "1.0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xegaPopulation" version))
+       (sha256
+        (base32 "0gzcmsbw0256m9fy7n520pwic3f4zwcw6nfhna8fc7abhnvyrdph"))))
+    (properties `((upstream-name . "xegaPopulation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene r-xegagagene r-future-apply))
+    (home-page "<https://github.com/ageyerschulz/xegaPopulation>")
+    (synopsis "Genetic Population Level Functions")
+    (description
+     "This collection of gene representation-independent functions implements the
+population layer of extended evolutionary and genetic algorithms and its
+support.  The population layer consists of functions for initializing, logging,
+observing, evaluating a population of genes, as well as of computing the next
+population.  For parallel evaluation of a population of genes 4 execution models
+- named Sequential, @code{MultiCore}, @code{FutureApply}, and Cluster - are
+provided.  They are implemented by configuring the lapply() function.  The
+execution model @code{FutureApply} can be externally configured as recommended
+by Bengtsson (2021) <doi:10.32614/RJ-2021-048>.  Configurable acceptance rules
+and cooling schedules (see Kirkpatrick, S., Gelatt, C. D. J, and Vecchi, M. P.
+(1983) <doi:10.1126/science.220.4598.671>, and Aarts, E., and Korst, J. (1989,
+ISBN:0-471-92146-7) offer simulated annealing or greedy randomized approximate
+search procedure elements.  Adaptive crossover and mutation rates depending on
+population statistics generalize the approach of Stanhope, S. A. and Daida, J.
+M. (1996, ISBN:0-18-201-031-7).")
+    (license license:expat)))
+
 (define-public r-xegapermgene
   (package
     (name "r-xegapermgene")

@@ -4206,13 +4206,13 @@ exponential.")
 (define-public r-eventstudyr
   (package
     (name "r-eventstudyr")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventstudyr" version))
        (sha256
-        (base32 "11amh8v741hzjm1rb01mil030ax8nnv7l46nqikz978f39pb4xla"))))
+        (base32 "0l7sv8kb459sb69rp2y61g7a19i8xhanjd6paajlrha44bxyl1kv"))))
     (properties `((upstream-name . "eventstudyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9862,13 +9862,13 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "03zalwb5jjp3dv45xlig6wy37l99kfrlcmj3xw2zk3jxgylwxifk"))))
+        (base32 "1qiidg3fq2ccm6l8r080fg9mwdvcnksl338z2navv9w4jq7kjwr8"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -10636,27 +10636,6 @@ calculation of systemic and carcinogenic risks.  For more information see the
 publication: Barrio-Parra et al. (2019) \"Human-health probabilistic risk
 assessment: the role of exposure factors in an urban garden scenario\"
 <doi:10.1016/j.landurbplan.2019.02.005>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-enviropra
-  (package
-    (name "r-enviropra")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnviroPRA" version))
-       (sha256
-        (base32 "0yirh3vy7wap0qmm3kvjz9y68gcvp9i8qshv80wh8aijxwklpr8n"))))
-    (properties `((upstream-name . "EnviroPRA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncdist r-mass r-ksamples r-fitdistrplus))
-    (home-page "https://cran.r-project.org/package=EnviroPRA")
-    (synopsis "Environmental Probabilistic Risk Assessment Tools")
-    (description
-     "This package provides methods to perform a Probabilistic Environmental Risk
-assessment from exposure to toxic substances - i.e.  USEPA (1997)
-<https://www.epa.gov/risk/guiding-principles-monte-carlo-analysis> -.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-envirem
@@ -12863,6 +12842,38 @@ structures, can also be simulated and estimated.  The estimation is based on the
 maximum likelihood method, introduced by introduced by Ozaki (1979)
 <doi:10.1007/BF02480272>, with @code{maxLik} package.")
     (license license:gpl2+)))
+
+(define-public r-emgaussian
+  (package
+    (name "r-emgaussian")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMgaussian" version))
+       (sha256
+        (base32 "0gl3lfww7chwsvg16m5x6agbza4xx482b56wqccb9zqin0j89dfb"))))
+    (properties `((upstream-name . "EMgaussian")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrixcalc
+                             r-matrix
+                             r-lavaan
+                             r-glassofast
+                             r-glasso
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=EMgaussian")
+    (synopsis
+     "Expectation-Maximization Algorithm for Multivariate Normal (Gaussian) with Missing Data")
+    (description
+     "Initially designed to distribute code for estimating the Gaussian graphical
+model with Lasso regularization, also known as the graphical lasso (glasso),
+using an Expectation-Maximization (EM) algorithm based on work by
+@code{StÃ¤dler} and BÃ¼hlmann (2012) <doi:10.1007/s11222-010-9219-7>.  As a
+byproduct, code for estimating means and covariances (or the precision matrix)
+under a multivariate normal (Gaussian) distribution is also available.")
+    (license license:gpl3+)))
 
 (define-public r-emg
   (package

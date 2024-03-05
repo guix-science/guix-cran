@@ -163,13 +163,13 @@ useful metadata on airlines, airports, weather, and planes.")
 (define-public r-nvmix
   (package
     (name "r-nvmix")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nvmix" version))
        (sha256
-        (base32 "12lhch9sib2nx8j7500dchfi27fvpabbcdkcw9qh194fx22ycknx"))))
+        (base32 "055f99v3l9zzd2r23l7101y0sy5p45zrsh3yblmbmyq8b11bx4rj"))))
     (properties `((upstream-name . "nvmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-qrng

@@ -3528,13 +3528,13 @@ models, as described in Parkkinen and Baumgartner (2021)
 (define-public r-froth
   (package
     (name "r-froth")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "froth" version))
        (sha256
-        (base32 "1wi4xphqrwrhbg03w3kp92d9d6z7pyywmb8228mqhzd0gs9anyz8"))))
+        (base32 "188rprm37lppgkn1mf8qfgjsz55kvm29dkblnbf458g5339w7vz1"))))
     (properties `((upstream-name . "froth")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -13152,28 +13152,6 @@ available on taxonomy and taxon occurrence.  Occurrence data can be filtered by
 taxon, time, location and other variables.  The data accessed are conveniently
 preformatted for subsequent analyses.")
     (license license:expat)))
-
-(define-public r-finasym
-  (package
-    (name "r-finasym")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FinAsym" version))
-       (sha256
-        (base32 "0v15ydz4sq9djwcdcfp90mk8l951rry7h91d7asgg53mddbxjj6f"))))
-    (properties `((upstream-name . "FinAsym")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=FinAsym")
-    (synopsis
-     "Classifies implicit trading activity from market quotes and computes the probability of informed trading")
-    (description
-     "This package accomplishes two tasks: a) it classifies implicit trading activity
-from quotes in OTC markets using the algorithm of Lee and Ready (1991); b) based
-on information for trade initiation, the package computes the probability of
-informed trading of Easley and O'Hara (1987).")
-    (license license:gpl3)))
 
 (define-public r-financialmath
   (package

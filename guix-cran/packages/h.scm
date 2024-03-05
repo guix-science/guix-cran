@@ -1980,13 +1980,13 @@ and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
 (define-public r-hubeau
   (package
     (name "r-hubeau")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubeau" version))
        (sha256
-        (base32 "0qvvd1a4plmhm6784xda75pn6751hjabr2x6i2h5y8hh85zidldy"))))
+        (base32 "1fzy24wx93rc9niiksir0hys2f1slafrng9rkwmjaf51lsj0n1qw"))))
     (properties `((upstream-name . "hubeau")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -3240,27 +3240,6 @@ stratified sample of 80 talkers of Dutch.")
      "This package provides a nonparametric smoothed kernel density estimator for the
 future conditional hazard when time-dependent covariates are present.  It also
 provides pointwise and uniform confidence bands and a bandwidth selection.")
-    (license license:gpl2+)))
-
-(define-public r-hpoplot
-  (package
-    (name "r-hpoplot")
-    (version "2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hpoPlot" version))
-       (sha256
-        (base32 "176bf93gjwbi2z7nz81w4aycwax6f7jxvs3236zrmf0f0f4m7bkc"))))
-    (properties `((upstream-name . "hpoPlot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgraphviz r-magrittr r-functional))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=hpoPlot")
-    (synopsis "Functions for Plotting HPO Terms")
-    (description
-     "Collection of functions for manipulating sets of HPO terms and plotting them
-with a various options.")
     (license license:gpl2+)))
 
 (define-public r-hplb

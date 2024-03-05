@@ -5131,13 +5131,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.8")
+    (version "7.13.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drake" version))
        (sha256
-        (base32 "0ijhr4wn06nr10l5x3d0my1wdlhcr4gbr4dq6swqjdgc8kylzanl"))))
+        (base32 "1yi4d09s51lf0j1xb9c8799zx7bn844rl945n0qdd7rva514yspx"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -7511,35 +7511,6 @@ their functions.  The documentation can be viewed just like any other help files
 for functions provided by packages as well.")
     (license license:gpl2)))
 
-(define-public r-docreview
-  (package
-    (name "r-docreview")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "docreview" version))
-       (sha256
-        (base32 "0cmgl1q1whb38iiljaz0f5vyxniyaaxm8xpbzd56cayqgbvl92b8"))))
-    (properties `((upstream-name . "docreview")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-stringr
-                             r-rlang
-                             r-quanteda-textstats
-                             r-quanteda
-                             r-purrr
-                             r-parsermd
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://thisisnic.github.io/docreview/")
-    (synopsis "Opinionated Documentation Checking")
-    (description
-     "High quality documentation can make for a great experience for your users.  You
-can use docreview to check that your R package documentation passes a number of
-configurable checks relating to documentation content.")
-    (license license:expat)))
-
 (define-public r-docore
   (package
     (name "r-docore")
@@ -9024,26 +8995,6 @@ ahead forecasts from these models.  See Demirhan
 (2020)(<doi:10.1371/journal.pone.0228812>) and Baltagi
 (2011)(<doi:10.1007/978-3-642-20059-5>) for more information.")
     (license license:gpl3)))
-
-(define-public r-dkdna
-  (package
-    (name "r-dkdna")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dkDNA" version))
-       (sha256
-        (base32 "0ycyzn5bmhjl5idp0lndffkninpm9n23wrkrzi59ac8z8ghsnhf4"))))
-    (properties `((upstream-name . "dkDNA")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "http://morotalab.org/")
-    (synopsis "Diffusion Kernels on a Set of Genotypes")
-    (description
-     "Compute diffusion kernels on DNA polymorphisms, including SNP and bi-allelic
-genotypes.")
-    (license license:gpl2)))
 
 (define-public r-dkanr
   (package

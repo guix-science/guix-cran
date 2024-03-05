@@ -172,13 +172,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "0g3r1qlx2fqc89yxg2vxb57z5qvs14ykymw798srvygbigdlg4qr"))))
+        (base32 "0l5ma8004zw69w55qvdmrl1jzg25bp69szyhqddn2h5qcnbg9r1j"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5879,13 +5879,13 @@ time computing other summary statistics which are summarily ignored.")
 (define-public r-vcmeta
   (package
     (name "r-vcmeta")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcmeta" version))
        (sha256
-        (base32 "070qlyhalnkvz1z2sd5ndirn6py44dfc95ncs7ddvlhpd8lxp6xm"))))
+        (base32 "11z1kfmd2kamkf39gr5ppry1g4pgrpqnyzbc2bgd1yay6yjhl93z"))))
     (properties `((upstream-name . "vcmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mathjaxr r-ggplot2))
@@ -7735,28 +7735,6 @@ set a rules formulated with validate'.")
 be used as a starting point for domain specific rules to be checked with package
 validate'.")
     (license license:expat)))
-
-(define-public r-validaters
-  (package
-    (name "r-validaters")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "validateRS" version))
-       (sha256
-        (base32 "1ivw9ddr6z2wrsqvhbn87p5pikhkxlz8p45pb5nq13dvs359vkww"))))
-    (properties `((upstream-name . "validateRS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm r-triangle r-reshape2 r-data-table))
-    (home-page "https://cran.r-project.org/package=validateRS")
-    (synopsis "One-Sided Multivariate Testing Procedures for Rating Systems")
-    (description
-     "An implementation of statistical tests for the validation of rating systems as
-described in the ECB Working paper Advances in multivariate back-testing for
-credit risk underestimation'', by F. Coppens, M. Mayer, L. Millischer, F. Resch,
-S. Sauer, K. Schulze (ECB WP series, forthcoming).")
-    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-validateit
   (package

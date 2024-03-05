@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -5864,13 +5864,13 @@ Also includes cropping to a hexagon, heart, parallelogram, and square.")
 (define-public r-crop
   (package
     (name "r-crop")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crop" version))
        (sha256
-        (base32 "1yjpk7584wrz9hjqs21irjnrlnahjg8lajra9yfdp6r927iimg1l"))))
+        (base32 "12nngv12p3x8nm26c23xm3xamp8gsm9p1cd2cn5lrfjb9igvc0yy"))))
     (properties `((upstream-name . "crop")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=crop")
@@ -21830,13 +21830,13 @@ Drummond et al. (2002) <doi:10.1093/genetics/161.3.1307>.")
 (define-public r-coala
   (package
     (name "r-coala")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coala" version))
        (sha256
-        (base32 "0bzncb7v7vhy7ir2fa8kx2pa1jsd48bwm5ylw7alw5a9bdmp0swi"))))
+        (base32 "1y736gagr1nkyxvsgkn411si6xv6w4sp8m7p20za07y4m71z900i"))))
     (properties `((upstream-name . "coala")))
     (build-system r-build-system)
     (propagated-inputs (list r-scrm
@@ -23932,13 +23932,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "0j0m6gx49w89w63xh0qb002z5lwc0118mz96fs3xvcqb2qbv7npv"))))
+        (base32 "1wrbkimckskldb77cyicqklrhyzp5d58hjgnzp2gwj73cysiw5zx"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -37415,13 +37415,13 @@ views).")
 (define-public r-cata
   (package
     (name "r-cata")
-    (version "0.1.0.2")
+    (version "0.1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cata" version))
        (sha256
-        (base32 "12525qqwh12cbbdma351jxabj0c5l8p02dl9vv2pxw1i7ka8xiqn"))))
+        (base32 "0fjnyw2kbvvqagc12in7j963jqy5y93rm97wly1vdl7i6dxlhh7g"))))
     (properties `((upstream-name . "cata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cata")

@@ -12582,13 +12582,13 @@ available back to 2000 for most geographies.")
 (define-public r-tinythemes
   (package
     (name "r-tinythemes")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinythemes" version))
        (sha256
-        (base32 "19dsayqi762l1dj5valmlgsq1hjy4s2znrnln9h98w17wv629zhg"))))
+        (base32 "0ps69r9jn5cmx68spq3rgqn784203g8n6lzkdh6ijlx7bzh8frm5"))))
     (properties `((upstream-name . "tinythemes")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -12599,7 +12599,7 @@ available back to 2000 for most geographies.")
 contains a particularly nice one, but brings along a significant tail of
 dependencies.  So this (currently experimental) package brings along just the
 theme_ipsum_rc theme using the Roboto Condensed font.  Should the font not be
-installed on your system, see the help in the package hrbrthemes on how on
+installed on your system, see the help in the package hrbrthemes on how to
 install Roboto Condensed'.")
     (license license:expat)))
 
@@ -13416,6 +13416,25 @@ to show a timeline of events.  The image
 correlate two timelines of events.  A brief description is available at
 <https://barryzee.github.io/@code{timeLineGraphics_manuscript/golden_age.html>}.")
     (license license:gpl2+)))
+
+(define-public r-timeless
+  (package
+    (name "r-timeless")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeless" version))
+       (sha256
+        (base32 "1ak2kksfk78yhjylf6iwcmdgzv8lwx6alck52dznn74y2w6zlr6m"))))
+    (properties `((upstream-name . "timeless")))
+    (build-system r-build-system)
+    (home-page "https://github.com/schochastics/timeless")
+    (synopsis "Fast General Purpose Date/Time Converter")
+    (description
+     "Fast general purpose date/time converter using Rust'.  The package implements
+date time, date and epoch time parser for heterogeneous vectors of dates.")
+    (license license:expat)))
 
 (define-public r-timedf
   (package
@@ -19450,13 +19469,13 @@ move to the online versions.")
 (define-public r-texmex
   (package
     (name "r-texmex")
-    (version "2.4.8")
+    (version "2.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texmex" version))
        (sha256
-        (base32 "115x7j2kvifzsrmh8zy6xymm1p01sxk4c26zdmi0p51bsgvs46ih"))))
+        (base32 "1vdrhf4mn7c54w9zz0k4xpmvg9w3ysi67ncbr4pbllnarxa582yz"))))
     (properties `((upstream-name . "texmex")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-ggplot2))
@@ -26106,4 +26125,28 @@ equivalence according to Hoffelder (2016)
 <http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
+
+(define-public r-t2dfittailor
+  (package
+    (name "r-t2dfittailor")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "T2DFitTailor" version))
+       (sha256
+        (base32 "1cyml3dfblsv8mc61j8kzvj8h9gbcj4qph124028492a2cxvgjj4"))))
+    (properties `((upstream-name . "T2DFitTailor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-fmsb r-dplyr))
+    (home-page "https://cran.r-project.org/package=T2DFitTailor")
+    (synopsis
+     "'Tailor the Exercise Plans and Visualize the Outcome for T2D Patients'")
+    (description
+     "This package provides a system for personalized exercise plan recommendations
+for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
+(Glycated Hemoglobin).  You provide the individual's information, and
+T2D@code{FitTailor} details the exercise plan and predicts the intervention's
+effectiveness.")
+    (license license:expat)))
 

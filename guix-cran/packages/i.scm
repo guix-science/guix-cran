@@ -1853,25 +1853,6 @@ includes common ternary diagrams which are useful for the archaeologist (e.g.
 soil texture charts, ceramic phase diagram).")
     (license license:gpl3+)))
 
-(define-public r-isopat
-  (package
-    (name "r-isopat")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "isopat" version))
-       (sha256
-        (base32 "0fznvgycyd35dh7pbq1xhp667gsficlmycn5pcrqcbs89069xr1s"))))
-    (properties `((upstream-name . "isopat")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=isopat")
-    (synopsis "Calculation of isotopic pattern for a given molecular formula")
-    (description
-     "The function calculates the isotopic pattern (fine structures) for a given
-chemical formula.")
-    (license license:gpl2)))
-
 (define-public r-isopam
   (package
     (name "r-isopam")

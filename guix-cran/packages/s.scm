@@ -27586,30 +27586,26 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.9.0")
+    (version "3.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "0zspkjmsbbjkzw1pzifdqdj7ysk9vj9q9fwh0hvcy3svx4w8hmb3"))))
+        (base32 "1ax3ckipylqnwnk2534fd6akk2n7vqwg0nsxyvrig4kqwl1dfhns"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-rlang
                              r-readr
                              r-purrr
-                             r-pracma
                              r-lubridate
                              r-glue
                              r-dplyr
                              r-desolve
-                             r-curl
-                             r-cli
-                             r-astrochron))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://japhir.github.io/snvecR/")
     (synopsis "Calculate Earthâs Obliquity and Precession in the Past")
@@ -29255,13 +29251,13 @@ self-explaining structure.")
 (define-public r-smof
   (package
     (name "r-smof")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smof" version))
        (sha256
-        (base32 "0b0cwg9s5l0vypwncqbmqq8wj6wqmn09dknm3f5jv1qw2fffs9d5"))))
+        (base32 "0sysqz2jxzfpiril7i6496in43zpk5nrvybzz40rb5dashwwh4nv"))))
     (properties `((upstream-name . "smof")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=smof")
@@ -30395,13 +30391,13 @@ be performed for both numeric and categorical predictors.")
 (define-public r-smartdesign
   (package
     (name "r-smartdesign")
-    (version "0.72")
+    (version "0.74")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smartDesign" version))
        (sha256
-        (base32 "1mq8h2zwj8mrq4s2bl3s6hzizpdjbl69c984hydxvzx2vgq1v8za"))))
+        (base32 "1sqbq5ramsfssjwwfsv4bxb7xvq1lf3w6h0hy4dkpdxa5c50lfr7"))))
     (properties `((upstream-name . "smartDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr))
@@ -35638,13 +35634,13 @@ parameter estimates for nonlinear least squares optimization.  Dattner & Yaari
 (define-public r-simnph
   (package
     (name "r-simnph")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimNPH" version))
        (sha256
-        (base32 "14k5s0l1cq55mmbh4wdrg8q133qx66paqzj6vhyfdq9wl9kdwhl6"))))
+        (base32 "05qp6cnih319p88vrppwvxh595a7vawkc7508xzmzhvrjbn3p7jn"))))
     (properties `((upstream-name . "SimNPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -48658,6 +48654,29 @@ proper reference is made to the project using an appropriate citation
 (<https://wordnet.princeton.edu/citing-wordnet>).")
     (license license:gpl3+)))
 
+(define-public r-seguid
+  (package
+    (name "r-seguid")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seguid" version))
+       (sha256
+        (base32 "0r623548w736jf4pannc4mdm9bkpd999wr43xkhqxz00z32w80rb"))))
+    (properties `((upstream-name . "seguid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-digest r-base64enc))
+    (home-page "https://www.seguid.org/")
+    (synopsis "Sequence Globally Unique Identifier (SEGUID) Checksums")
+    (description
+     "Implementation of the original Sequence Globally Unique Identifier (SEGUID)
+algorithm [Babnigg and Giometti (2006) <doi:10.1002/pmic.200600032>] and SEGUID
+v2 (<https://www.seguid.org>), which extends SEGUID v1 with support for linear,
+circular, single- and double-stranded biological sequences, e.g. DNA, RNA, and
+proteins.")
+    (license license:expat)))
+
 (define-public r-segregatr
   (package
     (name "r-segregatr")
@@ -50568,13 +50587,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDPDmod" version))
        (sha256
-        (base32 "1xasqx6alza9290a97an2dqnsab7x5av8nhv2zczi670443k2pcp"))))
+        (base32 "03nwahpf3vd29jrr55ml3wxb8kcm9wf9mlzlbgv4yzadxmx6ybab"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep

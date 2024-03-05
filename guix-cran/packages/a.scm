@@ -12248,35 +12248,6 @@ on the source code (with permission) from Ram and Wickham (2015).")
 tools.")
     (license license:bsd-3)))
 
-(define-public r-americancallopt
-  (package
-    (name "r-americancallopt")
-    (version "0.95")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AmericanCallOpt" version))
-       (sha256
-        (base32 "1nhy44j5bmmjsp6g79nrn741rzzxikhdnxk4wwbdj9igcc1bs573"))))
-    (properties `((upstream-name . "AmericanCallOpt")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=AmericanCallOpt")
-    (synopsis
-     "This package includes pricing function for selected American call options with underlying assets that generate payouts")
-    (description
-     "This package includes a set of pricing functions for American call options.  The
-following cases are covered: Pricing of an American call using the standard
-binomial approximation; Hedge parameters for an American call with a standard
-binomial tree; Binomial pricing of an American call with continuous payout from
-the underlying asset; Binomial pricing of an American call with an underlying
-stock that pays proportional dividends in discrete time; Pricing of an American
-call on futures using a binomial approximation; Pricing of a currency futures
-American call using a binomial approximation; Pricing of a perpetual American
-call.  The user should kindly notice that this material is for educational
-purposes only.  The codes are not optimized for computational efficiency as they
-are meant to represent standard cases of analytical and numerical solution.")
-    (license license:gpl3)))
-
 (define-public r-amen
   (package
     (name "r-amen")

@@ -7048,20 +7048,20 @@ package.")
 (define-public r-msml
   (package
     (name "r-msml")
-    (version "1.0.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSML" version))
        (sha256
-        (base32 "0ha0pzfcasyx5bgjcsz1gnkim6b5mh4wc874dc74q2czhcz1h44k"))))
+        (base32 "0nzn3zys6cbqvzjncdgvlxw00zvg7c2wcnf59yky66chz42c31wd"))))
     (properties `((upstream-name . "MSML")))
     (build-system r-build-system)
     (propagated-inputs (list r-r2roc r-r2redux))
     (home-page "https://github.com/mommy003/MSML")
     (synopsis "Model Selection Based on Machine Learning (ML)")
     (description
-     "Models evaluation based on a modified version of the recursive feature
+     "Model evaluation based on a modified version of the recursive feature
 elimination algorithm.  This package is designed to determine the optimal
 model(s) by leveraging all available features.")
     (license license:gpl3+)))
@@ -8111,13 +8111,13 @@ independent variable.")
 (define-public r-msaenet
   (package
     (name "r-msaenet")
-    (version "3.1")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msaenet" version))
        (sha256
-        (base32 "067p97z54dwhxy0w4ihi8dddcbvglh8ssynbh29fl9jyxfwjr1ms"))))
+        (base32 "1lidrw79z7r463zfdbxcjpj6y0s7hhrwypjb13d28jyw8n6ijv3x"))))
     (properties `((upstream-name . "msaenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8134,8 +8134,7 @@ independent variable.")
 high-dimensional regressions proposed in Xiao and Xu (2015)
 <DOI:10.1080/00949655.2015.1016944>, with support for multi-step adaptive
 MCP-net (MSAMNet) and multi-step adaptive SCAD-net (MSASNet) methods.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
+    (license license:gpl3+)))
 
 (define-public r-msaehb
   (package
@@ -24375,13 +24374,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "08nvi2wd5bgr89qaiw40d0l1hdi4jsclqxhgdh5626fv6jb49w0x"))))
+        (base32 "0ksrw3vfaj7w19vaf16hc4gg63cailqy1fzjqi8f6m81bzhrydnk"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -40324,13 +40323,13 @@ with sensible defaults.")
 (define-public r-manymome-table
   (package
     (name "r-manymome-table")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome.table" version))
        (sha256
-        (base32 "1rdlm95j6k490dwma6nsy7qawg03k7bfcidq2yllvn47n1bd96ya"))))
+        (base32 "01znxw82k2ycp8cncbayn0c4jhkydd5nvydfyxv1bwgixdkad1ff"))))
     (properties `((upstream-name . "manymome.table")))
     (build-system r-build-system)
     (propagated-inputs (list r-manymome r-flextable))
@@ -40793,29 +40792,6 @@ browser.")
 genotype data.  You can use it to perform risk prediction for individuals, or
 for families with missing data.")
     (license license:gpl2+)))
-
-(define-public r-mangotraining
-  (package
-    (name "r-mangotraining")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mangoTraining" version))
-       (sha256
-        (base32 "15m9n5258yjffzhnrgp395g3iiv1f0qlv0cdsdgspmb83m5p3lbb"))))
-    (properties `((upstream-name . "mangoTraining")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble))
-    (home-page "https://www.mango-solutions.com/")
-    (synopsis "Mango Solutions Training Datasets")
-    (description
-     "Datasets to be used primarily in conjunction with Mango Solutions training
-materials but also for the book SAMS Teach Yourself R in 24 Hours (ISBN:
-978-0-672-33848-9).  Version 1.0-7 is largely for use with the book; however,
-version 1.1 has a much greater focus on use with training materials, whilst
-retaining compatibility with the book.")
-    (license license:gpl2)))
 
 (define-public r-manet
   (package

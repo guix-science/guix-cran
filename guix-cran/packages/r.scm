@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -16571,30 +16572,6 @@ gold prices data published by the National Bank of Poland in form of convenient
 R objects.")
     (license license:gpl3)))
 
-(define-public r-rnavicell
-  (package
-    (name "r-rnavicell")
-    (version "0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RNaviCell" version))
-       (sha256
-        (base32 "15k8hkagn5520fy7x672fy329s2v7l0x44s44f6v7ql9mmg4b635"))))
-    (properties `((upstream-name . "RNaviCell")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjsonio r-rcurl))
-    (home-page "https://cran.r-project.org/package=RNaviCell")
-    (synopsis
-     "Visualization of High-Throughput Data on Large-Scale Biological Networks")
-    (description
-     "This package provides a set of functions to access a data visualization web
-service.  For more information and a tutorial on how to use it, see
-https://navicell.curie.fr/pages/nav_web_service.html and
-https://github.com/sysbio-curie/R@code{NaviCell}.")
-    (license (list license:lgpl2.1
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-rnavgraphimagedata
   (package
     (name "r-rnavgraphimagedata")
@@ -26185,6 +26162,37 @@ dedicated server.  This package can be used to retrieve the results from the
 server, and it is especially helpful with registered experiments, as
 authentication with the server has to happen.")
     (license license:gpl3)))
+
+(define-public r-rexer
+  (package
+    (name "r-rexer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rexer" version))
+       (sha256
+        (base32 "1r3y27y6lg4mp57bbmffmhmhpd0b1803m9rwa1q6h6qga9x1v2cw"))))
+    (properties `((upstream-name . "rexer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-rmarkdown
+                             r-readxl
+                             r-readr))
+    (native-inputs (list r-knitr))
+    (home-page "https://josesamos.github.io/rexer/")
+    (synopsis "Random Exercises and Exams Generator")
+    (description
+     "The main purpose of this package is to streamline the generation of exams that
+include random elements in exercises.  Exercises can be defined in a table,
+based on text and figures, and may contain gaps to be filled with provided
+options.  Exam documents can be generated in various formats.  It allows us to
+generate a version for conducting the assessment and another version that
+facilitates correction, linked through a code.")
+    (license license:expat)))
 
 (define-public r-rewie
   (package
@@ -43140,30 +43148,30 @@ algorithm attributed to Wylie et al. (1967) <doi:10.1145/1465611.1465619>.")
 (define-public r-rasterdiv
   (package
     (name "r-rasterdiv")
-    (version "0.3.1")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterdiv" version))
        (sha256
-        (base32 "01fxi3i1p280n38aaffnnj68w2ri8s5qrapvc44viqv3133n837l"))))
+        (base32 "1pq9xsm6yyb97b8nvqlmb4s3kmd72a9mqxqqd31225qjnm6gv9pz"))))
     (properties `((upstream-name . "rasterdiv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-svmisc
-                             r-raster
+    (propagated-inputs (list r-viridis
+                             r-terra
                              r-proxy
                              r-progress
-                             r-foreach))
-    (native-inputs (list r-knitr))
+                             r-ggplot2
+                             r-ggforce
+                             r-foreach
+                             r-doparallel))
     (home-page "https://mattmar.github.io/rasterdiv/")
     (synopsis "Diversity Indices for Numerical Matrices")
     (description
-     "This package provides methods to calculate indices of diversity on numerical
-matrices based on information theory.  The rationale behind the package is
-described in Rocchini, Marcantonio and Ricotta (2017)
-<doi:10.1016/j.ecolind.2016.07.039> and Rocchini, Marcantonio,..., Ricotta
-(2021) <doi:10.1101/2021.01.23.427872>.")
+     "This package provides methods to calculate diversity indices on numerical
+matrices based on information theory, as described in Rocchini, Marcantonio and
+Ricotta (2017) <doi:10.1016/j.ecolind.2016.07.039>, and Rocchini et al. (2021)
+<doi:10.1101/2021.01.23.427872>.")
     (license license:gpl2+)))
 
 (define-public r-rasterbc

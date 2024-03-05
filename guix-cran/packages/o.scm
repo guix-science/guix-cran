@@ -3474,26 +3474,6 @@ advise.  All medications should only be consumed on prescription from a licensed
 healthcare provider.")
     (license license:gpl3)))
 
-(define-public r-ora
-  (package
-    (name "r-ora")
-    (version "2.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ora" version))
-       (sha256
-        (base32 "0albxqma220rnrpfdq3z9cawr83q1a0zzczbbcy4nijjm4mswphy"))))
-    (properties `((upstream-name . "ora")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roracle r-dbi))
-    (home-page "https://cran.r-project.org/package=ora")
-    (synopsis "Convenient Tools for Working with Oracle Databases")
-    (description
-     "Easy-to-use functions to explore Oracle databases and import data into R. User
-interface for the ROracle package.")
-    (license license:gpl2+)))
-
 (define-public r-opusminer
   (package
     (name "r-opusminer")

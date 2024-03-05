@@ -3032,13 +3032,13 @@ dimensions.")
 (define-public r-qrmtools
   (package
     (name "r-qrmtools")
-    (version "0.0-16")
+    (version "0.0-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrmtools" version))
        (sha256
-        (base32 "14396xnh4m1kkrhngpai3s4a94csqqbpi1nlqalq0l53iyvj8bcz"))))
+        (base32 "1vv9y6mmvqnlimghw3dl873r4l47imwcp2x58yzrn53fa2y7b6mi"))))
     (properties `((upstream-name . "qrmtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3082,13 +3082,13 @@ based on quantile regression proposed by Emir et al., 2017 (unpublished).")
 (define-public r-qrmdata
   (package
     (name "r-qrmdata")
-    (version "2022-05-31-1")
+    (version "2024-03-04-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrmdata" version))
        (sha256
-        (base32 "1wp92qjmhy12l4l80kbq7rxc8vnwinfi5qbp74a5zkpwrbdrhi2h"))))
+        (base32 "0982sm22dshg70sk62jgrsy5rryv0bb5sdhnkq6icg292z6p3mix"))))
     (properties `((upstream-name . "qrmdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts))

@@ -193,13 +193,13 @@ permutation on only a small proportion of the whole genome.")
 (define-public r-gwsdat
   (package
     (name "r-gwsdat")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWSDAT" version))
        (sha256
-        (base32 "0a9pmlr7r8axamk2vjmi8f1j16bd8zkax2k42mlb1cb0w722m2gb"))))
+        (base32 "0zqln2wnmid2cq5727pkk9lyqs4pb5nml12b5cza1xg0yzp38b6h"))))
     (properties `((upstream-name . "GWSDAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3848,6 +3848,45 @@ distributed test statistics.  Enables to derive critical boundaries, power,
 drift, and confidence intervals of such designs.  Supports the alpha spending
 approach by Lan-@code{DeMets} (1994) <doi:10.1002/sim.4780131308>.")
     (license license:gpl3)))
+
+(define-public r-grouprar
+  (package
+    (name "r-grouprar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "grouprar" version))
+       (sha256
+        (base32 "0n7pd93a3v3ii85g2ms02zdvy8rkb0j8kfp1bvmfy71kd1ghc7d5"))))
+    (properties `((upstream-name . "grouprar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-stringr r-gridextra r-ggplot2
+                             r-extradistr))
+    (home-page "https://cran.r-project.org/package=grouprar")
+    (synopsis "Group Response Adaptive Randomization for Clinical Trials")
+    (description
+     "Implement group response-adaptive randomization procedures, which also
+integrates standard non-group response-adaptive randomization methods as
+specialized instances.  It is also uniquely capable of managing complex
+scenarios, including those with delayed and missing responses, thereby expanding
+its utility in real-world applications.  This package offers 16 functions for
+simulating a variety of response adaptive randomization procedures.  These
+functions are essential for guiding the selection of statistical methods in
+clinical trials, providing a flexible and effective approach to trial design.
+Some of the detailed methodologies and algorithms used in this package, please
+refer to the following references: LJ Wei (1979) <doi:10.1214/aos/1176344614> L.
+J. WEI and S. DURHAM (1978) <doi:10.1080/01621459.1978.10480109> Durham, S. D.,
+@code{FlournoY}, N. AND LI, W. (1998) <doi:10.2307/3315771> Ivanova, A.,
+Rosenberger, W. F., Durham, S. D. and Flournoy, N. (2000)
+<https://www.jstor.org/stable/25053121> Bai Z D, Hu F, Shen L. (2002)
+<doi:10.1006/jmva.2001.1987> Ivanova, A. (2003) <doi:10.1007/s001840200220> Hu,
+F., & Zhang, L. X. (2004) <doi:10.1214/aos/1079120137> Hu, F., & Rosenberger, W.
+F. (2006, ISBN:978-0-471-65396-7).  Zhang, L. X., Chan, W. S., Cheung, S. H., &
+Hu, F. (2007) <https://www.jstor.org/stable/26432528> Zhang, L., & Rosenberger,
+W. F. (2006) <doi:10.1111/j.1541-0420.2005.00496.x> Hu, F., Zhang, L. X.,
+Cheung, S. H., & Chan, W. S. (2008) <doi:10.1002/cjs.5550360404>.")
+    (license license:gpl2+)))
 
 (define-public r-groupr
   (package
@@ -15552,6 +15591,31 @@ of how to draw sectors in @code{ComplexHeatmap}'.")
 rolling summaries such as rolling average on the fly for time series.")
     (license license:gpl3)))
 
+(define-public r-ggscidca
+  (package
+    (name "r-ggscidca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggscidca" version))
+       (sha256
+        (base32 "0bj2q7apbjh5vw92j1sa4m3gsnwq6ravpfn896jgvc8ghsqi6d3j"))))
+    (properties `((upstream-name . "ggscidca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-reshape2 r-ggplot2))
+    (home-page "https://cran.r-project.org/package=ggscidca")
+    (synopsis "Plotting Decision Curve Analysis with Coloured Bars")
+    (description
+     "Decision curve analysis is a method for evaluating and comparing prediction
+models that incorporates clinical consequences, requires only the data set on
+which the models are tested, and can be applied to models that have either
+continuous or dichotomous results.  The ggscidca package adds coloured bars of
+discriminant relevance to the traditional decision curve.  Improved practicality
+and aesthetics.  This method was described by Balachandran VP (2015)
+<doi:10.1016/S1470-2045(14)71116-7>.")
+    (license license:gpl3)))
+
 (define-public r-ggscatridges
   (package
     (name "r-ggscatridges")
@@ -18091,13 +18155,13 @@ descendant branches of interest.  Uses the Grammar of Graphics.")
 (define-public r-ggedit
   (package
     (name "r-ggedit")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggedit" version))
        (sha256
-        (base32 "1v07czbq86nl0ag7gr20qigy34hblz5qrlcsrdia5620lqym7jgz"))))
+        (base32 "1mnk2ygnflkp9bx8pbf41vb9fyhcnkqrw8j01vx7p56iga3lwi4g"))))
     (properties `((upstream-name . "ggedit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19301,6 +19365,43 @@ distributions, for crossed designs with an arbitrary number of factors and
 nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
 <doi:10.1177/0962280220980784> Ditzhaus, Janssen, Pauly (2020) <@code{arXiv}:
 2004.10818v2> Dobler and Pauly (2019) <doi:10.1177/0962280219831316>.")
+    (license license:gpl3+)))
+
+(define-public r-gfdrmst
+  (package
+    (name "r-gfdrmst")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GFDrmst" version))
+       (sha256
+        (base32 "1qas9dj65mqjfzslxxljy17370vc0v6fwypgv971kvk9wx1a2a00"))))
+    (properties `((upstream-name . "GFDrmst")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tippy
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinymatrix
+                             r-shinyjs
+                             r-shiny
+                             r-plyr
+                             r-mvtnorm
+                             r-mass
+                             r-lpsolve
+                             r-gfdmcv))
+    (home-page "https://cran.r-project.org/package=GFDrmst")
+    (synopsis "Multiple RMST-Based Tests in General Factorial Designs")
+    (description
+     "We implemented multiple tests based on the restricted mean survival time (RMST)
+for general factorial designs as described in Munko et al. (2024)
+<doi:10.1002/sim.10017>.  Therefore, an asymptotic test, a groupwise bootstrap
+test, and a permutation test are incorporated with a Wald-type test statistic.
+The asymptotic and groupwise bootstrap test take the asymptotic exact dependence
+structure of the test statistics into account to gain more power.  Furthermore,
+confidence intervals for RMST contrasts can be calculated and plotted and a
+stepwise extension that can improve the power of the multiple tests is
+available.")
     (license license:gpl3+)))
 
 (define-public r-gfdmcv
@@ -20609,13 +20710,13 @@ regression model is based on G. Roerink, M. Menenti and W. Verhoef (2000)
 (define-public r-geotopbricks
   (package
     (name "r-geotopbricks")
-    (version "1.5.8.0")
+    (version "1.5.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geotopbricks" version))
        (sha256
-        (base32 "1s0grxmg9sfxlys9rl0qhddmxqc2i916pdynxbib9byswzshkp5r"))))
+        (base32 "1wl0zggilgq2nrwdjvmba9k4avgqfv06ffsj2fmql2qmlzan744q"))))
     (properties `((upstream-name . "geotopbricks")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-terra r-stringr r-sf r-raster))
@@ -24324,28 +24425,6 @@ pages 187-194, Springer Protocols, 2021, <doi:10.1007/978-1-0716-1839-4_12>.")
 gene expression time series data.")
     (license license:gpl3+)))
 
-(define-public r-geneasphere
-  (package
-    (name "r-geneasphere")
-    (version "1.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GENEAsphere" version))
-       (sha256
-        (base32 "1kgj7i9v2yn0b8lvvsf0nc6lg3i2syrcygwa51pcrzp57vv7hxn5"))))
-    (properties `((upstream-name . "GENEAsphere")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-misc3d r-mass r-ggplot2 r-genearead))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GENEAsphere")
-    (synopsis "Visualisation of Raw or Segmented Accelerometer Data")
-    (description
-     "This package creates visualisations in two and three dimensions of simulated
-data based on detected segments or raw accelerometer data.")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-genearead
   (package
     (name "r-genearead")
@@ -27203,13 +27282,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "12l8gvckaa43g4cl39bvmz92gzracl659bh0h58szx6z49905j90"))))
+        (base32 "0s0ik19zgv0ggp3gqj9pqc232381cdzhqcm1awggcc83sgrzm1dl"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

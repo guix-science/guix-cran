@@ -21479,13 +21479,13 @@ details regarding part of this framework can be found in Cullen et al. (2021)
 (define-public r-bayesmortalityplus
   (package
     (name "r-bayesmortalityplus")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMortalityPlus" version))
        (sha256
-        (base32 "06hwlbvm5gyxp60rzm6bwi24zkmwmni9pqvmkb0zayp0aackn8p6"))))
+        (base32 "0zh9v0hzpjsz312bpdrlc2rix2df1v8ccm831fis7czjhvcbc14z"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23512,13 +23512,13 @@ estimate the ARIMAX model using Bayesian framework.")
 (define-public r-bayesanova
   (package
     (name "r-bayesanova")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesanova" version))
        (sha256
-        (base32 "1h2z5r1ikrdi1j0cpzy3qdw28m1i6ddz6006amdnz2r3b0wivffm"))))
+        (base32 "07zmg4y57ysfg7my709x1z35izb4jij0fm5qm0kacdkfvz20mgj8"))))
     (properties `((upstream-name . "bayesanova")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack))

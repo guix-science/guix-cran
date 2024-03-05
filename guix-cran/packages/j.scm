@@ -10,6 +10,7 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages compression)
@@ -2880,6 +2881,37 @@ curvilinear) and ordinal outcomes while proportional hazard models are used for
 the survival part.  We propose a frequentist approach using maximum likelihood
 estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
     (license license:gpl2+)))
+
+(define-public r-jlmerclusterperm
+  (package
+    (name "r-jlmerclusterperm")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jlmerclusterperm" version))
+       (sha256
+        (base32 "1vkc0hk5ln2vwxsf9pn6bpwn8dbk77s8nz6100scqa1y5kgfjhri"))))
+    (properties `((upstream-name . "jlmerclusterperm")))
+    (build-system r-build-system)
+    (inputs (list julia))
+    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli
+                             r-backports))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yjunechoe/jlmerclusterperm")
+    (synopsis
+     "Cluster-Based Permutation Analysis for Densely Sampled Time Data")
+    (description
+     "An implementation of fast cluster-based permutation analysis (CPA) for
+densely-sampled time data developed in Maris & Oostenveld, 2007
+<doi:10.1016/j.jneumeth.2007.03.024>.  Supports (generalized, mixed-effects)
+regression models for the calculation of timewise statistics.  Provides both a
+wholesale and a piecemeal interface to the CPA procedure with an emphasis on
+interpretability and diagnostics.  Integrates Julia libraries
+@code{MixedModels.jl} and GLM.jl for performance improvements, with additional
+functionalities for interfacing with Julia from R powered by the
+@code{JuliaConnectoR} package.")
+    (license license:expat)))
 
 (define-public r-jlctree
   (package

@@ -4289,13 +4289,13 @@ et al.  Comput Stat Data Anal, 2017 <doi:10.1016/j.csda.2017.02.014>).")
 (define-public r-psbayesborrow
   (package
     (name "r-psbayesborrow")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psBayesborrow" version))
        (sha256
-        (base32 "07h4yg9c4hz29iy10dyliazr0bx1gi2wzpn7iq8sm9v7p1g76kwr"))))
+        (base32 "1kxwb9kvxykapw8mmihazx1wbd4z3yqwyj09dli6h82zcq2w220n"))))
     (properties `((upstream-name . "psBayesborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5724,6 +5724,29 @@ set size of the selected genes might be set by the user.  The minimum set of
 genes that correctly classify the maximum number of the given tissue samples
 (observations) can be also produced.")
     (license license:gpl2+)))
+
+(define-public r-proporz
+  (package
+    (name "r-proporz")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "proporz" version))
+       (sha256
+        (base32 "0han6vhdlzywcvw02w3rgmh4513kcl825ca4991igh15vssjy617"))))
+    (properties `((upstream-name . "proporz")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/polettif/proporz")
+    (synopsis "Proportional Apportionment")
+    (description
+     "Calculate seat apportionment for legislative bodies with various methods.  The
+algorithms include divisor or highest averages methods (e.g. Jefferson, Webster
+or Adams), largest remainder methods and biproportional apportionment.  Gaffke,
+N. & Pukelsheim, F. (2008) <doi:10.1016/j.mathsocsci.2008.01.004> Oelbermann, K.
+F. (2016) <doi:10.1016/j.mathsocsci.2016.02.003>.")
+    (license license:gpl3+)))
 
 (define-public r-prophet
   (package
@@ -9822,13 +9845,13 @@ vector machines (SVMs).  For method details see Keller et al. (2017)
 (define-public r-predint
   (package
     (name "r-predint")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predint" version))
        (sha256
-        (base32 "1q6z1a3sak8xz4v3sqxcz7zhs8822iiyj750qq9gqgx848h94i1i"))))
+        (base32 "1db5nzwhj2zjzqpdrp0phcwxxgn4pdphb05hjlyc9r58hspg8k11"))))
     (properties `((upstream-name . "predint")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lme4 r-ggplot2))
@@ -17372,6 +17395,35 @@ the likelihood.  This package is a collection of minimal working examples of
 these algorithms and is only meant for educational use and as a start for
 learning to them on your own.")
     (license license:gpl2)))
+
+(define-public r-pmevapotranspiration
+  (package
+    (name "r-pmevapotranspiration")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PMEvapotranspiration" version))
+       (sha256
+        (base32 "1q9nz6jvbi280zdxwhd0zw3wxbq3sq26xbiby4q4bs2pm24mb3j6"))))
+    (properties `((upstream-name . "PMEvapotranspiration")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PMEvapotranspiration")
+    (synopsis
+     "Calculation of the Penman-Monteith Evapotranspiration using Weather Variables")
+    (description
+     "The Food and Agriculture Organization-56 Penman-Monteith is one of the important
+method for estimating evapotranspiration from vegetated land areas.  This
+package helps to calculate reference evapotranspiration using the weather
+variables collected from weather station.  Evapotranspiration is the process of
+water transfer from the land surface to the atmosphere through evaporation from
+soil and other surfaces and transpiration from plants.  The package aims to
+support agricultural, hydrological, and environmental research by offering
+accurate and accessible reference evapotranspiration calculation.  This package
+has been developed using concept of CÃ³rdova et al.
+(2015)<doi:10.1016/j.apm.2022.09.004> and Debnath et al. (2015)
+<doi:10.1007/s40710-015-0107-1>.")
+    (license license:gpl3)))
 
 (define-public r-pmetar
   (package
@@ -29607,13 +29659,13 @@ of the complexity of a time series.")
 (define-public r-pda
   (package
     (name "r-pda")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pda" version))
        (sha256
-        (base32 "071510s4bkfnc6xhg792j2mk9r702yws1vafrbky77hhdnkj5c0f"))))
+        (base32 "0cdbjp6yrbqhkznsr282iyy76nzw9dz8z0gz48y12czjk9k6nvfd"))))
     (properties `((upstream-name . "pda")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -33169,17 +33221,18 @@ on the analysis of poverty.  References, Fattore M. (2016)
 (define-public r-parquetize
   (package
     (name "r-parquetize")
-    (version "0.5.6.1")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parquetize" version))
        (sha256
-        (base32 "0wnq5naq50g159ii7s33v5yiaykmgcvbc6d6f8fgng4kbpkmc569"))))
+        (base32 "0vmvjycyw4kihdx13wgi8qbynnaic96wgvw2hhdjz8fjrg1lb9sy"))))
     (properties `((upstream-name . "parquetize")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-rsqlite
+                             r-rlang
                              r-readr
                              r-lifecycle
                              r-jsonlite
@@ -36109,6 +36162,28 @@ Lasso (PAGFL) by Mehrabani (2023) <doi:10.1016/j.jeconom.2022.12.002>.  PAGFL is
 an efficient methodology to identify latent group structures and estimate
 group-specific coefficients simultaneously.")
     (license license:agpl3+)))
+
+(define-public r-pageviews
+  (package
+    (name "r-pageviews")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pageviews" version))
+       (sha256
+        (base32 "187gy6czxkicxghhklma87pfa23xcm07c4n9jfsr5yl9hwwfcna6"))))
+    (properties `((upstream-name . "pageviews")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-curl))
+    (home-page "https://github.com/ironholds/pageviews")
+    (synopsis "An API Client for Wikimedia Traffic Data")
+    (description
+     "Pageview data from the Wikimedia sites, such as Wikipedia
+<https://www.wikipedia.org/>, from entire projects to per-article levels of
+granularity, through the new RESTful API and data source
+<https://wikimedia.org/api/rest_v1/?doc>.")
+    (license license:expat)))
 
 (define-public r-pagenum
   (package
