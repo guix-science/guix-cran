@@ -8759,6 +8759,30 @@ for quantitative analysis, modeling, trading, and risk management of financial
 assets.")
     (license license:gpl2+)))
 
+(define-public r-rquake
+  (package
+    (name "r-rquake")
+    (version "2.5-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rquake" version))
+       (sha256
+        (base32 "0kd8ghclfz81c5lgj4fc06lgkniksch7xi6fmj1ydn2i35k0ji6l"))))
+    (properties `((upstream-name . "Rquake")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rseis r-rpmg r-minpack-lm r-mba r-geomap))
+    (home-page "https://cran.r-project.org/package=Rquake")
+    (synopsis "Seismic Hypocenter Determination")
+    (description
+     "Non-linear inversion for hypocenter estimation and analysis of seismic data
+collected continuously, or in trigger mode.  The functions organize other
+functions from RSEIS and GEOmap to help researchers pick, locate, and store
+hypocenters for detailed seismic investigation.  Error ellipsoids and station
+influence are estimated via jackknife analysis.  References include Iversen, E.
+S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
+    (license license:gpl2+)))
+
 (define-public r-rqpen
   (package
     (name "r-rqpen")
@@ -37457,6 +37481,31 @@ calculate moments of a Truncated Normal distribution using the algorithm of
 Robert (1995) <DOI:10.1007/BF00143942>.  In addition to RNG, functions for
 calculating moments, densities, and entropies are provided at both levels.")
     (license license:gpl2+)))
+
+(define-public r-rcpptimer
+  (package
+    (name "r-rcpptimer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcpptimer" version))
+       (sha256
+        (base32 "120m6958f7lyaw3hpms32794c9d2zh647lhqnkdg5zrdhk3gn5qf"))))
+    (properties `((upstream-name . "rcpptimer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://rcpptimer.berrisch.biz")
+    (synopsis "'Rcpp' Tic-Toc Timer with 'OpenMP' Support")
+    (description
+     "This package provides Rcpp bindings for cpptimer', a simple tic-toc timer class
+for benchmarking C++ code <https://github.com/@code{BerriJ/cpptimer>}.  It's not
+just simple, it's blazing fast! This sleek tic-toc timer class supports
+overlapping timers as well as @code{OpenMP} parallelism
+<https://www.openmp.org/>.  It boasts a microsecond-level time resolution.  We
+did not find any overhead of the timer itself at this resolution.  Results (with
+summary statistics) are automatically passed back to R as a data frame.")
+    (license license:gpl3+)))
 
 (define-public r-rcppstreams
   (package

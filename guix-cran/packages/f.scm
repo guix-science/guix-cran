@@ -8737,27 +8737,6 @@ from package @code{rootSolve}'.  However, the methods can also be used with
 other types of functions.")
     (license license:gpl2+)))
 
-(define-public r-fmdu
-  (package
-    (name "r-fmdu")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmdu" version))
-       (sha256
-        (base32 "191ars9634svw5lazsrsxfam2pghkra620yqyfnmjgwhw91yvcp6"))))
-    (properties `((upstream-name . "fmdu")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-smacof))
-    (home-page "https://cran.r-project.org/package=fmdu")
-    (synopsis "(Restricted) [external] Multidimensional Unfolding")
-    (description
-     "This package provides functions for performing (external) multidimensional
-unfolding.  Restrictions (fixed coordinates or model restrictions) are available
-for both row and column coordinates in all combinations.")
-    (license license:bsd-2)))
-
 (define-public r-fmdates
   (package
     (name "r-fmdates")
@@ -16381,13 +16360,13 @@ introduction to the method.")
 (define-public r-fdarep
   (package
     (name "r-fdarep")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdarep" version))
        (sha256
-        (base32 "1yn2ynjgkbjd52v3qk9jw1jmx70dlmbigml1wip0fjn592g52lhb"))))
+        (base32 "1y3nj3l4ymaikvjk9jhy0hxhlrv7sjr1vvhf70v38bkwzkxbcwxy"))))
     (properties `((upstream-name . "fdarep")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

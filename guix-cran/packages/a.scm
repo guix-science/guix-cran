@@ -3056,13 +3056,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "060kqlfwd1i709y10p3m9iql4c2vmnmwr2hasyl212rr8slib6fy"))))
+        (base32 "1y965xpipmd23c0a7rp14v8kw0n6bvxq20rq6ribl1rx5xjd2fhl"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3078,7 +3078,7 @@ ARIMA in SAS.")
     (synopsis "Wrapper for the 'AT' Protocol Behind 'Bluesky'")
     (description
      "Wraps the AT Protocol (Authenticated Transfer Protocol) behind Bluesky
-<https://blueskyweb.xyz>.  Functions can be used for, among others, retrieving
+<https://bsky.social>.  Functions can be used for, among others, retrieving
 posts and followers from the network or posting content.")
     (license license:expat)))
 
@@ -7519,6 +7519,29 @@ Installation instructions for arcgisbinding can be found at
 @code{ArcGIS} Platform to read, write, publish, or manage vector and raster data
 via @code{ArcGIS} location services REST API endpoints
 <https://developers.arcgis.com/rest/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-arcgis
+  (package
+    (name "r-arcgis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgis" version))
+       (sha256
+        (base32 "0vgixd9pv312h9c2afrslrmzh2jcx4r17iki15x8i9zhhgq5dw7y"))))
+    (properties `((upstream-name . "arcgis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2 r-cli r-arcgisutils r-arcgislayers))
+    (home-page "https://github.com/R-ArcGIS/arcgis/")
+    (synopsis "ArcGIS Location Services Meta-Package")
+    (description
+     "This package provides easy installation and loading of core @code{ArcGIS}
+location services packages arcgislayers and arcgisutils'.  Enabling developers
+to interact with spatial data and services from @code{ArcGIS} Online',
+@code{ArcGIS} Enterprise', and @code{ArcGIS} Platform'.  Learn more about the
+arcgis meta-package at <https://r.esri.com/r-bridge-site/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgeocoder
@@ -18319,13 +18342,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "0j3qaj0zn10rvjg80jvbbxg4223dhkf0l912y158cmx6ap2k2cca"))))
+        (base32 "18q60qk2wr2jp8zxd9xz66glpr00qvlq88yqd2ybv76zlapcq6gg"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18708,13 +18731,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-adfexplorer
   (package
     (name "r-adfexplorer")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adfExplorer" version))
        (sha256
-        (base32 "06sk68580i7jg9lk4jj64ns04y4q6amzsh0k7nxhfdib107yajnp"))))
+        (base32 "0lpabd2gvcl0nja6q3d2hcxmam0gclnw21q1mxjf2idhqxcwscaj"))))
     (properties `((upstream-name . "adfExplorer")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18726,7 +18749,7 @@ the Commodore Amiga.  Most disk drives from other systems (including modern
 drives) are not able to read these disks.  To be able to emulate this system,
 the ADF format was created.  This package enables you to read ADF files and
 import and export files from and to such virtual DOS-formatted disks.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-adestr
   (package

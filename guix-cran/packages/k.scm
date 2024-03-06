@@ -1203,6 +1203,28 @@ features, or discuss the development of the package, please subscribe to the
 @code{koRpus-dev} mailing list (<https://korpusml.reaktanz.de>).")
     (license license:gpl3+)))
 
+(define-public r-kor-addrlink
+  (package
+    (name "r-kor-addrlink")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KOR.addrlink" version))
+       (sha256
+        (base32 "1zqx3v4rc1rpq7nwjvf2p98hjsyrimidkxbqz5p9d24qrqga5mrh"))))
+    (properties `((upstream-name . "KOR.addrlink")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-stringdist))
+    (home-page "https://git-kor.stadtdo.de")
+    (synopsis "Matching Address Data to Reference Index")
+    (description
+     "Matches a data set with semi-structured address data, e.g., street and house
+number as a concatenated string, wrongly spelled street names or non-existing
+house numbers to a reference index.  The methods are specifically designed for
+German municipalities ('KOR'-community) and German address schemes.")
+    (license license:gpl3)))
+
 (define-public r-konya
   (package
     (name "r-konya")

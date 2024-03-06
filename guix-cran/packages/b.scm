@@ -6615,6 +6615,30 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 <doi:10.18637/jss.v036.i03>, and Zuckerman (1994, ISBN:978-0521432009).")
     (license license:gpl2+)))
 
+(define-public r-boostrq
+  (package
+    (name "r-boostrq")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boostrq" version))
+       (sha256
+        (base32 "1lf3gj1adnwxavlpmw9ygwz5pxz45bbdgz7cv46cp2jyh06y3sa3"))))
+    (properties `((upstream-name . "boostrq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stabs r-quantreg r-mboost r-checkmate))
+    (home-page "https://github.com/stefanlinner/boostrq")
+    (synopsis "Boosting Regression Quantiles")
+    (description
+     "Boosting Regression Quantiles is a component-wise boosting algorithm, that
+embeds all boosting steps in the well-established framework of quantile
+regression.  It is initialized with the corresponding quantile, uses a
+quantile-specific learning rate, and uses quantile regression as its base
+learner.  The package implements this algorithm and allows cross-validation and
+stability selection.")
+    (license license:gpl2+)))
+
 (define-public r-boostmtree
   (package
     (name "r-boostmtree")
@@ -17396,6 +17420,36 @@ implemented in the package can be found in Castellares et al. (2018)
 <doi:10.1016/j.apm.2017.12.014> and Lemonte et al. (2020)
 <doi:10.1080/02664763.2019.1636940>.")
     (license license:expat)))
+
+(define-public r-belikelihood
+  (package
+    (name "r-belikelihood")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BElikelihood" version))
+       (sha256
+        (base32 "1v7bcyzrgaf4ih7pc0xq2zl8iwqgm5cjrz0x4ghvlai7w3008ihq"))))
+    (properties `((upstream-name . "BElikelihood")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BElikelihood")
+    (synopsis "Likelihood Method for Evaluating Bioequivalence")
+    (description
+     "This package provides a likelihood method is implemented to present evidence for
+evaluating bioequivalence (BE).  The functions use bioequivalence data [area
+under the blood concentration-time curve (AUC) and peak concentration (Cmax)]
+from various crossover designs commonly used in BE studies including a fully
+replicated, a partially replicated design, and a conventional 2x2 crossover
+design.  They will calculate the profile likelihoods for the mean difference,
+total standard deviation ratio, and within subject standard deviation ratio for
+a test and a reference drug.  A plot of a standardized profile likelihood can be
+generated along with the maximum likelihood estimate and likelihood intervals,
+which present evidence for bioequivalence.  See Liping Du and Leena Choi (2015)
+<doi:10.1002/pst.1661>.")
+    (license license:gpl3+)))
 
 (define-public r-belg
   (package

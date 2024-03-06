@@ -8060,6 +8060,28 @@ implements the methodological developments found in Hermes et al. (2022)
 <doi:10.48550/@code{arXiv.2210.13140>}.")
     (license license:gpl3)))
 
+(define-public r-heterometa
+  (package
+    (name "r-heterometa")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heterometa" version))
+       (sha256
+        (base32 "01sahscx2lx9z7l0fpxqbrq34c6zkyyclwdcam27vcwj8189w2n1"))))
+    (properties `((upstream-name . "heterometa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-mathjaxr))
+    (home-page "https://cran.r-project.org/package=heterometa")
+    (synopsis "Convert Various Meta-Analysis Heterogeneity Measures")
+    (description
+     "Published meta-analyses routinely present one of the measures of heterogeneity
+introduced in Higgins and Thompson (2002) <doi:10.1002/sim.1186>.  For
+critiquing articles it is often better to convert to another measure.  Some
+conversions are provided here and confidence intervals are also available.")
+    (license license:gpl2)))
+
 (define-public r-heteroggm
   (package
     (name "r-heteroggm")

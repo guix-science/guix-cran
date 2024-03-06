@@ -11033,13 +11033,13 @@ rmarkdown HTML documents.")
 (define-public r-tnrs
   (package
     (name "r-tnrs")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TNRS" version))
        (sha256
-        (base32 "16w1jga1f6fb8fpwrgrvsghwp4fzb0n81vwnsr6x0nrm185a918a"))))
+        (base32 "116gmvaccjk7kcrvgzknil2icsvhp53lmg4cn1676801saz25wyz"))))
     (properties `((upstream-name . "TNRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -14628,13 +14628,13 @@ to estimate latent class analyses.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "1fbvjvzhywd67xmm2mv428ync3dihy5p3b2k35wzjrw50613nbkv"))))
+        (base32 "14z6qawbqhs77m842bj1ls9cnb7v35vs6aqbvha0s7kkqlcs1k7l"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -15687,6 +15687,36 @@ package allows fitting and cross validation of linear regression and
 classification algorithms on grouped data.")
     (license license:gpl3)))
 
+(define-public r-tidyfinance
+  (package
+    (name "r-tidyfinance")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyfinance" version))
+       (sha256
+        (base32 "1b4is9czzyd4kjj9zh279mlp2lax9l9bzymhl3kp2bhc8l9i90kl"))))
+    (properties `((upstream-name . "tidyfinance")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr))
+    (home-page "https://www.tidy-finance.org/r/")
+    (synopsis "Tidy Finance Helper Functions")
+    (description
+     "Helper functions for empirical research in financial economics, addressing a
+variety of topics covered in Scheuch, Voigt, and Weiss (2023)
+<doi:10.1201/b23237>.  The package is designed to provide shortcuts for issues
+extensively discussed in the book, facilitating easier application of its
+concepts.  For more information and resources related to the book, visit
+<https://www.tidy-finance.org/r/index.html>.")
+    (license license:expat)))
+
 (define-public r-tidyfast
   (package
     (name "r-tidyfast")
@@ -16220,13 +16250,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "06c0xz4amnpajvca8k6rjcw7ijmp88s2h3131q3yzj95f189h9w1"))))
+        (base32 "0ivhxgbhvvbpddngirjpmw7dp6nv93qzijzdcsfn988skl9kxdvf"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22091,6 +22121,52 @@ displays filtered and unfiltered observation counts.")
     (description
      "Prebuilt shiny modules containing tools for the generation of rmarkdown reports,
 supporting reproducible research and analysis.")
+    (license license:asl2.0)))
+
+(define-public r-teal-modules-general
+  (package
+    (name "r-teal-modules-general")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "teal.modules.general" version))
+       (sha256
+        (base32 "0j07ak6g2rk8b16pix853j7hvyhac580akflwxxb97zvzipy51qx"))))
+    (properties `((upstream-name . "teal.modules.general")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-tern
+                             r-teal-widgets
+                             r-teal-transform
+                             r-teal-reporter
+                             r-teal-logger
+                             r-teal-data
+                             r-teal-code
+                             r-teal
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyvalidate
+                             r-shinytree
+                             r-shinyjs
+                             r-shiny
+                             r-scales
+                             r-logger
+                             r-ggplot2
+                             r-ggmosaic
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://insightsengineering.github.io/teal.modules.general/")
+    (synopsis "General Modules for 'teal' Applications")
+    (description
+     "Prebuilt shiny modules containing tools for viewing data, visualizing data,
+understanding missing and outlier values within your data and performing simple
+data analysis.  This extends teal framework that supports reproducible research
+and analysis.")
     (license license:asl2.0)))
 
 (define-public r-teal-modules-clinical

@@ -8508,13 +8508,13 @@ confidence intervals.")
 (define-public r-coxme
   (package
     (name "r-coxme")
-    (version "2.2-19")
+    (version "2.2-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxme" version))
        (sha256
-        (base32 "11igflhn21vq5d9f073cdcfjgq37fwj4hd7g2cj1qj72q2xzh6xp"))))
+        (base32 "0qnbhywav7xhs6r3f6m4lb1pvw8gfylnrll0zss5h578mgdfmvm0"))))
     (properties `((upstream-name . "coxme")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nlme r-matrix r-bdsmatrix))
@@ -12588,21 +12588,21 @@ Arbyn M, Aerts M (2017) <doi:10.18637/jss.v082.c01>.")
 (define-public r-copuladata
   (package
     (name "r-copuladata")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copulaData" version))
        (sha256
-        (base32 "1s917g8wasxndg1xq4b4fjaq29nyzzigpflgqcy4rxdb7r54dl0z"))))
+        (base32 "052vr5961pqqfk75yabnna345qgrhrjwzavx5244c6mark4xsyxb"))))
     (properties `((upstream-name . "copulaData")))
     (build-system r-build-system)
-    (home-page "http://copula.r-forge.r-project.org/")
+    (home-page "https://copula.r-forge.r-project.org/")
     (synopsis "Data Sets for Copula Modeling")
     (description
-     "Data sets used for copula modeling in addition to those in the package copula'.
-These include a random subsample from the US National Education Longitudinal
-Study (NELS) of 1988 and nursing home data from Wisconsin.")
+     "Data sets used for copula modeling in addition to those in the R package
+copula'.  These include a random subsample from the US National Education
+Longitudinal Study (NELS) of 1988 and nursing home data from Wisconsin.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file LICENCE")))))
 
@@ -14324,21 +14324,16 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "1k9mzlbjfcqs2a5cm86p6fdcflj2dv17m1rxz3jh0fqpiqy5lp8d"))))
+        (base32 "065ajq3ah3gk2chpd62bwnz72z0xy5kcmwm7mcxkaxq1xps3wfd9"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
-    (propagated-inputs (list r-waldo
-                             r-roxygen2
-                             r-rlang
-                             r-ellipsis
-                             r-diffobj
-                             r-cli))
+    (propagated-inputs (list r-waldo r-rlang r-diffobj r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cynkra/constructive")
     (synopsis "Display Idiomatic Code to Construct Most R Objects")
@@ -14655,6 +14650,30 @@ prioritization based on a systematic review of > 12,000 scientific publications
 from the fields of spatial conservation prioritization, systematic conservation
 planning, biogeography and ecology.")
     (license license:expat)))
+
+(define-public r-consensusclustering
+  (package
+    (name "r-consensusclustering")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConsensusClustering" version))
+       (sha256
+        (base32 "1la9pp8jk5mcn1y80h3wfxw30pnys6p573iv7r3b8lgf233cnjar"))))
+    (properties `((upstream-name . "ConsensusClustering")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-igraph r-dplyr r-cluster r-assertthat))
+    (home-page "https://cran.r-project.org/package=ConsensusClustering")
+    (synopsis "Consensus Clustering")
+    (description
+     "Clustering, or cluster analysis, is a widely used technique in bioinformatics to
+identify groups of similar biological data points.  Consensus clustering is an
+extension to clustering algorithms that aims to construct a robust result from
+those clustering features that are invariant under different sources of
+variation.  For the reference, please cite the following paper: Yousefi,
+Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
+    (license license:gpl3+)))
 
 (define-public r-conrad
   (package
@@ -18163,13 +18182,13 @@ Structured Query Language (SQL) to the other supported dialects.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "0mr5qi5xkbxmaz6f96n5dm5pm7cn2lrhjw0mf7bcdscb9cpm5vi3"))))
+        (base32 "1wg0flsjp4499hmrgfbp9a9j1bib8vi9k4vnjx3l43cw3rqzs70b"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -31249,6 +31268,27 @@ easily readable argument checking to improve code robustness.")
 your local computer.")
     (license license:expat)))
 
+(define-public r-cheapr
+  (package
+    (name "r-cheapr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cheapr" version))
+       (sha256
+        (base32 "0zbm0xj7l9pa6k253606hjs4cgh8f4mdcqx3pk3v30wgjwnampbv"))))
+    (properties `((upstream-name . "cheapr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cpp11 r-collapse))
+    (home-page "https://cran.r-project.org/package=cheapr")
+    (synopsis "Simple Functions to Save Time and Memory")
+    (description
+     "Fast and memory-efficient (or cheap') tools to facilitate efficient programming,
+saving time and memory.  It aims to provide cheaper alternatives to common base
+R functions, as well as some additional functions.")
+    (license license:expat)))
+
 (define-public r-chatgpt
   (package
     (name "r-chatgpt")
@@ -32442,13 +32482,13 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "10kk92qrg3pgj1g5di0dhf6liwf9mas1vjpgagks7gzsk01h2jq5"))))
+        (base32 "1pfgkk3ngxg7fjnp7hhv7j42x27jnddll3385nxqhwfki6iwdqzq"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso r-ggplot2 r-dplyr))

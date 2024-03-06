@@ -20166,13 +20166,13 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
 (define-public r-ebirdst
   (package
     (name "r-ebirdst")
-    (version "3.2022.2")
+    (version "3.2022.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebirdst" version))
        (sha256
-        (base32 "0mh1pkpkik22312h5x1z5rg1ynjp17n91id5hfrpkm9gfiql4zz4"))))
+        (base32 "0d2qblxdm3sk6rsl155ik303pcphw2dp6li4chizc8anpxwf175r"))))
     (properties `((upstream-name . "ebirdst")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -20183,7 +20183,8 @@ methods in this package are Montgomery, Hollenbach, and Ward (2015)
                              r-rcolorbrewer
                              r-magrittr
                              r-jsonlite
-                             r-dplyr))
+                             r-dplyr
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://ebird.github.io/ebirdst/")
     (synopsis "Access and Analyze eBird Status and Trends Data Products")

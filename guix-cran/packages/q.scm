@@ -322,6 +322,38 @@ quoted, and may pass them as quoted to other functions.")
 Windsor.ai API <https://windsor.ai/api-fields/>.")
     (license license:gpl3)))
 
+(define-public r-quollr
+  (package
+    (name "r-quollr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quollr" version))
+       (sha256
+        (base32 "1qvgajd7bx38nhisb7y5i48fmw9vx6di34s08dkna34rjhafak0a"))))
+    (properties `((upstream-name . "quollr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-rsample
+                             r-rlang
+                             r-proxy
+                             r-langevitour
+                             r-interp
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JayaniLakshika/quollr")
+    (synopsis "Visualising How Nonlinear Dimension Reduction Warps Your Data")
+    (description
+     "To construct a model in 2D space from 2D embedding data and then lift it to the
+high-dimensional space.  Additionally, it provides tools to visualize the model
+in 2D space and to overlay the fitted model on data using the tour technique.
+Furthermore, it facilitates the generation of summaries of high-dimensional
+distributions.")
+    (license license:expat)))
+
 (define-public r-quint
   (package
     (name "r-quint")
@@ -3240,13 +3272,13 @@ published open-sourced free risk prediction algorithm QRISK3-2017
 (define-public r-qris
   (package
     (name "r-qris")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qris" version))
        (sha256
-        (base32 "0rdfpxip37wxim9ini4vgjjpk5b9jqdlaygqkbid2jgjzzya98h0"))))
+        (base32 "0nx4x4ywgwg55fpv9cr30r09in4rzm6070fm0g88qpvgvrihs9a6"))))
     (properties `((upstream-name . "qris")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3260,16 +3292,17 @@ published open-sourced free risk prediction algorithm QRISK3-2017
     (synopsis
      "Quantile Regression Model for Residual Lifetime Using an Induced Smoothing Approach")
     (description
-     "This package provides a collection of functions to fit quantiles regression
-models for censored residual lifetimes.  It provides various options for
-regression parameters estimation: the induced smoothing approach (smooth), and
-L1-minimization (non-smooth).  It also implements the estimation methods for
-standard errors of the regression parameters estimates based on an efficient
-partial multiplier bootstrap method and robust sandwich estimator.  Furthermore,
-a simultaneous procedure of estimating regression parameters and their standard
-errors via an iterative updating procedure is implemented (iterative).  See Kim,
-K. (2022) \"Smoothed quantile regression for censored residual life\",
-<@code{arXiv:2205.00413>}.")
+     "This package provides a collection of functions is provided by this package to
+fit quantiles regression models for censored residual lifetimes.  It provides
+various options for regression parameters estimation: the induced smoothing
+approach (smooth), and L1-minimization (non-smooth).  It also implements the
+estimation methods for standard errors of the regression parameters estimates
+based on an efficient partial multiplier bootstrap method and robust sandwich
+estimator.  Furthermore, a simultaneous procedure of estimating regression
+parameters and their standard errors via an iterative updating procedure is
+implemented (iterative).  For more details, see Kim, K. H., Caplan, D. J., &
+Kang, S. (2022), \"Smoothed quantile regression for censored residual life\",
+Computational Statistics, 1-22 <doi:10.1007/s00180-022-01262-z>.")
     (license license:gpl3+)))
 
 (define-public r-qripkg

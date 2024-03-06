@@ -1612,13 +1612,13 @@ of the database.")
 (define-public r-pubmedtk
   (package
     (name "r-pubmedtk")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmedtk" version))
        (sha256
-        (base32 "15s082qy27mvgqd8ys1qhb27p7r0nh9fgdpwcnaz8qzw3x8w6z3c"))))
+        (base32 "176idn5q7aac9bsvw0qbxq8qdx9axg5prsvv2rjrwx6hhf2gz20a"))))
     (properties `((upstream-name . "pubmedtk")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4358,13 +4358,13 @@ submissions.")
 (define-public r-psagraphics
   (package
     (name "r-psagraphics")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSAgraphics" version))
        (sha256
-        (base32 "0y67yf77ywm57zrvclgz3ndqrwxbiy0pdqfjq0qgvw5qziqkya4i"))))
+        (base32 "1fa11imkca782cd6jh3y41yxpy9xrdm7azq62al1k7i5jsq3chqd"))))
     (properties `((upstream-name . "PSAgraphics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -10795,13 +10795,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "0swk59q6n4cbmynq5dmwzfz8rbxfhji4snn69g7xfd94c48p7q9g"))))
+        (base32 "14bgwmly49ba0xrvlns9dfn3q5yz38q3kvc3g6swryzhfb5wjb4r"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))
@@ -19048,13 +19048,13 @@ graphs.")
 (define-public r-plnmodels
   (package
     (name "r-plnmodels")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PLNmodels" version))
        (sha256
-        (base32 "07ax6qhj9n55mrs2s4ddzzxy69xw8pvf0phvha1vncnal6314qwy"))))
+        (base32 "1fqfy3pipj8w3mma8ca33ppxpvam4hnzcklpma188s06vy75h1i9"))))
     (properties `((upstream-name . "PLNmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -19064,6 +19064,7 @@ graphs.")
                              r-rcpp
                              r-r6
                              r-purrr
+                             r-pscl
                              r-nloptr
                              r-matrix
                              r-mass
@@ -19652,6 +19653,38 @@ can estimate parameters by maximizing the penalized log-likelihood function.
 Besides, we proposed an implementation strategy that builds on the coordinate
 decent algorithm, together with the Bayesian information criterion (BIC).")
     (license license:gpl2+)))
+
+(define-public r-pldamixture
+  (package
+    (name "r-pldamixture")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pldamixture" version))
+       (sha256
+        (base32 "14jvlfpgw687g6746wkz6x3inqnmghjd692z5qddlxxw1fc9qp7j"))))
+    (properties `((upstream-name . "pldamixture")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (home-page "https://github.com/bpriy/pldamixture")
+    (synopsis "Post-Linkage Data Analysis Based on Mixture Modelling")
+    (description
+     "Perform inference in the secondary analysis setting with linked data potentially
+containing mismatch errors.  Only the linked data file may be accessible and
+information about the record linkage process may be limited or unavailable.
+Implements the General Framework for Regression with Mismatched Data developed
+by Slawski et al. (2023) <@code{arXiv:2306.00909>}.  The framework uses a
+mixture model for pairs of linked records whose two components reflect
+distributions conditional on match status, i.e., correct match or mismatch.
+Inference is based on composite likelihood and the Expectation-Maximization (EM)
+algorithm.  The package currently supports Cox Proportional Hazards Regression
+(right-censored data only) and Generalized Linear Regression Models (Gaussian,
+Gamma, Poisson, and Logistic (binary models only)).  Information about the
+underlying record linkage process can be incorporated into the method if
+available (e.g., assumed overall mismatch rate, safe matches, predictors of
+match status, or predicted probabilities of correct matches).")
+    (license license:gpl2)))
 
 (define-public r-playerratings
   (package
@@ -28539,17 +28572,17 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedgene
   (package
     (name "r-pedgene")
-    (version "3.6")
+    (version "3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedgene" version))
        (sha256
-        (base32 "0h66yshna10fannpdvi0m83s53b1hmnjym2mvc7ypcgr1glq6j13"))))
+        (base32 "150cfqk8krrjm8v173ag06ia95n30xvx6vvxhzyf15djniidfb6b"))))
     (properties `((upstream-name . "pedgene")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-matrix r-kinship2 r-compquadform))
-    (home-page "https://bioinformaticstools.mayo.edu/research/pedgene/")
+    (home-page "https://analytictools.mayo.edu/research/pedgene/")
     (synopsis "Gene-Level Variant Association Tests for Pedigree Data")
     (description
      "Gene-level variant association tests with disease status for pedigree data:
@@ -31902,13 +31935,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "12k1qcng5ygmryiy528gxbg0sn4gmnbp145qz278vsm2ya3hh86b"))))
+        (base32 "1dmvfrdxgfbwdkb940igskf72wdsl66px4hqbdg5d0j73dxclgcn"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults

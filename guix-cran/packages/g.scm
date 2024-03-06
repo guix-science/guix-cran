@@ -21332,13 +21332,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.6")
+    (version "4.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorph" version))
        (sha256
-        (base32 "198ah0xin7xwkjcag74rrjlmaqsz253lm1n07010ffbn01f2cg58"))))
+        (base32 "16rqf1g5g3gvzjvjjahs06h00gl3n1vbmk8xzyh0c3rjmgdiz2x3"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpp

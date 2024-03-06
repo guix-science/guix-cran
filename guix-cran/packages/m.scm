@@ -3976,6 +3976,56 @@ number of cells.  Journal of Statistical Software 5(6) (2000).  Paper and code
 available at <DOI:10.18637/jss.v005.i06>.")
     (license license:lgpl3+)))
 
+(define-public r-multinma
+  (package
+    (name "r-multinma")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multinma" version))
+       (sha256
+        (base32 "04vc1669z94gmzy6ldsndsmf386mvxbadxcpv1p2mbsigpppk498"))))
+    (properties `((upstream-name . "multinma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-randtoolbox
+                             r-purrr
+                             r-matrix
+                             r-igraph
+                             r-glue
+                             r-ggraph
+                             r-ggplot2
+                             r-ggdist
+                             r-forcats
+                             r-dplyr
+                             r-copula
+                             r-bh
+                             r-bayesplot))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://dmphillippo.github.io/multinma/")
+    (synopsis
+     "Bayesian Network Meta-Analysis of Individual and Aggregate Data")
+    (description
+     "Network meta-analysis and network meta-regression models for aggregate data,
+individual patient data, and mixtures of both individual and aggregate data
+using multilevel network meta-regression as described by Phillippo et al. (2020)
+<doi:10.1111/rssa.12579>.  Models are estimated in a Bayesian framework using
+Stan'.")
+    (license license:gpl3)))
+
 (define-public r-multinets
   (package
     (name "r-multinets")
@@ -11107,18 +11157,18 @@ description of the method see Pascariu et al. (2017).
 (define-public r-mortaar
   (package
     (name "r-mortaar")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mortAAR" version))
        (sha256
-        (base32 "13zx5ldlnc4zhvw7r9ria419dwlf0wbaa8107zvwpcynfb1z4fg7"))))
+        (base32 "1n3s704k2lqpcbzk8rqa28jcqz37g2bdjkj6x1bygcbfdic2z0dc"))))
     (properties `((upstream-name . "mortAAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-reshape2 r-rdpack r-magrittr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mortAAR")
+    (home-page "https://github.com/ISAAKiel/mortAAR")
     (synopsis "Analysis of Archaeological Mortality Data")
     (description
      "This package provides a collection of functions for the analysis of
@@ -12127,13 +12177,13 @@ optional partial monotonicity constraints.")
 (define-public r-monitos
   (package
     (name "r-monitos")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monitOS" version))
        (sha256
-        (base32 "0i88z6r166h6azgydsin8xn93mv92gbl8fx6fcnhd9n0lshl1jnj"))))
+        (base32 "0h4p3xvpsrj73ljx3iahfn5cw7dgjnwj4k0hgx067vx5zf8xqa57"))))
     (properties `((upstream-name . "monitOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinydashboard r-shiny r-glue))
@@ -15238,13 +15288,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.10")
+    (version "0.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "05n204j70daagj53jh8cx1dznm33pf4aazjvcmmgd68vjx0rkhy5"))))
+        (base32 "1w7kpjsa59zri2jqaxlr4b7lg57xrnnwlak9wb6midlb3n8pw5f1"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -16866,13 +16916,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3viz
   (package
     (name "r-mlr3viz")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3viz" version))
        (sha256
-        (base32 "08kgg6fxzvj5xfx316aj4dy1xcrsflns24sj40jj6g14dyjnh26f"))))
+        (base32 "1m2f54yqhk1bd4c30vd1z509yblz6y4i8qkwhg73aa1sflnsycvf"))))
     (properties `((upstream-name . "mlr3viz")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16931,13 +16981,13 @@ the mlr3 project at <https://mlr3book.mlr-org.com/>.")
 (define-public r-mlr3tuningspaces
   (package
     (name "r-mlr3tuningspaces")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3tuningspaces" version))
        (sha256
-        (base32 "1h5nz992i4bkgfg0gjnyfkiqfg09d15d6h4r6gnd7rbim73807xp"))))
+        (base32 "1snrd7xq388mvqh0ydaxvx8k9iwp40g06c3irp0m718jw3wsz5vm"))))
     (properties `((upstream-name . "mlr3tuningspaces")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -17128,13 +17178,13 @@ optimization algorithms include Efficient Global Optimization by Jones et al.
 (define-public r-mlr3hyperband
   (package
     (name "r-mlr3hyperband")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3hyperband" version))
        (sha256
-        (base32 "0ynfzb7y0vmrx7pr6681112nhzdfvdj5flpr6jab2ancgkg22syl"))))
+        (base32 "1x6vfhadxlb4c9q61d5qv957mkyfwdwchzbg3flfd0j28b4bck1p"))))
     (properties `((upstream-name . "mlr3hyperband")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -20972,13 +21022,13 @@ al. (2019) <doi:10.1177/0013164418805532> and Kim et al. (2005)
 (define-public r-missmech
   (package
     (name "r-missmech")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MissMech" version))
        (sha256
-        (base32 "0qxdmqnwahp1m7kgckp1cv4asjb2b8ngyhqps4vxy6qaha15cnk2"))))
+        (base32 "0r4jdy2wr4rqpyshlgfvfhvq78v0w6g7v7iixljgh4kv9ryl476d"))))
     (properties `((upstream-name . "MissMech")))
     (build-system r-build-system)
     (home-page "https://github.com/indenkun/MissMech")
@@ -21482,13 +21532,13 @@ and Caridi, 2023 <doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al.
 (define-public r-miselect
   (package
     (name "r-miselect")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miselect" version))
        (sha256
-        (base32 "0dfqni7r5zwdvwmrmvqhycmxhazivz6vnz2ccjy0hyfad29g0v7s"))))
+        (base32 "01jvxv79irqq1xkl826kqrdx9yx73lifb5xq90f5d34qycp1nxzi"))))
     (properties `((upstream-name . "miselect")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -21504,9 +21554,9 @@ dataset will likely lead to different sets of selected predictors, making it
 difficult to ascertain a final active set without resorting to ad hoc
 combination rules.  miselect presents Stacked Adaptive Elastic Net (saenet) and
 Grouped Adaptive LASSO (galasso) for continuous and binary outcomes, developed
-by Du et al (2020), currently under review.  They, by construction, force
-selection of the same variables across multiply imputed data.  miselect also
-provides cross validated variants of these methods.")
+by Du et al (2022) <doi:10.1080/10618600.2022.2035739>.  They, by construction,
+force selection of the same variables across multiply imputed data.  miselect
+also provides cross validated variants of these methods.")
     (license license:gpl3)))
 
 (define-public r-miscset
@@ -22228,13 +22278,13 @@ reference to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
 (define-public r-minsnps
   (package
     (name "r-minsnps")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minSNPs" version))
        (sha256
-        (base32 "1wflv7n4rzsdcimwj8carmf8lwspp36ghcb3cw9fyp75dx14pa50"))))
+        (base32 "00kg0mqr282hc7fj8dzagvlmm6d0h9wl5khx03b9yzpw42cs0yf5"))))
     (properties `((upstream-name . "minSNPs")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-biocparallel))
@@ -31475,13 +31525,13 @@ visualising the results are also provided.")
 (define-public r-medscan
   (package
     (name "r-medscan")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medScan" version))
        (sha256
-        (base32 "19zvl50xbnf76d0ck30zrfd8cv6j250jl9y00vj1cbl6sspwz6ss"))))
+        (base32 "17h97fnklci6prj62nzg49dcczns7s1yzi410jrdypsfhpz912kv"))))
     (properties `((upstream-name . "medScan")))
     (build-system r-build-system)
     (propagated-inputs (list r-qvalue r-qqman r-locfdr r-hdmt r-fdrtool))
@@ -31492,10 +31542,8 @@ visualising the results are also provided.")
 hypothesis testing.  The six included methods for testing the mediation effect
 are Sobel's test, Max P test, joint significance test under the composite null
 hypothesis, high dimensional mediation testing, divide-aggregate composite null
-test, and Sobel's test under the composite null hypothesis.  Du, J., Zhou, X.,
-Hao, W., Liu, Y., Smith, J. A., & Mukherjee, B (2022) \"Methods for Large-scale
-Single Mediator Hypothesis Testing: Possible Choices and Comparisons.\"
-@code{arXiv} preprint <@code{arXiv:2203.13293>}.")
+test, and Sobel's test under the composite null hypothesis.  Du et al (2023)
+<doi:10.1002/gepi.22510>.")
     (license license:gpl3)))
 
 (define-public r-medrxivr
@@ -39505,52 +39553,6 @@ some extras on top, including parallel computation, progress bars, error
 handling, and result caching.")
     (license license:expat)))
 
-(define-public r-mappoly
-  (package
-    (name "r-mappoly")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mappoly" version))
-       (sha256
-        (base32 "0iqmyk6pinzgxj9pyr0k6sm77sz58wll7qk7bh5i4synifaf2422"))))
-    (properties `((upstream-name . "mappoly")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-zoo
-                             r-vcfr
-                             r-smacof
-                             r-rstudioapi
-                             r-reshape2
-                             r-rcurl
-                             r-rcppparallel
-                             r-rcpp
-                             r-princurve
-                             r-plotly
-                             r-plot3d
-                             r-magrittr
-                             r-ggsci
-                             r-ggpubr
-                             r-ggplot2
-                             r-fields
-                             r-dplyr
-                             r-dendextend
-                             r-crayon
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mmollina/MAPpoly")
-    (synopsis "Genetic Linkage Maps in Autopolyploids")
-    (description
-     "Construction of genetic maps in autopolyploid full-sib populations.  Uses
-pairwise recombination fraction estimation as the first source of information to
-sequentially position allelic variants in specific homologous chromosomes.  For
-situations where pairwise analysis has limited power, the algorithm relies on
-the multilocus likelihood obtained through a hidden Markov model (HMM).  For
-more detail, please see Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378>
-and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
-    (license license:gpl3)))
-
 (define-public r-mappings
   (package
     (name "r-mappings")
@@ -40119,13 +40121,13 @@ published in Olofsson et al. (2014) <doi:10.1016/j.rse.2014.02.015> and Stehman
 (define-public r-mapa
   (package
     (name "r-mapa")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAPA" version))
        (sha256
-        (base32 "12mk086yg8sgfc2c213sskv8kr1nyqamhagixs18b1cc99dg43hc"))))
+        (base32 "1f50fkxsdisndxh03ylzqipwh2kr51dai6z8xjhiv28h9ymgz9br"))))
     (properties `((upstream-name . "MAPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-smooth r-rcolorbrewer r-forecast))

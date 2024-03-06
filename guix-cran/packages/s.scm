@@ -12749,13 +12749,13 @@ are involved.")
 (define-public r-starter
   (package
     (name "r-starter")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starter" version))
        (sha256
-        (base32 "01iq1srny5ljfj3vlgpigxvkyawhpiqvgc5wzafydh8rrzfyj1ld"))))
+        (base32 "0lzaiw4m6wxniv8bgri33z8np49mqbgip4jhibsw0xa717anlqa4"))))
     (properties `((upstream-name . "starter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi
@@ -37381,13 +37381,13 @@ basis of @code{FuzzyNumbers} package.")
 (define-public r-sim-diffproc
   (package
     (name "r-sim-diffproc")
-    (version "4.8")
+    (version "4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Sim.DiffProc" version))
        (sha256
-        (base32 "16pzcs1g5ihza9a2glnkgd5pxi77l6w34vkn0vxcb78gc6syhbrd"))))
+        (base32 "059dzkl0jw1hfswa4wj1wwal7svy4sb5x79l25dk9hwdvlpy77v4"))))
     (properties `((upstream-name . "Sim.DiffProc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-deriv))
@@ -56318,13 +56318,13 @@ see <https://moodle.org/> for more information).")
 (define-public r-sarp-compo
   (package
     (name "r-sarp-compo")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SARP.compo" version))
        (sha256
-        (base32 "17pvgc7alv59lxnrz1rj5gdl2lg90jxfwkyn8j802n22r3bmzcsm"))))
+        (base32 "1dgppwk7qyqdbfv1n9m7l55gqrqr4zzym7l8kpfi46f98l0knmdk"))))
     (properties `((upstream-name . "SARP.compo")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-car))
@@ -58878,13 +58878,13 @@ component predictors as a byproduct, for these two models.")
 (define-public r-saemix
   (package
     (name "r-saemix")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saemix" version))
        (sha256
-        (base32 "08ammczpfril3dcgbr3vxxkqn1bi6x9i3xphwrh1y14hfzninm04"))))
+        (base32 "1xx6254sj6lyarkkdkl3lajflyh8c2y8261bl9a19d1457l1h8wv"))))
     (properties `((upstream-name . "saemix")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

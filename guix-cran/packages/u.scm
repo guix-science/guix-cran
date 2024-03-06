@@ -2302,13 +2302,13 @@ that string.")
 (define-public r-uniprotr
   (package
     (name "r-uniprotr")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UniprotR" version))
        (sha256
-        (base32 "0zrhfcc58vizk4rb3acibcrn2xxp6mlbyxs0pk66crfiz0qn9pd8"))))
+        (base32 "0zrpqr1kvigfd0qv2sfra0xm2l94r0v0gyi2yjfgf2g60br4gggj"))))
     (properties `((upstream-name . "UniprotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

@@ -3892,13 +3892,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "1kxswrw5lirmzhn8jhrq08n1pg2i97fq3q4ykzl38c4yvv0b4jz5"))))
+        (base32 "1gpp2ccz4bm6x3qif7lzif8ds0cm818gh0fq6fjamvsid7iilcng"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -11413,6 +11413,27 @@ coded to take as input a set of observed p-values and their discrete support
 under the null.  A function to compute such p-values and supports for Fisher's
 exact tests is also provided, along with a wrapper allowing to apply discrete
 procedures directly from contingency tables.")
+    (license license:gpl3)))
+
+(define-public r-discretedatasets
+  (package
+    (name "r-discretedatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiscreteDatasets" version))
+       (sha256
+        (base32 "1dbladgcaixsdd9javna0m0xrdi1f114k4vnl3fh508r3k31vj2l"))))
+    (properties `((upstream-name . "DiscreteDatasets")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://github.com/DISOhda/DiscreteDatasets")
+    (synopsis "Example Data Sets for Use with Discrete Statistical Tests")
+    (description
+     "This package provides several data sets for use with discrete statistical tests
+and discrete multiple testing procedures.  Some of them are also available as a
+four-column version, so that each row represents a 2x2 table.")
     (license license:gpl3)))
 
 (define-public r-discretecdalgorithm
@@ -19406,13 +19427,13 @@ transformation ensembles (Kook et al, 2022,
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "049vgkjcxqh009czrzj59j8rjmlr86q22v3x8fq9242jixbs3hzg"))))
+        (base32 "1jmfdjs9a8rfq0mqi0zhnzhicf1wddydlv1wy9h4qzsq56llkhls"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -19426,6 +19447,7 @@ transformation ensembles (Kook et al, 2022,
                              r-ggnewscale
                              r-ggforce
                              r-ggfittext
+                             r-geomtextpath
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))

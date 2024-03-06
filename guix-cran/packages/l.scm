@@ -1082,13 +1082,13 @@ tabulated data.")
 (define-public r-lsx
   (package
     (name "r-lsx")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSX" version))
        (sha256
-        (base32 "149l9sbpphw89jg5sbk7szn6xrfscyql0qc5kmf91n2l18kz5w5z"))))
+        (base32 "1qch23k8qs9v19npsh90nxv8wznp1lqga8k995117vsjj8h7i7s3"))))
     (properties `((upstream-name . "LSX")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1105,7 +1105,7 @@ tabulated data.")
                              r-ggrepel
                              r-ggplot2
                              r-digest))
-    (home-page "https://cran.r-project.org/package=LSX")
+    (home-page "https://koheiw.github.io/LSX/")
     (synopsis "Semi-Supervised Algorithm for Document Scaling")
     (description
      "This package provides a word embeddings-based semi-supervised model for document
@@ -9722,13 +9722,13 @@ contingencies insurances calculations are contained therein.  See Spedicato
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "1x0f638h8333ih25jd4hmlcifccvjwhks4lrckx8izl8m23cgckm"))))
+        (base32 "0n0w5qv5mjfnxk7wixwivm68y8pb67sqyfkqinq85rnybhgzshmd"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

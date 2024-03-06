@@ -5055,6 +5055,46 @@ in the assessment of COVID-19 impacts on neighbourhood policing using Twitter
 data.  Further examples can be found in the vignette of the package.")
     (license license:gpl3)))
 
+(define-public r-opinar
+  (package
+    (name "r-opinar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "opinAr" version))
+       (sha256
+        (base32 "0xvzjkkqcd058br32cnva8pif0rgpfwk2qbq5q3wyjhfqqv3bwxq"))))
+    (properties `((upstream-name . "opinAr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sjplot
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-janitor
+                             r-haven
+                             r-gt
+                             r-glue
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PoliticaArgentina/opinAr")
+    (synopsis "Argentina's Public Opinion Toolbox")
+    (description
+     "This package provides a toolbox for working with public opinion data from
+Argentina.  It facilitates access to microdata and the calculation of indicators
+of the Trust in Government Index (ICG), prepared by the Torcuato Di Tella
+University.  Although we will try to document everything possible in English, by
+its very nature Spanish will be the main language.  El paquete fue pensado como
+una caja de herramientas para el trabajo con datos de @code{opiniÃ³n}
+@code{pÃºblica} de Argentina.  El mismo facilita el acceso a los microdatos y el
+@code{cÃ¡lculos} de indicadores del Ãndice de Confianza en el Gobierno (ICG),
+elaborado por la Universidad Torcuato Di Tella.")
+    (license license:expat)))
+
 (define-public r-opi
   (package
     (name "r-opi")
@@ -11039,13 +11079,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "0z2xsyd2x647zv3drzsgrc6sflqyirmd2lkivf7jszxaw49jpa5l"))))
+        (base32 "0qsl9nhl71z8m9kx8cf71zhaylcbsh318crlzzs5b0aalkkl0hi2"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-checkmate))
