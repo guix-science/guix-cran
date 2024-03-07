@@ -4628,13 +4628,13 @@ multi-variable and multi-site weather generator can be found in Brunner et al.
 (define-public r-prrd
   (package
     (name "r-prrd")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prrd" version))
        (sha256
-        (base32 "0ig3k1l2md6hzb5asv277ylg0k9a1rkcrbs8d8h4f07pxykhmivf"))))
+        (base32 "1wr469jvzgsic38x8xr72lx7px0k6l957z4hl63bgj7w2dczwyqz"))))
     (properties `((upstream-name . "prrd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite
@@ -4647,7 +4647,7 @@ multi-variable and multi-site weather generator can be found in Brunner et al.
     (synopsis "Parallel Runs of Reverse Depends")
     (description
      "Reverse depends for a given package are queued such that multiple workers can
-run the tests in parallel.")
+run the reverse-dependency tests in parallel.")
     (license license:gpl2+)))
 
 (define-public r-prqlr
@@ -6945,13 +6945,13 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
 (define-public r-procs
   (package
     (name "r-procs")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "procs" version))
        (sha256
-        (base32 "1b2i3f11ayby86ip8zn0agk6r8wz1ygrphacc2ihy4x8gpk16mvr"))))
+        (base32 "06hsdzw23854pc9zirbbfzm451ybllrp5gx6b4bk0pd8wv1iza01"))))
     (properties `((upstream-name . "procs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-saslm r-reporter r-fmtr r-common))
@@ -6961,9 +6961,9 @@ can be found in \"Elements of Statistical Learning (2nd Edition)\" in Section
     (description
      "This package contains functions to simulate the most commonly used SASÂ®
 procedures.  Specifically, the package aims to simulate the functionality of
-proc freq', proc means', proc ttest', proc transpose', proc sort', and proc
-print'.  The simulation will include recreating all statistics with the highest
-fidelity possible.")
+proc freq', proc means', proc ttest', proc reg', proc transpose', proc sort',
+and proc print'.  The simulation will include recreating all statistics with the
+highest fidelity possible.")
     (license license:cc0)))
 
 (define-public r-procmod
@@ -26969,13 +26969,13 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 (define-public r-periscope2
   (package
     (name "r-periscope2")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "periscope2" version))
        (sha256
-        (base32 "0nxzz314gpm9z92y6ajf0fdfja923ay7f7866mp4ri5h78plf0yx"))))
+        (base32 "00zjap5l8aqyn6ykf3vmhsgiahkkgzkakjzc7z0wlm5ksv0cskdm"))))
     (properties `((upstream-name . "periscope2")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -26984,6 +26984,7 @@ Barden R. and Kasprzyk-Hordern B. (2022)
                              r-shinyfeedback
                              r-shiny
                              r-lubridate
+                             r-lifecycle
                              r-fresh
                              r-dt
                              r-bs4dash))
@@ -32975,13 +32976,13 @@ result.")
 (define-public r-partialnetwork
   (package
     (name "r-partialnetwork")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PartialNetwork" version))
        (sha256
-        (base32 "1pn308cqwil0k674zc9bqxgxh052avjm2akhm1wm644labmi1vl3"))))
+        (base32 "0s551krji472qrwaq2a7s06l42kzrbhx7w9g5ijfn5q69i8ns9x3"))))
     (properties `((upstream-name . "PartialNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -33002,13 +33003,12 @@ result.")
     (description
      "This package implements IV-estimator and Bayesian estimator for linear-in-means
 Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
-<https://journals.sagepub.com/doi/10.1177/016001769702000107>; Lee, 2004
-<https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1468-0262.2004.00558.x>;
-@code{BramoullÃ©} et al., 2009 <doi:10.1016/j.jeconom.2008.12.021>), while
-assuming that only a partial information about the network structure is
-available.  Examples are when the adjacency matrix is not fully observed or when
-only consistent estimation of the network formation model is available (see
-Boucher and Houndetoungan
+<doi:10.1177/016001769702000107>; Lee, 2004
+<doi:10.1111/j.1468-0262.2004.00558.x>; @code{BramoullÃ©} et al., 2009
+<doi:10.1016/j.jeconom.2008.12.021>), while assuming that only a partial
+information about the network structure is available.  Examples are when the
+adjacency matrix is not fully observed or when only consistent estimation of the
+network formation model is available (see Boucher and Houndetoungan
 <https://ahoundetoungan.com/files/Papers/@code{PartialNetwork.pdf>}).")
     (license license:gpl3)))
 

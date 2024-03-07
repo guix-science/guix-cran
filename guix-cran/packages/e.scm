@@ -15960,6 +15960,30 @@ a treatment variable on an outcome variable, taking into account multiple
 continuous and categorical covariates.")
     (license license:gpl2+)))
 
+(define-public r-effclust
+  (package
+    (name "r-effclust")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "effClust" version))
+       (sha256
+        (base32 "1lnlmzwa5g1djs1i4vk2jx6rd0b45hs9n9lfkbpnn69s0lgj7rys"))))
+    (properties `((upstream-name . "effClust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fixest))
+    (home-page "https://cran.r-project.org/package=effClust")
+    (synopsis "Calculate Effective Number of Clusters for a Linear Model")
+    (description
+     "Calculates the (approximate) effective number of clusters for a regression
+model, as described in Carter, Schnepel, and Steigerwald (2017)
+<doi:10.1162/REST_a_00639>.  The effective number of clusters is a statistic to
+assess the reliability of asymptotic inference when sampling or treatment
+assignment is clustered.  Methods are implemented for stats::lm(), plm::plm(),
+and fixest::feols().  There is also a formula method.")
+    (license license:expat)))
+
 (define-public r-eff2
   (package
     (name "r-eff2")

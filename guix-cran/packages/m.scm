@@ -22418,13 +22418,13 @@ groups and any allocation ratios by minimization algorithms.")
 (define-public r-minipch
   (package
     (name "r-minipch")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniPCH" version))
        (sha256
-        (base32 "12a3yabgac4xabq518djmlrhwlz440pdh05zabxwgms9xnias557"))))
+        (base32 "1z8zsagas50ndwygkxfdi933x5vq3dmq5kwmi3lg28hqdaf2hcnm"))))
     (properties `((upstream-name . "miniPCH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-checkmate))
@@ -31709,13 +31709,13 @@ from existing R packages, and some data donations.")
 (define-public r-mediationsens
   (package
     (name "r-mediationsens")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mediationsens" version))
        (sha256
-        (base32 "1wvd9kcz4sh0ylydp8q49013i408bn9w5m5ihg0s5r0489359385"))))
+        (base32 "1f7v98h8n34sw5vkvps2z770kmc1iaqyd1xjmd8nia7636k91f43"))))
     (properties `((upstream-name . "mediationsens")))
     (build-system r-build-system)
     (propagated-inputs (list r-mediation r-distr))
@@ -39553,6 +39553,52 @@ some extras on top, including parallel computation, progress bars, error
 handling, and result caching.")
     (license license:expat)))
 
+(define-public r-mappoly
+  (package
+    (name "r-mappoly")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mappoly" version))
+       (sha256
+        (base32 "13wifh29i3g8m3gvw058nh3ma7fici2qijnpzb9ph27y67a3b6s9"))))
+    (properties `((upstream-name . "mappoly")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-zoo
+                             r-vcfr
+                             r-smacof
+                             r-rstudioapi
+                             r-reshape2
+                             r-rcurl
+                             r-rcppparallel
+                             r-rcpp
+                             r-princurve
+                             r-plotly
+                             r-plot3d
+                             r-magrittr
+                             r-ggsci
+                             r-ggpubr
+                             r-ggplot2
+                             r-fields
+                             r-dplyr
+                             r-dendextend
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mmollina/MAPpoly")
+    (synopsis "Genetic Linkage Maps in Autopolyploids")
+    (description
+     "Construction of genetic maps in autopolyploid full-sib populations.  Uses
+pairwise recombination fraction estimation as the first source of information to
+sequentially position allelic variants in specific homologous chromosomes.  For
+situations where pairwise analysis has limited power, the algorithm relies on
+the multilocus likelihood obtained through a hidden Markov model (HMM).  For
+more detail, please see Mollinari and Garcia (2019) <doi:10.1534/g3.119.400378>
+and Mollinari et al. (2020) <doi:10.1534/g3.119.400620>.")
+    (license license:gpl3)))
+
 (define-public r-mappings
   (package
     (name "r-mappings")
@@ -41375,13 +41421,13 @@ from an image, using mathematical algorithms.")
 (define-public r-makemyprior
   (package
     (name "r-makemyprior")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makemyprior" version))
        (sha256
-        (base32 "1h5v1n6b318j36w1c225wq8rdvr3dwsy421x43z0ff9ixidhylbv"))))
+        (base32 "0a99jabji1rlpgxayxvydnvp8wbbg6fb0694xbvwyqqva18yb9m2"))))
     (properties `((upstream-name . "makemyprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

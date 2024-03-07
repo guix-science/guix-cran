@@ -11569,13 +11569,13 @@ is not feasible.")
 (define-public r-glmtree
   (package
     (name "r-glmtree")
-    (version "0.2")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtree" version))
        (sha256
-        (base32 "07b7ma38r5cjv6c33q1n2f8xvzn3lj004i8v947pqdhg3fi9wlc6"))))
+        (base32 "0d0i9qhmib0rr15jm9kwl9jcfwhsagdr56jqgan5sr0hb4wbzzvw"))))
     (properties `((upstream-name . "glmtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-magrittr r-dplyr r-caret))
@@ -24428,13 +24428,13 @@ gene expression time series data.")
 (define-public r-genearead
   (package
     (name "r-genearead")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GENEAread" version))
        (sha256
-        (base32 "00whn2xqlcdcgmrifng04j2csxynfb1dmj9wkx981ylz13jsnwm9"))))
+        (base32 "1yk66mzzk5xxkrg81cywq94b84y2l0m542g03xcmh31gvskccl1h"))))
     (properties `((upstream-name . "GENEAread")))
     (build-system r-build-system)
     (propagated-inputs (list r-mmap r-bitops))
@@ -24443,7 +24443,7 @@ gene expression time series data.")
     (description
      "This package provides functions and analytics for GENEA-compatible accelerometer
 data into R objects.  See topic GENEAread for an introduction to the package.
-See <https://www.activinsights.com/products/geneactiv/> for more details on the
+See <https://activinsights.com/technology/geneactiv/> for more details on the
 GENEActiv device.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -24664,13 +24664,13 @@ which low, medium, and high thresholds are user-defined.")
 (define-public r-genbinomapps
   (package
     (name "r-genbinomapps")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenBinomApps" version))
        (sha256
-        (base32 "03pgzrj5d3cjhadv4f6an4vm90fj0wxcsi9lx7znrlrjp8qvyjvh"))))
+        (base32 "1bcgfp7ilzqirb6adwf9wjlcch4xx3zwsd8n2n7xkpjfkdm3rx62"))))
     (properties `((upstream-name . "GenBinomApps")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GenBinomApps")
@@ -26034,13 +26034,13 @@ I/O, or prefer a direct GDAL API.")
 (define-public r-gdalcubes
   (package
     (name "r-gdalcubes")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalcubes" version))
        (sha256
-        (base32 "1zvx6adc7i1811ri2i5c5w4rkh5wi1rmxi2xm8amf6cwqym8rnzd"))))
+        (base32 "1bpskiv7pc09pwmh3ghf5l6wswbwlbmwx6sjqlqx7vs8d7gk6972"))))
     (properties `((upstream-name . "gdalcubes")))
     (build-system r-build-system)
     (inputs (list zlib

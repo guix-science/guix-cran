@@ -4236,13 +4236,13 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 (define-public r-dropout
   (package
     (name "r-dropout")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dropout" version))
        (sha256
-        (base32 "0gnicnswgj5afbg3h7ghiy8rv7zfs3vvs9xsqglgril4ibysf6pw"))))
+        (base32 "11clanskb3w0v1ahx6q8d7nxqfsck4zbcyrkb8db1ykbdakdq1xs"))))
     (properties `((upstream-name . "dropout")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-dplyr))

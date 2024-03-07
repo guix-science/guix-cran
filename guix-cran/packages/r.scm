@@ -17406,13 +17406,13 @@ between different units of barometric pressure.")
 (define-public r-rmpw
   (package
     (name "r-rmpw")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmpw" version))
        (sha256
-        (base32 "1a49rvdwvmccv4gfir48fw0b9jyrpc2q9zfyk5j9b7nxsx6x7abl"))))
+        (base32 "150wvnzhwvi8vv76glrbqns1r09cx42fxjrpfvvkdjd5vsbhmibv"))))
     (properties `((upstream-name . "rmpw")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gtools))
@@ -27763,13 +27763,13 @@ rotation and pesticide application regimes.")
 (define-public r-reset
   (package
     (name "r-reset")
-    (version "0.2.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RESET" version))
        (sha256
-        (base32 "0jqnyq63a83anz3r8bjj0qsa9diji3sl7hkjw33zg7pzigcg2yk3"))))
+        (base32 "0v1a9fk4w30kvvxs91918gzx6k7mshv6djq5d5q501qrr3svhgrw"))))
     (properties `((upstream-name . "RESET")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -39243,13 +39243,13 @@ chart, bar chart, contour plot, and distribution plot.")
 (define-public r-rcmdrplugin-hh
   (package
     (name "r-rcmdrplugin-hh")
-    (version "1.1-47")
+    (version "1.1-51")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.HH" version))
        (sha256
-        (base32 "1bba11izs1jhjsyb0d45c34gcihapk231qbiabcxf8x93sdmg6ga"))))
+        (base32 "1kfx74nlkdyzh73cwab8gflrpw99pvjgr3ch8ikkg39h8yyi83qh"))))
     (properties `((upstream-name . "RcmdrPlugin.HH")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdr r-mgcv r-lattice r-hh))
@@ -39472,13 +39472,13 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "033inak78bsrf3jn1z3bhmjrspsskm54s0bskm9g8vs9avzav8i1"))))
+        (base32 "0jy6aiz524g08nr6kyw53xi1j816b22vycq9fhk93181w2gmfm98"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-rcmdr))
@@ -39496,13 +39496,13 @@ Louviere et al. (2000) <doi:10.1017/CBO9780511753831>.")
 (define-public r-rcmdrplugin-dccv
   (package
     (name "r-rcmdrplugin-dccv")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCCV" version))
        (sha256
-        (base32 "13dl79xkr3y2p2qigmnl7hq1lw4i99f3b03q6dc15yihb593za4i"))))
+        (base32 "1xlzl5qs266h4qhazib0hh1qdi5i31q9bxph8sajjvv4na4py1pv"))))
     (properties `((upstream-name . "RcmdrPlugin.DCCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdr r-dcchoice))
@@ -39559,13 +39559,13 @@ in a Permutation Test Framework).")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "1hc0chajvpf0vvmwfmj8ps7wvb4bfglkx3zy845jpz9py90dbhdy"))))
+        (base32 "1bwxy858wlwbsx7pdss7kcm7jjaxp95gzbz83h5lhyykv170p5a2"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws3 r-rcmdr))
@@ -39583,13 +39583,13 @@ Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
 (define-public r-rcmdrplugin-bws2
   (package
     (name "r-rcmdrplugin-bws2")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS2" version))
        (sha256
-        (base32 "068ns6580wqjwj3g3hviri87wkslm4fsk4nqblz559s8g1ipikqz"))))
+        (base32 "1z9iigy9z65azv163rdps0sk20v964rlgxw294r85v3x0yhgqkjr"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws2 r-rcmdr
@@ -39597,7 +39597,7 @@ Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
     (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS2")
     (synopsis "R Commander Plug-in for Case 2 Best-Worst Scaling")
     (description
-     "Adds menu items for Case 2 (profile case) best-worst scaling (BWS2) to the R
+     "Adds menu items for case 2 (profile case) best-worst scaling (BWS2) to the R
 Commander.  BWS2 is a question-based survey method that constructs profiles
 (combinations of attribute levels) using an orthogonal array, asks respondents
 to select the best and worst levels in each profile, and measures preferences
@@ -39608,13 +39608,13 @@ Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-rcmdrplugin-bws1
   (package
     (name "r-rcmdrplugin-bws1")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS1" version))
        (sha256
-        (base32 "0x9myvv21lwrr301kz162l2ifc7s3azkkqznf4izdl9yganq8301"))))
+        (base32 "09g82sg4a6xq9bs486rp1krmdidfn7iq1zf0j5z4sy2zxbmncn6f"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS1")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws r-rcmdr

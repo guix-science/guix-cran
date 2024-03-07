@@ -7844,13 +7844,13 @@ Keith @code{McNulty} (2021).")
 (define-public r-omu
   (package
     (name "r-omu")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omu" version))
        (sha256
-        (base32 "0hkm6m6jbzbbh0ksnzkwjf6fvyzx64mixwq4rjbj0n2a1rl3mc4d"))))
+        (base32 "19kfk5pcwdkdb41irw9dz34gibhnc8r1amm0mnvk4kbk7y3c1809"))))
     (properties `((upstream-name . "omu")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

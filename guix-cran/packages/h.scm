@@ -1075,19 +1075,20 @@ and accompanying documentation by @code{McKay} and Fischenich (2011,
 (define-public r-hydraulics
   (package
     (name "r-hydraulics")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydraulics" version))
        (sha256
-        (base32 "1yk1s9fnphzmkpx9pfawm72i07kdj099q6i6cry9p08bzvac80xk"))))
+        (base32 "0aw84gr2fcqgf20bjf9658wqyhlp40v3pkvsj72l27s39wma94xf"))))
     (properties `((upstream-name . "hydraulics")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
                              r-tibble
                              r-reshape2
                              r-purrr
+                             r-pracma
                              r-gtools
                              r-ggplot2))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -1106,7 +1107,7 @@ diagram, the original citation being Colebrook (1939)
 <doi:10.1680/ijoti.1939.13150>.  For gravity flow, the Manning equation is used,
 again solving for missing parameters.  The derivation of and solutions using the
 Darcy-Weisbach equation and the Manning equation are outlined in many fluid
-mechanics texts such as Finnemore and Franzini (2002, ISBN:978-0072432022).
+mechanics texts such as Finnemore and Maurer (2024, ISBN:978-1-264-78729-6).
 Some gradually- and rapidly-varied flow functions are included.  For the Manning
 equation solutions, this package uses modifications of original code from the
 iemisc package by Irucka Embry.")
@@ -8241,13 +8242,13 @@ smoother of French and Kokoszka (2021) <doi:10.1016/j.spasta.2020.100413>.")
 (define-public r-hermiter
   (package
     (name "r-hermiter")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hermiter" version))
        (sha256
-        (base32 "190arngwpiankyxyd47i9kagq4gbzj023y8qybd81bm4r9jn3ax6"))))
+        (base32 "13vfzsns91g0vcbdzrzlgzcdh4sqfh4wzivyhgcn4v6rc10sj2dp"))))
     (properties `((upstream-name . "hermiter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpp r-bh))

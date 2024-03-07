@@ -18832,18 +18832,19 @@ to ensure command line output looks nice on dark as well as light consoles.")
 (define-public r-cols4all
   (package
     (name "r-cols4all")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols4all" version))
        (sha256
-        (base32 "1vgwb9rpnbwadpbjw9cyvf34w69wp8ml55skdnj59bqmn94a6fq4"))))
+        (base32 "1rfc0l710q3jalwxnq9hpmls46r0pc4x648fpb36i20sc3amdli1"))))
     (properties `((upstream-name . "cols4all")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringdist r-png r-colorspace r-abind))
+    (propagated-inputs (list r-stringdist r-spacesxyz r-png r-colorspace
+                             r-abind))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mtennekes/cols4all")
+    (home-page "https://mtennekes.github.io/cols4all/")
     (synopsis "Colors for all")
     (description
      "Color palettes for all people, including those with color vision deficiency.
@@ -31271,13 +31272,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0zbm0xj7l9pa6k253606hjs4cgh8f4mdcqx3pk3v30wgjwnampbv"))))
+        (base32 "1hbn5kznqsyfhy6ffg8rk9cddns8jnh6xj3f5yvgl5jdpcclabkf"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))

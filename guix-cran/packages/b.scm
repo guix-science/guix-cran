@@ -7737,7 +7737,6 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
         (base32 "027fyphnalbivyysqrkczspcmyi35vccb2qppi1ipys7r45g9qai"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
-    (inputs (list))
     (home-page "https://www.bnlearn.com/")
     (synopsis
      "Bayesian Network Structure Learning, Parameter Learning and Inference")
@@ -16584,13 +16583,13 @@ generate confidence intervals effect sizes in regression.")
 (define-public r-betafunctions
   (package
     (name "r-betafunctions")
-    (version "1.8.1")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betafunctions" version))
        (sha256
-        (base32 "0xvg5d04icsb0v9f7gnvpw345sik8xla5p55cdpbm8c3wwfk1d1m"))))
+        (base32 "1sm33z8nzbh4savzw3zc81bg9g0n83xfibmd5kklq02h3105d4v4"))))
     (properties `((upstream-name . "betafunctions")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=betafunctions")
@@ -16601,7 +16600,9 @@ generate confidence intervals effect sizes in regression.")
 Beta and closely related distributions (i.e., the Gamma- Binomial-, and
 Beta-Binomial distributions).  Includes, among other things: - d/p/q/r functions
 for Four-Parameter Beta distributions and Generalized \"Binomial\" (continuous)
-distributions, and d/p/r- functions for Beta- Binomial distributions. - Moment
+distributions, and d/p/r- functions for Beta- Binomial distributions. - d/p/q/r
+functions for Two- and Four-Parameter Beta distributions parameterized in terms
+of their means and variances rather than their shape-parameters. - Moment
 generating functions for Binomial distributions, Beta-Binomial distributions,
 and observed value distributions. - Functions for estimating classification
 accuracy and consistency, making use of the Classical Test-Theory based
@@ -20652,13 +20653,13 @@ Bhattacharya.")
 (define-public r-bayess
   (package
     (name "r-bayess")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayess" version))
        (sha256
-        (base32 "1dhkyz3dz04rghl5fpjdz1n5d6v053km25hkq0ssdcvrbsms62c8"))))
+        (base32 "0kqk4mq7q4cp2pgxw6b261fj3kl47a0dx44b7b5siwqv45nzymiz"))))
     (properties `((upstream-name . "bayess")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-gplots r-combinat))

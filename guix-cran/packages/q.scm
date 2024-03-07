@@ -985,23 +985,23 @@ Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>."
 (define-public r-quarto
   (package
     (name "r-quarto")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quarto" version))
        (sha256
-        (base32 "1hbj762hgjk7047nycj7rrngsf8f6g2s06r7jjg78ilrjb429c1w"))))
+        (base32 "092v5vbrqb1qbmzf0wv29lrkhcbk4nz8kz8cb27dmhx08ns7zk5c"))))
     (properties `((upstream-name . "quarto")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-rstudioapi
-                             r-rsconnect
                              r-rmarkdown
+                             r-rlang
                              r-processx
                              r-later
-                             r-jsonlite))
-    (native-inputs (list r-knitr))
+                             r-jsonlite
+                             r-cli))
     (home-page "https://github.com/quarto-dev/quarto-r")
     (synopsis "R Interface to 'Quarto' Markdown Publishing System")
     (description

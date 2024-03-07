@@ -7751,34 +7751,6 @@ interpolation in order to finally simulate streamflow following de Lavenne et
 al. (2016) <doi:10.1002/2016WR018716>.")
     (license license:gpl2)))
 
-(define-public r-transformr
-  (package
-    (name "r-transformr")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "transformr" version))
-       (sha256
-        (base32 "125y99wpgvp92qsg7934nzjqy6irjzaj21c0dcq7apqd2hqamfxw"))))
-    (properties `((upstream-name . "transformr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tweenr
-                             r-sf
-                             r-rlang
-                             r-lpsolve
-                             r-cpp11))
-    (home-page "https://github.com/thomasp85/transformr")
-    (synopsis "Polygon and Path Transformations")
-    (description
-     "In order to smoothly animate the transformation of polygons and paths, many
-aspects needs to be taken into account, such as differing number of control
-points, changing center of rotation, etc.  The transformr package provides an
-extensive framework for manipulating the shapes of polygons and paths and can be
-seen as the spatial brother to the tweenr package.")
-    (license license:expat)))
-
 (define-public r-transformmos
   (package
     (name "r-transformmos")
@@ -11756,19 +11728,19 @@ handling distributed corpus objects based on distributed list objects.")
 (define-public r-tm-plugin-alceste
   (package
     (name "r-tm-plugin-alceste")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.alceste" version))
        (sha256
-        (base32 "0wid51bbbx01mjfhnaiv50vfyxxmjxw8alb73c1hq9wlsh3x3vjf"))))
+        (base32 "1l1vn7nn54s92l7ag6kk9vrxzchvp0mvmm62irigk9byqmvrnjcc"))))
     (properties `((upstream-name . "tm.plugin.alceste")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-nlp))
-    (home-page "https://r-forge.r-project.org/projects/r-temis/")
+    (home-page "https://github.com/nalimilan/R.TeMiS")
     (synopsis
-     "Import texts from files in the Alceste format using the tm text mining framework")
+     "Import Texts from Files in the 'Alceste' Format Using the 'tm' Text Mining Framework")
     (description
      "This package provides a tm Source to create corpora from a corpus prepared in
 the format used by the Alceste application (i.e.  a single text file with inline

@@ -2691,13 +2691,13 @@ than the number of individuals.  LPDA method is published in Nueda, et al.
 (define-public r-lpcm
   (package
     (name "r-lpcm")
-    (version "0.47-3")
+    (version "0.47-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPCM" version))
        (sha256
-        (base32 "19ak8n52drjip0p9343g0vqgg2cv3yz2lc82basr84r3p3v6r3x3"))))
+        (base32 "0vjdnrc4jcp8l12x57qdj21k325n98wrr1x7f76z3s5fwk2s1kwg"))))
     (properties `((upstream-name . "LPCM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LPCM")
@@ -2706,7 +2706,8 @@ than the number of individuals.  LPDA method is published in Nueda, et al.
      "Fitting multivariate data patterns with local principal curves, including tools
 for data compression (projection) and measuring goodness-of-fit; with some
 additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
-(2005) <doi:10.1007/s11222-005-4073-8> and Einbeck (2011) <doi:10.13176/11.288>.")
+(2005) <doi:10.1007/s11222-005-4073-8> and Ameijeiras-Alonso and Einbeck (2023)
+<doi:10.1007/s11634-023-00575-1>.")
     (license license:gpl2+)))
 
 (define-public r-lpcde

@@ -11460,13 +11460,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imf-data
   (package
     (name "r-imf-data")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imf.data" version))
        (sha256
-        (base32 "05xz44iml58gjrahcv4zzwapjw9d8s7y84bx84wq60xbd10zdshv"))))
+        (base32 "1p9jk3m4d87ly1h2g14mqfnkry0ydvvb44kicxnn4xy1pi1jqhxq"))))
     (properties `((upstream-name . "imf.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))

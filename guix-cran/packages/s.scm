@@ -7518,13 +7518,13 @@ staticimports package.")
 (define-public r-stringmagic
   (package
     (name "r-stringmagic")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stringmagic" version))
        (sha256
-        (base32 "06jm11n80r821h40x3qvnbkf53283mnrhsg5w7x7f1fp5qmcfll1"))))
+        (base32 "1iwsfzpmcsbhqdxidcypqk7098sld7k0di3h7mrwqjs4c465g8r7"))))
     (properties `((upstream-name . "stringmagic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18016,13 +18016,13 @@ Lachman, Droege, Royle, and Langtimm (2002)
 (define-public r-spocc
   (package
     (name "r-spocc")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spocc" version))
        (sha256
-        (base32 "1z44hxyd3iyinm6gka0r0hrm8xhbck7pqsgfkydn48i5q26kjjxg"))))
+        (base32 "0ldr7n889jch6q4b4y2ligd3z5g4z4jdf5rk1cig86x9m5wdw57f"))))
     (properties `((upstream-name . "spocc")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -39502,13 +39502,13 @@ through @code{WebDriver}'.")
 (define-public r-shinytempsignal
   (package
     (name "r-shinytempsignal")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyTempSignal" version))
        (sha256
-        (base32 "082vbcmwf67ixwsqsqap62ivr2ax18xq9jw6nwhqj426azkimwi0"))))
+        (base32 "1ww164zqqc9rh158wfi6c4jcp4pn61mz56zbhh2fkmyc2mcv6xbb"))))
     (properties `((upstream-name . "shinyTempSignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-yulab-utils
@@ -52557,13 +52557,13 @@ the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
 (define-public r-scoringtools
   (package
     (name "r-scoringtools")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringTools" version))
        (sha256
-        (base32 "11bxmpqiqqkjyvmyxlnzz7j64jmy1pjw06128vvydmqhjxxyawjh"))))
+        (base32 "00bai8pm1wmal2dsqsyq9nrpkmrxc8bwccqp3gvf18b5s4s46k2r"))))
     (properties `((upstream-name . "scoringTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf r-magrittr r-dplyr r-discretization))
@@ -56748,13 +56748,13 @@ times, units and other vectors.")
 (define-public r-santar
   (package
     (name "r-santar")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "santaR" version))
        (sha256
-        (base32 "0xyvfanqid5f114m7akhh0pi9mwy9bj8iqfzxpkkvj6ak1ib0i5y"))))
+        (base32 "048zbx7fr71ibxzgsayzifzv8gka7dmdfsdyvmzssxvzyjcm4qwc"))))
     (properties `((upstream-name . "santaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

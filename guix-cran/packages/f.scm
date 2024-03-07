@@ -18293,13 +18293,13 @@ tables and summaries of data.")
 (define-public r-fastrcs
   (package
     (name "r-fastrcs")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastRCS" version))
        (sha256
-        (base32 "11kqd8aii9sy65m5inxiqggyajb41iy6w92zp5wggx7pbg9m6lmy"))))
+        (base32 "12xavg273hd08cb2azd61birfdgsn3mls7m7jw6hjpvhb37ds69j"))))
     (properties `((upstream-name . "FastRCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrixstats))
@@ -18433,13 +18433,13 @@ to stabilize in Schoenbrodt and Perugini's definition of sequential stability
 (define-public r-fastpcs
   (package
     (name "r-fastpcs")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastPCS" version))
        (sha256
-        (base32 "152fy5hq675n1mjdsi31a77rmi3vylvvbfgywrh62chy5xa1bf34"))))
+        (base32 "0azd8j9b85qmvmy335anlgchsjz1qp0xhc18jq7hniz04f6gva7q"))))
     (properties `((upstream-name . "FastPCS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrixstats))
@@ -19426,13 +19426,13 @@ conditions for you.")
 (define-public r-fast-r
   (package
     (name "r-fast-r")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAST.R" version))
        (sha256
-        (base32 "0bvlzk0g57gbcrswm6ygma0ks67dzrghqrld7hjbbdq8vn21rf4h"))))
+        (base32 "0apdny2b263s4qzdb5iqlw8b14l9avb07aid4vkfghbm1qc8y9ng"))))
     (properties `((upstream-name . "FAST.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -19446,11 +19446,13 @@ conditions for you.")
                              r-scales
                              r-readxl
                              r-rcolorbrewer
+                             r-purrr
                              r-plater
                              r-magrittr
                              r-ggplot2
                              r-dt
-                             r-dplyr))
+                             r-dplyr
+                             r-caret))
     (home-page "https://f-neri.github.io/FAST.R/")
     (synopsis "Analyze and Visualize FAST-Generated Data")
     (description

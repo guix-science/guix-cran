@@ -582,16 +582,22 @@ your probability of winning a battle.  This speeds the game up significantly.")
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.wrfsmn" version))
        (sha256
-        (base32 "1zqxz0a0b2s15wgc3ndgh5vki6yghazmrwn7dsf2ihf90929qzw4"))))
+        (base32 "0gawlq1q1sc70plkbwz27ngw9w9l1iasvvg3hyplkgn0v520jzi7"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-qpdf r-aws-s3))
+    (propagated-inputs (list r-terra
+                             r-magrittr
+                             r-lubridate
+                             r-hydrogof
+                             r-ggplot2
+                             r-dplyr
+                             r-aws-s3))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=aws.wrfsmn")
     (synopsis "Data Processing of SMN Hi-Res Weather Forecast from 'AWS'")
@@ -599,9 +605,9 @@ your probability of winning a battle.  This speeds the game up significantly.")
      "Exploration of Weather Research & Forecasting ('WRF') Model data of Servicio
 Meteorologico Nacional (SMN) from Amazon Web Services
 (<https://registry.opendata.aws/smn-ar-wrf-dataset/>) cloud.  The package
-provides the possibility of data downloading and processing.  It also has map
-management and series exploration of available meteorological variables of WRF
-forecast.")
+provides the possibility of data downloading, processing and correction methods.
+ It also has map management and series exploration of available meteorological
+variables of WRF forecast.")
     (license license:gpl3+)))
 
 (define-public r-aws-translate
@@ -16603,13 +16609,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1li9vd1qq2pf1prxxlqb3a8ff2rjr7796j3bhqj3s2qp6g09395a"))))
+        (base32 "13hrcrhlbnd9828hls1dl8wczd5gd16jjqwbnsa1043wnm7sfg1z"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -16618,9 +16624,9 @@ bounded, multi-modal, or heavily skewed sampling errors.")
     (description
      "This package provides a collection of efficient functions for working with
 individual ages and corresponding intervals.  These include functions for
-efficient conversion from an age to an interval, aggregation of ages with
-associated counts in to intervals and the splitting of interval counts based on
-specified age distributions.")
+conversion from an age to an interval, aggregation of ages with associated
+counts in to intervals and the splitting of interval counts based on specified
+age distributions.")
     (license license:gpl2)))
 
 (define-public r-agena-ai
@@ -20921,13 +20927,13 @@ for screen reader users.")
 (define-public r-accessibility
   (package
     (name "r-accessibility")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "accessibility" version))
        (sha256
-        (base32 "1jbfzw2p6a9wqd4qs06nnnkfzpwlkhsaay3nyx8a0xqjrncwv12l"))))
+        (base32 "0c130kbh3h42pj0iw4zb9kv1i8zmy12znyhxbb5cvr8lwgkzdc4n"))))
     (properties `((upstream-name . "accessibility")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-hmisc r-data-table r-checkmate))
@@ -20935,14 +20941,15 @@ for screen reader users.")
     (home-page "https://github.com/ipeaGIT/accessibility")
     (synopsis "Transport Accessibility Measures")
     (description
-     "This package provides a set of fast and convenient functions to calculate
-multiple transport accessibility measures.  Given a pre-computed travel cost
-matrix and a land use dataset (containing the location of jobs, healthcare and
-population, for example), the package allows one to calculate active and passive
-accessibility levels using multiple accessibility measures, such as: cumulative
-opportunities (using either travel cost cutoffs or intervals), minimum travel
-cost to closest N number of activities, gravity-based (with different decay
-functions) and different floating catchment area methods.")
+     "This package provides a set of fast and convenient functions to help conducting
+accessibility analyses.  Given a pre-computed travel cost matrix and a land use
+dataset (containing the location of jobs, healthcare and population, for
+example), the package allows one to calculate accessibility levels and
+accessibility poverty and inequality.  The package covers the majority of the
+most commonly used accessibility measures (such as cumulative opportunities,
+gravity-based and floating catchment areas methods), as well as the most
+frequently used inequality and poverty metrics (such as the Palma ratio, the
+concentration and Theil indices and the FGT family of measures).")
     (license license:expat)))
 
 (define-public r-acca
