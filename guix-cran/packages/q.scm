@@ -5426,26 +5426,35 @@ follow tidyverse philosophy.")
 (define-public r-qbms
   (package
     (name "r-qbms")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QBMS" version))
        (sha256
-        (base32 "0b8q8z1jgzy2jd1rm7hfqf2j2rdq9las4sjqfy9cn8d5aahzvqm7"))))
+        (base32 "0kxhww5vvl4giap8fyymmk873j73waixa1dzg9cb6hqk3816vwqm"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rnetcdf r-jsonlite r-httr))
+    (propagated-inputs (list r-terra
+                             r-rsqlite
+                             r-rnetcdf
+                             r-jsonlite
+                             r-httr
+                             r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://icarda-git.github.io/QBMS/")
     (synopsis "Query the Breeding Management System(s)")
     (description
-     "Linking data management systems to analytics is an important step in breeding
-digitization.  Breeders can use this R package to Query the Breeding Management
-System(s) like BMS <https://bmspro.io>, @code{BreedBase}
-<https://breedbase.org>, and GIGWA <https://southgreen.fr/content/gigwa> (using
-@code{BrAPI} <https://brapi.org> calls) and help them to retrieve phenotypic and
-genotypic data directly into their analyzing pipelines.")
+     "This R package assists breeders in linking data systems with their analytic
+pipelines, a crucial step in digitizing breeding processes.  It supports
+querying and retrieving phenotypic and genotypic data from systems like EBS
+<https://ebs.excellenceinbreeding.org/>, BMS <https://bmspro.io>,
+@code{BreedBase} <https://breedbase.org>, and GIGWA
+<https://github.com/@code{SouthGreenPlatform/Gigwa2>} (using @code{BrAPI}
+<https://brapi.org> calls).  Extra helper functions support environmental data
+sources, including @code{TerraClimate}
+<https://www.climatologylab.org/terraclimate.html> and FAO HWSDv2
+<https://gaez.fao.org/pages/hwsd> soil database.")
     (license license:gpl3+)))
 
 (define-public r-qbld

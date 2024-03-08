@@ -3794,13 +3794,13 @@ this package to practice data wrangling, text analysis and network analysis.")
 (define-public r-frictionless
   (package
     (name "r-frictionless")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frictionless" version))
        (sha256
-        (base32 "0821j53jnkak4nfzqyqrm07qz79laxvwsx78bbn4y1765awyxvaw"))))
+        (base32 "1f0857jl1xq1v2pv6wv9nx7crm40r1p60gjbqlr9qi8nm3ikz8a8"))))
     (properties `((upstream-name . "frictionless")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -8678,13 +8678,13 @@ effects-model formulation proposed by Li et al. (2021)
 (define-public r-fmeffects
   (package
     (name "r-fmeffects")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmeffects" version))
        (sha256
-        (base32 "1jqjlrqc9an8f9ij51xmi7fb6mljwsgchihnb3d63bzwc9a0iphh"))))
+        (base32 "1rnv988hngvxcjnvfymnnpf3ilxhsgh56x18bjh9ca5s0f0nl9iv"))))
     (properties `((upstream-name . "fmeffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -8696,7 +8696,7 @@ effects-model formulation proposed by Li et al. (2021)
                              r-cowplot
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/holgstr/fmeffects")
+    (home-page "https://holgstr.github.io/fmeffects/")
     (synopsis "Model-Agnostic Interpretations with Forward Marginal Effects")
     (description
      "Create local, regional, and global explanations for any machine learning model
@@ -8736,6 +8736,27 @@ by an integration routine from package @code{deSolve}', or a steady-state solver
 from package @code{rootSolve}'.  However, the methods can also be used with
 other types of functions.")
     (license license:gpl2+)))
+
+(define-public r-fmdu
+  (package
+    (name "r-fmdu")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmdu" version))
+       (sha256
+        (base32 "0g27a19kw23niqbj3jx5y9p1a693zi69nnfraj85mmfkyhmqilpi"))))
+    (properties `((upstream-name . "fmdu")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-smacof))
+    (home-page "https://cran.r-project.org/package=fmdu")
+    (synopsis "(Restricted) [external] Multidimensional Unfolding")
+    (description
+     "This package provides functions for performing (external) multidimensional
+unfolding.  Restrictions (fixed coordinates or model restrictions) are available
+for both row and column coordinates in all combinations.")
+    (license license:bsd-2)))
 
 (define-public r-fmdates
   (package
@@ -13582,13 +13603,13 @@ complex, integer, logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "file2meco" version))
        (sha256
-        (base32 "1m1kp0hkhyql55ac84i7mcfihpc97ypvrhvnvy3yv86kyj8b4gzn"))))
+        (base32 "0ksk7clcya24l3ji4p5k4876d1pg8dwihs7vmlwf8hkp3vqg048b"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -17924,19 +17945,20 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
 (define-public r-fastts
   (package
     (name "r-fastts")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTS" version))
        (sha256
-        (base32 "13ra8v54ccznvj6jn5bmdmkb5g34flj7zcjci9qw4vb11l7qlnmw"))))
+        (base32 "09ns49dayxr4i78f6dffmwvm9y288x3bs0cfp0lr1qbzpy24vf4s"))))
     (properties `((upstream-name . "fastTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://petersonr.github.io/fastTS/")
-    (synopsis "Fast Time Series Modeling with the Sparsity Ranked Lasso")
+    (synopsis
+     "Fast Time Series Modeling for Seasonal Series with Exogenous Variables")
     (description
      "An implementation of sparsity-ranked lasso and related methods for time series
 data.  This methodology is especially useful for large time series with
@@ -17947,12 +17969,12 @@ with methods useful for variable selection in the presence of prior
 informational asymmetry.  This situation exists for time series data with
 complex seasonality, as shown in Peterson and Cavanaugh (2023+)
 <doi:10.48550/@code{arXiv.2211.01492>}, which also describes this package in
-greater detail.  The sparsity-ranked methods for Time Series implemented in
-@code{fastTS} can fit large/complex/high-frequency time series quickly, even
-with a high-dimensional exogenous feature set.  The method is considerably
-faster than its competitors, while often producing more accurate predictions.
-Also included is a long hourly series of arrivals into the University of Iowa
-Emergency Department with concurrent local temperature.")
+greater detail.  The sparsity-ranked penalization methods for Time Series
+implemented in @code{fastTS} can fit large/complex/high-frequency time series
+quickly, even with a high-dimensional exogenous feature set.  The method is
+considerably faster than its competitors, while often producing more accurate
+predictions.  Also included is a long hourly series of arrivals into the
+University of Iowa Emergency Department with concurrent local temperature.")
     (license license:gpl3+)))
 
 (define-public r-fasttopics
@@ -19426,13 +19448,13 @@ conditions for you.")
 (define-public r-fast-r
   (package
     (name "r-fast-r")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAST.R" version))
        (sha256
-        (base32 "0apdny2b263s4qzdb5iqlw8b14l9avb07aid4vkfghbm1qc8y9ng"))))
+        (base32 "178v16f6f5manifv15r44mkl1zqspc9p4vwah3yvnqgd0zwq92x7"))))
     (properties `((upstream-name . "FAST.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

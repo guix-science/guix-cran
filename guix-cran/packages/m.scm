@@ -5004,6 +5004,33 @@ will be available detection and treatment techniques traditionally used as the
 recently developed.")
     (license license:gpl2+)))
 
+(define-public r-multicoap
+  (package
+    (name "r-multicoap")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultiCOAP" version))
+       (sha256
+        (base32 "1209pv52lgshfk67nfkp4fq4fm7k9g5ly2yilrzwihywsym8yxmp"))))
+    (properties `((upstream-name . "MultiCOAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba))
+    (home-page "https://github.com/feiyoung/MultiCOAP")
+    (synopsis
+     "High-Dimensional Covariate-Augmented Overdispersed Multi-Study Poisson Factor Model")
+    (description
+     "We introduce factor models designed to jointly analyze high-dimensional count
+data from multiple studies by extracting study-shared and specified factors.
+Our factor models account for heterogeneous noises and overdispersion among
+counts with augmented covariates.  We propose an efficient and speedy
+variational estimation procedure for estimating model parameters, along with a
+novel criterion for selecting the optimal number of factors and the rank of
+regression coefficient matrix.  More details can be referred to Liu et al.
+(2024) <doi:10.48550/@code{arXiv.2402.15071>}.")
+    (license license:gpl3)))
+
 (define-public r-multicmp
   (package
     (name "r-multicmp")
@@ -10468,6 +10495,52 @@ models.  These include processing of tracking data, fitting hidden Markov models
 to movement data, visualization of data and fitted model, decoding of the state
 process, etc. <doi:10.1111/2041-210X.12578>.")
     (license license:gpl3)))
+
+(define-public r-movegroup
+  (package
+    (name "r-movegroup")
+    (version "2024.03.05")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "movegroup" version))
+       (sha256
+        (base32 "0f4488nrkd6zdd1sr8n2zs6mqpff2zrq8wzx0z9g8mbs5z3nw0jf"))))
+    (properties `((upstream-name . "movegroup")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-starsextra
+                             r-stars
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-raster
+                             r-purrr
+                             r-move
+                             r-magick
+                             r-lubridate
+                             r-knitr
+                             r-ggplot2
+                             r-ggmap
+                             r-dplyr
+                             r-beepr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=movegroup")
+    (synopsis
+     "Visualizing and Quantifying Space Use Data for Groups of Animals")
+    (description
+     "Offers an easy and automated way to scale up individual-level space use analysis
+to that of groups.  Contains a function from the move package to calculate a
+dynamic Brownian bridge movement model from movement data for individual
+animals, as well as functions to visualize and quantify space use for
+individuals aggregated in groups.  Originally written with passive acoustic
+telemetry in mind, this package also provides functionality to account for
+unbalanced acoustic receiver array designs, and satellite tag data.")
+    (license license:expat)))
 
 (define-public r-movecost
   (package
@@ -17994,13 +18067,13 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "14l3s3zzy152rqliqsxgk4qx0ldrp67phq9k1wkf9p1kdc6i3yfk"))))
+        (base32 "08xrinkbl4bws7hbid6907b618mqays4zimkwdni9s2amah3ja4b"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mlexperiments r-kdry r-data-table))
@@ -18269,13 +18342,13 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "0bf515jgwm248l0cryacsr3xlh18zy3wx91v0kwwqackg74xa12q"))))
+        (base32 "0xkrppicb8h9ccnk25bl957ip6di19vk6fnc25r8q4ckpsyw2kz1"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (propagated-inputs (list r-splittools r-r6 r-progress r-kdry r-data-table))
@@ -23397,13 +23470,13 @@ Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.3.2")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "1lgcavl5zq3hghvwscpsskfihbswkab53g8p7gdvwprd796khbka"))))
+        (base32 "1j43apygc7m5gff07zabv3plm3hhhnv091fdxkvzlms9w0f2j1zy"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

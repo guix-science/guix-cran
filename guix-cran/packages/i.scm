@@ -12440,6 +12440,44 @@ origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
 <doi:10.1177/0049124119875961>.")
     (license license:gpl2)))
 
+(define-public r-iimi
+  (package
+    (name "r-iimi")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iimi" version))
+       (sha256
+        (base32 "1bkxbqxa6i42mvz7j3191pzd2z35pqbzmn2b0kgbijlrfv8rg18z"))))
+    (properties `((upstream-name . "iimi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-stringr
+                             r-rsamtools
+                             r-randomforest
+                             r-r-utils
+                             r-mtps
+                             r-mltools
+                             r-iranges
+                             r-genomicalignments
+                             r-dplyr
+                             r-data-table
+                             r-caret
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iimi")
+    (synopsis "Identifying Infection with Machine Intelligence")
+    (description
+     "This package provides a novel machine learning method for plant viruses
+diagnostic using genome sequencing data.  This package includes three different
+machine learning models, random forest, XGBoost, and elastic net, to train and
+predict mapped genome samples.  Mappability profile and unreliable regions are
+introduced to the algorithm, and users can build a mappability profile from
+scratch with functions included in the package.  Plotting mapped sample coverage
+information is provided.")
+    (license license:expat)))
+
 (define-public r-ihsep
   (package
     (name "r-ihsep")

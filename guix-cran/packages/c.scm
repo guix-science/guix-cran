@@ -13164,13 +13164,13 @@ marginal likelihood, and distributional transform), for three types of outcomes
 (define-public r-copbasic
   (package
     (name "r-copbasic")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copBasic" version))
        (sha256
-        (base32 "0ga6hdy2nlacjr6l2v5xslznqkc51vyblyvnqslvi12q0znb4z9f"))))
+        (base32 "0wydq03c9pvbvmcrxqw2n86ny655lhkd40ag60k6d3hjvmmv5vn6"))))
     (properties `((upstream-name . "copBasic")))
     (build-system r-build-system)
     (propagated-inputs (list r-randtoolbox r-lmomco))
@@ -29431,18 +29431,18 @@ The collection started in 2009.")
 (define-public r-chouca
   (package
     (name "r-chouca")
-    (version "0.0.999")
+    (version "0.1.99")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chouca" version))
        (sha256
-        (base32 "0rzrip6wdhfg95nafrkq81hmldx4ky8rb227hc9nz2ixxy5p2srz"))))
+        (base32 "1gnilv8ww106mz5wnry826gysgsaq7mvd83ms0j5jhkkqmsqy2dd"))))
     (properties `((upstream-name . "chouca")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-plyr r-digest))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=chouca")
+    (home-page "https://github.com/alexgenin/chouca")
     (synopsis "Stochastic Cellular Automaton Engine")
     (description
      "An engine for stochastic cellular automata.  It provides a high-level interface
@@ -35747,6 +35747,31 @@ treatments administered simultaneously.  In the future it will be extended to
 other settings including the generalization of experimental and instrumental
 variable estimates.")
     (license license:gpl2+)))
+
+(define-public r-cbnetworkma
+  (package
+    (name "r-cbnetworkma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBnetworkMA" version))
+       (sha256
+        (base32 "12zg5pq029z8kw00jvb8al4igfkklacnhdchbaphhk39dg7qp4yr"))))
+    (properties `((upstream-name . "CBnetworkMA")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CBnetworkMA")
+    (synopsis "Contrast-Based Bayesian Network Meta Analysis")
+    (description
+     "This package provides a function that facilitates fitting three types of models
+for contrast-based Bayesian Network Meta Analysis.  The first model is that
+which is described in Lu and Ades (2006) <doi:10.1198/016214505000001302>.  The
+other two models are based on a Bayesian nonparametric methods that permit ties
+when comparing treatment or for a treatment effect to be exactly equal to zero.
+In addition to the model fits, the package provides a summary of the interplay
+between treatment effects based on the procedure described in Barrientos, Page,
+and Lin (2023) <doi:10.48550/@code{arXiv.2207.06561>}.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-cbl
   (package

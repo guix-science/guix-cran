@@ -22259,13 +22259,13 @@ reproducibility in teal applications.")
 (define-public r-teal
   (package
     (name "r-teal")
-    (version "0.15.1")
+    (version "0.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal" version))
        (sha256
-        (base32 "18mixn4gy8d5a0y5m9w0b77y30a1208wnzwijq14v0irkypii1h8"))))
+        (base32 "1kgdrkf6rx85ng3h51hgy9zzbmjrlbd68hr3vi2n7pq5fcxnx5qq"))))
     (properties `((upstream-name . "teal")))
     (build-system r-build-system)
     (propagated-inputs (list r-teal-widgets

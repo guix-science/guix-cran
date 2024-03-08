@@ -942,13 +942,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0v0vv8chk3sd976sd5zwy37n9dhm3ks6r6qy01kbhhaxjhgqgyxk"))))
+        (base32 "1n3fq2i53vsbh0z6p8142mi00cy9zxbsh34s048h97hg0ljzwkz6"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -3188,13 +3188,13 @@ enhanced procedures for computing the investment performance indices of Bacon
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "156pg721prpy8rvahpczrfwihx1wj1qihqzhgal8kj91259ccj57"))))
+        (base32 "167n554hpmz4iqszlsjzjiphsf857hysfjkd2gx9kwv6r1crmv3k"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist

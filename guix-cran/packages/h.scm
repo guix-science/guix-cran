@@ -4125,13 +4125,13 @@ regression analysis and canonical correlation analysis.")
 (define-public r-holomics
   (package
     (name "r-holomics")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Holomics" version))
        (sha256
-        (base32 "13b45kbp8s0zcqldn8bg964cqkc5b6jqh764szl8v27cxg0chvcf"))))
+        (base32 "1aammamx7x4dplh6mics5qp7my9204a7vrs645vvyj2l41sm9q1j"))))
     (properties `((upstream-name . "Holomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -4146,6 +4146,7 @@ regression analysis and canonical correlation analysis.")
                              r-readxl
                              r-openxlsx
                              r-mixomics
+                             r-markdown
                              r-igraph
                              r-golem
                              r-ggplot2

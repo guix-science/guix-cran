@@ -1766,13 +1766,13 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
 (define-public r-publicworksfinanceit
   (package
     (name "r-publicworksfinanceit")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PublicWorksFinanceIT" version))
        (sha256
-        (base32 "0bp4cg70m781kf7sgq1yqds0z5z3ykrpfkkbzjf2hlbxfx1ck8mn"))))
+        (base32 "15401mwmw87w7m2kdf6b0c0zbxfqxxb04z4a3nk0wycwxkk3jzfv"))))
     (properties `((upstream-name . "PublicWorksFinanceIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1782,6 +1782,7 @@ Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
                              r-rvest
                              r-rlang
                              r-magrittr
+                             r-lubridate
                              r-leaflet
                              r-httr
                              r-ggplot2
@@ -10906,6 +10907,40 @@ Dockerfiles with dependencies managed by renv'.  The pracpac functionality is
 described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
     (license license:expat)))
 
+(define-public r-praatpicture
+  (package
+    (name "r-praatpicture")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "praatpicture" version))
+       (sha256
+        (base32 "0k00dk5yj4q05smiy2cb0im0wymapmvmcmrgr3zxhfisbm1d80np"))))
+    (properties `((upstream-name . "praatpicture")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wrassp
+                             r-tuner
+                             r-soundgen
+                             r-rstudioapi
+                             r-rpraat
+                             r-phontools
+                             r-ipa
+                             r-gsignal
+                             r-gifski
+                             r-emur
+                             r-crayon
+                             r-av))
+    (home-page "https://github.com/rpuggaardrode/praatpicture")
+    (synopsis "'Praat Picture' Style Plots of Acoustic Data")
+    (description
+     "Quickly and easily generate plots of acoustic data aligned with transcriptions
+similar to those made in Praat using either derived signals generated directly
+in R with wrassp or imported derived signals from Praat'.  Provides easy and
+fast out-of-the-box solutions but also a high extent of flexibility.  Also
+provides options for embedding audio in figures and animating figures.")
+    (license license:expat)))
+
 (define-public r-pqrfe
   (package
     (name "r-pqrfe")
@@ -19859,13 +19894,13 @@ submitted for publication.  For additional references: Dunnett, C. W. (1955)
 (define-public r-platetools
   (package
     (name "r-platetools")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "platetools" version))
        (sha256
-        (base32 "0qzq7r8ff27cwmxw649jvk9irm6ny2mz4ylmrpzdkahkskfb5arj"))))
+        (base32 "1y4ih36y8z32pqd3cjz2qwysg4c8d6lqdgdb0pixi4i3nxsxq85b"))))
     (properties `((upstream-name . "platetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-ggplot2))
@@ -35312,6 +35347,30 @@ with or without scaling, and compute standard or vector correlation and
 covariance matrices (congruence coefficients) of 3D landmarks.  Tolerates
 missing data for all analyses.")
     (license license:expat)))
+
+(define-public r-paleodiv
+  (package
+    (name "r-paleodiv")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paleoDiv" version))
+       (sha256
+        (base32 "1ypl7qdfddijh13ydlk335d4q2i06ib5y4997gn0hhpq0n8f8akg"))))
+    (properties `((upstream-name . "paleoDiv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=paleoDiv")
+    (synopsis "Extracting and Visualizing Paleobiodiversity")
+    (description
+     "This package contains various tools for conveniently downloading and editing
+taxon-specific datasets from the Paleobiology Database <https://paleobiodb.org>,
+extracting information on abundance, temporal distribution of subtaxa and
+taxonomic diversity through deep time, and visualizing these data in relation to
+phylogeny and stratigraphy.")
+    (license license:gpl3+)))
 
 (define-public r-paleobuddy
   (package

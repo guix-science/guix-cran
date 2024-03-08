@@ -5995,13 +5995,13 @@ data.  For details on the VCCP methodology, please see Xiong & Cribben (2021).")
 (define-public r-vca
   (package
     (name "r-vca")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VCA" version))
        (sha256
-        (base32 "0p413smyd271zfysqy71m8b4pjxq2khnk9v64vkkzqzhylsrg5nk"))))
+        (base32 "0bw951rkbxg6ccy1iqmaamx5fwa41c3pp8zyzk2njkcgi4w5b90m"))))
     (properties `((upstream-name . "VCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-matrix r-lme4))

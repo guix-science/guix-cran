@@ -10015,13 +10015,13 @@ Li C, Bao Y (2018). <doi:10.1016/j.neucom.2017.11.053>.")
 (define-public r-stinepack
   (package
     (name "r-stinepack")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stinepack" version))
        (sha256
-        (base32 "0crl77gr4x2bz2zp0a0lqiw5iqlrcx7vj67igkbzg64d1fxai85d"))))
+        (base32 "11l68f01k2qqxkhsxysindpmcs93v5axsq8ilgm05zb46297lv2k"))))
     (properties `((upstream-name . "stinepack")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=stinepack")
@@ -10029,7 +10029,7 @@ Li C, Bao Y (2018). <doi:10.1016/j.neucom.2017.11.053>.")
     (description
      "This package provides a consistently well behaved method of interpolation based
 on piecewise rational functions using Stineman's algorithm.")
-    (license license:gpl2)))
+    (license license:gpl2+)))
 
 (define-public r-stima
   (package
@@ -36938,13 +36938,13 @@ simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018)
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "0byvh3kx7bbz9wmjfbzb9fpidi3qmnw1yvgpgpd1szxd072ldjj0"))))
+        (base32 "0lh2q4zb88rpvh9bzlrhgjdjsh5v1pdjw9clzli7nrb90d2317l3"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rfast r-dplyr r-data-table))

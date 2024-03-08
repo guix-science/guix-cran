@@ -4521,6 +4521,38 @@ reading from databases in scenarios where non-blocking reads are preferable,
 such as in high-transaction environments.")
     (license license:gpl3)))
 
+(define-public r-noisysbmggm
+  (package
+    (name "r-noisysbmggm")
+    (version "0.1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noisysbmGGM" version))
+       (sha256
+        (base32 "0mq0rczxkrmfax8i08f60ymia3i6f7q1y96bwk6igf3sismdnx3j"))))
+    (properties `((upstream-name . "noisysbmGGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-silggm
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-ppcor
+                             r-mass
+                             r-igraph
+                             r-huge))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=noisysbmGGM")
+    (synopsis "Noisy Stochastic Block Model for GGM Inference")
+    (description
+     "Greedy Bayesian algorithm to fit the noisy stochastic block model to an observed
+sparse graph.  Moreover, a graph inference procedure to recover Gaussian
+Graphical Model (GGM) from real data.  This procedure comes with a control of
+the false discovery rate.  The method is described in the article \"Enhancing the
+Power of Gaussian Graphical Model Inference by Modeling the Graph Structure\" by
+Kilian, Rebafka, and Villers (2024) <@code{arXiv:2402.19021>}.")
+    (license license:gpl2)))
+
 (define-public r-noisysbm
   (package
     (name "r-noisysbm")

@@ -24138,26 +24138,6 @@ fields, including microbiome analysis.  Methods based on Vinciotti, V., Wit, E.,
 Related Environments.\" <@code{arXiv:2304.01956>}.")
     (license license:expat)))
 
-(define-public r-rglwidget
-  (package
-    (name "r-rglwidget")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rglwidget" version))
-       (sha256
-        (base32 "0siqxn3gyl98i84p0yha821b4rdrp2i0942mkx819wnf7qwrpqcv"))))
-    (properties `((upstream-name . "rglwidget")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl))
-    (home-page "https://cran.r-project.org/package=rglwidget")
-    (synopsis "'rgl' in 'htmlwidgets' Framework")
-    (description
-     "The contents of this package have been merged into rgl, so it is no longer
-needed.")
-    (license license:gpl2)))
-
 (define-public r-rglplus
   (package
     (name "r-rglplus")
@@ -34349,27 +34329,23 @@ messages.")
 (define-public r-readtextgrid
   (package
     (name "r-readtextgrid")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readtextgrid" version))
        (sha256
-        (base32 "03qrbmlpbjwx4ia0ydv6m9lwzalsas9pdhds82mg5f8ir0cd0qi6"))))
+        (base32 "1nrdgzflhsnq3bm30dj5mq4mwlb4rpr8sl3xr9a8ncx3ga38ciqz"))))
     (properties `((upstream-name . "readtextgrid")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-readr
-                             r-purrr
-                             r-plyr
-                             r-magrittr))
+    (propagated-inputs (list r-tibble r-stringr r-readr r-purrr r-plyr))
     (home-page "https://github.com/tjmahr/readtextgrid")
     (synopsis "Read in a 'Praat' 'TextGrid' File")
     (description
-     "Praat is a widely used tool for manipulating, annotating and analyzing speech
-and acoustic data.  It stores annotation data in a format called a
-@code{TextGrid}'.  This package provides a way to read these files into R.")
+     "Praat <https://www.fon.hum.uva.nl/praat/> is a widely used tool for
+manipulating, annotating and analyzing speech and acoustic data.  It stores
+annotation data in a format called a @code{TextGrid}'.  This package provides a
+way to read these files into R.")
     (license license:gpl3)))
 
 (define-public r-readstata13
@@ -40289,6 +40265,28 @@ JSON. cereal was designed to be fast, light-weight, and easy to extend - it has
 no external dependencies and can be easily bundled with other code or used
 standalone.  Please see <http://uscilab.github.io/cereal> for more information.")
     (license license:bsd-2)))
+
+(define-public r-rcens
+  (package
+    (name "r-rcens")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcens" version))
+       (sha256
+        (base32 "1axd87i3s1dxr7jdbgpqsv3zdgi7yi30n1ddw4k4q3ay7n2fwr9m"))))
+    (properties `((upstream-name . "rcens")))
+    (build-system r-build-system)
+    (home-page "https://github.com/dlsaavedra/rcens")
+    (synopsis "Generate Sample Censoring")
+    (description
+     "This package provides functions to generate censored samples of type I, II and
+III, from any random sample generator.  It also supply the option to create left
+and right censorship.  Along with this, the generation of samples with interval
+censoring is in the testing phase, with two options of fixed length intervals
+and random lengths.")
+    (license license:expat)))
 
 (define-public r-rceim
   (package

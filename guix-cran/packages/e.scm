@@ -6487,13 +6487,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "1z59rqc9h1r1y8r2rvfzijmrg2a8xx403kkian8jvcv4aciz1mkp"))))
+        (base32 "18vmaml5hxq9xwh2n7fhlfak3wdzkhwig6k2jfwrixv3yfqcwlfb"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -6505,6 +6505,7 @@ formats, and retrieve the code to reproduce the plot.")
                              r-qs
                              r-progress
                              r-openxlsx
+                             r-morpho
                              r-misc3d
                              r-matrix
                              r-mathjaxr

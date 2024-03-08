@@ -6368,21 +6368,24 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 (define-public r-dotwhisker
   (package
     (name "r-dotwhisker")
-    (version "0.7.4")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dotwhisker" version))
        (sha256
-        (base32 "0awqdxb98vjafvjvx6fkmlyy6c2lp52la2b69964bawx5lgwj16b"))))
+        (base32 "0q9vdsmn9chwn4midc8apy2dx5sj89nwd8banly2ifyhpks0h8xy"))))
     (properties `((upstream-name . "dotwhisker")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-purrr
+                             r-performance
+                             r-patchwork
                              r-parameters
                              r-margins
                              r-gtable
+                             r-gridextra
                              r-ggstance
                              r-ggplot2
                              r-dplyr))
@@ -17417,13 +17420,13 @@ The package is based on Gerring, Jerzak, and Oncel (2023)
 (define-public r-descriptio
   (package
     (name "r-descriptio")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "descriptio" version))
        (sha256
-        (base32 "140zaj10q1cbwjc4d0vmh0vbqh8617b61ys9hdsndhafkc0d02ia"))))
+        (base32 "0ic44blsi7ys6075zsawf4rxqgjsv1d7hr8y2j3psk6pjchlgx18"))))
     (properties `((upstream-name . "descriptio")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mass r-ggplot2))
@@ -20231,13 +20234,13 @@ CO-expression and Differential Expression) algorithm.")
 (define-public r-declaredesign
   (package
     (name "r-declaredesign")
-    (version "1.0.6")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeclareDesign" version))
        (sha256
-        (base32 "02z9b8f4h56bmb6sad1ibqiyddifpgxg1x83gdxsdhs31p1r4sbf"))))
+        (base32 "1d6wm21y2h2zx9wnb8f6xi1zg9075y057kl7xln507295c0k5bha"))))
     (properties `((upstream-name . "DeclareDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-randomizr r-generics r-fabricatr

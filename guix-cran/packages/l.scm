@@ -9907,13 +9907,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "1k9yw5sgfg3pmhagpspmwq7g2frgcmkdf07i5msg9vgc54vwgxh6"))))
+        (base32 "16cs8kpn6l8h1333cglsh50qydjk821bqyyyipn39s8v45yxzigf"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

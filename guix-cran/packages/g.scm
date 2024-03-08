@@ -25930,13 +25930,13 @@ Information Facility (GBIF - <https://www.gbif.org/>) using a Shiny interface.")
 (define-public r-gdatools
   (package
     (name "r-gdatools")
-    (version "2.0.1")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDAtools" version))
        (sha256
-        (base32 "0xl7i9ajl77kg0v427h1bba0h4vmincvkg4g05jlv9s18zr1ksni"))))
+        (base32 "1561zzw177kc7x3hiqzi7qm1yvczx8lzjb2j7d45zgwgz96v9vf8"))))
     (properties `((upstream-name . "GDAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-ggrepel r-ggplot2 r-factominer
