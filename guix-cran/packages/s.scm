@@ -27715,13 +27715,13 @@ equating.")
 (define-public r-snseg
   (package
     (name "r-snseg")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNSeg" version))
        (sha256
-        (base32 "1l6vi8ipl4jf1dmkv8mzqs79rn2qip6xf7g9sny7rnkk1i25axcy"))))
+        (base32 "17fr4jl0cwbiyb1f4695c4vs0vfaslaxfpsksa24hfb5x5z0mcap"))))
     (properties `((upstream-name . "SNSeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-rcpp r-mvtnorm r-evd))
@@ -37193,6 +37193,30 @@ reproducible simulation studies, and allows concise expression of complex
 functional dependencies for a large number of time-varying nodes.  See the
 package vignette for more information, documentation and examples.")
     (license license:gpl2)))
+
+(define-public r-simcat
+  (package
+    (name "r-simcat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simCAT" version))
+       (sha256
+        (base32 "1ngdfzackzm82v7qs8809w3k70hayzan4zsvf061w04wvlhgzllp"))))
+    (properties `((upstream-name . "simCAT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinycssloaders r-shiny r-mirtcat r-mirt
+                             r-dplyr))
+    (home-page "https://github.com/alexandrejaloto/simCAT")
+    (synopsis "Implements Computerized Adaptive Testing Simulations")
+    (description
+     "Computerized Adaptive Testing simulations with dichotomous and polytomous items.
+ Selects items with Maximum Fisher Information method or randomly, with or
+without constraints (content balancing and item exposure control).  Evaluates
+the simulation results in terms of precision, item exposure, and test length.
+Inspired on Magis & Barrada (2017) <doi:10.18637/jss.v076.c01>.")
+    (license license:expat)))
 
 (define-public r-simboot
   (package
@@ -53254,13 +53278,13 @@ across the page and sub-pages.")
 (define-public r-scipub
   (package
     (name "r-scipub")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scipub" version))
        (sha256
-        (base32 "1k06pmpwpmgiglqhh9ca67m74vb961dczc9394xnwfszq9g3gz1n"))))
+        (base32 "1491xdlxfqh1h178lrl01b9f4wwdgxaid3dxippyf3b1wxb1gqcf"))))
     (properties `((upstream-name . "scipub")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -57400,13 +57424,13 @@ population using simple random, stratified, systematic and cluster sampling.")
 (define-public r-samplingin
   (package
     (name "r-samplingin")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplingin" version))
        (sha256
-        (base32 "06m0m4nx78zczv6ai7d1yz6v8wg3w65l8n5n6x8jvg393jn9qnx1"))))
+        (base32 "16yrd35q4f7bbjcipf13nrya6mcl6z1fhzi4z2rblaks4vxaqac2"))))
     (properties `((upstream-name . "samplingin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr r-data-table))

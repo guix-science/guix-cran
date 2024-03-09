@@ -4633,26 +4633,22 @@ with some modifications.")
 (define-public r-ipdfilecheck
   (package
     (name "r-ipdfilecheck")
-    (version "0.7.5")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPDFileCheck" version))
        (sha256
-        (base32 "1y0qq6q98lq1srsp1mlb7mr9zn2v4j7gpzim9fgh3xarw6a89i0h"))))
+        (base32 "0xab1z8fj7clz00bk230krlmfmywwv4bwdvn2w8b4l0hgh9b9a8z"))))
     (properties `((upstream-name . "IPDFileCheck")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyverse
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-testthat
                              r-stringr
                              r-lubridate
-                             r-lmtest
                              r-kableextra
                              r-hash
                              r-gtsummary
-                             r-gmodels
                              r-effsize
                              r-eeptools
                              r-dplyr))
@@ -16930,13 +16926,13 @@ at <https://data.ibb.gov.tr/en/>.")
 (define-public r-ibawds
   (package
     (name "r-ibawds")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibawds" version))
        (sha256
-        (base32 "1w4hm4gn5v7xj3gn54c3r0276c7ic441hn34q3j5qxwmh16af6qy"))))
+        (base32 "1x1l3a94sjxzadaxfchc0zkaq9hjpj0y2b8crg3253v708m0h7r5"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

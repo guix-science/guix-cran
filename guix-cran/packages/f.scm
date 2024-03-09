@@ -11593,13 +11593,13 @@ turn allows for more stable fitting.  Other fitting methods, such as MCMC
 (define-public r-fitodbodrshiny
   (package
     (name "r-fitodbodrshiny")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBODRshiny" version))
        (sha256
-        (base32 "1598zri7fw133l7z1bzkgy9x9phy33ar6ib1a97v49vn8b5g14sj"))))
+        (base32 "146mn5357aw43vwdkgrd8185xkaq2ndhf903nv1ayhz81g1xsv3c"))))
     (properties `((upstream-name . "fitODBODRshiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyscreenshot
@@ -13370,6 +13370,29 @@ Database: <https://oceanview.pfeg.noaa.gov/@code{CalFishTrack/>}.")
     (synopsis "Fill Missing Values in Vectors")
     (description
      "Edit vectors to fill missing values, based on the vector itself.")
+    (license license:expat)))
+
+(define-public r-fillpattern
+  (package
+    (name "r-fillpattern")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fillpattern" version))
+       (sha256
+        (base32 "0lm6b31pg8k6g6mf94ljlm1ilbgsc3j4isg8pfjp6ihpd0jj974n"))))
+    (properties `((upstream-name . "fillpattern")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cmmr.github.io/fillpattern/")
+    (synopsis "Patterned Fills for 'ggplot2' and 'grid' Graphics")
+    (description
+     "Adds distinctive yet unobtrusive geometric patterns where solid color fills are
+normally used.  Patterned figures look just as professional when viewed by
+colorblind readers or when printed in black and white.  The dozen included
+patterns can be customized in terms of scale, rotation, color, fill, line type,
+and line width.  Compatible with the ggplot2 package as well as grid graphics.")
     (license license:expat)))
 
 (define-public r-filling
@@ -19184,28 +19207,25 @@ negligible.")
 (define-public r-fastcub
   (package
     (name "r-fastcub")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastCUB" version))
        (sha256
-        (base32 "04bphkfkkjp7gfnsgar5gcxzmkr437mz6y8mbf015m7f4cvdhzjz"))))
+        (base32 "11mn7nd629pkxbb5cxw0ahqchl7vjn885f0z6lzs515n54fclkk7"))))
     (properties `((upstream-name . "FastCUB")))
     (build-system r-build-system)
     (propagated-inputs (list r-formula r-cub))
     (home-page "https://cran.r-project.org/package=FastCUB")
-    (synopsis
-     "Fast EM and Best-Subset Selection for CUB Models for Rating Data")
+    (synopsis "Fast Estimation of CUB Models via Louis' Identity")
     (description
-     "For ordinal rating data, consider the accelerated Expectation-Maximization
-algorithm to estimate and test models within the family of CUB models (where CUB
-stands for Combination of a discrete Uniform and a shifted Binomial
-distributions).  The procedure is built upon Louis identity for the observed
-information matrix.  Best-subset variable selection for CUB regression models is
-then implemented on such basis.  The methods here implemented are illustrated
-and discussed in the preprint available from Researchgate by Simone R. (2020)
-<https://tinyurl.com/vvk563e>.")
+     "For ordinal rating data, consider the accelerated EM algorithm to estimate and
+test models within the family of CUB models (where CUB stands for Combination of
+a discrete Uniform and a shifted Binomial distributions).  The procedure is
+built upon Louis identity for the observed information matrix.  Best-subset
+variable selection is then implemented since it becomes more feasible from the
+computational point of view.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-fastcpd

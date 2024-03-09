@@ -8124,13 +8124,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wallace" version))
        (sha256
-        (base32 "03yqm4zxc2hglw8n8ababv5y8nlf9ynj3c9j557s571mf73r00jk"))))
+        (base32 "1clg0h25cxjfcp6d3pscsakcbrcgcsbfazdsim08jw88hz5nxziq"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8145,6 +8145,7 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
                              r-rlang
                              r-rjava
                              r-rcolorbrewer
+                             r-markdown
                              r-magrittr
                              r-leaflet-extras
                              r-leaflet

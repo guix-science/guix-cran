@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -11064,6 +11064,30 @@ provided from the European Union's 7th Framework Programme for research,
 technological development and demonstration under Grant Agreement no 602552.")
     (license license:gpl2+)))
 
+(define-public r-corrmeta
+  (package
+    (name "r-corrmeta")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corrmeta" version))
+       (sha256
+        (base32 "1l6gidn63yykgwr4ghw3hd5fb18pqnn8s657hlii8w6v7fzylg66"))))
+    (properties `((upstream-name . "corrmeta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-polycor r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=corrmeta")
+    (synopsis "Correlated Meta-Analysis")
+    (description
+     "This package performs Correlated Meta-Analysis ('corrmeta') across multiple OMIC
+scans, accounting for hidden non-independencies between elements of the scans
+due to overlapping samples, related samples, or other information.  For more
+information about the method, refer to the paper Province MA. (2013)
+<doi:10.1142/9789814447973_0023>.")
+    (license license:expat)))
+
 (define-public r-corrgrapher
   (package
     (name "r-corrgrapher")
@@ -20998,13 +21022,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1smfcgp1ndpkhxxyg4ah8lzww72ddkmxdfw14h3xwl2db39j4q6s"))))
+        (base32 "0jx4xjihlgssr0ajdv9zcinj58c8fxqcvpr0y6cbmqymczgs1win"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -38950,13 +38974,13 @@ that make up the 2001 definition of the Greater Glasgow and Clyde health board."
 (define-public r-carbayes
   (package
     (name "r-carbayes")
-    (version "6.1")
+    (version "6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CARBayes" version))
        (sha256
-        (base32 "1c12alvizps18jpwn57h5afny13c0aspawlmc7af4lm58m0i2ya1"))))
+        (base32 "10dqplygp74mphf0mwv4c6d6c1lbi3k41djqrv2yglq799lkm7mi"))))
     (properties `((upstream-name . "CARBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -40269,13 +40293,13 @@ preprocessing method and microarray technology, e.g. Affymetrix and Illumina.")
 (define-public r-callsync
   (package
     (name "r-callsync")
-    (version "0.0.6")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "callsync" version))
        (sha256
-        (base32 "1igmmjhgg59lyvb19w3lmdj7l1ji215bi1bn1w4m8rhyb6dw4h1z"))))
+        (base32 "1p8r2r4w3bwpr03f990m2k19dv4lgsgp6l9rhxzrayknc3zndqx9"))))
     (properties `((upstream-name . "callsync")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
@@ -40285,6 +40309,7 @@ preprocessing method and microarray technology, e.g. Affymetrix and Illumina.")
                              r-scales
                              r-oce
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/simeonqs/callsync")
     (synopsis
      "Recording Synchronisation, Call Detection and Assignment, Audio Analysis")

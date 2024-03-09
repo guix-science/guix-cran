@@ -470,13 +470,13 @@ non-asymptotic Type I error control at the nominal level.")
 (define-public r-usmapdata
   (package
     (name "r-usmapdata")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmapdata" version))
        (sha256
-        (base32 "0svdp2v4v988jkymmmnhi81ann84rwrcmrrf35xii6x9nl7plvwl"))))
+        (base32 "05v4332q4fjw145m4gbp79pzn4y0m1xskk1qfdgqmrfk5zxysw5w"))))
     (properties `((upstream-name . "usmapdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang))
@@ -486,8 +486,8 @@ non-asymptotic Type I error control at the nominal level.")
      "This package provides a container for data used by the usmap package.  The data
 used by usmap has been extracted into this package so that the file size of the
 usmap package can be reduced greatly.  The data in this package will be updated
-roughly once per year (plus bug fixes) as new shapefiles are provided by the US
-Census bureau.")
+roughly once per year as new map data files are provided by the US Census
+Bureau.")
     (license license:gpl3+)))
 
 (define-public r-usmap
@@ -3631,6 +3631,30 @@ Luna, X. (2018) <doi:10.1111/biom.13001>.")
 classification.")
     (license license:gpl2+)))
 
+(define-public r-uhm
+  (package
+    (name "r-uhm")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UHM" version))
+       (sha256
+        (base32 "0gl98v7cya740vldimx3ygjqqi3ld1wlpm48hcbylgmvb97745k1"))))
+    (properties `((upstream-name . "UHM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numbers r-jagsui))
+    (home-page "https://github.com/tbaghfalaki/UHM")
+    (synopsis "Unified Zero-Inflated Hurdle Regression Models")
+    (description
+     "Run a Gibbs sampler for hurdle models to analyze data showing an excess of
+zeros, which is common in zero-inflated count and semi-continuous models.  The
+package includes the hurdle model under Gaussian, Gamma, inverse Gaussian,
+Weibull, Exponential, Beta, Poisson, negative binomial, logarithmic, Bell,
+generalized Poisson, and binomial distributional assumptions.  The models
+described in Ganjali et al. (2024).")
+    (license license:gpl2+)))
+
 (define-public r-ugomquantreg
   (package
     (name "r-ugomquantreg")
@@ -4135,13 +4159,13 @@ modify the original data set biasing it towards the user preferences.")
 (define-public r-ubiquity
   (package
     (name "r-ubiquity")
-    (version "2.0.1")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubiquity" version))
        (sha256
-        (base32 "1jy1jgzwnzynakzhb50gm6q1f97h0fhzg7qxvar7hl7068cbrc40"))))
+        (base32 "1w1agdarsh45zf66cbczvippzk3f0ns5dajfbr1181j274f39rnh"))))
     (properties `((upstream-name . "ubiquity")))
     (build-system r-build-system)
     (inputs (list perl))

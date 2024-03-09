@@ -12011,13 +12011,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "2.0.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "04n773va7drfdj2wi0v95jivzhzz9cy3n8dii069wjsbx24xmsff"))))
+        (base32 "0kb09bl8x3jqhr99j454q00d4cwnih49gpqbjydb2wk2vxzvq4gj"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12034,7 +12034,6 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
                              r-lpsolve
                              r-igraph
                              r-ggplot2
-                             r-futile-logger
                              r-foreach
                              r-dplyr
                              r-doparallel))
@@ -12043,7 +12042,7 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
     (synopsis "Handwriting Analysis in R")
     (description
      "Perform statistical writership analysis of scanned handwritten documents.
-Webpage provided at: <https://csafe-isu.github.io/handwriter/index.html>.")
+Webpage provided at: <https://github.com/CSAFE-ISU/handwriter>.")
     (license license:gpl3)))
 
 (define-public r-handtill2001

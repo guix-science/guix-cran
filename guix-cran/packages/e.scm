@@ -9459,13 +9459,13 @@ the coursera Epidemics Massive Online Open Course
 (define-public r-epilps
   (package
     (name "r-epilps")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiLPS" version))
        (sha256
-        (base32 "098kmc88x1dhxgbg24vhcqg5302gbbsv8y2g3vcz2yxa9qgl5yl6"))))
+        (base32 "0wdmkwcyqhjyyxrg7669sfrfqarvg5qrdm5zrchv9hnzjfxm4k9p"))))
     (properties `((upstream-name . "EpiLPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -15340,13 +15340,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.11.2")
+    (version "2.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eha" version))
        (sha256
-        (base32 "14gsv1ryc2vfn8yjx33dfmpxd2zp0m092n0hvsmid6ph4f7qnnd5"))))
+        (base32 "147i34fipb0qbamvs45918ci2nihvbsxvbqd8k7wv73rmgb1nw5v"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -20394,6 +20394,40 @@ the original data.  Extensions of the basic method, in particular to wavelet
 thresholding, are also implemented within the package.")
     (license license:gpl2+)))
 
+(define-public r-ebase
+  (package
+    (name "r-ebase")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EBASE" version))
+       (sha256
+        (base32 "09kc4rzd9h9gmh01cad8hc7zs1sja1mjnglvzwg130r605wwxrqr"))))
+    (properties `((upstream-name . "EBASE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-truncnorm
+                             r-tidyr
+                             r-rjags
+                             r-r2jags
+                             r-lubridate
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://fawda123.github.io/EBASE/")
+    (synopsis
+     "Estuarine Bayesian Single-Station Estimation Method for Ecosystem Metabolism")
+    (description
+     "Estimate ecosystem metabolism in a Bayesian framework for individual water
+quality monitoring stations with continuous dissolved oxygen time series.  A
+mass balance equation is used that provides estimates of parameters for gross
+primary production, respiration, and gas exchange.  Methods adapted from Grace
+et al. (2015) <doi:10.1002/lom3.10011> and Wanninkhof (2014)
+<doi:10.4319/lom.2014.12.351>.")
+    (license license:cc0)))
+
 (define-public r-ebal
   (package
     (name "r-ebal")
@@ -20979,17 +21013,16 @@ extended structural equation modeling package, @code{OpenMx}'.")
 (define-public r-easylabel
   (package
     (name "r-easylabel")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easylabel" version))
        (sha256
-        (base32 "1r5s1nrydz2r07d4my6j00g01yy8cfvhzpxniscjy9kw1qs85yfw"))))
+        (base32 "0rl17iccmczd380yzcdkw6943x8pxyb4sqg6q6jj5jqqzalvqshb"))))
     (properties `((upstream-name . "easylabel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-splus2r
-                             r-shinycssloaders
+    (propagated-inputs (list r-shinycssloaders
                              r-shinybusy
                              r-shiny
                              r-rlang

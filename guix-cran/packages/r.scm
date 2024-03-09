@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -2954,13 +2953,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "19m46iz2i0f12fjbyvfw4z0givhc3kpwlxbnajcdxss6bqb75id3"))))
+        (base32 "1fqklpffxdwz58512fpja6hpc5x63fk5cxj44r3nlrwnb442g9p3"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -22612,6 +22611,29 @@ developed to visualize and map whole-genome data on idiograms with no
 restriction of species.")
     (license license:artistic2.0)))
 
+(define-public r-rid
+  (package
+    (name "r-rid")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rid" version))
+       (sha256
+        (base32 "1m213jxqhb95q7cj9nl1wj8ikzmpx3sn9xn9q1p7vhczp58yb578"))))
+    (properties `((upstream-name . "rid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-purrr r-pracma
+                             r-circularsilhouette))
+    (home-page "https://cran.r-project.org/package=rid")
+    (synopsis "Multiple Change-Point Detection in Multivariate Time Series")
+    (description
+     "This package provides efficient functions for detecting multiple change points
+in multidimensional time series.  The models can be piecewise constant or
+polynomial.  Adaptive threshold selection methods are available, see Fan and Wu
+(2024)	<@code{arXiv:2403.00600>}.")
+    (license license:gpl3)))
+
 (define-public r-ricu
   (package
     (name "r-ricu")
@@ -31402,46 +31424,6 @@ spatial vector objects (regions) and spatial raster objects (cells with values).
 <doi:10.1016/j.cageo.2018.06.003>), and distinction (Nowosad (2021)
 <doi:10.1080/13658816.2021.1893324>).")
     (license license:expat)))
-
-(define-public r-regfilter
-  (package
-    (name "r-regfilter")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regfilter" version))
-       (sha256
-        (base32 "0s5gijp6pgqh9r57mz0kykkbrdvkc3wxbpz9wh15539rgkplynb6"))))
-    (properties `((upstream-name . "regfilter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ubl
-                             r-sf
-                             r-rpart
-                             r-randomforest
-                             r-nnet
-                             r-modelr
-                             r-infotheo
-                             r-ggplot2
-                             r-gbm
-                             r-fnn
-                             r-entropy
-                             r-e1071
-                             r-arules))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/juanmartinsantos/regfilter")
-    (synopsis
-     "Elimination of Noisy Samples in Regression Datasets using Noise Filters")
-    (description
-     "Traditional noise filtering methods aim at removing noisy samples from a
-classification dataset.  This package adapts classic and recent filtering
-techniques for use in regression problems, and it also incorporates methods
-specifically designed for regression data.  In order to do this, it uses
-approaches proposed in the specialized literature, such as Martin et al. (2021)
-[<doi:10.1109/ACCESS.2021.3123151>] and Arnaiz-Gonzalez et al. (2016)
-[<doi:10.1016/j.eswa.2015.12.046>].  Thus, the goal of the implemented noise
-filters is to eliminate samples with noise in regression datasets.")
-    (license license:gpl3+)))
 
 (define-public r-regexselect
   (package
@@ -44293,13 +44275,13 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 (define-public r-rankinma
   (package
     (name "r-rankinma")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankinma" version))
        (sha256
-        (base32 "14iw0jl37p96zv3s5nc5ziiip9z05xhlrxhajsynf8vlckk0fl95"))))
+        (base32 "13zqi6lqgvfdr1p0p45n1icckwh4zcqrllh6k1dddfb8dy7hvpgd"))))
     (properties `((upstream-name . "rankinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-netmeta r-mvtnorm))

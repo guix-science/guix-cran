@@ -16647,6 +16647,36 @@ two methods: sliding windows (Purcell et al (2007) <doi:10.1086/519795>) and
 consecutive runs (Marras et al (2015) <doi:10.1111/age.12259>).")
     (license license:gpl3)))
 
+(define-public r-detectr
+  (package
+    (name "r-detectr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "detectR" version))
+       (sha256
+        (base32 "002wv6krzmpikfmcn5bw12y7acbwvbf057i31jhsqj081spdicb0"))))
+    (properties `((upstream-name . "detectR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-signal
+                             r-logconcdead
+                             r-lavaan
+                             r-glasso
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/crbaek/detectR")
+    (synopsis "Change Point Detection")
+    (description
+     "Time series analysis of network connectivity.  Detects and visualizes change
+points between networks.  Methods included in the package are discussed in depth
+in Baek, C., Gates, K. M., Leinwand, B., Pipiras, V. (2021) \"Two sample tests
+for high-dimensional auto-covariances\" <doi:10.1016/j.csda.2020.107067> and
+Baek, C., Gampe, M., Leinwand B., Lindquist K., Hopfinger J. and Gates K. (2023)
+âDetecting functional connectivity changes in @code{fMRI} dataâ
+<doi:10.1007/s11336-023-09908-7>.")
+    (license (license:fsdg-compatible "Unlimited"))))
+
 (define-public r-detectors
   (package
     (name "r-detectors")
@@ -19430,13 +19460,13 @@ transformation ensembles (Kook et al, 2022,
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "1jmfdjs9a8rfq0mqi0zhnzhicf1wddydlv1wy9h4qzsq56llkhls"))))
+        (base32 "1d586102ya3rplpb1za6irclpbmw4ax9rxs1547cd0g2igfwmx74"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

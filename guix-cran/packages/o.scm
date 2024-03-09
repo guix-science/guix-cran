@@ -7984,6 +7984,37 @@ pipelines that query the OMOP (Observational Medical Outcomes Partnership)
 common data model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-omock
+  (package
+    (name "r-omock")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "omock" version))
+       (sha256
+        (base32 "10fnmrsh1002sg8s7l7ksy5k4kyd4lkh1d3c6aijq6fw2523cqsk"))))
+    (properties `((upstream-name . "omock")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-purrr
+                             r-omopgenerics
+                             r-lubridate
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://oxford-pharmacoepi.github.io/omock/")
+    (synopsis
+     "Creation of Mock Observational Medical Outcomes Partnership Common Data Model")
+    (description
+     "This package creates mock data for testing and package development for the
+Observational Medical Outcomes Partnership common data model.  The package
+offers functions crafted with pipeline-friendly implementation, enabling users
+to effortlessly include only the necessary tables for their testing needs.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omnibusfisher
   (package
     (name "r-omnibusfisher")

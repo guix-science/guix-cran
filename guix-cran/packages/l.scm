@@ -6967,6 +6967,34 @@ ISBN:978-1-4612-4380-9), the delete-1 jackknife by Quenouille (1956)
 <doi:10.1214/aos/1176345338>.")
     (license license:gpl2)))
 
+(define-public r-lmap
+  (package
+    (name "r-lmap")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lmap" version))
+       (sha256
+        (base32 "08bdznssicrl493zv5qa1vyjh38zhb83rwnipq83zi4qfp2s8n5p"))))
+    (properties `((upstream-name . "lmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast
+                             r-nnet
+                             r-mass
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggforce
+                             r-fmdu
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=lmap")
+    (synopsis "Logistic Mapping")
+    (description
+     "Set of tools for mapping of categorical response variables based on principal
+component analysis (pca) and multidimensional unfolding (mdu).")
+    (license license:bsd-2)))
+
 (define-public r-lm-br
   (package
     (name "r-lm-br")
@@ -13130,13 +13158,13 @@ together.")
 (define-public r-lcra
   (package
     (name "r-lcra")
-    (version "1.1.2")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcra" version))
        (sha256
-        (base32 "1kyjzb5ss64pg1sdnc8h7npcf4hsfgf4hhqh2yxl50d2zf4a4iyl"))))
+        (base32 "0bzv6m2113hzxxlinicc2x296vi7q5z1d31gqzri70klwn9qqy1l"))))
     (properties `((upstream-name . "lcra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rjags r-coda))
@@ -13200,16 +13228,16 @@ Liouville copulas, as described in Belzile and Neslehova (2017)
 (define-public r-lconnect
   (package
     (name "r-lconnect")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lconnect" version))
        (sha256
-        (base32 "1lx0z72aiy2hbh0wxn3ni3dyr3s2v8xirkvszlxvgfzkfmjx05j5"))))
+        (base32 "097dsq8d5jpvygd1kpdkcdl0pa7clgdyjka03pw9glnamvqpg8a7"))))
     (properties `((upstream-name . "lconnect")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-igraph))
+    (propagated-inputs (list r-sf r-scales r-rcpp r-igraph))
     (home-page "https://cran.r-project.org/package=lconnect")
     (synopsis "Simple Tools to Compute Landscape Connectivity Metrics")
     (description

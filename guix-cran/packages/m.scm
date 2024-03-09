@@ -3594,6 +3594,31 @@ dependente quantitativa.  Os experimentos podem ser sem repeticoes ou com
 delineamento estatistico (Hair JF, 2016) <ISBN: 13: 978-0138132637>.")
     (license license:gpl3)))
 
+(define-public r-multipleoutcomes
+  (package
+    (name "r-multipleoutcomes")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multipleOutcomes" version))
+       (sha256
+        (base32 "0wkfrz8v7sfgwiqlvia2rmiryiwz53n0qzlg05p0sgh90p38w037"))))
+    (properties `((upstream-name . "multipleOutcomes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-mvtnorm r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=multipleOutcomes")
+    (synopsis
+     "Asymptotic Covariance Matrix of Regression Models for Multiple Outcomes")
+    (description
+     "Regression models can be fitted for multiple outcomes simultaneously.  This
+package computes estimates of parameters across fitted models and returns the
+matrix of asymptotic covariance.  Various applications of this package,
+including CUPED (Controlled Experiments Utilizing Pre-Experiment Data), multiple
+comparison adjustment, are illustrated.")
+    (license license:expat)))
+
 (define-public r-multiplencc
   (package
     (name "r-multiplencc")
@@ -16766,13 +16791,13 @@ likely transformation approach described in Hothorn et al. (2018)
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "0xhwcx7xzzdvm6g51pr0r4ggphxarvzjj6gvndhylbf89wc9vxwk"))))
+        (base32 "0x4spjcgbqz13fxnyabd1vypbdg6r94zmh7h5h65rhnb5j8fgsm3"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mllrnrs r-mlexperiments r-kdry
@@ -19142,13 +19167,13 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
 (define-public r-mizer
   (package
     (name "r-mizer")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mizer" version))
        (sha256
-        (base32 "0j2fyp74zkblf700zys5v4xsj4dyls2y23cbnjq97sgyfblfmbmx"))))
+        (base32 "0s6vjvik0qcnrsb7f976cx623xg9jspkiskpzly2w9wbs6bbmnbg"))))
     (properties `((upstream-name . "mizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -19164,6 +19189,7 @@ Volkmann, Umlauf, Greven (2023) <@code{arXiv:2311.06409>}.")
                              r-dplyr
                              r-desolve
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://sizespectrum.org/mizer/")
     (synopsis "Dynamic Multi-Species Size Spectrum Modelling")
     (description
@@ -21665,13 +21691,13 @@ default values for important parameters.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.7.9")
+    (version "0.7.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "1gk9qdg7hi5dp4429diaym5h2v505y3scw3cmdiyc0kbziwgznch"))))
+        (base32 "1n0hzjprrkj22kvz4vai3x07jzn22ajjf3ynbs1y15v29spra0f2"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27935,13 +27961,13 @@ for re-analysis (scrape_meta, parse_CI_string, ci_to_var).")
 (define-public r-metaumbrella
   (package
     (name "r-metaumbrella")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaumbrella" version))
        (sha256
-        (base32 "0laa4qvj5vgvfwv775fgcx9wv7rdlc0pvcdp0aqmhz9lv3smxjfb"))))
+        (base32 "02x7f26c4flcj07i5jj2xpnx2y8zlvna7zxyillkq33pvh0yw95v"))))
     (properties `((upstream-name . "metaumbrella")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -36088,13 +36114,13 @@ zero-inflated mediators containing true zeros and false zeros.  See Jiang et al
 (define-public r-mazamatimeseries
   (package
     (name "r-mazamatimeseries")
-    (version "0.2.16")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaTimeSeries" version))
        (sha256
-        (base32 "0rxrymlllv7prhmqn6y7jd3abclxkp886r0lzzdxvaffag90rc7y"))))
+        (base32 "10w8nffv9rls32bj3rfa48l6nyly0238ywqbqwfkvr16i7g63dsb"))))
     (properties `((upstream-name . "MazamaTimeSeries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

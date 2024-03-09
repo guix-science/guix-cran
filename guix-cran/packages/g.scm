@@ -5866,13 +5866,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "171mfnhn4sf1f7zs1i94kh5kfncd9kf5p9z11qn9b9lyriqzbprp"))))
+        (base32 "0b6bisszv3nw90vsj1fpc9hmw0dw86p2lwm9kbmranrcb8m3zz6l"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -18017,35 +18017,34 @@ and radii.")
 (define-public r-ggfacto
   (package
     (name "r-ggfacto")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfacto" version))
        (sha256
-        (base32 "000bznpjvr8g5zjfn6cilm8cvr30g9c1n24h4zr86056skg96qvp"))))
+        (base32 "069qzz2192vq6zsqpq2wqxhj6a26g4mpdbng7ing4ha9xfnp9h7g"))))
     (properties `((upstream-name . "ggfacto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-widgetframe
                              r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-tibble
                              r-tabxplor
                              r-stringr
-                             r-stringi
                              r-rlang
                              r-purrr
                              r-magrittr
-                             r-htmlwidgets
                              r-gridextra
                              r-ggrepel
                              r-ggplot2
                              r-ggiraph
+                             r-ggforce
                              r-forcats
                              r-factominer
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (home-page "https://github.com/BriceNocenti/ggfacto")
     (synopsis "Graphs for Correspondence Analysis")
     (description
@@ -18054,9 +18053,9 @@ and radii.")
 useful informations at mouse hover.  The interest is not mainly visual but
 statistical: it helps the reader to keep in mind the data contained in the
 cross-table or Burt table while reading the correspondence analysis, thus
-preventing over-interpretation.  Graphs are made with ggplot2', which means that
-you can use the + syntax to manually add as many graphical pieces you want, or
-change theme elements.")
+preventing over-interpretation.  Most graphs are made with ggplot2', which means
+that you can use the + syntax to manually add as many graphical pieces you want,
+or change theme elements.  3D graphs are made with plotly'.")
     (license license:gpl3+)))
 
 (define-public r-ggetho
@@ -18399,13 +18398,13 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdag" version))
        (sha256
-        (base32 "1ndvsy4axrizisqy04467zzsxrrf94sr66r7vkkjjpynvszmj7wc"))))
+        (base32 "0q5iwafrhq77wxdc9dj9jl5a0rsj3rz3bjz8qb2yjd5j1qlj2mlx"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -21309,13 +21308,13 @@ functions from this package.")
 (define-public r-geomtextpath
   (package
     (name "r-geomtextpath")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomtextpath" version))
        (sha256
-        (base32 "0i5m1v8mn23krp7ha502v3kv5wpwdy8na4x3nqlg3zld293dybz4"))))
+        (base32 "07wvmks7mhz15yhsfwz103ccgmlldlagc9ffcnlfj072zvkc8wk0"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-textshaping r-systemfonts r-scales r-rlang

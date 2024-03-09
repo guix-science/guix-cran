@@ -3008,13 +3008,13 @@ checking containment in an interval, and an alternative interface to assign().")
 (define-public r-kimfilter
   (package
     (name "r-kimfilter")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kimfilter" version))
        (sha256
-        (base32 "1c3m2qhld2mdlnzrvgdyfd126bzb25ya2z82y4w754qy3s5jkgdd"))))
+        (base32 "19p6wqnp6gs7siwmyngw48lrpyqabmqxs051lx2mmlj3q53risyw"))))
     (properties `((upstream-name . "kimfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -4530,13 +4530,13 @@ Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
 (define-public r-kdry
   (package
     (name "r-kdry")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdry" version))
        (sha256
-        (base32 "01xf4cd87yz2ah87jz40b5hnkww7fpryb5vcrp324n444cm7lsc1"))))
+        (base32 "0svmm8ycl3gk0z9w2rps4hdqyrc6k3nl024fbmq3dwa3vlv56rs0"))))
     (properties `((upstream-name . "kdry")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hmisc r-foreach r-doparallel
@@ -4544,10 +4544,9 @@ Guidoum (2020) <@code{arXiv:2012.06102>} [stat.CO]).")
     (home-page "https://github.com/kapsner/kdry")
     (synopsis "K's \"Don't Repeat Yourself\"-Collection")
     (description
-     "This package provides a personal collection of helper functions and code
-snippets to avoid redundancy in the spirit of the \"Don't repeat yourself\"
-principle of software development
-(<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
+     "This package provides a collection of personal helper functions to avoid
+redundancy in the spirit of the \"Don't repeat yourself\" principle of software
+development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
     (license license:gpl3+)))
 
 (define-public r-kdpee
@@ -5408,13 +5407,13 @@ For more information, see Foss, Markatou, Ray, & Heching (2016)
 (define-public r-kalmanfilter
   (package
     (name "r-kalmanfilter")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kalmanfilter" version))
        (sha256
-        (base32 "0q1zijmcfif0q1hjyg7v67y8570v7fqfs8s8dnh59fvyn8y4jh41"))))
+        (base32 "0d45gx7r7d80bvn57g5xy24pf193ds3nyi5b8alpn4f5y93iy86h"))))
     (properties `((upstream-name . "kalmanfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

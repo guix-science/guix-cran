@@ -14432,19 +14432,19 @@ as described by Pesaran, Shin and Smith (1999)
 (define-public r-pooledcohort
   (package
     (name "r-pooledcohort")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PooledCohort" version))
        (sha256
-        (base32 "1zf8waqiw4282iyr30byd7czrdnf9rvp3mra6b7slqqs1z53lhr2"))))
+        (base32 "16n65jm1w2hxd1lrn3mj1z31ydgjc5jjhc4ffjscajhc140vf7yb"))))
     (properties `((upstream-name . "PooledCohort")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue))
     (home-page "https://github.com/bcjaeger/PooledCohort")
     (synopsis
-     "Predict 10-Year Risk for Atherosclerotic Cardiovascular Disease")
+     "Predicted Risk for CVD using Pooled Cohort Equations, PREVENT Equations, and Other Contemporary CVD Risk Calculators")
     (description
      "The 2017 American College of Cardiology and American Heart Association blood
 pressure guideline recommends using 10-year predicted atherosclerotic
@@ -14453,11 +14453,7 @@ antihypertensive medication.  The guideline recommends using the Pooled Cohort
 risk prediction equations to predict 10-year atherosclerotic cardiovascular
 disease risk.  This package implements the original Pooled Cohort risk
 prediction equations and also incorporates updated versions based on more
-contemporary data and statistical methods.  References: Goff DC, Lloyd-Jones DM,
-Bennett G, Coady S, DâAgostino RB, Gibbons R, Greenland P, Lackland DT, Levy
-D, OâDonnell CJ, and Robinson JG (2014) <doi:10.1016/j.jacc.2014.03.006>
-Yadlowsky S, Hayward RA, Sussman JB, @code{McClelland} RL, Min YI, and Basu S
-(2018) <doi:10.7326/m17-3011>.")
+contemporary data and statistical methods.")
     (license license:expat)))
 
 (define-public r-pooldilutionr
@@ -22508,13 +22504,13 @@ memory-optimized using the sparse matrix output.")
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "1wlz3gk88jnllrai7yjq4kl062q80w835kcs6m824an6g0hjv2k4"))))
+        (base32 "04m2xcym1pm0v6riz18mdfjzhgw9hpi67djym2a15970av15ld9l"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-gpindex))
@@ -34372,6 +34368,31 @@ PVAR models such as orthogonal and generalized impulse response functions,
 bootstrapped confidence intervals for impulse response analysis and forecast
 error variance decompositions.")
     (license license:gpl2+)))
+
+(define-public r-panelsur
+  (package
+    (name "r-panelsur")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "panelSUR" version))
+       (sha256
+        (base32 "025p6dqd7fxa0nh07mwrkbvi5cb6jsfx28kskqvzf8zvar6rbr41"))))
+    (properties `((upstream-name . "panelSUR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plm r-matlib r-mass r-formula-tools
+                             r-fastmatrix))
+    (home-page "https://cran.r-project.org/package=panelSUR")
+    (synopsis
+     "Two-Way Error Component SUR Systems Estimation on Unbalanced Panel Data")
+    (description
+     "Generalized Least Squares (GLS) estimation of Seemingly Unrelated Regression
+(SUR) systems on unbalanced panel in the one/two-way cases also taking into
+account the possibility of cross equation restrictions.  Methodological details
+can be found in @code{BiÃ¸rn} (2004) <doi:10.1016/j.jeconom.2003.10.023> and
+Platoni, Sckokai, Moro (2012) <doi:10.1080/07474938.2011.607098>.")
+    (license license:gpl3+)))
 
 (define-public r-panelsummary
   (package

@@ -6152,13 +6152,13 @@ described in Huang QQ *et al.* 2018 <doi: 10.1093/nar/gky780>.")
 (define-public r-bootstrapfp
   (package
     (name "r-bootstrapfp")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootstrapFP" version))
        (sha256
-        (base32 "1pjrz125919bk4901byf2s3yfb62yg9qldf85aad6s3ws9wwidhr"))))
+        (base32 "104vl9a6qqk0xr0pqmnm9v0rdc0x1jizvshf494zqkg9l97nq3yb"))))
     (properties `((upstream-name . "bootstrapFP")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling))
@@ -14930,6 +14930,32 @@ Authors and Publication Year).  Additionally, it provides functions to visualize
 the results of the document matching through a Venn diagram and/or @code{UpSet}
 plot, as well as a summary of the matching procedure.")
     (license license:gpl3+)))
+
+(define-public r-bibliorefer
+  (package
+    (name "r-bibliorefer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bibliorefer" version))
+       (sha256
+        (base32 "0sqj4gpdlx3ahaxh07jvgaidxa5svi3r014v2mmpmi90qym35fkl"))))
+    (properties `((upstream-name . "bibliorefer")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=bibliorefer")
+    (synopsis "Generator of Main Scientific References")
+    (description
+     "Generates a list, with a size defined by the user, containing the main
+scientific references and the frequency distribution of authors and journals in
+the list obtained.  The database is a dataframe with academic production
+metadata made available by bibliographic collections such as Scopus, Web of
+Science, etc.  The temporal evolution of scientific production on a given topic
+is presented and ordered lists of articles are constructed by number of
+citations and of authors and journals by level of productivity.  Massimo Aria,
+Corrado Cuccurullo. (2017) <doi:10.1016/j.joi.2017.08.007>.  Caibo Zhou, Wenyan
+Song. (2021) <doi:10.1016/j.jclepro.2021.126943>.")
+    (license license:gpl3)))
 
 (define-public r-biblionetwork
   (package

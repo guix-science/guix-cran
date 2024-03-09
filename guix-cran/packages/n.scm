@@ -140,6 +140,27 @@ Unit, to facilitate matching with additional data.  Opinion polls since 2002 and
 some convenience analytical function are also supplied.")
     (license license:gpl3)))
 
+(define-public r-nycflights23
+  (package
+    (name "r-nycflights23")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nycflights23" version))
+       (sha256
+        (base32 "10jy4j2jlxcx32p3q0vir5h79qykyna31z8pjkk1yca9brdkdcp9"))))
+    (properties `((upstream-name . "nycflights23")))
+    (build-system r-build-system)
+    (home-page "https://moderndive.github.io/nycflights23/")
+    (synopsis
+     "Flights and Other Useful Metadata for NYC Outbound Flights in 2023")
+    (description
+     "Updating the now 10-year-old nycflights13 data package.  It contains information
+about all flights that departed from the three main New York City airports in
+2023 and metadata on airlines, airports, weather, and planes.")
+    (license license:cc0)))
+
 (define-public r-nycflights13
   (package
     (name "r-nycflights13")

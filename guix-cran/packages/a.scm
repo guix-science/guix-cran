@@ -582,13 +582,13 @@ your probability of winning a battle.  This speeds the game up significantly.")
 (define-public r-aws-wrfsmn
   (package
     (name "r-aws-wrfsmn")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aws.wrfsmn" version))
        (sha256
-        (base32 "0gawlq1q1sc70plkbwz27ngw9w9l1iasvvg3hyplkgn0v520jzi7"))))
+        (base32 "1ayyk0phq7afc9p0p8xjgdpzyylx91hc9j02rp2hcq1rf0fnkaw7"))))
     (properties `((upstream-name . "aws.wrfsmn")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -1359,13 +1359,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.1.3")
+    (version "3.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autostsm" version))
        (sha256
-        (base32 "1flrh6kyqm5slc36mb6bk7nm9dfr53lxvpnmc2qkii4r2rmgb1lk"))))
+        (base32 "1kmdhm4g981289w4kprxawlr8bx38dgfdc2lyl6ml7xvkbxwvkfd"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
@@ -3315,6 +3315,30 @@ package is designed to interface directly with an instance of ATLAS search
 engine and facilitates API queries and data dumps.  Prerequisite is a good
 knowledge of the temporal language to be able to efficiently construct a query.
 More information available at <https://shahlab.stanford.edu/start>.")
+    (license license:gpl3)))
+
+(define-public r-atime
+  (package
+    (name "r-atime")
+    (version "2024.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "atime" version))
+       (sha256
+        (base32 "1p4cp24lrmpjfmvcn8a4f5b8w4ci5ibcnhfgkxg9kp373dnxcl4n"))))
+    (properties `((upstream-name . "atime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdhock/atime")
+    (synopsis "Asymptotic Timing")
+    (description
+     "Computing and visualizing comparative asymptotic timings of different algorithms
+and code versions.  Also includes functionality for comparing empirical timings
+with expected references such as linear or quadratic,
+<https://en.wikipedia.org/wiki/Asymptotic_computational_complexity> Also
+includes functionality for measuring asymptotic memory and other quantities.")
     (license license:gpl3)))
 
 (define-public r-atemevs

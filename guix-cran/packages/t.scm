@@ -23067,13 +23067,13 @@ method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 (define-public r-tciu
   (package
     (name "r-tciu")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCIU" version))
        (sha256
-        (base32 "0is0y0123pvwvkwzghd58chbiy1862qy8q3377j1nj1k81whj0cn"))))
+        (base32 "19xsp3ii8abifg5cqr3jgsh2jw5mmgiqqh8g0pxk9zmjqwm0javp"))))
     (properties `((upstream-name . "TCIU")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -25084,13 +25084,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "0796ri98ybrh86n0ssinm2v2yg6nrvfzhqa9rqn57kz0kvr1fl6a"))))
+        (base32 "1fxcbw117sz564ylxch7jgs6zv5d3lniyam5vlxfbdgvszlw9vhh"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
