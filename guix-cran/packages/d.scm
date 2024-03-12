@@ -1752,21 +1752,21 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1wqw43qpgcq5zpjnwii5765jjqli89ynmj6spvrs2ra4kyhsgss2"))))
+        (base32 "1c5w6hir01b3m1nz2dcaxq2bndd5fgwqk2zjnq5s6znpid73qhaz"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tibble
                              r-rlang
-                             r-purrr
                              r-lifecycle
+                             r-jsonlite
                              r-glue
                              r-duckdb
                              r-dplyr
@@ -7361,34 +7361,6 @@ and also to extract/clean tables and comments from Microsoft Word docx
 documents.  There is also nascent support for .doc and .pptx files.")
     (license license:expat)))
 
-(define-public r-docxtools
-  (package
-    (name "r-docxtools")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "docxtools" version))
-       (sha256
-        (base32 "0zfmmwnjzja80krflg2cl9a1ldg6qj1m0gppralfs59ag1jr7kqh"))))
-    (properties `((upstream-name . "docxtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-lubridate
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/graphdr/docxtools")
-    (synopsis "Tools for R Markdown to Docx Documents")
-    (description
-     "This package provides a set of helper functions for using R Markdown to create
-documents in docx format, especially documents for use in a classroom or
-workshop setting.")
-    (license license:expat)))
-
 (define-public r-docusignr
   (package
     (name "r-docusignr")
@@ -12898,6 +12870,37 @@ combined with a local false discovery rate (fdr) allowing for flexible modeling
 of data.  Methods for Differential Identification using Mixture Ensemble (DIME)
 is described in: Taslim et al., (2011) <doi:10.1093/bioinformatics/btr165>.")
     (license license:gpl2+)))
+
+(define-public r-dilp
+  (package
+    (name "r-dilp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dilp" version))
+       (sha256
+        (base32 "0xm4qfzgxv2r41f4z718cnfdpijnvbsq2w7cc0i5w3ndj3x63sk7"))))
+    (properties `((upstream-name . "dilp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mjbutrim/dilp")
+    (synopsis
+     "Reconstruct Paleoclimate and Paleoecology with Leaf Physiognomy")
+    (description
+     "Use leaf physiognomic methods to reconstruct mean annual temperature (MAT), mean
+annual precipitation (MAP), and leaf dry mass per area (Ma), along with other
+useful quantitative leaf traits.  Methods in this package described in Lowe et
+al. (in review).")
+    (license license:gpl3+)))
 
 (define-public r-digss
   (package

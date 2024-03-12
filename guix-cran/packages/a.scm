@@ -1110,13 +1110,13 @@ Ye, C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
 (define-public r-avesperu
   (package
     (name "r-avesperu")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avesperu" version))
        (sha256
-        (base32 "0m0gl81k96lh7l1k2nrznlsaiz9dal7kl7w12bcjn2376db0rw5v"))))
+        (base32 "0s92sdxhgc8d5qwv3frig87j4fxnj28kaykrqiqvdgjwjd6yhgbh"))))
     (properties `((upstream-name . "avesperu")))
     (build-system r-build-system)
     (home-page "https://github.com/PaulESantos/avesperu")
@@ -6927,18 +6927,23 @@ and Tzeremes (2022) <doi:10.1002/jae.2919>.")
 (define-public r-ardeco
   (package
     (name "r-ardeco")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARDECO" version))
        (sha256
-        (base32 "0dw3806ps7yxf193mpvps47s1q9789z3z072ds2ahblnnaci2n74"))))
+        (base32 "0nq86z5hbk1wksc4l82va433smlszy06z5z2vxhzj774jz2y9i0k"))))
     (properties `((upstream-name . "ARDECO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjstat r-jsonlite r-httr r-ghql r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-rjstat
+                             r-jsonlite
+                             r-httr
+                             r-ghql
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=ARDECO")
-    (synopsis "'ARDECO' Dataset")
+    (synopsis "Annual Regional Database of the European Commission (ARDECO)")
     (description
      "This package provides a set of functions to access the ARDECO (Annual Regional
 Database of the European Commission) data directly from the official ARDECO
@@ -7023,13 +7028,13 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
 (define-public r-arcpullr
   (package
     (name "r-arcpullr")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpullr" version))
        (sha256
-        (base32 "1wdr18y2fld69f9rjb3jhd0dsq2q386djncpwcwypysb60rs7lpa"))))
+        (base32 "1kkfksv7d9firyiwsyaxg1radzvcrxi26krx63hd9p52697ajxm8"))))
     (properties `((upstream-name . "arcpullr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

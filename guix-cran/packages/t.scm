@@ -3041,6 +3041,30 @@ created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
 Pearson VII, Slash or Contaminated Normal).")
     (license license:gpl3+)))
 
+(define-public r-tsmethods
+  (package
+    (name "r-tsmethods")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsmethods" version))
+       (sha256
+        (base32 "14zp1y9d34vfk89gxkf5i41qka3fkhv342pcxxcscc9jb4aps8yl"))))
+    (properties `((upstream-name . "tsmethods")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-xts))
+    (home-page "https://www.nopredict.com/packages/tsmethods")
+    (synopsis "Time Series Methods")
+    (description
+     "Generic methods for use in a time series probabilistic framework, allowing for a
+common calling convention across packages.  Additional methods for time series
+prediction ensembles and probabilistic plotting of predictions is included.  A
+more detailed description is available at
+<https://www.nopredict.com/packages/tsmethods> which shows the currently
+implemented methods in the tsmodels framework.")
+    (license license:gpl2)))
+
 (define-public r-tslstmx
   (package
     (name "r-tslstmx")
@@ -3072,13 +3096,13 @@ details can be found in Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>."
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "0mb0w0lw9arbfxnq190ssmdcm4w8d7nf6nc0l8gfvlwam71wc0i5"))))
+        (base32 "1r85pdf6gs7p512fhijryj76l24j7qhq7apci07iiw85y9nkv0jm"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsutils r-tensorflow r-keras r-abind))
@@ -11203,16 +11227,16 @@ Markussen (2021) <@code{arXiv:2108.04731>}.")
 (define-public r-tmt
   (package
     (name "r-tmt")
-    (version "0.3.1-2")
+    (version "0.3.1-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmt" version))
        (sha256
-        (base32 "02b7q5qcpa0wmxilqhzsy6mammhwa2sm3kjzwvigm3jc801z90h7"))))
+        (base32 "02jqa2ddmwp5qb06gbcfgm39pc54y9igmcwrqkqhdbj55jcbmy7l"))))
     (properties `((upstream-name . "tmt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-ggplot2))
+    (propagated-inputs (list r-rlang r-rcpp r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://jansteinfeld.github.io/tmt/")
     (synopsis "Estimation of the Rasch Model for Multistage Tests")
@@ -12600,13 +12624,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0n6dcg68m8w702ff27c2vd1xisp50a6hvm69d09kqz2gmghzxakp"))))
+        (base32 "1ynmqskm5yqs0vy7zm3xzirczqf1qczs1f7ggnnqcv0pb74zrinx"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -17691,34 +17715,27 @@ website.")
 (define-public r-theft
   (package
     (name "r-theft")
-    (version "0.5.4.1")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "theft" version))
        (sha256
-        (base32 "0knm636wx8ljdacd7cb4ny450pkh79lxx09vnpssbz4x0hgm9j64"))))
+        (base32 "0fapqgbr3mnag8nvciz6cv7i0xadj8madjzqrd67if3z37afhn0p"))))
     (properties `((upstream-name . "theft")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble
                              r-tsfeatures
                              r-tidyr
                              r-tibble
-                             r-scales
-                             r-rtsne
                              r-rlang
                              r-reticulate
-                             r-reshape2
                              r-rcatch22
                              r-r-matlab
                              r-purrr
-                             r-janitor
-                             r-ggplot2
                              r-feasts
                              r-fabletools
-                             r-e1071
-                             r-dplyr
-                             r-broom))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://hendersontrent.github.io/theft/")
     (synopsis "Tools for Handling Extraction of Features from Time Series")
@@ -17732,9 +17749,7 @@ M. (2020) <https://CRAN.R-project.org/package=tsfeatures>, tsfresh Christ, M.,
 Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
 <doi:10.1016/j.neucom.2018.03.067>, TSFEL Barandas, M., et al. (2020)
 <doi:10.1016/j.softx.2020.100456>, and Kats Facebook Infrastructure Data Science
-(2021) <https://facebookresearch.github.io/Kats/>.  Provides a standardised
-workflow from feature calculation to feature processing, machine learning
-classification procedures, and the production of statistical graphics.")
+(2021) <https://facebookresearch.github.io/Kats/>.")
     (license license:expat)))
 
 (define-public r-thankyoustars

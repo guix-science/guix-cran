@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -12701,13 +12701,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "18ymf1ncl9zpnagglxxzm89myxy5jlrani562dxhhdmqz580ciz0"))))
+        (base32 "0gk2qvdwa3wr55j7vkgm2jk1qcck1aqzsh30zc3cidgbk7m3icpv"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Copula.surv")
@@ -12970,13 +12970,13 @@ mentioned.")
 (define-public r-cophescan
   (package
     (name "r-cophescan")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cophescan" version))
        (sha256
-        (base32 "047ariqgbpnpiaw5pnl105i62nxdw9aqvaz3a1d5d5j0sdww96ij"))))
+        (base32 "0kanrdmkk91hs09acgz7kxw6szqfnr8mxi8n01rpnz2c1fwmvgpy"))))
     (properties `((upstream-name . "cophescan")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -12994,10 +12994,11 @@ mentioned.")
     (home-page "https://github.com/ichcha-m/cophescan")
     (synopsis "Adaptation of the Coloc Method for PheWAS")
     (description
-     "This package provides a Bayesian method for conducting Phenome-wide association
-studies (@code{PheWAS}) that simultaneously identifies causal associations
-between genetic variants and confounding due to linkage disequilibrium.  For
-details see Manipur et al (2023) <doi:10.1101/2023.06.29.546856>.")
+     "This package provides a Bayesian method for Phenome-wide association studies
+(@code{PheWAS}) that identifies causal associations between genetic variants and
+traits, while simultaneously addressing confounding due to linkage
+disequilibrium.  For details see Manipur et al (2023)
+<doi:10.1101/2023.06.29.546856>.")
     (license license:gpl3)))
 
 (define-public r-copernicusmarine
@@ -34800,13 +34801,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDatanet" version))
        (sha256
-        (base32 "0lg6sfzi17xlfm2l7mgcw3p0ii3acc4vl38kadvzmb5720jvvj5r"))))
+        (base32 "0q2g7qcqdlfqsi2fynz6r5qlnrqc0q8ndhja540lqd1l0vyafgmh"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -34815,6 +34816,7 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
                              r-rcppdist
                              r-rcpparmadillo
                              r-rcpp
+                             r-matrixcalc
                              r-matrix
                              r-formula-tools
                              r-formula

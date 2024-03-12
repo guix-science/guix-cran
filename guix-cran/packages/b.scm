@@ -2525,54 +2525,6 @@ relies on.  Data is returned in a tidy format and posts can be made using a
 simple interface.")
     (license license:expat)))
 
-(define-public r-bsitar
-  (package
-    (name "r-bsitar")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bsitar" version))
-       (sha256
-        (base32 "151zxz6wr68sb5qflp7bkxzjwz5bikvzpnk81n30yzk9f99sjv7z"))))
-    (properties `((upstream-name . "bsitar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sitar
-                             r-rstan
-                             r-rlang
-                             r-rdpack
-                             r-magrittr
-                             r-loo
-                             r-dplyr
-                             r-brms))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://github.com/Sandhu-SS/bsitar")
-    (synopsis
-     "Bayesian Super Imposition by Translation and Rotation Growth Curve Analysis")
-    (description
-     "The Super Imposition by Translation and Rotation (SITAR) model is a
-shape-invariant nonlinear mixed effect model that fits a natural cubic spline
-mean curve to the growth data, and aligns individual-specific growth curves to
-the underlying mean curve via a set of random effects (see Cole (2010)
-<doi:10.1093/ije/dyq115> for further details).  The non-Bayesian version of the
-SITAR model can be fit by using an already available R package sitar'.  While
-sitar package allows modelling of a single outcome only, the bsitar package
-offers a great flexibility in fitting models of varying complexities that
-include joint modelling of multiple outcomes such as height and weight
-(multivariate model).  Also, the bsitar package allows simultaneous analysis of
-a single outcome separately for sub groups defined by a factor variable such as
-gender.  This is achieved by fitting separate models for each sub group (such as
-males and females for gender variable).  An advantage of such approach is that
-posterior draws for each sub group are part of a single model object that makes
-it possible to compare coefficients across groups and test hypotheses.  As
-bsitar package is a front-end to the R package brms', it offers an excellent
-support for post-processing of posterior draws via various functions that are
-directly available from the brms package.  In addition, the the bsitar package
-include various customized functions that allow estimation and visualization of
-various growth curves such as distance (increase in size with age) and velocity
-(change in rate of growth as a function of age).")
-    (license license:gpl2)))
-
 (define-public r-bsims
   (package
     (name "r-bsims")
@@ -4152,13 +4104,13 @@ detection/estimation (data segmentation) in data sequences.")
 (define-public r-breakdown
   (package
     (name "r-breakdown")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breakDown" version))
        (sha256
-        (base32 "1jm9zmyfcnr9mjz7b30k34h47msvik9ngfysi6dc48gvrk41yk9q"))))
+        (base32 "1p02qy5kpv98qxlawn6l2hq7q48kv97ks3s9jnxawhqz44c08lwv"))))
     (properties `((upstream-name . "breakDown")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -8114,16 +8066,16 @@ of distributions, including Mohammadi and et al. (2013)
 (define-public r-bmisc
   (package
     (name "r-bmisc")
-    (version "1.4.5")
+    (version "1.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BMisc" version))
        (sha256
-        (base32 "0pdp8cnqj8cmyhppxrkqlckg3xlcswra9vsnjwwdlnvn8b00m5d1"))))
+        (base32 "1j1qxa5hgc9zdmk1y4xa87jcxi8m75hms88ishfvbqg8n2k9ah1h"))))
     (properties `((upstream-name . "BMisc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-dplyr r-data-table))
     (home-page "https://bcallaway11.github.io/BMisc/")
     (synopsis
      "Miscellaneous Functions for Panel Data, Quantiles, and Printing Results")
@@ -11683,13 +11635,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "1mgh3cin28a1cjfkld8n57x3psqb1z5q8g3l61gjjrngds8a0sj4"))))
+        (base32 "0qpk36ay80aqbamr08i6gggy9jlz923014dnpvnv9gbqkz6vyyw8"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -18727,13 +18679,13 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "17.1.2")
+    (version "18.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "1rs7ipmwkhvbryga11nqvjf0cygvmcqzis5jvgdbxyi0v0japbl2"))))
+        (base32 "0w7l1w469pcqaqa9wilxq2dbwvfs8gldgm97khx19ka1h24k46a5"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -25520,6 +25472,28 @@ Almost Linear Time k-medoids Clustering via Multi-Armed Bandits\"
      "This package provides a set of functions for doing analysis of A/B split test
 data and web metrics in general.")
     (license license:gpl3)))
+
+(define-public r-bandicoot
+  (package
+    (name "r-bandicoot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bandicoot" version))
+       (sha256
+        (base32 "0vb9cdp3ci00rjqb18l1a6106fbl5w8sjlj8kfs170rccziynnf9"))))
+    (properties `((upstream-name . "bandicoot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://tengmcing.github.io/bandicoot/")
+    (synopsis "Light-Weight 'python'-Like Object-Oriented System")
+    (description
+     "This package provides a light-weight object-oriented system with python'-like
+syntax which supports multiple inheritances and incorporates a python'-like
+method resolution order.")
+    (license license:expat)))
 
 (define-public r-bamp
   (package

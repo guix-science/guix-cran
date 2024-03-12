@@ -4932,13 +4932,13 @@ differential equations.  This is an extension to the greta software, Golding
 (define-public r-greta
   (package
     (name "r-greta")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greta" version))
        (sha256
-        (base32 "1xrfbx1j2qdccfn6fhap1jnibhrfih10garakxndrl9j527lv5lm"))))
+        (base32 "0ky2d0i2s768na50940b733rr1fmmbpkdw1a8r21wbr5h43n8xf2"))))
     (properties `((upstream-name . "greta")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -11104,18 +11104,18 @@ Care, 2017 <doi:10.2337/dc17-1600>.")
 (define-public r-gluedown
   (package
     (name "r-gluedown")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gluedown" version))
        (sha256
-        (base32 "0ra7pmyxj7bvhn9rv1hhij8va79nissakaf9l1317rrcvdi4l7mw"))))
+        (base32 "0hnjzml5ag0xfdb9kab5fg1dfp2ldcj8i7ggfqssn4ifgyxk3c89"))))
     (properties `((upstream-name . "gluedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-glue))
     (native-inputs (list r-knitr))
-    (home-page "https://kiernann.github.io/gluedown/")
+    (home-page "https://k5cents.github.io/gluedown/")
     (synopsis "Wrap Vectors in Markdown Formatting")
     (description
      "Ease the transition between R vectors and markdown text.  With gluedown and
@@ -16617,13 +16617,13 @@ the architectural layout of the legislative chamber.")
 (define-public r-ggparallel
   (package
     (name "r-ggparallel")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggparallel" version))
        (sha256
-        (base32 "067m77c7pjqwcbm7ggpasxsqrdxddcwhs3w0rw77mrxv2s670hrf"))))
+        (base32 "1flhy0731phknzxwmr6lza7a6r0mqy7j8z93p4aala3d3cg2x1nw"))))
     (properties `((upstream-name . "ggparallel")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-plyr r-ggplot2))
@@ -21007,13 +21007,13 @@ midpoint, bearing and more are derived from <https://www.movable-type.co.uk>.")
 (define-public r-geosapi
   (package
     (name "r-geosapi")
-    (version "0.7")
+    (version "0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosapi" version))
        (sha256
-        (base32 "11f4q93c3j6vf3bd25c389n98bwn719kd3jzj6yy4py6ks6ygq24"))))
+        (base32 "0zq02xnzqszmkdj99686g2x91gyc8x16yhkixhpd7frap7zy6h23"))))
     (properties `((upstream-name . "geosapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -21090,13 +21090,13 @@ formats are provided.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-18")
+    (version "0.3-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "1dmm2yyigh1jb88gqw7b19scav6pld4fa4l22wj110yhpvygph85"))))
+        (base32 "0mxd29viapqzwmqy097r2ykkqjch5v3qn5p3ixz5kp2q9xlqfq2p"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -26258,22 +26258,22 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "0wl19rj0lkmqpip2zqsk23ksjgmp826scnk35n6a571iyss71ma7"))))
+        (base32 "0j584jh0kqwazgfk12gfbvivqhfgi3gb9hbw55fgv36an4x7q22h"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-dplyr))
+    (propagated-inputs (list r-tidyr r-rlang r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://mikeblazanin.github.io/gcplyr/")
-    (synopsis "Manipulate and Analyze Growth Curve Data")
+    (synopsis "Wrangle and Analyze Growth Curve Data")
     (description
-     "Easy import, reshaping, and model-free analysis of microbial growth curve data,
-as commonly output by plate readers.  Tools for reshaping common plate reader
+     "Easy wrangling and model-free analysis of microbial growth curve data, as
+commonly output by plate readers.  Tools for reshaping common plate reader
 outputs into tidy formats and merging them with design information, making data
 easy to work with using gcplyr and other packages.  Also streamlines common
 growth curve processing steps, like smoothing and calculating derivatives, and
@@ -28101,13 +28101,13 @@ and multi-subunit proteins.")
 (define-public r-ganpa
   (package
     (name "r-ganpa")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GANPA" version))
        (sha256
-        (base32 "19nq1nlpb1lr2b9i5ckyl5m6daalrqkpx386r6i25qfvaywxl2bf"))))
+        (base32 "1c2yvh6sqx75hg0lsmflgd9mdic8imysv8dn46g4abvfwjhxsafp"))))
     (properties `((upstream-name . "GANPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-ganpadata))

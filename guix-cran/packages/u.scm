@@ -938,17 +938,17 @@ install that data package, please follow the instructions at
 (define-public r-usa
   (package
     (name "r-usa")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usa" version))
        (sha256
-        (base32 "0scdrd6b48n019f7qp77rrkqgmapnrknalq0hml1cy7m43llqf6d"))))
+        (base32 "1hvdflhdwf9dkwqld32kjllr6669mn20v2q6mi06baqfnf5jjmki"))))
     (properties `((upstream-name . "usa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
-    (home-page "https://cran.r-project.org/package=usa")
+    (home-page "https://k5cents.github.io/usa/")
     (synopsis "Updated US State Facts and Figures")
     (description
      "Updated versions of the 1970's \"US State Facts and Figures\" objects from the
@@ -3733,13 +3733,13 @@ month.")
 (define-public r-ufs
   (package
     (name "r-ufs")
-    (version "0.5.10")
+    (version "0.5.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ufs" version))
        (sha256
-        (base32 "09nrm8p95i8lksqyxxb2gqmyx650i05pv7a4gvgz4pbpsivxf9id"))))
+        (base32 "002xvhn1mcgfjzaslarra0bv33plyz1a4akjxxbmh4q4v6abxk88"))))
     (properties `((upstream-name . "ufs")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists

@@ -4048,13 +4048,13 @@ convert the objects converted from nonmem2rx to a full nlmixr2 fit.")
 (define-public r-nonmem2r
   (package
     (name "r-nonmem2r")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2R" version))
        (sha256
-        (base32 "1lnm2mniccpsk30njmi0b18aizblg5wadm3k2kdviyxi8j2735rw"))))
+        (base32 "0py0nn8sn9p4lcdbjsfmz3z0ch3i3qbvfjifmjzdhdjgd9vvi19r"))))
     (properties `((upstream-name . "nonmem2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -4071,10 +4071,10 @@ convert the objects converted from nonmem2rx to a full nlmixr2 fit.")
      "Loading NONMEM Output Files with Functions for Visual Predictive Checks (VPC) and Goodness of Fit (GOF) Plots")
     (description
      "Loading NONMEM (NONlinear Mixed-Effect Modeling,
-<https://www.iconplc.com/innovation/nonmem/>) and PSN (Perl-speaks-NONMEM,
-<https://uupharmacometrics.github.io/@code{PsN/>}) output files to extract
-parameter estimates, provide visual predictive check (VPC) and goodness of fit
-(GOF) plots, and simulate with parameter uncertainty.")
+<https://www.iconplc.com/solutions/technologies/nonmem/>) and PSN
+(Perl-speaks-NONMEM, <https://uupharmacometrics.github.io/@code{PsN/>}) output
+files to extract parameter estimates, provide visual predictive check (VPC) and
+goodness of fit (GOF) plots, and simulate with parameter uncertainty.")
     (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-nonlineartseries
@@ -5251,13 +5251,13 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnlib2Rcpp" version))
        (sha256
-        (base32 "1v258vgj4bwa6dq0nybm5qpsiphi0lbmfxxdp6xn1c9jb6w9myqh"))))
+        (base32 "1xmwx6vg4zrn81d34jsvzf61yh0g8nmssg87van25ysgxm6gzqs2"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -8212,6 +8212,30 @@ Models.")
     (description
      "Color palettes based on nature inspired colours in \"Sri Lanka\".")
     (license license:cc0)))
+
+(define-public r-niarules
+  (package
+    (name "r-niarules")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "niarules" version))
+       (sha256
+        (base32 "03r7x4qaw40c9gd5lay8648r2f6269gp8x8qh5bfrs44aq0jbv3w"))))
+    (properties `((upstream-name . "niarules")))
+    (build-system r-build-system)
+    (home-page "https://github.com/firefly-cpp/niarules")
+    (synopsis
+     "Numerical Association Rule Mining using Population-Based Nature-Inspired Algorithms")
+    (description
+     "Framework is devoted to mining numerical association rules through the
+utilization of nature-inspired algorithms for optimization.  Drawing inspiration
+from the @code{NiaARM} Python and the @code{NiaARM} Julia packages, this
+repository introduces the capability to perform numerical association rule
+mining in the R programming language.  Fister Jr., Iglesias, Galvez, Del Ser,
+Osaba and Fister (2018) <doi:10.1007/978-3-030-03493-1_9>.")
+    (license license:expat)))
 
 (define-public r-niaidmi
   (package

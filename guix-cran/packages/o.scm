@@ -5362,13 +5362,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "0wi3rq3lq96936dw7il86wfk6554kfcp2dvx0ma3n8gbx6wz6m0i"))))
+        (base32 "1qzfkq70g4rlpf0s4xgkifdxvbmxwlfr5ijlz2blmwvr5d4qrl94"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5376,8 +5376,8 @@ graphics, or ggplot2.  This package is not affiliated with the
                              r-shiny
                              r-plotly
                              r-osfr
+                             r-mmand
                              r-jsonlite
-                             r-imager
                              r-hyperspec
                              r-glmnet
                              r-digest
@@ -5541,13 +5541,13 @@ functions to quantitatively analyze and visualize repertory grid data.")
 (define-public r-opennlpdata
   (package
     (name "r-opennlpdata")
-    (version "1.5.3-4")
+    (version "1.5.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openNLPdata" version))
        (sha256
-        (base32 "0j45rh9qki8r5wavaysrfsvb3wc3x8jjicqff2yi0r34j58xvlv8"))))
+        (base32 "03a194yjzlxymq64c6pd28ja71gv2z5465hb7qmxbw0gqpirz3l0"))))
     (properties `((upstream-name . "openNLPdata")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -6189,13 +6189,13 @@ and air mass trajectories.")
 (define-public r-openair
   (package
     (name "r-openair")
-    (version "2.18-0")
+    (version "2.18-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openair" version))
        (sha256
-        (base32 "1hvwb6p5skwpi1i5gvag3kxzvzxi9f4mph53y3gr6r0s8azfnvz0"))))
+        (base32 "1pw4bdqkd515n7fdcjavjmanhpaywxamzywgiaz4nk5bqq5mh84b"))))
     (properties `((upstream-name . "openair")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6334,13 +6334,13 @@ on the R server side. @code{DataSHIELD} administration tools are also provided."
 (define-public r-opa
   (package
     (name "r-opa")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opa" version))
        (sha256
-        (base32 "16qghf8izh2f4ljsiib8fdnbah0bhlybs5n6aa34vb82p0mrqijq"))))
+        (base32 "09k3bkh2glkl0sf5pcbii9cxq6ijpdsayncb02dm0ing2bh9kh0m"))))
     (properties `((upstream-name . "opa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
@@ -7322,16 +7322,16 @@ them.  It converts factor columns into onehot vectors.")
 (define-public r-oneclust
   (package
     (name "r-oneclust")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oneclust" version))
        (sha256
-        (base32 "033vpzccj5z56spn2mqpjq9f17vk6ib9y15p2hfqk8rwqkfbvcqs"))))
+        (base32 "1hwvk3fkjad9z3c9rbwx3v2n4zvjjyrjcl1nxwk9yj6zgrlxbibk"))))
     (properties `((upstream-name . "oneclust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-magrittr))
+    (propagated-inputs (list r-rcpp))
     (native-inputs (list r-knitr))
     (home-page "https://nanx.me/oneclust/")
     (synopsis "Maximum Homogeneity Clustering for Univariate Data")
@@ -7957,17 +7957,16 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.0.3")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0isda53g0ibij3hghhmw718jhxq308b9yhnb1kqvnnpzlsr7sl4j"))))
+        (base32 "0xawvpkvzffsqs378sl2h79014vadmwxhr98wgl2kj41ywyiif29"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-snakecase
                              r-rlang
@@ -10031,13 +10030,13 @@ be manipulated and provides features such as selection, filtering and ordering."
 (define-public r-od
   (package
     (name "r-od")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "od" version))
        (sha256
-        (base32 "1aw3nb12a5wdkz1728238gsjff2l11ypcr7jpgzk3ns8yps8f1mw"))))
+        (base32 "0msfgqcx2qh728fqzdkhaab7b5na8wa3sga7hfzvxjy996bdfliw"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-sfheaders))

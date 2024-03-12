@@ -4307,13 +4307,13 @@ the package to build on previous lab members code.")
 (define-public r-hockeystick
   (package
     (name "r-hockeystick")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hockeystick" version))
        (sha256
-        (base32 "1qli3293grlvih2i8120xsbkl6nfhdzs4ggzahbaqx5szdjinb95"))))
+        (base32 "0l5sk4x66zalmznksf9c099jn9i2i90bs57h2f44z105hzpdi606"))))
     (properties `((upstream-name . "hockeystick")))
     (build-system r-build-system)
     (propagated-inputs (list r-treemapify
@@ -5078,6 +5078,32 @@ framework.  The estimation of the hidden Markov diagnostic classification model,
 the first order hidden Markov model, the reduced-reparameterized unified
 learning model, and the joint learning model for responses and response times.")
     (license license:gpl2+)))
+
+(define-public r-hmc
+  (package
+    (name "r-hmc")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMC" version))
+       (sha256
+        (base32 "1zmppanwfdhpvi5pxw067287zy5xw2ipw8p7q7c7b3gq7n3xm4hx"))))
+    (properties `((upstream-name . "HMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pma r-mass r-irlba r-glmnet))
+    (home-page "https://cran.r-project.org/package=HMC")
+    (synopsis
+     "High Dimensional Mean Comparison with Projection and Cross-Fitting")
+    (description
+     "This package provides interpretable High-dimensional Mean Comparison methods
+(HMC).  For example, users can use them to assess the difference in gene
+expression between two treatment groups.  It is not a gene-by-gene comparison.
+Instead, we focus on the interplay between features and are interested in those
+that are predictive of the group label.  The methods are valid frequentist tests
+and give sparse estimates indicating which features contribute to the test
+results.")
+    (license license:gpl2)))
 
 (define-public r-hmb
   (package

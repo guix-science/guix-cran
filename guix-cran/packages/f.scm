@@ -1845,13 +1845,13 @@ structural parameter optimization is described in
 (define-public r-fungible
   (package
     (name "r-fungible")
-    (version "2.4.3")
+    (version "2.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fungible" version))
        (sha256
-        (base32 "1crl8xwk2m60n95p0z0w8gd94x1n0gh44kakwy9zq5h312y2jrwp"))))
+        (base32 "18h4n7q130z2i86zd7gwrh3wv9h4pd4niands1p94rialrdg9vda"))))
     (properties `((upstream-name . "fungible")))
     (build-system r-build-system)
     (propagated-inputs (list r-sem
@@ -13375,13 +13375,13 @@ Database: <https://oceanview.pfeg.noaa.gov/@code{CalFishTrack/>}.")
 (define-public r-fillpattern
   (package
     (name "r-fillpattern")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fillpattern" version))
        (sha256
-        (base32 "0lm6b31pg8k6g6mf94ljlm1ilbgsc3j4isg8pfjp6ihpd0jj974n"))))
+        (base32 "0xysrb3yzvlag9zpsq7hhqqyrhwapnzc66d636wvxpsi4r50lp0w"))))
     (properties `((upstream-name . "fillpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -14769,24 +14769,24 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-fflr
   (package
     (name "r-fflr")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fflr" version))
        (sha256
-        (base32 "1ysbqs1qr5cqg5rg22w29j93akgqlj4xbc6pwwr83ny2qw1zzkvs"))))
+        (base32 "1ib0lgkxxjrsvhl4h4dpyk9qzlsxz95ki0q5qy4flqdm28vl633z"))))
     (properties `((upstream-name . "fflr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fflr")
+    (home-page "https://k5cents.github.io/fflr/")
     (synopsis "Retrieve ESPN Fantasy Football Data")
     (description
      "Format the raw data from the ESPN fantasy football API
 <https://fantasy.espn.com/apis/v3/games/ffl/> as data frames.  Retrieve data on
 public leagues, rosters, athletes, and matches.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-ffdownload
   (package

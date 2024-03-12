@@ -1225,32 +1225,6 @@ house numbers to a reference index.  The methods are specifically designed for
 German municipalities ('KOR'-community) and German address schemes.")
     (license license:gpl3)))
 
-(define-public r-konya
-  (package
-    (name "r-konya")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "konya" version))
-       (sha256
-        (base32 "03r3m5jld0ykfys3hglh5rk1nnm7g4rwc4ai6r6qa342z36p4hrj"))))
-    (properties `((upstream-name . "konya")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rvest
-                             r-readr
-                             r-openxlsx
-                             r-jsonlite
-                             r-dplyr))
-    (home-page "https://github.com/ozancanozdemir/bursa")
-    (synopsis "R Wrapper for Konya Municipality Open Data Portal")
-    (description
-     "Call the data wrappers for Konya Metropolitan Municipality's Open Data Portal
-<https://acikveri.konya.bel.tr/>.  This will return all datasets stored in
-different formats.")
-    (license license:expat)))
-
 (define-public r-konpsurv
   (package
     (name "r-konpsurv")
@@ -5499,29 +5473,29 @@ as described in Eichner and Stute (2012) <doi:10.1080/10485252.2012.760737>.")
 (define-public r-k5
   (package
     (name "r-k5")
-    (version "0.0.5")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "k5" version))
        (sha256
-        (base32 "163ls1fmb2kkcly7cv1ia4k5fdjpr0xbr8nz7xw2zhmk2hfx47vq"))))
+        (base32 "0mlanbp48b6y2wvcr6q1nka27vm861zyvlzj6fs046rw7qnzmg1k"))))
     (properties `((upstream-name . "k5")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-tibble
                              r-stringr
+                             r-rlang
                              r-readr
-                             r-pacman
+                             r-purrr
                              r-magrittr
                              r-lubridate
                              r-glue
                              r-ggplot2
                              r-fs
                              r-dplyr
-                             r-clipr
-                             r-aws-s3))
-    (home-page "https://github.com/kiernann/k5")
+                             r-clipr))
+    (home-page "https://k5cents.github.io/k5/")
     (synopsis "Kiernan Nicholls Miscellaneous")
     (description
      "Quality of life functions for interactive programming.  Shortcuts for common

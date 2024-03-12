@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -2279,13 +2280,13 @@ criteria in terms of convergence & effective sample size.")
 (define-public r-runjags
   (package
     (name "r-runjags")
-    (version "2.2.2-1.1")
+    (version "2.2.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runjags" version))
        (sha256
-        (base32 "10q5bwf0lj4lpzclfgd5jnzyl9yqgkmflsy5anl5cdi9v15dynci"))))
+        (base32 "0ks2dw575mmzzjcscbf02zn38ickqgz4pnvdb5p81h100r6nwrbg"))))
     (properties `((upstream-name . "runjags")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-coda))
@@ -6281,6 +6282,36 @@ version of the package is documented in Journal of Statistical Software
     (description
      "This package implements the \"Stemming Algorithm for the Portuguese Language\"
 <DOI:10.1109/SPIRE.2001.10024>.")
+    (license license:expat)))
+
+(define-public r-rsleep
+  (package
+    (name "r-rsleep")
+    (version "1.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsleep" version))
+       (sha256
+        (base32 "1sqczgfkpa7bg8hbmy0baxlb9n6r76g4n5nh19v50wrdh87h3771"))))
+    (properties `((upstream-name . "rsleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-xml2
+                             r-signal
+                             r-readr
+                             r-psd
+                             r-jsonlite
+                             r-ggplot2
+                             r-edfreader
+                             r-dplyr
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://rsleep.org/")
+    (synopsis "Analysis of Sleep Data")
+    (description
+     "This package provides a toolbox for sleep data processing, visualization and
+analysis.  Tools for state of the art automatic sleep stages scoring.")
     (license license:expat)))
 
 (define-public r-rskey
@@ -16781,6 +16812,25 @@ level are nonlinearly correlated.  The hyperparameters in the model are
 estimated by maximum likelihood estimation.")
     (license license:expat)))
 
+(define-public r-rnames
+  (package
+    (name "r-rnames")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rnames" version))
+       (sha256
+        (base32 "0ifn5pq7r7yh671chpym4qzbf09j8vd534x2azb5wz686dijr7a3"))))
+    (properties `((upstream-name . "rnames")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=rnames")
+    (synopsis "Recursive Display of Items in Nested Lists")
+    (description
+     "Recursive display of names and paths of all the items nested within sublists of
+a list object.")
+    (license license:expat)))
+
 (define-public r-rnacrosslinkoo
   (package
     (name "r-rnacrosslinkoo")
@@ -25966,24 +26016,26 @@ are used for matrix decompositions.")
 (define-public r-rfast2
   (package
     (name "r-rfast2")
-    (version "0.1.5.1")
+    (version "0.1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfast2" version))
        (sha256
-        (base32 "1cj0ggb49l2srycl8k832kvfx5y43yvhknn0glkkgcac838y2417"))))
+        (base32 "125j6qk405i2wjpcyq0x6dmabns8iybqk9g3f43mk6j08n7fgfp1"))))
     (properties `((upstream-name . "Rfast2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-rcppparallel r-rcpparmadillo r-rcpp
-                             r-rann))
+    (propagated-inputs (list r-rnanoflann r-rfast r-rcppparallel
+                             r-rcpparmadillo r-rcpp))
     (home-page "https://github.com/RfastOfficial/Rfast2")
     (synopsis "Collection of Efficient and Extremely Fast R Functions II")
     (description
      "This package provides a collection of fast statistical and utility functions for
 data analysis.  Functions for regression, maximum likelihood, column-wise
 statistics and many more have been included.  C++ has been utilized to speed up
-the functions.")
+the functions.  References: Tsagris M., Papadakis M. (2018).  Taking R to its
+limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
+<doi:10.7287/peerj.preprints.26605v1>.")
     (license license:gpl2+)))
 
 (define-public r-rfars
@@ -28764,42 +28816,6 @@ reports, including automated curation and time-stamping of outputs,
 parameterisation and provision of helper functions to manage dependencies.")
     (license license:expat)))
 
-(define-public r-reporterscore
-  (package
-    (name "r-reporterscore")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ReporterScore" version))
-       (sha256
-        (base32 "0a7969q5cidlqix1cyg3xh4jjds8w1s1d69r97f0iy890mmdy42m"))))
-    (properties `((upstream-name . "ReporterScore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-scales
-                             r-reshape2
-                             r-pcutils
-                             r-magrittr
-                             r-ggplot2
-                             r-ggnewscale
-                             r-foreach
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Asa12138/ReporterScore")
-    (synopsis
-     "Generalized Reporter Score-Based Enrichment Analysis for Omics Data")
-    (description
-     "Inspired by the classic RSA', we developed the improved Generalized Reporter
-Score-based Analysis (GRSA) method, implemented in the R package
-@code{ReporterScore}', along with comprehensive visualization methods and
-pathway databases.  GRSA is a threshold-free method that works well with all
-types of biomedical features, such as genes, chemical compounds, and microbial
-species.  Importantly, the GRSA supports multi-group and longitudinal
-experimental designs, because of the included multi-group-compatible statistical
-methods.")
-    (license license:gpl3)))
-
 (define-public r-reporter-nih
   (package
     (name "r-reporter-nih")
@@ -31381,21 +31397,21 @@ hierarchical levels to create meaningful data panels and time series.")
 (define-public r-regioncode
   (package
     (name "r-regioncode")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regioncode" version))
        (sha256
-        (base32 "1h5qbpcfgl86g0cy5nz9vvwzqsp335lqhl4djil3k3mab38k778d"))))
+        (base32 "1q3d2s6x79i7v7phspabk3m7kld74jplv5wda9ybpyv1vzdinx99"))))
     (properties `((upstream-name . "regioncode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-textshaping r-pinyin r-knitr r-dplyr))
+    (propagated-inputs (list r-pinyin r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=regioncode")
     (synopsis "Convert Region Names and Division Codes of China Over Years")
     (description
-     "This package provides a fast tool to conquer the difficulties to convert various
+     "This package provides a tool to conquer the difficulties to convert various
 region names and administration division codes of Chinese regions.  The current
 version enables seamlessly converting Chinese regions formal names, common-used
 names, and codes between each other at the city level from 1986 to 2019.")
@@ -36720,13 +36736,13 @@ embedded in a web page ready for its interactive analysis and exploration.")
 (define-public r-rd2roxygen
   (package
     (name "r-rd2roxygen")
-    (version "1.14")
+    (version "1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2roxygen" version))
        (sha256
-        (base32 "1d45dn1vxx5vq53m8as4fyq7077s1vw9xxq5r7f4fajybpqiby18"))))
+        (base32 "08hkwcjzn4kv47cgq2rckrb1fs4y5mic0kb87sk8mc4qbl1353vb"))))
     (properties `((upstream-name . "Rd2roxygen")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-roxygen2 r-formatr))
@@ -39098,13 +39114,13 @@ plug-in.  The package deals with continuos planar location problems.")
 (define-public r-rcmdrplugin-nmbu
   (package
     (name "r-rcmdrplugin-nmbu")
-    (version "1.8.14")
+    (version "1.8.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.NMBU" version))
        (sha256
-        (base32 "0bsz98za8hb0gxxawi5sfg0s8i5nrk72f4h91glklw29w9dvnpf4"))))
+        (base32 "0y5pwwfvqdc2a6wbkjnvgrlh7251s60l74cmfi7k9n2gkzx5d34y"))))
     (properties `((upstream-name . "RcmdrPlugin.NMBU")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

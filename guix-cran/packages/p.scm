@@ -2002,13 +2002,13 @@ model for each response.")
 (define-public r-ptxqc
   (package
     (name "r-ptxqc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PTXQC" version))
        (sha256
-        (base32 "0wykb4sapnvfhwalbyhwc41058vlmsdb6bxivs3q5c1hji5cc71c"))))
+        (base32 "0855xir9b604lhhymxf3rhin2sikxvg25zbgd5gvwgc5n3114d3m"))))
     (properties `((upstream-name . "PTXQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -18891,28 +18891,6 @@ graphic using base plot command if it is printed.")
 causal inference modeling process.  Supplements the @code{bartCause} package.")
     (license license:expat)))
 
-(define-public r-plot4fun
-  (package
-    (name "r-plot4fun")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plot4fun" version))
-       (sha256
-        (base32 "1al093spwww8wzgx3rh2v597c1zs8ajagl09ww1xw7r6wcz5b9hy"))))
-    (properties `((upstream-name . "plot4fun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-pcutils r-magrittr r-ggplot2))
-    (home-page "https://cran.r-project.org/package=plot4fun")
-    (synopsis "Just Plot for Fun")
-    (description
-     "Explore the world of R graphics with fun and interesting plot functions! Use
-make_LED() to create dynamic LED screens, draw interconnected rings with
-Olympic_rings(), and make festive Chinese couplets with chunlian().  Unleash
-your creativity and turn data into exciting visuals!")
-    (license license:gpl3)))
-
 (define-public r-plot3logit
   (package
     (name "r-plot3logit")
@@ -29126,6 +29104,36 @@ of Portland inventoried every tree in over 170 parks and along the streets in 96
 neighborhoods.")
     (license license:gpl3)))
 
+(define-public r-pdxpower
+  (package
+    (name "r-pdxpower")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PDXpower" version))
+       (sha256
+        (base32 "144phmshjmm891f8sd8aagm7ql6hwb1i24mbpcfgak61q7anw2xy"))))
+    (properties `((upstream-name . "PDXpower")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
+                             r-frailtypack))
+    (home-page "https://cran.r-project.org/package=PDXpower")
+    (synopsis
+     "Time to Event Outcome in Experimental Designs of Pre-Clinical Studies")
+    (description
+     "Conduct simulation-based customized power calculation for clustered time to
+event data in a mixed crossed/nested design, where a number of cell lines and a
+number of mice within each cell line are considered to achieve a desired
+statistical power, motivated by Eckel-Passow and colleagues (2021)
+<doi:10.1093/neuonc/noab137>.  This package provides two commonly used models
+for powering a design, linear mixed effects and Cox frailty model.  Both models
+account for within-subject (cell line) correlation while holding different
+distributional assumptions about the outcome.  Alternatively, the counterparts
+of fixed effects model are also available, which produces similar estimates of
+statistical power.")
+    (license license:gpl2+)))
+
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
@@ -29782,38 +29790,6 @@ Component Analysis, Principal Component Regression and Partial Least Squares
 regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
     (license license:expat)))
 
-(define-public r-pcutils
-  (package
-    (name "r-pcutils")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pcutils" version))
-       (sha256
-        (base32 "1m6rsyacml39zkn405dzwn58w0dcq2y0xrqlpr0rwqi6i36n02d8"))))
-    (properties `((upstream-name . "pcutils")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-reshape2 r-magrittr r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Asa12138/pcutils")
-    (synopsis "Some Useful Functions for Statistics and Visualization")
-    (description
-     "Offers a range of utilities and functions for everyday programming tasks.
-1.Data Manipulation.  Such as grouping and merging, column splitting, and
-character expansion.  2.File Handling.  Read and convert files in popular
-formats, including \"blast\", \"diamond\", \"fasta\", \"gff\", \"gtf\", and various image
-formats like \"jpg\", \"png\", \"pdf\", and \"svg\".  3.Plotting Assistance.  Helpful
-utilities for generating color palettes, validating color formats, and adding
-transparency.  4.Statistical Analysis.  Includes functions for pairwise
-comparisons and multiple testing corrections, enabling perform statistical
-analyses with ease.  5.Graph Plotting, Provides efficient tools for creating
-doughnut plot and multi-layered doughnut plot; Venn diagrams, including
-traditional Venn diagrams, upset plots, and flower plots; Simplified functions
-for creating stacked bar plots, or a box plot with alphabets group for multiple
-comparison group.")
-    (license license:gpl3)))
-
 (define-public r-pcts
   (package
     (name "r-pcts")
@@ -29850,40 +29826,6 @@ moving average models.  Some original methods including Boshnakov & Iqelan
 (2009) <doi:10.1111/j.1467-9892.2009.00617.x>, Boshnakov (1996)
 <doi:10.1111/j.1467-9892.1996.tb00281.x>.")
     (license license:gpl2+)))
-
-(define-public r-pctax
-  (package
-    (name "r-pctax")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pctax" version))
-       (sha256
-        (base32 "1caq9ignjgw6sqapiqx4gqj07pyxqsynxznir0sjnn91k6frccj6"))))
-    (properties `((upstream-name . "pctax")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-scales
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-pcutils
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Asa12138/pctax")
-    (synopsis "Professional Comprehensive Omics Data Analysis")
-    (description
-     "This package provides a comprehensive suite of tools for analyzing omics data.
-It includes functionalities for alpha diversity analysis, beta diversity
-analysis, differential abundance analysis, community assembly analysis,
-visualization of phylogenetic tree, and functional enrichment analysis.  With a
-progressive approach, the package offers a range of analysis methods to explore
-and understand the complex communities.  It is designed to support researchers
-and practitioners in conducting in-depth and professional omics data analysis.")
-    (license license:gpl3)))
 
 (define-public r-pct
   (package
@@ -31931,13 +31873,13 @@ reliable, since they follow the DNRY (do not repeat yourself) rule.")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patientProfilesVis" version))
        (sha256
-        (base32 "10bx1g0s6ahx7gb1306izs0cq626b5ql5bvcf9598fb9h18zbqv7"))))
+        (base32 "04vdiyia3xkirnpwd88i7j46gvwcxn6wdzc50660pkqkn1gwiyhn"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
     (inputs (list cairo))

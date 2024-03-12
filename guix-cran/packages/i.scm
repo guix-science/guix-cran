@@ -6307,13 +6307,13 @@ technical writing.  Learn more about the inkaverse project at
 (define-public r-intextsummarytable
   (package
     (name "r-intextsummarytable")
-    (version "3.3.1")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inTextSummaryTable" version))
        (sha256
-        (base32 "0b5qn3hczdvdhqw6lcf23cyy39lcvraizrr01nxgp27mdarppgqh"))))
+        (base32 "0h95h31ghcwm7fpp9sfvg3za6381ghcpz4qn4dmw28kh7gd76y96"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -8623,6 +8623,29 @@ are done in data.table and creation of WOE vectors can be distributed across
 multiple cores.  The package also supports exploration for uplift models (NWOE
 and NIV).")
     (license license:gpl3+)))
+
+(define-public r-infoelectoral
+  (package
+    (name "r-infoelectoral")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infoelectoral" version))
+       (sha256
+        (base32 "0zrrc32xmw020djddfxdzsz5vch9aw4abqb04y9z3j5h14i07a1z"))))
+    (properties `((upstream-name . "infoelectoral")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rOpenSpain/infoelectoral")
+    (synopsis "Download Spanish Election Results")
+    (description
+     "Download official election results for Spain at polling station, municipality
+and province level from the Ministry of Interior
+(<https://infoelectoral.interior.gob.es/es/elecciones-celebradas/area-de-descargas/>),
+format them and import them to the R environment.")
+    (license license:gpl2)))
 
 (define-public r-infodecompute
   (package
@@ -12957,13 +12980,13 @@ information on the technology.")
 (define-public r-igasso
   (package
     (name "r-igasso")
-    (version "1.6")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iGasso" version))
        (sha256
-        (base32 "066g27lv9i4yc6ksz2y14q8xn4k547mfvjwpjjzxm35mjywxbsqg"))))
+        (base32 "050jq6b4k8k8hj0cbxz6dzzjp5lgp8bf00aq9jxwb74pmvmsrlwq"))))
     (properties `((upstream-name . "iGasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-mbess r-mass r-lattice r-compquadform))
@@ -13729,6 +13752,33 @@ potentially time-varying vaccine efficacy (VE) against SARS-@code{CoV-2}
 infection under staggered enrollment and time-varying community transmission,
 allowing crossover of placebo volunteers to the vaccine arm.  Lin, D. Y., Gu,
 Y., Zeng, D., Janes, H. E., and Gilbert, P. B. (2021) <doi:10.1093/cid/ciab630>.")
+    (license license:gpl2)))
+
+(define-public r-idos
+  (package
+    (name "r-idos")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iDOS" version))
+       (sha256
+        (base32 "0i9289isj3a0hy55v5k7vx1zkbhz75mbxgpfj6q18r2f1mmzh2rj"))))
+    (properties `((upstream-name . "iDOS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-venndiagram))
+    (home-page "https://cran.r-project.org/package=iDOS")
+    (synopsis "Integrated Discovery of Oncogenic Signatures")
+    (description
+     "This package provides a method to integrate molecular profiles of cancer
+patients (gene copy number and @code{mRNA} abundance) to identify candidate gain
+of function alterations.  These candidate alterations can be subsequently
+further tested to discover cancer driver alterations.  Briefly, this method
+tests of genomic correlates of @code{mRNA} dysregulation and prioritise those
+where DNA gains/amplifications are associated with elevated @code{mRNA}
+expression of the same gene.  For details see, Haider S et al. (2016) \"Genomic
+alterations underlie a pan-cancer metabolic shift associated with tumour
+hypoxia\", Genome Biology, <https://pubmed.ncbi.nlm.nih.gov/27358048/>.")
     (license license:gpl2)))
 
 (define-public r-idopnetwork

@@ -2462,13 +2462,13 @@ constraints is deleted to resolve the conflicts.")
 (define-public r-lpm
   (package
     (name "r-lpm")
-    (version "2.9")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPM" version))
        (sha256
-        (base32 "0gmymzq6khcnhzv1qnysrd1rdacynys1v95rq7970w6ai87z9w80"))))
+        (base32 "13k0w5183jvwa3gdilrd9fgnxk9n4sf529l1ddl04ymk7f0ar7wb"))))
     (properties `((upstream-name . "LPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-powdist r-mass r-fracdiff))
@@ -2477,7 +2477,8 @@ constraints is deleted to resolve the conflicts.")
     (description
      "Apply Univariate Long Memory Models, Apply Multivariate Short Memory Models To
 Hydrological Dataset, Estimate Intensity Duration Frequency curve to rainfall
-series.")
+series.  NEW -- Calculate the monthly water requirement for herbaceous and
+arboreal plants.")
     (license license:gpl2)))
 
 (define-public r-lpl
@@ -7839,6 +7840,29 @@ Queue is just a \"plain vanilla\" FIFO queue; @code{PriorityQueue} orders items
 according to priority.  Stack implements LIFO.")
     (license license:gpl3)))
 
+(define-public r-lipinskifilters
+  (package
+    (name "r-lipinskifilters")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LipinskiFilters" version))
+       (sha256
+        (base32 "0dfl3rww7x3n6a6d4qb3cyq4qwnx7bhvgw2r5w5hzc7ydl62mbwj"))))
+    (properties `((upstream-name . "LipinskiFilters")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcdk r-knitr r-itertools r-ggplot2 r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LipinskiFilters")
+    (synopsis "Computes and Visualize Lipinski's Parameters")
+    (description
+     "This computes Lipinski Rule of Five parameters and offers visualization for drug
+discovery.  It analyzes molecular properties like molecular weight, hydrogen
+bond donors, acceptors, and A@code{LogP}, providing histograms and pass/fail
+status plots for efficient compound evaluation, aiding in drug development.")
+    (license license:expat)))
+
 (define-public r-lipidomer
   (package
     (name "r-lipidomer")
@@ -8309,6 +8333,34 @@ allows to visualize the clustering results returned by the server.")
 remote sensing related command line interfaces.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-link
+  (package
+    (name "r-link")
+    (version "2024.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "link" version))
+       (sha256
+        (base32 "0yz610hi3si6z9kgfzhn5wj00kbp7bfqfbg1iqs871jcwihbz5xc"))))
+    (properties `((upstream-name . "link")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-rlang
+                             r-knitr
+                             r-httr2
+                             r-htmltools
+                             r-glue
+                             r-downlit
+                             r-bslib))
+    (home-page "https://link.tada.science/")
+    (synopsis "Hyperlink Automatic Detection")
+    (description
+     "Automatic detection of hyperlinks for packages and calls in the text of
+rmarkdown or quarto documents.")
+    (license license:expat)))
 
 (define-public r-linguisticsdown
   (package

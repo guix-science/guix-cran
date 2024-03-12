@@ -9162,13 +9162,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.68")
+    (version "2.0.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "0kqkridlz633cb750dimg7zw6xfamshl7ddnmlk0ir7mg5a94xmg"))))
+        (base32 "10rc6w7jhwzpq6c4764nrsbkn8sn6zvz4lxxixgby88r7zvh6rlc"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12193,13 +12193,13 @@ subgroup structure.")
 (define-public r-emsc
   (package
     (name "r-emsc")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMSC" version))
        (sha256
-        (base32 "0mk7plkp1mfgi6krxn90vyah4x42960wh9v8k81wvxhyg67wc0ml"))))
+        (base32 "1qc478d6y37psyl56707v8axw0hp2fcwxwk5j35ypkn1wjvyckix"))))
     (properties `((upstream-name . "EMSC")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma))
@@ -20903,13 +20903,13 @@ common among other statistical programming languages ('SAS', STATA', and SPSS').
 (define-public r-easypower
   (package
     (name "r-easypower")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easypower" version))
        (sha256
-        (base32 "1vf0zv55yf96wjxja6ifdjvgc9nw0jl0hnc1ygyjd8pmwbgdz9bl"))))
+        (base32 "1w2wkbrvxky6ivi51xmwwl66nfr8ckz34s9vrmq6djx80zbdrmjr"))))
     (properties `((upstream-name . "easypower")))
     (build-system r-build-system)
     (propagated-inputs (list r-pwr))

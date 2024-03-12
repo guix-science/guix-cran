@@ -1873,13 +1873,13 @@ Virtualbox') have to be installed.")
 (define-public r-vmf
   (package
     (name "r-vmf")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vMF" version))
        (sha256
-        (base32 "048hlayd4mqj60np3s9fbryd1fxb6zxzvckz18jp0dbmjbmzwbrl"))))
+        (base32 "1vzg9plrly7xqaahqxl3w2z2kf1wa5w0c25xjld2ksnpb4sb3r4d"))))
     (properties `((upstream-name . "vMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

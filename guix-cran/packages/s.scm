@@ -4112,6 +4112,31 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
+(define-public r-surveygraph
+  (package
+    (name "r-surveygraph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveygraph" version))
+       (sha256
+        (base32 "0bvdvylck3m2891v2aap73ygpqkndrxl4ah1bjpa0lyajgvwlbzh"))))
+    (properties `((upstream-name . "surveygraph")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://surveygraph.ie/")
+    (synopsis "Network Representations of Attitudes")
+    (description
+     "This package provides a tool for computing network representations of attitudes,
+extracted from tabular data such as sociological surveys.  By treating a survey
+as a bipartite network, we measure the similarity between respondents and survey
+items to produce network edges.  We do this in both a respondent network, as
+well as a survey item network.  Used in combination with graph visualisation
+libraries, this techniques helps practitioners in the social sciences identify
+network structure that may be present within a survey at a glance.")
+    (license license:expat)))
+
 (define-public r-surveyexplorer
   (package
     (name "r-surveyexplorer")
@@ -15584,16 +15609,16 @@ in SRTsim': reference-based and reference-free.")
 (define-public r-srt
   (package
     (name "r-srt")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srt" version))
        (sha256
-        (base32 "0m94ycnrlgjvlx9jzb05rdg57yxwsw3p7zjih0m04vb1369j83q1"))))
+        (base32 "0vb9hkz1nzmkv9rgcbc9yxns8ws8ymyggfsnnzjwpklx5y1sf2pl"))))
     (properties `((upstream-name . "srt")))
     (build-system r-build-system)
-    (home-page "https://github.com/kiernann/srt")
+    (home-page "https://k5cents.github.io/srt/")
     (synopsis "Read Subtitle Files as Tabular Data")
     (description
      "Read @code{SubRip} <https://sourceforge.net/projects/subrip/> subtitle files as
@@ -22185,13 +22210,13 @@ straightforward, fast, and flexible.")
 (define-public r-spatialtime
   (package
     (name "r-spatialtime")
-    (version "1.3.4-2")
+    (version "1.3.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialTIME" version))
        (sha256
-        (base32 "1wvxnrglvrzmf471g0dwdr5m69vq8c38sp9hnrvjmrw74y4sdpp4"))))
+        (base32 "0ya7kzi79c3nimx6cjki76g5dzlwi49zczd3wmn25jcxjxknr6da"))))
     (properties `((upstream-name . "spatialTIME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -25389,6 +25414,36 @@ through both VAR- and local projection-based state-dependent forecasts, impulse
 response functions, historical decompositions, and forecast error variance
 decompositions.")
     (license license:gpl3)))
+
+(define-public r-southparkrshiny
+  (package
+    (name "r-southparkrshiny")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SouthParkRshiny" version))
+       (sha256
+        (base32 "0xzy66wa3712zpiarjjwfd93wdspkvnwk374gzabcrjw5jz16pi7"))))
+    (properties `((upstream-name . "SouthParkRshiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-knitr
+                             r-kableextra
+                             r-golem
+                             r-ggpubr
+                             r-ggplot2
+                             r-config
+                             r-bslib
+                             r-box))
+    (home-page "https://github.com/Amalan-ConStat/SouthParkRshiny")
+    (synopsis "Data and 'Shiny' Application for the Show 'SouthPark'")
+    (description
+     "Ratings, votes, swear words and sentiments are analysed for the show
+@code{SouthPark} through a Shiny application after web scraping from IMDB and
+the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
+    (license license:expat)))
 
 (define-public r-soundshape
   (package
@@ -29226,13 +29281,13 @@ also allows dealing with intermittent demand based on the @code{iETS} framework
 (define-public r-smoke
   (package
     (name "r-smoke")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smoke" version))
        (sha256
-        (base32 "1jdl5swg66vqryd40rrqpsnkczmsiaf5x6vlfv774vbnrc6q2v2g"))))
+        (base32 "0kq64l5w5c86qnnqd3q5cm2n33dkfphpjgyxz30d2i0ayq4mjl0s"))))
     (properties `((upstream-name . "smoke")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
@@ -41720,13 +41775,13 @@ colors and size).")
 (define-public r-shinybusy
   (package
     (name "r-shinybusy")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinybusy" version))
        (sha256
-        (base32 "1myarm2g5j91qikxqjx7b1a2kpdyll3mdcmagw9fr443dm2nnwa6"))))
+        (base32 "1bjfi5xdidj8n84mylghvrncvcyg625kj8pnizl59m649k3n10v2"))))
     (properties `((upstream-name . "shinybusy")))
     (build-system r-build-system)
     (arguments
@@ -51033,6 +51088,53 @@ observed sample counts in cells formed by key variables and their interactions.
 Funded by the National Center for Education Statistics.  See Skinner and Shlomo
 (2008) <doi:10.1198/016214507000001328> for a description of the file-level risk
 measures and the loglinear model approach.")
+    (license license:gpl2)))
+
+(define-public r-sdcmicro
+  (package
+    (name "r-sdcmicro")
+    (version "5.7.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdcMicro" version))
+       (sha256
+        (base32 "18qd30rvhqxyh8sxmajc0cs4wys0wvpl7nqw0dhapjkgygwk5nrq"))))
+    (properties `((upstream-name . "sdcMicro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-vim
+                             r-shinybs
+                             r-shiny
+                             r-robustbase
+                             r-rmarkdown
+                             r-rhandsontable
+                             r-rcpp
+                             r-prettydoc
+                             r-mass
+                             r-knitr
+                             r-haven
+                             r-ggplot2
+                             r-e1071
+                             r-dt
+                             r-data-table
+                             r-cluster
+                             r-cardata
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sdcTools/sdcMicro")
+    (synopsis
+     "Statistical Disclosure Control Methods for Anonymization of Data and Risk Estimation")
+    (description
+     "Data from statistical agencies and other institutions are mostly confidential.
+This package, introduced in Templ, Kowarik and Meindl (2017)
+<doi:10.18637/jss.v067.i04>, can be used for the generation of anonymized
+(micro)data, i.e.  for the creation of public- and scientific-use files.  The
+theoretical basis for the methods implemented can be found in Templ (2017)
+<doi:10.1007/978-3-319-50272-4>.  Various risk estimation and anonymization
+methods are included.  Note that the package includes a graphical user interface
+published in Meindl and Templ (2019) <doi:10.3390/a12090191> that allows to use
+various methods of this package.")
     (license license:gpl2)))
 
 (define-public r-sdclog

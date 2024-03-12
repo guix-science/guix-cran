@@ -4480,6 +4480,47 @@ comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
     (license license:gpl3)))
 
+(define-public r-multilevelcoda
+  (package
+    (name "r-multilevelcoda")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multilevelcoda" version))
+       (sha256
+        (base32 "0v499gb26g14c207fqp5z9z0j76q0yk5mgfpmhj35377pib7c14b"))))
+    (properties `((upstream-name . "multilevelcoda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-plotly
+                             r-loo
+                             r-insight
+                             r-hrbrthemes
+                             r-ggplot2
+                             r-foreach
+                             r-extraoperators
+                             r-emmeans
+                             r-dt
+                             r-dofuture
+                             r-data-table
+                             r-compositions
+                             r-bslib
+                             r-brms
+                             r-bayestestr
+                             r-bayesplot
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://florale.github.io/multilevelcoda/")
+    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
+    (description
+     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
+framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
+at between and within-person levels, fit Bayesian multilevel models for
+compositional predictors and outcomes, and run post-hoc analyses such as
+isotemporal substitution models.")
+    (license license:gpl3+)))
+
 (define-public r-multilevel
   (package
     (name "r-multilevel")
@@ -5273,13 +5314,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.8")
+    (version "0.8.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "0rg7d5p4yv5g85ymws7dfzg03kbzwy23p71q87csp3iip9vyf6js"))))
+        (base32 "0b4xk6pr4ffs44iras74mswligfyrx52fgm5yvcs5f4y94bsd6pp"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -8094,6 +8135,27 @@ piecewise constant parameters.  Numerical solutions are provided for its
 extensions.")
     (license license:gpl2+)))
 
+(define-public r-msbstatsdata
+  (package
+    (name "r-msbstatsdata")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSBStatsData" version))
+       (sha256
+        (base32 "06k7fy327d0jrzjcc35lwzl0iax40wm2sfrqwpgw0rh88yaxjzvv"))))
+    (properties `((upstream-name . "MSBStatsData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble))
+    (home-page "https://cran.r-project.org/package=MSBStatsData")
+    (synopsis "Data Sets for Courses at the MÃ¼nster School of Business")
+    (description
+     "This package provides sample data sets that are used in statistics and data
+science courses at the MÃ¼nster School of Business.  The datasets refer to
+different business topics but also other domains, e.g. sports, traffic, etc.")
+    (license license:gpl3+)))
+
 (define-public r-msbp
   (package
     (name "r-msbp")
@@ -10311,13 +10373,13 @@ convenience functions to aid in data processing.")
 (define-public r-mpath
   (package
     (name "r-mpath")
-    (version "0.4-2.23")
+    (version "0.4-2.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpath" version))
        (sha256
-        (base32 "16gd2z40551cn4fg0ljd09q64a4darsh72f8nw6dwvc2sxfj220n"))))
+        (base32 "1131bmp0jqz846snjbg57pd8kmn2jynz4xsck119qxspclw476ab"))))
     (properties `((upstream-name . "mpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightsvm
@@ -10344,7 +10406,7 @@ zero-inflated negative binomial regression models and robust models with
 non-convex loss functions.  Wang et al. (2014) <doi:10.1002/sim.6314>, Wang et
 al. (2015) <doi:10.1002/bimj.201400143>, Wang et al. (2016)
 <doi:10.1177/0962280214530608>, Wang (2021) <doi:10.1007/s11749-021-00770-2>,
-Wang (2020) <@code{arXiv:2010.02848>}.")
+Wang (2024) <doi:10.1111/anzs.12409>.")
     (license license:gpl2)))
 
 (define-public r-mp
@@ -11562,6 +11624,29 @@ list; the R package quanteda'; the marimo repository; the Perseus project; and
 A. Berra's list of stop words for Ancient Greek and Latin.")
     (license license:expat)))
 
+(define-public r-morepls
+  (package
+    (name "r-morepls")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "morepls" version))
+       (sha256
+        (base32 "14rpzq9833b5idf8jzx83rdmy3w7bk44iafpf5ynlnvz7lyc96fv"))))
+    (properties `((upstream-name . "morepls")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-pls r-ggrepel r-ggplot2))
+    (home-page "https://cran.r-project.org/package=morepls")
+    (synopsis "Interpretation Tools for Partial Least Squares Regression")
+    (description
+     "Various kinds of plots (observations, variables, correlations, weights,
+regression coefficients and Variable Importance in the Projection) and aids to
+interpretation (coefficients, Q2, correlations, redundancies) for partial least
+squares regressions computed with the pls package, following Tenenhaus (1998,
+ISBN:2-7108-0735-1).")
+    (license license:gpl2+)))
+
 (define-public r-moreparty
   (package
     (name "r-moreparty")
@@ -11771,18 +11856,21 @@ examples and a shiny app.")
 (define-public r-moodef
   (package
     (name "r-moodef")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodef" version))
        (sha256
-        (base32 "0x8ldyk4251nkclg61f3hyd5l067h9gyslv8fp3vpws61a9qbm6z"))))
+        (base32 "03crry7lkk04nm6vh9fgzmyq27xvzs4c8nal1j46bbrkb8i984bq"))))
     (properties `((upstream-name . "moodef")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
+                             r-xlsx
                              r-tidyr
+                             r-tibble
                              r-snakecase
+                             r-readxl
                              r-readr
                              r-purrr
                              r-magick
@@ -17136,13 +17224,13 @@ cross-validation if ignored.")
 (define-public r-mlr3spatial
   (package
     (name "r-mlr3spatial")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatial" version))
        (sha256
-        (base32 "0nwl97zirdnmhd322wxnwrscwwv5vym6nagmhj5wr80d4jwdmy45"))))
+        (base32 "105wscgkrlgckrmisr1b5xf8wlj9w2w7ir8w1280isyg2zp1gva8"))))
     (properties `((upstream-name . "mlr3spatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -17308,13 +17396,13 @@ black-box optimization in bbotk.")
 (define-public r-mlr3fselect
   (package
     (name "r-mlr3fselect")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fselect" version))
        (sha256
-        (base32 "0z47gygf1s4967gj9n5dsjymy9bcr7j8c7s3z7k4qmbnh71nn9w6"))))
+        (base32 "1f18y4ahnjzlwk9pfs87i80kb6z84hgyc5cdlj3mafawq790hg1h"))))
     (properties `((upstream-name . "mlr3fselect")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -19051,6 +19139,36 @@ model packages as a back end as described by Ranke et al. (2021)
 <doi:10.3390/environments8080071>.  Please note that no warranty is implied for
 correctness of results or fitness for a particular purpose.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-mkendall
+  (package
+    (name "r-mkendall")
+    (version "1.5-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MKendall" version))
+       (sha256
+        (base32 "15ldzsz99i30x05bi73j3wny1xl0gzdxz3jqjq7dfygdb2gyz1jy"))))
+    (properties `((upstream-name . "MKendall")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=MKendall")
+    (synopsis "Matrix Kendall's Tau and Matrix Elliptical Factor Model")
+    (description
+     "Large-scale matrix-variate data have been widely observed nowadays in various
+research areas such as finance, signal processing and medical imaging.
+Modelling matrix-valued data by matrix-elliptical family not only provides a
+flexible way to handle heavy-tail property and tail dependencies, but also
+maintains the intrinsic row and column structure of random matrices.  We
+proposed a new tool named matrix Kendall's tau which is efficient for analyzing
+random elliptical matrices.  By applying this new type of Kendellâs tau to the
+matrix elliptical factor model, we propose a Matrix-type Robust Two-Step (MRTS)
+method to estimate the loading and factor spaces.  See the details in He at al.
+(2022) <@code{arXiv:2207.09633>}.  In this package, we provide the algorithms
+for calculating sample matrix Kendall's tau, the MRTS method and the Matrix
+Kendall's tau Eigenvalue-Ratio (MKER) method which is used for determining the
+number of factors.")
+    (license license:gpl2)))
 
 (define-public r-mkdescr
   (package
@@ -27064,17 +27182,17 @@ inter-laboratory metrology comparison studies.")
 (define-public r-metro
   (package
     (name "r-metro")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metro" version))
        (sha256
-        (base32 "0w9h7hdnkw7bv85z8cvy7pgxs96sf4nn1ri6bz7knyb6kgvhfqq1"))))
+        (base32 "1dm759z7rb86fnqmrhzbnljhq9v60w8gspy09zkzjdfjzn06q17d"))))
     (properties `((upstream-name . "metro")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr r-hms r-geodist))
-    (home-page "https://github.com/kiernann/metro")
+    (home-page "https://k5cents.github.io/metro/")
     (synopsis "Washington Metropolitan Area Transit Authority API")
     (description
      "The Washington Metropolitan Area Transit Authority is a government agency
@@ -27082,7 +27200,7 @@ operating light rail and passenger buses in the Washington D.C. area.  With a
 free developer account, access their Metro Transparent Data Sets API
 <https://developer.wmata.com/> to return data frames of transit data for easy
 analysis.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-metrix
   (package
@@ -28627,41 +28745,6 @@ space or time across aggregation levels.  This package contains a layout
 algorithm specifically designed for trophic networks, using dimension reduction
 on a diffusion graph kernel and trophic levels.  Importantly, this package
 provides a layout method applicable for large trophic networks.")
-    (license license:gpl3)))
-
-(define-public r-metanet
-  (package
-    (name "r-metanet")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaNet" version))
-       (sha256
-        (base32 "1w9pkm63kb6wirarcq0yvn0qr9ci0qsa60q2ck6g28bylk0wgzg3"))))
-    (properties `((upstream-name . "MetaNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-reshape2
-                             r-pcutils
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Asa12138/MetaNet")
-    (synopsis "Network Analysis for Omics Data")
-    (description
-     "Comprehensive network analysis package.  Calculate correlation network fastly,
-accelerate lots of analysis by parallel computing.  Support for multi-omics
-data, search sub-nets fluently.  Handle bigger data, more than 10,000 nodes in
-each omics.  Offer various layout method for multi-omics network and some
-interfaces to other software ('Gephi', Cytoscape', ggplot2'), easy to visualize.
- Provide comprehensive topology indexes calculation, including ecological
-network stability.")
     (license license:gpl3)))
 
 (define-public r-metan
