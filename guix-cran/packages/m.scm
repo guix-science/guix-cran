@@ -13070,13 +13070,13 @@ is supported by a U.S. National Science Foundation (NSF) grant CMMI-1921646
 (define-public r-moexer
   (package
     (name "r-moexer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moexer" version))
        (sha256
-        (base32 "039mww0rkk9s6452zl5skgnhlbnwf19nnf1xa75rsr6ikznvnppd"))))
+        (base32 "09jr2vhj00k1cv1a0ki68mkd3mhky3smxwkaxw2m2d0h8w34jsyi"))))
     (properties `((upstream-name . "moexer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18923,13 +18923,13 @@ designs.")
 (define-public r-mkpower
   (package
     (name "r-mkpower")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKpower" version))
        (sha256
-        (base32 "0685f82vlmf789j3jm4d4193ccihs5qywl4d4cng3m1r9x57yv8d"))))
+        (base32 "0mw2z2jglq64bbwkjbwyxxdljr2n2drrrjjxp2jydvl3zqzaq553"))))
     (properties `((upstream-name . "MKpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-qqplotr
@@ -18952,8 +18952,9 @@ et al. (2005), <doi:10.1016/j.jclinepi.2004.12.009>; Dobbin and Simon (2007),
 et al. (2003), ISBN:978-0-471-52629-2; Piegorsch (2004),
 <doi:10.1016/j.csda.2003.10.002>; Thulin (2014), <doi:10.1214/14-ejs909>),
 comparing two negative binomial rates (Zhu and Lakkis (2014),
-<doi:10.1002/sim.5947>), and ANCOVA (Shieh (2020),
-<doi:10.1007/s11336-019-09692-3>).")
+<doi:10.1002/sim.5947>), ANCOVA (Shieh (2020),
+<doi:10.1007/s11336-019-09692-3>), and reference ranges (Jennen-Steinmetz and
+Wellek (2005), <doi:10.1002/sim.2177>).")
     (license license:lgpl3)))
 
 (define-public r-mkomics
@@ -28948,6 +28949,42 @@ difference of medians across groups.  Additionally, a number of methods (e.g.,
 to find differentially expressed genes.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-metalyzer
+  (package
+    (name "r-metalyzer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetAlyzer" version))
+       (sha256
+        (base32 "0b5kznmqq7kda5qan5jyxy5s41y367dmq2fxk7mihjnmn9fp282n"))))
+    (properties `((upstream-name . "MetAlyzer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-summarizedexperiment
+                             r-stringr
+                             r-s4vectors
+                             r-rlang
+                             r-qvalue
+                             r-openxlsx
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-agricolae))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nilsmechtel/MetAlyzer")
+    (synopsis "Read and Analyze 'MetIDQ&trade;' Software Output Files")
+    (description
+     "The @code{MetAlyzer} S4 object provides methods to read and reformat
+metabolomics data for convenient data handling, statistics and downstream
+analysis.  The resulting format corresponds to input data of the Shiny app
+@code{MetaboExtract}
+(<https://www.metaboextract.shiny.dkfz.de/@code{MetaboExtract/>}).")
+    (license license:gpl3)))
+
 (define-public r-metalonda
   (package
     (name "r-metalonda")
@@ -33323,17 +33360,17 @@ therefore find the most appropriate action to take.  Graham WJ (2009)
 (define-public r-mdbr
   (package
     (name "r-mdbr")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdbr" version))
        (sha256
-        (base32 "1c33v2dqz1jjh730p486bi07h9m9clpcfrbvhbvwb8fslqxg76qd"))))
+        (base32 "0mzd0qvwq3dvqdhp0dk7ad11m9bqh8jf3m7b8i6255s7c3rs3r0h"))))
     (properties `((upstream-name . "mdbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr))
-    (home-page "https://github.com/kiernann/mdbr")
+    (home-page "https://k5cents.github.io/mdbr/")
     (synopsis "Work with Microsoft Access Files")
     (description
      "Use the open source MDB Tools utilities <https://github.com/mdbtools/mdbtools/>.
@@ -34198,13 +34235,13 @@ collection of test functions.")
 (define-public r-mcmsupply
   (package
     (name "r-mcmsupply")
-    (version "0.2.2")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmsupply" version))
        (sha256
-        (base32 "0mzph8grgcz62rz2z4y4dgmp9xapf2b29lck960lhqp7h2m9awg4"))))
+        (base32 "0qp3b31rr18b7a22sg5xq3110d4q6frsszcxlppam404jmhbjwb9"))))
     (properties `((upstream-name . "mcmsupply")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

@@ -1044,13 +1044,13 @@ the counterpart of the Shiny Application, <https://dynamicfit.app>.")
 (define-public r-dynamaedes
   (package
     (name "r-dynamaedes")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamAedes" version))
        (sha256
-        (base32 "1pmcxdac29lwy94l1k9fn4b7chp4c6vj27aajhyf6fhxa41dq921"))))
+        (base32 "0dzr8wf00hwwnivqn73hcgdncx8jkka54fygiy6iz9b065ilcvqi"))))
     (properties `((upstream-name . "dynamAedes")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -19803,13 +19803,13 @@ trees and neural network.")
 (define-public r-deepdep
   (package
     (name "r-deepdep")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepdep" version))
        (sha256
-        (base32 "0qcvspclzfw5w18k67j19410000ndma47x3b86s5jxa7cgzjarvk"))))
+        (base32 "1pz07zznlpqjkkpf5r1ik0shl7kj0vn4l5dmvs7ggc7k5n7ig3b2"))))
     (properties `((upstream-name . "deepdep")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-cranlogs))
@@ -19822,7 +19822,7 @@ deepdep() function allows to acquire deep dependencies of any package and plot
 them in an elegant way.  It also adds some popularity measures for the packages
 e.g. in the form of download count through the cranlogs package.  Uses the CRAN
 metadata database <http://crandb.r-pkg.org> and Bioconductor metadata
-<http://bioconductor.org>.  Other data acquire functions are:
+<https://bioconductor.org>.  Other data acquire functions are:
 get_dependencies(), get_downloads() and get_description().  The deepdep_shiny()
 function runs shiny application that helps to produce a nice deepdep plot.")
     (license license:gpl3)))

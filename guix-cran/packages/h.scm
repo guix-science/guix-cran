@@ -131,6 +131,34 @@ series data from the @code{HysTAR} model.  For details, see Li, Guan, Li and Yu
 they test.  This allows to keep functional and unit test code together.")
     (license license:expat)))
 
+(define-public r-hysaint
+  (package
+    (name "r-hysaint")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hySAINT" version))
+       (sha256
+        (base32 "15rzlk599b5kanfqx4g9aaxnxvxk6nl6mlhvs97nn2aary91rci4"))))
+    (properties `((upstream-name . "hySAINT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-variablescreening
+                             r-sis
+                             r-selectiveinference
+                             r-pracma
+                             r-matrix
+                             r-energy))
+    (home-page "https://cran.r-project.org/package=hySAINT")
+    (synopsis "Hybrid Genetic and Simulated Annealing for Variable Selection")
+    (description
+     "We provide a stage-wise selection method using genetic algorithms, designed to
+efficiently identify main and two-way interactions within high-dimensional
+linear regression models.  Additionally, it implements simulated annealing
+algorithms during the mutation process.  The relevant paper can be found at: Ye,
+C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
+    (license license:gpl2)))
+
 (define-public r-hyrim
   (package
     (name "r-hyrim")
@@ -10874,13 +10902,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.5.9")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "076y9ic49slxqxzv3i4rjfnmmsvna7yv86jnp7w41lnn4743jl2l"))))
+        (base32 "0a9fdb3mx1rgnmdpjxjwgj0xlcd2cw43ydrj5mmld186w0c14kdz"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10888,10 +10916,11 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
     (synopsis "Design and Analysis of Hierarchical Composite Endpoints")
     (description
      "Simulate and analyze hierarchical composite endpoints.  Win odds is the main
-analysis method.  See Gasparyan SB et al (2022) \"Design and Analysis of Studies
-Based on Hierarchical Composite Endpoints: Insights from the DARE-19 Trial.\"
-Therapeutic Innovation & Regulatory Science 56: 785â794.
-<doi:10.1007/s43441-022-00420-1>.")
+analysis method, but other win statistics (win ratio, net benefit) are
+implemented as well in case of no censoring.  See Gasparyan SB et al (2023)
+\"Hierarchical Composite Endpoints in COVID-19: The DARE-19 Trial.\" Case Studies
+in Innovative Clinical Trials, 95-148.  Chapman; Hall/CRC.
+<doi:10.1201/9781003288640-7>.")
     (license license:expat)))
 
 (define-public r-hcd
@@ -12728,6 +12757,28 @@ out cycle-spinning.  Main reference: Fryzlewicz, P. and Nason, G.P. (2004) \"A
 Haar-Fisz algorithm for Poisson intensity estimation.\" Journal of Computational
 and Graphical Statistics, 13, 621-638. <doi:10.1198/106186004X2697>.")
     (license license:gpl2+)))
+
+(define-public r-h3r
+  (package
+    (name "r-h3r")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "h3r" version))
+       (sha256
+        (base32 "0i4k66092aqj32snh94pifhml95md2f03y698zvzscl8bgxwlra7"))))
+    (properties `((upstream-name . "h3r")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-h3lib))
+    (home-page "https://symbolixau.github.io/h3r/")
+    (synopsis "Hexagonal Hierarchical Geospatial Indexing System")
+    (description
+     "This package provides access to Uber's H3 geospatial indexing system via h3lib
+<https://CRAN.R-project.org/package=h3lib>.  h3r is designed to mimic the H3
+Application Programming Interface (API) <https://h3geo.org/docs/api/indexing/>,
+so that any function in the API is also available in h3r'.")
+    (license license:expat)))
 
 (define-public r-h3lib
   (package

@@ -2882,26 +2882,24 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "117y4zadp7js2j49x5qk9mb0kik4aczw8j5jbmk7iyrjx0p6jh8g"))))
+        (base32 "07p3v2lsp0g15d4lqsfmqclac6s9jz7qld8abcrdy0sxnir36q6m"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-stringr
                              r-rlang
                              r-omopgenerics
-                             r-officer
-                             r-gt
+                             r-lifecycle
                              r-glue
-                             r-flextable
+                             r-generics
                              r-dplyr
-                             r-cli
-                             r-checkmate))
+                             r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://oxford-pharmacoepi.github.io/visOmopResults/")
     (synopsis "Graphs and Tables for OMOP Results")
     (description

@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -4435,38 +4435,39 @@ or industry analysis.")
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "1150dy8qllm4qsficj9p1mzmqsgkw6m824yyykv784s8ikghlvj6"))))
+        (base32 "101j4abar8za1llgv7j6cn7f970nrf1qbi3g888p5xkzar8aczkv"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-ttr
                              r-rlang
-                             r-rcolorbrewer
                              r-plotly
-                             r-magrittr
+                             r-paletteer
                              r-lifecycle
-                             r-httr2
+                             r-jsonlite
                              r-curl
+                             r-conflicted
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://serkor1.github.io/cryptoQuotes/")
     (synopsis
-     "Streamlined Access to OHLC-v Market Data and Sentiment Indicators")
+     "Streamlined Access to Cryptocurrency OHLC-V Market Data and Sentiment Indicators")
     (description
-     "This high-level API client offers a streamlined access to comprehensive
-cryptocurrency market data from major exchanges.  It features robust OHLC-V
-(Open, High, Low, Close, Volume) candle data with flexible granularity, ranging
-from seconds to months, and includes insightful sentiment indicators.  By
-aggregating data directly from leading exchanges, this package ensures a
-reliable and stable flow of market information, eliminating the need for
-complex, low-level API interactions.")
+     "This high-level API client offers a streamlined access to public cryptocurrency
+market data and sentiment indicators.  It features OHLC-V (Open, High, Low,
+Close, Volume) that comes with granularity ranging from seconds to months and
+essential sentiment indicators to develop and backtest trading strategies, or
+conduct detailed market analysis.  By interacting directly with the major
+cryptocurrency exchanges this package ensures a reliable, and stable, flow of
+market information, eliminating the need for complex, low-level API interactions
+or webcrawlers.")
     (license license:gpl2+)))
 
 (define-public r-cryptography
@@ -5752,13 +5753,13 @@ continuous range.")
 (define-public r-cropgrowdays
   (package
     (name "r-cropgrowdays")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cropgrowdays" version))
        (sha256
-        (base32 "1vvyknbgnz0d5f4rjl3vw4a9adzgwqkzxb2wnf2x6yqfhniw6s2p"))))
+        (base32 "08k525882lm1x2igz1pk8g3kjiikcw68yqpic240l3lzq0x2wi3y"))))
     (properties `((upstream-name . "cropgrowdays")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -8504,6 +8505,60 @@ Schemper (2001) and Heinze and Dunkler (2008).  The program fits profile
 penalized likelihood confidence intervals which were proved to outperform Wald
 confidence intervals.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-coxmos
+  (package
+    (name "r-coxmos")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Coxmos" version))
+       (sha256
+        (base32 "0k20rxxzcszj63kk374mhqs138mszxvqs9jqdg6g2cf04712gd5a"))))
+    (properties `((upstream-name . "Coxmos")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-svglite
+                             r-survminer
+                             r-survival
+                             r-survcomp
+                             r-scattermore
+                             r-rdpack
+                             r-purrr
+                             r-progress
+                             r-mixomics
+                             r-mass
+                             r-glmnet
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-cowplot
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/BiostatOmics/Coxmos")
+    (synopsis "Cox MultiBlock Survival")
+    (description
+     "This software package provides Cox survival analysis for high-dimensional and
+multiblock datasets.  It encompasses a suite of functions dedicated from the
+classical Cox regression to newest analysis, including Cox proportional hazards
+model, Stepwise Cox regression, and Elastic-Net Cox regression, Sparse Partial
+Least Squares Cox regression (@code{sPLS-COX}) incorporating three distinct
+strategies, and two Multiblock-PLS Cox regression (MB-@code{sPLS-COX}) methods.
+This tool is designed to adeptly handle high-dimensional data, and provides
+tools for cross-validation, plot generation, and additional resources for
+interpreting results.  While references are available within the corresponding
+functions, key literature is mentioned below.  Terry M Therneau (2024)
+<https://CRAN.R-project.org/package=survival>, Noah Simon et al. (2011)
+<doi:10.18637/jss.v039.i05>, Philippe Bastien et al. (2005)
+<doi:10.1016/j.csda.2004.02.005>, Philippe Bastien (2008)
+<doi:10.1016/j.chemolab.2007.09.009>, Philippe Bastien et al. (2014)
+<doi:10.1093/bioinformatics/btu660>, Kassu Mehari Beyene and Anouar El Ghouch
+(2020) <doi:10.1002/sim.8671>, Florian Rohart et al. (2017)
+<doi:10.1371/journal.pcbi.1005752>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-coxme
   (package
@@ -17531,6 +17586,31 @@ returns X (the expected residual matrix) and a vector of the relative gene
 importances.")
     (license license:gpl2+)))
 
+(define-public r-compgr
+  (package
+    (name "r-compgr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompGR" version))
+       (sha256
+        (base32 "0ck4kmb4h2i7qgikmy7i0cwhf14nh71pdf4mnss4ahxac4xsh2rr"))))
+    (properties `((upstream-name . "CompGR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CompGR")
+    (synopsis "Complete Annual Growth Rate Generator")
+    (description
+     "It is designed to streamline the process of calculating complete annual growth
+rates with user-friendly functions and robust algorithms.  It enables
+researchers and analysts to effortlessly generate precise growth rate estimates
+for their data.  For method details see, Sharma, M.K.(2013)
+<https://www.indianjournals.com/ijor.aspx?target=ijor:jfl&volume=26&issue=1and2&article=018>.
+ It offers a comprehensive suite of functions and customisable parameters.
+Equipped to handle varying complexities in data structures.  It empowers users
+to uncover insightful growth dynamics and make informed decisions.")
+    (license license:gpl2+)))
+
 (define-public r-competitiontoolbox
   (package
     (name "r-competitiontoolbox")
@@ -18857,13 +18937,13 @@ to ensure command line output looks nice on dark as well as light consoles.")
 (define-public r-cols4all
   (package
     (name "r-cols4all")
-    (version "0.7")
+    (version "0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cols4all" version))
        (sha256
-        (base32 "1rfc0l710q3jalwxnq9hpmls46r0pc4x648fpb36i20sc3amdli1"))))
+        (base32 "0qjmrafzx7gw8glbpxsmrb2qkddgbqq3rvb16jzcq5jm5m77klns"))))
     (properties `((upstream-name . "cols4all")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-spacesxyz r-png r-colorspace
@@ -24032,6 +24112,58 @@ present.  The clustermole R package provides methods to query thousands of human
 and mouse cell identity markers sourced from a variety of databases.")
     (license license:expat)))
 
+(define-public r-clustermi
+  (package
+    (name "r-clustermi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clusterMI" version))
+       (sha256
+        (base32 "0w0mja9dybcf04x1q6d6qpb1jli247pqamcl1fcwlgnkmhl542c2"))))
+    (properties `((upstream-name . "clusterMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-usedist
+                             r-rfast
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-npbayesimputecat
+                             r-mix
+                             r-micemd
+                             r-mice
+                             r-mclust
+                             r-lattice
+                             r-knockoff
+                             r-glmnet
+                             r-fpc
+                             r-factominer
+                             r-e1071
+                             r-dicer
+                             r-clusterr
+                             r-cluster
+                             r-cat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clusterMI")
+    (synopsis "Cluster Analysis with Missing Values by Multiple Imputation")
+    (description
+     "Allows clustering of incomplete observations by addressing missing values using
+multiple imputation.  For achieving this goal, the methodology consists in three
+steps.  I) Missing data imputation using dedicated models.  Four multiple
+imputation methods are proposed, two are based on joint modelling and two are
+fully sequential methods.  II) cluster analysis of imputed data sets.  Six
+clustering methods are available (distances-based or model-based), but custom
+methods can also be easily used.  III) Partition pooling, The set of partitions
+is aggregated using Non-negative Matrix Factorization based method.  An
+associated instability measure is computed by bootstrap.  Among applications,
+this instability measure can be used to choose a number of clusters with missing
+values.  The package also proposes several diagnostic tools to tune the number
+of imputed data sets, to tune the number of iterations in fully sequential
+imputation, to check the fit of imputation models, etc.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-clustering-sc-dp
   (package
     (name "r-clustering-sc-dp")
@@ -24785,17 +24917,18 @@ Its implementation in R is called @code{ClueR}.  See README on
 (define-public r-clubpro
   (package
     (name "r-clubpro")
-    (version "0.5.5")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clubpro" version))
        (sha256
-        (base32 "1iady5hvjkiiwbjpyyv0m8pc5jbyb0ra7vsywfbl4vhvw4v4sxvz"))))
+        (base32 "0yxqs6idgzc00mnmr04z2h915qx3jmz1fp03lz0bzjawv6yda2v1"))))
     (properties `((upstream-name . "clubpro")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-lattice))
-    (home-page "https://github.com/timbeechey/clubpro")
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-lattice))
+    (native-inputs (list r-knitr))
+    (home-page "https://timbeechey.github.io/clubpro/")
     (synopsis "Classification Using Binary Procrustes Rotation")
     (description
      "This package implements a classification method described by Grice (2011,
@@ -32637,13 +32770,13 @@ package.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "0cx1fzhy190fbk4sk1a9c3rh2dli0b9r2q6h5wqm4dmv6ks4banx"))))
+        (base32 "1vmgxj59iyhmfbr1vjisr8ml9ql2i1pi0wlhm3gz3cwng3cwb392"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
@@ -39492,13 +39625,13 @@ and produce the resulting merge by time period and geographical region.")
 (define-public r-cansim
   (package
     (name "r-cansim")
-    (version "0.3.15")
+    (version "0.3.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cansim" version))
        (sha256
-        (base32 "1311yikp636r1681vkcn0phmpx3a773i9d7yp748z8845r4jdcy3"))))
+        (base32 "144p7zc44xb0szslsrxg1q1lhn5rizlgc0rvsinwzglnkzl478p2"))))
     (properties `((upstream-name . "cansim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

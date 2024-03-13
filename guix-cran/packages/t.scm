@@ -12602,13 +12602,13 @@ install Roboto Condensed'.")
 (define-public r-tinytest2junit
   (package
     (name "r-tinytest2junit")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytest2JUnit" version))
        (sha256
-        (base32 "0m49plrxp2cglj2h37kfr2wknspxdzv4331vcxjf27hm8wk17wwq"))))
+        (base32 "01x43bfma2r5sqk2ccxlmiwnz86gx14vapiszp2daf38f5x82l3b"))))
     (properties `((upstream-name . "tinytest2JUnit")))
     (build-system r-build-system)
     (home-page "https://github.com/openanalytics/tinytest2JUnit")
@@ -16503,13 +16503,13 @@ uncertainty bands.")
 (define-public r-tidyaml
   (package
     (name "r-tidyaml")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyAML" version))
        (sha256
-        (base32 "0nifz4c1n7b1xbj3hp4kvsqcdmpsdrqv7zi6q58chsf9zhhlakni"))))
+        (base32 "0vv6nfw113h1pph06h9smm31b1j2zz3z5a9dalc6ldgs7pjb16gi"))))
     (properties `((upstream-name . "tidyAML")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflowsets
@@ -16519,11 +16519,13 @@ uncertainty bands.")
                              r-rlang
                              r-purrr
                              r-parsnip
+                             r-magrittr
+                             r-ggplot2
                              r-forcats
                              r-dplyr
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/spsanderson/tidyAML")
+    (home-page "https://www.spsanderson.com/tidyAML/")
     (synopsis "Automatic Machine Learning with 'tidymodels'")
     (description
      "The goal of this package will be to provide a simple interface for automatic
@@ -19256,13 +19258,13 @@ information regarding the methodology see Meier, Mata & Wulff (2022)
 (define-public r-text2map
   (package
     (name "r-text2map")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text2map" version))
        (sha256
-        (base32 "1g3zb05qwhy5dax75cwb08jikd0fix119h60qhkgirc2qdkf10n7"))))
+        (base32 "0ikiwfhm0m6ygzgx05ds1vhxlvvajb20fs5aif6h35y3zb5p24zl"))))
     (properties `((upstream-name . "text2map")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22833,13 +22835,13 @@ Wadhwa et al. (2018) <doi:10.21105/joss.00860>.")
 (define-public r-tdapplied
   (package
     (name "r-tdapplied")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TDApplied" version))
        (sha256
-        (base32 "1nvh4jx101ly94ki03fnkiqw7yjl0nbkyfvdbjp1w5wib6h5sbb1"))))
+        (base32 "112zkkmi2677kyxkrk2669xdcr7g3f7saqa4iy2qi8k36all87l7"))))
     (properties `((upstream-name . "TDApplied")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist
@@ -22862,7 +22864,7 @@ for analyzing groups of persistence diagrams with machine learning and
 statistical inference, and these functions can also interface with other data
 science packages to form flexible and integrated topological data analysis
 pipelines.")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-tdakit
   (package

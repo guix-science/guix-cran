@@ -3971,13 +3971,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "1fqgpy2mdnx8gj143sl4nrnap66lyx2549lxq33fpdgrhhawv711"))))
+        (base32 "0zkj33xg6b7aapmp8qd333qc6mmcwhbqx3pd8ibhdlcd1pc89hww"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -8020,6 +8020,27 @@ pre-processing and analyses of GSIS experiments in a friendly-user interface.
 The Shiny App was initially designed for @code{EndoC-betaH1} cell line following
 method described in Ndiaye et al., 2017 (<doi:10.1016/j.molmet.2017.03.011>).")
     (license license:expat)))
+
+(define-public r-inquilab
+  (package
+    (name "r-inquilab")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Inquilab" version))
+       (sha256
+        (base32 "1hmfrjvwvv56z19cpp9ndwn3g3i3dlwm9yg3f6g5846w81jfkb3n"))))
+    (properties `((upstream-name . "Inquilab")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Inquilab")
+    (synopsis
+     "Dissipation Kinetics Analysis, Half Life Period, Rate Constant, Plots")
+    (description
+     "For environmental chemists, ecologists, researchers and agricultural scientists
+to understand the dissipation kinetics, calculate the half-life periods and rate
+constants of compounds, pesticides, contaminants in different matrices.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-inqc
   (package

@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -9112,13 +9111,13 @@ significance of individual variables in high-dimensional linear regression.")
 (define-public r-rpsftm
   (package
     (name "r-rpsftm")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpsftm" version))
        (sha256
-        (base32 "0smwr4cm6vpl90k3s4j9k4bpqc69n4mxcqypr4hav1pdg74rknkh"))))
+        (base32 "0ikkffy9fh95xbj0ycgmg4852x390qxidh9g9h9x31v40n8xb7f5"))))
     (properties `((upstream-name . "rpsftm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ggplot2))
@@ -15506,13 +15505,13 @@ covariance matrices, M-estimates for discrete generalized linear models.")
 (define-public r-roben
   (package
     (name "r-roben")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roben" version))
        (sha256
-        (base32 "18k0h1y2xhvdssg28b9s4whn3kcbdgkz55dp1y3rrczw8xrm54mm"))))
+        (base32 "0ak3l17wmw2z0rgaymqczv40z8kqaflzzjj0fbdfcnskdik2ynfq"))))
     (properties `((upstream-name . "roben")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
@@ -17388,13 +17387,13 @@ Wada, Kawano & Tsubaki (2020) <doi:10.17713/ajs.v49i2.872>.")
 (define-public r-rmsb
   (package
     (name "r-rmsb")
-    (version "1.0-0")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsb" version))
        (sha256
-        (base32 "0wzwrv9dzg228gzg39k1lfqxxmv502v4x8xhppq5ifi6zg9sp8sh"))))
+        (base32 "1pwx9y1jppy7fvm7wr5gnxmjrcfzc1x9n5p2ybc5xisz1ymb2fdn"))))
     (properties `((upstream-name . "rmsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -24178,24 +24177,16 @@ Laplace Mixture Model.")
 (define-public r-rgm
   (package
     (name "r-rgm")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgm" version))
        (sha256
-        (base32 "08skg5hkmk9l7wrd3snnkjhwq766rm871kf494344q91l3d9qx66"))))
+        (base32 "02g0sma5n2mj46sj138scshb18clihgl85lfsmrznjbxrpasclzs"))))
     (properties `((upstream-name . "rgm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-reshape2
-                             r-rcpp
-                             r-proc
-                             r-mvtnorm
-                             r-mass
-                             r-huge
-                             r-ggplot2
-                             r-bdgraph))
+    (propagated-inputs (list r-truncnorm r-rcpp r-mass r-huge r-bdgraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rgm")
     (synopsis "Advanced Inference with Random Graphical Models")
@@ -24534,6 +24525,37 @@ which is an open-source software tool that serves as an introduction to spatial
 data analysis.  The @code{GeoDa} software and its documentation are available at
 <https://geodacenter.github.io>.")
     (license license:gpl2+)))
+
+(define-public r-rgeoboundaries
+  (package
+    (name "r-rgeoboundaries")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rgeoboundaries" version))
+       (sha256
+        (base32 "1hw96fq781zfyy0gq0flpizd6aq0av2hpvrcsvyh43n3vjfhy2n3"))))
+    (properties `((upstream-name . "rgeoboundaries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-memoise
+                             r-lifecycle
+                             r-jsonlite
+                             r-hoardr
+                             r-glue
+                             r-crul
+                             r-countrycode))
+    (home-page "https://github.com/wmgeolab/rgeoboundaries")
+    (synopsis "geoBoundaries Client")
+    (description
+     "This package provides access to the @code{geoBoundaries} international boundary
+database <https://www.geoboundaries.org>, a NSF and foundation supported dataset
+of subnational boundaries around the globe.  Methods allow you to access data
+directly from the API <https://www.geoboundaries.org/api/current/> to query for
+the geometric boundaries for any country, globally.  For more details, refer to
+the publication by Runfola et al. (2020) <doi:10.1371/journal.pone.0231866>.")
+    (license license:expat)))
 
 (define-public r-rgenoud
   (package
@@ -42254,35 +42276,6 @@ Accepts both filename inputs and in-memory array representations of images and
 matrices.  Includes functions to perform 2D convolutions, reorient and resize
 images/matrices, add image overlays, generate camera vignette effects, and add
 titles to images.")
-    (license license:gpl3)))
-
-(define-public r-raybevel
-  (package
-    (name "r-raybevel")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "raybevel" version))
-       (sha256
-        (base32 "0kvc0kw7n3ndrbiwh1gq8f0s2l5wdlmpydrjpqy9w2gfdgpgjz75"))))
-    (properties `((upstream-name . "raybevel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rcppthread
-                             r-rcppcgal
-                             r-rcpp
-                             r-rayvertex
-                             r-progress
-                             r-digest
-                             r-decido
-                             r-bh))
-    (home-page "https://www.raybevel.com")
-    (synopsis "Generates Polygon Straight Skeletons and 3D Bevels")
-    (description
-     "Generates polygon straight skeletons and 3D models.  Provides functions to
-create and visualize interior polygon offsets, 3D beveled polygons, and 3D roof
-models.")
     (license license:gpl3)))
 
 (define-public r-raws-profile

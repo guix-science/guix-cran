@@ -4063,6 +4063,31 @@ unequal occurrences.  See the detailed methodology by Birks et al. (1990)
 <doi:10.1046/j.1365-2427.2003.01080.x>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-optimmodel
+  (package
+    (name "r-optimmodel")
+    (version "2.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OptimModel" version))
+       (sha256
+        (base32 "1c53jryrvzjhkgjppvf8kx7fvfss2x52v6wx90sfw57710dl9wvx"))))
+    (properties `((upstream-name . "OptimModel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OptimModel")
+    (synopsis
+     "Perform Nonlinear Regression Using 'optim' as the Optimization Engine")
+    (description
+     "This package provides a wrapper for optim for nonlinear regression problems; see
+Nocedal J and Write S (2006, ISBN: 978-0387-30303-1).  Performs ordinary least
+squares (OLS), iterative re-weighted least squares (IRWLS), and maximum
+likelihood (MLE).  Also includes the robust outlier detection (ROUT) algorithm;
+see Motulsky, H and Brown, R (2006)<doi:10.1186/1471-2105-7-123>.")
+    (license license:gpl2)))
+
 (define-public r-optimlanduse
   (package
     (name "r-optimlanduse")

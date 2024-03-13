@@ -8317,6 +8317,43 @@ al. (2016) <doi:10.1021/acs.jcim.5b00663>, and Tomal et al. (2019)
 <@code{arXiv:1706.06971>} for more details.")
     (license license:gpl3)))
 
+(define-public r-epwshiftr
+  (package
+    (name "r-epwshiftr")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epwshiftr" version))
+       (sha256
+        (base32 "075yvrxyjswkx03fwns2pa7plz5hjlpjyp5xq48s7i0ya3x9x55w"))))
+    (properties `((upstream-name . "epwshiftr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-rnetcdf
+                             r-rappdirs
+                             r-r6
+                             r-psychrolib
+                             r-progressr
+                             r-pcict
+                             r-jsonlite
+                             r-future-apply
+                             r-fst
+                             r-eplusr
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ideas-lab-nus/epwshiftr")
+    (synopsis "Create Future 'EnergyPlus' Weather Files using 'CMIP6' Data")
+    (description
+     "Query, download climate change projection data from the CMIP6 (Coupled Model
+Intercomparison Project Phase 6) project <https://pcmdi.llnl.gov/CMIP6/> in the
+ESGF (Earth System Grid Federation) platform <https://esgf.llnl.gov>, and create
+future @code{EnergyPlus} <https://energyplus.net> Weather ('EPW') files adjusted
+from climate changes using data from Global Climate Models ('GCM').")
+    (license license:expat)))
+
 (define-public r-epubr
   (package
     (name "r-epubr")

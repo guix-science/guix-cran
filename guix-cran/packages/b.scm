@@ -7680,13 +7680,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.9.1")
+    (version "4.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "027fyphnalbivyysqrkczspcmyi35vccb2qppi1ipys7r45g9qai"))))
+        (base32 "03p9m9rbvga1p7w5acq7vngidpmqapcq7k3zahg8h9f1ynjvgj08"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")
@@ -18679,17 +18679,16 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "18.1.2")
+    (version "18.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "0w7l1w469pcqaqa9wilxq2dbwvfs8gldgm97khx19ka1h24k46a5"))))
+        (base32 "04n5lvcl5i0aziqgs6smvkr6gk8ky8gl3wf1crpzihxa3s6fb601"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=bda")
     (synopsis "Binned Data Analysis")
     (description

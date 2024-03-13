@@ -640,13 +640,13 @@ Memorial Medal'.  Users can provide recipients of other prizes.")
 (define-public r-pwexp
   (package
     (name "r-pwexp")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PWEXP" version))
        (sha256
-        (base32 "0ci09pbnm4f5gqlcq0frzgig71djjmkxv5y3i8ww8ns2mh43qwbb"))))
+        (base32 "1xvpabfi04alhmm640bdlgx1al19nrs43qmichpcv3sllw9bc74x"))))
     (properties `((upstream-name . "PWEXP")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-segmented r-foreach r-fastmatch
@@ -23801,6 +23801,33 @@ telephone keypad.  When converting letters to numbers, a character vector is
 returned with \"A,\" \"B,\" or \"C\" becoming 2, \"D,\" \"E\", or \"F\" becoming 3, etc.
 When converting numbers to letters, a character vector is returned with multiple
 elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
+    (license license:expat)))
+
+(define-public r-phoenix
+  (package
+    (name "r-phoenix")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phoenix" version))
+       (sha256
+        (base32 "17szlh7dqi3xd9y3knwyflsk8paypgzgrdzvzn77y8g6s5z2jnss"))))
+    (properties `((upstream-name . "phoenix")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CU-DBMI-Peds/phoenix/")
+    (synopsis "The Phoenix Pediatric Sepsis and Septic Shock Criteria")
+    (description
+     "Implementation of the Phoenix and Phoenix-8 Sepsis Criteria as described in
+\"Development and Validation of the Phoenix Criteria for Pediatric Sepsis and
+Septic Shock\" by Sanchez-Pinto, Bennett, @code{DeWitt}, Russell et al. (2024)
+<doi:10.1001/jama.2024.0196> (Drs.  Sanchez-Pinto and Bennett contributed
+equally to this manuscript; Dr. @code{DeWitt} and Mr. Russell contributed
+equally to the manuscript) and \"International Consensus Criteria for Pediatric
+Sepsis and Septic Shock\" by Schlapbach, Watson, Sorce, Argent, et al. (2024)
+<doi:10.1001/jama.2024.0179> (Drs Schlapbach, Watson, Sorce, and Argent
+contributed equally).")
     (license license:expat)))
 
 (define-public r-phm

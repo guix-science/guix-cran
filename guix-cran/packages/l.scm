@@ -15157,13 +15157,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landsepi" version))
        (sha256
-        (base32 "0amfpdfnsl81f7sdfazajnvym8dgvcnrjiizq9ckqf0f7gyfgbfs"))))
+        (base32 "0hd4cvik5bfw2yjls4wxnzxq7ylcg69yz34ncj7c3zrg4agka1nm"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (inputs (list gsl))

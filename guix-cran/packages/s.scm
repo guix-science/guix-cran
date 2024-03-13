@@ -2256,13 +2256,13 @@ sampling probabilities are specified or can be calculated.")
 (define-public r-svydiags
   (package
     (name "r-svydiags")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svydiags" version))
        (sha256
-        (base32 "0fk990iqhf3c5dda0fkspjsnrxam1bam4h9wlpvwilb2j4c39vs8"))))
+        (base32 "0j47wqmk9045dla9lb5bh73b135qjhw99q9ddiq3ihb2f9m19lfm"))))
     (properties `((upstream-name . "svydiags")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-matrix r-mass))
@@ -2278,7 +2278,7 @@ and variance inflation factors as found in Li and Valliant (Surv.  Meth., 2009,
 pp.  53-62; Surv.  Meth., 2012, 38(2), pp.  189-202).  Variance inflation
 factors are also computed for some general linear models (logistic and poisson)
 as described in Liao (U. Maryland thesis, 2010).")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-svwidgets
   (package
@@ -6177,13 +6177,13 @@ statistics.  PLOS Comp Biol.")
 (define-public r-sugrrants
   (package
     (name "r-sugrrants")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sugrrants" version))
        (sha256
-        (base32 "08cs74afpkvjh32hlrwbl8sdsi3p0ga4ziw32r9pihs28a060fam"))))
+        (base32 "1jqns2q7gaya88z7zll4diy7p98ycaqgxmq2aqha6dqs8sqqhj3r"))))
     (properties `((upstream-name . "sugrrants")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-gtable r-ggplot2 r-dplyr))
@@ -19230,13 +19230,13 @@ spatially corrected model accuracy measures.")
 (define-public r-spinbayes
   (package
     (name "r-spinbayes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spinBayes" version))
        (sha256
-        (base32 "1ybi5dclsrlm8187a91brwp257n2s3bcyjbdb8ly02ls01zzmsgc"))))
+        (base32 "1p3gfxw1jnnj22s43facsna1ivazfj3x431f1ckv8qycdv61h31d"))))
     (properties `((upstream-name . "spinBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpparmadillo r-rcpp r-glmnet
@@ -19309,13 +19309,13 @@ in Dietrich et al. (2012) <doi:10.1155/2012/351864> and Dietrich et al. (2016)
 (define-public r-spillover
   (package
     (name "r-spillover")
-    (version "0.1.0.3")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spillover" version))
        (sha256
-        (base32 "10d29d9jg4jl7m99z6rw6w8m5li38ga976d83mm8waaz0agdwb81"))))
+        (base32 "1f1x8d6cpgp797l65kp4rqzi2yxjmlhqih8vbj89q2g4rmvyrbaf"))))
     (properties `((upstream-name . "Spillover")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -44632,6 +44632,28 @@ ISBN:978-1-137-08599-3).  The algorithms implemented to solve the models
 ISBN:0-387-96614-5).")
     (license license:expat)))
 
+(define-public r-sfcentral
+  (package
+    (name "r-sfcentral")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfcentral" version))
+       (sha256
+        (base32 "1jvdyalrvk7kzrkwm19fhqrqy1ji6jmz1jp5xdq36myamkj790lg"))))
+    (properties `((upstream-name . "sfcentral")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-scales r-lwgeom r-hmisc r-geodist))
+    (home-page "https://gavg712.gitlab.io/sfcentral/")
+    (synopsis "Spatial Centrality and Dispersion Statistics")
+    (description
+     "Computing centrographic statistics (central points, standard distance, standard
+deviation ellipse, standard deviation box) for observations taken at point
+locations in 2D or 3D. The sfcentral library was inspired in aspace package but
+conceived to be used in a spatial tidyverse context.")
+    (license license:gpl3+)))
+
 (define-public r-sfc
   (package
     (name "r-sfc")
@@ -47789,13 +47811,13 @@ forests.")
 (define-public r-semhelpinghands
   (package
     (name "r-semhelpinghands")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semhelpinghands" version))
        (sha256
-        (base32 "03y571fvc2cglqsci5ibg178bdc9pg1w8n0kk2b5ir65kyqsqbih"))))
+        (base32 "1rahflk228hla3pcchlpmd7b9sb5fd8851k9jnbxrfgbflxmxgrq"))))
     (properties `((upstream-name . "semhelpinghands")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lavaan r-ggrepel r-ggplot2 r-boot))

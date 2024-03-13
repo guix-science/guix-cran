@@ -66,6 +66,29 @@ multistage testing.  The full documentation and tutorials are at
 <https://github.com/xluo11/@code{xxIRT>}.")
     (license license:gpl3+)))
 
+(define-public r-xxhashlite
+  (package
+    (name "r-xxhashlite")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xxhashlite" version))
+       (sha256
+        (base32 "088cndqrwgqx2yxc6qsfvfqlxw2404ycdajgz9maz15p7h3sjh9z"))))
+    (properties `((upstream-name . "xxhashlite")))
+    (build-system r-build-system)
+    (home-page "https://github.com/coolbutuseless/xxhashlite")
+    (synopsis
+     "Extremely Fast Hashing of R Objects, Raw Data and Files using 'xxHash' Algorithms")
+    (description
+     "Extremely fast hashing of R objects using @code{xxHash}'.  R objects are hashed
+via the standard serialization mechanism in R. Raw byte vectors and strings can
+be handled directly for compatibility with hashes created on other systems.
+This implementation is a wrapper around the @code{xxHash} C library which is
+available from <https://github.com/Cyan4973/@code{xxHash>}.")
+    (license license:expat)))
+
 (define-public r-xwf
   (package
     (name "r-xwf")

@@ -7115,13 +7115,13 @@ R.")
 (define-public r-gpvecchia
   (package
     (name "r-gpvecchia")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPvecchia" version))
        (sha256
-        (base32 "0jd01sa643gk8hbhy3mlacxi3bfnv2n4wmb472vzdpp8da870bj1"))))
+        (base32 "1dvixffrn3vz98n8p7vqqr9l77m8n1gij5za8z2hfpg78pipa0mi"))))
     (properties `((upstream-name . "GPvecchia")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparseinv
@@ -7130,7 +7130,8 @@ R.")
                              r-matrix
                              r-gpgp
                              r-fnn
-                             r-fields))
+                             r-fields
+                             r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GPvecchia")
     (synopsis "Scalable Gaussian-Process Approximations")
@@ -11726,6 +11727,32 @@ model framework.")
 Smyth.")
     (license license:gpl2+)))
 
+(define-public r-glmpermu
+  (package
+    (name "r-glmpermu")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmpermu" version))
+       (sha256
+        (base32 "09jm71izzdj4bhhd3fmcxjwc1b6q9qhbynx9bzm1g18zwr8kck7k"))))
+    (properties `((upstream-name . "glmpermu")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=glmpermu")
+    (synopsis "Permutation-Based Inference for Generalized Linear Models")
+    (description
+     "In practical applications, the assumptions underlying generalized linear models
+frequently face violations, including incorrect specifications of the outcome
+variable's distribution or omitted predictors.  These deviations can render the
+results of standard generalized linear models unreliable.  As the sample size
+increases, what might initially appear as minor issues can escalate to critical
+concerns.  To address these challenges, we adopt a permutation-based inference
+method tailored for generalized linear models.  This approach offers robust
+estimations that effectively counteract the mentioned problems, and its
+effectiveness remains consistent regardless of the sample size.")
+    (license license:expat)))
+
 (define-public r-glmpathcr
   (package
     (name "r-glmpathcr")
@@ -11996,6 +12023,40 @@ Question, Kuk, Crosswise, and Triangular.  Reference: Fox, J-P, Veen, D. and
 Klotzke, K. (2018).  Generalized Linear Mixed Models for Randomized Responses.
 Methodology. <doi:10.1027/1614-2241/a000153>.")
     (license license:gpl3)))
+
+(define-public r-glmmroptim
+  (package
+    (name "r-glmmroptim")
+    (version "0.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmmrOptim" version))
+       (sha256
+        (base32 "0z3l7z6zvqf1ykb60crli30h2iaykdbzzbx1kmf86axp05d2rfbh"))))
+    (properties `((upstream-name . "glmmrOptim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsechol
+                             r-rminqa
+                             r-rcppprogress
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-glmmrbase
+                             r-digest
+                             r-bh))
+    (home-page "https://github.com/samuel-watson/glmmrOptim")
+    (synopsis
+     "Approximate Optimal Experimental Designs Using Generalised Linear Mixed Models")
+    (description
+     "Optimal design analysis algorithms for any study design that can be represented
+or modelled as a generalised linear mixed model including cluster randomised
+trials, cohort studies, spatial and temporal epidemiological studies, and
+split-plot designs.  See
+<https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
+detailed manual on model specification.  A detailed discussion of the methods in
+this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
+    (license license:gpl2+)))
 
 (define-public r-glmmrbase
   (package
@@ -21308,13 +21369,13 @@ functions from this package.")
 (define-public r-geomtextpath
   (package
     (name "r-geomtextpath")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomtextpath" version))
        (sha256
-        (base32 "07wvmks7mhz15yhsfwz103ccgmlldlagc9ffcnlfj072zvkc8wk0"))))
+        (base32 "00rgqyz8y1qqnxp50szp9glkyjadas4gd2r3q5ha3fcxn1f4zv7p"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-textshaping r-systemfonts r-scales r-rlang

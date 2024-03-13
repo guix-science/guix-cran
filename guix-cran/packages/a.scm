@@ -13616,13 +13616,13 @@ and cohort level.")
 (define-public r-allmetrics
   (package
     (name "r-allmetrics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AllMetrics" version))
        (sha256
-        (base32 "1sx58yqdmwnnzi9y0jirnxmddxqffglnqz7n276sl0sgps79j7yj"))))
+        (base32 "06zxznlk9vzvx0ykx13hqjrjqfcn5bfzsj7b0dsmfds1qfl83yh7"))))
     (properties `((upstream-name . "AllMetrics")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=AllMetrics")
@@ -13638,7 +13638,8 @@ Squared Error (RRMSE), Mean absolute Error (MAE), Mean absolute percentage error
 Willmottâs Index (WI), and Legates and @code{McCabe} Index (LME).  Among them,
 first five are expected to be lesser whereas, the last three are greater the
 better.  More details can be found from Garai and Paul (2023)
-<doi:10.1016/j.iswa.2023.200202>.")
+<doi:10.1016/j.iswa.2023.200202> and Garai et al. (2024)
+<doi:10.1007/s11063-024-11552-w>.")
     (license license:gpl3)))
 
 (define-public r-allestimates

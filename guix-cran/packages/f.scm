@@ -18,6 +18,8 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages perl)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages algebra)
@@ -7737,17 +7739,17 @@ polynomial fits to describe and analyze force curve shapes.")
 (define-public r-forceplate
   (package
     (name "r-forceplate")
-    (version "1.1-1")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forceplate" version))
        (sha256
-        (base32 "00jl2vy90k76l7va2xvg57vd47zipd4igj6vaajpym76liz495pd"))))
+        (base32 "07bflqix3sw7kf23yfljl1hpiq7xh4nzhyyih4q6cxzlsrk3ys1h"))))
     (properties `((upstream-name . "forceplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-signal r-data-table))
-    (home-page "https://cran.r-project.org/package=forceplate")
+    (home-page "https://github.com/RaphaelHartmann/forceplate")
     (synopsis "Processing Force-Plate Data")
     (description
      "Process raw force-plate data (txt-files) by segmenting them into trials and, if
@@ -9168,6 +9170,31 @@ DLNM methodology in Gasparrini et al. <doi:10.1002/sim.3940> (DLNMs),
 into a data frame, play it on the local audio device, or convert into an audio
 file.")
     (license license:expat)))
+
+(define-public r-fluidigm
+  (package
+    (name "r-fluidigm")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Fluidigm" version))
+       (sha256
+        (base32 "1k9pl0r9pw2879m05qnya91fyl59axwh2z9n0lx7i54admkz8pgc"))))
+    (properties `((upstream-name . "Fluidigm")))
+    (build-system r-build-system)
+    (inputs (list plink perl))
+    (propagated-inputs (list r-reshape r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Fluidigm")
+    (synopsis "Handling Fluidigm Data")
+    (description
+     "Designed to streamline the process of analyzing genotyping data from Fluidigm
+machines, this package offers a suite of tools for data handling and analysis.
+It includes functions for converting Fluidigm data to format used by PLINK',
+estimating errors, calculating pairwise similarities, determining pairwise
+similarity loci, and generating a similarity matrix.")
+    (license license:gpl3)))
 
 (define-public r-flsss
   (package
@@ -19231,13 +19258,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.10.3")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0m4njjrp49vc8y7pwxy6xzar63lrlksgzgv6xr6hchz4v0rfgikh"))))
+        (base32 "0v1gwnaalrf63gv0j6hbi7rqjjjja3ram9zlfx5nik90cdsv4fs9"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -22044,13 +22071,13 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "12rqq3kdbywjw16n4viqrhyrmynyh30wqg1lgwxn5vhwnhfjk596"))))
+        (base32 "11w04cbzgxh4zl8ra4kjaz9ghj2rczqa73g0d5vl43j4i0lrq25w"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
