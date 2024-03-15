@@ -1059,13 +1059,13 @@ model with an interval censored covariate, as described in Morrison et al.
 (define-public r-rwhois
   (package
     (name "r-rwhois")
-    (version "1.0.14")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rwhois" version))
        (sha256
-        (base32 "0fzhbpd30nsbjsdk6bfrxzxh677fw1jv40ckiqrrxd62krfrxnh2"))))
+        (base32 "0sp8grvx3n1675h38l9jnrl1c0wg2010claav21nadwqlvl71g07"))))
     (properties `((upstream-name . "Rwhois")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -2379,13 +2379,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "09iinlp4fljshjfya6mk2j5i0x75w675ks4xgl10v8afpp5q8yha"))))
+        (base32 "0zvkjg5wc45cwnhmx3znqfil6kvhjvfb2vx56j4044ywcjgqpwga"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -2394,6 +2394,7 @@ any revisions, for all groups within the supplied data.")
                              r-shinywidgets
                              r-shinyace
                              r-shiny
+                             r-rxode2
                              r-rlang
                              r-rhandsontable
                              r-plotly
@@ -8355,13 +8356,13 @@ purposes.")
 (define-public r-rrdap
   (package
     (name "r-rrdap")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rrdap" version))
        (sha256
-        (base32 "0lwp80622xnjgfljds0fs64l3c30ijmz495v48j564za4ss4yx9q"))))
+        (base32 "0rq62hqdxdp8sn6s5xk651ibhf0854hvm22c3iad3zw63f5v23f2"))))
     (properties `((upstream-name . "Rrdap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rjson r-curl))
@@ -8815,13 +8816,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "0548mwir8lpp4sw1dk62pja45d92mf0i1prz2r7gxwqmm3fwcphh"))))
+        (base32 "1l9kg5i7sx64860fbdnvb7ijpyxckqj3qq007hyn795akyr7ks68"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -11709,13 +11710,13 @@ infrastructure package and is not intended to be used directly by end-users.")
 (define-public r-ropj
   (package
     (name "r-ropj")
-    (version "0.3-4")
+    (version "0.3-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ropj" version))
        (sha256
-        (base32 "1riv1swfrrm98sgczcd2n5p5xzv7ddfwgafz4wgd9ljdw545vwk3"))))
+        (base32 "0mdwk3y0h77pbpxml89h449lzj3hr8gvydbghsza5hs9f3f23a7a"))))
     (properties `((upstream-name . "Ropj")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16814,13 +16815,13 @@ estimated by maximum likelihood estimation.")
 (define-public r-rnames
   (package
     (name "r-rnames")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnames" version))
        (sha256
-        (base32 "0ifn5pq7r7yh671chpym4qzbf09j8vd534x2azb5wz686dijr7a3"))))
+        (base32 "1213cg1br7sj0ky6bbrz1yc6gm8z38xfymvmrmlrx48j5bgxijx7"))))
     (properties `((upstream-name . "rnames")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rnames")
@@ -31889,6 +31890,26 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
 <doi:10.1007/s00477-020-01901-1>.")
     (license license:gpl2)))
 
+(define-public r-reformulas
+  (package
+    (name "r-reformulas")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reformulas" version))
+       (sha256
+        (base32 "1bjq9ncpb4jn4q0hibhmnq5s9izvixac7fvw90cyk7r24kkv10mr"))))
+    (properties `((upstream-name . "reformulas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-matrix))
+    (home-page "https://github.com/bbolker/reformulas")
+    (synopsis "Machinery for Processing Random Effect Formulas")
+    (description
+     "Takes formulas including random-effects components (formatted as in lme4',
+@code{glmmTMB}', etc.) and processes them.  Includes various helper functions.")
+    (license license:gpl3)))
+
 (define-public r-reflimr
   (package
     (name "r-reflimr")
@@ -36784,24 +36805,22 @@ more readable.")
 (define-public r-rd2md
   (package
     (name "r-rd2md")
-    (version "0.0.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2md" version))
        (sha256
-        (base32 "1kqni87jg3avpcir1ls2kkf6qafkkdkcv51d9azsbqmji5168vlf"))))
+        (base32 "130y2s16404jrl6xprra9wnscbpk3adhd29br6w9y0m8ngw2wxj0"))))
     (properties `((upstream-name . "Rd2md")))
     (build-system r-build-system)
-    (propagated-inputs (list r-knitr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Rd2md")
+    (home-page "https://github.com/quantsch/rd2md")
     (synopsis "Markdown Reference Manuals")
     (description
-     "The native R functionalities only allow PDF exports of reference manuals.  This
-shall be extended by converting the package documentation files into markdown
-files and combining them into a markdown version of the package reference
-manual.")
+     "Native R only allows PDF exports of reference manuals.  The Rd2md package
+converts the package documentation files into markdown files and combines them
+into a markdown version of the package reference manual.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rczechia
@@ -47388,13 +47407,13 @@ data structures.")
 (define-public r-r6causal
   (package
     (name "r-r6causal")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "R6causal" version))
        (sha256
-        (base32 "1x03pasia34jh65wqzps5zrnag8r19ih0dh02vs1pv85zyi68x0p"))))
+        (base32 "0qi569gsjhslg7xk2xjcglnighlfpdr5yzfb4hajq57w49p310zf"))))
     (properties `((upstream-name . "R6causal")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -47896,6 +47915,32 @@ makes them a very flexible tool for controlling the ODE system during the time
 course simulation.  SUNDIALS library was published in Hindmarsh et al. (2005)
 <doi:10.1145/1089014.1089020>.")
     (license license:gpl2+)))
+
+(define-public r-r2stl
+  (package
+    (name "r-r2stl")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2stl" version))
+       (sha256
+        (base32 "0xh4kz64013gpvrics7p24nq091953zh8yccifknrl7bn15z6sal"))))
+    (properties `((upstream-name . "r2stl")))
+    (build-system r-build-system)
+    (home-page "https://github.com/paulnorthrop/r2stl")
+    (synopsis "Visualizing Data using a 3D Printer")
+    (description
+     "Converts data to STL (stereolithography) files that can be used to feed a
+3-dimensional printer.  The 3-dimensional output from a function can be
+materialized into a solid surface in a plastic material, therefore allowing more
+detailed examination.  There are many possible uses for this new tool, such as
+to examine mathematical expressions with very irregular shapes, to aid teaching
+people with impaired vision, to create raised relief maps from digital elevation
+maps (DEMs), to bridge the gap between mathematical tools and rapid prototyping,
+and many more.  Ian Walker created the function r2stl() and Jose Gama assembled
+the package.")
+    (license license:cc-by-sa4.0)))
 
 (define-public r-r2spss
   (package

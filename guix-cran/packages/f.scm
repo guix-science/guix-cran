@@ -477,13 +477,13 @@ the output probabilities.")
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySimRes" version))
        (sha256
-        (base32 "0cwx5zfbbji5jy2hrrj5k6m0p8nr8ljficj5fjrzhjd9cj2smqwy"))))
+        (base32 "0zhzzjr28c7byx4vkh8y8a6b6v9isa2wyhwldpzsml2mxg0f3300"))))
     (properties `((upstream-name . "FuzzySimRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-fuzzynumbers))
@@ -9564,13 +9564,13 @@ compositional features.  See Fei and others (2023)
 (define-public r-florabr
   (package
     (name "r-florabr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "florabr" version))
        (sha256
-        (base32 "1mc1mg7s860h4ig40lz3zpr299bq14xz10wi2pviwbbb2dpnndzr"))))
+        (base32 "1sfyprf2rz5z0vfa7mhw70w4chg9jf4rwgi8hxywb0srbdf738c5"))))
     (properties `((upstream-name . "florabr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-terra r-httr r-data-table))

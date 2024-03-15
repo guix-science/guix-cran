@@ -2287,13 +2287,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "0q61vm1xliz3dsv9ybh6gsz3crv1k06gnkd391430w81kh7y09fy"))))
+        (base32 "14ca964i5akcjrgqrazizhdaz291p15vj75awqxd5y32412hykjq"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -4946,13 +4946,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verbalisr" version))
        (sha256
-        (base32 "0nyydh6mlw2di7cmhdr1x8rm8gdsdnnc45kgx84mb2y6vb0275k4"))))
+        (base32 "1h00dwfsw2k5x2m0mpwh2ni8wsvixv7i4ps4vl4pmhq73xxx3f9a"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))
@@ -4960,9 +4960,10 @@ input number.")
     (synopsis "Describe Pedigree Relationships in Words")
     (description
      "Describe in words the genealogical relationship between two members of a given
-pedigree.  verbalisr is part of the ped suite collection of packages for
-pedigree analysis.  For a demonstration of verbalisr', see the online app
-@code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>.")
+pedigree, using the algorithm in Vigeland (2022)
+<doi:10.1186/s12859-022-04759-y>.  verbalisr is part of the pedsuite collection
+of packages for pedigree analysis.  For a demonstration of verbalisr', see the
+online app @code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>.")
     (license license:gpl3)))
 
 (define-public r-verbaliser
@@ -6762,13 +6763,13 @@ extra functions exist (@code{varImpACC} and @code{varImpAUC}).")
 (define-public r-variationaldcm
   (package
     (name "r-variationaldcm")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "variationalDCM" version))
        (sha256
-        (base32 "1afl53g7k8adf9cjwqx7x6nh26c6ym3h87wgg1q767k93n5jvvfj"))))
+        (base32 "0kf9dw8nm728wf825bflvjma49qgdr0sm4zmnnfp1n3xwj2lswxn"))))
     (properties `((upstream-name . "variationalDCM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -6784,7 +6785,7 @@ classes that typically represent distinct combinations of skills they possess.
 Recently, to meet the growing need of large-scale diagnostic measurement in the
 field of educational, psychological, and psychiatric measurements, variational
 Bayesian inference has been developed as a computationally efficient alternative
-to the Markov chain Monte Carlo methods e.g., Yamaguchi and Okada (2020a)
+to the Markov chain Monte Carlo methods, e.g., Yamaguchi and Okada (2020a)
 <doi:10.1007/s11336-020-09739-w>, Yamaguchi and Okada (2020b)
 <doi:10.3102/1076998620911934>, Yamaguchi (2020)
 <doi:10.1007/s41237-020-00104-w>, Oka and Okada (2023)

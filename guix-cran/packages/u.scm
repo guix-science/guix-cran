@@ -1495,6 +1495,26 @@ installing all previously installed R packages.  The package uses renv to
 install; immediately replenishing your renv package cache.")
     (license license:expat)))
 
+(define-public r-updateme
+  (package
+    (name "r-updateme")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "updateme" version))
+       (sha256
+        (base32 "1jacr70r8fz4svxz3vm6dnvf5jfp7zxazgnbqkyiirg704v3wf0n"))))
+    (properties `((upstream-name . "updateme")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-memoise r-curl r-cli r-cachem))
+    (home-page "https://github.com/wurli/updateme")
+    (synopsis "Informative Messages About Outdated Packages")
+    (description
+     "When a package is loaded, the source repository is checked for new versions and
+a message is shown in the console indicating whether the package is out of date.")
+    (license license:expat)))
+
 (define-public r-upcm
   (package
     (name "r-upcm")
@@ -3899,13 +3919,13 @@ explored and downloaded.")
 (define-public r-ucscxenashiny
   (package
     (name "r-ucscxenashiny")
-    (version "1.1.10")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UCSCXenaShiny" version))
        (sha256
-        (base32 "1jnmi3d1h31fx50lrsb1nl49p50jrx0vxmjsg6q6wdhwjnfxizd9"))))
+        (base32 "121nkc9lxaf3hb15wb3aafwh4m3h4iynv68jqgdfi41mayb7k6dy"))))
     (properties `((upstream-name . "UCSCXenaShiny")))
     (build-system r-build-system)
     (arguments
@@ -3933,11 +3953,13 @@ explored and downloaded.")
                              r-psych
                              r-ppcor
                              r-magrittr
+                             r-httr
                              r-ggpubr
                              r-ggplot2
                              r-forcats
                              r-ezcox
-                             r-dplyr))
+                             r-dplyr
+                             r-digest))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/openbiox/UCSCXenaShiny")
     (synopsis "Interactive Analysis of UCSC Xena Data")

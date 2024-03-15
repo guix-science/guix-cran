@@ -1946,46 +1946,6 @@ based on the likelihood ratio
 <https://en.wikipedia.org/wiki/Likelihood-ratio_test>.")
     (license license:gpl3)))
 
-(define-public r-lrstat
-  (package
-    (name "r-lrstat")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "lrstat" version))
-       (sha256
-        (base32 "11kvqjrw485kii9qjmirh1hayar1a6635ar4b9mb5zxsx13nzldw"))))
-    (properties `((upstream-name . "lrstat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lrstat")
-    (synopsis
-     "Power and Sample Size Calculation for Non-Proportional Hazards and Beyond")
-    (description
-     "This package performs power and sample size calculation for non-proportional
-hazards model using the Fleming-Harrington family of weighted log-rank tests.
-The sequentially calculated log-rank test score statistics are assumed to have
-independent increments as characterized in Anastasios A. Tsiatis (1982)
-<doi:10.1080/01621459.1982.10477898>.  The mean and variance of log-rank test
-score statistics are calculated based on Kaifeng Lu (2021)
-<doi:10.1002/pst.2069>.  The boundary crossing probabilities are calculated
-using the recursive integration algorithm described in Christopher Jennison and
-Bruce W. Turnbull (2000, ISBN:0849303168).  The package can also be used for
-continuous, binary, and count data.  For continuous data, it can handle missing
-data through mixed-model for repeated measures (MMRM).  In crossover designs, it
-can estimate direct treatment effects while accounting for carryover effects.
-For binary data, it can design Simon's 2-stage, modified toxicity probability-2
-(@code{mTPI-2}), and Bayesian optimal interval (BOIN) trials.  For count data,
-it can design group sequential trials for negative binomial endpoints with
-censoring.  Additionally, it facilitates group sequential equivalence trials for
-all supported data types.  Moreover, it can design adaptive group sequential
-trials for changes in sample size, error spending function, number and spacing
-or future looks.  Finally, it offers various options for adjusted p-values,
-including graphical and gatekeeping procedures.")
-    (license license:gpl2+)))
-
 (define-public r-lrmf3
   (package
     (name "r-lrmf3")
@@ -4599,6 +4559,33 @@ Ruczinski, Kooperberg, and @code{LeBlanc} (2003) <DOI:10.1198/1061860032238>.
 Monte Carlo Logic Regression is described in and Kooperberg and Ruczinski (2005)
 <DOI:10.1002/gepi.20042>.")
     (license license:gpl2+)))
+
+(define-public r-logicforest
+  (package
+    (name "r-logicforest")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LogicForest" version))
+       (sha256
+        (base32 "11f64w80a14yqbngajahw397zfa9yx86asylnmszzx8l2qvw307c"))))
+    (properties `((upstream-name . "LogicForest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-logicreg))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LogicForest")
+    (synopsis "Logic Forest")
+    (description
+     "Two classification ensemble methods based on logic regression models.
+@code{LogForest}() uses a bagging approach to construct an ensemble of logic
+regression models.  LBoost() uses a combination of boosting and cross-validation
+to construct an ensemble of logic regression models.  Both methods are used for
+classification of binary responses based on binary predictors and for
+identification of important variables and variable interactions predictive of a
+binary outcome.  Wolf, B.J., Slate, E.H., Hill, E.G. (2010)
+<doi:10.1093/bioinformatics/btq354>.")
+    (license license:gpl3)))
 
 (define-public r-logicdt
   (package
@@ -7863,6 +7850,49 @@ bond donors, acceptors, and A@code{LogP}, providing histograms and pass/fail
 status plots for efficient compound evaluation, aiding in drug development.")
     (license license:expat)))
 
+(define-public r-lipidomicsr
+  (package
+    (name "r-lipidomicsr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LipidomicsR" version))
+       (sha256
+        (base32 "0kxvyrrr428blfh904ps4kmfgsb25v23mi5v9rjd36zwak2jxwya"))))
+    (properties `((upstream-name . "LipidomicsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-reshape2
+                             r-rcompanion
+                             r-rcolorbrewer
+                             r-pheatmap
+                             r-ggrepel
+                             r-ggplotify
+                             r-ggplot2
+                             r-ggiraph
+                             r-fmsb
+                             r-dplyr
+                             r-cowplot
+                             r-car
+                             r-broom))
+    (home-page "https://cran.r-project.org/package=LipidomicsR")
+    (synopsis
+     "Elegant Tools for Processing and Visualization of Lipidomics Data")
+    (description
+     "An elegant tool for processing and visualizing lipidomics data generated by mass
+spectrometry. @code{LipidomicsR} simplifies channel and replicate handling while
+providing thorough lipid species annotation.  Its visualization capabilities
+encompass principal components analysis plots, heatmaps, volcano plots, and
+radar plots, enabling concise data summarization and quality assessment.
+Additionally, it can generate bar plots and line plots to visualize the
+abundance of each lipid species.")
+    (license license:expat)))
+
 (define-public r-lipidomer
   (package
     (name "r-lipidomer")
@@ -8396,13 +8426,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.16")
+    (version "1.1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "0h8p0j9g2rs43wm7raxqf9lky5vhrgvqf94qxqajrizplgq8jzwc"))))
+        (base32 "07r9p41jhrx7hgy5h3bfhnry5b88chbim6nnvisw5v39b2mm1p9n"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet

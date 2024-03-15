@@ -2051,13 +2051,13 @@ functions.")
 (define-public r-orthodr
   (package
     (name "r-orthodr")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orthoDr" version))
        (sha256
-        (base32 "0nrrwqpjm5dp487kql0nv9gaarar3dw1fwwmjd1ib3ya9l7m77xq"))))
+        (base32 "0dsdmrmqib5mx57v0f32dw9ybydxh80h1xn0130nrw27268bqi52"))))
     (properties `((upstream-name . "orthoDr")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -5387,13 +5387,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "1qzfkq70g4rlpf0s4xgkifdxvbmxwlfr5ijlz2blmwvr5d4qrl94"))))
+        (base32 "0dz7hfp4447xgxsi92han8jwiy373vr5nyv3hlda26j9ydyf2jqf"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -11357,16 +11357,16 @@ orbit-aware counts are computed respective each of the edges and nodes.")
 (define-public r-oaii
   (package
     (name "r-oaii")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oaii" version))
        (sha256
-        (base32 "0xdgkfkgl9p5b0lwvgazvrjjfskimpb5nwnnb4pq6hm9vmjfpfjz"))))
+        (base32 "1kj86c3mydc8zylxx1s088iz6d1b02gixvy40d4qwxs55k07g9m0"))))
     (properties `((upstream-name . "oaii")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-httr r-checkmate))
+    (propagated-inputs (list r-magrittr r-httr r-checkmate r-base64enc))
     (home-page "https://github.com/cezarykuran/oaii")
     (synopsis "'OpenAI' API R Interface")
     (description

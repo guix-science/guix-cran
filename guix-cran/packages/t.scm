@@ -8132,13 +8132,13 @@ found on the @code{TraMineR} web page.")
 (define-public r-tramicp
   (package
     (name "r-tramicp")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramicp" version))
        (sha256
-        (base32 "1i6j9iqrwfq3y6b8vf90s8bgnzcl1g39lrcbspxrndvz4mgdbavv"))))
+        (base32 "1d5dj695q16il35pmfi6kb0m78mdjj5gsirqb2sd74jwgj32qy5b"))))
     (properties `((upstream-name . "tramicp")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17713,6 +17713,46 @@ Theia (<https://theia.cnes.fr>), download it, and manage it.  Data can be
 downloaded based on a search result or from a cart file downloaded from Theia
 website.")
     (license license:gpl3+)))
+
+(define-public r-theftdlc
+  (package
+    (name "r-theftdlc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theftdlc" version))
+       (sha256
+        (base32 "0zv9ihzs41dk4q4wsfyi2v6g9z8gglak17l71bhvqs207rl923d1"))))
+    (properties `((upstream-name . "theftdlc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-umap
+                             r-tidyr
+                             r-tibble
+                             r-theft
+                             r-scales
+                             r-rtsne
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-normaliser
+                             r-mclust
+                             r-mass
+                             r-janitor
+                             r-ggplot2
+                             r-e1071
+                             r-dplyr
+                             r-correctr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://hendersontrent.github.io/theftdlc/")
+    (synopsis "Analyse and Interpret Time Series Features")
+    (description
+     "This package provides a suite of functions for analysing, interpreting, and
+visualising time-series features calculated from different feature sets from the
+theft package.  Implements statistical learning methodologies described in
+Henderson, T., Bryant, A., and Fulcher, B. (2023) <@code{arXiv:2303.17809>}.")
+    (license license:expat)))
 
 (define-public r-theft
   (package

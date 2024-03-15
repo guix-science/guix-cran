@@ -800,18 +800,18 @@ functions and model families.")
 (define-public r-cvtools
   (package
     (name "r-cvtools")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvTools" version))
        (sha256
-        (base32 "0b7xb6dmhqbvz32zyfbdvm9zjyc59snic6wp1r21ina48hchn3sj"))))
+        (base32 "0vrlj0jrmy1dj5fy4cpfkls2l5a2r7c7kvfhlnibpy8cmdx1mhql"))))
     (properties `((upstream-name . "cvTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-lattice))
     (home-page "https://cran.r-project.org/package=cvTools")
-    (synopsis "Cross-validation tools for regression models")
+    (synopsis "Cross-Validation Tools for Regression Models")
     (description
      "This package provides tools that allow developers to write functions for
 cross-validation with minimal programming effort and assist users with model
@@ -2197,6 +2197,39 @@ manage character vectors for nice display.")
      "R interface for RAPIDS @code{cuML} (<https://github.com/rapidsai/cuml>), a suite
 of GPU-accelerated machine learning libraries powered by CUDA
 (<https://en.wikipedia.org/wiki/CUDA>).")
+    (license license:expat)))
+
+(define-public r-cucumber
+  (package
+    (name "r-cucumber")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cucumber" version))
+       (sha256
+        (base32 "1898d55lky6avhxvhj0rqfbijf66p5any7hanj32yr231mgayk2r"))))
+    (properties `((upstream-name . "cucumber")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-testthat
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jakubsob/cucumber")
+    (synopsis "Behavior-Driven Development for R")
+    (description
+     "Write executable specifications in a natural language that describes how your
+code should behave.  Write specifications in feature files using Gherkin
+language and execute them using functions implemented in R. Use them as an
+extension to your testthat tests to provide a high level description of how your
+code works.")
     (license license:expat)))
 
 (define-public r-cubist
@@ -7845,6 +7878,28 @@ sampling process, and a sampling property function based on a modified empirical
 distribution from the original data.")
     (license license:gpl3+)))
 
+(define-public r-cpmr
+  (package
+    (name "r-cpmr")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpmr" version))
+       (sha256
+        (base32 "0s4c9466i14vv37vvmj1f6gf2n6i9ij8303xfvhc82dszmab219g"))))
+    (properties `((upstream-name . "cpmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://github.com/psychelzh/cpmr")
+    (synopsis "Connectome Predictive Modelling in R")
+    (description
+     "Connectome Predictive Modelling (CPM) (Shen et al. (2017)
+<doi:10.1038/nprot.2016.178>) is a method to predict individual differences in
+behaviour from brain functional connectivity.  cpmr provides a simple yet
+efficient implementation of this method.")
+    (license license:expat)))
+
 (define-public r-cpmerccutoff
   (package
     (name "r-cpmerccutoff")
@@ -11337,13 +11392,13 @@ Duan, W Nick Street, Yanchi Liu, Songhua Xu, and Brook Wu (2014)
 (define-public r-correctr
   (package
     (name "r-correctr")
-    (version "0.1.3")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "correctR" version))
        (sha256
-        (base32 "01rmz47mn30zdjc22mrgdj4b9p82gj83ycpk01hcmmwwxflm6m1d"))))
+        (base32 "1qncaynl0fs06w97wbj4704whbcjs5vjqqhb1mkj95ngwi0rp37l"))))
     (properties `((upstream-name . "correctR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14206,13 +14261,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "2.2.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contingencytables" version))
        (sha256
-        (base32 "0n89syig86iqvsmcg5b98v70pr2rlar5yz5yrpsfh73c9nj4cj4p"))))
+        (base32 "1cp5cmvcxqzsagkmy4h612zrfxvaiv0ililvnzbcpxlxva3xmyba"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -16927,13 +16982,13 @@ returned as a tidy data frame.")
 (define-public r-comstab
   (package
     (name "r-comstab")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comstab" version))
        (sha256
-        (base32 "0sri4v7cc4xpxkpn8yjpqjkfffqzm3a76hk9sj2h3sld7d2cyx2i"))))
+        (base32 "14xa50badffn3jljvc1rdmnl3w167hn7hd5f8a5zl5lwlb9miy8w"))))
     (properties `((upstream-name . "comstab")))
     (build-system r-build-system)
     (propagated-inputs (list r-ternary))
@@ -16942,10 +16997,8 @@ returned as a tidy data frame.")
      "Partitioning the Drivers of Stability of Ecological Communities")
     (description
      "This package contains the basic functions to apply the unified framework for
-partitioning the drivers of stability of ecological communities.  J. Segrestin,
-L. GÃ¶tzenberger, E. Valencia, F. de Bello & J. @code{LepÅ}¡ (2024) \"A unified
-framework for partitioning the drivers of stability of ecological communities\"
-<minor revisions>.")
+partitioning the drivers of stability of ecological communities.  Segrestin et
+al. (2024) <doi:10.1111/geb.13828>.")
     (license license:gpl3)))
 
 (define-public r-comsimitv
@@ -17187,6 +17240,41 @@ copula-graphic (CG) estimators is also implemented, which is useful for
 sensitivity analyses under dependent censoring (Yeh et al 2023)
 <DOI:10.3390/biomedicines11030797>.")
     (license license:gpl2)))
+
+(define-public r-compositionalml
+  (package
+    (name "r-compositionalml")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompositionalML" version))
+       (sha256
+        (base32 "1gnr8iqgwx461gm0ff1gvi6j8rw19a1lhz560hcq7sgymzp66l5r"))))
+    (properties `((upstream-name . "CompositionalML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2
+                             r-rfast
+                             r-ranger
+                             r-foreach
+                             r-e1071
+                             r-doparallel
+                             r-compositional
+                             r-boruta))
+    (home-page "https://cran.r-project.org/package=CompositionalML")
+    (synopsis "Machine Learning with Compositional Data")
+    (description
+     "Machine learning algorithms for predictor variables that are compositional data
+and the response variable is either continuous or categorical.  Specifically,
+the Boruta variable selection algorithm, random forest, support vector machines
+and projection pursuit regression are included.  Relevant papers include:
+Tsagris M.T., Preston S. and Wood A.T.A. (2011). \"A data-based power
+transformation for compositional data\".  Fourth International International
+Workshop on Compositional Data Analysis. <doi:10.48550/@code{arXiv.1106.1451>}
+and Alenazi, A. (2023). \"A review of compositional data analysis and recent
+advances\".  Communications in Statistics--Theory and Methods, 52(16):
+5535--5567. <doi:10.1080/03610926.2021.2014890>.")
+    (license license:gpl2+)))
 
 (define-public r-compositional
   (package
@@ -22426,13 +22514,13 @@ for probit and tobit models are provided.")
 (define-public r-cmstatr
   (package
     (name "r-cmstatr")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmstatr" version))
        (sha256
-        (base32 "08bpyr8zc3mn8rwzd3g6wl16dh4pyxnsjichcd1vd6yvail7ykii"))))
+        (base32 "1hi3zyw73jxrl2spfbbfk5xnyg31jqlslz1342p5s45k4ydvqikm"))))
     (properties `((upstream-name . "cmstatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -25507,24 +25595,24 @@ Cannings et al. (1978) <doi:10.2307/1426718>.")
 (define-public r-cliot
   (package
     (name "r-cliot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cliot" version))
        (sha256
-        (base32 "1p5bansha53wwamp312j0daixx2hyn5h0rv3q20vn3ba868y4f2q"))))
+        (base32 "0gynh767vv02xn6j6mbakdsfb1s9m3pvr3idn9qy1qy6wbfya9h7"))))
     (properties `((upstream-name . "cliot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cliot")
     (synopsis "Clinical Indices and Outcomes Tools")
     (description
      "Collection of indices and tools relating to cardiovascular, nephrology, and
-hepatic research that aid epidemiological or retrospective review.  All indices
-and tools take commonly used lab values and patient demographics and
-measurements to compute various risk and predictive values for survival.
-References to original literature and validation contained in each function
-documentation.")
+hepatic research that aid epidemiological chort or retrospective chart review
+with big data.  All indices and tools take commonly used lab values and patient
+demographics and measurements to compute various risk and predictive values for
+survival.  References to original literature and validation contained in each
+function documentation.")
     (license license:gpl3)))
 
 (define-public r-clinutils
@@ -27786,6 +27874,28 @@ C-JAMP functions, functions are available to generate genetic and phenotypic
 data, to compute the minor allele frequency (MAF) of genetic markers, and to
 estimate the phenotypic variance explained by genetic markers.")
     (license license:gpl2)))
+
+(define-public r-ciw
+  (package
+    (name "r-ciw")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ciw" version))
+       (sha256
+        (base32 "1pkiz8nkgl6dyx34xc43hcwf7qp26gnx2dlqbbjkqvpyzsh1qvpr"))))
+    (properties `((upstream-name . "ciw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-data-table r-curl))
+    (home-page "https://cran.r-project.org/package=ciw")
+    (synopsis "Watch the CRAN Incoming Directories")
+    (description
+     "Directory reads and summaries are provided for one or more of the subdirectories
+of the <https://cran.r-project.org/incoming/> directory, and a compact summary
+object is returned.  The package name is a contraption of CRAN Incoming
+Watcher'.")
+    (license license:gpl2+)))
 
 (define-public r-civis
   (package
@@ -34873,16 +34983,19 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "09khg9fp93p184wyh1nw1p1v01zmdif6h6lh87wya13mapjbb3l1"))))
+        (base32 "0q785ryilzqab730vg1ba2q738xxrasyzdq3ckc69dsxjp0cpn3s"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-usa
+                             r-tigris
+                             r-tidyr
+                             r-sf
                              r-jsonlite
                              r-httr2
                              r-httr
@@ -40392,6 +40505,39 @@ for three-category probability forecasts, as proposed by Wilks (2013)
 API. @code{CalPASS} Plus.  MMAP API V1.
 <https://mmap.calpassplus.org/docs/index.html>.")
     (license license:gpl3)))
+
+(define-public r-calmr
+  (package
+    (name "r-calmr")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "calmr" version))
+       (sha256
+        (base32 "11hb2d9a5vzda94qb3pg440vgch2pfn8jhkw71hj6xzw8aqylhs3"))))
+    (properties `((upstream-name . "calmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-progressr
+                             r-patchwork
+                             r-network
+                             r-ggplot2
+                             r-ggnetwork
+                             r-ga
+                             r-future-apply
+                             r-future
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/victor-navarro/calmr")
+    (synopsis
+     "Canonical Associative Learning Models and their Representations")
+    (description
+     "Implementations of canonical associative learning models, with tools to run
+experiment simulations, estimate model parameters, and compare model
+representations.  Experiments and results are represented using S4 classes and
+methods.")
+    (license license:gpl3+)))
 
 (define-public r-calmate
   (package

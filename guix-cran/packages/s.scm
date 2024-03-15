@@ -7255,13 +7255,13 @@ identification and anomaly detection.")
 (define-public r-structfdr
   (package
     (name "r-structfdr")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StructFDR" version))
        (sha256
-        (base32 "1y0wj7y36iq0lznc4qpsr2yis3an34iilpabkaxxmas2q4abg0qb"))))
+        (base32 "1gxv2pgypbxgwii5d71zrhasfdj33wjw4jfa3frc4q28nbh8a2l8"))))
     (properties `((upstream-name . "StructFDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-matrixstats r-dirmult r-cluster r-ape))
@@ -28828,13 +28828,13 @@ Under-Sampling (RUS), Safe-Level SMOTE (SLSMOTE), Relocating Safe-Level SMOTE
 (define-public r-smotefamily
   (package
     (name "r-smotefamily")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smotefamily" version))
        (sha256
-        (base32 "062yps71bqnyff1hzqb7yvigvqg2lnc24r9gfp8m3zhvmyprk3cp"))))
+        (base32 "05ck6c4pldqqspb7abjh8vabc3g0fp6ivfbd9y2q2rm031mil4p2"))))
     (properties `((upstream-name . "smotefamily")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-fnn r-dbscan))
@@ -28845,8 +28845,7 @@ Under-Sampling (RUS), Safe-Level SMOTE (SLSMOTE), Relocating Safe-Level SMOTE
      "This package provides a collection of various oversampling techniques developed
 from SMOTE is provided.  SMOTE is a oversampling technique which synthesizes a
 new minority instance between a pair of one minority instance and one of its K
-nearest neighbor. (see <https://www.jair.org/media/953/live-953-2037-jair.pdf>
-for more information) Other techniques adopt this concept with other criteria in
+nearest neighbor.  Other techniques adopt this concept with other criteria in
 order to generate balanced dataset for class imbalance problem.")
     (license license:gpl3+)))
 
@@ -54459,16 +54458,21 @@ of (conditional) mutual information for discrete data.")
 (define-public r-sccca
   (package
     (name "r-sccca")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sccca" version))
        (sha256
-        (base32 "03dyfiznf623hjq2ipx2cbs96qdhrs1gq276vrlxp3gdga25awc2"))))
+        (base32 "193d6015zchnmky0kic0msdw040ykvw3isxpzw5ccmg9dqr7j1xp"))))
     (properties `((upstream-name . "sccca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-seurat r-plyr r-dplyr))
+    (propagated-inputs (list r-seurat
+                             r-scales
+                             r-plyr
+                             r-openxlsx
+                             r-hgnchelper
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=sccca")
     (synopsis "Single-Cell Correlation Based Cell Type Annotation")
     (description
@@ -54476,7 +54480,7 @@ of (conditional) mutual information for discrete data.")
 The approach utilizes correlation-based approach combined with association
 analysis using Fisher-exact and phyper statistical tests (Upton, Graham JG.
 (1992) <DOI:10.2307/2982890>).")
-    (license license:gpl3)))
+    (license license:gpl3+)))
 
 (define-public r-sccatch
   (package
@@ -54934,6 +54938,32 @@ methodology.  Focuses on prospective surveillance of data streams, scanning for
 clusters with ongoing anomalies.  Hypothesis testing is made possible by Monte
 Carlo simulation. @code{AllÃ©vius} (2018) <doi:10.21105/joss.00515>.")
     (license license:gpl3+)))
+
+(define-public r-scannotate
+  (package
+    (name "r-scannotate")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scAnnotate" version))
+       (sha256
+        (base32 "02hrfs5ci2ii3hr4d4ks5bj80n5ajdnx71m6swmdciiy72sdm1lc"))))
+    (properties `((upstream-name . "scAnnotate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seuratobject r-seurat r-harmony r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://doi.org/10.1101/2022.02.19.481159")
+    (synopsis
+     "An Automated Cell Type Annotation Tool for Single-Cell RNA-Sequencing Data")
+    (description
+     "An entirely data-driven cell type annotation tools, which requires training data
+to learn the classifier, but not biological knowledge to make subjective
+decisions.  It consists of three steps: preprocessing training and test data,
+model fitting on training data, and cell classification on test data.  See
+Xiangling Ji,Danielle Tsao, Kailun Bai, Min Tsao, Li Xing, Xuekui
+Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
+    (license license:gpl3)))
 
 (define-public r-scan
   (package
@@ -59328,17 +59358,16 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
 (define-public r-saeczi
   (package
     (name "r-saeczi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeczi" version))
        (sha256
-        (base32 "0dd082nmik3k36lhg0nd80c5n5gqqlh8p0hywhp3gpphfisc2pbn"))))
+        (base32 "1rbxmjq8mdb3nscpnvan733n4qdi89zs5ddp295p5fj5vqpba65s"))))
     (properties `((upstream-name . "saeczi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
+    (propagated-inputs (list r-rlang
                              r-rcppeigen
                              r-rcpp
                              r-purrr
@@ -59350,13 +59379,16 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
     (home-page "https://cran.r-project.org/package=saeczi")
     (synopsis "Small Area Estimation for Continuous Zero Inflated Data")
     (description
-     "Simplifies the process of fitting a zero-inflated estimator onto a dataset.
-This estimator is a combination of a linear mixed effects regression model and a
-logistic mixed effects regression model which is summarized by White and others
-(2024, <@code{arXiv:2402.03263>}).  The variance is estimated through a
-parametric bootstrapping method which is given by Chandra and others (2012,
-<doi:10.1080/03610918.2011.598991>).")
-    (license license:cc0)))
+     "This package provides functionality to fit a zero-inflated estimator for small
+area estimation.  This estimator is a combines a linear mixed effects regression
+model and a logistic mixed effects regression model via a two-stage modeling
+approach.  The estimator's mean squared error is estimated via a parametric
+bootstrap method.  Chandra and others (2012, <doi:10.1080/03610918.2011.598991>)
+introduce and describe this estimator and mean squared error estimator.  White
+and others (2024+, <@code{arXiv:2402.03263>}) describe the applicability of this
+estimator to estimation of forest attributes and further assess the estimator's
+properties.")
+    (license license:expat)))
 
 (define-public r-saebnocov
   (package

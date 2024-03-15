@@ -18353,13 +18353,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.10.2")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "1d4im48h6zlq2s1aapfwjd93k8k4bxq54gz325cc110fs3i78s6p"))))
+        (base32 "0y3xii7jw3kc6fw3qv0jig8hgjcczsm05y4gwd7c7r8y9dvna741"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -36624,13 +36624,13 @@ maximin effect.")
 (define-public r-maximin
   (package
     (name "r-maximin")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maximin" version))
        (sha256
-        (base32 "0pkf84313x5r7qmhfbd70rjmxffrfk6kzirw1wzrqqygbmcw8k4s"))))
+        (base32 "1nk2qdj9kap16fakwzvswzhc3id7p06xhw48j8nnz5ffg79ai604"))))
     (properties `((upstream-name . "maximin")))
     (build-system r-build-system)
     (propagated-inputs (list r-plgp))

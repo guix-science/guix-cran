@@ -9479,32 +9479,34 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "0.92")
+    (version "0.97")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "09qy8rsgywdlq04kn6dzdzahhminnx39ih9i84399kn2pnr9vlzi"))))
+        (base32 "0jnlrrd9l97mmrc5ib7y79hjm2ai3mbx6zrfbj6nb0rpxsql2w73"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survsim
+                             r-survminer
                              r-survival
                              r-gridextra
                              r-ggplot2
                              r-fitdistrplus
+                             r-boot
                              r-actuar))
     (home-page "https://cran.r-project.org/package=GofCens")
-    (synopsis "Goodness-of-Fit Methods for Right-Censored Data")
+    (synopsis "Goodness-of-Fit Methods for Complete and Right-Censored Data")
     (description
-     "Graphical tools and goodness-of-fit tests for right-censored data: 1.
-Kolmogorov-Smirnov, @code{CrÃ¡mer-von} Mises, and Anderson-Darling tests based
-on the empirical distribution function for complete data and their extensions
-for right-censored data.  2.  Generalized chi-squared-type tests based on the
-squared difference between observed and expected counts using random cells with
-right-censored data.  3.  A series of graphical tools such as probability or
-cumulative hazard plots to guide the decision about the parametric model that
-best fits the data.")
+     "Graphical tools and goodness-of-fit tests for complete and right-censored data:
+1.  Kolmogorov-Smirnov, @code{CramÃ©r-von} Mises, and Anderson-Darling tests,
+which use the empirical distribution function for complete data and are extended
+for right-censored data.  2.  Generalized chi-squared-type test, which is based
+on the squared differences between observed and expected counts using random
+cells with right-censored data.  3.  A series of graphical tools such as
+probability or cumulative hazard plots to guide the decision about the most
+suitable parametric model for the data.")
     (license license:gpl2+)))
 
 (define-public r-gofcat
@@ -15655,16 +15657,16 @@ rolling summaries such as rolling average on the fly for time series.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.1.0")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "0bj2q7apbjh5vw92j1sa4m3gsnwq6ravpfn896jgvc8ghsqi6d3j"))))
+        (base32 "0wrg7j8is9a816764kpp1rwn4vdr9f700lp1hcqx1jnqnkzd6zj7"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-reshape2 r-ggplot2))
+    (propagated-inputs (list r-survival r-reshape2 r-randomforest r-ggplot2))
     (home-page "https://cran.r-project.org/package=ggscidca")
     (synopsis "Plotting Decision Curve Analysis with Coloured Bars")
     (description
@@ -18727,6 +18729,26 @@ without overlapping.  This is implemented as a position_surround() function for
 ggplot2'.")
     (license license:lgpl3+)))
 
+(define-public r-ggbrick
+  (package
+    (name "r-ggbrick")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggbrick" version))
+       (sha256
+        (base32 "0w6cw5f8skx1diymsmpvkipk9n9c8yhi18b9mghynv3x0mn8qrwh"))))
+    (properties `((upstream-name . "ggbrick")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-glue r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=ggbrick")
+    (synopsis "Waffle Style Chart with a Brick Layout in 'ggplot2'")
+    (description
+     "This package provides a new take on the bar chart.  Similar to a waffle style
+chart but instead of squares the layout resembles a brick wall.")
+    (license license:expat)))
+
 (define-public r-ggbrain
   (package
     (name "r-ggbrain")
@@ -21445,13 +21467,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "04l5hnpr5qrp0qn835ri7bbraq90bppxbz314nsy9q50dbpc1psv"))))
+        (base32 "1623p6qx8s4276awsn1ycjkkc6rxd2bxs7sqpyyqfirqngrihh2l"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22105,13 +22127,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.14")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "07w7lfdspnsqlnvjm7svi7lzi5a30l3zsj49d27gwfh0aizjzwjl"))))
+        (base32 "1v4gnbm5lfnd9rjiwjakbh73rifa084nhwdvjizmcfmznk0x0hxb"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -22124,7 +22146,7 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rOpenGov/geofi")
+    (home-page "https://ropengov.github.io/geofi/")
     (synopsis "Access Finnish Geospatial Data")
     (description
      "Designed to simplify geospatial data access from the Statistics Finland Web
@@ -25255,6 +25277,36 @@ Calculus of M-Estimation in R with geex\" by Saul & Hudgens (2020)
 variance corrections.")
     (license license:expat)))
 
+(define-public r-geeverse
+  (package
+    (name "r-geeverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geeVerse" version))
+       (sha256
+        (base32 "14yy7qfjql2p6hhm2h5v2j29528085chp84s7q5i9x5x84zpmqvi"))))
+    (properties `((upstream-name . "geeVerse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-quantreg
+                             r-mvtnorm
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=geeVerse")
+    (synopsis "Comprehensive Analysis of High Dimensional Longitudinal Data")
+    (description
+     "To provide a comprehensive analysis of high dimensional longitudinal data,this
+package provides analysis for any combination of 1) simultaneous variable
+selection and estimation, 2) mean regression or quantile regression for
+heterogeneous data, 3) cross-sectional or longitudinal data, 4) balanced or
+imbalanced data, 5) moderate, high or even ultra-high dimensional data, via
+computationally efficient implementations of penalized generalized estimating
+equations.")
+    (license license:gpl3)))
+
 (define-public r-geessbin
   (package
     (name "r-geessbin")
@@ -26345,13 +26397,13 @@ methods at <https://mikeblazanin.github.io/gcplyr/>.")
 (define-public r-gcpbayes
   (package
     (name "r-gcpbayes")
-    (version "4.1.0")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCPBayes" version))
        (sha256
-        (base32 "04z1hip6rbvwdpy6afdz8fzfin8iff1wnja7rycsj7igc8vz3saz"))))
+        (base32 "134rqclfix1p91nb1sn3js3l8pbgsl0i22ygz2gl73jjhckk0j75"))))
     (properties `((upstream-name . "GCPBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-wiqid
@@ -26363,7 +26415,7 @@ methods at <https://mikeblazanin.github.io/gcplyr/>.")
                              r-mass
                              r-invgamma
                              r-gdata))
-    (home-page "https://cran.r-project.org/package=GCPBayes")
+    (home-page "https://github.com/tbaghfalaki/GCPBayes")
     (synopsis
      "Bayesian Meta-Analysis of Pleiotropic Effects Using Group Structure")
     (description
@@ -28952,6 +29004,29 @@ tree_percent_similarity().  Till date there are total 15 functions.  More
 details can be found in Faith (1992) <doi:10.1016/0006-3207(92)91201-3>.")
     (license license:gpl3)))
 
+(define-public r-gam-hp
+  (package
+    (name "r-gam-hp")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gam.hp" version))
+       (sha256
+        (base32 "038ngqjnk7n71s4900qx4nszvf55qrn282psv2bs3lg2jrvzk8cd"))))
+    (properties `((upstream-name . "gam.hp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mgcv r-ggplot2))
+    (home-page "https://github.com/laijiangshan/gam.hp")
+    (synopsis
+     "Hierarchical Partitioning of Adjusted R2 and Explained Deviance for Generalized Additive Models")
+    (description
+     "Conducts hierarchical partitioning to calculate individual contributions of each
+predictor towards adjusted R2 and explained deviance for generalized additive
+models based on output of gam()in mgcv package, applying the algorithm in this
+paper: Lai(2022) <doi:10.1093/jpe/rtac096>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-galvanizer
   (package
     (name "r-galvanizer")
@@ -29012,21 +29087,23 @@ outlier detection in linear regression.")
 (define-public r-gallo
   (package
     (name "r-gallo")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GALLO" version))
        (sha256
-        (base32 "0nfzm5cm93m3x0vqmjvhxznj5i913ssn9awpfvk932j829kz6zbc"))))
+        (base32 "0mpm7z77s072d8yv1zl2w7wganz190vk757jklkz2g7ajs9k6yz3"))))
     (properties `((upstream-name . "GALLO")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
+                             r-visnetwork
                              r-unbalhaar
                              r-stringr
                              r-rtracklayer
                              r-rcolorbrewer
                              r-lattice
+                             r-igraph
                              r-ggplot2
                              r-foreach
                              r-dt

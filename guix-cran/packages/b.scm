@@ -7763,6 +7763,34 @@ package makes it easy to import data from the bank into
 R.<https://www.bndes.gov.br/@code{SiteBNDES/bndes/bndes_en>}.")
     (license license:expat)))
 
+(define-public r-bnclassify
+  (package
+    (name "r-bnclassify")
+    (version "0.4.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bnclassify" version))
+       (sha256
+        (base32 "0sqyqw3jlzjhsmcblzxcc3nak4z63pvg3paniysnjzyi139fjyam"))))
+    (properties `((upstream-name . "bnclassify")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rpart
+                             r-rcpp
+                             r-matrixstats
+                             r-entropy
+                             r-bh
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bmihaljevic/bnclassify")
+    (synopsis "Learning Discrete Bayesian Network Classifiers from Data")
+    (description
+     "State-of-the art algorithms for learning discrete Bayesian network classifiers
+from data, including a number of those described in Bielza & Larranaga (2014)
+<doi:10.1145/2576868>, with functions for prediction, model evaluation and
+inspection.")
+    (license license:gpl2+)))
+
 (define-public r-bmtar
   (package
     (name "r-bmtar")
@@ -11873,13 +11901,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "0mx5pwphzxzfgy6waarfwqar2s5hwrpwm0n4h3xvf61hb60k1l7z"))))
+        (base32 "0fbgi2xdld42aprbx2zlyghbq1yn93grw2gc7rargxjf151b990d"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -15844,6 +15872,29 @@ nonlinear covariate effects when using the quantile function of the Generalized
 Extreme Value random variable.")
     (license license:gpl2+)))
 
+(define-public r-bgev
+  (package
+    (name "r-bgev")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bgev" version))
+       (sha256
+        (base32 "1vvv44lf5vdg88fv6zkvggprxbf33msbjmsxli18m3vpwxdjxdm0"))))
+    (properties `((upstream-name . "bgev")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-envstats r-deoptim))
+    (home-page "https://cran.r-project.org/package=bgev")
+    (synopsis "Bimodal GEV Distribution with Location Parameter")
+    (description
+     "Density, distribution function, quantile function random generation and
+estimation of bimodal GEV distribution given in Otiniano et al. (2023)
+<doi:10.1007/s10651-023-00566-7>.  This new generalization of the well-known GEV
+(Generalized Extreme Value) distribution is useful for modeling heterogeneous
+bimodal data from different areas.")
+    (license license:gpl3)))
+
 (define-public r-bgdata
   (package
     (name "r-bgdata")
@@ -16053,13 +16104,13 @@ al. (2021) <DOI:10.18637/jss.v100.i18>.")
 (define-public r-bfp
   (package
     (name "r-bfp")
-    (version "0.0-47")
+    (version "0.0-48")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bfp" version))
        (sha256
-        (base32 "0g6hd82y5kkmiwsqvhcsa3x4j12shkraacpi81lal0ci5w9lfgxi"))))
+        (base32 "0m3ika7sfksv4xhbxcysh0yyfvj7bip9g1m8n2icb2zjwfafccvn"))))
     (properties `((upstream-name . "bfp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16144,13 +16195,13 @@ used to fit the time series data and detect structural changes (breaks).")
 (define-public r-beyondwhittle
   (package
     (name "r-beyondwhittle")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beyondWhittle" version))
        (sha256
-        (base32 "16k8ii45fnj7vvvgc19fzpyg3idz1979xvb2g5fpc88hskcb46g2"))))
+        (base32 "0lh496w6hsdcdkn51zlnm5vw0wx1a6d60h24zqzmsl1zr4y6667z"))))
     (properties `((upstream-name . "beyondWhittle")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -17309,13 +17360,13 @@ execution time of R expressions.")
 (define-public r-benchmarking
   (package
     (name "r-benchmarking")
-    (version "0.31")
+    (version "0.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Benchmarking" version))
        (sha256
-        (base32 "0gg4yay098ga08ns5ybn7s467prwbq0a94a0nfah30jy36ggdfs2"))))
+        (base32 "0fv0i4cpsisk5wa6hgvp75r170ir1zyr2wqbkzfz3qhr43z0jayx"))))
     (properties `((upstream-name . "Benchmarking")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf r-rcpp r-quadprog r-lpsolveapi))
@@ -21726,13 +21777,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "1ygnwnyshs72ci4pjjlilygqw9xsxkxpd1f65bj8x443x51304n3"))))
+        (base32 "17j9y6aqlzfj6my5a3xzwd1v5jz73iwqfjkfyh3ckbk5vl7cikl9"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -24195,23 +24246,32 @@ methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>."
 (define-public r-baskexact
   (package
     (name "r-baskexact")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baskexact" version))
        (sha256
-        (base32 "0raa7nvd18szf63a5nj5r2hcaq3l54k79vs5wng8jhc41f5bndip"))))
+        (base32 "1mvxcrqs374zkp08kf9wap1zgi80x3ifhjrrr7w1fyhpcji3cf4x"))))
     (properties `((upstream-name . "baskexact")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-arrangements))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-foreach
+                             r-extradistr
+                             r-dofuture
+                             r-arrangements))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/lbau7/baskexact")
-    (synopsis "Exact Calculation of Basket Trial Operating Characteristics")
+    (synopsis
+     "Analytical Calculation of Basket Trial Operating Characteristics")
     (description
-     "Calculates the exact operating characteristics of a single-stage basket trial
-with the design of Fujikawa, K., Teramukai, S., Yokota, I., & Daimon, T. (2020).
-<doi:10.1002/bimj.201800404>.")
-    (license license:gpl3)))
+     "Analytically calculates the operating characteristics of single-stage and
+two-stage basket trials with equal sample sizes using the power prior design by
+Baumann et al. (2024) <doi:10.48550/@code{arXiv.2309.06988>} and the design by
+Fujikawa et al. (2020) <doi:10.1002/bimj.201800404>.")
+    (license license:gpl3+)))
 
 (define-public r-basketballanalyzer
   (package

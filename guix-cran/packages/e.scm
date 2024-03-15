@@ -2662,13 +2662,13 @@ Qualtrics datasets.")
 (define-public r-excessmort
   (package
     (name "r-excessmort")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excessmort" version))
        (sha256
-        (base32 "0qkj30csq96qg7r8vdl79n31dhz69vh49qz4gpb3r2fr32pn497k"))))
+        (base32 "13hmdad8l88anj7akyv7ii2hw31v4dgnsgar67ks2zlmw2hhjyj1"))))
     (properties `((upstream-name . "excessmort")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3478,22 +3478,22 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "0acwxr2yw7d11j36bs2hnipp788xirfmxdvnplng547r4i0x8a5p"))))
+        (base32 "1qwyjm88z82b7m39rwm1989z4m4hl5wdy4qagkb3lw8hc31mhvxr"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-rlang
                              r-purrr
                              r-mass
                              r-lubridate
                              r-jsonlite
+                             r-ggplot2
                              r-dygraphs
                              r-dplyr))
     (home-page "https://mcanigueral.github.io/evsim/")
@@ -3536,13 +3536,13 @@ or combining Gaussian random fuzzy numbers).")
 (define-public r-evprof
   (package
     (name "r-evprof")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evprof" version))
        (sha256
-        (base32 "1qgnbp66h4y197ap00kjqxgwnmvbf5nab9pcw77h3kpi4b36irbi"))))
+        (base32 "1nkgvx76cvy78pcnrfh8md2j3b9vmsissmq2s2nbb2rral272gnr"))))
     (properties `((upstream-name . "evprof")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6525,13 +6525,13 @@ patient-oriented perspective.")
 (define-public r-esmtools
   (package
     (name "r-esmtools")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esmtools" version))
        (sha256
-        (base32 "1yxak1zz1abx1g7dlizzcfv6fbbl6kikgs8z046bm4s7yfdijp0g"))))
+        (base32 "0jrq3ccz6zv1ic7a5sqvk8h3vgrq1lkkckadsik8x1a9bnsv0qii"))))
     (properties `((upstream-name . "esmtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11403,13 +11403,13 @@ objects.")
 (define-public r-enrichintersect
   (package
     (name "r-enrichintersect")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EnrichIntersect" version))
        (sha256
-        (base32 "02sm4p9fcmrissic6pap4jpdy8s0z5k8kg1bf0l5amn0v054nwh9"))))
+        (base32 "0hgiy7l2vpxs94xici7fx8xwkxi8r79513zqczy8143d889l43c6"))))
     (properties `((upstream-name . "EnrichIntersect")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -21329,13 +21329,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybgm
   (package
     (name "r-easybgm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybgm" version))
        (sha256
-        (base32 "08pkr75l252k3pzbrqhfyi1f8vr66fw7mffxlfyhilgr8p7mgqnm"))))
+        (base32 "10z8p9bslpnz3cp7lq7qadrpj6jm8k7rwakvak73qppvmpza7rfr"))))
     (properties `((upstream-name . "easybgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-qgraph
@@ -21344,8 +21344,9 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
                              r-ggplot2
                              r-dplyr
                              r-bgms
+                             r-bggm
                              r-bdgraph))
-    (home-page "https://cran.r-project.org/package=easybgm")
+    (home-page "https://github.com/KarolineHuth/easybgm")
     (synopsis "Extracting and Visualizing Bayesian Graphical Models")
     (description
      "Fit and visualize the results of a Bayesian analysis of networks commonly found

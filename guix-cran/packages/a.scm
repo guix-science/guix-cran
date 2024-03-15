@@ -4298,17 +4298,18 @@ Ma, C. et al. (2020) <doi:10.1111/2041-210X.13426>.")
 (define-public r-assignpop
   (package
     (name "r-assignpop")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assignPOP" version))
        (sha256
-        (base32 "1zzapgzf09l39bckwykzr8im2wxmndpmzykll2wi7njwlklpjry3"))))
+        (base32 "0p282yyszjamvzfsrjhy5c4jbfixvf4fafj6k47k2dgpx6wsdrqx"))))
     (properties `((upstream-name . "assignPOP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree
                              r-stringr
+                             r-rlang
                              r-reshape2
                              r-randomforest
                              r-mass
@@ -21214,13 +21215,13 @@ the presentation of simulation results.")
 (define-public r-abm
   (package
     (name "r-abm")
-    (version "0.3")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ABM" version))
        (sha256
-        (base32 "01pfmwjvkz9jml8ga22dz6lc7nahl2zbgyizgcbilx0ppbkm62bn"))))
+        (base32 "1sdjazf02kx7ddxizfz9nb9r7yaqcw7k6xkxmxqmm2a3wi1xvfap"))))
     (properties `((upstream-name . "ABM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))

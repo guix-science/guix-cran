@@ -1832,17 +1832,17 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.9.2-1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "15n71fyg9krggkk1lkny96ag970f172cg8ljfb3dwiqr2kl7n724"))))
+        (base32 "17hr7knbqwn9gxkaga37mxl7g3vf6fmwcmvacyh3q493bfjqq5d5"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
-    (home-page "https://duckdb.org/")
+    (home-page "https://r.duckdb.org/")
     (synopsis "DBI Package for the DuckDB Database Management System")
     (description
      "The @code{DuckDB} project is an embedded analytical data management system with
@@ -2269,13 +2269,13 @@ Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
 (define-public r-dtrreg
   (package
     (name "r-dtrreg")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRreg" version))
        (sha256
-        (base32 "0jz8mxfvcj60lkpw15wavlf771wl2knkjhbxpjp77vamnwhmbww8"))))
+        (base32 "1cfb25k3dn07g1ify34hyk1481wd0g562jnwnah0fj3xly101fva"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-nnet))
@@ -7801,6 +7801,30 @@ Regression Models, Journal of Computational and Graphical Statistics, 28:4,
 967-979, <DOI: 10.1080/10618600.2019.1594834>.")
     (license license:gpl3)))
 
+(define-public r-dnn
+  (package
+    (name "r-dnn")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dnn" version))
+       (sha256
+        (base32 "0mij6d69hhzrcp3yvqwmajhn4bm2bnc3lk9hrkh5ly2a21g46yg4"))))
+    (properties `((upstream-name . "dnn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ggplot2))
+    (home-page "https://cran.r-project.org/package=dnn")
+    (synopsis "Deep Neural Network Tools for Probability and Statistic Models")
+    (description
+     "This package contains tools to build deep neural network with flexible users
+define loss function and probability models.  Several applications included in
+this package are, 1) The (@code{deepAFT}) model, a deep neural network model for
+accelerated failure time (AFT) model for survival data.  2) The (@code{deepGLM})
+model, a deep neural network model for generalized linear model (glm) for
+continuous, categorical and Poisson data.")
+    (license license:gpl2+)))
+
 (define-public r-dnmf
   (package
     (name "r-dnmf")
@@ -11556,6 +11580,44 @@ mathematics.  Takes the order of which individuals talk and converts it to a
 network edge and weight list.  Returns the density, centrality, centralization,
 and subgroup information for each group.  Based on the analytical framework laid
 out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
+    (license license:expat)))
+
+(define-public r-discos
+  (package
+    (name "r-discos")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiSCos" version))
+       (sha256
+        (base32 "00i5hdnrm96plrmv2y55prpkp8sr0dpv0f7srxs2ip9rzxcna3ia"))))
+    (properties `((upstream-name . "DiSCos")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack
+                             r-pracma
+                             r-mass
+                             r-ggplot2
+                             r-extremestat
+                             r-evmix
+                             r-data-table
+                             r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DiSCos")
+    (synopsis "Distributional Synthetic Controls Estimation")
+    (description
+     "The method of synthetic controls is a widely-adopted tool for evaluating causal
+effects of policy changes in settings with observational data.  In many settings
+where it is applicable, researchers want to identify causal effects of policy
+changes on a treated unit at an aggregate level while having access to data at a
+finer granularity.  This package implements a simple extension of the synthetic
+controls estimator, developed in Gunsilius (2023) <doi:10.3982/ECTA18260>, that
+takes advantage of this additional structure and provides nonparametric
+estimates of the heterogeneity within the aggregate unit.  The idea is to
+replicate the quantile function associated with the treated unit by a weighted
+average of quantile functions of the control units.  The package contains tools
+for aggregating and plotting the resulting distributional estimates, as well as
+for carrying out inference on them.")
     (license license:expat)))
 
 (define-public r-discord
@@ -20919,13 +20981,13 @@ automatically set.")
 (define-public r-ddpna
   (package
     (name "r-ddpna")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DDPNA" version))
        (sha256
-        (base32 "1z9s0b7cc0sf1hilvn1g1vwblqhnif8bqdc8m5zhaanw7s0yfgcy"))))
+        (base32 "10asskc757c2xmp2xc4v6gzp43jj4db93xjdq8hqqfvr0vyvmffy"))))
     (properties `((upstream-name . "DDPNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-venndiagram
@@ -24090,13 +24152,13 @@ manipulation.  The package uses libsailr (C/C++ library) for its
 (define-public r-datarobot
   (package
     (name "r-datarobot")
-    (version "2.18.5")
+    (version "2.18.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datarobot" version))
        (sha256
-        (base32 "0ivnx5pwz4mv4csyclf0h69hywvvqwyb1n2r8m43yvv0mlpnq7gb"))))
+        (base32 "0ac51bs16skj808msgriwidaw3vx7cqjjarr70gy0hly3ppxwfyr"))))
     (properties `((upstream-name . "datarobot")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonlite r-httr))

@@ -5594,13 +5594,13 @@ and will be added in future updates.")
 (define-public r-proreg
   (package
     (name "r-proreg")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROreg" version))
        (sha256
-        (base32 "1kxadlgiknk4715rd6vfmcw03ll2n6n9c91g4y0lhynijryr04mb"))))
+        (base32 "0x3gaadd9nd5mcs6l2jv0874afps13qgq81bqwcg1hhgjzy2k4mm"))))
     (properties `((upstream-name . "PROreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve
@@ -5613,11 +5613,13 @@ and will be added in future updates.")
     (home-page "https://cran.r-project.org/package=PROreg")
     (synopsis "Patient Reported Outcomes Regression Analysis")
     (description
-     "Offers a variety of tools, such as specific plots and regression model
-approaches, for analyzing different patient reported questionnaires.  Specially,
-mixed-effects models based on the beta-binomial distribution are implemented to
-deal with binomial data with over-dispersion (see Najera-Zuloaga J., Lee D.-J.
-and Arostegui I. (2018) <doi:10.1177/0962280217690413>).")
+     "It offers a wide variety of techniques, such as graphics, recoding, or
+regression models, for a comprehensive analysis of patient-reported outcomes
+(PRO).  Especially novel is the broad range of regression models based on the
+beta-binomial distribution useful for analyzing binomial data with
+over-dispersion in cross-sectional, longitudinal, or multidimensional response
+studies (see Najera-Zuloaga J., Lee D.-J. and Arostegui I. (2019)
+<doi:10.1002/bimj.201700251>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-propublicar
@@ -8507,13 +8509,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "1bhqbbdjmbpk9hy2mr1p3i617hp4mgvxzqvizlbdjp75ndkraqir"))))
+        (base32 "06mm2zn8j7jvqfmgw07q4rhpbp56y4w3jb03fwzkks9qavaimy4l"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
