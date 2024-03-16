@@ -13753,16 +13753,16 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "04iprw9jrab1cpw0flb8whldcyr9safm9p7k78fbaa4yaccd9051"))))
+        (base32 "00hszk0pnf5i65sp12073gq1bfybpaazdigs6q5j0gyvaqcacbl9"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rappdirs r-httr r-geojsonsf r-countrycode))
+    (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/giscoR/")
     (synopsis "Download Map Data from GISCO API - Eurostat")

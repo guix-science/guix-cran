@@ -11835,13 +11835,13 @@ more information about Moodle, visit <https://moodle.org>.")
 (define-public r-moodlequizr
   (package
     (name "r-moodlequizr")
-    (version "1.0.3")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodlequizR" version))
        (sha256
-        (base32 "06z90ycisq9basn48gwrgrbsvmj4vcjvjkps328czzcy8xz61g06"))))
+        (base32 "0gbghj7fjdvngd0h54ikll6c4s39pxq3kxan54dvs83v11dixphn"))))
     (properties `((upstream-name . "moodlequizR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mvtnorm r-base64))
@@ -17944,13 +17944,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1y9h1c83ladymy09hm5wbmpy9zm91zf33x0sa3jhs7cnlg5fr6jn"))))
+        (base32 "1zj0irg72swii56rfx6ipjlzyvn1jickfv8aq2g301hh1npnfw1s"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -40559,13 +40559,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.4.1")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "16g5wg44pb69df7b7rhzabq0krn9pynq1zz46kvdimd9dsr9v0mx"))))
+        (base32 "1k17yikr7p6pvx5sm3k4xr0954r0a9sllrwywbkwz11w5703sk3y"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

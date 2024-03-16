@@ -33112,13 +33112,13 @@ uncertainty analysis and plotting functions are provided.")
 (define-public r-cfa
   (package
     (name "r-cfa")
-    (version "0.10-0")
+    (version "0.10-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfa" version))
        (sha256
-        (base32 "12z58y4ls9m58wpj1xa4ir2p2apzxaskps05sxy2946m24i71zfk"))))
+        (base32 "1hmahwi60qiwf4g50d3cnhgvdbnv0q0shfalzxisv87xxr586mlj"))))
     (properties `((upstream-name . "cfa")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cfa")

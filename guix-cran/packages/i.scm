@@ -9094,13 +9094,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "17h0jmdchw1gimi44jkzwlff0g55ribw87136ma69x1mzchwlxxp"))))
+        (base32 "18fqffkkvy4jzfqr71gmfva2hjb0mdhb6z4sd6pfvijg8r1d74yv"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

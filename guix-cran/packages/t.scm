@@ -10192,13 +10192,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topr" version))
        (sha256
-        (base32 "0a8p87fsqir82qb9f2mnrzig2pppb6k9gzzm54vgbips2yqb9bqg"))))
+        (base32 "19n18m370dl8hginswwgamr4daj7ci4spjgdli3zk5glcqqq9a45"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18147,13 +18147,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "0jrgggb2pwnrwwkajnp8wlpzjblzr4d1vlngik5g4sbj6kmpgvvc"))))
+        (base32 "1jz5xvmfi53mki0d0jx5bvlmmz2y6pmmasij4c9jgdpd9p57ryaf"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -21471,16 +21471,16 @@ optim().")
 (define-public r-templates
   (package
     (name "r-templates")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "templates" version))
        (sha256
-        (base32 "0xnzj3cvhw1r7zfqaijbfdyclka61jwixcdh05a5z9qwgv0076sh"))))
+        (base32 "07zkq1lnnlj9ik7vyxl4yphhj8pph4qql6qg7kvqd432hy43mwvm"))))
     (properties `((upstream-name . "templates")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-magrittr r-dat))
+    (propagated-inputs (list r-stringr r-magrittr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=templates")
     (synopsis "System for Working with Templates")
@@ -22123,18 +22123,19 @@ displays filtered and unfiltered observation counts.")
 (define-public r-teal-reporter
   (package
     (name "r-teal-reporter")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.reporter" version))
        (sha256
-        (base32 "1q541sm4xg9l79p8f429m335jpmvhhfjnwxi31v0ay37bpnq2lsm"))))
+        (base32 "1hgp17rjmwjqi00w28qgh5h13vn58wnwhx4y8825qnc8v45vchb5"))))
     (properties `((upstream-name . "teal.reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-yaml
                              r-shinywidgets
+                             r-shinybusy
                              r-shiny
                              r-rmarkdown
                              r-r6

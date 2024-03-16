@@ -2603,13 +2603,13 @@ handle multiple traits together.  See <https://github.com/byandell/qtl2pattern>.
 (define-public r-qtl2ggplot
   (package
     (name "r-qtl2ggplot")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2ggplot" version))
        (sha256
-        (base32 "0w3xlyxcg0v111fp7z998m5qk0rfyk4k1dl7bpbww9v2ppizzr36"))))
+        (base32 "0ygadcm05fqkpa8j2h6rpcxpd287g2av7qnlwlqp1s86zfxshk96"))))
     (properties `((upstream-name . "qtl2ggplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5338,13 +5338,13 @@ diversity of the cases under analysis within and across partitions (see
 (define-public r-qca
   (package
     (name "r-qca")
-    (version "3.21")
+    (version "3.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QCA" version))
        (sha256
-        (base32 "1z5jpgnpxkbpac85k1hz6vxc1ycl0z6z171i7k0p8jaj15rh616x"))))
+        (base32 "0w7ap7dqd5qhvkw41r7fy2zn1hsn7mq099b45l3p330lzdzz1grr"))))
     (properties `((upstream-name . "QCA")))
     (build-system r-build-system)
     (arguments
@@ -5363,7 +5363,7 @@ diversity of the cases under analysis within and across partitions (see
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-venn r-shiny r-lpsolve r-admisc))
+    (propagated-inputs (list r-venn r-shiny r-lpsolve r-declared r-admisc))
     (native-inputs (list esbuild))
     (home-page "https://cran.r-project.org/package=QCA")
     (synopsis "Qualitative Comparative Analysis")

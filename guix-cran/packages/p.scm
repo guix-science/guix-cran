@@ -13779,13 +13779,13 @@ pyramids.")
 (define-public r-poppr
   (package
     (name "r-poppr")
-    (version "2.9.5")
+    (version "2.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poppr" version))
        (sha256
-        (base32 "0mn6ksvcvf213swxpx0b7zqb00pxqpawmlzzcdvq6fckfkbnn8x6"))))
+        (base32 "0cn62r584dfvz57in0666m4fsx9yd7xv8rawwgrhrqxs911pgzfd"))))
     (properties `((upstream-name . "poppr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -27587,6 +27587,29 @@ People Analytics by Keith @code{McNulty} (2020).")
 Fundamentals of People Analytics: With Applications in R\".")
     (license license:expat)))
 
+(define-public r-pensynth
+  (package
+    (name "r-pensynth")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pensynth" version))
+       (sha256
+        (base32 "1xwp53ljn6kprp7cbri7l106fvj2iil7cqpwrgm5x2521g3vwqi6"))))
+    (properties `((upstream-name . "pensynth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-geometry r-clarabel))
+    (home-page "https://cran.r-project.org/package=pensynth")
+    (synopsis "Penalized Synthetic Control Estimation")
+    (description
+     "Estimate penalized synthetic control models and perform hold-out validation to
+determine their penalty parameter.  This method is based on the work by Abadie &
+L'Hour (2021) <doi:10.1080/01621459.2021.1971535>.  Penalized synthetic controls
+smoothly interpolate between one-to-one matching and the synthetic control
+method.")
+    (license license:expat)))
+
 (define-public r-pensim
   (package
     (name "r-pensim")
@@ -30289,13 +30312,13 @@ traversal described in Mitov and Stadler (2018) <doi:10.1111/2041-210X.13136>.")
 (define-public r-pcmbase
   (package
     (name "r-pcmbase")
-    (version "1.2.13")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCMBase" version))
        (sha256
-        (base32 "152zs0v64rcw2mgqd2pxydxpdx5ygvl3hd3m9xjv70im6zw43myv"))))
+        (base32 "0vnkznr7rgvja8l7dikc56xf9gvk7g9lx7qp882rbyj4wbk50dmf"))))
     (properties `((upstream-name . "PCMBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -30303,7 +30326,8 @@ traversal described in Mitov and Stadler (2018) <doi:10.1111/2041-210X.13136>.")
                              r-ggplot2
                              r-expm
                              r-data-table
-                             r-ape))
+                             r-ape
+                             r-abind))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://venelin.github.io/PCMBase/")
     (synopsis
@@ -35250,6 +35274,31 @@ working with base R graphics, especially for interactive use.  Popular palettes
 are included and pretty legends produced when mapping a large variety of vector
 classes to a colour scale.  An additional helper for adding axes and grid lines
 complements the base::plot() work flow.")
+    (license license:expat)))
+
+(define-public r-palette
+  (package
+    (name "r-palette")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "palette" version))
+       (sha256
+        (base32 "1a19pf7aq6fj1v15almnin8rmz3xwf34ddxg81887ljd9sp7j8vg"))))
+    (properties `((upstream-name . "palette")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-pillar r-cli))
+    (home-page "https://github.com/christopherkenny/palette")
+    (synopsis "Color Scheme Helpers")
+    (description
+     "Hexadecimal codes are typically used to represent colors in R. Connecting these
+codes to their colors requires practice or memorization.  palette provides a
+vctrs class for working with color palettes, including printing and plotting
+functions.  The goal of the class is to place visual representations of color
+palettes directly on or, at least, next to their corresponding character
+representations.  Palette extensions also are provided for data frames using
+pillar'.")
     (license license:expat)))
 
 (define-public r-paleots

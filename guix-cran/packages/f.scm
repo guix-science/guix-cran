@@ -4804,13 +4804,13 @@ to get estimators of the parameter of interest.")
 (define-public r-framecleaner
   (package
     (name "r-framecleaner")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "framecleaner" version))
        (sha256
-        (base32 "1lclxjds59i1mhc8mzmgy5f7yhqwv72ylidpfvzjgslf45sjk5lp"))))
+        (base32 "1qy58v9rgrzzqwqp2wrv89rcsp22dqm7c7w2bbcr9jmhb1yb5q67"))))
     (properties `((upstream-name . "framecleaner")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -4893,13 +4893,13 @@ Gaussian frailty models.")
 (define-public r-frailtypack
   (package
     (name "r-frailtypack")
-    (version "3.5.1")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frailtypack" version))
        (sha256
-        (base32 "1q6y1g3a844kflwf6ppl7x0zlwnks8zq98bzx03vlww6n6cicrgz"))))
+        (base32 "03hm6kala923fr02sjmysm2ycxbynsp3h43f8mlw8agi52hf9nz2"))))
     (properties `((upstream-name . "frailtypack")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -4936,24 +4936,25 @@ frailty models for two types of recurrent events and a terminal event.  8) Joint
 models for longitudinal data and a terminal event.  9) Trivariate joint models
 for longitudinal data, recurrent events and a terminal event.  10) Joint frailty
 models for the validation of surrogate endpoints in multiple randomized clinical
-trials with failure-time endpoints with the possibility to use a mediation
-analysis model.  11) Conditional and Marginal two-part joint models for
-longitudinal semicontinuous data and a terminal event.  12) Joint frailty-copula
-models for the validation of surrogate endpoints in multiple randomized clinical
-trials with failure-time endpoints.  13) Generalized shared and joint frailty
-models for recurrent and terminal events.  Proportional hazards (PH), additive
-hazard (AH), proportional odds (PO) and probit models are available in a fully
-parametric framework.  For PH and AH models, it is possible to consider
-type-varying coefficients and flexible semiparametric hazard function.
-Prediction values are available (for a terminal event or for a new recurrent
-event).  Left-truncated (not for Joint model), right-censored data,
+trials with failure-time and/or longitudinal endpoints with the possibility to
+use a mediation analysis model.  11) Conditional and Marginal two-part joint
+models for longitudinal semicontinuous data and a terminal event.  12) Joint
+frailty-copula models for the validation of surrogate endpoints in multiple
+randomized clinical trials with failure-time endpoints.  13) Generalized shared
+and joint frailty models for recurrent and terminal events.  Proportional
+hazards (PH), additive hazard (AH), proportional odds (PO) and probit models are
+available in a fully parametric framework.  For PH and AH models, it is possible
+to consider type-varying coefficients and flexible semiparametric hazard
+function.  Prediction values are available (for a terminal event or for a new
+recurrent event).  Left-truncated (not for Joint model), right-censored data,
 interval-censored data (only for Cox proportional hazard and shared frailty
 model) and strata are allowed.  In each model, the random effects have the gamma
 or normal distribution.  Now, you can also consider time-varying covariates
 effects in Cox, shared and joint frailty models (1-5).  The package includes
 concordance measures for Cox proportional hazards models and for shared frailty
-models.  Moreover, the package can be used with its shiny application, in a
-local mode or by following the link below.")
+models.  14) Competing Joint Frailty Model: A single type of recurrent event and
+two terminal events.  Moreover, the package can be used with its shiny
+application, in a local mode or by following the link below.")
     (license license:gpl2+)))
 
 (define-public r-frailtymmpen
@@ -6591,13 +6592,13 @@ strings.")
 (define-public r-formatdown
   (package
     (name "r-formatdown")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatdown" version))
        (sha256
-        (base32 "1k293djggyrdbd20r1avmqxsfimfglzcadq1lg56a79bj8mad636"))))
+        (base32 "126i9lfwhn557c9hxm61f60c5xynwlry7f6gzs3ivdb3ak95j1cc"))))
     (properties `((upstream-name . "formatdown")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-units r-data-table r-checkmate))
@@ -8141,13 +8142,13 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
 (define-public r-folders
   (package
     (name "r-folders")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "folders" version))
        (sha256
-        (base32 "16m0lqfacpqhz5h44v2k8q7gc3p8xa15r153g25fsfkcnw72gwvf"))))
+        (base32 "11w8cj0az7bnzp4qxcwrwn866aa0s2q1s6nfjc6719z8a5vwg141"))))
     (properties `((upstream-name . "folders")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-here r-config))
@@ -10654,13 +10655,13 @@ series of packages.")
 (define-public r-flashr
   (package
     (name "r-flashr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flashr" version))
        (sha256
-        (base32 "0cvpjyjylcz61jmmar2aynvcqh7m41ljkdqmgwmiwiy26qi6clqn"))))
+        (base32 "0fqxr1j5mf9mc1agkkdlzx97qvv4phlxdcmb99x55ivhagwgvidq"))))
     (properties `((upstream-name . "flashr")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -12840,13 +12841,13 @@ data files).  For more information, see Kitada, Nakamichi and Kishino (2020)
 (define-public r-finepop
   (package
     (name "r-finepop")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FinePop" version))
        (sha256
-        (base32 "184707yvh2mydx42vxrdgv0n4v2dad4an7c4yvlyb9d7z6h0sw2x"))))
+        (base32 "1zhr7qh8fawzjiy0nd75ng7frgv261djbib1m78207kxi3ggwpxy"))))
     (properties `((upstream-name . "FinePop")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=FinePop")
@@ -13152,13 +13153,13 @@ Systems\" (@code{NeurIPS}).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "14ccsl394zg8nm1bsfpfm519b20cs90xi1mip51larb4jprfajz3"))))
+        (base32 "1b0769nynqhsyvk8h5ihdvxjwcdvq983skllk9n0d4lyx34gn8gp"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-httr r-digest))
@@ -15876,13 +15877,13 @@ coefficient, Intraclass correlation and Cramer's V.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feasts" version))
        (sha256
-        (base32 "1yvpfpwxk5hrcs4lq8dwjwhf1zfrbyv75sxi1wcnziykhyjz7rnw"))))
+        (base32 "19lgycbnbvv2rwd9svm43bprivalk8p5v0bfwzsmnayikk1wws59"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -21901,13 +21902,13 @@ components (remainder, level, trend and seasonal).")
 (define-public r-fable
   (package
     (name "r-fable")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable" version))
        (sha256
-        (base32 "0rld2lnhi2wn5skcmx9mwrb2rj1yhphy6xq0m3im252y1zc4bm7v"))))
+        (base32 "0bzw9c68dpx048ihff9sy40d7aiqdqrspfrfyj9pd1pj3brn3blv"))))
     (properties `((upstream-name . "fable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble

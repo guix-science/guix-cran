@@ -22878,13 +22878,13 @@ statistical exploratory tools and raster-based metrics.")
 (define-public r-spatialddls
   (package
     (name "r-spatialddls")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialDDLS" version))
        (sha256
-        (base32 "0mdkl3395hlfsqr5121l1hka089wxssa11v543idqyjhm30qjzg8"))))
+        (base32 "1k40bjdxb0yic6h9rvad8l37v2pq2nb7khgl1hfml5xjznjp5k57"))))
     (properties `((upstream-name . "SpatialDDLS")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
@@ -22913,14 +22913,14 @@ statistical exploratory tools and raster-based metrics.")
     (synopsis
      "Deconvolution of Spatial Transcriptomics Data Based on Neural Networks")
     (description
-     "Deconvolution of spatial transcriptomics data using deconvolution models based
-on deep neural networks and single-cell RNA-seq data.  These models are able to
-make accurate estimates of the cell composition of spots in spatial
-transcriptomics datasets from the same context using the advances provided by
-deep learning and the meaningful information provided by single-cell RNA-Seq
-data.  See Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> and
-@code{MaÃ±anes} et al. (2023) <doi:10.1101/2023.08.31.555677> to get an overview
-of the method and see some examples of its performance.")
+     "Deconvolution of spatial transcriptomics data based on neural networks and
+single-cell RNA-seq data. @code{SpatialDDLS} implements a workflow to create
+neural network models able to make accurate estimates of cell composition of
+spots from spatial transcriptomics data using deep learning and the meaningful
+information provided by single-cell RNA-seq data.  See Torroja and Sanchez-Cabo
+(2019) <doi:10.3389/fgene.2019.00978> and @code{MaÃ±anes} et al. (2024)
+<doi:10.1093/bioinformatics/btae072> to get an overview of the method and see
+some examples of its performance.")
     (license license:gpl3)))
 
 (define-public r-spatialcovariance
@@ -58973,13 +58973,13 @@ in a folder or start the simulation in parallel.")
 (define-public r-saerobust
   (package
     (name "r-saerobust")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeRobust" version))
        (sha256
-        (base32 "1zx5ghsb842fkdhpr9013vgi3nadzs7d4haqqbx7g5nrx1ixfqlm"))))
+        (base32 "0rq4az5rzjljjswkdbcz7y5lyrnhyx9b20w81s4665iwrl3fcniw"))))
     (properties `((upstream-name . "saeRobust")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -59845,13 +59845,13 @@ object and thus all methods of the biclust package can be applied.")
 (define-public r-s3fs
   (package
     (name "r-s3fs")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3fs" version))
        (sha256
-        (base32 "12y92npqk78gghi91ad4av57vf89pccrp04qw7p0dw96021wb8kw"))))
+        (base32 "08i8a1629b63b1ai3ngh59xwnh8vzmzpz1wvxhwylpk7igwwsbg0"))))
     (properties `((upstream-name . "s3fs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

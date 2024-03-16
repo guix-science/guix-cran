@@ -7680,13 +7680,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.9.2")
+    (version "4.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "03p9m9rbvga1p7w5acq7vngidpmqapcq7k3zahg8h9f1ynjvgj08"))))
+        (base32 "0qgy9bz02wa9xsmga3sr8p2bvy6mr61l2ji8ill67wj7f6xqjyyl"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")
@@ -20193,13 +20193,13 @@ different covariates for the zero-inflated and non zero-inflated parts.  See
 (define-public r-bayesxsrc
   (package
     (name "r-bayesxsrc")
-    (version "3.0-4")
+    (version "3.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesXsrc" version))
        (sha256
-        (base32 "0km6w8wzyvwisjzyqyigkl7mz1ixmsch4c98bzzc0a2z34bi4jmg"))))
+        (base32 "0wv432bmq7vidbccli1lgzyj7d9nl2ykfhr654bhxnsfkbaaqdpg"))))
     (properties `((upstream-name . "BayesXsrc")))
     (build-system r-build-system)
     (home-page "https://www.uni-goettingen.de/de/bayesx/550513.html")
@@ -21777,13 +21777,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "17j9y6aqlzfj6my5a3xzwd1v5jz73iwqfjkfyh3ckbk5vl7cikl9"))))
+        (base32 "1h232zppb7m2d6ndk18kjg9lj2s4va57j0ppfvz2k218s733skna"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat

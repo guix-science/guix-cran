@@ -14,11 +14,11 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
-  #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages perl)
   #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2841,13 +2841,13 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.)")
 (define-public r-visr
   (package
     (name "r-visr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visR" version))
        (sha256
-        (base32 "0nffasj21yh3yv30l381xn5krs4zn43ic0naxwgnqwax847mxnc3"))))
+        (base32 "1ra2fky23fv3rc9gj4zg64s2c2xcc52whf24wp2nfmg1f0nr278g"))))
     (properties `((upstream-name . "visR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2868,7 +2868,7 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.)")
                              r-cowplot
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/openpharma/visR")
+    (home-page "https://openpharma.github.io/visR/")
     (synopsis "Clinical Graphs and Tables Adhering to Graphical Principles")
     (description
      "To enable fit-for-purpose, reusable clinical and medical research focused
@@ -5900,32 +5900,6 @@ unrealistic assumptions of the traditional fixed-effect and random-effects
 meta-analysis methods.  For details see: Statistical Methods for Psychologists,
 Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (license license:gpl3)))
-
-(define-public r-vcfppr
-  (package
-    (name "r-vcfppr")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vcfppR" version))
-       (sha256
-        (base32 "10z2v4hagwmxpk3asn45bvv2p3n18978fqdshrm6pd1blbcx0gj3"))))
-    (properties `((upstream-name . "vcfppR")))
-    (build-system r-build-system)
-    (inputs (list zlib openssl openssh curl))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
-    (home-page "https://github.com/Zilong-Li/vcfppR")
-    (synopsis "Rapid Manipulation of the Variant Call Format (VCF)")
-    (description
-     "The vcfpp.h (<https://github.com/Zilong-Li/vcfpp>) provides an easy-to-use C++
-API of htslib', offering full functionality for manipulating Variant Call Format
-(VCF) files.  The @code{vcfppR} package serves as the R bindings of the vcfpp.h
-library, enabling rapid processing of both compressed and uncompressed VCF/BCF
-files.  Explore a range of powerful features for efficient VCF data
-manipulation.")
-    (license license:expat)))
 
 (define-public r-vcdextra
   (package

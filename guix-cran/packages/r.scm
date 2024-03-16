@@ -19896,6 +19896,29 @@ Photogrammetry and Remote Sensing
 format versions 1.0 to 1.4 <https://laszip.org/>.")
     (license license:gpl3)))
 
+(define-public r-rlandfire
+  (package
+    (name "r-rlandfire")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rlandfire" version))
+       (sha256
+        (base32 "18l5fjx3aw89wybhjbw3lyk8a0619919s6d4mbh293vbyfgng0a8"))))
+    (properties `((upstream-name . "rlandfire")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-httr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bcknr/rlandfire")
+    (synopsis "Interface to 'LANDFIRE Product Service' API")
+    (description
+     "This package provides access to a suite of geospatial data layers for wildfire
+management, fuel modeling, ecology, natural resource management, climate,
+conservation, etc., via the LANDFIRE (<https://www.landfire.gov/index.php>)
+Product Service ('LFPS') API.")
+    (license license:expat)))
+
 (define-public r-rlakeanalyzer
   (package
     (name "r-rlakeanalyzer")
@@ -21724,16 +21747,21 @@ graded response model.  The full documentation and tutorials are at
 (define-public r-rirods
   (package
     (name "r-rirods")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rirods" version))
        (sha256
-        (base32 "1960204g9iinhfizpn9blmw5qp633s5n090hmh9yq4azf9calrpx"))))
+        (base32 "1ca82i240cy74ig8fb71lcbabw3pbg0w5df8nc8c2yhqymgclxdc"))))
     (properties `((upstream-name . "rirods")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr r-rappdirs r-httr2 r-base64enc r-askpass))
+    (propagated-inputs (list r-withr
+                             r-testthat
+                             r-rappdirs
+                             r-jsonlite
+                             r-httr2
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/irods/irods_client_library_rirods")
     (synopsis "R Client for 'iRODS'")
@@ -21743,7 +21771,7 @@ graded response model.  The full documentation and tutorials are at
 (<https://irods.org/>).  The loosely constructed and highly configurable
 architecture of @code{iRODS} frees the user from strict formatting constraints
 and single-vendor solutions.  This package provides an interface to the
-@code{iRODS} REST API, allowing you to manage your data and metadata in
+@code{iRODS} HTTP API, allowing you to manage your data and metadata in
 @code{iRODS} with R. Storage of annotated files and R objects in @code{iRODS}
 ensures findability, accessibility, interoperability, and reusability of data.")
     (license license:expat)))
@@ -21772,13 +21800,13 @@ be used as a rapid calculation tool in topological data analysis pipelines.")
 (define-public r-ripc
   (package
     (name "r-ripc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripc" version))
        (sha256
-        (base32 "06kxi32ffg9ai0jl35mfh10vdf3p72s5vijk8aalvln39b0121g7"))))
+        (base32 "0ilydrfzhbfbp677qhcbrzn99mjf69w3jy39i8j3igpjbm0qfgix"))))
     (properties `((upstream-name . "ripc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

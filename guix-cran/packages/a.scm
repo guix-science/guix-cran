@@ -12572,13 +12572,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-amapvox
   (package
     (name "r-amapvox")
-    (version "1.0.1")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMAPVox" version))
        (sha256
-        (base32 "1wflbq6ii1hmn24jl7a1acyn72fwkzsgsvijk7klj678pkb0sc80"))))
+        (base32 "10gb0k3msw2jmrq2dl0fm7636frsn7if9gsdxi6zgh0vpha6dqwz"))))
     (properties `((upstream-name . "AMAPVox")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15216,13 +15216,13 @@ to illustrate methods, not to draw substantive conclusions.")
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aifeducation" version))
        (sha256
-        (base32 "0anrhcvrmr7fr5c3zsbg1lhhq9r4m2yjidxy91dc9qi37rx7662d"))))
+        (base32 "1s32n3w1igxa5cx5srv3val489an8l9gw3s7v9123s0hp1l5raki"))))
     (properties `((upstream-name . "aifeducation")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

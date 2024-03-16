@@ -129,6 +129,39 @@ list.  A fast algorithm is used to make the computation really fast.  The data
 in package @code{DysPIAData} is needed.")
     (license license:gpl2+)))
 
+(define-public r-dysem
+  (package
+    (name "r-dysem")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dySEM" version))
+       (sha256
+        (base32 "1akjda85sad4inw789wq0szqxrilkzf3lhmf7k3mhhjdix02fqrm"))))
+    (properties `((upstream-name . "dySEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-semplot
+                             r-rlang
+                             r-magrittr
+                             r-lifecycle
+                             r-lavaan
+                             r-gt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jsakaluk/dySEM")
+    (synopsis "Dyadic Structural Equation Modeling")
+    (description
+     "Scripting of structural equation models via lavaan for Dyadic Data Analysis, and
+helper functions for supplemental calculations, tabling, and model
+visualization.  Current models supported include Dyadic Confirmatory Factor
+Analysis, the ActorâPartner Interdependence Model (observed and latent), the
+Common Fate Model (observed and latent), Mutual Influence Model (latent), and
+the Bifactor Dyadic Model (latent).")
+    (license license:gpl3)))
+
 (define-public r-dynwrap
   (package
     (name "r-dynwrap")
@@ -12692,23 +12725,28 @@ describing @code{DiNAMIC.Duo} by Walter et al. (2022) can be found at <doi:
 (define-public r-dinamic
   (package
     (name "r-dinamic")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dinamic" version))
        (sha256
-        (base32 "0mx72q83bbwm10ayr3f1dzwr5wgz7gclw7rh39yyh95slg237nzr"))))
+        (base32 "01w8fzjpvz4mwhnqhjjixy7q60hdlpqcm33i98qnighkry024ysm"))))
     (properties `((upstream-name . "dinamic")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dinamic")
     (synopsis
-     "DiNAMIC A Method To Analyze Recurrent DNA Copy Number Aberrations in Tumors")
+     "Method to Analyze Recurrent DNA Copy Number Aberrations in Tumors")
     (description
-     "This function implements the @code{DiNAMIC} procedure for assessing the
-statistical significance of recurrent DNA copy number aberrations
-(Bioinformatics (2011) 27(5) 678 - 685).")
-    (license license:gpl2)))
+     "In tumor tissue, underlying genomic instability can lead to DNA copy number
+alterations, e.g., copy number gains or losses.  Sporadic copy number
+alterations occur randomly throughout the genome, whereas recurrent alterations
+are observed in the same genomic region across multiple independent samples,
+perhaps because they provide a selective growth advantage.  This package
+implements the @code{DiNAMIC} procedure for assessing the statistical
+significance of recurrent DNA copy number aberrations (Bioinformatics (2011)
+27(5) 678 - 685).")
+    (license license:gpl3)))
 
 (define-public r-dina
   (package
@@ -25186,13 +25224,13 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "0nlcna97l9j32kv8ikg2p35lr708v93qn22dwr5mcgf5sjyvysy4"))))
+        (base32 "0zlzsax460njv9370rw1y94vfhs22hmviz0c12bsab814i8vb3mm"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun

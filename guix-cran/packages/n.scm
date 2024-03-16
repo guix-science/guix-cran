@@ -9763,13 +9763,13 @@ files and limited support for reading AFNI files.")
 (define-public r-neurodecoder
   (package
     (name "r-neurodecoder")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuroDecodeR" version))
        (sha256
-        (base32 "0awz4kf8pdrb4jfh4x1cpawhijnvkkz58b0nshbvi6cx5r4122z3"))))
+        (base32 "1jylaw35q8c72j7r9mk2a03r0k46csm9qav00dd1axxifc9y7wyf"))))
     (properties `((upstream-name . "NeuroDecodeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9788,14 +9788,14 @@ files and limited support for reading AFNI files.")
                              r-dplyr
                              r-dosnow))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/emeyers/NeuroDecodeR")
+    (home-page "https://emeyers.github.io/NeuroDecodeR/")
     (synopsis "Decode Information from Neural Activity")
     (description
      "Neural decoding is method of analyzing neural data that uses a pattern
 classifiers to predict experimental conditions based on neural activity.
 @code{NeuroDecodeR} is a system of objects that makes it easy to run neural
 decoding analyses.  For more information on neural decoding see Meyers & Kreiman
-(2004) <doi:10.7551/mitpress/8404.003.0024>.")
+(2011) <doi:10.7551/mitpress/8404.003.0024>.")
     (license license:gpl3)))
 
 (define-public r-neurocinstall

@@ -8513,13 +8513,13 @@ whisker packages.")
 (define-public r-epos
   (package
     (name "r-epos")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epos" version))
        (sha256
-        (base32 "0z3r0128ql1jd8nkadia9w97g4nr3w4azvhpj7bjcaf3smh733d8"))))
+        (base32 "13ajaiin7n9z9rhmczlxbrpma5d3wa1wh7gcnw7xa39wsinvmn9s"))))
     (properties `((upstream-name . "epos")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -8532,7 +8532,7 @@ whisker packages.")
                              r-gridextra
                              r-ggplot2
                              r-cowplot))
-    (home-page "https://cran.r-project.org/package=epos")
+    (home-page "https://github.com/bernd-mueller/epos")
     (synopsis "Epilepsy Ontologies' Similarities")
     (description
      "Analysis and visualization of similarities between epilepsy ontologies based on
@@ -8543,9 +8543,10 @@ EPISEM and FENICS undergo further analysis.  The source data to create the
 ranked lists of drug names is produced using the text mining workflows described
 in Mueller, Bernd and Hagelstein, Alexandra (2016)
 <doi:10.4126/FRL01-006408558>, Mueller, Bernd et al. (2017)
-<doi:10.1007/978-3-319-58694-6_22> and Mueller, Bernd and Rebholz-Schuhmann,
-Dietrich (2020) <doi:10.1007/978-3-030-43887-6_52>.")
-    (license license:expat)))
+<doi:10.1007/978-3-319-58694-6_22>, Mueller, Bernd and Rebholz-Schuhmann,
+Dietrich (2020) <doi:10.1007/978-3-030-43887-6_52>, and Mueller, Bernd et al.
+(2022) <doi:10.1186/s13326-021-00258-w>.")
+    (license license:lgpl3+)))
 
 (define-public r-eponge
   (package
@@ -12055,13 +12056,13 @@ nucleic acid sequences of equal length.")
 (define-public r-emur
   (package
     (name "r-emur")
-    (version "2.4.2")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emuR" version))
        (sha256
-        (base32 "1v8zjdd3w9vplnpx1bxy7zdxpk6k297bzazz0ic9nyb449ldvl8w"))))
+        (base32 "0mlcqi9lwqrjilc2nynrl7aqkbqixbdcwzw3rn7mgc8m7cb7s8pq"))))
     (properties `((upstream-name . "emuR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrassp
@@ -15664,13 +15665,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "1s9dqbdqa6aml5wm3mlmx8px7phszmbs3wh1win1j98k386gkvq4"))))
+        (base32 "14agbk2aggzyaqplfs32rd6rqisgww1b40xsvlacn4ii1dbiq3rf"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -15688,6 +15689,7 @@ root tests are supported, and an improved unit root test is included.")
                              r-ggally
                              r-future-apply
                              r-future
+                             r-fungible
                              r-dendextend))
     (home-page "https://r-ega.net")
     (synopsis
