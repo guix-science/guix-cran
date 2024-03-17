@@ -3189,13 +3189,13 @@ analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
 (define-public r-visachartr
   (package
     (name "r-visachartr")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visachartR" version))
        (sha256
-        (base32 "19pg6r8gix0017q629cq5bmpk4hamw62sr3l1qqbx55naj7aawfr"))))
+        (base32 "1yr6mb4vgzqn1g32grq681yrnx5dzm4b1fzh7lv0pggaga3h61m8"))))
     (properties `((upstream-name . "visachartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmlwidgets))

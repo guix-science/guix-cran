@@ -5815,13 +5815,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARPALData" version))
        (sha256
-        (base32 "09c3qh0nzs1k95qb4zgj53a3dhm8688171jkrihlw9jmqyg8g56f"))))
+        (base32 "066d2n9l6k1zg5d48dj7936ppz9d5fkspz20sdylxmy8568dzv9n"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -5833,7 +5833,6 @@ only for the normal case).  Olivari et all (2021)
                              r-rlang
                              r-readr
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-future-apply
@@ -5856,7 +5855,11 @@ information on ARPA Lombardia's activities and history.  Data quality (e.g.
 missing values, exported values, graphical mapping) has been checked involving
 members of the ARPA Lombardia's office for air quality control.  The package
 makes available observations since 1989 (for weather) and 1968 (for air quality)
-and are updated with daily frequency by the regional agency.")
+and are updated with daily frequency by the regional agency.  Full description
+of the package can be retrieved in the companion paper Maranzano \\& Algieri
+(2024), \"ARPALData: an R package for retrieving and analyzing air quality and
+weather data from ARPA Lombardia (Italy)\", Environmental and Ecological
+Statistics, <doi:10.1007/s10651-024-00599-6>.")
     (license license:gpl2+)))
 
 (define-public r-arothron

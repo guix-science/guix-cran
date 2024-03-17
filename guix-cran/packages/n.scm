@@ -15282,13 +15282,13 @@ working papers led by the same authors.")
 (define-public r-naivebayes
   (package
     (name "r-naivebayes")
-    (version "0.9.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naivebayes" version))
        (sha256
-        (base32 "070m78d8hsbqfbapb6g8vvh91gyznqfdpqsaq6z3raps8zlybsag"))))
+        (base32 "19znld9ky5zprmrlpgl0bdnd4qji0zgi7i7sjswin7xlncpmsj74"))))
     (properties `((upstream-name . "naivebayes")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -15296,10 +15296,10 @@ working papers led by the same authors.")
     (synopsis "High Performance Implementation of the Naive Bayes Algorithm")
     (description
      "In this implementation of the Naive Bayes classifier following class conditional
-distributions are available: Bernoulli, Categorical, Gaussian, Poisson and
-non-parametric representation of the class conditional density estimated via
-Kernel Density Estimation.  Implemented classifiers handle missing data and can
-take advantage of sparse data.")
+distributions are available: Bernoulli', Categorical', Gaussian', Poisson',
+Multinomial and non-parametric representation of the class conditional density
+estimated via Kernel Density Estimation.  Implemented classifiers handle missing
+data and can take advantage of sparse data.")
     (license license:gpl2)))
 
 (define-public r-naive

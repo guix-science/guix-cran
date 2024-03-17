@@ -42500,13 +42500,13 @@ distribution.")
 (define-public r-shide
   (package
     (name "r-shide")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shide" version))
        (sha256
-        (base32 "1c0fwshybrbaxnvs1ahmjjjcznpr25h8m18jznzr8mlqizpdc78z"))))
+        (base32 "1czdl0i93plqc1d2cf874603s4fiym96kv4d23vr1kvy2kx1jnh9"))))
     (properties `((upstream-name . "shide")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11))

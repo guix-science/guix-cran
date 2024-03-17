@@ -15549,13 +15549,13 @@ these three matches via the tier matching function.")
 (define-public r-feddata
   (package
     (name "r-feddata")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FedData" version))
        (sha256
-        (base32 "15cvrph6020m6xinyvnyjmsppz59q911rk9rhlwy107fs54mdlnx"))))
+        (base32 "0shpkv2v5bc09dwqb89xv3df069wgiz3g8y3if2f7kg58ghgg5kn"))))
     (properties `((upstream-name . "FedData")))
     (build-system r-build-system)
     (inputs (list gdal))
@@ -15574,23 +15574,26 @@ these three matches via the tier matching function.")
                              r-igraph
                              r-httr
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-arcgislayers))
     (home-page "https://docs.ropensci.org/FedData/")
     (synopsis
      "Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources")
     (description
      "This package provides functions to automate downloading geospatial data
 available from several federated data sources (mainly sources maintained by the
-US Federal government).  Currently, the package enables extraction from seven
+US Federal government).  Currently, the package enables extraction from nine
 datasets: The National Elevation Dataset digital elevation models (1 and 1/3
 arc-second; USGS); The National Hydrography Dataset (USGS); The Soil Survey
 Geographic (SSURGO) database from the National Cooperative Soil Survey (NCSS),
 which is led by the Natural Resources Conservation Service (NRCS) under the
 USDA; the Global Historical Climatology Network (GHCN), coordinated by National
 Climatic Data Center at NOAA; the Daymet gridded estimates of daily weather
-parameters for North America, version 3, available from the Oak Ridge National
+parameters for North America, version 4, available from the Oak Ridge National
 Laboratory's Distributed Active Archive Center (DAAC); the International Tree
-Ring Data Bank; and the National Land Cover Database (NLCD).")
+Ring Data Bank; the National Land Cover Database (NLCD); the Cropland Data Layer
+from the National Agricultural Statistics Service; and the PAD-US dataset of
+protected area boundaries from the USGS.")
     (license license:expat)))
 
 (define-public r-fect

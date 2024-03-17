@@ -11209,6 +11209,50 @@ and quadratic discriminant analysis, and models produced by the caret package's
 train().  It's straightforward to add in other other model architectures.")
     (license license:expat)))
 
+(define-public r-mosaiccalc
+  (package
+    (name "r-mosaiccalc")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mosaicCalc" version))
+       (sha256
+        (base32 "1538g36cfg3hlig8fcclri5cfqs94s8qxaqw4pa85c8s14k59dda"))))
+    (properties `((upstream-name . "mosaicCalc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-sp
+                             r-ryacas
+                             r-rlang
+                             r-plotly
+                             r-orthopolynom
+                             r-mosaiccore
+                             r-mosaic
+                             r-metr
+                             r-matrix
+                             r-mass
+                             r-glue
+                             r-ggplot2
+                             r-ggformula
+                             r-dplyr
+                             r-deriv
+                             r-cubature))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ProjectMOSAIC/mosaicCalc")
+    (synopsis "R-Language Based Calculus Operations for Teaching")
+    (description
+     "Software to support the introductory *MOSAIC Calculus* textbook
+<https://www.mosaic-web.org/MOSAIC-Calculus/>), one of many data- and
+modeling-oriented educational resources developed by Project MOSAIC
+(<https://www.mosaic-web.org/>).  Provides symbolic and numerical
+differentiation and integration, as well as support for applied linear algebra
+(for data science), and differential equations/dynamics.  Includes
+grammar-of-graphics-based functions for drawing vector fields, trajectories,
+etc.  The software is suitable for general use, but intended mainly for teaching
+calculus.")
+    (license license:gpl2+)))
+
 (define-public r-mortcast
   (package
     (name "r-mortcast")

@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -38224,27 +38224,6 @@ covariate-assisted spectral clustering (CASC).  By providing these additional
 algorithms, the package enables users to compare their performance with CASCORE
 in community detection tasks.")
     (license license:gpl2)))
-
-(define-public r-caschrono
-  (package
-    (name "r-caschrono")
-    (version "2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "caschrono" version))
-       (sha256
-        (base32 "1z5hpmyqila2d1ils4jxq87s4x6xfskpd0xixk2fn1qalk5x2gh3"))))
-    (properties `((upstream-name . "caschrono")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-hmisc))
-    (home-page "https://cran.r-project.org/package=caschrono")
-    (synopsis "Series Temporelles Avec R")
-    (description
-     "Functions, data sets and exercises solutions for the book Series Temporelles
-Avec R (Yves Aragon, edp sciences, 2016).  For all chapters, a vignette is
-available with some additional material and exercises solutions.")
-    (license license:gpl2+)))
 
 (define-public r-cascadeselect
   (package

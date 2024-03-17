@@ -1595,13 +1595,13 @@ and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
 (define-public r-btspas
   (package
     (name "r-btspas")
-    (version "2021.11.2")
+    (version "2024.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSPAS" version))
        (sha256
-        (base32 "1as1r050qabbm9k19lbcdkyjsblc7f6hd3x7dy38rc6rxzp2iilj"))))
+        (base32 "0vpgbkhsirzx3c11ddw56h16kjglr76p78nwqaylinn7rx5qh68a"))))
     (properties `((upstream-name . "BTSPAS")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -12034,13 +12034,13 @@ calculations needed by Biological Dosimetry Laboratories.")
 (define-public r-biodiversityr
   (package
     (name "r-biodiversityr")
-    (version "2.15-4")
+    (version "2.16-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiodiversityR" version))
        (sha256
-        (base32 "0k8wx07rskc3m9zvksh45df4nsy545wfp32chfvpr1sjgpc98hcb"))))
+        (base32 "059kj0cnb3fpqngww6560mqg6c4dsh5w6484v23wnmng064rf1fi"))))
     (properties `((upstream-name . "BiodiversityR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcmdr r-ggplot2))

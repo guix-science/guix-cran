@@ -22671,13 +22671,13 @@ measures variability in subpopulations relative to the total population).")
 (define-public r-gentwoarmstrialsize
   (package
     (name "r-gentwoarmstrialsize")
-    (version "0.0.4.5")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenTwoArmsTrialSize" version))
        (sha256
-        (base32 "17si0vxha3cx59b2wpnlxzhvq4kkzgv746r3jgp2cfg6jmfinbwc"))))
+        (base32 "0qf3a19hv860ll28pmx6skphwbn65ia8k0pvb3gzkdz3wlzmd1zw"))))
     (properties `((upstream-name . "GenTwoArmsTrialSize")))
     (build-system r-build-system)
     (propagated-inputs (list r-trialsize r-hmisc r-dplyr))

@@ -12843,13 +12843,13 @@ ggplot2 plotting framework and can be extended like every other ggplot object.")
 (define-public r-dimodelsmulti
   (package
     (name "r-dimodelsmulti")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsMulti" version))
        (sha256
-        (base32 "19gyhgbl3z999nrzislkfc5y7vhwqv5ffchyfyfw0j7zw13lvjf9"))))
+        (base32 "1l15irl8nrhq0x0bhz5rh225lha9pmqmvl0p4mr534cg36abs7gm"))))
     (properties `((upstream-name . "DImodelsMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

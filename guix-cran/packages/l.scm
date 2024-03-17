@@ -7853,13 +7853,13 @@ status plots for efficient compound evaluation, aiding in drug development.")
 (define-public r-lipidomicsr
   (package
     (name "r-lipidomicsr")
-    (version "0.1.0")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidomicsR" version))
        (sha256
-        (base32 "0kxvyrrr428blfh904ps4kmfgsb25v23mi5v9rjd36zwak2jxwya"))))
+        (base32 "0ipywvqy0983v4cqpp4n8y04g1w8izcx6v960kwh3rklnn1p19ym"))))
     (properties `((upstream-name . "LipidomicsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

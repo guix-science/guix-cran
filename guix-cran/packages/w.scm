@@ -1086,13 +1086,13 @@ directory within functions and wrap console messages around other functions.")
 (define-public r-wrappedtools
   (package
     (name "r-wrappedtools")
-    (version "0.9.3")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrappedtools" version))
        (sha256
-        (base32 "15ds3y211f3ji2v24y3radraxls6vcjjmfacd3wsfix6pfznr94a"))))
+        (base32 "1rpbfsh8cs07icc8440rmcmgwzjwrax86hk7hx7zwmsjigap3pxi"))))
     (properties `((upstream-name . "wrappedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1107,12 +1107,14 @@ directory within functions and wrap console messages around other functions.")
                              r-glue
                              r-ggplot2
                              r-forcats
+                             r-flextable
                              r-dplyr
+                             r-desctools
                              r-coin
                              r-broom
                              r-boot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=wrappedtools")
+    (home-page "https://github.com/abusjahn/wrappedtools")
     (synopsis "Useful Wrappers Around Commonly Used Functions")
     (description
      "The main functionalities of wrappedtools are: adding backticks to variable

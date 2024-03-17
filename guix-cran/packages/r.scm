@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -4699,13 +4700,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.1.22")
+    (version "9.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1qf2svv634jg2gx9zv2sha81x14dbnxdlgj2kkgqlxdikkcgn5wb"))))
+        (base32 "1pjd6kzgzhd9rabcvp9d1qbmjrxwpp36bic48d4k0z5l8xj4qaw1"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -16792,13 +16793,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "07yr31wpbhp3n84cw2i8jhsxhb9sxdwqzrmdr6f8c6f42qmr0n5w"))))
+        (base32 "0jk27w6h4zk1wpfmhbpxw07c6v20bymq5h9k78aqzwjnlql39kiq"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (propagated-inputs (list r-plgp r-lhs r-foreach r-doparallel))

@@ -1017,13 +1017,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "19rj2gykrxcbp1cv07xpfsz29mxsnfc38vrzf3ckqnbyqdp18v39"))))
+        (base32 "1zk77g4ziv7vrqy212bs2nbjw6ncp0fzf4f74jkjbyqa7f4p8nhg"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1033,11 +1033,11 @@ those values that are true.")
     (description
      "Provide estimation and data generation tools for some new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley,
-Birnbaum-Saunders and truncated normal as the distribution for the frailty
-terms.  For the basal model, it is considered a parametric approach based on the
-exponential, Weibull and the piecewise exponential distributions as well as a
-semiparametric approach.  For details, see Gallardo and Bourguignon (2022)
-<@code{arXiv:2206.12973>}.")
+Birnbaum-Saunders, truncated normal and mixture of inverse Gaussian as the
+distribution for the frailty terms.  For the basal model, it is considered a
+parametric approach based on the exponential, Weibull and the piecewise
+exponential distributions as well as a semiparametric approach.  For details,
+see Gallardo and Bourguignon (2022) <@code{arXiv:2206.12973>}.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
