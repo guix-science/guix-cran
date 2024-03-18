@@ -3431,13 +3431,13 @@ Research, 35(6), 892â894.")
 (define-public r-survml
   (package
     (name "r-survml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survML" version))
        (sha256
-        (base32 "0xd5bslpzhrcdz3s51h138czc78n0w5mb8yw9xc771cpv92z11is"))))
+        (base32 "10fz2k7c3q94qb5rvhabcyxpyn1flj0xjfsf7h5pxqz6hx221hpn"))))
     (properties `((upstream-name . "survML")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner r-iso))
@@ -3449,7 +3449,7 @@ Research, 35(6), 892â894.")
      "This package provides tools for flexible estimation of conditional survival
 functions using off-the-shelf machine learning tools.  Implements both global
 and local survival stacking.  See Wolock CJ, Gilbert PB, Simon N, and Carone M
-(2022+) <@code{arXiv:2211.03031>}.")
+(2024) <doi:10.1080/10618600.2024.2304070>.")
     (license license:gpl3+)))
 
 (define-public r-survmixer
@@ -9176,16 +9176,16 @@ with jumps to linear models, and functions for various c-structuredness indices.
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stoppingrule" version))
        (sha256
-        (base32 "06hyms83r7n4a4pkkx58j5cy911s9xxqa3amfiphi67nxngza8wr"))))
+        (base32 "07gchj75hj1sjgp6nx1hry563vcd33q1j0iw1w1z9qaf3ivqby5a"))))
     (properties `((upstream-name . "stoppingrule")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma))
+    (propagated-inputs (list r-pracma r-matrixstats))
     (home-page "https://cran.r-project.org/package=stoppingrule")
     (synopsis "Create and Evaluate Stopping Rules for Safety Monitoring")
     (description
@@ -26200,13 +26200,13 @@ information and an example of implementation can be found in Markonis and Strnad
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.3")
+    (version "4.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "1kprflzhfq63jzf37v9wd0nigp19nxb5f7py35p7h70v4kcdv27c"))))
+        (base32 "0c6g0ldla3ix40aw0h7mylz3xlvdnvrlz288hjkq86r8g9i5mq2b"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -47441,13 +47441,13 @@ different omics expressions for different platforms.")
 (define-public r-semmcci
   (package
     (name "r-semmcci")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semmcci" version))
        (sha256
-        (base32 "18q67mynvms3gxhsm5r0ypb06s059yy5qn1ygnll1qzqcd94wyx2"))))
+        (base32 "1j65z1h267pn941gcm5qbxgr6h7wf75iy6wz1jlzg76yfzsa47va"))))
     (properties `((upstream-name . "semmcci")))
     (build-system r-build-system)
     (propagated-inputs (list r-mice r-lavaan))

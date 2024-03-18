@@ -21083,13 +21083,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "1a40gw1njb74hvij08a2dzq7sbnw5pslaxy5h7yfqh418pk0rixx"))))
+        (base32 "09nddbcz0z5lh6aaspjvfvbp74na7693a5w3hq36p4ah2b824zmi"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -35954,13 +35954,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "0r8rf4a6m3zx880s3brn7mygz42cl6pc040fbfhnwwxdrq2hdrz7"))))
+        (base32 "0bgl3np3x2a4si99mx618jd8c4skq8bfdnxjwq7m59bapqc1s7c8"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

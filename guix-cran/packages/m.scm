@@ -34113,13 +34113,13 @@ Gaussian data.")
 (define-public r-mcp
   (package
     (name "r-mcp")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcp" version))
        (sha256
-        (base32 "1c19y2611crvxcpz1wl2l5lf7ln9dkc56d14ri30hj44wz2liwdf"))))
+        (base32 "1va2h974wl9kmc3y82a5wjxli4r2spka6chgrzn7v2w2ir1qckq7"))))
     (properties `((upstream-name . "mcp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

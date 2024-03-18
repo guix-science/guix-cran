@@ -23789,13 +23789,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "1w7avihvgcpidw4bp51c2p37azjqgsn6n7g49djnj5hypb0xm0gk"))))
+        (base32 "0b95b52yrpagjcfi8wxsg8cf5zfhrdlxzvppnb73815cj39wdfns"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (inputs (list grass))

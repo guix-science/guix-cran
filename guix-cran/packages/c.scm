@@ -15894,6 +15894,28 @@ is reporting the chemical and ecological status of surface waters according to
 the European Water Framework Directive.")
     (license license:gpl3+)))
 
+(define-public r-confcons
+  (package
+    (name "r-confcons")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confcons" version))
+       (sha256
+        (base32 "1a9v2dzldnbmhn5fz30d8y8nhbgczgp20rag6ck6h4xjgwqm4yv1"))))
+    (properties `((upstream-name . "confcons")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bfakos/confcons")
+    (synopsis "Confidence and Consistency of Predictive Distribution Models")
+    (description
+     "Calculate confidence and consistency that measure the goodness-of-fit and
+transferability of predictive/potential distribution models (including species
+distribution models) as described by Somodi & Bede-Fazekas et al. (2024)
+<doi:10.1016/j.ecolmodel.2024.110667>.")
+    (license license:gpl3+)))
+
 (define-public r-conf-design
   (package
     (name "r-conf-design")

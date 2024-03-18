@@ -8504,6 +8504,36 @@ code related to the above model was retrieved from
 graphical representations or apply clustering techniques.")
     (license license:gpl2+)))
 
+(define-public r-blscraper
+  (package
+    (name "r-blscraper")
+    (version "4.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blscrapeR" version))
+       (sha256
+        (base32 "0bz1bqma9r9qdd10k8yzm9bf0pxcw8dpsb44ch5hd57p9p1p9q4y"))))
+    (properties `((upstream-name . "blscrapeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/keberwein/blscrapeR")
+    (synopsis
+     "An API Wrapper for the United States Bureau of Labor Statistics")
+    (description
+     "Scrapes various data from <https://www.bls.gov/>.  The Bureau of Labor
+Statistics is the statistical branch of the United States Department of Labor.
+The package has additional functions to help parse, analyze and visualize the
+data.")
+    (license license:expat)))
+
 (define-public r-blsbandit
   (package
     (name "r-blsbandit")
@@ -10172,25 +10202,22 @@ computes the estimators based on the method of moments.")
 (define-public r-bivariatemaps
   (package
     (name "r-bivariatemaps")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bivariatemaps" version))
        (sha256
-        (base32 "0ig6zf760kz1xy8d8pr3h3ccyxh6q5w1k6vvsqj5cbqbpd6hywv2"))))
+        (base32 "0fqp5r86j6c6221lm9g2glw0k2fivsnqijc5a566vhxk3vbw0hk4"))))
     (properties `((upstream-name . "bivariatemaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-classint))
     (home-page "https://cran.r-project.org/package=bivariatemaps")
     (synopsis "Creates Bivariate Maps")
     (description
-     "This package contains functions to plot bivariate maps and to generate grids
-from shapefiles based on area coverage.  For more info, see: Hidasi-Neto, J
-(2015)
-<https://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html>,
-Hidasi-Neto, J (2014)
-<https://rfunctions.blogspot.com/2014/12/gridfilter-intersect-grid-with-shape.html>.")
+     "This package contains functions to plot bivariate maps.  For more info, see:
+Hidasi-Neto, J (2015)
+<https://rfunctions.blogspot.com/2015/03/bivariate-maps-bivariatemap-function.html>.")
     (license license:gpl3)))
 
 (define-public r-bivariate-pareto

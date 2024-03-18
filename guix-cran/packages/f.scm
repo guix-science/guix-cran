@@ -2996,42 +2996,6 @@ Performance indicators are also provided to compare similarity between two
 univariate signals (incomplete signal and imputed signal).")
     (license license:gpl2+)))
 
-(define-public r-fsmts
-  (package
-    (name "r-fsmts")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fsMTS" version))
-       (sha256
-        (base32 "18sikbvl6cwsgr5vqxnx3lmpp2mlx22ca16zxddj87z7jfr1fhgn"))))
-    (properties `((upstream-name . "fsMTS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomforestsrc r-mpmi r-lars r-glasso
-                             r-freqdom))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fsMTS")
-    (synopsis "Feature Selection for Multivariate Time Series")
-    (description
-     "This package implements feature selection routines for multivariate time series
-(MTS).  The list of implemented algorithms includes: own lags (independent MTS
-components), distance-based (using external structure, e.g. Pfeifer and Deutsch
-(1980) <doi:10.2307/1268381>), cross-correlation (see Schelter et al. (2006,
-ISBN:9783527406234)), graphical LASSO (see Haworth and Cheng (2014)
-<https://www.gla.ac.uk/media/Media_401739_smxx.pdf>), random forest (see Pavlyuk
-(2020) \"Random Forest Variable Selection for Sparse Vector Autoregressive
-Models\" in Contributions to Statistics, in production), least angle regression
-(see Gelper and Croux (2008) <https://lirias.kuleuven.be/retrieve/16024>),
-mutual information (see Schelter et al. (2006, ISBN:9783527406234), Liu et al.
-(2016) <doi:10.1109/@code{ChiCC.2016.7554480>}), and partial spectral coherence
-(see Davis et al.(2016) <doi:10.1080/10618600.2015.1092978>).  In addition, the
-package implements functions for ensemble feature selection (using feature
-ranking and majority voting).  The package is implemented within Dmitry
-Pavlyuk's research project No.  1.1.1.2/VIAA/1/16/112 \"Spatiotemporal urban
-traffic modelling using big data\".")
-    (license license:gpl3)))
-
 (define-public r-fsm
   (package
     (name "r-fsm")

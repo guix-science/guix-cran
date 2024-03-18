@@ -3865,6 +3865,41 @@ regimes.  Tests can be conducted for TVAR as well as for TVECM (Hansen and Seo
 response relative to the overall sample.")
     (license license:gpl2+)))
 
+(define-public r-tsdistributions
+  (package
+    (name "r-tsdistributions")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tsdistributions" version))
+       (sha256
+        (base32 "0nvaf2p02kyvcq63mbpi2534j9jd1nxvxacv89d6m6cy61fbkran"))))
+    (properties `((upstream-name . "tsdistributions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tsmethods
+                             r-tmb
+                             r-skewhyperbolic
+                             r-sandwich
+                             r-rsolnp
+                             r-rcppeigen
+                             r-progressr
+                             r-generalizedhyperbolic
+                             r-future-apply
+                             r-future
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.nopredict.com/packages/tsdistributions")
+    (synopsis "Location Scale Standardized Distributions")
+    (description
+     "Location-Scale based distributions parameterized in terms of mean, standard
+deviation, skew and shape parameters and estimation using automatic
+differentiation.  Distributions include the Normal, Student and GED as well as
+their skewed variants ('Fernandez and Steel'), the Johnson SU', and the
+Generalized Hyperbolic.")
+    (license license:gpl2)))
+
 (define-public r-tsdist
   (package
     (name "r-tsdist")

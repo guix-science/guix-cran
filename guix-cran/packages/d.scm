@@ -1638,21 +1638,16 @@ files.")
 (define-public r-dupnodes
   (package
     (name "r-dupnodes")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dupNodes" version))
        (sha256
-        (base32 "17y292866nx2r0q5vymzwy6hrfa19kgp7xvsdhasrj537i6f794n"))))
+        (base32 "18ccg83nsj7s12x6ri3ig7qh4ag6xjv72c9ix2pqakmzl640717r"))))
     (properties `((upstream-name . "dupNodes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown
-                             r-rdpack
-                             r-qpdf
-                             r-knitr
-                             r-igraph
-                             r-dogesr))
+    (propagated-inputs (list r-rdpack r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dupNodes")
     (synopsis
@@ -1660,7 +1655,7 @@ files.")
     (description
      "This package creates a new graph from an existing one, duplicating nodes with
 self-loops.  This can be used for a computation of betweenness centrality that
-does not drop this essential information.  Implements Merelo & Molinari (2021)
+does not drop this essential information.  Implements Merelo & Molinari (2024)
 <doi:10.1007/s42001-023-00245-4>.")
     (license license:gpl3)))
 
@@ -1785,13 +1780,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "1c5w6hir01b3m1nz2dcaxq2bndd5fgwqk2zjnq5s6znpid73qhaz"))))
+        (base32 "025364w08mwjcl03lnw9jdy21bzirr5znygwkl8py30faipq2mj8"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

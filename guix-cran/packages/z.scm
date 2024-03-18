@@ -34,6 +34,33 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-zstdlite
+  (package
+    (name "r-zstdlite")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zstdlite" version))
+       (sha256
+        (base32 "17rcmbilfc8yl1cxl6651aqmxlx2a9m9i617xzpi2mms4ryyivc7"))))
+    (properties `((upstream-name . "zstdlite")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/zstdlite")
+    (synopsis "Fast Compression and Serialization with 'Zstandard' Algorithm")
+    (description
+     "Fast, compressed serialization of R objects using the Zstandard algorithm.  R
+objects can be compressed and decompressed quickly using the standard
+serialization mechanism in R. Raw byte vectors and strings are also handled
+directly for compatibility with compressed data created by other systems and
+programs supporting Zstandard compression.  Dictionaries are supported for more
+effective compression of small data, and functions are provided for training
+these dictionaries.  This implementation provides an R interface to advanced
+features of the Zstandard C library (available from
+<https://github.com/facebook/zstd>).")
+    (license license:expat)))
+
 (define-public r-zoomr
   (package
     (name "r-zoomr")
