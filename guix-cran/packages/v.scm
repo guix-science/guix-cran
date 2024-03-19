@@ -3369,13 +3369,13 @@ realism.")
 (define-public r-virtualpop
   (package
     (name "r-virtualpop")
-    (version "1.0.2")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VirtualPop" version))
        (sha256
-        (base32 "0g3yzv9fqmxydqq6b56l6abz03slk7425aahixs3q26gwp587rz4"))))
+        (base32 "1miwljsr6r6i94q9pdpqzhapnfgg3vjv2ikwvc56cpw6k1iw9h39"))))
     (properties `((upstream-name . "VirtualPop")))
     (build-system r-build-system)
     (propagated-inputs (list r-msm r-hmdhfdplus))
@@ -3384,12 +3384,11 @@ realism.")
     (synopsis
      "Simulation of Populations by Sampling Waiting-Time Distributions")
     (description
-     "Generates lifespans and fertility histories in continuous time using
-individual-level state transition (multi-state) models and data from the Human
-Mortality Database and the Human Fertility Database.  To facilitate virtual
-population analysis, data on virtual individuals are stored in a data structure
-commonly used in sample surveys.  Life histories are generated for multiple
-generations.  The genealogies that result facilitate the study of family ties.")
+     "Constructs a virtual population from fertility and mortality rates for any
+country, calendar year and birth cohort in the Human Mortality Database
+<https://www.mortality.org> and the Human Fertility Database
+<https://www.humanfertility.org>.  Fertility histories are simulated for every
+individual and their offspring, producing a multi-generation virtual population.")
     (license license:gpl2)))
 
 (define-public r-virtualpollen

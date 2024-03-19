@@ -626,13 +626,13 @@ hyperbolic distribution, including fitting of the hyperbolic to data.")
 (define-public r-hyperbolicdea
   (package
     (name "r-hyperbolicdea")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyperbolicDEA" version))
        (sha256
-        (base32 "0wfqy3grzdzfqwzy3fpfqj4dcdhwmpdxck22gn8prvgr5ymmyfqc"))))
+        (base32 "05iqbkg3id7ysfmandan416mczzc76qq6kz5lm7s9444a6101agf"))))
     (properties `((upstream-name . "hyperbolicDEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr

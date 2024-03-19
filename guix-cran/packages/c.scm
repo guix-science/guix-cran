@@ -15,8 +15,8 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
@@ -13332,13 +13332,13 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooRTweet" version))
        (sha256
-        (base32 "13ildn082x49d99rqc32l2bgp3x6g8lnx3r3vw279gmbk5i8svjj"))))
+        (base32 "0xxzj67a3sxh0xhpjd9ywpxv8102bvlw6q2a19waq5i1s63a7cpm"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -15801,13 +15801,13 @@ Provides plotting functions for graphical display of interpretations.")
 (define-public r-configural
   (package
     (name "r-configural")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "configural" version))
        (sha256
-        (base32 "1vi6xczqlrzhrfv418wlvqiv69kap4awlxkjpgi7b1ix5ayc8mq8"))))
+        (base32 "1javknjl9ycb6rz77rhzya8yspm9m6mdjwl1waq1akgpiizk1pnl"))))
     (properties `((upstream-name . "configural")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=configural")
@@ -28088,18 +28088,21 @@ failure time models.")
 (define-public r-cito
   (package
     (name "r-cito")
-    (version "1.0.2")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cito" version))
        (sha256
-        (base32 "0va645fzccyzalmlglxdfn3a6crpgly4j59js2gk5fmxz7kmkfh6"))))
+        (base32 "0ayzwk684a0clq67h6ycifphcrhshdx5kpww9yi0v627pyx3jfv6"))))
     (properties `((upstream-name . "cito")))
     (build-system r-build-system)
-    (propagated-inputs (list r-torch
+    (propagated-inputs (list r-torchvision
+                             r-torch
+                             r-tibble
                              r-progress
                              r-parabar
+                             r-lme4
                              r-gridextra
                              r-coro
                              r-cli
@@ -28109,9 +28112,18 @@ failure time models.")
     (home-page "https://citoverse.github.io/cito/")
     (synopsis "Building and Training Neural Networks")
     (description
-     "Building and training custom neural networks in the typical R syntax.  The torch
-package is used for numerical calculations, which allows for training on CPU as
-well as on a graphics card.")
+     "The cito package provides a user-friendly interface for training and
+interpreting deep neural networks (DNN).  cito simplifies the fitting of DNNs by
+supporting the familiar formula syntax, hyperparameter tuning under
+cross-validation, and helps to detect and handle convergence problems.  DNNs can
+be trained on CPU, GPU and @code{MacOS} GPUs.  In addition, cito has many
+downstream functionalities such as various explainable AI (@code{xAI}) metrics
+(e.g. variable importance, partial dependence plots, accumulated local effect
+plots, and effect estimates) to interpret trained DNNs.  cito optionally
+provides confidence intervals (and p-values) for all @code{xAI} metrics and
+predictions.  At the same time, cito is computationally efficient because it is
+based on the deep learning framework torch'.  The torch package is native to R,
+so no Python installation or other API is required for this package.")
     (license license:gpl3+)))
 
 (define-public r-cities
@@ -31562,13 +31574,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1hbn5kznqsyfhy6ffg8rk9cddns8jnh6xj3f5yvgl5jdpcclabkf"))))
+        (base32 "0qmnfhxgzn4gcn2wx7zwz30kj5zgvcs7dfkayrarf9qmm9ys8rnd"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -33483,6 +33495,41 @@ including (uncensored or censored) quantile regression model, additive hazards
 model, and dynamic survival models of Peng and Huang (2007)
 <doi:10.1093/biomet/asm058>, among others.")
     (license license:gpl2+)))
+
+(define-public r-cepumd
+  (package
+    (name "r-cepumd")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cepumd" version))
+       (sha256
+        (base32 "09kw26kqzcwjzqyxcrwijk4cz4m6m2i62wwmyc1sm0wl39lk7c0g"))))
+    (properties `((upstream-name . "cepumd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-janitor
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://arcenis-r.github.io/cepumd/")
+    (synopsis "Calculate Consumer Expenditure Survey (CE) Annual Estimates")
+    (description
+     "This package provides functions and data files to help CE Public-Use Microdata
+(PUMD) users calculate annual estimated expenditure means, standard errors, and
+quantiles according to the methods used by the CE with PUMD. For more
+information on the CE please visit <https://www.bls.gov/cex>.  For further
+reading on CE estimate calculations please see the CE Calculation section of the
+U.S. Bureau of Labor Statistics (BLS) Handbook of Methods at
+<https://www.bls.gov/opub/hom/cex/calculation.htm>.  For further information
+about CE PUMD please visit <https://www.bls.gov/cex/pumd.htm>.")
+    (license license:gpl3+)))
 
 (define-public r-cepreader
   (package
@@ -36484,17 +36531,17 @@ different criteria are used to select the basis functions.")
 (define-public r-causalsens
   (package
     (name "r-causalsens")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalsens" version))
        (sha256
-        (base32 "1xy8nybflbw6hymc15mmz27ic6hcq89wryb8q6d4zi216lwv2nww"))))
+        (base32 "0gmy24vp50xfl4qrnn314svyic8fhqnfhr43zwbcbgipf877hdvh"))))
     (properties `((upstream-name . "causalsens")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://www.mattblackwell.org/software/causalsens/")
+    (home-page "https://www.mattblackwell.org/software/causalsens/")
     (synopsis
      "Selection Bias Approach to Sensitivity Analysis for Causal Effects")
     (description
@@ -38972,6 +39019,33 @@ variables.  This package provides functions for estimating CAR scores, for
 variable selection using CAR scores, and for estimating corresponding regression
 coefficients.  Both shrinkage as well as empirical estimators are available.")
     (license license:gpl3+)))
+
+(define-public r-cardx
+  (package
+    (name "r-cardx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardx" version))
+       (sha256
+        (base32 "1zw9l8w1jv7hs55jc7c5m2vxmsxv9lfzsvm23zwfpcks4ich26gb"))))
+    (properties `((upstream-name . "cardx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-glue
+                             r-dplyr
+                             r-cli
+                             r-cards))
+    (home-page "https://github.com/insightsengineering/cardx")
+    (synopsis "Extra Analysis Results Data Utilities")
+    (description
+     "Create extra Analysis Results Data (ARD) summary objects.  The package
+supplements the simple ARD functions from the cards package, exporting functions
+to put statistical results in the ARD format.  These objects are used and
+re-used to construct summary tables, visualizations, and written reports.")
+    (license license:asl2.0)))
 
 (define-public r-cards
   (package

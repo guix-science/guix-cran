@@ -3200,13 +3200,13 @@ the Swiss National Science Foundation for its financial support.")
 (define-public r-pssubpathway
   (package
     (name "r-pssubpathway")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psSubpathway" version))
        (sha256
-        (base32 "1vznsf2xpchzh3ybj3d2dz8611q4681540wmw11y8g4bhl1lfp0w"))))
+        (base32 "044midk0smvf0lmpv7gy7gls9gab06jrrb53cjgj58mdijm6db7x"))))
     (properties `((upstream-name . "psSubpathway")))
     (build-system r-build-system)
     (propagated-inputs (list r-pheatmap r-mpmi r-igraph r-gsva))
@@ -6767,29 +6767,30 @@ for different versions of same question list.")
 (define-public r-profast
   (package
     (name "r-profast")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProFAST" version))
        (sha256
-        (base32 "07k3p2khcwymcg2gw4npzpm47r1g03ah06rj2jf8gk95pbqk8p00"))))
+        (base32 "06643m0rr54v42sg16vp3dlfkvkjflqlmv2kv87c2n668gifxaw7"))))
     (properties `((upstream-name . "ProFAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
                              r-rcpparmadillo
                              r-rcpp
                              r-precast
-                             r-performance
                              r-pbapply
                              r-org-mm-eg-db
                              r-org-hs-eg-db
-                             r-nnet
                              r-mclust
                              r-matrix
                              r-irlba
                              r-harmony
                              r-gtools
+                             r-ggplot2
+                             r-future
+                             r-furrr
                              r-dr-sc
                              r-biomart
                              r-annotationdbi))
@@ -11918,16 +11919,16 @@ designs to detect mediated treatment effects (2/1, 3/1, 3/2; <trt.arm.lev> /
 (define-public r-powertost
   (package
     (name "r-powertost")
-    (version "1.5-4")
+    (version "1.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PowerTOST" version))
        (sha256
-        (base32 "0k7vbgw0jswynwrammzzlc5radszjyqw9y5h3kh22bzpq4njvl1z"))))
+        (base32 "1yp862b9ibgifdwh8f5ws3qbycdp24hvsigj5ira8isdci7vvyv3"))))
     (properties `((upstream-name . "PowerTOST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-teachingdemos r-mvtnorm r-cubature))
+    (propagated-inputs (list r-mvtnorm r-cubature))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Detlew/PowerTOST")
     (synopsis "Power and Sample Size for (Bio)Equivalence Studies")
@@ -22982,13 +22983,13 @@ al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
 (define-public r-phylopath
   (package
     (name "r-phylopath")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylopath" version))
        (sha256
-        (base32 "1bmsnxkr9cd7v84rkdxy5f9bwh4siwggkq0g23y8pcpl8v9vs8ph"))))
+        (base32 "1s00sj9wmmq554lx5s55akznad80vhzs546fqsa0fzz20pnshs8n"))))
     (properties `((upstream-name . "phylopath")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -5336,22 +5336,22 @@ plots.  The App is called using eufmdis.adapt::run_adapt().")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "0.10.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "1y5n22wbqpq1wrdhlf35mjlxcqq4nwrmivps81d6p0nnca84fhyc"))))
+        (base32 "0p7524xm0yzj1yqs667n026kf7hyvvkv8z8n0avnzswhkyga3cnd"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-tidyr
                              r-scales
+                             r-patchwork
                              r-magrittr
                              r-httr
-                             r-gridextra
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))

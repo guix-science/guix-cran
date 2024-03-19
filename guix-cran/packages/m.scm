@@ -17587,13 +17587,13 @@ mlr3 is loaded.")
 (define-public r-mlr3cluster
   (package
     (name "r-mlr3cluster")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3cluster" version))
        (sha256
-        (base32 "0qxh80qfb06wdivja6cy9qwpma27ic66xis0iz7lfd09dvfmrb8w"))))
+        (base32 "09fsw2b43f9m7clv1qwylimyz622snhn9ykq3xwbiric7zr4ca91"))))
     (properties `((upstream-name . "mlr3cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -23728,13 +23728,13 @@ data.")
 (define-public r-migconnectivity
   (package
     (name "r-migconnectivity")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MigConnectivity" version))
        (sha256
-        (base32 "1a9jdxa53q61ww4r9avsi0llnp9cjpmwxa0whjyprf4flh4m1zaf"))))
+        (base32 "0lyqjhhnba83niv1rmgxz3f9kq022fnck3l2m27zc1lw92l6lhfv"))))
     (properties `((upstream-name . "MigConnectivity")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -34279,13 +34279,13 @@ collection of test functions.")
 (define-public r-mcmsupply
   (package
     (name "r-mcmsupply")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmsupply" version))
        (sha256
-        (base32 "0qp3b31rr18b7a22sg5xq3110d4q6frsszcxlppam404jmhbjwb9"))))
+        (base32 "1130nl2qz36gyw9d6nqrq2zpa9p4171n45mqmjqzx8jbrp9za7y3"))))
     (properties `((upstream-name . "mcmsupply")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -39420,16 +39420,22 @@ developed in C++'.")
 (define-public r-maraca
   (package
     (name "r-maraca")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maraca" version))
        (sha256
-        (base32 "1x3v3rm2gmshnrvqs29qgay41j56qwzzbxrjflybb0l6n4a8ys6h"))))
+        (base32 "0sy5vmgkbcr1gi7l0hkdzdmibkgs1yvbgj14sfi4jc8zabwbpkz2"))))
     (properties `((upstream-name . "maraca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-hce r-ggplot2 r-dplyr r-checkmate))
+    (propagated-inputs (list r-tidyr
+                             r-patchwork
+                             r-lifecycle
+                             r-hce
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AstraZeneca/maraca")
     (synopsis

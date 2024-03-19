@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -4447,37 +4446,6 @@ contains several wrappers of R built-in serialize/unserialize mechanism allowing
 user to quickly append objects to a tape-like file and later iterate over them
 requiring only one copy of each stored object to reside in memory a time.")
     (license license:gpl2)))
-
-(define-public r-rtapas
-  (package
-    (name "r-rtapas")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rtapas" version))
-       (sha256
-        (base32 "16mlmml7d381zxfqjfcnk77l5ic6dp890a74jb8va4yi32cb88yw"))))
-    (properties `((upstream-name . "Rtapas")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-stringr
-                             r-phytools
-                             r-parallelly
-                             r-paco
-                             r-giniwegneg
-                             r-distory
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=Rtapas")
-    (synopsis "Random Tanglegram Partitions")
-    (description
-     "Applies a given global-fit method to random partial tanglegrams of a fixed size
-to identify the associations, terminals, and nodes that maximize phylogenetic
-(in)congruence.  It also includes functions to compute more easily the
-confidence intervals of classification metrics and plot results, reducing
-computational time.  See Llaberia-Robledillo et al. (2022,
-<doi:10.1101/2022.05.17.492291>).")
-    (license license:expat)))
 
 (define-public r-rtables
   (package
@@ -12281,13 +12249,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.14")
+    (version "0.9.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "0pkyw5222a68m5mhljddkdvrln15mzqfrjxdgx085mn7f9wj51ax"))))
+        (base32 "1mgb7p4yqjwxrsjs16adcybjmhrylihv7279vjrxgfrlgqflnjxx"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -12296,9 +12264,9 @@ outcomes with ties are supported.")
     (home-page "https://github.com/mgondan/rolog")
     (synopsis "Query 'SWI'-'Prolog' from R")
     (description
-     "This R package connects to SWI'-'Prolog', <https://www.swi-prolog.org/>, so that
-R can send deterministic and non-deterministic queries to prolog ('consult',
-query'/'submit', once', findall').")
+     "This R package connects to SWI-Prolog, <https://www.swi-prolog.org/>, so that R
+can send deterministic and non-deterministic queries to prolog (consult,
+query/submit, once, findall).")
     (license (license:fsdg-compatible "FreeBSD"))))
 
 (define-public r-rolocisccnbs
@@ -16090,13 +16058,13 @@ with the @code{GrADS-DODS} system.")
 (define-public r-rnndescent
   (package
     (name "r-rnndescent")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnndescent" version))
        (sha256
-        (base32 "0wdcw99bmfxxd06ddqgsww8dxmvi516kh1cpm27vg9m3zhw2d51k"))))
+        (base32 "1l9jjx73icciqfmhgc2p0c6b5rvwayxr78aw9dclvkdd87lpa0d0"))))
     (properties `((upstream-name . "rnndescent")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo r-rcpp r-matrix r-dqrng r-bh))

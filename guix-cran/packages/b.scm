@@ -2778,13 +2778,13 @@ ability to export the figures in SVG or PNG formats.")
 (define-public r-bsamgp
   (package
     (name "r-bsamgp")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsamGP" version))
        (sha256
-        (base32 "1zga3h747fh61n9m88gazc2p2i905cwvwdkql3rh65h26cphvvs6"))))
+        (base32 "1792kksvpzinap83asyz6iz7mp7xyi0a7lppxx1m8as7jwnk2nsk"))))
     (properties `((upstream-name . "bsamGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-gridextra r-ggplot2))
@@ -25687,13 +25687,13 @@ background of the package can be found in @code{SoberÃ³n} and Osorio-Olvera
 (define-public r-bamlss
   (package
     (name "r-bamlss")
-    (version "1.2-2")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamlss" version))
        (sha256
-        (base32 "0kbv2wsyd2r1bcylqcp4apwlgcd3v7kw5f0pgiwqz7jjaqgcahzd"))))
+        (base32 "1mf78jfzyq3j598w2l5620igzqmmm68d7wd8vvyx4vdikl7bl3zr"))))
     (properties `((upstream-name . "bamlss")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

@@ -6479,13 +6479,13 @@ visualizations. @code{SubVis} requires the availability of a web browser.")
 (define-public r-subtypedrug
   (package
     (name "r-subtypedrug")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SubtypeDrug" version))
        (sha256
-        (base32 "0m7p20a0jknjxx66r6rj35vb4qsm0mp6j5k4zm22nh38gvq3hqca"))))
+        (base32 "0710hfq5gd0nw7vp6xxsy3yzxdmgb88k05a0h44w8q0x9dbjcmab"))))
     (properties `((upstream-name . "SubtypeDrug")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -30038,13 +30038,13 @@ data types based on Yang, D., & Dalton, J. E. (2012)
 (define-public r-smcryptor
   (package
     (name "r-smcryptor")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcryptoR" version))
        (sha256
-        (base32 "1bjasxx292195k0hjs02v7mbmgfsaxxw9bjmnymllmpfm0w78ygv"))))
+        (base32 "05njdwx1ah1559k2fsvqg4wcm07k0570zxlnl4zscr042ixyg0sw"))))
     (properties `((upstream-name . "smcryptoR")))
     (build-system r-build-system)
     (inputs (list))
@@ -44258,6 +44258,37 @@ etc.  use this package to simulate a Google search and retrieve its \"Popular
 Times\" and geographic location information and save them in Comma-Separated
 Values files.  This package also downloads a list of restaurants and bars of
 Ushuaia city, Argentina.")
+    (license license:expat)))
+
+(define-public r-sgapi
+  (package
+    (name "r-sgapi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgapi" version))
+       (sha256
+        (base32 "1vwhhjg7zl0qv63njp1g6v7nnn4fnv4kx3v2m7r2pb4fm9gr4185"))))
+    (properties `((upstream-name . "sgapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-sf
+                             r-readr
+                             r-magrittr
+                             r-httr
+                             r-dplyr))
+    (home-page
+     "https://defra-data-science-centre-of-excellence.github.io/sgapi/")
+    (synopsis
+     "Aid Querying 'nomis' and 'Office for National Statistics Open Geography' APIs")
+    (description
+     "Facilitates extraction of geospatial data from the Office for National
+Statistics Open Geography and nomis Application Programming Interfaces (APIs).
+Simplifies process of querying nomis datasets <https://www.nomisweb.co.uk/> and
+extracting desired datasets in dataframe format.  Extracts area shapefiles at
+chosen resolution from Office for National Statistics Open Geography
+<https://geoportal.statistics.gov.uk/>.")
     (license license:expat)))
 
 (define-public r-sftrack

@@ -4459,13 +4459,13 @@ correlation structure based on WGEE/GEE.")
 (define-public r-wflo
   (package
     (name "r-wflo")
-    (version "1.8")
+    (version "1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wflo" version))
        (sha256
-        (base32 "01k2y8sz08npm8nv21z8gwi3msb6kybin245irjrjsxass999zbj"))))
+        (base32 "1lxndfm58jz9q7vg1w9jzdf0m3w504hsx7xcsjj78s9sn8d4a0xq"))))
     (properties `((upstream-name . "wflo")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-progress r-plotrix r-emstreer))

@@ -3044,13 +3044,13 @@ Pearson VII, Slash or Contaminated Normal).")
 (define-public r-tsmethods
   (package
     (name "r-tsmethods")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsmethods" version))
        (sha256
-        (base32 "14zp1y9d34vfk89gxkf5i41qka3fkhv342pcxxcscc9jb4aps8yl"))))
+        (base32 "062n1zcl4v16nai0bpzvc7pjax4gdh8rgyq04pb9b5spy7pcx0n1"))))
     (properties `((upstream-name . "tsmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -18663,6 +18663,38 @@ original catalogue file from the T@code{FactS} as well as users defined
 catalogues of interest that are not supported by T@code{FactS} (e.g.,
 Arabidopsis).")
     (license license:gpl3)))
+
+(define-public r-tf
+  (package
+    (name "r-tf")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tf" version))
+       (sha256
+        (base32 "1w1ifnxfh963rqbx7kljsf3s0dc1nj0kgc9dkwn8jh2j1qi69bcn"))))
+    (properties `((upstream-name . "tf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-vctrs
+                             r-rlang
+                             r-purrr
+                             r-pracma
+                             r-mvtnorm
+                             r-mgcv
+                             r-checkmate))
+    (home-page "https://tidyfun.github.io/tf/")
+    (synopsis "S3 Classes and Methods for Tidy Functional Data")
+    (description
+     "Defines S3 vector data types for vectors of functional data (grid-based,
+spline-based or functional principal components-based) with all arithmetic and
+summary methods, derivation, integration and smoothing, plotting, data import
+and export, and data wrangling, such as re-evaluating, subsetting,
+sub-assigning, zooming into sub-domains, or extracting functional features like
+minima/maxima and their locations.  The implementation allows including such
+vectors in data frames for joint analysis of functional and scalar variables.")
+    (license license:agpl3+)))
 
 (define-public r-textutils
   (package

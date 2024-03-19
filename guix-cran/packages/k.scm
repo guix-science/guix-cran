@@ -1253,27 +1253,31 @@ hazard functions.")
 (define-public r-konfound
   (package
     (name "r-konfound")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "konfound" version))
        (sha256
-        (base32 "14d8a1ngrf24gbxfg8c8h4svjvsjc3gflcnzxza17xv2rcgzygnr"))))
+        (base32 "03phg563qigb8j8r35aj5v1r2m2v2lfncipqv684hskfx2bk9vww"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-rlang
                              r-purrr
-                             r-mice
+                             r-pbkrtest
+                             r-margins
+                             r-lme4
+                             r-lavaan
+                             r-ggrepel
                              r-ggplot2
                              r-dplyr
                              r-crayon
                              r-broom-mixed
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jrosen48/konfound")
+    (home-page "https://github.com/konfound-project/konfound")
     (synopsis "Quantify the Robustness of Causal Inferences")
     (description
      "Statistical methods that quantify the conditions necessary to alter inferences,

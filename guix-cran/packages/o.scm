@@ -9548,13 +9548,13 @@ squared error.")
 (define-public r-odmeans
   (package
     (name "r-odmeans")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ODMeans" version))
        (sha256
-        (base32 "09zpgr7acc5dsbv8qz0r8vzxy64202f62ird6ynkng3s55z0pana"))))
+        (base32 "0fxy792h439kjbs7hq3cchnz00va5vbi1s6fq3ppjnp0qxf7h7zq"))))
     (properties `((upstream-name . "ODMeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggrepel r-ggplot2 r-ggmap r-geosphere))

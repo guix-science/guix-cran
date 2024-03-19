@@ -4023,13 +4023,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1yafj0pljnmix3b6sf6mhfrqi5q6lmvw8mr505nrfvljbp8dqpp5"))))
+        (base32 "0maf6rf9hwh5ik2lc5lqvblgmrrrk5k1i67rpmx9d77b0dhc2k9r"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -13661,13 +13661,13 @@ representing real or categorical variables at original and multiple resolutions.
 (define-public r-diffeqr
   (package
     (name "r-diffeqr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffeqr" version))
        (sha256
-        (base32 "1362wrpxcg9wc92qadah0fc0shbz9sds98jdfw6nnxjg2pvjxha4"))))
+        (base32 "116j5iivp1rp0aql74mbvbp9j9q86rh49iamfbi46jx0yfh87256"))))
     (properties `((upstream-name . "diffeqr")))
     (build-system r-build-system)
     (inputs (list julia))

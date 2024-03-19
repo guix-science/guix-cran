@@ -15940,13 +15940,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-ladderfuelsr
   (package
     (name "r-ladderfuelsr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LadderFuelsR" version))
        (sha256
-        (base32 "1pvbggf80iml01sb4vcq33dc4i06qvqz1ibg2zmdh2fgpnh1smf4"))))
+        (base32 "16x3f6hl5qby05z2yd319454rwss77kmy2xq549z7hhypw1mxqmq"))))
     (properties `((upstream-name . "LadderFuelsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

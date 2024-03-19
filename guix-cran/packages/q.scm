@@ -2753,6 +2753,30 @@ likelihood radio test.  See Zhou et al. (2022) <doi:10.1093/bib/bbab596> and Wen
 et al. (2018) <doi:10.1093/bib/bby058>.")
     (license license:gpl2+)))
 
+(define-public r-qte-rd
+  (package
+    (name "r-qte-rd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QTE.RD" version))
+       (sha256
+        (base32 "0svm97qm08ma201layin6lmym737d1gykcvlbq9n8nycria4sdfh"))))
+    (properties `((upstream-name . "QTE.RD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-plotrix))
+    (home-page "https://cran.r-project.org/package=QTE.RD")
+    (synopsis
+     "Quantile Treatment Effects under the Regression Discontinuity Design")
+    (description
+     "This package provides comprehensive methods for testing, estimating, and
+conducting uniform inference on quantile treatment effects (QTEs) in sharp
+regression discontinuity (RD) designs, incorporating covariates and implementing
+robust bias correction methods of Qu, Yoon, Perron (2024)
+<doi:10.1162/rest_a_01168>.")
+    (license license:gpl3+)))
+
 (define-public r-qte
   (package
     (name "r-qte")
@@ -4231,13 +4255,13 @@ to denote the quantity factor.")
 (define-public r-qhscrnomo
   (package
     (name "r-qhscrnomo")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QHScrnomo" version))
        (sha256
-        (base32 "1lr5x0cz1lkvcglhyvxy2pbg4bvvn46ii6vr5zwlm3zg05jhzx1v"))))
+        (base32 "1axl0scvk5q127rcffdfv8k9ikvq0wamrbnqaimm3smcyfbcyyqm"))))
     (properties `((upstream-name . "QHScrnomo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rms r-hmisc r-cmprsk))
@@ -4249,7 +4273,7 @@ to denote the quantity factor.")
 calculated after adjusting for competing causes to the event of interest.
 K-fold cross-validation is implemented to validate predictive accuracy using a
 competing-risk version of the concordance index.  Methods are as described in:
-Kattan MW, Heller G, Brennan MF (2003) <doi:10.1002/sim.1574>.")
+Kattan MW, Heller G, Brennan MF (2003).")
     (license license:gpl3+)))
 
 (define-public r-qhot

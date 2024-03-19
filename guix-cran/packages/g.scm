@@ -2301,13 +2301,13 @@ please see the GSOD readme.txt file available from,
 (define-public r-gsna
   (package
     (name "r-gsna")
-    (version "0.1.4.1")
+    (version "0.1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSNA" version))
        (sha256
-        (base32 "1bal1c7b132kknjbins63pyai9a08lnvwf8yp5n1mc2nz2fqglqz"))))
+        (base32 "0id71ik7s1hl57nzy3qzrdszvy3a83gf3gx8xwdswy53r6yiijf2"))))
     (properties `((upstream-name . "GSNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14747,13 +14747,13 @@ file.  For more details see Reza Rawassizadeh (2019)
 (define-public r-ghibli
   (package
     (name "r-ghibli")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghibli" version))
        (sha256
-        (base32 "0kl98vxlk86jsqqklzcqr5a65lhqyday3vax374ai6pc24pjymcg"))))
+        (base32 "1qj5cysgbh9hq7q17p3vvaqychg3cyhyzlv1hs4jqqlb9z2cz1gr"))))
     (properties `((upstream-name . "ghibli")))
     (build-system r-build-system)
     (propagated-inputs (list r-prismatic))
