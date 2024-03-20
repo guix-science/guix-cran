@@ -17478,25 +17478,28 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.0-6")
+    (version "3.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "04mr3wh3sb5g75ydmh4f9j8k02avfkgvs8mr74crcjb2xlff2yfq"))))
+        (base32 "1xvgnhlf6hsx9v5ljsxg6k6l808mdp7d71kdx6qxm306mbrby33k"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-unisensr
                              r-signal
+                             r-read-gt3x
                              r-psych
                              r-lubridate
                              r-irr
                              r-ineq
+                             r-ggirread
                              r-foreach
                              r-doparallel
-                             r-data-table))
+                             r-data-table
+                             r-actcr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/wadpac/GGIR/")
     (synopsis "Raw Accelerometer Data Analysis")
@@ -17505,13 +17508,12 @@ ggiraph'.")
 raw acceleration sensors as described in Migueles and colleagues (JMPB 2019),
 and van Hees and colleagues (J@code{ApplPhysiol} 2014; P@code{LoSONE} 2015).
 The package has been developed and tested for binary data from GENEActiv
-<https://activinsights.com/> and GENEA devices (not for sale), .csv-export data
-from Actigraph <https://theactigraph.com> devices, and .cwa and .wav-format data
-from Axivity <https://axivity.com>.  These devices are currently widely used in
+<https://activinsights.com/>, binary (.gt3x) and .csv-export data from Actigraph
+<https://theactigraph.com> devices, and binary (.cwa) and .csv-export data from
+Axivity <https://axivity.com>.  These devices are currently widely used in
 research on human daily physical activity.  Further, the package can handle
 accelerometer data file from any other sensor brand providing that the data is
-stored in csv format and has either no header or a two column header.  Also the
-package allows for external function embedding.")
+stored in csv format.  Also the package allows for external function embedding.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -19842,13 +19844,13 @@ documentation and examples <https://magosil86.github.io/getspres/>.")
 (define-public r-getspanel
   (package
     (name "r-getspanel")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "getspanel" version))
        (sha256
-        (base32 "0g02iapl0p14s9s7zan47j0g4kays43r01f65i2zgkidfwnvhlbr"))))
+        (base32 "0xccla4w7vc82gqxfm927xzynchn9zi37smnq03rkamn4pf7v4gz"))))
     (properties `((upstream-name . "getspanel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-ggplot2 r-gets r-fastdummies))
@@ -27394,13 +27396,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "0s0ik19zgv0ggp3gqj9pqc232381cdzhqcm1awggcc83sgrzm1dl"))))
+        (base32 "12v1xa21d573jinzy54crla169rnlavkwx2ijryhydmiyh2574yb"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -29420,13 +29422,13 @@ sum of residuals squared).")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.10-1")
+    (version "0.11-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gadget3" version))
        (sha256
-        (base32 "1ky9mv23smrgkr32klcbiviw71g6rj5vsalc8s95wgly9gd515qk"))))
+        (base32 "0infyxg05y865k41kk47ylzp0skdr4ypv7x6zg67v8lrwwyx77kh"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rlang r-digest))

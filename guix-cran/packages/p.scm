@@ -10,7 +10,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages ssh)
@@ -23,6 +22,7 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages gettext)
   #:use-module (gnu packages sqlite)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages python-science)
@@ -2701,16 +2701,16 @@ text').")
 (define-public r-psychtools
   (package
     (name "r-psychtools")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychTools" version))
        (sha256
-        (base32 "14n3vvblj8a5k8lmcc7sbzq04n18z0ls5mk1nlzx7065d3d1rc8s"))))
+        (base32 "14hk7f714cjq6grrzqi6l0r5f7jp2j0sns8acprqyqw36siqck78"))))
     (properties `((upstream-name . "psychTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-foreign))
+    (propagated-inputs (list r-rtf r-psych r-foreign))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=psychTools")
     (synopsis
@@ -10527,13 +10527,13 @@ anomaly.")
 (define-public r-precast
   (package
     (name "r-precast")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRECAST" version))
        (sha256
-        (base32 "1gxcsjh3nqqn8qdm6qy29ghzmgja43iba52a9vggx0594fwk9qa3"))))
+        (base32 "17qk40j2by7bjc0r2wnyfca4drpzbrxp0m5r10a7494avqknjjk0"))))
     (properties `((upstream-name . "PRECAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-seurat
@@ -22957,18 +22957,18 @@ global endangerment, as well as compositional turnover (e.g., beta diversity).")
 (define-public r-phyloraster
   (package
     (name "r-phyloraster")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phyloraster" version))
        (sha256
-        (base32 "1ac41ik17b2zdrcf5n9v3mg7k99r5m50s9lbb05ggjhpqmx8s5bh"))))
+        (base32 "0xildxiv8k2hrxdp0zkf939zbag62griq1ksalq0vfb32sb5l106"))))
     (properties `((upstream-name . "phyloraster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sesraster r-phylobase r-ape))
+    (propagated-inputs (list r-terra r-sesraster r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://gabferreira.github.io/phyloraster/")
+    (home-page "https://CRAN.R-project.org/package=phyloraster")
     (synopsis "Evolutionary Diversity Metrics for Raster Data")
     (description
      "Phylogenetic Diversity (PD, Faith 1992), Evolutionary Distinctiveness (ED, Isaac
@@ -29843,6 +29843,42 @@ Component Analysis, Principal Component Regression and Partial Least Squares
 regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
     (license license:expat)))
 
+(define-public r-pcutils
+  (package
+    (name "r-pcutils")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pcutils" version))
+       (sha256
+        (base32 "1fq8gzc63951q87akjqklvi4mqy29wywg0hknw7mn5zs9bim0zdd"))))
+    (properties `((upstream-name . "pcutils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/Asa12138/pcutils")
+    (synopsis "Some Useful Functions for Statistics and Visualization")
+    (description
+     "Offers a range of utilities and functions for everyday programming tasks.
+1.Data Manipulation.  Such as grouping and merging, column splitting, and
+character expansion.  2.File Handling.  Read and convert files in popular
+formats.  3.Plotting Assistance.  Helpful utilities for generating color
+palettes, validating color formats, and adding transparency.  4.Statistical
+Analysis.  Includes functions for pairwise comparisons and multiple testing
+corrections, enabling perform statistical analyses with ease.  5.Graph Plotting,
+Provides efficient tools for creating doughnut plot and multi-layered doughnut
+plot; Venn diagrams, including traditional Venn diagrams, upset plots, and
+flower plots; Simplified functions for creating stacked bar plots, or a box plot
+with alphabets group for multiple comparison group.")
+    (license license:gpl3)))
+
 (define-public r-pcts
   (package
     (name "r-pcts")
@@ -33896,6 +33932,28 @@ generalized linear models.")
      "Allows specification and fitting of some parameter estimation examples inspired
 by time-resolved spectroscopy via a Shiny GUI.")
     (license license:gpl2+)))
+
+(define-public r-param2moment
+  (package
+    (name "r-param2moment")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "param2moment" version))
+       (sha256
+        (base32 "1dv078231xyc4fa05zkh289wxhm5pjijsbkyvpm3zh9ybxdnmd4p"))))
+    (properties `((upstream-name . "param2moment")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=param2moment")
+    (synopsis
+     "Raw, Central and Standardized Moments of Parametric Distributions")
+    (description
+     "To calculate the raw, central and standardized moments from distribution
+parameters.  To solve the distribution parameters based on user-provided mean,
+standard deviation, skewness and kurtosis.  Normal, skew-normal, skew-t and
+Tukey g-&-h distributions are supported, for now.")
+    (license license:gpl2)))
 
 (define-public r-parallelplot
   (package

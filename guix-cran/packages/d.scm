@@ -11,7 +11,6 @@
   #:use-module (gnu packages maths)
   #:use-module (gnu packages base)
   #:use-module (gnu packages video)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages web)
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
@@ -4193,13 +4192,13 @@ preferred model.")
 (define-public r-drought
   (package
     (name "r-drought")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drought" version))
        (sha256
-        (base32 "1i064bg7b29agnj2cq5gl61z12xx1a3lkzfg31sly3alzpvciwr9"))))
+        (base32 "1xarpzfcj4zldyfzl30vxkgqwcbi17nly6vbxsm7z8vigjslx6ma"))))
     (properties `((upstream-name . "drought")))
     (build-system r-build-system)
     (propagated-inputs (list r-corrplot r-copula))
@@ -5337,13 +5336,13 @@ Gerhard, D. (2015) <doi:10.1371/journal.pone.0146021>.")
 (define-public r-dr-sc
   (package
     (name "r-dr-sc")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DR.SC" version))
        (sha256
-        (base32 "1457r1mc5cccr2frbnh0ply72wpjglin9qna9xaxgn5q0gmqf57v"))))
+        (base32 "076halm823dlrj95hqq3ibdb645vd2w68mixi36wdnh7ngr7ih1f"))))
     (properties `((upstream-name . "DR.SC")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom
@@ -18525,16 +18524,28 @@ dendrogram and hclust objects and to set/get labels.")
 (define-public r-dendroanalyst
   (package
     (name "r-dendroanalyst")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dendRoAnalyst" version))
        (sha256
-        (base32 "0v9fgrp5vxhzc7vh1p9mmlqhs4djzizvbp5zcp0dm3ssh6wfrska"))))
+        (base32 "16pj1s9ph0gfk9n2kxwinvmxqzwzqlryn7ph15x8navxxwwbss9g"))))
     (properties `((upstream-name . "dendRoAnalyst")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-pspline r-boot))
+    (propagated-inputs (list r-zoo
+                             r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readxl
+                             r-pspline
+                             r-minpack-lm
+                             r-mgcv
+                             r-lubridate
+                             r-ggplot2
+                             r-forecast
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dendRoAnalyst")
     (synopsis "Tool for Processing and Analyzing Dendrometer Data")

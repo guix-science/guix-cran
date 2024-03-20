@@ -12,13 +12,13 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages xml)
   #:use-module (gnu packages haskell-xyz)
@@ -7969,13 +7969,13 @@ delete this entity in the less sensible mode and combine both matrices.")
 (define-public r-mscmt
   (package
     (name "r-mscmt")
-    (version "1.3.9")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCMT" version))
        (sha256
-        (base32 "151ql3vxy6vmviv3fr6ln9p68l6sw6dx6qkwn702512z7730wh3a"))))
+        (base32 "1mjm85pxxww6m7mfk8xfwhx65c64k4v6pjpvbasv5jhy49kfjgw4"))))
     (properties `((upstream-name . "MSCMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rglpk r-rdpack r-lpsolveapi r-lpsolve r-ggplot2))
@@ -10287,6 +10287,42 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
     (description
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
+
+(define-public r-mpcr
+  (package
+    (name "r-mpcr")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPCR" version))
+       (sha256
+        (base32 "0a4iha2xl6iywf8ad1kiy1xwg6fkd62yjqvdkzf0nkklql2g5fvg"))))
+    (properties `((upstream-name . "MPCR")))
+    (build-system r-build-system)
+    (inputs (list cmake))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/stsds/MPCR")
+    (synopsis "Multi- And Mixed-Precision Computations")
+    (description
+     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
+32-bit data structures.  This flexibility enables fast execution across various
+applications.  The package enhances performance by optimizing operations in both
+precision levels, which is achieved by integrating with high-speed BLAS and
+LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
+caters to applications where high precision is unnecessary, accelerating
+computational processes whenever feasible.  The package also provides support
+for tile-based algorithms in three linear algebra operations: CHOL(), TRSM(),
+and GEMM().  The tile-based algorithm splits the matrix into smaller tiles,
+facilitating parallelization through a predefined Directed Acyclic Graph (DAG)
+for each operation.  Enabling @code{OpenMP} enhances the efficiency of these
+operations, leveraging multi-core parallelism.  In this case, MPCR facilitates
+mixed-precision execution by permitting varying precision levels for different
+tiles.  This approach is advantageous in numerous applications, as it maintains
+the accuracy of the application while accelerating execution in scenarios where
+single-precision alone does not significantly affect the accuracy of the
+application.")
+    (license license:gpl3+)))
 
 (define-public r-mpci
   (package
@@ -19489,18 +19525,20 @@ separately on two latent parameters.  It reports local false discovery rates
 (define-public r-mixturemissing
   (package
     (name "r-mixturemissing")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixtureMissing" version))
        (sha256
-        (base32 "1pjj99ycxpcmcj5xng6hakw08qa1hmhlb164g1ybvslvxfxdg939"))))
+        (base32 "15pz1rhbsaz5ml9swxqm6aifzb88qjpx0z5h2z229ddb0v9hxh29"))))
     (properties `((upstream-name . "MixtureMissing")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
                              r-mvtnorm
                              r-mnormt
+                             r-mice
+                             r-mclust
                              r-mass
                              r-cluster
                              r-bessel))
@@ -26163,13 +26201,13 @@ on Machine Learning, 2014, p.  1953--1961.")
 (define-public r-mggd
   (package
     (name "r-mggd")
-    (version "1.1.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mggd" version))
        (sha256
-        (base32 "1pr53bnijs5f8d8nj3lvr271qcp1cnw2q9682m3xr5sm0j5g3nlq"))))
+        (base32 "0zh3af2qqlz59nkqip2kwn51zcfy7kk45cyz6952vg276cv0a5hd"))))
     (properties `((upstream-name . "mggd")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-mass r-lifecycle))
@@ -36623,13 +36661,13 @@ Monte Carlo, mmc(), for statistics with nuisance parameters.")
 (define-public r-maxlike
   (package
     (name "r-maxlike")
-    (version "0.1-10")
+    (version "0.1-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxlike" version))
        (sha256
-        (base32 "0csixdzvs5kynd37c6zl985pazxqw8zh204pddxh7rj0872g82hc"))))
+        (base32 "1s81vqx10nckr2g9c1h8m0a2xj0k3pyw4970zshhjmbdljs7ppkd"))))
     (properties `((upstream-name . "maxlike")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster))
@@ -42239,13 +42277,13 @@ training, prediction) of standard Gaussian processes are also implemented.")
 (define-public r-magma-r
   (package
     (name "r-magma-r")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGMA.R" version))
        (sha256
-        (base32 "0sif7w25f2nrd41ryv6xky7vswqpls2s10p26xk0c4s61cx1vh9b"))))
+        (base32 "0i474az77w9nfmxhz2z76v483vsny1gkpzv3mb1zaqdcv26yqpzq"))))
     (properties `((upstream-name . "MAGMA.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

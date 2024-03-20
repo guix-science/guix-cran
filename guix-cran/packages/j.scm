@@ -12,7 +12,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
@@ -3827,18 +3826,18 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1cxfv6afk8s16sv2p48k6ph98z0n5836mlzxmplvflah2hc6g6q3"))))
+        (base32 "00g5pw6kzi5hzplnzb8x3z4a895hwccf17hhwplzrlhrs77ras2c"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=jagshelper")
+    (home-page "https://github.com/mbtyers/jagshelper")
     (synopsis "Extracting and Visualizing Output from 'jagsUI'")
     (description
      "This package provides tools are provided to streamline Bayesian analyses in JAGS

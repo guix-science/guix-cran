@@ -17,7 +17,6 @@
   #:use-module (gnu packages c)
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
@@ -11372,13 +11371,13 @@ clones.The model is based on the estimation result from Andrew Roth (2014)
 (define-public r-netgwas
   (package
     (name "r-netgwas")
-    (version "1.14.2")
+    (version "1.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netgwas" version))
        (sha256
-        (base32 "0xa3nc7by7v360n6s8fym65fpaz0am4yym3m653nkcr545s0rc5n"))))
+        (base32 "1id90w27h6z458ibkndnp7hp6wx0yffq9ywj4b2lkf5g4nwcwz23"))))
     (properties `((upstream-name . "netgwas")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm

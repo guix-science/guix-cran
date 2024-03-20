@@ -1533,13 +1533,13 @@ of finite mixtures of Tukey's g-and-h distributions.")
 (define-public r-quantileda
   (package
     (name "r-quantileda")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantileDA" version))
        (sha256
-        (base32 "0jbklxsy33j7clcw97qq4ijwkrb94v2m11gjcfa38vplfxm9913q"))))
+        (base32 "136rjrim7q07pl3w76xs77nhsv7xvi8isw2924ngxmfp35hbhq16"))))
     (properties `((upstream-name . "quantileDA")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=quantileDA")
@@ -2303,40 +2303,6 @@ identity coefficients from pedigrees, especially suitable for pedigrees that
 consist of a large number of generations, or estimate identity coefficients from
 genotypic data in certain circumstances.")
     (license license:gpl2+)))
-
-(define-public r-qtlpoly
-  (package
-    (name "r-qtlpoly")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qtlpoly" version))
-       (sha256
-        (base32 "10a9zcsf2f6hkigwa3gpck2vg2pf9qa1z19kpk9kxbv4j1hja23s"))))
-    (properties `((upstream-name . "qtlpoly")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlrsim
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quadprog
-                             r-nlme
-                             r-mvtnorm
-                             r-matrix
-                             r-mass
-                             r-gtools
-                             r-ggplot2
-                             r-compquadform
-                             r-abind))
-    (home-page "https://gabrielgesteira.github.io/QTLpoly/")
-    (synopsis "Random-Effect Multiple QTL Mapping in Autopolyploids")
-    (description
-     "This package performs random-effect multiple interval mapping (REMIM) in
-full-sib families of autopolyploid species based on restricted maximum
-likelihood (REML) estimation and score statistics, as described in Pereira et
-al. (2020) <doi:10.1534/genetics.120.303080>.")
-    (license license:gpl3)))
 
 (define-public r-qtlnet
   (package

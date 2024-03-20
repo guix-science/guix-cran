@@ -11474,13 +11474,13 @@ packages modeling fitness landscapes and fitness seascapes will depend.")
 (define-public r-fitps
   (package
     (name "r-fitps")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitPS" version))
        (sha256
-        (base32 "1zfp1mxslbm0lrfy2pdzb7d3jfh272yxp78r6r9yrh8m1rayrnng"))))
+        (base32 "12qqr3d1fzypk0xsjnswhfp52phnhhqzwvj5grfgacjs5h41bz11"))))
     (properties `((upstream-name . "fitPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -19226,13 +19226,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.12.1")
+    (version "0.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "0v1gwnaalrf63gv0j6hbi7rqjjjja3ram9zlfx5nik90cdsv4fs9"))))
+        (base32 "1wfgrrb1vz1ljwm4vj3f462kq7f1sriy750jdsshavbfq4jjzjm1"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries

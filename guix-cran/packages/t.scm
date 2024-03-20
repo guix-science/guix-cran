@@ -9,7 +9,6 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
@@ -1640,6 +1639,28 @@ regions are visualized in dimension two and three.  For details see Liu, Mosler,
 and Mozharovskyi (2019, <doi:10.1080/10618600.2018.1546595>).  See file
 LICENSE.note for additional license information.")
     (license license:gpl3+)))
+
+(define-public r-tukeygh77
+  (package
+    (name "r-tukeygh77")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TukeyGH77" version))
+       (sha256
+        (base32 "1dvv8dmxl6ac4ja7qrkvkyx6h1yx2lwiqd6lk72zdl0qzy6k7vvp"))))
+    (properties `((upstream-name . "TukeyGH77")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstpm2))
+    (home-page "https://cran.r-project.org/package=TukeyGH77")
+    (synopsis "Tukey g-&-h Distribution")
+    (description
+     "This package provides functions for density, cumulative density, quantile and
+simulation of Tukey g-and-h (1977) distributions.  The quantile-based
+transformation (Hoaglin 1985 <doi:10.1002/9781118150702.ch11>) and its reverse
+transformation are also provided.")
+    (license license:gpl2)))
 
 (define-public r-tukeyc
   (package
@@ -14826,6 +14847,36 @@ filtering, joining and summarising Earth Engine image collections.")
      "Helper functions for processing REDCap data in R. REDCap is a web-enabled
 application for building and managing surveys and databases developed at
 Vanderbilt University.")
+    (license license:expat)))
+
+(define-public r-tidyrates
+  (package
+    (name "r-tidyrates")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidyrates" version))
+       (sha256
+        (base32 "00j4s13q8vvh5m28rspwm2kf59gcbhmaif31746p2g8499535di8"))))
+    (properties `((upstream-name . "tidyrates")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-forcats
+                             r-epitools
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://rfsaldanha.github.io/tidyrates/")
+    (synopsis "Tidy Epidemiological Rates")
+    (description
+     "Compute age-adjusted rates by direct and indirect methods and other
+epidemiological indicators in a tidy way, wrapping functions from the epitools
+package.")
     (license license:expat)))
 
 (define-public r-tidyqwi

@@ -4638,13 +4638,13 @@ lme4@code{pureR} (Walker and Bates (2013)
 (define-public r-welo
   (package
     (name "r-welo")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "welo" version))
        (sha256
-        (base32 "1sbrkpajqwnpghcr551gccpksw3lqjwk4n0gjl7j3g4lkm54bf54"))))
+        (base32 "14561rxbcc0w326nk24zl52nfw262z1pwvxsjfg9yx300byjljx3"))))
     (properties `((upstream-name . "welo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

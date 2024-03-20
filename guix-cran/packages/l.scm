@@ -16,7 +16,6 @@
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages linux)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1945,6 +1944,46 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 based on the likelihood ratio
 <https://en.wikipedia.org/wiki/Likelihood-ratio_test>.")
     (license license:gpl3)))
+
+(define-public r-lrstat
+  (package
+    (name "r-lrstat")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lrstat" version))
+       (sha256
+        (base32 "1qwyp7dg6w2wr7rgyn6gwin502azygy33966a62rycl65shdbljp"))))
+    (properties `((upstream-name . "lrstat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lrstat")
+    (synopsis
+     "Power and Sample Size Calculation for Non-Proportional Hazards and Beyond")
+    (description
+     "This package performs power and sample size calculation for non-proportional
+hazards model using the Fleming-Harrington family of weighted log-rank tests.
+The sequentially calculated log-rank test score statistics are assumed to have
+independent increments as characterized in Anastasios A. Tsiatis (1982)
+<doi:10.1080/01621459.1982.10477898>.  The mean and variance of log-rank test
+score statistics are calculated based on Kaifeng Lu (2021)
+<doi:10.1002/pst.2069>.  The boundary crossing probabilities are calculated
+using the recursive integration algorithm described in Christopher Jennison and
+Bruce W. Turnbull (2000, ISBN:0849303168).  The package can also be used for
+continuous, binary, and count data.  For continuous data, it can handle missing
+data through mixed-model for repeated measures (MMRM).  In crossover designs, it
+can estimate direct treatment effects while accounting for carryover effects.
+For binary data, it can design Simon's 2-stage, modified toxicity probability-2
+(@code{mTPI-2}), and Bayesian optimal interval (BOIN) trials.  For count data,
+it can design group sequential trials for negative binomial endpoints with
+censoring.  Additionally, it facilitates group sequential equivalence trials for
+all supported data types.  Moreover, it can design adaptive group sequential
+trials for changes in sample size, error spending function, number and spacing
+or future looks.  Finally, it offers various options for adjusted p-values,
+including graphical and gatekeeping procedures.")
+    (license license:gpl2+)))
 
 (define-public r-lrmf3
   (package

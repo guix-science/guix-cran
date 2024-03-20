@@ -12,7 +12,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages web)
   #:use-module (gnu packages pkg-config)
@@ -3662,6 +3661,36 @@ observations.  The hybrid approach combines the regression and ranking
 constraints in the same model.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-survivalsl
+  (package
+    (name "r-survivalsl")
+    (version "0.94")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalSL" version))
+       (sha256
+        (base32 "03d38fh8pw5m2cd3v6hvcwc9d9b15idzrh9nj48cn6k27cnzf8qg"))))
+    (properties `((upstream-name . "survivalSL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rpart
+                             r-randomforestsrc
+                             r-mass
+                             r-hdnom
+                             r-glmnetutils
+                             r-glmnet
+                             r-flexsurv
+                             r-dplyr
+                             r-date
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=survivalSL")
+    (synopsis "Super Learner for Survival Prediction from Censored Data")
+    (description
+     "Several functions and S3 methods to construct a super learner in the presence of
+censored times-to-event and to evaluate its prognostic capacities.")
+    (license license:gpl2+)))
+
 (define-public r-survivalrec
   (package
     (name "r-survivalrec")
@@ -3738,6 +3767,32 @@ hazard Cox models with left, right or interval censored survival data using
 maximum penalised likelihood.  A non-parametric smooth estimate of the baseline
 hazard function is provided.")
     (license license:lgpl2.0+)))
+
+(define-public r-survivalmodels
+  (package
+    (name "r-survivalmodels")
+    (version "0.1.191")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalmodels" version))
+       (sha256
+        (base32 "0iwbpfaqr0yl0ryi1d6y343cprm9ncn8c4qfp5q2vj193pzv10q0"))))
+    (properties `((upstream-name . "survivalmodels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/RaphaelS1/survivalmodels/")
+    (synopsis "Models for Survival Analysis")
+    (description
+     "Implementations of classical and machine learning models for survival analysis,
+including deep neural networks via keras and tensorflow'.  Each model includes a
+separated fit and predict interface with consistent prediction types for
+predicting risk or survival probabilities.  Models are either implemented from
+Python via reticulate <https://CRAN.R-project.org/package=reticulate>, from code
+in @code{GitHub} packages, or novel implementations using Rcpp
+<https://CRAN.R-project.org/package=Rcpp>.  Neural networks are implemented from
+the Python package pycox <https://github.com/havakv/pycox>.")
+    (license license:expat)))
 
 (define-public r-survivalclusteringtree
   (package
@@ -4969,21 +5024,24 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.2.4")
+    (version "3.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "1wmxn0qxa3vhqy0h6nzj0l0cvmiqm1rp17vgqijydmlnq8sgx7in"))))
+        (base32 "1yb8nfy83zpvaq03gnfhx36jn04lva7y4y16dcl65djrgrs17cqj"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-survival
                              r-rvinecopulib
                              r-rms
                              r-purrr
                              r-pbapply
+                             r-optimx
+                             r-numderiv
                              r-nlme
                              r-msm
                              r-mbess
@@ -4995,7 +5053,8 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
                              r-lattice
                              r-ks
                              r-flexsurv
-                             r-extradistr))
+                             r-extradistr
+                             r-dplyr))
     (home-page "https://github.com/florianstijven/Surrogate-development")
     (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
     (description
@@ -9201,18 +9260,19 @@ Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
 (define-public r-stopp
   (package
     (name "r-stopp")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stopp" version))
        (sha256
-        (base32 "1jiwy13kyfphla9y1yx283zih05w64ihkqkwc5cfm8vnlr5h6gwk"))))
+        (base32 "0dxbq4g6zc26pp31hyq09gljlkn6lk8g7w0l5vir04k9xg9xd8ap"))))
     (properties `((upstream-name . "stopp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stpp
                              r-stlnpp
                              r-splancs
+                             r-spatstat-utils
                              r-spatstat-random
                              r-spatstat-model
                              r-spatstat-linnet
@@ -9221,12 +9281,10 @@ Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
                              r-sparr
                              r-plot3d
                              r-optimx
+                             r-mgcv
                              r-mass
-                             r-latex2exp
                              r-kernsmooth
-                             r-gmp
-                             r-fields
-                             r-etasflp))
+                             r-fields))
     (home-page "https://cran.r-project.org/package=stopp")
     (synopsis
      "Spatio-Temporal Point Pattern Methods, Model Fitting, Diagnostics, Simulation, Local Tests")
@@ -12111,13 +12169,13 @@ software, which can be obtained upon purchase from VSN international
 (define-public r-statgengxe
   (package
     (name "r-statgengxe")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGxE" version))
        (sha256
-        (base32 "12y722q9hj6ipcl2d8pnl6c3xf0pp1hkv89kxm3np1alid8npc3a"))))
+        (base32 "1jvlc2c6s07ivb89lsdahp3k5g0fn1cv1bkhm6fp6m21qzsrakag"))))
     (properties `((upstream-name . "statgenGxE")))
     (build-system r-build-system)
     (inputs (list))
@@ -15359,6 +15417,45 @@ organizations as well as five datasets from anonymous sources.  It also includes
 a data set of the results of fitting various distributions using different
 software.")
     (license license:asl2.0)))
+
+(define-public r-ssd4mosaic
+  (package
+    (name "r-ssd4mosaic")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssd4mosaic" version))
+       (sha256
+        (base32 "1266wn3vwlajr57sdjqk5zylnm7vcss37r4qwa02iv9d98qmwmrw"))))
+    (properties `((upstream-name . "ssd4mosaic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shinybusy
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-rhandsontable
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-golem
+                             r-ggplot2
+                             r-fitdistrplus
+                             r-config
+                             r-actuar))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.in2p3.fr/mosaic-software/mosaic-ssd")
+    (synopsis "Web Application for the SSD Module of the MOSAIC Platform")
+    (description
+     "Web application using shiny for the SSD (Species Sensitivity Distribution)
+module of the MOSAIC (MOdeling and @code{StAtistical} tools for
+@code{ecotoxICology}) platform.  It estimates the Hazardous Concentration for x%
+of the species (HCx) from toxicity values that can be censored and provides
+various plotting options for a better understanding of the results.  See our
+companion paper Kon Kam King et al. (2014)
+<doi:10.48550/@code{arXiv.1311.5772>}.")
+    (license license:expat)))
 
 (define-public r-sscor
   (package

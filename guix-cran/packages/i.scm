@@ -8,7 +8,6 @@
   #:use-module (gnu packages cran)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages pkg-config)
@@ -366,13 +365,13 @@ Least Squares estimators (Amemiya, Takeshi, (1978) <doi: 10.2307/1911443>).")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "1r0075a3jb5ckjxyzlva5m71fld753ds5p4av94z0pijlmgbxxaq"))))
+        (base32 "0hs3x52566y7axri1wyzr2c5w156nwfiq0j9sddvl1lcvsrxdivg"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-officer r-flextable r-dplyr r-checkmate))
@@ -14597,16 +14596,17 @@ this package can help check whether the given ID is right or not.")
 (define-public r-idbr
   (package
     (name "r-idbr")
-    (version "1.0")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idbr" version))
        (sha256
-        (base32 "0silsd3ydrrg924klga8dascxjfmi2czw7sz3ap2j7gkgvxcfcpv"))))
+        (base32 "1qcply9n3027mqm5fwi8j4dvjxly7pxm74b0ffah8jjjr9hvk5rv"))))
     (properties `((upstream-name . "idbr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf
+    (propagated-inputs (list r-stringr
+                             r-sf
                              r-rnaturalearthdata
                              r-purrr
                              r-jsonlite

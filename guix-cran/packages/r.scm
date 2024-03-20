@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -8781,6 +8782,47 @@ hypocenters for detailed seismic investigation.  Error ellipsoids and station
 influence are estimated via jackknife analysis.  References include Iversen, E.
 S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
     (license license:gpl2+)))
+
+(define-public r-rqti
+  (package
+    (name "r-rqti")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rqti" version))
+       (sha256
+        (base32 "06law69jb9p9nadvprxvdb5ksh4d772c360b77fqsjl6yv5xwc97"))))
+    (properties `((upstream-name . "rqti")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-xml2
+                             r-stringr
+                             r-servr
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-keyring
+                             r-kableextra
+                             r-httr2
+                             r-htmltools
+                             r-getpass
+                             r-fs
+                             r-digest
+                             r-curl))
+    (home-page "https://github.com/shevandrin/rqti")
+    (synopsis "Create Tests According to QTI 2.1 Standard")
+    (description
+     "Create tests and tasks compliant with the Question & Test Interoperability (QTI)
+information model version 2.1.  Input sources are Rmd/md description files or
+S4-class objects.  Output formats include standalone zip or xml files.  Supports
+the generation of basic task types (single and multiple choice, order, pair
+association, matching tables, filling gaps and essay) and provides a
+comprehensive set of attributes for customizing tests.")
+    (license license:gpl3+)))
 
 (define-public r-rqpen
   (package
@@ -20602,13 +20644,13 @@ combinations, fast transformations, and more...")
 (define-public r-rjdqa
   (package
     (name "r-rjdqa")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdqa" version))
        (sha256
-        (base32 "05wxp9sp5y182x11418ncalh638c0kicsln1m8sj038k6j8db55w"))))
+        (base32 "0g2qb7mkalcwnlrzb5943dg9pazlppn9xjmpp6a2jzgq9dzim753"))))
     (properties `((upstream-name . "rjdqa")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -20646,13 +20688,13 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJDemetra" version))
        (sha256
-        (base32 "1wwb7y153irkwraqis51ma3ygyp08h732vwcqph0zqp15ycn09pi"))))
+        (base32 "17wfzv3gknx2x90bhlq09yk6wggrq67ylbxn6biiy1qrpipyw4jj"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -28871,13 +28913,13 @@ Also retrieve and process result sets as either a ragged or flattened tibble'.")
 (define-public r-reporter
   (package
     (name "r-reporter")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reporter" version))
        (sha256
-        (base32 "1ss757ijdhjvjjrbd6zc934vlyvmwgpfbcf0d51w2b10xgif25ap"))))
+        (base32 "15b0by9m0yshjq9ajwwnlbir49d7h7s7f8d4npw942l69i27r7aa"))))
     (properties `((upstream-name . "reporter")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -40305,23 +40347,23 @@ standalone.  Please see <http://uscilab.github.io/cereal> for more information."
 (define-public r-rcens
   (package
     (name "r-rcens")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcens" version))
        (sha256
-        (base32 "1axd87i3s1dxr7jdbgpqsv3zdgi7yi30n1ddw4k4q3ay7n2fwr9m"))))
+        (base32 "13g99c3w6b1j8g3s6llsk9qx4pfldjf6di9l25a4qlljk1n4r1ar"))))
     (properties `((upstream-name . "rcens")))
     (build-system r-build-system)
     (home-page "https://github.com/dlsaavedra/rcens")
     (synopsis "Generate Sample Censoring")
     (description
      "This package provides functions to generate censored samples of type I, II and
-III, from any random sample generator.  It also supply the option to create left
-and right censorship.  Along with this, the generation of samples with interval
-censoring is in the testing phase, with two options of fixed length intervals
-and random lengths.")
+III, from any random sample generator.  It also supplies the option to create
+left and right censorship.  Along with this, the generation of samples with
+interval censoring is in the testing phase, with two options of fixed length
+intervals and random lengths.")
     (license license:expat)))
 
 (define-public r-rceim

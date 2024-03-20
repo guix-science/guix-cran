@@ -5253,18 +5253,19 @@ a means to interact with signals, events, and datasets in a Vega chart using
 (define-public r-vegan3d
   (package
     (name "r-vegan3d")
-    (version "1.2-0")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vegan3d" version))
        (sha256
-        (base32 "15yb521l487krvhh0bnbawxxd03sqwha4njh9i0na4zx3hrlpqgi"))))
+        (base32 "0y8x11551gaal2v4nyd97pwxaw5bqazfqywwrdj4wkp0gidn3hhh"))))
     (properties `((upstream-name . "vegan3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-scatterplot3d r-rgl r-cluster))
     (home-page "https://cran.r-project.org/")
-    (synopsis "Static and Dynamic 3D Plots for the 'vegan' Package")
+    (synopsis
+     "Static and Dynamic 3D and Editable Interactive Plots for the 'vegan' Package")
     (description
      "Static and dynamic 3D plots to be used with ordination results and in diversity
 analysis, especially with the vegan package.")

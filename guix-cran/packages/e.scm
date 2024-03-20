@@ -9,7 +9,6 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages web)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages haskell-xyz)
@@ -21479,13 +21478,13 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-utils
   (package
     (name "r-easy-utils")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easy.utils" version))
        (sha256
-        (base32 "14igypzhqd9fc47jhsyv86a5rgpfvikkig4vb07k00rw00h3ijbg"))))
+        (base32 "1rhdpqnhr1nv5jm3dcs8ikn35d911pi46sfsflk4f73m9fzyj9s1"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))

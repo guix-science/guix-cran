@@ -18,7 +18,6 @@
   #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages sqlite)
   #:use-module (guix-cran packages z)
@@ -2524,6 +2523,56 @@ Authenticated Transfer (AT) Protocol <https://atproto.com/> which Bluesky Social
 relies on.  Data is returned in a tidy format and posts can be made using a
 simple interface.")
     (license license:expat)))
+
+(define-public r-bsitar
+  (package
+    (name "r-bsitar")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bsitar" version))
+       (sha256
+        (base32 "1h18hk5qr3lcxy0iqhz2wfxhvyjl1bs45y78skx070qbxrgwai5z"))))
+    (properties `((upstream-name . "bsitar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sitar
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-marginaleffects
+                             r-magrittr
+                             r-loo
+                             r-insight
+                             r-dplyr
+                             r-brms))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/Sandhu-SS/bsitar")
+    (synopsis
+     "Bayesian Super Imposition by Translation and Rotation Growth Curve Analysis")
+    (description
+     "The Super Imposition by Translation and Rotation (SITAR) model is a
+shape-invariant nonlinear mixed effect model that fits a natural cubic spline
+mean curve to the growth data, and aligns individual-specific growth curves to
+the underlying mean curve via a set of random effects (see Cole, 2010
+<doi:10.1093/ije/dyq115> for details).  The non-Bayesian version of the SITAR
+model can be fit by using an already available R package sitar'.  While sitar
+package allows modelling of a single outcome only, the bsitar package offers a
+great flexibility in fitting models of varying complexities that include joint
+modelling of multiple outcomes such as height and weight (multivariate model).
+Also, the bsitar package allows simultaneous analysis of a single outcome
+separately for sub groups defined by a factor variable such as gender.  This is
+achieved by fitting separate models for each sub group (such as males and
+females for gender variable).  An advantage of such approach is that posterior
+draws for each sub group are part of a single model object that makes it
+possible to compare coefficients across groups and test hypotheses.  As bsitar
+package is a front-end to the R package brms', it offers an excellent support
+for post-processing of posterior draws via various functions that are directly
+available from the brms package.  In addition, the bsitar package include
+various customized functions that allow estimation and visualization growth
+curves such as distance (increase in size with age) and velocity (change in
+growth rate as a function of age).")
+    (license license:gpl2)))
 
 (define-public r-bsims
   (package
@@ -5876,13 +5925,13 @@ Koopmeiners, & Hobbs (2018) <doi:10.1093/biostatistics/kxx031>.")
 (define-public r-boral
   (package
     (name "r-boral")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boral" version))
        (sha256
-        (base32 "1i8lcibmd580xv92ci2xwj0jn290zlh7dv6h5n8cqaky4gqb8iz2"))))
+        (base32 "1djsxhjdaj7z69l1y612vvqxvyl74fk3skncd8knpzsf5ks01sc7"))))
     (properties `((upstream-name . "boral")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -11351,13 +11400,13 @@ bioassays for one or several strains/lines/populations.")
 (define-public r-bioregion
   (package
     (name "r-bioregion")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioregion" version))
        (sha256
-        (base32 "0miajh5m6hmk5jwpaad8z2psib0x0bk94dyyhxyipzn9hf1hijqb"))))
+        (base32 "0q7kdgi2nkqgs690n6qiakh0zbvy21nw7a2k7kj3nbr5hk0zlzd6"))))
     (properties `((upstream-name . "bioregion")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11371,6 +11420,7 @@ bioassays for one or several strains/lines/populations.")
                              r-mathjaxr
                              r-igraph
                              r-ggplot2
+                             r-fastkmedoids
                              r-fastcluster
                              r-dynamictreecut
                              r-dbscan
