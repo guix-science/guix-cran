@@ -1490,13 +1490,13 @@ duplicate or other replicated elements.")
 (define-public r-tuneranger
   (package
     (name "r-tuneranger")
-    (version "0.5")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tuneRanger" version))
        (sha256
-        (base32 "1xf78q8f7sq6w2jjwcw8vz88bmbp8yivydmqygjag58abnhd0356"))))
+        (base32 "17hsqwg4h2pjns4bx3yjrkml8yn1vdxarf8lc4g9d4z01k4m7jk8"))))
     (properties `((upstream-name . "tuneRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-smoof
@@ -1504,7 +1504,6 @@ duplicate or other replicated elements.")
                              r-paramhelpers
                              r-mlrmbo
                              r-mlr
-                             r-lubridate
                              r-lhs
                              r-dicekriging
                              r-bbmisc))
@@ -12680,13 +12679,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "1ynmqskm5yqs0vy7zm3xzirczqf1qczs1f7ggnnqcv0pb74zrinx"))))
+        (base32 "183lqqp2rxcfszdywhgxclqwlhslmaifybgmc7q1a8nvm9glj82c"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -13771,17 +13770,17 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.24.0")
+    (version "0.25.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "1gscky6mp8c2ph3njhqxjyd80nw2gxhqvdvj17frzyzyrwqr70i8"))))
+        (base32 "0azczjh9imcjc6rq7l0lcp0mvab0jmmq6y8i5xvyndf5q79mn002"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
-    (propagated-inputs (list r-spdl r-rcppint64 r-rcpp r-nanotime))
+    (propagated-inputs (list r-spdl r-rcppint64 r-rcpp r-nanotime r-nanoarrow))
     (native-inputs (list r-simplermarkdown pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
@@ -16332,13 +16331,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "0ivhxgbhvvbpddngirjpmw7dp6nv93qzijzdcsfn988skl9kxdvf"))))
+        (base32 "160swqjrcfkqrjpgvyxqqpvm2xnbb1yr0jb89w9mva4mmlnncfj4"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -20047,13 +20046,13 @@ Medical Outcomes Partnership (OMOP) Common Data Model.")
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.3.2")
+    (version "3.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "06dwd6kxnmrs1lzxaf91mhpdi9p92mzykrzwnaqbc8wfh4racxjb"))))
+        (base32 "1iybx4h46shyki0ihnaxn968lkplnp88l0ld09cx632vhlpis0iv"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8

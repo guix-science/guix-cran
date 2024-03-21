@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -1768,18 +1767,18 @@ requesting large datasets via email.")
 (define-public r-rverbalexpressions
   (package
     (name "r-rverbalexpressions")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RVerbalExpressions" version))
        (sha256
-        (base32 "1p9wmpgqwnz95sr8km8y6kqax8fcz6sqg54wfdx44kiqkf1ybdsp"))))
+        (base32 "13spwmhkkyl0y0nfay3lrhn4ygj809is9gjs2i5rm0hma61zhicf"))))
     (properties `((upstream-name . "RVerbalExpressions")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/tyluRp/RVerbalExpressions")
+    (home-page "https://github.com/VerbalExpressions/RVerbalExpressions")
     (synopsis "Create Regular Expressions Easily")
     (description
      "Build regular expressions using grammar and functionality inspired by
@@ -37539,16 +37538,17 @@ calculating moments, densities, and entropies are provided at both levels.")
 (define-public r-rcpptimer
   (package
     (name "r-rcpptimer")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcpptimer" version))
        (sha256
-        (base32 "120m6958f7lyaw3hpms32794c9d2zh647lhqnkdg5zrdhk3gn5qf"))))
+        (base32 "0dpny4b5r9nxll5pwlwd7jvjmk0ixi6wgcm9v49dxm3cax2p7jlg"))))
     (properties `((upstream-name . "rcpptimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
     (home-page "https://rcpptimer.berrisch.biz")
     (synopsis "'Rcpp' Tic-Toc Timer with 'OpenMP' Support")
     (description
@@ -43563,15 +43563,16 @@ Neyman', Rosenberger Rosenberger et al. (2001)
 (define-public r-rarestr
   (package
     (name "r-rarestr")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rarestR" version))
        (sha256
-        (base32 "1f604bghyp3zkd60yp0vrjmyjf548rmika67bn3zf1b0c53rfq8z"))))
+        (base32 "0zpzxg960yk55fbqqbx0vrm5275f88p9cqbh4wy3rv6ckhbmbygc"))))
     (properties `((upstream-name . "rarestR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
     (home-page "https://github.com/pzhaonet/rarestR")
     (synopsis "Rarefaction-Based Species Richness Estimator")
     (description

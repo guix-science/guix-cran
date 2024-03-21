@@ -27041,13 +27041,13 @@ including dozens of shades graded from red to green.")
 (define-public r-mexhaz
   (package
     (name "r-mexhaz")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mexhaz" version))
        (sha256
-        (base32 "1dh92gawq6hdq0594m5ayzrafxi2mz3362dx3dgvdmznwcyqvsbz"))))
+        (base32 "0lpymgfknr8szpxf7g7qmvdklsclfsmvjjws7cdpxsiv6hv8y3p2"))))
     (properties `((upstream-name . "mexhaz")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-numderiv r-mass r-lamw))
@@ -34647,18 +34647,18 @@ Markov chain Monte Carlo techniques (Hadfield 2010 J. Stat.  Soft.).")
 (define-public r-mcmcensemble
   (package
     (name "r-mcmcensemble")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcmcensemble" version))
        (sha256
-        (base32 "1yf8mm0nmw0x89pj3is5rv3arcfbxvkfh8bip1sprcqzsrixa0s8"))))
+        (base32 "0cbld6yr91jzi084pkzvfhqlqympqv9f91sj5gxvannnwszw3454"))))
     (properties `((upstream-name . "mcmcensemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr r-future-apply))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Bisaloo/mcmcensemble")
+    (home-page "https://hugogruson.fr/mcmcensemble/")
     (synopsis "Ensemble Sampler for Affine-Invariant MCMC")
     (description
      "This package provides ensemble samplers for affine-invariant Monte Carlo Markov

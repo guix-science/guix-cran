@@ -10887,13 +10887,13 @@ call.")
 (define-public r-envalysis
   (package
     (name "r-envalysis")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envalysis" version))
        (sha256
-        (base32 "1a51lfmgj50yxif9bfnlqhxlg1nyss6vb78jhkvkmx7c0qjdl0g2"))))
+        (base32 "1hnfqhd6s6vvbxsmpv898dgmb1nzmb061b5qadw3dam3hr8j12rn"))))
     (properties `((upstream-name . "envalysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmtest r-ggplot2 r-drc))
@@ -13137,13 +13137,13 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
 (define-public r-embed
   (package
     (name "r-embed")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embed" version))
        (sha256
-        (base32 "1aagf1qyvawyg4g9a8s1k73vvk5xzpgxpxm7sb1l0hm5ji8ka906"))))
+        (base32 "1mc4rh1mp81j4613s82z45zz0y12bkpg5kjjkx12i85nh953y1x1"))))
     (properties `((upstream-name . "embed")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -13151,13 +13151,11 @@ thermal reaction norms.  See <doi:10.7717/peerj.8451> for tsd functions; see
                              r-uwot
                              r-tidyr
                              r-tibble
-                             r-tensorflow
                              r-rsample
                              r-rlang
                              r-recipes
                              r-purrr
                              r-lifecycle
-                             r-keras
                              r-glue
                              r-generics
                              r-dplyr))
@@ -20198,13 +20196,13 @@ Khoshgoftaar, Jason Van Hulse, and Amri Napolitano (2010)
 (define-public r-ebmaforecast
   (package
     (name "r-ebmaforecast")
-    (version "1.0.31")
+    (version "1.0.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBMAforecast" version))
        (sha256
-        (base32 "01z4giwyx4ar7cfhgb5407pr1c9lrznj9rsx2y5x95g4hc35d3p9"))))
+        (base32 "01pv873d0sl0qzlgmqw4ahg5ym9gdjzbmzqlg593g5l935r3dgi4"))))
     (properties `((upstream-name . "EBMAforecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-separationplot

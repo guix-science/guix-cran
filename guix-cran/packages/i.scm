@@ -7628,13 +7628,13 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-instantiate
   (package
     (name "r-instantiate")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "instantiate" version))
        (sha256
-        (base32 "0wbybhy5hyqsac6pmyzd788nhl16dgpnvd106v1b8wx0rdrny094"))))
+        (base32 "0nmx2r0hkzbm5bzz28yvzdphkxhzcnd9dgi88wixzkbnmhny83d2"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-fs r-callr))

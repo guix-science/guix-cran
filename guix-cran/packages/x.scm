@@ -1745,6 +1745,47 @@ Language ALGOL 60\". (ALGOL60 standards page
 the APL2 implementation in Geyer-Schulz, Andreas (1997, ISBN:978-3-7908-0830-X).")
     (license license:expat)))
 
+(define-public r-xega
+  (package
+    (name "r-xega")
+    (version "0.9.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xega" version))
+       (sha256
+        (base32 "1zkmlh04h66xg4r21m8n1hl5c6z4jrbriqm32yhgaxfb8c0kysqv"))))
+    (properties `((upstream-name . "xega")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xegaselectgene
+                             r-xegapopulation
+                             r-xegapermgene
+                             r-xegagpgene
+                             r-xegagegene
+                             r-xegagagene
+                             r-xegadfgene
+                             r-xegaderivationtrees
+                             r-xegabnf
+                             r-parallelly))
+    (home-page "<https://github.com/ageyerschulz/xega>")
+    (synopsis "Extended Evolutionary and Genetic Algorithms")
+    (description
+     "Implementation of a scalable, highly configurable, and e(x)tended architecture
+for (e)volutionary and (g)enetic (a)lgorithms.  Multiple representations
+(binary, real-coded, permutation, and derivation-tree), a rich collection of
+genetic operators, as well as an extended processing pipeline are provided for
+genetic algorithms (Goldberg, D. E. (1989, ISBN:0-201-15767-5)), differential
+evolution (Price, Kenneth V., Storn, Rainer M. and Lampinen, Jouni A. (2005)
+<doi:10.1007/3-540-31306-0>), simulated annealing (Aarts, E., and Korst, J.
+(1989, ISBN:0-471-92146-7)), grammar-based genetic programming (Geyer-Schulz
+(1997, ISBN:978-3-7908-0830-X)), and grammatical evolution (Ryan, C., O'Neill,
+M., and Collins, J. J. (2018) <doi:10.1007/978-3-319-78717-6>).  All algorithms
+reuse basic adaptive mechanisms for performance optimization.  Sequential or
+parallel execution (on multi-core machines, local clusters, and high performance
+computing environments) is available for all algorithms.  See
+<https://github.com/ageyerschulz/xega/tree/main/examples/@code{executionModel>}.")
+    (license license:expat)))
+
 (define-public r-xefun
   (package
     (name "r-xefun")

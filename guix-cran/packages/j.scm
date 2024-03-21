@@ -2661,13 +2661,13 @@ algebra and @code{RcppArmadillo} glue.")
 (define-public r-jmbig
   (package
     (name "r-jmbig")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmBIG" version))
        (sha256
-        (base32 "0fijdgw5nkk1lwbjj3hq04lgi1irwk4k62qhgqznlc8byzzpzh5s"))))
+        (base32 "05923dckm91x7al1fglglqfr0iwra73ky2dg0z67qq4f6ikcrlsd"))))
     (properties `((upstream-name . "jmBIG")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2675,6 +2675,7 @@ algebra and @code{RcppArmadillo} glue.")
                              r-nlme
                              r-joinerml
                              r-jmbayes2
+                             r-ggplot2
                              r-fastjm
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=jmBIG")

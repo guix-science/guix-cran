@@ -3007,13 +3007,13 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 (define-public r-survstan
   (package
     (name "r-survstan")
-    (version "0.0.6.1")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survstan" version))
        (sha256
-        (base32 "1956h03jy5plcfcq0gvx0rxq3gz8kfccy2dxh1p08xn3s580zxnh"))))
+        (base32 "13mby2xb3pa4mq0znm9p0i7r0yrp7wz77czk0n0sbb5j899mr1yf"))))
     (properties `((upstream-name . "survstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3049,10 +3049,10 @@ Stan'.  Implemented regression models include accelerated failure time models,
 proportional hazards models, proportional odds models, accelerated hazard
 models, Yang and Prentice models, and extended hazard models.  Available
 baseline survival distributions include exponential, Weibull, log-normal,
-log-logistic, gamma, rayleigh and fatigue (Birnbaum-Saunders) distributions.
-References: Lawless (2002) <ISBN:9780471372158>; Bennett (1982)
-<doi:10.1002/sim.4780020223>; Chen and Wang(2000)
-<doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
+log-logistic, gamma, generalized gamma, rayleigh, Gompertz and fatigue
+(Birnbaum-Saunders) distributions.  References: Lawless (2002)
+<ISBN:9780471372158>; Bennett (1982) <doi:10.1002/sim.4780020223>; Chen and
+Wang(2000) <doi:10.1080/01621459.2000.10474236>; Demarqui and Mayrink (2021)
 <doi:10.1214/20-BJPS471>.")
     (license license:expat)))
 
@@ -16398,13 +16398,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.16.1")
+    (version "1.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "0p98m6622zhdz0v66248icbq48icpy7p0acfr8hvx4ip99dxmfkv"))))
+        (base32 "0z5q8jizh0r4zngngq30ii787yppg06phcd9hszfs7qlwq3xsw7x"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -44360,13 +44360,13 @@ Ushuaia city, Argentina.")
 (define-public r-sgapi
   (package
     (name "r-sgapi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgapi" version))
        (sha256
-        (base32 "1vwhhjg7zl0qv63njp1g6v7nnn4fnv4kx3v2m7r2pb4fm9gr4185"))))
+        (base32 "11wkj0x4rhbijkd0vpmd2rdjzfkf9ia1fzaswidrl0wp8kw2a5x7"))))
     (properties `((upstream-name . "sgapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

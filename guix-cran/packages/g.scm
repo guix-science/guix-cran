@@ -21310,17 +21310,18 @@ supplementary cartography for spatial representation.")
 (define-public r-geonapi
   (package
     (name "r-geonapi")
-    (version "0.7")
+    (version "0.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonapi" version))
        (sha256
-        (base32 "0d9l5xv3in016g93apql7dgxndrcygj9r7c6hmx2wqqi53rdkngd"))))
+        (base32 "142waw6m4zaamd8h58f5g34vfnbb0fclfsbhzkq1jvazadig8s41"))))
     (properties `((upstream-name . "geonapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-r6
+                             r-plyr
                              r-openssl
                              r-keyring
                              r-httr

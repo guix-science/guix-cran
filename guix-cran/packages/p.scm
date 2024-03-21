@@ -4446,13 +4446,13 @@ many others.")
 (define-public r-prwarp
   (package
     (name "r-prwarp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prWarp" version))
        (sha256
-        (base32 "1rx9yby7xwa2bgqa6a1zllan6qfchgfrg2waadmwfmjhcp8qb1mj"))))
+        (base32 "1iibz1gjx5r51jvv1g7csir871ccl74p0jcqnx6cs78i7xg02wf6"))))
     (properties `((upstream-name . "prWarp")))
     (build-system r-build-system)
     (propagated-inputs (list r-morpho))
@@ -18893,6 +18893,37 @@ graphic using base plot command if it is printed.")
      "This package provides functions to assist in diagnostics and plotting during the
 causal inference modeling process.  Supplements the @code{bartCause} package.")
     (license license:expat)))
+
+(define-public r-plot4fun
+  (package
+    (name "r-plot4fun")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plot4fun" version))
+       (sha256
+        (base32 "07367xsdbkiiw2ll344bd5qkjdcs7g98iygr1a884g1nbq2rv649"))))
+    (properties `((upstream-name . "plot4fun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sysfonts
+                             r-showtext
+                             r-reshape2
+                             r-plot3d
+                             r-pcutils
+                             r-magrittr
+                             r-magick
+                             r-gifski
+                             r-ggplot2
+                             r-ggforce))
+    (home-page "https://cran.r-project.org/package=plot4fun")
+    (synopsis "Just Plot for Fun")
+    (description
+     "Explore the world of R graphics with fun and interesting plot functions! Use
+make_LED() to create dynamic LED screens, draw interconnected rings with
+Olympic_rings(), and make festive Chinese couplets with chunlian().  Unleash
+your creativity and turn data into exciting visuals!")
+    (license license:gpl3)))
 
 (define-public r-plot3logit
   (package

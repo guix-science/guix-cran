@@ -6420,6 +6420,35 @@ matrix, lm, glm, and coxph.  forplo was written in base R and does not depend on
 other packages.")
     (license license:gpl3)))
 
+(define-public r-formulr
+  (package
+    (name "r-formulr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FormulR" version))
+       (sha256
+        (base32 "03jyhm2wmgwjd0yj8jbc10xr51rzsgqz0dsxk3qq8kvlbyp4d87v"))))
+    (properties `((upstream-name . "FormulR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FormulR")
+    (synopsis
+     "Comprehensive Tools for Drug Formulation Analysis and Visualization")
+    (description
+     "This presents a comprehensive set of tools for the analysis and visualization of
+drug formulation data.  It includes functions for statistical analysis,
+regression modeling, hypothesis testing, and comparative analysis to assess the
+impact of formulation parameters on drug release and other critical attributes.
+Additionally, the package offers a variety of data visualization functions, such
+as scatterplots, histograms, and boxplots, to facilitate the interpretation of
+formulation data.  With its focus on usability and efficiency, this package aims
+to streamline the drug formulation process and aid researchers in making
+informed decisions during formulation design and optimization.")
+    (license license:expat)))
+
 (define-public r-formulops
   (package
     (name "r-formulops")

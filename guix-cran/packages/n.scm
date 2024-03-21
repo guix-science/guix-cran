@@ -3435,13 +3435,13 @@ assay types.")
 (define-public r-normexpression
   (package
     (name "r-normexpression")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormExpression" version))
        (sha256
-        (base32 "1j4q8mb70ig40acfd9kfy12vxdvq3qpf53rxh47kkw8mywnd0449"))))
+        (base32 "119bim7k33wng823rpsn4l2cgr9xns001gwjjg8pwf65yxdwwb37"))))
     (properties `((upstream-name . "NormExpression")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=NormExpression")

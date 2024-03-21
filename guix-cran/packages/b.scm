@@ -17855,13 +17855,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "0bd6458w89hq3vknibk8dqdy9qrag1v3nc95hk68j34ryyd03pgg"))))
+        (base32 "1ckxs41fg7gw8p9v8xink3ams0bfmjkn635dbzrvcwgmi7j3882z"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

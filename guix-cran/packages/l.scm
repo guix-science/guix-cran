@@ -9673,22 +9673,24 @@ observations and create a report of the top sites to visit to see new species.")
 (define-public r-lifemapr
   (package
     (name "r-lifemapr")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LifemapR" version))
        (sha256
-        (base32 "0mf6xgzvk5gc7n7w26drxf41h235ygkpylrf20gwifi2rz3lbs8k"))))
+        (base32 "0wwszxbwxncvzcv81jchk9qcd14g0ncsb17lwjcz6vnv6dn1vdlv"))))
     (properties `((upstream-name . "LifemapR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-tidyr
+                             r-shiny
                              r-rlang
-                             r-purrr
+                             r-rcurl
                              r-leaflet-minicharts
                              r-leaflet
                              r-jsonlite
                              r-htmltools
+                             r-fastmatch
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=LifemapR")

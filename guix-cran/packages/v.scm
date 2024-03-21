@@ -2537,13 +2537,13 @@ teaching purposes, but it has also many practical uses.")
 (define-public r-visualizesimon2stage
   (package
     (name "r-visualizesimon2stage")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisualizeSimon2Stage" version))
        (sha256
-        (base32 "12sanfik9ijq4gld2ry0gligixkixkqqm504zqc96r0yfmkq9hv9"))))
+        (base32 "19jnh6i0p3irqzj3als5q8basizwmq4viwb5i9iabbhznpi505m5"))))
     (properties `((upstream-name . "VisualizeSimon2Stage")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -27900,17 +27900,17 @@ estimate the phenotypic variance explained by genetic markers.")
 (define-public r-ciw
   (package
     (name "r-ciw")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciw" version))
        (sha256
-        (base32 "1pkiz8nkgl6dyx34xc43hcwf7qp26gnx2dlqbbjkqvpyzsh1qvpr"))))
+        (base32 "1znn3prdyw3jdamjk3d7b4f0z4bj1i5d08zl8vp9qzdmf46msnh1"))))
     (properties `((upstream-name . "ciw")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-data-table r-curl))
-    (home-page "https://cran.r-project.org/package=ciw")
+    (home-page "https://github.com/eddelbuettel/ciw")
     (synopsis "Watch the CRAN Incoming Directories")
     (description
      "Directory reads and summaries are provided for one or more of the subdirectories
@@ -29538,13 +29538,13 @@ chronological charts.")
 (define-public r-chronicler
   (package
     (name "r-chronicler")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chronicler" version))
        (sha256
-        (base32 "1ds9gi0wgdsi4rw3zpn14pnisallj6vvzlzhsl4hzlvj3k96v5df"))))
+        (base32 "024y9n21zr9pzblnr3ixhvd7hcar24xh0xwch7cp7kab1nw90p84"))))
     (properties `((upstream-name . "chronicler")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
