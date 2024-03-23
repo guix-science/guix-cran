@@ -2882,16 +2882,17 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "07p3v2lsp0g15d4lqsfmqclac6s9jz7qld8abcrdy0sxnir36q6m"))))
+        (base32 "1g0vf28r1lbmisczdpbffgaxr40ac173arha2f6hcw5083s54plj"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-rlang
                              r-omopgenerics
                              r-lifecycle
@@ -6487,13 +6488,13 @@ Sensing, 51, 2632-2645, <DOI:10.1109/TGRS.2012.2216272>.")
 (define-public r-vars
   (package
     (name "r-vars")
-    (version "1.6-0")
+    (version "1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vars" version))
        (sha256
-        (base32 "0bc2xh5nka18bvsy9pq3cd93447zsvdxvs1yi2vcpjw7szcywzzd"))))
+        (base32 "1i8ldzb44wnlaww8a0k6sgfj1khgah5v445gi45d7vgv68rg0gcv"))))
     (properties `((upstream-name . "vars")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-strucchange r-sandwich r-mass r-lmtest))

@@ -3328,16 +3328,22 @@ examined in Joshi, Pustejovsky, and Beretvas (2022) <DOI:10.1002/jrsm.1554>.")
 (define-public r-wildlifedi
   (package
     (name "r-wildlifedi")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wildlifeDI" version))
        (sha256
-        (base32 "0z2zw3q4kapfw7h998mc33l3210f6b7jr3fzcmvw6dc9lkzl49wj"))))
+        (base32 "1jl21mnsl993fc3y9z56zb8yfz3j0hvg8f9q69ghlicx139mik0m"))))
     (properties `((upstream-name . "wildlifeDI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-dplyr r-adehabitatlt))
+    (propagated-inputs (list r-units
+                             r-sp
+                             r-sf
+                             r-move2
+                             r-lwgeom
+                             r-dplyr
+                             r-adehabitatlt))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jedalong/wildlifeDI")
     (synopsis
@@ -3348,8 +3354,8 @@ two (or more) animals.  This package provides tools for calculating a suite of
 indices used for quantifying dynamic interaction with wildlife telemetry data.
 For more information on each of the methods employed see the references within.
 The package (as of version >= 0.3) also has new tools for automating contact
-analysis in large tracking datasets.  The package draws heavily on the classes
-and methods developed in the adehabitat packages.")
+analysis in large tracking datasets.  The package (as of version 1.0) uses the
+move2 class of objects for working with tracking dataset.")
     (license license:gpl3)))
 
 (define-public r-wildcard

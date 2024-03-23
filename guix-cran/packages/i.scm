@@ -3044,13 +3044,13 @@ Interface.")
 (define-public r-irtest
   (package
     (name "r-irtest")
-    (version "1.12.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IRTest" version))
        (sha256
-        (base32 "1hljw4b73hq1998h9b008nxyai3py9da8j82c8paiq90sp6ahs26"))))
+        (base32 "0fnz98kn463cqp7yp63w1zasp131a448pr4hmkp1y3dpgclfdcva"))))
     (properties `((upstream-name . "IRTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-ggplot2 r-dcurver r-betafunctions))
@@ -9893,13 +9893,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1djaln5ygjzzhhcc0bwdvlhzb9vkci4mwk4d09v0w5lymqba81x0"))))
+        (base32 "1px7yv4ssrvbdgw86nx7wz84ja17zpl55r7giia36nw4w91aq16f"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -11306,13 +11306,13 @@ package also performs prediction for the above feature selection methods.")
 (define-public r-immer
   (package
     (name "r-immer")
-    (version "1.4-15")
+    (version "1.5-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "immer" version))
        (sha256
-        (base32 "0vif1q04q847pn1hxr3mg70wwfcvvc8n8ag27s7c2bpza2vj8khc"))))
+        (base32 "0fw657vq0rj00kgkwam9wahf8sg9rf4jh0jmy154q6hq9f80v299"))))
     (properties `((upstream-name . "immer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tam

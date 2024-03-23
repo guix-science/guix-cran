@@ -5669,6 +5669,31 @@ in @code{ElÃ­as}, A., @code{JimÃ©nez}, R. and Yukich, J. (2020)
 <@code{arXiv:2007.16059>}.")
     (license license:gpl3)))
 
+(define-public r-localcop
+  (package
+    (name "r-localcop")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LocalCop" version))
+       (sha256
+        (base32 "0cjp2ws87ys3hf18i9hha5rs2c1k8jfya7vqkp1lygmzccvan1j4"))))
+    (properties `((upstream-name . "LocalCop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vinecopula r-tmb r-rcppeigen))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mlysy/LocalCop")
+    (synopsis "Local Likelihood Inference for Conditional Copula Models")
+    (description
+     "This package implements a local likelihood estimator for the dependence
+parameter in bivariate conditional copula models.  Copula family and local
+likelihood bandwidth parameters are selected by leave-one-out cross-validation.
+The models are implemented in TMB', meaning that the local score function is
+efficiently calculated via automated differentiation (AD), such that
+quasi-Newton algorithms may be used for parameter estimation.")
+    (license license:gpl3)))
+
 (define-public r-localcontrol
   (package
     (name "r-localcontrol")
@@ -9437,13 +9462,13 @@ included.  View a demo online at <https://daattali.com/shiny/lightsout/>.")
 (define-public r-lightr
   (package
     (name "r-lightr")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lightr" version))
        (sha256
-        (base32 "0jqkd5nwnlbifl65i08fflla522y5vp8s39sqx9kl2pidn6z9rp6"))))
+        (base32 "0wbrwkkz11cp4n0ikxc541y9hpav5kvr4fv9s9llrd1ammpkzfw3"))))
     (properties `((upstream-name . "lightr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-progressr r-future-apply))

@@ -493,13 +493,13 @@ Bureau.")
 (define-public r-usmap
   (package
     (name "r-usmap")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usmap" version))
        (sha256
-        (base32 "1w3y2bnnm3xqqqlvch9mkd0gr3lqxkdicvmqn50gq0wxq420drvz"))))
+        (base32 "04fw3k9h11av7idn8cvcphq7wncgp9pf7mrrdb2a63wirlgd14w6"))))
     (properties `((upstream-name . "usmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmapdata r-rlang))

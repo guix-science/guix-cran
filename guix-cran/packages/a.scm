@@ -540,13 +540,13 @@ submit events.")
 (define-public r-azlogr
   (package
     (name "r-azlogr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "azlogr" version))
        (sha256
-        (base32 "0lkzxx8qhaqj7g55xfqvm3ydhlfwqbzy9fsjfq6b8v1m2h1zgdlw"))))
+        (base32 "1vn1b6sz7gp6pr7m2mspppjxxb9b54rc9am99lsilkg90cv1ba8h"))))
     (properties `((upstream-name . "azlogr")))
     (build-system r-build-system)
     (propagated-inputs (list r-logger r-jsonlite r-httr r-digest r-catools))
@@ -7585,13 +7585,13 @@ arcgis meta-package at <https://r.esri.com/r-bridge-site/>.")
 (define-public r-arcgeocoder
   (package
     (name "r-arcgeocoder")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgeocoder" version))
        (sha256
-        (base32 "043nxarm7dc86ywzycp29j2qf3drgpnf0sxs4dmv9gw3p980g7k1"))))
+        (base32 "02bzhdz8k5c65rzx9dkwxw5v69wq8nbsxk6c6lf2v9wqhq705krp"))))
     (properties `((upstream-name . "arcgeocoder")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-dplyr))
@@ -7603,7 +7603,7 @@ arcgis meta-package at <https://r.esri.com/r-bridge-site/>.")
 using the @code{ArcGIS} REST API service
 <https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.
  Address text can be converted to location candidates and a location can be
-converted into an address.")
+converted into an address.  No API key required.")
     (license license:expat)))
 
 (define-public r-arcensreg
@@ -10447,6 +10447,43 @@ using rmarkdown and shiny packages.  Runtime examples are provided in the
 package function as well as at <https://tinyurl.com/ANOVA@code{StatsTool>}.")
     (license license:gpl2)))
 
+(define-public r-anopa
+  (package
+    (name "r-anopa")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ANOPA" version))
+       (sha256
+        (base32 "1i6flm4rwl0d0wmw001pwq45jysxb2d2bld25r10gjk3xlfrbr7i"))))
+    (properties `((upstream-name . "ANOPA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superb
+                             r-scales
+                             r-rrapply
+                             r-rdpack
+                             r-plyr
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://dcousin3.github.io/ANOPA/")
+    (synopsis "Analyses of Proportions using Anscombe Transform")
+    (description
+     "Analyses of Proportions can be performed on the Anscombe (arcsine-related)
+transformed data.  The ANOPA package can analyze proportions obtained from up to
+four factors.  The factors can be within-subject or between-subject or a mix of
+within- and between-subject.  The main, omnibus analysis can be followed by
+additive decompositions into interaction effects, main effects, simple effects,
+contrast effects, etc., mimicking precisely the logic of ANOVA. For that reason,
+we call this set of tools ANOPA (Analysis of Proportion using Anscombe
+transform) to highlight its similarities with ANOVA. The ANOPA framework also
+allows plots of proportions easy to obtain along with confidence intervals.
+Finally, effect sizes and planning statistical power are easily done under this
+framework.  Only particularity, the ANOPA computes F statistics which have an
+infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
+(2023) <doi:10.3389/fpsyg.2022.1045436>.")
+    (license license:gpl3)))
+
 (define-public r-anomaly
   (package
     (name "r-anomaly")
@@ -11303,13 +11340,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "06wqrdipcgbzlnd5h5f3q3rjd9l1imhwig7xig7rm9ikg19q9wd2"))))
+        (base32 "0k7w9jk9aw6pays5lg1spzac5kpka0i9vc2v5sxn2r4shbxr9yf9"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

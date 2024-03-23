@@ -9479,13 +9479,13 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "0.97")
+    (version "0.98")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "0jnlrrd9l97mmrc5ib7y79hjm2ai3mbx6zrfbj6nb0rpxsql2w73"))))
+        (base32 "0afqjjqqb6vy164qgs8h0kdvw81hl4py05mqnnnwpkak81jdgwii"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survsim
@@ -15657,16 +15657,17 @@ rolling summaries such as rolling average on the fly for time series.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "0wrg7j8is9a816764kpp1rwn4vdr9f700lp1hcqx1jnqnkzd6zj7"))))
+        (base32 "0qfg7x0d75jyawarvja1pyzgq0blwy2l8bap3q8f5i2rjn4l8xld"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-reshape2 r-randomforest r-ggplot2))
+    (propagated-inputs (list r-survival r-reshape2 r-randomforest r-ggplot2
+                             r-cmprsk))
     (home-page "https://cran.r-project.org/package=ggscidca")
     (synopsis "Plotting Decision Curve Analysis with Coloured Bars")
     (description
@@ -21281,6 +21282,30 @@ methods.  Software companion for Diggle and Ribeiro (2007)
 <doi:10.1007/978-0-387-48536-2>.")
     (license license:gpl2+)))
 
+(define-public r-geoperu
+  (package
+    (name "r-geoperu")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoperu" version))
+       (sha256
+        (base32 "1vmbm9zlkgb8qcw9d1vdfkvfajxh3nyhk5dkkilsklzfz08wqw8f"))))
+    (properties `((upstream-name . "geoperu")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-httr r-data-table r-curl))
+    (home-page "https://github.com/PaulESantos/geoperu")
+    (synopsis "Download Spatial Datasets of Peru")
+    (description
+     "This package provides convenient access to the official spatial datasets of Peru
+as sf objects in R. This package includes a wide range of geospatial data
+covering various aspects of Peruvian geography, such as administrative divisions
+(Source: INEI <https://ide.inei.gob.pe/>).  All datasets are harmonized in terms
+of attributes, projection, and topology, ensuring consistency and ease of use
+for spatial analysis and visualization.")
+    (license license:expat)))
+
 (define-public r-geonetwork
   (package
     (name "r-geonetwork")
@@ -21310,13 +21335,13 @@ supplementary cartography for spatial representation.")
 (define-public r-geonapi
   (package
     (name "r-geonapi")
-    (version "0.7-1")
+    (version "0.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonapi" version))
        (sha256
-        (base32 "142waw6m4zaamd8h58f5g34vfnbb0fclfsbhzkq1jvazadig8s41"))))
+        (base32 "0n6s9gvg9z8hn3sih0gj35x8zxspqa8h8bml50bhsl5y4gcfihgd"))))
     (properties `((upstream-name . "geonapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -21470,18 +21495,19 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1623p6qx8s4276awsn1ycjkkc6rxd2bxs7sqpyyqfirqngrihh2l"))))
+        (base32 "0r7li5hp52kf8ra2pdvwfxz8anr3m15zihfn6in2z6xs754nlc0s"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
                              r-vgam
                              r-spam
+                             r-sp
                              r-sn
                              r-shape
                              r-scatterplot3d
@@ -27259,13 +27285,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.8.0")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "1skl1556yd3srlqwsd3jk74hmjrxpw0gahx38zrpzhz359sdv219"))))
+        (base32 "11kl48scwn7mjw98wvbrb0xzswdx0pndr5b340j8iflwbikydj32"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))

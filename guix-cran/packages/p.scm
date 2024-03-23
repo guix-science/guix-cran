@@ -4236,13 +4236,13 @@ dynamic borrowing methods.")
 (define-public r-psbcspeedup
   (package
     (name "r-psbcspeedup")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcSpeedUp" version))
        (sha256
-        (base32 "090zmx0jz5npl5yw43ipz7b3yz95dz0kl5gwc505102l2gn14ibl"))))
+        (base32 "0dyvpdr9jafnac0m7x8rdsjbsl0fbd3c5lzc5483p3nnnynnml4q"))))
     (properties `((upstream-name . "psbcSpeedUp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -11998,6 +11998,32 @@ corresponds to a 1-month length moving window (calculated 4 times per month) and
 TS=48 corresponds to a 12-month length moving window (calculated 4 times per
 month).")
     (license license:expat)))
+
+(define-public r-powerpls
+  (package
+    (name "r-powerpls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerPLS" version))
+       (sha256
+        (base32 "03y06wnd8i3lkw5fakihgrb9karjfw496vfygqgl8b6fxb2nz2yw"))))
+    (properties `((upstream-name . "powerPLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simukde
+                             r-nipals
+                             r-mvtnorm
+                             r-mass
+                             r-ks
+                             r-foreach
+                             r-compositions))
+    (home-page "https://github.com/angeella/powerPLS")
+    (synopsis "Power Analysis for PLS Classification")
+    (description
+     "It estimates power and sample size for Partial Least Squares-based methods
+described in Andreella, et al., (2024) <@code{arXiv:2403.10289>}.")
+    (license license:gpl2+)))
 
 (define-public r-powerpkg
   (package

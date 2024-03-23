@@ -7554,6 +7554,37 @@ occurrence of genetic alterations during carcinogenesis as described in Szabo,
 A. and Boucher, K (2002) <doi:10.1016/S0025-5564(02)00086-X>.")
     (license license:gpl2+)))
 
+(define-public r-oncosubtype
+  (package
+    (name "r-oncosubtype")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OncoSubtype" version))
+       (sha256
+        (base32 "12d32i8q4j0hlkxlk6s8r5ycib6lx5jdsp8g404zmjrsd96aadr2"))))
+    (properties `((upstream-name . "OncoSubtype")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-summarizedexperiment
+                             r-rlang
+                             r-rdpack
+                             r-randomforest
+                             r-pheatmap
+                             r-limma
+                             r-e1071
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DadongZ/OncoSubtype")
+    (synopsis
+     "Predict Cancer Subtypes Based on TCGA Data using Machine Learning Method")
+    (description
+     "Provide functionality for cancer subtyping using nearest centroids or machine
+learning methods based on TCGA data.")
+    (license license:gpl3)))
+
 (define-public r-oncopredict
   (package
     (name "r-oncopredict")

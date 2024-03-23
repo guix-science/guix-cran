@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -8785,13 +8786,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "06law69jb9p9nadvprxvdb5ksh4d772c360b77fqsjl6yv5xwc97"))))
+        (base32 "0y20pkj1i6pj9c10gkjnkzxpnmj10fgqngkj3s3khdvz1bn0cxbv"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -12460,13 +12461,13 @@ detection of events or structural breaks.")
 (define-public r-rollama
   (package
     (name "r-rollama")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollama" version))
        (sha256
-        (base32 "11shm2s936dng90mlsykvr72dbjknlrbz27lshnqybs30iir19jm"))))
+        (base32 "0r42r0wzjs6wjfq27g5z7d8xnx4h5ppfl8ls3pj0nza5zzwzdzfn"))))
     (properties `((upstream-name . "rollama")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -12482,7 +12483,7 @@ detection of events or structural breaks.")
     (home-page "https://jbgruber.github.io/rollama/")
     (synopsis "Communicate with 'Ollama'")
     (description
-     "Wraps the Ollama <https://ollama.ai> API, which can be used to communicate with
+     "Wraps the Ollama <https://ollama.com> API, which can be used to communicate with
 generative large language models locally.")
     (license license:gpl3+)))
 
@@ -16802,13 +16803,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "0jk27w6h4zk1wpfmhbpxw07c6v20bymq5h9k78aqzwjnlql39kiq"))))
+        (base32 "0hshkb5dhfpvgwpcp7a1rlp27a78lp48v7zsciw1lmga2igq5x42"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (propagated-inputs (list r-plgp r-lhs r-foreach r-doparallel))
@@ -21729,6 +21730,54 @@ technology-mediated courses by synthesizing information about access to course
 content and performance on assessments.")
     (license license:expat)))
 
+(define-public r-risca
+  (package
+    (name "r-risca")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RISCA" version))
+       (sha256
+        (base32 "1ysd3al4bai3nrzqxrs4bq9613h77d4wm54pchp6g89cgnrgzn3v"))))
+    (properties `((upstream-name . "RISCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tune
+                             r-survival
+                             r-superlearner
+                             r-statmod
+                             r-rpart
+                             r-reticulate
+                             r-relsurv
+                             r-nnet
+                             r-nlme
+                             r-mvtnorm
+                             r-mosaic
+                             r-mass
+                             r-kernlab
+                             r-glmnet
+                             r-foreach
+                             r-doparallel
+                             r-date
+                             r-cubature
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=RISCA")
+    (synopsis "Causal Inference and Prediction in Cohort-Based Analyses")
+    (description
+     "Numerous functions for cohort-based analyses, either for prediction or causal
+inference.  For causal inference, it includes Inverse Probability Weighting and
+G-computation for marginal estimation of an exposure effect when confounders are
+expected.  We deal with binary outcomes, times-to-events, competing events, and
+multi-state data.  For multistate data, semi-Markov model with interval
+censoring may be considered, and we propose the possibility to consider the
+excess of mortality related to the disease compared to reference lifetime
+tables.  For predictive studies, we propose a set of functions to estimate
+time-dependent receiver operating characteristic (ROC) curves with the possible
+consideration of right-censoring times-to-events or the presence of confounders.
+ Finally, several functions are available to assess time-dependent ROC curves or
+survival curves from aggregated data.")
+    (license license:gpl2+)))
+
 (define-public r-rirt
   (package
     (name "r-rirt")
@@ -24216,16 +24265,23 @@ Laplace Mixture Model.")
 (define-public r-rgm
   (package
     (name "r-rgm")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgm" version))
        (sha256
-        (base32 "02g0sma5n2mj46sj138scshb18clihgl85lfsmrznjbxrpasclzs"))))
+        (base32 "0d6149mg0mvnp64dnn3nh9bxqcal324pjipnbqsmfslhk8sw8bwb"))))
     (properties `((upstream-name . "rgm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm r-rcpp r-mass r-huge r-bdgraph))
+    (propagated-inputs (list r-truncnorm
+                             r-reshape2
+                             r-rcpp
+                             r-proc
+                             r-mass
+                             r-huge
+                             r-ggplot2
+                             r-bdgraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rgm")
     (synopsis "Advanced Inference with Random Graphical Models")
@@ -36303,6 +36359,30 @@ identifying surveys and datasets for analysis, (3) downloading survey datasets
 from the DHS website, (4) loading datasets and associate metadata into R, and
 (5) extracting variables and combining datasets for pooled analysis.")
     (license license:expat)))
+
+(define-public r-rdhonest
+  (package
+    (name "r-rdhonest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RDHonest" version))
+       (sha256
+        (base32 "15mfv573sqqhsa1snswcjbh4kyz26kldim0nx16hypzx09x6rrrc"))))
+    (properties `((upstream-name . "RDHonest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-formula))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kolesarm/RDHonest")
+    (synopsis "Honest Inference in Regression Discontinuity Designs")
+    (description
+     "Honest and nearly-optimal confidence intervals in fuzzy and sharp regression
+discontinuity designs and for inference at a point based on local linear
+regression.  The implementation is based on Armstrong and @code{KolesÃ¡r} (2018)
+<doi:10.3982/ECTA14434>, and @code{KolesÃ¡r} and Rothe (2018)
+<doi:10.1257/aer.20160945>.  Supports covariates, clustering, and weighting.")
+    (license license:gpl3)))
 
 (define-public r-rdfp
   (package

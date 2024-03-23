@@ -8878,18 +8878,17 @@ common conventions or those defined by International Swap Dealer Association
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2023.8")
+    (version "2024.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "04076118yvl7mrsjjpffwzrqk2vlq2c0s7v2chyz7fpf3qhgkqby"))))
+        (base32 "0qqkcjxp375lz0rc4hf2k0n1cgzxxrcq3x3c95k60f90cnk7sydl"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (inputs (list python))
     (propagated-inputs (list r-tidyr
-                             r-text
                              r-stringr
                              r-reticulate
                              r-purrr
@@ -8904,16 +8903,14 @@ common conventions or those defined by International Swap Dealer Association
     (home-page "https://psychbruce.github.io/FMAT/")
     (synopsis "The Fill-Mask Association Test")
     (description
-     "The Fill-Mask Association Test ('FMAT') is an integrative, versatile, and
-probability-based method that uses Masked Language Models to measure conceptual
-associations or relations (e.g., attitudes, biases, stereotypes, social norms,
-cultural values) as propositional representations in natural language.  The
-supported language models include BERT (Devlin et al., 2018)
-<@code{arXiv:1810.04805>} and its model variants available at Hugging Face
-<https://huggingface.co/models?pipeline_tag=fill-mask>.  Python ('conda')
-environment and the transformers module can be installed automatically using the
-FMAT_load() function.  Methodological references and technical details are
-provided at <https://psychbruce.github.io/FMAT/>.")
+     "The Fill-Mask Association Test ('FMAT') is an integrative and probability-based
+method using Masked Language Models to measure conceptual associations (e.g.,
+attitudes, biases, stereotypes, social norms, cultural values) as propositions
+in natural language.  Supported language models include BERT
+<@code{arXiv:1810.04805>} and its variants available at Hugging Face
+<https://huggingface.co/models?pipeline_tag=fill-mask>.  Methodological
+references and installation guidance are provided at
+<https://psychbruce.github.io/FMAT/>.")
     (license license:gpl3)))
 
 (define-public r-fmadist
@@ -12774,13 +12771,13 @@ sources contribution.")
 (define-public r-finetune
   (package
     (name "r-finetune")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finetune" version))
        (sha256
-        (base32 "1axcfjkdhpfx60rf14ywizmzxsl8ac5amqx8s2lv8hb2ahqs13yi"))))
+        (base32 "001c8firflasyyblbkmh4zl913xb1170jrc20zbdjw1ssgfvybnp"))))
     (properties `((upstream-name . "finetune")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -14198,13 +14195,13 @@ a reference.")
 (define-public r-fhircrackr
   (package
     (name "r-fhircrackr")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fhircrackr" version))
        (sha256
-        (base32 "08gqr4nqkyd0s4k26q869lrbwxgn8sd2ync0cagx2kw2dlqa5kry"))))
+        (base32 "1r1bgk77qmh5mxarpjahvfbncxn47k4n7miqghz4rnda08hhc4rk"))))
     (properties `((upstream-name . "fhircrackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-lifecycle r-httr r-data-table))
@@ -20304,23 +20301,21 @@ family-weighted scores across all families in which the feature appears.")
 (define-public r-families
   (package
     (name "r-families")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Families" version))
        (sha256
-        (base32 "1ravgcn3jkhfx6q4wqxld2mdmibdm07ywzy3za3hws6a04zgsbvn"))))
+        (base32 "0zsxsfm4zhjicgw9pr1617mgi8z32acrh1skjrsfp5g9f5m7nnpw"))))
     (properties `((upstream-name . "Families")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape r-msm))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-rlang r-reshape r-msm r-ggplot2))
     (home-page "https://cran.r-project.org/package=Families")
-    (synopsis "Kinship Ties in Virtual Populations")
+    (synopsis "Kinship Ties in (Virtual) Multi-Generation Populations")
     (description
-     "This package provides tools to study kinship networks, grandparenthood, and
-double burden (presence of children and oldest old parents) in virtual
-population produced by @code{VirtualPop}'.")
+     "This package provides tools to study lineages, grandparenthood, loss of close
+relatives, kinship networks and other topics in multi-generation populations.")
     (license license:gpl2)))
 
 (define-public r-familias

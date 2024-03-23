@@ -559,13 +559,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "1gr7wxg1b03qh10269v62qfljzx0gprjcd4z99kdivvb1wng55q4"))))
+        (base32 "1bq1m4gajd3wlv7qknyai962dhbf9lir36wym25q1a7mikgc3brh"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -6911,6 +6911,46 @@ outcome may be added to the bias term in the selector.  For more details about
 this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
     (license license:gpl3)))
 
+(define-public r-esci
+  (package
+    (name "r-esci")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "esci" version))
+       (sha256
+        (base32 "0rc43xwkn1l5qxkki88d51yp3qbdw2r369f6i04r5yxa042a5kqj"))))
+    (properties `((upstream-name . "esci")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-statpsych
+                             r-sadists
+                             r-rlang
+                             r-rdpack
+                             r-r6
+                             r-multcomp
+                             r-metafor
+                             r-mathjaxr
+                             r-jmvcore
+                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-ggh4x
+                             r-ggdist
+                             r-ggbeeswarm))
+    (home-page "https://cran.r-project.org/package=esci")
+    (synopsis "Estimation Statistics with Confidence Intervals")
+    (description
+     "This package provides a collection of functions and jamovi module for the
+estimation approach to inferential statistics, the approach which emphasizes
+effect sizes, interval estimates, and meta-analysis.  Nearly all functions are
+based on statpsych and metafor'.  This package is still under active
+development, and breaking changes are likely, especially with the plot and
+hypothesis test functions.  Data sets are included for all examples from Cumming
+& Calin-Jageman (2024) <ISBN:9780367531508>.")
+    (license license:gpl3)))
+
 (define-public r-escalation
   (package
     (name "r-escalation")
@@ -12095,13 +12135,13 @@ management, data extraction, data preparation and data visualization facilities.
 (define-public r-emulator
   (package
     (name "r-emulator")
-    (version "1.2-21")
+    (version "1.2-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emulator" version))
        (sha256
-        (base32 "0iikf6yinkqcgdnxx6v5kzfllhq3ppl75ym48vlcbnvkwv0v4l4v"))))
+        (base32 "0sd45wjdb00iyj8n16kqxypisam7ibwvpcaxsi1z56yzlzp93p4i"))))
     (properties `((upstream-name . "emulator")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -20433,13 +20473,13 @@ thresholding, are also implemented within the package.")
 (define-public r-ebase
   (package
     (name "r-ebase")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBASE" version))
        (sha256
-        (base32 "09kc4rzd9h9gmh01cad8hc7zs1sja1mjnglvzwg130r605wwxrqr"))))
+        (base32 "1a0g91nclmmzfcffbgksb2w6yx6kj68f83knah4n7z3whscqsfik"))))
     (properties `((upstream-name . "EBASE")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

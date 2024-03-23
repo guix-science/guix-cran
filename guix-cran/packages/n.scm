@@ -300,6 +300,31 @@ generation reservoir computing) for nonlinear dynamic systems.  The algorithm
 was described by Gauthier et al. (2021) <doi:10.1038/s41467-021-25801-2>.")
     (license license:gpl3+)))
 
+(define-public r-nuts
+  (package
+    (name "r-nuts")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nuts" version))
+       (sha256
+        (base32 "0g2gxpaqg56c0s34prcmy3das4yspjc71zawnqhp4am6v4bgbq5v"))))
+    (properties `((upstream-name . "nuts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-lifecycle r-glue r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/nuts/")
+    (synopsis "Convert European Regional Data")
+    (description
+     "Motivated by changing administrative boundaries over time, the nuts package can
+convert European regional data with NUTS codes between versions (2006, 2010,
+2013, 2016 and 2021) and levels (NUTS 1, NUTS 2 and NUTS 3).  The package uses
+spatial interpolation as in Lam (1983) <doi:10.1559/152304083783914958> based on
+granular (100m x 100m) area, population and land use data provided by the
+European Commission's Joint Research Center.")
+    (license license:expat)))
+
 (define-public r-nutrition
   (package
     (name "r-nutrition")
@@ -3316,6 +3341,30 @@ zero cells when a multi centre analysis or a meta analysis is carried out.
 Further, it can be considered as a tool for sensitivity analysis for adding a
 continuity correction and to identify the presence of Simpson's paradox.")
     (license license:gpl2)))
+
+(define-public r-nos
+  (package
+    (name "r-nos")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nos" version))
+       (sha256
+        (base32 "1a2wgakyrp5gn0gxms83nmajxfr9b5r8pz5s4pccc0m325glzbqr"))))
+    (properties `((upstream-name . "nos")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gmp r-dplyr r-bipartite))
+    (home-page "https://github.com/txm676/nos")
+    (synopsis "Compute Node Overlap and Segregation in Ecological Networks")
+    (description
+     "Calculate NOS (node overlap and segregation) and the associated metrics
+described in Strona and Veech (2015) <doi:10.1111/2041-210X.12395> and Strona et
+al. (2018) <doi:10.1111/ecog.03447>.  The functions provided in the package
+enable assessment of structural patterns ranging from complete node segregation
+to perfect nestedness in a variety of network types.  In addition, they provide
+a measure of network modularity.")
+    (license license:gpl3+)))
 
 (define-public r-nortstest
   (package

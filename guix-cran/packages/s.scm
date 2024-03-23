@@ -10644,25 +10644,52 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.4.4")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1lqwaxf6alk4y5mfrmhsnrchijpzv67n8lmhmpyx1qr4hv0lcfjp"))))
+        (base32 "0p0lc00afabvpxr8wslipx0n6kkngg9ljcc8yi659aybjyszjhx3"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-stringr r-purrr r-dplyr))
+    (propagated-inputs (list r-xlsx
+                             r-tidyr
+                             r-survival
+                             r-summarytools
+                             r-stringr
+                             r-shinythemes
+                             r-shinyjs
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-ggally
+                             r-flextable
+                             r-dt
+                             r-dplyr
+                             r-cowplot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=StepReg")
     (synopsis "Stepwise Regression Analysis")
     (description
-     "Three most common types of stepwise regression including linear regression,
-logistic regression and cox proportional hazard regression can be performed to
-select best model with methods of forward selection, backward elimination,
-bidirectional selection and best subset selection.  A widely used selection
-criteria are available for variable selection.")
+     "The stepwise regression analysis is a statistical technique used to identify a
+subset of predictor variables essential for constructing predictive models.
+This package performs stepwise regression analysis across various regression
+models such as linear, logistic, Cox proportional hazards, Poisson, and gamma
+regression.  It incorporates diverse stepwise regression algorithms like forward
+selection, backward elimination, and bidirectional elimination alongside the
+best subset method.  Additionally, it offers a wide range of selection criteria,
+including Akaike Information Criterion (AIC), corrected AIC (AICc), Sawa
+Bayesian Information Criterion (BIC), Schwarz Bayesian Information Criterion
+(SBC), Significant Levels (SL), among others.  Moreover, it facilitates the
+concurrent selection of multiple methods and criteria for variable selection.
+For user-friendly exploration and analysis, @code{StepReg} provides an intuitive
+R Shiny app.")
     (license license:expat)))
 
 (define-public r-stepr
@@ -13658,17 +13685,16 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacks" version))
        (sha256
-        (base32 "0vfpskdk77hrzsiml39d2hlgr92i6ig4q9rdb0hhrfs0hdq9w9q4"))))
+        (base32 "1i28m6jxg83h3as74ax39frdwbzwnsq20vb18shswc62azrimw9q"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-workflows
+    (propagated-inputs (list r-workflows
                              r-vctrs
                              r-tune
                              r-tidyr
@@ -13682,8 +13708,10 @@ This version is available in French and English.  See
                              r-glmnet
                              r-ggplot2
                              r-generics
+                             r-future
                              r-foreach
                              r-dplyr
+                             r-dofuture
                              r-cli
                              r-butcher))
     (native-inputs (list r-knitr))
@@ -24876,17 +24904,16 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.18.0")
+    (version "2.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1awyrs7wv0rmd94i44l9v6k238iyzan5nlf1mlfpwb2s0ssxvsqp"))))
+        (base32 "0s2rlcgw7y07ba81k528915b2b9i6ccvmk3cms2h7xjna16fzn4d"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
-                             r-smoother
                              r-signal
                              r-rniftyreg
                              r-rnifti
@@ -24910,6 +24937,51 @@ of the American Statistical Association 105(490): 713-726.")
 Resonance Spectroscopy data.  The package includes methods for spectral fitting:
 Wilson (2021) <DOI:10.1002/mrm.28385> and spectral alignment: Wilson (2018)
 <DOI:10.1002/mrm.27605>.")
+    (license license:gpl3)))
+
+(define-public r-spanova
+  (package
+    (name "r-spanova")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spANOVA" version))
+       (sha256
+        (base32 "0y1kqqfrl9rrskyvmzdjw9zyjgyqmz8b3cfgbba49n41wx2aiw79"))))
+    (properties `((upstream-name . "spANOVA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-spdep
+                             r-spatialreg
+                             r-shinythemes
+                             r-shinycssloaders
+                             r-shinybs
+                             r-shiny
+                             r-scottknott
+                             r-rmarkdown
+                             r-mvtnorm
+                             r-multcompview
+                             r-multcomp
+                             r-matrix
+                             r-mass
+                             r-knitr
+                             r-gtools
+                             r-geor
+                             r-dt
+                             r-car
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=spANOVA")
+    (synopsis
+     "Analysis of Field Trials with Geostatistics & Spatial AR Models")
+    (description
+     "Perform analysis of variance when the experimental units are spatially
+correlated.  There are two methods to deal with spatial dependence: Spatial
+autoregressive models (see Rossoni, D. F., & Lima, R. R. (2019)
+<doi:10.28951/rbb.v37i2.388>) and geostatistics (see Pontes, J. M., & Oliveira,
+M. S. D. (2004) <doi:10.1590/S1413-70542004000100018>).  For both methods, there
+are three multicomparison procedure available: Tukey, multivariate T, and
+Scott-Knott.")
     (license license:gpl3)))
 
 (define-public r-spanish
@@ -25299,13 +25371,13 @@ ggplot2 package.")
 (define-public r-spabundance
   (package
     (name "r-spabundance")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spAbundance" version))
        (sha256
-        (base32 "1sklcbbk82ikgcvbkzr6cy8cw1hbq22acnlqz4avp277pmp514gc"))))
+        (base32 "1g3kbgjn1rwgniprfmxknygkxa0g8ghhw7nrv7inc56nhhqvxs3r"))))
     (properties `((upstream-name . "spAbundance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -35175,13 +35247,13 @@ supersedure, etc.), and colony phenotype values.")
 (define-public r-simplyagree
   (package
     (name "r-simplyagree")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimplyAgree" version))
        (sha256
-        (base32 "0lcy2hjhni46z5m1zip77jlxl8jscq2rczfajdh1xwbpin484f9v"))))
+        (base32 "10n63rn7kl4k1q7k3jz4f3macmn8y662jy41vdspgdwf0iqvf5in"))))
     (properties `((upstream-name . "SimplyAgree")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -35191,8 +35263,11 @@ supersedure, etc.), and colony phenotype values.")
                              r-purrr
                              r-patchwork
                              r-nlme
+                             r-matrix
+                             r-mass
                              r-magrittr
                              r-lme4
+                             r-lifecycle
                              r-jmvcore
                              r-insight
                              r-ggplot2
@@ -35209,8 +35284,7 @@ easier for the average researcher.  The functions within this package include
 simple tests of agreement, agreement analysis for nested and replicate data, and
 provide robust analyses of reliability.  In addition, this package contains a
 set of functions to help when planning studies looking to assess measurement
-agreement.  For robust analyses of agreement, limits of agreement through a
-bootstrap method can also be calculated.")
+agreement.")
     (license license:gpl3+)))
 
 (define-public r-simplifystats
@@ -39392,13 +39466,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "0a0wlhhkzm103vr9sd92xb97n4wl1d66rngdi3s96yx10qg3miqn"))))
+        (base32 "02z8fwvnmi6lacqi6ryxssm1w3mh4vfphjrp3v1d6dij3s3l6z0q"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments
@@ -44545,6 +44619,36 @@ Francisco data portal (@code{DataSF})
 of classes and functions that enable a seamless interaction between the network
 analysis package tidygraph and the spatial analysis package sf'.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-sfislands
+  (package
+    (name "r-sfislands")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfislands" version))
+       (sha256
+        (base32 "1x3jybr0nhms375ynik8v8nx9n2r9gada1fpnx9vhbykdiz5w8jm"))))
+    (properties `((upstream-name . "sfislands")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-spdep
+                             r-sf
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-broom-mixed))
+    (home-page "https://github.com/horankev/sfislands")
+    (synopsis "Streamlines the Process of Fitting Areal Spatial Models")
+    (description
+     "Helpers for addressing the issue of disconnected spatial units.  It allows for
+convenient adding and removal of neighbourhood connectivity between areal units
+prior to modelling, with the visual aid of maps.  Post-modelling, it reduces the
+human workload for extracting, tidying and mapping predictions from areal
+models.")
+    (license license:expat)))
 
 (define-public r-sfinx
   (package
@@ -53943,6 +54047,46 @@ methods, see Roland Pfister and Markus Janczyk (2016) <doi:
 focus is set to prime-calculation.")
     (license license:gpl2+)))
 
+(define-public r-schooldatait
+  (package
+    (name "r-schooldatait")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SchoolDataIT" version))
+       (sha256
+        (base32 "1zizhpy74dyka8fzvwdi9iqbkwrpjmqad5jwszhgp0lpywpcyn9k"))))
+    (properties `((upstream-name . "SchoolDataIT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-mapview
+                             r-magrittr
+                             r-leafpop
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=SchoolDataIT")
+    (synopsis
+     "Retrieve, Harmonise and Map Open Data Regarding the Italian School System")
+    (description
+     "Compiles and displays the available data sets regarding the Italian school
+system, with a focus on the infrastructural aspects.  Input datasets are
+downloaded from the web, with the aim of updating everything to real time.  The
+functions are divided in four main modules, namely Get', to scrape raw data from
+the web Util', various utilities needed to process raw data Group', to aggregate
+data at the municipality or province level Map', to visualize the output
+datasets.")
+    (license license:gpl3+)))
+
 (define-public r-scholar
   (package
     (name "r-scholar")
@@ -54477,28 +54621,63 @@ and Braun (2017) <doi:10.1080/03610918.2017.1288247>, Wolters (2012)
 scdensity() help for for full citations.")
     (license license:gpl2)))
 
+(define-public r-scdeconr
+  (package
+    (name "r-scdeconr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCdeconR" version))
+       (sha256
+        (base32 "0wp7l226hw75jgi9j7n4c2f0nxlrmi3z3iv5wi5vhflvndgr95ym"))))
+    (properties `((upstream-name . "SCdeconR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-reshape2
+                             r-nmf
+                             r-mgcv
+                             r-matrix
+                             r-mass
+                             r-harmony
+                             r-gtools
+                             r-glmgampoi
+                             r-ggplot2
+                             r-foreach
+                             r-edger
+                             r-dplyr
+                             r-data-table
+                             r-biobase))
+    (home-page "https://github.com/Liuy12/SCdeconR/")
+    (synopsis
+     "Deconvolution of Bulk RNA-Seq Data using Single-Cell RNA-Seq Data as Reference")
+    (description
+     "Streamlined workflow from deconvolution of bulk RNA-seq data to downstream
+differential expression and gene-set enrichment analysis.  Provide various
+visualization functions.")
+    (license license:gpl3+)))
+
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "1ic2f3h39j39lca33csfdrfkcnxqq0pw0fnf5g7qqgiqwin4mpy9"))))
+        (base32 "0n6vmn7jjl8lp5yf53kxh2d3660sbwjnl7chiv4x7dkidi81lfnr"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-stringr
-                             r-rsqlite
                              r-rlang
                              r-r6
                              r-purrr
+                             r-parallelly
                              r-openssl
-                             r-lubridate
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr
@@ -55474,13 +55653,13 @@ and <http://foges.github.io/pogs/stp/r>.")
 (define-public r-sbtools
   (package
     (name "r-sbtools")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbtools" version))
        (sha256
-        (base32 "0z7pa9raz30khs1ljrbrv5kmy0q1g20d8g260jsq7zvzwxn4yar7"))))
+        (base32 "14yjml5d34jkyw7rsc02zpb4wy9w30sxqzpdjk02znxpm9baxsj1"))))
     (properties `((upstream-name . "sbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-mime

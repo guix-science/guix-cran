@@ -5830,13 +5830,13 @@ Allocation Problems.")
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mult.latent.reg" version))
        (sha256
-        (base32 "1c17yn6hyc4kqbg0773kj6ispkrdkh43kgq6zg2cp66fxmv0p8g0"))))
+        (base32 "0lvkysncxjlzlzdy1a7vvcr03sd6vcfqgflgaxxy6k1j9qvx92wf"))))
     (properties `((upstream-name . "mult.latent.reg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixstats r-lme4))
@@ -6733,6 +6733,26 @@ gain and symmetrical uncertainty of categorical variables.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mstudentd
+  (package
+    (name "r-mstudentd")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mstudentd" version))
+       (sha256
+        (base32 "03css731hv96nj8y07y4ngzv97fypiqcfynscxw5fx0s05c51331"))))
+    (properties `((upstream-name . "mstudentd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-mass))
+    (home-page "https://forgemia.inra.fr/imhorphen/mstudentd")
+    (synopsis "Multivariate t Distribution")
+    (description
+     "Distance between multivariate t distributions, as presented by N. Bouhlel and D.
+Rousseau (2023) <doi:10.1109/LSP.2023.3324594>.")
+    (license license:gpl3+)))
+
 (define-public r-mstrio
   (package
     (name "r-mstrio")
@@ -7207,6 +7227,48 @@ package.")
      "Model evaluation based on a modified version of the recursive feature
 elimination algorithm.  This package is designed to determine the optimal
 model(s) by leveraging all available features.")
+    (license license:gpl3+)))
+
+(define-public r-msmix
+  (package
+    (name "r-msmix")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSmix" version))
+       (sha256
+        (base32 "0zwrd6gj2rsijqdclq07dqg3a40sq80jkrx71ndfnjwp97sgqg60"))))
+    (properties `((upstream-name . "MSmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-spsutil
+                             r-rlang
+                             r-reshape
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-rankcluster
+                             r-gridextra
+                             r-ggplot2
+                             r-ggbump
+                             r-foreach
+                             r-fields
+                             r-factoextra
+                             r-dplyr
+                             r-data-table
+                             r-bmixture
+                             r-bayesmallows))
+    (home-page "https://cran.r-project.org/package=MSmix")
+    (synopsis
+     "Finite Mixtures of Mallows Models with Spearman Distance for Full and Partial Rankings")
+    (description
+     "Fit and analysis of finite Mixtures of Mallows models with Spearman Distance for
+full and partial rankings with arbitrary missing positions.  Inference is
+conducted within the maximum likelihood framework via Expectation-Maximization
+algorithms.  Estimation uncertainty is tackled via diverse versions of
+bootstrapping as well as via Hessian-based standard errors calculations.  The
+most relevant reference of the methods is Crispino, Mollica, Astuti and Tardella
+(2023) <doi:10.1007/s11222-023-10266-8>.")
     (license license:gpl3+)))
 
 (define-public r-msme
@@ -10445,6 +10507,29 @@ al. (2015) <doi:10.1002/bimj.201400143>, Wang et al. (2016)
 Wang (2024) <doi:10.1111/anzs.12409>.")
     (license license:gpl2)))
 
+(define-public r-mpae
+  (package
+    (name "r-mpae")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpae" version))
+       (sha256
+        (base32 "0a6fbnqvp0fhbni0qivnrcdmbvlzy6biv5qgk9d13ydqaz15vbms"))))
+    (properties `((upstream-name . "mpae")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcmdrmisc r-caret))
+    (home-page "https://github.com/rubenfcasal/mpae")
+    (synopsis
+     "Metodos Predictivos de Aprendizaje Estadistico (Statistical Learning Predictive Methods)")
+    (description
+     "This package provides functions and datasets used in the book: Fernandez-Casal,
+R., Costa, J. and Oviedo-de la Fuente, M. (2024) \"Metodos predictivos de
+aprendizaje estadistico\"
+<https://rubenfcasal.github.io/aprendizaje_estadistico/>.")
+    (license license:gpl2+)))
+
 (define-public r-mp
   (package
     (name "r-mp")
@@ -11915,13 +12000,13 @@ more information about Moodle, visit <https://moodle.org>.")
 (define-public r-moodlequizr
   (package
     (name "r-moodlequizr")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodlequizR" version))
        (sha256
-        (base32 "0gbghj7fjdvngd0h54ikll6c4s39pxq3kxan54dvs83v11dixphn"))))
+        (base32 "0riwdmf0hmmywdi5zib8zwjfmifvlrfjm10amryzyrwj5jj74689"))))
     (properties `((upstream-name . "moodlequizR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mvtnorm r-base64))
@@ -11929,7 +12014,7 @@ more information about Moodle, visit <https://moodle.org>.")
     (home-page "https://cran.r-project.org/package=moodlequizR")
     (synopsis "Easily Create Fully Randomized 'Moodle' Test Questions")
     (description
-     "Routines to generate fully randomized moodle quizzes.  It also contains 12
+     "Routines to generate fully randomized moodle quizzes.  It also contains 15
 examples and a shiny app.")
     (license license:gpl2+)))
 
@@ -12443,18 +12528,18 @@ optional partial monotonicity constraints.")
 (define-public r-monitos
   (package
     (name "r-monitos")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monitOS" version))
        (sha256
-        (base32 "0h4p3xvpsrj73ljx3iahfn5cw7dgjnwj4k0hgx067vx5zf8xqa57"))))
+        (base32 "0hdyxb1f2hy3fjbmjf60xnb0x61cga047g007jr9rpb5cimnpk7b"))))
     (properties `((upstream-name . "monitOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinydashboard r-shiny r-glue))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=monitOS")
+    (home-page "https://opensource.nibr.com/monitOS/")
     (synopsis
      "Monitoring Overall Survival in Pivotal Trials in Indolent Cancers")
     (description
@@ -14842,6 +14927,32 @@ Spearman's Rho for Zero-Inflated Data\" (2009)
 multi-objective optimization of cluster validation indices.  For details see
 Kraus et al. (2011) <doi:10.1007/s00180-011-0244-6>.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
+
+(define-public r-mobsim
+  (package
+    (name "r-mobsim")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mobsim" version))
+       (sha256
+        (base32 "0ny924lsj12fqfagjwd2pq8prk0xgm89ray5b07dw7yfdcisx90i"))))
+    (properties `((upstream-name . "mobsim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-sads r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MoBiodiv/mobsim")
+    (synopsis
+     "Spatial Simulation and Scale-Dependent Analysis of Biodiversity Changes")
+    (description
+     "Simulation, analysis and sampling of spatial biodiversity data (May, Gerstner,
+@code{McGlinn}, Xiao & Chase 2017) <doi:10.1111/2041-210x.12986>.  In the
+simulation tools user define the numbers of species and individuals, the species
+abundance distribution and species aggregation.  Functions for analysis include
+species rarefaction and accumulation curves, species-area relationships and the
+distance decay of similarity.")
+    (license license:gpl3+)))
 
 (define-public r-mobr
   (package
@@ -21977,23 +22088,24 @@ Models with time dependent misclassification may also be fitted.")
 (define-public r-miscfuncs
   (package
     (name "r-miscfuncs")
-    (version "1.5-7")
+    (version "1.5-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miscFuncs" version))
        (sha256
-        (base32 "02kv44nyrigvr2ha3cn2bq83gpvjb3rg8b6czaf8qvzfcvi4whyp"))))
+        (base32 "1inx03ga2dqwh6pxcf9wdkh847f0abfkmxn91xdj612c66r4r0aq"))))
     (properties `((upstream-name . "miscFuncs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-roxygen2 r-mvtnorm))
+    (propagated-inputs (list r-roxygen2 r-mvtnorm r-extradistr))
     (home-page "https://cran.r-project.org/package=miscFuncs")
     (synopsis
      "Miscellaneous Useful Functions Including LaTeX Tables, Kalman Filtering, QQplots with Simulation-Based Confidence Intervals and Development Tools")
     (description
      "Implementing various things including functions for @code{LaTeX} tables, the
 Kalman filter, QQ-plots with simulation-based confidence intervals, web
-scraping, development tools, relative risk and odds ratio.")
+scraping, development tools, relative risk and odds rati, GARCH(1,1)
+Forecasting.")
     (license license:gpl3)))
 
 (define-public r-miscf
@@ -31514,13 +31626,13 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.11.1")
+    (version "1.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melt" version))
        (sha256
-        (base32 "1nd1g7wndlnvjm8bs62b0vylf08ygzfw84dq0clyak9bmgsc6a27"))))
+        (base32 "1dkdw3pjrwpl126kvhwani5k49gljm53pfij8bvlzbl4y44fks6d"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-checkmate r-bh))
@@ -35461,13 +35573,13 @@ Cauchy distributions.")
 (define-public r-mcartest
   (package
     (name "r-mcartest")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCARtest" version))
        (sha256
-        (base32 "1q3242vdy91f623vnkw2pk7kalaadbxl06p0hyai2zq63vmxr93y"))))
+        (base32 "0vcw8ysxkv2ajiv44cf6pf8dgn6bmjzs01fsdijs29ky9467alw5"))))
     (properties `((upstream-name . "MCARtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -42231,13 +42343,13 @@ well as for uploading local data to magma'.")
 (define-public r-magmaclustr
   (package
     (name "r-magmaclustr")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MagmaClustR" version))
        (sha256
-        (base32 "0nmf3whngm1kz27aazq4pkgw76sw24w33n51ril0dsvsfirfk7dd"))))
+        (base32 "1hbdppqymi4qsacp0f1lpq3042zs5gbpdshmmg3mb2v26badss4h"))))
     (properties `((upstream-name . "MagmaClustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

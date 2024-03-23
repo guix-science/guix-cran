@@ -21526,13 +21526,13 @@ rank normalization, which are proposed in Vehtari et al. (2021)
 (define-public r-bayesmultimode
   (package
     (name "r-bayesmultimode")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMultiMode" version))
        (sha256
-        (base32 "1cgfqk7bnifss58syk53sjvinhwvf6pac9j4k2ivkzd1i73ir7zj"))))
+        (base32 "0ij1igdnbk3wy01mdimk9k5ajxmx2plla0ykvsmijzz5mcmqyrii"))))
     (properties `((upstream-name . "BayesMultiMode")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21552,17 +21552,16 @@ rank normalization, which are proposed in Vehtari et al. (2021)
     (home-page "https://github.com/paullabonne/BayesMultiMode")
     (synopsis "Bayesian Mode Inference")
     (description
-     "This package provides a Bayesian approach for mode inference which works in two
-steps.  First, a mixture distribution is fitted on the data using a sparse
-finite mixture (SFM) Markov chain Monte Carlo (MCMC) algorithm following
-Malsiner-Walli, @code{FrÃ¼hwirth-Schnatter} and @code{GrÃ¼n} (2016)
-<doi:10.1007/s11222-014-9500-2>).  The number of mixture components does not
-have to be known; the size of the mixture is estimated endogenously through the
-SFM approach.  Second, the modes of the estimated mixture at each MCMC draw are
-retrieved using algorithms specifically tailored for mode detection.  These
-estimates are then used to construct posterior probabilities for the number of
-modes, their locations and uncertainties, providing a powerful tool for mode
-inference.")
+     "This package provides a two-step Bayesian approach for mode inference following
+Cross, Hoogerheide, Labonne and van Dijk (2024)
+<doi:10.1016/j.econlet.2024.111579>).  First, a mixture distribution is fitted
+on the data using a sparse finite mixture (SFM) Markov chain Monte Carlo (MCMC)
+algorithm.  The number of mixture components does not have to be known; the size
+of the mixture is estimated endogenously through the SFM approach.  Second, the
+modes of the estimated mixture at each MCMC draw are retrieved using algorithms
+specifically tailored for mode detection.  These estimates are then used to
+construct posterior probabilities for the number of modes, their locations and
+uncertainties, providing a powerful tool for mode inference.")
     (license license:gpl3+)))
 
 (define-public r-bayesmrm

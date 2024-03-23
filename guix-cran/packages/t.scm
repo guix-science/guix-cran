@@ -6655,6 +6655,28 @@ performance converting to polynomials and calculating distances.")
 Methods for Statistical Learning in R\" <doi:10.1201/9781003089032>.")
     (license license:gpl2+)))
 
+(define-public r-treeminer
+  (package
+    (name "r-treeminer")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TreeMineR" version))
+       (sha256
+        (base32 "1ngadly2535n8h02lv8zkmhy3adfs7bklxd2b0d24cl9c5c5gh3v"))))
+    (properties `((upstream-name . "TreeMineR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-future-apply r-future r-data-table r-cli))
+    (home-page "https://entjos.github.io/TreeMineR/")
+    (synopsis "Tree-Based Scan Statistics")
+    (description
+     "Implementation of unconditional Bernoulli Scan Statistic developed by Kulldorff
+et al. (2003) <doi:10.1111/1541-0420.00039> for hierarchical tree structures.
+Tree-based Scan Statistics are an exploratory method to identify event clusters
+across the space of a hierarchical tree.")
+    (license license:gpl3+)))
+
 (define-public r-treemapify
   (package
     (name "r-treemapify")
@@ -7270,6 +7292,29 @@ details.")
 Medical Outcomes Partnership (OMOP) common data model (CDM).  As described in
 Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
     (license license:asl2.0)))
+
+(define-public r-treasury
+  (package
+    (name "r-treasury")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treasury" version))
+       (sha256
+        (base32 "1h87pwzd474bw2rsq2cvv2jw2nkr9lxjnc5grhqsq6vd2hlkwch5"))))
+    (properties `((upstream-name . "treasury")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-rlang r-httr2))
+    (home-page "https://m-muecke.github.io/treasury/")
+    (synopsis "US Treasury XML Feed Wrapper")
+    (description
+     "Download daily interest rates from the US Treasury XML feed.  Leveraging
+<https://home.treasury.gov/treasury-daily-interest-rate-xml-feed>, this package
+serves as a wrapper, facilitating the retrieval of daily treasury rates across
+various categories, including par yield curves, treasury bills, long-term rates,
+and real yield curves.")
+    (license license:expat)))
 
 (define-public r-trd
   (package
@@ -9806,13 +9851,13 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TOSTER" version))
        (sha256
-        (base32 "1y2aqf3ml0hhw3hcxnmchj0j7x6snd7x02cv91d7177j5bmv9g6n"))))
+        (base32 "04rwsaa52bmhhlcr0afqrmgl0wk7hw9xq23ylmb4afvp3if0qm3d"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11080,6 +11125,47 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 <https://ui.toast.com/> libraries to integrate in shiny applications or
 rmarkdown HTML documents.")
     (license license:expat)))
+
+(define-public r-tntpr
+  (package
+    (name "r-tntpr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tntpr" version))
+       (sha256
+        (base32 "0ic95bbc91lih6wjmb61zg3m01qzbzkf5y03iy2wrac03yvlym88"))))
+    (properties `((upstream-name . "tntpr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rstudioapi
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-labelled
+                             r-keyring
+                             r-janitor
+                             r-ggplot2
+                             r-formattable
+                             r-extrafont
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tntp/tntpr")
+    (synopsis "Data Analysis Tools Customized for TNTP")
+    (description
+     "An assortment of functions and templates customized to meet the needs of data
+analysts at the non-profit organization TNTP. Includes functions for branded
+colors and plots, credentials management, repository set-up, and other common
+analytic tasks.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-tnrs
   (package
@@ -16975,13 +17061,13 @@ observations is considered.")
 (define-public r-thresholdrocsurvival
   (package
     (name "r-thresholdrocsurvival")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROCsurvival" version))
        (sha256
-        (base32 "0zvcfysfaj45vdylsyanllfk25vwz7fs6qxbpkrr9qma0nxpnc2f"))))
+        (base32 "13njr43fb8jnjcy1n32q8rbrgqag9cdcwx4rpx16rx7kvjr23gcw"))))
     (properties `((upstream-name . "ThresholdROCsurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-thresholdroc
@@ -17008,13 +17094,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.2")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROC" version))
        (sha256
-        (base32 "0r1ahhfgqq1zk9rp80i25fcxmsxsmys3xi3mf4d9fbyqlvd6dw53"))))
+        (base32 "08wz44snvn3q243nzg4hw5casi1x297gc7nzxqyxwk641pa4cy95"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-numderiv r-mass r-ks))

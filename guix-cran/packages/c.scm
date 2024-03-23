@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -1244,20 +1244,19 @@ Some support for GARCH models is provided, as well.")
 (define-public r-cvap
   (package
     (name "r-cvap")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvap" version))
        (sha256
-        (base32 "18fkp04dcpisml30d8dghk4nhkiaxk18lw134xid27r64rdz7nxy"))))
+        (base32 "02ixibmia4v6qdrn3rwi4qjgha920y8qp83as9acr797abahmnm8"))))
     (properties `((upstream-name . "cvap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
                              r-readr
-                             r-magrittr
                              r-fs
                              r-dplyr
                              r-cli
@@ -7003,16 +7002,16 @@ CRC32C is described in RFC 3270 at
 (define-public r-crayons
   (package
     (name "r-crayons")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crayons" version))
        (sha256
-        (base32 "0mww2s57pkc6i0hg9xmm4j35gn1r6wyr7k4dksg4mhifbi1vwc43"))))
+        (base32 "0pfgkcs5mrdxq63zqkkdi5fb54swp0w342n6pzgn8lzw1wf4svba"))))
     (properties `((upstream-name . "crayons")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-palette r-ggplot2))
     (home-page "https://github.com/christopherkenny/crayons")
     (synopsis "Color Palettes from Crayon Boxes")
     (description
@@ -8564,13 +8563,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "0k20rxxzcszj63kk374mhqs138mszxvqs9jqdg6g2cf04712gd5a"))))
+        (base32 "0y7dcwzkj8yqwn44qd1cb1379a0xl5a1949sg7wn6gpgzyn9vgi4"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10064,13 +10063,13 @@ models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
 (define-public r-countrycode
   (package
     (name "r-countrycode")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "countrycode" version))
        (sha256
-        (base32 "035c8dm1ppkdvjhc78dfmhbyc2n048gkx4q6y5s0ffn3bpymsxzw"))))
+        (base32 "1dix4prcavwbi7l7ifw1frvpmqqdcrvk4c45xl7ckg6068713nzr"))))
     (properties `((upstream-name . "countrycode")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/countrycode/")
@@ -36822,6 +36821,28 @@ the package documentation on @code{GitHub}
 <https://google.github.io/@code{CausalImpact/>} to get started.")
     (license (list license:asl2.0
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-causalhypergraph
+  (package
+    (name "r-causalhypergraph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "causalHyperGraph" version))
+       (sha256
+        (base32 "096ggvryh580lcx4mhzsgbfifc6fqldw30a9ss6cxjvzf00prgkf"))))
+    (properties `((upstream-name . "causalHyperGraph")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-useful r-stringr r-diagrammersvg r-diagrammer
+                             r-cna))
+    (home-page "https://cran.r-project.org/package=causalHyperGraph")
+    (synopsis "Drawing Causal Hypergraphs")
+    (description
+     "Draws causal hypergraph plots from models output by configurational comparative
+methods such as Coincidence Analysis (CNA) or Qualitative Comparative Analysis
+(QCA).")
+    (license license:gpl2+)))
 
 (define-public r-causalgps
   (package

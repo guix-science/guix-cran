@@ -553,13 +553,13 @@ approximation are implemented.  Main references: Nagy and Suzdaleva (2013)
 (define-public r-dynforest
   (package
     (name "r-dynforest")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DynForest" version))
        (sha256
-        (base32 "1im9sb74swna27vazk366i4a61db7b0agaw499j9nh1a4pf4nsjl"))))
+        (base32 "0x78gbgzl4dad5g6w27cdfpngsykanv3lz3xffpqndd971wkzhiy"))))
     (properties `((upstream-name . "DynForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1657,6 +1657,33 @@ self-loops.  This can be used for a computation of betweenness centrality that
 does not drop this essential information.  Implements Merelo & Molinari (2024)
 <doi:10.1007/s42001-023-00245-4>.")
     (license license:gpl3)))
+
+(define-public r-dupir
+  (package
+    (name "r-dupir")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dupiR" version))
+       (sha256
+        (base32 "14krgg9fh63nyi3rchmrlggw7rykylc6b52cih87rl09x9zlgq17"))))
+    (properties `((upstream-name . "dupiR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plotrix))
+    (home-page "https://cran.r-project.org/package=dupiR")
+    (synopsis
+     "Bayesian Inference from Count Data using Discrete Uniform Priors")
+    (description
+     "We consider a set of sample counts obtained by sampling arbitrary fractions of a
+finite volume containing an homogeneously dispersed population of identical
+objects.  This package implements a Bayesian derivation of the posterior
+probability distribution of the population size using a binomial likelihood and
+non-conjugate, discrete uniform priors under sampling with or without
+replacement.  This can be used for a variety of statistical problems involving
+absolute quantification under uncertainty.  See Comoglio et al. (2013)
+<doi:10.1371/journal.pone.0074388>.")
+    (license license:gpl2)))
 
 (define-public r-dunlin
   (package
@@ -17127,6 +17154,43 @@ also included directions in the gurobi_installation file in the inst folder.")
 individual designs and diagnose their properties.  The designers can also be
 used to compare performance of a given design across a range of combinations of
 parameters, such as effect size, sample size, and assignment probabilities.")
+    (license license:expat)))
+
+(define-public r-designit
+  (package
+    (name "r-designit")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "designit" version))
+       (sha256
+        (base32 "0h1slgxxz92zk1m6gk67s1ir95jyqzvr6mys9c9lakpffiwwn4b2"))))
+    (properties `((upstream-name . "designit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bedapub.github.io/designit/")
+    (synopsis "Blocking and Randomization for Experimental Design")
+    (description
+     "Intelligently assign samples to batches in order to reduce batch effects.  Batch
+effects can have a significant impact on data analysis, especially when the
+assignment of samples to batches coincides with the contrast groups being
+studied.  By defining a batch container and a scoring function that reflects the
+contrasts, this package allows users to assign samples in a way that minimizes
+the potential impact of batch effects on the comparison of interest.  Among
+other functionality, we provide an implementation for OSAT score by Yan et al.
+(2012, <doi:10.1186/1471-2164-13-689>).")
     (license license:expat)))
 
 (define-public r-designer
