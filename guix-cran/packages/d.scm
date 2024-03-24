@@ -2092,6 +2092,29 @@ better consistency, large gaps at the same location over all sequences should be
 avoided.")
     (license license:gpl2+)))
 
+(define-public r-dtwrappers2
+  (package
+    (name "r-dtwrappers2")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DTwrappers2" version))
+       (sha256
+        (base32 "0chc4is8bz39k70jdd4m7rkrj4yg6ccvvr99alj1dh9iwip45g3b"))))
+    (properties `((upstream-name . "DTwrappers2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dtwrappers r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DTwrappers2")
+    (synopsis "Extensions of 'DTwrappers'")
+    (description
+     "Offers functionality which provides methods for data analyses and cleaning that
+can be flexibly applied across multiple variables and in groups.  These include
+cleaning accidental text, contingent calculations, counting missing data, and
+building summarizations of the data.")
+    (license license:gpl3)))
+
 (define-public r-dtwrappers
   (package
     (name "r-dtwrappers")
@@ -2323,13 +2346,13 @@ Holloway, S. T., and Kosorok, M. R. (2020) <@code{arXiv:2012.03294>}.")
 (define-public r-dtrreg
   (package
     (name "r-dtrreg")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTRreg" version))
        (sha256
-        (base32 "1cfb25k3dn07g1ify34hyk1481wd0g562jnwnah0fj3xly101fva"))))
+        (base32 "1irgkrar8m0xy97y19j48s8ab9y4cjzbbnhk3mhqbbs2qgam92cw"))))
     (properties `((upstream-name . "DTRreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-nnet))
@@ -8597,13 +8620,13 @@ only for binary data (<doi:10.18637/jss.v100.i16>).")
 (define-public r-dmai
   (package
     (name "r-dmai")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmai" version))
        (sha256
-        (base32 "0ma89jl0l598sffpikvjj40f2djjcnjq29k6y1bav4dm2g51qgmq"))))
+        (base32 "0fdcvy524cc0gmr04mn82023y4xvfx0477l3h41sjbwk1qrfpdk4"))))
     (properties `((upstream-name . "dmai")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8612,7 +8635,7 @@ only for binary data (<doi:10.18637/jss.v100.i16>).")
                              r-magrittr
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/myaseen208/dmai")
+    (home-page "https://github.com/myaseen208/dmai/")
     (synopsis "Divisia Monetary Aggregates Index")
     (description
      "This package provides functions to calculate Divisia monetary aggregates index

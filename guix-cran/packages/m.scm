@@ -7951,19 +7951,21 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "1.3.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "1lgj188xxccq2nwcci2j0ih6p839v6xzwhgc5mvc7k1xz0r1d2q5"))))
+        (base32 "0ahmg7f5ikkihpanl0jbxd4sqmw85m88r789z53iqr4rbp23gdb8"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
                              r-rdpack
+                             r-rcppprogress
                              r-rcpp
                              r-phangorn
+                             r-igraph
                              r-foreach
                              r-doparallel
                              r-ape))
@@ -7979,10 +7981,11 @@ hypothesis tests for the model, as developed by Mitchell et al. (2019)
 presented by Allman et al. (2020) <doi:10.1101/2020.02.13.948083>, species tree
 inference methods based on quartet distances of Rhodes (2019)
 <doi:10.1109/TCBB.2019.2917204> and Yourdkhani and Rhodes (2019)
-<doi:10.1007/s11538-020-00773-4>, and the NANUQ algorithm for inference of
-level-1 species networks of Allman et al. (2019)
-<doi:10.1186/s13015-019-0159-2>.  Software announcement by Rhodes et al. (2020)
-<doi:10.1093/bioinformatics/btaa868>.")
+<doi:10.1007/s11538-020-00773-4>, the NANUQ algorithm for inference of level-1
+species networks of Allman et al. (2019) <doi:10.1186/s13015-019-0159-2>, and
+the TINNIK algorithm for inference of the tree of blobs of an arbitrary network
+of Allman et al.(2022) <doi:10.1007/s00285-022-01838-9>.  Software announcement
+by Rhodes et al. (2020) <doi:10.1093/bioinformatics/btaa868>.")
     (license license:expat)))
 
 (define-public r-mscp
@@ -13464,6 +13467,64 @@ for fixed or random factors.  Various example datasets are shipped with the
 package: for instance on pokemon, world of warcraft, house tasks or food
 nutrition analyses.")
     (license license:gpl3)))
+
+(define-public r-modsem
+  (package
+    (name "r-modsem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modsem" version))
+       (sha256
+        (base32 "1blww1n3kr994s793nmwmcbw4vihzcsg8lyrkma1mxpf3a8c4w7w"))))
+    (properties `((upstream-name . "modsem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-nlsem
+                             r-mplusautomation
+                             r-lavaan
+                             r-dplyr))
+    (home-page "https://github.com/Kss2k/modsem")
+    (synopsis
+     "Latent Interaction (and Moderation) Analysis in Structural Equation Models (SEM)")
+    (description
+     "Estimation of interaction (i.e., moderation) effects between latent variables in
+structural equation models (SEM).  The supported methods are: The constrained
+approach (Algina & Moulder, 2001).  The unconstrained approach (Marsh et al.,
+2004).  The residual centering approach (Little et al., 2006).  The double
+centering approach (Lin et al., 2010).  The latent moderated structural
+equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
+likelihood (QML) approach (Klein & @code{MuthÃ©n}, 2007) The constrained-
+unconstrained, residual- and double centering- approaches are estimated via
+lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are estimated via
+nlsem (Umbach et al., 2017).  Alternatively model can be estimated via Mplus
+(@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).  References: Algina, J., &
+Moulder, B. C. (2001). <doi:10.1207/S15328007SEM0801_3>. \"A note on estimating
+the JÃ¶reskog-Yang model for latent variable interaction using LISREL 8.3.\"
+Klein, A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>. \"Maximum
+likelihood estimation of latent interaction effects with the LMS method.\" Klein,
+A. G., & @code{MuthÃ©n}, B. O. (2007). <doi:10.1080/00273170701710205>.
+\"Quasi-maximum likelihood estimation of structural equation models with multiple
+interaction and quadratic effects.\" Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H.
+S. (2010). <doi:10.1080/10705511.2010.488999>. \"Structural equation models of
+latent interactions: Clarification of orthogonalizing and double-mean-centering
+strategies.\" Little, T. D., Bovaird, J. A., & Widaman, K. F. (2006).
+<doi:10.1207/s15328007sem1304_1>. \"On the merits of orthogonalizing powered and
+product terms: Implications for modeling interactions among latent variables.\"
+Marsh, H. W., Wen, Z., & Hau, K. T. (2004). <doi:10.1037/1082-989X.9.3.275>.
+\"Structural equation models of latent interactions: evaluation of alternative
+estimation strategies and indicator construction.\" @code{MuthÃ©n}, L.K. and
+@code{MuthÃ©n}, B.O. (1998-2017). \"'Mplus Userâs Guide.  Eighth Edition.\"
+<https://www.statmodel.com/>.  Umbach N, Naumann K, Brandt H, Kelava A (2017).
+\"Fitting Nonlinear Structural Equation Models in R with Package nlsem'.\"
+<doi:10.18637/jss.v077.i07>.  Rosseel Y (2012). <doi:10.18637/jss.v048.i02>.
+\"'lavaan': An R Package for Structural Equation Modeling.\"")
+    (license license:expat)))
 
 (define-public r-modqr
   (package

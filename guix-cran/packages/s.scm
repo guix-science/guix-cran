@@ -7047,6 +7047,34 @@ You are also encouraged to visit the Computational Stylistics Group's website
 information about the package and related projects are provided.")
     (license license:gpl3+)))
 
+(define-public r-stylest2
+  (package
+    (name "r-stylest2")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stylest2" version))
+       (sha256
+        (base32 "1r8vasbhynw7bv94j2wrh7l37552x77m1p7jaig1cr6s4r53flvg"))))
+    (properties `((upstream-name . "stylest2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quanteda r-matrix))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=stylest2")
+    (synopsis "Estimating Speakers of Texts")
+    (description
+     "Estimates the authors or speakers of texts.  Methods developed in Huang, Perry,
+and Spirling (2020) <doi:10.1017/pan.2019.49>.  The model is built on a Bayesian
+framework in which the distinctiveness of each speaker is defined by how
+different, on average, the speaker's terms are to everyone else in the corpus of
+texts.  An optional cross-validation method is implemented to select the subset
+of terms that generate the most accurate speaker predictions.  Once a set of
+terms is selected, the model can be estimated.  Speaker distinctiveness and term
+influence can be recovered from parameters in the model using package functions.
+ Once fitted, the model can be used to predict authorship of new texts.")
+    (license license:gpl3)))
+
 (define-public r-stxplore
   (package
     (name "r-stxplore")

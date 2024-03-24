@@ -11862,13 +11862,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "1hnj3rykmapk1xfm8swrbdavizfhd1ndmx3mxm48drk9mk2rba9f"))))
+        (base32 "0z4yr54w3ykpj6x1da5mdics06rs4fb4i0zbq63wr4imkjvmph5x"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

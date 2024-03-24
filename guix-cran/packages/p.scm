@@ -25938,13 +25938,13 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
 (define-public r-pfim
   (package
     (name "r-pfim")
-    (version "6.0.2")
+    (version "6.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFIM" version))
        (sha256
-        (base32 "0zwhm4dc8jgrzinsmdjszqq54hp56qhi1y6xdmqmjsqmf7sz1i72"))))
+        (base32 "0kp213ig73vj34qgwpc1zsnvz2hf8j0mjcqnsbb541s92zv2x4y7"))))
     (properties `((upstream-name . "PFIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

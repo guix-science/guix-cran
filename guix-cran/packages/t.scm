@@ -1642,13 +1642,13 @@ LICENSE.note for additional license information.")
 (define-public r-tukeygh77
   (package
     (name "r-tukeygh77")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyGH77" version))
        (sha256
-        (base32 "1dvv8dmxl6ac4ja7qrkvkyx6h1yx2lwiqd6lk72zdl0qzy6k7vvp"))))
+        (base32 "08d2i3wx7xyc1a6wszilicdzjyr9h912544b994famv9m8s1w808"))))
     (properties `((upstream-name . "TukeyGH77")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstpm2))
@@ -1658,7 +1658,8 @@ LICENSE.note for additional license information.")
      "This package provides functions for density, cumulative density, quantile and
 simulation of Tukey g-and-h (1977) distributions.  The quantile-based
 transformation (Hoaglin 1985 <doi:10.1002/9781118150702.ch11>) and its reverse
-transformation are also provided.")
+transformation, as well as the letter-value based estimates (Hoaglin 1985), are
+also provided.")
     (license license:gpl2)))
 
 (define-public r-tukeyc
@@ -8719,6 +8720,37 @@ climate risk has been included.")
 functions for disturbance reconstruction from tree-ring data, e.g. boundary
 line, absolute increase, growth averaging methods.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-tradepolicy
+  (package
+    (name "r-tradepolicy")
+    (version "0.7.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tradepolicy" version))
+       (sha256
+        (base32 "0nil9yd32dlafz7493i8vbv0q8np7drj502xm4nznq4ql9px46fh"))))
+    (properties `((upstream-name . "tradepolicy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sandwich
+                             r-purrr
+                             r-msm
+                             r-magrittr
+                             r-knitr
+                             r-ggplot2
+                             r-formula
+                             r-fixest
+                             r-dplyr
+                             r-broom))
+    (home-page "https://github.com/pachadotdev/tradepolicy/")
+    (synopsis "Replication of 'An Advanced Guide To Trade Policy Analysis'")
+    (description
+     "Datasets from Yotov, et al. (2016, ISBN:978-92-870-4367-2) \"An Advanced Guide to
+Trade Policy Analysis\" and functions to report regression summaries with
+clustered robust standard errors.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-trade
   (package
@@ -15820,13 +15852,13 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfit" version))
        (sha256
-        (base32 "0b242ipgp0mvc7r9bwvp3qsqlgijx2kwm6zzqvki2glxk5nk6d60"))))
+        (base32 "117x0cmrs0hhp0k4c2c6dx80jjvar7bfgipjzx5d977l4343fhx7"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -21268,6 +21300,30 @@ a potentially improved re-estimation of the factor loading spaces themselves.  A
 new rank estimation method is also implemented to utilizes correlation
 information from the projected data.  See Chen and Lam (2023)
 <@code{arXiv:2208.04012>} for more details.")
+    (license license:gpl3)))
+
+(define-public r-tensormiss
+  (package
+    (name "r-tensormiss")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tensorMiss" version))
+       (sha256
+        (base32 "0kl20c0z1x38z85pm88ld64xsmlbb9pi0dirwraykm268j7kxfqb"))))
+    (properties `((upstream-name . "tensorMiss")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtensor r-rcppeigen r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=tensorMiss")
+    (synopsis "Handle Missing Tensor Data with C++ Integration")
+    (description
+     "To handle higher-order tensor data.  See Kolda and Bader (2009)
+<doi:10.1137/07070111X> for details on tensor.  While existing packages on
+tensor data extend the base array class to some data classes, this package
+serves as an alternative resort to handle tensor only as array class.  Some
+functionalities related to missingness are also supported.")
     (license license:gpl3)))
 
 (define-public r-tensorevd

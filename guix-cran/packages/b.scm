@@ -17414,6 +17414,38 @@ client allows you to communicate with the Bender API and therefore submit some
 new trials within your R script itself.")
     (license license:expat)))
 
+(define-public r-bend
+  (package
+    (name "r-bend")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BEND" version))
+       (sha256
+        (base32 "1d4pl73q9dr0r3albxb5mvx84smn3fffi1c5cs7f5slfaigza0mx"))))
+    (properties `((upstream-name . "BEND")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-label-switching r-coda))
+    (home-page "https://github.com/crohlo/BEND")
+    (synopsis "Bayesian Estimation of Nonlinear Data (BEND)")
+    (description
+     "This package provides a set of models to estimate nonlinear longitudinal data
+using Bayesian estimation methods.  These models include the: 1) Bayesian
+Piecewise Random Effects Model (Bayes_PREM()) which estimates a piecewise random
+effects (mixture) model for a given number of latent classes and a latent number
+of possible changepoints in each class, and can incorporate class and outcome
+predictive covariates (see Lamm (2022) <https://hdl.handle.net/11299/252533> and
+Lock et al., (2018) <doi:10.1007/s11336-017-9594-5>), 2) Bayesian Crossed Random
+Effects Model (Bayes_CREM()) which estimates a linear, quadratic, exponential,
+or piecewise crossed random effects models where individuals are changing groups
+over time (e.g., students and schools; see Rohloff et al., (2024)
+<doi:10.1111/bmsp.12334>), and 3) Bayesian Bivariate Piecewise Random Effects
+Model (Bayes_BPREM()) which estimates a bivariate piecewise random effects model
+to jointly model two related outcomes (e.g., reading and math achievement; see
+Peralta et al., (2022) <doi:10.1037/met0000358>).")
+    (license license:expat)))
+
 (define-public r-benchr
   (package
     (name "r-benchr")

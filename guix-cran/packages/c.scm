@@ -18346,13 +18346,13 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-commonjavajars
   (package
     (name "r-commonjavajars")
-    (version "1.0-6")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CommonJavaJars" version))
        (sha256
-        (base32 "0l1zqygklv1s3xr6pjjrji3wmyqg7258qvgwf9c2qjim8p8y8lsr"))))
+        (base32 "0yarxzryipv0s9gv28jfdh9igc6lqd71drpq29897gdb98vbz58c"))))
     (properties `((upstream-name . "CommonJavaJars")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -21494,6 +21494,33 @@ al. (2017a) <doi:10.1177/0962280217710835> and Dumuid et al. (2017b)
 in Fiksel et al. (2021) <doi:10.1111/biom.13465> for transformation-free linear
 regression for compositional outcomes and predictors.")
     (license license:gpl2)))
+
+(define-public r-codaimpact
+  (package
+    (name "r-codaimpact")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoDaImpact" version))
+       (sha256
+        (base32 "0hc76s7k3i8mjq0q0yg9fn6vv7xd7w2j1hym23rkpn6gxjl522jx"))))
+    (properties `((upstream-name . "CoDaImpact")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-compositions))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LukeCe/CoDaImpact")
+    (synopsis "Interpreting CoDa Regression Models")
+    (description
+     "This package provides methods for interpreting @code{CoDa} (Compositional Data)
+regression models along the lines of \"Pairwise share ratio interpretations of
+compositional regression models\" (Dargel and Thomas-Agnan 2024)
+<doi:10.1016/j.csda.2024.107945>.  The new methods include variation scenarios,
+elasticities, elasticity differences and share ratio elasticities.  These tools
+are independent of log-ratio transformations and allow an interpretation in the
+original space of shares. @code{CoDaImpact} is designed to be used with the
+compositions package and its ecosystem.")
+    (license license:gpl3+)))
 
 (define-public r-codacore
   (package
@@ -33951,16 +33978,16 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "1wpm7hwi8dny6y92hn56xh4scjnrk7mlx70c19a78w0i1v1kk3ky"))))
+        (base32 "0bjrlcfzdymkp2nhrnr8ilw2xcgl9fkv47m2wlffb8ay5mlkar26"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr r-dplyr r-checkmate))
+    (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/censobr")
     (synopsis "Download Data from Brazil's Population Census")
@@ -34878,17 +34905,17 @@ in a single compound object along with metadata.")
 (define-public r-cdltools
   (package
     (name "r-cdltools")
-    (version "0.15")
+    (version "1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdlTools" version))
        (sha256
-        (base32 "1p5d48v6nwlrgqqi0sg98zfhiycjcha6g12a7515xrvp6f5p28jn"))))
+        (base32 "0cxk4n0csg64479bz8xrpfg8mixwx7pb5sl5gwkrkl6pd256rw86"))))
     (properties `((upstream-name . "cdlTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster r-httr))
-    (home-page "https://www.github.com/jlisic/cdlTools")
+    (propagated-inputs (list r-terra r-stringr r-rvest r-raster r-httr))
+    (home-page "https://github.com/jlisic/cdlTools")
     (synopsis "Tools to Download and Work with USDA Cropscape Data")
     (description
      "Downloads USDA National Agricultural Statistics Service (NASS) cropscape data

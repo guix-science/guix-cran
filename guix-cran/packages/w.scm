@@ -4833,13 +4833,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "0.14.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "13gjmywqdrbyfrjx0lmizhsg8wbrb3frwks2hw7k387yjllzbvsb"))))
+        (base32 "03rmbvlxgbzraswx3q4saqqknd98chhl0rsc6b3m4k616l84z3ad"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4857,13 +4857,13 @@ studies with binary, multi-category, or continuous point or longitudinal
 treatments by easing and extending the functionality of several R packages and
 providing in-house estimation methods.  Available methods include propensity
 score weighting using generalized linear models, gradient boosting machines, the
-covariate balancing propensity score algorithm, Bayesian additive regression
-trees, and @code{SuperLearner}, and directly estimating balancing weights using
-entropy balancing, energy balancing, and optimization-based weights.  Also
-allows for assessment of weights and checking of covariate balance by
-interfacing directly with the cobalt package.  See the vignette \"Installing
-Supporting Packages\" for instructions on how to install any package
-@code{WeightIt} uses, including those that may not be on CRAN.")
+covariate balancing propensity score algorithm, inverse probability tilting,
+Bayesian additive regression trees, and @code{SuperLearner}, and directly
+estimating balancing weights using entropy balancing, energy balancing, and
+optimization-based weights.  Also allows for assessment of weights and checking
+of covariate balance by interfacing directly with the cobalt package.  See the
+vignette \"Installing Supporting Packages\" for instructions on how to install any
+package @code{WeightIt} uses, including those that may not be on CRAN.")
     (license license:gpl2+)))
 
 (define-public r-weightedzdiff

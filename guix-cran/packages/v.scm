@@ -6346,6 +6346,26 @@ used on model fits from packages nlme', lmer', and saemix'.  Charlotte Baey and
 Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
     (license license:gpl2+)))
 
+(define-public r-vartest
+  (package
+    (name "r-vartest")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vartest" version))
+       (sha256
+        (base32 "0syxypmrvv9zd8qv10j1mvksacny3w4bdjm35kyjwp3jgh1rnv9g"))))
+    (properties `((upstream-name . "vartest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-suppdists r-psych))
+    (home-page "https://cran.r-project.org/package=vartest")
+    (synopsis "Tests for Variance Homogeneity")
+    (description
+     "This package performs 20 omnibus tests for testing the composite hypothesis of
+variance homogeneity.")
+    (license license:gpl2+)))
+
 (define-public r-varshrink
   (package
     (name "r-varshrink")
