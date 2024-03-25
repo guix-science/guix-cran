@@ -17805,29 +17805,6 @@ helps you on the tour!")
 functions to retrieve neighbouring pluscodes'.")
     (license license:gpl2)))
 
-(define-public r-pluralize
-  (package
-    (name "r-pluralize")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pluralize" version))
-       (sha256
-        (base32 "1s3jp41j8c03qb5zisj6m12ky7cz3n71d6p5apz0r0yn35inrhah"))))
-    (properties `((upstream-name . "pluralize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-v8))
-    (native-inputs (list r-knitr))
-    (home-page "http://gitlab.com/hrbrmstr/pluralize")
-    (synopsis "Pluralize and 'Singularize' Any (English) Word")
-    (description
-     "This package provides tools are provided to create plural, singular and regular
-forms of English words along with tools to augment the built-in rules to fit
-specialized needs.  Core functionality is based on a @code{JavaScript} library,
-<https://github.com/blakeembrey/pluralize>.")
-    (license license:expat)))
-
 (define-public r-plume
   (package
     (name "r-plume")
@@ -18950,45 +18927,6 @@ make_LED() to create dynamic LED screens, draw interconnected rings with
 Olympic_rings(), and make festive Chinese couplets with chunlian().  Unleash
 your creativity and turn data into exciting visuals!")
     (license license:gpl3)))
-
-(define-public r-plot3logit
-  (package
-    (name "r-plot3logit")
-    (version "3.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "plot3logit" version))
-       (sha256
-        (base32 "176rzqxc5p7688a9dk54zhj6y0494s6p8cybxfsc042j168fbg8k"))))
-    (properties `((upstream-name . "plot3logit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-ternary
-                             r-stringr
-                             r-rdpack
-                             r-purrr
-                             r-magrittr
-                             r-lifecycle
-                             r-ggtern
-                             r-ggplot2
-                             r-generics
-                             r-forcats
-                             r-ellipse
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.flaviosanti.it/software/plot3logit/")
-    (synopsis "Ternary Plots for Trinomial Regression Models")
-    (description
-     "An implementation of the ternary plot for interpreting regression coefficients
-of trinomial regression models, as proposed in Santi, Dickson and Espa (2019)
-<doi:10.1080/00031305.2018.1442368>.  Ternary plots can be drawn using either
-ggtern package (based on ggplot2') or Ternary package (based on standard
-graphics).  The package and its features are illustrated in Santi, Dickson, Espa
-and Giuliani (2022) <doi:10.18637/jss.v103.c01>.")
-    (license license:gpl2+)))
 
 (define-public r-plot3drgl
   (package
@@ -32340,27 +32278,6 @@ Enriched Pathways in Omics Data Through Active Subnetworks.  Front.  Genet.
 <doi:10.3389/fgene.2019.00858>.")
     (license license:expat)))
 
-(define-public r-pathdiagram
-  (package
-    (name "r-pathdiagram")
-    (version "0.1.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pathdiagram" version))
-       (sha256
-        (base32 "018frv1n3x0bf1682jibnm5k2dlkg85xa9mps28l22a0z8bplbv5"))))
-    (properties `((upstream-name . "pathdiagram")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shape))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.gastonsanchez.com")
-    (synopsis "Basic Functions for Drawing Path Diagrams")
-    (description
-     "Implementation of simple functions to draw basic path diagrams just for
-visualization purposes.")
-    (license license:gpl3)))
-
 (define-public r-path-chain
   (package
     (name "r-path-chain")
@@ -36641,30 +36558,6 @@ information, please see Gruenstaeudl and Jenke (2020)
 <doi:10.1186/s12859-020-3475-0>.")
     (license (license:fsdg-compatible "BSD 3-clause License + file LICENSE"))))
 
-(define-public r-pacviz
-  (package
-    (name "r-pacviz")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pacviz" version))
-       (sha256
-        (base32 "17njy4m4hfkrksnicb4dphvdx7kc2fa1lr7mb7vv9cxb4ch32fph"))))
-    (properties `((upstream-name . "pacviz")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plotrix r-e1071 r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pacviz")
-    (synopsis "Pac-Man Visualization Package")
-    (description
-     "This package provides a broad-view perspective on data via linear mapping of
-data onto a radial coordinate system.  The package contains functions to
-visualize the residual values of linear regression and Cartesian data in the
-defined radial scheme.  See the pacviz documentation page for more information:
-<https://pacviz.sriley.dev/>.")
-    (license license:expat)))
-
 (define-public r-pacs
   (package
     (name "r-pacs")
@@ -36862,20 +36755,17 @@ in web applications, and much more.")
 (define-public r-packdamipd
   (package
     (name "r-packdamipd")
-    (version "0.2.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packDAMipd" version))
        (sha256
-        (base32 "0n32vqpl6ym9wjwk8apsgkh7i4jin253l1v0gphvy2v1azcpyrc9"))))
+        (base32 "0y81ap4nhvfc5k0xfcbghnf32svgkx8p01g0md3hzhyfvmgjffqm"))))
     (properties `((upstream-name . "packDAMipd")))
     (build-system r-build-system)
     (propagated-inputs (list r-valueeq5d
-                             r-tm
-                             r-tidyverse
                              r-tidyr
-                             r-tibble
                              r-systemfit
                              r-survregcenscov
                              r-survminer
@@ -36885,16 +36775,19 @@ in web applications, and much more.")
                              r-reshape2
                              r-relaimpo
                              r-readxl
-                             r-nlme
+                             r-purrr
                              r-mass
                              r-lmtest
                              r-lme4
+                             r-labelled
+                             r-islr
                              r-ipdfilecheck
                              r-haven
                              r-hash
                              r-gvlma
+                             r-ggpubr
                              r-ggplot2
-                             r-flexsurv
+                             r-flextable
                              r-effects
                              r-dplyr
                              r-data-table

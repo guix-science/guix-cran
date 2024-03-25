@@ -5481,28 +5481,6 @@ van Valkenhoef, G., Basturk, N., and Postmus, D. (2012)
 Postmus, D. (2014) <doi:10.1016/j.ejor.2014.06.036>.")
     (license license:gpl3)))
 
-(define-public r-histry
-  (package
-    (name "r-histry")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "histry" version))
-       (sha256
-        (base32 "01rdpzkfq7nyiq1gh0cm89dn3466cmhgfj9x19lhl2yvh8xsdz8x"))))
-    (properties `((upstream-name . "histry")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-roprov r-fastdigest r-evaluate r-codedepends))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=histry")
-    (synopsis
-     "Enhanced Command History Tracking for R Sessions and Dynamic Documents")
-    (description
-     "Automatically tracks and makes programmatically available code evaluation
-history in R sessions and dynamic documents.")
-    (license license:artistic2.0)))
-
 (define-public r-histoslider
   (package
     (name "r-histoslider")
@@ -6928,25 +6906,6 @@ is presented in Angelin-Bonnet et al. (2023) (currently in review).")
      "Computes the ACMIF test and Bonferroni-adjusted p-value of interaction in
 two-factor studies.  Produces corresponding interaction plot and analysis of
 variance tables and p-values from several other tests of non-additivity.")
-    (license license:gpl2)))
-
-(define-public r-hicseg
-  (package
-    (name "r-hicseg")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HiCseg" version))
-       (sha256
-        (base32 "19581k3g71wrznyqrp4hmspqyzcbcfbc48xgjlq13zmqii45hcn6"))))
-    (properties `((upstream-name . "HiCseg")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=HiCseg")
-    (synopsis "Detection of domains in HiC data")
-    (description
-     "This package allows you to detect domains in @code{HiC} data by rephrasing this
-problem as a two-dimensional segmentation issue.")
     (license license:gpl2)))
 
 (define-public r-hicp

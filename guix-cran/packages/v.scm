@@ -6934,53 +6934,6 @@ added to facilitate example.  For more information refer Singh, R.K. and
 Chaudhary, B.D. (1977, ISBN:81766330709788176633079).")
     (license license:gpl3)))
 
-(define-public r-varfrompdb
-  (package
-    (name "r-varfrompdb")
-    (version "2.2.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VarfromPDB" version))
-       (sha256
-        (base32 "09j8y6n0bwsj3n620nbni6b7f4pmb91q41770sfpc5v3l5i3jc7c"))))
-    (properties `((upstream-name . "VarfromPDB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2r
-                             r-xml
-                             r-stringr
-                             r-stringi
-                             r-rismed
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=VarfromPDB")
-    (synopsis
-     "Disease-Gene-Variant Relations Mining from the Public Databases and Literature")
-    (description
-     "Captures and compiles the genes and variants related to a disease, a phenotype
-or a clinical feature from the public databases including HPO (Human Phenotype
-Ontology, <http://human-phenotype-ontology.github.io/about.html>), Orphanet
-<http://www.orpha.net/consor/cgi-bin/index.php>, OMIM (Online Mendelian
-Inheritance in Man, <http://www.omim.org>), @code{ClinVar}
-<http://www.ncbi.nlm.nih.gov/clinvar>, and @code{UniProt} (Universal Protein
-Resource, <http://www.uniprot.org>) and @code{PubMed} abstracts.  HPO provides a
-standardized vocabulary of phenotypic abnormalities encountered in human
-disease.  HPO currently contains approximately 11,000 terms and over 115,000
-annotations to hereditary diseases.  Orphanet is the reference portal for
-information on rare diseases and orphan drugs, whose aim is to help improve the
-diagnosis, care and treatment of patients with rare diseases.  OMIM is a
-continuously updated catalog of human genes and genetic disorders and traits,
-with particular focus on the molecular relationship between genetic variation
-and phenotypic expression. @code{ClinVar} is a freely accessible, public archive
-of reports of the relationships among human variations and phenotypes, with
-supporting evidence. @code{UniProt} focuses on amino acid altering variants
-imported from Ensembl Variation databases.  For Homo sapiens, the variants
-including human polymorphisms and disease mutations in the @code{UniProt} are
-manually curated from @code{UniProtKB/Swiss-Prot}.  Additionally, @code{PubMed}
-provides the primary and latest source of the information.  Text mining was
-employed to capture the information from @code{PubMed} abstracts.")
-    (license license:gpl2)))
-
 (define-public r-varest
   (package
     (name "r-varest")

@@ -428,13 +428,13 @@ interval estimation for the crossing survival times.")
 (define-public r-yorkr
   (package
     (name "r-yorkr")
-    (version "0.0.41")
+    (version "0.0.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yorkr" version))
        (sha256
-        (base32 "0ypm7di343wpsg7x85bx4044bhf2fxp638yyy0rvj23x11z0ra8v"))))
+        (base32 "0czi3ylqlzpd2h8g5500hrk0ql4b3qlcgmlcmcfa44s1w8fgny33"))))
     (properties `((upstream-name . "yorkr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

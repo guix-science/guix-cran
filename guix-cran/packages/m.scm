@@ -2192,13 +2192,13 @@ by Alexandrov LB et al (2013) <doi:10.1016/j.celrep.2012.12.008>.")
 (define-public r-mutossgui
   (package
     (name "r-mutossgui")
-    (version "0.1-11")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mutossGUI" version))
        (sha256
-        (base32 "08pcca9gzns83az6jbjzv4xhm1wgmchhzz4f54x1aq0nmvsz3qq1"))))
+        (base32 "13mq7yjbvnfgmiss95wxys3scmrb6b036g8rcxs1rn1q5wy3sg7b"))))
     (properties `((upstream-name . "mutossGUI")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -2212,8 +2212,7 @@ by Alexandrov LB et al (2013) <doi:10.1016/j.celrep.2012.12.008>.")
     (home-page "http://mutoss.r-forge.r-project.org/")
     (synopsis "Graphical User Interface for the MuToss Project")
     (description
-     "The @code{mutossGUI} package provides a graphical user interface for the
-@code{MuToss} Project.")
+     "This package provides a graphical user interface for the @code{MuToss} Project.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mutationtypes
@@ -12180,32 +12179,6 @@ and multivariate inequality tests through empirical applications and
 simulations.")
     (license license:bsd-3)))
 
-(define-public r-monotonehazardratio
-  (package
-    (name "r-monotonehazardratio")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MonotoneHazardRatio" version))
-       (sha256
-        (base32 "19c3521czz7kdwcc1vg1x17y57w0qh498y93xgbxxlmidzb0p4nk"))))
-    (properties `((upstream-name . "MonotoneHazardRatio")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-twostagete r-survival r-kernsmooth r-fdrtool))
-    (home-page "https://github.com/Yujian-Wu/MonotoneHazardRatio")
-    (synopsis
-     "Nonparametric Estimation and Inference of a Monotone Hazard Ratio Function")
-    (description
-     "This package provides a tool for nonparametric estimation and inference of a
-non-decreasing monotone hazard ratio from a right censored survival dataset.
-The estimator is based on a generalized Grenander typed estimator, and the
-inference procedure relies on direct plugin estimation of a first order
-derivative.  More details please refer to the paper \"Nonparametric inference
-under a monotone hazard ratio order\" by Y. Wu and T. Westling (2022)
-<@code{arXiv:2205.01745>}.")
-    (license license:expat)))
-
 (define-public r-monotone
   (package
     (name "r-monotone")
@@ -15315,32 +15288,6 @@ other with the given marginal skewness and kurtosis.  The latter one is the
 widely-used Vale and Maurelli's method.  It also contains a function to
 calculate univariate and multivariate (Mardia's Test) skew and kurtosis.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-mnmer
-  (package
-    (name "r-mnmer")
-    (version "0.99.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mnmer" version))
-       (sha256
-        (base32 "0smy7n016nax4wng8pikmgwmbkrhykc2hzvh60hwfbqlbfda66yj"))))
-    (properties `((upstream-name . "mnmer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cpp11 r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mnmer")
-    (synopsis
-     "'(m,n)-mer' - A Simple Statistical Feature for Sequence Classification")
-    (description
-     "The (m,n)-mer is a statistical feature calculated from conditional frequency
-distributions obtained from a FASTA file.  The resulting table, along with class
-information, is used to create the classification feature matrix.  For more
-information on this method and its benchmarking results, refer to Andrade et
-al.'s upcoming publication titled \"(m,n)-mer - A Simple Statistical Feature for
-Sequence Classification\".")
-    (license license:artistic2.0)))
 
 (define-public r-mnm
   (package
@@ -32911,32 +32858,6 @@ variance weights are provided.  These methods are described in He and Fong
 (2019) <DOI:10.1002/sim.8212>.")
     (license license:gpl2)))
 
-(define-public r-mdthemes
-  (package
-    (name "r-mdthemes")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mdthemes" version))
-       (sha256
-        (base32 "1k0fylg8jz0xdfwq85wap6lgrb9zi219vhmry4lysqssx2szkngk"))))
-    (properties `((upstream-name . "mdthemes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tvthemes
-                             r-hrbrthemes
-                             r-ggthemes
-                             r-ggtext
-                             r-ggplot2
-                             r-cowplot))
-    (home-page "https://cran.r-project.org/package=mdthemes")
-    (synopsis "Markdown Themes for 'ggplot2'")
-    (description
-     "This package provides a collection of ggplot2 themes that render text as
-markdown/HTML. This enables the creation of complex formatted plot labels, e.g.
-titles with individual words highlighted in different colors.")
-    (license license:expat)))
-
 (define-public r-mdss
   (package
     (name "r-mdss")
@@ -36788,29 +36709,6 @@ and regularization options.  See the Maxent website
 <http://biodiversityinformatics.amnh.org/open_source/maxent> for more details.")
     (license license:expat)))
 
-(define-public r-maxmc
-  (package
-    (name "r-maxmc")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MaxMC" version))
-       (sha256
-        (base32 "0n6m5h8n3gwmlqq563rpdx4l8ldzl6jx3ga50ygvlnamdj3wjqgm"))))
-    (properties `((upstream-name . "MaxMC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-pso r-nmof r-gensa r-ga))
-    (home-page "https://github.com/julienneves/MaxMC")
-    (synopsis "Maximized Monte Carlo")
-    (description
-     "An implementation of the Monte Carlo techniques described in details by Dufour
-(2006) <doi:10.1016/j.jeconom.2005.06.007> and Dufour and Khalaf (2007)
-<doi:10.1002/9780470996249.ch24>.  The two main features available are the Monte
-Carlo method with tie-breaker, mc(), for discrete statistics, and the Maximized
-Monte Carlo, mmc(), for statistics with nuisance parameters.")
-    (license license:gpl3+)))
-
 (define-public r-maxmatching
   (package
     (name "r-maxmatching")
@@ -39312,13 +39210,13 @@ and simulation (marima.sim()).")
 (define-public r-margins
   (package
     (name "r-margins")
-    (version "0.3.26")
+    (version "0.3.26.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "margins" version))
        (sha256
-        (base32 "0sx5xjbzz1rjz8bklfna3171s53xsh123x4bh0kmwp006v8rv309"))))
+        (base32 "00n3ldhln4dk8r8dck5wvv39hdgb3nynqpp192lhf74x6zs1h4j4"))))
     (properties `((upstream-name . "margins")))
     (build-system r-build-system)
     (propagated-inputs (list r-prediction r-mass r-data-table))

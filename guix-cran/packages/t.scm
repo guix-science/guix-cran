@@ -356,27 +356,6 @@ the row and column effects.")
 random coefficients: A stable and efficient two-step estimation method.")
     (license license:gpl2)))
 
-(define-public r-twostagete
-  (package
-    (name "r-twostagete")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "twostageTE" version))
-       (sha256
-        (base32 "0mkxs3lmzja51zdrf5himhwcdygpj6czhdd2bydakm26kvw7znwr"))))
-    (properties `((upstream-name . "twostageTE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-isotone))
-    (home-page "https://cran.r-project.org/package=twostageTE")
-    (synopsis "Two-Stage Threshold Estimation")
-    (description
-     "This package implements a variety of non-parametric methods for computing
-one-stage and two-stage confidence intervals, as well as point estimates of
-threshold values.")
-    (license license:gpl2)))
-
 (define-public r-twosigma
   (package
     (name "r-twosigma")
@@ -22512,18 +22491,18 @@ and accurate reports.")
 (define-public r-teal-logger
   (package
     (name "r-teal-logger")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "teal.logger" version))
        (sha256
-        (base32 "037l3sb0vbnijhl1an4d4f63kgjq77nrj0hfrn74yj9ml406g3wg"))))
+        (base32 "1kji87sajwh06r2gqbj6gyg7q4kcw6am9cf2clwr39qg9srq2lri"))))
     (properties `((upstream-name . "teal.logger")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-shiny r-logger r-lifecycle r-glue))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=teal.logger")
+    (home-page "https://insightsengineering.github.io/teal.logger/")
     (synopsis "Logging Setup for the 'teal' Family of Packages")
     (description
      "Utilizing the logger framework to record events within a package, specific to

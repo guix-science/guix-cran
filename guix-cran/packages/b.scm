@@ -5925,13 +5925,13 @@ Koopmeiners, & Hobbs (2018) <doi:10.1093/biostatistics/kxx031>.")
 (define-public r-boral
   (package
     (name "r-boral")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boral" version))
        (sha256
-        (base32 "1djsxhjdaj7z69l1y612vvqxvyl74fk3skncd8knpzsf5ks01sc7"))))
+        (base32 "1x53g3y283i92624rkp36lwfmz0p8rkkqsndn5h35sapjga6wmy3"))))
     (properties `((upstream-name . "boral")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

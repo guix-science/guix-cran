@@ -10,7 +10,6 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
@@ -3279,40 +3278,6 @@ kinds of molecular data and environments, please see Pascoal et al, 2023 (in
 preparation).  Preliminary data suggest this method also works well for
 non-microbiome data, if there is a species abundance table.")
     (license license:gpl3+)))
-
-(define-public r-ulid
-  (package
-    (name "r-ulid")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ulid" version))
-       (sha256
-        (base32 "0xxkqrnlz3pkb3s1gacfzqav54w97gc0w8rh0fn1qy5rkmg2bplv"))))
-    (properties `((upstream-name . "ulid")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/hrbrmstr/ulid")
-    (synopsis
-     "Generate Universally Unique Lexicographically Sortable Identifiers")
-    (description
-     "Universally unique identifiers ('UUIDs') can be suboptimal for many uses-cases
-because they aren't the most character efficient way of encoding 128 bits of
-randomness; v1/v2 versions are impractical in many environments, as they require
-access to a unique, stable MAC address; v3/v5 versions require a unique seed and
-produce randomly distributed IDs, which can cause fragmentation in many data
-structures; v4 provides no other information than randomness which can cause
-fragmentation in many data structures.  ULIDs (<https://github.com/ulid/spec>)
-have 128-bit compatibility with UUID', 1.21e+24 unique ULIDs per millisecond,
-are lexicographically sortable, canonically encoded as a 26 character string, as
-opposed to the 36 character UUID', use Crockford's base32 for better efficiency
-and readability (5 bits per character), are case insensitive, have no special
-characters (i.e.  are URL safe) and have a onotonic sort order (correctly
-detects and handles the same millisecond).")
-    (license license:expat)))
 
 (define-public r-ukpolice
   (package

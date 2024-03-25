@@ -3852,32 +3852,6 @@ package has been developed using concept of Wang et al. (2022)
 <doi:10.1007/978-3-030-18195-6_21 >.")
     (license license:gpl3)))
 
-(define-public r-optiscale
-  (package
-    (name "r-optiscale")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optiscale" version))
-       (sha256
-        (base32 "1ay2lfk4isv0gir5diwxlx4ml5bv5qyqbwm34py85fp6bh92987r"))))
-    (properties `((upstream-name . "optiscale")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lattice))
-    (home-page "https://cran.r-project.org/package=optiscale")
-    (synopsis "Optimal Scaling")
-    (description
-     "Optimal scaling of a data vector, relative to a set of targets, is obtained
-through a least-squares transformation subject to appropriate measurement
-constraints.  The targets are usually predicted values from a statistical model.
- If the data are nominal level, then the transformation must be
-identity-preserving.  If the data are ordinal level, then the transformation
-must be monotonic.  If the data are discrete, then tied data values must remain
-tied in the optimal transformation.  If the data are continuous, then tied data
-values can be untied in the optimal transformation.")
-    (license license:gpl2)))
-
 (define-public r-optionstrat
   (package
     (name "r-optionstrat")

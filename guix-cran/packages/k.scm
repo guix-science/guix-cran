@@ -2794,13 +2794,13 @@ as probability of exclusion (PE).")
 (define-public r-kinship2
   (package
     (name "r-kinship2")
-    (version "1.9.6")
+    (version "1.9.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kinship2" version))
        (sha256
-        (base32 "1xmvfg6y1a16vp4wy3cil1a10dpnq7rrjbpzys2ri8f2ficvsl01"))))
+        (base32 "0bggc78b3xyz6vczbbqhibn6zxgsw122nzymsndk5nd19yb76nv9"))))
     (properties `((upstream-name . "kinship2")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-matrix r-knitr))

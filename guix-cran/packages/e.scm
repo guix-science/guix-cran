@@ -5569,30 +5569,6 @@ and option chains.  A user will need an ETRADE brokerage account and ETRADE API
 approval.  See README for authentication process and examples.")
     (license license:gpl3)))
 
-(define-public r-etma
-  (package
-    (name "r-etma")
-    (version "1.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "etma" version))
-       (sha256
-        (base32 "0g9244yx50y1gw0f37hskbcgyv4nldmzr86v3rmf3afabmjbyzjj"))))
-    (properties `((upstream-name . "etma")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=etma")
-    (synopsis "Epistasis Test in Meta-Analysis")
-    (description
-     "Traditional meta-regression based method has been developed for using
-meta-analysis data, but it faced the challenge of inconsistent estimates.  This
-package purpose a new statistical method to detect epistasis using incomplete
-information summary, and have proven it not only successfully let consistency of
-evidence, but also increase the power compared with traditional method (Detailed
-tutorial is shown in website).")
-    (license license:gpl3+)))
-
 (define-public r-etlutils
   (package
     (name "r-etlutils")
@@ -15079,15 +15055,16 @@ topology.")
 (define-public r-eicircles
   (package
     (name "r-eicircles")
-    (version "0.0.1-6")
+    (version "0.0.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eiCircles" version))
        (sha256
-        (base32 "17myh4acljhzq3p3da7h99l3qga362f1fkkask1n6vxqn6p4iy1s"))))
+        (base32 "11id675g2j36xq8c1fmsbh7djbcdgbyvq0hrnhahsmiy1nnrxncd"))))
     (properties `((upstream-name . "eiCircles")))
     (build-system r-build-system)
+    (propagated-inputs (list r-nlcoptim))
     (home-page "https://cran.r-project.org/package=eiCircles")
     (synopsis
      "Ecological Inference of RxC Tables by Overdispersed-Multinomial Models")

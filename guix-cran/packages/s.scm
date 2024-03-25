@@ -3550,26 +3550,6 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 <doi:10.1080/01621459.2014.957289>.")
     (license license:gpl2)))
 
-(define-public r-survjamda-data
-  (package
-    (name "r-survjamda-data")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "survJamda.data" version))
-       (sha256
-        (base32 "0a010v2ar48i5m0jiqjvdyqm93ckfgfmcmym9a02h0rclnizd75r"))))
-    (properties `((upstream-name . "survJamda.data")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=survJamda.data")
-    (synopsis "Data for Package 'survJambda'")
-    (description
-     "Three breast cancer gene expression data sets that can be used for package
-@code{survJamda}'.  This package contains the gene expression and phenotype data
-of GSE1992, GSE3143 and GSE4335.")
-    (license license:gpl2+)))
-
 (define-public r-survivor
   (package
     (name "r-survivor")
@@ -38440,29 +38420,6 @@ clusters, @code{SigClust} can be used iteratively.")
     (description "Print function signatures and find overly complicated code.")
     (license (license:fsdg-compatible "Unlimited"))))
 
-(define-public r-siftr
-  (package
-    (name "r-siftr")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "siftr" version))
-       (sha256
-        (base32 "0jmhlbz3yy4b6nxbcpi7dp61l634ndzysan622caimqj1pjnkw1b"))))
-    (properties `((upstream-name . "siftr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fastdigest r-cli))
-    (home-page "https://github.com/DesiQuintans/siftr")
-    (synopsis "Fuzzily Search a Dataframe to Find Relevant Columns")
-    (description
-     "Analysts who change projects frequently know that it can be hard to find the
-right column in an unfamiliar dataframe, especially when the dataframe spans
-hundreds of columns and millions of rows.  siftr is an interactive tool that
-finds relevant columns by fuzzily searching through a dataframe's column names,
-labels, factor levels, and unique values.")
-    (license license:expat)))
-
 (define-public r-sift
   (package
     (name "r-sift")
@@ -47401,29 +47358,6 @@ gamma estimates (Du, Bentler, 2022) <doi:10.1080/10705511.2022.2063870> and two
 choices of chi square statistics.")
     (license license:expat)))
 
-(define-public r-semtable
-  (package
-    (name "r-semtable")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "semTable" version))
-       (sha256
-        (base32 "0qr420rnz59q8arf6x05iy1zyh7pv31ldi2rsw1j2a00fbpp4ndf"))))
-    (properties `((upstream-name . "semTable")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-stationery r-plyr r-lavaan r-kutils))
-    (native-inputs (list r-stationery))
-    (home-page "https://cran.r-project.org/package=semTable")
-    (synopsis "Structural Equation Modeling Tables")
-    (description
-     "For confirmatory factor analysis ('CFA') and structural equation models ('SEM')
-estimated with the lavaan package, this package provides functions to create
-model summary tables and model comparison tables for hypothesis testing.  Tables
-can be produced in @code{LaTeX}', HTML', or comma separated variables ('CSV').")
-    (license license:gpl2)))
-
 (define-public r-semsfa
   (package
     (name "r-semsfa")
@@ -49794,13 +49728,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.8.2")
+    (version "0.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "0znpg9zxrxl298z7sv7pvqws0nwkqnfirggj7rsy0fj4r17z0ba4"))))
+        (base32 "00iikrn1jgaxawm1afi20biadk85f2y5zi2nrwah5vsd9m3g9n1m"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance

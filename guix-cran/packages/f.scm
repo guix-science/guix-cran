@@ -19201,30 +19201,6 @@ eventually speed up the computation.  The fitting algorithm for Elastic Net is
 written in C++ using Armadillo linear algebra library.")
     (license license:gpl2+)))
 
-(define-public r-fastdigest
-  (package
-    (name "r-fastdigest")
-    (version "0.6-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastdigest" version))
-       (sha256
-        (base32 "02csl261v7nassi5119ygw6jglm8q6rssg7lgyxzj73mkyilm832"))))
-    (properties `((upstream-name . "fastdigest")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=fastdigest")
-    (synopsis "Fast, Low Memory-Footprint Digests of R Objects")
-    (description
-     "This package provides an R interface to Bob Jenkin's streaming,
-non-cryptographic @code{SpookyHash} hash algorithm for use in digest-based
-comparisons of R objects.  fastdigest plugs directly into R's internal
-serialization machinery, allowing digests of all R objects the serialize()
-function supports, including reference-style objects via custom hooks.  Speed is
-high and scales linearly by object size; memory usage is constant and
-negligible.")
-    (license license:artistic2.0)))
-
 (define-public r-fastcub
   (package
     (name "r-fastcub")

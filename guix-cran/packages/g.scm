@@ -13923,26 +13923,6 @@ Montoya-@code{BlandÃ³n} (2023)
 <https://www.smontoyablandon.com/publication/networks/network_externalities.pdf>.")
     (license license:gpl3+)))
 
-(define-public r-giniwegneg
-  (package
-    (name "r-giniwegneg")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GiniWegNeg" version))
-       (sha256
-        (base32 "1wqwjalsyp55si839cil6na3khigm0mwn6qkg0kjylq10pabfk2a"))))
-    (properties `((upstream-name . "GiniWegNeg")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=GiniWegNeg")
-    (synopsis
-     "Computing the Gini-Based Coefficients for Weighted and Negative Attributes")
-    (description
-     "Gini-based coefficients and plot of the ordinary and generalized curve of
-maximum inequality in the presence of weighted and negative attributes.")
-    (license license:gpl3)))
-
 (define-public r-ginivarci
   (package
     (name "r-ginivarci")
@@ -17330,13 +17310,13 @@ themes.")
 (define-public r-gglasso
   (package
     (name "r-gglasso")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglasso" version))
        (sha256
-        (base32 "12l0ac1n54z41yw7c00fm6q2mjmhp9blk4f8vp7q2my2xxwh1fmj"))))
+        (base32 "1gasfhwp74akmqk8c534iyag61r9jznalcjcpgvacnmbnf2irrif"))))
     (properties `((upstream-name . "gglasso")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -25564,27 +25544,44 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "05zmghjcqsnbdyvc2v2hfzj9ymr9m90rhjlryxdf3bdmjarh8l57"))))
+        (base32 "0qf4yah7nhjn8qwifr6irgv3iqll3rrf5c9kz90z2ny6c3wh04sg"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr r-rcpp r-matrix))
+    (propagated-inputs (list r-th-data
+                             r-rmpfr
+                             r-rcpp
+                             r-plot3d
+                             r-mboost
+                             r-matrix
+                             r-mass
+                             r-future
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-dofuture))
     (home-page "https://github.com/emilioluissaenzguillen/GeDS")
     (synopsis "Geometrically Designed Spline Regression")
     (description
-     "Geometrically Designed Spline ('@code{GeDS}') Regression is a non-parametric
-geometrically motivated method for fitting variable knots spline predictor
-models in one or two independent variables, in the context of generalized
-(non-)linear models. @code{GeDS} estimates the number and position of the knots
-and the order of the spline, assuming the response variable has a distribution
-from the exponential family.  A description of the method can be found in
-Kaishev et al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al.
-(2017) <https://openaccess.city.ac.uk/id/eprint/18460/>.")
+     "Spline Regression, Generalized Additive Models, and Component-wise Gradient
+Boosting, utilizing Geometrically Designed (@code{GeD}) Splines. @code{GeDS}
+regression is a non-parametric method inspired by geometric principles, for
+fitting spline regression models with variable knots in one or two independent
+variables.  It efficiently estimates the number of knots and their positions, as
+well as the spline order, assuming the response variable follows a distribution
+from the exponential family. @code{GeDS} models integrate the broader category
+of Generalized (Non-)Linear Models, offering a flexible approach to modeling
+complex relationships.  A description of the method can be found in Kaishev et
+al. (2016) <doi:10.1007/s00180-015-0621-7> and Dimitrova et al. (2023)
+<doi:10.1016/j.amc.2022.127493>.  Further extending its capabilities,
+@code{GeDS's} implementation includes Generalized Additive Models (GAM) and
+Functional Gradient Boosting (FGB), enabling versatile multivariate predictor
+modeling, as discussed in the forthcoming work of Dimitrova et al. (2024).")
     (license license:gpl3)))
 
 (define-public r-gecko

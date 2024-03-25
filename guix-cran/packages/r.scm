@@ -11696,28 +11696,6 @@ Rieder, H., Kohl, M., and Ruckdeschel, P. (2008),
 <doi:10.1007/s10260-007-0047-7>.")
     (license license:lgpl3)))
 
-(define-public r-roprov
-  (package
-    (name "r-roprov")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "roprov" version))
-       (sha256
-        (base32 "16w9i7svlkn2wbv35890f1zpcxilj0ar28d2xrdvmx7ni9vrz61q"))))
-    (properties `((upstream-name . "roprov")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph r-fastdigest r-codedepends))
-    (home-page "https://cran.r-project.org/package=roprov")
-    (synopsis
-     "Low-Level Support for Provenance Capture Between in-Memory R Objects")
-    (description
-     "This package provides a suite of classes and methods which provide low-level
-support for modeling provenance between in-memory R objects.  This is an
-infrastructure package and is not intended to be used directly by end-users.")
-    (license license:artistic2.0)))
-
 (define-public r-ropj
   (package
     (name "r-ropj")
@@ -16188,31 +16166,33 @@ al. (2017) <doi:10.1007/s11306-017-1178-y>.")
 (define-public r-rnmamod
   (package
     (name "r-rnmamod")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnmamod" version))
        (sha256
-        (base32 "1cb6f5s0m7cciwyy8pd16qf4615k2vh58lgx5mdp9mpybwnvwapx"))))
+        (base32 "0gwx4mwrirricbfwlsfq9ckbn34w8dwy3d0c532s50vcwpd3dm1g"))))
     (properties `((upstream-name . "rnmamod")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
+                             r-stringr
                              r-scales
                              r-reshape2
                              r-r2jags
-                             r-pcnetmeta
-                             r-netmeta
                              r-mcmcplots
                              r-mass
                              r-knitr
+                             r-igraph
+                             r-heatmaply
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
                              r-ggfittext
                              r-gemtc
                              r-fdrtool
-                             r-dplyr))
+                             r-dendextend
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=rnmamod")
     (synopsis "Bayesian Network Meta-Analysis with Missing Participants")
@@ -16224,15 +16204,19 @@ models implemented in a systematic review with multiple interventions, including
 fixed-effect and random-effects network meta-analysis, meta-regression,
 evaluation of the consistency assumption via the node-splitting approach and the
 unrelated mean effects model, and sensitivity analysis.  Missing participant
-outcome data are addressed in all models of the package.  The package also
-offers a rich, user-friendly visualisation toolkit that aids in appraising and
-interpreting the results thoroughly and preparing the manuscript for journal
-submission.  The visualisation tools comprise the network plot, forest plots,
-panel of diagnostic plots, heatmaps on the extent of missing participant outcome
-data in the network, league heatmaps on estimation and prediction, rankograms,
-Bland-Altman plot, leverage plot, deviance scatterplot, heatmap of robustness,
-and barplot of Kullback-Leibler divergence.  The package also allows the user to
-export the results to an Excel file at the working directory.")
+outcome data are addressed in all models of the package.  The robustness to
+primary analysis results can also be investigated using a novel intuitive index.
+ Methods to evaluate the transitivity assumption quantitatively are provided.
+The package also offers a rich, user-friendly visualisation toolkit that aids in
+appraising and interpreting the results thoroughly and preparing the manuscript
+for journal submission.  The visualisation tools comprise the network plot,
+forest plots, panel of diagnostic plots, heatmaps on the extent of missing
+participant outcome data in the network, league heatmaps on estimation and
+prediction, rankograms, Bland-Altman plot, leverage plot, deviance scatterplot,
+heatmap of robustness, barplot of Kullback-Leibler divergence, heatmap of
+comparison dissimilarities and dendrogram of comparison clustering.  The package
+also allows the user to export the results to an Excel file at the working
+directory.")
     (license license:gpl3+)))
 
 (define-public r-rnightly
@@ -16407,16 +16391,17 @@ to the @code{NetLogo} Mathematica Link
 (define-public r-rnetcdf
   (package
     (name "r-rnetcdf")
-    (version "2.9-1")
+    (version "2.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNetCDF" version))
        (sha256
-        (base32 "0hn14g75i5j5qhcb8p5mrsdkjz7w35d44r08cl3w2clnfsc2nzjw"))))
+        (base32 "0cdksiaai9wc4dyk3k01f9q9ki19r94p77rwpy4kr55hvwnrqx8m"))))
     (properties `((upstream-name . "RNetCDF")))
     (build-system r-build-system)
     (inputs (list udunits netcdf))
+    (native-inputs (list pkg-config))
     (home-page "https://cran.r-project.org/package=RNetCDF")
     (synopsis "Interface to 'NetCDF' Datasets")
     (description
@@ -25275,26 +25260,6 @@ impurities for inbag and OOB data are combined in three different ways, after
 which the information gain is computed at each split.  This gain is aggregated
 for each split variable in a tree and averaged across trees.")
     (license license:gpl2+)))
-
-(define-public r-rfutilities
-  (package
-    (name "r-rfutilities")
-    (version "2.1-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rfUtilities" version))
-       (sha256
-        (base32 "1anwvmxn3xrc1aqxl75rzlk4wby8l54rmkp0bgi8dgbz2l223xr0"))))
-    (properties `((upstream-name . "rfUtilities")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-randomforest r-cluster))
-    (home-page "https://github.com/jeffreyevans/rfUtilities")
-    (synopsis "Random Forests Model Selection and Performance Evaluation")
-    (description
-     "Utilities for Random Forest model selection, class balance correction,
-significance test, cross validation and partial dependency plots.")
-    (license license:gpl3)))
 
 (define-public r-rfusion
   (package

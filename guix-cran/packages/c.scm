@@ -34799,26 +34799,6 @@ values.")
 absorption spectra of chromophoric dissolved organic matter (CDOM).")
     (license license:gpl2+)))
 
-(define-public r-cdnmoney
-  (package
-    (name "r-cdnmoney")
-    (version "2012.4-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CDNmoney" version))
-       (sha256
-        (base32 "1isbvfq0lygs75y1hn3klqms8q7g1xbkcr8fgj75h1c99d4khvm6"))))
-    (properties `((upstream-name . "CDNmoney")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=CDNmoney")
-    (synopsis "Components of Canadian Monetary and Credit Aggregates")
-    (description
-     "Components of Canadian Credit Aggregates and Monetary Aggregates with continuity
-adjustments.")
-    (license (list license:gpl2
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-cdmtools
   (package
     (name "r-cdmtools")

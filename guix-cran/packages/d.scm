@@ -5628,30 +5628,6 @@ at some parametric values of several well-known and extensively used probability
 distributions.")
     (license license:gpl2)))
 
-(define-public r-dprint
-  (package
-    (name "r-dprint")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dprint" version))
-       (sha256
-        (base32 "13bq6yjlp5p5rcsz684rqcigp42xnz3p5phnqmrhzm874gfzm8rj"))))
-    (properties `((upstream-name . "dprint")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=dprint")
-    (synopsis "Print Tabular Data to Graphics Device")
-    (description
-     "This package provides a generalized method for printing tabular data within the
-R environment in order to make the process of presenting high quality tabular
-output seamless for the user.  Output is directed to the R graphics device so
-that tables can be exported to any file format supported by the graphics device.
- Utilizes a formula interface to specify the contents of tables often found in
-manuscripts or business reports.  In addition, formula interface provides inline
-formatting of the numeric cells of a table and renaming column labels.")
-    (license license:gpl2+)))
-
 (define-public r-dpqmpfr
   (package
     (name "r-dpqmpfr")
