@@ -2304,6 +2304,43 @@ consist of a large number of generations, or estimate identity coefficients from
 genotypic data in certain circumstances.")
     (license license:gpl2+)))
 
+(define-public r-qtlpoly
+  (package
+    (name "r-qtlpoly")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlpoly" version))
+       (sha256
+        (base32 "1lcfb19akddxljwvgsryjvhks0lqkdg7f1br1l2szd6qyd4mmdvs"))))
+    (properties `((upstream-name . "qtlpoly")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlrsim
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-nlme
+                             r-mvtnorm
+                             r-matrix
+                             r-mass
+                             r-mappoly
+                             r-gtools
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-compquadform
+                             r-abind))
+    (home-page "https://gabrielgesteira.github.io/QTLpoly/")
+    (synopsis "Random-Effect Multiple QTL Mapping in Autopolyploids")
+    (description
+     "This package performs random-effect multiple interval mapping (REMIM) in
+full-sib families of autopolyploid species based on restricted maximum
+likelihood (REML) estimation and score statistics, as described in Pereira et
+al. (2020) <doi:10.1534/genetics.120.303080>.")
+    (license license:gpl3)))
+
 (define-public r-qtlnet
   (package
     (name "r-qtlnet")

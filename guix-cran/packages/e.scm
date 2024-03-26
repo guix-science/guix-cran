@@ -1760,16 +1760,16 @@ offers enhanced visualizations with interactive elements.")
 (define-public r-expirest
   (package
     (name "r-expirest")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "expirest" version))
        (sha256
-        (base32 "08gwy1fikj7kg7h6fc7w15621jc0prdqdhzx14ad6dvdi5rd33gv"))))
+        (base32 "1pav81y4n23q42kfvbsdinfyklxwhspsxvfdyvs891zsvy2m93yn"))))
     (properties `((upstream-name . "expirest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2))
+    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2))
     (home-page "https://github.com/piusdahinden/expirest")
     (synopsis "Expiry Estimation Procedures")
     (description
@@ -19021,13 +19021,13 @@ original package description is in Goslee and Urban (2007)
 (define-public r-ecodiet
   (package
     (name "r-ecodiet")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoDiet" version))
        (sha256
-        (base32 "1lgjymm2anb7f11gvg0875wyjjfzbh0y1vwinbidpn2kmgm9b05h"))))
+        (base32 "0vw6q5yf5aq4gdim7yr188f9hbrd5giaivl27y4qrz987i152v8c"))))
     (properties `((upstream-name . "EcoDiet")))
     (build-system r-build-system)
     (inputs (list jags))

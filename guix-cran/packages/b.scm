@@ -11530,6 +11530,30 @@ partitions the system in fast and slow reactions. @code{bioPN} algorithms are
 developed in C to achieve adequate performance.")
     (license license:gpl2+)))
 
+(define-public r-biopixr
+  (package
+    (name "r-biopixr")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biopixR" version))
+       (sha256
+        (base32 "1341yg226r4bzh3cw4ygjnychd5vnm9xfbb0agyd7razz49iahz7"))))
+    (properties `((upstream-name . "biopixR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magick r-imager r-foreach r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Brauckhoff/biopixR")
+    (synopsis "Extracting Insights from Biological Images")
+    (description
+     "Combines the magick and imager packages to streamline image analysis, focusing
+on feature extraction and quantification from biological images, especially
+microparticles.  By providing high throughput pipelines and clustering
+capabilities, @code{biopixR} facilitates efficient insight generation for
+researchers (Schneider J. et al. (2019) <doi:10.21037/jlpm.2019.04.05>).")
+    (license license:lgpl3+)))
+
 (define-public r-biopetsurv
   (package
     (name "r-biopetsurv")

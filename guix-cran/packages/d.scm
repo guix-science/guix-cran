@@ -2853,6 +2853,30 @@ information on dtangle see Hunt et al. (2019)
 <doi:10.1093/bioinformatics/bty926>.")
     (license license:gpl3)))
 
+(define-public r-dtableone
+  (package
+    (name "r-dtableone")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Dtableone" version))
+       (sha256
+        (base32 "0pv04l4wxf44zva5w96i02g4z8zx3zgjxxjacfg0vh2f7gx4pjnq"))))
+    (properties `((upstream-name . "Dtableone")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-proc r-irr r-epir r-dplyr))
+    (home-page "https://cran.r-project.org/package=Dtableone")
+    (synopsis "Tabular Comparison of Paired Diagnostic Tests")
+    (description
+     "Offers statistical methods to compare diagnostic performance between two binary
+diagnostic tests on the same subject in clinical studies.  Includes functions
+for generating formatted tables to display diagnostic outcomes, facilitating a
+clear and comprehensive comparison directly through the R console.  Inspired by
+and extending the functionalities of the DT@code{ComPair}', tableone', and
+gtsummary packages.")
+    (license license:gpl2)))
+
 (define-public r-dswe
   (package
     (name "r-dswe")
@@ -26384,13 +26408,13 @@ stochastic disability-adjusted life year (DALY) calculation.")
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.0.727")
+    (version "1.0.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0ycbbqcdkk9yhwrrln5xh4j5xfsga4hcn0jc7fgczpjdgv07g8w8"))))
+        (base32 "0mh8f5zm97mfzm55pjy157a079cs4azis4x0h0j9cflsd0k4nnyd"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree

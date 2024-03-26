@@ -10811,13 +10811,13 @@ testing for group sequential design, described in Maurer and Bretz (2013)
 (define-public r-gmcp
   (package
     (name "r-gmcp")
-    (version "0.8-16")
+    (version "0.8-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gMCP" version))
        (sha256
-        (base32 "0jkq538xif87asrllmdbcf9hz9z4p5j1xnvf3fp2kc9p48jqdx75"))))
+        (base32 "0w5qxjyn5z7mygsvrmqk5ab827abhp7v4d8ha8279gjjkfswq5fi"))))
     (properties `((upstream-name . "gMCP")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -15663,18 +15663,19 @@ and aesthetics.  This method was described by Balachandran VP (2015)
 (define-public r-ggscatridges
   (package
     (name "r-ggscatridges")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggScatRidges" version))
        (sha256
-        (base32 "02p9pkfw3jscmc5c836qq73z9jpyxv4fp1ci5ma6mcwyzzzfnjpc"))))
+        (base32 "1blwzynrzywdgqllcgjjb0j0xc8fwplybnx3mfmiysppcvrk47p9"))))
     (properties `((upstream-name . "ggScatRidges")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-hrbrthemes
                              r-ggridges
+                             r-ggrepel
                              r-ggpubr
                              r-ggplot2
                              r-cowplot))
@@ -22473,24 +22474,23 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "00i4prrgi02xv0h4r5xfmnl6h9b6arqnvd3vhzrgcmdqv4nl76xk"))))
+        (base32 "0kbjyk9al54y2k9w96rpchv2gwk5f96g6a536fp4sfbhqlmpc0f3"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-tidyterra
+                             r-tidyselect
                              r-tidyr
                              r-terra
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatstat-explore
-                             r-sp
                              r-sf
-                             r-raster
                              r-purrr
                              r-progressr
                              r-mclust
@@ -28579,6 +28579,37 @@ linear predictor for both.  The package also allows transformed or truncated
 distributions from the GAMLSS family to be used for the continuous part of the
 distribution.  Standard methods and GAMLSS diagnostics can be used with the
 resulting fitted object.")
+    (license (list license:gpl2 license:gpl3))))
+
+(define-public r-gamlss-ggplots
+  (package
+    (name "r-gamlss-ggplots")
+    (version "2.1-12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gamlss.ggplots" version))
+       (sha256
+        (base32 "0lm0nlc2rb4yl6fliv0017qpgyaaky7hws6arv36dgqqih9dmcii"))))
+    (properties `((upstream-name . "gamlss.ggplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaimpute
+                             r-mgcv
+                             r-ggridges
+                             r-ggplot2
+                             r-gamlss-inf
+                             r-gamlss-foreach
+                             r-gamlss-dist
+                             r-gamlss
+                             r-foreach
+                             r-ellipse))
+    (home-page "https://www.gamlss.com/")
+    (synopsis
+     "Plotting Functions for Generalized Additive Model for Location Scale and Shape")
+    (description
+     "This package provides functions for plotting Generalized Additive Models for
+Location Scale and Shape from the gamlss package, Stasinopoulos and Rigby (2007)
+<doi:10.18637/jss.v023.i07>, using the graphical methods from ggplot2'.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-gamlss-foreach

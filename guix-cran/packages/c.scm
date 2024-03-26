@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -5515,13 +5515,13 @@ position of the first crossing (or none).")
 (define-public r-crossover
   (package
     (name "r-crossover")
-    (version "0.1-21")
+    (version "0.1-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Crossover" version))
        (sha256
-        (base32 "0mqpfasqdgv4s77ln3c45pjgl2l7wb7b68jl46fzln184n0838l7"))))
+        (base32 "05fsl22h2q6l0g9hscs4f0w4d3skd9anr570ddmnqicxzdfpap5r"))))
     (properties `((upstream-name . "Crossover")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -6620,13 +6620,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "17g1sdjlkj7ck5y5k7la2skxkvjd474rkqzq01fgqhiixkygignk"))))
+        (base32 "1qf7w2px7bw9rgar6fap1v4yyd7899izpq87yl2pqzgbxf93dz1j"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -6649,10 +6649,10 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
      "In computationally demanding analysis projects, statisticians and data
 scientists asynchronously deploy long-running tasks to distributed systems,
 ranging from traditional clusters to cloud services.  The NNG'-powered mirai R
-package by Gao (2023) <https://CRAN.R-project.org/package=mirai> is a sleek and
-sophisticated scheduler that efficiently processes these intense workloads.  The
-crew package extends mirai with a unifying interface for third-party worker
-launchers.  Inspiration also comes from packages.  future by Bengtsson (2021)
+package by Gao (2023) <doi:10.5281/zenodo.7912722> is a sleek and sophisticated
+scheduler that efficiently processes these intense workloads.  The crew package
+extends mirai with a unifying interface for third-party worker launchers.
+Inspiration also comes from packages.  future by Bengtsson (2021)
 <doi:10.32614/RJ-2021-048>, rrq by @code{FitzJohn} and Ashton (2023)
 <https://github.com/mrc-ide/rrq>, clustermq by Schubert (2019)
 <doi:10.1093/bioinformatics/btz284>), and batchtools by Lang, Bischel, and
@@ -8563,13 +8563,13 @@ confidence intervals.")
 (define-public r-coxmos
   (package
     (name "r-coxmos")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Coxmos" version))
        (sha256
-        (base32 "0y7dcwzkj8yqwn44qd1cb1379a0xl5a1949sg7wn6gpgzyn9vgi4"))))
+        (base32 "052af5hx820wmvflvz4pv3jlmmwap9d0lzx9k7v1ps6cidarz0wm"))))
     (properties `((upstream-name . "Coxmos")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17638,18 +17638,19 @@ the analysed objects.")
 (define-public r-compind
   (package
     (name "r-compind")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compind" version))
        (sha256
-        (base32 "0g5m1dpnadgqszk079rxf6rm0d17qnvfzi7fwbs99sl2nimy3ni9"))))
+        (base32 "0k45gazca94dscqhy05p68k755al4gd1gilz5svq5h6cv5fijhxk"))))
     (properties `((upstream-name . "Compind")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
                              r-sp
                              r-smaa
+                             r-rcompadre
                              r-psych
                              r-np
                              r-nonparaeff
@@ -31600,13 +31601,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0qmnfhxgzn4gcn2wx7zwz30kj5zgvcs7dfkayrarf9qmm9ys8rnd"))))
+        (base32 "0qrdvzq01m0kc243jcddiz8am2l4c5a39bv3qb0m2rpvgg1z8a4c"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -31857,6 +31858,28 @@ customer journey data.  The package also contains three heuristic algorithms
 algorithms are implemented in C++.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-changes
+  (package
+    (name "r-changes")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "changeS" version))
+       (sha256
+        (base32 "1igd2qvs5y2g63byvwn0djbgc5lqi9zx7a0g2dkda1q6snl65yi7"))))
+    (properties `((upstream-name . "changeS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-nls-multstart r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matloff/changeS")
+    (synopsis "S-Curve Fit for Changepoint Analysis")
+    (description
+     "Estimation of changepoints using an \"S-curve\" approximation.  Formation of
+confidence intervals for changepoint locations and magnitudes.  Both abrupt and
+gradual changes can be modeled.")
+    (license license:gpl2+)))
 
 (define-public r-changeranger
   (package

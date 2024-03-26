@@ -6550,17 +6550,18 @@ also time series of carbon fluxes, energy balances and soil water are available.
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profoc" version))
        (sha256
-        (base32 "1clickjw8v43p6p35mkyw303adnnr0zrm5ppnvslz2gjlybfp94q"))))
+        (base32 "1vs5l6f18maga6v27wschxzsbr5i4wqwsd64mz4z666rf92d7l60"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-splines2
+                             r-rcpptimer
                              r-rcppprogress
                              r-rcpparmadillo
                              r-rcpp
@@ -14969,6 +14970,30 @@ includes simple linear trends with statistically in-significant slope
 coefficient.")
     (license license:gpl2)))
 
+(define-public r-polytree
+  (package
+    (name "r-polytree")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PolyTree" version))
+       (sha256
+        (base32 "0np5v1255crfp1x7613rdzgkzkm64ikkjm67xrsncijr202yh1gq"))))
+    (properties `((upstream-name . "PolyTree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph r-foci))
+    (home-page "https://cran.r-project.org/package=PolyTree")
+    (synopsis "Estimate Causal Polytree from Data")
+    (description
+     "Given a data matrix with rows representing data vectors and columns representing
+variables, produces a directed polytree for the underlying causal structure.
+Based on the algorithm developed in Chatterjee and Vidyasagar (2022)
+<arxiv:2209.07028>.  The method is fully nonparametric, making no use of
+linearity assumptions, and especially useful when the number of variables is
+large.")
+    (license license:expat)))
+
 (define-public r-polysegratiomm
   (package
     (name "r-polysegratiomm")
@@ -16527,13 +16552,13 @@ in the neighborhood.")
 (define-public r-pointblank
   (package
     (name "r-pointblank")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pointblank" version))
        (sha256
-        (base32 "0ysd78ad00a08knw5lmd09rq7sr41p8grfq5f7f2xr487q67mzgk"))))
+        (base32 "1wwb9ncji7450rbbmrh9mznl4pnpmxq8ibx785bz9dsswdglzfhq"))))
     (properties `((upstream-name . "pointblank")))
     (build-system r-build-system)
     (arguments
@@ -23199,28 +23224,6 @@ generate a map of potential contact zones between groups with user-defined
 thresholds in the tree to account for old and recent divergence.  Additionally,
 it has functions for IDW interpolation using genetic data and midpoints.")
     (license license:gpl2+)))
-
-(define-public r-phyinsight
-  (package
-    (name "r-phyinsight")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PhyInsight" version))
-       (sha256
-        (base32 "1r7y10g2vriy360f7j8agmjw5sgzm2vr2dypj8v78ssklb6apd08"))))
-    (properties `((upstream-name . "PhyInsight")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-decipher r-bold r-biostrings r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://jamesc845.github.io/PhyInsight/")
-    (synopsis "DNA Sequence Analysis & Generation Tree Creation")
-    (description
-     "Provide insights using automated DNA sequence manipulation and tree creation.
-Currently, the package exclusively retrieves data from the BOLD System database
-(<http://v4.boldsystems.org/index.php/api_home>).")
-    (license license:gpl3)))
 
 (define-public r-phyext2
   (package

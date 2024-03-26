@@ -9403,31 +9403,31 @@ Alice (2023) \"Health Data Science in R\"
 (define-public r-hdshop
   (package
     (name "r-hdshop")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDShOP" version))
        (sha256
-        (base32 "18i17vv71wc0rqfl2i9bcfl1ry3bd61x9nd6g57x37ggjp7i6j5k"))))
+        (base32 "129j1dr3vjdg23dy45wws470v05j5azq8nq88b670kdgfw1586qm"))))
     (properties `((upstream-name . "HDShOP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack))
+    (propagated-inputs (list r-rdpack r-lattice))
     (home-page
      "https://github.com/Otryakhin-Dmitry/global-minimum-variance-portfolio")
     (synopsis "High-Dimensional Shrinkage Optimal Portfolios")
     (description
      "Constructs shrinkage estimators of high-dimensional mean-variance portfolios and
 performs high-dimensional tests on optimality of a given portfolio.  The
-techniques developed in Bodnar et al. (2018) <doi:10.1016/j.ejor.2017.09.028>,
-Bodnar et al. (2019) <doi:10.1109/TSP.2019.2929964>, Bodnar et al. (2020)
-<doi:10.1109/TSP.2020.3037369> are central to the package.  They provide simple
-and feasible estimators and tests for optimal portfolio weights, which are
-applicable for large p and large n situations where p is the portfolio dimension
-(number of stocks) and n is the sample size.  The package also includes tools
-for constructing portfolios based on shrinkage estimators of the mean vector and
-covariance matrix as well as a new Bayesian estimator for the Markowitz
-efficient frontier recently developed by Bauder et al. (2021)
+techniques developed in Bodnar et al. (2018 <doi:10.1016/j.ejor.2017.09.028>,
+2019 <doi:10.1109/TSP.2019.2929964>, 2020 <doi:10.1109/TSP.2020.3037369>, 2021
+<doi:10.1080/07350015.2021.2004897>) are central to the package.  They provide
+simple and feasible estimators and tests for optimal portfolio weights, which
+are applicable for large p and large n situations where p is the portfolio
+dimension (number of stocks) and n is the sample size.  The package also
+includes tools for constructing portfolios based on shrinkage estimators of the
+mean vector and covariance matrix as well as a new Bayesian estimator for the
+Markowitz efficient frontier recently developed by Bauder et al. (2021)
 <doi:10.1080/14697688.2020.1748214>.")
     (license license:gpl3)))
 

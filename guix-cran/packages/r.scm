@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -13649,16 +13648,21 @@ problems.")
 (define-public r-rocbc
   (package
     (name "r-rocbc")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rocbc" version))
        (sha256
-        (base32 "18p7ydnaayia072dhpxlb184ib4rv0zmm8zymcry76znny2milm6"))))
+        (base32 "06ki3rn5pmkxigpq9ymg8mjw7kgslfjlzqzc3ifww83q97dvkfnb"))))
     (properties `((upstream-name . "rocbc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-splancs r-pracma r-mvtnorm r-formattable
+    (propagated-inputs (list r-splancs
+                             r-proc
+                             r-pracma
+                             r-mvtnorm
+                             r-mrmcaov
+                             r-formattable
                              r-clinfun))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rocbc")
@@ -48502,13 +48506,13 @@ mitigation goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.match" version))
        (sha256
-        (base32 "1nb0yik39wdcc22c0clszg9j3xk5sm5i9rzzcyj7zij55pcak7np"))))
+        (base32 "12h7bn4dha4fiplwm7az4fyaa8cdkn3b4j3ndmwr6c2r11gfwy0n"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -48541,13 +48545,13 @@ financial portfolio aligns with climate goals.")
 (define-public r-r2dii-data
   (package
     (name "r-r2dii-data")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.data" version))
        (sha256
-        (base32 "1sf8jyzn9ly8hn1fdph440pl666hcgpjds51h8apprqivn3ky9cv"))))
+        (base32 "1f8gvian0l3wsw9bwyxzlwv0qpw4mz1qq4747hjm8d4jr37hi0r6"))))
     (properties `((upstream-name . "r2dii.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))

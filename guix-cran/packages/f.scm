@@ -8282,6 +8282,29 @@ descriptions of FNETS methodology and Owens, Cho and Barigozzi (2024+)
 <@code{arXiv:2301.11675>} accompanying the R package.")
     (license license:gpl3+)))
 
+(define-public r-fmx
+  (package
+    (name "r-fmx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fmx" version))
+       (sha256
+        (base32 "1biz4vn8inhbmcqfcpdkgja5rz6pzz0h5h8cd5qqqbmyzl4x1acj"))))
+    (properties `((upstream-name . "fmx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-tukeygh77 r-sn r-goftest))
+    (home-page "https://cran.r-project.org/package=fmx")
+    (synopsis "Finite Mixture Parametrization")
+    (description
+     "This package provides a parametrization framework for finite mixture
+distribution using S4 objects.  Density, cumulative density, quantile and
+simulation functions are defined.  Currently normal, Tukey g-&-h, skew-normal
+and skew-t distributions are well tested.  The gamma, negative binomial
+distributions are being tested.")
+    (license license:gpl2)))
+
 (define-public r-fmultivar
   (package
     (name "r-fmultivar")
@@ -21387,17 +21410,16 @@ experiments with noncompliance.")
 (define-public r-fact
   (package
     (name "r-fact")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FACT" version))
        (sha256
-        (base32 "0frj0qgdq8j8khy4dlv63zismjczijm0q7j5ha59m0dgxr93khfg"))))
+        (base32 "0klks2r2jf5v5z2n3gvqbssrpdd6nccbk7izvdl1cknisq8z5w4b"))))
     (properties `((upstream-name . "FACT")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
-                             r-prediction
                              r-iml
                              r-gridextra
                              r-ggplot2

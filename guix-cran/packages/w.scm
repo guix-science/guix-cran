@@ -5792,13 +5792,13 @@ or webmorph templates.")
 (define-public r-webmap
   (package
     (name "r-webmap")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webmap" version))
        (sha256
-        (base32 "0md00ahy6v8rhr1ch6nikqgjs86arbal48d7k2hl3q75f15jx0v9"))))
+        (base32 "1j73d0hx9rrvc81id98lp2s2ya4whdkppw27cbz4rcwpa6lgzyg3"))))
     (properties `((upstream-name . "webmap")))
     (build-system r-build-system)
     (arguments

@@ -951,13 +951,13 @@ environment, by Daniel Wallach (INRA), David Makowski (INRA), James W. Jones
 (define-public r-zdeskr
   (package
     (name "r-zdeskr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zdeskR" version))
        (sha256
-        (base32 "15kb85xmn133yby4p03afkib3wrv5baswsdalj8sigyv452id7k6"))))
+        (base32 "11nk8rvsqipqh9w13hi31yy3yv6hd2dk1si61p3frr9g5lsbi5l0"))))
     (properties `((upstream-name . "zdeskR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

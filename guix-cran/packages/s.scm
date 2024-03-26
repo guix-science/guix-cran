@@ -4147,31 +4147,6 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
-(define-public r-surveygraph
-  (package
-    (name "r-surveygraph")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "surveygraph" version))
-       (sha256
-        (base32 "0bvdvylck3m2891v2aap73ygpqkndrxl4ah1bjpa0lyajgvwlbzh"))))
-    (properties `((upstream-name . "surveygraph")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://surveygraph.ie/")
-    (synopsis "Network Representations of Attitudes")
-    (description
-     "This package provides a tool for computing network representations of attitudes,
-extracted from tabular data such as sociological surveys.  By treating a survey
-as a bipartite network, we measure the similarity between respondents and survey
-items to produce network edges.  We do this in both a respondent network, as
-well as a survey item network.  Used in combination with graph visualisation
-libraries, this techniques helps practitioners in the social sciences identify
-network structure that may be present within a survey at a glance.")
-    (license license:expat)))
-
 (define-public r-surveyexplorer
   (package
     (name "r-surveyexplorer")
@@ -24711,13 +24686,13 @@ with nested data.")
 (define-public r-sparklyr
   (package
     (name "r-sparklyr")
-    (version "1.8.4")
+    (version "1.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparklyr" version))
        (sha256
-        (base32 "0xc38xq8izpg0fh4kjb5f223jvhrczs66aydw32kyk6mx07c43ch"))))
+        (base32 "15rgyjq8avyw6n21z57zb10af41ga16vgcddqv6may3z94sjslz0"))))
     (properties `((upstream-name . "sparklyr")))
     (build-system r-build-system)
     (inputs (list))
@@ -24727,10 +24702,8 @@ with nested data.")
                              r-uuid
                              r-tidyselect
                              r-tidyr
-                             r-tibble
                              r-rstudioapi
                              r-rlang
-                             r-rappdirs
                              r-purrr
                              r-openssl
                              r-jsonlite
@@ -24742,7 +24715,7 @@ with nested data.")
                              r-dbplyr
                              r-dbi
                              r-config))
-    (home-page "https://spark.rstudio.com/")
+    (home-page "https://spark.posit.co/")
     (synopsis "R Interface to Apache Spark")
     (description
      "R interface to Apache Spark, a fast and general engine for big data processing,
@@ -32168,13 +32141,13 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
 (define-public r-skpr
   (package
     (name "r-skpr")
-    (version "1.6.2")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skpr" version))
        (sha256
-        (base32 "0hc3lk9d1c92cfv7cvk85jb9pp8ilh8sgwjg3vgr11yxnzay7hmk"))))
+        (base32 "1g19pq73map54sypkarvyw191zgf4cbmr1hskr8amg75wvw8mg11"))))
     (properties `((upstream-name . "skpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -32187,7 +32160,6 @@ and @code{DeYoung} (1987) <https://archive.org/details/DTIC_ADA182110>.")
                              r-magrittr
                              r-lmertest
                              r-lme4
-                             r-lazyeval
                              r-iterators
                              r-future
                              r-foreach
@@ -32682,17 +32654,17 @@ enables users to write @code{JavaScript} applications using the syntax of R.")
 (define-public r-skellam
   (package
     (name "r-skellam")
-    (version "0.2.0")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skellam" version))
        (sha256
-        (base32 "0r5wbs5h7xc3k2vjxd4axwnxr9cmwm008fcyj1vyixkg8fa680gx"))))
+        (base32 "0hmms6709v7mzp6qgcxljjxq4nccqiwphn1nk3jh6mp2n0zvaqjd"))))
     (properties `((upstream-name . "skellam")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://r-forge.r-project.org/projects/healthqueues/")
+    (home-page "https//r-forge.r-project.org/projects/healthqueues/")
     (synopsis "Densities and Sampling for the Skellam Distribution")
     (description
      "This package provides functions for the Skellam distribution, including: density

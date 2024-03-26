@@ -9097,13 +9097,13 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "11rmfwgpa5r0n98r4prngbfgdvk55vxkzp7pl5qlddhbh5jjcl9y"))))
+        (base32 "1j6vhd1ysanc47ixa56gj0dgxqhiwdkbvkcmhdpkwc3zs5c78lzn"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13432,16 +13432,21 @@ data: large document collections, logfiles, and other text data.")
 (define-public r-ncmeta
   (package
     (name "r-ncmeta")
-    (version "0.3.6")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncmeta" version))
        (sha256
-        (base32 "0pk5wn0hmf5n1bgx96xighpmr2kkka3fgl6was9z2rsr0k981mc2"))))
+        (base32 "1aamxs3yza1hsgvkp6740lv1dc21a87mzl06n6w3zxkjshri020w"))))
     (properties `((upstream-name . "ncmeta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-rnetcdf r-rlang r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rnetcdf
+                             r-rlang
+                             r-dplyr
+                             r-cftime))
     (home-page "https://github.com/hypertidy/ncmeta")
     (synopsis "Straightforward 'NetCDF' Metadata")
     (description

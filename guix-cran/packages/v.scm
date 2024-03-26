@@ -2934,16 +2934,16 @@ International Meteor Organization <https://www.imo.net/>.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisitorCounts" version))
        (sha256
-        (base32 "0qm5qccikwdkdc9pm0gck5id3rjicb07jbds4fbvn3db071bzrdy"))))
+        (base32 "1i43g2k3n3c1baxj8q86v33mvvmcg16vv2a46y4ji5nqnqay7183"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rssa))
+    (propagated-inputs (list r-rssa r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VisitorCounts")
     (synopsis "Modeling and Forecasting Visitor Counts Using Social Media")
@@ -2953,8 +2953,9 @@ social media data and (partial) on-site visitor counts.  Specifically, the model
 is built based on an automatic decomposition of the trend and seasonal
 components of the social media-based park visitor counts, from which short-term
 forecasts of the visitor counts and percent changes in the visitor counts can be
-made.  A reference for generating social media-based visitor counts can be found
-at Wood, Guerry, Silver, and Lacayo (2013) <doi:10.1038/srep02976>.")
+made.  A reference for the underlying model that @code{VisitorCounts} uses can
+be found at Russell Goebel', Austin Schmaltz, Beth Ann Brackett', Spencer A.
+Wood, Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
     (license license:gpl3)))
 
 (define-public r-visit
@@ -6758,13 +6759,13 @@ extra functions exist (@code{varImpACC} and @code{varImpAUC}).")
 (define-public r-variationaldcm
   (package
     (name "r-variationaldcm")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "variationalDCM" version))
        (sha256
-        (base32 "0kf9dw8nm728wf825bflvjma49qgdr0sm4zmnnfp1n3xwj2lswxn"))))
+        (base32 "1qdbl72a251q3l72d6zjd2ins2q924yvmj394qa7yvb7q2wkw5sw"))))
     (properties `((upstream-name . "variationalDCM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

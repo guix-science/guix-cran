@@ -1178,19 +1178,19 @@ covariance matrix based on permutations of the transformed data residuals.")
 (define-public r-mvnormtest
   (package
     (name "r-mvnormtest")
-    (version "0.1-9")
+    (version "0.1-9-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvnormtest" version))
        (sha256
-        (base32 "1iaxjwp7bgxhaa4xqvgqb61316mq2fb0452d0pabhmbxkvmvdnj6"))))
+        (base32 "1hxxy08ldm2dczjfb34q1xk8yfs54pdishq4hnws8xy0cjh4xngg"))))
     (properties `((upstream-name . "mvnormtest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=mvnormtest")
-    (synopsis "Normality test for multivariate variables")
+    (synopsis "Normality Test for Multivariate Variables")
     (description
-     "Generalization of shapiro-wilk test for multivariate variables.")
+     "Generalization of Shapiro-Wilk test for multivariate variables.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mvnormaltest
@@ -27071,13 +27071,13 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "0l3qafpavjshfayvz603141ch9s9a4pl3ly1llfkrmm3rmspb261"))))
+        (base32 "0j2absng9k14yad0ajh13ybchdd9jby2m69vzxfk8qz6kv4hdvxq"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -28948,6 +28948,42 @@ space or time across aggregation levels.  This package contains a layout
 algorithm specifically designed for trophic networks, using dimension reduction
 on a diffusion graph kernel and trophic levels.  Importantly, this package
 provides a layout method applicable for large trophic networks.")
+    (license license:gpl3)))
+
+(define-public r-metanet
+  (package
+    (name "r-metanet")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaNet" version))
+       (sha256
+        (base32 "0r3id0ap91g948a10yka1lz82jib3ww91n24vlk4pbik7flxbqpk"))))
+    (properties `((upstream-name . "MetaNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pcutils
+                             r-magrittr
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/MetaNet")
+    (synopsis "Network Analysis for Omics Data")
+    (description
+     "Comprehensive network analysis package.  Calculate correlation network fastly,
+accelerate lots of analysis by parallel computing.  Support for multi-omics
+data, search sub-nets fluently.  Handle bigger data, more than 10,000 nodes in
+each omics.  Offer various layout method for multi-omics network and some
+interfaces to other software ('Gephi', Cytoscape', ggplot2'), easy to visualize.
+ Provide comprehensive topology indexes calculation, including ecological
+network stability.")
     (license license:gpl3)))
 
 (define-public r-metan

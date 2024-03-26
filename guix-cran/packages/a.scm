@@ -10889,13 +10889,13 @@ effects thanks to @code{jQuery} @code{AniView}'.")
 (define-public r-anisna
   (package
     (name "r-anisna")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aniSNA" version))
        (sha256
-        (base32 "0vmpdmqr3cwpk588y116bv2nv1xcaya0mg53zcl3yc223df134zp"))))
+        (base32 "1rvrpcw1j5xwz8ns7njvf8blal8nh6c45avy5rpzb5kifiv8yxgy"))))
     (properties `((upstream-name . "aniSNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

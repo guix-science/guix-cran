@@ -2732,24 +2732,19 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.747")
+    (version "1.0.767")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0hsh3r2r4g63fjlsasw9iwddxfr5xbghi17kc3arn85jkwr6k9yz"))))
+        (base32 "0gxsbhigq0qxiw6kx4p7wgqjx7c09qj03w7j6600p2jzaqz959zj"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
-    (propagated-inputs (list r-smotefamily
-                             r-mfilter
-                             r-leaps
+    (propagated-inputs (list r-mfilter
                              r-kfas
-                             r-glmnet
-                             r-fselector
                              r-forecast
                              r-dplyr
-                             r-doby
                              r-desctools
                              r-daltoolbox))
     (home-page "https://github.com/cefet-rj-dal/daltoolbox")
@@ -23231,6 +23226,29 @@ assets covering a wide variety of course and time spans.  See
 <https://twelvedata.com/> for details, to create an account, and to request an
 API key for free-but-capped access to the data.")
     (license license:gpl2+)))
+
+(define-public r-tcpmor
+  (package
+    (name "r-tcpmor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TCPMOR" version))
+       (sha256
+        (base32 "10zbslpkc9kd7piakrkch71y20pgzmfw6vfmi6slsicqq50grca6"))))
+    (properties `((upstream-name . "TCPMOR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-semipar))
+    (home-page "https://cran.r-project.org/package=TCPMOR")
+    (synopsis "Two Cut-Points with Maximum Odds Ratio")
+    (description
+     "Enables the computation of the two cut-points with maximum odds ratio (OR) value
+method for data analysis, particularly suited for binary classification tasks.
+Users can identify optimal cut-points in a continuous variable by maximizing the
+odds ratio while maintaining an equal risk level, useful for tasks such as
+medical diagnostics, risk assessment, or predictive modeling.")
+    (license license:expat)))
 
 (define-public r-tcplfit2
   (package

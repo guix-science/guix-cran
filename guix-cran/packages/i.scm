@@ -8309,16 +8309,21 @@ available vignettes and from the URL bellow.")
 (define-public r-inlajoint
   (package
     (name "r-inlajoint")
-    (version "24.2.4")
+    (version "24.3.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAjoint" version))
        (sha256
-        (base32 "0q7wpm058qzzah8bxsghx3v88vijzhpxp30rbbrlq2xznhhsjksk"))))
+        (base32 "03hd29x8arww3fkyzgj8wv1b0sm5nl994bmg6m2sb4xg00slhp05"))))
     (properties `((upstream-name . "INLAjoint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-numderiv r-matrix r-lme4 r-ggplot2))
+    (propagated-inputs (list r-numderiv
+                             r-nlme
+                             r-mvtnorm
+                             r-matrix
+                             r-lme4
+                             r-ggplot2))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/DenisRustand/INLAjoint")
     (synopsis
@@ -9125,13 +9130,13 @@ network from single-cell sequencing data.")
 (define-public r-inext-beta3d
   (package
     (name "r-inext-beta3d")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.beta3D" version))
        (sha256
-        (base32 "1ia5midwraq1im0gh61fcpg2whq43mlby80b92y5fjdhh0ghbx8f"))))
+        (base32 "16g64jy68hmq2dr3snc5v35kl7g9ghglljm8qr8jmnny26kmpgan"))))
     (properties `((upstream-name . "iNEXT.beta3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree
@@ -9165,13 +9170,13 @@ et al. (2023) <doi:10.1002/ecm.1588> for more details.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "09m4r8j5c56l7qxzz5kxx8pzbf7lri40vqz4s4arpj9b7b5imfl7"))))
+        (base32 "03jrdy7axxq8c1bsr0z9v7444c9kcvmv7cal03jxfl61lmw6hzzh"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree
@@ -13360,6 +13365,33 @@ AUTHORS for a list of copyright holders and authors.")
      "Tools, tutorials, and demos of Item Factor Analysis using @code{OpenMx}'.  This
 software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>.")
     (license license:agpl3+)))
+
+(define-public r-ieugwasr
+  (package
+    (name "r-ieugwasr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ieugwasr" version))
+       (sha256
+        (base32 "0a38rnh34m6y0hdxk6y1s9lfg399cc9kfgpgapf2qmj7ca13d58z"))))
+    (properties `((upstream-name . "ieugwasr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-googleauthr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MRCIEU/ieugwasr")
+    (synopsis "Interface to the 'OpenGWAS' Database API")
+    (description
+     "Interface to the @code{OpenGWAS} database API <https://gwas-api.mrcieu.ac.uk/>.
+Includes a wrapper to make generic calls to the API, plus convenience functions
+for specific queries.")
+    (license license:expat)))
 
 (define-public r-ietd
   (package
