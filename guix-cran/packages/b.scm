@@ -5865,37 +5865,6 @@ unitary matrices, evaluation of matrix permanents (both real and complex) and
 evaluation of complex permanent minors.")
     (license license:gpl2)))
 
-(define-public r-boso
-  (package
-    (name "r-boso")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BOSO" version))
-       (sha256
-        (base32 "0zax40x2d62vcn8zznmzmykk33mv4vbjfl88i3r1djbvalcdf5cf"))))
-    (properties `((upstream-name . "BOSO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BOSO")
-    (synopsis "Bilevel Optimization Selector Operator")
-    (description
-     "This package provides a novel feature selection algorithm for linear regression
-called BOSO (Bilevel Optimization Selector Operator).  The main contribution is
-the use a bilevel optimization problem to select the variables in the training
-problem that minimize the error in the validation set.  Preprint available:
-[Valcarcel, L. V., San Jose-Eneriz, E., Cendoya, X., Rubio, A., Agirre, X.,
-Prosper, F., & Planes, F. J. (2020). \"BOSO: a novel feature selection algorithm
-for linear regression with high-dimensional data.\" @code{bioRxiv}.
-<doi:10.1101/2020.11.18.388579>].  In order to run the vignette, it is
-recommended to install the bestsubset package, using the following command:
-devtools::install_github(repo=\"ryantibs/best-subset\", subdir=\"bestsubset\").  If
-you do not have gurobi, run
-devtools::install_github(repo=\"lvalcarcel/best-subset\", subdir=\"bestsubset\").")
-    (license license:gpl3)))
-
 (define-public r-borrowr
   (package
     (name "r-borrowr")
@@ -12348,32 +12317,6 @@ available at <https://status.biobricks.ai>.  Documentation for Biobricks.ai is
 available at <https://docs.biobricks.ai>.")
     (license license:expat)))
 
-(define-public r-bioassays
-  (package
-    (name "r-bioassays")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bioassays" version))
-       (sha256
-        (base32 "1y32wxkv14l7r0f35y4hxxxh3zpw2gd4hsjmkajhmzmnvg5jdw78"))))
-    (properties `((upstream-name . "bioassays")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-reshape2
-                             r-nplr
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=bioassays")
-    (synopsis "Summarising Multi Well Plate Cellular Assay")
-    (description
-     "The goal is to help users to analyse data from multi wells with minimum effort.
-Using these functions several plates can be analyzed automatically.")
-    (license license:gpl3)))
-
 (define-public r-bioacoustics
   (package
     (name "r-bioacoustics")
@@ -14518,13 +14461,13 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
 (define-public r-bigbits
   (package
     (name "r-bigbits")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigBits" version))
        (sha256
-        (base32 "0vakcy5ymd4b5mhz5vjbkhp82bikdajh6wag4cgzbl3vdvx85xhf"))))
+        (base32 "0qrbm4d3rihy7dvc3lvailmarq1n2hs7qv6wqrgjd0pxnz62j7p7"))))
     (properties `((upstream-name . "bigBits")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-gmp))
@@ -20217,37 +20160,6 @@ ci_margin and ci_level]).")
 implementations of the methods of Oh and Raftery (2001)
 <doi:10.1198/016214501753208690>.")
     (license license:gpl2+)))
-
-(define-public r-baylum
-  (package
-    (name "r-baylum")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayLum" version))
-       (sha256
-        (base32 "1n40zz0156kw6fwqvlhx3svmvwa2049z4ly9lxcid84dwyxxyn0r"))))
-    (properties `((upstream-name . "BayLum")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-runjags
-                             r-rjags
-                             r-luminescence
-                             r-kernsmooth
-                             r-hexbin
-                             r-coda
-                             r-archaeophases))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://CRAN.r-project.org/package=BayLum")
-    (synopsis
-     "Chronological Bayesian Models Integrating Optically Stimulated Luminescence and Radiocarbon Age Dating")
-    (description
-     "Bayesian analysis of luminescence data and C-14 age estimates.  Bayesian models
-are based on the following publications: Combes, B. & Philippe, A. (2017)
-<doi:10.1016/j.quageo.2017.02.003> and Combes et al (2015)
-<doi:10.1016/j.quageo.2015.04.001>.  This includes, amongst others, data import,
-export, application of age models and palaeodose model.")
-    (license license:gpl3)))
 
 (define-public r-baygel
   (package

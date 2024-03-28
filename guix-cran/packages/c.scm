@@ -955,6 +955,37 @@ classification (binary and multiclass).  Described in chp.  5 of Jeyaraman, B.
 P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
     (license license:expat)))
 
+(define-public r-cvmortalitymult
+  (package
+    (name "r-cvmortalitymult")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CvmortalityMult" version))
+       (sha256
+        (base32 "19j24g0x3f6k91r95z8sl4c2l0y2nbjm8068r21pr4fnfsz5gdj1"))))
+    (properties `((upstream-name . "CvmortalityMult")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmap r-stmomo r-sf r-gnm r-forecast))
+    (home-page "https://github.com/davidAtance/CvmortalityMult")
+    (synopsis "Cross-Validation for Multi-Population Mortality Models")
+    (description
+     "Implementation of cross-validation method for testing the forecasting accuracy
+of several multi-population mortality models.  The family of multi-population
+includes several multi-population mortality models proposed through the
+actuarial and demography literature.  The package includes functions for fitting
+and forecast the mortality rates of several populations.  Additionally, we
+include functions for testing the forecasting accuracy of different
+multi-population models.  References.  Atance, D., Debon, A., and Navarro, E.
+(2020) <doi:10.3390/math8091550>.  Bergmeir, C. & Benitez, J.M. (2012)
+<doi:10.1016/j.ins.2011.12.028>.  Debon, A., Montes, F., & Martinez-Ruiz, F.
+(2011) <doi:10.1007/s13385-011-0043-z>.  Lee, R.D. & Carter, L.R. (1992)
+<doi:10.1080/01621459.1992.10475265>.  Russolillo, M., Giordano, G., & Haberman,
+S. (2011) <doi:10.1080/03461231003611933>.  Santolino, M. (2023)
+<doi:10.3390/risks11100170>.")
+    (license license:expat)))
+
 (define-public r-cvmgof
   (package
     (name "r-cvmgof")
@@ -29687,13 +29718,13 @@ headless Chrome web browser.")
 (define-public r-chromer
   (package
     (name "r-chromer")
-    (version "0.6")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromer" version))
        (sha256
-        (base32 "1jn5dwl8i1di8hns3kjww6sqyba768j1302w3f43v9965vfr1xnp"))))
+        (base32 "0x9xhih0a19mqwiqs7bljcdgki874ii653v91frkwsr2y2yd9j7c"))))
     (properties `((upstream-name . "chromer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-httr r-dplyr))
@@ -29701,8 +29732,9 @@ headless Chrome web browser.")
     (synopsis "Interface to Chromosome Counts Database API")
     (description
      "This package provides a programmatic interface to the Chromosome Counts Database
-(<https://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.  This
-package is part of the R@code{OpenSci} suite (<https://ropensci.org>).")
+(<https://taux.evolseq.net/CCDB_web/>), Rice et al. (2014)
+<doi:10.1111/nph.13191>.  This package is part of the R@code{OpenSci} suite
+(<https://ropensci.org>).")
     (license license:expat)))
 
 (define-public r-chromconverter
@@ -34364,13 +34396,13 @@ command \"example(@code{fitVolDist})\".")
 (define-public r-celltrackr
   (package
     (name "r-celltrackr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "celltrackR" version))
        (sha256
-        (base32 "08hbgpwcpf7v8l7qmszhjh0w4f4zjcizrdsxksihxpwdi9r4al3w"))))
+        (base32 "1y0bdn75malabyrnrqrw5vh2sr6j09hpy8gbk1vnmkbvg9dy2xh3"))))
     (properties `((upstream-name . "celltrackR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-ellipse))
@@ -34378,18 +34410,18 @@ command \"example(@code{fitVolDist})\".")
     (home-page "http://www.motilitylab.net")
     (synopsis "Motion Trajectory Analysis")
     (description
-     "This package provides methodology to analyze cells that move in a two- or
-three-dimensional space.  Available measures include displacement, confinement
-ratio, autocorrelation, straightness, turning angle, and fractal dimension.
-Measures can be applied to entire tracks, steps, or subtracks with varying
-length.  While the methodology has been developed for cell trajectory analysis,
-it is applicable to anything that moves including animals, people, or vehicles.
-Some of the methodology implemented in this packages was described by:
-Beauchemin, Dixit, and Perelson (2007) <doi:10.4049/jimmunol.178.9.5505>,
-Beltman, Maree, and de Boer (2009) <doi:10.1038/nri2638>, Gneiting and Schlather
-(2004) <doi:10.1137/S0036144501394387>, Mokhtari, Mech, Zitzmann, Hasenberg,
-Gunzer, and Figge (2013) <doi:10.1371/journal.pone.0080808>, Moreau, Lemaitre,
-Terriac, Azar, Piel, Lennon-Dumenil, and Bousso (2012)
+     "This package provides methods for analyzing (cell) motion in two or three
+dimensions.  Available measures include displacement, confinement ratio,
+autocorrelation, straightness, turning angle, and fractal dimension.  Measures
+can be applied to entire tracks, steps, or subtracks with varying length.  While
+the methodology has been developed for cell trajectory analysis, it is
+applicable to anything that moves including animals, people, or vehicles.  Some
+of the methodology implemented in this packages was described by: Beauchemin,
+Dixit, and Perelson (2007) <doi:10.4049/jimmunol.178.9.5505>, Beltman, Maree,
+and de Boer (2009) <doi:10.1038/nri2638>, Gneiting and Schlather (2004)
+<doi:10.1137/S0036144501394387>, Mokhtari, Mech, Zitzmann, Hasenberg, Gunzer,
+and Figge (2013) <doi:10.1371/journal.pone.0080808>, Moreau, Lemaitre, Terriac,
+Azar, Piel, Lennon-Dumenil, and Bousso (2012)
 <doi:10.1016/j.immuni.2012.05.014>, Textor, Peixoto, Henrickson, Sinn, von
 Andrian, and Westermann (2011) <doi:10.1073/pnas.1102288108>, Textor, Sinn, and
 de Boer (2013) <doi:10.1186/1471-2105-14-S6-S10>, Textor, Henrickson, Mandl, von

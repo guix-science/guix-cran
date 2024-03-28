@@ -1783,38 +1783,6 @@ standard approach that is recommended by guidance Q1E \"Evaluation of stability
 data\" from the International Council for Harmonisation (ICH).")
     (license license:gpl2+)))
 
-(define-public r-expimage
-  (package
-    (name "r-expimage")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ExpImage" version))
-       (sha256
-        (base32 "1f6pddzfwmpv0gnzbpbkqzg6scafzjmpicblqz3m36nnj87l9pn7"))))
-    (properties `((upstream-name . "ExpImage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-schemr
-                             r-rstudioapi
-                             r-raster
-                             r-randomforest
-                             r-progress
-                             r-ggplot2
-                             r-foreach
-                             r-doparallel
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://www.youtube.com/channel/UCDGyvLCJnv9RtTY1YMBMVNQ")
-    (synopsis "Tool For Analysis of Images in Experiments")
-    (description
-     "This package provides tools created for image analysis in researches.  There are
-functions associated with image editing, segmentation, and obtaining biometric
-measurements (Este pacote foi idealizado para para a analise de imagens em
-pesquisas.  Ha funcoes associadas a edicao de imagens, segmentacao, e obtencao
-de medidas biometricas).")
-    (license license:gpl3)))
-
 (define-public r-expgenetic
   (package
     (name "r-expgenetic")
@@ -8075,13 +8043,13 @@ kindly provided by Dr. John Lieske of the Mayo Clinic.")
 (define-public r-equateirt
   (package
     (name "r-equateirt")
-    (version "2.3.0")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateIRT" version))
        (sha256
-        (base32 "18rs6n4kgbiikkljppnacd1zkv2wp8xc8ibk9xslrhshxwwr0576"))))
+        (base32 "0i3bvldalqrlz9qalpylybn896nkdpm5xk4m62sxhm1bfrd0nm98"))))
     (properties `((upstream-name . "equateIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-mirt))
@@ -12142,13 +12110,13 @@ efficiently.")
 (define-public r-emt
   (package
     (name "r-emt")
-    (version "1.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMT" version))
        (sha256
-        (base32 "0zmcakph88qg9f1p7icn4llw92nh1jfijxsx3rhl7g9d4rihprq5"))))
+        (base32 "0g4s99cbww9wi89acbpn8ggkfkf39nq0km0nhm5956r62sjw2wfr"))))
     (properties `((upstream-name . "EMT")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EMT")

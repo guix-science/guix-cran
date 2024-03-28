@@ -7551,13 +7551,13 @@ running the vignette, install fwelnet from @code{GitHub}
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.14-7")
+    (version "0.15-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transport" version))
        (sha256
-        (base32 "05l7slph5as2kzxv1s81v7pjc83w8ak7d8cxndc2pqny14sx07n0"))))
+        (base32 "0a9qych4qrdw6vcribsmzxbi2pd8pyqvagdbdzz8cma5xkddbaca"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
@@ -12425,13 +12425,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "0.0.18")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipsae" version))
        (sha256
-        (base32 "0w7ig4p23zgsn8q95cx6l031yz8kd1dk8jmzw5sf7b2b5snxlhvd"))))
+        (base32 "00m6frq9dkjazqh82zg5kh7snsd5gl705fk7v1idaxvm8d9gjli7"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -12458,7 +12458,8 @@ extensions (Janicki 2020 <doi:10.1080/03610926.2019.1570266>).  Such methods,
 developed within a Bayesian framework through Stan <https://mc-stan.org/>, come
 equipped with a set of diagnostics and complementary tools, visualizing and
 exporting functions.  A Shiny application with a user-friendly interface can be
-launched to further simplify the process.")
+launched to further simplify the process.  For further details, refer to De
+@code{NicolÃ²} and Gardini (2024 <doi:10.18637/jss.v108.i01>).")
     (license license:gpl3)))
 
 (define-public r-tips

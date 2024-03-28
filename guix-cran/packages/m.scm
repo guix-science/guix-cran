@@ -10247,6 +10247,31 @@ for linear and generalised linear models.")
 Parameters.  Modified likelihood estimates are provided.")
     (license license:gpl2)))
 
+(define-public r-mpitbr
+  (package
+    (name "r-mpitbr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpitbR" version))
+       (sha256
+        (base32 "01p82d0dzjlq3b0zyg25i7fh6l0amj55kcavcysqsjy2i0352fvb"))))
+    (properties `((upstream-name . "mpitbR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-purrr))
+    (home-page "https://github.com/girelaignacio/mpitbR")
+    (synopsis "Calculate Alkire-Foster Multidimensional Poverty Measures")
+    (description
+     "Estimate Multidimensional Poverty Indices disaggregated by population subgroups
+based on the Alkire and Foster method (2011)
+<doi:10.1016/j.jpubeco.2010.11.006>.  This includes the calculation of standard
+errors and confidence intervals.  Other partial indices such as incidence,
+intensity and indicator-specific measures as well as intertemporal changes
+analysis can also be estimated.  The standard errors and confidence intervals
+are calculated considering the complex survey design.")
+    (license license:gpl3+)))
+
 (define-public r-mpindex
   (package
     (name "r-mpindex")
@@ -23886,13 +23911,13 @@ data.")
 (define-public r-migconnectivity
   (package
     (name "r-migconnectivity")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MigConnectivity" version))
        (sha256
-        (base32 "0lyqjhhnba83niv1rmgxz3f9kq022fnck3l2m27zc1lw92l6lhfv"))))
+        (base32 "08bzis7rkczymvr2bqiih59yn94l0fjhkn0p9lpv875pwbvhmw1j"))))
     (properties `((upstream-name . "MigConnectivity")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -25996,13 +26021,13 @@ Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
 (define-public r-mgwnbr
   (package
     (name "r-mgwnbr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgwnbr" version))
        (sha256
-        (base32 "0c9y3jfg1s5cvpw6yjjcq80shdx1khx799qpcvba534vgz3mkh49"))))
+        (base32 "0vmpvfnnq1ylsivizz888akaq74ybz890nspj40zx5wr7dv2rkz7"))))
     (properties `((upstream-name . "mgwnbr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -26015,13 +26040,13 @@ covariate.  Uses the negative binomial distribution as default, but also accepts
 the normal, Poisson, or logistic distributions.  Can fit the global versions of
 each regression and also the geographically weighted alternatives with only one
 scale, since they are all particular cases of the multiscale approach.  Hanchen
-Yu (2024).  Exploring Multiscale Geographically Weighted Negative Binomial
-Regression, Annals of the American Association of Geographers
+Yu (2024). \"Exploring Multiscale Geographically Weighted Negative Binomial
+Regression\", Annals of the American Association of Geographers
 <doi:10.1080/24694452.2023.2289986>.  Fotheringham AS, Yang W, Kang W (2017).
-Multiscale Geographically Weighted Regression (MGWR), Annals of the American
+\"Multiscale Geographically Weighted Regression (MGWR)\", Annals of the American
 Association of Geographers <doi:10.1080/24694452.2017.1352480>.  Da Silva AR,
-Rodrigues TCV (2014).  Geographically Weighted Negative Binomial Regression -
-incorporating overdispersion, Statistics and Computing
+Rodrigues TCV (2014). \"Geographically Weighted Negative Binomial Regression -
+incorporating overdispersion\", Statistics and Computing
 <doi:10.1007/s11222-013-9401-9>.")
     (license license:gpl3)))
 

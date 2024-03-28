@@ -5749,13 +5749,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattanInflators" version))
        (sha256
-        (base32 "0lp000wgl1jkfhbb69kpxlpnarwwybzys6waxppacd5xlimynl12"))))
+        (base32 "1ggdkr8z4zh6myq5wx0kdszb4b6wa9qf9v8zd169chgiy6an5glx"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fy r-data-table))
@@ -5770,13 +5770,13 @@ about date input quality, performance, or the ABS catalogue.")
 (define-public r-grattan
   (package
     (name "r-grattan")
-    (version "2024.0.0")
+    (version "2024.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattan" version))
        (sha256
-        (base32 "0wq7k7h4kgq7q5r53n53bddssywx6lb3jqi74jfd3gdgixx2sp6q"))))
+        (base32 "0cxgj20c7gk55p22rmy1al44if4pk90yf9zify2jz9h7pviwgpjx"))))
     (properties `((upstream-name . "grattan")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
@@ -5827,16 +5827,17 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.8.2")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "0gfilxh697laf1y20kmrzjrgd1xypf529cw9xxzy64z7rn0jraih"))))
+        (base32 "1hkfaw2vwm4dw73fn4glkwnhvbf2wc3iyz5979rsfabn5i6g91br"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-withr
+                             r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -5850,6 +5851,7 @@ lines.")
                              r-mgcv
                              r-lifecycle
                              r-ggplot2
+                             r-ggokabeito
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
@@ -6810,17 +6812,18 @@ is provided in vignettes included in the package and in the paper by HÃ¸jsgaar
 (define-public r-grafzahl
   (package
     (name "r-grafzahl")
-    (version "0.0.8")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grafzahl" version))
        (sha256
-        (base32 "1pccxzraz9sri69774svj3sb1fxq00lq8261z0fcm0j17mqmysyq"))))
+        (base32 "0zx6fqwklyi3sc1p59nb71mgrfnp7bqw5axmddj3706cawlrqrb8"))))
     (properties `((upstream-name . "grafzahl")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-quanteda r-lime r-jsonlite))
-    (home-page "https://github.com/chainsawriot/grafzahl")
+    (native-inputs (list r-knitr))
+    (home-page "https://gesistsa.github.io/grafzahl/")
     (synopsis
      "Supervised Machine Learning for Textual Data Using Transformers and 'Quanteda'")
     (description
@@ -12188,6 +12191,36 @@ models by L1-penalized estimation is provided, see Groll and Tutz (2014)
 heterogeneity.")
     (license license:gpl2)))
 
+(define-public r-glmmisrep
+  (package
+    (name "r-glmmisrep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glmMisrep" version))
+       (sha256
+        (base32 "0czcmr2lh7xnz8l1q74r7zlsfajl9r4x4nh5hmjfbdybf4rj81js"))))
+    (properties `((upstream-name . "glmMisrep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-poisson-glm-mix r-mass))
+    (home-page "https://cran.r-project.org/package=glmMisrep")
+    (synopsis "Generalized Linear Models Adjusting for Misrepresentation")
+    (description
+     "Fit Generalized Linear Models to continuous and count outcomes, as well as
+estimate the prevalence of misrepresentation of an important binary predictor.
+Misrepresentation typically arises when there is an incentive for the binary
+factor to be misclassified in one direction (e.g., in insurance settings where
+policy holders may purposely deny a risk status in order to lower the insurance
+premium).  This is accomplished by treating a subset of the response variable as
+resulting from a mixture distribution.  Model parameters are estimated via the
+Expectation Maximization algorithm and standard errors of the estimates are
+obtained from closed forms of the Observed Fisher Information.  For an
+introduction to the models and the misrepresentation framework, see Xia et.
+al., (2023)
+<https://variancejournal.org/article/73151-maximum-likelihood-approaches-to-misrepresentation-models-in-glm-ratemaking-model-comparisons>.")
+    (license license:gpl2+)))
+
 (define-public r-glmmfields
   (package
     (name "r-glmmfields")
@@ -13034,36 +13067,6 @@ transform residuals are included in the package.  Several standard data sets are
 included in the package.")
     (license license:gpl2+)))
 
-(define-public r-glancedata
-  (package
-    (name "r-glancedata")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glancedata" version))
-       (sha256
-        (base32 "01j7syjn33pc7hq032nmyak38wn35yv3n7is9g2ggs14kj3xqb0c"))))
-    (properties `((upstream-name . "glancedata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-purrr
-                             r-openxlsx
-                             r-gridextra
-                             r-ggplot2
-                             r-ggally
-                             r-forcats
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=glancedata")
-    (synopsis "Generate tables and plots to get summaries of data")
-    (description
-     "Generate data frames for all the variables with some summaries and also some
-plots for numerical variables.  Several functions from the tidyverse and GGally
-packages are used.")
-    (license license:gpl3)))
-
 (define-public r-glamlasso
   (package
     (name "r-glamlasso")
@@ -13753,13 +13756,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "00hszk0pnf5i65sp12073gq1bfybpaazdigs6q5j0gyvaqcacbl9"))))
+        (base32 "1c614w22kk90mdn856kyv26dwmnmsx54xv35x29w74lyw15c1nbi"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
@@ -14774,13 +14777,13 @@ method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
 (define-public r-ghclass
   (package
     (name "r-ghclass")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghclass" version))
        (sha256
-        (base32 "0jpfc2mjwi6i3bcrfjjl6k4im4m110pq2n00mij2n9czz6v2chla"))))
+        (base32 "10sq9rissf3w7rp8449vzigl7bj7y3iqx0vci2m559ihjmsdkn6i"))))
     (properties `((upstream-name . "ghclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14789,6 +14792,7 @@ method can be found in Anton Rask Lundborg, Rajen D. Shah and Jonas Peters
                              r-rlang
                              r-purrr
                              r-lubridate
+                             r-lifecycle
                              r-httr
                              r-glue
                              r-gh
@@ -16993,35 +16997,6 @@ and the response is present.  Base on the results published in guide ISO/TS
 28037 (2010) <https://www.iso.org/standard/44473.html>.")
     (license license:gpl2+)))
 
-(define-public r-ggmosaic
-  (package
-    (name "r-ggmosaic")
-    (version "0.3.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ggmosaic" version))
-       (sha256
-        (base32 "1zm1zfbd0qk6icw65m9hz1hgyqj632ibq3qilidvx5jy7jh8nbpy"))))
-    (properties `((upstream-name . "ggmosaic")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-scales
-                             r-rlang
-                             r-purrr
-                             r-productplots
-                             r-plotly
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/haleyjeppson/ggmosaic")
-    (synopsis "Mosaic Plots in the 'ggplot2' Framework")
-    (description
-     "Mosaic plots in the ggplot2 framework.  Mosaic plot functionality is provided in
-a single ggplot2 layer by calling the geom mosaic'.")
-    (license license:gpl2+)))
-
 (define-public r-ggmnonreg
   (package
     (name "r-ggmnonreg")
@@ -17767,35 +17742,6 @@ and scales for ggplot2 to allow users to easily follow the HDX visual design
 guide, including convenience functions for for loading and using the Source Sans
 3 font.")
     (license license:gpl3+)))
-
-(define-public r-gghdr
-  (package
-    (name "r-gghdr")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gghdr" version))
-       (sha256
-        (base32 "1id0ky2mf656xqsmg76f627zw8iff4q1wzgih32nryk0hfvm2gfi"))))
-    (properties `((upstream-name . "gghdr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-scales
-                             r-hdrcde
-                             r-ggplot2
-                             r-farver
-                             r-digest))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Sayani07/gghdr")
-    (synopsis "Visualisation of Highest Density Regions in 'ggplot2'")
-    (description
-     "This package provides ggplot2 framework for visualising Highest Density Regions
-(HDR) <doi:10.1080/00031305.1996.10474359>.  This work is based on the package
-hdrcde'<https://pkg.robjhyndman.com/hdrcde/> and displays highest density
-regions in ggplot2 for one and two dimensions and univariate densities
-conditional on one covariate.")
-    (license license:gpl3)))
 
 (define-public r-gghalfnorm
   (package
@@ -20170,13 +20116,13 @@ keeping a tabular (long) structure for easier processing.")
 (define-public r-getdesigns
   (package
     (name "r-getdesigns")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GETdesigns" version))
        (sha256
-        (base32 "1rc8vcpfv240qmg3xgqx1rlygw7l3hjkh1napj3pc9j6ffpyyk2a"))))
+        (base32 "1kd08vdra3akdkvk6n9i6w4m2qmlnkjqjnssdn8f317vwbhjcmf3"))))
     (properties `((upstream-name . "GETdesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=GETdesigns")
@@ -26124,13 +26070,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "1bii8gr1b5fjfi2bwspxvn0d6bl7k3l3x2426l16p9pw8r7sk3wn"))))
+        (base32 "1rwz0p83lmxgz3v0mrnjk4wh1yv5ijwxy5nmvmn6jzvk6l5wbjfp"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib

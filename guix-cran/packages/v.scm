@@ -14,11 +14,11 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages bioinformatics)
-  #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages ssh)
   #:use-module (gnu packages tls)
+  #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages perl)
   #:use-module (gnu packages pcre)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2111,33 +2111,6 @@ VLFs are also assessed to determine if they lead to a change in amino acid
 residue type, and potential changes to protein structures.  Based on Stoeckle
 and Kerr (2012) <doi:10.1371/journal.pone.0043992>.")
     (license license:gpl3+)))
-
-(define-public r-vlda
-  (package
-    (name "r-vlda")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "vlda" version))
-       (sha256
-        (base32 "17xn8qqh043dm05ib3h4l1qx07wxncf5d06x9l1wl6jbkvnsm2nq"))))
-    (properties `((upstream-name . "vlda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggsci r-ggrepel r-ggplot2 r-ggiraph r-dplyr))
-    (home-page "https://github.com/pnuwon/vlda")
-    (synopsis "Visualization of Multidimensional Longitudinal Data")
-    (description
-     "Assists in producing a plot that more effectively expresses changes over time
-for two different types (long format and wide format) using a consistent calling
-scheme for longitudinal data.  It provides the ability to projection
-supplementary information (supplementary objects and variables) that can often
-occur in longitudinal data to graphs, as well as provides a new interactive
-implementation to perform the additional interpretation, so it is also useful
-for longitudinal data visuals analysis (see
-<http://lib.pusan.ac.kr/resource/e-article/?app=eds&mod=detail&record_id=edsker.000004649097&db_id=edsker>
-for more information).")
-    (license license:expat)))
 
 (define-public r-vkr
   (package
@@ -5855,6 +5828,31 @@ requests in the same cassette use a cached HTTP response.")
     (description "Method to perform penalized variance component analysis.")
     (license license:gpl3+)))
 
+(define-public r-vcpb
+  (package
+    (name "r-vcpb")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcPB" version))
+       (sha256
+        (base32 "11dn0l1w46shw4dqkwad5y91hfs9crkwrj6d1l4n9sc3f71b3zxq"))))
+    (properties `((upstream-name . "vcPB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlist r-lme4 r-kernsmooth))
+    (home-page "https://github.com/SangkyuStat/vcPB")
+    (synopsis "Longitudinal PB Varying-Coefficient Groupwise Disparity Model")
+    (description
+     "Estimating the disparity between two groups based on the extended model of the
+Peters-Belson (PB) method.  Our model is the first work on the longitudinal
+data, and also can set a varying variable to find the complicated association
+between other variables and the varying variable.  Our work is an extension of
+the Peters-Belson method which was originally published in Peters
+(1941)<doi:10.1080/00220671.1941.10881036> and Belson
+(1956)<doi:10.2307/2985420>.")
+    (license license:gpl3)))
+
 (define-public r-vcov
   (package
     (name "r-vcov")
@@ -5902,6 +5900,32 @@ unrealistic assumptions of the traditional fixed-effect and random-effects
 meta-analysis methods.  For details see: Statistical Methods for Psychologists,
 Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
     (license license:gpl3)))
+
+(define-public r-vcfppr
+  (package
+    (name "r-vcfppr")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcfppR" version))
+       (sha256
+        (base32 "0j8z3njmwhdkyhj1h1zh6ckrcx3hiajd1rpqd9w2d26717qlgp2l"))))
+    (properties `((upstream-name . "vcfppR")))
+    (build-system r-build-system)
+    (inputs (list zlib openssl openssh curl))
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/Zilong-Li/vcfppR")
+    (synopsis "Rapid Manipulation of the Variant Call Format (VCF)")
+    (description
+     "The vcfpp.h (<https://github.com/Zilong-Li/vcfpp>) provides an easy-to-use C++
+API of htslib', offering full functionality for manipulating Variant Call Format
+(VCF) files.  The @code{vcfppR} package serves as the R bindings of the vcfpp.h
+library, enabling rapid processing of both compressed and uncompressed VCF
+files.  Explore a range of powerful features for efficient VCF data
+manipulation.")
+    (license license:expat)))
 
 (define-public r-vcdextra
   (package

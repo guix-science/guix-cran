@@ -4357,6 +4357,32 @@ CB, EG, SG, NEAT CE/PSE and NEC designs, supporting Gaussian, logistic and
 uniform kernels and unsmoothed and pre-smoothed input data.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-kepted
+  (package
+    (name "r-kepted")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KEPTED" version))
+       (sha256
+        (base32 "1xlmmr2qy00gq6hsh1vazb9mb27hz2pjbw8chxb1p1a7d9ps0yrg"))))
+    (properties `((upstream-name . "KEPTED")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-expm r-cubature r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tyy20/KEPTED")
+    (synopsis
+     "Kernel-Embedding-of-Probability Test for Elliptical Distribution")
+    (description
+     "This package provides an implementation of a kernel-embedding of probability
+test for elliptical distribution.  This is an asymptotic test for elliptical
+distribution under general alternatives, and the location and shape parameters
+are assumed to be unknown.  Some side-products are posted, including the
+transformation between rectangular and polar coordinates and two product-type
+kernel functions.  See Tang and Li (2024) <@code{arXiv:2306.10594>} for details.")
+    (license license:bsd-3)))
+
 (define-public r-kensyn
   (package
     (name "r-kensyn")

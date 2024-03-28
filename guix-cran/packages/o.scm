@@ -5209,13 +5209,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0hrikqbmylr0sbxq478alm290c5a8mlxwxmnhlzxvbmzfbv2ywhl"))))
+        (base32 "08na53jwpidxfzlqwxzc1dmf06q51ncdgz9sb1yfrw37jwp1frj7"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))
@@ -5731,39 +5731,6 @@ metrics of their own.")
 weather data in a tidy format.  No API key is required.  The API specification
 is located at <https://open-meteo.com/en/docs>.")
     (license license:gpl3+)))
-
-(define-public r-openland
-  (package
-    (name "r-openland")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OpenLand" version))
-       (sha256
-        (base32 "02d1dflcbjvm9hgvsm5gpc3s0n0njf4w3224yqk9nc0i49nw01fi"))))
-    (properties `((upstream-name . "OpenLand")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-raster
-                             r-networkd3
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/reginalexavier/OpenLand")
-    (synopsis "Quantitative Analysis and Visualization of LUCC")
-    (description
-     "This package provides tools for the analysis of land use and cover (LUC) time
-series.  It includes support for loading spatiotemporal raster data and
-synthesized spatial plotting.  Several LUC change (LUCC) metrics in regular or
-irregular time intervals can be extracted and visualized through one- and
-multistep sankey and chord diagrams.  A complete intensity analysis according to
-Aldwaik and Pontius (2012) <doi:10.1016/j.landurbplan.2012.02.010> is
-implemented, including tools for the generation of standardized multilevel
-output graphics.")
-    (license license:gpl3)))
 
 (define-public r-openintro
   (package
@@ -7643,6 +7610,33 @@ custom decision criteria in early clinical trials during an ongoing trial.  The
 inference is implemented using stan'.")
     (license license:asl2.0)))
 
+(define-public r-oncofilterfast
+  (package
+    (name "r-oncofilterfast")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Oncofilterfast" version))
+       (sha256
+        (base32 "1ns39r8ljzykpxy5cy4wvgsgiwqpdrida26641av7z3arr1f4kd1"))))
+    (properties `((upstream-name . "Oncofilterfast")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer r-survival))
+    (home-page "https://cran.r-project.org/package=Oncofilterfast")
+    (synopsis "Aids in the Analysis of Genes Influencing Cancer Survival")
+    (description
+     "Aids in the analysis of genes influencing cancer survival by including a
+principal function, calculator(), which calculates the P-value for each provided
+gene under the optimal cutoff in cancer survival studies.  Grounded in
+methodologies from significant works, this package references Therneau's
+survival package (Therneau, 2024; <https://CRAN.R-project.org/package=survival>)
+and the survival analysis extensions by Therneau and Grambsch (2000, ISBN
+0-387-98784-3).  It also integrates the survminer package by Kassambara et al.
+(2021; <https://CRAN.R-project.org/package=survminer>), enhancing survival curve
+visualizations with ggplot2'.")
+    (license license:asl2.0)))
+
 (define-public r-oncobayes2
   (package
     (name "r-oncobayes2")
@@ -9519,36 +9513,6 @@ Experimental Education. <doi:10.1080/00220973.2020.1830361>. (4) Champely, S.
 Available from <https://CRAN.R-project.org/package=pwr>.")
     (license license:gpl3)))
 
-(define-public r-odpc
-  (package
-    (name "r-odpc")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "odpc" version))
-       (sha256
-        (base32 "0cbkq8parb8br1j386xk5mgwz8gkmwvp79f9sjvzhs7z6wlbp0pv"))))
-    (properties `((upstream-name . "odpc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mass
-                             r-forecast
-                             r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=odpc")
-    (synopsis "One-Sided Dynamic Principal Components")
-    (description
-     "This package provides functions to compute the one-sided dynamic principal
-components ('odpc') introduced in @code{PeÃ±a}, Smucler and Yohai (2019)
-<DOI:10.1080/01621459.2018.1520117>.  odpc is a novel dimension reduction
-technique for multivariate time series, that is useful for forecasting.  These
-dynamic principal components are defined as the linear combinations of the
-present and past values of the series that minimize the reconstruction mean
-squared error.")
-    (license license:gpl2+)))
-
 (define-public r-odmeans
   (package
     (name "r-odmeans")
@@ -10712,13 +10676,13 @@ distributions are implemented as described in OâNeill (2019)
 (define-public r-occumb
   (package
     (name "r-occumb")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occumb" version))
        (sha256
-        (base32 "1gvcfhj3lhqj9y9qm3fh0f66bckv4wslpy9ri1dan96lp4qlqx2f"))))
+        (base32 "1rfaswipykflwkdiacq66ibbvf2hzzal2ffibsgrl8q1m6frj5k3"))))
     (properties `((upstream-name . "occumb")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -11452,4 +11416,33 @@ sets) (LÃ¶fstedt and Trygg, 2011 <doi:10.1002/cem.1388>; LÃ¶fstedt et al., 2
 <doi:10.1016/j.aca.2013.06.026>) from the systematic sources of variance being
 specific for each data set separately.")
     (license license:gpl3)))
+
+(define-public r-o2geosocial
+  (package
+    (name "r-o2geosocial")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "o2geosocial" version))
+       (sha256
+        (base32 "0myzr25jjjvlszr0j5ay2nha1nrccwhgh0qd01p52xrlggfjhz1g"))))
+    (properties `((upstream-name . "o2geosocial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-rcpp
+                             r-outbreaker2
+                             r-ggplot2
+                             r-geosphere
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alxsrobert/o2geosocial")
+    (synopsis "Reconstruction of Transmission Chains from Surveillance Data")
+    (description
+     "Bayesian reconstruction of who infected whom during past outbreaks using
+routinely-collected surveillance data.  Inference of transmission trees using
+genotype, age specific social contacts, distance between cases and onset dates
+of the reported cases. (Robert A, Kucharski AJ, Gastanaduy PA, Paul P, Funk S.
+(2020) <doi:10.1098/rsif.2020.0084>).")
+    (license license:expat)))
 

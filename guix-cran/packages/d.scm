@@ -25318,13 +25318,13 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "0zlzsax460njv9370rw1y94vfhs22hmviz0c12bsab814i8vb3mm"))))
+        (base32 "0v76zaqq3kqvzwjmz6r4k816crxc2wrdymfxgjr0c02glcchhsiv"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -26404,6 +26404,37 @@ computational workflow for analysis of matabolomic data..")
      "The DALY Calculator is a free, open-source Graphical User Interface (GUI) for
 stochastic disability-adjusted life year (DALY) calculation.")
     (license license:gpl2+)))
+
+(define-public r-daltoolboxdp
+  (package
+    (name "r-daltoolboxdp")
+    (version "1.0.767")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "daltoolboxdp" version))
+       (sha256
+        (base32 "1l34wb2vl9wmf0vrhis29w4hz1m9jx9qdfi494rfnwals054j3ah"))))
+    (properties `((upstream-name . "daltoolboxdp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-smotefamily
+                             r-leaps
+                             r-glmnet
+                             r-fselector
+                             r-doby
+                             r-daltoolbox))
+    (home-page "https://github.com/cefet-rj-dal/daltoolboxdp")
+    (synopsis "Data Pre-Processing Extensions")
+    (description
+     "An important aspect of data analytics is related to data management support for
+artificial intelligence.  It is related to preparing data correctly.  This
+package provides extensions to support data preparation in terms of both data
+sampling and data engineering.  Overall, the package provides researchers with a
+comprehensive set of functionalities for data science based on experiment lines,
+promoting ease of use, extensibility, and integration with various tools and
+libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
+<doi:10.1007/978-3-642-02279-1_20>.")
+    (license license:expat)))
 
 (define-public r-daltoolbox
   (package

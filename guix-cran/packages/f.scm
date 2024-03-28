@@ -10365,6 +10365,31 @@ display the result.")
 nls', @code{nlsList} and nlme frameworks.")
     (license license:gpl2)))
 
+(define-public r-flexor
+  (package
+    (name "r-flexor")
+    (version "0.9.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flexOR" version))
+       (sha256
+        (base32 "1am17ggfzak5jn7rxsj5wf2fhgsq7zqpc79xql3jxfw9dqynp9id"))))
+    (properties `((upstream-name . "flexOR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mgcv r-gam))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/martaaaa/flexOR")
+    (synopsis "Flexible Odds Ratio Curves")
+    (description
+     "This package provides flexible hazard ratio curves that enable modeling
+non-linear relationships between continuous predictors and survival outcomes.
+This package facilitates a deeper understanding of the impact of each continuous
+predictor on the outcome by presenting results in terms of odds ratio (OR)
+curves based on splines.  These curves allow for comparison against a specified
+reference value, aiding in the interpretation of the predictor's effect.")
+    (license license:gpl3)))
+
 (define-public r-flexmsm
   (package
     (name "r-flexmsm")
@@ -12050,13 +12075,13 @@ fossil calibrations, and diversification rate information for ray-finned fishes.
 (define-public r-fishrman
   (package
     (name "r-fishrman")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishRman" version))
        (sha256
-        (base32 "09kzjcngycf1xvcyszqfsrn6iypn4n86cz0h2cmwv0i6hc8k0jwb"))))
+        (base32 "1pyryc6pilyy68z7443gi6ixi8b0hy338l9zfw74isrxywbygy8n"))))
     (properties `((upstream-name . "fishRman")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -12076,11 +12101,9 @@ fossil calibrations, and diversification rate information for ray-finned fishes.
     (home-page "https://github.com/Shyentist/fish-r-man")
     (synopsis "The Fisheries Scientist's Toolbox")
     (description
-     "This package provides a bundle of analytics tools for fisheries scientists.
-Data on fishing effort by Global Fishing Watch can be retrieved via the
-package's API <https://fishrman.ddnsfree.com/gfw>, as well as data on Exclusive
-Economic Zones by Marine Regions'.  A shiny R App is included for a no-code
-solution for retrieval, analysis, and visualization.")
+     "This package provides a bundle of analytics tools for fisheries scientists.  A
+shiny R App is included for a no-code solution for retrieval, analysis, and
+visualization.")
     (license license:agpl3+)))
 
 (define-public r-fishresp
@@ -14572,13 +14595,13 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fgarch
   (package
     (name "r-fgarch")
-    (version "4032.91")
+    (version "4033.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fGarch" version))
        (sha256
-        (base32 "0jl76w657hlx1mf977dcm2yv1sv1fsy1nfiqnfnccqscyx9iz0z5"))))
+        (base32 "038lcx1sxkldqvmy9y14gmmbkqn4gqzlnff80s11fny004h6hdf8"))))
     (properties `((upstream-name . "fGarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries
@@ -14588,7 +14611,7 @@ accepts fundamental items and digital elevation models.")
                              r-fastica
                              r-cvar))
     (native-inputs (list gfortran))
-    (home-page "https://www.rmetrics.org")
+    (home-page "https://geobosh.github.io/fGarchDoc/")
     (synopsis
      "Rmetrics - Autoregressive Conditional Heteroskedastic Modelling")
     (description
@@ -21730,6 +21753,31 @@ with data.table and mvnfast installed.")
 and cleansing processes.  These function helps in messages and interaction with
 the user, keep track of information in pipelines, help in the wrangling,
 munging, assessment and visualization of data frame-like material.")
+    (license license:gpl3)))
+
+(define-public r-fabprediction
+  (package
+    (name "r-fabprediction")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fabPrediction" version))
+       (sha256
+        (base32 "1vachv2fgjlh932q28266b6x59sdvrmwp8si9pa4b543sdzklpms"))))
+    (properties `((upstream-name . "fabPrediction")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sae))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/betsybersson/fabPrediction")
+    (synopsis
+     "Compute FAB (Frequentist and Bayes) Conformal Prediction Intervals")
+    (description
+     "Computes and plots prediction intervals for numerical data or prediction sets
+for categorical data using prior information.  Empirical Bayes procedures to
+estimate the prior information from multi-group data are included.  See,
+e.g.,Bersson and Hoff (2022) <@code{arXiv:2204.08122>} \"Optimal Conformal
+Prediction for Small Areas\".")
     (license license:gpl3)))
 
 (define-public r-fabmix

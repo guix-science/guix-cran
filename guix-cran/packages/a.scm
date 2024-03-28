@@ -7424,79 +7424,6 @@ vignettes.  The data sets were formerly distributed with @code{ArchaeoPhases}',
 however they exceed current CRAN policy for package size.")
     (license license:gpl3)))
 
-(define-public r-archaeophases
-  (package
-    (name "r-archaeophases")
-    (version "1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ArchaeoPhases" version))
-       (sha256
-        (base32 "00d8lpasz96l55v3982mqg85b237lxvsjl65p288yzj87860v2kj"))))
-    (properties `((upstream-name . "ArchaeoPhases")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-toordinal
-                             r-shiny
-                             r-reshape2
-                             r-readr
-                             r-magrittr
-                             r-hdrcde
-                             r-gtools
-                             r-gplots
-                             r-ggraph
-                             r-ggplot2
-                             r-ggalt
-                             r-dplyr
-                             r-digest
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ArchaeoPhases")
-    (synopsis
-     "Post-Processing of the Markov Chain Simulated by 'ChronoModel', 'Oxcal' or 'BCal'")
-    (description
-     "This package provides a list of functions for the statistical analysis of
-archaeological dates and groups of dates.  It is based on the post-processing of
-the Markov Chains whose stationary distribution is the posterior distribution of
-a series of dates.  Such output can be simulated by different applications as
-for instance @code{ChronoModel} (see <https://chronomodel.com/>), Oxcal (see
-<https://c14.arch.ox.ac.uk/oxcal.html>) or BCal (see
-<https://bcal.shef.ac.uk/>).  The only requirement is to have a csv file
-containing a sample from the posterior distribution.  Note that this package
-interacts with data available through the @code{ArchaeoPhases.dataset} package
-which is available in a separate repository.  The size of the
-@code{ArchaeoPhases.dataset} package is approximately 4 MB.")
-    (license license:gpl3)))
-
-(define-public r-archaeochron
-  (package
-    (name "r-archaeochron")
-    (version "0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ArchaeoChron" version))
-       (sha256
-        (base32 "1qma2432mm73h72g9ah1k02wlcb6yrhc6mpai9nj7v58s126ffxn"))))
-    (properties `((upstream-name . "ArchaeoChron")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rjags r-coda r-bchron r-archaeophases))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ArchaeoChron")
-    (synopsis "Bayesian Modeling of Archaeological Chronologies")
-    (description
-     "This package provides a list of functions for the Bayesian modeling of
-archaeological chronologies.  The Bayesian models are implemented in JAGS ('JAGS
-stands for Just Another Gibbs Sampler.  It is a program for the analysis of
-Bayesian hierarchical models using Markov Chain Monte Carlo (MCMC) simulation.
-See <http://mcmc-jags.sourceforge.net/> and \"JAGS Version 4.3.0 user manual\",
-Martin Plummer (2017)
-<https://sourceforge.net/projects/mcmc-jags/files/Manuals/>.).  The inputs are
-measurements with their associated standard deviations and the study period.
-The output is the MCMC sample of the posterior distribution of the event date
-with or without radiocarbon calibration.")
-    (license license:gpl3)))
-
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
@@ -9290,42 +9217,6 @@ factorial and fractional factorial designs and Plackett-Burman designs using the
 all possible comparisons (APC) methodology developed by Miller (2005)
 <doi:10.1198/004017004000000608>.")
     (license license:gpl3)))
-
-(define-public r-apcalign
-  (package
-    (name "r-apcalign")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "APCalign" version))
-       (sha256
-        (base32 "1kbkwpf7lzg7lznl0ysnwwilmklqyqd02qc1vl0pfbd407pqlyyv"))))
-    (properties `((upstream-name . "APCalign")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-forcats
-                             r-dplyr
-                             r-curl
-                             r-crayon
-                             r-arrow))
-    (native-inputs (list r-knitr))
-    (home-page "https://traitecoevo.github.io/APCalign/")
-    (synopsis "Resolving Plant Taxon Names Using the Australian Plant Census")
-    (description
-     "The process of resolving taxon names is necessary when working with biodiversity
-data.  APCalign uses the Australian Plant Census (APC) and the Australian Plant
-Name Index (APNI) to align and update plant taxon names to current, accepted
-standards.  APCalign also supplies information about the established status of
-plant taxa across different states/territories.")
-    (license license:expat)))
 
 (define-public r-apc
   (package
@@ -21021,6 +20912,34 @@ gravity-based and floating catchment areas methods), as well as the most
 frequently used inequality and poverty metrics (such as the Palma ratio, the
 concentration and Theil indices and the FGT family of measures).")
     (license license:expat)))
+
+(define-public r-accelstab
+  (package
+    (name "r-accelstab")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AccelStab" version))
+       (sha256
+        (base32 "072wm4421bir8ij1g5zj0rn26h28vz7np6glmvapv18q4kfz1x88"))))
+    (properties `((upstream-name . "AccelStab")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-mvtnorm r-minpack-lm r-ggplot2 r-dplyr))
+    (home-page "https://github.com/AccelStab/AccelStab")
+    (synopsis "Accelerated Stability Kinetic Modelling")
+    (description
+     "Estimate the Å @code{estÃ¡kâBerggren} kinetic model (degradation model) from
+experimental data.  A A closed-form (analytic) solution to the degradation model
+is implemented as a non-linear fit, allowing for the extrapolation of the
+degradation of a drug product - both in time and temperature.  Parametric
+bootstrap, with kinetic parameters drawn from the multivariate t-distribution,
+and analytical formulae (the delta method) are available options to calculate
+the confidence and prediction intervals.  The results (modelling, extrapolations
+and statistical intervals) can be visualised with multiple plots.  The examples
+illustrate the accelerated stability modelling in drugs and vaccines
+development.")
+    (license license:agpl3+)))
 
 (define-public r-acca
   (package

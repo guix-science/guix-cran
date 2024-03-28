@@ -1059,6 +1059,28 @@ R., Costa, A.M., Szemis, J.M., & Webb, J.A. (2017)
 R. J. (2013) <doi:10.7158/W12-028.2013.17.1>.")
     (license license:gpl3)))
 
+(define-public r-hydrodcindex
+  (package
+    (name "r-hydrodcindex")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydroDCindex" version))
+       (sha256
+        (base32 "0nci4jj2aca2kaq4cgrv9sq9pksjaagqik2y8j1c2a1w39qjzyan"))))
+    (properties `((upstream-name . "hydroDCindex")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hydroDCindex")
+    (synopsis "Duration Curve Hydrological Model Indexes")
+    (description
+     "Compute duration curves of daily flow series, both real and modeled, to be
+compared through indexes of flow duration curves.  The package functions include
+comparative plots and goodness of fit tests.  Flow duration curve indexes are
+based on: Yilmaz et al., (2008) <DOI:10.1029/2007WR006716>.")
+    (license license:gpl3)))
+
 (define-public r-hydrocode
   (package
     (name "r-hydrocode")
@@ -2174,6 +2196,60 @@ framework to facilitate the measurement of HTTP request time and cache
 performance.")
     (license license:expat)))
 
+(define-public r-httk
+  (package
+    (name "r-httk")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "httk" version))
+       (sha256
+        (base32 "1ws9bxrl0r59nni6avvr7qgs866p90l88x9xyfw2s90j5q2zzil5"))))
+    (properties `((upstream-name . "httk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-survey
+                             r-rdpack
+                             r-purrr
+                             r-mvtnorm
+                             r-msm
+                             r-magrittr
+                             r-ggplot2
+                             r-desolve
+                             r-data-table))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page
+     "https://www.epa.gov/chemical-research/rapid-chemical-exposure-and-dose-research")
+    (synopsis "High-Throughput Toxicokinetics")
+    (description
+     "Pre-made models that can be rapidly tailored to various chemicals and species
+using chemical-specific in vitro data and physiological information.  These
+tools allow incorporation of chemical toxicokinetics (\"TK\") and in vitro-in vivo
+extrapolation (\"IVIVE\") into bioinformatics, as described by Pearce et al.
+(2017) (<doi:10.18637/jss.v079.i04>).  Chemical-specific in vitro data
+characterizing toxicokinetics have been obtained from relatively high-throughput
+experiments.  The chemical-independent (\"generic\") physiologically-based
+(\"PBTK\") and empirical (for example, one compartment) \"TK\" models included here
+can be parameterized with in vitro data or in silico predictions which are
+provided for thousands of chemicals, multiple exposure routes, and various
+species.  High throughput toxicokinetics (\"HTTK\") is the combination of in vitro
+data and generic models.  We establish the expected accuracy of HTTK for
+chemicals without in vivo data through statistical evaluation of HTTK
+predictions for chemicals where in vivo data do exist.  The models are systems
+of ordinary differential equations that are developed in MCSim and solved using
+compiled (C-based) code for speed.  A Monte Carlo sampler is included for
+simulating human biological variability (Ring et al., 2017
+<doi:10.1016/j.envint.2017.06.004>) and propagating parameter uncertainty
+(Wambaugh et al., 2019 <doi:10.1093/toxsci/kfz205>).  Empirically calibrated
+methods are included for predicting tissue:plasma partition coefficients and
+volume of distribution (Pearce et al., 2017 <doi:10.1007/s10928-017-9548-7>).
+These functions and data provide a set of tools for using IVIVE to convert
+concentrations from high-throughput screening experiments (for example, Tox21,
+@code{ToxCast}) to real-world exposures via reverse dosimetry (also known as
+\"RTK\") (Wetmore et al., 2015 <doi:10.1093/toxsci/kfv171>).")
+    (license license:gpl3)))
+
 (define-public r-htt
   (package
     (name "r-htt")
@@ -2274,6 +2350,37 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
      "This package provides functions for the management and treatment of hydrology
 and meteorology time-series stored in a Sqlite data base.")
     (license license:gpl2)))
+
+(define-public r-htseed
+  (package
+    (name "r-htseed")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HTSeed" version))
+       (sha256
+        (base32 "01h9lm2ljp67qfcl7vlh804r7q15arqx103jb9pvk2wx1c27qy3x"))))
+    (properties `((upstream-name . "HTSeed")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (home-page "https://cran.r-project.org/package=HTSeed")
+    (synopsis "Fitting of Hydrotime Model for Seed Germination Time Course")
+    (description
+     "The seed germination process starts with water uptake by the seed and ends with
+the protrusion of radicle and plumule under varying temperatures and soil water
+potential.  Hydrotime is a way to describe the relationship between water
+potential and seed germination rates at germination percentages.  One important
+quantity before applying hydrotime modeling of germination percentages is to
+consider the proportion of viable seeds that could germinate under saturated
+conditions.  This package can be used to apply correction factors at various
+water potentials before estimating parameters like stress tolerance, and
+uniformity of the hydrotime model.  Three different distributions namely,
+Gaussian, Logistic, and Extreme value distributions have been considered to fit
+the model to the seed germination time course.  Details can be found in Bradford
+(2002) <https://www.jstor.org/stable/4046371>, and Bradford and Still(2004)
+<https://www.jstor.org/stable/23433495>.")
+    (license license:gpl3)))
 
 (define-public r-hts
   (package
@@ -11500,21 +11607,19 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.737")
+    (version "1.0.747")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0amqpx3pfvnx30dknxs4759b7c4qd4839zkrwf4ayg5klc06v7zd"))))
+        (base32 "0955n7mriy1yl5lw1cip6x3ynn5bz6z02j8hvn4mi9ysy9sky837"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tspred
-                             r-tsmp
+    (propagated-inputs (list r-tsmp
                              r-strucchange
                              r-stringr
                              r-rugarch
-                             r-reticulate
                              r-ggplot2
                              r-forecast
                              r-dtwclust
@@ -11522,7 +11627,7 @@ rate only in the weak sense, rather than the strong sense as intended.")
                              r-daltoolbox
                              r-changepoint))
     (home-page "https://github.com/cefet-rj-dal/harbinger")
-    (synopsis "An Unified Time Series Event Detection Framework")
+    (synopsis "Unified Time Series Event Detection Framework")
     (description
      "By analyzing time series, it is possible to observe significant changes in the
 behavior of observations that frequently characterize events.  Events present

@@ -2014,6 +2014,35 @@ formats as well as other swatch file formats can be found at
 <http://www.selapa.net/swatches/colors/fileformats.php>.")
     (license license:expat)))
 
+(define-public r-swarmverse
+  (package
+    (name "r-swarmverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "swaRmverse" version))
+       (sha256
+        (base32 "1z14ys2y42griwbwcjilk552haczlfbazjzwa5g6kvlxjibm1dq0"))))
+    (properties `((upstream-name . "swaRmverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trackdf r-swarm r-rtsne r-pbapply r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://marinapapa.github.io/swaRmverse/")
+    (synopsis "Swarm Space Creation")
+    (description
+     "This package provides a pipeline for the comparative analysis of collective
+movement data (e.g. fish schools, bird flocks, baboon troops) by processing
+2-dimensional positional data (x,y,t) from GPS trackers or computer vision
+tracking systems, discretizing events of collective motion, calculating a set of
+established metrics that characterize each event, and placing the events in a
+multi-dimensional swarm space constructed from these metrics.  The swarm space
+concept, the metrics and data sets included are described in: Papadopoulou
+Marina, Furtbauer Ines, O'Bryan Lisa R., Garnier Simon, Georgopoulou Dimitra G.,
+Bracken Anna M., Christensen Charlotte and King Andrew J. (2023)
+<doi:10.1098/rstb.2022.0068>.")
+    (license license:gpl3)))
+
 (define-public r-swarm
   (package
     (name "r-swarm")
@@ -17539,47 +17568,6 @@ discipline (Hankin, 2022, <doi:10.48550/ARXIV.2210.03856>).  To cite the package
 in publications please use Hankin (2022) <doi:10.48550/ARXIV.2210.10848>.")
     (license license:gpl2+)))
 
-(define-public r-spqdep
-  (package
-    (name "r-spqdep")
-    (version "0.1.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spqdep" version))
-       (sha256
-        (base32 "03lzp368ylkf1hrnl00kndlkmp9lwma0j9w9b3hn5glzdljhalxl"))))
-    (properties `((upstream-name . "spqdep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-spdep
-                             r-spatialreg
-                             r-sp
-                             r-sf
-                             r-rsample
-                             r-rgeoda
-                             r-purrr
-                             r-matrix
-                             r-magrittr
-                             r-lwgeom
-                             r-igraph
-                             r-gtools
-                             r-gt
-                             r-gridextra
-                             r-ggplot2
-                             r-dplyr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://f8l5h9.github.io/spqdep/")
-    (synopsis
-     "Testing for Spatial Independence of Qualitative Data in Cross Section")
-    (description
-     "Testing for Spatial Dependence of Qualitative Data in Cross Section.  The list
-of functions includes join-count tests, Q test, spatial scan test, similarity
-test and spatial runs test.  The methodology of these models can be found in
-<doi:10.1007/s10109-009-0100-1> and <doi:10.1080/13658816.2011.586327>.")
-    (license license:expat)))
-
 (define-public r-sppop
   (package
     (name "r-sppop")
@@ -17656,37 +17644,6 @@ statistics for regression analysis.  Furthermore, the outer ellipse flags
 potential outliers.  Multiple groups can be compared in terms of centers and
 spreads as illustrated in the examples.")
     (license license:gpl3)))
-
-(define-public r-spotsampling
-  (package
-    (name "r-spotsampling")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpotSampling" version))
-       (sha256
-        (base32 "0s47dvigzkcl9ynrdiwrjzwap18dpkb29jngi8ddvf9m4xywj4al"))))
-    (properties `((upstream-name . "SpotSampling")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wavesampling r-sampling r-pracma r-mass
-                             r-balancedsampling))
-    (home-page "https://cran.r-project.org/package=SpotSampling")
-    (synopsis "SPatial and Optimally Temporal (SPOT) Sampling")
-    (description
-     "In spatial data, information of two neighboring units are generally very
-similar.  For spatial sampling, it is therefore more efficient to select samples
-that are well spread out in space.  Often, the interest lies not only in
-estimating a measure at one point in time, but rather in estimating several
-points in time to also study the evolution.  Three new methods called Orfs
-(Optimal Rotation with Fixed sample Size), Orsp (Optimal Rotation with Spread
-sample), and Spot (Spatial and Optimally Temporal Sampling) are implemented in
-this package.  Orfs allows to select temporal samples with fixed size.  Orsp
-selects spatio-temporal samples with random size that are well spread out in
-space at each point in time.  And Spot generates spread sample with fixed sample
-size at each wave.  These methods provide an optimal time rotation of the
-selected units using the systematic sampling.")
-    (license license:gpl2+)))
 
 (define-public r-spotoroo
   (package
@@ -26477,13 +26434,13 @@ missing values and is delivered with a graphical user interface based on shiny'.
 (define-public r-somadataio
   (package
     (name "r-somadataio")
-    (version "6.0.0")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SomaDataIO" version))
        (sha256
-        (base32 "1ld0icylfj9nsdacm3dc7p4q6ysah393njcjxzj0zyp077k014nz"))))
+        (base32 "1r9hb804gjzqn0y91kyc4ays7x3pqxknsbz0b3gy2kkldkhb60c1"))))
     (properties `((upstream-name . "SomaDataIO")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -26500,7 +26457,7 @@ missing values and is delivered with a graphical user interface based on shiny'.
     (synopsis "Input/Output 'SomaScan' Data")
     (description
      "Load and export @code{SomaScan} data via the @code{SomaLogic} Operating Co.,
-Inc.  proprietary text file called an ADAT ('*.adat').  For file format see
+Inc.  structured text file called an ADAT ('*.adat').  For file format see
 <https://github.com/@code{SomaLogic/SomaLogic-Data/blob/master/README.md>}.  The
 package also exports auxiliary functions for manipulating, wrangling, and
 extracting relevant information from an ADAT object once in memory.")
@@ -45768,17 +45725,17 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
 (define-public r-seqimpute
   (package
     (name "r-seqimpute")
-    (version "1.8")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqimpute" version))
        (sha256
-        (base32 "1vivs790zbwm8c7fwifz0nj0n9wzjmr8whz0f4pwp44gvcickxwn"))))
+        (base32 "1g60drnx12j6wzkisxlmhidvqzzgsrmmmmp8dljq94bb5iv8xjmz"))))
     (properties `((upstream-name . "seqimpute")))
     (build-system r-build-system)
-    (propagated-inputs (list r-traminer
-                             r-swfscmisc
+    (propagated-inputs (list r-traminerextras
+                             r-traminer
                              r-stringr
                              r-rms
                              r-ranger
@@ -45793,12 +45750,13 @@ Hypermutation; Biorxiv 2018 <doi:10.1101/287839>.")
                              r-dfidx
                              r-cluster
                              r-amelia))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=seqimpute")
     (synopsis "Imputation of Missing Data in Sequence Analysis")
     (description
      "Multiple imputation of missing data present in a dataset through the prediction
 based on either a random forest or a multinomial regression model.  Covariates
-and time-dependant covariates can be included in the model.  The prediction of
+and time-dependent covariates can be included in the model.  The prediction of
 the missing values is based on the method of Halpin (2012)
 <https://researchrepository.ul.ie/articles/report/Multiple_imputation_for_life-course_sequence_data/19839736>.")
     (license license:gpl2)))
@@ -48541,28 +48499,30 @@ evaluating the candidates in each stage.")
 (define-public r-selectionbias
   (package
     (name "r-selectionbias")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SelectionBias" version))
        (sha256
-        (base32 "1lqpa5yyxipnx31r0gmja59dk85gmpg9j1rzpc9vh0lq3l87878b"))))
+        (base32 "00fk3ljm3x1slffni6g4j61s2766znlmamg16vmbkfjmrbb80nfy"))))
     (properties `((upstream-name . "SelectionBias")))
     (build-system r-build-system)
-    (propagated-inputs (list r-arm))
+    (propagated-inputs (list r-lifecycle r-arm))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SelectionBias")
+    (home-page "https://github.com/stizet/SelectionBias")
     (synopsis
      "Calculates Bounds for the Selection Bias for Binary Treatment and Outcome Variables")
     (description
      "Computes bounds and sensitivity parameters as part of sensitivity analysis for
-selection bias.  Two bounds are provided: the SV (Smith and @code{VanderWeele})
-bound and the AF (assumption-free) bound.  The SV bound assumes an additional
-dependence structure in form of a generalized M-structure whereas the AF bound
-holds for general assumptions in the potential outcomes framework.  See Smith
-and @code{VanderWeele} (2019) <doi:10.1097/EDE.0000000000001032> and Zetterstrom
-and Waernbaum (2022) <doi:10.1515/em-2022-0108>.")
+selection bias.  Different bounds are provided: the SV (Smith and
+@code{VanderWeele}), AF (assumption-free) bound, GAF (generalized AF), and CAF
+(counterfactual AF) bounds.  The calculation of the sensitivity parameters for
+the SV and GAF bounds assume an additional dependence structure in form of a
+generalized M-structure.  The bounds can be calculated for any structure as long
+as the necessary assumptions hold.  See Smith and @code{VanderWeele} (2019)
+<doi:10.1097/EDE.0000000000001032>, Zetterstrom and Waernbaum (2022)
+<doi:10.1515/em-2022-0108> and Zetterstrom (2024) <doi:10.1515/em-2023-0033>.")
     (license license:expat)))
 
 (define-public r-selection-index
@@ -55637,6 +55597,32 @@ complex survey option.  In such cases, the model estimator in Mplus defaults to
 ML with robust standard errors.")
     (license license:expat)))
 
+(define-public r-sbrl
+  (package
+    (name "r-sbrl")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbrl" version))
+       (sha256
+        (base32 "0waq58bhbfs5g3p2gb888lcsq7h3r3h8llrs5zyhi6529g36y765"))))
+    (properties `((upstream-name . "sbrl")))
+    (build-system r-build-system)
+    (inputs (list gsl gsl gmp))
+    (propagated-inputs (list r-rcpp r-arules))
+    (home-page "https://cran.r-project.org/package=sbrl")
+    (synopsis "Scalable Bayesian Rule Lists Model")
+    (description
+     "An efficient implementation of Scalable Bayesian Rule Lists Algorithm, a
+competitor algorithm for decision tree algorithms; see Hongyu Yang, Cynthia
+Rudin, Margo Seltzer (2017) <https://proceedings.mlr.press/v70/yang17h.html>.
+It builds from pre-mined association rules and have a logical structure
+identical to a decision list or one-sided decision tree.  Fully optimized over
+rule lists, this algorithm strikes practical balance between accuracy,
+interpretability, and computational speed.")
+    (license license:gpl2+)))
+
 (define-public r-sboost
   (package
     (name "r-sboost")
@@ -56805,13 +56791,13 @@ Quarto Website.")
 (define-public r-sarima
   (package
     (name "r-sarima")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarima" version))
        (sha256
-        (base32 "0zya0qpqvyiyq9lv8y2kcyd3v0hqw8n3chlqn2v24pyiq94h7kqg"))))
+        (base32 "0x6wndy7mdmnliabrbs9qbpm7ibf2h7s3m4d90pasna6hw11yg3d"))))
     (properties `((upstream-name . "sarima")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -56834,10 +56820,7 @@ documentation and vignettes for the current functionality.  Function sarima()
 fits extended multiplicative seasonal ARIMA models with trends, exogenous
 variables and arbitrary roots on the unit circle, which can be fixed or
 estimated (for the algebraic basis for this see <@code{arXiv:2208.05055>}, a
-paper on the methodology is being prepared).  The suggested package
-@code{FitARMA} can be installed with
-remotes::install_github(\"cran/@code{FitARMA}\") if necessary but is no longer
-needed in normal use.")
+paper on the methodology is being prepared).")
     (license license:gpl2+)))
 
 (define-public r-sara4r

@@ -1521,16 +1521,16 @@ adapted from Bowen et al. (2018, <doi:10.1007/s00442-018-4192-5>).")
 (define-public r-isotree
   (package
     (name "r-isotree")
-    (version "0.5.24-3")
+    (version "0.6.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotree" version))
        (sha256
-        (base32 "02cnk9y8kc5zc9jzzhhxhgqi2z19yj2glvylbmydiagwli1aqvfl"))))
+        (base32 "0v0lr1aimlvgm6bpnaz1z4707fnrqvzfc3rziz0vcbzgycs0abvd"))))
     (properties `((upstream-name . "isotree")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/david-cortes/isotree")
     (synopsis "Isolation-Based Outlier Detection")

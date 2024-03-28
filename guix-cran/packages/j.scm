@@ -697,13 +697,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.1.7")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "1rg913xfyzyxrfpvidxh80y4m4ls9ns14d24j2kv7qsaxhzq00si"))))
+        (base32 "0a7pyl04ngacnfml1qvnnwb9kwcdk2sp7mwxhyxah9iqpgpmrg66"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -941,13 +941,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1n3fq2i53vsbh0z6p8142mi00cy9zxbsh34s048h97hg0ljzwkz6"))))
+        (base32 "0wllv07667izvsihhh0hhikxsyawxhpb560r6lli80phjpn88d28"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -958,6 +958,7 @@ available at the following URL:
                              r-shinycustomloader
                              r-shiny
                              r-see
+                             r-scales
                              r-rvg
                              r-rstudioapi
                              r-readxl
@@ -982,7 +983,7 @@ available at the following URL:
                              r-dt
                              r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/jinseob2kim/jsmodule")
+    (home-page "https://jinseob2kim.github.io/jsmodule/")
     (synopsis "'RStudio' Addins and 'Shiny' Modules for Medical Research")
     (description
      "RStudio addins and Shiny modules for descriptive statistics, regression and

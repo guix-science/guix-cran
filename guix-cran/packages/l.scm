@@ -998,13 +998,13 @@ palettes from users photos directly.")
 (define-public r-ltasr
   (package
     (name "r-ltasr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTASR" version))
        (sha256
-        (base32 "1cq00w9pg4mmgsg7ydm9azr0f9hgxa7vskpfrmh90j6xixqmpn4c"))))
+        (base32 "1dab18np0jkb9s8lkrmsk52h0f714ry851kvbnqs2kdl3zrsrl2f"))))
     (properties `((upstream-name . "LTASR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -1018,7 +1018,7 @@ palettes from users photos directly.")
                              r-lubridate
                              r-knitr
                              r-dplyr))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://cran.r-project.org/package=LTASR")
     (synopsis
      "Functions to Replicate the Center for Disease Control and Prevention's 'LTAS' Software in R")
@@ -3972,21 +3972,26 @@ Hochreiter, S., & Schmidhuber, J. (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-lomb
   (package
     (name "r-lomb")
-    (version "2.2.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lomb" version))
        (sha256
-        (base32 "0hb9ilybd9b4i0b5778b4lin899gnix2xwxlcqiy05lhb8qxzzij"))))
+        (base32 "1jlmdbxlxk2a1sbkzn3x18z82i0mwhjhy72j1l02qcnyxp3clbh4"))))
     (properties `((upstream-name . "lomb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-plotly r-gridextra r-ggplot2))
+    (propagated-inputs (list r-pracma r-plotly r-knitr r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lomb")
     (synopsis "Lomb-Scargle Periodogram")
     (description
-     "Computes the Lomb-Scargle Periodogram for unevenly sampled time series.
-Includes a randomization procedure to obtain exact p-values.")
+     "Computes the Lomb-Scargle Periodogram and actogram for evenly or unevenly
+sampled time series.  Includes a randomization procedure to obtain exact
+p-values.  Partially based on C original by Press et al. (Numerical Recipes) and
+the Python module Astropy.  For more information see Ruf, T. (1999).  The
+Lomb-Scargle periodogram in biological rhythm research: analysis of incomplete
+and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
     (license license:gpl3+)))
 
 (define-public r-lomar
@@ -6144,13 +6149,13 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "124rahrbvrkr1mvazjwz7b42333az9sh26nml9snrcicl0ysjyzv"))))
+        (base32 "12vq5rail8xdw84ms6nv4ncmdygk485vffyzqc9kcc7wxlbr127i"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -6394,36 +6399,6 @@ Pearson Type III [L], Polynomial Density-Quantile 3 and 4 [L], Rayleigh [L],
 Rev-Gumbel [L+RC], Rice [L], Singh Maddala [L], Slash [TL], 3p Student t [L],
 Truncated Exponential [L], Wakeby [L], and Weibull [L].")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-lmofit
-  (package
-    (name "r-lmofit")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LMoFit" version))
-       (sha256
-        (base32 "10xiaa5h8c0sq9z70yjs29z8jnjyqgybdv33d6s2100h3n46jd31"))))
-    (properties `((upstream-name . "LMoFit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf r-pracma r-lmom r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LMoFit")
-    (synopsis "Advanced L-Moment Fitting of Distributions")
-    (description
-     "This package provides a complete framework for frequency analysis is provided by
-L@code{MoFit}'.  It has functions related to the determination of sample
-L-moments as in Hosking, J.R.M. (1990) <doi:10.1111/j.2517-6161.1990.tb01775.x>,
-the fitting of various distributions as in Zaghloul et al. (2020)
-<doi:10.1016/j.advwatres.2020.103720> and Hosking, J.R.M. (2019)
-<https://CRAN.R-project.org/package=lmom>, besides plotting and manipulating
-L-space diagrams as in Papalexiou, S.M. & Koutsoyiannis, D. (2016)
-<doi:10.1016/j.advwatres.2016.05.005> for two-shape parametric distributions on
-the L-moment ratio diagram.  Additionally, the quantile, probability density,
-and cumulative probability functions of various distributions are provided in a
-user-friendly manner.")
-    (license license:gpl3)))
 
 (define-public r-lmn
   (package
@@ -11110,13 +11085,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "16nnnswv7d0dz4bw8fvys1i7zd6c56l419fyk9bv0k37vhdnrini"))))
+        (base32 "1znf4zja1gh2v6s2jja3hr9b97gl4dw2wq9yb72yrs18l7917lhv"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

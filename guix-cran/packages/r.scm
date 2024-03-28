@@ -1478,13 +1478,13 @@ performance.")
 (define-public r-rvmf
   (package
     (name "r-rvmf")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvMF" version))
        (sha256
-        (base32 "1386206s3i8a58fk3vsc7zg323hnmq5sc5p9yhcim6qbabsfnljc"))))
+        (base32 "0mlmkax5f86zpr1r81xvzcq874i18smh9af19jdkb70skg92jafs"))))
     (properties `((upstream-name . "rvMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-scmodels r-rfast r-rcpp r-bessel))
@@ -1496,7 +1496,8 @@ performance.")
 distribution on a sphere.  This method is fast and efficient when generating a
 large number of pseudo-random vectors.  Functions to generate random variates
 and compute density for the distribution of an inner product between von
-Mises-Fisher random vector and its mean direction are also provided.")
+Mises-Fisher random vector and its mean direction are also provided.  Details
+are in Kang and Oh (2024) <doi:10.1007/s11222-024-10419-3>.")
     (license license:gpl3+)))
 
 (define-public r-rvmethod
@@ -4668,13 +4669,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.3")
+    (version "9.3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1pjd6kzgzhd9rabcvp9d1qbmjrxwpp36bic48d4k0z5l8xj4qaw1"))))
+        (base32 "0f3p5rm33wc6vbxs3lv6p714b0jh4bb54d25cjyaq97zi38nczq5"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -4938,24 +4939,24 @@ numbers from different sources.")
 (define-public r-rstrava
   (package
     (name "r-rstrava")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rStrava" version))
        (sha256
-        (base32 "0k2nz17s4rlb86gmr0c4r56abw4j7dqshjk599kqy28jqmf2nkyy"))))
+        (base32 "1kn2x208iyz235zf64r2wz4jqgas5srzzjf6gpckqh8dkc6s234f"))))
     (properties `((upstream-name . "rStrava")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-xml
+                             r-tidyterra
                              r-tidyr
                              r-tibble
                              r-rvest
                              r-rcurl
                              r-purrr
-                             r-prettymapr
-                             r-plyr
+                             r-maptiles
                              r-magrittr
                              r-httr
                              r-googleway
@@ -22948,13 +22949,13 @@ Reference Interval Estimation\".  Clinical Chemistry (2022)
 (define-public r-ribd
   (package
     (name "r-ribd")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ribd" version))
        (sha256
-        (base32 "1pzkbazm5mcr05ib2x0cs8aa7jk96k9nhkish96awjd2ihq6c019"))))
+        (base32 "1g378kpi6660176d64r84kw8zk662sai83r33ayjxbfn6w8s48xy"))))
     (properties `((upstream-name . "ribd")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-pedtools r-kinship2 r-glue))
@@ -22967,11 +22968,10 @@ coefficients are computed.  Founders are allowed to be inbred, which enables
 construction of any given kappa coefficients, as described in Vigeland (2020)
 <doi:10.1007/s00285-020-01505-x>.  In addition to the standard coefficients,
 ribd also computes a range of lesser-known coefficients, including generalised
-kinship coefficients (Karigl (1981) <doi:10.1111/j.1469-1809.1981.tb00341.x>;
-Weeks and Lange (1988) <https://pubmed.ncbi.nlm.nih.gov/3422543/>), two-locus
-coefficients (Thompson (1988) <doi:10.1093/imammb/5.4.261>) and multi-person
-coefficients.  Many features of ribd are available through the online app
-@code{QuickPed} at <https://magnusdv.shinyapps.io/quickped>; see Vigeland (2022)
+kinship coefficients, multi-person coefficients and two-locus coefficients
+(Vigeland, 2023, <doi:10.1093/g3journal/jkac326>).  Many features of ribd are
+available through the online app @code{QuickPed} at
+<https://magnusdv.shinyapps.io/quickped>; see Vigeland (2022)
 <doi:10.1186/s12859-022-04759-y>.")
     (license license:gpl3)))
 
@@ -27410,13 +27410,13 @@ large datasets.")
 (define-public r-restatapi
   (package
     (name "r-restatapi")
-    (version "0.22.5")
+    (version "0.23.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatapi" version))
        (sha256
-        (base32 "1vaj20z45y3af1k38fqcxxkpn4fb8arwgm0q5jnf3shfq6ddnzyh"))))
+        (base32 "0sbyy35c7klwb9j99krmfr2hww16n51qmw1xdif32kmdq9sjiqdc"))))
     (properties `((upstream-name . "restatapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rjson r-data-table))
@@ -29955,6 +29955,37 @@ adapting Markov Chain.  Also provides an implementation of EMM (TRACDS on top of
 in part by NSF IIS-0948893 and R21HG005912 from the National Human Genome
 Research Institute.  Hahsler and Dunham (2010) <doi:10.18637/jss.v035.i05>.")
     (license license:gpl2)))
+
+(define-public r-remla
+  (package
+    (name "r-remla")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "REMLA" version))
+       (sha256
+        (base32 "1s3ymb58nn8rci9dzdfwcl23h2fhnjv6531wv9vihdmyxn6vijjd"))))
+    (properties `((upstream-name . "REMLA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gparotation r-geex))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/knieser/REM")
+    (synopsis
+     "Robust Expectation-Maximization Estimation for Latent Variable Models")
+    (description
+     "Traditional latent variable models assume that the population is homogeneous,
+meaning that all individuals in the population are assumed to have the same
+latent structure.  However, this assumption is often violated in practice given
+that individuals may differ in their age, gender, socioeconomic status, and
+other factors that can affect their latent structure.  The robust expectation
+maximization (REM) algorithm is a statistical method for estimating the
+parameters of a latent variable model in the presence of population
+heterogeneity as recommended by Nieser & Cochran (2023)
+<doi:10.1037/met0000413>.  The REM algorithm is based on the
+expectation-maximization (EM) algorithm, but it allows for the case when all the
+data are generated by the assumed data generating model.")
+    (license license:gpl3+)))
 
 (define-public r-remiod
   (package
@@ -45311,6 +45342,38 @@ or full output is also available as well as a parameter to print Fit Statistics
 Parallel Analysis.  Also weighted correlation matrices may be considered for PA.")
     (license license:gpl2+)))
 
+(define-public r-random-cdisc-data
+  (package
+    (name "r-random-cdisc-data")
+    (version "0.3.15")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "random.cdisc.data" version))
+       (sha256
+        (base32 "05hq7hvypc4nm72f879pjyf2iyvj9hgrr1gwjyvwj8by7pkyyw2y"))))
+    (properties `((upstream-name . "random.cdisc.data")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=random.cdisc.data")
+    (synopsis "Create Random ADaM Datasets")
+    (description
+     "This package provides a set of functions to create random Analysis Data Model
+(A@code{DaM}) datasets and cached dataset.  A@code{DaM} dataset specifications
+are described by the Clinical Data Interchange Standards Consortium (CDISC)
+Analysis Data Model Team.")
+    (license license:asl2.0)))
+
 (define-public r-random
   (package
     (name "r-random")
@@ -47309,52 +47372,6 @@ lost, the entire identity of the animal can be reconstructed.  Thus, animal
 subjects are not confused and no ambiguity is introduced.")
     (license license:gpl3)))
 
-(define-public r-rabhit
-  (package
-    (name "r-rabhit")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rabhit" version))
-       (sha256
-        (base32 "0c513sbldd85snww412k3c5rhmzd5k89s2wq4d713qsvzsh4v1xl"))))
-    (properties `((upstream-name . "rabhit")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tigger
-                             r-tidyr
-                             r-stringi
-                             r-splitstackshape
-                             r-rlang
-                             r-reshape2
-                             r-readr
-                             r-rcolorbrewer
-                             r-plyr
-                             r-plotly
-                             r-htmlwidgets
-                             r-gtools
-                             r-gtable
-                             r-gridextra
-                             r-ggplot2
-                             r-ggdendro
-                             r-fastmatch
-                             r-dplyr
-                             r-dendextend
-                             r-data-table
-                             r-cowplot
-                             r-alakazam))
-    (native-inputs (list r-knitr))
-    (home-page "https://yaarilab.bitbucket.io/RAbHIT/")
-    (synopsis "Inference Tool for Antibody Haplotype")
-    (description
-     "This package infers V-D-J haplotypes and gene deletions from AIRR-seq data for
-Ig and TR chains, based on J, D, or V genes as anchor, by adapting a Bayesian
-framework.  It also calculates a Bayes factor, a number that indicates the
-certainty level of the inference, for each haplotyped gene.  Citation: Gidoni,
-et al (2019) <doi:10.1038/s41467-019-08489-3>.  Peres and Gidoni, et al (2019)
-<doi:10.1093/bioinformatics/btz481>.")
-    (license license:cc-by-sa4.0)))
-
 (define-public r-ra4bayesmeta
   (package
     (name "r-ra4bayesmeta")
@@ -48572,13 +48589,13 @@ development and use of PACTA in R.")
 (define-public r-r2dii-analysis
   (package
     (name "r-r2dii-analysis")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.analysis" version))
        (sha256
-        (base32 "11bhhwigybrcr8nbrdwbv6a9rk944la5apnn5y3ahvr457jqdjsv"))))
+        (base32 "02rawyr3z0zg2yhc04mdnjkwrczwwv2822vphwyv3vwwlayjy3fh"))))
     (properties `((upstream-name . "r2dii.analysis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
