@@ -13975,26 +13975,23 @@ package @code{AlphaSimR}'.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.3.4")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FielDHub" version))
        (sha256
-        (base32 "08s9snwcvnhrhcqm4csl2pnsp3vxa5vmckmkjhhs4ima51d13f0y"))))
+        (base32 "1w0hwqah5h41423sc6ggcwcsxczwy0bs7mc2zy98g1fhsnk3ipfj"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
-                             r-turner
                              r-shinythemes
                              r-shinyjs
-                             r-shinyjqui
                              r-shinycssloaders
                              r-shinyalert
                              r-shiny
                              r-plotly
                              r-numbers
-                             r-magrittr
                              r-htmltools
                              r-golem
                              r-ggplot2
@@ -14833,13 +14830,13 @@ scale changes and that common pitfalls are avoided.")
 (define-public r-fflr
   (package
     (name "r-fflr")
-    (version "2.2.3")
+    (version "2.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fflr" version))
        (sha256
-        (base32 "1ib0lgkxxjrsvhl4h4dpyk9qzlsxz95ki0q5qy4flqdm28vl633z"))))
+        (base32 "0zxwx3yminjha15q6zvlxfvndylk5s19sx5a4cj2yji3qgwaj4mg"))))
     (properties `((upstream-name . "fflr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-jsonlite r-httr))
@@ -18035,13 +18032,13 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
 (define-public r-fastts
   (package
     (name "r-fastts")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTS" version))
        (sha256
-        (base32 "09ns49dayxr4i78f6dffmwvm9y288x3bs0cfp0lr1qbzpy24vf4s"))))
+        (base32 "16icpdhrqx34q189iqkdpbxd95lhvsb39z4xz2b3lq80pbcri0i0"))))
     (properties `((upstream-name . "fastTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick r-rlang r-rcpproll r-ncvreg r-dplyr))
@@ -18057,14 +18054,14 @@ and Cavanaugh (2022) <doi:10.1007/s10182-021-00431-7> in the context of variable
 selection with interactions and/or polynomials, ranked sparsity is a philosophy
 with methods useful for variable selection in the presence of prior
 informational asymmetry.  This situation exists for time series data with
-complex seasonality, as shown in Peterson and Cavanaugh (2023+)
-<doi:10.48550/@code{arXiv.2211.01492>}, which also describes this package in
-greater detail.  The sparsity-ranked penalization methods for Time Series
-implemented in @code{fastTS} can fit large/complex/high-frequency time series
-quickly, even with a high-dimensional exogenous feature set.  The method is
-considerably faster than its competitors, while often producing more accurate
-predictions.  Also included is a long hourly series of arrivals into the
-University of Iowa Emergency Department with concurrent local temperature.")
+complex seasonality, as shown in Peterson and Cavanaugh (2024)
+<doi:10.1177/1471082X231225307>, which also describes this package in greater
+detail.  The sparsity-ranked penalization methods for time series implemented in
+@code{fastTS} can fit large/complex/high-frequency time series quickly, even
+with a high-dimensional exogenous feature set.  The method is considerably
+faster than its competitors, while often producing more accurate predictions.
+Also included is a long hourly series of arrivals into the University of Iowa
+Emergency Department with concurrent local temperature.")
     (license license:gpl3+)))
 
 (define-public r-fasttopics
@@ -19548,13 +19545,13 @@ Senescence Test (FAST) workflow.")
 (define-public r-fasstr
   (package
     (name "r-fasstr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasstr" version))
        (sha256
-        (base32 "1kzk759xvba66fq4zw0p0kwfgbk42bw5z2fi7f8ziy4vzkpwcy93"))))
+        (base32 "1r2xgxzzjc78d5grlpapc52b11qw0d01c1fahcvfccxjby51dywx"))))
     (properties `((upstream-name . "fasstr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zyp
@@ -20323,13 +20320,13 @@ family-weighted scores across all families in which the feature appears.")
 (define-public r-families
   (package
     (name "r-families")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Families" version))
        (sha256
-        (base32 "0zsxsfm4zhjicgw9pr1617mgi8z32acrh1skjrsfp5g9f5m7nnpw"))))
+        (base32 "017x0gyly9qrj26997iilb99vb8vk7mp82nbxnbfx8v1lypm620h"))))
     (properties `((upstream-name . "Families")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-reshape r-msm r-ggplot2))

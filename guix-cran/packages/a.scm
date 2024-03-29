@@ -13688,13 +13688,13 @@ generations.")
 (define-public r-allelematch
   (package
     (name "r-allelematch")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allelematch" version))
        (sha256
-        (base32 "1gr0s2zfc4i61bxz1prq9p2lyq17h10vzp0mkq2z6c2rfzqfhazc"))))
+        (base32 "1zzx9ilxh99grjl2dmzmby0kh9rgd1h2x1hvsaxvxxmnahdsprm2"))))
     (properties `((upstream-name . "allelematch")))
     (build-system r-build-system)
     (propagated-inputs (list r-dynamictreecut))

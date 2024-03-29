@@ -3582,13 +3582,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "19yrk1qvpfqq7nqph9gmzyjb28a785gfq4kdbbdam9jmbyjijf9g"))))
+        (base32 "1pxn4375jyh27wg01p92hids1x1x1mq4hy25s5z09z7s62sfp6xw"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3919,6 +3919,28 @@ inference, a popular method in machine learning for scalable conditional
 inference.  Although approximate, the variational posterior provides excellent
 point estimates and good control of the false discovery rate.  For more
 information see Komodromos et al. (2021) <@code{arXiv:2112.10270>}.")
+    (license license:gpl3)))
+
+(define-public r-survimchd
+  (package
+    (name "r-survimchd")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurviMChd" version))
+       (sha256
+        (base32 "1lwbs9b8kc6lhlfjziphmdhm7h8p6d4fbhihsmjdi8lwngvpgxx8"))))
+    (properties `((upstream-name . "SurviMChd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-r2jags r-dplyr))
+    (home-page "https://cran.r-project.org/package=SurviMChd")
+    (synopsis
+     "High Dimensional Survival Data Analysis with Markov Chain Monte Carlo")
+    (description
+     "High dimensional survival data analysis with Markov Chain Monte Carlo(MCMC).
+Currently supports frailty data analysis.  Allows for Weibull and Exponential
+distribution.  Includes function for interval censored data.")
     (license license:gpl3)))
 
 (define-public r-survidm
@@ -14473,13 +14495,13 @@ custom functions.")
 (define-public r-sspse
   (package
     (name "r-sspse")
-    (version "1.1.0")
+    (version "1.1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sspse" version))
        (sha256
-        (base32 "1akyzzf76gc8k18my1b4knwnam0dg3nakrq79n4240k8vwyix1vj"))))
+        (base32 "0dy78fkazjm6ai2smxfkkhfzgbqk4sxvq7yhj89zdnk1vp1p1fy7"))))
     (properties `((upstream-name . "sspse")))
     (build-system r-build-system)
     (propagated-inputs (list r-scam r-rds r-kernsmooth r-coda))
@@ -14490,8 +14512,9 @@ custom functions.")
      "Estimate the size of a networked population based on respondent-driven sampling
 data.  The package is part of the \"RDS Analyst\" suite of packages for the
 analysis of respondent-driven sampling data.  See Handcock, Gile and Mar (2014)
-<doi:10.1214/14-EJS923> and Handcock, Gile and Mar (2015)
-<doi:10.1111/biom.12255>.")
+<doi:10.1214/14-EJS923>, Handcock, Gile and Mar (2015) <doi:10.1111/biom.12255>,
+Kim and Handcock (2021) <doi:10.1093/jssam/smz055>, and @code{McLaughlin}, et.
+al. (2023) <doi:10.1214/23-AOAS1807>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ssplots
@@ -18067,16 +18090,17 @@ completely show them when clicking on them.")
 (define-public r-spoccupancy
   (package
     (name "r-spoccupancy")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spOccupancy" version))
        (sha256
-        (base32 "13zqdiwk692y1spqwi3wj9rmvy6v3165f162l1y37hg24m0000j0"))))
+        (base32 "1g2988xyyrzxfss8v1aal81gma85d0b4jc02m7aa2zqzriqb0c9q"))))
     (properties `((upstream-name . "spOccupancy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rann
+    (propagated-inputs (list r-spabundance
+                             r-rann
                              r-lme4
                              r-foreach
                              r-doparallel
@@ -30104,18 +30128,18 @@ Variables.")
 (define-public r-smd
   (package
     (name "r-smd")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smd" version))
        (sha256
-        (base32 "1nvlka2prqh1hcj4ngpj2c2gmfryziijqwjyfy9fmq78skiq0jij"))))
+        (base32 "0vra15v7l6lcywiawnfg48pn290hg8s6ic33k2xnplg8nk18j8am"))))
     (properties `((upstream-name . "smd")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.novisci.com/smd/")
+    (home-page "https://bsaul.github.io/smd/")
     (synopsis "Compute Standardized Mean Differences")
     (description
      "Computes standardized mean differences and confidence intervals for multiple
@@ -44348,13 +44372,13 @@ Ushuaia city, Argentina.")
 (define-public r-sgapi
   (package
     (name "r-sgapi")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgapi" version))
        (sha256
-        (base32 "11wkj0x4rhbijkd0vpmd2rdjzfkf9ia1fzaswidrl0wp8kw2a5x7"))))
+        (base32 "0q0qamhzsn4421wzbjfqlwrs2w4qj61ynvjh9pjv7fkk89szh7xx"))))
     (properties `((upstream-name . "sgapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -50679,6 +50703,35 @@ SDT was introduced by Deci and Ryan (1985) <doi:10.1007/978-1-4899-2271-7>.  See
 package?SDT for an overview.")
     (license license:gpl2+)))
 
+(define-public r-sdrt
+  (package
+    (name "r-sdrt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdrt" version))
+       (sha256
+        (base32 "1kiq73m1wzqa8d0542nhm2bh7rc0bib0jnrwccawjyxmhm4jix73"))))
+    (properties `((upstream-name . "sdrt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries r-psych r-pracma))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=sdrt")
+    (synopsis
+     "Estimating the Sufficient Dimension Reduction Subspaces in Time Series")
+    (description
+     "The sdrt() function is designed for estimating subspaces for Sufficient
+Dimension Reduction (SDR) in time series, with a specific focus on the Time
+Series Central Mean subspace (TS-CMS).  The package employs the Fourier
+transformation method proposed by Samadi and De Alwis (2023)
+<doi:10.48550/@code{arXiv.2312.02110>} and the Nadaraya-Watson kernel smoother
+method proposed by Park et al. (2009) <doi:10.1198/jcgs.2009.08076> for
+estimating the TS-CMS. The package provides tools for estimating distances
+between subspaces and includes functions for selecting model parameters using
+the Fourier transformation method.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-sdpt3r
   (package
     (name "r-sdpt3r")
@@ -53944,13 +53997,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1zizhpy74dyka8fzvwdi9iqbkwrpjmqad5jwszhgp0lpywpcyn9k"))))
+        (base32 "18ppf6amcj5zw05gzhpzk6nszm3yqiz6a1wd865r1r3m7lj3g0ak"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -59582,13 +59635,13 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
 (define-public r-saeczi
   (package
     (name "r-saeczi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeczi" version))
        (sha256
-        (base32 "1rbxmjq8mdb3nscpnvan733n4qdi89zs5ddp295p5fj5vqpba65s"))))
+        (base32 "18idb205pyb1qz593k2bzqx3ji1iyg1wwcm069mchdpcz2kflcpm"))))
     (properties `((upstream-name . "saeczi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

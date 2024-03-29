@@ -1130,13 +1130,13 @@ use to others as well.")
 (define-public r-wrangle
   (package
     (name "r-wrangle")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrangle" version))
        (sha256
-        (base32 "11bryvsggjphcrz7a92xanx9wcnaxmgm503ns9yq3nxfpyvxfgvf"))))
+        (base32 "04l9m3x0yj5nccqpyaxd55dzw7mk2kjyrsysn680wx98jhwj05b2"))))
     (properties `((upstream-name . "wrangle")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-magrittr r-dplyr))
@@ -3512,16 +3512,16 @@ syntax that using pipe operator to add graphic layer.")
 (define-public r-wikipedir
   (package
     (name "r-wikipedir")
-    (version "1.5.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WikipediR" version))
        (sha256
-        (base32 "1w4ggq42vlq7zbrz3v9ripz9yscbd8m8as60q7cplpxn9zqfdl7q"))))
+        (base32 "10lzqqqq1xr0xypg1manr6y6qqyz90wr0ysm70m92b4fy3yzmyz5"))))
     (properties `((upstream-name . "WikipediR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr))
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Ironholds/WikipediR/")
     (synopsis "MediaWiki API Wrapper")

@@ -12269,13 +12269,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.15")
+    (version "0.9.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "1mgb7p4yqjwxrsjs16adcybjmhrylihv7279vjrxgfrlgqflnjxx"))))
+        (base32 "1hl8gn4jars2yvd2cgr343gz2j4xr9pzn8q8vwc1lvj2j53dsbjh"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -26985,13 +26985,13 @@ the help of comprehensive s3 classes.")
 (define-public r-retrodesign
   (package
     (name "r-retrodesign")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "retrodesign" version))
        (sha256
-        (base32 "19bhfmbhd2q4zlkgxm0v563rr4r30d79hsxr3micnzql4hgar2zp"))))
+        (base32 "0iq1xiqhqp2na9dqyx30hyzsjqi22xq0z11j1zb6h2l2rxbx163p"))))
     (properties `((upstream-name . "retrodesign")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -32837,23 +32837,26 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0mv9llh0xgyzh1iqa57i83vq1ijglcmnymk0m4zy34b01q4yjkha"))))
+        (base32 "0nhcznrgzww4zmc3z944cywlrmykfv0f0hx462nbfc1rgmg4rkzx"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-stringi
                              r-rlang
                              r-redcapr
+                             r-readr
                              r-purrr
+                             r-pillar
                              r-lubridate
                              r-lobstr
                              r-formattable

@@ -729,13 +729,13 @@ Judong Shen (2022) <doi:10.13140/RG.2.2.28323.53280>.")
 (define-public r-cwbtools
   (package
     (name "r-cwbtools")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cwbtools" version))
        (sha256
-        (base32 "1py9frp2aq3q4iq5130izbxx6k1xq7rgz1knzpxkhy8h5afx8ywc"))))
+        (base32 "13j8sn2069ldlbg893vf26wfsjgcwpba36m58y78d0djdhfrcg5v"))))
     (properties `((upstream-name . "cwbtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zen4r
@@ -5417,48 +5417,6 @@ much of the overall treatment effect is explained by a (possibly
 high-dimensional) set of surrogate markers.")
     (license license:expat)))
 
-(define-public r-crosstalkr
-  (package
-    (name "r-crosstalkr")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crosstalkr" version))
-       (sha256
-        (base32 "0vb0p455s2gp0nm1hxm9iikxr4mal52mbkq6nv6zxr78wwsxcwa1"))))
-    (properties `((upstream-name . "crosstalkr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdb
-                             r-rlang
-                             r-readr
-                             r-rcpp
-                             r-matrix
-                             r-magrittr
-                             r-iterators
-                             r-igraph
-                             r-ggplot2
-                             r-foreach
-                             r-ensembldb
-                             r-dplyr
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=crosstalkr")
-    (synopsis
-     "Analysis of Graph-Structured Data with a Focus on Protein-Protein Interaction Networks")
-    (description
-     "This package provides a general toolkit for drug target identification.  We
-include functionality to reduce large graphs to subgraphs and prioritize nodes.
-In addition to being optimized for use with generic graphs, we also provides
-support to analyze protein-protein interactions networks from online
-repositories.  For more details on core method, refer to Weaver et al. (2021)
-<https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008755>.")
-    (license license:gpl3+)))
-
 (define-public r-crosstabs-loglinear
   (package
     (name "r-crosstabs-loglinear")
@@ -7244,13 +7202,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "1wdyfyz2lk3icygqp0mm3cy3bni48hqazymnvhgl9pzy29sp6i2w"))))
+        (base32 "1v6ji2xp21wj55w3ih5w1r79q2fx6x921las8siawkb95n7v5cp2"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -17750,6 +17708,33 @@ for their data.  For method details see, Sharma, M.K.(2013)
  It offers a comprehensive suite of functions and customisable parameters.
 Equipped to handle varying complexities in data structures.  It empowers users
 to uncover insightful growth dynamics and make informed decisions.")
+    (license license:gpl2+)))
+
+(define-public r-compexpdes
+  (package
+    (name "r-compexpdes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompExpDes" version))
+       (sha256
+        (base32 "17ib9ln5rwy0jmadciqiynfqxyx57hfjyvp46pr9alix3sgh140q"))))
+    (properties `((upstream-name . "CompExpDes")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CompExpDes")
+    (synopsis "Computer Experiment Designs")
+    (description
+     "In computer experiments space-filling designs are having great impact.  Most
+popularly used space-filling designs are Uniform designs (UDs), Latin hypercube
+designs (LHDs) etc.  For further references one can see Mckay (1979)
+<DOI:10.1080/00401706.1979.10489755> and Fang (1980)
+<https://cir.nii.ac.jp/crid/1570291225616774784>.  In this package, we have
+provided algorithms for generate efficient LHDs and UDs.  Here, generated LHDs
+are efficient as they possess lower value of Maxpro measure, Phi_p value and
+Maximum Absolute Correlation (MAC) value.  On the other hand, the produced UDs
+are having good space-filling property as they attained the lower bound of
+Discrete Discrepancy measure.")
     (license license:gpl2+)))
 
 (define-public r-competitiontoolbox
@@ -39932,31 +39917,31 @@ work with retrieved table data.  Optional caching features are provided.")
 (define-public r-canprot
   (package
     (name "r-canprot")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canprot" version))
        (sha256
-        (base32 "1lwlgzy0gxp7jrak838awmqz3w0x7qd51bkyhydb1s61073w77x8"))))
+        (base32 "0b1jfrqdcn90r9ninc5l809vr586r1arbrf9w8dvrfh97gscb5dn"))))
     (properties `((upstream-name . "canprot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-rmarkdown r-mass r-chnosz))
+    (propagated-inputs (list r-stringi r-multcompview))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jedick/canprot")
-    (synopsis "Chemical Metrics of Differentially Expressed Proteins")
+    (synopsis "Chemical Analysis of Proteins")
     (description
-     "Chemical metrics of differentially expressed proteins in cancer and cell culture
-proteomics experiments.  Data files in the package have amino acid compositions
-of proteins obtained from @code{UniProt} and >250 published lists of up- and
-down-regulated proteins in different cancer types and laboratory experiments.
-Functions are provided to calculate chemical metrics including protein length,
-grand average of hydropathicity (GRAVY), isoelectric point (@code{pI}), carbon
-oxidation state, and stoichiometric hydration state; the latter two are
-described in Dick et al. (2020) <doi:10.5194/bg-17-6145-2020>.  The vignettes
-visualize differences of chemical metrics between up- and down-regulated
-proteins and list literature references for all datasets.")
-    (license license:gpl2+)))
+     "Chemical analysis of proteins based on their amino acid compositions.  Amino
+acid compositions can be read from FASTA files and used to calculate chemical
+metrics including carbon oxidation state and stoichiometric hydration state, as
+described in Dick et al. (2020) <doi:10.5194/bg-17-6145-2020>.  Other properties
+that can be calculated include protein length, grand average of hydropathy
+(GRAVY), isoelectric point (@code{pI}), molecular weight (MW), standard molal
+volume (V0), and metabolic costs (Akashi and Gojobori, 2002
+<doi:10.1073/pnas.062526999>; Wagner, 2005 <doi:10.1093/molbev/msi126>; Zhang et
+al., 2018 <doi:10.1038/s41467-018-06461-1>).  A database of amino acid
+compositions of human proteins derived from @code{UniProt} is provided.")
+    (license license:gpl3)))
 
 (define-public r-canopy
   (package

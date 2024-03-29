@@ -604,13 +604,13 @@ graphics for data exploration and model diagnostics.")
 (define-public r-xportr
   (package
     (name "r-xportr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xportr" version))
        (sha256
-        (base32 "1gj325cmx0p3ppkxc7grybi6pcq7dvdnglj0qfyxvard78majqpl"))))
+        (base32 "0yxd94qr30lq8pmkc7cfxccnq5ln1sawk8bxpv1v29hgafnr2wgv"))))
     (properties `((upstream-name . "xportr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -623,9 +623,10 @@ graphics for data exploration and model diagnostics.")
                              r-haven
                              r-glue
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/atorus-research/xportr")
+    (home-page "https://atorus-research.github.io/xportr/")
     (synopsis "Utilities to Output CDISC SDTM/ADaM XPT Files")
     (description
      "This package provides tools to build CDISC compliant data sets and check for

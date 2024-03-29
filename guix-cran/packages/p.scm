@@ -5032,13 +5032,13 @@ Prisonniere\", \"Albertine disparue\", and \"Le Temps retrouve\".")
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protti" version))
        (sha256
-        (base32 "1k05z9c8801gylmv4d0n5baqmzdhv38jpkmxm4qm34y2gyh10n0l"))))
+        (base32 "052ffldvy7a1h1z1c2gq9hdmhhwwiia5l6cyikq5j7yb8g1ff1n3"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14114,13 +14114,13 @@ stability or stationarity, and diagnostic and manipulation tools.")
 (define-public r-popbio
   (package
     (name "r-popbio")
-    (version "2.7")
+    (version "2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popbio" version))
        (sha256
-        (base32 "02dbb2sinn1n8a9dg8lvf35sc8hb14c90mjymz2gk64xdysf0m2j"))))
+        (base32 "0fpf13d0h5mmi1xrxfqgz1map8v6g388kcm901ajdnsf57awbqpg"))))
     (properties `((upstream-name . "popbio")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=popbio")
@@ -18230,13 +18230,13 @@ details.")
 (define-public r-plsgenomics
   (package
     (name "r-plsgenomics")
-    (version "1.5-2.1")
+    (version "1.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsgenomics" version))
        (sha256
-        (base32 "1cn7ljq3nmvcm5g0ifhghm52sl25fyfalp7v7r8bl4iq9vblj2wa"))))
+        (base32 "0a1vzpbjd0lyj9vzx6fav4swiv89f3aj8i82g4yj0vd83vwakrnr"))))
     (properties `((upstream-name . "plsgenomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl
@@ -18245,7 +18245,7 @@ details.")
                              r-mass
                              r-fields
                              r-boot))
-    (home-page "https://CRAN.R-project.org/package=plsgenomics")
+    (home-page "https://github.com/gdurif/plsgenomics")
     (synopsis "PLS Analyses for Genomics")
     (description
      "Routines for PLS-based genomic analyses, implementing PLS methods for
@@ -27618,17 +27618,17 @@ Fundamentals of People Analytics: With Applications in R\".")
 (define-public r-pensynth
   (package
     (name "r-pensynth")
-    (version "0.3.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pensynth" version))
        (sha256
-        (base32 "1xwp53ljn6kprp7cbri7l106fvj2iil7cqpwrgm5x2521g3vwqi6"))))
+        (base32 "1ph3552y3jsm9kmv68bx15xn383djq2yhc34rpvazc8dyd3impkv"))))
     (properties `((upstream-name . "pensynth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-geometry r-clarabel))
-    (home-page "https://cran.r-project.org/package=pensynth")
+    (propagated-inputs (list r-matrix r-clarabel))
+    (home-page "https://github.com/vankesteren/pensynth")
     (synopsis "Penalized Synthetic Control Estimation")
     (description
      "Estimate penalized synthetic control models and perform hold-out validation to
@@ -32026,29 +32026,28 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "1dmvfrdxgfbwdkb940igskf72wdsl66px4hqbdg5d0j73dxclgcn"))))
+        (base32 "0sq7p55znrxsbqavfih662d7gh5pxjndrqairzknr5pjjjc2sglj"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
                              r-tidyr
                              r-stringr
                              r-rlang
+                             r-purrr
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
                              r-lifecycle
-                             r-gt
                              r-dplyr
                              r-cli
                              r-checkmate
                              r-cdmconnector))
-    (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/PatientProfiles/")
     (synopsis
      "Identify Characteristics of Patients in the OMOP Common Data Model")
@@ -36493,6 +36492,41 @@ cards, resumes, and posters.")
 alignments in the PAF format used by minimap2 and other whole-genome aligners.
 minimap2 is described by Li H. (2018) <doi:10.1093/bioinformatics/bty191>.")
     (license license:expat)))
+
+(define-public r-pafit
+  (package
+    (name "r-pafit")
+    (version "1.2.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAFit" version))
+       (sha256
+        (base32 "10p2q90jbjyzbvn8kgx1i8if144gq2zylqh8h3x4sg2ajqbcv8kg"))))
+    (properties `((upstream-name . "PAFit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-plyr
+                             r-networkdynamic
+                             r-network
+                             r-mass
+                             r-mapproj
+                             r-magicaxis
+                             r-knitr
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://github.com/thongphamthe/PAFit")
+    (synopsis "Generative Mechanism Estimation in Temporal Complex Networks")
+    (description
+     "Statistical methods for estimating preferential attachment and node fitness
+generative mechanisms in temporal complex networks are provided.  Thong Pham et
+al. (2015) <doi:10.1371/journal.pone.0137796>.  Thong Pham et al. (2016)
+<doi:10.1038/srep32558>.  Thong Pham et al. (2020) <doi:10.18637/jss.v092.i03>.
+Thong Pham et al. (2021) <doi:10.1093/comnet/cnab024>.")
+    (license license:gpl3)))
 
 (define-public r-pafdr
   (package

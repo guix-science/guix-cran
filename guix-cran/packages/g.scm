@@ -2266,13 +2266,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "3.1.10")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "1fb9m9j0x4bv3pcnmndy25lliwagivw88nsm7j49rv3sbyhr439v"))))
+        (base32 "1c8hsan8jsqz303pwd8bm4xy98qwfdj1nf96dybq0c6yg101fhvf"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))
@@ -5565,16 +5565,16 @@ responses in surveys.")
 (define-public r-grc
   (package
     (name "r-grc")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRc" version))
        (sha256
-        (base32 "0jrskkp8850b3nanlz19iycwnsiyfxpwxi8vy6bvv36lbhslg86l"))))
+        (base32 "12fz7aiddzc3pxvglin265z30ihcmy18nsw02zg7vb27bz5ldvqp"))))
     (properties `((upstream-name . "gRc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-magrittr r-grbase))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-igraph r-grbase))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis
      "Inference in Graphical Gaussian Models with Edge and Vertex Symmetries")
@@ -7561,13 +7561,13 @@ for Numerical Methods in Engineering, 114, 501-516.")
 (define-public r-gpltr
   (package
     (name "r-gpltr")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPLTR" version))
        (sha256
-        (base32 "0g8h94fc9c8w86z302f5ld6j3rzh6is7z5rjxr1v4arblpibxzr3"))))
+        (base32 "0rlaryw8l1hj15x9s57w7rif063njcc72l42bpc9lm8r5knjyjpb"))))
     (properties `((upstream-name . "GPLTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart))
@@ -7984,13 +7984,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0m79rm97n7hg7qjxcvywc0kk9dq56xsagci4jbfy41q9flrzilnh"))))
+        (base32 "1wi5ynj78cn68c23sa7s9n76222jhyzlklsba8hw2hbqa5jj5ak9"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -17329,13 +17329,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "0.3.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "01indzna0z8rlcc29b4hfssn0xl07brwxpk3ysdanla32qa67slc"))))
+        (base32 "1yra9mfzmcz3zb3akz591m9f0z4rlphz68xyf8w6zvhm7ya3c3ls"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matlab r-bitops))
@@ -18793,13 +18793,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "6.0.0")
+    (version "7.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "0rb6xhh323psxss8ccz681nwaxlxxa8brfzqdzrylr9k7pz828fd"))))
+        (base32 "1qy75b41w5kgp10avm86160kfcayx5jy4rzkmvyiivzvra4z4srj"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18886,13 +18886,13 @@ by the user or by another package.")
 (define-public r-ggarchery
   (package
     (name "r-ggarchery")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggarchery" version))
        (sha256
-        (base32 "1vbknccfr18gawia353appvj3fc3ic8wrkgg0rd2aiz48av496yz"))))
+        (base32 "1fgcy26gq0cpk4vhc412yw5wj8j4afs21lp7fcqsdah1xmpnhym2"))))
     (properties `((upstream-name . "ggarchery")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18902,7 +18902,7 @@ by the user or by another package.")
                              r-glue
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=ggarchery")
+    (home-page "https://github.com/mdhall272/ggarchery")
     (synopsis "Flexible Segment Geoms with Arrows for 'ggplot2'")
     (description
      "Geoms for placing arrowheads at multiple points along a segment, not just at the
@@ -21864,13 +21864,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "1fzdif3m80pfj53wax7j7i5342261jkz7zh4ivyiz10m1l2x6kid"))))
+        (base32 "196zqpl8zi3xkkxvl8akrb7a7j8f59zcrhy9231z8cn7zarx4pgg"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -21899,45 +21899,45 @@ explicit risk analysis of habitat connectivity.  Xing et al (2021)
 risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
 were initially developed thinking on cropland connectivity, users are
 recommended to first be familiar with the concept by looking at the Xing et al
-paper.  In a nutshell, a cropland connectivity analysis combines information
-from maps of cropland density, estimates the relative likelihood of pathogen
-movement between cropland locations in the area of interest, and applies network
-analysis to calculate the connectivity of cropland locations.  The functions of
-geohabnet are built to conduct a cropland connectivity analysis relying on
-geographic parameters (spatial resolution and spatial extent), dispersal
-parameters (in two commonly used dispersal kernels: inverse power law and
-negative exponential models), and network parameters (link weight thresholds and
-network metrics).  The functionality and main extensions provided by the
-functions in geohabnet to cropland connectivity analysis are a) Capability to
-easily calculate the connectivity of locations in a landscape using a single
-function, such as sensitivity_analysis() or msean().  b) As backbone datasets,
-the geohabnet package supports the use of two publicly available global datasets
-to calculate cropland density.  The backbone datasets in the geohabnet package
-include crop distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley
-(2008) <doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic
-distribution of crop areas, yields, physiological types, and net primary
-production in the year 2000, Global Biogeochem.  Cycles, 22, GB1022\" and
-International Food Policy Research Institute (2019) <doi:10.7910/DVN/PRFF8V>
-\"Global Spatially-Disaggregated Crop Production Statistics Data for 2010 Version
-2.0, Harvard Dataverse, V4\".  Users can also provide any other geographic
-dataset that represents host density.  c) Because the geohabnet package allows R
-users to provide maps of cropland density (as originally in Xing et al (2021)),
-host landscape density (representing the geographic distribution of either crops
-or wild species), or habitat distribution (such as host landscape density
-adjusted by climate suitability) as inputs, we propose the term habitat
-connectivity.  d) The geohabnet package allows R users to customize parameter
-values in the habitat connectivity analysis, facilitating context-specific
-(pathogen- or pest-specific) analyses.  e) The geohabnet package allows users to
-automatically visualize maps of the habitat connectivity of locations resulting
-from a sensitivity analysis across all customized parameter combinations.  The
-primary function is sean() and sensitivity analysis().  Most functions in
-geohabnet provide as three main outcomes: i) A map of mean habitat connectivity
-across parameters selected by the user, ii) a map of variance of habitat
-connectivity across the selected parameters, and iii) a map of the difference
-between the ranks of habitat connectivity and habitat density.  Each function
-can be used to generate these maps as final outcomes.  Each function can also
-provide intermediate outcomes, such as the adjacency matrices built to perform
-the analysis, which can be used in other network analysis.  Refer to article at
+paper.  In a nutshell, a habitat connectivity analysis combines information from
+maps of host density, estimates the relative likelihood of pathogen movement
+between habitat locations in the area of interest, and applies network analysis
+to calculate the connectivity of habitat locations.  The functions of geohabnet
+are built to conduct a habitat connectivity analysis relying on geographic
+parameters (spatial resolution and spatial extent), dispersal parameters (in two
+commonly used dispersal kernels: inverse power law and negative exponential
+models), and network parameters (link weight thresholds and network metrics).
+The functionality and main extensions provided by the functions in geohabnet to
+habitat connectivity analysis are a) Capability to easily calculate the
+connectivity of locations in a landscape using a single function, such as
+sensitivity_analysis() or msean().  b) As backbone datasets, the geohabnet
+package supports the use of two publicly available global datasets to calculate
+cropland density.  The backbone datasets in the geohabnet package include crop
+distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley (2008)
+<doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic distribution of
+crop areas, yields, physiological types, and net primary production in the year
+2000, Global Biogeochem.  Cycles, 22, GB1022\" and International Food Policy
+Research Institute (2019) <doi:10.7910/DVN/PRFF8V> \"Global
+Spatially-Disaggregated Crop Production Statistics Data for 2010 Version 2.0,
+Harvard Dataverse, V4\".  Users can also provide any other geographic dataset
+that represents host density.  c) Because the geohabnet package allows R users
+to provide maps of host density (as originally in Xing et al (2021)), host
+landscape density (representing the geographic distribution of either crops or
+wild species), or habitat distribution (such as host landscape density adjusted
+by climate suitability) as inputs, we propose the term habitat connectivity.  d)
+The geohabnet package allows R users to customize parameter values in the
+habitat connectivity analysis, facilitating context-specific (pathogen- or
+pest-specific) analyses.  e) The geohabnet package allows users to automatically
+visualize maps of the habitat connectivity of locations resulting from a
+sensitivity analysis across all customized parameter combinations.  The primary
+function is sean() and sensitivity analysis().  Most functions in geohabnet
+provide as three main outcomes: i) A map of mean habitat connectivity across
+parameters selected by the user, ii) a map of variance of habitat connectivity
+across the selected parameters, and iii) a map of the difference between the
+ranks of habitat connectivity and habitat density.  Each function can be used to
+generate these maps as final outcomes.  Each function can also provide
+intermediate outcomes, such as the adjacency matrices built to perform the
+analysis, which can be used in other network analysis.  Refer to article at
 <https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
 to see examples of each function and how to access each of these outcome types.
 To change parameter values, the file called parameters.yaml stores the
@@ -28257,6 +28257,31 @@ calculation of density values.  These tasks are executed using package
 <https://cran.r-project.org/package=@code{ganGenerativeData>}.")
     (license license:gpl2+)))
 
+(define-public r-gamstransfer
+  (package
+    (name "r-gamstransfer")
+    (version "3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gamstransfer" version))
+       (sha256
+        (base32 "1mrqqkn86f9qrbvgyh8sfm4y4nlma4dzb557bgqxaksp8fq2wdw8"))))
+    (properties `((upstream-name . "gamstransfer")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcpp r-r6 r-r-utils r-collections))
+    (home-page "https://github.com/GAMS-dev/transfer-r/tree/main/gamstransfer")
+    (synopsis "Data Interface Between 'GAMS' and R")
+    (description
+     "Read, analyze, modify, and write GAMS (General Algebraic Modeling System) data.
+The main focus of gamstransfer is the highly efficient transfer of data with
+GAMS <https://www.gams.com/>, while keeping these operations as simple as
+possible for the user.  The transfer of data usually takes place via an
+intermediate GDX (GAMS Data Exchange) file.  Additionally, gamstransfer provides
+utility functions to get an overview of GAMS data and to check its validity.")
+    (license license:expat)))
+
 (define-public r-gamselbayes
   (package
     (name "r-gamselbayes")
@@ -28650,13 +28675,13 @@ distribution.")
 (define-public r-gamlss-add
   (package
     (name "r-gamlss-add")
-    (version "5.1-12")
+    (version "5.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamlss.add" version))
        (sha256
-        (base32 "1xprccwlnv0rjhgmgz7v0n95gsxzi8cig15drkcpira3nb0m83xc"))))
+        (base32 "1dhiq3x0dascjsq3c80j6zgx4xdcjljd4ishzpp8j9m5bk55z72z"))))
     (properties `((upstream-name . "gamlss.add")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-nnet r-mgcv r-gamlss-dist r-gamlss))

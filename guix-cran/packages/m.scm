@@ -2843,6 +2843,44 @@ data of different variable types as seen in Demirtas, H. (2017)
 <doi:10.1007/978-981-10-3307-0_8>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-multivarious
+  (package
+    (name "r-multivarious")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multivarious" version))
+       (sha256
+        (base32 "1lgb7agfdq4fiwg2c2f6an2bx7krl84n79d7744rc514rgl0klp0"))))
+    (properties `((upstream-name . "multivarious")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-svd
+                             r-rsvd
+                             r-rspectra
+                             r-rlang
+                             r-purrr
+                             r-proxy
+                             r-pls
+                             r-matrixstats
+                             r-matrix
+                             r-irlba
+                             r-glmnet
+                             r-fitdistrplus
+                             r-corpcor
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://bbuchsbaum.github.io/multivarious/")
+    (synopsis "Extensible Data Structures for Multivariate Analysis")
+    (description
+     "This package provides a set of basic and extensible data structures and
+functions for multivariate analysis, including dimensionality reduction
+techniques, projection methods, and preprocessing functions.  The aim of this
+package is to offer a flexible and user-friendly framework for multivariate
+analysis that can be easily extended for custom requirements and specific data
+analysis tasks.")
+    (license license:expat)))
+
 (define-public r-multivariaterandomforest
   (package
     (name "r-multivariaterandomforest")
@@ -11933,13 +11971,13 @@ Austin, Texas.")
 (define-public r-mop
   (package
     (name "r-mop")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mop" version))
        (sha256
-        (base32 "0vi9ff1mmpz1ihkmvddfwxh3x5zrdxbc3m2drnpsifil3sg2d9x8"))))
+        (base32 "1x17mnh2lrgkqr1nzhk5dxmwpv9812i3ryvlspqhbrfadj3s76l7"))))
     (properties `((upstream-name . "mop")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-snow r-rcpp r-foreach r-dosnow))
@@ -23073,13 +23111,13 @@ results, and more.")
 (define-public r-minicran
   (package
     (name "r-minicran")
-    (version "0.2.16")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniCRAN" version))
        (sha256
-        (base32 "1rr5wrh27055ikkvpsf19q9bkfhckafgmrn174iwzjh9s42w3nbq"))))
+        (base32 "1dfqish0vhvdp1a6kiw18z088sghndv9pviby51s7kqv0bjs3ca7"))))
     (properties `((upstream-name . "miniCRAN")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-httr r-assertthat))
@@ -38197,13 +38235,13 @@ Reckase (2009) <doi:10.1007/978-0-387-89976-3>, and Mulder & van der Linden
 (define-public r-mastif
   (package
     (name "r-mastif")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mastif" version))
        (sha256
-        (base32 "19i6hpwc6shyz9gr6xakg9s79crv1zwn8sqraf9k62scc22dl1p9"))))
+        (base32 "04m2cpcq1n27zmckj6hz6yvzcs6ray53z4nwab3vza9pjaa0m6ab"))))
     (properties `((upstream-name . "mastif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

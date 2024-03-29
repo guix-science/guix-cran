@@ -829,13 +829,13 @@ bupaverse at the <https://bupar.net> homepage.")
 (define-public r-bupar
   (package
     (name "r-bupar")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bupaR" version))
        (sha256
-        (base32 "05iaqaa836apv8qb9pfzgih3cf8z78f40wdl759v1gg6pd32h082"))))
+        (base32 "16m9n7h1nwfz564cxyhgkxdzszcr3nr7abz4d6mqx97kjv46k23n"))))
     (properties `((upstream-name . "bupaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14502,13 +14502,13 @@ class, length, values, files, arguments, etc.).")
 (define-public r-biganalytics
   (package
     (name "r-biganalytics")
-    (version "1.1.21")
+    (version "1.1.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biganalytics" version))
        (sha256
-        (base32 "19drir6vclzz1ffccvnkxnmiqnwmddiqm7y64pz4j6ifxpc1igfy"))))
+        (base32 "0y9zr4gr31l4q2j78nqyh4svlgsd7f5x8jkhgsflfr6agia77gyh"))))
     (properties `((upstream-name . "biganalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-bigmemory r-biglm r-bh))
@@ -21424,13 +21424,13 @@ package from @code{GitHub}.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.1.0")
+    (version "2.1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesnec" version))
        (sha256
-        (base32 "02ahcaj72r0md6a2pj8ffz42xpv37hsvfixay57rc5sbdbics9gc"))))
+        (base32 "1ja4yl3fqs5cg3n8gn7r7a2shdxkwcshbmy7cyn3l97zsrdw4a3m"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22299,40 +22299,6 @@ continuous, binary, categorical, or time-to-event), with default or user-defined
 priors and predictive models.  The Bayesian estimates and credible sets of
 mediation effects are reported as analytic results.")
     (license license:gpl2+)))
-
-(define-public r-bayesianmcpmod
-  (package
-    (name "r-bayesianmcpmod")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesianMCPMod" version))
-       (sha256
-        (base32 "1fcdjkisxbs0z82bf28dyxj110gvv463zq7k28l2ylakpr4346wp"))))
-    (properties `((upstream-name . "BayesianMCPMod")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Boehringer-Ingelheim/BayesianMCPMod")
-    (synopsis
-     "Simulate, Evaluate, and Analyze Dose Finding Trials with Bayesian MCPMod")
-    (description
-     "Bayesian MCPMod (Fleischer et al. (2022) <doi:10.1002/pst.2193>) is an
-innovative method that improves the traditional MCPMod by systematically
-incorporating historical data, such as previous placebo group data.  This R
-package offers functions for simulating, analyzing, and evaluating Bayesian
-MCPMod trials with normally distributed endpoints.  It enables the assessment of
-trial designs incorporating historical data across various true dose-response
-relationships and sample sizes.  Robust mixture prior distributions, such as
-those derived with the Meta-Analytic-Predictive approach (Schmidli et al. (2014)
-<doi:10.1111/biom.12242>), can be specified for each dose group.  Resulting
-mixture posterior distributions are used in the Bayesian Multiple Comparison
-Procedure and modeling steps.  The modeling step also includes a weighted model
-averaging approach (Pinheiro et al. (2014) <doi:10.1002/sim.6052>).  Estimated
-dose-response relationships can be bootstrapped and visualized.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesianlaterality
   (package

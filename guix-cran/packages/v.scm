@@ -3898,13 +3898,13 @@ based on the work of Franklin & Ray. (1994)
 (define-public r-viewpoly
   (package
     (name "r-viewpoly")
-    (version "0.3.2")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viewpoly" version))
        (sha256
-        (base32 "1say30d46vj67ng5mprhwl02jf9d0kv573j80r05z08szmcm4sxb"))))
+        (base32 "1c97khxsfnml21wh8np4qp7w2w31zxw72dl5vy25jjpx06dbp814"))))
     (properties `((upstream-name . "viewpoly")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -3915,15 +3915,16 @@ based on the work of Franklin & Ray. (1994)
                              r-shinydashboard
                              r-shiny
                              r-reshape2
+                             r-purrr
                              r-plotly
                              r-markdown
                              r-jbrowser
+                             r-hidecan
                              r-golem
                              r-ggpubr
                              r-ggplot2
                              r-dt
                              r-dplyr
-                             r-curl
                              r-config
                              r-abind))
     (home-page "https://github.com/mmollina/viewpoly")
@@ -3937,7 +3938,7 @@ use and allows users to optionally upload different sources of information,
 including gene annotation and alignment files, enabling the exploitation and
 search for candidate genes in a genome browser.  In its current version,
 VIEWpoly supports inputs from MAPpoly', @code{polymapR}', @code{diaQTL}',
-QTLpoly and @code{polyqtlR} packages.")
+QTLpoly', @code{polyqtlR}', GWASpoly', and HIDECAN packages.")
     (license license:gpl3+)))
 
 (define-public r-viewpipesteps

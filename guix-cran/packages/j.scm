@@ -1780,16 +1780,16 @@ vignette further explains the use of the implemented functions.")
 (define-public r-jordan
   (package
     (name "r-jordan")
-    (version "1.0-1")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jordan" version))
        (sha256
-        (base32 "1d0my0lf8bmlmygz9f23skywzsrhy4xaykyrblbmhb00l0vxpa5s"))))
+        (base32 "10va924f3fjasmqahlrk0k7fmnyjfqmkcgimqpvhfk0vwgr8pv3a"))))
     (properties `((upstream-name . "jordan")))
     (build-system r-build-system)
-    (propagated-inputs (list r-onion r-mathjaxr r-emulator))
+    (propagated-inputs (list r-onion r-matrix r-mathjaxr r-emulator))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/jordan")
     (synopsis "Suite of Routines for Working with Jordan Algebras")
@@ -1798,7 +1798,8 @@ vignette further explains the use of the implemented functions.")
 designed to study observables in quantum mechanics.  Jordan algebras are
 commutative but non-associative; they satisfy the Jordan identity.  The package
 follows the ideas and notation of K. @code{McCrimmon} (2004, ISBN:0-387-95447-3)
-\"A Taste of Jordan Algebras\".")
+\"A Taste of Jordan Algebras\".  To cite in publications please use Hankin (2023)
+<@code{arXiv:2303.06062v1>}.")
     (license license:gpl2+)))
 
 (define-public r-jops

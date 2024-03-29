@@ -9170,13 +9170,13 @@ et al. (2023) <doi:10.1002/ecm.1588> for more details.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "03jrdy7axxq8c1bsr0z9v7444c9kcvmv7cal03jxfl61lmw6hzzh"))))
+        (base32 "03mldl3w3917kv3bknd9dix156m6z5s500322035y0il9x7b4wp1"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree
@@ -12377,6 +12377,30 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 <@code{arXiv:1804.02090>}.")
     (license license:gpl3)))
 
+(define-public r-ilsm
+  (package
+    (name "r-ilsm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ILSM" version))
+       (sha256
+        (base32 "0g52v64m8z9d7qri9xa79kqncm9hxf530vj3wqblhnwrzsazwfg5"))))
+    (properties `((upstream-name . "ILSM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ILSM")
+    (synopsis "Analyze Inter-Layer Structure of Multilayer Ecological Network")
+    (description
+     "In view of the analysis of the structural characteristics of the multilayer
+network has been complete, however, there is still a lack of a unified operation
+that can quickly obtain the corresponding characteristics of the multilayer
+network.  To solve this insufficiency, ILSM was designed for supporting
+calculating such metrics of multilayer network by functions of this R package.")
+    (license license:expat)))
+
 (define-public r-ilse
   (package
     (name "r-ilse")
@@ -13369,13 +13393,13 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0a38rnh34m6y0hdxk6y1s9lfg399cc9kfgpgapf2qmj7ca13d58z"))))
+        (base32 "0cj8yzm9rq5zqhwkkdq2a9v1nqs7j1a7y7ykivirykyzz22iaxmg"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

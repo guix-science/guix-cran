@@ -2286,13 +2286,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "085lgv8nfmlg180ym36r1zyfaka61zzsjs9y60yl4y6a14k81wfs"))))
+        (base32 "0ybxz6dw7kmd1638kp5qllfczdcpz9r06da1jqww4gfz4rw7q821"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (inputs (list perl))
@@ -3059,13 +3059,13 @@ Poelwijk, Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
 (define-public r-exactcione
   (package
     (name "r-exactcione")
-    (version "1.0.0")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExactCIone" version))
        (sha256
-        (base32 "0mi3n215c9zxsg6xjjj6l3g9lfwnglr1d47b6m0giyds80y9s7l6"))))
+        (base32 "049fh70aidsl60f355jkx93brkvaadpvlk7wxc196s51fddz2lwa"))))
     (properties `((upstream-name . "ExactCIone")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -15532,13 +15532,13 @@ Graphs (Lerner 2008 <DOI:10.1109/PACIFICVIS.2008.4475458>).")
 (define-public r-egocor
   (package
     (name "r-egocor")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EgoCor" version))
        (sha256
-        (base32 "0i33knfyhwcw8rasv3h2rp90vifrba08zmwqz4825bdx6f8zaa52"))))
+        (base32 "135k9yccmzbkzhf8dlzm00pawaav01bzw4r2y45mcb1fdfwf5fg2"))))
     (properties `((upstream-name . "EgoCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatialtools r-sp r-shiny r-rdpack r-gstat))
@@ -17099,13 +17099,13 @@ dependencies can be visualized with using the igraph package.")
 (define-public r-edith
   (package
     (name "r-edith")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDITH" version))
        (sha256
-        (base32 "152kzwhbir37hjjjipqlvn63dwnhaq6wy0lgrks00byc9ahzh4m0"))))
+        (base32 "0bghyq6785wwr60sgqzn30g3lcz5f58z76lz3fbb1mfcbwp6fmpz"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -17128,7 +17128,8 @@ concentration (e.g., obtained via quantitative polymerase chain reaction) or
 metabarcoding (read count) data.  Parameter estimation can be performed via
 Bayesian techniques (via the @code{BayesianTools} package) or optimization
 algorithms.  An interface to the DHARMa package for posterior predictive checks
-is provided.  See Carraro et al. (2018) <doi:10.1073/pnas.1813843115> and
+is provided.  See Carraro and Altermatt (2024) <doi:10.1111/2041-210X.14317> for
+a package introduction; Carraro et al. (2018) <doi:10.1073/pnas.1813843115> and
 Carraro et al. (2020) <doi:10.1038/s41467-020-17337-8> for methodological
 details.")
     (license license:expat)))
@@ -20757,13 +20758,13 @@ output SVG elements into a SVG file.")
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "1flk1x1szn8hp8yhp9dxcd8xfdnnny6acpbb2mkh5lc6ydv0ayw5"))))
+        (base32 "08i53d65sdxv2cc43r47nxi8adzgls3vfgws29dfvlnv4nvj5f76"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-see

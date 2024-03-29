@@ -2316,13 +2316,13 @@ Magirr and Jimenez (2022) <@code{arXiv:2201.10445v1>}.")
 (define-public r-nphpower
   (package
     (name "r-nphpower")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nphPower" version))
        (sha256
-        (base32 "0jqrbjm56nmhrmhsidz0bzyifq6kpqch8r64j8vd98b7xgcb6w4h"))))
+        (base32 "0mvynqmpsgfwmvxi478mkw15rscxdb6mvrj1djfhhm54h0w0133k"))))
     (properties `((upstream-name . "nphPower")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-survival r-mvtnorm r-mass))
@@ -2334,7 +2334,9 @@ design with survival endpoints using combination tests under either proportional
 hazards or non-proportional hazards.  The combination tests include maximum
 weighted log-rank test and projection test.  The sample size calculation
 procedure is very flexible, allowing for user-defined hazard ratio function and
-considering various trial conditions like staggered entry, drop-out etc.  Trial
+considering various trial conditions like staggered entry, drop-out etc.  The
+sample size calculation also applies to various cure models such as proportional
+hazards cure model, cure model with (random) delayed treatments effects.  Trial
 simulation function is also provided to facilitate the empirical power
 calculation.  The references for projection test and maximum weighted logrank
 test include Brendel et al. (2014) <doi:10.1111/sjos.12059> and Cheng and He
@@ -2342,7 +2344,8 @@ test include Brendel et al. (2014) <doi:10.1111/sjos.12059> and Cheng and He
 under proportional hazard include Schoenfeld (1981)
 <doi:10.1093/biomet/68.1.316> and Freedman (1982) <doi:10.1002/sim.4780010204>.
 The references for calculation under non-proportional hazards include Lakatos
-(1988) <doi:10.2307/2531910> and Cheng and He (2021) (under review).")
+(1988) <doi:10.2307/2531910> and Cheng and He (2023)
+<doi:10.1002/bimj.202100403>.")
     (license license:gpl2+)))
 
 (define-public r-nphmc
@@ -8859,13 +8862,13 @@ viewer after creation in Shiny.")
 (define-public r-ngchm
   (package
     (name "r-ngchm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NGCHM" version))
        (sha256
-        (base32 "12n15ja1r1vj9znf8rlp1xmknh3ma36557vvp6mxcv5vf4fwpzd3"))))
+        (base32 "0flmnxzxx7fv8xl708ad60lwh0j3jcir5xdg07ygfacyiww36vlc"))))
     (properties `((upstream-name . "NGCHM")))
     (build-system r-build-system)
     (inputs (list))

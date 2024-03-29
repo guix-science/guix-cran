@@ -8360,25 +8360,26 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "049vllrxsgp1hsjh8w79nybmcl40wlnjp5bxdkjrc0r3yi8mvc0v"))))
+        (base32 "157v3bhb10x0fndx64pq3m5ddmwj070j1ca3d8ff64kpkfbxdgd3"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-cluster))
+    (native-inputs (list r-knitr))
     (home-page "https://CRAN.R-project.org/package=traj")
     (synopsis "Clustering of Functional Data Based on Measures of Change")
     (description
-     "This package implements the three-step procedure proposed by Leffondree et al.
-(2004) to identify clusters of individual longitudinal trajectories.  The
-procedure involves (1) calculating a number of measures of change capturing
+     "This package implements a three-step procedure in the spirit of Leffondree et
+al. (2004) to identify clusters of individual longitudinal trajectories.  The
+procedure involves (1) computing a number of \"measures of change\"\" capturing
 various features of the trajectories; (2) using a Principal Component Analysis
 based dimension reduction algorithm to select a subset of measures and (3) using
-the K-means clustering algorithm to identify clusters of trajectories.")
+the k-means clustering algorithm to identify clusters of trajectories.")
     (license license:expat)))
 
 (define-public r-traitstrap
@@ -11107,13 +11108,13 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 (define-public r-toastui
   (package
     (name "r-toastui")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toastui" version))
        (sha256
-        (base32 "0hkww0q39skcah6mvbbs0pdlnzac3jwjgwkidp9as99qb1l4bzj8"))))
+        (base32 "1m6l3acvsznhm22gvc9jjl8jnlxa3l6l6s42mdv04kwzw1qqm6xp"))))
     (properties `((upstream-name . "toastui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -12772,13 +12773,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "183lqqp2rxcfszdywhgxclqwlhslmaifybgmc7q1a8nvm9glj82c"))))
+        (base32 "0c8cwfjhj2vifac0ywib9k63ffkss4nxffpvm6kmamv1ypya9f76"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -14201,20 +14202,19 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 (define-public r-tidywikidatar
   (package
     (name "r-tidywikidatar")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywikidatar" version))
        (sha256
-        (base32 "0lpdg4iaqis3hnklf3qm0xjan0pdmpkwgc4zm6hl4b5m1zr4s2fx"))))
+        (base32 "1f6651nh98assi6wr6k1qp55bspqln83arz6di1fx8p7mlkrh8li"))))
     (properties `((upstream-name . "tidywikidatar")))
     (build-system r-build-system)
     (propagated-inputs (list r-wikipedir
                              r-wikidatar
                              r-wikidataqueryservicer
                              r-vctrs
-                             r-usethis
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -14228,7 +14228,8 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
                              r-glue
                              r-fs
                              r-dplyr
-                             r-dbi))
+                             r-dbi
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://edjnet.github.io/tidywikidatar/")
     (synopsis "Explore 'Wikidata' Through Tidy Data Frames")
@@ -18810,13 +18811,13 @@ Arabidopsis).")
 (define-public r-tf
   (package
     (name "r-tf")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tf" version))
        (sha256
-        (base32 "1w1ifnxfh963rqbx7kljsf3s0dc1nj0kgc9dkwn8jh2j1qi69bcn"))))
+        (base32 "1746sbxj5c2nnjbxg4kbwbcza84crbsql4yf3rfrrxg87695rx17"))))
     (properties `((upstream-name . "tf")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22900,13 +22901,13 @@ this study is included in the package to illustrate how to use it.")
 (define-public r-tdcmstan
   (package
     (name "r-tdcmstan")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdcmStan" version))
        (sha256
-        (base32 "0xa80r37abc9fzf9zcf0zpimadwa3glhw3qbn7wbg0cq93cm04df"))))
+        (base32 "1cykg4d1v42s9b2afhjfffbps40dxpgl2slacmhzbxjwlr24ci35"))))
     (properties `((upstream-name . "tdcmStan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22917,7 +22918,7 @@ this study is included in the package to illustrate how to use it.")
                              r-magrittr
                              r-glue
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=tdcmStan")
+    (home-page "https://github.com/atlas-aai/tdcmStan")
     (synopsis "Automating the Creation of Stan Code for TDCMs")
     (description
      "This package provides a collection of functions for automatically creating Stan

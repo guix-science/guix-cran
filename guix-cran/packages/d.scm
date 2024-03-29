@@ -21930,13 +21930,13 @@ http://arxiv.org/abs/1602.04971).")
 (define-public r-dcmodify
   (package
     (name "r-dcmodify")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcmodify" version))
        (sha256
-        (base32 "1r4mfkf766hsr3qd60mmxy3841r8jc4d6wlb12cak4aanqisq7aj"))))
+        (base32 "080adcvlvpiha4vlxwnxsf657i0yjmpby5iyhabbqc5hzmwm3ar5"))))
     (properties `((upstream-name . "dcmodify")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-validate r-settings r-lumberjack))

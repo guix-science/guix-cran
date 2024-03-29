@@ -5123,13 +5123,13 @@ analysing and manipulating visual field data.")
 (define-public r-opgmmassessment
   (package
     (name "r-opgmmassessment")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opGMMassessment" version))
        (sha256
-        (base32 "09ii297524q2bgw2iqvd4s5bhnmm6gm5dh4lxskq1yxynfqdl77r"))))
+        (base32 "1rxyn0kpy72i7mqabpakh6pxwv629wrgia49awgx9nc5ad6hf079"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
