@@ -3429,13 +3429,13 @@ model using algorithm by Jin, Lin and Tamvakis (2012)
 (define-public r-viralx
   (package
     (name "r-viralx")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viralx" version))
        (sha256
-        (base32 "03zjyajr790cpv92rfdjn6llc80hf03zqyycqxd8649p15przc6v"))))
+        (base32 "1449r74g4q7qigyqb21sasdyr80542b4lfavjszh2s5bd8pkc8di"))))
     (properties `((upstream-name . "viralx")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows

@@ -17947,13 +17947,13 @@ Roberts (1999) <doi:10.1109/IJCNN.1999.832603>.")
 (define-public r-spork
   (package
     (name "r-spork")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spork" version))
        (sha256
-        (base32 "0p9r203nnvannghlr3vggg30nmyz5j902dr7p2p2d3f1gh9vf3ss"))))
+        (base32 "035s59y1jfjyjmi7352yj04nzv29q6v48maifikdzn4b7l6mlsbg"))))
     (properties `((upstream-name . "spork")))
     (build-system r-build-system)
     (propagated-inputs (list r-png r-latexpdf r-kableextra r-ggplot2))
@@ -47648,13 +47648,13 @@ robust LBCI proposed by Falk (2018) <doi:10.1080/10705511.2017.1367254>.")
 (define-public r-semipar-depcens
   (package
     (name "r-semipar-depcens")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemiPar.depCens" version))
        (sha256
-        (base32 "08z73bw7qjns16zci0m0wq2i4f60v7xmcrsa9iy692xpijqp30lh"))))
+        (base32 "1dkyq8gilcxy4rml917851f7yn252g8xf6rr0glvai1jz5iyi8js"))))
     (properties `((upstream-name . "SemiPar.depCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pbivnorm r-foreach r-doparallel

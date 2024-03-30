@@ -24435,13 +24435,13 @@ information.")
 (define-public r-dataquier
   (package
     (name "r-dataquier")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataquieR" version))
        (sha256
-        (base32 "0paxrc9fi4p93mp4rr0ip0kn9gsm0hmplsl8icwxx980dmhxxyz9"))))
+        (base32 "1y8s6igz7ckvqamz26lrks62fnh51w1gz18gv7saxkmiwcacfjh4"))))
     (properties `((upstream-name . "dataquieR")))
     (build-system r-build-system)
     (arguments
@@ -24460,11 +24460,13 @@ information.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-withr
+                             r-units
+                             r-scales
                              r-robustbase
                              r-rlang
                              r-rio
-                             r-reshape
+                             r-readr
                              r-r-devices
                              r-qmrparser
                              r-patchwork
@@ -24473,6 +24475,7 @@ information.")
                              r-mass
                              r-lubridate
                              r-lme4
+                             r-lifecycle
                              r-ggplot2
                              r-emmeans
                              r-dplyr))

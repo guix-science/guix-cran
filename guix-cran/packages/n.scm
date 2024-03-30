@@ -1894,13 +1894,13 @@ method of Wang and Lin (2015) <http://www.jmlr.org/papers/v16/wang15b.html>.")
 (define-public r-npreg
   (package
     (name "r-npreg")
-    (version "1.0-9")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npreg" version))
        (sha256
-        (base32 "10pgcjhiannvxkbsw3ywkjzmgsq2m7dqwqhxkfcdnbc052n7s6di"))))
+        (base32 "09z51svfigw7xzs8s20m19amy2ypi9gdihqsjvqngh6pwsci5v9n"))))
     (properties `((upstream-name . "npreg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=npreg")
@@ -1909,9 +1909,10 @@ method of Wang and Lin (2015) <http://www.jmlr.org/papers/v16/wang15b.html>.")
      "Multiple and generalized nonparametric regression using smoothing spline ANOVA
 models and generalized additive models, as described in Helwig (2020)
 <doi:10.4135/9781526421036885885>.  Includes support for Gaussian and
-non-Gaussian responses, smoothers for multiple types of predictors, interactions
-between smoothers of mixed types, eight different methods for smoothing
-parameter selection, and flexible tools for prediction and inference.")
+non-Gaussian responses, smoothers for multiple types of predictors (including
+random intercepts), interactions between smoothers of mixed types, eight
+different methods for smoothing parameter selection, and flexible tools for
+diagnostics, inference, and prediction.")
     (license license:gpl2+)))
 
 (define-public r-npred
@@ -5062,13 +5063,13 @@ at <https://api.tidesandcurrents.noaa.gov/api/prod/>.")
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
-    (version "0.1.6")
+    (version "0.1.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NO.PING.PONG" version))
        (sha256
-        (base32 "1i8pwk4p43yqmk8irkmvza080sngmng0wv1yr847253a0frjg9mr"))))
+        (base32 "0fszx8a99znc067lpj4h3n5991lvm7iwq8yici8hhizr11f0dc70"))))
     (properties `((upstream-name . "NO.PING.PONG")))
     (build-system r-build-system)
     (propagated-inputs (list r-metafor r-mcmcglmm r-mass))
@@ -5083,7 +5084,7 @@ for a wide selection of research topics.  Jointly considering previous findings
 along with new data is more likely to result in correct conclusions than does
 the traditional practice of not incorporating previous findings, which often
 results in a back and forth ping-pong of conclusions when evaluating a sequence
-of studies.  O'Connor & Ermacora (2021, <doi:10.3758/bf03200807>).")
+of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
     (license license:gpl2+)))
 
 (define-public r-nntensor

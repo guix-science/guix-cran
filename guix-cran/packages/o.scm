@@ -6564,13 +6564,13 @@ interest.")
 (define-public r-ontologysimilarity
   (package
     (name "r-ontologysimilarity")
-    (version "2.5")
+    (version "2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ontologySimilarity" version))
        (sha256
-        (base32 "035z572lbsfcnr9c0hl8gir1kgk0dw8dxzr3v8dqd93k6jr6kaxb"))))
+        (base32 "03fga6xqvxpa3hwf5pb0dzyz4scz2szvbgm8bsj1wl35gl477cjp"))))
     (properties `((upstream-name . "ontologySimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ontologyindex))
@@ -6966,16 +6966,16 @@ Yigiter A, Chen J, An L, Danacioglu N (2015)
 (define-public r-onion
   (package
     (name "r-onion")
-    (version "1.5-0")
+    (version "1.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onion" version))
        (sha256
-        (base32 "07q5wwphb6jsk7ya7hgsf5782yalvhyc7h43hsd9rg4rhpmy8in9"))))
+        (base32 "0ja3nqi684c314hh9y5lp59bdfi01vycz17ridw1xlzh89na8c60"))))
     (properties `((upstream-name . "onion")))
     (build-system r-build-system)
-    (propagated-inputs (list r-emulator))
+    (propagated-inputs (list r-matrix r-mathjaxr r-freealg r-emulator))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/onion")
     (synopsis "Octonions and Quaternions")

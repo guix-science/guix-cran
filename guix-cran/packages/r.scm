@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -4145,16 +4146,21 @@ model as png files.")
 (define-public r-rtensor2
   (package
     (name "r-rtensor2")
-    (version "0.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTensor2" version))
        (sha256
-        (base32 "1aspffwgk5937vl6r1ha5is9i3aznmcpmnjgwa5ar5w4pnyilvnj"))))
+        (base32 "0bangmph2hmk50gx21dkky0b22aimh168bndbp7a0s5vg2m49ijz"))))
     (properties `((upstream-name . "rTensor2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wavethresh r-rtensor r-matrixcalc r-matrix
+    (propagated-inputs (list r-wavethresh
+                             r-rtensor
+                             r-raster
+                             r-png
+                             r-matrixcalc
+                             r-matrix
                              r-gsignal))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rTensor2")
@@ -6451,13 +6457,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "11in248gaixjm6g9qrnl4l60lghiclrgzijqcgncz4bd9v47d3rv"))))
+        (base32 "1r6igxar0mbnqscnrp7mq98isi40njiwf8377rk2qpyq69108v7h"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6466,7 +6472,9 @@ An overview of these models is given in Snijders (2017),
                              r-rstac
                              r-rlang
                              r-proceduralnames
+                             r-lifecycle
                              r-jsonlite
+                             r-httr
                              r-glue
                              r-future-apply))
     (native-inputs (list r-knitr))
@@ -10362,17 +10370,16 @@ most recent monthly PDO index values together with related climate indices.")
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "1mzv5spr7z2khr9vvhy6pmn7mswz1rjqw0hs7jhhxay7lv636xyz"))))
+        (base32 "0y5mym0p32sh691c18pg8zkbmm65m1dbqqcr8hdi9ix6jzc4r4rl"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-stringr
                              r-purrr
                              r-magrittr
                              r-jsonlite
@@ -28902,6 +28909,43 @@ reports, including automated curation and time-stamping of outputs,
 parameterisation and provision of helper functions to manage dependencies.")
     (license license:expat)))
 
+(define-public r-reporterscore
+  (package
+    (name "r-reporterscore")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReporterScore" version))
+       (sha256
+        (base32 "1xxxzp4pzzljrhcks9fha24q6kljapkifgrgjjm47s3qwjjplx32"))))
+    (properties `((upstream-name . "ReporterScore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-reshape2
+                             r-pcutils
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggnewscale
+                             r-foreach
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/ReporterScore")
+    (synopsis
+     "Generalized Reporter Score-Based Enrichment Analysis for Omics Data")
+    (description
+     "Inspired by the classic RSA', we developed the improved Generalized Reporter
+Score-based Analysis (GRSA) method, implemented in the R package
+@code{ReporterScore}', along with comprehensive visualization methods and
+pathway databases.  GRSA is a threshold-free method that works well with all
+types of biomedical features, such as genes, chemical compounds, and microbial
+species.  Importantly, the GRSA supports multi-group and longitudinal
+experimental designs, because of the included multi-group-compatible statistical
+methods.")
+    (license license:gpl3)))
+
 (define-public r-reporter-nih
   (package
     (name "r-reporter-nih")
@@ -33870,13 +33914,13 @@ subunits and features.  Intended to be part of a 3D visualization workflow.")
 (define-public r-receptiviti
   (package
     (name "r-receptiviti")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "receptiviti" version))
        (sha256
-        (base32 "1qshi14shq21pnpb3n8wwykz5qgzhc14mr50iiwyif6d0f4n82gb"))))
+        (base32 "1z8f8wky1r712mi3by4jf0iv973i3bppgslj7kkvzwnrbij458fj"))))
     (properties `((upstream-name . "receptiviti")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-progressr r-jsonlite r-digest r-curl))

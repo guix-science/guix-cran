@@ -3760,23 +3760,23 @@ this package to practice data wrangling, text analysis and network analysis.")
 (define-public r-frictionless
   (package
     (name "r-frictionless")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frictionless" version))
        (sha256
-        (base32 "1f0857jl1xq1v2pv6wv9nx7crm40r1p60gjbqlr9qi8nm3ikz8a8"))))
+        (base32 "0d23gbaikwhr7jac9b21p8a3hj1rwh766v752axikbq02hf3a6vg"))))
     (properties `((upstream-name . "frictionless")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
+                             r-rlang
                              r-readr
                              r-purrr
                              r-jsonlite
                              r-httr
-                             r-glue
                              r-dplyr
-                             r-assertthat))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/frictionlessdata/frictionless-r")
     (synopsis "Read and Write Frictionless Data Packages")
@@ -15344,13 +15344,13 @@ is transformed to work with sf'.")
 (define-public r-felp
   (package
     (name "r-felp")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "felp" version))
        (sha256
-        (base32 "134kv7mj3ajgcl7z8dq0vjx3yqy2awlpn3xs39q7yl7z5kz6i44g"))))
+        (base32 "0smgarjvbkfwrx0vj0ga8dr0ydnmw05fwyp6gz25lnnzgydjj3xf"))))
     (properties `((upstream-name . "felp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -15365,7 +15365,8 @@ is transformed to work with sf'.")
                              r-htmltools
                              r-dplyr
                              r-data-table
-                             r-curl))
+                             r-curl
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/atusy/felp")
     (synopsis "Functional Help for Functions, Objects, and Packages")

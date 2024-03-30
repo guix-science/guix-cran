@@ -18997,39 +18997,6 @@ without the need to do the alignment in each run which is a big limitation in
 other available packages.")
     (license license:gpl3)))
 
-(define-public r-gfpop
-  (package
-    (name "r-gfpop")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfpop" version))
-       (sha256
-        (base32 "0jm7ri25qhkc80s4vfz2p9516m7wl0x8fcci6mggm4mc4ksx78f4"))))
-    (properties `((upstream-name . "gfpop")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=gfpop")
-    (synopsis "Graph-Constrained Functional Pruning Optimal Partitioning")
-    (description
-     "Penalized parametric change-point detection by functional pruning dynamic
-programming algorithm.  The successive means are constrained using a graph
-structure with edges defining the nature of the changes These changes can be
-unconstrained (type std), up or down constrained (type up and down) or
-constrained by a minimal size jump (type abs).  The type null means that the
-graph allows us to stay on the same segment.  To each edge we can associate some
-additional properties: a minimal gap size, a penalty, some robust parameters
-(K,a) for biweight (K) and Huber losses (K and a).  The user can also constrain
-the inferred means to lie between some minimal and maximal values.  Data is
-modeled by a cost with possible use of a robust loss, biweight and Huber (see
-edge parameters K and a).  These costs should have a quadratic, log-linear or a
-log-log representation.  This includes quadratic Gaussian cost (type = mean'),
-log-linear cost (type = variance', poisson or exp') and log-log cost (type =
-negbin').  More details in the paper published in the Journal of Statistical
-Software: <doi:10.18637/jss.v106.i06>.")
-    (license license:expat)))
-
 (define-public r-gformulami
   (package
     (name "r-gformulami")
@@ -23492,13 +23459,13 @@ more metrics, and even larger datasets.")
 (define-public r-geniebpc
   (package
     (name "r-geniebpc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieBPC" version))
        (sha256
-        (base32 "0wc9avjwy4i6zikhqi3mcyws8a6kbgk6qzrrmrm2hlxf5gzlfr47"))))
+        (base32 "1s8qi5i10a3qkpgls2589m6aiyda2k7gbfjmbpkbjw73girkh5ln"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

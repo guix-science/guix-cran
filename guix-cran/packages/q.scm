@@ -5099,30 +5099,37 @@ among constructs and between constructs and observed variables.")
 (define-public r-qch
   (package
     (name "r-qch")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qch" version))
        (sha256
-        (base32 "1kizr319kjr6xsgz7n0dhgp8rxr4j1x4bcr5cnifkp6z2zh92vka"))))
+        (base32 "1d2mcyzfnpmr4pv036crhsc91gypj0jrn6hmd9jcnm49khqc0lan"))))
     (properties `((upstream-name . "qch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mclust r-ks))
+    (propagated-inputs (list r-stringr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-qvalue
+                             r-purrr
+                             r-ks
+                             r-dplyr
+                             r-copula))
     (home-page "https://cran.r-project.org/package=qch")
-    (synopsis "Query Composed Hypotheses")
+    (synopsis "Query Composite Hypotheses")
     (description
-     "This package provides functions for the joint analysis of K sets of p-values
-obtained for a same list of items.  This joint analysis is performed by querying
-a composed hypothesis, i.e.  an arbitrary complex combination of simple
-hypotheses, as described in Mary-Huard et al. (2021) <@code{arXiv:2104.14601>}.
-The null distribution corresponding to the composed hypothesis of interest is
-obtained by fitting non-parametric mixtures models (one for each of the simple
-hypothesis of the complex combination).  Type I error rate control is achieved
-through Bayesian False Discovery Rate control.  The 3 main functions of the
-package @code{GetHinfo}(), qch.fit() and qch.test() correspond to the 3 steps
-for querying a composed hypothesis (composed H0/H1 formulation, inferring the
-null distribution and testing the null hypothesis).")
+     "This package provides functions for the joint analysis of Q sets of p-values
+obtained for the same list of items.  This joint analysis is performed by
+querying a composite hypothesis, i.e.  an arbitrary complex combination of
+simple hypotheses, as described in Mary-Huard et al. (2021)
+<doi:10.1093/bioinformatics/btab592> and De Walsche et al.(2023)
+<doi:10.1101/2024.03.17.585412>.  In this approach, the Q-uplet of p-values
+associated with each item is distributed as a multivariate mixture, where each
+of the 2^Q components corresponds to a specific combination of simple
+hypotheses.  The dependence between the p-value series is considered using a
+Gaussian copula function.  A p-value for the composite hypothesis test is
+derived from the posterior probabilities.")
     (license license:gpl3)))
 
 (define-public r-qcgwas

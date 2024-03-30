@@ -1611,24 +1611,24 @@ city codes at a specific point in time.")
 (define-public r-joyn
   (package
     (name "r-joyn")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joyn" version))
        (sha256
-        (base32 "17x9rwcrqv7qx9w0cfyshjsij9cdl0fk13cfqbv0ibnc2nfycw87"))))
+        (base32 "0p8s90fkjwlllhk7a60xs6pfvgbhyz5sk3rdvdp5sb4l037rb4m2"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-glue r-data-table r-cli))
+    (propagated-inputs (list r-rlang r-lifecycle r-data-table r-collapse r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/randrescastaneda/joyn")
     (synopsis
      "Tool for Diagnosis of Tables Joins and Complementary Join Features")
     (description
-     "Tool for diagnosing table joins.  It combines the speed `data.table`, the
-flexibility of `dplyr`, and the diagnosis and features of the `merge` command in
-`Stata`.")
+     "Tool for diagnosing table joins.  It combines the speed of `collapse` and
+`data.table`, the flexibility of `dplyr`, and the diagnosis and features of the
+`merge` command in `Stata`.")
     (license license:expat)))
 
 (define-public r-jousboost
@@ -3467,6 +3467,28 @@ point detection.  Reference - Bivariate change point detection - joint detection
 of changes in expectation and variance, Scandinavian Journal of Statistics, DOI
 10.1111/sjos.12547.")
     (license license:gpl3)))
+
+(define-public r-jcolors
+  (package
+    (name "r-jcolors")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jcolors" version))
+       (sha256
+        (base32 "13rwxavq6zrzq9k6x436ydl1rr98qz7ab6npkg82hwqvx3k30n57"))))
+    (properties `((upstream-name . "jcolors")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://jaredhuling.org/jcolors/")
+    (synopsis
+     "Colors Palettes for R and 'ggplot2', Additional Themes for 'ggplot2'")
+    (description
+     "This package contains a selection of color palettes and ggplot2 themes designed
+by the package author.")
+    (license license:gpl2)))
 
 (define-public r-jcext
   (package

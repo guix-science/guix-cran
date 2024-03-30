@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -13320,13 +13320,13 @@ goodness-of-fit.")
 (define-public r-coortweet
   (package
     (name "r-coortweet")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CooRTweet" version))
        (sha256
-        (base32 "0xxzj67a3sxh0xhpjd9ywpxv8102bvlw6q2a19waq5i1s63a7cpm"))))
+        (base32 "0gziybfp640p2gskbz80kx9ikmg3mpk0m937iq44k1906lrvp9p2"))))
     (properties `((upstream-name . "CooRTweet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
@@ -32310,6 +32310,30 @@ including head', tail ,'pushd ,and popd'.  Various other goodies included as
 well.")
     (license license:lgpl3)))
 
+(define-public r-cgr
+  (package
+    (name "r-cgr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CGR" version))
+       (sha256
+        (base32 "03kgbhxjcsid5s61kq4zc4612ammd17k1w4m8f2p1xq2ib1mykqd"))))
+    (properties `((upstream-name . "CGR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CGR")
+    (synopsis
+     "Compound Growth Rate for Capturing the Growth Rate Over the Period")
+    (description
+     "The compound growth rate indicates the percentage change of a specific variable
+over a defined period.  It is calculated using non-linear models, particularly
+the exponential model.  To estimate the compound growth rates, the growth model
+is first converted to semilog form and then analyzed using Ordinary Least
+Squares (OLS) regression.  This package has been developed using concept of
+Shankar et al. (2022)<doi:10.3389/fsufs.2023.1208898>.")
+    (license license:gpl3)))
+
 (define-public r-cgpfunctions
   (package
     (name "r-cgpfunctions")
@@ -35815,6 +35839,40 @@ III of Borgan et al (2000), <DOI:10.1023/A:1009661900674>.  This estimator is
 for fitting a Cox proportional hazards model to data from a case-cohort study
 where the subcohort was selected by stratified simple random sampling.")
     (license license:gpl3)))
+
+(define-public r-ccdr
+  (package
+    (name "r-ccdr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ccdR" version))
+       (sha256
+        (base32 "04g8i39p11yyrrgs3lpwj095hnyncdljyz4mxsl9pcql4hwp4v39"))))
+    (properties `((upstream-name . "ccdR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USEPA/ccdR")
+    (synopsis "Utilities for Interacting with the 'CCTE' APIs")
+    (description
+     "Access chemical, hazard, and bioactivity data from the Center for Computational
+Toxicology and Exposure ('CCTE') APIs <https://api-ccte.epa.gov/docs/>.
+@code{ccdR} was developed to streamline the process of accessing the information
+available through the CCTE APIs without requiring prior knowledge of how to use
+APIs.  All data is also available on the @code{CompTox} Chemical Dashboard
+('CCD') <https://comptox.epa.gov/dashboard/>.")
+    (license license:gpl3+)))
 
 (define-public r-ccda
   (package

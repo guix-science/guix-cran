@@ -3015,13 +3015,13 @@ multi-methods, spherical representation of a correlation matrix.")
 (define-public r-psweight
   (package
     (name "r-psweight")
-    (version "1.1.8")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSweight" version))
        (sha256
-        (base32 "0vawkkgm72s17cjfww9175dyr100lxdv4gf35p2lz8wcnbsklnv5"))))
+        (base32 "1p0iq95jwhh6j3gw3zd8m58rryy8j33k2lrzypb5qzhwrgx2i41v"))))
     (properties `((upstream-name . "PSweight")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
@@ -10198,13 +10198,13 @@ training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy" version))
        (sha256
-        (base32 "00p75lxs2fy1815c3hb5qifhv210vxi4kr650rhiig6bh5bhb9il"))))
+        (base32 "0qy4z3la9fhl63sy4rm2dpbzns5kv0xwqkgmj1rzdmpsbzvb805i"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -26688,6 +26688,32 @@ regression models.")
 prediction error estimation with minimal programming effort and assist users
 with model selection in regression problems.")
     (license license:gpl2+)))
+
+(define-public r-perplexr
+  (package
+    (name "r-perplexr")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "perplexR" version))
+       (sha256
+        (base32 "19rxk8xf7pb8mbd4j6zdxwj62hfzczx8nvbh7qqlnib2w6pgdpw2"))))
+    (properties `((upstream-name . "perplexR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-jsonlite
+                             r-httr
+                             r-clipr))
+    (home-page "https://github.com/GabrielKaiserQFin/perplexR")
+    (synopsis "Coding Assistant using Perplexity's Large Language Models")
+    (description
+     "This package provides a coding assistant using Perplexity's Large Language
+Models <https://www.perplexity.ai/> API. A set of functions and RStudio add-ins
+that aim to help R developers.")
+    (license license:gpl3+)))
 
 (define-public r-permutes
   (package

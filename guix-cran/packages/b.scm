@@ -11971,13 +11971,13 @@ n-gram data.")
 (define-public r-biogeom
   (package
     (name "r-biogeom")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biogeom" version))
        (sha256
-        (base32 "0fbgi2xdld42aprbx2zlyghbq1yn93grw2gc7rargxjf151b990d"))))
+        (base32 "0wzj99ldk0654s1a8d1b4q57mahv4mjzndx5bj1hakmsdrwa6q8b"))))
     (properties `((upstream-name . "biogeom")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-geom))
@@ -15443,13 +15443,13 @@ be visualized with various plotting functions and exported into tables.")
 (define-public r-bgw
   (package
     (name "r-bgw")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgw" version))
        (sha256
-        (base32 "0az4n3jh02p0smzfx57mpg8q2yrk63fdpb6qcsbpphkicjmvh8bn"))))
+        (base32 "0iw36qifawm5jlsjzv4y4kl228hz4clbgzf02dpxv7579nlnibm7"))))
     (properties `((upstream-name . "bgw")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -15471,21 +15471,20 @@ wrapper (and related) functions with modified Fortran source code so that it can
 be compiled and linked in the R environment for fast execution.  This version
 implements a function ('bgw_mle.R') that performs maximum likelihood estimation
 (MLE) for a user-provided model object that computes probabilities (a.k.a.
-probability densities).  The motivation for producing this initial version is to
-provide fast, efficient, and reliable MLE for discrete choice models that can be
-called from the Apollo choice modelling R package: see
-<http://www.apollochoicemodelling.com>.  However, estimation can also be
-performed in a stand-alone fashion without using Apollo (as shown in simple
-examples).  After this initial version is available on CRAN, an updated version
-of Apollo (0.2.9) will be made available that automatically loads bgw'.
-Additional development can then occur, including more detailed examples in bgw
-that refer to Apollo.  Note also that BGW capabilities are not limited to MLE,
-and future extension to other estimators (e.g., nonlinear least squares,
-generalized method of moments, etc.) is possible.  The Fortran code included in
-bgw was modified by one of the original BGW authors (Bunch) under his rights as
-confirmed by direct consultation with the ACM Intellectual Property and Rights
-Manager.  See <https://authors.acm.org/author-resources/author-rights>.  The
-main requirement is clear citation of the original publication (see above).")
+probability densities).  The original motivation for producing this package was
+to provide fast, efficient, and reliable MLE for discrete choice models that can
+be called from the Apollo choice modelling R package ( see
+<http://www.apollochoicemodelling.com>).  Starting with the release of Apollo
+3.0, BGW is the default estimation package.  However, estimation can also be
+performed using BGW in a stand-alone fashion without using Apollo (as shown in
+simple examples included in the package).  Note also that BGW capabilities are
+not limited to MLE, and future extension to other estimators (e.g., nonlinear
+least squares, generalized method of moments, etc.) is possible.  The Fortran
+code included in bgw was modified by one of the original BGW authors (Bunch)
+under his rights as confirmed by direct consultation with the ACM Intellectual
+Property and Rights Manager.  See
+<https://authors.acm.org/author-resources/author-rights>.  The main requirement
+is clear citation of the original publication (see above).")
     (license license:gpl3)))
 
 (define-public r-bgvar
@@ -18428,6 +18427,28 @@ quickly preview different aspects of biodiversity information such as inventory
 completeness, extent of coverage (taxonomic, temporal and geographic), gaps and
 biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
     (license license:gpl3)))
+
+(define-public r-bdsvd
+  (package
+    (name "r-bdsvd")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdsvd" version))
+       (sha256
+        (base32 "0jpli8mdrjbgcvgvj2rwac49147l7h91n2mbsi89pw7m5ydimvvp"))))
+    (properties `((upstream-name . "bdsvd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-irlba))
+    (home-page "https://cran.r-project.org/package=bdsvd")
+    (synopsis "Block Structure Detection Using Singular Vectors")
+    (description
+     "This package performs block diagonal covariance matrix detection using singular
+vectors (BD-SVD), which can be extended to hierarchical variable clustering
+(HC-SVD).  The methods are described in Bauer (202Xa) <@code{arXiv:2211.16155>}
+and Bauer (202Xb) <@code{arXiv:2308.06820>}.")
+    (license license:gpl2+)))
 
 (define-public r-bdscale
   (package

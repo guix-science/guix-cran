@@ -828,16 +828,22 @@ occurred.")
 (define-public r-xmpdf
   (package
     (name "r-xmpdf")
-    (version "0.1.4")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xmpdf" version))
        (sha256
-        (base32 "0hqk40zwwxkx0zhw2a1phm49lwlwsbphhb3g87b1vvy3xsxilph6"))))
+        (base32 "0pma8njk77ggpky6m4l9p7n7ardy41lsn0q67wkgr0mwgjjyil7w"))))
     (properties `((upstream-name . "xmpdf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-r6 r-purrr r-jsonlite r-datetimeoffset))
+    (propagated-inputs (list r-stringi
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-jsonlite
+                             r-datetimeoffset
+                             r-brio))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/xmpdf/dev/")
     (synopsis "Edit 'XMP' Metadata and 'PDF' Bookmarks and Documentation Info")
@@ -848,7 +854,7 @@ table of contents) and documentation info entries in pdf files.  Can detect and
 use a variety of command-line tools to perform these operations such as exiftool
 <https://exiftool.org/>, ghostscript <https://www.ghostscript.com/>, and/or
 pdftk <https://gitlab.com/pdftk-java/pdftk>.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-xmlrpc2
   (package

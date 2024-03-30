@@ -8467,6 +8467,28 @@ geodesic methods as provided by Charles F. F. Karney (2013)
 <doi:10.1007/s00190-012-0578-z> via the geodist and geosphere packages.")
     (license license:gpl3)))
 
+(define-public r-trainsplit
+  (package
+    (name "r-trainsplit")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trainsplit" version))
+       (sha256
+        (base32 "033x8vci7nf4sax79xri2w03vq0qx9zrf4qqlfwyl6lwjv7pnfix"))))
+    (properties `((upstream-name . "trainsplit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (home-page "https://github.com/eastnile/trainsplit")
+    (synopsis
+     "Split a Dataframe, Tibble, or Data.table into Training and Test Sets")
+    (description
+     "Split a dataframe, tibble, or data.table into a list containing training and
+test sets.  Can specify either number or percentage of observations to go into
+the training set.")
+    (license license:expat)))
+
 (define-public r-trainr
   (package
     (name "r-trainr")
@@ -9055,6 +9077,29 @@ instead.")
     (synopsis "Slick Call Stacks")
     (description "Better looking call stacks after an error.")
     (license license:expat)))
+
+(define-public r-tracenma
+  (package
+    (name "r-tracenma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tracenma" version))
+       (sha256
+        (base32 "087bqwnl8n8aqb7k2xc39flvdn6c1z353p0zk8z1rn4nbyswp2nv"))))
+    (properties `((upstream-name . "tracenma")))
+    (build-system r-build-system)
+    (home-page "https://CRAN.R-project.org/package=tracenma")
+    (synopsis
+     "Database for Developing Transitivity Methodology in Network Meta-Analysis")
+    (description
+     "This package provides functions to access the database of 217 data-frames with
+aggregate study-level characteristics (that may act as effect modifiers)
+extracted from published systematic reviews with network meta-analysis.  The
+database shall only be used for developing and appraising the methodology to
+assess the transitivity assumption quantitatively.")
+    (license license:gpl3+)))
 
 (define-public r-tracee
   (package
@@ -13565,13 +13610,13 @@ correlate two timelines of events.  A brief description is available at
 (define-public r-timeless
   (package
     (name "r-timeless")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeless" version))
        (sha256
-        (base32 "1ak2kksfk78yhjylf6iwcmdgzv8lwx6alck52dznn74y2w6zlr6m"))))
+        (base32 "1a1yqaxm1zhfqn56d0hpgxwsbci17cnwfm65zrjghalkrwpdj5ly"))))
     (properties `((upstream-name . "timeless")))
     (build-system r-build-system)
     (home-page "https://github.com/schochastics/timeless")
@@ -25816,13 +25861,13 @@ data into machine-readable @code{LongForm} Dataframes.")
 (define-public r-tablet
   (package
     (name "r-tablet")
-    (version "0.6.5")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablet" version))
        (sha256
-        (base32 "0vqzql4103qfbsy0ryncznmrrk7dsr28awgrrrgccsvkp8fgh7hf"))))
+        (base32 "0yg58dh8k32155pm16ai327a33i0bx7qkrd4jvj7mf4qy9ava6v3"))))
     (properties `((upstream-name . "tablet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlet
@@ -26489,28 +26534,4 @@ equivalence according to Hoffelder (2016)
 <http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
-
-(define-public r-t2dfittailor
-  (package
-    (name "r-t2dfittailor")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "T2DFitTailor" version))
-       (sha256
-        (base32 "1cyml3dfblsv8mc61j8kzvj8h9gbcj4qph124028492a2cxvgjj4"))))
-    (properties `((upstream-name . "T2DFitTailor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-fmsb r-dplyr))
-    (home-page "https://cran.r-project.org/package=T2DFitTailor")
-    (synopsis
-     "'Tailor the Exercise Plans and Visualize the Outcome for T2D Patients'")
-    (description
-     "This package provides a system for personalized exercise plan recommendations
-for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
-(Glycated Hemoglobin).  You provide the individual's information, and
-T2D@code{FitTailor} details the exercise plan and predicts the intervention's
-effectiveness.")
-    (license license:expat)))
 

@@ -13186,13 +13186,13 @@ eventually with solar position covariate as a daytime indicator,
 (define-public r-embayes
   (package
     (name "r-embayes")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emBayes" version))
        (sha256
-        (base32 "18j50i0px9wgv9w5h015k276ia9ls5fjlj9gvjp6l3b3nr5nr2xq"))))
+        (base32 "1ycr91r0zh75whpf4l9hxrm07rks589bmy994nby88r5yrv34wwg"))))
     (properties `((upstream-name . "emBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))

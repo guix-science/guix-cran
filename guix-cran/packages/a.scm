@@ -8995,13 +8995,13 @@ multiple genes.")
 (define-public r-apercu
   (package
     (name "r-apercu")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apercu" version))
        (sha256
-        (base32 "046gf4dzypl6mmq7xqkyrdasq9rsjxzsii7w4nxkbn4c40kh7bf7"))))
+        (base32 "1i6ca2dhbn9cykcvhdv5dbvg84b8dr6am7xhlihmy7dfjybbzi3b"))))
     (properties `((upstream-name . "apercu")))
     (build-system r-build-system)
     (propagated-inputs (list r-pls))

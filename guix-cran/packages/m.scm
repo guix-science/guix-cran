@@ -10500,13 +10500,13 @@ is implemented.")
 (define-public r-mpathsenser
   (package
     (name "r-mpathsenser")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpathsenser" version))
        (sha256
-        (base32 "04yhhwphkrsbrlmalzknf7n4x1kc3pfjpsz4zkhj4g1h7ajviq5j"))))
+        (base32 "12hhcw76gn7mfd3xjsb7an7bwz95any8l89pglrk0bmj8iwhsns2"))))
     (properties `((upstream-name . "mpathsenser")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12118,13 +12118,13 @@ allows the definition of questions to be included in the question bank.")
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonteCarloSEM" version))
        (sha256
-        (base32 "0mnva4hd02a6f4fpll6ra4nn0chlx8wjixp1jx40krg3xnikqkj1"))))
+        (base32 "1bv2x1h85ri6hfr0z141xz8rn0qhs6sxdfr32vj77gik775lpknz"))))
     (properties `((upstream-name . "MonteCarloSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lavaan))
@@ -14604,13 +14604,13 @@ currently supports KMeans and linear regression models.")
 (define-public r-modeldatatoo
   (package
     (name "r-modeldatatoo")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeldatatoo" version))
        (sha256
-        (base32 "0qric17sxfy4w4pgp8cvmm30vq9lddk58hzqrm5f7s63ydjb4n2i"))))
+        (base32 "07wjrwgmg96gj8mxsx8g33l3609hrk4wvw31ml1sw3jgxpfziw7r"))))
     (properties `((upstream-name . "modeldatatoo")))
     (build-system r-build-system)
     (propagated-inputs (list r-pins))
@@ -18206,13 +18206,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "1zj0irg72swii56rfx6ipjlzyvn1jickfv8aq2g301hh1npnfw1s"))))
+        (base32 "06k3kl3r6llii0kmq8p1pnzyk0nx71rafwyprkrwq8gx0x39zcab"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
