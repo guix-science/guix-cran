@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -28563,13 +28562,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.10")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "0q0wgbyr2gqjrxb1jwb6ysyqbgpsc0nq6501smqgrmhxfavb0m1d"))))
+        (base32 "039xg7fra4h1kizjbnq05ym8zhcg3wswwfn4asa8f62s7nh0g72q"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr
@@ -32196,13 +32195,13 @@ Razvan G. Romanescu et al. (2023) <doi:10.1016/j.epidem.2023.100708>.")
 (define-public r-referenceintervals
   (package
     (name "r-referenceintervals")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "referenceIntervals" version))
        (sha256
-        (base32 "0q6rpz8llfsk86y8i1sdlqi97gcfx9k7q510pnz9nr7ag0w6w5mc"))))
+        (base32 "1vgiy0ds982y9mjnpigzhmckxwj010ymfip2x2gfsqrc320gl2hq"))))
     (properties `((upstream-name . "referenceIntervals")))
     (build-system r-build-system)
     (propagated-inputs (list r-outliers r-mass r-extremevalues r-boot))
@@ -35599,13 +35598,13 @@ power calculation in Respondent-Driven Sampling.")
 (define-public r-rdss
   (package
     (name "r-rdss")
-    (version "1.0.8")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdss" version))
        (sha256
-        (base32 "0wzmiq53x5mid2lqvqgjgp8m7kz2wzlwkki1q561qmqbkkgk4ma8"))))
+        (base32 "16n6yp3srgdzb946rg6c6f8bwlf4153p2rw9abwmjb27iq4im0x2"))))
     (properties `((upstream-name . "rdss")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35614,7 +35613,7 @@ power calculation in Respondent-Driven Sampling.")
                              r-readr
                              r-randomizr
                              r-purrr
-                             r-prediction
+                             r-marginaleffects
                              r-ggplot2
                              r-generics
                              r-estimatr
@@ -41625,13 +41624,13 @@ operations are encoded in C with multi-thread support.")
 (define-public r-rbioapi
   (package
     (name "r-rbioapi")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbioapi" version))
        (sha256
-        (base32 "0dxd58y0a5pd5zw3agd405xb6325z629n7lg9ps7hqc66jy59pba"))))
+        (base32 "1ijmdqmmshqb3f6gv8rp6liz31cj00nmady28jdxadpxpp1bp34k"))))
     (properties `((upstream-name . "rbioapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))

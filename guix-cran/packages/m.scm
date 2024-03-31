@@ -14212,20 +14212,19 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "1.4.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "1jams44j0alfpk2lza4w2yfmq2h12kxnbhznndyz57pfajyh7glx"))))
+        (base32 "0rkr6s5hx0m61r230bf4svmyblbvag3nrl8w7qs1p17lxcxbpwq9"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytable
                              r-tables
                              r-performance
                              r-parameters
-                             r-kableextra
                              r-insight
                              r-glue
                              r-generics
@@ -24907,13 +24906,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0ksrw3vfaj7w19vaf16hc4gg63cailqy1fzjqi8f6m81bzhrydnk"))))
+        (base32 "043anlk1day0wi2jxvvx72ljrbamsgwsc2bbsqrpnnr0xq953d5l"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -32670,13 +32669,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "1nq65cb8hzm0wvlp2sm3xbl2s79n7l6fklww20xzyyx0z5z7f1j6"))))
+        (base32 "0fxgm8bhjs1vn1l0vb7jx7gvg3w4k0bwng66sfp87l5b0z2j082q"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

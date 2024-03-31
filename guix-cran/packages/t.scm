@@ -18332,13 +18332,13 @@ Fourier basis.")
 (define-public r-tfrmtbuilder
   (package
     (name "r-tfrmtbuilder")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmtbuilder" version))
        (sha256
-        (base32 "0zm2z607vi8chrqcfm4yx3xic6cq7ws0r3fqy6p66nyn3h7zndbx"))))
+        (base32 "0c5x0sva90q7ghfz64fjy4w83a549ism6hwl6a1j4j81l9w6p8f7"))))
     (properties `((upstream-name . "tfrmtbuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
