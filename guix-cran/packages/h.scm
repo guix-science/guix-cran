@@ -6832,23 +6832,27 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
 (define-public r-hierportfolios
   (package
     (name "r-hierportfolios")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HierPortfolios" version))
        (sha256
-        (base32 "13f0bkcqglf6v0b2kqgsdr9px78ai3z8km3vkqnhsnphg8kh3m4z"))))
+        (base32 "1l0ac3sx7q0xgqv6w0c7rahgjqpy045whih7r88wnj8qqwl1x1bp"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
-    (propagated-inputs (list r-riskportfolios r-fastcluster r-cluster))
+    (propagated-inputs (list r-fastcluster r-cluster))
     (home-page "https://github.com/ctruciosm/HierPortfolios")
     (synopsis "Hierarchical Clustering-Based Portfolio Allocation Strategies")
     (description
      "Machine learning portfolio allocation strategies based on hierarchical
 clustering methods.  The implemented methods are: Hierarchical risk parity (De
-Prado, 2016) <DOI: 10.3905/jpm.2016.42.4.059> and Hierarchical clustering-based
-asset allocation (Raffinot, 2017) <DOI: 10.3905/jpm.2018.44.2.089>.")
+Prado, 2016) <DOI: 10.3905/jpm.2016.42.4.059>.  Hierarchical clustering-based
+asset allocation (Raffinot, 2017) <DOI: 10.3905/jpm.2018.44.2.089>.
+Hierarchical equal risk contribution portfolio (Raffinot, 2018) <DOI:
+10.2139/ssrn.3237540>.  A Constrained Hierarchical Risk Parity Algorithm with
+Cluster-based Capital Allocation (Pfitzingera and Katzke, 2019)
+<https://www.ekon.sun.ac.za/wpapers/2019/wp142019/wp142019.pdf>.")
     (license license:gpl2)))
 
 (define-public r-hiernet
@@ -11156,13 +11160,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.2.1")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "0szxmzjwcz83s9qb062xl6nbxiwhk19d550ghjdb7xnv5p7zxmss"))))
+        (base32 "13a8ixd5k1xzkhpidgdnm3dyz5vywf0r0mavxrdksnz0mi84p8q1"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11182,6 +11186,7 @@ various computational models with a single line of coding (Ahn et al., 2017)
                              r-future-apply
                              r-future
                              r-dplyr
+                             r-colorspace
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://jbolstad.github.io/hbamr/")
@@ -11607,19 +11612,21 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.747")
+    (version "1.0.767")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0955n7mriy1yl5lw1cip6x3ynn5bz6z02j8hvn4mi9ysy9sky837"))))
+        (base32 "1h28fwbyxzk8cn6jyb54h072gzhgn1ias1nvmjsr9pw7gzj7ky4v"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tsmp
+    (propagated-inputs (list r-wavelets
+                             r-tsmp
                              r-strucchange
                              r-stringr
                              r-rugarch
+                             r-hht
                              r-ggplot2
                              r-forecast
                              r-dtwclust

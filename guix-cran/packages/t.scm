@@ -13610,13 +13610,13 @@ correlate two timelines of events.  A brief description is available at
 (define-public r-timeless
   (package
     (name "r-timeless")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeless" version))
        (sha256
-        (base32 "1a1yqaxm1zhfqn56d0hpgxwsbci17cnwfm65zrjghalkrwpdj5ly"))))
+        (base32 "061pfg9p15kywzwmg7mfacj9mdrcn7zxlspb7fjfnmcay40v39n7"))))
     (properties `((upstream-name . "timeless")))
     (build-system r-build-system)
     (home-page "https://github.com/schochastics/timeless")
@@ -20368,13 +20368,13 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
 (define-public r-testdesign
   (package
     (name "r-testdesign")
-    (version "1.5.1")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestDesign" version))
        (sha256
-        (base32 "1r59zx97g1z49x6lkiqw2kclb88jksgwj589jymwcng3h5ja68ah"))))
+        (base32 "0f13d6j9x9knsd7ynz025x4pv61n49jk5m9ih09cm8xz9g1ypb4n"))))
     (properties `((upstream-name . "TestDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

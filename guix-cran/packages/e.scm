@@ -6008,13 +6008,13 @@ estimators and functions for diagnostics of their finite-sample performance.")
 (define-public r-estimatr
   (package
     (name "r-estimatr")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "estimatr" version))
        (sha256
-        (base32 "1mq1xp9ckc47d1i67dbymz968vfvy4x71y813qjy19p10sxfci66"))))
+        (base32 "1v9fzqp7h48lb70d2kln4wq9fl36dsxhv7871hnmggkykzax3pvc"))))
     (properties `((upstream-name . "estimatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcppeigen r-rcpp r-generics r-formula))

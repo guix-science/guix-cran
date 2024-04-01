@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -1790,13 +1791,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "0r4q5iyfi9f95kzmhjgy1jdiv85wr16m5yhgq9zz36sjs4miif2m"))))
+        (base32 "1a4cb19gvq1lm2v918pskpfpxl4xqb06hm08wacv7gj4wyvj7adi"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -11369,17 +11370,16 @@ details about vulnerabilities from various sources is a worthwhile enterprise.")
 (define-public r-rospca
   (package
     (name "r-rospca")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rospca" version))
        (sha256
-        (base32 "1pxm34xsc2610n0i6dwcm4rhn016yqb03f8vrm93r7285c04n4q7"))))
+        (base32 "0my95jgza6irihdbsqj05sjfrhcy7705aca7j5qifkr21pk0n4dq"))))
     (properties `((upstream-name . "rospca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rrcovhd
-                             r-rrcov
+    (propagated-inputs (list r-rrcov
                              r-robustbase
                              r-pracma
                              r-pcapp

@@ -1655,13 +1655,13 @@ cluster certain effects and to reduce the complexity of the models.")
 (define-public r-btergm
   (package
     (name "r-btergm")
-    (version "1.10.11")
+    (version "1.10.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "btergm" version))
        (sha256
-        (base32 "1xyjy5ig5hf45h8axp2ykyh3n56ls47h1bjsa85k992rk0lsc4dg"))))
+        (base32 "1xcn24m6ldmi5wh44169vg13f7a7apbk45iwsl88clbnf2l9wpb8"))))
     (properties `((upstream-name . "btergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -2786,13 +2786,13 @@ faster lookups on sorted vectors.")
 (define-public r-bscui
   (package
     (name "r-bscui")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bscui" version))
        (sha256
-        (base32 "0xpy1xj0ajj0swnl55ahy3fja9dp4lv7vcz1zk12im175b0b2iqn"))))
+        (base32 "0qznfnqfji6vb0y2nawdi8xn6w7l1l8p1326ypjga1wla7ni5a52"))))
     (properties `((upstream-name . "bscui")))
     (build-system r-build-system)
     (arguments

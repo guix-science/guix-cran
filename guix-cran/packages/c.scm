@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -4474,27 +4474,6 @@ for a detailed documentation.")
 cryptocurrencies.")
     (license license:expat)))
 
-(define-public r-cryptotrackr
-  (package
-    (name "r-cryptotrackr")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cryptotrackr" version))
-       (sha256
-        (base32 "0y2fd2v23vc06g8wfs2h4v5b2z0599wjz5ws4yhw3kfq82969fn8"))))
-    (properties `((upstream-name . "cryptotrackr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-openssl r-jsonlite r-httr r-digest))
-    (home-page "https://cran.r-project.org/package=cryptotrackr")
-    (synopsis "An Interface to Crypto Data Sources")
-    (description
-     "Allows you to connect to data sources across the crypto ecosystem.  This data
-can enable a range of activity such as portfolio tracking, programmatic trading,
-or industry analysis.")
-    (license license:expat)))
-
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
@@ -5602,13 +5581,13 @@ applying multiple models to multiple subsets of a dataset.")
 (define-public r-crosshap
   (package
     (name "r-crosshap")
-    (version "1.2.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosshap" version))
        (sha256
-        (base32 "18r4m5fplpiabgwir78qfacj0781ykqxbyfkf5zxnzs7yr0d1gl2"))))
+        (base32 "1pr9kjad54427y8wljaghqbgin353llyfdwq278c8agqdzziwia0"))))
     (properties `((upstream-name . "crosshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

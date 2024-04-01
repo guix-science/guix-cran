@@ -60202,13 +60202,13 @@ where to store downloaded files.")
 (define-public r-s2net
   (package
     (name "r-s2net")
-    (version "1.0.4")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s2net" version))
        (sha256
-        (base32 "0wq3y96m2h85kw755rnmnzvxknk5s7ii0g7p0zd8ahcnppkdk6kl"))))
+        (base32 "18n3zq4hd07ipba7n6qc0fhxbraam70kypzf17hiaqrsjcjpw58x"))))
     (properties `((upstream-name . "s2net")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))

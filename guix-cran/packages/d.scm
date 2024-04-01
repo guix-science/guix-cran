@@ -3632,13 +3632,13 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "12zls470an7zf9h8anab2fadg93s1rp9zh8krpxpwlp1djxgaxdx"))))
+        (base32 "16yy6rc3zpbys3v55drsjlv48wl1cdy5sw9pgricdza2j6shkvwj"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
@@ -22891,17 +22891,16 @@ be slow.")
 (define-public r-dbitest
   (package
     (name "r-dbitest")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DBItest" version))
        (sha256
-        (base32 "1k9ww5kcy2y3cxqi9pp00j0dfa82pfbph2gz5z42nykcam6w4dfx"))))
+        (base32 "0vj7989s9qip3mxjzffrm7prh0xxpp467y9m4ls7dz7m3b7inpxl"))))
     (properties `((upstream-name . "DBItest")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-vctrs
                              r-testthat
                              r-rlang
                              r-palmerpenguins
@@ -26442,13 +26441,13 @@ libraries.  Information on Experiment Line is based on Ogasawara et al. (2009)
 (define-public r-daltoolbox
   (package
     (name "r-daltoolbox")
-    (version "1.0.747")
+    (version "1.0.767")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "daltoolbox" version))
        (sha256
-        (base32 "0mh8f5zm97mfzm55pjy157a079cs4azis4x0h0j9cflsd0k4nnyd"))))
+        (base32 "02rhbcgjwlx45y0641yjlamzgl2swm60hmvwppr4nk24hb0hjczs"))))
     (properties `((upstream-name . "daltoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-tree

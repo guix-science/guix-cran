@@ -10295,13 +10295,13 @@ can be used in place of base::stopifnot().")
 (define-public r-precommit
   (package
     (name "r-precommit")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precommit" version))
        (sha256
-        (base32 "08fxmxvi4dg93y5k60wy8fqy6admfh6cpdjji0kxfljaibjixdcm"))))
+        (base32 "04rgaa4jq8hykrpkfzwx6vydkb8r3rnm2zi8pp5skvqjy863hzwg"))))
     (properties `((upstream-name . "precommit")))
     (build-system r-build-system)
     (inputs (list git))
@@ -14685,13 +14685,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.6")
+    (version "5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "0flpd1ayh39bfalvw3w3111z5ca79rp42znfskzdy5gfh4b4wcqc"))))
+        (base32 "0v10qac5lj533gdv4v0cwh581pviy2csviax0i26764k5c1a65wg"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -23713,13 +23713,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "014192fikcb9q0bb0d8q7qxrw47kziwhfp2fbskh6n0npi2djvay"))))
+        (base32 "1vsxkcjng0cdjzg76k944cm01jfmq52vqqwvblsq6hr8klbcvp8k"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -27919,13 +27919,13 @@ penalization methods is provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.1.1")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "1ddiyygd6mv6qbr4z7i445hp8j0x0slxy56xz54vvdbv8l1gxlvg"))))
+        (base32 "1gwn7iih3kwj4hn7lhsxc03j0rb9sajnz4dsmgp4v04lc712w6hq"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc
@@ -28394,13 +28394,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "0nlabc5q90qzm506a9ys0nfpr89w42p50w3vxvp8s2sxin9xfngl"))))
+        (base32 "1df3dh0znwwp556krnfais7cs7970jzz8kgmmiiqz6c7g3acchrp"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))

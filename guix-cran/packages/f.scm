@@ -6341,13 +6341,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "5.1.0")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "1nbm127dpb8488234fspbpcl1nz8xdn2f7nxkh6ld3jy9m3f24sa"))))
+        (base32 "1x2q13wmdczyn9lwrmrissc2cp001ca3gyyvy32vjg3844arxckk"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -6367,8 +6367,8 @@ packages such as dplyr and tidyr'.")
 Uses the forward search approach of Atkinson and Riani, \"Robust Diagnostic
 Regression Analysis\", 2000,<ISBN: o-387-95017-6> to prepare descriptive
 statistics of a dataset that is to be analyzed by stats::lm(), stats::glm(),
-nlme::lme() or survival::coxph().  Includes graphics functions to display the
-descriptive statistics.")
+stats::nls(), nlme::lme() or survival::coxph().  Includes graphics functions to
+display the descriptive statistics.")
     (license license:gpl3+)))
 
 (define-public r-forrel
