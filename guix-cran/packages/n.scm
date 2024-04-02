@@ -4132,13 +4132,13 @@ goodness of fit (GOF) plots, and simulate with parameter uncertainty.")
 (define-public r-nonlineartseries
   (package
     (name "r-nonlineartseries")
-    (version "0.2.12")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonlinearTseries" version))
        (sha256
-        (base32 "0fdyr7a5pac40wrrn6frj0q8pn03dic5a2rls3zr85yj48mimyfs"))))
+        (base32 "1qzg5azydivxp04bs1s3m21bigacyrv6cak3cx7xpgq2w4fnb3br"))))
     (properties `((upstream-name . "nonlinearTseries")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

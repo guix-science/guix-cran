@@ -19213,13 +19213,13 @@ Tardella (2017) <doi.org/10.1007/s11336-016-9530-0> and Mollica and Tardella
 (define-public r-plm
   (package
     (name "r-plm")
-    (version "2.6-3")
+    (version "2.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plm" version))
        (sha256
-        (base32 "00scwxk8aw9s85ls3igspd7rk2jz3lk4irrgmy2crhpcbf3hpays"))))
+        (base32 "0xpd6r75g2mc9dsf8ckafbd3pjyrvlyrh12izj9yaqfw4v0vr9fx"))))
     (properties `((upstream-name . "plm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23534,13 +23534,13 @@ the electromagnetic spectrum.  Part of the r4photobiology suite, Aphalo P. J.
 (define-public r-photobiologysun
   (package
     (name "r-photobiologysun")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologySun" version))
        (sha256
-        (base32 "15wp8q29m5c4qplind9098ikxmm1r60lw8cm0pa48lmh33638ia3"))))
+        (base32 "00mb44wk5q8slvibr2iafwljr9w7m5qf0zk6bn5zji5i4l01gpi5"))))
     (properties `((upstream-name . "photobiologySun")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiology))
@@ -23550,8 +23550,8 @@ the electromagnetic spectrum.  Part of the r4photobiology suite, Aphalo P. J.
     (description
      "Data for the extraterrestrial solar spectral irradiance and ground level solar
 spectral irradiance and irradiance.  In addition data for shade light under
-vegetation and irradiance time series.  Part of the r4photobiology suite, Aphalo
-P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
+vegetation and irradiance time series from different broadband sensors.  Part of
+the r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
     (license license:gpl2+)))
 
 (define-public r-photobiologysensors
@@ -29213,13 +29213,13 @@ neighborhoods.")
 (define-public r-pdxpower
   (package
     (name "r-pdxpower")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDXpower" version))
        (sha256
-        (base32 "144phmshjmm891f8sd8aagm7ql6hwb1i24mbpcfgak61q7anw2xy"))))
+        (base32 "131r0g6a48239k9iqgmpfr6kghy31i0kix4w6ihxk5v61g9rw9d9"))))
     (properties `((upstream-name . "PDXpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2

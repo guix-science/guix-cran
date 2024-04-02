@@ -3299,13 +3299,13 @@ of the LZ77 algorithm and Huffman coding.  Brotli is similar in speed to deflate
 (define-public r-broom-mixed
   (package
     (name "r-broom-mixed")
-    (version "0.2.9.4")
+    (version "0.2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broom.mixed" version))
        (sha256
-        (base32 "1ck0dk5fnacvwsvhp43m983gkmskw1a7f1bjkq5hacka64lwscbn"))))
+        (base32 "1css1g9r1345dwww9v56m7d9r74i4d27si7fsc4d8nhk4v6sd7wm"))))
     (properties `((upstream-name . "broom.mixed")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17992,13 +17992,13 @@ method has been published by Godard and van Eyll (2018)
 (define-public r-beautier
   (package
     (name "r-beautier")
-    (version "2.6.11")
+    (version "2.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beautier" version))
        (sha256
-        (base32 "1gn6hwlk58sg9jjiqccqaqv8vs0xpk87h4l02kb9j51n3jj5sg38"))))
+        (base32 "116k8lkbf872db3b377l6ls2pymmdvshyxlijyplph4gvy8y5vgn"))))
     (properties `((upstream-name . "beautier")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

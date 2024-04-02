@@ -23527,13 +23527,13 @@ one data frame column.")
 (define-public r-datetimeutils
   (package
     (name "r-datetimeutils")
-    (version "0.6-3")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datetimeutils" version))
        (sha256
-        (base32 "0k75r9bvh8wb45mrqk9vbyig8xk623g9cnrk7s6zbcx85ymxmmk6"))))
+        (base32 "0k8zgr3dpba967p12fygrbrcgnbm51ghhnh7cb1w1gd7jqc42nhk"))))
     (properties `((upstream-name . "datetimeutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/datetimeutils/")

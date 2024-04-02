@@ -21179,13 +21179,13 @@ methods.  Software companion for Diggle and Ribeiro (2007)
 (define-public r-geoperu
   (package
     (name "r-geoperu")
-    (version "0.0.0.1")
+    (version "0.0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoperu" version))
        (sha256
-        (base32 "1vmbm9zlkgb8qcw9d1vdfkvfajxh3nyhk5dkkilsklzfz08wqw8f"))))
+        (base32 "1hzdbghskdp0gnngycjn1z6zxdzas71mg7pw2bh6xw7ll52agkp5"))))
     (properties `((upstream-name . "geoperu")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-httr r-data-table r-curl))
@@ -21194,10 +21194,11 @@ methods.  Software companion for Diggle and Ribeiro (2007)
     (description
      "This package provides convenient access to the official spatial datasets of Peru
 as sf objects in R. This package includes a wide range of geospatial data
-covering various aspects of Peruvian geography, such as administrative divisions
-(Source: INEI <https://ide.inei.gob.pe/>).  All datasets are harmonized in terms
-of attributes, projection, and topology, ensuring consistency and ease of use
-for spatial analysis and visualization.")
+covering various aspects of Peruvian geography, such as: administrative
+divisions (Source: INEI <https://ide.inei.gob.pe/>), protected natural areas
+(Source: GEO ANP - SERNANP <https://geo.sernanp.gob.pe/visorsernanp/>).  All
+datasets are harmonized in terms of attributes, projection, and topology,
+ensuring consistency and ease of use for spatial analysis and visualization.")
     (license license:expat)))
 
 (define-public r-geonetwork

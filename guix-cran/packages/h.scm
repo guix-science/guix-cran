@@ -7852,16 +7852,17 @@ on many data sets and analyzed in: Gigerenzer, G., Todd, P. M., & the ABC Group
 (define-public r-heumilkr
   (package
     (name "r-heumilkr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heumilkr" version))
        (sha256
-        (base32 "1m50lnvz2pljmbsc99z4q47nqd0k046zmf5r4vi6krfzyyx1g0lm"))))
+        (base32 "0zpjmsk0vzz9x5nngznma3znpjlhjihxq0i9hrjx4nzbbbayf9qp"))))
     (properties `((upstream-name . "heumilkr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2 r-cpp11))
+    (propagated-inputs (list r-xml2 r-rlang r-ggplot2 r-cpp11 r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/lschneiderbauer/heumilkr")
     (synopsis "Heuristic Capacitated Vehicle Routing Problem Solver")
     (description
@@ -10969,6 +10970,46 @@ package also includes a data generating function for a binary tree stochastic
 block model, a special case of stochastic block model that admits hierarchy
 between communities.")
     (license license:gpl2+)))
+
+(define-public r-hcci
+  (package
+    (name "r-hcci")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hcci" version))
+       (sha256
+        (base32 "1rkbds3inpkhpvqb7rhvvakf9n0xf1yr74c3ywm35lwv6lj8pi21"))))
+    (properties `((upstream-name . "hcci")))
+    (build-system r-build-system)
+    (home-page "https://github.com/prdm0/hcci")
+    (synopsis "Interval Estimation of Linear Models with Heteroskedasticity")
+    (description
+     "Calculates the interval estimates for the parameters of linear models with
+heteroscedastic regression using bootstrap - (Wild Bootstrap) and double
+bootstrap-t (Wild Bootstrap).  It is also possible to calculate confidence
+intervals using the percentile bootstrap and percentile bootstrap double.  The
+package can calculate consistent estimates of the covariance matrix of the
+parameters of linear regression models with heteroscedasticity of unknown form.
+The package also provides a function to consistently calculate the covariance
+matrix of the parameters of linear models with heteroscedasticity of unknown
+form.  The bootstrap methods exported by the package are based on the master's
+thesis of the first author, available at
+<https://raw.githubusercontent.com/prdm0/hcci/master/references/dissertacao_mestrado.pdf>.
+ The hcci package in previous versions was cited in the book VINOD, Hrishikesh
+D. Hands-on Intermediate Econometrics Using R: Templates for Learning
+Quantitative Methods and R Software.  2022, p.  441, ISBN 978-981-125-617-2
+(hardcover).  The simple bootstrap schemes are based on the works of
+Cribari-Neto F and Lima M. G. (2009) <doi:10.1080/00949650801935327>, while the
+double bootstrap schemes for the parameters that index the linear models with
+heteroscedasticity of unknown form are based on the works of Beran (1987)
+<doi:10.2307/2336685>.  The use of bootstrap for the calculation of interval
+estimates in regression models with heteroscedasticity of unknown form from a
+weighting of the residuals was proposed by Wu (1986)
+<doi:10.1214/aos/1176350142>.  This bootstrap scheme is known as weighted or
+wild bootstrap.")
+    (license license:gpl3+)))
 
 (define-public r-hcandersenr
   (package

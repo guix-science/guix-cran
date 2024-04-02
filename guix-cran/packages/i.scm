@@ -4092,13 +4092,13 @@ proposed by Efford (2004) <doi:10.1111/j.0030-1299.2004.13043.x>.")
 (define-public r-iprior
   (package
     (name "r-iprior")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iprior" version))
        (sha256
-        (base32 "15qzqwikxy85fcd7psz363b5wb0kpi85icfyb47hbgdhln8fi2qb"))))
+        (base32 "0zhyr19m6yxhn3gskfm14hmag5vjz1008fhxli2cg14z6hsdl1ww"))))
     (properties `((upstream-name . "iprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

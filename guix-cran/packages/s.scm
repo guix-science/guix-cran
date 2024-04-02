@@ -7583,35 +7583,6 @@ all Lattice graphics capabilities in the usual way.")
 specific purposes, such as predict[ing], print[ing], summary[izing], etc.")
     (license license:expat)))
 
-(define-public r-stringx
-  (package
-    (name "r-stringx")
-    (version "0.2.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stringx" version))
-       (sha256
-        (base32 "0n11y2w9gm37kfkg44df95ib1xbjglz7ys9ffw05pbc71ai0njjp"))))
-    (properties `((upstream-name . "stringx")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi))
-    (home-page "https://stringx.gagolewski.com/")
-    (synopsis "Replacements for Base String Functions Powered by 'stringi'")
-    (description
-     "English is the native language for only 5% of the World population.  Also, only
-17% of us can understand this text.  Moreover, the Latin alphabet is the main
-one for merely 36% of the total.  The early computer era, now a very long time
-ago, was dominated by the US. Due to the proliferation of the internet,
-smartphones, social media, and other technologies and communication platforms,
-this is no longer the case.  This package replaces base R string functions (such
-as grep(), tolower(), sprintf(), and strptime()) with ones that fully support
-the Unicode standards related to natural language and date-time processing.  It
-also fixes some long-standing inconsistencies, and introduces some new, useful
-features.  Thanks to ICU (International Components for Unicode) and stringi',
-they are fast, reliable, and portable across different platforms.")
-    (license license:gpl2+)))
-
 (define-public r-stringstatic
   (package
     (name "r-stringstatic")
@@ -22725,17 +22696,17 @@ and signed ranks.  For details, see Oja and Randles (2004)
 (define-public r-spatialml
   (package
     (name "r-spatialml")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialML" version))
        (sha256
-        (base32 "133iwzbxy8ix2kfa1w6ic6sfip2jkrkw22h3acvh55fcwia7pk08"))))
+        (base32 "05jjv441knmqci66vgy0lsp17hv3fmkfn1ijci5phn39cx797zf5"))))
     (properties `((upstream-name . "SpatialML")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-randomforest r-caret))
-    (home-page "http://lctools.science/")
+    (home-page "https://stamatisgeoai.eu/")
     (synopsis "Spatial Machine Learning")
     (description
      "This package implements a spatial extension of the random forest algorithm
@@ -23068,17 +23039,17 @@ Nordhausen, Ruiz-Gazen and Virta (2020) <doi:10.1093/biomet/asz079>.")
 (define-public r-spatialacc
   (package
     (name "r-spatialacc")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialAcc" version))
        (sha256
-        (base32 "09rkzfzg6nh4n7dizkqrz651kp617l2557c9qpxacspl3ngbm82i"))))
+        (base32 "1livfnkqm9d0aw1q1m944clyj850n5m1n32k99vwf4byl5d5vhnn"))))
     (properties `((upstream-name . "SpatialAcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
-    (home-page "http://lctools.science/")
+    (home-page "https://stamatisgeoai.eu/")
     (synopsis "Spatial Accessibility Measures")
     (description
      "This package provides a set of spatial accessibility measures from a set of
@@ -29373,13 +29344,13 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.0.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "0r123h71wxgwn694mn2vhc7hhicj8d33h5q4djmkp3m72dkzxyqj"))))
+        (base32 "0z9iacmrvlrz6rk1dmih6qqfgmav14aar2nkmk7f1gr5f285r56d"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -41106,13 +41077,13 @@ models with a user friendly shiny interface.")
 (define-public r-shinyinvoice
   (package
     (name "r-shinyinvoice")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyInvoice" version))
        (sha256
-        (base32 "1s1zmjp37px2wksa4acw3jng659k5zgm1a8pk23kb4f9kr7hjpfd"))))
+        (base32 "024dnyrdkb4ws0glj6yib0fxz22biysvndsppffdhxri3afvs2by"))))
     (properties `((upstream-name . "shinyInvoice")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -52880,30 +52851,6 @@ performance and is robustly tested.  Find more information about the package in
 the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
     (license license:expat)))
 
-(define-public r-scoringtools
-  (package
-    (name "r-scoringtools")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scoringTools" version))
-       (sha256
-        (base32 "00bai8pm1wmal2dsqsyq9nrpkmrxc8bwccqp3gvf18b5s4s46k2r"))))
-    (properties `((upstream-name . "scoringTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sqldf r-magrittr r-dplyr r-discretization))
-    (native-inputs (list r-knitr))
-    (home-page "https://adimajo.github.io/scoringTools/")
-    (synopsis "Credit Scoring Tools")
-    (description
-     "Grouping essential tools for credit scoring.  These statistical tools may be
-useful for other use-cases as well but were primarily designed for it.  First,
-there are Reject Inference methods (Ehrhardt et al. (2017)
-<@code{arXiv:1903.10855>}).  Second, we build upon the already CRAN-available
-package discretization to automate discretization of continuous features.")
-    (license license:gpl2+)))
-
 (define-public r-scoringrules
   (package
     (name "r-scoringrules")
@@ -54641,6 +54588,32 @@ facilitates type-2 history for data-warehouses and provides a number of Quality
 of life improvements for working on SQL databases with R. For reference see
 Ralph Kimball and Margy Ross (2013, ISBN 9781118530801).")
     (license license:gpl3)))
+
+(define-public r-sccs
+  (package
+    (name "r-sccs")
+    (version "1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCCS" version))
+       (sha256
+        (base32 "0cx7xw15pwkk2nza8ng4ic6mq07vgf5idcclkwdyp3ry5j3rqnvl"))))
+    (properties `((upstream-name . "SCCS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-r-methodss3 r-gnm r-fda r-corpcor))
+    (home-page "https://cran.r-project.org/package=SCCS")
+    (synopsis "The Self-Controlled Case Series Method")
+    (description
+     "Various self-controlled case series models used to investigate associations
+between time-varying exposures such as vaccines or other drugs or non drug
+exposures and an adverse event can be fitted.  Detailed information on the
+self-controlled case series method and its extensions with more examples can be
+found in Farrington, P., Whitaker, H., and Ghebremichael Weldeselassie, Y.
+(2018, ISBN: 978-1-4987-8159-6.  Self-controlled Case Series studies: A
+modelling Guide with R. Boca Raton: Chapman & Hall/CRC Press) and
+<https://sccs-studies.info/index.html>.")
+    (license license:gpl2+)))
 
 (define-public r-sccr
   (package

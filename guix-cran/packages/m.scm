@@ -25826,13 +25826,13 @@ data is faster.  The approximate algorithm is described in Johndrow et al.
 (define-public r-mhmmbayes
   (package
     (name "r-mhmmbayes")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mHMMbayes" version))
        (sha256
-        (base32 "19zqqq0dz3fscch5vxy1lfyq4hfmdbvzfqqm123l5snbdk52l4li"))))
+        (base32 "1z13zzim90akaz82dbp8s81zyhcd3xmx3wmqvkcaq5wqh2p64s7a"))))
     (properties `((upstream-name . "mHMMbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-mvtnorm r-mcmcpack))
@@ -25849,14 +25849,14 @@ simultaneously, see e.g., de Haan-Rietdijk et al.
 <doi:10.1080/00273171.2017.1370364>.  Using a multilevel framework, we allow for
 heterogeneity in the model parameters (transition probability matrix and
 conditional distribution), while estimating one overall HMM. The model can be
-fitted on multivariate data with either a categorical or Normal distribution,
-and include individual level covariates (allowing for e.g., group comparisons on
-model parameters).  Parameters are estimated using Bayesian estimation utilizing
-the forward-backward recursion within a hybrid Metropolis within Gibbs sampler.
-Missing data (NA) in the dependent variables is accommodated assuming MAR. The
-package also includes various visualization options, a function to simulate
-data, and a function to obtain the most likely hidden state sequence for each
-individual using the Viterbi algorithm.")
+fitted on multivariate data with either a categorical, normal, or Poisson
+distribution, and include individual level covariates (allowing for e.g., group
+comparisons on model parameters).  Parameters are estimated using Bayesian
+estimation utilizing the forward-backward recursion within a hybrid Metropolis
+within Gibbs sampler.  Missing data (NA) in the dependent variables is
+accommodated assuming MAR. The package also includes various visualization
+options, a function to simulate data, and a function to obtain the most likely
+hidden state sequence for each individual using the Viterbi algorithm.")
     (license license:gpl3)))
 
 (define-public r-mhda
@@ -31876,6 +31876,34 @@ related files (for phenotype and family data), and to convert the data frames
 into @code{CoreArray} Genomic Data Structure (GDS) format.")
     (license license:gpl2)))
 
+(define-public r-mefdind
+  (package
+    (name "r-mefdind")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mefdind" version))
+       (sha256
+        (base32 "1w52c5bq0jy38d8lkf9dglw3nr3c8dqvhdk4mmhc3q8r5x3a8cz0"))))
+    (properties `((upstream-name . "mefdind")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rvest))
+    (home-page "https://eldafani.github.io/mefdind/")
+    (synopsis "Imports Data from MoE Spain")
+    (description
+     "Imports indicator data provided by the Ministry of Education (@code{MoE),Spain}.
+ The data is stored at
+<https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
+Includes functions for reading, downloading, and selecting data for main series.
+ This package is not sponsored or supported by the @code{MoE} Spain.  Importa
+datos con indicadores del Ministerio de @code{EducaciÃ³n} y @code{FormaciÃ³n}
+Profesional (MEFD) de @code{EspaÃ±Ã}¡.  Los datos @code{estÃ¡n} en
+<https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
+Contiene funciones para leer, descargar, y seleccionar bases de datos de series
+principales.  Este paquete no es patrocinado o respaldado por el MEFD.")
+    (license license:gpl2)))
+
 (define-public r-mefa4
   (package
     (name "r-mefa4")
@@ -37858,13 +37886,13 @@ design structure.")
 (define-public r-matchthem
   (package
     (name "r-matchthem")
-    (version "1.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MatchThem" version))
        (sha256
-        (base32 "0qbizfvwx5kagkmgj337lrf9s0nz2rdyb5dwag7yqdfza06mnlvi"))))
+        (base32 "12kaaji3nhqggdfhb3hkydsg66p9qpxh95g5z5sf4wym9ks0qhi3"))))
     (properties `((upstream-name . "MatchThem")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightit r-survey r-rlang r-mice r-matchit))

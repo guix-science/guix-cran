@@ -7730,6 +7730,27 @@ dynamic Almost Ideal Demand System (AIDS) models can be estimated.  A typical
 event analysis in finance can be conducted with several functions included.")
     (license license:gpl2+)))
 
+(define-public r-erdbuilder
+  (package
+    (name "r-erdbuilder")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ERDbuilder" version))
+       (sha256
+        (base32 "10dy9cb0dr3fcxl39r39adjcxafwc8mfcf32153lad8030d15y4w"))))
+    (properties `((upstream-name . "ERDbuilder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr r-diagrammer))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gbasulto/ERDbuilder")
+    (synopsis "Entity Relationship Diagrams Builder")
+    (description
+     "Build entity relationship diagrams (ERD) to specify the nature of the
+relationship between tables in a database.")
+    (license license:gpl3+)))
+
 (define-public r-ercv
   (package
     (name "r-ercv")

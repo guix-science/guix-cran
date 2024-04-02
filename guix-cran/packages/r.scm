@@ -31959,6 +31959,29 @@ automatically reflect changes in the original object, and which optionally
 update the original object when they are changed.")
     (license license:gpl2)))
 
+(define-public r-refseqr
+  (package
+    (name "r-refseqr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refseqR" version))
+       (sha256
+        (base32 "06lnw02d8g1qm4idh60cswv1w0rmhkx5prwgbzmb6lbh77hrgm90"))))
+    (properties `((upstream-name . "refseqR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rentrez r-iranges r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jdieramon/refseqR")
+    (synopsis
+     "Common Computational Operations Working with RefSeq Entries (GenBank)")
+    (description
+     "Fetches NCBI data (@code{RefSeq} <https://www.ncbi.nlm.nih.gov/refseq/>
+database) and provides an environment to extract information at the level of
+gene, @code{mRNA} or protein accessions.")
+    (license license:expat)))
+
 (define-public r-refreshr
   (package
     (name "r-refreshr")
@@ -44469,13 +44492,13 @@ Neurological Disorders and Stroke rt-PA Stroke Study Group (1995)
 (define-public r-rankinma
   (package
     (name "r-rankinma")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rankinma" version))
        (sha256
-        (base32 "13zqi6lqgvfdr1p0p45n1icckwh4zcqrllh6k1dddfb8dy7hvpgd"))))
+        (base32 "12l627drysk2hkc62q8i8x25plqyl1iz9phw4x3hy34h3hdkq6wa"))))
     (properties `((upstream-name . "rankinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-netmeta r-mvtnorm))

@@ -18888,13 +18888,13 @@ vectors in data frames for joint analysis of functional and scalar variables.")
 (define-public r-textutils
   (package
     (name "r-textutils")
-    (version "0.3-2")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textutils" version))
        (sha256
-        (base32 "1911450yhq1f97arv96lxljjpa41kikx8gv71x39zbpwkgz2xsxh"))))
+        (base32 "0li2arblc1542sadk7sjdg0avjwavvvy2rrvlh28wznj8vxc3xy3"))))
     (properties `((upstream-name . "textutils")))
     (build-system r-build-system)
     (home-page "http://enricoschumann.net/R/packages/textutils/")

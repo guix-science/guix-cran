@@ -11669,13 +11669,13 @@ and shiny-based GUI.")
 (define-public r-amt
   (package
     (name "r-amt")
-    (version "0.2.1.0")
+    (version "0.2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amt" version))
        (sha256
-        (base32 "0dw29gpgcqm5v8scwhnvdk1vkq9wqjd9klrxlgigqisnlqg0pgia"))))
+        (base32 "1yx5rvc18ppk37z1m72a1j80ai4b84zc8fh5py2zipvc7phwqfsw"))))
     (properties `((upstream-name . "amt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

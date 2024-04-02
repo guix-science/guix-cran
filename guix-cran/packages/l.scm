@@ -3338,13 +3338,13 @@ selfsame shiny app.")
 (define-public r-loon-ggplot
   (package
     (name "r-loon-ggplot")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.ggplot" version))
        (sha256
-        (base32 "15by2z3iy5p3frhb1y8rg17gbdds45b01qpcya210hia52b9vdlq"))))
+        (base32 "1ysdzsb2cc6ps3mbssxgnwpd0j4m5zj14f7b49py939yl4qg42cj"))))
     (properties `((upstream-name . "loon.ggplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -13208,18 +13208,18 @@ indicators function have trend line, reversal pattern and market trend.")
 (define-public r-lctools
   (package
     (name "r-lctools")
-    (version "0.2-8")
+    (version "0.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lctools" version))
        (sha256
-        (base32 "03k6d78lzc8jxndnwh39h6fagr6ibhr9354vzvsw873912sxs8c9"))))
+        (base32 "0gv8glxwdjpmx9cvadf8ww9k79wps107h29i02mcsa43mvcb22k1"))))
     (properties `((upstream-name . "lctools")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights r-sp r-reshape r-pscl r-mass))
     (native-inputs (list r-knitr))
-    (home-page "http://lctools.science/")
+    (home-page "https://stamatisgeoai.eu")
     (synopsis
      "Local Correlation, Spatial Inequalities, Geographically Weighted Regression and Other Tools")
     (description
@@ -13861,13 +13861,13 @@ Reference: Pawitan Y. (2001, ISBN:0-19-850765-8).")
 (define-public r-lbfgsb3c
   (package
     (name "r-lbfgsb3c")
-    (version "2020-3.3")
+    (version "2024-3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lbfgsb3c" version))
        (sha256
-        (base32 "0wk3jk94rrdjy5jj5d4a7szyx9xa4pw42s4ycwbcg23b4vas9r30"))))
+        (base32 "11rki571fi79fk8pq8f5ylh8zqg1yxr6b84a3v5z28jykpfd89sd"))))
     (properties `((upstream-name . "lbfgsb3c")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))
@@ -16538,13 +16538,13 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "0naalvy2bzi0hqnzr1aqm3r4dkkz293n7f9djvy9i4y0qv5gl9pj"))))
+        (base32 "1qqxspn82xf9c7xgz1mr8g5fv2qan8n4s7bscvpfp0v2zxik35d1"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

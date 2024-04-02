@@ -1642,6 +1642,43 @@ funnel_step() join events in the same table.  With the type argument, you can
 switch between different funnel types, like first-first and last-firstafter.")
     (license license:expat)))
 
+(define-public r-funmodeling
+  (package
+    (name "r-funmodeling")
+    (version "1.9.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "funModeling" version))
+       (sha256
+        (base32 "0wrcfqn0sj2shs2105glhm4ll5avbh8aq0yc6q72cjixjck9hn6h"))))
+    (properties `((upstream-name . "funModeling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-rocr
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pander
+                             r-moments
+                             r-lazyeval
+                             r-hmisc
+                             r-gridextra
+                             r-ggplot2
+                             r-entropy
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://livebook.datascienceheroes.com")
+    (synopsis "Exploratory Data Analysis and Data Preparation Tool-Box")
+    (description
+     "Around 10% of almost any predictive modeling project is spent in predictive
+modeling, @code{funModeling} and the book Data Science Live Book
+(<https://livebook.datascienceheroes.com/>) are intended to cover remaining 90%:
+data preparation, profiling, selecting best variables @code{dataViz}', assessing
+model performance and other functions.")
+    (license license:gpl2)))
+
 (define-public r-funmediation
   (package
     (name "r-funmediation")
@@ -19272,13 +19309,13 @@ computational point of view.")
 (define-public r-fastcpd
   (package
     (name "r-fastcpd")
-    (version "0.12.2")
+    (version "0.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastcpd" version))
        (sha256
-        (base32 "1wfgrrb1vz1ljwm4vj3f462kq7f1sriy750jdsshavbfq4jjzjm1"))))
+        (base32 "0fksxgy0aq4wf2cjsidbv6ivzxdvpgczh3vmrm7lv74wpm7lhrcc"))))
     (properties `((upstream-name . "fastcpd")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
