@@ -4198,6 +4198,30 @@ calculation, estimation of expected precision for the estimates of totals, and
 calculation of optimal sample size allocation.")
     (license license:gpl2+)))
 
+(define-public r-surveygraph
+  (package
+    (name "r-surveygraph")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveygraph" version))
+       (sha256
+        (base32 "1756hnnvj1r4p2b82bnsnzia4xkha5sqbl81imxdrc96x8578vqf"))))
+    (properties `((upstream-name . "surveygraph")))
+    (build-system r-build-system)
+    (home-page "https://surveygraph.ie/")
+    (synopsis "Network Representations of Attitudes")
+    (description
+     "This package provides a tool for computing network representations of attitudes,
+extracted from tabular data such as sociological surveys.  By treating a survey
+as a bipartite network, we measure the similarity between respondents and survey
+items to produce network edges.  We do this in both a respondent network, as
+well as a survey item network.  Used in combination with graph visualisation
+libraries, this technique helps practitioners in the social sciences identify
+network structure that may be present within a survey.")
+    (license license:expat)))
+
 (define-public r-surveyexplorer
   (package
     (name "r-surveyexplorer")
@@ -7025,13 +7049,13 @@ sample, and Bernstein copula approximations.")
 (define-public r-stylo
   (package
     (name "r-stylo")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stylo" version))
        (sha256
-        (base32 "0vjfpz4bpdrsax7a0gsj9cwddbsayb4n5fr5xskz63lfrjg2ppcb"))))
+        (base32 "00iw5yr6qnf01hd0a9dsqwjv2cdhq82pfj5wiy1fz0jg0q1ghh9n"))))
     (properties `((upstream-name . "stylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsne
@@ -26486,13 +26510,13 @@ a bounded parameter space, and is robust to local minima.")
 (define-public r-som-nn
   (package
     (name "r-som-nn")
-    (version "1.1.0")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "som.nn" version))
        (sha256
-        (base32 "0mw2c2lqvdq9bhndpjyawjy43l4x7clcsx2350j45g7fnchhy602"))))
+        (base32 "1qirkm54yav7h5836l81rah07r4nm8iy7ky6pf7c2a7vfbwddiqk"))))
     (properties `((upstream-name . "som.nn")))
     (build-system r-build-system)
     (propagated-inputs (list r-som r-kohonen r-hexbin r-class))
@@ -37440,13 +37464,13 @@ provides functions to plot and summarise the outputs.")
 (define-public r-simaerep
   (package
     (name "r-simaerep")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simaerep" version))
        (sha256
-        (base32 "1s13d8f4izwzrav7rhmx3s8nv36m5kwz806r85k7gqn24lnaa5ra"))))
+        (base32 "1r0hgf8i7grpiww42l28az4pr81s998ghyrmbrva8ap27vj3r269"))))
     (properties `((upstream-name . "simaerep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -50948,13 +50972,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "0qfnf3mcx80rrpzpmnn9c6n808s92ixhnwdzvf22060rfy3b7vav"))))
+        (base32 "03qxi9yd6hxb52k5k8xfd27clf48jgncilw62asvzhs90jg6yckn"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -53630,6 +53654,35 @@ expressed in each category.  See Zhang Z, et al (2019)
 <doi:10.3390/genes10070531> for more details.")
     (license license:gpl2)))
 
+(define-public r-scimo
+  (package
+    (name "r-scimo")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scimo" version))
+       (sha256
+        (base32 "1qb1c1viwd81cn5fj43zpp2adcpq2r28wwfbhbrpag2br5v3asgg"))))
+    (properties `((upstream-name . "scimo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-recipes
+                             r-magrittr
+                             r-generics
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abichat/scimo")
+    (synopsis "Extra Recipes Steps for Dealing with Omics Data")
+    (description
+     "Omics data (e.g. transcriptomics, proteomics, metagenomics...) offer a detailed
+and multi-dimensional perspective on the molecular components and interactions
+within complex biological (eco)systems.  Analyzing these data requires adapted
+procedures, which are implemented as steps according to the recipes package.")
+    (license license:gpl3+)))
+
 (define-public r-scifigure
   (package
     (name "r-scifigure")
@@ -54452,13 +54505,13 @@ randomized experiments, as described in Hedges, Pustejovsky, and Shadish (2012)
 (define-public r-scdha
   (package
     (name "r-scdha")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scDHA" version))
        (sha256
-        (base32 "075prhak80d6v9hcxsmn3f1mlc4liahh0fdpn8n6hs3ghczrk5cl"))))
+        (base32 "1l9i5r7z4n387mrfmq43md2a0wrhvshrggb4nc3varjyq3drh3yd"))))
     (properties `((upstream-name . "scDHA")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot

@@ -1886,13 +1886,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "17hr7knbqwn9gxkaga37mxl7g3vf6fmwcmvacyh3q493bfjqq5d5"))))
+        (base32 "1v28dvjrkddnc49z4fh92fbw2la3s8f6hm5r9xi8v7qxqgabzcg3"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -3632,13 +3632,13 @@ package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "16yy6rc3zpbys3v55drsjlv48wl1cdy5sw9pgricdza2j6shkvwj"))))
+        (base32 "08k4h81zm3clzxr0lff7kxbfgnn66jzh0x5bm1jv9ag08p67392i"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
@@ -3993,13 +3993,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "1gpp2ccz4bm6x3qif7lzif8ds0cm818gh0fq6fjamvsid7iilcng"))))
+        (base32 "0apql42vwwhswv436ngzlfdiwnia9zac3mrfp278jg8x1kbbnag9"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -4020,7 +4020,6 @@ drum patterns.")
                              r-cli
                              r-checkmate
                              r-cdmconnector))
-    (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
     (synopsis
      "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
@@ -21026,16 +21025,17 @@ algorithms.")
 (define-public r-ddtlcm
   (package
     (name "r-ddtlcm")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddtlcm" version))
        (sha256
-        (base32 "0ml423182xgxsdfzvl5xnyxp9ijmx5bkwvwdaqmfwk86x3994cbs"))))
+        (base32 "1xjpw5qx2wjq8y4ayg1d3scclsrn2bkmjk9gkff57gq2n0qlwnh0"))))
     (properties `((upstream-name . "ddtlcm")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
+                             r-testthat
                              r-rdpack
                              r-r-utils
                              r-polca
@@ -21056,9 +21056,9 @@ algorithms.")
     (synopsis
      "Latent Class Analysis with Dirichlet Diffusion Tree Process Prior")
     (description
-     "This package implements a Bayesian algorithm to fit latent class models,
-particularly useful for weakly separated latent classes.  Reference: Li et al.
-(2023) <@code{arXiv:2306.04700>}.")
+     "This package implements a Bayesian algorithm for overcoming weak separation in
+Bayesian latent class analysis.  Reference: Li et al. (2023)
+<@code{arXiv:2306.04700>}.")
     (license license:expat)))
 
 (define-public r-ddst
@@ -26560,13 +26560,13 @@ formulations in knowledge space theory.  See package?DAKS for an overview.")
 (define-public r-daisieprep
   (package
     (name "r-daisieprep")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAISIEprep" version))
        (sha256
-        (base32 "1072j28rwkzki8slz4h8db0wkzbcprbrmm7c33jy19s3qk5h644a"))))
+        (base32 "0ch3mc725lip67fpbk405rv3bai44w13vvjlspv8y6jzmb5jg6bp"))))
     (properties `((upstream-name . "DAISIEprep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

@@ -3077,13 +3077,13 @@ index.  Jargowsky and Wheeler (2018) <doi:10.1177/0081175018782579>.")
 (define-public r-lorentz
   (package
     (name "r-lorentz")
-    (version "1.0-5")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lorentz" version))
        (sha256
-        (base32 "1py2s4x6vnlyyf5fnwbhws00dmf5qyzmx8wza337w3nzxkr6ns6b"))))
+        (base32 "1idkqxpmjqvh5jy8jmz0m40bbfyi6sk0h75hbb7sb36b1ryc5sn3"))))
     (properties `((upstream-name . "lorentz")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor r-magrittr r-magic r-emulator))
@@ -3092,8 +3092,9 @@ index.  Jargowsky and Wheeler (2018) <doi:10.1177/0081175018782579>.")
     (synopsis "The Lorentz Transform in Relativistic Physics")
     (description
      "The Lorentz transform in special relativity; also the gyrogroup structure of
-three-velocities.  Includes active and passive transforms and the ability to use
-units in which the speed of light is not one.  For general relativity, see the
+three-velocities.  Performs active and passive transforms and has the ability to
+use units in which the speed of light is not unity.  Includes some experimental
+functionality for celerity and rapidity.  For general relativity, see the
 schwarzschild package.")
     (license license:gpl3)))
 

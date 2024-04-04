@@ -2086,13 +2086,13 @@ be used.  See the paper by @code{BerÄsewicz} and Szymkowiak (2023) for detail
 (define-public r-jointai
   (package
     (name "r-jointai")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointAI" version))
        (sha256
-        (base32 "1f1dmdrm8i7la2ydlcpnl0gk1yxdgf9x7s802mgp6hjplcrgzf3q"))))
+        (base32 "1vckbn4y27bdc6176nnjpwa2wm6kyzxkvndf128jw4871964szp5"))))
     (properties `((upstream-name . "JointAI")))
     (build-system r-build-system)
     (inputs (list jags))

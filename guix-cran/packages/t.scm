@@ -289,13 +289,13 @@ and plots.  All twowaytests functions are designed for two-way layout.")
 (define-public r-twowayfeweights
   (package
     (name "r-twowayfeweights")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoWayFEWeights" version))
        (sha256
-        (base32 "1k674q11wvmqa1rpnxzrqhjq73pjl2fbi858ifwvd90dlvp530vp"))))
+        (base32 "03ljjrwywx2yyfqyvrlf7z8qrsw20vrp39938xnwi411hk9ndch3"))))
     (properties `((upstream-name . "TwoWayFEWeights")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -6512,13 +6512,13 @@ models in polynomial time.  Currently supported models include gbm',
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeSearch" version))
        (sha256
-        (base32 "1nhy1bq4pkbj0c09750hzjnzgqv5k1042fjra9dw4yk24rk1dyi7"))))
+        (base32 "1bdwmq0lkaz57r70686352qrcbg1rh6jc5dappdfnipiggpmyi4j"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -6633,13 +6633,13 @@ Methods for Statistical Learning in R\" <doi:10.1201/9781003089032>.")
 (define-public r-treeminer
   (package
     (name "r-treeminer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeMineR" version))
        (sha256
-        (base32 "1ngadly2535n8h02lv8zkmhy3adfs7bklxd2b0d24cl9c5c5gh3v"))))
+        (base32 "04rd7yrp69lz2qavfhdvbcwd0jy2qpng2xcgmbn69wp6yrm79r6y"))))
     (properties `((upstream-name . "TreeMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-future r-data-table r-cli))
@@ -13184,6 +13184,42 @@ solely the responsibility of the authors and does not necessarily represent the
 official views of the NIH. The example data are from the Honolulu Heart
 Program/Honolulu Asia Aging Study (HHP/HAAS).")
     (license license:gpl2)))
+
+(define-public r-timevizpro
+  (package
+    (name "r-timevizpro")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TimeVizPro" version))
+       (sha256
+        (base32 "0skk32k0860sdicb4j7hmq2i6b5qlnwifhplwigr3farfrfb5y2g"))))
+    (properties `((upstream-name . "TimeVizPro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparkline
+                             r-shiny
+                             r-ggplot2
+                             r-ggiraph
+                             r-dplyr
+                             r-countrycode))
+    (home-page "https://cran.r-project.org/package=TimeVizPro")
+    (synopsis
+     "Dynamic Data Explorer: Visualize and Forecast with 'TimeVizPro'")
+    (description
+     "Unless the power of time-series data visualization with ease using our package.
+Designed with simplicity in mind, it offers three key features through the shiny
+package.  The first output shows time-series charts with forecast, allowing
+users to visualize trends and changes effortlessly.  The second one presents
+averages per country presented in tables with accompanying sparklines, providing
+a quick and attractive overview of the data.  The last one displayed a
+customizable world map colored based on user-defined variables for any chosen
+number of countries, offering an advanced visual approach to understanding
+geographical data distribution.  This package operates with just a few simple
+arguments, enabling users to conduct sophisticated analyses without the need for
+complex programming skills.  Transform your time- series data analysis
+experience with our user-friendly tool.")
+    (license license:gpl3)))
 
 (define-public r-timevis
   (package

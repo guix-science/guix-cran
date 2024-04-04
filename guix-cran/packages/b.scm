@@ -15,7 +15,6 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages java)
   #:use-module (gnu packages python)
   #:use-module (gnu packages geo)
@@ -11002,6 +11001,40 @@ approaches for performing non-parametric spatial predictions of generic response
 variables and spatial gene diversity are implemented.")
     (license license:gpl2+)))
 
+(define-public r-biotimer
+  (package
+    (name "r-biotimer")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioTIMEr" version))
+       (sha256
+        (base32 "1lvbkgn96hfxlx9v4j4pi93w11rd94fd71gwxc32n17bc5q9gq1x"))))
+    (properties `((upstream-name . "BioTIMEr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-ggplot2
+                             r-dplyr
+                             r-dggridr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bioTIMEHub/BioTIMEr")
+    (synopsis "Tools to Use and Explore the 'BioTIME' Database")
+    (description
+     "The @code{BioTIME} database was first published in 2018 and inspired ideas,
+questions, project and research article.  To make it even more accessible, an R
+package was created.  The @code{BioTIMEr} package provides tools designed to
+interact with the @code{BioTIME} database.  The functions provided include the
+@code{BioTIME} recommended methods for preparing (gridding and rarefaction) time
+series data, a selection of standard biodiversity metrics (including species
+richness, numerical abundance and exponential Shannon) alongside examples on how
+to display change over time.  It also includes a sample subset of both the query
+and meta data, the full versions of which are freely available on the
+@code{BioTIME} website <https://biotime.st-andrews.ac.uk/home.php>.")
+    (license license:expat)))
+
 (define-public r-biotic
   (package
     (name "r-biotic")
@@ -13847,16 +13880,15 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
 (define-public r-bigrquerystorage
   (package
     (name "r-bigrquerystorage")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigrquerystorage" version))
        (sha256
-        (base32 "1lzam3vvc72ns1zr0n9nnmgjwvx4f9h000g7g74hkimh442rvpvn"))))
+        (base32 "1idhaf6i7sbrdmzzc0ks76yr47lpl63lcjprsnjzwkyc124nx606"))))
     (properties `((upstream-name . "bigrquerystorage")))
     (build-system r-build-system)
-    (inputs (list zlib openssl))
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpp
@@ -15727,13 +15759,13 @@ information).")
 (define-public r-bglr
   (package
     (name "r-bglr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGLR" version))
        (sha256
-        (base32 "1wv29crcq1iqrvak749vq08fjfr2ys82fkni07ipwl99hknsz5sr"))))
+        (base32 "0942navssynfjl6ka7ii1khv1y7idvl5sbcy6xd911mx74vnyirr"))))
     (properties `((upstream-name . "BGLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm r-mass))
@@ -17853,13 +17885,13 @@ financial support.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "1ckxs41fg7gw8p9v8xink3ams0bfmjkn635dbzrvcwgmi7j3882z"))))
+        (base32 "05c215m8zd6wcyjgvpkdmzghb2sp8677mj4shnjzqknbvmgqm9hh"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

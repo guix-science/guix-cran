@@ -12,7 +12,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages cmake)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -10415,42 +10414,6 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
 
-(define-public r-mpcr
-  (package
-    (name "r-mpcr")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPCR" version))
-       (sha256
-        (base32 "0a4iha2xl6iywf8ad1kiy1xwg6fkd62yjqvdkzf0nkklql2g5fvg"))))
-    (properties `((upstream-name . "MPCR")))
-    (build-system r-build-system)
-    (inputs (list cmake))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/stsds/MPCR")
-    (synopsis "Multi- And Mixed-Precision Computations")
-    (description
-     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
-32-bit data structures.  This flexibility enables fast execution across various
-applications.  The package enhances performance by optimizing operations in both
-precision levels, which is achieved by integrating with high-speed BLAS and
-LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
-caters to applications where high precision is unnecessary, accelerating
-computational processes whenever feasible.  The package also provides support
-for tile-based algorithms in three linear algebra operations: CHOL(), TRSM(),
-and GEMM().  The tile-based algorithm splits the matrix into smaller tiles,
-facilitating parallelization through a predefined Directed Acyclic Graph (DAG)
-for each operation.  Enabling @code{OpenMP} enhances the efficiency of these
-operations, leveraging multi-core parallelism.  In this case, MPCR facilitates
-mixed-precision execution by permitting varying precision levels for different
-tiles.  This approach is advantageous in numerous applications, as it maintains
-the accuracy of the application while accelerating execution in scenarios where
-single-precision alone does not significantly affect the accuracy of the
-application.")
-    (license license:gpl3+)))
-
 (define-public r-mpci
   (package
     (name "r-mpci")
@@ -12312,32 +12275,6 @@ Detailed discussion of the methodologies used can be found in Murray, Mueller
 and Turlach (2013) <doi:10.1007/s00180-012-0390-5> and Murray, Mueller and
 Turlach (2016) <doi:10.1080/00949655.2016.1139582>.")
     (license license:gpl2+)))
-
-(define-public r-monophy
-  (package
-    (name "r-monophy")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MonoPhy" version))
-       (sha256
-        (base32 "184nvwmxi28awq8fj1q0mliilbd4kaag673jydr47q1acql0dnmb"))))
-    (properties `((upstream-name . "MonoPhy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-taxize r-rcolorbrewer r-phytools r-phangorn
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MonoPhy")
-    (synopsis "Explore Monophyly of Taxonomic Groups in a Phylogeny")
-    (description
-     "Requires rooted phylogeny as input and creates a table of genera, their
-monophyly-status, which taxa cause problems in monophyly etc.  Different
-information can be extracted from the output and a plot function allows
-visualization of the results in a number of ways. \"@code{MonoPhy}: a simple R
-package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
-(2016) <doi:10.7717/peerj-cs.56>.")
-    (license license:gpl3)))
 
 (define-public r-monomvn
   (package
@@ -18205,13 +18142,13 @@ well-known data sets from the multilevel modelling literature.")
 (define-public r-mlmpower
   (package
     (name "r-mlmpower")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmpower" version))
        (sha256
-        (base32 "06k3kl3r6llii0kmq8p1pnzyk0nx71rafwyprkrwq8gx0x39zcab"))))
+        (base32 "0sakpiqi220j00w8s251ajaknm2lcg9jf9kif4l4qnz6z2vzn7y2"))))
     (properties `((upstream-name . "mlmpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-vartestnlme r-lmertest r-lme4 r-cli))
@@ -24089,6 +24026,43 @@ Range ('MGR test).  The first two tests were published by Batista and Ferreira
 <DOI:10.1111/stan.12063> Statistica Neerlandica 69, 358-373 for exact sample
 size calculation for superiority trials with binary outcome.")
     (license license:cc0)))
+
+(define-public r-midi
+  (package
+    (name "r-midi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "midi" version))
+       (sha256
+        (base32 "06dc0lazi7pkdm66isaqa9igfrl8dq4klpg06aggmilgay09fi5s"))))
+    (properties `((upstream-name . "midi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-rlang
+                             r-r6
+                             r-purrr
+                             r-plotly
+                             r-ggplot2
+                             r-cli))
+    (home-page "https://github.com/lmjl-alea/midi")
+    (synopsis "Microstructure Information from Diffusion Imaging")
+    (description
+     "An implementation of a taxonomy of models of restricted diffusion in biological
+tissues parametrized by the tissue geometry (axis, diameter, density, etc.).
+This is primarily used in the context of diffusion magnetic resonance (MR)
+imaging to model the MR signal attenuation in the presence of diffusion
+gradients.  The goal is to provide tools to simulate the MR signal attenuation
+predicted by these models under different experimental conditions.  The package
+feeds a companion shiny app available at
+<https://midi-pastrami.apps.math.cnrs.fr> that serves as a graphical interface
+to the models and tools provided by the package.  Models currently available are
+the ones in Neuman (1974) <doi:10.1063/1.1680931>, Van Gelderen et al. (1994)
+<doi:10.1006/jmrb.1994.1038>, Stanisz et al. (1997)
+<doi:10.1002/mrm.1910370115>, Soderman & Jonsson (1995)
+<doi:10.1006/jmra.1995.0014> and Callaghan (1995) <doi:10.1006/jmra.1995.1055>.")
+    (license license:expat)))
 
 (define-public r-midfieldr
   (package
@@ -32092,50 +32066,6 @@ hypothesis, high dimensional mediation testing, divide-aggregate composite null
 test, and Sobel's test under the composite null hypothesis.  Du et al (2023)
 <doi:10.1002/gepi.22510>.")
     (license license:gpl3)))
-
-(define-public r-medrxivr
-  (package
-    (name "r-medrxivr")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "medrxivr" version))
-       (sha256
-        (base32 "19gakl39n2jch84sv35jkk4g2c0k4h3ch3l3hz1w5p94mn2jlgqr"))))
-    (properties `((upstream-name . "medrxivr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vroom
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-lubridate
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-data-table
-                             r-curl
-                             r-bib2df))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/medrxivr")
-    (synopsis "Access and Search MedRxiv and BioRxiv Preprint Data")
-    (description
-     "An increasingly important source of health-related bibliographic content are
-preprints - preliminary versions of research articles that have yet to undergo
-peer review.  The two preprint repositories most relevant to health-related
-sciences are @code{medRxiv} <https://www.medrxiv.org/> and @code{bioRxiv}
-<https://www.biorxiv.org/>, both of which are operated by the Cold Spring Harbor
-Laboratory.  medrxivr provides programmatic access to the Cold Spring Harbour
-Laboratory (CSHL) API <https://api.biorxiv.org/>, allowing users to easily
-download @code{medRxiv} and @code{bioRxiv} preprint metadata (e.g. title,
-abstract, publication date, author list, etc) into R. medrxivr also provides
-functions to search the downloaded preprint records using regular expressions
-and Boolean logic, as well as helper functions that allow users to export their
-search results to a .BIB file for easy import to a reference manager and to
-download the full-text PDFs of preprints matching their search criteria.")
-    (license license:expat)))
 
 (define-public r-medlea
   (package
@@ -40173,13 +40103,13 @@ build-in functions provided in mapping or with other packages already available.
 (define-public r-mapmisc
   (package
     (name "r-mapmisc")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapmisc" version))
        (sha256
-        (base32 "1s8sp1yrdx43jwzxcqvkj74h33xrb9wh70gkgcs608z7l4rliam3"))))
+        (base32 "1wrr7xhhrpv8bchg4yrm8qax89whkrg8z03vhw7f8fzllr7wq7cb"))))
     (properties `((upstream-name . "mapmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-geosphere))
@@ -40650,16 +40580,15 @@ described by Le Louedec et al (2021) <doi:10.1002/psp4.12689>.")
 (define-public r-mapaccuracy
   (package
     (name "r-mapaccuracy")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapaccuracy" version))
        (sha256
-        (base32 "0bw69w2875z8s6ywifyx5yphzfrcv2nfbqbz1hy90x93iw6v5y0n"))))
+        (base32 "1bz1c346y70wzv900lvf63j59f3sk9fdf1nh8p81fz4f5dbck1qp"))))
     (properties `((upstream-name . "mapaccuracy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-assertthat))
     (home-page "https://cran.r-project.org/package=mapaccuracy")
     (synopsis "Unbiased Thematic Map Accuracy and Area")
     (description

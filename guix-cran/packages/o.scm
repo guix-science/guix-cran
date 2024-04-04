@@ -5400,23 +5400,25 @@ via run_app() or online at <https://openanalysis.org/openspecy/>.")
 (define-public r-openskies
   (package
     (name "r-openskies")
-    (version "1.1.6")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openSkies" version))
        (sha256
-        (base32 "03nlbmxp36z82myrbamwl1zngsnfxfw80niisapv53n605p4lrg1"))))
+        (base32 "0ky11gpgnf2afv6kzhwbzwzrmril99ixxxzzmav3h9hzcig3igyj"))))
     (properties `((upstream-name . "openSkies")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-ssh
+                             r-rpresto
                              r-r6
                              r-magick
                              r-httr
                              r-ggplot2
                              r-ggmap
                              r-dbscan
+                             r-dbi
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=openSkies")

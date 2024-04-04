@@ -2956,13 +2956,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.2")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "1fqklpffxdwz58512fpja6hpc5x63fk5cxj44r3nlrwnb442g9p3"))))
+        (base32 "13s1v4izqhq3w6ahna228wgs3n9zxqbmxzjjy69lmvrksfrkdy57"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -3322,6 +3322,47 @@ the theory part of the vignette.")
      "This package provides a toolkit for the analysis of paths from spatial tracking
 experiments and calculation of goal-finding strategies.  This package is
 centered on an approach using machine learning for path classification.")
+    (license license:gpl3)))
+
+(define-public r-rtpcr
+  (package
+    (name "r-rtpcr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtpcr" version))
+       (sha256
+        (base32 "0mgphsflz7al8fgbdjbw6rbv2g21yxvfs2wkdnarh9zn2njx3hy3"))))
+    (properties `((upstream-name . "rtpcr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-reshape2
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr
+                             r-agricolae))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rtpcr")
+    (synopsis "qPCR Data Analysis")
+    (description
+     "Various methods are employed for statistical analysis and graphical presentation
+of real-time PCR (quantitative PCR or @code{qPCR}) data.  rtpcr handles
+amplification efficiency calculation and statistical analysis of real-time PCR
+data based on one reference gene.  By accounting for amplification efficiency
+values, rtpcr was developed using a general calculation method described by
+Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5>, covering both the Livak
+and Pfaffl methods.  Based on the experimental conditions, the functions of the
+rtpcr package use t-test (for experiments with a two-level factor) or analysis
+of variance (for cases where more than two levels or factors exist) to calculate
+the fold change or relative expression.  The functions also provide standard
+deviations and confidence limits for means, apply statistical mean comparisons,
+and present letter mean grouping.  To facilitate using rtpcr', different
+datasets have been employed in the examples and the outputs are explained.  An
+outstanding feature of rtpcr package is providing publication-ready bar plots
+with various controlling arguments for experiments with up to three different
+factors.  The rtpcr package is user-friendly and easy to work with and provides
+an applicable resource for analyzing real-time PCR data.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -8832,6 +8873,41 @@ association, matching tables, filling gaps and essay) and provides a
 comprehensive set of attributes for customizing tests.")
     (license license:gpl3+)))
 
+(define-public r-rqsar
+  (package
+    (name "r-rqsar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rQSAR" version))
+       (sha256
+        (base32 "1s2s7bvb9pd7vsdcbkk4zmndixfwfmiv4a9bkaix7rdh5fk057kw"))))
+    (properties `((upstream-name . "rQSAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rcdk
+                             r-randomforest
+                             r-pls
+                             r-leaps
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-corrplot
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rQSAR")
+    (synopsis
+     "QSAR Modeling with Multiple Algorithms: MLR, PLS, and Random Forest")
+    (description
+     "Quantitative Structure-Activity Relationship (QSAR) modeling is a valuable tool
+in computational chemistry and drug design, where it aims to predict the
+activity or property of chemical compounds based on their molecular structure.
+In this vignette, we present the @code{rQSAR} package, which provides functions
+for variable selection and QSAR modeling using Multiple Linear Regression (MLR),
+Partial Least Squares (PLS), and Random Forest algorithms.")
+    (license license:expat)))
+
 (define-public r-rqpen
   (package
     (name "r-rqpen")
@@ -8912,6 +8988,59 @@ confidence intervals (Noma and Gosho (2024) <Forthcoming>).")
 continuous, and their respective entanglement metrics.  See Artur Ekert, Peter
 L. Knight (1995) <doi:10.1119/1.17904> for more details.")
     (license license:expat)))
+
+(define-public r-rqdeltact
+  (package
+    (name "r-rqdeltact")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RQdeltaCT" version))
+       (sha256
+        (base32 "1fb6mzaym3gv5aah2071ibmnnnmfzknfmnfiwm893crdwyx3f92w"))))
+    (properties `((upstream-name . "RQdeltaCT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyselect
+                             r-tidyr
+                             r-proc
+                             r-pheatmap
+                             r-oddsratio
+                             r-magrittr
+                             r-hmisc
+                             r-ggsignif
+                             r-ggpmisc
+                             r-ggplot2
+                             r-ggally
+                             r-dplyr
+                             r-ctrlgene
+                             r-corrplot
+                             r-coin))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/Donadelnal/RQdeltaCT>")
+    (synopsis
+     "Relative Quantification of Gene Expression using Delta Ct Methods")
+    (description
+     "The commonly used methods for relative quantification of gene expression are the
+delta Ct family methods (encompassing 2^-Ct, 2^-@code{dCt}, and 2^-@code{ddCt}
+methods), originally proposed by Kenneth J. Livak and Thomas D. Schmittgen
+(2001) <doi:10.1006/meth.2001.1262>.  These methods were designed to analyse
+gene expression data (Ct values) obtained from @code{qPCR} (quantitative
+Polymerase Chain Reaction) experiments.  The main idea is to normalise gene
+expression values using endogenous control gene, present gene expression levels
+in linear form by using the 2^-(value)^ transformation, and calculate
+differences in gene expression levels between groups of samples (or technical
+replicates of a single sample).  The R@code{QdeltaCT} package offers functions
+that encompass all of these steps for comparison of either independent groups of
+samples or groups with paired samples, together with importing @code{qPCR}
+datasets, performing multi-step quality control of data, enabling numerous data
+visualisations, enrichment of the standard workflow with additional useful
+analyses (correlation analysis, Receiver Operating Characteristic analysis,
+logistic regression), and conveniently export obtained results in table and
+image formats.  The package has been designed to be friendly to non-experts in R
+programming users.")
+    (license license:gpl3)))
 
 (define-public r-rqdatatable
   (package
@@ -16347,13 +16476,13 @@ introduced in Yahav and Shmueli (2012) <doi: 10.1002/asmb.901>.")
 (define-public r-rnewsflow
   (package
     (name "r-rnewsflow")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNewsflow" version))
        (sha256
-        (base32 "08jyj57y20a156dhpwn83v27lgc57yv189qrlsy5qn48jzfdb77h"))))
+        (base32 "08qb0vh2j1v13wqsrmklh6d4ln7ipsy962cwnlr86j0r2bscrqgy"))))
     (properties `((upstream-name . "RNewsflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -35799,6 +35928,35 @@ bandwidth selection for the different procedures implemented, and rdplot() to
 conduct exploratory data analysis (RD plots).")
     (license license:gpl2)))
 
+(define-public r-rdracor
+  (package
+    (name "r-rdracor")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rdracor" version))
+       (sha256
+        (base32 "014xa4n6av0g3ffplna8z25b00176war3h2pv20wclx9lq8wz9hs"))))
+    (properties `((upstream-name . "rdracor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rdpack
+                             r-purrr
+                             r-jsonlite
+                             r-igraph
+                             r-httr
+                             r-data-table))
+    (home-page "https://github.com/dracor-org/rdracor")
+    (synopsis "Access to the 'DraCor' API")
+    (description
+     "Provide an interface for Drama Corpora Project ('@code{DraCor}') API:
+<https://dracor.org/documentation/api>.")
+    (license license:gpl3+)))
+
 (define-public r-rdpower
   (package
     (name "r-rdpower")
@@ -39504,13 +39662,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.64")
+    (version "1.65")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "0h0pz5y79q3inq45shd785v6cz2i46x0c88v65szrqrv9rnrm1d2"))))
+        (base32 "08lm5ddnzq1mk19wsv3n9qba3rz4zmrcq1691zb964mmls8pyybp"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -47283,13 +47441,13 @@ of landscapeâ used in the domain of landscape ecology.")
 (define-public r-raceid
   (package
     (name "r-raceid")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RaceID" version))
        (sha256
-        (base32 "10hbgnd7kvs6a3w6jxs78w7b6si3nghbrzfyv3ipflpv37zs8fay"))))
+        (base32 "0jmgc2nf65ymhk88mzlmh96wwygr0gs3ca1mc0all0a5c6vxyj8b"))))
     (properties `((upstream-name . "RaceID")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

@@ -2855,13 +2855,13 @@ principles as described in: \"Vandemeulebroecke et al. (2018)\"
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "1g0vf28r1lbmisczdpbffgaxr40ac173arha2f6hcw5083s54plj"))))
+        (base32 "1pqp97c1syh47dayivmii0aa2brlmw3yx0gy612g67yyk9a1zzlr"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3237,13 +3237,13 @@ among other things.  See <http://www.virustotal.com> for more information.")
 (define-public r-viruslearner
   (package
     (name "r-viruslearner")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viruslearner" version))
        (sha256
-        (base32 "1x8d3zs6dzl34y7lamkxsn7f9pxy5034yn2q79g3fwzmvvrnniy5"))))
+        (base32 "17wh4m5nd856y7vdaxr0qnwcivr08g9ykzpiggynzs1iy3vzi9bz"))))
     (properties `((upstream-name . "viruslearner")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -3258,6 +3258,7 @@ among other things.  See <http://www.virustotal.com> for more information.")
                              r-hardhat
                              r-dplyr
                              r-dials))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/juanv66x/viruslearner")
     (synopsis "Ensemble Learning for HIV-Related Metrics")
     (description

@@ -11678,6 +11678,29 @@ Extrapolation for nonlinear regression?\" by Xinwei Shen and Nicolai Meinshausen
 (2023).  Also supports classification (experimental). <arxiv:2307.00835>.")
     (license license:expat)))
 
+(define-public r-engrecon
+  (package
+    (name "r-engrecon")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EngrEcon" version))
+       (sha256
+        (base32 "1jb2gyx2w210w76nwrc77hfn8qyn2rnykax8a5bpzci6lqlxcb3f"))))
+    (properties `((upstream-name . "EngrEcon")))
+    (build-system r-build-system)
+    (home-page "GitHub")
+    (synopsis
+     "Engineering Economics Analysis for Engineering Projects Cost Analysis")
+    (description
+     "Computing economic analysis in civil infrastructure and ecosystem restoration
+projects is a typical activity.  This package contains Standard cost engineering
+and engineering economics methods that are applied to convert between present,
+future, and annualized costs.  Newnan D. (2020) <ISBN 9780190931919>
+âEngineering Economic Analysisâ.")
+    (license license:gpl3)))
+
 (define-public r-enetlts
   (package
     (name "r-enetlts")

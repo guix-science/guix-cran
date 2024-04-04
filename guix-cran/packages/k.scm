@@ -1745,6 +1745,30 @@ k-nearest neighbors algorithm and the other is optimizing the parameters k and d
 of the algorithm.  These are carried out in parallel using multiple threads.")
     (license license:agpl3)))
 
+(define-public r-knnmi
+  (package
+    (name "r-knnmi")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "knnmi" version))
+       (sha256
+        (base32 "16cdga8q6vl289yh7520khyfsg9aih7crq9wa13sn6lnimfah49r"))))
+    (properties `((upstream-name . "knnmi")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=knnmi")
+    (synopsis "k-Nearest Neighbor Mutual Information Estimator")
+    (description
+     "This is a C++ mutual information (MI) library based on the k-nearest neighbor
+(KNN) algorithm.  There are three functions provided for computing MI for
+continuous values, mixed continuous and discrete values, and conditional MI for
+continuous values.  They are based on algorithms by A. Kraskov, et.  al. (2004)
+<doi:10.1103/@code{PhysRevE.69.066138>}, BC Ross
+(2014)<doi:10.1371/journal.pone.0087357>, and A. Tsimpiris (2012)
+<doi:10.1016/j.eswa.2012.05.014>, respectively.")
+    (license license:gpl3+)))
+
 (define-public r-knitxl
   (package
     (name "r-knitxl")

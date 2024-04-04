@@ -50,13 +50,13 @@
 (define-public r-czso
   (package
     (name "r-czso")
-    (version "0.3.10")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "czso" version))
        (sha256
-        (base32 "0vkckjnv8nkv794dq9kz1lg8qj614gma3blasz4288xxbg9cq6p5"))))
+        (base32 "0zg1sqka0m1cc5cwdkb0b12fb27mj4skz2vbvn6xqjbww1yjxrpd"))))
     (properties `((upstream-name . "czso")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2232,13 +2232,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "1898d55lky6avhxvhj0rqfbijf66p5any7hanj32yr231mgayk2r"))))
+        (base32 "19grpwlywxdl6bz0i08hwdj6d66s29mlhkl22p877drkgaqyccfj"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -12103,6 +12103,42 @@ tokenisation, part of speech tagging, lemmatisation, named entity recognition,
 coreference detection and sentiment analysis.")
     (license license:gpl2)))
 
+(define-public r-coremicrobiomer
+  (package
+    (name "r-coremicrobiomer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CoreMicrobiomeR" version))
+       (sha256
+        (base32 "18zqs14j014qsmqqgn2yyf1djvr92spj46aq474jh6f8sdqvbqqz"))))
+    (properties `((upstream-name . "CoreMicrobiomeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-srs
+                             r-reshape2
+                             r-plotly
+                             r-ggrepel
+                             r-ggplot2
+                             r-fastmatch
+                             r-edger))
+    (home-page "https://cran.r-project.org/package=CoreMicrobiomeR")
+    (synopsis "Identification of Core Microbiome")
+    (description
+     "The Core Microbiome refers to the group of microorganisms that are consistently
+present in a particular environment, habitat, or host species.  These
+microorganisms play a crucial role in the functioning and stability of that
+ecosystem.  Identifying these microorganisms can contribute to the emerging
+field of personalized medicine.  The @code{CoreMicrobiomeR} is designed to
+facilitate the identification, statistical testing, and visualization of this
+group of microorganisms.This package offers three key functions to analyze and
+visualize microbial community data.  This package has been developed based on
+the research papers published by Pereira et al.(2018)
+<doi:10.1186/s12864-018-4637-6> and Beule L, Karlovsky P. (2020)
+<doi:10.7717/peerj.9593>.")
+    (license license:gpl3)))
+
 (define-public r-corels
   (package
     (name "r-corels")
@@ -15744,6 +15780,35 @@ estimator is unique.  See Fuchs, Krautenbacher (2016)
 of unbiased estimation of variances of U-statistics.")
     (license license:gpl3)))
 
+(define-public r-confintrob
+  (package
+    (name "r-confintrob")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "confintROB" version))
+       (sha256
+        (base32 "0f3rqlqd9l3llhykpbc6zpm3g3n1v45jddn7m342j24yajvd54ln"))))
+    (properties `((upstream-name . "confintROB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-mvtnorm r-mass r-lme4 r-foreach))
+    (home-page "https://cran.r-project.org/package=confintROB")
+    (synopsis
+     "Bootstrap Confidence Intervals for Robust and Classical Linear Mixed Model Estimators")
+    (description
+     "The main function calculates confidence intervals (CI) for Mixed Models,
+utilizing both classical estimators from the lmer() function in the lme4 package
+and robust estimators from the rlmer() function in the robustlmm package, as
+well as the @code{varComprob}() function in the @code{robustvarComp} package.
+Three methods are available: the classical Wald method, the wild bootstrap, and
+the parametric bootstrap.  Bootstrap methods offer flexibility in obtaining
+lower and upper bounds through percentile or BCa methods.  More details are
+given in \\n Mason, F., Cantoni, E., & Ghisletta, P. (2021)
+<doi:10.5964/meth.6607> and \\n Mason, F., Cantoni, E., & Ghisletta, P. (2024)
+<doi:10.1037/met0000643>.")
+    (license license:gpl2)))
+
 (define-public r-confinterpret
   (package
     (name "r-confinterpret")
@@ -16544,44 +16609,6 @@ Melnik, A., O. Shy, and R. Stenbacka (2008), \"Assessing market dominance\"
 Inequality: Centrifugal and Centripetal Forces at Work\".  9.  Shannon, C. E.
 (1948). \"A Mathematical Theory of Communication\".  10.  Simpson, E. H. (1949).
 \"Measurement of Diversity\" <doi:10.1038/163688a0>.")
-    (license license:gpl3+)))
-
-(define-public r-concrete
-  (package
-    (name "r-concrete")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "concrete" version))
-       (sha256
-        (base32 "05hl3ikdh8776hgw0wqz6acir8brkszgg01169q2v1dhgcsnfyjb"))))
-    (properties `((upstream-name . "concrete")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-survival
-                             r-superlearner
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-origami
-                             r-nleqslv
-                             r-mass
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/imbroglio-dc/concrete")
-    (synopsis
-     "Continuous-Time Competing Risks Estimation using Targeted Minimum Loss-Based Estimation (TMLE)")
-    (description
-     "One-step continuous-time Targeted Minimum Loss-Based Estimation (TMLE) for
-outcome-specific absolute risk estimands in right-censored survival settings
-with or without competing risks, implementing the methodology described in
-Rytgaard et al. (2023) <doi:10.1111/biom.13856> and Rytgaard and van der Laan
-(2023) <doi:10.1007/s10985-022-09576-2>.  Currently concrete can be used to
-estimate the effects of static or dynamic interventions on binary treatments
-given at baseline, cross-validated initial estimation of treatment propensity is
-done using the @code{SuperLearner} package, and initial estimation of
-conditional hazards is done using ensembles of Cox regressions from the survival
-package or Coxnet from the glmnet package.")
     (license license:gpl3+)))
 
 (define-public r-concorr
@@ -19218,24 +19245,27 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "1mnjsl9v24dnk7qc5hhgsl56zhb86cjvaaqqqnqgqzy4h1vfc3vc"))))
+        (base32 "08hcxydyg89wamd77mx620mja7k5bimjlhfpjf5x5j1f27b15wrp"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-testthat
+                             r-stringr
                              r-rlang
                              r-rcppeigen
                              r-rcpp
+                             r-processx
                              r-ggplot2
-                             r-data-table))
+                             r-data-table
+                             r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ericgiunta/Colossus")
+    (home-page "https://ericgiunta.github.io/Colossus/")
     (synopsis
      "\"Risk Model Regression and Analysis with Complex Non-Linear Models\"")
     (description
@@ -20372,16 +20402,17 @@ data.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1kppnk97iyl2g4iby8n4f2b7ix5n340igr3z0ilmnnm7nad3r9h6"))))
+        (base32 "00yx4y2d7bwmfh04wzchl14jh071qhwpy87m40gif8a0a5bzcx9p"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
                              r-tibble
                              r-survival
                              r-stringr
@@ -20647,6 +20678,30 @@ linked to the work done during the @code{PhD} of Frederic M. Vanwindekens (CRA-W
 / UCL) hold the 13 of May 2014 at University of Louvain in collaboration with
 the Walloon Agricultural Research Centre (project MIMOSA, MOERMAN fund).")
     (license license:gpl3)))
+
+(define-public r-coglasso
+  (package
+    (name "r-coglasso")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coglasso" version))
+       (sha256
+        (base32 "0z4qdncmznprv16973jlj29vxxlkaqy6ari65fswn6ics2sz3xrr"))))
+    (properties `((upstream-name . "coglasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DrQuestion/coglasso")
+    (synopsis
+     "Collaborative Graphical Lasso - Multi-Omics Network Reconstruction")
+    (description
+     "Reconstruct networks from multi-omics data sets with the collaborative graphical
+lasso (coglasso) algorithm described in Albanese, A., Kohlen, W., and Behrouzi,
+P. (2024) <@code{arXiv:2403.18602>}.  Build multiple networks using the
+coglasso() function, select the best one with stars_coglasso().")
+    (license license:gpl2+)))
 
 (define-public r-coga
   (package
@@ -21892,13 +21947,13 @@ implements two selection criteria in order to select the number of biclusters.")
 (define-public r-cobalt
   (package
     (name "r-cobalt")
-    (version "4.5.4")
+    (version "4.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cobalt" version))
        (sha256
-        (base32 "0nxxh31fznv4dn33psvshggyriq7l5i022706dz97vg12m8lblpx"))))
+        (base32 "1h1fyv2x4wjvwqjxh0hdvh1y355jbkq7n8n6bbnkskd2w5b1jv07"))))
     (properties `((upstream-name . "cobalt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -21914,12 +21969,13 @@ implements two selection criteria in order to select the number of biclusters.")
     (description
      "Generate balance tables and plots for covariates of groups preprocessed through
 matching, weighting or subclassification, for example, using propensity scores.
-Includes integration with @code{MatchIt}', twang', Matching', optmatch', CBPS',
-ebal', @code{WeightIt}', cem', sbw', and designmatch for assessing balance on
-the output of their preprocessing functions.  Users can also specify data for
-balance assessment not generated through the above packages.  Also included are
-methods for assessing balance in clustered or multiply imputed data sets or data
-sets with multi-category, continuous, or longitudinal treatments.")
+Includes integration with @code{MatchIt}', @code{WeightIt}', @code{MatchThem}',
+twang', Matching', optmatch', CBPS', ebal', cem', sbw', and designmatch for
+assessing balance on the output of their preprocessing functions.  Users can
+also specify data for balance assessment not generated through the above
+packages.  Also included are methods for assessing balance in clustered or
+multiply imputed data sets or data sets with multi-category, continuous, or
+longitudinal treatments.")
     (license license:gpl2+)))
 
 (define-public r-coat
@@ -22319,6 +22375,31 @@ overcome bias in data collection and to mitigate violations of
 representativeness.  An online demonstration is available via
 <https://cnorm.shinyapps.io/@code{cNORM/>}.")
     (license license:agpl3)))
+
+(define-public r-cnmap
+  (package
+    (name "r-cnmap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cnmap" version))
+       (sha256
+        (base32 "17ksinswnj37sj1cdzpxg27rkn8qi4kli48hi1jk8r147d2rykdg"))))
+    (properties `((upstream-name . "cnmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/PanfengZhang/cnmap")
+    (synopsis "China Map Data from AutoNavi Map")
+    (description
+     "According to the code or the name of the administrative division at the county
+level and above provided by the Ministry of Civil Affairs of the People's
+Republic of China in 2022
+(<https://www.mca.gov.cn/mzsj/xzqh/2022/202201xzqh.html>), get the map file
+online from the website of @code{AutoNavi} Map
+(<http://datav.aliyun.com/portal/school/atlas/area_selector>).")
+    (license license:gpl3)))
 
 (define-public r-cnlttsa
   (package
@@ -32687,13 +32768,13 @@ license. <https://www.cgal.org/>.")
 (define-public r-cgaim
   (package
     (name "r-cgaim")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cgaim" version))
        (sha256
-        (base32 "0bi8rmykgynkkbpkvm3n9ihl8x41n4msgz17ilwpa1xw9lf3pcj6"))))
+        (base32 "1krs61rbnz7v4pncbjlil4728x5xyz5vzbyj487njbmqgymq10wl"))))
     (properties `((upstream-name . "cgaim")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncatednormal
@@ -34891,13 +34972,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "09vdcj7nqyqavyhm8sa1ncn8zjyk320jq278m1ca3hqyap0p5v21"))))
+        (base32 "0a9hlgfykz40yqnj1wharlcg1gqqm0nc1g7328377mvgna6hr370"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -40273,13 +40354,13 @@ study area while accounting for the evolutionary relationships of species.")
 (define-public r-canadianmaps
   (package
     (name "r-canadianmaps")
-    (version "1.3.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canadianmaps" version))
        (sha256
-        (base32 "1sk2jf0brlz1bq3xjniif51zlhglgw83ffznkvnqnbcvcbh5ha96"))))
+        (base32 "08kf6jxvqh6kyfb639kdqpq33qlrpaz94ayknbj13hm4asgsn3w5"))))
     (properties `((upstream-name . "canadianmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

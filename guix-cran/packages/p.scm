@@ -4201,6 +4201,49 @@ load (AL).  Provides a wrapper to calculate the @code{MetSSS} on new data using
 the Healthy Hearts formula.")
     (license license:lgpl3)))
 
+(define-public r-psborrow2
+  (package
+    (name "r-psborrow2")
+    (version "0.0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psborrow2" version))
+       (sha256
+        (base32 "00lpikbcwihn9zvsrn96cvajk4nh6c4jh1y5779p9qjpv0hnsppn"))))
+    (properties `((upstream-name . "psborrow2")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-simsurv
+                             r-posterior
+                             r-mvtnorm
+                             r-matrix
+                             r-glue
+                             r-generics
+                             r-future
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Genentech/psborrow2")
+    (synopsis "Bayesian Dynamic Borrowing Analysis and Simulation")
+    (description
+     "Bayesian dynamic borrowing is an approach to incorporating external data to
+supplement a randomized, controlled trial analysis in which external data are
+incorporated in a dynamic way (e.g., based on similarity of outcomes); see Viele
+2013 <doi:10.1002/pst.1589> for an overview.  This package implements the
+hierarchical commensurate prior approach to dynamic borrowing as described in
+Hobbes 2011 <doi:10.1111/j.1541-0420.2011.01564.x>.  There are three main
+functionalities.  First, psborrow2 provides a user-friendly interface for
+applying dynamic borrowing on the study results handles the Markov Chain Monte
+Carlo sampling on behalf of the user.  Second, psborrow2 provides a simulation
+framework to compare different borrowing parameters (e.g. full borrowing, no
+borrowing, dynamic borrowing) and other trial and borrowing characteristics
+(e.g. sample size, covariates) in a unified way.  Third, psborrow2 provides a
+set of functions to generate data for simulation studies, and also allows the
+user to specify their own data generation process.  This package is designed to
+use the sampling functions from cmdstanr which can be installed from
+<https://mc-stan.org/r-packages/>.")
+    (license license:asl2.0)))
+
 (define-public r-psborrow
   (package
     (name "r-psborrow")
@@ -5731,13 +5774,13 @@ genes that correctly classify the maximum number of the given tissue samples
 (define-public r-proporz
   (package
     (name "r-proporz")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proporz" version))
        (sha256
-        (base32 "0han6vhdlzywcvw02w3rgmh4513kcl825ca4991igh15vssjy617"))))
+        (base32 "0yvrmrbvv9dmcl6ry42whr40dlirirrr5xdn591qim5lkwxc17y1"))))
     (properties `((upstream-name . "proporz")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9348,13 +9391,13 @@ elements can be added (points, lines, barplot with add=TRUE and so forth).")
 (define-public r-prepdesigns
   (package
     (name "r-prepdesigns")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pRepDesigns" version))
        (sha256
-        (base32 "1bsdgd6zaywr5bh96khjinp5qrv72ibv9y60v63rqzpkdixdzp5z"))))
+        (base32 "1n8yzn4k3gsldrxr7fs7qmys854lfl54cwssd47w1k7kr259gvdg"))))
     (properties `((upstream-name . "pRepDesigns")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pRepDesigns")
@@ -17806,6 +17849,31 @@ you want.  It's a plot tour', a tour about repetition and reward.  Hope plutor
 helps you on the tour!")
     (license license:expat)))
 
+(define-public r-pluscode2
+  (package
+    (name "r-pluscode2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plusCode2" version))
+       (sha256
+        (base32 "0kslqzngb5y8d5x7gc1kja345f69c7azilwzcspv127k00mg4n3k"))))
+    (properties `((upstream-name . "plusCode2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf))
+    (home-page "https://github.com/Armando-d/plusCode2")
+    (synopsis "Coordinates to 'Plus Code' Conversion Tool")
+    (description
+     "Generates Plus Code of geometric objects or data frames that contain them,
+giving the possibility to specify the precision of the area.  The main feature
+of the package comes from the open-source code developed by Google Inc.  present
+in the repository
+<https://github.com/google/open-location-code/blob/main/java/src/main/java/com/google/openlocationcode/@code{OpenLocationCode.java>}.
+ For details about Plus Code', visit <https://maps.google.com/pluscodes/> or
+<https://github.com/google/open-location-code>.")
+    (license license:expat)))
+
 (define-public r-pluscode
   (package
     (name "r-pluscode")
@@ -21044,6 +21112,30 @@ added via the tinytest package (if present), and documentation-creation support
 can be added via roxygen2 (if present).")
     (license license:gpl2+)))
 
+(define-public r-pkggraphr
+  (package
+    (name "r-pkggraphr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pkgGraphR" version))
+       (sha256
+        (base32 "0qmrbwgm6aclzdgpcwr2c2bvakh3rcrf9z8m5mqd9vxgjykjfgks"))))
+    (properties `((upstream-name . "pkgGraphR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-dplyr r-diagrammer))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/doliv071/pkggraphr")
+    (synopsis "Graph the Relationship Between Functions in an R Package")
+    (description
+     "It is often useful when developing an R package to track the relationship
+between functions in order to appropriately test and track changes.  This
+package generates a graph of the relationship between all R functions in a
+package.  It can also be used on any directory containing .R files which can be
+very useful for shiny apps or other non-package workflows.")
+    (license license:gpl3+)))
+
 (define-public r-pkggraph
   (package
     (name "r-pkggraph")
@@ -22909,13 +23001,13 @@ detail in Callahan et al. (2016) <doi:10.12688/f1000research.8986.1>.")
 (define-public r-phylosem
   (package
     (name "r-phylosem")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylosem" version))
        (sha256
-        (base32 "13yyvja5ayznbk751l0al2j0d7jpbv0jfkqrsfw73913r0b6w6kb"))))
+        (base32 "0x93v0316xd79ab0pdc0w4pb4ljds89ihpp7a61kfdla7v2548bj"))))
     (properties `((upstream-name . "phylosem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -23582,13 +23674,13 @@ suite Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyplants
   (package
     (name "r-photobiologyplants")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyPlants" version))
        (sha256
-        (base32 "0s3c3x7l3q8a8zaf9nww7w551mdracp6ljy08959p3sgmrjic4kw"))))
+        (base32 "0va72n6fa5w0xffyyhqsmpgy4ac6mva5gxdxl907ch1d02r8zgya"))))
     (properties `((upstream-name . "photobiologyPlants")))
     (build-system r-build-system)
     (propagated-inputs (list r-photobiologywavebands r-photobiology))
@@ -28516,13 +28608,13 @@ and etc packages.")
 (define-public r-pedprobr
   (package
     (name "r-pedprobr")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedprobr" version))
        (sha256
-        (base32 "0vir7x7qm4hjpcilcsqv9rpxky6fpjig0ybjv2m9nk4jpcszh8c8"))))
+        (base32 "0p05vqkvn52mf5dy5sp7h0z382mnc83j9arcv7ranr6j51xa3pgk"))))
     (properties `((upstream-name . "pedprobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))
@@ -28708,13 +28800,13 @@ kernel and burden association statistics.")
 (define-public r-pedfamilias
   (package
     (name "r-pedfamilias")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedFamilias" version))
        (sha256
-        (base32 "1zlnm6pj1x9wb5cjl5dzyzlqyxh5k82s86b1mg7kg5q7qhhmpj9s"))))
+        (base32 "0fxwsamflw4vkw2hi0gmgkds0vx9yikda31s6fdcvnbjs1cpf1zd"))))
     (properties `((upstream-name . "pedFamilias")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))
@@ -33227,13 +33319,13 @@ run locally, see examples on <https://github.com/@code{SachaEpskamp/parSim>}.")
 (define-public r-parserpdr
   (package
     (name "r-parserpdr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parseRPDR" version))
        (sha256
-        (base32 "0jbph3sjhp0qa0gk9vixr2bswcmkjbwz142nplzlsym9x9j02626"))))
+        (base32 "1ih4mrk0vfr8rkm55zgx4rlv3791asvsahk9w4pavns3r0wiq6av"))))
     (properties `((upstream-name . "parseRPDR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -33242,7 +33334,6 @@ run locally, see examples on <https://github.com/@code{SachaEpskamp/parSim>}.")
                              r-parallelly
                              r-future
                              r-foreach
-                             r-doparallel
                              r-dofuture
                              r-data-table))
     (home-page "https://github.com/martonkolossvary/parseRPDR")

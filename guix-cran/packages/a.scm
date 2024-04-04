@@ -4431,17 +4431,17 @@ ISBN:9780988679924).")
 (define-public r-assessor
   (package
     (name "r-assessor")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assessor" version))
        (sha256
-        (base32 "16159dwdpbk38319143kmb78fq64zi1szspsn5ijqwvcwyzi88ca"))))
+        (base32 "1qpa2fd1ajk395x4chmarj6l50m4jaf5951qy1a79ncaa8f8g3x9"))))
     (properties `((upstream-name . "assessor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-tweedie r-mass))
-    (home-page "https://github.com/jhlee1408/assessor")
+    (propagated-inputs (list r-vgam r-tweedie r-np r-mass))
+    (home-page "https://jhlee1408.github.io/assessor/")
     (synopsis
      "Assessment Tools for Regression Models with Discrete and Semicontinuous Outcomes")
     (description
@@ -7987,13 +7987,13 @@ that available in other commercial software and subscription online calculators.
 (define-public r-aqeval
   (package
     (name "r-aqeval")
-    (version "0.5.2")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQEval" version))
        (sha256
-        (base32 "0iac6bcrbhiaxz05vmfmb99g1060r36z1qh3imbwri7m16v0gx59"))))
+        (base32 "07f0jgk9hb6gnnsj0vic202smyr5n7xrfrwcaldc6v2lm7sxk5dx"))))
     (properties `((upstream-name . "AQEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19485,13 +19485,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1xz4hxv0vn6vi6k07qwvbiws9ywj4cxnf2spnlcp0ajjxy4p6xlv"))))
+        (base32 "1nv8gn75b9zzqip2xl4hmrsj18zwrhlcm7dwcq9zkd68fr3m0dyp"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -19510,13 +19510,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1mg2m14jc8wd3w9pb0ayqqm28dgdmwqhgs811m1hc1jywr0hlmbv"))))
+        (base32 "1yda8w3yk3h3sjfx7bxcvv3pgrk4hbvp2m5yxbrxg52msm2ilg3l"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

@@ -1542,6 +1542,38 @@ characterizes the uncertainty of the person.  The method was originally proposed
 by Tutz and Schauberger (2020) <doi:10.1177/0146621620920932>.")
     (license license:gpl2+)))
 
+(define-public r-upanddownplots
+  (package
+    (name "r-upanddownplots")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UpAndDownPlots" version))
+       (sha256
+        (base32 "0q19a64dy0g89yyxgs88vpcisc9apji3cl7b7gdm778y6j59jnjq"))))
+    (properties `((upstream-name . "UpAndDownPlots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-gridextra
+                             r-ggthemes
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=UpAndDownPlots")
+    (synopsis "Displays Percentage and Absolute Changes")
+    (description
+     "Displays percentage changes by height and absolute changes by area for up to
+three nested or non-nested levels.  The plots visualise changes in indices and
+markets, showing how the changes for sectors or for individual components
+contribute to the overall change.  Data can be classified by up to three levels
+of grouping variables in a layered, hierarchical plot.  Each level can be
+ordered in several ways including by baseline, by percentage change, and by
+absolute change.  The vignettes give examples.")
+    (license license:gpl2+)))
+
 (define-public r-uotm
   (package
     (name "r-uotm")
@@ -3278,6 +3310,38 @@ kinds of molecular data and environments, please see Pascoal et al, 2023 (in
 preparation).  Preliminary data suggest this method also works well for
 non-microbiome data, if there is a species abundance table.")
     (license license:gpl3+)))
+
+(define-public r-ulid
+  (package
+    (name "r-ulid")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ulid" version))
+       (sha256
+        (base32 "0hjjgh340y9yf8ryzzzxnz33sdjakhdgv441mh9dkkahjn32mxln"))))
+    (properties `((upstream-name . "ulid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/eddelbuettel/ulid")
+    (synopsis
+     "Generate Universally Unique 'Lexicographically' 'Sortable' Identifiers")
+    (description
+     "Universally unique identifiers ('UUIDs') can be sub-optimal for many uses-cases
+because they are not the most character efficient way of encoding 128 bits of
+randomness; v1/v2 versions are impractical in many environments, as they require
+access to a unique, stable MAC address; v3/v5 versions require a unique seed and
+produce randomly distributed IDs, which can cause fragmentation in many data
+structures; v4 provides no other information than randomness which can cause
+fragmentation in many data structures.  Providing an alternative, ULIDs
+(<https://github.com/ulid/spec>) have 128-bit compatibility with UUID', 1.21e+24
+unique ULIDs per millisecond, support standard (text) sorting, canonically
+encoded as a 26 character string, as opposed to the 36 character UUID', use
+base32 encoding for better efficiency and readability (5 bits per character),
+are case insensitive, have no special characters (i.e.  are URL safe) and have a
+monotonic sort order (correctly detects and handles the same millisecond).")
+    (license license:expat)))
 
 (define-public r-ukpolice
   (package
