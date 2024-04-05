@@ -740,6 +740,29 @@ and document the methods of this package.")
 factorial experiment using Yates algorithm.")
     (license license:expat)))
 
+(define-public r-yatchewtest
+  (package
+    (name "r-yatchewtest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "YatchewTest" version))
+       (sha256
+        (base32 "1i19izwp89vcjxqi87yh5lawf8ffkl8cg94ad090pklssysq2adf"))))
+    (properties `((upstream-name . "YatchewTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-ggplot2))
+    (home-page "https://cran.r-project.org/package=YatchewTest")
+    (synopsis
+     "Yatchew (1997), De Chaisemartin, D'Haultfoeuille & Gurgand (2024) Linearity Test")
+    (description
+     "Test of linearity originally proposed by Yatchew (1997)
+<doi:10.1016/S0165-1765(97)00218-8> and improved by de Chaisemartin,
+D'Haultfoeuille and Gurgand (2024) <doi:10.2139/ssrn.4284811> to be robust under
+heteroskedasticity.")
+    (license license:expat)))
+
 (define-public r-yatah
   (package
     (name "r-yatah")

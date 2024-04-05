@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.6")
+    (version "2.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "0ly3ll52l3202xczvw7zy5ajkqd7wg0c6g749x6gzv47bisbykmj"))))
+        (base32 "1q12jr81snq5kb6hrcg45kjn34pp598xhycg0qj6mziam99m1zmn"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -4317,21 +4317,22 @@ Design under Acceptance Decision Uncertainty\" by Suiyao Chen et al. (2020)
 (define-public r-brclimr
   (package
     (name "r-brclimr")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brclimr" version))
        (sha256
-        (base32 "0l2gk9zqa3lh9a4343h2n8ffm2x1arp84k44ah37krpsbxsvam6j"))))
+        (base32 "11870q60spq4pi7d6yvly48x8n9is15cj957aq8h7bw2lgcyzb1z"))))
     (properties `((upstream-name . "brclimr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
                              r-magrittr
                              r-lobstr
-                             r-dplyr
-                             r-checkmate
-                             r-arrow))
+                             r-glue
+                             r-duckdb
+                             r-dbi
+                             r-checkmate))
     (home-page "https://rfsaldanha.github.io/brclimr/")
     (synopsis
      "Fetch Zonal Statistics of Weather Indicators for Brazilian Municipalities")
@@ -4623,13 +4624,13 @@ group-level connectivity network.  Kang, Jian (2016)
 (define-public r-braingraph
   (package
     (name "r-braingraph")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brainGraph" version))
        (sha256
-        (base32 "0sr2rf5fs02m3c304wbya2rszxcivc3cypg978hwzzcf30r4fy7y"))))
+        (base32 "009m3297bn1jl1aacypajkdawgjp3pwx7krz3bxifb0bmrdi0n7b"))))
     (properties `((upstream-name . "brainGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-permute

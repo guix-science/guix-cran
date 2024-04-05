@@ -10169,13 +10169,13 @@ population, which is used for the evaluation of genetic risk models.")
 (define-public r-predict3d
   (package
     (name "r-predict3d")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predict3d" version))
        (sha256
-        (base32 "0pnp2p4h28mpygzg13v8g9lza0cpfhdg3m8h1ziwrkvi3bg1y97m"))))
+        (base32 "1qfr9ixdzcr2v030fds2h3fmyx4xhc5lbbg44i4imzg96w1z3lxy"))))
     (properties `((upstream-name . "predict3d")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10184,7 +10184,6 @@ population, which is used for the evaluation of genetic risk models.")
                              r-rgl
                              r-reshape2
                              r-purrr
-                             r-prediction
                              r-plyr
                              r-modelr
                              r-magrittr
@@ -11208,13 +11207,13 @@ Luo and Chen (2021, <doi:10.4310/21-SII706>).")
 (define-public r-ppseq
   (package
     (name "r-ppseq")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppseq" version))
        (sha256
-        (base32 "0kvsspzcnpc1asvy72imifx184m102027m5r8z38v58hvmzgl8mm"))))
+        (base32 "1yf0pyfkb2knjn2gf36jhy0qpxwzil37s3zhp3a97cq80jza47hd"))))
     (properties `((upstream-name . "ppseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18274,6 +18273,42 @@ including ordinary and spare partial least squares models for regression and
 classification (Rohart et al (2017) <doi:10.1371/journal.pcbi.1005752>).")
     (license license:expat)))
 
+(define-public r-plsmmlasso
+  (package
+    (name "r-plsmmlasso")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plsmmLasso" version))
+       (sha256
+        (base32 "1plpzig1cw4cg27x1awpsiiynqr5llkxa4j2x5n20m9w53zd1j8m"))))
+    (properties `((upstream-name . "plsmmLasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scalreg
+                             r-rlang
+                             r-mvtnorm
+                             r-mass
+                             r-hdi
+                             r-glmnet
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/Sami-Leon/plsmmLasso")
+    (synopsis
+     "Variable Selection and Inference for Partial Semiparametric Linear Mixed-Effects Model")
+    (description
+     "This package implements a partial linear semiparametric mixed-effects model
+(PLSMM) featuring a random intercept and applies a lasso penalty to both the
+fixed effects and the coefficients associated with the nonlinear function.  The
+model also accommodates interactions between the nonlinear function and a
+grouping variable, allowing for the capture of group-specific nonlinearities.
+Nonlinear functions are modeled using a set of bases functions.  Estimation is
+conducted using a penalized Expectation-Maximization algorithm, and the package
+offers flexibility in choosing between various information criteria for model
+selection.  Post-selection inference is carried out using a debiasing method,
+while inference on the nonlinear functions employs a bootstrap approach.")
+    (license license:gpl3+)))
+
 (define-public r-plsimcpp
   (package
     (name "r-plsimcpp")
@@ -21282,13 +21317,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcache" version))
        (sha256
-        (base32 "04g74p50dd2108jc7xll3glk0y4p3ciib8qa11956zfkj4h1bj9x"))))
+        (base32 "1qsvgdhinrz2mb4fr33pp6rm23pra6bgwzc70kjyl983zk2nrgby"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -21795,6 +21830,35 @@ to the first unnamed argument of a function and to dot symbol in an enclosed
 expression.  The syntax is designed to make the pipeline more readable and
 friendly to a wide range of operations.")
     (license license:expat)))
+
+(define-public r-pipenostics
+  (package
+    (name "r-pipenostics")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pipenostics" version))
+       (sha256
+        (base32 "1pqv5jz3dm5k7ldvja7h5s8zd0mbgm1dbkfmfppnxhv2nmnzm3p1"))))
+    (properties `((upstream-name . "pipenostics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-iapws r-checkmate))
+    (home-page "https://omega1x.github.io/pipenostics/")
+    (synopsis
+     "Diagnostics, Reliability and Predictive Maintenance of Pipeline Systems")
+    (description
+     "This package provides functions representing some useful empirical and
+data-driven models of heat loss, corrosion diagnostics, reliability and
+predictive maintenance of pipeline systems.  The package is an option for
+technical engineering departments of heat generating and heat transfer companies
+that use or plan to use regulatory calculations in their activities.  Methods
+are described in Timashev et al. (2016) <doi:10.1007/978-3-319-25307-7>,
+A.C.Reddy (2017) <doi:10.1016/j.matpr.2017.07.081>, Minenergo (2008)
+<https://docs.cntd.ru/document/902148459>, Minenergo (2005)
+<https://docs.cntd.ru/document/1200035568>, Xing LU. (2014)
+<doi:10.1080/23744731.2016.1258371>.")
+    (license license:gpl3)))
 
 (define-public r-pipeliner
   (package

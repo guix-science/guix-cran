@@ -601,13 +601,13 @@ backfitting.  Based on Roca-Pardinas J and Sperlich S (2010)
 (define-public r-wru
   (package
     (name "r-wru")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wru" version))
        (sha256
-        (base32 "13vxhipyy5cl3i0gn7d8f5ljn0qxhjh35gy5kj2i2yczp1sfrnq1"))))
+        (base32 "0ss3lp8ihq83gs6ppggysqyckcah2zjjz85q93v4jpz692mlx32x"))))
     (properties `((upstream-name . "wru")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2247,40 +2247,6 @@ programmatically.  Based on Josh Wardle's game
 wordcloud2.js'.  wordcloud2.js is a @code{JavaScript} library to create wordle
 presentation on 2D canvas or HTML <https://timdream.org/wordcloud2.js/>.")
     (license license:gpl2)))
-
-(define-public r-wordbankr
-  (package
-    (name "r-wordbankr")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wordbankr" version))
-       (sha256
-        (base32 "1c09nj9gx71an6w6l4z4g08xpp8a36kygh4q140gi19d36ywjdra"))))
-    (properties `((upstream-name . "wordbankr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-robustbase
-                             r-rmysql
-                             r-rlang
-                             r-quantreggrowth
-                             r-purrr
-                             r-lifecycle
-                             r-jsonlite
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://langcog.github.io/wordbankr/")
-    (synopsis "Accessing the Wordbank Database")
-    (description
-     "Connecting to Wordbank, an open repository for developmental vocabulary data.
-For more information on the underlying data, see <http://wordbank.stanford.edu>.")
-    (license license:gpl3)))
 
 (define-public r-word-alignment
   (package

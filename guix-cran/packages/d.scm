@@ -5512,13 +5512,13 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "0k7npkzi5zcf8a2lz0hhdxahmblcqplbzqxh2i92gqssxz06x0x5"))))
+        (base32 "1k1zpf40qsapnqbjpyfa3iiv63ly9xpk0pkrfvcccy5f6lpv1621"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytex
@@ -5599,6 +5599,37 @@ implemented in the R package DQAstats'.  Publication: Mang et al. (2021)
 non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
 <doi:10.1080/00949655.2017.1421194>.")
     (license license:expat)))
+
+(define-public r-dptm
+  (package
+    (name "r-dptm")
+    (version "1.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DPTM" version))
+       (sha256
+        (base32 "01zc74g7pyh9xbb11gisrszzdhxx1902970ka30ivzcwvi81243s"))))
+    (properties `((upstream-name . "DPTM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen
+                             r-rcpp
+                             r-purrr
+                             r-parabar
+                             r-mass
+                             r-coda
+                             r-bayesiantools))
+    (home-page "https://github.com/HujieBai/DPTM")
+    (synopsis "Dynamic Panel Multiple Threshold Model with Fixed Effects")
+    (description
+     "Compute the fixed effects dynamic panel threshold model suggested by
+@code{RamÃ­rez-RondÃ¡n} (2020) <doi:10.1080/07474938.2019.1624401>, and dynamic
+panel linear model suggested by Hsiao et al. (2002)
+<doi:10.1016/S0304-4076(01)00143-9>, where maximum likelihood type estimators
+are used.  Multiple threshold estimation based on Markov Chain Monte Carlo
+(MCMC) is allowed, and model selection of linear model, threshold model and
+multiple threshold model is also allowed.")
+    (license license:gpl3+)))
 
 (define-public r-dpseg
   (package
@@ -13182,13 +13213,13 @@ Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "0wdlwgfr9rppwssh3xpsj78rqan1lsjw3nx5f855w2hh873sakwb"))))
+        (base32 "0bchk3vqdvn6hnw6cglsr7i7nvcdk5c4kyw4jainq08i7zc4jwsv"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -18814,13 +18845,13 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "0399k4gbrh4chi9v2bq9f3lggipdjax3lpzf6x4g8agp5927fyr8"))))
+        (base32 "19yi51kx756hxgih1q7zbmkwnnmkwimm4bgw4lakda049m1qb9z0"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-flextable r-e1071))
@@ -24759,16 +24790,17 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.4.5")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "1qirnkzrskrf95vdj9pbnj8f04b2aiclhk4b0wz6bx2bmm02mg7n"))))
+        (base32 "1hic0zj0qk669hv37mphyvb9l6q3j0f38vwwrk18yk0rp3csxnqy"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
+                             r-toastui
                              r-tibble
                              r-shinywidgets
                              r-shinybusy
@@ -24778,9 +24810,9 @@ data manipulation challenges.")
                              r-readxl
                              r-reactable
                              r-phosphoricons
-                             r-htmlwidgets
                              r-htmltools
-                             r-data-table))
+                             r-data-table
+                             r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dreamRs/datamods")
     (synopsis "Modules to Import and Manipulate Data in 'Shiny'")
@@ -26108,13 +26140,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "0adaa1wm079mbikz5dd3f307s356iyckffbm0h3d8jcj335by6pr"))))
+        (base32 "1kqphqy5zacsm5ic3i4b0yccnkg6zx2r5dqajgp4y97rjcc9a3rb"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

@@ -8322,13 +8322,13 @@ descriptions of FNETS methodology and Owens, Cho and Barigozzi (2024+)
 (define-public r-fmx
   (package
     (name "r-fmx")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmx" version))
        (sha256
-        (base32 "1biz4vn8inhbmcqfcpdkgja5rz6pzz0h5h8cd5qqqbmyzl4x1acj"))))
+        (base32 "0w13jqdprkdssmhfaz0irixc14l0cwqbs11hr13b3ij3qb46q3qd"))))
     (properties `((upstream-name . "fmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-tukeygh77 r-sn r-goftest))
@@ -13608,13 +13608,13 @@ time modified, etc.) of a folder's top level contents.")
 (define-public r-filenamer
   (package
     (name "r-filenamer")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filenamer" version))
        (sha256
-        (base32 "19gavhh5q7dziv0yc000w06qp58wk2cm52cxjl33p1q4cjk6gg3m"))))
+        (base32 "0z4x5v5xjxic3bvarsx8p8k64xlhbibd9rhv2b7ihv36dz6qh490"))))
     (properties `((upstream-name . "filenamer")))
     (build-system r-build-system)
     (home-page "https://bitbucket.org/djhshih/filenamer")

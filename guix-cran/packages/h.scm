@@ -134,13 +134,13 @@ they test.  This allows to keep functional and unit test code together.")
 (define-public r-hysaint
   (package
     (name "r-hysaint")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hySAINT" version))
        (sha256
-        (base32 "15rzlk599b5kanfqx4g9aaxnxvxk6nl6mlhvs97nn2aary91rci4"))))
+        (base32 "1mmw0k63rci7w19livfv7mnsrqjwk0cc51wlyn58ksnf9bbqphch"))))
     (properties `((upstream-name . "hySAINT")))
     (build-system r-build-system)
     (propagated-inputs (list r-variablescreening
@@ -150,12 +150,13 @@ they test.  This allows to keep functional and unit test code together.")
                              r-matrix
                              r-energy))
     (home-page "https://cran.r-project.org/package=hySAINT")
-    (synopsis "Hybrid Genetic and Simulated Annealing for Variable Selection")
+    (synopsis
+     "Hybrid Genetic and Simulated Annealing Algorithm for High Dimensional Linear Models with Interaction Effects")
     (description
      "We provide a stage-wise selection method using genetic algorithms, designed to
 efficiently identify main and two-way interactions within high-dimensional
 linear regression models.  Additionally, it implements simulated annealing
-algorithms during the mutation process.  The relevant paper can be found at: Ye,
+algorithm during the mutation process.  The relevant paper can be found at: Ye,
 C.,and Yang,Y. (2019) <doi:10.1109/TIT.2019.2913417>.")
     (license license:gpl2)))
 

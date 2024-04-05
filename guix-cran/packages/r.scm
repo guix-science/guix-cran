@@ -3538,13 +3538,13 @@ peaks and spectra using the ggplot2 package.")
 (define-public r-rtmpt
   (package
     (name "r-rtmpt")
-    (version "2.0-0")
+    (version "2.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtmpt" version))
        (sha256
-        (base32 "1bmibm83a0p90xk7j1qfybi5yllhs2740nqjkhy1livxp5qizngq"))))
+        (base32 "0isd7vwr1qbyzym0awmgb38fiix8v8r46ckl0d24q0hqls3aydz5"))))
     (properties `((upstream-name . "rtmpt")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -14685,13 +14685,13 @@ and producing RVE-based forest plots.")
 (define-public r-robtt
   (package
     (name "r-robtt")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RoBTT" version))
        (sha256
-        (base32 "1c97cvbqrf5q5axycxsywqg7x198nxrs4xrqy9lh2isips3das6g"))))
+        (base32 "00yrl6l6pz1y8j5qwhvwg84lcxvisp578i9fsd3iv9f3hfhsw9nh"))))
     (properties `((upstream-name . "RoBTT")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -22698,13 +22698,13 @@ manifolds.")
 (define-public r-riem
   (package
     (name "r-riem")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riem" version))
        (sha256
-        (base32 "0a0nl1857x7qw8y8n5fq9hfhh1s25cihd2532zxfyvy14icwf72i"))))
+        (base32 "04j9g0g3wgwm0qikad35vi0jb55n7bna12gq5jgy1kkc26l1srgw"))))
     (properties `((upstream-name . "riem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22713,7 +22713,8 @@ manifolds.")
                              r-magrittr
                              r-lubridate
                              r-jsonlite
-                             r-httr2))
+                             r-httr2
+                             r-cli))
     (home-page "https://docs.ropensci.org/riem/")
     (synopsis "Accesses Weather Data from the Iowa Environment Mesonet")
     (description
@@ -24423,13 +24424,13 @@ Related Environments.\" <@code{arXiv:2304.01956>}.")
 (define-public r-rglplus
   (package
     (name "r-rglplus")
-    (version "1.1")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rglplus" version))
        (sha256
-        (base32 "1i9i62214yljaxplzk8qk9dbslj1shgddmdvpqj35nr45pavnnqm"))))
+        (base32 "1x2zbisgdvfz868c342lbnc2r3fc849ahsy8kk34qrnpzmawb5f5"))))
     (properties `((upstream-name . "rglplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl))
@@ -34506,34 +34507,6 @@ Cooper DJ, Grey A. (2023) <doi:10.1016/j.jclinepi.2022.12.018>.  Carlisle JB,
 Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 <doi:10.1111/anae.13938>.")
     (license license:expat)))
-
-(define-public r-realvams
-  (package
-    (name "r-realvams")
-    (version "0.4-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RealVAMS" version))
-       (sha256
-        (base32 "17sr3g89p645cn6zb887xvrp9f8rrm7zm9mhgf9ky14fmz644d9r"))))
-    (properties `((upstream-name . "RealVAMS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
-    (home-page "https://cran.r-project.org/package=RealVAMS")
-    (synopsis "Multivariate VAM Fitting")
-    (description
-     "Fits a multivariate value-added model (VAM), see Broatch, Green, and Karl (2018)
-<doi:10.32614/RJ-2018-033> and Broatch and Lohr (2012)
-<doi:10.3102/1076998610396900>, with normally distributed test scores and a
-binary outcome indicator.  A pseudo-likelihood approach, Wolfinger (1993)
-<doi:10.1080/00949659308811554>, is used for the estimation of this joint
-generalized linear mixed model.  The inner loop of the pseudo-likelihood routine
-(estimation of a linear mixed model) occurs in the framework of the EM algorithm
-presented by Karl, Yang, and Lohr (2013) <DOI:10.1016/j.csda.2012.10.004>.  This
-material is based upon work supported by the National Science Foundation under
-grants DRL-1336027 and DRL-1336265.")
-    (license license:gpl2)))
 
 (define-public r-realtimeloads
   (package

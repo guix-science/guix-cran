@@ -13481,24 +13481,28 @@ framework for adding new models to an open-source models repository.")
 (define-public r-allofus
   (package
     (name "r-allofus")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allofus" version))
        (sha256
-        (base32 "03i9naibrcwyk7735q3khabbh7rrwm7gz0ffsmd9k50hfzkbs0a0"))))
+        (base32 "0lxds215ar26z28jv5kxp61vhg0yy73q7xj0dbdkiqnqhq7z8dhd"))))
     (properties `((upstream-name . "allofus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-sessioninfo
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr
+                             r-dbi
                              r-cli
+                             r-bit64
                              r-bigrquery))
     (native-inputs (list r-knitr))
     (home-page "https://roux-ohdsi.github.io/allofus/")

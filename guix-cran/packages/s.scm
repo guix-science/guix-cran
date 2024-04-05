@@ -36900,18 +36900,23 @@ Ripley (1987) <ISBN:9780470009604>.")
 (define-public r-simengine
   (package
     (name "r-simengine")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimEngine" version))
        (sha256
-        (base32 "0vijcdgm7lmwx4gq170965q4mrshpdwqffv1afmjrn1zrkxifnpi"))))
+        (base32 "0rcggzaz6vjf4vrnl9ashyl2lyn0zydypaj9bjhar5bq652xrwz5"))))
     (properties `((upstream-name . "SimEngine")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-pbapply r-magrittr r-dplyr r-data-table))
+    (propagated-inputs (list r-rlang
+                             r-pbapply
+                             r-mass
+                             r-magrittr
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SimEngine")
+    (home-page "https://avi-kenny.github.io/SimEngine/")
     (synopsis "Modular Framework for Statistical Simulations in R")
     (description
      "An open-source R package for structuring, maintaining, running, and debugging
@@ -39399,13 +39404,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "02z8fwvnmi6lacqi6ryxssm1w3mh4vfphjrp3v1d6dij3s3l6z0q"))))
+        (base32 "0p62x9rxjaz7wccji3l1xvx5p4jib49sxhyfmgyw78935kyn1bpm"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments

@@ -5389,13 +5389,13 @@ effort to bridge the gap between GUI and coding.")
 (define-public r-inzightregression
   (package
     (name "r-inzightregression")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNZightRegression" version))
        (sha256
-        (base32 "1qlakpx509cfj9r6g0pw28s5wwjg9i0srvhjhzarq4myxzqd78yq"))))
+        (base32 "0zqfb25gz4dwf0hqccgq3pb5wv2zmkw3ldkpscwkmc12pz2xm7im"))))
     (properties `((upstream-name . "iNZightRegression")))
     (build-system r-build-system)
     (propagated-inputs (list r-patchwork
@@ -7539,6 +7539,32 @@ variogram and then interpolating.  Here, we introduce classes and methods that
 can do this interpolation automatically.  Pebesma et al (2010) gives an overview
 of the methods behind and possible usage <doi:10.1016/j.cageo.2010.03.019>.")
     (license license:gpl2+)))
+
+(define-public r-insusenscalc
+  (package
+    (name "r-insusenscalc")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "InsuSensCalc" version))
+       (sha256
+        (base32 "0spgqwxn1bnbmlv7vfx10mls3mrdss5sk0zvriba5zd8v0ljc6sx"))))
+    (properties `((upstream-name . "InsuSensCalc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sufyansuleman/InsuSensCalc")
+    (synopsis "Insulin Sensitivity Indices Calculator")
+    (description
+     "It facilitates the calculation of 40 different insulin sensitivity indices based
+on fasting, oral glucose tolerance test (OGTT), lipid (adipose), and tracer
+(palmitate and glycerol rate) and dxa (fat mass) measurement values.  It enables
+easy and accurate assessment of insulin sensitivity, critical for understanding
+and managing metabolic disorders like diabetes and obesity.  Indices calculated
+are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
+<doi:10.1210/jc.2010-1144>.")
+    (license license:expat)))
 
 (define-public r-insurancerating
   (package

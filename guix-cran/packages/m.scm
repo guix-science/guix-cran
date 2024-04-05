@@ -4516,47 +4516,6 @@ comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
     (license license:gpl3)))
 
-(define-public r-multilevelcoda
-  (package
-    (name "r-multilevelcoda")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multilevelcoda" version))
-       (sha256
-        (base32 "0v499gb26g14c207fqp5z9z0j76q0yk5mgfpmhj35377pib7c14b"))))
-    (properties `((upstream-name . "multilevelcoda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-plotly
-                             r-loo
-                             r-insight
-                             r-hrbrthemes
-                             r-ggplot2
-                             r-foreach
-                             r-extraoperators
-                             r-emmeans
-                             r-dt
-                             r-dofuture
-                             r-data-table
-                             r-compositions
-                             r-bslib
-                             r-brms
-                             r-bayestestr
-                             r-bayesplot
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://florale.github.io/multilevelcoda/")
-    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
-    (description
-     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
-framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
-at between and within-person levels, fit Bayesian multilevel models for
-compositional predictors and outcomes, and run post-hoc analyses such as
-isotemporal substitution models.")
-    (license license:gpl3+)))
-
 (define-public r-multilevel
   (package
     (name "r-multilevel")
@@ -14023,51 +13982,6 @@ tools that assess time-based model performance and stability for a single time
 series, panel data, and cross-sectional time series analysis.")
     (license license:expat)))
 
-(define-public r-modeltime-ensemble
-  (package
-    (name "r-modeltime-ensemble")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "modeltime.ensemble" version))
-       (sha256
-        (base32 "17mnz2x7i540gzwpqca106saafvsns9ar1q09pnnzkx2m4xv322i"))))
-    (properties `((upstream-name . "modeltime.ensemble")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yardstick
-                             r-workflows
-                             r-tune
-                             r-timetk
-                             r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-stringr
-                             r-rsample
-                             r-rlang
-                             r-recipes
-                             r-purrr
-                             r-parsnip
-                             r-modeltime-resample
-                             r-modeltime
-                             r-magrittr
-                             r-glue
-                             r-generics
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/modeltime.ensemble")
-    (synopsis "Ensemble Algorithms for Time Series Forecasting with Modeltime")
-    (description
-     "This package provides a modeltime extension that implements time series ensemble
-forecasting methods including model averaging, weighted averaging, and stacking.
- These techniques are popular methods to improve forecast accuracy and
-stability.  Refer to papers such as \"Machine-Learning Models for Sales Time
-Series Forecasting\" Pavlyshenko, B.M. (2019) <doi:10.3390>.")
-    (license license:expat)))
-
 (define-public r-modeltime
   (package
     (name "r-modeltime")
@@ -17646,6 +17560,39 @@ performance of optimized feature sets with nested resampling.")
      "Extends mlr3 with filter methods for feature selection.  Besides standalone
 filter methods built-in methods of any machine-learning algorithm are supported.
  Partial scoring of multivariate filter methods is supported.")
+    (license license:lgpl3)))
+
+(define-public r-mlr3fda
+  (package
+    (name "r-mlr3fda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3fda" version))
+       (sha256
+        (base32 "1nxqbd0lai3c5yvcv9n0nmziyfjyylpcpm864l89smjy17py5crw"))))
+    (properties `((upstream-name . "mlr3fda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tf
+                             r-r6
+                             r-paradox
+                             r-mlr3pipelines
+                             r-mlr3misc
+                             r-mlr3
+                             r-lgr
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://mlr3fda.mlr-org.com")
+    (synopsis "Extending 'mlr3' to Functional Data Analysis")
+    (description
+     "Extends the mlr3 ecosystem to functional analysis by adding support for
+irregular and regular functional data as defined in the tf package.  The package
+provides @code{PipeOps} for preprocessing functional columns and for extracting
+scalar features, thereby allowing standard machine learning algorithms to be
+applied afterwards.  Available operations include simple functional features
+such as the mean or maximum, smoothing, interpolation, flattening, and
+functional PCA'.")
     (license license:lgpl3)))
 
 (define-public r-mlr3fairness
@@ -35155,13 +35102,13 @@ diagnostic.")
 (define-public r-mcgf
   (package
     (name "r-mcgf")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcgf" version))
        (sha256
-        (base32 "0yk0981qkd0irgifqh9i6pkca4yp7hn35ckyiicq3khyyy3hmbw7"))))
+        (base32 "0lgvd9ibyg2rbccz9q5mmh0d85bli8qi7jwwh5kh5bbp754vss1f"))))
     (properties `((upstream-name . "mcgf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mass))
@@ -35171,9 +35118,10 @@ diagnostic.")
      "Markov Chain Gaussian Fields Simulation and Parameter Estimation")
     (description
      "Simulating and estimating (regime-switching) Markov chain Gaussian fields with
-covariance functions of the Gneiting class.  It supports parameter estimation by
-weighted least squares and maximum likelihood methods, and produces Kriging
-forecasts and intervals (Cressie 1993) <doi:10.1002/9781119115151>.")
+covariance functions of the Gneiting class (Gneiting 2002)
+<doi:10.1198/016214502760047113>.  It supports parameter estimation by weighted
+least squares and maximum likelihood methods, and produces Kriging forecasts and
+intervals for existing and new locations.")
     (license license:expat)))
 
 (define-public r-mcga
@@ -39558,13 +39506,13 @@ Double Chain Markov Models.")
 (define-public r-marble
   (package
     (name "r-marble")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marble" version))
        (sha256
-        (base32 "15m65ikk52khjrwgy2xl8pj671rf3yfqjghx2zdcs43afsyfisa0"))))
+        (base32 "1jrk7dvb6ni950skdfqav40wr9s942w6fiysg8y1mk6q69aihzf6"))))
     (properties `((upstream-name . "marble")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

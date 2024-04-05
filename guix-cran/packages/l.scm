@@ -1703,6 +1703,39 @@ C. Pereira (documentation and downloads available at
 <https://www.labsimdev.org/>).")
     (license license:gpl3)))
 
+(define-public r-lsdirf
+  (package
+    (name "r-lsdirf")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSDirf" version))
+       (sha256
+        (base32 "0malgsq6gdc53iylkbbndn11b9pf5l7wdaj406ips2k42idfzk91"))))
+    (properties `((upstream-name . "LSDirf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest
+                             r-partykit
+                             r-gplots
+                             r-digest
+                             r-boot
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=LSDirf")
+    (synopsis "Impulse-Response Function Analysis for Agent-Based Models")
+    (description
+     "Performing impulse-response function (IRF) analysis of relevant variables of
+agent-based simulation models, in particular for models described in LSD format.
+ Based on the data produced by the simulation model, it performs both linear and
+state-dependent IRF analysis, providing the tools required by the Counterfactual
+Monte Carlo (CMC) methodology (Amendola and Pereira (2024)
+<doi:10.2139/ssrn.4740360>), including state identification and sensitivity.
+CMC proposes retrieving the causal effect of shocks by exploiting the
+opportunity to directly observe the counterfactual in a fully controlled
+experimental setup.  LSD (Laboratory for Simulation Development) is free
+software available at <https://www.labsimdev.org/>).")
+    (license license:gpl3)))
+
 (define-public r-lsdinterface
   (package
     (name "r-lsdinterface")
@@ -13862,13 +13895,13 @@ Reference: Pawitan Y. (2001, ISBN:0-19-850765-8).")
 (define-public r-lbfgsb3c
   (package
     (name "r-lbfgsb3c")
-    (version "2024-3.3")
+    (version "2024-3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lbfgsb3c" version))
        (sha256
-        (base32 "11rki571fi79fk8pq8f5ylh8zqg1yxr6b84a3v5z28jykpfd89sd"))))
+        (base32 "1dsacah7srkg0i9anl283244mvi8chkjkfplzj00dfzcj8nv2cgm"))))
     (properties `((upstream-name . "lbfgsb3c")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))

@@ -2298,55 +2298,6 @@ please see the GSOD readme.txt file available from,
 <https://www1.ncdc.noaa.gov/pub/data/gsod/readme.txt>.")
     (license license:expat)))
 
-(define-public r-gsna
-  (package
-    (name "r-gsna")
-    (version "0.1.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GSNA" version))
-       (sha256
-        (base32 "0id71ik7s1hl57nzy3qzrdszvy3a83gf3gx8xwdswy53r6yiijf2"))))
-    (properties `((upstream-name . "GSNA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-tmod
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rcpp
-                             r-raster
-                             r-psych
-                             r-matrix
-                             r-igraph
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-dendextend
-                             r-circlize))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GSNA")
-    (synopsis "Gene Set Networking Analysis Package")
-    (description
-     "Create networks of gene sets, infer clusters of functionally-related gene sets
-based on similarity statistics, and visualize the results.  This package
-simplifies and accelerates interpretation of pathways analysis data sets.  It is
-designed to work in tandem with standard pathways analysis methods, such as the
-GSEA program (Gene Set Enrichment Analysis), CERNO (Coincident Extreme Ranks in
-Numerical Observations, implemented in the tmod package) and others.  Inputs to
-GSNA are the outputs of pathways analysis methods: a list of gene sets (or
-\"modules\"), pathways or GO-terms with associated p-values.  Since pathways
-analysis methods may be used to analyze many different types of data including
-transcriptomic, epigenetic, and high-throughput screen data sets, the GSNA
-pipeline is applicable to these data as well.  The use of GSNA has been
-described in the following papers: Collins DR, Urbach JM, Racenet ZJ, Arshad U,
-Power KA, Newman RM, et al. (2021) <doi:10.1016/j.immuni.2021.08.007>, Collins
-DR, Hitschfel J, Urbach JM, Mylvaganam GH, Ly NL, Arshad U, et al. (2023)
-<doi:10.1126/sciimmunol.ade5872>.")
-    (license license:gpl3+)))
-
 (define-public r-gsmx
   (package
     (name "r-gsmx")
@@ -7146,30 +7097,6 @@ contains a fast implementation of the incomplete Cholesky decomposition (IC0),
 based on Schaefer et al. (2019) <@code{arXiv:1706.02205>} and @code{MaxMin}
 ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
     (license license:gpl2+)))
-
-(define-public r-gpvam
-  (package
-    (name "r-gpvam")
-    (version "3.0-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPvam" version))
-       (sha256
-        (base32 "15y17z1l23n7kyrgn3q8br70ym1jdqkkysrhkal2flci70b1c7ij"))))
-    (properties `((upstream-name . "GPvam")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
-    (home-page "https://cran.r-project.org/package=GPvam")
-    (synopsis
-     "Maximum Likelihood Estimation of Multiple Membership Mixed Models Used in Value-Added Modeling")
-    (description
-     "An EM algorithm, Karl et al. (2013) <doi:10.1016/j.csda.2012.10.004>, is used to
-estimate the generalized, variable, and complete persistence models, Mariano et
-al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
-mixed models with teachers modeled as \"G-side\" effects and students modeled with
-either \"G-side\" or \"R-side\" effects.")
-    (license license:gpl2)))
 
 (define-public r-gpumatrix
   (package
@@ -22081,26 +22008,6 @@ planning to environmental research.  The package contains annually updated time
 series of municipality key datasets that can be used for data aggregation and
 language translations.")
     (license license:bsd-2)))
-
-(define-public r-geofd
-  (package
-    (name "r-geofd")
-    (version "2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geofd" version))
-       (sha256
-        (base32 "1rsgy4nxfp1gi4vwh8zfzksr6sr2ga31kmd56q5m56gw530570ra"))))
-    (properties `((upstream-name . "geofd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fda))
-    (home-page "https://cran.r-project.org/package=geofd")
-    (synopsis "Spatial Prediction for Function Value Data")
-    (description
-     "Kriging based methods are used for predicting functional data (curves) with
-spatial dependence.")
-    (license license:gpl2)))
 
 (define-public r-geofacet
   (package

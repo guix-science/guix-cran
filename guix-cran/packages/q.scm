@@ -2662,13 +2662,13 @@ reduced memory usage with only a modest increase in computation time.")
 (define-public r-qtl2convert
   (package
     (name "r-qtl2convert")
-    (version "0.28")
+    (version "0.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtl2convert" version))
        (sha256
-        (base32 "06703m9mkpc77agkmikr9bhr4ag1z161k8pq8l1i562mkd0qlgs8"))))
+        (base32 "1rpg74gblh30qy0byxvyhlrimcgx7ml5jn7dxs032my7pa58mspf"))))
     (properties `((upstream-name . "qtl2convert")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-qtl2 r-qtl))

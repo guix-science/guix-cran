@@ -34776,6 +34776,30 @@ such a conditional sampling.  The package includes a function to compare
 scatterplot matrices and pair-dependencies of two multivariate datasets.")
     (license license:gpl2+)))
 
+(define-public r-cdvi
+  (package
+    (name "r-cdvi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDVI" version))
+       (sha256
+        (base32 "1q8f1smj07jnzgp7p2yfviz6wvrlvi5dx7sh4x09yzqfca5v8g46"))))
+    (properties `((upstream-name . "CDVI")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CDVI")
+    (synopsis
+     "Cuddy-Della Valle Index for Capturing the Instability in Time Series Data")
+    (description
+     "Cuddy-Della valle index gives the degree of instability present in the data by
+accommodating the effect of a trend.  The adjusted R squared value of the best
+fitted model is chosen.  The index is obtained by multiplying the coefficient of
+variation with square root of one minus the adjusted R-squared value.  This
+package has been developed using concept of Shankar et al.
+(2022)<doi:10.3389/fsufs.2023.1208898>.")
+    (license license:gpl3)))
+
 (define-public r-cdss
   (package
     (name "r-cdss")
@@ -38393,38 +38417,6 @@ similar cases.  The underlying concept is inspired by the work of Dippon J.
 (2002) <doi:10.1016/S0167-9473(02)00058-0>.")
     (license license:expat)))
 
-(define-public r-casebase
-  (package
-    (name "r-casebase")
-    (version "0.10.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "casebase" version))
-       (sha256
-        (base32 "0i9szaalszrlk77wgh5fkiaxqacnx42bpj0410fpx0z3k0g608k2"))))
-    (properties `((upstream-name . "casebase")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://sahirbhatnagar.com/casebase/")
-    (synopsis
-     "Fitting Flexible Smooth-in-Time Hazards and Risk Functions via Logistic and Multinomial Regression")
-    (description
-     "Fit flexible and fully parametric hazard regression models to survival data with
-single event type or multiple competing causes via logistic and multinomial
-regression.  Our formulation allows for arbitrary functional forms of time and
-its interactions with other predictors for time-dependent hazards and hazard
-ratios.  From the fitted hazard model, we provide functions to readily calculate
-and plot cumulative incidence and survival curves for a given covariate profile.
- This approach accommodates any log-linear hazard function of prognostic time,
-treatment, and covariates, and readily allows for non-proportionality.  We also
-provide a plot method for visualizing incidence density via population time
-plots.  Based on the case-base sampling approach of Hanley and Miettinen (2009)
-<DOI:10.2202/1557-4679.1125>, Saarela and Arjas (2015) <DOI:10.1111/sjos.12125>,
-and Saarela (2015) <DOI:10.1007/s10985-015-9352-x>.")
-    (license license:expat)))
-
 (define-public r-cascsim
   (package
     (name "r-cascsim")
@@ -38828,6 +38820,27 @@ also be computed for specific sub-populations given their covariate values.
 Methods are described in Ziyi Li, Yijian Huang, Datta Patil, Martin G. Sanda
 (2021+) \"Covariate adjustment in continuous biomarker assessment\".")
     (license license:gpl2)))
+
+(define-public r-carms
+  (package
+    (name "r-carms")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CARMS" version))
+       (sha256
+        (base32 "0w7xhvwvn5vsc0w9fn3mh750lfqh5183ads1ihv7ypdhdywb5c0p"))))
+    (properties `((upstream-name . "CARMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-diagram))
+    (home-page "http://www.openreliability.org")
+    (synopsis "Continuous Time Markov Rate Modeling for Reliability Analysis")
+    (description
+     "Emulation of an application originally created by Paul Pukite.  Computer Aided
+Rate Modeling and Simulation.  Jan Pukite and Paul Pukite, (1998, ISBN
+978-0-7803-3482), William J. Stewart, (1994, ISBN: 0-691-03699-3).")
+    (license license:gpl3+)))
 
 (define-public r-carme
   (package

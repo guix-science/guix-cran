@@ -879,13 +879,13 @@ N'@code{boukÃ©} M (2023) <doi:10.1515/phys-2023-0151> for details.")
 (define-public r-ntdr
   (package
     (name "r-ntdr")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntdr" version))
        (sha256
-        (base32 "1v8lwsp9c81pg0i140fc9zfng6cf4a0p0jyc2k8gdg7hsl9dwks1"))))
+        (base32 "1s4zqfi9nyr1sksiq0bpdjgnv32qp1yk3igqs5jsrzdrgzbda1z9"))))
     (properties `((upstream-name . "ntdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3812,6 +3812,44 @@ equilibrium along a one-dimensional space.")
      "This package provides a non-parametric test for multi-observer concordance and
 differences between concordances in (un)balanced data.")
     (license license:gpl3+)))
+
+(define-public r-nonprobsvy
+  (package
+    (name "r-nonprobsvy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonprobsvy" version))
+       (sha256
+        (base32 "0p5x88dgas0hy3xydn5803pybf5ryxc85gzn9fb2c5kdrv2v0pcr"))))
+    (properties `((upstream-name . "nonprobsvy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rann
+                             r-nleqslv
+                             r-ncvreg
+                             r-maxlik
+                             r-matrix
+                             r-mathjaxr
+                             r-mass
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://github.com/ncn-foreigners/nonprobsvy")
+    (synopsis "Inference Based on Non-Probability Samples")
+    (description
+     "Statistical inference with non-probability samples when auxiliary information
+from external sources such as probability samples or population totals or means
+is available.  Details can be found in: Wu et al. (2020)
+<doi:10.1080/01621459.2019.1677241>, Kim et al. (2021) <doi:10.1111/rssa.12696>,
+Wu et al. (2023)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2022002/article/00002-eng.htm>,
+Kim et al. (2021)
+<https://www150.statcan.gc.ca/n1/pub/12-001-x/2021001/article/00004-eng.htm>,
+Kim et al. (2020) <doi:10.1111/rssb.12354>.")
+    (license license:expat)))
 
 (define-public r-nonprobest
   (package

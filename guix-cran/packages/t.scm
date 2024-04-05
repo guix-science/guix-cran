@@ -1192,13 +1192,13 @@ systems with a set number of time steps.")
 (define-public r-tvgarch
   (package
     (name "r-tvgarch")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tvgarch" version))
        (sha256
-        (base32 "17cnk855c4y5bxxnhhi05vjrppw5bbarnrhkasza3ygbnm77cmsd"))))
+        (base32 "1f7ylwq3988kqd765768b3qcwk6mrrlhjlfq10yifn3040wpgx8w"))))
     (properties `((upstream-name . "tvgarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-numderiv r-garchx))
@@ -1208,12 +1208,13 @@ systems with a set number of time steps.")
      "Simulation, estimation and inference for univariate and multivariate
 TV(s)-GARCH(p,q,r)-X models, where s indicates the number and shape of the
 transition functions, p is the ARCH order, q is the GARCH order, r is the
-asymmetry order, and X indicates that covariates can be included.  In the
+asymmetry order, and X indicates that covariates can be included; see
+Campos-Martins and Sucarrat (2024) <doi:10.18637/jss.v108.i09>.  In the
 multivariate case, variances are estimated equation by equation and dynamic
 conditional correlations are allowed.  The TV long-term component of the
-variance as in the multiplicative TV-GARCH model of Amado and Ter{\\\"a}svirta
-(2013) <doi:10.1016/j.jeconom.2013.03.006> introduces non-stationarity whereas
-the GARCH-X short-term component describes conditional heteroscedasticity.
+variance as in the multiplicative TV-GARCH model of Amado and Terasvirta (2013)
+<doi:10.1016/j.jeconom.2013.03.006> introduces non-stationarity whereas the
+GARCH-X short-term component describes conditional heteroscedasticity.
 Maximisation by parts leads to consistent and asymptotically normal estimates.")
     (license license:gpl2+)))
 
@@ -1379,19 +1380,19 @@ programming.")
 (define-public r-turner
   (package
     (name "r-turner")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "turner" version))
        (sha256
-        (base32 "1xckb750hbfmzhvabj0lzrsscib7g187b44ag831z58zvawwh772"))))
+        (base32 "0qcf018k7kz84hpwp3i3fv270kjb9id1dh8rqcvnmaqn1jy829hq"))))
     (properties `((upstream-name . "turner")))
     (build-system r-build-system)
     (propagated-inputs (list r-tester))
     (native-inputs (list r-knitr))
-    (home-page "http://www.gastonsanchez.com")
-    (synopsis "Turn vectors and lists of vectors into indexed structures")
+    (home-page "https://fbertran.github.io/turner/")
+    (synopsis "Turn Vectors and Lists of Vectors into Indexed Structures")
     (description
      "Package designed for working with vectors and lists of vectors, mainly for
 turning them into other indexed data structures.")
@@ -6556,13 +6557,13 @@ criteria are implemented.")
 (define-public r-treeplotarea
   (package
     (name "r-treeplotarea")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treePlotArea" version))
        (sha256
-        (base32 "1wi39lbsml9zg2pp52x81l27iq1780036vfq5zmhxv26zn6bajf9"))))
+        (base32 "0swj43mv121jjljabng43ljllrb3ap7clmxjy8j6aav28i2mv0f5"))))
     (properties `((upstream-name . "treePlotArea")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-fritools))
@@ -8470,13 +8471,13 @@ geodesic methods as provided by Charles F. F. Karney (2013)
 (define-public r-trainsplit
   (package
     (name "r-trainsplit")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trainsplit" version))
        (sha256
-        (base32 "033x8vci7nf4sax79xri2w03vq0qx9zrf4qqlfwyl6lwjv7pnfix"))))
+        (base32 "12qmjpqi7ib4p6lbk3v6z63xdygbyry0a33whgy42jm0jcjswwx8"))))
     (properties `((upstream-name . "trainsplit")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -8484,9 +8485,8 @@ geodesic methods as provided by Charles F. F. Karney (2013)
     (synopsis
      "Split a Dataframe, Tibble, or Data.table into Training and Test Sets")
     (description
-     "Split a dataframe, tibble, or data.table into a list containing training and
-test sets.  Can specify either number or percentage of observations to go into
-the training set.")
+     "Split a dataframe, tibble, or data.table into training and test sets.  Return
+either a list, an index, or directly assign training and test sets into memory.")
     (license license:expat)))
 
 (define-public r-trainr
@@ -20301,23 +20301,44 @@ purpose.")
 on 9 hypothesis tests for dependence.")
     (license license:gpl3)))
 
+(define-public r-testex
+  (package
+    (name "r-testex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "testex" version))
+       (sha256
+        (base32 "1zybkl0lwijz1r6l8a0kch5hag0m3ymymvpyk53zp2776hwzimzg"))))
+    (properties `((upstream-name . "testex")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dgkf/testex")
+    (synopsis "Add Tests to Examples")
+    (description
+     "Add tests in-line in examples.  Provides standalone functions for facilitating
+easier test writing in Rd files.  However, a more familiar interface is provided
+using roxygen2 tags.  Tools are also provided for facilitating package
+configuration and use with testthat'.")
+    (license license:expat)))
+
 (define-public r-tester
   (package
     (name "r-tester")
-    (version "0.1.7")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tester" version))
        (sha256
-        (base32 "1x5m43abk3x3fvb2yrb1xwa7rb4jxl8wjrnkyd899ii1kh8lbimr"))))
+        (base32 "02q2l0c38ddzlh2jwbzkcyhh2k5a4gnfm8khl8cqvjkjhldi9j5y"))))
     (properties `((upstream-name . "tester")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://www.gastonsanchez.com")
-    (synopsis "Tests and checks characteristics of R objects")
-    (description
-     "tester allows you to test characteristics of common R objects.")
+    (home-page "https://fbertran.github.io/tester/")
+    (synopsis "Tests and Checks Characteristics of R Objects")
+    (description "Allows users to test characteristics of common R objects.")
     (license license:gpl3)))
 
 (define-public r-testequavar
@@ -24064,13 +24085,13 @@ album covers.")
 (define-public r-taxotools
   (package
     (name "r-taxotools")
-    (version "0.0.132")
+    (version "0.0.139")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxotools" version))
        (sha256
-        (base32 "0f24356bmvbm6p18zw9vsyz0zqyijq8757c83mv14mkbqs2apqip"))))
+        (base32 "1nx79a0jfy0xrd83zk3zwk65mdk35lgz564b3fmhdv9rqpmg9q7n"))))
     (properties `((upstream-name . "taxotools")))
     (build-system r-build-system)
     (propagated-inputs (list r-wikitaxa
