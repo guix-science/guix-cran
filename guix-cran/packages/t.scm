@@ -13188,13 +13188,13 @@ Program/Honolulu Asia Aging Study (HHP/HAAS).")
 (define-public r-timevizpro
   (package
     (name "r-timevizpro")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TimeVizPro" version))
        (sha256
-        (base32 "0skk32k0860sdicb4j7hmq2i6b5qlnwifhplwigr3farfrfb5y2g"))))
+        (base32 "1yknbwbqmqvafrgsagmqnmfms1xdsl3r73d71d301nnadfs0p6qc"))))
     (properties `((upstream-name . "TimeVizPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparkline
@@ -13207,18 +13207,18 @@ Program/Honolulu Asia Aging Study (HHP/HAAS).")
     (synopsis
      "Dynamic Data Explorer: Visualize and Forecast with 'TimeVizPro'")
     (description
-     "Unless the power of time-series data visualization with ease using our package.
-Designed with simplicity in mind, it offers three key features through the shiny
-package.  The first output shows time-series charts with forecast, allowing
-users to visualize trends and changes effortlessly.  The second one presents
-averages per country presented in tables with accompanying sparklines, providing
-a quick and attractive overview of the data.  The last one displayed a
+     "Unleash the power of time-series data visualization with ease using our package.
+ Designed with simplicity in mind, it offers three key features through the
+shiny package output.  The first tab shows time- series charts with forecasts,
+allowing users to visualize trends and changes effortlessly.  The second one
+displays Averages per country presented in tables with accompanying sparklines,
+providing a quick and attractive overview of the data.  The last tab presents A
 customizable world map colored based on user-defined variables for any chosen
 number of countries, offering an advanced visual approach to understanding
-geographical data distribution.  This package operates with just a few simple
+geographical data distributions.  This package operates with just a few simple
 arguments, enabling users to conduct sophisticated analyses without the need for
-complex programming skills.  Transform your time- series data analysis
-experience with our user-friendly tool.")
+complex programming skills.  Transform your time-series data analysis experience
+with our user-friendly tool.")
     (license license:gpl3)))
 
 (define-public r-timevis
@@ -17748,6 +17748,30 @@ Subtype-Free Average Causal Effect For Heterogeneous Disease Etiology\" (soon on
      "Temperature measurement data, equations and methods for thermocouples, wire RTD,
 thermistors, IC thermometers, bimetallic strips and the ITS-90.")
     (license license:gpl3+)))
+
+(define-public r-thermistor
+  (package
+    (name "r-thermistor")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Thermistor" version))
+       (sha256
+        (base32 "0jdc5x3pylqbfxyhxhfsfd5lqiqd9qpn08w6svm0w7clbsp54bph"))))
+    (properties `((upstream-name . "Thermistor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://cran.r-project.org/package=Thermistor")
+    (synopsis "The Simulation of the Thermistor Network")
+    (description
+     "Given the circuit topology, simulating the Voltage vs. Temperature curve with a
+set of Resistors (R1, R2, R3 and R4) and Thermistors values (TH1 and TH2) for a
+given thermistor network shown in Seth @code{DeLand} (2024) \"Optimal Component
+Selection Using the Mixed-Integer Genetic Algorithm\"
+<https://ww2.mathworks.cn/matlabcentral/fileexchange/35810-optimal-component-selection-using-the-mixed-integer-genetic-algorithm>
+and the application in Mak and Wu (2019) <doi:10.1080/00401706.2019.1593246>.")
+    (license license:gpl3)))
 
 (define-public r-thermindex
   (package

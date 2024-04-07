@@ -9289,13 +9289,13 @@ Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
 (define-public r-stopp
   (package
     (name "r-stopp")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stopp" version))
        (sha256
-        (base32 "0dxbq4g6zc26pp31hyq09gljlkn6lk8g7w0l5vir04k9xg9xd8ap"))))
+        (base32 "0xnqv6hvzp005b3jxir1zjfjxyvbynp137hhhwyqijibpi53l860"))))
     (properties `((upstream-name . "stopp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stpp
@@ -11817,13 +11817,13 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
 (define-public r-statnipokladna
   (package
     (name "r-statnipokladna")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statnipokladna" version))
        (sha256
-        (base32 "1n7gvr57c27ilxrnpmr0bz6hc0d39lp6rnn4dkqdwdapzyhfymq4"))))
+        (base32 "0zym16mmimyfkz4f9h5xm9ispqnr7pbfxragv71d6kl3iz2185hp"))))
     (properties `((upstream-name . "statnipokladna")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25122,6 +25122,39 @@ interweaving of modules of different temporal resolution, and tools for
 visualizing and understanding the within-project dependencies.  The suggested
 package NLMR can be installed from the repository
 (<https://@code{PredictiveEcology.r-universe.dev>}).")
+    (license license:gpl3)))
+
+(define-public r-spades
+  (package
+    (name "r-spades")
+    (version "2.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaDES" version))
+       (sha256
+        (base32 "0rd8329j2k7brh4cbq8jlpdng9cy9hfbflkalbbhgxq2cckhxx3a"))))
+    (properties `((upstream-name . "SpaDES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spades-tools r-spades-core r-reproducible
+                             r-quickplot))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://spades.predictiveecology.org")
+    (synopsis
+     "Develop and Run Spatially Explicit Discrete Event Simulation Models")
+    (description
+     "Metapackage for implementing a variety of event-based models, with a focus on
+spatially explicit models.  These include raster-based, event-based, and
+agent-based models.  The core simulation components (provided by
+@code{SpaDES.core}') are built upon a discrete event simulation (DES; see
+Matloff (2011) ch 7.8.3 <https://nostarch.com/artofr.htm>) framework that
+facilitates modularity, and easily enables the user to include additional
+functionality by running user-built simulation modules (see also
+@code{SpaDES.tools}').  Included are numerous tools to visualize rasters and
+other maps (via @code{quickPlot}'), and caching methods for reproducible
+simulations (via reproducible').  Tools for running simulation experiments are
+provided by @code{SpaDES.experiment}'.  Additional functionality is provided by
+the @code{SpaDES.addins} and @code{SpaDES.shiny} packages.")
     (license license:gpl3)))
 
 (define-public r-spader
@@ -42164,13 +42197,13 @@ custom css with @@apply directive, and custom tailwind configurations.")
 (define-public r-shiny-semantic
   (package
     (name "r-shiny-semantic")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.semantic" version))
        (sha256
-        (base32 "18ap0n3jgbpa9z5wk66qxf6qpdclhvmx6pralk4b8c8h5g57w465"))))
+        (base32 "1gfkwgij365j0i9wz7dqdadpa9mdarn8n70cygm46fcak7lp08h8"))))
     (properties `((upstream-name . "shiny.semantic")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

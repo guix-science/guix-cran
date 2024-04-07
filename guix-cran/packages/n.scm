@@ -7718,16 +7718,16 @@ al (2018) <doi:10.1177/0962280218786302> for further details.")
 (define-public r-nipntk
   (package
     (name "r-nipntk")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nipnTK" version))
        (sha256
-        (base32 "0imy2x1h9d842ssw7hmmh21c4mj7s6y05mmjin1270skbnrk2zmr"))))
+        (base32 "0y20nik6jrypywqr809891amf9aq6bwf1p0vskr43p0scblbbv0b"))))
     (properties `((upstream-name . "nipnTK")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr r-bbw))
+    (propagated-inputs (list r-withr))
     (native-inputs (list r-knitr))
     (home-page "https://nutriverse.io/nipnTK/")
     (synopsis
@@ -11826,34 +11826,6 @@ structure (Browne et al. (2001) <doi:10.1177/1471082X0100100202>).")
 the main utility of @code{netClust}'.")
     (license license:gpl2+)))
 
-(define-public r-netchain
-  (package
-    (name "r-netchain")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netchain" version))
-       (sha256
-        (base32 "1skpf1n6a17mjkcxqpl6vrskk04yvqa0v4n2zw9x5r1h46q9m6qk"))))
-    (properties `((upstream-name . "netchain")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcpp r-matrix r-igraph r-gtools))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=netchain")
-    (synopsis
-     "Inferring Causal Effects on Collective Outcomes under Interference")
-    (description
-     "In networks, treatments may spill over from the treated individual to his or her
-social contacts and outcomes may be contagious over time.  Under this setting,
-causal inference on the collective outcome observed over all network is often of
-interest.  We use chain graph models approximating the projection of the full
-longitudinal data onto the observed data to identify the causal effect of the
-intervention on the whole outcome.  Justification of such approximation is
-demonstrated in Ogburn et al. (2018) <@code{arXiv:1812.04990>}.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-netassoc
   (package
     (name "r-netassoc")
@@ -12442,13 +12414,13 @@ and joining tables.")
 (define-public r-neoniso
   (package
     (name "r-neoniso")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NEONiso" version))
        (sha256
-        (base32 "0fwz6clfl9l38pmks1qq3sys8jnb7mib81nfq1k1hdwhjknr76hz"))))
+        (base32 "1nkwymy6zyyk8g6lxk45srqf285329x60plhkbkm0wif6kx777s0"))))
     (properties `((upstream-name . "NEONiso")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -12459,7 +12431,6 @@ and joining tables.")
                              r-neonutilities
                              r-magrittr
                              r-lubridate
-                             r-lifecycle
                              r-httr
                              r-gridextra
                              r-ggplot2
@@ -15068,13 +15039,13 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "0.13.2")
+    (version "0.13.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1ylf8qrsapzkyprpxhrdj4nzfdgpb33srbc2kj732dcpzh6gs5ld"))))
+        (base32 "1jaq7g6xapl8391q5ah9ppdqfqj6mvra5k9brba5k9mynas77vkr"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -739,35 +739,6 @@ outliers, e.g. by realistic values found via predictive mean matching.  Once the
 method is trained on a reference data, it can be applied to new data.")
     (license license:gpl2+)))
 
-(define-public r-outerbase
-  (package
-    (name "r-outerbase")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "outerbase" version))
-       (sha256
-        (base32 "18c73vp0fjcgg4vhf9bfxm21j8s85cmicqi5j76q0wm800qaqvm9"))))
-    (properties `((upstream-name . "outerbase")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://mattplumlee.github.io/outerbase/")
-    (synopsis "Outer Product Regression")
-    (description
-     "High-dimensional regression using outer product models.  Research on the methods
-is currently under investigation and published resources will be posted as they
-are available.  As the method is new, the website is the best resource for
-understanding the principals.  Some of the core ideas are based on Plumlee and
-coauthors work on analysis of grid-structured experiments described in Plumlee
-(2014) <doi:10.1080/01621459.2014.900250> and Plumlee, Erickson, Ankenman,
-Lawrence (2021) <doi:10.1093/biomet/asaa084>.  Some additional textbooks for
-additional information on Gaussian processes are Rasmussen and Williams (2005)
-<doi:10.7551/mitpress/3206.001.0001> and Gramacy (2022)
-<doi:10.1201/9780367815493>.")
-    (license license:expat)))
-
 (define-public r-outcomerate
   (package
     (name "r-outcomerate")
@@ -7531,44 +7502,51 @@ learning methods based on TCGA data.")
 (define-public r-oncopredict
   (package
     (name "r-oncopredict")
-    (version "0.2")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oncoPredict" version))
        (sha256
-        (base32 "1slq5vp78n5hcq24vlg35r6xansdgriyjw8y9iyb0lj3cdaq38c3"))))
+        (base32 "0cp0b0d5nbanflp1jrkvdcybjii4lzv275d880wbadsx960rax2l"))))
     (properties `((upstream-name . "oncoPredict")))
     (build-system r-build-system)
     (propagated-inputs (list r-txdb-hsapiens-ucsc-hg19-knowngene
                              r-tidyverse
+                             r-tcgabiolinks
                              r-sva
                              r-s4vectors
                              r-ridge
-                             r-readxl
                              r-preprocesscore
                              r-pls
                              r-org-hs-eg-db
-                             r-maftools
                              r-iranges
                              r-glmnet
                              r-genomicranges
                              r-genomicfeatures
-                             r-genefilter
-                             r-gdata
                              r-car
                              r-biocgenerics))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=oncoPredict")
-    (synopsis "Drug and Biomarker Discovery")
+    (home-page "https://github.com/HuangLabUMN/oncoPredict")
+    (synopsis "Drug Response Modeling and Biomarker Discovery")
     (description
-     "Bridges in vitro drug screening with in vivo drug and biomarker discovery.
-Specifically, predicts in vivo or cancer patient drug response and biomarkers to
-enrich for response from cell line screening data.  Builds model using ridge
-regression, and enables biomarker discovery by imputing drug response in large
-cancer molecular datasets.  It also enables drug specific biomarker
-identification by correcting for general level of drug sensitivity shared among
-the population.")
+     "Allows for building drug response models using screening data between bulk
+RNA-Seq and a drug response metric and two additional tools for biomarker
+discovery that have been developed by the Huang Laboratory at University of
+Minnesota.  There are 3 main functions within this package. (1)
+@code{calcPhenotype} is used to build drug response models on RNA-Seq data and
+impute them on any other RNA-Seq dataset given to the model. (2) GLDS is used to
+calculate the general level of drug sensitivity, which can improve biomarker
+discovery. (3) IDWAS can take the results from @code{calcPhenotype} and link the
+imputed response back to available genomic (mutation and CNV alterations) to
+identify biomarkers.  Each of these functions comes from a paper from the Huang
+research laboratory.  Below gives the relevant paper for each function.
+@code{calcPhenotype} - Geeleher et al, Clinical drug response can be predicted
+using baseline gene expression levels and in vitro drug sensitivity in cell
+lines.  GLDS - Geeleher et al, Cancer biomarker discovery is improved by
+accounting for variability in general levels of drug sensitivity in pre-clinical
+models.  IDWAS - Geeleher et al, Discovering novel pharmacogenomic biomarkers by
+imputing drug response in cancer patients from large genomics studies.")
     (license license:gpl2)))
 
 (define-public r-oncomsm

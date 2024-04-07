@@ -8493,13 +8493,13 @@ space when there are more than a few response variables.")
 (define-public r-hemispher
   (package
     (name "r-hemispher")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hemispheR" version))
        (sha256
-        (base32 "13h6x73dzz7azzw251qqnqnva7bpagq78xcv88fbys9fjfy6w7bd"))))
+        (base32 "1x372rbi112l5hdmlkbn5x90h8a6y71zngdlfn1p27c10klwaspy"))))
     (properties `((upstream-name . "hemispheR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -679,22 +679,23 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "1v3vipcxzvz8radbkj7rq8v4l4pmx38cyyz5a042k2v7fzj24bw3"))))
+        (base32 "04v95f8ppxqiyqi42z8lrgcygdfc9vb3zk30824jh83vwba9h2y8"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-polychrome))
+    (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
     (native-inputs (list r-knitr))
     (home-page "https://quickcode.obi.obianom.com")
-    (synopsis "Compilation of Some Frequently Used R Functions")
+    (synopsis "Quick and Essential 'R' Tricks for Better Scripts")
     (description
-     "The NOT functions and a simple compilation of various functions for easy usage.
-Shorthand code to save memory usage.")
+     "The NOT functions, R tricks and a compilation of some simple quick plus often
+used R codes to improve your scripts.  Improve the quality and reproducibilty of
+R scripts.")
     (license license:expat)))
 
 (define-public r-quickcheck
@@ -4103,6 +4104,23 @@ of applications with noise, spectral clustering, generalized discriminant
 analysis, principal component analysis, multidimensional scaling, locally linear
 embedding, sammon's mapping and t-Distributed stochastic neighbor embedding.")
     (license license:gpl2+)))
+
+(define-public r-qindex-data
+  (package
+    (name "r-qindex-data")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Qindex.data" version))
+       (sha256
+        (base32 "0nd0fi6pr5c7lxmjakvv0a129p31pzd3skblp1m2j0scs44fd9py"))))
+    (properties `((upstream-name . "Qindex.data")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=Qindex.data")
+    (synopsis "Data for Package 'Qindex'")
+    (description "Example data used in package Qindex'.")
+    (license license:gpl2)))
 
 (define-public r-qindex
   (package

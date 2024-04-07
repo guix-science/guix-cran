@@ -12040,13 +12040,13 @@ allows the definition of questions to be included in the question bank.")
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MonteCarloSEM" version))
        (sha256
-        (base32 "1bv2x1h85ri6hfr0z141xz8rn0qhs6sxdfr32vj77gik775lpknz"))))
+        (base32 "0l9c6a8yxjd2n1fvsswx3csgz18g7d33ybbmpxlx6csl5f299ljd"))))
     (properties `((upstream-name . "MonteCarloSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lavaan))
@@ -19214,13 +19214,13 @@ dimensions, any initial center, and any number of clusters to expect.")
 (define-public r-mkinfer
   (package
     (name "r-mkinfer")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKinfer" version))
        (sha256
-        (base32 "0wlvlh31qwxsk00zszbzrdhk7gx226i7cyhv35h9wnawmyrxkb5g"))))
+        (base32 "10fy49b5bprbc30zrgz1y74pp480x3avrk9pig6mj9gg6fci207p"))))
     (properties `((upstream-name . "MKinfer")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
@@ -19240,10 +19240,12 @@ including bootstrapped versions (Davison and Hinkley (1997),
 ISBN:978-0-511-80284-3) as well as Hsu (Hedderich and Sachs (2018),
 ISBN:978-3-662-56657-2), permutation (Janssen (1997),
 <doi:10.1016/S0167-7152(97)00043-6>), bootstrap (Davison and Hinkley (1997),
-ISBN:978-0-511-80284-3) and multiple imputation (Barnard and Rubin (1999),
-<doi:10.1093/biomet/86.4.948>) t-test and Wilcoxon tests.  Graphical
-visualization by volcano and Bland-Altman plots (Bland and Altman (1986),
-<doi:10.1016/S0140-6736(86)90837-8>; Shieh (2018),
+ISBN:978-0-511-80284-3), intersection-union (Sozu et al. (2015),
+ISBN:978-3-319-22005-5) and multiple imputation (Barnard and Rubin (1999),
+<doi:10.1093/biomet/86.4.948>) t-test; furthermore, computation of
+intersection-union z-test as well as multiple imputation Wilcoxon tests.
+Graphical visualization by volcano and Bland-Altman plots (Bland and Altman
+(1986), <doi:10.1016/S0140-6736(86)90837-8>; Shieh (2018),
 <doi:10.1186/s12874-018-0505-y>).")
     (license license:lgpl3)))
 
@@ -28054,47 +28056,6 @@ detection of fronts based on the thermic front parameter [Hewson, 1998,
 <doi:10.1002/2017GL073662>] and the DSI [Mack et al., 2022,
 <@code{arXiv:2208.11438>}].")
     (license license:gpl2+)))
-
-(define-public r-meteo
-  (package
-    (name "r-meteo")
-    (version "2.0-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "meteo" version))
-       (sha256
-        (base32 "18aiy133527cxa3qj2mjwik6d7w6kgs7qmb5zywsbvb2bc3hmn5v"))))
-    (properties `((upstream-name . "meteo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-terra
-                             r-spacetime
-                             r-sp
-                             r-snowfall
-                             r-sftime
-                             r-sf
-                             r-raster
-                             r-ranger
-                             r-plyr
-                             r-nabor
-                             r-gstat
-                             r-foreach
-                             r-dplyr
-                             r-doparallel
-                             r-desctools
-                             r-data-table
-                             r-cast
-                             r-caret))
-    (home-page "https://www.r-pkg.org/pkg/meteo")
-    (synopsis
-     "RFSI and Spatio-Temporal Geostatistical Interpolation for Meteorological and Other Environmental Variables")
-    (description
-     "RFSI and spatio-temporal geostatistical interpolation for meteorological and
-other environmental variables.  Global spatio-temporal models calculated using
-publicly available data are stored in package.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file LICENCE")))))
 
 (define-public r-metchem
   (package

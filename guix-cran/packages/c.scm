@@ -18424,13 +18424,13 @@ Structured Query Language (SQL) to the other supported dialects.")
 (define-public r-common
   (package
     (name "r-common")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "common" version))
        (sha256
-        (base32 "1wg0flsjp4499hmrgfbp9a9j1bib8vi9k4vnjx3l43cw3rqzs70b"))))
+        (base32 "1zl34ikbasph6dchvl2dcbrs5wj6jxlyfg8gfnbq7dcmmbjg9l2h"))))
     (properties `((upstream-name . "common")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -30702,6 +30702,31 @@ iron-related blood parameters, IGF, liver enzymes.  See package documentation
 for full list.")
     (license license:gpl3)))
 
+(define-public r-childfree
+  (package
+    (name "r-childfree")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "childfree" version))
+       (sha256
+        (base32 "0p1b1bi6shkg2lzl0q07al80sc5gw3yrz3cj8sp5rfpnrfa12ard"))))
+    (properties `((upstream-name . "childfree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rio))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.zacharyneal.com/childfree")
+    (synopsis "Access and Harmonize Childfree Demographic Data")
+    (description
+     "Reads demographic data from a variety of public data sources, extracting and
+harmonizing variables useful for the study of childfree individuals.  The
+identification of childfree individuals and those with other family statuses
+uses Neal & Neal's (2024) \"A Framework for Studying Adults who Neither have Nor
+Want Children\" <doi:10.1177/10664807231198869>; A pre-print is available at
+<doi:10.31234/osf.io/fa89m>.")
+    (license license:gpl3)))
+
 (define-public r-childesr
   (package
     (name "r-childesr")
@@ -31683,13 +31708,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "0qrdvzq01m0kc243jcddiz8am2l4c5a39bv3qb0m2rpvgg1z8a4c"))))
+        (base32 "11d16rzwhanv36dw51wv5w1vg9fhwd3gpjpazq95wglv9zwc9afg"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -32940,13 +32965,13 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "1pfgkk3ngxg7fjnp7hhv7j42x27jnddll3385nxqhwfki6iwdqzq"))))
+        (base32 "02xgrfzbw22lzsanb766lh9srwy1zf5dh62fj00lb7zhaw16q2sf"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso r-ggplot2 r-dplyr))

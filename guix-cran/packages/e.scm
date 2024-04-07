@@ -559,13 +559,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "1bq1m4gajd3wlv7qknyai962dhbf9lir36wym25q1a7mikgc3brh"))))
+        (base32 "090bxz71jc18h2nnmk4ja5irkh9qdihxa5pngq3c0ci7xhk6x52a"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -20545,16 +20545,16 @@ models (Tversky & Sattath, 1979 <doi:10.1037/0033-295X.86.6.542>).")
 (define-public r-eattools
   (package
     (name "r-eattools")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eatTools" version))
        (sha256
-        (base32 "1wn3m3h49j59gvzsnd12m15lwfgrbf6my8xpsij29vmni9p9w6nx"))))
+        (base32 "0l9ip4y2b18qmb760xmjx174c7pp8crqmwiq7plark82q6p7ybfw"))))
     (properties `((upstream-name . "eatTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-stringi r-data-table r-checkmate))
     (home-page "https://github.com/weirichs/eatTools")
     (synopsis
      "Miscellaneous Functions for the Analysis of Educational Assessments")

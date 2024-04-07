@@ -5623,13 +5623,13 @@ performance without return to baseline).")
 (define-public r-ars
   (package
     (name "r-ars")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ars" version))
        (sha256
-        (base32 "0zs1rk3i7pc9wcvxrvjcls194mfbvmkz7cb6pwd1cm3fzjwsyxsp"))))
+        (base32 "03hgbyg667d0c22am5r45g6p6l5fii3x760khajjjcy8y0mqrq11"))))
     (properties `((upstream-name . "ars")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ars")
@@ -9311,24 +9311,25 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APackOfTheClones" version))
        (sha256
-        (base32 "0wbkrnx8p06r75hk0gffasrykdnm4hdlbf45p5zzw0pnyzf2s49v"))))
+        (base32 "0fzxwlm65j1hhpl5n0w3nni484jlxwkwrxv477mbph826vm1jz60"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
-    (propagated-inputs (list r-seurat
+    (propagated-inputs (list r-seuratobject
+                             r-seurat
                              r-rlang
                              r-rcpp
+                             r-magrittr
                              r-lifecycle
                              r-hash
                              r-ggplot2
                              r-ggforce
-                             r-dplyr
-                             r-data-table))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://qile0317.github.io/APackOfTheClones/")
     (synopsis

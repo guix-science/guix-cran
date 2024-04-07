@@ -4547,13 +4547,13 @@ have been drawn using grid graphics.")
 (define-public r-gridcopula
   (package
     (name "r-gridcopula")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GRIDCOPULA" version))
        (sha256
-        (base32 "02xyklc8648z3c3pfd3xshlfn5wpkyglc84dqh8sbpba7017gcvr"))))
+        (base32 "0d8zibd27z0krn564ba906zlvnb1fx4mfvhpii7pxr0pzjir2a9c"))))
     (properties `((upstream-name . "GRIDCOPULA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp
@@ -4561,7 +4561,8 @@ have been drawn using grid graphics.")
                              r-pracma
                              r-limsolve
                              r-ggplot2
-                             r-fields))
+                             r-fields
+                             r-evmix))
     (home-page "https://cran.r-project.org/package=GRIDCOPULA")
     (synopsis "Bivariate Copula Functions Based on Regular Grid")
     (description
@@ -7097,6 +7098,30 @@ contains a fast implementation of the incomplete Cholesky decomposition (IC0),
 based on Schaefer et al. (2019) <@code{arXiv:1706.02205>} and @code{MaxMin}
 ordering proposed in Guinness (2018) <@code{arXiv:1609.05372>}.")
     (license license:gpl2+)))
+
+(define-public r-gpvam
+  (package
+    (name "r-gpvam")
+    (version "3.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPvam" version))
+       (sha256
+        (base32 "0mmwg5m85rzaaj8wdxsdn1yqpl08pr3ydmxpfwmm2f7xw0k2k29g"))))
+    (properties `((upstream-name . "GPvam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
+    (home-page "https://cran.r-project.org/package=GPvam")
+    (synopsis
+     "Maximum Likelihood Estimation of Multiple Membership Mixed Models Used in Value-Added Modeling")
+    (description
+     "An EM algorithm, Karl et al. (2013) <doi:10.1016/j.csda.2012.10.004>, is used to
+estimate the generalized, variable, and complete persistence models, Mariano et
+al. (2010) <doi:10.3102/1076998609346967>.  These are multiple-membership linear
+mixed models with teachers modeled as \"G-side\" effects and students modeled with
+either \"G-side\" or \"R-side\" effects.")
+    (license license:gpl2)))
 
 (define-public r-gpumatrix
   (package
@@ -21759,13 +21784,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "196zqpl8zi3xkkxvl8akrb7a7j8f59zcrhy9231z8cn7zarx4pgg"))))
+        (base32 "0cfn412hc8k5mp1k4w7b3q82335lim4xhjarlfvymaydjrmasgp3"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -24911,6 +24936,29 @@ software).  The Gem infrasound logger is a low-cost, lightweight, low-power
 instrument for recording infrasound in field campaigns; email the maintainer for
 more information.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-gemetrics
+  (package
+    (name "r-gemetrics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GEmetrics" version))
+       (sha256
+        (base32 "1is78g8jm551bc7qb61jm6c9qcqygbh4nxj89sfccbz08k1xljyl"))))
+    (properties `((upstream-name . "GEmetrics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bglr))
+    (home-page "https://cran.r-project.org/package=GEmetrics")
+    (synopsis
+     "Best Linear Unbiased Prediction of Genotype-by-Environment Metrics")
+    (description
+     "This package provides functions to calculate the best linear unbiased prediction
+of genotype-by-environment metrics: ecovalence, environmental variance, Finlay
+and Wilkinson regression and Lin and Binns superiority measure, based on a
+multi-environment genomic prediction model.")
+    (license license:gpl3+)))
 
 (define-public r-gelnet
   (package
@@ -28135,13 +28183,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "1mrqqkn86f9qrbvgyh8sfm4y4nlma4dzb557bgqxaksp8fq2wdw8"))))
+        (base32 "0hby04r39yjl6z2mkj5s7jxpzc72kz8hfbhhpay7svf2mm1m34b1"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (inputs (list zlib))

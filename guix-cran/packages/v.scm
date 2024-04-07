@@ -6376,13 +6376,13 @@ Estelle Kuhn (2019) <doi:10.18637/jss.v107.i06>.")
 (define-public r-vartest
   (package
     (name "r-vartest")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vartest" version))
        (sha256
-        (base32 "0syxypmrvv9zd8qv10j1mvksacny3w4bdjm35kyjwp3jgh1rnv9g"))))
+        (base32 "0kp7vvxggaxs00hdca41ysialxyhhawvplj2dp60jnxlyl5yy3bg"))))
     (properties `((upstream-name . "vartest")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists r-psych))

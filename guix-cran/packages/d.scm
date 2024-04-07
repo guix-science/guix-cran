@@ -13049,13 +13049,13 @@ is described in: Taslim et al., (2011) <doi:10.1093/bioinformatics/btr165>.")
 (define-public r-dilp
   (package
     (name "r-dilp")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dilp" version))
        (sha256
-        (base32 "0xm4qfzgxv2r41f4z718cnfdpijnvbsq2w7cc0i5w3ndj3x63sk7"))))
+        (base32 "0pvd7xsg9g772n6m8h88rigkmnivmqrqj33ar1y2iq2z3k4r93jz"))))
     (properties `((upstream-name . "dilp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

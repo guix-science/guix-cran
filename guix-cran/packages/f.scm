@@ -1253,23 +1253,22 @@ data summary and cleaning tools are also available.")
 (define-public r-funwithnumbers
   (package
     (name "r-funwithnumbers")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FunWithNumbers" version))
        (sha256
-        (base32 "1342n3gsrlk70njj45vxpk5sl467pxmsixkmvi4s9aim6d9my7pn"))))
+        (base32 "0p3czcc6v1wwdbdfmar1q0z4b7r75p39zd2bw0dl14wcn7fn59sq"))))
     (properties `((upstream-name . "FunWithNumbers")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmpfr r-gmp))
+    (propagated-inputs (list r-rmpfr r-gmp r-bigbits))
     (home-page "https://cran.r-project.org/package=FunWithNumbers")
     (synopsis "Fun with Fractions and Number Sequences")
     (description
      "This package provides a collection of toys to do things like generate Collatz
-sequences, convert a fraction to \"continued fraction\" form, calculate a fraction
-which is a close approximation to some value (e.g., 22/7 or 355/113 for pi), and
-so on.")
+and other interesting sequences, calculate a fraction which is a close
+approximation to some value (e.g., 22/7 or 355/113 for pi), and so on.")
     (license license:lgpl3)))
 
 (define-public r-funtimes
@@ -4183,13 +4182,13 @@ Principal Component <doi:10.1111/rssb.12076>.")
 (define-public r-freqdom
   (package
     (name "r-freqdom")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freqdom" version))
        (sha256
-        (base32 "0gq91zmai0jcn9wgddqkws9bvj5kx70kccnszhdzbdsh2irqjbgv"))))
+        (base32 "0fs6hrm0jf5cqfsnfbp0m7lrzvryzi49fi6lmisrb7ql3a8jzkxa"))))
     (properties `((upstream-name . "freqdom")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixcalc))
@@ -19278,6 +19277,30 @@ eventually speed up the computation.  The fitting algorithm for Elastic Net is
 written in C++ using Armadillo linear algebra library.")
     (license license:gpl2+)))
 
+(define-public r-fastdigest
+  (package
+    (name "r-fastdigest")
+    (version "0.6-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastdigest" version))
+       (sha256
+        (base32 "1809y57cvck6gssrwnycgqjnka6jxx17dbf927cvwih4v58abdmj"))))
+    (properties `((upstream-name . "fastdigest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=fastdigest")
+    (synopsis "Fast, Low Memory Footprint Digests of R Objects")
+    (description
+     "This package provides an R interface to Bob Jenkin's streaming,
+non-cryptographic @code{SpookyHash} hash algorithm for use in digest-based
+comparisons of R objects.  fastdigest plugs directly into R's internal
+serialization machinery, allowing digests of all R objects the serialize()
+function supports, including reference-style objects via custom hooks.  Speed is
+high and scales linearly by object size; memory usage is constant and
+negligible.")
+    (license license:artistic2.0)))
+
 (define-public r-fastcub
   (package
     (name "r-fastcub")
@@ -21957,6 +21980,42 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 and time series functions for fable and extension packages.  These tools support
 a consistent and tidy interface for time series modelling and analysis.")
     (license license:gpl3)))
+
+(define-public r-fablecount
+  (package
+    (name "r-fablecount")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fableCount" version))
+       (sha256
+        (base32 "1swp679ajj285sm5kgqw5ic1g1nwsf8ljqkhghrikzqn0qqynjr0"))))
+    (properties `((upstream-name . "fableCount")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibbledata
+                             r-tsibble
+                             r-tscount
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-lubridate
+                             r-glarma
+                             r-fabletools
+                             r-fable
+                             r-dplyr
+                             r-distributional))
+    (home-page "https://cran.r-project.org/package=fableCount")
+    (synopsis
+     "INGARCH and GLARMA Models for Count Time Series in Fable Framework")
+    (description
+     "This package provides a tidy R interface for count time series analysis.  It
+includes implementation of the INGARCH (Integer Generalized Autoregressive
+Conditional Heteroskedasticity) model from the tscount package and the GLARMA
+(Generalized Linear Autoregressive Moving Averages) model from the glarma
+package.  Additionally, it offers automated parameter selection algorithms based
+on the minimization of a penalized likelihood.")
+    (license license:expat)))
 
 (define-public r-fable-prophet
   (package

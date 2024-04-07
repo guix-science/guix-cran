@@ -3327,13 +3327,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0mgphsflz7al8fgbdjbw6rbv2g21yxvfs2wkdnarh9zn2njx3hy3"))))
+        (base32 "1z8r4wk57zxw4pddjinid22lh7z11yxbfk1acmwp6yql3nhljxb9"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3348,21 +3348,22 @@ centered on an approach using machine learning for path classification.")
     (description
      "Various methods are employed for statistical analysis and graphical presentation
 of real-time PCR (quantitative PCR or @code{qPCR}) data.  rtpcr handles
-amplification efficiency calculation and statistical analysis of real-time PCR
-data based on one reference gene.  By accounting for amplification efficiency
-values, rtpcr was developed using a general calculation method described by
-Ganger et al. (2017) <doi:10.1186/s12859-017-1949-5>, covering both the Livak
-and Pfaffl methods.  Based on the experimental conditions, the functions of the
-rtpcr package use t-test (for experiments with a two-level factor) or analysis
-of variance (for cases where more than two levels or factors exist) to calculate
-the fold change or relative expression.  The functions also provide standard
-deviations and confidence limits for means, apply statistical mean comparisons,
-and present letter mean grouping.  To facilitate using rtpcr', different
-datasets have been employed in the examples and the outputs are explained.  An
-outstanding feature of rtpcr package is providing publication-ready bar plots
-with various controlling arguments for experiments with up to three different
-factors.  The rtpcr package is user-friendly and easy to work with and provides
-an applicable resource for analyzing real-time PCR data.")
+amplification efficiency calculation, statistical analysis and graphical
+representation of real-time PCR data based on up to two reference genes.  By
+accounting for amplification efficiency values, rtpcr was developed using a
+general calculation method described by Ganger et al. (2017)
+<doi:10.1186/s12859-017-1949-5>, covering both the Livak and Pfaffl methods.
+Based on the experimental conditions, the functions of the rtpcr package use
+t-test (for experiments with a two-level factor) or analysis of variance (for
+cases where more than two levels or factors exist) to calculate the fold change
+or relative expression.  The functions also provide standard deviations and
+confidence limits for means and apply statistical mean comparisons.  To
+facilitate using rtpcr', different datasets have been employed in the examples
+and the outputs are explained.  An outstanding feature of rtpcr package is
+providing publication-ready bar plots with various controlling arguments for
+experiments with up to three different factors.  The rtpcr package is
+user-friendly and easy to work with and provides an applicable resource for
+analyzing real-time PCR data.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -12603,17 +12604,17 @@ generative large language models locally.")
 (define-public r-roll
   (package
     (name "r-roll")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roll" version))
        (sha256
-        (base32 "1crzr0kqdls08n6i3769zrxbxvh2m4hv5k3xi6ky6ps8hhicwqc9"))))
+        (base32 "0kl3ag3yslw91nwhlyk16qfxs336n6x9087h7vgchi09i41cr04g"))))
     (properties `((upstream-name . "roll")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/jjf234/roll")
+    (home-page "https://github.com/jasonjfoster/roll")
     (synopsis "Rolling and Expanding Statistics")
     (description
      "Fast and efficient computation of rolling and expanding statistics for
@@ -20080,13 +20081,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "0knnfz9pp4licn0j771f9fyh1y689qw0yvjdfdnr6fii71x0in6l"))))
+        (base32 "0hj9znrhfza35kamz78wa623lzxhh1dfpxn4ggsqzdvmxfldpvwv"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -26263,13 +26264,13 @@ limits: 70+ tips. @code{PeerJ} Preprints 6:e26605v1
 (define-public r-rfars
   (package
     (name "r-rfars")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfars" version))
        (sha256
-        (base32 "06wxphwsb1cy5i36zsyi7mlibc9vsgyp36nx3xj1z451fgbc29l0"))))
+        (base32 "1wk0gzg50hd7iq7l4c4rdzwvn0i6ikarp4pyqnv4ginvwlxyf591"))))
     (properties `((upstream-name . "rfars")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -32615,13 +32616,13 @@ of several Microsoft(r) products.  Forked from R@code{ColorBrewer} v1.1-2.")
 (define-public r-redm
   (package
     (name "r-redm")
-    (version "1.15.3")
+    (version "1.15.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rEDM" version))
        (sha256
-        (base32 "04dmk5q6rm3rhihprpswkcwyimwq8i5q1c9fwj2wl83ldf6lvigf"))))
+        (base32 "1h2mda6m70r976jzh4znz73bzdiib524iyz6khz2j0wzs0gbl5sk"))))
     (properties `((upstream-name . "rEDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcpp))
@@ -34508,6 +34509,34 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 <doi:10.1111/anae.13938>.")
     (license license:expat)))
 
+(define-public r-realvams
+  (package
+    (name "r-realvams")
+    (version "0.4-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RealVAMS" version))
+       (sha256
+        (base32 "1945vxqj4y6fci3pwrq5jr91ikx2yn91jm33fm0x1x1bzv7krcgh"))))
+    (properties `((upstream-name . "RealVAMS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv r-matrix))
+    (home-page "https://cran.r-project.org/package=RealVAMS")
+    (synopsis "Multivariate VAM Fitting")
+    (description
+     "Fits a multivariate value-added model (VAM), see Broatch, Green, and Karl (2018)
+<doi:10.32614/RJ-2018-033> and Broatch and Lohr (2012)
+<doi:10.3102/1076998610396900>, with normally distributed test scores and a
+binary outcome indicator.  A pseudo-likelihood approach, Wolfinger (1993)
+<doi:10.1080/00949659308811554>, is used for the estimation of this joint
+generalized linear mixed model.  The inner loop of the pseudo-likelihood routine
+(estimation of a linear mixed model) occurs in the framework of the EM algorithm
+presented by Karl, Yang, and Lohr (2013) <DOI:10.1016/j.csda.2012.10.004>.  This
+material is based upon work supported by the National Science Foundation under
+grants DRL-1336027 and DRL-1336265.")
+    (license license:gpl2)))
+
 (define-public r-realtimeloads
   (package
     (name "r-realtimeloads")
@@ -34557,28 +34586,6 @@ where we distinguish between expected, acceptable, current, fallback, ideal, or
 regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
-
-(define-public r-readysignal
-  (package
-    (name "r-readysignal")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "readysignal" version))
-       (sha256
-        (base32 "0fhm3xdxilmvs3r6vlbzydfq5xk0vxdkmpw49haknlwpvb18r403"))))
-    (properties `((upstream-name . "readysignal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-progress r-jsonlite r-httr))
-    (home-page "https://cran.r-project.org/package=readysignal")
-    (synopsis "'Ready Signal' API Wrapper")
-    (description
-     "This package provides a simple way to interact with the Ready Signal API without
-leaving your R environment.  Discover features, manage signals, and retrieve
-data easily.  View the full API documentation at
-<https://readysignal.com/ready-signal-api-documentation/>.")
-    (license license:expat)))
 
 (define-public r-readxlsb
   (package
@@ -34700,13 +34707,13 @@ and can handle header metadata and comments in files.")
 (define-public r-readsdr
   (package
     (name "r-readsdr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readsdr" version))
        (sha256
-        (base32 "0s16m1cam69c83k6cdpysdfyqzh0ihyjdwdzv3hqxa9054iv5ifx"))))
+        (base32 "0jg7iz6bnilxb5l3xs13v13zg96cjdv24ijvhqw7kh1i10g5kdk2"))))
     (properties `((upstream-name . "readsdr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34714,7 +34721,10 @@ and can handle header metadata and comments in files.")
                              r-stringi
                              r-rlang
                              r-purrr
+                             r-progressr
                              r-magrittr
+                             r-future-apply
+                             r-future
                              r-dplyr
                              r-desolve))
     (native-inputs (list r-knitr))
@@ -44457,13 +44467,13 @@ with slight modifications by this package.")
 (define-public r-rapi
   (package
     (name "r-rapi")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rapi" version))
        (sha256
-        (base32 "04hfp2v43dh6lix9kaczl02204qigv4xkkxfldz02c5k33r120ac"))))
+        (base32 "044c3qs6vyijl8j21rs351jvmz2f6i864bzzy8vrh4p58j7zhq0d"))))
     (properties `((upstream-name . "Rapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -48308,19 +48318,20 @@ social media platforms including Facebook <https://www.facebook.com>, Linkedin
 (define-public r-r2shortcode
   (package
     (name "r-r2shortcode")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2shortcode" version))
        (sha256
-        (base32 "03djy8m146k31xgvwcbrd1nzwj4wdlvvwzgviv80kskgr6ld9jrj"))))
+        (base32 "1q6zf3pxdmh8p2mlls1iw2043cbn5pixfw1b4sv03gcipymp5jzy"))))
     (properties `((upstream-name . "r2shortcode")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-magrittr))
+    (propagated-inputs (list r-stringr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/oobianom/r2shortcode")
-    (synopsis "Shorten Package Function Names")
+    (synopsis
+     "Shorten Function Names of Functions in Another Package and Create an Index to Make Them Accessible")
     (description
      "When creating a package, authors may sometimes struggle with coming up with easy
 and straightforward function names, and at the same time hoping that other

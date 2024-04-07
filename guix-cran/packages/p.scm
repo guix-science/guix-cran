@@ -159,13 +159,13 @@ frame.")
 (define-public r-pymturkr
   (package
     (name "r-pymturkr")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pyMTurkR" version))
        (sha256
-        (base32 "1b1cbvjbnvw2h8l3lbm0ma80zgpm212wzfhyyr6dr115k237xy89"))))
+        (base32 "16a16rjm71xlv57lkw0w49cv563pg1b8ihligmacrnv9vmzv0843"))))
     (properties `((upstream-name . "pyMTurkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-reticulate r-curl))
@@ -2818,13 +2818,13 @@ package \"psychotree\".")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.11.5")
+    (version "0.11.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "0syfnjmkwlzfjpl6wpqrbrww1wmddj0l9vwjll1mg0v3as69m28b"))))
+        (base32 "0d8q0gsj6gg1cn43cr4ix7r08y6d9568mmf1l8jihazcijkcmh82"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
@@ -7492,13 +7492,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.3.1")
+    (version "1.0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "04i46n23srds38fz3fxvdpbmf2639902a2p19ixkyk2yab82afdb"))))
+        (base32 "150kbj6mkabgswxjg9adihz7i4paaknni49j2x9i7jyaw79iym78"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-rlang r-lifecycle r-ggplot2))
@@ -22060,13 +22060,13 @@ this solely using the raw trade-level data.")
 (define-public r-pinsplus
   (package
     (name "r-pinsplus")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PINSPlus" version))
        (sha256
-        (base32 "0mws1064kwfm3csdzpfn4g2pwjasdmx9nz5x28znxv8hwrlgm2zw"))))
+        (base32 "1r4fw3hm0bp3spxkcrwwcmirkp4a8myqwpw8d6cxmz7ns6202860"))))
     (properties `((upstream-name . "PINSPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel
@@ -34122,13 +34122,13 @@ by time-resolved spectroscopy via a Shiny GUI.")
 (define-public r-param2moment
   (package
     (name "r-param2moment")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "param2moment" version))
        (sha256
-        (base32 "1dv078231xyc4fa05zkh289wxhm5pjijsbkyvpm3zh9ybxdnmd4p"))))
+        (base32 "1rdr8llzarwdc579w4qfp3ziim57dyqbgpa1j3i6fg5fp1xlbpkm"))))
     (properties `((upstream-name . "param2moment")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=param2moment")

@@ -20567,13 +20567,13 @@ supported <doi:10.4054/@code{DemRes.2018.38.60>}.")
 (define-public r-bayest
   (package
     (name "r-bayest")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayest" version))
        (sha256
-        (base32 "1ax1z5aw0irpr5qmfscvbssrz58ablx0nkl0d9fx51f2g1cwm65n"))))
+        (base32 "1vx0avy5a3ndy76pvgf71hxpmy7g9l0l1lmc4cgczzdmf55lrksa"))))
     (properties `((upstream-name . "bayest")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcpack))
@@ -22354,6 +22354,40 @@ priors and predictive models.  The Bayesian estimates and credible sets of
 mediation effects are reported as analytic results.")
     (license license:gpl2+)))
 
+(define-public r-bayesianmcpmod
+  (package
+    (name "r-bayesianmcpmod")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayesianMCPMod" version))
+       (sha256
+        (base32 "1767rjyd5vl73lqknpxkgcv38rhxdm837zr7c3d5d6f9rdh8rgyw"))))
+    (properties `((upstream-name . "BayesianMCPMod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rbest r-nloptr r-ggplot2 r-dosefinding
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Boehringer-Ingelheim/BayesianMCPMod")
+    (synopsis
+     "Simulate, Evaluate, and Analyze Dose Finding Trials with Bayesian MCPMod")
+    (description
+     "Bayesian MCPMod (Fleischer et al. (2022) <doi:10.1002/pst.2193>) is an
+innovative method that improves the traditional MCPMod by systematically
+incorporating historical data, such as previous placebo group data.  This R
+package offers functions for simulating, analyzing, and evaluating Bayesian
+MCPMod trials with normally distributed endpoints.  It enables the assessment of
+trial designs incorporating historical data across various true dose-response
+relationships and sample sizes.  Robust mixture prior distributions, such as
+those derived with the Meta-Analytic-Predictive approach (Schmidli et al. (2014)
+<doi:10.1111/biom.12242>), can be specified for each dose group.  Resulting
+mixture posterior distributions are used in the Bayesian Multiple Comparison
+Procedure and modeling steps.  The modeling step also includes a weighted model
+averaging approach (Pinheiro et al. (2014) <doi:10.1002/sim.6052>).  Estimated
+dose-response relationships can be bootstrapped and visualized.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-bayesianlaterality
   (package
     (name "r-bayesianlaterality")
@@ -23776,13 +23810,13 @@ based on the Stan platform (Carpenter et el.  2017 <doi:10.18637/jss.v076.i01>).
 (define-public r-bayenet
   (package
     (name "r-bayenet")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bayenet" version))
        (sha256
-        (base32 "1xcn6cyzsy1am6d6kmb2fd5pn1h26hz68jj2kwy99f9bz4473rgy"))))
+        (base32 "0h0b6m3lpwjax5vwbmqmfqx55hx3sgbb87jby2lwn3d2v138bpks"))))
     (properties `((upstream-name . "Bayenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -25121,13 +25155,13 @@ regression model (Hill (2012) <doi:10.1198/jcgs.2010.08162>).")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9.6")
+    (version "2.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BART" version))
        (sha256
-        (base32 "03rf13mwxxzqyvaciakarrhl583f8gl81ahfakkc1578fv2fl8vf"))))
+        (base32 "15nm6ahi5kq2fd9zrksqq7ybmlzrw7hds5ws27zvlayyy2qxyq17"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-nnet r-nlme))

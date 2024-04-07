@@ -3478,13 +3478,13 @@ syntax that using pipe operator to add graphic layer.")
 (define-public r-wikipedir
   (package
     (name "r-wikipedir")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WikipediR" version))
        (sha256
-        (base32 "10lzqqqq1xr0xypg1manr6y6qqyz90wr0ysm70m92b4fy3yzmyz5"))))
+        (base32 "08mj3flildcvqdbj5y5c225ipbwfd2ivrjmlcwyg3v84ydhrbrkf"))))
     (properties `((upstream-name . "WikipediR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-httr))
