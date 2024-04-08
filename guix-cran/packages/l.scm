@@ -4242,13 +4242,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "1ndipzwlmql6qrkb9x0h1lw22rgr71vf0q2xr67a1gdqjn758vqg"))))
+        (base32 "0mw31qyvac62f37r156ma1v0jlxc62h27hjwbz80lygr8c0bf796"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-common))
@@ -11120,13 +11120,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.1")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1znf4zja1gh2v6s2jja3hr9b97gl4dw2wq9yb72yrs18l7917lhv"))))
+        (base32 "04p06gxihyca43zzkjrbblpmqjfws8xwi2f4svm9ydi5swfs6bwy"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

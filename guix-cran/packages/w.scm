@@ -2885,13 +2885,13 @@ survival, species richness and distance measures.")
 (define-public r-wins
   (package
     (name "r-wins")
-    (version "1.3.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WINS" version))
        (sha256
-        (base32 "0chw2v3ba766p8bjh1vzgrx6s7gm586ylvdsal1kmfxv4lkjc8rh"))))
+        (base32 "16rh2aa1lmzmlfy2i4yblgml26ngj1m6q5v5wb8k5sssh810vlh2"))))
     (properties `((upstream-name . "WINS")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -2910,8 +2910,8 @@ prioritized multiple endpoints, plot the win statistics and win proportions over
 study time if at least one time-to-event endpoint is analyzed, and simulate
 datasets with dependent endpoints.  The package can handle any type of outcomes
 (continuous, ordinal, binary, time-to-event) and allow users to perform
-stratified analysis and inverse probability of censoring weighting (IPCW)
-analysis.")
+stratified analysis, inverse probability of censoring weighting (IPCW) and
+inverse probability of treatment weighting (IPTW) analysis.")
     (license license:gpl2+)))
 
 (define-public r-winratio

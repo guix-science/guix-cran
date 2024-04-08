@@ -12406,13 +12406,13 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 (define-public r-ilsm
   (package
     (name "r-ilsm")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSM" version))
        (sha256
-        (base32 "0g52v64m8z9d7qri9xa79kqncm9hxf530vj3wqblhnwrzsazwfg5"))))
+        (base32 "079szirz5a1rcza756bjjdlz0wwdg8jifnz5kiw1wlkmc3x2m7sz"))))
     (properties `((upstream-name . "ILSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-igraph))
@@ -12424,7 +12424,7 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 network has been complete, however, there is still a lack of a unified operation
 that can quickly obtain the corresponding characteristics of the multilayer
 network.  To solve this insufficiency, ILSM was designed for supporting
-calculating such metrics of multilayer network by functions of this R package.")
+calculating such metrics of multilayer networks by functions of this R package.")
     (license license:expat)))
 
 (define-public r-ilse

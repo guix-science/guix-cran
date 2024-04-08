@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -8098,16 +8098,17 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "04b2v4ilhpqpkl61hmqvfwbsjd44nb5mgyw2a0av0i5sh4m7c2ln"))))
+        (base32 "1ikdq1730pkk0qgrqyn1igs7lg5xsq92zw4ha4ilmfpgm0cbq7hf"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rda
+    (propagated-inputs (list r-xgboost
+                             r-rda
                              r-randomforest
                              r-nnet
                              r-multiway
@@ -8125,11 +8126,11 @@ four-way data array.  See Harshman and Lundy (1994):
 Parafac or Parafac2 model as features to tune parameters for one or more
 classification methods via a k-fold cross-validation procedure.  Allows for
 constraints on different tensor modes.  Supports penalized logistic regression,
-support vector machine, random forest, feed-forward neural network, and
-regularized discriminant analysis.  Supports binary and multiclass
-classification.  Predicts class labels or class probabilities and calculates
-multiple classification performance measures.  Implements parallel computing via
-the parallel and @code{doParallel} packages.")
+support vector machine, random forest, feed-forward neural network, regularized
+discriminant analysis, and gradient boosting machine.  Supports binary and
+multiclass classification.  Predicts class labels or class probabilities and
+calculates multiple classification performance measures.  Implements parallel
+computing via the parallel and @code{doParallel} packages.")
     (license license:gpl2+)))
 
 (define-public r-cpe

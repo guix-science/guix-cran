@@ -521,26 +521,29 @@ classify participant data as valid or invalid.")
 (define-public r-synmicrodata
   (package
     (name "r-synmicrodata")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synMicrodata" version))
        (sha256
-        (base32 "111ifrnxg253prr3ql9581279r4dy12rbixn29j0zv9j0wjaa190"))))
+        (base32 "03fx8lzg90p8cw237lgn6yqxnxlknximpyafx6jnd9yh2sc3ccjb"))))
     (properties `((upstream-name . "synMicrodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (home-page "https://cran.r-project.org/package=synMicrodata")
     (synopsis "Synthetic Microdata Generator")
     (description
-     "This tool fits a non-parametric Bayesian model called \"hierarchically coupled
-mixture model (HCMM)\" to the original microdata in order to generate synthetic
-microdata for privacy protection.  The non-parametric feature of the adopted
-model is useful for catching the joint distribution of the original data in a
-highly flexible manner, leading to the generation of synthetic data very similar
-to the original data.  Important reference papers on this method include Murray
-& Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
+     "This tool fits a non-parametric Bayesian model called a \"hierarchically coupled
+mixture model with local dependence (HCMM-LD)\" to the original microdata in
+order to generate synthetic microdata for privacy protection.  The
+non-parametric feature of the adopted model is useful for capturing the joint
+distribution of the original input data in a highly flexible manner, leading to
+the generation of synthetic data whose distributional features are similar to
+that of the input data.  The package allows the original input data to have
+missing values and impute them with the posterior predictive distribution, so no
+missing values exist in the synthetic data output.  The method builds on the
+work of Murray and Reiter (2016) <doi:10.1080/01621459.2016.1174132>.")
     (license license:gpl3+)))
 
 (define-public r-synlik
@@ -33920,16 +33923,16 @@ IBGE. More information can be obtained from the official website
 (define-public r-sinrelef-ld
   (package
     (name "r-sinrelef-ld")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SINRELEF.LD" version))
        (sha256
-        (base32 "11pjn5b4s4sv18313zvlpszlr6503p0aysrl6lv28s1342ymgz4l"))))
+        (base32 "1gb6wsl0fnpzngn5f3197wa401lhk39b90vx2vldqn3bsf944b0q"))))
     (properties `((upstream-name . "SINRELEF.LD")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=SINRELEF.LD")
+    (home-page "https://psico.fcep.urv.cat/utilitats/SINRELEF-LD/")
     (synopsis
      "Reliability and Relative Efficiency in Locally-Dependent Measures")
     (description
@@ -33944,7 +33947,7 @@ would be obtained if all the items had been locally independent.  All the
 implemented procedures can be obtained from: (a) linear factor-analytic
 solutions in which the item scores are treated as approximately continuous, and
 (b) non-linear solutions in which the item scores are treated as
-ordered-categorical.")
+ordered-categorical.  A detailed guide can be obtained at the following url.")
     (license license:gpl3)))
 
 (define-public r-sinib

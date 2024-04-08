@@ -8903,25 +8903,26 @@ but also accounts for the rate of change of the flow variation.  More details
 (define-public r-heckmanem
   (package
     (name "r-heckmanem")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HeckmanEM" version))
        (sha256
-        (base32 "0fq9hg9if7li9nfhsw5nw7j1z4wy7j9b5wcvcmvgddmfvimb7760"))))
+        (base32 "0rx9lbi5l0h95sg5lhjyrv31qmp4ziam84b98l2a05q56avck9jj"))))
     (properties `((upstream-name . "HeckmanEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampleselection r-performanceanalytics
                              r-mvtnorm r-momtrunc r-ggplot2))
     (home-page "https://cran.r-project.org/package=HeckmanEM")
-    (synopsis "Fit Normal or Student-t Heckman Selection Models")
+    (synopsis
+     "Fit Normal, Student-t or Contaminated Normal Heckman Selection Models")
     (description
      "It performs maximum likelihood estimation for the Heckman selection model
-(Normal or Student-t) using an EM-algorithm <doi:10.1016/j.jmva.2021.104737>.
-It also performs influence diagnostic through global and local influence for
-four possible perturbation schema.")
-    (license license:gpl2+)))
+(Normal, Student-t or Contaminated normal) using an EM-algorithm
+<doi:10.1016/j.jmva.2021.104737>.  It also performs influence diagnostic through
+global and local influence for four possible perturbation schema.")
+    (license license:gpl2)))
 
 (define-public r-heatwaver
   (package

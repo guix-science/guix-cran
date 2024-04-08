@@ -18381,16 +18381,16 @@ relationships.")
 (define-public r-ggcorset
   (package
     (name "r-ggcorset")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggcorset" version))
        (sha256
-        (base32 "18i7xj3h0v556y2m7b1cnlqhzfp9jv5gpchhz5rmm8d6y3k4czii"))))
+        (base32 "1vswnr15xbsl3kbd7nbd33mc9931d4lk3mpx8ri0ph37h3b0sif9"))))
     (properties `((upstream-name . "ggcorset")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggstance r-ggplot2 r-gghalves r-dplyr))
+    (propagated-inputs (list r-ggplot2 r-gghalves))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ggcorset")
     (synopsis "The Corset Plot")
@@ -25554,13 +25554,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "0fba4l6497r9lxc5jdi6s9nsjgbqb2x5f9nphx7c9ar10rjqgqqy"))))
+        (base32 "09f7zzbzg28s6g374rdhi8awicyj71pyndakg2vzps8645sbhicy"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -29127,13 +29127,13 @@ materials.")
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "0iyszijnlg9bsh8234qm1vdrvcbnas18ylks9v4jg32mxnai6vpq"))))
+        (base32 "1pyckh5yb9asgk47za9a1791hzkr0w978bf5b7qjca2gw1yymarw"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

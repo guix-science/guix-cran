@@ -8042,13 +8042,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.9")
+    (version "1.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "1shd5a519vac8m80869hssjfhl3i5k9ia0z2a0dgfbqsdd591nsv"))))
+        (base32 "1gg4kg4733cs220lrn67hgj3k052w7223cammcxsgd2i1fkv2w0s"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")

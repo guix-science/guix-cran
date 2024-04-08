@@ -6078,13 +6078,13 @@ probability.  Methodology based on Papakonstantinou et al. (2021)
 (define-public r-nmaplateplot
   (package
     (name "r-nmaplateplot")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nmaplateplot" version))
        (sha256
-        (base32 "1k6i4d1n2cadhp1nzb7ij1d58wrgyhrqpwq1flixgkyrzz375z9g"))))
+        (base32 "0vc9v5xvcl8k312dng7z5xaz7k9a93hsayjncpij59fcrr01n16b"))))
     (properties `((upstream-name . "nmaplateplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

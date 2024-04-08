@@ -19068,16 +19068,17 @@ designs.")
 (define-public r-mkpower
   (package
     (name "r-mkpower")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKpower" version))
        (sha256
-        (base32 "0mw2z2jglq64bbwkjbwyxxdljr2n2drrrjjxp2jydvl3zqzaq553"))))
+        (base32 "1q04cs2qrjivyiig8nz3s8fl9b4g0smj390vb8jy67p9rq4nhjjz"))))
     (properties `((upstream-name . "MKpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-qqplotr
+                             r-mvtnorm
                              r-mkinfer
                              r-mkdescr
                              r-matrixtests
@@ -19098,8 +19099,9 @@ et al. (2003), ISBN:978-0-471-52629-2; Piegorsch (2004),
 <doi:10.1016/j.csda.2003.10.002>; Thulin (2014), <doi:10.1214/14-ejs909>),
 comparing two negative binomial rates (Zhu and Lakkis (2014),
 <doi:10.1002/sim.5947>), ANCOVA (Shieh (2020),
-<doi:10.1007/s11336-019-09692-3>), and reference ranges (Jennen-Steinmetz and
-Wellek (2005), <doi:10.1002/sim.2177>).")
+<doi:10.1007/s11336-019-09692-3>), reference ranges (Jennen-Steinmetz and Wellek
+(2005), <doi:10.1002/sim.2177>), and multiple primary endpoints (Sozu et al.
+(2015), ISBN:978-3-319-22005-5).")
     (license license:lgpl3)))
 
 (define-public r-mkomics
