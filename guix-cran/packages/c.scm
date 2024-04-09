@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -8208,17 +8208,17 @@ check <https://github.com/styvon/@code{cPCG>} for latest updates.")
 (define-public r-cpc
   (package
     (name "r-cpc")
-    (version "2.5.6")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CPC" version))
        (sha256
-        (base32 "1la2z3vh1imq3drfd9knp19c9rjin4g0zkw9lriz27i0z86dx275"))))
+        (base32 "0n1vsn7b1rllbsad2bshhi0c6pz7zqz6bmcc176qh50hm4hgp99r"))))
     (properties `((upstream-name . "CPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-dbscan r-cluster))
-    (home-page "http://imehlhaff.net/CPC/")
+    (home-page "https://imehlhaff.net/CPC/")
     (synopsis "Implementation of Cluster-Polarization Coefficient")
     (description
      "This package implements cluster-polarization coefficient for measuring
@@ -8226,7 +8226,7 @@ distributional polarization in single or multiple dimensions, as well as
 associated functions.  Contains support for hierarchical clustering, k-means,
 partitioning around medoids, density-based spatial clustering with noise, and
 manually imposed cluster membership.  Mehlhaff (forthcoming)
-<https://imehlhaff.net/files/CPC_note.pdf>.")
+<doi:10.1017/S0003055423001041>.")
     (license license:cc0)))
 
 (define-public r-cpbayes
@@ -12573,13 +12573,13 @@ dependence structure of the original data but with a shifted mean vector.")
 (define-public r-copularemada
   (package
     (name "r-copularemada")
-    (version "1.5.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopulaREMADA" version))
        (sha256
-        (base32 "027007xrzd2m7pgv8ki901aaf2957ih1lqh881viyd8hbfcfaghy"))))
+        (base32 "101ys5mqr51cj1rcvqc2mzanxil3z3pb4m1y3kwlzw3jz4cygrmk"))))
     (properties `((upstream-name . "CopulaREMADA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor r-statmod r-mc2d r-matlab))
@@ -12588,10 +12588,11 @@ dependence structure of the original data but with a shifted mean vector.")
      "Copula Mixed Models for Multivariate Meta-Analysis of Diagnostic Test Accuracy Studies")
     (description
      "The bivariate copula mixed model for meta-analysis of diagnostic test accuracy
-studies in Nikoloulopoulos (2015) <doi:10.1002/sim.6595>.  The vine copula mixed
-model for meta-analysis of diagnostic test accuracy studies accounting for
-disease prevalence in Nikoloulopoulos (2017) <doi:10.1177/0962280215596769> and
-also accounting for non-evaluable subjects in Nikoloulopoulos (2020)
+studies in Nikoloulopoulos (2015) <doi:10.1002/sim.6595> and Nikoloulopoulos
+(2018) <doi:10.1007/s10182-017-0299-y>.  The vine copula mixed model for
+meta-analysis of diagnostic test accuracy studies accounting for disease
+prevalence in Nikoloulopoulos (2017) <doi:10.1177/0962280215596769> and also
+accounting for non-evaluable subjects in Nikoloulopoulos (2020)
 <doi:10.1515/ijb-2019-0107>.  The hybrid vine copula mixed model for
 meta-analysis of diagnostic test accuracy case-control and cohort studies in
 Nikoloulopoulos (2018) <doi:10.1177/0962280216682376>.  The D-vine copula mixed
@@ -12600,8 +12601,11 @@ Nikoloulopoulos (2019) <doi:10.1177/0962280218796685>.  The multinomial
 quadrivariate D-vine copula mixed model for meta-analysis of diagnostic tests
 with non-evaluable subjects in Nikoloulopoulos (2020)
 <doi:10.1177/0962280220913898>.  The one-factor copula mixed model for joint
-meta-analysis of multiple diagnostic tests (2022) <doi:10.1111/rssa.12838>.")
-    (license (license:fsdg-compatible "GPL (>= 2.10)"))))
+meta-analysis of multiple diagnostic tests in Nikoloulopoulos (2022)
+<doi:10.1111/rssa.12838>.  The multinomial six-variate 1-truncated vine copula
+mixed model for meta-analysis of two diagnostic tests accounting for within and
+between studies dependence in Nikoloulopoulos (2024).")
+    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
 (define-public r-copulareg
   (package
@@ -38140,19 +38144,18 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAST" version))
        (sha256
-        (base32 "046pgl83bld4590yfvj1zx09f8yp1dlc2x9n347zx6cap58dabfz"))))
+        (base32 "0r5chqsy7pd3394f347plv5qlvq2qmcfn6g9j7r3gqzr99crgyqv"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-sf
                              r-plyr
-                             r-lattice
                              r-ggplot2
                              r-forcats
                              r-fnn

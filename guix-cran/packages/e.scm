@@ -8784,13 +8784,13 @@ time-dependent exposures.  See Wang et al (2020)
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
-    (version "0.0-4")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiworldR" version))
        (sha256
-        (base32 "1p9yvxphk9kr743g9cj5yq5g1h1j094aih6nq4xd6i9lx7amfiyz"))))
+        (base32 "0jwb4p3cpsq0m2wlmhqs1dxxvqf7s6x1fw1wrffbw93gf4j4pyx3"))))
     (properties `((upstream-name . "epiworldR")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11))

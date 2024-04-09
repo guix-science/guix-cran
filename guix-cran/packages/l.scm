@@ -3296,28 +3296,31 @@ are employed for path detection.")
 (define-public r-loopanalyst
   (package
     (name "r-loopanalyst")
-    (version "1.2-6")
+    (version "1.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LoopAnalyst" version))
        (sha256
-        (base32 "1gy9v6qiwkwbwp4snif2imf6zn50ffjrig54ln57c5v5pk3phnvv"))))
+        (base32 "1fp7j1q20xpgysdpyy2z3p1fzrr4bv6mjyb7hn3nh820z0bl554y"))))
     (properties `((upstream-name . "LoopAnalyst")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
-    (home-page "https://www.alexisdinno.com/LoopAnalyst")
+    (home-page "https://alexisdinno.com/LoopAnalyst/")
     (synopsis "Collection of Tools to Conduct Levins' Loop Analysis")
     (description
-     "Loop analysis makes qualitative predictions of variable change in a system of
-causally interdependent variables, where \"qualitative\" means sign only (i.e.
-increases, decreases, non change, and ambiguous).  This implementation includes
-output support for graphs in .dot file format for use with visualization
-software such as graphviz (<http://graphviz.org>). @code{LoopAnalyst} provides
-tools for the construction and output of community matrices, computation and
-output of community effect matrices, tables of correlations, adjoint, absolute
-feedback, weighted feedback and weighted prediction matrices, change in life
-expectancy matrices, and feedback, path and loop enumeration tools.")
+     "This package performs Levins loop analysis of qualitatively-specified complex
+causal systems.  Loop analysis makes qualitative predictions of variable change
+in a system of causally interdependent variables, where \"qualitative\" means
+direct causal relationships and indirect causal effects are coded as sign only
+(i.e.  increases, decreases, no change, and ambiguous).  This implementation
+includes output support for graphs in .dot file format for use with
+visualization software such as graphviz (<https://graphviz.org>).
+@code{LoopAnalyst} provides tools for the construction and output of community
+matrices, computation and output of community effect matrices, tables of
+correlations, adjoint, absolute feedback, weighted feedback and weighted
+prediction matrices, change in life expectancy matrices, and feedback, path and
+loop enumeration tools.")
     (license license:gpl2)))
 
 (define-public r-loon-tourr

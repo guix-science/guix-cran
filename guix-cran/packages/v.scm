@@ -5906,13 +5906,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.4.3")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "0j8z3njmwhdkyhj1h1zh6ckrcx3hiajd1rpqd9w2d26717qlgp2l"))))
+        (base32 "1hz6wfmx3brdi6ijlnrgiaz722gpmn670mpgvyfyfxsfmmyzq120"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))
@@ -7642,6 +7642,35 @@ Based on vectors of observed and predicted values.  Method: Kristin Piikki,
 Johanna Wetterlind, Mats Soderstrom and Bo Stenberg (2021).
 <doi:10.1111/SUM.12694>.")
     (license license:expat)))
+
+(define-public r-validmind
+  (package
+    (name "r-validmind")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "validmind" version))
+       (sha256
+        (base32 "1rj93fgkix3xr1lla286whf06pnhs0n9hz23s85yn9155f7xgndk"))))
+    (properties `((upstream-name . "validmind")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-reticulate
+                             r-plotly
+                             r-htmltools
+                             r-glue
+                             r-dt
+                             r-dplyr
+                             r-base64enc))
+    (home-page "https://github.com/validmind/developer-framework")
+    (synopsis "Interface to the 'ValidMind' Platform")
+    (description
+     "Deploy, execute, and analyze the results of models hosted on the
+@code{ValidMind} platform <https://validmind.com>.  This package interfaces with
+the Python client library in order to allow advanced diagnostics and insight
+into trained models all from an R environment.")
+    (license license:agpl3)))
 
 (define-public r-validiclust
   (package

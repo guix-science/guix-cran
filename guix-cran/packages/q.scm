@@ -1572,17 +1572,16 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.96.4")
+    (version "0.97")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textstats" version))
        (sha256
-        (base32 "0x0b3zk1lmy0mxjpfnw7nshc9vp1i45gkd53g838ks207sdr8q4l"))))
+        (base32 "0h8fyb8smyyhbfk677a2ldyl6b7sdjl0pzk5bbgz8qymw6yg1zdj"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
-                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-quanteda

@@ -3224,13 +3224,13 @@ R. Designed to be used with long running scripts.")
 (define-public r-notebookutils
   (package
     (name "r-notebookutils")
-    (version "1.5.1")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "notebookutils" version))
        (sha256
-        (base32 "0f1vwc4y91k3yxsbbr7c47z3gwr3zk9dlyp3xx2ggrk4nnqhlafb"))))
+        (base32 "09jqh44jfbbqq34xkr6bznwc7swwjawfjpacikxpg3009i847pbl"))))
     (properties `((upstream-name . "notebookutils")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12319,13 +12319,13 @@ type, and converting formats.  For more information, see the readme file at
 (define-public r-neonstore
   (package
     (name "r-neonstore")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonstore" version))
        (sha256
-        (base32 "1hj45bfx4m8afnggrhq47wxhvc37pkr87ilizxx2xa1f0vrwp8i0"))))
+        (base32 "16xbvqk02ihqv2lilgsmp777v93m2m6px9wcmpg8lm8xhrbyj4gr"))))
     (properties `((upstream-name . "neonstore")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

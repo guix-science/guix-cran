@@ -9240,16 +9240,17 @@ Evaluation Sciences.")
 (define-public r-oenokpm
   (package
     (name "r-oenokpm")
-    (version "2.2.1")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OenoKPM" version))
        (sha256
-        (base32 "0ppp8ijzgv6qvgjl7cnnp1zkcqnyx4h6gyk1f1qskr9izbz84sv6"))))
+        (base32 "1qqfnq0zzmnjjb9rr6qd2l08rn5plkg4xsbrdk7jv1alfnq1b938"))))
     (properties `((upstream-name . "OenoKPM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-openxlsx r-minpack-lm r-ggplot2))
+    (propagated-inputs (list r-openxlsx r-minpack-lm r-gridextra r-ggpubr
+                             r-ggplot2))
     (home-page "https://cran.r-project.org/package=OenoKPM")
     (synopsis
      "Modeling the Kinetics of Carbon Dioxide Production in Alcoholic Fermentation")

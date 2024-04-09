@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -2777,6 +2778,49 @@ interface.  Also provides functions for downloading your results.")
      "This package provides a strong type system for R which supports symbol
 declaration and assignment with type checking and condition checking.")
     (license license:expat)))
+
+(define-public r-rtwig
+  (package
+    (name "r-rtwig")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rTwig" version))
+       (sha256
+        (base32 "1d3h4ym2vrlp04arjxg4s8zd9d5kyxf6ibvv169calsvkd4rfcn7"))))
+    (properties `((upstream-name . "rTwig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytable
+                             r-rmatio
+                             r-rgl
+                             r-rdpack
+                             r-randomcolor
+                             r-r-matlab
+                             r-purrr
+                             r-progressr
+                             r-morpho
+                             r-matrix
+                             r-kit
+                             r-igraph
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-desctools
+                             r-data-table
+                             r-colourvalues
+                             r-cobs))
+    (native-inputs (list r-knitr))
+    (home-page "https://aidanmorales.github.io/rTwig/")
+    (synopsis "Realistic Quantitative Structure Models")
+    (description
+     "Real Twig is a method to correct branch overestimation in quantitative structure
+models.  Overestimated cylinders are correctly tapered using measured twig
+diameters of corresponding tree species.  Supported quantitative structure
+modeling software includes @code{TreeQSM} and @code{SimpleForest}'.  Also
+included is a novel database of twig diameters and tools for fractal analysis of
+point clouds.")
+    (license license:gpl3+)))
 
 (define-public r-rtwalk
   (package
@@ -15664,38 +15708,6 @@ effects.  An efficient Gibbs sampler has been developed to facilitate fast
 computation.  The Markov chain Monte Carlo algorithms of the proposed and
 alternative methods are efficiently implemented in C++.")
     (license license:gpl2)))
-
-(define-public r-robcp
-  (package
-    (name "r-robcp")
-    (version "0.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robcp" version))
-       (sha256
-        (base32 "0v5sb8q7knzs8qb4a8cmnm6n9x52xffcjhcgirlqmgm3ix1cl3mb"))))
-    (properties `((upstream-name . "robcp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=robcp")
-    (synopsis "Robust Change-Point Tests")
-    (description
-     "This package provides robust methods to detect change-points in uni- or
-multivariate time series.  They can cope with corrupted data and heavy tails.
-Focus is on the detection of abrupt changes in location, but changes scale or
-dependence structure can be detected as well.  This package provides tests for
-change detection in uni- and multivariate time series based on Huberized
-versions of CUSUM tests proposed in Duerre and Fried (2019)
-<@code{arXiv:1905.06201>}, and tests for change detection in univariate time
-series based on 2-sample U-statistics or 2-sample U-quantiles as proposed by
-Dehling et al. (2015) <DOI:10.1007/978-1-4939-3076-0_12> and Dehling, Fried and
-Wendler (2020) <DOI:10.1093/biomet/asaa004>.  Furthermore, the packages provides
-tests on changes in the scale or the correlation as proposed in Gerstenberger,
-Vogel and Wendler (2020) <DOI:10.1080/01621459.2019.1629938>, Dehling et al.
-(2017) <DOI:10.1017/S026646661600044X>, and Wied et al. (2014)
-<DOI:10.1016/j.csda.2013.03.005>.")
-    (license license:gpl3)))
 
 (define-public r-robcor
   (package

@@ -11386,6 +11386,30 @@ standardized difference between two groups.  It is especially used to evaluate
 the balance between two groups before and after propensity score matching.")
     (license license:gpl3)))
 
+(define-public r-stcpr6
+  (package
+    (name "r-stcpr6")
+    (version "0.9.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stcpR6" version))
+       (sha256
+        (base32 "1336fdr5gy84j9mj15r4kgc88p53x4alk8z5gd3j4b7f1fd9skpa"))))
+    (properties `((upstream-name . "stcpR6")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-r6))
+    (home-page "https://github.com/shinjaehyeok/stcpR6")
+    (synopsis
+     "Sequential Test and Change-Point Detection Algorithms Based on E-Values / E-Detectors")
+    (description
+     "Algorithms of nonparametric sequential test and online change-point detection
+for streams of univariate (sub-)Gaussian, binary, and bounded random variables,
+introduced in following publications - Shin et al. (2024)
+<doi:10.48550/@code{arXiv.2203.03532>}, Shin et al. (2021)
+<doi:10.48550/@code{arXiv.2010.08082>}.")
+    (license license:gpl3+)))
+
 (define-public r-stcov
   (package
     (name "r-stcov")
@@ -19351,16 +19375,17 @@ efficiently implemented in C++.")
 (define-public r-spinar
   (package
     (name "r-spinar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spINAR" version))
        (sha256
-        (base32 "1g4yms3h7m42zfjix1n2yrxi5zj0v97klry6d4r7n0iwx4rllpp4"))))
+        (base32 "02y0y6xzckzhygs7fwvnd3mgw8ay78wg850d46v4q6vxpb144wjy"))))
     (properties `((upstream-name . "spINAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress r-checkmate))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MFaymon/spINAR")
     (synopsis "(Semi)Parametric Estimation and Bootstrapping of INAR Models")
     (description
@@ -25364,13 +25389,13 @@ ggplot2 package.")
 (define-public r-spabundance
   (package
     (name "r-spabundance")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spAbundance" version))
        (sha256
-        (base32 "1g3kbgjn1rwgniprfmxknygkxa0g8ghhw7nrv7inc56nhhqvxs3r"))))
+        (base32 "02qvgyiyrwaz2jgfp746fyr1bwd8m4lwjijaml9ychq4rdmrfjli"))))
     (properties `((upstream-name . "spAbundance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -25388,7 +25413,7 @@ and spatial abundance models in a Bayesian framework using Markov Chain Monte
 Carlo (MCMC).  Spatial models are fit using Nearest Neighbor Gaussian Processes
 (NNGPs).  Details on NNGP models are given in Datta, Banerjee, Finley, and
 Gelfand (2016) <doi:10.1080/01621459.2015.1044091> and Finley, Datta, and
-Banerjee (2020) <@code{arXiv:2001.09111>}.  Fits single-species and
+Banerjee (2020) <doi:10.18637/jss.v103.i05>.  Fits single-species and
 multi-species spatial and non-spatial versions of generalized linear mixed
 models (Gaussian, Poisson, Negative Binomial), N-mixture models (Royle 2004
 <doi:10.1111/j.0006-341X.2004.00142.x>) and hierarchical distance sampling
@@ -27800,43 +27825,6 @@ estimating their local false discovery rates.  For more details, see
 Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
     (license license:gpl3+)))
 
-(define-public r-snvecr
-  (package
-    (name "r-snvecr")
-    (version "3.9.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "snvecR" version))
-       (sha256
-        (base32 "1ax3ckipylqnwnk2534fd6akk2n7vqwg0nsxyvrig4kqwl1dfhns"))))
-    (properties `((upstream-name . "snvecR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-glue
-                             r-dplyr
-                             r-desolve
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://japhir.github.io/snvecR/")
-    (synopsis "Calculate Earthâs Obliquity and Precession in the Past")
-    (description
-     "Easily calculate precession and obliquity from an orbital solution (defaults to
-ZB18a from Zeebe and Lourens (2019) <doi:10.1126/science.aax0612>) and assumed
-or reconstructed values for tidal dissipation (Td) and dynamical ellipticity
-(Ed).  This is a translation and adaptation of the C-code in the supplementary
-material to Zeebe and Lourens (2022) <doi:10.1029/2021PA004349>, with further
-details on the methodology described in Zeebe (2022)
-<doi:10.3847/1538-3881/ac80f8>.  The name of the C-routine is snvec, which
-refers to the key units of computation: spin vector s and orbit normal vector n.")
-    (license license:gpl3+)))
-
 (define-public r-snsmart
   (package
     (name "r-snsmart")
@@ -28965,13 +28953,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
 (define-public r-smotewb
   (package
     (name "r-smotewb")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMOTEWB" version))
        (sha256
-        (base32 "196arp5gfz066qw5n7q2w6hgx3p9q52hs7a9qva69yrm5qlrmr66"))))
+        (base32 "1vkkzp8vcr1pf010871wl5c6d9knryx2lvqcxn6nfy42ffbr5yx9"))))
     (properties `((upstream-name . "SMOTEWB")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart r-rfast r-rann r-fnn))
@@ -28979,12 +28967,13 @@ the correlation coefficient under sampling from a bivariate normal distribution.
     (synopsis "Imbalanced Resampling using SMOTE with Boosting (SMOTEWB)")
     (description
      "This package provides the SMOTE with Boosting (SMOTEWB) algorithm.  See F.
-@code{SaÄlam}, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.  Also
-SMOTEWB provides faster versions of several resampling methods for imbalanced
-datasets, including SMOTE with Boosting (SMOTEWB), Random Walk Oversampling
-(RWO), ADASYN, Borderline SMOTE (BLSMOTE), Random Over-Sampling (ROS), Random
-Under-Sampling (RUS), Safe-Level SMOTE (SLSMOTE), Relocating Safe-Level SMOTE
-(RSLSMOTE), and Random Over-Sampling Examples (ROSE).")
+@code{SaÄlam}, M. A. Cengiz (2022) <doi:10.1016/j.eswa.2022.117023>.  It is a
+SMOTE-based resampling technique which creates synthetic data on the links
+between nearest neighbors.  SMOTEWB uses boosting weights to determine where to
+generate new samples and automatically decides the number of neighbors for eacg
+sample.  It is robust to noise and outperforms most of the alternatives
+according to Matthew Correlation Coefficient metric.  Alternative resampling
+methods are also available in the package.")
     (license license:expat)))
 
 (define-public r-smotefamily
@@ -43049,13 +43038,13 @@ and Biogeography 21, 109-120).")
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharpshootR" version))
        (sha256
-        (base32 "0qy2glasnsmrdbgx7pvbhi0dzidgkfjl67ay5gkfjdy477n5micy"))))
+        (base32 "1zdkvy8qzps3vynhhc9x157cxf0zjs4ixg1k8ij1xcba6bbcf1yx"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -43073,6 +43062,7 @@ and Biogeography 21, 109-120).")
                              r-circular
                              r-aqp
                              r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ncss-tech/sharpshootR")
     (synopsis "Soil Survey Toolkit")
     (description
@@ -47277,19 +47267,18 @@ object that can handle deciphering and checking versions.")
 (define-public r-semtree
   (package
     (name "r-semtree")
-    (version "0.9.19")
+    (version "0.9.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semtree" version))
        (sha256
-        (base32 "0jasb4r07wv030isgxbbnaa9av2sm62qdzi4fljy2pgf94dx2x6l"))))
+        (base32 "1dcxnlnl5j9dha5bdmj4rn117cbssdzp1gwdnch2pc0234ziq4ys"))))
     (properties `((upstream-name . "semtree")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-strucchange
-                             r-stringr
                              r-sandwich
                              r-rpart-plot
                              r-rpart
@@ -47300,11 +47289,9 @@ object that can handle deciphering and checking versions.")
                              r-future-apply
                              r-expm
                              r-data-table
-                             r-ctsemomx
                              r-crayon
                              r-cluster
-                             r-clisymbols
-                             r-bitops))
+                             r-clisymbols))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/brandmaier/semtree")
     (synopsis "Recursive Partitioning for Structural Equation Models")
@@ -48087,13 +48074,13 @@ generated by spacyr'.  For further reference, see: Stuhler (2022) <doi:
 (define-public r-semfindr
   (package
     (name "r-semfindr")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semfindr" version))
        (sha256
-        (base32 "0a51bpc4m9hq9kyyiibm8gi09lcrjmjw5i1biqnyfdii69yaf2w0"))))
+        (base32 "02p2l5xsy53v6485as8azqamqy6cnjfmxb9zav1wnhm9p7d1f9ss"))))
     (properties `((upstream-name . "semfindr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-lavaan r-ggrepel r-ggplot2))
@@ -55720,13 +55707,13 @@ ML with robust standard errors.")
 (define-public r-sbrl
   (package
     (name "r-sbrl")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbrl" version))
        (sha256
-        (base32 "0waq58bhbfs5g3p2gb888lcsq7h3r3h8llrs5zyhi6529g36y765"))))
+        (base32 "0sr57zfd75ywgv4az0y7jiacalywf36z3gmsjdgmw0adzaxxdcsg"))))
     (properties `((upstream-name . "sbrl")))
     (build-system r-build-system)
     (inputs (list gsl gsl gmp))

@@ -1691,13 +1691,13 @@ version updates.")
 (define-public r-pubmed-miner
   (package
     (name "r-pubmed-miner")
-    (version "1.0.19")
+    (version "1.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmed.mineR" version))
        (sha256
-        (base32 "0yh4gjhh7nw5vh3ksay2z5pgskmasbagzbgb3bfxch9b6arv6kgc"))))
+        (base32 "0apmdrn5bdis55d73j8xgfvv4x54fplmny5c28y5pwa262kchbid"))))
     (properties `((upstream-name . "pubmed.mineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rjsonio r-rcurl r-r2html r-boot))
@@ -4634,13 +4634,13 @@ PRS-PGx Methods by Zhai, S., Zhang, H., Mehrotra, D.V., and Shen, J., 2021
 (define-public r-prsim
   (package
     (name "r-prsim")
-    (version "1.4-4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRSim" version))
        (sha256
-        (base32 "17aqydzv220q15mhn1sir5ly5wzmv7sx1ckmk9fwr97lnf0pdh09"))))
+        (base32 "1imy9blzdk2y4xzmsb86g49zzm59cpi2xrh3bgpw20611a03505d"))))
     (properties `((upstream-name . "PRSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavscalogram r-splus2r r-mev r-lmomco r-goftest))
@@ -4666,7 +4666,9 @@ application example can be found in Brunner et al. (2019)
 wavelet-based multi-site approach can be found in Brunner and Gilleland (2020)
 <doi:10.5194/hess-24-3967-2020>.  A detailed description and evaluation of the
 multi-variable and multi-site weather generator can be found in Brunner et al.
-(2021) <doi:10.5194/esd-12-621-2021>.")
+(2021) <doi:10.5194/esd-12-621-2021>.  A detailed description and evaluation of
+the non-stationary streamflow generator can be found in Brunner and Gilleland
+(2024) <doi:10.1029/2023EF004238>.")
     (license license:gpl3)))
 
 (define-public r-prrd
@@ -5959,17 +5961,17 @@ time-series database, using the @code{PromQL} query language.")
 (define-public r-prompter
   (package
     (name "r-prompter")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prompter" version))
        (sha256
-        (base32 "113gk5wwsaw0kh7z6caarlp7g536w3ibq3bnm53zp35rij7zrynz"))))
+        (base32 "18bbgcirw6z1vwna4bad4f4s4wnfq62bf9mzkakzlrn59kq9rxgc"))))
     (properties `((upstream-name . "prompter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny))
-    (home-page "https://github.com/etiennebacher/prompter")
+    (home-page "https://prompter.etiennebacher.com")
     (synopsis "Add Tooltips in 'Shiny' Apps with 'Hint.css'")
     (description
      "In Shiny apps, it is sometimes useful to store information on a particular item
@@ -8505,13 +8507,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/@code{curConverter.do>}.")
 (define-public r-pricelevels
   (package
     (name "r-pricelevels")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricelevels" version))
        (sha256
-        (base32 "0g3ci22mr4faxhylyjca7bvqh6ikb0bqk0b0yl0fyv8cvhj5g3qs"))))
+        (base32 "0s5b387j1kmj7ynm3h1cai66n8anv4dlzvspnhpr9cwzqvn9z9g9"))))
     (properties `((upstream-name . "pricelevels")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm r-data-table))
@@ -23906,13 +23908,13 @@ package is part of the r4photobiology suite, Aphalo, P. J. (2015)
 (define-public r-phosphoricons
   (package
     (name "r-phosphoricons")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phosphoricons" version))
        (sha256
-        (base32 "0g9qqgxnzi773mjrrzvlykmvqb7dpi2gxc999arbxkdnbp1lv463"))))
+        (base32 "0p14gw09im5zzpsfl0dr9xpcs0c0585flrk3hv2k62ww5n9wcymn"))))
     (properties `((upstream-name . "phosphoricons")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools))

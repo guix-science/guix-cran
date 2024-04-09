@@ -1765,6 +1765,40 @@ description of the methods used in the gtfs2emis model is presented in Vieira,
 J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>.")
     (license license:expat)))
 
+(define-public r-gtexture
+  (package
+    (name "r-gtexture")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtexture" version))
+       (sha256
+        (base32 "1smlnnqsh1akjb2npn73qskq3dd3ypy40v3vkmqdf4qa2qx8yayk"))))
+    (properties `((upstream-name . "gtexture")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-magrittr
+                             r-igraph
+                             r-fitscape
+                             r-dplyr
+                             r-dlookr))
+    (home-page "<https://rbarkerclarke.github.io/gtexture/>")
+    (synopsis
+     "Generalized Application of Co-Occurrence Matrices and Haralick Texture")
+    (description
+     "Generalizes application of gray-level co-occurrence matrix (GLCM) metrics to
+objects outside of images.  The current focus is to apply GLCM metrics to the
+study of biological networks and fitness landscapes that are used in studying
+evolutionary medicine and biology, particularly the evolution of cancer
+resistance.  The package was developed as part of the author's publication in
+Physics in Medicine and Biology Barker-Clarke et al. (2023)
+<doi:10.1088/1361-6560/ace305>.  A general reference to learn more about
+mathematical oncology can be found at Rockne et al. (2019)
+<doi:10.1088/1478-3975/ab1a09>.")
+    (license license:expat)))
+
 (define-public r-gtextras
   (package
     (name "r-gtextras")
@@ -12018,13 +12052,13 @@ this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.7.1")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1g4hs75z5z5wp2jkwvpigyqc0lzmj47jasbiv4pjxvfmipj8mz3b"))))
+        (base32 "1dam3dp32s3ybb656sfczba9vlan6bsd9n8x73p4faikfpjgyysb"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -15645,13 +15679,13 @@ distribution between sample groups.  The plot is created with ggplot2'.")
 (define-public r-ggsankeyfier
   (package
     (name "r-ggsankeyfier")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggsankeyfier" version))
        (sha256
-        (base32 "1ddzjqcc4g6h8gryipa21gwjqza73cq2qchmh2pmm65mj1xip5k5"))))
+        (base32 "1sn7gpkqbgk3adkflnzak29d0zk57d0x6hlv2wm1shq45nawjmcg"))))
     (properties `((upstream-name . "ggsankeyfier")))
     (build-system r-build-system)
     (propagated-inputs (list r-vwline
@@ -21784,13 +21818,13 @@ libraries.")
 (define-public r-geohabnet
   (package
     (name "r-geohabnet")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geohabnet" version))
        (sha256
-        (base32 "0cfn412hc8k5mp1k4w7b3q82335lim4xhjarlfvymaydjrmasgp3"))))
+        (base32 "03d1zv8p5d75qj42g4xfq4fhif304a1wfkcggib5xqwkj5zkqabs"))))
     (properties `((upstream-name . "geohabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -28340,6 +28374,31 @@ Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
      "This package performs Gamma regression, where both mean and shape parameters
 follows lineal regression structures.")
     (license license:gpl2+)))
+
+(define-public r-gamma
+  (package
+    (name "r-gamma")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gamma" version))
+       (sha256
+        (base32 "1n4jd0xvn6ld5adhhanqxhl7nndj4cqf17jp18s6jmrx7jbc3k5f"))))
+    (properties `((upstream-name . "gamma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rxylib r-rlang r-isoplotr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://crp2a.github.io/gamma/")
+    (synopsis
+     "Dose Rate Estimation from in-Situ Gamma-Ray Spectrometry Measurements")
+    (description
+     "Process in-situ Gamma-Ray Spectrometry for Luminescence Dating.  This package
+allows to import, inspect and correct the energy shifts of Gamma-ray spectra.
+It provides methods for estimating the gamma dose rate by the use of a
+calibration curve as described in Mercier and @code{FalguÃ¨res} (2007).  The
+package only supports Canberra CNF and TKA files.")
+    (license license:gpl3)))
 
 (define-public r-gamlssbssn
   (package

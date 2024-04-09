@@ -3274,13 +3274,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmsearch
   (package
     (name "r-dsmsearch")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmSearch" version))
        (sha256
-        (base32 "19r5d61bc4n434sxnndp0nf318pj420skghkiadipbmf2j871h69"))))
+        (base32 "04phbkav0ryj62aqghmlrraai419qlfd03f0as248s1hmwig5xg2"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -20589,13 +20589,13 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
 (define-public r-decisionsupport
   (package
     (name "r-decisionsupport")
-    (version "1.113")
+    (version "1.114")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decisionSupport" version))
        (sha256
-        (base32 "0gxhxjpn9nzn1s7xm9cy9g82b68g8dg6654dbj4qr4aj3cfk14w8"))))
+        (base32 "1vd18v0wi56qd8anhwvvwab98lgh3aj785f6c6nd41ifwp2phzm3"))))
     (properties `((upstream-name . "decisionSupport")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -20607,7 +20607,6 @@ supports basemaps from mapbox <https://www.mapbox.com/> via mapbox-gl-js
                              r-mvtnorm
                              r-msm
                              r-magrittr
-                             r-ggstance
                              r-ggplot2
                              r-fancova
                              r-dplyr

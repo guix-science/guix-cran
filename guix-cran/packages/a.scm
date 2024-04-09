@@ -15205,13 +15205,13 @@ with other people.")
 (define-public r-aides
   (package
     (name "r-aides")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aides" version))
        (sha256
-        (base32 "1ya3baz7azxafl2r79z9lij62b5hpcs8bh428s2f7246sdawpsvb"))))
+        (base32 "0cfi9h2bmjpxrvhbamm808s1pzgw9p9xxj70ickqc7ki8rzzk6cw"))))
     (properties `((upstream-name . "aides")))
     (build-system r-build-system)
     (propagated-inputs (list r-meta r-boot))

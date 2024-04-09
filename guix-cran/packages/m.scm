@@ -2904,21 +2904,29 @@ the linear relation among the output features, see details in Rahman et al
 (define-public r-multivariateanalysis
   (package
     (name "r-multivariateanalysis")
-    (version "0.4.4")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultivariateAnalysis" version))
        (sha256
-        (base32 "0vpk7iplmb0cyrqal90m1y4ym8wng2b8k9ydh26xaga4r974qd2p"))))
+        (base32 "1hphl6swqkfjqbybkcpvf0bda6jf434v7l6pqzlviqzlnww94riv"))))
     (properties `((upstream-name . "MultivariateAnalysis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pcamixdata
+    (propagated-inputs (list r-rstudioapi
+                             r-plotly
+                             r-pcamixdata
+                             r-nbclust
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-ggdendro
+                             r-factoextra
+                             r-ecodist
                              r-crayon
                              r-corrplot
                              r-candisc
-                             r-biotools
-                             r-ape))
+                             r-biotools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MultivariateAnalysis")
     (synopsis "Pacote Para Analise Multivariada")
@@ -2928,7 +2936,7 @@ package estimates dissimilarity measures, builds dendrograms, obtains MANOVA,
 principal components, canonical variables, etc. (Pacote com metodologias de
 analise multivariada para @code{avaliaÃ§Ã£o} de experimentos.  O pacote estima
 medidas de dissimilaridade, construi de dendogramas, obtem a MANOVA, componentes
-principais, @code{variÃ¡veis} @code{canÃ´nicas}, etc.)")
+principais, variaveis canonicas, etc.)")
     (license license:gpl3)))
 
 (define-public r-multivariance
@@ -6603,6 +6611,31 @@ and adjust for possible sample overlap.  Package is based on \"Multi-Trait
 Analysis of Rare-Variant Association Summary Statistics using MTAR\" by Luo, L.,
 Shen, J., Zhang, H., Chhibber, A. Mehrotra, D.V., Tang, Z., 2019 (submitted).")
     (license license:gpl2+)))
+
+(define-public r-mtanan
+  (package
+    (name "r-mtanan")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mtanan" version))
+       (sha256
+        (base32 "10j1p5za9f9g9ygzpljfbnmhp32w6bmx9xwnjl84q32nkvagrmpx"))))
+    (properties `((upstream-name . "mtanan")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mtanan")
+    (synopsis
+     "Single Valued Neutrosophic Kruskal-Wallis and Mann Whitney Tests")
+    (description
+     "Dealing with neutrosophic data in single valued form using score, accuracy and
+certainty functions to calculate ranks of Single Valued Neutrosophic Set (SVNS),
+also to calculate the Mann-Whitney test, and making a post-hoc test after
+rejecting the null hypothesis using the Neutrosophic Statistics Kruskal-Wallis
+test.  For more information see Miari, Mahmoud; Anan, Mohamad Taher; Zeina,
+Mohamed Bisher(2022)
+<https://digitalrepository.unm.edu/nss_journal/vol51/iss1/60/>.")
+    (license license:gpl3)))
 
 (define-public r-mtaft
   (package
@@ -37968,6 +38001,29 @@ are also provided.  For details, see the paper by Jasjeet Sekhon (2007,
 <doi:10.18637/jss.v042.i07>).")
     (license license:gpl3)))
 
+(define-public r-matchgate
+  (package
+    (name "r-matchgate")
+    (version "0.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MatchGATE" version))
+       (sha256
+        (base32 "1kj60sjpmmab8zjcncp7q6nb0j84kzznz3cspp3j0a5w8fjfn9gp"))))
+    (properties `((upstream-name . "MatchGATE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-locpol))
+    (home-page "https://cran.r-project.org/package=MatchGATE")
+    (synopsis "Estimate Group Average Treatment Effects with Matching")
+    (description
+     "Two novel matching-based methods for estimating group average treatment effects
+(GATEs).  The match_y1y0() and match_y1y0_bc() functions are used for imputing
+the potential outcomes based on matching and bias-corrected matching techniques,
+respectively.  The @code{EstGATE}() function is employed to estimate the GATE
+after imputing the potential outcomes.")
+    (license license:gpl3)))
+
 (define-public r-matchfeat
   (package
     (name "r-matchfeat")
@@ -38420,18 +38476,18 @@ regression estimator.")
 (define-public r-mas
   (package
     (name "r-mas")
-    (version "0.2.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mas" version))
        (sha256
-        (base32 "1c62fa1r36nymf2s6lxa6zg0j9zl527szn1gh3m0mcs1nx36lal5"))))
+        (base32 "1d6ca7dj8bxrq0ka552sjb38j004bl1lzhfm14syr4h4wp08028m"))))
     (properties `((upstream-name . "mas")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist r-rcppeigen r-rcpp))
     (home-page "https://cran.r-project.org/package=mas")
-    (synopsis "Membership Association Studies")
+    (synopsis "Marker Association Studies")
     (description
      "Genome-wide association analysis that accommodate membership information,
 variance adjustment, and correlated responses.")

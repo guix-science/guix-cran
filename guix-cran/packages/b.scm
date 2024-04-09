@@ -4547,13 +4547,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "0p46n5yq56pvs73xyxkkdi8pnrr555dmc1br9a4709fdpm5hf5z9"))))
+        (base32 "0jzscb3gcgypv4845v3sxbxkagjnmn4pg4mzqd0ah2zqnwivhrlb"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -14584,13 +14584,13 @@ object- and pure type operation for two big.matrix class objects.")
 (define-public r-bifurcatingr
   (package
     (name "r-bifurcatingr")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bifurcatingr" version))
        (sha256
-        (base32 "1755976gx723gqy94myvh5ng7bn1qisb3488mgix27af3cmrmjfi"))))
+        (base32 "0qk009q0kw8h2j5qkvlpkhcmjw9cac9xqvi1v3r721n7cmx340sx"))))
     (properties `((upstream-name . "bifurcatingr")))
     (build-system r-build-system)
     (propagated-inputs (list r-fmultivar))
@@ -23476,50 +23476,6 @@ clinical trials with noncompliance, and Zhou et al. (2021)
 <doi:10.1080/01621459.2021.1900859>, with an application example on Epidural
 Analgesia.")
     (license license:gpl2+)))
-
-(define-public r-bayesbr
-  (package
-    (name "r-bayesbr")
-    (version "0.0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesbr" version))
-       (sha256
-        (base32 "0zx123xqw2qglwxsnq0jy56kwk6zczslagapij9aj9n5bsifbcmx"))))
-    (properties `((upstream-name . "bayesbr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-magrittr
-                             r-loo
-                             r-ggplot2
-                             r-formula
-                             r-fdrtool
-                             r-dplyr
-                             r-coda
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/pjoao266/bayesbr")
-    (synopsis "Beta Regression on a Bayesian Model")
-    (description
-     "Applies the Beta regression model in the Bayesian statistical view with the
-possibility of adding a spatial effect in the parameters, the Beta regression is
-used when the response variable is a proportion variable, that is, it only
-accepts values between 0 and 1.  The package bayesbr uses rstan package to build
-the Bayesian statistical models.  The main function of the package receives as a
-parameter a form informing the independent variable and the co-variables of the
-model to be made, as output it returns a list with the results of the model.
-For more details see Ferrari and Cribari-Neto (2004)
-<doi:10.1080/0266476042000214501> and Hoffman and Gelman (2014)
-<@code{arXiv:1111.4246>}.")
-    (license license:gpl2)))
 
 (define-public r-bayesbp
   (package

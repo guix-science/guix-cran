@@ -4482,13 +4482,13 @@ be compressed and uncompressed easily to save disk space.")
 (define-public r-hoarder
   (package
     (name "r-hoarder")
-    (version "0.9.4-2")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hoardeR" version))
        (sha256
-        (base32 "1jdxfalmi4p7gwb7jndxbzbklv1fk0c57shnl4jz27s81lndg437"))))
+        (base32 "0maqypigq2942mqbnr7a11iryv6xhhfrnyarqw3r8z5zimjy1y7p"))))
     (properties `((upstream-name . "hoardeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -10649,6 +10649,45 @@ in the mean or second-order structure of high-dimensional time series as
 described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
 <doi:10.1214/16-EJS1155>.")
     (license license:gpl3+)))
+
+(define-public r-hdbayes
+  (package
+    (name "r-hdbayes")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdbayes" version))
+       (sha256
+        (base32 "19c8nxa30sngrz8z01xc2qxkyi4vjjnvqacphm318ianpwi7pi69"))))
+    (properties `((upstream-name . "hdbayes")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-posterior
+                             r-mclust
+                             r-instantiate
+                             r-fs
+                             r-formula-tools
+                             r-enrichwith
+                             r-callr
+                             r-bridgesampling))
+    (home-page "https://github.com/ethan-alt/hdbayes")
+    (synopsis
+     "Bayesian Analysis of Generalized Linear Models with Historical Data")
+    (description
+     "User-friendly functions for leveraging (multiple) historical data set(s) for
+generalized linear models.  Contains functions for sampling from the posterior
+distribution of a generalized linear model using the prior induced by the
+Bayesian hierarchical model, power prior by Ibrahim and Chen (2000)
+<doi:10.1214/ss/1009212673>, normalized power prior by Duan et al. (2006)
+<doi:10.1002/env.752>, normalized asymptotic power prior by Ibrahim et al.
+(2015) <doi:10.1002/sim.6728>, commensurate prior by Hobbs et al. (2011)
+<doi:10.1111/j.1541-0420.2011.01564.x>, robust meta-analytic-predictive prior by
+Schmidli et al. (2014) <doi:10.1111/biom.12242>, and the latent exchangeability
+prior (LEAP) by Alt et al. (2023) <@code{arXiv:2303.05223>}.  The package
+compiles all the @code{CmdStan} models once during installation using the
+instantiate package.")
+    (license license:expat)))
 
 (define-public r-hda
   (package
