@@ -12960,13 +12960,13 @@ stringi'.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyarray" version))
        (sha256
-        (base32 "0m2nmkf8ql8v61l6g5j1gl9cjgic98pidr5dl9rvk3xqchp4rmrj"))))
+        (base32 "007b8jpr843z4mb4ssni00c3j7wyxlrk43x26zgvc741lm8q6f45"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14691,13 +14691,13 @@ based on the morphological tagset from the Universal Dependencies.")
 (define-public r-tidystats
   (package
     (name "r-tidystats")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidystats" version))
        (sha256
-        (base32 "1hlybkzx940nrl9pgvcdvvz95kn4pn6y8dpamj91fjx41blyjcsp"))))
+        (base32 "1cq4xkmjk2q9fds8m21l4dhmr9jivk9n1g199kn3jprjwfydhy96"))))
     (properties `((upstream-name . "tidystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21407,13 +21407,13 @@ information from the projected data.  See Chen and Lam (2023)
 (define-public r-tensormiss
   (package
     (name "r-tensormiss")
-    (version "0.1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorMiss" version))
        (sha256
-        (base32 "0kl20c0z1x38z85pm88ld64xsmlbb9pi0dirwraykm268j7kxfqb"))))
+        (base32 "1q8rdlm829if88cq76iaarwgryawl43ry2gm8k3q8yw3rndfj1v9"))))
     (properties `((upstream-name . "tensorMiss")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor r-rcppeigen r-rcpp))

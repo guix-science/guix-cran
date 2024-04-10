@@ -2157,17 +2157,17 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspm" version))
        (sha256
-        (base32 "07d68b8l3vxihd8wxy50rywldhdg3lwww5vab6cgdahc7vn937fl"))))
+        (base32 "0a5a1daylb5hnb7xhh3c9ypj3p81qih9i92njara29hgz3y5g1dr"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
-    (home-page "https://enchufa2.github.io/bspm/")
+    (home-page "https://cran4linux.github.io/bspm/")
     (synopsis "Bridge to System Package Manager")
     (description
      "Enables binary package installations on Linux distributions.  Provides functions
@@ -21127,13 +21127,13 @@ segmentation wrapper for all algorithms.")
 (define-public r-bayesppdsurv
   (package
     (name "r-bayesppdsurv")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesPPDSurv" version))
        (sha256
-        (base32 "12nazb5dd60vwp7by6an646kg7h0p1141jnk6wgv5f9lj6g45r4y"))))
+        (base32 "1n954qsld509hf47hz7m0998lb1pc8mj0r8i67v0qx9qvr39jmm2"))))
     (properties `((upstream-name . "BayesPPDSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rcppdist r-rcpparmadillo r-rcpp r-dplyr))
@@ -21142,10 +21142,12 @@ segmentation wrapper for all algorithms.")
     (description
      "Bayesian power/type I error calculation and model fitting using the power prior
 and the normalized power prior for proportional hazards models with piecewise
-constant hazard.  The Bayesian clinical trial design methodology is described in
-Chen et al. (2011) <doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and
-Ibrahim (2019) <doi:10.1093/biostatistics/kxy009>.  The proportional hazards
-model with piecewise constant hazard is detailed in Ibrahim et al. (2001)
+constant hazard.  The methodology and examples of applying the package are
+detailed in <doi:10.48550/@code{arXiv.2404.05118>}.  The Bayesian clinical trial
+design methodology is described in Chen et al. (2011)
+<doi:10.1111/j.1541-0420.2011.01561.x>, and Psioda and Ibrahim (2019)
+<doi:10.1093/biostatistics/kxy009>.  The proportional hazards model with
+piecewise constant hazard is detailed in Ibrahim et al. (2001)
 <doi:10.1007/978-1-4757-3447-8>.")
     (license license:gpl3+)))
 
@@ -24300,13 +24302,13 @@ methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>."
 (define-public r-baskexact
   (package
     (name "r-baskexact")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baskexact" version))
        (sha256
-        (base32 "1mvxcrqs374zkp08kf9wap1zgi80x3ifhjrrr7w1fyhpcji3cf4x"))))
+        (base32 "1825avqbbf8zkk9fps0i450zwl3j0armbnblndl9q954g2wzdhs4"))))
     (properties `((upstream-name . "baskexact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

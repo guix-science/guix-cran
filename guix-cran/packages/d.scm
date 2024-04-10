@@ -9701,13 +9701,13 @@ to the carefully selected @code{dittoColors}().")
 (define-public r-dittodb
   (package
     (name "r-dittodb")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dittodb" version))
        (sha256
-        (base32 "1z7xw1cl1drjwq58iz6c6xqz6dpr38g0mdck2yimyjagwpjb43kq"))))
+        (base32 "13w78vhl1skc9073k5aplxm21l0cny8aklp75qljhla5p6ggq02w"))))
     (properties `((upstream-name . "dittodb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-glue r-digest r-dbi))
@@ -13001,13 +13001,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1g81ywl3i0wa86w2d8489hlxavnimd8jrry8ipmf67vm73sxl2p8"))))
+        (base32 "079xhss2mrixgrjacp18bd2kygvh1jgvm38qps6khsg7j7k0d0dr"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))

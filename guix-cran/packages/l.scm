@@ -3326,13 +3326,13 @@ loop enumeration tools.")
 (define-public r-loon-tourr
   (package
     (name "r-loon-tourr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loon.tourr" version))
        (sha256
-        (base32 "1vdxqdsr89gzvsw9gx001rw416586lqyq0rp3g55n1lh6h9cy19d"))))
+        (base32 "1ggy3kkz86lk332pnlihc1i2bki3nks7r2bvl6bprcmds9lg689i"))))
     (properties `((upstream-name . "loon.tourr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tourr r-tibble r-mass r-loon-ggplot r-loon))
@@ -12021,6 +12021,40 @@ testing and significant hits are returned in tabular format.")
 for gathering information about publications and submissions to the Leanpub
 platform.")
     (license license:gpl3)))
+
+(define-public r-leakyiv
+  (package
+    (name "r-leakyiv")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leakyIV" version))
+       (sha256
+        (base32 "1pdxyw9sd78nwy70xlrckdjvdgrhcdjywrnbmilrffpzhb6hgky0"))))
+    (properties `((upstream-name . "leakyIV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvnfast
+                             r-matrix
+                             r-glasso
+                             r-foreach
+                             r-data-table
+                             r-corpcor))
+    (home-page "https://github.com/dswatson/leakyIV")
+    (synopsis "Leaky Instrumental Variables")
+    (description
+     "Instrumental variables (IVs) are a popular and powerful tool for estimating
+causal effects in the presence of unobserved confounding.  However, classical
+methods rely on strong assumptions such as the exclusion criterion, which states
+that instrumental effects must be entirely mediated by treatments.  In the
+so-called \"leaky\" IV setting, candidate instruments are allowed to have some
+direct influence on outcomes, rendering the average treatment effect (ATE)
+unidentifiable.  But with limits on the amount of information leakage, we may
+still recover sharp bounds on the ATE, providing partial identification.  This
+package implements methods for ATE bounding in the leaky IV setting with linear
+structural equations.  For details, see Watson et al. (2024)
+<doi:10.48550/@code{arXiv.2404.04446>}.")
+    (license license:gpl3+)))
 
 (define-public r-leaftime
   (package

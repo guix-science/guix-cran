@@ -2471,6 +2471,28 @@ the natural and fishing mortality of both species.")
 perspective estimator and their confidence intervals.")
     (license license:gpl2+)))
 
+(define-public r-kldest
+  (package
+    (name "r-kldest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kldest" version))
+       (sha256
+        (base32 "0wy2cdkf6jmqw4hw1hs7vdwxvqn5yh4al71b5nvhixby4mck0cm3"))))
+    (properties `((upstream-name . "kldest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rann))
+    (home-page "https://niklhart.github.io/kldest/")
+    (synopsis "Sample-Based Estimation of Kullback-Leibler Divergence")
+    (description
+     "Estimation algorithms for Kullback-Leibler divergence between two probability
+distributions, based on one or two samples, and including uncertainty
+quantification.  Distributions can be uni- or multivariate and continuous,
+discrete or mixed.")
+    (license license:expat)))
+
 (define-public r-klausur
   (package
     (name "r-klausur")

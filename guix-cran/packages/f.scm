@@ -5391,13 +5391,13 @@ and read tabular-data-resources to and from disk.")
 (define-public r-fqar
   (package
     (name "r-fqar")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fqar" version))
        (sha256
-        (base32 "1fdzx91n0k49zjggwiamln86d7j4ghqx6gbqp158g7plwbd8hmgz"))))
+        (base32 "1pirfiynzajbfyczznjjhqlv8z7786d9g62g9l529va0nbh1m85j"))))
     (properties `((upstream-name . "fqar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9513,13 +9513,13 @@ re-producibility in the context of machine-learning.")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "003miaakn8bbx6fnhlwvl2p3303hygckma2fdwkzgmzd44xwv36k"))))
+        (base32 "0pn8vg98yi099z0pmb5r42k596qim12azy4ih4xgj3mb82i3jckq"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9531,7 +9531,7 @@ re-producibility in the context of machine-learning.")
                              r-gmisc
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=flowchart")
+    (home-page "https://bruigtp.github.io/flowchart/")
     (synopsis "Tidy Flowchart Generator")
     (description
      "This package creates participant flow diagrams directly from a dataframe.
@@ -9866,13 +9866,13 @@ data, topological data, functional data or density-valued data.")
 (define-public r-flippant
   (package
     (name "r-flippant")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flippant" version))
        (sha256
-        (base32 "189c7mm56rhwh4d1lrfbp9gn4l4vhi6i0cn9zif6s5c7yryvf3l9"))))
+        (base32 "0sr5mksgfn06jvx3rbc03dhmh9l7w1s6nz609yyw3rgc7snd1w57"))))
     (properties `((upstream-name . "flippant")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -9882,10 +9882,7 @@ data, topological data, functional data or density-valued data.")
                              r-minpack-lm
                              r-magrittr
                              r-ggplot2
-                             r-data-table
-                             r-assertive-numbers
-                             r-assertive-files
-                             r-assertive-base))
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=flippant")
     (synopsis "Dithionite Scramblase Assay Analysis")
     (description
@@ -13317,13 +13314,13 @@ annuity calculation, bond pricing and financial data download.")
 (define-public r-finalsize
   (package
     (name "r-finalsize")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finalsize" version))
        (sha256
-        (base32 "18nyyl8c121kfr22vanvgbma627w98v39d4n34kr8hd8iw8jx5lx"))))
+        (base32 "0sv174v36clz4blvk4d33rkg7w6ylf4a5j4q057z81kkdd0jr042"))))
     (properties `((upstream-name . "finalsize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-checkmate))

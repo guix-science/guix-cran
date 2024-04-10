@@ -4997,6 +4997,26 @@ surrogate outcome to improve inference on a partially missing target outcome\"
 <doi:10.1111/biom.13629>.")
     (license license:gpl3)))
 
+(define-public r-surrogaterank
+  (package
+    (name "r-surrogaterank")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurrogateRank" version))
+       (sha256
+        (base32 "0q90qq3apn8qs6rlmw0vj3iv89mpm85wah2xqjdwvbf8k7hwkgrm"))))
+    (properties `((upstream-name . "SurrogateRank")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SurrogateRank")
+    (synopsis "Rank-Based Test to Evaluate a Surrogate Marker")
+    (description
+     "Uses a novel rank-based nonparametric approach to evaluate a surrogate marker in
+a small sample size setting.  Details are described in Parast et al (2024)
+<doi:10.1093/biomtc/ujad035>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-surrogateoutcome
   (package
     (name "r-surrogateoutcome")
@@ -7609,6 +7629,35 @@ all Lattice graphics capabilities in the usual way.")
      "The strip function deletes components of R model outputs that are useless for
 specific purposes, such as predict[ing], print[ing], summary[izing], etc.")
     (license license:expat)))
+
+(define-public r-stringx
+  (package
+    (name "r-stringx")
+    (version "0.2.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stringx" version))
+       (sha256
+        (base32 "0rcbbc1x07am5ag5fnirvyg7r640pp9cs2vqzs9jlx8xx385p4md"))))
+    (properties `((upstream-name . "stringx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (home-page "https://stringx.gagolewski.com/")
+    (synopsis "Replacements for Base String Functions Powered by 'stringi'")
+    (description
+     "English is the native language for only 5% of the World population.  Also, only
+17% of us can understand this text.  Moreover, the Latin alphabet is the main
+one for merely 36% of the total.  The early computer era, now a very long time
+ago, was dominated by the US. Due to the proliferation of the internet,
+smartphones, social media, and other technologies and communication platforms,
+this is no longer the case.  This package replaces base R string functions (such
+as grep(), tolower(), sprintf(), and strptime()) with ones that fully support
+the Unicode standards related to natural language and date-time processing.  It
+also fixes some long-standing inconsistencies, and introduces some new, useful
+features.  Thanks to ICU (International Components for Unicode) and stringi',
+they are fast, reliable, and portable across different platforms.")
+    (license license:gpl2+)))
 
 (define-public r-stringstatic
   (package
@@ -23111,6 +23160,32 @@ Includes the locations and some characteristics of major public hospitals in
 Greece.")
     (license license:gpl2+)))
 
+(define-public r-spaths
+  (package
+    (name "r-spaths")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spaths" version))
+       (sha256
+        (base32 "0i4awslzygkivza1xbdq0bb9a9sy1nkk94mf2v1lnla6gp1dgyh7"))))
+    (properties `((upstream-name . "spaths")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ChristianDueben/spaths")
+    (synopsis "Shortest Paths Between Points in Grids")
+    (description
+     "Shortest paths between points in grids.  Optional barriers and custom transition
+functions.  Applications regarding planet Earth, as well as generally spheres
+and planes.  Optimized for computational performance, customizability, and user
+friendliness.  Graph-theoretical implementation tailored to gridded data.
+Currently focused on Dijkstra's (1959) <doi:10.1007/BF01386390> algorithm.
+Future updates broaden the scope to other least cost path algorithms and to
+centrality measures.")
+    (license license:expat)))
+
 (define-public r-spathial
   (package
     (name "r-spathial")
@@ -29796,38 +29871,6 @@ similarities between any number of taxonomic groups, and also for assessing
 uniqueness of giving taxon.  It is possible to use smirnov() output as a
 distance measure: convert it to distance by \"as.dist(1 - smirnov(x))\".")
     (license license:gpl2+)))
-
-(define-public r-smile
-  (package
-    (name "r-smile")
-    (version "1.0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smile" version))
-       (sha256
-        (base32 "0781rzkqwpqnl22phxdcf533p55pshfp4v01k8d1bhd5yvr13y7k"))))
-    (properties `((upstream-name . "smile")))
-    (build-system r-build-system)
-    (inputs (list proj geos gdal))
-    (propagated-inputs (list r-sf
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mvtnorm
-                             r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://lcgodoy.me/smile/")
-    (synopsis "Spatial Misalignment: Interpolation, Linkage, and Estimation")
-    (description
-     "This package provides functions to estimate, predict and interpolate areal data.
- For estimation and prediction we assume areal data is an average of an
-underlying continuous spatial process as in Moraga et al. (2017)
-<doi:10.1016/j.spasta.2017.04.006>, Johnson et al. (2020)
-<doi:10.1186/s12942-020-00200-w>, and Wilson and Wakefield (2020)
-<doi:10.1093/biostatistics/kxy041>.  The interpolation methodology is (mostly)
-based on Goodchild and Lam (1980, ISSN:01652273).")
-    (license license:gpl3)))
 
 (define-public r-smidm
   (package
@@ -41666,13 +41709,13 @@ datetime picker is an input field for selecting both a date and a time.")
 (define-public r-shinydashboardplus
   (package
     (name "r-shinydashboardplus")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinydashboardPlus" version))
        (sha256
-        (base32 "10sdb1vddx2ij867pqijr63l4233hw1vnn7mzbs0z23g77x8ra29"))))
+        (base32 "11ckx8il1v4jk26ss0bylk73xb5bh3xd2d5421i5s8wlxlwd0z5q"))))
     (properties `((upstream-name . "shinydashboardPlus")))
     (build-system r-build-system)
     (arguments
@@ -44556,13 +44599,13 @@ Francisco data portal (@code{DataSF})
 (define-public r-sfnetworks
   (package
     (name "r-sfnetworks")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfnetworks" version))
        (sha256
-        (base32 "0caqqcdkm5g8f08k7dws6gcm560m88w6g98sbx0bsamf54cxda33"))))
+        (base32 "0q64ki4ylgkwnz4g43pq43hv9lspi1akyssjpbd4947x69hlyhiz"))))
     (properties `((upstream-name . "sfnetworks")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -46358,41 +46401,6 @@ package are referenced from Zoran B. @code{PopoviÄ} (2017)
 error-monitoring service.  It will inform about errors in real-time, and
 includes integration with the Plumber package.")
     (license license:expat)))
-
-(define-public r-sentopics
-  (package
-    (name "r-sentopics")
-    (version "0.7.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sentopics" version))
-       (sha256
-        (base32 "0gi52lxkmhbhlsbpamwcrji1y664lrwk3k0pigc2gad3za9rdimc"))))
-    (properties `((upstream-name . "sentopics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpphungarian
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quanteda
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/odelmarcelle/sentopics")
-    (synopsis "Tools for Joint Sentiment and Topic Analysis of Textual Data")
-    (description
-     "This package provides a framework that joins topic modeling and sentiment
-analysis of textual data.  The package implements a fast Gibbs sampling
-estimation of Latent Dirichlet Allocation (Griffiths and Steyvers (2004)
-<doi:10.1073/pnas.0307752101>) and Joint Sentiment/Topic Model (Lin, He, Everson
-and Ruger (2012) <doi:10.1109/TKDE.2011.48>).  It offers a variety of helpers
-and visualizations to analyze the result of topic modeling.  The framework also
-allows enriching topic models with dates and externally computed sentiment
-measures.  A flexible aggregation scheme enables the creation of time series of
-sentiment or topical proportions from the enriched topic models.  Moreover, a
-novel method jointly aggregates topic proportions and sentiment measures to
-derive time series of topical sentiment.")
-    (license license:gpl3+)))
 
 (define-public r-sentometrics
   (package

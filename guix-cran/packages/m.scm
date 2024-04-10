@@ -3792,13 +3792,13 @@ multiple phenotypes (separately or in joint model).")
 (define-public r-multipanelfigure
   (package
     (name "r-multipanelfigure")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multipanelfigure" version))
        (sha256
-        (base32 "1jy23qp49kxn83gnrls6ci247zd430zgbyab1rn7l6ahazzcra72"))))
+        (base32 "0f35hfpd5sxjawpq33bwlabppfy8s7x53p6fmzpxlpdgnw61kg7v"))))
     (properties `((upstream-name . "multipanelfigure")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -3806,10 +3806,7 @@ multiple phenotypes (separately or in joint model).")
                              r-magick
                              r-gtable
                              r-gridgraphics
-                             r-ggplot2
-                             r-assertive-numbers
-                             r-assertive-files
-                             r-assertive-base))
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=multipanelfigure")
     (synopsis "Infrastructure to Assemble Multi-Panel Figures (from Grobs)")
@@ -7260,13 +7257,13 @@ model(s) by leveraging all available features.")
 (define-public r-msmix
   (package
     (name "r-msmix")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSmix" version))
        (sha256
-        (base32 "0zwrd6gj2rsijqdclq07dqg3a40sq80jkrx71ndfnjwp97sgqg60"))))
+        (base32 "0vgp4s4fn2c834d2i51nayiix33vvpb0ijkb3442m4n6fsj6n6zn"))))
     (properties `((upstream-name . "MSmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7277,6 +7274,7 @@ model(s) by leveraging all available features.")
                              r-rcolorbrewer
                              r-rankcluster
                              r-gridextra
+                             r-gmp
                              r-ggplot2
                              r-ggbump
                              r-foreach
@@ -17598,13 +17596,13 @@ filter methods built-in methods of any machine-learning algorithm are supported.
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "1nxqbd0lai3c5yvcv9n0nmziyfjyylpcpm864l89smjy17py5crw"))))
+        (base32 "1cwk9d38315pfa9r6r3m3z4miwkk9b1mxs1c5phw2sjx2b3v9ilf"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tf
@@ -24646,6 +24644,33 @@ files.")
 visualizations of microbial pan-genomes.")
     (license license:gpl2)))
 
+(define-public r-micronutr
+  (package
+    (name "r-micronutr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "micronutr" version))
+       (sha256
+        (base32 "0gi2d8xkl1df5sncp4ndljfpd2wgkv9d634k3rk1cw4if0dp955c"))))
+    (properties `((upstream-name . "micronutr")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://nutriverse.io/micronutr/")
+    (synopsis "Determining Vitamin and Mineral Status of Populations")
+    (description
+     "Vitamin and mineral deficiencies continue to be a significant public health
+problem.  This is particularly critical in developing countries where
+deficiencies to vitamin A, iron, iodine, and other micronutrients lead to
+adverse health consequences.  Cross-sectional surveys are helpful in answering
+questions related to the magnitude and distribution of deficiencies of selected
+vitamins and minerals.  This package provides tools for calculating and
+determining select vitamin and mineral deficiencies based on World Health
+Organization (WHO) guidelines found at
+<https://www.who.int/teams/nutrition-and-food-safety/databases/vitamin-and-mineral-nutrition-information-system>.")
+    (license license:gpl3+)))
+
 (define-public r-microniche
   (package
     (name "r-microniche")
@@ -29235,13 +29260,13 @@ longitudinal studies (Metwally AA, et al., Microbiome, 2018
 (define-public r-metalite-table1
   (package
     (name "r-metalite-table1")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite.table1" version))
        (sha256
-        (base32 "042y400x994qhwidw5nadxf8mqd6kkrl081bzi6v1bqa17y8qw6c"))))
+        (base32 "1vg6mprn2c633qr5v1rfgbg5bwc621chy69c8k1yz700rhzapcfa"))))
     (properties `((upstream-name . "metalite.table1")))
     (build-system r-build-system)
     (propagated-inputs (list r-reactable r-r2rtf r-metalite r-jsonlite
@@ -40067,28 +40092,6 @@ The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
 
-(define-public r-mapmisc
-  (package
-    (name "r-mapmisc")
-    (version "2.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapmisc" version))
-       (sha256
-        (base32 "1wrr7xhhrpv8bchg4yrm8qax89whkrg8z03vhw7f8fzllr7wq7cb"))))
-    (properties `((upstream-name . "mapmisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mapmisc")
-    (synopsis "Utilities for Producing Maps")
-    (description
-     "This package provides a minimal, light-weight set of tools for producing nice
-looking maps in R, with support for map projections.  See Brown (2016)
-<doi:10.32614/RJ-2016-005>.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
@@ -41821,13 +41824,13 @@ from an image, using mathematical algorithms.")
 (define-public r-makemyprior
   (package
     (name "r-makemyprior")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makemyprior" version))
        (sha256
-        (base32 "0a99jabji1rlpgxayxvydnvp8wbbg6fb0694xbvwyqqva18yb9m2"))))
+        (base32 "02zhgskkfr964g813rly0lym4j0msgmyggfgz6l00vcpnffqy9fq"))))
     (properties `((upstream-name . "makemyprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

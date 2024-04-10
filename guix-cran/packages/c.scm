@@ -2232,13 +2232,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "19grpwlywxdl6bz0i08hwdj6d66s29mlhkl22p877drkgaqyccfj"))))
+        (base32 "03i2qiwrj33nssgpmjgzkd99q59w4d13h97pjj8ry2vl3rknzvz9"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -14881,31 +14881,30 @@ downloaded from <https://shop.acer.org/acer-conquest-5.html>.")
 (define-public r-conover-test
   (package
     (name "r-conover-test")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conover.test" version))
        (sha256
-        (base32 "0f1p10klidk1xic1wd48j9rjh2fb3z6pfjx4y021lglx1w3av68k"))))
+        (base32 "0x0wzxdg4pkkr5yqrapvq04i1gc7qa6c7f44skcmq3qpfziq3fpj"))))
     (properties `((upstream-name . "conover.test")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=conover.test")
     (synopsis "Conover-Iman Test of Multiple Comparisons Using Rank Sums")
     (description
-     "Computes the Conover-Iman test (1979) for stochastic dominance and reports the
-results among multiple pairwise comparisons after a Kruskal-Wallis test for
-stochastic dominance among k groups (Kruskal and Wallis, 1952).  The
-interpretation of stochastic dominance requires an assumption that the CDF of
-one group does not cross the CDF of the other.  conover.test makes k(k-1)/2
-multiple pairwise comparisons based on Conover-Iman t-test-statistic of the rank
-differences.  The null hypothesis for each pairwise comparison is that the
-probability of observing a randomly selected value from the first group that is
-larger than a randomly selected value from the second group equals one half;
-this null hypothesis corresponds to that of the Wilcoxon-Mann-Whitney rank-sum
-test.  Like the rank-sum test, if the data can be assumed to be continuous, and
-the distributions are assumed identical except for a difference in location,
-Conover-Iman test may be understood as a test for median difference.
+     "Computes the Conover-Iman test (1979) for 0th-order stochastic dominance and
+reports the results among multiple pairwise comparisons after a Kruskal-Wallis
+omnibus test for i0th-order stochastic dominance among k groups (Kruskal and
+Wallis, 1952).  conover.test makes k(k-1)/2 multiple pairwise comparisons based
+on Conover-Iman t-test-statistic of the rank differences.  The null hypothesis
+for each pairwise comparison is that the probability of observing a randomly
+selected value from the first group that is larger than a randomly selected
+value from the second group equals one half; this null hypothesis corresponds to
+that of the Wilcoxon-Mann-Whitney rank-sum test.  Like the rank-sum test, if the
+data can be assumed to be continuous, and the distributions are assumed
+identical except for a difference in location, Conover-Iman test may be
+understood as a test for median difference and for mean difference.
 conover.test accounts for tied ranks.  The Conover-Iman test is strictly valid
 if and only if the corresponding Kruskal-Wallis null hypothesis is rejected.")
     (license license:gpl2)))
@@ -17558,6 +17557,34 @@ MASS and the lm() functions of stats'.")
 space in line with the hypothesis by chance.  The package comes with a Shiny
 application in which the calculations can be conducted as well.")
     (license license:gpl2+)))
+
+(define-public r-complex
+  (package
+    (name "r-complex")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "complex" version))
+       (sha256
+        (base32 "1f1xyvapswfsd7gbw8279m1pdjrry68hkci69d9h3gwav2v3fi4l"))))
+    (properties `((upstream-name . "complex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-pracma
+                             r-nloptr
+                             r-mvtnorm
+                             r-legion
+                             r-greybox))
+    (home-page "https://github.com/config-i1/complex")
+    (synopsis "Time Series Analysis and Forecasting Using Complex Variables")
+    (description
+     "Set of function implementing the instruments for complex-valued modelling,
+including time series analysis and forecasting.  This is based on the monograph
+by Svetunkov Sergey and Svetunkov Ivan \"Complex-valued Econometrics with
+Examples in R\" which is in press by Springer (expected to be published in 2024).")
+    (license license:lgpl2.1)))
 
 (define-public r-completejourney
   (package
@@ -33099,13 +33126,13 @@ package.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "1vmgxj59iyhmfbr1vjisr8ml9ql2i1pi0wlhm3gz3cwng3cwb392"))))
+        (base32 "1h8kk2zjp5c86a2r64ad88zs1w80gc5x8dlr4a16h9w6r98zjxpd"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))

@@ -2022,21 +2022,21 @@ Gneiting (2020) <@code{arXiv:1909.03725>}.")
 (define-public r-isocountry
   (package
     (name "r-isocountry")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isocountry" version))
        (sha256
-        (base32 "0z9m666h86zjzbfv1fvnhajcqzywc0bswvhj5rax2x1gzg2rc4fc"))))
+        (base32 "0n2sx731jy42g3yr3c6jba1x3fx42rczq95cwi94f4i78vsphl4f"))))
     (properties `((upstream-name . "isocountry")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
     (home-page "https://m-muecke.github.io/isocountry/")
     (synopsis "ISO 3166-1 Country Codes")
     (description
-     "ISO 3166-1 country codes provided by the International Organization for
-Standardization.")
+     "ISO 3166-1 country codes and ISO 4217 currency codes provided by the
+International Organization for Standardization.")
     (license license:expat)))
 
 (define-public r-isocor

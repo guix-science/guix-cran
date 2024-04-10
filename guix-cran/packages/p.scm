@@ -14832,13 +14832,13 @@ provided in the separate package pomdp.  Kaelbling, Littman and Cassandra (1998)
 (define-public r-pomdp
   (package
     (name "r-pomdp")
-    (version "1.1.3")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomdp" version))
        (sha256
-        (base32 "0fw8phi09c7i301v5dankplnhx0i099npsdc9b2hfqif5ykhh7f2"))))
+        (base32 "1jsrq7dj86b0a0mmwwwms1q09jnd85pvarn0czm3gpdq6sff1bdf"))))
     (properties `((upstream-name . "pomdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -28782,6 +28782,32 @@ approximate the derivatives.  The minimax tilting method suggested by
 <doi:10.1111/rssb.12162> is also supported.  Graph-based methods are also
 provided that can be used to simplify pedigrees.")
     (license license:gpl3)))
+
+(define-public r-pedmermaid
+  (package
+    (name "r-pedmermaid")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pedMermaid" version))
+       (sha256
+        (base32 "135pmjhhg2f8fgp3x5dddfssbfkdwxq86mlpqzhfiwn9pa07xbfc"))))
+    (properties `((upstream-name . "pedMermaid")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nilforooshan/pedMermaid")
+    (synopsis "Pedigree Mermaid Syntax")
+    (description
+     "Generate Mermaid syntax for a pedigree flowchart from a pedigree data frame.
+Mermaid syntax is commonly used to generate plots, charts, diagrams, and
+flowcharts.  It is a textual syntax for creating reproducible illustrations.
+This package generates Mermaid syntax from a pedigree data frame to visualize a
+pedigree flowchart.  The Mermaid syntax can be embedded in a Markdown or R
+Markdown file, or viewed on Mermaid editors and renderers.  Links shape, style,
+and orientation can be customized via function arguments, and nodes shapes and
+styles can be customized via optional columns in the pedigree data frame.")
+    (license license:gpl3+)))
 
 (define-public r-pedigreetools
   (package

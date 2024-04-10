@@ -1504,31 +1504,22 @@ and as close as possible to p[2]% of restaurants receive the second top grade.")
 (define-public r-quantilegh
   (package
     (name "r-quantilegh")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantileGH" version))
        (sha256
-        (base32 "18qdrrlqhjlqnxvinf9kwizbpd06pvgniy5wjq74x1l63d7n2k6z"))))
+        (base32 "0y1w2bsdyc0nmckxjq4ajxnwj8afwlpa8bgy5m8850x9xg99jab9"))))
     (properties `((upstream-name . "QuantileGH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-tclust
-                             r-sn
-                             r-scales
-                             r-rstpm2
-                             r-mixtools
-                             r-latex2exp
-                             r-goftest
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-tukeygh77 r-tclust r-mixtools r-fmx))
     (home-page "https://cran.r-project.org/package=QuantileGH")
     (synopsis
      "Quantile Least Mahalanobis Distance Estimator for Tukey g-&-h Mixture")
     (description
      "This package provides functions for simulation, estimation, and model selection
-of finite mixtures of Tukey's g-and-h distributions.")
+of finite mixtures of Tukey g-and-h distributions.")
     (license license:gpl2)))
 
 (define-public r-quantileda

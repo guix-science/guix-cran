@@ -2688,17 +2688,18 @@ Cellwise and Casewise Contamination and Missing Data.")
 (define-public r-gsdesign2
   (package
     (name "r-gsdesign2")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign2" version))
        (sha256
-        (base32 "12wydy7gx2aml2i82adsqafqaq7sg6zvab38xwqp46jnmqc1isyk"))))
+        (base32 "0kyj5pv5cr8ljbhzsly70115czhgx5wrpcgpd0jvv2djjf21klh2"))))
     (properties `((upstream-name . "gsDesign2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-survival
                              r-rcpp
                              r-r2rtf
                              r-npsurvss
@@ -2725,13 +2726,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.1")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "065nyxkcvfdxinbh03jayrh1fqf0pd0ppy5550wcrdlc66628swg"))))
+        (base32 "171xbfyrnrsncg4znd8m0r1r9kxrdcxrs03ncmchq1qifq5nc4al"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -5446,16 +5447,17 @@ oceanographic data using image processing methods based on Gradient Recognition.
 (define-public r-greatr
   (package
     (name "r-greatr")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greatR" version))
        (sha256
-        (base32 "0mibjbzyk7fvmma596vs9mlf43spzx8qk6aj0622ajxb6lszdqmm"))))
+        (base32 "0fb065y4k7zsxb91kswssfq8zlg1p9780mx8wnzxn1pydckn4z3n"))))
     (properties `((upstream-name . "greatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
+                             r-patchwork
                              r-optimization
                              r-neldermead
                              r-ggplot2
@@ -5468,7 +5470,7 @@ oceanographic data using image processing methods based on Gradient Recognition.
     (synopsis "Gene Registration from Expression and Time-Courses in R")
     (description
      "This package provides a tool for registering (aligning) gene expression profiles
-between two species (reference data and data to transform).")
+between reference and query data.")
     (license license:gpl3+)))
 
 (define-public r-grcregression
@@ -16873,13 +16875,13 @@ normal distributions and confidence intervals.")
 (define-public r-ggmulti
   (package
     (name "r-ggmulti")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggmulti" version))
        (sha256
-        (base32 "0cynzl5aamm8ra6jz3j6n2frd680f35p3f38gcx12zsk1vzsl4fr"))))
+        (base32 "071h76imfsm6p9ml9pkfsar3d6z1nawd9m7f82smy4csb58iz5i3"))))
     (properties `((upstream-name . "ggmulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr r-cli))
@@ -21376,13 +21378,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "1.1.9")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0r7li5hp52kf8ra2pdvwfxz8anr3m15zihfn6in2z6xs754nlc0s"))))
+        (base32 "1j9rra3x4wa3zw2ah6cghfqfszhv4hy1j695mz61r7qjagwlb5ah"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21404,6 +21406,7 @@ classes and functions.")
                              r-gpvecchia
                              r-gpgp
                              r-fields
+                             r-fastgp
                              r-dotcall64
                              r-dfoptim
                              r-data-table
@@ -21414,21 +21417,21 @@ classes and functions.")
      "Procedures for Gaussian and Non Gaussian Geostatistical (Large) Data Analysis")
     (description
      "This package provides functions for Gaussian and Non Gaussian (bivariate)
-spatial and spatio-temporal data analysis are provided for a) simulation and
-inference for random fields using standard likelihood and a likelihood
-approximation method called weighted composite likelihood based on pairs and b)
-prediction using (local) best linear unbiased prediction.  Weighted composite
-likelihood can be very efficient for estimating massive datasets.  Both
-regression and spatial (temporal) dependence analysis can be jointly performed.
-Covariance functions for spatial and spatial-temporal data on Euclidean domains
-and spheres are provided.  There are also many useful functions for plotting and
-performing diagnostic analysis.  Different non Gaussian random fields can be
-considered in the analysis.  Among them, random fields with marginal
-distributions such as Skew-Gaussian, Student-t, Tukey-h, Sin-Arcsin, Two-piece,
-Weibull, Gamma, Log-Gaussian, Binomial, Negative Binomial and Poisson.  See the
-URL for the papers associated with this package, as for instance, Bevilacqua and
-Gaetan (2015) <doi:10.1007/s11222-014-9460-6>, Bevilacqua et al. (2016)
-<doi:10.1007/s13253-016-0256-3>, Vallejos et al. (2020)
+spatial and spatio-temporal data analysis are provided for a) (fast) simulation
+of random fields, b) inference for random fields using standard likelihood and a
+likelihood approximation method called weighted composite likelihood based on
+pairs and b) prediction using (local) best linear unbiased prediction.  Weighted
+composite likelihood can be very efficient for estimating massive datasets.
+Both regression and spatial (temporal) dependence analysis can be jointly
+performed.  Flexible covariance models for spatial and spatial-temporal data on
+Euclidean domains and spheres are provided.  There are also many useful
+functions for plotting and performing diagnostic analysis.  Different non
+Gaussian random fields can be considered in the analysis.  Among them, random
+fields with marginal distributions such as Skew-Gaussian, Student-t, Tukey-h,
+Sin-Arcsin, Two-piece, Weibull, Gamma, Log-Gaussian, Binomial, Negative Binomial
+and Poisson.  See the URL for the papers associated with this package, as for
+instance, Bevilacqua and Gaetan (2015) <doi:10.1007/s11222-014-9460-6>,
+Bevilacqua et al. (2016) <doi:10.1007/s13253-016-0256-3>, Vallejos et al. (2020)
 <doi:10.1007/978-3-030-56681-4>, Bevilacqua et.  al (2020)
 <doi:10.1002/env.2632>, Bevilacqua et.  al (2021) <doi:10.1111/sjos.12447>,
 Bevilacqua et al. (2022) <doi:10.1016/j.jmva.2022.104949>, Morales-Navarrete et
