@@ -3370,23 +3370,24 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1z8r4wk57zxw4pddjinid22lh7z11yxbfk1acmwp6yql3nhljxb9"))))
+        (base32 "166ac8cr6rnpxsr8pd13xsnz3ngaq0z8qhva37ns7123kdpg81lf"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-reshape2
                              r-lme4
                              r-ggplot2
+                             r-emmeans
                              r-dplyr
                              r-agricolae))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rtpcr")
+    (home-page "https://github.com/mirzaghaderi/rtpcr")
     (synopsis "qPCR Data Analysis")
     (description
      "Various methods are employed for statistical analysis and graphical presentation

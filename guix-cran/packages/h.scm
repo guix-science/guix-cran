@@ -9362,6 +9362,38 @@ generated and can be combined using string interpolation.  Based on the glue
 package.")
     (license license:expat)))
 
+(define-public r-hdxboxer
+  (package
+    (name "r-hdxboxer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HDXBoxeR" version))
+       (sha256
+        (base32 "10p41sawddrdpj5sji1jzp63hr6v6hvihb4n3yzci5wvh2a2lx9c"))))
+    (properties `((upstream-name . "HDXBoxeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wrapr r-tidyr r-stringr r-rcolorbrewer r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=HDXBoxeR")
+    (synopsis "Analysis of Hydrogen-Deuterium Exchange Mass-Spectrometry Data")
+    (description
+     "This package provides a protocol that facilitates the processing and analysis of
+Hydrogen-Deuterium Exchange Mass Spectrometry data using p-value statistics and
+Critical Interval analysis.  It provides a pipeline for analyzing data from
+HDXExaminer (Sierra Analytics, Trajan Scientific), automating matching and
+comparison of protein states through Welch's T-test and the Critical Interval
+statistical framework.  Additionally, it simplifies data export, generates Pymol
+scripts, and ensures calculations meet publication standards.  HDX@code{BoxeR}
+assists in various aspects of hydrogen-deuterium exchange data analysis,
+including reprocessing data, calculating parameters, identifying significant
+peptides, generating plots, and facilitating comparison between protein states.
+For details check papers by Hageman and Weis (2019)
+<doi:10.1021/acs.analchem.9b01325> and Masson et al. (2019)
+<doi:10.1038/s41592-019-0459-y>.")
+    (license license:gpl2+)))
+
 (define-public r-hdtweedie
   (package
     (name "r-hdtweedie")

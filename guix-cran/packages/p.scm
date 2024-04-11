@@ -8976,13 +8976,13 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
 (define-public r-pressure
   (package
     (name "r-pressure")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pressuRe" version))
        (sha256
-        (base32 "1i73706wpa06zaz5zdb25dshpzwdfyxl160s8nr4pjx5bczaigsh"))))
+        (base32 "14cidhyfngzimpxj7cgb1588dzr363dqbngh2rahhcg5rhivz9zc"))))
     (properties `((upstream-name . "pressuRe")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8999,7 +8999,7 @@ tests developed in Pitarakis, J. (2023) <doi:10.1017/S0266466623000154>.")
                              r-gdistance
                              r-dplyr
                              r-abind))
-    (home-page "https://cran.r-project.org/package=pressuRe")
+    (home-page "https://github.com/Telfer/pressuRe")
     (synopsis "Imports, Processes, and Visualizes Biomechanical Pressure Data")
     (description
      "Allows biomechanical pressure data from a range of systems to be imported and
@@ -9008,8 +9008,9 @@ let the user define regions (masks) to be analyzed.  Also includes functions for
 visualizing and animating pressure data.  Example methods are described in Shi
 et al., (2022) <doi:10.1038/s41598-022-19814-0>, Lee et al., (2014)
 <doi:10.1186/1757-1146-7-18>, van der Zward et al., (2014)
-<doi:10.1186/1757-1146-7-20>, and Najafi et al., (2010)
-<doi:10.1016/j.gaitpost.2009.09.003>.")
+<doi:10.1186/1757-1146-7-20>, Najafi et al., (2010)
+<doi:10.1016/j.gaitpost.2009.09.003>, Cavanagh and Rodgers (1987)
+<doi:10.1016/0021-9290(87)90255-7>.")
     (license license:expat)))
 
 (define-public r-presspurt
@@ -10339,13 +10340,13 @@ can be used in place of base::stopifnot().")
 (define-public r-precommit
   (package
     (name "r-precommit")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precommit" version))
        (sha256
-        (base32 "04rgaa4jq8hykrpkfzwx6vydkb8r3rnm2zi8pp5skvqjy863hzwg"))))
+        (base32 "15ll48m3aw7gg99vqvbrygms6hwlpgmpnz56n7x1drqwzl59qgf7"))))
     (properties `((upstream-name . "precommit")))
     (build-system r-build-system)
     (inputs (list git))
@@ -20924,30 +20925,6 @@ Completely At Random) in the context of missing data as introduced in Michel et
 al. (2021) <@code{arXiv:2109.10150>}.")
     (license license:gpl3)))
 
-(define-public r-pki
-  (package
-    (name "r-pki")
-    (version "0.1-12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PKI" version))
-       (sha256
-        (base32 "0nidg6l9nrmpyimi502fydy22r247w9i4ngb2xdbxjvfhr17m0xd"))))
-    (properties `((upstream-name . "PKI")))
-    (build-system r-build-system)
-    (inputs (list zlib openssl))
-    (propagated-inputs (list r-base64enc))
-    (native-inputs (list pkg-config))
-    (home-page "http://www.rforge.net/PKI")
-    (synopsis "Public Key Infrastucture for R Based on the X.509 Standard")
-    (description
-     "Public Key Infrastucture functions such as verifying certificates, RSA
-encription and signing which can be used to build PKI infrastructure and perform
-cryptographic tasks.")
-    (license (list license:gpl2 license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-pkgverse
   (package
     (name "r-pkgverse")
@@ -28872,13 +28849,13 @@ pedigree structure ('Vazquez et al., 2010') <doi:10.2527/jas.2009-1952>.")
 (define-public r-pedgene
   (package
     (name "r-pedgene")
-    (version "3.8")
+    (version "3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedgene" version))
        (sha256
-        (base32 "150cfqk8krrjm8v173ag06ia95n30xvx6vvxhzyf15djniidfb6b"))))
+        (base32 "18b0galqql6pci0bfy8k93p29mqsk707wz4lr72plnciqg04l5sf"))))
     (properties `((upstream-name . "pedgene")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-matrix r-kinship2 r-compquadform))
@@ -30152,6 +30129,44 @@ moving average models.  Some original methods including Boshnakov & Iqelan
 (2009) <doi:10.1111/j.1467-9892.2009.00617.x>, Boshnakov (1996)
 <doi:10.1111/j.1467-9892.1996.tb00281.x>.")
     (license license:gpl2+)))
+
+(define-public r-pctax
+  (package
+    (name "r-pctax")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pctax" version))
+       (sha256
+        (base32 "153vbgs3fw3x5n20wn58r3958kqrzcx0y15z5xjyc0lzhc66bzfs"))))
+    (properties `((upstream-name . "pctax")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-pcutils
+                             r-magrittr
+                             r-ggrepel
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnewscale
+                             r-dplyr
+                             r-ade4))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Asa12138/pctax")
+    (synopsis "Professional Comprehensive Omics Data Analysis")
+    (description
+     "This package provides a comprehensive suite of tools for analyzing omics data.
+It includes functionalities for alpha diversity analysis, beta diversity
+analysis, differential abundance analysis, community assembly analysis,
+visualization of phylogenetic tree, and functional enrichment analysis.  With a
+progressive approach, the package offers a range of analysis methods to explore
+and understand the complex communities.  It is designed to support researchers
+and practitioners in conducting in-depth and professional omics data analysis.")
+    (license license:gpl3)))
 
 (define-public r-pct
   (package
@@ -36805,18 +36820,19 @@ approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
 (define-public r-pacvr
   (package
     (name "r-pacvr")
-    (version "1.0.8")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PACVr" version))
        (sha256
-        (base32 "11izhw8j9axjfa7g3kgmm9gxkmh6nsv5asph3lmwffnfrqmc5m1y"))))
+        (base32 "0wj32rghf040539z6lld4zspyalz3c4ag1syr940arvilvyv5wav"))))
     (properties `((upstream-name . "PACVr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-read-gb
                              r-rcircos
+                             r-r6
                              r-logger
                              r-iranges
                              r-genomicranges

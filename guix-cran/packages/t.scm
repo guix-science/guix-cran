@@ -4397,28 +4397,6 @@ Provide distribution d, p, q, r functions, fitting and testing functions.
 Project initiated by Paul Higbie and based on Cosma Shalizi's code.")
     (license license:gpl2+)))
 
-(define-public r-trycatchlog
-  (package
-    (name "r-trycatchlog")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tryCatchLog" version))
-       (sha256
-        (base32 "0k40a48qzwmardjnkf0h5s5zryivzvdanz61kxdqdfqlil19ma0d"))))
-    (properties `((upstream-name . "tryCatchLog")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/aryoda/tryCatchLog")
-    (synopsis "Advanced 'tryCatch()' and 'try()' Functions")
-    (description
-     "Advanced @code{tryCatch}() and try() functions for better error handling
-(logging, stack trace with source code references and support for post-mortem
-analysis via dump files).")
-    (license (list license:gpl3
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-trustoptim
   (package
     (name "r-trustoptim")
@@ -7352,13 +7330,13 @@ distributions.")
 (define-public r-traveltimer
   (package
     (name "r-traveltimer")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traveltimeR" version))
        (sha256
-        (base32 "00mak79ixyzr2d4s8gp4hh84akh97xrdqxih483md0ybnn69j4i9"))))
+        (base32 "0z96z96i83gdk0vhpfjlacbnh4vz6kmv31687qai6zyaxdfqbhyn"))))
     (properties `((upstream-name . "traveltimeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rprotobuf r-jsonlite r-httr r-data-table))

@@ -36046,13 +36046,13 @@ and discriminant analysis (CCDA).  Environmental Modelling & Software.
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "1mvnidwwa5nq00ca6l64m0h7dkvm32r9ymrqpjqnyrimr0mfxgl6"))))
+        (base32 "1byrz0npvchdzbp10z7blz13680x7d5yak9mmagn4q3w8wclpl7x"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-nlme r-dplyr r-deriv))
@@ -36803,13 +36803,13 @@ effects.")
 (define-public r-causalqueries
   (package
     (name "r-causalqueries")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalQueries" version))
        (sha256
-        (base32 "07g5ij14a9h756wbzfmy4wyyk8k16kvjv7b1li2mbw14vcv0jd80"))))
+        (base32 "03c4j89s3vl2brs71a8zvbzvj2hvq89134sdkmczwkzd3hsi505a"))))
     (properties `((upstream-name . "CausalQueries")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -36822,6 +36822,7 @@ effects.")
                              r-rcpp
                              r-lifecycle
                              r-latex2exp
+                             r-knitr
                              r-ggplot2
                              r-ggdag
                              r-dplyr
@@ -38471,6 +38472,38 @@ measure used in regression estimation.  This approach allows for efficient
 problem-solving by leveraging past experiences and adapting solutions from
 similar cases.  The underlying concept is inspired by the work of Dippon J.
 (2002) <doi:10.1016/S0167-9473(02)00058-0>.")
+    (license license:expat)))
+
+(define-public r-casebase
+  (package
+    (name "r-casebase")
+    (version "0.10.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "casebase" version))
+       (sha256
+        (base32 "0i9x0z6b3s2qzdyjsaj4bafk20yhbgggljxdwhmm52b4qm7rrgzz"))))
+    (properties `((upstream-name . "casebase")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://sahirbhatnagar.com/casebase/")
+    (synopsis
+     "Fitting Flexible Smooth-in-Time Hazards and Risk Functions via Logistic and Multinomial Regression")
+    (description
+     "Fit flexible and fully parametric hazard regression models to survival data with
+single event type or multiple competing causes via logistic and multinomial
+regression.  Our formulation allows for arbitrary functional forms of time and
+its interactions with other predictors for time-dependent hazards and hazard
+ratios.  From the fitted hazard model, we provide functions to readily calculate
+and plot cumulative incidence and survival curves for a given covariate profile.
+ This approach accommodates any log-linear hazard function of prognostic time,
+treatment, and covariates, and readily allows for non-proportionality.  We also
+provide a plot method for visualizing incidence density via population time
+plots.  Based on the case-base sampling approach of Hanley and Miettinen (2009)
+<DOI:10.2202/1557-4679.1125>, Saarela and Arjas (2015) <DOI:10.1111/sjos.12125>,
+and Saarela (2015) <DOI:10.1007/s10985-015-9352-x>.")
     (license license:expat)))
 
 (define-public r-cascsim

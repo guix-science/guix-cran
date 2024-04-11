@@ -37,26 +37,28 @@
 (define-public r-yyjsonr
   (package
     (name "r-yyjsonr")
-    (version "0.1.18")
+    (version "0.1.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yyjsonr" version))
        (sha256
-        (base32 "0z31rw7ls1qnfk4ww7l87jc1blgba229r1yd6i70mn80p7k7yy30"))))
+        (base32 "0gkvls7rd1rbklg9f548rhpmqpa0kb0s1xgf7mhvlhxk45x32ipd"))))
     (properties `((upstream-name . "yyjsonr")))
     (build-system r-build-system)
     (inputs (list zlib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/yyjsonr")
-    (synopsis "Fast JSON Parser and Generator")
+    (synopsis "Fast 'JSON', 'NDJSON' and 'GeoJSON' Parser and Generator")
     (description
      "This package provides a fast JSON parser, generator and validator which converts
-JSON data to/from R objects.  The standard R data types are supported (e.g.
-logical, numeric, integer) with configurable handling of NULL and NA values.
-Data frames, atomic vectors and lists are all supported as data containers
-translated to/from JSON. This implementation is a wrapper around the yyjson C
-library which is available from <https://github.com/ibireme/yyjson>.")
+JSON', NDJSON (Newline Delimited JSON') and @code{GeoJSON} (Geographic JSON')
+data to/from R objects.  The standard R data types are supported (e.g. logical,
+numeric, integer) with configurable handling of NULL and NA values.  Data
+frames, atomic vectors and lists are all supported as data containers translated
+to/from JSON'. @code{GeoJSON} data is read in as simple features objects.  This
+implementation wraps the yyjson C library which is available from
+<https://github.com/ibireme/yyjson>.")
     (license license:expat)))
 
 (define-public r-yum

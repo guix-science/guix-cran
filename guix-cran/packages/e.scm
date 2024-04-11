@@ -9204,13 +9204,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.70")
+    (version "2.0.73")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "10rc6w7jhwzpq6c4764nrsbkn8sn6zvz4lxxixgby88r7zvh6rlc"))))
+        (base32 "0r6swgz8jxd99gqm50j6zvxl8zdg2srpsqf9r1dwwvsx0h33ax9k"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

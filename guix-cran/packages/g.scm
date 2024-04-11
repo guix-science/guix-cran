@@ -5789,6 +5789,44 @@ program, and related projects.  Access to the Australian Taxation Office's
 sample files of personal income tax returns is assumed.")
     (license license:gpl2)))
 
+(define-public r-gratis
+  (package
+    (name "r-gratis")
+    (version "1.0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gratis" version))
+       (sha256
+        (base32 "0y9gblkcn145r8kx4447waqwc59iibm6nlmdykf6vrwn1y5vssa3"))))
+    (properties `((upstream-name . "gratis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tsfeatures
+                             r-tibble
+                             r-shiny
+                             r-purrr
+                             r-polynom
+                             r-mvtnorm
+                             r-magrittr
+                             r-generics
+                             r-ga
+                             r-forecast
+                             r-foreach
+                             r-fgarch
+                             r-feasts
+                             r-dplyr
+                             r-dorng))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ykang/gratis")
+    (synopsis
+     "Generating Time Series with Diverse and Controllable Characteristics")
+    (description
+     "Generates synthetic time series based on various univariate time series models
+including MAR and ARIMA processes.  Kang, Y., Hyndman, R.J., Li, F.(2020)
+<doi:10.1002/sam.11461>.")
+    (license license:gpl3)))
+
 (define-public r-graticule
   (package
     (name "r-graticule")

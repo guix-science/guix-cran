@@ -852,6 +852,31 @@ Time Series Analysis\" by Ruey S. Tsay and Rong Chen, John Wiley & Sons, 2018
 (ISBN: 978-1-119-26407-1).")
     (license license:gpl2+)))
 
+(define-public r-ntranova
+  (package
+    (name "r-ntranova")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ntranova" version))
+       (sha256
+        (base32 "0is9avgam63irzrah6s8yfkh9amwq9rsfhlpfx9s375ih8d3pzww"))))
+    (properties `((upstream-name . "ntranova")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ntranova")
+    (synopsis "Two Way Neutrosophic ANOVA")
+    (description
+     "Dealing with neutrosophic data of the form N=D+I(where N is a Neutrosophic
+number ,D is the determinant part of the number and I is the indeterminacy part)
+using the neutrosophic two way anova test keeps the type I error low.  This
+algorithm calculates the fisher statistics when we have a neutrosophic data,
+also tests two hypothesizes, first is to test differences between treatments,
+and second is to test differences between sectors.  For more information see
+Miari, Mahmoud; Anan, Mohamad Taher; Zeina, Mohamed Bisher(2022)
+<https://www.americaspg.com/articleinfo/21/show/1058>.")
+    (license license:gpl3)))
+
 (define-public r-ntlkwiex
   (package
     (name "r-ntlkwiex")

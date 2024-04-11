@@ -4180,6 +4180,45 @@ rotating panel.  A comprehensive description of the methodology can be found
 under <https://statistikat.github.io/surveysd/articles/methodology.html>.")
     (license license:gpl2+)))
 
+(define-public r-surveyprev
+  (package
+    (name "r-surveyprev")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surveyPrev" version))
+       (sha256
+        (base32 "1vp4v27vj9w0vsab6jjy9hvx36lrn01qkx3d0idmx0zwbd0bxy50"))))
+    (properties `((upstream-name . "surveyPrev")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-survey
+                             r-summer
+                             r-stringr
+                             r-spdep
+                             r-sp
+                             r-sjlabelled
+                             r-sf
+                             r-rdhs
+                             r-raster
+                             r-naniar
+                             r-matrixstats
+                             r-labelled
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/richardli/surveyPrev")
+    (synopsis
+     "Mapping the Prevalence of Binary Indicators using Survey Data in Small Areas")
+    (description
+     "This package provides a pipeline to perform small area estimation and prevalence
+mapping of binary indicators using health and demographic survey data, described
+in Fuglstad et al. (2022) <doi:10.48550/@code{arXiv.2110.09576>} and Wakefield
+et al. (2020) <doi:10.1111/insr.12400>.")
+    (license license:gpl2+)))
+
 (define-public r-surveyplanning
   (package
     (name "r-surveyplanning")
@@ -24440,6 +24479,26 @@ users further select their marker genes using the magnitude of the cluster
 centers.")
     (license license:gpl3)))
 
+(define-public r-sparsecov
+  (package
+    (name "r-sparsecov")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparseCov" version))
+       (sha256
+        (base32 "1zgqfjahlbbwimxcn7l0jn316xd2a65s8gy4pck0aksyfqh56kb1"))))
+    (properties `((upstream-name . "sparseCov")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsemvn r-rfast r-mvnfast r-matrix))
+    (home-page "https://github.com/chexjiang/sparseCov")
+    (synopsis "Sparse Covariance Estimation Based on Thresholding")
+    (description
+     "This package provides a sparse covariance estimator based on different
+thresholding operators.")
+    (license license:gpl2+)))
+
 (define-public r-sparsechol
   (package
     (name "r-sparsechol")
@@ -29406,6 +29465,34 @@ the effects that each continuous covariate has on the outcome, results are
 expressed in terms of hazard ratio curves, taking a specific covariate value as
 reference.  Confidence bands for these curves are also derived.")
     (license license:gpl3)))
+
+(define-public r-smoothhazard
+  (package
+    (name "r-smoothhazard")
+    (version "2024.04.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SmoothHazard" version))
+       (sha256
+        (base32 "18nn6c94lr1l49z9wj5grxck72dk9rkppg0qh5qbgcdkfxww4096"))))
+    (properties `((upstream-name . "SmoothHazard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-prodlim r-mvtnorm r-lava))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=SmoothHazard")
+    (synopsis "Estimation of Smooth Hazard Models for Interval-Censored Data")
+    (description
+     "Estimation of two-state (survival) models and irreversible illness- death models
+with possibly interval-censored, left-truncated and right-censored data.
+Proportional intensities regression models can be specified to allow for
+covariates effects separately for each transition.  We use either a parametric
+approach with Weibull baseline intensities or a semi-parametric approach with
+M-splines approximation of baseline intensities in order to obtain smooth
+estimates of the hazard functions.  Parameter estimates are obtained by maximum
+likelihood in the parametric approach and by penalized maximum likelihood in the
+semi-parametric approach.")
+    (license license:gpl2+)))
 
 (define-public r-smoothedlasso
   (package
@@ -40759,13 +40846,13 @@ syntax highlighting for several coding languages.")
 (define-public r-shinymatrix
   (package
     (name "r-shinymatrix")
-    (version "0.6.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMatrix" version))
        (sha256
-        (base32 "17v7gg5bli6x3w063id804859m6g07i9ksbm2jyb65489pjgpadk"))))
+        (base32 "0dlmih1xf49vaw27r83dyzbz7w6wfvz06iz214pcp0xp51hx37gw"))))
     (properties `((upstream-name . "shinyMatrix")))
     (build-system r-build-system)
     (arguments
@@ -40786,7 +40873,7 @@ syntax highlighting for several coding languages.")
                                   '())))))))
     (propagated-inputs (list r-shiny r-jsonlite))
     (native-inputs (list esbuild))
-    (home-page "https://cran.r-project.org/package=shinyMatrix")
+    (home-page "https://inwtlab.github.io/shiny-matrix/")
     (synopsis "Shiny Matrix Input Field")
     (description "This package implements a custom matrix input field.")
     (license license:expat)))
@@ -49574,17 +49661,16 @@ differential gene expression attributed to @code{siRNA} seed regions.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "16f39byv8ilhmz546q20702s6zfvwz8hwmg8cgyxyy76dqxxgmch"))))
+        (base32 "0x55zy6jad5rg3pbskzcrdza4r3rlsajk5phb4f0jri8cxigm5qq"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
-                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-quanteda

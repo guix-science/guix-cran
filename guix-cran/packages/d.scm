@@ -1637,23 +1637,23 @@ files.")
 (define-public r-dupnodes
   (package
     (name "r-dupnodes")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dupNodes" version))
        (sha256
-        (base32 "18ccg83nsj7s12x6ri3ig7qh4ag6xjv72c9ix2pqakmzl640717r"))))
+        (base32 "1697pcr27lix8vf1krq6vdby8dk53h0s14gcng1y5rdngrxav9nk"))))
     (properties `((upstream-name . "dupNodes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dupNodes")
     (synopsis
-     "Creates an 'igraph' Object that Duplicates Nodes with Self-Loops")
+     "Computes DNSLbetweenness, a Betweenness Measure that Includes Self-Loops")
     (description
-     "This package creates a new graph from an existing one, duplicating nodes with
-self-loops.  This can be used for a computation of betweenness centrality that
+     "Computes a new measure, DNSL betweenness, via the creation of a new graph from
+an existing one, duplicating nodes with self-loops.  This betweenness centrality
 does not drop this essential information.  Implements Merelo & Molinari (2024)
 <doi:10.1007/s42001-023-00245-4>.")
     (license license:gpl3)))
@@ -2681,13 +2681,13 @@ methods includes simulation and estimation of the parameters.")
 (define-public r-dtcompair
   (package
     (name "r-dtcompair")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTComPair" version))
        (sha256
-        (base32 "068ilw98lj4f11gi5fxc8lv6ymi86mahrkhfiagjdrmgcgpcai5w"))))
+        (base32 "1p1s0fslylykhmvwc962jcifkbb77ah0lxah596akvxlyrqkjpqk"))))
     (properties `((upstream-name . "DTComPair")))
     (build-system r-build-system)
     (propagated-inputs (list r-propcis r-gee r-ellipse))
@@ -23782,13 +23782,13 @@ months with user-controlled behavior.")
 (define-public r-dateback
   (package
     (name "r-dateback")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dateback" version))
        (sha256
-        (base32 "0ja453w7nlb051sdl9rm2kdk40lz34zrixy3bmmmhjvcmcls9kxs"))))
+        (base32 "09rv8h6xyjnb6g1jnhq3nij4jc4v1sk1hzsf12fargq9sxbcaihc"))))
     (properties `((upstream-name . "dateback")))
     (build-system r-build-system)
     (home-page "https://github.com/r-suzuki/dateback")

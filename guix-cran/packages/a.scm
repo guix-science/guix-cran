@@ -18394,16 +18394,17 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "1fw76s86zs9fxaifiy647wvj8y5bxlfcn9g7a6am2qcifrwq0yb6"))))
+        (base32 "047r9fi9ilcfnb6shkqsnrz4c4gs6x1nbff00wfamncjv19s74yh"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-survival
+                             r-rlang
                              r-r-utils
                              r-foreach
                              r-dplyr

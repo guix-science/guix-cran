@@ -15590,6 +15590,39 @@ matches, and multi-variable matches.  It also allows an easy combination of
 these three matches via the tier matching function.")
     (license license:expat)))
 
+(define-public r-fedirt
+  (package
+    (name "r-fedirt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FedIRT" version))
+       (sha256
+        (base32 "0qihs2m1qdp9kfw8f7a76r6cppfi9bxlj2mk4670v4ds2mqyq7xw"))))
+    (properties `((upstream-name . "FedIRT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shiny
+                             r-purrr
+                             r-pracma
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-callr))
+    (home-page "https://cran.r-project.org/package=FedIRT")
+    (synopsis "Federated Item Response Theory Models")
+    (description
+     "Integrate Item Response Theory (IRT) and Federated Learning to estimate
+traditional IRT models, including the 2-Parameter Logistic (2PL) and the Graded
+Response Models, with enhanced privacy.  It allows for the estimation in a
+distributed manner without compromising accuracy.  A user-friendly shiny
+application is included.  For more details, see Biying Zhou, Feng Ji (2024)
+\"'@code{FedIRT}': An R package and shiny app for estimating federated item
+response theory models\"
+<https://github.com/Feng-Ji-Lab/@code{FedIRT/blob/main/paper/paper.pdf>}.")
+    (license license:expat)))
+
 (define-public r-federalregister
   (package
     (name "r-federalregister")

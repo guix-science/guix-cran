@@ -2158,6 +2158,27 @@ dtriangmesh functions.")
 = 0.")
     (license license:gpl2)))
 
+(define-public r-quadform
+  (package
+    (name "r-quadform")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quadform" version))
+       (sha256
+        (base32 "1da9ck9b1kliabwiqf5r63pfg8iirc4y2kavyjicvp26989r7jh3"))))
+    (properties `((upstream-name . "quadform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mathjaxr))
+    (home-page "https://github.com/RobinHankin/quadform")
+    (synopsis "Efficient Evaluation of Quadratic Forms")
+    (description
+     "This package provides a range of quadratic forms are evaluated, using efficient
+methods.  Unnecessary transposes are not performed.  Complex values are handled
+consistently.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-quadcleanr
   (package
     (name "r-quadcleanr")

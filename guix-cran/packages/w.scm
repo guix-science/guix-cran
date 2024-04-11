@@ -4337,13 +4337,13 @@ Inference,\" International Studies Quarterly 51 (March)
 (define-public r-wh
   (package
     (name "r-wh")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WH" version))
        (sha256
-        (base32 "0zz7936s6yd30q1yxxwbkaczin3r2l189b27nqsfyazbav27hfsb"))))
+        (base32 "1df2m8m17pv9wn555i7h7nrxmk7cj1znwmgfd78ybjrckijzb61m"))))
     (properties `((upstream-name . "WH")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6675,6 +6675,28 @@ methodology from Meyer and Pebesma (2021) (<doi:10.1111/2041-210X.13650>), and
 an implementation of multi-scale assessment as described in Riemann et al'.
 (2010) (<doi:10.1016/j.rse.2010.05.010>).")
     (license license:expat)))
+
+(define-public r-wayfindr
+  (package
+    (name "r-wayfindr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WayFindR" version))
+       (sha256
+        (base32 "1j54374vk8y2f28lka03qwz5hyvpb0fyrbfn20pj1hbbnvymsxrm"))))
+    (properties `((upstream-name . "WayFindR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "http://oompa.r-forge.r-project.org/")
+    (synopsis "Computing Graph Structures on WikiPathways")
+    (description
+     "Converts pathways from @code{WikiPathways} GPML format into igraph objects.
+Includes tools to find all cycles in the resulting graphs and determine which
+ones involve negative feedback (inhibition).")
+    (license license:artistic2.0)))
 
 (define-public r-waydown
   (package

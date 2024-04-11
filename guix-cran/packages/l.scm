@@ -2746,13 +2746,13 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
 (define-public r-lpcde
   (package
     (name "r-lpcde")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lpcde" version))
        (sha256
-        (base32 "1na6cdaql298a7a8dpj74zln7m666xaipxmswmpqvgbvynrvpq80"))))
+        (base32 "0gb130x8177bcw3snrndm87p21na6v3zayqcn9z16rviiyy1nscg"))))
     (properties `((upstream-name . "lpcde")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -2770,7 +2770,7 @@ additional functions for mean shift clustering.  See Einbeck, Tutz and Evers
     (description
      "This package provides tools for estimation and inference of conditional
 densities, derivatives and functions.  This is the companion software for
-Cattaneo, Chandak, Jansson and Ma (2024) <@code{arXiv:2204.10359>}.")
+Cattaneo, Chandak, Jansson and Ma (2024) <doi:10.48550/@code{arXiv.2204.10359>}.")
     (license license:gpl2)))
 
 (define-public r-lpc
@@ -12720,13 +12720,13 @@ fitting linear models to centered-log-ratio taxa count data.")
 (define-public r-ldlinkr
   (package
     (name "r-ldlinkr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDlinkR" version))
        (sha256
-        (base32 "0al36cdq7g14fqvxb1c26ih269704f8m0kyky526ravbgf0ydnw1"))))
+        (base32 "0a9j6yyws6n3989ig53nzgadrhjbdj9y2cyr9q0f1svsi6h80lxj"))))
     (properties `((upstream-name . "LDlinkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))

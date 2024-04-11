@@ -3278,6 +3278,28 @@ described in details in Gwet, K.L. (2014,ISBN:978-0970806284): \"Handbook of
 Inter-Rater Reliability,\" 4th edition, Advanced Analytics, LLC.")
     (license license:gpl2+)))
 
+(define-public r-irr2fpr
+  (package
+    (name "r-irr2fpr")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IRR2FPR" version))
+       (sha256
+        (base32 "1n5nn4d1k89cgw5qlb81wdr5jphqmf828sr7bh0fbd3km81safw4"))))
+    (properties `((upstream-name . "IRR2FPR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-mvtnorm))
+    (home-page "https://github.com/FBartos/IRR2FPR")
+    (synopsis "Computing False Positive Rate from Inter-Rater Reliability")
+    (description
+     "This package implements a Shiny Item Analysis module and functions for computing
+false positive rate and other binary classification metrics from inter-rater
+reliability based on @code{BartoÅ}¡ & @code{MartinkovÃ}¡ (2022)
+<doi:10.48550/@code{arXiv.2207.09101>}.")
+    (license license:gpl3)))
+
 (define-public r-irr
   (package
     (name "r-irr")
@@ -4008,25 +4030,25 @@ free of charge from the IPUMS website <https://www.ipums.org>.")
 (define-public r-ipsrdbs
   (package
     (name "r-ipsrdbs")
-    (version "0.2.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipsRdbs" version))
        (sha256
-        (base32 "16qyq2jzv5nhwsnsg20213vhg62aqjk2fx9mr2343dlx5j3cjvb3"))))
+        (base32 "018l91i88scak8mhz2p1a13dds7kyzig6wb8442hmzkwg63xi764"))))
     (properties `((upstream-name . "ipsRdbs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-ggplot2 r-extradistr))
+    (native-inputs (list r-knitr))
     (home-page "https://www.sujitsahu.com")
     (synopsis
-     "Introduction to Probability, Statistics and R for Data Based Sciences")
+     "Introduction to Probability, Statistics and R for Data-Based Sciences")
     (description
      "This package contains data sets, programmes and illustrations discussed in the
 book, \"Introduction to Probability, Statistics and R: Foundations for Data-Based
-Sciences.\" Sahu (2023, isbn:978-3-031-37864-5) describes the methods in detail.")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
+Sciences.\" Sahu (2024, isbn:9783031378645) describes the methods in detail.")
+    (license license:gpl3)))
 
 (define-public r-ipsfs
   (package
@@ -9191,6 +9213,43 @@ make multiplicative decomposition (gamma = alpha x beta).  The package also
 features size- and coverage-based rarefaction and extrapolation sampling curves
 to facilitate rigorous comparison of beta diversity across datasets.  See Chao
 et al. (2023) <doi:10.1002/ecm.1588> for more details.")
+    (license license:gpl3+)))
+
+(define-public r-inext-4steps
+  (package
+    (name "r-inext-4steps")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNEXT.4steps" version))
+       (sha256
+        (base32 "0kjzrgwhhzgvwyrcrqfbshscyrx34blfjxr23iay9wby6qpfmb1j"))))
+    (properties `((upstream-name . "iNEXT.4steps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2
+                             r-purrr
+                             r-inext-3d
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://sites.google.com/view/chao-lab-website/software/inext-4steps/")
+    (synopsis "Four-Step Biodiversity Analysis Based on 'iNEXT'")
+    (description
+     "Expands @code{iNEXT} to include the estimation of sample completeness and
+evenness.  The package provides simple functions to perform the following
+four-step biodiversity analysis: STEP 1: Assessment of sample completeness
+profiles.  STEP 2a: Analysis of size-based rarefaction and extrapolation
+sampling curves to determine whether the asymptotic diversity can be accurately
+estimated.  STEP 2b: Comparison of the observed and the estimated asymptotic
+diversity profiles.  STEP 3: Analysis of non-asymptotic coverage-based
+rarefaction and extrapolation sampling curves.  STEP 4: Assessment of evenness
+profiles.  The analyses in STEPs 2a, 2b and STEP 3 are mainly based on the
+previous @code{iNEXT} package.  Refer to the @code{iNEXT} package for details.
+This package is mainly focusing on the computation for STEPs 1 and 4.  See Chao
+et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
     (license license:gpl3+)))
 
 (define-public r-inext-3d
@@ -15331,13 +15390,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "037w2mijv7srisypjydr6iwxf432gbcvvbmdghffax5lzh9lw266"))))
+        (base32 "1x4wmqp22wrcwldww6qc3sqw4qf327vcf7zlhr627j0rbdfmj3d1"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

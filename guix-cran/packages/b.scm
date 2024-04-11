@@ -2157,13 +2157,13 @@ semiparametric Bayesian models for random effects meta-analysis.")
 (define-public r-bspm
   (package
     (name "r-bspm")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspm" version))
        (sha256
-        (base32 "0a5a1daylb5hnb7xhh3c9ypj3p81qih9i92njara29hgz3y5g1dr"))))
+        (base32 "168mlimmab1i03fqvkgc449gcmdxr8dsy7b09pzvgswgxjgf7b2a"))))
     (properties `((upstream-name . "bspm")))
     (build-system r-build-system)
     (inputs (list))
@@ -5865,6 +5865,39 @@ unitary matrices, evaluation of matrix permanents (both real and complex) and
 evaluation of complex permanent minors.")
     (license license:gpl2)))
 
+(define-public r-boso
+  (package
+    (name "r-boso")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BOSO" version))
+       (sha256
+        (base32 "1g7277xw9bgq575x7fhjwpja6sfbg51di7hawxhmc57kvvmpx032"))))
+    (properties `((upstream-name . "BOSO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lvalcarcel/BOSO")
+    (synopsis "Bilevel Optimization Selector Operator")
+    (description
+     "This package provides a novel feature selection algorithm for linear regression
+called BOSO (Bilevel Optimization Selector Operator).  The main contribution is
+the use a bilevel optimization problem to select the variables in the training
+problem that minimize the error in the validation set.  Preprint available:
+[Valcarcel, L. V., San Jose-Eneriz, E., Cendoya, X., Rubio, A., Agirre, X.,
+Prosper, F., & Planes, F. J. (2020). \"BOSO: a novel feature selection algorithm
+for linear regression with high-dimensional data.\" @code{bioRxiv}.
+<doi:10.1101/2020.11.18.388579>].  In order to run the vignette, it is
+recommended to install the bestsubset package, using the following command:
+devtools::install_github(repo=\"ryantibs/best-subset\", subdir=\"bestsubset\").  If
+you do not have gurobi, run
+devtools::install_github(repo=\"lvalcarcel/best-subset\", subdir=\"bestsubset\").
+Moreover, to install @code{cplexAPI} you can check
+<https://github.com/lvalcarcel/@code{cplexAPI>}.")
+    (license license:gpl3)))
+
 (define-public r-borrowr
   (package
     (name "r-borrowr")
@@ -6881,13 +6914,13 @@ discoveries.")
 (define-public r-boneprofiler
   (package
     (name "r-boneprofiler")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneProfileR" version))
        (sha256
-        (base32 "0mm2vjg43p9abfydaw7qw0q9cwpvzxic914rpdk2dshyva6dxyx5"))))
+        (base32 "0fmqzfqv08f0vpiwvl2gdix0fvk6w1jkpcv8jb9wgsq63fij0ly9"))))
     (properties `((upstream-name . "BoneProfileR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rmarkdown r-knitr r-imager r-helpersmg))
