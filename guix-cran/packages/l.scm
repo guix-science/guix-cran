@@ -4190,13 +4190,13 @@ selection.")
 (define-public r-logrx
   (package
     (name "r-logrx")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logrx" version))
        (sha256
-        (base32 "1qqy4hm0l6fijkzlxrzj1i65bdi3lf1p3mwd7jwm66yi9ynwkkbz"))))
+        (base32 "1dnz6g3rz15gl747gn9vbr5y67zlyqffqwmp5rqvwg75ga5mhkx3"))))
     (properties `((upstream-name . "logrx")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter

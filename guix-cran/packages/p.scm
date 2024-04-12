@@ -2769,13 +2769,13 @@ integration within *.Rnw files.")
 (define-public r-psychotree
   (package
     (name "r-psychotree")
-    (version "0.16-0")
+    (version "0.16-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychotree" version))
        (sha256
-        (base32 "1mk747m37yhhgvwikc88s0m86rgwbzkkv797jwxfpk8fsd79xqc8"))))
+        (base32 "04ipl6kadfvyl28wx8jbpisb4pcswrwq1qiqm90h47ldbnmha932"))))
     (properties `((upstream-name . "psychotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-psychotools r-partykit r-formula))
@@ -32251,13 +32251,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0sq7p55znrxsbqavfih662d7gh5pxjndrqairzknr5pjjjc2sglj"))))
+        (base32 "0h8xkfc8xy1i7gmcg4x2ml8cj0982g14c602a07ivlb0v72hi0qk"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -32273,6 +32273,7 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-cli
                              r-checkmate
                              r-cdmconnector))
+    (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/PatientProfiles/")
     (synopsis
      "Identify Characteristics of Patients in the OMOP Common Data Model")

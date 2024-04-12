@@ -7330,13 +7330,13 @@ distributions.")
 (define-public r-traveltimer
   (package
     (name "r-traveltimer")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traveltimeR" version))
        (sha256
-        (base32 "0z96z96i83gdk0vhpfjlacbnh4vz6kmv31687qai6zyaxdfqbhyn"))))
+        (base32 "0n0drijv3dhivnzpcvxwhvg2hprlrysnnbr2dsa2fcc4iawhd9lz"))))
     (properties `((upstream-name . "traveltimeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rprotobuf r-jsonlite r-httr r-data-table))
@@ -19592,13 +19592,13 @@ information regarding the methodology see Meier, Mata & Wulff (2022)
 (define-public r-text2map
   (package
     (name "r-text2map")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text2map" version))
        (sha256
-        (base32 "0ikiwfhm0m6ygzgx05ds1vhxlvvajb20fs5aif6h35y3zb5p24zl"))))
+        (base32 "0fs51r2gz2kzyqd9i9vbyyvd8lx9ng40vxw3ncrph22b3vn9q5dl"))))
     (properties `((upstream-name . "text2map")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

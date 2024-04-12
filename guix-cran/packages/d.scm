@@ -12332,13 +12332,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.5")
+    (version "6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "1cxp34vr9g2y7yn7gkb8m523q3ci3s0ycwn4p9xrp9fk8g6ymhm0"))))
+        (base32 "0fgwhah78psgd7fhjgk9rw1hyhfx9qbj93bznsjs6dhjkp9wyn4q"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -26139,13 +26139,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.1.11")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "1kqphqy5zacsm5ic3i4b0yccnkg6zx2r5dqajgp4y97rjcc9a3rb"))))
+        (base32 "1ddq7pg1kkmmk9n76bv2hygzapmvpfi8d8mjlx6mzkrk1sl1kcbr"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

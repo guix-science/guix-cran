@@ -3445,13 +3445,13 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "1qwyjm88z82b7m39rwm1989z4m4hl5wdy4qagkb3lw8hc31mhvxr"))))
+        (base32 "0v057l0qb3x16kw5xdjmw724kg9zlflagkkdvhwgc39z1by1ahbd"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

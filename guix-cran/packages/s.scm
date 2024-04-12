@@ -10309,18 +10309,19 @@ parameter space.")
 (define-public r-sticsrfiles
   (package
     (name "r-sticsrfiles")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SticsRFiles" version))
        (sha256
-        (base32 "1nybxf5c76498s20yb69v9dgvcvbpr10sk6qy14iimpxqy6n382j"))))
+        (base32 "0ldc0rl5www8bz9qc80198h0yiz10kqr9zmlhd7b510bhms0i1wp"))))
     (properties `((upstream-name . "SticsRFiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
                              r-xml2
                              r-xml
+                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -10591,13 +10592,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "0pb5w0jzyf4igi76n9cr97zxk5l8m7mjjjn18bd71w3mbpnsig7r"))))
+        (base32 "01ahdnlsykb27phv73zpqvg22ysgy3n7qfjkf426jxnzmmhfsdaz"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -37213,17 +37214,18 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.14")
+    (version "2.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimDesign" version))
        (sha256
-        (base32 "0jf1a5lfm0jd6k76jxq3pp8ngx10z44h6cgv4dhi59n4f95z7a82"))))
+        (base32 "08zw0d98hl67jfj4v7mij45p398618j46brv223przxpzxikahx1"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sessioninfo
                              r-rpushbullet
+                             r-r-utils
                              r-progressr
                              r-pbapply
                              r-future-apply
@@ -37241,9 +37243,11 @@ back-end of Monte Carlo simulation experiments by utilizing a
 generate-analyse-summarise workflow.  The workflow safeguards against common
 simulation coding issues, such as automatically re-simulating non-convergent
 results, prevents inadvertently overwriting simulation files, catches error and
-warning messages during execution, and implicitly supports parallel processing.
-For a pedagogical introduction to the package see Sigal and Chalmers (2016)
-<doi:10.1080/10691898.2016.1246953>.  For a more in-depth overview of the
+warning messages during execution, implicitly supports parallel processing with
+high-quality random number generation, and provides tools for managing
+high-performance computing (HPC) array jobs submitted to schedulers such as
+SLURM. For a pedagogical introduction to the package see Sigal and Chalmers
+(2016) <doi:10.1080/10691898.2016.1246953>.  For a more in-depth overview of the
 package and its design philosophy see Chalmers and Adkins (2020)
 <doi:10.20982/tqmp.16.4.p248>.")
     (license license:gpl2+)))
@@ -44441,6 +44445,35 @@ visualization tools, automated hyperparameter tuning, model checking, interval
 estimation, and convergence diagnostics.")
     (license license:gpl2)))
 
+(define-public r-sgboost
+  (package
+    (name "r-sgboost")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgboost" version))
+       (sha256
+        (base32 "1h40ya7jy11f7h4vyibfh6cwvgv4c7qdqgr8j72vh1197i9872z7"))))
+    (properties `((upstream-name . "sgboost")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-mboost
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/FabianObster/sgboost")
+    (synopsis "Sparse-Group Boosting")
+    (description
+     "Sparse-group boosting to be used in conjunction with the mboost for modeling
+grouped data.  Applicable to all sparse-group lasso type problems where
+within-group and between-group sparsity is desired.  Interprets and visualizes
+individual variables and groups.")
+    (license license:expat)))
+
 (define-public r-sgbj
   (package
     (name "r-sgbj")
@@ -49661,13 +49694,13 @@ differential gene expression attributed to @code{siRNA} seed regions.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "0x55zy6jad5rg3pbskzcrdza4r3rlsajk5phb4f0jri8cxigm5qq"))))
+        (base32 "1nvlmfx1ib9ffgippnlgiy7srnc4gasqailvsc0xfyxn70hsz9pb"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -56077,6 +56110,26 @@ generate the candidate model pool.")
 binomial mixtures, factor analysis models, Gaussian mixtures, latent forests,
 latent class analyses, and reduced rank regressions.")
     (license license:gpl3+)))
+
+(define-public r-sbi
+  (package
+    (name "r-sbi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SBI" version))
+       (sha256
+        (base32 "1m4s0qmk1z3npxk952w57dxrp4asb9ixx0clxh7xjl24kvymrnrs"))))
+    (properties `((upstream-name . "SBI")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SBI")
+    (synopsis "Simple Blinding Index for Randomized Controlled Trials")
+    (description
+     "Computes a simple blinding index for randomized controlled trials introduced in
+the paper \"A simple blinding index for randomized controlled trials\" by Petroff,
+Bacak, Dagres, Dilk and Wachter, which has been submitted for publication.")
+    (license license:gpl3)))
 
 (define-public r-sbgcop
   (package

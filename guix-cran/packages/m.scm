@@ -22568,13 +22568,13 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "0.12.1")
+    (version "0.13.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0565cx9gl1wzkapcy102yicyhpw3wc4xcjxsk58585zdxjvpr2ym"))))
+        (base32 "0bd6gk3smypy14pzl41si3a5lwgznqmx4isfhw7j7cciarx3mcw9"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22584,9 +22584,10 @@ Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
     (description
      "Lightweight parallel code execution and distributed computing.  Designed for
 simplicity, a mirai evaluates an R expression asynchronously, on local or
-network resources, resolving automatically upon completion.  Efficient
-scheduling over fast inter-process communications or secure TLS connections over
-TCP/IP, built on nanonext and NNG (Nanomsg Next Gen).")
+network resources, resolving automatically upon completion.  State of the art
+networking and concurrency via nanonext and NNG (Nanomsg Next Gen) offers
+reliable and efficient scheduling over fast inter-process communications or
+TCP/IP secured by TLS.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -40091,6 +40092,28 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
+
+(define-public r-mapmisc
+  (package
+    (name "r-mapmisc")
+    (version "2.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapmisc" version))
+       (sha256
+        (base32 "1xmrg78d8p9zz7w89gz4vq36dsrhac5p34f36kkfi0j94mnvrzd1"))))
+    (properties `((upstream-name . "mapmisc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mapmisc")
+    (synopsis "Utilities for Producing Maps")
+    (description
+     "This package provides a minimal, light-weight set of tools for producing nice
+looking maps in R, with support for map projections.  See Brown (2016)
+<doi:10.32614/RJ-2016-005>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mapme-biodiversity
   (package

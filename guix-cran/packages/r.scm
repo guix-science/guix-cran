@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -23297,42 +23296,36 @@ published by Faridi et al.  in 2018 <doi:10.1126/sciimmunol.aar3947>.")
 (define-public r-rhub
   (package
     (name "r-rhub")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhub" version))
        (sha256
-        (base32 "12m751d8qyl7fhrg8660wman2msz3qjkrw0h49pxf7lyzfamn9wm"))))
+        (base32 "05q1jv7c2l09ssb72d17hhcisvzqmcd3d1njc1j6w8lhvc5kqs47"))))
     (properties `((upstream-name . "rhub")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-whoami
-                             r-uuid
-                             r-tibble
+    (propagated-inputs (list r-whoami
+                             r-rprojroot
                              r-rematch
-                             r-rcmdcheck
                              r-rappdirs
                              r-r6
                              r-processx
-                             r-prettyunits
-                             r-pillar
-                             r-parsedate
+                             r-pkgbuild
                              r-jsonlite
-                             r-httr
-                             r-digest
+                             r-glue
+                             r-gitcreds
+                             r-gert
                              r-desc
-                             r-crayon
+                             r-curl
                              r-cli
-                             r-callr
-                             r-assertthat))
-    (native-inputs (list r-rmarkdown r-knitr))
+                             r-callr))
     (home-page "https://github.com/r-hub/rhub")
-    (synopsis "Connect to 'R-hub'")
+    (synopsis "Tools for R Package Developers")
     (description
-     "Run R CMD check on any of the R-hub (<https://builder.r-hub.io/>) architectures,
-from the command line.  The current architectures include Windows',
-@code{macOS}', Solaris and various Linux distributions.")
+     "R-hub v2 uses @code{GitHub} Actions to run R CMD check and similar package
+checks.  The rhub package helps you set up R-hub v2 for your R package, and
+start running checks.")
     (license license:expat)))
 
 (define-public r-rhsdb
@@ -47793,24 +47786,24 @@ S3/S4 generics and methods for dispatch.  Also allows piping for R6 objects.")
 (define-public r-r5r
   (package
     (name "r-r5r")
-    (version "1.1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r5r" version))
        (sha256
-        (base32 "07w7riqh7vkq4zqvi5hqcbk1nr8y2lq2kbg9738wpc7fsr4m5amg"))))
+        (base32 "1kvn7341v2dfbv580bzc3zhdmnxk400mjrbrs5bar2hwkwvv4w4r"))))
     (properties `((upstream-name . "r5r")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-sfheaders
                              r-sf
+                             r-rlang
                              r-rjava
                              r-jsonlite
-                             r-httr
                              r-data-table
-                             r-curl
                              r-concaveman
+                             r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/r5r")
@@ -47829,7 +47822,7 @@ Although we try to keep new releases of r5r in synchrony with R5, the
 development of R5 follows Conveyal's independent update process.  Hence, users
 should confirm the R5 version implied by the Conveyal user manual (see
 <https://docs.conveyal.com/changelog>) corresponds with the R5 version that r5r
-depends on.")
+depends on.  This version of r5r depends on R5 v7.1.")
     (license license:expat)))
 
 (define-public r-r4ss

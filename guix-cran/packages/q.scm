@@ -1627,19 +1627,18 @@ keyness plots.")
 (define-public r-quanteda-textmodels
   (package
     (name "r-quanteda-textmodels")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textmodels" version))
        (sha256
-        (base32 "1shsyz8nz8cabmsgrimxym4b0fd3zbjp3vx5si41rp9gr9c94sx1"))))
+        (base32 "0whzy9hbybxmlzkckhlp6whbbg17vskx9bk40iy02j2z6fw6bqxg"))))
     (properties `((upstream-name . "quanteda.textmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
                              r-sparsem
                              r-rspectra
-                             r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
                              r-quanteda
@@ -1654,10 +1653,10 @@ keyness plots.")
 data in the form of a document-feature matrix.  Includes original
 implementations of Laver', Benoit', and Garry's (2003)
 <doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
-<@code{arXiv:1710.08963>} class affinity scaling model, and the Slapin and
-Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model, as well as
-methods for correspondence analysis, latent semantic analysis, and fast Naive
-Bayes and linear SVMs specially designed for sparse textual data.")
+<doi:10.48550/@code{arXiv.1710.08963>} class affinity scaling model, and the
+Slapin and Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model,
+as well as methods for correspondence analysis, latent semantic analysis, and
+fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
     (license license:gpl3)))
 
 (define-public r-quantdr

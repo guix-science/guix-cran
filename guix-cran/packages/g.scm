@@ -8010,13 +8010,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1wi5ynj78cn68c23sa7s9n76222jhyzlklsba8hw2hbqa5jj5ak9"))))
+        (base32 "1mfjkhh2z7parv0x8qw80b8f7imzjq7srqv5q8gnd4ivdyxj1b32"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -9250,23 +9250,24 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-goldfish
   (package
     (name "r-goldfish")
-    (version "1.6.4")
+    (version "1.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goldfish" version))
        (sha256
-        (base32 "1syv7flh18cm1ypz0fj91qnjkc7zlzj4rkrj4cxag231jbqgzyd1"))))
+        (base32 "1c49xmn29c1qvx2rmhyvwy5ql2b4zsk4chrv8bni6lwiprib5d9q"))))
     (properties `((upstream-name . "goldfish")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-ggplot2
                              r-generics
                              r-changepoint))
     (native-inputs (list r-knitr))
-    (home-page "https://snlab-ch.github.io/goldfish/")
+    (home-page "https://stocnet.github.io/goldfish/")
     (synopsis "Statistical Network Models for Dynamic Network Data")
     (description
      "This package provides tools for fitting statistical network models to dynamic
@@ -19699,13 +19700,13 @@ returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetTDData" version))
        (sha256
-        (base32 "0g3clqnx4mvqsn743jzlai90ckylv5klkfxyg3lrqfds6n2mjxrh"))))
+        (base32 "085rsqqrmda6mzb7n7kq00hpim62qqa85qk8kx8x5ch4j1qdhwi0"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -19715,7 +19716,7 @@ returns NULL.")
                              r-rvest
                              r-readxl
                              r-purrr
-                             r-lifecycle
+                             r-jsonlite
                              r-humanize
                              r-fs
                              r-dplyr
@@ -21416,13 +21417,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1j9rra3x4wa3zw2ah6cghfqfszhv4hy1j695mz61r7qjagwlb5ah"))))
+        (base32 "0kxyfgipcvmd8qcm5fwxkc8frq2v3rps177ax7zim49vbg9yc24p"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -25488,13 +25489,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "0qf4yah7nhjn8qwifr6irgv3iqll3rrf5c9kz90z2ny6c3wh04sg"))))
+        (base32 "00ppk0msipa2hpay3rpvgwrkz55q8vk4387yaisp74x9hzf3z0sl"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-th-data
@@ -27738,13 +27739,13 @@ tradeoff between speed and quality of the solution.")
 (define-public r-gasanalyzer
   (package
     (name "r-gasanalyzer")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasanalyzer" version))
        (sha256
-        (base32 "04h6iyxgvjz58lj090f70hjkizkabvi9zrghgw4ynlzbcckjwvg0"))))
+        (base32 "1j46w7ikpzll40yk3vwlq1zysgsnlrf5p01hllp8a9qshxdhl5a6"))))
     (properties `((upstream-name . "gasanalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

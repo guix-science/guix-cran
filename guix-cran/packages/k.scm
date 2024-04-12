@@ -4406,13 +4406,13 @@ uniform kernels and unsmoothed and pre-smoothed input data.")
 (define-public r-kepted
   (package
     (name "r-kepted")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KEPTED" version))
        (sha256
-        (base32 "1xlmmr2qy00gq6hsh1vazb9mb27hz2pjbw8chxb1p1a7d9ps0yrg"))))
+        (base32 "1w9mbj89w83pk0kzjh7wwp0zn5v6m2rpwa34rfc26niadbl40xfs"))))
     (properties `((upstream-name . "KEPTED")))
     (build-system r-build-system)
     (propagated-inputs (list r-expm r-cubature r-compquadform))

@@ -4556,17 +4556,18 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.27")
+    (version "4.4.32")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "1xbczpqfa13jsmiavm3r75d2phjg3ziikd3i1700q6fmpbxlfysi"))))
+        (base32 "0javb5hlg007jb30sdv48hqa2yfdjmjr8vpynm6x02npz8kn528d"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-trycatchlog
+                             r-stringr
                              r-sticky
                              r-rlang
                              r-reshape2
@@ -13840,6 +13841,34 @@ algorithm is used for all DTW alignments in the Align Shiny application,
 detailed in Hagen et al. (in review).")
     (license license:gpl3)))
 
+(define-public r-alien
+  (package
+    (name "r-alien")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alien" version))
+       (sha256
+        (base32 "0856csdvz5wz699n7g8bj1azzyw2mfznhcwmabzp740bijy6x6qi"))))
+    (properties `((upstream-name . "alien")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-helpersmg
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=alien")
+    (synopsis "Estimate Invasive and Alien Species (IAS) Introduction Rates")
+    (description
+     "Easily estimate the introduction rates of alien species given first records
+data.  It specializes in addressing the role of sampling on the pattern of
+discoveries, thus providing better estimates than using Generalized Linear
+Models which assume perfect immediate detection of newly introduced species.")
+    (license license:expat)))
+
 (define-public r-aliases2entrez
   (package
     (name "r-aliases2entrez")
@@ -20918,6 +20947,45 @@ gravity-based and floating catchment areas methods), as well as the most
 frequently used inequality and poverty metrics (such as the Palma ratio, the
 concentration and Theil indices and the FGT family of measures).")
     (license license:expat)))
+
+(define-public r-acceptreject
+  (package
+    (name "r-acceptreject")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AcceptReject" version))
+       (sha256
+        (base32 "0fr87gvxi80z5bam066w26kw14mrm4jmghrmn58qh32yp44v8awl"))))
+    (properties `((upstream-name . "AcceptReject")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-purrr
+                             r-pbmcapply
+                             r-numderiv
+                             r-lbfgs
+                             r-glue
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://prdm0.github.io/AcceptReject/")
+    (synopsis
+     "Acceptance-Rejection Method for Generating Pseudo-Random Observations")
+    (description
+     "This package provides a function that implements the acceptance-rejection method
+in an optimized manner to generate pseudo-random observations for discrete or
+continuous random variables.  The function is optimized to work in parallel on
+Unix-based operating systems and performs well on Windows systems.  The
+acceptance-rejection method implemented optimizes the probability of generating
+observations from the desired random variable, by simply providing the
+probability function or probability density function, in the discrete and
+continuous cases, respectively.  Implementation is based on references CASELLA,
+George at al. (2004) <https://www.jstor.org/stable/4356322>, NEAL, Radford M.
+(2003) <https://www.jstor.org/stable/3448413> and Bishop, Christopher M. (2006,
+ISBN: 978-0387310732).")
+    (license license:gpl3+)))
 
 (define-public r-accelstab
   (package

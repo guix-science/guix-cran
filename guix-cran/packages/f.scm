@@ -19488,13 +19488,13 @@ algorithm.")
 (define-public r-fastai
   (package
     (name "r-fastai")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastai" version))
        (sha256
-        (base32 "1glq64hhwrwp29scf851nb6nl83hpvvy8cj37z2r36r89i5inp4b"))))
+        (base32 "1x8s26rwp5bnzsl41wvq39dcc719xqpd0gqz0f74j4mfki824z8g"))))
     (properties `((upstream-name . "fastai")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate

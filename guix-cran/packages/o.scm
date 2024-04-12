@@ -9082,16 +9082,17 @@ meta-filtering.  It can also analyze data from multiple ethnic groups.")
 (define-public r-offsetreg
   (package
     (name "r-offsetreg")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "offsetreg" version))
        (sha256
-        (base32 "1bnb41q8n3bmh73r44mlf70icy7mma1rixdhxkz6xmmss5cs88zp"))))
+        (base32 "1nxiaz5p3s4i3dxl3cph5c8aily3d6g212086wrxy38jyqk55xkm"))))
     (properties `((upstream-name . "offsetreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-poissonreg r-parsnip r-glue r-generics))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/offsetreg/")
     (synopsis "An Extension of 'Tidymodels' Supporting Offset Terms")
     (description
