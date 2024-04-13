@@ -474,41 +474,6 @@ conjunction with @code{mlrMBO}'.")
 the dependent variables.")
     (license license:gpl3)))
 
-(define-public r-dynnom
-  (package
-    (name "r-dynnom")
-    (version "5.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DynNom" version))
-       (sha256
-        (base32 "1zs8chdw83qjsi5k1m9cvk48swqz3gadycmhk4prxmjzwcl5z4i1"))))
-    (properties `((upstream-name . "DynNom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-stargazer
-                             r-shiny
-                             r-rms
-                             r-prediction
-                             r-plotly
-                             r-magrittr
-                             r-ggplot2
-                             r-dplyr
-                             r-compare
-                             r-bbmisc))
-    (home-page "https://cran.r-project.org/package=DynNom")
-    (synopsis "Visualising Statistical Models using Dynamic Nomograms")
-    (description
-     "Demonstrate the results of a statistical model object as a dynamic nomogram in
-an RStudio panel or web browser.  The package provides two generics functions:
-@code{DynNom}, which display statistical model objects as a dynamic nomogram;
-DNbuilder, which builds required scripts to publish a dynamic nomogram on a web
-server such as the <https://www.shinyapps.io/>.  Current version of
-@code{DynNom} supports stats::lm, stats::glm, survival::coxph, rms::ols,
-rms::Glm, rms::lrm, rms::cph, mgcv::gam and gam::gam model objects.")
-    (license license:gpl2)))
-
 (define-public r-dynmix
   (package
     (name "r-dynmix")
@@ -3597,38 +3562,6 @@ defines the API that is to be implemented by @code{DataSHIELD} compliant data
 repositories.")
     (license license:lgpl2.1+)))
 
-(define-public r-dsfa
-  (package
-    (name "r-dsfa")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dsfa" version))
-       (sha256
-        (base32 "1fsq3ydphgi9b97fr92y2d5fc34rf4raff6ki1d3aqn210h9d53z"))))
-    (properties `((upstream-name . "dsfa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mgcv
-                             r-gratia
-                             r-copula))
-    (home-page "https://cran.r-project.org/package=dsfa")
-    (synopsis "Distributional Stochastic Frontier Analysis")
-    (description
-     "Framework to fit distributional stochastic frontier models.  Casts the
-stochastic frontier model into the flexible framework of distributional
-regression or otherwise known as General Additive Models of Location, Scale and
-Shape (GAMLSS).  Allows for linear, non-linear, random and spatial effects on
-all the parameters of the distribution of the output, e.g. effects on the
-production or cost function, heterogeneity of the noise and inefficiency.
-Available distributions are the normal-halfnormal and normal-exponential
-distribution.  Estimation via the fast and reliable routines of the mgcv
-package.  For more details see <doi:10.1016/j.csda.2023.107796>.")
-    (license license:expat)))
-
 (define-public r-dsem
   (package
     (name "r-dsem")
@@ -6471,36 +6404,6 @@ Sun for doubly interval-censored left-truncated failure time data [Victor De
 Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 <doi:10.2307/2533008>].")
     (license license:gpl2)))
-
-(define-public r-dotwhisker
-  (package
-    (name "r-dotwhisker")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dotwhisker" version))
-       (sha256
-        (base32 "0q9vdsmn9chwn4midc8apy2dx5sj89nwd8banly2ifyhpks0h8xy"))))
-    (properties `((upstream-name . "dotwhisker")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-purrr
-                             r-performance
-                             r-patchwork
-                             r-parameters
-                             r-margins
-                             r-gtable
-                             r-gridextra
-                             r-ggstance
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=dotwhisker")
-    (synopsis "Dot-and-Whisker Plots of Regression Results")
-    (description "Quick and easy dot-and-whisker plots of regression results.")
-    (license license:expat)))
 
 (define-public r-dotsviolin
   (package
@@ -11543,29 +11446,6 @@ and discrete multiple testing procedures.  Some of them are also available as a
 four-column version, so that each row represents a 2x2 table.")
     (license license:gpl3)))
 
-(define-public r-discretecdalgorithm
-  (package
-    (name "r-discretecdalgorithm")
-    (version "0.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "discretecdAlgorithm" version))
-       (sha256
-        (base32 "01x3qfjj7dwv0m9q8zdhfrpbj9ys9y5p7d3z8ywjrqy4jw88svjs"))))
-    (properties `((upstream-name . "discretecdAlgorithm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sparsebnutils r-rcppeigen r-rcpp r-igraph))
-    (home-page "https://cran.r-project.org/package=discretecdAlgorithm")
-    (synopsis
-     "Coordinate-Descent Algorithm for Learning Sparse Discrete Bayesian Networks")
-    (description
-     "Structure learning of Bayesian network using coordinate-descent algorithm.  This
-algorithm is designed for discrete network assuming a multinomial data set, and
-we use a multi-logit model to do the regression.  The algorithm is described in
-Gu, Fu and Zhou (2016) <@code{arXiv:1403.2310>}.")
-    (license license:gpl2+)))
-
 (define-public r-discoverableresearch
   (package
     (name "r-discoverableresearch")
@@ -13364,6 +13244,41 @@ items and differential distractor functioning (DDF) among unscored items with
 non-linear regression procedures based on generalized logistic regression models
 (Hladka & Martinkova, 2020, <doi:10.32614/RJ-2020-014>).")
     (license license:gpl3)))
+
+(define-public r-difm
+  (package
+    (name "r-difm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIFM" version))
+       (sha256
+        (base32 "126yn0kj6znpigxg7hsmpn67149mgl1nzv6zp772cwd8pdwpyklw"))))
+    (properties `((upstream-name . "DIFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sp
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-laplacesdemon
+                             r-gridextra))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DIFM")
+    (synopsis "Dynamic ICAR Spatiotemporal Factor Models")
+    (description
+     "Bayesian factor models are effective tools for dimension reduction.  This is
+especially applicable to multivariate large-scale datasets.  It allows
+researchers to understand the latent factors of the data which are the linear or
+non-linear combination of the variables.  Dynamic Intrinsic Conditional
+Autocorrelative Priors (ICAR) Spatiotemporal Factor Models DIFM package provides
+function to run Markov Chain Monte Carlo (MCMC), evaluation methods and visual
+plots from Shin and Ferreira (2023)<doi:10.1016/j.spasta.2023.100763>.  Our
+method is a class of Bayesian factor model which can account for spatial and
+temporal correlations.  By incorporating these correlations, the model can
+capture specific behaviors and provide predictions.")
+    (license license:gpl2+)))
 
 (define-public r-diflasso
   (package
@@ -16347,13 +16262,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "1dx9wvhvbrh0l8jrv02jmwz054r3nvaz4cz81m3iqviydi3hcbf6"))))
+        (base32 "196c12kmp5xjhgywr26p7k78p9mvpzz74rckfq88xgx9j012rwl7"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

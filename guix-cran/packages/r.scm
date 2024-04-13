@@ -28695,43 +28695,6 @@ GDAL library, a limitation which users of this package should be aware of.) The
 PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
-(define-public r-reproducible
-  (package
-    (name "r-reproducible")
-    (version "2.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "reproducible" version))
-       (sha256
-        (base32 "039xg7fra4h1kizjbnq05ym8zhcg3wswwfn4asa8f62s7nh0g72q"))))
-    (properties `((upstream-name . "reproducible")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lobstr
-                             r-fs
-                             r-fpcompare
-                             r-filelock
-                             r-digest
-                             r-data-table))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://reproducible.predictiveecology.org")
-    (synopsis "Enhance Reproducibility of R Code")
-    (description
-     "This package provides a collection of high-level, machine- and OS-independent
-tools for making reproducible and reusable content in R. The two workhorse
-functions are Cache() and @code{prepInputs}().  Cache() allows for nested
-caching, is robust to environments and objects with environments (like
-functions), and has deals with some classes of file-backed R objects e.g., from
-terra and raster packages.  Both functions have been developed to be
-foundational components of data retrieval and processing in continuous workflow
-situations.  In both functions, efforts are made to make the first and
-subsequent calls of functions have the same result, but faster at subsequent
-times by way of checksums and digesting.  Several features are still under
-development, including cloud storage of cached objects, allowing for sharing
-between users.  Several advanced options are available, see
-?@code{reproducibleOptions}().")
-    (license license:gpl3)))
-
 (define-public r-reproducer
   (package
     (name "r-reproducer")
@@ -30745,6 +30708,26 @@ families reviewed by Almalki & Nadarajah (2014) <doi:10.1016/j.ress.2013.11.010>
 using Generalized Additive Models for Location, Scale and Shape, aka GAMLSS by
 Rigby & Stasinopoulos (2005) <doi:10.1111/j.1467-9876.2005.00510.x>.")
     (license license:gpl3)))
+
+(define-public r-relcircle
+  (package
+    (name "r-relcircle")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "relcircle" version))
+       (sha256
+        (base32 "109fc4zngsrwxszij1y4y0mvzfnyv6f90d2imfrppa5aaivrq07j"))))
+    (properties `((upstream-name . "relcircle")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=relcircle")
+    (synopsis "Draw Regulatory Relationships Between Genes")
+    (description
+     "According to the order of the loci on the chromosome, the loci can be connected
+according to the interrelationship between them and classified according to
+different locus types.")
+    (license license:gpl3+)))
 
 (define-public r-relatedness
   (package
@@ -43385,21 +43368,22 @@ in research.  Trends in Ecology and Evolution, 37: 725-728.")
 (define-public r-rasterpic
   (package
     (name "r-rasterpic")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rasterpic" version))
        (sha256
-        (base32 "1il05pg1paa7y2y9jcsca8g4sh3l6hmdqw16bkww0a0l5yzzdg60"))))
+        (base32 "03p24iw384dxws25mwfzclhpfj9hm3wrv8xmhgrcsffw61q3ad0x"))))
     (properties `((upstream-name . "rasterpic")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sf r-png))
     (native-inputs (list r-knitr))
     (home-page "https://dieghernan.github.io/rasterpic/")
-    (synopsis "Create a Spatial Raster from Plain Images")
+    (synopsis "Convert Digital Images into 'SpatRaster' Objects")
     (description
-     "Create a spatial raster, as the ones provided by terra', from regular pictures.")
+     "Generate @code{SpatRaster} objects, as defined by the terra package, from
+digital images, using a specified spatial object as a geographical reference.")
     (license license:expat)))
 
 (define-public r-rasterpdf
@@ -47134,13 +47118,13 @@ thereof.")
 (define-public r-raddata
   (package
     (name "r-raddata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RadData" version))
        (sha256
-        (base32 "053i6r0j58dws1qisl2701n0fwzrfn5brdx3dcab8xmpzg6s0036"))))
+        (base32 "0kpmxii2080iid99y1rh0bdrvw2wf6gqwbafa4p28hvbw9lk6zw3"))))
     (properties `((upstream-name . "RadData")))
     (build-system r-build-system)
     (home-page "https://github.com/markhogue/RadData")

@@ -831,6 +831,34 @@ standard R distribution).  It also requires graph from Bioconductor.  For more
 detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-zendown
+  (package
+    (name "r-zendown")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zendown" version))
+       (sha256
+        (base32 "1wljdv4xckvwbs2g018fq8ppjc3744qarn6krrgip1jrrz0ppl8p"))))
+    (properties `((upstream-name . "zendown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcurl
+                             r-rappdirs
+                             r-httr2
+                             r-glue
+                             r-fs
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (home-page "https://rfsaldanha.github.io/zendown/")
+    (synopsis "Access Files from 'Zenodo' Deposits")
+    (description "Access, download and locally cache files deposited on Zenodo
+<https://zenodo.org>.")
+    (license license:expat)))
+
 (define-public r-zendeskr
   (package
     (name "r-zendeskr")

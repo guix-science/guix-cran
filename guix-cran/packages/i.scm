@@ -1972,32 +1972,6 @@ reproducible and straightforward.  Use it to quickly calculate isotope
 fractionation factors, and apply paleothermometry equations.")
     (license license:gpl3+)))
 
-(define-public r-isogene
-  (package
-    (name "r-isogene")
-    (version "1.0-24")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IsoGene" version))
-       (sha256
-        (base32 "0flm0mszankvl3aizwsazyhvz2xkr4gfqiqywpc0r1swqj19610r"))))
-    (properties `((upstream-name . "IsoGene")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-iso r-ff r-biobase r-affy))
-    (home-page "https://cran.r-project.org/package=IsoGene")
-    (synopsis "Order-Restricted Inference for Microarray Experiments")
-    (description
-     "Offers framework for testing for monotonic relationship between gene expression
-and doses in a microarray experiment.  Several testing procedures including the
-global likelihood-ratio test (Bartholomew, 1961), Williams (1971, 1972), Marcus
-(1976), M (Hu et al.  2005) and the modified M (Lin et al.  2007) are used to
-test for the monotonic trend in gene expression with respect to doses.  BH
-(Benjamini and Hochberg 1995) and BY (Benjamini and Yekutieli 2004) FDR
-controlling procedures are applied to adjust the raw p-values obtained from the
-permutations.")
-    (license license:gpl3)))
-
 (define-public r-isodistrreg
   (package
     (name "r-isodistrreg")

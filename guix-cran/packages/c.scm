@@ -24729,41 +24729,6 @@ coefficient modeling, and curves in functional data analysis.  Sottile G. and
 Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
     (license license:gpl2)))
 
-(define-public r-clustdrm
-  (package
-    (name "r-clustdrm")
-    (version "0.1-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clustDRM" version))
-       (sha256
-        (base32 "1c5z08a15scp3nrwyh0c03pdaawvm3ivbygqpbglwxim7zf73rd2"))))
-    (properties `((upstream-name . "clustDRM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny
-                             r-readr
-                             r-rcolorbrewer
-                             r-pheatmap
-                             r-oriclust
-                             r-orcme
-                             r-multcomp
-                             r-mcpmod
-                             r-isogene
-                             r-foreach
-                             r-dt
-                             r-dosefinding
-                             r-doparallel
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=clustDRM")
-    (synopsis
-     "Clustering Dose-Response Curves and Fitting Appropriate Models to Them")
-    (description
-     "This package provides functions to identify the pattern of a dose-response
-curve.  Then fit a set of appropriate models to it according to the identified
-pattern, followed by model averaging to estimate the effective dose.")
-    (license license:gpl2+)))
-
 (define-public r-clustblock
   (package
     (name "r-clustblock")
@@ -29281,33 +29246,33 @@ medical imaging data in the form of CIFTI files
 (define-public r-cifinder
   (package
     (name "r-cifinder")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CIfinder" version))
        (sha256
-        (base32 "0if3jsg5gr3dxz0ggg0zhk682h3c7hqv76xc4shgknh8vqc2njv8"))))
+        (base32 "1kgcf82ixv2pic31msxzzaapnas88skk033pifa0sip8pya1by4q"))))
     (properties `((upstream-name . "CIfinder")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-ratesci r-kableextra))
+    (propagated-inputs (list r-rdpack r-ratesci r-kableextra r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CIfinder")
     (synopsis "Estimate the Confidence Intervals for Predictive Values")
     (description
      "Computes confidence intervals for the positive predictive value (PPV) and
-negative predictive value (NPV) based on varied scenarios.  In prospective
-studies where the proportion of diseased subjects is an unbiased estimate of the
-disease prevalence, this package provides several methods for calculating the
-confidence intervals for PPV and NPV including Clopper-Pearson, Wald, Wilson,
-Agresti-Coull, and Beta.  In situations where the proportion of diseased
-subjects does not correspond to the disease prevalence (e.g. case-control
-studies), this package provides two types of solutions: 1) three methods for
-estimating confidence intervals for PPV and NPV via ratio of two binomial
-proportions including Gart & Nam (1988), Walter (1975), and MOVER-J (Laud,
-2017); 2) three direct methods that compute the confidence intervals including
-Pepe (2003), Zhou (2007), and Delta.  See the Details and References sections in
-the corresponding functions.")
+negative predictive value (NPV) based on varied scenarios.  In situations where
+the proportion of diseased subjects does not correspond to the disease
+prevalence (e.g. case-control studies), this package provides two types of
+solutions: 1) five methods for estimating confidence intervals for PPV and NPV
+via ratio of two binomial proportions including Gart & Nam (1988), Walter
+(1975), MOVER-J (Laud, 2017), Fieller (1954), and Bootstrap (Efron, 1979); 2)
+three direct methods that compute the confidence intervals including Pepe
+(2003), Zhou (2007), and Delta.  In prospective studies where the proportion of
+diseased subjects is an unbiased estimate of the disease prevalence, this
+package provides several methods for calculating the confidence intervals for
+PPV and NPV including Clopper-Pearson, Wald, Wilson, Agresti-Coull, and Beta.
+See the Details and References sections in the corresponding functions.")
     (license license:gpl3+)))
 
 (define-public r-cif
@@ -31740,13 +31705,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.5.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "11d16rzwhanv36dw51wv5w1vg9fhwd3gpjpazq95wglv9zwc9afg"))))
+        (base32 "06d6mrfpnrjnhdzyhqszd0b29skv8g5a34nma8q4jw0644awjxms"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -32518,16 +32483,16 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.6.7")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "0xr3c0806pvsv2ywcm8c5b9h96xs2sdclrifffg6vfillzrn2pqy"))))
+        (base32 "0zksbnsl2zzb7p0f7rldfb2scq486fgz9svdjjskmdjcgfwzikbi"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-ggplot2))
+    (propagated-inputs (list r-shiny r-mass r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=CGNM")
     (synopsis "Cluster Gauss-Newton Method")
@@ -38043,13 +38008,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "1rdpgp1rav82ksfikc57zf7wqa8zd4gzxmnmrlg2jjiv404wwm42"))))
+        (base32 "0xriq5g6d7rj56m6m0y2icj2d92874j1zrpx8j446sq2n5xg7nis"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -38059,7 +38024,7 @@ tibbles, lists, etc..")
                              r-sf
                              r-rappdirs
                              r-mapspain
-                             r-httr
+                             r-httr2
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ropenspain.github.io/CatastRo/")
@@ -40598,13 +40563,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "1njz9qhrsf5nca4v2ph94lxc5l2k5ayhbv768rhv9r4maxilpjfw"))))
+        (base32 "01ylxdvl0wi313r5mj8s6xz596b7an08hslrym2y69c9qv8a62cg"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

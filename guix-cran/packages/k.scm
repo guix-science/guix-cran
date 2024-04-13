@@ -1253,13 +1253,13 @@ hazard functions.")
 (define-public r-konfound
   (package
     (name "r-konfound")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "konfound" version))
        (sha256
-        (base32 "03phg563qigb8j8r35aj5v1r2m2v2lfncipqv684hskfx2bk9vww"))))
+        (base32 "0gyz5n6x0brkv7c7j1k1fgna8bm1xl9i32qyxsl6h3lhqqi185dh"))))
     (properties `((upstream-name . "konfound")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1267,7 +1267,6 @@ hazard functions.")
                              r-rlang
                              r-purrr
                              r-pbkrtest
-                             r-margins
                              r-lme4
                              r-lavaan
                              r-ggrepel

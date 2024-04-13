@@ -7775,13 +7775,13 @@ explanation look at R-bloggers on web.")
 (define-public r-washdata
   (package
     (name "r-washdata")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "washdata" version))
        (sha256
-        (base32 "0m7rwwi189sbsv3144x14jqmfax30f6ri1pisy47yggmmjpdplps"))))
+        (base32 "17hmhcnh53fivxaywa0hvjl9y527ms2pqlapd1wvyx3gjqkggwyg"))))
     (properties `((upstream-name . "washdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

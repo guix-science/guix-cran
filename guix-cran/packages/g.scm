@@ -880,13 +880,13 @@ package is implementation of method proposed in Xu et al (2019)
 (define-public r-gwalkr
   (package
     (name "r-gwalkr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWalkR" version))
        (sha256
-        (base32 "0njga2h721vmz900z69sabf5vlzpws3fjawqrasj7y2w5hbcc4zk"))))
+        (base32 "0c5nzqw4q1gn36h7pz43imbbirpwg7snszg9qqn6hzfzgcnqshay"))))
     (properties `((upstream-name . "GWalkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-openssl r-jsonlite r-htmlwidgets))
@@ -2246,13 +2246,13 @@ Recommender System <doi:10.1080/01621459.2016.1219261> for the details.")
 (define-public r-gspcr
   (package
     (name "r-gspcr")
-    (version "0.9.4.1")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gspcr" version))
        (sha256
-        (base32 "1ankzsqq1b662831bm3kdlzzdpl6nw05yira5yx36pm0vnhhcn7y"))))
+        (base32 "19k07yg3z2p63dgq8hyyqpnq2r23rwbh1wqwna4d4w1bif9vgq8b"))))
     (properties `((upstream-name . "gspcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -7751,13 +7751,13 @@ building block for a beginner.")
 (define-public r-gpindex
   (package
     (name "r-gpindex")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpindex" version))
        (sha256
-        (base32 "187h9bz9g8ca81jd00sppwckq94l1c27j5plq1hw8iirfjm1xap7"))))
+        (base32 "1xl2hcw3qpqwlg655ajg8snyp41s5cb9kxridysch7fjmyj7iymy"))))
     (properties `((upstream-name . "gpindex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7769,7 +7769,7 @@ price indexes (and by extension quantity indexes), and indexes composed of
 generalized-mean indexes (e.g., superlative quadratic-mean indexes, GEKS).
 Covers the core mathematical machinery for making bilateral price indexes,
 computing price relatives, detecting outliers, and decomposing indexes, with
-wrapper for all common (and many uncommon) index-number formulas.  Implements
+wrappers for all common (and many uncommon) index-number formulas.  Implements
 and extends many of the methods in Balk (2008, ISBN:978-1-107-40496-0), von der
 Lippe (2001, ISBN:3-8246-0638-0), and the CPI manual (2020,
 ISBN:978-1-51354-298-0).")
@@ -11659,13 +11659,13 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtoolbox" version))
        (sha256
-        (base32 "0xkjz6y4dfnickcnb584xh3z3jrjclji6fsal2si70203n09p2gs"))))
+        (base32 "1d7nc2yr01wp2gjd6jx5i51z3vx5ppc625159l1rxp630d0xxq8f"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -29265,13 +29265,13 @@ al. (2015) <doi:10.18637/jss.v067.i01>) and PLmixed (Rockwood and Jeon (2019)
 (define-public r-galah
   (package
     (name "r-galah")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galah" version))
        (sha256
-        (base32 "0q37f8qpqrhbxaq1gjqvrhqz9ak41mlijria49p9fhmsz8fv0zz4"))))
+        (base32 "1z4z403b3jf0rj3gjrmsgjc4niab6jxdwb01rw0pzdblc8a2y4f1"))))
     (properties `((upstream-name . "galah")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

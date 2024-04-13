@@ -3536,13 +3536,13 @@ Lin Liu, Jishou Ruan and Shan Gao (2018) <doi:10.1101/251140>.")
 (define-public r-normdata
   (package
     (name "r-normdata")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NormData" version))
        (sha256
-        (base32 "0is0i7fj1n1ibsxrl468znysnzn8k3ab6rlfq4bryqj0chgqk89k"))))
+        (base32 "0v502sv5jpk644czq1d96qc4dw40j5hlvxy52ikjzhm89ri5gq9r"))))
     (properties `((upstream-name . "NormData")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -4253,33 +4253,6 @@ Momentum Threshold Autoregressive (MTAR), the Smooth Threshold Autoregressive
 applied.  It is possible to estimate nonlinear error correction models.  The
 Granger causality test performed using nonlinear models can also be applied.")
     (license license:gpl2+)))
-
-(define-public r-nonlinearrdd
-  (package
-    (name "r-nonlinearrdd")
-    (version "0.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NonlinearRDD" version))
-       (sha256
-        (base32 "0jj8s8nvv5jcp74zlid0y5j4b1vl6cg4mxaw6m45wnaxansqfcq3"))))
-    (properties `((upstream-name . "NonlinearRDD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rfast
-                             r-rdrobust
-                             r-rddensity
-                             r-quantreg
-                             r-lpdensity
-                             r-lpcde
-                             r-copula))
-    (home-page "https://cran.r-project.org/package=NonlinearRDD")
-    (synopsis "Nonlinear Regression Discontinuity Design")
-    (description
-     "Estimation of the possibly nonlinear and non separable structural function in
-regression discontinuity designs with a continuous treatment variable.  The
-method is based on Xie (2022) <@code{arXiv:2204.08168>}.")
-    (license license:gpl3)))
 
 (define-public r-nonlinearicp
   (package

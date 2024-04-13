@@ -10665,6 +10665,42 @@ for practicing data wrangling, graphing, and analyzing how each season of Top
 Chef played out.")
     (license license:expat)))
 
+(define-public r-toothnroll
+  (package
+    (name "r-toothnroll")
+    (version "1.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Toothnroll" version))
+       (sha256
+        (base32 "1xd6p1yxfp6x48cg81r8bgd8v19rpymbsnlzczylkzh6w7khaafl"))))
+    (properties `((upstream-name . "Toothnroll")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-stringr
+                             r-rvcg
+                             r-rgl
+                             r-oce
+                             r-morphomap
+                             r-morpho
+                             r-mgcv
+                             r-lattice
+                             r-geometry
+                             r-desctools
+                             r-compositions
+                             r-colorramps
+                             r-arothron
+                             r-alphashape3d))
+    (home-page "https://cran.r-project.org/package=Toothnroll")
+    (synopsis "Dental Tissues Landmarking Measuring and Mapping")
+    (description
+     "Two- and three-dimensional morphometric maps of enamel and dentine thickness and
+multivariate analysis.  Volume calculation of dental materials.  Principal
+component analysis of thickness maps with associated morphometric map
+variations.")
+    (license license:gpl2)))
+
 (define-public r-toordinal
   (package
     (name "r-toordinal")
@@ -17161,13 +17197,13 @@ Skaltsa et al. (2010) <doi:10.1002/bimj.200900294> and Heagerty et al. (2000)
 (define-public r-thresholdroc
   (package
     (name "r-thresholdroc")
-    (version "2.9.3")
+    (version "2.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThresholdROC" version))
        (sha256
-        (base32 "08wz44snvn3q243nzg4hw5casi1x297gc7nzxqyxwk641pa4cy95"))))
+        (base32 "1vh4fx8vbk5w6nrgkldnhxbhcdcrdc7sxhvm0gsn1gh7w5cgndq7"))))
     (properties `((upstream-name . "ThresholdROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-proc r-numderiv r-mass r-ks))

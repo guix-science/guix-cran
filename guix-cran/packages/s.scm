@@ -3039,13 +3039,13 @@ assume no censoring is present in the data.  Please contact Lior Rennert
 (define-public r-survstan
   (package
     (name "r-survstan")
-    (version "0.0.7")
+    (version "0.0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survstan" version))
        (sha256
-        (base32 "13mby2xb3pa4mq0znm9p0i7r0yrp7wz77czk0n0sbb5j899mr1yf"))))
+        (base32 "1yd634a4bqv5sfmsp2n4xxjjn23ms67iw3zzaa0yqzwldh09z6ng"))))
     (properties `((upstream-name . "survstan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5365,13 +5365,13 @@ frame management, including how to handle missing data.")
 (define-public r-supportr
   (package
     (name "r-supportr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supportR" version))
        (sha256
-        (base32 "0sk6dnssg8gggdlsvr7dg8cbn67r6fqsqdh6hqvar8204fwn4xcw"))))
+        (base32 "116hdwc72gf5lvvmikq6zmdlv6dapfypl7jb6pj933npqrqivvn6"))))
     (properties `((upstream-name . "supportR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -5389,7 +5389,7 @@ frame management, including how to handle missing data.")
                              r-dplyr
                              r-data-tree))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=supportR")
+    (home-page "https://github.com/njlyon0/supportR")
     (synopsis "Support Functions for Wrangling and Visualization")
     (description
      "Suite of helper functions for data wrangling and visualization.  The only theme
@@ -18198,46 +18198,6 @@ elements to hide at startup, to partially reveal them by hovering them, and to
 completely show them when clicking on them.")
     (license license:expat)))
 
-(define-public r-spoccupancy
-  (package
-    (name "r-spoccupancy")
-    (version "0.7.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spOccupancy" version))
-       (sha256
-        (base32 "1g2988xyyrzxfss8v1aal81gma85d0b4jc02m7aa2zqzriqb0c9q"))))
-    (properties `((upstream-name . "spOccupancy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spabundance
-                             r-rann
-                             r-lme4
-                             r-foreach
-                             r-doparallel
-                             r-coda
-                             r-abind))
-    (home-page "https://www.jeffdoser.com/files/spoccupancy-web")
-    (synopsis
-     "Single-Species, Multi-Species, and Integrated Spatial Occupancy Models")
-    (description
-     "Fits single-species, multi-species, and integrated non-spatial and spatial
-occupancy models using Markov Chain Monte Carlo (MCMC).  Models are fit using
-Polya-Gamma data augmentation detailed in Polson, Scott, and Windle (2013)
-<doi:10.1080/01621459.2013.829001>.  Spatial models are fit using either
-Gaussian processes or Nearest Neighbor Gaussian Processes (NNGP) for large
-spatial datasets.  Details on NNGP models are given in Datta, Banerjee, Finley,
-and Gelfand (2016) <doi:10.1080/01621459.2015.1044091> and Finley, Datta, and
-Banerjee (2020) <@code{arXiv:2001.09111>}.  Provides functionality for data
-integration of multiple single-species occupancy data sets using a joint
-likelihood framework.  Details on data integration are given in Miller,
-Pacifici, Sanderlin, and Reich (2019) <doi:10.1111/2041-210X.13110>.  Details on
-single-species and multi-species models are found in @code{MacKenzie}, Nichols,
-Lachman, Droege, Royle, and Langtimm (2002)
-<doi:10.1890/0012-9658(2002)083[2248:ESORWD]2.0.CO;2> and Dorazio and Royle
-<doi:10.1198/016214505000000015>, respectively.")
-    (license license:gpl3+)))
-
 (define-public r-spocc
   (package
     (name "r-spocc")
@@ -24525,27 +24485,6 @@ algebra, and a class to implement sparse LDL decomposition and solvers.  See
 <https://github.com/samuel-watson/@code{SparseChol>} for details.")
     (license license:gpl2+)))
 
-(define-public r-sparsebnutils
-  (package
-    (name "r-sparsebnutils")
-    (version "0.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparsebnUtils" version))
-       (sha256
-        (base32 "1x1phd33r3ci72sbm0pkmigwbi4x59pdz8n5919119mkxdf740vs"))))
-    (properties `((upstream-name . "sparsebnUtils")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nnet r-matrix))
-    (home-page "https://github.com/itsrainingdata/sparsebnUtils")
-    (synopsis "Utilities for Learning Sparse Bayesian Networks")
-    (description
-     "This package provides a set of tools for representing and estimating sparse
-Bayesian networks from continuous and discrete data, as described in Aragam, Gu,
-and Zhou (2017) <@code{arXiv:1703.04025>}.")
-    (license license:gpl2+)))
-
 (define-public r-sparsebiplots
   (package
     (name "r-sparsebiplots")
@@ -25214,111 +25153,6 @@ of infectious diseases from surveillance time series.  Also provides support for
 computational experiments testing the performance of such methods.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-spades-tools
-  (package
-    (name "r-spades-tools")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpaDES.tools" version))
-       (sha256
-        (base32 "0b598s3rblc3x97f7ikaf10xdy0v34h4dzv12l576ldmzpc9hjzq"))))
-    (properties `((upstream-name . "SpaDES.tools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-reproducible
-                             r-rcpp
-                             r-fpcompare
-                             r-data-table
-                             r-checkmate
-                             r-backports))
-    (home-page "https://spades-tools.predictiveecology.org")
-    (synopsis
-     "Additional Tools for Developing Spatially Explicit Discrete Event Simulation (SpaDES) Models")
-    (description
-     "This package provides GIS and map utilities, plus additional modeling tools for
-developing cellular automata, dynamic raster models, and agent based models in
-@code{SpaDES}'.  Included are various methods for spatial spreading, spatial
-agents, GIS operations, random map generation, and others.  See
-?@code{SpaDES.tools} for an categorized overview of these additional tools.  The
-suggested package NLMR can be installed from the following repository:
-(<https://@code{PredictiveEcology.r-universe.dev>}).")
-    (license license:gpl3)))
-
-(define-public r-spades-core
-  (package
-    (name "r-spades-core")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpaDES.core" version))
-       (sha256
-        (base32 "0lvs0jqlca4hcvn5d9f7ay4prqnk2lzddkq9gw295jm2plzk6a4l"))))
-    (properties `((upstream-name . "SpaDES.core")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-whisker
-                             r-terra
-                             r-require
-                             r-reproducible
-                             r-quickplot
-                             r-qs
-                             r-lobstr
-                             r-igraph
-                             r-fs
-                             r-data-table
-                             r-crayon))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://spades-core.predictiveecology.org/")
-    (synopsis
-     "Core Utilities for Developing and Running Spatially Explicit Discrete Event Models")
-    (description
-     "This package provides the core framework for a discrete event system to
-implement a complete data-to-decisions, reproducible workflow.  The core
-components facilitate the development of modular pieces, and enable the user to
-include additional functionality by running user-built modules.  Includes
-conditional scheduling, restart after interruption, packaging of reusable
-modules, tools for developing arbitrary automated workflows, automated
-interweaving of modules of different temporal resolution, and tools for
-visualizing and understanding the within-project dependencies.  The suggested
-package NLMR can be installed from the repository
-(<https://@code{PredictiveEcology.r-universe.dev>}).")
-    (license license:gpl3)))
-
-(define-public r-spades
-  (package
-    (name "r-spades")
-    (version "2.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SpaDES" version))
-       (sha256
-        (base32 "0rd8329j2k7brh4cbq8jlpdng9cy9hfbflkalbbhgxq2cckhxx3a"))))
-    (properties `((upstream-name . "SpaDES")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spades-tools r-spades-core r-reproducible
-                             r-quickplot))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://spades.predictiveecology.org")
-    (synopsis
-     "Develop and Run Spatially Explicit Discrete Event Simulation Models")
-    (description
-     "Metapackage for implementing a variety of event-based models, with a focus on
-spatially explicit models.  These include raster-based, event-based, and
-agent-based models.  The core simulation components (provided by
-@code{SpaDES.core}') are built upon a discrete event simulation (DES; see
-Matloff (2011) ch 7.8.3 <https://nostarch.com/artofr.htm>) framework that
-facilitates modularity, and easily enables the user to include additional
-functionality by running user-built simulation modules (see also
-@code{SpaDES.tools}').  Included are numerous tools to visualize rasters and
-other maps (via @code{quickPlot}'), and caching methods for reproducible
-simulations (via reproducible').  Tools for running simulation experiments are
-provided by @code{SpaDES.experiment}'.  Additional functionality is provided by
-the @code{SpaDES.addins} and @code{SpaDES.shiny} packages.")
-    (license license:gpl3)))
 
 (define-public r-spader
   (package
@@ -29030,6 +28864,40 @@ Diaz-Coto et al. (2020) <doi:10.1080/00949655.2020.1736071>).")
      "Computes the studentized midrange distribution (pdf, cdf and quantile) and
 generates random numbers.")
     (license license:gpl2+)))
+
+(define-public r-smplot2
+  (package
+    (name "r-smplot2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smplot2" version))
+       (sha256
+        (base32 "1mpg4grgri7sxag21p2k99kqqhbdp9yi4bj10yqqmjybn2xcmsgn"))))
+    (properties `((upstream-name . "smplot2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tibble
+                             r-sdamr
+                             r-pwr
+                             r-patchwork
+                             r-magrittr
+                             r-hmisc
+                             r-ggstance
+                             r-ggpubr
+                             r-ggplot2
+                             r-gghalves
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://smin95.github.io/dataviz/")
+    (synopsis "Creating and Annotating a Composite Plot in 'ggplot2'")
+    (description
+     "This package provides functions for creating and annotating a composite plot in
+ggplot2'.  Offers background themes and shortcut plotting functions that produce
+figures that are appropriate for the format of scientific journals.  Some
+methods are described in Min and Zhou (2021) <doi:10.3389/fgene.2021.802894>.")
+    (license license:gpl2)))
 
 (define-public r-smpic
   (package
@@ -45257,26 +45125,6 @@ the given distribution.  For reference, see Hong Zhang, Jiashun Jin and Zheyang
 Wu. \"Distributions and Statistical Power of Optimal Signal-Detection Methods In
 Finite Cases\", submitted.")
     (license license:gpl2)))
-
-(define-public r-setter
-  (package
-    (name "r-setter")
-    (version "0.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "setter" version))
-       (sha256
-        (base32 "10fwrx8yysp99rrkbnn3rbz79vyzr2h3p7zxxlqapw1k2lllp0r5"))))
-    (properties `((upstream-name . "setter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-assertive-base))
-    (home-page "https://bitbucket.org/richierocks/setter")
-    (synopsis "Mutators that Work with Pipes")
-    (description
-     "Mutators to set attributes of variables, that work well in a pipe (much like
-stats::@code{setNames}()).")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-setmethods
   (package

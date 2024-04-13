@@ -11041,26 +11041,6 @@ phylogenetic and functional diversity.  Estimation-bias corrections are
 available.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-ensurer
-  (package
-    (name "r-ensurer")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ensurer" version))
-       (sha256
-        (base32 "1gbbni73ayzcmzhxb88pz6xx418lqjbp37sdkggbrxcyhsxpdkid"))))
-    (properties `((upstream-name . "ensurer")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/smbache/ensurer")
-    (synopsis "Ensure Values at Runtime")
-    (description
-     "Add simple runtime contracts to R values.  These ensure that values fulfil
-certain conditions and will raise appropriate errors if they do not.")
-    (license license:expat)))
-
 (define-public r-ensr
   (package
     (name "r-ensr")
@@ -15806,31 +15786,6 @@ attributes, or tags; and determine the latest updates.  Includes functions for
 creating panels of related variables with minimal effort and datasets containing
 data sources, releases, and popular FRED tags.")
     (license license:expat)))
-
-(define-public r-efreadr
-  (package
-    (name "r-efreadr")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "efreadr" version))
-       (sha256
-        (base32 "1h27by1m451wrnw017005avs5yj3fjzrm2lq5153aqm1mbbxxwvs"))))
-    (properties `((upstream-name . "efreadr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-readr r-magrittr r-ensurer r-dplyr))
-    (home-page "https://cran.r-project.org/package=efreadr")
-    (synopsis "Read European Eddy Fluxes CSV Files")
-    (description
-     "The European Eddy Fluxes Database Cluster distributes fluxes of different Green
-House Gases measured mainly using the eddy covariance technique acquired in
-sites involved in EU projects but also single sites in Europe, Africa and others
-continents that decided to share their measurements in the database
-<http://gaia.agraria.unitus.it>.  The package provides two functions to load and
-row-wise bind CSV files distributed by the database.  Currently only L2, L3, and
-L4 (L=Level), half-hourly and daily (aggregation) files are supported.")
-    (license license:gpl3)))
 
 (define-public r-efflog
   (package

@@ -970,6 +970,37 @@ context.  This package is designed to be a lightweight solution to easily
 switching between week-based date definitions.")
     (license license:expat)))
 
+(define-public r-avotrex
+  (package
+    (name "r-avotrex")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "avotrex" version))
+       (sha256
+        (base32 "0khvlgf1acxy7d9nn4d038fb4sg46slh96cfq8q1x8abybj7bg68"))))
+    (properties `((upstream-name . "avotrex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytree
+                             r-stringr
+                             r-snow
+                             r-phytools
+                             r-foreach
+                             r-dplyr
+                             r-dosnow
+                             r-doparallel
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=avotrex")
+    (synopsis
+     "Global Dataset of Anthropogenic Extinct Birds and their Traits: Phylogeny Builder")
+    (description
+     "Grafts the extinct bird species from the Avotrex database (Sayol et al., in
+review) on to the @code{BirdTree} phylogenies <https://birdtree.org>, using a
+set of different commands.")
+    (license license:gpl3)))
+
 (define-public r-avocado
   (package
     (name "r-avocado")
@@ -11708,6 +11739,28 @@ methods to calculate home ranges, track statistics (e.g. step lengths, speed, or
 turning angles), prepare data for fitting habitat selection analyses, and
 simulation of space-use from fitted step-selection functions.")
     (license license:gpl3)))
+
+(define-public r-amregtest
+  (package
+    (name "r-amregtest")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amregtest" version))
+       (sha256
+        (base32 "0c5x95iiqr0fa2ph6zily6qp542yc08vwzgrvfhclmkrn9zjcjap"))))
+    (properties `((upstream-name . "amregtest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-testthat r-remotes r-digest
+                             r-allelematch))
+    (home-page "https://cran.r-project.org/package=amregtest")
+    (synopsis "Runs Allelematch Regression Tests")
+    (description
+     "Automates regression testing of package allelematch'.  Over 2500 tests covers
+all functions in allelematch', reproduces the examples from the documentation
+and includes negative tests.  The implementation is based on testthat'.")
+    (license license:expat)))
 
 (define-public r-amr
   (package

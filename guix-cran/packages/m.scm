@@ -15564,33 +15564,36 @@ Public Release; Distribution Unlimited.")
 (define-public r-mmstat4
   (package
     (name "r-mmstat4")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmstat4" version))
        (sha256
-        (base32 "0glbf5s0d0l52by6iygnmr9yz6gw1mycgypfkfciixys4zii9ylj"))))
+        (base32 "1g44qkc17n9z6a1yz0jngl6ap6p30n0lil8syzcgwqv4jhf9rn1w"))))
     (properties `((upstream-name . "mmstat4")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-stringdist
+                             r-shiny
                              r-rstudioapi
                              r-rio
+                             r-reticulate
                              r-rappdirs
                              r-httr
-                             r-digest))
+                             r-digest
+                             r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mmstat4")
     (synopsis "Access to Teaching Materials from a ZIP File or GitHub")
     (description
      "This package provides access to teaching materials for various statistics
-courses, including R programs, Shiny apps, data, and PDF/HTML documents.  These
-materials are stored on the Internet as a ZIP file (e.g., in a @code{GitHub}
-repository) and can be downloaded and displayed or run locally.  The content of
-the ZIP file is temporarily or permanently stored.  By default, the package uses
-the @code{GitHub} repository sigbertklinke/mmstat4.data.  Additionally, the
-package includes association_measures.R from the archived package ryouready by
-Mark Heckman and some auxiliary functions.")
+courses, including R and Python programs, Shiny apps, data, and PDF/HTML
+documents.  These materials are stored on the Internet as a ZIP file (e.g., in a
+@code{GitHub} repository) and can be downloaded and displayed or run locally.
+The content of the ZIP file is temporarily or permanently stored.  By default,
+the package uses the @code{GitHub} repository sigbertklinke/mmstat4.data.
+Additionally, the package includes association_measures.R from the archived
+package ryouready by Mark Heckman and some auxiliary functions.")
     (license license:gpl3)))
 
 (define-public r-mmsample
@@ -25654,37 +25657,6 @@ proposed by Marie Chion, Christine Carapito and Frederic Bertrand (2021)
 proteomics.")
     (license license:gpl2+)))
 
-(define-public r-mhurdle
-  (package
-    (name "r-mhurdle")
-    (version "1.3-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mhurdle" version))
-       (sha256
-        (base32 "1in07zk29z5fhrg75wl1fwbrsny4ihjnrqyh2kz1bd448p10f295"))))
-    (properties `((upstream-name . "mhurdle")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncreg
-                             r-survival
-                             r-rdpack
-                             r-prediction
-                             r-numderiv
-                             r-maxlik
-                             r-margins
-                             r-generics
-                             r-formula))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://www.R-project.org")
-    (synopsis "Multiple Hurdle Tobit Models")
-    (description
-     "Estimation of models with zero left-censored variables.  Null values may be
-caused by a selection process Cragg (1971) <doi:10.2307/1909582>, insufficient
-resources Tobin (1958) <doi:10.2307/1907382> or infrequency of purchase Deaton
-and Irish (1984) <doi:10.1016/0047-2727(84)90067-7>.")
-    (license license:gpl2+)))
-
 (define-public r-mhtrajectoryr
   (package
     (name "r-mhtrajectoryr")
@@ -31185,13 +31157,13 @@ method.")
 (define-public r-mendelianrandomization
   (package
     (name "r-mendelianrandomization")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MendelianRandomization" version))
        (sha256
-        (base32 "103pmql4klhvqm7sydbqwqzx2ngbr8dxky8cg495ggpzbpjj131n"))))
+        (base32 "0g71h1hwvm0ldrklvlliq2ylglb1w7zli0x5sh7z4934h8gyjl88"))))
     (properties `((upstream-name . "MendelianRandomization")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -31675,13 +31647,13 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.11.2")
+    (version "1.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melt" version))
        (sha256
-        (base32 "1dkdw3pjrwpl126kvhwani5k49gljm53pfij8bvlzbl4y44fks6d"))))
+        (base32 "0vmds7kvb50742ag41w57wmbfdq0zdgf6pyxp25dg48isssa2qaa"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-checkmate r-bh))
@@ -35408,13 +35380,13 @@ mcca package in Li, Gao and D'Agostino (2019) <doi:10.1002/sim.8103>.")
 (define-public r-mcboost
   (package
     (name "r-mcboost")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcboost" version))
        (sha256
-        (base32 "0748av1dy6fag33slhi24km17qpi7y6cydl1vmdhxz96902lcr5r"))))
+        (base32 "17zflvafz6w91lxbr8saasxp9bn18bla1jqg53fka2k8fnziz4g8"))))
     (properties `((upstream-name . "mcboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart
@@ -35433,13 +35405,13 @@ mcca package in Li, Gao and D'Agostino (2019) <doi:10.1002/sim.8103>.")
     (description
      "This package implements Multi-Calibration Boosting (2018)
 <https://proceedings.mlr.press/v80/hebert-johnson18a.html> and Multi-Accuracy
-Boosting (2019) <@code{arXiv:1805.12317>} for the multi-calibration of a machine
-learning model's prediction.  MCBoost updates predictions for sub-groups in an
-iterative fashion in order to mitigate biases like poor calibration or large
-accuracy differences across subgroups.  Multi-Calibration works best in
-scenarios where the underlying data & labels are unbiased, but resulting models
-are.  This is often the case, e.g. when an algorithm fits a majority population
-while ignoring or under-fitting minority populations.")
+Boosting (2019) <doi:10.48550/@code{arXiv.1805.12317>} for the multi-calibration
+of a machine learning model's prediction.  MCBoost updates predictions for
+sub-groups in an iterative fashion in order to mitigate biases like poor
+calibration or large accuracy differences across subgroups.  Multi-Calibration
+works best in scenarios where the underlying data & labels are unbiased, but
+resulting models are.  This is often the case, e.g. when an algorithm fits a
+majority population while ignoring or under-fitting minority populations.")
     (license license:lgpl3+)))
 
 (define-public r-mcbiopi
@@ -39256,27 +39228,6 @@ maintained by Jordan Mark Barbone.")
 and simulation (marima.sim()).")
     (license license:gpl2)))
 
-(define-public r-margins
-  (package
-    (name "r-margins")
-    (version "0.3.26.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "margins" version))
-       (sha256
-        (base32 "00n3ldhln4dk8r8dck5wvv39hdgb3nynqpp192lhf74x6zs1h4j4"))))
-    (properties `((upstream-name . "margins")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-prediction r-mass r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/leeper/margins")
-    (synopsis "Marginal Effects for Model Objects")
-    (description
-     "An R port of Stata's margins command, which can be used to calculate marginal
-(or partial) effects from model objects.")
-    (license license:expat)))
-
 (define-public r-marginalmediation
   (package
     (name "r-marginalmediation")
@@ -41431,17 +41382,17 @@ vignette in this package and
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAMS" version))
        (sha256
-        (base32 "1mrdn9klqjpf74wvb5brm79jy260qb1n12rpqmqd38i5hrkpcqsx"))))
+        (base32 "16j24z18z7dc25sk4jfnqgglw8gvv6ddhvl6v8lswm3ib4l6chvb"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-future-apply r-future))
-    (home-page "https://cran.r-project.org/package=MAMS")
+    (propagated-inputs (list r-mvtnorm r-knitr r-future-apply r-future))
+    (home-page "https://tjaki.github.io/MAMS/")
     (synopsis "Designing Multi-Arm Multi-Stage Studies")
     (description
      "Designing multi-arm multi-stage studies with (asymptotically) normal endpoints

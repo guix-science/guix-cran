@@ -8924,6 +8924,28 @@ but also accounts for the rate of change of the flow variation.  More details
 global and local influence for four possible perturbation schema.")
     (license license:gpl2)))
 
+(define-public r-heck
+  (package
+    (name "r-heck")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heck" version))
+       (sha256
+        (base32 "0mpfxkzk171qql9jx8byaiyinyb1ibla11jzljlw9pkdf4gs6m4b"))))
+    (properties `((upstream-name . "heck")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://cran.r-project.org/package=heck")
+    (synopsis "Highly Performant String Case Converter")
+    (description
+     "This package provides a case conversion between common cases like
+@code{CamelCase} and snake_case.  Using the rust crate heck
+<https://github.com/withoutboats/heck> as the backend for a highly performant
+case conversion for R'.")
+    (license license:expat)))
+
 (define-public r-heatwaver
   (package
     (name "r-heatwaver")

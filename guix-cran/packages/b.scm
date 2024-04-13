@@ -24332,6 +24332,42 @@ categorical inputs as well as functional or scalar output.  An extension of the
 methodology in Denison, Mallick and Smith (1998) <doi:10.1023/A:1008824606259>.")
     (license license:gpl3)))
 
+(define-public r-basksim
+  (package
+    (name "r-basksim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "basksim" version))
+       (sha256
+        (base32 "1vrav84fqkilmk0ww0gjr6hldxp7fpzgca2062jvrkzbyff05bx9"))))
+    (properties `((upstream-name . "basksim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progressr
+                             r-hdinterval
+                             r-foreach
+                             r-extradistr
+                             r-dofuture
+                             r-bmabasket
+                             r-bhmbasket
+                             r-arrangements))
+    (home-page "https://github.com/lbau7/basksim")
+    (synopsis
+     "Simulation-Based Calculation of Basket Trial Operating Characteristics")
+    (description
+     "This package provides a unified syntax for the simulation-based comparison of
+different single-stage basket trial designs with a binary endpoint and equal
+sample sizes in all baskets.  Methods include the designs by Baumann et al.
+(2024) <doi:10.48550/@code{arXiv.2309.06988>}, Fujikawa et al. (2020)
+<doi:10.1002/bimj.201800404>, Berry et al. (2020)
+<doi:10.1177/1740774513497539>, Neuenschwander et al. (2016)
+<doi:10.1002/pst.1730> and Psioda et al. (2021)
+<doi:10.1093/biostatistics/kxz014>.  For the latter three designs, the functions
+are mostly wrappers for functions provided by the packages bhmbasket and
+bmabasket'.")
+    (license license:gpl3+)))
+
 (define-public r-baskexact
   (package
     (name "r-baskexact")

@@ -1591,16 +1591,16 @@ also be tailored.")
 (define-public r-funnelplotr
   (package
     (name "r-funnelplotr")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FunnelPlotR" version))
        (sha256
-        (base32 "0lsbxl4ilgszd3q8h00skbnl36q47ghi7afbcmbjqdqzkpl8yfig"))))
+        (base32 "0h3nq5dd14n49zzgwaqqsh5qdx1xcsgskzqsajz1qpy86bm4ji89"))))
     (properties `((upstream-name . "FunnelPlotR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggrepel r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-scales r-rlang r-ggrepel r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://nhs-r-community.github.io/FunnelPlotR/")
     (synopsis "Funnel Plots for Comparing Institutional Performance")
@@ -19354,43 +19354,6 @@ built upon Louis identity for the observed information matrix.  Best-subset
 variable selection is then implemented since it becomes more feasible from the
 computational point of view.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-fastcpd
-  (package
-    (name "r-fastcpd")
-    (version "0.13.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastcpd" version))
-       (sha256
-        (base32 "0fksxgy0aq4wf2cjsidbv6ivzxdvpgczh3vmrm7lv74wpm7lhrcc"))))
-    (properties `((upstream-name . "fastcpd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tseries
-                             r-testthat
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progress
-                             r-matrix
-                             r-glmnet
-                             r-forecast
-                             r-fastglm))
-    (native-inputs (list r-knitr))
-    (home-page "https://fastcpd.xingchi.li")
-    (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
-    (description
-     "This package implements fast change point detection algorithm based on the paper
-\"Sequential Gradient Descent and Quasi-Newton's Method for Change-Point
-Analysis\" by Xianyang Zhang, Trisha Dawn
-<https://proceedings.mlr.press/v206/zhang23b.html>.  The algorithm is based on
-dynamic programming with pruning and sequential gradient descent.  It is able to
-detect change points a magnitude faster than the vanilla Pruned Exact Linear
-Time(PELT).  The package includes examples of linear regression, logistic
-regression, Poisson regression, penalized linear regression data, and whole lot
-more examples with custom cost function in case the user wants to use their own
-cost function.")
-    (license license:gpl3+)))
 
 (define-public r-fastcox
   (package

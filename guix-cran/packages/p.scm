@@ -4204,13 +4204,13 @@ the Healthy Hearts formula.")
 (define-public r-psborrow2
   (package
     (name "r-psborrow2")
-    (version "0.0.3.2")
+    (version "0.0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psborrow2" version))
        (sha256
-        (base32 "00lpikbcwihn9zvsrn96cvajk4nh6c4jh1y5779p9qjpv0hnsppn"))))
+        (base32 "1h0j018api032r7gmsr4ccgrj27hnjvllirbw6lb38x5k7sdd04w"))))
     (properties `((upstream-name . "psborrow2")))
     (build-system r-build-system)
     (inputs (list))
@@ -11576,13 +11576,13 @@ with PPLasso.  BMC Bioinformatics.  2023 Jan 23;24(1):25.")
 (define-public r-ppitables
   (package
     (name "r-ppitables")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppitables" version))
        (sha256
-        (base32 "0hssk8yf8f15x7m03x71v9yrshrzgkww8xfacbbsw5mpqcghc9zl"))))
+        (base32 "1wrscfgdbhnb7z0n44yw3yhw5dmr5jd7g1m69nkx61n6dfzj7mi2"))))
     (properties `((upstream-name . "ppitables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble))
@@ -11600,7 +11600,7 @@ used as reference to determine the poverty likelihood of a household based on
 their score from the country-specific PPI questionnaire.  These lookup tables
 have been extracted from documentation of the PPI found at
 <https://www.povertyindex.org> and managed by Innovations for Poverty Action
-<https://www.poverty-action.org>.")
+<https://poverty-action.org/>.")
     (license license:expat)))
 
 (define-public r-ppgmmga
