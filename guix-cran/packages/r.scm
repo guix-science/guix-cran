@@ -3369,13 +3369,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "166ac8cr6rnpxsr8pd13xsnz3ngaq0z8qhva37ns7123kdpg81lf"))))
+        (base32 "1nnfxrkkwyzi4gx223385z7ji1jp1dkq0g5xankj4l6psn23p3v7"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -31893,31 +31893,6 @@ Regression and Modeling with R by Adam Petrie, Cognella Publishers, ISBN:
 <https://titles.cognella.com/introduction-to-regression-and-modeling-with-r-9781631892509>.")
     (license license:gpl2+)))
 
-(define-public r-regcensus
-  (package
-    (name "r-regcensus")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "regcensus" version))
-       (sha256
-        (base32 "0sab5pwbnc06vds23nzcargk8igfngsyqhvnh0q40g95b55fm0c8"))))
-    (properties `((upstream-name . "regcensus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyverse r-stringr r-jsonlite r-httr r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/QuantGov/regcensus-api-R")
-    (synopsis "Accessing Data from the 'RegCensusAPI'")
-    (description
-     "Allowing users to access data from the @code{RegCensusAPI}'.  The
-@code{RegCensusAPI} is an API client that connects to the @code{RegData}
-regulatory restrictions data by the Mercatus Center at George Mason University'.
-@code{RegData} uses machine learning algorithms to quantify the number of
-regulatory restrictions in a jurisdiction.  You can find out more about
-@code{RegData} from @code{QuantGov} website <https://www.quantgov.org>.")
-    (license license:expat)))
-
 (define-public r-regassure
   (package
     (name "r-regassure")
@@ -42307,13 +42282,13 @@ mean squared error minimizing bandwidths.  This package is based on Schennach
 (define-public r-rbayesianoptimization
   (package
     (name "r-rbayesianoptimization")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rBayesianOptimization" version))
        (sha256
-        (base32 "0gwdzv4wl4n940ph23yhjh0s192k9visvivww5k1kmy2b1j88cva"))))
+        (base32 "071317r3xbcvkckzvgiac786zi2cy7zbrknscj3r521kaki1rfaf"))))
     (properties `((upstream-name . "rBayesianOptimization")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-gpfit r-foreach r-data-table))

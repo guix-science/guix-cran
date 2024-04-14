@@ -3405,17 +3405,17 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "0.0.6")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "1h0xi7vw2vzmarxfx0gdy895sh53mz4gj4zwrpynwc9d8cppx50q"))))
+        (base32 "1s6rssxalg3p4xfh1dc2igiqpiwyd8h5dlyfs5vwixn7pjyd3ac5"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wikidatar r-wikidataqueryservicer r-ratelimitr
-                             r-jsonlite r-httr))
+    (propagated-inputs (list r-ratelimitr r-jsonlite r-httr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wikiTools")
     (synopsis "Tools for Wikidata and Wikipedia")
     (description

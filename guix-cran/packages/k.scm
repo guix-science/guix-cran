@@ -4314,13 +4314,13 @@ conditions.  Song, H. and Wu, M.C. (2023) <@code{arXiv:2307.15268>}.")
 (define-public r-kerastuner
   (package
     (name "r-kerastuner")
-    (version "0.1.0.6")
+    (version "0.1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerastuneR" version))
        (sha256
-        (base32 "0n72m527slplgxxp7i5i91cpzbzgrlwmfc8gj2hs3wv41jrr1xl6"))))
+        (base32 "05hyhgbc2533az1yrjj8v8idky0xwn20mxd92dna0is6pddf75hv"))))
     (properties `((upstream-name . "kerastuneR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyjson
@@ -4405,13 +4405,13 @@ uniform kernels and unsmoothed and pre-smoothed input data.")
 (define-public r-kepted
   (package
     (name "r-kepted")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KEPTED" version))
        (sha256
-        (base32 "1w9mbj89w83pk0kzjh7wwp0zn5v6m2rpwa34rfc26niadbl40xfs"))))
+        (base32 "0i2sdz4sk558h4nwi82ing1zx34m93v59lr81ska57xiw77y7swy"))))
     (properties `((upstream-name . "KEPTED")))
     (build-system r-build-system)
     (propagated-inputs (list r-expm r-cubature r-compquadform))
@@ -4425,7 +4425,8 @@ test for elliptical distribution.  This is an asymptotic test for elliptical
 distribution under general alternatives, and the location and shape parameters
 are assumed to be unknown.  Some side-products are posted, including the
 transformation between rectangular and polar coordinates and two product-type
-kernel functions.  See Tang and Li (2024) <@code{arXiv:2306.10594>} for details.")
+kernel functions.  See Tang and Li (2024) <doi:10.48550/@code{arXiv.2306.10594>}
+for details.")
     (license license:bsd-3)))
 
 (define-public r-kensyn

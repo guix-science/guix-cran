@@ -3350,13 +3350,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.3.5")
+    (version "2024.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "1p4cp24lrmpjfmvcn8a4f5b8w4ci5ibcnhfgkxg9kp373dnxcl4n"))))
+        (base32 "02m3rajgyv9sp2zzr6na4nqdkalzk6i2fk8a52jw84ypja18np6d"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))

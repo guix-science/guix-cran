@@ -2494,13 +2494,13 @@ constraints is deleted to resolve the conflicts.")
 (define-public r-lpm
   (package
     (name "r-lpm")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPM" version))
        (sha256
-        (base32 "13k0w5183jvwa3gdilrd9fgnxk9n4sf529l1ddl04ymk7f0ar7wb"))))
+        (base32 "0kkqfzz193p9pc3h3b7wbzxv6yb75plw8mh9rcgcwyjir1br36gh"))))
     (properties `((upstream-name . "LPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-powdist r-mass r-fracdiff))

@@ -18311,17 +18311,17 @@ ISBN:9781849202015).")
 (define-public r-mlmetrics
   (package
     (name "r-mlmetrics")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLmetrics" version))
        (sha256
-        (base32 "061129b36h7xqw4zsznik694n8yy9qq6aaqfhdxkhdv8n5v1nzvp"))))
+        (base32 "11dgpw6lzs3vrfa3v9kf8x2rph3vpicxbw5af89afa175by3amrc"))))
     (properties `((upstream-name . "MLmetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr))
-    (home-page "http://github.com/yanyachen/MLmetrics")
+    (home-page "https://github.com/yanyachen/MLmetrics")
     (synopsis "Machine Learning Evaluation Metrics")
     (description
      "This package provides a collection of evaluation metrics, including loss, score
@@ -22545,13 +22545,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai-promises
   (package
     (name "r-mirai-promises")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai.promises" version))
        (sha256
-        (base32 "0yi9ks737b3afdbpj088lh33h2hb9bx993j2ag0klbwsfz2dffmi"))))
+        (base32 "04gp1jv37hkn82x76ixqh0ny75mkdkwihi6nqjv92carkap76y3a"))))
     (properties `((upstream-name . "mirai.promises")))
     (build-system r-build-system)
     (propagated-inputs (list r-promises r-nanonext))
@@ -39287,13 +39287,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.18.0")
+    (version "0.19.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "1q8jlhwka0ji70agj98c3g01894xnl5cj9khhr1imk3ljx72fxrp"))))
+        (base32 "0im46nablgx871l6mc1cgdh8xdmzbnhgn5gdyyjq8xmfgfbgk8h3"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -40043,28 +40043,6 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
-
-(define-public r-mapmisc
-  (package
-    (name "r-mapmisc")
-    (version "2.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mapmisc" version))
-       (sha256
-        (base32 "1xmrg78d8p9zz7w89gz4vq36dsrhac5p34f36kkfi0j94mnvrzd1"))))
-    (properties `((upstream-name . "mapmisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-geosphere))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mapmisc")
-    (synopsis "Utilities for Producing Maps")
-    (description
-     "This package provides a minimal, light-weight set of tools for producing nice
-looking maps in R, with support for map projections.  See Brown (2016)
-<doi:10.32614/RJ-2016-005>.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mapme-biodiversity
   (package

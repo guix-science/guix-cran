@@ -4322,6 +4322,32 @@ that Provides Insurance Against Failed Experiments\" Adam Kapelner, Abba M.
 Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
     (license license:gpl3)))
 
+(define-public r-optimall
+  (package
+    (name "r-optimall")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimall" version))
+       (sha256
+        (base32 "0949gwm6x9rkj9mdj1zzaqqhhslijp8c891h6pq16gm1pb3nwqlh"))))
+    (properties `((upstream-name . "optimall")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yangjasp/optimall")
+    (synopsis "Allocate Samples Among Strata")
+    (description
+     "This package provides functions for the design process of survey sampling, with
+specific tools for multi-wave and multi-phase designs.  Perform optimum
+allocation using Neyman (1934) <doi:10.2307/2342192> or Wright (2012)
+<doi:10.1080/00031305.2012.733679> allocation, split strata based on quantiles
+or values of known variables, randomly select samples from strata, allocate
+sampling waves iteratively, and organize a complex survey design.  Also includes
+a Shiny application for observing the effects of different strata splits.")
+    (license license:gpl3)))
+
 (define-public r-optimalgoldstandarddesigns
   (package
     (name "r-optimalgoldstandarddesigns")

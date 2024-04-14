@@ -37064,13 +37064,13 @@ methods such as Coincidence Analysis (CNA) or Qualitative Comparative Analysis
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalGPS" version))
        (sha256
-        (base32 "0qawlwd5a6xryw0688wx04s55gahchxb3xxs0jpiqqrm9rp3y687"))))
+        (base32 "146nszscdlm59ba7j90bbhj689x2hba7w2ywr2kpd5x5bhw8jagp"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

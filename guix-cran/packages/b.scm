@@ -4930,13 +4930,13 @@ described in Williamson et al. (2022) <doi:10.1158/1078-0432.ccr-21-2468>.")
 (define-public r-bqror
   (package
     (name "r-bqror")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bqror" version))
        (sha256
-        (base32 "0mg82bcc3cw2zhqz2j9539kw7cs159lzw363a2abcm7ys66dp6bd"))))
+        (base32 "1pisp3p3w5r9bfv5m5yykk410z5qvwsqdblmv7vsj1sc1nwf5y2v"))))
     (properties `((upstream-name . "bqror")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -4976,18 +4976,19 @@ of the American Statistical Association, 96(453):270â281, 2001. <doi:
 (define-public r-bprinstrattte
   (package
     (name "r-bprinstrattte")
-    (version "0.0.2")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BPrinStratTTE" version))
        (sha256
-        (base32 "1sddfxcbk9zg266gsvb6qs6c3mw4y1d88jj6zf9781jranpb1hng"))))
+        (base32 "1iqy36am0isiyjjgrf2jr1ywxxl0n33da637r7j3c3n3zc6yyqyg"))))
     (properties `((upstream-name . "BPrinStratTTE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-stanheaders
+                             r-rstantools
                              r-rstan
                              r-rcppparallel
                              r-rcppeigen
@@ -5005,8 +5006,8 @@ of the American Statistical Association, 96(453):270â281, 2001. <doi:
 time-to-event endpoints in clinical trials with principal strata defined by the
 occurrence of antidrug antibodies.  The methodology is based on Frangakis and
 Rubin (2002) <doi:10.1111/j.0006-341x.2002.00021.x> and Imbens and Rubin (1997)
-<doi:10.1214/aos/1034276631>, and intended to be applied to a specific
-time-to-event setting.")
+<doi:10.1214/aos/1034276631>, and here adapted to a specific time-to-event
+setting.")
     (license license:gpl3+)))
 
 (define-public r-bpr

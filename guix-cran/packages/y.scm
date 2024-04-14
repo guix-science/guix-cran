@@ -768,16 +768,16 @@ heteroskedasticity.")
 (define-public r-yatah
   (package
     (name "r-yatah")
-    (version "0.2.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yatah" version))
        (sha256
-        (base32 "0cckmslzm19kg7vkv28aq8h4yx8m2khqs9d6y98gwl64qrjiz42g"))))
+        (base32 "0q0c9rgkjcj4i7jjc6a9znlvk7b4vawa84g9d1i4v6m5z7nrfdzd"))))
     (properties `((upstream-name . "yatah")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-purrr r-ape))
+    (propagated-inputs (list r-stringr r-purrr r-lifecycle r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://abichat.github.io/yatah/")
     (synopsis "Yet Another TAxonomy Handler")

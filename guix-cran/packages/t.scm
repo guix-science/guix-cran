@@ -26060,13 +26060,13 @@ abstraction.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.17")
+    (version "0.9.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tables" version))
        (sha256
-        (base32 "1ygf1jir32dwy7617imrr2pkqf5qf894lbxrjm7kqflq3ar6zf5z"))))
+        (base32 "1yqwnq44ylvqhr0lpadff6y9x362naz00j76jbfirjrrdrwhw05r"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmltools))

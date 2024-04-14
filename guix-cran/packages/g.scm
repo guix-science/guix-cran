@@ -26154,34 +26154,6 @@ computational parts are implemented in C++, linking to the GDAL',
 <doi:10.3390/data4030092> for further details.")
     (license license:expat)))
 
-(define-public r-gdalbindings
-  (package
-    (name "r-gdalbindings")
-    (version "0.1.17")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gdalBindings" version))
-       (sha256
-        (base32 "1z4n9113by1igd9kpmvjll7rp3hf2ijgrrvc1p8l43595546fcp2"))))
-    (properties `((upstream-name . "gdalBindings")))
-    (build-system r-build-system)
-    (inputs (list zlib
-                  pcre2
-                  openssl
-                  openssh
-                  gdal
-                  curl))
-    (propagated-inputs (list r-rcpp r-r6 r-data-table))
-    (home-page "https://github.com/caiohamamura/gdalBindings-R")
-    (synopsis "GDAL Classes Wrapper for Reading and Writing Raster Blocks")
-    (description
-     "Wraps around Geospatial Data Abstraction Library (GDAL) raster and band classes
-for reading and writing directly from @code{RasterBlock} in R semantic `[[]]`
-and familiar syntax for accessing @code{RasterBand} and reading/writing to
-blocks (see <https://gdal.org/>).")
-    (license license:gpl3)))
-
 (define-public r-gdadata
   (package
     (name "r-gdadata")

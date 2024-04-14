@@ -50864,13 +50864,13 @@ Yang, Z (2018) <doi:10.1016/j.jeconom.2017.08.019>.  Wu, J., Matsuda, Y (2021)
 (define-public r-sdpdmod
   (package
     (name "r-sdpdmod")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SDPDmod" version))
        (sha256
-        (base32 "03nwahpf3vd29jrr55ml3wxb8kcm9wf9mlzlbgv4yzadxmx6ybab"))))
+        (base32 "1f136nb32y3lnnhyri03y8p5akc2c06g9rynx53w702fyi72bgy6"))))
     (properties `((upstream-name . "SDPDmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -53051,13 +53051,13 @@ underwriting scorecard development, extensively used in financial domain.")
 (define-public r-scorecard
   (package
     (name "r-scorecard")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorecard" version))
        (sha256
-        (base32 "105xqhipd1vlmm23frjq3qjsd0k6q7cxzakrvw0s2r1v8m4iqagv"))))
+        (base32 "0aql9rfvq1fhlq13vj5dmz37nd31c1rrm808zh8mzx6425vx72d1"))))
     (properties `((upstream-name . "scorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

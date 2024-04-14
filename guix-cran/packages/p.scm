@@ -29371,36 +29371,6 @@ of Portland inventoried every tree in over 170 parks and along the streets in 96
 neighborhoods.")
     (license license:gpl3)))
 
-(define-public r-pdxpower
-  (package
-    (name "r-pdxpower")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PDXpower" version))
-       (sha256
-        (base32 "131r0g6a48239k9iqgmpfr6kghy31i0kix4w6ihxk5v61g9rw9d9"))))
-    (properties `((upstream-name . "PDXpower")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
-                             r-frailtypack))
-    (home-page "https://cran.r-project.org/package=PDXpower")
-    (synopsis
-     "Time to Event Outcome in Experimental Designs of Pre-Clinical Studies")
-    (description
-     "Conduct simulation-based customized power calculation for clustered time to
-event data in a mixed crossed/nested design, where a number of cell lines and a
-number of mice within each cell line are considered to achieve a desired
-statistical power, motivated by Eckel-Passow and colleagues (2021)
-<doi:10.1093/neuonc/noab137>.  This package provides two commonly used models
-for powering a design, linear mixed effects and Cox frailty model.  Both models
-account for within-subject (cell line) correlation while holding different
-distributional assumptions about the outcome.  Alternatively, the counterparts
-of fixed effects model are also available, which produces similar estimates of
-statistical power.")
-    (license license:gpl2+)))
-
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
