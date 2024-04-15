@@ -161,13 +161,13 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "1dkiz3ra3yf02i31xg0hpd2n90cl0484q1n0vav7vfc539jpx67v"))))
+        (base32 "134cahaarly5qbdycm0s52fkxfk0pylg5g3k9sq5y6law8yb5q7v"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-nloptr r-matrix r-glmnet r-gdina))

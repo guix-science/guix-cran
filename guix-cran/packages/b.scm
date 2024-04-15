@@ -16545,13 +16545,13 @@ with leverage (one-component, two-component, skewed versions).")
 (define-public r-betasandwich
   (package
     (name "r-betasandwich")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaSandwich" version))
        (sha256
-        (base32 "06jjcl4ajhd1g0n9w2p3wn6pvdwxkv4rwrzbllhr8zggdbnh2j5r"))))
+        (base32 "0gd6n1xghwhqg981ibb41w2hw3wk5zzr3870wpjbic4k96cnmvyb"))))
     (properties `((upstream-name . "betaSandwich")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaSandwich")
@@ -16560,8 +16560,10 @@ with leverage (one-component, two-component, skewed versions).")
     (description
      "Generates robust confidence intervals for standardized regression coefficients
 using heteroskedasticity-consistent standard errors for models fitted by lm() as
-described in Dudgeon (2017) <doi:10.1007/s11336-017-9563-z>.  A description of
-the package and code examples are presented in Pesigan, Sun, and Cheung (2023)
+described in Dudgeon (2017) <doi:10.1007/s11336-017-9563-z>.  The package can
+also be used to generate confidence intervals for R-squared, adjusted R-squared,
+and differences of standardized regression coefficients.  A description of the
+package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 <doi:10.1080/00273171.2023.2201277>.")
     (license license:expat)))
 
@@ -16674,13 +16676,13 @@ functional and phylogenetic beta diversity.")
 (define-public r-betanb
   (package
     (name "r-betanb")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaNB" version))
        (sha256
-        (base32 "0smjygh6z91r798b9sx7mxj1ksm66wf356jw0pfkgwmr7nxk66a7"))))
+        (base32 "1qfpp4y3drqh492y7x67jkqbabkqbmsbc2yqvbzc427pd3n9ijs5"))))
     (properties `((upstream-name . "betaNB")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaNB")
@@ -16696,13 +16698,13 @@ differences in standardized regression coefficients, for models fitted by lm()."
 (define-public r-betamc
   (package
     (name "r-betamc")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaMC" version))
        (sha256
-        (base32 "0wiccdiaqmza4fgcnyf9z833rnqzrm7shb0xvajcfa8d3vpp92z0"))))
+        (base32 "08rw2q8dg51ygmns070qpd1204k9hizpqfzggj542sq2ssgc7byk"))))
     (properties `((upstream-name . "betaMC")))
     (build-system r-build-system)
     (home-page "https://github.com/jeksterslab/betaMC")
@@ -16756,13 +16758,13 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
 (define-public r-betadelta
   (package
     (name "r-betadelta")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaDelta" version))
        (sha256
-        (base32 "1590lxqalqg30k9zilmbddp9snig93kjxr8zvba7hlpr2zb1jayy"))))
+        (base32 "1d9fdi4bvhqih45iism5mkpqrmfl4mgjhsqkb5jkpyyd3la059y6"))))
     (properties `((upstream-name . "betaDelta")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv))
@@ -16772,8 +16774,10 @@ function.  Livingston and Lewis (1995) <doi:10.1111/j.1745-3984.1995.tb00462.x>.
      "Generates confidence intervals for standardized regression coefficients using
 delta method standard errors for models fitted by lm() as described in Yuan and
 Chan (2011) <doi:10.1007/s11336-011-9224-6> and Jones and Waller (2015)
-<doi:10.1007/s11336-013-9380-y>.  A description of the package and code examples
-are presented in Pesigan, Sun, and Cheung (2023)
+<doi:10.1007/s11336-013-9380-y>.  The package can also be used to generate
+confidence intervals for differences of standardized regression coefficients and
+as a general approach to performing the delta method.  A description of the
+package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 <doi:10.1080/00273171.2023.2201277>.")
     (license license:expat)))
 

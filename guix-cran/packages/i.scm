@@ -11065,13 +11065,13 @@ as influenza.")
 (define-public r-impacteffectsize
   (package
     (name "r-impacteffectsize")
-    (version "0.6.3")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ImpactEffectsize" version))
        (sha256
-        (base32 "0kks5c8hksignlgdam3rwagwyz3aw5r5491gw17jy1gnhcixm3k8"))))
+        (base32 "1g62p81x6i9gs562m3pdixw27d2cbzhz8drmcfslgs6f48zlir0j"))))
     (properties `((upstream-name . "ImpactEffectsize")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-paralleldist r-matrixstats r-catools))

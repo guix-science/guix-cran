@@ -20045,13 +20045,13 @@ FAO Irrigation and drainage paper 56\".")
 (define-public r-fanyi
   (package
     (name "r-fanyi")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fanyi" version))
        (sha256
-        (base32 "047ag47lnw5p54zp5zwpdmnmngvssv8n55h2h6ypvfdcflybfnid"))))
+        (base32 "1wl5sgnk154ivmnwdmp7bqm3q30rplc1c2gqfj3w3g3wlnzalvaa"))))
     (properties `((upstream-name . "fanyi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yulab-utils
@@ -20059,6 +20059,7 @@ FAO Irrigation and drainage paper 56\".")
                              r-sseparser
                              r-rlang
                              r-rentrez
+                             r-purrr
                              r-openssl
                              r-jsonlite
                              r-httr2
@@ -20073,7 +20074,10 @@ analysis results into a language familiar to the user, it enables a better
 understanding of the information, thereby reducing the barriers caused by
 language.  It offers several helper functions to query gene information to help
 interpretation of interested genes (e.g., marker genes, differential expression
-genes), and provides utilities to translate ggplot graphics.")
+genes), and provides utilities to translate ggplot graphics.  This package is
+not affiliated with any of the online translators.  The developers do not take
+responsibility for the invoice it incurs when using this package, especially for
+exceeding the free quota.")
     (license license:artistic2.0)))
 
 (define-public r-fanplot

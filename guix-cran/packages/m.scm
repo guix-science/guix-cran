@@ -8465,13 +8465,13 @@ global MSSS (multiple sclerosis severity score).")
 (define-public r-mrzero
   (package
     (name "r-mrzero")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MRZero" version))
        (sha256
-        (base32 "1ksmhpycslkilm1ixhdi0asa5la5mrql48ycbf1camk556mcl3wa"))))
+        (base32 "0bjxy7rcgcsy2d0kg5v230l5z0hd72jq3z7692km9sbhh3bq51bf"))))
     (properties `((upstream-name . "MRZero")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase

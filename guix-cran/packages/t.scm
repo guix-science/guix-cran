@@ -12948,13 +12948,13 @@ project template for Rstudio'.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "1c4mgawxk54d7m1zalf53a9ipfnx6bv5l0wjx9v3r7filzisvhh2"))))
+        (base32 "1n85z3ihvll1822gd9if67kian4hfzvvw6335mv3mwha68ixkqsx"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rcpp))
@@ -12963,12 +12963,12 @@ project template for Rstudio'.")
     (description
      "Adds some functions to help in your coding etiquette.  tinycodet primarily
 focuses on 4 aspects.  1) Safer decimal (in)equality testing, safer atomic
-conversions, and other functions for safer coding.  2) A new package import
-system, that attempts to combine the benefits of using a package without
-attaching it, with the benefits of attaching a package.  3) Extending the string
-manipulation capabilities of the stringi R package.  4) Reducing repetitive
-code.  Besides linking to Rcpp', tinycodet has only one other dependency, namely
-stringi'.")
+typecasting, standard-evaluated alternatives to with() and aes(), and other
+functions for safer coding.  2) A new package import system, that attempts to
+combine the benefits of using a package without attaching it, with the benefits
+of attaching a package.  3) Extending the string manipulation capabilities of
+the stringi R package.  4) Reducing repetitive code.  Besides linking to Rcpp',
+tinycodet has only one other dependency, namely stringi'.")
     (license license:expat)))
 
 (define-public r-tinyarray
@@ -20342,13 +20342,13 @@ on 9 hypothesis tests for dependence.")
 (define-public r-testex
   (package
     (name "r-testex")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testex" version))
        (sha256
-        (base32 "1zybkl0lwijz1r6l8a0kch5hag0m3ymymvpyk53zp2776hwzimzg"))))
+        (base32 "0rf7smgb7ha0wfaslxcy97xhdx4bqnj48ifxf20v2h33psqlr374"))))
     (properties `((upstream-name . "testex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

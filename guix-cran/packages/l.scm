@@ -3618,6 +3618,46 @@ and Net Reclassification Indexes for repeated measures.  It is based on methods
 in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
     (license license:gpl2+)))
 
+(define-public r-longreadvqs
+  (package
+    (name "r-longreadvqs")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "longreadvqs" version))
+       (sha256
+        (base32 "07pdnipq4nl7v8sgbfrcz7slz36gnfj3zj6i6pcvq6zh4fy1bw3g"))))
+    (properties `((upstream-name . "longreadvqs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-seqinr
+                             r-scales
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plyr
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-biostrings
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NakarinP/longreadvqs")
+    (synopsis "Viral Quasispecies Comparison from Long-Read Sequencing Data")
+    (description
+     "This package performs variety of viral quasispecies diversity analyses [see
+Gregori et al. (2016) <doi:10.1016/j.virol.2016.03.017>] based on long-read
+sequence alignment.  Main functions include 1) sequencing error minimization and
+read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3)
+viral quasispecies profiles comparison and visualization.")
+    (license license:gpl3)))
+
 (define-public r-longpower
   (package
     (name "r-longpower")
@@ -13123,13 +13163,13 @@ choosing the most representative LDA run as prototype.")
 (define-public r-ldamatch
   (package
     (name "r-ldamatch")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldamatch" version))
        (sha256
-        (base32 "1nzl9pf223z2nwpaw5721qw8p1va70avpjwj1myv9q054zaspmgb"))))
+        (base32 "1vksgild5j7g1skx28jki9kjknc08h2xf715azyfqgbmvbkkljgc"))))
     (properties `((upstream-name . "ldamatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-runit

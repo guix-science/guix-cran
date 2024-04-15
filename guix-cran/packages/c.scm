@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -40247,27 +40247,26 @@ resequencing of tumor samples.")
 (define-public r-cancerscreening
   (package
     (name "r-cancerscreening")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerscreening" version))
        (sha256
-        (base32 "1vmskbxgrb82477vpwlhi4asxxqpvk3bva0vaqp7pfirahjkvwmy"))))
+        (base32 "0i4qvhnlk3wka865rps7ak3jwjf1idwiy26c2p07lz96ycxdspcc"))))
     (properties `((upstream-name . "cancerscreening")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vctrs
                              r-tidyr
-                             r-tibble
                              r-stringr
                              r-rlang
+                             r-purrr
+                             r-pillar
                              r-magrittr
                              r-lubridate
-                             r-jsonlite
-                             r-httr2
-                             r-gargle
+                             r-khisr
                              r-dplyr
-                             r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cancerscreening.damurka.com")

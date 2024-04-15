@@ -28868,13 +28868,13 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "1mpg4grgri7sxag21p2k99kqqhbdp9yi4bj10yqqmjybn2xcmsgn"))))
+        (base32 "0cvvdbcyk8f27p3y87ad84fcjx8byhkxpdl71vlr762j55ff53mq"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

@@ -33934,17 +33934,17 @@ to fully utilize the computing resources available to the user.")
 (define-public r-paran
   (package
     (name "r-paran")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paran" version))
        (sha256
-        (base32 "0d9la83mxfpfgdfrqa40ck5fcp3j2b70d8c8nl9wmdsgvgqrl23s"))))
+        (base32 "0lfhizz1vdmlwwcnm3y1nm127rm02icdk56x2p0m7vrcqbxybyqp"))))
     (properties `((upstream-name . "paran")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
-    (home-page "http://alexisdinno.com/Software/files/PA_for_PCA_vs_FA.pdf")
+    (home-page "https://alexisdinno.com/Software/index.shtml#paran")
     (synopsis "Horn's Test of Principal Components/Factors")
     (description
      "An implementation of Horn's technique for numerically and graphically evaluating

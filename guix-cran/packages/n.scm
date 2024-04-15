@@ -809,13 +809,13 @@ correction.  See @code{MrkviÄka} et al. (2021)
 (define-public r-ntsdists
   (package
     (name "r-ntsdists")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntsDists" version))
        (sha256
-        (base32 "1a0yqnrryx6irvcab4iwgnv6wmsndij4ycgbq2kbv86zkw2rgw59"))))
+        (base32 "1igqn4kzbqly8bl3mi4php25jwnqf0z5s8xmany0lf8nciwl4hl3"))))
     (properties `((upstream-name . "ntsDists")))
     (build-system r-build-system)
     (home-page "https://github.com/dmazarei/ntsDists")

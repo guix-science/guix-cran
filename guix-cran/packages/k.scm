@@ -3255,13 +3255,13 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
 (define-public r-khisr
   (package
     (name "r-khisr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khisr" version))
        (sha256
-        (base32 "0kaq64iz9wz38gh207lr6qw4ljiszh8ra1xg1p8zz1vs1vsip2dg"))))
+        (base32 "0arfv7yi1p599b9lqyn6pqf5w8b2nc3lxi989gsmssksfd4y5sh0"))))
     (properties `((upstream-name . "khisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3280,8 +3280,8 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
     (synopsis "Retrieve Data from Kenya Health Information System (KHIS)")
     (description
      "Simplify data retrieval from Kenya's health system with a powerful interface for
-efficient data retrieval from the Kenya Health Information System
-(KHIS)<https://hiskenya.org>.  Empower researchers, analysts, and healthcare
+efficient data retrieval from the Kenya Health Information System (KHIS)
+<https://hiskenya.org>.  Empower researchers, analysts, and healthcare
 professionals to access critical health data efficiently.")
     (license license:expat)))
 

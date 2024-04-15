@@ -14094,6 +14094,30 @@ distribution proposed in Afify, A.Z. et al (2017) <doi:10.1214/16-BJPS322>.")
 fetching and parsing Associated Press election results.")
     (license license:expat)))
 
+(define-public r-elevdistr
+  (package
+    (name "r-elevdistr")
+    (version "1.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ElevDistr" version))
+       (sha256
+        (base32 "119r06ijd72z2f9asydlcy6i7sqgzfapy02wn13x5zf1cp459n8a"))))
+    (properties `((upstream-name . "ElevDistr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-rann r-ggplot2 r-ggmap))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LivioBaetscher/ElevDistr")
+    (synopsis "Calculate the Distance to the Nearest Local Treeline")
+    (description
+     "This package provides a method to calculate the distance to the climatic tree
+line for large data sets of coordinates (World Geodetic System 1984) with
+geographical uncertainty.  The default thresholds and the treeline definition is
+based on Paulsen and KÃ¶rner (2014) <doi:10.1007/s00035-014-0124-0>, users are
+free to decide what climate layers they would like to use.")
+    (license license:expat)))
+
 (define-public r-elevatr
   (package
     (name "r-elevatr")
@@ -16768,13 +16792,13 @@ response theory models using Stan easy.")
 (define-public r-edotrans
   (package
     (name "r-edotrans")
-    (version "0.2.2")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EDOtrans" version))
        (sha256
-        (base32 "0n397z0nwz1my8d27dl5x61lzl5q1773lgqmxxj0a5a83i8srbx0"))))
+        (base32 "0qyg9gcpdh9fchn3ylww1cmb4x1zrrapy9n26gqxncc728526gn7"))))
     (properties `((upstream-name . "EDOtrans")))
     (build-system r-build-system)
     (propagated-inputs (list r-opgmmassessment r-abcanalysis))

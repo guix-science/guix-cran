@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -95,13 +96,13 @@ decoding.  The method is fully described in Druet and Gautier (2017)
 (define-public r-rzmq
   (package
     (name "r-rzmq")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rzmq" version))
        (sha256
-        (base32 "0033kipyla0sic1sr6wldnq40q0l9865zdkb0lsb5zh50y036vrz"))))
+        (base32 "1wb3nhgik436nq2518npy7z8c1nh0c6ck5a95csph2rsn91kaq4d"))))
     (properties `((upstream-name . "rzmq")))
     (build-system r-build-system)
     (inputs (list zlib))

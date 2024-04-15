@@ -5094,13 +5094,13 @@ analysing and manipulating visual field data.")
 (define-public r-opgmmassessment
   (package
     (name "r-opgmmassessment")
-    (version "0.3.6")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opGMMassessment" version))
        (sha256
-        (base32 "1rxyn0kpy72i7mqabpakh6pxwv629wrgia49awgx9nc5ad6hf079"))))
+        (base32 "0qnxq9i0spygz2lmjb23y94r9cgvkkariv0v8llqdb6l89bhfdqm"))))
     (properties `((upstream-name . "opGMMassessment")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -6190,22 +6190,21 @@ subsequent papers.")
 (define-public r-opdisdownsampling
   (package
     (name "r-opdisdownsampling")
-    (version "0.8.3")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opdisDownsampling" version))
        (sha256
-        (base32 "0aq7ghy5syiic0nplnp74qhyw1yxih9bsfc0jgvz45zvcsp4gdwx"))))
+        (base32 "1bcmfb8h3aysddcjba2ywk4vrwyidprr69v4r99nzw32zlwlk0jl"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-twosamples
                              r-pracma
-                             r-memuse
+                             r-pbmcapply
                              r-foreach
                              r-doparallel
-                             r-catools
-                             r-benchmarkme))
+                             r-catools))
     (home-page "https://cran.r-project.org/package=opdisDownsampling")
     (synopsis
      "Optimal Distribution Preserving Down-Sampling of Bio-Medical Data")
