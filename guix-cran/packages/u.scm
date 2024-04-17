@@ -2420,13 +2420,13 @@ nouns and adjectives.  The stemming procedure for French is described in (Savoy,
 (define-public r-unikn
   (package
     (name "r-unikn")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unikn" version))
        (sha256
-        (base32 "040wqf8hnbvij8b044q7akzhd9dkb6k4fcv1dfn9cahqpmlgb02l"))))
+        (base32 "1h8d6m1dvck2ps2kqiv2b8i6sw3gm799bimmcq86k93m0515vpbf"))))
     (properties `((upstream-name . "unikn")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-cli))

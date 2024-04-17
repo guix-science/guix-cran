@@ -5953,16 +5953,16 @@ characteristics â A novel and practical method for estimating the
 (define-public r-intrinsicfrp
   (package
     (name "r-intrinsicfrp")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intrinsicFRP" version))
        (sha256
-        (base32 "1grcbqncx2j0y71r3l7qapj4d4sgzdgqfz4336lgbndpqvlc538x"))))
+        (base32 "1ji707s5501m6q8b2bgjd8d6avylb441710dkxaj96sznn8jf4ig"))))
     (properties `((upstream-name . "intrinsicFRP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
     (home-page "https://github.com/a91quaini/intrinsicFRP")
     (synopsis "An R Package for Factor Model Asset Pricing")
     (description
@@ -8249,17 +8249,17 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inldata
   (package
     (name "r-inldata")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inldata" version))
        (sha256
-        (base32 "0b1lnbb21knr33yy6a2lswxhhxxdm6nw9zw1h7chmba9gb7gf24m"))))
+        (base32 "04kfywn583i6wdmq3h4yp2bdv66dpxvq91sjnav43rpa31qk9a3l"))))
     (properties `((upstream-name . "inldata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
-    (home-page "https://code.usgs.gov/inl/inldata")
+    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
     (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
     (description
      "This package provides a collection of analysis-ready datasets for the U.S.
@@ -8271,7 +8271,7 @@ surrounding areas have been used to describe the effects of waste disposal on
 water contained in the eastern Snake River Plain aquifer, located in the
 southeastern part of Idaho, and the availability of water for long-term
 consumptive and industrial use.  The package includes long-term monitoring
-records dating back to measurements from 1922.  Geospatial data describing the
+records dating back to measurements from 1949.  Geospatial data describing the
 areas from which samples were collected or observations were made are also
 included in the package.  Bundling this data into a single package significantly
 reduces the magnitude of data processing for researchers and provides a way to
@@ -14556,13 +14556,13 @@ freely delivered under formal request through the official web page
 (define-public r-ideafilter
   (package
     (name "r-ideafilter")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IDEAFilter" version))
        (sha256
-        (base32 "1nwsq5jy374f2sdnrxw79kq3wklydrygm4qsd6v6npdqw55jli2l"))))
+        (base32 "0clr5jkrmwp6nd491rm67i794kh0dcjlhf6z56a8pvjhhia29hpy"))))
     (properties `((upstream-name . "IDEAFilter")))
     (build-system r-build-system)
     (arguments
@@ -14588,7 +14588,7 @@ freely delivered under formal request through the official web page
                              r-pillar
                              r-ggplot2
                              r-crayon))
-    (native-inputs (list esbuild))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://biogen-inc.github.io/IDEAFilter/")
     (synopsis "Agnostic, Idiomatic Data Filter Module for Shiny")
     (description
@@ -14602,7 +14602,7 @@ are applied.  The shiny moduleâs user interface has a minimalist aesthetic 
 that the focus can be on the data & other visuals.  In addition to returning a
 reactive (filtered) data.frame, IDEAFilter as also returns dplyr filter
 statements used to actually slice the data.")
-    (license license:agpl3)))
+    (license license:expat)))
 
 (define-public r-ide
   (package

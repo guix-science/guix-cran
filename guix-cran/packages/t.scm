@@ -289,13 +289,13 @@ and plots.  All twowaytests functions are designed for two-way layout.")
 (define-public r-twowayfeweights
   (package
     (name "r-twowayfeweights")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoWayFEWeights" version))
        (sha256
-        (base32 "03ljjrwywx2yyfqyvrlf7z8qrsw20vrp39938xnwi411hk9ndch3"))))
+        (base32 "0xlx9xbfqin2l8nls28jy3c2sm4fvvn4pnkm77m0m2jqw5nqj68r"))))
     (properties `((upstream-name . "TwoWayFEWeights")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -7217,13 +7217,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.5")
+    (version "2.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "0prsf1qhdvh524sdw396d2dflg8nm9kf6g0i8nczd0kjzd5jf95m"))))
+        (base32 "07i5xqr5vqk2c74ddcv1yrssqr6hy4gy5p3crr99f1c20yh7a618"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8220,13 +8220,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "1kl4hcjpp52xx2z0xk0wd0zibqrxb1smigxsvfgrzr8djvm4si3b"))))
+        (base32 "0pp71zl2pkbqm1zcalk9kq2fa8gnnf2rpw3yg5ar7abvp756sj76"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -9881,13 +9881,13 @@ from decennial census and American Community Survey 1-year and 5-year estimates.
 (define-public r-toster
   (package
     (name "r-toster")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TOSTER" version))
        (sha256
-        (base32 "04rwsaa52bmhhlcr0afqrmgl0wk7hw9xq23ylmb4afvp3if0qm3d"))))
+        (base32 "11rm906vxknncaah6rs8ainr58213js2ckg8vasp2l826vhfg08f"))))
     (properties `((upstream-name . "TOSTER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13959,13 +13959,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.25.0")
+    (version "0.26.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0azczjh9imcjc6rq7l0lcp0mvab0jmmq6y8i5xvyndf5q79mn002"))))
+        (base32 "0np2b4lwwpw8v3nxhsyzszkvx2sdxng9kzfqr5f7lr7x4vl9q83y"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -13973,15 +13973,16 @@ is proportional to the certain characteristics of the dataset.")
     (native-inputs (list r-simplermarkdown pkg-config))
     (home-page "https://github.com/TileDB-Inc/TileDB-R")
     (synopsis
-     "Modern Database Engine for Multi-Modal Data via Sparse and Dense Multidimensional Arrays")
+     "Modern Database Engine for Complex Data Based on Multi-Dimensional Arrays")
     (description
      "The modern database @code{TileDB} introduces a powerful on-disk format for
-multi-modal data based on dimensional arrays.  It supports dense and sparse
-arrays, dataframes and key-values stores, cloud storage ('S3', GCS', Azure'),
-chunked arrays, multiple compression, encryption and checksum filters, uses a
-fully multi-threaded implementation, supports parallel I/O, data versioning
-('time travel'), metadata and groups.  It is implemented as an embeddable
-cross-platform C++ library with APIs from several languages, and integrations.")
+storing and accessing any complex data based on multi-dimensional arrays.  It
+supports dense and sparse arrays, dataframes and key-values stores, cloud
+storage ('S3', GCS', Azure'), chunked arrays, multiple compression, encryption
+and checksum filters, uses a fully multi-threaded implementation, supports
+parallel I/O, data versioning ('time travel'), metadata and groups.  It is
+implemented as an embeddable cross-platform C++ library with APIs from several
+languages, and integrations.  This package provides the R support.")
     (license license:expat)))
 
 (define-public r-tikzdevice
@@ -15874,13 +15875,13 @@ other data frame.  The main function is predict_gam().")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.7")
+    (version "1.7.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "1vmlbsnj3kq2gl71kv3xz87cdwkkkmn6lnl4j8rf65njsjh1r9ra"))))
+        (base32 "0vkgnak1s5519b1k4zrfchnalyi2s1qvfvr8x8s0dpw5f3vn1hf2"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -26629,4 +26630,28 @@ equivalence according to Hoffelder (2016)
 <http://www.ecv.de/suse_item.php?@code{suseId=Z|pi|8430>} for the equivalence
 comparison of highly variable dissolution profiles.")
     (license license:gpl3)))
+
+(define-public r-t2dfittailor
+  (package
+    (name "r-t2dfittailor")
+    (version "3.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "T2DFitTailor" version))
+       (sha256
+        (base32 "1491cn8gx1ijkdg33p0fiyiam80aiisd489hqn76ijsbhkagm51c"))))
+    (properties `((upstream-name . "T2DFitTailor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-fmsb r-dplyr))
+    (home-page "https://cran.r-project.org/package=T2DFitTailor")
+    (synopsis
+     "Tailor the Exercise Plans and Visualize the Outcome for T2D Patients")
+    (description
+     "This package provides a system for personalized exercise plan recommendations
+for T2D (Type 2 Diabetes) patients based on the primary outcome of @code{HbA1c}
+(Glycated Hemoglobin).  You provide the individual's information, and
+T2D@code{FitTailor} details the exercise plan and predicts the intervention's
+effectiveness.")
+    (license license:expat)))
 

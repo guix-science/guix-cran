@@ -12798,13 +12798,13 @@ ggplot2 plotting framework and can be extended like every other ggplot object.")
 (define-public r-dimodelsmulti
   (package
     (name "r-dimodelsmulti")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DImodelsMulti" version))
        (sha256
-        (base32 "1l15irl8nrhq0x0bhz5rh225lha9pmqmvl0p4mr534cg36abs7gm"))))
+        (base32 "1x4n8gxlacgi5x3jr1gk4ffs0xpvgdff4zwf6fmivh3lzsd8w2vg"))))
     (properties `((upstream-name . "DImodelsMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -13405,23 +13405,23 @@ Installation Guide, from package prioritizr', can be found here:
 (define-public r-diffusion
   (package
     (name "r-diffusion")
-    (version "0.2.7")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffusion" version))
        (sha256
-        (base32 "1j9s9vw5sc4k956bk4yp3bf4fnp7lhhkwcvlzvsh1w4dyaj8l35h"))))
+        (base32 "1bgswz2ichzgdb3ckw0sgxkqv3pf1lpzkjb3ly389ln03q0iwnwq"))))
     (properties `((upstream-name . "diffusion")))
     (build-system r-build-system)
-    (propagated-inputs (list r-systemfit r-nloptr r-dfoptim))
+    (propagated-inputs (list r-systemfit r-optimx r-nloptr))
     (home-page "https://github.com/mamut86/diffusion")
     (synopsis "Forecast the Diffusion of New Products")
     (description
      "Various diffusion models to forecast new product growth.  Currently the package
-contains Bass, Gompertz and Gamma/Shifted Gompertz curves.  See Meade and Islam
-(2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
-    (license license:gpl2+)))
+contains Bass, Gompertz, Gamma/Shifted Gompertz and Weibull curves.  See Meade
+and Islam (2006) <doi:10.1016/j.ijforecast.2006.01.005>.")
+    (license license:lgpl2.1)))
 
 (define-public r-diffudist
   (package
@@ -27232,13 +27232,13 @@ U.S. FDA.")
 (define-public r-d4storagehub4r
   (package
     (name "r-d4storagehub4r")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "d4storagehub4R" version))
        (sha256
-        (base32 "1a6clkld20vmvacdwr4rir34mj4fm5fdh687b2whds6y0rj7wgb3"))))
+        (base32 "0ixv8wypcvcrn3xig8sg54mizsll4v2665l8hqd1q15d0ln2p789"))))
     (properties `((upstream-name . "d4storagehub4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

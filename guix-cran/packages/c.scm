@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -20566,6 +20566,40 @@ profiles, thereby facilitating applications, such as reviewing structured
 profiles.")
     (license (license:fsdg-compatible "Apache License"))))
 
+(define-public r-cohortcharacteristics
+  (package
+    (name "r-cohortcharacteristics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortCharacteristics" version))
+       (sha256
+        (base32 "0yhaircgs170s89ppc7y6417ajnrpd28halb2zq5ja00a33idjai"))))
+    (properties `((upstream-name . "CohortCharacteristics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-magrittr
+                             r-lubridate
+                             r-ggpubr
+                             r-dplyr
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/CohortCharacteristics/")
+    (synopsis
+     "Summarise and Visualise Characteristics of Patients in the OMOP CDM")
+    (description
+     "Summarise and visualise the characteristics of patients in data mapped to the
+Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
@@ -21197,20 +21231,19 @@ adverse events after hip and knee replacement surgery.")
 (define-public r-codep
   (package
     (name "r-codep")
-    (version "0.9-1")
+    (version "1.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codep" version))
        (sha256
-        (base32 "17jziwm56icswa4ngp51ah8w1ma7ij3cksbdaipk0ikqvb5kinkb"))))
+        (base32 "05k7g9nji076zzzyzpp2klr89sllmwz043pcfyiddxifgr77glk3"))))
     (properties `((upstream-name . "codep")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=codep")
     (synopsis "Multiscale Codependence Analysis")
     (description
-     "Computation of Multiscale Codependence Analysis and spatial eigenvector maps, as
-an additional feature.")
+     "Computation of Multiscale Codependence Analysis and spatial eigenvector maps.")
     (license license:gpl3)))
 
 (define-public r-codename
@@ -25132,13 +25165,13 @@ Its implementation in R is called @code{ClueR}.  See README on
 (define-public r-clubpro
   (package
     (name "r-clubpro")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clubpro" version))
        (sha256
-        (base32 "0yxqs6idgzc00mnmr04z2h915qx3jmz1fp03lz0bzjawv6yda2v1"))))
+        (base32 "09zbvbhppikpkjizyrdwbywfzi5x6an06nn0apcyfrz8ww2i25wj"))))
     (properties `((upstream-name . "clubpro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-lattice))
@@ -35103,13 +35136,13 @@ removed.  See Adamic, P. (2015)
 (define-public r-cdgd
   (package
     (name "r-cdgd")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdgd" version))
        (sha256
-        (base32 "1wyd3hmfgn9xkkrgl9iqqzybxmh0v7iyq2awi2w8ckz50glwd4sp"))))
+        (base32 "10cd1s06k2hcvzjsibz1nask7n22x98s0cpi1j0l974s1j426wzy"))))
     (properties `((upstream-name . "cdgd")))
     (build-system r-build-system)
     (propagated-inputs (list r-caret))
@@ -35117,9 +35150,9 @@ removed.  See Adamic, P. (2015)
     (synopsis "Causal Decomposition of Group Disparities")
     (description
      "The framework of causal decomposition of group disparities developed by Yu and
-Elwert (2023) <@code{arXiv:2306.16591>}.  This package implements the
-decomposition estimators that are based on efficient influence functions.  For
-the nuisance functions of the estimators, both parametric and nonparametric
+Elwert (2023) <doi:10.48550/@code{arXiv.2306.16591>}.  This package implements
+the decomposition estimators that are based on efficient influence functions.
+For the nuisance functions of the estimators, both parametric and nonparametric
 options are provided, as well as manual options in case the default models are
 not satisfying.")
     (license license:expat)))
@@ -39332,6 +39365,31 @@ summary tables, visualizations, and written reports.  The package also exports
 utilities for working with these objects and creating new Analysis Results Data
 objects.")
     (license license:asl2.0)))
+
+(define-public r-cardinalr
+  (package
+    (name "r-cardinalr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cardinalR" version))
+       (sha256
+        (base32 "1hqdvxialk41r6l0k7vllh4bxdqx2ci4rcppd7nl0w1d3lz9561i"))))
+    (properties `((upstream-name . "cardinalR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JayaniLakshika/cardinalR")
+    (synopsis "Collection of Data Structures")
+    (description
+     "This package provides a collection of simple simulation datasets designed for
+generating Nonlinear Dimension Reduction representations techniques such as
+t-distributed Stochastic Neighbor Embedding, and Uniform Manifold Approximation
+and Projection.  These datasets serve as a valuable resource for understanding
+the reliability of Nonlinear Dimension Reduction representations in various
+contexts.")
+    (license license:expat)))
 
 (define-public r-cardidates
   (package

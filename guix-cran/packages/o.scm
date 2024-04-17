@@ -6190,13 +6190,13 @@ subsequent papers.")
 (define-public r-opdisdownsampling
   (package
     (name "r-opdisdownsampling")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opdisDownsampling" version))
        (sha256
-        (base32 "1bcmfb8h3aysddcjba2ywk4vrwyidprr69v4r99nzw32zlwlk0jl"))))
+        (base32 "10r6s87ffxzdcrwfwxwikxilpd4ccksma9g9sbz80l3mhlakvskl"))))
     (properties `((upstream-name . "opdisDownsampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-twosamples
@@ -6424,13 +6424,13 @@ patterns including Abstract and Decorator classes.")
 (define-public r-oolong
   (package
     (name "r-oolong")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oolong" version))
        (sha256
-        (base32 "1siqix9npnhk7flc1dafpg6xpvn8i1fkvid2yfpk966qx4cg2ggk"))))
+        (base32 "10fn3llypnglz6i02pii7i4lki0hrh46b76y8wd7df8j4bcixnn5"))))
     (properties `((upstream-name . "oolong")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10207,13 +10207,13 @@ methods.")
 (define-public r-ocnet
   (package
     (name "r-ocnet")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OCNet" version))
        (sha256
-        (base32 "1jd6389g0md8rch21j5sn183mbvwmqyak8pw5p8jxxyp1x4vj87s"))))
+        (base32 "1ryb5jbz1dd4b9v45za6li1szdz8n9mmf3n3wx4ivqmcrnp2zqdh"))))
     (properties `((upstream-name . "OCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

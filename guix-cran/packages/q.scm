@@ -2469,6 +2469,28 @@ hotspot detection analysis is based on the method by Wu, P.-Y., M.-.H. Yang, and
 C.-H. Kao (2021) <doi: 10.1093/g3journal/jkab056>.")
     (license license:gpl2)))
 
+(define-public r-qtldesign
+  (package
+    (name "r-qtldesign")
+    (version "0.953")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtlDesign" version))
+       (sha256
+        (base32 "1lgdmkvmakad7w40pm79gdas1zraz2rcymdsysas0hyfvwxyly95"))))
+    (properties `((upstream-name . "qtlDesign")))
+    (build-system r-build-system)
+    (home-page "http://www.senresearch.org")
+    (synopsis "Design of QTL (Quantitative Trait Locus) Experiments")
+    (description
+     "Design of QTL (quantitative trait locus) experiments involves choosing which
+strains to cross, the type of cross, genotyping strategies, phenotyping
+strategies, and the number of progeny to raise and phenotype.  This package
+provides tools to help make such choices.  Sen and others (2007)
+<doi:10.1007/s00335-006-0090-y>.")
+    (license license:gpl3)))
+
 (define-public r-qtlcharts
   (package
     (name "r-qtlcharts")

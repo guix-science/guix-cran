@@ -13434,23 +13434,28 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1blww1n3kr994s793nmwmcbw4vihzcsg8lyrkma1mxpf3a8c4w7w"))))
+        (base32 "1g6s60n1y1yjsvscz3bbrzq74lmfl7q2mkaysl5vdq16c2lkai4h"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-rlang
+                             r-rcpparmadillo
                              r-rcpp
                              r-r6
                              r-purrr
-                             r-nlsem
+                             r-nlme
+                             r-mvtnorm
+                             r-mvnfast
                              r-mplusautomation
+                             r-matlib
                              r-lavaan
+                             r-gaussquad
                              r-dplyr))
     (home-page "https://github.com/Kss2k/modsem")
     (synopsis
@@ -13462,20 +13467,21 @@ approach (Algina & Moulder, 2001).  The unconstrained approach (Marsh et al.,
 2004).  The residual centering approach (Little et al., 2006).  The double
 centering approach (Lin et al., 2010).  The latent moderated structural
 equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
-likelihood (QML) approach (Klein & @code{MuthÃ©n}, 2007) The constrained-
-unconstrained, residual- and double centering- approaches are estimated via
-lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are estimated via
-nlsem (Umbach et al., 2017).  Alternatively model can be estimated via Mplus
-(@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).  References: Algina, J., &
-Moulder, B. C. (2001). <doi:10.1207/S15328007SEM0801_3>. \"A note on estimating
-the JÃ¶reskog-Yang model for latent variable interaction using LISREL 8.3.\"
-Klein, A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>. \"Maximum
-likelihood estimation of latent interaction effects with the LMS method.\" Klein,
-A. G., & @code{MuthÃ©n}, B. O. (2007). <doi:10.1080/00273170701710205>.
-\"Quasi-maximum likelihood estimation of structural equation models with multiple
-interaction and quadratic effects.\" Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H.
-S. (2010). <doi:10.1080/10705511.2010.488999>. \"Structural equation models of
-latent interactions: Clarification of orthogonalizing and double-mean-centering
+likelihood (QML) approach (Klein & @code{MuthÃ©n}, 2007) (temporarily
+unavailable) The constrained- unconstrained, residual- and double centering-
+approaches are estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML-
+approaches are estimated via by @code{ModSEM} it self.  Alternatively model can
+be estimated via Mplus (@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).
+References: Algina, J., & Moulder, B. C. (2001).
+<doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the JÃ¶reskog-Yang model
+for latent variable interaction using LISREL 8.3.\" Klein, A., & Moosbrugger, H.
+(2000). <doi:10.1007/BF02296338>. \"Maximum likelihood estimation of latent
+interaction effects with the LMS method.\" Klein, A. G., & @code{MuthÃ©n}, B. O.
+(2007). <doi:10.1080/00273170701710205>. \"Quasi-maximum likelihood estimation of
+structural equation models with multiple interaction and quadratic effects.\"
+Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
+<doi:10.1080/10705511.2010.488999>. \"Structural equation models of latent
+interactions: Clarification of orthogonalizing and double-mean-centering
 strategies.\" Little, T. D., Bovaird, J. A., & Widaman, K. F. (2006).
 <doi:10.1207/s15328007sem1304_1>. \"On the merits of orthogonalizing powered and
 product terms: Implications for modeling interactions among latent variables.\"
@@ -13483,9 +13489,7 @@ Marsh, H. W., Wen, Z., & Hau, K. T. (2004). <doi:10.1037/1082-989X.9.3.275>.
 \"Structural equation models of latent interactions: evaluation of alternative
 estimation strategies and indicator construction.\" @code{MuthÃ©n}, L.K. and
 @code{MuthÃ©n}, B.O. (1998-2017). \"'Mplus Userâs Guide.  Eighth Edition.\"
-<https://www.statmodel.com/>.  Umbach N, Naumann K, Brandt H, Kelava A (2017).
-\"Fitting Nonlinear Structural Equation Models in R with Package nlsem'.\"
-<doi:10.18637/jss.v077.i07>.  Rosseel Y (2012). <doi:10.18637/jss.v048.i02>.
+<https://www.statmodel.com/>.  Rosseel Y (2012). <doi:10.18637/jss.v048.i02>.
 \"'lavaan': An R Package for Structural Equation Modeling.\"")
     (license license:expat)))
 
@@ -16995,13 +16999,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.5-0")
+    (version "1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "0l44l3p3f6px8kamli3fq479jy99wjfy8q8hkqjlwidr261bv6mz"))))
+        (base32 "1bhcw5b2mwvr9qsssxd9qd9qn5k0v8g925dqfm1ziycniaprm9g6"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17431,6 +17435,47 @@ and prediction are supported for packages terra', raster and stars'.")
 steps of a machine learning workflow.  It uses the functionalities of the mlr3
 framework.")
     (license license:bsd-2)))
+
+(define-public r-mlr3resampling
+  (package
+    (name "r-mlr3resampling")
+    (version "2024.4.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3resampling" version))
+       (sha256
+        (base32 "0fgn46vh8m9i2vb3ppkghl54a4rrp2mw8fm54l2kzj53y6hsjbvd"))))
+    (properties `((upstream-name . "mlr3resampling")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6
+                             r-paradox
+                             r-mlr3misc
+                             r-mlr3
+                             r-data-table
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tdhock/mlr3resampling")
+    (synopsis "Resampling Algorithms for 'mlr3' Framework")
+    (description
+     "This package provides a supervised learning algorithm inputs a train set, and
+outputs a prediction function, which can be used on a test set.  If each data
+point belongs to a group (such as geographic region, year, etc), then how do we
+know if it is possible to train on one group, and predict accurately on another
+group? Cross-validation can be used to determine the extent to which this is
+possible, by first assigning fold IDs from 1 to K to all data (possibly using
+stratification, usually by group and label).  Then we loop over test sets
+(group/fold combinations), train sets (same group, other groups, all groups),
+and compute test/prediction accuracy for each combination.  Comparing
+test/prediction accuracy between same and other, we can determine the extent to
+which it is possible (perfect if same/other have similar test accuracy for each
+group; other is usually somewhat less accurate than same; other can be just as
+bad as featureless baseline when the groups have different patterns).  For more
+information, <https://tdhock.github.io/blog/2023/R-gen-new-subsets/> describes
+the method in depth.  How many train samples are required to get accurate
+predictions on a test set? Cross-validation can be used to answer this question,
+with variable size train sets.")
+    (license license:gpl3)))
 
 (define-public r-mlr3oml
   (package
@@ -27089,13 +27134,13 @@ by Li, Xiao, and Luo (2020) <doi: 10.1002/sta4.245>.")
 (define-public r-mf-beta4
   (package
     (name "r-mf-beta4")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MF.beta4" version))
        (sha256
-        (base32 "0j2absng9k14yad0ajh13ybchdd9jby2m69vzxfk8qz6kv4hdvxq"))))
+        (base32 "13k9jqspg42hgis0svad76yvzb8bh5cm4qynkpn0ga0an2lww6gs"))))
     (properties `((upstream-name . "MF.beta4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -29256,16 +29301,16 @@ Table 1').")
 (define-public r-metalite-ae
   (package
     (name "r-metalite-ae")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite.ae" version))
        (sha256
-        (base32 "0z33yj8v67mkjg47zd627mnp0p1b2gnlvj7gf0d7np1j38572j1s"))))
+        (base32 "0vf8v6nf4f7lagfzs4dr6q5gz2dh18wal74xmlfaw7cmw42z8nsh"))))
     (properties `((upstream-name . "metalite.ae")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-r2rtf r-metalite r-glue r-dplyr))
+    (propagated-inputs (list r-r2rtf r-metalite r-glue))
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/metalite.ae/")
     (synopsis "Adverse Events Analysis Using 'metalite'")
@@ -35619,15 +35664,16 @@ Olkin (1985, ISBN:978-0123363800), Silagy, Lancaster, Stead, Mant, & Fowler
 (define-public r-mbvs
   (package
     (name "r-mbvs")
-    (version "1.6")
+    (version "1.92")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mBvs" version))
        (sha256
-        (base32 "14ds64mm0nrrpfr01kmx5fsvl0kqzhiq8qgmzgmyzs7c4hcs3050"))))
+        (base32 "1r6dv8w4y6d4m4yw84cnsvl7f3r5dhj3qrrzk7qb23gzds8pcv84"))))
     (properties `((upstream-name . "mBvs")))
     (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=mBvs")
     (synopsis "Bayesian Variable Selection Methods for Multivariate Data")
     (description
@@ -40043,6 +40089,28 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
+
+(define-public r-mapmisc
+  (package
+    (name "r-mapmisc")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapmisc" version))
+       (sha256
+        (base32 "1syznp0kh4alv8p4sc6zmphkpqpk9si3sddfizqlprp3ypm5gi85"))))
+    (properties `((upstream-name . "mapmisc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-geosphere))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mapmisc")
+    (synopsis "Utilities for Producing Maps")
+    (description
+     "This package provides a minimal, light-weight set of tools for producing nice
+looking maps in R, with support for map projections.  See Brown (2016)
+<doi:10.32614/RJ-2016-005>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-mapme-biodiversity
   (package

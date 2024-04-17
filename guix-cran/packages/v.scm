@@ -5350,6 +5350,40 @@ quadruple wavelet coherence, and n-dimensional vector wavelet coherence
 analyses.")
     (license license:gpl2+)))
 
+(define-public r-vectorsurvr
+  (package
+    (name "r-vectorsurvr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vectorsurvR" version))
+       (sha256
+        (base32 "00j2blaf5l8ancn4yjfywmw4l1kysxqkqfd5pg4klcr0h4idcnqd"))))
+    (properties `((upstream-name . "vectorsurvR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rstudioapi
+                             r-plotly
+                             r-magrittr
+                             r-lubridate
+                             r-knitr
+                             r-kableextra
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=vectorsurvR")
+    (synopsis "Data Access and Analytical Tools for 'VectorSurv' Users")
+    (description
+     "Allows registered @code{VectorSurv} <https://vectorsurv.org/> users access to
+data through the @code{VectorSurv} API <https://api.vectorsurv.org/>.
+Additionally provides functions for analysis and visualization.")
+    (license license:gpl3)))
+
 (define-public r-vectorcoder
   (package
     (name "r-vectorcoder")

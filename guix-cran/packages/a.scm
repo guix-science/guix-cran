@@ -5389,13 +5389,13 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 (define-public r-arulescba
   (package
     (name "r-arulescba")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesCBA" version))
        (sha256
-        (base32 "13p876k3wg84khvzf6kkjpna0l9yjxyq43nh9dnpma7sidq5ldi0"))))
+        (base32 "0l1p1lpmxf103kxiqmflnqn7bc4cvhq06wk1kp37zwa06qdxq2vv"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -8578,13 +8578,13 @@ references, see the bibliography in the CGAL documentation at
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "0in0d0af3pr61zfd9fvych4vakmsz66clw4zywvy4pqj8v8q3axa"))))
+        (base32 "09ggz6bzag9nr1qlgag16szn5gq8jbssqn6qdmdiraym4amjiy6x"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9343,13 +9343,13 @@ transcription errors and reduces the number commands needed by the user.")
 (define-public r-apackoftheclones
   (package
     (name "r-apackoftheclones")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APackOfTheClones" version))
        (sha256
-        (base32 "0fzxwlm65j1hhpl5n0w3nni484jlxwkwrxv477mbph826vm1jz60"))))
+        (base32 "1wirzf37n5xl0y3g9n9ic6vyaiyzmx9sip1qg4bilaqn7nazmq90"))))
     (properties `((upstream-name . "APackOfTheClones")))
     (build-system r-build-system)
     (propagated-inputs (list r-seuratobject
@@ -17552,23 +17552,25 @@ transformation.  Genetics 200:469-481 <doi:10.1534/genetics.115.176842>.")
 (define-public r-adw
   (package
     (name "r-adw")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adw" version))
        (sha256
-        (base32 "00f4z7h4y1gmy9smxy8jwnr4alw641i1lmx4dyjk39jzzrx9fz1d"))))
+        (base32 "0ng9iabxh15xaj10mi6xdggmx6fcvdmmx1c9nlyfkbnb4f1qzlxp"))))
     (properties `((upstream-name . "adw")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf))
+    (propagated-inputs (list r-terra r-sf r-cnmap))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/PanfengZhang/adw")
     (synopsis "Angular Distance Weighting Interpolation")
     (description
      "The irregularly-spaced data are interpolated onto regular latitude-longitude
 grids by weighting each station according to its distance and angle from the
-center of a search radius.")
+center of a search radius.  In addition to this, we also provide a simple way
+(Jones and Hulme, 1996) to grid the irregularly-spaced data points onto regular
+latitude-longitude grids by averaging all stations in grid-boxes.")
     (license license:gpl3)))
 
 (define-public r-advice
@@ -19573,13 +19575,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.11.0")
+    (version "0.11.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "1nv8gn75b9zzqip2xl4hmrsj18zwrhlcm7dwcq9zkd68fr3m0dyp"))))
+        (base32 "011hrvpbvjwfjf5idxm198rzfm8b12svbdkp8phz0v60n0rxxvrx"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))

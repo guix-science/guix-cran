@@ -5013,13 +5013,13 @@ setting.")
 (define-public r-bpr
   (package
     (name "r-bpr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpr" version))
        (sha256
-        (base32 "11hli3xsc432g8kppjxbim6nij7p1lbbv8ns075jpgdyd4i1piva"))))
+        (base32 "1hiwz1s8gc6skl0zg7mjh29bxazka9wgrbbldqhy6f9vzrddl4pn"))))
     (properties `((upstream-name . "bpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-coda r-bh))
@@ -7049,6 +7049,29 @@ Wood (2016b) <doi:10.1109/TNNLS.2015.2425898>.")
 Introduction to Bayesian Statistics, Bolstad, W.M. (2017), John Wiley & Sons
 ISBN 978-1-118-09156-2.")
     (license license:gpl2+)))
+
+(define-public r-bolsec
+  (package
+    (name "r-bolsec")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bolsec" version))
+       (sha256
+        (base32 "0ab5cydn4hbm1fbbd71xh5724wizrv9ckj3j6rklz46nhbwfjmr2"))))
+    (properties `((upstream-name . "bolsec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvest r-formattable r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=bolsec")
+    (synopsis "Bolivian Securities")
+    (description
+     "This package provides data import and offers 3 daily snapshot functions from
+securities of varying prices traded on the Bolivian Securities Exchange, website
+<https://www.bbv.com.bo/>.  The snapshots include a detailed list, scatter plot
+correlation, and descriptive statistics table for the securities.")
+    (license license:gpl3)))
 
 (define-public r-bold
   (package
@@ -9483,13 +9506,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-3")
+    (version "0.5-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blavaan" version))
        (sha256
-        (base32 "1xldcssvrb8wy1spw5j29mxxixb3x08in6xfscwmbwnhj3c6xma7"))))
+        (base32 "0g03v2n630dawl8qm9i4q7sgqc4p23cwsd67d45wn70rrc275kqb"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -15152,13 +15175,13 @@ scientific collaboration and co-word analysis.")
 (define-public r-biblio
   (package
     (name "r-biblio")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biblio" version))
        (sha256
-        (base32 "1mp4k4gw8l2fywffkkja7bl2bbgl6bjznac4nva7643hp4pj3ags"))))
+        (base32 "1rwfp83r740v55nyc2p78kz7ibf137fx2msrb28dp2340092p38b"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
     (propagated-inputs (list r-yamlme r-stringr))
@@ -24853,13 +24876,13 @@ that can be used within the caret package pipeline.")
 (define-public r-basemaps
   (package
     (name "r-basemaps")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "basemaps" version))
        (sha256
-        (base32 "0dc1pwzipp1rj3xjmgf4h4i01wrm253mrv7v4jhdk8xh9l4ipl5g"))))
+        (base32 "19cw01qs0wmrxcypr71ssbsj5266zgkxsxakig014x1wr592d3v6"))))
     (properties `((upstream-name . "basemaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -25088,6 +25111,60 @@ the data set for analysis as well as to calculate and visualize several
 degradation metrics, including blur ratio, signal-to-noise ratio, excess
 attenuation and envelope correlation among others (Dabelsteen et al 1993
 <doi:10.1121/1.406682>).")
+    (license license:gpl2+)))
+
+(define-public r-bartman
+  (package
+    (name "r-bartman")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bartMan" version))
+       (sha256
+        (base32 "09pmkqbvgw9l95c36izdmi3h8pjx7vmzmfak2hll4q6npl5fr27x"))))
+    (properties `((upstream-name . "bartMan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytreatment
+                             r-tidyr
+                             r-tidygraph
+                             r-tidybayes
+                             r-tibble
+                             r-scales
+                             r-rrapply
+                             r-rlang
+                             r-rjava
+                             r-purrr
+                             r-patchwork
+                             r-igraph
+                             r-gtable
+                             r-ggraph
+                             r-ggplot2
+                             r-ggnewscale
+                             r-ggiraph
+                             r-dplyr
+                             r-dendser
+                             r-dbarts
+                             r-cowplot
+                             r-colorspace
+                             r-cli
+                             r-bartmachine
+                             r-bart))
+    (home-page "https://cran.r-project.org/package=bartMan")
+    (synopsis "Create Visualisations for BART Models")
+    (description
+     "Investigating and visualising Bayesian Additive Regression Tree (BART) (Chipman,
+H. A., George, E. I., & @code{McCulloch}, R. E. 2010) <doi:10.1214/09-AOAS285>
+model fits.  We construct conventional plots to analyze a modelâs performance
+and stability as well as create new tree-based plots to analyze variable
+importance, interaction, and tree structure.  We employ Value Suppressing
+Uncertainty Palettes (VSUP) to construct heatmaps that display variable
+importance and interactions jointly using colour scale to represent posterior
+uncertainty.  Our visualisations are designed to work with the most popular BART
+R packages available, namely BART Rodney Sparapani and Charles Spanbauer and
+Robert @code{McCulloch} 2021 <doi:10.18637/jss.v097.i01>, dbarts (Vincent Dorie
+2023) <https://CRAN.R-project.org/package=dbarts>, and @code{bartMachine} (Adam
+Kapelner and Justin Bleich 2016) <doi:10.18637/jss.v070.i04>.")
     (license license:gpl2+)))
 
 (define-public r-bartmachinejars

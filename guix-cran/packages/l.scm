@@ -5214,13 +5214,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "0ydz82vrqv5kwchsafnq15kfdz8vd7jzaxa3b8v7s7r2qfh23603"))))
+        (base32 "1bah3sr0srnvafm69h62hfw5gajsnrasqwzzsk391ga73mqbi8mz"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6548,13 +6548,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "0507xrzsm2v8rakp9zwdzc250p92xkicy8anp72pryvj11lszqcw"))))
+        (base32 "0vzgbq2hpj65c7y1gkxz80smrl693basffkvv9gb7l29ifp10gs5"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -10136,13 +10136,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "16cs8kpn6l8h1333cglsh50qydjk821bqyyyipn39s8v45yxzigf"))))
+        (base32 "1av98m263b0fnp00h80yq22hgahvhxz844amfmk5wj72qnrx4zx5"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

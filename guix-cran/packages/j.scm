@@ -941,13 +941,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0wllv07667izvsihhh0hhikxsyawxhpb560r6lli80phjpn88d28"))))
+        (base32 "0r4ic1rbmvhjjk9gpp9npl1jwrlb63n5iy7x78k2knjbs0552d5v"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -1093,13 +1093,13 @@ addin.  The report appears in the RStudio viewer pane.")
 (define-public r-jsdne
   (package
     (name "r-jsdne")
-    (version "4.2.2")
+    (version "4.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSDNE" version))
        (sha256
-        (base32 "1607icsdscn1ryqd2r81s2gh46ddy72grcxzz9vwzmc32msbd1sn"))))
+        (base32 "1j3ish1kfhx8in37l8ljd22qmaqi6wlsjchzwhfi21rhjrynqzkz"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-nnet r-molar r-mass r-dplyr))

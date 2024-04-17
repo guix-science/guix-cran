@@ -6532,18 +6532,18 @@ code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "0ay753n018v3idn3q07i8jv68322ia3x5smpz8gkfv7k892y8a4f"))))
+        (base32 "1mq84hj9la0m0007l9l1bzc7abrk5mg5hv4jbv5kp8nwwax5dx5g"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
     (propagated-inputs (list r-htmltools r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/formatters")
+    (home-page "https://insightsengineering.github.io/formatters/")
     (synopsis "ASCII Formatting for Values and Tables")
     (description
      "We provide a framework for rendering complex tables to ASCII, and a set of
@@ -10334,13 +10334,13 @@ nls', @code{nlsList} and nlme frameworks.")
 (define-public r-flexor
   (package
     (name "r-flexor")
-    (version "0.9.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexOR" version))
        (sha256
-        (base32 "1am17ggfzak5jn7rxsj5wf2fhgsq7zqpc79xql3jxfw9dqynp9id"))))
+        (base32 "06cipvv3wlbk2qk61a7yhfpmd1csr86sz5gligv0bxki9vc94n29"))))
     (properties `((upstream-name . "flexOR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-gam))
@@ -10348,12 +10348,12 @@ nls', @code{nlsList} and nlme frameworks.")
     (home-page "https://github.com/martaaaa/flexOR")
     (synopsis "Flexible Odds Ratio Curves")
     (description
-     "This package provides flexible hazard ratio curves that enable modeling
-non-linear relationships between continuous predictors and survival outcomes.
-This package facilitates a deeper understanding of the impact of each continuous
-predictor on the outcome by presenting results in terms of odds ratio (OR)
-curves based on splines.  These curves allow for comparison against a specified
-reference value, aiding in the interpretation of the predictor's effect.")
+     "This package provides flexible odds ratio curves that enable modeling non-linear
+relationships between continuous predictors and binary outcomes.  This package
+facilitates a deeper understanding of the impact of each continuous predictor on
+the outcome by presenting results in terms of odds ratio (OR) curves based on
+splines.  These curves allow for comparison against a specified reference value,
+aiding in the interpretation of the predictor's effect.")
     (license license:gpl3)))
 
 (define-public r-flexmsm
@@ -19288,6 +19288,44 @@ variable selection is then implemented since it becomes more feasible from the
 computational point of view.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-fastcpd
+  (package
+    (name "r-fastcpd")
+    (version "0.14.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastcpd" version))
+       (sha256
+        (base32 "190m84b4p9yxdc5vhcnw0fl5ilbwds9jws14lyrdfkx5ygwcwb37"))))
+    (properties `((upstream-name . "fastcpd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tseries
+                             r-testthat
+                             r-rcppclock
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-matrix
+                             r-glmnet
+                             r-forecast
+                             r-fastglm))
+    (native-inputs (list r-knitr))
+    (home-page "https://fastcpd.xingchi.li")
+    (synopsis "Fast Change Point Detection via Sequential Gradient Descent")
+    (description
+     "This package implements fast change point detection algorithm based on the paper
+\"Sequential Gradient Descent and Quasi-Newton's Method for Change-Point
+Analysis\" by Xianyang Zhang, Trisha Dawn
+<https://proceedings.mlr.press/v206/zhang23b.html>.  The algorithm is based on
+dynamic programming with pruning and sequential gradient descent.  It is able to
+detect change points a magnitude faster than the vanilla Pruned Exact Linear
+Time(PELT).  The package includes examples of linear regression, logistic
+regression, Poisson regression, penalized linear regression data, and whole lot
+more examples with custom cost function in case the user wants to use their own
+cost function.")
+    (license license:gpl3+)))
+
 (define-public r-fastcox
   (package
     (name "r-fastcox")
@@ -22190,13 +22228,13 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "11w04cbzgxh4zl8ra4kjaz9ghj2rczqa73g0d5vl43j4i0lrq25w"))))
+        (base32 "0gm6mbn2l8jznzyvw9w5yxk53v602bzr9l2zwpl0fl16yvax7iyg"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

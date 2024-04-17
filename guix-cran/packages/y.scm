@@ -452,6 +452,30 @@ interval estimation for the crossing survival times.")
 from Cricsheet <https://cricsheet.org/>.")
     (license license:expat)))
 
+(define-public r-yodel
+  (package
+    (name "r-yodel")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "yodel" version))
+       (sha256
+        (base32 "04glh59dcwahprxcw9a1wanbcxrmbfmkndw3w1idynwbmyarj4wf"))))
+    (properties `((upstream-name . "yodel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-dplyr))
+    (home-page "https://github.com/rich-payne/yodel")
+    (synopsis "General Bayesian Model Averaging Helper")
+    (description
+     "This package provides helper functions to perform Bayesian model averaging using
+Markov chain Monte Carlo samples from separate models.  Calculates weights and
+obtains draws from the model-averaged posterior for quantities of interest
+specified by the user.  Weight calculations can be done using marginal
+likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
+<doi:10.1016/j.ijforecast.2009.08.001>.")
+    (license license:expat)))
+
 (define-public r-ympes
   (package
     (name "r-ympes")

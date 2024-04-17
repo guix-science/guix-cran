@@ -7948,13 +7948,13 @@ and that both continuous and categorical variables can be used to detect DIF.")
 (define-public r-gpcerf
   (package
     (name "r-gpcerf")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GPCERF" version))
        (sha256
-        (base32 "0zl4g5q4pd503wiw0pkj2233fdhfv14ydr8q0c97agmng3rp8kv6"))))
+        (base32 "0nzfd0sz73sb4903vpgix9m767np1prcmi3m1y3pq6dzmxmqzh6a"))))
     (properties `((upstream-name . "GPCERF")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -7980,7 +7980,7 @@ detecting change points in the causal exposure response curves using
 observational data.  Ren, B., Wu, X., Braun, D., Pillai, N., & Dominici,
 F.(2021). \"Bayesian modeling for exposure response curve via gaussian processes:
 Causal effects of exposure to air pollution on health outcomes.\" @code{arXiv}
-preprint <@code{arXiv:2105.03454>}.")
+preprint <doi:10.48550/@code{arXiv.2105.03454>}.")
     (license license:gpl3+)))
 
 (define-public r-gpbstat
@@ -8010,13 +8010,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.4.0")
+    (version "1.4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1mfjkhh2z7parv0x8qw80b8f7imzjq7srqv5q8gnd4ivdyxj1b32"))))
+        (base32 "1cg8dfpq9gzsw4s96nn9579p2q8b458bzf3kmbsmzs8pk10xa7c5"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -20815,13 +20815,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "1m1xxx12ry244nkx0sn7cvlxxi2p7ms9n4irb2qqrgliq24db9v6"))))
+        (base32 "1zibnxjs3bh4r2g505pc9p0i4aswn78szm085a5s2f1ib8zjkji3"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

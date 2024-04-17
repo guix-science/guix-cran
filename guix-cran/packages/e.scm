@@ -1548,13 +1548,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "0sbrzng90pqda99jh53lbf342aj5dp8dxq9jyv9apj095n2yh5lf"))))
+        (base32 "1x5h4ni0f583l2hhj5hq24x5i7wra1877z9zbl9kqs24wjfnabd3"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -1564,6 +1564,7 @@ remove as much redundant typing as possible.")
                              r-rpart
                              r-rmarkdown
                              r-rlang
+                             r-plotly
                              r-palmerpenguins
                              r-magrittr
                              r-gridextra
@@ -15123,36 +15124,31 @@ registration at <https://www.eia.gov/opendata/>.")
 (define-public r-eia
   (package
     (name "r-eia")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eia" version))
        (sha256
-        (base32 "188vprgj7lzzs7z3qa2pq8lhhsg8h389frxnq1dr295jqzwrwvis"))))
+        (base32 "13r06wxg2byz71q1k6m5bgrdjb86c8lgrdbmhkxiifyihwpwnqdz"))))
     (properties `((upstream-name . "eia")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-readxl
-                             r-purrr
-                             r-memoise
-                             r-lubridate
-                             r-jsonlite
-                             r-httr))
+    (propagated-inputs (list r-tibble r-memoise r-lubridate r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/eia/https://github.com/ropensci/eia")
+    (home-page "https://docs.ropensci.org/eia/")
     (synopsis
-     "API Wrapper for 'US Energy Information Administration' Open Data")
+     "API Wrapper for U.S. Energy Information Administration ('EIA') Open Data")
     (description
-     "This package provides API access to data from the US Energy Information
-Administration ('EIA') <https://www.eia.gov/>.  Use of the API requires a free
-API key obtainable at <https://www.eia.gov/opendata/register.php>.  The package
-includes functions for searching EIA data categories and importing time series
-and geoset time series datasets.  Datasets returned by these functions are
-provided in a tidy format or alternatively in more raw form.  It also offers
-helper functions for working with EIA date strings and time formats and for
-inspecting different summaries of series metadata.  The package also provides
-control over API key storage and caching of API request results.")
+     "This package provides API access to data from the U.S. Energy Information
+Administration ('EIA') <https://www.eia.gov/>.  Use of the EIA's API and this
+package requires a free API key obtainable at
+<https://www.eia.gov/opendata/register.php>.  This package includes functions
+for searching the EIA data directory and returning time series and geoset time
+series datasets.  Datasets returned by these functions are provided by default
+in a tidy format, or alternatively, in more raw formats.  It also offers helper
+functions for working with EIA date strings and time formats and for inspecting
+different summaries of series metadata.  The package also provides control over
+API key storage and caching of API request results.")
     (license license:expat)))
 
 (define-public r-ei-datasets

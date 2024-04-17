@@ -3478,6 +3478,32 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 <doi:10.1159/000365637> for details.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-normmix
+  (package
+    (name "r-normmix")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "norMmix" version))
+       (sha256
+        (base32 "1nkgidzbqp83bqvkpalxs58s2blpx9s1j9dm2i13plfx3kv0d6x3"))))
+    (properties `((upstream-name . "norMmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sfsmisc r-mvtnorm r-mclust r-mass r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=norMmix")
+    (synopsis "Direct MLE for Multivariate Normal Mixture Distributions")
+    (description
+     "Multivariate Normal (i.e.  Gaussian) Mixture Models (S3) Classes.  Fitting
+models to data using MLE (maximum likelihood estimation) for multivariate normal
+mixtures via smart parametrization using the LDLt (Cholesky) decomposition.
+@code{McLachlan}, G. and Peel, D. (2000, ISBN:9780471006268) \"Finite Mixture
+Models\".  Celeux, G. and Govaert, G. (1995) <doi:10.1016/0031-3203(94)00125-6>
+\"Gaussian parsimonious clustering models\".  Marron, S. and Wand, M. (1992)
+<doi:10.1214/aos/1176348653> \"Exact Mean Integrated Squared Error\".")
+    (license license:gpl3+)))
+
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
@@ -9519,6 +9545,29 @@ of the <https://github.com/kotartemiy/newscatcher> Python module.")
      "Extends the classical Newman studentized range statistic in various ways that
 can be applied to genome-scale transcriptomic or other expression data.")
     (license license:asl2.0)))
+
+(define-public r-newimvc
+  (package
+    (name "r-newimvc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "newIMVC" version))
+       (sha256
+        (base32 "1zxdrrc4w93a3r2zibip7s8h75mjf0ir3wpy310s83cas2nywqvx"))))
+    (properties `((upstream-name . "newIMVC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-limma r-ggmridge r-expm
+                             r-compquadform))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=newIMVC")
+    (synopsis "Robust Integrated Mean Variance Correlation")
+    (description
+     "Measure the dependence structure between two random variables with a new
+correlation coefficient and extend it to hypothesis test, feature screening and
+false discovery rate control.")
+    (license license:gpl3)))
 
 (define-public r-newfocus
   (package

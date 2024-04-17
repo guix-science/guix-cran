@@ -77,13 +77,13 @@
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "13y0a9sxsfj5zn83k5583wsbpz12s583p3zxdm0q3jg8zr76yci2"))))
+        (base32 "1qya9v6hh2jrsxihz87yk2sxhyp7mcnjl4invv7n5awq9ljz946l"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -658,6 +658,40 @@ Memorial Medal'.  Users can provide recipients of other prizes.")
      "Build piecewise exponential survival model for study design (planning) and
 event/timeline prediction.")
     (license license:expat)))
+
+(define-public r-pwev
+  (package
+    (name "r-pwev")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PWEV" version))
+       (sha256
+        (base32 "1jl63wp6nl2zyznc63zcb97yi1fvzj4mic4ri0ni515s0nb5jd5b"))))
+    (properties `((upstream-name . "PWEV")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-weightedensemble
+                             r-rumidas
+                             r-rugarch
+                             r-metrics))
+    (home-page "https://cran.r-project.org/package=PWEV")
+    (synopsis "PSO Based Weighted Ensemble Algorithm for Volatility Modelling")
+    (description
+     "Price volatility refers to the degree of variation in series over a certain
+period of time.  This volatility is especially noticeable in agricultural
+commodities, adding uncertainty for farmers, traders, and others in the
+agricultural supply chain.  Commonly and popularly used four volatility models
+viz, GARCH, Glosten Jagannatan Runkle-GARCH (GJR-GARCH) model, exponentially
+weighted moving average (EWMA) model and Multiplicative Error Model (MEM) are
+selected and implemented.  PWAVE, weighted ensemble model based on particle
+swarm optimization (PSO) is proposed to combine the forecast obtained from all
+the candidate models.  This package has been developed using algorithm of Paul
+et al. <doi:10.1007/s40009-023-01218-x> and Yeasin and Paul (2024)
+<doi:10.1007/s11227-023-05542-3>.")
+    (license license:gpl3)))
 
 (define-public r-pweall
   (package
@@ -23945,6 +23979,46 @@ Metaphone, NYSIIS, Caverphone, and others.  The package is documented in
 <doi:10.18637/jss.v095.i08>.")
     (license license:bsd-2)))
 
+(define-public r-phonfieldwork
+  (package
+    (name "r-phonfieldwork")
+    (version "0.0.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phonfieldwork" version))
+       (sha256
+        (base32 "1vhvlxaz3a10z36arl3mbv1z7w2d7vmbfgs5h2wkks4mpl6pfmj5"))))
+    (properties `((upstream-name . "phonfieldwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tuner
+                             r-rmarkdown
+                             r-readr
+                             r-phontools
+                             r-mime))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=phonfieldwork")
+    (synopsis "Linguistic Phonetic Fieldwork Tools")
+    (description
+     "There are a lot of different typical tasks that have to be solved during
+phonetic research and experiments.  This includes creating a presentation that
+will contain all stimuli, renaming and concatenating multiple sound files
+recorded during a session, automatic annotation in Praat @code{TextGrids} (this
+is one of the sound annotation standards provided by Praat software, see Boersma
+& Weenink 2020 <https://www.fon.hum.uva.nl/praat/>), creating an html table with
+annotations and spectrograms, and converting multiple formats ('Praat
+@code{TextGrid}, ELAN', EXMA@code{RaLDA}', Audacity', subtitles .srt', and FLEx
+flextext).  All of these tasks can be solved by a mixture of different tools
+(any programming language has programs for automatic renaming, and Praat
+contains scripts for concatenating and renaming files, etc.).  phonfieldwork
+provides a functionality that will make it easier to solve those tasks
+independently of any additional tools.  You can also compare the functionality
+with other packages: @code{rPraat}
+<https://CRAN.R-project.org/package=@code{rPraat>}, @code{textgRid}
+<https://CRAN.R-project.org/package=@code{textgRid>}.")
+    (license license:gpl2+)))
+
 (define-public r-phonenumber
   (package
     (name "r-phonenumber")
@@ -33653,6 +33727,26 @@ statistics and probabilities.")
 management of capital in financial portfolios.")
     (license license:gpl3)))
 
+(define-public r-paris2024colours
+  (package
+    (name "r-paris2024colours")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Paris2024Colours" version))
+       (sha256
+        (base32 "12xycmqc9hr12db7w9499l89gmww5j0vs6nhyzsirkbg8vvq8qql"))))
+    (properties `((upstream-name . "Paris2024Colours")))
+    (build-system r-build-system)
+    (home-page "https://github.com/maximekuntz/Paris2024Colours")
+    (synopsis
+     "Color Palettes Inspired by Paris 2024 Olympic and Paralympic Games")
+    (description
+     "Palettes inspired by Paris 2024 Olympic and Paralympic Games for data
+visualizations.  Length of color palettes is configurable.")
+    (license license:expat)))
+
 (define-public r-pari
   (package
     (name "r-pari")
@@ -35774,13 +35868,13 @@ install ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
 (define-public r-palaeoverse
   (package
     (name "r-palaeoverse")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palaeoverse" version))
        (sha256
-        (base32 "0jvc6gamlzvam3r2iwgjz02hpj47ya7vacvq2mpqbgc6sbnjmi7k"))))
+        (base32 "1qfi5cv2xg89azax1v4hvajv1g6m59shp5q9db44rn65idxld7x5"))))
     (properties `((upstream-name . "palaeoverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist

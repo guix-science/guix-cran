@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -4543,13 +4542,13 @@ requiring only one copy of each stored object to reside in memory a time.")
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "003hsjp023gxbidk3m3i78hvak9ixv2c5yv1h7kfjir0jcgjm2gp"))))
+        (base32 "0x0wnv3zscbb4csgg656518krc88pqss7pd40n61q474mf6jj5s7"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-magrittr r-htmltools r-formatters
@@ -17024,13 +17023,13 @@ probing data.")
 (define-public r-rmzqc
   (package
     (name "r-rmzqc")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmzqc" version))
        (sha256
-        (base32 "0w740vx4f7sbj105ybv1rvfywlbpkfr7jdkvb6j09amzxr1bg9mg"))))
+        (base32 "18nyw4amg8l8hby3fpfbafz730g0bsk4xp31fgfhlv2qzcbm07aw"))))
     (properties `((upstream-name . "rmzqc")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -19574,18 +19573,18 @@ visualization.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "0fbcj4m40gpavf631mya9yjyvzln0nv2v50s35m17y2kzmqyr25k"))))
+        (base32 "1x0i2gis01ik9r0fy2znzlg0chgcjablk74xncsj7cgpgvdzfwmi"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-formatters r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/rlistings")
+    (home-page "https://insightsengineering.github.io/rlistings/")
     (synopsis "Clinical Trial Style Data Readout Listings")
     (description
      "Listings are often part of the submission of clinical trial data in regulatory
@@ -20562,13 +20561,13 @@ export the result.  rjwsacruncher allows to launch easily the JWSACruncher'.")
 (define-public r-rjtools
   (package
     (name "r-rjtools")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjtools" version))
        (sha256
-        (base32 "1sdyxnj4qf693cvmxjgbykamn2b69pznsgr5qsjia20pq72yzijk"))))
+        (base32 "14asxv74bdddrc0k8pl8dylmsp6qgii55hmqwg6nci6n35a6qd34"))))
     (properties `((upstream-name . "rjtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno
@@ -21097,13 +21096,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "0i55yb7v2vl8lks5ax3v8mkwy3hspdh1xsy6m2hyqf1azh10p324"))))
+        (base32 "1fhj636mwvh1c8r3kfpk69rjrrr83mkx5zpxqrs1cnwj6w184qf4"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
@@ -21506,13 +21505,13 @@ SCORE2 working group and ESC Cardiovascular risk collaboration (2021)
 (define-public r-riskscores
   (package
     (name "r-riskscores")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riskscores" version))
        (sha256
-        (base32 "068g0dq3cjnfrb09bkcivbm9n62lb59bvmkbh468hnzayp4lli9w"))))
+        (base32 "04pca0bv5p4cbw47wvsb77isyazhha2msc0z9djy4k5p9vrdb60s"))))
     (properties `((upstream-name . "riskscores")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-ggplot2 r-foreach r-dplyr))
@@ -28696,6 +28695,43 @@ GDAL library, a limitation which users of this package should be aware of.) The
 PROJ library is available at <https://proj.org/>.")
     (license license:gpl3)))
 
+(define-public r-reproducible
+  (package
+    (name "r-reproducible")
+    (version "2.0.12")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "reproducible" version))
+       (sha256
+        (base32 "138fxbk3cam1iiq7fzzwlbmx9alkb9bw18i3qr6sjvphzlqji6m4"))))
+    (properties `((upstream-name . "reproducible")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lobstr
+                             r-fs
+                             r-fpcompare
+                             r-filelock
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://reproducible.predictiveecology.org")
+    (synopsis "Enhance Reproducibility of R Code")
+    (description
+     "This package provides a collection of high-level, machine- and OS-independent
+tools for making reproducible and reusable content in R. The two workhorse
+functions are Cache() and @code{prepInputs}().  Cache() allows for nested
+caching, is robust to environments and objects with environments (like
+functions), and has deals with some classes of file-backed R objects e.g., from
+terra and raster packages.  Both functions have been developed to be
+foundational components of data retrieval and processing in continuous workflow
+situations.  In both functions, efforts are made to make the first and
+subsequent calls of functions have the same result, but faster at subsequent
+times by way of checksums and digesting.  Several features are still under
+development, including cloud storage of cached objects, allowing for sharing
+between users.  Several advanced options are available, see
+?@code{reproducibleOptions}().")
+    (license license:gpl3)))
+
 (define-public r-reproducer
   (package
     (name "r-reproducer")
@@ -32998,13 +33034,13 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-redcaptidier
   (package
     (name "r-redcaptidier")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapTidieR" version))
        (sha256
-        (base32 "0nhcznrgzww4zmc3z944cywlrmykfv0f0hx462nbfc1rgmg4rkzx"))))
+        (base32 "0a7q2mfnjfyfkdafvvl7y69c52qh8wsqrygv77wnrjl4kjf80gwv"))))
     (properties `((upstream-name . "REDCapTidieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -34105,6 +34141,37 @@ NAID:20001644490, Cohen (1988) ISBN:0-12-179060-6, Darroch (1961)
 <DOI:10.2307/2332748>, and Robson and Regier (1964) <ISSN:1548-8659>.")
     (license license:gpl2)))
 
+(define-public r-recalibratinn
+  (package
+    (name "r-recalibratinn")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "recalibratiNN" version))
+       (sha256
+        (base32 "10baqzbwggry9lwydr6vbsx5mx2jpbggm7dxamz9887min8n2lfa"))))
+    (properties `((upstream-name . "recalibratiNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rdpack
+                             r-rann
+                             r-purrr
+                             r-magrittr
+                             r-hmisc
+                             r-glue
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/cmusso86/recalibratiNN")
+    (synopsis "Quantile Recalibration for Regression Models")
+    (description
+     "Enables the diagnostics and enhancement of calibration of regression models.  It
+offers both global and local visualization tools to calibration diagnostics and
+provides one recalibration method : Torres R, Nott DJ, Sisson SA, Rodrigues T,
+Reis JG, Rodrigues GS (2024) <doi:10.48550/@code{arXiv.2403.05756>}.")
+    (license license:expat)))
+
 (define-public r-reca
   (package
     (name "r-reca")
@@ -34550,6 +34617,47 @@ where we distinguish between expected, acceptable, current, fallback, ideal, or
 regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
+
+(define-public r-ready4
+  (package
+    (name "r-ready4")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ready4" version))
+       (sha256
+        (base32 "0y7mjsah7a1f8jzz9mf3f9dvqnv30qdn2m4hccw0hyqvwcr1a4pf"))))
+    (properties `((upstream-name . "ready4")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyrss
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-piggyback
+                             r-magrittr
+                             r-lifecycle
+                             r-kableextra
+                             r-gh
+                             r-dplyr
+                             r-dataverse))
+    (native-inputs (list r-knitr))
+    (home-page "https://ready4-dev.github.io/ready4/")
+    (synopsis "Implement Modular and Open-Source Health Economic Models")
+    (description
+     "Programming syntax, a template model module and tools to help maintain a modular
+and open-source health economic model's project documentation website.  These
+elements are the foundation for a prototype software framework to support
+replicable and transferable health economic models.  The software framework is
+extended by other R libraries.  For detailed documentation about the framework
+and how to use it visit <https://www.ready4-dev.com/>.  For a background to the
+methodological issues that the framework is attempting to help solve, see
+Hamilton et al. (2024) <doi:10.48550/@code{arXiv.2310.14138>}.")
+    (license license:gpl3)))
 
 (define-public r-readxlsb
   (package
@@ -37071,13 +37179,13 @@ embedded in a web page ready for its interactive analysis and exploration.")
 (define-public r-rd2roxygen
   (package
     (name "r-rd2roxygen")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2roxygen" version))
        (sha256
-        (base32 "08hkwcjzn4kv47cgq2rckrb1fs4y5mic0kb87sk8mc4qbl1353vb"))))
+        (base32 "1p8xzgzl1h1ykj1j9c3gyr7a9m89sd9kwr5yqbdy9jkiwmmbb919"))))
     (properties `((upstream-name . "Rd2roxygen")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-roxygen2 r-formatr))
@@ -38732,13 +38840,13 @@ Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
 (define-public r-rcpa
   (package
     (name "r-rcpa")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA" version))
        (sha256
-        (base32 "0lb0c4zdksyhx71xs9kzcsi9l69a4g1ig4cd8wyhln86pw0qpdxz"))))
+        (base32 "116qb2zqlw6jsxz5mn7s35nv3d27kzpfjmnqk3whh9r91dkdhfyk"))))
     (properties `((upstream-name . "RCPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

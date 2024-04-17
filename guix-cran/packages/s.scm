@@ -782,16 +782,16 @@ variable functions using the delta method.")
 (define-public r-symptomcheckr
   (package
     (name "r-symptomcheckr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symptomcheckR" version))
        (sha256
-        (base32 "1dh4j950ha9l6kp4y8ygfxp5lp42x6j3bjzdbdpsz9a6hdb3l9az"))))
+        (base32 "0mhcn5df3nlli55wv50mmc5gk9yjkgazvagivwk0k033f0k73cjl"))))
     (properties `((upstream-name . "symptomcheckR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-ggpubr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-tidyr r-irr r-ggpubr r-ggplot2 r-dplyr))
     (home-page "https://github.com/ma-kopka/symptomcheckR")
     (synopsis "Analyzing and Visualizing Symptom Checker Performance")
     (description
@@ -9380,13 +9380,13 @@ Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
 (define-public r-stopp
   (package
     (name "r-stopp")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stopp" version))
        (sha256
-        (base32 "0xnqv6hvzp005b3jxir1zjfjxyvbynp137hhhwyqijibpi53l860"))))
+        (base32 "068p8hg7vjh7ginzds2d0w22m4dbrx26wj4fzzg6mv5v9wzq0ffi"))))
     (properties `((upstream-name . "stopp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stpp
@@ -12133,13 +12133,13 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "0.5.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "04m678ricwbrs64zrs36bzygkf5g6frsisyzyfxml9i40fzdv8pa"))))
+        (base32 "0pzb0p2fnh0j82ilhwjwq24zrpbb1lcbb0gfbd5r7p2n8lp3q5cz"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack
@@ -12157,12 +12157,7 @@ statistical tests to discriminate two or more populations of graphs, correlation
 between graphs, and clustering of graphs.  References: Takahashi et al. (2012)
 <doi:10.1371/journal.pone.0049949>, Fujita et al. (2017)
 <doi:10.3389/fnins.2017.00066>, Fujita et al. (2017)
-<doi:10.1016/j.csda.2016.11.016>, Tang et al. (2017) <doi:10.3150/15-BEJ789>,
-Tang et al. (2017) <doi:10.1080/10618600.2016.1193505>, Ghoshdastidar et al.
-(2017) <@code{arXiv:1705.06168>}, Ghoshdastidar et al. (2017)
-<@code{arXiv:1707.00833>}, Cerqueira et al. (2017)
-<doi:10.1109/TNSE.2017.2674026>, Fraiman and Fraiman (2018)
-<doi:10.1038/s41598-018-23152-5>, Fujita et al. (2019)
+<doi:10.1016/j.csda.2016.11.016>, Fujita et al. (2019)
 <doi:10.1093/comnet/cnz028>.")
     (license license:gpl3+)))
 
@@ -14764,6 +14759,43 @@ fit with (restricted) maximum likelihood.  Mapping and other graphical functions
 are included.")
     (license license:gpl3)))
 
+(define-public r-ssmutpa
+  (package
+    (name "r-ssmutpa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssMutPA" version))
+       (sha256
+        (base32 "15nrv2yzs5ydzm7030cznyqxdisg68hld28z3060bvq4ad3a9wvq"))))
+    (properties `((upstream-name . "ssMutPA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rcolorbrewer
+                             r-pheatmap
+                             r-nbclust
+                             r-matrix
+                             r-maftools
+                             r-kernlab
+                             r-igraph
+                             r-ggridges
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ssMutPA")
+    (synopsis "Single-Sample Mutation-Based Pathway Analysis")
+    (description
+     "This package provides a systematic bioinformatics tool to perform single-sample
+mutation-based pathway analysis by integrating somatic mutation data with the
+Protein-Protein Interaction (PPI) network.  In this method, we use local and
+global weighted strategies to evaluate the effects of network genes from
+mutations according to the network topology and then calculate the
+mutation-based pathway enrichment score (@code{ssMutPES}) to reflect the
+accumulated effect of mutations of each pathway.  Subsequently, the
+@code{ssMutPES} profiles are used for unsupervised spectral clustering to
+identify cancer subtypes.")
+    (license license:gpl2+)))
+
 (define-public r-ssmsn
   (package
     (name "r-ssmsn")
@@ -16828,6 +16860,45 @@ Parkin (1994) <doi:10.1016/j.geoderma.2008.08.007>
 Antonio Prohias.")
     (license license:lgpl3)))
 
+(define-public r-sputnik
+  (package
+    (name "r-sputnik")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SPUTNIK" version))
+       (sha256
+        (base32 "1jp1gprib1ppwnsgr7457b48ljlb70s2rzccq660d5lrngs8afca"))))
+    (properties `((upstream-name . "SPUTNIK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-reshape
+                             r-irlba
+                             r-infotheo
+                             r-imager
+                             r-ggplot2
+                             r-foreach
+                             r-edger
+                             r-e1071
+                             r-dosnow))
+    (home-page "https://github.com/paoloinglese/SPUTNIK")
+    (synopsis
+     "Spatially Automatic Denoising for Imaging Mass Spectrometry Toolkit")
+    (description
+     "Set of tools for peak filtering of mass spectrometry imaging data based on
+spatial distribution of signal.  Given a region-of-interest, representing the
+spatial region where the informative signal is expected to be localized, a
+series of filters determine which peak signals are characterized by an
+implausible spatial distribution.  The filters reduce the dataset dimension and
+increase its information vs noise ratio, improving the quality of the
+unsupervised analysis results, reducing data dimension and simplifying the
+chemical interpretation.  The methods are described in Inglese P. et al (2019)
+<doi:10.1093/bioinformatics/bty622>.")
+    (license license:gpl3+)))
+
 (define-public r-spurs
   (package
     (name "r-spurs")
@@ -18419,13 +18490,13 @@ in residuals and regression coefficients.  For details see Murakami (2021)
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "1mzayk0ncd7kwjc3bdv3kl9zisd93giawl060d1fj923pz0rzcpx"))))
+        (base32 "0dllygmpc75s8cwxxgzy49a8098zb37k3xalk4l0n1ccfqxspf8b"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -21963,6 +22034,29 @@ flexible spatial survival models.  See Benjamin M. Taylor, Barry S. Rowlingson
 (2017) <doi:10.18637/jss.v077.i04>.")
     (license license:gpl3)))
 
+(define-public r-spatstat-univar
+  (package
+    (name "r-spatstat-univar")
+    (version "2.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spatstat.univar" version))
+       (sha256
+        (base32 "1xzbzimzycya6h3f3xfclgc2wkj362z8f2j2ph1smvr6inncx58p"))))
+    (properties `((upstream-name . "spatstat.univar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-utils))
+    (home-page "http://spatstat.org/")
+    (synopsis
+     "One-Dimensional Probability Distribution Support for the 'spatstat' Family")
+    (description
+     "Estimation of one-dimensional probability distributions including kernel density
+estimation, weighted empirical cumulative distribution functions, Kaplan-Meier
+and reduced-sample estimators for right-censored data, heat kernels, kernel
+properties, quantiles and integration.")
+    (license license:gpl2+)))
+
 (define-public r-spatstat-local
   (package
     (name "r-spatstat-local")
@@ -25153,6 +25247,78 @@ of infectious diseases from surveillance time series.  Also provides support for
 computational experiments testing the performance of such methods.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-spades-tools
+  (package
+    (name "r-spades-tools")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaDES.tools" version))
+       (sha256
+        (base32 "12331n4lydjywfikp0hg0ihz7571lwc241hzi8s3i0zi4mdl5nj4"))))
+    (properties `((upstream-name . "SpaDES.tools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-reproducible
+                             r-rcpp
+                             r-fpcompare
+                             r-data-table
+                             r-checkmate
+                             r-backports))
+    (home-page "https://spades-tools.predictiveecology.org")
+    (synopsis
+     "Additional Tools for Developing Spatially Explicit Discrete Event Simulation (SpaDES) Models")
+    (description
+     "This package provides GIS and map utilities, plus additional modeling tools for
+developing cellular automata, dynamic raster models, and agent based models in
+@code{SpaDES}'.  Included are various methods for spatial spreading, spatial
+agents, GIS operations, random map generation, and others.  See
+?@code{SpaDES.tools} for an categorized overview of these additional tools.  The
+suggested package NLMR can be installed from the following repository:
+(<https://@code{PredictiveEcology.r-universe.dev>}).")
+    (license license:gpl3)))
+
+(define-public r-spades-core
+  (package
+    (name "r-spades-core")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaDES.core" version))
+       (sha256
+        (base32 "0hdc875mi16wc63fwr0xh6i2d98smwj2i8hcxhi447bwn33g7qma"))))
+    (properties `((upstream-name . "SpaDES.core")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-whisker
+                             r-terra
+                             r-require
+                             r-reproducible
+                             r-quickplot
+                             r-qs
+                             r-lobstr
+                             r-igraph
+                             r-fs
+                             r-data-table
+                             r-crayon))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://spades-core.predictiveecology.org/")
+    (synopsis
+     "Core Utilities for Developing and Running Spatially Explicit Discrete Event Models")
+    (description
+     "This package provides the core framework for a discrete event system to
+implement a complete data-to-decisions, reproducible workflow.  The core
+components facilitate the development of modular pieces, and enable the user to
+include additional functionality by running user-built modules.  Includes
+conditional scheduling, restart after interruption, packaging of reusable
+modules, tools for developing arbitrary automated workflows, automated
+interweaving of modules of different temporal resolution, and tools for
+visualizing and understanding the within-project dependencies.  The suggested
+package NLMR can be installed from the repository
+(<https://@code{PredictiveEcology.r-universe.dev>}).")
+    (license license:gpl3)))
 
 (define-public r-spader
   (package
@@ -30263,13 +30429,13 @@ user specified substantive model.")
 (define-public r-smccnet
   (package
     (name "r-smccnet")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmCCNet" version))
        (sha256
-        (base32 "0kkwvvl8rqpdfn5avl5ash3svyfff1rrkmkafjslvqwpym69gsb0"))))
+        (base32 "16kw1nk0y8v2dg4akv5biwznx6a0pv754453r3ymfxw7qjrknyqc"))))
     (properties `((upstream-name . "SmCCNet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -56438,13 +56604,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "11h2pwg29nlpbzb0dys6xhbjvar2igwqbhh8x4n5spkiccn6l4cj"))))
+        (base32 "1dx64qn12zxdql9z7z5lr9x7yxy1gnnck0x3g9ajgkbbqwgxrzck"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reporter
@@ -59684,13 +59850,13 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
 (define-public r-saeczi
   (package
     (name "r-saeczi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeczi" version))
        (sha256
-        (base32 "18idb205pyb1qz593k2bzqx3ji1iyg1wwcm069mchdpcz2kflcpm"))))
+        (base32 "1mir2qq7q4l4si8hl05rywikph8m69p5bckrg2cnkcz4qqzf35h9"))))
     (properties `((upstream-name . "saeczi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -59711,9 +59877,9 @@ model and a logistic mixed effects regression model via a two-stage modeling
 approach.  The estimator's mean squared error is estimated via a parametric
 bootstrap method.  Chandra and others (2012, <doi:10.1080/03610918.2011.598991>)
 introduce and describe this estimator and mean squared error estimator.  White
-and others (2024+, <@code{arXiv:2402.03263>}) describe the applicability of this
-estimator to estimation of forest attributes and further assess the estimator's
-properties.")
+and others (2024+, <doi:10.48550/@code{arXiv.2402.03263>}) describe the
+applicability of this estimator to estimation of forest attributes and further
+assess the estimator's properties.")
     (license license:expat)))
 
 (define-public r-saebnocov
