@@ -6630,13 +6630,13 @@ visualizations. @code{SubVis} requires the availability of a web browser.")
 (define-public r-subtypedrug
   (package
     (name "r-subtypedrug")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SubtypeDrug" version))
        (sha256
-        (base32 "0710hfq5gd0nw7vp6xxsy3yzxdmgb88k05a0h44w8q0x9dbjcmab"))))
+        (base32 "1r0sjzjmllicqmqv5phxpqcndh84kjqc779js32rlwbw0x279xhw"))))
     (properties `((upstream-name . "SubtypeDrug")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25320,6 +25320,39 @@ package NLMR can be installed from the repository
 (<https://@code{PredictiveEcology.r-universe.dev>}).")
     (license license:gpl3)))
 
+(define-public r-spades
+  (package
+    (name "r-spades")
+    (version "2.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaDES" version))
+       (sha256
+        (base32 "0clanr9cwyjhpjv5wsfhm34rmpf5gjh1hq0pzh6p1yp63wnj13m8"))))
+    (properties `((upstream-name . "SpaDES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spades-tools r-spades-core r-reproducible
+                             r-quickplot))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://spades.predictiveecology.org")
+    (synopsis
+     "Develop and Run Spatially Explicit Discrete Event Simulation Models")
+    (description
+     "Metapackage for implementing a variety of event-based models, with a focus on
+spatially explicit models.  These include raster-based, event-based, and
+agent-based models.  The core simulation components (provided by
+@code{SpaDES.core}') are built upon a discrete event simulation (DES; see
+Matloff (2011) ch 7.8.3 <https://nostarch.com/artofr.htm>) framework that
+facilitates modularity, and easily enables the user to include additional
+functionality by running user-built simulation modules (see also
+@code{SpaDES.tools}').  Included are numerous tools to visualize rasters and
+other maps (via @code{quickPlot}'), and caching methods for reproducible
+simulations (via reproducible').  Tools for running simulation experiments are
+provided by @code{SpaDES.experiment}'.  Additional functionality is provided by
+the @code{SpaDES.addins} and @code{SpaDES.shiny} packages.")
+    (license license:gpl3)))
+
 (define-public r-spader
   (package
     (name "r-spader")
@@ -39597,13 +39630,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "0p62x9rxjaz7wccji3l1xvx5p4jib49sxhyfmgyw78935kyn1bpm"))))
+        (base32 "16mmg1iijk20qq76pkk6wyigpj00r4jcwqpxcskca4i6ccq25d8j"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments

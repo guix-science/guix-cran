@@ -12802,13 +12802,13 @@ changes in assumptions.")
 (define-public r-postm
   (package
     (name "r-postm")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "POSTm" version))
        (sha256
-        (base32 "0hnphl0lrblhj83z1ivcn7dnx2igvvbwzfkljbjdag59yqyjx7x0"))))
+        (base32 "0gd6nqm66lms7yscf53qn6ny6rqhqa6c5l256867q52xlgcnjx35"))))
     (properties `((upstream-name . "POSTm")))
     (build-system r-build-system)
     (propagated-inputs (list r-compquadform r-ape))
@@ -20398,16 +20398,16 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "0v2lb7py5wmdcq6xqv4yaqqh0zncxv9hmcfw7k87zlygqnqx6xzk"))))
+        (base32 "0b9k3srzhr5y9yfbq52q3c31677h299gljdk66n59jc221flv05k"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpproll r-magrittr r-lubridate r-dplyr))
+    (propagated-inputs (list r-tidyr r-rcpproll r-magrittr r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/nguyennico/planr")
     (synopsis "Tools for Supply Chain Management, Demand and Supply Planning")
@@ -27164,13 +27164,13 @@ imputation-permutation methods when the censoring distributions are different.")
 (define-public r-permchacko
   (package
     (name "r-permchacko")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permChacko" version))
        (sha256
-        (base32 "1jcgg0v7a70sw02qw6kxyc58kn4rczcrvgwsjpg9sj4ybgax42s9"))))
+        (base32 "0wnq6wgh78cp8d0xab00fb94p9sm67412dvxrki56rajjsagclqq"))))
     (properties `((upstream-name . "permChacko")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

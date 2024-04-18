@@ -18509,19 +18509,18 @@ analyses (Robinson et al.  1995)
 (define-public r-ecoregime
   (package
     (name "r-ecoregime")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoregime" version))
        (sha256
-        (base32 "1y44zsqhk5va1pcj5865bjk5wi20r2xk0gd49lf13i7sjav7fss4"))))
+        (base32 "0f54y3q81ji4vaah6hplhl4jvzxw4lf0gg9sh0zvgq8ca43i4rkn"))))
     (properties `((upstream-name . "ecoregime")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-smacof
                              r-shape
-                             r-gdatools
                              r-ecotraj
                              r-data-table
                              r-ape))
@@ -18536,7 +18535,10 @@ spaces defined by state variables.  The package includes the RETRA-EDR algorithm
 to identify representative trajectories, functions to generate, summarize, and
 visualize representative trajectories, and several metrics to quantify the
 distribution and heterogeneity of trajectories in an ecological dynamic regime
-and quantify the dissimilarity between two or more ecological dynamic regimes.")
+and quantify the dissimilarity between two or more ecological dynamic regimes.
+The package also includes a set of functions to assess ecological resilience
+based on ecological dynamic regimes (SÃ¡nchez-Pinillos et al., 2024
+<doi:10.1016/j.biocon.2023.110409>).")
     (license license:gpl3+)))
 
 (define-public r-ecoreg

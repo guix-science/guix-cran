@@ -4738,13 +4738,13 @@ methods such as structural equation models.")
 (define-public r-aspace
   (package
     (name "r-aspace")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aspace" version))
        (sha256
-        (base32 "1k6s7wfjxzp3chd33r4449bzpnlb1yizlqmwvmpfbydjw6zcv3lq"))))
+        (base32 "02lsaq0pivkvripd33azqfbx4lpdpad19vwy196d6bqkzg4zqzmm"))))
     (properties `((upstream-name . "aspace")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs r-hmisc))
@@ -19551,13 +19551,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.10.0")
+    (version "0.11.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1jgydhi1fnb0dlqksw58lvacakqjsksl32358dvzlkgihvjqzfds"))))
+        (base32 "1s3kzwcvdzsx3m5dmhyyzzx0kl7fx09b7246vr1cm4y05zqdp4l0"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -19859,16 +19859,16 @@ U.S. Food and Drug Administration.")
 (define-public r-adaptivetau
   (package
     (name "r-adaptivetau")
-    (version "2.3")
+    (version "2.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaptivetau" version))
        (sha256
-        (base32 "1m82nibsrkwqvc0aq9yrzakpa7k663i1gbis6ikvs7dfxf9mpijx"))))
+        (base32 "0krv2pw7gg0nch96h0ffy6wli1cjscfl424jy04q0zvvqfghkvqd"))))
     (properties `((upstream-name . "adaptivetau")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=adaptivetau")
+    (home-page "https://github.com/plfjohnson/adaptivetau")
     (synopsis "Tau-Leaping Stochastic Simulation")
     (description
      "This package implements adaptive tau leaping to approximate the trajectory of a

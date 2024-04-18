@@ -12765,41 +12765,6 @@ bootstrapping.  See Espeland and Hui (1987) <doi:10.2307/2531553> for general
 approach.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-glinvci
-  (package
-    (name "r-glinvci")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "glinvci" version))
-       (sha256
-        (base32 "0h8fv30gv4807yflymrla0hiy56sxvdm1530k1ag0gbq067i1sz8"))))
-    (properties `((upstream-name . "glinvci")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-plyr
-                             r-optimx
-                             r-numderiv
-                             r-lbfgsb3c
-                             r-generics
-                             r-bb
-                             r-ape))
-    (native-inputs (list pkg-config gfortran))
-    (home-page "https://git.sr.ht/~hckiang/glinvci")
-    (synopsis "Phylogenetic Comparative Methods with Uncertainty Estimates")
-    (description
-     "This package provides a framework for analytically computing the asymptotic
-confidence intervals and maximum-likelihood estimates of a class of
-continuous-time Gaussian branching processes defined by Mitov V, Bartoszek K,
-Asimomitis G, Stadler T (2019) <doi:10.1016/j.tpb.2019.11.005>.  The class of
-model includes the widely used Ornstein-Uhlenbeck and Brownian motion branching
-processes.  The framework is designed to be flexible enough so that the users
-can easily specify their own sub-models, or re-parameterizations, and obtain the
-maximum-likelihood estimates and confidence intervals of their own custom
-models.")
-    (license license:gpl3)))
-
 (define-public r-glide
   (package
     (name "r-glide")
@@ -19023,6 +18988,26 @@ it provides a unique solution for visualizing the multiple sequence alignment
 without the need to do the alignment in each run which is a big limitation in
 other available packages.")
     (license license:gpl3)))
+
+(define-public r-gfunctions
+  (package
+    (name "r-gfunctions")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gfunctions" version))
+       (sha256
+        (base32 "1rjrw4g0daw219spcz0pmy78m68gidk7vdbxd31wqgn1p7xwa4jb"))))
+    (properties `((upstream-name . "gfunctions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-sandwich))
+    (home-page "https://cran.r-project.org/package=gfunctions")
+    (synopsis "G-Functions")
+    (description
+     "Modified versions of the lag() and summary() functions: glag() and gsummary().
+The prefix g is a reminder of who to blame if things do not work as they should.")
+    (license license:gpl2+)))
 
 (define-public r-gformulami
   (package

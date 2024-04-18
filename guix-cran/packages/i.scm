@@ -9120,13 +9120,13 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "18fqffkkvy4jzfqr71gmfva2hjb0mdhb6z4sd6pfvijg8r1d74yv"))))
+        (base32 "1c2aaysyjvxxynwp877bhi9w3lrydg96gp2is6a919dgmwi7ilvx"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -9152,13 +9152,13 @@ network from single-cell sequencing data.")
 (define-public r-inext-beta3d
   (package
     (name "r-inext-beta3d")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.beta3D" version))
        (sha256
-        (base32 "16g64jy68hmq2dr3snc5v35kl7g9ghglljm8qr8jmnny26kmpgan"))))
+        (base32 "176gy6ldgslg6r2c18fmfc98jljsvvgx5fmgv0g6jzl64kirc5j8"))))
     (properties `((upstream-name . "iNEXT.beta3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree

@@ -11192,16 +11192,21 @@ quality, reliability, and structure.")
 (define-public r-fixest
   (package
     (name "r-fixest")
-    (version "0.11.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixest" version))
        (sha256
-        (base32 "0r9b1shiwz4739hq953gacvmnjm9r4sisi9chkfw9rc90qx13vid"))))
+        (base32 "1pvkn9yj2xi7mr7f653wvdczvsgmvn488cssy85flscfgicv6lk2"))))
     (properties `((upstream-name . "fixest")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-rcpp r-numderiv r-nlme r-dreamerr))
+    (propagated-inputs (list r-stringmagic
+                             r-sandwich
+                             r-rcpp
+                             r-numderiv
+                             r-nlme
+                             r-dreamerr))
     (native-inputs (list r-knitr))
     (home-page "https://lrberge.github.io/fixest/")
     (synopsis "Fast Fixed-Effects Estimations")
@@ -13326,6 +13331,26 @@ Explore models and export directly to PDF and Word using RMarkdown'.")
      "This package provides a collection of utility functions to download and manage
 data sets from the Internet or from other sources.")
     (license license:gpl2+)))
+
+(define-public r-filters
+  (package
+    (name "r-filters")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "filters" version))
+       (sha256
+        (base32 "1rxq1ci3q1n4v5nnkrcl29kand7a752b7rrgrzq754jjaybp6xnh"))))
+    (properties `((upstream-name . "filters")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-plyr r-magrittr))
+    (home-page "https://cran.r-project.org/package=filters")
+    (synopsis "\"Snake_case\" Filter System for R")
+    (description
+     "Enables filtering datasets by a prior specified identifiers which correspond to
+saved filter expressions.")
+    (license license:asl2.0)))
 
 (define-public r-filternhp
   (package

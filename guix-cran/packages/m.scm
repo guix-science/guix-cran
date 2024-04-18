@@ -13434,13 +13434,13 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1g6s60n1y1yjsvscz3bbrzq74lmfl7q2mkaysl5vdq16c2lkai4h"))))
+        (base32 "1k0kmd1mxg1rjrn22jzp98f9bfysx4l7pcf8wrks7nxlbaripb4w"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -17345,13 +17345,13 @@ for a wide range of data sets.")
 (define-public r-mlr3spatiotempcv
   (package
     (name "r-mlr3spatiotempcv")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3spatiotempcv" version))
        (sha256
-        (base32 "0a9vkq0s1g0sav78gmg0wz5yq871151rzavg6prhn4yqiznr0rwm"))))
+        (base32 "04n5bzppkj9fmdhd54qk8738id0sfd3ij7p31l3hxmjbak5inh83"))))
     (properties `((upstream-name . "mlr3spatiotempcv")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -40089,6 +40089,43 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
+
+(define-public r-mapmixture
+  (package
+    (name "r-mapmixture")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapmixture" version))
+       (sha256
+        (base32 "03kkp7dk263r66f1pbsf8c0v9hf94ixpl0dylp0n6qc5z4vabksg"))))
+    (properties `((upstream-name . "mapmixture")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waiter
+                             r-tidyr
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shiny
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-htmltools
+                             r-ggspatial
+                             r-ggplot2
+                             r-dplyr
+                             r-colourpicker
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=mapmixture")
+    (synopsis "Spatial Visualisation of Admixture on a Projected Map")
+    (description
+     "Visualise admixture as pie charts on a projected map, admixture as traditional
+structure barplots or facet barplots, and scatter plots from genotype principal
+components analysis.  A shiny app allows users to create admixture maps
+interactively.  Jenkins TL (2024) <doi:10.1111/1755-0998.13943>.")
+    (license license:gpl3+)))
 
 (define-public r-mapmisc
   (package

@@ -3028,15 +3028,16 @@ density) and random generation for discrete stable random variables.")
 (define-public r-dst
   (package
     (name "r-dst")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dst" version))
        (sha256
-        (base32 "1ivbc6k3ynl7ikc1yddxykqrgzz7dazf6bc71xllsh9x16fy8dqk"))))
+        (base32 "08fx02aijjzf4jwddsir2lid4d87wpdr4dhw3ndhr9l92qwcq81g"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rlang r-matrix r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=dst")
     (synopsis "Using the Theory of Belief Functions")
@@ -24525,6 +24526,50 @@ H.-Y., Zhang, Q., Li, Z. & He, K.-B. (2020)
     (description
      "RStudio addins and R functions that make copy-pasting vectors and tables to text
 painless.")
+    (license license:expat)))
+
+(define-public r-datapackager
+  (package
+    (name "r-datapackager")
+    (version "0.15.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataPackageR" version))
+       (sha256
+        (base32 "0yan6kqwpsnljc5j8rrl42m39kiqv1hpbrj6r5h92phx3w8h383l"))))
+    (properties `((upstream-name . "DataPackageR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-usethis
+                             r-stringr
+                             r-rprojroot
+                             r-roxygen2
+                             r-rmarkdown
+                             r-purrr
+                             r-knitr
+                             r-futile-logger
+                             r-digest
+                             r-devtools
+                             r-desc
+                             r-crayon
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/DataPackageR/")
+    (synopsis "Construct Reproducible Analytic Data Sets as R Packages")
+    (description
+     "This package provides a framework to help construct R data packages in a
+reproducible manner.  Potentially time consuming processing of raw data sets
+into analysis ready data sets is done in a reproducible manner and decoupled
+from the usual R CMD build process so that data sets can be processed into R
+objects in the data package and the data package can then be shared, built, and
+installed by others without the need to repeat computationally costly data
+processing.  The package maintains data provenance by turning the data
+processing scripts into package vignettes, as well as enforcing documentation
+and version checking of included data objects.  Data packages can be version
+controlled on @code{GitHub}', and used to share data for manuscripts,
+collaboration and reproducible research.")
     (license license:expat)))
 
 (define-public r-datapack

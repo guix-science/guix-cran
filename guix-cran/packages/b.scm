@@ -20717,13 +20717,13 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.1-6")
+    (version "2.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "09iqd1zk9yvnbk07lkrvzb3sg54x8091862vj2vy1ran4pnaclf0"))))
+        (base32 "15n0qim3zigmyickp283gq4pmd9fb19wkwbgkjwkbskr7dzp3kkn"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -20733,14 +20733,14 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
                              r-matrix
                              r-igraph))
     (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://cran.r-project.org/package=BayesSUR")
+    (home-page "https://github.com/mbant/BayesSUR")
     (synopsis "Bayesian Seemingly Unrelated Regression")
     (description
      "Bayesian seemingly unrelated regression with general variable selection and
 dense/sparse covariance matrix.  The sparse seemingly unrelated regression is
 described in Bottolo et al. (2021) <doi:10.1111/rssc.12490>, the software paper
 is in Zhao et al. (2021) <doi:10.18637/jss.v100.i11>, and the model with random
-effects is described in Zhao et al. (2023) <doi:10.1093/jrsssc/qlad102>.")
+effects is described in Zhao et al. (2024) <doi:10.1093/jrsssc/qlad102>.")
     (license license:expat)))
 
 (define-public r-bayessenmc

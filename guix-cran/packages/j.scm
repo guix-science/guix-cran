@@ -3810,19 +3810,21 @@ switching between MCMC samplers.")
 (define-public r-jagstargets
   (package
     (name "r-jagstargets")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagstargets" version))
        (sha256
-        (base32 "12iiqma5b114rnbcknid0qhhc1wr5hm4p2hg8d0bmxhsxnr9hfkr"))))
+        (base32 "10bx1sy5lcq1k1nliiwqjyq5hrywa97dh5zyyjdxq9rh94xhcc7p"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-tidyselect
                              r-tibble
                              r-targets
                              r-tarchetypes
+                             r-secretbase
                              r-rlang
                              r-rjags
                              r-r2jags
@@ -3830,7 +3832,6 @@ switching between MCMC samplers.")
                              r-purrr
                              r-posterior
                              r-fst
-                             r-digest
                              r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/jagstargets/")

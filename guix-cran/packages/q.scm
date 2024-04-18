@@ -3897,13 +3897,13 @@ original data set.")
 (define-public r-qoi
   (package
     (name "r-qoi")
-    (version "0.0.4")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qoi" version))
        (sha256
-        (base32 "0sdarr3f6by3kgaq7302kwkgv0vcy4q0mkprdlawkybaafzlzb9x"))))
+        (base32 "1zia8k95lmxpqfpkci6kln5d8n86fnnahyb8xd52ivqglifv5g56"))))
     (properties `((upstream-name . "qoi")))
     (build-system r-build-system)
     (home-page "https://github.com/JohannesFriedrich/qoi4R")
@@ -3913,7 +3913,7 @@ original data set.")
 algorithm.  This package provides an easy and simple way to read, write and
 display bitmap images stored in the QOI (Quite Ok Image) format.  It can read
 and write both files and in-memory raw vectors.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-qmvs
   (package

@@ -9036,13 +9036,13 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
 (define-public r-rqdeltact
   (package
     (name "r-rqdeltact")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQdeltaCT" version))
        (sha256
-        (base32 "1fb6mzaym3gv5aah2071ibmnnnmfzknfmnfiwm893crdwyx3f92w"))))
+        (base32 "1zwajwyiwhl12v1119w9xlyw07a9iigj3yy27nm65ninqjbfrn8j"))))
     (properties `((upstream-name . "RQdeltaCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -9066,24 +9066,22 @@ L. Knight (1995) <doi:10.1119/1.17904> for more details.")
     (synopsis
      "Relative Quantification of Gene Expression using Delta Ct Methods")
     (description
-     "The commonly used methods for relative quantification of gene expression are the
-delta Ct family methods (encompassing 2^-Ct, 2^-@code{dCt}, and 2^-@code{ddCt}
-methods), originally proposed by Kenneth J. Livak and Thomas D. Schmittgen
-(2001) <doi:10.1006/meth.2001.1262>.  These methods were designed to analyse
-gene expression data (Ct values) obtained from @code{qPCR} (quantitative
-Polymerase Chain Reaction) experiments.  The main idea is to normalise gene
-expression values using endogenous control gene, present gene expression levels
-in linear form by using the 2^-(value)^ transformation, and calculate
-differences in gene expression levels between groups of samples (or technical
-replicates of a single sample).  The R@code{QdeltaCT} package offers functions
-that encompass all of these steps for comparison of either independent groups of
-samples or groups with paired samples, together with importing @code{qPCR}
-datasets, performing multi-step quality control of data, enabling numerous data
-visualisations, enrichment of the standard workflow with additional useful
-analyses (correlation analysis, Receiver Operating Characteristic analysis,
-logistic regression), and conveniently export obtained results in table and
-image formats.  The package has been designed to be friendly to non-experts in R
-programming users.")
+     "The commonly used methods for relative quantification of gene expression levels
+obtained in real-time PCR (Polymerase Chain Reaction) experiments are the delta
+Ct methods, encompassing 2^-@code{dCt} and 2^-@code{ddCt} methods, originally
+proposed by Kenneth J. Livak and Thomas D. Schmittgen (2001)
+<doi:10.1006/meth.2001.1262>.  The main idea is to normalise gene expression
+values using endogenous control gene, present gene expression levels in linear
+form by using the 2^-(value)^ transformation, and calculate differences in gene
+expression levels between groups of samples (or technical replicates of a single
+sample).  The R@code{QdeltaCT} package offers functions that cover both methods
+for comparison of either independent groups of samples or groups with paired
+samples, together with importing expression datasets, performing multi-step
+quality control of data, enabling numerous data visualisations, enrichment of
+the standard workflow with additional useful analyses (correlation analysis,
+Receiver Operating Characteristic analysis, logistic regression), and
+conveniently export obtained results in table and image formats.  The package
+has been designed to be friendly to non-experts in R programming.")
     (license license:gpl3)))
 
 (define-public r-rqdatatable

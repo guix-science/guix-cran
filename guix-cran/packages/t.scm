@@ -17014,13 +17014,13 @@ dplyr time-based groups.")
 (define-public r-thurstonianirt
   (package
     (name "r-thurstonianirt")
-    (version "0.12.4")
+    (version "0.12.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thurstonianIRT" version))
        (sha256
-        (base32 "1gvijkxiy4zwg5hxg4qhy3dgcck2gm4nh6bjacxsz5yvai3fagsa"))))
+        (base32 "0rdiv9pdxxp36ggxlfs1g6jcv1f259ky2cpxb6kg21s4xfllrah2"))))
     (properties `((upstream-name . "thurstonianIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20227,6 +20227,28 @@ plenty of choices for the model types are available, which can be found in the
 <doi:10.1080/01621459.2017.1281813> for details.")
     (license license:gpl3)))
 
+(define-public r-testindvars
+  (package
+    (name "r-testindvars")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TestIndVars" version))
+       (sha256
+        (base32 "04imj35ks5dzwizia8r25ahgdxclbskv3s3r8c9k5cqrv4gqppga"))))
+    (properties `((upstream-name . "TestIndVars")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrixcalc r-mass))
+    (home-page "https://github.com/mnrzrad/TestIndVars")
+    (synopsis
+     "Testing the Independence of Variables for Specific Covariance Structures")
+    (description
+     "Test the nullity of covariances, in a set of variables, using a simple
+univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
+<doi:10.1002/mma.9130>.")
+    (license license:gpl2+)))
+
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
@@ -21089,13 +21111,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0znhq8sz5v229rlxgqgfzdlzc5vr8fwlz6xccycmqsq5w2c7zjhf"))))
+        (base32 "1byv3q2kjd1aibzxhvwnm7fl2vsz069pxmcjx1zjl6w6453y5s3h"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21105,6 +21127,7 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-rtables
                              r-rlang
                              r-rdpack
+                             r-mass
                              r-magrittr
                              r-lifecycle
                              r-labeling
@@ -21120,7 +21143,7 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-car
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/tern")
+    (home-page "https://insightsengineering.github.io/tern/")
     (synopsis "Create Common TLGs Used in Clinical Trials")
     (description
      "Table, Listings, and Graphs (TLG) library for common outputs used in clinical
@@ -23923,13 +23946,13 @@ distribution along with clinical trials based on the Bayesian distribution.")
 (define-public r-tbm
   (package
     (name "r-tbm")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbm" version))
        (sha256
-        (base32 "0qq6zjz37j31jrw0lxsf6vgxwhs8swkqg48jwc320vpz1qjqj7xv"))))
+        (base32 "1d9ny184b5lbjxaxbm1qzrkpar1l5ggh8g92yq2kc46kall04cxh"))))
     (properties `((upstream-name . "tbm")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables

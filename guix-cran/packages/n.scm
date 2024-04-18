@@ -809,13 +809,13 @@ correction.  See @code{MrkviÄka} et al. (2021)
 (define-public r-ntsdists
   (package
     (name "r-ntsdists")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntsDists" version))
        (sha256
-        (base32 "1igqn4kzbqly8bl3mi4php25jwnqf0z5s8xmany0lf8nciwl4hl3"))))
+        (base32 "02q78hzqv5306fgy590y951ybvixaibmslhvgb34rfp8fnpj1zm3"))))
     (properties `((upstream-name . "ntsDists")))
     (build-system r-build-system)
     (home-page "https://github.com/dmazarei/ntsDists")
@@ -5412,13 +5412,13 @@ coefficient estimates.")
 (define-public r-nngeo
   (package
     (name "r-nngeo")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nngeo" version))
        (sha256
-        (base32 "0scfclw2prjfgm1liwbbys9ds00pyb0fk8q0mw6d6nqnbrw9kfnd"))))
+        (base32 "18rww271wm9k8v1jibs6ans549yrz0zzl2c63sgdd1f9kkhr2apm"))))
     (properties `((upstream-name . "nngeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-nabor r-data-table))
@@ -7324,13 +7324,13 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
 (define-public r-nlive
   (package
     (name "r-nlive")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlive" version))
        (sha256
-        (base32 "15h55ck0xha905wjg89rf8gcz49c3kpd5sqb2xxxkg9z4mlbn1q8"))))
+        (base32 "17rb5rmw89xq4slqyp7ad24pr6dj9nmrn4pyw50wm7dwzaqpzhy6"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -7341,6 +7341,7 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
                              r-lcmm
                              r-knitr
                              r-ggplot2
+                             r-fastdummies
                              r-dplyr))
     (home-page "https://github.com/MaudeWagner/nlive")
     (synopsis
