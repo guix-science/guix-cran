@@ -7604,13 +7604,13 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
 (define-public r-insurancerating
   (package
     (name "r-insurancerating")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insurancerating" version))
        (sha256
-        (base32 "0yllp7r1jmv09py3v8blir7nc3vpd8y5a8b3r8k5ncyx7k56nbwh"))))
+        (base32 "1s6aggr6gd2h90za0lg9kaxnny4gf036ahdf2j383s7mviz1hvgh"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7663,6 +7663,27 @@ modelling.  It helps testing new regression models in those problems, such as
 GLM, GLMM, HGLM, non-linear mixed models etc.  Most of the data sets are applied
 in the project \"Mixed models in ratemaking\" supported by grant NN 111461540 from
 Polish National Science Center.")
+    (license license:gpl2)))
+
+(define-public r-instar
+  (package
+    (name "r-instar")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "instaR" version))
+       (sha256
+        (base32 "0c4m471ragkpksr0h21cdgnjxcknf01xqz543dahxgzjg9ncjwhg"))))
+    (properties `((upstream-name . "instaR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr))
+    (home-page "https://github.com/pablobarbera/instaR")
+    (synopsis "Access to Instagram API via R")
+    (description
+     "This package provides an interface to the Instagram API <https://instagram.com/
+developer/>, which allows R users to download public pictures filtered by
+hashtag, popularity, user or location, and to access public users profile data.")
     (license license:gpl2)))
 
 (define-public r-instantiate

@@ -7567,20 +7567,19 @@ however they exceed current CRAN policy for package size.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "05kx133vs99vfb69vp06vhmkg6fd3lqxw1cha30sd6annaylrsyq"))))
+        (base32 "0553xmamgcaswnjyq0ayyfgvwl1kijrq0jan80m23kgydgi46hkv"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
+    (inputs (list))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-rcppsimdjson
-                             r-rcpp
-                             r-jsonify
                              r-httr2
                              r-dbplyr
                              r-cli))

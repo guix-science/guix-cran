@@ -4233,13 +4233,13 @@ Regression models.")
 (define-public r-logr
   (package
     (name "r-logr")
-    (version "1.3.7")
+    (version "1.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logr" version))
        (sha256
-        (base32 "0mw31qyvac62f37r156ma1v0jlxc62h27hjwbz80lygr8c0bf796"))))
+        (base32 "0d1r5ka83nd9s3b62m0wd7vdhfff7x229w9w8xll180qdswq04ay"))))
     (properties `((upstream-name . "logr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-common))
@@ -5922,13 +5922,13 @@ analysis discriminant analysis (RCCA-DA) (Yamamoto, H. et al. (2008)
 (define-public r-loader
   (package
     (name "r-loader")
-    (version "1.1.8")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loadeR" version))
        (sha256
-        (base32 "0bh5c16sdgirw0pmpmg6mvglv9zlaz9l2mfmk85rxvg00zw0qrq4"))))
+        (base32 "0hxvmhl0xyyxjiinbh55clwdzihpxyw61k1gm6wcvj8hs21y8sl0"))))
     (properties `((upstream-name . "loadeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -11199,13 +11199,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.2")
+    (version "4.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "04p06gxihyca43zzkjrbblpmqjfws8xwi2f4svm9ydi5swfs6bwy"))))
+        (base32 "0yg9galvwnjzgkfj8hrmrscsdd7qh0g9fqxdqh444wkfarw55n0k"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -12407,17 +12407,17 @@ leaflet map.")
 (define-public r-leaflegend
   (package
     (name "r-leaflegend")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflegend" version))
        (sha256
-        (base32 "026ng3lvlpb313sck0wic2nvlh5kd9li83f8md88zi54wz4m7gl7"))))
+        (base32 "1lh6c0v365aaqygwfgzbgiy3g3wlq6w0nw0drdlhcgckw7a68mk2"))))
     (properties `((upstream-name . "leaflegend")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaflet r-htmlwidgets r-htmltools r-base64enc))
-    (home-page "https://leaflegend.roh.engineering")
+    (home-page "https://leaflegend.delveds.com")
     (synopsis "Add Custom Legends to 'leaflet' Maps")
     (description
      "This package provides extensions to the leaflet package to customize legends

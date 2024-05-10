@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -31779,17 +31780,17 @@ names, and codes between each other at the city level from 1986 to 2019.")
 (define-public r-regional
   (package
     (name "r-regional")
-    (version "0.3.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regional" version))
        (sha256
-        (base32 "0gwm3lqmils8dpv0g0919caqifa90lv3vrjqcky33i7jd18c20g2"))))
+        (base32 "1z41hwkgh8c9xzil95gam6d1pi4m2788xc26d0r0wbynrxjdpqq4"))))
     (properties `((upstream-name . "regional")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-philentropy))
-    (home-page "https://cran.r-project.org/package=regional")
+    (home-page "https://jakubnowosad.com/regional/")
     (synopsis "Intra- and Inter-Regional Similarity")
     (description
      "Calculates intra-regional and inter-regional similarities based on user-provided

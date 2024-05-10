@@ -2296,6 +2296,46 @@ et al. (2021, <doi:10.1177/1471082X20936017>).  Likelihood approximation based
 on adaptive Gauss Hermite quadrature rule.")
     (license license:gpl3)))
 
+(define-public r-ptm
+  (package
+    (name "r-ptm")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ptm" version))
+       (sha256
+        (base32 "1bbcysv1dgc2siix8cp2lbc4i5kh31n0ciadfkjkw4xw3ib70pc8"))))
+    (properties `((upstream-name . "ptm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-seqinr
+                             r-rcurl
+                             r-jsonlite
+                             r-igraph
+                             r-httr
+                             r-curl
+                             r-bio3d))
+    (home-page "https://bitbucket.org/jcaledo/ptm")
+    (synopsis "Analyses of Protein Post-Translational Modifications")
+    (description
+     "This package contains utilities for the analysis of post-translational
+modifications (PTMs) in proteins, with particular emphasis on the sulfoxidation
+of methionine residues.  Features include the ability to download, filter and
+analyze data from the sulfoxidation database @code{MetOSite}', and integrate
+data from other main PTMs (other databases).  Utilities to search and
+characterize S-aromatic motifs in proteins are also provided.  In addition,
+functions to analyze sequence environments around modifiable residues in
+proteins can be found.  For instance, ptm allows to search for amino acids
+either overrepresented or avoided around the modifiable residues from the
+proteins of interest.  Functions tailored to test statistical hypothesis related
+to these differential sequence environments are also implemented.  A number of
+utilities to assess the effect of the modification/mutation of a given residue
+on the protein stability, have also been included in this package.  Further and
+detailed information regarding the methods in this package can be found in
+(Aledo (2020) <https://metositeptm.com>).")
+    (license license:gpl2+)))
+
 (define-public r-ptitan2
   (package
     (name "r-ptitan2")
@@ -13956,13 +13996,13 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "09j5ih4ggxzpfhr7ch2d2rpfkpwrgppqrm164yj68daa94cq8ga9"))))
+        (base32 "0s7grqzh3dy6rn7ricq79sr936q3prnj9zq2c5474pyl0pypv85p"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
@@ -13987,9 +14027,8 @@ ISBN:9780198829546).")
     (synopsis "Streamline Population Genomic and Genetic Analyses")
     (description
      "Estimate commonly used population genomic statistics and generate publication
-quality figures.  The current version of @code{PopGenHelpR} uses vcf and csv
-files to generate output, however, future implementations will expand the input
-file type options.")
+quality figures. @code{PopGenHelpR} uses vcf, geno (012), and csv files to
+generate output.")
     (license license:gpl3+)))
 
 (define-public r-popepi

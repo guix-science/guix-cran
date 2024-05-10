@@ -19071,17 +19071,17 @@ Marthew PB, Gail MH, et al (2016) <doi:10.1093/jnci/djw215>.")
 (define-public r-bcputility
   (package
     (name "r-bcputility")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bcputility" version))
        (sha256
-        (base32 "04c53vm920ipn6vwvvncl9bhk4qypng16v1cf1yr8zgs9cyzrlz6"))))
+        (base32 "11wp0llr8wk96ifl93vw1hadrda61zdkmbazp1khimbx0qgr31gx"))))
     (properties `((upstream-name . "bcputility")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-data-table))
-    (home-page "https://bcputility.roh.engineering")
+    (home-page "https://bcputility.delveds.com")
     (synopsis "Wrapper for SQL Server bcp Utility")
     (description
      "This package provides functions to utilize a command line utility that does bulk
@@ -26878,13 +26878,13 @@ add-in that can be bound to a keyboard shortcut.")
 (define-public r-backbone
   (package
     (name "r-backbone")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "backbone" version))
        (sha256
-        (base32 "1ap95s9156ivywbmzyz1f82qhyj5dy3kn5bg596kqj61dgi6zak0"))))
+        (base32 "05b493cfzi85hnczl56d81sc7j5xfwybsmnc4i4q984sw0gpgvll"))))
     (properties `((upstream-name . "backbone")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-igraph))

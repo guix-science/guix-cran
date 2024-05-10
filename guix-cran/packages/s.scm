@@ -19104,13 +19104,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splines2" version))
        (sha256
-        (base32 "0aac9p93sngr4ydyg0s9v3p2w444d09ghb3lan3r14j9v8i1aw1f"))))
+        (base32 "1wvj57b92qpqnn4bmd5gbbnnds32s6bm04bq72c1q3fr069r9r8b"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -33320,13 +33320,13 @@ in order to shrink down the feature space into a small and yet robust set.")
 (define-public r-sits
   (package
     (name "r-sits")
-    (version "1.4.2-1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sits" version))
        (sha256
-        (base32 "135qk50vbnyxnl2bkxwz00j4z36ynhiidm1yyfjvssxq3i3m6878"))))
+        (base32 "0ym6dkw1nvijvhyskiwp9m4pys9gmsxqhjwmqs6n670mxfnqibss"))))
     (properties `((upstream-name . "sits")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -33364,11 +33364,11 @@ including support vector machines, random forests, extreme gradient boosting,
 multi-layer perceptrons, temporal convolutional neural networks proposed by
 Pelletier et al (2019) <doi:10.3390/rs11050523>, residual networks by Fawaz et
 al (2019) <doi:10.1007/s10618-019-00619-1>, and temporal attention encoders by
-Garnot and Landrieu (2020) <@code{arXiv:2007.00586>}.  Performs efficient
-classification of big Earth observation data cubes and includes functions for
-post-classification smoothing based on Bayesian inference, and methods for
-uncertainty assessment.  Enables best practices for estimating area and
-assessing accuracy of land change as recommended by Olofsson et al (2014)
+Garnot and Landrieu (2020) <doi:10.48550/@code{arXiv.2007.00586>}.  Performs
+efficient classification of big Earth observation data cubes and includes
+functions for post-classification smoothing based on Bayesian inference, and
+methods for uncertainty assessment.  Enables best practices for estimating area
+and assessing accuracy of land change as recommended by Olofsson et al (2014)
 <doi:10.1016/j.rse.2014.02.015>.  Minimum recommended requirements: 16 GB RAM
 and 4 CPU dual-core.")
     (license license:gpl2)))

@@ -7405,13 +7405,13 @@ distributions.")
 (define-public r-traveltimer
   (package
     (name "r-traveltimer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traveltimeR" version))
        (sha256
-        (base32 "0n0drijv3dhivnzpcvxwhvg2hprlrysnnbr2dsa2fcc4iawhd9lz"))))
+        (base32 "1029hxdgzapx0irvq5ir18fpdm5cyj5wjvl1h88x3g1rs88pvfzi"))))
     (properties `((upstream-name . "traveltimeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rprotobuf r-jsonlite r-httr r-data-table))
@@ -7605,13 +7605,13 @@ running the vignette, install fwelnet from @code{GitHub}
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.15-0")
+    (version "0.15-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transport" version))
        (sha256
-        (base32 "0a9qych4qrdw6vcribsmzxbi2pd8pyqvagdbdzz8cma5xkddbaca"))))
+        (base32 "0pf0lza2qf0alwphiy978fyp58k3lz5i44kcw86a3rrf7cpf4rwa"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
@@ -13959,13 +13959,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.26.0")
+    (version "0.27.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "0np2b4lwwpw8v3nxhsyzszkvx2sdxng9kzfqr5f7lr7x4vl9q83y"))))
+        (base32 "1fiv5p2cyppy2z7l8nhswv8yfmyv2c4g6ihfa0cijyma9ylskrpy"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -21634,13 +21634,13 @@ significance and temporal aspects of adverse events in clinical trials\" - JAMIA
 (define-public r-tempted
   (package
     (name "r-tempted")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tempted" version))
        (sha256
-        (base32 "0s2yqb5fn9aihjhkwffgd010ziihg3xx6j5i5d3a4vy2ki2l2a0w"))))
+        (base32 "1chlnrlsjdw4b3bi4yh292x7n3yqnihsmf9cpm3l18rdpb964x77"))))
     (properties `((upstream-name . "tempted")))
     (build-system r-build-system)
     (propagated-inputs (list r-np r-ggplot2))

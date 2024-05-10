@@ -22421,32 +22421,6 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 @code{MoriÃ±a} D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (license license:gpl2+)))
 
-(define-public r-mirai-promises
-  (package
-    (name "r-mirai-promises")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mirai.promises" version))
-       (sha256
-        (base32 "04gp1jv37hkn82x76ixqh0ny75mkdkwihi6nqjv92carkap76y3a"))))
-    (properties `((upstream-name . "mirai.promises")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-promises r-nanonext))
-    (home-page "https://shikokuchuo.net/mirai.promises/")
-    (synopsis "Make 'Mirai' 'Promises'")
-    (description
-     "Allows mirai objects encapsulating asynchronous computations, from the mirai
-package by Gao (2023) <doi:10.5281/zenodo.7912722>, to be used interchangeably
-with promise objects from the promises package by Cheng (2021)
-<https://CRAN.R-project.org/package=promises>.  This facilitates their use with
-packages plumber by Schloerke and Allen (2022)
-<https://CRAN.R-project.org/package=plumber> and shiny by Cheng, Allaire,
-Sievert, Schloerke, Xie, Allen, @code{McPherson}, Dipert and Borges (2022)
-<https://CRAN.R-project.org/package=shiny>.")
-    (license license:gpl3+)))
-
 (define-public r-mirai
   (package
     (name "r-mirai")
@@ -23320,13 +23294,13 @@ Moulines, Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
 (define-public r-mimer
   (package
     (name "r-mimer")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIMER" version))
        (sha256
-        (base32 "10bmh0kn829m5gj9kpcncryb9zi5vv59b3ixmwkfqp2amlm8xpl2"))))
+        (base32 "1hkql3fddv0rav3sfw8a48idxjzkxd1w7wkxwg92iyv9zpqrnzjk"))))
     (properties `((upstream-name . "MIMER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

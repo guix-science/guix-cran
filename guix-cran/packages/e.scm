@@ -1787,13 +1787,13 @@ data\" from the International Council for Harmonisation (ICH).")
 (define-public r-expimage
   (package
     (name "r-expimage")
-    (version "0.10.0")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ExpImage" version))
        (sha256
-        (base32 "1abbhdpl8ih9wcfjxxklw17nplxqnw050q5dkii2xz89gkvax863"))))
+        (base32 "1xl8g5782gwlz3ibqrx5szv5rnq9n5bigwcfxk4fxh8yfz6i73gi"))))
     (properties `((upstream-name . "ExpImage")))
     (build-system r-build-system)
     (propagated-inputs (list r-schemr
@@ -3463,13 +3463,13 @@ is published in @code{CaÃ±igueral} et al. (2023, ISBN:0957-4174)
 (define-public r-evreg
   (package
     (name "r-evreg")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evreg" version))
        (sha256
-        (base32 "11m09x8bkdcjg3l6xpc5k4q2bklx4v5zdzkfvsq29lhpisnvylhg"))))
+        (base32 "10zld5hh6qq92pmr0ajkimjjvnm8a6dhh106w6mpanfz09lvj74f"))))
     (properties `((upstream-name . "evreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-evclust))

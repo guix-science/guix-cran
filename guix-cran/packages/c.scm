@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -2734,16 +2734,17 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.9.1")
+    (version "3.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "1npdxd4z8vafjcjhy1i16r27wqmilc7b42hml21cggl9ynvh7pn7"))))
+        (base32 "10ip34y03jiidwcmqlvhb4sw0f0972l3pkx694whr1dlnlb57yjr"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-statmod
                              r-stanheaders
                              r-rstantools
                              r-rstan
@@ -20444,21 +20445,21 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "06y722flpiqpwq0p7ik86s09mdnvqw3hdybhdzn8vfns5swc8x1y"))))
+        (base32 "0g6fd0rzab5wn19iljr5zjbffrgs9nyljjccwb0fnarmp48lfrwk"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nnet r-locfit r-gtools r-copula))
+    (propagated-inputs (list r-nnet r-locfit r-gtools r-copula r-cluster))
     (home-page "https://cran.r-project.org/package=CoImp")
-    (synopsis "Copula Based Imputation Method")
+    (synopsis "Parametric and Non-Parametric Copula-Based Imputation Methods")
     (description
-     "Copula based imputation method.  A semiparametric imputation procedure for
-missing multivariate data based on conditional copula specifications.")
+     "Copula-based imputation methods: parametric and non-parametric algorithms for
+missing multivariate data through conditional copulas.")
     (license license:gpl2+)))
 
 (define-public r-coil
@@ -27234,16 +27235,16 @@ managing C (non-R) resources while using the R API.")
 (define-public r-cleanbsequences
   (package
     (name "r-cleanbsequences")
-    (version "1.4.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CleanBSequences" version))
        (sha256
-        (base32 "194590508s0j5z6srm2vmv6aa4d2fia4apbd3zmd8ria27ppcrfg"))))
+        (base32 "1ijybrl1x2rb70x6q07bbyv5mm0gw927wnf94mhz199z4s37iv4g"))))
     (properties `((upstream-name . "CleanBSequences")))
     (build-system r-build-system)
-    (propagated-inputs (list r-biostrings))
+    (propagated-inputs (list r-pwalign r-biostrings))
     (home-page "https://cran.r-project.org/package=CleanBSequences")
     (synopsis "Curing of Biological Sequences")
     (description

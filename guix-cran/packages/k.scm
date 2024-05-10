@@ -5425,24 +5425,22 @@ morphology, decomposition and concepts of distance and similarity between them."
 (define-public r-kangar00
   (package
     (name "r-kangar00")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kangar00" version))
        (sha256
-        (base32 "0c3wrzk7k322xj0yzladxdhh2j91qm7m0dyqqqfsshfkh8d22m48"))))
+        (base32 "14i4i7m5y02hybllkawwxlc4g0j4lr1pybqip6zpqd612j5q4mfm"))))
     (properties `((upstream-name . "kangar00")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
                              r-lattice
-                             r-kegggraph
                              r-igraph
                              r-data-table
                              r-compquadform
-                             r-biomart
                              r-bigmemory))
-    (home-page "https://cran.r-project.org/package=kangar00")
+    (home-page "https://kangar00.manitz.org/")
     (synopsis "Kernel Approaches for Nonlinear Genetic Association Regression")
     (description
      "This package provides methods to extract information on pathways, genes and
@@ -5451,7 +5449,7 @@ provides functions for data preparation and evaluation of genetic influence on a
 binary outcome using the logistic kernel machine test (LKMT).  Three different
 kernel functions are offered to analyze genotype information in this variance
 component test: A linear kernel, a size-adjusted kernel and a network-based
-kernel (Friedrichs et al., 2017, <doi:10.1155/2017/6742763>).")
+kernel).")
     (license license:gpl2)))
 
 (define-public r-kamila

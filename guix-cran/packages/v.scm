@@ -1491,19 +1491,18 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "00f4qzi8r9nm3b05lw4sbrajw9srnz7gqfzi8pvixvbi8ks91wpg"))))
+        (base32 "1bba3v7xmcqwl2zjfn4pds3dkyq475vjdqnb9kr8yr1h7l67i2nr"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
-                             r-stringr
                              r-skimr
                              r-scales
                              r-rmarkdown
@@ -1514,11 +1513,11 @@ information on teams, staff, sets, matches, and player-in-match statistics
                              r-lifecycle
                              r-knitr
                              r-kableextra
-                             r-janitor
-                             r-glue
                              r-ggplot2
-                             r-forcats
+                             r-effectsize
                              r-dplyr
+                             r-car
+                             r-broom
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/strohne/volker")

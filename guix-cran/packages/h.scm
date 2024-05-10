@@ -973,13 +973,13 @@ Leiserson (2022) <ISBN:9780262046305> and Verdin and Verdin (1999)
 (define-public r-hydrogof
   (package
     (name "r-hydrogof")
-    (version "0.5-4")
+    (version "0.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroGOF" version))
        (sha256
-        (base32 "0fif5kwpkxkwfw00whfprwibg21bgyk2a93k6323k7gax2c3r5ff"))))
+        (base32 "17i68al88d4xvam1fq63knsqgd29s4wvpd31z6zhnbbcbpd3j67v"))))
     (properties `((upstream-name . "hydroGOF")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts r-hydrotsm))

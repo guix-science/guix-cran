@@ -9908,13 +9908,13 @@ change-point detection algorithms, as described by Hocking et al.
 (define-public r-neurobase
   (package
     (name "r-neurobase")
-    (version "1.32.3")
+    (version "1.32.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neurobase" version))
        (sha256
-        (base32 "0jg4fspqmdbrisxxwbpql5kv9am3d02m5j2dp8305p8dl0wz5vyj"))))
+        (base32 "0jgf7zv4j2r09is0r8fkizgy0mz3c0iyldhw8f1fgys4gwzia7cc"))))
     (properties `((upstream-name . "neurobase")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-r-utils r-oro-nifti r-matrixstats
