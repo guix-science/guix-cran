@@ -659,13 +659,13 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
 (define-public r-gwavr
   (package
     (name "r-gwavr")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwavr" version))
        (sha256
-        (base32 "0wlbyl3r4sxcjyfbymcrynkcaqmqivl4qhh14nxjrg8lji47lad6"))))
+        (base32 "1hr1d66n5xf7ppmag70lzdnwp3m2jcs1qmh1nzrqq0nbqmqg8nck"))))
     (properties `((upstream-name . "gwavr")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitebox
@@ -680,11 +680,11 @@ and Lima, A. O. (2017) <doi:10.1016/j.spasta.2017.07.011>.")
                              r-promises
                              r-nhdplustools
                              r-miniui
-                             r-magrittr
                              r-leaflet-extras
                              r-leaflet
                              r-jsonlite
                              r-httr
+                             r-htmlwidgets
                              r-elevatr
                              r-dplyr))
     (home-page "https://github.com/joshualerickson/gwavr/")
@@ -2401,17 +2401,18 @@ variance components and the heritability through cross validation.")
 (define-public r-gsmams
   (package
     (name "r-gsmams")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsMAMS" version))
        (sha256
-        (base32 "00h6b0zxhiqpgngmwazx2lpzvy3x85mbishmmqn51v4k3568dw52"))))
+        (base32 "0n5f1mq81pzbzk1bly8pdbw7ryyb081sg02kc3wiyklhk071la3c"))))
     (properties `((upstream-name . "gsMAMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=gsMAMS")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Tpatni719/gsMAMS")
     (synopsis "Group Sequential Designs of Multi-Arm Multi-Stage Trials")
     (description
      "It provides functions to generate operating characteristics and to calculate
@@ -4489,13 +4490,13 @@ optimal transport are available.")
 (define-public r-gridonclusters
   (package
     (name "r-gridonclusters")
-    (version "0.1.0")
+    (version "0.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GridOnClusters" version))
        (sha256
-        (base32 "11jir34jdq2kkkgm0rsdn2ivy4r1pkzj0681hxzy9v388lb3icym"))))
+        (base32 "1zanz8p5ghy7q7dsazv6wfkf5gl2dnbmchw88drbrip1h85gxyid"))))
     (properties `((upstream-name . "GridOnClusters")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -20855,13 +20856,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "1zibnxjs3bh4r2g505pc9p0i4aswn78szm085a5s2f1ib8zjkji3"))))
+        (base32 "109sf766kpp86hpcs3xvvqsdfrmylwx6c4frga1hqmx2lrg3zx82"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -23330,6 +23331,28 @@ Prosenjit Kundu, Runlong Tang and Nilanjan Chatterjee (2018)
 <doi:10.1093/biomet/asz030>.The current version (0.2.0) is updated to address
 some of the stability issues in the previous version (0.1).")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-genmcmcdiag
+  (package
+    (name "r-genmcmcdiag")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genMCMCDiag" version))
+       (sha256
+        (base32 "03vxmsf3vh125a87pchdpnkp5n3sqg44nkrlf8l91jicxa6p6rrx"))))
+    (properties `((upstream-name . "genMCMCDiag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mcmcse r-lifecycle r-knitr r-ggplot2 r-coda))
+    (home-page "https://github.com/LukeDuttweiler/genMCMCDiag")
+    (synopsis
+     "Generalized Convergence Diagnostics for Difficult MCMC Algorithms")
+    (description
+     "Trace plots and convergence diagnostics for Markov Chain Monte Carlo (MCMC)
+algorithms on highly multivariate or unordered spaces.  Methods outlined in a
+forthcoming paper.")
+    (license license:expat)))
 
 (define-public r-genmarkov
   (package

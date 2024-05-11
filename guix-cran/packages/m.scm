@@ -1859,13 +1859,13 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "0yn3s4q4nlndn2qldkfqxn92rbb6giax47s11rmwrvpkdg8v6k8r"))))
+        (base32 "1hgrhly2wsrmsgbd888sx38hyl44bgicw54z8bgf4i54n4mmw8ph"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8454,13 +8454,13 @@ independent variable.")
 (define-public r-msaenet
   (package
     (name "r-msaenet")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "msaenet" version))
        (sha256
-        (base32 "1lidrw79z7r463zfdbxcjpj6y0s7hhrwypjb13d28jyw8n6ijv3x"))))
+        (base32 "1gs5mcwdkc3wwaa49liywsrl8454801i6jiylfksyw1rlqlcnz9p"))))
     (properties `((upstream-name . "msaenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -40423,13 +40423,13 @@ the R console, in R Markdown documents and in Shiny apps.")
 (define-public r-mapboxapi
   (package
     (name "r-mapboxapi")
-    (version "0.5.3")
+    (version "0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapboxapi" version))
        (sha256
-        (base32 "0xb75j7k2pl0c726wamv15ask5xqajmwxf0b0ssy6y1xjb46frar"))))
+        (base32 "1nvs5ikg3vrcvbidpl50gp84vjig7j3k1wjkhqk6jpr4dspi4p60"))))
     (properties `((upstream-name . "mapboxapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -40447,11 +40447,12 @@ the R console, in R Markdown documents and in Shiny apps.")
                              r-jsonlite
                              r-jpeg
                              r-httr
+                             r-htmltools
                              r-geojsonsf
                              r-dplyr
                              r-curl
                              r-aws-s3))
-    (home-page "https://cran.r-project.org/package=mapboxapi")
+    (home-page "https://github.com/walkerke/mapboxapi")
     (synopsis "R Interface to 'Mapbox' Web Services")
     (description
      "Includes support for Mapbox Navigation APIs, including directions, isochrones,

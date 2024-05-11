@@ -7281,27 +7281,6 @@ W. D. Fisher (1958) <doi:10.1080/01621459.1958.10501479> via dynamic
 programming.")
     (license license:gpl3)))
 
-(define-public r-onearmtte
-  (package
-    (name "r-onearmtte")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OneArmTTE" version))
-       (sha256
-        (base32 "186386pjjvlfq38950n1sdx0wq31q8ggjlqlrn07v68bcqjl70y6"))))
-    (properties `((upstream-name . "OneArmTTE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-survival r-dplyr))
-    (home-page "https://cran.r-project.org/package=OneArmTTE")
-    (synopsis "One-Arm Clinical Trial Designs for Time-to-Event Endpoint")
-    (description
-     "Get operating characteristics of one-arm clinical trial designs for
-time-to-event endpoint through simulation and perform analysis with
-time-to-event data.")
-    (license license:gpl3)))
-
 (define-public r-onearm2stage
   (package
     (name "r-onearm2stage")

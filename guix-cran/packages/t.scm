@@ -9278,6 +9278,25 @@ translations (for tutorial see Santos et al., 2023
 seamlessly with the tidyquant package.")
     (license license:expat)))
 
+(define-public r-tpwb
+  (package
+    (name "r-tpwb")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tpwb" version))
+       (sha256
+        (base32 "120mwlbi5q4ghja9n3mw65g7zi2ji17zgjpzcyyk7isvmrn426h1"))))
+    (properties `((upstream-name . "tpwb")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=tpwb")
+    (synopsis "The Three Parameter Weibull Distribution")
+    (description
+     "Density, distribution function, the quantile function, random generation
+function, and maximum likelihood estimation.")
+    (license license:gpl3)))
+
 (define-public r-tpr
   (package
     (name "r-tpr")

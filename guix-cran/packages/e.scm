@@ -2135,6 +2135,34 @@ is provided with the best fitted EXPARMA model for the data set under
 consideration.")
     (license license:gpl3)))
 
+(define-public r-expar
+  (package
+    (name "r-expar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EXPAR" version))
+       (sha256
+        (base32 "0k6aq87k9ml3815zi5fvspaky6sd6qzbm3l8a80rgls2ha2886r9"))))
+    (properties `((upstream-name . "EXPAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-forecast))
+    (home-page "https://cran.r-project.org/package=EXPAR")
+    (synopsis "Fitting of Exponential Autoregressive (EXPAR) Model")
+    (description
+     "The amplitude-dependent exponential autoregressive (EXPAR) time series model,
+initially proposed by Haggan and Ozaki (1981) <doi:10.2307/2335819> has been
+implemented in this package.  Throughout various studies, the model has been
+found to adequately capture the cyclical nature of datasets.  Parameter
+estimation of such family of models has been tackled by the approach of
+minimizing the residual sum of squares (RSS).  Model selection among various
+candidate orders has been implemented using various information criteria, viz.,
+Akaike information criteria (AIC), corrected Akaike information criteria (AICc)
+and Bayesian information criteria (BIC).  An illustration utilizing data of egg
+price indices has also been provided.")
+    (license license:gpl3)))
+
 (define-public r-expandfunctions
   (package
     (name "r-expandfunctions")
@@ -7184,6 +7212,31 @@ the length of an object and %o for its name as well as wrappers for pasting
 objects and issuing errors, warnings and messages.")
     (license license:expat)))
 
+(define-public r-erpm
+  (package
+    (name "r-erpm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ERPM" version))
+       (sha256
+        (base32 "1c2w61m7qp6ma4kfhgg0bxn4mkvcss340yq2vr7y5s1cbd082ndh"))))
+    (properties `((upstream-name . "ERPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snowfall r-rcolorbrewer r-numbers r-igraph))
+    (home-page "https://github.com/stocnet/ERPM")
+    (synopsis "Exponential Random Partition Models")
+    (description
+     "Simulates and estimates the Exponential Random Partition Model presented in the
+paper Hoffman, Block, and Snijders (2023) <doi:10.1177/00811750221145166>.  It
+can also be used to estimate longitudinal partitions, following the model
+proposed in Hoffman and Chabot (2023) <doi:10.1016/j.socnet.2023.04.002>.  The
+model is an exponential family distribution on the space of partitions (sets of
+non-overlapping groups) and is called in reference to the Exponential Random
+Graph Models (ERGM) for networks.")
+    (license license:gpl3+)))
+
 (define-public r-erpeq
   (package
     (name "r-erpeq")
@@ -9213,13 +9266,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "0dadwmzfb0cqpa9ngqndy7q3zpi3wh1al6fy7i6gdhvnfm1gkahs"))))
+        (base32 "1qwm7r1bpmambfgd9ccvdbr9faka5lrphscpkkb1pvr3hgxaivwm"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -9235,6 +9288,7 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
                              r-r-utils
                              r-purrr
                              r-progressr
+                             r-posterior
                              r-patchwork
                              r-lubridate
                              r-lifecycle
@@ -9243,6 +9297,7 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
                              r-future
                              r-futile-logger
                              r-data-table
+                             r-checkmate
                              r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://epiforecasts.io/EpiNow2/")

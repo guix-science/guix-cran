@@ -1872,13 +1872,13 @@ especially those that contain date-time columns.")
 (define-public r-fungp
   (package
     (name "r-fungp")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funGp" version))
        (sha256
-        (base32 "1r648syb2l8n53if3cww5jpyl3rrhg36q0fldmsp1nb1xhqqk6vg"))))
+        (base32 "1g9zcmg5vbbypznn3qbrqb8xg6phs1m522wf1zk3b401wf198q50"))))
     (properties `((upstream-name . "funGp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -1898,10 +1898,11 @@ regularly sampled.  This package offers: (i) flexible modeling of
 functional-input regression problems through the fairly general Gaussian process
 model; (ii) built-in dimension reduction for functional inputs; (iii) heuristic
 optimization of the structural parameters of the model (e.g., active inputs,
-kernel function, type of distance).  Metamodeling background is provided in
-Betancourt et al. (2020) <doi:10.1016/j.ress.2020.106870>.  The algorithm for
-structural parameter optimization is described in
-<https://hal.archives-ouvertes.fr/hal-02532713>.")
+kernel function, type of distance).  An in-depth tutorial in the use of
+@code{funGp} is provided in Betancourt et al. (2024) <doi:10.18637/jss.v109.i05>
+and Metamodeling background is provided in Betancourt et al. (2020)
+<doi:10.1016/j.ress.2020.106870>.  The algorithm for structural parameter
+optimization is described in <https://hal.science/hal-02532713>.")
     (license license:gpl3)))
 
 (define-public r-fungible
@@ -2165,13 +2166,13 @@ creating hive plots.")
 (define-public r-funchisq
   (package
     (name "r-funchisq")
-    (version "2.5.3")
+    (version "2.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FunChisq" version))
        (sha256
-        (base32 "091arn9d42zsa7ky21k77ak0qirz0x7nai72s54mi70nyjn173dk"))))
+        (base32 "0y5minhjas4rihg8c4lvy2f323makza28p20c303rpzh4k50diji"))))
     (properties `((upstream-name . "FunChisq")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpp r-dqrng r-bh))
@@ -2184,8 +2185,8 @@ dependency using asymptotic chi-squared or exact distributions.  Functional test
 statistics are asymmetric and functionally optimal, unique from other related
 statistics.  Tests in this package reveal evidence for causality based on the
 causality-by- functionality principle.  They include asymptotic functional
-chi-squared tests (Zhang & Song 2013) <@code{arXiv:1311.2707>}, an adapted
-functional chi-squared test (Kumar & Song 2022)
+chi-squared tests (Zhang & Song 2013) <doi:10.48550/@code{arXiv.1311.2707>}, an
+adapted functional chi-squared test (Kumar & Song 2022)
 <doi:10.1093/bioinformatics/btac206>, and an exact functional test (Zhong & Song
 2019) <doi:10.1109/TCBB.2018.2809743> (Nguyen et al.  2020)
 <doi:10.24963/ijcai.2020/372>.  The normalized functional chi-squared test was
@@ -2648,13 +2649,13 @@ time series such as moving averages or stochastic oscillators.")
 (define-public r-ftextra
   (package
     (name "r-ftextra")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ftExtra" version))
        (sha256
-        (base32 "1lf5j63wjyjzibjm7assykdwgjx3c921ck33bic62n3jw8gzm8j0"))))
+        (base32 "02sdhqjfzgbwwzv2dg6wbzhymklkrmxihs4nz83fi1585dv5kbyq"))))
     (properties `((upstream-name . "ftExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -3058,13 +3059,13 @@ FSM.")
 (define-public r-fslr
   (package
     (name "r-fslr")
-    (version "2.25.2")
+    (version "2.25.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fslr" version))
        (sha256
-        (base32 "0az215n4ra3g6v34cwv8rrjpjq8c9mx34fmjqk7icdwm2raw32vh"))))
+        (base32 "0pp1hn80qknxg7w24qqgjq0y96i22qixsdgs2bkjylwh9zhxbg9x"))))
     (properties `((upstream-name . "fslr")))
     (build-system r-build-system)
     (inputs (list))
@@ -8368,13 +8369,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "0xgyg9kgak6w3p8lp0ccnkp90bnh516py0sn07nxh6pjbv2rkng0"))))
+        (base32 "1h2x1v60f0js6aarmp4lhf607wg2ks9mxki1ii5hqzcw99h4si27"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-crayon r-common))
@@ -9514,13 +9515,13 @@ re-producibility in the context of machine-learning.")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "0pn8vg98yi099z0pmb5r42k596qim12azy4ih4xgj3mb82i3jckq"))))
+        (base32 "17hnips51vb7vwmkmfix596dh3kd00p9yl6l00xcjffyr7zjhqgc"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22318,13 +22319,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-faasr
   (package
     (name "r-faasr")
-    (version "1.1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FaaSr" version))
        (sha256
-        (base32 "0497ywlsi97hr8b01yjp5dflgghkwa3m6a5w0lfd16ryg7wild3c"))))
+        (base32 "10pi8aa1k64dvbly5686rhks50z626fl473492qk25i6c1ahdfv9"))))
     (properties `((upstream-name . "FaaSr")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid

@@ -9506,13 +9506,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "0mzrwrbk29s0px3br8khh3v3jkyzc3lcvmldhr17k089k95zqcir"))))
+        (base32 "032zncg4jzak5r10svmm7zcgl9dlyf6ygfmjmq3lwm4kfn8xj2rx"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))

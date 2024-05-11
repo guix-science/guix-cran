@@ -1579,6 +1579,41 @@ and parallel computing are supported for the computational speed-up.  See Hyebin
 Song, Garvesh Raskutti (2018) <@code{arXiv:1711.08129>}.")
     (license license:gpl2)))
 
+(define-public r-pugmm
+  (package
+    (name "r-pugmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PUGMM" version))
+       (sha256
+        (base32 "03bwg4mb0kc708plqzym0xw5giai45nk601fs53gfnad57y70wdp"))))
+    (properties `((upstream-name . "PUGMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ppclust
+                             r-mcompanion
+                             r-mclust
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-foreach
+                             r-doparallel
+                             r-clusterr))
+    (home-page "https://github.com/giorgiazaccaria/PUGMM")
+    (synopsis "Parsimonious Ultrametric Gaussian Mixture Models")
+    (description
+     "Finite Gaussian mixture models with parsimonious extended ultrametric covariance
+structures estimated via a grouped coordinate ascent algorithm, which is
+equivalent to the Expectation-Maximization algorithm.  The thirteen ultrametric
+covariance structures implemented allow for the inspection of different
+hierarchical relationships among variables.  The estimation of an ultrametric
+correlation matrix is included as a function.  The methodologies are described
+in Cavicchia, Vichi, Zaccaria (2024) <doi:10.1007/s11222-024-10405-9>,
+Cavicchia, Vichi, Zaccaria (2022) <doi:10.1007/s11634-021-00488-x> and
+Cavicchia, Vichi, Zaccaria (2020) <doi:10.1007/s11634-020-00400-z>.")
+    (license license:expat)))
+
 (define-public r-pubtatordb
   (package
     (name "r-pubtatordb")
@@ -14034,13 +14069,13 @@ generate output.")
 (define-public r-popepi
   (package
     (name "r-popepi")
-    (version "0.4.11")
+    (version "0.4.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "popEpi" version))
        (sha256
-        (base32 "0407vw95id6537q7kmaar0qbkdls6j9w7b2d8y957zrrd1wb43xg"))))
+        (base32 "13fasp84hxxpbn6gmfjfl1kzija7y11mvlhc77rpqnj1l5wcm1rn"))))
     (properties `((upstream-name . "popEpi")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-epi r-data-table))
@@ -17893,13 +17928,13 @@ functions to retrieve neighbouring pluscodes'.")
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "0vrrx7jw75xqplcm1mjsxqbd4fvys8sm6r53n691kx56xcp79m0p"))))
+        (base32 "00czlz71wwj77kxppxrfvsgi23g71h5r4xbdsadqjr8jidcplhch"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -23911,13 +23946,13 @@ Metaphone, NYSIIS, Caverphone, and others.  The package is documented in
 (define-public r-phonfieldwork
   (package
     (name "r-phonfieldwork")
-    (version "0.0.13")
+    (version "0.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phonfieldwork" version))
        (sha256
-        (base32 "1vhvlxaz3a10z36arl3mbv1z7w2d7vmbfgs5h2wkks4mpl6pfmj5"))))
+        (base32 "130gcpcblniasnqjjp085225ccq98wyqhcknxcn0iqs4v6m59dyc"))))
     (properties `((upstream-name . "phonfieldwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

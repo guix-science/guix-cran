@@ -1428,28 +1428,6 @@ future study from an original study.  See Anderson, Kelley, & Maxwell (2017;
 Psychological Science, 28, 1547-1562).")
     (license license:gpl3+)))
 
-(define-public r-bucky
-  (package
-    (name "r-bucky")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bucky" version))
-       (sha256
-        (base32 "1ymlpmhgvhp7n7y9dbvi6zh73y8jvr09axq4skcliam8ks2xx1pm"))))
-    (properties `((upstream-name . "bucky")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-lmtest))
-    (home-page "https://github.com/atahk/bucky")
-    (synopsis "Bucky's Archive for Data Analysis in the Social Sciences")
-    (description
-     "This package provides functions for various statistical techniques commonly used
-in the social sciences, including functions to compute clustered robust standard
-errors, combine results across multiply-imputed data sets, and simplify the
-addition of robust and clustered robust standard errors.")
-    (license license:gpl3+)))
-
 (define-public r-bubblyr
   (package
     (name "r-bubblyr")
@@ -1618,13 +1596,13 @@ and Pumi et al. (2022) <@code{arXiv:2211.02097>}.")
 (define-public r-btspas
   (package
     (name "r-btspas")
-    (version "2024.4.1")
+    (version "2024.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTSPAS" version))
        (sha256
-        (base32 "0vpgbkhsirzx3c11ddw56h16kjglr76p78nwqaylinn7rx5qh68a"))))
+        (base32 "0gc0ik2257zk6bjhwc78z53jg9a34s32wbwdqk25a6m5wvjp2qlj"))))
     (properties `((upstream-name . "BTSPAS")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -3351,6 +3329,47 @@ provides a one-row summary of model-level statistics.")
      "Miscellaneous R functions, including functions related to graphics (mostly for
 base graphics), permutation tests, running mean/median, and general utilities.")
     (license license:gpl3)))
+
+(define-public r-brolgar
+  (package
+    (name "r-brolgar")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "brolgar" version))
+       (sha256
+        (base32 "19ps8faycijfqlmzhmcbf03gpcfwdayica456zqyark4pl2n0gjq"))))
+    (properties `((upstream-name . "brolgar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-fabletools
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/njtierney/brolgar")
+    (synopsis
+     "Browse Over Longitudinal Data Graphically and Analytically in R")
+    (description
+     "This package provides a framework of tools to summarise, visualise, and explore
+longitudinal data.  It builds upon the tidy time series data frames used in the
+tsibble package, and is designed to integrate within the tidyverse', and
+tidyverts (for time series) ecosystems.  The methods implemented include
+calculating features for understanding longitudinal data, including calculating
+summary statistics such as quantiles, medians, and numeric ranges, sampling
+individual series, identifying individual series representative of a group, and
+extending the facet system in ggplot2 to facilitate exploration of samples of
+data.  These methods are fully described in the paper \"brolgar: An R package to
+Browse Over Longitudinal Data Graphically and Analytically in R\", Nicholas
+Tierney, Dianne Cook, Tania Prvan (2020) <doi:10.32614/RJ-2022-023>.")
+    (license license:expat)))
 
 (define-public r-brokenstick
   (package
@@ -9793,38 +9812,6 @@ Laplace-P-spline methodology can also be implemented for inference in
 (generalized) additive models (Gressani, O. and Lambert, P. (2021)
 <doi:10.1016/j.csda.2020.107088>).  See the associated website for more
 information and examples.")
-    (license license:gpl3)))
-
-(define-public r-blandr
-  (package
-    (name "r-blandr")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "blandr" version))
-       (sha256
-        (base32 "1rqas71hlf000b3z824d8ljshf8bx91bbrzaxxnx5n3chv19w6z6"))))
-    (properties `((upstream-name . "blandr")))
-    (build-system r-build-system)
-    (inputs (list pandoc))
-    (propagated-inputs (list r-stringr
-                             r-rmarkdown
-                             r-r6
-                             r-knitr
-                             r-jmvcore
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/deepankardatta/blandr/")
-    (synopsis "Bland-Altman Method Comparison")
-    (description
-     "Carries out Bland Altman analyses (also known as a Tukey mean-difference plot)
-as described by JM Bland and DG Altman in 1986
-<doi:10.1016/S0140-6736(86)90837-8>.  This package was created in 2015 as
-existing Bland-Altman analysis functions did not calculate confidence intervals.
- This package was created to rectify this, and create reproducible plots.  This
-package is also available as a module for the jamovi statistical spreadsheet
-(see <https://www.jamovi.org> for more information).")
     (license license:gpl3)))
 
 (define-public r-blandaltmanleh

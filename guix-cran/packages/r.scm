@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -3328,13 +3327,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "1rsc36nrxdgpqdmrhf1n3dqzqw7bw34imsk3acg2fqj45a91j97z"))))
+        (base32 "0nz76d1rj3j2ig8gvgy7pama6y88angfriij13ahrr8db9a58sf8"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3360,15 +3359,15 @@ general calculation method described by Ganger et al. (2017)
  Based on the experimental conditions, the functions of the rtpcr package use
 t-test (for experiments with a two-level factor), analysis of variance (ANOVA),
 analysis of covariance (ANCOVA) or analysis of repeated measure data to
-calculate the fold change (FC, ${\\Delta\\Delta C_t}$ method) or relative
-expression (RE, ${\\Delta C_t}$ method).  The functions further provide standard
-errors and confidence intervals for means, apply statistical mean comparisons
-and present significance.  To facilitate function application, different data
-sets were used as examples and the outputs were explained.  An outstanding
-feature of ârtpcrâ package is providing publication-ready bar plots with
-various controlling arguments which are further editable by ggplot2 functions.
-The rtpcr package is user-friendly and easy to work with and provides an
-applicable resource for analyzing real-time PCR data.")
+calculate the fold change (FC, Delta Delta Ct method) or relative expression
+(RE, Delta Ct method).  The functions further provide standard errors and
+confidence intervals for means, apply statistical mean comparisons and present
+significance.  To facilitate function application, different data sets were used
+as examples and the outputs were explained.  An outstanding feature of
+ârtpcrâ package is providing publication-ready bar plots with various
+controlling arguments which are further editable by ggplot2 functions.  The
+rtpcr package is user-friendly and easy to work with and provides an applicable
+resource for analyzing real-time PCR data.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -27641,6 +27640,40 @@ captures the output of the specified statements into R dataframes.  Essentia can
 be downloaded for free at
 http://www.auriq.com/documentation/source/install/index.html.")
     (license license:lgpl3)))
+
+(define-public r-respr
+  (package
+    (name "r-respr")
+    (version "2.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "respR" version))
+       (sha256
+        (base32 "1dcgfqln7q2y1mvgr85f5linsscj6rsla1dbnrmf81gci0lzk19k"))))
+    (properties `((upstream-name . "respR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-stringr
+                             r-segmented
+                             r-roll
+                             r-purrr
+                             r-marelac
+                             r-magrittr
+                             r-lubridate
+                             r-glue
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/januarharianto/respr")
+    (synopsis
+     "Import, Process, Analyse, and Calculate Rates from Respirometry Data")
+    (description
+     "This package provides a structural, reproducible workflow for the processing and
+analysis of respirometry data.  It contains analytical functions and utilities
+for working with oxygen time-series to determine respiration or oxygen
+production rates, and to make it easier to report and share analyses.  See
+Harianto et al.  2019 <doi:10.1111/2041-210X.13162>.")
+    (license license:gpl3)))
 
 (define-public r-responsepatterns
   (package

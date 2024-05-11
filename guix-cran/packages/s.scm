@@ -40937,6 +40937,42 @@ classification tasks.  Implementation of available machine learning models on R
 has been done by Lantz (2013, ISBN:9781782162148).")
     (license license:gpl3)))
 
+(define-public r-shinymgr
+  (package
+    (name "r-shinymgr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinymgr" version))
+       (sha256
+        (base32 "000r7vh8myc10jxna5h65kjx1sqw45aqjj24brls5vnvz5rg4i3w"))))
+    (properties `((upstream-name . "shinymgr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-rsqlite
+                             r-renv
+                             r-reactable
+                             r-dbi))
+    (home-page "https://code.usgs.gov/vtcfwru/shinymgr")
+    (synopsis
+     "Framework for Building, Managing, and Stitching 'shiny' Modules into Reproducible Workflows")
+    (description
+     "This package provides a unifying framework for managing and deploying shiny
+applications that consist of modules, where an \"app\" is a tab-based workflow
+that guides a user step-by-step through an analysis.  The shinymgr app builder
+\"stitches\" shiny modules together so that outputs from one module serve as
+inputs to the next, creating an analysis pipeline that is easy to implement and
+maintain.  Users of shinymgr apps can save analyses as an RDS file that fully
+reproduces the analytic steps and can be ingested into an R Markdown report for
+rapid reporting.  In short, developers use the shinymgr framework to write
+modules and seamlessly combine them into shiny apps, and users of these apps can
+execute reproducible analyses that can be incorporated into reports for rapid
+dissemination.")
+    (license license:gpl3)))
+
 (define-public r-shinymergely
   (package
     (name "r-shinymergely")

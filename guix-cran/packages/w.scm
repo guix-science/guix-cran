@@ -503,41 +503,6 @@ number (unless specifically overridden).  The goal is visual simplicity, because
 who has time to waste looking at a cluttered graph?")
     (license license:expat)))
 
-(define-public r-wsgeometry
-  (package
-    (name "r-wsgeometry")
-    (version "1.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WSGeometry" version))
-       (sha256
-        (base32 "073cvvbhzx5nllrwfyz6bxvskmkm88i7wq93m2d0q60pzwzsxwzl"))))
-    (properties `((upstream-name . "WSGeometry")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-transport
-                             r-rspectra
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-plot3d
-                             r-matrix
-                             r-lpsolve
-                             r-imager
-                             r-expm))
-    (home-page "https://cran.r-project.org/package=WSGeometry")
-    (synopsis "Geometric Tools Based on Balanced/Unbalanced Optimal Transport")
-    (description
-     "Includes a variety of methods to compute objects related to the Wasserstein
-distance (also known as Kantorovich distance or Earth-Mover distance').  The
-main effort of this package is to allow for computations of Wasserstein
-barycenter using regularised, unregularised and stochastic methods.  It also
-provides convenient wrappers to call the transport package with more general
-inputs.  Handy visual tools are provided to showcase, barycenters, animations of
-optimal transport geodesics and animations of principal components in the
-Wasserstein space'.  It also includes tools to compute Kantorovich-Rubinstein
-distances and barycenters.")
-    (license license:gpl3)))
-
 (define-public r-wsbackfit
   (package
     (name "r-wsbackfit")
@@ -773,13 +738,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.14.2")
+    (version "1.15.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0y8g33vsrlzr6x0mpk7vr01wbv96w4xhg8byvmi817lwvmfzl5pm"))))
+        (base32 "0680lxkwyxyy0ks3cyp41gxkv7vjf235mwml5ixk07rkin195w9c"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -794,18 +759,21 @@ of lists or lists of arrays, reorganizing lists to arrays or into separate
 vectors, merging of multiple entries, etc.  Another set of functions provides
 speed-optimized calculation of standard deviation (sd), coefficient of variance
 (CV) or standard error of the mean (SEM) for data in matrixes or means per line
-with respect to additional grouping (eg n groups of replicates).  Other
+with respect to additional grouping (eg n groups of replicates).  A group of
 functions facilitate dealing with non-redundant information, by indexing unique,
 adding counters to redundant or eliminating lines with respect redundancy in a
 given reference-column, etc.  Help is provided to identify very closely matching
 numeric values to generate (partial) distance matrixes for very big data in a
 memory efficient manner or to reduce the complexity of large data-sets by
-combining very close values.  Many times large experimental datasets need some
-additional filtering, adequate functions are provided.  Batch reading (or
-writing) of sets of files and combining data to arrays is supported, too.
+combining very close values.  Other functions help aligning a matrix or
+data.frame to a reference using partial matching or to mine an experimental
+setup to extract patterns of replicate samples.  Many times large experimental
+datasets need some additional filtering, adequate functions are provided.
 Convenient data normalization is supported in various different modes, parameter
 estimation via permutations or boot-strap as well as flexible testing of
-multiple pair-wise combinations using the framework of limma is provided, too.")
+multiple pair-wise combinations using the framework of limma is provided, too.
+Batch reading (or writing) of sets of files and combining data to arrays is
+supported, too.")
     (license license:gpl3)))
 
 (define-public r-write-snns
@@ -3963,13 +3931,13 @@ and additional statistical attributes are provided.")
 (define-public r-whitestripe
   (package
     (name "r-whitestripe")
-    (version "2.4.2")
+    (version "2.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WhiteStripe" version))
        (sha256
-        (base32 "1w9shk9qx365pxi2nglvjd26xggylswd83aclg7l45q0dlli3x31"))))
+        (base32 "0r9gjmdilyfj317gr2z00xgz1bjx4802nb522341fw1gklgf7y5i"))))
     (properties `((upstream-name . "WhiteStripe")))
     (build-system r-build-system)
     (propagated-inputs (list r-oro-nifti r-neurobase r-mgcv))
