@@ -1491,13 +1491,13 @@ information on teams, staff, sets, matches, and player-in-match statistics
 (define-public r-volker
   (package
     (name "r-volker")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "volker" version))
        (sha256
-        (base32 "1bba3v7xmcqwl2zjfn4pds3dkyq475vjdqnb9kr8yr1h7l67i2nr"))))
+        (base32 "18dmzr6ginlqdmkqbdzsqfwndgkgx7fydkq32d6plinb2fsaccd7"))))
     (properties `((upstream-name . "volker")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5750,6 +5750,38 @@ optionally their future values, forecasts for their future values and prediction
 intervals for the forecasts.  A web-based GUI can be used to display the
 information in a collection of time series.")
     (license license:expat)))
+
+(define-public r-vcrpart
+  (package
+    (name "r-vcrpart")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vcrpart" version))
+       (sha256
+        (base32 "1h3p95gmy9lymnhw061awrxfn3xsadcmdr84azyn6c4p2l2qk5b6"))))
+    (properties `((upstream-name . "vcrpart")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-ucminf
+                             r-strucchange
+                             r-sandwich
+                             r-rpart
+                             r-partykit
+                             r-numderiv
+                             r-nlme
+                             r-formula-tools))
+    (home-page "https://cran.r-project.org/package=vcrpart")
+    (synopsis
+     "Tree-Based Varying Coefficient Regression for Generalized Linear and Ordinal Mixed Models")
+    (description
+     "Recursive partitioning for varying coefficient generalized linear models and
+ordinal linear mixed models.  Special features are coefficient-wise
+partitioning, non-varying coefficients and partitioning of time-varying
+variables in longitudinal regression.  A description of a part of this package
+was published by Burgin and Ritschard (2017) <doi:10.18637/jss.v080.i06>.")
+    (license license:gpl2+)))
 
 (define-public r-vcr
   (package

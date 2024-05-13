@@ -11901,13 +11901,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.4-6")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "0301ccak2v40xgflg1ixpj475xx35g6fy47g914vdlpqnsgrpmy0"))))
+        (base32 "03jinkwfz8v7cbp0jj4hhr7sgn71giqin3bxs80hary4vx79vwsy"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -11915,11 +11915,14 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
                              r-survival
                              r-smoof
                              r-rpart
+                             r-rgenoud
                              r-randomforestsrc
                              r-paramhelpers
                              r-mlrmbo
                              r-matrix
-                             r-glmnet))
+                             r-glmnet
+                             r-dicekriging
+                             r-aorsf))
     (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=glmnetr")
     (synopsis
@@ -11927,18 +11930,18 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
     (description
      "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
 gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
-Recursive Partitioning ('RPART') or step wise regression models are fit.  Nested
-cross validation (or analogous for the random forest) is used to estimate and
-compare performances between these models with results presented in tabular or
-graphical means.  Calibration plots can also be generated, again based upon
-(nested) cross validation.  For some datasets, for example when the design
-matrix is not of full rank, glmnet may have very long run times when fitting the
-relaxed lasso model, from our experience when fitting Cox models on data with
-many predictors and many patients, making it difficult to get solutions from
-either glmnet() or cv.glmnet().  This may be remedied with the path=TRUE options
-when calling glmnet() and cv.glmnet().  Within the glmnetr package the approach
-of path=TRUE is taken by default.  When fitting not a relaxed lasso model but an
-elastic-net model, then the R-packages nestedcv
+Oblique Random Forest ('aorsf'), Recursive Partitioning ('RPART') or step wise
+regression models are fit.  Nested cross validation (or analogous for the random
+forest) is used to estimate and compare performances between these models with
+results presented in tabular or graphical means.  Calibration plots can also be
+generated, again based upon (nested) cross validation.  For some datasets, for
+example when the design matrix is not of full rank, glmnet may have very long
+run times when fitting the relaxed lasso model, from our experience when fitting
+Cox models on data with many predictors and many patients, making it difficult
+to get solutions from either glmnet() or cv.glmnet().  This may be remedied with
+the path=TRUE options when calling glmnet() and cv.glmnet().  Within the glmnetr
+package the approach of path=TRUE is taken by default.  When fitting not a
+relaxed lasso model but an elastic-net model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. Use of the glmnetr has many

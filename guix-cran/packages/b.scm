@@ -2672,6 +2672,29 @@ analytic workflow, from data loading to model construction and visualization
 tailored towards reconstructing productivity in aquatic ecosystems.")
     (license license:gpl3)))
 
+(define-public r-bshazard
+  (package
+    (name "r-bshazard")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bshazard" version))
+       (sha256
+        (base32 "1ghjb8rw6czrl1cy9c8wjap0vj4zvah2c1wdz2s7wff34gxynjmi"))))
+    (properties `((upstream-name . "bshazard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-epi))
+    (home-page "https://cran.r-project.org/package=bshazard")
+    (synopsis "Nonparametric Smoothing of the Hazard Function")
+    (description
+     "The function estimates the hazard function non parametrically from a survival
+object (possibly adjusted for covariates).  The smoothed estimate is based on
+B-splines from the perspective of generalized linear mixed models.  Left
+truncated and right censoring data are allowed.  The package is based on the
+work in Rebora P (2014) <doi:10.32614/RJ-2014-028>.")
+    (license license:gpl2)))
+
 (define-public r-bsgw
   (package
     (name "r-bsgw")
@@ -25107,43 +25130,6 @@ Sciences grant 1106891.  Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
-
-(define-public r-barulho
-  (package
-    (name "r-barulho")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "baRulho" version))
-       (sha256
-        (base32 "1asad49dvibf4g6p38p91bncrbdcbk425xz383j2fnzdai3y3d9r"))))
-    (properties `((upstream-name . "baRulho")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-warbler
-                             r-viridis
-                             r-tuner
-                             r-sim-diffproc
-                             r-seewave
-                             r-rlang
-                             r-png
-                             r-ohun
-                             r-fftw
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/baRulho")
-    (synopsis "Quantifying (Animal) Sound Degradation")
-    (description
-     "Intended to facilitate acoustic analysis of (animal) sound transmission
-experiments, which typically aim to quantify changes in signal structure when
-transmitted in a given habitat by broadcasting and re-recording animal sounds at
-increasing distances.  The package offers a workflow with functions to prepare
-the data set for analysis as well as to calculate and visualize several
-degradation metrics, including blur ratio, signal-to-noise ratio, excess
-attenuation and envelope correlation among others (Dabelsteen et al 1993
-<doi:10.1121/1.406682>).")
-    (license license:gpl2+)))
 
 (define-public r-bartman
   (package

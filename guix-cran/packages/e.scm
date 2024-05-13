@@ -4985,46 +4985,6 @@ package also provides methods for bulk downloads of specific subsets of items,
 including both their metadata and their associated media files.")
     (license license:expat)))
 
-(define-public r-euronext
-  (package
-    (name "r-euronext")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Euronext" version))
-       (sha256
-        (base32 "09pj10rc3rhwpdxyh6np4978jjg74k8c7m8di7c7j70ran270ybq"))))
-    (properties `((upstream-name . "Euronext")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-magrittr
-                             r-jsonlite
-                             r-httr2
-                             r-httr
-                             r-highcharter
-                             r-flextable
-                             r-dplyr))
-    (home-page "https://rpubs.com/Fredysessie/euronext")
-    (synopsis
-     "Retrieve Historical Data of Companies Listed on the 'Euronext' Stock Exchange")
-    (description
-     "This package provides seamless access to historical data of companies listed on
-the Euronext Stock Exchange (<https://live.euronext.com/en>), enabling users to
-retrieve real-time information directly within the R environment.  With
-functions tailored for data retrieval and manipulation, users can effortlessly
-access a wide range of financial data, including stock prices, trading volumes,
-and more.  Leveraging the power of R, this package facilitates efficient
-analysis and visualization of stock market trends, aiding investors, analysts,
-and researchers in making informed decisions.  By combining ease of use with
-comprehensive data access, Euronext empowers R users to delve deep into the
-dynamics of European financial markets, offering valuable insights for various
-financial applications.")
-    (license license:expat)))
-
 (define-public r-euroleaguer
   (package
     (name "r-euroleaguer")

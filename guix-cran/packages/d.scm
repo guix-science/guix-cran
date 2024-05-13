@@ -4397,13 +4397,13 @@ genes using somatic genomics data.  BMC Bioinformatics
 (define-public r-drip
   (package
     (name "r-drip")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRIP" version))
        (sha256
-        (base32 "0zpk80rs2w0yizfyz9hs1npbajyvz883zwbhylipp52wyzzq62m2"))))
+        (base32 "18cais2n8kx1hpb66kqpjlvjx750rhgfvx4h4jjixmb8aqnf7p48"))))
     (properties `((upstream-name . "DRIP")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -4411,7 +4411,15 @@ genes using somatic genomics data.  BMC Bioinformatics
     (synopsis "Discontinuous Regression and Image Processing")
     (description
      "This package provides a collection of functions that perform jump regression and
-image analysis such as denoising, deblurring and jump detection.")
+image analysis such as denoising, deblurring and jump detection.  The
+implemented methods are based on the following research: Qiu, P. (1998)
+<doi:10.1214/aos/1024691468>, Qiu, P. and Yandell, B. (1997) <doi:
+10.1080/10618600.1997.10474746>, Qiu, P. (2009) <doi:
+10.1007/s10463-007-0166-9>, Kang, Y. and Qiu, P. (2014) <doi:
+10.1080/00401706.2013.844732>, Qiu, P. and Kang, Y. (2015) <doi:
+10.5705/ss.2014.054>, Kang, Y., Mukherjee, P.S. and Qiu, P. (2018) <doi:
+10.1080/00401706.2017.1415975>, Kang, Y. (2020) <doi:
+10.1080/10618600.2019.1665536>.")
     (license license:gpl2+)))
 
 (define-public r-drimmr
@@ -11300,13 +11308,13 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "0673vk6ndqkg5xfcb3y5f259vi6fw29x8wkwqzp6xqk89mhx0iz9"))))
+        (base32 "1f487mx818qz8bp36lnb1lpcfcia7pzmvcxhh6zh0ak0d6xllc2g"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-checkmate))
@@ -11315,11 +11323,11 @@ distributions.")
      "Vectorised Computation of P-Values and Their Supports for Several Discrete Statistical Tests")
     (description
      "This package provides vectorised functions for computing p-values of various
-common discrete statistical tests as described e.g. in Agresti (2002)
-<doi:10.1002/0471249688>.  Exact and approximate computation methods are
-provided.  For exact p-values, several procedures of determining two-sided
-p-values are included, which are outlined in more detail in Hirji (2006)
-<doi:10.1201/9781420036190>.")
+common discrete statistical tests, as described e.g. in Agresti (2002)
+<doi:10.1002/0471249688>, including their distributions.  Exact and approximate
+computation methods are provided.  For exact p-values, several procedures of
+determining two-sided p-values are included, which are outlined in more detail
+in Hirji (2006) <doi:10.1201/9781420036190>.")
     (license license:gpl3)))
 
 (define-public r-discreteqvalue
@@ -21714,13 +21722,13 @@ according to an external variable of the user's interest.")
 (define-public r-dctensor
   (package
     (name "r-dctensor")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcTensor" version))
        (sha256
-        (base32 "0y2imnbgvbvbmqb1vmzyykjfzkh0ckiv5q7fp4zvi2ci0w9hf90n"))))
+        (base32 "1z62kz9558fj5nwp2nq6vh7ikbxbg8nm0w08y5p5dc0nzhcd4kxn"))))
     (properties `((upstream-name . "dcTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtensor r-nntensor r-mass r-fields))

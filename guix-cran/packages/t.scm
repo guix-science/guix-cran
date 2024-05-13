@@ -11330,13 +11330,13 @@ analytic tasks.")
 (define-public r-tnrs
   (package
     (name "r-tnrs")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TNRS" version))
        (sha256
-        (base32 "116gmvaccjk7kcrvgzknil2icsvhp53lmg4cn1676801saz25wyz"))))
+        (base32 "1qv9fnqpjx988dxwc8smgqqz4p9knbpl7d8i0d84aq6i392fvx0a"))))
     (properties `((upstream-name . "TNRS")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -15085,42 +15085,6 @@ Vanderbilt University.")
      "Compute age-adjusted rates by direct and indirect methods and other
 epidemiological indicators in a tidy way, wrapping functions from the epitools
 package.")
-    (license license:expat)))
-
-(define-public r-tidyqwi
-  (package
-    (name "r-tidyqwi")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidyqwi" version))
-       (sha256
-        (base32 "16f0c2mdx6aiji6i7237kpc9awqdgrg6rhs408w6ag28dhxpgwlv"))))
-    (properties `((upstream-name . "tidyqwi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-labelled
-                             r-jsonlite
-                             r-httr
-                             r-future
-                             r-furrr
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tidyqwi")
-    (synopsis
-     "Convenient API for Accessing United States Census Bureau's Quarterly Workforce Indicator")
-    (description
-     "The purpose of this package is to access the United States Census Bureau's
-Quarterly Workforce Indicator data.  Additionally, the data will be retrieved in
-a tidy format for further manipulation with full variable descriptions added if
-desired.  Information about the United States Census Bureau's Quarterly
-Workforce Indicator is available at
-<https://www.census.gov/data/developers/data-sets/qwi.html>.")
     (license license:expat)))
 
 (define-public r-tidyquery

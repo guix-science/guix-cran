@@ -2831,13 +2831,13 @@ and 4PL models and generalized partial credit models.")
 (define-public r-psychotools
   (package
     (name "r-psychotools")
-    (version "0.7-3")
+    (version "0.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychotools" version))
        (sha256
-        (base32 "1yl5b3ws95c80gwjxdrcqj5pv7k3vf6ixb390xc758hz0b4gawqx"))))
+        (base32 "197hym0fxfsyg6kf0pf9g5wbsa1kkicd4lqrxfy2g3c7aczad9zy"))))
     (properties `((upstream-name . "psychotools")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=psychotools")
@@ -22744,13 +22744,13 @@ analyses that phylogenetic biologists might find useful in their research.")
 (define-public r-phytoclass
   (package
     (name "r-phytoclass")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytoclass" version))
        (sha256
-        (base32 "0ci2xzhxzg8fmdjr1ij8r551mm5gzwcxbq328qnzkx8hyph7fbgf"))))
+        (base32 "12b1xmzwcp90km4irjsrnks44b1rd82p8yn9cn4m6hsaiq6mb45c"))))
     (properties `((upstream-name . "phytoclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22761,17 +22761,17 @@ analyses that phylogenetic biologists might find useful in their research.")
                              r-dplyr
                              r-bestnormalize))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=phytoclass")
-    (synopsis "Estimate Chla Biomass of Phytoplankton Groups")
+    (home-page "https://github.com/AndyMcKenzieFromNZ/phytoclass")
+    (synopsis "Estimate Chla Concentrations of Phytoplankton Groups")
     (description
-     "Determine the chlorophyll a (Chl a) biomass of different phytoplankton groups
-based on their pigment biomarkers.  The method uses non-negative matrix
+     "Determine the chlorophyll a (Chl a) concentrations of different phytoplankton
+groups based on their pigment biomarkers.  The method uses non-negative matrix
 factorisation and simulated annealing to minimise error between the observed and
 estimated values of pigment concentrations (Hayward et al. (2023)
 <doi:10.1002/lom3.10541>).  The approach is similar to the widely used CHEMTAX
 program (Mackey et al.  1996) <doi:10.3354/meps144265>, but is more
 straightforward, accurate, and not reliant on initial guesses for the pigment to
-Chl a ratios for each phytoplankton group.")
+Chl a ratios for phytoplankton groups.")
     (license license:expat)))
 
 (define-public r-physortr

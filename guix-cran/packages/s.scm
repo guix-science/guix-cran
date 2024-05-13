@@ -16246,18 +16246,18 @@ Studies in Computational Intelligence 433, Springer, Berlin/Heidelberg, 2012.")
 (define-public r-srcr
   (package
     (name "r-srcr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "srcr" version))
        (sha256
-        (base32 "1cv4j27w9lssllih0lg172x1p001sk13p9hg39579lx6rpb9l75q"))))
+        (base32 "0hmlvq8rwhdv8hh7i517ml46p1hvd2idby4xx7firin8ca1829n5"))))
     (properties `((upstream-name . "srcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-dplyr r-dbi))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=srcr")
+    (home-page "https://github.com/baileych/srcr")
     (synopsis "Simplify Connections to Database Sources")
     (description
      "Connecting to databases requires boilerplate code to specify connection
@@ -26347,13 +26347,13 @@ plot function to simplify data analysis for the visually impaired.")
 (define-public r-sonicscrewdriver
   (package
     (name "r-sonicscrewdriver")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sonicscrewdriver" version))
        (sha256
-        (base32 "061yk6z9b4d2hb40zvj22sdk9dgjsc6vp6lgjh0j75623nw2ggim"))))
+        (base32 "0z18hyicbh6naxq5hz5bzx61x7kr1j5jsk98j71m8dalch2wysbm"))))
     (properties `((upstream-name . "sonicscrewdriver")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
@@ -38483,13 +38483,13 @@ function, @code{SoftMax} preprocessing and inverse functions.")
 (define-public r-sigminer
   (package
     (name "r-sigminer")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sigminer" version))
        (sha256
-        (base32 "1i6qf5g58gi857szlpiqkcv5rfskh2qv53ywx7bxl3hzgy9178lb"))))
+        (base32 "0fwmq6p6qyz5pq1vhh26ddrivcqaqnfv1bsnhzfplz1glmv6r0xj"))))
     (properties `((upstream-name . "sigminer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -58196,24 +58196,25 @@ population using simple random, stratified, systematic and cluster sampling.")
 (define-public r-samplingin
   (package
     (name "r-samplingin")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplingin" version))
        (sha256
-        (base32 "16yrd35q4f7bbjcipf13nrya6mcl6z1fhzi4z2rblaks4vxaqac2"))))
+        (base32 "0a7c078vz4p5x5r29xsvab630pq3p7fwsn31qdcjdcl7n4475rhr"))))
     (properties `((upstream-name . "samplingin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr r-data-table))
+    (propagated-inputs (list r-sampling r-rlang r-magrittr r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=samplingin")
     (synopsis "Dynamic Survey Sampling Solutions")
     (description
-     "This package provides a robust solution employing both systematic and PPS
-(Probability Proportional to Size) sampling methods, ensuring a methodical and
-representative selection of data.  Seamlessly allocate predetermined allocations
-to smaller levels.  Kish, L. (1965)
-<https://books.google.co.id/books?id=@code{xiZmAAAAIAAJ>}.")
+     "This package provides a robust solution employing the SRS (Simple Random
+Sampling), systematic and PPS (Probability Proportional to Size) sampling
+methods, ensuring a methodical and representative selection of data.  Seamlessly
+allocate predetermined allocations to smaller levels.")
     (license license:expat)))
 
 (define-public r-samplingdatacrt

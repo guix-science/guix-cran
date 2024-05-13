@@ -25,6 +25,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -23859,13 +23860,13 @@ host of glycemic variability metrics, and plots glucose over time.")
 (define-public r-rgugik
   (package
     (name "r-rgugik")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgugik" version))
        (sha256
-        (base32 "0lkjnwg679fn6ii86h3w6n9b9aylp7m5bipji46bi92v2s2sssm2"))))
+        (base32 "0a3bk0p7p4ay9nx3vz22fnlvb928isgab5ll50s1mffbzx32iwqd"))))
     (properties `((upstream-name . "rgugik")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite))
@@ -30179,13 +30180,13 @@ Research Institute.  Hahsler and Dunham (2010) <doi:10.18637/jss.v035.i05>.")
 (define-public r-remla
   (package
     (name "r-remla")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REMLA" version))
        (sha256
-        (base32 "1s3ymb58nn8rci9dzdfwcl23h2fhnjv6531wv9vihdmyxn6vijjd"))))
+        (base32 "1j094h38047vlbql8vvlbbdnwxqpw7vnvc08qa2c95jqw8kvhwa6"))))
     (properties `((upstream-name . "REMLA")))
     (build-system r-build-system)
     (propagated-inputs (list r-gparotation r-geex))
@@ -46721,13 +46722,13 @@ matrix population models ('MPMs').  Described in Jones et al. (2021)
 (define-public r-rafs
   (package
     (name "r-rafs")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAFS" version))
        (sha256
-        (base32 "00s7k5liqklri0di2yawzilxcp047x0mq9l7grqr1dshhzyv2rms"))))
+        (base32 "02s4p7hsjm2znj5rcfrd2cqwynd03p8zbby8qxnfxr3hp5ggq7hr"))))
     (properties `((upstream-name . "RAFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-splittools r-mdfs r-fastcluster))

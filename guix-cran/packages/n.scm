@@ -484,13 +484,13 @@ remember and easy to deploy.")
 (define-public r-numero
   (package
     (name "r-numero")
-    (version "1.9.6")
+    (version "1.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Numero" version))
        (sha256
-        (base32 "1g66cdg6y07f2n02ngx54yj42ss4nashhd7avcfxl4ajjfh6wavc"))))
+        (base32 "04pf6x7qmgkfyj98c23maxcvlwwwfw6jas7l72xp0713lyndjl15"))))
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -5201,13 +5201,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.8")
+    (version "10.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "02fmgw4j2yd7hlm3q2zsgxhfzy28dvb7lf8xxyg0gbpnyi0djff5"))))
+        (base32 "11jacanqf7c7kaarwc6micmhzg47sna1lfj5fkpvpa9396xpbrjd"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9932,13 +9932,13 @@ reading/writing and also other manipulation functions.")
 (define-public r-neuralsens
   (package
     (name "r-neuralsens")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NeuralSens" version))
        (sha256
-        (base32 "0inp0r22x4l2r2d69swm8631f07knfkf0xw5m191y4biy23jd1dv"))))
+        (base32 "0wd70qykzgsfz5pr05hjq5kcixz94787wm5qmh4nj7l8a5r01m76"))))
     (properties `((upstream-name . "NeuralSens")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
