@@ -3894,13 +3894,13 @@ the Python package pycox <https://github.com/havakv/pycox>.")
 (define-public r-survivalclusteringtree
   (package
     (name "r-survivalclusteringtree")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvivalClusteringTree" version))
        (sha256
-        (base32 "1h5iwwlw1gh82laargp7pwpspc7jljzizpyv251gsgdjrms72p79"))))
+        (base32 "0mpzzr5hgna4i6j5asfh5r3dwn1q59a10130q0n13xb4v6s73hds"))))
     (properties `((upstream-name . "SurvivalClusteringTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -12034,16 +12034,16 @@ in this package, type help(package='statnet').")
 (define-public r-statmatch
   (package
     (name "r-statmatch")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StatMatch" version))
        (sha256
-        (base32 "1iavyaj6q8rbvhki98q8zwikfrgjrp6w8prhnqhiv0yb8k27jm0c"))))
+        (base32 "0kwmxrhmcd74gm6nnqqnqa3jy60050a113l5hspjix8q7s99ybw5"))))
     (properties `((upstream-name . "StatMatch")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey r-proxy r-lpsolve r-ggplot2))
+    (propagated-inputs (list r-survey r-proxy r-lpsolve r-ggplot2 r-dplyr))
     (home-page "https://github.com/marcellodo/StatMatch")
     (synopsis "Statistical Matching or Data Fusion")
     (description
@@ -20428,13 +20428,13 @@ Yan (2011) <doi:10.1016/j.cmpb.2010.10.005> and Chiou et al. (2018)
 (define-public r-speedytax
   (package
     (name "r-speedytax")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speedytax" version))
        (sha256
-        (base32 "13h3zcxc28a830pqhbkq1val1rli0khhalqdnizv7gyxjgd38qph"))))
+        (base32 "0iqgn0mxw5ygnnjz1sbmpz1wqcx1gx5xpncbl93ra8k7qmidw7gk"))))
     (properties `((upstream-name . "speedytax")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -34978,13 +34978,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "1da0zsyqpnpnndz10yk0ccfhmldg263qr83760zf3pa14fzcxb7s"))))
+        (base32 "1151r60vrb3b9crjb77a4aba6mzv13wq5awd0hrh8684h6pz9f76"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

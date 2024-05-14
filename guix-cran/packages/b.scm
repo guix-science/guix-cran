@@ -4442,13 +4442,13 @@ analysis more parsimonious.")
 (define-public r-bravo
   (package
     (name "r-bravo")
-    (version "2.3.1")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bravo" version))
        (sha256
-        (base32 "04hgjkxcjshj5n7d6pi58p5qkm8ni9zx7vnjwjh15bh1274yqqxr"))))
+        (base32 "0q7qm5jsj92sras5z5xr4hkz73l202xl8f0izhg2hiv3kam0z8rf"))))
     (properties `((upstream-name . "bravo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))

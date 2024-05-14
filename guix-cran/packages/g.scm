@@ -15426,6 +15426,29 @@ in package photobiology'.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 input data are already in the form of spatial objects.")
     (license license:gpl3)))
 
+(define-public r-ggspark
+  (package
+    (name "r-ggspark")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggspark" version))
+       (sha256
+        (base32 "09xdjiizx31sj8vahjdk12p7yhmxll8z61nirr13myj0wffrj79x"))))
+    (properties `((upstream-name . "ggspark")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/marcboschmatas/ggspark")
+    (synopsis "'ggplot2' Functions to Create Tufte Style Sparklines")
+    (description
+     "This package provides functions to help with creating sparklines in the style of
+Edward Tufte
+<https://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&topic_id=1>
+in ggplot2'.  It computes ribbon geoms with the interquartile ranges and points
+and/or labels at the beginning, end, max, and min points.")
+    (license license:gpl2+)))
+
 (define-public r-ggsom
   (package
     (name "r-ggsom")
@@ -15680,16 +15703,20 @@ rolling summaries such as rolling average on the fly for time series.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "0qfg7x0d75jyawarvja1pyzgq0blwy2l8bap3q8f5i2rjn4l8xld"))))
+        (base32 "1ik8i67zbsf6f77fada6yih0jrhz6rmzr2d7chax7g5s9zcxaz18"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-reshape2 r-randomforest r-ggplot2
+    (propagated-inputs (list r-survival
+                             r-reshape2
+                             r-randomforest
+                             r-kernlab
+                             r-ggplot2
                              r-cmprsk))
     (home-page "https://cran.r-project.org/package=ggscidca")
     (synopsis "Plotting Decision Curve Analysis with Coloured Bars")

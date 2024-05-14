@@ -2741,13 +2741,13 @@ This tree construction algorithm is proposed by Emura et al. (2021, in review)."
 (define-public r-unheadr
   (package
     (name "r-unheadr")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unheadr" version))
        (sha256
-        (base32 "1870nn28d7yf9ag31hvhvq00jms4fywjddsk3yd645dhvkr4afcs"))))
+        (base32 "1p5dl3906gbaszvny33gj56phqcclnj1c73lmnz6l1b1h5xahyw0"))))
     (properties `((upstream-name . "unheadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyxl

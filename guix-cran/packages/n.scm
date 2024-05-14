@@ -5082,13 +5082,13 @@ of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
 (define-public r-nntensor
   (package
     (name "r-nntensor")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnTensor" version))
        (sha256
-        (base32 "1anyqk1pafvw20rgsbxcl604qdhnbcymfin3yz9nv2v4mv4sf1ci"))))
+        (base32 "1kkv3788qh3ls49d2ixvpyky96qz0qij8mbxaczqgrdmxpyfnc8k"))))
     (properties `((upstream-name . "nnTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tagcloud

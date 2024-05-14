@@ -25,7 +25,6 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages prolog)
   #:use-module (gnu packages c)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages databases)
@@ -4722,13 +4721,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.5")
+    (version "9.3.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1qiylp67zqard06p94159x43dx3wjhm0wassiyn7cyl8nkh466bg"))))
+        (base32 "07l9vrjn4cfzz517sqn9q7aj4026b2bqbqm15agr2211z3ppjfmz"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -6316,36 +6315,6 @@ version of the package is documented in Journal of Statistical Software
     (description
      "This package implements the \"Stemming Algorithm for the Portuguese Language\"
 <DOI:10.1109/SPIRE.2001.10024>.")
-    (license license:expat)))
-
-(define-public r-rsleep
-  (package
-    (name "r-rsleep")
-    (version "1.0.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsleep" version))
-       (sha256
-        (base32 "1sqczgfkpa7bg8hbmy0baxlb9n6r76g4n5nh19v50wrdh87h3771"))))
-    (properties `((upstream-name . "rsleep")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-xml2
-                             r-signal
-                             r-readr
-                             r-psd
-                             r-jsonlite
-                             r-ggplot2
-                             r-edfreader
-                             r-dplyr
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://rsleep.org/")
-    (synopsis "Analysis of Sleep Data")
-    (description
-     "This package provides a toolbox for sleep data processing, visualization and
-analysis.  Tools for state of the art automatic sleep stages scoring.")
     (license license:expat)))
 
 (define-public r-rskey
@@ -14341,32 +14310,6 @@ includes a collection of functions for (1) implementing methods for testing
 homogeneity for generalized exponential tilt model; and (2) implementing
 existing methods under comparison.")
     (license license:gpl2+)))
-
-(define-public r-robustest
-  (package
-    (name "r-robustest")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robusTest" version))
-       (sha256
-        (base32 "0rgm0cl47c8ddhbl0da3jdrkxhgy3jqlabmi4fqkc80zcmaldmhi"))))
-    (properties `((upstream-name . "robusTest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=robusTest")
-    (synopsis "Calibrated Correlation and Two-Sample Tests")
-    (description
-     "Implementation of corrected two-sample tests.  A corrected version of the
-Pearson and Kendall correlation tests, the Mann-Whitney (Wilcoxon) rank sum
-test, the Wilcoxon signed rank test and a variance test are implemented.  The
-package also proposes a test for the median and an independence test between two
-continuous variables of Kolmogorov-Smirnov's type.  All these corrected tests
-are asymptotically calibrated in the sense that the probability of rejection
-under the null hypothesis is asymptotically equal to the level of the test.  See
-<@code{arXiv:2211.08784>} for more details on the statistical tests.")
-    (license license:expat)))
 
 (define-public r-robustda
   (package
@@ -29939,13 +29882,13 @@ Collier, W., & Ruis, A.R. (2016).")
 (define-public r-remstimate
   (package
     (name "r-remstimate")
-    (version "2.3.8")
+    (version "2.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstimate" version))
        (sha256
-        (base32 "0i94w0wrdwcflay3a7lx85wi7mqkrl74zbsbf30sb3kr81iivjzh"))))
+        (base32 "0xg2fazmj9iy3m0yybkiqr75y60426l9q3a0xfcffgsxbz56y22b"))))
     (properties `((upstream-name . "remstimate")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust

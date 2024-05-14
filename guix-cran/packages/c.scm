@@ -15,11 +15,11 @@
   #:use-module (gnu packages check)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages geo)
-  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages haskell-xyz)
+  #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages photo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -41233,13 +41233,13 @@ simulated model outputs is provided.  See
 (define-public r-calibmsm
   (package
     (name "r-calibmsm")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calibmsm" version))
        (sha256
-        (base32 "1ys222zm5p1spnmv43af5bqhv9nxvslzzih99n1w936nwl1gvh2i"))))
+        (base32 "0mlp4ybxy1k55qv9fs6gp90w7hn64ihak6q4wwacz4l5iz5r5zkx"))))
     (properties `((upstream-name . "calibmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -41247,13 +41247,14 @@ simulated model outputs is provided.  See
                              r-survival
                              r-rms
                              r-mstate
-                             r-magrittr
                              r-hmisc
+                             r-gridextra
                              r-ggpubr
                              r-ggplot2
+                             r-ggextra
                              r-dplyr
                              r-boot))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://alexpate30.github.io/calibmsm/")
     (synopsis
      "Calibration Plots for the Transition Probabilities from Multistate Models")
@@ -41272,9 +41273,8 @@ an existing multistate model.  While package development has focused on
 multistate models, calibration plots can be produced for any model which
 utilises information post baseline to update predictions (e.g. dynamic models);
 competing risks models; or standard single outcome survival models, where
-predictions can be made at any landmark time.  The underpinning methodology is
-currently undergoing peer review; see Pate et al. (2023)
-<@code{arXiv:2308.13394>} and Pate et al. (2023)
+predictions can be made at any landmark time.  Please see Pate et al. (2024)
+<doi:10.1002/sim.10094> and Pate et al. (2024)
 <https://alexpate30.github.io/calibmsm/articles/Overview.html>.")
     (license license:expat)))
 

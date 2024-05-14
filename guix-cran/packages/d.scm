@@ -11598,13 +11598,13 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
 (define-public r-discos
   (package
     (name "r-discos")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiSCos" version))
        (sha256
-        (base32 "00i5hdnrm96plrmv2y55prpkp8sr0dpv0f7srxs2ip9rzxcna3ia"))))
+        (base32 "0n74v8r14ny1njbvlbbm4i275x7x923aw2v2wqag6d4q38w5237g"))))
     (properties `((upstream-name . "DiSCos")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -15580,13 +15580,13 @@ about the methodology and data can be found in Diewert and Fox (2018)
 (define-public r-dfsaneacc
   (package
     (name "r-dfsaneacc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfsaneacc" version))
        (sha256
-        (base32 "05svhlssm1jy9skk0cn6qqy2wnqa9wjrfxarhzg1jhdclz7gsxdq"))))
+        (base32 "1sicnpir73vvg470q1mcfd1p06vgfr6z3kfb5mnipr5z72c9gd4w"))))
     (properties `((upstream-name . "dfsaneacc")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -23996,13 +23996,13 @@ Self-Organization and Swarm Intelligence\" (2018)
 (define-public r-dataverse
   (package
     (name "r-dataverse")
-    (version "0.3.13")
+    (version "0.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataverse" version))
        (sha256
-        (base32 "1fzbllznvq5mls3hm1pirlkgjlsiwvdkkcqci2jymh376l2gx35g"))))
+        (base32 "0hb7d4rgwjzxg5ixx6jf3vg6s6r2aynw34lkw688f5jd9ysc706l"))))
     (properties `((upstream-name . "dataverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-readr r-jsonlite r-httr r-checkmate))
@@ -24061,6 +24061,41 @@ articles.  Including, for example: - de Carvalho (2012)
 <doi:10.1016/j.econlet.2011.09.007>); - de Carvalho and Davison (2014)
 <doi:10.1080/01621459.2013.872651>; - de Carvalho and Rua (2017)
 <doi:10.1016/j.ijforecast.2015.09.004>.")
+    (license license:gpl3+)))
+
+(define-public r-datastreamr
+  (package
+    (name "r-datastreamr")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DatastreamR" version))
+       (sha256
+        (base32 "05dafwxfwyzxxwhyaxfqlhwrgpm4kysnrm1ls3fr4rkqa96z7mwv"))))
+    (properties `((upstream-name . "DatastreamR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-logger r-jsonlite r-ini r-httr))
+    (home-page "https://cran.r-project.org/package=DatastreamR")
+    (synopsis "Datastream API")
+    (description
+     "Access Datastream content through
+<https://product.datastream.com/dswsclient/Docs/Default.aspx>., our historical
+financial database with over 35 million individual instruments or indicators
+across all major asset classes, including over 19 million active economic
+indicators.  It features 120 years of data, across 175 countries â the
+information you need to interpret market trends, economic cycles, and the impact
+of world events.  Data spans bond indices, bonds, commodities, convertibles,
+credit default swaps, derivatives, economics, energy, equities, equity indices,
+ESG, estimates, exchange rates, fixed income, funds, fundamentals, interest
+rates, and investment trusts.  Unique content includes I/B/E/S Estimates,
+Worldscope Fundamentals, point-in-time data, and Reuters Polls.  Alongside the
+content, sit a set of powerful analytical tools for exploring relationships
+between different asset types, with a library of customizable analytical
+functions.  In-house timeseries can also be uploaded using the package to
+comingle with Datastream maintained datasets, use with these analytical tools
+and displayed in Datastreamâs flexible charting facilities in Microsoft
+Office.")
     (license license:gpl3+)))
 
 (define-public r-datastreamdsws2r

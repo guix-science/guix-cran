@@ -20862,13 +20862,13 @@ mixture of multivariate generalized linear mixed models.")
 (define-public r-mix
   (package
     (name "r-mix")
-    (version "1.0-11")
+    (version "1.0-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mix" version))
        (sha256
-        (base32 "1q565ymc1lh24lv0v70qwqb0p0nagg2jcz2nf7dz964bsnp20wjf"))))
+        (base32 "05a3mklaawkch7spcin1rfzx556w315bklwipd64kzhfxj5nds1x"))))
     (properties `((upstream-name . "mix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -24739,6 +24739,51 @@ data preprocessing, taxa abundance plotting, alpha diversity analysis, beta
 diversity analysis, differential abundance test, null model analysis, network
 analysis, machine learning, environmental data analysis and functional analysis.")
     (license license:gpl3)))
+
+(define-public r-microdiluter
+  (package
+    (name "r-microdiluter")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "microdiluteR" version))
+       (sha256
+        (base32 "1x039ja5bwshblc4zr5pnj1mn7jn1x92fddjcjd08y75sgcbi5ng"))))
+    (properties `((upstream-name . "microdiluteR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-stringr
+                             r-rstatix
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggh4x
+                             r-dplyr))
+    (home-page "https://silvia-eckert.github.io/microdiluteR/")
+    (synopsis "Analysis of Broth Microdilution Assays")
+    (description
+     "This package provides a framework for analyzing broth microdilution assays in
+various 96-well plate designs, visualizing results and providing descriptive and
+(simple) inferential statistics (i.e.  summary statistics and sign test).  The
+functions are designed to add metadata to 8 x 12 tables of absorption values,
+creating a tidy data frame.  Users can choose between clean-up procedures via
+function parameters (which covers most cases) or user prompts (in cases with
+complex experimental designs).  Users can also choose between two validation
+methods, i.e.  exclusion of absorbance values above a certain threshold or
+manual exclusion of samples.  A function for visual inspection of samples with
+their absorption values over time for certain group combinations helps with the
+decision.  In addition, the package includes functions to subtract the
+background absorption (usually at time T0) and to calculate the growth
+performance compared to a baseline.  Samples can be visually inspected with
+their absorption values displayed across time points for specific group
+combinations.  Core functions of this package (i.e.  background subtraction,
+sample validation and statistics) were inspired by the manual calculations that
+were applied in Tewes and Muller (2020) <doi:10.1038/s41598-020-67600-7>.")
+    (license license:gpl3+)))
 
 (define-public r-microdatoses
   (package

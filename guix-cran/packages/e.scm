@@ -14993,6 +14993,40 @@ in Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2022).
 and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
     (license license:gpl3)))
 
+(define-public r-eider
+  (package
+    (name "r-eider")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eider" version))
+       (sha256
+        (base32 "03sz9r2s6klrfigj16pnwgi1qj2sshfdays0mrfc0ic6b60armyj"))))
+    (properties `((upstream-name . "eider")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-logger
+                             r-jsonlite
+                             r-fs
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alan-turing-institute/eider")
+    (synopsis "Declarative Feature Extraction from Tabular Data Records")
+    (description
+     "Extract features from tabular data in a declarative fashion, with a focus on
+processing medical records.  Features are specified as JSON and are
+independently processed before being joined.  Input data can be provided as CSV
+files or as data frames.  This setup ensures that data is transformed in a
+modular and reproducible manner, and allows the same pipeline to be easily
+applied to new data.")
+    (license license:expat)))
+
 (define-public r-eicm
   (package
     (name "r-eicm")

@@ -3942,13 +3942,13 @@ response relative to the overall sample.")
 (define-public r-tsdistributions
   (package
     (name "r-tsdistributions")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsdistributions" version))
        (sha256
-        (base32 "0nvaf2p02kyvcq63mbpi2534j9jd1nxvxacv89d6m6cy61fbkran"))))
+        (base32 "0xhia2w6s0b2zfva2pj58n8vj666ffmmgcbdid9lbgcsy09fsf01"))))
     (properties `((upstream-name . "tsdistributions")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3957,8 +3957,11 @@ response relative to the overall sample.")
                              r-skewhyperbolic
                              r-sandwich
                              r-rsolnp
+                             r-rdpack
                              r-rcppeigen
                              r-progressr
+                             r-mev
+                             r-kernsmooth
                              r-generalizedhyperbolic
                              r-future-apply
                              r-future
@@ -3971,7 +3974,8 @@ response relative to the overall sample.")
 deviation, skew and shape parameters and estimation using automatic
 differentiation.  Distributions include the Normal, Student and GED as well as
 their skewed variants ('Fernandez and Steel'), the Johnson SU', and the
-Generalized Hyperbolic.")
+Generalized Hyperbolic.  Also included is the semi-parametric piece wise
+distribution ('spd') with Pareto tails and kernel interior.")
     (license license:gpl2)))
 
 (define-public r-tsdist
@@ -8295,13 +8299,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "0pp71zl2pkbqm1zcalk9kq2fa8gnnf2rpw3yg5ar7abvp756sj76"))))
+        (base32 "04hbvsqawfqvfgmzbnbwxy6jlpnglpgmrnl9gp5kb6in36as92jz"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables

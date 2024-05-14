@@ -19006,6 +19006,28 @@ as described in Park and Lee (2021)
 <https://github.com/sangwan93/@code{fastLaplace/blob/main/FastLaplaceMain.pdf>}.")
     (license license:gpl3)))
 
+(define-public r-fastkqr
+  (package
+    (name "r-fastkqr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastkqr" version))
+       (sha256
+        (base32 "18zawflm5fam28y8f5ygf26nmi5if3h765grb5skkzibxnmpxdff"))))
+    (properties `((upstream-name . "fastkqr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-matrix r-mass r-dotcall64))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=fastkqr")
+    (synopsis "Fast Algorithm for Kernel Quantile Regression")
+    (description
+     "An efficient algorithm to fit and tune kernel quantile regression models based
+on the majorization-minimization (MM) method.  It can also fit multiple quantile
+curves simultaneously without crossing.")
+    (license license:gpl2)))
+
 (define-public r-fastknn
   (package
     (name "r-fastknn")

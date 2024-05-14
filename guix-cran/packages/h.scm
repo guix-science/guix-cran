@@ -4769,6 +4769,33 @@ model (HMM) using marginal likelihood method proposed by the authors.  See the
 Manual.pdf file a detail description of all functions, and a detail tutorial.")
     (license license:gpl2+)))
 
+(define-public r-hmmm
+  (package
+    (name "r-hmmm")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmmm" version))
+       (sha256
+        (base32 "0fknljb97x0nkj904dxx98p0mmx238ak33cy3j4d0626a2589kyg"))))
+    (properties `((upstream-name . "hmmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog r-nleqslv r-mvtnorm r-mass))
+    (home-page "https://www.r-project.org")
+    (synopsis "Hierarchical Multinomial Marginal Models")
+    (description
+     "This package provides functions for specifying and fitting marginal models for
+contingency tables proposed by Bergsma and Rudas (2002)
+<doi:10.1214/aos/1015362188> here called hierarchical multinomial marginal
+models (hmmm) and their extensions presented by Bartolucci, Colombi and Forcina
+(2007) <https://www.jstor.org/stable/24307737>; multinomial Poisson homogeneous
+(mph) models and homogeneous linear predictor (hlp) models for contingency
+tables proposed by Lang (2004) <doi:10.1214/aos/1079120140> and Lang (2005)
+<doi:10.1198/016214504000001042>.  Inequality constraints on the parameters are
+allowed and can be tested.")
+    (license license:gpl2+)))
+
 (define-public r-hmmextra0s
   (package
     (name "r-hmmextra0s")
@@ -11625,13 +11652,13 @@ rate only in the weak sense, rather than the strong sense as intended.")
 (define-public r-harbinger
   (package
     (name "r-harbinger")
-    (version "1.0.777")
+    (version "1.0.787")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "harbinger" version))
        (sha256
-        (base32 "0nhilh3lc67ybkgw5hwcb3hcy4z5fan574a75v769sshilv1zy43"))))
+        (base32 "0ibmcwxlcdw4k7xd0bdnixz5fbnc6avj6jg7sd9ij5kir82xi03f"))))
     (properties `((upstream-name . "harbinger")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

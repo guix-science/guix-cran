@@ -479,13 +479,13 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "1pksi1927n6y9m27mh3nyrzf9z01i0ws117h2i2nbm4n6srm3fmi"))))
+        (base32 "11qfblq6wxla2dxl13qwqfwwl6q5jxhb19204hjqv0wy12gbxbk4"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
     (home-page "https://sr.ht/~tim-taylor/ympes/")
@@ -493,8 +493,8 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
     (description
      "This package provides a collection of lightweight helper functions (imps) both
 for interactive use and for inclusion within other packages.  These include
-functions for visualising colour palettes, quoting user input, searching rows of
-a data frame and capturing string tokens.")
+functions for minimal input assertions, visualising colour palettes, quoting
+user input, searching rows of a data frame and capturing string tokens.")
     (license license:gpl3)))
 
 (define-public r-ymlthis

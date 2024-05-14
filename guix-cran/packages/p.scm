@@ -1239,13 +1239,13 @@ the topology of a membrane protein.  This package allows one to use
 (define-public r-puremoe
   (package
     (name "r-puremoe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "puremoe" version))
        (sha256
-        (base32 "05fkrpm280m41jlclpyvribvgmi83pdl2mq00n66x246sv9q4axd"))))
+        (base32 "18sjbsaljhwzmw2sbmb5hb9w9s3i3qfppizk74fpqnm720rbcfd1"))))
     (properties `((upstream-name . "puremoe")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1255,7 +1255,8 @@ the topology of a membrane protein.  This package allows one to use
                              r-pbapply
                              r-jsonlite
                              r-httr
-                             r-data-table))
+                             r-data-table
+                             r-curl))
     (home-page "https://github.com/jaytimm/puremoe")
     (synopsis "Pubmed Unified REtrieval for Multi-Output Exploration")
     (description
@@ -35416,13 +35417,13 @@ Xiaoyan Wang (2016) <@code{arXiv:1611.03063>} for more details.")
 (define-public r-pambinaries
   (package
     (name "r-pambinaries")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PamBinaries" version))
        (sha256
-        (base32 "1l89vk9jhlfghk89945815ygwwdjmv5mkibb2cz7307vy6jl60ka"))))
+        (base32 "1anxn06l714ila4kjdbvrmfnmg7k7rwbscvzdd0z768h84s34v19"))))
     (properties `((upstream-name . "PamBinaries")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))
