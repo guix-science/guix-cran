@@ -4809,27 +4809,6 @@ the data.  It could help us in a better way to observe the behavior of the
 multigroup data with certain variables of interest.")
     (license license:gpl3)))
 
-(define-public r-multigroup
-  (package
-    (name "r-multigroup")
-    (version "0.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multigroup" version))
-       (sha256
-        (base32 "1d3m2c3md9iiv1gfqfyik1xj3fsas85bmf2vbkaks8ljxa42f55k"))))
-    (properties `((upstream-name . "multigroup")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=multigroup")
-    (synopsis "Multigroup Data Analysis")
-    (description
-     "Multivariate analysis methods including principal component analysis, partial
-least square regression, and multiblock analysis to describe, summarize, and
-visualize data with a group structure.")
-    (license license:gpl3)))
-
 (define-public r-multigraphr
   (package
     (name "r-multigraphr")
@@ -4856,13 +4835,13 @@ tests.")
 (define-public r-multigraph
   (package
     (name "r-multigraph")
-    (version "0.99")
+    (version "0.99-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multigraph" version))
        (sha256
-        (base32 "0hya5r8ak7vk0sda7flhj69cc87b56sxqwz09x2vfg0z05gxi3il"))))
+        (base32 "0q634jsr1m9nzn4g3bcy5dxl26bdzdg6imcym2jifaa29b7m1790"))))
     (properties `((upstream-name . "multigraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-multiplex))
@@ -7184,31 +7163,6 @@ separate periods (Sep) are implemented respectively.  It also provides the
 implementation of conventional design method, namely binomial tests for failure
 count data.")
     (license license:gpl3)))
-
-(define-public r-msqc
-  (package
-    (name "r-msqc")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MSQC" version))
-       (sha256
-        (base32 "1irs750n38513si9gw2fs9xibmlw0g3yd9w3rfcj7gbbgp2l6p4f"))))
-    (properties `((upstream-name . "MSQC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl))
-    (home-page
-     "https://link.springer.com/statistics/computational+statistics/book/978-1-4614-5452-6")
-    (synopsis "Multivariate Statistical Quality Control")
-    (description
-     "This is a toolkit for multivariate process monitoring.  It computes several
-multivariate control charts e.g. Hotelling, Chi-squared, MEWMA, MCUSUM and
-Generalized Variance.  Ten didactic datasets are included.  It also contains
-some tools for assessing multivariate normality e.g. Mardia's, Royston's and
-Henze-Zirkler's tests.  Please, see the NEWS file for the latest changes in the
-package.")
-    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-msprt
   (package
@@ -21021,13 +20975,13 @@ DNA Heteroplasmy calculated from single-cell datasets
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "1jhmpw6hn11yqwx6iw8p7zfw28m60p8gdqhp1sc0wwhvz86ywns5"))))
+        (base32 "1s0vkxxh13r62rdq2xlwkw93chi862ynr7lznp29g5iz3r3dz103"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -26652,13 +26606,13 @@ modeling.")
 (define-public r-mfp
   (package
     (name "r-mfp")
-    (version "1.5.4")
+    (version "1.5.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfp" version))
        (sha256
-        (base32 "0a4gfip5y42hn0pk8y8zmvlj65nr5a2ni77z14m1xj1azb9222by"))))
+        (base32 "17sww972ymnddbi54575hdalbshfq81m849795pmi38j3mrhz25m"))))
     (properties `((upstream-name . "mfp")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv))
@@ -33488,6 +33442,31 @@ robust framework to quickly get an idea of where the missing data lies and
 therefore find the most appropriate action to take.  Graham WJ (2009)
 <doi:10.1146/annurev.psych.58.110405.085530>.")
     (license license:gpl3)))
+
+(define-public r-mddmaps
+  (package
+    (name "r-mddmaps")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mddmaps" version))
+       (sha256
+        (base32 "1yxq4mzw67wfnbhfrllxpq0warpwfqsq6lfwnpr3cwbfqbil60p0"))))
+    (properties `((upstream-name . "mddmaps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringr r-readr r-progress r-httr))
+    (home-page "<https://github.com/alrobles/mddmaps>")
+    (synopsis "Download World Mammal Maps")
+    (description
+     "Lightweight maps of mammals of the world.  These maps are a comprehensive
+collection of maps aligned with the Mammal Diversity Database taxonomy of the
+American Society of Mammalogists.  They are generated at low resolution for easy
+access, consultation and manipulation in shapefile format.  The package connects
+to a binary backup hosted in the Digital Ocean cloud service and allows
+individual or batch download of any mammal species in the mdd taxonomy by
+providing the scientific species name.")
+    (license license:gpl3+)))
 
 (define-public r-mdbr
   (package

@@ -6943,30 +6943,6 @@ are included.")
 density of Fasiolo et al. (2018) <doi:10.1214/18-EJS1433>.")
     (license license:gpl2+)))
 
-(define-public r-esabcv
-  (package
-    (name "r-esabcv")
-    (version "1.2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "esaBcv" version))
-       (sha256
-        (base32 "0d2z03jab1c59v9x0qfwbipf0zbdz7zqj96ndbs0wnpjpgrvcp1d"))))
-    (properties `((upstream-name . "esaBcv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-svd r-corpcor))
-    (home-page "https://cran.r-project.org/package=esaBcv")
-    (synopsis
-     "Estimate Number of Latent Factors and Factor Matrix for Factor Analysis")
-    (description
-     "These functions estimate the latent factors of a given matrix, no matter it is
-high-dimensional or not.  It tries to first estimate the number of factors using
-bi-cross-validation and then estimate the latent factor matrix and the noise
-variances.  For more information about the method, see Art B. Owen and Jingshu
-Wang 2015 archived article on factor model (<@code{arXiv:1503.03515>}).")
-    (license license:gpl2+)))
-
 (define-public r-es-dif
   (package
     (name "r-es-dif")
@@ -9226,13 +9202,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "1qwm7r1bpmambfgd9ccvdbr9faka5lrphscpkkb1pvr3hgxaivwm"))))
+        (base32 "19rzzf1c9yd2aaqfr08sv7l9b77vx4fzjvhh7fhcylza0x680vrm"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -14362,39 +14338,6 @@ of statistical election audits.  There are also functions to generate simulated
 voting data, including methods to simulation different types of voting errors
 which allow for simulations for checking the characteristics of these methods.")
     (license license:gpl2+)))
-
-(define-public r-elcic
-  (package
-    (name "r-elcic")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ELCIC" version))
-       (sha256
-        (base32 "1yflpbnqjcz47jyf3w32x5gra576q2f401p19zy0fz2cyradiggm"))))
-    (properties `((upstream-name . "ELCIC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wgeesel
-                             r-poisnor
-                             r-mvtnorm
-                             r-mass
-                             r-geepack
-                             r-bindata))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/chencxxy28/ELCIC")
-    (synopsis
-     "The Empirical Likelihood-Based Consistent Information Criterion")
-    (description
-     "We developed a consistent and robust information criterion to conduct model
-selection for semiparametric models.  It is free of distribution specification
-and powerful to locate the true model given large sample size.  This package
-provides several usage of ELCIC with applications in generalized linear model
-(GLM), generalized estimating equation (GEE) for longitudinal data, and weighted
-GEE (WGEE) for missing longitudinal data under the mechanism of missing at
-random and drop-out.  Chixaing Chen, Ming Wang, Rongling Wu, Runze Li (2020)
-<doi:10.5705/ss.202020.0254>.")
-    (license license:artistic2.0)))
 
 (define-public r-elastic
   (package

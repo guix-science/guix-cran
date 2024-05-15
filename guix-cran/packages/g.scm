@@ -12389,13 +12389,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "14sp54h6lrn4bfi4n3ilp9asz442lcvy72yhcp5pjyynld2wm3c5"))))
+        (base32 "07pqwgqdr2a1mxzh7sca6n0cklic4mmyp3vr6yk0485780ysh0wy"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -17791,13 +17791,13 @@ operate; 4.  Optimization of clustering tree visualization.")
 (define-public r-gghdx
   (package
     (name "r-gghdx")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gghdx" version))
        (sha256
-        (base32 "1h5w09vsk4gjzs6v7pqd4krcsw696hsaz8rqpy3z6g499glnb2qb"))))
+        (base32 "01y0c9mlk1c25r5v0kjyhmsgb77qaq4ykg8hhjr1kn1w5gfylnbk"))))
     (properties `((upstream-name . "gghdx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17806,6 +17806,7 @@ operate; 4.  Optimization of clustering tree visualization.")
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-ggthemes
                              r-ggplot2
                              r-dplyr))
@@ -25922,6 +25923,27 @@ follow a simple central limit theorem that can be used to estimate graph
 dimension via hypothesis testing, see Chen et al. (2021)
 <@code{arXiv:2108.03336>} for details.")
     (license license:gpl3+)))
+
+(define-public r-gdilm-sir
+  (package
+    (name "r-gdilm-sir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GDILM.SIR" version))
+       (sha256
+        (base32 "0cz4y2rnlgkxzkjkmvyhbrlfk21a6w5wf730wk256k4djwbwklcw"))))
+    (properties `((upstream-name . "GDILM.SIR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psych r-mvtnorm r-maxlik r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=GDILM.SIR")
+    (synopsis "Inference for Infectious Disease Transmission in SIR Framework")
+    (description
+     "Model and estimate the model parameters for the spatial model of
+individual-level infectious disease transmission in
+Susceptible-Infected-Recovered (SIR) framework.")
+    (license license:expat)))
 
 (define-public r-gdiff
   (package

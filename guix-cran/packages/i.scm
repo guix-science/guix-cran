@@ -17601,13 +17601,13 @@ and evaluation licenses are available.")
 (define-public r-iadt
   (package
     (name "r-iadt")
-    (version "1.0.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IADT" version))
        (sha256
-        (base32 "1hyshs7dlpbsvpkn56fi7cfn54qkwmwyf9bhh1yks9nnhdxpbsgd"))))
+        (base32 "053ymsn7ibjkzdz1znlfz1y6j78bl2fv81dbiihksw09wzx2aa3c"))))
     (properties `((upstream-name . "IADT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-rdpack r-mvnfast r-mgcv))

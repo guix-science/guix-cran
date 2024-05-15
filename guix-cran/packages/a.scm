@@ -6260,44 +6260,6 @@ Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
 Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
     (license license:gpl3)))
 
-(define-public r-armada
-  (package
-    (name "r-armada")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "armada" version))
-       (sha256
-        (base32 "191iwf5y1za3wssawkyi9jcingfqqxcvv88hglpw6j7y3x5f47hf"))))
-    (properties `((upstream-name . "armada")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vsurf
-                             r-qvalue
-                             r-mvtnorm
-                             r-impute
-                             r-glmnet
-                             r-famt
-                             r-doparallel
-                             r-complexheatmap
-                             r-clustofvar
-                             r-circlize
-                             r-anapuce))
-    (home-page "https://cran.r-project.org/package=armada")
-    (synopsis
-     "Statistical Methodology to Select Covariates in High-Dimensional Data under Dependence")
-    (description
-     "Two steps variable selection procedure in a context of high-dimensional
-dependent data but few observations.  First step is dedicated to eliminate
-dependence between variables (clustering of variables, followed by factor
-analysis inside each cluster).  Second step is a variable selection using by
-aggregation of adapted methods.  Bastien B., Chakir H., Gegout-Petit A.,
-Muller-Gueudin A., Shi Y. A statistical methodology to select covariates in
-high-dimensional data under dependence.  Application to the classification of
-genetic profiles associated with outcome of a non-small-cell lung cancer
-treatment.  2018. <https://hal.archives-ouvertes.fr/hal-01939694>.")
-    (license license:gpl3)))
-
 (define-public r-arkhe
   (package
     (name "r-arkhe")
@@ -11289,19 +11251,18 @@ See <https://www.myroms.org/> for more information about ROMS'.")
 (define-public r-anglercreelsurveysimulation
   (package
     (name "r-anglercreelsurveysimulation")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AnglerCreelSurveySimulation" version))
        (sha256
-        (base32 "1nhd0i30g5wb5jh96gfaa0lgnbnj0m2vy4gz7v2c3142396zalnx"))))
+        (base32 "1xaksfglf45qpfqdjil8cc415ak6xnc57kxfih7qghvd3xi5c8z6"))))
     (properties `((upstream-name . "AnglerCreelSurveySimulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://cran.r-project.org/package=AnglerCreelSurveySimulation")
+    (home-page "https://github.com/stevenranney/AnglerCreelSurveySimulation")
     (synopsis "Simulate a Bus Route Creel Survey of Anglers")
     (description
      "Simulate an angler population, sample the simulated population with a
@@ -11480,25 +11441,6 @@ independently from the authors of the paper.")
     (description
      "Assigns genetic ancestry to an individual and studies relationships between
 local and global populations.")
-    (license license:gpl2)))
-
-(define-public r-anapuce
-  (package
-    (name "r-anapuce")
-    (version "2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "anapuce" version))
-       (sha256
-        (base32 "05k3ypy4dc8q4jv0by37k66pdwb1wmsd24i6nciris5knfdy9csg"))))
-    (properties `((upstream-name . "anapuce")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=anapuce")
-    (synopsis "Tools for Microarray Data Analysis")
-    (description
-     "This package provides functions for normalisation, differentially analysis of
-microarray data and local False Discovery Rate.")
     (license license:gpl2)))
 
 (define-public r-ananseseurat
@@ -13578,43 +13520,6 @@ allometric growth.  This procedure is a theoretical generalization of the
 technique used by Thorpe (1975) <doi:10.1111/j.1095-8312.1975.tb00732.x> and
 Thorpe (1976) <doi:10.1111/j.1469-185X.1976.tb01063.x>.")
     (license license:gpl3+)))
-
-(define-public r-allometric
-  (package
-    (name "r-allometric")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "allometric" version))
-       (sha256
-        (base32 "12nr7iphx5af2c9913mx7dyjn07yqkwfpd4wsqvfaas8j5x304a9"))))
-    (properties `((upstream-name . "allometric")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-units
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-refmanager
-                             r-purrr
-                             r-progress
-                             r-openssl
-                             r-magrittr
-                             r-jsonlite
-                             r-isocodes
-                             r-dplyr
-                             r-curl))
-    (home-page "https://cran.r-project.org/package=allometric")
-    (synopsis "Structured Allometric Models for Trees")
-    (description
-     "Access allometric models used in forest resource analysis, such as volume
-equations, taper equations, biomass models, among many others.  Users are able
-to efficiently find and select allometric models suitable for their project area
-and use them in analysis.  Additionally, allometric provides a structured
-framework for adding new models to an open-source models repository.")
-    (license license:expat)))
 
 (define-public r-allofus
   (package

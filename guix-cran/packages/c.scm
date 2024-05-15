@@ -958,13 +958,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "1d2ivgbrxb4dkcqhk1cl8gf0fnnpwi7n6sdprvka85x4vhcmjmh9"))))
+        (base32 "0m11pzmhw7g25x4dmjakc5i66x5vvn086j6vj3r0bvyxiyyvi3gj"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap r-stmomo r-sf r-gnm r-forecast))
@@ -1217,44 +1217,6 @@ theory of high-dimensional loss-based covariance matrix estimator selection
 developed by Boileau et al. (2022) <doi:10.1080/10618600.2022.2110883> to
 identify the optimal estimator from among a prespecified set of candidates.")
     (license license:expat)))
-
-(define-public r-cvasi
-  (package
-    (name "r-cvasi")
-    (version "0.10.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cvasi" version))
-       (sha256
-        (base32 "1dl2x4rkwvw47abjqklnb2q4xb8s0ra38snm1vglpimca3g6zr5q"))))
-    (properties `((upstream-name . "cvasi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-glue
-                             r-ggplot2
-                             r-furrr
-                             r-dplyr
-                             r-desolve
-                             r-cli
-                             r-attempt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/cvasi-tktd/cvasi")
-    (synopsis "Calibration, Validation, and Simulation of TKTD Models")
-    (description
-     "Eases the use of ecotoxicological effect models.  Can simulate common
-toxicokinetic-toxicodynamic (TK/TD) models such as General Unified Threshold
-models of Survival (GUTS) and Lemna.  It can derive effects and effect profiles
-(EPx) from scenarios.  It supports the use of tidyr workflows employing the pipe
-symbol.  Time-consuming tasks can be parallelized.")
-    (license license:gpl3+)))
 
 (define-public r-cvar
   (package
@@ -5648,6 +5610,36 @@ crossover designs.  In addition contains functions to check given designs for
 balance.")
     (license license:gpl2)))
 
+(define-public r-crossclustering
+  (package
+    (name "r-crossclustering")
+    (version "4.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CrossClustering" version))
+       (sha256
+        (base32 "0by2kwykbm5il3smfi52vzzy18niqjgjflbza66dm5rlbny9dgpb"))))
+    (properties `((upstream-name . "CrossClustering")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-mclust
+                             r-flip
+                             r-dplyr
+                             r-crayon
+                             r-cluster
+                             r-cli
+                             r-checkmate))
+    (home-page "https://CRAN.R-project.org/package=CrossClustering")
+    (synopsis "Partial Clustering Algorithm")
+    (description
+     "Provide the @code{CrossClustering} algorithm (Tellaroli et al. (2016)
+<doi:10.1371/journal.pone.0152333>), which is a partial clustering algorithm
+that combines the Ward's minimum variance and Complete Linkage algorithms,
+providing automatic estimation of a suitable number of clusters and
+identification of outlier elements.")
+    (license license:gpl3)))
+
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
@@ -7864,6 +7856,27 @@ pane as a formatted HTML file.  It is also possible to get this report with a
 shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
+
+(define-public r-cpp11armadillo
+  (package
+    (name "r-cpp11armadillo")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11armadillo" version))
+       (sha256
+        (base32 "1bn72wwlj6k9lg36ah4r69jgpqsvlcmkzn6czwz10dgi341ca5sx"))))
+    (properties `((upstream-name . "cpp11armadillo")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/cpp11armadillo/")
+    (synopsis "An 'Armadillo' Interface")
+    (description
+     "This package provides function declarations and inline function definitions that
+facilitate communication between R and the Armadillo C++ library for linear
+algebra and scientific computing.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp
   (package
@@ -10380,13 +10393,13 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
 (define-public r-counterfactuals
   (package
     (name "r-counterfactuals")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "counterfactuals" version))
        (sha256
-        (base32 "1gv6kgd932k74lwrv38zdpyf56j6mlr0kh5jky66zklb00zklkl3"))))
+        (base32 "1sv7gswhwnhci07lvgvcnfvb7zav76r3576ymp704l6llhs44ybm"))))
     (properties `((upstream-name . "counterfactuals")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmatch
@@ -10403,7 +10416,7 @@ their own methods for randomization.  Rosenthal and Rubin (1994)
     (description
      "Modular and unified R6-based interface for counterfactual explanation methods.
 The following methods are currently implemented: Burghmans et al. (2022)
-<@code{arXiv:2104.07411>}, Dandl et al. (2020)
+<doi:10.48550/@code{arXiv.2104.07411>}, Dandl et al. (2020)
 <doi:10.1007/978-3-030-58112-1_31> and Wexler et al. (2019)
 <doi:10.1109/TVCG.2019.2934619>.  Optional extensions allow these methods to be
 applied to a variety of models and use cases.  Once generated, the
@@ -17032,13 +17045,13 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 (define-public r-comtradr
   (package
     (name "r-comtradr")
-    (version "0.4.0.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comtradr" version))
        (sha256
-        (base32 "0hlvfz3xg05hfhpm1i4wzprqhyric57n2rmc25mr9q047r6bl3mh"))))
+        (base32 "1ydp07l9lfw7lymggy3m1nbq4frz5lq9jb4yfiwf317xsqlnkqn0"))))
     (properties `((upstream-name . "comtradr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -17057,7 +17070,7 @@ referenced at Environmental Protection Agency, United States as follows: EPA
                              r-askpass))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/comtradr/")
-    (synopsis "Interface with the United Nations 'Comtrade' API")
+    (synopsis "Interface with the United Nations Comtrade API")
     (description
      "Interface with and extract data from the United Nations Comtrade API
 <https://comtradeplus.un.org/>.  Comtrade provides country level shipping data
@@ -17141,46 +17154,6 @@ G. M. (2016).  Compounding of distributions: a survey and new generalized
 classes.  Journal of Statistical Distributions and Applications, 3, 1-35.
 <doi:10.1186/s40488-016-0052-1>.")
     (license license:gpl2+)))
-
-(define-public r-comradesoo
-  (package
-    (name "r-comradesoo")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "comradesOO" version))
-       (sha256
-        (base32 "0x0y3c4ihfss6rxdd9fws506vip9rr11485icxq41rp4x8zm2rk9"))))
-    (properties `((upstream-name . "comradesOO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-topdom
-                             r-tidyverse
-                             r-seqinr
-                             r-s4vectors
-                             r-rrna
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-r4rna
-                             r-mixtools
-                             r-mass
-                             r-iranges
-                             r-igraph
-                             r-heatmap3
-                             r-ggrepel
-                             r-ggplot2
-                             r-genomicranges
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=comradesOO")
-    (synopsis
-     "Analysis of COMRADES (Cross-Linking Matched RNA and Deep Sequencing) Data")
-    (description
-     "Analysis of RNA crosslinking data for RNA structure prediction.  The package is
-suitable for the analysis of RNA structure cross-linking data and chemical
-probing data.")
-    (license license:gpl3)))
 
 (define-public r-compute-es
   (package
@@ -26893,6 +26866,32 @@ identify sequences classification as proposed by Fruehwirth-Schnatter and
 Pamminger (2010) <doi:10.1214/10-BA606>.")
     (license license:expat)))
 
+(define-public r-clickableimagemap
+  (package
+    (name "r-clickableimagemap")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clickableImageMap" version))
+       (sha256
+        (base32 "0p1wjar63y9qzss5i4pdfilkxaci0gi30vhw550db52pgcx21ywk"))))
+    (properties `((upstream-name . "clickableImageMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gtable r-gridextra r-ggplotify r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clickableImageMap")
+    (synopsis "Implement 'tableGrob' Object as a Clickable Image Map")
+    (description
+     "Implement @code{tableGrob} object as a clickable image map.  The
+@code{clickableImageMap} package is designed to be more convenient and more
+configurable than the edit() function.  Limitations that I have encountered with
+edit() are cannot control (1) positioning (2) size (3) appearance and formatting
+of fonts In contrast, when the table is implemented as a @code{tableGrob}', all
+of these features are controllable.  In particular, the ggplot2 grid system
+allows exact positioning of the table relative to other graphics etc.")
+    (license license:gpl2+)))
+
 (define-public r-cliapp
   (package
     (name "r-cliapp")
@@ -31309,47 +31308,6 @@ quantification of diversity and dissimilarity.  For details, see @code{PetrÃ©n
 KÃ¶llner and Junker (2023) <doi:10.1111/nph.18685>.")
     (license license:gpl3+)))
 
-(define-public r-chemmodlab
-  (package
-    (name "r-chemmodlab")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chemmodlab" version))
-       (sha256
-        (base32 "01af0j24vymxiqahwhcf4kp0x603yllvlgcxnybsi2wnzm71swk7"))))
-    (properties `((upstream-name . "chemmodlab")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tree
-                             r-rpart
-                             r-randomforest
-                             r-proc
-                             r-pls
-                             r-nnet
-                             r-msqc
-                             r-mass
-                             r-lars
-                             r-kernsmooth
-                             r-elasticnet
-                             r-e1071
-                             r-class
-                             r-caret))
-    (home-page "https://github.com/jrash/ChemModLab")
-    (synopsis
-     "Cheminformatics Modeling Laboratory for Fitting and Assessing Machine Learning Models")
-    (description
-     "This package contains a set of methods for fitting models and methods for
-validating the resulting models.  The statistical methodologies comprise a
-comprehensive collection of approaches whose validity and utility have been
-accepted by experts in the Cheminformatics field.  As promising new
-methodologies emerge from the statistical and data-mining communities, they will
-be incorporated into the laboratory.  These methods are aimed at discovering
-quantitative structure-activity relationships (QSARs).  However, the user can
-directly input their own choices of descriptors and responses, so the capability
-for comparing models is effectively unlimited.")
-    (license license:gpl3)))
-
 (define-public r-chemist
   (package
     (name "r-chemist")
@@ -34246,6 +34204,33 @@ Statistics by using the REDATAM converter created by Pablo De Grande and in
 addition it includes the maps accompanying these datasets.)")
     (license license:cc0)))
 
+(define-public r-censmfm
+  (package
+    (name "r-censmfm")
+    (version "3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CensMFM" version))
+       (sha256
+        (base32 "00z425r6ijs8zgmw0srcia9v90m57y2aq8zrlspgc5qf8kzxq1iv"))))
+    (properties `((upstream-name . "CensMFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tlrmvnmvt r-mvtnorm r-momtrunc r-gridextra
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=CensMFM")
+    (synopsis "Finite Mixture of Multivariate Censored/Missing Data")
+    (description
+     "It fits finite mixture models for censored or/and missing data using several
+multivariate distributions.  Point estimation and asymptotic inference (via
+empirical information matrix) are offered as well as censored data generation.
+Pairwise scatter and contour plots can be generated.  Possible multivariate
+distributions are the well-known normal, Student-t and skew-normal
+distributions.  This package is an complement of Lachos, V. H., Moreno, E. J.
+L., Chen, K. & Cabral, C. R. B. (2017) <doi:10.1016/j.jmva.2017.05.005> for the
+multivariate skew-normal case.")
+    (license license:gpl2+)))
+
 (define-public r-censcov
   (package
     (name "r-censcov")
@@ -35360,13 +35345,13 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
 (define-public r-cdatanet
   (package
     (name "r-cdatanet")
-    (version "2.1.3")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDatanet" version))
        (sha256
-        (base32 "0q2g7qcqdlfqsi2fynz6r5qlnrqc0q8ndhja540lqd1l0vyafgmh"))))
+        (base32 "1qzfxz72zpxi48djqhypqlmajk6rx91m0i997vsr0zry0dp2zrzb"))))
     (properties `((upstream-name . "CDatanet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -35379,16 +35364,21 @@ de la Torre, Abad and Olea (2017) <DOI:10.1027/1614-2241/a000131>.")
                              r-matrix
                              r-formula-tools
                              r-formula
+                             r-foreach
+                             r-dorng
+                             r-doparallel
                              r-ddpcr))
     (home-page "https://github.com/ahoundetoungan/CDatanet")
-    (synopsis "Modeling Count Data with Peer Effects")
+    (synopsis "Econometrics of Network Data")
     (description
-     "Likelihood-based estimation and data generation from a class of models used to
-estimate peer effects on count data by controlling for the network endogeneity.
-This class includes count data models with social interactions (Houndetoungan
-2023; <doi:10.2139/ssrn.3721250>), spatial tobit models (Xu and Lee 2015;
-<doi:10.1016/j.jeconom.2015.05.004>), and spatial linear-in-means models (Lee
-2004; <doi:10.1111/j.1468-0262.2004.00558.x>).")
+     "Simulating and estimating peer effect models and network formation models.  The
+class of peer effect models includes linear-in-means models (Lee, 2004;
+<doi:10.1111/j.1468-0262.2004.00558.x>), Tobit models (Xu and Lee, 2015;
+<doi:10.1016/j.jeconom.2015.05.004>), and discrete numerical data models
+(Houndetoungan, 2024; <doi:10.2139/ssrn.3721250>).  The network formation models
+include pair-wise regressions with degree heterogeneity (Graham, 2017;
+<doi:10.3982/ECTA12679>) and exponential random graph models (Mele, 2017;
+<doi:10.3982/ECTA10400>).")
     (license license:gpl3)))
 
 (define-public r-cdata
@@ -37968,35 +37958,6 @@ Representation for Categorical Variables\" by Johannemann, Hadad, Athey, Wager
 component analysis, low rank representation, and multinomial logit encodings.")
     (license license:gpl3)))
 
-(define-public r-cate
-  (package
-    (name "r-cate")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cate" version))
-       (sha256
-        (base32 "0wqfblyr7rjx9wnpbnv5lw2zv7nw3mbdjn866l1ng779vka1wdc5"))))
-    (properties `((upstream-name . "cate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sva
-                             r-ruv
-                             r-matrix
-                             r-mass
-                             r-leapp
-                             r-esabcv
-                             r-corpcor))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cate")
-    (synopsis
-     "High Dimensional Factor Analysis and Confounder Adjusted Testing and Estimation")
-    (description
-     "This package provides several methods for factor analysis in high dimension
-(both n,p >> 1) and methods to adjust for possible confounders in multiple
-hypothesis testing.")
-    (license license:gpl2)))
-
 (define-public r-catdyn
   (package
     (name "r-catdyn")
@@ -40015,31 +39976,6 @@ Galitski, T. (2012) <doi:10.1371/journal.pgen.1003010>.  Tyler, A. L., Lu, W.,
 Hendrick, J. J., Philip, V. M. & Carter, G. W. (2013)
 <doi:10.1371/journal.pcbi.1003270>.")
     (license license:gpl3)))
-
-(define-public r-cap
-  (package
-    (name "r-cap")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cap" version))
-       (sha256
-        (base32 "1pv8hskxjbp589dn7rx80yaa1ld76x1w37bss2fyrys1p3qr78aa"))))
-    (properties `((upstream-name . "cap")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-multigroup r-mass))
-    (home-page "https://cran.r-project.org/package=cap")
-    (synopsis
-     "Covariate Assisted Principal (CAP) Regression for Covariance Matrix Outcomes")
-    (description
-     "This package performs Covariate Assisted Principal (CAP) Regression for
-covariance matrix outcomes.  The method identifies the optimal projection
-direction which maximizes the log-likelihood function of the log-linear
-heteroscedastic regression model in the projection space.  See Zhao et al.
-(2018), Covariate Assisted Principal Regression for Covariance Matrix Outcomes,
-<doi:10.1101/425033> for details.")
-    (license license:gpl2+)))
 
 (define-public r-canvasxpress-data
   (package

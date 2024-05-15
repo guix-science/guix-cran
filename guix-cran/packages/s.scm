@@ -4546,13 +4546,13 @@ existing ones described in Biecek et al., (2021) <doi:10.1201/9780429027192>.")
 (define-public r-surveval
   (package
     (name "r-surveval")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvEval" version))
        (sha256
-        (base32 "0laqydhds43f1him1ydlsf74ppwbhswx2c335ba7jlrmyrkg5ff6"))))
+        (base32 "0xhlfzcyniwy1wb68cdq3in9kq5w5m4439jgjmbrcrhplxab1cm0"))))
     (properties `((upstream-name . "SurvEval")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp))
@@ -31925,22 +31925,37 @@ to detect when animals are dead.")
 (define-public r-sleeperapi
   (package
     (name "r-sleeperapi")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleeperapi" version))
        (sha256
-        (base32 "0hllaz584xqdj9inmibdm9pd0vcirwz4jdk2prc5cwjavxhkj51y"))))
+        (base32 "05x8yd0i11f9mgq3b95yfa20a39nnkpsdd0mn5p6654b7aqbkq4b"))))
     (properties `((upstream-name . "sleeperapi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-jsonlite r-httr))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shinywidgets
+                             r-shinycssloaders
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-dt
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=sleeperapi")
     (synopsis "Wrapper Functions Around 'Sleeper' (Fantasy Sports) API")
     (description
      "For those wishing to interact with the Sleeper (Fantasy Sports) API
-(<https://api.sleeper.app/>) without looking too much into its documentation
-(found at <https://docs.sleeper.app/>), this package offers wrapper functions
+(<https://docs.sleeper.com/>) without looking too much into its documentation
+(found at <https://docs.sleeper.com/>), this package offers wrapper functions
 around the available API calls to make it easier.")
     (license license:expat)))
 
@@ -46235,7 +46250,6 @@ symmetrical (or canonical) Partial Least Squares (see Bry (1996)).")
                              r-matchingr
                              r-irlba
                              r-clue
-                             r-cate
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dcgerard/seqgendiff")

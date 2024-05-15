@@ -3928,13 +3928,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "0apql42vwwhswv436ngzlfdiwnia9zac3mrfp278jg8x1kbbnag9"))))
+        (base32 "1hghxd6r2k3hfy2l1s9hh07kg0qffi211dy9f9915m2nxfllxwqc"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -3952,9 +3952,11 @@ drum patterns.")
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-cohortcharacteristics
                              r-cli
                              r-checkmate
                              r-cdmconnector))
+    (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
     (synopsis
      "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
@@ -6994,6 +6996,33 @@ et al; (1957) <doi:10.2475/ajs.255.2.138>), enamel-dentine distance (Guy et al.
 <doi:10.1002/ajpa.23916>) and area-relative curvature; draw cumulative profiles
 of a topographic variable; and map a variable over a 3d triangle mesh.")
     (license license:gpl3)))
+
+(define-public r-doofa
+  (package
+    (name "r-doofa")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "doofa" version))
+       (sha256
+        (base32 "0pwy27jhmabmpd617pjdw46l7gcy8dz0w37if5901kfsc0cr27kc"))))
+    (properties `((upstream-name . "doofa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lpsolve r-combinat))
+    (home-page "https://cran.r-project.org/package=doofa")
+    (synopsis "Designs for Order-of-Addition Experiments")
+    (description
+     "This package provides a facility to generate efficient designs for
+order-of-additions experiments under pair-wise-order model, see Dennis K. J. Lin
+and Jiayu Peng (2019).\"Order-of-addition experiments: A review and some new
+thoughts\".  Quality Engineering, 31:1, 49-59,
+<doi:10.1080/08982112.2018.1548021>.  It also provides a facility to generate
+component orthogonal arrays under component position model, see Jian-Feng Yang,
+Fasheng Sun & Hongquan Xu (2020): \"A Component Position Model, Analysis and
+Design for Order-of-Addition Experiments\".  Technometrics,
+<doi:10.1080/00401706.2020.1764394>.")
+    (license license:gpl2+)))
 
 (define-public r-donutsk
   (package

@@ -1038,16 +1038,15 @@ presence of censored data, and performing meta-analysis studies, among others.")
 (define-public r-nsrfa
   (package
     (name "r-nsrfa")
-    (version "0.7-16")
+    (version "0.7-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nsRFA" version))
        (sha256
-        (base32 "1l6072fqpqlzpp5350mg98vsv0w58mcn8masvyivfqqw9v5h4bzn"))))
+        (base32 "083ljzfpcxq769xwb0vfk20kj38gbq22vxf5j597b4qlvdwh5qbq"))))
     (properties `((upstream-name . "nsRFA")))
     (build-system r-build-system)
-    (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=nsRFA")
     (synopsis "Non-Supervised Regional Frequency Analysis")
     (description
@@ -8625,13 +8624,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "109gipkpmszipljm19c1f9mrjpf647vk9kyz7dwcpwlra7x21ay3"))))
+        (base32 "0jyhm58hg3lzazpcv2jlwfbrrwxs5j2ivpnk58l72sh2aaz9zr6s"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8641,6 +8640,7 @@ datasets.")
                              r-sf
                              r-r-utils
                              r-pbapply
+                             r-memoise
                              r-maptiles
                              r-mapsf
                              r-magrittr
@@ -8649,6 +8649,7 @@ datasets.")
                              r-httr
                              r-fst
                              r-dplyr
+                             r-digest
                              r-dataretrieval
                              r-arrow))
     (native-inputs (list r-knitr))

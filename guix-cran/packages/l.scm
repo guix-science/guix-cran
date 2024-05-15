@@ -5149,26 +5149,6 @@ Econometrics\").  Students, teachers, and self-learners will find the data sets
 essential for replicating the results in the book.")
     (license license:gpl3)))
 
-(define-public r-loe
-  (package
-    (name "r-loe")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "loe" version))
-       (sha256
-        (base32 "1n16pgfxg9vcn729xxjbbvavg2ywbdcch9v2ph8nv3z7psc0q46c"))))
-    (properties `((upstream-name . "loe")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (home-page "https://cran.r-project.org/package=loe")
-    (synopsis "Local Ordinal Embedding")
-    (description
-     "Local Ordinal embedding (LOE) is one of graph embedding methods for unweighted
-graphs.")
-    (license license:gpl2+)))
-
 (define-public r-lodr
   (package
     (name "r-lodr")
@@ -6499,6 +6479,36 @@ Pearson Type III [L], Polynomial Density-Quantile 3 and 4 [L], Rayleigh [L],
 Rev-Gumbel [L+RC], Rice [L], Singh Maddala [L], Slash [TL], 3p Student t [L],
 Truncated Exponential [L], Wakeby [L], and Weibull [L].")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-lmofit
+  (package
+    (name "r-lmofit")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LMoFit" version))
+       (sha256
+        (base32 "1lpn2b4fi2vlqcghbq6fzl4cj4w837v950cxxcrafky15gwzzn8m"))))
+    (properties `((upstream-name . "LMoFit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-pracma r-lmom r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LMoFit")
+    (synopsis "Advanced L-Moment Fitting of Distributions")
+    (description
+     "This package provides a complete framework for frequency analysis is provided by
+L@code{MoFit}'.  It has functions related to the determination of sample
+L-moments as in Hosking, J.R.M. (1990) <doi:10.1111/j.2517-6161.1990.tb01775.x>,
+the fitting of various distributions as in Zaghloul et al. (2020)
+<doi:10.1016/j.advwatres.2020.103720> and Hosking, J.R.M. (2019)
+<https://CRAN.R-project.org/package=lmom>, besides plotting and manipulating
+L-space diagrams as in Papalexiou, S.M. & Koutsoyiannis, D. (2016)
+<doi:10.1016/j.advwatres.2016.05.005> for two-shape parametric distributions on
+the L-moment ratio diagram.  Additionally, the quantile, probability density,
+and cumulative probability functions of various distributions are provided in a
+user-friendly manner.")
+    (license license:gpl3)))
 
 (define-public r-lmn
   (package
@@ -9794,13 +9804,13 @@ of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
 (define-public r-lifer
   (package
     (name "r-lifer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifeR" version))
        (sha256
-        (base32 "1bgs8m2a4k4p31lw50kgv9mg0hg7afdaxg9sy6ss1n5s68920h5w"))))
+        (base32 "0cr70wcj84k3h6vgxw9s98md7q63q4qvxdp5065j4vwf49igi492"))))
     (properties `((upstream-name . "lifeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra

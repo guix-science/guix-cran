@@ -5391,13 +5391,13 @@ distributions available for the latent variable.")
 (define-public r-proteomicscv
   (package
     (name "r-proteomicscv")
-    (version "0.1.0")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proteomicsCV" version))
        (sha256
-        (base32 "0yf1shzqmvsvaywv7xxidx3dw2wfx6vm1kgnygdfvq0hqkj0c5n7"))))
+        (base32 "0wkyp21ns3k8812k109ilm9yi1y89m524cwwpa4wr0vqy65lrgba"))))
     (properties `((upstream-name . "proteomicsCV")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=proteomicsCV")
@@ -5405,9 +5405,10 @@ distributions available for the latent variable.")
      "Calculates the Percentage CV for Mass Spectrometry-Based Proteomics Data")
     (description
      "Calculates the percentage coefficient of variation (CV) for mass
-spectrometry-based proteomic data.  Intensity based quantification is log
-normal, there the CV is calculated with the lognormal function.  This package
-currently does not reference any academic publication.")
+spectrometry-based proteomic data.  The CV can be calculated with the
+traditional formula for raw (non log transformed) intensity data, or log
+transformed data.  This package currently does not reference any academic
+publication.")
     (license license:expat)))
 
 (define-public r-proteobayes
@@ -19932,51 +19933,6 @@ which gets data from FBref <https://fbref.com/en>, Transfermarkt
 <https://www.transfermarkt.com/>, Understat <https://understat.com/>, and fotmob
 <https://www.fotmob.com/>.")
     (license license:expat)))
-
-(define-public r-platypus
-  (package
-    (name "r-platypus")
-    (version "3.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Platypus" version))
-       (sha256
-        (base32 "03ymh011wyhlc4pisnrac1nijfw08gc793dj2pzwxzkcwk7g3q99"))))
-    (properties `((upstream-name . "Platypus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-useful
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-seuratobject
-                             r-seurat
-                             r-seqinr
-                             r-reshape2
-                             r-plyr
-                             r-matrix
-                             r-magrittr
-                             r-knitr
-                             r-jsonlite
-                             r-ggtree
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=Platypus")
-    (synopsis "Single-Cell Immune Repertoire and Gene Expression Analysis")
-    (description
-     "We present Platypus', an open-source software platform providing a user-friendly
-interface to investigate B-cell receptor and T-cell receptor repertoires from
-@code{scSeq} experiments.  Platypus provides a framework to automate and ease
-the analysis of single-cell immune repertoires while also incorporating
-transcriptional information involving unsupervised clustering, gene expression
-and gene ontology.  This R version of Platypus is part of the @code{ePlatypus}
-ecosystem for computational analysis of immunogenomics data: Yermanos et al.
-(2021) <doi:10.1093/nargab/lqab023>, Cotet et al. (2023)
-<doi:10.1093/bioinformatics/btad553>.")
-    (license license:gpl2)))
 
 (define-public r-plattice
   (package

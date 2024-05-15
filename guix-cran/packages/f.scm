@@ -1190,13 +1190,13 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
 (define-public r-fusen
   (package
     (name "r-fusen")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fusen" version))
        (sha256
-        (base32 "05i89hf2ac32cprgvlwazxj441jihx0lfghs59s2wgbjjw55wixr"))))
+        (base32 "0d7ljc7b26www60ln1ww4gn2haymlybjbd3rz8k7z8i9ckq10kkp"))))
     (properties `((upstream-name . "fusen")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -1205,8 +1205,8 @@ and Mukherjee (2017) <@code{arXiv:1611.00953>}.")
                              r-tibble
                              r-stringi
                              r-roxygen2
-                             r-parsermd
                              r-magrittr
+                             r-lightparser
                              r-here
                              r-glue
                              r-devtools
@@ -3430,31 +3430,6 @@ based on atlases.  Mask data using labels, load data for specific atlas regions
 only, and visualize data and statistical results directly in R'.")
     (license license:expat)))
 
-(define-public r-fsatools
-  (package
-    (name "r-fsatools")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FSAtools" version))
-       (sha256
-        (base32 "0i4grcr155vbsnw823jiwngyayzymka9k7zhsbw1f208q6xyrx4d"))))
-    (properties `((upstream-name . "FSAtools")))
-    (build-system r-build-system)
-    (home-page "https://bioinformatics.ovsa.fr/FSAtools")
-    (synopsis "Fragment Analysis and Capillary Sequencing Tool Kit")
-    (description
-     "This package provides a flexible and interfaced framework for importing,
-processing and ploting Applied Biosystems data files.  Application to
-Reverse-Transcriptase Multiplex Ligation-dependent Probe Amplification (RT-MLPA)
-gene-expression profiling and classification is illustrated in Mareschal, Ruminy
-et al (2015) <doi:10.1016/j.jmoldx.2015.01.007>.  Gene-fusion detection and
-Sanger sequencing are illustrated in Mareschal, Palau et al (2021)
-<doi:10.1182/bloodadvances.2020002517>.  Examples are provided for genotyping
-applications as well.")
-    (license license:gpl3+)))
-
 (define-public r-fsadata
   (package
     (name "r-fsadata")
@@ -4443,6 +4418,32 @@ brain surface parcellation derived from a cortical atlas.  4) Surface file
 format.  Contains a brain surface mesh, given by a list of vertices and a list
 of faces.")
     (license license:expat)))
+
+(define-public r-freesurfer
+  (package
+    (name "r-freesurfer")
+    (version "1.6.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "freesurfer" version))
+       (sha256
+        (base32 "1i687yj76gbassyldpgal33cxd2hixzl0779ql9fjsaibh5m1dc4"))))
+    (properties `((upstream-name . "freesurfer")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-reshape2 r-r-utils r-neurobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=freesurfer")
+    (synopsis "Wrapper Functions for 'Freesurfer'")
+    (description
+     "Wrapper functions that interface with Freesurfer
+<https://surfer.nmr.mgh.harvard.edu/>, a powerful and commonly-used neuroimaging
+software, using system commands.  The goal is to be able to interface with
+Freesurfer completely in R, where you pass R objects of class nifti',
+implemented by package oro.nifti', and the function executes an Freesurfer
+command and returns an R object of class nifti or necessary output.")
+    (license license:gpl3)))
 
 (define-public r-freesortr
   (package

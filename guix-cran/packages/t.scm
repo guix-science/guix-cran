@@ -16050,13 +16050,13 @@ style.")
 (define-public r-tidyedsurvey
   (package
     (name "r-tidyedsurvey")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyEdSurvey" version))
        (sha256
-        (base32 "0m7nf7kzniwqkissfgmmdda75aiww6r5ih17h1xswr8xh7sb4q4y"))))
+        (base32 "0vimgaq09dbz78i68ks5p3wiiahl59grdcvbg4bgdq3147pbmd3k"))))
     (properties `((upstream-name . "tidyEdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

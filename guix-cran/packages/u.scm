@@ -10,9 +10,9 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
-  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
+  #:use-module (gnu packages web)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -1339,33 +1339,6 @@ package to address Up-and-Down's needs.  For a recent methodological tutorial on
 Up-and-Down, see Oron et al. (2022) <doi:10.1097/ALN.0000000000004282>.")
     (license license:gpl2)))
 
-(define-public r-upmask
-  (package
-    (name "r-upmask")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UPMASK" version))
-       (sha256
-        (base32 "160rsb0nbndf61khcs3s8xv9nj7ln8zl6l11157ywdcjqd2q5qnq"))))
-    (properties `((upstream-name . "UPMASK")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rsqlite r-mass r-loe r-dimred r-dbi))
-    (home-page "https://cran.r-project.org/package=UPMASK")
-    (synopsis
-     "Unsupervised Photometric Membership Assignment in Stellar Clusters")
-    (description
-     "An implementation of the UPMASK method for performing membership assignment in
-stellar clusters in R. It is prepared to use photometry and spatial positions,
-but it can take into account other types of data.  The method is able to take
-into account arbitrary error models, and it is unsupervised, data-driven,
-physical-model-free and relies on as few assumptions as possible.  The approach
-followed for membership assessment is based on an iterative process,
-dimensionality reduction, a clustering algorithm and a kernel density
-estimation.")
-    (license license:gpl3+)))
-
 (define-public r-upg
   (package
     (name "r-upg")
@@ -1931,13 +1904,13 @@ building block for workflows within more applied projects.")
 (define-public r-unix
   (package
     (name "r-unix")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unix" version))
        (sha256
-        (base32 "11h8z2k2p42kjj76wx4gj9ghgd5z0gc0lxs8h6y1ikprgy5xaw32"))))
+        (base32 "0jjy4vhxvyd7i85g50xz392m7blqai8crfrnyf7kbgzkbibr7jb0"))))
     (properties `((upstream-name . "unix")))
     (build-system r-build-system)
     (inputs (list apparmor))
@@ -3924,60 +3897,6 @@ of UCSC-hosted public databases such as TCGA, ICGC, TARGET, GTEx, CCLE, and
 others.  Databases are normalized so they can be combined, linked, filtered,
 explored and downloaded.")
     (license license:gpl3)))
-
-(define-public r-ucscxenashiny
-  (package
-    (name "r-ucscxenashiny")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "UCSCXenaShiny" version))
-       (sha256
-        (base32 "121nkc9lxaf3hb15wb3aafwh4m3h4iynv68jqgdfi41mayb7k6dy"))))
-    (properties `((upstream-name . "UCSCXenaShiny")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-ucscxenatools
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-shiny
-                             r-purrr
-                             r-psych
-                             r-ppcor
-                             r-magrittr
-                             r-httr
-                             r-ggpubr
-                             r-ggplot2
-                             r-forcats
-                             r-ezcox
-                             r-dplyr
-                             r-digest))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/openbiox/UCSCXenaShiny")
-    (synopsis "Interactive Analysis of UCSC Xena Data")
-    (description
-     "This package provides functions and a Shiny application for downloading,
-analyzing and visualizing datasets from UCSC Xena (<http://xena.ucsc.edu/>),
-which is a collection of UCSC-hosted public databases such as TCGA, ICGC,
-TARGET, GTEx, CCLE, and others.")
-    (license license:gpl3+)))
 
 (define-public r-ucr-columnnames
   (package

@@ -1994,13 +1994,13 @@ equation.")
 (define-public r-quadratik
   (package
     (name "r-quadratik")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadratiK" version))
        (sha256
-        (base32 "1yn8hs2cpf6dsaqnva2k0l9i4g3ccmzg0vrn4xrynqz3ncrzikwy"))))
+        (base32 "1nl0d35hv2ni238hq3cp583ikxfspwca8bv1c13dndjfsqhkx56c"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinflex
@@ -2014,7 +2014,6 @@ equation.")
                              r-movmf
                              r-moments
                              r-mclust
-                             r-mass
                              r-ggpubr
                              r-ggpp
                              r-ggplot2
@@ -2031,8 +2030,8 @@ equation.")
 non-parametric two- and k-sample tests, random generation of points from the
 Poisson kernel-based density and clustering algorithm for spherical data.  For
 more information see Saraceno, G., Markatou, M., Mukhopadhyay, R., Golzy, M.
-(2024) <arxiv:2402.02290>, Ding, Y., Markatou, M., Saraceno, G. (2023)
-<doi:10.5705/ss.202022.0347>, and Golzy, M., Markatou, M. (2020)
+(2024) <doi:10.48550/@code{arXiv.2402.02290>}, Ding, Y., Markatou, M., Saraceno,
+G. (2023) <doi:10.5705/ss.202022.0347>, and Golzy, M., Markatou, M. (2020)
 <doi:10.1080/10618600.2020.1740713>.")
     (license license:gpl3+)))
 
@@ -2137,13 +2136,13 @@ dtriangmesh functions.")
 (define-public r-quadform
   (package
     (name "r-quadform")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadform" version))
        (sha256
-        (base32 "1da9ck9b1kliabwiqf5r63pfg8iirc4y2kavyjicvp26989r7jh3"))))
+        (base32 "0w01v688xfb9zl7yr2prr9hwpylbx2cc8qwidxkzyzxzk21ywdn3"))))
     (properties `((upstream-name . "quadform")))
     (build-system r-build-system)
     (propagated-inputs (list r-mathjaxr))

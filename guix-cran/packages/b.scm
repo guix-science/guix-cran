@@ -9483,16 +9483,17 @@ data.")
 (define-public r-bliss
   (package
     (name "r-bliss")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bliss" version))
        (sha256
-        (base32 "0rb51yiij0d67vbrjzkpvw2qdzwkvysy5hs2dvw6jhx81cyzz46y"))))
+        (base32 "0s5xbk78ygyk8nc3b2279hr3cp4f0nk7nr0cam4n5h5s77cxi3fw"))))
     (properties `((upstream-name . "bliss")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass))
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-mass
+                             r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pmgrollemund/bliss")
     (synopsis

@@ -10,6 +10,7 @@
   #:use-module (gnu packages compression)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages java)
+  #:use-module (gnu packages spreadsheet)
   #:use-module (gnu packages image)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages tls)
@@ -1530,6 +1531,28 @@ open source.  But please cite the paper Holzer et al. (2020)
 post on user wall and etc.	For more information see API Documentation
 <https://vk.com/dev/first_guide>.")
     (license license:gpl2)))
+
+(define-public r-rvisidata
+  (package
+    (name "r-rvisidata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rvisidata" version))
+       (sha256
+        (base32 "0y65g4lhgjpaqkap1g07dxiaax8rypbb50bg9r5akqy2x2p9sjrg"))))
+    (properties `((upstream-name . "rvisidata")))
+    (build-system r-build-system)
+    (inputs (list visidata))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/paulklemm/rvisidata")
+    (synopsis
+     "Wrapper for 'Visidata', an Interactive Multitool for Tabular Data")
+    (description
+     "Open any data frame with visidata', a terminal-based spreadsheet application
+<https://www.visidata.org>.")
+    (license license:expat)))
 
 (define-public r-rvipkg
   (package
@@ -8001,25 +8024,6 @@ Collienne & Gavryushkin (2021) <doi:10.1007/s00285-021-01567-5>, Collienne et
 al. (2021) <doi:10.1007/s00285-021-01685-0>, and Collienne (2021)
 <http://hdl.handle.net/10523/12606>.")
     (license license:gpl3+)))
-
-(define-public r-rrna
-  (package
-    (name "r-rrna")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RRNA" version))
-       (sha256
-        (base32 "14rcqh95ygybci8hb8ays8ikb22g3850s9f3sgx3r4f0ky52dcba"))))
-    (properties `((upstream-name . "RRNA")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=RRNA")
-    (synopsis "Secondary Structure Plotting for RNA")
-    (description
-     "This package provides functions for creating and manipulating RNA secondary
-structure plots.")
-    (license license:gpl3)))
 
 (define-public r-rrmlrfmc
   (package
@@ -16174,13 +16178,13 @@ with the @code{GrADS-DODS} system.")
 (define-public r-rnndescent
   (package
     (name "r-rnndescent")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnndescent" version))
        (sha256
-        (base32 "1d19dfq4qh3xq6bb2rfhsv3zfbm1laxm9sl1mf6rkd63w43msb3d"))))
+        (base32 "1qgmy4sqs14zbv1mm6cany6xxk0hsaaiblsd4am85qj8gbjflm3f"))))
     (properties `((upstream-name . "rnndescent")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo r-rcpp r-matrix r-dqrng r-bh))
@@ -16760,32 +16764,6 @@ building queries based on available parameters and valid parameter values.  This
 product uses the NASS API but is not endorsed or certified by NASS.")
     (license license:expat)))
 
-(define-public r-rnasmc
-  (package
-    (name "r-rnasmc")
-    (version "0.8.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RNAsmc" version))
-       (sha256
-        (base32 "0lssw4qwcsdwcd3chkb1kslqh7yn25prl1npp1464nvmvz9yqdwm"))))
-    (properties `((upstream-name . "RNAsmc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rrna r-circlize))
-    (home-page "https://cran.r-project.org/package=RNAsmc")
-    (synopsis "RNA Secondary Structure Module Mining, Comparison and Plotting")
-    (description
-     "This package provides function for RNA secondary structure plotting, comparison
-and module mining.  Given a RNA secondary structure, you can obtain stem
-regions, hairpin loops, internal loops, bulge loops and multibranch loops of
-this RNA structure using this program.  They are the basic modules of RNA
-secondary structure.  For each module you get, you can use this program to label
-the RNA structure with a specific color.  You can also use this program to
-compare two RNA secondary structures to get a score that represents similarity.
-Reference: Reuter JS, Mathews DH (2010) <doi:10.1186/1471-2105-11-129>.")
-    (license license:gpl2)))
-
 (define-public r-rnaseqqc
   (package
     (name "r-rnaseqqc")
@@ -16922,47 +16900,6 @@ estimated by maximum likelihood estimation.")
      "Recursive display of names and paths of all the items nested within sublists of
 a list object.")
     (license license:expat)))
-
-(define-public r-rnacrosslinkoo
-  (package
-    (name "r-rnacrosslinkoo")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rnaCrosslinkOO" version))
-       (sha256
-        (base32 "0bn2csw7wirn6pvxzq0mvsl832pj7q99mdycbkb548ii04mqfxha"))))
-    (properties `((upstream-name . "rnaCrosslinkOO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-topdom
-                             r-tidyverse
-                             r-seqinr
-                             r-s4vectors
-                             r-rrna
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-r4rna
-                             r-patchwork
-                             r-mixtools
-                             r-mass
-                             r-iranges
-                             r-igraph
-                             r-heatmap3
-                             r-ggrepel
-                             r-ggplot2
-                             r-genomicranges
-                             r-foreach
-                             r-doparallel
-                             r-classdiscovery))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rnaCrosslinkOO")
-    (synopsis "Analysis of RNA Crosslinking Data")
-    (description
-     "Analysis of RNA crosslinking data for RNA structure prediction.  The package is
-suitable for the analysis of RNA structure cross-linking data and chemical
-probing data.")
-    (license license:gpl3)))
 
 (define-public r-rmzqc
   (package
@@ -20247,6 +20184,38 @@ generate errors when installing @code{rKOMICS}.  Install Bioconductor and
 @code{ComplexHeatmap} at advance: install.packages(\"@code{BiocManager}\");
 @code{BiocManager::install(\"ComplexHeatmap}\") *****.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rkolada
+  (package
+    (name "r-rkolada")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rKolada" version))
+       (sha256
+        (base32 "0q4npg3f50rx9vx9d3zmh2i6m0rnd2f7pvgr624ickja6s28bjc1"))))
+    (properties `((upstream-name . "rKolada")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lchansson.github.io/rKolada/")
+    (synopsis "Access Data from the 'Kolada' Database")
+    (description
+     "This package provides methods for downloading and processing data and metadata
+from Kolada', the official Swedish regions and municipalities database
+<https://www.kolada.se/>.")
+    (license license:agpl3)))
 
 (define-public r-rkmetrics
   (package
@@ -24206,13 +24175,13 @@ function.")
 (define-public r-rgoogleads
   (package
     (name "r-rgoogleads")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgoogleads" version))
        (sha256
-        (base32 "1v2g580js7avyqd02d9vyawj04x3yil6iw3w865h5901k40q817d"))))
+        (base32 "1bw12cwxwk6rvhym6vaz9va2pvg54n9najx611dd10p5cvqgp0gs"))))
     (properties `((upstream-name . "rgoogleads")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -24226,6 +24195,7 @@ function.")
                              r-purrr
                              r-pbapply
                              r-memoise
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-gargle
@@ -34038,6 +34008,45 @@ including songs, blogs, news, reviews etc.  Song's data including audio summary,
 style, danceability, tempo etc can also be accessed.")
     (license license:expat)))
 
+(define-public r-recharge
+  (package
+    (name "r-recharge")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rechaRge" version))
+       (sha256
+        (base32 "05in0rv36g282f79b0f3crn1y7azfvw7863n8c583jgvhmvndqsn"))))
+    (properties `((upstream-name . "rechaRge")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-sp
+                             r-raster
+                             r-r-utils
+                             r-progressr
+                             r-plyr
+                             r-ncdf4
+                             r-lubridate
+                             r-hydrostats
+                             r-future
+                             r-foreach
+                             r-dofuture
+                             r-data-table
+                             r-airgr))
+    (home-page "https://github.com/gwrecharge/rechaRge/")
+    (synopsis "HydroBudget â Groundwater Recharge Model")
+    (description
+     "@code{HydroBudget} is a spatially distributed groundwater recharge model that
+computes a superficial water budget on grid cells with outputs aggregated into
+monthly time steps.  It was developed as an accessible and computationally
+affordable model to simulate groundwater recharge over large areas (thousands of
+km2, regional-scale watersheds) and for long time periods (decades), in cold and
+humid climates.  Model algorithms are based on the research of Dubois, E. et al.
+(2021a) <doi:10.5683/SP3/EUDV3H> and Dubois, E. et al. (2021b)
+<doi:10.5194/hess-25-6567-2021>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-recexcavaar
   (package
     (name "r-recexcavaar")
@@ -38003,6 +38012,29 @@ parallel programming for providing highly efficient text preprocessing
 @code{posParallel}() function.  For installation, please refer to README.md
 file.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rcpplbfgsblaze
+  (package
+    (name "r-rcpplbfgsblaze")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppLbfgsBlaze" version))
+       (sha256
+        (base32 "1c3cdnhabxns804baa416fjd62ayy4mn5wcyfay1q2w3cijryjq1"))))
+    (properties `((upstream-name . "RcppLbfgsBlaze")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppblaze r-rcpp))
+    (home-page "https://github.com/ChingChuan-Chen/RcppLbfgsBlaze")
+    (synopsis "'L-BFGS' Algorithm Based on 'Blaze' for 'R' and 'Rcpp'")
+    (description
+     "The L-BFGS algorithm is a popular optimization algorithm for unconstrained
+optimization problems.  Blaze is a high-performance C++ math library for dense
+and sparse arithmetic.  This package provides a simple interface to the L-BFGS
+algorithm and allows users to optimize their objective functions with Blaze
+vectors and matrices in R and Rcpp'.")
+    (license license:expat)))
 
 (define-public r-rcppjagger
   (package
@@ -42612,6 +42644,35 @@ Accepts both filename inputs and in-memory array representations of images and
 matrices.  Includes functions to perform 2D convolutions, reorient and resize
 images/matrices, add image overlays, generate camera vignette effects, and add
 titles to images.")
+    (license license:gpl3)))
+
+(define-public r-raybevel
+  (package
+    (name "r-raybevel")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raybevel" version))
+       (sha256
+        (base32 "0431mk0lslqwffknarb7zm2nbgv564d3karf9davc7w1xgnf11fj"))))
+    (properties `((upstream-name . "raybevel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rcppthread
+                             r-rcppcgal
+                             r-rcpp
+                             r-rayvertex
+                             r-progress
+                             r-digest
+                             r-decido
+                             r-bh))
+    (home-page "https://www.raybevel.com")
+    (synopsis "Generates Polygon Straight Skeletons and 3D Bevels")
+    (description
+     "Generates polygon straight skeletons and 3D models.  Provides functions to
+create and visualize interior polygon offsets, 3D beveled polygons, and 3D roof
+models.")
     (license license:gpl3)))
 
 (define-public r-raws-profile

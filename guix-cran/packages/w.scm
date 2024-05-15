@@ -4340,30 +4340,6 @@ association signals at genome-wide scale.  The functions allow genome-wide
 association scan, candidate region scan and single window test.")
     (license license:gpl3)))
 
-(define-public r-wgeesel
-  (package
-    (name "r-wgeesel")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wgeesel" version))
-       (sha256
-        (base32 "0lybvsq5168cjybzv2dbyx2z8aakcx7i7ivm8zc90haiispm9n5x"))))
-    (properties `((upstream-name . "wgeesel")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-poisnor r-mass r-geepack r-crtgeedr r-bindata))
-    (home-page "https://cran.r-project.org/package=wgeesel")
-    (synopsis "Weighted Generalized Estimating Equations and Model Selection")
-    (description
-     "Weighted generalized estimating equations (WGEE) is an extension of generalized
-linear models to longitudinal clustered data by incorporating the correlation
-within-cluster when data is missing at random (MAR).  The parameters in mean,
-scale correlation structures are estimated based on quasi-likelihood.  Multiple
-model selection criterion are provided for selection of mean model and working
-correlation structure based on WGEE/GEE.")
-    (license license:gpl2)))
-
 (define-public r-wflo
   (package
     (name "r-wflo")
