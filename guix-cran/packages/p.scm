@@ -9983,13 +9983,13 @@ the most common first named based on U.S. Social Security Administration data.")
 (define-public r-predictor
   (package
     (name "r-predictor")
-    (version "3.0.3")
+    (version "3.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predictoR" version))
        (sha256
-        (base32 "1r96kclzkybzplssf2ql0grv34p6ff01vplp8bv3ivckmkln8qgz"))))
+        (base32 "0lj13rn9dpx0rqxb03abisa06ihphmrq5shpv6q2p0qb857pgmkf"))))
     (properties `((upstream-name . "predictoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -27200,42 +27200,6 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 <https://www.ssrn.com/abstract=4306129>.")
     (license license:gpl3+)))
 
-(define-public r-periscope2
-  (package
-    (name "r-periscope2")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "periscope2" version))
-       (sha256
-        (base32 "00zjap5l8aqyn6ykf3vmhsgiahkkgzkakjzc7z0wlm5ksv0cskdm"))))
-    (properties `((upstream-name . "periscope2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-writexl
-                             r-shinywidgets
-                             r-shinyfeedback
-                             r-shiny
-                             r-lubridate
-                             r-lifecycle
-                             r-fresh
-                             r-dt
-                             r-bs4dash))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/Aggregate-Genius/periscope2")
-    (synopsis
-     "Enterprise Streamlined 'shiny' Application Framework Using 'bs4Dash'")
-    (description
-     "This package provides a framework for building enterprise, scalable and
-UI-standardized shiny applications.  It brings enhanced features such as
-bootstrap v4 <https://getbootstrap.com/docs/4.0/getting-started/introduction/>,
-additional and enhanced shiny modules, customizable UI features, as well as an
-enhanced application file organization paradigm.  This update allows developers
-to harness the ability to build powerful applications and enriches the shiny
-developers experience when building and maintaining applications.")
-    (license license:gpl3)))
-
 (define-public r-periscope
   (package
     (name "r-periscope")
@@ -33201,13 +33165,13 @@ result.")
 (define-public r-partialnetwork
   (package
     (name "r-partialnetwork")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PartialNetwork" version))
        (sha256
-        (base32 "0s551krji472qrwaq2a7s06l42kzrbhx7w9g5ijfn5q69i8ns9x3"))))
+        (base32 "010q3d0r40kszdsyc6bish7vrzl98zxi47ppbnv5n86p0n3dckjn"))))
     (properties `((upstream-name . "PartialNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress

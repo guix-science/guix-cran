@@ -18605,6 +18605,31 @@ provides methods for assessing goodness-of-fit of models and visualization of
 networks.")
     (license license:gpl3)))
 
+(define-public r-mlelod
+  (package
+    (name "r-mlelod")
+    (version "1.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlelod" version))
+       (sha256
+        (base32 "1rjdpc252ydxsh878nlgw65s41wl2hn5iwvd8mskxs72in9m8qsm"))))
+    (properties `((upstream-name . "mlelod")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mlelod")
+    (synopsis
+     "MLE for Normally Distributed Data Censored by Limit of Detection")
+    (description
+     "Values below the limit of detection (LOD) are a problem in several fields of
+science, and there are numerous approaches for replacing the missing data.  We
+present a new mathematical solution for maximum likelihood estimation that
+allows us to estimate the true values of the mean and standard deviation for
+normal distributions and is significantly faster than previous implementations.
+The article with the details was submitted to JSS and can be currently seen on
+<https://www2.arnes.si/~tverbo/LOD/Verbovsek_Sega_2_Manuscript.pdf>.")
+    (license license:gpl2)))
+
 (define-public r-mlegp
   (package
     (name "r-mlegp")
@@ -20789,6 +20814,29 @@ evaluation.  See Wong and Li (2002) <doi:10.1111/1467-9868.00222>, Boshnakov
 documentation.")
     (license license:gpl2+)))
 
+(define-public r-mixall
+  (package
+    (name "r-mixall")
+    (version "1.5.16")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MixAll" version))
+       (sha256
+        (base32 "134nf62cc2l998dl6vhp4nlyjfbybw9l9rycnxys4i0wzcsl8lz5"))))
+    (properties `((upstream-name . "MixAll")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtkore r-rcpp))
+    (home-page "https://cran.r-project.org/package=MixAll")
+    (synopsis "Clustering and Classification using Model-Based Mixture Models")
+    (description
+     "Algorithms and methods for model-based clustering and classification.  It
+supports various types of data: continuous, categorical and counting and can
+handle mixed data of these types.  It can fit Gaussian (with diagonal covariance
+structure), gamma, categorical and Poisson models.  The algorithms also support
+missing values.")
+    (license license:gpl2+)))
+
 (define-public r-mixak
   (package
     (name "r-mixak")
@@ -20971,6 +21019,31 @@ list of nodes and edges with all relationships.")
 DNA Heteroplasmy calculated from single-cell datasets
 <https://github.com/@code{ScialdoneLab/MitoHEAR/tree/master>}.")
     (license license:artistic2.0)))
+
+(define-public r-misuvi
+  (package
+    (name "r-misuvi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "misuvi" version))
+       (sha256
+        (base32 "0l62hm1d9bjxn53k50aq71i9f8fgj8v55m75l3f9qc88wr8fhqf2"))))
+    (properties `((upstream-name . "misuvi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tigris r-sf r-curl))
+    (home-page "https://github.com/brendensm/misuvi")
+    (synopsis
+     "Access the Michigan Substance Use Vulnerability Index (MI-SUVI)")
+    (description
+     "Easily import the MI-SUVI data sets.  The user can import data sets with full
+metrics, percentiles, Z-scores, or rankings.  Data is available at both the
+County and Zip Code Tabulation Area (ZCTA) levels.  This package also includes a
+function to import shape files for easy mapping and a function to access the
+full technical documentation.  All data is sourced from
+(<https://www.michigan.gov/opioids/category-data>).")
+    (license license:cc0)))
 
 (define-public r-misty
   (package
@@ -23778,13 +23851,13 @@ principal components.  The method is described in Nassiri et al. (2018)
 (define-public r-miesmuschel
   (package
     (name "r-miesmuschel")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miesmuschel" version))
        (sha256
-        (base32 "0gqdq1qsai0rql8l1s7qqdijxhjc48bkkx16c1k36c3skf2lam52"))))
+        (base32 "0pq5bqghq49pdna9pb0yrpnjf40zjky5gs8m987csw7c3qnc6d8n"))))
     (properties `((upstream-name . "miesmuschel")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -24662,13 +24735,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "043anlk1day0wi2jxvvx72ljrbamsgwsc2bbsqrpnnr0xq953d5l"))))
+        (base32 "1br35z4z87598a0wwnn65mzxywizds12l38zbp6jafx4n0pgsh9a"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -24883,18 +24956,17 @@ and inference is mainly based on resampling and permutations technique.")
 (define-public r-microbial
   (package
     (name "r-microbial")
-    (version "0.0.20")
+    (version "0.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microbial" version))
        (sha256
-        (base32 "1y5vhh4sq22c4wxb3c9rzj53niacn97vfg0484d9wkcjb179lc79"))))
+        (base32 "1d2sr4wwjlxcaxqr57gzf8m2pydgx4kp3h8mgyxzcm4s00i8m5bc"))))
     (properties `((upstream-name . "microbial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-tidyr
-                             r-testthat
                              r-summarizedexperiment
                              r-s4vectors
                              r-rstatix
@@ -36136,6 +36208,28 @@ simulations of multiple climate variables.  Three methods described by Cannon
 transform (MBCn) â as is the Rank Resampling for Distributions and Dependences
 (R2D2) method.")
     (license license:gpl2)))
+
+(define-public r-mbbefdlite
+  (package
+    (name "r-mbbefdlite")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MBBEFDLite" version))
+       (sha256
+        (base32 "0pa0i5sii73qsxfv559qzdp89pfi4afsdhn588j63jr1srkf1m26"))))
+    (properties `((upstream-name . "MBBEFDLite")))
+    (build-system r-build-system)
+    (home-page "https://github.com/aadler/MBBEFDLite")
+    (synopsis
+     "Statistical Functions for the Maxwell-Boltzmann-Bose-Einstein-Fermi-Dirac (MBBEFD) Family of Distributions")
+    (description
+     "This package provides probability mass, distribution, quantile, random variate
+generation, and method-of-moments parameter fitting for the MBBEFD family of
+distributions used in insurance modeling as described in Bernegger (1997)
+<doi:10.2143/AST.27.1.563208> without any external dependencies.")
+    (license (license:fsdg-compatible "MPL-2.0"))))
 
 (define-public r-mbbefd
   (package

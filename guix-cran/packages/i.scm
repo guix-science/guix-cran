@@ -1536,13 +1536,13 @@ using different splitting criteria.")
 (define-public r-isotracer
   (package
     (name "r-isotracer")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isotracer" version))
        (sha256
-        (base32 "0qxdri6dq920d39ip1f37h1nzw90fr51bq4xc1m5bjv7vkqrqbks"))))
+        (base32 "0yapaaycakxzq6h3r2zp72zwf514qs64lhygiy3ix0dwxzafnh3b"))))
     (properties `((upstream-name . "isotracer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -3664,13 +3664,13 @@ jointly considered for gene regulatory network inference.")
 (define-public r-iraceplot
   (package
     (name "r-iraceplot")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iraceplot" version))
        (sha256
-        (base32 "0891wmk7m62qr0rzxxyzz7vpmzhjllj0d36vjafcf5bf12v0yzqk"))))
+        (base32 "19scipjkxf08wmsv7vwscx3j120444l5ncin9l8fq1i3jq5w6pjy"))))
     (properties `((upstream-name . "iraceplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3682,6 +3682,7 @@ jointly considered for gene regulatory network inference.")
                              r-rlang
                              r-plotly
                              r-matrixstats
+                             r-labeling
                              r-knitr
                              r-irace
                              r-gridextra
@@ -10041,13 +10042,13 @@ outbreak analysis (<https://www.reconverse.org>).")
 (define-public r-incidence
   (package
     (name "r-incidence")
-    (version "1.7.3")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence" version))
        (sha256
-        (base32 "1wdxh2p7scm419fqki0i7vsz45rd7557h5n3zf9fshb8x1fdf2z7"))))
+        (base32 "02qwx13z2hd39qv8d9zkmf844hvyqh0zia70pgpkfqd6ydvzj8zs"))))
     (properties `((upstream-name . "incidence")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-aweek))

@@ -219,13 +219,13 @@ working with gzip', zlib', and deflate formats.")
 (define-public r-zlavian
   (package
     (name "r-zlavian")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ZLAvian" version))
        (sha256
-        (base32 "0ay54al5gr2jxb2v2zj23d0ypnkp8k37vxvg0c0mirb0qd23gqrp"))))
+        (base32 "1bi3f8v0vlc5si9iz7iapw8h37i2084j576pm879lw16j18ka3v7"))))
     (properties `((upstream-name . "ZLAvian")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance r-lme4 r-doparallel))
@@ -234,8 +234,8 @@ working with gzip', zlib', and deflate formats.")
     (synopsis "Zipf's Law of Abbreviation in Animal Vocalisations")
     (description
      "Assesses evidence for Zipf's Law of Abbreviation in animal vocalisation using
-IDs, note class and note duration.  The package also provides a webplot function
-for visualisation.  Davis, M. K., and Chen, G. (2007) <doi:10.2307/2346786>.")
+IDs, note class and note duration.  The package also provides a web plot
+function for visualisation.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-zipsae

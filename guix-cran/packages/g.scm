@@ -18870,13 +18870,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "8.0.0")
+    (version "9.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "0xbwygwnx7iy741xrwwcs2q7lnwv5mg4l1h4qprc6cnp42imkq5b"))))
+        (base32 "0gq1rcppwzvbgh55rn0d4377f119cpbnv975wa6gbmq5wmy0752x"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18889,11 +18889,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-labelled
                              r-hms
                              r-ggplot2
                              r-forcats
                              r-farver
-                             r-dplyr))
+                             r-dplyr
+                             r-colorspace))
     (native-inputs (list r-knitr))
     (home-page "https://davidhodge931.github.io/ggblanket/")
     (synopsis "Simplify 'ggplot2' Visualisation")

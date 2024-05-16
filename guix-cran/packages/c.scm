@@ -12900,13 +12900,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "0gk2qvdwa3wr55j7vkgm2jk1qcck1aqzsh30zc3cidgbk7m3icpv"))))
+        (base32 "0r3r2z08fxbpkymqp34z0ss757c4ld1fpyvdcxd6prjk9fi4lnx0"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Copula.surv")
@@ -25683,13 +25683,13 @@ keeping data.")
 (define-public r-clmplus
   (package
     (name "r-clmplus")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clmplus" version))
        (sha256
-        (base32 "0flnrfs5ymz0ki85zcwmdg605xyfpdc73c71xk35q0ak7l7mbz44"))))
+        (base32 "024w8a4qj9sr0vqpfv5sm5gmcy4crin90sfx0z1y13iiznk7kvch"))))
     (properties `((upstream-name . "clmplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stmomo
@@ -25702,10 +25702,10 @@ keeping data.")
     (home-page "https://github.com/gpitt71/clmplus")
     (synopsis "Tool-Box of Chain Ladder Plus Models")
     (description
-     "Implementation of the chain ladder model under the reverse time framework
-introduced in Hiabu (2017) <doi:10.1080/03461238.2016.1240709>.  It also
-implements extensions that add flexibility to the individual development factors
-modeling by allowing practitioners to set their own hazard rate model.")
+     "Implementation of the age-period-cohort models for the claim development
+presented in the manuscript Replicating and extending chain-ladder via an
+age-period-cohort structure on the claim development in a run-off triangle
+<doi:10.48550/@code{arXiv.2301.03858>}.")
     (license license:gpl2+)))
 
 (define-public r-clme

@@ -1016,6 +1016,39 @@ palettes from users photos directly.")
      "Curated datasets from US Long Term Ecological Research sites.")
     (license license:cc0)))
 
+(define-public r-ltcdm
+  (package
+    (name "r-ltcdm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LTCDM" version))
+       (sha256
+        (base32 "0q9lj69vpkyc6a40m9xj46qi5h8h2r6rl4k49bs3z19661gcxydd"))))
+    (properties `((upstream-name . "LTCDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggsignif r-ggpubr r-ggplot2 r-gdina))
+    (home-page "https://cran.r-project.org/package=LTCDM")
+    (synopsis "Latent Transition Cognitive Diagnosis Model with Covariates")
+    (description
+     "Implementation of the three-step approach of latent transition cognitive
+diagnosis model (CDM) with covariates.  This approach can be used to assess
+changes in attribute mastery status and to evaluate the covariate effects on
+both the initial states and transition probabilities over time using latent
+logistic regression.  Because stepwise approaches often yield biased estimates,
+correction for classification error probabilities (CEPs) is considered in this
+approach.  The three-step approach for latent transition CDM with covariates
+involves the following steps: (1) fitting a CDM to the response data without
+covariates at each time point separately, (2) assigning examinees to latent
+states at each time point and computing the associated CEPs, and (3) estimating
+the latent transition CDM with the known CEPs and computing the regression
+coefficients.  The method was proposed in Liang et al. (2023)
+<doi:10.3102/10769986231163320> and demonstrated using mental health data in
+Liang et al. (in press; annotated R code and data utilized in this example are
+available in Mendeley data) <doi:10.17632/kpjp3gnwbt.1>.")
+    (license license:gpl3)))
+
 (define-public r-ltasr
   (package
     (name "r-ltasr")
@@ -14700,13 +14733,13 @@ linear spaces and front-end tools facilitating their use in the R ecosystem.")
 (define-public r-latrend
   (package
     (name "r-latrend")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latrend" version))
        (sha256
-        (base32 "06q23pl3x4fgxfaypl0xp74mmhwf31rq2yqp4fipcscyqcf1223c"))))
+        (base32 "1g5hhl8himv1g3v70vs42jsxn1h04knh73m6yhzkgc2bnj16hr2r"))))
     (properties `((upstream-name . "latrend")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown

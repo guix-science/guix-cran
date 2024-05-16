@@ -2427,6 +2427,36 @@ data.table backed time series I/O that allows the user to export / import long
 format, wide format and transposed wide format data to various file types.")
     (license license:gpl2)))
 
+(define-public r-tstests
+  (package
+    (name "r-tstests")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tstests" version))
+       (sha256
+        (base32 "00gjmvg1b7v2cdrv95l9ic9j50wch8y23qxkiqmrp1nznjjicpsy"))))
+    (properties `((upstream-name . "tstests")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-tsmethods
+                             r-rdpack
+                             r-ks
+                             r-flextable
+                             r-data-table
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.nopredict.com/packages/tstests")
+    (synopsis "Time Series Goodness of Fit and Forecast Evaluation Tests")
+    (description
+     "Goodness of Fit and Forecast Evaluation Tests for timeseries models.  Includes,
+among others, the Generalized Method of Moments (GMM) Orthogonality Test of
+Hansen (1982), the Nyblom (1989) parameter constancy test, the sign-bias test of
+Engle and Ng (1993), and a range of tests for value at risk and expected
+shortfall evaluation.")
+    (license license:gpl2)))
+
 (define-public r-tssvm
   (package
     (name "r-tssvm")
@@ -5571,6 +5601,35 @@ distribution for individual parameters of the fitted distribution.  Allows for
 computation of LOO and WAIC information criteria (Vehtari A, Gelman A, Gabry J
 (2017) <doi:10.1007/s11222-016-9696-4>) as well as Bayesian R-squared (Gelman A,
 Goodrich B, Gabry J, and Vehtari A (2018) <doi:10.1080/00031305.2018.1549100>).")
+    (license license:gpl3)))
+
+(define-public r-tricolore
+  (package
+    (name "r-tricolore")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tricolore" version))
+       (sha256
+        (base32 "1vnzw1nnnpq5w52y5dr9lygbpyys171vpxnmnd0yp1pk9mjxays7"))))
+    (properties `((upstream-name . "tricolore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rlang r-ggtern r-ggplot2 r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jschoeley/tricolore")
+    (synopsis "Flexible Color Scale for Ternary Compositions")
+    (description
+     "Compositional data consisting of three-parts can be color mapped with a ternary
+color scale.  Such a scale is provided by the tricolore packages with options
+for discrete and continuous colors, mean-centering and scaling.  See Jonas
+@code{SchÃ¶ley} (2021) \"The centered ternary balance scheme.  A technique to
+visualize surfaces of unbalanced three-part compositions\"
+<doi:10.4054/@code{DemRes.2021.44.19>}, Jonas @code{SchÃ¶ley}, Frans Willekens
+(2017) \"Visualizing compositional data on the Lexis surface\"
+<doi:10.4054/@code{DemRes.2017.36.21>}, and Ilya Kashnitsky, Jonas
+@code{SchÃ¶ley} (2018) \"Regional population structures at a glance\"
+<doi:10.1016/S0140-6736(18)31194-2>.")
     (license license:gpl3)))
 
 (define-public r-triangulr
@@ -18215,13 +18274,13 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
 (define-public r-tglkmeans
   (package
     (name "r-tglkmeans")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tglkmeans" version))
        (sha256
-        (base32 "1plg03k9r4sp8ck5qcj8shblr8378bynyyc7yqwcqv856vkl9icd"))))
+        (base32 "0hdnxgkxpgb8jm9aygv3wlhd42blm5nz906vlpl72blgcyc77hhh"))))
     (properties `((upstream-name . "tglkmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18235,6 +18294,7 @@ Soto et al. (2011) <doi:10.1139/x11-045>.")
                              r-ggplot2
                              r-future
                              r-dplyr
+                             r-dorng
                              r-dofuture
                              r-cli))
     (native-inputs (list r-knitr))

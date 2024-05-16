@@ -1540,13 +1540,13 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "24.5.1")
+    (version "24.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "0flqzv91fg4v9s9fn51sr0pkf6f7gapy2jrh9gagdk3k7555686w"))))
+        (base32 "18a4gr2v2qn2n9z9w89pjq1plzdggzlyprh249srf3sbqw1pn1qq"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4885,17 +4885,16 @@ accommodated in the univariate setting.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.5.6")
+    (version "1.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmer" version))
        (sha256
-        (base32 "1rnav6vd67daf4v8x7038zvakx0hh7fgcmldsipknbkilm49vdh7"))))
+        (base32 "17qzr0075vsrrlsv6cz29wq39pwwnwfn76x0nx68khcg84y66dgf"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
-                             r-tidyr
                              r-stringr
                              r-rlang
                              r-r6
@@ -4919,8 +4918,11 @@ and history matching.  Core functionality includes automated training of
 emulators to data, diagnostic functions to ensure suitability, and a variety of
 proposal methods for generating waves of points.  For details on the
 mathematical background, there are many papers available on the topic (see
-references attached to function help files); for details of the functions in
-this package, consult the manual or help files.")
+references attached to function help files or the below references); for details
+of the functions in this package, consult the manual or help files.  Bower,
+R.G., Goldstein, M., and Vernon, I. (2010) <doi:10.1214/10-BA524>.  Craig, P.S.,
+Goldstein, M., Seheult, A.H., and Smith, J.A. (1997)
+<doi:10.1007/978-1-4612-2290-3_2>.")
     (license license:expat)))
 
 (define-public r-hmeasure
@@ -9186,13 +9188,13 @@ Absolute Concentration Index) also accept individual and survey data.")
 (define-public r-healthdb
   (package
     (name "r-healthdb")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthdb" version))
        (sha256
-        (base32 "180ywlj7csdswnynwcghvy411w81f73r0h8ky3xh2iz24bjhzvb4"))))
+        (base32 "0bjc0n7v6b9djj19fxp9c13l8wbvmgkza6jni4ifcv9m5j9p26wb"))))
     (properties `((upstream-name . "healthdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9822,13 +9824,13 @@ determining the pair of factor numbers are also given.")
 (define-public r-hdmed
   (package
     (name "r-hdmed")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdmed" version))
        (sha256
-        (base32 "19n1m8wrzwf4lvmfw1bgyhymxv79irs341yfnhlc8znq4nm35yfh"))))
+        (base32 "1vmyf9w5dwl8ayxsk7ykd13hl41j4a435771rkgmkmnm5fbcqaai"))))
     (properties `((upstream-name . "hdmed")))
     (build-system r-build-system)
     (propagated-inputs (list r-ncvreg

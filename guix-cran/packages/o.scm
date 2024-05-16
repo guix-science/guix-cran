@@ -9080,13 +9080,13 @@ correlated with each of the variates.  More details can be found in Sei (2016)
 (define-public r-ofpetrial
   (package
     (name "r-ofpetrial")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ofpetrial" version))
        (sha256
-        (base32 "0rq1rkn27ahcg9ryc4mdfr2hji7xs1dk7fj71yzfyxp60kjyfrfp"))))
+        (base32 "1wid8d4m8bk087z8fi4ls493p1g30cymyl5xcbzcv0an2rkd739j"))))
     (properties `((upstream-name . "ofpetrial")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -9099,6 +9099,7 @@ correlated with each of the variates.  More details can be found in Sei (2016)
                              r-purrr
                              r-magrittr
                              r-lwgeom
+                             r-leaflet
                              r-ggpubr
                              r-ggplot2
                              r-ggextra

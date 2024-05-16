@@ -8025,6 +8025,25 @@ al. (2021) <doi:10.1007/s00285-021-01685-0>, and Collienne (2021)
 <http://hdl.handle.net/10523/12606>.")
     (license license:gpl3+)))
 
+(define-public r-rrna
+  (package
+    (name "r-rrna")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RRNA" version))
+       (sha256
+        (base32 "0bgsakpz1wr3wr6c5xa7wx2xmzs3xzkscrgwn6dc7f93kpq1j17p"))))
+    (properties `((upstream-name . "RRNA")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=RRNA")
+    (synopsis "Secondary Structure Plotting for RNA")
+    (description
+     "This package provides functions for creating and manipulating RNA secondary
+structure plots.")
+    (license license:gpl3)))
+
 (define-public r-rrmlrfmc
   (package
     (name "r-rrmlrfmc")
@@ -29889,18 +29908,18 @@ their analytical preferences.")
 (define-public r-remstats
   (package
     (name "r-remstats")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstats" version))
        (sha256
-        (base32 "1n1byjjaj1d87s3289szsr3in67fkx4dqyy2dzy86kijzvx2qinl"))))
+        (base32 "0ismgr1kj35hgaiam0xs03y28jmxl030l3xb46c45cdg44avhhdk"))))
     (properties `((upstream-name . "remstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/TilburgNetworkGroup/remstats")
+    (home-page "https://tilburgnetworkgroup.github.io/remstats/")
     (synopsis "Computes Statistics for Relational Event History Data")
     (description
      "Computes a variety of statistics for relational event models.  Relational event
@@ -29914,7 +29933,7 @@ probability of a sender initiating an interaction and subsequently the
 probability of the sender's choice of receiver.  The package is designed to
 compute a variety of statistics that summarize exogenous and endogenous
 influences on the event stream for both types of models.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-remss
   (package
@@ -32196,13 +32215,13 @@ modified by Georg Hoffmann and colleagues (2015) <doi:10.1515/labmed-2015-0104>,
 (define-public r-reflectr
   (package
     (name "r-reflectr")
-    (version "2.0.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reflectR" version))
        (sha256
-        (base32 "1kyihb5dhl6nydwrqr4pdjs1kq098sqk9wdv88z6wmdsdiz6b7i0"))))
+        (base32 "1jf8zk4gca78rf7fjv0ksfag0n3i5b3n8wn22cgxrlky02sp7nd0"))))
     (properties `((upstream-name . "reflectR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr))
@@ -32232,9 +32251,14 @@ not hold any affiliation with any of the original authors.  The development of
 this package benefited significantly from the kind insight and suggestion
 provided by Dr. Keela Thomson, whose contribution is gratefully acknowledged.
 Additional gratitude is extended to Dr. Paolo Giovanni Cicirelli, Prof.
-Marinella Paciello, Dr. Carmela Sportelli, and Prof. Francesca D'Errico, whose
-contributions highlighted the significant importance and practical relevance of
-this construct in personality, social, and cognitive research.")
+Marinella Paciello, Dr. Carmela Sportelli, and Prof. Francesca D'Errico, who not
+only contributed to the manual multi-rater coding of CRT-2 items but also
+profoundly influenced the understanding of the importance and practical
+relevance of cognitive reflection within personality, social, and cognitive
+psychology research.  Acknowledgment is also due to the European project
+STERHEOTYPES (STudying European Racial Hoaxes and @code{sterEOTYPES}) for
+funding the data collection that produced the datasets initially used for manual
+multi-rater coding of CRT-2 items.")
     (license license:gpl3)))
 
 (define-public r-refitme
@@ -33199,13 +33223,13 @@ al (2019) <doi:10.1016/j.jbi.2019.103208>).")
 (define-public r-redcapapi
   (package
     (name "r-redcapapi")
-    (version "2.9.0")
+    (version "2.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redcapAPI" version))
        (sha256
-        (base32 "1yx8hk7w9m5bxfwq57sjyl33rc522lxap6k70w6i41gpqg1f6r55"))))
+        (base32 "1zz5dwd1i7j0d9qf79zmlqb5i4d4qk59sg7qqzb6y8vmp1ldqwm7"))))
     (properties `((upstream-name . "redcapAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -47036,13 +47060,13 @@ functionality in radiant.data'.")
 (define-public r-radiant-model
   (package
     (name "r-radiant-model")
-    (version "1.6.3")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.model" version))
        (sha256
-        (base32 "182w8wj3zh2ynhxscy9d4wrfc3n3yj89569w7102l1rxyrssi755"))))
+        (base32 "0y1qvngicw279m9065pr6kj2yp80iz88bf4jqj1dawjvcbrl27wv"))))
     (properties `((upstream-name . "radiant.model")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -47089,13 +47113,13 @@ application extends the functionality in radiant.data'.")
 (define-public r-radiant-design
   (package
     (name "r-radiant-design")
-    (version "1.6.1")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.design" version))
        (sha256
-        (base32 "0rv9cpw80rhc47fza44z6a9jkij07ajpivr2ky0y2hixzf5c8h5a"))))
+        (base32 "0dcc8f6w07hpsjhgan7x0l9zsql82f3d8b9kannsnm2m54cnp5ja"))))
     (properties `((upstream-name . "radiant.design")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -47120,13 +47144,13 @@ radiant.data'.")
 (define-public r-radiant-basics
   (package
     (name "r-radiant-basics")
-    (version "1.6.0")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.basics" version))
        (sha256
-        (base32 "1dr53n39a7g4dar6zxmdkrzqqksc124s8whj6idy97jg9vj3qjsf"))))
+        (base32 "12sm0zypd5n9f5pk7bpdqh7h0p54cmvxp3slzdmi5sa0mbklfc9q"))))
     (properties `((upstream-name . "radiant.basics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

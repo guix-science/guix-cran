@@ -3230,17 +3230,16 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
 (define-public r-ewsmethods
   (package
     (name "r-ewsmethods")
-    (version "1.2.5")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EWSmethods" version))
        (sha256
-        (base32 "1ci968fnid8f1c17idsahmmwzzly28x1603prcgdy0fdfmk5srbs"))))
+        (base32 "16dk3p8km8s0ih4q2gdhvx0zakb3rh7ywz8shcy1g8yp0790bmwm"))))
     (properties `((upstream-name . "EWSmethods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-tidyr
                              r-scales
                              r-reticulate
                              r-redm
@@ -3252,7 +3251,6 @@ C.J. (2022) Preprint <doi:10.13140/RG.2.2.11828.94085>.")
                              r-forecast
                              r-foreach
                              r-egg
-                             r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/duncanobrien/EWSmethods")

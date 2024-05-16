@@ -1008,13 +1008,13 @@ them in package tests and in Continuous Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "1rg4jlvazhcsigrvf2lpkhggywy93jh60hc3d4n1fh8zph30r0jn"))))
+        (base32 "1ihi9n9wgxq43cx7cxzzay4j8g19jxhyww1h40rr84qzqdj6nk62"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallelly r-mirai r-future))
@@ -1022,11 +1022,11 @@ them in package tests and in Continuous Integration (CI) pipelines.")
     (synopsis "'Future' API for Parallel Processing using 'mirai'")
     (description
      "Implementation of the Future API <doi:10.32614/RJ-2021-048> on top of the mirai
-package.  This allows you to process futures, as defined by the future package,
-in parallel out of the box, on your local machine or across remote machines.
-Contrary to back-ends relying on the parallel package (e.g. multisession') and
-socket connections, mirai_cluster and mirai_multisession', provided here, can
-run more than 125 parallel R processes.")
+package <doi:10.5281/zenodo.7912722>.  This allows you to process futures, as
+defined by the future package, in parallel out of the box, on your local machine
+or across remote machines.  Contrary to back-ends relying on the parallel
+package (e.g. multisession') and socket connections, mirai_cluster and
+mirai_multisession', provided here, can run more than 125 parallel R processes.")
     (license license:gpl3+)))
 
 (define-public r-future-batchtools
@@ -1828,18 +1828,19 @@ described in @code{VanderDoes} et al., (2023) <doi:10.1101/2023.07.18.549619>.")
 (define-public r-funitroots
   (package
     (name "r-funitroots")
-    (version "4021.80")
+    (version "4040.81")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fUnitRoots" version))
        (sha256
-        (base32 "1ycsa5mw43mdrp4xb39j8n0c393qmmnyc7ncbkcjgyms2xk8fhjh"))))
+        (base32 "0p8hjzqqkqzfainj5m48k73axwp0q7j7m9zg18smwx7zpcsicgsl"))))
     (properties `((upstream-name . "fUnitRoots")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca r-timeseries r-fbasics))
     (native-inputs (list gfortran))
-    (home-page "https://www.rmetrics.org")
+    (home-page
+     "https://r-forge.r-project.org/scm/viewvc.php/pkg/fUnitRoots/?root=rmetrics")
     (synopsis "Rmetrics - Modelling Trends and Unit Roots")
     (description
      "This package provides four addons for analyzing trends and unit roots in
@@ -19510,6 +19511,31 @@ solution paths of the elastic net penalized Cox's proportional hazards model.
 The package is an implementation of Yang, Y. and Zou, H. (2013) DOI:
 <doi:10.4310/SII.2013.v6.n2.a1>.")
     (license license:gpl2)))
+
+(define-public r-fastcmprsk
+  (package
+    (name "r-fastcmprsk")
+    (version "1.24.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastcmprsk" version))
+       (sha256
+        (base32 "1ymg79y913h4s55h1pbmbx0hx40khc0mq6348awzqjy8pjhz1mdl"))))
+    (properties `((upstream-name . "fastcmprsk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-matrix r-foreach r-dynpred))
+    (home-page "https://cran.r-project.org/package=fastcmprsk")
+    (synopsis "Fine-Gray Regression via Forward-Backward Scan")
+    (description
+     "In competing risks regression, the proportional subdistribution hazards (PSH)
+model is popular for its direct assessment of covariate effects on the
+cumulative incidence function.  This package allows for both penalized and
+unpenalized PSH regression in linear time using a novel forward-backward scan.
+Penalties include Ridge, Lease Absolute Shrinkage and Selection Operator
+(LASSO), Smoothly Clipped Absolute Deviation (SCAD), Minimax Concave Plus (MCP),
+and elastic net <doi: 10.32614/RJ-2021-010>.")
+    (license license:gpl3)))
 
 (define-public r-fastcmh
   (package

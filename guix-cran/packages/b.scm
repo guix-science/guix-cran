@@ -791,6 +791,27 @@ history data (e.g. FHX).  Described in Malevich et al. (2018)
 <doi:10.1016/j.dendro.2018.02.005>.")
     (license license:gpl3+)))
 
+(define-public r-burgle
+  (package
+    (name "r-burgle")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "burgle" version))
+       (sha256
+        (base32 "11696f86vh2iflc6fignvip206kfsh3hh17x764jgng587v59zz2"))))
+    (properties `((upstream-name . "burgle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-riskregression r-mass))
+    (home-page "https://cran.r-project.org/package=burgle")
+    (synopsis "'Burgle': Stealing the Necessary Parts of Model Objects")
+    (description
+     "This package provides a way to reduce model objects to necessary parts, making
+them easier to work with, store, share and simulate multiple values for new
+responses while allowing for parameter uncertainty.")
+    (license license:expat)))
+
 (define-public r-bupaverse
   (package
     (name "r-bupaverse")
@@ -11854,6 +11875,37 @@ selecting cutoffs can be used, one based on the stability of model coefficients
 under perturbation, and the other on higher criticism.")
     (license license:gpl2+)))
 
+(define-public r-biologicalactivityindices
+  (package
+    (name "r-biologicalactivityindices")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biologicalActivityIndices" version))
+       (sha256
+        (base32 "022qip20nwv0xfxnx5507bsa7finnixjshvf60ssnagbchvgwvz9"))))
+    (properties `((upstream-name . "biologicalActivityIndices")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=biologicalActivityIndices")
+    (synopsis "Biological Activity Indices")
+    (description
+     "Ecological alteration of degraded lands can improve their sustainability by
+addition of large amount of biomass to soil resulting in improved soil health.
+Soil biological parameters (such as carbon, nitrogen and phosphorus cycling
+enzyme activity) are reactive to minute variations in soils [Ghosh et al. (2021)
+<doi:10.1016/j.ecoleng.2021.106176> ].  Hence, biological activity index
+combining Urease, Alkaline Phosphatase, Dehydrogenase (DHA) & Beta-Glucosidase
+activity will assist in detecting early changes in restored land use systems
+[Patidar et al. (2023) <doi:10.3389/fsufs.2023.1230156>].  This package helps to
+calculate Biological Activity Index (BAI) based on vectors of Land Use
+System/treatment and control/reference Land Use System containing four values of
+Urease, Alkaline Phosphatase, DHA & Beta-Glucosidase. (DHA), urease (URE),
+fluorescein diacetate hydrolysis (FDA) and alkaline phosphatase (ALP) activities
+are measured in soil samples using triphenyl tetrazolium chloride, urea,
+fluorescein diacetate and p-nitro phenyl-phosphate as substrates, respectively.")
+    (license license:gpl3)))
+
 (define-public r-biolink
   (package
     (name "r-biolink")
@@ -15665,13 +15717,13 @@ Nieto-Barajas (2003), Nieto-Barajas & Walker (2007) and Nieto-Barajas & Yin
 (define-public r-bgms
   (package
     (name "r-bgms")
-    (version "0.1.3")
+    (version "0.1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bgms" version))
        (sha256
-        (base32 "194xvv80d0vlb03kj36qhp036pyj57ansilkqf4aiwvxg63a5fzg"))))
+        (base32 "0ylvr1sbn2mq2cc7lkgf8qfw08qyg2xvcwa29964qwdjl76dl05g"))))
     (properties `((upstream-name . "bgms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcppprogress r-rcpp))

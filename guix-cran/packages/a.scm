@@ -5497,13 +5497,13 @@ NB-frequent itemsets and NB-precise rules.  Michael Hahsler (2006)
 (define-public r-arulescba
   (package
     (name "r-arulescba")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesCBA" version))
        (sha256
-        (base32 "0l1p1lpmxf103kxiqmflnqn7bc4cvhq06wk1kp37zwa06qdxq2vv"))))
+        (base32 "0d8nfqbk3y4vw5n3xnns2gy9jwj07a1zbaag9n0hmxrcs8m5ml83"))))
     (properties `((upstream-name . "arulesCBA")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -7557,6 +7557,32 @@ Installation instructions for arcgisbinding can be found at
 <https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-arcgisplaces
+  (package
+    (name "r-arcgisplaces")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgisplaces" version))
+       (sha256
+        (base32 "09xfwahdqf8v772g7gxalgzyd77diwzy6snlfjsrnli4f0svlzwi"))))
+    (properties `((upstream-name . "arcgisplaces")))
+    (build-system r-build-system)
+    (inputs (list openssl openssl))
+    (propagated-inputs (list r-wk r-rlang r-httr2 r-cli r-arcgisutils))
+    (home-page "https://cran.r-project.org/package=arcgisplaces")
+    (synopsis "Search for POIs using ArcGIS 'Places Service'")
+    (description
+     "The @code{ArcGIS} Places service is a ready-to-use location service that can
+search for businesses and geographic locations around the world.  It allows you
+to find, locate, and discover detailed information about each place.  Query for
+places near a point, within a bounding box, filter based on categories, or
+provide search text.  arcgisplaces integrates with sf for out of the box
+compatibility with other spatial libraries.  Learn more in the Places service
+API reference <https://developers.arcgis.com/rest/places/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
@@ -7924,6 +7950,29 @@ multimodel approach presented by Smart et al. (2016) \"Multimodel approaches in
 shark and ray growth studies: strengths, weaknesses and the future\"
 <doi:10.1111/faf.12154>.")
     (license license:gpl3)))
+
+(define-public r-aquality
+  (package
+    (name "r-aquality")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AQuality" version))
+       (sha256
+        (base32 "0zjv5wwdr4ivm1nx1yw27n1fxajxv9mdljd5jj95bv2wpvkn0pcz"))))
+    (properties `((upstream-name . "AQuality")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=AQuality")
+    (synopsis "Water and Measurements Quality")
+    (description
+     "The function proposed in this package allows to graphically evaluate the process
+of measurement of the chemical components of water.  The TSSS() function is
+useful to control the quality of measurements of chemical components of a sample
+of water.  If one or more measurements include an error, the generated graph
+will indicate it with a position of the point that represents the sample outside
+the confidence interval.")
+    (license license:gpl2)))
 
 (define-public r-aquaenv
   (package
@@ -9042,13 +9091,13 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "1ykppskq8dvn1jnw6mgcx5ja00gqxq6kvhnw9qdsgmv2fppwbvy6"))))
+        (base32 "0g5bg6py5a9fwqm2qsqwn6r9xcij11s4xccf6cimrx74ly4h5lff"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

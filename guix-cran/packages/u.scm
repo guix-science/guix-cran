@@ -10,9 +10,9 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages apparmor)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages web)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages perl)
-  #:use-module (gnu packages web)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3897,6 +3897,61 @@ of UCSC-hosted public databases such as TCGA, ICGC, TARGET, GTEx, CCLE, and
 others.  Databases are normalized so they can be combined, linked, filtered,
 explored and downloaded.")
     (license license:gpl3)))
+
+(define-public r-ucscxenashiny
+  (package
+    (name "r-ucscxenashiny")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UCSCXenaShiny" version))
+       (sha256
+        (base32 "080a3p3cb818hns7f72c411bh13clfn3b6xl7wlx41z69swphb5m"))))
+    (properties `((upstream-name . "UCSCXenaShiny")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-ucscxenatools
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-psych
+                             r-ppcor
+                             r-magrittr
+                             r-httr
+                             r-ggpubr
+                             r-ggplot2
+                             r-forcats
+                             r-ezcox
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://github.com/openbiox/UCSCXenaShiny")
+    (synopsis "Interactive Analysis of UCSC Xena Data")
+    (description
+     "This package provides functions and a Shiny application for downloading,
+analyzing and visualizing datasets from UCSC Xena (<http://xena.ucsc.edu/>),
+which is a collection of UCSC-hosted public databases such as TCGA, ICGC,
+TARGET, GTEx, CCLE, and others.")
+    (license license:gpl3+)))
 
 (define-public r-ucr-columnnames
   (package

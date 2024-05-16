@@ -5212,13 +5212,13 @@ behind it are described in Reiter et al. (2017) <doi:10.18420/in2017_119>.")
 (define-public r-drake
   (package
     (name "r-drake")
-    (version "7.13.9")
+    (version "7.13.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drake" version))
        (sha256
-        (base32 "1yi4d09s51lf0j1xb9c8799zx7bn844rl945n0qdd7rva514yspx"))))
+        (base32 "1nd8vqlc2hzxlh8vlqjvgls3gc2ya8vmx7nyci5g1nib1l07gxrq"))))
     (properties `((upstream-name . "drake")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -14077,13 +14077,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0g68j8h2jkzbyqcxn7xbbcv6m2rp5xkiq2z1zv5rqmlassv1fpz9"))))
+        (base32 "0kysgl97limvb4yg6sl64sd3rapjkldcxblmikp3h4jyny1wc1c1"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx

@@ -16268,6 +16268,29 @@ frequently-used database connections in a persistent and flexible way, while
 minimizing requirements on the runtime environment.")
     (license license:artistic2.0)))
 
+(define-public r-srcpkgs
+  (package
+    (name "r-srcpkgs")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "srcpkgs" version))
+       (sha256
+        (base32 "1j7yzm6hl98jy9jx203zkr65d2zivx3k6zhnk3fnpvvpki1ma61s"))))
+    (properties `((upstream-name . "srcpkgs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pkgload r-devtools r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kforner/srcpkgs")
+    (synopsis "R Source Packages Manager")
+    (description
+     "Manage a collection/library of R source packages.  Discover, document, load,
+test source packages.  Enable to use those packages as if they were actually
+installed.  Quickly reload only what is needed on source code change.  Run tests
+and checks in parallel.")
+    (license license:gpl3+)))
+
 (define-public r-sra
   (package
     (name "r-sra")
@@ -25204,13 +25227,13 @@ computational experiments testing the performance of such methods.")
 (define-public r-spades-tools
   (package
     (name "r-spades-tools")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.tools" version))
        (sha256
-        (base32 "12331n4lydjywfikp0hg0ihz7571lwc241hzi8s3i0zi4mdl5nj4"))))
+        (base32 "1kxjwxjr8ncjygj94wpp8z2q58hrb0fyhnz3ajp1jlgpdz3jripi"))))
     (properties `((upstream-name . "SpaDES.tools")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -34962,13 +34985,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "0917x93dy3c83b0kfbsgx7qfilwik0s2fgmjkc6xmj4d7zfbsbyf"))))
+        (base32 "1xdqk5jikhvxxd78frfj3s3m7aigkhkavzryifhzv47l22rmpkcb"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -46236,13 +46259,13 @@ symmetrical (or canonical) Partial Least Squares (see Bry (1996)).")
 (define-public r-seqgendiff
   (package
     (name "r-seqgendiff")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seqgendiff" version))
        (sha256
-        (base32 "0vyrs4i3q3lyqx0b1as7h2rm3s5kbapq6jxzag8dwhf0ch7yz8gv"))))
+        (base32 "0gc07dpmixf5cw8i2i42jyfjayzqy4c0w2ggwiyc7vrpxsrkxc02"))))
     (properties `((upstream-name . "seqgendiff")))
     (build-system r-build-system)
     (propagated-inputs (list r-sva
@@ -57502,13 +57525,13 @@ of Wada's color combinations: 20 duos, 20 trios, and 20 quads.")
 (define-public r-sanvi
   (package
     (name "r-sanvi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SANvi" version))
        (sha256
-        (base32 "1rcg5j8gvcz1wi2qzhsblb7ml8l6hiimyzpk2bkl6hicrgjrzi66"))))
+        (base32 "17sb8gq4nnjn0zqgdi7xs749i8f46gswkmj0skh89hlq5m3kvrv4"))))
     (properties `((upstream-name . "SANvi")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rcpparmadillo r-rcpp r-rcolorbrewer
