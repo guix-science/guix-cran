@@ -6271,13 +6271,13 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "0rfz3mipacp76dhn63616npn89jhhagmzx60r8l30kaarjm37y83"))))
+        (base32 "1zbfxc34613r460mhln3qn4fsx999vi4qamf5c8pkjdwyd8nvvbz"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6287,6 +6287,7 @@ wrappers to functions in the gstat and sp packages.")
                              r-shiny
                              r-purrr
                              r-lme4
+                             r-googlesheets4
                              r-ggplot2
                              r-factominer
                              r-emmeans

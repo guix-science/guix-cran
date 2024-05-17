@@ -24949,13 +24949,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "1hic0zj0qk669hv37mphyvb9l6q3j0f38vwwrk18yk0rp3csxnqy"))))
+        (base32 "0bxfa001j9vib0sj9d32qyzrqjvdzm5zxcpg1mm3jw31546jl46p"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

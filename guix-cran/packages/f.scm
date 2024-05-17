@@ -3376,18 +3376,23 @@ This work was funded by Poland-Singapore bilateral cooperation project no
 (define-public r-fscache
   (package
     (name "r-fscache")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fscache" version))
        (sha256
-        (base32 "0fxrz0mhhb38imk8hvngyzmvyagx1yhd4jfkrplwcrpyfbxbbdq5"))))
+        (base32 "0r2l9wj7hm4lyyqn5pwmnbx5kicblhw6nyc7gkyrc7ig0hkwbdn9"))))
     (properties `((upstream-name . "fscache")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-r6 r-r-utils r-lgr r-chk))
+    (propagated-inputs (list r-stringi
+                             r-r6
+                             r-r-utils
+                             r-lifecycle
+                             r-lgr
+                             r-chk))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/dbapis/r-fscache")
+    (home-page "https://gitlab.com/cnrgh/databases/r-fscache")
     (synopsis "File System Cache")
     (description
      "Manages a file system cache.  Regular files can be moved or copied to the cache
@@ -9618,22 +9623,22 @@ compositional features.  See Fei and others (2023)
 (define-public r-florabr
   (package
     (name "r-florabr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "florabr" version))
        (sha256
-        (base32 "1sfyprf2rz5z0vfa7mhw70w4chg9jf4rwgi8hxywb0srbdf738c5"))))
+        (base32 "0rfzvrsv4aai3ynwxvnqiki58gbjp4lwrr36kfnkn59bpicvxmzg"))))
     (properties `((upstream-name . "florabr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-terra r-httr r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://wevertonbio.github.io/florabr/")
-    (synopsis "Explore Brazilian Flora 2020 Database")
+    (synopsis "Explore Flora e Funga do Brasil Database")
     (description
      "This package provides a collection of functions designed to retrieve, filter and
-spatialize data from the Brazilian Flora 2020 dataset.  For more information
+spatialize data from the Flora e Funga do Brasil dataset.  For more information
 about the dataset, please visit <https://floradobrasil.jbrj.gov.br/consulta/>.")
     (license license:gpl3+)))
 
@@ -13937,13 +13942,13 @@ work with convenient functions at a package level.")
 (define-public r-fiestautils
   (package
     (name "r-fiestautils")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTAutils" version))
        (sha256
-        (base32 "0p78fkc1fw12nv0y7lzdp0df39rcpja7xwqkbzi6i38f3pmw22f1"))))
+        (base32 "11ny9cpgbw3lz98hxxsvsjfjxq0y1h8wlv53afwaxwrayckiv981"))))
     (properties `((upstream-name . "FIESTAutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -13952,7 +13957,7 @@ work with convenient functions at a package level.")
                              r-sf
                              r-sae
                              r-rsqlite
-                             r-rpostgresql
+                             r-rpostgres
                              r-rcpp
                              r-rcolorbrewer
                              r-nlme

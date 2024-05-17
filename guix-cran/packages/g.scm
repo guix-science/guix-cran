@@ -13439,18 +13439,18 @@ documents, and other HTML based resources.  This is most commonly used for
 (define-public r-gitlabr
   (package
     (name "r-gitlabr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitlabr" version))
        (sha256
-        (base32 "0h3md21ir0nw9n17y6sg8y7l4z2lk5f5bvz4q6v3cs7jn734imwb"))))
+        (base32 "1mlzg17pvbxgq8n09lajsb4qyfyl4ksyn7c2v5vlda94brvgspkd"))))
     (properties `((upstream-name . "gitlabr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
-                             r-shiny
                              r-purrr
                              r-magrittr
                              r-httr
@@ -13458,8 +13458,8 @@ documents, and other HTML based resources.  This is most commonly used for
                              r-base64enc
                              r-arpr))
     (native-inputs (list r-knitr))
-    (home-page "https://statnmap.github.io/gitlabr/")
-    (synopsis "Access to the 'Gitlab' API")
+    (home-page "https://thinkr-open.github.io/gitlabr/")
+    (synopsis "Access to the 'GitLab' API")
     (description
      "This package provides R functions to access the API of the project and
 repository management web application @code{GitLab}'.  For many common tasks
@@ -14169,6 +14169,33 @@ and experienced data analysts.  Whether exploring datasets or producing quick
 visual summaries, this package provides a streamlined solution for fundamental
 graphics in R.")
     (license license:gpl3)))
+
+(define-public r-gimmegvar
+  (package
+    (name "r-gimmegvar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GIMMEgVAR" version))
+       (sha256
+        (base32 "1r5j5s8pmjrndr4qsi4ivrqfyj9rlmw72ya850ig387z9gl84n47"))))
+    (properties `((upstream-name . "GIMMEgVAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qgraph r-png r-here r-graphicalvar))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GIMMEgVAR")
+    (synopsis "Group Iterative Multiple Model Estimation with 'graphicalVAR'")
+    (description
+     "Data-driven approach for arriving at person-specific time series models from
+within a Graphical Vector Autoregression (VAR) framework.  The method first
+identifies which relations replicate across the majority of individuals to
+detect signal from noise.  These group-level relations are then used as a
+foundation for starting the search for person-specific (or individual-level)
+relations.  All estimates are obtained uniquely for each individual in the final
+models.  The method for the @code{graphicalVAR} approach is found in Epskamp,
+Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
+    (license license:gpl2)))
 
 (define-public r-gimme
   (package
@@ -21513,13 +21540,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0kxyfgipcvmd8qcm5fwxkc8frq2v3rps177ax7zim49vbg9yc24p"))))
+        (base32 "1jz2bq8pwywrridjk8gg8755bk7y8mbd8l04b4py99bi8yv9rqsn"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -21529,21 +21556,20 @@ classes and functions.")
                              r-sn
                              r-shape
                              r-scatterplot3d
+                             r-progressr
                              r-pracma
                              r-plotrix
                              r-pbivnorm
-                             r-optimparallel
-                             r-numderiv
                              r-nabor
                              r-mapproj
                              r-lamw
                              r-hypergeo
-                             r-gpvecchia
-                             r-gpgp
+                             r-future
+                             r-foreach
                              r-fields
                              r-fastgp
                              r-dotcall64
-                             r-dfoptim
+                             r-dofuture
                              r-data-table
                              r-codetools))
     (native-inputs (list gfortran))

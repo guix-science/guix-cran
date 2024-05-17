@@ -3845,13 +3845,13 @@ thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
 (define-public r-evinf
   (package
     (name "r-evinf")
-    (version "0.8.8")
+    (version "0.8.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evinf" version))
        (sha256
-        (base32 "1v1g0lkabplyyv5h9cj7vnnncbgjwhx5gdy865zba27sjb8b8lrg"))))
+        (base32 "01af9fjhw19sz68b9mvdkqr7p88w68bk4lawavg4ax16mvh1riq7"))))
     (properties `((upstream-name . "evinf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5965,6 +5965,32 @@ Horvitz-Thompson estimation, and regression improving precision of experimental
 estimates by interacting treatment with centered pre-treatment covariates
 introduced by Lin (2013) <doi:10.1214/12-AOAS583>.")
     (license license:expat)))
+
+(define-public r-estimators
+  (package
+    (name "r-estimators")
+    (version "0.8.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "estimators" version))
+       (sha256
+        (base32 "16zpgscxn3f3alfi44yinacrf9222wbdg7ac1bs91bax7zn3k0zd"))))
+    (properties `((upstream-name . "estimators")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress r-matrix r-ggplot2 r-ggh4x
+                             r-extradistr))
+    (native-inputs (list r-knitr))
+    (home-page "https://thechibo.github.io/estimators/")
+    (synopsis "Parameter Estimation")
+    (description
+     "This package implements estimation methods for parameters of common distribution
+families.  The common d, p, q, r function family for each distribution is
+enriched with the ll, e, and v counterparts, computing the log-likelihood,
+performing estimation, and calculating the asymptotic variance - covariance
+matrix, respectively.  Parameter estimation is performed analytically whenever
+possible.")
+    (license license:gpl3+)))
 
 (define-public r-estimationtools
   (package
@@ -9200,13 +9226,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "19rzzf1c9yd2aaqfr08sv7l9b77vx4fzjvhh7fhcylza0x680vrm"))))
+        (base32 "0nqa7dvp04ysqgdd5cjzfcd5vshk7jca251ljn8j55va186frmn5"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -11420,22 +11446,24 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.1.2")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmSdmX" version))
        (sha256
-        (base32 "15pdsva011dpa72ms7c6fdhadzcm603wzglfy9hg63krirvmfwkh"))))
+        (base32 "0ps1i4gsy0wh90cv4snjhxy1m3356an05y809r7y8q4d9wswm2ll"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-statisfactory
+                             r-sp
                              r-shiny
                              r-sf
                              r-scales
                              r-rjava
                              r-ranger
+                             r-predicts
                              r-omnibus
                              r-mumin
                              r-mgcv
@@ -11445,7 +11473,6 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
                              r-foreach
                              r-dt
                              r-doparallel
-                             r-dismo
                              r-data-table
                              r-boot))
     (home-page "https://github.com/adamlilith/enmSdmX")

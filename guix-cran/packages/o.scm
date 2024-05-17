@@ -3823,6 +3823,32 @@ package has been developed using concept of Wang et al. (2022)
 <doi:10.1007/978-3-030-18195-6_21 >.")
     (license license:gpl3)))
 
+(define-public r-optiscale
+  (package
+    (name "r-optiscale")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optiscale" version))
+       (sha256
+        (base32 "06qx6fha6vz46bchqswkdv3blxkpv2zg21kiwnb0rzz66srfkljn"))))
+    (properties `((upstream-name . "optiscale")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice))
+    (home-page "https://cran.r-project.org/package=optiscale")
+    (synopsis "Optimal Scaling")
+    (description
+     "Optimal scaling of a data vector, relative to a set of targets, is obtained
+through a least-squares transformation subject to appropriate measurement
+constraints.  The targets are usually predicted values from a statistical model.
+ If the data are nominal level, then the transformation must be
+identity-preserving.  If the data are ordinal level, then the transformation
+must be monotonic.  If the data are discrete, then tied data values must remain
+tied in the optimal transformation.  If the data are continuous, then tied data
+values can be untied in the optimal transformation.")
+    (license license:gpl2)))
+
 (define-public r-optionstrat
   (package
     (name "r-optionstrat")
@@ -7962,13 +7988,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "1fmx9gzz7h6x88h8qzifvqxhhnhibz3wy4q0zrddz8c7sk2lpg5l"))))
+        (base32 "15vqym797spa9fcxq25is2fjc5q6id4h731vh720wjg857aja4h0"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8044,13 +8070,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.12")
+    (version "1.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "1gg4kg4733cs220lrn67hgj3k052w7223cammcxsgd2i1fkv2w0s"))))
+        (base32 "0a528lk2snhav6yw6z1sx6il5sazjqwfs2vb2c6smy9frs3vlgq7"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")

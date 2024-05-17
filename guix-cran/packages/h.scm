@@ -12470,13 +12470,13 @@ examples, documentations, and details on the method are available at
 (define-public r-hagis
   (package
     (name "r-hagis")
-    (version "3.1.11")
+    (version "3.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hagis" version))
        (sha256
-        (base32 "1s4n08zy7agqs8a1jzzyyba93j1nnd0d3bz63j5xd3yvw36brzjf"))))
+        (base32 "18mcd8vm2dy50wfwfxbih841z1l8yml6fvb6y5qqq7a04h09k590"))))
     (properties `((upstream-name . "hagis")))
     (build-system r-build-system)
     (propagated-inputs (list r-pander r-ggplot2 r-data-table))

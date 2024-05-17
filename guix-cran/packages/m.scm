@@ -16876,20 +16876,20 @@ models ('GSE36594').  Deena Gendoo et al. (2015)
 (define-public r-mm
   (package
     (name "r-mm")
-    (version "1.6-7")
+    (version "1.6-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MM" version))
        (sha256
-        (base32 "137v9728h5kxhvyrpvfawv25l9jzy7qi74pr4k91v286l0x7ksi6"))))
+        (base32 "04fr8vxjc7kgpxrlk7q5ibad00ff8fafl14l36snhbszv0zv4n8k"))))
     (properties `((upstream-name . "MM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-partitions
+    (propagated-inputs (list r-quadform
+                             r-partitions
                              r-oarray
                              r-mathjaxr
                              r-magic
-                             r-emulator
                              r-abind))
     (home-page "https://github.com/RobinHankin/MM")
     (synopsis "The Multiplicative Multinomial Distribution")
@@ -18413,13 +18413,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.11.1")
+    (version "2.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0y3xii7jw3kc6fw3qv0jig8hgjcczsm05y4gwd7c7r8y9dvna741"))))
+        (base32 "035b4fk4fias338r9wq531ajzf62skpkcvsmq46xi7y9sqrdm35l"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -23966,13 +23966,13 @@ the ones in Neuman (1974) <doi:10.1063/1.1680931>, Van Gelderen et al. (1994)
 (define-public r-midfieldr
   (package
     (name "r-midfieldr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "midfieldr" version))
        (sha256
-        (base32 "1ckvwmlnpcvxavikhwjw029xh4w9153gkfwabilxzw58l8nwlry5"))))
+        (base32 "18zh3nm8k13hzaa0rih4f76q7zj16qww2aaamifhhfimgpn9iib5"))))
     (properties `((upstream-name . "midfieldr")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-data-table r-checkmate))
@@ -23985,10 +23985,11 @@ undergraduate student-level records (registrar's data) in R'.  Tools include
 filters for program codes, data sufficiency, and timely completion.  Methods
 include gathering blocs of records, computing quantitative metrics such as
 graduation rate, and creating charts to visualize comparisons.  midfieldr
-interacts with practice data provided in midfielddata', a data package with an
-installed size of about 24 Mb available via a drat repository.  Instructions at
-<https://midfieldr.github.io/midfielddata/>.  This work is supported by the US
-National Science Foundation through grant numbers 1545667 and 2142087.")
+interacts with practice data provided in midfielddata', an R data package
+available at <https://midfieldr.github.io/midfielddata/>.  midfieldr also
+interacts with the full MIDFIELD database for users who have access.  This work
+is supported by the US National Science Foundation through grant numbers 1545667
+and 2142087.")
     (license license:expat)))
 
 (define-public r-midastouch
@@ -28442,13 +28443,13 @@ et al. (2018) <DOI:10.1097/XEB.0000000000000141>.")
 (define-public r-metasem
   (package
     (name "r-metasem")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaSEM" version))
        (sha256
-        (base32 "0m3nc5kazi6pa7aih56g2022kklf56yk4f7lv0hlmjszhc6rhpww"))))
+        (base32 "1gkgcczdm14cz2z4ys9qxy068g1ma6sik5ycas3z6m5rgwbd2amy"))))
     (properties `((upstream-name . "metaSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openmx
@@ -40099,13 +40100,13 @@ build-in functions provided in mapping or with other packages already available.
 (define-public r-mapmixture
   (package
     (name "r-mapmixture")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapmixture" version))
        (sha256
-        (base32 "0immisnfk0as4w0lzndy4znb3bvnz1qd3cnn0qvnyp2gybj0kczg"))))
+        (base32 "0ndr0ds8fjlrx54042ch9ks07b6983fnqj84zih57aa4xk8y8sng"))))
     (properties `((upstream-name . "mapmixture")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -41190,13 +41191,13 @@ MÃ¼ller (2021) <doi:10.1111/biom.13385>.")
 (define-public r-manifestor
   (package
     (name "r-manifestor")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manifestoR" version))
        (sha256
-        (base32 "0b4x4ampzmxcmlcyvl683rwynzwjg1cyx5zpamgy8027fh376zcp"))))
+        (base32 "1ghzhsd7apib775h2nmv33mvwg5yqwp5w9bn7alppgfa16yznf31"))))
     (properties `((upstream-name . "manifestoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

@@ -3350,23 +3350,24 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0nz76d1rj3j2ig8gvgy7pama6y88angfriij13ahrr8db9a58sf8"))))
+        (base32 "0z5kck3g3qfkabsf81g7g270pacjhhvss6v4pqysm4r4z29s7ipc"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-reshape2
                              r-purrr
+                             r-multcompview
+                             r-multcomp
                              r-lmertest
                              r-ggplot2
                              r-emmeans
-                             r-dplyr
-                             r-agricolae))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mirzaghaderi/rtpcr")
     (synopsis "qPCR Data Analysis")
@@ -10510,13 +10511,13 @@ most recent monthly PDO index values together with related climate indices.")
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "0y5mym0p32sh691c18pg8zkbmm65m1dbqqcr8hdi9ix6jzc4r4rl"))))
+        (base32 "0x266kdz5dkw62givlmsasbmxkgx1df5d7hldbslg89a8ajpxaj0"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -29871,13 +29872,13 @@ Collier, W., & Ruis, A.R. (2016).")
 (define-public r-remstimate
   (package
     (name "r-remstimate")
-    (version "2.3.9")
+    (version "2.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remstimate" version))
        (sha256
-        (base32 "0xg2fazmj9iy3m0yybkiqr75y60426l9q3a0xfcffgsxbz56y22b"))))
+        (base32 "0sa1fxpy9cpfxkm9pkb7kq6qbkv9bvq900j2182yrsx4g02sxa41"))))
     (properties `((upstream-name . "remstimate")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -29887,7 +29888,7 @@ Collier, W., & Ruis, A.R. (2016).")
                              r-rcpp
                              r-mvnfast))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/TilburgNetworkGroup/remstimate")
+    (home-page "https://tilburgnetworkgroup.github.io/remstimate/")
     (synopsis
      "Optimization Frameworks for Tie-Oriented and Actor-Oriented Relational Event Models")
     (description
@@ -30207,13 +30208,13 @@ things.")
 (define-public r-remify
   (package
     (name "r-remify")
-    (version "3.2.5")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "remify" version))
        (sha256
-        (base32 "0l0haz3g9x6ycsiiz760dmcq5kclxyyhba69qvp7s9jhcacf6y12"))))
+        (base32 "062bgggz4bkzm3ijpghsrlf9q813zmzisxdwgzlizpqhzppwvzig"))))
     (properties `((upstream-name . "remify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-igraph))

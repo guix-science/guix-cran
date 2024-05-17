@@ -11875,6 +11875,54 @@ selecting cutoffs can be used, one based on the stability of model coefficients
 under perturbation, and the other on higher criticism.")
     (license license:gpl2+)))
 
+(define-public r-biom2
+  (package
+    (name "r-biom2")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioM2" version))
+       (sha256
+        (base32 "0przs4wi8idnscpqgr31i70scs672w9g5alqgh2r3lyrszpzy35z"))))
+    (properties `((upstream-name . "BioM2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud2
+                             r-wgcna
+                             r-webshot
+                             r-viridis
+                             r-uwot
+                             r-rocr
+                             r-mlr3verse
+                             r-mlr3
+                             r-jiebar
+                             r-igraph
+                             r-htmlwidgets
+                             r-ggthemes
+                             r-ggstatsplot
+                             r-ggsci
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggnetwork
+                             r-ggforce
+                             r-cmplot
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=BioM2")
+    (synopsis "Biologically Explainable Machine Learning Framework")
+    (description
+     "Biologically Explainable Machine Learning Framework for Phenotype Prediction
+using omics data described in Chen and Schwarz (2017)
+<doi:10.48550/@code{arXiv.1712.00336>.Identifying} reproducible and
+interpretable biological patterns from high-dimensional omics data is a critical
+factor in understanding the risk mechanism of complex disease.  As such,
+explainable machine learning can offer biological insight in addition to
+personalized risk scoring.In this process, a feature space of biological
+pathways will be generated, and the feature space can also be subsequently
+analyzed using WGCNA (Described in Horvath and Zhang (2005)
+<doi:10.2202/1544-6115.1128> and Langfelder and Horvath (2008)
+<doi:10.1186/1471-2105-9-559> ) methods.")
+    (license license:expat)))
+
 (define-public r-biologicalactivityindices
   (package
     (name "r-biologicalactivityindices")
@@ -15249,18 +15297,18 @@ larger column patterns is included as well.")
 (define-public r-bib2df
   (package
     (name "r-bib2df")
-    (version "1.1.1")
+    (version "1.1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bib2df" version))
        (sha256
-        (base32 "0d57883df774qqwpssmly3f1gci32yc5sgwc3x8f2rjih23s1nf6"))))
+        (base32 "1w7x6jj8x3rv1ms8278jwszj8d4g5b59drs7gdfsrbp1x74npcr1"))))
     (properties `((upstream-name . "bib2df")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-humaniformat r-httr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/bib2df")
+    (home-page "https://docs.ropensci.org/bib2df/")
     (synopsis "Parse a BibTeX File to a Data Frame")
     (description
      "Parse a @code{BibTeX} file to a data.frame to make it accessible for further

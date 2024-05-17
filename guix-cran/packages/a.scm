@@ -13847,13 +13847,13 @@ deterministically calculated.")
 (define-public r-allcontributors
   (package
     (name "r-allcontributors")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "allcontributors" version))
        (sha256
-        (base32 "0s8az7wz8rx74i6rlinl8l0l90hzql10hxqlxm281irsczhjm7ga"))))
+        (base32 "043li7wdm3m66k69ijjmak53pk8f6q3a89snncv36g82zwbpfvpp"))))
     (properties `((upstream-name . "allcontributors")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr

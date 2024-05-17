@@ -1708,13 +1708,13 @@ al.(2019) <doi:10.1186/s12874-019-0666-3>.")
 (define-public r-quantbondcurves
   (package
     (name "r-quantbondcurves")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuantBondCurves" version))
        (sha256
-        (base32 "07rq5nhwn286aqk54pz3x2dq9d2kgszm0biyshjz8hvps9yismj2"))))
+        (base32 "1w6zlf8wvfh4568aa0l9l3p502hjmj8lhnkagv6dqg332jz0ikhr"))))
     (properties `((upstream-name . "QuantBondCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-quantdates r-lubridate))

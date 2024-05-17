@@ -783,13 +783,13 @@ stable, and symmetric power tempered stable distributions.")
 (define-public r-symsem
   (package
     (name "r-symsem")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symSEM" version))
        (sha256
-        (base32 "05km458ffmy9sc93zjvfg0c7qcwb62fh3scllw67rv5919lq5hh9"))))
+        (base32 "0zk9a1l1pcyjg43j8jafbms072kzz6qqz514a0kbnyg7ja0bfrmj"))))
     (properties `((upstream-name . "symSEM")))
     (build-system r-build-system)
     (inputs (list python))
@@ -10597,13 +10597,13 @@ return values are checked in order to make them type stable.")
 (define-public r-stevedata
   (package
     (name "r-stevedata")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevedata" version))
        (sha256
-        (base32 "01ahdnlsykb27phv73zpqvg22ysgy3n7qfjkf426jxnzmmhfsdaz"))))
+        (base32 "0ggfgf3g240r69g4wnhyxvzp46by9b79hzhhpbs1rmh2pzd6zj96"))))
     (properties `((upstream-name . "stevedata")))
     (build-system r-build-system)
     (home-page "http://svmiller.com/stevedata/")
@@ -15751,24 +15751,23 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.5.0")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1lsba4xilk9jdhbqp386kyg0y7p7vn97zb1v077aikkzs94qbyph"))))
+        (base32 "1rkmnlgs3car1allc7cr8sq2skgq3bpa274a797rmq8zjkqky16q"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
-    (home-page "https://github.com/statisticsnorway/SSBtools")
+    (home-page "https://github.com/statisticsnorway/ssb-ssbtools")
     (synopsis "Statistics Norway's Miscellaneous Tools")
     (description
      "This package provides functions used by other packages from Statistics Norway
-are gathered.  General data manipulation functions, and functions for
-hierarchical computations are included (Langsrud, 2020)
-<doi:10.13140/RG.2.2.27313.61283>.  The hierarchy specification functions are
-useful within statistical disclosure control.")
+are gathered.  General data manipulation functions, algorithms for statistical
+disclosure control and functions for hierarchical computations by sparse model
+matrices are included (Langsrud, 2023) <doi:10.32614/RJ-2023-088>.")
     (license license:expat)))
 
 (define-public r-ssanv
@@ -18834,6 +18833,31 @@ cross-validation folds for time series data can be created.  See e.g. Hastie et
 al. (2001) <doi:10.1007/978-0-387-84858-7> for the basic background on data
 partitioning and cross-validation.")
     (license license:gpl2+)))
+
+(define-public r-splitsplitplot
+  (package
+    (name "r-splitsplitplot")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SplitSplitPlot" version))
+       (sha256
+        (base32 "0k10is14z27gndqmg0sr9mgvpymayi9z2vv5fwqmvfvxg8y7j4hl"))))
+    (properties `((upstream-name . "SplitSplitPlot")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SplitSplitPlot")
+    (synopsis
+     "Analysis of Split-Split-Plot Experiments (Analise De Experimentos Em Parcela Subsubdividida)")
+    (description
+     "This package performs analysis of split-split plot experiments in both
+completely randomized and randomized complete block designs.  With the results,
+you can obtain ANOVA, mean tests, and regression analysis (Este pacote faz a
+analise de experimentos em parcela subsubdivididas no delineamento inteiramente
+casualizado e delineamento em blocos casualizados.  Com resultados e
+@code{possÃ­vel} obter a ANOVA, testes de medias e @code{anÃ¡lise} de regressao)
+<https://www.expstat.com/pacotes-do-r>.")
+    (license license:gpl3)))
 
 (define-public r-splitsoftening
   (package
@@ -27692,13 +27716,13 @@ Gottlieb (2018)
 (define-public r-socialranking
   (package
     (name "r-socialranking")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "socialranking" version))
        (sha256
-        (base32 "0mhm1981nixa6vlkjnjsc292pkypjx666sz8p5sxv75zpajxjzfw"))))
+        (base32 "0py0p2hbdfaf3phs94i97a955l6r7kxhc3ip2fg6r7glvgjrcrzn"))))
     (properties `((upstream-name . "socialranking")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-relations r-rdpack))
@@ -31196,6 +31220,33 @@ methodological details, please refer to Hart, K.R., Fei, T. and Hanfelt, J.J.
 likelihood.  Biometrics <doi:10.1111/biom.13366>.")
     (license license:gpl2+)))
 
+(define-public r-slsedesign
+  (package
+    (name "r-slsedesign")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SLSEdesign" version))
+       (sha256
+        (base32 "14jwp0cp8zq5xsc80bdyqfj1l7prb47f0iali9jmwvaxpcqq9s6k"))))
+    (properties `((upstream-name . "SLSEdesign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-pracma r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SLSEdesign")
+    (synopsis
+     "Optimal Regression Design under the Second-Order Least Squares Estimator")
+    (description
+     "With given inputs that includes number of points, design space, measure
+skewness, models and parameter value, this package calculates the objective
+value, optimal designs and plot the equivalence theory under A- and D-optimal
+criteria under the second-order Least squares estimator.  This package is based
+on the paper \"Properties of optimal regression designs under the second-order
+least squares estimator\" by Chi-Kuang Yeh and Julie Zhou (2021)
+<doi:10.1007/s00362-018-01076-6>.")
+    (license license:gpl3)))
+
 (define-public r-slr
   (package
     (name "r-slr")
@@ -32571,6 +32622,42 @@ gold standard, intra-coder agreement, and/or inter-coder agreement.  Frequentist
 inference is supported for all levels of measurement.  Bayesian inference is
 supported for continuous scores only.")
     (license license:gpl2+)))
+
+(define-public r-skiptrack
+  (package
+    (name "r-skiptrack")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "skipTrack" version))
+       (sha256
+        (base32 "0s5w2jixm52pbpi2cmgf9s1d6prs49dz4kcrr135d0nbdx34ma2w"))))
+    (properties `((upstream-name . "skipTrack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-optimg
+                             r-mvtnorm
+                             r-lifecycle
+                             r-laplacesdemon
+                             r-gridextra
+                             r-glmnet
+                             r-ggtext
+                             r-ggplot2
+                             r-genmcmcdiag
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/LukeDuttweiler/skipTrack")
+    (synopsis
+     "Bayesian Hierarchical Model that Controls for Non-Adherence in Mobile Menstrual Cycle Tracking")
+    (description
+     "This package implements a Bayesian hierarchical model designed to identify skips
+in mobile menstrual cycle self-tracking on mobile apps.  Future developments
+will allow for the inclusion of covariates affecting cycle mean and regularity,
+as well as extra information regarding tracking non-adherence.  Main methods to
+be outlined in a forthcoming paper, with alternative models from Li et al.
+(2022) <doi:10.1093/jamia/ocab182>.")
+    (license license:expat)))
 
 (define-public r-skimr
   (package
@@ -44240,6 +44327,33 @@ provide power and type I error calculations, create graphs (particularly suited
 for large-scale inference usage), and a function to estimate false discovery
 rates based on second-generation p-value inference.")
     (license license:expat)))
+
+(define-public r-sgpr
+  (package
+    (name "r-sgpr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SGPR" version))
+       (sha256
+        (base32 "1bywllnf7gsk3gi3y77qshjd20735vf54g164qsxm3x1n7zjr0p3"))))
+    (properties `((upstream-name . "SGPR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=SGPR")
+    (synopsis
+     "Sparse Group Penalized Regression for Bi-Level Variable Selection")
+    (description
+     "Fits the regularization path of regression models (linear and logistic) with
+additively combined penalty terms.  All possible combinations with Least
+Absolute Shrinkage and Selection Operator (LASSO), Smoothly Clipped Absolute
+Deviation (SCAD), Minimax Concave Penalty (MCP) and Exponential Penalty (EP) are
+supported.  This includes Sparse Group LASSO (SGL), Sparse Group SCAD (SGS),
+Sparse Group MCP (SGM) and Sparse Group EP (SGE).  For more information, see
+Buch, G., Schulz, A., Schmidtmann, I., Strauch, K., & Wild, P. S. (2024)
+<doi:10.1002/bimj.202200334>.")
+    (license license:gpl3+)))
 
 (define-public r-sgpls
   (package

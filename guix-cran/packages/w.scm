@@ -2877,13 +2877,13 @@ are captured at specific time-points in the study.")
 (define-public r-wingen
   (package
     (name "r-wingen")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wingen" version))
        (sha256
-        (base32 "1jd2zk3qrhj0k1n63qv60212ap1b5rk37h39i29b0vfx5sl0flqq"))))
+        (base32 "0a4lhsvwd1jh48nb2b6nxkybp4j5pblf94j8pmx6v2yq11k2ddki"))))
     (properties `((upstream-name . "wingen")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -2905,7 +2905,7 @@ are captured at specific time-points in the study.")
                              r-crayon
                              r-automap))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=wingen")
+    (home-page "https://github.com/AnushaPB/wingen")
     (synopsis "Continuous Mapping of Genetic Diversity")
     (description
      "Generate continuous maps of genetic diversity using moving windows with options

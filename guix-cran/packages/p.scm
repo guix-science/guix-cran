@@ -6497,6 +6497,34 @@ such as reproj', and that the older PROJ.4 and version 5 pathways be provided by
 the proj4 package.")
     (license license:gpl3)))
 
+(define-public r-progmodule
+  (package
+    (name "r-progmodule")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProgModule" version))
+       (sha256
+        (base32 "16im1ymprfak06vv0m8z0wccvszknzgg5br14q1048g8975rdj1h"))))
+    (properties `((upstream-name . "ProgModule")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-pathwaytmb
+                             r-patchwork
+                             r-maftools
+                             r-infotheo
+                             r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ProgModule")
+    (synopsis "Identification of Prognosis-Related Mutually Exclusive Modules")
+    (description
+     "This package provides a novel tool to identify candidate driver modules for
+predicting the prognosis of patients by integrating exclusive coverage of
+mutations with clinical characteristics in cancer.")
+    (license license:gpl2+)))
+
 (define-public r-progenyclust
   (package
     (name "r-progenyclust")
@@ -27200,6 +27228,42 @@ Barden R. and Kasprzyk-Hordern B. (2022)
 <https://www.ssrn.com/abstract=4306129>.")
     (license license:gpl3+)))
 
+(define-public r-periscope2
+  (package
+    (name "r-periscope2")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "periscope2" version))
+       (sha256
+        (base32 "00zjap5l8aqyn6ykf3vmhsgiahkkgzkakjzc7z0wlm5ksv0cskdm"))))
+    (properties `((upstream-name . "periscope2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-writexl
+                             r-shinywidgets
+                             r-shinyfeedback
+                             r-shiny
+                             r-lubridate
+                             r-lifecycle
+                             r-fresh
+                             r-dt
+                             r-bs4dash))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Aggregate-Genius/periscope2")
+    (synopsis
+     "Enterprise Streamlined 'shiny' Application Framework Using 'bs4Dash'")
+    (description
+     "This package provides a framework for building enterprise, scalable and
+UI-standardized shiny applications.  It brings enhanced features such as
+bootstrap v4 <https://getbootstrap.com/docs/4.0/getting-started/introduction/>,
+additional and enhanced shiny modules, customizable UI features, as well as an
+enhanced application file organization paradigm.  This update allows developers
+to harness the ability to build powerful applications and enriches the shiny
+developers experience when building and maintaining applications.")
+    (license license:gpl3)))
+
 (define-public r-periscope
   (package
     (name "r-periscope")
@@ -32148,13 +32212,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "0.8.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0h8xkfc8xy1i7gmcg4x2ml8cj0982g14c602a07ivlb0v72hi0qk"))))
+        (base32 "0141qd8xai1phm3w45gvhqbvh8a9nicc3qhiqszsglk458knykf0"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -32164,8 +32228,6 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-purrr
                              r-omopgenerics
                              r-magrittr
-                             r-lubridate
-                             r-lifecycle
                              r-dplyr
                              r-cli
                              r-checkmate

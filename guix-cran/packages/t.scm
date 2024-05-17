@@ -22287,13 +22287,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.2.95")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "0ywq3iq6p4gfrdrmhh4fxw4gkw2ff1h55zlad6c579yc138yq5an"))))
+        (base32 "1vjlxprla6did97p1rdcwppfamhq7vjrd8q6a2myd4fgxaa9wfxn"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -25796,13 +25796,13 @@ special handling for the format currently in use.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.0.1")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "0w26lp0if0lxkr8hrlw57jf5cwqji4q8yqaay6fasy08z4j9lvhf"))))
+        (base32 "03h4i899ciiwhwjwbkkm6x93r3469r1bmw6dfrrya5iykk434v0d"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))

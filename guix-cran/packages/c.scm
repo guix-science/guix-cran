@@ -24822,6 +24822,48 @@ coefficient modeling, and curves in functional data analysis.  Sottile G. and
 Adelfio G. (2019) <doi:10.1007/s00180-018-0817-8>.")
     (license license:gpl2)))
 
+(define-public r-clustcr2
+  (package
+    (name "r-clustcr2")
+    (version "1.7.3.01")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClusTCR2" version))
+       (sha256
+        (base32 "1l54x7b9pkkmrdhry41qikyhhnsr2s669jdqmviskjljk9wyyyqi"))))
+    (properties `((upstream-name . "ClusTCR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vlf
+                             r-stringr
+                             r-sna
+                             r-scales
+                             r-rcolorbrewer
+                             r-plyr
+                             r-network
+                             r-ggseqlogo
+                             r-ggplot2
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ClusTCR2")
+    (synopsis
+     "Identifying Similar T Cell Receptor Hyper-Variable Sequences with 'ClusTCR2'")
+    (description
+     "Enhancing T cell receptor (TCR) sequence analysis, @code{ClusTCR2}', based on
+@code{ClusTCR} python program, leverages Hamming distance to compare the
+complement-determining region three (CDR3) sequences for sequence similarity,
+variable gene (V gene) and length.  The second step employs the Markov Cluster
+Algorithm to identify clusters within an undirected graph, providing a summary
+of amino acid motifs and matrix for generating network plots.  Tailored for
+single-cell RNA-seq data with integrated TCR-seq information, @code{ClusTCR2} is
+integrated into the Single Cell TCR and Expression Grouped Ontologies (STEGO) R
+application or STEGO.R'.  See the two publications for more details.  Sebastiaan
+Valkiers, Max Van Houcke, Kris Laukens, Pieter Meysman (2021)
+<doi:10.1093/bioinformatics/btab446>, Kerry A. Mullan, My Ha, Sebastiaan
+Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
+<doi:10.1101/2023.09.27.559702>.")
+    (license license:gpl3+)))
+
 (define-public r-clustblock
   (package
     (name "r-clustblock")
@@ -27508,6 +27550,28 @@ trees in practice.")
 (<http://oompa.r-forge.r-project.org/>).  Class comparison includes tests for
 differential expression; see Simon's book for details on typical problem types.")
     (license license:asl2.0)))
+
+(define-public r-clarketest
+  (package
+    (name "r-clarketest")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clarkeTest" version))
+       (sha256
+        (base32 "0p2lhpdic6rlx6qrb0kkc94anr1pbpvdznykli6ggsd4p5amqbpl"))))
+    (properties `((upstream-name . "clarkeTest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=clarkeTest")
+    (synopsis "Distribution-Free Tests of Non-Nested Models")
+    (description
+     "Implementation of Clarke's distribution-free test of non-nested models.
+Currently supported model functions are: lm(), glm() ('binomial', poisson',
+negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
+('nnet').  For more information on the test, see Clarke (2007)
+<doi:10.1093/pan/mpm004>.")
+    (license license:gpl2+)))
 
 (define-public r-clarify
   (package
@@ -35147,6 +35211,30 @@ to quantify the increase in life expectancy if a certain cause of death is
 removed.  See Adamic, P. (2015)
 (<https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2689352>).")
     (license license:gpl2)))
+
+(define-public r-cdghmm
+  (package
+    (name "r-cdghmm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CDGHMM" version))
+       (sha256
+        (base32 "18gf8p5h006h125dfygghxbkdbg26p77k632l2plhrpcgd3iszbw"))))
+    (properties `((upstream-name . "CDGHMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ramify r-mvtnorm r-mass r-cluster))
+    (home-page "https://cran.r-project.org/package=CDGHMM")
+    (synopsis "Hidden Markov Models for Multivariate Panel Data")
+    (description
+     "Estimates hidden Markov models from the family of Cholesky-decomposed Gaussian
+hidden Markov models (CDGHMM) under various missingness schemes.  This family
+improves upon estimation of traditional Gaussian HMMs by directly modelling the
+distinct correlation structures that arise from longitudinal data, as well as,
+controlling for dropped out observations and non-random missingness.  See Neal,
+Sochaniwsky and @code{McNicholas} (2024) <DOI:10.48550/@code{arXiv.2404.04122>}.")
+    (license license:gpl2+)))
 
 (define-public r-cdgd
   (package
