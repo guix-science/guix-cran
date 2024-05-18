@@ -501,29 +501,6 @@ detection in morphological, resource or environmental dimensions.  More details
 can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
     (license license:gpl3)))
 
-(define-public r-hypergeomat
-  (package
-    (name "r-hypergeomat")
-    (version "4.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HypergeoMat" version))
-       (sha256
-        (base32 "06ljg2v0dbqi9mf2l236p616x62cbx4q05qymbsj8inmajwv0piz"))))
-    (properties `((upstream-name . "HypergeoMat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-juliaconnector r-gsl
-                             r-eigenr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/HypergeoMat")
-    (synopsis "Hypergeometric Function of a Matrix Argument")
-    (description
-     "Evaluates the hypergeometric functions of a matrix argument, which appear in
-random matrix theory.  This is an implementation of Koev & Edelman's algorithm
-(2006) <doi:10.1090/S0025-5718-06-01824-2>.")
-    (license license:gpl3)))
-
 (define-public r-hypergate
   (package
     (name "r-hypergate")
@@ -937,6 +914,30 @@ sub-catchment scale and to describe how hydropeaking flow parameters change
 along the longitudinal flow path as proposed and validated in Greimel et al.
 (2022).")
     (license license:gpl2)))
+
+(define-public r-hydrome
+  (package
+    (name "r-hydrome")
+    (version "2.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HydroMe" version))
+       (sha256
+        (base32 "06fqzvpwh25qc9ksh49gpfyw8jgy9xbw27wlp8mxk0b2fq58fyqg"))))
+    (properties `((upstream-name . "HydroMe")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=HydroMe")
+    (synopsis
+     "Estimating Water Retention and Infiltration Model Parameters using Experimental Data")
+    (description
+     "This package contains functions for estimating the parameters of infiltration
+and water retention models using the curve-fitting methods as discussed in Omuto
+and Gumbe (2009) (\"Estimating water infiltration and retention characteristics
+using a computer program in R\"<doi:10.1016/j.cageo.2008.08.011>).  The models
+considered are those that are commonly used in soil science.  Version 2 of the
+package has new models for water retention characteristic curves.")
+    (license (license:fsdg-compatible "GPL (>= 3.5.0)"))))
 
 (define-public r-hydroloom
   (package

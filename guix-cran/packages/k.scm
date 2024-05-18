@@ -2162,6 +2162,37 @@ flexible reordering matrix algorithm such as complete, ward, or average
 linkages.  The cluster result can be plotted in a marked barplot or pca biplot.")
     (license license:gpl3)))
 
+(define-public r-kmeans-knn
+  (package
+    (name "r-kmeans-knn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "KMEANS.KNN" version))
+       (sha256
+        (base32 "1973lrf5j63za86bjc8klv78gi1kiwrbiqf86675kdv6qf69ik44"))))
+    (properties `((upstream-name . "KMEANS.KNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2
+                             r-factoextra
+                             r-cluster
+                             r-class
+                             r-caret
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=KMEANS.KNN")
+    (synopsis "KMeans and KNN Clustering Package")
+    (description
+     "Implementation of Kmeans clustering algorithm and a supervised KNN (K Nearest
+Neighbors) learning method.  It allows users to perform unsupervised clustering
+and supervised classification on their datasets.  Additional features include
+data normalization, imputation of missing values, and the choice of distance
+metric.  The package also provides functions to determine the optimal number of
+clusters for Kmeans and the best k-value for KNN: knn_Function(),
+find_Knn_best_k(), KMEANS_FUNCTION(), and find_Kmeans_best_k().")
+    (license license:gpl3)))
+
 (define-public r-kmd
   (package
     (name "r-kmd")

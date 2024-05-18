@@ -9125,13 +9125,13 @@ curvature).")
 (define-public r-good
   (package
     (name "r-good")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "good" version))
        (sha256
-        (base32 "0lgp8kpdiaprq78fzny5c344m2s1vb24y9x9m8rkg1kd769h56pv"))))
+        (base32 "06lzr8kb0pb5k10md23dlzkzx4qk8ajriwinj4mqhgd51manm3nk"))))
     (properties `((upstream-name . "good")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-maxlik r-copula))
@@ -9139,9 +9139,9 @@ curvature).")
     (synopsis "Good Regression")
     (description
      "Fit Good regression models to count data (Tur et al., 2021)
-<@code{arXiv:2105.01557>}.  The package provides functions for model estimation
-and model prediction.  Density, distribution function, quantile function and
-random generation for the Good distribution are also provided.")
+<doi:10.48550/@code{arXiv.2105.01557>}.  The package provides functions for
+model estimation and model prediction.  Density, distribution function, quantile
+function and random generation for the Good distribution are also provided.")
     (license license:gpl2+)))
 
 (define-public r-gontr
@@ -9600,13 +9600,13 @@ co-sparse factor regression.  Computational Statistics & Data Analysis 157
 (define-public r-goeveg
   (package
     (name "r-goeveg")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goeveg" version))
        (sha256
-        (base32 "0ckklmjbyfyz2ng9rz5aiy7c6klw1gb1sqs826x2q2rbbbwy96cx"))))
+        (base32 "1pdbl044xjganm8y7jg3j877bj1rinsr6k22b5b8ngm2gbdmril3"))))
     (properties `((upstream-name . "goeveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv r-hmisc r-fields))
@@ -15590,13 +15590,13 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
 (define-public r-ggseqplot
   (package
     (name "r-ggseqplot")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggseqplot" version))
        (sha256
-        (base32 "1ml71lxkr1bnf0l0ljpnlj7rlfmgmk6zmydm899pwvgngph1rjq6"))))
+        (base32 "0h4v5lxwr8rflxmxrv324axz6m1girib6gdh4p3k5hk48ilglwj0"))))
     (properties `((upstream-name . "ggseqplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -15606,6 +15606,7 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
                              r-rdpack
                              r-purrr
                              r-patchwork
+                             r-haven
                              r-glue
                              r-ggtext
                              r-ggrepel
@@ -15613,7 +15614,8 @@ geom_glowpoint() add a neon glow around lines to get a steampunk style.")
                              r-ggh4x
                              r-forcats
                              r-dplyr
-                             r-colorspace))
+                             r-colorspace
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://maraab23.github.io/ggseqplot/")
     (synopsis "Render Sequence Plots using 'ggplot2'")
@@ -17493,13 +17495,13 @@ ggiraph'.")
 (define-public r-ggiraph
   (package
     (name "r-ggiraph")
-    (version "0.8.9")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggiraph" version))
        (sha256
-        (base32 "048dkdwkzpgrg6x0jzljzxbd89z91akgmb31rya1v4s5qbrpqwdb"))))
+        (base32 "17vdw9xaizcdf6fcbyhz9l514kk4w4dz9yvikbz9bvfx93a9z5ps"))))
     (properties `((upstream-name . "ggiraph")))
     (build-system r-build-system)
     (arguments
@@ -27520,13 +27522,13 @@ Gaussian process software, see Erickson et al. (2018)
 (define-public r-gators
   (package
     (name "r-gators")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gatoRs" version))
        (sha256
-        (base32 "0m3hhykyn0yhnhqsyjdvmfk04zjj7g5hp925clfda145rp6khch1"))))
+        (base32 "0a1z3rjgkz5wxccb5lzmwmskvjlgab3zmznwvjgk2bslda6yzqil"))))
     (properties `((upstream-name . "gatoRs")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

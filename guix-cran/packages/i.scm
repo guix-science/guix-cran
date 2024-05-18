@@ -8290,13 +8290,13 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inldata
   (package
     (name "r-inldata")
-    (version "1.1.5")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inldata" version))
        (sha256
-        (base32 "04kfywn583i6wdmq3h4yp2bdv66dpxvq91sjnav43rpa31qk9a3l"))))
+        (base32 "0p2qran9g1v5wndn5f27071hxdnmzlk3n6nvxgjapnr28sx2yhaf"))))
     (properties `((upstream-name . "inldata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
@@ -8312,7 +8312,7 @@ surrounding areas have been used to describe the effects of waste disposal on
 water contained in the eastern Snake River Plain aquifer, located in the
 southeastern part of Idaho, and the availability of water for long-term
 consumptive and industrial use.  The package includes long-term monitoring
-records dating back to measurements from 1949.  Geospatial data describing the
+records dating back to measurements from 1922.  Geospatial data describing the
 areas from which samples were collected or observations were made are also
 included in the package.  Bundling this data into a single package significantly
 reduces the magnitude of data processing for researchers and provides a way to
@@ -12917,13 +12917,13 @@ standard spherical harmonic representation of the Earth's main field.")
 (define-public r-igraphmatch
   (package
     (name "r-igraphmatch")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iGraphMatch" version))
        (sha256
-        (base32 "1p0cp581h3pdarg9pglxsazdxdmnjwkib77cll71havjyl7i9b0z"))))
+        (base32 "1cbmcqvw8xk55lv3nxj3xzmkasvaayv04xnzqjdr16yvjznpzkfd"))))
     (properties `((upstream-name . "iGraphMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix r-irlba r-igraph r-clue))

@@ -8532,13 +8532,13 @@ developed in Maitner et al (2021) <doi:10.22541/au.162196147.76797968/v1>.")
 (define-public r-traits
   (package
     (name "r-traits")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traits" version))
        (sha256
-        (base32 "04s2523wkbjqxpwllvcy7ikyfri5gldgnynjswsxdy0k945wacvz"))))
+        (base32 "1jkap9qh3m2hxwib0h3vqzs2rc0dfnk875nbsr682sad8mx8i01h"))))
     (properties `((upstream-name . "traits")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12968,13 +12968,13 @@ conversion while keeping the zero-dependency nature.")
 (define-public r-tinytable
   (package
     (name "r-tinytable")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytable" version))
        (sha256
-        (base32 "0c8cwfjhj2vifac0ywib9k63ffkss4nxffpvm6kmamv1ypya9f76"))))
+        (base32 "0ckqa4vl873939wvjalpyafi00dxigiy2219lcn9gr4nyxscpzsq"))))
     (properties `((upstream-name . "tinytable")))
     (build-system r-build-system)
     (home-page "https://vincentarelbundock.github.io/tinytable/")
@@ -12984,7 +12984,7 @@ conversion while keeping the zero-dependency nature.")
      "Create highly customized tables with this simple and dependency-free package.
 Data frames can be converted to HTML', @code{LaTeX}', Markdown', Word', PNG',
 PDF', or Typst tables.  The user interface is minimalist and easy to learn.  The
-syntax concise.  HTML tables can be customized using the flexible Bootstrap
+syntax is concise.  HTML tables can be customized using the flexible Bootstrap
 framework, and @code{LaTeX} code with the tabularray package.")
     (license license:gpl3+)))
 
@@ -23565,13 +23565,13 @@ method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 (define-public r-tciu
   (package
     (name "r-tciu")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCIU" version))
        (sha256
-        (base32 "19xsp3ii8abifg5cqr3jgsh2jw5mmgiqqh8g0pxk9zmjqwm0javp"))))
+        (base32 "0gbzpd0yadxrlsmnwk4kzf6bvm504k18i0sf2bq6zjaczdhc0vkp"))))
     (properties `((upstream-name . "TCIU")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -23585,6 +23585,7 @@ method.  Draxler, C., & Alexandrowicz, R. W. (2015),
                              r-pracma
                              r-plotly
                              r-multiwayregression
+                             r-interp
                              r-icsnp
                              r-gridextra
                              r-ggpubr

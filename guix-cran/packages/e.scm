@@ -3845,13 +3845,13 @@ thresholds (univariate and bivariate), point processes, gev/gpd distributions.")
 (define-public r-evinf
   (package
     (name "r-evinf")
-    (version "0.8.9")
+    (version "0.8.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evinf" version))
        (sha256
-        (base32 "01af9fjhw19sz68b9mvdkqr7p88w68bk4lawavg4ax16mvh1riq7"))))
+        (base32 "142rg6d3ziq5y2qscnfiasg2f27va44gjc4qh8db3z4n1nw076a5"))))
     (properties `((upstream-name . "evinf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19777,30 +19777,26 @@ and some multivariate extensions are given.")
 (define-public r-ecce
   (package
     (name "r-ecce")
-    (version "2.0.6")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecce" version))
        (sha256
-        (base32 "185b6vdf5fqfm6xfg1h90gglicy3p73pk6mqfpp8n4sbywydqd31"))))
+        (base32 "09zyrjld16byc8fs76b46hh6p2saybq00y28gfmflhzb5fhc34a2"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://cxy.rbind.io/ecce/")
+    (home-page "https://cxy.rbind.io/rproj/ecce/")
     (synopsis
-     "Translate English Words into Chinese, or Translate Chinese Words into English")
+     "Translate English Sentence into Chinese, or Translate Chinese Sentence into English")
     (description
-     "If translate English words into Chinese, there is a faster way for R user.
-R@code{YoudaoTranslate} package provides interface to Youdao
-<http://youdao.com/> translation open API for R user.  entcn package also
-provides similar features.  But it does not support Chinese words translation
-into English, I have made some improvements on the basis of this software.  You
-can pass in an English or Chinese word, ecce package support both English and
-Chinese translation.  It also support browse translation results in website.  In
-addition, also support obtain the pinyin of the Chinese character, so that you
-can more easily understand the pronunciation of the Chinese character.")
+     "If translate English or Chinese sentence, there is a faster way for R user.  You
+can pass in an English or Chinese sentence, ecce package support both English
+and Chinese translation.  It also support browse translation results in website.
+ In addition, also support obtain the pinyin of the Chinese character, you can
+more easily understand the pronunciation of the Chinese character.")
     (license license:expat)))
 
 (define-public r-ecb

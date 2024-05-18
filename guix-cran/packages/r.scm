@@ -8956,13 +8956,13 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "1.2-1")
+    (version "1.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "0vyz4q239dvbgkhq8jsdxc8blygaa3hk0whm7fff4bhmadqi7wbw"))))
+        (base32 "0k3591rmahnb8ba3c1ja181wbi36d7dxazj06m4vwqpihcphah7b"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mass))
@@ -16859,13 +16859,13 @@ regularization parameter.  The method is fully described in
 (define-public r-rnanoflann
   (package
     (name "r-rnanoflann")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rnanoflann" version))
        (sha256
-        (base32 "1h978qaag2ylcdaxm70lzqcix3wlba64vfccws9nvm3d0ymdj7jl"))))
+        (base32 "04bjyn74n1qlqb58w5nwvahbd5dg872bd5x3iwfvg3qgci6giz26"))))
     (properties `((upstream-name . "Rnanoflann")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -23423,13 +23423,13 @@ least the first six pages of the report to understand the topic.")
 (define-public r-rhosa
   (package
     (name "r-rhosa")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhosa" version))
        (sha256
-        (base32 "00j4s3x05cyz0nr63v9ajj9k13nyml0s3m3hg1zm7hfyzr9gzdjq"))))
+        (base32 "170k380vmp2h78vysxzvarr7ar0fcr9xd6rh8bj6f9pfxzkyyjmg"))))
     (properties `((upstream-name . "rhosa")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -42469,31 +42469,6 @@ Blaauw & Christen (2011).")
     (description
      "Download and parse public files released by B3 and convert them into useful
 formats and data structures common to data analysis practitioners.")
-    (license license:expat)))
-
-(define-public r-raziad
-  (package
-    (name "r-raziad")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RAZIAD" version))
-       (sha256
-        (base32 "1srndmf8xv8jbcdjji6gad3c0i3pskxw61nl6prm7crwjyk1jvaa"))))
-    (properties `((upstream-name . "RAZIAD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-extradistr))
-    (home-page "https://cran.r-project.org/package=RAZIAD")
-    (synopsis
-     "Regression Analysis of Zero-Inflated and Zero-Altered(Hurdle) Data")
-    (description
-     "It performs regression analysis for zero-inflated and zero-altered data,
-enabling modeling of sparse response variable distributions and assessing their
-association with covariates.  It computes Maximum Likelihood Estimates (MLE) and
-conducts model selection using AIC and BIC criteria.  Additionally, it
-calculates Fisher Information, confidence intervals, standard errors, and
-z-scores for all model parameters.")
     (license license:expat)))
 
 (define-public r-rayvertex

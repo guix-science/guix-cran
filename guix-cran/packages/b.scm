@@ -6257,6 +6257,31 @@ options set by the user, the parallel package can be used to parallelize the
 calculation of the bootstrap PCs.")
     (license license:gpl2)))
 
+(define-public r-bootsurv
+  (package
+    (name "r-bootsurv")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bootsurv" version))
+       (sha256
+        (base32 "0c60xyhq8x3k75dxi8lcsz7i5xnizdzrypcvy27w5mb5nx9wg58i"))))
+    (properties `((upstream-name . "bootsurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=bootsurv")
+    (synopsis "Bootstrap Methods for Complete Survey Data")
+    (description
+     "Bootstrap resampling methods have been widely studied in the context of survey
+data.  This package implements various bootstrap resampling techniques tailored
+for survey data, with a focus on stratified simple random sampling and
+stratified two-stage cluster sampling.  It provides tools for precise and
+consistent bootstrap variance estimation for population totals, means, and
+quartiles.  Additionally, it enables easy generation of bootstrap samples for
+in-depth analysis.")
+    (license license:gpl3)))
+
 (define-public r-bootstrapqtl
   (package
     (name "r-bootstrapqtl")
@@ -11070,13 +11095,13 @@ from examples at <https://bl.ocks.org/N@code{PashaP>} (released under GPL-3).")
 (define-public r-bipartite
   (package
     (name "r-bipartite")
-    (version "2.19")
+    (version "2.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bipartite" version))
        (sha256
-        (base32 "0a4z5hdsr0j38bzgm7wggn4a8m2zf4fp2f82m20wckx55nvjj64z"))))
+        (base32 "0wgx695r5knlrzg0wv5h2sivh3xzjsb50lafmb08j1fvg3hnrxl6"))))
     (properties `((upstream-name . "bipartite")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -19971,6 +19996,28 @@ regression is another major contribution of this package.  See details in the
 references Barreto-Souza, Mayrink and Simas (2022) <doi:10.1111/anzs.12354> and
 Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
     (license license:gpl2)))
+
+(define-public r-bbnet
+  (package
+    (name "r-bbnet")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bbnet" version))
+       (sha256
+        (base32 "12z68mhb0fqq9lryjm57win7072v7d46pz94y9l3qra2ygrnyp5k"))))
+    (properties `((upstream-name . "bbnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-igraph r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vda1r22/bbnet")
+    (synopsis "Create Simple Predictive Models on Bayesian Belief Networks")
+    (description
+     "This package provides a system to build, visualise and evaluate Bayesian belief
+networks.  The methods are described in Stafford et al. (2015)
+<doi:10.12688/f1000research.5981.1>.")
+    (license license:gpl2+)))
 
 (define-public r-bbmix
   (package

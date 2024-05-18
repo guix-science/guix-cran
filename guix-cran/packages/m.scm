@@ -25898,6 +25898,39 @@ Regression with spatial autocorrelation, Geniaux and Martinetti (2017)
 <doi:10.1016/j.regsciurbeco.2017.04.001>.")
     (license license:gpl2+)))
 
+(define-public r-mgwrhw
+  (package
+    (name "r-mgwrhw")
+    (version "1.1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgwrhw" version))
+       (sha256
+        (base32 "0nk07rl4g4l9ng4fq9xh1smxz705akn25svadjwn17wvm9wjg7dk"))))
+    (properties `((upstream-name . "mgwrhw")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-spgwr
+                             r-sf
+                             r-psych
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mgwrhw")
+    (synopsis
+     "Displays GWR (Geographically Weighted Regression) and Mixed GWR Output and Map")
+    (description
+     "Display processing results using the GWR (Geographically Weighted Regression)
+method, display maps, and show the results of the Mixed GWR (Mixed
+Geographically Weighted Regression) model which automatically selects global
+variables based on variability between regions.  This function refers to Yasin,
+& Purhadi. (2012). \"Mixed Geographically Weighted Regression Model (Case Study
+the Percentage of Poor Households in Mojokerto 2008)\".  European Journal of
+Scientific Research, 188-196.
+<https://www.researchgate.net/profile/Hasbi-Yasin-2/publication/289689583_Mixed_geographically_weighted_regression_model_case_study_The_percentage_of_poor_households_in_Mojokerto_2008/links/58e46aa40f7e9bbe9c94d641/Mixed-geographically-weighted-regression-model-case-study-The-percentage-of-poor-households-in-Mojokerto-2008.pdf>.")
+    (license license:gpl3)))
+
 (define-public r-mgwnbr
   (package
     (name "r-mgwnbr")
@@ -31593,13 +31626,13 @@ values), and fwf (fixed-width format) files.")
 (define-public r-melt
   (package
     (name "r-melt")
-    (version "1.11.3")
+    (version "1.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "melt" version))
        (sha256
-        (base32 "0vmds7kvb50742ag41w57wmbfdq0zdgf6pyxp25dg48isssa2qaa"))))
+        (base32 "19g5cd8fnvvqlvrvim47ra53svjk07cr4dmgn3h6x13wkv0grg46"))))
     (properties `((upstream-name . "melt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-dqrng r-checkmate r-bh))
@@ -39320,13 +39353,13 @@ the method.")
 (define-public r-marginalizedrisk
   (package
     (name "r-marginalizedrisk")
-    (version "2024.1-27")
+    (version "2024.5-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginalizedRisk" version))
        (sha256
-        (base32 "0lsa4q0jmc9ldjsfpbw7kxg2wd0gca9w2299j38md3x5lb2k87g5"))))
+        (base32 "1f0qql4nvd5bkvkx0wn8w7fjzplabm5is8ms8rl6bpayfhaa6zai"))))
     (properties `((upstream-name . "marginalizedRisk")))
     (build-system r-build-system)
     (native-inputs (list r-r-rsp))
@@ -42027,6 +42060,34 @@ excluded (for regression analysis) by an option.  makedummies function accepts
 data.frame', matrix', and tbl (tibble) class (by tibble package).  matrix class
 data is automatically converted to data.frame class.")
     (license license:gpl2)))
+
+(define-public r-majminkmeans
+  (package
+    (name "r-majminkmeans")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MajMinKmeans" version))
+       (sha256
+        (base32 "0lq2qjlha1bd76wlgxbwr9j55yjhwpj380nfi7kx91j50qhdsr9x"))))
+    (properties `((upstream-name . "MajMinKmeans")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=MajMinKmeans")
+    (synopsis "k-Means Algorithm with a Majorization-Minimization Method")
+    (description
+     "This package provides a hybrid of the K-means algorithm and a
+Majorization-Minimization method to introduce a robust clustering.  The
+reference paper is: Julien Mairal, (2015) <doi:10.1137/140957639>.  The two most
+important functions in package @code{MajMinKmeans} are cluster_km() and
+cluster_@code{MajKm}().  Cluster_km() clusters data without
+Majorization-Minimization and cluster_@code{MajKm}() clusters data with
+Majorization-Minimization method.  Both of these functions calculate the sum of
+squares (SS) of clustering.  Another useful function is @code{MajMinOptim}(),
+which helps to find the optimum values of the Majorization-Minimization
+estimator.")
+    (license license:gpl3)))
 
 (define-public r-majkmeans
   (package

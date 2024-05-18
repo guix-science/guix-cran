@@ -1723,27 +1723,6 @@ from one of of the greatest sitcoms of all time on demand.  Add these functions
 to your .Rprofile to get a good laugh everytime you start a new R session.")
     (license license:expat)))
 
-(define-public r-dummy
-  (package
-    (name "r-dummy")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dummy" version))
-       (sha256
-        (base32 "081a5h33gw6ym4isy91h6mcf247c2vsdygv9ll07a3mgjcjnk79p"))))
-    (properties `((upstream-name . "dummy")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=dummy")
-    (synopsis
-     "Automatic Creation of Dummies with Support for Predictive Modeling")
-    (description
-     "Efficiently create dummies of all factors and character vectors in a data frame.
- Support is included for learning the categories on one data set (e.g., a
-training set) and deploying them on another (e.g., a test set).")
-    (license license:gpl2+)))
-
 (define-public r-dumbbell
   (package
     (name "r-dumbbell")

@@ -6169,13 +6169,13 @@ University of Bern.")
 (define-public r-nma
   (package
     (name "r-nma")
-    (version "1.4-2")
+    (version "1.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMA" version))
        (sha256
-        (base32 "0lwsys3imcr7n2bnyg9isp8jj00mz0ng8zzp79d1ann791dvsb3z"))))
+        (base32 "09y3arzw08054xb1y3nmnnzxybgjm2yyvkc530avpqkl1yrb1ap2"))))
     (properties `((upstream-name . "NMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-metafor r-mass r-ggplot2 r-forestplot))
@@ -13847,13 +13847,13 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
 (define-public r-nbpmatching
   (package
     (name "r-nbpmatching")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nbpMatching" version))
        (sha256
-        (base32 "0f7avg06lr5a1yixrl6mhcs98ywa91qbfkc7qlz2pxzpc1v13ffb"))))
+        (base32 "0r9q4vkqsrb1m0kzwgih797r3shy04fd185z3rwdi3w4cs03xydp"))))
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))

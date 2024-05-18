@@ -5368,6 +5368,48 @@ much of the overall treatment effect is explained by a (possibly
 high-dimensional) set of surrogate markers.")
     (license license:expat)))
 
+(define-public r-crosstalkr
+  (package
+    (name "r-crosstalkr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crosstalkr" version))
+       (sha256
+        (base32 "1p4grkh6kripkpirs2hrqwv4bz61bcr6pqzj88j75311kjiphnl0"))))
+    (properties `((upstream-name . "crosstalkr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdb
+                             r-rlang
+                             r-readr
+                             r-rcpp
+                             r-matrix
+                             r-magrittr
+                             r-iterators
+                             r-igraph
+                             r-ggplot2
+                             r-foreach
+                             r-ensembldb
+                             r-dplyr
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=crosstalkr")
+    (synopsis
+     "Analysis of Graph-Structured Data with a Focus on Protein-Protein Interaction Networks")
+    (description
+     "This package provides a general toolkit for drug target identification.  We
+include functionality to reduce large graphs to subgraphs and prioritize nodes.
+In addition to being optimized for use with generic graphs, we also provides
+support to analyze protein-protein interactions networks from online
+repositories.  For more details on core method, refer to Weaver et al. (2021)
+<https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008755>.")
+    (license license:gpl3+)))
+
 (define-public r-crosstabs-loglinear
   (package
     (name "r-crosstabs-loglinear")
@@ -5548,6 +5590,37 @@ apply a function to each combination of elements in a list of inputs.  Also
 includes functions for automatically detecting output type in mapping functions,
 finding every combination of elements of lists or rows of data frames, and
 applying multiple models to multiple subsets of a dataset.")
+    (license license:expat)))
+
+(define-public r-crosslag
+  (package
+    (name "r-crosslag")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crosslag" version))
+       (sha256
+        (base32 "0kvmpl7cqgp8jlvpz42caw1mqcfkvzvpy7rkgh70isx88k4n9f6g"))))
+    (properties `((upstream-name . "crosslag")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rms
+                             r-mgcv
+                             r-lavaan
+                             r-ggpubr
+                             r-ggplot2
+                             r-gamm4))
+    (home-page "https://cran.r-project.org/package=crosslag")
+    (synopsis "Perform Linear or Nonlinear Cross Lag Analysis")
+    (description
+     "Linear or nonlinear cross-lagged panel model can be built from input data.
+Users can choose the appropriate method from three methods for constructing
+nonlinear cross lagged models.  These three methods include polynomial
+regression, generalized additive model and generalized linear mixed model.In
+addition, a function for determining linear relationships is provided.  Relevant
+knowledge of cross lagged models can be learned through the paper by Fredrik
+@code{FalkenstrÃ¶m} (2024) <doi:10.1016/j.cpr.2024.102435> and the paper by A
+Gasparrini (2010) <doi:10.1002/sim.3940>.")
     (license license:expat)))
 
 (define-public r-crosshap
@@ -23629,15 +23702,17 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "0iry0jifvvlam7szhsmrsz2mqim0pmkfk50n97c1q9r84n6rfxlj"))))
+        (base32 "0hbaf56bg8l8rpc7n8p3hcijlqh2i1rgcr4vlr73xd2x0kj6zwns"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=cmahalanobis")
     (synopsis
      "Calculate the Mahalanobis Distance for a Given List of Data Frames with Factors")
@@ -23648,10 +23723,7 @@ observations of a species with some factors.  Mahalanobis distance is a measure
 of dissimilarity between two vectors of multivariate random variables, based on
 the covariance matrix.  This distance is useful for statistical matching or
 fusion of data, that is the integration of two data sources that refer to the
-same target population and that share some variables. - \"Fisher, R.A. (1922) On
-the mathematical foundations of theoretical statistics.
-<doi:10.1098/rsta.1922.0009>\". - \"Mahalanobis, P.C. (1936) On the generalized
-distance in statistics. <doi:10.1007/s13171-019-00164-5>\".")
+same target population and that share some variables.")
     (license license:gpl3)))
 
 (define-public r-cmaesr
@@ -24452,13 +24524,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0w0mja9dybcf04x1q6d6qpb1jli247pqamcl1fcwlgnkmhl542c2"))))
+        (base32 "0kijkfhx7v7ac7lxjh40fdv2amg7hzhl5i6127pggr8vx1b5mx2n"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -24488,14 +24560,17 @@ and mouse cell identity markers sourced from a variety of databases.")
     (description
      "Allows clustering of incomplete observations by addressing missing values using
 multiple imputation.  For achieving this goal, the methodology consists in three
-steps.  I) Missing data imputation using dedicated models.  Four multiple
-imputation methods are proposed, two are based on joint modelling and two are
-fully sequential methods.  II) cluster analysis of imputed data sets.  Six
-clustering methods are available (distances-based or model-based), but custom
-methods can also be easily used.  III) Partition pooling, The set of partitions
-is aggregated using Non-negative Matrix Factorization based method.  An
-associated instability measure is computed by bootstrap.  Among applications,
-this instability measure can be used to choose a number of clusters with missing
+steps, following Audigier and Niang 2022 <doi:10.1007/s11634-022-00519-1>.  I)
+Missing data imputation using dedicated models.  Four multiple imputation
+methods are proposed, two are based on joint modelling and two are fully
+sequential methods, as discussed in Audigier et al. (2021)
+<doi:10.48550/@code{arXiv.2106.04424>}.  II) cluster analysis of imputed data
+sets.  Six clustering methods are available (distances-based or model-based),
+but custom methods can also be easily used.  III) Partition pooling.  The set of
+partitions is aggregated using Non-negative Matrix Factorization based method.
+An associated instability measure is computed by bootstrap (see Fang, Y. and
+Wang, J., 2012 <doi:10.1016/j.csda.2011.09.003>).  Among applications, this
+instability measure can be used to choose a number of clusters with missing
 values.  The package also proposes several diagnostic tools to tune the number
 of imputed data sets, to tune the number of iterations in fully sequential
 imputation, to check the fit of imputation models, etc.")
@@ -25859,13 +25934,13 @@ function documentation.")
 (define-public r-clinutils
   (package
     (name "r-clinutils")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinUtils" version))
        (sha256
-        (base32 "1ywyz1h9fqx5w8pyh6m8sa3cly8hkx8mdc6j0ind4b8aaacm7vdg"))))
+        (base32 "1i8bbfj9hbhjq7ppr3s3wxmnlis0j9xapdz88x44gcsmvxmr57dr"))))
     (properties `((upstream-name . "clinUtils")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -26188,13 +26263,13 @@ posterior predictive distributions derived from these references.")
 (define-public r-clindatareview
   (package
     (name "r-clindatareview")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinDataReview" version))
        (sha256
-        (base32 "1c0cq4k601fa01d4rqqz8bqpc5v3fnl31axnwhpmd4si5dk8xi5m"))))
+        (base32 "0d2ar2rar9qpi9gdf2jzswi65vf031k0azkgp72akgjyd46c2wdk"))))
     (properties `((upstream-name . "clinDataReview")))
     (build-system r-build-system)
     (arguments
@@ -27180,6 +27255,38 @@ external dependencies, or two Python back ends with @code{spaCy}
 include tokenization, part of speech tagging, named entity recognition, and
 dependency parsing.")
     (license license:lgpl2.0)))
+
+(define-public r-cleaningvalidation
+  (package
+    (name "r-cleaningvalidation")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CleaningValidation" version))
+       (sha256
+        (base32 "0wfywvmglsjckf734g7lq2gq9366ya2bsrihiinx9n37ydc5w6kg"))))
+    (properties `((upstream-name . "CleaningValidation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-lme4
+                             r-ggplot2
+                             r-dunn-test
+                             r-dplyr
+                             r-cowplot
+                             r-boot
+                             r-aer))
+    (home-page "https://github.com/ChandlerXiandeYang/CleaningValidation")
+    (synopsis
+     "Cleaning Validation Functions for Pharmaceutical Cleaning Process")
+    (description
+     "This package provides essential Cleaning Validation functions for complying with
+pharmaceutical cleaning process regulatory standards.  The package includes
+non-parametric methods to analyze drug active-ingredient residue (DAR), cleaning
+agent residue (CAR), and microbial colonies (Mic) for non-Poisson distributions.
+ Additionally, Poisson methods are provided for Mic analysis when Mic data
+follow a Poisson distribution.")
+    (license license:gpl3)))
 
 (define-public r-cleangeo
   (package

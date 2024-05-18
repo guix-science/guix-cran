@@ -7061,6 +7061,29 @@ Hedges, and Shadish (2014) <DOI:10.3102/1076998614547577>) based on fitted lme
 or gls models.")
     (license license:gpl3)))
 
+(define-public r-lme4breeding
+  (package
+    (name "r-lme4breeding")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lme4breeding" version))
+       (sha256
+        (base32 "12156nll73lwmf0si6pm46gvkc3pdgqwg6yc9bqdvgdggf7pnjqc"))))
+    (properties `((upstream-name . "lme4breeding")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-lme4 r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lme4breeding")
+    (synopsis "Relationship-Based Mixed-Effects Models")
+    (description
+     "Fit relationship-based and customized mixed-effects models with complex
+variance-covariance structures using the lme4 machinery.  The core computational
+algorithms are implemented using the Eigen C++ library for numerical linear
+algebra and @code{RcppEigen} glue'.")
+    (license license:gpl2+)))
+
 (define-public r-lmdiallel
   (package
     (name "r-lmdiallel")

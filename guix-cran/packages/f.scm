@@ -14896,28 +14896,6 @@ extended to continuous design variables as described in Langsrud et al. (2007)
 scale changes and that common pitfalls are avoided.")
     (license license:gpl2)))
 
-(define-public r-fflr
-  (package
-    (name "r-fflr")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fflr" version))
-       (sha256
-        (base32 "0yz31mrrm011z8j0mr2inp456k1xv66ll4f3hnbsln4fap5y73i6"))))
-    (properties `((upstream-name . "fflr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://k5cents.github.io/fflr/")
-    (synopsis "Retrieve ESPN Fantasy Football Data")
-    (description
-     "Format the raw data from the ESPN fantasy football API
-<https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl> as data frames.
-Retrieve data on public leagues, rosters, athletes, and matches.")
-    (license license:gpl3+)))
-
 (define-public r-ffdownload
   (package
     (name "r-ffdownload")
@@ -19567,24 +19545,23 @@ categorical covariates.")
 (define-public r-fastbeta
   (package
     (name "r-fastbeta")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastbeta" version))
        (sha256
-        (base32 "1lcs8zr25bk1gh9b7grpf1y4pkp455glh0c9vaa0gl6ygy2xd558"))))
+        (base32 "0s843plibqbx2lfi4npp3pxq30rkiz768yjgc9fgpawq1nlp3ii0"))))
     (properties `((upstream-name . "fastbeta")))
     (build-system r-build-system)
-    (propagated-inputs (list r-desolve r-adaptivetau))
     (home-page "https://github.com/davidearn/fastbeta")
     (synopsis
-     "Fast Estimation of Time-Varying Infectious Disease Transmission Rates")
+     "Fast Approximation of Time-Varying Infectious Disease Transmission Rates")
     (description
-     "This package provides methods for estimating time-varying infectious disease
-transmission rates from disease incidence time series, based on discretizations
-of an SIR model, as analyzed in Jagan et al. (2020)
-<doi:10.1371/journal.pcbi.1008124>.")
+     "This package provides a fast method for approximating time-varying infectious
+disease transmission rates from disease incidence time series and other data,
+based on a discrete time approximation of an SEIR model, as analyzed in Jagan et
+al. (2020) <doi:10.1371/journal.pcbi.1008124>.")
     (license license:gpl2+)))
 
 (define-public r-fastbandchol

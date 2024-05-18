@@ -8148,6 +8148,36 @@ et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
 package vignette.")
     (license license:gpl2+)))
 
+(define-public r-streamconnect
+  (package
+    (name "r-streamconnect")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "streamConnect" version))
+       (sha256
+        (base32 "1lpvk35jylsaxy6vyk3phsj8g8f3cmpp9q8kn0fywvi98cbfbzak"))))
+    (properties `((upstream-name . "streamConnect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stream
+                             r-readr
+                             r-plumber
+                             r-jsonlite
+                             r-httr
+                             r-callr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=streamConnect")
+    (synopsis
+     "Connecting Stream Mining Components Using Sockets and Web Services")
+    (description
+     "Adds functionality to connect stream mining components from package stream using
+sockets and Web services.  The package can be used create distributed workflows
+and create plumber-based Web services which can be deployed on most common cloud
+services.")
+    (license license:gpl3)))
+
 (define-public r-streambugs
   (package
     (name "r-streambugs")
@@ -13575,13 +13605,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-7")
+    (version "0.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stan4bart" version))
        (sha256
-        (base32 "08c6s9kg6pzsh411wnv3pg7717r6kyl1sbm3j4vl0b0sssv12z9s"))))
+        (base32 "1i0asl380p38ksi59wmyi23jwq05mm9kxymphyqjniq68i0lban4"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (inputs (list tbb))
@@ -21949,6 +21979,34 @@ in Finley, Banerjee, and Gelfand (2015) <doi:10.18637/jss.v063.i13> and Finley
 and Banerjee <doi:10.1016/j.envsoft.2019.104608>.")
     (license license:gpl2+)))
 
+(define-public r-spbal
+  (package
+    (name "r-spbal")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spbal" version))
+       (sha256
+        (base32 "0wh0d1zfb1368bzpg0cjy0wa0ms4x6xr9y6n773prr8r8vs6fp09"))))
+    (properties `((upstream-name . "spbal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units r-sf r-rcppthread r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=spbal")
+    (synopsis "Spatially Balanced Sampling Algorithms")
+    (description
+     "Encapsulates a number of spatially balanced sampling algorithms, namely,
+Balanced Acceptance Sampling (equal, unequal, seed point, panels), Halton frames
+(for discretizing a continuous resource), Halton Iterative Partitioning (equal
+probability) and Simple Random Sampling.  Robertson, B. L., Brown, J. A.,
+@code{McDonald}, T. and Jaksons, P. (2013) <doi:10.1111/biom.12059>.  Robertson,
+B. L., @code{McDonald}, T., Price, C. J. and Brown, J. A. (2017)
+<doi:10.1016/j.spl.2017.05.004>.  Robertson, B. L., @code{McDonald}, T., Price,
+C. J. and Brown, J. A. (2018) <doi:10.1007/s10651-018-0406-6>.  Robertson, B.
+L., van Dam-Bates, P. and Gansell, O. (2021a) <doi:10.1007/s10651-020-00481-1>.")
+    (license license:expat)))
+
 (define-public r-spbabel
   (package
     (name "r-spbabel")
@@ -29955,6 +30013,28 @@ implemented here.  The LOCI method developed here is invented in Breunig, et al.
 tracking of coordinate data clouds without a time dimension, primarily for use
 in super-resolution plant micro-tubule image segmentation.")
     (license license:gpl2)))
+
+(define-public r-smleph
+  (package
+    (name "r-smleph")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smlePH" version))
+       (sha256
+        (base32 "0vkzgm5cjlwdxvrk4jjmj4jcwvpfs0kkc182iz0bkx6vp0ykmin7"))))
+    (properties `((upstream-name . "smlePH")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splines2 r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/taehwa015/smlePH/")
+    (synopsis
+     "Sieve Maximum Full Likelihood Estimation for the Right-Censored Proportional Hazards Model")
+    (description
+     "Fitting the full likelihood proportional hazards model and extracting the
+residuals.")
+    (license license:gpl3+)))
 
 (define-public r-smle
   (package
@@ -38838,42 +38918,60 @@ materials.")
 (define-public r-sieveph
   (package
     (name "r-sieveph")
-    (version "1.0.4")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sievePH" version))
        (sha256
-        (base32 "0lrpk2dx0n8cdgwrshnw41xsg2gd6qbgn1bddvzifnibh082gb27"))))
+        (base32 "0bzf7k3qk8ih9qvkr196wcy8b6wq5q6x6cn311z312713n9jly10"))))
     (properties `((upstream-name . "sievePH")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-scales r-ggpubr r-ggplot2))
+    (propagated-inputs (list r-survival
+                             r-scales
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plyr
+                             r-np
+                             r-ggpubr
+                             r-ggplot2))
     (home-page "https://github.com/mjuraska/sievePH")
     (synopsis "Sieve Analysis Methods for Proportional Hazards Models")
     (description
-     "This package implements semiparametric estimation and testing procedures for a
-continuous, possibly multivariate, mark-specific hazard ratio
-(treatment/placebo) of an event of interest in a randomized treatment efficacy
-trial with a time-to-event endpoint, as described in Juraska M and Gilbert PB
-(2013), Mark-specific hazard ratio model with multivariate continuous marks: an
-application to vaccine efficacy.  Biometrics 69(2):328 337
+     "This package implements a suite of semiparametric and nonparametric
+kernel-smoothed estimation and testing procedures for continuous mark-specific
+stratified hazard ratio (treatment/placebo) models in a randomized treatment
+efficacy trial with a time-to-event endpoint.  Semiparametric methods, allowing
+multivariate marks, are described in Juraska M and Gilbert PB (2013),
+Mark-specific hazard ratio model with multivariate continuous marks: an
+application to vaccine efficacy.  Biometrics 69(2):328-337
 <doi:10.1111/biom.12016>, and in Juraska M and Gilbert PB (2016), Mark-specific
 hazard ratio model with missing multivariate marks.  Lifetime Data Analysis
-22(4): 606-25 <doi:10.1007/s10985-015-9353-9>.  The former considers continuous
-multivariate marks fully observed in all subjects who experience the event of
-interest, whereas the latter extends the previous work to allow multivariate
-marks that are subject to missingness-at-random.  For models with missing marks,
-two estimators are implemented based on (i) inverse probability weighting (IPW)
-of complete cases, and (ii) augmentation of the IPW estimating functions by
-leveraging correlations between the mark and auxiliary data to impute the
-expected profile score vectors for subjects with missing marks.  The augmented
-IPW estimator is doubly robust and recommended for use with incomplete mark
-data.  The methods make two key assumptions: (i) the time-to-event is assumed to
-be conditionally independent of the mark given treatment, and (ii) the weight
-function in the semiparametric density ratio/biased sampling model is assumed to
-be exponential.  Diagnostic testing procedures for evaluating validity of both
-assumptions are implemented.  Summary and plotting functions are provided for
-estimation and inferential results.")
+22(4):606-25 <doi:10.1007/s10985-015-9353-9>.  Nonparametric kernel-smoothed
+methods, allowing univariate marks only, are described in Sun Y and Gilbert PB
+(2012), Estimation of stratified markâspecific proportional hazards models
+with missing marks.  Scandinavian Journal of Statistics}, 39(1):34-52
+<doi:10.1111/j.1467-9469.2011.00746.x>, and in Gilbert PB and Sun Y (2015),
+Inferences on relative failure rates in stratified mark-specific proportional
+hazards models with missing marks, with application to human immunodeficiency
+virus vaccine efficacy trials.  Journal of the Royal Statistical Society Series
+C: Applied Statistics, 64(1):49-73 <doi:10.1111/rssc.12067>.  Both
+semiparametric and nonparametric approaches consider two scenarios: (1) the mark
+is fully observed in all subjects who experience the event of interest, and (2)
+the mark is subject to missingness-at-random in subjects who experience the
+event of interest.  For models with missing marks, estimators are implemented
+based on (i) inverse probability weighting (IPW) of complete cases (for the
+semiparametric framework), and (ii) augmentation of the IPW estimating functions
+by leveraging correlations between the mark and auxiliary data to impute the
+augmentation term for subjects with missing marks (for both the semiparametric
+and nonparametric framework).  The augmented IPW estimators are doubly robust
+and recommended for use with incomplete mark data.  The semiparametric methods
+make two key assumptions: (i) the time-to-event is assumed to be conditionally
+independent of the mark given treatment, and (ii) the weight function in the
+semiparametric density ratio/biased sampling model is assumed to be exponential.
+ Diagnostic testing procedures for evaluating validity of both assumptions are
+implemented.  Summary and plotting functions are provided for estimation and
+inferential results.")
     (license license:gpl2)))
 
 (define-public r-sieve
@@ -46163,6 +46261,26 @@ reference RNA-seq dataset can be provided to model realistic marginal
 distributions.  Plotting functions are available to visualize a network, compare
 two networks, and compare the expression of two genes across multiple networks.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-seqmon
+  (package
+    (name "r-seqmon")
+    (version "2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seqmon" version))
+       (sha256
+        (base32 "0y08xn0r6sj6priksz72mgfdasm167smvqi4rjiwrcv5qqv0blbl"))))
+    (properties `((upstream-name . "seqmon")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=seqmon")
+    (synopsis "Group Sequential Design Class for Clinical Trials")
+    (description
+     "S4 class object for creating and managing group sequential designs.  It
+calculates the efficacy and futility boundaries at each look.  It allows
+modifying the design and tracking the design update history.")
+    (license license:expat)))
 
 (define-public r-seqmagick
   (package
