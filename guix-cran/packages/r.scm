@@ -2357,13 +2357,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "0zvkjg5wc45cwnhmx3znqfil6kvhjvfb2vx56j4044ywcjgqpwga"))))
+        (base32 "03z1n41160h0hzjknd8v8gdf1imkmr8602s1vsfzkhvvj4qa22yl"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

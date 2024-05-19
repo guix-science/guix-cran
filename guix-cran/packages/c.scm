@@ -20570,13 +20570,13 @@ data.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "1q0ymdp0qphfzk7ca56pw1x3lj93mxb0941kwvkk81ih56i2r7ir"))))
+        (base32 "03pca2isc7gq9nkkghwqcjf35fn23iacdxsx04v3yacapl8975cn"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults

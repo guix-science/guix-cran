@@ -3357,13 +3357,13 @@ provides a one-row summary of model-level statistics.")
 (define-public r-broman
   (package
     (name "r-broman")
-    (version "0.82")
+    (version "0.84")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "broman" version))
        (sha256
-        (base32 "01mcijlp2i3snna5np4cx8rivkk25zj3rk8kmbf0h5yqi8fdqb3l"))))
+        (base32 "01q05xvxlam6isdhaq48sfw5fh60pcqlhivs7c38lh7c8r3w2172"))))
     (properties `((upstream-name . "broman")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -20000,13 +20000,13 @@ Barreto-Souza, Mayrink and Simas (2020) <@code{arXiv:2003.05157>}.")
 (define-public r-bbnet
   (package
     (name "r-bbnet")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbnet" version))
        (sha256
-        (base32 "12z68mhb0fqq9lryjm57win7072v7d46pz94y9l3qra2ygrnyp5k"))))
+        (base32 "1g7hkiz6485200qabnpx31br6ixcr1jwgvzzdznz4qs8nwhswxqf"))))
     (properties `((upstream-name . "bbnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-igraph r-ggplot2 r-dplyr))
@@ -22046,13 +22046,13 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
 (define-public r-bayesmeanscale
   (package
     (name "r-bayesmeanscale")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMeanScale" version))
        (sha256
-        (base32 "0h3w1qn539gvly1byasazdbh01mvb6yj1972fypy7qwwgam2sg51"))))
+        (base32 "139fk9j6wkz3k1pjki4ywwhaaq4nmdnn2f93g5x4sgzbgxbm50pw"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
     (propagated-inputs (list r-posterior r-magrittr r-data-table r-bayestestr))

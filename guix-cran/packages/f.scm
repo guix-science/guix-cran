@@ -2500,16 +2500,17 @@ models, Technical report.")
 (define-public r-fude
   (package
     (name "r-fude")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fude" version))
        (sha256
-        (base32 "11gzmgq7rknrhcskfs751f4snh4qcv3hfkqn6b95iv9zkcpar4gm"))))
+        (base32 "06aacagrq4vjzq8r3xayyic8i0gjls7b7b94cnmspprh0bk9d7dw"))))
     (properties `((upstream-name . "fude")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-units
+                             r-tidyr
                              r-stringi
                              r-sf
                              r-rlang
@@ -6532,13 +6533,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "0fq295k20q1662r3niplbjzd515fyvf671d2qfmpw71p1myi34sz"))))
+        (base32 "19y6z8h3hs4mkm8a00p9xsyz71aq91gzz1f4i6lg2z82lnwkzyzv"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

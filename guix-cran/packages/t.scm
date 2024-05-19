@@ -20733,13 +20733,13 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "0.1.8")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "0h37jvvw3k291kwkq77b15ypvzh80wmh6jpgjhdcs9lid2k3iq2b"))))
+        (base32 "0550i7d4bpbd9bvs7sbjd5aaqpqjpd2fzfbplxfcvz2q9dwbcp49"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidysem
@@ -20754,24 +20754,25 @@ finding the optimal argument combinations with respect to each diagnostic.")
                              r-officer
                              r-officedown
                              r-mirt
+                             r-latticeextra
                              r-golem
                              r-ggplot2
                              r-flextable
                              r-estcrm
                              r-dt
                              r-dplyr
+                             r-difr
                              r-cowplot
                              r-brucer))
     (home-page "https://github.com/jiangyouxiang/TestAnaAPP")
-    (synopsis "The 'shiny' App for Test Analysis and Visualization")
+    (synopsis "'shiny' App for Test Analysis and Visualization")
     (description
-     "This application enables exploratory factor analysis, confirmatory factor
-analysis, classical measurement theory analysis, unidimensional item response
-theory, multidimensional item response theory, and continuous item response
-model analysis, through the shiny interactive interface.  It also facilitates
-the visualization of the results.  Users can easily download the analysis
-results from the interactive interface.  Additionally, users can download a
-concise report about items and test quality on the interactive interface.")
+     "This application provides exploratory and confirmatory factor analysis,
+classical test theory, unidimensional and multidimensional item response theory,
+and continuous item response model analysis, through the shiny interactive
+interface.  In addition, it offers rich functionalities for visualizing and
+downloading results.  Users can download figures, tables, and analysis reports
+via the interactive interface.")
     (license license:gpl3+)))
 
 (define-public r-test2norm

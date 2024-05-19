@@ -2137,13 +2137,13 @@ hessian functions are written in C++.  For further details see Mazucheli et.  al
 (define-public r-unitizer
   (package
     (name "r-unitizer")
-    (version "1.4.20")
+    (version "1.4.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unitizer" version))
        (sha256
-        (base32 "0s2jgvxdlz95ykdz3mwy6l5iry74qyv716d6fz18jxnixcx6vyss"))))
+        (base32 "0xr9xf5ams0j9vxgn1p0gm9yzq4g2il9q8qqlsic5v75gp3nj2g1"))))
     (properties `((upstream-name . "unitizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-diffobj r-crayon))
