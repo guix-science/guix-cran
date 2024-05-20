@@ -6117,21 +6117,23 @@ the @code{OpenAI} platform documentation at
 (define-public r-openairmaps
   (package
     (name "r-openairmaps")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openairmaps" version))
        (sha256
-        (base32 "14jb8a3i5ywzfqlqgy6smcfrj7lrq4fzamvcwdp9za5cxk9yi8cj"))))
+        (base32 "1g3jxks2qvys3rv5z4lz0889fq5b5wyjmzfgcj6pl3l67lgy5yj1"))))
     (properties `((upstream-name . "openairmaps")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-sf
+                             r-rosm
                              r-rlang
                              r-purrr
+                             r-prettymapr
                              r-openair
                              r-mgcv
                              r-magrittr
@@ -6139,8 +6141,8 @@ the @code{OpenAI} platform documentation at
                              r-lifecycle
                              r-leaflet
                              r-ggtext
+                             r-ggspatial
                              r-ggplot2
-                             r-ggmap
                              r-forcats
                              r-dplyr
                              r-cli))

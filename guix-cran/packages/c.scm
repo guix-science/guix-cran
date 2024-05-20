@@ -17115,42 +17115,6 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 <https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf>.")
     (license license:gpl3)))
 
-(define-public r-comtradr
-  (package
-    (name "r-comtradr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "comtradr" version))
-       (sha256
-        (base32 "1ydp07l9lfw7lymggy3m1nbq4frz5lq9jb4yfiwf317xsqlnkqn0"))))
-    (properties `((upstream-name . "comtradr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-readr
-                             r-rappdirs
-                             r-purrr
-                             r-poorman
-                             r-memoise
-                             r-lubridate
-                             r-lifecycle
-                             r-httr2
-                             r-fs
-                             r-cli
-                             r-cachem
-                             r-askpass))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/comtradr/")
-    (synopsis "Interface with the United Nations Comtrade API")
-    (description
-     "Interface with and extract data from the United Nations Comtrade API
-<https://comtradeplus.un.org/>.  Comtrade provides country level shipping data
-for a variety of commodities, these functions allow for easy API query and data
-returned as a tidy data frame.")
-    (license license:gpl3)))
-
 (define-public r-comstab
   (package
     (name "r-comstab")

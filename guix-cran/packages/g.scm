@@ -11288,13 +11288,13 @@ exploration, mapping, visualization and export.")
 (define-public r-glossr
   (package
     (name "r-glossr")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glossr" version))
        (sha256
-        (base32 "1wh6gryarmlv1b8ca12h81m94wjlr0kkjr2ydlrwdyzr2cxhxav5"))))
+        (base32 "1ip7s2whnid0ycdd554ncyvnazd2g7zmv16qfgfhjb0iy8ny3mc0"))))
     (properties `((upstream-name . "glossr")))
     (build-system r-build-system)
     (arguments
@@ -11313,14 +11313,12 @@ exploration, mapping, visualization and export.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-yaml
                              r-tibble
-                             r-stringr
+                             r-systemfonts
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-knitr
-                             r-flextable
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr esbuild))
@@ -15732,13 +15730,13 @@ rolling summaries such as rolling average on the fly for time series.")
 (define-public r-ggscidca
   (package
     (name "r-ggscidca")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggscidca" version))
        (sha256
-        (base32 "1ik8i67zbsf6f77fada6yih0jrhz6rmzr2d7chax7g5s9zcxaz18"))))
+        (base32 "1ggjakfafq6gib7yn684ssv6wdad68an0p13wxl232ikwmw4b66w"))))
     (properties `((upstream-name . "ggscidca")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -15746,6 +15744,7 @@ rolling summaries such as rolling average on the fly for time series.")
                              r-randomforest
                              r-kernlab
                              r-ggplot2
+                             r-e1071
                              r-cmprsk))
     (home-page "https://cran.r-project.org/package=ggscidca")
     (synopsis "Plotting Decision Curve Analysis with Coloured Bars")

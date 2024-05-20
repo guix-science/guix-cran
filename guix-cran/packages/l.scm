@@ -9479,16 +9479,16 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
 (define-public r-likertmaker
   (package
     (name "r-likertmaker")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LikertMakeR" version))
        (sha256
-        (base32 "04fzjwlwnqkn2p0jq0jhsjxwcaacq2v1pjllyrhkr1zgfr2qyibf"))))
+        (base32 "0hxyrgm88wvaa6b1cggm45f851sg7rzsbcz7745lcl9zmmkw5w1d"))))
     (properties `((upstream-name . "LikertMakeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/WinzarH/LikertMakeR")
     (synopsis "Synthesise and Correlate Rating-Scale Data")
@@ -9496,7 +9496,7 @@ Travers Ching, Xun Zhu, Lana X. Garmire (2018)
      "Synthesise rating-scale data with predefined first & second moments (mean &
 standard deviation) and, optionally, correlate multiple vectors with predefined
 correlation matrix.  Also generate synthetic rating-scale data with predefined
-Cronbach's Alpha.")
+Cronbach's Alpha, or generate rating-scale items from a predefined scale.")
     (license license:expat)))
 
 (define-public r-likert

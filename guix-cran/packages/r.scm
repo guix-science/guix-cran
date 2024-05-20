@@ -42786,6 +42786,42 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-ravetools
+  (package
+    (name "r-ravetools")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ravetools" version))
+       (sha256
+        (base32 "0n5mli7j964c9mlxrm21l4vvmai418yaibsslmq914v9ghh76v7c"))))
+    (properties `((upstream-name . "ravetools")))
+    (build-system r-build-system)
+    (inputs (list pkg-config fftw))
+    (propagated-inputs (list r-waveslim
+                             r-signal
+                             r-rniftyreg
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-pracma
+                             r-filearray
+                             r-digest))
+    (native-inputs (list pkg-config))
+    (home-page "https://dipterix.org/ravetools/")
+    (synopsis
+     "Signal and Image Processing Toolbox for Analyzing Intracranial Electroencephalography Data")
+    (description
+     "Implemented fast and memory-efficient Notch-filter, Welch-periodogram, discrete
+wavelet spectrogram for minutes of high-resolution signals, fast 3D convolution,
+image registration, 3D mesh manipulation; providing fundamental toolbox for
+intracranial Electroencephalography (@code{iEEG}) pipelines.  Documentation and
+examples about RAVE project are provided at <https://openwetware.org/wiki/RAVE>,
+and the paper by John F. Magnotti, Zhengjia Wang, Michael S. Beauchamp (2020)
+<doi:10.1016/j.neuroimage.2020.117341>; see citation(\"ravetools\") for details.")
+    (license license:gpl2+)))
+
 (define-public r-raverage
   (package
     (name "r-raverage")
@@ -46995,13 +47031,13 @@ they should be named in a data frame.  See
 (define-public r-radiant-multivariate
   (package
     (name "r-radiant-multivariate")
-    (version "1.6.1")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant.multivariate" version))
        (sha256
-        (base32 "0xqn7j8r2v5j8ajkj8ghdrnkhfi10m2351kr926b3qg4898ywfwn"))))
+        (base32 "02nviya2i45xpgnjsldpm5hvy30nh5z1nb6yk5wrps3hl044lqgi"))))
     (properties `((upstream-name . "radiant.multivariate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

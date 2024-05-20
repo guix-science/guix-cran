@@ -14149,13 +14149,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "0rkr6s5hx0m61r230bf4svmyblbvag3nrl8w7qs1p17lxcxbpwq9"))))
+        (base32 "01i4b5jrna1xjl694qrqqjrf71jskm0hwp8vqkwb64gf0qgfc6f7"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytable
@@ -36246,13 +36246,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefdlite
   (package
     (name "r-mbbefdlite")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBBEFDLite" version))
        (sha256
-        (base32 "0pa0i5sii73qsxfv559qzdp89pfi4afsdhn588j63jr1srkf1m26"))))
+        (base32 "0bq7h2jfnqiylmy9ji5k4r3v76qbxpd5wdjck18fs4vjfxapwplp"))))
     (properties `((upstream-name . "MBBEFDLite")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MBBEFDLite")

@@ -8151,13 +8151,13 @@ package vignette.")
 (define-public r-streamconnect
   (package
     (name "r-streamconnect")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamConnect" version))
        (sha256
-        (base32 "1lpvk35jylsaxy6vyk3phsj8g8f3cmpp9q8kn0fywvi98cbfbzak"))))
+        (base32 "1rl39v1dlhr06k68d2r6sxk6q6dhmi4yvsk5n21piwb4q185m5ar"))))
     (properties `((upstream-name . "streamConnect")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -44886,13 +44886,13 @@ estimation, and convergence diagnostics.")
 (define-public r-sgboost
   (package
     (name "r-sgboost")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgboost" version))
        (sha256
-        (base32 "184bxywv2pin4wl41f3vb3m3ddwfyjp091xj4rpl5lnznm46xx2w"))))
+        (base32 "1x3ppg2sivl2r3w1pbqvam7cvrd86agxbqdmkgf2qkvy3hf5gdga"))))
     (properties `((upstream-name . "sgboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

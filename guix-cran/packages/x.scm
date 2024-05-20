@@ -1923,13 +1923,13 @@ script.")
 (define-public r-xaringanextra
   (package
     (name "r-xaringanextra")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xaringanExtra" version))
        (sha256
-        (base32 "1snj4yf5mxn419d3qbm2pixj7gvhmf133sxvjbirjrr3ib6iyn84"))))
+        (base32 "1w5j5lhp7vckx4pj2xy4q5kyw7yhdxfqnawl5ipbxj6cbsxq7js5"))))
     (properties `((upstream-name . "xaringanExtra")))
     (build-system r-build-system)
     (arguments

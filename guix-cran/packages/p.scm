@@ -4723,13 +4723,13 @@ run the reverse-dependency tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "1gppj2y5za85j63wgf1xi2gdvxhl4dj1gyfdnbnfj10xvmnvkvgy"))))
+        (base32 "00i9y7yb0czhr7853v9syrcjr74v6x1a022nawjmryl831f4bl9g"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))
@@ -23395,26 +23395,6 @@ provides enhancements to phylobase classes, specifically for use by package
 branch-annotated trees (as in @code{SigTree}'); also provides support for a few
 other extra features.")
     (license license:gpl3)))
-
-(define-public r-phvid
-  (package
-    (name "r-phvid")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PhViD" version))
-       (sha256
-        (base32 "038pw24sb8ja8pbbmj05rww6413i2ljybb2dxwgrpffv22aqawmc"))))
-    (properties `((upstream-name . "PhViD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mcmcpack))
-    (home-page "https://cran.r-project.org/package=PhViD")
-    (synopsis "PharmacoVigilance Signal Detection")
-    (description
-     "This package provides a collection of several pharmacovigilance signal detection
-methods extended to the multiple comparison setting.")
-    (license license:gpl2)))
 
 (define-public r-phuassess
   (package

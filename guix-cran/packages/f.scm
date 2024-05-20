@@ -8946,13 +8946,13 @@ common conventions or those defined by International Swap Dealer Association
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2024.4")
+    (version "2024.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "1xn8w5c36g5dm6df24sxsn0q1iyd4lf3nhbng4ymwzlqa4zg53xv"))))
+        (base32 "0zhgpqfqgrgnfmhgbajzvq0crl9llwvf79n8m81sm57kqdfkxp7k"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (inputs (list python))
@@ -15580,13 +15580,13 @@ Regulations and related Federal Register publications.\"")
 (define-public r-fedmatch
   (package
     (name "r-fedmatch")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fedmatch" version))
        (sha256
-        (base32 "1k6gj0aaihxqwvvvic8s5bhjqlxg6m37yj3bk9hbxy1lijv89w8j"))))
+        (base32 "06clj31qk6ama56jmd9vpq5h1v7250aixgvaywh5j8fsrp1l7qg2"))))
     (properties `((upstream-name . "fedmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
