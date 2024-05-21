@@ -8019,17 +8019,16 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "10fnmrsh1002sg8s7l7ksy5k4kyd4lkh1d3c6aijq6fw2523cqsk"))))
+        (base32 "14qqvjviwr45x5g9i036pkd9y0qjaqhx27win3j1xb4c8mj20k02"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-snakecase
+    (propagated-inputs (list r-snakecase
                              r-rlang
                              r-purrr
                              r-omopgenerics

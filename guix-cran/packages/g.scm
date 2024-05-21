@@ -21333,13 +21333,13 @@ ensuring consistency and ease of use for spatial analysis and visualization.")
 (define-public r-geonode4r
   (package
     (name "r-geonode4r")
-    (version "0.1")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geonode4R" version))
        (sha256
-        (base32 "18wa14s6jm29i9qh9kd5m0hv58fssyvbj80mpn7rpjrkz94bxamb"))))
+        (base32 "1pyyknkg9dv58vq8w4pmxd36j8l352zb2jv99skvyg0vn07m6bax"))))
     (properties `((upstream-name . "geonode4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr r-r6 r-openssl r-keyring r-httr))

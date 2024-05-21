@@ -2415,13 +2415,13 @@ models.  The package contains six vignettes containing detailed examples.")
 (define-public r-fuj
   (package
     (name "r-fuj")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fuj" version))
        (sha256
-        (base32 "13gy3dqf2sbhavxq01cr09zihs7d2j4kn4r2aw1sklhykmzlq8p2"))))
+        (base32 "0ls63rhlwkfn145c34qgng5n8h0av092jkid5gy8fq7mj1ycflwd"))))
     (properties `((upstream-name . "fuj")))
     (build-system r-build-system)
     (home-page "https://jmbarbone.github.io/fuj/")
@@ -13483,38 +13483,6 @@ saved filter expressions.")
 @code{PubMed} and Web of Science, for non-human primate related publications.")
     (license license:agpl3+)))
 
-(define-public r-filterjsats
-  (package
-    (name "r-filterjsats")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "filteRjsats" version))
-       (sha256
-        (base32 "19zi44av3f5zahinqvgz5bvgh82qrpg4r4fffwjh8a09s975q5mg"))))
-    (properties `((upstream-name . "filteRjsats")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rerddap
-                             r-lubridate
-                             r-dplyr
-                             r-broman))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=filteRjsats")
-    (synopsis
-     "Filter Raw JSATS Acoustic Telemetry Files from Lotek, ATS, Teknologic")
-    (description
-     "Filtering of raw acoustic telemetry transmissions from three acoustic telemetry
-companies (ATS, Lotek, Teknologic).  The filtering steps check for false
-positives caused by reflected transmissions from surfaces and false pings from
-other noise generating equipment.  The filter is unique for each technology
-type.  The package was written in concert with the Interagency Telemetry
-Advisory Group (@code{iTAG}) and makes use of the JSATS California Fish Tracking
-Database: <https://oceanview.pfeg.noaa.gov/@code{CalFishTrack/>}.")
-    (license license:gpl3+)))
-
 (define-public r-fillr
   (package
     (name "r-fillr")
@@ -13981,13 +13949,13 @@ Forest Service data.")
 (define-public r-fiesta
   (package
     (name "r-fiesta")
-    (version "3.6.2")
+    (version "3.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FIESTA" version))
        (sha256
-        (base32 "00vfh6wclihglgldzqs2zsr37r5a7h51ia3vxmyq5vkk51jqlgrm"))))
+        (base32 "0sc5939rjg06aw77dxvi7bzcfgg0i00scv6xv8yg7pqzrvamqha5"))))
     (properties `((upstream-name . "FIESTA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf

@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.8")
+    (version "2.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "0fpffk6w1dbcwx3kykjaynwry7cyv2ikq6wsgp2ic479di0rh6r3"))))
+        (base32 "02g5dm23diihrgggk1azl8ds2hyrc950swl6rianbh52bbznr58g"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -6199,13 +6199,13 @@ resamples, and confidence intervals.")
 (define-public r-bootur
   (package
     (name "r-bootur")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootUR" version))
        (sha256
-        (base32 "024d1dlwdn2jv9sbsb05lscr7inn8xmnsr2kiwhs5n47x7p6vrns"))))
+        (base32 "19sjh9hwx9hcqyrjx5kc2id1ml1sfd6c37g412vzfgk931bm0lbs"))))
     (properties `((upstream-name . "bootUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urca

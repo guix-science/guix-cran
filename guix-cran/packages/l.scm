@@ -11783,13 +11783,13 @@ main function of the package is leem() function.")
 (define-public r-ledger
   (package
     (name "r-ledger")
-    (version "2.0.9")
+    (version "2.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ledger" version))
        (sha256
-        (base32 "0ynr1g7vfkabl78zjnshyxixk45g28bi9h1p4zjfl83009yhqjwx"))))
+        (base32 "0l26s7mnfrn9yi03xdx2i0965p17vif6cks1k9fi6h8lbfdj3id7"))))
     (properties `((upstream-name . "ledger")))
     (build-system r-build-system)
     (inputs (list hledger beancount))

@@ -23666,28 +23666,29 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "0hbaf56bg8l8rpc7n8p3hcijlqh2i1rgcr4vlr73xd2x0kj6zwns"))))
+        (base32 "1ap8gs9dfkyk5nrq21r2a4h2y040i91n1i20sb4wwhx4n377kh0d"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=cmahalanobis")
     (synopsis
-     "Calculate the Mahalanobis Distance for a Given List of Data Frames with Factors")
+     "Calculate Distance Measures for a Given List of Data Frames with Factors")
     (description
-     "It provides a function that calculates the Mahalanobis distance between each
-pair of species in a list of data frames.  Each data frame contains the
-observations of a species with some factors.  Mahalanobis distance is a measure
-of dissimilarity between two vectors of multivariate random variables, based on
-the covariance matrix.  This distance is useful for statistical matching or
-fusion of data, that is the integration of two data sources that refer to the
-same target population and that share some variables.")
+     "It provides functions that calculate Mahalanobis distance, Euclidean distance,
+Manhattan distance and Chebyshev distance between each pair of species in a list
+of data frames.  These metrics are fundamental in various fields, such as
+cluster analysis, classification, and other applications of machine learning and
+data mining, where assessing similarity or dissimilarity between data is
+crucial.  The package is designed to be flexible and easily integrated into data
+analysis workflows, providing reliable tools for evaluating distances in
+multidimensional contexts.")
     (license license:gpl3)))
 
 (define-public r-cmaesr
@@ -27196,13 +27197,13 @@ instead.")
 (define-public r-cleannlp
   (package
     (name "r-cleannlp")
-    (version "3.0.7")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cleanNLP" version))
        (sha256
-        (base32 "0zkfc7m7afmljr5rflx9mfplfamv6c30qaw0ckalj14s9xdrxa44"))))
+        (base32 "0qddi649ifgwlgbv7jh0im00dhhs740sgpkid39j01kdsv9czlil"))))
     (properties `((upstream-name . "cleanNLP")))
     (build-system r-build-system)
     (inputs (list python))
@@ -27213,11 +27214,9 @@ instead.")
     (description
      "This package provides a set of fast tools for converting a textual corpus into a
 set of normalized tables.  Users may make use of the udpipe back end with no
-external dependencies, or two Python back ends with @code{spaCy}
-<https://spacy.io> or @code{CoreNLP}
-<https://stanfordnlp.github.io/@code{CoreNLP/>}.  Exposed annotation tasks
-include tokenization, part of speech tagging, named entity recognition, and
-dependency parsing.")
+external dependencies, or a Python back ends with @code{spaCy}
+<https://spacy.io>.  Exposed annotation tasks include tokenization, part of
+speech tagging, named entity recognition, and dependency parsing.")
     (license license:lgpl2.0)))
 
 (define-public r-cleaningvalidation
@@ -34208,13 +34207,13 @@ details can be found in Ordonez et al. (2018)
 (define-public r-censreg
   (package
     (name "r-censreg")
-    (version "0.5-36")
+    (version "0.5-38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censReg" version))
        (sha256
-        (base32 "0r8pyscsw3m8lf6mx70sjk70k7i1jfjkk2qzq19m85q3byx447n6"))))
+        (base32 "1rrgvq883970zp311lmkvxxky29w48p54xa4hq7iaa33yq7dbmmb"))))
     (properties `((upstream-name . "censReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-plm r-misctools r-maxlik r-glmmml))

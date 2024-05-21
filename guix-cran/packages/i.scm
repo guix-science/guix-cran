@@ -5913,13 +5913,13 @@ data corrected for missed arrival observations.")
 (define-public r-intrval
   (package
     (name "r-intrval")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intrval" version))
        (sha256
-        (base32 "1fbgl2r359aml6cfz8x7h0381kxfx1dy0hr0c7012vr66f6c2lhi"))))
+        (base32 "0pq2pbvhhczh90p78zcgv5n1wgw0jswly8g5bfqxq5j2nhd8imbd"))))
     (properties `((upstream-name . "intrval")))
     (build-system r-build-system)
     (home-page "https://github.com/psolymos/intrval")
@@ -7606,20 +7606,19 @@ are described in Gastaldelli (2022). <doi:10.1002/oby.23503> and Lorenzo (2010).
 (define-public r-insurancerating
   (package
     (name "r-insurancerating")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "insurancerating" version))
        (sha256
-        (base32 "1s6aggr6gd2h90za0lg9kaxnny4gf036ahdf2j383s7mviz1hvgh"))))
+        (base32 "1bfl5khi70cfqg1kx0fa7ym6nxqhvk1rjff91kvxbc8q2nxj6wda"))))
     (properties `((upstream-name . "insurancerating")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-scales
                              r-patchwork
                              r-mgcv
-                             r-magrittr
                              r-lubridate
                              r-insight
                              r-ggplot2

@@ -22785,13 +22785,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "01jcj0hx3iab06wdb17ngjdx4npdz64jjngm1d9vxixl4gipr30k"))))
+        (base32 "069r2wcjlkv91vqvs7s089hmclngcrvawycr5vkfp65l7rlrg1qp"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -31801,13 +31801,13 @@ principales.  Este paquete no es patrocinado o respaldado por el MEFD.")
 (define-public r-mefa4
   (package
     (name "r-mefa4")
-    (version "0.3-9")
+    (version "0.3-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mefa4" version))
        (sha256
-        (base32 "0g46z14r7d8wkyxsp58i6007r9jljf269snrbachamy2wlmpc1g1"))))
+        (base32 "02npawccc316vwgmk0yna7wvlxzsbdishxzmfd4wgl7g218wjk3m"))))
     (properties `((upstream-name . "mefa4")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -31821,13 +31821,13 @@ Sparse array-like objects are supported via lists of sparse matrices.")
 (define-public r-mefa
   (package
     (name "r-mefa")
-    (version "3.2-8")
+    (version "3.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mefa" version))
        (sha256
-        (base32 "0agq3vk0dw7i6plz3killybsf8jb57fmlbh5zq1h8lgy1dqry55a"))))
+        (base32 "1rllkxp218qsa1c0aaa5zdky5bh2rzqbhdc2n14bmvv4jlgzrl8c"))))
     (properties `((upstream-name . "mefa")))
     (build-system r-build-system)
     (home-page "https://github.com/psolymos/mefa")

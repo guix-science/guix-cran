@@ -1951,13 +1951,13 @@ statistical approaches in applied experience research to human readable output."
 (define-public r-experdesign
   (package
     (name "r-experdesign")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "experDesign" version))
        (sha256
-        (base32 "19rxfmvc7mamywm43ixwj0kca1y61k8xk9wdmhhyqq6y0wbvhxdg"))))
+        (base32 "0qhp9kwcjk3l7zwd1bnkv5880cylzmf2d0n2y27jnsc4wns72hfz"))))
     (properties `((upstream-name . "experDesign")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -5690,13 +5690,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspm" version))
        (sha256
-        (base32 "0mcyavk6hbllj4kz8jyahl3l2yxfixbgv48kwi042ar8syy3kgw4"))))
+        (base32 "0zl3mpr1k40jfhx45xhjvwr4p7qpyxnaphrc5mbjypflaxcns4ym"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://cran4linux.github.io/rspm/")
@@ -10467,13 +10467,13 @@ approach and two alternatives approaches to characterize chromatographic column.
 (define-public r-rpdtest
   (package
     (name "r-rpdtest")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPDTest" version))
        (sha256
-        (base32 "1irj2ldd4if4l2wkz5slwl7441mav3igy1pmg62cxkpxk1sggbfs"))))
+        (base32 "0xdb68nxn25did26a39x6s7sch7g2qdl7f15qli2h9l9irlh8zqd"))))
     (properties `((upstream-name . "RPDTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -15429,13 +15429,13 @@ interacting with watch lists.")
 (define-public r-robincar
   (package
     (name "r-robincar")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobinCar" version))
        (sha256
-        (base32 "0f4pwwww0zgv3hih9bi4c58ln2fksb64i8achf0plfzr4p2xpvas"))))
+        (base32 "0pyp73fk871ka85ci2il7cmb2g7cqrj7c53k73x5yr1kp51srxb0"))))
     (properties `((upstream-name . "RobinCar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

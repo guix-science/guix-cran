@@ -1183,13 +1183,13 @@ forest package ranger'.")
 (define-public r-quantreggrowth
   (package
     (name "r-quantreggrowth")
-    (version "1.7-0")
+    (version "1.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantregGrowth" version))
        (sha256
-        (base32 "0as226mcchbq41wrhl3vb8j4szqvcfk9zdsnf9fnyn50ymh4c5mb"))))
+        (base32 "07hj5kanas42kj70p03h77j5m9vnvsnsb02r31snai4smbaps4ad"))))
     (properties `((upstream-name . "quantregGrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-quantreg))

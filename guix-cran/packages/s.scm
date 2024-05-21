@@ -4217,16 +4217,16 @@ linear models.  For further details, see Hanson et al. (2022)
 (define-public r-surveytable
   (package
     (name "r-surveytable")
-    (version "0.9.2")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveytable" version))
        (sha256
-        (base32 "0apzh0jwqb3zniwswafxz5vnn8sn00rigpyb2xlap7i6pp7yfac5"))))
+        (base32 "0prfr3y7xbx6fylc5xpyg74biiqim4sjsfbc4f8khm57nznpg91v"))))
     (properties `((upstream-name . "surveytable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survey r-magrittr r-huxtable r-forcats
+    (propagated-inputs (list r-survey r-magrittr r-kableextra r-huxtable
                              r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://cdcgov.github.io/surveytable/")
@@ -4235,8 +4235,8 @@ linear models.  For further details, see Hanson et al. (2022)
      "Short and understandable commands that generate tabulated, formatted, and
 rounded survey estimates.  Mostly a wrapper for the survey package (Lumley
 (2004) <doi:10.18637/jss.v009.i08> <https://CRAN.R-project.org/package=survey>)
-that implements the National Center for Health Statistics (NCHS) presentation
-standards (Parker et al. (2017)
+that identifies low-precision estimates using the National Center for Health
+Statistics (NCHS) presentation standards (Parker et al. (2017)
 <https://www.cdc.gov/nchs/data/series/sr_02/sr02_175.pdf>, Parker et al. (2023)
 <doi:10.15620/cdc:124368>).")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
@@ -18434,16 +18434,17 @@ on a simple biological intuition.")
 (define-public r-spnetwork
   (package
     (name "r-spnetwork")
-    (version "0.4.3.8")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spNetwork" version))
        (sha256
-        (base32 "0jxm3csq6prqssw9jdlk0k1ipm19kfv1y8kjgyqfb5m5l1za5xvq"))))
+        (base32 "049fc00rnslairlryzlvgir05ha4pbsdbn0shrbvfh9yhwk2llpk"))))
     (properties `((upstream-name . "spNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
+                             r-sfheaders
                              r-sf
                              r-rdpack
                              r-rcppprogress
@@ -18453,7 +18454,6 @@ on a simple biological intuition.")
                              r-igraph
                              r-ggplot2
                              r-future-apply
-                             r-dplyr
                              r-dbscan
                              r-data-table
                              r-cubature
@@ -29831,13 +29831,13 @@ mixture of normal distributions.")
 (define-public r-smmt
   (package
     (name "r-smmt")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SMMT" version))
        (sha256
-        (base32 "1zjvdjz75qhfdm4maiq2rw9bzqa2xls15vpr3556iba5aq4hysv7"))))
+        (base32 "02mm2f4cg8dbzdmpmdv8pf2jskk5kv0w99qzdjri00zwrcd6ckm9"))))
     (properties `((upstream-name . "SMMT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -29857,7 +29857,7 @@ mutations and maps municipalities over time, i.e.  municipalities of an old
 state to municipalities of a new state.  This functionality is helpful when
 working with datasets that are based on different spatial references.  The
 package's idea and use case is discussed in the following article:
-<https://onlinelibrary.wiley.com/doi/full/10.1111/spsr.12487>.")
+<doi:10.1111/spsr.12487>.")
     (license license:gpl3)))
 
 (define-public r-smmr
@@ -42798,13 +42798,13 @@ from and write to relational databases.")
 (define-public r-shiny-react
   (package
     (name "r-shiny-react")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.react" version))
        (sha256
-        (base32 "0s4v2k0x04qcpjsb44c3rhgkzh0004r4hga3dkghcpzkgz6pfx2h"))))
+        (base32 "115kxwfpwirj34djzk7r4akdq1a6ril3lg9xzii60wiqc1panbdd"))))
     (properties `((upstream-name . "shiny.react")))
     (build-system r-build-system)
     (arguments
@@ -42823,7 +42823,8 @@ from and write to relational databases.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-shiny
+    (propagated-inputs (list r-stringi
+                             r-shiny
                              r-rlang
                              r-purrr
                              r-logger
