@@ -1332,6 +1332,30 @@ section of @code{GitHub} README.md
      "This package provides a nice GUI for financial DErivatives in R.")
     (license license:gpl2)))
 
+(define-public r-guest
+  (package
+    (name "r-guest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GUEST" version))
+       (sha256
+        (base32 "1fbad8kf0l69mzagiagf7i5dk7sq8a8qazfxywzppz7xy15acy42"))))
+    (properties `((upstream-name . "GUEST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xicor r-network r-ggally))
+    (home-page "https://cran.r-project.org/package=GUEST")
+    (synopsis
+     "Graphical Models in Ultrahigh-Dimensional and Error-Prone Data via Boosting Algorithm")
+    (description
+     "We consider the ultrahigh-dimensional and error-prone data.  Our goal aims to
+estimate the precision matrix and identify the graphical structure of the random
+variables with measurement error corrected.  We further adopt the estimated
+precision matrix to the linear discriminant function to do classification for
+multi-label classes.")
+    (license license:gpl2)))
+
 (define-public r-guess
   (package
     (name "r-guess")
@@ -7264,34 +7288,40 @@ and document-level predictions are organized to align with the sentences.")
 (define-public r-gptstudio
   (package
     (name "r-gptstudio")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gptstudio" version))
        (sha256
-        (base32 "1530qk7189mcmv9m33r4v66mj0w429n2vj3sg5943r6f8fg3kaxz"))))
+        (base32 "0hlmpysw3wlz2nvixbdz2gd9nk290jpfj5jcjidi6cn3skykvkdv"))))
     (properties `((upstream-name . "gptstudio")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-waiter
                              r-stringr
+                             r-sseparser
                              r-shiny-i18n
                              r-shiny
+                             r-rvest
                              r-rstudioapi
                              r-rlang
+                             r-r6
                              r-purrr
                              r-magrittr
                              r-jsonlite
+                             r-ids
                              r-httr2
                              r-htmlwidgets
                              r-htmltools
                              r-glue
+                             r-fontawesome
+                             r-curl
                              r-colorspace
                              r-cli
-                             r-callr
                              r-bslib
                              r-assertthat))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/MichelNivard/gptstudio")
     (synopsis
      "Use Large Language Models Directly in your Development Environment")
@@ -14198,13 +14228,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-16")
+    (version "0.7-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "0vimpnzvls4344wpx28iv2p91vsv74nkl0wwwgfnz6l5nfywdrqa"))))
+        (base32 "0pa0mag0w7gxx4ikqs3c3k8g3ppi1fz3qkxmq2vmd48k7fyy7n0x"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -18468,6 +18498,27 @@ JDemetra+ (<https://github.com/jdemetra/jdemetra-app>), the seasonal adjustment
 software officially recommended to the members of the European Statistical
 System and the European System of Central Banks.")
     (license (license:fsdg-compatible "EUPL"))))
+
+(define-public r-ggdaynight
+  (package
+    (name "r-ggdaynight")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggdaynight" version))
+       (sha256
+        (base32 "1x6f1s8hbjshx13lakkag35l8hlcikphdyxi4d6a96n8il1by83y"))))
+    (properties `((upstream-name . "ggdaynight")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://github.com/GabrielSlPires/ggdaynight")
+    (synopsis "Add Day/Night Patterns to 'ggplot2' Plots")
+    (description
+     "It provides a custom ggplot2 geom to add day/night patterns to plots.  It
+visually distinguishes daytime and nighttime periods.  It is useful for
+visualizing data that spans multiple days and for highlighting diurnal patterns.")
+    (license license:expat)))
 
 (define-public r-ggdark
   (package
@@ -27414,13 +27465,13 @@ L2-distance, the Chi-square divergence and the Hellinger Coefficient.")
 (define-public r-gausscov
   (package
     (name "r-gausscov")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gausscov" version))
        (sha256
-        (base32 "12v1xa21d573jinzy54crla169rnlavkwx2ijryhydmiyh2574yb"))))
+        (base32 "0dv3ifhi72kij820bny5jikps8zywyinddbc78q4bdbska820rvn"))))
     (properties `((upstream-name . "gausscov")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -27457,8 +27508,9 @@ valid subset.  A good default start is f1st(y,x,kmn=15) The best function for
 returning multiple approximations is f3st which repeatedly calls f1st.  For more
 information see the web site below and the accompanying papers: L. Davies and L.
 Duembgen, \"Covariate Selection Based on a Model-free Approach to Linear
-Regression with Exact Probabilities\", 2022, <arxiv:2202.01553>.  L. Davies, \"An
-Approximation Based Theory of Linear Regression\", 2024, <arxiv:2402.09858>.")
+Regression with Exact Probabilities\", 2202,
+<doi:10.48550/@code{arXiv.2202.01553>}.  L. Davies, \"An Approximation Based
+Theory of Linear Regression\", 2402, <doi:10.48550/@code{arXiv.2402.09858>}.")
     (license license:gpl3)))
 
 (define-public r-gauser

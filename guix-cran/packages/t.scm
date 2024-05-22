@@ -8292,13 +8292,13 @@ polyadic data.")
 (define-public r-traminer
   (package
     (name "r-traminer")
-    (version "2.2-9")
+    (version "2.2-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineR" version))
        (sha256
-        (base32 "1gn4mpd3hkxxhdlqvpvxj2q4p03g4v1cib8048h8ar27rl5mqpvh"))))
+        (base32 "19l51vjn4ljyfghsl93amh94zqsvf290ahvb7r4z6kqgdbz8j5lb"))))
     (properties `((upstream-name . "TraMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-rcolorbrewer r-colorspace r-cluster
@@ -25794,6 +25794,33 @@ from raster data and return the cells as a data frame rather than as lists of
 matrices or vectors.  The functions here allow spatial data to be used without
 special handling for the format currently in use.")
     (license license:gpl3)))
+
+(define-public r-tabulapdf
+  (package
+    (name "r-tabulapdf")
+    (version "1.0.5-3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tabulapdf" version))
+       (sha256
+        (base32 "1cavgzchfpwa8mg7g4di5sys41909iwvy6sj0ah7p8cd623k9f7g"))))
+    (properties `((upstream-name . "tabulapdf")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rjava r-readr r-png))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://docs.ropensci.org/tabulapdf/https://github.com/ropensci/tabulapdf/")
+    (synopsis "Extract Tables from PDF Documents")
+    (description
+     "Bindings for the Tabula <https://tabula.technology/> Java library, which can
+extract tables from PDF files.  This tool can reduce time and effort in data
+extraction processes in fields like investigative journalism.  It allows for
+automatic and manual table extraction, the latter facilitated through a Shiny
+interface, enabling manual areas selection\\ with a computer mouse for data
+retrieval.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tabula
   (package

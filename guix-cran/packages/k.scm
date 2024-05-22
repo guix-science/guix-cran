@@ -501,39 +501,41 @@ excision criteria.")
 (define-public r-ksgeneral
   (package
     (name "r-ksgeneral")
-    (version "1.1.3")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KSgeneral" version))
        (sha256
-        (base32 "1q17ccs35yznli9zkqp5x7sx0i0ckryzcpwjyliwsqjx3bia9p32"))))
+        (base32 "0m3qr65366vqb8pbjidmvlcz5prwmrzcrcs0scsnqcyvwrlwyf0l"))))
     (properties `((upstream-name . "KSgeneral")))
     (build-system r-build-system)
     (inputs (list fftw))
     (propagated-inputs (list r-rcpp r-mass r-dgof))
     (native-inputs (list pkg-config))
-    (home-page "https://github.com/raymondtsr/KSgeneral")
+    (home-page "https://github.com/d-dimitrova/KSgeneral")
     (synopsis
-     "Computing P-Values of the K-S Test for (Dis)Continuous Null Distribution")
+     "Computing P-Values of the One-Sample K-S Test and the Two-Sample K-S and Kuiper Tests for (Dis)Continuous Null Distribution")
     (description
-     "Computes a p-value of the one-sample two-sided (or one-sided, as a special case)
-Kolmogorov-Smirnov (KS) statistic, for any fixed critical level, and an
-arbitrary, possibly large sample size for a pre-specified purely discrete, mixed
-or continuous cumulative distribution function (cdf) under the null hypothesis.
-If a data sample is supplied, KSgeneral computes the p-value corresponding to
-the value of the KS test statistic computed based on the user provided data
-sample.  The package KSgeneral implements a novel, accurate and efficient method
-named Exact-KS-FFT, expressing the p-value as a double-boundary non-crossing
-probability for a homogeneous Poisson process, which is then efficiently
-computed using Fast Fourier Transform (FFT).  The package can also be used to
-compute and plot the complementary cdf of the KS statistic which is known to
-depend on the hypothesized distribution when the latter is discontinuous (i.e.
-purely discrete or mixed).  To cite this package in publication use: Dimitrina
+     "This package contains functions to compute p-values for the one-sample and
+two-sample Kolmogorov-Smirnov (KS) tests and the two-sample Kuiper test for any
+fixed critical level and arbitrary (possibly very large) sample sizes.  For the
+one-sample KS test, this package implements a novel, accurate and efficient
+method named Exact-KS-FFT, which allows the pre-specified cumulative
+distribution function under the null hypothesis to be continuous, purely
+discrete or mixed.  In the two-sample case, it is assumed that both samples come
+from an unspecified (unknown) continuous, purely discrete or mixed distribution,
+i.e.  ties (repeated observations) are allowed, and exact p-values of the KS and
+the Kuiper tests are computed.  Note, the two-sample Kuiper test is often used
+when data samples are on the line or on the circle (circular data).  To cite
+this package in publication: (for the use of the one-sample KS test) Dimitrina
 S. Dimitrova, Vladimir K. Kaishev, and Senren Tan.  Computing the
 Kolmogorov-Smirnov Distribution When the Underlying CDF is Purely Discrete,
 Mixed, or Continuous.  Journal of Statistical Software.  2020; 95(10): 1--42.
-<doi:10.18637/jss.v095.i10>.")
+<doi:10.18637/jss.v095.i10>. (for the use of the two-sample KS and Kuiper tests)
+Dimitrina S. Dimitrova, Yun Jia and Vladimir K. Kaishev (2024).  The R functions
+KS2sample and Kuiper2sample: Efficient Exact Calculation of P-values of the
+Two-sample Kolmogorov-Smirnov and Kuiper Tests.  submitted.")
     (license license:gpl2+)))
 
 (define-public r-kselection
@@ -4381,13 +4383,13 @@ requiring you to change a few lines of code.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "0ggn5jm4z6f7sadhsggdk9yvgg94q4dhkdk9hcs5dfz534jy2fda"))))
+        (base32 "173l57wgnbjwmb8cgsmifk22dwiib50mkx0k68v080iavh4x44g6"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot

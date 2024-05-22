@@ -2335,39 +2335,29 @@ on adaptive Gauss Hermite quadrature rule.")
 (define-public r-ptm
   (package
     (name "r-ptm")
-    (version "0.2.7")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ptm" version))
        (sha256
-        (base32 "1bbcysv1dgc2siix8cp2lbc4i5kh31n0ciadfkjkw4xw3ib70pc8"))))
+        (base32 "1g5yfck6dnlb5bc3cqjch9x7k9z4p84q84nnakjnf56c3ddvwrjr"))))
     (properties `((upstream-name . "ptm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-seqinr
-                             r-rcurl
-                             r-jsonlite
-                             r-igraph
-                             r-httr
-                             r-curl
-                             r-bio3d))
+    (propagated-inputs (list r-jsonlite r-httr r-curl r-bio3d))
     (home-page "https://bitbucket.org/jcaledo/ptm")
     (synopsis "Analyses of Protein Post-Translational Modifications")
     (description
      "This package contains utilities for the analysis of post-translational
 modifications (PTMs) in proteins, with particular emphasis on the sulfoxidation
 of methionine residues.  Features include the ability to download, filter and
-analyze data from the sulfoxidation database @code{MetOSite}', and integrate
-data from other main PTMs (other databases).  Utilities to search and
-characterize S-aromatic motifs in proteins are also provided.  In addition,
-functions to analyze sequence environments around modifiable residues in
-proteins can be found.  For instance, ptm allows to search for amino acids
+analyze data from the sulfoxidation database @code{MetOSite}'.  Utilities to
+search and characterize S-aromatic motifs in proteins are also provided.  In
+addition, functions to analyze sequence environments around modifiable residues
+in proteins can be found.  For instance, ptm allows to search for amino acids
 either overrepresented or avoided around the modifiable residues from the
 proteins of interest.  Functions tailored to test statistical hypothesis related
-to these differential sequence environments are also implemented.  A number of
-utilities to assess the effect of the modification/mutation of a given residue
-on the protein stability, have also been included in this package.  Further and
+to these differential sequence environments are also implemented.  Further and
 detailed information regarding the methods in this package can be found in
 (Aledo (2020) <https://metositeptm.com>).")
     (license license:gpl2+)))
@@ -2859,13 +2849,13 @@ package \"psychotree\".")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.11.6")
+    (version "0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "0d8q0gsj6gg1cn43cr4ix7r08y6d9568mmf1l8jihazcijkcmh82"))))
+        (base32 "0kpfkn1sy773vafh7jxbdmcawyssl7lkvr8bg0wr864dq6j1jjbc"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
@@ -11073,6 +11063,33 @@ relatedness, and then performs Wald tests for each gene in RNAseq or site in
 BSseq.")
     (license license:gpl2+)))
 
+(define-public r-pql
+  (package
+    (name "r-pql")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pql" version))
+       (sha256
+        (base32 "10gify86gywwahxj5hzwqnbx22a42jkmry2jkz7ywfsgznzldffw"))))
+    (properties `((upstream-name . "pql")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma))
+    (home-page "https://cran.r-project.org/package=pql")
+    (synopsis
+     "Partitioned Quasi-Likelihood for Distributed Statistical Inference")
+    (description
+     "In the big data setting, working data sets are often distributed on multiple
+machines.  However, classical statistical methods are often developed to solve
+the problems of single estimation or inference.  We employ a novel parallel
+quasi-likelihood method in generalized linear models, to make the variances
+between different sub-estimators relatively similar.  Estimates are obtained
+from projection subsets of data and later combined by suitably-chosen unknown
+weights.  The philosophy of the package is described in Guo G. (2020)
+<doi:10.1007/s00180-020-00974-4>.")
+    (license license:expat)))
+
 (define-public r-pqantimalarials
   (package
     (name "r-pqantimalarials")
@@ -15490,17 +15507,17 @@ text.  Functions send requests to translation services online.")
 (define-public r-polycub
   (package
     (name "r-polycub")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyCub" version))
        (sha256
-        (base32 "0rdcb0jdfjxj09vrhsgf7jy65fffldi2dp32gh04c0mhbi38bhx9"))))
+        (base32 "14hifd0ixppy3bg49y4kpjgvwhvz6nj43nh37hgwsy5qdifayzq7"))))
     (properties `((upstream-name . "polyCub")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bastistician/polyCub")
     (synopsis "Cubature over Polygonal Domains")
     (description
@@ -17768,13 +17785,13 @@ phylogeny informative? Measuring the power of comparative methods, Evolution 66
 (define-public r-pmartr
   (package
     (name "r-pmartr")
-    (version "2.4.4")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmartR" version))
        (sha256
-        (base32 "1ns65iglnz9kpc14jnwb6z7jn0drlqnqblg8ibf4y405kv7mw3zy"))))
+        (base32 "07996a2xs3rwxaa8dw53pm07n2052lq223prqd4lbf8ijy3za765"))))
     (properties `((upstream-name . "pmartR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33795,13 +33812,13 @@ described in Ulrich Riegel (2018) <doi:10.1007/s13385-018-0177-3>.")
 (define-public r-pare
   (package
     (name "r-pare")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PaRe" version))
        (sha256
-        (base32 "1axxmqnhw0aw1g3985ld5ahf6qk954g7xv1ddrdavvyh8601l7lv"))))
+        (base32 "1p65p3anwyk1zg82lir7wqvl9zxi7p4hjb70kvfhj06p1n8f653c"))))
     (properties `((upstream-name . "PaRe")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

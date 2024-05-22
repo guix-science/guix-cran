@@ -1793,13 +1793,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "025364w08mwjcl03lnw9jdy21bzirr5znygwkl8py30faipq2mj8"))))
+        (base32 "00fdpf9kgzcic0wf43xzh56mdscf0vds91s1anayqjaq9b8g58dn"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17908,17 +17908,17 @@ multivariate generalization of QQ-plots).")
 (define-public r-deps
   (package
     (name "r-deps")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deps" version))
        (sha256
-        (base32 "0fq5zjlcvd34k7mn03xxw39k1dy47923n27racqdc8nipcsrm0wq"))))
+        (base32 "1v274l8gs5by7vzgcsdsf8m3m9gkwdmw6dqvrmjx2q9j40i7wf69"))))
     (properties `((upstream-name . "deps")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-remotes r-jsonlite))
-    (home-page "https://github.com/analythium/deps")
+    (home-page "https://hub.analythium.io/deps/")
     (synopsis "Dependency Management with 'roxygen'-Style Comments")
     (description
      "Manage your source code dependencies by decorating your existing R code with

@@ -12,6 +12,8 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages cmake)
+  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -10406,6 +10408,42 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
 
+(define-public r-mpcr
+  (package
+    (name "r-mpcr")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MPCR" version))
+       (sha256
+        (base32 "1xx8mzn5124liil17pgqdilw05fzm4p9rhg66rx49ljgbj50943d"))))
+    (properties `((upstream-name . "MPCR")))
+    (build-system r-build-system)
+    (inputs (list git cmake))
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/stsds/MPCR")
+    (synopsis "Multi- And Mixed-Precision Computations")
+    (description
+     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
+32-bit data structures.  This flexibility enables fast execution across various
+applications.  The package enhances performance by optimizing operations in both
+precision levels, which is achieved by integrating with high-speed BLAS and
+LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
+caters to applications where high precision is unnecessary, accelerating
+computational processes whenever feasible.  The package also provides support
+for tile-based algorithms in three linear algebra operations: CHOL(), TRSM(),
+and GEMM().  The tile-based algorithm splits the matrix into smaller tiles,
+facilitating parallelization through a predefined Directed Acyclic Graph (DAG)
+for each operation.  Enabling @code{OpenMP} enhances the efficiency of these
+operations, leveraging multi-core parallelism.  In this case, MPCR facilitates
+mixed-precision execution by permitting varying precision levels for different
+tiles.  This approach is advantageous in numerous applications, as it maintains
+the accuracy of the application while accelerating execution in scenarios where
+single-precision alone does not significantly affect the accuracy of the
+application.")
+    (license license:gpl3+)))
+
 (define-public r-mpci
   (package
     (name "r-mpci")
@@ -18164,13 +18202,13 @@ Robins (1998) <doi:10.1093/biomet/85.4.935>.")
 (define-public r-mlmhelpr
   (package
     (name "r-mlmhelpr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlmhelpr" version))
        (sha256
-        (base32 "1liqawmdz3a8jxnlbhxx9iz5nlybkyz7jr719y0xkqz4h741bj5s"))))
+        (base32 "16p94w6lh6k5dlfmi1kfdnm7q05c0d30gf08qcm9z9mm9yyilp0d"))))
     (properties `((upstream-name . "mlmhelpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mathjaxr r-lme4))
@@ -39274,26 +39312,6 @@ state uncertainty and a simulation capability for HMM models.")
 user to write some markdown code and to preview the result.  This input has been
 inspired by the \"comment\" window of <https://github.com/>.")
     (license license:gpl3)))
-
-(define-public r-mark
-  (package
-    (name "r-mark")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mark" version))
-       (sha256
-        (base32 "0zbzp4y7gh6bq20ymfpmfihxn0z8gl0xn5fcshikh59ikqrm0mff"))))
-    (properties `((upstream-name . "mark")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr r-fuj r-fs r-cli))
-    (home-page "https://github.com/jmbarbone/mark")
-    (synopsis "Miscellaneous, Analytic R Kernels")
-    (description
-     "Miscellaneous functions and wrappers for development in other packages created,
-maintained by Jordan Mark Barbone.")
-    (license license:expat)))
 
 (define-public r-marima
   (package

@@ -8711,6 +8711,29 @@ multiple cores.  The package also supports exploration for uplift models (NWOE
 and NIV).")
     (license license:gpl3+)))
 
+(define-public r-infoelectoral
+  (package
+    (name "r-infoelectoral")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infoelectoral" version))
+       (sha256
+        (base32 "1yqvgb5n115xzijh8bc3p461xxx5cz865rc1z2qa40cz0bp46p88"))))
+    (properties `((upstream-name . "infoelectoral")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rOpenSpain/infoelectoral")
+    (synopsis "Download Spanish Election Results")
+    (description
+     "Download official election results for Spain at polling station, municipality
+and province level from the Ministry of Interior
+(<https://infoelectoral.interior.gob.es/es/elecciones-celebradas/area-de-descargas/>),
+format them and import them to the R environment.")
+    (license license:gpl2)))
+
 (define-public r-infodecompute
   (package
     (name "r-infodecompute")

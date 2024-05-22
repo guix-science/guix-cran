@@ -13169,13 +13169,13 @@ Algorithm (Rusch, Mair & Hornik, 2021,<doi:10.1080/10618600.2020.1869027>).")
 (define-public r-copre
   (package
     (name "r-copre")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copre" version))
        (sha256
-        (base32 "0xb1xa134r145qaycl0ldldx521gvjlwd9c64nnwmllh01iv7ihb"))))
+        (base32 "1lgps3wmjp3ja13xd33q41xb3kc56vmyidjpsmm5c2y263pm1m8i"))))
     (properties `((upstream-name . "copre")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -20372,13 +20372,13 @@ and plotting methods for a clear presentation of the results.")
 (define-public r-coinr
   (package
     (name "r-coinr")
-    (version "1.1.7")
+    (version "1.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COINr" version))
        (sha256
-        (base32 "0yvaqm2f4ny0afqyis0fna2h3cngwpb7xaw9kpr9nsbfdigj3d47"))))
+        (base32 "1fk2ha2g02f720kxxbxf2fkg2xyg81y3p181zy0yj8f4mjxp0w1s"))))
     (properties `((upstream-name . "COINr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-readxl r-openxlsx r-ggplot2))
@@ -24907,20 +24907,20 @@ Valkiers, Nicky de Vrij, Benson Ogunjimi, Kris Laukens, Pieter Meysman (2023)
 (define-public r-clustblock
   (package
     (name "r-clustblock")
-    (version "3.2.0")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClustBlock" version))
        (sha256
-        (base32 "10nd53lzrdd3x1hhr88wr509qnbgpf707xr1qhc8r1jcjlipqpxn"))))
+        (base32 "1gqq6wq79c6ikz8nxrahqdnl8g204y4sw82fvmrykh8xv3hzv2cp"))))
     (properties `((upstream-name . "ClustBlock")))
     (build-system r-build-system)
     (propagated-inputs (list r-factominer))
     (home-page "https://cran.r-project.org/package=ClustBlock")
     (synopsis "Clustering of Datasets")
     (description
-     "Hierarchical and partitioning algorithms of blocks of variables.  The
+     "Hierarchical and partitioning algorithms to cluster blocks of variables.  The
 partitioning algorithm includes an option called noise cluster to set aside
 atypical blocks of variables.  The CLUSTATIS method (for quantitative blocks)
 (Llobell, Cariou, Vigneau, Labenne & Qannari (2020)
@@ -24931,7 +24931,9 @@ Check-All-That-Apply data) (Llobell, Cariou, Vigneau, Labenne & Qannari (2019)
 (2019) <doi:10.1016/j.foodqual.2019.05.017>) are the core of this package.  The
 CATATIS methods allows to compute some indices and tests to control the quality
 of CATA data.  Multivariate analysis and clustering of subjects for quantitative
-multiblock data, CATA, RATA, Free Sorting and JAR experiments are available.")
+multiblock data, CATA, RATA, Free Sorting and JAR experiments are available.
+Clustering of rows in multi-block context (notably with @code{ClusMB} strategy)
+is also included.")
     (license license:gpl3)))
 
 (define-public r-clustassess

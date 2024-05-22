@@ -3213,13 +3213,13 @@ to each item and the report of the responses of a few subjects.")
 (define-public r-fsemipar
   (package
     (name "r-fsemipar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fsemipar" version))
        (sha256
-        (base32 "15v1n0ir5xls1lwd90sa5ikyv4f883k89lla6m1ysyvl85h0ib3z"))))
+        (base32 "1qcaaq0cnpl7f0fh4hj868ms7akkb74dlwwkkkjhbfdhxnp3wyni"))))
     (properties `((upstream-name . "fsemipar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

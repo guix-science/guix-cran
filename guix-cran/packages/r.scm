@@ -16555,6 +16555,32 @@ roles in networks.  It is a wrapper around the rgraph library (Guimera & Amaral,
 2005, <doi:10.1038/nature03288>).")
     (license license:gpl2+)))
 
+(define-public r-rnest
+  (package
+    (name "r-rnest")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rnest" version))
+       (sha256
+        (base32 "0fj1a1qsc8v238nv1dsrdw1398ah3qpf5dgimdgipkznb5dnjjc7"))))
+    (properties `((upstream-name . "Rnest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-mass
+                             r-ggplot2
+                             r-fungible
+                             r-efa-mrfa
+                             r-crayon))
+    (home-page "https://cran.r-project.org/package=Rnest")
+    (synopsis "Next Eigenvalue Sufficiency Test")
+    (description
+     "Determine the number of dimensions to retain in exploratory factor analysis.
+The main function, nest(), returns the solution and the plot(nest()) returns a
+plot.")
+    (license license:expat)))
+
 (define-public r-rneos
   (package
     (name "r-rneos")
@@ -20726,6 +20752,32 @@ author.  These include methods for subsetting tables and generating indices for
 arrays, conditioning and intervening in probability distributions, generating
 combinations, fast transformations, and more...")
     (license license:gpl2+)))
+
+(define-public r-rjdworkspace
+  (package
+    (name "r-rjdworkspace")
+    (version "1.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rjdworkspace" version))
+       (sha256
+        (base32 "19knl5qynwa3f2f77fkxv0fg13hqcdrkh5rwrpzd3gv71iifzc8r"))))
+    (properties `((upstream-name . "rjdworkspace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-rjdemetra r-rjava))
+    (home-page "https://github.com/InseeFrLab/rjdworkspace")
+    (synopsis "Manipulate 'JDemetra+' Workspaces")
+    (description
+     "Set of tools to manipulate the JDemetra+ workspaces.  Based on the RJDemetra
+package (which interfaces with version 2 of the JDemetra+
+(<https://github.com/jdemetra/jdemetra-app>), the seasonal adjustment software
+officially recommended to the members of the European Statistical System (ESS)
+and the European System of Central Banks).  This package provides access to
+additional workspace manipulation functions such as metadata manipulation, raw
+paths and wrangling of several workspaces simultaneously.  These additional
+functionalities are useful as part of a CVS data production chain.")
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-rjdqa
   (package
@@ -25764,13 +25816,13 @@ interactive segmentation.  References: i.  Blattberg R.C., Kim BD., Neslin S.A
 (define-public r-rflsgen
   (package
     (name "r-rflsgen")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rflsgen" version))
        (sha256
-        (base32 "0cfvbzc9a09738ygrq5jsjniblb8slfvmnscgk7jx0dprgcxj7yn"))))
+        (base32 "168kb9346fkcv65y0fzm2l946hgmgcycivfl5nqpw26ggmflbz6f"))))
     (properties `((upstream-name . "rflsgen")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -39837,17 +39889,17 @@ the DS and TAD methods.")
 (define-public r-rcmdrplugin-dce
   (package
     (name "r-rcmdrplugin-dce")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCE" version))
        (sha256
-        (base32 "0jy6aiz524g08nr6kyw53xi1j816b22vycq9fhk93181w2gmfm98"))))
+        (base32 "181iww86gvbr6n5wnjqyfqzzpxiv9wyvwx560bw4g55rfnzck67w"))))
     (properties `((upstream-name . "RcmdrPlugin.DCE")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-rcmdr))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.DCE")
+    (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis "R Commander Plug-in for Discrete Choice Experiments")
     (description
      "Adds menu items for discrete choice experiments (DCEs) to the R Commander.  DCE
@@ -39861,17 +39913,17 @@ Louviere et al. (2000) <doi:10.1017/CBO9780511753831>.")
 (define-public r-rcmdrplugin-dccv
   (package
     (name "r-rcmdrplugin-dccv")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.DCCV" version))
        (sha256
-        (base32 "1xlzl5qs266h4qhazib0hh1qdi5i31q9bxph8sajjvv4na4py1pv"))))
+        (base32 "12qdjjad7l0rdl2rh7jir5ygw9rz008wpbr0shkarc84sz1aipxr"))))
     (properties `((upstream-name . "RcmdrPlugin.DCCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdr r-dcchoice))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.DCCV")
+    (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis
      "R Commander Plug-in for Dichotomous Choice Contingent Valuation")
     (description
@@ -39904,17 +39956,17 @@ Carson and Hanemann (2005) <doi:10.1016/S1574-0099(05)02017-6> for DCCV.")
 (define-public r-rcmdrplugin-bws3
   (package
     (name "r-rcmdrplugin-bws3")
-    (version "0.2-2")
+    (version "0.2-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS3" version))
        (sha256
-        (base32 "1bwxy858wlwbsx7pdss7kcm7jjaxp95gzbz83h5lhyykv170p5a2"))))
+        (base32 "09vmq77lk0j9qg4jb05rdys7frf8zpy063k1gq1ja2dw1789rld3"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS3")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws3 r-rcmdr))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS3")
+    (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis "R Commander Plug-in for Case 3 Best-Worst Scaling")
     (description
      "Adds menu items for case 3 (multi-profile) best-worst scaling (BWS3) to the R
@@ -39928,18 +39980,18 @@ Louviere et al. (2015) <doi:10.1017/CBO9781107337855>.")
 (define-public r-rcmdrplugin-bws2
   (package
     (name "r-rcmdrplugin-bws2")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS2" version))
        (sha256
-        (base32 "1z9iigy9z65azv163rdps0sk20v964rlgxw294r85v3x0yhgqkjr"))))
+        (base32 "1xsacwicglpcqd6kipqgg68vbhh81d6hi1n6wgliw49iic2jnshg"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws2 r-rcmdr
                              r-doe-base))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS2")
+    (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis "R Commander Plug-in for Case 2 Best-Worst Scaling")
     (description
      "Adds menu items for case 2 (profile case) best-worst scaling (BWS2) to the R
@@ -39953,18 +40005,18 @@ Fogarty (2019) <doi:10.1016/j.jocm.2019.100171>.")
 (define-public r-rcmdrplugin-bws1
   (package
     (name "r-rcmdrplugin-bws1")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.BWS1" version))
        (sha256
-        (base32 "09g82sg4a6xq9bs486rp1krmdidfn7iq1zf0j5z4sy2zxbmncn6f"))))
+        (base32 "0as8nnyfk2fjsc92rxywi36bp41zppwcx9207zywqxb0b3awdn08"))))
     (properties `((upstream-name . "RcmdrPlugin.BWS1")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-support-ces r-support-bws r-rcmdr
                              r-crossdes))
-    (home-page "https://cran.r-project.org/package=RcmdrPlugin.BWS1")
+    (home-page "https://sites.google.com/view/r4sp/rcmdrplugin")
     (synopsis "R Commander Plug-in for Case 1 Best-Worst Scaling")
     (description
      "Adds menu items to the R Commander for implementing case 1 (object case)
@@ -47191,13 +47243,13 @@ in radiant.data'.")
 (define-public r-radiant
   (package
     (name "r-radiant")
-    (version "1.6.1")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "radiant" version))
        (sha256
-        (base32 "19h0l41n5qjqy0g3ga09a44anj1c429n4fakpxh3glhwv5xy4314"))))
+        (base32 "1v4vb5dpqljpk3xya26psg988v17nfcybjzw3dnp6bi77x24cq5k"))))
     (properties `((upstream-name . "radiant")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

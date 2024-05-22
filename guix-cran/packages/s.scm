@@ -10800,17 +10800,16 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0p0lc00afabvpxr8wslipx0n6kkngg9ljcc8yi659aybjyszjhx3"))))
+        (base32 "0a7ywq6sfvny4mnknr15vqi2466vmv00qh6hwzdbr0lk873gq000"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xlsx
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-survival
                              r-summarytools
                              r-stringr
@@ -10819,12 +10818,11 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
                              r-shinycssloaders
                              r-shiny
                              r-rmarkdown
-                             r-rlang
                              r-purrr
+                             r-mass
                              r-ggrepel
                              r-ggplot2
                              r-ggcorrplot
-                             r-ggally
                              r-flextable
                              r-dt
                              r-dplyr
@@ -10836,16 +10834,18 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
      "The stepwise regression analysis is a statistical technique used to identify a
 subset of predictor variables essential for constructing predictive models.
 This package performs stepwise regression analysis across various regression
-models such as linear, logistic, Cox proportional hazards, Poisson, and gamma
-regression.  It incorporates diverse stepwise regression algorithms like forward
-selection, backward elimination, and bidirectional elimination alongside the
-best subset method.  Additionally, it offers a wide range of selection criteria,
-including Akaike Information Criterion (AIC), corrected AIC (AICc), Sawa
-Bayesian Information Criterion (BIC), Schwarz Bayesian Information Criterion
-(SBC), Significant Levels (SL), among others.  Moreover, it facilitates the
-concurrent selection of multiple methods and criteria for variable selection.
-For user-friendly exploration and analysis, @code{StepReg} provides an intuitive
-R Shiny app.")
+models such as linear, logistic, Cox proportional hazards, Poisson, Gamma, and
+negative binomial regression.  It incorporates diverse stepwise regression
+algorithms like forward selection, backward elimination, and bidirectional
+elimination alongside the best subset method.  Additionally, it offers a wide
+range of selection criteria, including Akaike Information Criterion (AIC), Sawa
+Bayesian Information Criterion (BIC), and Significance Levels (SL).  We
+validated the output accuracy of @code{StepReg} using public datasets within the
+SAS software environment.  To facilitate efficient model comparison and
+selection, @code{StepReg} allows for multiple strategies and selection metrics
+to be executed in a single function call.  Moreover, @code{StepReg} integrates a
+Shiny application for interactive regression analysis, broadening its
+accessibility.")
     (license license:expat)))
 
 (define-public r-stepr
@@ -42909,18 +42909,17 @@ or graphical elements as well.")
 (define-public r-shiny-fluent
   (package
     (name "r-shiny-fluent")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.fluent" version))
        (sha256
-        (base32 "14cqa2czg3b60cxb8v4kycgk74cgdg9y8pg76mglnjv6rksmvwkl"))))
+        (base32 "0d6925apv6vwbhyzxlzli7j18yzz4raxf32p7mgwsrwirjkhj21s"))))
     (properties `((upstream-name . "shiny.fluent")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny-react r-shiny r-rlang r-jsonlite
+    (propagated-inputs (list r-shiny-react r-shiny r-purrr r-jsonlite
                              r-htmltools))
-    (native-inputs (list r-knitr))
     (home-page "https://appsilon.github.io/shiny.fluent/")
     (synopsis "Microsoft Fluent UI for Shiny Apps")
     (description
@@ -42983,13 +42982,13 @@ data is not available to display.")
 (define-public r-shiny-blueprint
   (package
     (name "r-shiny-blueprint")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.blueprint" version))
        (sha256
-        (base32 "1g0c0iqp5yx24yzzxjnh7yjflx0k5pgkz6p415ml39pyczgq7107"))))
+        (base32 "1hxn9z565g34fx7wbx5648sx2q4q1w2nggbfcjplrjwg709swbdr"))))
     (properties `((upstream-name . "shiny.blueprint")))
     (build-system r-build-system)
     (arguments
@@ -43535,13 +43534,13 @@ Learning Theory\".")
 (define-public r-sharx
   (package
     (name "r-sharx")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharx" version))
        (sha256
-        (base32 "10sfjg6946jfk4051da0w1v89503av40wckqaabr12syf8kn0aw8"))))
+        (base32 "0fyz7m8zx2i4r1kj5svzmn6l43f7zg2sj4c3ynyjwa1lzi5wf75v"))))
     (properties `((upstream-name . "sharx")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -43552,8 +43551,8 @@ Learning Theory\".")
     (description
      "Hierarchical models for the analysis of species-area relationships (SARs) by
 combining several data sets and covariates; with a global data set combining
-individual SAR studies; as described in Solymos and Lele (2012, Global Ecology
-and Biogeography 21, 109-120).")
+individual SAR studies; as described in Solymos and Lele (2012)
+<doi:10.1111/j.1466-8238.2011.00655.x>.")
     (license license:gpl2)))
 
 (define-public r-sharpshootr
@@ -53566,6 +53565,46 @@ series.  The methods implemented in this package are based on Girish Keshav
 Palshikar (2009)
 <https://www.researchgate.net/publication/228853276_Simple_Algorithms_for_Peak_Detection_in_Time-Series>.")
     (license license:gpl3)))
+
+(define-public r-scorematchingad
+  (package
+    (name "r-scorematchingad")
+    (version "0.0.60")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scorematchingad" version))
+       (sha256
+        (base32 "1jaqhqahg2pszmw9d9pgywpdlzdnwridj54y3mc3kkxwv7npd59r"))))
+    (properties `((upstream-name . "scorematchingad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-optimx
+                             r-mcmcpack
+                             r-fixedpoint
+                             r-ellipsis))
+    (home-page "https://cran.r-project.org/package=scorematchingad")
+    (synopsis "Score Matching Estimation by Automatic Differentiation")
+    (description
+     "@code{HyvÃ¤rinen's} score matching (@code{HyvÃ¤rinen}, 2005)
+<https://jmlr.org/papers/v6/hyvarinen05a.html> is a useful estimation technique
+when the normalising constant for a probability distribution is difficult to
+compute.  This package implements score matching estimators using automatic
+differentiation in the @code{CppAD} library
+<https://github.com/coin-or/@code{CppAD>} and is designed for quickly
+implementing score matching estimators for new models.  Also available is
+general robustification (Windham, 1995) <https://www.jstor.org/stable/2346159>.
+Already in the package are estimators for directional distributions (Mardia,
+Kent and Laha, 2016) <doi:10.48550/@code{arXiv.1604.08470>} and the flexible
+Polynomially-Tilted Pairwise Interaction model for compositional data.  The
+latter estimators perform well when there are zeros in the compositions (Scealy
+and Wood, 2023) <doi:10.1080/01621459.2021.2016422>, even many zeros (Scealy,
+Hingee, Kent, and Wood, 2024) <doi:10.1007/s11222-024-10412-w>.")
+    (license license:gpl3+)))
 
 (define-public r-scoreeb
   (package

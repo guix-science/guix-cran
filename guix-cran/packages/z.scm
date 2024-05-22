@@ -812,13 +812,13 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zendown
   (package
     (name "r-zendown")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zendown" version))
        (sha256
-        (base32 "0j18fwahlj5ax82jfkxfnkcgic1gxd8jlbw8ih3ixkgpjvnnpwrv"))))
+        (base32 "0xmz4m9c96dm79csxwh878vvjyq147fzcy833i6a5flc5z9asw3z"))))
     (properties `((upstream-name . "zendown")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

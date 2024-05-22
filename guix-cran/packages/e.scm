@@ -5163,6 +5163,30 @@ identified by specific codes, names and descriptions and come with schema
 crosswalks to other habitat typologies.")
     (license license:cc0)))
 
+(define-public r-eummd
+  (package
+    (name "r-eummd")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eummd" version))
+       (sha256
+        (base32 "05c3c471picsfpkphf39wfh95vvmfmncwrnn04zizlgcp9b7z7ws"))))
+    (properties `((upstream-name . "eummd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=eummd")
+    (synopsis "Efficient Univariate Maximum Mean Discrepancy")
+    (description
+     "Computes maximum mean discrepancy two-sample test for univariate data using the
+Laplacian kernel, as described in Bodenham and Kawahara (2023)
+<doi:10.1007/s11222-023-10271-x>.  The p-value is computed using permutations.
+Also includes implementation for computing the robust median difference
+statistic Q_n from Croux and Rousseeuw (1992) <doi:10.1007/978-3-662-26811-7_58>
+based on Johnson and Mizoguchi (1978) <doi:10.1137/0207013>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-eulerian
   (package
     (name "r-eulerian")
@@ -8154,6 +8178,49 @@ for high dimensional covariance matrices.\" Li and Chen (2012)
 Saddlepoint-approximations and related auxiliary functions (e.g. Hermite
 polynomials).")
     (license license:gpl2)))
+
+(define-public r-eq5dsuite
+  (package
+    (name "r-eq5dsuite")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eq5dsuite" version))
+       (sha256
+        (base32 "1dy52swx5mq9xs2c0c4xa01dkpzffbyydfk6h83wh7hy27ml4zr8"))))
+    (properties `((upstream-name . "eq5dsuite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-rappdirs
+                             r-moments
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=eq5dsuite")
+    (synopsis "Manipulating and Analysing EQ-5d Data")
+    (description
+     "The EQ-5D is a widely-used standarized instrument for measuring Health Related
+Quality Of Life (HRQOL), developed by the @code{EuroQol} group
+<https://euroqol.org/>.  It assesses five dimensions; mobility, self-care, usual
+activities, pain/discomfort, and anxiety/depression, using either a three-level
+(EQ-5D-3L) or five-level (EQ-5D-5L) scale.  Scores from these dimensions are
+commonly converted into a single utility index using country-specific value
+sets, which are critical in clinical and economic evaluations of healthcare and
+in population health surveys.  The eq5dsuite package enables users to calculate
+utility index values for the EQ-5D instruments, including crosswalk utilities
+using the original crosswalk developed by van Hout et al. (2012)
+<doi:10.1016/j.jval.2012.02.008> (mapping EQ-5D-5L responses to EQ-5D-3L index
+values), or the recently developed reverse crosswalk by van Hout et al. (2021)
+<doi:10.1016/j.jval.2021.03.009> (mapping EQ-5D-3L responses to EQ-5D-5L index
+values).  Users are allowed to add and/or remove user-defined value sets.
+Additionally, the package provides tools to analyze EQ-5D data according to the
+recommended guidelines outlined in \"Methods for Analyzing and Reporting EQ-5D
+data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
+    (license license:gpl2+)))
 
 (define-public r-eq5d
   (package
@@ -13648,6 +13715,33 @@ assess transitivity, linearity and stability of dominance networks.  See Neumann
 et al (2011) <doi:10.1016/j.anbehav.2011.07.016> for an introduction.")
     (license license:gpl2+)))
 
+(define-public r-elooptimized
+  (package
+    (name "r-elooptimized")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EloOptimized" version))
+       (sha256
+        (base32 "0922xaicxkgiqaf126dbm6shm6ca7blwc13nwb3djmm7ky9m0lai"))))
+    (properties `((upstream-name . "EloOptimized")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr
+                             r-bammtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jtfeld/EloOptimized")
+    (synopsis "Optimized Elo Rating Method for Obtaining Dominance Ranks")
+    (description
+     "This package provides an implementation of the maximum likelihood methods for
+deriving Elo scores as published in Foerster, Franz et al. (2016)
+<DOI:10.1038/srep35404>.")
+    (license license:gpl3)))
+
 (define-public r-elochoice
   (package
     (name "r-elochoice")
@@ -16675,13 +16769,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-edsurvey
   (package
     (name "r-edsurvey")
-    (version "4.0.4")
+    (version "4.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EdSurvey" version))
        (sha256
-        (base32 "1qp2mj9x8jk3za9m86890h1261vc7z621myv2i1kjyli3afmbm3p"))))
+        (base32 "1f26cmbfqb660335wzi0lx48q8dp0dbypykyskv7njf7rf0mg1cr"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -17151,13 +17245,13 @@ modules are intended for reuse across applications.")
 (define-public r-editbl
   (package
     (name "r-editbl")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "editbl" version))
        (sha256
-        (base32 "19l57ghq7j67myb9bzpvc6x677pwpk4306pfxczymy5dp0ddxfdx"))))
+        (base32 "07nf808xlj3vh7nfv5rpx3d6jk7pdsygc31z25gi504mmda1y1hd"))))
     (properties `((upstream-name . "editbl")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid

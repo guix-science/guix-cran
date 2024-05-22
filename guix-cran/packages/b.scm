@@ -2600,13 +2600,13 @@ growth rate as a function of age).")
 (define-public r-bsims
   (package
     (name "r-bsims")
-    (version "0.3-0")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bSims" version))
        (sha256
-        (base32 "055hqa5w4gaqz9mms9yj85wg0pgl6xa568nbjxm4qc75rsy91qg5"))))
+        (base32 "1aflarz69rk4dlrp5gmgi6hs6mx0m8xhpp7ppv6m5gsjf8g18iaf"))))
     (properties `((upstream-name . "bSims")))
     (build-system r-build-system)
     (arguments
@@ -2628,13 +2628,14 @@ growth rate as a function of age).")
     (propagated-inputs (list r-pbapply r-mefa4 r-mass r-intrval r-deldir))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/psolymos/bSims")
-    (synopsis "Bird Point Count Simulator")
+    (synopsis "Agent-Based Bird Point Count Simulator")
     (description
      "This package provides a highly scientific and utterly addictive bird point count
 simulator to test statistical assumptions, aid survey design, and have fun while
-doing it.  The simulations follow time-removal and distance sampling models
-based on Matsuoka et al. (2012) <doi:10.1525/auk.2012.11190>, Solymos et al.
-(2013) <doi:10.1111/2041-210X.12106>, and Solymos et al. (2018)
+doing it (Solymos 2024 <doi:10.1007/s42977-023-00183-2>).  The simulations
+follow time-removal and distance sampling models based on Matsuoka et al. (2012)
+<doi:10.1525/auk.2012.11190>, Solymos et al. (2013)
+<doi:10.1111/2041-210X.12106>, and Solymos et al. (2018)
 <doi:10.1650/CONDOR-18-32.1>, and sound attenuation experiments by Yip et al.
 (2017) <doi:10.1650/CONDOR-16-93.1>.")
     (license license:gpl2)))
@@ -24312,13 +24313,13 @@ downloading and uploading and record operation log.")
 (define-public r-batchmix
   (package
     (name "r-batchmix")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "batchmix" version))
        (sha256
-        (base32 "0wsddpw1sl7lgs2np2nxss3jqxwjcbblhhi7v63sl1wp1wy32xhn"))))
+        (base32 "1vsr4p3a03dx3kr2clzcnyvf6xfzyisfk87famfvssjb4g58bzrv"))))
     (properties `((upstream-name . "batchmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-salso r-rcpparmadillo r-rcpp r-ggplot2))
@@ -25668,6 +25669,31 @@ effect removal.  For (addon) quantile normalization and (addon) RMA
 normalization the functions qunormtrain(), qunormaddon(), rmatrain() and
 rmaaddon() can be used.")
     (license license:gpl2)))
+
+(define-public r-baorista
+  (package
+    (name "r-baorista")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baorista" version))
+       (sha256
+        (base32 "00q3h7x86iw1a6r8xl9sjcwz1pxmwl0wfn1zpqsn13xfidkjjbi8"))))
+    (properties `((upstream-name . "baorista")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nimble r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=baorista")
+    (synopsis "Bayesian Aoristic Analyses")
+    (description
+     "This package provides an alternative approach to aoristic analyses for
+archaeological datasets by fitting Bayesian parametric growth models and
+non-parametric random-walk Intrinsic Conditional Autoregressive (ICAR) models on
+time frequency data (Crema (2024)<doi:10.1111/arcm.12984>).  It handles event
+typo-chronology based timespans defined by start/end date as well as more
+complex user-provided vector of probabilities.")
+    (license license:gpl2+)))
 
 (define-public r-banxicor
   (package

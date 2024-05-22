@@ -4522,13 +4522,13 @@ not be overridden at the point when a package is loaded.")
 (define-public r-opticut
   (package
     (name "r-opticut")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opticut" version))
        (sha256
-        (base32 "1j479wa7mlp62c2y7shha1w7ybhfy8wvjfaz27kmwd1f61ma1g0l"))))
+        (base32 "1knjxfz52gisnkz62m885zf4gn73dnkhc0q2wfvmhj02vqq0sfhf"))))
     (properties `((upstream-name . "opticut")))
     (build-system r-build-system)
     (propagated-inputs (list r-resourceselection
