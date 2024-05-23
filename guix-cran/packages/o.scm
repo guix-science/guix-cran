@@ -9399,13 +9399,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0jmzi65d565p2cifsj20c5q08v79hzda766g2afr698fxhvdjkrw"))))
+        (base32 "0v6pk49arigm9v979in9h06pqhz3gz56a1d7vcbd1pxqa8y4ypaz"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

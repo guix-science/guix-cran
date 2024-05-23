@@ -6721,13 +6721,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "1j20g3r0n3vsp8cnnz3f0wqpa5zvy9s6f139i8g4s3s93ys19sk4"))))
+        (base32 "0ap2yf86ng8wp8n2cm0br4q81pknswsynb4a1qprsshwr8l5xvl1"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -12973,13 +12973,13 @@ from Gaussian, if specified.")
 (define-public r-copula-surv
   (package
     (name "r-copula-surv")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Copula.surv" version))
        (sha256
-        (base32 "0r3r2z08fxbpkymqp34z0ss757c4ld1fpyvdcxd6prjk9fi4lnx0"))))
+        (base32 "177m79nc9gwnfxai0gdw7id0212rxp34rpcp0b7j79r3zncwnb6i"))))
     (properties `((upstream-name . "Copula.surv")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=Copula.surv")
@@ -17542,6 +17542,46 @@ algorithms.  The package is a living repository, and so more functions will be
 added over time.  For function suggestions, please do contact the author of the
 package.")
     (license license:gpl2)))
+
+(define-public r-compmix
+  (package
+    (name "r-compmix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompMix" version))
+       (sha256
+        (base32 "1b7vmkyqh8m2p72wr469anwqwghiw6m9f1p8q3mr6l1pgx7nqhsn"))))
+    (properties `((upstream-name . "CompMix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-superlearner
+                             r-randomforest
+                             r-qgcomp
+                             r-proc
+                             r-mvtnorm
+                             r-matrix
+                             r-higlasso
+                             r-hiernet
+                             r-gwqs
+                             r-glmnet
+                             r-gglasso
+                             r-devtools
+                             r-bkmr))
+    (home-page "https://cran.r-project.org/package=CompMix")
+    (synopsis
+     "Comprehensive Toolkit for Environmental Mixtures Analysis ('CompMix')")
+    (description
+     "Quantitative characterization of the health impacts associated with exposure to
+chemical mixtures has received considerable attention in current environmental
+and epidemiological studies. @code{CompMix} package allows practitioners to
+estimate the health impacts from exposure to chemical mixtures data through
+various statistical approaches, including Lasso, Elastic net, Bayeisan kernel
+machine regression (BKMR), @code{hierNet}, Quantile g-computation, Weighted
+quantile sum (WQS) and Random forest.  Hao W, Cathey A, Aung M, Boss J, Meeker
+J, Mukherjee B. (2024) \"Statistical methods for chemical mixtures: a
+practitioners guide\". <DOI:10.1101/2024.03.03.24303677>.")
+    (license license:gpl3)))
 
 (define-public r-complmrob
   (package
@@ -32510,27 +32550,6 @@ functions for calculating and plotting confidence intervals, for single model
 parameters, and confidence regions, for pairs of model parameters.  Nested
 models can be compared using an adjusted likelihood ratio test.")
     (license license:gpl2+)))
-
-(define-public r-chameleon
-  (package
-    (name "r-chameleon")
-    (version "0.2-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "chameleon" version))
-       (sha256
-        (base32 "0a3azp0zaakpqqx0pp94hkj3vgb2apnf8gb5ga0as4i8lrn9dz8i"))))
-    (properties `((upstream-name . "chameleon")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-umap r-ggplot2 r-clue))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=chameleon")
-    (synopsis "Automatic Colors for Multi-Dimensional Data")
-    (description
-     "Assign distinct colors to arbitrary multi-dimensional data, considering its
-structure.")
-    (license license:expat)))
 
 (define-public r-chainladder
   (package

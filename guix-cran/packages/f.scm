@@ -19556,6 +19556,27 @@ Cholesky factor using a modified Gram-Schmidt algorithm implemented in
 algorithm.")
     (license license:gpl2)))
 
+(define-public r-fastbackward
+  (package
+    (name "r-fastbackward")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastbackward" version))
+       (sha256
+        (base32 "1vpib7mdw5xmrrkz2wl57zbs0bihnmh298cghxvc86ngyy4hfcsm"))))
+    (properties `((upstream-name . "fastbackward")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://github.com/JacobSeedorff21/fastbackward")
+    (synopsis "Fast Backward Elimination Based on Information Criterion")
+    (description
+     "This package performs backward elimination with similar syntax to the
+@code{stepAIC} function from the MASS package.  A bounding algorithm is used to
+avoid fitting unnecessary models, making it much faster.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-fastai
   (package
     (name "r-fastai")
@@ -20169,13 +20190,13 @@ P., 2012, <doi:10.3389/fpsyg.2012.00055>).")
 (define-public r-faostat
   (package
     (name "r-faostat")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAOSTAT" version))
        (sha256
-        (base32 "06qki2d4w8ldfwr39w24vhrcc7a14i24l3hpwq0zldymc6ygw3zd"))))
+        (base32 "0fyd9ypssax6pm3fzw7g864kaamfh8r3hi4ljd972g13n82b1jag"))))
     (properties `((upstream-name . "FAOSTAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio

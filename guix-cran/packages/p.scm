@@ -8550,13 +8550,13 @@ Data Warehouse (2020) <https://sdw.ecb.europa.eu/@code{curConverter.do>}.")
 (define-public r-pricelevels
   (package
     (name "r-pricelevels")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pricelevels" version))
        (sha256
-        (base32 "0s5b387j1kmj7ynm3h1cai66n8anv4dlzvspnhpr9cwzqvn9z9g9"))))
+        (base32 "1mi949l7fczcsha81qlviaq14882062v7wr4raxavhb5hg1m057r"))))
     (properties `((upstream-name . "pricelevels")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm r-data-table))
@@ -10952,18 +10952,20 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
 (define-public r-praatpicture
   (package
     (name "r-praatpicture")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "praatpicture" version))
        (sha256
-        (base32 "0k00dk5yj4q05smiy2cb0im0wymapmvmcmrgr3zxhfisbm1d80np"))))
+        (base32 "1gbarx2s59k1nz78g3g3l4mj586v75pyw16h33kwrfhhpfd3sxd7"))))
     (properties `((upstream-name . "praatpicture")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrassp
                              r-tuner
                              r-soundgen
+                             r-shinyjs
+                             r-shiny
                              r-rstudioapi
                              r-rpraat
                              r-phontools
@@ -10972,6 +10974,7 @@ described in Nagraj and Turner (2023) <doi:10.48550/@code{arXiv.2303.07876>}.")
                              r-gifski
                              r-emur
                              r-crayon
+                             r-bslib
                              r-av))
     (home-page "https://github.com/rpuggaardrode/praatpicture")
     (synopsis "'Praat Picture' Style Plots of Acoustic Data")
@@ -18161,13 +18164,13 @@ important implications for the correct interpretation of these models.")
 (define-public r-plsvarsel
   (package
     (name "r-plsvarsel")
-    (version "0.9.11")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsVarSel" version))
        (sha256
-        (base32 "0jcxx1yarpp3r6q2nsz5gkvkd2h8b74wbsr2rr1l9i1gh2jicnkb"))))
+        (base32 "0130hqnjwgm2l7sacxh5m98gm35qxgqwylbk42jnlp03azwqdbax"))))
     (properties `((upstream-name . "plsVarSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -20423,13 +20426,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "0b9k3srzhr5y9yfbq52q3c31677h299gljdk66n59jc221flv05k"))))
+        (base32 "0qk8m235qja26g02rkg4sla6998mswqsy3hjwq39zdsmh88zy6bi"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rcpproll r-magrittr r-lubridate r-dplyr))
@@ -24015,6 +24018,34 @@ Sepsis and Septic Shock\" by Schlapbach, Watson, Sorce, Argent, et al. (2024)
 contributed equally).")
     (license license:expat)))
 
+(define-public r-phoenics
+  (package
+    (name "r-phoenics")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phoenics" version))
+       (sha256
+        (base32 "06312f3awzpgfhzl4ahla37hkw0nqyw8zb5yv7m25i53x0afxwr5"))))
+    (properties `((upstream-name . "phoenics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-lme4
+                             r-factominer
+                             r-factoextra
+                             r-blme))
+    (home-page "https://forgemia.inra.fr/panoramics/phoenics")
+    (synopsis
+     "Pathways Longitudinal and Differential Analysis in Metabolomics")
+    (description
+     "Perform a differential analysis at pathway level based on metabolite
+quantifications and information on pathway metabolite composition.  The method
+is based on a Principal Component Analysis step and on a linear mixed model.
+Automatic query of metabolic pathways is also implemented.")
+    (license license:gpl3)))
+
 (define-public r-phm
   (package
     (name "r-phm")
@@ -25566,13 +25597,13 @@ outcome based on posterior probability (Thall and Simon (1994)
 (define-public r-ph1xbar
   (package
     (name "r-ph1xbar")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PH1XBAR" version))
        (sha256
-        (base32 "08dvcbzvb80zcfxlp6xdps2wg5wmjq9p14ybi1wy9fk82b6gqp0d"))))
+        (base32 "0ikh8jrf2yq9f444wa5fkiwri5xfc9r19f7862p3s11xmax8dycn"))))
     (properties `((upstream-name . "PH1XBAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mvtnorm r-forecast))
@@ -25582,8 +25613,9 @@ outcome based on posterior probability (Thall and Simon (1994)
      "The purpose of PH1XBAR is to build a Phase I Shewhart control chart for the
 basic Shewhart, the variance components and the ARMA models in R for subgrouped
 and individual data.  More details can be found: Yao and Chakraborti (2020)
-<doi: 10.1002/qre.2793>, and Yao and Chakraborti (2021) <doi:
-10.1080/08982112.2021.1878220>.")
+<doi: 10.1002/qre.2793>, Yao and Chakraborti (2021) <doi:
+10.1080/08982112.2021.1878220>, and Yao et al. (2023) <doi:
+10.1080/00224065.2022.2139783>.")
     (license license:gpl3)))
 
 (define-public r-pgtools
@@ -32399,13 +32431,13 @@ endpoints require the use of an API key which can be obtained at
 (define-public r-pathling
   (package
     (name "r-pathling")
-    (version "6.4.2")
+    (version "7.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pathling" version))
        (sha256
-        (base32 "1i60b3caa1fn36gb04wwmr043pmxr234xhfy5m07z891andx90jj"))))
+        (base32 "092pff81qg3pypygakihabi64kgw1fvdsn2pbkcvhnfa07yrirm1"))))
     (properties `((upstream-name . "pathling")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang))
@@ -33128,13 +33160,13 @@ al. (2019) <doi:10.1111/2041-210X.13285>.")
 (define-public r-partition
   (package
     (name "r-partition")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "partition" version))
        (sha256
-        (base32 "0h58dzwmndvaz535hshv50c657gjpadv2g60mylj4rb064li51lk"))))
+        (base32 "0nbhkzx4rp8zm6n49sf2kdzqkyfjh9032qbkpp4f4mnk5434z1qk"))))
     (properties `((upstream-name . "partition")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -35116,49 +35148,6 @@ drugs.  The methods are described in detail in Ulgen E, Ozisik O, Sezerman OU.
 personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
     (license license:expat)))
 
-(define-public r-pamscapes
-  (package
-    (name "r-pamscapes")
-    (version "0.5.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PAMscapes" version))
-       (sha256
-        (base32 "1r3p352mb0zqgqs6xp717j7in8s883l6rq82cyc8mi63a6cp99dp"))))
-    (properties `((upstream-name . "PAMscapes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tdigest
-                             r-sf
-                             r-scales
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-pammisc
-                             r-ncdf4
-                             r-magrittr
-                             r-lubridate
-                             r-httr
-                             r-hoardr
-                             r-ggplot2
-                             r-geosphere
-                             r-dplyr
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=PAMscapes")
-    (synopsis "Tools for Summarising and Analysing Soundscape Data")
-    (description
-     "This package provides a variety of tools relevant to the analysis of marine
-soundscape data.  There are tools for downloading AIS (automatic identification
-system) data from Marine Cadastre <https://marinecadastre.gov/ais/>, connecting
-AIS data to GPS coordinates, plotting summaries of various soundscape
-measurements, and downloading relevant environmental variables (wind, swell
-height) from the National Center for Atmospheric Research data server
-<https://rda.ucar.edu/datasets/ds084.1/>.  Most tools were developed to work
-well with output from Triton software, but can be adapted to work with any
-similar measurements.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-pampe
   (package
     (name "r-pampe")
@@ -37121,13 +37110,13 @@ provided the data file follows some standard data entry rules.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "1aw12c4dv8dl1xajvf4n1fm4dqgl34pgzfqm0q8fjhnz4zp6gdaw"))))
+        (base32 "1d8savfry05xy3lxd5yhvmpky34563y433yxqsa2v6p252s6d6p7"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants

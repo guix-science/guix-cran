@@ -8197,43 +8197,6 @@ archives.  It can also read models in MDL and MD2 formats.")
      "Generates random data sets including: data.frames, lists, and vectors.")
     (license license:gpl2)))
 
-(define-public r-waiter
-  (package
-    (name "r-waiter")
-    (version "0.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "waiter" version))
-       (sha256
-        (base32 "0ya92qr25ssfkzn888b7rr8rn0304f3gz4h4pnc2a95rknbmxhls"))))
-    (properties `((upstream-name . "waiter")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-shiny r-r6 r-htmltools))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://waiter.john-coene.com/")
-    (synopsis "Loading Screen for 'Shiny'")
-    (description
-     "Full screen and partial loading screens for Shiny with spinners, progress bars,
-and notifications.")
-    (license license:expat)))
-
 (define-public r-wactor
   (package
     (name "r-wactor")

@@ -9385,13 +9385,13 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
 (define-public r-newsmap
   (package
     (name "r-newsmap")
-    (version "0.8.3")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "newsmap" version))
        (sha256
-        (base32 "08gdjszasfc62yz7q4s6a5971v0c0ddncryyfq1blpi6qqikjyhj"))))
+        (base32 "103if7yh378c91bwq4j22p3krg00hwzah5wi1pjnni65yjjg2bqa"))))
     (properties `((upstream-name . "newsmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-quanteda-textstats r-quanteda
@@ -9402,7 +9402,7 @@ of the limit product model of Pena (2001) <doi:10.1198/016214501753381922>.")
      "Semissupervised model for geographical document classification (Watanabe 2018)
 <doi:10.1080/21670811.2017.1293487>.  This package currently contains seed
 dictionaries in English, German, French, Spanish, Italian, Russian, Hebrew,
-Arabic Japanese and Chinese (Simplified and Traditional).")
+Arabic, Turkish, Japanese and Chinese (Simplified and Traditional).")
     (license license:expat)))
 
 (define-public r-newscatcher

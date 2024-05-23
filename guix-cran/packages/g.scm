@@ -9001,13 +9001,13 @@ scripts.")
 (define-public r-googleauthr
   (package
     (name "r-googleauthr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googleAuthR" version))
        (sha256
-        (base32 "0jx1p2yq9mm82bzw1hy75p30rhcmmadkh9qby9s1c5ahq8xsc6cv"))))
+        (base32 "15ir747qmxdcfqvdpj48famrgd1c2r1l3gfawnv55akqbxdwhmgx"))))
     (properties `((upstream-name . "googleAuthR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27327,18 +27327,18 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.8.3")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "11kl48scwn7mjw98wvbrb0xzswdx0pndr5b340j8iflwbikydj32"))))
+        (base32 "0f6kq34z7p2qws94lwm0c1bnnys7hq0xzjpnhgnbxski4hc3wxqw"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/statisticsnorway/GaussSuppression")
+    (home-page "https://github.com/statisticsnorway/ssb-gausssuppression")
     (synopsis "Tabular Data Suppression using Gaussian Elimination")
     (description
      "This package provides a statistical disclosure control tool to protect tables by

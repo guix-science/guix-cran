@@ -7306,13 +7306,13 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "1lcswyy9cm4bwmsfinkrxqzb0ca704y3k8g5acm9b6b1sjkkz5r6"))))
+        (base32 "1ira35rqxaqpmw8p8zhjrigs1s1mywddwfgxyvqkyja7afzprvkk"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7320,6 +7320,7 @@ statistics.")
                              r-mumin
                              r-lubridate
                              r-hmisc
+                             r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/timginker/boiwsa")
     (synopsis "Seasonal Adjustment of Weekly Data")
@@ -7329,7 +7330,7 @@ interface for computing seasonally adjusted estimates of weekly data and also
 includes diagnostic tools to assess the quality of the adjustments.
 Furthermore, it incorporates tools uniquely tailored to the specific
 characteristics of Israeli data.  The method is described in more detail in
-Ginker (2023) <DOI:10.13140/RG.2.2.12221.44000>.")
+Ginker (2023) <doi:10.13140/RG.2.2.12221.44000>.")
     (license license:expat)))
 
 (define-public r-boinet
@@ -14392,13 +14393,13 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGL" version))
        (sha256
-        (base32 "14igfl863v4hgzpry8a4p2hribi2slsahl1bn3amsr8cj311km64"))))
+        (base32 "0cc67fg6b5vjjvq485bw374h1d0l7klcgprwpb472srsbdx6l4y2"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -18130,13 +18131,13 @@ assessing model adequacy.")
 (define-public r-bed
   (package
     (name "r-bed")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BED" version))
        (sha256
-        (base32 "1m77lx2pxzk828kwcv1zc5pwlsihxzd8rcsrdy00z16h17kcp7s9"))))
+        (base32 "0js227vn6mvn7zk2q0vw9w9cp2ayjzqja6mrmpw9wnx82fp0amcg"))))
     (properties `((upstream-name . "BED")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -18173,6 +18174,40 @@ different organisms should be possible using gene orthologs information.  The
 method has been published by Godard and van Eyll (2018)
 <doi:10.12688/f1000research.13925.3>.")
     (license license:gpl3)))
+
+(define-public r-beaver
+  (package
+    (name "r-beaver")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beaver" version))
+       (sha256
+        (base32 "0l33g09df9vqigfrafwwsi71qrfb2rrnlp7qbx7rjpqi8dspj2rd"))))
+    (properties `((upstream-name . "beaver")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yodel
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rjags
+                             r-purrr
+                             r-ggplot2
+                             r-fs
+                             r-ellipsis
+                             r-dplyr
+                             r-checkmate))
+    (home-page "https://github.com/rich-payne/beaver")
+    (synopsis
+     "Bayesian Model Averaging of Covariate Adjusted Negative-Binomial Dose-Response")
+    (description
+     "Dose-response modeling for negative-binomial distributed data with a variety of
+dose-response models.  Covariate adjustment and Bayesian model averaging is
+supported.  Functions are provided to easily obtain inference on the
+dose-response relationship and plot the dose-response curve.")
+    (license license:expat)))
 
 (define-public r-beautier
   (package
@@ -18828,6 +18863,31 @@ metadata parameters have to be structured in the form of metadata objects, the
 format of which is outlined in the package vignette.  This approach allows to
 generate artificial data in a transparent and reproducible manner.")
     (license license:gpl2)))
+
+(define-public r-bdlim
+  (package
+    (name "r-bdlim")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bdlim" version))
+       (sha256
+        (base32 "17ccrx9iviynm3wv9zi1cpb9l5dfbribdhx97n11s1qimzf3l9fv"))))
+    (properties `((upstream-name . "bdlim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-laplacesdemon r-ggplot2 r-dplyr
+                             r-bayeslogit))
+    (home-page "https://anderwilson.github.io/bdlim/")
+    (synopsis "Bayesian Distributed Lag Interaction Models")
+    (description
+     "Estimation and interpretation of Bayesian distributed lag interaction models
+(BDLIMs).  A BDLIM regresses a scalar outcome on repeated measures of exposure
+and allows for modification by a categorical variable under four specific
+patterns of modification.  The main function is bdlim().  There are also summary
+and plotting files.  Details on methodology are described in Wilson et al.
+(2017) <doi:10.1093/biostatistics/kxx002>.")
+    (license license:gpl3+)))
 
 (define-public r-bdl
   (package

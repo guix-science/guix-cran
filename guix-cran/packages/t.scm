@@ -13615,13 +13615,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.5.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "11wk68z8jnpff6is2avlwn60xq11a39y7c9jx6qq26sffidh3ihh"))))
+        (base32 "07xagcxq02qdmjyskhpv9cy6j10f8fbq3296nikr0hp90nzwwilw"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -13636,7 +13636,8 @@ recordings as data frame for later use.")
                              r-data-table
                              r-cppdoubles
                              r-cpp11
-                             r-collapse))
+                             r-collapse
+                             r-cheapr))
     (home-page "https://cran.r-project.org/package=timeplyr")
     (synopsis "Fast Tidy Tools for Date and Date-Time Manipulation")
     (description
@@ -18271,45 +18272,6 @@ implementation of the TGS algorithm and its variants.")
 Soto et al. (2011) <doi:10.1139/x11-045>.")
     (license license:gpl2+)))
 
-(define-public r-tglkmeans
-  (package
-    (name "r-tglkmeans")
-    (version "0.5.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tglkmeans" version))
-       (sha256
-        (base32 "0hdnxgkxpgb8jm9aygv3wlhd42blm5nz906vlpl72blgcyc77hhh"))))
-    (properties `((upstream-name . "tglkmeans")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-tgstat
-                             r-rcppparallel
-                             r-rcpp
-                             r-purrr
-                             r-plyr
-                             r-matrix
-                             r-magrittr
-                             r-ggplot2
-                             r-future
-                             r-dplyr
-                             r-dorng
-                             r-dofuture
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://tanaylab.github.io/tglkmeans/")
-    (synopsis "Efficient Implementation of K-Means++ Algorithm")
-    (description
-     "Efficient implementation of K-Means++ algorithm.  For more information see (1)
-\"kmeans++ the advantages of the k-means++ algorithm\" by David Arthur and Sergei
-Vassilvitskii (2007), Proceedings of the eighteenth annual ACM-SIAM symposium on
-Discrete algorithms, Society for Industrial and Applied Mathematics,
-Philadelphia, PA, USA, pp.  1027-1035, and (2) \"The Effectiveness of Lloyd-Type
-Methods for the k-Means Problem\" by Rafail Ostrovsky, Yuval Rabani, Leonard J.
-Schulman and Chaitanya Swamy <doi:10.1145/2395116.2395117>.")
-    (license license:expat)))
-
 (define-public r-tggd
   (package
     (name "r-tggd")
@@ -18928,13 +18890,13 @@ Arabidopsis).")
 (define-public r-tf
   (package
     (name "r-tf")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tf" version))
        (sha256
-        (base32 "1746sbxj5c2nnjbxg4kbwbcza84crbsql4yf3rfrrxg87695rx17"))))
+        (base32 "03hiqhlijf86sh4pgqr20nr5135vnf4ryfhzj9pgym9nbamwpa44"))))
     (properties `((upstream-name . "tf")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21489,17 +21451,17 @@ functionalities related to missingness are also supported.")
 (define-public r-tensorevd
   (package
     (name "r-tensorevd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorEVD" version))
        (sha256
-        (base32 "024127fv1gc631i8dfczg350gaqims4i6amhbq7v8ws2g1sf1hi9"))))
+        (base32 "0c5n7gy9c7l9dc8jrsmlxrfk6m7wc5hj2acxkr9mjwqdr9y98c07"))))
     (properties `((upstream-name . "tensorEVD")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=tensorEVD")
+    (home-page "https://github.com/MarcooLopez/tensorEVD")
     (synopsis
      "Fast Algorithm to Factorize High-Dimensional Tensor Product Matrices")
     (description

@@ -27824,13 +27824,13 @@ the resources.")
 (define-public r-resmush
   (package
     (name "r-resmush")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resmush" version))
        (sha256
-        (base32 "1zfjnih4x452i3wnnw796qwq9qy89nlimj2lhn4xqkvkgi7ilk00"))))
+        (base32 "1qmgkxnbdlb544vyzwcsinpdafgq07bligx05pilcz73kic4bwla"))))
     (properties `((upstream-name . "resmush")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2 r-curl r-cli))
@@ -32152,6 +32152,29 @@ API documentation.")
 automatically reflect changes in the original object, and which optionally
 update the original object when they are changed.")
     (license license:gpl2)))
+
+(define-public r-refseqr
+  (package
+    (name "r-refseqr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "refseqR" version))
+       (sha256
+        (base32 "076ai3jgpll30fx7hnvy5b11n7v4c9vgsnkw98pfddi7p5xxiw2f"))))
+    (properties `((upstream-name . "refseqR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rentrez r-iranges r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jdieramon/refseqR")
+    (synopsis
+     "Common Computational Operations Working with RefSeq Entries (GenBank)")
+    (description
+     "Fetches NCBI data (@code{RefSeq} <https://www.ncbi.nlm.nih.gov/refseq/>
+database) and provides an environment to extract information at the level of
+gene, @code{mRNA} or protein accessions.")
+    (license license:expat)))
 
 (define-public r-refreshr
   (package

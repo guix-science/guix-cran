@@ -2311,13 +2311,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "1bvxbv7xn2g9swnylll9d2smk363jghg4f65ns4icxg50lmjv0q9"))))
+        (base32 "02db03vmj377z5nyc7j8myrcxq48wqspnjf1v1sksdz66jxh4f7k"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))
@@ -3210,13 +3210,13 @@ Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and Derks et al. (2022)
 (define-public r-jewel
   (package
     (name "r-jewel")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jewel" version))
        (sha256
-        (base32 "0lj97bgqd2q3s2dcksn1nv4wwiw4ik9aimwa7kamfl0lmrlcz165"))))
+        (base32 "100lj4ydw7gx93lmnckxivb65yzjwi0cn5l070ss8532wrm297r3"))))
     (properties `((upstream-name . "jewel")))
     (build-system r-build-system)
     (propagated-inputs (list r-smut
@@ -3401,6 +3401,29 @@ affect each other.")
 <https://jdenticon.com/> Library.  Uses esbuild <https://esbuild.github.io/> to
 reduce user dependencies.")
     (license license:expat)))
+
+(define-public r-jdcruncher
+  (package
+    (name "r-jdcruncher")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JDCruncheR" version))
+       (sha256
+        (base32 "08289a1pvhdx1bp76il18z6xr4nfk1pffbbjcwdvr2km147yfvmz"))))
+    (properties `((upstream-name . "JDCruncheR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlconnect))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/InseeFr/JDCruncheR")
+    (synopsis
+     "Interface Between the 'JDemetra+' Cruncher and R, and Quality Report Generator")
+    (description
+     "Tool for generating quality reports from cruncher outputs (and calculating
+series scores).  The latest version of the cruncher can be downloaded here:
+<https://github.com/jdemetra/jwsacruncher/releases>.")
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-jcrimpactfactor
   (package

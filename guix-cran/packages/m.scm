@@ -592,34 +592,6 @@ regional, and federal agencies that have different identifiers on lakes.  This
 package helps you to go between them.")
     (license license:expat)))
 
-(define-public r-mwcsr
-  (package
-    (name "r-mwcsr")
-    (version "0.1.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mwcsr" version))
-       (sha256
-        (base32 "0vyvxw708c2m832jwsnfd8jfig5qbnixfl85frpch1c9qqp3238p"))))
-    (properties `((upstream-name . "mwcsr")))
-    (build-system r-build-system)
-    (inputs (list openjdk))
-    (propagated-inputs (list r-rcpp r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ctlab/mwcsr")
-    (synopsis
-     "Solvers for Maximum Weight Connected Subgraph Problem and Its Variants")
-    (description
-     "Algorithms for solving various Maximum Weight Connected Subgraph Problems,
-including variants with budget constraints, cardinality constraints, weighted
-edges and signals.  The package represents an R interface to high-efficient
-solvers based on relax-and-cut approach (Ãlvarez-Miranda E., Sinnl M. (2017)
-<doi:10.1016/j.cor.2017.05.015>) mixed-integer programming (Loboda A., Artyomov
-M., and Sergushichev A. (2016) <doi:10.1007/978-3-319-43681-4_17>) and simulated
-annealing.")
-    (license license:expat)))
-
 (define-public r-mwa
   (package
     (name "r-mwa")
@@ -4129,56 +4101,6 @@ confidence intervals for multinomial proportions for small counts in a large
 number of cells.  Journal of Statistical Software 5(6) (2000).  Paper and code
 available at <DOI:10.18637/jss.v005.i06>.")
     (license license:lgpl3+)))
-
-(define-public r-multinma
-  (package
-    (name "r-multinma")
-    (version "0.7.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "multinma" version))
-       (sha256
-        (base32 "1j0nvhf3pijassclnc4k1m38gxji77i77xpv7g6msdq6y5vkns21"))))
-    (properties `((upstream-name . "multinma")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncdist
-                             r-tidyr
-                             r-tibble
-                             r-survival
-                             r-stringr
-                             r-stanheaders
-                             r-rstantools
-                             r-rstan
-                             r-rlang
-                             r-rdpack
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-randtoolbox
-                             r-purrr
-                             r-matrix
-                             r-igraph
-                             r-glue
-                             r-ggraph
-                             r-ggplot2
-                             r-ggdist
-                             r-forcats
-                             r-dplyr
-                             r-copula
-                             r-bh
-                             r-bayesplot))
-    (native-inputs (list r-r-rsp r-knitr))
-    (home-page "https://dmphillippo.github.io/multinma/")
-    (synopsis
-     "Bayesian Network Meta-Analysis of Individual and Aggregate Data")
-    (description
-     "Network meta-analysis and network meta-regression models for aggregate data,
-individual patient data, and mixtures of both individual and aggregate data
-using multilevel network meta-regression as described by Phillippo et al. (2020)
-<doi:10.1111/rssa.12579>.  Models are estimated in a Bayesian framework using
-Stan'.")
-    (license license:gpl3)))
 
 (define-public r-multinets
   (package
@@ -10843,13 +10765,13 @@ user.  It just requires a Digital Terrain Model, a start location and
 (define-public r-move2
   (package
     (name "r-move2")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move2" version))
        (sha256
-        (base32 "1r6xz7848g3fykm4l4iqf08ylyi9sg25y37h3iwcaj4zsdpj28l4"))))
+        (base32 "0ms6s0znjdrf7sfs7ydy6jfic39xi8fbd4r89z3scks7lhm0q1qb"))))
     (properties `((upstream-name . "move2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
@@ -15616,6 +15538,29 @@ L.; Carrasco, J.M.F and de Castro, M. (2021)
 achieved by a semi-parametric mixture model and missingness is managed by using
 the pattern-mixture approach.  More details of the approach are available in Du
 Roy de Chaumaray et al. (2020) <@code{arXiv:2009.07662>}.")
+    (license license:gpl2+)))
+
+(define-public r-mn
+  (package
+    (name "r-mn")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MN" version))
+       (sha256
+        (base32 "1cq1yi5y014hfiz9k1l0pif4n1bs0zf8nzynichv6l9r8mr63j2b"))))
+    (properties `((upstream-name . "MN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=MN")
+    (synopsis "Matrix Normal Distribution")
+    (description
+     "Density computation, random matrix generation and maximum likelihood estimation
+of the matrix normal distribution.  References: Pocuca N., Gallaugher M. P.,
+Clark K. M. & @code{McNicholas} P. D. (2019).  Assessing and Visualizing Matrix
+Variate Normality. <doi:10.48550/@code{arXiv.1910.02859>} and the relevant
+wikipedia page.")
     (license license:gpl2+)))
 
 (define-public r-mmvbvs
@@ -22572,6 +22517,26 @@ distributions (which, in turn can be multidimensional).  The package also
 provides an application of the IPFP to simulate multivariate Bernoulli
 distributions.")
     (license license:gpl2)))
+
+(define-public r-minty
+  (package
+    (name "r-minty")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minty" version))
+       (sha256
+        (base32 "1kbs4f36s5bnjpc5wcqawbk154n9wjpf549hsjj4xdcg7ihcdgfg"))))
+    (properties `((upstream-name . "minty")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tzdb r-cpp11))
+    (home-page "https://gesistsa.github.io/minty/")
+    (synopsis "Minimal Type Guesser")
+    (description
+     "Port the type guesser from readr (so-called readr first edition parsing engine,
+now superseded by vroom').")
+    (license license:expat)))
 
 (define-public r-mintplates
   (package

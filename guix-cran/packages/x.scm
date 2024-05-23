@@ -94,30 +94,30 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "0.0.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "1d2x4mb2jj7p2ksninwbjjs29snlc57jg2k2ynd7ihcikj97ywhn"))))
+        (base32 "1xvx9z24xrqfhpgzfdvscscg3lcjsy6abrw60amcww36sl41fas2"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-matrix r-agop))
+    (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
     (synopsis "Calculate Expertise Indices")
     (description
      "Institutional performance assessment remains a key challenge to a multitude of
 stakeholders.  Existing indicators such as h-type indicators, g-type indicators,
 and many others do not reflect expertise of institutions that defines their
-research portfolio.  The package offers functionality to compute two novel
-indices: the x-index and the xd-index.  The x-index evaluates an institution's
-scholarly expertise within a specific discipline or field, while the xd-index
-provides a broader assessment of overall scholarly expertise considering an
-institution's publication pattern and strengths across coarse thematic areas.
-These indices offer a nuanced understanding of institutional research
-capabilities, aiding stakeholders in research management and resource allocation
-decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
+research portfolio.  The package offers functionality to compute and visualise
+two novel indices: the x-index and the xd-index.  The x-index evaluates an
+institution's scholarly expertise within a specific discipline or field, while
+the xd-index provides a broader assessment of overall scholarly expertise
+considering an institution's publication pattern and strengths across coarse
+thematic areas.  These indices offer a nuanced understanding of institutional
+research capabilities, aiding stakeholders in research management and resource
+allocation decisions.  Lathabai, H.H., Nandy, A., and Singh, V.K. (2021)
 <doi:10.1007/s11192-021-04188-3>.  Nandy, A., Lathabai, H.H., and Singh, V.K.
 (2023) <doi:10.5281/zenodo.8305585>.")
     (license license:gpl3)))

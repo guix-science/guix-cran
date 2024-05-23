@@ -29170,13 +29170,13 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "11pnr4ydzxzw8qr4578sqal49f0c9frdsczw9qhsws8a8152cwkv"))))
+        (base32 "1s2m2566ak6v0y9x9j24g8hsya106x1xhgxwsldppfjaaj6l3v0j"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -32403,27 +32403,6 @@ estimates the shared random effects based on them.")
 and rethrow.  The `%!%` operator evaluates the expression on its left hand side,
 and if an error occurs, the right hand side is used to construct a new error
 that embeds the original error.")
-    (license license:expat)))
-
-(define-public r-slanter
-  (package
-    (name "r-slanter")
-    (version "0.2-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "slanter" version))
-       (sha256
-        (base32 "024dkman0r5qzc215gw0ds932vdaz8krrhv64fjw9pni37ixc3mf"))))
-    (properties `((upstream-name . "slanter")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-pheatmap r-matrix))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=slanter")
-    (synopsis "Slanted Matrices and Ordered Clustering")
-    (description
-     "Slanted matrices and ordered clustering for better visualization of similarity
-data.")
     (license license:expat)))
 
 (define-public r-slackr
@@ -39673,13 +39652,13 @@ Includes a set of web-based graphical user interfaces.")
 (define-public r-shorts
   (package
     (name "r-shorts")
-    (version "3.1.1")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shorts" version))
        (sha256
-        (base32 "16839syxhnfy5pfjxksbk68xhzl37aqdsw898r2psni4bkiwz48x"))))
+        (base32 "1ajqvm6y5djdjh5prci31hyv1ilycn1vf5gniq92gxqhzab7bnxc"))))
     (properties `((upstream-name . "shorts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-purrr r-minpack-lm r-lambertw r-ggplot2))
@@ -39742,13 +39721,13 @@ refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
 (define-public r-shortform
   (package
     (name "r-shortform")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShortForm" version))
        (sha256
-        (base32 "1nlpn7rhk94jsdbhqa58rz07pl2gcf9rfc39h3bp4gh674wczn9g"))))
+        (base32 "0d28ls6b35d4pw5d30jwxglq6spmfs05wr3pwijcjcw1507862qz"))))
     (properties `((upstream-name . "ShortForm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -42182,50 +42161,6 @@ successful.")
      "This package provides three types of datetime pickers for usage in a Shiny UI. A
 datetime picker is an input field for selecting both a date and a time.")
     (license license:gpl3)))
-
-(define-public r-shinydashboardplus
-  (package
-    (name "r-shinydashboardplus")
-    (version "2.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinydashboardPlus" version))
-       (sha256
-        (base32 "11ckx8il1v4jk26ss0bylk73xb5bh3xd2d5421i5s8wlxlwd0z5q"))))
-    (properties `((upstream-name . "shinydashboardPlus")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-waiter
-                             r-shinydashboard
-                             r-shiny
-                             r-lifecycle
-                             r-htmltools
-                             r-fresh))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/RinteRface/shinydashboardPlus")
-    (synopsis "Add More 'AdminLTE2' Components to 'shinydashboard'")
-    (description
-     "Extend shinydashboard with @code{AdminLTE2} components. @code{AdminLTE2} is a
-free Bootstrap 3 dashboard template available at <https://adminlte.io>.
-Customize boxes, add timelines and a lot more.")
-    (license (list license:gpl2+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-shinycyjs
   (package

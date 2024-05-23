@@ -6867,13 +6867,13 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
 (define-public r-escalation
   (package
     (name "r-escalation")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "escalation" version))
        (sha256
-        (base32 "14nvjrzkfr9ijn7z9absdw0d8814xm6al8lwnirdhq96jvlqh05n"))))
+        (base32 "1y25xmwf4gb5d5n6z8n06ignjkcrgffak5ca4gjw89pr05284q5q"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -6881,6 +6881,7 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
                              r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-testthat
                              r-stringr
                              r-rcolorbrewer
                              r-r6
@@ -6895,7 +6896,7 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
                              r-boin
                              r-binom))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=escalation")
+    (home-page "https://brockk.github.io/escalation/")
     (synopsis "Modular Approach to Dose-Finding Clinical Trials")
     (description
      "This package provides methods for working with dose-finding clinical trials.  We

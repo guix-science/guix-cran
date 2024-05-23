@@ -5308,50 +5308,6 @@ direct plots to screen or file.  Automatic file format inference and directory
 structure creation.")
     (license license:gpl3+)))
 
-(define-public r-inzightts
-  (package
-    (name "r-inzightts")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iNZightTS" version))
-       (sha256
-        (base32 "1wzzzkl64m7mk0mpkvgkj7ahlqdja9hyhwficprd4kyqxrv00f0r"))))
-    (properties `((upstream-name . "iNZightTS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-urca
-                             r-tsibble
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-patchwork
-                             r-lubridate
-                             r-glue
-                             r-ggtext
-                             r-ggplot2
-                             r-forcats
-                             r-feasts
-                             r-fabletools
-                             r-fable
-                             r-evaluate
-                             r-dplyr
-                             r-colorspace))
-    (home-page "https://inzight.nz")
-    (synopsis "Time Series for 'iNZight'")
-    (description
-     "This package provides a collection of functions for working with time series
-data, including functions for drawing, decomposing, and forecasting.  Includes
-capabilities to compare multiple series and fit both additive and multiplicative
-models.  Used by @code{iNZight}', a graphical user interface providing easy
-exploration and visualisation of data for students of statistics, available in
-both desktop and online versions.  Holt (1957)
-<doi:10.1016/j.ijforecast.2003.09.015>, Winters (1960)
-<doi:10.1287/mnsc.6.3.324>, Cleveland, Cleveland, & Terpenning (1990) \"STL: A
-Seasonal-Trend Decomposition Procedure Based on Loess\".")
-    (license license:gpl3)))
-
 (define-public r-inzighttools
   (package
     (name "r-inzighttools")
@@ -8289,13 +8245,13 @@ defined in R code, not comments.  It is also easy to define a new syntax.")
 (define-public r-inldata
   (package
     (name "r-inldata")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inldata" version))
        (sha256
-        (base32 "0p2qran9g1v5wndn5f27071hxdnmzlk3n6nvxgjapnr28sx2yhaf"))))
+        (base32 "0155mx8nx5g1vp3mcfar0n4qbxqyvs0fzqnmd8skrrygfk1aw0y5"))))
     (properties `((upstream-name . "inldata")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))

@@ -19631,13 +19631,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.11.0.1")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1s3kzwcvdzsx3m5dmhyyzzx0kl7fx09b7246vr1cm4y05zqdp4l0"))))
+        (base32 "085djnpafh4gdklai3x54bjbkqkiyjlz9nygddmid3x3x4xg01vj"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
