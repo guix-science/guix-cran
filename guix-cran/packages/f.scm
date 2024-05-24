@@ -1348,13 +1348,13 @@ detection, JMVA 146, 325-340, <doi:10.1016/j.jmva.2015.10.016> for details.")
 (define-public r-funstattest
   (package
     (name "r-funstattest")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funStatTest" version))
        (sha256
-        (base32 "1dqp4yh01w8xdbjhjzxrx33w0hgxcm5a43r27q17m34hqiv33y34"))))
+        (base32 "162wm4j63bg7l1cyqjb23cn68pm1zg1nc25zxhy3mb12pipnqq2x"))))
     (properties `((upstream-name . "funStatTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -21393,6 +21393,28 @@ factor stochastic volatility models with interweaving
 <doi:10.1080/10618600.2017.1322091>.  Sparsity can be achieved through the usage
 of Normal-Gamma priors on the factor loading matrix
 <doi:10.1016/j.jeconom.2018.11.007>.")
+    (license license:gpl2+)))
+
+(define-public r-factorplot
+  (package
+    (name "r-factorplot")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "factorplot" version))
+       (sha256
+        (base32 "0gh2rv518hz39sihv9b08v8ldyyac21djz6ynxdaajh0hcicvasf"))))
+    (properties `((upstream-name . "factorplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-multcomp))
+    (home-page "https://cran.r-project.org/package=factorplot")
+    (synopsis "Presenting Pairwise Comparisons")
+    (description
+     "The tools herein calculate, print, summarize and plot pairwise differences that
+result from generalized linear models, general linear hypothesis tests and
+multinomial logistic regression models.  For more information, see Armstrong
+(2013) <doi:10.32614/RJ-2013-021>.")
     (license license:gpl2+)))
 
 (define-public r-factormodel

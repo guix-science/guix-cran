@@ -13905,13 +13905,13 @@ into R and the Tidyverse\" available at <https://moderndive.com/>.")
 (define-public r-moderate-mediation
   (package
     (name "r-moderate-mediation")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderate.mediation" version))
        (sha256
-        (base32 "0h3paz7768dbyaw55pp586zys251jd1910l5229zyr0xdy3m0mjv"))))
+        (base32 "1xpyjrp5mxlca9naiz7npa2gqqx9py74w8k4c81djwjxqgn93g60"))))
     (properties `((upstream-name . "moderate.mediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -16097,13 +16097,13 @@ should be preferred over random intercept models.")
 (define-public r-mmibain
   (package
     (name "r-mmibain")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmibain" version))
        (sha256
-        (base32 "0m7ivz6ms06s9zh2696jz04cb1p8xhpippygvil9f16259a8yvrw"))))
+        (base32 "1ii2lfsbmp0n85a3y76zp87fpj5nm5ndigjyl09sl0cl2g8q7ql7"))))
     (properties `((upstream-name . "mmibain")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -16112,7 +16112,9 @@ should be preferred over random intercept models.")
                              r-mmcards
                              r-lavaan
                              r-igraph
+                             r-ggplot2
                              r-e1071
+                             r-dt
                              r-car
                              r-broom
                              r-bain))
@@ -24739,13 +24741,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1br35z4z87598a0wwnn65mzxywizds12l38zbp6jafx4n0pgsh9a"))))
+        (base32 "1w01k7vd1s5w3xkjxkz5gwbql92k3r2nvxzhxhbpkj9amz1rb5wl"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -28873,6 +28875,28 @@ separately for each set of imputations and it conducts estimations from these
 meta-analyses.  Please read the reference in metansue for details of the
 procedure.")
     (license license:gpl3)))
+
+(define-public r-metanlp
+  (package
+    (name "r-metanlp")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaNLP" version))
+       (sha256
+        (base32 "0ya8hi7bpxnz1a8vjni5sg68yf86bn72wh8676x6xqf6z1qvha18"))))
+    (properties `((upstream-name . "MetaNLP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm r-textstem r-lexicon r-glmnet))
+    (home-page "https://github.com/imbi-heidelberg/MetaNLP")
+    (synopsis "Natural Language Processing for Meta Analysis")
+    (description
+     "Given a CSV file with titles and abstracts, the package creates a word count
+matrix that is lemmatized and stemmed and can directly be used to train machine
+learning methods for automatic title-abstract screening in the preparation of a
+meta analysis.")
+    (license license:expat)))
 
 (define-public r-metanetwork
   (package
@@ -39277,6 +39301,26 @@ state uncertainty and a simulation capability for HMM models.")
 user to write some markdown code and to preview the result.  This input has been
 inspired by the \"comment\" window of <https://github.com/>.")
     (license license:gpl3)))
+
+(define-public r-mark
+  (package
+    (name "r-mark")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mark" version))
+       (sha256
+        (base32 "16gzi253s6mdqr5axhp1fk0vcqc2sslnb8nmwjxarrcgh8d22ba3"))))
+    (properties `((upstream-name . "mark")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-magrittr r-fuj r-fs r-cli))
+    (home-page "https://github.com/jmbarbone/mark")
+    (synopsis "Miscellaneous, Analytic R Kernels")
+    (description
+     "Miscellaneous functions and wrappers for development in other packages created,
+maintained by Jordan Mark Barbone.")
+    (license license:expat)))
 
 (define-public r-marima
   (package

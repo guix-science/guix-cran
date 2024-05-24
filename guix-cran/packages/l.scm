@@ -10801,6 +10801,57 @@ low-flows.  This packages provides functions to compute the described statistics
 and produces plots similar to the ones in the manual.")
     (license license:gpl2+)))
 
+(define-public r-lfproqc
+  (package
+    (name "r-lfproqc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lfproQC" version))
+       (sha256
+        (base32 "0cs6x5nqwm1n11i287f26x4lclpmd5vwj9wwnzlr7cr95riwrqxk"))))
+    (properties `((upstream-name . "lfproQC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vsn
+                             r-vim
+                             r-tidyselect
+                             r-tidyr
+                             r-reshape2
+                             r-reshape
+                             r-plotly
+                             r-pcamethods
+                             r-matrixstats
+                             r-mass
+                             r-magrittr
+                             r-limma
+                             r-laeken
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lfproQC")
+    (synopsis "Quality Control for Label-Free Proteomics Expression Data")
+    (description
+     "Label-free bottom-up proteomics expression data is often affected by data
+heterogeneity and missing values.  Normalization and missing value imputation
+are commonly used techniques to address these issues and make the dataset
+suitable for further downstream analysis.  This package provides an optimal
+combination of normalization and imputation methods for the dataset.  The
+package utilizes three normalization methods and three imputation methods.The
+statistical evaluation measures named pooled co-efficient of variance, pooled
+estimate of variance and pooled median absolute deviation are used for selecting
+the best combination of normalization and imputation method for the given
+dataset.  The user can also visualize the results by using various plots
+available in this package.  The user can also perform the differential
+expression analysis between two sample groups with the function included in this
+package.  The chosen three normalization methods, three imputation methods and
+three evaluation measures were chosen for this study based on the research
+papers published by	VÃ¤likangas et al. (2016) <doi:10.1093/bib/bbw095>, Jin et
+al. (2021) <doi:10.1038/s41598-021-81279-4> and Srivastava et al. (2023)
+<doi:10.2174/1574893618666230223150253>.")
+    (license license:gpl3)))
+
 (define-public r-lfmm
   (package
     (name "r-lfmm")

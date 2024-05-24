@@ -3671,13 +3671,13 @@ effects dependence.")
 (define-public r-growr
   (package
     (name "r-growr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growR" version))
        (sha256
-        (base32 "1sw9sdv008n4xsv41yyrbq4qw9w0swg4ff2jaa41gvn35fax7blj"))))
+        (base32 "0z2kz7gd5grpb5kan6j6nbjsgdii7is4bwyx3jzsziq74q239fig"))))
     (properties `((upstream-name . "growR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rdpack r-r6))
@@ -7223,6 +7223,29 @@ mixed models with teachers modeled as \"G-side\" effects and students modeled wi
 either \"G-side\" or \"R-side\" effects.")
     (license license:gpl2)))
 
+(define-public r-gpur
+  (package
+    (name "r-gpur")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gpuR" version))
+       (sha256
+        (base32 "1z9s3c4lspbm29bp1l2sixlfps04aif70rv1p1db1f1xwk6vw3bn"))))
+    (properties `((upstream-name . "gpuR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eborgnine/gpuR")
+    (synopsis "GPU Functions for R Objects")
+    (description
+     "This package provides GPU enabled functions for R objects in a simple and
+approachable manner.  New gpu* and vcl* classes have been provided to wrap
+typical R objects (e.g. vector, matrix), in both host and device spaces, to
+mirror typical R syntax without the need to know @code{OpenCL}'.")
+    (license license:gpl2+)))
+
 (define-public r-gpumatrix
   (package
     (name "r-gpumatrix")
@@ -9532,17 +9555,16 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "0.98")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "0afqjjqqb6vy164qgs8h0kdvw81hl4py05mqnnnwpkak81jdgwii"))))
+        (base32 "1kflcbydh2p78fqdfz35gp0jsp6xl2823mvsqq0yany9294bdqmr"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survsim
-                             r-survminer
+    (propagated-inputs (list r-survminer
                              r-survival
                              r-gridextra
                              r-ggplot2
@@ -18502,13 +18524,13 @@ System and the European System of Central Banks.")
 (define-public r-ggdaynight
   (package
     (name "r-ggdaynight")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdaynight" version))
        (sha256
-        (base32 "1x6f1s8hbjshx13lakkag35l8hlcikphdyxi4d6a96n8il1by83y"))))
+        (base32 "1wvpmpyfnq6j6wkk8ayaddb4yyk945w4isjn57dpkvabfk59cvfh"))))
     (properties `((upstream-name . "ggdaynight")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -22431,13 +22453,13 @@ continuous analysis of landscape features.")
 (define-public r-geodist
   (package
     (name "r-geodist")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geodist" version))
        (sha256
-        (base32 "09758v53r057rjsn844g2dc455ccndw1qlndl1xsm2gcp6ch2hr3"))))
+        (base32 "16nldq2fph4nxy0rcy33z6vw9xar3ckvdpagbaqsa2w0023bzq7x"))))
     (properties `((upstream-name . "geodist")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -15659,6 +15659,41 @@ covariates by fitting a linear regression in a preliminary step before the
 semi-variogram fitting process.")
     (license license:expat)))
 
+(define-public r-egm
+  (package
+    (name "r-egm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EGM" version))
+       (sha256
+        (base32 "0malpx9idfhhavlq5j4awdkicz8ww2gqsfrw5kwycbsvymb5bm2b"))))
+    (properties `((upstream-name . "EGM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-vctrs
+                             r-stringr
+                             r-rlang
+                             r-lifecycle
+                             r-ggplot2
+                             r-fs
+                             r-data-table
+                             r-checkmate
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://shah-in-boots.github.io/EGM/")
+    (synopsis "Evaluating Cardiac Electrophysiology Signals")
+    (description
+     "This package provides a system for importing electrophysiological signal, based
+on the Waveform Database (WFDB) software package, written by Moody et al 2022
+<doi:10.13026/gjvw-1m31>.  A wrapper for utilizing WFDB functions for reading
+and writing signal data, as well as functions for visualization and analysis are
+provided.  A stable and broadly compatible class for working with signal data,
+supporting the reading in of cardiac electrophysiogical files such as
+intracardiac electrograms, is introduced.")
+    (license license:expat)))
+
 (define-public r-eglhmm
   (package
     (name "r-eglhmm")

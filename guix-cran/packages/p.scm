@@ -7369,6 +7369,27 @@ assumptions; likelihood inference based on classical first-order approximations
 and higher-order asymptotic procedures.")
     (license license:gpl2)))
 
+(define-public r-probstats4econ
+  (package
+    (name "r-probstats4econ")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "probstats4econ" version))
+       (sha256
+        (base32 "1xjf4i5jw0qf87zmizkwbb9i0fd0gji40kwvm9nz5gxyns98fqmk"))))
+    (properties `((upstream-name . "probstats4econ")))
+    (build-system r-build-system)
+    (home-page "https://www.probstats4econ.com/package.html")
+    (synopsis
+     "Companion Package to Probability and Statistics for Economics and Business")
+    (description
+     "Utilities for multiple hypothesis testing, companion datasets from \"Probability
+and Statistics for Economics and Business: An Introduction Using R\" by Jason
+Abrevaya (MIT Press, under contract).")
+    (license license:gpl3+)))
+
 (define-public r-probshiny
   (package
     (name "r-probshiny")
@@ -10286,13 +10307,13 @@ training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
 (define-public r-predhy
   (package
     (name "r-predhy")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy" version))
        (sha256
-        (base32 "0qy4z3la9fhl63sy4rm2dpbzns5kv0xwqkgmj1rzdmpsbzvb805i"))))
+        (base32 "0s38gzbynvllf4fi1mrjd2yj24sc091gi5cd8vbj63pl8qkbfjjc"))))
     (properties `((upstream-name . "predhy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost

@@ -15434,6 +15434,30 @@ reduced and homogenized to one word (e.g. \"Reading to gain information\" became
 constants were all homogenized to \"univariate\".")
     (license license:gpl2)))
 
+(define-public r-nadiv
+  (package
+    (name "r-nadiv")
+    (version "2.18.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nadiv" version))
+       (sha256
+        (base32 "0n8hwf8mic479knq3dp6l49aw6injsk5f9jfsxl2qs5q4wsqsx76"))))
+    (properties `((upstream-name . "nadiv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
+    (home-page "https://github.com/matthewwolak/nadiv")
+    (synopsis "(Non)Additive Genetic Relatedness Matrices")
+    (description
+     "Constructs (non)additive genetic relationship matrices, and their inverses, from
+a pedigree to be used in linear mixed effect models (A.K.A. the animal model').
+Also includes other functions to facilitate the use of animal models.  Some
+functions have been created to be used in conjunction with the R package asreml
+for the ASReml software, which can be obtained upon purchase from VSN
+international (<https://vsni.co.uk/software/asreml>).")
+    (license license:gpl2+)))
+
 (define-public r-nadia
   (package
     (name "r-nadia")

@@ -1237,33 +1237,33 @@ are computed in parallel via @code{OpenMP}'.")
 (define-public r-swtools
   (package
     (name "r-swtools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SWTools" version))
        (sha256
-        (base32 "10hj8y19s7bi4grchn574z26f42pi7mdls75bzmy8n81phk6482d"))))
+        (base32 "1xh3zw53bxk2fksjbjbqqw2qiz2j1cavyrsg8yignqvjag87zqa0"))))
     (properties `((upstream-name . "SWTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tidyr
                              r-tibble
                              r-stringr
-                             r-sp
                              r-sf
                              r-segmented
                              r-rmarkdown
                              r-rlang
                              r-reshape2
                              r-readr
+                             r-prettymapr
                              r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-hydrotsm
                              r-httr
+                             r-ggspatial
                              r-ggplot2
-                             r-ggmap
                              r-forcats
                              r-dplyr))
     (home-page "https://github.com/matt-s-gibbs/SWTools")
@@ -11575,6 +11575,27 @@ data were observed.  In particular, a parsimonious class of STCOS models
 supporting Gaussian outcomes was introduced by Bradley, Wikle, and Holan
 <doi:10.1002/sta4.94>.  The stcos package contains tools which facilitate use of
 STCOS models.")
+    (license license:expat)))
+
+(define-public r-stbl
+  (package
+    (name "r-stbl")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stbl" version))
+       (sha256
+        (base32 "0hlc73i0qkxixw8z27sc0fj0i613x248i4bwk2zdrsby4zfhbxvq"))))
+    (properties `((upstream-name . "stbl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-rlang r-glue r-cli))
+    (home-page "https://github.com/jonthegeek/stbl")
+    (synopsis "Stabilize Function Arguments")
+    (description
+     "This package provides a set of consistent, opinionated functions to quickly
+check function arguments, coerce them to the desired configuration, or deliver
+informative error messages when that is not possible.")
     (license license:expat)))
 
 (define-public r-stb
@@ -27303,6 +27324,38 @@ Iden and Durner (2013) <doi:10.1002/2014WR015937>, [5] Peters (2014)
 <doi:10.1016/j.jhydrol.2008.04.016> and [8] Brooks and Corey (1964).")
     (license license:gpl2+)))
 
+(define-public r-soilfunctionality
+  (package
+    (name "r-soilfunctionality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SoilFunctionality" version))
+       (sha256
+        (base32 "1r9ifr6ckbqlccrsxl5sph4s7hgkzfzyk3chiw421vvckpbdsl4s"))))
+    (properties `((upstream-name . "SoilFunctionality")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SoilFunctionality")
+    (synopsis "Soil Functionality Measurement")
+    (description
+     "Generally, soil functionality is characterized by its capability to sustain
+microbial activity, nutritional element supply, structural stability and aid for
+crop production.  Since soil functions can be linked to 80% of ecosystem
+services, conservation of degraded land should strive to restore not only the
+capacity of soil to sustain flora but also ecosystem provisions.  The primary
+ecosystem services of soil are carbon sequestration, food or biomass production,
+provision of microbial habitat, nutrient recycling.  However, the actual
+magnitude of soil functions provided by agricultural land uses has never been
+quantified.  Nutrient supply capacity (NSC) is a measure of nutrient dynamics in
+restored land uses.  Carbon accumulation proficiency (CAP) is a measure of
+ecosystem carbon sequestration.  Biological activity index (BAI) is the average
+of responses of all enzyme activities in treated land over control/reference
+land.  The CAP parameter investigates how land uses may affect carbon flows,
+retention, and sequestration.  The CAP provides a signal for C cycles, flows,
+and the systems relative operational supremacy.")
+    (license license:gpl3)))
+
 (define-public r-soilfoodwebs
   (package
     (name "r-soilfoodwebs")
@@ -28672,13 +28725,13 @@ package.")
 (define-public r-snotelr
   (package
     (name "r-snotelr")
-    (version "1.2")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snotelr" version))
        (sha256
-        (base32 "140f34dsylsb0z9aw446xhsghl1r1qnddwai87201pymmjgqryn0"))))
+        (base32 "1sr5ihr8qsa0lcihx8cgkr3q9qhc9grjyjp2fbf4siv7j3p21xzp"))))
     (properties `((upstream-name . "snotelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rvest r-memoise r-httr r-dplyr))
@@ -28687,9 +28740,10 @@ package.")
     (synopsis "Calculate and Visualize 'SNOTEL' Snow Data and Seasonality")
     (description
      "Programmatic interface to the SNOTEL snow data
-(<https://www.nrcs.usda.gov/wps/portal/wcc/home>).  Provides easy downloads of
-snow data into your R work space or a local directory.  Additional
-post-processing routines to extract snow season indexes are provided.")
+(<https://www.nrcs.usda.gov/programs-initiatives/sswsf-snow-survey-and-water-supply-forecasting-program>).
+ Provides easy downloads of snow data into your R work space or a local
+directory.  Additional post-processing routines to extract snow season indexes
+are provided.")
     (license license:agpl3)))
 
 (define-public r-snn
@@ -59699,13 +59753,13 @@ evaluation of Small Area estimators.")
 (define-public r-saetrafo
   (package
     (name "r-saetrafo")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeTrafo" version))
        (sha256
-        (base32 "1kdd70jq7dm3dfg801wy48fzwkw4xvw18l6sdfx1sfkj20s4nyna"))))
+        (base32 "0gx7g5f2xcbdlhscpnbgz3jqkr6ypsnjfgqqybz4kcqgrsxjhgky"))))
     (properties `((upstream-name . "saeTrafo")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

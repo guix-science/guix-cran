@@ -9382,13 +9382,13 @@ data.  BMC Bioinformatics 20:358. <doi:10.1186/s12859-019-2942-y>.")
 (define-public r-blockcv
   (package
     (name "r-blockcv")
-    (version "3.1-3")
+    (version "3.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blockCV" version))
        (sha256
-        (base32 "0vnhwypywgm4jrz7ir4jb1g02xhldi4i0rw18nisqs5vax6iy1ch"))))
+        (base32 "00fhsiqwf6d7i48b59rgg0iw3bslg19aglzpic80gp8dgdrsrvmf"))))
     (properties `((upstream-name . "blockCV")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rcpp))
@@ -15224,13 +15224,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.2.1")
+    (version "4.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "0wmnjdw0fixydq1171jz87ndz224k1dhkwmcqkby3fv7gppmgskj"))))
+        (base32 "08367mqrc91dd69wczzhx5yj21pdmx635clqbi7j6sgicsj8yf7l"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -15259,10 +15259,12 @@ They can be used to test the different features of the package bibliometrix
     (home-page "https://www.bibliometrix.org")
     (synopsis "Comprehensive Science Mapping Analysis")
     (description
-     "Tool for quantitative research in scientometrics and bibliometrics.  It provides
-various routines for importing bibliographic data from SCOPUS', Clarivate
-Analytics Web of Science (<https://www.webofknowledge.com/>), Digital Science
-Dimensions (<https://www.dimensions.ai/>), @code{OpenAlex}
+     "Tool for quantitative research in scientometrics and bibliometrics.  It
+implements the comprehensive workflow for science mapping analysis proposed in
+Aria M. and Cuccurullo C. (2017) <doi:10.1016/j.joi.2017.08.007>.  bibliometrix
+provides various routines for importing bibliographic data from SCOPUS',
+Clarivate Analytics Web of Science (<https://www.webofknowledge.com/>), Digital
+Science Dimensions (<https://www.dimensions.ai/>), @code{OpenAlex}
 (<https://openalex.org/>), Cochrane Library
 (<https://www.cochranelibrary.com/>), Lens (<https://lens.org>), and
 @code{PubMed} (<https://pubmed.ncbi.nlm.nih.gov/>) databases, performing
@@ -22107,13 +22109,13 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
 (define-public r-bayesmeanscale
   (package
     (name "r-bayesmeanscale")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMeanScale" version))
        (sha256
-        (base32 "139fk9j6wkz3k1pjki4ywwhaaq4nmdnn2f93g5x4sgzbgxbm50pw"))))
+        (base32 "09pj654fmi3s6423y380q2drp8vww4c46q4ba0809x0rdvxk5l5a"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
     (propagated-inputs (list r-posterior r-magrittr r-data-table r-bayestestr))
@@ -25733,13 +25735,13 @@ rmaaddon() can be used.")
 (define-public r-baorista
   (package
     (name "r-baorista")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baorista" version))
        (sha256
-        (base32 "00q3h7x86iw1a6r8xl9sjcwz1pxmwl0wfn1zpqsn13xfidkjjbi8"))))
+        (base32 "0j2a9ypq5k7676xlz4d8p0fns6xvsxb6vazm99ahiwpq3pf4z3yq"))))
     (properties `((upstream-name . "baorista")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-coda))

@@ -7029,39 +7029,6 @@ successfully replicating the results of Pesaran et al. (2001) in Natsiopoulos
 and Tzeremes (2022) <doi:10.1002/jae.2919>.")
     (license license:gpl3)))
 
-(define-public r-ardeco
-  (package
-    (name "r-ardeco")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARDECO" version))
-       (sha256
-        (base32 "0nq86z5hbk1wksc4l82va433smlszy06z5z2vxhzj774jz2y9i0k"))))
-    (properties `((upstream-name . "ARDECO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rjstat
-                             r-jsonlite
-                             r-httr
-                             r-ghql
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ARDECO")
-    (synopsis "Annual Regional Database of the European Commission (ARDECO)")
-    (description
-     "This package provides a set of functions to access the ARDECO (Annual Regional
-Database of the European Commission) data directly from the official ARDECO
-public repository through the exploitation of the ARDECO APIs.  The APIs are
-completely transparent to the user and the provided functions provide a direct
-access to the ARDECO data.  The ARDECO database is a collection of variables
-related to demography, employment, labour market, domestic product, capital
-formation.  Each variable can be exposed in one or more units of measure as well
-as refers to total values plus economic sectors.  The description of the ARDECO
-database can be found at the following URL
-<https://urban.jrc.ec.europa.eu/ardeco>.")
-    (license license:gpl3)))
-
 (define-public r-ardec
   (package
     (name "r-ardec")
@@ -7381,13 +7348,13 @@ root architectural traits\", Plant and Soil, <DOI:10.1007/s11104-015-2673-4>.")
 (define-public r-archetypal
   (package
     (name "r-archetypal")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archetypal" version))
        (sha256
-        (base32 "0xih81gwfwr1x9671gpzw49v95hmnl497hahxsyvdla87n1bfpc3"))))
+        (base32 "1acz5fz5azhz3kq8zsxpp8k04jh2jmvlx0phcwlvvzhr0xs8lln3"))))
     (properties `((upstream-name . "archetypal")))
     (build-system r-build-system)
     (propagated-inputs (list r-plot3d
@@ -19655,13 +19622,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.11.0.1")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "011hrvpbvjwfjf5idxm198rzfm8b12svbdkp8phz0v60n0rxxvrx"))))
+        (base32 "031qv19rx389br9dv3nxpghy580g1aywv265la03s9g6d5jw9j4r"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -19680,13 +19647,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.11.0")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "1yda8w3yk3h3sjfx7bxcvv3pgrk4hbvp2m5yxbrxg52msm2ilg3l"))))
+        (base32 "0kvn6agx5vscdl77zzkz8lhlr2i7p9qda6q52ligwvjyrh5zyi48"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

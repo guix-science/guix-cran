@@ -325,13 +325,13 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "079v0ixs3i4w6d3vjgjff0csrxsih1ah62ax5x9q4g38gc0y9l9j"))))
+        (base32 "0g6gb3ig3qrqi9p8i35lxdgcz92ibjg2qdldnl1b3j1b6assza71"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8998,16 +8998,21 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.data" version))
        (sha256
-        (base32 "1bbxy7x7q1jn5l48li3pfiqisxrfw87nql20v5c2f06m67mn2mq8"))))
+        (base32 "025pgadi0rgwz0yvkx3mgf6r66sk2phmsmvgpykwd6jxyfwix2yk"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-janitor r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-janitor
+                             r-httr2
+                             r-dplyr))
     (home-page "https://github.com/spsanderson/healthyR.data")
     (synopsis "Data Only Package to 'healthyR'")
     (description

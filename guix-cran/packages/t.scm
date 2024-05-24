@@ -6656,13 +6656,13 @@ models in polynomial time.  Currently supported models include gbm',
 (define-public r-treesearch
   (package
     (name "r-treesearch")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeSearch" version))
        (sha256
-        (base32 "1bdwmq0lkaz57r70686352qrcbg1rh6jc5dappdfnipiggpmyi4j"))))
+        (base32 "0nxzjv4q052nsfrib3i95b92alxipds5bll1aldh88dabhn3c0v5"))))
     (properties `((upstream-name . "TreeSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -12411,13 +12411,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "1fq0zskhyslh9rfjlcmfw5sc4qjx699ajnii20pb5jacamm19gim"))))
+        (base32 "0a2jfgg8rcgx4nckzmxk9a9jm4250a78pzcfaxj08d2gbkxairwz"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

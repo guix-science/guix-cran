@@ -8956,16 +8956,16 @@ URL provides a link to a work in progress vignette.")
 (define-public r-rqlm
   (package
     (name "r-rqlm")
-    (version "1.3-1")
+    (version "2.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqlm" version))
        (sha256
-        (base32 "0k3591rmahnb8ba3c1ja181wbi36d7dxazj06m4vwqpihcphah7b"))))
+        (base32 "1l11l4p7d331jspfwnsjawfg1mk91v78fp669586jq9xs9vv25fb"))))
     (properties `((upstream-name . "rqlm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-mass))
+    (propagated-inputs (list r-sandwich r-mice r-mass))
     (home-page "https://cran.r-project.org/package=rqlm")
     (synopsis
      "Modified Poisson and Least-Squares Regressions for Binary Outcome")
@@ -8974,10 +8974,11 @@ URL provides a link to a work in progress vignette.")
 Zou (2004) <doi:10.1093/aje/kwh090> and Cheung (2007) <doi:10.1093/aje/kwm223>
 have been standard multivariate analysis methods to estimate risk ratio and risk
 difference in clinical and epidemiological studies.  This R package involves an
-easy-to-handle function to implement these analyses by simple commands.  Also,
-recent studies have shown the ordinary robust variance estimator possibly has
-serious bias under small or moderate sample size situations for these methods.
-This package also provides computational tools to calculate alternative accurate
+easy-to-handle function to implement these analyses by simple commands.  Missing
+data analysis tools (multiple imputation) are also involved.  Also, recent
+studies have shown the ordinary robust variance estimator possibly has serious
+bias under small or moderate sample size situations for these methods.  This
+package also provides computational tools to calculate alternative accurate
 confidence intervals (Noma and Gosho (2024) <Forthcoming>).")
     (license license:gpl3)))
 
@@ -22445,17 +22446,16 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "058nz42ky5xj5lwxmr2gikpyfjmyzwlszvbamqdmz03pf479zgps"))))
+        (base32 "1h4vp6gim5swiy07fhf6l4agh6pi0vlz2f778s2rzsgqc4jdnawj"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
+    (propagated-inputs (list r-tibble
                              r-stringr
                              r-readr
                              r-plyr
@@ -25206,13 +25206,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.7.9")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "1ni0pkxp2rmjbvxrn3r19hdig64f4jwrq8awd96x4grb8z45fw7d"))))
+        (base32 "1s1cdls4sv2ncxp8c9a2rah9yw95rlvfskzcg2bx74a282bd0p4b"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

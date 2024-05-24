@@ -4987,6 +4987,28 @@ and analyzing fossil data from the Paleobiology Database
 <https://paleobiodb.org>.")
     (license license:gpl3)))
 
+(define-public r-vek
+  (package
+    (name "r-vek")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vek" version))
+       (sha256
+        (base32 "0ph67wfbs9r0fam79lmikbf0j0zbk0qqip7maxrxiy2zdbbf6xg2"))))
+    (properties `((upstream-name . "vek")))
+    (build-system r-build-system)
+    (home-page "https://github.com/samsemegne/vek")
+    (synopsis "Predicate Helper Functions for Testing Simple Atomic Vectors")
+    (description
+     "Predicate helper functions for testing atomic vectors in R. All functions take a
+single argument x and check whether it's of the target type of base-R atomic
+vector (i.e.  no class extensions nor attributes other than names'), returning
+TRUE or FALSE. Some additionally check for value (e.g. absence of missing
+values, infinities, blank characters, or names attribute; or having length 1).")
+    (license license:gpl3)))
+
 (define-public r-vein
   (package
     (name "r-vein")

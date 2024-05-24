@@ -5308,6 +5308,50 @@ direct plots to screen or file.  Automatic file format inference and directory
 structure creation.")
     (license license:gpl3+)))
 
+(define-public r-inzightts
+  (package
+    (name "r-inzightts")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iNZightTS" version))
+       (sha256
+        (base32 "1wzzzkl64m7mk0mpkvgkj7ahlqdja9hyhwficprd4kyqxrv00f0r"))))
+    (properties `((upstream-name . "iNZightTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urca
+                             r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-patchwork
+                             r-lubridate
+                             r-glue
+                             r-ggtext
+                             r-ggplot2
+                             r-forcats
+                             r-feasts
+                             r-fabletools
+                             r-fable
+                             r-evaluate
+                             r-dplyr
+                             r-colorspace))
+    (home-page "https://inzight.nz")
+    (synopsis "Time Series for 'iNZight'")
+    (description
+     "This package provides a collection of functions for working with time series
+data, including functions for drawing, decomposing, and forecasting.  Includes
+capabilities to compare multiple series and fit both additive and multiplicative
+models.  Used by @code{iNZight}', a graphical user interface providing easy
+exploration and visualisation of data for students of statistics, available in
+both desktop and online versions.  Holt (1957)
+<doi:10.1016/j.ijforecast.2003.09.015>, Winters (1960)
+<doi:10.1287/mnsc.6.3.324>, Cleveland, Cleveland, & Terpenning (1990) \"STL: A
+Seasonal-Trend Decomposition Procedure Based on Loess\".")
+    (license license:gpl3)))
+
 (define-public r-inzighttools
   (package
     (name "r-inzighttools")
@@ -9996,16 +10040,25 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.2.3")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "0l8qk8wvwnnjw81gvsm3f4j0qmj7801mka03wbnkhr90ii23f9x6"))))
+        (base32 "1qka54cz8753ha7fgn8krpdy8nw2kvz8jaf8vwcwbrnjglzb5v1h"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pillar r-grates r-data-table))
+    (propagated-inputs (list r-ympes
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-pillar
+                             r-grates
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://www.reconverse.org/incidence2/")
     (synopsis "Compute, Handle and Plot Incidence of Dated Events")
@@ -10341,36 +10394,31 @@ abundances using gene expression data.")
 (define-public r-imrmc
   (package
     (name "r-imrmc")
-    (version "1.2.5")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iMRMC" version))
        (sha256
-        (base32 "0a99arybhv5awlkrmzyv6m4cbdszw77qjw90ywwbddkccq1fq2h2"))))
+        (base32 "13dz307rqyf9pm6pc8qzx2r8whvcm8k53pryzxh10pyqdswy8wgm"))))
     (properties `((upstream-name . "iMRMC")))
     (build-system r-build-system)
-    (inputs (list openjdk))
-    (home-page "https://cran.r-project.org/package=iMRMC")
+    (home-page "https://github.com/DIDSR/iMRMC")
     (synopsis
      "Multi-Reader, Multi-Case Analysis Methods (ROC, Agreement, and Other Metrics)")
     (description
-     "Do Multi-Reader, Multi-Case (MRMC) analyses of data from imaging studies where
-clinicians (readers) evaluate patient images (cases).  What does this mean? ...
-Many imaging studies are designed so that every reader reads every case in all
-modalities, a fully-crossed study.  In this case, the data is cross-correlated,
-and we consider the readers and cases to be cross-correlated random effects.  An
-MRMC analysis accounts for the variability and correlations from the readers and
-cases when estimating variances, confidence intervals, and p-values.  The
-functions in this package can treat arbitrary study designs and studies with
-missing data, not just fully-crossed study designs.  The initial package
-analyzes the reader-average area under the receiver operating characteristic
-(ROC) curve with U-statistics according to Gallas, Bandos, Samuelson, and Wagner
-2009 <doi:10.1080/03610920802610084>.  Additional functions analyze other
-endpoints with U-statistics (binary performance and score differences) following
-the work by Gallas, Pennello, and Myers 2007 <doi:10.1364/JOSAA.24.000B70>.
-Package development and documentation is at
-<https://github.com/DIDSR/@code{iMRMC/tree/master>}.")
+     "This software does Multi-Reader, Multi-Case (MRMC) analyses of data from imaging
+studies where clinicians (readers) evaluate patient images (cases).  What does
+this mean? ...  Many imaging studies are designed so that every reader reads
+every case in all modalities, a fully-crossed study.  In this case, the data is
+cross-correlated, and we consider the readers and cases to be cross-correlated
+random effects.  An MRMC analysis accounts for the variability and correlations
+from the readers and cases when estimating variances, confidence intervals, and
+p-values.  The functions in this package can treat arbitrary study designs and
+studies with missing data, not just fully-crossed study designs.  An overview of
+this software, including references presenting details on the methods, can be
+found here:
+<https://www.fda.gov/medical-devices/science-and-research-medical-devices/imrmc-software-do-multi-reader-multi-case-statistical-analysis-reader-studies>.")
     (license license:cc0)))
 
 (define-public r-imputets
