@@ -18971,13 +18971,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "9.0.0")
+    (version "9.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "0gq1rcppwzvbgh55rn0d4377f119cpbnv975wa6gbmq5wmy0752x"))))
+        (base32 "0knvzic8mxv0m8y0jnjaxzf72icv7gf4kymxi7fjiqkz44inqhic"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -20986,50 +20986,6 @@ plain R, with no compiled code and a minimal number of dependencies.
 Theoretical background and worked examples are available at
 <https://tinyurl.com/UCLgeostats/>.")
     (license license:gpl3)))
-
-(define-public r-geostan
-  (package
-    (name "r-geostan")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geostan" version))
-       (sha256
-        (base32 "109sf766kpp86hpcs3xvvqsdfrmylwx6c4frga1hqmx2lrg3zx82"))))
-    (properties `((upstream-name . "geostan")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm
-                             r-stanheaders
-                             r-spdep
-                             r-signs
-                             r-sf
-                             r-rstantools
-                             r-rstan
-                             r-rcppparallel
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-gridextra
-                             r-ggplot2
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://connordonegan.github.io/geostan/")
-    (synopsis "Bayesian Spatial Analysis")
-    (description
-     "For Bayesian inference with spatial data, provides exploratory spatial analysis
-tools, multiple spatial model specifications, spatial model diagnostics, and
-special methods for inference with small area survey data (e.g., the America
-Community Survey (ACS)) and censored population health surveillance data.
-Models are pre-specified using the Stan programming language, a platform for
-Bayesian inference using Markov chain Monte Carlo (MCMC).  References: Carpenter
-et al. (2017) <doi:10.18637/jss.v076.i01>; Donegan (2021)
-<doi:10.31219/osf.io/3ey65>; Donegan (2022) <doi:10.21105/joss.04716>; Donegan,
-Chun and Hughes (2020) <doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and
-Griffith (2021) <doi:10.3390/ijerph18136856>; Morris et al. (2019)
-<doi:10.1016/j.sste.2019.100301>.")
-    (license license:gpl3+)))
 
 (define-public r-geosptdb
   (package

@@ -2741,13 +2741,13 @@ and Qiguang Chen (1999) <doi:10.3969/j.issn.1002-3674.1999.04.004>.")
 (define-public r-dtat
   (package
     (name "r-dtat")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTAT" version))
        (sha256
-        (base32 "0ll11763c03xll02727jwm637vbq438vivr88f45nbwrpsk9nb34"))))
+        (base32 "0rh09bdygqwzdlx0girs2ir5dy3jd3r2m4xia46njxvh3jld5vsg"))))
     (properties `((upstream-name . "DTAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3545,13 +3545,13 @@ with distance sampling at <http://distancesampling.org/>.")
 (define-public r-dsi
   (package
     (name "r-dsi")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSI" version))
        (sha256
-        (base32 "1q89abff6fypafs7w0jrcyh9prcv3ibwr0bym9zlav0lfdbqwhcq"))))
+        (base32 "0i8035zw2a8d8l9qm4zcm73102k89sifma3pdk3q6mdm1iqgxjxg"))))
     (properties `((upstream-name . "DSI")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-progress))
@@ -7438,25 +7438,26 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.2.21")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dodgr" version))
        (sha256
-        (base32 "0nfnpa47fism4wwc7vfy0b8qyd4carkxa43x460crmk0d5x3n3kv"))))
+        (base32 "0r1p2zj6f2y6v2mk59apas8hcxcfxg6b2mniz5d6nnq074a57s9m"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread
                              r-rcppparallel
                              r-rcpp
                              r-osmdata
+                             r-memoise
                              r-magrittr
                              r-fs
                              r-digest
                              r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ATFutures/dodgr")
+    (home-page "https://github.com/UrbanAnalyst/dodgr")
     (synopsis "Distances on Directed Graphs")
     (description
      "Distances on dual-weighted directed graphs using priority-queue shortest paths
@@ -25774,16 +25775,16 @@ code by wrapping it into a set of convenient R functions.")
 (define-public r-dartrverse
   (package
     (name "r-dartrverse")
-    (version "0.51")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartRverse" version))
        (sha256
-        (base32 "1j5fgr5priyh9w4ysnx8104yvhq4kysp0i07phqjn2yyj0pk8a15"))))
+        (base32 "0z6nx5j1jgyzmcxdmdbxdhigq7qc3mka0fq6ghyfqaa3089lc823"))))
     (properties `((upstream-name . "dartRverse")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-dartr-data r-dartr-base r-cli))
+    (propagated-inputs (list r-rlang r-devtools r-cli))
     (home-page "https://github.com/green-striped-gecko/dartRverse")
     (synopsis "Install and Load the 'dartRverse' Suits of Packages")
     (description

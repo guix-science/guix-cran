@@ -4509,6 +4509,27 @@ Provide distribution d, p, q, r functions, fitting and testing functions.
 Project initiated by Paul Higbie and based on Cosma Shalizi's code.")
     (license license:gpl2+)))
 
+(define-public r-tryr
+  (package
+    (name "r-tryr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tryr" version))
+       (sha256
+        (base32 "0al9kf7jp2c4rp2djgk3qdhvfa9ky5gmmxcw6rc4ifh2xi9sk5gz"))))
+    (properties `((upstream-name . "tryr")))
+    (build-system r-build-system)
+    (home-page "https://github.com/analythium/tryr")
+    (synopsis "Client/Server Error Handling for HTTP API Frameworks")
+    (description
+     "Differentiate client errors (4xx) from server errors (5xx) for the plumber and
+@code{RestRserve} HTTP API frameworks.  The package also includes a built-in
+logging mechanism to standard output (STDOUT) or standard error (STDERR)
+depending on the log level.")
+    (license license:expat)))
+
 (define-public r-trustoptim
   (package
     (name "r-trustoptim")
@@ -7355,13 +7376,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.6")
+    (version "2.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "07i5xqr5vqk2c74ddcv1yrssqr6hy4gy5p3crr99f1c20yh7a618"))))
+        (base32 "1s6rvsqa4q6nr9vlfmcysn58qw88df05fp638y8yxc791bw120gm"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7376,7 +7397,7 @@ details.")
                              r-checkmate
                              r-andromeda))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/darwin-eu-dev/TreatmentPatterns")
+    (home-page "https://github.com/darwin-eu/TreatmentPatterns")
     (synopsis
      "Analyzes Real-World Treatment Patterns of a Study Population of Interest")
     (description

@@ -7580,6 +7580,41 @@ via @code{ArcGIS} location services REST API endpoints
 <https://developers.arcgis.com/rest/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-arcgisgeocode
+  (package
+    (name "r-arcgisgeocode")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgisgeocode" version))
+       (sha256
+        (base32 "0fz4gk6yml6scycrdw1fyhvrs63hp0k8li2yjym037kb91qc8b0p"))))
+    (properties `((upstream-name . "arcgisgeocode")))
+    (build-system r-build-system)
+    (inputs (list openssl))
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-rcppsimdjson
+                             r-jsonify
+                             r-httr2
+                             r-curl
+                             r-cli
+                             r-arcgisutils))
+    (home-page "https://github.com/r-arcgis/arcgisgeocode")
+    (synopsis "Robust Interface to ArcGIS 'Geocoding Services'")
+    (description
+     "This package provides a very fast and robust interface to @code{ArcGIS}
+Geocoding Services'.  Provides capabilities for reverse geocoding, finding
+address candidates, character-by-character search autosuggestion, and batch
+geocoding.  The public @code{ArcGIS} World Geocoder is accessible for free use
+via arcgisgeocode for all services except batch geocoding.  arcgisgeocode also
+integrates with arcgisutils to provide access to custom locators or private
+@code{ArcGIS} World Geocoder hosted on @code{ArcGIS} Enterprise'.  Learn more in
+the Geocode service API reference
+<https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcgis
   (package
     (name "r-arcgis")
@@ -10261,13 +10296,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "0hxkd4nvnvqsaxd67wsn6lspyjvsc4d7hhmjgld41kpykd8nwjnq"))))
+        (base32 "07389xpbys9k8sz4laq12ldbffj3yil0ys1kqx6k18ckfva69anp"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -20347,6 +20382,37 @@ lifetable() to output a full life table that can be customized to remove
 optional columns.  Methods for creating lifetables are as described in
 Zedstatistics (2021) <https://www.youtube.com/watch?v=Dfe59@code{glNXAQ>}.")
     (license license:expat)))
+
+(define-public r-activegp
+  (package
+    (name "r-activegp")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "activegp" version))
+       (sha256
+        (base32 "1b64k0k6l9dgvyqhd6j9plabaibjayfm5maa4bpwxxgwkp122r3c"))))
+    (properties `((upstream-name . "activegp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-mass
+                             r-lhs
+                             r-hetgp))
+    (home-page "https://cran.r-project.org/package=activegp")
+    (synopsis
+     "Gaussian Process Based Design and Analysis for the Active Subspace Method")
+    (description
+     "The active subspace method is a sensitivity analysis technique that finds
+important linear combinations of input variables for a simulator.  This package
+provides functions allowing estimation of the active subspace without gradient
+information using Gaussian processes as well as sequential experimental design
+tools to minimize the amount of data required to do so.  Implements Wycoff et
+al. (JCGS, 2021) <doi:10.48550/@code{arXiv.1907.11572>}.")
+    (license license:bsd-3)))
 
 (define-public r-activatr
   (package

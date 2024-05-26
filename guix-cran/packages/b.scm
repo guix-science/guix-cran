@@ -5704,6 +5704,32 @@ for linear models with random effects and boxcoxtype() for logistic models with
 random effects.")
     (license license:gpl3+)))
 
+(define-public r-box-linters
+  (package
+    (name "r-box-linters")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "box.linters" version))
+       (sha256
+        (base32 "1pzb57sp6ncamrcr8yry24sglqhw9spqgl7xmb0k36zcggmhvd64"))))
+    (properties `((upstream-name . "box.linters")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-rlang
+                             r-lintr
+                             r-glue
+                             r-fs
+                             r-cli))
+    (home-page "https://appsilon.github.io/box.linters/")
+    (synopsis "Linters for 'box' Modules")
+    (description
+     "Static code analysis of box modules.  The package enhances code quality by
+providing linters that check for common issues, enforce best practices, and
+ensure consistent coding standards.")
+    (license license:lgpl3)))
+
 (define-public r-boutroslab-plotting-general
   (package
     (name "r-boutroslab-plotting-general")
@@ -11203,17 +11229,18 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
 (define-public r-biostatsuhnplus
   (package
     (name "r-biostatsuhnplus")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BiostatsUHNplus" version))
        (sha256
-        (base32 "0bgclpw0k2bdwrb785qhk490fxcb14r1cbm05zhb41mddw8zbqkk"))))
+        (base32 "0wrppamh4m47zczci3csqfijf2hyz4lb5ks2z8h2ybn8lcnbjxgp"))))
     (properties `((upstream-name . "BiostatsUHNplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
+                             r-stringi
                              r-rstatix
                              r-rlang
                              r-reportrmd
@@ -11223,7 +11250,6 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
                              r-modeest
                              r-mcmcglmm
                              r-lifecycle
-                             r-ggstance
                              r-ggplot2
                              r-ggh4x
                              r-forcats
@@ -11232,10 +11258,10 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
                              r-coda
                              r-afex))
     (home-page "https://cran.r-project.org/package=BiostatsUHNplus")
-    (synopsis "Nested Data Summary and Adverse Events")
+    (synopsis "Nested Data Summary, Adverse Events and REDCap")
     (description
-     "Miscellaneous code snippets and functions with pipes and multiple package
-dependencies used for summarizing nested data and adverse events.")
+     "This package provides tools and code snippets for summarizing nested data,
+adverse events and REDCap study information.")
     (license license:expat)))
 
 (define-public r-biostatr
@@ -15224,13 +15250,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.2.2")
+    (version "4.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "08367mqrc91dd69wczzhx5yj21pdmx635clqbi7j6sgicsj8yf7l"))))
+        (base32 "0amlqzc3ngh4r0gzk4y110kjl79gd4h5b4i6bid19v8q5qi3g3gm"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext

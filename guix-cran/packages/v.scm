@@ -766,6 +766,32 @@ multiple LASSO models to determine the optimal candidates.  Luo H, Zhao Q, et al
 (2020) <doi:10.1126/scitranslmed.aax7533> for more details.")
     (license license:gpl3)))
 
+(define-public r-vsmi
+  (package
+    (name "r-vsmi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vsmi" version))
+       (sha256
+        (base32 "1slyz8ldd3vqqqcpjccr0qsfy664m4zjczgr5qh0d4pcy0yg5f4x"))))
+    (properties `((upstream-name . "vsmi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-qif r-mice r-matrix r-mass))
+    (home-page "https://cran.r-project.org/package=vsmi")
+    (synopsis "Variable Selection for Multiple Imputed Data")
+    (description
+     "Penalized weighted least-squares estimate for variable selection on correlated
+multiply imputed data and penalized estimating equations for generalized linear
+models with multiple imputation.  Reference: Li, Y., Yang, H., Yu, H., Huang,
+H., Shen, Y*. (2023) \"Penalized estimating equations for generalized linear
+models with multiple imputation\", <doi:10.1214/22-AOAS1721>.  Li, Y., Yang, H.,
+Yu, H., Huang, H., Shen, Y*. (2023) \"Penalized weighted least-squares estimate
+for variable selection on correlated multiply imputed data\",
+<doi:10.1093/jrsssc/qlad028>.")
+    (license license:expat)))
+
 (define-public r-vsgoftest
   (package
     (name "r-vsgoftest")
@@ -3783,13 +3809,13 @@ of mean (VIM).  The methodology can be found at Peter M Rothwell et al. (2010)
 (define-public r-villager
   (package
     (name "r-villager")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "villager" version))
        (sha256
-        (base32 "0g72zpsqi39ax44n3s3x66b1fbgyx6w2wraf531jsy7vj95ivr2p"))))
+        (base32 "1jcgjz6sn5izn3bqi6g45f40nw921vvqj74apb2i44h6a3qnxqjg"))))
     (properties `((upstream-name . "villager")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-readr r-r6))
@@ -5933,18 +5959,18 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.4.5")
+    (version "0.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "1hz6wfmx3brdi6ijlnrgiaz722gpmn670mpgvyfyfxsfmmyzq120"))))
+        (base32 "19qw5x92v15x6cyamigf4fq36h5cw573fp0ln9n2bwsy89px5ghm"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))
     (propagated-inputs (list r-rcpp))
-    (native-inputs (list pkg-config))
+    (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/Zilong-Li/vcfppR")
     (synopsis "Rapid Manipulation of the Variant Call Format (VCF)")
     (description

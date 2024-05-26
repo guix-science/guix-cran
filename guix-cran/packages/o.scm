@@ -6678,6 +6678,26 @@ character annotations and creating simple queries using ontological
 relationships.")
     (license license:gpl2+)))
 
+(define-public r-onsvtables
+  (package
+    (name "r-onsvtables")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "onsvtables" version))
+       (sha256
+        (base32 "181z69m5ws74wzrka6xb9cxz3yr1m7z57yyr401mxiz4cd466xlw"))))
+    (properties `((upstream-name . "onsvtables")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gt))
+    (home-page "https://github.com/ONSV/onsvtables")
+    (synopsis "National Road Safety Observatory (ONSV) Styles for 'gt' Tables")
+    (description
+     "Wrapper functions for customizing HTML tables from the gt package to the ONSV
+style.")
+    (license license:expat)))
+
 (define-public r-onsvplot
   (package
     (name "r-onsvplot")

@@ -5986,6 +5986,59 @@ functions for processing data in preparation for visualising with a tour.  There
 are also several sample data sets.")
     (license license:expat)))
 
+(define-public r-mulea
+  (package
+    (name "r-mulea")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mulea" version))
+       (sha256
+        (base32 "07rhgf0qiwjxr0ckyizyry0vk33jfl2zh3lqipg0rc6s083shgv3"))))
+    (properties `((upstream-name . "mulea")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidygraph
+                             r-tibble
+                             r-stringi
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-rcpp
+                             r-plyr
+                             r-magrittr
+                             r-ggraph
+                             r-ggplot2
+                             r-fgsea
+                             r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ELTEbioinformatics/mulea")
+    (synopsis
+     "Enrichment Analysis using Multiple Ontologies and FDR Correction")
+    (description
+     "Traditional gene set enrichment analyses are typically limited to a few
+ontologies and do not account for the interdependence of gene sets or terms,
+resulting in overcorrected p-values.  To address these challenges, we introduce
+mulea', an R package offering comprehensive overrepresentation and functional
+enrichment analysis.  mulea employs an innovative empirical false discovery rate
+(@code{eFDR}) correction method, specifically designed for interconnected
+biological data, to accurately identify significant terms within diverse
+ontologies.  Beyond conventional tools, mulea incorporates a wide range of
+ontologies encompassing Gene Ontology, pathways, regulatory elements, genomic
+locations, and protein domains.  This flexibility empowers researchers to tailor
+enrichment analysis to their specific questions, such as identifying enriched
+transcriptional regulators in gene expression data or overrepresented protein
+domains in protein sets.  To facilitate seamless analysis, mulea provides gene
+sets (in standardized GMT format) for 27 model organisms, covering 16 databases
+and various identifiers.  Additionally, the @code{muleaData}
+@code{ExperimentData} Bioconductor package simplifies access to these 879
+pre-defined ontologies.  Furthermore, mulea''s architecture allows for easy
+integration of user-defined ontologies, expanding its applicability across
+diverse research areas.")
+    (license license:gpl2)))
+
 (define-public r-muir
   (package
     (name "r-muir")
@@ -9063,13 +9116,13 @@ algorithm, described in Bresler (2015) <doi:10.1145/2746539.2746631).")
 (define-public r-mrfdepth
   (package
     (name "r-mrfdepth")
-    (version "1.0.16")
+    (version "1.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrfDepth" version))
        (sha256
-        (base32 "1xxq8in957zk04n4zha05p65y0h72gvfgmbqdv7b6cmwdmmms3hj"))))
+        (base32 "05k7pzjry3dd7api52wlybl7k83jq0v6a306sdl9wcsqv95lw0mc"))))
     (properties `((upstream-name . "mrfDepth")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -12004,16 +12057,16 @@ more information about Moodle, visit <https://moodle.org>.")
 (define-public r-moodlequizr
   (package
     (name "r-moodlequizr")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moodlequizR" version))
        (sha256
-        (base32 "0riwdmf0hmmywdi5zib8zwjfmifvlrfjm10amryzyrwj5jj74689"))))
+        (base32 "1bigckdga0jqn0qx5y2x0g74g1ln2hmsdyrjvfmp0cvmscr9w271"))))
     (properties `((upstream-name . "moodlequizR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-mvtnorm r-base64))
+    (propagated-inputs (list r-shiny r-nmcalc r-mvtnorm r-base64))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=moodlequizR")
     (synopsis "Easily Create Fully Randomized 'Moodle' Test Questions")
@@ -27708,13 +27761,13 @@ Methods in Medical Research, P. @code{TaffÃ©} (2018)
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "0zrhxjnwwaw93xflpwdm9dx6l120dpclikffjy9wmw05fffa0jr5"))))
+        (base32 "03ncpy01dvmxrr43jyl8am9hkzp872rdph5padiy9ih4nzxdncmq"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -32402,13 +32455,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "3.2.0")
+    (version "4.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "1g8911izvcicfc7jyrz5n77ra8zsmf6qj4811v3xc0pjck71a0yq"))))
+        (base32 "0gs47ms58s86nclz1p1b12xi34b4p3q5py7f5kda4pffpbd9msh0"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))

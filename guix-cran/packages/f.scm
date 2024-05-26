@@ -3377,13 +3377,13 @@ This work was funded by Poland-Singapore bilateral cooperation project no
 (define-public r-fscache
   (package
     (name "r-fscache")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fscache" version))
        (sha256
-        (base32 "0r2l9wj7hm4lyyqn5pwmnbx5kicblhw6nyc7gkyrc7ig0hkwbdn9"))))
+        (base32 "0r5b5z8mlywgvbip6w1y5jjvnfwwygzcfb3x1zbkni82hf1q1gy6"))))
     (properties `((upstream-name . "fscache")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -4591,13 +4591,13 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
 (define-public r-free
   (package
     (name "r-free")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "free" version))
        (sha256
-        (base32 "0r9vd1d4pi19mnvdchx95axp0hiqs8lpgp0fn40dm89h5fd6zyb0"))))
+        (base32 "0lbgw3nx79x89r1n07hjwacfq11zk1wfg5w2dccwr3w8g9553wiw"))))
     (properties `((upstream-name . "free")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -4607,7 +4607,7 @@ in publications please use Hankin (2022) <doi:10.48550/ARXIV.2211.04002>.")
      "Unified regularized estimating equation solver.  Currently the package includes
 one solver with the l1 penalty only.  More solvers and penalties are under
 development.  Reference: Yi Yang, Yuwen Gu, Yue Zhao, Jun Fan (2021)
-<@code{arXiv:2110.11074>}.")
+<doi:10.48550/@code{arXiv.2110.11074>}.")
     (license license:gpl3)))
 
 (define-public r-fredr
@@ -6533,13 +6533,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "19y6z8h3hs4mkm8a00p9xsyz71aq91gzz1f4i6lg2z82lnwkzyzv"))))
+        (base32 "1qawvl10g9zpbph8psndqwizx10pl74d0bhizqcl509zaws4pb95"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -6565,8 +6565,8 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
     (description
      "Shiny apps can often make use of the same key elements, this package provides
 modules for common tasks (data upload, wrangling data, figure generation and
-saving the app state).  These modules can react and interact as well as generate
-code to create reproducible analyses.")
+saving the app state), and also a framework for developing.  These modules can
+react and interact as well as generate code to create reproducible analyses.")
     (license license:bsd-2)))
 
 (define-public r-formatters
@@ -20569,13 +20569,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.4.6")
+    (version "1.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "1992sn148cahnv8dzdcibc8ny6jp8iw39555mk66flvr0z4jv9rh"))))
+        (base32 "1rlnp027r02d7hr2ppal6ljnbkp6xbw86gm2wfp2gsjmckrf7lp7"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))

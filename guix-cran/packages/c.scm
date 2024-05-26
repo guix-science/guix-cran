@@ -17115,6 +17115,42 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 <https://www3.epa.gov/airnow/aqi-technical-assistance-document-may2016.pdf>.")
     (license license:gpl3)))
 
+(define-public r-comtradr
+  (package
+    (name "r-comtradr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comtradr" version))
+       (sha256
+        (base32 "0mdckqnsx8xgidbw1sa39y9l6kbsvv41vbw65jfk0irlxqs11v9q"))))
+    (properties `((upstream-name . "comtradr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-readr
+                             r-rappdirs
+                             r-purrr
+                             r-poorman
+                             r-memoise
+                             r-lubridate
+                             r-lifecycle
+                             r-httr2
+                             r-fs
+                             r-cli
+                             r-cachem
+                             r-askpass))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/comtradr/")
+    (synopsis "Interface with the United Nations Comtrade API")
+    (description
+     "Interface with and extract data from the United Nations Comtrade API
+<https://comtradeplus.un.org/>.  Comtrade provides country level shipping data
+for a variety of commodities, these functions allow for easy API query and data
+returned as a tidy data frame.")
+    (license license:gpl3)))
+
 (define-public r-comstab
   (package
     (name "r-comstab")
@@ -41057,13 +41093,13 @@ preprocessing method and microarray technology, e.g. Affymetrix and Illumina.")
 (define-public r-callsync
   (package
     (name "r-callsync")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "callsync" version))
        (sha256
-        (base32 "1p8r2r4w3bwpr03f990m2k19dv4lgsgp6l9rhxzrayknc3zndqx9"))))
+        (base32 "03ks7wspkvr6fy54ggxj1rzxsdqraq1dlv384v0b4b7x4z7kj73l"))))
     (properties `((upstream-name . "callsync")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner

@@ -1560,13 +1560,13 @@ Covariance Matrices.")
 (define-public r-jpcity
   (package
     (name "r-jpcity")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpcity" version))
        (sha256
-        (base32 "0aw97p2ac8kb32f0lmji7xqr985vxl1i708pjaghzc3q1w8mx9ab"))))
+        (base32 "0j4m3dyrihi9rmbfld8q1x2968lw2z3n1c77gf20br1dxfq33a17"))))
     (properties `((upstream-name . "jpcity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -1576,6 +1576,7 @@ Covariance Matrices.")
                              r-purrr
                              r-pillar
                              r-lubridate
+                             r-lifecycle
                              r-dplyr
                              r-cli))
     (home-page "https://uchidamizuki.github.io/jpcity/")
@@ -3051,13 +3052,13 @@ cross-validation function to perform hyperparameter tuning.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgsbook" version))
        (sha256
-        (base32 "14rjs7ja2aj6rrq1xfv4r8zisnw4mkxiiwr7l8x7cai484adfqbf"))))
+        (base32 "0d54cdvx97787vwm9pqcmfx66y0l1crz4w16khpqr2k4nqixnkqk"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))

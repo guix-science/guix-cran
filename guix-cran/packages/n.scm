@@ -12303,6 +12303,38 @@ local duckdb database of stacked tables, making it possible to work with tables
 that are far to big to fit into memory.")
     (license license:expat)))
 
+(define-public r-neonsoilflux
+  (package
+    (name "r-neonsoilflux")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neonSoilFlux" version))
+       (sha256
+        (base32 "0mi03k83q7hr1i9wi91dkbg4a6kydpxxxs5cihr6h47jaz2m87aj"))))
+    (properties `((upstream-name . "neonSoilFlux")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-neonutilities
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmzobitz/neonSoilFlux")
+    (synopsis
+     "Compute Soil Carbon Fluxes for the National Ecological Observatory Network Sites")
+    (description
+     "Acquires and synthesizes soil carbon fluxes at sites located in the National
+Ecological Observatory Network (NEON).  Provides flux estimates and associated
+uncertainty as well as key environmental measurements (soil water, temperature,
+CO2 concentration) that are used to compute soil fluxes.")
+    (license license:gpl3+)))
+
 (define-public r-neonplantecology
   (package
     (name "r-neonplantecology")

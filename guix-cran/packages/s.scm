@@ -1237,13 +1237,13 @@ are computed in parallel via @code{OpenMP}'.")
 (define-public r-swtools
   (package
     (name "r-swtools")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SWTools" version))
        (sha256
-        (base32 "1xh3zw53bxk2fksjbjbqqw2qiz2j1cavyrsg8yignqvjag87zqa0"))))
+        (base32 "134kmw30xxw90wnzb3z6s6j21vjrxfp2q0alvy2abpmgl6wmhlvp"))))
     (properties `((upstream-name . "SWTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3894,13 +3894,13 @@ the Python package pycox <https://github.com/havakv/pycox>.")
 (define-public r-survivalclusteringtree
   (package
     (name "r-survivalclusteringtree")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurvivalClusteringTree" version))
        (sha256
-        (base32 "0mpzzr5hgna4i6j5asfh5r3dwn1q59a10130q0n13xb4v6s73hds"))))
+        (base32 "1wxyk0b22igv319dpidm0b1wjp675k9z1araqzdd140lxan8nndf"))))
     (properties `((upstream-name . "SurvivalClusteringTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -19858,13 +19858,13 @@ effects of functional variables -Application to agri-environmental issues\"
 (define-public r-sphunif
   (package
     (name "r-sphunif")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sphunif" version))
        (sha256
-        (base32 "1m4id7h3jd0r8p9j5ip4d5r79lk27j7xk4iwizjapd74i0vm84az"))))
+        (base32 "125w91cz60j3lkx8dm74c8gh67k5j2k8mypx7rihym9rsdibdric"))))
     (properties `((upstream-name . "sphunif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rotasym
@@ -19880,17 +19880,20 @@ effects of functional variables -Application to agri-environmental issues\"
     (synopsis "Uniformity Tests on the Circle, Sphere, and Hypersphere")
     (description
      "Implementation of uniformity tests on the circle and (hyper)sphere.  The main
-function of the package is unif_test(), which conveniently collects more than 30
-tests for assessing uniformity on S^{p-1}={x in R^p : ||x||=1}, p >= 2.  The
+function of the package is unif_test(), which conveniently collects more than 35
+tests for assessing uniformity on S^{p-1} = {x in R^p : ||x|| = 1}, p >= 2.  The
 test statistics are implemented in the unif_stat() function, which allows
-computing several statistics to several samples within a single call, thus
+computing several statistics for different samples within a single call, thus
 facilitating Monte Carlo experiments.  Furthermore, the unif_stat_MC() function
 allows parallelizing them in a simple way.  The asymptotic null distributions of
 the statistics are available through the function unif_stat_distr().  The core
 of sphunif is coded in C++ by relying on the Rcpp package.  The package also
 provides several novel datasets and gives the replicability for the data
-application in @code{GarcÃ­a-PortuguÃ©s}, Navarro-Esteban and Cuesta-Albertos
-(2023) <@code{arXiv:2008.09897>}.")
+applications/simulations in @code{GarcÃ­a-PortuguÃ©s} et al. (2021)
+<doi:10.1007/978-3-030-69944-4_12>, @code{GarcÃ­a-PortuguÃ©s} et al. (2023)
+<doi:10.3150/21-BEJ1454>, @code{GarcÃ­a-PortuguÃ©s} et al. (2024)
+<doi:10.48550/@code{arXiv.2108.09874>}, and @code{FernÃ¡ndez-de-Marcos} and
+@code{GarcÃ­a-PortuguÃ©s} (2024) <doi:10.48550/@code{arXiv.2405.13531>}.")
     (license license:gpl3)))
 
 (define-public r-sphet
@@ -23333,13 +23336,13 @@ Greece.")
 (define-public r-spaths
   (package
     (name "r-spaths")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaths" version))
        (sha256
-        (base32 "0i4awslzygkivza1xbdq0bb9a9sy1nkk94mf2v1lnla6gp1dgyh7"))))
+        (base32 "07vfx1cgs0zbq3kqaniy5ccja8axxf93z878x3zf1qalbdflywdc"))))
     (properties `((upstream-name . "spaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -42345,13 +42348,13 @@ code.")
 (define-public r-shinychatr
   (package
     (name "r-shinychatr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyChatR" version))
        (sha256
-        (base32 "08370x2yc8v32h2qgvwd26c2yrx2n89k85sz5dinv110lkrwr6f2"))))
+        (base32 "174jm8a52h7lr4bvl88ajllhknzczq8lwvbrldh07hiphbid071d"))))
     (properties `((upstream-name . "shinyChatR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-r6 r-purrr r-dbi r-data-table))
@@ -46213,6 +46216,30 @@ distance metrics).  This work was inspired by a trie implementation in Python:
      "Sequential triangular test for the arithmetic mean in one- and two- samples,
 proportions in one- and two-samples, and the Pearson's correlation coefficient.")
     (license license:gpl3)))
+
+(define-public r-seqshp
+  (package
+    (name "r-seqshp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seqSHP" version))
+       (sha256
+        (base32 "1p1flpw055jb135jpqlgdyyn19p6hwiqj9kx085irlyczi5kiimi"))))
+    (properties `((upstream-name . "seqSHP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-haven r-dplyr))
+    (home-page "https://cran.r-project.org/package=seqSHP")
+    (synopsis "Building Sequences from SHP Waves")
+    (description
+     "Based on the structure of the SPSS version of the Swiss Household Panel (SHP)
+data, provides a function @code{seqFromWaves}() that seeks the data of variables
+specified by the user in each of the wave files and collects them as sequences.
+The function also matches the sequences with variables from other files such as
+the master files of persons (MP) and households (MH), and social origins (SO).
+It can also match with activity calendar data (CA).")
+    (license license:gpl3+)))
 
 (define-public r-seqnet
   (package
@@ -59077,13 +59104,13 @@ with valid standard errors as proposed in Beesley and Mukherjee (2020)
 (define-public r-samadb
   (package
     (name "r-samadb")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samadb" version))
        (sha256
-        (base32 "1jmk94zf42msgpm3i6d1b1njnpxax3hnbs8w957f6frk97idwp27"))))
+        (base32 "1qbjjnchx9h3wrhf23cpmwfaixdkm4jcpkgniz3h5ghrhqv32grr"))))
     (properties `((upstream-name . "samadb")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl r-rmysql r-dbi r-data-table r-collapse))

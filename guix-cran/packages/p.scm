@@ -3455,13 +3455,13 @@ Diekmann, B. Lisser, M. Nool, B. Sommeijer & A.M. de Roos (2001)
 (define-public r-pspline
   (package
     (name "r-pspline")
-    (version "1.0-19")
+    (version "1.0-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pspline" version))
        (sha256
-        (base32 "0h7y9l64knx291ms5mlc65dl3ljzgmrfzdqk1rd7iy8x7wcvymds"))))
+        (base32 "12pbjdxvb92qwzxrdag3cgaa12v9psy5whvw8p7i0p8dhydwv9za"))))
     (properties `((upstream-name . "pspline")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -11891,6 +11891,32 @@ Hofmeyr (2017) <doi:10.1109/TPAMI.2016.2609929>; and maximum variance ratio
 clusterability, Hofmeyr and Pavlidis (2015) <doi:10.1109/SSCI.2015.116>.")
     (license license:gpl3)))
 
+(define-public r-ppcdt
+  (package
+    (name "r-ppcdt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PPCDT" version))
+       (sha256
+        (base32 "0i3j959i7rd5k1qkj1lknvsbksl15ir06avcffai4pbnpx7bl8dm"))))
+    (properties `((upstream-name . "PPCDT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (home-page "https://cran.r-project.org/package=PPCDT")
+    (synopsis "An Optimal Subset Selection for Distributed Hypothesis Testing")
+    (description
+     "In the era of big data, data redundancy and distributed characteristics pose new
+challenges to data analysis.  This article proposes a method of optimal subset
+estimation for redundant distributed data based on PPC. Through PPC technology,
+this method can effectively extract useful information from redundant
+distributed data and estimate the optimal subset.  Experimental results show
+that this method can improve data quality and utilization efficiency and
+evaluate its performance.The philosophy of the package is described in Guo G.
+(2020) <doi:10.1007/s00180-020-00974-4>.")
+    (license license:expat)))
+
 (define-public r-ppcc
   (package
     (name "r-ppcc")
@@ -13717,6 +13743,34 @@ statistical models.  More details are available in Mohammadi, Tiede, and Smith
 (2015, <doi:10.2135/cropsci2015.01.0030>).  A dataset think_barley.rda is
 included for reference and examples.")
     (license license:gpl3)))
+
+(define-public r-poputils
+  (package
+    (name "r-poputils")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poputils" version))
+       (sha256
+        (base32 "065s3limfillplbskl1dwr4awp3riw0d6vlxvxc6p3lac2g1rcy0"))))
+    (properties `((upstream-name . "poputils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-rvec
+                             r-rlang
+                             r-cpp11
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://bayesiandemography.github.io/poputils/")
+    (synopsis "Demographic Analysis and Data Manipulation")
+    (description
+     "Perform tasks commonly encountered when preparing and analysing demographic
+data.  Some functions are intended for end users, and others for developers.
+Includes functions for working with life tables.")
+    (license license:expat)))
 
 (define-public r-populr
   (package

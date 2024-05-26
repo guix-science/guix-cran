@@ -2980,6 +2980,77 @@ accessible via the URL below.")
 Gaussian noise using Unbalanced Haar wavelets.")
     (license license:gpl2)))
 
+(define-public r-unalr
+  (package
+    (name "r-unalr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UnalR" version))
+       (sha256
+        (base32 "1zw68ss0jlyg9mm5qy0k7dqbag8qz08yc96kfmib028d72jsh41d"))))
+    (properties `((upstream-name . "UnalR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-xml
+                             r-webshot
+                             r-treemap
+                             r-tidyr
+                             r-sunburstr
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-png
+                             r-plotly
+                             r-maps
+                             r-magrittr
+                             r-lifecycle
+                             r-leaflet-extras
+                             r-leaflet
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-htmltools
+                             r-highcharter
+                             r-gtextras
+                             r-gt
+                             r-gridsvg
+                             r-ggspatial
+                             r-ggrepel
+                             r-ggplot2
+                             r-forcats
+                             r-fmsb
+                             r-echarts4r
+                             r-dygraphs
+                             r-dt
+                             r-dplyr
+                             r-data-tree
+                             r-d3r
+                             r-cli))
+    (home-page "https://unal.edu.co")
+    (synopsis "Una implementaciÃ³n de funciones de uso interno")
+    (description
+     "Una herramienta @code{rÃ¡pida} y consistente para la @code{disposiciÃ³n} de
+microdatos y la @code{visualizaciÃ³n} de las cifras y @code{estadÃ­sticas}
+oficiales de la Universidad Nacional de Colombia <https://unal.edu.co>.
+Contiene una biblioteca de funciones @code{grÃ¡ficas}, tanto @code{estÃ¡ticas}
+como interactivas, que ofrece numerosos tipos de @code{grÃ¡ficos} con una
+sintaxis altamente configurable y simple.  Entre estos encontramos la
+@code{visualizaciÃ³n} de tablas HTML, series, @code{grÃ¡ficos} de barras y
+circulares, mapas, etc.  Todo lo anterior apoyado en bibliotecas de
+@code{JavaScript}.  English: A fast and consistent tool for the arrangement of
+microdata and the visualization of official figures and statistics from the
+National University of Colombia <https://unal.edu.co>.  It includes a library of
+graphical functions, both static and interactive, offering numerous types of
+charts with a highly configurable and simple syntax.  Among these, we find the
+visualization of HTML tables, series, bar and pie charts, maps, etc.  It
+provides the capability to transition from the interactive to the dynamic world
+and from one library to another without changing function or syntax.")
+    (license license:gpl3+)))
+
 (define-public r-umx
   (package
     (name "r-umx")

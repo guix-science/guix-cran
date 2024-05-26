@@ -468,13 +468,13 @@ computational burden of recompiling rxode2'.")
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
-    (version "2.0.18")
+    (version "2.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2parse" version))
        (sha256
-        (base32 "180af1lfvm8zqkdihvij8x25gid3zagjpg46455iy4hb05ms2byv"))))
+        (base32 "01q3chhq7nl1jl50w623m1nik9jdrizpc4hi792ynsr27lsqlhcx"))))
     (properties `((upstream-name . "rxode2parse")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -496,7 +496,7 @@ computational burden of recompiling rxode2'.")
      "This package provides the parsing needed for rxode2 (Wang, Hallow and James
 (2016) <doi:10.1002/psp4.12052>).  It also provides the stan based advan linear
 compartment model solutions with gradients (Carpenter et al (2015),
-<@code{arXiv:1509.07164>}) needed in nlmixr2 (Fidler et al (2019)
+<doi:10.48550/@code{arXiv.1509.07164>}) needed in nlmixr2 (Fidler et al (2019)
 <doi:10.1002/psp4.12445>).  This split will reduce computational burden of
 recompiling rxode2'.")
     (license license:gpl3+)))
@@ -25959,13 +25959,13 @@ text with only one pass over the document.")
 (define-public r-rfit
   (package
     (name "r-rfit")
-    (version "0.24.6")
+    (version "0.27.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfit" version))
        (sha256
-        (base32 "0b4gdy54zbbc8zr0krv34ggxnqncgj2hxzqjfg6j21apn7qsv8r2"))))
+        (base32 "1wmp2xx8lcap7aags8zv9p7h2d051wfq9dbsb4n34j0ngc4hyg0s"))))
     (properties `((upstream-name . "Rfit")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -27337,21 +27337,24 @@ transaction scripts using then_try(), to gracefully handle errors at any step.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.5-30")
+    (version "0.5-60")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restriktor" version))
        (sha256
-        (base32 "1qlb892rx2i42mlidl5dm20a848j8cca8zq1d100la2829g9k49g"))))
+        (base32 "0ksb1jqrkvqjhxcfx4wc6f27p097228h5ck3682409lmj3amp11r"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quadprog
+    (propagated-inputs (list r-tmvtnorm
+                             r-quadprog
+                             r-pbapply
                              r-norm
                              r-mvtnorm
                              r-mass
                              r-lavaan
                              r-ic-infer
+                             r-glue
                              r-ggplot2
                              r-boot))
     (native-inputs (list r-knitr))
@@ -39741,13 +39744,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.66")
+    (version "1.67")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "1b16f3sm5xjhxshnm48rfrd3hxai710k6qvwg6ki0mghn0ddwl1h"))))
+        (base32 "035a1ch36ygwknk2hwjxs6ir1izwbqn0iq3y0qxv8iw4qa668ar8"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))
@@ -44707,13 +44710,13 @@ increase efficiency.")
 (define-public r-ranktreeensemble
   (package
     (name "r-ranktreeensemble")
-    (version "0.22")
+    (version "0.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ranktreeEnsemble" version))
        (sha256
-        (base32 "1hn66622p3jbm1s0pf438lmws27pwab1qv1zwnsph8zg9qprb2nm"))))
+        (base32 "09nax4h3jajbkbjkxwd8zd075lkhgcfhh42c2zqwwn8bkdyk03gr"))))
     (properties `((upstream-name . "ranktreeEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-randomforestsrc r-gbm r-data-tree))

@@ -6341,13 +6341,13 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
 (define-public r-esquisse
   (package
     (name "r-esquisse")
-    (version "1.2.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esquisse" version))
        (sha256
-        (base32 "05c8vvdji8rcmxxahhxxsddvv9qh2naym4r67rdgicam7w7km60s"))))
+        (base32 "0w37x5w6kvscwbr6d157ahmaigafj3ccn3zjasqazrzzlwjns3lm"))))
     (properties `((upstream-name . "esquisse")))
     (build-system r-build-system)
     (arguments
@@ -6376,6 +6376,7 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
                              r-jsonlite
                              r-htmltools
                              r-ggplot2
+                             r-downlit
                              r-datamods
                              r-bslib))
     (native-inputs (list r-knitr esbuild))
@@ -8070,13 +8071,13 @@ estimation are also provided.")
 (define-public r-equatags
   (package
     (name "r-equatags")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equatags" version))
        (sha256
-        (base32 "039v1lj8ydw3lji8ycklbprd569f7g0lc11sb2ij262wlr0prm1m"))))
+        (base32 "028mpd5idi84znlry494f96p8p178v9yccw4cxg56m1agbw391hs"))))
     (properties `((upstream-name . "equatags")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt r-xml2 r-katex))
@@ -17211,13 +17212,13 @@ dependencies can be visualized with using the igraph package.")
 (define-public r-edith
   (package
     (name "r-edith")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eDITH" version))
        (sha256
-        (base32 "0bghyq6785wwr60sgqzn30g3lcz5f58z76lz3fbb1mfcbwp6fmpz"))))
+        (base32 "0bsy0mpacwjglyp7vfqz32lpyd43yj346yvxqrf32fhwqlpfwimc"))))
     (properties `((upstream-name . "eDITH")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -18468,13 +18469,13 @@ text with solutions to exercises.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecospat" version))
        (sha256
-        (base32 "0m3rdyx70q5am654islrz0m3sniwfvlss99bj1yjhx49i54pdh38"))))
+        (base32 "1sxvbzdrdr5dda1ds7i669rkaxngp93dpdzqkip07dv28yvjhp02"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -18497,7 +18498,7 @@ text with solutions to exercises.")
                              r-ade4))
     (native-inputs (list r-knitr))
     (home-page
-     "http://www.unil.ch/ecospat/home/menuguid/ecospat-resources/tools.html")
+     "https://www.unil.ch/ecospat/home/menuguid/ecospat-resources/tools.html")
     (synopsis "Spatial Ecology Miscellaneous Methods")
     (description
      "Collection of R functions and data sets for the support of spatial ecology
