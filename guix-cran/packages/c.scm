@@ -6234,13 +6234,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "02gbnjmd8nsa2d58dv3f1ndrgh269llfv5m5nszvhpq0x5kq030d"))))
+        (base32 "1fpspb7pg91sysx1j79nfa2wav2dd8sg65ma6399cy4jvyza298v"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr))
@@ -10036,6 +10036,42 @@ performance of the randomization procedures is provided, calculating several
 imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (2022) <doi:10.1007/s00362-022-01381-1> for details.")
     (license license:gpl3+)))
+
+(define-public r-coursekata
+  (package
+    (name "r-coursekata")
+    (version "0.17.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coursekata" version))
+       (sha256
+        (base32 "0g0hz4zbqmz7rxhvnd67hx0mfqx997k27p1382j0qwqa26bv943h"))))
+    (properties `((upstream-name . "coursekata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-vctrs
+                             r-supernova
+                             r-rlang
+                             r-purrr
+                             r-palmerpenguins
+                             r-pak
+                             r-mosaic
+                             r-metrics
+                             r-lsr
+                             r-glue
+                             r-ggplot2
+                             r-ggformula
+                             r-dslabs
+                             r-cli))
+    (home-page "https://github.com/coursekata/coursekata-r")
+    (synopsis "Packages and Functions for 'CourseKata' Courses")
+    (description
+     "Easily install and load all packages and functions used in @code{CourseKata}
+courses.  Aid teaching with helper functions and augment generic functions to
+provide cohesion between the network of packages.  Learn more about
+@code{CourseKata} at <https://coursekata.org>.")
+    (license license:agpl3+)))
 
 (define-public r-countts
   (package
@@ -15962,28 +15998,6 @@ Includes (extensible) support for various test types, specified as sets of
 interpretations dependent on where the lower and upper confidence limits sit.
 Provides plotting functions for graphical display of interpretations.")
     (license license:agpl3)))
-
-(define-public r-configural
-  (package
-    (name "r-configural")
-    (version "0.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "configural" version))
-       (sha256
-        (base32 "1javknjl9ycb6rz77rhzya8yspm9m6mdjwl1waq1akgpiizk1pnl"))))
-    (properties `((upstream-name . "configural")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=configural")
-    (synopsis "Multivariate Profile Analysis")
-    (description
-     "R functions for criterion profile analysis, Davison and Davenport (2002)
-<doi:10.1037/1082-989X.7.4.468> and meta-analytic criterion profile analysis,
-Wiernik, Wilmot, Davison, and Ones (2020) <doi:10.1037/met0000305>.  Sensitivity
-analyses to aid in interpreting criterion profile analysis results are also
-included.")
-    (license license:gpl3+)))
 
 (define-public r-configr
   (package

@@ -1664,22 +1664,22 @@ or Castillo-Paez et al. (2019) <doi:10.1016/j.csda.2019.01.017>.")
 (define-public r-npsm
   (package
     (name "r-npsm")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npsm" version))
        (sha256
-        (base32 "0ri0nn7ahagwcgyq75z20a2xprfagwxynjim8q9ls5y7vav17486"))))
+        (base32 "0d2pa55jcxrphmsnv0wcv3xsdidjcr8b8s9krbal27rjrvqqh27s"))))
     (properties `((upstream-name . "npsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfit r-plyr r-class))
     (home-page "https://github.com/kloke/npsm")
     (synopsis "Nonparametric Statistical Methods")
     (description
-     "Accompanies the book \"Nonparametric Statistical Methods Using R\" by Kloke and
-@code{McKean} (2014, ISBN:9781439873434).  Includes methods, datasets, and
-random number generation useful for the study of robust and/or nonparametric
+     "Accompanies the book \"Nonparametric Statistical Methods Using R, 2nd Edition\" by
+Kloke and @code{McKean} (2024, ISBN:9780367651350).  Includes methods, datasets,
+and random number generation useful for the study of robust and/or nonparametric
 statistics.  Emphasizes classical nonparametric methods for a variety of designs
 --- especially one-sample and two-sample problems.  Includes methods for general
 scores, including estimation and testing for the two-sample location problem as
@@ -7251,13 +7251,13 @@ Mixed-Effects Models: A Step-by-Step Approach by Galecki and Burzykowski (2013).
 (define-public r-nlive
   (package
     (name "r-nlive")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlive" version))
        (sha256
-        (base32 "0c2j25jy9bkl0c4fbp418salfncfa5qm2mlnb6nvj6vzsbbsbn7n"))))
+        (base32 "07an5ds2v7hv15062dcbggdl04b2jqx7mil8a50n6jzdr2x0rb54"))))
     (properties `((upstream-name . "nlive")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqldf
@@ -14993,16 +14993,16 @@ signalled by concurrent threads.")
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.4.0.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoarrow" version))
        (sha256
-        (base32 "16vspbc31585f5wys634i4nyr43f6fzj6fgss8f5rdvvf73d2h4p"))))
+        (base32 "04a612k2vcdfrhrk6wv0j0p07y99x7pgp6vijl15kb9wgcapjr4k"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
-    (home-page "https://github.com/apache/arrow-nanoarrow")
+    (home-page "https://arrow.apache.org/nanoarrow/latest/r/")
     (synopsis "Interface to the 'nanoarrow' 'C' Library")
     (description
      "This package provides an R interface to the nanoarrow C library and the Apache

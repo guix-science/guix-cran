@@ -13166,6 +13166,34 @@ possible to get the results of the search in a tibble'.  The search is performed
 by the grep command-line utility.")
     (license license:gpl3)))
 
+(define-public r-findgsep
+  (package
+    (name "r-findgsep")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "findGSEP" version))
+       (sha256
+        (base32 "0j1m54y46ls3s4097028lf7nj4i8xbfpbxhprqy88j886xwfq56x"))))
+    (properties `((upstream-name . "findGSEP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rcolorbrewer r-pracma r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sperfu/findGSEP")
+    (synopsis
+     "Estimate Genome Size of Polyploid Species Using k-Mer Frequencies")
+    (description
+     "This package provides tools to estimate the genome size of polyploid species
+using k-mer frequencies.  This package includes functions to process k-mer
+frequency data and perform genome size estimation by fitting k-mer frequencies
+with a normal distribution model.  It supports handling of complex polyploid
+genomes and offers various options for customizing the estimation process.  The
+basic method @code{findGSE} is detailed in Sun, Hequan, et al. (2018)
+<doi:10.1093/bioinformatics/btx637>.")
+    (license license:gpl2+)))
+
 (define-public r-fincovregularization
   (package
     (name "r-fincovregularization")

@@ -22864,6 +22864,31 @@ uniform insertion rate is also implemented.  This package implements the methods
 proposed in Dai et al (2018).")
     (license license:expat)))
 
+(define-public r-tdstnn
+  (package
+    (name "r-tdstnn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TDSTNN" version))
+       (sha256
+        (base32 "0ql4z0r04bcj6m6m7kshg3kqnlmx1cy62kfmm98x23ggfxi67a4i"))))
+    (properties `((upstream-name . "TDSTNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nnet))
+    (home-page "https://cran.r-project.org/package=TDSTNN")
+    (synopsis "Time Delay Spatio Temporal Neural Network")
+    (description
+     "STARMA (Space-Time Autoregressive Moving Average) models are commonly utilized
+in modeling and forecasting spatiotemporal time series data.  However, the
+intricate nonlinear dynamics observed in many space-time rainfall patterns often
+exceed the capabilities of conventional STARMA models.  This R package enables
+the fitting of Time Delay Spatio-Temporal Neural Networks, which are adept at
+handling such complex nonlinear dynamics efficiently.  For detailed methodology,
+please refer to Saha et al. (2020) <doi:10.1007/s00704-020-03374-2>.")
+    (license license:gpl3)))
+
 (define-public r-tdsc
   (package
     (name "r-tdsc")

@@ -7727,6 +7727,36 @@ probability-proportional-to-size sampling) and includes a function for
 transforming the PRN's in order to control the sample overlap.")
     (license license:expat)))
 
+(define-public r-prng
+  (package
+    (name "r-prng")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PRNG" version))
+       (sha256
+        (base32 "060y0d3kx1hymiki44b62mkgyyvlsccdr86lp014gavlwq37kqzx"))))
+    (properties `((upstream-name . "PRNG")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PRNG")
+    (synopsis "Pseudo-Random Number Generator")
+    (description
+     "This package provides functions for generating pseudo-random numbers that follow
+a uniform distribution [0,1].  Randomness tests were conducted using the
+National Institute of Standards and Technology test
+suite<https://csrc.nist.gov/pubs/sp/800/22/r1/upd1/final>, along with additional
+tests.  The sequence generated depends on the initial values and parameters.
+The package includes a linear congruence map as the decision map and three
+chaotic maps to generate the pseudo-random sequence, which follow a uniform
+distribution.  Other distributions can be generated from the uniform
+distribution using the Inversion Principle Method and BOX-Muller transformation.
+ Small perturbations in seed values result in entirely different sequences of
+numbers due to the sensitive nature of the maps being used.  The chaotic nature
+of the maps helps achieve randomness in the generator.  Additionally, the
+generator is capable of producing random bits.")
+    (license license:expat)))
+
 (define-public r-privatelr
   (package
     (name "r-privatelr")

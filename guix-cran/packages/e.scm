@@ -7992,6 +7992,29 @@ saturation\" <doi:10.1016/s0022-5347(17)47703-2> to R. The Visual Basic code was
 kindly provided by Dr. John Lieske of the Mayo Clinic.")
     (license license:expat)))
 
+(define-public r-equatiomatic
+  (package
+    (name "r-equatiomatic")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "equatiomatic" version))
+       (sha256
+        (base32 "1zb8pnpdvn6159h43h4fr9sfp1fv9rgknv4wv1wra6ris204764b"))))
+    (properties `((upstream-name . "equatiomatic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-knitr r-broom-mixed r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/datalorax/equatiomatic")
+    (synopsis "Transform Models into 'LaTeX' Equations")
+    (description
+     "The goal of equatiomatic is to reduce the pain associated with writing
+@code{LaTeX} formulas from fitted models.  The primary function of the package,
+extract_eq(), takes a fitted model object as its input and returns the
+corresponding @code{LaTeX} code for the model.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
@@ -10342,13 +10365,13 @@ systems.")
 (define-public r-epanet2toolkit
   (package
     (name "r-epanet2toolkit")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epanet2toolkit" version))
        (sha256
-        (base32 "0xmaifvj9r3q634rb9rbpvrn4klsxf14scbv8150s1s6dvvb0f5i"))))
+        (base32 "0y9mk5w1ds31g7nwx4xkpay8h2h6cqbh9i2hl01zhycjdgh4ddfg"))))
     (properties `((upstream-name . "epanet2toolkit")))
     (build-system r-build-system)
     (home-page "https://github.com/bradleyjeck/epanet2toolkit")

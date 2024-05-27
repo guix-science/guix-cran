@@ -13550,26 +13550,27 @@ Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
 (define-public r-iemisctext
   (package
     (name "r-iemisctext")
-    (version "0.9.99")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iemisctext" version))
        (sha256
-        (base32 "02rr7sjjbrvfxwjl87f2ki245a8cw5fvx7z2z4rl8ixxlyxj9p5v"))))
+        (base32 "10p7aws8lhspwkkhp9fhaiq32nikd5kghzkh8nfk3y7bwv4frlln"))))
     (properties `((upstream-name . "iemisctext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/iembry/iemisctext")
     (synopsis "Irucka Embry's Miscellaneous Text Collection")
     (description
-     "The eclectic collection includes the following written pieces: \"The War Prayer\"
-by Mark Twain, \"War Is A Racket\" by Major General Smedley Butler, \"The Mask of
-Anarchy: Written on the Occasion of the Massacre at Manchester\" by Percy Bysshe
-Shelley, \"Connect the D.O.T.S.\" by Obiora Embry, \"Untitled: Climate Strange\" by
-Irucka Ajani Embry, and \"Untitled: Us versus Them or People Screwing over Other
-People (as we all live on one Earth and there is no \"us versus them\" in the
-actual Ultimate Reality}\" by Irucka Ajani Embry.")
+     "The eclectic collection includes the following written pieces: \"Appeal to
+Womanhood Throughout the World\" By Julia Ward Howe, \"The War Prayer\" By Mark
+Twain, \"War Is A Racket\" By Major General Smedley Butler, \"The Mask of Anarchy:
+Written on the Occasion of the Massacre at Manchester\" By Percy Bysshe Shelley,
+\"Connect the D.O.T.S.\" By Obiora Embry, \"Untitled: Climate Strange\" By Irucka
+Ajani Embry, and \"Untitled: Us versus Them or People Screwing over Other People
+(as we all live on one Earth and there is no us versus them in the actual
+Ultimate Reality}\" By Irucka Ajani Embry.")
     (license license:gpl3+)))
 
 (define-public r-iemiscdata

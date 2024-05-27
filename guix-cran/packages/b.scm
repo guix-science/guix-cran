@@ -1151,18 +1151,20 @@ which identifies the groove locations.")
 (define-public r-bulkreadr
   (package
     (name "r-bulkreadr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bulkreadr" version))
        (sha256
-        (base32 "067j95cbf22zi5rrih6i46l6kdy49ak3zal69q3r98cnhv9l2cl0"))))
+        (base32 "0hq4xaxqjp08qd7h54s6nbvz2q7xpzxg1n6s0w9flavhl5jfilzg"))))
     (properties `((upstream-name . "bulkreadr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-sjlabelled
+                             r-rlang
                              r-readxl
                              r-readr
                              r-purrr

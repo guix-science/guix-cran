@@ -8845,13 +8845,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "1iv29n12cdpn8g9c8gpn0n1wsldv7y7fn8wzj9c3v7kq26d9rb04"))))
+        (base32 "0waayqsqwydd3mv5zplbivqspxnkdznq47mj8v5yyzf28042aax7"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

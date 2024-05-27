@@ -3372,13 +3372,13 @@ individual measurements.")
 (define-public r-qreport
   (package
     (name "r-qreport")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qreport" version))
        (sha256
-        (base32 "06ycxcs9kkx3m9f74bjvlj84jjp60wd0hjd40mgpir2559hqmqnb"))))
+        (base32 "1d3dlpcf6w4bj6bwmydr3rlnscfdqyad6j2cm1rda7565q7k9iyf"))))
     (properties `((upstream-name . "qreport")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

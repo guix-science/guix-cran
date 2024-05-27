@@ -5810,6 +5810,48 @@ Achanta, Appu Shaji, Kevin Smith, Aurelien Lucchi, Pascal Fua, and Sabine
 Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
     (license license:gpl3)))
 
+(define-public r-openhimr
+  (package
+    (name "r-openhimr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OpEnHiMR" version))
+       (sha256
+        (base32 "01h318mj581gyg0a54wa87nqvr2kf2dfdqmac91v7nb744f9pg6h"))))
+    (properties `((upstream-name . "OpEnHiMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-stringr
+                             r-splitstackshape
+                             r-seqinr
+                             r-rcurl
+                             r-randomforest
+                             r-party
+                             r-gbm
+                             r-ftrcool
+                             r-entropy
+                             r-e1071
+                             r-dplyr
+                             r-devtools
+                             r-caret
+                             r-biostrings))
+    (home-page "https://cran.r-project.org/package=OpEnHiMR")
+    (synopsis
+     "Optimization Based Ensemble Model for Prediction of Histone Modifications in Rice")
+    (description
+     "The comprehensive knowledge of epigenetic modifications in plants, encompassing
+histone modifications in regulating gene expression, is not completely
+ingrained.  It is noteworthy that histone deacetylation and histone H3 lysine 27
+trimethylation (H3K27me3) play a role in repressing transcription in eukaryotes.
+ In contrast, histone acetylation (H3K9ac) and H3K4me3 have been inevitably
+linked to the stimulation of gene expression, which significantly influences
+plant development and plays a role in plant responses to biotic and abiotic
+stresses.  To our knowledge this the first multiclass classifier for predicting
+histone modification in plants. <doi:10.1186/s12864-019-5489-4>.")
+    (license license:gpl3)))
+
 (define-public r-openeo
   (package
     (name "r-openeo")

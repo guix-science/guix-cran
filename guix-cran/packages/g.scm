@@ -8449,18 +8449,18 @@ authoring web pages styled with the GOV.UK Design System.")
 (define-public r-gotop
   (package
     (name "r-gotop")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gotop" version))
        (sha256
-        (base32 "1dvcgz7ha637ixjqmgcwhvl3f9kpx4fdq8im40iz8xwnxqwmrlgx"))))
+        (base32 "0q65qvzg5f36hp1f3yigmysy83x40jgz4c1ksch56b7svmfbrq0s"))))
     (properties `((upstream-name . "gotop")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-htmltools))
-    (home-page "https://felixluginbuhl.com/gotop")
-    (synopsis "Scroll Back to Top Icon in 'rmarkdown' and 'shiny'")
+    (home-page "https://felixluginbuhl.com/gotop/")
+    (synopsis "Scroll Back to Top Icon in Shiny and R Markdown")
     (description
      "Add a scroll back to top Font Awesome icon <https://fontawesome.com/> in
 rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}

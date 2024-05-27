@@ -1503,19 +1503,19 @@ mesh code using ggplot2 and leaflet', etc.")
 (define-public r-jpgrid
   (package
     (name "r-jpgrid")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpgrid" version))
        (sha256
-        (base32 "0pp5nwvv0sglr089m78q4kaq7pkj7w2qdylpaahyjqb4iqk06grh"))))
+        (base32 "01x2iyc37pfd1rz4avgiv1ng1d5g4hpi4viv8y0pcb9rpv3dymw1"))))
     (properties `((upstream-name . "jpgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-units
-                             r-tidyselect
                              r-tidyr
+                             r-tidygraph
                              r-tibble
                              r-stringr
                              r-stars
@@ -1524,7 +1524,6 @@ mesh code using ggplot2 and leaflet', etc.")
                              r-purrr
                              r-pillar
                              r-lifecycle
-                             r-geosphere
                              r-dplyr
                              r-cli))
     (home-page "https://github.com/UchidaMizuki/jpgrid")
@@ -1560,13 +1559,13 @@ Covariance Matrices.")
 (define-public r-jpcity
   (package
     (name "r-jpcity")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jpcity" version))
        (sha256
-        (base32 "0j4m3dyrihi9rmbfld8q1x2968lw2z3n1c77gf20br1dxfq33a17"))))
+        (base32 "1wpznczyx9vmhyznzph0f4lc2rl5x3nhdygp2yfq3hl0kwxrgzfz"))))
     (properties `((upstream-name . "jpcity")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

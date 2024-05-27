@@ -21325,13 +21325,13 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
 (define-public r-ddml
   (package
     (name "r-ddml")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddml" version))
        (sha256
-        (base32 "07nbdx2qd4f7yrgq00djwfxil2qgnrgd4r5rrzyqcwbv21xz0ayw"))))
+        (base32 "17v3yhgs440flyqvfhjapc03xvwnvg7c0kr8cphvnhx6nmwjsq53"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -21349,8 +21349,8 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
      "Estimate common causal parameters using double/debiased machine learning as
 proposed by Chernozhukov et al. (2018) <doi:10.1111/ectj.12097>.  ddml
 simplifies estimation based on (short-)stacking as discussed in Ahrens et al.
-(2024) <@code{arXiv:2401.01645>}, which leverages multiple base learners to
-increase robustness to the underlying data generating process.")
+(2024) <doi:10.48550/@code{arXiv.2401.01645>}, which leverages multiple base
+learners to increase robustness to the underlying data generating process.")
     (license license:gpl3+)))
 
 (define-public r-ddm
@@ -27332,24 +27332,24 @@ data, and for demonstrations with such data.")
 (define-public r-daag
   (package
     (name "r-daag")
-    (version "1.25.4")
+    (version "1.25.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DAAG" version))
        (sha256
-        (base32 "1gia0xpdy55f23s6b3w4nfdmavgj9xzk9zc3p64lj4arycpnq4mn"))))
+        (base32 "0vm4r1ds2xxxf4vml6mrb5alnkr72a08nby88h3qk7xalny28xkf"))))
     (properties `((upstream-name . "DAAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-latticeextra r-lattice))
     (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/daagur")
+    (home-page "https://gitlab.com/daagur/DAAG")
     (synopsis "Data Analysis and Graphics Data and Functions")
     (description
      "This package provides functions and data sets used in examples and exercises in
 the text Maindonald, J.H. and Braun, W.J. (2003, 2007, 2010) \"Data Analysis and
-Graphics Using R\", and in an upcoming Maindonald, Braun, Andrews, and Narayan
-text that builds on this earlier text.")
+Graphics Using R\", and in an upcoming Maindonald, Braun, and Andrews text that
+builds on this earlier text.")
     (license license:gpl3)))
 
 (define-public r-da
