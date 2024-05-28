@@ -440,13 +440,13 @@ study with RNA-seq data.")
 (define-public r-rxode2random
   (package
     (name "r-rxode2random")
-    (version "2.0.13")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2random" version))
        (sha256
-        (base32 "0c6nwb7f61yb98zg7gzbyk2xzbr8k780l8ns444qc17a9ad74wqd"))))
+        (base32 "1zrddjq1i2wfx6ai4wwp1l0vnyk5i19dcr7f2q3f66jhlj9fqp27"))))
     (properties `((upstream-name . "rxode2random")))
     (build-system r-build-system)
     (propagated-inputs (list r-sitmo
@@ -533,13 +533,13 @@ estimation.")
 (define-public r-rxode2et
   (package
     (name "r-rxode2et")
-    (version "2.0.12")
+    (version "2.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2et" version))
        (sha256
-        (base32 "07hjw31i2fczxi3hzpx6rbhg85sgzg7gln0qnmq9520fnsklixba"))))
+        (base32 "1pprky6j5vzijichr7kzfavc8ly3k272xnzvwix60v77z9zn5kyw"))))
     (properties `((upstream-name . "rxode2et")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2random
@@ -2357,13 +2357,13 @@ any revisions, for all groups within the supplied data.")
 (define-public r-ruminate
   (package
     (name "r-ruminate")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ruminate" version))
        (sha256
-        (base32 "03z1n41160h0hzjknd8v8gdf1imkmr8602s1vsfzkhvvj4qa22yl"))))
+        (base32 "1i3b5mlg4kcd8hsphax75r046yq180jrbnyr7iylkyilf6dgqyyf"))))
     (properties `((upstream-name . "ruminate")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15622,29 +15622,6 @@ be found in Ruckdeschel and Horbenko, (2013 and 2012),
 \\doi{10.1080/02331888.2011.628022} and \\doi{10.1007/s00184-011-0366-4}.")
     (license license:lgpl3)))
 
-(define-public r-robeth
-  (package
-    (name "r-robeth")
-    (version "2.7-8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robeth" version))
-       (sha256
-        (base32 "0f5j9vc1d5nzisqa54ws3l7gn3ccnxg70ybl4fnawi531ih3rw60"))))
-    (properties `((upstream-name . "robeth")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=robeth")
-    (synopsis "R Functions for Robust Statistics")
-    (description
-     "Locations problems, M-estimates of coefficients and scale in linear regression,
-Weights for bounded influence regression, Covariance matrix of the coefficient
-estimates, Asymptotic relative efficiency of regression M-estimates, Robust
-testing in linear models, High breakdown point regression, M-estimates of
-covariance matrices, M-estimates for discrete generalized linear models.")
-    (license license:gpl2+)))
-
 (define-public r-roben
   (package
     (name "r-roben")
@@ -15756,28 +15733,6 @@ tests for compositional data as well as popular log-ratio transformations
 (@code{addLR}, @code{cenLR}, @code{isomLR}, and their inverse transformations).
 In addition, visualisation and diagnostic tools are implemented as well as high
 and low-level plot functions for the ternary diagram.")
-    (license license:gpl2+)))
-
-(define-public r-robcbi
-  (package
-    (name "r-robcbi")
-    (version "1.1-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "robcbi" version))
-       (sha256
-        (base32 "17i1isd9j14qbrrp3vqslwi1iig9m10hxyhzmjkpffcm2hsjddwc"))))
-    (properties `((upstream-name . "robcbi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robeth))
-    (home-page "https://cran.r-project.org/package=robcbi")
-    (synopsis "Conditionally Unbiased Bounded Influence Estimates")
-    (description
-     "Conditionally unbiased bounded influence estimates as described in Kuensch et
-al. (1989) <doi:10.1080/01621459.1989.10478791> in three special cases of the
-generalized linear model: Bernoulli, Binomial, and Poisson distributed
-responses.")
     (license license:gpl2+)))
 
 (define-public r-robber
@@ -18914,13 +18869,13 @@ properties of all detected events and exceedances.")
 (define-public r-rmariadb
   (package
     (name "r-rmariadb")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMariaDB" version))
        (sha256
-        (base32 "0a39n1pgpxhq095bz689fxar68vvy5hypxym1d1ric0s8vs2l6vd"))))
+        (base32 "0a38hbc9nc25x9a8z91wc24h4llmyhjim6vavmwrx2r14c3fz1vw"))))
     (properties `((upstream-name . "RMariaDB")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -35297,13 +35252,13 @@ desorption/ionization-time-of-flight mass spectrometer of the *flex series.")
 (define-public r-readabs
   (package
     (name "r-readabs")
-    (version "0.4.14")
+    (version "0.4.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readabs" version))
        (sha256
-        (base32 "1m6n8w2hi2r0rrnmy9cnb5a0c37wlq23j6w49lx1zspsfqk6iqiv"))))
+        (base32 "0f05x7lk2mvccqh6d9zwg35wjcjw59n8skl5n5awrp2hzpavdh57"))))
     (properties `((upstream-name . "readabs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -39090,13 +39045,13 @@ by Wickham H. (2015) <ISBN:9781491910597> and Marwick B. et al. (2018)
 (define-public r-rcompanion
   (package
     (name "r-rcompanion")
-    (version "2.4.35")
+    (version "2.4.36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcompanion" version))
        (sha256
-        (base32 "184fsaandg34ijg1826r10bbm9wq2a02j68zb37hsm8zrggzm8jc"))))
+        (base32 "0r6kppwfm44h9y5wda3pfnxgsjvrdj3ysdmxclhrciq5rlzs2n8v"))))
     (properties `((upstream-name . "rcompanion")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr
@@ -48488,19 +48443,20 @@ regression, as well as box plots, histograms, scatter plots, and line plots
 (define-public r-r2social
   (package
     (name "r-r2social")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2social" version))
        (sha256
-        (base32 "1a75ck2h5f6nnjniwj1a1y31dfsda6gw1db2l2j8fd5nf10piwgk"))))
+        (base32 "0lwdjbb99zab94nkbdw6ilkz3rvgv6lkrgcvb1z24midiykwfmfs"))))
     (properties `((upstream-name . "r2social")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmltools))
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
     (native-inputs (list r-knitr))
     (home-page "https://r2social.obi.obianom.com")
-    (synopsis "App Inclusion of Social Sharing and Connect Buttons")
+    (synopsis
+     "Seamless Integration of Sharing and Connect Buttons in Markdown and Apps")
     (description
      "Implementation of JQuery <https://jquery.com> and CSS styles to allow easy
 incorporation of various social media elements on a page.  The elements include

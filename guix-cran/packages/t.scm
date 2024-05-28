@@ -22007,6 +22007,41 @@ autocorrelation.  See @code{FernÃ¡ndez-MartÃ­nez} et al. (2017 and 2019)
 <doi:10.1038/s41598-017-08755-8> <doi:10.1038/s41558-018-0367-7>.")
     (license license:gpl2+)))
 
+(define-public r-telraamstats
+  (package
+    (name "r-telraamstats")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "telraamStats" version))
+       (sha256
+        (base32 "1n589sj7apwanq3v388f0v76mdhmk092n8mj91mwkdfjrn3r73ha"))))
+    (properties `((upstream-name . "telraamStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-paletteer
+                             r-lubridate
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://annuaire.agistaterre.org/telraamStats/")
+    (synopsis
+     "Retrieval and Visualization of Mobility Data from 'Telraam' Sensors")
+    (description
+     "Streamline the processing of Telraam data, sourced from open data mobility
+sensors.  These tools range from data retrieval (without the need for API
+knowledge) to data visualization, including data preprocessing.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-telp
   (package
     (name "r-telp")
@@ -22271,13 +22306,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "1vjlxprla6did97p1rdcwppfamhq7vjrd8q6a2myd4fgxaa9wfxn"))))
+        (base32 "0w2pg7b3bk4vc72aw2n7hcp47aq7a25l41m9yh3x3a6ssnzcg350"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22285,6 +22320,7 @@ been published.")
                              r-tidyr
                              r-terra
                              r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-geom
                              r-spatstat-explore
                              r-smoothr

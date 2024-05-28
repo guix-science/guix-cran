@@ -7850,6 +7850,31 @@ identification\" <doi:10.1038/s41592-021-01331-z>.")
 (Yamamoto, H. (2023) <doi:10.51094/jxiv.262>).")
     (license license:lgpl3)))
 
+(define-public r-msdrought
+  (package
+    (name "r-msdrought")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "msdrought" version))
+       (sha256
+        (base32 "1h8g8i1f8hynr32c7xiz72ykqd0l4fnh8vl3dhm8agxa8l0ksjpm"))))
+    (properties `((upstream-name . "msdrought")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts r-signal r-quantmod r-lubridate r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Turner-SCU/msdrought")
+    (synopsis "Seasonal Mid-Summer Drought Characteristics")
+    (description
+     "Characterization of a mid-summer drought (MSD) with precipitation based
+statistics.  The MSD is a phenomenon of decreased rainfall during a typical
+rainy season.  It is a feature of rainfall in much of Central America and is
+also found in other locations, typically those with a Mediterranean climate.
+Details on the metrics are in Maurer et al. (2022)
+<doi:10.5194/hess-26-1425-2022>.")
+    (license license:expat)))
+
 (define-public r-msde
   (package
     (name "r-msde")
@@ -13498,13 +13523,13 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1k0kmd1mxg1rjrn22jzp98f9bfysx4l7pcf8wrks7nxlbaripb4w"))))
+        (base32 "11mx045lq4hmwycdjv3nrzpmjpv8j2z0hwjsxk7753zlc11s1img"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13517,7 +13542,6 @@ nutrition analyses.")
                              r-mvtnorm
                              r-mvnfast
                              r-mplusautomation
-                             r-matlib
                              r-lavaan
                              r-gaussquad
                              r-dplyr))
@@ -17305,13 +17329,13 @@ transformation.")
 (define-public r-mlrintermbo
   (package
     (name "r-mlrintermbo")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrintermbo" version))
        (sha256
-        (base32 "1nyaqf6vkckdh7jb27iwv5dnvrh4bp0kkc5jzbqkyi8af11phg1l"))))
+        (base32 "07blhklgm0skkibraryk06z1cq51jra902cgxnpcw28qjnjyf228"))))
     (properties `((upstream-name . "mlrintermbo")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

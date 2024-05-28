@@ -4068,41 +4068,6 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 <doi:10.1145/1143844.1143955>.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-qlcvisualize
-  (package
-    (name "r-qlcvisualize")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qlcVisualize" version))
-       (sha256
-        (base32 "05qg7ivkmp5w4xkkmiz8qqp83m3fc5vvj64r9jf4vp8n79lvx70v"))))
-    (properties `((upstream-name . "qlcVisualize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-sp
-                             r-sf
-                             r-seriation
-                             r-rspectra
-                             r-qlcmatrix
-                             r-polycub
-                             r-mass
-                             r-maps
-                             r-mapplots
-                             r-mapdata
-                             r-geodata
-                             r-fields
-                             r-alphahull))
-    (home-page "https://cran.r-project.org/package=qlcVisualize")
-    (synopsis "Visualization for Quantitative Language Comparison")
-    (description
-     "Collection of visualizations as used in quantitative language comparison.
-Currently implemented are visualisations dealing nominal data with multiple
-levels (\"level-map\" and \"level-image\"), and assistance for making dialectal
-Voronoi maps.")
-    (license license:gpl3)))
-
 (define-public r-qlcal
   (package
     (name "r-qlcal")

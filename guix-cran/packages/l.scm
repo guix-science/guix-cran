@@ -8139,13 +8139,13 @@ the visualizations are based on rigorous statistical models.")
 (define-public r-lipidms
   (package
     (name "r-lipidms")
-    (version "3.0.4")
+    (version "3.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LipidMS" version))
        (sha256
-        (base32 "0z0zyv1br938nnng0w2k79ymlb9rsz7ayv68a8ll1512in3w04fn"))))
+        (base32 "1c0dq1b5ns4kmvdf3viam7g7p5bgviqw1z967nkjslxiyxsjrvki"))))
     (properties `((upstream-name . "LipidMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -11060,13 +11060,13 @@ in Erhard & Zimmer (2015) <doi:10.1093/nar/gkv696> and Erhard (2018)
 (define-public r-lfapp
   (package
     (name "r-lfapp")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LFApp" version))
        (sha256
-        (base32 "1pxblh8v63n2gcsz1wbxv66aylaz2q61zw2w3l3r9z515kgmid77"))))
+        (base32 "1gdapv0nxwxpg1sfc759lh9x8d4whp7h3102xb95sxi3h9xjaqin"))))
     (properties `((upstream-name . "LFApp")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes

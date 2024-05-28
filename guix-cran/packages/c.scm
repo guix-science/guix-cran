@@ -5097,39 +5097,6 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 <doi:10.1002/bimj.200390021>.")
     (license license:expat)))
 
-(define-public r-crqa
-  (package
-    (name "r-crqa")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "crqa" version))
-       (sha256
-        (base32 "1nnnzixkv7hxdrhwdxa2ffp139cdzm4njdprh68fl6gv92ssqr6h"))))
-    (properties `((upstream-name . "crqa")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tserieschaos
-                             r-rdist
-                             r-pracma
-                             r-plot3d
-                             r-matrix
-                             r-gplots))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=crqa")
-    (synopsis
-     "Unidimensional and Multidimensional Methods for Recurrence Quantification Analysis")
-    (description
-     "Auto, Cross and Multi-dimensional recurrence quantification analysis.  Different
-methods for computing recurrence, cross vs. multidimensional or profile iti.e.,
-only looking at the diagonal recurrent points, as well as functions for
-optimization and plotting are proposed.  in-depth measures of the whole
-cross-recurrence plot, Please refer to Coco and others (2021)
-<doi:10.32614/RJ-2021-062>, Coco and Dale (2014) <doi:10.3389/fpsyg.2014.00510>
-and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
-the method.")
-    (license license:gpl2+)))
-
 (define-public r-crplyr
   (package
     (name "r-crplyr")
@@ -15999,6 +15966,28 @@ interpretations dependent on where the lower and upper confidence limits sit.
 Provides plotting functions for graphical display of interpretations.")
     (license license:agpl3)))
 
+(define-public r-configural
+  (package
+    (name "r-configural")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "configural" version))
+       (sha256
+        (base32 "1javknjl9ycb6rz77rhzya8yspm9m6mdjwl1waq1akgpiizk1pnl"))))
+    (properties `((upstream-name . "configural")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=configural")
+    (synopsis "Multivariate Profile Analysis")
+    (description
+     "R functions for criterion profile analysis, Davison and Davenport (2002)
+<doi:10.1037/1082-989X.7.4.468> and meta-analytic criterion profile analysis,
+Wiernik, Wilmot, Davison, and Ones (2020) <doi:10.1037/met0000305>.  Sensitivity
+analyses to aid in interpreting criterion profile analysis results are also
+included.")
+    (license license:gpl3+)))
+
 (define-public r-configr
   (package
     (name "r-configr")
@@ -26549,51 +26538,6 @@ climate dynamics through exploring and measuring different dimensions of climate
 change in space and time.")
     (license license:gpl3+)))
 
-(define-public r-climenv
-  (package
-    (name "r-climenv")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "climenv" version))
-       (sha256
-        (base32 "0w1pz725b6sw854pinypgi57vb2xjis3xx53b4mggwpdghck6mk7"))))
-    (properties `((upstream-name . "climenv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-ternary
-                             r-sp
-                             r-sf
-                             r-randomforest
-                             r-plyr
-                             r-glue
-                             r-geodata
-                             r-exactextractr
-                             r-elevatr
-                             r-dplyr
-                             r-dismo
-                             r-climaemet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jamestsakalos/climenv")
-    (synopsis "Download, Extract and Visualise Climate and Elevation Data")
-    (description
-     "Grants access to three widely recognised modelled data sets, namely Global
-Climate Data (@code{WorldClim} 2), Climatologies at high resolution for the
-earth's land surface areas (CHELSA), and National Aeronautics and Space
-Administration's (NASA) Shuttle Radar Topography Mission (SRTM).  It handles
-both multi and single geospatial polygon and point data, extracts outputs that
-can serve as covariates in various ecological studies.  Provides two common
-graphic options â the Walter-Lieth (1960)
-<https://donum.uliege.be/bitstream/2268.1/7079/1/Walter-Lieth_Klimadiagramm-Weltatlas.pdf>
-climate diagram and the Holdridge (1967)
-<https://reddcr.go.cr/sites/default/files/centro-de-documentacion/holdridge_1966_-_life_zone_ecology.pdf>
-life zone classification scheme.  Provides one new graphic scheme of our own
-design which incorporates aspects of both Walter-Leigh and Holdridge.  Provides
-user-friendly access and extraction of globally recognisable data sets to
-enhance their usability across a broad spectrum of applications.")
-    (license license:gpl3)))
-
 (define-public r-clime
   (package
     (name "r-clime")
@@ -32631,6 +32575,32 @@ models can be compared using an adjusted likelihood ratio test.")
 estimation of outstanding claims reserves in general insurance, including those
 to estimate the claims development result as required under Solvency II.")
     (license license:gpl2+)))
+
+(define-public r-chainbinomial
+  (package
+    (name "r-chainbinomial")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "chainbinomial" version))
+       (sha256
+        (base32 "1qs1bcql1xcb1qh35spr4j0vk6gwwjc3c0sb1y6vy0vh9z5mz6p8"))))
+    (properties `((upstream-name . "chainbinomial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=chainbinomial")
+    (synopsis "Chain Binomial Models for Analysis of Infectious Disease Data")
+    (description
+     "This package implements the chain binomial model for analysis of infectious
+disease data.  Contains functions for calculating probabilities of the final
+size of infectious disease outbreaks using the method from D. Ludwig (1975)
+<doi:10.1016/0025-5564(75)90119-4> and for outbreaks that are not concluded,
+from @code{LindstrÃ¸m} et al. (2024) <doi:10.48550/@code{arXiv.2403.03948>}.
+The package also contains methods for estimation and regression analysis of
+secondary attack rates.")
+    (license license:gpl3)))
 
 (define-public r-ch
   (package

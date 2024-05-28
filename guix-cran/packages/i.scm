@@ -5848,48 +5848,6 @@ models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
     (license license:gpl3+)))
 
-(define-public r-intsdm
-  (package
-    (name "r-intsdm")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "intSDM" version))
-       (sha256
-        (base32 "01gsq853vxkch69pmgypd4h5yfq1fnawa7qlamxglcxy6zmn3269"))))
-    (properties `((upstream-name . "intSDM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyterra
-                             r-terra
-                             r-sf
-                             r-rgbif
-                             r-r6
-                             r-pointedsdms
-                             r-inlabru
-                             r-giscor
-                             r-ggplot2
-                             r-geodata
-                             r-blockcv))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=intSDM")
-    (synopsis
-     "Reproducible Integrated Species Distribution Models Across Norway using 'INLA'")
-    (description
-     "Integration of disparate datasets is needed in order to make efficient use of
-all available data and thereby address the issues currently threatening
-biodiversity.  Data integration is a powerful modeling framework which allows us
-to combine these datasets together into a single model, yet retain the strengths
-of each individual dataset.  We therefore introduce the package, @code{intSDM}':
-an R package designed to help ecologists develop a reproducible workflow of
-integrated species distribution models, using data both provided from the user
-as well as data obtained freely online.  An introduction to data integration
-methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
-Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
-Pescott, Schmucki, Simmonds and OâHara (2020)
-<doi:10.1016/j.tree.2019.08.006>.")
-    (license license:gpl3+)))
-
 (define-public r-intrvals
   (package
     (name "r-intrvals")

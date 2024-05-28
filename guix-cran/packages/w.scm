@@ -4029,18 +4029,18 @@ round to round, rounds 3 and 4 should have a vastly reduced field of search.")
 (define-public r-whitebox
   (package
     (name "r-whitebox")
-    (version "2.3.4")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "whitebox" version))
        (sha256
-        (base32 "044r2aczhr7l83xx00zwzlhr7mlqs9pwl6ix93j8ch19j2dcrsg5"))))
+        (base32 "0bprfkqik3ix6lyfdq6wvp0xfbi1z539w4mm7bk1696s55sxnw27"))))
     (properties `((upstream-name . "whitebox")))
     (build-system r-build-system)
     (inputs (list))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/opengeos/whiteboxR")
+    (home-page "https://whiteboxr.gishub.org/")
     (synopsis "'WhiteboxTools' R Frontend")
     (description
      "An R frontend for the @code{WhiteboxTools} library, which is an advanced

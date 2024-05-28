@@ -1430,6 +1430,40 @@ statistical and graphic methods for multivariate data in a geospatial context of
 historical interest.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-gud
+  (package
+    (name "r-gud")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GUD" version))
+       (sha256
+        (base32 "0h8ihaph1lwnzzayn3ks09xvjxg2c57048az29zmc2paxbz0mwq3"))))
+    (properties `((upstream-name . "GUD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-mass
+                             r-bh))
+    (home-page "https://arxiv.org/pdf/2211.10776")
+    (synopsis "Bayesian Modal Regression Based on the GUD Family")
+    (description
+     "This package provides probability density functions and sampling algorithms for
+three key distributions from the General Unimodal Distribution (GUD) family: the
+Flexible Gumbel (FG) distribution, the Double Two-Piece (DTP) Student-t
+distribution, and the Two-Piece Scale (TPSC) Student-t distribution.
+Additionally, this package includes a function for Bayesian linear modal
+regression, leveraging these three distributions for model fitting.  The details
+of the Bayesian modal regression model based on the GUD family can be found at
+Liu, Huang, and Bai (2022) <doi:10.48550/@code{arXiv.2211.10776>}.")
+    (license license:expat)))
+
 (define-public r-guardianapi
   (package
     (name "r-guardianapi")
@@ -8470,13 +8504,13 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
 (define-public r-gosset
   (package
     (name "r-gosset")
-    (version "1.0")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gosset" version))
        (sha256
-        (base32 "1as3p5mpkhg205ssxzf26xn84b8abgzp413dw2fganidh7i9dmff"))))
+        (base32 "0k50vjfrqqkw9anq012pbq861lnq3ihjh310rp12xyvzbzf6d6c7"))))
     (properties `((upstream-name . "gosset")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8494,10 +8528,10 @@ rmarkdown documents and shiny apps thanks to @code{jQuery} @code{GoTop}
     (home-page "https://agrdatasci.github.io/gosset/")
     (synopsis "Tools for Data Analysis in Experimental Agriculture")
     (description
-     "Toolkit to analyse experimental agriculture data, from data synthesis to model
-selection and visualisation.  The package is named after W.S. Gosset aka
-âStudentâ, a pioneer of modern statistics in small sample experimental
-design and analysis.")
+     "This package provides methods to analyse experimental agriculture data, from
+data synthesis to model selection and visualisation.  The package is named after
+W.S. Gosset aka âStudentâ, a pioneer of modern statistics in small sample
+experimental design and analysis.")
     (license license:expat)))
 
 (define-public r-gorica
@@ -22013,90 +22047,6 @@ libraries.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-geohabnet
-  (package
-    (name "r-geohabnet")
-    (version "2.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geohabnet" version))
-       (sha256
-        (base32 "03d1zv8p5d75qj42g4xfq4fhif304a1wfkcggib5xqwkj5zkqabs"))))
-    (properties `((upstream-name . "geohabnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-viridislite
-                             r-terra
-                             r-stringr
-                             r-rnaturalearth
-                             r-rlang
-                             r-memoise
-                             r-magrittr
-                             r-igraph
-                             r-geosphere
-                             r-geodata
-                             r-future-apply
-                             r-future
-                             r-easycsv
-                             r-config
-                             r-beepr))
-    (native-inputs (list r-knitr))
-    (home-page "https://garrettlab.github.io/HabitatConnectivity/")
-    (synopsis "Geographical Risk Analysis Based on Habitat Connectivity")
-    (description
-     "The geohabnet package is designed to perform a geographically or spatially
-explicit risk analysis of habitat connectivity.  Xing et al (2021)
-<doi:10.1093/biosci/biaa067> proposed the concept of cropland connectivity as a
-risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
-were initially developed thinking on cropland connectivity, users are
-recommended to first be familiar with the concept by looking at the Xing et al
-paper.  In a nutshell, a habitat connectivity analysis combines information from
-maps of host density, estimates the relative likelihood of pathogen movement
-between habitat locations in the area of interest, and applies network analysis
-to calculate the connectivity of habitat locations.  The functions of geohabnet
-are built to conduct a habitat connectivity analysis relying on geographic
-parameters (spatial resolution and spatial extent), dispersal parameters (in two
-commonly used dispersal kernels: inverse power law and negative exponential
-models), and network parameters (link weight thresholds and network metrics).
-The functionality and main extensions provided by the functions in geohabnet to
-habitat connectivity analysis are a) Capability to easily calculate the
-connectivity of locations in a landscape using a single function, such as
-sensitivity_analysis() or msean().  b) As backbone datasets, the geohabnet
-package supports the use of two publicly available global datasets to calculate
-cropland density.  The backbone datasets in the geohabnet package include crop
-distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley (2008)
-<doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic distribution of
-crop areas, yields, physiological types, and net primary production in the year
-2000, Global Biogeochem.  Cycles, 22, GB1022\" and International Food Policy
-Research Institute (2019) <doi:10.7910/DVN/PRFF8V> \"Global
-Spatially-Disaggregated Crop Production Statistics Data for 2010 Version 2.0,
-Harvard Dataverse, V4\".  Users can also provide any other geographic dataset
-that represents host density.  c) Because the geohabnet package allows R users
-to provide maps of host density (as originally in Xing et al (2021)), host
-landscape density (representing the geographic distribution of either crops or
-wild species), or habitat distribution (such as host landscape density adjusted
-by climate suitability) as inputs, we propose the term habitat connectivity.  d)
-The geohabnet package allows R users to customize parameter values in the
-habitat connectivity analysis, facilitating context-specific (pathogen- or
-pest-specific) analyses.  e) The geohabnet package allows users to automatically
-visualize maps of the habitat connectivity of locations resulting from a
-sensitivity analysis across all customized parameter combinations.  The primary
-function is sean() and sensitivity analysis().  Most functions in geohabnet
-provide as three main outcomes: i) A map of mean habitat connectivity across
-parameters selected by the user, ii) a map of variance of habitat connectivity
-across the selected parameters, and iii) a map of the difference between the
-ranks of habitat connectivity and habitat density.  Each function can be used to
-generate these maps as final outcomes.  Each function can also provide
-intermediate outcomes, such as the adjacency matrices built to perform the
-analysis, which can be used in other network analysis.  Refer to article at
-<https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
-to see examples of each function and how to access each of these outcome types.
-To change parameter values, the file called parameters.yaml stores the
-parameters and their values, can be accessed using get_parameters() and set new
-parameter values with set_parameters().  Users can modify up to ten parameters.")
-    (license license:gpl3)))
-
 (define-public r-geogrid
   (package
     (name "r-geogrid")
@@ -22458,28 +22408,6 @@ dimensions from layers of geographic information related to each other.  It
 makes it easy to define relationships between layers and obtain the necessary
 data from them.")
     (license license:expat)))
-
-(define-public r-geodata
-  (package
-    (name "r-geodata")
-    (version "0.5-9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geodata" version))
-       (sha256
-        (base32 "052gwxl3b0xb93s2b8755cmyxsyk0gy8c25v0hj81cwypnfykbhs"))))
-    (properties `((upstream-name . "geodata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra))
-    (home-page "https://cran.r-project.org/package=geodata")
-    (synopsis "Download Geographic Data")
-    (description
-     "This package provides functions for downloading of geographic data for use in
-spatial analysis and mapping.  The package facilitates access to climate, crops,
-elevation, land use, soil, species occurrence, accessibility, administrative
-boundaries and other data.")
-    (license license:gpl3+)))
 
 (define-public r-geodadata
   (package
@@ -23710,6 +23638,30 @@ sets.  For more details see (Gagolewski et al.  2016
 implementation, including, amongst others, noise point detection, see the
 genieclust package.")
     (license license:gpl3+)))
+
+(define-public r-genfrn
+  (package
+    (name "r-genfrn")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genfrn" version))
+       (sha256
+        (base32 "13h8gy3axay9xmb2w98yhdsc66xczqs1f8qkakcyrbr8628mvwkr"))))
+    (properties `((upstream-name . "genfrn")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=genfrn")
+    (synopsis
+     "Generating Triangular and Trapezoidal Fuzzy Random Numbers via Uniform Distribution")
+    (description
+     "Triangular and trapezoidal fuzzy numbers are used to study fuzzy logic, fuzzy
+reasoning and approximating, fuzzy regression models, etc.  This package builds
+the generating function for triangular and trapezoidal fuzzy numbers based on
+Souliotis et al. (2022)<doi:10.3390/math10183350>.  They proposed a method for
+the construction of fuzzy numbers via a cumulative distribution function based
+on the possibility theory.")
+    (license license:gpl3)))
 
 (define-public r-genetit
   (package
@@ -28891,13 +28843,13 @@ fitness of strategies in each generation.")
 (define-public r-gamer
   (package
     (name "r-gamer")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gameR" version))
        (sha256
-        (base32 "0k4gsnlb4jc9nbvxjjqyllvn70a707pl1icc3dhc62gqychkaxyn"))))
+        (base32 "05bn53ryl48s2r212wqaxljimkgskyd4qxzc7algzbyvmalcg6rx"))))
     (properties `((upstream-name . "gameR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

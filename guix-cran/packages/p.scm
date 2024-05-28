@@ -7730,13 +7730,13 @@ transforming the PRN's in order to control the sample overlap.")
 (define-public r-prng
   (package
     (name "r-prng")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRNG" version))
        (sha256
-        (base32 "060y0d3kx1hymiki44b62mkgyyvlsccdr86lp014gavlwq37kqzx"))))
+        (base32 "1x1nv5pfz521jkwsnafc55d4mlkp5yfy3ywya7y8p1qjsj0bisfx"))))
     (properties `((upstream-name . "PRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PRNG")
@@ -10299,20 +10299,20 @@ models (glm) and local polynomial regression fittings (loess).")
 (define-public r-predhy-gui
   (package
     (name "r-predhy-gui")
-    (version "1.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy.GUI" version))
        (sha256
-        (base32 "0jxx6mqw0rll4idn92hgwqpj48kd155xl49iw3xwy33gqabg9gn7"))))
+        (base32 "05d15gw493c3rr88sdmrb48rscgksmfczyn3w9d33a9sa8il4gmc"))))
     (properties `((upstream-name . "predhy.GUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-shiny
-                             r-randomforest
                              r-predhy
                              r-pls
+                             r-lightgbm
                              r-htmltools
                              r-glmnet
                              r-foreach
@@ -10325,13 +10325,13 @@ models (glm) and local polynomial regression fittings (loess).")
      "Genomic Prediction of Hybrid Performance with Graphical User Interface")
     (description
      "This package performs genomic prediction of hybrid performance using eight GS
-methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, Elastic net, Random
-forest and XGBoost.  GBLUP: genomic best liner unbiased prediction, RKHS:
+methods including GBLUP, @code{BayesB}, RKHS, PLS, LASSO, Elastic net, XGBoost
+and @code{LightGBM}.  GBLUP: genomic best liner unbiased prediction, RKHS:
 reproducing kernel Hilbert space, PLS: partial least squares regression, LASSO:
 least absolute shrinkage and selection operator, XGBoost: extreme gradient
-boosting.  It also provides fast cross-validation and mating design scheme for
-training population (Xu S et al (2016) <doi:10.1111/tpj.13242>; Xu S (2017)
-<doi:10.1534/g3.116.038059>).")
+boosting, @code{LightGBM}: light gradient boosting machine.  It also provides
+fast cross-validation and mating design scheme for training population (Xu S et
+al (2016) <doi:10.1111/tpj.13242>; Xu S (2017) <doi:10.1534/g3.116.038059>).")
     (license license:gpl3)))
 
 (define-public r-predhy
@@ -16307,28 +16307,6 @@ the law of large numbers.  Details about the methods are available in Lin, Wang,
 and Hong (2022) <DOI:10.1007/s00180-022-01299-0>.")
     (license license:gpl2+)))
 
-(define-public r-poissonmt
-  (package
-    (name "r-poissonmt")
-    (version "0.3-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "poissonMT" version))
-       (sha256
-        (base32 "14qkc8qz3423b13gp6gsp8cbb1nv9wwjjfa4i9zc15qy5i99ha26"))))
-    (properties `((upstream-name . "poissonMT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-robcbi r-mass r-checkmate))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=poissonMT")
-    (synopsis "Robust M-Estimators Based on Transformations for Poisson Model")
-    (description
-     "R functions for the computation of Least Square based on transformation (L2T)
-and robust M-estimators based on transformations (MT-estimators) for Poisson
-regression models.")
-    (license license:gpl2+)))
-
 (define-public r-poissonbinomial
   (package
     (name "r-poissonbinomial")
@@ -20054,6 +20032,33 @@ approximately two million chess matches.  Also contains an Elo based method for
 multi-player games where the result is a placing or a score.  This includes
 zero-sum games such as poker and mahjong.")
     (license license:gpl3)))
+
+(define-public r-playerchart
+  (package
+    (name "r-playerchart")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PlayerChart" version))
+       (sha256
+        (base32 "1rvy8jq422c6yrx0wyvsrqkdvcffwn7lpca2k17yzwiidd5w8l1a"))))
+    (properties `((upstream-name . "PlayerChart")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-magrittr r-ggtext r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=PlayerChart")
+    (synopsis "Generate Pizza Chart: Player Stats 0-100")
+    (description
+     "Create an interactive pizza chart visualizing a specific player's statistics
+across various attributes in a sports dataset.  The chart is constructed based
+on input parameters: data', a dataframe containing player data for any sports;
+player_stats_col', a vector specifying the names of the columns from the
+dataframe that will be used to create slices in the pizza chart, with statistics
+ranging between 0 and 100; name_col', specifying the name of the column in the
+dataframe that contains the player names; and player_name', representing the
+specific player whose statistics will be visualized in the chart, serving as the
+chart title.")
+    (license license:expat)))
 
 (define-public r-play
   (package
@@ -26039,13 +26044,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1njc0y2pni834wj73cpvx40hw5v8ggnzmmalbrj0iw9zjn4729py"))))
+        (base32 "1xiv06yqja2jxh19m0fd90a083qdnq00jzl1xlddd5qv3m290bjk"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -26056,7 +26061,7 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
     (description
      "This package provides a thin wrapper over PLINK 2's core libraries which
 provides an R interface for reading .pgen files.  A minimal .pvar loader is also
-included.  Chang et al. (2015) <doi:10.1186/s13742-015-0047-8>.")
+included.  Chang et al. (2015) \\doi{10.1186/s13742-015-0047-8}.")
     (license license:lgpl3+)))
 
 (define-public r-pgee-mixed
@@ -31777,6 +31782,38 @@ parentheses or square brackets.")
      "In short, this package is a locator for cool, refreshing beverages.  It will
 find and return the nearest location where you can get a cold one.")
     (license license:expat)))
+
+(define-public r-pbox
+  (package
+    (name "r-pbox")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pbox" version))
+       (sha256
+        (base32 "037wry356n3z5z4ggd6k5yna778134vjagaii1r4yahg15ksp7gk"))))
+    (properties `((upstream-name . "pbox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-gamlss-dist
+                             r-gamlss
+                             r-data-table
+                             r-copula))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.r-project.org")
+    (synopsis "Exploring Multivariate Spaces with Probability Boxes")
+    (description
+     "Advanced statistical library offering a method to encapsulate and query the
+probability space of a dataset effortlessly using Probability Boxes (p-boxes).
+Its distinctive feature lies in the ease with which users can navigate and
+analyze marginal, joint, and conditional probabilities while taking into account
+the underlying correlation structure inherent in the data using copula theory
+and models.  A comprehensive explanation is available in the paper \"pbox:
+Exploring Multivariate Spaces with Probability Boxes\" to be published in the
+Journal of Statistical Software.")
+    (license license:gpl3)))
 
 (define-public r-pbo
   (package

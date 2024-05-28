@@ -6852,13 +6852,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "0pqghxvby1ppjg1qx3wigak997a4rr9lpkxdwp2nq5z277znnrbl"))))
+        (base32 "0i89fpi38cinjyzlypfwk5hafdrs36vw2kp3mm6v19g7gv3n9mw5"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (propagated-inputs (list r-restatapi r-data-table))
@@ -8637,6 +8637,30 @@ Australia's higher education system, as well as a range of relevant information.
  For more information, including the source of the data dictionary, see
 <http://heimshelp.education.gov.au/sites/heimshelp/dictionary/pages/data-element-dictionary>.")
     (license license:gpl3)))
+
+(define-public r-heimdall
+  (package
+    (name "r-heimdall")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "heimdall" version))
+       (sha256
+        (base32 "02lpyiphzyirmi6fl0l4k3vm5b3gvw1f8ha5mmsrkcnnvixakb2y"))))
+    (properties `((upstream-name . "heimdall")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-daltoolbox r-caret))
+    (home-page "https://github.com/cefet-rj-dal/heimdall")
+    (synopsis "Drift Adaptable Models")
+    (description
+     "By analyzing streaming datasets, it is possible to observe significant changes
+in the data distribution or models accuracy during their prediction (concept
+drift).  The goal of heimdall is to measure when concept drift occurs.  The
+package makes available several state-of-the-art methods.  It also tackles how
+to adapt models in a nonstationary context.  Some concept drifts methods are
+described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
+    (license license:expat)))
 
 (define-public r-heemod
   (package

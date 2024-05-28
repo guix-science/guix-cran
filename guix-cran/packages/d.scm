@@ -14078,13 +14078,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0kysgl97limvb4yg6sl64sd3rapjkldcxblmikp3h4jyny1wc1c1"))))
+        (base32 "0i19i65hacrpfr8zn644a0viparig4np07fs91f7xs6gh7z1yv4c"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -14113,13 +14113,13 @@ that may increase or decrease multiple times.")
 (define-public r-didmultiplegt
   (package
     (name "r-didmultiplegt")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegt" version))
        (sha256
-        (base32 "0msjpxh7ic8ail7i85g972c0d49m588wkch8qzrpq27xfhxvkxsd"))))
+        (base32 "07rky436q6bq9ag6ix5r4k7i4ahbifx89c2dv9isag634kva6pvm"))))
     (properties `((upstream-name . "DIDmultiplegt")))
     (build-system r-build-system)
     (propagated-inputs (list r-wooldridge

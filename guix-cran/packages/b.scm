@@ -8322,6 +8322,39 @@ system identifications, J. Biomol.  NMR. 32 (2005) 13â22.
 <doi:10.1007/s10858-005-1717-0>.")
     (license license:gpl3)))
 
+(define-public r-bmm
+  (package
+    (name "r-bmm")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bmm" version))
+       (sha256
+        (base32 "11fl9a0350602ipjzcwqh2fcbh1zhbachxb37wd4n25qaraqds6l"))))
+    (properties `((upstream-name . "bmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-matrixstats
+                             r-magrittr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-crayon
+                             r-brms))
+    (home-page "https://github.com/venpopov/bmm")
+    (synopsis "Easy and Accessible Bayesian Measurement Models Using 'brms'")
+    (description
+     "Fit computational and measurement models using full Bayesian inference.  The
+package provides a simple and accessible interface by translating complex
+domain-specific models into brms syntax, a powerful and flexible framework for
+fitting Bayesian regression models using Stan'.  The package is designed so that
+users can easily apply state-of-the-art models in various research fields, and
+so that researchers can use it as a new model development framework.
+References: Frischkorn and Popov (2023) <doi:10.31234/osf.io/umt57>.")
+    (license license:gpl2)))
+
 (define-public r-bmlm
   (package
     (name "r-bmlm")

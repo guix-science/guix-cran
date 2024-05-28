@@ -4089,13 +4089,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "1izw17wa59kk27bmbamb1nwcd4hhfn5p9hw3ismm48zxcxzz82cy"))))
+        (base32 "07p7bjh0jhg74csh094473dflpc1va4p45laxbdwv3hbxagk1zkx"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf

@@ -1828,16 +1828,16 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autonewsmd" version))
        (sha256
-        (base32 "08y9cslk506bc2nmrzmzln7927yhdzghsfkkldgx94cm4ly6jagy"))))
+        (base32 "1407vj22nl00i0zfy51m5j8bs8i9dlbs0vn5g7dw4klhn5iq2j1s"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-r6 r-magrittr r-git2r r-data-table))
+    (propagated-inputs (list r-r6 r-quarto r-magrittr r-git2r r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/kapsner/autonewsmd")
     (synopsis "Auto-Generate Changelog using Conventional Commits")
@@ -14366,6 +14366,33 @@ defined in Koenker and Machado (1999).  This is a special case of the skewed
 family of distributions available in Galarza et.al. (2017)
 <doi:10.1002/sta4.140> useful for quantile regression.")
     (license license:gpl2+)))
+
+(define-public r-alcyon
+  (package
+    (name "r-alcyon")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alcyon" version))
+       (sha256
+        (base32 "12pcx3aaqkf1fizb5m2577yqg0gdpic0h8cmjfb8qnbn199mgp1j"))))
+    (properties `((upstream-name . "alcyon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-sf r-rcpp r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=alcyon")
+    (synopsis "Spatial Network Analysis")
+    (description
+     "Interface package for sala', the spatial network analysis library from the
+@code{depthmapX} software application.  The R parts of the code are based on the
+rdepthmap package.  Allows for the analysis of urban and building-scale networks
+and provides metrics and methods usually found within the Space Syntax domain.
+Methods in this package are described by K. Al-Sayed, A. Turner, B. Hillier, S.
+Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (2004)
+<https://discovery.ucl.ac.uk/id/eprint/2651> \"Depthmap 4: a researcher's
+handbook\".")
+    (license license:gpl3)))
 
 (define-public r-albopictus
   (package

@@ -750,13 +750,13 @@ matrices and vectors, ROC and PR statistics.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usedthese" version))
        (sha256
-        (base32 "0frdjwqhxkvhahm22vvcyfr464i3mi10y1ynm3k98zypcgp0lkdx"))))
+        (base32 "0qzhydj0i6cg2w8qfgabx10vqfzkfhv7vq8qds6d624c3ayc653h"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -776,10 +776,9 @@ matrices and vectors, ROC and PR statistics.")
     (home-page "https://cgoo4.github.io/usedthese/")
     (synopsis "Summarises Package & Function Usage")
     (description
-     "Consistent with knitr syntax highlighting, usedthese adds a summary table of R
+     "Consistent with knitr syntax highlighting, usedthese adds a summary table of
 package & function usage to a Quarto document and enables aggregation of usage
-across a Quarto website.  Learn more about usedthese at
-<https://cgoo4.github.io/usedthese/>.")
+across a website.")
     (license license:expat)))
 
 (define-public r-usdm

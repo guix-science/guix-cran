@@ -5225,13 +5225,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.2.5")
+    (version "3.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "1yb8nfy83zpvaq03gnfhx36jn04lva7y4y16dcl65djrgrs17cqj"))))
+        (base32 "1sfy608n5drkf3alanfv6aaq66n8lmfqs9k5rrxpgbw36gpz2xv1"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10189,17 +10189,21 @@ diagnostics.")
 (define-public r-stlnpp
   (package
     (name "r-stlnpp")
-    (version "0.3.10")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stlnpp" version))
        (sha256
-        (base32 "1xhg3ksgdaazlp2k4ff9af6lv64acrskjbqn5z42qj0fvz91qr5a"))))
+        (base32 "1r80qzrvz5nmspark5xk59wi3r1kxjhrqpscwqrab9lnl7cal76s"))))
     (properties `((upstream-name . "stlnpp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-linnet
-                             r-spatstat-geom r-spatstat-explore r-spatstat))
+    (propagated-inputs (list r-spatstat-univar
+                             r-spatstat-random
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-spatstat))
     (home-page "https://cran.r-project.org/package=stlnpp")
     (synopsis "Spatio-Temporal Analysis of Point Patterns on Linear Networks")
     (description
@@ -14424,6 +14428,34 @@ regression parameters.  For details see Bainter, @code{McCauley}, Wager, and
 Losin (2020) Improving practices for selecting a subset of important predictors
 in psychology: An application to predicting pain, Advances in Methods and
 Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
+    (license license:gpl3)))
+
+(define-public r-sstvars
+  (package
+    (name "r-sstvars")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sstvars" version))
+       (sha256
+        (base32 "1ygvsb86v1q7pql6mnqdd3ldr9wkgmg343b830qxzg6mczyvrl8q"))))
+    (properties `((upstream-name . "sstvars")))
+    (build-system r-build-system)
+    (inputs (list lapack))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/saviviro/sstvars")
+    (synopsis
+     "Toolkit for Reduced Form and Structural Smooth Transition Vector Autoregressive Models")
+    (description
+     "Maximum likelihood estimation of models with various types of transition weight
+functions, conditional distributions, and identification methods.  Constrained
+estimation with various types of constraints is available.  See Heather
+Anderson, Farshid Vahid (1998) <doi:10.1016/S0304-4076(97)00076-6>, Helmut
+LÃ¼tkepohl, Aleksei @code{NetÅ¡unajev} (2017) <doi:10.1016/j.jedc.2017.09.001>,
+Markku Lanne, Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2403.14216>},
+Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2404.19707>}.")
     (license license:gpl3)))
 
 (define-public r-sstack
@@ -19314,13 +19346,13 @@ air temperature, and cloudiness.  Davis et al. (2017)
 (define-public r-splancs
   (package
     (name "r-splancs")
-    (version "2.01-44")
+    (version "2.01-45")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splancs" version))
        (sha256
-        (base32 "0wf1vr8ykcgfcvh4ajqpnpj2qa9l277n2qmnq5f95234npwnvm08"))))
+        (base32 "1lvn9gm2n7ic4cxz255jls33kkbblrdcka87v99apskz3pbg3k4b"))))
     (properties `((upstream-name . "splancs")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -25504,6 +25536,34 @@ conversion.  It supports any type of spherical projection to the plane defined
 by the mapproj package.")
     (license license:gpl3+)))
 
+(define-public r-spacoap
+  (package
+    (name "r-spacoap")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaCOAP" version))
+       (sha256
+        (base32 "1cj5avfsfzlb9jbyckpb2zjqkx9ny1msxcdcrcz7kr5njswyw55a"))))
+    (properties `((upstream-name . "SpaCOAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-laplacesdemon
+                             r-irlba))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feiyoung/SpaCOAP")
+    (synopsis
+     "High-Dimensional Spatial Covariate-Augmented Overdispersed Poisson Factor Model")
+    (description
+     "This package provides a spatial covariate-augmented overdispersed Poisson factor
+model is proposed to perform efficient latent representation learning method for
+high-dimensional large-scale spatial count data with additional covariates.")
+    (license license:gpl3)))
+
 (define-public r-spacetimebss
   (package
     (name "r-spacetimebss")
@@ -27390,6 +27450,29 @@ described by Hunt et al. (1987) <doi:10.1007/BF00260580>, de Ruiter et al.
 the food web as well as simulate food webs away from equilibrium and run
 decomposition experiments.")
     (license license:gpl3)))
+
+(define-public r-soilfda
+  (package
+    (name "r-soilfda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SoilFDA" version))
+       (sha256
+        (base32 "1zar9affa9cndr4m97fs7zhs9gz3y95k1xi0ci4m5hjqg00aiz7z"))))
+    (properties `((upstream-name . "SoilFDA")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SoilFDA")
+    (synopsis "Fractal Dimension Analysis of Soil Particle Size Distribution")
+    (description
+     "Function for the computation of fractal dimension based on mass of soil particle
+size distribution by Tyler & Wheatcraft (1992)
+<doi:10.2136/sssaj1992.03615995005600020005x>.  It also provides functions for
+calculation of mean weight and geometric mean diameter of particle size
+distribution by Perfect et al. (1992)
+<doi:10.2136/sssaj1992.03615995005600050012x>.")
+    (license license:gpl3+)))
 
 (define-public r-soildb
   (package
@@ -41112,13 +41195,13 @@ poorly predicted points.")
 (define-public r-shinymobile
   (package
     (name "r-shinymobile")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyMobile" version))
        (sha256
-        (base32 "1nsvqcv6bspmbgkjrw4ysm08g1d2qf68rh8bdk0kvc27shzyw33z"))))
+        (base32 "0n678q4rqf2fxv8mv683byd9zjl7hg6rlvycf3g519griksba5mn"))))
     (properties `((upstream-name . "shinyMobile")))
     (build-system r-build-system)
     (arguments
@@ -41139,19 +41222,19 @@ poorly predicted points.")
                                   '())))))))
     (propagated-inputs (list r-shiny
                              r-magrittr
+                             r-lifecycle
                              r-jsonlite
-                             r-httr
                              r-htmltools
                              r-gplots))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/RinteRface/shinyMobile")
     (synopsis "Mobile Ready 'shiny' Apps with Standalone Capabilities")
     (description
-     "Develop outstanding shiny apps for @code{iOS}', Android', desktop as well as
-beautiful shiny gadgets. @code{shinyMobile} is built on top of the latest
-Framework7 template <https://framework7.io>.  Discover 14 new input widgets
-(sliders, vertical sliders, stepper, grouped action buttons, toggles, picker,
-smart select, ...), 2 themes (light and dark), 12 new widgets (expandable cards,
+     "Develop outstanding shiny apps for @code{iOS} and Android as well as beautiful
+shiny gadgets. @code{shinyMobile} is built on top of the latest Framework7
+template <https://framework7.io>.  Discover 14 new input widgets (sliders,
+vertical sliders, stepper, grouped action buttons, toggles, picker, smart
+select, ...), 2 themes (light and dark), 12 new widgets (expandable cards,
 badges, chips, timelines, gauges, progress bars, ...) combined with the power of
 server-side notifications such as alerts, modals, toasts, action sheets, sheets
 (and more) as well as 3 layouts (single, tabs and split).")
@@ -44371,6 +44454,63 @@ and sparse input matrices are supported.  In addition, a general adaptive three
 operator splitting (ATOS) implementation is provided.")
     (license license:gpl3+)))
 
+(define-public r-sgraph
+  (package
+    (name "r-sgraph")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sgraph" version))
+       (sha256
+        (base32 "07kqgzdfhkmannx5kpnmm2hrw74ywpnbi9964628lk82pi9g8la9"))))
+    (properties `((upstream-name . "sgraph")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-stringi
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-jsonlite
+                             r-igraph
+                             r-htmlwidgets
+                             r-ggplot2
+                             r-cowplot))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://gitlab.com/thomaschln/sgraph")
+    (synopsis "Graph Visualization Using 'sigma.js'")
+    (description
+     "Interactive visualizations of graphs created with the igraph package using a
+htmlwidgets wrapper for the sigma.js network visualization library v2.4.0
+<https://www.sigmajs.org/>, enabling to display several thousands of nodes.
+While several R packages have been developed to interface sigma.js', all were
+developed for v1.x.x and none have migrated to v2.4.0 nor are they planning to.
+This package builds upon the @code{sigmaNet} package, and users familiar with it
+will recognize the similar design approach.  Two extensions have been added to
+the classic sigma.js visualizations by overriding the underlying
+@code{JavaScript} code, enabling to draw a frame around node labels, and to
+display labels on multiple lines by parsing line breaks.  Other additional
+functionalities that did not require overriding sigma.js code include toggling
+node visibility when clicked using a node attribute and highlighting specific
+edges based on connectivity to a specific set of nodes.  sigma.js is currently
+preparing a stable release v3.0.0, and this package plans to update to it when
+it is available.")
+    (license license:gpl3)))
+
 (define-public r-sgr
   (package
     (name "r-sgr")
@@ -46050,13 +46190,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.9.0")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "0fqmhhcwpa8ikp94qzxnl0pyp3mkjfp7hp8qwfinfjxvawnm26ph"))))
+        (base32 "1x1lay54jbfaxy5lniv1nbrsrqpn1zf4xli0q4b2j6kf8ggx0nx3"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
@@ -46075,7 +46215,8 @@ images/containers.")
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-plyr))
+    (inputs (list))
+    (propagated-inputs (list r-plyr r-cli))
     (native-inputs (list r-r-rsp r-knitr gfortran esbuild))
     (home-page "https://jiscah.github.io/")
     (synopsis "Pedigree Inference from SNPs")

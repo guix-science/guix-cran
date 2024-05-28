@@ -5844,6 +5844,31 @@ new relational operators useful for performing floating point number comparisons
 with a set tolerance.")
     (license license:gpl3)))
 
+(define-public r-fpcdpca
+  (package
+    (name "r-fpcdpca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FPCdpca" version))
+       (sha256
+        (base32 "0hrciisfnr3b0gs3szjy46fjl8mxpyclmv6ids5mq71spqzaxccp"))))
+    (properties `((upstream-name . "FPCdpca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsvd r-rdimtools r-matrixcalc))
+    (home-page "https://cran.r-project.org/package=FPCdpca")
+    (synopsis
+     "The FPCdpca Criterion on Distributed Principal Component Analysis")
+    (description
+     "We consider optimal subset selection in the setting that one needs to use only
+one data subset to represent the whole data set with minimum information loss,
+and devise a novel intersection-based criterion on selecting optimal subset,
+called as the FPC criterion, to handle with the optimal sub-estimator in
+distributed principal component analysis; That is, the FPCdpca.  The philosophy
+of the package is described in Guo G. (2020) <doi:10.1007/s00180-020-00974-4>.")
+    (license license:asl2.0)))
+
 (define-public r-fpcb
   (package
     (name "r-fpcb")
