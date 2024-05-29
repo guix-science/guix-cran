@@ -698,6 +698,29 @@ functions to calculate dynamics for stage-structured populations across sites.")
 convex hull: edges, ridges, facets, adjacencies.  Triangulation is optional.")
     (license license:gpl3)))
 
+(define-public r-cwt
+  (package
+    (name "r-cwt")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CWT" version))
+       (sha256
+        (base32 "1afa94694fyqm947ncp96sxf7wyn095a66hyw8xharb30jf1b6q7"))))
+    (properties `((upstream-name . "CWT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
+    (home-page "https://github.com/Antguz/CWT")
+    (synopsis "Continuous Wavelet Transformation for Spectroscopy")
+    (description
+     "Fast application of Continuous Wavelet Transformation ('CWT') on time series
+with special attention to spectroscopy.  It is written using data.table and C++
+language and in some functions it is possible to use parallel processing to
+speed-up the computation over samples.  Currently, only the second derivative of
+a Gaussian wavelet function is implemented.")
+    (license license:gpl3+)))
+
 (define-public r-cwot
   (package
     (name "r-cwot")
@@ -7942,13 +7965,13 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
 (define-public r-cpop
   (package
     (name "r-cpop")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpop" version))
        (sha256
-        (base32 "0f7rxyh8m6w45cja02mip91p72bjlygrc0rdggbls50l63w1qczj"))))
+        (base32 "082ny87ph3wz5kbp2i4yzf9g6r3bihbgfynv060fy6sv0xb9hxc1"))))
     (properties `((upstream-name . "cpop")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -7958,7 +7981,6 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
                              r-mathjaxr
                              r-ggplot2
                              r-crops))
-    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=cpop")
     (synopsis
      "Detection of Multiple Changes in Slope in Univariate Time-Series")
@@ -7967,7 +7989,9 @@ expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
 Fearnhead, Maidstone, and Letchford (2019) <doi:10.1080/10618600.2018.1512868>.
 This method finds the best continuous piecewise linear fit to data under a
 criterion that measures fit to data using the residual sum of squares, but
-penalizes complexity based on an L0 penalty on changes in slope.")
+penalizes complexity based on an L0 penalty on changes in slope.  Further
+information regarding the use of this package with detailed examples can be
+found in Fearnhead and Grose (2024) <doi:10.18637/jss.v109.i07>.")
     (license license:gpl2+)))
 
 (define-public r-cpncoverageanalysis
@@ -10990,6 +11014,39 @@ data to estimate the cosinor linear model as described in Tong (1976).  Methods
 are given to summarize the mean, amplitude and acrophase, to predict the mean
 annual outcome value, and to test the coefficients.")
     (license license:expat)))
+
+(define-public r-cosimmr
+  (package
+    (name "r-cosimmr")
+    (version "1.0.11")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cosimmr" version))
+       (sha256
+        (base32 "01nfqmnblw0hi7dsl01f4y1jpvdbxal38m2k22zbpszqb0rxyrfr"))))
+    (properties `((upstream-name . "cosimmr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-reshape2
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r2jags
+                             r-ggplot2
+                             r-ggnewscale
+                             r-checkmate
+                             r-bayesplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cosimmr")
+    (synopsis "Fast Fitting of Stable Isotope Mixing Models with Covariates")
+    (description
+     "Fast fitting of Stable Isotope Mixing Models in R. Allows for the inclusion of
+covariates.  Also has built-in summary functions and plot functions which allow
+for the creation of isospace plots.  Variational Bayes is used to fit these
+models, methods as described in: Tran et al., (2021)
+<doi:10.48550/@code{arXiv.2103.01327>}.")
+    (license license:gpl2+)))
 
 (define-public r-cosa
   (package
@@ -21008,6 +21065,28 @@ Carvalho, Henrik Molina & Rune Matthiesen, Scientific Reports
 <doi:10.1038/srep18826>.")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-cofid
+  (package
+    (name "r-cofid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cofid" version))
+       (sha256
+        (base32 "0nmfs34339immz9vc79jvwvpx9fpp0qp4zvsm3i8c5v0la603xxz"))))
+    (properties `((upstream-name . "cofid")))
+    (build-system r-build-system)
+    (home-page "<https://alrobles.github.io/cofid/>")
+    (synopsis "Copepod Fish Interaction Database")
+    (description
+     "This package provides a curated list of copepod-fish ecological interaction
+records.  It contains the taxonomy of the copepod and the fish and the
+publication from which the information was obtained.  This database contains
+only marine and brackish water fish species.  It excludes fish species that
+inhabit only freshwater.")
+    (license license:gpl3+)))
 
 (define-public r-coffee
   (package
@@ -36354,13 +36433,13 @@ robust and nonparametric methods.")
 (define-public r-ccamlrgis
   (package
     (name "r-ccamlrgis")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CCAMLRGIS" version))
        (sha256
-        (base32 "0fjc829q17fpa6h23lxj7z6fjppyj2l23hdci5mcxvsn3sx4g7d3"))))
+        (base32 "0ldgmkfjw16ncrjc1jglvq63zs7iwc67b9c4wxbrw8na344mvk94"))))
     (properties `((upstream-name . "CCAMLRGIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

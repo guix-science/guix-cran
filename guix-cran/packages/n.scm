@@ -2487,6 +2487,29 @@ known bounds (such as percentages that lie in [0,100].  These bounds are part of
 the input.")
     (license license:gpl2)))
 
+(define-public r-npdoseresponse
+  (package
+    (name "r-npdoseresponse")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npDoseResponse" version))
+       (sha256
+        (base32 "0gfr210xxq1lq4c60a1fzwjcqcs9m9jixlqlzy0mblbcab3br6h1"))))
+    (properties `((upstream-name . "npDoseResponse")))
+    (build-system r-build-system)
+    (home-page "https://github.com/zhangyk8/npDoseResponse/")
+    (synopsis "Nonparametric Estimation and Inference on Dose-Response Curves")
+    (description
+     "This package provides a novel integral estimator for estimating the causal
+effects with continuous treatments (or dose-response curves) and a localized
+derivative estimator for estimating the derivative effects.  The inference on
+the dose-response curve and its derivative is conducted via nonparametric
+bootstrap.  The reference paper is Zhang, Chen, and Giessing (2024)
+<doi:10.48550/@code{arXiv.2405.09003>}.")
+    (license license:expat)))
+
 (define-public r-npde
   (package
     (name "r-npde")
@@ -7101,13 +7124,13 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "0k279z2lm0dw5pkjj9s8dwg4wisbc29s5xff8hwafdiq0jnxngr4"))))
+        (base32 "1g25cqh3yybq9lxbxma3fd11jw1wgpnadxjx78sqqbzwx54xiawf"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -8474,27 +8497,29 @@ dedicated SCAN function.")
 (define-public r-nhppp
   (package
     (name "r-nhppp")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhppp" version))
        (sha256
-        (base32 "07arj7i9d51b7v0wk7dpvgy09rzyd3infybhj3x4ipcgp5zh18kj"))))
+        (base32 "0822xcv2yq6f12naphh6d29q0215nwamf342fji6nffj6flfhh8d"))))
     (properties `((upstream-name . "nhppp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstream r-lifecycle))
-    (home-page "https://github.com/bladder-ca/nhppp-fast")
+    (propagated-inputs (list r-rstream r-rcpp r-lifecycle))
+    (home-page "https://github.com/bladder-ca/nhppp")
     (synopsis "Simulating Nonhomogeneous Poisson Point Processes")
     (description
      "Simulates events from one dimensional nonhomogeneous Poisson point processes
-(NHPPPs).  Functions are based on three algorithms that provably sample from a
-target NHPPP: the time-transformation of a homogeneous Poisson process (of
-intensity one) via the inverse of the integrated intensity function (Cinlar E,
-\"Theory of stochastic processes\" (1975, ISBN:0486497996)); the generation of a
-Poisson number of order statistics from a fixed density function; and the
-thinning of a majorizing NHPPP via an acceptance-rejection scheme (Lewis PAW,
-Shedler, GS (1979) <doi:10.1002/nav.3800260304>).")
+(NHPPPs) as per Trikalinos and Sereda (2024,
+<doi:10.48550/@code{arXiv.2402.00358>}).  Functions are based on three
+algorithms that provably sample from a target NHPPP: the time-transformation of
+a homogeneous Poisson process (of intensity one) via the inverse of the
+integrated intensity function (Cinlar E, \"Theory of stochastic processes\" (1975,
+ISBN:0486497996)); the generation of a Poisson number of order statistics from a
+fixed density function; and the thinning of a majorizing NHPPP via an
+acceptance-rejection scheme (Lewis PAW, Shedler, GS (1979)
+<doi:10.1002/nav.3800260304>).")
     (license license:gpl3+)))
 
 (define-public r-nhpoisson
@@ -8624,13 +8649,13 @@ datasets.")
 (define-public r-nhdplustools
   (package
     (name "r-nhdplustools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nhdplusTools" version))
        (sha256
-        (base32 "0jyhm58hg3lzazpcv2jlwfbrrwxs5j2ivpnk58l72sh2aaz9zr6s"))))
+        (base32 "1wl1gcr3id7pg440rlw5sxvzcg41sjfwij41k0ac7xz1q4klzxqn"))))
     (properties `((upstream-name . "nhdplusTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

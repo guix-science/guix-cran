@@ -911,13 +911,13 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
 (define-public r-dynamite
   (package
     (name "r-dynamite")
-    (version "1.4.9")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamite" version))
        (sha256
-        (base32 "0azbknsxca7cgwvlnayfm5xdwa84swjd864i4c5lsmv5qnsshm6w"))))
+        (base32 "1gbhrswczs1lb7qwv2wgiapl5xax2z5indfmzvq8f4d45cd4wn2v"))))
     (properties `((upstream-name . "dynamite")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -928,6 +928,7 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
                              r-loo
                              r-glue
                              r-ggplot2
+                             r-ggforce
                              r-data-table
                              r-cli
                              r-checkmate))
@@ -938,11 +939,12 @@ single latent hierarchy over time.  Strauss & Holekamp (in press).")
     (description
      "Easy-to-use and efficient interface for Bayesian inference of complex panel
 (time series) data using dynamic multivariate panel models by Helske and Tikka
-(2022) <doi:10.31235/osf.io/mdwu5>.  The package supports joint modeling of
+(2024) <doi:10.1016/j.alcr.2024.100617>.  The package supports joint modeling of
 multiple measurements per individual, time-varying and time-invariant effects,
 and a wide range of discrete and continuous distributions.  Estimation of these
 dynamic multivariate panel models is carried out via Stan'.  For an in-depth
-tutorial of the package, see (Tikka and Helske, 2023) <arxiv:2302.01607>.")
+tutorial of the package, see (Tikka and Helske, 2024)
+<doi:10.48550/@code{arXiv.2302.01607>}.")
     (license license:gpl3+)))
 
 (define-public r-dynamicsdm
@@ -11483,13 +11485,13 @@ procedures directly from contingency tables.")
 (define-public r-discretedatasets
   (package
     (name "r-discretedatasets")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteDatasets" version))
        (sha256
-        (base32 "1dbladgcaixsdd9javna0m0xrdi1f114k4vnl3fh508r3k31vj2l"))))
+        (base32 "0jpjky99cfb7h3i244n16llmgkrkbavbmyhz181fxiaiwzs7z66c"))))
     (properties `((upstream-name . "DiscreteDatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-checkmate))
@@ -15309,6 +15311,39 @@ Guillas (2021) <doi:10.1137/20M1323771> and Ming, Williamson, & Guillas (2023)
 <doi:10.1080/00401706.2022.2124311> and Ming & Williamson (2023)
 <@code{arXiv:2306.01212>}.  To get started with the package, see
 <https://mingdeyu.github.io/dgpsi-R/>.")
+    (license license:expat)))
+
+(define-public r-dgp4lcf
+  (package
+    (name "r-dgp4lcf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DGP4LCF" version))
+       (sha256
+        (base32 "1v8wh52wcxs4adp1h9xplj5vych867scjrw32pqdczmiawi3q9d5"))))
+    (properties `((upstream-name . "DGP4LCF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-pheatmap
+                             r-mvtnorm
+                             r-gpfda
+                             r-factor-switching
+                             r-corrplot
+                             r-combinat
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=DGP4LCF")
+    (synopsis
+     "Dependent Gaussian Processes for Longitudinal Correlated Factors")
+    (description
+     "Functionalities for analyzing high-dimensional and longitudinal biomarker data
+to facilitate precision medicine, using a joint model of Bayesian sparse factor
+analysis and dependent Gaussian processes.  This paper illustrates the method in
+detail: J Cai, RJB Goudie, C Starr, BDM Tom (2023)
+<doi:10.48550/@code{arXiv.2307.02781>}.")
     (license license:expat)))
 
 (define-public r-dgof

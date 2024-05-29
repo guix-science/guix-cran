@@ -3949,13 +3949,13 @@ processes; periodic and stochastic time series analysis.")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astrochron" version))
        (sha256
-        (base32 "1wkc8314iyhkdg1y9gr1wzqj9h67n3kqq8wiiq9n2xmgly9b40sz"))))
+        (base32 "1vviz16yfqnqkvrb0sb7348a7xqvqi3cfdyxhlksm08g4rr3w8ar"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -10232,13 +10232,13 @@ visually explore the results of their simulations.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.6.1")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "0cdx9flxl9zhq38w9wpjfbrhl43xp0596n8dh4laphgpdim4mbd7"))))
+        (base32 "0rgb2glphf6f4vw1hrjxm1f2lhdsx1zag6r0bqgvmzkqipvp97zk"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10249,6 +10249,7 @@ visually explore the results of their simulations.")
                              r-pbapply
                              r-memuse
                              r-lubridate
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-doparallel
@@ -10355,6 +10356,33 @@ physico-chemical profile and atomic profile.  According to the obtained results,
 @code{AntAngioCOOL} reached to a satisfactory performance in anti-angiogenic
 peptide prediction on a benchmark non-redundant independent test dataset.")
     (license license:gpl2)))
+
+(define-public r-ansm5
+  (package
+    (name "r-ansm5")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ANSM5" version))
+       (sha256
+        (base32 "0yvkk33swrw51n7s8czwh3rvdiijnffv23lgm3y6i9rd03646z96"))))
+    (properties `((upstream-name . "ANSM5")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ANSM5")
+    (synopsis
+     "Functions and Data for the Book \"Applied Nonparametric Statistical Methods\", 5th Edition")
+    (description
+     "This package provides functions and data to accompany the 5th edition of the
+book \"Applied Nonparametric Statistical Methods\" (4th edition: Sprent & Smeeton,
+2024, ISBN:158488701X), the revisions from the 4th edition including a move from
+describing the output from a miscellany of statistical software packages to
+using R. While the output from many of the functions can also be obtained using
+a range of other R functions, this package provides functions in a unified
+setting and give output using both p-values and confidence intervals,
+exemplifying the book's approach of treating p-values as a guide to statistical
+importance and not an end product in their own right.")
+    (license license:gpl3+)))
 
 (define-public r-anscombiser
   (package

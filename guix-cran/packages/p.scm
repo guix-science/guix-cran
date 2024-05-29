@@ -10776,34 +10776,6 @@ hierarchical clustering is performed to determine the initial partition for the
 subsequent k-means clustering procedure.")
     (license license:expat)))
 
-(define-public r-prclust
-  (package
-    (name "r-prclust")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "prclust" version))
-       (sha256
-        (base32 "0p0sf8248aigs99py8mpzz743jnrf7n1nv5shag15arxz9yx7zn3"))))
-    (properties `((upstream-name . "prclust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=prclust")
-    (synopsis "Penalized Regression-Based Clustering Method")
-    (description
-     "Clustering is unsupervised and exploratory in nature.  Yet, it can be performed
-through penalized regression with grouping pursuit.  In this package, we provide
-two algorithms for fitting the penalized regression-based clustering (PRclust)
-with non-convex grouping penalties, such as group truncated lasso, MCP and SCAD.
-One algorithm is based on quadratic penalty and difference convex method.
-Another algorithm is based on difference convex and ADMM, called DC-ADD, which
-is more efficient.  Generalized cross validation and stability based method were
-provided to select the tuning parameters.  Rand index, adjusted Rand index and
-Jaccard index were provided to estimate the agreement between estimated cluster
-memberships and the truth.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-prcbench
   (package
     (name "r-prcbench")

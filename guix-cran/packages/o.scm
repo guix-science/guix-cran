@@ -687,6 +687,36 @@ available methods are HDoutliers() from the package HDoutliers',
 robustbase'.")
     (license license:gpl2+)))
 
+(define-public r-outliers-ts-oga
+  (package
+    (name "r-outliers-ts-oga")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outliers.ts.oga" version))
+       (sha256
+        (base32 "1v10v4nw7xkrranv4pa4xqw3cayb1lq2p3qda76w6vxxwfch32pi"))))
+    (properties `((upstream-name . "outliers.ts.oga")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slbdd
+                             r-robust
+                             r-parallelly
+                             r-gsarima
+                             r-forecast
+                             r-caret))
+    (home-page "https://cran.r-project.org/package=outliers.ts.oga")
+    (synopsis
+     "Efficient Outlier Detection in Heterogeneous Time Series Databases")
+    (description
+     "Programs for detecting and cleaning outliers in single time series and in time
+series from homogeneous and heterogeneous databases using an Orthogonal Greedy
+Algorithm (OGA) for saturated linear regression models.  The programs implement
+the procedures presented in the paper entitled \"Efficient outlier detection in
+heterogeneous time series databases\" by Pedro Galeano, Daniel @code{PeÃ±a} and
+Ruey S. Tsay (2024), working paper, Universidad Carlos III de Madrid.")
+    (license license:gpl3)))
+
 (define-public r-outlierensembles
   (package
     (name "r-outlierensembles")

@@ -10086,6 +10086,34 @@ the response is based on ordinary Kriging (with residual error) of the input.
 Estimation of smoothing parameters is performed by generalized cross-validation.")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
+(define-public r-bla
+  (package
+    (name "r-bla")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BLA" version))
+       (sha256
+        (base32 "06nfsn67vgmkm0rrbs2q56gswx4hj7swysaq6vizx6zsl0xp7rvr"))))
+    (properties `((upstream-name . "BLA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-mvtnorm r-mass r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://chawezimiti.github.io/BLA/")
+    (synopsis "Boundary Line Analysis")
+    (description
+     "Fits boundary line models to datasets as proposed by Webb (1972)
+<doi:10.1080/00221589.1972.11514472> and makes statistical inferences about
+their parameters.  Provides additional tools for testing datasets for evidence
+of boundary presence and selecting initial starting values for model
+optimization prior to fitting the boundary line models.  It also includes tools
+for conducting post-hoc analyses such as predicting boundary values and
+identifying the most limiting factor (Miti, Milne, Giller, Lark (2024)
+<doi:10.1016/j.fcr.2024.109365>).  This ensures a comprehensive analysis for
+datasets that exhibit upper boundary structures.")
+    (license license:gpl3+)))
+
 (define-public r-bktr
   (package
     (name "r-bktr")

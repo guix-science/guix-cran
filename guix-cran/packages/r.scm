@@ -562,13 +562,13 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1g9g36pjpmcsz3f5g7swwhq065x6cj5gaxwd2hgq3maqqxlhvlss"))))
+        (base32 "0r6j4wxkzxw4dabz2z1lssbw98mfk7sb64br01bmsqr1d19p5n1v"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -7117,18 +7117,19 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.26.0")
+    (version "0.28.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscorecard" version))
        (sha256
-        (base32 "0l0xx5q93na2fbl1gb11mv4xd514jmkhz95w4054pdmrq6smdc97"))))
+        (base32 "090n5sw7r6qhcryi41agnh65mqny01s1a0h7m9ksf8mzvwpqdqv5"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
                              r-purrr
-                             r-magrittr
                              r-lazyeval
                              r-jsonlite
                              r-httr

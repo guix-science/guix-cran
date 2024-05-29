@@ -8125,13 +8125,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.4.0.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1cg8dfpq9gzsw4s96nn9579p2q8b458bzf3kmbsmzs8pk10xa7c5"))))
+        (base32 "0wmf0vddb9w3sx2lsy9m80d7c52xz6sdmx3fdal8g8n898z1rk8h"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -18061,6 +18061,28 @@ ggplot2 plots which is otherwise not a trivial task to accomplish.")
 ggplot2 package and its extensions, along with other graphic elements such as
 guides and theme elements.  The filters are applied at render time and thus uses
 the exact pixel dimensions needed.")
+    (license license:expat)))
+
+(define-public r-ggfoundry
+  (package
+    (name "r-ggfoundry")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfoundry" version))
+       (sha256
+        (base32 "1wc96nqgag67xf77f3s7kvb23928apixmx6vr3aai2f91w42sc5p"))))
+    (properties `((upstream-name . "ggfoundry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-lifecycle r-grimport2 r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cgoo4/ggfoundry")
+    (synopsis "Shape Foundry & Geom for 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension that supports arbitrary hand-crafted
+colourable & fillable shapes.  New shapes may be feature requested via a Github
+issue.")
     (license license:expat)))
 
 (define-public r-ggfocus

@@ -16669,33 +16669,6 @@ Functional Data\".  Journal of Computational and Graphical Statistics.
 <doi:10.1080/10618600.2022.2070171>.")
     (license license:gpl3)))
 
-(define-public r-fdapde
-  (package
-    (name "r-fdapde")
-    (version "1.1-17")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdaPDE" version))
-       (sha256
-        (base32 "1h3v36mmlycs34z4a19sfjkr5xm8lq44qgv6jb908fy66m1fcsfa"))))
-    (properties `((upstream-name . "fdaPDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
-    (home-page "https://cran.r-project.org/package=fdaPDE")
-    (synopsis "Physics-Informed Spatial and Functional Data Analysis")
-    (description
-     "An implementation of regression models with partial differential
-regularizations, making use of the Finite Element Method.  The models
-efficiently handle data distributed over irregularly shaped domains and can
-comply with various conditions at the boundaries of the domain.  A priori
-information about the spatial structure of the phenomenon under study can be
-incorporated in the model via the differential regularization.  See Sangalli, L.
-M. (2021) <doi:10.1111/insr.12444> \"Spatial Regression With Partial Differential
-Equation Regularisation\" for an overview.  The release 1.1-9 requires R (>=
-4.2.0) to be installed on windows machines.")
-    (license license:gpl3)))
-
 (define-public r-fdapaceshiny
   (package
     (name "r-fdapaceshiny")

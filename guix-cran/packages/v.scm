@@ -2031,13 +2031,13 @@ and Pattern Recognition.  EMMCVPR 2015.  Lecture Notes in Computer Science, vol
 (define-public r-vltimecausality
   (package
     (name "r-vltimecausality")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VLTimeCausality" version))
        (sha256
-        (base32 "09fpjskdc3bz1qjqvcivk873jyl0mcjm4zds2xa6bd82ka8rb4b8"))))
+        (base32 "0pfgpl9xkwi0v0z1l58gb8s4gzz7r4k38270x8ifyk41l5vq8iwd"))))
     (properties `((upstream-name . "VLTimeCausality")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries r-rtransferentropy r-ggplot2 r-dtw))
@@ -3848,6 +3848,29 @@ fit researcher needs.")
 Viking (Variational Bayesian @code{VarIance} @code{tracKING}).  See J. de
 Vilmarest (2022) <https://theses.hal.science/tel-03716104/>.")
     (license license:lgpl3)))
+
+(define-public r-vigor
+  (package
+    (name "r-vigor")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VIGoR" version))
+       (sha256
+        (base32 "02s2xpx37aszny89pp22p5rkdf35xsbzn67rgsdxp531rswhzvcw"))))
+    (properties `((upstream-name . "VIGoR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=VIGoR")
+    (synopsis "Variational Bayesian Inference for Genome-Wide Regression")
+    (description
+     "Conducts linear regression using variational Bayesian inference, particularly
+optimized for genome-wide association mapping and whole-genome prediction which
+use a number of DNA markers as the explanatory variables.  Provides seven
+regression models which select the important variables (i.e., the variables
+related to response variables) among the given explanatory variables in
+different ways (i.e., model structures).")
+    (license license:expat)))
 
 (define-public r-viewscape
   (package
@@ -6233,6 +6256,28 @@ our newly developed algorithm Jieqi Tu and Jiehuan Sun (2023)
 <doi:10.1002/sim.9619>, which is based on Gaussian variational approximate
 inference and is computationally efficient.")
     (license license:gpl2)))
+
+(define-public r-vbel
+  (package
+    (name "r-vbel")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VBel" version))
+       (sha256
+        (base32 "06kmsjrf6al2f4217fh7vrzpf8k17qhllqmy3mziicxribhkq5d6"))))
+    (properties `((upstream-name . "VBel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://github.com/jlimrasc/VBel")
+    (synopsis
+     "Variational Bayes for Fast and Accurate Empirical Likelihood Inference")
+    (description
+     "Computes the Gaussian variational approximation of the Bayesian empirical
+likelihood posterior.  This is an implementation of the function found in Yu,
+W., & Bondell, H. D. (2023) <doi:10.1080/01621459.2023.2169701>.")
+    (license license:gpl3+)))
 
 (define-public r-vaxpmx
   (package

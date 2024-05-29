@@ -1206,13 +1206,13 @@ index and estimated component weights.")
 (define-public r-wql
   (package
     (name "r-wql")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wql" version))
        (sha256
-        (base32 "1s702gvwx49wky2ylh8q5h1vmh6sls2pq69w6jcijh1qs587dngs"))))
+        (base32 "1n28n7ijfypnqk7cwnvmkzhvp65sh7b00a9c2z72kdbxha0yn74w"))))
     (properties `((upstream-name . "wql")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))

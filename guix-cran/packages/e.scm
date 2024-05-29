@@ -12447,6 +12447,30 @@ samples.  This package uses @code{RcppArmadillo} for fast evaluation.  It is
 also possible to export the code to be used in other packages at C++ level.")
     (license license:expat)))
 
+(define-public r-emphatic
+  (package
+    (name "r-emphatic")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emphatic" version))
+       (sha256
+        (base32 "0v9h8q9l1zk9b23x9raqv9p93cvrnjijqphfz7px719zhi8104q5"))))
+    (properties `((upstream-name . "emphatic")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://coolbutuseless.github.io/package/emphatic/")
+    (synopsis "Exploratory Analysis of Tabular Data using Colour Highlighting")
+    (description
+     "This package provides tools for exploratory analysis of tabular data using
+colour highlighting.  Highlighting is displayed in any console supporting ANSI
+colours, and can be converted to HTML', typst', latex and SVG'.  quarto and
+rmarkdown rendering are directly supported.  It is also possible to add colour
+to regular expression matches and highlight differences between two arbitrary R
+objects.")
+    (license license:expat)))
+
 (define-public r-empeaksr
   (package
     (name "r-empeaksr")
@@ -18024,18 +18048,17 @@ implemented in @code{eCV} are described in Gonzalez-Reymundez et al., (2023)
 (define-public r-ecume
   (package
     (name "r-ecume")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ecume" version))
        (sha256
-        (base32 "093yx24hckgwvkdjgir33lkc7hhiv4is8a4a7fdcrp46iszx0b4i"))))
+        (base32 "0dgw1ddl4wzd50v04jyjrxdl92jwzb2cyahfkjfyayi0yg40p78h"))))
     (properties `((upstream-name . "Ecume")))
     (build-system r-build-system)
     (propagated-inputs (list r-transport
-                             r-spatstat-geom
-                             r-spatstat
+                             r-spatstat-univar
                              r-pbapply
                              r-magrittr
                              r-kernlab

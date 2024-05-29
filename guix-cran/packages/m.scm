@@ -10411,13 +10411,13 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
 (define-public r-mpcr
   (package
     (name "r-mpcr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPCR" version))
        (sha256
-        (base32 "1xx8mzn5124liil17pgqdilw05fzm4p9rhg66rx49ljgbj50943d"))))
+        (base32 "0hq6df8rz7hi1s4kpcxlx21kppn70fjki8wfy6gi8kna8bmayyf7"))))
     (properties `((upstream-name . "MPCR")))
     (build-system r-build-system)
     (inputs (list git cmake))
@@ -38867,6 +38867,35 @@ representation of a numerical variable for comparing the variable mean and
 standard deviation across subgroups.  See A. Marradi \"L'analisi monovariata\"
 (1993, ISBN: 9788820496876).")
     (license license:gpl3)))
+
+(define-public r-marquee
+  (package
+    (name "r-marquee")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marquee" version))
+       (sha256
+        (base32 "150rnn4pk8wc5h1gpb7grsyxxbf3xjjain03xfc0hnx8s6c3fjzg"))))
+    (properties `((upstream-name . "marquee")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-textshaping
+                             r-systemfonts
+                             r-rlang
+                             r-png
+                             r-jpeg
+                             r-glue
+                             r-cpp11
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://marquee.r-lib.org")
+    (synopsis "Markdown Parser and Renderer for R Graphics")
+    (description
+     "This package provides the mean to parse and render markdown text with grid along
+with facilities to define the styling of the text.")
+    (license license:expat)))
 
 (define-public r-marqlevalg
   (package

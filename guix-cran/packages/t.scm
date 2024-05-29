@@ -9966,6 +9966,27 @@ of regression averaging (Matloff (2017, ISBN: 9781498710916)).")
 that allow you to create new tour methods from R.")
     (license license:expat)))
 
+(define-public r-tournamentofchampions
+  (package
+    (name "r-tournamentofchampions")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "touRnamentofchampions" version))
+       (sha256
+        (base32 "0mkqqfai4gq5ccfhmxysvvhcx304z511cv210iam9p0ypnyh01lk"))))
+    (properties `((upstream-name . "touRnamentofchampions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse))
+    (home-page "https://github.com/celevitz/touRnamentofchampions")
+    (synopsis "Tournament of Champions Data")
+    (description
+     "Several datasets which describe the challenges and results of competitions in
+Tournament of Champions.  This data is useful for practicing data wrangling,
+graphing, and analyzing how each season of Tournament of Champions played out.")
+    (license license:expat)))
+
 (define-public r-touch
   (package
     (name "r-touch")
@@ -11373,13 +11394,13 @@ rmarkdown HTML documents.")
 (define-public r-tntpr
   (package
     (name "r-tntpr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tntpr" version))
        (sha256
-        (base32 "0ic95bbc91lih6wjmb61zg3m01qzbzkf5y03iy2wrac03yvlym88"))))
+        (base32 "09vxsv5f5inl8pdlz4lap4zfry90lb58h3bypvj9grd2n75qxsrf"))))
     (properties `((upstream-name . "tntpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11713,13 +11734,13 @@ al (2019) <doi:10.1093/bioinformatics/btz447>.")
 (define-public r-tmle
   (package
     (name "r-tmle")
-    (version "2.0.1")
+    (version "2.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmle" version))
        (sha256
-        (base32 "0xizk7bhh5a03qz1yx4a4l1jbgjwb4m9yi1v6s720s4rc9wg0lhr"))))
+        (base32 "1xl71md4rld9yk0z47qki1pg4mhgblmc9adqzwd2157dfvqlh94c"))))
     (properties `((upstream-name . "tmle")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner r-glmnet))
@@ -16236,13 +16257,13 @@ dice.  Experiments can be combined with the pipe-operator.")
 (define-public r-tidydensity
   (package
     (name "r-tidydensity")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TidyDensity" version))
        (sha256
-        (base32 "0sbfbrmyjhp8nc9ii3bg1jrdxhsmiigvv5hybww2vzp5ll2alfnv"))))
+        (base32 "1ncs8c0gwb54snn9xbndgjc9cgqf8hgqmr5ki2bsxad0vqgjl9vq"))))
     (properties `((upstream-name . "TidyDensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19451,18 +19472,18 @@ of each treatment.")
 (define-public r-textdata
   (package
     (name "r-textdata")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "textdata" version))
        (sha256
-        (base32 "1hz74sdhypf67w1p71igwaqdiv0w635lbdm4hvd0zdzhz1w1cxd7"))))
+        (base32 "0vvk2g3nb5szla0qlj5ld78x8a4533fqyz8ffljxy71kzaqd07h2"))))
     (properties `((upstream-name . "textdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-readr r-rappdirs r-fs))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/EmilHvitfeldt/textdata")
+    (home-page "https://emilhvitfeldt.github.io/textdata/")
     (synopsis "Download and Load Various Text Datasets")
     (description
      "This package provides a framework to download, parse, and store text datasets on
@@ -20254,27 +20275,31 @@ univariate procedure.  See Marques, Diago, Norouzirad, Bispo (2023)
 (define-public r-testgenerator
   (package
     (name "r-testgenerator")
-    (version "0.2.5")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGenerator" version))
        (sha256
-        (base32 "0gx6s8s9dqjpinkifmgwiqry15pl8kr56yjakaisa1fwdsqj2jzp"))))
+        (base32 "15jgcknxdc1nh3325rzlax3q69dgfxb2a3xm2bzpi7fb7ryv5grz"))))
     (properties `((upstream-name . "TestGenerator")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
+    (propagated-inputs (list r-withr
+                             r-tibble
+                             r-testthat
+                             r-rlang
                              r-readxl
+                             r-readr
                              r-jsonlite
                              r-glue
-                             r-fs
+                             r-ggplot2
                              r-duckdb
                              r-dplyr
                              r-dbi
+                             r-cli
                              r-checkmate
                              r-cdmconnector))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/darwin-eu-dev/TestGenerator")
+    (home-page "https://github.com/darwin-eu/TestGenerator")
     (synopsis "Integration Unit Tests for Pharmacoepidemiological Studies")
     (description
      "Push a sample population for unit testing on data mapped to the Observational

@@ -25981,13 +25981,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.6.2")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "15db2zdy90kbc4qx5wcnx90ks9ijc8c1znz4a6rkq16sf12p39jd"))))
+        (base32 "1d865daz5ylbcklb67yqwjflw5pv16rgyvjqxlwnn2knkxhm6m92"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31443,27 +31443,27 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slsedesign
   (package
     (name "r-slsedesign")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLSEdesign" version))
        (sha256
-        (base32 "14jwp0cp8zq5xsc80bdyqfj1l7prb47f0iali9jmwvaxpcqq9s6k"))))
+        (base32 "1ksxvlsfb965vncl8d94r5rd982smbi7v78v6jxkzjny7lv4n8jv"))))
     (properties `((upstream-name . "SLSEdesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-pracma r-cvxr))
+    (propagated-inputs (list r-tibble r-cvxr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SLSEdesign")
+    (home-page "https://github.com/chikuang/SLSEdesign")
     (synopsis
      "Optimal Regression Design under the Second-Order Least Squares Estimator")
     (description
-     "With given inputs that includes number of points, design space, measure
-skewness, models and parameter value, this package calculates the objective
-value, optimal designs and plot the equivalence theory under A- and D-optimal
-criteria under the second-order Least squares estimator.  This package is based
-on the paper \"Properties of optimal regression designs under the second-order
-least squares estimator\" by Chi-Kuang Yeh and Julie Zhou (2021)
+     "With given inputs that include number of points, discrete design space, a
+measure of skewness, models and parameter value, this package calculates the
+objective value, optimal designs and plot the equivalence theory under A- and
+D-optimal criteria under the second-order Least squares estimator.  This package
+is based on the paper \"Properties of optimal regression designs under the
+second-order least squares estimator\" by Chi-Kuang Yeh and Julie Zhou (2021)
 <doi:10.1007/s00362-018-01076-6>.")
     (license license:gpl3)))
 
@@ -46190,13 +46190,13 @@ images/containers.")
 (define-public r-sequoia
   (package
     (name "r-sequoia")
-    (version "2.11.1")
+    (version "2.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sequoia" version))
        (sha256
-        (base32 "1x1lay54jbfaxy5lniv1nbrsrqpn1zf4xli0q4b2j6kf8ggx0nx3"))))
+        (base32 "09ji88hylic73m23gq24m9fp2zqlfz06xypd8sajj2k6q8105nbn"))))
     (properties `((upstream-name . "sequoia")))
     (build-system r-build-system)
     (arguments
