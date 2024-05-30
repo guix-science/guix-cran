@@ -16590,13 +16590,13 @@ scaffolds from low-depth sequencing data.")
 (define-public r-bevimed
   (package
     (name "r-bevimed")
-    (version "5.8")
+    (version "5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeviMed" version))
        (sha256
-        (base32 "12ngw3b05mqsf95svvkk5s8w0fs1yfbpbfk8x9a9v2yva5n65y7a"))))
+        (base32 "0brima71g7x51zd1ifbgw54mnamjmm2wr8rrcnkzdy0q8wcnvgqj"))))
     (properties `((upstream-name . "BeviMed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrix))
@@ -21406,13 +21406,13 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "0nnj97j6i2hp9rldrfz207wmyn8rsyvjc5c14507yl1paayf3l85"))))
+        (base32 "11gmav4cb89fmlpwg387sik3fllvscgn778c5smwnk5lp5sl430j"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -21423,9 +21423,11 @@ using the algorithms summarized in Makalic and Schmidt (2016)
      "This package provides methods for probabilistic reconciliation of hierarchical
 forecasts of time series.  The available methods include analytical Gaussian
 reconciliation (Corani et al., 2021) <doi:10.1007/978-3-030-67664-3_13>, MCMC
-reconciliation of count time series (Corani et al., 2022)
-<doi:10.48550/@code{arXiv.2207.09322>}, Bottom-Up Importance Sampling (Zambon et
-al., 2022) <doi:10.48550/@code{arXiv.2210.02286>}.")
+reconciliation of count time series (Corani et al., 2024)
+<doi:10.1016/j.ijforecast.2023.04.003>, Bottom-Up Importance Sampling (Zambon et
+al., 2024) <doi:10.1007/s11222-023-10343-y>, methods for the reconciliation of
+mixed hierarchies (Mix-Cond and TD-cond) (Zambon et al., 2024.  The 40th
+Conference on Uncertainty in Artificial Intelligence, accepted).")
     (license license:lgpl3+)))
 
 (define-public r-bayesqr
@@ -26142,6 +26144,48 @@ data and web metrics in general.")
 syntax which supports multiple inheritances and incorporates a python'-like
 method resolution order.")
     (license license:expat)))
+
+(define-public r-banam
+  (package
+    (name "r-banam")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BANAM" version))
+       (sha256
+        (base32 "0k04d8ssfg078w52paj323bflzlbk5k0r17c4xl1xs2g6saa0iyn"))))
+    (properties `((upstream-name . "BANAM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmvtnorm
+                             r-sna
+                             r-rarpack
+                             r-psych
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-matrix
+                             r-extradistr
+                             r-bfpack
+                             r-bain))
+    (home-page "https://cran.r-project.org/package=BANAM")
+    (synopsis "Bayesian Analysis of the Network Autocorrelation Model")
+    (description
+     "The network autocorrelation model (NAM) can be used for studying the degree of
+social influence regarding an outcome variable based on one or more known
+networks.  The degree of social influence is quantified via the network
+autocorrelation parameters.  In case of a single network, the Bayesian methods
+of Dittrich, Leenders, and Mulder (2017) <DOI:10.1016/j.socnet.2016.09.002> and
+Dittrich, Leenders, and Mulder (2019) <DOI:10.1177/0049124117729712> are
+implemented using a normal, flat, or independence Jeffreys prior for the network
+autocorrelation.  In the case of multiple networks, the Bayesian methods of
+Dittrich, Leenders, and Mulder (2020) <DOI:10.1177/0081175020913899> are
+implemented using a multivariate normal prior for the network autocorrelation
+parameters.  Flat priors are implemented for estimating the coefficients.  For
+Bayesian testing of equality and order-constrained hypotheses, the default Bayes
+factor of Gu, Mulder, and Hoijtink, (2018) <DOI:10.1111/bmsp.12110> is used with
+the posterior mean and posterior covariance matrix of the NAM parameters based
+on flat priors as input.")
+    (license license:gpl3+)))
 
 (define-public r-bamp
   (package

@@ -3648,13 +3648,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "1pxn4375jyh27wg01p92hids1x1x1mq4hy25s5z09z7s62sfp6xw"))))
+        (base32 "08ficbw2bwc7pk5gcis6q6ghm7ivs47j5x3bjw4grrbr1jwssy18"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14433,13 +14433,13 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
 (define-public r-sstvars
   (package
     (name "r-sstvars")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sstvars" version))
        (sha256
-        (base32 "1ygvsb86v1q7pql6mnqdd3ldr9wkgmg343b830qxzg6mczyvrl8q"))))
+        (base32 "16ans039cx5kj0l1l8108jfplgz4mq5bbqhixks2dqmlsn5qn34m"))))
     (properties `((upstream-name . "sstvars")))
     (build-system r-build-system)
     (inputs (list lapack))
@@ -14449,13 +14449,17 @@ Practices in Psychological Science 3(1), 66-80 <DOI:10.1177/2515245919885617>.")
     (synopsis
      "Toolkit for Reduced Form and Structural Smooth Transition Vector Autoregressive Models")
     (description
-     "Maximum likelihood estimation of models with various types of transition weight
-functions, conditional distributions, and identification methods.  Constrained
-estimation with various types of constraints is available.  See Heather
-Anderson, Farshid Vahid (1998) <doi:10.1016/S0304-4076(97)00076-6>, Helmut
-LÃ¼tkepohl, Aleksei @code{NetÅ¡unajev} (2017) <doi:10.1016/j.jedc.2017.09.001>,
-Markku Lanne, Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2403.14216>},
-Savi Virolainen (2024) <doi:10.48550/@code{arXiv.2404.19707>}.")
+     "Maximum likelihood estimation of smooth transition vector autoregressive models
+with various types of transition weight functions, conditional distributions,
+and identification methods.  Constrained estimation with various types of
+constraints is available.  Residual based model diagnostics, forecasting,
+simulations, and calculation of impulse response functions, generalized impulse
+response functions, and generalized forecast error variance decompositions.  See
+Heather Anderson, Farshid Vahid (1998) <doi:10.1016/S0304-4076(97)00076-6>,
+Helmut LÃ¼tkepohl, Aleksei @code{NetÅ¡unajev} (2017)
+<doi:10.1016/j.jedc.2017.09.001>, Markku Lanne, Savi Virolainen (2024)
+<doi:10.48550/@code{arXiv.2403.14216>}, Savi Virolainen (2024)
+<doi:10.48550/@code{arXiv.2404.19707>}.")
     (license license:gpl3)))
 
 (define-public r-sstack
@@ -22576,19 +22580,20 @@ straightforward, fast, and flexible.")
 (define-public r-spatialtime
   (package
     (name "r-spatialtime")
-    (version "1.3.4-3")
+    (version "1.3.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialTIME" version))
        (sha256
-        (base32 "0ya7kzi79c3nimx6cjki76g5dzlwi49zczd3wmn25jcxjxknr6da"))))
+        (base32 "1c5iq2dg8qiq59sqpjj928hxpfyybs7q0pz98vh1f6333h6rqjyb"))))
     (properties `((upstream-name . "spatialTIME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-spatstat-univar
                              r-spatstat-geom
                              r-spatstat-explore
                              r-scales
@@ -25340,6 +25345,34 @@ non-zero elements.  Documentation is provided in Gerber, Moesinger and Furrer
 (2017) <doi:10.1016/j.cageo.2016.11.015>.")
     (license (list license:lgpl2.0 license:bsd-3))))
 
+(define-public r-spagmix
+  (package
+    (name "r-spagmix")
+    (version "0.4-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spagmix" version))
+       (sha256
+        (base32 "1vy951y7c1dabykqiij56qa56hc2lqahrav80698hpjbmxcr3w5f"))))
+    (properties `((upstream-name . "spagmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
+                             r-spatstat
+                             r-sparr
+                             r-mvtnorm
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=spagmix")
+    (synopsis
+     "Artificial Spatial and Spatio-Temporal Densities on Bounded Windows")
+    (description
+     "Simple utilities to design and generate density functions on bounded regions in
+space and space-time, and simulate independent, identically distributed data
+therefrom.  See Davies & Lawson (2019) <doi:10.1080/00949655.2019.1575066> for
+example.")
+    (license license:gpl2+)))
+
 (define-public r-spaero
   (package
     (name "r-spaero")
@@ -25567,13 +25600,13 @@ high-dimensional large-scale spatial count data with additional covariates.")
 (define-public r-spacetimebss
   (package
     (name "r-spacetimebss")
-    (version "0.3-0")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaceTimeBSS" version))
        (sha256
-        (base32 "1mxaf1w4476j14dh9rd8z83y0vfysrzhvscmg93311dqv8iw22qw"))))
+        (base32 "04gh8qcv949s9h94dydmj2bnipih8wnv6ml7iczqmjqich1i272m"))))
     (properties `((upstream-name . "SpaceTimeBSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-jade))
@@ -28197,13 +28230,13 @@ Karimnezhad, A. and Perkins, T. J. (2024) <doi:10.1038/s41598-024-51958-z>.")
 (define-public r-snvecr
   (package
     (name "r-snvecr")
-    (version "3.9.3")
+    (version "3.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snvecR" version))
        (sha256
-        (base32 "14aja0azla95d1p3ikk7m2cr6xrffr99k8ys7a11fqn5i7i8kryk"))))
+        (base32 "1z383bbhbpz0hx3biwlh4dzzc0hmjqzka351xn572sb2pycxrgbb"))))
     (properties `((upstream-name . "snvecR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -29310,28 +29343,28 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "1s2m2566ak6v0y9x9j24g8hsya106x1xhgxwsldppfjaaj6l3v0j"))))
+        (base32 "1cn4sv7a7gra2b7xwkwjglaygrrcd9b6mdh00dgq3mpf0b8rllvg"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-tibble
-                             r-sdamr
+                             r-rlang
                              r-pwr
                              r-patchwork
                              r-hmisc
                              r-ggpubr
                              r-ggplot2
-                             r-gghalves
                              r-dplyr
                              r-cowplot))
     (home-page "https://smin95.github.io/dataviz/")
-    (synopsis "Creating and Annotating a Composite Plot in 'ggplot2'")
+    (synopsis
+     "Creating Standalone and Composite Plots in 'ggplot2' for Publications")
     (description
      "This package provides functions for creating and annotating a composite plot in
 ggplot2'.  Offers background themes and shortcut plotting functions that produce
@@ -31443,16 +31476,16 @@ likelihood.  Biometrics <doi:10.1111/biom.13366>.")
 (define-public r-slsedesign
   (package
     (name "r-slsedesign")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLSEdesign" version))
        (sha256
-        (base32 "1ksxvlsfb965vncl8d94r5rd982smbi7v78v6jxkzjny7lv4n8jv"))))
+        (base32 "09ng145z98xh92fddi76g7grwg77y08zyqa8z1hy4lx1z0x5i5g7"))))
     (properties `((upstream-name . "SLSEdesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-cvxr))
+    (propagated-inputs (list r-cvxr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/chikuang/SLSEdesign")
     (synopsis
@@ -42344,13 +42377,13 @@ build Graph model like node or edge with customized attributes for R.
 (define-public r-shinycox
   (package
     (name "r-shinycox")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCox" version))
        (sha256
-        (base32 "1fl2dj3568x7s47njz2lgnwr12s72mny4wi5gs99wm66mhzi5bf3"))))
+        (base32 "055v9mxy3z0ks5fvfqs1qf7cb8mavxd2p55790ndj3k04vf6mwd2"))))
     (properties `((upstream-name . "shinyCox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-shiny))
@@ -42363,7 +42396,7 @@ application to a directory specified by the user.  The shiny application
 displays predicted survival curves based on user input, and contains none of the
 original data used to create the Cox model or models.  The goal is towards
 visualization and presentation of predicted survival curves.")
-    (license license:expat)))
+    (license license:lgpl3+)))
 
 (define-public r-shinycohortbuilder
   (package
@@ -43633,17 +43666,16 @@ individual SAR studies; as described in Solymos and Lele (2012)
 (define-public r-sharpshootr
   (package
     (name "r-sharpshootr")
-    (version "2.3")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sharpshootR" version))
        (sha256
-        (base32 "1zdkvy8qzps3vynhhc9x157cxf0zjs4ixg1k8ij1xcba6bbcf1yx"))))
+        (base32 "1cvq2wh05dkaijkmwm20bs7xcmcv0xwv1gcf535xnd9gkzpy8xdr"))))
     (properties `((upstream-name . "sharpshootR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-stringi
+    (propagated-inputs (list r-stringi
                              r-soildb
                              r-scales
                              r-reshape2
@@ -51670,13 +51702,13 @@ viewer pane during their execution.")
 (define-public r-sdmtmb
   (package
     (name "r-sdmtmb")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdmTMB" version))
        (sha256
-        (base32 "03qxi9yd6hxb52k5k8xfd27clf48jgncilw62asvzhs90jg6yckn"))))
+        (base32 "0v2kmyppax5f1g1jji7l2m6v49kxj65r81giv84hnkwmcqdzsic8"))))
     (properties `((upstream-name . "sdmTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -51702,7 +51734,7 @@ viewer pane during their execution.")
 Mixed Effect Models) using TMB', fmesher', and the SPDE (Stochastic Partial
 Differential Equation) Gaussian Markov random field approximation to Gaussian
 random fields.  One common application is for spatially explicit species
-distribution models (SDMs).  See Anderson et al. (2022)
+distribution models (SDMs).  See Anderson et al. (2024)
 <doi:10.1101/2022.03.24.485545>.")
     (license license:gpl3)))
 
@@ -52991,19 +53023,19 @@ use with Rscript'.")
 (define-public r-screenshot
   (package
     (name "r-screenshot")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "screenshot" version))
        (sha256
-        (base32 "14mkm5nsnyxvfzlq2gs9m88xgsvqwjra2j9ax1fx6wya970a1skd"))))
+        (base32 "16b1dzagy92jk1y1dymq6r2yzri3lynaj9a2bjqqjn0bh21aqsxr"))))
     (properties `((upstream-name . "screenshot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-stringr
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-imager
                              r-fs
                              r-dplyr))
@@ -53518,13 +53550,13 @@ reconstructed trajectory, as well as nice visualisation tools.  Cannoodt et al.
 (define-public r-scorpion
   (package
     (name "r-scorpion")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCORPION" version))
        (sha256
-        (base32 "1wixh89b591kwkncm2kbl1piai64wgnbfr106ylwlqwhj4a5xhjg"))))
+        (base32 "0bkhg3y7irbigy14l9a747032ljhssvgcj1gdqs07p76k0x6fv5y"))))
     (properties `((upstream-name . "SCORPION")))
     (build-system r-build-system)
     (propagated-inputs (list r-rhpcblasctl

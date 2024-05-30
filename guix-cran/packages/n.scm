@@ -4113,13 +4113,13 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "008lxg0n09alrv07i96crs430q6zvg5siasyqrfmaahq7cclsynn"))))
+        (base32 "08yyh7jwlqfxprwrs2f3pgjzlii66p98ixnd5r2jliqdzxbx1ciy"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -7028,13 +7028,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "0w6y80ih5fj9s0in46wgdwfy479pnv4r8k5l722kzkn70wr14gx6"))))
+        (base32 "0n0crjmb5mwnrq52hf9hwi36ggvwrpyxsr9gm608dwwxky8zmrwg"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgxr
@@ -7083,13 +7083,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "2.0.9")
+    (version "2.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "154i98p0zavl5jl7rrincxrchrzd52454ma2jd2cjxhns7nwz3c5"))))
+        (base32 "03k8f6v6qqgbl8ngga0n6xyx2kz98xfv6kvi7rad9n90fpdqiaxl"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine

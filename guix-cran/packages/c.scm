@@ -1850,6 +1850,30 @@ are running in a background job.  Parallel computing is also easier with the
 workers parameter.")
     (license license:expat)))
 
+(define-public r-curricularanalytics
+  (package
+    (name "r-curricularanalytics")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CurricularAnalytics" version))
+       (sha256
+        (base32 "17hgdiwbr2pp5f51091l61qjl4rdl3qp5d417zxj4024sh93l21m"))))
+    (properties `((upstream-name . "CurricularAnalytics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork r-igraph r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Danyulll/CurricularAnalytics")
+    (synopsis "Exploring and Analyzing Academic Curricula")
+    (description
+     "This package provides an implementation of âCurricular Analyticsâ, a
+framework for analyzing and quantifying the complexity of academic curricula.
+Curricula are modelled as directed acyclic graphs and analytics are provided
+based on path lengths and edge density.  This work directly comes from Heileman
+et al. (2018) <doi:10.48550/@code{arXiv.1811.09676>}.")
+    (license license:expat)))
+
 (define-public r-currentsurvival
   (package
     (name "r-currentsurvival")
@@ -3725,13 +3749,13 @@ Rao, and Junho Yang.")
 (define-public r-csodata
   (package
     (name "r-csodata")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csodata" version))
        (sha256
-        (base32 "02yi96a3zhradw5kncfngav1ma3pkjn7y638wc4z7818ykxx62m6"))))
+        (base32 "11sgkf6xy3wh73yqhcjcpif9w73026rmiwm5vcgm21fg9fl4hyfk"))))
     (properties `((upstream-name . "csodata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3745,7 +3769,7 @@ Rao, and Junho Yang.")
                              r-httr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=csodata")
+    (home-page "https://github.com/CSOIreland/csodata")
     (synopsis "Download Data from the CSO 'PxStat' API")
     (description
      "Imports @code{PxStat} data in JSON-stat format and (optionally) reshapes it into

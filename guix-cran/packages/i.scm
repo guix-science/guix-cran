@@ -13505,32 +13505,6 @@ to characteristics of independent rainfall events.  Adams B, Papa F (2000)
 Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
     (license license:gpl3)))
 
-(define-public r-iemisctext
-  (package
-    (name "r-iemisctext")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemisctext" version))
-       (sha256
-        (base32 "10p7aws8lhspwkkhp9fhaiq32nikd5kghzkh8nfk3y7bwv4frlln"))))
-    (properties `((upstream-name . "iemisctext")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemisctext")
-    (synopsis "Irucka Embry's Miscellaneous Text Collection")
-    (description
-     "The eclectic collection includes the following written pieces: \"Appeal to
-Womanhood Throughout the World\" By Julia Ward Howe, \"The War Prayer\" By Mark
-Twain, \"War Is A Racket\" By Major General Smedley Butler, \"The Mask of Anarchy:
-Written on the Occasion of the Massacre at Manchester\" By Percy Bysshe Shelley,
-\"Connect the D.O.T.S.\" By Obiora Embry, \"Untitled: Climate Strange\" By Irucka
-Ajani Embry, and \"Untitled: Us versus Them or People Screwing over Other People
-(as we all live on one Earth and there is no us versus them in the actual
-Ultimate Reality}\" By Irucka Ajani Embry.")
-    (license license:gpl3+)))
-
 (define-public r-iemiscdata
   (package
     (name "r-iemiscdata")

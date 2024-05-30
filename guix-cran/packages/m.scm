@@ -13185,13 +13185,13 @@ simplified, and smoothed in some other software prior to uploading into R.")
 (define-public r-mokken
   (package
     (name "r-mokken")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mokken" version))
        (sha256
-        (base32 "1lm5wjczk6ibma3jxvj8pnc7n7zdb40sn692w958p7q6xmqd25nd"))))
+        (base32 "0jnc3gsa4qfl4f6pg42m3mqncz0dgmdlx5jwhr0ck4gy02rpjv59"))))
     (properties `((upstream-name . "mokken")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-polca))
@@ -15866,27 +15866,6 @@ more easily read, understood, and serviced.")
     (description
      "Compute similarities and distances between marked point processes.")
     (license license:gpl2)))
-
-(define-public r-mmpf
-  (package
-    (name "r-mmpf")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mmpf" version))
-       (sha256
-        (base32 "1w1ll1l7yzwb1wmlrcfpgqyzni7yb20kxy422y867hx2ndxlfwpz"))))
-    (properties `((upstream-name . "mmpf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-data-table r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mmpf")
-    (synopsis "Monte-Carlo Methods for Prediction Functions")
-    (description
-     "Marginalizes prediction functions using Monte-Carlo integration and computes
-permutation importance.")
-    (license license:expat)))
 
 (define-public r-mmpca
   (package

@@ -25946,16 +25946,16 @@ packages.  Gruber et al. (2018) <doi:10.1111/1755-0998.12745>.  Mijangos et al.
 (define-public r-dartr-data
   (package
     (name "r-dartr-data")
-    (version "1.0.2")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.data" version))
        (sha256
-        (base32 "0gi6hgvfvh1hp60fvmij2r4fgv1qigs2biw2hw05rbl55xv93ni5"))))
+        (base32 "179nqwnkkkjw3c2a7z3gw4d37122fnidnxrxi05sh62aqmjlw5ip"))))
     (properties `((upstream-name . "dartR.data")))
     (build-system r-build-system)
-    (propagated-inputs (list r-adegenet))
+    (propagated-inputs (list r-crayon r-adegenet))
     (home-page "https://github.com/green-striped-gecko/dartR.data")
     (synopsis "Auxiliary Data Package for Our Main Package 'dartR'")
     (description

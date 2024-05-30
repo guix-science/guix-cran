@@ -2043,13 +2043,13 @@ can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 (define-public r-rusquant
   (package
     (name "r-rusquant")
-    (version "1.0.5")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rusquant" version))
        (sha256
-        (base32 "0x9l5hy9jp41gks33g6ls9axvbi0z18vn07aa2xaxr4aj6yh1xbv"))))
+        (base32 "02saxymlmjmbzczhn2ihyn09106005wi39f2q9dyasrzi7n6v6pk"))))
     (properties `((upstream-name . "rusquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -23129,6 +23129,48 @@ user and wire formats.  Data structures and functionality closely mirror the
 official implementations.")
     (license license:gpl3)))
 
+(define-public r-riaftbart
+  (package
+    (name "r-riaftbart")
+    (version "0.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "riAFTBART" version))
+       (sha256
+        (base32 "0wcnw955zqmr7qqwwb3d37km6nkhwvhvaissv97fxkq9rwyz67ky"))))
+    (properties `((upstream-name . "riAFTBART")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-twang
+                             r-tidyr
+                             r-survival
+                             r-stringr
+                             r-rrf
+                             r-randomforest
+                             r-nnet
+                             r-msm
+                             r-mcmcpack
+                             r-magrittr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-dbarts
+                             r-cowplot
+                             r-bart))
+    (home-page "https://cran.r-project.org/package=riAFTBART")
+    (synopsis
+     "Flexible Approach for Causal Inference with Multiple Treatments and Clustered Survival Outcomes")
+    (description
+     "Random-intercept accelerated failure time (AFT) model utilizing Bayesian
+additive regression trees (BART) for drawing causal inferences about multiple
+treatments while accounting for the multilevel survival data structure.  It also
+includes an interpretable sensitivity analysis approach to evaluate how the
+drawn causal conclusions might be altered in response to the potential magnitude
+of departure from the no unmeasured confounding assumption.This package
+implements the methods described by Hu et al. (2022) <doi:10.1002/sim.9548>.")
+    (license license:expat)))
+
 (define-public r-ria
   (package
     (name "r-ria")
@@ -28682,13 +28724,13 @@ PROJ library is available at <https://proj.org/>.")
 (define-public r-reproducible
   (package
     (name "r-reproducible")
-    (version "2.0.12")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproducible" version))
        (sha256
-        (base32 "138fxbk3cam1iiq7fzzwlbmx9alkb9bw18i3qr6sjvphzlqji6m4"))))
+        (base32 "0axrhjzd8wv17f2djx6yg8f4kiwrcs267jwj4h4a10jykqrl9p4v"))))
     (properties `((upstream-name . "reproducible")))
     (build-system r-build-system)
     (propagated-inputs (list r-lobstr
@@ -43328,34 +43370,6 @@ approximated using continuity corrections.  Also includes methods for stratified
 calculations (e.g. meta-analysis), either assuming fixed effects (matching the
 CMH test) or incorporating stratum heterogeneity.")
     (license license:gpl3)))
-
-(define-public r-raters
-  (package
-    (name "r-raters")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "raters" version))
-       (sha256
-        (base32 "0nqk45jv9r3m47kid1irxf1nf9p95pvdp1i87xss1jhyqfx2zxzl"))))
-    (properties `((upstream-name . "raters")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=raters")
-    (synopsis
-     "Modification of Fleiss' Kappa in Case of Nominal and Ordinal Variables")
-    (description
-     "The kappa statistic implemented by Fleiss is a very popular index for assessing
-the reliability of agreement among multiple observers.  It is used both in the
-psychological and in the psychiatric field.  Other fields of application are
-typically medicine, biology and engineering.  Unfortunately,the kappa statistic
-may behave inconsistently in case of strong agreement between raters, since this
-index assumes lower values than it would have been expected.  We propose a
-modification kappa implemented by Fleiss in case of nominal and ordinal
-variables.  Monte Carlo simulations are used both to testing statistical
-hypotheses and to calculating percentile bootstrap confidence intervals based on
-proposed statistic in case of nominal and ordinal data.")
-    (license license:gpl2+)))
 
 (define-public r-rateratio-test
   (package

@@ -142,13 +142,13 @@ returned by the @code{BinaryDosage::getbdinfo}() routine.")
 (define-public r-gxeprs
   (package
     (name "r-gxeprs")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GxEprs" version))
        (sha256
-        (base32 "1ylggdh0rzjz5ms107lg4jzayl0rsnqqzzmmg94j483yij7bm89f"))))
+        (base32 "1yv4b99mm1az298idvsb9czx0cgvq5032dv0k3wwcsgc5bk7hwqw"))))
     (properties `((upstream-name . "GxEprs")))
     (build-system r-build-system)
     (home-page "https://github.com/DoviniJ/GxEprs")
@@ -13879,16 +13879,17 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "1c614w22kk90mdn856kyv26dwmnmsx54xv35x29w74lyw15c1nbi"))))
+        (base32 "1cqc2mn4f6g18vb8cng0l11w1glyxk3k6sqsdzla0vbwlxs9d5z0"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rappdirs r-geojsonsf r-countrycode))
+    (propagated-inputs (list r-sf r-rappdirs r-jsonlite r-geojsonsf
+                             r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/giscoR/")
     (synopsis "Download Map Data from GISCO API - Eurostat")

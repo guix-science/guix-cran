@@ -10776,6 +10776,34 @@ hierarchical clustering is performed to determine the initial partition for the
 subsequent k-means clustering procedure.")
     (license license:expat)))
 
+(define-public r-prclust
+  (package
+    (name "r-prclust")
+    (version "1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prclust" version))
+       (sha256
+        (base32 "0p0sf8248aigs99py8mpzz743jnrf7n1nv5shag15arxz9yx7zn3"))))
+    (properties `((upstream-name . "prclust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=prclust")
+    (synopsis "Penalized Regression-Based Clustering Method")
+    (description
+     "Clustering is unsupervised and exploratory in nature.  Yet, it can be performed
+through penalized regression with grouping pursuit.  In this package, we provide
+two algorithms for fitting the penalized regression-based clustering (PRclust)
+with non-convex grouping penalties, such as group truncated lasso, MCP and SCAD.
+One algorithm is based on quadratic penalty and difference convex method.
+Another algorithm is based on difference convex and ADMM, called DC-ADD, which
+is more efficient.  Generalized cross validation and stability based method were
+provided to select the tuning parameters.  Rand index, adjusted Rand index and
+Jaccard index were provided to estimate the agreement between estimated cluster
+memberships and the truth.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-prcbench
   (package
     (name "r-prcbench")
@@ -12286,16 +12314,16 @@ curve.")
 (define-public r-powerlate
   (package
     (name "r-powerlate")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerLATE" version))
        (sha256
-        (base32 "1dmvvh7ynvr8krl5p1qbg8ib1s595vqci2r80zmwsm28jhv8ka4w"))))
+        (base32 "0bxwzskqc4f4f5nvzxd5dm2pd5524x68zdzhiqdp1fsfwb555rkd"))))
     (properties `((upstream-name . "powerLATE")))
     (build-system r-build-system)
-    (home-page "https://github.com/kbansak/powerLATE")
+    (home-page "https://github.com/kbansak/powerLATE_tutorial")
     (synopsis "Generalized Power Analysis for LATE")
     (description
      "An implementation of the generalized power analysis for the local average
@@ -21787,13 +21815,13 @@ interface to that API, allowing you to query it and work with its responses.")
 (define-public r-pivmet
   (package
     (name "r-pivmet")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pivmet" version))
        (sha256
-        (base32 "15fq48grdsmgr3ximar8g45jhlbix6745965rfwl9sjwvwk1bb9q"))))
+        (base32 "0cz8grr03w29dnlhmf5r8yjcklhw6qz8rdf8ng1hdqcbp3ysplhk"))))
     (properties `((upstream-name . "pivmet")))
     (build-system r-build-system)
     (inputs (list pandoc pandoc))
