@@ -16779,13 +16779,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.17.0")
+    (version "1.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "0z5q8jizh0r4zngngq30ii787yppg06phcd9hszfs7qlwq3xsw7x"))))
+        (base32 "0vkxz5gl0df4yw81a698jclsph4z65v74qglfhagp1p3xknkjwy9"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -22309,13 +22309,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.34.2")
+    (version "0.35.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "1d4zdwxd2sy6c3z316izm9g0rp42q09694h4m0cid0m04779qs2a"))))
+        (base32 "0zz6xbbxrj287mjphhq21jpmnbdm60fii13sv8dg8v95l4lhi8pl"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -22323,7 +22323,6 @@ two-dimensional Penalised spline (P-spline) models.")
                              r-stringr
                              r-rlang
                              r-pomp
-                             r-magrittr
                              r-ggplot2
                              r-foreach
                              r-dplyr
@@ -22335,8 +22334,8 @@ two-dimensional Penalised spline (P-spline) models.")
      "Inference on panel data using spatiotemporal partially-observed Markov process
 (@code{SpatPOMP}) models.  The @code{spatPomp} package extends pomp to include
 algorithms taking advantage of the spatial structure in order to assist with
-handling high dimensional processes.  See Asfaw et al. (2023)
-<@code{arXiv:2101.01157>} for further description of the package.")
+handling high dimensional processes.  See Asfaw et al. (2024)
+<doi:10.48550/@code{arXiv.2101.01157>} for further description of the package.")
     (license license:gpl3)))
 
 (define-public r-spatpca
@@ -23373,13 +23372,13 @@ Greece.")
 (define-public r-spaths
   (package
     (name "r-spaths")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaths" version))
        (sha256
-        (base32 "07vfx1cgs0zbq3kqaniy5ccja8axxf93z878x3zf1qalbdflywdc"))))
+        (base32 "08gzw4lbk288230309g1craf4jm5xv4kqxcbpy649g1cdzqq4lf1"))))
     (properties `((upstream-name . "spaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -25176,13 +25175,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.20.0")
+    (version "2.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "1yr5g3ryh6ffn5k9nv5n87k22gkdkblv554m1wk58q6afgrhvpm3"))))
+        (base32 "0qaspbgphlicaak1c2n7bip60dv5wib1nxhv4x8za33s1v45h549"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -40329,13 +40328,13 @@ browser.")
 (define-public r-shinytest
   (package
     (name "r-shinytest")
-    (version "1.5.4")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinytest" version))
        (sha256
-        (base32 "16nb6xyk941a8vxk79416j7f4165gwf84w5a64i0rcaxyx5i66b6"))))
+        (base32 "0h9ciivic0fg7w5yq9cycdj1fh4zhdg4fz1gkn2fdx87c0d5j7a4"))))
     (properties `((upstream-name . "shinytest")))
     (build-system r-build-system)
     (arguments
@@ -40378,8 +40377,8 @@ browser.")
     (home-page "https://github.com/rstudio/shinytest")
     (synopsis "Test Shiny Apps")
     (description
-     "For automated testing of Shiny applications, using a headless browser, driven
-through @code{WebDriver}'.")
+     "Please see the shinytest to shinytest2 migration guide at
+<https://rstudio.github.io/shinytest2/articles/z-migration.html>.")
     (license license:expat)))
 
 (define-public r-shinytempsignal
@@ -43527,13 +43526,13 @@ for most of the methods are included.")
 (define-public r-sheetreader
   (package
     (name "r-sheetreader")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SheetReader" version))
        (sha256
-        (base32 "1da9p1y7vxkmkflighjgxd1f7sjcbq24m68igr77vqga4wd0v72d"))))
+        (base32 "0b9cgyh4lls8m6xq5hl2pmhlk72yl7bhbc3ssm81d84rsshhyxvl"))))
     (properties `((upstream-name . "SheetReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -44074,13 +44073,13 @@ Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
 (define-public r-shapley
   (package
     (name "r-shapley")
-    (version "0.1")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapley" version))
        (sha256
-        (base32 "0x8fdl1kg027gl48ki9r1xlihqfhqvlaqkwjjrrw51k85r4ly1kb"))))
+        (base32 "0zr1mjpsn7s1wb708vza5vlv5biqcx3h7ng36rfq7v08lzrakwqk"))))
     (properties `((upstream-name . "shapley")))
     (build-system r-build-system)
     (propagated-inputs (list r-waffle r-h2o r-ggplot2 r-curl))
@@ -44088,37 +44087,40 @@ Mayrhofer and Filzmoser (2022) <doi:10.48550/ARXIV.2210.10063>.")
     (synopsis
      "Weighted Mean SHAP for Feature Selection in ML Grid and Ensemble")
     (description
-     "This R package introduces an innovative method for calculating SHapley Additive
-@code{exPlanations} (SHAP) values for a grid of fine-tuned base-learner machine
-learning models as well as stacked ensembles, a method not previously available
-due to the common reliance on single best-performing models.  By integrating the
-weighted mean SHAP values from individual base-learners comprising the ensemble
-or individual base-learners in a tuning grid search, the package weights SHAP
-contributions according to each model's performance, assessed by the Area Under
-the Precision-Recall Curve (AUCPR) for binary classifiers (currently
-implemented).  It further extends this framework to implement weighted
-confidence intervals for weighted mean SHAP values, offering a more
-comprehensive and robust feature importance evaluation over a grid of machine
-learning models, instead of solely computing SHAP values for the best-performing
-model.  This methodology is particularly beneficial for addressing the severe
-class imbalance (class rarity) problem by providing a transparent, generalized
-measure of feature importance that mitigates the risk of reporting SHAP values
-for an overfitted or biased model and maintains robustness under severe class
-imbalance, where there is no universal criteria of identifying the absolute best
-model.  Furthermore, the package implements hypothesis testing to ascertain the
-statistical significance of SHAP values for individual features, as well as
-comparative significance testing of SHAP contributions between features.
-Additionally, it tackles a critical gap in feature selection literature by
-presenting criteria for the automatic feature selection of the most important
-features across a grid of models or stacked ensembles, eliminating the need for
-arbitrary determination of the number of top features to be extracted.  This
-utility is invaluable for researchers analyzing feature significance,
-particularly within severely imbalanced outcomes where conventional methods fall
-short.  In addition, it is also expected to report democratic feature importance
-across a grid of models, resulting in a more comprehensive and generalizable
-feature selection.  The package further implements a novel method for
-visualizing SHAP values both at subject level and feature level as well as a
-plot for feature selection based on the weighted mean SHAP ratios.")
+     "This R package introduces Weighted Mean SHapley Additive @code{exPlanations}
+(WMSHAP), an innovative method for calculating SHAP values for a grid of
+fine-tuned base-learner machine learning models as well as stacked ensembles, a
+method not previously available due to the common reliance on single
+best-performing models.  By integrating the weighted mean SHAP values from
+individual base-learners comprising the ensemble or individual base-learners in
+a tuning grid search, the package weights SHAP contributions according to each
+model's performance, assessed by multiple either R squared (for both regression
+and classification models).  alternatively, this software also offers weighting
+SHAP values based on the area under the precision-recall curve (AUCPR), the area
+under the curve (AUC), and F2 measures for binary classifiers.  It further
+extends this framework to implement weighted confidence intervals for weighted
+mean SHAP values, offering a more comprehensive and robust feature importance
+evaluation over a grid of machine learning models, instead of solely computing
+SHAP values for the best model.  This methodology is particularly beneficial for
+addressing the severe class imbalance (class rarity) problem by providing a
+transparent, generalized measure of feature importance that mitigates the risk
+of reporting SHAP values for an overfitted or biased model and maintains
+robustness under severe class imbalance, where there is no universal criteria of
+identifying the absolute best model.  Furthermore, the package implements
+hypothesis testing to ascertain the statistical significance of SHAP values for
+individual features, as well as comparative significance testing of SHAP
+contributions between features.  Additionally, it tackles a critical gap in
+feature selection literature by presenting criteria for the automatic feature
+selection of the most important features across a grid of models or stacked
+ensembles, eliminating the need for arbitrary determination of the number of top
+features to be extracted.  This utility is invaluable for researchers analyzing
+feature significance, particularly within severely imbalanced outcomes where
+conventional methods fall short.  Moreover, it is also expected to report
+democratic feature importance across a grid of models, resulting in a more
+comprehensive and generalizable feature selection.  The package further
+implements a novel method for visualizing SHAP values both at subject level and
+feature level as well as a plot for feature selection based on the weighted mean
+SHAP ratios.")
     (license license:expat)))
 
 (define-public r-shapeselectforest
@@ -50508,13 +50510,13 @@ Implements the methods described in Dolman and Laepple (2018)
 (define-public r-secutrialr
   (package
     (name "r-secutrialr")
-    (version "1.1.1")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secuTrialR" version))
        (sha256
-        (base32 "0i45zhbbvq052yn04j0xg69minclr7ns7f1pqdahx1cmf274pl42"))))
+        (base32 "1g6xfvgq4qgpgbhihpjxgxk87dwa9k2lhwrka4w1icyabchk6yg2"))))
     (properties `((upstream-name . "secuTrialR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -57228,13 +57230,13 @@ empirical graphical methods to visualize tail dependence.")
 (define-public r-sassy
   (package
     (name "r-sassy")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sassy" version))
        (sha256
-        (base32 "1dx64qn12zxdql9z7z5lr9x7yxy1gnnck0x3g9ajgkbbqwgxrzck"))))
+        (base32 "1w2hgkwvwzvzmd1gw9x6y5zvxvmp704zk5jny6ppq44wavm7nl52"))))
     (properties `((upstream-name . "sassy")))
     (build-system r-build-system)
     (propagated-inputs (list r-reporter

@@ -751,13 +751,13 @@ the method.")
 (define-public r-itraxr
   (package
     (name "r-itraxr")
-    (version "1.12.1")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itraxR" version))
        (sha256
-        (base32 "0s3arm3ln2p92by8lfj5fl1rh7cspj9v2q30rb4r99vncxp85alk"))))
+        (base32 "0wp0kdzh8wlh3g2gxjz8lbylpwq3hzv5b6hwpvv2wabr1zhg1ya9"))))
     (properties `((upstream-name . "itraxR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tiff
@@ -8672,16 +8672,16 @@ and NIV).")
 (define-public r-infoelectoral
   (package
     (name "r-infoelectoral")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "infoelectoral" version))
        (sha256
-        (base32 "1yqvgb5n115xzijh8bc3p461xxx5cz865rc1z2qa40cz0bp46p88"))))
+        (base32 "1ni00y4wni9dgpaj6x2p50bgmzfh2ybr350ywqmnwz5q30r9kjsm"))))
     (properties `((upstream-name . "infoelectoral")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-dplyr))
+    (propagated-inputs (list r-stringr r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rOpenSpain/infoelectoral")
     (synopsis "Download Spanish Election Results")
@@ -13504,82 +13504,6 @@ to characteristics of independent rainfall events.  Adams B, Papa F (2000)
 <ISBN: 978-0-471-33217-6>.  Joo J et al. (2014) <doi:10.3390/w6010045>.
 Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
     (license license:gpl3)))
-
-(define-public r-iemiscdata
-  (package
-    (name "r-iemiscdata")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemiscdata" version))
-       (sha256
-        (base32 "10cixkyx1x9m0vblxp0jrbxz3aqxf64v11ls630q55r4803dpfyz"))))
-    (properties `((upstream-name . "iemiscdata")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemiscdata")
-    (synopsis "Irucka Embry's Miscellaneous Data Collection")
-    (description
-     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
-Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
-Continental Congress Presidents].")
-    (license license:gpl3+)))
-
-(define-public r-iemisc
-  (package
-    (name "r-iemisc")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemisc" version))
-       (sha256
-        (base32 "1yrppxylsrlh1l549qn1x0qnyd32zj3a2xji1a3qiv1sd1h7js41"))))
-    (properties `((upstream-name . "iemisc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-usa-state-boundaries
-                             r-units
-                             r-stringi
-                             r-sjmisc
-                             r-signal
-                             r-sf
-                             r-round
-                             r-roperators
-                             r-rivr
-                             r-ramify
-                             r-qdapregex
-                             r-pracma
-                             r-mgsub
-                             r-measurements
-                             r-matlab2r
-                             r-matlab
-                             r-lubridate
-                             r-iemiscdata
-                             r-gsubfn
-                             r-ggpubr
-                             r-ggplot2
-                             r-geosphere
-                             r-fpcompare
-                             r-foreach
-                             r-data-table
-                             r-chem-databases
-                             r-checkmate
-                             r-berryfunctions
-                             r-assertthat
-                             r-anytime))
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemisc")
-    (synopsis "Irucka Embry's Miscellaneous Functions")
-    (description
-     "This package provides a collection of Irucka Embry's miscellaneous functions
-(Engineering Economics, Civil & Environmental/Water Resources Engineering,
-Construction Measurements, GNU Octave compatible functions, Python compatible
-function, Trigonometric functions in degrees and function in radians, Geometry,
-Statistics, Mortality Calculators, Quick Search, etc.).")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ieeeround
   (package

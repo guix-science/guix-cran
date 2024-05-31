@@ -11157,13 +11157,13 @@ algorithm described in @code{TreviÃ±o} (2015)
 (define-public r-bipartited3
   (package
     (name "r-bipartited3")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bipartiteD3" version))
        (sha256
-        (base32 "1b4nw1hqw645j8blf2b1hhnar7ffc4bw0zb07ycfjqd2prnif8pd"))))
+        (base32 "0w2bnlaga8nxdidrhgz34hqbxb5882jbz31a7g4n283gbz5w1b9g"))))
     (properties `((upstream-name . "bipartiteD3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14591,13 +14591,13 @@ networks with local dependence to assess the estimates goodness-of-fit.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "1hav79f5lw1yh4651j7ag6x9kag1dzpb6damz0xfmqrbpgdbq63a"))))
+        (base32 "0m1q8b4d20iqamypmalh66gkp0rba8ir2m48k5y9j05wfmshkqc4"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -22200,13 +22200,13 @@ C (2020) <doi:10.18637/jss.v093.i06>, or Roever C and Friede T (2022)
 (define-public r-bayesmeanscale
   (package
     (name "r-bayesmeanscale")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesMeanScale" version))
        (sha256
-        (base32 "09pj654fmi3s6423y380q2drp8vww4c46q4ba0809x0rdvxk5l5a"))))
+        (base32 "0zkfv6f50z83d8iih2f9p0dkla2bffcfjhfbmpicybicfi35f480"))))
     (properties `((upstream-name . "bayesMeanScale")))
     (build-system r-build-system)
     (propagated-inputs (list r-posterior r-magrittr r-data-table r-bayestestr))

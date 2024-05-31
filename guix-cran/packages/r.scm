@@ -3350,13 +3350,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0z5kck3g3qfkabsf81g7g270pacjhhvss6v4pqysm4r4z29s7ipc"))))
+        (base32 "0pwwkcgzhmhdc5fic8h623w1qggmaa3cb1li6vprsxi4k5diq44c"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3387,11 +3387,10 @@ calculate the fold change (FC, Delta Delta Ct method) or relative expression
 (RE, Delta Ct method).  The functions further provide standard errors and
 confidence intervals for means, apply statistical mean comparisons and present
 significance.  To facilitate function application, different data sets were used
-as examples and the outputs were explained.  An outstanding feature of
-ârtpcrâ package is providing publication-ready bar plots with various
-controlling arguments which are further editable by ggplot2 functions.  The
-rtpcr package is user-friendly and easy to work with and provides an applicable
-resource for analyzing real-time PCR data.")
+as examples and the outputs were explained.  ârtpcrâ package also provides
+bar plots using various controlling arguments.  The rtpcr package is
+user-friendly and easy to work with and provides an applicable resource for
+analyzing real-time PCR data.")
     (license license:gpl3)))
 
 (define-public r-rtpc
@@ -7038,6 +7037,31 @@ on the SDMX XML standard format (SDMX-ML).")
     (description
      "This is a sudoku game package with a shiny application for playing .")
     (license license:expat)))
+
+(define-public r-rsdi
+  (package
+    (name "r-rsdi")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rSDI" version))
+       (sha256
+        (base32 "1rmbxl010n38lrn0z9prn2hzb6afk889gipbahchmcv7f767sdwa"))))
+    (properties `((upstream-name . "rSDI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ehengirmen/rSDI")
+    (synopsis
+     "Spatial Dispersion Index (SDI) Family of Metrics for Spatial/Geographic Networks")
+    (description
+     "Spatial Dispersion Index (SDI) is a generalized measurement index, or rather a
+family of indices to evaluate spatial dispersion of movements/flows in a network
+in a problem neutral way as described in: Gencer (2023)
+<doi:10.1007/s12061-023-09545-8>.  This package computes and optionally
+visualizes this index with minimal hassle.")
+    (license license:gpl3+)))
 
 (define-public r-rsdepth
   (package
@@ -14386,13 +14410,13 @@ estimation based on Loh and Tan (2018) <doi:10.1214/18-EJS1427>.")
 (define-public r-robustcalibration
   (package
     (name "r-robustcalibration")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobustCalibration" version))
        (sha256
-        (base32 "0qa2krbi1av4dxfw9sb2gl9sif3smllk1yvsrh58ncag729vnv5y"))))
+        (base32 "0ilbj88bgjymyyn7jh7dnxhhba7xrmpsnhkwr1cr53zd9rpywfdf"))))
     (properties `((upstream-name . "RobustCalibration")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustgasp r-rcppeigen r-rcpp r-nloptr))
@@ -14402,10 +14426,10 @@ estimation based on Loh and Tan (2018) <doi:10.1214/18-EJS1427>.")
      "This package implements full Bayesian analysis for calibrating mathematical
 models with new methodology for modeling the discrepancy function.  It allows
 for emulation, calibration and prediction using complex mathematical model
-outputs and experimental data.  See the reference: Mengyang Gu and Long Wang
-(2018) <@code{arXiv:1707.08215>}, Mengyang Gu, Fangzheng Xie and Long Wang
-(2021) <@code{arXiv:1807.03829>}, Mengyang Gu, Kyle Anderson and Erika
-@code{McPhillips} (2021) <@code{arXiv:1810.11664>}.")
+outputs and experimental data.  See the reference: Mengyang Gu and Long Wang,
+2018, Journal of Uncertainty Quantification; Mengyang Gu, Fangzheng Xie and Long
+Wang, 2022, Journal of Uncertainty Quantification; Mengyang Gu, Kyle Anderson
+and Erika @code{McPhillips}, 2023, Technometrics.")
     (license license:gpl2+)))
 
 (define-public r-robustblme
@@ -25778,6 +25802,35 @@ and source type maps are included for statistical analysis of moment tensors.")
     (description
      "R access to the FOAAS (F...  Off As A Service) web service is provided.")
     (license license:gpl2+)))
+
+(define-public r-rfmtool
+  (package
+    (name "r-rfmtool")
+    (version "5.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rfmtool" version))
+       (sha256
+        (base32 "1gzykxx758jrzsihs3qqjhxb2j498bpz5b5b6z641vkqgk1x9ign"))))
+    (properties `((upstream-name . "Rfmtool")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=Rfmtool")
+    (synopsis "Fuzzy Measure Tools")
+    (description
+     "Various tools for handling fuzzy measures, calculating Shapley value and
+interaction index, Choquet and Sugeno integrals, as well as fitting fuzzy
+measures to empirical data are provided.  Construction of fuzzy measures from
+empirical data is done by solving a linear programming problem by using lpsolve
+package, whose source in C adapted to the R environment is included.  The
+description of the basic theory of fuzzy measures is in the manual in the Doc
+folder in this package.  Please refer to the following: [1]
+<https://personal-sites.deakin.edu.au/~gleb/fmtools.html> [2] G. Beliakov, H.
+Bustince, T. Calvo, A Practical Guide to Averaging', Springer, (2016, ISBN:
+978-3-319-24753-3). [3] G. Beliakov, S. James, J-Z. Wu, Discrete Fuzzy
+Measures', Springer, (2020, ISBN: 978-3-030-15305-2).")
+    (license license:lgpl3)))
 
 (define-public r-rfm
   (package
@@ -43370,6 +43423,34 @@ approximated using continuity corrections.  Also includes methods for stratified
 calculations (e.g. meta-analysis), either assuming fixed effects (matching the
 CMH test) or incorporating stratum heterogeneity.")
     (license license:gpl3)))
+
+(define-public r-raters
+  (package
+    (name "r-raters")
+    (version "2.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raters" version))
+       (sha256
+        (base32 "1ypg3inqbn4rkwcmqbcwkiydp7sb2bpfrcfdgd1pfp0k73zbin2s"))))
+    (properties `((upstream-name . "raters")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=raters")
+    (synopsis
+     "Modification of Fleiss' Kappa in Case of Nominal and Ordinal Variables")
+    (description
+     "The kappa statistic implemented by Fleiss is a very popular index for assessing
+the reliability of agreement among multiple observers.  It is used both in the
+psychological and in the psychiatric field.  Other fields of application are
+typically medicine, biology and engineering.  Unfortunately,the kappa statistic
+may behave inconsistently in case of strong agreement between raters, since this
+index assumes lower values than it would have been expected.  We propose a
+modification kappa implemented by Fleiss in case of nominal and ordinal
+variables.  Monte Carlo simulations are used both to testing statistical
+hypotheses and to calculating percentile bootstrap confidence intervals based on
+proposed statistic in case of nominal and ordinal data.")
+    (license license:gpl2+)))
 
 (define-public r-rateratio-test
   (package

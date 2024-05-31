@@ -2987,6 +2987,33 @@ Preschool Q-set (Baumrind, 1968 revised by Wanda Bronson,
 <doi:10.1111/j.1540-5834.1995.tb00214.x>).")
     (license license:gpl3)))
 
+(define-public r-qslice
+  (package
+    (name "r-qslice")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qslice" version))
+       (sha256
+        (base32 "0df8988pr0kcz8xdi8sgl99mifs8djzjrannx52n42yck58g5hky"))))
+    (properties `((upstream-name . "qslice")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qslice")
+    (synopsis "Implementations of Various Slice Samplers")
+    (description
+     "Implementations of the quantile slice sampler of Heiner et al. (2024+, in
+preparation) as well as other popular slice samplers are provided.  Helper
+functions for specifying pseudo-target distributions are included, both for
+diagnostics and for tuning the quantile slice sampler.  Other implemented
+methods include the generalized elliptical slice sampler of Nishihara et al.
+(2014)<https://jmlr.org/papers/v15/nishihara14a.html}, latent slice sampler of
+Li and Walker (2023)<doi:10.1016/j.csda.2022.107652>, and stepping-out slice
+sampler of Neal (2003)<doi:10.1214/aos/1056562461>, and independence
+Metropolis-Hastings sampler.")
+    (license (list license:expat license:asl2.0))))
+
 (define-public r-qsimulatr
   (package
     (name "r-qsimulatr")

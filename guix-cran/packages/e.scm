@@ -12355,13 +12355,13 @@ analysis and editing of clinical and epidemiological data.")
 (define-public r-emplikauc
   (package
     (name "r-emplikauc")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emplikAUC" version))
        (sha256
-        (base32 "0ifh661xknqin0k9vs92p00c4n6npkwn5cxyj970cj8l689yndrr"))))
+        (base32 "1pxcvz7x8dfc30m1yb1k9xhlaj4z1i29xxg9vdz1l374k4f449sb"))))
     (properties `((upstream-name . "emplikAUC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rootsolve r-emplik2))
@@ -12372,7 +12372,8 @@ analysis and editing of clinical and epidemiological data.")
      "Test hypotheses and construct confidence intervals for AUC (area under Receiver
 Operating Characteristic curve) and @code{pAUC} (partial area under ROC curve),
 from the given two samples of test data with disease/healthy subjects.  The
-method used is based on two sample empirical likelihood, as described in
+method used is based on TWO SAMPLE empirical likelihood and PROFILE empirical
+likelihood, as described in
 <https://www.ms.uky.edu/~mai/research/@code{eAUC1.pdf>}.")
     (license license:gpl2+)))
 
@@ -18933,6 +18934,31 @@ vignette <doi:10.18637/jss.v102.i08>.")
 elasticity, convexity, marginal revenue and manifold of various economics demand
 systems including Linear, Translog, CES, LES and CREMR.")
     (license license:gpl2)))
+
+(define-public r-econandprodefficiency
+  (package
+    (name "r-econandprodefficiency")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EconAndProdEfficiency" version))
+       (sha256
+        (base32 "05a0dnhi41ch833hi2w4mvifq4rcxg79gcyr6yzgc5gxw57rsxf2"))))
+    (properties `((upstream-name . "EconAndProdEfficiency")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=EconAndProdEfficiency")
+    (synopsis "Economic and Production Efficiency")
+    (description
+     "Production efficiency and economic efficiency are crucial concepts in
+agriculture/horticulture for sustainable and profitable practices.  It helps to
+determine the optimal use of resources to maximize outputs and profitability.
+Production efficiency focuses on the optimal use of resources to produce goods,
+while economic efficiency ensures these goods are produced and allocated in a
+way that maximizes economic welfare.  Production efficiency and economic
+efficiency are calculated with the help of the formula given by (Kumar et al.,
+2017) <doi:10.21921/jas.v4i04.10202>.")
+    (license license:gpl3)))
 
 (define-public r-ecoltest
   (package

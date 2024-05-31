@@ -631,16 +631,16 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "1v5vnk8r7vhwgmp5hbpwzn0cks4i8z3jm7r3rbbdfjjf4fba2vkd"))))
+        (base32 "0nqjiz8f0vqcmlcqva5zr971rrcfbw6gak22y2wqbila0za6asfv"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-reshape2 r-ggplot2 r-ecp r-dplyr))
+    (propagated-inputs (list r-tidyr r-ggplot2 r-ecp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FuzzyPovertyR")
     (synopsis "Estimation of Fuzzy Poverty Measures")
@@ -8450,13 +8450,13 @@ of Skew Heavy-Tailed Errors.")
 (define-public r-fmritools
   (package
     (name "r-fmritools")
-    (version "0.4.2")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fMRItools" version))
        (sha256
-        (base32 "0rd77bsi51pgvmp1vyrcyg77yqj9vm5fnb98i9iyngyrx4hzv5m9"))))
+        (base32 "0jpqv7g8xrq6m3rximpcxll8p84wnmww9fiy69fjqfxbg857x35w"))))
     (properties `((upstream-name . "fMRItools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrixstats))
@@ -14083,13 +14083,13 @@ sciences.")
 (define-public r-fido
   (package
     (name "r-fido")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fido" version))
        (sha256
-        (base32 "0drzxg6aj9rpszlg8cg1rjwk7nnz9np56zkddbd2pxkznsq8j8ni"))))
+        (base32 "07b30dx69hrqmbipadf9y8gnkikry64sbrhnfrhaq9xaxnpg3wc8"))))
     (properties `((upstream-name . "fido")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16622,6 +16622,33 @@ Functional Data\".  Journal of Computational and Graphical Statistics.
 <doi:10.1080/10618600.2022.2070171>.")
     (license license:gpl3)))
 
+(define-public r-fdapde
+  (package
+    (name "r-fdapde")
+    (version "1.1-18")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdaPDE" version))
+       (sha256
+        (base32 "0l5kv7vwwjbnfq13l74ij860fpp45hgvwqpxfnpqbxdkq2lfymcn"))))
+    (properties `((upstream-name . "fdaPDE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
+    (home-page "https://cran.r-project.org/package=fdaPDE")
+    (synopsis "Physics-Informed Spatial and Functional Data Analysis")
+    (description
+     "An implementation of regression models with partial differential
+regularizations, making use of the Finite Element Method.  The models
+efficiently handle data distributed over irregularly shaped domains and can
+comply with various conditions at the boundaries of the domain.  A priori
+information about the spatial structure of the phenomenon under study can be
+incorporated in the model via the differential regularization.  See Sangalli, L.
+M. (2021) <doi:10.1111/insr.12444> \"Spatial Regression With Partial Differential
+Equation Regularisation\" for an overview.  The release 1.1-9 requires R (>=
+4.2.0) to be installed on windows machines.")
+    (license license:gpl3)))
+
 (define-public r-fdapaceshiny
   (package
     (name "r-fdapaceshiny")
@@ -18068,13 +18095,13 @@ performing wavelet decomposition of time series.  See Quilty and Adamowski
 (define-public r-fastverse
   (package
     (name "r-fastverse")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastverse" version))
        (sha256
-        (base32 "10k749zff9nhrwgyvc1fvpp34mncc7958z35y2v5sb08my2x26r0"))))
+        (base32 "03jcgwsaxwx564dn7qmynah0l48hjs8nfx0wmv9a9x9sqw7aqknb"))))
     (properties `((upstream-name . "fastverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-kit r-data-table r-collapse))

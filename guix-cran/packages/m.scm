@@ -3701,16 +3701,17 @@ delineamento estatistico (Hair JF, 2016) <ISBN: 13: 978-0138132637>.")
 (define-public r-multipleoutcomes
   (package
     (name "r-multipleoutcomes")
-    (version "0.2")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multipleOutcomes" version))
        (sha256
-        (base32 "0wkfrz8v7sfgwiqlvia2rmiryiwz53n0qzlg05p0sgh90p38w037"))))
+        (base32 "1hdz7nsk8737pdnqf33ggddn23pm488i60w5cpq0qwynck5mk4rh"))))
     (properties `((upstream-name . "multipleOutcomes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-mvtnorm r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-survival r-stringr r-numderiv r-momentfit
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=multipleOutcomes")
     (synopsis
@@ -17572,13 +17573,13 @@ with more upload options, see the @code{OpenML} package.")
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "1cwk9d38315pfa9r6r3m3z4miwkk9b1mxs1c5phw2sjx2b3v9ilf"))))
+        (base32 "1r1dqhh9s09vz3fsxwss7af7wb4nmm7lynh9wl67mjs52yf5d4k2"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tf
@@ -26638,20 +26639,19 @@ time series.")
 (define-public r-mfsis
   (package
     (name "r-mfsis")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFSIS" version))
        (sha256
-        (base32 "0cr7ygnx2jqk0zvpfmqww38qkkrlrzkp5gkqmg4s1k6j0vjkm3lf"))))
+        (base32 "02bwnsyy5jrjmh50rd2cql8k9djkw6r0vi9rakfp86n853ir73fj"))))
     (properties `((upstream-name . "MFSIS")))
     (build-system r-build-system)
     (inputs (list python))
     (propagated-inputs (list r-survival
                              r-reticulate
                              r-mass
-                             r-fs
                              r-foreach
                              r-dr
                              r-doparallel
@@ -26659,7 +26659,7 @@ time series.")
                              r-cli
                              r-ball))
     (home-page "https://cran.r-project.org/package=MFSIS")
-    (synopsis "Moder-Free Sure Independent Screening Procedures")
+    (synopsis "Model-Free Sure Independent Screening Procedures")
     (description
      "An implementation of popular screening methods that are commonly employed in
 ultra-high and high dimensional data.  Through this publicly available package,
@@ -26674,8 +26674,9 @@ SIRS(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
 <doi:10.1214/14-AOS1303>), MVSIS (Cui et al. (2015)
 <doi:10.1080/01621459.2014.920256>), PSIS (Pan et al. (2016)
 <doi:10.1080/01621459.2014.998760>), CAS (Xie et al. (2020)
-<doi:10.1080/01621459.2019.1573734>), CI-SIS (Cheng and Wang. (2022)
-<doi:10.1016/j.cmpb.2022.107269>)and CSIS.")
+<doi:10.1080/01621459.2019.1573734>), CI-SIS (Cheng and Wang. (2023)
+<doi:10.1016/j.cmpb.2022.107269>) and CSIS (Cheng et al. (2023)
+<doi:10.1007/s00180-023-01399-5>).")
     (license license:gpl2+)))
 
 (define-public r-mfpp

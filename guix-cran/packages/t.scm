@@ -12988,23 +12988,25 @@ install Roboto Condensed'.")
 (define-public r-tinytest2junit
   (package
     (name "r-tinytest2junit")
-    (version "1.0.3")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytest2JUnit" version))
        (sha256
-        (base32 "01x43bfma2r5sqk2ccxlmiwnz86gx14vapiszp2daf38f5x82l3b"))))
+        (base32 "1c7vzdyjqqayrsbdasr7zif2m367yvid5y00fhy35r43ggzzhb4n"))))
     (properties `((upstream-name . "tinytest2JUnit")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tinytest))
     (home-page "https://github.com/openanalytics/tinytest2JUnit")
     (synopsis "Convert 'tinytest' Output to JUnit XML")
     (description
      "Unit testing is a solid component of automated CI/CD pipelines.  tinytest - a
-light-weight, zero-dependency alternative to testthat was developed.  To be able
-to integrate tinytests results into common CI/CD systems the tinytests'-object
-needs to be converted to JUnit XML format.  tinytest2JUnit enables this
-conversion while keeping the zero-dependency nature.")
+lightweight, zero-dependency alternative to testthat was developed.  To be able
+to integrate tinytests results into common CI/CD systems the test results from
+tinytest need to be caputred and converted to JUnit XML format.  tinytest2JUnit
+enables this conversion while staying also lightweight and only have tinytest as
+its dependency.")
     (license license:gpl3)))
 
 (define-public r-tinytable
@@ -13167,29 +13169,6 @@ other dependency, namely stringi'.")
     (description
      "Generate a palette of tints, shades or both from a single colour.")
     (license license:expat)))
-
-(define-public r-tint
-  (package
-    (name "r-tint")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tint" version))
-       (sha256
-        (base32 "1vkdgxxgcj3qk3858sp3zi7c2id3dq0zxz23xd4i8lgbqgvvh2s3"))))
-    (properties `((upstream-name . "tint")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-knitr r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/eddelbuettel/tint/")
-    (synopsis "'tint' is not 'Tufte'")
-    (description
-     "This package provides a tufte'-alike style for rmarkdown'.  A modern take on the
-Tufte design for pdf and html vignettes, building on the tufte package with
-additional contributions from the knitr and ggtufte package, and also
-acknowledging the key influence of envisioned css'.")
-    (license license:gpl3)))
 
 (define-public r-tinsel
   (package
@@ -21498,13 +21477,13 @@ functionalities related to missingness are also supported.")
 (define-public r-tensorevd
   (package
     (name "r-tensorevd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorEVD" version))
        (sha256
-        (base32 "0c5n7gy9c7l9dc8jrsmlxrfk6m7wc5hj2acxkr9mjwqdr9y98c07"))))
+        (base32 "0gqcnigv5hwp955q21ms7xgn30926yqi8bg8vnc409jp9mz5km8a"))))
     (properties `((upstream-name . "tensorEVD")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))

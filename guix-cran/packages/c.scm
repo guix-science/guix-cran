@@ -1241,6 +1241,46 @@ developed by Boileau et al. (2022) <doi:10.1080/10618600.2022.2110883> to
 identify the optimal estimator from among a prespecified set of candidates.")
     (license license:expat)))
 
+(define-public r-cvasi
+  (package
+    (name "r-cvasi")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cvasi" version))
+       (sha256
+        (base32 "17w13b1h8nri74j5s94klwmrzjcd88llz2n84v54nc6nza77yk9g"))))
+    (properties `((upstream-name . "cvasi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-lemna
+                             r-glue
+                             r-ggplot2
+                             r-furrr
+                             r-dplyr
+                             r-desolve
+                             r-cli
+                             r-attempt))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cvasi-tktd/cvasi")
+    (synopsis "Calibration, Validation, and Simulation of TKTD Models")
+    (description
+     "Eases the use of ecotoxicological effect models.  Can simulate common
+toxicokinetic-toxicodynamic (TK/TD) models such as General Unified Threshold
+models of Survival (GUTS) and Lemna.  It can derive effects and effect profiles
+(EPx) from scenarios.  It supports the use of tidyr workflows employing the pipe
+symbol.  Time-consuming tasks can be parallelized.")
+    (license license:gpl3+)))
+
 (define-public r-cvar
   (package
     (name "r-cvar")
@@ -4473,24 +4513,24 @@ cryptocurrencies.")
 (define-public r-cryptorng
   (package
     (name "r-cryptorng")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptorng" version))
        (sha256
-        (base32 "04ck3q19i4kzbzm99pijgq4r1vryjppy2f74hx96yvv1cs57qk2a"))))
+        (base32 "17jnhd814d6h0x1a6n9j5syrasw942w7gajxrfvlm3ihsldyk7lc"))))
     (properties `((upstream-name . "cryptorng")))
     (build-system r-build-system)
     (home-page "https://github.com/coolbutuseless/cryptorng")
     (synopsis "Access System Cryptographic Pseudorandom Number Generators")
     (description
-     "Generate random bytes from the Cryptographically Secure Pseudorandom Number
-Generator (CSPRNG) provided by the underlying operating system.  These system
-CSPRNGs are seeded internally by the OS with entropy it gathers and use random
-number generation algorithms which are considered cryptographically secure.  The
-following system functions are used: arc4random_buf() on @code{macOS} and BSD;
-B@code{CryptgenRandom}() on Windows; Sys_getrandom() on Linux.")
+     "Generate random numbers from the Cryptographically Secure Pseudorandom Number
+Generator (CSPRNG) provided by the underlying operating system.  System CSPRNGs
+are seeded internally by the OS with entropy it gathers from the system
+hardware.  The following system functions are used: arc4random_buf() on
+@code{macOS} and BSD; B@code{CryptgenRandom}() on Windows; Sys_getrandom() on
+Linux.")
     (license license:expat)))
 
 (define-public r-cryptoquotes
@@ -7351,13 +7391,13 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "188x6rkhghanz804z71cwnjv7684435dzcr37hjihxkfvcrvjz25"))))
+        (base32 "0g807ph2fnpg6ll4li0pgw7gd61wzyibjnl74dzl1jaq7n1ymh2h"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16300,13 +16340,13 @@ along with their contribution to the actual coverage function.")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.17")
+    (version "1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "1lxxap6zd6h35w0kkxdnnbi8a4j5c78wcfslm5823dx9apg28q0s"))))
+        (base32 "07d90zbw1yk9qibdj32ivsxm8i1qf3r06lbgb3sl9nfrhniw9a4s"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -27785,13 +27825,13 @@ negative binomial links), polr() ('MASS'), clm() ('ordinal'), and multinom()
 (define-public r-clarify
   (package
     (name "r-clarify")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clarify" version))
        (sha256
-        (base32 "1iyjs0wai41x6w0kv7szr7x5gfs05k2kya7bw4n37g0i8s829isq"))))
+        (base32 "0cda1xvcfd0lz3802h945jw98ala68z89vfgdixv4z6yn9fqzzcq"))))
     (properties `((upstream-name . "clarify")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

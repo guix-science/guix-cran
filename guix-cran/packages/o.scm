@@ -5843,13 +5843,13 @@ Suesstrunk, EPFL Technical Report no.  149300, June 2010.")
 (define-public r-openhimr
   (package
     (name "r-openhimr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpEnHiMR" version))
        (sha256
-        (base32 "01h318mj581gyg0a54wa87nqvr2kf2dfdqmac91v7nb744f9pg6h"))))
+        (base32 "0wgjihdfjvsf3p97ll496ixwv2xzlgsr138pzgalw5hq0p1kmld6"))))
     (properties `((upstream-name . "OpEnHiMR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -8735,13 +8735,13 @@ validating, encoding and decoding entries that follow this standard.")
 (define-public r-olcpm
   (package
     (name "r-olcpm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OLCPM" version))
        (sha256
-        (base32 "1iq0avlrxpj9qfi90im1k845grqrr512ysdi5fpfy0s8zjalsxnh"))))
+        (base32 "0w60w1qhq8sbcaqk56kf4cgn51fm8zjmxdm42imn5c05m06pc8k0"))))
     (properties `((upstream-name . "OLCPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra r-laplacesdemon))
@@ -8762,7 +8762,7 @@ monitor whether the first non-spiked eigenvalue diverges after a point in time
 in the monitoring horizon, thereby indicating the presence of a change point.
 This package also provides some simple functions for detecting and removing
 outliers, imputing missing entries and testing moments.  See more details in He
-et al. (2021)<@code{arXiv:2112.13479>}.")
+et al. (2021)<doi:10.48550/@code{arXiv.2112.13479>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-okxapi

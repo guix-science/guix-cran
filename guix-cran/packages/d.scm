@@ -27666,6 +27666,44 @@ three-dimensional interactive space.  The results can be useful for item-level
 analysis as well as test development.")
     (license license:gpl3+)))
 
+(define-public r-d3gb
+  (package
+    (name "r-d3gb")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "D3GB" version))
+       (sha256
+        (base32 "0g86nyfrhqbnlvls2l5ppi2zlij2wpg6zq83qrllzzrh28qx0rjk"))))
+    (properties `((upstream-name . "D3GB")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-rsqlite r-dbi r-base64enc))
+    (native-inputs (list esbuild))
+    (home-page "http://d3gb.usal.es")
+    (synopsis "Interactive Genome Browser")
+    (description
+     "This package creates interactive genome browser.  It joins the data analysis
+power of R and the visualization libraries of @code{JavaScript} in one package.
+Barrios, D. & Prieto, C. (2017) <doi:10.1089/cmb.2016.0213>.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-d2mcs
   (package
     (name "r-d2mcs")

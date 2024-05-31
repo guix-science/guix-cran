@@ -15076,13 +15076,13 @@ font size and such), which then are translated into valid ggplot2 commands.")
 (define-public r-ggwordcloud
   (package
     (name "r-ggwordcloud")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggwordcloud" version))
        (sha256
-        (base32 "1fbxpvylz0b911a4xg0ywqsgryfrshxlp18fvjg53xplxw1brfxp"))))
+        (base32 "0zl50rksfxiw3ab1j26w27rypygrr28yysflg507djamnc2371gj"))))
     (properties `((upstream-name . "ggwordcloud")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales

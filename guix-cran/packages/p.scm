@@ -12369,13 +12369,13 @@ data, apply various data checks, and deal with conflicting columns.")
 (define-public r-powerindexr
   (package
     (name "r-powerindexr")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerindexR" version))
        (sha256
-        (base32 "1dj5mnwx1wbygxjn538niwai5yxp6wry41l33j5xip10f2lbyzc3"))))
+        (base32 "1q8g60awv2sq4fm0kd2dzrgkwfk6mjvglgwihqspapb1zv9ild4z"))))
     (properties `((upstream-name . "powerindexR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=powerindexR")
@@ -22807,6 +22807,26 @@ the methods described by Balk (2008, ISBN:978-1-107-40496-0), von der Lippe
 (2001, ISBN:3-8246-0638-0), and the CPI manual (2020, ISBN:978-1-51354-298-0)
 for bilateral price indexes.")
     (license license:expat)))
+
+(define-public r-phytosanitarycalculator
+  (package
+    (name "r-phytosanitarycalculator")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PhytosanitaryCalculator" version))
+       (sha256
+        (base32 "1545xy338wanrkpy55ji4ap9wf7pldrb07pmhxcmhp73w3l82r2c"))))
+    (properties `((upstream-name . "PhytosanitaryCalculator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-acceptancesampling))
+    (home-page "https://cran.r-project.org/package=PhytosanitaryCalculator")
+    (synopsis "Phytosanitary Calculator for Inspection Plans Based on Risks")
+    (description
+     "This package provides a Shiny application for calculating phytosanitary
+inspection plans based on risks.")
+    (license license:gpl3)))
 
 (define-public r-phytools
   (package
@@ -35404,18 +35424,19 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.11.6")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0x0pirzcxjkx5p3mqf3xn3a7ng5dah3z9pcrlkaj7d44y08kygj3"))))
+        (base32 "0zzcppiw4rs7ibaf4wybdhwxnfmbpqrnnyffrz5nf6sqzn2hm28g"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tuner
                              r-suncalc
+                             r-signal
                              r-seewave
                              r-scales
                              r-rsqlite
@@ -35428,9 +35449,9 @@ visualization.")
                              r-magrittr
                              r-lubridate
                              r-httr
-                             r-hoardr
                              r-ggplot2
                              r-geosphere
+                             r-fftw
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=PAMmisc")
     (synopsis "Miscellaneous Functions for Passive Acoustic Analysis")

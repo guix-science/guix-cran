@@ -7191,13 +7191,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "1br3q49ikx50brca5n6y7kmzxzjjl767hy3gg6as6y9khsaclazc"))))
+        (base32 "1mfc9gyz21796j7h9g18hrkisrd6vyw4nc5dpfdd9r0abp8x61aw"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -12363,13 +12363,13 @@ CO2 concentration) that are used to compute soil fluxes.")
 (define-public r-neonplantecology
   (package
     (name "r-neonplantecology")
-    (version "1.5.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonPlantEcology" version))
        (sha256
-        (base32 "1g3j07jrmh9hdalnlbkrawk5gqyhs6y8yhnl1wi7lp6m2vvcgr15"))))
+        (base32 "0z41a5dsbvxkfx0yhqpqdzlzh7b4k4af54yj1rdpgp6gzwfd32nw"))))
     (properties `((upstream-name . "neonPlantEcology")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -14985,6 +14985,26 @@ determine which samples passed or failed QC. Gene expression should first be
 normalized to housekeeping genes, before a reference-based approach is used to
 adjust for batch effects.  Raw @code{NanoString} data can be imported in the
 form of Reporter Code Count (RCC) files.")
+    (license license:expat)))
+
+(define-public r-nanoparquet
+  (package
+    (name "r-nanoparquet")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nanoparquet" version))
+       (sha256
+        (base32 "1gvc4vxpvws0r0y0dxfmd4qchdzj6mcjq6r8gmbkpbxrjnawq5q3"))))
+    (properties `((upstream-name . "nanoparquet")))
+    (build-system r-build-system)
+    (home-page "https://github.com/r-lib/nanoparquet")
+    (synopsis "Read Parquet Files")
+    (description
+     "Self-sufficient reader and writer for flat Parquet files.  Can read most Parquet
+data types.  Can write many R data types, including factors and temporal types.
+Supports Snappy compression.")
     (license license:expat)))
 
 (define-public r-nanonext

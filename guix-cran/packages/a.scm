@@ -1828,13 +1828,13 @@ which are the clusters most defining genes.")
 (define-public r-autonewsmd
   (package
     (name "r-autonewsmd")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autonewsmd" version))
        (sha256
-        (base32 "1407vj22nl00i0zfy51m5j8bs8i9dlbs0vn5g7dw4klhn5iq2j1s"))))
+        (base32 "1wax4npyzkxjl1avgg6m275744nnpbv3qk8sbjg0dkqp58cb33lx"))))
     (properties `((upstream-name . "autonewsmd")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-quarto r-magrittr r-git2r r-data-table))
@@ -4337,13 +4337,13 @@ semiparametric nonlinear mixed-effects models.  See Wang (2011)
 (define-public r-assignr
   (package
     (name "r-assignr")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "assignR" version))
        (sha256
-        (base32 "01lsmzqqy56i9b5yyiyd8njs8nl4qznn6h4rkyizcjalch6sy4rl"))))
+        (base32 "1ml8yk9a8rm05whcygaxha8lrrp0npr50fvsb3pcdikxing1khdm"))))
     (properties `((upstream-name . "assignR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-mvnfast r-geosphere))
@@ -9369,6 +9369,41 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 <doi:10.1198/004017004000000608>.")
     (license license:gpl3)))
 
+(define-public r-apcalign
+  (package
+    (name "r-apcalign")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "APCalign" version))
+       (sha256
+        (base32 "0v1m3m6r85yip449pcbn7vk3c4zm0y3w4lf9rwqv3cis8gd9xfap"))))
+    (properties `((upstream-name . "APCalign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-curl
+                             r-crayon
+                             r-arrow))
+    (native-inputs (list r-knitr))
+    (home-page "https://traitecoevo.github.io/APCalign/")
+    (synopsis "Resolving Plant Taxon Names Using the Australian Plant Census")
+    (description
+     "The process of resolving taxon names is necessary when working with biodiversity
+data.  APCalign uses the Australian Plant Census (APC) and the Australian Plant
+Name Index (APNI) to align and update plant taxon names to current, accepted
+standards.  APCalign also supplies information about the established status of
+plant taxa across different states/territories.")
+    (license license:expat)))
+
 (define-public r-apc
   (package
     (name "r-apc")
@@ -9666,13 +9701,13 @@ library.")
 (define-public r-aorsf
   (package
     (name "r-aorsf")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aorsf" version))
        (sha256
-        (base32 "0ja4574gfmigbfq0j9838yfyzzlz5dbx5fadjv8a9d0j72k7r5zj"))))
+        (base32 "1a69kiji309c2anp0nqdb7n77zlbsl0aibiiazjw6zflwf8fff4l"))))
     (properties `((upstream-name . "aorsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -10297,13 +10332,13 @@ surpluses of consumers, producers and sectors.")
 (define-public r-antareseditobject
   (package
     (name "r-antareseditobject")
-    (version "0.6.4")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresEditObject" version))
        (sha256
-        (base32 "07389xpbys9k8sz4laq12ldbffj3yil0ys1kqx6k18ckfva69anp"))))
+        (base32 "1v9lhaw2cs4ggfpwi1zdlganks3xrnlsycziv0h3zi5zg45mar7v"))))
     (properties `((upstream-name . "antaresEditObject")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10312,6 +10347,7 @@ surpluses of consumers, producers and sectors.")
                              r-plyr
                              r-pbapply
                              r-memuse
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-future
@@ -16751,13 +16787,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "13hrcrhlbnd9828hls1dl8wczd5gd16jjqwbnsa1043wnm7sfg1z"))))
+        (base32 "1rrn0ag70bix45kkzpvkyz5hqnh86p0pw902is19gxf3qb8nj2bd"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

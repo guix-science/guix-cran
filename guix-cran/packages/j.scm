@@ -2680,13 +2680,13 @@ medical and health sciences.")
 (define-public r-jmbayes2
   (package
     (name "r-jmbayes2")
-    (version "0.4-5")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JMbayes2" version))
        (sha256
-        (base32 "0qdfp3r7wfy955f956jhryvxbnnw2zrnkqq931191z2v0xmird97"))))
+        (base32 "13p848ix1581p9yd6dgkifqj7bha8w2m7drkcz718bwmjlm83z61"))))
     (properties `((upstream-name . "JMbayes2")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
