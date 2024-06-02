@@ -14276,13 +14276,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "0kpm6wxyqmqlas2qxqim2fhq4cv3cpf2fdi8221sx08421iv8490"))))
+        (base32 "1ha935ibhz4iicyx3azlk867pkrmj4lrjs1rsyqljf46zd63nfan"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -14301,9 +14301,12 @@ equations (Smalian, Newton and Huber) as well stacking factor and form")
     (description
      "Fitting (hierarchical) hidden Markov models to financial data via maximum
 likelihood estimation.  See @code{OelschlÃ¤ger}, L. and Adam, T. \"Detecting
-bearish and bullish markets in financial time series using hierarchical hidden
-Markov models\" (2021, Statistical Modelling) <doi:10.1177/1471082X211034048> for
-a reference.")
+Bearish and Bullish Markets in Financial Time Series Using Hierarchical Hidden
+Markov Models\" (2021, Statistical Modelling) <doi:10.1177/1471082X211034048> for
+a reference on the method.  A user guide is provided by the accompanying
+software paper \"@code{fHMM}: Hidden Markov Models for Financial Time Series in
+R\", @code{OelschlÃ¤ger}, L., Adam, T., and Michels, R. (2024, Journal of
+Statistical Software) <doi:10.18637/jss.v109.i09>.")
     (license license:gpl3)))
 
 (define-public r-fhircrackr

@@ -11900,16 +11900,17 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "03r14hbc3hllxz5hjraq0ry38899vml6cq71ls8kdn98gi5c6gan"))))
+        (base32 "0c7rhw28w1hgnipy1s3sp1hkj97lcwa121fmpdnl2r4hzfm45x68"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi
+    (propagated-inputs (list r-xml2
+                             r-stringi
                              r-scales
                              r-rlang
                              r-pracma
@@ -11920,6 +11921,7 @@ visualisation tools are also available within the package.")
                              r-emmeans
                              r-curl
                              r-cowplot
+                             r-askpass
                              r-agricolae))
     (native-inputs (list r-knitr))
     (home-page "https://biometryhub.github.io/biometryassist/")
@@ -14063,13 +14065,13 @@ non-Gaussian: Binomial, Poisson, Gamma, Inverse Gaussian, or Negative Binomial."
 (define-public r-bigsparser
   (package
     (name "r-bigsparser")
-    (version "0.6.1")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsparser" version))
        (sha256
-        (base32 "0b6hh1rvi7qnz9kfnckjglcv240inpnc5f50cyrpfq5gdyppzhy1"))))
+        (base32 "0ppmv09n5ypm8jhsd580flk4k6p255k7az9k96fzjwjfrn0vmm74"))))
     (properties `((upstream-name . "bigsparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmio r-rcppeigen r-rcpp r-matrix r-bigassertr))

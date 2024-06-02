@@ -186,13 +186,13 @@ and direct communication with Zabbix API from R'.")
 (define-public r-rytstat
   (package
     (name "r-rytstat")
-    (version "0.3.0")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rytstat" version))
        (sha256
-        (base32 "1shsc54ss9120ngl59pnd6kqclfh2ilva97xdsx58a9c2kry2dmm"))))
+        (base32 "0fm5aa4dbr8g1zsmqsjasy1vkvpb4ss7nyl73rb7fn5zdlm6cvim"))))
     (properties `((upstream-name . "rytstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -2328,6 +2328,31 @@ potential of individual players.  Manuscript forthcoming.  See Bukiet & Harold
     (synopsis "Convert Strings to Elder Futhark Runes")
     (description "Convert a string of text characters to Elder Futhark Runes
 <https://en.wikipedia.org/wiki/Elder_Futhark>.")
+    (license license:expat)))
+
+(define-public r-rundrt
+  (package
+    (name "r-rundrt")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "runDRT" version))
+       (sha256
+        (base32 "1q90xismkzdpx7hfsyjpagv3jdj8slmdpdf7f2kbw6lx5mcv4v3x"))))
+    (properties `((upstream-name . "runDRT")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=runDRT")
+    (synopsis "Run Doubly Ranked Tests")
+    (description
+     "Doubly ranked tests are nonparametric tests for grouped functional and
+multivariate data.  The testing procedure first ranks a matrix (or three
+dimensional array) of data by column (if a matrix) or by cell (across the third
+dimension if an array).  By default, it calculates a sufficient statistic for
+the subject's order within the sample using the observed ranks, taken over the
+columns or cells.  Depending on the number of groups, G, the summarized ranks
+are then analyzed using either a Wilcoxon Rank Sum test (G = 2) or a
+Kruskal-Wallis (G greater than 2).")
     (license license:expat)))
 
 (define-public r-runcharter
@@ -10920,16 +10945,16 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "3.5.1")
+    (version "4.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "0fn2hxikhwj2qzxj9d1dzay4kfjndbvfr9iykw4rbn0fy7qcixh2"))))
+        (base32 "1mwsy5y917sihyq3i001hzz98zx5zvm8042inv072vxik2pybngc"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rcpp r-knitr))
+    (propagated-inputs (list r-rlang r-rcpp r-r6 r-knitr))
     (native-inputs (list r-rmarkdown r-knitr gfortran))
     (home-page "https://www.rpact.org")
     (synopsis "Confirmatory Adaptive Clinical Trial Design and Analysis")
@@ -13449,17 +13474,16 @@ dealing with noisy numerical data.")
 (define-public r-rocnreg
   (package
     (name "r-rocnreg")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROCnReg" version))
        (sha256
-        (base32 "08dklrd4ym60h3s5s88g9bv1adi8d6fxnnw2ap9870a1h0a7dk7g"))))
+        (base32 "149iq8i67qmdy6a65b4zw03f1sha8dbnirqw24in1kar3m5zg9hn"))))
     (properties `((upstream-name . "ROCnReg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat
+    (propagated-inputs (list r-spatstat-univar
                              r-pbivnorm
                              r-np
                              r-nor1mix
@@ -13478,12 +13502,12 @@ several criteria.  Based on Erkanli, A. et al. (2006) <doi:10.1002/sim.2496>;
 Faraggi, D. (2003) <doi:10.1111/1467-9884.00350>; Gu, J. et al. (2008)
 <doi:10.1002/sim.3366>; Inacio de Carvalho, V. et al. (2013)
 <doi:10.1214/13-BA825>; Inacio de Carvalho, V., and Rodriguez-Alvarez, M.X.
-(2018) <@code{arXiv:1806.00473>}; Janes, H., and Pepe, M.S. (2009)
+(2022) <doi:10.1214/21-STS839>; Janes, H., and Pepe, M.S. (2009)
 <doi:10.1093/biomet/asp002>; Pepe, M.S. (1998)
 <http://www.jstor.org/stable/2534001?seq=1>; Rodriguez-Alvarez, M.X. et al.
 (2011a) <doi:10.1016/j.csda.2010.07.018>; Rodriguez-Alvarez, M.X. et al. (2011a)
 <doi:10.1007/s11222-010-9184-1>.  Please see Rodriguez-Alvarez, M.X. and Inacio,
-V. (20208) <@code{arXiv:2003.13111>} for more details.")
+V. (2021) <doi:10.32614/RJ-2021-066> for more details.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-rocnp
@@ -21260,13 +21284,13 @@ S-estimator of multivariate location and scatter matrix.")
 (define-public r-ritools
   (package
     (name "r-ritools")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RItools" version))
        (sha256
-        (base32 "1m9isda5alzycill707r2ayz9mcdsyhxnpy6i6nmzgrsxb9f421a"))))
+        (base32 "1msjxrlil82sa8xm705zi5kqy74nq8jndgm7aq0skn9ms6w88xh4"))))
     (properties `((upstream-name . "RItools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable

@@ -3171,19 +3171,21 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.6")
+    (version "2.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "0dn1mghic22s04lg79v9kinxfpd40lsigkda9x6i2bv0wgvwsy06"))))
+        (base32 "0gdni6jfqq4k4w5b42va0hm7fc1k8v8b3imlip6fn9kni388a2xl"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
                              r-readr
+                             r-purrr
                              r-magrittr
                              r-jsonlite
                              r-httr
@@ -4536,25 +4538,22 @@ Linux.")
 (define-public r-cryptoquotes
   (package
     (name "r-cryptoquotes")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptoQuotes" version))
        (sha256
-        (base32 "101j4abar8za1llgv7j6cn7f970nrf1qbi3g888p5xkzar8aczkv"))))
+        (base32 "0fyhnba1h3vf802rab96hch6gdkggz040yvfry9ya2i74xl972pi"))))
     (properties `((upstream-name . "cryptoQuotes")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
                              r-ttr
-                             r-rlang
                              r-plotly
-                             r-paletteer
                              r-lifecycle
                              r-jsonlite
                              r-curl
-                             r-conflicted
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://serkor1.github.io/cryptoQuotes/")
@@ -9093,24 +9092,22 @@ performance and allow larger data sets.")
 (define-public r-covsim
   (package
     (name "r-covsim")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "covsim" version))
        (sha256
-        (base32 "0kzlqdhx67hfm0f53yb438qfi4vlcf2j3cpyj2r49zgpwwgfk21p"))))
+        (base32 "0pk6jfh7bcpqm63zdlrkz1cqdgwwkkdjlflw8yb8fq6p25bmppih"))))
     (properties `((upstream-name . "covsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
                              r-rvinecopulib
-                             r-rcpp
                              r-pearsonds
                              r-nleqslv
                              r-matrix
                              r-mass
-                             r-lavaan
-                             r-gsl))
+                             r-lavaan))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=covsim")
     (synopsis
@@ -11082,13 +11079,13 @@ annual outcome value, and to test the coefficients.")
 (define-public r-cosimmr
   (package
     (name "r-cosimmr")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cosimmr" version))
        (sha256
-        (base32 "01nfqmnblw0hi7dsl01f4y1jpvdbxal38m2k22zbpszqb0rxyrfr"))))
+        (base32 "1gvkzp0l8zkana78llp4r734cs12dibysh5hylafmi81byibyxyp"))))
     (properties `((upstream-name . "cosimmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -11102,7 +11099,7 @@ annual outcome value, and to test the coefficients.")
                              r-checkmate
                              r-bayesplot))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=cosimmr")
+    (home-page "https://github.com/emmagovan/cosimmr")
     (synopsis "Fast Fitting of Stable Isotope Mixing Models with Covariates")
     (description
      "Fast fitting of Stable Isotope Mixing Models in R. Allows for the inclusion of
@@ -20866,41 +20863,36 @@ profiles, thereby facilitating applications, such as reviewing structured
 profiles.")
     (license (license:fsdg-compatible "Apache License"))))
 
-(define-public r-cohortcharacteristics
+(define-public r-cohortconstructor
   (package
-    (name "r-cohortcharacteristics")
-    (version "0.2.0")
+    (name "r-cohortconstructor")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "CohortCharacteristics" version))
+       (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1yyh7cyyr6hq1nv4s17sr6i8v0aaiy54vichq6lhmcvbp7n4c1b4"))))
-    (properties `((upstream-name . "CohortCharacteristics")))
+        (base32 "1lic4cjqps2pp9jbw0bqkbkdhjkxbs0nixqkchlw2j7r8lkgqd0f"))))
+    (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
-                             r-stringr
-                             r-snakecase
+    (propagated-inputs (list r-tidyr
                              r-rlang
+                             r-purrr
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-ggpubr
+                             r-glue
                              r-dplyr
-                             r-diagrammer
+                             r-dbplyr
                              r-cli
                              r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/CohortCharacteristics/")
-    (synopsis
-     "Summarise and Visualise Characteristics of Patients in the OMOP CDM")
+    (home-page "https://ohdsi.github.io/CohortConstructor/")
+    (synopsis "Build and Manipulate Study Cohorts Using a Common Data Model")
     (description
-     "Summarise and visualise the characteristics of patients in data mapped to the
-Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
+     "Create and manipulate study cohorts in data mapped to the Observational Medical
+Outcomes Partnership Common Data Model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cohortbuilder
@@ -21658,16 +21650,17 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "2.2.3")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "0jx4xjihlgssr0ajdv9zcinj58c8fxqcvpr0y6cbmqymczgs1win"))))
+        (base32 "1fg9xbznd5zmn35rfg52899yx0di7hqx6sznvd8a9gnc2xrp4723"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-visomopresults
+                             r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-stringr
@@ -21678,13 +21671,12 @@ utilities to generate this metadata with a minimum of dependencies.")
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-glue
-                             r-duckdb
                              r-dplyr
                              r-dbi
                              r-cli
-                             r-checkmate
-                             r-cdmconnector))
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu.github.io/CodelistGenerator/")
     (synopsis "Identify Relevant Clinical Codes and Evaluate Their Use")
@@ -24711,13 +24703,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0kijkfhx7v7ac7lxjh40fdv2amg7hzhl5i6127pggr8vx1b5mx2n"))))
+        (base32 "0zrwan1myq2lw15ga0xfxkwszq09bp25qj8dn9z9zrmb9s3lfsj7"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

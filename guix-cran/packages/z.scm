@@ -785,6 +785,36 @@ bias-corrected and accelerated bootstrap method as described in \"An Introductio
 to the Bootstrap\" Efron (1983) <0-412-04231-2>.")
     (license license:gpl2)))
 
+(define-public r-zenstats
+  (package
+    (name "r-zenstats")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zenstats" version))
+       (sha256
+        (base32 "1ji4pqb0vh8ad8jr4pd6dkjr5cfckrlp24jncjc079wahw64fgs5"))))
+    (properties `((upstream-name . "zenstats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-rcurl
+                             r-purrr
+                             r-polite
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (home-page "https://rfsaldanha.github.io/zenstats/")
+    (synopsis "Statistics from 'Zenodo' Deposits")
+    (description
+     "Fetch statistics about views, downloads and data volume from Zenodo deposits.
+The package collects a Zenodo (<https://zenodo.org>) deposit file information,
+respecting the website scrapping policies.")
+    (license license:expat)))
+
 (define-public r-zenplots
   (package
     (name "r-zenplots")

@@ -635,20 +635,20 @@ non-linear profitability estimation built upon the DEA framework.")
 (define-public r-hyper2
   (package
     (name "r-hyper2")
-    (version "3.0-0")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyper2" version))
        (sha256
-        (base32 "09nq5vxih9f7731nrd5avpk6gw4wbh9rpq4bmq7373ikgc3qy3mf"))))
+        (base32 "11bn7rhadisb46ls6ph9xbixz9zygd4ivjn3hgbv6059l2f2v0i0"))))
     (properties `((upstream-name . "hyper2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
                              r-rcpp
                              r-partitions
-                             r-mathjaxr
                              r-magrittr
+                             r-frab
                              r-disordr
                              r-cubature
                              r-calibrator
@@ -657,8 +657,12 @@ non-linear profitability estimation built upon the DEA framework.")
     (home-page "https://github.com/RobinHankin/hyper2")
     (synopsis "The Hyperdirichlet Distribution, Mark 2")
     (description
-     "This package provides a suite of routines for the hyperdirichlet distribution;
-supersedes the hyperdirichlet package.  Uses @code{disordR} discipline.")
+     "This package provides a suite of routines for the hyperdirichlet distribution
+and reified Bradley-Terry; supersedes the hyperdirichlet package; uses
+@code{disordR} discipline <doi:10.48550/ARXIV.2210.03856>.  To cite in
+publications please use Hankin 2017 <doi:10.32614/rj-2017-061>, and for
+Generalized Plackett-Luce likelihoods use Hankin 2024
+<doi:10.18637/jss.v109.i08>.")
     (license license:gpl2+)))
 
 (define-public r-hymett
@@ -4886,13 +4890,13 @@ accommodated in the univariate setting.")
 (define-public r-hmer
   (package
     (name "r-hmer")
-    (version "1.5.9")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmer" version))
        (sha256
-        (base32 "17qzr0075vsrrlsv6cz29wq39pwwnwfn76x0nx68khcg84y66dgf"))))
+        (base32 "0536bdrg4cw4kqmx6czzh63b8wia6fhm02fvjv9irlmxqhmy0mxa"))))
     (properties `((upstream-name . "hmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -4920,10 +4924,10 @@ emulators to data, diagnostic functions to ensure suitability, and a variety of
 proposal methods for generating waves of points.  For details on the
 mathematical background, there are many papers available on the topic (see
 references attached to function help files or the below references); for details
-of the functions in this package, consult the manual or help files.  Bower,
-R.G., Goldstein, M., and Vernon, I. (2010) <doi:10.1214/10-BA524>.  Craig, P.S.,
-Goldstein, M., Seheult, A.H., and Smith, J.A. (1997)
-<doi:10.1007/978-1-4612-2290-3_2>.")
+of the functions in this package, consult the manual or help files.  Iskauskas,
+A, et al. (2024) <doi:10.18637/jss.v109.i10>.  Bower, R.G., Goldstein, M., and
+Vernon, I. (2010) <doi:10.1214/10-BA524>.  Craig, P.S., Goldstein, M., Seheult,
+A.H., and Smith, J.A. (1997) <doi:10.1007/978-1-4612-2290-3_2>.")
     (license license:expat)))
 
 (define-public r-hmeasure

@@ -3927,48 +3927,6 @@ beat() in bpm.  Together the two functions can be used to create many different
 drum patterns.")
     (license license:gpl3)))
 
-(define-public r-drugutilisation
-  (package
-    (name "r-drugutilisation")
-    (version "0.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DrugUtilisation" version))
-       (sha256
-        (base32 "1hghxd6r2k3hfy2l1s9hh07kg0qffi211dy9f9915m2nxfllxwqc"))))
-    (properties `((upstream-name . "DrugUtilisation")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-visomopresults
-                             r-tidyr
-                             r-tictoc
-                             r-rlang
-                             r-rjsonio
-                             r-purrr
-                             r-patientprofiles
-                             r-omopgenerics
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-glue
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-cohortcharacteristics
-                             r-cli
-                             r-checkmate
-                             r-cdmconnector))
-    (native-inputs (list r-knitr))
-    (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
-    (synopsis
-     "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
-    (description
-     "Summarise patient-level drug utilisation cohorts using data mapped to the
-Observational Medical Outcomes Partnership (OMOP) common data model.  New users
-and prevalent users cohorts can be generated and their characteristics,
-indication and drug use summarised.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-drugsim2dr
   (package
     (name "r-drugsim2dr")
@@ -5891,13 +5849,13 @@ manipulation.")
 (define-public r-dplr
   (package
     (name "r-dplr")
-    (version "1.7.6")
+    (version "1.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dplR" version))
        (sha256
-        (base32 "0p2mld1hymxn7gij4hx62r03kchvnyfcc27ckgdgznznihbf185z"))))
+        (base32 "1gdjrpa0x6clafiybqcc7119i350k2hx34j5ksgljwr7lb9a8d8f"))))
     (properties `((upstream-name . "dplR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -5906,14 +5864,13 @@ manipulation.")
                              r-signal
                              r-r-utils
                              r-png
-                             r-plyr
                              r-matrixstats
                              r-matrix
                              r-lattice
                              r-digest
                              r-boot))
     (native-inputs (list gfortran))
-    (home-page "https://github.com/AndyBunn/dplR")
+    (home-page "https://github.com/OpenDendro/dplR")
     (synopsis "Dendrochronology Program Library in R")
     (description
      "Perform tree-ring analyses such as detrending, chronology building, and cross
@@ -8858,6 +8815,41 @@ reports that support these three tasks.")
     (description
      "Collection of functions for distributed lag linear and non-linear models.")
     (license license:gpl2+)))
+
+(define-public r-dlmtree
+  (package
+    (name "r-dlmtree")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dlmtree" version))
+       (sha256
+        (base32 "01nzhi1ysbvfl8f3asba9l2n72aidk632njv5m50k9xjfcjhayqb"))))
+    (properties `((upstream-name . "dlmtree")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-shinythemes
+                             r-shiny
+                             r-rcppeigen
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mgcv
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/danielmork/dlmtree")
+    (synopsis "Bayesian Treed Distributed Lag Models")
+    (description
+     "Estimation of distributed lag models (DLMs) based on a Bayesian additive
+regression trees framework.  Includes several extensions of DLMs: treed DLMs and
+distributed lag mixture models (Mork and Wilson, 2023) <doi:10.1111/biom.13568>;
+treed distributed lag nonlinear models (Mork and Wilson, 2022)
+<doi:10.1093/biostatistics/kxaa051>; heterogeneous DLMs (Mork, et.  al., 2024)
+<doi:10.1080/01621459.2023.2258595>; monotone DLMs (Mork and Wilson, 2024)
+<doi:10.1214/23-BA1412>.  The package also includes visualization tools and a
+shiny interface to help interpret results.")
+    (license license:gpl3+)))
 
 (define-public r-dlmtool
   (package
@@ -15101,27 +15093,6 @@ dhlab (digital humanities laboratory).  Provides wrappers for accessing our API
 services at <https://api.nb.no/dhlab/>.  To learn more about dhlab, visit out
 site <https://www.nb.no/dh-lab/>.")
     (license license:gpl3+)))
-
-(define-public r-dhis2r
-  (package
-    (name "r-dhis2r")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dhis2r" version))
-       (sha256
-        (base32 "019qrkcssxmvmhla3vfjq9m0vwv9j9h7njr2sjpmk4cqcdxvcbjn"))))
-    (properties `((upstream-name . "dhis2r")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-httr2 r-dplyr r-curl r-attempt))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/amanyiraho/dhis2r")
-    (synopsis "Client for the 'DHIS2' Web API")
-    (description
-     "Connect and pull data from a DHIS2 (District Health Information Software 2)
-instance into R.")
-    (license license:expat)))
 
 (define-public r-dhh
   (package

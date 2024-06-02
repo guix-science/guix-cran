@@ -5767,13 +5767,13 @@ output graphics.")
 (define-public r-openintro
   (package
     (name "r-openintro")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openintro" version))
        (sha256
-        (base32 "1svvlhdnv8dvqwphsn83asfd5xzvvar2bz334aqndqx76dv9j88j"))))
+        (base32 "0d9x109806ylay80ih6zrfqqjylbi0ralr9k7rz6xar40rimzb5z"))))
     (properties `((upstream-name . "openintro")))
     (build-system r-build-system)
     (propagated-inputs (list r-usdata
@@ -5786,11 +5786,11 @@ output graphics.")
     (native-inputs (list r-knitr))
     (home-page "http://openintrostat.github.io/openintro/")
     (synopsis
-     "Data Sets and Supplemental Functions from 'OpenIntro' Textbooks and Labs")
+     "Datasets and Supplemental Functions from 'OpenIntro' Textbooks and Labs")
     (description
      "Supplemental functions and data for @code{OpenIntro} resources, which includes
 open-source textbooks and resources for introductory statistics
-(<https://www.openintro.org/>).  The package contains data sets used in our
+(<https://www.openintro.org/>).  The package contains datasets used in our
 open-source textbooks along with custom plotting functions for reproducing book
 figures.  Note that many functions and examples include color transparency; some
 plotting elements may not show up properly (or at all) when run in some versions

@@ -697,13 +697,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "1002fpk9gn7487y8lw4qkycln0727v9c7215hx7lwc5q2yjdjkir"))))
+        (base32 "1g8qfbm8fxjm48dwmwfgckdsynicbmpnj35yjy34nal98qs5andp"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2381,13 +2381,13 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
 (define-public r-jmv
   (package
     (name "r-jmv")
-    (version "2.4.11")
+    (version "2.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmv" version))
        (sha256
-        (base32 "02iaasl3crg924y3dipv7pjq67nj9lf2i2j53pa4ccwz22nrpsbw"))))
+        (base32 "0d98sk8c6m6zi1p8wycdmk5xh48ji04lrhmqpj5q081llv30y31m"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcdextra

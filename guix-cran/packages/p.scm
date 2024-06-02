@@ -15505,13 +15505,13 @@ Pages 69-92) <doi:10.1016/0304-3975(95)00090-9>.")
 (define-public r-polymapr
   (package
     (name "r-polymapr")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polymapR" version))
        (sha256
-        (base32 "0mc4gblzznd0md740bzrd3cpk5ikf3dms72iqq18g76yc2y8iy2r"))))
+        (base32 "0aschby014m0j0nrr2q4pfghhakx89jq6wn8pv2dnbfpbg779l18"))))
     (properties `((upstream-name . "polymapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mdsmap r-knitr r-igraph r-foreach r-doparallel))
@@ -22504,39 +22504,6 @@ independent of the axes and plot dimensions, to prevent distortions when the
 plot dimensions are changed.")
     (license license:gpl3+)))
 
-(define-public r-piecewisesem
-  (package
-    (name "r-piecewisesem")
-    (version "2.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "piecewiseSEM" version))
-       (sha256
-        (base32 "0f1ya6p85iai52cdm510zm6qvkpsfkn48948q8lz9v6ykz59v5h2"))))
-    (properties `((upstream-name . "piecewiseSEM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-performance
-                             r-nlme
-                             r-mumin
-                             r-multcomp
-                             r-mass
-                             r-lme4
-                             r-igraph
-                             r-emmeans
-                             r-diagrammer
-                             r-car))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jslefche/")
-    (synopsis "Piecewise Structural Equation Modeling")
-    (description
-     "This package implements piecewise structural equation modeling from a single
-list of structural equations, with new methods for non-linear, latent, and
-composite variables, standardized coefficients, query-based prediction and
-indirect effects.  See <http://jslefche.github.io/@code{piecewiseSEM/>} for
-more.")
-    (license license:gpl3)))
-
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
@@ -23521,6 +23488,44 @@ generate a map of potential contact zones between groups with user-defined
 thresholds in the tree to account for old and recent divergence.  Additionally,
 it has functions for IDW interpolation using genetic data and midpoints.")
     (license license:gpl2+)))
+
+(define-public r-phylepic
+  (package
+    (name "r-phylepic")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylepic" version))
+       (sha256
+        (base32 "16ll8w5zsdiw48rhz3gl3svp7xiwjap0bwy6hpjpyvsk6dzjx3mi"))))
+    (properties `((upstream-name . "phylepic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidygraph
+                             r-scales
+                             r-rlang
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-ggnewscale
+                             r-forcats
+                             r-dplyr
+                             r-cowplot
+                             r-cli
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cidm-ph/phylepic")
+    (synopsis
+     "Combined Visualisation of Phylogenetic and Epidemiological Data")
+    (description
+     "This package provides a collection of utilities and ggplot2 extensions to assist
+with visualisations in genomic epidemiology.  This includes the phylepic chart,
+a visual combination of a phylogenetic tree and a matched epidemic curve.  The
+included ggplot2 extensions such as date axes binned by week are relevant for
+other applications in epidemiology and beyond.  The approach is described in
+Suster et al. (2024) <doi:10.1101/2024.04.02.24305229>.")
+    (license license:expat)))
 
 (define-public r-phyext2
   (package
@@ -26541,13 +26546,13 @@ processing and analysis methods more easily and efficiently.  The codebase is in
 (define-public r-petersen
   (package
     (name "r-petersen")
-    (version "2023.12.1")
+    (version "2024.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Petersen" version))
        (sha256
-        (base32 "0wn3m34qr9nr0v3pp0yqi2z2hpnivgfn2dw5ajd4l32n136psv1h"))))
+        (base32 "03xhsmlgqgp037ccy2q2a65cspcy1qxm1vzb6yljhv61r60zfqjz"))))
     (properties `((upstream-name . "Petersen")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -7822,13 +7822,13 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "1pv031684l198a96glgx65pp1ri9wvixk9zqmxbqdfb6d86ls9rp"))))
+        (base32 "00gzfibv3pw35r9lqzxpik1x3daffrs5xlbbxm46d9gvd2bhrzxd"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (inputs (list))
@@ -22792,13 +22792,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.3-2")
+    (version "1.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialreg" version))
        (sha256
-        (base32 "0qvf85l287qak2cs0l87rl4vacphnanvj8cgs82aiq6vkl52igp3"))))
+        (base32 "01jidx2p31zr81qd9r0hfn5ciw6jbip4pxm1vv74y20adp4bqr50"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -23823,6 +23823,29 @@ additional information about SVMlight format see
 <doi:10.1016/j.patcog.2013.05.017>) for robust vector field learning.  Largely
 translated from the Matlab functions in <https://github.com/jiayi-ma/VFC>.")
     (license license:gpl3+)))
+
+(define-public r-sparsevctrs
+  (package
+    (name "r-sparsevctrs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sparsevctrs" version))
+       (sha256
+        (base32 "18w5d1ggyxvwm6rcf0bspsblf6s5m0snr4pf22y9sqfjb282vdz0"))))
+    (properties `((upstream-name . "sparsevctrs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-rlang r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-lib/sparsevctrs")
+    (synopsis "Sparse Vectors for Use in Data Frames")
+    (description
+     "This package provides sparse vectors powered by ALTREP (Alternative
+Representations for R Objects) that behave like regular vectors, and can thus be
+used in data frames.  Also provides tools to convert between sparse matrices and
+data frames with sparse columns and functions to interact with sparse vectors.")
+    (license license:expat)))
 
 (define-public r-sparsevb
   (package
@@ -32251,13 +32274,13 @@ to detect when animals are dead.")
 (define-public r-sleeperapi
   (package
     (name "r-sleeperapi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sleeperapi" version))
        (sha256
-        (base32 "05x8yd0i11f9mgq3b95yfa20a39nnkpsdd0mn5p6654b7aqbkq4b"))))
+        (base32 "1lmpcpd407bz7fwb20c8m5vaxq7l7sgna7jmh6mjy579az0fzllj"))))
     (properties `((upstream-name . "sleeperapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -50161,6 +50184,31 @@ summarizes transcript-level quantifications for gene-level analyses using
 tximport Soneson et al. (2015) <doi:10.12688/f1000research.7563.2>.")
     (license license:expat)))
 
+(define-public r-seedvigorindex
+  (package
+    (name "r-seedvigorindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeedVigorIndex" version))
+       (sha256
+        (base32 "00r7n7h3b81pnq0bbgm6pgbz7w3algk1apawmc15apg9zi85x8dp"))))
+    (properties `((upstream-name . "SeedVigorIndex")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SeedVigorIndex")
+    (synopsis "Seed Vigor Index")
+    (description
+     "Seed vigor is defined as the sum total of those properties of the seed which
+determine the level of activity and performance of the seed or seed lot during
+germination and seedling emergence.  Testing for vigor becomes more important
+for carryover seeds, especially if seeds were stored under unknown conditions or
+under unfavorable storage conditions.  Seed vigor testing is also used as
+indicator of the storage potential of a seed lot and in ranking various seed
+lots with different qualities.  The vigour index is calculated using the
+equation given by (Ling et al.  2014) <doi:10.1038/srep05859>.")
+    (license license:gpl3)))
+
 (define-public r-seeds
   (package
     (name "r-seeds")
@@ -50310,6 +50358,27 @@ results with predicted seed matches.  Using publicly available data, we
 demonstrate the ability of @code{SeedMatchR} to detect cumulative changes in
 differential gene expression attributed to @code{siRNA} seed regions.")
     (license license:expat)))
+
+(define-public r-seedimbibition
+  (package
+    (name "r-seedimbibition")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SeedImbibition" version))
+       (sha256
+        (base32 "05gxixj69nqvb9d4v81d7359nl3dihglxqysr1ys6qz3vzjr8zq4"))))
+    (properties `((upstream-name . "SeedImbibition")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SeedImbibition")
+    (synopsis "Seed Imbibition Percentage")
+    (description
+     "Imbibition causes seeds to expand, which results in the seed coat or testa being
+broken.  Seed germination begins with imbibition.  Imbibition aids in the
+transport of water into the developing ovules.  Imbibition is required during
+the first stages of root water absorption.")
+    (license license:gpl3)))
 
 (define-public r-seededlda
   (package
@@ -57327,13 +57396,13 @@ Institute.")
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "0d9l29nvawir3wh5hb1pm53k5vbcc9biqqlynq3mdp39h313mxak"))))
+        (base32 "0saw3n0n1yw32ajnvp4g2gk4ikhgxc83rnyzqrndji39kc9qffkq"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

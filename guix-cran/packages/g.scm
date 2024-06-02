@@ -2224,13 +2224,13 @@ Model by Ruchjana et al.(2012) <doi:10.1063/1.4724118>.")
 (define-public r-gsstda
   (package
     (name "r-gsstda")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSSTDA" version))
        (sha256
-        (base32 "17mrdp5gy21mzb1k9czzzpn7ybymwn0m8c2srwv7d124mp8i3qpz"))))
+        (base32 "0ah19qf6lfzlw52w43b5qszsxh2yvpz7vnspgvj4qidysbxkxd3q"))))
     (properties `((upstream-name . "GSSTDA")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -2241,7 +2241,8 @@ Model by Ruchjana et al.(2012) <doi:10.1063/1.4724118>.")
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=GSSTDA")
-    (synopsis "Gene Structure Survival using Topological Data Analysis")
+    (synopsis
+     "Progression Analysis of Disease with Survival using Topological Data Analysis")
     (description
      "Mapper-based survival analysis with transcriptomics data is designed to carry
 out.  Mapper-based survival analysis is a modification of Progression Analysis
@@ -5978,13 +5979,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "0b6bisszv3nw90vsj1fpc9hmw0dw86p2lwm9kbmranrcb8m3zz6l"))))
+        (base32 "1sqvrjyv8ncls9nvhfw6y4nyfdc349n8hyrmnfbqlm2rdhgnf6qr"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -21863,6 +21864,47 @@ which is available in a drat repository.  The size of the geomarocdata package
 is approximately 12 MB.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-geomarchetypal
+  (package
+    (name "r-geomarchetypal")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeomArchetypal" version))
+       (sha256
+        (base32 "112drwxh4khcplrf3krf97v2wxf5qvfgm58mjaswjcdk1zkjdfi0"))))
+    (properties `((upstream-name . "GeomArchetypal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rlang
+                             r-plot3d
+                             r-mirai
+                             r-matrix
+                             r-magrittr
+                             r-geometry
+                             r-dplyr
+                             r-doparallel
+                             r-distances
+                             r-archetypal
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GeomArchetypal")
+    (synopsis "Finds the Geometrical Archetypal Analysis of a Data Frame")
+    (description
+     "This package performs Geometrical Archetypal Analysis after creating Grid
+Archetypes which are the Cartesian Product of all minimum, maximum variable
+values.  Since the archetypes are fixed now, we have the ability to compute the
+convex composition coefficients for all our available data points much faster by
+using the half part of Principal Convex Hull Archetypal method.  Additionally we
+can decide to keep as archetypes the closer to the Grid Archetypes ones.
+Finally the number of archetypes is always 2 to the power of the dimension of
+our data points if we consider them as a vector space.  Cutler, A., Breiman, L.
+(1994) <doi:10.1080/00401706.1994.10485840>.  Morup, M., Hansen, LK. (2012)
+<doi:10.1016/j.neucom.2011.06.033>.  Christopoulos, DT. (2024)
+<doi:10.13140/RG.2.2.14030.88642>.")
+    (license license:gpl2+)))
+
 (define-public r-geomapdata
   (package
     (name "r-geomapdata")
@@ -22607,6 +22649,29 @@ Conjugate priors are assumed on some parameters while inference on the other
 parameters can be done through a full Bayesian analysis of by empirical Bayes
 methods.")
     (license license:gpl2+)))
+
+(define-public r-geoarrow
+  (package
+    (name "r-geoarrow")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoarrow" version))
+       (sha256
+        (base32 "1kp3shyjawsf7klff3ijyvwnygv633zb619cwqvcjypkd614d4wq"))))
+    (properties `((upstream-name . "geoarrow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wk r-nanoarrow))
+    (home-page "https://github.com/geoarrow/geoarrow-r")
+    (synopsis "Extension Types for Spatial Data for Use with 'Arrow'")
+    (description
+     "This package provides extension types and conversions to between R-native object
+types and Arrow columnar types.  This includes integration among the arrow',
+nanoarrow', sf', and wk packages such that spatial metadata is preserved
+wherever possible.  Extension type implementations ensure first-class geometry
+data type support in the arrow and nanoarrow packages.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-geoar
   (package

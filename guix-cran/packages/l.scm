@@ -8540,30 +8540,34 @@ allows to visualize the clustering results returned by the server.")
 (define-public r-link2gi
   (package
     (name "r-link2gi")
-    (version "0.5-3")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "link2GI" version))
        (sha256
-        (base32 "192f3cilra1lq8wg2hn41z2a7ag4m9svkc6smw0rf7np2xv9b2a6"))))
+        (base32 "0ivzbmvwxx2v0pk7f1y84jxad5pvpl4m6czmjkga52wnk0y5dnn1"))))
     (properties `((upstream-name . "link2GI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-yaml
+                             r-xml2
                              r-xfun
                              r-terra
-                             r-stringr
                              r-sf
+                             r-rstudioapi
                              r-roxygen2
+                             r-renv
                              r-r-utils
-                             r-devtools))
+                             r-git2r
+                             r-devtools
+                             r-brew))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/r-spatial/link2GI/")
     (synopsis
      "Linking Geographic Information Systems, Remote Sensing and Other Command Line Tools")
     (description
-     "This package provides functions to simplify the linking of open source GIS and
-remote sensing related command line interfaces.")
+     "This package provides functions and tools for using open GIS and remote sensing
+command-line interfaces in a reproducible environment.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -14748,32 +14752,6 @@ for a vignette of this package.  Development of this package was supported in
 part by the National Science Foundation Grant 1417857 and the National Center
 for Atmospheric Research.")
     (license license:gpl2+)))
-
-(define-public r-latticedesign
-  (package
-    (name "r-latticedesign")
-    (version "2.0-5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LatticeDesign" version))
-       (sha256
-        (base32 "06pndvsp3v6gid46hcixh559pcmh2ckr9ss5065nbbrxhg2rf98b"))))
-    (properties `((upstream-name . "LatticeDesign")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=LatticeDesign")
-    (synopsis "Lattice-Based Space-Filling Designs")
-    (description
-     "Lattice-based space-filling designs with fill or separation distance properties
-including interleaved lattice-based minimax distance designs proposed in Xu He
-(2017) <doi:10.1093/biomet/asx036>, interleaved lattice-based maximin distance
-designs proposed in Xu He (2018) <doi:10.1093/biomet/asy069>, (sliced) rotated
-sphere packing designs proposed in Xu He (2017)
-<doi:10.1080/01621459.2016.1222289> and Xu He (2019)
-<doi:10.1080/00401706.2018.1458655>, and densest packing-based maximum
-projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
-He (2018) <@code{arXiv:1709.02062v2>}.")
-    (license license:lgpl2.1)))
 
 (define-public r-latte
   (package

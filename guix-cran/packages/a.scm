@@ -1006,16 +1006,17 @@ switching between week-based date definitions.")
 (define-public r-avotrex
   (package
     (name "r-avotrex")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avotrex" version))
        (sha256
-        (base32 "0khvlgf1acxy7d9nn4d038fb4sg46slh96cfq8q1x8abybj7bg68"))))
+        (base32 "0gp3fqcvar4b9iw7320d380spnmk3025jjxgyv11pqdviwqnccd2"))))
     (properties `((upstream-name . "avotrex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidytree
+    (propagated-inputs (list r-treetools
+                             r-tidytree
                              r-stringr
                              r-snow
                              r-phytools

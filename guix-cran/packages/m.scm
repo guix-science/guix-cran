@@ -6947,6 +6947,39 @@ visualization, and export of results.  For a general introduction to MS-based
 thermal profiling, see Savitski et al. (2014) <doi:10.1126/science.1255784>.")
     (license license:gpl3)))
 
+(define-public r-mstest
+  (package
+    (name "r-mstest")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSTest" version))
+       (sha256
+        (base32 "0ad28aj9pmy9vn6z9fhzvap4cbxafbk09amhgp178hvw9rdp48zf"))))
+    (properties `((upstream-name . "MSTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pso
+                             r-pracma
+                             r-numderiv
+                             r-nloptr
+                             r-gensa
+                             r-ga
+                             r-foreach))
+    (home-page "https://github.com/roga11/MSTest")
+    (synopsis "Hypothesis Testing for Markov Switching Models")
+    (description
+     "Implementation of hypothesis testing procedures described in Hansen (1992)
+<doi:10.1002/jae.3950070506>, Carrasco, Hu, & Ploberger (2014)
+<doi:10.3982/ECTA8609>, Dufour & Luger (2017)
+<doi:10.1080/07474938.2017.1307548>, and Rodriguez Rondon & Dufour (2022)
+<https://grodriguezrondon.com/files/@code{RodriguezRondon_Dufour_MonteCarlo_LikelihoodRatioTest_MarkovSwitchingModels.pdf>}
+that can be used to identify the number of regimes in Markov switching models.")
+    (license license:gpl2+)))
+
 (define-public r-mstem
   (package
     (name "r-mstem")
@@ -17827,13 +17860,13 @@ studies.")
 (define-public r-mlpack
   (package
     (name "r-mlpack")
-    (version "4.3.0.1")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpack" version))
        (sha256
-        (base32 "0sam788qzqqqxs06hrzyndbkvpkyfsz4l2dfl1zrchyws7qk2rdd"))))
+        (base32 "0x8apd4pyyg5i326z7259y604yqcw02l1537nm83rdczrs5c9r3z"))))
     (properties `((upstream-name . "mlpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppensmallen r-rcpparmadillo r-rcpp))
@@ -18455,13 +18488,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.12.2")
+    (version "2.13.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "035b4fk4fias338r9wq531ajzf62skpkcvsmq46xi7y9sqrdm35l"))))
+        (base32 "0jzqqdwychrandbcsih3g1gcpj0hg7lw53c6c762akll14g7yd5k"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -27448,48 +27481,6 @@ ISBN: 978-0412997112).  The package also contains a weighted version of
 generalized R-squared, see e.g. Cohen, J. et al. (2002, ISBN: 978-0805822236).
 Furthermore, dplyr chains are supported.")
     (license license:gpl2+)))
-
-(define-public r-metricsgraphics
-  (package
-    (name "r-metricsgraphics")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metricsgraphics" version))
-       (sha256
-        (base32 "1zbx82b34y0rr4w7rzvyc1nzk95w6cdkg0j1kkshbmkvplq6v9i4"))))
-    (properties `((upstream-name . "metricsgraphics")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-magrittr r-htmlwidgets r-htmltools))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "http://github.com/hrbrmstr/metricsgraphics")
-    (synopsis
-     "Create Interactive Charts with the JavaScript 'MetricsGraphics' Library")
-    (description
-     "This package provides an htmlwidgets interface to the @code{MetricsGraphics.js}
-('D3'-based) charting library which is geared towards displaying time-series
-data.  Chart types include line charts, scatterplots, histograms and rudimentary
-bar charts.  Support for laying out multiple charts into a grid layout is also
-provided.  All charts are interactive and many have an option for line, label
-and region annotations.")
-    (license license:expat)))
 
 (define-public r-metricminer
   (package
@@ -38304,13 +38295,13 @@ single-model frequentist estimators and model weights.  See Turek and Fletcher
 (define-public r-mat
   (package
     (name "r-mat")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAT" version))
        (sha256
-        (base32 "0jr08j96agqw4hzdbk9ixdpngh60bd7w47192d0zm3byymcxpb0y"))))
+        (base32 "0zihjan1kg3h4fkg51m9pfnl9763024q0r83r1yk83ckb78v2s88"))))
     (properties `((upstream-name . "MAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -40306,31 +40297,26 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "0g1a18n328bs8idbcgymmcpqsszhpfb7n7gs6g6hjdmmiqc2zjfn"))))
+        (base32 "093ffdmnfgfjs4ja07xp9knalnqx9il08vbkiq8i0y21g3q11k62"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-terra
-                             r-stringr
                              r-sf
-                             r-rvest
                              r-r-utils
                              r-purrr
-                             r-progressr
                              r-magrittr
                              r-httr
                              r-furrr
-                             r-dplyr
-                             r-curl))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page
      "https://mapme-initiative.github.io/mapme.biodiversity/index.html")
@@ -43561,16 +43547,16 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.1.3")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "03psrcb5lss1d441bzyk6jis63qj4b4xm1kif3k94a8jkk2i5gjh"))))
+        (base32 "032700msg1gwd00wh9yq5zml6didzxw7banm19j0rdja1w5gpzn3"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))
+    (propagated-inputs (list r-rjson r-openxlsx r-httr))
     (home-page "https://cran.r-project.org/package=MacBehaviour")
     (synopsis "Behavioural Studies of Large Language Models")
     (description

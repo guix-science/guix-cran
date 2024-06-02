@@ -1299,6 +1299,28 @@ Equities and Derivatives (F&O) segment.  Data source
 <https://www.nseindia.com/>.")
     (license license:gpl3)))
 
+(define-public r-nseq
+  (package
+    (name "r-nseq")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nseq" version))
+       (sha256
+        (base32 "189s543dchbjki4vj4yszmlnarpghdn4s53k2mlwfzps1m7m39df"))))
+    (properties `((upstream-name . "nseq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://rfsaldanha.github.io/nseq/")
+    (synopsis "Count of Sequential Events")
+    (description
+     "Count the occurrence of sequences of values in a vector that meets certain
+conditions of length and magnitude.  The method is based on the Run Length
+Encoding algorithm, available with base R, inspired by A. H. Robinson and C.
+Cherry (1967) <doi:10.1109/PROC.1967.5493>.")
+    (license license:expat)))
+
 (define-public r-nse
   (package
     (name "r-nse")
@@ -7532,6 +7554,38 @@ the New Jersey Office of GIS
 <https://njgin.nj.gov/njgin/edata/geocoding/index.html#!/> and commonly used
 shapefiles.")
     (license license:gpl3+)))
+
+(define-public r-nixtlar
+  (package
+    (name "r-nixtlar")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nixtlar" version))
+       (sha256
+        (base32 "0r0vcrwpx7gyndbp6wwvlzvvl1ivk2js13m7lgpkdhriwy4bws9v"))))
+    (properties `((upstream-name . "nixtlar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-lubridate
+                             r-httr2
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://nixtla.github.io/nixtlar/")
+    (synopsis "Software Development Kit for 'Nixtla''s 'TimeGPT'")
+    (description
+     "This package provides a Software Development Kit for working with Nixtla''s
+@code{TimeGPT}', a foundation model for time series forecasting.  API is an
+acronym for application programming interface'; this package allows users to
+interact with @code{TimeGPT} via the API'.  You can set and validate API keys
+and generate forecasts via API calls.  It is compatible with tsibble and base R.
+For more details visit <https://docs.nixtla.io/>.")
+    (license license:asl2.0)))
 
 (define-public r-nixmass
   (package
@@ -15038,13 +15092,13 @@ signalled by concurrent threads.")
 (define-public r-nanoarrow
   (package
     (name "r-nanoarrow")
-    (version "0.5.0")
+    (version "0.5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoarrow" version))
        (sha256
-        (base32 "04a612k2vcdfrhrk6wv0j0p07y99x7pgp6vijl15kb9wgcapjr4k"))))
+        (base32 "0rd2nd5b3zhfb4i8gygp9nrn9hbvzqqra0rzdp4msr11r4nkgh15"))))
     (properties `((upstream-name . "nanoarrow")))
     (build-system r-build-system)
     (home-page "https://arrow.apache.org/nanoarrow/latest/r/")

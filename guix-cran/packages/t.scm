@@ -9478,6 +9478,33 @@ properties, can be exported completely also, through which further analysis and
 customized plots will be applicable as well.")
     (license license:gpl3)))
 
+(define-public r-tpm
+  (package
+    (name "r-tpm")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tpm" version))
+       (sha256
+        (base32 "1hya9sa8sdhcqk1nn2f9lr420mdj9qq6dv3gbkn8rwa0w12zbqhz"))))
+    (properties `((upstream-name . "tpm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fasttime r-data-table))
+    (home-page "https://github.com/markegge/fhwa_pm3/")
+    (synopsis "FHWA TPM Score Calculation Functions")
+    (description
+     "This package contains functions for calculating the Federal Highway
+Administration (FHWA) Transportation Performance Management (TPM) performance
+measures.  Currently, the package provides methods for the System Reliability
+and Freight (PM3) performance measures calculated from travel time data provided
+by The National Performance Management Research Data Set (NPMRDS), including
+Level of Travel Time Reliability (LOTTR), Truck Travel Time Reliability (TTTR),
+and Peak Hour Excessive Delay (PHED) metric scores for calculating statewide
+reliability performance measures.  Implements
+<https://www.fhwa.dot.gov/tpm/guidance/pm3_hpms.pdf>.")
+    (license (license:fsdg-compatible "Mozilla Public License Version 2.0"))))
+
 (define-public r-tplyr
   (package
     (name "r-tplyr")
@@ -13169,6 +13196,29 @@ other dependency, namely stringi'.")
     (description
      "Generate a palette of tints, shades or both from a single colour.")
     (license license:expat)))
+
+(define-public r-tint
+  (package
+    (name "r-tint")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tint" version))
+       (sha256
+        (base32 "1vkdgxxgcj3qk3858sp3zi7c2id3dq0zxz23xd4i8lgbqgvvh2s3"))))
+    (properties `((upstream-name . "tint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-knitr r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/eddelbuettel/tint/")
+    (synopsis "'tint' is not 'Tufte'")
+    (description
+     "This package provides a tufte'-alike style for rmarkdown'.  A modern take on the
+Tufte design for pdf and html vignettes, building on the tufte package with
+additional contributions from the knitr and ggtufte package, and also
+acknowledging the key influence of envisioned css'.")
+    (license license:gpl3)))
 
 (define-public r-tinsel
   (package

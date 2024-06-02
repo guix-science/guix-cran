@@ -4586,6 +4586,41 @@ Game (Nawaz and Toor 2010) <@code{arXiv:quant-ph/0108075>}, Newcomb's Paradox
 Problem (Flitney and Abbott 2002) <@code{arXiv:quant-ph/0109035>}.")
     (license license:expat)))
 
+(define-public r-qga
+  (package
+    (name "r-qga")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QGA" version))
+       (sha256
+        (base32 "1qwcm1x4qcfyrkwx16s1dgxnix2axh9w0qxwrv1j0iwdc8mp32g9"))))
+    (properties `((upstream-name . "QGA")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://barcaroli.github.io/QGA/")
+    (synopsis "Quantum Genetic Algorithm")
+    (description
+     "Function that implements the Quantum Genetic Algorithm, first proposed by Han
+and Kim in 2000.  This is an R implementation of the python application
+developed by Lahoz-Beltra
+(<https://github.com/@code{ResearchCodesHub/QuantumGeneticAlgorithms>}).  Each
+optimization problem is represented as a maximization one, where each solution
+is a sequence of (qu)bits.  Following the quantum paradigm, these qubits are in
+a superposition state: when measuring them, they collapse in a 0 or 1 state.
+After measurement, the fitness of the solution is calculated as in usual genetic
+algorithms.  The evolution at each iteration is oriented by the application of
+two quantum gates to the amplitudes of the qubits: (1) a rotation gate (always);
+(2) a Pauli-X gate (optionally).  The rotation is based on the theta angle
+values: higher values allow a quicker evolution, and lower values avoid local
+maxima.  The Pauli-X gate is equivalent to the classical mutation operator and
+determines the swap between alfa and beta amplitudes of a given qubit.  The
+package has been developed in such a way as to permit a complete separation
+between the engine, and the particular problem subject to combinatorial
+optimization.")
+    (license license:gpl2+)))
+
 (define-public r-qfrm
   (package
     (name "r-qfrm")

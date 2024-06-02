@@ -9998,17 +9998,16 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "1qka54cz8753ha7fgn8krpdy8nw2kvz8jaf8vwcwbrnjglzb5v1h"))))
+        (base32 "1zv31csmvfia8m1z1cql17my5xvnhfjc6647g0f4bpcba33vqk9i"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ympes
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -10032,13 +10031,13 @@ outbreak analysis (<https://www.reconverse.org>).")
 (define-public r-incidence
   (package
     (name "r-incidence")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence" version))
        (sha256
-        (base32 "02qwx13z2hd39qv8d9zkmf844hvyqh0zia70pgpkfqd6ydvzj8zs"))))
+        (base32 "0ysvrbvgk7xiv2d931mgb8q18fxjhlknrlww7myidv7n5250sd0v"))))
     (properties `((upstream-name . "incidence")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-aweek))
@@ -13504,6 +13503,29 @@ to characteristics of independent rainfall events.  Adams B, Papa F (2000)
 <ISBN: 978-0-471-33217-6>.  Joo J et al. (2014) <doi:10.3390/w6010045>.
 Restrepo-Posada P, Eagleson P (1982) <doi:10.1016/0022-1694(82)90136-6>.")
     (license license:gpl3)))
+
+(define-public r-iemisctext
+  (package
+    (name "r-iemisctext")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemisctext" version))
+       (sha256
+        (base32 "0280wib0xdnjl2ff8pvshjaj6riaqbwp2v96z2nj1w0lahyq69a3"))))
+    (properties `((upstream-name . "iemisctext")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/iembry/iemisctext")
+    (synopsis "Irucka Embry's Miscellaneous Text Collection")
+    (description
+     "An eclectic collection of short stories and poetry with topics on climate
+strange, connecting the geopolitical dots, the myth of us versus them, and the
+idiocy of war.  Please refer to the COPYRIGHTS file and the text_citation.cff
+file for the reference copyright information and for the complete citations of
+the reference sources, respectively.")
+    (license (license:fsdg-compatible "Artistic License 2.0"))))
 
 (define-public r-ieeeround
   (package
