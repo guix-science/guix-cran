@@ -12156,13 +12156,13 @@ Methodology. <doi:10.1027/1614-2241/a000153>.")
 (define-public r-glmmroptim
   (package
     (name "r-glmmroptim")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrOptim" version))
        (sha256
-        (base32 "0z3l7z6zvqf1ykb60crli30h2iaykdbzzbx1kmf86axp05d2rfbh"))))
+        (base32 "0aic2wc1f1qdj2g9g7zsaz4hckrgpy7w293harpjmq9ll3gxpfcz"))))
     (properties `((upstream-name . "glmmrOptim")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsechol
@@ -12184,7 +12184,8 @@ trials, cohort studies, spatial and temporal epidemiological studies, and
 split-plot designs.  See
 <https://github.com/samuel-watson/@code{glmmrBase/blob/master/README.md>} for a
 detailed manual on model specification.  A detailed discussion of the methods in
-this package can be found in Watson and Pan (2022) <@code{arXiv:2207.09183>}.")
+this package can be found in Watson, Hemming, and Girling (2023)
+<doi:10.1177/09622802231202379>.")
     (license license:gpl2+)))
 
 (define-public r-glmmrbase
@@ -14574,13 +14575,13 @@ few minutes.")
 (define-public r-gie
   (package
     (name "r-gie")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gie" version))
        (sha256
-        (base32 "1r3limgw4mql9zjsc085shbds7gdr1zlcwphxk96chmzsc693sdr"))))
+        (base32 "0dgzmlza4mxghs3f9d81p03f91bz7v07af1d6zpfmaif3lzc2q77"))))
     (properties `((upstream-name . "gie")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

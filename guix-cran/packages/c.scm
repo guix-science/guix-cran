@@ -4515,13 +4515,13 @@ cryptocurrencies.")
 (define-public r-cryptorng
   (package
     (name "r-cryptorng")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cryptorng" version))
        (sha256
-        (base32 "17jnhd814d6h0x1a6n9j5syrasw942w7gajxrfvlm3ihsldyk7lc"))))
+        (base32 "0c6lxms7kcgzw1dssx0l0ld0kb8jdclq8rv8j327nf45wjsll6p3"))))
     (properties `((upstream-name . "cryptorng")))
     (build-system r-build-system)
     (home-page "https://github.com/coolbutuseless/cryptorng")
@@ -20930,13 +20930,13 @@ multiple filter types and reproducible R code.  Works standalone or with
 (define-public r-cohortalgebra
   (package
     (name "r-cohortalgebra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortAlgebra" version))
        (sha256
-        (base32 "1aqafccdxivg21bb7pxy47yfk7d5gbiyby8hm472n1vrznmiq4b6"))))
+        (base32 "1d49s8xvhp3rnywqp5087m6jm804jlx4as2a89rn613n8m37gsl9"))))
     (properties `((upstream-name . "CohortAlgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -38366,13 +38366,13 @@ tibbles, lists, etc..")
 (define-public r-catastro
   (package
     (name "r-catastro")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CatastRo" version))
        (sha256
-        (base32 "0xriq5g6d7rj56m6m0y2icj2d92874j1zrpx8j446sq2n5xg7nis"))))
+        (base32 "0v2gb6hvvh5zv5w3gvk07mnya2y2gra271if8nqi1khb7l52l516"))))
     (properties `((upstream-name . "CatastRo")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -10948,13 +10948,13 @@ extensions are discussed in Li et al. (2020) <doi:10.1177/0962280220932962>.")
 (define-public r-stepp
   (package
     (name "r-stepp")
-    (version "3.2.6")
+    (version "3.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stepp" version))
        (sha256
-        (base32 "0b2jq9fdnakqrwcss4cw8nd5zq122w2ba607z71fmp1gx8rw4sf7"))))
+        (base32 "0kdjp3kxvyjy8fyrzisiv9fjx53dpsg69ksd08lnngvzw31rv5yy"))))
     (properties `((upstream-name . "stepp")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-scales r-rstudioapi r-car))
@@ -16597,34 +16597,6 @@ Higher-level plotting functions generate a bivariate histogram, a dendrogram
 aligned with a color-coded matrix, a triangular distance matrix, and more.")
     (license license:artistic2.0)))
 
-(define-public r-squant
-  (package
-    (name "r-squant")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "squant" version))
-       (sha256
-        (base32 "1z4qi1svv6186gj3nh4z3hvjd54i7grj6ckgdyk4dmyn7zh8fw5w"))))
-    (properties `((upstream-name . "squant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-glmnet r-ggplot2))
-    (home-page "https://cran.r-project.org/package=squant")
-    (synopsis "Subgroup Identification Based on Quantitative Objectives")
-    (description
-     "This package provides a subgroup identification method for precision medicine
-based on quantitative objectives.  This method can handle continuous, binary and
-survival endpoint for both prognostic and predictive case.  For the predictive
-case, the method aims at identifying a subgroup for which treatment is better
-than control by at least a pre-specified or auto-selected constant.  For the
-prognostic case, the method aims at identifying a subgroup that is at least
-better than a pre-specified/auto-selected constant.  The derived signature is a
-linear combination of predictors, and the selected subgroup are subjects with
-the signature > 0.  The false discover rate when no true subgroup exists is
-strictly controlled at a user-specified level.")
-    (license license:gpl3)))
-
 (define-public r-sqrl
   (package
     (name "r-sqrl")
@@ -21421,13 +21393,13 @@ respecify.character(), and %matches%.data.frame().")
 (define-public r-spearmanci
   (package
     (name "r-spearmanci")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spearmanCI" version))
        (sha256
-        (base32 "1xi51dphv91j5hgrd25sqs1li0g24cwpa1k162arw5b0qfl04f17"))))
+        (base32 "0dn5gbyvw5rqqqbag16ljfwm4pc8mzyjq3fb49g7zq3c6l16wj27"))))
     (properties `((upstream-name . "spearmanCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-emplik))
@@ -21437,7 +21409,7 @@ respecify.character(), and %matches%.data.frame().")
     (description
      "This package provides functions for conducting jackknife Euclidean / empirical
 likelihood inference for Spearman's rho (de Carvalho and Marques (2012)
-<10.1080/10920277.2012.10597644>).")
+<doi:10.1080/10920277.2012.10597644>).")
     (license license:gpl3+)))
 
 (define-public r-speakr
@@ -25452,13 +25424,13 @@ suggested package NLMR can be installed from the following repository:
 (define-public r-spades-core
   (package
     (name "r-spades-core")
-    (version "2.0.5")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpaDES.core" version))
        (sha256
-        (base32 "13kkx3jd2n9sx8ddjiss22llc824766n2fkg35h3yycjcz61x386"))))
+        (base32 "0avn2fvabwq8hfvpwkvrpmdq9692a8nx3km7343j217y7l4s7qdf"))))
     (properties `((upstream-name . "SpaDES.core")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -25471,7 +25443,7 @@ suggested package NLMR can be installed from the following repository:
                              r-igraph
                              r-fs
                              r-data-table
-                             r-crayon))
+                             r-cli))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://spades-core.predictiveecology.org/")
     (synopsis
@@ -28385,16 +28357,16 @@ equating.")
 (define-public r-snseg
   (package
     (name "r-snseg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SNSeg" version))
        (sha256
-        (base32 "17fr4jl0cwbiyb1f4695c4vs0vfaslaxfpsksa24hfb5x5z0mcap"))))
+        (base32 "0p2a8ilxg17a2idnbiaqlmlpbafadl8w1np4bxzbgkkjs0s0qijc"))))
     (properties `((upstream-name . "SNSeg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-truncnorm r-rcpp r-mvtnorm r-evd))
+    (propagated-inputs (list r-rcpp r-mvtnorm))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SNSeg")
     (synopsis
@@ -58181,13 +58153,13 @@ parameters can be found at Nasir et al. (2022) <https://murtaza.cc/SANSA/>.")
 (define-public r-sanple
   (package
     (name "r-sanple")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SANple" version))
        (sha256
-        (base32 "1ss9p8pw5k1rp8xap98bd587xfhr006xwbf85c1az3rc1p4rji77"))))
+        (base32 "1v3yhhfj93zwvngplpfxrrysrfjkyv5hfz02fgjl8fvxsif1dq0g"))))
     (properties `((upstream-name . "SANple")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -59930,17 +59902,16 @@ objects and files using symmetric and asymmetric key encryption.")
 (define-public r-safejoin
   (package
     (name "r-safejoin")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "safejoin" version))
        (sha256
-        (base32 "0qvra505g7cay3nhq6yqrddb7sw3kx50y8jhgvxi47rxdc3alzba"))))
+        (base32 "19ja9nxgnh7xpsdaqy866qz6zf2mkfxinh757dmha1avr7bjhmfx"))))
     (properties `((upstream-name . "safejoin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-glue r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-lifecycle r-glue r-dplyr))
     (home-page "https://github.com/SamEdwardes/safejoin")
     (synopsis "Perform \"Safe\" Table Joins")
     (description

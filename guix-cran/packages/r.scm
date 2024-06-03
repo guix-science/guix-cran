@@ -2458,20 +2458,28 @@ possibility of generating one-step-ahead and multi-step-ahead forecasts.")
 (define-public r-rum
   (package
     (name "r-rum")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rUM" version))
        (sha256
-        (base32 "02bwkgr8c7dbijnz0bsz9snw74d5xjykj6irvv983cd5rmb1kpsy"))))
+        (base32 "1x9waiyxq5jgi6ggd078wfzgq29adawfs7jn4m5qj4wba7sddq2m"))))
     (properties `((upstream-name . "rUM")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-tidyverse
+                             r-tidymodels
                              r-table1
+                             r-stringr
+                             r-roxygen2
                              r-rmarkdown
                              r-rlang
+                             r-rio
+                             r-quarto
+                             r-here
+                             r-gtsummary
+                             r-glue
                              r-conflicted
                              r-bookdown))
     (native-inputs (list r-knitr))
@@ -3773,13 +3781,13 @@ trading professionals.  Includes functions for API calls to
 (define-public r-rtkore
   (package
     (name "r-rtkore")
-    (version "1.6.10")
+    (version "1.6.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtkore" version))
        (sha256
-        (base32 "1mdvlqnhp0m79j5ak81i91w5y1jqh43f6qyxajn20a8jryj0f68b"))))
+        (base32 "10mwa5m6papd6a3vx7zb36fy93wjkhzyxgcvi3i88lslh5hsccnm"))))
     (properties `((upstream-name . "rtkore")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-inline))
@@ -25830,13 +25838,13 @@ and source type maps are included for statistical analysis of moment tensors.")
 (define-public r-rfmtool
   (package
     (name "r-rfmtool")
-    (version "5.0.3")
+    (version "5.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rfmtool" version))
        (sha256
-        (base32 "1gzykxx758jrzsihs3qqjhxb2j498bpz5b5b6z641vkqgk1x9ign"))))
+        (base32 "17rblvpybnsphvv7gph9pplf6d0wp9d99ni3ird1wyjm4nvvi1zv"))))
     (properties `((upstream-name . "Rfmtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -42942,13 +42950,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "0n5mli7j964c9mlxrm21l4vvmai418yaibsslmq914v9ghh76v7c"))))
+        (base32 "1akid3qsjppracvqz6cxwaz1w9v251m0xb534gd2dsfibk1s2jli"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list pkg-config fftw))

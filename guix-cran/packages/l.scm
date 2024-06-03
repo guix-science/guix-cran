@@ -14753,6 +14753,32 @@ part by the National Science Foundation Grant 1417857 and the National Center
 for Atmospheric Research.")
     (license license:gpl2+)))
 
+(define-public r-latticedesign
+  (package
+    (name "r-latticedesign")
+    (version "2.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LatticeDesign" version))
+       (sha256
+        (base32 "06pndvsp3v6gid46hcixh559pcmh2ckr9ss5065nbbrxhg2rf98b"))))
+    (properties `((upstream-name . "LatticeDesign")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=LatticeDesign")
+    (synopsis "Lattice-Based Space-Filling Designs")
+    (description
+     "Lattice-based space-filling designs with fill or separation distance properties
+including interleaved lattice-based minimax distance designs proposed in Xu He
+(2017) <doi:10.1093/biomet/asx036>, interleaved lattice-based maximin distance
+designs proposed in Xu He (2018) <doi:10.1093/biomet/asy069>, (sliced) rotated
+sphere packing designs proposed in Xu He (2017)
+<doi:10.1080/01621459.2016.1222289> and Xu He (2019)
+<doi:10.1080/00401706.2018.1458655>, and densest packing-based maximum
+projections designs proposed in Xu He (2020) <doi:10.1093/biomet/asaa057> and Xu
+He (2018) <@code{arXiv:1709.02062v2>}.")
+    (license license:lgpl2.1)))
+
 (define-public r-latte
   (package
     (name "r-latte")
@@ -17011,13 +17037,13 @@ the statistical design.")
 (define-public r-la
   (package
     (name "r-la")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LA" version))
        (sha256
-        (base32 "12fhkrjcj5304pdpgmf8iilxgy5vnixqj3zb87csa4m22ibpkah4"))))
+        (base32 "098gqnjw2zfl2s0hmbci8kahr9mjz9fh5ll3blnw2wc2ikn5n152"))))
     (properties `((upstream-name . "LA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -17029,7 +17055,7 @@ continuous design space, optimal Latin hypercube designs, and optimal
 order-of-addition designs.  LA is a brand new nature-inspired meta-heuristic
 optimization algorithm.  Detailed methodologies of LA and its implementation on
 numerical simulations can be found at Hongzhi Wang, Qian Xiao and Abhyuday
-Mandal (2021) <@code{arXiv:2010.09154>}.")
+Mandal (2021) <doi:10.48550/@code{arXiv.2010.09154>}.")
     (license license:expat)))
 
 (define-public r-l2hdchange

@@ -805,13 +805,13 @@ performance of species distribution models (SDMs).)")
 (define-public r-usdata
   (package
     (name "r-usdata")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usdata" version))
        (sha256
-        (base32 "1gnd662v6vcmjvj18c1p61q8lxahkyxnk5dbvf26j6z4jvbhk975"))))
+        (base32 "0b6q733l5mrkdbxi9h9gpzz19pmr3c5phigrmmp6fas8gnsm3b3c"))))
     (properties `((upstream-name . "usdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))

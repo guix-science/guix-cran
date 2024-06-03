@@ -14913,13 +14913,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.8")
+    (version "5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "0im02d8pn3cmiwcqmw5lrnnvizsmi6zszmddkzqykj4n1i1i884s"))))
+        (base32 "1hhsv06vcqfzzb42nk0sidp9gd1larqrr3s6f5qh7hf1jv1b0d86"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))

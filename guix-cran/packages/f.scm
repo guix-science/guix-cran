@@ -129,13 +129,13 @@ dating, and monitoring (de facto) exchange rate regimes.")
 (define-public r-fxl
   (package
     (name "r-fxl")
-    (version "1.6.3")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fxl" version))
        (sha256
-        (base32 "1c1cw1j1vz7my868ryg0r7zw655xbhk0za75pvd3mgfy0bs6600x"))))
+        (base32 "1z41cspxqhzvmli3vac453z0j3lm2k467wq03f8sm1j21dmx1ibk"))))
     (properties `((upstream-name . "fxl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-grimport))
@@ -145,7 +145,12 @@ dating, and monitoring (de facto) exchange rate regimes.")
     (description
      "The fxl Charting package is used to prepare and design single case design
 figures that are typically prepared in spreadsheet software.  With fxl', there
-is no need to leave the R environment to prepare these works.")
+is no need to leave the R environment to prepare these works and many of the
+more unique conventions in single case experimental designs can be performed
+without the need for physically constructing features of plots (e.g., drawing
+annotations across plots).  Support is provided for various different plotting
+arrangements (e.g., multiple baseline), annotations (e.g., brackets, arrows),
+and output formats (e.g., svg, rasters).")
     (license license:gpl3+)))
 
 (define-public r-fwsim
@@ -3330,13 +3335,13 @@ This work was funded by Poland-Singapore bilateral cooperation project no
 (define-public r-fscache
   (package
     (name "r-fscache")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fscache" version))
        (sha256
-        (base32 "0r5b5z8mlywgvbip6w1y5jjvnfwwygzcfb3x1zbkni82hf1q1gy6"))))
+        (base32 "0815z6a677ygiv4hlslmvbnd1pdnh2xz3sw0nzgrcr2vzj83h25x"))))
     (properties `((upstream-name . "fscache")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi

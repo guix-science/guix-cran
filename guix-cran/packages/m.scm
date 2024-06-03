@@ -13557,13 +13557,13 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "11mx045lq4hmwycdjv3nrzpmjpv8j2z0hwjsxk7753zlc11s1img"))))
+        (base32 "06abbk34blacwf7w38fxjh88l26v7wcpg8svmj76ll2pssybxv8r"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13577,8 +13577,10 @@ nutrition analyses.")
                              r-mvnfast
                              r-mplusautomation
                              r-lavaan
+                             r-ggplot2
                              r-gaussquad
                              r-dplyr))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/Kss2k/modsem")
     (synopsis
      "Latent Interaction (and Moderation) Analysis in Structural Equation Models (SEM)")
@@ -32446,6 +32448,44 @@ Lange, Vansteelandt and Bekaert (2012) <DOI:10.1093/aje/kwr525>, Vansteelandt,
 Bekaert and Lange (2012) <DOI:10.1515/2161-962X.1014> and Loeys, Moerkerke, De
 Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>.")
     (license license:gpl2)))
+
+(define-public r-medfateland
+  (package
+    (name "r-medfateland")
+    (version "2.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "medfateland" version))
+       (sha256
+        (base32 "0h24s5sg2nl83jqarb6m6sw5gi0d5x9284ysgl2p38637qrim55w"))))
+    (properties `((upstream-name . "medfateland")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyterra
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stars
+                             r-shiny
+                             r-sf
+                             r-rlang
+                             r-rcpp
+                             r-meteoland
+                             r-medfate
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://emf-creaf.github.io/medfateland/index.html")
+    (synopsis "Mediterranean Landscape Simulation")
+    (description
+     "Simulate forest hydrology, forest function and dynamics over landscapes [De
+Caceres et al. (2015) <doi:10.1016/j.agrformet.2015.06.012>].  Parallelization
+is allowed in several simulation functions and simulations may be conducted
+including spatial processes such as lateral water transfer and seed dispersal.")
+    (license license:gpl2+)))
 
 (define-public r-medfate
   (package

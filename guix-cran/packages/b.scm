@@ -11769,16 +11769,16 @@ developed in C to achieve adequate performance.")
 (define-public r-biopixr
   (package
     (name "r-biopixr")
-    (version "0.2.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biopixR" version))
        (sha256
-        (base32 "1341yg226r4bzh3cw4ygjnychd5vnm9xfbb0agyd7razz49iahz7"))))
+        (base32 "1ab5sqik4pnkq4f3dhf27z5c74jqrj8r95pwz2rdhaagm5ac8iyy"))))
     (properties `((upstream-name . "biopixR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magick r-imager r-foreach r-data-table))
+    (propagated-inputs (list r-magick r-imager r-data-table r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Brauckhoff/biopixR")
     (synopsis "Extracting Insights from Biological Images")

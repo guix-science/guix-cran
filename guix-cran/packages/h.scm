@@ -6856,13 +6856,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "0i89fpi38cinjyzlypfwk5hafdrs36vw2kp3mm6v19g7gv3n9mw5"))))
+        (base32 "1xzjlwbmibzs362k6c9y346scqvx3lf6n3pnq6bhbklwfw8jd3hz"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (propagated-inputs (list r-restatapi r-data-table))
@@ -10540,13 +10540,13 @@ are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
 (define-public r-hdcd
   (package
     (name "r-hdcd")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDCD" version))
        (sha256
-        (base32 "0yx2c5i2lfsnc9ra09bkhhvbwlfpi2a5r53riqhf2mb0vnxsxjcy"))))
+        (base32 "01fxai59mi5hrjv0yx8f4cd6c5pin87n2sry2lk3w041c7df21gs"))))
     (properties `((upstream-name . "HDCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mclust))
@@ -10555,9 +10555,10 @@ are Lasso, Lasso+OLS, Lasso partial ridge, Lasso+OLS partial ridge.")
     (description
      "Efficient implementations of the following multiple changepoint detection
 algorithms: Efficient Sparsity Adaptive Change-point estimator by Moen, Glad and
-Tveten (2023) <@code{arXiv:2306.04702>} , Informative Sparse Projection for
-Estimating Changepoints by Wang and Samworth (2017) <doi:10.1111/rssb.12243>,
-and the method of Pilliat et al (2023) <doi:10.1214/23-EJS2126>.")
+Tveten (2023) <doi:10.48550/@code{arXiv.2306.04702>} , Informative Sparse
+Projection for Estimating Changepoints by Wang and Samworth (2017)
+<doi:10.1111/rssb.12243>, and the method of Pilliat et al (2023)
+<doi:10.1214/23-EJS2126>.")
     (license license:gpl3)))
 
 (define-public r-hdcate
