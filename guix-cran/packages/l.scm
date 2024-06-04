@@ -3214,7 +3214,7 @@ document.")
     (home-page "https://cran.r-project.org/package=lorec")
     (synopsis "LOw Rand and sparsE Covariance matrix estimation")
     (description
-     "Estimate covariance matrices that contain low rank and sparse components")
+     "Estimate covariance matrices that contain low rank and sparse components.")
     (license license:gpl2)))
 
 (define-public r-lordif

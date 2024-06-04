@@ -354,7 +354,7 @@ distributions.  The utilities include functions for loading, manipulating and
 visualizing word frequency data and vocabulary growth curves.  The package also
 implements several statistical models for the distribution of word frequencies
 in a population. (The name of this package derives from the most famous word
-frequency distribution, Zipf's law.)")
+frequency distribution, Zipf's law.).")
     (license license:gpl3)))
 
 (define-public r-zipfextr
@@ -881,7 +881,7 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
     (propagated-inputs (list r-rjson r-rcurl))
     (home-page "https://cran.r-project.org/package=zendeskR")
     (synopsis "Zendesk API Wrapper")
-    (description "This package provides an R wrapper for the Zendesk API")
+    (description "This package provides an R wrapper for the Zendesk API.")
     (license license:gpl2)))
 
 (define-public r-zen4r

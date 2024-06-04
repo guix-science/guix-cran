@@ -6123,7 +6123,7 @@ methods to read APDs organized by units (probesets).  In addition, the probe
 elements can be arranged optimally such that the elements are guaranteed to be
 read in order when, for instance, data is read unit by unit.  This speeds up the
 read substantially.  This package is supporting the Aroma framework and should
-not be used elsewhere.)")
+not be used elsewhere.).")
     (license license:lgpl2.1+)))
 
 (define-public r-aroma-affymetrix
@@ -6207,7 +6207,7 @@ RO@code{CnReg} ('AROC will no longer be maintained).")
     (home-page "https://github.com/imanuelcostigan/arnie")
     (synopsis "\"Arnie\" box office records 1982-2014")
     (description
-     "Arnold Schwarzenegger movie weekend box office records from 1982-2014")
+     "Arnold Schwarzenegger movie weekend box office records from 1982-2014.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-armspp
@@ -11409,7 +11409,7 @@ raking data, and assessing the effects of the raking algorithm.  It also allows
 automated re-raking if target variables fall outside identified bounds and
 allows greater user specification than other available raking algorithms.  A
 variety of simple weighted statistics that were previously in this package
-(version .55 and earlier) have been moved to the package weights.")
+(version .55 and earlier) have been moved to the package weights.'.")
     (license license:gpl2+)))
 
 (define-public r-andurinha

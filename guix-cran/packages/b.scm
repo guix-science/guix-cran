@@ -380,7 +380,7 @@ from Incomplete Data via the EM Algorithm\".")
     (synopsis "The Stark-Parker algorithm for bounded-variable least squares")
     (description
      "An R interface to the Stark-Parker implementation of an algorithm for
-bounded-variable least squares")
+bounded-variable least squares.")
     (license license:gpl2+)))
 
 (define-public r-bvhar
@@ -20201,7 +20201,7 @@ networks.  The methods are described in Stafford et al. (2015)
 to generate posterior probabilities for genotyping bi-allelic single nucleotide
 polymorphisms.  Elena Vigorito, Anne Barton, Costantino Pitzalis, Myles J. Lewis
 and Chris Wallace (2023) <doi:10.1093/bioinformatics/btad393> \"BBmix: a Bayesian
-beta-binomial mixture model for accurate genotyping from RNA-sequencing.\"")
+beta-binomial mixture model for accurate genotyping from RNA-sequencing.\".")
     (license license:gpl2)))
 
 (define-public r-bbl

@@ -1381,7 +1381,7 @@ interface.")
     (home-page "http://esa.un.org/wpp")
     (synopsis "World Population Prospects 2012")
     (description
-     "Data from the United Nation's World Population Prospects 2012")
+     "Data from the United Nation's World Population Prospects 2012.")
     (license license:gpl2+)))
 
 (define-public r-wpp2010
@@ -1399,7 +1399,7 @@ interface.")
     (home-page "http://esa.un.org/wpp")
     (synopsis "World Population Prospects 2010")
     (description
-     "Data from the United Nation's World Population Prospects 2010")
+     "Data from the United Nation's World Population Prospects 2010.")
     (license license:gpl2+)))
 
 (define-public r-wpp2008
@@ -1417,7 +1417,7 @@ interface.")
     (home-page "http://esa.un.org/wpp/index.htm")
     (synopsis "World Population Prospects 2008")
     (description
-     "Data from the United Nation's World Population Prospects 2008")
+     "Data from the United Nation's World Population Prospects 2008.")
     (license license:gpl2+)))
 
 (define-public r-wpkde

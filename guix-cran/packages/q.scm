@@ -454,7 +454,8 @@ then be used to complement the formal descriptions of the taxa, which are often
 based on morphological and anatomical features.  Especially for morphologically
 cryptic species, this will be helpful.  QUIDDICH distinguishes between four
 different types of diagnostic characters.  For more information, see \"Kuehn,
-A.L., Haase, M. 2019.  QUIDDICH: QUick IDentification of DIagnostic CHaracters.\"")
+A.L., Haase, M. 2019.  QUIDDICH: QUick IDentification of DIagnostic
+CHaracters.\".")
     (license license:gpl3)))
 
 (define-public r-quid
@@ -3055,7 +3056,7 @@ hardware <https://quantum-computing.ibm.com/>.")
     (home-page "http://qsardata.r-forge.r-project.org/")
     (synopsis "Quantitative Structure Activity Relationship (QSAR) Data Sets")
     (description
-     "Molecular descriptors and outcomes for several public domain data sets")
+     "Molecular descriptors and outcomes for several public domain data sets.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-qrnn

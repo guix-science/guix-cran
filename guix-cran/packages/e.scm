@@ -362,7 +362,7 @@ Weissman MM, & Shinohara RT (2017) <doi:10.1016/j.neuroimage.2017.11.024>
 Fortin J-P, Parker D, Tun<e7> B, Watanabe T, Elliott MA, Ruparel K, Roalf DR,
 Satterthwaite TD, Gur RC, Gur RE, Schultz RT, Verma R, & Shinohara RT (2017)
 <doi:10.1016/j.neuroimage.2017.08.047> \"Harmonization of multi-site diffusion
-tensor imaging data.\"")
+tensor imaging data.\".")
     (license license:artistic2.0)))
 
 (define-public r-eyetrackr
@@ -9178,7 +9178,7 @@ Both case-control status (binary outcome) and quantitative phenotype (continuous
 outcome) are supported (the main references: 1.  Kam-Thong, T., D. Czamara, K.
 Tsuda, K. Borgwardt, C. M. Lewis, A. Erhardt-Lehmann, B. Hemmer, et al. (2011).
 <doi:10.1038/ejhg.2010.196>.  2.  Kam-Thong, T., B. PÃ¼tz, N. Karbalai, B.
-MÃ¼ller-Myhsok, and K. Borgwardt. (2011). <doi:10.1093/bioinformatics/btr218>.)")
+MÃ¼ller-Myhsok, and K. Borgwardt. (2011). <doi:10.1093/bioinformatics/btr218>.).")
     (license license:gpl2+)))
 
 (define-public r-epireport
@@ -17200,7 +17200,7 @@ with a few functions that facilitate inspection of the networks for small error
 driven learning simulations.  Note that our functions are not optimized for
 training large data sets (no parallel processing), as they are intended for
 small scale simulations and course examples. (Consider the python implementation
-pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.)")
+pyndl <https://pyndl.readthedocs.io/en/latest/> for that purpose.).")
     (license license:gpl2+)))
 
 (define-public r-ediutils
@@ -21730,7 +21730,7 @@ providing convenient authentication and access to cloud-hosted NASA
 @code{EarthData} products.  This makes access to a wide range of earth
 observation data from any location straight forward and compatible with R
 packages that are widely used with cloud native earth observation data (such as
-terra', sf', etc.)")
+terra', sf', etc.).")
     (license license:expat)))
 
 (define-public r-earth
@@ -21752,7 +21752,7 @@ terra', sf', etc.)")
     (description
      "Build regression models using the techniques in Friedman's papers \"Fast MARS\"
 and \"Multivariate Adaptive Regression Splines\" <doi:10.1214/aos/1176347963>.
-(The term \"MARS\" is trademarked and thus not used in the name of the package.)")
+(The term \"MARS\" is trademarked and thus not used in the name of the package.).")
     (license license:gpl3)))
 
 (define-public r-earlyr

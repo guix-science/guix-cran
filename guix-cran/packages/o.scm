@@ -4381,13 +4381,13 @@ Krieger, Michael Sklar and David Azriel (2020) <@code{arXiv:1905.03337>}.")
 (define-public r-optimall
   (package
     (name "r-optimall")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimall" version))
        (sha256
-        (base32 "0949gwm6x9rkj9mdj1zzaqqhhslijp8c891h6pq16gm1pb3nwqlh"))))
+        (base32 "0pc7bswfaz0fc9mjr8m29xvm9a1015fb80sr7si65zkkmjhxwldz"))))
     (properties `((upstream-name . "optimall")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-magrittr r-glue r-dplyr))
@@ -11087,7 +11087,7 @@ estimate the population size N. The Mb model is a class of capture-recapture
 methods used to account for variations in capture probability due to animal
 behavior.  Under the Mb formulation, the initial capture of an animal may effect
 the probability of subsequent captures due to their becoming \"trap happy\" or
-\"trap shy.\"")
+\"trap shy.\".")
     (license license:gpl3)))
 
 (define-public r-obliquersf

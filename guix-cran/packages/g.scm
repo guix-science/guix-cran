@@ -2454,7 +2454,7 @@ variance components and the heritability through cross validation.")
     (home-page "https://cran.r-project.org/package=gsmoothr")
     (synopsis "Smoothing tools")
     (description
-     "This package provides tools rewritten in C for various smoothing tasks")
+     "This package provides tools rewritten in C for various smoothing tasks.")
     (license license:lgpl2.0+)))
 
 (define-public r-gsmams
@@ -8415,7 +8415,7 @@ statistics.")
     (synopsis "functions to get public survey data in Japan")
     (description
      "This package purposes to deal with public survey data of Japanese government via
-their Application Programming Interface (http://statdb.nstac.go.jp/)")
+their Application Programming Interface (http://statdb.nstac.go.jp/).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-govinfor
@@ -11570,7 +11570,7 @@ is available as a working paper:
      "Objective functions for benchmarking the performance of global optimization algorithms")
     (description
      "This package makes available 50 objective functions for benchmarking the
-performance of global optimization algorithms")
+performance of global optimization algorithms.")
     (license license:gpl3+)))
 
 (define-public r-globalkinhom
@@ -17522,13 +17522,13 @@ regression curves.")
 (define-public r-ggirread
   (package
     (name "r-ggirread")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIRread" version))
        (sha256
-        (base32 "1yra9mfzmcz3zb3akz591m9f0z4rlphz68xyf8w6zvhm7ya3c3ls"))))
+        (base32 "0kad21xqwb2c4phg4mq7480qvki5frn2c2slfbcfj9paxxl4ha16"))))
     (properties `((upstream-name . "GGIRread")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matlab r-bitops))
@@ -20987,7 +20987,7 @@ Endrizzi et al (2014)
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=geotools")
     (synopsis "Geo tools")
-    (description "This package provides tools")
+    (description "This package provides tools.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-geostatsp
@@ -26216,13 +26216,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "1rwz0p83lmxgz3v0mrnjk4wh1yv5ijwxy5nmvmn6jzvk6l5wbjfp"))))
+        (base32 "0nwg38xl9c3rk2grm5nn2m74im8wxi0ah1hq71gqlgb7mpnkqnjz"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -26233,7 +26233,7 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
                   libxml2
                   gdal
                   curl))
-    (propagated-inputs (list r-xml2 r-rcpp))
+    (propagated-inputs (list r-xml2 r-rcppint64 r-rcpp r-bit64))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://usdaforestservice.github.io/gdalraster/")
     (synopsis
@@ -26253,12 +26253,13 @@ calc() to evaluate a given R expression on a layer or stack of layers, with
 pixel x/y available as variables in the expression; and raster combine() to
 identify and count unique pixel combinations across multiple input layers, with
 optional output of the pixel-level combination IDs.  Provides raster display
-using base graphics'.  Bindings to a subset of the Virtual Systems Interface
-('VSI') are also included to support operations on GDAL virtual file systems.
-These are general utility functions that abstract file system operations on
-URLs, cloud storage services, Zip'/'GZip'/'7z'/'RAR archives, and in-memory
-files.  gdalraster may be useful in applications that need scalable, low-level
-I/O, or prefer a direct GDAL API.")
+using base graphics'.  Bindings to a subset of the OGR API are also included for
+managing vector data sources.  Bindings to a subset of the Virtual Systems
+Interface ('VSI') are also included to support operations on GDAL virtual file
+systems.  These are general utility functions that abstract file system
+operations on URLs, cloud storage services, Zip'/'GZip'/'7z'/'RAR archives, and
+in-memory files.  gdalraster may be useful in applications that need scalable,
+low-level I/O, or prefer a direct GDAL API.")
     (license license:expat)))
 
 (define-public r-gdalcubes

@@ -2286,7 +2286,7 @@ interaction network to the specified disease. (See GÃ³mez-Carballa et al. (202
 10.7150/ijms.67815> for disease expression profiles; see Wishart et al. (2018)
 <doi: 10.1093/nar/gkx1037> and Gaulton et al. (2017) <doi: 10.1093/nar/gkw1074>
 for drug target information; see Kanehisa et al. (2021) <doi:
-10.1093/nar/gkaa970> for the details of KEGG database.)")
+10.1093/nar/gkaa970> for the details of KEGG database.).")
     (license license:gpl2+)))
 
 (define-public r-dtrsurv
@@ -3586,7 +3586,7 @@ repositories.")
      "Applies dynamic structural equation models to time-series data with generic and
 simplified specification for simultaneous and lagged effects.  Methods are
 described in Thorson et al. (2024) \"Dynamic structural equation models
-synthesize ecosystem dynamics constrained by ecological mechanisms.\"")
+synthesize ecosystem dynamics constrained by ecological mechanisms.\".")
     (license license:gpl3)))
 
 (define-public r-dsdp
@@ -8391,16 +8391,16 @@ and sediment budgets from a field or a catchment on a daily basis.")
 (define-public r-dmm
   (package
     (name "r-dmm")
-    (version "2.1-9")
+    (version "2.1-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmm" version))
        (sha256
-        (base32 "1gca90yh3lysp4rqxa8dp7d5mni57n1cj5q99y04j9aly3b4b0gb"))))
+        (base32 "1p4g0nb246val8p6l2jj665yp0aa4jxxjyi384i2jcwxyy5hmiyb"))))
     (properties `((upstream-name . "dmm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-robustbase r-pls r-matrix r-mass))
+    (propagated-inputs (list r-robustbase r-pls r-nadiv r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=dmm")
     (synopsis "Dyadic Mixed Model for Pedigree Data")
     (description
@@ -21563,7 +21563,7 @@ and Thomas Lemieux. (1996) <doi:10.2307/2171954>. \"Labor Market Institutions an
 the Distribution of Wages, 1973-1992: A Semiparametric Approach.\" Oaxaca,
 Ronald. (1973) <doi:10.2307/2525981>. \"Male-Female Wage Differentials in Urban
 Labor Markets.\" Blinder, Alan S. (1973) <doi:10.2307/144855>. \"Wage
-Discrimination: Reduced Form and Structural Estimates.\"")
+Discrimination: Reduced Form and Structural Estimates.\".")
     (license license:gpl3+)))
 
 (define-public r-dde
@@ -22539,13 +22539,13 @@ gene networks.")
 (define-public r-dbx
   (package
     (name "r-dbx")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbx" version))
        (sha256
-        (base32 "15ynl3w92h2bfgf5489qi0la8dkwlmp9hf64h230bvxvip9459hg"))))
+        (base32 "0d5ha0syhrgfx157hkmyfdsxf57crjj28afdb2xxyindakplgp29"))))
     (properties `((upstream-name . "dbx")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -24738,32 +24738,29 @@ painless.")
 (define-public r-datapackager
   (package
     (name "r-datapackager")
-    (version "0.15.9")
+    (version "0.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataPackageR" version))
        (sha256
-        (base32 "0yan6kqwpsnljc5j8rrl42m39kiqv1hpbrj6r5h92phx3w8h383l"))))
+        (base32 "0sm3b5xjj6dx4ckjdzklxr5j386iaiczx6xass4azkjwvj2y5bvb"))))
     (properties `((upstream-name . "DataPackageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
-                             r-withr
                              r-usethis
-                             r-stringr
                              r-rprojroot
                              r-roxygen2
                              r-rmarkdown
-                             r-purrr
+                             r-pkgload
+                             r-pkgbuild
                              r-knitr
                              r-futile-logger
                              r-digest
-                             r-devtools
                              r-desc
-                             r-crayon
-                             r-assertthat))
+                             r-crayon))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/DataPackageR/")
+    (home-page "https://github.com/ropensci/DataPackageR")
     (synopsis "Construct Reproducible Analytic Data Sets as R Packages")
     (description
      "This package provides a framework to help construct R data packages in a

@@ -1680,7 +1680,7 @@ objects.")
     (synopsis "Tufte-style html document format for rmarkdown")
     (description
      "Custom template and output formats for use with rmarkdown.  Produce Edward
-Tufte-style handouts in html formats with full support for rmarkdown features")
+Tufte-style handouts in html formats with full support for rmarkdown features.")
     (license license:expat)))
 
 (define-public r-tufte
@@ -4609,7 +4609,7 @@ converge to local minimum of objective function.")
     (home-page "https://cran.r-project.org/package=truncSP")
     (synopsis "Semi-parametric estimators of truncated regression models")
     (description
-     "Semi-parametric estimation of truncated linear regression models")
+     "Semi-parametric estimation of truncated linear regression models.")
     (license license:gpl2+)))
 
 (define-public r-truncreg
@@ -18582,7 +18582,7 @@ Properties\", Journal of the American Statistical Association, 96:456, 1348-1360
 in a way that is relatively independently of the representation of time.  Also
 provides plotting, time windowing, and some other utility functions which are
 specifically intended for time series.  See the Guide distributed as a vignette,
-or ?tframe.Intro for more details. (User utilities are in package tfplot.)")
+or ?tframe.Intro for more details. (User utilities are in package tfplot.).")
     (license license:gpl2)))
 
 (define-public r-tfprobability
@@ -19821,7 +19821,7 @@ Details can be found in Leifeld (2013), J@code{StatSoft}
 cannot be found on CRAN, you can find it at <https://github.com/IQSS/Zelig>.  If
 the mnlogit package, which this package enhances, cannot be found on CRAN, you
 can find an old version in the CRAN Archive at
-<https://cran.r-project.org/src/contrib/Archive/mnlogit/>.)")
+<https://cran.r-project.org/src/contrib/Archive/mnlogit/>.).")
     (license license:gpl3)))
 
 (define-public r-texpreview
@@ -23073,7 +23073,7 @@ visualizing time-dependent ROC curves.")
 diagrams provide a graphical overview of the respective contributions of the
 unbiased RMSE and MBE to the total RMSE (Jolliff, J. et al., 2009. \"Summary
 Diagrams for Coupled Hydrodynamic-Ecosystem Model Skill Assessment.\" Journal of
-Marine Systems 76: 64â82.)")
+Marine Systems 76: 64â82.).")
     (license license:gpl2)))
 
 (define-public r-tdpanalysis
@@ -26474,7 +26474,7 @@ amount of splits in the data in such a table is limited.  Table1Heatmap draws a
 heatmap of all crosstables that can be generated with the data.  Users can
 choose between showing the actual crosstables or direction of effect of
 associations, and highlight associations by number of patients or p-values.
-v1.2 - fixed \"missing \"no visible global function definition for ..\"")
+v1.2 - fixed \"missing \"no visible global function definition for ..\".")
     (license license:lgpl3)))
 
 (define-public r-table1

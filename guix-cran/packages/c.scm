@@ -3165,7 +3165,7 @@ al. (2016) <doi:10.21105/joss.00087>.")
      "Estimation and inference methods for the continuous threshold expectile
 regression.  It can fit the continuous threshold expectile regression and test
 the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
-(2016).  A continuous threshold expectile regression, submitted.\"")
+(2016).  A continuous threshold expectile regression, submitted.\".")
     (license license:gpl2+)))
 
 (define-public r-cthist
@@ -25950,13 +25950,13 @@ model.")
 (define-public r-clockify
   (package
     (name "r-clockify")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clockify" version))
        (sha256
-        (base32 "1x0d2np48lgkvsh4bw6szkahnmmy5rcipxnf2wnyhczvgplncw2f"))))
+        (base32 "0yancrksqpsjgrf5rhq25yl4hnc4vjq57bv5kqqpd0h1fw3xxr37"))))
     (properties `((upstream-name . "clockify")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26213,23 +26213,24 @@ Beam (2018) <@code{arXiv:1804.01486>}.")
 (define-public r-clinsigmeasures
   (package
     (name "r-clinsigmeasures")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClinSigMeasures" version))
        (sha256
-        (base32 "0fw89a1q92ck32z6w4zn1ldvky6ag1gi7b9bbv10mhmqhq4w3k58"))))
+        (base32 "0dm2shknf83d6wmmjqly1493g30qm68sizj2n5jcc8gwi3xfcs9z"))))
     (properties `((upstream-name . "ClinSigMeasures")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClinSigMeasures")
     (synopsis "Clinical Significance Measures")
     (description
-     "This package provides measures of effect sizes from summarized continuous
+     "This package provides measures of effect sizes for summarized continuous
 variables as well as diagnostic accuracy statistics for 2x2 table data.
-Includes functions for Cohen's d, Cohen's q, partial eta-squared, coefficient of
-variation, odds ratio, likelihood ratios, sensitivity, specificity, positive and
-negative predictive values, and Youden index.")
+Includes functions for Cohen's d, robust effect size, Cohen's q, partial
+eta-squared, coefficient of variation, odds ratio, likelihood ratios,
+sensitivity, specificity, positive and negative predictive values, Youden index,
+number needed to treat, number needed to diagnose, and predictive summary index.")
     (license license:gpl3)))
 
 (define-public r-clinsig
@@ -28180,7 +28181,7 @@ significance.  We derive a Monte Carlo approach for the finite sample
 distributions of LRT and RLRT statistics. (N. Zhao, H. Zhang, J. Clark, A.
 Maity, M. Wu.  Composite Kernel Machine Regression based on Likelihood Ratio
 Test with Application for Combined Genetic and Gene-environment Interaction
-Effect (Submitted).)")
+Effect (Submitted).).")
     (license license:gpl3)))
 
 (define-public r-ckat
@@ -31095,7 +31096,7 @@ considered to have no legal validity.  Antartic territories are excluded and
 under no event these maps mean there is a cession or occupation of sovereign
 territories against International Laws from Chile.  This package was
 intentionally documented in asciified spanish to make it work without problem on
-different platforms.)")
+different platforms.).")
     (license license:gpl3)))
 
 (define-public r-childsds
@@ -34106,7 +34107,7 @@ data frames.")
     (synopsis "Busca CEPs Brasileiros")
     (description
      "Retorna detalhes de dados de CEPs brasileiros, bairros, logradouros e tal.
-(Returns info of Brazilian postal codes, city names, addresses and so on.)")
+(Returns info of Brazilian postal codes, city names, addresses and so on.).")
     (license license:expat)))
 
 (define-public r-cepp
@@ -34511,7 +34512,7 @@ problema en diferentes plataformas. (Provides convenient access to more than 17
 million records from the Chilean Census 2017 database.  The datasets were
 imported from the official DVD provided by the Chilean National Bureau of
 Statistics by using the REDATAM converter created by Pablo De Grande and in
-addition it includes the maps accompanying these datasets.)")
+addition it includes the maps accompanying these datasets.).")
     (license license:cc0)))
 
 (define-public r-censmfm
@@ -38680,7 +38681,7 @@ classifiers in multiple subgroups (strata).  For instance, allows to perform
 multiple comparisons in diagnostic accuracy studies with co-primary endpoints
 sensitivity and specificity. (Westphal, Max, and Antonia Zapf. (2021).
 \"Statistical Inference for Diagnostic Test Accuracy Studies with Multiple
-Comparisons.\" <@code{arXiv:2105.13469>}.)")
+Comparisons.\" <@code{arXiv:2105.13469>}.).")
     (license license:expat)))
 
 (define-public r-casematch

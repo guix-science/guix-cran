@@ -12894,7 +12894,8 @@ standard spherical harmonic representation of the Earth's main field.")
     (home-page "https://cran.r-project.org/package=igraphtosonia")
     (synopsis "Convert iGraph graps to SoNIA .son files")
     (description
-     "This program facilitates exporting igraph graphs to the @code{SoNIA} file format")
+     "This program facilitates exporting igraph graphs to the @code{SoNIA} file
+format.")
     (license license:gpl2+)))
 
 (define-public r-igraphmatch

@@ -5519,7 +5519,7 @@ combines genetics on the individual level (Renton et al.  2011) with a
 stochastic development on the population level (Daedlow, 2015).  Renton, M,
 Diggle, A, Manalil, S and Powles, S (2011) <doi:10.1016/j.jtbi.2011.05.010>
 Daedlow, Daniel (2015, doctoral dissertation: University of Rostock, Faculty of
-Agriculture and Environmental Sciences.)")
+Agriculture and Environmental Sciences.).")
     (license license:gpl3)))
 
 (define-public r-prosgpv
@@ -31764,7 +31764,7 @@ clicking a GUI'.")
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pbs")
     (synopsis "Periodic B Splines")
-    (description "Periodic B Splines Basis")
+    (description "Periodic B Splines Basis.")
     (license license:gpl2)))
 
 (define-public r-pbrackets
@@ -34064,7 +34064,7 @@ another.")
      "Parallel implementation of the \"segment\" function of package \"DNAcopy\"")
     (description
      "Parallelized version of the \"segment\" function from Bioconductor package
-\"DNAcopy\", utilizing multi-core computation on host CPU")
+\"DNAcopy\", utilizing multi-core computation on host CPU.")
     (license license:gpl2)))
 
 (define-public r-parcr

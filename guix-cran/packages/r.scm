@@ -3226,7 +3226,7 @@ ecosystems.<https://github.com/@code{ShulanSun/rTRIPLEX_CW_Flux>}.")
 description: \"Triangle generates exact Delaunay triangulations, constrained
 Delaunay triangulations, conforming Delaunay triangulations, Voronoi diagrams,
 and high-quality triangular meshes.  The latter can be generated with no small
-or large angles, and are thus suitable for finite element analysis.\"")
+or large angles, and are thus suitable for finite element analysis.\".")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-rtrends
@@ -24925,7 +24925,7 @@ search for related songs or song information.  More information:
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=RGenetics")
     (synopsis "R packages for genetics research")
-    (description "R packages for genetics research")
+    (description "R packages for genetics research.")
     (license license:gpl2+)))
 
 (define-public r-rgenerateprec
@@ -26191,7 +26191,7 @@ based on an accompanying RESTful API. Access tables describing over 30,000
 species of fish, their biology, ecology, morphology, and more.  This package
 also supports experimental access to @code{SeaLifeBase} data, which contains
 nearly 200,000 species records for all types of aquatic life not covered by
-@code{FishBase}.")
+@code{FishBase}.'.")
     (license license:cc0)))
 
 (define-public r-rfinterval
@@ -33678,7 +33678,7 @@ al. (2023b) <doi:10.1016/j.atmosres.2023.106934>.")
     (synopsis "Record Values and Record Times")
     (description
      "This package provides functions for generating k-record values and k-record
-times")
+times.")
     (license license:gpl2+)))
 
 (define-public r-recordlinkage
@@ -40177,7 +40177,7 @@ were prepared so that R-package developers can freely design their own dialogs
 in the GUI which can then be added by the maintainer of
 @code{RcmdrPlugin.BiclustGUI}'.  These scripts do not required any knowledge of
 tcltk and Rcmdr and are easy to fill in. (Note: rqubic currently requires manual
-installation through @code{BiocManager::install('rqubic}').)")
+installation through @code{BiocManager::install('rqubic}').).")
     (license license:gpl3)))
 
 (define-public r-rcmdrplugin-arnova
@@ -42270,7 +42270,7 @@ Neuenschwander et al. (2010) <doi:10.1177/1740774509356002> and Schmidli et al.
     (description
      "An implementation of robust bent line regression.  It can fit the bent line
 regression and test the existence of change point, for the paper, \"Feipeng Zhang
-and Qunhua Li (2016).  Robust bent line regression, submitted.\"")
+and Qunhua Li (2016).  Robust bent line regression, submitted.\".")
     (license license:gpl2+)))
 
 (define-public r-rbedrock
@@ -47515,7 +47515,7 @@ intuitive deep understanding of the data.")
     (description
      "Fundamental formulas for Radar, for attenuation, range, velocity, effectiveness,
 power, scatter, doppler, geometry, radar equations, etc.  Based on Nick Guy's
-Python package @code{PyRadarMet}")
+Python package @code{PyRadarMet}.")
     (license license:gpl3+)))
 
 (define-public r-rada
@@ -49296,7 +49296,7 @@ installed from <https://github.com/@code{DiegoZardetto/ReGenesees>}.")
     (description
      "This package provides a series of functions to call AD Model Builder (i.e.,
 compile and run models) from within R, read the results back into R as admb
-objects, and provide standard accessors (i.e.  coef(), vcov(), etc.)")
+objects, and provide standard accessors (i.e.  coef(), vcov(), etc.).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-r2addhaz

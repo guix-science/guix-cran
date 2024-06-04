@@ -2023,7 +2023,7 @@ that have executable code and function definitions only functions are sourced.")
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=functional")
     (synopsis "Curry, Compose, and other higher-order functions")
-    (description "Curry, Compose, and other higher-order functions")
+    (description "Curry, Compose, and other higher-order functions.")
     (license license:gpl2+)))
 
 (define-public r-functansnp
@@ -4707,7 +4707,7 @@ FRBS modeling to the R community.")
     (description
      "Generating fractional binomial random variables and computing density,
 cumulative distribution, and quantiles of fractional binomial distributions.
-(Lee, J. (2023) <@code{arXiv:2209.01516>}.)")
+(Lee, J. (2023) <@code{arXiv:2209.01516>}.).")
     (license license:expat)))
 
 (define-public r-frapplot
@@ -8076,7 +8076,7 @@ Population Health center.  References : Reshef et al. (2011)
     (build-system r-build-system)
     (home-page "https://github.com/wch/fontcm")
     (synopsis "Computer Modern font for use with extrafont package")
-    (description "Computer Modern font for use with extrafont package")
+    (description "Computer Modern font for use with extrafont package.")
     (license license:gpl2)))
 
 (define-public r-fomantic-plus
@@ -9315,7 +9315,7 @@ Approximator.  For more details see the help files or the article by Hoefling
     (propagated-inputs (list r-combinat))
     (home-page "https://cran.r-project.org/package=FLR")
     (synopsis "Fuzzy Logic Rule Classifier")
-    (description "FLR algorithm for classification")
+    (description "FLR algorithm for classification.")
     (license license:gpl2+)))
 
 (define-public r-flps
@@ -14275,7 +14275,7 @@ normal densities.")
     (synopsis "Provide functions for forest inventory calculations")
     (description
      "Provide functions for forest inventory calculations.  Common volumetric
-equations (Smalian, Newton and Huber) as well stacking factor and form")
+equations (Smalian, Newton and Huber) as well stacking factor and form.")
     (license license:gpl3)))
 
 (define-public r-fhmm
@@ -15556,7 +15556,7 @@ Government works are not subject to copyright.  OFR and GPO do not restrict
 downstream uses of Code of Federal Regulations data, except that independent
 providers should be aware that only the OFR and GPO are entitled to represent
 that they are the providers of the official versions of the Code of Federal
-Regulations and related Federal Register publications.\"")
+Regulations and related Federal Register publications.\".")
     (license license:gpl3)))
 
 (define-public r-fedmatch

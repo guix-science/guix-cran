@@ -2827,7 +2827,7 @@ chisqu.test().  In both cases case an additional mosaic plot is generated.")
     (description
      "This package provides a convenient interface for constructing plots to visualize
 the fit of regression models arising from a wide variety of models in R ('lm',
-glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.)")
+glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
     (license license:gpl3)))
 
 (define-public r-visr

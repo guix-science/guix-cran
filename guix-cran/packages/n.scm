@@ -13454,7 +13454,7 @@ and Kwon, S. (2018) <@code{arXiv:1811.05061>}, Lee, S., Kwon, S. and Kim, Y.
 (2016) <doi:10.1016/j.csda.2015.08.019>, Kwon, S., Lee, S. and Kim, Y. (2015)
 <doi:10.1016/j.csda.2015.07.001>. (This research is funded by Julian Virtue
 Professorship from Center for Applied Research at Pepperdine Graziadio Business
-School and the National Research Foundation of Korea.)")
+School and the National Research Foundation of Korea.).")
     (license license:gpl3+)))
 
 (define-public r-ncoder

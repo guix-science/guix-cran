@@ -2996,7 +2996,7 @@ package estimates dissimilarity measures, builds dendrograms, obtains MANOVA,
 principal components, canonical variables, etc. (Pacote com metodologias de
 analise multivariada para @code{avaliaÃ§Ã£o} de experimentos.  O pacote estima
 medidas de dissimilaridade, construi de dendogramas, obtem a MANOVA, componentes
-principais, variaveis canonicas, etc.)")
+principais, variaveis canonicas, etc.).")
     (license license:gpl3)))
 
 (define-public r-multivariance
@@ -3332,7 +3332,7 @@ multivariate output.")
 multiple (ordered) levels and the focus is discriminating one particular level
 from the others.  This method is most naturally applied to settings where the
 outcome has three levels. (Meisner, A, Parikh, CR, and Kerr, KF (2017)
-<http://biostats.bepress.com/uwbiostat/paper423/>.)")
+<http://biostats.bepress.com/uwbiostat/paper423/>.).")
     (license license:gpl2)))
 
 (define-public r-multiscaledtm
@@ -12191,7 +12191,7 @@ Fleishman's power method (1978) <DOI:10.1007/BF02293811> is used to add
 non-normality if exists.  When data generation is completed (or when generated
 data sets are given) model test can also be run.  Please cite as \"@code{OrÃ§an},
 F. (2021). @code{MonteCarloSEM}: An R Package to Simulate Data for SEM.
-International Journal of Assessment Tools in Education, 8 (3), 704-713.\"")
+International Journal of Assessment Tools in Education, 8 (3), 704-713.\".")
     (license license:gpl3)))
 
 (define-public r-montecarlo
@@ -13614,7 +13614,7 @@ Marsh, H. W., Wen, Z., & Hau, K. T. (2004). <doi:10.1037/1082-989X.9.3.275>.
 estimation strategies and indicator construction.\" @code{MuthÃ©n}, L.K. and
 @code{MuthÃ©n}, B.O. (1998-2017). \"'Mplus Userâs Guide.  Eighth Edition.\"
 <https://www.statmodel.com/>.  Rosseel Y (2012). <doi:10.18637/jss.v048.i02>.
-\"'lavaan': An R Package for Structural Equation Modeling.\"")
+\"'lavaan': An R Package for Structural Equation Modeling.\".")
     (license license:expat)))
 
 (define-public r-modqr
@@ -22678,7 +22678,7 @@ reference to Loher P, Telonis AG, Rigoutsos I (2017) <doi:10.1038/srep41184>.")
 E.P., Inman-Bamber, J., Thiruvenkataswamy, V., Huygens, F and Giffard, P.M.\"
 (2007) <doi:10.1186/1471-2105-8-278> \"Computer-aided identification of
 polymorphism sets diagnostic for groups of bacterial and viral genetic
-variants.\"")
+variants.\".")
     (license license:expat)))
 
 (define-public r-minsample2
@@ -26196,7 +26196,7 @@ G.A., Chandler, C.E., Ernst, R.K. and Goodlett, D.R. (2019)
 <doi:10.1021/acs.analchem.9b03340> \"Model-based Spectral Library Approach for
 Bacterial Identification via Membrane Glycolipids.\" Gibb, S. and Strimmer, K.
 (2012) <doi:10.1093/bioinformatics/bts447> \"MALDIquant: a versatile R package
-for the analysis of mass spectrometry data.\"")
+for the analysis of mass spectrometry data.\".")
     (license license:gpl3)))
 
 (define-public r-mgmm
@@ -36694,7 +36694,7 @@ Calculator\" <https://gml.noaa.gov/grad/solcalc/>.")
      "This package provides a suite of conversion functions to create internally
 standardized spatial polygons data frames.  Utility functions use these data
 sets to return values such as country, state, time zone, watershed, etc.
-associated with a set of longitude/latitude pairs. (They also make cool maps.)")
+associated with a set of longitude/latitude pairs. (They also make cool maps.).")
     (license license:gpl2)))
 
 (define-public r-mazamaspatialplots
@@ -37251,7 +37251,7 @@ data frame and expand a data frame of matrices into a tidy data frame.")
      "An Implementation of Matrix Mathematics that Respects Row and Column Names")
     (description
      "An implementation of matrix mathematics wherein operations are performed \"by
-name.\"")
+name.\".")
     (license license:expat)))
 
 (define-public r-matrixstructest
@@ -38140,7 +38140,7 @@ on propensity scores, or perform a variety of other matching procedures.  The
 package also implements a series of recommendations offered in Ho, Imai, King,
 and Stuart (2007) <DOI:10.1093/pan/mpl013>. (The gurobi package, which is not on
 CRAN, is optional and comes with an installation of the Gurobi Optimizer,
-available at <https://www.gurobi.com>.)")
+available at <https://www.gurobi.com>.).")
     (license license:gpl2+)))
 
 (define-public r-matchingr
@@ -43292,7 +43292,7 @@ models.  M-activation layers created in this library detect and add input
 interaction (polynomial) effects into a predictive model.  M-activation can
 detect high-order interactions -- a traditionally non-trivial challenge.
 Details concerning application, methodology, and relevant survey literature can
-be found in this library's vignette, \"About.\"")
+be found in this library's vignette, \"About.\".")
     (license license:gpl3+)))
 
 (define-public r-macrozoobenthoswatera

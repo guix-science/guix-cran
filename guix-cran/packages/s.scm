@@ -2277,7 +2277,7 @@ technique allows for weighting on multiple variables, even when the interlocked
 distribution of the two variables is not known.  Interacts with Thomas Lumley's
 survey package, as described in Lumley, Thomas (2011, ISBN:978-1-118-21093-2).
 Adds additional functionality, more adaptable syntax, and error-checking to the
-base weighting functionality in survey.")
+base weighting functionality in survey.'.")
     (license license:gpl3)))
 
 (define-public r-svyvgam
@@ -9637,7 +9637,7 @@ composition matrix, to analyze the uniqueness of process stoichiometry, and to
 calculate stoichiometric coefficients if process stoichiometry is unique. (See
 Reichert, P. and Schuwirth, N., A generic framework for deriving process
 stoichiometry in enviromental models, Environmental Modelling and Software 25,
-1241-1251, 2010 for more details.)")
+1241-1251, 2010 for more details.).")
     (license license:gpl2+)))
 
 (define-public r-stodom
@@ -16597,6 +16597,34 @@ Higher-level plotting functions generate a bivariate histogram, a dendrogram
 aligned with a color-coded matrix, a triangular distance matrix, and more.")
     (license license:artistic2.0)))
 
+(define-public r-squant
+  (package
+    (name "r-squant")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "squant" version))
+       (sha256
+        (base32 "0ab4hrjkvd04jxfp40dz350mkv4a8a57gjf74mg631pmipw3cd5n"))))
+    (properties `((upstream-name . "squant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-glmnet r-ggplot2))
+    (home-page "https://cran.r-project.org/package=squant")
+    (synopsis "Subgroup Identification Based on Quantitative Objectives")
+    (description
+     "This package provides a subgroup identification method for precision medicine
+based on quantitative objectives.  This method can handle continuous, binary and
+survival endpoint for both prognostic and predictive case.  For the predictive
+case, the method aims at identifying a subgroup for which treatment is better
+than control by at least a pre-specified or auto-selected constant.  For the
+prognostic case, the method aims at identifying a subgroup that is at least
+better than a pre-specified/auto-selected constant.  The derived signature is a
+linear combination of predictors, and the selected subgroup are subjects with
+the signature > 0.  The false discover rate when no true subgroup exists is
+controlled at a user-specified level.")
+    (license license:gpl3)))
+
 (define-public r-sqrl
   (package
     (name "r-sqrl")
@@ -18459,47 +18487,6 @@ communities, supervised NMF(Yun Cai, Hong Gu and Tobby Kenney
 retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
     (license license:gpl3)))
-
-(define-public r-spnetwork
-  (package
-    (name "r-spnetwork")
-    (version "0.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spNetwork" version))
-       (sha256
-        (base32 "049fc00rnslairlryzlvgir05ha4pbsdbn0shrbvfh9yhwk2llpk"))))
-    (properties `((upstream-name . "spNetwork")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spdep
-                             r-sfheaders
-                             r-sf
-                             r-rdpack
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-progressr
-                             r-igraph
-                             r-ggplot2
-                             r-future-apply
-                             r-dbscan
-                             r-data-table
-                             r-cubature
-                             r-bh
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://jeremygelb.github.io/spNetwork/")
-    (synopsis "Spatial Analysis on Network")
-    (description
-     "Perform spatial analysis on network.  Implement several methods for spatial
-analysis on network: Network Kernel Density estimation, building of spatial
-matrices based on network distance ('listw objects from spdep package), K
-functions estimation for point pattern analysis on network, k nearest neighbours
-on network, reachable area calculation, and graph generation References: Okabe
-et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
-ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
-    (license license:gpl2)))
 
 (define-public r-spnaf
   (package
@@ -23397,7 +23384,7 @@ a relevant transition or evolutionary path which can highlights the features
 involved in a specific process.  spathial can be useful in all the scenarios
 where the temporal (or pseudo-temporal) evolution is the main problem (e.g.
 tumor progression).  The algorithm for finding the principal path is described
-in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\"")
+in: Ferrarotti et al., (2019) <doi:10.1109/TNNLS.2018.2884792>.\".")
     (license license:gpl3)))
 
 (define-public r-spatgrid
@@ -24420,7 +24407,7 @@ heterogeneous units.  See Braun, M. (2017) <doi:10.18637/jss.v082.i10>.")
     (synopsis "Sparse grid integration in R")
     (description
      "@code{SparseGrid} is a package to create sparse grids for numerical integration,
-based on code from www.sparse-grids.de")
+based on code from www.sparse-grids.de.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-sparsegl
@@ -28998,7 +28985,7 @@ same files.")
      "This package provides functions for reading and writing Gadget N-body snapshots.
  The Gadget code is popular in astronomy for running N-body / hydrodynamical
 cosmological and merger simulations.  To find out more about Gadget see the main
-distribution page at www.mpa-garching.mpg.de/gadget/")
+distribution page at www.mpa-garching.mpg.de/gadget/.")
     (license license:gpl2)))
 
 (define-public r-snapkrig
@@ -30610,7 +30597,7 @@ tests.  Reference: Weberpals J, Raman SR, Shaw PA, Lee H, Russo M, Hammil BG,
 Toh D, Connolly JG, Dandreo KJ, Tian F, Liu W, Li Jie, Hernandez-Munos JJ, Glynn
 RJ, Desai RJ (2023, in submission). \"A Principled Approach to Characterize and
 Analyze Partially Observed Confounder Data From Electronic Health Records: A
-Plasmode Simulation Study.\"")
+Plasmode Simulation Study.\".")
     (license license:gpl3+)))
 
 (define-public r-smdata
@@ -33780,7 +33767,7 @@ functions.")
     (synopsis "Format a number to a string with SI prefix")
     (description
      "Format a number (or a list of numbers) to a string (or a list of strings) with
-SI prefix.  Use SI prefixes as constants like (4 * milli)^2")
+SI prefix.  Use SI prefixes as constants like (4 * milli)^2.")
     (license license:gpl3)))
 
 (define-public r-sith
@@ -49063,7 +49050,7 @@ functionality to extract and evaluate the relevant probabilities.")
     (description
      "This package provides the SELF criteria to learn causal structure.  Please cite
 \"Ruichu Cai, Jie Qiao, Zhenjie Zhang, Zhifeng Hao.  SELF: Structural Equational
-Embedded Likelihood Framework for Causal Discovery.  AAAI. 2018.\"")
+Embedded Likelihood Framework for Causal Discovery.  AAAI. 2018.\".")
     (license license:gpl2)))
 
 (define-public r-seleniumpipes
@@ -49505,7 +49492,7 @@ distribution are provided.")
     (description
      "Sejong(http://www.sejong.or.kr/) corpus and
 Hannanum(http://semanticweb.kaist.ac.kr/home/index.php/@code{HanNanum})
-dictionaries for @code{KoNLP}")
+dictionaries for @code{KoNLP}.")
     (license license:gpl3)))
 
 (define-public r-sejmrp
@@ -54327,13 +54314,13 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "1j62axyd26i6mzyhvcqlfksm225f4zhhxf1spyb68vdzvh4zg1hr"))))
+        (base32 "1dkp4ch2n3j09b49pp0wsnx7pd9c3007kjm4jm72mpk1z17w5c9f"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-reshape2 r-nortest r-mass r-ggplot2))
@@ -56653,7 +56640,8 @@ process sampler.  Green, Richardson (2001) <doi:10.1111/1467-9469.00242>; Neal
 maximum likelihood estimator for fitting a block model.  SDP-1 has a tendency to
 produce equal-sized blocks and is ideal for producing a form of network
 histogram approximating a nonparametric graphon model.  Alternatively, it can be
-used for community detection. (This is experimental code, proceed with caution.)")
+used for community detection. (This is experimental code, proceed with
+caution.).")
     (license license:gpl3)))
 
 (define-public r-sbmedian

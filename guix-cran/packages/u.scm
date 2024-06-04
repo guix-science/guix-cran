@@ -799,7 +799,7 @@ across a website.")
     (description
      "This is a framework that aims to provide methods and tools for assessing the
 impact of different sources of uncertainties (e.g.positional uncertainty) on
-performance of species distribution models (SDMs).)")
+performance of species distribution models (SDMs).).")
     (license license:gpl3+)))
 
 (define-public r-usdata
