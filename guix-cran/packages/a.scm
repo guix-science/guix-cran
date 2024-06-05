@@ -1491,6 +1491,63 @@ prefers one or more metrics to the others, Field, A. (2013,
 ISBN:978-1-4462-4918-5).")
     (license license:expat)))
 
+(define-public r-autostats
+  (package
+    (name "r-autostats")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autostats" version))
+       (sha256
+        (base32 "1283m1b5bllzfsilsjkk0sj8l1wsjpvnq1vk7r20gnd8nf6kybmn"))))
+    (properties `((upstream-name . "autostats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-xgboost
+                             r-workflows
+                             r-tune
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlist
+                             r-rlang
+                             r-recosystem
+                             r-recipes
+                             r-purrr
+                             r-presenter
+                             r-patchwork
+                             r-party
+                             r-parsnip
+                             r-nnet
+                             r-magrittr
+                             r-jtools
+                             r-janitor
+                             r-igraph
+                             r-gtools
+                             r-ggthemes
+                             r-ggplot2
+                             r-ggeasy
+                             r-framecleaner
+                             r-dplyr
+                             r-dials
+                             r-data-table
+                             r-ckmeans-1d-dp
+                             r-broom-mixed
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://harrison4192.github.io/autostats/")
+    (synopsis "Auto Stats")
+    (description
+     "Automatically do statistical exploration.  Create formulas using tidyselect
+syntax, and then determine cross-validated model accuracy and variable
+contributions using glm and xgboost'.  Contains additional helper functions to
+create and modify formulas.  Has a flagship function to quickly determine
+relationships between categorical and continuous variables in the data set.")
+    (license license:expat)))
+
 (define-public r-autoshiny
   (package
     (name "r-autoshiny")
@@ -8698,13 +8755,13 @@ references, see the bibliography in the CGAL documentation at
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "09ggz6bzag9nr1qlgag16szn5gq8jbssqn6qdmdiraym4amjiy6x"))))
+        (base32 "0mlvizr7kf308y431vkdf04p64srkgd7hwbypkw68yz37r1k13za"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10397,13 +10454,13 @@ peptide prediction on a benchmark non-redundant independent test dataset.")
 (define-public r-ansm5
   (package
     (name "r-ansm5")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ANSM5" version))
        (sha256
-        (base32 "0yvkk33swrw51n7s8czwh3rvdiijnffv23lgm3y6i9rd03646z96"))))
+        (base32 "06ahirkjz9934c9z7lags2g3yrq9h6kdj64xx0zvzfmh9lm5yrv1"))))
     (properties `((upstream-name . "ANSM5")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ANSM5")
@@ -16014,13 +16071,13 @@ on <http://agvgd.hci.utah.edu/>.")
 (define-public r-agua
   (package
     (name "r-agua")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "agua" version))
        (sha256
-        (base32 "1mqx9a4cqplbq4llfyjh6mbyxr6in1a5f65hjnyhm7my6vhz4zr1"))))
+        (base32 "1mq7h2ff3ggqy6xsng1cz0mjdfbdnsp9yl2d2c20ma14k3rdf0q5"))))
     (properties `((upstream-name . "agua")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows

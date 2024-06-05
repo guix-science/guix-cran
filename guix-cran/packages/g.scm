@@ -9142,6 +9142,41 @@ Multi-Channel Funnel API.")
 <https://windsor.ai/api-fields/>.")
     (license license:expat)))
 
+(define-public r-goodpractice
+  (package
+    (name "r-goodpractice")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "goodpractice" version))
+       (sha256
+        (base32 "1sz5np8lgs2s1rlswrjfw20x8c9lxdz1r0wxybrgakzlfpj1i85w"))))
+    (properties `((upstream-name . "goodpractice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xmlparsedata
+                             r-xml2
+                             r-withr
+                             r-whoami
+                             r-rstudioapi
+                             r-rcmdcheck
+                             r-praise
+                             r-lintr
+                             r-jsonlite
+                             r-desc
+                             r-cyclocomp
+                             r-crayon
+                             r-covr
+                             r-clisymbols))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/goodpractice/")
+    (synopsis "Advice on R Package Building")
+    (description
+     "Give advice about good practices when building R packages.  Advice includes
+functions and syntax to avoid, package structure, code complexity, code
+formatting, etc.")
+    (license license:expat)))
+
 (define-public r-goodmankruskal
   (package
     (name "r-goodmankruskal")
@@ -17628,13 +17663,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.1-0")
+    (version "3.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1nsc99bvj12vi3qbsa3nxfiv102ksli7dm1zg0nz6lnz4l8zpk69"))))
+        (base32 "1vmx4bmjsk0sdxpafmpsiiiv0z4pyi6lfsxbb9mrqmhkqdhp2yrf"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21046,6 +21081,50 @@ Theoretical background and worked examples are available at
 <https://tinyurl.com/UCLgeostats/>.")
     (license license:gpl3)))
 
+(define-public r-geostan
+  (package
+    (name "r-geostan")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geostan" version))
+       (sha256
+        (base32 "078lk4c9igkm3il0yfcv2i64rj1fr3b5qz3d3szly2jh2ba5zdgh"))))
+    (properties `((upstream-name . "geostan")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-stanheaders
+                             r-spdep
+                             r-signs
+                             r-sf
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://connordonegan.github.io/geostan/")
+    (synopsis "Bayesian Spatial Analysis")
+    (description
+     "For spatial data analysis; provides exploratory spatial analysis tools, spatial
+regression models, disease mapping models, model diagnostics, and special
+methods for inference with small area survey data (e.g., the America Community
+Survey (ACS)) and censored population health surveillance data.  Models are
+pre-specified using the Stan programming language, a platform for Bayesian
+inference using Markov chain Monte Carlo (MCMC).  References: Carpenter et al.
+(2017) <doi:10.18637/jss.v076.i01>; Donegan (2021) <doi:10.31219/osf.io/3ey65>;
+Donegan (2022) <doi:10.21105/joss.04716>; Donegan, Chun and Hughes (2020)
+<doi:10.1016/j.spasta.2020.100450>; Donegan, Chun and Griffith (2021)
+<doi:10.3390/ijerph18136856>; Morris et al. (2019)
+<doi:10.1016/j.sste.2019.100301>.")
+    (license license:gpl3+)))
+
 (define-public r-geosptdb
   (package
     (name "r-geosptdb")
@@ -23731,13 +23810,13 @@ genieclust package.")
 (define-public r-genfrn
   (package
     (name "r-genfrn")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genfrn" version))
        (sha256
-        (base32 "13h8gy3axay9xmb2w98yhdsc66xczqs1f8qkakcyrbr8628mvwkr"))))
+        (base32 "1y2ggdsbv7dbmi7y32nnhg76s6raj29j7riqlwbq49zg414p926a"))))
     (properties `((upstream-name . "genfrn")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=genfrn")
@@ -26026,16 +26105,16 @@ dimension via hypothesis testing, see Chen et al. (2021)
 (define-public r-gdilm-sir
   (package
     (name "r-gdilm-sir")
-    (version "0.1.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDILM.SIR" version))
        (sha256
-        (base32 "0cz4y2rnlgkxzkjkmvyhbrlfk21a6w5wf730wk256k4djwbwklcw"))))
+        (base32 "08bcxnv5vwshj5hsxs6z8sny8hkb65aihcijlns0zinsdf685rgl"))))
     (properties `((upstream-name . "GDILM.SIR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-psych r-mvtnorm r-maxlik r-matrix r-mass))
+    (propagated-inputs (list r-psych r-numderiv r-mvtnorm r-matrix r-mass))
     (home-page "https://cran.r-project.org/package=GDILM.SIR")
     (synopsis "Inference for Infectious Disease Transmission in SIR Framework")
     (description
@@ -29260,13 +29339,13 @@ outlier detection in linear regression.")
 (define-public r-gallo
   (package
     (name "r-gallo")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GALLO" version))
        (sha256
-        (base32 "0mpm7z77s072d8yv1zl2w7wganz190vk757jklkz2g7ajs9k6yz3"))))
+        (base32 "0idzzkgxfr5im9p7xk7f4iph445rp8y2dzdzddm4x9i4fnh5hkwn"))))
     (properties `((upstream-name . "GALLO")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot
@@ -29275,6 +29354,7 @@ outlier detection in linear regression.")
                              r-stringr
                              r-rtracklayer
                              r-rcolorbrewer
+                             r-matrix
                              r-lattice
                              r-igraph
                              r-ggplot2
@@ -29283,6 +29363,7 @@ outlier detection in linear regression.")
                              r-dplyr
                              r-doparallel
                              r-data-table
+                             r-compquadform
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "<https://github.com/pablobio/GALLO>")

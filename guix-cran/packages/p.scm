@@ -3762,13 +3762,13 @@ well-organized format ready for further analysis.")
 (define-public r-psidr
   (package
     (name "r-psidr")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psidR" version))
        (sha256
-        (base32 "06rsi6ai58yggf73hjaidjhlgc09jjk76a4drvvgfs3v0qm296mm"))))
+        (base32 "0vfvx5aidd7g3s02hajnlfr8c0czzzbsrkgzfw5zx1lm4rxw8z26"))))
     (properties `((upstream-name . "psidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sascii
@@ -7835,17 +7835,17 @@ optional).")
 (define-public r-prismjs
   (package
     (name "r-prismjs")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prismjs" version))
        (sha256
-        (base32 "0siga7l60d0axlnjwbl4smw28rggyxrjwzv8ypw9bhb6x1xnn8in"))))
+        (base32 "032m8brgsvgdry8y1hsigl8pnckh13d23ylsj4hsga6dbyvkj7lf"))))
     (properties `((upstream-name . "prismjs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-v8))
-    (home-page "https://github.com/ropensci/prismjs")
+    (home-page "https://cran.r-project.org/package=prismjs")
     (synopsis "Server-Side Syntax Highlighting")
     (description
      "Prism <https://prismjs.com/> is a lightweight, extensible syntax highlighter,
@@ -18440,13 +18440,13 @@ classification (Rohart et al (2017) <doi:10.1371/journal.pcbi.1005752>).")
 (define-public r-plsmmlasso
   (package
     (name "r-plsmmlasso")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plsmmLasso" version))
        (sha256
-        (base32 "1plpzig1cw4cg27x1awpsiiynqr5llkxa4j2x5n20m9w53zd1j8m"))))
+        (base32 "0xdpscm6villr4fby19jvg60y3mc81bcj6hwavrbmnbp02b4lhcj"))))
     (properties `((upstream-name . "plsmmLasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-scalreg
@@ -25422,13 +25422,13 @@ circular analysis are based on methods from - Batschelet (1981)
 (define-public r-pharmr
   (package
     (name "r-pharmr")
-    (version "0.96.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmr" version))
        (sha256
-        (base32 "0kwa3jvchayx7jkfp896h0dkq2h2nw5wj0fpnqvspfj0r94pg8m1"))))
+        (base32 "1hk100pk1qr3v0290k7vasd28ch6qipq4qq1556l7x22nf4cv5cq"))))
     (properties `((upstream-name . "pharmr")))
     (build-system r-build-system)
     (inputs (list python))
@@ -25438,7 +25438,7 @@ circular analysis are based on methods from - Batschelet (1981)
     (description
      "Interface to the Pharmpy pharmacometrics library.  The Reticulate package is
 used to interface Python from R.")
-    (license license:bsd-2)))
+    (license license:lgpl3+)))
 
 (define-public r-pharmaversesdtm
   (package
@@ -26069,13 +26069,13 @@ inference on diversity indexes, writing data.frame with Chinese characters.")
 (define-public r-pgenlibr
   (package
     (name "r-pgenlibr")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pgenlibr" version))
        (sha256
-        (base32 "1xiv06yqja2jxh19m0fd90a083qdnq00jzl1xlddd5qv3m290bjk"))))
+        (base32 "1wbbm4n9ilwwa7mgb3z81nj0kh11nrgbfbc936cb95pjgs18v4h3"))))
     (properties `((upstream-name . "pgenlibr")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -29657,15 +29657,16 @@ Calculations and Graphs are provided.")
 (define-public r-pdr
   (package
     (name "r-pdr")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdR" version))
        (sha256
-        (base32 "1vkgzkk5l2wjxldriqxjrkkvyyg6n3bhb69hx90ficnyy5q3z7s7"))))
+        (base32 "1g7qs1x4794rdkb0z25qxqyg3mgq8b4iq7fbiz51s6sjrmdwljk4"))))
     (properties `((upstream-name . "pdR")))
     (build-system r-build-system)
+    (propagated-inputs (list r-plm r-pglm r-lme4 r-glmmtmb))
     (home-page "https://cran.r-project.org/package=pdR")
     (synopsis
      "Threshold Model and Unit Root Tests in Cross-Section and Time Series Data")
@@ -35048,13 +35049,13 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
 (define-public r-panelmatch
   (package
     (name "r-panelmatch")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PanelMatch" version))
        (sha256
-        (base32 "07c2zghrb1ykq08qjkpc86j64b4w04kk0hxfdxr60bzsvgnb0kg3"))))
+        (base32 "14y6msvs4h3xdpi83yi6q4a58xqbf1nxs5m0wbbzszzj7jdjiq79"))))
     (properties `((upstream-name . "PanelMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -35062,8 +35063,9 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
                              r-rcpp
                              r-matrix
                              r-mass
-                             r-igraph
                              r-ggplot2
+                             r-foreach
+                             r-doparallel
                              r-data-table
                              r-cbps))
     (native-inputs (list r-knitr))
@@ -35073,17 +35075,16 @@ Mechanistic Models\" <doi:10.1080/01621459.2019.1604367>.")
     (description
      "This package implements a set of methodological tools that enable researchers to
 apply matching methods to time-series cross-sectional data.  Imai, Kim, and Wang
-(2021) <http://web.mit.edu/insong/www/pdf/tscs.pdf> proposes a nonparametric
+(2023) <http://web.mit.edu/insong/www/pdf/tscs.pdf> proposes a nonparametric
 generalization of the difference-in-differences estimator, which does not rely
 on the linearity assumption as often done in practice.  Researchers first select
 a method of matching each treated observation for a given unit in a particular
 time period with control observations from other units in the same time period
 that have a similar treatment and covariate history.  These methods include
 standard matching methods based on propensity score and Mahalanobis distance, as
-well as weighting methods.  Once matching is done, both short-term and long-term
-average treatment effects for the treated can be estimated with standard errors.
- The package also offers a visualization technique that allows researchers to
-assess the quality of matches by examining the resulting covariate balance.")
+well as weighting methods.  Once matching and refinement is done, treatment
+effects can be estimated with standard errors.  The package also offers
+diagnostics for researchers to assess the quality of their results.")
     (license license:gpl3+)))
 
 (define-public r-panelhetero

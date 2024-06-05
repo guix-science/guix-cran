@@ -2008,13 +2008,13 @@ with univariate or multivariate responses.")
 (define-public r-mvcauchy
   (package
     (name "r-mvcauchy")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvcauchy" version))
        (sha256
-        (base32 "1szrzlyg1bsdbkmix4b8z301m5i7z38lba1wv1a8cw7v5hv74kjx"))))
+        (base32 "0vnf5q71hkj6nqljm73rcmvr7ir6zhp4qwrjvi49d6zxpdrs8yx1"))))
     (properties `((upstream-name . "mvcauchy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2 r-rfast))
@@ -4699,13 +4699,13 @@ implements the sequential graphical procedure described in Maurer and Bretz
 (define-public r-multigroupo
   (package
     (name "r-multigroupo")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiGroupO" version))
        (sha256
-        (base32 "18d7wfsfyqzrjicp2grfgh582pr6a1fqx7xbnqaj93x3w30pxscg"))))
+        (base32 "0vyq1xzxh6zjzdsvp0gib32xxz1c3672kj3ifn5fv0bf8yjjc2gk"))))
     (properties `((upstream-name . "MultiGroupO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
@@ -4713,6 +4713,7 @@ implements the sequential graphical procedure described in Maurer and Bretz
                              r-plsgenomics
                              r-mvtnorm
                              r-mgm
+                             r-lemon
                              r-gridextra
                              r-gplots
                              r-ggrepel
@@ -6634,13 +6635,13 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "1kpj70pxpzmnm2bn8g16n8cmc1ffhyarfy023gdzk8y0kzdaks55"))))
+        (base32 "1zmqpaw7yirs62xg20vfp6m481089651z5qhr52lqsqy537z2vby"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (propagated-inputs (list r-gigrvg r-formula r-coda))
@@ -17573,13 +17574,13 @@ with variable size train sets.")
 (define-public r-mlr3oml
   (package
     (name "r-mlr3oml")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3oml" version))
        (sha256
-        (base32 "08px4k8qrwwsay0f9h1nkpf7w30z0n4w189q2ijhb3kbrd0jhf1j"))))
+        (base32 "0qlgqq22zy5kdgp6l6fg3yx8ywxpy4yaa2567j9z1pg5ij9yd49h"))))
     (properties `((upstream-name . "mlr3oml")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -34091,6 +34092,41 @@ frequently is a candidate for being the optimal number of clusters.")
      "Perform the model confidence set procedure of Hansen et al (2011)
 <doi:10.3982/ECTA5771>.")
     (license license:gpl2)))
+
+(define-public r-mcrpioda
+  (package
+    (name "r-mcrpioda")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcrPioda" version))
+       (sha256
+        (base32 "16n9dgmv3cjk4qy27n62n5hw43slp8hxkfdhbl60qxyrmw80lijn"))))
+    (properties `((upstream-name . "mcrPioda")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-rrcov r-robslopes r-mixtools))
+    (native-inputs (list pkg-config gfortran))
+    (home-page "https://cran.r-project.org/package=mcrPioda")
+    (synopsis
+     "Method Comparison Regression - Mcr Fork for M- And MM-Deming Regression")
+    (description
+     "Regression methods to quantify the relation between two measurement methods are
+provided by this package.  In particular it addresses regression problems with
+errors in both variables and without repeated measurements.  It implements the
+Clinical Laboratory Standard International (CLSI) recommendations (see J. A.
+Budd et al. (2018,
+<https://clsi.org/standards/products/method-evaluation/documents/ep09/>) for
+analytical method comparison and bias estimation using patient samples.
+Furthermore, algorithms for Theil-Sen and equivariant Passing-Bablok estimators
+are implemented, see F. Dufey (2020, <doi:10.1515/ijb-2019-0157>) and J.
+Raymaekers and F. Dufey (2022, <@code{arXiv:2202:08060>}).  Further the robust
+M-Deming and MM-Deming (experimental) are available, see G. Pioda (2021,
+<@code{arXiv:2105:04628>}).  A comprehensive overview over the implemented
+methods and references can be found in the manual pages @code{mcrPioda-package}
+and mcreg'.")
+    (license license:gpl3+)))
 
 (define-public r-mcreplicate
   (package

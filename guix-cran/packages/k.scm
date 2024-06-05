@@ -5446,13 +5446,13 @@ or the first Wasserstein distance.")
 (define-public r-kanjistat
   (package
     (name "r-kanjistat")
-    (version "0.14.0")
+    (version "0.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kanjistat" version))
        (sha256
-        (base32 "0mhrbp064p6siv1k3lz84szxkravyabwwyiqb22gn5y8sxrwypa5"))))
+        (base32 "1d6r923xczhr75dmb3vq2pr3l9maigk8zvvk4r5x0jlh8sgrwdr0"))))
     (properties `((upstream-name . "kanjistat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -43,6 +43,33 @@
   #:use-module (guix-cran packages b)
   #:use-module (guix-cran packages a))
 
+(define-public r-hytest
+  (package
+    (name "r-hytest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hytest" version))
+       (sha256
+        (base32 "0zqbfra2ynnk7xhqbisrbjycydz4f91m6aljyym67iv0lpizdrwi"))))
+    (properties `((upstream-name . "hytest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=hytest")
+    (synopsis
+     "Hypothesis Testing Based on Neyman-Pearson Lemma and Likelihood Ratio Test")
+    (description
+     "Error type I and Optimal critical values to test statistical hypothesis based on
+Neyman-Pearson Lemma and Likelihood ratio test based on random samples from
+several distributions.  The families of distributions are Bernoulli,
+Exponential, Geometric, Normal, Gamma, Lognormal, and Poisson.  This package is
+an ideal resource to help with the teaching of Statistics.  The main references
+for this package are Casella G. and Berger R. (2003,ISBN:0-534-24312-6 ,
+\"Statistical Inference.  Second Edition\", Duxbury Press) and Hogg, R.,
+@code{McKean}, J., and Craig, A. (2019,ISBN:013468699, \"Introduction to
+Mathematical Statistic.  Eighth edition\", Pearson).")
+    (license license:gpl3)))
+
 (define-public r-hystreet
   (package
     (name "r-hystreet")
@@ -3483,13 +3510,13 @@ imputations are needed, following the work of von Hippel (2020)
 (define-public r-howler
   (package
     (name "r-howler")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "howler" version))
        (sha256
-        (base32 "00l1952hf2ngypg67y88rgn0xiicsjsyl6xf8r9r65ar9k0fl3yb"))))
+        (base32 "1l66nkvca5ig7l133mdfs8g3x0s6agq3jkn3c358ypvls78v4dv8"))))
     (properties `((upstream-name . "howler")))
     (build-system r-build-system)
     (arguments
@@ -9382,28 +9409,39 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "1a2bc86047mla0dr89sf1xrin47v0mmdz6j5sil258hjxrl434hy"))))
+        (base32 "1syrqygfdr12sd32wq2ab0gibwbljlbrwzzkfnmhgh8js9dxv6j8"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sandwich r-rcppeigen r-rcpp r-clime))
+    (propagated-inputs (list r-sandwich
+                             r-rcppeigen
+                             r-rcpp
+                             r-mass
+                             r-jointdiag
+                             r-geigen
+                             r-clime))
     (home-page "https://github.com/Linc2021/HDTSA")
     (synopsis "High Dimensional Time Series Analysis Tools")
     (description
      "Procedures for high-dimensional time series analysis including factor analysis
 proposed by Lam and Yao (2012) <doi:10.1214/12-AOS970> and Chang, Guo and Yao
-(2015) <doi:10.1016/j.jeconom.2015.03.024>, martingale difference test proposed
-by Chang, Jiang and Shao (2021) preprint, principal component analysis proposed
-by Chang, Guo and Yao (2018) <doi:10.1214/17-AOS1613>, identifying
-conintegration proposed by Zhang, Robinson and Yao (2019)
-<doi:10.1080/01621459.2018.1458620>, unit root test proposed by Chang, Cheng and
-Yao (2021) <doi:10.1093/biomet/asab034> and white noise test proposed by Chang,
-Yao and Zhou (2017) <doi:10.1093/biomet/asw066>.")
+(2015) <doi:10.1016/j.jeconom.2015.03.024>,martingale difference test proposed
+by Chang, Jiang and Shao (2022) <doi:10.1016/j.jeconom.2022.09.001> in
+press,principal component analysis proposed by Chang, Guo and Yao (2018)
+<doi:10.1214/17-AOS1613>, identifying cointegration proposed by Zhang, Robinson
+and Yao (2019) <doi:10.1080/01621459.2018.1458620>, unit root test proposed by
+Chang, Cheng and Yao (2021) <doi:10.1093/biomet/asab034>, white noise test
+proposed by Chang, Yao and Zhou (2017) <doi:10.1093/biomet/asw066>,
+CP-decomposition for high-dimensional matrix time series proposed by Chang, He,
+Yang and Yao(2023) <doi:10.1093/jrsssb/qkac011> and Chang, Du, Huang and Yao
+(2024+), and Statistical inference for high-dimensional spectral density matrix
+porposed by Chang, Jiang, @code{McElroy} and Shao (2023)
+<doi:10.48550/@code{arXiv.2212.13686>}.")
     (license license:gpl3)))
 
 (define-public r-hdsvm
@@ -11283,13 +11321,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "13a8ixd5k1xzkhpidgdnm3dyz5vywf0r0mavxrdksnz0mi84p8q1"))))
+        (base32 "1cch2l4dazny7p5hn16v0fp5mir10fy4qa8ibpgx3j2vi8w05c1x"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

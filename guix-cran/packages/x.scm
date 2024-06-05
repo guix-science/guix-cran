@@ -967,6 +967,26 @@ relationships.  The data model and the data can be exported as SQL code of
 different SQL flavors.")
     (license license:gpl3)))
 
+(define-public r-xml2r
+  (package
+    (name "r-xml2r")
+    (version "0.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XML2R" version))
+       (sha256
+        (base32 "1vssxy5bn46likkba8ycajkni14s7js31255swflr8007mc3pwmz"))))
+    (properties `((upstream-name . "XML2R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml r-plyr r-httr))
+    (home-page "https://github.com/cpsievert/XML2R")
+    (synopsis "Easier XML Data Collection")
+    (description
+     "Helpers for transforming XML content into number of tables while preserving
+parent to child relationships.")
+    (license license:gpl2+)))
+
 (define-public r-xmeta
   (package
     (name "r-xmeta")

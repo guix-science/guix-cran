@@ -7943,13 +7943,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "02gd17x1504q87xzw384fd5249xd6kpfqib257fqbdhcrd64bw0r"))))
+        (base32 "0vlv9hizfq8awr4ldyjy6j7k17wwgak054bfv3f8anxa7vwxp7df"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -8980,13 +8980,13 @@ Partial Least Squares (PLS), and Random Forest algorithms.")
 (define-public r-rqpen
   (package
     (name "r-rqpen")
-    (version "4.1")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqPen" version))
        (sha256
-        (base32 "1g4mnnfp5vgn383v6mrc1y0rin69vkm5b4nakig9wrqzq04vwcin"))))
+        (base32 "112x6y6ykmd1isw19xdpzn8alf5llz6jp7l5pfi6vp22w27z852w"))))
     (properties `((upstream-name . "rqPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -16376,13 +16376,13 @@ also specify other colours.")
 (define-public r-rniftyreg
   (package
     (name "r-rniftyreg")
-    (version "2.8.1")
+    (version "2.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNiftyReg" version))
        (sha256
-        (base32 "0k5qqkn2jnsrlb2j99lsy1v4dymrs2xjxyrhvpnxhdx7fyghhj64"))))
+        (base32 "0jrb1j8hl25lby2ikpvmmrxq39plx3r6qmrn0bnzbmyvbb5x1vfq"))))
     (properties `((upstream-name . "RNiftyReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcppeigen r-rcpp r-ore))
@@ -17024,13 +17024,13 @@ ads, campaigns, agency clients and statistic from your ads account.")
 (define-public r-rmweather
   (package
     (name "r-rmweather")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmweather" version))
        (sha256
-        (base32 "0d76k80b7y3ay2njmanz45qvs5rj8mx076lln89bmi22fzwjarhj"))))
+        (base32 "04xa3v5nkffz4b7r3a7il9qy0gmcpv741jvcjbn24z05ks6b17q3"))))
     (properties `((upstream-name . "rmweather")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -17422,32 +17422,6 @@ collection in the GNU Octave function fact() which was aggregated by Jordi
 @code{GutiÃ©rrez} Hermoso based on the (now defunct) site stallmanfacts.com
 (which is accessible only via <http://archive.org>).")
     (license license:gpl3)))
-
-(define-public r-rmsdp
-  (package
-    (name "r-rmsdp")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RMSDp" version))
-       (sha256
-        (base32 "12yfjs66w9d1i9yir731nk7038rg7b77m05fjs9x7a5cs9001azg"))))
-    (properties `((upstream-name . "RMSDp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreach r-doparallel))
-    (home-page "https://cran.r-project.org/package=RMSDp")
-    (synopsis
-     "Refined Modified Stahel-Donoho (MSD) Estimators for Outlier Detection (Parallel Version)")
-    (description
-     "This package provides a parallel function for multivariate outlier detection
-named modified Stahel-Donoho estimators is contained in this package.  The
-function RMSDp() is for elliptically distributed datasets and recognizes
-outliers based on Mahalanobis distance.  This function is for higher dimensional
-datasets that cannot be handled by a single core function RMSD() included in
-RMSD package.  See Wada and Tsubaki (2013) <doi:10.1109/CLOUDCOM-ASIA.2013.86>
-for the detail of the algorithm.")
-    (license license:gpl3+)))
 
 (define-public r-rmsd
   (package
@@ -20673,13 +20647,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.2-0")
+    (version "3.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "0hvd9cxrkfm3hs65q6wpsz5mhpmm1hic51sl383m6ll6ihd3vrgm"))))
+        (base32 "08llfpyj85nnqn07vw3i7hjs3hn84s8grg6cjjqynn38kw1849ry"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -32333,13 +32307,13 @@ data.  Full mathematical details can be found in <doi:10.1002/sim.9163> and
 (define-public r-reformulas
   (package
     (name "r-reformulas")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reformulas" version))
        (sha256
-        (base32 "1bjq9ncpb4jn4q0hibhmnq5s9izvixac7fvw90cyk7r24kkv10mr"))))
+        (base32 "0p8v8j0xw4np84vvkbd41r4n1rvj5awlrnpbvqccgjasspl07smh"))))
     (properties `((upstream-name . "reformulas")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-matrix))
@@ -44047,6 +44021,46 @@ wrapper to knitr and asciidoc'.")
 model tests.")
     (license license:gpl2)))
 
+(define-public r-rartrials
+  (package
+    (name "r-rartrials")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RARtrials" version))
+       (sha256
+        (base32 "03hfbr08f4wbb8apfdqg32118615zzyaihvriqsfr7q2qxy4byla"))))
+    (properties `((upstream-name . "RARtrials")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-pins))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yayayaoyaoyao/RARtrials")
+    (synopsis "Response-Adaptive Randomization in Clinical Trials")
+    (description
+     "Some response-adaptive randomization methods commonly found in literature are
+included in this package.  These methods include the randomized play-the-winner
+rule for binary endpoint (Wei and Durham (1978) <doi:10.2307/2286290>), the
+doubly adaptive biased coin design with minimal variance strategy for binary
+endpoint (Atkinson and Biswas (2013) <doi:10.1201/b16101>, Rosenberger and
+Lachin (2015) <doi:10.1002/9781118742112>) and maximal power strategy targeting
+Neyman allocation for binary endpoint (Tymofyeyev, Rosenberger, and Hu (2007)
+<doi:10.1198/016214506000000906>) and RSIHR allocation with each letter
+representing the first character of the names of the individuals who first
+proposed this rule (Youngsook and Hu (2010) <doi:10.1198/sbr.2009.0056>, Bello
+and Sabo (2016) <doi:10.1080/00949655.2015.1114116>), A-optimal Allocation for
+continuous endpoint (Sverdlov and Rosenberger (2013)
+<doi:10.1080/15598608.2013.783726>), Aa-optimal Allocation for continuous
+endpoint (Sverdlov and Rosenberger (2013) <doi:10.1080/15598608.2013.783726>),
+generalized RSIHR allocation for continuous endpoint (Atkinson and Biswas (2013)
+<doi:10.1201/b16101>), Bayesian response-adaptive randomization with a control
+group using the Thall \\& Wathen method for binary and continuous endpoints
+(Thall and Wathen (2007) <doi:10.1016/j.ejca.2007.01.006>) and the
+forward-looking Gittins index rule for binary and continuous endpoints (Villar,
+Wason, and Bowden (2015) <doi:10.1111/biom.12337>, Williamson and Villar (2019)
+<doi:10.1111/biom.13119>).")
+    (license license:gpl3+)))
+
 (define-public r-rarms
   (package
     (name "r-rarms")
@@ -45479,6 +45493,29 @@ to lower correlation between trees (or trees residuals), to provide a deep
 analysis of variable importance and to allow native distributed and incremental
 learning.")
     (license license:bsd-3)))
+
+(define-public r-randomprojectiontest
+  (package
+    (name "r-randomprojectiontest")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RandomProjectionTest" version))
+       (sha256
+        (base32 "1pg88q7k89s33yfnqkn5d03mc3ix8ihh4q3l6064p44d98wdsw4f"))))
+    (properties `((upstream-name . "RandomProjectionTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-glue))
+    (home-page "https://cran.r-project.org/package=RandomProjectionTest")
+    (synopsis "Two-Sample Test in High Dimensions using Random Projection")
+    (description
+     "This package performs the random projection test (Lopes et al., (2011)
+<doi:10.48550/@code{arXiv.1108.2401>}) for the one-sample and two-sample
+hypothesis testing problem for equality of means in the high dimensional
+setting.  We are interested in detecting the mean vector in the one-sample
+problem or the difference between mean vectors in the two-sample problem.")
+    (license license:gpl3)))
 
 (define-public r-randomnames
   (package

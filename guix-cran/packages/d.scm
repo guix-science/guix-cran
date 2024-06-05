@@ -3927,6 +3927,47 @@ beat() in bpm.  Together the two functions can be used to create many different
 drum patterns.")
     (license license:gpl3)))
 
+(define-public r-drugutilisation
+  (package
+    (name "r-drugutilisation")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DrugUtilisation" version))
+       (sha256
+        (base32 "1b89g84xzdq8sc9nf8vc13x97cgbz0764j21gwkzasn693rn38ym"))))
+    (properties `((upstream-name . "DrugUtilisation")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-tictoc
+                             r-rlang
+                             r-rjsonio
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-magrittr
+                             r-lubridate
+                             r-lifecycle
+                             r-glue
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/DrugUtilisation/")
+    (synopsis
+     "Summarise Patient-Level Drug Utilisation in Data Mapped to the OMOP Common Data Model")
+    (description
+     "Summarise patient-level drug utilisation cohorts using data mapped to the
+Observational Medical Outcomes Partnership (OMOP) common data model.  New users
+and prevalent users cohorts can be generated and their characteristics,
+indication and drug use summarised.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-drugsim2dr
   (package
     (name "r-drugsim2dr")
@@ -8120,6 +8161,31 @@ the parameters of different models.  Standard phylogenetic methods assume
 stationarity, homogeneity and reversibility for the Markov processes, and often
 impose further restrictions on the parameters.")
     (license license:gpl2)))
+
+(define-public r-dnamotif
+  (package
+    (name "r-dnamotif")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DNAmotif" version))
+       (sha256
+        (base32 "0w7fzvssnvymrpx3444svawkags6bvcbajasvk5n0fvyyx1i1jhz"))))
+    (properties `((upstream-name . "DNAmotif")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-biostrings))
+    (home-page "https://cran.r-project.org/package=DNAmotif")
+    (synopsis "DNA Sequence Motifs")
+    (description
+     "Motifs within biological sequences show a significant role.  This package
+utilizes a user-defined threshold value (window size and similarity) to create
+consensus segments or motifs through local alignment of dynamic programming with
+gap and it calculates the frequency of each identified motif, offering a
+detailed view of their prevalence within the dataset.  It allows for thorough
+exploration and understanding of sequence patterns and their biological
+importance.")
+    (license license:gpl3)))
 
 (define-public r-dnamixtureslite
   (package

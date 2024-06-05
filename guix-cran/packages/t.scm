@@ -12966,16 +12966,16 @@ tensors.")
 (define-public r-tinytiger
   (package
     (name "r-tinytiger")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinytiger" version))
        (sha256
-        (base32 "1ixbq9qfv0jlwqca8anng2z9dykpsv46vyrkc7p82a55mx1x8vbg"))))
+        (base32 "0nfy0zd7byy2j9mgq4piyjvxdlzw98jajmvni8pp5m6ilac116zy"))))
     (properties `((upstream-name . "tinytiger")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-rlang r-glue r-curl r-cli))
+    (propagated-inputs (list r-sf r-glue r-curl r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alarm-redist/tinytiger")
     (synopsis "Lightweight Interface to TIGER/Line Shapefiles")
@@ -13176,6 +13176,39 @@ package without attaching it, with the benefits of attaching a package.  3)
 Extending the string manipulation capabilities of the stringi R package.  4)
 Reducing repetitive code.  Besides linking to Rcpp', tinycodet has only one
 other dependency, namely stringi'.")
+    (license license:expat)))
+
+(define-public r-tinyarray
+  (package
+    (name "r-tinyarray")
+    (version "2.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyarray" version))
+       (sha256
+        (base32 "1dcn5iv66z72f4lssclndkp26q4j53ff3m9dl9w9a02l44jyf8bw"))))
+    (properties `((upstream-name . "tinyarray")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-survminer
+                             r-survival
+                             r-stringr
+                             r-pheatmap
+                             r-patchwork
+                             r-limma
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr
+                             r-clusterprofiler
+                             r-biocmanager))
+    (home-page "https://github.com/xjsun1221/tinyarray")
+    (synopsis "Expression Data Analysis and Visualization")
+    (description
+     "The Gene Expression Omnibus (<https://www.ncbi.nlm.nih.gov/geo/>) and The Cancer
+Genome Atlas (<https://portal.gdc.cancer.gov/>) are widely used medical public
+databases.  Our platform integrates routine analysis and visualization tools for
+expression data to provide concise and intuitive data analysis and presentation.")
     (license license:expat)))
 
 (define-public r-tinter
@@ -14984,13 +15017,13 @@ interact seamlessly with the tidyverse.")
 (define-public r-tidysem
   (package
     (name "r-tidysem")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidySEM" version))
        (sha256
-        (base32 "0vsk4z1mpzmyg618c5sqmblv8c8pzhwbrbxwdq4cpg7sl6agbhb0"))))
+        (base32 "1da0hpapns93a1znlq8gh1nmjczczy4sg4c14kikkxhar1wq4lrk"))))
     (properties `((upstream-name . "tidySEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -21041,28 +21074,6 @@ Fields\" Michael Garland and Paul S. Heckbert (1995)
 library written by Michael Fogleman <https://www.github.com/fogleman/hmm>.")
     (license license:expat)))
 
-(define-public r-ternvis
-  (package
-    (name "r-ternvis")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ternvis" version))
-       (sha256
-        (base32 "057i6i3ygxrin0npc18gsg3dpdldzafyb5sr6lix5mhy6b09lkxf"))))
-    (properties `((upstream-name . "ternvis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quadprog r-maps r-dichromat))
-    (home-page "https://cran.r-project.org/package=ternvis")
-    (synopsis
-     "Visualisation, Verification and Calibration of Ternary Probabilistic Forecasts")
-    (description
-     "This package provides a suite of functions for visualising ternary probabilistic
-forecasts, as discussed in the paper by Jupp (2012)
-<doi:10.1098/rsta.2011.0350>.")
-    (license license:gpl2)))
-
 (define-public r-ternary
   (package
     (name "r-ternary")
@@ -24156,6 +24167,42 @@ branches in a hierarchical tree.  Statistical significance of the findings is
 determined, for all branches of the tree, by performing permutation tests,
 optionally with generalized Pareto p-value estimation.")
     (license license:gpl2)))
+
+(define-public r-tbea
+  (package
+    (name "r-tbea")
+    (version "1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tbea" version))
+       (sha256
+        (base32 "1lffwmy4qiy24vkhizv8vxhffm35xh7ls818fhn50j7my8gzpip1"))))
+    (properties `((upstream-name . "tbea")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfit r-coda r-boot r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gaballench/tbea")
+    (synopsis "Pre- And Post-Processing in Bayesian Evolutionary Analyses")
+    (description
+     "This package provides functions are provided for prior specification in
+divergence time estimation using fossils as well as other kinds of data.  It
+provides tools for interacting with the input and output of Bayesian platforms
+in evolutionary biology such as BEAST2', @code{MrBayes}', @code{RevBayes}', or
+MCMCTree'.  It Implements a simple measure similarity between probability
+density functions for comparing prior and posterior Bayesian densities, as well
+as code for calculating the combination of distributions using conflation of
+Hill (2008).  Functions for estimating the origination time in collections of
+distributions using the x-intercept (e.g., Draper and Smith, 1998) and
+stratigraphic intervals (Marshall 2010) are also available.  Hill, T. 2008.
+\"Conflations of probability distributions\".  Transactions of the American
+Mathematical Society, 363:3351-3372. <doi:10.48550/@code{arXiv.0808.1808>},
+Draper, N. R. and Smith, H. 1998. \"Applied Regression Analysis\".  1--706.  Wiley
+Interscience, New York. <DOI:10.1002/9781118625590>, Marshall, C. R. 2010.
+\"Using confidence intervals to quantify the uncertainty in the end-points of
+stratigraphic ranges\".  Quantitative Methods in Paleobiology, 291--316.
+<DOI:10.1017/S1089332600001911>.")
+    (license license:gpl3)))
 
 (define-public r-tbd
   (package

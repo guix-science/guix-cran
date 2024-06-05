@@ -2513,13 +2513,13 @@ well as Rmarkdown or Quarto documents with automatically assigned name prefixes.
 (define-public r-org
   (package
     (name "r-org")
-    (version "2022.11.23")
+    (version "2024.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "org" version))
        (sha256
-        (base32 "0ppiwdzy7x0fnqq5j23dim4g64cn3bq72v2vd91c2i3sg4n5ahlk"))))
+        (base32 "1kpaij3qz6amccf01kplmx6ql90qkkqmswq364jj5x2jwx7k5w26"))))
     (properties `((upstream-name . "org")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

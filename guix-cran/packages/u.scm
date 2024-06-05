@@ -3337,13 +3337,13 @@ non-microbiome data, if there is a species abundance table.")
 (define-public r-ulid
   (package
     (name "r-ulid")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulid" version))
        (sha256
-        (base32 "0hjjgh340y9yf8ryzzzxnz33sdjakhdgv441mh9dkkahjn32mxln"))))
+        (base32 "1g227bslfb4ffm2s0s6yblss4449kkpgq7cndcd5nmg5h48dxh4q"))))
     (properties `((upstream-name . "ulid")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

@@ -3540,13 +3540,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "1iqp6915blbzjvfkqj9sa3gpads8qbhq19vi8isiszadi40218bk"))))
+        (base32 "12srwi69mkhnj2m711r9pag89jlmxxsjksr1fhb5w5cbn0lyk9in"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3560,9 +3560,7 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
                              r-mass
                              r-ggridges
                              r-ggplot2
-                             r-emmeans
                              r-dplyr
-                             r-coda
                              r-brms))
     (native-inputs (list r-knitr))
     (home-page "https://openpharma.github.io/brms.mmrm/")
@@ -5709,16 +5707,18 @@ random effects.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "1pzb57sp6ncamrcr8yry24sglqhw9spqgl7xmb0k36zcggmhvd64"))))
+        (base32 "1v0czkz09gp58ap7n847pcwqsd1n11i44wz6cppnlxhl1wcw8vzn"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-xmlparsedata
+                             r-xml2
+                             r-stringr
                              r-rlang
                              r-lintr
                              r-glue
@@ -13562,6 +13562,39 @@ by Metropolis-Hastings algorithm.  More details can be seen in Sung et al (2017)
 <@code{arXiv:1705.02511>}.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-binaryeppm
+  (package
+    (name "r-binaryeppm")
+    (version "3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BinaryEPPM" version))
+       (sha256
+        (base32 "1sjwh423vap4gd44mkpdhsmp90y9rzr3zkzzakbfczawxz3mbcrp"))))
+    (properties `((upstream-name . "BinaryEPPM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-numderiv r-lmtest r-formula r-expm))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=BinaryEPPM")
+    (synopsis
+     "Mean and Scale-Factor Modeling of Under- And Over-Dispersed Binary Data")
+    (description
+     "Under- and over-dispersed binary data are modeled using an extended Poisson
+process model (EPPM) appropriate for binary data.  A feature of the model is
+that the under-dispersion relative to the binomial distribution only needs to be
+greater than zero, but the over-dispersion is restricted compared to other
+distributional models such as the beta and correlated binomials.  Because of
+this, the examples focus on under-dispersed data and how, in combination with
+the beta or correlated distributions, flexible models can be fitted to data
+displaying both under- and over-dispersion.  Using Generalized Linear Model
+(GLM) terminology, the functions utilize linear predictors for the probability
+of success and scale-factor with various link functions for p, and log link for
+scale-factor, to fit a variety of models relevant to areas such as bioassay.
+Details of the EPPM are in Faddy and Smith (2012) <doi:10.1002/bimj.201100214>
+and Smith and Faddy (2019) <doi:10.18637/jss.v090.i08>.")
+    (license license:gpl2)))
+
 (define-public r-binaryemvs
   (package
     (name "r-binaryemvs")
@@ -18363,13 +18396,13 @@ BEAST use by other R packages using CRAN.")
 (define-public r-beastier
   (package
     (name "r-beastier")
-    (version "2.5")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beastier" version))
        (sha256
-        (base32 "0inycswavvp0cpgj86j95djc58fa07kg9n8f281grncjzmj8980b"))))
+        (base32 "1crdi1pmz7gf75089czvvfi31i67i6z0zak9vdppc9bwyrcj1j7f"))))
     (properties `((upstream-name . "beastier")))
     (build-system r-build-system)
     (inputs (list))
@@ -20919,13 +20952,13 @@ provided, too.  For more details about the Gibbs sampler see Kelter (2019)
 (define-public r-bayessurvive
   (package
     (name "r-bayessurvive")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSurvive" version))
        (sha256
-        (base32 "1s42aaz4320j9rdac0wf281488lvp277cwrwf29mq1qnvbwgb4xm"))))
+        (base32 "1m7acw40hvjpgjzyz8fpqzvkz1dadq829klba0343g8h0hmfcd65"))))
     (properties `((upstream-name . "BayesSurvive")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20935,6 +20968,7 @@ provided, too.  For more details about the Gibbs sampler see Kelter (2019)
                              r-mvtnorm
                              r-ggplot2
                              r-ggally))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ocbe-uio/BayesSurvive")
     (synopsis "Bayesian Survival Models for High-Dimensional Data")
     (description
@@ -22020,13 +22054,13 @@ details regarding part of this framework can be found in Cullen et al. (2021)
 (define-public r-bayesmortalityplus
   (package
     (name "r-bayesmortalityplus")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMortalityPlus" version))
        (sha256
-        (base32 "0zh9v0hzpjsz312bpdrlc2rix2df1v8ccm831fis7czjhvcbc14z"))))
+        (base32 "15g87wpaj7rsm8dnz7w57vw9bpkj0aj5f6hi8v7m8kamki8m7chm"))))
     (properties `((upstream-name . "BayesMortalityPlus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23352,6 +23386,39 @@ baseline hazards.  The method is described in Scott and Lewin (2024)
 models.  For a web-based Shiny application related to this package, see
 <https://implement.shinyapps.io/bayesess/>.")
     (license license:gpl2+)))
+
+(define-public r-bayeseo
+  (package
+    (name "r-bayeseo")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesEO" version))
+       (sha256
+        (base32 "0zs4qqf8881x01wblzmnw7m3zmh4ifrim3a8ws454r2lxf4y7mj5"))))
+    (properties `((upstream-name . "bayesEO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-tmap
+                             r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stars
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/e-sensing/bayesEO/")
+    (synopsis "Bayesian Smoothing of Remote Sensing Image Classification")
+    (description
+     "This package provides a Bayesian smoothing method for post-processing of remote
+sensing image classification which refines the labelling in a classified image
+in order to enhance its classification accuracy.  Combines pixel-based
+classification methods with a spatial post-processing method to remove outliers
+and misclassified pixels.")
+    (license license:gpl3)))
 
 (define-public r-bayesdp
   (package
@@ -27037,6 +27104,34 @@ information as the discrete number of squares is easier to read than the
 circular area of pie charts.  While the original waffle charts were rectangular
 with 10 rows and columns, with a single square representing 1%, they are
 nowadays popular in various infographics to visualize any proportional ratios.")
+    (license license:expat)))
+
+(define-public r-baf
+  (package
+    (name "r-baf")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baf" version))
+       (sha256
+        (base32 "1zjn6iqxsa0qby285dhn86047gkzz05nknqqj3dw3bcdhsl91gim"))))
+    (properties `((upstream-name . "baf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr
+                             r-glue
+                             r-fs
+                             r-dplyr
+                             r-curl
+                             r-cli))
+    (home-page "http://christophertkenny.com/baf/")
+    (synopsis "Block Assignment Files")
+    (description
+     "Download and read US Census Bureau data relationship files.  Provides support
+for cleaning and using block assignment files since 2010, as described in
+<https://www.census.gov/geographies/reference-files/time-series/geo/block-assignment-files.html>.
+ Also includes support for working with block equivalency files, used for years
+outside of decennial census years.")
     (license license:expat)))
 
 (define-public r-badger

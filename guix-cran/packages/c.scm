@@ -6287,13 +6287,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "1fpspb7pg91sysx1j79nfa2wav2dd8sg65ma6399cy4jvyza298v"))))
+        (base32 "00qz7f4rk5955vlyjfyxl8v22rr64acvm4cn7bfavzpnlry78559"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr))
@@ -20728,6 +20728,40 @@ makes boxes of transition rates between states.  It utilizes Epi package Lexis
 data.")
     (license license:gpl2)))
 
+(define-public r-cohortsymmetry
+  (package
+    (name "r-cohortsymmetry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortSymmetry" version))
+       (sha256
+        (base32 "1vbk701yz7wcfv906a12h26m2hq787x91lz2c8qn62vxlb794q1h"))))
+    (properties `((upstream-name . "CohortSymmetry")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-omock
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://oxford-pharmacoepi.github.io/CohortSymmetry/")
+    (synopsis
+     "Sequence Symmetry Analysis Using the Observational Medical Outcomes Partnership Common Data Model")
+    (description
+     "Calculating crude sequence ratio, adjusted sequence ratio and confidence
+intervals using data mapped to the Observational Medical Outcomes Partnership
+Common Data Model.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
@@ -20895,6 +20929,41 @@ profiles.")
 Outcomes Partnership Common Data Model.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-cohortcharacteristics
+  (package
+    (name "r-cohortcharacteristics")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortCharacteristics" version))
+       (sha256
+        (base32 "1hyd0pl3aq7ww3szr7p0zb4cnvk9x1a6kpg04qdv9x72wkl6mscq"))))
+    (properties `((upstream-name . "CohortCharacteristics")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-stringr
+                             r-snakecase
+                             r-rlang
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-magrittr
+                             r-ggpubr
+                             r-dplyr
+                             r-diagrammer
+                             r-cli
+                             r-checkmate
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://darwin-eu-dev.github.io/CohortCharacteristics/")
+    (synopsis
+     "Summarise and Visualise Characteristics of Patients in the OMOP CDM")
+    (description
+     "Summarise and visualise the characteristics of patients in data mapped to the
+Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
@@ -20930,13 +20999,13 @@ multiple filter types and reproducible R code.  Works standalone or with
 (define-public r-cohortalgebra
   (package
     (name "r-cohortalgebra")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortAlgebra" version))
        (sha256
-        (base32 "1d49s8xvhp3rnywqp5087m6jm804jlx4as2a89rn613n8m37gsl9"))))
+        (base32 "05sn073sfmngjbq2g198nckxw2zwk2jj69xf3pddlrka05v3a1b9"))))
     (properties `((upstream-name . "CohortAlgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -21511,6 +21580,30 @@ latent space and a Forward Network to predict the next sequence.")
 (COPD) patients hospitalized for severe exacerbations, as described in Almagro
 et al. (2014) <doi:10.1378/chest.13-1328>.")
     (license license:gpl3)))
+
+(define-public r-codewhere
+  (package
+    (name "r-codewhere")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "codewhere" version))
+       (sha256
+        (base32 "19biqcmjjly29vh5zn0ak6gz40857xb799fz344xz1vxwv420mp2"))))
+    (properties `((upstream-name . "codewhere")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (home-page "https://thisisnic.github.io/codewhere/")
+    (synopsis "Find the Location of an R Package's Code")
+    (description
+     "Find the location of the code for an R package based on the package's name or
+string representation.  Checks on CRAN based on information in the URL field or
+@code{BioConductor} and @code{GitHub} based on constructing a URL, and verifies
+all paths via testing for a successful response.  This can be useful when
+automating static code analysis based on a list of package names, and similar
+tasks.")
+    (license license:expat)))
 
 (define-public r-coder
   (package
@@ -37349,13 +37442,13 @@ each model are given with the standard error and a 95% Wald confidence interval
 (define-public r-causalmetar
   (package
     (name "r-causalmetar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalMetaR" version))
        (sha256
-        (base32 "0pkiprr64ixswm203jq483940j5p2aapbsmnzidb7hspr04adgnv"))))
+        (base32 "03y973ph52qxh9kyiybrvgrk5b1kd6i1lynkmmmv40vbnx59fs7y"))))
     (properties `((upstream-name . "CausalMetaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner r-progress r-nnet r-metafor
@@ -37365,13 +37458,16 @@ each model are given with the standard error and a 95% Wald confidence interval
     (description
      "This package provides robust and efficient methods for estimating causal effects
 in a target population using a multi-source dataset, including those of Dahabreh
-et al. (2019) <doi:10.1111/biom.13716> and Robertson et al. (2021)
-<@code{arXiv:2104.05905>}.  The multi-source data can be a collection of trials,
-observational studies, or a combination of both, which have the same data
-structure (outcome, treatment, and covariates).  The target population can be
-based on an internal dataset or an external dataset where only covariate
-information is available.  The causal estimands available are average treatment
-effects and subgroup treatment effects.")
+et al. (2019) <doi:10.1111/biom.13716>, Robertson et al. (2021)
+<doi:10.48550/@code{arXiv.2104.05905>}, and Wang et al. (2024)
+<doi:10.48550/@code{arXiv.2402.02684>}.  The multi-source data can be a
+collection of trials, observational studies, or a combination of both, which
+have the same data structure (outcome, treatment, and covariates).  The target
+population can be based on an internal dataset or an external dataset where only
+covariate information is available.  The causal estimands available are average
+treatment effects and subgroup treatment effects.  See Wang et al. (2024)
+<doi:10.48550/@code{arXiv.2402.04341>} for a detailed guide on using the
+package.")
     (license license:gpl3+)))
 
 (define-public r-causalmbsts
@@ -39545,13 +39641,13 @@ using recall number.")
 (define-public r-care4cmodel
   (package
     (name "r-care4cmodel")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "care4cmodel" version))
        (sha256
-        (base32 "0d54bnjgbzb1yvrkb9q1p83l29dbg4q49a3ahyxrghnxkzlrc695"))))
+        (base32 "0526z49v4mxfxjlpzjnqyzc8j2lvj1aw47f3izsk1vrs193vxnvw"))))
     (properties `((upstream-name . "care4cmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

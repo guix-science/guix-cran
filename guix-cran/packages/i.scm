@@ -12517,6 +12517,27 @@ FDA approach for finding the Mandel's k and h statistics distribution by
 smoothing bootstrap resampling.")
     (license license:gpl2+)))
 
+(define-public r-ilabelled
+  (package
+    (name "r-ilabelled")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ilabelled" version))
+       (sha256
+        (base32 "13kmpjgxl4c26ynyjw23kbnvcn31nqjm5kgm64s40j8d20r313j6"))))
+    (properties `((upstream-name . "ilabelled")))
+    (build-system r-build-system)
+    (home-page "https://github.com/clewerenz/ilabelled")
+    (synopsis "Simple Handling of Labelled Data")
+    (description
+     "Simple handling of survey data.  Smart handling of meta-information like e.g.
+variable-labels value-labels and scale-levels.  Easy access and validation of
+meta-information.  Useage of value labels and values respectively for subsetting
+and recoding data.")
+    (license license:expat)))
+
 (define-public r-ijtiff
   (package
     (name "r-ijtiff")
@@ -15283,13 +15304,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "1x4wmqp22wrcwldww6qc3sqw4qf327vcf7zlhr627j0rbdfmj3d1"))))
+        (base32 "0ssvsdkzh9mk6jcg88sljgqdcwwbwy55si855mk8ihpcddvsy61x"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

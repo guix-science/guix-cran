@@ -4328,25 +4328,26 @@ calculation of optimal sample size allocation.")
 (define-public r-surveygraph
   (package
     (name "r-surveygraph")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveygraph" version))
        (sha256
-        (base32 "1756hnnvj1r4p2b82bnsnzia4xkha5sqbl81imxdrc96x8578vqf"))))
+        (base32 "06izdycgrggzgyf730fkrd1m3d9a8k2f4fvs9hhihsbkcns2kpgi"))))
     (properties `((upstream-name . "surveygraph")))
     (build-system r-build-system)
     (home-page "https://surveygraph.ie/")
     (synopsis "Network Representations of Attitudes")
     (description
      "This package provides a tool for computing network representations of attitudes,
-extracted from tabular data such as sociological surveys.  By treating a survey
-as a bipartite network, we measure the similarity between respondents and survey
-items to produce network edges.  We do this in both a respondent network, as
-well as a survey item network.  Used in combination with graph visualisation
-libraries, this technique helps practitioners in the social sciences identify
-network structure that may be present within a survey.")
+extracted from tabular data such as sociological surveys.  Development of
+surveygraph software and training materials was initially funded by the European
+Union under the ERC Proof-of-concept programme (ERC, Attitude-Maps-4-All,
+project number: 101069264).  Views and opinions expressed are however those of
+the author(s) only and do not necessarily reflect those of the European Union or
+the European Research Council Executive Agency.  Neither the European Union nor
+the granting authority can be held responsible for them.")
     (license license:expat)))
 
 (define-public r-surveyexplorer
@@ -9486,19 +9487,20 @@ Geller et al. (2003, ISBN:9781135524388); Ivanova, Qaqish, and Schell (2005)
 (define-public r-stopp
   (package
     (name "r-stopp")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stopp" version))
        (sha256
-        (base32 "10hmc9pr4kaaipwb5ifv8g7pnjhlxmw2r6avg1x3gj68w75qkwy9"))))
+        (base32 "09cvh2h8c91zb8iak7g4j0sznv8kxbn0r2xjl36p663mqk2lb5ss"))))
     (properties `((upstream-name . "stopp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stpp
                              r-stlnpp
                              r-splancs
                              r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-random
                              r-spatstat-model
                              r-spatstat-linnet
@@ -9592,17 +9594,16 @@ error.")
 (define-public r-stokes
   (package
     (name "r-stokes")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stokes" version))
        (sha256
-        (base32 "0jxjpbscs28v675fkclrxwh0ndqbnsb6lylszdir8ivmgr4vcjam"))))
+        (base32 "02pia2szr5mbl3cyr6agiydq5py0sjariws3mhaqmcni8infapvh"))))
     (properties `((upstream-name . "stokes")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spray r-permutations r-partitions r-mathjaxr
-                             r-disordr))
+    (propagated-inputs (list r-spray r-permutations r-partitions r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/stokes")
     (synopsis "The Exterior Calculus")
@@ -22538,13 +22539,13 @@ straightforward, fast, and flexible.")
 (define-public r-spatialtime
   (package
     (name "r-spatialtime")
-    (version "1.3.4-4")
+    (version "1.3.4-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialTIME" version))
        (sha256
-        (base32 "1c5iq2dg8qiq59sqpjj928hxpfyybs7q0pz98vh1f6333h6rqjyb"))))
+        (base32 "0i5fcy2q53612kq1qjg2sp10lwsiva6nay0v2jl2mw28zx6p22s9"))))
     (properties `((upstream-name . "spatialTIME")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -30708,13 +30709,13 @@ Relationship Management, Wiley: New York.")
 (define-public r-smcfcs
   (package
     (name "r-smcfcs")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smcfcs" version))
        (sha256
-        (base32 "1i57rgibm5fqdw8gk61f79mvz60ygzgbfsb2nyckfxiamy25nfq2"))))
+        (base32 "0l658ynkf3lb1nckfrgysj19m6735fi2k48r7l5qaf6jq7f3l3bh"))))
     (properties `((upstream-name . "smcfcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -55427,6 +55428,30 @@ differential expression and gene-set enrichment analysis.  Provide various
 visualization functions.")
     (license license:gpl3+)))
 
+(define-public r-scdeco
+  (package
+    (name "r-scdeco")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scDECO" version))
+       (sha256
+        (base32 "0gm7xlkv3rr6mzwbgggyaby75ia1avrflasrsszniph13bcndb9g"))))
+    (properties `((upstream-name . "scDECO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-msm r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/YenYiHo-Lab/scDECO")
+    (synopsis "Estimating Dynamic Correlation")
+    (description
+     "Implementations for two different Bayesian models of differential co-expression.
+ scdeco.cop() fits the bivariate Gaussian copula model from Zichen Ma, Shannon
+W. Davis, Yen-Yi Ho (2023) <doi:10.1111/biom.13701>, while scdeco.pg() fits the
+bivariate Poisson-Gamma model from Zhen Yang, Yen-Yi Ho (2022)
+<doi:10.1111/biom.13457>.")
+    (license license:gpl3+)))
+
 (define-public r-scdb
   (package
     (name "r-scdb")
@@ -56892,6 +56917,27 @@ nonparametric logistic Gaussian process density prior.  Based on Tokdar et al.
 (2022) <doi:10.1080/01621459.2022.2104727>.")
     (license license:gpl2)))
 
+(define-public r-sbd
+  (package
+    (name "r-sbd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sbd" version))
+       (sha256
+        (base32 "0wf46p330l2lx6j9w4600q27n4jzhpzb2kw056654fz2ggd8x6kn"))))
+    (properties `((upstream-name . "sbd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-dplyr r-bbmle))
+    (home-page "https://github.com/MarcusRowcliffe/sbd")
+    (synopsis "Size Biased Distributions")
+    (description
+     "Fitting and plotting parametric or non-parametric size-biased non-negative
+distributions, with optional covariates if parametric.  Rowcliffe, M. et al.
+(2016) <doi:10.1002/rse2.17>.")
+    (license license:gpl3)))
+
 (define-public r-sbck
   (package
     (name "r-sbck")
@@ -58045,13 +58091,13 @@ the fitting procedure.  References: Denti, Camerlenghi, Guindani, Mira (2023)
 (define-public r-santoku
   (package
     (name "r-santoku")
-    (version "0.10.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "santoku" version))
        (sha256
-        (base32 "09zm2m3wcn3gzixmq8b9n1j11pca95sg4yw5zxm91cm7fd7f33cd"))))
+        (base32 "054bl8sgl0rcvymsqsg8br201snw6rlmac54mfb05a4hsd8y7vq4"))))
     (properties `((upstream-name . "santoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -60096,6 +60142,30 @@ unbiased predictions and linear mixed models.  At this time available models
 include area level models incorporating spatial and temporal correlation in the
 random effects.")
     (license license:expat)))
+
+(define-public r-saepseudo
+  (package
+    (name "r-saepseudo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saePseudo" version))
+       (sha256
+        (base32 "1zppb1k9rz13v0p3vgs42rhcbm93hp3xl7mavk2cxy9l36gnd40g"))))
+    (properties `((upstream-name . "saePseudo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sae r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/darinhuwaidaa/saePseudo")
+    (synopsis "Small Area Estimation using Averaging Pseudo Area Level Model")
+    (description
+     "This package provides function for small area estimation at area level using
+averaging pseudo area level model for variables of interest.  A dataset produced
+by data generation is also provided.  This package estimates small areas at the
+village level and then aggregates them to the sub-district, region, and
+provincial levels.")
+    (license license:gpl3)))
 
 (define-public r-saens
   (package

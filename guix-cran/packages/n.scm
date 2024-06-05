@@ -11754,6 +11754,50 @@ algorithms from Lewis, Vrabie & Syrmos (2012, ISBN:978-0-470-63349-6), and
 various utilities.")
     (license license:expat)))
 
+(define-public r-netcom
+  (package
+    (name "r-netcom")
+    (version "2.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "netcom" version))
+       (sha256
+        (base32 "1zbpr0bm9g0890isd4x6gfpk6lg5z823q5lym6mhww9gk7b4xl9q"))))
+    (properties `((upstream-name . "netcom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tibble
+                             r-rlang
+                             r-reshape2
+                             r-pracma
+                             r-pdist
+                             r-optimx
+                             r-matrix
+                             r-magrittr
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-ggfortify
+                             r-gensa
+                             r-foreach
+                             r-expm
+                             r-dplyr
+                             r-doparallel
+                             r-clue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/langendorfr/netcom")
+    (synopsis "NETwork COMparison Inference")
+    (description
+     "Infer system functioning with empirical NETwork COMparisons.  These methods are
+part of a growing paradigm in network science that uses relative comparisons of
+networks to infer mechanistic classifications and predict systemic
+interventions.  They have been developed and applied in Langendorf and Burgess
+(2021) <doi:10.1038/s41598-021-99251-7>, Langendorf (2020)
+<doi:10.1201/9781351190831-6>, and Langendorf and Goldberg (2019)
+<doi:10.48550/@code{arXiv.1912.12551>}.")
+    (license license:gpl3)))
+
 (define-public r-netcoin
   (package
     (name "r-netcoin")
@@ -15064,13 +15108,13 @@ Supports Snappy compression.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "1x088gl2i03q6wr38magyg7chm68khnfpmjwjca4l0c450mcvgnm"))))
+        (base32 "1j0xiww92kasy3ks3mrwxqk8gbfwqzyqnmanbcjswa4xiycqzsgv"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (propagated-inputs (list r-later))

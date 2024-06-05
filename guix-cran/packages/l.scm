@@ -16020,6 +16020,45 @@ accepting new input and sending responses.")
 on Torch'.")
     (license license:gpl3)))
 
+(define-public r-lama
+  (package
+    (name "r-lama")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LaMa" version))
+       (sha256
+        (base32 "02s13hpkw9h123wmcgawypqrskd0ivciwabv9djw9l66yk79rjix"))))
+    (properties `((upstream-name . "LaMa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mgcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://janoleko.github.io/software/")
+    (synopsis
+     "Fast Numerical Maximum Likelihood Estimation for Latent Markov Models")
+    (description
+     "The class of latent Markov models, including hidden Markov models, hidden
+semi-Markov models, state space models, and point processes, is a very popular
+and powerful framework for inference of time series driven by latent processes.
+Furthermore, all these models can be fitted using direct numerical maximum
+likelihood estimation using the so-called forward algorithm as discussed in
+Zucchini et al. (2016) <doi:10.1201/b20790>.  However, due to their great
+flexibility, researchers using these models in applied work often need to build
+highly customized models for which standard software implementation is lacking,
+or the construction of such models in said software is as complicated as writing
+fully tailored R code.  While providing greater flexibility and control, the
+latter suffers from slow estimation speeds that make custom solutions
+inconvenient.  We address the above issues in two ways.  First, standard blocks
+of code, common to all these model classes, are implemented as simple-to-use
+functions that can be added like Lego blocks to an otherwise fully custom
+likelihood function, making writing custom code much easier.  Second, under the
+hood, these functions are written in C++', allowing for 10-20 times faster
+evaluation time, and thus drastically speeding up model estimation.  To aid in
+building fully custom likelihood functions, several vignettes are included that
+show how to simulate data from and estimate all the above model classes.")
+    (license license:gpl3)))
+
 (define-public r-lam
   (package
     (name "r-lam")
@@ -16414,6 +16453,38 @@ Beta distribution and compared with six theoretical LAD distributions.
 Additional information is provided in Chianucci and Cesaretti (2022)
 <doi:10.1101/2022.10.28.513998>.")
     (license license:expat)))
+
+(define-public r-lacunr
+  (package
+    (name "r-lacunr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lacunr" version))
+       (sha256
+        (base32 "132k5vis9k3snhfy3zl0py039pm1b12k70qijdkq11knhlng7b1b"))))
+    (properties `((upstream-name . "lacunr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rcppthread
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-data-table
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ElliottSmeds/lacunr")
+    (synopsis "Fast 3D Lacunarity for Voxel Data")
+    (description
+     "Calculates 3D lacunarity from voxel data.  It is designed for use with point
+clouds generated from Light Detection And Ranging (@code{LiDAR}) scans in order
+to measure the spatial heterogeneity of 3-dimensional structures such as forest
+stands.  It provides fast C++ functions to efficiently bin point cloud data into
+voxels and calculate lacunarity using different variants of the gliding-box
+algorithm originated by Allain & Cloitre (1991)
+<doi:10.1103/@code{PhysRevA.44.3552>}.")
+    (license license:gpl3+)))
 
 (define-public r-lacunaritycovariance
   (package
@@ -16896,13 +16967,13 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "0yqq8xqyhs3r3kskic8qbm9ndm0y3mzpjhn614yn2f3lfdzdq045"))))
+        (base32 "1nf1gr876zr0l9nxisvy1h7k0f3a9f49g257lh967n9iin6vrj4q"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

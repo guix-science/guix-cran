@@ -20561,13 +20561,13 @@ thresholding, are also implemented within the package.")
 (define-public r-ebase
   (package
     (name "r-ebase")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBASE" version))
        (sha256
-        (base32 "1a0g91nclmmzfcffbgksb2w6yx6kj68f83knah4n7z3whscqsfik"))))
+        (base32 "0y36xsh639chsrzb3r6kla6mi34klrqb4x05ixhk4kh4jx2rb63i"))))
     (properties `((upstream-name . "EBASE")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -20589,7 +20589,8 @@ quality monitoring stations with continuous dissolved oxygen time series.  A
 mass balance equation is used that provides estimates of parameters for gross
 primary production, respiration, and gas exchange.  Methods adapted from Grace
 et al. (2015) <doi:10.1002/lom3.10011> and Wanninkhof (2014)
-<doi:10.4319/lom.2014.12.351>.")
+<doi:10.4319/lom.2014.12.351>.  Details in Beck et al. (2024)
+<doi:10.1002/lom3.10620>.")
     (license license:cc0)))
 
 (define-public r-ebal

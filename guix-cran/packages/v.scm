@@ -2336,6 +2336,47 @@ analyzing and visualizing data specific to Microsoft Viva Insights'.")
 of mortality models.")
     (license license:gpl2+)))
 
+(define-public r-vital
+  (package
+    (name "r-vital")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vital" version))
+       (sha256
+        (base32 "0rq7abqpqj5l5vvawj8x0p4bhvs0pcd883xiqbjzc65girn9ffar"))))
+    (properties `((upstream-name . "vital")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tsibble
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-progressr
+                             r-patchwork
+                             r-mgcv
+                             r-hmdhfdplus
+                             r-ggplot2
+                             r-generics
+                             r-future-apply
+                             r-fabletools
+                             r-fable
+                             r-dplyr
+                             r-distributional
+                             r-cobs))
+    (home-page "https://pkg.robjhyndman.com/vital/")
+    (synopsis
+     "Tidy Analysis Tools for Mortality, Fertility, Migration and Population Data")
+    (description
+     "Analysing vital statistics based on tools consistent with the tidyverse.  Tools
+are provided for data visualization, lifetable calculations, computing net
+migration numbers, Lee-Carter modelling; functional data modelling and
+forecasting.")
+    (license license:gpl3)))
+
 (define-public r-vitae
   (package
     (name "r-vitae")
@@ -6260,13 +6301,13 @@ inference and is computationally efficient.")
 (define-public r-vbel
   (package
     (name "r-vbel")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VBel" version))
        (sha256
-        (base32 "06kmsjrf6al2f4217fh7vrzpf8k17qhllqmy3mziicxribhkq5d6"))))
+        (base32 "02371k5mvzqkj0x9sbbg3ah6kzrcr16bwm1qrci7nh06qy1hq3hg"))))
     (properties `((upstream-name . "VBel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -7181,13 +7222,13 @@ of variation, the margin of error, confidence interval, design effect.")
 (define-public r-vardetect
   (package
     (name "r-vardetect")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VARDetect" version))
        (sha256
-        (base32 "1yrlyg4b53bdmfjcqi07l0gr3f01h8jwj6g6av3plyk96cvl4svb"))))
+        (base32 "1hncblqf78gfpbk5643x5jz1n6ffn16jpi8kjsh2cz8r9nrrnx59"))))
     (properties `((upstream-name . "VARDetect")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsevar
@@ -7578,6 +7619,34 @@ large variable annuities.  The main valuation methodology was proposed by Gan
     (description
      "This package contains logic for cell-specific gene set scoring of single cell
 RNA sequencing data.")
+    (license license:gpl2+)))
+
+(define-public r-valuesetcompare
+  (package
+    (name "r-valuesetcompare")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "valueSetCompare" version))
+       (sha256
+        (base32 "06cb1hz1gp5gzbxbnv7306fyvvczggnaclab9llsbvfnmacbc2k5"))))
+    (properties `((upstream-name . "valueSetCompare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-ggplot2 r-eq5dsuite r-dplyr))
+    (home-page "https://cran.r-project.org/package=valueSetCompare")
+    (synopsis "Comparing HRQoL Instrument Value Sets")
+    (description
+     "The number of countries with multiple Health Related Quality of Life (HRQL)
+value sets is growing, and this trend is expected to continue.  Each instrument
+and value set characterizes and values health differently.  Identical health
+states can yield different utility values when valued using different value
+sets.  The @code{valueSetCompare} package facilitates comparisons of
+HR@code{QoL} value sets, enabling both theoretical and empirical comparisons.
+For empirical comparisons, it employs a novel simulation-based method by Jiang
+et al. (2022) <doi:10.1186/s12955-022-02031-8>, allowing users to investigate
+the responsiveness of HR@code{QoL} instruments across the entire health spectrum
+using cross-sectional data with external health anchors.")
     (license license:gpl2+)))
 
 (define-public r-valuemap
