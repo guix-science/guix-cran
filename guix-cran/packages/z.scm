@@ -887,22 +887,24 @@ detail on use and algorithms, see <doi:10.18637/jss.v095.i04>.")
 (define-public r-zen4r
   (package
     (name "r-zen4r")
-    (version "0.9")
+    (version "0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zen4R" version))
        (sha256
-        (base32 "09r3kd5mvaps30k4vszbfbhfb8hp6jq4f1v3kr9b8wgv7vqsa2k4"))))
+        (base32 "0sizxy7ck26jrq77y09qcqyzppamfm0kh2zw8s7n83z0bfy54vs6"))))
     (properties `((upstream-name . "zen4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-xml
                              r-utf8
                              r-r6
+                             r-plyr
                              r-keyring
                              r-jsonlite
                              r-httr
+                             r-cli
                              r-atom4r))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eblondel/zen4R")

@@ -7334,18 +7334,17 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "1ira35rqxaqpmw8p8zhjrigs1s1mywddwfgxyvqkyja7afzprvkk"))))
+        (base32 "1xyxx6xf9az62zxczybl6iizswq7h4i55v4apll8kh0xh6nqlzr7"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
-                             r-mumin
                              r-lubridate
                              r-hmisc
                              r-ggplot2
@@ -11900,13 +11899,13 @@ visualisation tools are also available within the package.")
 (define-public r-biometryassist
   (package
     (name "r-biometryassist")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biometryassist" version))
        (sha256
-        (base32 "0c7rhw28w1hgnipy1s3sp1hkj97lcwa121fmpdnl2r4hzfm45x68"))))
+        (base32 "1gj2lfsi8rnvc61sz70rvii1xhszl84wfvy6lsnwgh26vnj890wf"))))
     (properties `((upstream-name . "biometryassist")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

@@ -5183,6 +5183,40 @@ and the MBN-type bias correction by Morel, Bokossa, and Neerchal (2003)
 <doi:10.1002/bimj.200390021>.")
     (license license:expat)))
 
+(define-public r-crqa
+  (package
+    (name "r-crqa")
+    (version "2.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crqa" version))
+       (sha256
+        (base32 "117sxxil4yzqss7b8d5r7y2grpc6nzcli9mrjaarsk10k95c4bwp"))))
+    (properties `((upstream-name . "crqa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tserieschaos
+                             r-rdist
+                             r-pracma
+                             r-matrix
+                             r-gplots
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=crqa")
+    (synopsis
+     "Unidimensional and Multidimensional Methods for Recurrence Quantification Analysis")
+    (description
+     "Auto, Cross and Multi-dimensional recurrence quantification analysis.  Different
+methods for computing recurrence, cross vs. multidimensional or profile iti.e.,
+only looking at the diagonal recurrent points, as well as functions for
+optimization and plotting are proposed.  in-depth measures of the whole
+cross-recurrence plot, Please refer to Coco and others (2021)
+<doi:10.32614/RJ-2021-062>, Coco and Dale (2014) <doi:10.3389/fpsyg.2014.00510>
+and Wallot (2018) <doi: 10.1080/00273171.2018.1512846> for further details about
+the method.")
+    (license license:gpl3+)))
+
 (define-public r-crplyr
   (package
     (name "r-crplyr")
@@ -33353,13 +33387,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "06h7pmabwh7lc7hcp0lb6kb3qg7pj50yi5a8gpnndm00aba3xgqi"))))
+        (base32 "0sl7rccd2kgfv8y46x0mpg1m28y2lgn1mjar8shrg68m9lszwzj5"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33374,7 +33408,7 @@ change scientists and the Intergovernmental Panel on Climate Change (IPCC).
 This package specifically allows the user to work with any of the CF-compliant
 calendars (many of which are not compliant with POSIXt).  The CF time coordinate
 is formally defined in the CF Metadata Conventions document available at
-<https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#time-coordinate>.")
+<https://cfconventions.org/Data/cf-conventions/cf-conventions-1.11/cf-conventions.html#time-coordinate>.")
     (license license:expat)))
 
 (define-public r-cft
@@ -40897,6 +40931,33 @@ detection/non-detection matrices for occupancy and spatial capture-recapture
 analyses with great flexibility.  In addition, it can visualise species activity
 data and provides simple mapping functions with GIS export.")
     (license license:gpl2+)))
+
+(define-public r-camtrapdp
+  (package
+    (name "r-camtrapdp")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "camtrapdp" version))
+       (sha256
+        (base32 "0nx9w5h8py8cjqynlknh8klvzy2mhacv96vybkv7hcyhpdsnmfs7"))))
+    (properties `((upstream-name . "camtrapdp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readr
+                             r-purrr
+                             r-memoise
+                             r-frictionless
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/inbo/camtrapdp")
+    (synopsis "Read and Manipulate Camera Trap Data Packages")
+    (description
+     "Read and manipulate Camera Trap Data Packages ('Camtrap DP').  Camtrap DP
+(<https://camtrap-dp.tdwg.org>) is a data exchange format for camera trap data.
+With camtrapdp you can read, filter and transform data (including to Darwin
+Core) before further analysis in e.g. camtraptor or @code{camtrapR}'.")
+    (license license:expat)))
 
 (define-public r-camsrad
   (package

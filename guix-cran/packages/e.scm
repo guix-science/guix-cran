@@ -8801,6 +8801,39 @@ time-dependent exposures.  See Wang et al (2020)
 <doi:10.1186/s12940-020-00644-4> for an overview.")
     (license license:expat)))
 
+(define-public r-epiworldrshiny
+  (package
+    (name "r-epiworldrshiny")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiworldRShiny" version))
+       (sha256
+        (base32 "0xffsvswwaxv3kcy4s9iznwmadb5r1p4darpkkplz1zvfma9sy5c"))))
+    (properties `((upstream-name . "epiworldRShiny")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs
+                             r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-plotly
+                             r-ggplot2
+                             r-epiworldr
+                             r-dt))
+    (home-page "https://github.com/UofUEpiBio/epiworldRShiny/")
+    (synopsis "'shiny' Wrapper of the R Package 'epiworldR'")
+    (description
+     "R shiny web apps for epidemiological Agent-Based Models.  It provides a
+user-friendly interface to the Agent-Based Modeling (ABM) R package
+@code{epiworldR} (Meyer et al., 2023) <DOI:10.21105/joss.05781>.  Some of the
+main features of the package include the Susceptible-Infected-Susceptible (SIS),
+Susceptible-Infected-Recovered (SIR), and Susceptible-Exposed-Infected-Recovered
+(SEIR) models. @code{epiworldRShiny} provides a web-based user interface for
+running various epidemiological ABMs, simulating interventions, and visualizing
+results interactively.")
+    (license license:expat)))
+
 (define-public r-epiworldr
   (package
     (name "r-epiworldr")
@@ -19671,13 +19704,13 @@ using echelon scan method proposed by Kurihara (2003)
 (define-public r-echarty
   (package
     (name "r-echarty")
-    (version "1.6.3")
+    (version "1.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "echarty" version))
        (sha256
-        (base32 "0qw555xq4lig4ni0mb9lzqyvs5g5a7rzrplm4zk3xlx8xjlkixjb"))))
+        (base32 "1rwb2y3wz8jismj9wjkq6q5wm0mxfpsbgr79ryayv1fjwhbl5faa"))))
     (properties `((upstream-name . "echarty")))
     (build-system r-build-system)
     (arguments
@@ -19698,7 +19731,7 @@ using echelon scan method proposed by Kurihara (2003)
                                   '())))))))
     (propagated-inputs (list r-htmlwidgets r-dplyr r-data-tree))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/helgasoft/echarty")
+    (home-page "https://helgasoft.github.io/echarty/")
     (synopsis "Minimal R/Shiny Interface to JavaScript Library 'ECharts'")
     (description
      "Deliver the full functionality of ECharts with minimal overhead.  echarty users

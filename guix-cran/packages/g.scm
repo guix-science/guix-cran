@@ -3427,13 +3427,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "0q9h02aqyc1ywdmnk7x9z6n6bpgmcmz1klb62nbvz6mhxq9mnv5m"))))
+        (base32 "1ka9i7fg9y87rabjdnggclb1f395m1pbmhwics2wayd9q3m5a6mk"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -3441,15 +3441,16 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
     (synopsis "Group Elastic Net Regularized GLMs and GAMs")
     (description
      "Efficient algorithms for fitting generalized linear and additive models with
-group elastic net penalties.  Implements group lasso, group MCP, and group SCAD
-with an optional group ridge penalty.  Computes the regularization path for
-linear regression (gaussian), logistic regression (binomial), multinomial
-logistic regression (multinomial), log-linear count regression (poisson and
-negative.binomial), and log-linear continuous regression (gamma and inverse
-gaussian).  Supports default and formula methods for model specification, k-fold
-cross-validation for tuning the regularization parameters, and nonparametric
-regression via tensor product reproducing kernel (smoothing spline) basis
-function expansion.")
+group elastic net penalties as described in Helwig (2024)
+<doi:10.1080/10618600.2024.2362232>.  Implements group LASSO, group MCP, and
+group SCAD with an optional group ridge penalty.  Computes the regularization
+path for linear regression (gaussian), logistic regression (binomial),
+multinomial logistic regression (multinomial), log-linear count regression
+(poisson and negative.binomial), and log-linear continuous regression (gamma and
+inverse gaussian).  Supports default and formula methods for model
+specification, k-fold cross-validation for tuning the regularization parameters,
+and nonparametric regression via tensor product reproducing kernel (smoothing
+spline) basis function expansion.")
     (license license:gpl2+)))
 
 (define-public r-grplasso
@@ -5662,20 +5663,16 @@ Hojsgaard and Lauritzen (2008, <doi:10.1111/j.1467-9868.2008.00666.x>).")
 (define-public r-grbase
   (package
     (name "r-grbase")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRbase" version))
        (sha256
-        (base32 "1ac1qx219g2p3wlxh57jqhifckxm8jqb3vi3pmlv8m29hm997r0y"))))
+        (base32 "15rfl3wib8gq90fy1rr1p7cvdbiqg3qkp6vc71k02difp14hwwin"))))
     (properties `((upstream-name . "gRbase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-magrittr
+    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-matrix
                              r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
@@ -19157,6 +19154,33 @@ tools.  The corresponding map data must be registered with cartographer either
 by the user or by another package.")
     (license license:expat)))
 
+(define-public r-ggarrow
+  (package
+    (name "r-ggarrow")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggarrow" version))
+       (sha256
+        (base32 "14jvrjrzp7wk94c3s0ixdcbhfsx9nlr5rf85a5gmrhvq7qjaicxc"))))
+    (properties `((upstream-name . "ggarrow")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-scales
+                             r-rlang
+                             r-polyclip
+                             r-ggplot2
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://teunbrand.github.io/ggarrow/")
+    (synopsis "Arrows for 'ggplot2'")
+    (description
+     "This package provides a ggplot2 extension that adds specialised arrow geometry
+layers.  It offers more arrow options than the standard grid arrows that are
+built-in many line-based geom layers.")
+    (license license:expat)))
+
 (define-public r-ggarchery
   (package
     (name "r-ggarchery")
@@ -25835,13 +25859,13 @@ and Gotway (2004, <ISBN:9781584883227>) and Waller and Gotway (2004,
 (define-public r-ge
   (package
     (name "r-ge")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GE" version))
        (sha256
-        (base32 "04x4g45qk7dnisi50c10alvn89i169h35m1ifyhvwlyi3ala07pv"))))
+        (base32 "0fnf6z08989g132p0prif49zqa3a399wq0wzz7n964cqvz5g3j5f"))))
     (properties `((upstream-name . "GE")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-cge))
@@ -25934,13 +25958,13 @@ calculations we use moments.")
 (define-public r-gdpuc
   (package
     (name "r-gdpuc")
-    (version "0.11.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDPuc" version))
        (sha256
-        (base32 "1y91iivbfwrnjy9wg6dm9v0hd23fgqmry60sw2a2f5n0hflbgafc"))))
+        (base32 "0in9nywf4nq8ivr142z15srf71rwm5mxnf8s7dp9fxl6axmizjs1"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

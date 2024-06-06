@@ -11619,6 +11619,38 @@ calculating a posterior density that is invariant to interchange and scaling of
 the coordinates.")
     (license license:gpl2+)))
 
+(define-public r-lehuynh
+  (package
+    (name "r-lehuynh")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lehuynh" version))
+       (sha256
+        (base32 "1959f73184l8npcvcrqxnnmw5xzc3f99mj8jsaq3ldaqfqhkrrpp"))))
+    (properties `((upstream-name . "lehuynh")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tibble
+                             r-stringr
+                             r-rio
+                             r-readxl
+                             r-purrr
+                             r-magrittr
+                             r-ggpubr
+                             r-ggplot2
+                             r-fs
+                             r-dplyr
+                             r-brms))
+    (home-page "https://github.com/le-huynh/lehuynh")
+    (synopsis "Le-Huynh Truc-Ly's R Code and Templates")
+    (description
+     "Miscellaneous R functions (for graphics, data import, data transformation, and
+general utilities) and templates (for exploratory analysis, Bayesian modeling,
+and crafting scientific manuscripts).")
+    (license license:expat)))
+
 (define-public r-lehdr
   (package
     (name "r-lehdr")

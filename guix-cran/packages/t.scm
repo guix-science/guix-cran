@@ -6393,13 +6393,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "1ghp8dsr3y1xsbg53fw94xmwyxylcqd5jxijfi5hxis9mskc985j"))))
+        (base32 "171bczn6zkpxl4q38cyhxrpjjky1s1lmn2whb3vqynvcb84r7j4h"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -13719,19 +13719,20 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "07xagcxq02qdmjyskhpv9cy6j10f8fbq3296nikr0hp90nzwwilw"))))
+        (base32 "0ghr0vrg53fgxmi1w8lx7nfrfxfxhcd4rbi2qrk6pl254n41zwm7"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-timechange
                              r-tidyselect
                              r-stringr
+                             r-scales
                              r-rlang
                              r-pillar
                              r-lubridate
@@ -21073,6 +21074,28 @@ Fields\" Michael Garland and Paul S. Heckbert (1995)
 <https://www.mgarland.org/files/papers/scape.pdf> using code from the hmm
 library written by Michael Fogleman <https://www.github.com/fogleman/hmm>.")
     (license license:expat)))
+
+(define-public r-ternvis
+  (package
+    (name "r-ternvis")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ternvis" version))
+       (sha256
+        (base32 "057i6i3ygxrin0npc18gsg3dpdldzafyb5sr6lix5mhy6b09lkxf"))))
+    (properties `((upstream-name . "ternvis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog r-maps r-dichromat))
+    (home-page "https://cran.r-project.org/package=ternvis")
+    (synopsis
+     "Visualisation, Verification and Calibration of Ternary Probabilistic Forecasts")
+    (description
+     "This package provides a suite of functions for visualising ternary probabilistic
+forecasts, as discussed in the paper by Jupp (2012)
+<doi:10.1098/rsta.2011.0350>.")
+    (license license:gpl2)))
 
 (define-public r-ternary
   (package

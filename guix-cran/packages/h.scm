@@ -9444,29 +9444,6 @@ porposed by Chang, Jiang, @code{McElroy} and Shao (2023)
 <doi:10.48550/@code{arXiv.2212.13686>}.")
     (license license:gpl3)))
 
-(define-public r-hdsvm
-  (package
-    (name "r-hdsvm")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdsvm" version))
-       (sha256
-        (base32 "11bp9cfzn95yx9xqzk9zlzs13bg550fmwgf6ilvfsfs4q7xnij59"))))
-    (properties `((upstream-name . "hdsvm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=hdsvm")
-    (synopsis "Fast Algorithm for Support Vector Machine")
-    (description
-     "This package implements an efficient algorithm to fit and tune penalized Support
-Vector Machine models using the generalized coordinate descent algorithm.  This
-package is designed to handle large datasets effectively, with emphasis on
-precision and computational efficiency.")
-    (license license:gpl2)))
-
 (define-public r-hdstim
   (package
     (name "r-hdstim")
@@ -9649,29 +9626,6 @@ algorithm.  In this package we also provide the code for traditional PCA, the
 Robust Two Step (RTS) method by He et al. (2022) and the Quantile Factor
 Analysis (QFA) method by Chen et al. (2021) and He et al. (2023).")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-hdqr
-  (package
-    (name "r-hdqr")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hdqr" version))
-       (sha256
-        (base32 "1spadvzdnbcx8nn2n0a2pj84knyldyvj1fn1csl4zi1n7rm4vpp9"))))
-    (properties `((upstream-name . "hdqr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix))
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=hdqr")
-    (synopsis "Fast Algorithm for Penalized Quantile Regression")
-    (description
-     "This package implements an efficient algorithm to fit and tune penalized
-quantile regression models using the generalized coordinate descent algorithm.
-This package is designed to handle large datasets effectively, with emphasis on
-precision and computational efficiency.")
-    (license license:gpl2)))
 
 (define-public r-hdpglm
   (package

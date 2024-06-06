@@ -1995,13 +1995,13 @@ equation.")
 (define-public r-quadratik
   (package
     (name "r-quadratik")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QuadratiK" version))
        (sha256
-        (base32 "1nl0d35hv2ni238hq3cp583ikxfspwca8bv1c13dndjfsqhkx56c"))))
+        (base32 "0pjg0j0hb5v6gxlg4lv1ddrwbrvp91ah3rxm6y7mjclg3ff47g16"))))
     (properties `((upstream-name . "QuadratiK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinflex

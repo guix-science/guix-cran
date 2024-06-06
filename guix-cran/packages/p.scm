@@ -7079,6 +7079,28 @@ backtrace during error inspection or profiling), the address space map
 determines which library this instruction pointer corresponds to.")
     (license license:gpl3)))
 
+(define-public r-proclhmm
+  (package
+    (name "r-proclhmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "proclhmm" version))
+       (sha256
+        (base32 "05pwa09bkclzshyk3jsnhsj43vdp89miw3zznj082zj9484vfhzj"))))
+    (properties `((upstream-name . "proclhmm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-rcpp))
+    (home-page "https://cran.r-project.org/package=proclhmm")
+    (synopsis "Latent Hidden Markov Models for Response Process Data")
+    (description
+     "This package provides functions for simulating from and fitting the latent
+hidden Markov models for response process data (Tang, 2024)
+<doi:10.1007/s11336-023-09938-1>.  It also includes functions for simulating
+from and fitting ordinary hidden Markov models.")
+    (license license:gpl3+)))
+
 (define-public r-processpredictr
   (package
     (name "r-processpredictr")
@@ -8068,13 +8090,13 @@ offers options to deal with block-wise missingness in multi-omics data.")
 (define-public r-prioritizr
   (package
     (name "r-prioritizr")
-    (version "8.0.3")
+    (version "8.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prioritizr" version))
        (sha256
-        (base32 "0049mgziwlhh68rnv3g3h55ln36wdi6ypf8pb9vpwnl9c72zh0ld"))))
+        (base32 "18z5zm34ry45kapp0a146gvwij41wyhhxxyzwiz7ly79l6lwgs9s"))))
     (properties `((upstream-name . "prioritizr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -32042,13 +32064,13 @@ birth-death model of diversification.  See Etienne, R.S. & J. Rosindell 2012
 (define-public r-pbcc
   (package
     (name "r-pbcc")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pbcc" version))
        (sha256
-        (base32 "1bmb9zn9ryis1fnhr6gz24y1mxbi876hkss0kpyl359pbgiq46p3"))))
+        (base32 "09yx6p0v8pa049l85kwm0rw15amyna9r35kbbahby3lfb212syb2"))))
     (properties `((upstream-name . "pbcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgenoud r-qcc r-ggpubr r-ggplot2))
@@ -32897,6 +32919,32 @@ an example in the roxygen block.")
 reconstructions for ecological and anthropological analyses, as described in
 Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-pastaplot
+  (package
+    (name "r-pastaplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pastaPlot" version))
+       (sha256
+        (base32 "16a1rk903py7bm36wkywwspq927698k1kvv5h1h7ln6rcd2376r3"))))
+    (properties `((upstream-name . "pastaPlot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lme4 r-glmmtmb r-ggplot2 r-ggeffects))
+    (home-page "https://cran.r-project.org/package=pastaPlot")
+    (synopsis "Spaghetti-Plot Fixed and Random Effects of Linear Mixed Models")
+    (description
+     "Plot both fixed and random effects of linear mixed models, multilevel models in
+a single spaghetti plot.  The package allows to visualize the effect of a
+predictor on a criterion between different levels of a grouping variable.
+Additionally, confidence intervals can be displayed for fixed effects.
+Calculation of predicted values of random effects allows only models with one
+random intercept and/or one random slope to be plotted.  Confidence intervals
+and predicted values of fixed effects are computed using the ggpredict function
+from the ggeffects package.  LÃ¼decke, D. (2018) <doi:10.21105/joss.00638>.")
+    (license license:expat)))
 
 (define-public r-password
   (package

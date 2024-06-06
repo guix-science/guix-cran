@@ -722,13 +722,13 @@ support for parallel computation.")
 (define-public r-ycevo
   (package
     (name "r-ycevo")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ycevo" version))
        (sha256
-        (base32 "1saiwj1gx3j8jkkwnqxccq2wgyqkcf3clnpvkc9a4m1f79hsfqv3"))))
+        (base32 "0gih1dq62k7163pjsjl32smdqy54wjhsp31mv7ddhp4xmr6qb7cw"))))
     (properties `((upstream-name . "ycevo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

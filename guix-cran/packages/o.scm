@@ -687,6 +687,33 @@ available methods are HDoutliers() from the package HDoutliers',
 robustbase'.")
     (license license:gpl2+)))
 
+(define-public r-outlierslearn
+  (package
+    (name "r-outlierslearn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OutliersLearn" version))
+       (sha256
+        (base32 "1qjgi3m8727x40dfx9r36m9mg0jwa99qfwxv5xz29k2mwqknhl47"))))
+    (properties `((upstream-name . "OutliersLearn")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=OutliersLearn")
+    (synopsis
+     "Educational Outlier Package with Common Outlier Detection Algorithms")
+    (description
+     "This package provides implementations of some of the most important outlier
+detection algorithms.  Includes a tutorial mode option that shows a description
+of each algorithm and provides a step-by-step execution explanation of how it
+identifies outliers from the given data with the specified input parameters.
+References include the works of Azzedine Boukerche, Lining Zheng, and Omar
+Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
+<doi:10.1016/j.cosrev.2020.100306>, and Xiaogang Su, Chih-Ling Tsai (2011)
+<doi:10.1002/widm.19>.")
+    (license license:expat)))
+
 (define-public r-outliers-ts-oga
   (package
     (name "r-outliers-ts-oga")
@@ -10118,13 +10145,13 @@ the data sets with variables \"harmonized\" across different years.")
 (define-public r-odbc
   (package
     (name "r-odbc")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odbc" version))
        (sha256
-        (base32 "00x6cwfga2x3mbjf849wj96v3mwaa1nz1kr6pa9k3bm1k32zkym7"))))
+        (base32 "1c49209bf1swsk5mhwb4zxymlg5dha9rg500nq83kbgib6ikkk9f"))))
     (properties `((upstream-name . "odbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -10132,6 +10159,7 @@ the data sets with variables \"harmonized\" across different years.")
                              r-lifecycle
                              r-hms
                              r-dbi
+                             r-cli
                              r-blob
                              r-bit64))
     (native-inputs (list pkg-config r-knitr))

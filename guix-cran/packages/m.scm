@@ -26718,13 +26718,13 @@ SIRS(Zhu et al. (2011)<doi:10.1198/jasa.2011.tm10563>), DC-SIS (Li et al. (2012)
 (define-public r-mfpp
   (package
     (name "r-mfpp")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mfpp" version))
        (sha256
-        (base32 "0i8yp3rmhqy8w6xvdlkg6k8vm3hdihsqrrc94sbx1c1nsd5p2m95"))))
+        (base32 "1z250grk06cmclyz4v3qnxdy43dm5vcrcq1rglpps3cfrg09i2g1"))))
     (properties `((upstream-name . "mfpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -41069,13 +41069,13 @@ with sensible defaults.")
 (define-public r-manymome
   (package
     (name "r-manymome")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manymome" version))
        (sha256
-        (base32 "0qdvv9w4lqsj0jc5y9bqn305kl9c1h36s940982rm072hipwk5ca"))))
+        (base32 "1j7rvk3xdxxji7l1jqi0fgv9x9vwrymdmfpj7plg8vc53apnfy5f"))))
     (properties `((upstream-name . "manymome")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply

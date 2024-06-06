@@ -1423,13 +1423,13 @@ Threshold plugin functionality to R users.  See
 (define-public r-autostsm
   (package
     (name "r-autostsm")
-    (version "3.1.4")
+    (version "3.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "autostsm" version))
        (sha256
-        (base32 "1kmdhm4g981289w4kprxawlr8bx38dgfdc2lyl6ml7xvkbxwvkfd"))))
+        (base32 "0vaddh04p2sj1j0a55ny4imraplnflcv2dw365cn9r4bgcj8xhh7"))))
     (properties `((upstream-name . "autostsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-strucchange
@@ -7085,6 +7085,39 @@ bounds-test for cointegration as described in Pesaran et al. (2001)
 equation.  The validity and the accuracy of this package have been verified by
 successfully replicating the results of Pesaran et al. (2001) in Natsiopoulos
 and Tzeremes (2022) <doi:10.1002/jae.2919>.")
+    (license license:gpl3)))
+
+(define-public r-ardeco
+  (package
+    (name "r-ardeco")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARDECO" version))
+       (sha256
+        (base32 "1m249r65kh18v57wlhg9fv26fla5sbxqfqm725f95677ck852jf2"))))
+    (properties `((upstream-name . "ARDECO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rjstat
+                             r-jsonlite
+                             r-httr
+                             r-ghql
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ARDECO")
+    (synopsis "Annual Regional Database of the European Commission (ARDECO)")
+    (description
+     "This package provides a set of functions to access the ARDECO (Annual Regional
+Database of the European Commission) data directly from the official ARDECO
+public repository through the exploitation of the ARDECO APIs.  The APIs are
+completely transparent to the user and the provided functions provide a direct
+access to the ARDECO data.  The ARDECO database is a collection of variables
+related to demography, employment, labour market, domestic product, capital
+formation.  Each variable can be exposed in one or more units of measure as well
+as refers to total values plus economic sectors.  The description of the ARDECO
+database can be found at the following URL
+<https://urban.jrc.ec.europa.eu/ardeco>.")
     (license license:gpl3)))
 
 (define-public r-ardec
@@ -14338,6 +14371,37 @@ imputation of proteome-wide absolute protein quantity estimation.  Our
 open-source software is written in the statistical programming language R and
 validated and demonstrated on a synthetic sample.")
     (license license:gpl3+)))
+
+(define-public r-alfam2
+  (package
+    (name "r-alfam2")
+    (version "4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ALFAM2" version))
+       (sha256
+        (base32 "12466i7nchyh7m5gkg8mzcn9a1m9g7y6vv1ar8ygw16zx3dfhba9"))))
+    (properties `((upstream-name . "ALFAM2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AU-BCE-EE/ALFAM2/")
+    (synopsis "Dynamic Model of Ammonia Emission from Field-Applied Manure")
+    (description
+     "An implementation of the ALFAM2 dynamic emission model for ammonia
+volatilization from field-applied animal slurry (manure with dry matter below
+about 15%).  The model can be used to predict cumulative emission and emission
+rate of ammonia following field application of slurry.  Predictions may be
+useful for emission inventory calculations, fertilizer management, assessment of
+mitigation strategies, or research aimed at understanding ammonia emission.
+Default parameter sets include effects of application method, slurry
+composition, and weather.  The model structure is based on a simplified
+representation of the physical-chemical slurry-soil-atmosphere system.  See
+Hafner et al. (2018) <doi:10.1016/j.atmosenv.2018.11.034> for information on the
+model and Hafner et al. (2019) <doi:10.1016/j.agrformet.2017.11.027> for more on
+the measurement data used for parameter development.")
+    (license license:gpl3)))
 
 (define-public r-aleplot
   (package

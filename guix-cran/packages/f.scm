@@ -129,16 +129,16 @@ dating, and monitoring (de facto) exchange rate regimes.")
 (define-public r-fxl
   (package
     (name "r-fxl")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fxl" version))
        (sha256
-        (base32 "1z41cspxqhzvmli3vac453z0j3lm2k467wq03f8sm1j21dmx1ibk"))))
+        (base32 "0i7c30vaysrfav9z4ikfmjy287qvcnx3yi3898qcszkip28n9zx7"))))
     (properties `((upstream-name . "fxl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-grimport))
+    (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fxl")
     (synopsis "'fxl' Single Case Design Charting Package")
@@ -11428,13 +11428,13 @@ models commonly used by practitioners are implemented.")
 (define-public r-fitzroy
   (package
     (name "r-fitzroy")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitzRoy" version))
        (sha256
-        (base32 "1q728dn6s89f7zy4s1hhixqrvqi27gc225i6isiq5lk9md7pgydx"))))
+        (base32 "07qk0kgbsrpjkfm9jqd5zsyg1lj96fj31a413qn7y66vpyljd3p3"))))
     (properties `((upstream-name . "fitzRoy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -11446,11 +11446,11 @@ models commonly used by practitioners are implemented.")
                              r-rlang
                              r-readr
                              r-purrr
-                             r-progress
                              r-magrittr
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
+                             r-httr2
                              r-httr
                              r-glue
                              r-dplyr
@@ -11465,7 +11465,7 @@ data from AFL Tables <https://afltables.com/afl/afl_index.html>, Footy Wire
 <https://www.footywire.com> and The Squiggle <https://squiggle.com.au>.  Further
 functions allow for easy processing, cleaning and transformation of this data
 into formats that can be used for analysis.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-fitur
   (package
@@ -12709,13 +12709,13 @@ Mihalcea, Rada & Tarau, Paul (2004) <https://aclanthology.org/W04-3252/>.")
 (define-public r-finnishgrid
   (package
     (name "r-finnishgrid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnishgrid" version))
        (sha256
-        (base32 "0gndrllz3y7yqrg5vw6ba7dg7hn4w3085rpy7h9hdd8swxqfvlc6"))))
+        (base32 "1p3kgrq85x48mmqn6m93m37qydnn0kpsikvp3ipg78s8b6l1cvzv"))))
     (properties `((upstream-name . "finnishgrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -12723,9 +12723,11 @@ Mihalcea, Rada & Tarau, Paul (2004) <https://aclanthology.org/W04-3252/>.")
     (home-page "https://github.com/virmar/finnishgrid")
     (synopsis "'Fingrid Open Data API' R Client")
     (description
-     "R API client package for Fingrid Open Data on the electricity market and the
-power system.  get_data() function holds the main application logic to retrieve
-time-series data.  API calls require free user account registration.")
+     "R API client package for Fingrid Open Data <https://data.fingrid.fi/> on the
+electricity market and the power system.  get_data() function holds the main
+application logic to retrieve time-series data.  API calls require free user
+account registration.  Data is made available by Fingrid Oyj and distributed
+under Creative Commons 4.0 <https://creativecommons.org/licenses/by/4.0/>.")
     (license license:expat)))
 
 (define-public r-finnet
@@ -14088,13 +14090,13 @@ sciences.")
 (define-public r-fido
   (package
     (name "r-fido")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fido" version))
        (sha256
-        (base32 "07b30dx69hrqmbipadf9y8gnkikry64sbrhnfrhaq9xaxnpg3wc8"))))
+        (base32 "1q46m55y8ni51b96ckc70ap11w6vjq13wivsm8q37aj464845yy4"))))
     (properties `((upstream-name . "fido")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -2233,13 +2233,13 @@ equally and unequally spaced time series.")
 (define-public r-runmcmcbtadjust
   (package
     (name "r-runmcmcbtadjust")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runMCMCbtadjust" version))
        (sha256
-        (base32 "0qc63pv45fmdix23y2mha35dvchb4zqc12i0pxnbkm8wbcmrmbf7"))))
+        (base32 "1m4f0vx69y060pm1asbbk166y0ih0vmqywwwc7fn8c4frj07g40k"))))
     (properties `((upstream-name . "runMCMCbtadjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -2251,7 +2251,9 @@ equally and unequally spaced time series.")
      "The function @code{runMCMC_btadjust}() returns a mcmc.list object which is the
 output of a Markov Chain Monte Carlo obtained - from either JAGS', nimble or
 greta - after adjusting burn-in and thinning parameters to meet pre-specified
-criteria in terms of convergence & effective sample size.")
+criteria in terms of convergence & effective sample size.  Used with nimble',
+@code{runMCMC_btadjust}() allows extra calculations (e.g. information criteria
+for model comparison and goodness-of-fit p-values for model diagnosis).")
     (license (license:fsdg-compatible "CECILL-2.1"))))
 
 (define-public r-runjags
@@ -29132,13 +29134,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "1xxxzp4pzzljrhcks9fha24q6kljapkifgrgjjm47s3qwjjplx32"))))
+        (base32 "0dcxaf8yvcvzxwfk3y8knkk03qr9wa5g382k0cllxjwq8ly0nxcw"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -40651,13 +40653,13 @@ packages of R versions 0.50 onwards.")
 (define-public r-rchemo
   (package
     (name "r-rchemo")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rchemo" version))
        (sha256
-        (base32 "18jcx4f4vs6qjhv2ypy4wgqdcprjpbi738lyr28f0ih7185fipm0"))))
+        (base32 "06wrpv3bnzq9sz6wq4f1sgcq549rafnqh6rzldl160hv7yb7rl80"))))
     (properties `((upstream-name . "rchemo")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-fnn r-e1071 r-data-table))
@@ -42391,13 +42393,13 @@ MIT license from the Bitcoin Unlimited website
 (define-public r-rbcc
   (package
     (name "r-rbcc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbcc" version))
        (sha256
-        (base32 "0mfwkbgcnahrk19n14icf26rxf93nqm1r0kr2gi02gmpqrycl0br"))))
+        (base32 "1v99cpbq7wd9kfjfanyxfmxifvnr73882hh0zyrp6n3nvj7l85rz"))))
     (properties `((upstream-name . "rbcc")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-qcc r-pracma r-pearsonds r-ggplot2))

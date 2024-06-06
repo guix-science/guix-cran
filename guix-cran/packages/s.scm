@@ -39876,13 +39876,13 @@ refer to Epifania, Anselmi & Robusto (2022) <doi:10.1007/978-3-031-27781-8_7>.")
 (define-public r-shortform
   (package
     (name "r-shortform")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ShortForm" version))
        (sha256
-        (base32 "0d28ls6b35d4pw5d30jwxglq6spmfs05wr3pwijcjcw1507862qz"))))
+        (base32 "14qypmb51w5k6xndjdgrwawyr3ccnp9llsh93sah7xkwl1hkkbdl"))))
     (properties `((upstream-name . "ShortForm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -50757,13 +50757,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.6")
+    (version "4.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "128ihlaf63q2mk4qkyd13lfna5isw8r83iz1lqrdv7q3gi7wl4w0"))))
+        (base32 "1zr2yp51dx5f8ggvwd9bspa3j08yjh6bpph7mpxqky7cn2clbf9b"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

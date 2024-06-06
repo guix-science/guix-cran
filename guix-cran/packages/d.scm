@@ -5494,17 +5494,17 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
 (define-public r-dqastats
   (package
     (name "r-dqastats")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAstats" version))
        (sha256
-        (base32 "1k1zpf40qsapnqbjpyfa3iiv63ly9xpk0pkrfvcccy5f6lpv1621"))))
+        (base32 "0slp3kq2g4djdfxqx40afxcycyncmdxw757pyrm8anfnpxx4rdvz"))))
     (properties `((upstream-name . "DQAstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytex
-                             r-rmarkdown
+                             r-quarto
                              r-parsedate
                              r-magrittr
                              r-knitr
@@ -5515,7 +5515,7 @@ Zhang YW, Zuo JF, Liu JY, Zhang YM (2022, <doi: 10.1016/j.xplc.2022.100319>).")
                              r-dizutils
                              r-diztools
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/miracum/dqa-dqastats")
     (synopsis "Core Functions for Data Quality Assessment")
     (description
@@ -6361,13 +6361,13 @@ approach in detail will follow.")
 (define-public r-doubleml
   (package
     (name "r-doubleml")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoubleML" version))
        (sha256
-        (base32 "159j9iq3kdpa0s6x4acvl8002lgbnw5j4wh9jbr3dqndpixq965l"))))
+        (base32 "0qk7zjpzz0dpzvczssfbp4gbqxazyxn0dsc8h9jnqb3syzdscc27"))))
     (properties `((upstream-name . "DoubleML")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13
@@ -18481,6 +18481,33 @@ Yissachar, Nir Waysbort, Shlomit Reich Zeliger, Ruth Arnon, and Nir Friedman
 distribution for the counts that is a superposition of the binomial and negative
 binomial distribution.")
     (license license:gpl2)))
+
+(define-public r-denim
+  (package
+    (name "r-denim")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "denim" version))
+       (sha256
+        (base32 "1janjmhfz0vgrmvw0plncxlg7y1sd9578arpjkaivqgqwbkhz4r1"))))
+    (properties `((upstream-name . "denim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite r-testthat r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://drthinhong.com/denim/")
+    (synopsis
+     "Generate and Simulate Deterministic Discrete-Time Compartmental Models")
+    (description
+     "R package to build and simulate deterministic discrete-time compartmental models
+that can be non-Markov.  Length of stay in each compartment can be defined to
+follow a parametric distribution (d_exponential(), d_gamma(), d_weibull(),
+d_lognormal()) or a non-parametric distribution (nonparametric()).  Other
+supported types of transition from one compartment to another includes fixed
+transition (constant()), multinomial (multinomial()), fixed transition
+probability (transprob()).")
+    (license license:expat)))
 
 (define-public r-denguedatahub
   (package

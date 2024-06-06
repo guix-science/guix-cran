@@ -13549,6 +13549,98 @@ file for the reference copyright information and for the complete citations of
 the reference sources, respectively.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
+(define-public r-iemiscdata
+  (package
+    (name "r-iemiscdata")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemiscdata" version))
+       (sha256
+        (base32 "1wsakabhj9majl4w63bpc95ccdvfg7xz9arj0ikvdj6dh1ardac6"))))
+    (properties `((upstream-name . "iemiscdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/iembry/iemiscdata")
+    (synopsis "Irucka Embry's Miscellaneous Data Collection")
+    (description
+     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
+Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
+Continental Congress Presidents].")
+    (license license:gpl3+)))
+
+(define-public r-iemisc
+  (package
+    (name "r-iemisc")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemisc" version))
+       (sha256
+        (base32 "0dr9p4y0vdwxsd5dqp5ahqnv1sfckb3xy9i0bbas009g5hnzxp92"))))
+    (properties `((upstream-name . "iemisc")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-zoo
+                             r-usa-state-boundaries
+                             r-units
+                             r-stringi
+                             r-sjmisc
+                             r-signal
+                             r-sf
+                             r-round
+                             r-roperators
+                             r-rivr
+                             r-ramify
+                             r-qdapregex
+                             r-pracma
+                             r-mgsub
+                             r-measurements
+                             r-matlab2r
+                             r-matlab
+                             r-lubridate
+                             r-iemiscdata
+                             r-gsubfn
+                             r-ggpubr
+                             r-ggplot2
+                             r-geosphere
+                             r-fpcompare
+                             r-foreach
+                             r-data-table
+                             r-chem-databases
+                             r-checkmate
+                             r-berryfunctions
+                             r-assertthat
+                             r-anytime))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://gitlab.com/iembry/iemisc")
+    (synopsis "Irucka Embry's Miscellaneous Functions")
+    (description
+     "This package provides a collection of Irucka Embry's miscellaneous functions
+(Engineering Economics, Civil & Environmental/Water Resources Engineering,
+Construction Measurements, GNU Octave compatible functions, Python compatible
+function, Trigonometric functions in degrees and function in radians, Geometry,
+Statistics, Mortality Calculators, Quick Search, etc.).")
+    (license (list license:gpl3+
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")
@@ -16116,13 +16208,13 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
 (define-public r-iccde
   (package
     (name "r-iccde")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iccde" version))
        (sha256
-        (base32 "1z7ra8s0sddjmbfb8flgp4kmz1ckgwshz8h2nnpbd3liav84b5xv"))))
+        (base32 "1q6nrbhirrzjjmqwn7mc0wziknqx9zi70s5riza2ic5shgsjq87i"))))
     (properties `((upstream-name . "iccde")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iccde")
@@ -16132,13 +16224,14 @@ parameters and evaluate the model fit.  See Yao et al. (2019)
 of profile similarity (Furr, 2010; @code{McCrae}, 2008).  The double-entry
 intraclass correlation is a more precise index of the agreement of two
 empirically observed profiles than the often-used intraclass correlation
-(@code{McCrae}, 2008).  The function transforms profiles comprising correlations
-according to the Fisher z-transformation before the double-entry intraclass
-correlation is calculated.  If the profiles comprise scores such as sum scores
-from various personality scales, it is recommended to standardize each
-individual score prior to computation of the double-entry intraclass correlation
-(@code{McCrae}, 2008).  See Furr (2010) <doi:10.1080/00223890903379134> or
-@code{McCrae} (2008) <doi:10.1080/00223890701845104> for details.")
+(@code{McCrae}, 2008).  Profiles comprising correlations are automatically
+transformed according to the Fisher z-transformation before the double-entry
+intraclass correlation is calculated.  If the profiles comprise scores such as
+sum scores from various personality scales, it is recommended to standardize
+each individual score prior to computation of the double-entry intraclass
+correlation (@code{McCrae}, 2008).  See Furr (2010)
+<doi:10.1080/00223890903379134> or @code{McCrae} (2008)
+<doi:10.1080/00223890701845104> for details.")
     (license license:gpl2+)))
 
 (define-public r-icccounts

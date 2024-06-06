@@ -920,13 +920,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0iyv7qmagmmysxpiv5rmpa8qrxd6q5w8fdvi637428hrrwd666v6"))))
+        (base32 "1av1c6wza8rrd7klkzhy5y7ncp3xc07bmvm32vskm7nkfglcky4k"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -934,6 +934,7 @@ available at the following URL:
                              r-survidinri
                              r-survey
                              r-shinywidgets
+                             r-shinyjs
                              r-shinycustomloader
                              r-shiny
                              r-see
@@ -958,6 +959,7 @@ available at the following URL:
                              r-ggally
                              r-geepack
                              r-forestploter
+                             r-flextable
                              r-epidisplay
                              r-dt
                              r-data-table))
