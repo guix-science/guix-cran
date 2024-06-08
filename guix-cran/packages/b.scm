@@ -11737,6 +11737,37 @@ values.  For contingency tables, relative risk and odds ratio measures are
 estimated.  Furthermore, confidence intervals are provided.")
     (license license:gpl2)))
 
+(define-public r-biopred
+  (package
+    (name "r-biopred")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioPred" version))
+       (sha256
+        (base32 "04v38zsg5n5pzg817pkz2jg8sgg1ckd909ckrapbdncyh3wsawan"))))
+    (properties `((upstream-name . "BioPred")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-survminer
+                             r-survival
+                             r-propcis
+                             r-proc
+                             r-onewaytests
+                             r-mgcv
+                             r-ggplot2
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=BioPred")
+    (synopsis "An R Package for Biomarkers Analysis in Precision Medicine")
+    (description
+     "This package provides functions for training extreme gradient boosting model
+using propensity score A-learning and weight-learning methods.  For details on
+the A-learning and weight-learning methods, see Chen et al. (2017)
+<doi:10.1111/biom.12676>.")
+    (license license:gpl3)))
+
 (define-public r-biopn
   (package
     (name "r-biopn")
@@ -15398,16 +15429,16 @@ scientific collaboration and co-word analysis.")
 (define-public r-biblio
   (package
     (name "r-biblio")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biblio" version))
        (sha256
-        (base32 "1rwfp83r740v55nyc2p78kz7ibf137fx2msrb28dp2340092p38b"))))
+        (base32 "0ml6sh0ki04kqyfixd0cxmxpdxznisifaqnjdshvrvi1yqjq12ih"))))
     (properties `((upstream-name . "biblio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yamlme r-stringr))
+    (propagated-inputs (list r-yamlme r-stringr r-rcrossref))
     (home-page "https://kamapu.github.io/biblio/")
     (synopsis "Interacting with BibTeX Databases")
     (description
@@ -17371,6 +17402,38 @@ The algorithm formulates coefficient parameters and residuals as primal and dual
 variables and utilizes efficient active set selection strategies based on the
 complementarity of the primal and dual variables.")
     (license license:gpl3)))
+
+(define-public r-bespatial
+  (package
+    (name "r-bespatial")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bespatial" version))
+       (sha256
+        (base32 "1sbgi4dcddjwgs4dzwn3zf91kx07kr5vc9dblvijgfasqhpfjv5m"))))
+    (properties `((upstream-name . "bespatial")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-landscapemetrics
+                             r-comat
+                             r-belg))
+    (home-page "https://jakubnowosad.com/bespatial/")
+    (synopsis "Boltzmann Entropy for Spatial Data")
+    (description
+     "Calculates several entropy metrics for spatial data inspired by Boltzmann's
+entropy formula.  It includes metrics introduced by Cushman for landscape
+mosaics (Cushman (2015) <doi:10.1007/s10980-015-0305-2>), and landscape
+gradients and point patterns (Cushman (2021) <doi:10.3390/e23121616>); by Zhao
+and Zhang for landscape mosaics (Zhao and Zhang (2019)
+<doi:10.1007/s10980-019-00876-x>); and by Gao et al.  for landscape gradients
+(Gao et al. (2018) <doi:10.1111/tgis.12315>; Gao and Li (2019)
+<doi:10.1007/s10980-019-00854-3>).")
+    (license license:expat)))
 
 (define-public r-berryfunctions
   (package

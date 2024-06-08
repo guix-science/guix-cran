@@ -4338,13 +4338,13 @@ block feature selection.")
 (define-public r-uavrmp
   (package
     (name "r-uavrmp")
-    (version "0.6.2")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "uavRmp" version))
        (sha256
-        (base32 "0jv0ls8wbxciv6lhr7qvzarg4s3gckkc1n4w833sfpr0sk4gakaj"))))
+        (base32 "1bv5979x3c3vbls40vih83mm29cq7yjv37w544cg63sml2k2bj3v"))))
     (properties `((upstream-name . "uavRmp")))
     (build-system r-build-system)
     (arguments
@@ -4364,6 +4364,9 @@ block feature selection.")
                                                                #:target target)))
                                   '())))))))
     (propagated-inputs (list r-zoo
+                             r-xfun
+                             r-terra
+                             r-spatialeco
                              r-sp
                              r-sf
                              r-rlist
@@ -4372,19 +4375,20 @@ block feature selection.")
                              r-jsonlite
                              r-geosphere
                              r-exifr
+                             r-dplyr
                              r-data-table
+                             r-concaveman
                              r-brew))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/gisma/uavRmp")
     (synopsis "UAV Mission Planner")
     (description
      "The Unmanned Aerial Vehicle Mission Planner provides an easy to use work flow
-for planning autonomous obstacle avoiding surveys of (almost) ready to fly
-unmanned aerial vehicles to retrieve aerial or spot related data.  It creates
-either intermediate flight control files for the DJI-Litchi supported series or
-ready to upload control files for the pixhawk-based flight controller as used in
-the 3DR-Solo.  Additionally it contains some useful tools for digitizing and
-data manipulation.")
+for planning autonomous obstacle avoiding surveys of ready to fly unmanned
+aerial vehicles to retrieve aerial or spot related data.  It creates either
+intermediate flight control files for the DJI-Litchi supported series or ready
+to upload control files for the pixhawk-based flight controller.  Additionally
+it contains some useful tools for digitizing and data manipulation.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
 

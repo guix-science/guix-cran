@@ -1464,13 +1464,13 @@ introduction to permutation tests.")
 (define-public r-wpa
   (package
     (name "r-wpa")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wpa" version))
        (sha256
-        (base32 "0pdvj8q74dd7z3xdp4cb2j85jfhiljvribr23n99k7bi6kdxwyxi"))))
+        (base32 "0likivdwxl66nj6wxkcssqgz8slhagbw9qhxbxwsw10gyq4769rb"))))
     (properties `((upstream-name . "wpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -2873,6 +2873,46 @@ of outcomes can be analyzed: survival \"failure-time\" events, repeated survival
 \"failure-time\" events and continuous or ordinal \"non-failure time\" events that
 are captured at specific time-points in the study.")
     (license license:gpl2+)))
+
+(define-public r-winputall
+  (package
+    (name "r-winputall")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "winputall" version))
+       (sha256
+        (base32 "17jwnnzy5a38a2n9ixhs8vk8ybq2a8lhjv5hfx4dwdg73iklnmib"))))
+    (properties `((upstream-name . "winputall")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-plm
+                             r-matrixstats
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-learnbayes
+                             r-ks
+                             r-future-apply
+                             r-future
+                             r-dplyr
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=winputall")
+    (synopsis "Variable Input Allocation Among Crops")
+    (description
+     "Using a time-varying random parameters model developed in Koutchade et al.,
+(2024) <https://hal.science/hal-04318163>, this package allows allocating
+variable input costs among crops produced by farmers based on panel data
+including information on input expenditure aggregated at the farm level and
+acreage shares.  It also considers in fairly way the weighting data and can
+allow integrating time-varying and time-constant control variables.")
+    (license license:gpl3+)))
 
 (define-public r-wingen
   (package

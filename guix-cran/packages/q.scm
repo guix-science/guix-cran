@@ -961,6 +961,30 @@ Hennig, C., Viroli, C., Anderlucci, L. (2019) \"Quantile-based clustering.\"
 Electronic Journal of Statistics.  13 (2) 4849 - 4883 <doi:10.1214/19-EJS1640>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-quaxnat
+  (package
+    (name "r-quaxnat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quaxnat" version))
+       (sha256
+        (base32 "0indrll8yqj95lx3f30sic2w5730r5my44sqn59mwhgvdh5rw693"))))
+    (properties `((upstream-name . "quaxnat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (home-page "https://github.com/MaximilianAxer/quaxnat")
+    (synopsis "Estimation of Natural Regeneration Potential")
+    (description
+     "This package provides functions for estimating the potential dispersal of tree
+species using regeneration densities and dispersal distances to nearest seed
+trees.  A quantile regression is implemented to determine the dispersal
+potential.  Spatial prediction can be used to identify natural regeneration
+potential for forest restoration as described in Axer et al. (2021)
+<doi:10.1016/j.foreco.2020.118802>.")
+    (license license:gpl2+)))
+
 (define-public r-quarto
   (package
     (name "r-quarto")

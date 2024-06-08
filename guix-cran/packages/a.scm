@@ -12660,23 +12660,23 @@ AMC.")
 (define-public r-amcp
   (package
     (name "r-amcp")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AMCP" version))
        (sha256
-        (base32 "14fbb2p4dbgi7i31xxavrldw4wnd4cjjh56ys63rivkswi1hhzj2"))))
+        (base32 "0xp59zah72h7kvqnhyrx6p9nx0pghi49lgib3f1ins1zlxdv2j88"))))
     (properties `((upstream-name . "AMCP")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=AMCP")
     (synopsis "Model Comparison Perspective")
     (description
-     "Accompanies \"Designing experiments and analyzing data: A model comparison
-perspective\" (3rd ed.) by Maxwell, Delaney, & Kelley (2018; Routledge).
-Contains all of the data sets in the book's chapters and end-of-chapter
-exercises.  Information about the book is available at
-<http://www.@code{DesigningExperiments.com>}.")
+     "Accompanies the book \"Designing experiments and analyzing data: A model
+comparison perspective\" (3rd ed.) by Maxwell, Delaney, & Kelley (2018;
+Routledge).  Contains all of the data sets in the book's chapters and
+end-of-chapter exercises.  Information about the book is available at
+<https://designingexperiments.com/>.")
     (license license:gpl3+)))
 
 (define-public r-ambit
@@ -18185,6 +18185,30 @@ on the prevalence of triers in the population.  See for: Kislev, M. M., and S.
 Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
     (license license:gpl3)))
 
+(define-public r-adoptr
+  (package
+    (name "r-adoptr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adoptr" version))
+       (sha256
+        (base32 "0crlwk6nk88lxz76klss7igmdx8sw99yj52kkmsa6l49s29wwqv2"))))
+    (properties `((upstream-name . "adoptr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/optad/adoptr")
+    (synopsis "Adaptive Optimal Two-Stage Designs")
+    (description
+     "Optimize one or two-arm, two-stage designs for clinical trials with respect to
+several implemented objective criteria or custom objectives.  Optimization under
+uncertainty and conditional (given stage-one outcome) constraints are supported.
+ See Pilz et al. (2019) <doi:10.1002/sim.8291> and Kunzmann et al. (2021)
+<doi:10.18637/jss.v098.i09> for details.")
+    (license license:expat)))
+
 (define-public r-adobeanalyticsr
   (package
     (name "r-adobeanalyticsr")
@@ -18596,13 +18620,13 @@ extension package of the admiral package.")
 (define-public r-admiraldev
   (package
     (name "r-admiraldev")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiraldev" version))
        (sha256
-        (base32 "0n944il50mlqwclb6251zck89l9fyki7j711h4pp4fba3hs96s7r"))))
+        (base32 "0cpdhyiis0mwd219h3y4l1scy49bl3qjd9sy2kln4ymy0xsbasyg"))))
     (properties `((upstream-name . "admiraldev")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18610,11 +18634,11 @@ extension package of the admiral package.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-lifecycle
-                             r-hms
-                             r-dplyr))
+                             r-glue
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://pharmaverse.github.io/admiraldev/")
     (synopsis
@@ -18650,13 +18674,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "18q60qk2wr2jp8zxd9xz66glpr00qvlq88yqd2ybv76zlapcq6gg"))))
+        (base32 "1ynqmpswhcy4qlaf8yvhhlax6j9xii5m7bwvrxrjzqnpdcif4hrb"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18669,6 +18693,7 @@ the admiral package.")
                              r-lifecycle
                              r-hms
                              r-dplyr
+                             r-cli
                              r-admiraldev))
     (native-inputs (list r-knitr))
     (home-page "https://pharmaverse.github.io/admiral/")

@@ -4915,6 +4915,40 @@ Sergeant, ESG, 2019.  Epitools epidemiological calculators.  Ausvet Pty Ltd.
 Available at: <http://epitools.ausvet.com.au>.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-rsurv
+  (package
+    (name "r-rsurv")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsurv" version))
+       (sha256
+        (base32 "1xin45sc6zlap0w2ydq0ji4w3kz4ksvhark7vgim6vb1d1zv3py0"))))
+    (properties `((upstream-name . "rsurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stabledist r-rdpack r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/fndemarqui/rsurv")
+    (synopsis "Random Generation of Survival Data")
+    (description
+     "Random generation of survival data from a wide range of regression models,
+including accelerated failure time (AFT), proportional hazards (PH),
+proportional odds (PO), accelerated hazard (AH), Yang and Prentice (YP), and
+extended hazard (EH) models.  The package rsurv also stands out by its ability
+to generate survival data from an unlimited number of baseline distributions
+provided that an implementation of the quantile function of the chosen baseline
+distribution is available in R. Another nice feature of the package rsurv lies
+in the fact that linear predictors are specified via a formula-based approach,
+facilitating the inclusion of categorical variables and interaction terms.  The
+functions implemented in the package rsurv can also be employed to simulate
+survival data with more complex structures, such as survival data with different
+types of censoring mechanisms, survival data with cure fraction, survival data
+with random effects (frailties), multivariate survival data, and competing risks
+survival data.  Details about the R package rsurv can be found in Demarqui
+(2024) <doi:10.48550/@code{arXiv.2406.01750>}.")
+    (license license:gpl3+)))
+
 (define-public r-rsurrogate
   (package
     (name "r-rsurrogate")
@@ -10572,13 +10606,13 @@ most recent monthly PDO index values together with related climate indices.")
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "0x266kdz5dkw62givlmsasbmxkgx1df5d7hldbslg89a8ajpxaj0"))))
+        (base32 "16vfwln7k55010h3x9f7znljf0m4x0x97dgnaycxnqf5gpsv65iw"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12893,28 +12927,6 @@ for solving nonlinear optimization problems.")
      "Enhances the R Optimization Infrastructure ('ROI') package with a connection to
 the neos server.  ROI optimization problems can be directly be sent to the neos
 server and solution obtained in the typical ROI style.")
-    (license license:gpl3)))
-
-(define-public r-roi-plugin-msbinlp
-  (package
-    (name "r-roi-plugin-msbinlp")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ROI.plugin.msbinlp" version))
-       (sha256
-        (base32 "1nxjli87phi3cl101aaf8apib2crxbv1i0vlvq79difb8v7mjgya"))))
-    (properties `((upstream-name . "ROI.plugin.msbinlp")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-slam r-roi))
-    (home-page "https://roigrp.gitlab.io")
-    (synopsis
-     "'Multi-Solution' Binary Linear Problem Plug-in for the 'R' Optimization Interface")
-    (description
-     "Enhances the R Optimization Infrastructure ('ROI') package with the possibility
-to obtain multiple solutions for linear problems with binary variables.  The
-main function is copied (with small modifications) from the relations package.")
     (license license:gpl3)))
 
 (define-public r-roi-plugin-ipop
@@ -20024,13 +20036,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "0hj9znrhfza35kamz78wa623lzxhh1dfpxn4ggsqzdvmxfldpvwv"))))
+        (base32 "1s7j9vcy0mb358wk0rdc73g94i1xpi3cwxw33gsw0cvga4pmhk6s"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -23647,13 +23659,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "1max1wlwv5fa4gl2h2zpd8ia0y7ss122jsm5vb9mih204p2ydcrz"))))
+        (base32 "1vsf5bvbqdrvsd21z1ps1hxxmpkf39x2xk5wk45695pg9zq8dy19"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -23663,7 +23675,6 @@ Monte Carlo.  Automatic parameter selection is not supported.")
                     (lambda _
                       (setenv "HOME" "/tmp"))))))
     (propagated-inputs (list r-yaml
-                             r-xml2
                              r-withr
                              r-testthat
                              r-styler
@@ -23678,6 +23689,7 @@ Monte Carlo.  Automatic parameter selection is not supported.")
                              r-fs
                              r-config
                              r-cli
+                             r-box-linters
                              r-box))
     (home-page "https://appsilon.github.io/rhino/")
     (synopsis "Framework for Enterprise Shiny Applications")
@@ -33320,26 +33332,28 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "24.2.1")
+    (version "24.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "0zd2lnr6gzjf1zmrzb0l0ynmvpa842lf3kaz7rscmjkdr8p6sjg1"))))
+        (base32 "18s85ryg5mr7cv1j4938ax7v3b8fsrbaaa5lv191h0ixwkyz5cp9"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
+    (propagated-inputs (list r-zip
+                             r-tidyselect
                              r-tidyr
                              r-shiny
-                             r-rsconnect
                              r-redcapr
                              r-readr
+                             r-readods
                              r-purrr
                              r-openxlsx2
                              r-keyring
                              r-haven
-                             r-dplyr))
+                             r-dplyr
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/agdamsbo/REDCapCAST")
     (synopsis "REDCap Castellated Data Handling")
@@ -44904,6 +44918,37 @@ Society), 177, 191-208. <DOI:10.1111/rssa.12009>.")
     (description
      "Statistical tools for the Mallows-Binomial model, the first joint statistical
 model for preference learning for rankings and ratings.")
+    (license license:gpl3)))
+
+(define-public r-rankpca
+  (package
+    (name "r-rankpca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RankPCA" version))
+       (sha256
+        (base32 "1gp1j9lbjvlgf9n2ccb77604l88r0jdp33ryjc7djpy3i3ccr16s"))))
+    (properties `((upstream-name . "RankPCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-caret))
+    (home-page "https://cran.r-project.org/package=RankPCA")
+    (synopsis
+     "Rank of Variables Based on Principal Component Analysis for Mixed Data Types")
+    (description
+     "Principal Component Analysis (PCA) is a statistical technique used to reduce the
+dimensionality of a dataset while preserving as much variability as possible.
+By transforming the original variables into a new set of uncorrelated variables
+called principal components, PCA helps in identifying patterns and simplifying
+the complexity of high-dimensional data.  The @code{RankPCA} package provides a
+streamlined workflow for performing PCA on datasets containing both categorical
+and continuous variables.  It facilitates data preprocessing, encoding of
+categorical variables, and computes PCA to determine the optimal number of
+principal components based on a specified variance threshold.  The package also
+computes composite indices for ranking observations, which can be useful for
+various analytical purposes.  Garai, S., & Paul, R. K. (2023)
+<doi:10.1016/j.iswa.2023.200202>.")
     (license license:gpl3)))
 
 (define-public r-rankinplot

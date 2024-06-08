@@ -3640,25 +3640,29 @@ BÃ¶schen, I. (2021) <doi:10.1038/s41598-021-98782-3> and BÃ¶schen, I (2023)
 (define-public r-jarbes
   (package
     (name "r-jarbes")
-    (version "2.0.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jarbes" version))
        (sha256
-        (base32 "0lx565m9abvai47ndpryxbhpsdnh76sbaf0mixpd58raqnysc26b"))))
+        (base32 "1gpm7by9wmqgr69876wqd1w3nrzmzsgchh2xlsf37jxz2m5827c0"))))
     (properties `((upstream-name . "jarbes")))
     (build-system r-build-system)
     (inputs (list jags))
-    (propagated-inputs (list r-tidyverse
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-rjags
                              r-r2jags
+                             r-qpdf
                              r-mcmcplots
                              r-mass
+                             r-kableextra
                              r-gridextra
                              r-ggplot2
-                             r-ggextra))
+                             r-ggextra
+                             r-ggally
+                             r-bookdown))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=jarbes")
     (synopsis "Just a Rather Bayesian Evidence Synthesis")
     (description

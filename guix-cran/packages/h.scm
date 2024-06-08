@@ -692,6 +692,30 @@ Generalized Plackett-Luce likelihoods use Hankin 2024
 <doi:10.18637/jss.v109.i08>.")
     (license license:gpl2+)))
 
+(define-public r-hyper-fit
+  (package
+    (name "r-hyper-fit")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hyper.fit" version))
+       (sha256
+        (base32 "1w6ra4sqdvzcyhsiyi3lgzy9m4ca3898qjdssdfgmarkrc13bk3n"))))
+    (properties `((upstream-name . "hyper.fit")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rgl r-mass r-magicaxis r-laplacesdemon))
+    (home-page "https://cran.r-project.org/package=hyper.fit")
+    (synopsis "N-Dimensional Hyperplane Fitting with Errors")
+    (description
+     "High level functions for hyperplane fitting (hyper.fit()) and visualising
+(hyper.plot2d() / hyper.plot3d()).  In simple terms this allows the user to
+produce robust 1D linear fits for 2D x vs y type data, and robust 2D plane fits
+to 3D x vs y vs z type data.  This hyperplane fitting works generically for any
+N-1 hyperplane model being fit to a N dimension dataset.  All fits include
+intrinsic scatter in the generative model orthogonal to the hyperplane.")
+    (license license:gpl3)))
+
 (define-public r-hymett
   (package
     (name "r-hymett")
@@ -4184,17 +4208,19 @@ regression analysis and canonical correlation analysis.")
 (define-public r-holomics
   (package
     (name "r-holomics")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Holomics" version))
        (sha256
-        (base32 "1aammamx7x4dplh6mics5qp7my9204a7vrs645vvyj2l41sm9q1j"))))
+        (base32 "1d2ypgsaq1y4q9q8yis2549m2vaxg4fas6x9zagsw4jx97vi61kh"))))
     (properties `((upstream-name . "Holomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
+                             r-uuid
                              r-tippy
+                             r-tidyr
                              r-stringr
                              r-shinywidgets
                              r-shinyvalidate
@@ -4202,12 +4228,16 @@ regression analysis and canonical correlation analysis.")
                              r-shinybusy
                              r-shinyalert
                              r-shiny
+                             r-rspectra
+                             r-reshape2
                              r-readxl
                              r-openxlsx
                              r-mixomics
+                             r-matrixstats
                              r-markdown
                              r-igraph
                              r-golem
+                             r-ggrepel
                              r-ggplot2
                              r-dt
                              r-dplyr

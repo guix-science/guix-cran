@@ -7847,13 +7847,13 @@ For a recent application of @code{nimbleSCR}, see Milleret et al. (2021)
 (define-public r-nimblenobounds
   (package
     (name "r-nimblenobounds")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleNoBounds" version))
        (sha256
-        (base32 "1sbaj1ayvqn86av045h5n7rrlw5r3zyk1i6v5v9sjm3f9pxyffgw"))))
+        (base32 "16dl6gh5lgih4wcfb31vkbzn9knmjicfzi1bkw0j62ah39vhhdh9"))))
     (properties `((upstream-name . "nimbleNoBounds")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -8234,6 +8234,39 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
 <doi:10.1016/j.ecolmodel.2013.04.011>, Saupe et al. (2018)
 <doi:10.1093/sysbio/syx084>, and Cobos et al. (2021) <doi:10.1111/jav.02868>.")
     (license license:gpl3)))
+
+(define-public r-nichetools
+  (package
+    (name "r-nichetools")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nichetools" version))
+       (sha256
+        (base32 "12hcgqwq74pkf0x4240blb699qnazsls1dsni9arnf9hq06zypdy"))))
+    (properties `((upstream-name . "nichetools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-nicherover
+                             r-lifecycle
+                             r-ellipse
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://benjaminhlina.github.io/nichetools/")
+    (synopsis "Complementary Package to 'nicheROVER' and 'SIBER'")
+    (description
+     "This package provides functions complementary to packages @code{nicheROVER} and
+SIBER allowing the user to extract Bayesian estimates from data objects created
+by the packages @code{nicheROVER} and SIBER'.  Please see the following
+publications for detailed methods on @code{nicheROVER} and SIBER Hansen et al.
+(2015) <doi:10.1890/14-0235.1> and SIBER', Jackson et al. (2011)
+<doi:10.1111/j.1365-2656.2011.01806.x>, respectfully.")
+    (license license:cc0)))
 
 (define-public r-nicherover
   (package

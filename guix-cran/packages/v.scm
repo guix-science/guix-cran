@@ -2279,13 +2279,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "14ca964i5akcjrgqrazizhdaz291p15vj75awqxd5y32412hykjq"))))
+        (base32 "0gdhq8qdzzzvv2l5cr57wp6lnn082hcs7svbdjaphzx6ryw1bqna"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -2753,13 +2753,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "0chlmlq6ydkb36dmfx5j4syhm9s3sqhhr20fxyp3jhbhv19c83bj"))))
+        (base32 "06mjzm00q3zfw3a7a7pivdnn47zxi0qrqlv47izhy6baqlrxp3mr"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")
@@ -7714,34 +7714,6 @@ countries: Denmark, France, Germany, Japan, Netherlands, Spain, Thailand, UK,
 USA, and Zimbabwe.  The value set and method for mapping are obtained from Van
 Hout et al (2012) <doi: 10.1016/j.jval.2012.02.008>.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-valse
-  (package
-    (name "r-valse")
-    (version "0.1-0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "valse" version))
-       (sha256
-        (base32 "0l3fdsgrmalifcxscjsxsfq07v8vipg0rdw6xh94q7xw5gdfsms0"))))
-    (properties `((upstream-name . "valse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-mass r-ggplot2 r-cowplot))
-    (home-page "https://git.auder.net/?p=valse.git")
-    (synopsis "Variable Selection with Mixture of Models")
-    (description
-     "Two methods are implemented to cluster data with finite mixture regression
-models.  Those procedures deal with high-dimensional covariates and responses
-through a variable selection procedure based on the Lasso estimator.  A low-rank
-constraint could be added, computed for the Lasso-Rank procedure.  A collection
-of models is constructed, varying the level of sparsity and the number of
-clusters, and a model is selected using a model selection criterion (slope
-heuristic, BIC or AIC).  Details of the procedure are provided in \"Model-based
-clustering for high-dimensional data.  Application to functional data\" by Emilie
-Devijver (2016) <@code{arXiv:1409.1333v2>}, published in Advances in Data
-Analysis and Clustering.")
-    (license license:expat)))
 
 (define-public r-valottery
   (package

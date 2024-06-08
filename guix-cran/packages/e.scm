@@ -1548,13 +1548,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "1x5h4ni0f583l2hhj5hq24x5i7wra1877z9zbl9kqs24wjfnabd3"))))
+        (base32 "0ays8gj7ba5rdih2hszgfz0asxsmx2jxna1cxv2ahni8rjr3h632"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16393,13 +16393,13 @@ lower bound calculation.")
 (define-public r-efa-dimensions
   (package
     (name "r-efa-dimensions")
-    (version "0.1.8.1")
+    (version "0.1.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFA.dimensions" version))
        (sha256
-        (base32 "0aprc5xzcl7p51qhkzcgh9yr0vb1270h5q9vdwmzlksx554cqcs9"))))
+        (base32 "0zc2zby69c70g6qkama27b9lnk5dbrrrpp5w5r2xxk2wfg1lx8nn"))))
     (properties `((upstream-name . "EFA.dimensions")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-polycor r-mirt r-gparotation r-efatools))
@@ -20934,13 +20934,13 @@ output SVG elements into a SVG file.")
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "08i53d65sdxv2cc43r47nxi8adzgls3vfgws29dfvlnv4nvj5f76"))))
+        (base32 "0rfqzi5s0xxz30nii2ahr4hrymmkcx4spla7sdklkidvvrsrmsvc"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-see

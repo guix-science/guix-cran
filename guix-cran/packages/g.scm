@@ -4428,22 +4428,25 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
 (define-public r-grim
   (package
     (name "r-grim")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRim" version))
        (sha256
-        (base32 "1iimjfqy2sdxxy2lvsaywxap8zik2qikjy2ib06mqjxrv711fx2a"))))
+        (base32 "183mxk1xain92b1gka8ag29w2amsydfq0b6yqk21pilhlh9kpy4r"))))
     (properties `((upstream-name . "gRim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-magrittr
+                             r-matrix
+                             r-mass
                              r-igraph
                              r-grbase
-                             r-grain))
+                             r-grain
+                             r-glue
+                             r-doby))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis "Graphical Interaction Models")
     (description
@@ -21732,13 +21735,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "1jz2bq8pwywrridjk8gg8755bk7y8mbd8l04b4py99bi8yv9rqsn"))))
+        (base32 "0v3mwngmsqqbjbg1hwl993263r98hb60b5slaa3mhcsbchyfhcwf"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -24540,6 +24543,43 @@ plots of alternatively spliced gene variants and the positions of mutations and
 other gene features.")
     (license license:gpl2)))
 
+(define-public r-genekitr
+  (package
+    (name "r-genekitr")
+    (version "1.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "genekitr" version))
+       (sha256
+        (base32 "0qymmprifw429542ns0dns801m3kvsskgddz2zvb8ny36sdrvrqm"))))
+    (properties `((upstream-name . "genekitr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-rlang
+                             r-openxlsx
+                             r-magrittr
+                             r-igraph
+                             r-ggvenn
+                             r-ggraph
+                             r-ggplot2
+                             r-geneset
+                             r-fst
+                             r-europepmc
+                             r-dplyr
+                             r-clusterprofiler))
+    (home-page "https://www.genekitr.fun/")
+    (synopsis "Gene Analysis Toolkit")
+    (description
+     "This package provides features for searching, converting, analyzing, plotting,
+and exporting data effortlessly by inputting feature IDs.  Enables easy
+retrieval of feature information, conversion of ID types, gene enrichment
+analysis, publication-level figures, group interaction plotting, and result
+export in one Excel file for seamless sharing and communication.")
+    (license license:gpl3)))
+
 (define-public r-genehummus
   (package
     (name "r-genehummus")
@@ -25537,13 +25577,13 @@ variance estimators for improving the finite small-sample performance.")
 (define-public r-geepack
   (package
     (name "r-geepack")
-    (version "1.3.10")
+    (version "1.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geepack" version))
        (sha256
-        (base32 "0hjz45ixpxv9x503mrr3jai9a0gi7sv28lh7i1j5xzcp6qxr4f2a"))))
+        (base32 "0y74allpn9bcc5hlqlr97qb9siig52qvaf1lyd4ffpg72k9z1qi9"))))
     (properties `((upstream-name . "geepack")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-magrittr r-broom))

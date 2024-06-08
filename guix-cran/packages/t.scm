@@ -1861,13 +1861,13 @@ given target value in smaller computation time than algorithm B.")
 (define-public r-ttservice
   (package
     (name "r-ttservice")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ttservice" version))
        (sha256
-        (base32 "1qqf6vrp9bx72wzy4z6js2svglix3xpn367k5rh4kqi7k860g8fp"))))
+        (base32 "1r0prv3p3xlcfn16bxjyvkr255rsaf5m26c394qxc78y6qf6wrbd"))))
     (properties `((upstream-name . "ttservice")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotly r-matrix r-dplyr))
@@ -6393,13 +6393,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.11.0")
+    (version "1.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "171bczn6zkpxl4q38cyhxrpjjky1s1lmn2whb3vqynvcb84r7j4h"))))
+        (base32 "067cxg655bkbcp5ngj3r1i6hs49j8ql1dh1dafzv3gjalx735iav"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -14147,13 +14147,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.27.0")
+    (version "0.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "1fiv5p2cyppy2z7l8nhswv8yfmyv2c4g6ihfa0cijyma9ylskrpy"))))
+        (base32 "1m4larx3d6si1283hza8pvf0z49rb7h2v3dv5bn9mm6cf82xm5fx"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -16479,6 +16479,36 @@ functions giving a tidier representation of the underlying data structures and
 functionality using a header-only implementation without additional
 dependencies.")
     (license license:gpl2+)))
+
+(define-public r-tidyconsultant
+  (package
+    (name "r-tidyconsultant")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TidyConsultant" version))
+       (sha256
+        (base32 "00gw5h3n04nnrkrqx981rksi4liydmljj4nnnjnnh2a7ra98pcln"))))
+    (properties `((upstream-name . "TidyConsultant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-validata
+                             r-tidybins
+                             r-presenter
+                             r-pacman
+                             r-framecleaner
+                             r-ckmeans-1d-dp
+                             r-badger
+                             r-autostats))
+    (native-inputs (list r-knitr))
+    (home-page "https://harrison4192.github.io/TidyConsultant/")
+    (synopsis "Tidy Consultant Universe")
+    (description
+     "Loads the 5 packages in the Tidy Consultant Universe.  This collection of
+packages is useful for anyone doing data science, data analysis, or quantitative
+consulting.  The functions in these packages range from data cleaning, data
+validation, data binning, statistical modeling, and file exporting.")
+    (license license:expat)))
 
 (define-public r-tidycomm
   (package
@@ -24072,6 +24102,27 @@ Reconnection (TBR) and Replug distances between unrooted trees, using the
 algorithms of Whidden and Matsen (2017) <arxiv:1511.07529>.")
     (license license:gpl3+)))
 
+(define-public r-tbox
+  (package
+    (name "r-tbox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TBox" version))
+       (sha256
+        (base32 "1iqn30nhr91k7pbbdg408rbc1mchq7d47bznnw6h504af43av5fv"))))
+    (properties `((upstream-name . "TBox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-clipr))
+    (home-page "https://cran.r-project.org/package=TBox")
+    (synopsis "Useful Functions for Programming and Generating Documents")
+    (description
+     "This package provides tools to help developers and producers manipulate R
+objects and outputs.  It includes tools for displaying results and objects, and
+for formatting them in the correct format.")
+    (license license:expat)))
+
 (define-public r-tboot
   (package
     (name "r-tboot")
@@ -26154,16 +26205,16 @@ compatible with the tidymodels ecosystem.")
 (define-public r-tablexlsx
   (package
     (name "r-tablexlsx")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tablexlsx" version))
        (sha256
-        (base32 "0rispm626s59g3irdkx8clmjlqsg1vdlyjkzx0z74m13nkgmfw82"))))
+        (base32 "11xnazwsmm3gwmwqnqjv2yc3bwcz5na168dkl8i2g7p983z4999p"))))
     (properties `((upstream-name . "tablexlsx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-openxlsx r-magrittr r-dplyr))
+    (propagated-inputs (list r-openxlsx r-magrittr r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://ddotta.github.io/tablexlsx/")
     (synopsis "Export Data Frames to Excel Workbook")

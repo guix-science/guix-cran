@@ -3629,13 +3629,13 @@ der Aalst, W. M. P. (2018) <doi:10.1007/978-3-319-98648-7_9>.")
 (define-public r-psm3mkv
   (package
     (name "r-psm3mkv")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psm3mkv" version))
        (sha256
-        (base32 "076svlwbcv0bsjf5zqanx0s8hjwa7xxwchhbyyidp8whdlr5gzy3"))))
+        (base32 "0fbqyqgmjzqncx68x1cydfa9cm5k00k57d7hbb0iffcq08c0ya36"))))
     (properties `((upstream-name . "psm3mkv")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3645,9 +3645,11 @@ der Aalst, W. M. P. (2018) <doi:10.1007/978-3-319-98648-7_9>.")
                              r-simplicialcubature
                              r-rlang
                              r-purrr
+                             r-pharmaverseadam
                              r-ggplot2
                              r-flexsurv
-                             r-dplyr))
+                             r-dplyr
+                             r-admiral))
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/psm3mkv/")
     (synopsis "Evaluate Partitioned Survival and State Transition Models")
@@ -3658,7 +3660,7 @@ survival data typically collected in oncology clinical trials.  These model
 structures are typically considered in cost-effectiveness modeling in
 advanced/metastatic cancer indications.  Muston (2024). \"Informing structural
 assumptions for three state oncology cost-effectiveness models through model
-efficiency and fit\".  Applied Health Economics and Health Policy.  In press.")
+efficiency and fit\".  Applied Health Economics and Health Policy.")
     (license license:gpl3+)))
 
 (define-public r-pslm2015
@@ -20003,13 +20005,13 @@ decent algorithm, together with the Bayesian information criterion (BIC).")
 (define-public r-pldamixture
   (package
     (name "r-pldamixture")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pldamixture" version))
        (sha256
-        (base32 "14jvlfpgw687g6746wkz6x3inqnmghjd692z5qddlxxw1fc9qp7j"))))
+        (base32 "0gqk17n8vrbfxzyqfmxyw53dh7dakcgyhgg27k5mcby6mkc42yhb"))))
     (properties `((upstream-name . "pldamixture")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -20020,8 +20022,8 @@ decent algorithm, together with the Bayesian information criterion (BIC).")
 containing mismatch errors.  Only the linked data file may be accessible and
 information about the record linkage process may be limited or unavailable.
 Implements the General Framework for Regression with Mismatched Data developed
-by Slawski et al. (2023) <@code{arXiv:2306.00909>}.  The framework uses a
-mixture model for pairs of linked records whose two components reflect
+by Slawski et al. (2023) <doi:10.48550/@code{arXiv.2306.00909>}.  The framework
+uses a mixture model for pairs of linked records whose two components reflect
 distributions conditional on match status, i.e., correct match or mismatch.
 Inference is based on composite likelihood and the Expectation-Maximization (EM)
 algorithm.  The package currently supports Cox Proportional Hazards Regression
@@ -25465,17 +25467,17 @@ used to interface Python from R.")
 (define-public r-pharmaversesdtm
   (package
     (name "r-pharmaversesdtm")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaversesdtm" version))
        (sha256
-        (base32 "1xbpvf3xf4n94q52makvrmfjgsqg8syx0rza0g93srqnsmrka7i1"))))
+        (base32 "0nd6v6lg8a05z83f1h2wqan5vq7p26hvkrjh36f6521aakw4if74"))))
     (properties `((upstream-name . "pharmaversesdtm")))
     (build-system r-build-system)
-    (home-page "https://pharmaverse.github.io/pharmaversesdtm/main/")
-    (synopsis "Test Data for the Pharmaverse Family of Packages")
+    (home-page "https://pharmaverse.github.io/pharmaversesdtm/")
+    (synopsis "SDTM Test Data for the 'Pharmaverse' Family of Packages")
     (description
      "This package provides a set of Study Data Tabulation Model (SDTM) datasets from
 the Clinical Data Interchange Standards Consortium (CDISC) pilot project used
@@ -34119,13 +34121,13 @@ another.")
 (define-public r-parcr
   (package
     (name "r-parcr")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parcr" version))
        (sha256
-        (base32 "10ww3m0nhs5lx4bf34iyb00w3pdik3z3lmp843lz87nqwnh5farc"))))
+        (base32 "0288l0jl246jp44zzi0avgz8yip23b64hg8pgnnadl7271xx0nvx"))))
     (properties `((upstream-name . "parcr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -35864,13 +35866,13 @@ pillar'.")
 (define-public r-paleots
   (package
     (name "r-paleots")
-    (version "0.5.3")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleoTS" version))
        (sha256
-        (base32 "1hpgyjnviw9gzy21rsa4vqkiyfpim5y70yrbjyq5z3ifanszggi5"))))
+        (base32 "0ni3rxhmd30gqm2hkq23qr106pkxr2rnl318lzgrh7hxk9nwpgnl"))))
     (properties `((upstream-name . "paleoTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-foreach r-doparallel))

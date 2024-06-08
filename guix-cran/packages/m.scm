@@ -1877,6 +1877,32 @@ with Hamiltonian Monte Carlo in the software Stan'.  References: Clark & Wells
 (2022) <doi:10.1111/2041-210X.13974>.")
     (license license:expat)))
 
+(define-public r-mvet
+  (package
+    (name "r-mvet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MVET" version))
+       (sha256
+        (base32 "0gmawz2vhyvbj5jg8s26cmf02dxyn6gqhvzik5g4kcwpfwkdfwfy"))))
+    (properties `((upstream-name . "MVET")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gridextra r-ggplot2))
+    (home-page "https://github.com/YeonSeok-Choi/MVET")
+    (synopsis "Multivariate Estimates and Tests")
+    (description
+     "Multivariate estimation and testing, currently a package for testing parametric
+data.  To deal with parametric data, various multivariate normality tests and
+outlier detection are performed and visualized using the ggplot2 package.
+Homogeneity tests for covariance matrices are also possible, as well as the
+Hotelling's T-square test and the multivariate analysis of variance test.  We
+are exploring additional tests and visualization techniques, such as profile
+analysis and randomized complete block design, to be made available in the
+future and making them easily accessible to users.")
+    (license license:expat)))
+
 (define-public r-mverse
   (package
     (name "r-mverse")
@@ -13859,13 +13885,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.13.3")
+    (version "3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1j1i9dyanv23szfsn0v1s4is2w5a5gvf9blg29q28ymn7v4xhig9"))))
+        (base32 "1c7kv3jn38kxxxgzmpanla5jnhadh3qzvjw8w5bivdmv1gda6yzj"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -17345,13 +17371,13 @@ transformation.")
 (define-public r-mlrintermbo
   (package
     (name "r-mlrintermbo")
-    (version "0.5.1")
+    (version "0.5.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlrintermbo" version))
        (sha256
-        (base32 "07blhklgm0skkibraryk06z1cq51jra902cgxnpcw28qjnjyf228"))))
+        (base32 "0hghnpsh6jm3vghn03v483cmqin2wxsvcahhzjg6x0wdszhmskhv"))))
     (properties `((upstream-name . "mlrintermbo")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -18901,6 +18927,33 @@ tasks.  It will contain datasets for supervised machine learning Jiang
 classification and regression.  The aim of this package is to use data generated
 around health and other domains.")
     (license license:expat)))
+
+(define-public r-mlcopula
+  (package
+    (name "r-mlcopula")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLCOPULA" version))
+       (sha256
+        (base32 "1addgypksr3hrhzrj9ypaa2w7vgscrqlrfkgx7n0rc7drm827wix"))))
+    (properties `((upstream-name . "MLCOPULA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsp
+                             r-pracma
+                             r-kde1d
+                             r-igraph
+                             r-gridcopula
+                             r-copula))
+    (home-page "https://cran.r-project.org/package=MLCOPULA")
+    (synopsis "Classification Models with Copula Functions")
+    (description
+     "This package provides several classifiers based on probabilistic models.  These
+classifiers allow to model the dependence structure of continuous features
+through bivariate copula functions and graphical models, see
+Salinas-@code{GutiÃ©rrez} et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
+    (license license:gpl3)))
 
 (define-public r-mlcm
   (package
@@ -22529,13 +22582,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0nl2jsr80f5dsh58b5kg01bplf6rqc861g93lwfsn5gz49a9i0fd"))))
+        (base32 "0nq3wrgizlii8a17i033glbl5ixgdwjxzpyi5yzf0icxbqaylm5w"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22543,12 +22596,12 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
-     "Lightweight parallel code execution and distributed computing.  Designed for
-simplicity, a mirai evaluates an R expression asynchronously, on local or
-network resources, resolving automatically upon completion.  State of the art
-networking and concurrency via nanonext and NNG (Nanomsg Next Gen) offers
-reliable and efficient scheduling over fast inter-process communications or
-TCP/IP secured by TLS.")
+     "High performance parallel code execution and distributed computing.  Designed
+for simplicity, a mirai evaluates an R expression asynchronously, on local or
+network resources, resolving automatically upon completion.  Modern networking
+and concurrency built on nanonext and NNG (Nanomsg Next Gen) ensures reliable
+and efficient scheduling, over fast inter-process communications or TCP/IP
+secured by TLS.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -23949,13 +24002,13 @@ principal components.  The method is described in Nassiri et al. (2018)
 (define-public r-miesmuschel
   (package
     (name "r-miesmuschel")
-    (version "0.0.4")
+    (version "0.0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miesmuschel" version))
        (sha256
-        (base32 "0pq5bqghq49pdna9pb0yrpnjf40zjky5gs8m987csw7c3qnc6d8n"))))
+        (base32 "1n2svgi926m8i8d1yzj4dyy1nhxr8m46qp3fpi2kjnprxs303rnd"))))
     (properties `((upstream-name . "miesmuschel")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -29593,6 +29646,31 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-metahd
+  (package
+    (name "r-metahd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MetaHD" version))
+       (sha256
+        (base32 "0qgzipw3gfhm22x70z83zinp7zr5xbyyw502j6p3r31r4k2glkp9"))))
+    (properties `((upstream-name . "MetaHD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixcalc r-matrix
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=MetaHD")
+    (synopsis "Multivariate Meta-Analysis Model for Metabolomics Data")
+    (description
+     "This package performs multivariate meta-analysis for high-dimensional
+metabolomics data for integrating and collectively analysing individual-level
+metabolomics data generated from multiple studies as well as for combining
+summary estimates.  This approach accounts for correlation between metabolites,
+considers variability within and between studies, handles missing values and
+uses shrinkage estimation to allow for high dimensionality.")
+    (license license:gpl3)))
+
 (define-public r-metaggr
   (package
     (name "r-metaggr")
@@ -31847,6 +31925,30 @@ using selected marker subsets, to output the Mega2R data as a VCF file and
 related files (for phenotype and family data), and to convert the data frames
 into @code{CoreArray} Genomic Data Structure (GDS) format.")
     (license license:gpl2)))
+
+(define-public r-mefm
+  (package
+    (name "r-mefm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MEFM" version))
+       (sha256
+        (base32 "0gp2z9wwvpwm44lan13fr7j73zkn31clphkizwj8r40yynnavygy"))))
+    (properties `((upstream-name . "MEFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tensormiss))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MEFM")
+    (synopsis "Perform MEFM Estimation on Matrix Time Series")
+    (description
+     "To perform main effect matrix factor model (MEFM) estimation for a given matrix
+time series as described in Lam and Cen (2024)
+<doi:10.48550/@code{arXiv.2406.00128>}.  Estimation of traditional matrix factor
+models is also supported.  Supplementary functions for testing MEFM over factor
+models are included.")
+    (license license:gpl3)))
 
 (define-public r-mefdind
   (package

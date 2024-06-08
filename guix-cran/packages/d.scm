@@ -474,6 +474,41 @@ conjunction with @code{mlrMBO}'.")
 the dependent variables.")
     (license license:gpl3)))
 
+(define-public r-dynnom
+  (package
+    (name "r-dynnom")
+    (version "5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DynNom" version))
+       (sha256
+        (base32 "0nc1dw5ihqm819na1dd85v4wlpidvp5yk50rrsyp0labm8nkh0qv"))))
+    (properties `((upstream-name . "DynNom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stargazer
+                             r-shiny
+                             r-rms
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-compare
+                             r-broom
+                             r-bbmisc))
+    (home-page "https://cran.r-project.org/package=DynNom")
+    (synopsis "Visualising Statistical Models using Dynamic Nomograms")
+    (description
+     "Demonstrate the results of a statistical model object as a dynamic nomogram in
+an RStudio panel or web browser.  The package provides two generics functions:
+@code{DynNom}, which display statistical model objects as a dynamic nomogram;
+DNbuilder, which builds required scripts to publish a dynamic nomogram on a web
+server such as the <https://www.shinyapps.io/>.  Current version of
+@code{DynNom} supports stats::lm, stats::glm, survival::coxph, rms::ols,
+rms::Glm, rms::lrm, rms::cph, and mgcv::gam model objects.")
+    (license license:gpl2)))
+
 (define-public r-dynmix
   (package
     (name "r-dynmix")
@@ -3031,13 +3066,13 @@ density) and random generation for discrete stable random variables.")
 (define-public r-dst
   (package
     (name "r-dst")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dst" version))
        (sha256
-        (base32 "08fx02aijjzf4jwddsir2lid4d87wpdr4dhw3ndhr9l92qwcq81g"))))
+        (base32 "1l3bc2pn092wawf11dmjyv67c280c4p9j3maillc10mpaxav5k99"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-matrix r-ggplot2 r-dplyr))
@@ -5526,13 +5561,13 @@ Publication: Kapsner et al. (2021) <doi:10.1055/s-0041-1733847>.")
 (define-public r-dqagui
   (package
     (name "r-dqagui")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DQAgui" version))
        (sha256
-        (base32 "1wizx8wdqkl5vzk0bmmgzcbih0flp8bvdgy252ybfi5m8x3xczvr"))))
+        (base32 "05qik0zm7ghrn75msrkfi20lxdk9bqjvwwf765ajpfaph5wmmxk5"))))
     (properties `((upstream-name . "DQAgui")))
     (build-system r-build-system)
     (propagated-inputs (list r-waiter
@@ -6496,6 +6531,35 @@ Sun for doubly interval-censored left-truncated failure time data [Victor De
 Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 <doi:10.2307/2533008>].")
     (license license:gpl2)))
+
+(define-public r-dotwhisker
+  (package
+    (name "r-dotwhisker")
+    (version "0.8.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dotwhisker" version))
+       (sha256
+        (base32 "1hry5c2w6y5h0il5plj2mp3gmlzjq0cw6klbmlh0ka56nv9b9bcg"))))
+    (properties `((upstream-name . "dotwhisker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-performance
+                             r-patchwork
+                             r-parameters
+                             r-gtable
+                             r-gridextra
+                             r-ggstance
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://fsolt.org/dotwhisker/")
+    (synopsis "Dot-and-Whisker Plots of Regression Results")
+    (description "Quick and easy dot-and-whisker plots of regression results.")
+    (license license:expat)))
 
 (define-public r-dotsviolin
   (package
@@ -13022,13 +13086,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "079xhss2mrixgrjacp18bd2kygvh1jgvm38qps6khsg7j7k0d0dr"))))
+        (base32 "0xrlik2f08j76q542dgzwi597qavync7qnv2nzlk2blgcgd9i8g0"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))

@@ -481,17 +481,18 @@ modular functions and modular curves.")
 (define-public r-cyclops
   (package
     (name "r-cyclops")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cyclops" version))
        (sha256
-        (base32 "0rys8fcz96zy0kx2b3k0j48nj0ysr6pcvya9grb8c3wj9s12m752"))))
+        (base32 "1zz6jgzsjswzafya43fabqcgfhwn65sk8lx023hhn33vw844sv5p"))))
     (properties `((upstream-name . "Cyclops")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-rlang
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-matrix
@@ -6321,13 +6322,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "00qz7f4rk5955vlyjfyxl8v22rr64acvm4cn7bfavzpnlry78559"))))
+        (base32 "18pmsrgpc9yy3zwhdfcks5863r2cz756vrblls9s1j7pvsl4jszm"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr))
@@ -13488,13 +13489,13 @@ the Earth including buildings, infrastructure and vegetation.")
 (define-public r-copent
   (package
     (name "r-copent")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copent" version))
        (sha256
-        (base32 "1v9kv6aw9q43y7mzsmklq0m76sykfs162hwy204k2xcpmnazgdkm"))))
+        (base32 "0ymjpwqbdfbyrvszi5avpbx086i4lwrxgxysr0rlnh2wfm849vsj"))))
     (properties `((upstream-name . "copent")))
     (build-system r-build-system)
     (home-page "https://github.com/majianthu/copent")
@@ -13504,10 +13505,13 @@ the Earth including buildings, infrastructure and vegetation.")
 the statistics for multivariate normality test and two-sample test are
 implemented.  The methods for estimating transfer entropy and the statistics for
 multivariate normality test and two-sample test are based on the method for
-estimating copula entropy.  Please refer to Ma and Sun (2011)
-<doi:10.1016/S1007-0214(11)70008-6>, Ma (2019) <@code{arXiv:1910.04375>}, Ma
-(2022) <@code{arXiv:2206.05956>}, and Ma (2023) <@code{arXiv:2307.07247>} for
-more information.")
+estimating copula entropy.  The method for change point detection with copula
+entropy based two-sample test is also implemented.  Please refer to Ma and Sun
+(2011) <doi:10.1016/S1007-0214(11)70008-6>, Ma (2019)
+<doi:10.48550/@code{arXiv.1910.04375>}, Ma (2022)
+<doi:10.48550/@code{arXiv.2206.05956>}, Ma (2023)
+<doi:10.48550/@code{arXiv.2307.07247>}, and Ma (2024)
+<doi:10.48550/@code{arXiv.2403.07892>} for more information.")
     (license license:gpl2+)))
 
 (define-public r-cope
@@ -15381,34 +15385,30 @@ connectedness papers.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.1.3.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "00fxy94a0nyw608b1cklh603zql027wqaarxmxwy5f1l7arnwd4s"))))
+        (base32 "0k3z30kgz8yl07kxfbqy1w8bdr0viyglibxv6y36f46q6nf1mf6a"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-uuid
                              r-tibble
                              r-rlang
                              r-r6
                              r-purrr
-                             r-progress
                              r-magrittr
                              r-lifecycle
                              r-jsonlite
                              r-httr
                              r-glue
                              r-fs
-                             r-dplyr
-                             r-config
                              r-bit64))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rstudio/connectapi")
+    (home-page "https://pkgs.rstudio.com/connectapi/")
     (synopsis "Utilities for Interacting with the 'Posit Connect' Server API")
     (description
      "This package provides a helpful R6 class and methods for interacting with the
@@ -16071,19 +16071,19 @@ of unbiased estimation of variances of U-statistics.")
 (define-public r-confintrob
   (package
     (name "r-confintrob")
-    (version "1.0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "confintROB" version))
        (sha256
-        (base32 "0f3rqlqd9l3llhykpbc6zpm3g3n1v45jddn7m342j24yajvd54ln"))))
+        (base32 "13fbq4zxs90sy49c55b9i2i8yq3g3p4p45cx30rs7yrb3610zkfb"))))
     (properties `((upstream-name . "confintROB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-mvtnorm r-mass r-lme4 r-foreach))
     (home-page "https://cran.r-project.org/package=confintROB")
     (synopsis
-     "Bootstrap Confidence Intervals for Robust and Classical Linear Mixed Model Estimators")
+     "Confidence Intervals for Robust and Classical Linear Mixed Model Estimators")
     (description
      "The main function calculates confidence intervals (CI) for Mixed Models,
 utilizing both classical estimators from the lmer() function in the lme4 package
@@ -16092,9 +16092,8 @@ well as the @code{varComprob}() function in the @code{robustvarComp} package.
 Three methods are available: the classical Wald method, the wild bootstrap, and
 the parametric bootstrap.  Bootstrap methods offer flexibility in obtaining
 lower and upper bounds through percentile or BCa methods.  More details are
-given in \\n Mason, F., Cantoni, E., & Ghisletta, P. (2021)
-<doi:10.5964/meth.6607> and \\n Mason, F., Cantoni, E., & Ghisletta, P. (2024)
-<doi:10.1037/met0000643>.")
+given in Mason, F., Cantoni, E., & Ghisletta, P. (2021) <doi:10.5964/meth.6607>
+and Mason, F., Cantoni, E., & Ghisletta, P. (2024) <doi:10.1037/met0000643>.")
     (license license:gpl2)))
 
 (define-public r-confinterpret
@@ -23045,13 +23044,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.5.6")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "1368152mlj2kv3py45bggm5dpi6hhi9rx5db7rfim6wy88qgqxz4"))))
+        (base32 "1g0h4c8xba7i0fv5azdhx0c403w9ccs3hyarsr2qxnw64f05yazh"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixstats r-matrix r-car))
@@ -24598,6 +24597,34 @@ credibility of cluster assignments.  See the vignette for details.")
 soft spatial/geographical constraints.")
     (license license:gpl2+)))
 
+(define-public r-clustervar
+  (package
+    (name "r-clustervar")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClusterVAR" version))
+       (sha256
+        (base32 "03iwwy8ijz4rxsainlriy6g5mkn4wl7hwgk9mm0cwfxvai3r1n28"))))
+    (properties `((upstream-name . "ClusterVAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-parabar
+                             r-mvtnorm
+                             r-mass
+                             r-iterators
+                             r-foreach
+                             r-fastdummies
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=ClusterVAR")
+    (synopsis "Fitting Latent Class Vector-Autoregressive (VAR) Models")
+    (description
+     "Estimates latent class vector-autoregressive models via EM algorithm on
+time-series data for model-based clustering and classification.  Includes model
+selection criteria for selecting the number of lags and clusters.")
+    (license license:gpl2)))
+
 (define-public r-clustertend
   (package
     (name "r-clustertend")
@@ -25650,13 +25677,13 @@ Its implementation in R is called @code{ClueR}.  See README on
 (define-public r-clubpro
   (package
     (name "r-clubpro")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clubpro" version))
        (sha256
-        (base32 "09zbvbhppikpkjizyrdwbywfzi5x6an06nn0apcyfrz8ww2i25wj"))))
+        (base32 "0p407zd2gr4yxxpa97c37yxrvdkid00qf1ird58yl44wrwszh90w"))))
     (properties `((upstream-name . "clubpro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-lattice))
@@ -33492,13 +33519,13 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "02xgrfzbw22lzsanb766lh9srwy1zf5dh62fj00lb7zhaw16q2sf"))))
+        (base32 "17qjjcyhfn2n9fkbc4dciscr35dnnvv15csh7yw738kzfvybvrvp"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-iso r-ggplot2 r-dplyr))
@@ -33513,18 +33540,19 @@ calibration-free odds (CFO) (Jin and Yin (2022)
 <doi:10.1177/09622802221079353>), two-dimensional CFO (2@code{dCFO}) (Wang et
 al. (2023) <doi:10.3389/fonc.2023.1294258>), time-to-event CFO (TITE-CFO) (Jin
 and Yin (2023) <doi:10.1002/pst.2304>), fractional CFO (@code{fCFO}),
-accumulative CFO (@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs.
-The âCFO package accommodates diverse CFO-type designs, allowing users to
-tailor the approach based on factors such as dose information inclusion,
-handling of late-onset toxicity, and the nature of the target drug (single-drug
-or drug-combination).  The functionalities embedded in CFO package include the
-determination of the dose level for the next cohort, the selection of the MTD
-for a real trial, and the execution of single or multiple simulations to obtain
-operating characteristics.  Moreover, these functions are equipped with early
-stopping and dose elimination rules to address safety considerations.  Users
-have the flexibility to choose different distributions, thresholds, and cohort
-sizes among others for their specific needs.  The output of the CFO package can
-be summary statistics as well as various plots for better visualization.")
+accumulative CFO (@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs
+(Fang and Yin (2024) <doi: 10.1002/sim.10127>).  The âCFO package accommodates
+diverse CFO-type designs, allowing users to tailor the approach based on factors
+such as dose information inclusion, handling of late-onset toxicity, and the
+nature of the target drug (single-drug or drug-combination).  The
+functionalities embedded in CFO package include the determination of the dose
+level for the next cohort, the selection of the MTD for a real trial, and the
+execution of single or multiple simulations to obtain operating characteristics.
+ Moreover, these functions are equipped with early stopping and dose elimination
+rules to address safety considerations.  Users have the flexibility to choose
+different distributions, thresholds, and cohort sizes among others for their
+specific needs.  The output of the CFO package can be summary statistics as well
+as various plots for better visualization.")
     (license license:gpl2)))
 
 (define-public r-cfmortality
@@ -37052,13 +37080,13 @@ statistics based on the variable types.")
 (define-public r-cba
   (package
     (name "r-cba")
-    (version "0.2-23")
+    (version "0.2-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cba" version))
        (sha256
-        (base32 "18al5kavn3q2h6gl4s1hgxhy9ysv9fq602ffmzla251g380b166n"))))
+        (base32 "0lhx813wpb544p9akaj89hmfx95ka46h6xykxly0dpf7ck00brsh"))))
     (properties `((upstream-name . "cba")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))

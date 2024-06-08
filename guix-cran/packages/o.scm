@@ -2816,13 +2816,13 @@ Technometrics paper.")
 (define-public r-ordinalpattern
   (package
     (name "r-ordinalpattern")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalpattern" version))
        (sha256
-        (base32 "1xxii1lxbkip778wj92kicj4xlpriqa47b258bvmng2s4djkmg0y"))))
+        (base32 "0d2vb73318agam3bmcva2mirwlskhfl66jzla36yihkb2r64cxgn"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))
@@ -6194,13 +6194,13 @@ API.")
 (define-public r-openaistream
   (package
     (name "r-openaistream")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openaistream" version))
        (sha256
-        (base32 "1wafn299pv6bwk3qbzvfqi0l3x8639dx3cgz99a8vkrv5n68y47c"))))
+        (base32 "0zihkpq6p7a3n0qdwpazds4qbpagk7zh6ziflm9194vbygyskv2z"))))
     (properties `((upstream-name . "openaistream")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-jsonlite r-iterators r-httr2 r-curl))

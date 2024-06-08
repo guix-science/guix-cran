@@ -9227,13 +9227,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "03mldl3w3917kv3bknd9dix156m6z5s500322035y0il9x7b4wp1"))))
+        (base32 "1dpfwf95sin8yn9mn60d9jappsq1spm02x4p0ikjj637qwisgpjs"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree
@@ -9513,6 +9513,34 @@ of sites [De Caceres & Legendre (2009) <doi:10.1890/08-1823.1>].  Also includes
 functions to measure species niche breadth using resource categories [De Caceres
 et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
     (license license:gpl2+)))
+
+(define-public r-indicator
+  (package
+    (name "r-indicator")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Indicator" version))
+       (sha256
+        (base32 "08d208nrhyp9ln076mzbri4ky4756761b9f5cby2kaapw0f9d310"))))
+    (properties `((upstream-name . "Indicator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-norm r-missmethods r-factominer))
+    (home-page "https://cran.r-project.org/package=Indicator")
+    (synopsis "Composite 'Indicator' Construction and Imputation Data")
+    (description
+     "Different functions includes constructing composite indicators, imputing missing
+data, and evaluating imputation techniques.  Additionally, different tools for
+data normalization.  Detailed methodologies of Indicator package are:
+OECD/European Union/EC-JRC (2008), Handbook on Constructing Composite
+Indicators: Methodology and User Guide', OECD Publishing, Paris,
+<DOI:10.1787/533411815016>, Matteo Mazziotta & Adriano Pareto, (2018) Measuring
+Well-Being Over Time: The Adjusted MazziottaâPareto Index Versus Other
+Non-compensatory Indices <DOI:10.1007/s11205-017-1577-5> and De Muro P.,
+Mazziotta M., Pareto A. (2011), Composite Indices of Development and Poverty: An
+Application to MDGs <DOI:10.1007/s11205-010-9727-z>.")
+    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-india
   (package
@@ -13331,6 +13359,26 @@ association data, especially with large controls re-sequenced data.")
      "Compute static, onestep and multistep time series forecasts for machine learning
 models.")
     (license license:gpl2+)))
+
+(define-public r-ifo
+  (package
+    (name "r-ifo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ifo" version))
+       (sha256
+        (base32 "0f2c7c6z1h7b5c0g21yr2drb7yqk68ivnxaa8m3ck2xlm226fa5g"))))
+    (properties `((upstream-name . "ifo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rvest r-readxl))
+    (home-page "https://m-muecke.github.io/ifo/")
+    (synopsis "Client for the Ifo Institute Time Series")
+    (description
+     "Download ifo business survey data and more time series from ifo institute
+<https://www.ifo.de/en/ifo-time-series>.")
+    (license license:expat)))
 
 (define-public r-ifmcdm
   (package

@@ -2752,13 +2752,13 @@ in a web browser.")
 (define-public r-svgtools
   (package
     (name "r-svgtools")
-    (version "1.1.0")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svgtools" version))
        (sha256
-        (base32 "1ipwj3qw8c62381b6yf5mazhg2a3ssddijqrq3bac57i8i6m8az1"))))
+        (base32 "0jp53x1nlclwsg5adyr1764car0z52rjq95ppijfkqi7yrbbi6ja"))))
     (properties `((upstream-name . "svgtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-rsvg r-magick))
@@ -4353,13 +4353,13 @@ the granting authority can be held responsible for them.")
 (define-public r-surveyexplorer
   (package
     (name "r-surveyexplorer")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveyexplorer" version))
        (sha256
-        (base32 "1kgnsz2lg0gf7fahby127i4pcav4cigq9qllmp8sk5x7zyrjgwmk"))))
+        (base32 "0znrisi4y2nkvxmqv6909mfz8cap9wmq32jafafnmihc99k7a6kq"))))
     (properties `((upstream-name . "surveyexplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8018,13 +8018,13 @@ Spanos, A. (2022) <doi:10.3390/econometrics10020017>.  Spanos, A. (1994)
 (define-public r-streetscape
   (package
     (name "r-streetscape")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streetscape" version))
        (sha256
-        (base32 "1z8mv35a16dmngydnm27bk3raa9zzm26f1k44bpk7h7bjnzyzcv9"))))
+        (base32 "0y06719766yh6ifbk1h7wgdsw3asnwagli50czwqyilcp8p0fc4z"))))
     (properties `((upstream-name . "streetscape")))
     (build-system r-build-system)
     (propagated-inputs (list r-superpixelimagesegmentation
@@ -30337,19 +30337,19 @@ Statistical Model to Assess Risk for Supporting COVID-19 Quarantine Decisions\"
 (define-public r-smicd
   (package
     (name "r-smicd")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smicd" version))
        (sha256
-        (base32 "070dbi637rk6c938fljmwfhz4lpc4n09gj8lkbvbvdsb7m8bjk73"))))
+        (base32 "1wkfv30hd71vvsla7diqdrb36dpfqw812h920ccycg5gikigi1mi"))))
     (properties `((upstream-name . "smicd")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
                              r-truncnorm
+                             r-nlme
                              r-mvtnorm
-                             r-mumin
                              r-lme4
                              r-laeken
                              r-ineq
@@ -48371,13 +48371,13 @@ presented in Pesigan and Cheung (2023) <doi:10.3758/s13428-023-02114-4>.")
 (define-public r-semlbci
   (package
     (name "r-semlbci")
-    (version "0.10.4")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semlbci" version))
        (sha256
-        (base32 "07qm89a0hcbp0w6mly6gs0212pczai22bfjy61c4b1q8i3a3bj8x"))))
+        (base32 "131nbwq8g0l2imbjv61l83c5avhwqndhdgwkaf0hj0h6a0qwvhqa"))))
     (properties `((upstream-name . "semlbci")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -48386,7 +48386,8 @@ presented in Pesigan and Cheung (2023) <doi:10.3758/s13428-023-02114-4>.")
                              r-mass
                              r-lavaan
                              r-ggrepel
-                             r-ggplot2))
+                             r-ggplot2
+                             r-callr))
     (native-inputs (list r-knitr))
     (home-page "https://sfcheung.github.io/semlbci/")
     (synopsis
@@ -54495,13 +54496,13 @@ expressed in each category.  See Zhang Z, et al (2019)
 (define-public r-scimo
   (package
     (name "r-scimo")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scimo" version))
        (sha256
-        (base32 "1qb1c1viwd81cn5fj43zpp2adcpq2r28wwfbhbrpag2br5v3asgg"))))
+        (base32 "1fvljxn6m01wv4hmljcrki2wzbc0nlr3zrbyw80jbzw3p55vqgls"))))
     (properties `((upstream-name . "scimo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -60520,13 +60521,13 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
 (define-public r-saeczi
   (package
     (name "r-saeczi")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeczi" version))
        (sha256
-        (base32 "1mir2qq7q4l4si8hl05rywikph8m69p5bckrg2cnkcz4qqzf35h9"))))
+        (base32 "02jsmmzaig5d8lr9avra3acy93klh7f88izxsf04gn0w855y37cv"))))
     (properties `((upstream-name . "saeczi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -60538,7 +60539,7 @@ MSE estimators are obtained using Jackknife method by Jiang et.  al. (2002)
                              r-future
                              r-furrr
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=saeczi")
+    (home-page "https://harvard-ufds.github.io/saeczi/")
     (synopsis "Small Area Estimation for Continuous Zero Inflated Data")
     (description
      "This package provides functionality to fit a zero-inflated estimator for small

@@ -431,13 +431,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.23")
+    (version "0.9.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "1qjmsi2y2wa0yj0zh36hbfa2939q2865s670vnn9p2nd8iz8wyl5"))))
+        (base32 "0i4z0pyykvp0kxv5xg2id9p3829wxivvn5lgqickb2xql4rrggp6"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2983,15 +2983,16 @@ use.  It also provides a number of utility functions such as BIC calculations.")
 (define-public r-lotterybr
   (package
     (name "r-lotterybr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lotterybr" version))
        (sha256
-        (base32 "1jnhs9ssl695sdgl6ajmkv56856p8za7lqa9vjpdszb4c10jj8gp"))))
+        (base32 "1p0cv9g01l02917nndnw6f0wkms4kqpyiiddpjg251iy5j4qyl1k"))))
     (properties `((upstream-name . "lotterybr")))
     (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-plotly r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tomasbp2/lotterybr")
     (synopsis "Lottery Datasets from Caixa Economica Federal")
