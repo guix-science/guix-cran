@@ -3316,13 +3316,13 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
 (define-public r-khisr
   (package
     (name "r-khisr")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khisr" version))
        (sha256
-        (base32 "0arfv7yi1p599b9lqyn6pqf5w8b2nc3lxi989gsmssksfd4y5sh0"))))
+        (base32 "0xgdsr1gqdmssr0nc8z623zr7f2v46afnxj6qmklvi1p30hbfl6y"))))
     (properties `((upstream-name . "khisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -3331,19 +3331,22 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lubridate
+                             r-lifecycle
                              r-jsonlite
+                             r-janitor
                              r-httr2
                              r-dplyr
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://khisr.damurka.com")
-    (synopsis "Retrieve Data from Kenya Health Information System (KHIS)")
+    (synopsis "An R Client to Retrieve Data from DHIS2")
     (description
-     "Simplify data retrieval from Kenya's health system with a powerful interface for
-efficient data retrieval from the Kenya Health Information System (KHIS)
-<https://hiskenya.org>.  Empower researchers, analysts, and healthcare
-professionals to access critical health data efficiently.")
+     "This package provides a user-friendly interface for interacting with the
+District Health Information Software 2 (DHIS2) instance.  It streamlines data
+retrieval, empowering researchers, analysts, and healthcare professionals to
+obtain and utilize data efficiently.")
     (license license:expat)))
 
 (define-public r-kgschart

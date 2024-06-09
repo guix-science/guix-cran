@@ -1591,13 +1591,13 @@ in the near future.")
 (define-public r-lsm
   (package
     (name "r-lsm")
-    (version "0.2.1.2")
+    (version "0.2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsm" version))
        (sha256
-        (base32 "1sp6c3r3g0q9lynzpcjvfwrp7xml11q66cqcisjvidm79vxjgi5v"))))
+        (base32 "0dfjz547fkysghv5mb5xhc91aqijz7falir1rkwshib55bb3ijl7"))))
     (properties `((upstream-name . "lsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-dplyr))
@@ -4849,13 +4849,13 @@ possibilities.")
 (define-public r-loggit2
   (package
     (name "r-loggit2")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loggit2" version))
        (sha256
-        (base32 "0gh4l7i3gs0iz880r0jyhkdd8fzb8r8bp5xsxkydslgnvppjrr4i"))))
+        (base32 "06gvfh3jhgfiyxi950648ha123np77xqd2n2rh41pf1ipnhaxpca"))))
     (properties `((upstream-name . "loggit2")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

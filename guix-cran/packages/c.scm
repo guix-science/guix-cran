@@ -8116,13 +8116,13 @@ distribution from the original data.")
 (define-public r-cpmr
   (package
     (name "r-cpmr")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpmr" version))
        (sha256
-        (base32 "0s4c9466i14vv37vvmj1f6gf2n6i9ij8303xfvhc82dszmab219g"))))
+        (base32 "0hy6h32ga7gadc01z24a8ccld0bszzjw939gbhbqbmm672k728mc"))))
     (properties `((upstream-name . "cpmr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast))

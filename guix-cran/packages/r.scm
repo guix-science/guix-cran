@@ -12929,6 +12929,28 @@ the neos server.  ROI optimization problems can be directly be sent to the neos
 server and solution obtained in the typical ROI style.")
     (license license:gpl3)))
 
+(define-public r-roi-plugin-msbinlp
+  (package
+    (name "r-roi-plugin-msbinlp")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROI.plugin.msbinlp" version))
+       (sha256
+        (base32 "1nxjli87phi3cl101aaf8apib2crxbv1i0vlvq79difb8v7mjgya"))))
+    (properties `((upstream-name . "ROI.plugin.msbinlp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-slam r-roi))
+    (home-page "https://roigrp.gitlab.io")
+    (synopsis
+     "'Multi-Solution' Binary Linear Problem Plug-in for the 'R' Optimization Interface")
+    (description
+     "Enhances the R Optimization Infrastructure ('ROI') package with the possibility
+to obtain multiple solutions for linear problems with binary variables.  The
+main function is copied (with small modifications) from the relations package.")
+    (license license:gpl3)))
+
 (define-public r-roi-plugin-ipop
   (package
     (name "r-roi-plugin-ipop")

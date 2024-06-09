@@ -2086,13 +2086,13 @@ demand and consumer surplus of Word-of-Mouth-campaigns on mean-field networks.")
 (define-public r-wordnet
   (package
     (name "r-wordnet")
-    (version "0.1-16")
+    (version "0.1-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordnet" version))
        (sha256
-        (base32 "0biivpg3zkjr5ccjricsj9cw14a2a4n4cri6gcl9m1r9amhh54iv"))))
+        (base32 "1m08k2z7a1zf41n8gnffv6q3b3rgssw3smdwy7v9fjvngf04w7ax"))))
     (properties `((upstream-name . "wordnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjava))
@@ -2109,7 +2109,11 @@ that @code{WordNet(R}) is a registered tradename.  Princeton University makes
 provided the terms of their license
 (<https://wordnet.princeton.edu/license-and-commercial-use>) are followed, and
 proper reference is made to the project using an appropriate citation
-(<https://wordnet.princeton.edu/citing-wordnet>).")
+(<https://wordnet.princeton.edu/citing-wordnet>).  The @code{WordNet} database
+files need to be made available separately, either via package
+@code{wordnetDicts} from <https://datacube.wu.ac.at>, installing system packages
+where available, or direct download from
+<https://wordnetcode.princeton.edu/3.0/WNdb-3.0.tar.gz>.")
     (license license:expat)))
 
 (define-public r-wordlistsanalytics

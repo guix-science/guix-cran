@@ -27199,13 +27199,13 @@ outside of decennial census years.")
 (define-public r-badger
   (package
     (name "r-badger")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "badger" version))
        (sha256
-        (base32 "0j7x6r5bv4ccyxwxc4zmq86q7js694smip9vslnwfkfg9mjxiiwa"))))
+        (base32 "1d41xcynl2g63mb4qmhkj8hrs193fq7n0ymh6v2ygabn2n6029kc"))))
     (properties `((upstream-name . "badger")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis r-rvcheck r-dlstats r-desc))

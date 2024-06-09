@@ -36789,28 +36789,30 @@ Fisher's product method is included as well.")
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "0qkpkls49ssrr6yib9j1az5yi8amd6hg99bap6pcv99l088078l6"))))
+        (base32 "1dh3hdrr5dhs7azvcn1r6lgyy2sqkr0nfzkcf2sh0vm6zxz85ssy"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pbapply))
+    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-lifecycle
+                             r-ggplot2))
     (home-page "https://github.com/Paul-Haimerl/PAGFL")
     (synopsis
-     "Joint Estimation and Identification of Latent Groups in Panel Data Models")
+     "Joint Estimation of Latent Groups and Group-Specific Coefficients in Panel Data Models")
     (description
-     "In panel data analysis, unobservable group structures are a common challenge.
-Disregarding group-level heterogeneity by assuming an entirely homogeneous panel
-can introduce bias.  Conversely, estimating individual coefficients for each
-cross-sectional unit is inefficient and may lead to high uncertainty.  This
-package addresses this issue by implementing the pairwise adaptive group fused
-Lasso (PAGFL) by Mehrabani (2023) <doi:10.1016/j.jeconom.2022.12.002>.  PAGFL is
-an efficient methodology to identify latent group structures and estimate
-group-specific coefficients simultaneously.")
+     "Latent group structures are a common challenge in panel data analysis.
+Disregarding group-level heterogeneity can introduce bias.  Conversely,
+estimating individual coefficients for each cross-sectional unit is inefficient
+and may lead to high uncertainty.  This package addresses the issue of
+unobservable group structures by implementing the pairwise adaptive group fused
+Lasso (PAGFL) by Mehrabani (2023) <doi:10.1016/j.jeconom.2022.12.002>.  PAGFL
+identifies latent group structures and group-specific coefficients in a single
+step.  On top of that, we extend the PAGFL to time-varying coefficient
+functions.")
     (license license:agpl3+)))
 
 (define-public r-pageviews

@@ -14759,13 +14759,13 @@ checks, saving to PDF and PNG from a pipe and various small utilities.")
 (define-public r-tidyterra
   (package
     (name "r-tidyterra")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyterra" version))
        (sha256
-        (base32 "0y4i0d60r5ijqi7kricb0hh7map7c1vd0qw9anjzzpjb1glcdr97"))))
+        (base32 "1viqpi1gzgy6y2qhh7qbfp1yjvb9ycnz9a9am7jypmdqkl13g78m"))))
     (properties `((upstream-name . "tidyterra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
