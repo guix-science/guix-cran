@@ -5487,13 +5487,13 @@ Contrastive Pessimistic Likelihood estimation, S4VM and @code{WellSVM}.")
 (define-public r-rssimulx
   (package
     (name "r-rssimulx")
-    (version "2023.1")
+    (version "2024.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RsSimulx" version))
        (sha256
-        (base32 "0j48d94r68lzjpkak67q455q09ivp9fnkcsbqh8qziikzglf2ac5"))))
+        (base32 "1y0vzzn6a5z8379q807lpv4dsmnrqng5llk7zkwy5n7p06xvly7i"))))
     (properties `((upstream-name . "RsSimulx")))
     (build-system r-build-system)
     (inputs (list))
@@ -6243,13 +6243,13 @@ et al (1977) <doi:10.4141/cjas77-001> in dairy.")
 (define-public r-rsmlx
   (package
     (name "r-rsmlx")
-    (version "2023.1.5")
+    (version "2024.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsmlx" version))
        (sha256
-        (base32 "1fb4dqnrbdvqbsfk2hnkfwdaiprpyj39kwxz49ywj7h9k4g9lgcw"))))
+        (base32 "1y4pgyk0njvlgbxm0hncxjjkrfb1b10c5k7hdy4zmryz3421677j"))))
     (properties `((upstream-name . "Rsmlx")))
     (build-system r-build-system)
     (inputs (list))
@@ -6366,17 +6366,18 @@ Simonsohn (2015) <doi:10.1177/0956797614567341>.")
 (define-public r-rsm
   (package
     (name "r-rsm")
-    (version "2.10.4")
+    (version "2.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsm" version))
        (sha256
-        (base32 "1bh2kp0j10zsrkhv9ylghbi9cyrj4q6crbngv9pk0kkby2r4am2h"))))
+        (base32 "064gsbaxg9s1f8aq7lb1s9kdd0s0qca95905i8zqbwvpaim1w6q0"))))
     (properties `((upstream-name . "rsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-estimability))
-    (home-page "https://cran.r-project.org/package=rsm")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rvlenth/rsm")
     (synopsis "Response-Surface Analysis")
     (description
      "This package provides functions to generate response-surface designs, fit first-
@@ -6572,6 +6573,35 @@ An overview of these models is given in Snijders (2017),
 <doi:10.1146/annurev-statistics-060116-054035>.")
     (license (list license:gpl2 license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-rsides
+  (package
+    (name "r-rsides")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsides" version))
+       (sha256
+        (base32 "08vwk7d7p6m38gmnbmx50kb44jhxdxvq6pbm6ym66ifhlxmbigr1"))))
+    (properties `((upstream-name . "rsides")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-survival
+                             r-rcppeigen
+                             r-rcpp
+                             r-officer
+                             r-foreach
+                             r-flextable
+                             r-dorng
+                             r-doparallel
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=rsides")
+    (synopsis "SIDES-Based Subgroup Search Algorithms")
+    (description
+     "R implementation of SIDES-based subgroup search algorithms (Lipkovich et al.
+(2017) <doi:10.1002/sim.7064>).")
+    (license license:gpl2+)))
 
 (define-public r-rsi
   (package
@@ -36878,18 +36908,18 @@ sparse linear discriminant analysis (see Pun and Hadimaja (2019)
 (define-public r-rdecision
   (package
     (name "r-rdecision")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdecision" version))
        (sha256
-        (base32 "0505xzmz8qsnchm51w2s39d9hs90cyzd8dzv0zgfh183n69lvmfz"))))
+        (base32 "1jd5hgcj9idqs81l8gb8hq57zxjpbziqyj1dj67kzls6mr1kjzil"))))
     (properties `((upstream-name . "rdecision")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rlang r-r6))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rdecision")
+    (home-page "https://github.com/ajsims1704/rdecision")
     (synopsis "Decision Analytic Modelling in Health Economics")
     (description
      "This package provides classes and functions for modelling health care

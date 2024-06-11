@@ -167,6 +167,38 @@ existing models (Li et al., 2015) <doi:10.1093/annonc/mdu565>, (Pandis et al.,
 risk prediction (refer to the URL for more details).")
     (license license:gpl3+)))
 
+(define-public r-gwzinbr
+  (package
+    (name "r-gwzinbr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gwzinbr" version))
+       (sha256
+        (base32 "17i6y4zqr4p6zrp77pjhnpdq8wrannklc4ybmsbh8vmsq26in7d2"))))
+    (properties `((upstream-name . "gwzinbr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp))
+    (home-page "https://cran.r-project.org/package=gwzinbr")
+    (synopsis
+     "Geographically Weighted Zero Inflated Negative Binomial Regression")
+    (description
+     "Fits a geographically weighted regression model using zero inflated probability
+distributions.  Has the zero inflated negative binomial distribution (zinb) as
+default, but also accepts the zero inflated Poisson (zip), negative binomial
+(negbin) and Poisson distributions.  Can also fit the global versions of each
+regression model.  Da Silva, A. R. & De Sousa, M. D. R. (2023). \"Geographically
+weighted zero-inflated negative binomial regression: A general case for count
+data\", Spatial Statistics <doi:10.1016/j.spasta.2023.100790>.  Brunsdon, C.,
+Fotheringham, A. S., & Charlton, M. E. (1996). \"Geographically weighted
+regression: a method for exploring spatial nonstationarity\", Geographical
+Analysis, <doi:10.1111/j.1538-4632.1996.tb00936.x>.  Yau, K. K. W., Wang, K., &
+Lee, A. H. (2003). \"Zero-inflated negative binomial mixed regression modeling of
+over-dispersed count data with extra zeros\", Biometrical Journal,
+<doi:10.1002/bimj.200390024>.")
+    (license license:gpl3)))
+
 (define-public r-gwsignif
   (package
     (name "r-gwsignif")
@@ -544,23 +576,26 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
 (define-public r-gwid
   (package
     (name "r-gwid")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwid" version))
        (sha256
-        (base32 "13r286v6ckp64y36x8av8rlsvwh6ynzvi378l9xxxxfzc26w3zij"))))
+        (base32 "1qkj6773ywm3mxry9d9yzf2m52dcmjg5h5031h48x6gpg4qjf1k2"))))
     (properties `((upstream-name . "gwid")))
     (build-system r-build-system)
     (propagated-inputs (list r-snprelate
+                             r-shiny
                              r-rcpproll
                              r-plotly
                              r-piggyback
                              r-matrix
+                             r-lattice
                              r-ggplot2
                              r-gdsfmt
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/soroushmdg/gwid")
     (synopsis "Genome-Wide Identity-by-Descent")
     (description
@@ -4428,13 +4463,13 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
 (define-public r-grim
   (package
     (name "r-grim")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRim" version))
        (sha256
-        (base32 "183mxk1xain92b1gka8ag29w2amsydfq0b6yqk21pilhlh9kpy4r"))))
+        (base32 "1injdhl0xgx9702k4jxdy0wpkf2d4k31m9fi5g9sf572i288lrns"))))
     (properties `((upstream-name . "gRim")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -10286,6 +10321,41 @@ Meitz, Pentti Saikkonen (2016) <doi:10.1016/j.jeconom.2016.02.012>, Savi
 Virolainen (forthcoming) <doi:10.1080/07350015.2024.2322090>, Savi Virolainen
 (2022) <@code{arXiv:2109.13648>}.")
     (license license:gpl3)))
+
+(define-public r-gmtfd
+  (package
+    (name "r-gmtfd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmtFD" version))
+       (sha256
+        (base32 "0qayzxy2aqikndcmk25m26cjxdqf62d4pdk9aiclhw4acvq9awvz"))))
+    (properties `((upstream-name . "gmtFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-matrix
+                             r-mass
+                             r-gfdmcv
+                             r-foreach
+                             r-fda
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=gmtFD")
+    (synopsis
+     "General Multiple Tests for Univariate and Multivariate Functional Data")
+    (description
+     "The multiple contrast tests for univariate were proposed by Munko, Ditzhaus,
+Pauly, Smaga, and Zhang (2023) <doi:10.48550/@code{arXiv.2306.15259>}.
+Recently, they were extended to the multivariate functional data in Munko,
+Ditzhaus, Pauly, and Smaga (2024) <doi:10.48550/@code{arXiv.2406.01242>}.  These
+procedures enable us to evaluate the overall hypothesis regarding equality, as
+well as specific hypotheses defined by contrasts.  In particular, we can perform
+post hoc tests to examine particular comparisons of interest.  Different
+experimental designs are supported, e.g., one-way and multi-way analysis of
+variance for functional data.")
+    (license (list license:lgpl2.0 license:lgpl3 license:gpl2 license:gpl3))))
 
 (define-public r-gmt
   (package
@@ -18104,13 +18174,13 @@ the exact pixel dimensions needed.")
 (define-public r-ggfoundry
   (package
     (name "r-ggfoundry")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfoundry" version))
        (sha256
-        (base32 "1wc96nqgag67xf77f3s7kvb23928apixmx6vr3aai2f91w42sc5p"))))
+        (base32 "06nc6866lzb417z2bdcjy2qv799bfgkbkalgrsvx5nc1ggq2vpxf"))))
     (properties `((upstream-name . "ggfoundry")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-grimport2 r-ggplot2))
@@ -22580,6 +22650,28 @@ dimensions from layers of geographic information related to each other.  It
 makes it easy to define relationships between layers and obtain the necessary
 data from them.")
     (license license:expat)))
+
+(define-public r-geodata
+  (package
+    (name "r-geodata")
+    (version "0.6-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geodata" version))
+       (sha256
+        (base32 "0yiir9dslk6l60zf40kbvycd2x755whpp07is5bah1wa1wwgxwn5"))))
+    (properties `((upstream-name . "geodata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (home-page "https://cran.r-project.org/package=geodata")
+    (synopsis "Download Geographic Data")
+    (description
+     "This package provides functions for downloading of geographic data for use in
+spatial analysis and mapping.  The package facilitates access to climate, crops,
+elevation, land use, soil, species occurrence, accessibility, administrative
+boundaries and other data.")
+    (license license:gpl3+)))
 
 (define-public r-geodadata
   (package
@@ -27711,13 +27803,13 @@ Existence in the journal Ecology and Evolution.")
 (define-public r-gaupro
   (package
     (name "r-gaupro")
-    (version "0.2.11")
+    (version "0.2.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GauPro" version))
        (sha256
-        (base32 "011dw5fcpws0w05iyz5m1zfj1mj3ha1jnnky3pbi0d0n5jmx1h1h"))))
+        (base32 "03v4bhm5c32gql2s0ysxd4r12yjv28ar7nmap55rc38kj66pgzwx"))))
     (properties `((upstream-name . "GauPro")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))

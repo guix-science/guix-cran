@@ -4120,6 +4120,35 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 <doi:10.1145/1143844.1143955>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-qlcdata
+  (package
+    (name "r-qlcdata")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qlcData" version))
+       (sha256
+        (base32 "0zwmp5567v7mzjki8sf0xc7vzzyb3bfsnmr2liak5j2a7dsp81hb"))))
+    (properties `((upstream-name . "qlcData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-stringi
+                             r-shiny
+                             r-phytools
+                             r-docopt
+                             r-data-tree
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=qlcData")
+    (synopsis "Processing Data for Quantitative Language Comparison")
+    (description
+     "Functionality to read, recode, and transcode data as used in quantitative
+language comparison, specifically to deal with multilingual orthographic
+variation (Moran & Cysouw (2018) <doi:10.5281/zenodo.1296780>) and with the
+recoding of nominal data.")
+    (license license:gpl3)))
+
 (define-public r-qlcal
   (package
     (name "r-qlcal")

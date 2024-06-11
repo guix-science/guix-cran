@@ -10894,16 +10894,16 @@ in: Lorenz R., Stephan H.B., HÃ¶ner zu Siederdissen C. et al. (2011)
 (define-public r-disprofas
   (package
     (name "r-disprofas")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disprofas" version))
        (sha256
-        (base32 "16gbd9algrs6pqid8k96p9r9pzfy337jv506alnajvwirs59sldd"))))
+        (base32 "16d0r94lj2bxp1dpizp5grjcbh627v5qqwj5iw8j4k345m784pcl"))))
     (properties `((upstream-name . "disprofas")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-boot))
+    (propagated-inputs (list r-rlang r-lifecycle r-ggplot2 r-boot))
     (home-page "https://github.com/piusdahinden/disprofas")
     (synopsis "Non-Parametric Dissolution Profile Analysis")
     (description
@@ -15977,13 +15977,13 @@ Riviere Marie-Karelle et al. (2016) <doi:10.1177/0962280216631763>.")
 (define-public r-dfms
   (package
     (name "r-dfms")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfms" version))
        (sha256
-        (base32 "10vxjcwznxlrl73jdpmnw9ihjxlg7az96s11qadxyxh3v7gs85q2"))))
+        (base32 "0p3fbvmrdrsiz3dy23i5fjldc7l5hwfh7v73sg8dkhvxxnn1ciw4"))))
     (properties `((upstream-name . "dfms")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-collapse))

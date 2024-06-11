@@ -40144,13 +40144,13 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "15ww2b9n3vd41dm6iz13ir2z477smabyc7417rvbnjr09jr7h37w"))))
+        (base32 "144i03v3sjq1fsywhc2dgkm7p5gg019gvd5milga6hiirnhm3k5d"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-giscor r-countrycode))

@@ -10073,6 +10073,28 @@ prediction, as well as methods for model evaluation.")
 the most common first named based on U.S. Social Security Administration data.")
     (license license:expat)))
 
+(define-public r-predictorselect
+  (package
+    (name "r-predictorselect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PredictorSelect" version))
+       (sha256
+        (base32 "1iibvh9fifjg962hirwnnmksc81yjpv5jb13yjhb4sjpi7fd6482"))))
+    (properties `((upstream-name . "PredictorSelect")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PredictorSelect")
+    (synopsis
+     "Out-of-Sample Predictability in Predictive Regressions with Many Predictor Candidates")
+    (description
+     "Consider a linear predictive regression setting with a potentially large set of
+candidate predictors.  This work is concerned with detecting the presence of out
+of sample predictability based on out of sample mean squared error comparisons
+given in Gonzalo and Pitarakis (2023) <doi:10.1016/j.ijforecast.2023.10.005>.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-predictor
   (package
     (name "r-predictor")
@@ -35480,13 +35502,13 @@ visualization.")
 (define-public r-pammisc
   (package
     (name "r-pammisc")
-    (version "1.12.0")
+    (version "1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMmisc" version))
        (sha256
-        (base32 "0zzcppiw4rs7ibaf4wybdhwxnfmbpqrnnyffrz5nf6sqzn2hm28g"))))
+        (base32 "0xv4bm1gzvhybgaww24nikwcbn8wq8299gbr1n831gscnzablzp3"))))
     (properties `((upstream-name . "PAMmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

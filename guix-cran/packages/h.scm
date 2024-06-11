@@ -9558,20 +9558,20 @@ Sophie DABO-NIANG and Michael GENIN (2023) <doi:10.1093/jrsssc/qlad017>.")
 (define-public r-hdsinrdata
   (package
     (name "r-hdsinrdata")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDSinRdata" version))
        (sha256
-        (base32 "0svaly9wjym3bfdg19fjrwya73rnn5lfanx12lziq84f5ms3j4f3"))))
+        (base32 "1wkhy6xf5ahj12sg9s32k53j7z2zpqj7rq0ficngdbyfzs2y6w48"))))
     (properties `((upstream-name . "HDSinRdata")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HDSinRdata")
     (synopsis
      "Data for the 'Mastering Health Data Science Using R' Online Textbook")
     (description
-     "This package contains nine datasets used in the chapters and exercises of Paul,
+     "This package contains ten datasets used in the chapters and exercises of Paul,
 Alice (2023) \"Health Data Science in R\"
 <https://alicepaul.github.io/health-data-science-using-r/>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
@@ -12228,13 +12228,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "0kb09bl8x3jqhr99j454q00d4cwnih49gpqbjydb2wk2vxzvq4gj"))))
+        (base32 "02048r88ic9rgr47zd0a76yb2rfrnjjwnhccfjkwkbmp2mca8z3q"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

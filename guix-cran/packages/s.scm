@@ -20070,13 +20070,13 @@ G., & Xie, Y. (2020) <doi:10.1016/j.jspi.2020.07.001>.")
 (define-public r-spgwr
   (package
     (name "r-spgwr")
-    (version "0.6-36")
+    (version "0.6-37")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spgwr" version))
        (sha256
-        (base32 "1fkz37zwmarcsl101z172kiar48zyi6s216lhc8zc39g4kqpj99a"))))
+        (base32 "1lxl4byihwih0iban0ypsh7p7vzbprjzl4xv62181dbsjm5xhmyk"))))
     (properties `((upstream-name . "spgwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdata r-sp))
@@ -22752,13 +22752,13 @@ is linked to a regressive relationship underlying the spatial process.")
 (define-public r-spatialreg
   (package
     (name "r-spatialreg")
-    (version "1.3-3")
+    (version "1.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialreg" version))
        (sha256
-        (base32 "01jidx2p31zr81qd9r0hfn5ciw6jbip4pxm1vv74y20adp4bqr50"))))
+        (base32 "0sgvcqswfpa9aq1x2ir1d5vg52gny1r1l15g66nk0113vvbrz982"))))
     (properties `((upstream-name . "spatialreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -23102,16 +23102,16 @@ provided in the function sl2sg().")
 (define-public r-spatialgev
   (package
     (name "r-spatialgev")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialGEV" version))
        (sha256
-        (base32 "0g4v84a4c14a2vf7y055j9jgcki7q4182lmmmphrahiqwnjxhm1b"))))
+        (base32 "1wk55vllcsqclzb9cb81pf28gkwxpql8kycyxry6b2ic6c32xgp4"))))
     (properties `((upstream-name . "SpatialGEV")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tmb r-mvtnorm r-evd))
+    (propagated-inputs (list r-tmb r-rcppeigen r-mvtnorm r-matrix r-evd))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=SpatialGEV")
     (synopsis "Fit Spatial Generalized Extreme Value Models")
@@ -23127,7 +23127,7 @@ dataset without having to write the models in TMB by themselves.  This package
 also offers methods to sample from both fixed and random effects posteriors as
 well as the posterior predictive distributions at different spatial locations.
 Methods for fitting this class of models are described in Chen, Ramezan, and
-Lysy (2021) <@code{arXiv:2110.07051>}.")
+Lysy (2024) <doi:10.48550/@code{arXiv.2110.07051>}.")
     (license license:gpl3)))
 
 (define-public r-spatialfdar
@@ -25263,13 +25263,13 @@ the millions range.  Geocoding via Cadastral web site.")
 (define-public r-spamm
   (package
     (name "r-spamm")
-    (version "4.4.16")
+    (version "4.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaMM" version))
        (sha256
-        (base32 "11drqd7fxby8s6dk13v94aqbhi2sj40qcjsmr7r7g0c95m8fsxj4"))))
+        (base32 "1nr44jg73gnbc3q1ip7zmzl1n5bggbcgjrdlh6fg81zp41ba3ydv"))))
     (properties `((upstream-name . "spaMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-roi
@@ -30337,18 +30337,17 @@ Statistical Model to Assess Risk for Supporting COVID-19 Quarantine Decisions\"
 (define-public r-smicd
   (package
     (name "r-smicd")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smicd" version))
        (sha256
-        (base32 "1wkfv30hd71vvsla7diqdrb36dpfqw812h920ccycg5gikigi1mi"))))
+        (base32 "0lcdclp2bxs5g47a49xhwqgsl15czg2pym0d6z287wj4ccpxihxh"))))
     (properties `((upstream-name . "smicd")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
                              r-truncnorm
-                             r-nlme
                              r-mvtnorm
                              r-lme4
                              r-laeken
@@ -34510,15 +34509,16 @@ IBGE. More information can be obtained from the official website
 (define-public r-sinrelef-ld
   (package
     (name "r-sinrelef-ld")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SINRELEF.LD" version))
        (sha256
-        (base32 "1gb6wsl0fnpzngn5f3197wa401lhk39b90vx2vldqn3bsf944b0q"))))
+        (base32 "15y8a56y3kjjxri1jjzb7wxpbs25bcxjnrzpabgj8rbrp3a4ghsq"))))
     (properties `((upstream-name . "SINRELEF.LD")))
     (build-system r-build-system)
+    (propagated-inputs (list r-shinyjs r-shinycssloaders r-shiny))
     (home-page "https://psico.fcep.urv.cat/utilitats/SINRELEF-LD/")
     (synopsis
      "Reliability and Relative Efficiency in Locally-Dependent Measures")
@@ -57058,13 +57058,13 @@ Sequential Analysis, 40(3), 291-313. <doi:10.1080/07474946.2021.1940491>.")
 (define-public r-savvyr
   (package
     (name "r-savvyr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "savvyr" version))
        (sha256
-        (base32 "01wl5a0s223rwqdysknjqzaiahzpi4mkgfhz3c8sy8ck0k32wbgf"))))
+        (base32 "08lrhb4nc0hcbqjdv1ar31l80gbfgxjivpc5k0farcldksybxjsg"))))
     (properties `((upstream-name . "savvyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-etm r-checkmate))
@@ -60030,13 +60030,13 @@ evaluation of Small Area estimators.")
 (define-public r-saetrafo
   (package
     (name "r-saetrafo")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeTrafo" version))
        (sha256
-        (base32 "0gx7g5f2xcbdlhscpnbgz3jqkr6ypsnjfgqqybz4kcqgrsxjhgky"))))
+        (base32 "1sqmymazs3g1xlqvphbwmpvl5yhkmbmpcyc1mxqdxaj3yap44qwr"))))
     (properties `((upstream-name . "saeTrafo")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -60047,7 +60047,6 @@ evaluation of Small Area estimators.")
                              r-parallelmap
                              r-openxlsx
                              r-nlme
-                             r-mumin
                              r-moments
                              r-hlmdiag
                              r-gridextra

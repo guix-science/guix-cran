@@ -694,6 +694,31 @@ R Markdown documents.")
 full-texts delivered by Data for Research by JSTOR.")
     (license license:gpl3)))
 
+(define-public r-jstager
+  (package
+    (name "r-jstager")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jstager" version))
+       (sha256
+        (base32 "14n4j8imka9rrnxidvsh3rax4qqbg2ccnj6pwcwgqyw897fimjkv"))))
+    (properties `((upstream-name . "jstager")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-rvest
+                             r-openxlsx
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/takeshinishimura/jstager")
+    (synopsis "Retrieve Information Published on J-STAGE")
+    (description
+     "This package provides tools to access the J-STAGE @code{WebAPI} and retrieve
+information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.")
+    (license license:expat)))
+
 (define-public r-jstable
   (package
     (name "r-jstable")

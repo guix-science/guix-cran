@@ -12927,6 +12927,26 @@ the three approaches can be applied to both binary and continuous phenotypes.")
 standard spherical harmonic representation of the Earth's main field.")
     (license license:agpl3)))
 
+(define-public r-igraphwalshdata
+  (package
+    (name "r-igraphwalshdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igraphwalshdata" version))
+       (sha256
+        (base32 "06d0z8vbmnxqvinicr9ywdkyisl3kg93wyh3981b1ifl16fm8rdd"))))
+    (properties `((upstream-name . "igraphwalshdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (home-page "https://github.com/benyamindsmith/igraphwalshdata")
+    (synopsis "'igraph' Datasets from Melanie Walsh")
+    (description
+     "Interesting igraph datasets from Melanie Walsh's sample social network datasets
+repository <https://github.com/melaniewalsh/sample-social-network-datasets>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-igraphtosonia
   (package
     (name "r-igraphtosonia")
@@ -15357,6 +15377,44 @@ resolutions.  Both the primary triangular and their inverted penta-hexagonal
 grids can be calculated.  Additional functions are provided that allow plotting
 of the grids and associated data, the interaction of the grids with other raster
 and vector objects, and treating the grids as a graphs.")
+    (license license:gpl3)))
+
+(define-public r-icompelm
+  (package
+    (name "r-icompelm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ICompELM" version))
+       (sha256
+        (base32 "1wah28d92cwgcwpm3gcjhw8d84s81r1bjkh41kdi9741dn79f33r"))))
+    (properties `((upstream-name . "ICompELM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsutils r-ica))
+    (home-page "https://cran.r-project.org/package=ICompELM")
+    (synopsis "Independent Component Analysis Based Extreme Learning Machine")
+    (description
+     "Single Layer Feed-forward Neural networks (SLFNs) have many applications in
+various fields of statistical modelling, especially for time-series forecasting.
+ However, there are some major disadvantages of training such networks via the
+widely accepted gradient-based backpropagation algorithm, such as convergence to
+local minima, dependencies on learning rate and large training time.  These
+concerns were addressed by Huang et al. (2006)
+<doi:10.1016/j.neucom.2005.12.126>, wherein they introduced the Extreme Learning
+Machine (ELM), an extremely fast learning algorithm for SLFNs which randomly
+chooses the weights connecting input and hidden nodes and analytically
+determines the output weights of SLFNs.  It shows good generalized performance,
+but is still subject to a high degree of randomness.  To mitigate this issue,
+this package uses a dimensionality reduction technique given in Hyvarinen (1999)
+<doi:10.1109/72.761722>, namely, the Independent Component Analysis (ICA) to
+determine the input-hidden connections and thus, remove any sort of randomness
+from the algorithm.  This leads to a robust, fast and stable ELM model.  Using
+functions within this package, the proposed model can also be compared with an
+existing alternative based on the Principal Component Analysis (PCA) algorithm
+given by Pearson (1901) <doi:10.1080/14786440109462720>, i.e., the PCA based ELM
+model given by Castano et al. (2013) <doi:10.1007/s11063-012-9253-x>, from which
+the implemented ICA based algorithm is greatly inspired.")
     (license license:gpl3)))
 
 (define-public r-icods

@@ -5675,16 +5675,16 @@ the induced seismicity; the parametrization has been changed; Chiodi, Adelfio
 (define-public r-etasbootstrap
   (package
     (name "r-etasbootstrap")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETASbootstrap" version))
        (sha256
-        (base32 "0fianmqnbrscrkbqqg3lw53j0cczygrb3mhy80zcnsr0rmk02zj2"))))
+        (base32 "1d0vdd3ldp2w6p15b8jj74l3fd28sjrcxhq1w4zdqh6r38m0cshg"))))
     (properties `((upstream-name . "ETASbootstrap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-etas))
+    (propagated-inputs (list r-spatstat-geom r-mass r-etas))
     (home-page "https://cran.r-project.org/package=ETASbootstrap")
     (synopsis
      "Bootstrap Confidence Interval Estimation for 'ETAS' Model Parameters")
@@ -5696,9 +5696,13 @@ matrix derived from the log-likelihood function of the fitted model.  However,
 when an ETAS model is fitted to a local data set over a time period that is
 limited or short, the standard errors based on the Hessian matrix may be
 inaccurate.  It follows that the asymptotic confidence intervals for parameters
-may not always be reliable.  As an alternative, this package allows the building
-of bootstrap confidence intervals based on empirical quantiles for the
-parameters of the 2-D spatial and temporal ETAS model.")
+may not always be reliable.  As an alternative, this package allows for the
+construction of bootstrap confidence intervals based on empirical quantiles for
+the parameters of the 2-D spatial and temporal ETAS model.  This version
+improves on Version 0.1.0 of the package by enabling the study space window
+(renamed study region') to be polygonal rather than merely rectangular.  A Japan
+earthquake data catalog is used in a second example to illustrate this new
+feature.")
     (license license:expat)))
 
 (define-public r-etas
@@ -6393,13 +6397,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.7.0")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "1axyrm881c4gifglf8yya1wr032n7ik59ga97la4xhiqp8m2li4s"))))
+        (base32 "08pjzi992apgkxiwv88m0gq7i156lqz5vmlkm5lfcx8w3bjj0j3d"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium

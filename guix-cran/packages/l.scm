@@ -12549,18 +12549,18 @@ leaflet package.")
 (define-public r-leaflet-extras
   (package
     (name "r-leaflet-extras")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras" version))
        (sha256
-        (base32 "0li7651cwlz7sg04xdrmvhkrf0n6amaydck7gqz0wkb6wq8hcyzw"))))
+        (base32 "0bhqid6sqgfmk8ipjy34h54la0mbx02169rc7l3h3fkqs8ffpw0c"))))
     (properties `((upstream-name . "leaflet.extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-leaflet r-htmlwidgets
                              r-htmltools))
-    (home-page "https://github.com/bhaskarvk/leaflet.extras")
+    (home-page "https://github.com/trafficonese/leaflet.extras")
     (synopsis "Extra Functionality for 'leaflet' Package")
     (description
      "The leaflet @code{JavaScript} library provides many plugins some of which are
@@ -16116,6 +16116,36 @@ modelling for multivariate normally distributed data (mlnormal(); Longford,
 maximum likelihood estimation (pmle(); Cole, Chu & Greenland, 2014;
 <doi:10.1093/aje/kwt245>).")
     (license license:gpl2+)))
+
+(define-public r-lakhesis
+  (package
+    (name "r-lakhesis")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lakhesis" version))
+       (sha256
+        (base32 "0jbzzpvqid3samq90m3d8p0ac2cfh1qaqiglr19xpzlif63sl34y"))))
+    (properties `((upstream-name . "lakhesis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-readr
+                             r-rdpack
+                             r-ggplot2
+                             r-ca
+                             r-bslib))
+    (home-page "https://cran.r-project.org/package=lakhesis")
+    (synopsis "Consensus Seriation for Binary Data")
+    (description
+     "Determining consensus seriations for binary incidence matrices, using a two-step
+process of Procrustes-fit correspondence analysis for heuristic selection of
+partial seriations and iterative regression to establish a single consensus.
+Contains the Lakhesis Calculator, a graphical platform for identifying seriated
+sequences.  Collins-Elliott (2024)
+<https://volweb.utk.edu/~scolli46/@code{sceLakhesis.pdf>}.")
+    (license license:gpl3+)))
 
 (define-public r-laketemps
   (package

@@ -778,16 +778,17 @@ Heterogeneous Outcomes.  Obenchain and Young (2013)
 (define-public r-ntss
   (package
     (name "r-ntss")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NTSS" version))
        (sha256
-        (base32 "1i3y3psr17p8p7s799sdki3pndb82pydl2g3dcz18snynjpmd31j"))))
+        (base32 "18j7q5976ij0sn05j7s1k6rz7m8vi5lq7qx72cz9m8lj2f5l8apc"))))
     (properties `((upstream-name . "NTSS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-spatstat-univar
+                             r-spatstat-random
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatstat-explore
@@ -802,8 +803,8 @@ Heterogeneous Outcomes.  Obenchain and Young (2013)
 fields, point processes) based on random shifts with torus or variance
 correction.  See @code{MrkviÄka} et al. (2021)
 <doi:10.1016/j.spasta.2020.100430>, @code{DvoÅÃ¡k} et al. (2022)
-<doi:10.1111/insr.12503>, @code{DvoÅÃ¡k} and @code{MrkviÄka} (2022)
-<arxiv:2210.05424>.")
+<doi:10.1111/insr.12503>, @code{DvoÅÃ¡k} and @code{MrkviÄka} (2024)
+<doi:10.1080/10618600.2024.2357626>.")
     (license license:gpl3)))
 
 (define-public r-ntsdists
@@ -5337,16 +5338,16 @@ version can only impute for a situation with one missing covariate.")
 (define-public r-nnlib2rcpp
   (package
     (name "r-nnlib2rcpp")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nnlib2Rcpp" version))
        (sha256
-        (base32 "15rc10ii4d866idjz9szvgmz2p09dbah6khz8mvkngjcc37vhy51"))))
+        (base32 "06fb4wh39gdlywpyj86hnys87mrwrx2m6dw16zkrs1kawg4z5gvm"))))
     (properties `((upstream-name . "nnlib2Rcpp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcpp r-class))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/VNNikolaidis/nnlib2Rcpp")
     (synopsis
@@ -7974,13 +7975,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "16f1ljp6kiirc8kihib4d076k7czjhlh4bavrlhi1nllaf6q5p8b"))))
+        (base32 "16mq49fynkq3ki7g4dv5cxc493gi1sh728jaslzxzh1124n645f4"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-pracma r-numderiv r-igraph r-coda))
@@ -13656,6 +13657,31 @@ printed header output or to navigate nested lists of raw metadata.")
      "This package provides tools to create time series and geometry @code{NetCDF}
 files.")
     (license license:cc0)))
+
+(define-public r-ncdfcf
+  (package
+    (name "r-ncdfcf")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ncdfCF" version))
+       (sha256
+        (base32 "1q6q36zml4lm3yznsb245ll80a1mdgykmrk6chq0ymn64azbd73l"))))
+    (properties `((upstream-name . "ncdfCF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rnetcdf r-cftime))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ncdfCF")
+    (synopsis "Easy Access to NetCDF Files with CF Metadata Conventions")
+    (description
+     "Network Common Data Form (@code{NetCDF}) files are widely used for scientific
+data.  Library-level access in R is provided through packages R@code{NetCDF} and
+ncdf4'.  Package @code{ncdfCF} is built on top of R@code{NetCDF} and makes the
+data and its attributes available as a set of S4 classes that are informed by
+the Climate and Forecasting Metadata Conventions.  Access to the data uses
+standard R subsetting operators and common function forms.")
+    (license license:expat)))
 
 (define-public r-ncdf4-helpers
   (package

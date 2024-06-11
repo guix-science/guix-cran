@@ -2294,13 +2294,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "03i2qiwrj33nssgpmjgzkd99q59w4d13h97pjj8ry2vl3rknzvz9"))))
+        (base32 "1drdx59pzm8fwmp1hjliq21ba16jahlx5f0ban5qgig0xni3vz8y"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4511,6 +4511,28 @@ for a detailed documentation.")
     (description
      "Providing data to quickly visualize and analyze data from several
 cryptocurrencies.")
+    (license license:expat)))
+
+(define-public r-cryptotrackr
+  (package
+    (name "r-cryptotrackr")
+    (version "1.3.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cryptotrackr" version))
+       (sha256
+        (base32 "0lgz0z0qrbqrvf4hg3dk9rm6i9fxi7pvijsf3ic1f5i6fyf9c0xz"))))
+    (properties `((upstream-name . "cryptotrackr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-openssl r-jsonlite r-httr r-digest))
+    (home-page "https://cran.r-project.org/package=cryptotrackr")
+    (synopsis "An Interface to Crypto Data Sources")
+    (description
+     "Allows you to connect to data sources across the crypto ecosystem.  This data
+can enable a range of activity such as portfolio tracking, programmatic trading,
+or industry analysis.  The package is described in French (2024)
+<https://github.com/@code{TrevorFrench/cryptotrackr/wiki>}.")
     (license license:expat)))
 
 (define-public r-cryptorng
@@ -19481,29 +19503,6 @@ either 0 or strictly positive.  Another constraint is that the sum of the beta
 coefficients equals a constant.  References: Hansen, B. E. (2022).
 Econometrics, Princeton University Press. <ISBN:9780691235899>.")
     (license license:gpl2+)))
-
-(define-public r-colp
-  (package
-    (name "r-colp")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "COLP" version))
-       (sha256
-        (base32 "0259s058rn7fyprma5frx7sdjv4qk9hxijpi9xh7qyz5jzzsi660"))))
-    (properties `((upstream-name . "COLP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-combinat))
-    (home-page "https://github.com/nySTAT/COLP")
-    (synopsis "Causal Discovery for Categorical Data with Label Permutation")
-    (description
-     "Discover causality for bivariate categorical data.  This package aims to enable
-users to discover causality for bivariate observational categorical data.  See
-Ni, Y. (2022) <@code{arXiv:2209.08579>} \"Bivariate Causal Discovery for
-Categorical Data via Classification with Optimal Label Permutation.  Advances in
-Neural Information Processing Systems 35 (in press)\".")
-    (license license:expat)))
 
 (define-public r-colourvision
   (package
@@ -38727,6 +38726,41 @@ association-based scagnostics described by Leland Wilkinson and Graham Wills
 (2008) <doi:10.1198/106186008X320465> and association-based scagnostics
 described by Katrin Grimm (2016,ISBN:978-3-8439-3092-5) can be computed.
 Summary and plotting functions are provided.")
+    (license license:gpl3)))
+
+(define-public r-cassandra
+  (package
+    (name "r-cassandra")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cassandRa" version))
+       (sha256
+        (base32 "19ar7yyigxgn05f9a594b161znjvdczn7gzlajjjc3dq1ccxw84b"))))
+    (properties `((upstream-name . "cassandRa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-rlang
+                             r-reshape2
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-boot
+                             r-bipartite))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cassandRa")
+    (synopsis
+     "Finds Missing Links and Metric Confidence Intervals in Ecological Bipartite Networks")
+    (description
+     "This package provides methods to deal with under sampling in ecological
+bipartite networks from Terry and Lewis (2020) Ecology <doi:10.1002/ecy.3047>
+Includes tools to fit a variety of statistical network models and sample
+coverage estimators to highlight most likely missing links.  Also includes
+simple functions to resample from observed networks to generate confidence
+intervals for common ecological network metrics.")
     (license license:gpl3)))
 
 (define-public r-casmi

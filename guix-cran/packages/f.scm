@@ -22405,13 +22405,13 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
 (define-public r-faasr
   (package
     (name "r-faasr")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FaaSr" version))
        (sha256
-        (base32 "10pi8aa1k64dvbly5686rhks50z626fl473492qk25i6c1ahdfv9"))))
+        (base32 "093m5mrxckgl1g3ipab4v77g4129pmb5z9z1fbk2kj9jsb8gznlk"))))
     (properties `((upstream-name . "FaaSr")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
@@ -22424,7 +22424,8 @@ regression coefficients by Hoff and Yu <DOI:10.1214/18-EJS1517>.")
                              r-jsonlite
                              r-httr
                              r-cli
-                             r-base64enc))
+                             r-base64enc
+                             r-askpass))
     (home-page "https://github.com/FaaSr/FaaSr-package")
     (synopsis "FaaS (Function as a Service) Package")
     (description

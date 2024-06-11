@@ -1650,33 +1650,6 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 <doi:10.1111/j.1541-0420.2011.01599.x>.")
     (license license:gpl2+)))
 
-(define-public r-btllasso
-  (package
-    (name "r-btllasso")
-    (version "0.1-13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BTLLasso" version))
-       (sha256
-        (base32 "19r45qm1iq3sjb6r5ficgv8q9zwpbilxwrf6rxvqdl333xcnnjy4"))))
-    (properties `((upstream-name . "BTLLasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-psychotools
-                             r-matrix))
-    (home-page "https://cran.r-project.org/package=BTLLasso")
-    (synopsis "Modelling Heterogeneity in Paired Comparison Data")
-    (description
-     "This package performs BTLLasso as described by Schauberger and Tutz (2019)
-<doi:10.18637/jss.v088.i09> and Schauberger and Tutz (2017)
-<doi:10.1177/1471082X17693086>.  BTLLasso is a method to include different types
-of variables in paired comparison models and, therefore, to allow for
-heterogeneity between subjects.  Variables can be subject-specific,
-object-specific and subject-object-specific and can have an influence on the
-attractiveness/strength of the objects.  Suitable L1 penalty terms are used to
-cluster certain effects and to reduce the complexity of the models.")
-    (license license:gpl2+)))
-
 (define-public r-btergm
   (package
     (name "r-btergm")
@@ -9773,13 +9746,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-4")
+    (version "0.5-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blavaan" version))
        (sha256
-        (base32 "0g03v2n630dawl8qm9i4q7sgqc4p23cwsd67d45wn70rrc275kqb"))))
+        (base32 "0v8b6dax5wk3y3hnih0yfsg7cvdwqv9pxs2hd54yi8hmkmgbrlx8"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -9944,6 +9917,39 @@ Laplace-P-spline methodology can also be implemented for inference in
 (generalized) additive models (Gressani, O. and Lambert, P. (2021)
 <doi:10.1016/j.csda.2020.107088>).  See the associated website for more
 information and examples.")
+    (license license:gpl3)))
+
+(define-public r-blandr
+  (package
+    (name "r-blandr")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "blandr" version))
+       (sha256
+        (base32 "1ckbdgyqxgycd99r0bbyw38cw6k4sq1nhi5xcc0rblck5h8hzn2i"))))
+    (properties `((upstream-name . "blandr")))
+    (build-system r-build-system)
+    (inputs (list pandoc))
+    (propagated-inputs (list r-stringr
+                             r-rmarkdown
+                             r-markdown
+                             r-knitr
+                             r-jmvcore
+                             r-glue
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/deepankardatta/blandr/")
+    (synopsis "Bland-Altman Method Comparison")
+    (description
+     "Carries out Bland Altman analyses (also known as a Tukey mean-difference plot)
+as described by JM Bland and DG Altman in 1986
+<doi:10.1016/S0140-6736(86)90837-8>.  This package was created in 2015 as
+existing Bland-Altman analysis functions did not calculate confidence intervals.
+ This package was created to rectify this, and create reproducible plots.  This
+package is also available as a module for the jamovi statistical spreadsheet
+(see <https://www.jamovi.org> for more information).")
     (license license:gpl3)))
 
 (define-public r-blandaltmanleh
@@ -12026,13 +12032,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "0przs4wi8idnscpqgr31i70scs672w9g5alqgh2r3lyrszpzy35z"))))
+        (base32 "1nr8vb5vw5r91vp700c2p4bqx99gp9xb9ch00fwad8rhv0h1yy4x"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -20063,6 +20069,35 @@ provided by Bakshi, Cao and Chen (1997)
 volatility, stochastic interest and random jumps.  Please cite their work if
 this package is used.")
     (license license:gpl2+)))
+
+(define-public r-bcc
+  (package
+    (name "r-bcc")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bcc" version))
+       (sha256
+        (base32 "1wvly81rg5ximrsp01jpl8rn6rkickzfaq3ybp1i8bbcyvdj1d7d"))))
+    (properties `((upstream-name . "bcc")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=bcc")
+    (synopsis "Beta Control Charts")
+    (description
+     "Applies Beta Control Charts to defined values.  The Beta Chart presents control
+limits based on the Beta probability distribution, making it suitable for
+monitoring fraction data from a Binomial distribution as a replacement for
+p-Charts.  The Beta Chart has been applied in three real studies and compared
+with control limits from three different schemes.  The comparative analysis
+showed that: (i) the Beta approximation to the Binomial distribution is more
+appropriate for values confined within the [0, 1] interval; and (ii) the
+proposed charts are more sensitive to the average run length (ARL) in both
+in-control and out-of-control process monitoring.  Overall, the Beta Charts
+outperform the Shewhart control charts in monitoring fraction data.  For more
+details, see Ãngelo MÃ¡rcio Oliveira SantâAnna and Carla Schwengber ten Caten
+(2012) <doi:10.1016/j.eswa.2012.02.146>.")
+    (license license:gpl3)))
 
 (define-public r-bcbcsf
   (package

@@ -2728,13 +2728,13 @@ earth tides.")
 (define-public r-kit
   (package
     (name "r-kit")
-    (version "0.0.17")
+    (version "0.0.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kit" version))
        (sha256
-        (base32 "1xwbjv987q9n07i3qnq8hass2fqkrimfi3rspl7q2jhxii27a4kp"))))
+        (base32 "0iv1bnh9gcxdxm4ydgsgsgrhygy7km94y3azk4q4xmg6s362q7hq"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kit")
@@ -3316,13 +3316,13 @@ KHQ5D scores; and also calculates the utility index of the KHQ5D.")
 (define-public r-khisr
   (package
     (name "r-khisr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khisr" version))
        (sha256
-        (base32 "0xgdsr1gqdmssr0nc8z623zr7f2v46afnxj6qmklvi1p30hbfl6y"))))
+        (base32 "00myg7anp5c85bnxamwp59q0f2rgj9fqmsnzcj3ijbrqs1fdz1s3"))))
     (properties `((upstream-name . "khisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

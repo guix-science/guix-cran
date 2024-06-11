@@ -5835,6 +5835,29 @@ performance without return to baseline).")
     (description "Adaptive Rejection Sampling, Original version.")
     (license license:gpl2+)))
 
+(define-public r-arrowheadr
+  (package
+    (name "r-arrowheadr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arrowheadr" version))
+       (sha256
+        (base32 "19xya0p6nnw62s43cvv6bcjdm1nffil37192g586jxnkqwlw23bj"))))
+    (properties `((upstream-name . "arrowheadr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr r-bezier))
+    (home-page "https://github.com/wjschne/arrowheadr")
+    (synopsis "Make Custom Arrowheads")
+    (description
+     "The ggarrow package is a ggplot2 extension that plots a variety of different
+arrow segments with many options to customize.  The arrowheadr package makes it
+easy to create custom arrowheads and fins within the parameters that ggarrow
+functions expect.  It has preset arrowheads and a collection of functions to
+create and transform data for customizing arrows.")
+    (license license:cc0)))
+
 (define-public r-arrayhelpers
   (package
     (name "r-arrayhelpers")
