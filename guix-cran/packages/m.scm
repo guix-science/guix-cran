@@ -4129,6 +4129,56 @@ number of cells.  Journal of Statistical Software 5(6) (2000).  Paper and code
 available at <DOI:10.18637/jss.v005.i06>.")
     (license license:lgpl3+)))
 
+(define-public r-multinma
+  (package
+    (name "r-multinma")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multinma" version))
+       (sha256
+        (base32 "0p0bw7kz1i7bnmwzyzn7gbblpq05rf2axcklppj9h072ysh1x7mn"))))
+    (properties `((upstream-name . "multinma")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncdist
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-stringr
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rdpack
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-randtoolbox
+                             r-purrr
+                             r-matrix
+                             r-igraph
+                             r-glue
+                             r-ggraph
+                             r-ggplot2
+                             r-ggdist
+                             r-forcats
+                             r-dplyr
+                             r-copula
+                             r-bh
+                             r-bayesplot))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://dmphillippo.github.io/multinma/")
+    (synopsis
+     "Bayesian Network Meta-Analysis of Individual and Aggregate Data")
+    (description
+     "Network meta-analysis and network meta-regression models for aggregate data,
+individual patient data, and mixtures of both individual and aggregate data
+using multilevel network meta-regression as described by Phillippo et al. (2020)
+<doi:10.1111/rssa.12579>.  Models are estimated in a Bayesian framework using
+Stan'.")
+    (license license:gpl3)))
+
 (define-public r-multinets
   (package
     (name "r-multinets")
@@ -4558,6 +4608,48 @@ simulations by Falk, Vogel, Hammami, and @code{MioÄeviÄ} (2024)
 comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
     (license license:gpl3)))
+
+(define-public r-multilevelcoda
+  (package
+    (name "r-multilevelcoda")
+    (version "1.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multilevelcoda" version))
+       (sha256
+        (base32 "1hmnapmcaa1m56afvx3ylikii462fhq8qy64xs0a8gpkg9d5ir0v"))))
+    (properties `((upstream-name . "multilevelcoda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinystan
+                             r-shiny
+                             r-plotly
+                             r-loo
+                             r-insight
+                             r-hrbrthemes
+                             r-ggplot2
+                             r-future
+                             r-foreach
+                             r-extraoperators
+                             r-dt
+                             r-dofuture
+                             r-data-table
+                             r-compositions
+                             r-bslib
+                             r-brms
+                             r-bayestestr
+                             r-bayesplot
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://florale.github.io/multilevelcoda/")
+    (synopsis "Estimate Bayesian Multilevel Models for Compositional Data")
+    (description
+     "Implement Bayesian Multilevel Modelling for compositional data in a multilevel
+framework.  Compute multilevel compositional data and Isometric log ratio (ILR)
+at between and within-person levels, fit Bayesian multilevel models for
+compositional predictors and outcomes, and run post-hoc analyses such as
+isotemporal substitution models.")
+    (license license:gpl3+)))
 
 (define-public r-multilevel
   (package
@@ -14760,13 +14852,13 @@ using the method presented in Wu, Cheung, and Leung (2020)
 (define-public r-modelbased
   (package
     (name "r-modelbased")
-    (version "0.8.7")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbased" version))
        (sha256
-        (base32 "0xzayaxqlmzgpsc80gabmhwy1mv1cdn1zp9mkq9bmcgh6p3635vw"))))
+        (base32 "0fksigmpps5xrxqk2v7afm1zsg87mc11bfid160f84wixfk7hqw6"))))
     (properties `((upstream-name . "modelbased")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -14780,9 +14872,9 @@ using the method presented in Wu, Cheung, and Leung (2020)
     (synopsis "Estimation of Model-Based Predictions, Contrasts and Means")
     (description
      "This package implements a general interface for model-based estimations for a
-wide variety of models (see list of supported models using the function
-insight::supported_models()'), used in the computation of marginal means,
-contrast analysis and predictions.")
+wide variety of models, used in the computation of marginal means, contrast
+analysis and predictions.  For a list of supported models, see
+insight::supported_models()'.")
     (license license:gpl3)))
 
 (define-public r-modehunt
@@ -26916,16 +27008,16 @@ translation.  Examples of these methods can be found in Montes de Oca et al
 (define-public r-mflica
   (package
     (name "r-mflica")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mFLICA" version))
        (sha256
-        (base32 "0znjp95ifwqpqwrnlcb77r1cdwpvbpql6ggnck018xddc8x40hzv"))))
+        (base32 "02h53v124j38scl816ci8z5wfcrmh9p6m08fk2hhw973h7c6xbmy"))))
     (properties `((upstream-name . "mFLICA")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-dtw))
+    (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/DarkEyes/mFLICA")
     (synopsis "Leadership-Inference Framework for Multivariate Time Series")
@@ -34124,6 +34216,30 @@ Merrow (2003, <doi:10.1177/0748730402239679>).")
 indicates which regressors may be the reason of collinearity among regressors.")
     (license license:gpl2+)))
 
+(define-public r-mcstatsim
+  (package
+    (name "r-mcstatsim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcstatsim" version))
+       (sha256
+        (base32 "13ifkqx2c9v0pvkjg0r0sy07s2q7rp7wfx4q27vx4d7f7yk6va6r"))))
+    (properties `((upstream-name . "mcstatsim")))
+    (build-system r-build-system)
+    (home-page "https://github.com/ielbadisy/mcstatsim")
+    (synopsis
+     "Monte Carlo Statistical Simulation Tools Using a Functional Approach")
+    (description
+     "This package provides a lightweight, dependency-free tool designed to facilitate
+statistical simulations through functional programming.  It centralizes the
+simulation process into a single higher-order function, enhancing manageability
+and usability without adding overhead from external dependencies.  The package
+includes ready-to-use functions for common simulation targets and processes.  A
+detailed example can be found on <https://github.com/ielbadisy/mcstatsim>.")
+    (license license:agpl3+)))
+
 (define-public r-mcstats
   (package
     (name "r-mcstats")
@@ -37248,6 +37364,32 @@ inverse regression of kernel version).  Methods for selecting the best dimension
 are also included.  Xia (2002) <doi:10.1111/1467-9868.03411>; Xia (2007)
 <doi:10.1214/009053607000000352>; Wang (2008) <doi:10.1198/016214508000000418>.")
     (license license:gpl2+)))
+
+(define-public r-mauricer
+  (package
+    (name "r-mauricer")
+    (version "2.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mauricer" version))
+       (sha256
+        (base32 "0v0wwyfq3zj6p1w6qx6jmqm4cr5jg6l3caq8ycxbylqcmrqqp6ij"))))
+    (properties `((upstream-name . "mauricer")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-stringr r-beastier))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://docs.ropensci.org/mauricer/https://github.com/ropensci/mauricer")
+    (synopsis "Work with 'BEAST2' Packages")
+    (description
+     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
+that uses DNA/RNA/protein data and many model priors to create a posterior of
+jointly estimated phylogenies and parameters.  BEAST2 is commonly accompanied by
+BEAUti 2 (<https://www.beast2.org>), which, among others, allows one to install
+BEAST2 package.  This package allows to work with BEAST2 packages from R'.")
+    (license license:gpl3)))
 
 (define-public r-mau
   (package

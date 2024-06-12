@@ -27278,6 +27278,37 @@ concepts at the \"higher\" taxonomic levels: Order, Suborder, Great Group, and
 Subgroup.")
     (license license:gpl3+)))
 
+(define-public r-soilsaltindex
+  (package
+    (name "r-soilsaltindex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SoilSaltIndex" version))
+       (sha256
+        (base32 "1hkdhpk257rzk74x9iwmnnj2m1yahlgidslkvwip86qh9rdjdaf9"))))
+    (properties `((upstream-name . "SoilSaltIndex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-raster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SoilSaltIndex")
+    (synopsis "Soil Salinity Indices Generation using Satellite Data")
+    (description
+     "The developed function generates soil salinity indices using satellite data,
+utilizing multiple spectral bands such as Blue, Green, Red, Near-Infrared (NIR),
+and Shortwave Infrared (SWIR1, SWIR2).  It computes 24 different salinity
+indices crucial for monitoring and analyzing salt-affected soils efficiently.
+For more details see, Rani, et al. (2022). <DOI: 10.1007/s12517-022-09682-3>.
+One of the key features of the developed function is its flexibility.  Users can
+provide any combination of the required spectral bands, and the function will
+automatically calculate only the relevant indices based on the available data.
+This dynamic capability ensures that users can maximize the utility of their
+data without the need for all spectral bands, making the package versatile and
+user-friendly.  Outputs are provided as @code{GeoTIFF} file format, facilitating
+easy integration with GIS workflows.")
+    (license license:gpl2+)))
+
 (define-public r-soilr
   (package
     (name "r-soilr")
@@ -27492,18 +27523,18 @@ distribution by Perfect et al. (1992)
 (define-public r-soildb
   (package
     (name "r-soildb")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soilDB" version))
        (sha256
-        (base32 "07sfyhw1vl0zdxn10dca3v5llmqlri2bk3askdcd1jy1v7ga4amd"))))
+        (base32 "1b85j3fpcvzm05pyv6zmd7j8af1nvkrbpsiz5cxzcx1l8kg1fmy4"))))
     (properties `((upstream-name . "soilDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi r-data-table r-curl r-aqp))
     (native-inputs (list r-knitr))
-    (home-page "https://ncss-tech.github.io/soilDB/")
+    (home-page "https://github.com/ncss-tech/soilDB/")
     (synopsis "Soil Database Interface")
     (description
      "This package provides a collection of functions for reading soil data from U.S.
@@ -54836,13 +54867,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "18ppf6amcj5zw05gzhpzk6nszm3yqiz6a1wd865r1r3m7lj3g0ak"))))
+        (base32 "1mhjlll6vplg7alnrl359bb5gvf5b54f2pf4lpazsv29hqiavhqg"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

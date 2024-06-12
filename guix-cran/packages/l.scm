@@ -11491,24 +11491,23 @@ ground-up, and much more.")
 (define-public r-leontief
   (package
     (name "r-leontief")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leontief" version))
        (sha256
-        (base32 "1gy23047c6gci9m83yrb662d5685x1kky6m94w68swms59gdc6yp"))))
+        (base32 "0ms50fqnbfvwj5a2a0s647nyzpcbxyzf61f3rcp9h1qf1wil860b"))))
     (properties `((upstream-name . "leontief")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://pachamaltese.github.io/leontief")
+    (home-page "https://github.com/pachadotdev/leontief")
     (synopsis "Input-Output Analysis")
     (description
      "An implementation of the Input-Output model developed by Wassily Leontief that
 represents the interdependencies between different sectors of a national economy
 or different regional economies.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-lenses
   (package
@@ -15380,13 +15379,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.7")
+    (version "5.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "19dfqs4xqszwxz3x0s4aqh7nm2ancxrn8f3l2kkyhdcrv3fqv9m4"))))
+        (base32 "1859nwb7ymdamk7akwrmq011var821cww0bg6k89d5sjhs529jd7"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

@@ -4120,6 +4120,42 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 <doi:10.1145/1143844.1143955>.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-qlcvisualize
+  (package
+    (name "r-qlcvisualize")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qlcVisualize" version))
+       (sha256
+        (base32 "0njckbdrvzjlmdxmdygcxh6zc30r0gcna5i8jyr1cibmckcbl96h"))))
+    (properties `((upstream-name . "qlcVisualize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-random
+                             r-spatstat-geom
+                             r-sp
+                             r-sf
+                             r-seriation
+                             r-rspectra
+                             r-qlcmatrix
+                             r-mass
+                             r-maps
+                             r-mapplots
+                             r-geodata
+                             r-fields
+                             r-concaveman
+                             r-cartogramr
+                             r-alphahull))
+    (home-page "https://cran.r-project.org/package=qlcVisualize")
+    (synopsis "Visualization for Quantitative Language Comparison")
+    (description
+     "Collection of visualizations as used in quantitative language comparison.
+Currently implemented are visualisations dealing nominal data with multiple
+levels (\"level map\" and \"factor map\"), and assistance for making weighted
+geographical Voronoi-maps (\"weighted map\").")
+    (license license:gpl3)))
+
 (define-public r-qlcdata
   (package
     (name "r-qlcdata")

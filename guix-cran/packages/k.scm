@@ -1604,13 +1604,13 @@ whole-genome sequencing data.  The functions allow genome-wide association scan.
 (define-public r-knockoffhybrid
   (package
     (name "r-knockoffhybrid")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KnockoffHybrid" version))
        (sha256
-        (base32 "0fzymcyb40v3bgd39a6nfxf4wrs171k655rx779q3vxb75nlnlnb"))))
+        (base32 "0ziqnhs2ipnzrh4ndjppcf2w3s13mwsza7w2s5dgfd70i0f6nk7v"))))
     (properties `((upstream-name . "KnockoffHybrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatest r-glmnet))
@@ -1619,7 +1619,11 @@ whole-genome sequencing data.  The functions allow genome-wide association scan.
      "Hybrid Analysis of Population and Trio Data with Knockoff Statistics for FDR Control")
     (description
      "Identification of putative causal variants in genome-wide association studies
-using hybrid analysis of both the trio and population designs.")
+using hybrid analysis of both the trio and population designs.  The package
+implements the method in the paper: Yang, Y., Wang, Q., Wang, C., Buxbaum, J., &
+Ionita-Laza, I. (2024). @code{KnockoffHybrid}: A knockoff framework for hybrid
+analysis of trio and population designs in genome-wide association studies.  The
+American Journal of Human Genetics, in press.")
     (license license:gpl3)))
 
 (define-public r-knockoff

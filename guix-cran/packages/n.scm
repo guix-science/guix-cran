@@ -579,6 +579,25 @@ mixture for a given set of allele frequencies.  The mixture contributors may be
 related according to a provided pedigree.")
     (license license:gpl2+)))
 
+(define-public r-numberize
+  (package
+    (name "r-numberize")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "numberize" version))
+       (sha256
+        (base32 "1p3zcknlrv4ayyxk79vd021r9jwk2dxwp3saryzn4vgj8fnac8iy"))))
+    (properties `((upstream-name . "numberize")))
+    (build-system r-build-system)
+    (home-page "https://github.com/epiverse-trace/numberize")
+    (synopsis "Convert Words to Numbers in Multiple Languages")
+    (description
+     "Converts written out numbers into their equivalent numbers.  Supports numbers
+written out in English, French, or Spanish.")
+    (license license:expat)))
+
 (define-public r-nullabor
   (package
     (name "r-nullabor")
@@ -15115,13 +15134,13 @@ nanosecond-resolution timestamps.")
 (define-public r-nanostringr
   (package
     (name "r-nanostringr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanostringr" version))
        (sha256
-        (base32 "1sivaycgg1j3q9iapy2nq7mp8cak316rgn475sv7pa57ig6g9b7b"))))
+        (base32 "0a6avc8gzq0mdswlsmp9i8pzk83cw2ziwrxfjphqa42akafzd63k"))))
     (properties `((upstream-name . "nanostringr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

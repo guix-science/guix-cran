@@ -9517,29 +9517,29 @@ et al. (2011) <doi:10.1111/J.1600-0706.2011.19679.x>].")
 (define-public r-indicator
   (package
     (name "r-indicator")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Indicator" version))
        (sha256
-        (base32 "08d208nrhyp9ln076mzbri4ky4756761b9f5cby2kaapw0f9d310"))))
+        (base32 "0dwrg23qaqj39vvzhk20plr64br1y5dn61w9xk1arl22qlc2b011"))))
     (properties `((upstream-name . "Indicator")))
     (build-system r-build-system)
     (propagated-inputs (list r-norm r-missmethods r-factominer))
-    (home-page "https://cran.r-project.org/package=Indicator")
+    (home-page "https://github.com/GianmarcoBorrata/Indicator")
     (synopsis "Composite 'Indicator' Construction and Imputation Data")
     (description
      "Different functions includes constructing composite indicators, imputing missing
 data, and evaluating imputation techniques.  Additionally, different tools for
 data normalization.  Detailed methodologies of Indicator package are:
-OECD/European Union/EC-JRC (2008), Handbook on Constructing Composite
-Indicators: Methodology and User Guide', OECD Publishing, Paris,
-<DOI:10.1787/533411815016>, Matteo Mazziotta & Adriano Pareto, (2018) Measuring
+OECD/European Union/EC-JRC (2008), \"Handbook on Constructing Composite
+Indicators: Methodology and User Guide\", OECD Publishing, Paris,
+<DOI:10.1787/533411815016>, Matteo Mazziotta & Adriano Pareto, (2018) \"Measuring
 Well-Being Over Time: The Adjusted MazziottaâPareto Index Versus Other
-Non-compensatory Indices <DOI:10.1007/s11205-017-1577-5> and De Muro P.,
-Mazziotta M., Pareto A. (2011), Composite Indices of Development and Poverty: An
-Application to MDGs <DOI:10.1007/s11205-010-9727-z>.")
+Non-compensatory Indices\" <DOI:10.1007/s11205-017-1577-5> and De Muro P.,
+Mazziotta M., Pareto A. (2011), \"Composite Indices of Development and Poverty:
+An Application to MDGs\" <DOI:10.1007/s11205-010-9727-z>.")
     (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-india

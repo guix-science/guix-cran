@@ -7341,13 +7341,13 @@ Carvalho, Masini and Medeiros (2016) <DOI:10.2139/ssrn.2823687>.")
 (define-public r-archiveretriever
   (package
     (name "r-archiveretriever")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archiveRetriever" version))
        (sha256
-        (base32 "0y01am255i682iaj55aiza6arlb0whqhamd09nqjrnwy4hmkbidq"))))
+        (base32 "0zjb4i39s3xkb05h9smk9lwkap7w8gizs5i3ii1qgz2ahi07pywy"))))
     (properties `((upstream-name . "archiveRetriever")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -10510,13 +10510,13 @@ peptide prediction on a benchmark non-redundant independent test dataset.")
 (define-public r-ansm5
   (package
     (name "r-ansm5")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ANSM5" version))
        (sha256
-        (base32 "06ahirkjz9934c9z7lags2g3yrq9h6kdj64xx0zvzfmh9lm5yrv1"))))
+        (base32 "10drc2199ffnl70ja6512wdwhb14ky73j0fvbhvhqxjhka1gfiwi"))))
     (properties `((upstream-name . "ANSM5")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ANSM5")

@@ -13420,13 +13420,13 @@ mentioned.")
 (define-public r-cophescan
   (package
     (name "r-cophescan")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cophescan" version))
        (sha256
-        (base32 "0kanrdmkk91hs09acgz7kxw6szqfnr8mxi8n01rpnz2c1fwmvgpy"))))
+        (base32 "0lnc20f1xaijibza4px9m47fy70jz9y9y5m7wk5h50kb4dh6ywxh"))))
     (properties `((upstream-name . "cophescan")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16392,13 +16392,13 @@ along with their contribution to the actual coverage function.")
 (define-public r-coneproj
   (package
     (name "r-coneproj")
-    (version "1.18")
+    (version "1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coneproj" version))
        (sha256
-        (base32 "07d90zbw1yk9qibdj32ivsxm8i1qf3r06lbgb3sl9nfrhniw9a4s"))))
+        (base32 "0whnjdc24214kja1qbbyy95rmssabkq2x85p81nslcclr2krnxi2"))))
     (properties `((upstream-name . "coneproj")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -19504,6 +19504,29 @@ coefficients equals a constant.  References: Hansen, B. E. (2022).
 Econometrics, Princeton University Press. <ISBN:9780691235899>.")
     (license license:gpl2+)))
 
+(define-public r-colp
+  (package
+    (name "r-colp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COLP" version))
+       (sha256
+        (base32 "0259s058rn7fyprma5frx7sdjv4qk9hxijpi9xh7qyz5jzzsi660"))))
+    (properties `((upstream-name . "COLP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-combinat))
+    (home-page "https://github.com/nySTAT/COLP")
+    (synopsis "Causal Discovery for Categorical Data with Label Permutation")
+    (description
+     "Discover causality for bivariate categorical data.  This package aims to enable
+users to discover causality for bivariate observational categorical data.  See
+Ni, Y. (2022) <@code{arXiv:2209.08579>} \"Bivariate Causal Discovery for
+Categorical Data via Classification with Optimal Label Permutation.  Advances in
+Neural Information Processing Systems 35 (in press)\".")
+    (license license:expat)))
+
 (define-public r-colourvision
   (package
     (name "r-colourvision")
@@ -20157,6 +20180,32 @@ Selecting regions of interest, extract pixel intensities from the image channels
 and calculate different co-localization statistics.  The methods implemented in
 this package are based on Dunn et al. (2011) <doi:10.1152/ajpcell.00462.2010>.")
     (license license:gpl3)))
+
+(define-public r-colocproptest
+  (package
+    (name "r-colocproptest")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colocPropTest" version))
+       (sha256
+        (base32 "1nz5x1j2xagy6sx85m6cvzhvzj59byircl35ammj860vkp050rm9"))))
+    (properties `((upstream-name . "colocPropTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-data-table r-coloc r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=colocPropTest")
+    (synopsis "Proportional Testing for Colocalisation Analysis")
+    (description
+     "Colocalisation analysis tests whether two traits share a causal genetic variant
+in a specified genomic region.  Proportional testing for colocalisation has been
+previously proposed [Wallace (2013) <doi:10.1002/gepi.21765>], but is
+reimplemented here to overcome barriers to its adoption.  Its use is
+complementary to the fine- mapping based colocalisation method in the coloc
+package, and may be used in particular to identify false \"H3\" conclusions in
+coloc'.")
+    (license license:gpl3+)))
 
 (define-public r-colocalized
   (package
@@ -34558,13 +34607,13 @@ cross-sectional and panel data.")
 (define-public r-censored
   (package
     (name "r-censored")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censored" version))
        (sha256
-        (base32 "16zg69mjclyrnq3cscr46jq0adxdkd94ydi49p7s1sh1gaac52jy"))))
+        (base32 "171bfny4d8p8i82xv0mj315imb9ghvn2jzvirqmkm6k0cxmaqyrz"))))
     (properties `((upstream-name . "censored")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38159,6 +38208,31 @@ endpoints and decisions are made using either Bayesian or frequentist decision
 rules.  Realistic trial trajectories are simulated and the operating
 characteristics of the designs are calculated.")
     (license license:expat)))
+
+(define-public r-catregs
+  (package
+    (name "r-catregs")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "catregs" version))
+       (sha256
+        (base32 "1d5a8mwwyxx6rmm4ngjkgy787x23l9a0crhvn594vhl90r92jpbi"))))
+    (properties `((upstream-name . "catregs")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=catregs")
+    (synopsis "Post-Estimation Functions for Generalized Linear Mixed Models")
+    (description
+     "Several functions for working with mixed effects regression models for limited
+dependent variables.  The functions facilitate post-estimation of model
+predictions or margins, and comparisons between model predictions for assessing
+or probing moderation.  Additional helper functions facilitate model comparisons
+and implements simulation-based inference for model predictions of
+alternative-specific outcome models.  See also, Melamed and Doan (2024, ISBN:
+978-1032509518).")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-catreg
   (package

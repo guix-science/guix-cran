@@ -1650,6 +1650,33 @@ smoothing of the daily run size.  Theory described in Bonner and Schwarz (2011)
 <doi:10.1111/j.1541-0420.2011.01599.x>.")
     (license license:gpl2+)))
 
+(define-public r-btllasso
+  (package
+    (name "r-btllasso")
+    (version "0.1-13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BTLLasso" version))
+       (sha256
+        (base32 "19r45qm1iq3sjb6r5ficgv8q9zwpbilxwrf6rxvqdl333xcnnjy4"))))
+    (properties `((upstream-name . "BTLLasso")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rcpparmadillo r-rcpp r-psychotools
+                             r-matrix))
+    (home-page "https://cran.r-project.org/package=BTLLasso")
+    (synopsis "Modelling Heterogeneity in Paired Comparison Data")
+    (description
+     "This package performs BTLLasso as described by Schauberger and Tutz (2019)
+<doi:10.18637/jss.v088.i09> and Schauberger and Tutz (2017)
+<doi:10.1177/1471082X17693086>.  BTLLasso is a method to include different types
+of variables in paired comparison models and, therefore, to allow for
+heterogeneity between subjects.  Variables can be subject-specific,
+object-specific and subject-object-specific and can have an influence on the
+attractiveness/strength of the objects.  Suitable L1 penalty terms are used to
+cluster certain effects and to reduce the complexity of the models.")
+    (license license:gpl2+)))
+
 (define-public r-btergm
   (package
     (name "r-btergm")
@@ -4588,13 +4615,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "0jzscb3gcgypv4845v3sxbxkagjnmn4pg4mzqd0ah2zqnwivhrlb"))))
+        (base32 "05q9w2qq7pl9zw0nxnlvmj79cb8sc9r3w4d3n355vzhf9qnzbqk4"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -10974,6 +11001,42 @@ Rate calculation procedures, see Schmid et al. (2019) <doi:10.1111/ecog.04025>."
 metal rings.  For a tutorial, go to <doi:10.1080/03078698.2014.933053>.")
     (license license:gpl2)))
 
+(define-public r-birdie
+  (package
+    (name "r-birdie")
+    (version "0.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "birdie" version))
+       (sha256
+        (base32 "1xh3ga5f16p46jrw7xj2mwv41mnib0mijin2005q9wrfr5pr54yc"))))
+    (properties `((upstream-name . "birdie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-stringr
+                             r-stringi
+                             r-stanheaders
+                             r-squarem
+                             r-rlang
+                             r-rcppthread
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-generics
+                             r-dplyr
+                             r-cli
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CoryMcCartan/birdie")
+    (synopsis "Bayesian Instrumental Regression for Disparity Estimation")
+    (description
+     "Bayesian models for accurately estimating conditional distributions by race,
+using Bayesian Improved Surname Geocoding (BISG) probability estimates of
+individual race.  Implements the methods described in @code{McCartan}, Fisher,
+Goldin, Ho and Imai (2024) <doi:10.3386/w32373>.")
+    (license license:gpl3+)))
+
 (define-public r-birankr
   (package
     (name "r-birankr")
@@ -14616,17 +14679,16 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "19rxm6vfr9gh5k76jfpsyxvk4hl3ir760dhdk1hh2ky2pjsnwd5w"))))
+        (base32 "1mxhgs1gwwqhzqynjd35bjq0z5i9amj4hqkndll7l40k5n4jj46m"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-stringr
                              r-statnet-common
                              r-rlang
@@ -14643,20 +14705,20 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
                              r-igraph
                              r-glue
                              r-foreach
+                             r-ergm-multi
                              r-ergm
                              r-dplyr
-                             r-doparallel
                              r-cachem))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bigergm")
     (synopsis
      "Fit, Simulate, and Diagnose Hierarchical Exponential-Family Models for Big Networks")
     (description
-     "This package provides a toolbox to analyze and simulate large networks based on
-hierarchical exponential-family random graph models (HERGMs).'bigergm implements
-the estimation for large networks efficiently on large networks building on the
-lighthergm package.  Moreover, the package contains tools for simulating
-networks with local dependence to assess the estimates goodness-of-fit.")
+     "This package provides a toolbox for analyzing and simulating large networks
+based on hierarchical exponential-family random graph models (HERGMs).'bigergm
+implements the estimation for large networks efficiently building on the
+lighthergm and hergm packages.  Moreover, the package contains tools for
+simulating networks with local dependence to assess the goodness-of-fit.")
     (license license:gpl3)))
 
 (define-public r-bigdm

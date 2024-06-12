@@ -777,13 +777,13 @@ factorial experiment using Yates algorithm.")
 (define-public r-yatchewtest
   (package
     (name "r-yatchewtest")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "YatchewTest" version))
        (sha256
-        (base32 "1j1i8byljxjnrq7nxg7m89zm2cin79dqlji0smbcwg2wcxz412mn"))))
+        (base32 "13ni502538l76cxyjh3q35id117i64m8bg9zp7g1199ln2csms7h"))))
     (properties `((upstream-name . "YatchewTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-ggplot2))

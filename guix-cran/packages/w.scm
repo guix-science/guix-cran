@@ -2471,13 +2471,13 @@ Hadley Wickham and Karen Kafadar (2017) <doi:10.1080/10618600.2017.1305277>.")
 (define-public r-wnominate
   (package
     (name "r-wnominate")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wnominate" version))
        (sha256
-        (base32 "1zidc30j3hqa54spafz2h27a719s347k4i6qqs2jy9zk0ngrgiqz"))))
+        (base32 "1lqz57438ikcbf2smi54qavwnw6p27qqh0ri33ijyzmcl6yakncg"))))
     (properties `((upstream-name . "wnominate")))
     (build-system r-build-system)
     (propagated-inputs (list r-pscl))

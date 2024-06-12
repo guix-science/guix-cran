@@ -3480,13 +3480,13 @@ al (1998, ISBN:92-5-104219-5)).")
 (define-public r-frscore
   (package
     (name "r-frscore")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frscore" version))
        (sha256
-        (base32 "0kgb6hp1id65ivbrv9zdxxnkd1zkkxhmfvhv3zq0pinpc6cq2idi"))))
+        (base32 "1phmy313xl1x3v1smf6f19aa1sd0cypfn5hpg715k9p9z9sh58qq"))))
     (properties `((upstream-name . "frscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

@@ -7017,29 +7017,26 @@ model with maximum likelihood estimation of the parameters.")
 (define-public r-rsea
   (package
     (name "r-rsea")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rSEA" version))
        (sha256
-        (base32 "18108ds65ykxygbw1s4i5rb1ngzwymv1x3dhcv1lcwkmqplnaar9"))))
+        (base32 "094immjsmgkhl68aflbai1y15d50wkq2qbrmcs8bj7in17iw5qfq"))))
     (properties `((upstream-name . "rSEA")))
     (build-system r-build-system)
     (propagated-inputs (list r-hommel r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mitra-ep/rSEA")
+    (home-page "https://cran.r-project.org/package=rSEA")
     (synopsis "Simultaneous Enrichment Analysis")
     (description
      "SEA performs simultaneous feature-set testing for (gen)omics data.  It tests the
-unified null hypothesis controls the family-wise error rate for all possible
+unified null hypothesis and controls the family-wise error rate for all possible
 pathways.  The unified null hypothesis is defined as: \"The proportion of true
-features in the set is less than or equal to the threshold c\", where c is
-selected by the user.  Family-wise error rate control is provided through use of
-closed testing with Simes test.  For more information on closed testing with
-Simes see Goeman et al. (2019) <doi:10.1093/biomet/asz041> and for more
-information about the properties and performance of SEA procedure see
-Ebrahimpoor et al. (2019) <doi:10.1093/bib/bbz074>.")
+features in the set is less than or equal to a threshold.\" Family-wise error
+rate control is provided through use of closed testing with Simes test.  There
+are some practical functions to play around with the pathways of interest.")
     (license license:gpl2+)))
 
 (define-public r-rse
@@ -28820,18 +28817,18 @@ enormous sample sizes.")
 (define-public r-reproj
   (package
     (name "r-reproj")
-    (version "0.4.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reproj" version))
        (sha256
-        (base32 "0bcg5bz2sl4d31iwr55nwr85p1jna9fpbcli26lf04dwznwmx0rl"))))
+        (base32 "1r2m8j75hmy61h7ld0ra1kpigr1ax6zap8kjxkgjkxcdlqznbbxj"))))
     (properties `((upstream-name . "reproj")))
     (build-system r-build-system)
     (inputs (list proj))
     (propagated-inputs (list r-proj4 r-proj r-crsmeta))
-    (home-page "https://github.com/hypertidy/reproj/")
+    (home-page "https://github.com/hypertidy/reproj")
     (synopsis "Coordinate System Transformations for Generic Map Data")
     (description
      "Transform coordinates from a specified source to a specified target map

@@ -3174,13 +3174,13 @@ derived from point cloud and makes data available for structural analysis.")
 (define-public r-jfe
   (package
     (name "r-jfe")
-    (version "2.5.6")
+    (version "2.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JFE" version))
        (sha256
-        (base32 "015c60f1bmglcpspyqsy8wkwinnf8dgzx0xfm96np1c9h8zqfdm6"))))
+        (base32 "06ll163l0qr03vjp3jdlq4g7lff1hi3shmbqicqm9yr00ip94jj6"))))
     (properties `((upstream-name . "JFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts))
@@ -3188,7 +3188,7 @@ derived from point cloud and makes data available for structural analysis.")
     (synopsis
      "Tools for Analyzing Time Series Data of Just Finance and Econometrics")
     (description
-     "Offers procedures to support financial and economic time series modelling and
+     "Offers procedures to support financial-economic time series modelling and
 enhanced procedures for computing the investment performance indices of Bacon
 (2004) <DOI:10.1002/9781119206309>.")
     (license license:gpl2+)))

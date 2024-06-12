@@ -10670,13 +10670,13 @@ technology). - Create frozen maps with the possibility to add labels.")
 (define-public r-oceanic
   (package
     (name "r-oceanic")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oceanic" version))
        (sha256
-        (base32 "12lrn13xfrxny8nqhjh5qg61bx1y8akyqxf7slbpg9npbwp04f1n"))))
+        (base32 "0nfz257i0gfkqvnpi4gaki79mgh1ff6h075dyylk0fs0gw01dddm"))))
     (properties `((upstream-name . "oceanic")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdata

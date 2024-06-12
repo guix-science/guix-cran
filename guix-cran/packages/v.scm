@@ -310,13 +310,13 @@ R scripts.")
 (define-public r-vvconverter
   (package
     (name "r-vvconverter")
-    (version "0.5.9")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvconverter" version))
        (sha256
-        (base32 "1hrdqlnlafdkrggzqfj7zinsz0w47ikzf098fbjcssgchfp91g8m"))))
+        (base32 "1dl0vvglj2p1i1c1a9vxgr6cr5f7bxqqnv7w1ds0gzgwv5zyhz1c"))))
     (properties `((upstream-name . "vvconverter")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -325,7 +325,7 @@ R scripts.")
                              r-lubridate
                              r-dplyr
                              r-checkmate))
-    (home-page "https://cran.r-project.org/package=vvconverter")
+    (home-page "https://vusaverse.github.io/vvconverter/")
     (synopsis "Apply Transformations to Data")
     (description
      "This package provides a set of functions for data transformations.
@@ -7361,6 +7361,49 @@ functional forms and maximum information value.")
 and estimating precision matrices that is introduced in Yu & Bien (2016) and is
 available at <https://arxiv.org/abs/1604.07451>.")
     (license license:gpl3)))
+
+(define-public r-var-spec
+  (package
+    (name "r-var-spec")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VAR.spec" version))
+       (sha256
+        (base32 "0sz4r4c9zzz1p77v7vcsl8w5gldy9mlipf64fjiwdrddgwrv4rwd"))))
+    (properties `((upstream-name . "VAR.spec")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=VAR.spec")
+    (synopsis
+     "Allows Specifying a Bivariate VAR (Vector Autoregression) with Desired Spectral Characteristics")
+    (description
+     "The spectral characteristics of a bivariate series (Marginal Spectra, Coherency-
+and Phase-Spectrum) determine whether there is a strong presence of short-,
+medium-, or long-term fluctuations (components of certain frequencies in the
+spectral representation of the series) in each one of them.  These are induced
+by strong peaks of the marginal spectra of each series at the corresponding
+frequencies.  The spectral characteristics also determine how strongly these
+short-, medium-, or long-term fluctuations of the two series are correlated
+between the two series.  Information on this is provided by the Coherency
+spectrum at the corresponding frequencies.  Finally, certain fluctuations of the
+two series may be lagged to each other.  Information on this is provided by the
+Phase spectrum at the corresponding frequencies.  The idea in this package is to
+define a VAR (Vector autoregression) model with desired spectral characteristics
+by specifying a number of polynomials, required to define the VAR. See
+Ioannidis(2007) <doi:10.1016/j.jspi.2005.12.013>.  These are specified via their
+roots, instead of via their coefficients.  This is an idea borrowed from the
+Time Series Library of R. Dahlhaus, where it is used for defining ARMA models
+for univariate time series.  This way, one may e.g. specify a VAR inducing a
+strong presence of long-term fluctuations in series 1 and in series 2, which are
+weakly correlated, but lagged by a number of time units to each other, while
+short-term fluctuations in series 1 and in series 2, are strongly present only
+in one of the two series, while they are strongly correlated to each other
+between the two series.  Simulation from such models allows studying the
+behavior of data-analysis tools, such as estimation of the spectra, under
+different circumstances, as e.g. peaks in the spectra, generating bias, induced
+by leakage.")
+    (license license:gpl2)))
 
 (define-public r-var-etp
   (package

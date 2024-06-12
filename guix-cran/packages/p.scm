@@ -11778,6 +11778,47 @@ maximise an approximated negentropy index.  For more details see Scrucca and
 Serafini (2019) <doi:10.1080/10618600.2019.1598871>.")
     (license license:gpl2+)))
 
+(define-public r-ppgm
+  (package
+    (name "r-ppgm")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppgm" version))
+       (sha256
+        (base32 "0fvir7fw1qzx1z0kjaaqsq13ljk5l0i4rdvpl75j6nnpd59yhyyh"))))
+    (properties `((upstream-name . "ppgm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-sp
+                             r-sf
+                             r-phytools
+                             r-phangorn
+                             r-geiger
+                             r-fields
+                             r-ape
+                             r-animation))
+    (home-page "https://cran.r-project.org/package=ppgm")
+    (synopsis
+     "PaleoPhyloGeographic Modeling of Climate Niches and Species Distributions")
+    (description
+     "Reconstruction of paleoclimate niches using phylogenetic comparative methods and
+projection reconstructed niches onto paleoclimate maps.  The user can specify
+various models of trait evolution or estimate the best fit model, include
+fossils, use one or multiple phylogenies for inference, and make animations of
+shifting suitable habitat through time.  This model was first used in Lawing and
+Polly (2011), and further implemented in Lawing et al (2016) and Rivera et al
+(2020).  Lawing and Polly (2011) <doi:10.1371/journal.pone.0028554> \"Pleistocene
+climate, phylogeny and climate envelope models: An integrative approach to
+better understand species response to climate change\" Lawing et al (2016)
+<doi:10.1086/687202> \"Including fossils in phylogenetic climate reconstructions:
+A deep time perspective on the climatic niche evolution and diversification of
+spiny lizards (Sceloporus)\" Rivera et al (2020) <doi:10.1111/jbi.13915>
+\"Reconstructing historical shifts in suitable habitat of Sceloporus lineages
+using phylogenetic niche modelling.\".")
+    (license license:gpl3+)))
+
 (define-public r-ppgam
   (package
     (name "r-ppgam")
@@ -22550,6 +22591,39 @@ independent of the axes and plot dimensions, to prevent distortions when the
 plot dimensions are changed.")
     (license license:gpl3+)))
 
+(define-public r-piecewisesem
+  (package
+    (name "r-piecewisesem")
+    (version "2.3.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piecewiseSEM" version))
+       (sha256
+        (base32 "0cgzvfcc0pwz4qvdmx7xj5wl8cki2ss0kjmlqz2kmxklfiz3y5c0"))))
+    (properties `((upstream-name . "piecewiseSEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-performance
+                             r-nlme
+                             r-mumin
+                             r-multcomp
+                             r-mass
+                             r-lme4
+                             r-igraph
+                             r-emmeans
+                             r-diagrammer
+                             r-car))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jslefche/")
+    (synopsis "Piecewise Structural Equation Modeling")
+    (description
+     "This package implements piecewise structural equation modeling from a single
+list of structural equations, with new methods for non-linear, latent, and
+composite variables, standardized coefficients, query-based prediction and
+indirect effects.  See <http://jslefche.github.io/@code{piecewiseSEM/>} for
+more.")
+    (license license:gpl3)))
+
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
@@ -23313,19 +23387,18 @@ al. (2007) <doi:10.1371/journal.pone.0000296> Laffan, S. W. et al. (2016)
 (define-public r-phylopath
   (package
     (name "r-phylopath")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylopath" version))
        (sha256
-        (base32 "1s00sj9wmmq554lx5s55akznad80vhzs546fqsa0fzz20pnshs8n"))))
+        (base32 "1a99b55xi28d0nygnb6y4a1n9y28zjz2sw6k0hfv09kb3xzr03wy"))))
     (properties `((upstream-name . "phylopath")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-purrr
                              r-phylolm
-                             r-mumin
                              r-igraph
                              r-ggraph
                              r-ggplot2
@@ -30130,13 +30203,13 @@ book.")
 (define-public r-pde
   (package
     (name "r-pde")
-    (version "1.4.9")
+    (version "1.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PDE" version))
        (sha256
-        (base32 "1y1szp8awvkz994z5fk6mkcc98zsla47zxykdnj48fmv88qb5mqg"))))
+        (base32 "0qzy70m8i64616lakhjil0jid3lfliqsyfg6w3hsg9662pl0wbf3"))))
     (properties `((upstream-name . "PDE")))
     (build-system r-build-system)
     (inputs (list xpdf))
@@ -32455,13 +32528,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0141qd8xai1phm3w45gvhqbvh8a9nicc3qhiqszsglk458knykf0"))))
+        (base32 "0f2qnf150h47ld5n2718r6iyxkb5hi2r6z3m7krdbr1i4fd2h5w2"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -32471,6 +32544,7 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-purrr
                              r-omopgenerics
                              r-magrittr
+                             r-lifecycle
                              r-dplyr
                              r-cli
                              r-checkmate
@@ -35387,6 +35461,48 @@ drugs.  The methods are described in detail in Ulgen E, Ozisik O, Sezerman OU.
 2023.  PANACEA: network-based methods for pharmacotherapy prioritization in
 personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
     (license license:expat)))
+
+(define-public r-pamscapes
+  (package
+    (name "r-pamscapes")
+    (version "0.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PAMscapes" version))
+       (sha256
+        (base32 "094084w6zamchzh6fwcgy839brq28vqkji2p335bpni9dfkz3cd5"))))
+    (properties `((upstream-name . "PAMscapes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tdigest
+                             r-sf
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-pammisc
+                             r-ncdf4
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-ggplot2
+                             r-geosphere
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=PAMscapes")
+    (synopsis "Tools for Summarising and Analysing Soundscape Data")
+    (description
+     "This package provides a variety of tools relevant to the analysis of marine
+soundscape data.  There are tools for downloading AIS (automatic identification
+system) data from Marine Cadastre <https://marinecadastre.gov/ais/>, connecting
+AIS data to GPS coordinates, plotting summaries of various soundscape
+measurements, and downloading relevant environmental variables (wind, swell
+height) from the National Center for Atmospheric Research data server
+<https://rda.ucar.edu/datasets/ds084.1/>.  Most tools were developed to work
+well with output from Triton software, but can be adapted to work with any
+similar measurements.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-pampe
   (package
