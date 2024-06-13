@@ -8006,13 +8006,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "0vlv9hizfq8awr4ldyjy6j7k17wwgak054bfv3f8anxa7vwxp7df"))))
+        (base32 "10hd5mp4a39gh6d13lw8xnn4qvziacywls33dngvjxaq9ccxc05p"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -17485,6 +17485,32 @@ collection in the GNU Octave function fact() which was aggregated by Jordi
 @code{GutiÃ©rrez} Hermoso based on the (now defunct) site stallmanfacts.com
 (which is accessible only via <http://archive.org>).")
     (license license:gpl3)))
+
+(define-public r-rmsdp
+  (package
+    (name "r-rmsdp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMSDp" version))
+       (sha256
+        (base32 "1s52hj8b12r2p6a6b069i7accnf8gvxr3nzb5dps1kpsncvhlpk3"))))
+    (properties `((upstream-name . "RMSDp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=RMSDp")
+    (synopsis
+     "Refined Modified Stahel-Donoho (MSD) Estimators for Outlier Detection (Parallel Version)")
+    (description
+     "This package provides a parallel function for multivariate outlier detection
+named modified Stahel-Donoho estimators is contained in this package.  The
+function RMSDp() is for elliptically distributed datasets and recognizes
+outliers based on Mahalanobis distance.  This function is for higher dimensional
+datasets that cannot be handled by a single core function RMSD() included in
+RMSD package.  See Wada and Tsubaki (2013) <doi:10.1109/CLOUDCOM-ASIA.2013.86>
+for the detail of the algorithm.")
+    (license license:gpl3+)))
 
 (define-public r-rmsd
   (package
@@ -44377,13 +44403,13 @@ Hurst, W. (1949) <doi:10.2118/949305-G>.  Fetkovich, M. J. (1971)
 (define-public r-raqsapi
   (package
     (name "r-raqsapi")
-    (version "2.0.3")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RAQSAPI" version))
        (sha256
-        (base32 "0y9x5s1r5qfxx93wvcpa62s486d6yrrn56ks5wfgpx18jlm39q8d"))))
+        (base32 "0v3qahq1pcd8a12w9m65i6p6yna2azqjkirlkfqdazscl2n8g2vp"))))
     (properties `((upstream-name . "RAQSAPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -44393,12 +44419,11 @@ Hurst, W. (1949) <doi:10.2118/949305-G>.  Fetkovich, M. J. (1971)
                              r-magrittr
                              r-lubridate
                              r-lifecycle
-                             r-jsonlite
-                             r-httr
+                             r-httr2
                              r-glue
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "<https://github.com/USEPA/RAQSAPI>")
+    (home-page "https://github.com/USEPA/RAQSAPI/")
     (synopsis
      "Simple Interface to the US EPA Air Quality System Data Mart API")
     (description
@@ -44406,7 +44431,7 @@ Hurst, W. (1949) <doi:10.2118/949305-G>.  Fetkovich, M. J. (1971)
 Protection Agency's Air Quality System service using functions.  See
 <https://aqs.epa.gov/aqsweb/documents/data_api.html> for details about the US
 EPA Data Mart API.")
-    (license license:cc0)))
+    (license license:expat)))
 
 (define-public r-raqs
   (package

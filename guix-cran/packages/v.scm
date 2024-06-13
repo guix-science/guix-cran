@@ -577,13 +577,13 @@ Variable trees display information about nested subsets of a data frame.")
 (define-public r-vtreat
   (package
     (name "r-vtreat")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vtreat" version))
        (sha256
-        (base32 "1b32rrmnkpm53vgdg479q4wwzlgcisbz9x24rvcn42pjm9r8wwf8"))))
+        (base32 "04ymyv7ybahs4k6yc2dbmhhnxnjsa09h8cbfayslr655rzlgyqx5"))))
     (properties `((upstream-name . "vtreat")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-digest))
@@ -2380,13 +2380,13 @@ forecasting.")
 (define-public r-vitae
   (package
     (name "r-vitae")
-    (version "0.5.4")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vitae" version))
        (sha256
-        (base32 "11vp146fqxcq10kpsyrxmyc3i2kcwx15swgill61zs6g9l54asky"))))
+        (base32 "0mb6kps08za2sma2d5xw441kpri425arlbwznygifd7g3c5zyvhv"))))
     (properties `((upstream-name . "vitae")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

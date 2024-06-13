@@ -20981,13 +20981,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1lic4cjqps2pp9jbw0bqkbkdhjkxbs0nixqkchlw2j7r8lkgqd0f"))))
+        (base32 "1dq3b6vjn02wzp5gczxn1xvgbq9k9hynznss38rv8asdv0xaqjik"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33088,13 +33088,13 @@ CGP, print.CGP, summary.CGP, predict.CGP and @code{plotCGP}.")
 (define-public r-cgnm
   (package
     (name "r-cgnm")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CGNM" version))
        (sha256
-        (base32 "0zksbnsl2zzb7p0f7rldfb2scq486fgz9svdjjskmdjcgfwzikbi"))))
+        (base32 "1m2cqwb8q2lirf09d5pmqjan4r1w8m9pkg2wzyr8jp7sg1dqaaw7"))))
     (properties `((upstream-name . "CGNM")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-mass r-ggplot2))
@@ -33526,13 +33526,13 @@ insight.  Web interface for USGS API can be found at
 (define-public r-cfr
   (package
     (name "r-cfr")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfr" version))
        (sha256
-        (base32 "1qy25jfzpsk4zfcgjlw188a40vvj478r4g7pwrwxw4ppcqrncxny"))))
+        (base32 "0gvajvwriiird3symkln0z52k9v1rz3bh4yvdg0xh1lqhylr165b"))))
     (properties `((upstream-name . "cfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-checkmate))
@@ -40820,22 +40820,19 @@ canonical correlation analysis when all predictors are quantitative.")
 (define-public r-cancerscreening
   (package
     (name "r-cancerscreening")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cancerscreening" version))
        (sha256
-        (base32 "0i4qvhnlk3wka865rps7ak3jwjf1idwiy26c2p07lz96ycxdspcc"))))
+        (base32 "1lrdbf2bz6arh9s7x9k10vs986yxrhv23fahrwnl38172ggwv3f9"))))
     (properties `((upstream-name . "cancerscreening")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-vctrs
                              r-tidyr
                              r-stringr
                              r-rlang
-                             r-purrr
-                             r-pillar
                              r-magrittr
                              r-lubridate
                              r-khisr

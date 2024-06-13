@@ -4068,20 +4068,22 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0maf6rf9hwh5ik2lc5lqvblgmrrrk5k1i67rpmx9d77b0dhc2k9r"))))
+        (base32 "1yy8wqprvqc0sa7nxw044g5j18vy395zkbfsr8ibdnbd4hzxvgkf"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-rlang
+                             r-omopgenerics
                              r-magrittr
                              r-glue
+                             r-drugutilisation
                              r-dplyr
                              r-checkmate
                              r-cdmconnector))
@@ -13546,13 +13548,13 @@ changes than first-order differences across heterogeneous patterns.")
 (define-public r-diffviewer
   (package
     (name "r-diffviewer")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffviewer" version))
        (sha256
-        (base32 "01phkaaa0zylyi23siwam18i1ggfgq2m66d69lnz9ips1yh12yca"))))
+        (base32 "1rwcqmc9h7ggxfkc57wklz5vqqanlr0mff7f2613gkh9pci5nadg"))))
     (properties `((upstream-name . "diffviewer")))
     (build-system r-build-system)
     (arguments

@@ -6268,13 +6268,13 @@ technical writing.  Learn more about the inkaverse project at
 (define-public r-intextsummarytable
   (package
     (name "r-intextsummarytable")
-    (version "3.3.2")
+    (version "3.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inTextSummaryTable" version))
        (sha256
-        (base32 "0h95h31ghcwm7fpp9sfvg3za6381ghcpz4qn4dmw28kh7gd76y96"))))
+        (base32 "0zxxny28pra5hcfjijrki7qm29n9ys2mskcnqyvy6nn2b4y7p8wj"))))
     (properties `((upstream-name . "inTextSummaryTable")))
     (build-system r-build-system)
     (inputs (list pandoc))

@@ -8956,13 +8956,13 @@ common conventions or those defined by International Swap Dealer Association
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2024.5")
+    (version "2024.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "0zhgpqfqgrgnfmhgbajzvq0crl9llwvf79n8m81sm57kqdfkxp7k"))))
+        (base32 "082i5hzw41vmdg1q7c42jpnisn0mip3mgs0z440dckv7dk2pnr2i"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (inputs (list python))
@@ -8970,7 +8970,6 @@ common conventions or those defined by International Swap Dealer Association
                              r-stringr
                              r-reticulate
                              r-purrr
-                             r-psychwordvec
                              r-psych
                              r-plyr
                              r-irr
@@ -8978,6 +8977,7 @@ common conventions or those defined by International Swap Dealer Association
                              r-forcats
                              r-dplyr
                              r-data-table
+                             r-crayon
                              r-cli))
     (home-page "https://psychbruce.github.io/FMAT/")
     (synopsis "The Fill-Mask Association Test")

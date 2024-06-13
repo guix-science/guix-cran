@@ -16997,28 +16997,6 @@ and age distributions.  These functions may be helpful when related age and
 custom age distributions are desired given a vector of birth dates.")
     (license license:expat)))
 
-(define-public r-agd
-  (package
-    (name "r-agd")
-    (version "0.45.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AGD" version))
-       (sha256
-        (base32 "02dvbqyym3l642vxhlx7ay6dj1sf1ns207ig81h3fz1w3gy9wn20"))))
-    (properties `((upstream-name . "AGD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-gamlss-dist r-gamlss))
-    (home-page "https://stefvanbuuren.name/AGD/")
-    (synopsis "Analysis of Growth Data")
-    (description
-     "This package provides tools for the analysis of growth data: to extract an LMS
-table from a gamlss object, to calculate the standard deviation scores and its
-inverse, and to superpose two wormplots from different models.  The package
-contains a some varieties of reference tables, especially for The Netherlands.")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-agcounts
   (package
     (name "r-agcounts")

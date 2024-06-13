@@ -5226,13 +5226,13 @@ Duan and Parast (2023) <doi:10.1002/sim.9986>.")
 (define-public r-surrogate
   (package
     (name "r-surrogate")
-    (version "3.2.6")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Surrogate" version))
        (sha256
-        (base32 "1sfy608n5drkf3alanfv6aaq66n8lmfqs9k5rrxpgbw36gpz2xv1"))))
+        (base32 "1r4i12f6kmbszrm8v17gp2396ybwv913ngr3mnhqmvsl91fnpwi6"))))
     (properties `((upstream-name . "Surrogate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8152,13 +8152,13 @@ package vignette.")
 (define-public r-streamconnect
   (package
     (name "r-streamconnect")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamConnect" version))
        (sha256
-        (base32 "1rl39v1dlhr06k68d2r6sxk6q6dhmi4yvsk5n21piwb4q185m5ar"))))
+        (base32 "1v7q2wrgw42m73riiby9ylq0hqr22cld43msdkknw623n1q71a1w"))))
     (properties `((upstream-name . "streamConnect")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18492,13 +18492,13 @@ on a simple biological intuition.")
 (define-public r-spnaf
   (package
     (name "r-spnaf")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spnaf" version))
        (sha256
-        (base32 "06gz7gxh3r0ci1v46hgcs5a1837vqlqbg6vkcv1m5r4vp2n4hkc8"))))
+        (base32 "1xiky882smpyqscdwaqgjx505f5gwpl9i419n15j90lv4f768k6q"))))
     (properties `((upstream-name . "spnaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -18506,7 +18506,8 @@ on a simple biological intuition.")
                              r-sf
                              r-rlang
                              r-magrittr
-                             r-dplyr))
+                             r-dplyr
+                             r-deldir))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=spnaf")
     (synopsis "Spatial Network Autocorrelation for Flow Data")

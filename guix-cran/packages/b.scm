@@ -15679,13 +15679,13 @@ Data Research (UK), Medical Research Council (UK) award reference MR/S003967/1
 (define-public r-bhmsmafmri
   (package
     (name "r-bhmsmafmri")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BHMSMAfMRI" version))
        (sha256
-        (base32 "1wcsgzx69qrw1bnipb9ry6162mirk6miw62w8pcvazqj91aljfhd"))))
+        (base32 "0xn4ss422mkshx5kcznaym04i5z5a9vw9hvcb10r38vq031wys8q"))))
     (properties `((upstream-name . "BHMSMAfMRI")))
     (build-system r-build-system)
     (propagated-inputs (list r-wavethresh r-rcpparmadillo r-rcpp r-oro-nifti))
@@ -15696,8 +15696,8 @@ Data Research (UK), Medical Research Council (UK) award reference MR/S003967/1
     (description
      "Package BHMSM@code{AfMRI} performs Bayesian hierarchical multi-subject
 multiscale analysis of @code{fMRI} data as described in Sanyal & Ferreira (2012)
-<DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using wavelet
-based prior that borrows strength across subjects and provides posterior
+<DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using
+wavelet-based prior that borrows strength across subjects and provides posterior
 smoothed images of the effect sizes and samples from the posterior distribution.")
     (license license:gpl2+)))
 
@@ -19123,13 +19123,13 @@ generate artificial data in a transparent and reproducible manner.")
 (define-public r-bdlim
   (package
     (name "r-bdlim")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdlim" version))
        (sha256
-        (base32 "17ccrx9iviynm3wv9zi1cpb9l5dfbribdhx97n11s1qimzf3l9fv"))))
+        (base32 "04qgmanb198abrkqfv4n0fk0zib3nad14s7pz85n4ws0252vk10r"))))
     (properties `((upstream-name . "bdlim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-laplacesdemon r-ggplot2 r-dplyr
@@ -20457,13 +20457,13 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "0sacbb5r90h6079l5m9kvkm4cbpv6kiswz4yzcfjrz4f1f179mxx"))))
+        (base32 "0dhbpc051xs1mz778a56h269ykwnlgh33k4cj88c2mb2rifmw9fa"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-httr2))
@@ -26054,13 +26054,13 @@ rmaaddon() can be used.")
 (define-public r-baorista
   (package
     (name "r-baorista")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baorista" version))
        (sha256
-        (base32 "0j2a9ypq5k7676xlz4d8p0fns6xvsxb6vazm99ahiwpq3pf4z3yq"))))
+        (base32 "1ljqkplhnfxcs0jvmg589x7j00pciqk829vg5gi4c2i69yxd7mc1"))))
     (properties `((upstream-name . "baorista")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-coda))
@@ -27039,13 +27039,13 @@ author.  Hope this package also knows what you want!")
 (define-public r-bain
   (package
     (name "r-bain")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bain" version))
        (sha256
-        (base32 "1knkz4ndgdvyn47r6r4gj0sqs9s70h4a5d3hjd4l057216drwmah"))))
+        (base32 "137i13i39i87q7219bpja6a8l762is4sala55hvk2hlmph3qnylc"))))
     (properties `((upstream-name . "bain")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -27055,12 +27055,12 @@ author.  Hope this package also knows what you want!")
     (description
      "Computes approximated adjusted fractional Bayes factors for equality,
 inequality, and about equality constrained hypotheses.  For a tutorial on this
-method, see Hoijtink, Mulder, van Lissa, & Gu, (2019)
-<doi:10.31234/osf.io/v3shc>.  For applications in structural equation modeling,
-see: Van Lissa, Gu, Mulder, Rosseel, Van Zundert, & Hoijtink, (2021)
-<doi:10.1080/10705511.2020.1745644>.  For the statistical underpinnings, see Gu,
-Mulder, and Hoijtink (2018) <doi:10.1111/bmsp.12110>; Hoijtink, Gu, & Mulder, J.
-(2019) <doi:10.1111/bmsp.12145>; Hoijtink, Gu, Mulder, & Rosseel, (2019)
+method, see Hoijtink, Mulder, van Lissa, & Gu, (2019) <doi:10.1037/met0000201>.
+For applications in structural equation modeling, see: Van Lissa, Gu, Mulder,
+Rosseel, Van Zundert, & Hoijtink, (2021) <doi:10.1080/10705511.2020.1745644>.
+For the statistical underpinnings, see Gu, Mulder, and Hoijtink (2018)
+<doi:10.1111/bmsp.12110>; Hoijtink, Gu, & Mulder, J. (2019)
+<doi:10.1111/bmsp.12145>; Hoijtink, Gu, Mulder, & Rosseel, (2019)
 <doi:10.31234/osf.io/q6h5w>.")
     (license license:gpl3+)))
 

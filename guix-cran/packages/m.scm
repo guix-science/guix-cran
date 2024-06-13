@@ -9598,17 +9598,17 @@ Gerber, Schmid and Furrer (2021) <DOI:10.1016/j.spasta.2020.100483>.")
 (define-public r-mrbin
   (package
     (name "r-mrbin")
-    (version "1.7.4")
+    (version "1.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbin" version))
        (sha256
-        (base32 "11k7k88ax9jpad32nbv52hkdrsh1px1aid3j54gbmvhf3kbqasmd"))))
+        (base32 "1pa6acqry480xf2hng10m2i3wlh9k5rxfxl8zarlpcczg8pb1pv2"))))
     (properties `((upstream-name . "mrbin")))
     (build-system r-build-system)
     (native-inputs (list))
-    (home-page "http://www.kleinomicslab.com/software/")
+    (home-page "https://github.com/kleinomicslab/mrbin")
     (synopsis "Metabolomics Data Analysis Functions")
     (description
      "This package provides a collection of functions for processing and analyzing

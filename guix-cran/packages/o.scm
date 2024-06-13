@@ -3880,6 +3880,61 @@ package has been developed using concept of Wang et al. (2022)
 <doi:10.1007/978-3-030-18195-6_21 >.")
     (license license:gpl3)))
 
+(define-public r-optisel
+  (package
+    (name "r-optisel")
+    (version "2.0.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optiSel" version))
+       (sha256
+        (base32 "1fgh9lb4pmis8wm9vr5p7883xnhx50r5a2swdy2vlhwpgcc3caqz"))))
+    (properties `((upstream-name . "optiSel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quadprog
+                             r-purrr
+                             r-pspline
+                             r-plyr
+                             r-pedigree
+                             r-optisolve
+                             r-nadiv
+                             r-matrix
+                             r-mass
+                             r-magic
+                             r-kinship2
+                             r-foreach
+                             r-ecosolver
+                             r-doparallel
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=optiSel")
+    (synopsis "Optimum Contribution Selection and Population Genetics")
+    (description
+     "This package provides a framework for the optimization of breeding programs via
+optimum contribution selection and mate allocation.  An easy to use set of
+function for computation of optimum contributions of selection candidates, and
+of the population genetic parameters to be optimized.  These parameters can be
+estimated using pedigree or genotype information, and include kinships, kinships
+at native haplotype segments, and breed composition of crossbred individuals.
+They are suitable for managing genetic diversity, removing introgressed genetic
+material, and accelerating genetic gain.  Additionally, functions are provided
+for computing genetic contributions from ancestors, inbreeding coefficients, the
+native effective size, the native genome equivalent, pedigree completeness, and
+for preparing and plotting pedigrees.  The methods are described in:\\n Wellmann,
+R., and Pfeiffer, I. (2009) <doi:10.1017/S0016672309000202>.\\n Wellmann, R., and
+Bennewitz, J. (2011) <doi:10.2527/jas.2010-3709>.\\n Wellmann, R., Hartwig, S.,
+Bennewitz, J. (2012) <doi:10.1186/1297-9686-44-34>.\\n de Cara, M. A. R.,
+Villanueva, B., Toro, M. A., Fernandez, J. (2013) <doi:10.1111/mec.12560>.\\n
+Wellmann, R., Bennewitz, J., Meuwissen, T.H.E. (2014)
+<doi:10.1017/S0016672314000196>.\\n Wellmann, R. (2019)
+<doi:10.1186/s12859-018-2450-5>.")
+    (license license:gpl2)))
+
 (define-public r-optiscale
   (package
     (name "r-optiscale")

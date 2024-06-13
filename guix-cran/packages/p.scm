@@ -6467,16 +6467,17 @@ translated from MATLAB ('SOM Toolbox 2.0) to R.")
 (define-public r-proj
   (package
     (name "r-proj")
-    (version "0.4.5")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PROJ" version))
        (sha256
-        (base32 "0iq33v6z0plz1q9vgsaa3lryfdc7xawny34r8bk65kx35a32zvxb"))))
+        (base32 "16wcr1p2rp9d5y14n9km0d24zhvja3qj5d34lx9mv9l969licqzs"))))
     (properties `((upstream-name . "PROJ")))
     (build-system r-build-system)
     (inputs (list zlib proj openssl openssh curl))
+    (propagated-inputs (list r-wk r-lifecycle))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/PROJ")
     (synopsis "Generic Coordinate System Transformations Using 'PROJ'")
@@ -13864,13 +13865,13 @@ included for reference and examples.")
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "065s3limfillplbskl1dwr4awp3riw0d6vlxvxc6p3lac2g1rcy0"))))
+        (base32 "1bd9zb1kmzw1xfrslnp89iw2ilgxy5vv6r918dss76lwab9qja5c"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -24555,13 +24556,13 @@ Mendelian disease and rare genetic variants.  See Bastarache et al.  2018
 (define-public r-phenthauproc
   (package
     (name "r-phenthauproc")
-    (version "1.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHENTHAUproc" version))
        (sha256
-        (base32 "1kwaz54y1k8paca91pipg9vjy6yyqddz3h7ym99dfggq14di3q6b"))))
+        (base32 "1bhd147mhv1xj4q6yqz92n8vi6nji093y78pi1jkav1plwx2qf3c"))))
     (properties `((upstream-name . "PHENTHAUproc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-lubridate))
@@ -28307,13 +28308,13 @@ penalization methods is provided.")
 (define-public r-pencal
   (package
     (name "r-pencal")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pencal" version))
        (sha256
-        (base32 "1gwn7iih3kwj4hn7lhsxc03j0rb9sajnz4dsmgp4v04lc712w6hq"))))
+        (base32 "1wafrq4qgljycdmxhgc2jgbd2ayr9h4nbvss6l5dk2fxsq7yyv6x"))))
     (properties `((upstream-name . "pencal")))
     (build-system r-build-system)
     (propagated-inputs (list r-survivalroc
@@ -28337,8 +28338,8 @@ penalization methods is provided.")
     (description
      "Computes penalized regression calibration (PRC), a statistical method for the
 dynamic prediction of survival when many longitudinal predictors are available.
-PRC is described in Signorelli et al. (2021) <doi:10.1002/sim.9178> and
-Signorelli (2023) <doi:10.48550/@code{arXiv.2309.15600>}.")
+PRC is described in Signorelli (2024) <doi:10.48550/@code{arXiv.2309.15600>} and
+in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
     (license license:gpl3+)))
 
 (define-public r-penaltylearning

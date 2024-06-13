@@ -16852,13 +16852,13 @@ frames.")
 (define-public r-tidybins
   (package
     (name "r-tidybins")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidybins" version))
        (sha256
-        (base32 "1kwwz0y1anlf1l8yl80xyiggdi8alsh0drb1529rijfk2jxlljg9"))))
+        (base32 "11213qv79qlqlkxh10y3vhidy120f9gyfwj4xqbr6w3wqa5cjg60"))))
     (properties `((upstream-name . "tidybins")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -16878,9 +16878,10 @@ frames.")
                              r-framecleaner
                              r-dplyr
                              r-clusterr
-                             r-badger))
+                             r-badger
+                             r-autostats))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/Harrison4192/tidybins")
+    (home-page "https://harrison4192.github.io/tidybins/")
     (synopsis "Make Tidy Bins")
     (description
      "Multiple ways to bin numeric columns with a tidy output.  Wraps a variety of
@@ -21154,13 +21155,13 @@ Includes a Shiny user interface for point-and-click ternary plotting.")
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.mmrm" version))
        (sha256
-        (base32 "0iiyqcc34dicgfvr2wk499m234cb9nb4zxndgxdb2xnzisx53inq"))))
+        (base32 "1jklh18fmhcjpkp85cpf4q1xcgidp8rr9py5qfns2iwkac530sdn"))))
     (properties `((upstream-name . "tern.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21198,13 +21199,13 @@ on mmrm <https://cran.r-project.org/package=mmrm> by @code{SabanÃ©s}
 (define-public r-tern-gee
   (package
     (name "r-tern-gee")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.gee" version))
        (sha256
-        (base32 "1nnficsy1irry6fjx6bdlq2jm6vpgfkl8h9z780y29rhid5jbv4d"))))
+        (base32 "03znf66m3alai8n75g9sxl47wsnai6kgav8pm28zk3nimcx0b0bw"))))
     (properties `((upstream-name . "tern.gee")))
     (build-system r-build-system)
     (propagated-inputs (list r-tern
@@ -21216,7 +21217,7 @@ on mmrm <https://cran.r-project.org/package=mmrm> by @code{SabanÃ©s}
                              r-emmeans
                              r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/insightsengineering/tern.gee/")
+    (home-page "https://insightsengineering.github.io/tern.gee/")
     (synopsis
      "Tables and Graphs for Generalized Estimating Equations (GEE) Model Fits")
     (description

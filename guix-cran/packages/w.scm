@@ -169,13 +169,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.3.6")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "1q9rfkb2iv0h1pcra0jg3s8xp57fhxfyn000sgf5gf67k62ia32x"))))
+        (base32 "00i89r7299psykl1pgaxp3hmkx7na0g9m0yh4gp68cnp6xla7wxh"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sm
@@ -199,12 +199,10 @@ dates due to phenomena like climate change.  Data for training should be a
 single time series but can originate from station data, basin averages, grid
 cells, etc.  Bearup, L., Gangopadhyay, S., & Mikkelson, K. (2021). \"Hydroclimate
 Analysis Lower Santa Cruz River Basin Study (Technical Memorandum No
-ENV-2020-056).\" Bureau of Reclamation.
-<https://www.usbr.gov/lc/phoenix/programs/lscrbasin/LSCRBS_Hydroclimate_2021.pdf>.
- Gangopadhyay, S., Bearup, L. A., Verdin, A., Pruitt, T., Halper, E., & Shamir,
-E. (2019, December 1). \"A collaborative stochastic weather generator for climate
-impacts assessment in the Lower Santa Cruz River Basin, Arizona.\" Fall Meeting
-2019, American Geophysical Union.
+ENV-2020-056).\" Bureau of Reclamation.  Gangopadhyay, S., Bearup, L. A., Verdin,
+A., Pruitt, T., Halper, E., & Shamir, E. (2019, December 1). \"A collaborative
+stochastic weather generator for climate impacts assessment in the Lower Santa
+Cruz River Basin, Arizona.\" Fall Meeting 2019, American Geophysical Union.
 <https://ui.adsabs.harvard.edu/abs/2019AGUFMGC41G1267G>.")
     (license license:cc0)))
 
