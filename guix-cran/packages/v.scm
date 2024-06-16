@@ -4773,6 +4773,39 @@ with them, like: - Arithmetic and logic operators - Modular-arithmetic operators
 Factorization algorithms - Random generators of diferent types of integers.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-vertexwiser
+  (package
+    (name "r-vertexwiser")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VertexWiseR" version))
+       (sha256
+        (base32 "14ria7wf080zszjqml96dm2jb4ppjlcrhckk82x3mpyw7xsmpclh"))))
+    (properties `((upstream-name . "VertexWiseR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate
+                             r-igraph
+                             r-gifti
+                             r-fs
+                             r-freesurferformats
+                             r-foreach
+                             r-dosnow
+                             r-doparallel))
+    (home-page "https://cogbrainhealthlab.github.io/VertexWiseR/")
+    (synopsis
+     "Simplified Vertex-Wise Analyses of Whole-Brain and Hippocampal Surface")
+    (description
+     "This package provides functions to run statistical analyses on surface-based
+neuroimaging data, computing measures including cortical thickness and surface
+area of the whole-brain and of the hippocampi.  It can make use of
+@code{FreeSurfer} preprocessed datasets and @code{HippUnfold} hippocampal
+segmentation outputs for a given sample by restructuring the data values into a
+single file.  The single file can then be used by the package for analyses
+independently from its base dataset and without need for its access.")
+    (license license:gpl3)))
+
 (define-public r-vertexsimilarity
   (package
     (name "r-vertexsimilarity")
@@ -7222,13 +7255,13 @@ of variation, the margin of error, confidence interval, design effect.")
 (define-public r-vardetect
   (package
     (name "r-vardetect")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VARDetect" version))
        (sha256
-        (base32 "1hncblqf78gfpbk5643x5jz1n6ffn16jpi8kjsh2cz8r9nrrnx59"))))
+        (base32 "1g28rcmlm16yiz156rmdslvhy173pazij0lw7b5gxqv3dgl4mcd0"))))
     (properties `((upstream-name . "VARDetect")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsevar
@@ -7427,13 +7460,13 @@ testing, prediction for stationary vector autoregressive models.")
 (define-public r-vapour
   (package
     (name "r-vapour")
-    (version "0.9.5")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vapour" version))
        (sha256
-        (base32 "0m4mqx3chd7w98ky6man0ynvh7i310bw0bk5gg1cs4gm2myzs20p"))))
+        (base32 "18icwn62mpjjrfn7y19svyipq1xziz3vag5vmgp7wxy5i8q5kvch"))))
     (properties `((upstream-name . "vapour")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -7443,7 +7476,7 @@ testing, prediction for stationary vector autoregressive models.")
                   openssh
                   gdal
                   curl))
-    (propagated-inputs (list r-rcpp r-nanoarrow r-jsonlite))
+    (propagated-inputs (list r-rcpp r-jsonlite))
     (native-inputs (list pkg-config r-knitr))
     (home-page "https://github.com/hypertidy/vapour")
     (synopsis "Access to the 'Geospatial Data Abstraction Library' ('GDAL')")

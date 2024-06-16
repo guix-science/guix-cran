@@ -5019,16 +5019,16 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "0.1.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "0s86j75jzinrwn1p5z9l13srzhy55mj3hcnbjr89ia1m6kgih6dc"))))
+        (base32 "0y7rkb2lvv8yy3sl4r0zha873basfbh51gpwcxcqb1ihrn8i8c4c"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rlang r-magrittr r-dplyr))
+    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
     (home-page "https://github.com/meflynn/troopdata")
     (synopsis
      "Tools for Analyzing Cross-National Military Deployment and Basing Data")
@@ -5063,13 +5063,13 @@ output modifying the resulting template.")
 (define-public r-trmf
   (package
     (name "r-trmf")
-    (version "0.1.5")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TRMF" version))
        (sha256
-        (base32 "0zi9v7jgvpcdfjs7pbcfb8ggf89w71zvxmlsr319r1d4spkrskfx"))))
+        (base32 "1ar4shr2r58ksk7lzi3dwinp06d7inffrfmnvyb1s289swxg9a1w"))))
     (properties `((upstream-name . "TRMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-limsolve r-generics))
@@ -5116,13 +5116,13 @@ then computed, thus providing a particular instance of diversity to measure.")
 (define-public r-triptych
   (package
     (name "r-triptych")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "triptych" version))
        (sha256
-        (base32 "171wf85hjjdqv5m78galsrqwjri6j62l0kh5ixgrjvglwvlz15iz"))))
+        (base32 "1ggifvzqa5ifa66mhg0bsv47g54nbih9zg4sbm6m9483wvnsxhhs"))))
     (properties `((upstream-name . "triptych")))
     (build-system r-build-system)
     (inputs (list))
@@ -5148,8 +5148,8 @@ then computed, thus providing a particular instance of diversity to measure.")
      "Overall predictive performance is measured by a mean score (or loss), which
 decomposes into miscalibration, discrimination, and uncertainty components.  The
 main focus is visualization of these distinct and complementary aspects in joint
-displays.  See Dimitriadis, Gneiting, Jordan, Vogel (2023)
-<@code{arXiv:2301.10803>}.")
+displays.  See Dimitriadis, Gneiting, Jordan, Vogel (2024)
+<doi:10.1016/j.ijforecast.2023.09.007>.")
     (license license:expat)))
 
 (define-public r-tripsanddipr
@@ -10357,13 +10357,13 @@ learning models.")
 (define-public r-torchvision
   (package
     (name "r-torchvision")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchvision" version))
        (sha256
-        (base32 "0649rgrh4fbswc3ab92af2z1hf61nbb7wf8yf5n9b9ajnvfkvxbp"))))
+        (base32 "0n78x9dyj9dk2dpsmx5zbm1842nhfnb7jszva320avr72w6a4386"))))
     (properties `((upstream-name . "torchvision")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -13181,13 +13181,13 @@ other dependency, namely stringi'.")
 (define-public r-tinyarray
   (package
     (name "r-tinyarray")
-    (version "2.4.1")
+    (version "2.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyarray" version))
        (sha256
-        (base32 "1dcn5iv66z72f4lssclndkp26q4j53ff3m9dl9w9a02l44jyf8bw"))))
+        (base32 "188zc58yb68jyw3dw7y323slnlgl7872icrwf3zl6s7rm44dmljc"))))
     (properties `((upstream-name . "tinyarray")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14684,18 +14684,16 @@ documentation here for more detail: <https://gtfs.org/>.")
 (define-public r-tidytlg
   (package
     (name "r-tidytlg")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytlg" version))
        (sha256
-        (base32 "0di871am8zplavhkh2kjqazc3nv3cn5dzzff0sgj4hxwhfla1f12"))))
+        (base32 "0w4ah32b82b14y6nxw8l5z06mxx9cxipqmjnmifxxb86qjhqpp9f"))))
     (properties `((upstream-name . "tidytlg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
                              r-rstudioapi
@@ -14710,10 +14708,11 @@ documentation here for more detail: <https://gtfs.org/>.")
                              r-forcats
                              r-dplyr
                              r-crayon
+                             r-cli
                              r-cellranger
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/pharmaverse/tidytlg")
+    (home-page "https://pharmaverse.github.io/tidytlg/main/")
     (synopsis "Create TLGs using the 'tidyverse'")
     (description
      "Generate tables, listings, and graphs (TLG) using tidyverse.  Tables can be
@@ -16027,13 +16026,13 @@ other data frame.  The main function is predict_gam().")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.8")
+    (version "1.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "0vkgnak1s5519b1k4zrfchnalyi2s1qvfvr8x8s0dpw5f3vn1hf2"))))
+        (base32 "114wdgrcwkl5mpjxdilp51xc9qn4sa3qj5fclyz84s305hiaba6d"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -22196,6 +22195,33 @@ representations, therefore, on the information transmitted by an individual,
 seeks to create a profile that define a social group.")
     (license license:gpl3+)))
 
+(define-public r-telescope
+  (package
+    (name "r-telescope")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "telescope" version))
+       (sha256
+        (base32 "1r6ciiy12jy7z4hb2jhgv1ml7p57rqcpfbz2fs0bn5bc1jbzm3ch"))))
+    (properties `((upstream-name . "telescope")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm
+                             r-mcmcpack
+                             r-extradistr
+                             r-dirichletreg
+                             r-bayesm
+                             r-abind))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=telescope")
+    (synopsis "Bayesian Mixtures with an Unknown Number of Components")
+    (description
+     "Fits Bayesian finite mixtures with an unknown number of components using the
+telescoping sampler and different component distributions.  For more details see
+@code{FrÃ¼hwirth-Schnatter} et al. (2021) <doi:10.1214/21-BA1294>.")
+    (license license:gpl2)))
+
 (define-public r-telemetr
   (package
     (name "r-telemetr")
@@ -24106,17 +24132,17 @@ algorithms of Whidden and Matsen (2017) <arxiv:1511.07529>.")
 (define-public r-tbox
   (package
     (name "r-tbox")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TBox" version))
        (sha256
-        (base32 "1iqn30nhr91k7pbbdg408rbc1mchq7d47bznnw6h504af43av5fv"))))
+        (base32 "19s51kwid7fnshlsp8wisp221kk7nv2ii5dyhnxrc6krisb45746"))))
     (properties `((upstream-name . "TBox")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-clipr))
-    (home-page "https://cran.r-project.org/package=TBox")
+    (propagated-inputs (list r-rmarkdown r-knitr r-clipr r-checkmate))
+    (home-page "https://github.com/TanguyBarthelemy/TBox")
     (synopsis "Useful Functions for Programming and Generating Documents")
     (description
      "This package provides tools to help developers and producers manipulate R
@@ -26172,35 +26198,45 @@ Windsor.ai API <https://windsor.ai/api-fields/>.")
 (define-public r-tabnet
   (package
     (name "r-tabnet")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabnet" version))
        (sha256
-        (base32 "1myw6qx2h7szp6p0d5y4vy9mw5nsxmj64ybshp2q22whlbiqad7k"))))
+        (base32 "1bvbl1b4i3mx2qf6hjbkk114s1bq76gnhpfasy4c5q2f9k6z33c7"))))
     (properties `((upstream-name . "tabnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
+                             r-withr
                              r-vctrs
+                             r-tune
                              r-torch
                              r-tidyr
                              r-tibble
+                             r-stringr
                              r-rlang
+                             r-purrr
                              r-progress
+                             r-parsnip
+                             r-matrix
                              r-magrittr
                              r-hardhat
+                             r-ggplot2
                              r-dplyr
+                             r-dials
+                             r-data-tree
                              r-coro))
     (native-inputs (list r-knitr))
     (home-page "https://mlverse.github.io/tabnet/")
     (synopsis "Fit 'TabNet' Models for Classification and Regression")
     (description
      "This package implements the @code{TabNet} model by Sercan O. Arik et al. (2019)
-<@code{arXiv:1908.07442>} with Coherent Hierarchical Multi-label Classification
-Networks by Giunchiglia et al. <@code{arXiv:2010.10151>} and provides a
-consistent interface for fitting and creating predictions.  It's also fully
-compatible with the tidymodels ecosystem.")
+<doi:10.48550/@code{arXiv.1908.07442>} with Coherent Hierarchical Multi-label
+Classification Networks by Giunchiglia et al.
+<doi:10.48550/@code{arXiv.2010.10151>} and provides a consistent interface for
+fitting and creating predictions.  It's also fully compatible with the
+tidymodels ecosystem.")
     (license license:expat)))
 
 (define-public r-tablexlsx

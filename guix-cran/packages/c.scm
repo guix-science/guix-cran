@@ -2133,6 +2133,32 @@ events.  Documentation for the API can be found at
 <https://www.cumulocity.com/guides/reference/rest-implementation/>.")
     (license license:gpl3)))
 
+(define-public r-cumulcalib
+  (package
+    (name "r-cumulcalib")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cumulcalib" version))
+       (sha256
+        (base32 "0md2zvs0n7lrlfxh5208a69jg2wgdwd4jvivf3j50jhhwfclmsw5"))))
+    (properties `((upstream-name . "cumulcalib")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/resplab/cumulcalib")
+    (synopsis "Cumulative Calibration Assessment for Prediction Models")
+    (description
+     "This package provides tools for visualization of, and inference on, the
+calibration of prediction models on the cumulative domain.  This provides a
+method for evaluating calibration of risk prediction models without having to
+group the data or use tuning parameters (e.g., loess bandwidth).  This package
+implements the methodology described in Sadatsafavi and Patkau (2024)
+<doi:10.1002/sim.10138>.  The core of the package is cumulcalib(), which takes
+in vectors of binary responses and predicted risks.  The plot() and summary()
+methods are implemented for the results returned by cumulcalib().")
+    (license license:expat)))
+
 (define-public r-cumstats
   (package
     (name "r-cumstats")
@@ -4618,13 +4644,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "1.4.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "0jpnks935n18yk1936643m01wj2b8hy19limnkpwny6qlyjrlzy2"))))
+        (base32 "0jj6ld4xy1dxc7g317dfjd46vrpbiayskcnvhmapr0rnga60c78r"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4634,8 +4660,10 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
                              r-plyr
                              r-lubridate
                              r-jsonlite
+                             r-janitor
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-base64enc))
     (home-page "https://github.com/sstoeckl/crypto2")
     (synopsis
      "Download Crypto Currency Data from 'CoinMarketCap' without 'API'")
@@ -5444,13 +5472,13 @@ Bloomberg Data for Health Initiative.")
 (define-public r-crossurr
   (package
     (name "r-crossurr")
-    (version "1.0.6")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crossurr" version))
        (sha256
-        (base32 "16fq6hdfc6nsdijj63fji3bn3hp40m350qjxhf8a3xs5j86vf43j"))))
+        (base32 "1g4nr9x93ykq6qy5236vydkcbjyfzdz81kwgjv7mph3m0b862rdw"))))
     (properties `((upstream-name . "crossurr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -20981,13 +21009,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "1dq3b6vjn02wzp5gczxn1xvgbq9k9hynznss38rv8asdv0xaqjik"))))
+        (base32 "0wa02j80zy4sq7p7hyx97yvfbgfgb1zr0qa9vlhv6xy7m0wggqlz"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26647,13 +26675,13 @@ posterior predictive distributions derived from these references.")
 (define-public r-clindatareview
   (package
     (name "r-clindatareview")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinDataReview" version))
        (sha256
-        (base32 "0d2ar2rar9qpi9gdf2jzswi65vf031k0azkgp72akgjyd46c2wdk"))))
+        (base32 "1xfv7r7rbr8fjkhrwxbpnvbf4khwcvd5pyam9fbbp6b65zr752c2"))))
     (properties `((upstream-name . "clinDataReview")))
     (build-system r-build-system)
     (arguments
@@ -26690,7 +26718,8 @@ posterior predictive distributions derived from these references.")
                              r-data-table
                              r-crosstalk
                              r-clinutils
-                             r-bookdown))
+                             r-bookdown
+                             r-base64enc))
     (native-inputs (list r-knitr esbuild))
     (home-page "https://github.com/openanalytics/clinDataReview")
     (synopsis "Clinical Data Review Tool")
@@ -28867,6 +28896,33 @@ so no Python installation or other API is required for this package.")
 splitting the time series through start and end functions, transforming the data
 set in log returns or levels, and making a Dynamic graph.")
     (license license:expat)))
+
+(define-public r-citmic
+  (package
+    (name "r-citmic")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CITMIC" version))
+       (sha256
+        (base32 "1dr8i1hpc5hq8jbv59frh8yxa8nykkwfi4hpa9rmlycqwwy9xp16"))))
+    (properties `((upstream-name . "CITMIC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph r-fastmatch))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CITMIC")
+    (synopsis "Estimation of Cell Infiltration Based on Cell Crosstalk")
+    (description
+     "This package provides a systematic biology tool was developed to identify cell
+infiltration via Individualized Cell-Cell interaction network.  CITMIC first
+constructed a weighted cell interaction network through integrating Cell-target
+interaction information, molecular function data from Gene Ontology (GO)
+database and gene transcriptomic data in specific sample, and then, it used a
+network propagation algorithm on the network to identify cell infiltration for
+the sample.  Ultimately, cell infiltration in the patient dataset was obtained
+by normalizing the centrality scores of the cells.")
+    (license license:gpl2+)))
 
 (define-public r-cities
   (package
@@ -38727,16 +38783,19 @@ Chapman and Hall.")
 (define-public r-cast
   (package
     (name "r-cast")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CAST" version))
        (sha256
-        (base32 "0xk1nz0mgifr52dgcl2kbwq1dayx4qbjnrlbxli3d0nbmd17lpmk"))))
+        (base32 "1ga9j2c17gp14hgjd5wa8liak1m0qnhp27hl0r1iqk3gkxq3z5c9"))))
     (properties `((upstream-name . "CAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-twosamples
+                             r-terra
+                             r-sp
                              r-sf
                              r-plyr
                              r-ggplot2
@@ -41794,13 +41853,13 @@ simulated model outputs is provided.  See
 (define-public r-calibmsm
   (package
     (name "r-calibmsm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calibmsm" version))
        (sha256
-        (base32 "0mlp4ybxy1k55qv9fs6gp90w7hn64ihak6q4wwacz4l5iz5r5zkx"))))
+        (base32 "1yg5m2zsiw005fdihlilk43h27c7yyzlnbsb32qr9k67q010rk00"))))
     (properties `((upstream-name . "calibmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

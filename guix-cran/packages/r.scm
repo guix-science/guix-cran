@@ -4558,6 +4558,36 @@ user to quickly append objects to a tape-like file and later iterate over them
 requiring only one copy of each stored object to reside in memory a time.")
     (license license:gpl2)))
 
+(define-public r-rtapas
+  (package
+    (name "r-rtapas")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rtapas" version))
+       (sha256
+        (base32 "0vcd3zbrckmszj1w8jrjybym0y4dfaljajdr48fbx0x52cqly865"))))
+    (properties `((upstream-name . "Rtapas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-stringr
+                             r-phytools
+                             r-parallelly
+                             r-paco
+                             r-distory
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=Rtapas")
+    (synopsis "Random Tanglegram Partitions")
+    (description
+     "Applies a given global-fit method to random partial tanglegrams of a fixed size
+to identify the associations, terminals, and nodes that maximize phylogenetic
+(in)congruence.  It also includes functions to compute more easily the
+confidence intervals of classification metrics and plot results, reducing
+computational time.  See Llaberia-Robledillo et al., (2023)
+<doi:10.1093/sysbio/syad016>.")
+    (license license:expat)))
+
 (define-public r-rtables
   (package
     (name "r-rtables")
@@ -9689,6 +9719,32 @@ exporting data in the text files produced by Eprime experiments.")
 extended with Monte Carlo simulations following the method of Crouch et al
 (2014) <doi: 10.1016/j.canep.2014.02.005>.")
     (license license:gpl2)))
+
+(define-public r-rpregression
+  (package
+    (name "r-rpregression")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPregression" version))
+       (sha256
+        (base32 "098c798jiafbx12jas98r9118fnq0n963ivvphiif58yv2hf0iqz"))))
+    (properties `((upstream-name . "RPregression")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stargazer r-ggplot2))
+    (home-page "https://cran.r-project.org/package=RPregression")
+    (synopsis "Simple Regression and Plotting Tool")
+    (description
+     "Perform a regression analysis, generate a regression table, create a scatter
+plot, and download the results.  It uses stargazer for generating regression
+tables and ggplot2 for creating plots.  With just two lines of code, you can
+perform a regression analysis, visualize the results, and save the output.  It
+is part of my make R easy project where one doesn't need to know how to use
+various packages in order to get results and makes it easily accessible to
+beginners.  This is a part of my make R easy project.  Help from @code{ChatGPT}
+was taken.  References were Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
+    (license license:gpl3)))
 
 (define-public r-rpref
   (package
@@ -20858,13 +20914,13 @@ functionalities are useful as part of a CVS data production chain.")
 (define-public r-rjdqa
   (package
     (name "r-rjdqa")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjdqa" version))
        (sha256
-        (base32 "0g2qb7mkalcwnlrzb5943dg9pazlppn9xjmpp6a2jzgq9dzim753"))))
+        (base32 "0m3r5ficsj1hlp72imb1v2fbl2kvh9gni2rkff66wag805v0sjxp"))))
     (properties `((upstream-name . "rjdqa")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -22104,6 +22160,29 @@ available for all of the IPC-CH Public API (<https://docs.api.ipcinfo.org>)
 simplified and advanced endpoints to easily download the data in a clean and
 tidy format.")
     (license license:gpl3+)))
+
+(define-public r-rioplot
+  (package
+    (name "r-rioplot")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rioplot" version))
+       (sha256
+        (base32 "02la6a8rbj7ksjb4yzywp96hlblkv2vww7s5qizs78r5r5z13hwb"))))
+    (properties `((upstream-name . "rioplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rioplot")
+    (synopsis "Turn a Regression Model Inside Out")
+    (description
+     "Turns regression models inside out.  Functions decompose variances and
+coefficients for various regression model types.  Functions also visualize
+regression model objects using techniques developed in Schoon, Melamed, and
+Breiger (2024) <doi:10.1017/9781108887205>.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-rioja
   (package
@@ -24643,16 +24722,16 @@ provides read and write functions to work with it.")
 (define-public r-rgl-cry
   (package
     (name "r-rgl-cry")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgl.cry" version))
        (sha256
-        (base32 "0yj0gx0k5q6lhc5ifpdbn4pdqmzr38mjln8jqm20nhpd57iwqg2p"))))
+        (base32 "0zp7qq893cjs41rml64abdps4mddmsqafsc4mvqrg8lkir4awljw"))))
     (properties `((upstream-name . "rgl.cry")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-cry))
+    (propagated-inputs (list r-rgl r-pracma r-cry))
     (home-page "https://github.com/SaitouToshihide/rgl.cry/")
     (synopsis "'cry' and 'rgl' â Applications in Crystallography")
     (description
@@ -29745,13 +29824,13 @@ analysis, gene-set tests, and binary random data generation.")
 (define-public r-repeated
   (package
     (name "r-repeated")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repeated" version))
        (sha256
-        (base32 "15d4igg4s87rj22kxi1sc1chfd1z7v08q6cvglabysaymbz1nbmw"))))
+        (base32 "07bm52dwkd4hpk57k7rlmcac2kfb8ri2znss2bcvjasy4pacm3jd"))))
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))

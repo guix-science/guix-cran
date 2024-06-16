@@ -3438,17 +3438,18 @@ object from the graph package.")
 (define-public r-orbweaver
   (package
     (name "r-orbweaver")
-    (version "0.0.3")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbweaver" version))
        (sha256
-        (base32 "0lmxcjh621nsq5qrhg76h034dnzsybxs7r3sbqr91lifl2mpdnsd"))))
+        (base32 "1n8gay2nsxh0pc1jc6hgs2n5knk5ajaaqisq2l5dsnkl172r62rf"))))
     (properties `((upstream-name . "orbweaver")))
     (build-system r-build-system)
     (inputs (list))
-    (home-page "https://github.com/ixpantia/orbweaver")
+    (propagated-inputs (list r-rlang r-glue))
+    (home-page "https://github.com/ixpantia/orbweaver-r")
     (synopsis "Fast and Efficient Graph Data Structures")
     (description
      "Empower your data analysis with orbweaver', an R package designed for effortless
@@ -5469,13 +5470,13 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.0.8")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "0dz7hfp4447xgxsi92han8jwiy373vr5nyv3hlda26j9ydyf2jqf"))))
+        (base32 "05vzc4vswdd1k4b0gs01rhf8lp7lspygw1m6rw9d49l5ag7hq9if"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5485,6 +5486,7 @@ graphics, or ggplot2.  This package is not affiliated with the
                              r-osfr
                              r-mmand
                              r-jsonlite
+                             r-jpeg
                              r-hyperspec
                              r-glmnet
                              r-digest
@@ -7297,16 +7299,21 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneSampleMR" version))
        (sha256
-        (base32 "18d467bhym9mp41n65rp0wg75f40szc7w5804p3hh9xqw7c3q2qq"))))
+        (base32 "11wcrmhibr02wbkdw77imcjancfdfzcqkz6wfjiiydx3hsksymck"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-msm r-lmtest r-ivreg r-gmm r-formula))
+    (propagated-inputs (list r-msm
+                             r-lmtest
+                             r-ivreg
+                             r-gmm
+                             r-formula
+                             r-ellipsis))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/remlapmot/OneSampleMR")
     (synopsis
@@ -11054,28 +11061,6 @@ to see how much of a relationship needs to exist with the unmeasured variable
 before the conclusions change.  This package provides tools for doing a
 sensitivity analysis for regression (linear, logistic, and cox) style models.")
     (license license:gpl2)))
-
-(define-public r-obsmd
-  (package
-    (name "r-obsmd")
-    (version "11.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OBsMD" version))
-       (sha256
-        (base32 "0gxx3ja4ii5ql1ss43g23jrbwzg3193wchqmrdm0iq7g33mmd16y"))))
-    (properties `((upstream-name . "OBsMD")))
-    (build-system r-build-system)
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=OBsMD")
-    (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
-    (description
-     "This package implements the objective Bayesian methodology proposed in Consonni
-and Deldossi in order to choose the optimal experiment that better discriminate
-between competing models, see Deldossi and Nai Ruscone (2020)
-<doi:10.18637/jss.v094.i02>.")
-    (license license:gpl2+)))
 
 (define-public r-observer
   (package

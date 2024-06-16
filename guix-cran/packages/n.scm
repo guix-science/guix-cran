@@ -1956,30 +1956,6 @@ different methods for smoothing parameter selection, and flexible tools for
 diagnostics, inference, and prediction.")
     (license license:gpl2+)))
 
-(define-public r-npred
-  (package
-    (name "r-npred")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NPRED" version))
-       (sha256
-        (base32 "0nkfgc9zy3gszmnay77yj7i0p8w1q8j1m9wb05hkrmhiacp4mbn4"))))
-    (properties `((upstream-name . "NPRED")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/zejiang-unsw/NPRED#readme")
-    (synopsis "Predictor Identifier: Nonparametric Prediction")
-    (description
-     "Partial informational correlation (PIC) is used to identify the meaningful
-predictors to the response from a large set of potential predictors.  Details of
-methodologies used in the package can be found in Sharma, A., Mehrotra, R.
-(2014). <doi:10.1002/2013WR013845>, Sharma, A., Mehrotra, R., Li, J., & Jha, S.
-(2016). <doi:10.1016/j.envsoft.2016.05.021>, and Mehrotra, R., & Sharma, A.
-(2006). <doi:10.1016/j.advwatres.2005.08.007>.")
-    (license license:gpl3)))
-
 (define-public r-npphen
   (package
     (name "r-npphen")
@@ -7815,13 +7791,13 @@ Andrecut (2009) <doi:10.1089/cmb.2008.0221>.")
 (define-public r-nimblesmc
   (package
     (name "r-nimblesmc")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleSMC" version))
        (sha256
-        (base32 "14ps01rphi31570m2qhmgpjhdn73aldhm5a20y6fqf3j24k86jys"))))
+        (base32 "1sh1jaf8hyndazxbfjblfn1mkwqk8gwdqcdmgciqvyw3chsddv9v"))))
     (properties `((upstream-name . "nimbleSMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -12370,43 +12346,6 @@ protein-protein interaction network.")
 nephrology based on different biomechimal traits.")
     (license license:gpl3+)))
 
-(define-public r-neotoma2
-  (package
-    (name "r-neotoma2")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neotoma2" version))
-       (sha256
-        (base32 "1a7qcpypbr7vakrzl039ckv3cdy040gl6m3jpya1s284r30b12fx"))))
-    (properties `((upstream-name . "neotoma2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wk
-                             r-uuid
-                             r-tidyr
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-gtools
-                             r-geojsonsf
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/NeotomaDB/neotoma2")
-    (synopsis "Working with the Neotoma Paleoecology Database")
-    (description
-     "Access and manipulation of data using the Neotoma Paleoecology Database.
-<https://api.neotomadb.org/api-docs/>.")
-    (license license:expat)))
-
 (define-public r-neonutilities
   (package
     (name "r-neonutilities")
@@ -12546,13 +12485,13 @@ National Ecological Observatory Network <https://www.neonscience.org>.")
 (define-public r-neonos
   (package
     (name "r-neonos")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neonOS" version))
        (sha256
-        (base32 "11jgsf8c7rjfdbn9qljirzwvpnn4wckid4p4syx6py3dqjb4r19f"))))
+        (base32 "0qqm5g6h67v96kv8sjgiq15v0vkg5m7q96hkhhi3m5c4gkkj8wi0"))))
     (properties `((upstream-name . "neonOS")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-data-table r-curl))

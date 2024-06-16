@@ -11207,27 +11207,6 @@ databases.  Includes flexible algorithms for mapping taxonomic nomenclatures
 onto one another and for computing ensemble taxonomic assignments.")
     (license license:expat)))
 
-(define-public r-ensembler
-  (package
-    (name "r-ensembler")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ensembleR" version))
-       (sha256
-        (base32 "0xvq1jlsp7gsk46i847nfvadxwlh09gi2rgwss2wf2xmh1855ray"))))
-    (properties `((upstream-name . "ensembleR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ensembleR")
-    (synopsis "Ensemble Models in R")
-    (description
-     "This package provides functions to use ensembles of several machine learning
-models specified in caret package.")
-    (license license:gpl2)))
-
 (define-public r-ensemblepp
   (package
     (name "r-ensemblepp")
@@ -11575,13 +11554,13 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
 (define-public r-enmsdmx
   (package
     (name "r-enmsdmx")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmSdmX" version))
        (sha256
-        (base32 "0ps1i4gsy0wh90cv4snjhxy1m3356an05y809r7y8q4d9wswm2ll"))))
+        (base32 "0hwj7xa19inifajqbgzyxcjgi0gz49yqyfbdvgdwmh8f81i99hip"))))
     (properties `((upstream-name . "enmSdmX")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -11594,7 +11573,6 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
                              r-ranger
                              r-predicts
                              r-omnibus
-                             r-mumin
                              r-mgcv
                              r-maxnet
                              r-ks
@@ -11603,7 +11581,8 @@ Baumgartner (2019) <doi:10.1111/ecog.03900>.")
                              r-dt
                              r-doparallel
                              r-data-table
-                             r-boot))
+                             r-boot
+                             r-aiccmodavg))
     (home-page "https://github.com/adamlilith/enmSdmX")
     (synopsis "Species Distribution Modeling and Ecological Niche Modeling")
     (description
@@ -15350,6 +15329,38 @@ tables using exclusively aggregate results from voting units.  Reference:
      "Software accompanying Gary King's book: A Solution to the Ecological Inference
 Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
     (license license:gpl2+)))
+
+(define-public r-ehymet
+  (package
+    (name "r-ehymet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ehymet" version))
+       (sha256
+        (base32 "1ywsv8dlkp9fpvfgdpv27yjpa2wyzfx0bq6cb7fbd90b89j59lpp"))))
+    (properties `((upstream-name . "ehymet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tf r-kernlab))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bpulidob/ehymet")
+    (synopsis
+     "Methodologies for Functional Data Based on the Epigraph and Hypograph Indices")
+    (description
+     "This package implements methods for functional data analysis based on the
+epigraph and hypograph indices.  These methods transform functional datasets,
+whether in one or multiple dimensions, into multivariate datasets.  The
+transformation involves applying the epigraph, hypograph, and their modified
+versions to both the original curves and their first and second derivatives.
+The calculation of these indices is tailored to the dimensionality of the
+functional dataset, with special considerations for dependencies between
+dimensions in multidimensional cases.  This approach extends traditional
+multivariate data analysis techniques to the functional data setting.  A key
+application of this package is the E@code{HyClus} method, which enhances
+clustering analysis for functional data across one or multiple dimensions using
+the epigraph and hypograph indices.")
+    (license license:expat)))
 
 (define-public r-ehrtemporalvariability
   (package

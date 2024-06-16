@@ -3132,41 +3132,6 @@ with a single binary data matrix.  Here it will find collections of columns
 which for many rows contain all 1's.")
     (license license:gpl2)))
 
-(define-public r-fsinr
-  (package
-    (name "r-fsinr")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FSinR" version))
-       (sha256
-        (base32 "11ss38qpasbyym9hcfqmv254jvr8lzsw6r85dlm7xlnhfnxil59l"))))
-    (properties `((upstream-name . "FSinR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rpart
-                             r-rlang
-                             r-rdpack
-                             r-purrr
-                             r-prodlim
-                             r-neuralnet
-                             r-mlbench
-                             r-ga
-                             r-e1071
-                             r-dplyr
-                             r-digest
-                             r-class
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=FSinR")
-    (synopsis "Feature Selection")
-    (description
-     "Feature subset selection algorithms modularized in search algorithms and measure
-utilities.  Full list and more information available at
-<https://dicits.ugr.es/software/F@code{SinR/>}.")
-    (license license:gpl3)))
-
 (define-public r-fsia
   (package
     (name "r-fsia")
@@ -8386,13 +8351,13 @@ multivariate data sets of financial returns.")
 (define-public r-fmtr
   (package
     (name "r-fmtr")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmtr" version))
        (sha256
-        (base32 "1h2x1v60f0js6aarmp4lhf607wg2ks9mxki1ii5hqzcw99h4si27"))))
+        (base32 "1q565knjq8hzazli5skjvfd02jsh2c220hsrvc1h4dly666qvxvl"))))
     (properties `((upstream-name . "fmtr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rcpp r-crayon r-common))
@@ -8690,13 +8655,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "0pzqj6br5cqzqmrdlmk3d0j025519hlabgmgh02inzg8i25azxzn"))))
+        (base32 "0dszz7a6asyjwwgq8ggqll48ndyfn14lndf77arl60ns3h7v3ygn"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -11305,13 +11270,13 @@ quality, reliability, and structure.")
 (define-public r-fixest
   (package
     (name "r-fixest")
-    (version "0.12.0")
+    (version "0.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fixest" version))
        (sha256
-        (base32 "1pvkn9yj2xi7mr7f653wvdczvsgmvn488cssy85flscfgicv6lk2"))))
+        (base32 "1pqkwzcv8mjh00k0cl0na7izwhwsp6qpimbxmq5005vbhnwimrvw"))))
     (properties `((upstream-name . "fixest")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringmagic

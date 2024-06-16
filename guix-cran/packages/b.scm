@@ -3168,13 +3168,13 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
 (define-public r-brucer
   (package
     (name "r-brucer")
-    (version "2023.9")
+    (version "2024.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bruceR" version))
        (sha256
-        (base32 "09i9ss1fhb4l4mypbk1jww1nscpy6g11a9miz33hykgywjkk40r4"))))
+        (base32 "0ih2l2yf9vfmzx1l2npj8yp0brnqdiszq0ip26nw5vdgv9b7rm5l"))))
     (properties `((upstream-name . "bruceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3185,7 +3185,6 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
                              r-psych
                              r-plyr
                              r-performance
-                             r-mumin
                              r-mediation
                              r-lmertest
                              r-lavaan
@@ -3196,6 +3195,7 @@ Windows.  Versions running on x86Linux and on 64-bit R under Windows are in
                              r-effectsize
                              r-dplyr
                              r-data-table
+                             r-crayon
                              r-afex))
     (home-page "https://psychbruce.github.io/bruceR/")
     (synopsis "Broadly Useful Convenient and Efficient R Functions")
@@ -5428,13 +5428,13 @@ reduction.")
 (define-public r-bpbounds
   (package
     (name "r-bpbounds")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bpbounds" version))
        (sha256
-        (base32 "0qzvy6a41p4nrsw91xh0bv03v8ksfv4fag365pzlwisa1ng88sqj"))))
+        (base32 "0f8knwvwllzraxkhawkljdm7mj2i0crd6yj415dya7nvp01ilaql"))))
     (properties `((upstream-name . "bpbounds")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5444,13 +5444,13 @@ reduction.")
     (description
      "Implementation of the nonparametric bounds for the average causal effect under
 an instrumental variable model by Balke and Pearl (Bounds on Treatment Effects
-from Studies with Imperfect Compliance, JASA, 1997, 92, 439, 1171-1176).  The
-package can calculate bounds for a binary outcome, a binary treatment/phenotype,
-and an instrument with either 2 or 3 categories.  The package implements bounds
-for situations where these 3 variables are measured in the same dataset
-(trivariate data) or where the outcome and instrument are measured in one study
-and the treatment/phenotype and instrument are measured in another study
-(bivariate data).")
+from Studies with Imperfect Compliance, JASA, 1997, 92, 439, 1171-1176,
+<doi:10.2307/2965583>).  The package can calculate bounds for a binary outcome,
+a binary treatment/phenotype, and an instrument with either 2 or 3 categories.
+The package implements bounds for situations where these 3 variables are
+measured in the same dataset (trivariate data) or where the outcome and
+instrument are measured in one study and the treatment/phenotype and instrument
+are measured in another study (bivariate data).")
     (license license:gpl3)))
 
 (define-public r-bpacc
@@ -11962,13 +11962,13 @@ networks, i.e.  data graph structured.")
 (define-public r-biomod2
   (package
     (name "r-biomod2")
-    (version "4.2-5")
+    (version "4.2-5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biomod2" version))
        (sha256
-        (base32 "1rlwwpg7xfq35yddpmy9pjg8mlx4y7j1b9ijbphk5d64x8gsdv00"))))
+        (base32 "1rdlkspi0hkgnrc4qs7vgbmcpsf74nzdq8w0akg59bynp0ks8k0w"))))
     (properties `((upstream-name . "biomod2")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -14538,27 +14538,6 @@ using a parallelized implementation of the t-Stochastic Neighboring Embedding
 algorithm (Garriga J. and Bartumeus F. (2018), <@code{arXiv:1812.09869>}).")
     (license license:gpl3)))
 
-(define-public r-biglmm
-  (package
-    (name "r-biglmm")
-    (version "0.9-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "biglmm" version))
-       (sha256
-        (base32 "1zj1h2hszps3w913j2dk4cyj5jsqkkxsm3pcjlc4jnq810j100l6"))))
-    (properties `((upstream-name . "biglmm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-dbi))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=biglmm")
-    (synopsis "Bounded Memory Linear and Generalized Linear Models")
-    (description
-     "Regression for data too large to fit in memory.  This package functions exactly
-like the biglm package, but works with later versions of R.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-bigleaf
   (package
     (name "r-bigleaf")
@@ -14679,13 +14658,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "1mxhgs1gwwqhzqynjd35bjq0z5i9amj4hqkndll7l40k5n4jj46m"))))
+        (base32 "0x8y7aijidpka117zjc80yvjlxv8cdiwxhqzy0mw33halavm10k8"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15094,17 +15073,16 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "2.0.2")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "0pk1gc6wssyssjm7hp52mpmqnsk4s02kv205294qzif4qlvxwvq6"))))
+        (base32 "1sdzn2src3m4w6mjn9v67qyn0g0pzmgbkwqqphnq7pwwy94qd6i3"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/eguidotti/bidask")
     (synopsis
      "Efficient Estimation of Bid-Ask Spreads from Open, High, Low, and Close Prices")
@@ -20012,13 +19990,13 @@ Service ('WFS') using dplyr syntax.")
 (define-public r-bcdag
   (package
     (name "r-bcdag")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCDAG" version))
        (sha256
-        (base32 "0v3qxqlm5p1n0lx995xncp6793lm794i8r7nnng00w7xhynhfm43"))))
+        (base32 "1w6b72vcv9gdwxm5ynpy9jrw2qpbfi4qn8272qdbv4jz1p3k605n"))))
     (properties `((upstream-name . "BCDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz r-mvtnorm r-lattice r-grbase r-graph))
@@ -20033,7 +20011,7 @@ data.  Main algorithm consists of a Markov chain Monte Carlo scheme for
 posterior inference of causal structures, parameters and causal effects between
 variables.  References: F. Castelletti and A. Mascaro (2021)
 <doi:10.1007/s10260-021-00579-1>, F. Castelletti and A. Mascaro (2022)
-<@code{arXiv:2201.12003>}.")
+<doi:10.48550/@code{arXiv.2201.12003>}.")
     (license license:expat)))
 
 (define-public r-bccp
@@ -21205,13 +21183,13 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.1-7")
+    (version "2.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "15n0qim3zigmyickp283gq4pmd9fb19wkwbgkjwkbskr7dzp3kkn"))))
+        (base32 "1v5m4m1dqvn1scg27ll4bfq656zxx26jbvgk47p83vlll9k6msn3"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -21220,9 +21198,10 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
                              r-rcpp
                              r-matrix
                              r-igraph))
-    (native-inputs (list r-r-rsp r-knitr))
+    (native-inputs (list r-rmarkdown r-r-rsp r-knitr))
     (home-page "https://github.com/mbant/BayesSUR")
-    (synopsis "Bayesian Seemingly Unrelated Regression")
+    (synopsis
+     "Bayesian Seemingly Unrelated Regression Models in High-Dimensional Settings")
     (description
      "Bayesian seemingly unrelated regression with general variable selection and
 dense/sparse covariance matrix.  The sparse seemingly unrelated regression is
@@ -23442,13 +23421,13 @@ and D. Spencer, Y. R. Yue, D. Bolin, S. Ryan, A. F. Mejia (2022)
 (define-public r-bayesfm
   (package
     (name "r-bayesfm")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFM" version))
        (sha256
-        (base32 "1x6paj5fr036mry6yr32vrxx2kfz89c8dz39ky1nc6jg1q7x5a8i"))))
+        (base32 "1iiahwlzxizs6d2f59amfhhca3vh612y5n9ijzpr4fnhpm1q9df1"))))
     (properties `((upstream-name . "BayesFM")))
     (build-system r-build-system)
     (inputs (list gfortran))

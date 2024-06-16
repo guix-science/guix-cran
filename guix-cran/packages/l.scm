@@ -2035,13 +2035,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "05h1b7qwwmdrmjlwy9h1wkm4drv2csz3ypfzrd6slwl9ccasg3pg"))))
+        (base32 "1r25716gq78imyy0f2cja2vh1ldjn5766iaa65x4z5rdcz3gcd80"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
@@ -2528,13 +2528,13 @@ constraints is deleted to resolve the conflicts.")
 (define-public r-lpm
   (package
     (name "r-lpm")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPM" version))
        (sha256
-        (base32 "0kkqfzz193p9pc3h3b7wbzxv6yb75plw8mh9rcgcwyjir1br36gh"))))
+        (base32 "0xyyfvaa65wi3vz252y59hv4018bw6xwa24rs9d6w53b3slr7pnn"))))
     (properties `((upstream-name . "LPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-powdist r-mass r-fracdiff))
@@ -10219,13 +10219,13 @@ philosophy of the package is described in Guo G. (2022)
 (define-public r-libstable4u
   (package
     (name "r-libstable4u")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libstable4u" version))
        (sha256
-        (base32 "1qhq255s20h30wrbfwdda35gjiijs9vri49jq2cnhl2kwmcgg71b"))))
+        (base32 "1szyqm1vfx2c0mjzazg58jmw10a816279wa0blmwzvjs3ik7qfl3"))))
     (properties `((upstream-name . "libstable4u")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppgsl r-rcpp))
@@ -14149,13 +14149,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "11ifyxfcnr6n3iz3zdaxs8qzsq23gdr4fr33q02vw9bnqh9al1m5"))))
+        (base32 "18hnvhgl2lji5jawxir1fw7qcmky48qnh8xb5gmnxff8mplwjk0c"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LBI")
@@ -14641,13 +14641,13 @@ and Liao (2017) <doi:10.1214/16-AOS1434>.")
 (define-public r-lavacreg
   (package
     (name "r-lavacreg")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavacreg" version))
        (sha256
-        (base32 "0hfkwsgkws1h910b3dgp7ka1mqmb5dnikrdjcsn99vfm61mq0rxk"))))
+        (base32 "0jbqf52j5iva39lf9w34aabg6wh5i8rczln3l7pbdyz9lmvmgycc"))))
     (properties `((upstream-name . "lavacreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsegrid r-rcpparmadillo r-rcpp r-pracma

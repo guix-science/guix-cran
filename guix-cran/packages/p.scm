@@ -6424,13 +6424,13 @@ printing and plotting methods.")
 (define-public r-projectionbasedclustering
   (package
     (name "r-projectionbasedclustering")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectionBasedClustering" version))
        (sha256
-        (base32 "1l8j3n7d9vc7d5lb2fizq0aw8xh3ikh4ka4r3wwswk9a0mspjily"))))
+        (base32 "0v3w5bfmvc36bf19p1lp13p574xlbjq0gg43mwm598cnyqsw12xq"))))
     (properties `((upstream-name . "ProjectionBasedClustering")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -6459,8 +6459,7 @@ result in a visualization in which mountains surround each cluster.  The number
 of clusters can be determined by counting valleys on the topographic map.  Most
 projection methods are wrappers for already available methods in R. By contrast,
 the neighbor retrieval visualizer (@code{NeRV}) is based on C++ source code of
-the dredviz software package, the t-SNE multicore version is based on C++ source
-code of Dmitry Ulyanov, and the Curvilinear Component Analysis (CCA) is
+the dredviz software package, and the Curvilinear Component Analysis (CCA) is
 translated from MATLAB ('SOM Toolbox 2.0) to R.")
     (license license:gpl3)))
 
@@ -16164,13 +16163,13 @@ et al. (2004) <doi:10.1177/1532673X04263801>.")
 (define-public r-policytree
   (package
     (name "r-policytree")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "policytree" version))
        (sha256
-        (base32 "1xkki4x9s5h4261rdjnafaxwz7baa8pv8gzysbb3cy1gjm52sq4r"))))
+        (base32 "1a0yqg754gb793k9zrhp2zb1j5lw1kv1ziv9dr7rk2zmzgs1k5pb"))))
     (properties `((upstream-name . "policytree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-grf r-bh))
@@ -16182,7 +16181,7 @@ et al. (2004) <doi:10.1177/1532673X04263801>.")
 trees.  Given doubly robust reward estimates, this package finds a rule-based
 treatment prescription policy, where the policy takes the form of a shallow
 decision tree that is globally (or close to) optimal.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-policyportfolios
   (package
@@ -17416,13 +17415,13 @@ summarized in: Prybylski, (2024) <doi:10.1007/s40262-023-01343-2>.")
 (define-public r-pmxcode
   (package
     (name "r-pmxcode")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmxcode" version))
        (sha256
-        (base32 "0qa0g3fz2dqccpf059m5jygicvl6a7qcmjn9dq0afv16y6w9074a"))))
+        (base32 "1zh8461zxdrp6xf7795ivgjhhjvnlyhkif8cqmijnjjylvami09g"))))
     (properties `((upstream-name . "pmxcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -22919,13 +22918,13 @@ inspection plans based on risks.")
 (define-public r-phytools
   (package
     (name "r-phytools")
-    (version "2.1-1")
+    (version "2.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phytools" version))
        (sha256
-        (base32 "05035zv9605hr4ig42k3krijaqkbbh9fvv4w5384fz1wlgqap0c6"))))
+        (base32 "10fh8svaxdk7s9abbzih9pj6carmv4r6fzbxlfafygxyjnk20c4p"))))
     (properties `((upstream-name . "phytools")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -22939,6 +22938,7 @@ inspection plans based on risks.")
                              r-foreach
                              r-expm
                              r-doparallel
+                             r-deoptim
                              r-combinat
                              r-coda
                              r-clustergeneration
@@ -27429,6 +27429,30 @@ offer a numeric estimate of the p-value, which is particularly useful when the
 analytic solution is not available.")
     (license license:gpl3+)))
 
+(define-public r-permat
+  (package
+    (name "r-permat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PerMat" version))
+       (sha256
+        (base32 "0ad9xdi1w7zis2ks1jvl4l54rfcdgayipydjcqz5hfq6qkz5k31y"))))
+    (properties `((upstream-name . "PerMat")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PerMat")
+    (synopsis "Performance Metrics in Predictive Modeling")
+    (description
+     "Performance metric provides different performance measures like mean squared
+error, root mean square error, mean absolute deviation, mean absolute percentage
+error etc.  of a fitted model.  These can provide a way for forecasters to
+quantitatively compare the performance of competing models.  For method details
+see (i) Pankaj Das (2020)
+<http://krishi.icar.gov.in/jspui/handle/123456789/44138>.")
+    (license license:expat)))
+
 (define-public r-permanova
   (package
     (name "r-permanova")
@@ -31005,6 +31029,32 @@ conditional maximum likelihood estimation.")
 and 365-day calendars in addition to the gregorian calendar.")
     (license license:gpl2)))
 
+(define-public r-pci
+  (package
+    (name "r-pci")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pci" version))
+       (sha256
+        (base32 "08wfwy2ncm3cxbg31wimw0bd64lwwp19wsjd970zvwxs7wgpsdx2"))))
+    (properties `((upstream-name . "pci")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vek))
+    (home-page "https://github.com/samsemegne/pci")
+    (synopsis "Collection of Process Capability Index Functions")
+    (description
+     "This package provides a collection of process capability index functions, such
+as C_p(), C_pk(), C_pm(), and others, along with metadata about each, like
+@code{LaTeX} equations and R expressions.  Its primary purpose is to form a
+foundation for other quality control packages to build on top of, by providing
+basic resources and functions.  The indices belong to the field of statistical
+quality control, and quantify the degree to which a manufacturing process is
+able to create items that adhere to a certain standard of quality.  For details
+see Montgomery, D. C. (2019, ISBN:978-1-119-39930-8).")
+    (license license:gpl3)))
+
 (define-public r-pchc
   (package
     (name "r-pchc")
@@ -32493,13 +32543,13 @@ reliable, since they follow the DNRY (do not repeat yourself) rule.")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patientProfilesVis" version))
        (sha256
-        (base32 "04vdiyia3xkirnpwd88i7j46gvwcxn6wdzc50660pkqkn1gwiyhn"))))
+        (base32 "1ivc356cr6zsyggw6if43h135ynij9c36rg9p467945q8dcf4hcr"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
     (inputs (list cairo))
@@ -33513,6 +33563,46 @@ how variables are selected to reduce, how information loss is measured, and the
 way data is reduced can all be customized.  partition is based on the Partition
 framework discussed in Millstein et al. (2020)
 <doi:10.1093/bioinformatics/btz661>.")
+    (license license:expat)))
+
+(define-public r-partimeroc
+  (package
+    (name "r-partimeroc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parTimeROC" version))
+       (sha256
+        (base32 "0rshkjckv0llzgp2yywrbz55ahbzcq140k78wwwsjlwymjfxim9f"))))
+    (properties `((upstream-name . "parTimeROC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vinecopula
+                             r-survival
+                             r-stanheaders
+                             r-sn
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-mvtnorm
+                             r-moments
+                             r-matrix
+                             r-flexsurv
+                             r-desctools
+                             r-cubature
+                             r-bh))
+    (home-page "https://cran.r-project.org/package=parTimeROC")
+    (synopsis "Parametric Time-Dependent Receiver Operating Characteristic")
+    (description
+     "Producing the time-dependent receiver operating characteristic (ROC) curve
+through parametric approaches.  Tools for generating random data, fitting,
+predicting and check goodness of fit are prepared.  The methods are developed
+from the theoretical framework of proportional hazard model and copula
+functions.  Using this package, users can now simulate parametric time-dependent
+ROC and run experiment to understand the behavior of the curve under different
+scenario.")
     (license license:expat)))
 
 (define-public r-particles

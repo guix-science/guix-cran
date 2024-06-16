@@ -16770,13 +16770,13 @@ make sure that they work reliably.")
 (define-public r-ggplate
   (package
     (name "r-ggplate")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplate" version))
        (sha256
-        (base32 "1a6c0f671i5368hpc3ilmzpx2vkdmxrzzgbbxpbhkhpz8cl6z311"))))
+        (base32 "18ibiizxbzyshaxgw2ff639nn36mha5bv6yxa6960wjyx3z78772"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19135,13 +19135,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "9.1.0")
+    (version "9.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "0knvzic8mxv0m8y0jnjaxzf72icv7gf4kymxi7fjiqkz44inqhic"))))
+        (base32 "1nnb6kx6yl4rdfjib9xp406wb533zwl3wcfv0d8nljq094n8j7hy"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -21729,13 +21729,13 @@ functions from this package.")
 (define-public r-geomtextpath
   (package
     (name "r-geomtextpath")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomtextpath" version))
        (sha256
-        (base32 "00rgqyz8y1qqnxp50szp9glkyjadas4gd2r3q5ha3fcxn1f4zv7p"))))
+        (base32 "1a33rcks9hvg3jyiplzsm1na6n80n934zvbcm57n3jg6gxcv2v5s"))))
     (properties `((upstream-name . "geomtextpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-textshaping r-systemfonts r-scales r-rlang
@@ -22852,13 +22852,13 @@ methods.")
 (define-public r-geoarrow
   (package
     (name "r-geoarrow")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoarrow" version))
        (sha256
-        (base32 "1kp3shyjawsf7klff3ijyvwnygv633zb619cwqvcjypkd614d4wq"))))
+        (base32 "0sdwlx4v9024m7lz93r9sfcg8zyzs3pvc7hm419y18vapqlvpm24"))))
     (properties `((upstream-name . "geoarrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk r-nanoarrow))
@@ -26451,13 +26451,13 @@ function arguments introduced in GDAL version 3.5.2 or earlier are supported.")
 (define-public r-gdalraster
   (package
     (name "r-gdalraster")
-    (version "1.11.0")
+    (version "1.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdalraster" version))
        (sha256
-        (base32 "0nwg38xl9c3rk2grm5nn2m74im8wxi0ah1hq71gqlgb7mpnkqnjz"))))
+        (base32 "0vf28id5yq4f491b25fbmap1yzpzxxkkqmzfln1qc4hxfhbirv1p"))))
     (properties `((upstream-name . "gdalraster")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -28615,13 +28615,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "0hby04r39yjl6z2mkj5s7jxpzc72kz8hfbhhpay7svf2mm1m34b1"))))
+        (base32 "0ashdicnkrvbsddqajhnqrwrpw8y3ikzibm4y3gn5ywg7y3dbp2k"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (inputs (list zlib))

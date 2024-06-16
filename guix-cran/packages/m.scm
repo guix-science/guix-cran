@@ -7452,22 +7452,23 @@ model(s) by leveraging all available features.")
 (define-public r-msmix
   (package
     (name "r-msmix")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSmix" version))
        (sha256
-        (base32 "0vgp4s4fn2c834d2i51nayiix33vvpb0ijkb3442m4n6fsj6n6zn"))))
+        (base32 "10bdzgx21y8xqggj98lv17mb2dv39ay6k0l5mz3dsn44967mv7rm"))))
     (properties `((upstream-name . "MSmix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-spsutil
+    (propagated-inputs (list r-spsutil
+                             r-scales
                              r-rlang
                              r-reshape
                              r-rcpp
                              r-rcolorbrewer
                              r-rankcluster
+                             r-magrittr
                              r-gridextra
                              r-gmp
                              r-ggplot2
@@ -13242,13 +13243,13 @@ Used by MOLGENIS packages.")
 (define-public r-molgenisarmadillo
   (package
     (name "r-molgenisarmadillo")
-    (version "2.3.0")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MolgenisArmadillo" version))
        (sha256
-        (base32 "16b1mplxhy492i1j581lrd0crk1rzcyxcxda9b5dzvzhcjg81376"))))
+        (base32 "11xy9cwnhacrxnyxhr8zs25yr20f27vqnh9nfm7x1180g1b2b4fr"))))
     (properties `((upstream-name . "MolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -13256,10 +13257,13 @@ Used by MOLGENIS packages.")
                              r-tibble
                              r-stringr
                              r-rlist
+                             r-readr
                              r-purrr
                              r-molgenisauth
+                             r-httr2
                              r-httr
                              r-dplyr
+                             r-cli
                              r-base64enc
                              r-arrow))
     (native-inputs (list r-knitr))
@@ -14341,13 +14345,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "01i4b5jrna1xjl694qrqqjrf71jskm0hwp8vqkwb64gf0qgfc6f7"))))
+        (base32 "1sqb5c34ymv2bvkrc2c3fd24ajjn2zz0rhasv3gdmbrp8fxgyxf8"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytable
@@ -16346,37 +16350,6 @@ shiny card game to simulate the evaluation of replication studies while the
 mmibain() function launches a shiny application to fit Bayesian informative
 hypotheses evaluation models from bain'.")
     (license license:expat)))
-
-(define-public r-mmeta
-  (package
-    (name "r-mmeta")
-    (version "3.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mmeta" version))
-       (sha256
-        (base32 "088mynadrcwrw7g31f6p0g3ykq2q44mwsbpp056v8s19hq5pxjn1"))))
-    (properties `((upstream-name . "mmeta")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-aod))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=mmeta")
-    (synopsis "Multivariate Meta-Analysis")
-    (description
-     "Multiple 2 by 2 tables often arise in meta-analysis which combines statistical
-evidence from multiple studies.  Two risks within the same study are possibly
-correlated because they share some common factors such as environment and
-population structure.  This package implements a set of novel Bayesian
-approaches for multivariate meta analysis when the risks within the same study
-are independent or correlated.  The exact posterior inference of odds ratio,
-relative risk, and risk difference given either a single 2 by 2 table or
-multiple 2 by 2 tables is provided.  Luo, Chen, Su, Chu, (2014)
-<doi:10.18637/jss.v056.i11>, Chen, Luo, (2011) <doi:10.1002/sim.4248>, Chen,
-Chu, Luo, Nie, Chen, (2015) <doi:10.1177/0962280211430889>, Chen, Luo, Chu, Su,
-Nie, (2014) <doi:10.1080/03610926.2012.700379>, Chen, Luo, Chu, Wei, (2013)
-<doi:10.1080/19466315.2013.791483>.")
-    (license license:gpl2+)))
 
 (define-public r-mmem
   (package
@@ -27402,6 +27375,42 @@ use color and fill scales in ggplot2 visualizations.")
      "Compute the average of a sequence of random vectors in a moving expanding window
 using a fixed amount of memory.")
     (license license:gpl2+)))
+
+(define-public r-mevr
+  (package
+    (name "r-mevr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mevr" version))
+       (sha256
+        (base32 "0klhmlhn2v4ncsrwvpzhxxn8bbrjn5qjzi6rlxrxmp9yfk5wnxhy"))))
+    (properties `((upstream-name . "mevr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-mgcv
+                             r-foreach
+                             r-envstats
+                             r-dplyr
+                             r-doparallel
+                             r-bamlss))
+    (home-page "https://cran.r-project.org/package=mevr")
+    (synopsis "Fitting the Metastatistical Extreme Value Distribution MEVD")
+    (description
+     "Extreme value analysis with the metastatistical extreme value distribution MEVD
+(Marani and Ignaccolo, 2015, <doi:10.1016/j.advwatres.2015.03.001>) and some of
+its variants.  In particular, analysis can be performed with the simplified
+metastatistical extreme value distribution SMEV (Marra et al., 2019,
+<doi:10.1016/j.advwatres.2019.04.002>) and the temporal metastatistical extreme
+value distribution TMEV (Falkensteiner et al., 2023,
+<doi:10.1016/j.wace.2023.100601>).  Parameters can be estimated with probability
+weighted moments, maximum likelihood and least squares.  Density, distribution
+function, quantile function and random generation for the MEVD, SMEV and TMEV
+are included.  In addition, functions for the calculation of return levels
+including confidence intervals are provided.  For a description of use cases
+please see the provided references.")
+    (license license:gpl3)))
 
 (define-public r-mev
   (package
@@ -39738,6 +39747,27 @@ maintained by Jordan Mark Barbone.")
 and simulation (marima.sim()).")
     (license license:gpl2)))
 
+(define-public r-margins
+  (package
+    (name "r-margins")
+    (version "0.3.27")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "margins" version))
+       (sha256
+        (base32 "1jlxg8pwmyd4nzmczp2909rjd68nz7vl8m2g35jywh05b85b0slk"))))
+    (properties `((upstream-name . "margins")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-prediction r-mass r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bbolker/margins")
+    (synopsis "Marginal Effects for Model Objects")
+    (description
+     "An R port of the margins command from Stata', which can be used to calculate
+marginal (or partial) effects from model objects.")
+    (license license:expat)))
+
 (define-public r-marginalmediation
   (package
     (name "r-marginalmediation")
@@ -39797,13 +39827,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.20.1")
+    (version "0.21.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "00g0z94vzvkww3llhbyzpvywjyxf40xjzfc52mrp4q8wrkxkg5n4"))))
+        (base32 "1zq9xkaacgy3d3rsbhdjaprd352mcpbfwn9jazijx6csjs5pxqmp"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -44073,6 +44103,27 @@ developed here to obtain concordant results.  The package also provides the
 cluster number estimation by rotation cost.  Moreover, cluster specific features
 could be retrieved using hypergeometric tests.")
     (license license:gpl3)))
+
+(define-public r-m3
+  (package
+    (name "r-m3")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "M3" version))
+       (sha256
+        (base32 "18473ifcwvavic29nh9vnbrxfxfckydik3yl3hmv2djwkclx976q"))))
+    (properties `((upstream-name . "M3")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-ncdf4 r-maps r-mapdata))
+    (home-page "https://cran.r-project.org/package=M3")
+    (synopsis "Reading M3 Files")
+    (description
+     "This package provides functions to read in and manipulate air quality model
+output from Models3-formatted files.  This format is used by the Community
+Multiscale Air Quality (CMAQ) model.")
+    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-m2smjf
   (package

@@ -1910,13 +1910,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "0.10.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1mydl1qlnh6430g6m0fy49gvr0ki0403232yx5pj68f33i5vkq3j"))))
+        (base32 "08hcrbfcf76d7dbgngzz48l07ahzkf9vkb236h06mw9k820dlzm5"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -3653,34 +3653,26 @@ more on our Github repository <https://github.com/tsuchiya-lab/dsdp/>.")
 (define-public r-dscore
   (package
     (name "r-dscore")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dscore" version))
        (sha256
-        (base32 "0dyhhrdkca0091nk0a70ckk9187g5rfzz1bqw666hv40yzq0sk97"))))
+        (base32 "1skcmd2fh8s5d5qdj661niwa3cfd01i22kxxcf84awad0p1p8g57"))))
     (properties `((upstream-name . "dscore")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-dplyr))
+    (propagated-inputs (list r-tidyr r-stringi r-rcpparmadillo r-rcpp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/d-score/dscore")
     (synopsis "D-Score for Child Development")
     (description
-     "The D-score is a quantitative measure of child development.  The D-score follows
-the Rasch model.  See Jacobusse, van Buuren and Verkerk (2006)
-<doi:10.1002/sim.2351>.  The user can convert milestone scores from many
-assessment instruments into the D-score and the DAZ (D-score adjusted for age).
-Several tools assist in mapping milestone names into the 9-position Global Scale
-of Early Development (GSED) convention.  Supports calculation of the D-score
-using dutch <doi:10.1177/0962280212473300>, gcdg <doi:10.1136/bmjgh-2019-001724>
-and gsed conversion keys.  The user can calculate DAZ using phase1 (default),
-gcdg and dutch age-conditional references.")
+     "The D-score summarizes the child's performance on a set of milestones into a
+single number.  The package implements four Rasch model keys to convert
+milestone scores into a D-score.  It provides tools to calculate the D-score and
+its precision from the child's milestone scores, to convert the D-score into the
+Development-for-Age Z-score (DAZ) using age-conditional references, and to map
+milestone names into a generic 9-position item naming convention.")
     (license license:agpl3)))
 
 (define-public r-dsbayes
@@ -12282,13 +12274,13 @@ regression for time-to-event variables has been introduced in Seipp et al.
 (define-public r-dirstats
   (package
     (name "r-dirstats")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DirStats" version))
        (sha256
-        (base32 "0cj3ba2dzy7nvvs98mzj0c37hdn4lhxhrir27bhqfrjnmz13z08w"))))
+        (base32 "1l4sxg5vlgnx30rcpwj9iw9kzl79cbwmarbip2n7bp7fpb8wsl3i"))))
     (properties `((upstream-name . "DirStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-rotasym r-movmf))
@@ -14156,17 +14148,17 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.2.3")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "0x5i23xq67gfggpna4q0mq37wzywvxh9hch7kk7k9cisn1hlzlvf"))))
+        (base32 "1abvk6hk3vnfdd4yif0n1ngw68h32r001a0v6xi4n9qi72g82p9j"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-vcfr))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=diemr")
     (synopsis "Diagnostic Index Expectation Maximisation in R")
     (description
@@ -25437,6 +25429,40 @@ treat and format data.")
 entering, filtering and editing of data in R
 <https://dillonhammill.github.io/@code{DataEditR/>}.")
     (license license:gpl2)))
+
+(define-public r-datadriftr
+  (package
+    (name "r-datadriftr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "datadriftR" version))
+       (sha256
+        (base32 "0ggakc73kyhnw60wvlb4pa7j6fvxcl98bbii45z2rrggbcgdjrfr"))))
+    (properties `((upstream-name . "datadriftR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (home-page "https://github.com/ugurdar/datadriftR")
+    (synopsis "Concept Drift Detection Methods for Stream Data")
+    (description
+     "This package provides a system designed for detecting concept drift in streaming
+datasets.  It offers a comprehensive suite of statistical methods to detect
+concept drift, including methods for monitoring changes in data distributions
+over time.  The package supports several tests, such as Drift Detection Method
+(DDM), Early Drift Detection Method (EDDM), Hoeffding Drift Detection Methods
+(HDDM_A, HDDM_W), Kolmogorov-Smirnov test-based Windowing (KSWIN) and Page
+Hinkley (PH) tests.  The methods implemented in this package are based on
+established research and have been demonstrated to be effective in real-time
+data analysis.  For more details on the methods, please check to the following
+sources.  Gama et al. (2004) <doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et
+al. (2006)
+<https://www.researchgate.net/publication/245999704_Early_Drift_Detection_Method>,
+@code{FrÃ­as-Blanco} et al. (2014)
+<https://ieeexplore.ieee.org/document/6871418>, Raab et al. (2020)
+<doi:10.1016/j.neucom.2019.11.111>, Page (1954) <doi:10.1093/biomet/41.1-2.100>,
+Montiel et al. (2018) <https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
+    (license license:gpl2+)))
 
 (define-public r-datadogr
   (package

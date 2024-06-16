@@ -2884,13 +2884,13 @@ be used in ranking results from other packs.")
 (define-public r-kinsimu
   (package
     (name "r-kinsimu")
-    (version "0.1.2")
+    (version "0.1.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KINSIMU" version))
        (sha256
-        (base32 "0chsjpg0irxk7m7hqb7fmv60cdc7fdjmii64pfadjbnmzzzbhbq1"))))
+        (base32 "1skhrrlskasysfvr1dmrsyji1zb897vx1zcb07hwzm8lrzda7fd7"))))
     (properties `((upstream-name . "KINSIMU")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=KINSIMU")
@@ -4704,13 +4704,13 @@ al. (2024)<doi:10.48550/@code{arXiv.2403.13069>}.")
 (define-public r-kdevine
   (package
     (name "r-kdevine")
-    (version "0.4.4")
+    (version "0.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdevine" version))
        (sha256
-        (base32 "1508dyjqn4vrs83b70h06ffygrx6iwqcaa360b08j3qlrlq742c6"))))
+        (base32 "0d157kl8x9jq4h8h0r8iia25wwdw1syc4f1iqp5mgn3l4kgark9s"))))
     (properties `((upstream-name . "kdevine")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula

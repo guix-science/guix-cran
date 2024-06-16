@@ -8861,13 +8861,13 @@ field.")
 (define-public r-apoderoides
   (package
     (name "r-apoderoides")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Apoderoides" version))
        (sha256
-        (base32 "0jh1q18qinppwn2alrm0l1jjbks0n04mdb1q64bzqa3ba3qhmlmw"))))
+        (base32 "0rgba2855gnavq4c8ik6vq0fh4m9wqyp0wgxjw7rdw1jsvi7dyqs"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
@@ -9438,13 +9438,13 @@ describing and investigating inter-cohort differences and life course dynamics."
 (define-public r-apcf
   (package
     (name "r-apcf")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apcf" version))
        (sha256
-        (base32 "194w409gz052a8gcsdn3v68sqjcwrhb1ck712nljd0iy1mgdz6cs"))))
+        (base32 "0vf41nmw4i9idygxji27ij2qrmkfw5c5pxax0wrnwqhkib9wvqrp"))))
     (properties `((upstream-name . "apcf")))
     (build-system r-build-system)
     (inputs (list geos))
@@ -13646,13 +13646,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alone" version))
        (sha256
-        (base32 "15ivqnnpn96x2pg83mswagqb0qaymafphc7awzik14vbg7k9pk9j"))))
+        (base32 "1smfn3b1lcbccsi41548pr6yyld9nh74apxp54yad5ga20r68462"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (home-page "https://github.com/doehm/alone")
@@ -14575,33 +14575,6 @@ defined in Koenker and Machado (1999).  This is a special case of the skewed
 family of distributions available in Galarza et.al. (2017)
 <doi:10.1002/sta4.140> useful for quantile regression.")
     (license license:gpl2+)))
-
-(define-public r-alcyon
-  (package
-    (name "r-alcyon")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "alcyon" version))
-       (sha256
-        (base32 "12pcx3aaqkf1fizb5m2577yqg0gdpic0h8cmjfb8qnbn199mgp1j"))))
-    (properties `((upstream-name . "alcyon")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-rcpp r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=alcyon")
-    (synopsis "Spatial Network Analysis")
-    (description
-     "Interface package for sala', the spatial network analysis library from the
-@code{depthmapX} software application.  The R parts of the code are based on the
-rdepthmap package.  Allows for the analysis of urban and building-scale networks
-and provides metrics and methods usually found within the Space Syntax domain.
-Methods in this package are described by K. Al-Sayed, A. Turner, B. Hillier, S.
-Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (2004)
-<https://discovery.ucl.ac.uk/id/eprint/2651> \"Depthmap 4: a researcher's
-handbook\".")
-    (license license:gpl3)))
 
 (define-public r-albopictus
   (package
@@ -16996,6 +16969,28 @@ local API).")
 and age distributions.  These functions may be helpful when related age and
 custom age distributions are desired given a vector of birth dates.")
     (license license:expat)))
+
+(define-public r-agd
+  (package
+    (name "r-agd")
+    (version "0.45.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AGD" version))
+       (sha256
+        (base32 "02dvbqyym3l642vxhlx7ay6dj1sf1ns207ig81h3fz1w3gy9wn20"))))
+    (properties `((upstream-name . "AGD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gamlss-dist r-gamlss))
+    (home-page "https://stefvanbuuren.name/AGD/")
+    (synopsis "Analysis of Growth Data")
+    (description
+     "This package provides tools for the analysis of growth data: to extract an LMS
+table from a gamlss object, to calculate the standard deviation scores and its
+inverse, and to superpose two wormplots from different models.  The package
+contains a some varieties of reference tables, especially for The Netherlands.")
+    (license (list license:gpl2 license:gpl3))))
 
 (define-public r-agcounts
   (package

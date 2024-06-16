@@ -371,6 +371,30 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 <@code{arXiv:2008.05693>}.")
     (license license:gpl3)))
 
+(define-public r-synthesizer
+  (package
+    (name "r-synthesizer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "synthesizer" version))
+       (sha256
+        (base32 "1d676d75bf6nh535iz9wp8887203xzfggnvw1z95l599jz6mbymr"))))
+    (properties `((upstream-name . "synthesizer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest))
+    (native-inputs (list r-simplermarkdown))
+    (home-page "https://cran.r-project.org/package=synthesizer")
+    (synopsis
+     "Synthesize Data Based on Emperical Multivariate Distributions and Rank Order Matching")
+    (description
+     "Data is synthesized using a combination of inverse transform sampling from the
+emperical quantile functions for each variable, and then copying the rank order
+structure from the original dataset.  The package also includes a number of
+functions to measure the utility of synthesized datasets.")
+    (license license:gpl3+)))
+
 (define-public r-synthesisr
   (package
     (name "r-synthesisr")
@@ -4381,6 +4405,28 @@ distributions, and plots by categorical variables and to integrate survey
 weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
     (license license:expat)))
 
+(define-public r-surveydefense
+  (package
+    (name "r-surveydefense")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurveyDefense" version))
+       (sha256
+        (base32 "1n0a1h4bzmxidzf5rszrpsmxj7kd7dw0flrpc8mps6glf8ikw7pq"))))
+    (properties `((upstream-name . "SurveyDefense")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-flextable))
+    (home-page "https://cran.r-project.org/package=SurveyDefense")
+    (synopsis "Survey Defense Tool")
+    (description
+     "This tool is designed to analyze up to 5 Fraud Detection Questions integrated
+into a survey, focusing on potential fraudulent participants to clean the survey
+dataset from potential fraud.  Fraud Detection Questions and further information
+available at <https://surveydefense.org>.")
+    (license license:gpl3)))
+
 (define-public r-surveydata
   (package
     (name "r-surveydata")
@@ -5475,18 +5521,19 @@ frame management, including how to handle missing data.")
 (define-public r-supportr
   (package
     (name "r-supportr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "supportR" version))
        (sha256
-        (base32 "116hdwc72gf5lvvmikq6zmdlv6dapfypl7jb6pj933npqrqivvn6"))))
+        (base32 "0z18rmfn5hmrirks6arkpia9biiq2b6r57sak9yhk6j68yhbkjvs"))))
     (properties `((upstream-name . "supportR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-tidyr
                              r-stringr
+                             r-stringi
                              r-scales
                              r-rmarkdown
                              r-rlang
@@ -7489,30 +7536,6 @@ identification and anomaly detection.")
 <doi:10.1080/10618600.2017.1371030>).")
     (license license:gpl3)))
 
-(define-public r-structfdr
-  (package
-    (name "r-structfdr")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "StructFDR" version))
-       (sha256
-        (base32 "1gxv2pgypbxgwii5d71zrhasfdj33wjw4jfa3frc4q28nbh8a2l8"))))
-    (properties `((upstream-name . "StructFDR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nlme r-matrixstats r-dirmult r-cluster r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=StructFDR")
-    (synopsis
-     "False Discovery Control Procedure Integrating the Prior Structure Information")
-    (description
-     "Perform more powerful false discovery control (FDR) for microbiome data, taking
-into account the prior phylogenetic relationship among bacteria species.  As a
-general methodology, it is applicable to any type of (genomic) data with prior
-structure information.")
-    (license license:gpl2)))
-
 (define-public r-strucdiv
   (package
     (name "r-strucdiv")
@@ -8152,13 +8175,13 @@ package vignette.")
 (define-public r-streamconnect
   (package
     (name "r-streamconnect")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamConnect" version))
        (sha256
-        (base32 "1v7q2wrgw42m73riiby9ylq0hqr22cld43msdkknw623n1q71a1w"))))
+        (base32 "0sg28i9p6frlccabq9cq2j4w47jgcknwpjhpwl32qrwll7q9k4r3"))))
     (properties `((upstream-name . "streamConnect")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -18798,17 +18821,18 @@ be plotted at levels of other variables, all with minimal specification.")
 (define-public r-splmm
   (package
     (name "r-splmm")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splmm" version))
        (sha256
-        (base32 "0z04arwzy5169f6bhc8cbdc07zcmd5safpii5a3g7bqallmzipnr"))))
+        (base32 "1qnzm1mnx5i0q1a5534s5n6fwgs95fdknc6k5s65z9jqd33n39c4"))))
     (properties `((upstream-name . "splmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
+                             r-progress
                              r-plot3d
                              r-penalized
                              r-misctools
@@ -30337,6 +30361,38 @@ uniqueness of giving taxon.  It is possible to use smirnov() output as a
 distance measure: convert it to distance by \"as.dist(1 - smirnov(x))\".")
     (license license:gpl2+)))
 
+(define-public r-smile
+  (package
+    (name "r-smile")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smile" version))
+       (sha256
+        (base32 "1474jfk6vqcx3jv0mlf45l93bnn3f2qgm2j03rbjid4skg811618"))))
+    (properties `((upstream-name . "smile")))
+    (build-system r-build-system)
+    (inputs (list proj geos gdal))
+    (propagated-inputs (list r-sf
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-mvtnorm
+                             r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://lcgodoy.me/smile/")
+    (synopsis "Spatial Misalignment: Interpolation, Linkage, and Estimation")
+    (description
+     "This package provides functions to estimate, predict and interpolate areal data.
+ For estimation and prediction we assume areal data is an average of an
+underlying continuous spatial process as in Moraga et al. (2017)
+<doi:10.1016/j.spasta.2017.04.006>, Johnson et al. (2020)
+<doi:10.1186/s12942-020-00200-w>, and Wilson and Wakefield (2020)
+<doi:10.1093/biostatistics/kxy041>.  The interpolation methodology is (mostly)
+based on Goodchild and Lam (1980, ISSN:01652273).")
+    (license license:gpl3)))
+
 (define-public r-smidm
   (package
     (name "r-smidm")
@@ -37755,16 +37811,16 @@ simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018)
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "0lh2q4zb88rpvh9bzlrhgjdjsh5v1pdjw9clzli7nrb90d2317l3"))))
+        (base32 "18zbqpvndblrqmdz7hsbc0kf1w8v6a75z4x9yr95f3saazirrj6p"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-rfast r-dplyr r-data-table))
+    (propagated-inputs (list r-rlang r-rfast r-igraph r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinDenz1/simDAG")
     (synopsis "Simulate Data from a DAG and Associated Node Information")
@@ -45818,6 +45874,34 @@ Cloud to other Seven Bridges supported platforms.  API documentation is hosted
 publicly at <https://docs.sevenbridges.com/docs/the-api>.")
     (license license:asl2.0)))
 
+(define-public r-settingssync
+  (package
+    (name "r-settingssync")
+    (version "3.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "settingsSync" version))
+       (sha256
+        (base32 "0bb8cdj68473hi4fvwhcqyhpxclx4x42dpc9ghvhp42lhw1lgbi4"))))
+    (properties `((upstream-name . "settingsSync")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yesno
+                             r-tibble
+                             r-rappdirs
+                             r-jsonlite
+                             r-googledrive
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/notPlancha/settingsSync")
+    (synopsis "'Rstudio' Addin to Sync Settings and Keymaps")
+    (description
+     "This package provides a Rstudio addin to download, merge and upload Rstudio
+settings and keymaps, essentially syncing them at will.  It uses Google Drive as
+a cloud storage to keep the settings and keymaps files.")
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
+
 (define-public r-settings
   (package
     (name "r-settings")
@@ -50955,16 +51039,17 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
 (define-public r-seaval
   (package
     (name "r-seaval")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SeaVal" version))
        (sha256
-        (base32 "1ghkq6vqnzzw711s309s5802hrc6q5vxa8ijlp46s579r61ifa3v"))))
+        (base32 "1j4y96pqh6h791hiz07f6c4bhacm8n5v720bkwpkmbkky39yi2bf"))))
     (properties `((upstream-name . "SeaVal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales
+    (propagated-inputs (list r-stringr
+                             r-scales
                              r-rcolorbrewer
                              r-patchwork
                              r-ncdf4
@@ -50972,8 +51057,9 @@ streamflow (Q) and other ancillary variables.  See Ryberg and York, 2020,
                              r-lifecycle
                              r-ggplotify
                              r-ggplot2
+                             r-ggnewscale
                              r-data-table))
-    (home-page "http://files.nr.no/samba/CONFER/SeaVal/")
+    (home-page "https://seasonalforecastingengine.github.io/SeaValDoc/")
     (synopsis "Validation of Seasonal Weather Forecasts")
     (description
      "This package provides tools for processing and evaluating seasonal weather
@@ -50983,7 +51069,7 @@ Climate Forecasts\", S.J.Mason (2018, ISBN: 978-92-63-11220-0, URL:
 <https://library.wmo.int/idurl/4/56227>).  The development was supported by the
 European Unionâs Horizon 2020 research and innovation programme under grant
 agreement no.  869730 (CONFER).  A comprehensive online tutorial is available at
-<http://files.nr.no/samba/CONFER/@code{SeaVal/>}.")
+<https://seasonalforecastingengine.github.io/@code{SeaValDoc/>}.")
     (license license:gpl3+)))
 
 (define-public r-seastests
@@ -53819,46 +53905,6 @@ Palshikar (2009)
 <https://www.researchgate.net/publication/228853276_Simple_Algorithms_for_Peak_Detection_in_Time-Series>.")
     (license license:gpl3)))
 
-(define-public r-scorematchingad
-  (package
-    (name "r-scorematchingad")
-    (version "0.0.60")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scorematchingad" version))
-       (sha256
-        (base32 "1jaqhqahg2pszmw9d9pgywpdlzdnwridj54y3mc3kkxwv7npd59r"))))
-    (properties `((upstream-name . "scorematchingad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang
-                             r-rdpack
-                             r-rcppeigen
-                             r-rcpp
-                             r-r6
-                             r-optimx
-                             r-mcmcpack
-                             r-fixedpoint
-                             r-ellipsis))
-    (home-page "https://cran.r-project.org/package=scorematchingad")
-    (synopsis "Score Matching Estimation by Automatic Differentiation")
-    (description
-     "@code{HyvÃ¤rinen's} score matching (@code{HyvÃ¤rinen}, 2005)
-<https://jmlr.org/papers/v6/hyvarinen05a.html> is a useful estimation technique
-when the normalising constant for a probability distribution is difficult to
-compute.  This package implements score matching estimators using automatic
-differentiation in the @code{CppAD} library
-<https://github.com/coin-or/@code{CppAD>} and is designed for quickly
-implementing score matching estimators for new models.  Also available is
-general robustification (Windham, 1995) <https://www.jstor.org/stable/2346159>.
-Already in the package are estimators for directional distributions (Mardia,
-Kent and Laha, 2016) <doi:10.48550/@code{arXiv.1604.08470>} and the flexible
-Polynomially-Tilted Pairwise Interaction model for compositional data.  The
-latter estimators perform well when there are zeros in the compositions (Scealy
-and Wood, 2023) <doi:10.1080/01621459.2021.2016422>, even many zeros (Scealy,
-Hingee, Kent, and Wood, 2024) <doi:10.1007/s11222-024-10412-w>.")
-    (license license:gpl3+)))
-
 (define-public r-scoreeb
   (package
     (name "r-scoreeb")
@@ -54985,6 +55031,37 @@ extract colour palettes from images, as well for the conversion of images
 between colour spaces.")
     (license license:gpl3)))
 
+(define-public r-sched
+  (package
+    (name "r-sched")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sched" version))
+       (sha256
+        (base32 "0cbbchax694aqbi12hxnssmfk8x56k5wdzkshbzanwjn2ivvr1rb"))))
+    (properties `((upstream-name . "sched")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcurl
+                             r-r6
+                             r-openssl
+                             r-lgr
+                             r-fscache
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/cnrgh/databases/r-sched")
+    (synopsis "Request Scheduler")
+    (description
+     "Offers classes and functions to contact web servers while enforcing scheduling
+rules required by the sites.  The URL class makes it easy to construct a URL by
+providing parameters as a vector.  The Request class allows to describes SOAP
+(Simple Object Access Protocol) or standard requests: URL, method (POST or GET),
+header, body.  The Scheduler class controls the request frequency for each
+server address by mean of rules (Rule class).  The @code{RequestResult} class
+permits to get the request status to handle error cases and the content.")
+    (license license:agpl3)))
+
 (define-public r-scgwr
   (package
     (name "r-scgwr")
@@ -55666,6 +55743,32 @@ matching the marker genes with known cell markers in tissue-specific cell
 taxonomy reference database for single-cell RNA-seq data.  See Shao X, et al
 (2020) <doi:10.1016/j.isci.2020.100882> for more details.")
     (license license:gpl3+)))
+
+(define-public r-sccan
+  (package
+    (name "r-sccan")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scCAN" version))
+       (sha256
+        (base32 "0iypyh34583wmp4hkvhhkyz72aw8y58ynmx1iml82iwvivvwjk1s"))))
+    (properties `((upstream-name . "scCAN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scdha r-purrr r-fnn))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scCAN")
+    (synopsis "Single-Cell Clustering using Autoencoder and Network Fusion")
+    (description
+     "This package provides a single-cell Clustering method using Autoencoder and
+Network fusion ('@code{scCAN}') Bang Tran (2022)
+<doi:10.1038/s41598-022-14218-6> for segregating the cells from the
+high-dimensional @code{scRNA-Seq} data.  The software automatically determines
+the optimal number of clusters and then partitions the cells in a way such that
+the results are robust to noise and dropouts. @code{scCAN} is fast and it
+supports Windows, Linux, and Mac OS.")
+    (license license:lgpl2.0+)))
 
 (define-public r-scbursts
   (package
@@ -58717,6 +58820,26 @@ linear predictor.")
 for dynamically borrowing information from historical data.  For details, please
 refer to Yang et al. (2023) <doi:10.1111/biom.13927>.")
     (license license:gpl3+)))
+
+(define-public r-samplrdata
+  (package
+    (name "r-samplrdata")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplrData" version))
+       (sha256
+        (base32 "09gp4hh1kbf1lmvc10i679fxa7mwmcs3j16f80zc0c3cml1shlsq"))))
+    (properties `((upstream-name . "samplrData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack))
+    (home-page "https://github.com/lucas-castillo/samplrData")
+    (synopsis "Datasets from the SAMPLING Project")
+    (description
+     "This package contains human behaviour datasets collected by the SAMPLING project
+(<https://sampling.warwick.ac.uk>).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-samplingvarest
   (package

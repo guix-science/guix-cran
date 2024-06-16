@@ -9983,13 +9983,13 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "1px7yv4ssrvbdgw86nx7wz84ja17zpl55r7giia36nw4w91aq16f"))))
+        (base32 "0cw2075z492sav1nqlvq8s6xm6835s07g1zkwjmg81mb95a060f0"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -10000,6 +10000,7 @@ delay distribution.")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-patientprofiles
                              r-omopgenerics
                              r-magrittr
                              r-lubridate
@@ -10009,6 +10010,7 @@ delay distribution.")
                              r-dplyr
                              r-dbplyr
                              r-dbi
+                             r-clock
                              r-cli
                              r-checkmate
                              r-cdmconnector))
@@ -12548,15 +12550,16 @@ smoothing bootstrap resampling.")
 (define-public r-ilabelled
   (package
     (name "r-ilabelled")
-    (version "0.1.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ilabelled" version))
        (sha256
-        (base32 "13kmpjgxl4c26ynyjw23kbnvcn31nqjm5kgm64s40j8d20r313j6"))))
+        (base32 "0a77dq1bf0ha6r0l2x7kq8nbmssprs8m62b8jsw3yh12f3kh895v"))))
     (properties `((upstream-name . "ilabelled")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/clewerenz/ilabelled")
     (synopsis "Simple Handling of Labelled Data")
     (description
@@ -13112,13 +13115,13 @@ Project <https://correlatesofwar.org/>.  See also Pevehouse, J. C. et al.
 (define-public r-iglu
   (package
     (name "r-iglu")
-    (version "4.0.0")
+    (version "4.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iglu" version))
        (sha256
-        (base32 "0gcw15pw54dngqlimdxl6jhq9pbaapw1zqyb6xf6pxxg6gb3k2fs"))))
+        (base32 "1v73715hjmmyn1264m0q1skirvgfjwx316vlslysr5bvbcwggljf"))))
     (properties `((upstream-name . "iglu")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16786,29 +16789,6 @@ and/or expression form breast cancer data, trains a pamr classifier (Tibshirani
 et al.) with the features available and predicts the @code{iC10} group.  Genomic
 annotation for the training dataset has been obtained from Mark Dunning's
 @code{lluminaHumanv3.db} package.")
-    (license license:gpl3)))
-
-(define-public r-ic10
-  (package
-    (name "r-ic10")
-    (version "1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iC10" version))
-       (sha256
-        (base32 "1xq6xv582wxdb0nc2nia3q38155gx8z26idiqyx7h1rjb20hhwdl"))))
-    (properties `((upstream-name . "iC10")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pamr r-impute r-ic10trainingdata))
-    (home-page "https://cran.r-project.org/package=iC10")
-    (synopsis "Copy Number and Expression-Based Classifier for Breast Tumours")
-    (description
-     "Implementation of the classifier described in the paper Genome-driven integrated
-classification of breast cancer validated in over 7,500 samples (Ali HR et al.,
-Genome Biology 2014).  It uses copy number and/or expression form breast cancer
-data, trains a pamr classifier (Tibshirani et al.) with the features available
-and predicts the @code{iC10} group.")
     (license license:gpl3)))
 
 (define-public r-ic-infer

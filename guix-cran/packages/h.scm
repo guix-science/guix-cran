@@ -10452,6 +10452,41 @@ produces estimates of subject-specific and group-specific derivative curves.  In
 a non-hierarchical setting the package produces a single derivative curve.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-hdcuremodels
+  (package
+    (name "r-hdcuremodels")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdcuremodels" version))
+       (sha256
+        (base32 "09ih9jlz7l4vcgqhpy9h5c8j19c5fdfn4hhka85as762lxxbkwrl"))))
+    (properties `((upstream-name . "hdcuremodels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-plyr
+                             r-mvnfast
+                             r-knockoff
+                             r-glmnet
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-flexsurvcure
+                             r-flexsurv
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=hdcuremodels")
+    (synopsis "Penalized Mixture Cure Models for High-Dimensional Data")
+    (description
+     "This package provides functions for fitting various penalized parametric and
+semi-parametric mixture cure models with different penalty functions, testing
+for a significant cure fraction, and testing for sufficient follow-up as
+described in Fu et al (2022)<doi:10.1002/sim.9513> and Archer et al
+(2024)<doi:10.1186/s13045-024-01553-6>.  False discovery rate controlled
+variable selection is provided using model-X knock-offs.")
+    (license license:expat)))
+
 (define-public r-hdcpdetect
   (package
     (name "r-hdcpdetect")
@@ -12228,13 +12263,13 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 (define-public r-handwriter
   (package
     (name "r-handwriter")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "handwriter" version))
        (sha256
-        (base32 "02048r88ic9rgr47zd0a76yb2rfrnjjwnhccfjkwkbmp2mca8z3q"))))
+        (base32 "1gwxp5nsw38f368z586hixk4i7b87vg0fcmxxdl2zldawv1sx0v9"))))
     (properties `((upstream-name . "handwriter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
