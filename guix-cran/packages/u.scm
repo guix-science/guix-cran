@@ -2201,38 +2201,6 @@ optimal usage of hardness in a game.")
 outside the Unit circle.  You can also easily draw an unit circle.")
     (license license:gpl3)))
 
-(define-public r-uniswapper
-  (package
-    (name "r-uniswapper")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "uniswappeR" version))
-       (sha256
-        (base32 "0vsw2jvp3gndjrl7v9fndpaqx4kryf4szsz1si1cx1rxhqvlsf92"))))
-    (properties `((upstream-name . "uniswappeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-scales
-                             r-rlang
-                             r-reticulate
-                             r-purrr
-                             r-patchwork
-                             r-lubridate
-                             r-jsonlite
-                             r-ghql
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://github.com/OmniacsDAO/uniswappeR")
-    (synopsis "Interact with the Uniswap Platform")
-    (description
-     "Routines to interact with the Uniswap trading platform and its API
-<https://uniswap.org>.  The package contains codebase to interact with the
-uniswap platform directly from R console, Ability to pull and export data
-related to the platform and analyse some aspects.")
-    (license license:gpl3)))
-
 (define-public r-uniset
   (package
     (name "r-uniset")

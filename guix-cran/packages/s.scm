@@ -37106,28 +37106,6 @@ these similarity measures can be calculated from two n-dimensional trajectories,
 both in matrix form.")
     (license license:gpl3)))
 
-(define-public r-similar
-  (package
-    (name "r-similar")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SimilaR" version))
-       (sha256
-        (base32 "1wlxscl94r3gxwsc9yw0y4z5nj28nxilijp0pbzv4z2n4aqc7vy6"))))
-    (properties `((upstream-name . "SimilaR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-rcpp r-bh))
-    (home-page "https://github.com/bartoszukm/SimilaR")
-    (synopsis "R Source Code Similarity Evaluation")
-    (description
-     "An implementation of a novel method to quantify the similarity of the code-base
-of R functions by means of program dependence graphs.  Possible use cases
-include detection of code clones for improving software quality and of
-plagiarism amongst students assignments.")
-    (license license:gpl3+)))
-
 (define-public r-simidm
   (package
     (name "r-simidm")

@@ -23537,13 +23537,13 @@ Moulines, Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
 (define-public r-mimer
   (package
     (name "r-mimer")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIMER" version))
        (sha256
-        (base32 "1hkql3fddv0rav3sfw8a48idxjzkxd1w7wkxwg92iyv9zpqrnzjk"))))
+        (base32 "1nqdjgm95dnaxnzy5j28agl7b95hj6hqjyipk5mz44yc2y2chg3z"))))
     (properties `((upstream-name . "MIMER")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

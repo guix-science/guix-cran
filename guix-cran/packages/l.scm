@@ -11210,6 +11210,37 @@ available: @code{SentiLex-PT02} and @code{OpLexicon} (v2.1 and v3.0).")
     (license (list license:gpl2
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-lexfindr
+  (package
+    (name "r-lexfindr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LexFindR" version))
+       (sha256
+        (base32 "15pvlvgzx05sj69f3g485cabb476a24iaqv4wcwkai95ln5wk2i5"))))
+    (properties `((upstream-name . "LexFindR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maglab-uconn/LexFindR")
+    (synopsis "Find Related Items and Lexical Dimensions in a Lexicon")
+    (description
+     "This package implements code to identify lexical competitors in a given list of
+words.  We include many of the standard competitor types used in spoken word
+recognition research, such as functions to find cohorts, neighbors, and rhymes,
+amongst many others.  The package includes documentation for using a variety of
+lexicon files, including those with form codes made up of multiple letters
+(i.e., phoneme codes) and also basic orthographies.  Importantly, the code makes
+use of multiple CPU cores and vectorization when possible, making it extremely
+fast and able to handle large lexicons.  Additionally, the package contains
+documentation for users to easily write new functions, allowing researchers to
+examine other relationships within a lexicon.  Preprint:
+<https://osf.io/preprints/psyarxiv/8dyru/>.  Open access:
+<doi:10.3758/s13428-021-01667-6>.  Citation: Li, Z., Crinnion, A.M. & Magnuson,
+J.S. (2021). <doi:10.3758/s13428-021-01667-6>.")
+    (license license:gpl3+)))
+
 (define-public r-levitate
   (package
     (name "r-levitate")

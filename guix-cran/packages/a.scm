@@ -7607,6 +7607,35 @@ vignettes.  The data sets were formerly distributed with @code{ArchaeoPhases}',
 however they exceed current CRAN policy for package size.")
     (license license:gpl3)))
 
+(define-public r-archaeophases
+  (package
+    (name "r-archaeophases")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ArchaeoPhases" version))
+       (sha256
+        (base32 "0sgsni4swnqazghdzvivacq7a67p8zbsmdpl20ayyff0pxppk966"))))
+    (properties `((upstream-name . "ArchaeoPhases")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-arkhe r-aion))
+    (native-inputs (list r-knitr))
+    (home-page "https://ArchaeoStat.github.io/ArchaeoPhases/")
+    (synopsis
+     "Post-Processing of Markov Chain Monte Carlo Simulations for Chronological Modelling")
+    (description
+     "Statistical analysis of archaeological dates and groups of dates.  This package
+allows to post-process Markov Chain Monte Carlo (MCMC) simulations from
+@code{ChronoModel} <https://chronomodel.com/>, Oxcal
+<https://c14.arch.ox.ac.uk/oxcal.html> or BCal <https://bcal.shef.ac.uk/>.  It
+provides functions for the study of rhythms of the long term from the posterior
+distribution of a series of dates (tempo and activity plot).  It also allows the
+estimation and visualization of time ranges from the posterior distribution of
+groups of dates (e.g. duration, transition and hiatus between successive phases)
+as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
+    (license license:gpl3+)))
+
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
@@ -12479,13 +12508,13 @@ into more contemporary data.")
 (define-public r-ami
   (package
     (name "r-ami")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ami" version))
        (sha256
-        (base32 "0j3k4q1vm2nv108r1k0dr8ps4hxql9l9gnqmvd5gadladsy7444i"))))
+        (base32 "0gcbwhbk3lzxcp35841pdipbifhk445x2r0ch6999n1y0h7rsca7"))))
     (properties `((upstream-name . "ami")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rlang r-lifecycle r-glue r-curl))

@@ -8707,13 +8707,13 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googletraffic" version))
        (sha256
-        (base32 "0r9v0nrn21khsirh12qn634qzcd4mgq36ax27gx087a6i97zxwnl"))))
+        (base32 "18hk7rg60s8bbr0kn0mi1j7r8iycjfmpnmp88lslzvhq0d1mvaxx"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -15363,6 +15363,28 @@ with dense datasets that are prone to overplotting.")
     (synopsis "Time Series Visualisations Using the Grammar of Graphics")
     (description
      "This package provides additional display mediums for time series visualisations.")
+    (license license:expat)))
+
+(define-public r-ggtikz
+  (package
+    (name "r-ggtikz")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtikz" version))
+       (sha256
+        (base32 "07af96qx8n4mal4jnnn8br3gf7bw22mk82c24csvqhki6q5w460z"))))
+    (properties `((upstream-name . "ggtikz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tikzdevice r-stringr r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/osthomas/ggtikz")
+    (synopsis
+     "Post-Process 'ggplot2' Plots with 'TikZ' Code Using Plot Coordinates")
+    (description
+     "Annotation of ggplot2 plots with arbitrary @code{TikZ} code, using absolute data
+or relative plot coordinates.")
     (license license:expat)))
 
 (define-public r-ggtibble

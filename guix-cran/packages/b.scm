@@ -16045,16 +16045,17 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "1s3y76wbwln18xdn3fcb9kj8pa038c47ghvryvcxim93f0m339fh"))))
+        (base32 "01ka6rc5wivv4m44igfv9fm42pc1f8c6gxxwvabaz1p5hs725yx8"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-kinship2 r-igraph))
+    (propagated-inputs (list r-stringr r-matrix r-kinship2 r-igraph
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/R-Computing-Lab/BGmisc/")
     (synopsis "An R Package for Extended Behavior Genetics Analysis")
@@ -20710,6 +20711,38 @@ ci_margin and ci_level]).")
 implementations of the methods of Oh and Raftery (2001)
 <doi:10.1198/016214501753208690>.")
     (license license:gpl2+)))
+
+(define-public r-baylum
+  (package
+    (name "r-baylum")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BayLum" version))
+       (sha256
+        (base32 "1vkykrwjmm810m29i2l3yps8snysc8s2qqfbgprr4a0a1qyj4nrg"))))
+    (properties `((upstream-name . "BayLum")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-runjags
+                             r-rjags
+                             r-luminescence
+                             r-kernsmooth
+                             r-hexbin
+                             r-coda
+                             r-cli))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://CRAN.r-project.org/package=BayLum")
+    (synopsis
+     "Chronological Bayesian Models Integrating Optically Stimulated Luminescence and Radiocarbon Age Dating")
+    (description
+     "Bayesian analysis of luminescence data and C-14 age estimates.  Bayesian models
+are based on the following publications: Combes, B. & Philippe, A. (2017)
+<doi:10.1016/j.quageo.2017.02.003> and Combes et al. (2015)
+<doi:10.1016/j.quageo.2015.04.001>.  This includes, amongst others, data import,
+export, application of age models and palaeodose model.")
+    (license license:gpl3)))
 
 (define-public r-baygel
   (package

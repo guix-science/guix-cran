@@ -15394,13 +15394,13 @@ well as the preview of the table's top 1000 records.")
 (define-public r-connectednessapproach
   (package
     (name "r-connectednessapproach")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConnectednessApproach" version))
        (sha256
-        (base32 "086d874gnqgmqqqz296sfvrpi38fp1iqxsg0sd2xbllfnyx4gnzy"))))
+        (base32 "1vbnj2r4x8pfzdagky33xz9kpb23d7vz5ddgms8fp15zjilsz2nw"))))
     (properties `((upstream-name . "ConnectednessApproach")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15411,11 +15411,14 @@ well as the preview of the table's top 1000 records.")
                              r-riskparityportfolio
                              r-quantreg
                              r-progress
+                             r-performanceanalytics
                              r-moments
                              r-mass
+                             r-l1pack
                              r-igraph
                              r-glmnet
-                             r-frequencyconnectedness))
+                             r-frequencyconnectedness
+                             r-car))
     (home-page "https://cran.r-project.org/package=ConnectednessApproach")
     (synopsis "Connectedness Approach")
     (description

@@ -1016,13 +1016,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "1zk77g4ziv7vrqy212bs2nbjw6ncp0fzf4f74jkjbyqa7f4p8nhg"))))
+        (base32 "1bkm1ja9ksd7b70sxc6jg2ha2ml0l5hwh4j2ph02imjxwcnanach"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1036,7 +1036,7 @@ Birnbaum-Saunders, truncated normal and mixture of inverse Gaussian as the
 distribution for the frailty terms.  For the basal model, it is considered a
 parametric approach based on the exponential, Weibull and the piecewise
 exponential distributions as well as a semiparametric approach.  For details,
-see Gallardo and Bourguignon (2022) <@code{arXiv:2206.12973>}.")
+see Gallardo and Bourguignon (2022) <doi:10.48550/@code{arXiv.2206.12973>}.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -7489,16 +7489,16 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
 (define-public r-ergm-rank
   (package
     (name "r-ergm-rank")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.rank" version))
        (sha256
-        (base32 "1ivwqlyx48smm9dmam9z0x6yqhmy1ypmmhzfhs5j3pq5vfwfc87c"))))
+        (base32 "059s4zdb5fm8wl130nnxww1ry57d3p6rd5zmn9pf94iisjpkxxij"))))
     (properties `((upstream-name . "ergm.rank")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statnet-common r-network r-ergm))
+    (propagated-inputs (list r-statnet-common r-rdpack r-network r-ergm))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
     (synopsis
@@ -7506,8 +7506,8 @@ Karlson, Kristian Bernt, Anders Holm, and Richard Breen (2012)
     (description
      "This package provides a set of extensions for the ergm package to fit weighted
 networks whose edge weights are ranks.  See Krivitsky and Butts (2017)
-<doi:10.1177/0081175017692623> and Krivitsky, Hunter, Morris, and Klumb (2021)
-<@code{arXiv:2106.04997>}.")
+<doi:10.1177/0081175017692623> and Krivitsky, Hunter, Morris, and Klumb (2023)
+<doi:10.18637/jss.v105.i06>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm-multi
@@ -7577,16 +7577,16 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
 (define-public r-ergm-count
   (package
     (name "r-ergm-count")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ergm.count" version))
        (sha256
-        (base32 "0cj9jdxxpkgvs658nxxndd9pbxb7l52vzhipkjiimd6q99hr6s24"))))
+        (base32 "085h2dn9dz9i05kjdm3ysgp7lzqdniq16xrvc11b4q1g9av71klv"))))
     (properties `((upstream-name . "ergm.count")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statnet-common r-network r-ergm))
+    (propagated-inputs (list r-statnet-common r-rdpack r-network r-ergm))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://statnet.org")
     (synopsis
@@ -7594,8 +7594,8 @@ See Krivitsky and Morris (2017) <doi:10.1214/16-AOAS1010>.")
     (description
      "This package provides a set of extensions for the ergm package to fit weighted
 networks whose edge weights are counts.  See Krivitsky (2012)
-<doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021)
-<@code{arXiv:2106.04997>}.")
+<doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2023)
+<doi:10.18637/jss.v105.i06>.")
     (license (license:fsdg-compatible "GPL-3 + file LICENSE"))))
 
 (define-public r-ergm
@@ -13403,36 +13403,6 @@ package.  The core module of this package is developed in C++'.")
      "This package provides a light, simple tool for sending emails with minimal
 dependencies.")
     (license license:gpl3)))
-
-(define-public r-ematools
-  (package
-    (name "r-ematools")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EMAtools" version))
-       (sha256
-        (base32 "0gx55ddw7dz1lm599i0gj15dlc3m58a8rf223hiykszb5c8bi372"))))
-    (properties `((upstream-name . "EMAtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sjstats
-                             r-plyr
-                             r-lmertest
-                             r-ggplot2
-                             r-datacombine
-                             r-anytime))
-    (home-page "https://cran.r-project.org/package=EMAtools")
-    (synopsis
-     "Data Management Tools for Real-Time Monitoring/Ecological Momentary Assessment Data")
-    (description
-     "Do data management functions common in real-time monitoring (also called:
-ecological momentary assessment, experience sampling, micro-longitudinal) data,
-including creating power curves for multilevel data, centering on participant
-means and merging event-level data into momentary data sets where you need the
-events to correspond to the nearest data point in the momentary data.  This is
-VERY early release software, and more features will be added over time.")
-    (license license:expat)))
 
 (define-public r-emas
   (package
