@@ -3241,6 +3241,42 @@ user interfaces implemented in shiny'.  Based on the recognized data structures,
 the method can be used to generate new data.")
     (license license:gpl3)))
 
+(define-public r-ultrapolarplot
+  (package
+    (name "r-ultrapolarplot")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ultrapolaRplot" version))
+       (sha256
+        (base32 "0a1dyz59ian3l1d4qjj8zqnmaiix33nwlsg42m2rq87p3zhh3h6z"))))
+    (properties `((upstream-name . "ultrapolaRplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rjson
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plyr
+                             r-ggplot2
+                             r-cairo))
+    (home-page "https://cran.r-project.org/package=ultrapolaRplot")
+    (synopsis "Plotting Ultrasound Tongue Traces")
+    (description
+     "Plots traced ultrasound tongue imaging data according to a polar coordinate
+system.  There is currently support for plotting means and standard deviations
+of each category's trace; Smoothing Splines Analysis of Variance (SSANOVA) could
+be implemented as well.  The origin of the polar coordinates may be defined
+manually or automatically determined based on different algorithms.  Currently
+@code{ultrapolaRplot} supports ultrasound tongue imaging trace data from
+@code{UltraTrace} (<https://github.com/@code{SwatPhonLab/UltraTrace>}).
+@code{UltraTrace} is capable of importing data from Articulate Instruments AAA.
+read_textgrid.R is required for opening @code{TextGrids} to determine category
+and alignment information of ultrasound traces.")
+    (license license:gpl3)))
+
 (define-public r-ultimixt
   (package
     (name "r-ultimixt")
@@ -3332,6 +3368,46 @@ encoded as a 26 character string, as opposed to the 36 character UUID', use
 base32 encoding for better efficiency and readability (5 bits per character),
 are case insensitive, have no special characters (i.e.  are URL safe) and have a
 monotonic sort order (correctly detects and handles the same millisecond).")
+    (license license:expat)))
+
+(define-public r-ulex
+  (package
+    (name "r-ulex")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ulex" version))
+       (sha256
+        (base32 "1h379kqnnp1vvgx35q67h47fd8q9g81m234xsx5vshm3jvqakhn0"))))
+    (properties `((upstream-name . "ulex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-tidytext
+                             r-tidyr
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-spacyr
+                             r-sf
+                             r-readr
+                             r-raster
+                             r-quanteda
+                             r-purrr
+                             r-ngram
+                             r-hunspell
+                             r-geodist
+                             r-dplyr))
+    (home-page "https://dime-worldbank.github.io/ulex/")
+    (synopsis "Unique Location Extractor")
+    (description
+     "Extracts coordinates of an event location from text based on dictionaries of
+landmarks, roads, and areas.  Only returns the location of an event of interest
+and ignores other location references; for example, if determining the location
+of a road traffic crash from the text \"crash near [location 1] heading towards
+[location 2]\", only the coordinates of \"location 1\" would be returned.
+Moreover, accounts for differences in spelling between how a user references a
+location and how a location is captured in location dictionaries.")
     (license license:expat)))
 
 (define-public r-ukpolice

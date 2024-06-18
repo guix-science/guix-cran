@@ -7016,6 +7016,52 @@ inverse Gaussian distribution\" Luc Devroye (2012)
 <doi:10.1007/s11222-012-9367-z>.")
     (license license:gpl3)))
 
+(define-public r-bonsaiforest
+  (package
+    (name "r-bonsaiforest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bonsaiforest" version))
+       (sha256
+        (base32 "1k8k2vnn3cxl1nlkls5w1yvvr1qk28j8gak7m2p85gr6nlxfy4p4"))))
+    (properties `((upstream-name . "bonsaiforest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vdiffr
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-splines2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mass
+                             r-glmnet
+                             r-ggplot2
+                             r-gbm
+                             r-forcats
+                             r-dplyr
+                             r-checkmate
+                             r-broom
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/insightsengineering/bonsaiforest/")
+    (synopsis "Shrinkage Based Forest Plots")
+    (description
+     "Subgroup analyses are routinely performed in clinical trial analyses.  From a
+methodological perspective, two key issues of subgroup analyses are multiplicity
+(even if only predefined subgroups are investigated) and the low sample sizes of
+subgroups which lead to highly variable estimates, see e.g. Yusuf et al (1991)
+<doi:10.1001/jama.1991.03470010097038>.  This package implements subgroup
+estimates based on Bayesian shrinkage priors, see Carvalho et al (2019)
+<https://proceedings.mlr.press/v5/carvalho09a.html>.  In addition, estimates
+based on penalized likelihood inference are available, based on Simon et al
+(2011) <doi:10.18637/jss.v039.i05>.  The corresponding shrinkage based forest
+plots address the aforementioned issues and can complement standard forest plots
+in practical clinical trial analyses.")
+    (license license:asl2.0)))
+
 (define-public r-bonsai
   (package
     (name "r-bonsai")
@@ -17910,13 +17956,13 @@ Rozenholc/Mildenberger/Gather (2010) <doi:10.1016/j.csda.2010.04.021>.")
 (define-public r-bellreg
   (package
     (name "r-bellreg")
-    (version "0.0.2")
+    (version "0.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bellreg" version))
        (sha256
-        (base32 "11h65f7g9amndx6z5qbws97nm4ng6bjazh29mj01qhqcfvgngvrr"))))
+        (base32 "0576yipaj3a7j159nvp5hmlarvrkxm8pa990iasymg5s4vjfi3n7"))))
     (properties `((upstream-name . "bellreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

@@ -8883,13 +8883,13 @@ surveillance and intervention planning for infectious diseases like COVID-19.")
 (define-public r-linelist
   (package
     (name "r-linelist")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "linelist" version))
        (sha256
-        (base32 "0bpsz61pdx3vl88g006iy5gzl1f2lwsfws6gjm1aki9rsih8fx0x"))))
+        (base32 "08rw58pl8l1pdn5mpv0awgjcb0gbsg48ihqk48vydfyjx6683qrv"))))
     (properties `((upstream-name . "linelist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-rlang r-lifecycle r-dplyr

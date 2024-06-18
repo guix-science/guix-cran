@@ -20843,13 +20843,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "1vbk701yz7wcfv906a12h26m2hq787x91lz2c8qn62vxlb794q1h"))))
+        (base32 "0xk8kwaawfpb3dsir5xhs4qm24xp3bilrlqnigqhv00b34b6alja"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -20861,8 +20861,14 @@ data.")
                              r-omopgenerics
                              r-omock
                              r-magrittr
+                             r-here
+                             r-gt
                              r-ggplot2
+                             r-flextable
+                             r-duckdb
+                             r-drugutilisation
                              r-dplyr
+                             r-codelistgenerator
                              r-cdmconnector))
     (native-inputs (list r-knitr))
     (home-page "https://oxford-pharmacoepi.github.io/CohortSymmetry/")
@@ -25817,6 +25823,32 @@ simulated results as well.")
 and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
     (license license:expat)))
 
+(define-public r-clrng
+  (package
+    (name "r-clrng")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clrng" version))
+       (sha256
+        (base32 "19yssgpnb5n52iwqpii73c5j9my7936i8nhl7v9j5grvfl5w52wv"))))
+    (properties `((upstream-name . "clrng")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-gpur))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clrng")
+    (synopsis "Parallel Random Number Generation on GPU")
+    (description
+     "Builds on @code{gpuR} and utilizes the @code{clRNG} ('@code{OpenCL}') library to
+provide efficient tools to generate independent random numbers in parallel on a
+GPU and save the results as R objects, ensuring high-quality random numbers even
+when R is used interactively or in an ad-hoc manner.  Includes Fisher's
+simulation method adapted from Patefield, William M (1981) <doi:10.2307/2346669>
+and MRG31k3p Random Number Generator from @code{clRNG} library by Advanced Micro
+Devices, Inc. (2015) <https://github.com/@code{clMathLibraries/clRNG>}.")
+    (license license:gpl3)))
+
 (define-public r-clr
   (package
     (name "r-clr")
@@ -27707,6 +27739,43 @@ currency and Date to make data cleaning fast and easy.  Relying on very few
 dependencies, it provides smart guessing, but with user options to override
 anything if needed.")
     (license license:gpl2)))
+
+(define-public r-cleanepi
+  (package
+    (name "r-cleanepi")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cleanepi" version))
+       (sha256
+        (base32 "10vpdynil63gnx9rdzzdcaprn6639qgc415wg615izykz7c0g42l"))))
+    (properties `((upstream-name . "cleanepi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-snakecase
+                             r-rlang
+                             r-readr
+                             r-numberize
+                             r-matchmaker
+                             r-magrittr
+                             r-lubridate
+                             r-linelist
+                             r-janitor
+                             r-dplyr
+                             r-checkmate
+                             r-arsenal))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/cleanepi/")
+    (synopsis "Clean and Standardize Epidemiological Data")
+    (description
+     "Cleaning and standardizing tabular data package, tailored specifically for
+curating epidemiological data.  It streamlines various data cleaning tasks that
+are typically expected when working with datasets in epidemiology.  It returns
+the processed data in the same format, ensuring seamless integration into
+existing workflows.  Additionally, it generates a comprehensive report detailing
+the outcomes of each cleaning task.")
+    (license license:expat)))
 
 (define-public r-cleandata
   (package

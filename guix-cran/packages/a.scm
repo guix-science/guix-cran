@@ -7500,13 +7500,13 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
 (define-public r-archeoviz
   (package
     (name "r-archeoviz")
-    (version "1.3.4")
+    (version "1.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archeoViz" version))
        (sha256
-        (base32 "12hrj059gavzydzywdn6knzyh75d5q34mi16a9jmbf2i3bm4fj5s"))))
+        (base32 "1xx6ai74ps70ljx9pcaa5qjvqayvdjw79pk200jgjcxd3ykqiwhz"))))
     (properties `((upstream-name . "archeoViz")))
     (build-system r-build-system)
     (propagated-inputs (list r-svglite
@@ -7524,15 +7524,16 @@ Peluso, E., Cianfrani, Gaudio, F., Lungaroni, M., (2019),
     (synopsis
      "Visualisation, Exploration, and Web Communication of Archaeological Spatial Data")
     (description
-     "An R Shiny application for the visualisation, interactive exploration, and web
-communication of archaeological spatial data.  It includes interactive 3D and 2D
-visualisations, generation of cross sections and maps of the remains, and
-display an interactive timeline of the work made in a site.  Simple spatial
-statistics can be performed (convex hull, regression surfaces, 2D kernel density
-estimation), as well as exporting data to other online applications for more
-complex methods. @code{archeoViz} can be used locally or deployed on a server,
-either with interactive input of data or with a static data set.  Example is
-provided at <https://analytics.huma-num.fr/archeoviz/en>.")
+     "An R Shiny application for visual and statistical exploration and web
+communication of archaeological spatial data, either remains or sites.  It
+offers interactive 3D and 2D visualisations (cross sections and maps of remains,
+timeline of the work made in a site) which can be exported in SVG and HTML
+formats.  It performs simple spatial statistics (convex hull, regression
+surfaces, 2D kernel density estimation) and allows exporting data to other
+online applications for more complex methods. @code{archeoViz} can be used
+offline locally or deployed on a server, either with interactive input of data
+or with a static data set.  Example is provided at
+<https://analytics.huma-num.fr/archeoviz/en>.")
     (license license:gpl3)))
 
 (define-public r-archeofrag
@@ -14427,13 +14428,13 @@ validated and demonstrated on a synthetic sample.")
 (define-public r-alfam2
   (package
     (name "r-alfam2")
-    (version "4.0")
+    (version "4.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ALFAM2" version))
        (sha256
-        (base32 "12466i7nchyh7m5gkg8mzcn9a1m9g7y6vv1ar8ygw16zx3dfhba9"))))
+        (base32 "1l2l792zv8njg7iii7yzr8fksfijmp6r45a421bamg5r1wa3v1rx"))))
     (properties `((upstream-name . "ALFAM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -18699,13 +18700,13 @@ the admiral package.")
 (define-public r-admiral
   (package
     (name "r-admiral")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiral" version))
        (sha256
-        (base32 "1ynqmpswhcy4qlaf8yvhhlax6j9xii5m7bwvrxrjzqnpdcif4hrb"))))
+        (base32 "0g669is6kj6hqpi2i6ik6c0c5mrx3750dd8dsnjmv25aiy60hnzp"))))
     (properties `((upstream-name . "admiral")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19370,6 +19371,31 @@ analysis with phylogenetic constraints and test for the presence of phylogenetic
 autocorrelation.  The package is described in Jombart et al (2010)
 <doi:10.1093/bioinformatics/btq292>.")
     (license license:gpl2+)))
+
+(define-public r-adelie
+  (package
+    (name "r-adelie")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adelie" version))
+       (sha256
+        (base32 "0p20sy12a0f4xdzak3kkss26lfira10yrwnjw3q7y6vgzdl1hmfj"))))
+    (properties `((upstream-name . "adelie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-r2r r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JamesYang007/adelie-r")
+    (synopsis "Fast and Flexible Group Elastic Net Solver")
+    (description
+     "R bindings for the Python package adelie'.  These bindings offer a general
+purpose group elastic net solver, a wide range of matrix classes that can
+exploit special structure to allow large-scale inputs, and an assortment of
+generalized linear model classes for fitting various types of data.  The package
+is an implementation of Yang, J. and Hastie, T. (2024)
+<doi:10.48550/@code{arXiv.2405.08631>}.")
+    (license license:expat)))
 
 (define-public r-adehabitatma
   (package

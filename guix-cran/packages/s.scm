@@ -48549,13 +48549,13 @@ Semiparametric Regression.  Cambridge University Press.")
 (define-public r-seminr
   (package
     (name "r-seminr")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seminr" version))
        (sha256
-        (base32 "1385wwh7b0fq4jqm6ragdywwafdidq4scbljzbdpvm3wis07abqv"))))
+        (base32 "0y9lf8ik8rdq3j4hqw86zwaa4xsizgdryxsc8njxfzaw51z57ljm"))))
     (properties `((upstream-name . "seminr")))
     (build-system r-build-system)
     (propagated-inputs (list r-webp
@@ -48567,7 +48567,7 @@ Semiparametric Regression.  Cambridge University Press.")
                              r-diagrammersvg
                              r-diagrammer))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=seminr")
+    (home-page "https://github.com/sem-in-r/seminr")
     (synopsis "Building and Estimating Structural Equation Models")
     (description
      "This package provides a powerful, easy to syntax for specifying and estimating
@@ -55880,37 +55880,22 @@ means, feature variances, or more general differences.")
 (define-public r-scatterplotmatrix
   (package
     (name "r-scatterplotmatrix")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scatterPlotMatrix" version))
        (sha256
-        (base32 "0jnahr5hxcbs742h4wr0r6yz8qgfli8xqmxwl29cbr32ipkwjmfg"))))
+        (base32 "1hg49n0qk3wlca4abfyzr5n10k2gcv4kq42fm7x9fhiw2mm1xiw9"))))
     (properties `((upstream-name . "scatterPlotMatrix")))
     (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://ifpen.gitlabfr.com/detocs/scatterplotmatrix")
-    (synopsis "'Htmlwidget' for a Scatter Plot Matrix")
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://ifpen-gitlab.appcollaboratif.fr/detocs/scatterplotmatrix")
+    (synopsis "`htmlwidget` for a Scatter Plot Matrix")
     (description
-     "Create a scatter plot matrix, using htmlwidgets package and d3.js'.")
+     "Create a scatter plot matrix, using `htmlwidgets` package and `d3.js`.")
     (license license:expat)))
 
 (define-public r-scatterdensity

@@ -9261,13 +9261,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.74")
+    (version "2.0.75")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "14ns9l9svchmkhka3nyfiysb4lla55amcmv9i0lq3xskzbb0r8pk"))))
+        (base32 "162px7cscy791pgfci45jh3gl3hm60v3ha088kc8vydn8cvfn4kr"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9279,8 +9279,7 @@ vignette.")
                              r-flextable
                              r-biasedurn))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://mvs.unimelb.edu.au/research/groups/veterinary-epidemiology-melbourne")
+    (home-page "https://cran.r-project.org/package=epiR")
     (synopsis "Tools for the Analysis of Epidemiological Data")
     (description
      "This package provides tools for the analysis of epidemiological and surveillance

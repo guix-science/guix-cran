@@ -15105,21 +15105,21 @@ form of Reporter Code Count (RCC) files.")
 (define-public r-nanoparquet
   (package
     (name "r-nanoparquet")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanoparquet" version))
        (sha256
-        (base32 "1gvc4vxpvws0r0y0dxfmd4qchdzj6mcjq6r8gmbkpbxrjnawq5q3"))))
+        (base32 "1q7msg1jc6mggggzm3sfcq7s6n8x0llmb7qbggqci4zai45dpj6b"))))
     (properties `((upstream-name . "nanoparquet")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/nanoparquet")
-    (synopsis "Read Parquet Files")
+    (synopsis "Read and Write 'Parquet' Files")
     (description
      "Self-sufficient reader and writer for flat Parquet files.  Can read most Parquet
 data types.  Can write many R data types, including factors and temporal types.
-Supports Snappy compression.")
+See docs for limitations.")
     (license license:expat)))
 
 (define-public r-nanonext

@@ -25760,6 +25760,40 @@ proposed by Marie Chion, Christine Carapito and Frederic Bertrand (2021)
 proteomics.")
     (license license:gpl2+)))
 
+(define-public r-mhurdle
+  (package
+    (name "r-mhurdle")
+    (version "1.3-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mhurdle" version))
+       (sha256
+        (base32 "0dlajmfwd0bz3npa7zy66pa5hxs08l89axnc77mp8q67mp6xwa7y"))))
+    (properties `((upstream-name . "mhurdle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncreg
+                             r-survival
+                             r-sandwich
+                             r-rdpack
+                             r-prediction
+                             r-numderiv
+                             r-nonnest2
+                             r-maxlik
+                             r-margins
+                             r-generics
+                             r-formula
+                             r-compquadform))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://www.R-project.org")
+    (synopsis "Multiple Hurdle Tobit Models")
+    (description
+     "Estimation of models with dependent variable left-censored at zero.  Null values
+may be caused by a selection process Cragg (1971) <doi:10.2307/1909582>,
+insufficient resources Tobin (1958) <doi:10.2307/1907382>, or infrequency of
+purchase Deaton and Irish (1984) <doi:10.1016/0047-2727(84)90067-7>.")
+    (license license:gpl2+)))
+
 (define-public r-mhtrajectoryr
   (package
     (name "r-mhtrajectoryr")
@@ -43897,13 +43931,13 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "032700msg1gwd00wh9yq5zml6didzxw7banm19j0rdja1w5gpzn3"))))
+        (base32 "0z4d1g4b3fv63r1c4b64aj0lg0dyzyhvjgmj59gpcizl65jg6dw6"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-openxlsx r-httr))

@@ -3745,16 +3745,16 @@ matching directives, or calipers, alone or in combination.")
 (define-public r-optm
   (package
     (name "r-optm")
-    (version "0.1.6")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OptM" version))
        (sha256
-        (base32 "1x3df5qmbs920rgxpc32grwran49nxpnw9swrba9877c0ixg2dww"))))
+        (base32 "00xjzpfnri2k0p04cv98vwwymv16pbw79znklg1k3xc4rxg8wd25"))))
     (properties `((upstream-name . "OptM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sizer r-boot))
+    (propagated-inputs (list r-sizer))
     (home-page "https://cran.r-project.org/package=OptM")
     (synopsis
      "Estimating the Optimal Number of Migration Edges from 'Treemix'")

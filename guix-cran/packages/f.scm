@@ -1403,13 +1403,13 @@ notebooks.")
 (define-public r-funspace
   (package
     (name "r-funspace")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funspace" version))
        (sha256
-        (base32 "07xamf26vrzmqxkg0yxwh4rh8v01wya774rz70qlydfwdqq7gs3s"))))
+        (base32 "036hx837rlarvms79jjg3lg77h6k94p3n8n1hpw70v8hcrz6dr54"))))
     (properties `((upstream-name . "funspace")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -3620,13 +3620,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.2.3")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "0wlx58il39qnl9wi92mkdhjarqvrp5i2hw4cyzaijrsfal1i0v42"))))
+        (base32 "02fsvklh5cx6072yrfyqrr8yh9x6ajfnyk3qx1xq2kjq8k7j15sh"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -3643,6 +3643,7 @@ blog Lijun Wang (2017)
                              r-hmisc
                              r-ggpubr
                              r-ggplot2
+                             r-fmesher
                              r-dplyr
                              r-digest))
     (native-inputs (list r-knitr))
@@ -17025,6 +17026,29 @@ framework to measure FD that allows any number and type of functional traits,
 and can also consider species relative abundances.  Also contains other useful
 tools for functional ecology.")
     (license license:gpl2)))
+
+(define-public r-fcwtr
+  (package
+    (name "r-fcwtr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fCWTr" version))
+       (sha256
+        (base32 "0bm2cwsal0cxaqrkzs3j4ihvnyad91gywbf1q5zaryxcvmzf07fi"))))
+    (properties `((upstream-name . "fCWTr")))
+    (build-system r-build-system)
+    (inputs (list fftw))
+    (propagated-inputs (list r-cpp11))
+    (home-page "https://lschneiderbauer.github.io/fCWTr/")
+    (synopsis "Fast Continuous Wavelet Transform")
+    (description
+     "Enables the usage of the fast continuous wavelet transform, originally
+implemented in the C++ library @code{fCWT} by Lukas Arts.  See Arts, P.A. and
+Van den Broek, E.L. (2022) <doi:10.1038/s43588-021-00183-z> for details.  The
+package includes simple helpers such as a plotting function.")
+    (license license:gpl3+)))
 
 (define-public r-fcvar
   (package

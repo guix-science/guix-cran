@@ -2280,13 +2280,13 @@ all previous versions of the text.")
 (define-public r-woodvaluationde
   (package
     (name "r-woodvaluationde")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "woodValuationDE" version))
        (sha256
-        (base32 "1sbyl4yd766lhjqghm4hq9162wz0qabiwiwnsiwzdn4fbfihxl7v"))))
+        (base32 "0lm6br7nnycng2lidkgg41li58q3pgsh85hi6b1mj2r6vkbnk3rx"))))
     (properties `((upstream-name . "woodValuationDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -2300,14 +2300,14 @@ functions are sensitive to tree species, mean diameter of the harvested trees,
 stand quality, and logging method.  The functions include estimations for the
 consequences of disturbances on revenues and costs.  The underlying assortment
 tables are taken from Offer and Staupendahl (2018) with corresponding functions
-for salable and skidded volume derived in Fuchs et al. (in preparation).  Wood
-revenue and harvest cost functions were taken from v.  Bodelschwingh (2018).
-The consequences of disturbances refer to Dieter (2001), Moellmann and Moehring
+for salable and skidded volume derived in Fuchs et al. (2023).  Wood revenue and
+harvest cost functions were taken from v.  Bodelschwingh (2018).  The
+consequences of disturbances refer to Dieter (2001), Moellmann and Moehring
 (2017), and Fuchs et al. (2022a, 2022b).  For the full references see
-documentation of the functions, package README, and Fuchs et al. (in
-preparation).  Apart from Dieter (2001) and Moellmann and Moehring (2017), all
-functions and factors are based on data from @code{HessenForst}, the forest
-administration of the Federal State of Hesse in Germany.")
+documentation of the functions, package README, and Fuchs et al. (2023).  Apart
+from Dieter (2001) and Moellmann and Moehring (2017), all functions and factors
+are based on data from @code{HessenForst}, the forest administration of the
+Federal State of Hesse in Germany.")
     (license license:expat)))
 
 (define-public r-woodsimulatr

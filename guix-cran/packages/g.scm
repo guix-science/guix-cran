@@ -21927,6 +21927,34 @@ spatial correlation of the sampled data.  The single estimate is produced by a
 Kriging technique.")
     (license license:gpl3)))
 
+(define-public r-geommc
+  (package
+    (name "r-geommc")
+    (version "0.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geommc" version))
+       (sha256
+        (base32 "0wjlarfx47h1vskpdr22d7l7ji5pcaw8095a7xigzqm8af1i9jla"))))
+    (properties `((upstream-name . "geommc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp
+                             r-mcmc
+                             r-matrixcalc
+                             r-matrix
+                             r-magrittr
+                             r-cubature))
+    (home-page "https://github.com/vroys/geommc")
+    (synopsis "Geometric Markov Chain Sampling")
+    (description
+     "Simulates from discrete and continuous target distributions using geometric
+Metropolis-Hastings (MH) algorithms.  Users specify the target distribution by
+an R function that evaluates the log un-normalized pdf or pmf.  The package also
+contains a function implementing a specific geometric MH algorithm for
+performing high dimensional Bayesian variable selection.")
+    (license license:gpl3+)))
+
 (define-public r-geometries
   (package
     (name "r-geometries")
@@ -28584,26 +28612,28 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "1.5.7")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "1b3gwzjsbwq7cbghv7pykgj2bd2j4m38jsxfbv8ly0qb5khisn6g"))))
+        (base32 "0bs557cv74wcizw7j1xswx8lf3rl6vc3ybdn71854mjrab0sjz85"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
-    (propagated-inputs (list r-tensorflow r-rcpp))
+    (propagated-inputs (list r-tensorflow r-rcpp r-httr))
     (home-page "https://cran.r-project.org/package=ganGenerativeData")
     (synopsis "Generate Generative Data for a Data Source")
     (description
      "Generative Adversarial Networks are applied to generate generative data for a
 data source.  A generative model consisting of a generator and a discriminator
-network is trained.  In iterated training steps the distribution of generated
+network is trained.  During iterative training the distribution of generated
 data is converging to that of the data source.  Direct applications of
 generative data are the created functions for data classifying and missing data
-completion.  Reference: Goodfellow et al. (2014) <@code{arXiv:1406.2661v1>}.")
+completion.  A software service for accelerated training of generative models on
+graphics processing units is available.  Reference: Goodfellow et al. (2014)
+<doi:10.48550/@code{arXiv.1406.2661>}.")
     (license license:gpl2+)))
 
 (define-public r-gandatamodel

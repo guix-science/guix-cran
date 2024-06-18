@@ -7671,16 +7671,17 @@ models.")
 (define-public r-proae
   (package
     (name "r-proae")
-    (version "0.2.15")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProAE" version))
        (sha256
-        (base32 "02k8ndqhmqixqprj8jsc41lj4hrgjm13m6nc310057kdrpvi8lhv"))))
+        (base32 "1sgd5ws1jpnjsnx1daywsn3ygl6lmg048fgvc7i4nkkryq7zls6b"))))
     (properties `((upstream-name . "ProAE")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr
+                             r-kableextra
                              r-hmisc
                              r-gridextra
                              r-ggtext
@@ -7696,7 +7697,7 @@ models.")
      "This package provides a collection of tools to facilitate standardized analysis
 and graphical procedures when using the National Cancer Instituteâs
 Patient-Reported Outcomes version of the Common Terminology Criteria for Adverse
-Events (PRO-CTCAE).")
+Events (PRO-CTCAE) and other PRO measurements.")
     (license license:gpl3)))
 
 (define-public r-pro
@@ -10345,13 +10346,13 @@ models (glm) and local polynomial regression fittings (loess).")
 (define-public r-predhy-gui
   (package
     (name "r-predhy-gui")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predhy.GUI" version))
        (sha256
-        (base32 "05d15gw493c3rr88sdmrb48rscgksmfczyn3w9d33a9sa8il4gmc"))))
+        (base32 "04grfxb18vqhdh3ylq7dm3z3kal21nkr33pgj9698lzy1gn6ki22"))))
     (properties `((upstream-name . "predhy.GUI")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -25542,13 +25543,13 @@ circular analysis are based on methods from - Batschelet (1981)
 (define-public r-pharmr
   (package
     (name "r-pharmr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmr" version))
        (sha256
-        (base32 "1hk100pk1qr3v0290k7vasd28ch6qipq4qq1556l7x22nf4cv5cq"))))
+        (base32 "0vxaas0rrzfcia47bhqd54d2sjnwgx3djbfy9ggf2hr3cw3dz7fg"))))
     (properties `((upstream-name . "pharmr")))
     (build-system r-build-system)
     (inputs (list python))
@@ -34635,37 +34636,21 @@ Tukey g-&-h distributions are supported, for now.")
 (define-public r-parallelplot
   (package
     (name "r-parallelplot")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parallelPlot" version))
        (sha256
-        (base32 "12rpzcz1nc8c9rnsdg7kx6gh98plhp2jv22h58gg5gyl0pcsh2hx"))))
+        (base32 "0lchizczzsn3b147lkq3ws7zlx2106fxn6776jqkvch5aph1mrqw"))))
     (properties `((upstream-name . "parallelPlot")))
     (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
     (propagated-inputs (list r-htmlwidgets))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/drti/parallelplot")
-    (synopsis "'Htmlwidget' for a Parallel Coordinates Plot")
+    (synopsis "`htmlwidget` for a Parallel Coordinates Plot")
     (description
-     "Create a parallel coordinates plot, using htmlwidgets package and d3.js'.")
+     "Create a parallel coordinates plot, using `htmlwidgets` package and `d3.js`.")
     (license license:expat)))
 
 (define-public r-parallelpc
@@ -35073,13 +35058,13 @@ end.")
 (define-public r-panelview
   (package
     (name "r-panelview")
-    (version "1.1.17")
+    (version "1.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelView" version))
        (sha256
-        (base32 "05zfkjmkypjw72z3ph11q1wzac55b6knv4ngvb47jjpi3n5i91ga"))))
+        (base32 "1kp8cvc0qklbdxmjh5n4sxzv3ncvrykcyvdsnvil40pmikmd0599"))))
     (properties `((upstream-name . "panelView")))
     (build-system r-build-system)
     (propagated-inputs (list r-gridextra r-ggplot2 r-dplyr))

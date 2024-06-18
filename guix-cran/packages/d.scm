@@ -2098,13 +2098,13 @@ avoided.")
 (define-public r-dtwrappers2
   (package
     (name "r-dtwrappers2")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTwrappers2" version))
        (sha256
-        (base32 "0chc4is8bz39k70jdd4m7rkrj4yg6ccvvr99alj1dh9iwip45g3b"))))
+        (base32 "06dz7i5hddqwj307fmkp93v7c4r0nvbi3bi9j4hqx77z7bdy2m8j"))))
     (properties `((upstream-name . "DTwrappers2")))
     (build-system r-build-system)
     (propagated-inputs (list r-dtwrappers r-data-table))

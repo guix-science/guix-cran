@@ -32310,13 +32310,13 @@ Some of the functions are applicable to image data.")
 (define-public r-refugees
   (package
     (name "r-refugees")
-    (version "2023.6.0")
+    (version "2023.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refugees" version))
        (sha256
-        (base32 "1sy93zg4vjv02ga96vzhdjvgnwmv3gmd3m7w2fplah7d49i3z85v"))))
+        (base32 "11isc2q3y3syi1hkvxg8rgism9qynskxypsivcvjdpdhw4sfh263"))))
     (properties `((upstream-name . "refugees")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -37431,13 +37431,13 @@ more readable.")
 (define-public r-rd2md
   (package
     (name "r-rd2md")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rd2md" version))
        (sha256
-        (base32 "130y2s16404jrl6xprra9wnscbpk3adhd29br6w9y0m8ngw2wxj0"))))
+        (base32 "1xidp50s90m9kl3c0lbakzhmzlf9v9b2ikka18vsamhc6w0kk0sw"))))
     (properties `((upstream-name . "Rd2md")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

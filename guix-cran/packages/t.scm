@@ -16626,13 +16626,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyclust" version))
        (sha256
-        (base32 "0v4hlgmjya6w0jb091qh1hv47xgqx79xvr0ddlz9hnv23rxrrbsf"))))
+        (base32 "19lvxbzzsnx2q5ji800wm8jk48y5ip53v95kaxyjlpslclv40l8z"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -23402,13 +23402,13 @@ using the Rcpp package.")
 (define-public r-tdaunif
   (package
     (name "r-tdaunif")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdaunif" version))
        (sha256
-        (base32 "03m8lzg4w1ys0shr2gir5m78c02r71l5pwqgvpcn004kirh3xhwv"))))
+        (base32 "0hygfm589rhcbq7ls4jprxwxvksqqr7fh4i5xgk5fb09fdqy9k1g"))))
     (properties `((upstream-name . "tdaunif")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
