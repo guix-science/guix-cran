@@ -6601,39 +6601,6 @@ S.-H. Kim (2016) <doi:10.1016/j.csda.2016.03.007> and Ni and Sun (2005)
 <doi:10.1198/073500104000000622>.")
     (license license:gpl3)))
 
-(define-public r-varsexplore
-  (package
-    (name "r-varsexplore")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "varsExplore" version))
-       (sha256
-        (base32 "0d18wqq7fbs5ljdphsdgqmv8ab0wrzzykjhf4lqksi7n78s1fa2r"))))
-    (properties `((upstream-name . "varsExplore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-rstudioapi
-                             r-rio
-                             r-purrr
-                             r-magrittr
-                             r-glue
-                             r-dt
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=varsExplore")
-    (synopsis "Searchable Variable Explorer with Labelled Variables")
-    (description
-     "This package creates a summary dataframe that can be used in RStudio similar to
-the variable explorer in Stata', but which also includes the summary statistics.
- By default the result is shown in the RStudio Viewer Pane as a searchable data
-table.  This is useful particularly if you have a large dataset with a very
-large number of labelled variables with hard to remember names.  Can also be
-used to generate a table of summary statistics.")
-    (license license:expat)))
-
 (define-public r-varsellcm
   (package
     (name "r-varsellcm")

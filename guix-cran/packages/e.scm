@@ -3553,13 +3553,13 @@ ISBN:0142-0615) <doi:10.1016/j.ijepes.2021.107195>.")
 (define-public r-evots
   (package
     (name "r-evots")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evoTS" version))
        (sha256
-        (base32 "104lb598rkm17n1as1g32va5aa285b86j4ac3wg4dxp8ckzl738d"))))
+        (base32 "0lwv8j4z88xr2x7k7gay42g9dig0vgv0h62br9d1flqlzf1hppd9"))))
     (properties `((upstream-name . "evoTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-plotly r-paleots r-mvtnorm r-mass))
@@ -9718,13 +9718,13 @@ Susceptible-Infectious (SI) and Susceptible-Infectious-Removed (SIR).")
 (define-public r-epigrowthfit
   (package
     (name "r-epigrowthfit")
-    (version "0.15.2")
+    (version "0.15.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epigrowthfit" version))
        (sha256
-        (base32 "1wzb92baz3aw3y15fdc3r8nanjzkgshhbi57hq7x8ybdzrwn6rz8"))))
+        (base32 "0j5gml3glnfsmc76qy554bmqx2g80y3kdrnbabzx0hqaz8sz8fgl"))))
     (properties `((upstream-name . "epigrowthfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rcppeigen r-nlme r-matrix))
@@ -9992,13 +9992,13 @@ data management functions is available at <https://medipe.psu.ac.th/epicalc/>'."
 (define-public r-epidatr
   (package
     (name "r-epidatr")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epidatr" version))
        (sha256
-        (base32 "1qiidg3fq2ccm6l8r080fg9mwdvcnksl338z2navv9w4jq7kjwr8"))))
+        (base32 "0x7hx5cc6w62clbpkpr6nwmzhb4nwb5kb8x324ci8llza2gdi9lk"))))
     (properties `((upstream-name . "epidatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -10222,13 +10222,13 @@ researchers.")
 (define-public r-eph
   (package
     (name "r-eph")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eph" version))
        (sha256
-        (base32 "1gr0j5xxdmi10d4n742r9764134fsh0xxqdfz5jk5df1z16wh7g2"))))
+        (base32 "06dk7j85p0l4n4fsdzjwazk8sh2c7frddwmhmdqzsqswv3zqaxm8"))))
     (properties `((upstream-name . "eph")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10248,7 +10248,7 @@ researchers.")
                              r-cli
                              r-attempt))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/holatam/eph")
+    (home-page "https://github.com/ropensci/eph")
     (synopsis
      "Argentina's Permanent Household Survey Data and Manipulation Utilities")
     (description
@@ -11602,13 +11602,13 @@ objects and coordinate reference systems.")
 (define-public r-enmpa
   (package
     (name "r-enmpa")
-    (version "0.1.5")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "enmpa" version))
        (sha256
-        (base32 "0r7zr3xgx1w9570965bm13rw24647y47kab313lqb01nwd9vn2vn"))))
+        (base32 "07v4jqmppmvarqc8a4z2zhl52z16w2biq7mga3fd6gz5z43c9yb8"))))
     (properties `((upstream-name . "enmpa")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -21174,6 +21174,27 @@ packages in the same function call.  The packages function will load one or more
 packages, and install any packages that are not installed on your system (after
 prompting you).  Also included is a from_import function that allows you to
 import specific functions from a package into the global environment.")
+    (license license:expat)))
+
+(define-public r-easyortables
+  (package
+    (name "r-easyortables")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyORtables" version))
+       (sha256
+        (base32 "1k9g4gfc8s6c93ba2clb4vyaafs7wbxw34d8nrkbnkzxy2frmkwn"))))
+    (properties `((upstream-name . "easyORtables")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-knitr r-kableextra))
+    (home-page "https://cran.r-project.org/package=easyORtables")
+    (synopsis "Easy Odds Ratio Tables")
+    (description
+     "This package creates text, @code{LaTeX}', Markdown, or Bootstrap-styled
+HTML-formatted odds ratio tables with confidence intervals for multiple logistic
+regression models.")
     (license license:expat)))
 
 (define-public r-easynls

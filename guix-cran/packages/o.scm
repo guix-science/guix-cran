@@ -4202,13 +4202,13 @@ the portfolio performance as presented by Gosling et al. (2020)
 (define-public r-optimizer
   (package
     (name "r-optimizer")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optimizeR" version))
        (sha256
-        (base32 "07p7bjh0jhg74csh094473dflpc1va4p45laxbdwv3hbxagk1zkx"))))
+        (base32 "134828h3ibypam0k0xxmj7pj6pzx084in06rmbcxgc900ibbqgb4"))))
     (properties `((upstream-name . "optimizeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -8171,13 +8171,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "15vqym797spa9fcxq25is2fjc5q6id4h731vh720wjg857aja4h0"))))
+        (base32 "0w3zzds236bgn2lr0v70lj3q7zmws832wk3rdhc0ln1857pzp3fv"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9580,13 +9580,13 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0v6pk49arigm9v979in9h06pqhz3gz56a1d7vcbd1pxqa8y4ypaz"))))
+        (base32 "0a9bk8dch6852nkddxwjyrs24knpx09sb5dyfakb9fpmksrv4f3p"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis

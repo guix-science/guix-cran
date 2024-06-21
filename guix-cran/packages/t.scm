@@ -262,16 +262,20 @@ relationships between exposures and outcomes.")
 (define-public r-twowaytests
   (package
     (name "r-twowaytests")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twowaytests" version))
        (sha256
-        (base32 "0z04iizdqas9lhmw8i4k5i575j38b9xd4qkk5mrsnk8jm40fljcc"))))
+        (base32 "1blzifflmkcvjysw4bbn81fgydczg9rkcqchw832d322dymh2hzn"))))
     (properties `((upstream-name . "twowaytests")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wesanderson r-onewaytests r-nortest r-ggplot2
+    (propagated-inputs (list r-wesanderson
+                             r-onewaytests
+                             r-nortest
+                             r-mass
+                             r-ggplot2
                              r-car))
     (home-page "https://cran.r-project.org/package=twowaytests")
     (synopsis "Two-Way Tests in Independent Groups Designs")
@@ -10333,27 +10337,6 @@ predicted response as well as the moment matrix based on a third order response
 surface model.")
     (license license:gpl2+)))
 
-(define-public r-torchvisionlib
-  (package
-    (name "r-torchvisionlib")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "torchvisionlib" version))
-       (sha256
-        (base32 "1n9gvidi3lvcq730c70mzh94w42asv903708fqyqp2wrs68884na"))))
-    (properties `((upstream-name . "torchvisionlib")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr r-torch r-rlang r-rcpp r-glue))
-    (home-page "https://github.com/mlverse/torchvisionlib")
-    (synopsis "Additional Operators for Image Models")
-    (description
-     "This package implements additional operators for computer vision models,
-including operators necessary for image segmentation and object detection deep
-learning models.")
-    (license license:expat)))
-
 (define-public r-torchvision
   (package
     (name "r-torchvision")
@@ -10419,13 +10402,13 @@ and Yarats(2019), <@code{arXiv:1810.06801>}; (h) radam by Liu et al. (2019),
 (define-public r-torchdatasets
   (package
     (name "r-torchdatasets")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "torchdatasets" version))
        (sha256
-        (base32 "1mq87sgy9v1526iy03zpslkjxx7379q6x9dqs0nslvvfwk9sry4q"))))
+        (base32 "1lh0yjv18bjjdwc8pdl248vsbwm5y9xkv4dhsa1kbk01xmlvk3vy"))))
     (properties `((upstream-name . "torchdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -10548,13 +10531,13 @@ based on several criteria to result in the best benefit. (LIU, H. et al., 2019)
 (define-public r-topr
   (package
     (name "r-topr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topr" version))
        (sha256
-        (base32 "19n18m370dl8hginswwgamr4daj7ci4spjgdli3zk5glcqqq9a45"))))
+        (base32 "1hqljylwja01jn8zhkrkcyy4pza7pvmfibgzjvy9q3lbprf278zr"))))
     (properties `((upstream-name . "topr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13151,6 +13134,25 @@ web API and show it in table or figure format.")
 provides functions to manage data, scripts and output files.  Also provides a
 project template for Rstudio'.")
     (license license:gpl2+)))
+
+(define-public r-tinyplot
+  (package
+    (name "r-tinyplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tinyplot" version))
+       (sha256
+        (base32 "1rjbyznjgkh28xfgms4acbg5943yk5bm7hk5krcl0dnvqc824gsn"))))
+    (properties `((upstream-name . "tinyplot")))
+    (build-system r-build-system)
+    (home-page "https://grantmcdermott.com/tinyplot/")
+    (synopsis "Lightweight Extension of the Base R Graphics System")
+    (description
+     "Lightweight extension of the base R graphics system, with support for automatic
+legends, facets, and various other enhancements.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-tinycodet
   (package
@@ -23221,13 +23223,13 @@ compare trip distribution laws and models as described in Lenormand et al.
 (define-public r-tdigest
   (package
     (name "r-tdigest")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tdigest" version))
        (sha256
-        (base32 "1g4yk01lmx8cz5q06bxm3kcsi7c9cvpdfi925csc4qaf5rdrad4y"))))
+        (base32 "0a6zd4y7wrxdwl3fchjn6g8p70frd0jpq9a6cf5bnxbhr5sjk6x1"))))
     (properties `((upstream-name . "tdigest")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr))
@@ -23235,16 +23237,16 @@ compare trip distribution laws and models as described in Lenormand et al.
     (synopsis "Wicked Fast, Accurate Quantiles Using t-Digests")
     (description
      "The t-Digest construction algorithm, by Dunning et al., (2019)
-<@code{arXiv:1902.04023v1>}, uses a variant of 1-dimensional k-means clustering
-to produce a very compact data structure that allows accurate estimation of
-quantiles.  This t-Digest data structure can be used to estimate quantiles,
-compute other rank statistics or even to estimate related measures like trimmed
-means.  The advantage of the t-Digest over previous digests for this purpose is
-that the t-Digest handles data with full floating point resolution.  The
-accuracy of quantile estimates produced by t-Digests can be orders of magnitude
-more accurate than those produced by previous digest algorithms.  Methods are
-provided to create and update t-Digests and retrieve quantiles from the
-accumulated distributions.")
+<doi:10.48550/@code{arXiv.1902.04023>}, uses a variant of 1-dimensional k-means
+clustering to produce a very compact data structure that allows accurate
+estimation of quantiles.  This t-Digest data structure can be used to estimate
+quantiles, compute other rank statistics or even to estimate related measures
+like trimmed means.  The advantage of the t-Digest over previous digests for
+this purpose is that the t-Digest handles data with full floating point
+resolution.  The accuracy of quantile estimates produced by t-Digests can be
+orders of magnitude more accurate than those produced by previous digest
+algorithms.  Methods are provided to create and update t-Digests and retrieve
+quantiles from the accumulated distributions.")
     (license license:expat)))
 
 (define-public r-tdcor

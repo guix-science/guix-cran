@@ -2000,13 +2000,13 @@ Hornstein, Fan, Shedden, and Zhou (2018) <doi:10.1080/01621459.2018.1429275>.")
 (define-public r-jointfpm
   (package
     (name "r-jointfpm")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JointFPM" version))
        (sha256
-        (base32 "1g6b35i4lvwizg6ji7kg9m7lmi81zz1rrd0qsvssphmbh7i5p58s"))))
+        (base32 "04wswyp9pibhkmjksn9ndzymgj1sjmdj6wscpw1wj6hwsi6vrdmw"))))
     (properties `((upstream-name . "JointFPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2408,13 +2408,13 @@ spreadsheet (see <https://www.jamovi.org> for more information) from R.")
 (define-public r-jmv
   (package
     (name "r-jmv")
-    (version "2.5.5")
+    (version "2.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmv" version))
        (sha256
-        (base32 "0d98sk8c6m6zi1p8wycdmk5xh48ji04lrhmqpj5q081llv30y31m"))))
+        (base32 "070bwzq9i3xznx44vlpxw41ja0ry9w08jdnyxf5i58ndshpf1jbz"))))
     (properties `((upstream-name . "jmv")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcdextra
@@ -3078,13 +3078,13 @@ cross-validation function to perform hyperparameter tuning.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgsbook" version))
        (sha256
-        (base32 "0d54cdvx97787vwm9pqcmfx66y0l1crz4w16khpqr2k4nqixnkqk"))))
+        (base32 "04y4pr1apny79n9ia1iplx5ac7xg7l56sbbdzz3zv0x0jd3h6vxn"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))
@@ -3093,7 +3093,7 @@ cross-validation function to perform hyperparameter tuning.")
      "Package of the German Book \"Statistik mit R und RStudio\" by Joerg grosse Schlarmann")
     (description
      "All datasets and functions used in the german book \"Statistik mit R und RStudio\"
-by grosse Schlarmann (2022) <https://www.produnis.de/R/>.")
+by grosse Schlarmann (2010-2024) <https://www.produnis.de/R/>.")
     (license license:gpl2+)))
 
 (define-public r-jgr

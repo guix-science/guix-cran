@@ -2719,13 +2719,13 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
 (define-public r-aum
   (package
     (name "r-aum")
-    (version "2023.6.14")
+    (version "2024.6.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aum" version))
        (sha256
-        (base32 "1y6wn8ycl4vvmzyjkyprxah7q5afa56bpj8xvgmvi6dahnfp52cq"))))
+        (base32 "0ybvjp7mwwji1ybf4br7y3l20fccg6sl70wjgc5ii8qa4sgr9hq4"))))
     (properties `((upstream-name . "aum")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -2733,9 +2733,10 @@ Immorlica, Piotr Indyk, and Vahab S. Mirrokni(2004) <doi:10.1145/997817.997857>.
     (home-page "https://github.com/tdhock/aum")
     (synopsis "Area Under Minimum of False Positives and Negatives")
     (description
-     "Standard template library sort is used to implement an efficient algorithm
-<@code{arXiv:2107.01285>} for computing Area Under Minimum and directional
-derivatives.")
+     "Efficient algorithms <https://jmlr.org/papers/v24/21-0751.html> for computing
+Area Under Minimum, directional derivatives, and line search optimization of a
+linear model, with objective defined as either max Area Under the Curve or min
+Area Under Minimum.")
     (license license:gpl3)))
 
 (define-public r-auk
@@ -4678,13 +4679,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.32")
+    (version "4.4.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "0javb5hlg007jb30sdv48hqa2yfdjmjr8vpynm6x02npz8kn528d"))))
+        (base32 "016xxl928pdwpglmm3gg0rq4y04nlzbla46k7a6nmfsfygyz8gxv"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -8891,13 +8892,13 @@ field.")
 (define-public r-apoderoides
   (package
     (name "r-apoderoides")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Apoderoides" version))
        (sha256
-        (base32 "0rgba2855gnavq4c8ik6vq0fh4m9wqyp0wgxjw7rdw1jsvi7dyqs"))))
+        (base32 "1i38haakkgaj3rk9grp2shw64y3rydl8c5v4ivbrwbx6hrgxdp7i"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
@@ -10022,23 +10023,25 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "0.3.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "0jh5kw7z13bx6mbsnsc5ac1mscazril7m357lc25nlb2s0nvxisd"))))
+        (base32 "0hz2ba1n2q3scwbsnyv0znmqcqdp2289hdyplbggk8726hks32sh"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimizer r-oeli r-cli r-checkmate))
+    (propagated-inputs (list r-r6 r-optimizer r-oeli r-cli r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/ao/")
     (synopsis "Alternating Optimization")
     (description
-     "Alternating optimization of (high-dimensional) functions is an iterative
-procedure for optimizing jointly over all parameters by alternately optimizing
-parameter subsets.")
+     "Alternating optimization is an iterative procedure that optimizes a function by
+alternately performing restricted optimization over individual parameter
+subsets.  Instead of tackling joint optimization directly, it breaks the problem
+down into simpler sub-problems.  This approach can make optimization feasible
+when joint optimization is too difficult.")
     (license license:gpl3)))
 
 (define-public r-anylib
@@ -14144,13 +14147,13 @@ detailed in Hagen et al. (in review).")
 (define-public r-alien
   (package
     (name "r-alien")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alien" version))
        (sha256
-        (base32 "0856csdvz5wz699n7g8bj1azzyw2mfznhcwmabzp740bijy6x6qi"))))
+        (base32 "191prlklg153a7inbbjq3fjz0yr6pyyqcxl4syy8p6a64a92clyn"))))
     (properties `((upstream-name . "alien")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14605,6 +14608,33 @@ defined in Koenker and Machado (1999).  This is a special case of the skewed
 family of distributions available in Galarza et.al. (2017)
 <doi:10.1002/sta4.140> useful for quantile regression.")
     (license license:gpl2+)))
+
+(define-public r-alcyon
+  (package
+    (name "r-alcyon")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alcyon" version))
+       (sha256
+        (base32 "0byc1h82k06ss6a39w2m252ivlmm4pvvn5gc18nk6l7y0pzqa342"))))
+    (properties `((upstream-name . "alcyon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stars r-sf r-rcpp r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=alcyon")
+    (synopsis "Spatial Network Analysis")
+    (description
+     "Interface package for sala', the spatial network analysis library from the
+@code{depthmapX} software application.  The R parts of the code are based on the
+rdepthmap package.  Allows for the analysis of urban and building-scale networks
+and provides metrics and methods usually found within the Space Syntax domain.
+Methods in this package are described by K. Al-Sayed, A. Turner, B. Hillier, S.
+Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (2004)
+<https://discovery.ucl.ac.uk/id/eprint/2651> \"Depthmap 4: a researcher's
+handbook\".")
+    (license license:gpl3)))
 
 (define-public r-albopictus
   (package
@@ -18575,13 +18605,13 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (define-public r-admiralophtha
   (package
     (name "r-admiralophtha")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralophtha" version))
        (sha256
-        (base32 "0ip69mishnx8yllfp2vm2qsa5917hwi974lr8qwil9xx6d2hgbkz"))))
+        (base32 "1690id6s5633r47av68wivg436h5s13a5qlg9a1dyfghd6wfa79f"))))
     (properties `((upstream-name . "admiralophtha")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18612,13 +18642,13 @@ Implementation Guide\" (CDISC Analysis Data Model Team, 2021,
 (define-public r-admiralonco
   (package
     (name "r-admiralonco")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralonco" version))
        (sha256
-        (base32 "03q02l4abrcgpg17cyfq2vhzinlywm0ir6wqx2ch43d3agzyypzy"))))
+        (base32 "022cjygxyq40fg66bdky0pdffyv6dafq77s6g7skxmyqrp6wqhqd"))))
     (properties `((upstream-name . "admiralonco")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -19375,13 +19405,13 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "0p20sy12a0f4xdzak3kkss26lfira10yrwnjw3q7y6vgzdl1hmfj"))))
+        (base32 "1h6i2swda173mfilib8cg535w4ba1yciliy071brazhh4r9zcm8m"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-r2r r-matrix))
@@ -20789,6 +20819,38 @@ fully integrated with the app, the app uses some functions from the
 actigraph.sleepr package developed by Petkova (2021)
 <https://github.com/dipetkov/actigraph.sleepr/>.")
     (license license:gpl3+)))
+
+(define-public r-actisleep
+  (package
+    (name "r-actisleep")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ActiSleep" version))
+       (sha256
+        (base32 "0byms52rk9snsr6z400qidbvpnfxxn0idv1hr9k3whbadr3nxyxi"))))
+    (properties `((upstream-name . "ActiSleep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rsqlite
+                             r-lubridate
+                             r-lazyeval
+                             r-dplyr
+                             r-dbi
+                             r-accelerometry))
+    (home-page "https://cran.r-project.org/package=ActiSleep")
+    (synopsis "Sleep Duration Estimate Algorithm")
+    (description
+     "This package provides sleep duration estimates using a Pruned Dynamic
+Programming (PDP) algorithm that efficiently identifies change-points.  PDP
+applied to physical activity data can identify transitions from wakefulness to
+sleep and vice versa.  Baek, Jonggyu, Banker, Margaret, Jansen, Erica C., She,
+Xichen, Peterson, Karen E., Pitchford, E. Andrew, Song, Peter X. K. (2021) An
+Efficient Segmentation Algorithm to Estimate Sleep Duration from Actigraphy Data
+<doi:10.1007/s12561-021-09309-3>.")
+    (license license:gpl3)))
 
 (define-public r-actilifecounts
   (package

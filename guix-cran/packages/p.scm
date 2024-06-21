@@ -2849,13 +2849,13 @@ package \"psychotree\".")
 (define-public r-psychonetrics
   (package
     (name "r-psychonetrics")
-    (version "0.12")
+    (version "0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychonetrics" version))
        (sha256
-        (base32 "0kpfkn1sy773vafh7jxbdmcawyssl7lkvr8bg0wr864dq6j1jjbc"))))
+        (base32 "0yrpw1dcz8mzfydv48dk4liqhfcwqh3s7c9xpfcniisab5hvq3m6"))))
     (properties `((upstream-name . "psychonetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
@@ -2971,13 +2971,13 @@ manuscript, ensuring statistical reporting standardization and conformity.")
 (define-public r-psychmeta
   (package
     (name "r-psychmeta")
-    (version "2.6.5")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychmeta" version))
        (sha256
-        (base32 "0rdbi432kr433rqy5y8rjh11cq66zcc8zr4nckjqw88hsz4qhin4"))))
+        (base32 "1705zj755sw6pigyqrh62z84cpi3yvgmqfzn8gl7bpgc1fjyryck"))))
     (properties `((upstream-name . "psychmeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7460,6 +7460,33 @@ estimates of different parameters for the total finite population and in studio
 domains, using the main design drawings.")
     (license license:gpl2+)))
 
+(define-public r-probs
+  (package
+    (name "r-probs")
+    (version "0.9.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "probs" version))
+       (sha256
+        (base32 "0gbivss3ydnjy1acjczf5khp40l4sk1r53pbx151bxrdq74q8a3i"))))
+    (properties `((upstream-name . "probs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape r-mass r-combinat))
+    (home-page "https://cran.r-project.org/package=probs")
+    (synopsis "Elementary Probability on Finite Sample Spaces")
+    (description
+     "This package performs elementary probability calculations on finite sample
+spaces, which may be represented by data frames or lists.  This package is meant
+to rescue some widely used functions from the archived prob package (see
+<https://cran.r-project.org/src/contrib/Archive/prob/>).  Functionality includes
+setting up sample spaces, counting tools, defining probability spaces,
+performing set algebra, calculating probability and conditional probability,
+tools for simulation and checking the law of large numbers, adding random
+variables, and finding marginal distributions.  Characteristic functions for all
+base R distributions are included.")
+    (license license:gpl3+)))
+
 (define-public r-probout
   (package
     (name "r-probout")
@@ -8047,6 +8074,35 @@ the performance in 2007-2020.")
 downloaded in bulk and loaded into R for spatial analysis.  Some user friendly
 visualizations are also provided.")
     (license license:expat)))
+
+(define-public r-priorsense
+  (package
+    (name "r-priorsense")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "priorsense" version))
+       (sha256
+        (base32 "0y1yj03msaj5cp9kyfmfr3nysk7lzbphwg55ahmb5yh8l9fz13ci"))))
+    (properties `((upstream-name . "priorsense")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-posterior
+                             r-matrixstats
+                             r-ggplot2
+                             r-ggh4x
+                             r-ggdist
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://n-kall.github.io/priorsense/")
+    (synopsis "Prior Diagnostics and Sensitivity Analysis")
+    (description
+     "This package provides functions for prior and likelihood sensitivity analysis in
+Bayesian models.  Currently it implements methods to determine the sensitivity
+of the posterior to power-scaling perturbations of the prior and likelihood.")
+    (license license:gpl3+)))
 
 (define-public r-prioritylasso
   (package
@@ -8967,18 +9023,18 @@ coefficients.")
 (define-public r-prettycols
   (package
     (name "r-prettycols")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PrettyCols" version))
        (sha256
-        (base32 "1q4l9138kdbk8m35k3am4qksi14rcfd793lplm3s1d17dh7zqb5f"))))
+        (base32 "16r3bjrhdqpfbwlmiqp474wyj2pg6fnhql05carz1ayqga08pgwb"))))
     (properties `((upstream-name . "PrettyCols")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr r-ggplot2))
+    (propagated-inputs (list r-lifecycle r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://nrennie.github.io/PrettyCols/")
+    (home-page "https://nrennie.rbind.io/PrettyCols/")
     (synopsis "Pretty Colour Palettes")
     (description "Defines aesthetically pleasing colour palettes.")
     (license license:cc0)))
@@ -13414,6 +13470,27 @@ multidimensional ordinal deprivation\", Social Indicators Research
 reduced posetic approach to the measurement of multidimensional ordinal
 deprivation\", Social Indicators Research <DOI:10.1007/s11205-016-1501-4>.")
     (license license:gpl2+)))
+
+(define-public r-poset
+  (package
+    (name "r-poset")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poset" version))
+       (sha256
+        (base32 "012abgxx4nazr7ls7iiwpvxcxwkcfc08iyggjbd0d2hdm29h4fq0"))))
+    (properties `((upstream-name . "poset")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://sites.google.com/view/lmaowisc/")
+    (synopsis "Analysis of Partially Ordered Data")
+    (description
+     "Win ratio approach to partially ordered data, such as multivariate ordinal
+responses under product (consensus) or prioritized order.  Two-sample tests and
+multiplicative regression models are implemented (Mao, 2024, under revision).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-portvine
   (package
@@ -18888,6 +18965,35 @@ site is completed.")
      "Plot principal component histograms around a bivariate scatter plot.")
     (license license:gpl3)))
 
+(define-public r-plotor
+  (package
+    (name "r-plotor")
+    (version "0.4.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "plotor" version))
+       (sha256
+        (base32 "1cn1sa1m4afcszlxj5rq89i876d2pnmxinaiizc9hdzdmwciswjn"))))
+    (properties `((upstream-name . "plotor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-scales
+                             r-purrr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/craig-parylo/plotor")
+    (synopsis "Produces an Odds Ratio Plot from a Logistic Regression Model")
+    (description
+     "This package produces an Odds Ratio (OR) Plot to visualise the result of a
+logistic regression analysis.  Provide it with a binomial regression model
+produced by glm() and it will convert the estimates to odds ratios with a 95%
+confidence interval and plot the results using ggplot2'.")
+    (license license:expat)))
+
 (define-public r-plotmo
   (package
     (name "r-plotmo")
@@ -21114,13 +21220,13 @@ analytical equations is also supported (Abuhelwa et al. (2015)
 (define-public r-pknca
   (package
     (name "r-pknca")
-    (version "0.10.2")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKNCA" version))
        (sha256
-        (base32 "1imaj6a8y53hllhfxvmci4qh04pviw0zpwmxm12sqi1nl2kdb5y4"))))
+        (base32 "1az62z5w9fydzbhzdlr0h1wzwby144vc7z0w907q3i43v3ziilb0"))))
     (properties `((upstream-name . "PKNCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21128,6 +21234,7 @@ analytical equations is also supported (Abuhelwa et al. (2015)
                              r-rlang
                              r-purrr
                              r-nlme
+                             r-lifecycle
                              r-dplyr
                              r-digest
                              r-checkmate))
@@ -32544,13 +32651,13 @@ reliable, since they follow the DNRY (do not repeat yourself) rule.")
 (define-public r-patientprofilesvis
   (package
     (name "r-patientprofilesvis")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patientProfilesVis" version))
        (sha256
-        (base32 "1ivc356cr6zsyggw6if43h135ynij9c36rg9p467945q8dcf4hcr"))))
+        (base32 "1jmf86dy5hvw81jc7n0hlhl6hwvcsi270bpq7vjj5r0zdlhgjgb7"))))
     (properties `((upstream-name . "patientProfilesVis")))
     (build-system r-build-system)
     (inputs (list cairo))
@@ -33051,16 +33158,21 @@ an example in the roxygen block.")
 (define-public r-pastclim
   (package
     (name "r-pastclim")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastclim" version))
        (sha256
-        (base32 "00zkf6flv4f5ljn0difpa8j3n221gvflsjnfdhfjbxnnw80qbyrp"))))
+        (base32 "0wdccbnb808wc2fr2ysr7z5i9d3rjgfdd8lcmgkipdprq0ymvqak"))))
     (properties `((upstream-name . "pastclim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra r-ncdf4 r-lubridate r-curl))
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-sf
+                             r-ncdf4
+                             r-lubridate
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/EvolEcolGroup/pastclim")
     (synopsis "Manipulate Time Series of Palaeoclimate Reconstructions")
@@ -34078,15 +34190,16 @@ management of capital in financial portfolios.")
 (define-public r-paris2024colours
   (package
     (name "r-paris2024colours")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Paris2024Colours" version))
        (sha256
-        (base32 "12xycmqc9hr12db7w9499l89gmww5j0vs6nhyzsirkbg8vvq8qql"))))
+        (base32 "10qf6rrk4lsw6qx5lsr8331fnvdli7cc24phg7asal2w2mg0h07v"))))
     (properties `((upstream-name . "Paris2024Colours")))
     (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://github.com/maximekuntz/Paris2024Colours")
     (synopsis
      "Color Palettes Inspired by Paris 2024 Olympic and Paralympic Games")
@@ -37245,13 +37358,13 @@ imputing records where observations were absent (pad).")
 (define-public r-pade
   (package
     (name "r-pade")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pade" version))
        (sha256
-        (base32 "0bjkr3yh1kxymyrfzi9amjznxgqc2xx69zhs2immn4sk1w3xzvzp"))))
+        (base32 "1rs3wap5rx4kq1vabhcfj2qbzfq2b78nvs4bc5h0jg3z32g99220"))))
     (properties `((upstream-name . "Pade")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/Pade")

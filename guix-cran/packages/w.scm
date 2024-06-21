@@ -2114,6 +2114,27 @@ where available, or direct download from
 <https://wordnetcode.princeton.edu/3.0/WNdb-3.0.tar.gz>.")
     (license license:expat)))
 
+(define-public r-wordmap
+  (package
+    (name "r-wordmap")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wordmap" version))
+       (sha256
+        (base32 "04s77aghy7q2x9khhl49xv2kbkhim39pmrr9ra3wrlm7map47ygr"))))
+    (properties `((upstream-name . "wordmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-quanteda r-matrix))
+    (home-page "https://github.com/koheiw/wordmap")
+    (synopsis
+     "Feature Extraction and Document Classification with Noisy Labels")
+    (description
+     "Extract features and classify documents with noisy labels given by document-meta
+data or keyword matching Watanabe & Zhou (2020) <doi:10.1177/0894439320907027>.")
+    (license license:expat)))
+
 (define-public r-wordlistsanalytics
   (package
     (name "r-wordlistsanalytics")
@@ -2958,13 +2979,13 @@ for rarefaction, interpolation, and masking as described in Bishop et al. (2023)
 (define-public r-winfapreader
   (package
     (name "r-winfapreader")
-    (version "0.1-5")
+    (version "0.1-5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "winfapReader" version))
        (sha256
-        (base32 "01hc0kcm7qfzk47rci6lfmrqs4zfj8z7abqydgi2ckq8n1k2pd0h"))))
+        (base32 "08b3311vw6cf9y9spzvd7pl7q53ik5alkxq4j5d6w8a4kd7bbwaf"))))
     (properties `((upstream-name . "winfapReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))

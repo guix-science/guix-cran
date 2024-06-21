@@ -2103,6 +2103,34 @@ beautifies itself by varying the number of points and the multiplication table
 you use.")
     (license license:gpl3)))
 
+(define-public r-rush
+  (package
+    (name "r-rush")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rush" version))
+       (sha256
+        (base32 "1qi074wxnsd1ypjqzi10m0i5g81nq58pw7lcfsq6qx4wiqw00xff"))))
+    (properties `((upstream-name . "rush")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-uuid
+                             r-redux
+                             r-processx
+                             r-mlr3misc
+                             r-lgr
+                             r-jsonlite
+                             r-data-table
+                             r-checkmate))
+    (home-page "https://github.com/mlr-org/rush")
+    (synopsis "Rapid Parallel and Distributed Computing")
+    (description
+     "Parallel computing with a network of local and remote workers.  Fast exchange of
+results between the workers through a Redis database.  Key features include task
+queues, local caching, and sophisticated error handling.")
+    (license license:expat)))
+
 (define-public r-rusda
   (package
     (name "r-rusda")
@@ -4591,16 +4619,20 @@ computational time.  See Llaberia-Robledillo et al., (2023)
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "0x0wnv3zscbb4csgg656518krc88pqss7pd40n61q474mf6jj5s7"))))
+        (base32 "1qvhi1vrmaqiijbdw4s5ndbhcc0h7kx2yw0ca4w4r53qax3hgx09"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-magrittr r-htmltools r-formatters
+    (propagated-inputs (list r-stringi
+                             r-magrittr
+                             r-lifecycle
+                             r-htmltools
+                             r-formatters
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/insightsengineering/rtables")
@@ -7581,6 +7613,38 @@ rsatscan package provides functions for writing R data frames in
 running @code{SaTScan} in the OS, and for reading the files that @code{SaTScan}
 creates.")
     (license license:gpl3)))
+
+(define-public r-rsatools
+  (package
+    (name "r-rsatools")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSAtools" version))
+       (sha256
+        (base32 "0bri0hnq689vlxhi4vjya0hy529ksild62dlz40wybzywpaqa46g"))))
+    (properties `((upstream-name . "RSAtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-semtools
+                             r-rsa
+                             r-rcolorbrewer
+                             r-plyr
+                             r-lavaan
+                             r-lattice
+                             r-ggplot2
+                             r-aplpack))
+    (home-page "https://cran.r-project.org/package=RSAtools")
+    (synopsis "Advanced Response Surface Analysis")
+    (description
+     "This package provides tools for response surface analysis, using a comparative
+framework that identifies best-fitting solutions across 37 families of
+polynomials.  Many of these tools are based upon and extend the RSA package, by
+testing a larger scope of polynomials (+27 families), more diverse response
+surface probing techniques (+acceleration points), more plots (+line of
+congruence, +line of incongruence, both with extrema), and other useful
+functions for exporting results.")
+    (license license:gpl2+)))
 
 (define-public r-rsat
   (package
@@ -13987,13 +14051,13 @@ calculate the aggregated precision-recall (PR) curve.")
 (define-public r-robyn
   (package
     (name "r-robyn")
-    (version "3.10.3")
+    (version "3.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Robyn" version))
        (sha256
-        (base32 "1nsicscgdp85mhvwb3i6liqhvkszj5x3z6rhm6v3vq7mfxwfn7rf"))))
+        (base32 "193b70pbnhasdf24936hbi7mby5mgbk6zzs5w0kw3n3c1smazmyb"))))
     (properties `((upstream-name . "Robyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14511,6 +14575,33 @@ includes a collection of functions for (1) implementing methods for testing
 homogeneity for generalized exponential tilt model; and (2) implementing
 existing methods under comparison.")
     (license license:gpl2+)))
+
+(define-public r-robustest
+  (package
+    (name "r-robustest")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robusTest" version))
+       (sha256
+        (base32 "0iwjplmry7s5834gg1wrqcqpad93krrglh6m5dayv8s22mk83wsc"))))
+    (properties `((upstream-name . "robusTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=robusTest")
+    (synopsis "Calibrated Correlation and Two-Sample Tests")
+    (description
+     "Implementation of corrected two-sample tests.  A corrected version of the
+Pearson and Kendall correlation tests, the Mann-Whitney (Wilcoxon) rank sum
+test, the Wilcoxon signed rank test and a variance test are implemented.  The
+package also proposes a test for the median and an independence test between two
+continuous variables of Kolmogorov-Smirnov's type.  All these corrected tests
+are asymptotically calibrated in the sense that the probability of rejection
+under the null hypothesis is asymptotically equal to the level of the test.  See
+<doi:10.48550/@code{arXiv.2211.08784>} for more details on the statistical
+tests.")
+    (license license:expat)))
 
 (define-public r-robustda
   (package
@@ -16174,13 +16265,13 @@ for your user.")
 (define-public r-rnrfa
   (package
     (name "r-rnrfa")
-    (version "2.1.0.5")
+    (version "2.1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnrfa" version))
        (sha256
-        (base32 "1fqfcj4z05p6lxc9708pbal7fkwhdqrm4c2cx2jb76s09rc840ci"))))
+        (base32 "0j3cl8sg2srqp2j3aaymq6m9yf7xr21np53ckjxa9dyv4kw11371"))))
     (properties `((upstream-name . "rnrfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16495,13 +16586,13 @@ also specify other colours.")
 (define-public r-rniftyreg
   (package
     (name "r-rniftyreg")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNiftyReg" version))
        (sha256
-        (base32 "0jrb1j8hl25lby2ikpvmmrxq39plx3r6qmrn0bnzbmyvbb5x1vfq"))))
+        (base32 "0vbzjybn0431r7brh53azzw5n6nii5j4mcd9j8s7ifps6apd3s3f"))))
     (properties `((upstream-name . "RNiftyReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti r-rcppeigen r-rcpp r-ore))
@@ -19648,13 +19739,13 @@ visualization.")
 (define-public r-rlistings
   (package
     (name "r-rlistings")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlistings" version))
        (sha256
-        (base32 "1x0i2gis01ik9r0fy2znzlg0chgcjablk74xncsj7cgpgvdzfwmi"))))
+        (base32 "09rgmjh88lp27bfw7rm0xbfw4f1m73hmjcz7f33lvvkbrydc4h91"))))
     (properties `((upstream-name . "rlistings")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-formatters r-checkmate))
@@ -24201,13 +24292,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.4-2")
+    (version "0.4-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "0b95b52yrpagjcfi8wxsg8cf5zfhrdlxzvppnb73815cj39wdfns"))))
+        (base32 "1zn549yas4j8m9qn3c0zsa0qfbc221v7q612rhb5rg45jw2bfy19"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (inputs (list grass))
@@ -26879,13 +26970,13 @@ similar R objects.  To download \"@code{RevBayes}\", go to
 (define-public r-revss
   (package
     (name "r-revss")
-    (version "1.0.6")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revss" version))
        (sha256
-        (base32 "0c7yh3fyzhb5fxdmdwc04n26alca3l8g34fca20af9sn93s3bvih"))))
+        (base32 "1m3bkgvbq7x8s89a26a6kah3f141rig306jwvcb3h35f7kp72cpg"))))
     (properties `((upstream-name . "revss")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/revss")
@@ -33006,6 +33097,41 @@ an R interface to the Redland RDF C library, described at
 <https://librdf.org/docs/api/index.html>.  In brief, RDF provides a structured
 graph consisting of Statements composed of Subject, Predicate, and Object Nodes.")
     (license license:asl2.0)))
+
+(define-public r-redistverse
+  (package
+    (name "r-redistverse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "redistverse" version))
+       (sha256
+        (base32 "08154l54afih3828xc7zdacj0n3wnahwdq1hjjk3gdyfzl8ad0qy"))))
+    (properties `((upstream-name . "redistverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tinytiger
+                             r-sf
+                             r-redistmetrics
+                             r-redist
+                             r-pl94171
+                             r-ggredist
+                             r-geomander
+                             r-easycensus
+                             r-cli
+                             r-censable
+                             r-birdie
+                             r-alarmdata))
+    (home-page "https://github.com/alarm-redist/redistverse")
+    (synopsis "Easily Install and Load Redistricting Software")
+    (description
+     "Easy installation, loading, and control of packages for redistricting data
+downloading, spatial data processing, simulation, analysis, and visualization.
+This package makes it easy to install and load multiple redistverse packages at
+once.  The redistverse is developed and maintained by the Algorithm-Assisted
+Redistricting Methodology (ALARM) Project.  For more details see
+<https://alarm-redist.org>.")
+    (license license:expat)))
 
 (define-public r-redistmetrics
   (package
@@ -49255,13 +49381,13 @@ mitigation goals.")
 (define-public r-r2dii-match
   (package
     (name "r-r2dii-match")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.match" version))
        (sha256
-        (base32 "12h7bn4dha4fiplwm7az4fyaa8cdkn3b4j3ndmwr6c2r11gfwy0n"))))
+        (base32 "1f2r5f0p851yhjb81gam7spai46bbrrj2y1g89p0s1kjcpnz6ixz"))))
     (properties `((upstream-name . "r2dii.match")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -49294,13 +49420,13 @@ financial portfolio aligns with climate goals.")
 (define-public r-r2dii-data
   (package
     (name "r-r2dii-data")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2dii.data" version))
        (sha256
-        (base32 "1f8gvian0l3wsw9bwyxzlwv0qpw4mz1qq4747hjm8d4jr37hi0r6"))))
+        (base32 "160mzbb9j2hvhf60k236nli899rz2ghfnwc7wzb18bfffhsj1ysx"))))
     (properties `((upstream-name . "r2dii.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle))

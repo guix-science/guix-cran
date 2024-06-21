@@ -6547,16 +6547,16 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.6")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "1mq84hj9la0m0007l9l1bzc7abrk5mg5hv4jbv5kp8nwwax5dx5g"))))
+        (base32 "0skfmizlr028j2cy2f03vgs1gdsvlk5r67cj1pmm9zky5nymdh1k"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
-    (propagated-inputs (list r-htmltools r-checkmate))
+    (propagated-inputs (list r-lifecycle r-htmltools r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://insightsengineering.github.io/formatters/")
     (synopsis "ASCII Formatting for Values and Tables")
@@ -9642,13 +9642,13 @@ from the Brazilian Flora 2020.")
 (define-public r-flopart
   (package
     (name "r-flopart")
-    (version "2023.8.31")
+    (version "2024.6.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLOPART" version))
        (sha256
-        (base32 "1adidd9fsgibiia6wgdnv3xf5gwvk7awk28ahdlr053nzdwr767r"))))
+        (base32 "1yifv9nzb9f6k6npr162rjakaam6k1r6ylw0knjnkp3q66znrsa9"))))
     (properties `((upstream-name . "FLOPART")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -9658,7 +9658,8 @@ from the Brazilian Flora 2020.")
     (description
      "This package provides an efficient C++ code for computing an optimal
 segmentation model with Poisson loss, up-down constraints, and label
-constraints, as described by Kaufman et al. (2022) <@code{arXiv:2210.02580>}.")
+constraints, as described by Kaufman et al. (2024)
+<doi:10.1080/10618600.2023.2293216>.")
     (license license:gpl3)))
 
 (define-public r-floodfreqplot
@@ -10857,13 +10858,13 @@ application.")
 (define-public r-flap
   (package
     (name "r-flap")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flap" version))
        (sha256
-        (base32 "0aa1ylzq6a5nbkzlyyydw213qfmd3nc8xk8acsrhjg6nxhw8lc5b"))))
+        (base32 "18afc26a5iyzcbaynqnvypls2nb24km7h5vlmal5njh3bkv8ypi7"))))
     (properties `((upstream-name . "flap")))
     (build-system r-build-system)
     (propagated-inputs (list r-corpcor))

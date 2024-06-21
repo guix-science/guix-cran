@@ -9190,13 +9190,13 @@ et al. (2023) <doi:10.1002/ecm.1588> for more details.")
 (define-public r-inext-4steps
   (package
     (name "r-inext-4steps")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.4steps" version))
        (sha256
-        (base32 "0kjzrgwhhzgvwyrcrqfbshscyrx34blfjxr23iay9wby6qpfmb1j"))))
+        (base32 "0c5721zj5kcf6cajg57xq3s4gcwa8mib3401mfn2l36ymd5k7vmk"))))
     (properties `((upstream-name . "iNEXT.4steps")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -11233,6 +11233,36 @@ volume, therefore development and validation of efficient volume prediction
 neural network model is necessary.  This package has been developed using the
 algorithm of Tabassum et al. (2022) <doi:10.18805/ag.D-5555>.")
     (license license:gpl3)))
+
+(define-public r-imneuron
+  (package
+    (name "r-imneuron")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Imneuron" version))
+       (sha256
+        (base32 "0d6d7v4n38hkclrwqavbnwr75phw4h07jk5a8qs0kham6nhcifm9"))))
+    (properties `((upstream-name . "Imneuron")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-neuralnet r-mlmetrics r-ggplot2))
+    (home-page "https://cran.r-project.org/package=Imneuron")
+    (synopsis "AI Powered Neural Network Solutions for Regression Tasks")
+    (description
+     "It offers a sophisticated and versatile tool for creating and evaluating
+artificial intelligence based neural network models tailored for regression
+analysis on datasets with continuous target variables.  Leveraging the power of
+neural networks, it allows users to experiment with various hidden neuron
+configurations across two layers, optimizing model performance through \"5 fold\"\"
+or \"10 fold\"\" cross validation.  The package normalizes input data to ensure
+efficient training and assesses model accuracy using key metrics such as R
+squared (R2), Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and
+Percentage Error (PER).  By storing and visualizing the best performing models,
+it provides a comprehensive solution for precise and efficient regression
+modeling making it an invaluable tool for data scientists and researchers aiming
+to harness AI for predictive analytics.")
+    (license license:gpl3+)))
 
 (define-public r-immunesim
   (package
@@ -17676,13 +17706,13 @@ documentation and examples.  Data source: Iowa Data portal
 (define-public r-iai
   (package
     (name "r-iai")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iai" version))
        (sha256
-        (base32 "17ap6zsbcvm8n5y7i6vssc705ra5ll91yvppg08v8252wzxarr31"))))
+        (base32 "1fqa3gig417yc72yvw0phaiv799f91yf9c4yvj0biw1midw6fmcb"))))
     (properties `((upstream-name . "iai")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

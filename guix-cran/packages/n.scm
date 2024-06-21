@@ -11336,13 +11336,13 @@ et al. (2018) <doi:10.12688/f1000research.14770.3> and Davies et al. (2022)
 (define-public r-netmediate
   (package
     (name "r-netmediate")
-    (version "0.1.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netmediate" version))
        (sha256
-        (base32 "17h2nc9ixfi7ngybinnpm05s41iiwncz53jj90kbvp55qk1a3s2k"))))
+        (base32 "1ja5kgnnk6y6c8wav4h29jahpx5p7bsy36qccy2fmn7i5xn7hs7k"))))
     (properties `((upstream-name . "netmediate")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -15051,13 +15051,13 @@ sequentially observed data.")
 (define-public r-nanotime
   (package
     (name "r-nanotime")
-    (version "0.3.7")
+    (version "0.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanotime" version))
        (sha256
-        (base32 "05fbdhbax6k1glidmgl0zjc7y7v1ppbpz4422q3jmxmfack7hwd7"))))
+        (base32 "0bx52488vr2k91qlmaz5l92j7r8naxrqjidzf2zgid82yvmidjk1"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))

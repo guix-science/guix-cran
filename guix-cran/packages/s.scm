@@ -6705,13 +6705,13 @@ Japanese morphological analyzer.  This is a port of what is available in Python.
 (define-public r-success
   (package
     (name "r-success")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "success" version))
        (sha256
-        (base32 "0imwba2p50da9ymyj1pkg2dbn1ramzahabdnic0k0dmcn9g74d64"))))
+        (base32 "14y6farbnjxd0jq3g4vzj6y1xivcibgfic3w4s2jir1wq10ixf5x"))))
     (properties `((upstream-name . "success")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8175,13 +8175,13 @@ package vignette.")
 (define-public r-streamconnect
   (package
     (name "r-streamconnect")
-    (version "0.0-4")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "streamConnect" version))
        (sha256
-        (base32 "0sg28i9p6frlccabq9cq2j4w47jgcknwpjhpwl32qrwll7q9k4r3"))))
+        (base32 "0pmf54b7m4x619ailzcyhpnrk3ig6z9w7a35h2mpgxb8r0yaijq3"))))
     (properties `((upstream-name . "streamConnect")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -16726,20 +16726,19 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
 (define-public r-sqltargets
   (package
     (name "r-sqltargets")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqltargets" version))
        (sha256
-        (base32 "1lf1p0lk3z8hmfpbzprjsp77m5dszgdwzq5vhrcrg5mbr2mkz697"))))
+        (base32 "1w3id7vw3ppmpbrl68sw3gyprb4pbfbh1hvzc01rv27kngdm00d9"))))
     (properties `((upstream-name . "sqltargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
                              r-targets
                              r-tarchetypes
                              r-stringr
-                             r-rsqlite
                              r-rlang
                              r-readr
                              r-purrr
@@ -16748,7 +16747,7 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
                              r-dbi
                              r-cli))
     (home-page "https://github.com/daranzolin/sqltargets")
-    (synopsis "Targets Extension for 'SQL' Queries")
+    (synopsis "'Targets' Extension for 'SQL' Queries")
     (description
      "This package provides an extension for SQL queries as separate file within
 targets pipelines.  The shorthand creates two targets, the query file and the
@@ -19410,17 +19409,17 @@ clinicaltrials.gov<https://www.clinicaltrials.gov/> for trial registration.")
 (define-public r-spiralize
   (package
     (name "r-spiralize")
-    (version "1.0.6")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spiralize" version))
        (sha256
-        (base32 "10zz0f3z033pqi9rm3kgac85i5h8ngg2cx4dlr8z5y8v08dpln6b"))))
+        (base32 "07ckzg2fhjjn5p1q7jpxlpj8ls5rzcafy3krjvr6a51hidlfan56"))))
     (properties `((upstream-name . "spiralize")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate r-globaloptions r-getoptlong
-                             r-circlize))
+                             r-complexheatmap r-circlize))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jokergoo/spiralize")
     (synopsis "Visualize Data on Spirals")
@@ -29935,13 +29934,13 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "0z9iacmrvlrz6rk1dmih6qqfgmav14aar2nkmk7f1gr5f285r56d"))))
+        (base32 "1q0sgn30hsak9nyy30nbslh39byhqygypi1kp6gp99qfdrgxflva"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31384,13 +31383,13 @@ statistic, and q nearest neighbors of cases.")
 (define-public r-smacofx
   (package
     (name "r-smacofx")
-    (version "0.6-6")
+    (version "1.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacofx" version))
        (sha256
-        (base32 "0i4v3qbizqniaf92nv2q2860k454hwnhqb789p0nkkcyh9wgyrc9"))))
+        (base32 "19pb825b7fx6ah0njap03yg763swhbfw79vhk25d37yvcidj7nm3"))))
     (properties `((upstream-name . "smacofx")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -31403,12 +31402,11 @@ statistic, and q nearest neighbors of cases.")
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Flexible Multidimensional Scaling and 'smacof' Extensions")
     (description
-     "Flexible multidimensional scaling (MDS) methods centered around scaling with
-majorization and extensions to the package smacof'.  This package enhances
-smacof and contains various functions, wrappers, methods and classes for
-fitting, plotting and displaying a large number of different flexible MDS models
-(some as of yet unpublished) such as Torgerson scaling (Torgerson, 1958,
-ISBN:978-0471879459) with powers, Sammon mapping (Sammon, 1969,
+     "Flexible multidimensional scaling (MDS) methods and extensions to the package
+smacof'.  This package contains various functions, wrappers, methods and classes
+for fitting, plotting and displaying a large number of different flexible MDS
+models (some as of yet unpublished).  These are: Torgerson scaling (Torgerson,
+1958, ISBN:978-0471879459) with powers, Sammon mapping (Sammon, 1969,
 <doi:10.1109/T-C.1969.222678>) with ratio and interval optimal scaling,
 Multiscale MDS (Ramsay, 1977, <doi:10.1007/BF02294052>) with ratio and interval
 optimal scaling, S-stress MDS (ALSCAL; Takane, Young & De Leeuw, 1977,
@@ -31430,7 +31428,8 @@ experimental models (e.g., sparsified MDS and sparsified POST-MDS).  Some
 functions are suitably flexible to allow any other sensible combination of
 explicit power transformations for weights, distances and input proximities with
 implicit ratio, interval or non-metric optimal scaling of the input proximities.
- Most functions use a Majorization-Minimization algorithm.")
+ Most functions use a Majorization-Minimization algorithm.  Currently the
+methods are only available for one-mode data (symmetric dissimilarity matrices).")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-smacof
@@ -39485,13 +39484,13 @@ the aim being to describe and compare their isotopic niche.")
 (define-public r-siatools
   (package
     (name "r-siatools")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIAtools" version))
        (sha256
-        (base32 "07vl7c0fkpxyk970h35prxks1prd6827bvglq2iqy0micmr6g7qr"))))
+        (base32 "17gw4qz9k6m7wys9ik37b72x554ig240cb3ppbbihwryy3wzygw3"))))
     (properties `((upstream-name . "SIAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -47965,13 +47964,13 @@ Methodology) <doi:10.1111/rssb.12348>.")
 (define-public r-sense
   (package
     (name "r-sense")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sense" version))
        (sha256
-        (base32 "09idl88n6jlgbn5apgk0vr1bwmqi624ikv1qfx7hvyi79ixg49f4"))))
+        (base32 "10cvjhvzfz1y8372wryxxzi0p6xlcchgdhs8idjgk3isvjbps953"))))
     (properties `((upstream-name . "sense")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -48461,6 +48460,28 @@ generated by passing the output of the MC() function or the MCMI() function to
 the MCStd() function.  A description of the package and code examples are
 presented in Pesigan and Cheung (2023) <doi:10.3758/s13428-023-02114-4>.")
     (license license:expat)))
+
+(define-public r-semlrtp
+  (package
+    (name "r-semlrtp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "semlrtp" version))
+       (sha256
+        (base32 "089hw80rwi4rxlz1b04jyylc7rnqpv6b1nl89w6pzdkk0dv98h4g"))))
+    (properties `((upstream-name . "semlrtp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pbapply r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/semlrtp/")
+    (synopsis "Likelihood Ratio Test P-Values for Structural Equation Models")
+    (description
+     "Computes likelihood ratio test (LRT) p-values for free parameters in a
+structural equation model.  Currently supports models fitted by the lavaan
+package by Rosseel (2012) <doi:10.18637/jss.v048.i02>.")
+    (license license:gpl3+)))
 
 (define-public r-semlbci
   (package
@@ -50438,13 +50459,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "1nvlmfx1ib9ffgippnlgiy7srnc4gasqailvsc0xfyxn70hsz9pb"))))
+        (base32 "0s856sr4ld6l9r6zp9z7ki291i9m16zrd8lq0sh9w021wd61qswg"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -55170,29 +55191,6 @@ over a grid of pre-computed stellar models, as described in Valle et al. (2014)
 <doi:10.1051/0004-6361/201322210>.")
     (license license:gpl2+)))
 
-(define-public r-scent
-  (package
-    (name "r-scent")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SCEnt" version))
-       (sha256
-        (base32 "0nyx0j0ab8wzl9mm5ib0p2zxq9xis2p850b2w3jdm9xn3ncm6wl1"))))
-    (properties `((upstream-name . "SCEnt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-entropy))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=SCEnt")
-    (synopsis
-     "Single Cell Entropy Analysis of Gene Heterogeneity in Cell Populations")
-    (description
-     "Analyse single cell RNA sequencing data using entropy to calculate heterogeneity
-and homogeneity of genes amongst the cell population.  From the work of Michael
-J. Casey, Ruben J. Sanchez-Garcia and Ben D. @code{MacArthur}.")
-    (license license:gpl3+)))
-
 (define-public r-scenes
   (package
     (name "r-scenes")
@@ -56229,13 +56227,13 @@ online book Analyzing single-case data with R and scan', Juergen Wilbert (2023)
 (define-public r-scam
   (package
     (name "r-scam")
-    (version "1.2-16")
+    (version "1.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scam" version))
        (sha256
-        (base32 "097gxx1lxsrjacj38ahxz3mkjy9621yw0v2fk59bm90403i6zjb7"))))
+        (base32 "00h5wcvh8wz2xqqh7j2qpdamhzdl3yawswyvwbp0r4ys30mfcgdk"))))
     (properties `((upstream-name . "scam")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-matrix))

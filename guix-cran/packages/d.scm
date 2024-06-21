@@ -6346,13 +6346,13 @@ piping operators of different precedence, and flexible syntaxes.")
 (define-public r-doublin
   (package
     (name "r-doublin")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "doublIn" version))
        (sha256
-        (base32 "04y1kq6f39kjp7i8hr52a93103nf2dpvkj34w4s0fvaqmw1h44b3"))))
+        (base32 "0x22q6i07f49cjyhy9i2b9h818sgadxbhb6zwym2qilgf3mxj57g"))))
     (properties `((upstream-name . "doublIn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -14196,13 +14196,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0i19i65hacrpfr8zn644a0viparig4np07fs91f7xs6gh7z1yv4c"))))
+        (base32 "0szkp3pdkb91xm7dldx82iv0cw60x8408g4axy9dim36wc0g42qj"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -14302,6 +14302,36 @@ or more after they have started receiving the treatment.")
      "Estimates Two-way Fixed Effects difference-in-differences/event-study models
 using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
 (2021).")
+    (license license:expat)))
+
+(define-public r-didhad
+  (package
+    (name "r-didhad")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DIDHAD" version))
+       (sha256
+        (base32 "0h2j59rb9mnjcqvs7dikdd3wh4hycwwcs07nr9f816gqmxgssq8n"))))
+    (properties `((upstream-name . "DIDHAD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yatchewtest
+                             r-rnames
+                             r-rlang
+                             r-plm
+                             r-nprobust
+                             r-mass
+                             r-haven
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=DIDHAD")
+    (synopsis
+     "Difference-in-Differences in Heterogeneous Adoption Designs with Quasi Stayers")
+    (description
+     "Estimation of Difference-in-Differences (@code{DiD}) estimators from de
+Chaisemartin and D'Haultfoeuille (2024) <doi:10.2139/ssrn.4284811> in
+Heterogeneous Adoption Designs with no stayers but with quasi stayers.")
     (license license:expat)))
 
 (define-public r-didforbigdata
@@ -20061,6 +20091,47 @@ different languages.  A @code{DeepL} API developer account is required to use
 the service (see <https://www.deepl.com/pro#developer>).")
     (license license:expat)))
 
+(define-public r-deeplearningcausal
+  (package
+    (name "r-deeplearningcausal")
+    (version "0.0.102")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DeepLearningCausal" version))
+       (sha256
+        (base32 "0ynsdfa55cqxd3qjbyacvbx6rc64hj4c1mzkfs5ircnak04835j1"))))
+    (properties `((upstream-name . "DeepLearningCausal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-weights
+                             r-superlearner
+                             r-rocr
+                             r-randomforest
+                             r-neuralnet
+                             r-hmisc
+                             r-glmnet
+                             r-gbm
+                             r-gam
+                             r-e1071
+                             r-class
+                             r-caret))
+    (home-page "https://github.com/hknd23/DeepLearningCausal")
+    (synopsis "Causal Inference with Super Learner and Deep Neural Networks")
+    (description
+     "This package provides functions to estimate Conditional Average Treatment
+Effects (CATE) and Population Average Treatment Effects on the Treated (PATT)
+from experimental or observational data using the Super Learner (SL) ensemble
+method and Deep neural networks.  The package first provides functions to
+implement meta-learners such as the Single-learner (S-learner) and Two-learner
+(T-learner) described in KÃ¼nzel et al. (2019) <doi:10.1073/pnas.1804597116> for
+estimating the CATE. The S- and T-learner are each estimated using the SL
+ensemble method and deep neural networks.  It then provides functions to
+implement the Ottoboni and Poulos (2020) <doi:10.1515/jci-2018-0035> PATT-C
+estimator to obtain the PATT from experimental data with noncompliance by using
+the SL ensemble method and deep neural networks.")
+    (license license:gpl3)))
+
 (define-public r-deepgp
   (package
     (name "r-deepgp")
@@ -22913,13 +22984,13 @@ proper R object called dvobject'.")
 (define-public r-dbnr
   (package
     (name "r-dbnr")
-    (version "0.7.8")
+    (version "0.7.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbnR" version))
        (sha256
-        (base32 "10lw8ax33l0q52pm07fi66fhm06n3yg48plgvz5cg14l98v7g7s5"))))
+        (base32 "14jdmld8d1laj7xcad5694inxb8qglhnzghab64h3n0r2x35z6lw"))))
     (properties `((upstream-name . "dbnR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -25138,18 +25209,18 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "1dfi96l3cj1pmj747pznrp5glpibkngzwwcs8y3ihk8p1vqjj7sp"))))
+        (base32 "1hkp0gldpqrfjnw6cwvrmgs034kdk7igy170640zkwhcsvd6hr4a"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-lubridate r-dplyr))
+    (propagated-inputs (list r-tidyr r-shiny r-rlang r-lubridate r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DataMetProcess")
+    (home-page "https://github.com/wagnnerms97/DataMetProcess")
     (synopsis "Meteorological Data Processing")
     (description
      "Set of tools aimed at processing meteorological data, converting hourly recorded
@@ -25737,18 +25808,23 @@ stored on Databrary.org'.")
 (define-public r-databionicswarm
   (package
     (name "r-databionicswarm")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatabionicSwarm" version))
        (sha256
-        (base32 "1qdm4na1s4wc8s7j9vp8g8l9lmhqlpzyafkjmm9jzl7wqlgz5ibr"))))
+        (base32 "1z5amn9b5pgnp58chlqcmz82sdvkmv1682vfy965kh53187gfn20"))))
     (properties `((upstream-name . "DatabionicSwarm")))
     (build-system r-build-system)
     (inputs (list pandoc))
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp
-                             r-generalizedumatrix r-deldir))
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ggplot2
+                             r-generalizedumatrix
+                             r-deldir
+                             r-abcanalysis))
     (native-inputs (list r-knitr))
     (home-page "https://www.deepbionics.org/")
     (synopsis "Swarm Intelligence for Self-Organized Clustering")

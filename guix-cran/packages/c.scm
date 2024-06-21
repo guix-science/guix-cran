@@ -4953,6 +4953,41 @@ For more details, see Ham, Imai, Janson (2022) \"Using Machine Learning to Test
 Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
     (license license:gpl3+)))
 
+(define-public r-crt2power
+  (package
+    (name "r-crt2power")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crt2power" version))
+       (sha256
+        (base32 "00clnxyf381qhjpv8r7z0ff9jmid027izvmkpzijmx2d31mm3cr1"))))
+    (properties `((upstream-name . "crt2power")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse
+                             r-tidyr
+                             r-tibble
+                             r-tableone
+                             r-rootsolve
+                             r-mvtnorm
+                             r-knitr
+                             r-foreach
+                             r-dplyr
+                             r-devtools))
+    (home-page "https://github.com/melodyaowen/crt2power")
+    (synopsis
+     "Designing Cluster-Randomized Trials with Two Co-Primary Outcomes")
+    (description
+     "This package provides methods for powering cluster-randomized trials with two
+co-primary outcomes using five key design techniques.  Includes functions for
+calculating required sample size and statistical power.  For more details on
+methodology, see Li et al. (2020) <doi:10.1111/biom.13212>, Pocock et al. (1987)
+<doi:10.2307/2531989>, Vickerstaff et al. (2019)
+<doi:10.1186/s12874-019-0754-4>, and Yang et al. (2022)
+<doi:10.1111/biom.13692>.")
+    (license license:gpl3)))
+
 (define-public r-crsuggest
   (package
     (name "r-crsuggest")
@@ -5854,13 +5889,13 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "1iglwsx5b29zjl7ikngyb3kf0kfacqxlg01p6vn84dblwgh2gmak"))))
+        (base32 "0l65mxajhzdxwwx31mlfx38fsgkwd9iziyn8a6cca9pjhkf7qldg"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-geepack r-gee r-dplyr))
@@ -5873,9 +5908,9 @@ the Kronecker product.  It contains functions for semiparametric estimates of
 carry-over effects in repeated measures and allows estimation of complex
 carry-over effects.  Related work includes: a) Cruz N.A., Melo O.O., Martinez
 C.A. (2023). \"@code{CrossCarry}: An R package for the analysis of data from a
-crossover design with GEE\". <@code{arXiv:2304.02440v1>}.  b) Cruz N.A., Melo
-O.O., Martinez C.A. (2023). \"A correlation structure for the analysis of
-Gaussian and non-Gaussian responses in crossover experimental designs with
+crossover design with GEE\". <doi:10.48550/@code{arXiv.2304.02440>}.  b) Cruz
+N.A., Melo O.O., Martinez C.A. (2023). \"A correlation structure for the analysis
+of Gaussian and non-Gaussian responses in crossover experimental designs with
 repeated measures\". <doi:10.1007/s00362-022-01391-z> and c) Cruz N.A., Melo
 O.O., Martinez C.A. (2023). \"Semiparametric generalized estimating equations for
 repeated measurements in cross-over designs\". <doi:10.1177/09622802231158736>.")
@@ -6859,13 +6894,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "0ap2yf86ng8wp8n2cm0br4q81pknswsynb4a1qprsshwr8l5xvl1"))))
+        (base32 "1a2nfd5fxvcsvpwrhi3fcrwzzjkk0fd1da46r3qrlx0m6qpr3ga8"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -15131,6 +15166,42 @@ prioritization based on a systematic review of > 12,000 scientific publications
 from the fields of spatial conservation prioritization, systematic conservation
 planning, biogeography and ecology.")
     (license license:expat)))
+
+(define-public r-consensusopls
+  (package
+    (name "r-consensusopls")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ConsensusOPLS" version))
+       (sha256
+        (base32 "1fv0a3hjqylrbqsfv7gfn33ni7cc8351shianwsp1caqjza85yr2"))))
+    (properties `((upstream-name . "ConsensusOPLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ConsensusOPLS")
+    (synopsis "Consensus OPLS for Multi-Block Data Fusion")
+    (description
+     "Merging data from multiple sources is a relevant approach for comprehensively
+evaluating complex systems.  However, the inherent problems encountered when
+analyzing single tables are amplified with the generation of multi-block
+datasets, and finding the relationships between data layers of increasing
+complexity constitutes a challenging task.  For that purpose, a generic
+methodology is proposed by combining the strengths of established data analysis
+strategies, i.e.  multi-block approaches and the Orthogonal Partial Least
+Squares (OPLS) framework to provide an efficient tool for the fusion of data
+obtained from multiple sources.  The package enables quick and efficient
+implementation of the consensus OPLS model for any horizontal multi-block data
+structure (observation-based matching).  Moreover, it offers an interesting
+range of metrics and graphics to help to determine the optimal number of
+components and check the validity of the model through permutation tests.
+Interpretation tools include scores and loadings plots, as well as Variable
+Importance in Projection (VIP), and performance coefficients such as R2, Q2 and
+DQ2 coefficients.  J. Boccard and D.N. Rutledge (2013)
+<doi:10.1016/j.aca.2013.01.022>.")
+    (license license:gpl3+)))
 
 (define-public r-consensusclustering
   (package
@@ -26710,13 +26781,13 @@ posterior predictive distributions derived from these references.")
 (define-public r-clindatareview
   (package
     (name "r-clindatareview")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clinDataReview" version))
        (sha256
-        (base32 "1xfv7r7rbr8fjkhrwxbpnvbf4khwcvd5pyam9fbbp6b65zr752c2"))))
+        (base32 "146cibny0w7g75cvzrdnd5i2fx6bilp93wqfrjgzap17h97lhj1r"))))
     (properties `((upstream-name . "clinDataReview")))
     (build-system r-build-system)
     (arguments
@@ -28806,6 +28877,46 @@ number.  This confidence interval, found by numerical nonlinear constrained
 optimization, has the required minimum coverage and utilizes this uncertain
 prior information through desirable expected length properties.  This confidence
 interval is proposed by Kabaila, P. and Giri, K. (2009)
+<doi:10.1016/j.jspi.2009.03.018>.")
+    (license license:gpl2)))
+
+(define-public r-ciuupi
+  (package
+    (name "r-ciuupi")
+    (version "1.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ciuupi" version))
+       (sha256
+        (base32 "0nxci8x9v78l4plcd6p1b827xjd40ncda9cqqhawfm059z8j73n8"))))
+    (properties `((upstream-name . "ciuupi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statmod r-pracma r-nloptr r-functional))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ciuupi")
+    (synopsis "Confidence Intervals Utilizing Uncertain Prior Information")
+    (description
+     "Computes a confidence interval for a specified linear combination of the
+regression parameters in a linear regression model with iid normal errors with
+known variance when there is uncertain prior information that a distinct
+specified linear combination of the regression parameters takes a given value.
+This confidence interval, found by numerical nonlinear constrained optimization,
+has the required minimum coverage and utilizes this uncertain prior information
+through desirable expected length properties.  This confidence interval has the
+following three practical applications.  Firstly, if the error variance has been
+accurately estimated from previous data then it may be treated as being
+effectively known.  Secondly, for sufficiently large (dimension of the response
+vector) minus (dimension of regression parameter vector), greater than or equal
+to 30 (say), if we replace the assumed known value of the error variance by its
+usual estimator in the formula for the confidence interval then the resulting
+interval has, to a very good approximation, the same coverage probability and
+expected length properties as when the error variance is known.  Thirdly, some
+more complicated models can be approximated by the linear regression model with
+error variance known when certain unknown parameters are replaced by estimates.
+This confidence interval is described in Mainzer, R. and Kabaila, P. (2019)
+<doi:10.32614/RJ-2019-026>, and is a member of the family of confidence
+intervals proposed by Kabaila, P. and Giri, K. (2009)
 <doi:10.1016/j.jspi.2009.03.018>.")
     (license license:gpl2)))
 
@@ -37786,13 +37897,13 @@ methods such as Coincidence Analysis (CNA) or Qualitative Comparative Analysis
 (define-public r-causalgps
   (package
     (name "r-causalgps")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CausalGPS" version))
        (sha256
-        (base32 "146nszscdlm59ba7j90bbhj689x2hba7w2ywr2kpd5x5bhw8jagp"))))
+        (base32 "0hb010hsqn3ahsp3kqmn4r1qa3y3znz7kc7j8pv9zdx2cpyrnmi4"))))
     (properties `((upstream-name . "CausalGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -41777,23 +41888,28 @@ especially simple one dimensional examples appears in inst/doc/one.dim/.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "0clpmvkh77sjg7f66fgsc3crrimqslw1b8ymv6bq66yc5yp6kqfh"))))
+        (base32 "02r4qmim6pan3rpr3md68v0sik7n6lhcr7gsyl9qm45xf3v1x9gr"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rms r-hmisc r-ggplot2 r-bookdown))
+    (propagated-inputs (list r-survival
+                             r-rstudioapi
+                             r-rms
+                             r-hmisc
+                             r-ggplot2
+                             r-bookdown))
     (native-inputs (list r-knitr))
     (home-page "https://bavodc.github.io/websiteCalibrationCurves/")
     (synopsis "Calibration Performance")
     (description
      "Plots calibration curves and computes statistics for assessing calibration
-performance.  See De Cock Campo (2023) <@code{arXiv:2309.08559>} and Van Calster
-et al. (2016) <doi:10.1016/j.jclinepi.2015.12.005>.")
+performance.  See De Cock Campo (2023) <doi:10.48550/@code{arXiv.2309.08559>}
+and Van Calster et al. (2016) <doi:10.1016/j.jclinepi.2015.12.005>.")
     (license license:gpl3+)))
 
 (define-public r-calibrationband

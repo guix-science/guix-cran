@@ -2035,13 +2035,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "1r25716gq78imyy0f2cja2vh1ldjn5766iaa65x4z5rdcz3gcd80"))))
+        (base32 "01hhjywz9ndjn070h8dy4fcs2ldmhfhql4v562jk71vfpjh9wvas"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
@@ -3266,13 +3266,13 @@ unnormalized posterior density for each sampled parameter vector.")
 (define-public r-lopart
   (package
     (name "r-lopart")
-    (version "2020.6.29")
+    (version "2024.6.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOPART" version))
        (sha256
-        (base32 "1zxaag5pj3l9rzxhlrkx8q4adlap7wsdysb4y6ijvsmxvv63j22k"))))
+        (base32 "1y3jvg97n15iwp7v71jm5l765k3lz3c7jp0y2apz0is9wc02q5la"))))
     (properties `((upstream-name . "LOPART")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
@@ -3280,8 +3280,8 @@ unnormalized posterior density for each sampled parameter vector.")
     (synopsis "Labeled Optimal Partitioning")
     (description
      "Change-point detection algorithm with label constraints and a penalty for each
-change outside of labels.  Read TD Hocking, A Srivastava (2020)
-<@code{arXiv:2006.13967>} for details.")
+change outside of labels.  Read TD Hocking, A Srivastava (2023)
+<doi:10.1007/s00180-022-01238-z> for details.")
     (license license:gpl3)))
 
 (define-public r-looprig

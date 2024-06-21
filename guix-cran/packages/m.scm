@@ -2637,6 +2637,36 @@ Chapman and Hall/CRC Press 2009.")
 L.J Wei & J.M Lachin (1984) and Persson et al. (2019).")
     (license license:expat)))
 
+(define-public r-multregcmp
+  (package
+    (name "r-multregcmp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MultRegCMP" version))
+       (sha256
+        (base32 "01gb6a5kj8gdf57g9c9xzxid5h437g9y625w2d8wfjil97c012x4"))))
+    (properties `((upstream-name . "MultRegCMP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-progress
+                             r-mvnfast
+                             r-ggplot2
+                             r-cowplot
+                             r-bayesplot))
+    (home-page "https://cran.r-project.org/package=MultRegCMP")
+    (synopsis
+     "Bayesian Multivariate Conway-Maxwell-Poisson Regression Model for Correlated Count Data")
+    (description
+     "Fits a Bayesian Regression Model for multivariate count data.  This model
+assumes that the data is distributed according to the Conway-Maxwell-Poisson
+distribution, and for each response variable it is associate different
+covariates.  This model allows to account for correlations between the counts by
+using latent effects based on the Chib and Winkelmann (2001)
+<http://www.jstor.org/stable/1392277> proposal.")
+    (license license:expat)))
+
 (define-public r-multordrs
   (package
     (name "r-multordrs")
@@ -3644,13 +3674,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.1.1")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "0y7bcqdma20ca4a7f20kwrhji7mc1rris31kqfb3ps7zwj9bkp3h"))))
+        (base32 "0j9wkvskxvxvl1qhk9fl21ay7bx4bm2vl0wpvxjhhk82nrjr4fg7"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5524,13 +5554,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "171fag2qx8vbydcajai2dq50l9hrhsrlifrni87b07pzsm6bv7nc"))))
+        (base32 "16fbrc2phljrvmlraii31g16z41lid9x9s5sw1d03v6vzgca09aj"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -5811,13 +5841,13 @@ single-step procedure is also available.")
 (define-public r-multe
   (package
     (name "r-multe")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multe" version))
        (sha256
-        (base32 "05hp59lsf0zdbp6lkyf9yq1i0isi68zgqwxxkssgw4r6w5yfh84g"))))
+        (base32 "1b6c2sz6r3r4bhp3680ya45rrnyvmxjkjwshpgykvflddcmkj0p4"))))
     (properties `((upstream-name . "multe")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
@@ -5827,8 +5857,8 @@ single-step procedure is also available.")
     (description
      "This package implements contamination bias diagnostics and alternative
 estimators for regressions with multiple treatments.  The implementation is
-based on Goldsmith-Pinkham, Hull, and @code{KolesÃ¡r} (2022)
-<@code{arXiv:2106.05024>}.")
+based on Goldsmith-Pinkham, Hull, and @code{KolesÃ¡r} (2024)
+<doi:10.48550/@code{arXiv.2106.05024>}.")
     (license license:expat)))
 
 (define-public r-multdm
@@ -6109,13 +6139,13 @@ are also several sample data sets.")
 (define-public r-mulea
   (package
     (name "r-mulea")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mulea" version))
        (sha256
-        (base32 "07rhgf0qiwjxr0ckyizyry0vk33jfl2zh3lqipg0rc6s083shgv3"))))
+        (base32 "0mgwhf24raycj01cyw835a843pgfi7nkhzjj73ln3xhkk42np3km"))))
     (properties `((upstream-name . "mulea")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -13342,13 +13372,13 @@ simplified, and smoothed in some other software prior to uploading into R.")
 (define-public r-mokken
   (package
     (name "r-mokken")
-    (version "3.1.1")
+    (version "3.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mokken" version))
        (sha256
-        (base32 "0jnc3gsa4qfl4f6pg42m3mqncz0dgmdlx5jwhr0ck4gy02rpjv59"))))
+        (base32 "0wfm4yg9pzl5ng3mlng7p9qzvql51sxbs4gv006xanif5pkrn9dd"))))
     (properties `((upstream-name . "mokken")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-polca))
@@ -15433,13 +15463,13 @@ Calabrese et al.  2018 for more details <doi:10.1167/18.1.8>.")
 (define-public r-mnp
   (package
     (name "r-mnp")
-    (version "3.1-4")
+    (version "3.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MNP" version))
        (sha256
-        (base32 "1mxfw9b3cxs5bjnzdwc7da8fn00iwf9brzdl938d47pdi074a4s9"))))
+        (base32 "1rvkhx90hac6spcgzmrs62wvcci08accjlngw9jj4snawc7zyxvs"))))
     (properties `((upstream-name . "MNP")))
     (build-system r-build-system)
     (home-page "https://github.com/kosukeimai/MNP")
@@ -23001,13 +23031,13 @@ results inside R, in case more specific analyses are needed.")
 (define-public r-minimaxapprox
   (package
     (name "r-minimaxapprox")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minimaxApprox" version))
        (sha256
-        (base32 "069r2wcjlkv91vqvs7s089hmclngcrvawycr5vkfp65l7rlrg1qp"))))
+        (base32 "1gk7rh17g3xdsr42a1f6lp23ny9vkzig8srfwscd0v5hxx2cbqr9"))))
     (properties `((upstream-name . "minimaxApprox")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MiniMaxApprox")
@@ -25049,6 +25079,41 @@ were applied in Tewes and Muller (2020) <doi:10.1038/s41598-020-67600-7>.")
      "This package provides utilities for reading and processing microdata from
 Spanish official statistics with R.")
     (license license:gpl3)))
+
+(define-public r-microdatasus
+  (package
+    (name "r-microdatasus")
+    (version "2.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "microdatasus" version))
+       (sha256
+        (base32 "05abgn46qs3l5n67v19fcnllicmcrvxpn1xx95pkdm0b9r5f0kh4"))))
+    (properties `((upstream-name . "microdatasus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-tibble
+                             r-stringi
+                             r-rlang
+                             r-read-dbc
+                             r-rcurl
+                             r-magrittr
+                             r-lubridate
+                             r-foreign
+                             r-dtplyr
+                             r-dplyr
+                             r-data-table
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/rfsaldanha/microdatasus")
+    (synopsis "Download and Process 'DataSUS' Files")
+    (description
+     "Downloads data files from @code{DataSUS} health information systems from
+<ftp.datasus.gov.br> and process the data, including labeling categorical
+variables.")
+    (license license:expat)))
 
 (define-public r-microcran
   (package
@@ -30407,13 +30472,13 @@ data classified by a hierarchy (e.g. a taxonomy).")
 (define-public r-metacluster
   (package
     (name "r-metacluster")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaCluster" version))
        (sha256
-        (base32 "1n69vlxzfx937p587jb3q2hn6b59wzx20p09hsbbjwb4nj83hda7"))))
+        (base32 "0mirhkj37cmjy82yppx097ivy2lsvhyagirdbvdmr9mx4clmva9g"))))
     (properties `((upstream-name . "metaCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr
@@ -35166,31 +35231,6 @@ posterior distributions, for the entire output, or subsets of draws, nodes, or
 parameters.")
     (license license:gpl3+)))
 
-(define-public r-mcmcglmm
-  (package
-    (name "r-mcmcglmm")
-    (version "2.36")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MCMCglmm" version))
-       (sha256
-        (base32 "1wca9x5c9x88cryj1pkhl73chmnbc1653j08faz7lp03z2mdkzv6"))))
-    (properties `((upstream-name . "MCMCglmm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tensora
-                             r-matrix
-                             r-cubature
-                             r-corpcor
-                             r-coda
-                             r-ape))
-    (home-page "https://github.com/jarrodhadfield/MCMCglmm")
-    (synopsis "MCMC Generalised Linear Mixed Models")
-    (description
-     "Fits Multivariate Generalised Linear Mixed Models (and related models) using
-Markov chain Monte Carlo techniques (Hadfield 2010 J. Stat.  Soft.).")
-    (license license:gpl2+)))
-
 (define-public r-mcmcensemble
   (package
     (name "r-mcmcensemble")
@@ -36658,13 +36698,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefdlite
   (package
     (name "r-mbbefdlite")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBBEFDLite" version))
        (sha256
-        (base32 "0bq7h2jfnqiylmy9ji5k4r3v76qbxpd5wdjck18fs4vjfxapwplp"))))
+        (base32 "0cbhhsp27irssz8g1f1wzyb8064j9jwb1h7bcjc5lcmyg29g6cha"))))
     (properties `((upstream-name . "MBBEFDLite")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MBBEFDLite")

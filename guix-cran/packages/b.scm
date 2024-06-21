@@ -1565,13 +1565,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-bttest
   (package
     (name "r-bttest")
-    (version "0.10.1")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTtest" version))
        (sha256
-        (base32 "0qx8brb6196jny10vh2licwv9c5w8mcs1ajx377xpyn6p9fryc46"))))
+        (base32 "1p32i8fynjh3dkp1jk92v8wa3x9hw4hr9rjvsj6gz7cp79596fb3"))))
     (properties `((upstream-name . "BTtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -1589,7 +1589,7 @@ zero-mean I(1) and (iii) zero-mean I(0) factors.  Furthermore, the package
 includes the Integrated Panel Criteria by Bai (2004)
 <doi:10.1016/j.jeconom.2003.10.022> that provide a complementary measure for the
 number of factors.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-btsr
   (package
@@ -1835,13 +1835,13 @@ model under linear inequality constraints.")
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "2.1.0")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "1gnjl27ik6p8zsis8fdqhwdzp2jp0kyqnidil4jgy02fiwdww6c5"))))
+        (base32 "0hk80x46ydxzhdpwp8w9g54b8618irhmi1gxl99chid283318ml7"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -1854,19 +1854,23 @@ model under linear inequality constraints.")
     (home-page "https://bsvars.github.io/bsvars/")
     (synopsis "Bayesian Estimation of Structural Vector Autoregressive Models")
     (description
-     "Efficient algorithms for Bayesian estimation of Structural Vector Autoregressive
-(SVAR) models via Markov chain Monte Carlo methods.  A wide range of SVAR models
-is considered, including homo- and heteroskedastic specifications and those with
-non-normal structural shocks.  The heteroskedastic SVAR model setup is similar
-as in @code{WoÅºniak} & Droumaguet (2015) <doi:10.13140/RG.2.2.19492.55687> and
-LÃ¼tkepohl & @code{WoÅºniak} (2020) <doi:10.1016/j.jedc.2020.103862>.  The
-sampler of the structural matrix follows Waggoner & Zha (2003)
-<doi:10.1016/S0165-1889(02)00168-9>, whereas that for autoregressive parameters
-follows Chan, Koop, Yu (2022) <https://www.joshuachan.org/papers/OISV.pdf>.  The
-specification of Markov switching heteroskedasticity is inspired by Song &
-@code{WoÅºniak} (2021) <doi:10.1093/acrefore/9780190625979.013.174>, and that of
-Stochastic Volatility model by Kastner & @code{FrÃ¼hwirth-Schnatter} (2014)
-<doi:10.1016/j.csda.2013.01.002>.")
+     "This package provides fast and efficient procedures for Bayesian analysis of
+Structural Vector Autoregressions.  This package estimates a wide range of
+models, including homo-, heteroskedastic, and non-normal specifications.
+Structural models can be identified by adjustable exclusion restrictions,
+time-varying volatility, or non-normality.  They all include a flexible
+three-level equation-specific local-global hierarchical prior distribution for
+the estimated level of shrinkage for autoregressive and structural parameters.
+Additionally, the package facilitates predictive and structural analyses such as
+impulse responses, forecast error variance and historical decompositions,
+forecasting, verification of heteroskedasticity, non-normality, and hypotheses
+on autoregressive parameters, as well as analyses of structural shocks,
+volatilities, and fitted values.  Beautiful plots, informative summary
+functions, and extensive documentation complement all this.  The implemented
+techniques align closely with those presented in LÃ¼tkepohl, Shang, Uzeda, &
+@code{WoÅºniak} (2024) <doi:10.48550/@code{arXiv.2404.11057>}, LÃ¼tkepohl &
+@code{WoÅºniak} (2020) <doi:10.1016/j.jedc.2020.103862>, and Song &
+@code{WoÅºniak} (2021) <doi:10.1093/acrefore/9780190625979.013.174>.")
     (license license:gpl3+)))
 
 (define-public r-bsub
@@ -4460,6 +4464,27 @@ data of INMET-Brazil, with the purpose of reference evapotranspiration (ETo)
 estimation.  The package aims to make meteorological and agricultural data
 analysis more parsimonious.")
     (license license:gpl3)))
+
+(define-public r-brazilcrime
+  (package
+    (name "r-brazilcrime")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BrazilCrime" version))
+       (sha256
+        (base32 "12sxh6wa5paw89nyv2f33rwis94vzdj4166gmzw8pdrfvknqqmkg"))))
+    (properties `((upstream-name . "BrazilCrime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-openxlsx r-janitor r-geobr r-dplyr))
+    (home-page "https://cran.r-project.org/package=BrazilCrime")
+    (synopsis "Accesses Brazilian Public Security Data from SINESP Since 2015")
+    (description
+     "Allows access to data from the Brazilian Public Security Information System
+(SINESP) by state and municipality.
+<https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/sinesp-1>.")
+    (license license:expat)))
 
 (define-public r-bravo
   (package
@@ -16091,13 +16116,13 @@ Knowledge, Journal of Statistical Software <doi:10.18637/jss.v047.i03>.")
 (define-public r-bgmisc
   (package
     (name "r-bgmisc")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGmisc" version))
        (sha256
-        (base32 "01ka6rc5wivv4m44igfv9fm42pc1f8c6gxxwvabaz1p5hs725yx8"))))
+        (base32 "12m6c0b0nqgxiiy9vynygx186vb1v5i6s8gfjijsqn7wzpzfj6ig"))))
     (properties `((upstream-name . "BGmisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-kinship2 r-igraph
@@ -16506,13 +16531,13 @@ the bfsl solution.")
 (define-public r-bfpack
   (package
     (name "r-bfpack")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFpack" version))
        (sha256
-        (base32 "1bji697998qkb56gid8jd6bp9gqwxkls73d8vk55z838r60irlla"))))
+        (base32 "1ddcqcd8wzc1mc8d27kwv1xand8f4asvdirjbgncl5vs4akr924m"))))
     (properties `((upstream-name . "BFpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -18317,6 +18342,30 @@ GUTS framework Jager, T., Albert, C., Preuss, T.G. and Ashauer, R. (2011)
 financial support.")
     (license license:gpl3)))
 
+(define-public r-beeca
+  (package
+    (name "r-beeca")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beeca" version))
+       (sha256
+        (base32 "1q20chw6l690fjpyaagl8h12dzna2kjyfq3l676s3w65sba7gyh0"))))
+    (properties `((upstream-name . "beeca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich r-lifecycle r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://openpharma.github.io/beeca/")
+    (synopsis "Binary Endpoint Estimation with Covariate Adjustment")
+    (description
+     "This package performs estimation of marginal treatment effects for binary
+outcomes when using logistic regression working models with covariate adjustment
+(see discussions in Magirr et al (2024) <https://osf.io/9mp58/>).  Implements
+the variance estimators of Ge et al (2011) <doi:10.1177/009286151104500409> and
+Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
+    (license license:lgpl3+)))
+
 (define-public r-beebdc
   (package
     (name "r-beebdc")
@@ -18520,6 +18569,41 @@ generates the XML file BEAST2 needs to run.  This package provides a way to
 create BEAST2 input files without active user input, but using R function calls
 instead.")
     (license license:gpl3)))
+
+(define-public r-beastt
+  (package
+    (name "r-beastt")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "beastt" version))
+       (sha256
+        (base32 "0xgz9xjanybnc2fi0fqc9i0zq80y87rnll62q98nk08f919h7xs1"))))
+    (properties `((upstream-name . "beastt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-mixtools
+                             r-ggplot2
+                             r-ggdist
+                             r-generics
+                             r-dplyr
+                             r-distributional
+                             r-cobalt
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://gsk-biostatistics.github.io/beastt/")
+    (synopsis
+     "Bayesian Evaluation, Analysis, and Simulation Software Tools for Trials")
+    (description
+     "Bayesian dynamic borrowing with covariate adjustment via inverse probability
+weighting for simulations and data analyses in clinical trials.  This makes it
+easy to use propensity score methods to balance covariate distributions between
+external and internal data.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-beastjar
   (package
@@ -26434,13 +26518,13 @@ method resolution order.")
 (define-public r-banam
   (package
     (name "r-banam")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BANAM" version))
        (sha256
-        (base32 "0k04d8ssfg078w52paj323bflzlbk5k0r17c4xl1xs2g6saa0iyn"))))
+        (base32 "0jiw42icj0zzxpf51fxjbgqzjlp5s90nd8pgav4nlq70h4y64g2n"))))
     (properties `((upstream-name . "BANAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm

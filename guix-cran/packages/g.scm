@@ -4863,13 +4863,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "14624pgp02ajlhicq29683j34z2ap6xcjy71f3qbm5nq96w975f8"))))
+        (base32 "053id2kd7q4ydxlrg6yi39y72idicp0cjgrhvmnwyv6zh2jd3ahk"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10888,6 +10888,27 @@ Martino A., Ghiglietti, A., Ieva, F. and Paganoni A. M. (2017)
 <@code{arXiv:1708.00386>}.")
     (license license:gpl3)))
 
+(define-public r-gmfamm
+  (package
+    (name "r-gmfamm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gmfamm" version))
+       (sha256
+        (base32 "0l08x6qajr7ancf1dijayayycbs9p1xir4f78fxgicifszcdak6r"))))
+    (properties `((upstream-name . "gmfamm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mgcv r-matrix r-mass r-bamlss))
+    (home-page "https://cran.r-project.org/package=gmfamm")
+    (synopsis "Generalized Multivariate Functional Additive Models")
+    (description
+     "Supply implementation to model generalized multivariate functional data using
+Bayesian additive mixed models of R package bamlss via a latent Gaussian process
+(see Umlauf, Klein, Zeileis (2018) <doi:10.1080/10618600.2017.1407325>).")
+    (license license:gpl3)))
+
 (define-public r-gmedian
   (package
     (name "r-gmedian")
@@ -12296,13 +12317,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.8.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "1dam3dp32s3ybb656sfczba9vlan6bsd9n8x73p4faikfpjgyysb"))))
+        (base32 "162lb0zv5xk25adargc064gd7g13a4k8p6p7npzzmppx5235gnp4"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -15390,13 +15411,13 @@ or relative plot coordinates.")
 (define-public r-ggtibble
   (package
     (name "r-ggtibble")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggtibble" version))
        (sha256
-        (base32 "0mqwcy5gyb2dwnpkjzkyg9b3jy6jh9ck1h8z9ghvfssr2mkd17zz"))))
+        (base32 "1f9i81vmdkcahxsxqzwgkrjfqchk3jr14h2w8i5gsyhink271kxj"))))
     (properties `((upstream-name . "ggtibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

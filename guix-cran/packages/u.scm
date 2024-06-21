@@ -577,31 +577,6 @@ via the EM algorithm.")
 R for Introductory Statistics,\" second edition.")
     (license license:gpl2+)))
 
-(define-public r-usincometaxes
-  (package
-    (name "r-usincometaxes")
-    (version "0.7.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "usincometaxes" version))
-       (sha256
-        (base32 "1ryml266c7zbzlh5rq2h6gy8flchrjbrlapsy2vvc9s5mwc58vaj"))))
-    (properties `((upstream-name . "usincometaxes")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vroom r-v8 r-tibble))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/shanejorr/usincometaxes")
-    (synopsis "Calculate Federal and State Income Taxes in the United States")
-    (description
-     "Calculates federal and state income taxes in the United States.  It acts as a
-wrapper to the NBER's TAXSIM 35 (<http://taxsim.nber.org/taxsim35/>) tax
-simulator.  TAXSIM 35 conducts the calculations, while usincometaxes prepares
-the data for TAXSIM 35, sends the data to TAXSIM 35's server or communicates
-with the Web Assembly file, retrieves the data, and places it into a data frame.
- All without the user worrying about this process.")
-    (license license:expat)))
-
 (define-public r-ushr
   (package
     (name "r-ushr")
@@ -3306,13 +3281,13 @@ simplex.")
 (define-public r-ulrb
   (package
     (name "r-ulrb")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ulrb" version))
        (sha256
-        (base32 "0xwlj8cc7y4p51r0p46bz1ac7klrl2b9h7cr704d0cpvcwy11y7f"))))
+        (base32 "044gais5550wbr4gbfskm861hanwxmqyv53ghyhdr5868kqx127m"))))
     (properties `((upstream-name . "ulrb")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3329,13 +3304,12 @@ simplex.")
      "Unsupervised Learning Based Definition of Microbial Rare Biosphere")
     (description
      "This package provides a tool to define rare biosphere.  ulrb solves the problem
-of the definition of rarity by replacing human decision with an unsupervised
-machine learning algorithm (partitioning around medoids, or k-medoids).  This
-algorithm works for any type of microbiome data, provided there is an abundance
-score for each phylogenetic unit.  For validation of this method to several
-kinds of molecular data and environments, please see Pascoal et al, 2023 (in
-preparation).  Preliminary data suggest this method also works well for
-non-microbiome data, if there is a species abundance table.")
+of the definition of rarity by replacing arbitrary thresholds with an
+unsupervised machine learning algorithm (partitioning around medoids, or
+k-medoids).  This algorithm works for any type of microbiome data, provided
+there is a species abundance table.  For validation of this method to different
+species abundance tables see Pascoal et al, 2024 (in peer-review).  This method
+also works for non-microbiome data.")
     (license license:gpl3+)))
 
 (define-public r-ulid
