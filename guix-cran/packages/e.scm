@@ -20911,6 +20911,25 @@ estimating technical efficiency is also included.  More details in:
 <doi:10.1016/j.eswa.2020.113783>.")
     (license license:gpl3)))
 
+(define-public r-easywechat
+  (package
+    (name "r-easywechat")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easyWechat" version))
+       (sha256
+        (base32 "0cay298hp2q82vkx9crv1f5bqjwk1b3il1n7i1nlavpcwmmlq6ip"))))
+    (properties `((upstream-name . "easyWechat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (home-page "https://cran.r-project.org/package=easyWechat")
+    (synopsis "Notifier for R Users by 'WeChat'")
+    (description
+     "This is a @code{WeChat} Notifier for R users to notice when script run complete.")
+    (license license:expat)))
+
 (define-public r-easyverification
   (package
     (name "r-easyverification")
@@ -20955,6 +20974,48 @@ provided and applied using the functionality of this package.")
      "This SVG elements generator can easily generate SVG elements such as rect, line,
 circle, ellipse, polygon, polyline, text and group.  Also, it can combine and
 output SVG elements into a SVG file.")
+    (license license:expat)))
+
+(define-public r-easysurv
+  (package
+    (name "r-easysurv")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easysurv" version))
+       (sha256
+        (base32 "065h9wkd930k81jwdj48955nkv2z2q1xky15rg5nh0ig1r10d37p"))))
+    (properties `((upstream-name . "easysurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-parsnip
+                             r-openxlsx
+                             r-ggsurvfit
+                             r-ggplot2
+                             r-flexsurvcure
+                             r-flexsurv
+                             r-dplyr
+                             r-data-table
+                             r-cli
+                             r-censored
+                             r-bshazard))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Maple-Health-Group/easysurv")
+    (synopsis "Simplify Survival Data Analysis and Model Fitting")
+    (description
+     "Inspect survival data, plot Kaplan-Meier curves, assess the proportional hazards
+assumption, fit parametric survival models, predict and plot survival and
+hazards, and export the outputs to Excel.  A simple interface for fitting
+survival models using flexsurv::flexsurvreg()', flexsurv::flexsurvspline()',
+flexsurvcure::flexsurvcure()', and survival::survreg()'.")
     (license license:expat)))
 
 (define-public r-easystats

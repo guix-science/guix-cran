@@ -10087,6 +10087,46 @@ fitting mortality models, analysing their goodness-of-fit and performing
 mortality projections and simulations.")
     (license license:gpl2+)))
 
+(define-public r-stminsights
+  (package
+    (name "r-stminsights")
+    (version "0.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stminsights" version))
+       (sha256
+        (base32 "1yx87ia1i0p7cavxikz4dvy2j0ymnqpwqmdhci5x7yzsb0arl4kf"))))
+    (properties `((upstream-name . "stminsights")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidygraph
+                             r-tibble
+                             r-stringr
+                             r-stm
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-scales
+                             r-readr
+                             r-purrr
+                             r-igraph
+                             r-huge
+                             r-ggrepel
+                             r-ggraph
+                             r-ggplot2
+                             r-dt
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cschwem2er/stminsights")
+    (synopsis "'Shiny' Application for Inspecting Structural Topic Models")
+    (description
+     "This app enables interactive validation, interpretation and visualization of
+structural topic models from the stm package by Roberts and others (2014)
+<doi:10.1111/ajps.12103>.  It also includes helper functions for model
+diagnostics and extracting data from effect estimates.")
+    (license license:expat)))
+
 (define-public r-stmgui
   (package
     (name "r-stmgui")
@@ -18511,6 +18551,47 @@ retaining all the advantages of NMF -- such as interpretability, and being based
 on a simple biological intuition.")
     (license license:gpl3)))
 
+(define-public r-spnetwork
+  (package
+    (name "r-spnetwork")
+    (version "0.4.4.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spNetwork" version))
+       (sha256
+        (base32 "18g885w54d5hx9pwbqwz28gs723h9wpnfhr4a0yl37j5i3rasccx"))))
+    (properties `((upstream-name . "spNetwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep
+                             r-sfheaders
+                             r-sf
+                             r-rdpack
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progressr
+                             r-igraph
+                             r-ggplot2
+                             r-future-apply
+                             r-dbscan
+                             r-data-table
+                             r-cubature
+                             r-bh
+                             r-abind))
+    (native-inputs (list r-knitr))
+    (home-page "https://jeremygelb.github.io/spNetwork/")
+    (synopsis "Spatial Analysis on Network")
+    (description
+     "Perform spatial analysis on network.  Implement several methods for spatial
+analysis on network: Network Kernel Density estimation, building of spatial
+matrices based on network distance ('listw objects from spdep package), K
+functions estimation for point pattern analysis on network, k nearest neighbours
+on network, reachable area calculation, and graph generation References: Okabe
+et al (2019) <doi:10.1080/13658810802475491>; Okabe et al (2012,
+ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
+    (license license:gpl2)))
+
 (define-public r-spnaf
   (package
     (name "r-spnaf")
@@ -21557,13 +21638,13 @@ in C++20 or later).")
 (define-public r-spdesign
   (package
     (name "r-spdesign")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spdesign" version))
        (sha256
-        (base32 "0gz7862pp18cliz8n6grjzjq0ldy5cxln16w1i18ifqpjdhss53s"))))
+        (base32 "0kc73mv7fpz0anzr9q2l5zd3g127igi5kbmfn0m19x3hpwh3qfyj"))))
     (properties `((upstream-name . "spdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23522,6 +23603,57 @@ The package includes functions for generating data from the GC model, as well as
 spatially correlated versions of the model.  See Nadifar, Baghishani, Fallah
 (2023) <doi:10.1007/s13253-023-00550-5>.")
     (license license:gpl2+)))
+
+(define-public r-spatfd
+  (package
+    (name "r-spatfd")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpatFD" version))
+       (sha256
+        (base32 "1v7j0fkd031kfgx2xvkd02kvzn3k5dp6s82jvcm7rdrd18z4hzkv"))))
+    (properties `((upstream-name . "SpatFD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sp
+                             r-sf
+                             r-reshape
+                             r-proxy
+                             r-plotly
+                             r-mass
+                             r-gstat
+                             r-ggplot2
+                             r-geor
+                             r-fda-usc
+                             r-fda
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=SpatFD")
+    (synopsis
+     "Functional Geostatistics: Univariate and Multivariate Functional Spatial Prediction")
+    (description
+     "Performance of functional kriging, cokriging, optimal sampling and simulation
+for spatial prediction of functional data.  The framework of spatial prediction,
+optimal sampling and simulation are extended from scalar to functional data.
+@code{SpatFD} is based on the Karhunen-@code{LoÃ¨ve} expansion that allows to
+represent the observed functions in terms of its empirical functional principal
+components.  Based on this approach, the functional auto-covariances and
+cross-covariances required for spatial functional predictions and optimal
+sampling, are completely determined by the sum of the spatial auto-covariances
+and cross-covariances of the respective score components.  The package provides
+new classes of data and functions for modeling spatial dependence structure
+among curves.  The spatial prediction of curves at unsampled locations can be
+carried out using two types of predictors, and both of them report, the
+respective variances of the prediction error.  In addition, there is a function
+for the determination of spatial locations sampling configuration that ensures
+minimum variance of spatial functional prediction.  There are also two functions
+for plotting predicted curves at each location and mapping the surface at each
+time point, respectively.  References Bohorquez, M., Giraldo, R., and Mateu, J.
+(2016) <doi:10.1007/s10260-015-0340-9>, Bohorquez, M., Giraldo, R., and Mateu,
+J. (2016) <doi:10.1007/s00477-016-1266-y>, Bohorquez M., Giraldo R. and Mateu J.
+(2021) <doi:10.1002/9781119387916>.")
+    (license license:gpl3)))
 
 (define-public r-spatentropy
   (package
@@ -35404,13 +35536,13 @@ generated using various mechanisms (MCAR, MAR, NMAR).")
 (define-public r-simstatespace
   (package
     (name "r-simstatespace")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simStateSpace" version))
        (sha256
-        (base32 "1151r60vrb3b9crjb77a4aba6mzv13wq5awd0hrh8684h6pz9f76"))))
+        (base32 "072dyrzxpmp6i565162bpriviy47d59f3ssvkhpdpvs1d0g11j2a"))))
     (properties `((upstream-name . "simStateSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -37030,13 +37162,13 @@ and copula models.")
 (define-public r-siminf
   (package
     (name "r-siminf")
-    (version "9.7.0")
+    (version "9.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimInf" version))
        (sha256
-        (base32 "1pkr4x3qmv1b75b2s38nck08lsj8k81rp3md4biachvw56ym74s9"))))
+        (base32 "1lpx7749ld6h5gdlyrlxwp2zx7g9fxxb6s7r8p2pxpyvgrss2pqr"))))
     (properties `((upstream-name . "SimInf")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -41525,6 +41657,32 @@ design.  See <https://material.io/guidelines/> for more information.")
 enable the design and layout of informative landing home pages for Shiny
 applications.  This can lead to a better user experience for the users and
 writing less HTML for the developer.")
+    (license license:expat)))
+
+(define-public r-shinylottie
+  (package
+    (name "r-shinylottie")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyLottie" version))
+       (sha256
+        (base32 "1fs1cpi7qab8zqb4jn3lw4bpan3434m6jdy6zj7vbzfibdj0y2wf"))))
+    (properties `((upstream-name . "shinyLottie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-jsonlite r-htmltools r-glue))
+    (native-inputs (list r-knitr))
+    (home-page "https://camhowitt.github.io/shinyLottie/")
+    (synopsis
+     "Seamlessly Integrate 'Lottie' Animations into 'shiny' Applications")
+    (description
+     "Easily integrate and control Lottie animations within shiny applications',
+without the need for idiosyncratic expression or use of @code{JavaScript}'.
+This includes utilities for generating animation instances, controlling
+playback, manipulating animation properties, and more.  For more information on
+Lottie', see: <https://airbnb.io/lottie/#/>.  Additionally, see the official
+Lottie @code{GitHub} repository at <https://github.com/airbnb/lottie>.")
     (license license:expat)))
 
 (define-public r-shinylogs

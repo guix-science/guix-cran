@@ -8161,13 +8161,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0wmf0vddb9w3sx2lsy9m80d7c52xz6sdmx3fdal8g8n898z1rk8h"))))
+        (base32 "0c5r9kay8az8szf324qfln8lz8wsnggimsphcrsj1ssfv17dq37w"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -14413,13 +14413,13 @@ Waldorp, Mottus & Borsboom (2018) <doi:10.1080/00273171.2018.1454823>.")
 (define-public r-gimme
   (package
     (name "r-gimme")
-    (version "0.7-17")
+    (version "0.7-18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gimme" version))
        (sha256
-        (base32 "0pa0mag0w7gxx4ikqs3c3k8g3ppi1fz3qkxmq2vmd48k7fyy7n0x"))))
+        (base32 "16xb0182nh2p2cbr1iw74q1biif240jcyckal3mf6zdq703vgy4j"))))
     (properties `((upstream-name . "gimme")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -28166,13 +28166,13 @@ tradeoff between speed and quality of the solution.")
 (define-public r-gasanalyzer
   (package
     (name "r-gasanalyzer")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasanalyzer" version))
        (sha256
-        (base32 "1j46w7ikpzll40yk3vwlq1zysgsnlrf5p01hllp8a9qshxdhl5a6"))))
+        (base32 "0cb6xkzfrnxd28dm17r6b57i8l48psqcgx1yaw37csjll35ngxap"))))
     (properties `((upstream-name . "gasanalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -28186,15 +28186,13 @@ tradeoff between speed and quality of the solution.")
     (home-page "https://gitlab.com/plantphys/gasanalyzer")
     (synopsis "Import, Recompute and Analyze Data from Portable Gas Analyzers")
     (description
-     "This package provides functions to import data from several instruments commonly
-used by plant physiologists to measure characteristics related to
-photosynthesis.  It provides a standardized list of variable names, and several
-sets of equations to calculate additional variables based on the measurements.
-These equations have been described by von Caemmerer and Farquhar (1981)
-<doi:10.1007/BF00384257>, Busch et al. (2020) <doi:10.1038/s41477-020-0606-6>
-and MÃ¡rquez et al. (2021) <doi:10.1038/s41477-021-00861-w>.  In addition, this
-package facilitates performing sensitivity analyses on variables or assumptions
-used in the calculations.")
+     "The gasanalyzer R package offers methods for importing, preprocessing, and
+analyzing data related to photosynthetic characteristics (gas exchange,
+chlorophyll fluorescence and isotope ratios).  It translates variable names into
+a standard format, and can recalculate derived, physiological quantities using
+imported or predefined equations.  The package also allows users to assess the
+sensitivity of their results to different assumptions used in the calculations.
+See also Tholen (2024) <doi:10.1093/aobpla/plae035>.")
     (license license:gpl3)))
 
 (define-public r-gas

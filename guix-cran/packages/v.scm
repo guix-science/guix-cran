@@ -2339,13 +2339,13 @@ of mortality models.")
 (define-public r-vital
   (package
     (name "r-vital")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vital" version))
        (sha256
-        (base32 "0rq7abqpqj5l5vvawj8x0p4bhvs0pcd883xiqbjzc65girn9ffar"))))
+        (base32 "0qmqalqzqzzsc8fvzrqj5wzwaw90lf161524wibjzc89knz6z0g4"))))
     (properties `((upstream-name . "vital")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -4671,13 +4671,13 @@ Research.  International Livestock Research Institute.")
 (define-public r-vetr
   (package
     (name "r-vetr")
-    (version "0.2.16")
+    (version "0.2.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vetr" version))
        (sha256
-        (base32 "0dpk2mfa6xk8b0zvanymgr00mydjvqmmax6n7cfvxd0gviwbfap4"))))
+        (base32 "0ymbv6d1xvsnpvhn6pniiwxw9fjyxy8bahkwfh56rxqlv9qx3pi0"))))
     (properties `((upstream-name . "vetr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

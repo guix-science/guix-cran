@@ -8615,6 +8615,32 @@ concept introduced in Rosenbaum (1992) Detecting bias with confidence in
 observational studies Biometrika, 79(2), 367-374 <doi:10.1093/biomet/79.2.367>.")
     (license license:gpl2)))
 
+(define-public r-informativesci
+  (package
+    (name "r-informativesci")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "informativeSCI" version))
+       (sha256
+        (base32 "1va0lqhranks4kn1al4fwl00f39aylx361xc369vj3q55qbigny0"))))
+    (properties `((upstream-name . "informativeSCI")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-mvtnorm r-gmcp))
+    (home-page "https://github.com/LianeKluge/informativeSCI")
+    (synopsis "Informative Simultaneous Confidence Intervals")
+    (description
+     "Calculation of informative simultaneous confidence intervals for graphical
+described multiple test procedures and given information weights.  Bretz et al.
+(2009) <doi:10.1002/sim.3495> and Brannath et al. (2024)
+<doi:10.48550/@code{arXiv.2402.13719>}.  Furthermore, exploration of the
+behavior of the informative bounds in dependence of the information weights.
+Comparisons with compatible bounds are possible.  Strassburger and Bretz (2008)
+<doi:10.1002/sim.3338>.")
+    (license license:expat)))
+
 (define-public r-informativecensoring
   (package
     (name "r-informativecensoring")
@@ -11604,13 +11630,13 @@ sharing of plots.")
 (define-public r-imgrec
   (package
     (name "r-imgrec")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imgrec" version))
        (sha256
-        (base32 "0va04b264v2ywvqdgmvigygsd5f6vdy5cj2ip2nsyi1fzh68hadx"))))
+        (base32 "14qn4pvg9g57xmj1dgsdybmc30rj2gfdby52pzvcjzyfsbxw8hch"))))
     (properties `((upstream-name . "imgrec")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

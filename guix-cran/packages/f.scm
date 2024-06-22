@@ -5255,26 +5255,27 @@ M. Ã.  Nielsen (2014) <doi:10.1002/jae.2295>.")
 (define-public r-frab
   (package
     (name "r-frab")
-    (version "0.0-3")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frab" version))
        (sha256
-        (base32 "08nlhshg3bz8b830vl877xyyjgngxk7sf5vp5d0np3bfhrylh0wv"))))
+        (base32 "0mbm3rg3c6hdqzvlknb3y16bkf7ambcajz2zld4msmwxnph83ayn"))))
     (properties `((upstream-name . "frab")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mathjaxr r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/frab")
-    (synopsis "How to Add Two Tables")
+    (synopsis "How to Add Two R Tables")
     (description
-     "This package provides methods to \"add\" two tables; also an alternative
-interpretation of named vectors as generalized tables, so that c(a=1,b=2,c=3) +
-c(b=3,a=-1) will return c(b=5,c=3).  Uses @code{disordR} discipline (Hankin,
-2022, <arxiv:2210.03856>).  Extraction and replacement methods are provided.
-The underlying mathematical structure is the Free Abelian group, hence the name.
- To cite in publications please use Hankin (2023) <arxiv:2307:13184>.")
+     "This package provides methods to \"add\" two R tables; also an alternative
+interpretation of named vectors as generalized R tables, so that c(a=1,b=2,c=3)
++ c(b=3,a=-1) will return c(b=5,c=3).  Uses @code{disordR} discipline (Hankin,
+2022, <doi:10.48550/@code{arXiv.2210.03856>}).  Extraction and replacement
+methods are provided.  The underlying mathematical structure is the Free Abelian
+group, hence the name.  To cite in publications please use Hankin (2023)
+<doi:10.48550/@code{arXiv.2307.13184>}.")
     (license license:gpl2+)))
 
 (define-public r-fr
@@ -9495,6 +9496,31 @@ this package can easily be integrated into computation pipelines (e.g. nextflow
 <https://www.nextflow.io/>) and hereby improve scalability, standardization, and
 re-producibility in the context of machine-learning.")
     (license license:gpl3+)))
+
+(define-public r-flowermate
+  (package
+    (name "r-flowermate")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FlowerMate" version))
+       (sha256
+        (base32 "0hl91lz1ikhqransinn0zqa2gmx0fyl7yqxnjjj4h8ssff63hwrc"))))
+    (properties `((upstream-name . "FlowerMate")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FlowerMate")
+    (synopsis "Reciprocity Indices for Style-Polymorphic Plants")
+    (description
+     "Computes unidimensional and multidimensional Reciprocity and Inaccuracy indices.
+ These indices are applicable to common heterostylous populations and to any
+other type of stylar dimorphic and trimorphic populations, such as in
+enantiostylous and three-dimensional heterostylous plants. @code{SimÃ³n-Porcar},
+V., A. J. @code{MuÃ±oz-Pajares}, J. Arroyo, and S. D. Johnson. (in press)
+\"@code{FlowerMate}: multidimensional reciprocity and inaccuracy indices for
+style-polymorphic plant populations.\".")
+    (license license:gpl2+)))
 
 (define-public r-flowchart
   (package

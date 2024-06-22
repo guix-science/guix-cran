@@ -577,6 +577,31 @@ via the EM algorithm.")
 R for Introductory Statistics,\" second edition.")
     (license license:gpl2+)))
 
+(define-public r-usincometaxes
+  (package
+    (name "r-usincometaxes")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usincometaxes" version))
+       (sha256
+        (base32 "1ryml266c7zbzlh5rq2h6gy8flchrjbrlapsy2vvc9s5mwc58vaj"))))
+    (properties `((upstream-name . "usincometaxes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom r-v8 r-tibble))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/shanejorr/usincometaxes")
+    (synopsis "Calculate Federal and State Income Taxes in the United States")
+    (description
+     "Calculates federal and state income taxes in the United States.  It acts as a
+wrapper to the NBER's TAXSIM 35 (<http://taxsim.nber.org/taxsim35/>) tax
+simulator.  TAXSIM 35 conducts the calculations, while usincometaxes prepares
+the data for TAXSIM 35, sends the data to TAXSIM 35's server or communicates
+with the Web Assembly file, retrieves the data, and places it into a data frame.
+ All without the user worrying about this process.")
+    (license license:expat)))
+
 (define-public r-ushr
   (package
     (name "r-ushr")

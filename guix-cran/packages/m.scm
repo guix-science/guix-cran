@@ -2110,56 +2110,55 @@ facilitate the model interpretation.")
 (define-public r-mvar-pt
   (package
     (name "r-mvar-pt")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar.pt" version))
        (sha256
-        (base32 "00p6n91d28bibf24j3rkql1hp85dy9qag9spi98m6a2v5isp10p3"))))
+        (base32 "0095jhb5zfl4nix9n26mb1xdrc4fgi8mvn1l3z4m90mzrk39vsk2"))))
     (properties `((upstream-name . "MVar.pt")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=MVar.pt")
     (synopsis "Analise multivariada (brazilian portuguese)")
     (description
-     "Pacote para analise multivariada, tendo funcoes que executam analise de
-correspondencia simples (CA) e multipla (MCA), analise de componentes principais
-(PCA), analise de correlacao canonica (CCA), analise fatorial (FA),
-escalonamento multidimensional (MDS), analise discriminante linear (LDA) e
-quadratica (QDA), analise de cluster hierarquico e nao hierarquico, regressao
-linear simples e multipla, analise de multiplos fatores (MFA) para dados
-quantitativos, qualitativos, de frequencia (MFACT) e dados mistos, biplot,
-scatter plot, projection pursuit (PP), grant tour e outras funcoes uteis para a
-analise multivariada.")
-    (license license:gpl2+)))
+     "Analise multivariada, tendo funcoes que executam analise de correspondencia
+simples (CA) e multipla (MCA), analise de componentes principais (PCA), analise
+de correlacao canonica (CCA), analise fatorial (FA), escalonamento
+multidimensional (MDS), analise discriminante linear (LDA) e quadratica (QDA),
+analise de cluster hierarquico e nao hierarquico, regressao linear simples e
+multipla, analise de multiplos fatores (MFA) para dados quantitativos,
+qualitativos, de frequencia (MFACT) e dados mistos, biplot, scatter plot,
+projection pursuit (PP), grant tour e outras funcoes uteis para a analise
+multivariada.")
+    (license license:gpl3)))
 
 (define-public r-mvar
   (package
     (name "r-mvar")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVar" version))
        (sha256
-        (base32 "0jmbgiw1mvdlkc41mxxk4cjknwh161ahai4gdavdcx66x87l754y"))))
+        (base32 "1d1gh8wxwy3pddamhfgiy1l89swi8i9mi5i782cwd3gi2q6w6jf3"))))
     (properties `((upstream-name . "MVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=MVar")
     (synopsis "Multivariate Analysis")
     (description
-     "Package for multivariate analysis, having functions that perform simple
-correspondence analysis (CA) and multiple correspondence analysis (MCA),
-principal components analysis (PCA), canonical correlation analysis (CCA),
-factorial analysis (FA), multidimensional scaling (MDS), linear (LDA) and
-quadratic discriminant analysis (QDA), hierarchical and non-hierarchical cluster
-analysis, simple and multiple linear regression, multiple factor analysis (MFA)
-for quantitative, qualitative, frequency (MFACT) and mixed data, biplot, scatter
-plot, projection pursuit (PP), grant tour method and other useful functions for
-the multivariate analysis.")
-    (license license:gpl2+)))
+     "Multivariate analysis, having functions that perform simple correspondence
+analysis (CA) and multiple correspondence analysis (MCA), principal components
+analysis (PCA), canonical correlation analysis (CCA), factorial analysis (FA),
+multidimensional scaling (MDS), linear (LDA) and quadratic discriminant analysis
+(QDA), hierarchical and non-hierarchical cluster analysis, simple and multiple
+linear regression, multiple factor analysis (MFA) for quantitative, qualitative,
+frequency (MFACT) and mixed data, biplot, scatter plot, projection pursuit (PP),
+grant tour method and other useful functions for the multivariate analysis.")
+    (license license:gpl3)))
 
 (define-public r-mva
   (package
@@ -23632,6 +23631,34 @@ Moreover, the LASSO penalty is attached to the likelihood function for
 simultaneous parameter estimation and variable selection.")
     (license license:expat)))
 
+(define-public r-milorgwas
+  (package
+    (name "r-milorgwas")
+    (version "0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "milorGWAS" version))
+       (sha256
+        (base32 "052bavj7wmkjcnm6vjswpg1zkawqjn5yy3z6zi4gklxci53a1z1i"))))
+    (properties `((upstream-name . "milorGWAS")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-gaston))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=milorGWAS")
+    (synopsis
+     "Mixed Logistic Regression for Genome-Wide Analysis Studies (GWAS)")
+    (description
+     "Fast approximate methods for mixed logistic regression in genome-wide analysis
+studies (GWAS).  Two computationnally efficient methods are proposed for
+obtaining effect size estimates (beta) in Mixed Logistic Regression in GWAS: the
+Approximate Maximum Likelihood Estimate (AMLE), and the Offset method.  The wald
+test obtained with AMLE is identical to the score test.  Data can be genotype
+matrices in plink format, or dosage (VCF files).  The methods are described in
+details in Milet et al (2020) <doi:10.1101/2020.01.17.910109>.")
+    (license license:gpl3)))
+
 (define-public r-milineage
   (package
     (name "r-milineage")
@@ -27282,13 +27309,13 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
 (define-public r-mfag
   (package
     (name "r-mfag")
-    (version "1.9")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MFAg" version))
        (sha256
-        (base32 "008krza4lhbv641sn0wlf9gl66n8x6c9d8404m76dsgdsr118c1a"))))
+        (base32 "1lciq1drbd2p71k1svn4a4q7p0j3am9nsd4nmvmwikpihyqswgfv"))))
     (properties `((upstream-name . "MFAg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=MFAg")
@@ -27297,7 +27324,7 @@ see: Chao et al. (2018) <doi:10.1002/ecm.1343>, Maire et al. (2015)
      "This package performs Multiple Factor Analysis method for quantitative,
 categorical, frequency and mixed data, in addition to generating a lot of
 graphics, also has other useful functions.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-mfaces
   (package

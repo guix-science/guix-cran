@@ -11630,13 +11630,13 @@ specific for each data set separately.")
 (define-public r-o2geosocial
   (package
     (name "r-o2geosocial")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "o2geosocial" version))
        (sha256
-        (base32 "0myzr25jjjvlszr0j5ay2nha1nrccwhgh0qd01p52xrlggfjhz1g"))))
+        (base32 "044m21116zwbkh55z84pns5l3agvdw50pcza669blmf3za7m2bby"))))
     (properties `((upstream-name . "o2geosocial")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork

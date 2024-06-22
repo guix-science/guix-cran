@@ -2858,18 +2858,20 @@ error and statistical power.")
 (define-public r-npboottprm
   (package
     (name "r-npboottprm")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprm" version))
        (sha256
-        (base32 "1g139xrry2j14jcs36hqa3y72y5vlnmn8vxkv7yh0jcgj0czl7d0"))))
+        (base32 "076s49mq9vm6qkgjcpxn2dqwk917fd3sw4kc6z7a06xg2npbgsag"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
                              r-shinythemes
                              r-shiny
+                             r-rpostgres
+                             r-pool
                              r-mkinfer
                              r-mass
                              r-lmperm
@@ -15051,13 +15053,13 @@ sequentially observed data.")
 (define-public r-nanotime
   (package
     (name "r-nanotime")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanotime" version))
        (sha256
-        (base32 "0bx52488vr2k91qlmaz5l92j7r8naxrqjidzf2zgid82yvmidjk1"))))
+        (base32 "1n3rz8zvrq5kxkfiv4gc64lmn72fm2jjgb9f2j23my38zpnnaafc"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))

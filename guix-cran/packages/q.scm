@@ -2428,13 +2428,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "1.5.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "0ha8ivwpjvymg143fdmg0w5kp2yf18alk00iq7y5i4qxdyyhyjpw"))))
+        (base32 "0xr5yjfn9ndgivqa4a9s05vwg8h9prdjci3l9vs22yj6ncc79jgr"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))

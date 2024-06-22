@@ -94,16 +94,16 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "1xvx9z24xrqfhpgzfdvscscg3lcjsy6abrw60amcww36sl41fas2"))))
+        (base32 "0kdv48p2z6l2ihrlygsqpfjppb3pn5h308q5jgw5m8hjv8p97wsd"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-agop))
+    (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-dplyr r-agop))
     (home-page "https://cran.r-project.org/package=xxdi")
     (synopsis "Calculate Expertise Indices")
     (description

@@ -1086,13 +1086,13 @@ Shiny input or output.")
 (define-public r-pursuit
   (package
     (name "r-pursuit")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Pursuit" version))
        (sha256
-        (base32 "0pgx2vfvfgf0gndgnawk91hd13q39f0855hj1ivq30id91ym421r"))))
+        (base32 "1wg1ix466zcbcgr2qqa6sbh9blx5g8hjqmagf9z3ig06qgxf1zrr"))))
     (properties `((upstream-name . "Pursuit")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

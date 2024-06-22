@@ -11456,13 +11456,13 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "1f487mx818qz8bp36lnb1lpcfcia7pzmvcxhh6zh0ak0d6xllc2g"))))
+        (base32 "1cx3n2z6qx3x6k3mb75qk1n6zd95s6mgs047dhq6nvac921fnd12"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-checkmate))

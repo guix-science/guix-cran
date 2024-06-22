@@ -10964,6 +10964,28 @@ regression, likelihood-based fitting of generalized linear regression models and
 the proportional hazards model fitted by partial likelihood.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-hclusteasy
+  (package
+    (name "r-hclusteasy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hclusteasy" version))
+       (sha256
+        (base32 "0c3w2wmk5a85kxkkg782w2ggy43i2ayrrjfwl91bkxba5n2pk3sa"))))
+    (properties `((upstream-name . "hclusteasy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-readxl r-factoextra r-clustersim))
+    (home-page "https://github.com/tsukubai/hclusteasy")
+    (synopsis "Determining Hierarchical Clustering Easily")
+    (description
+     "Facilitates hierarchical clustering analysis with functions to read data in
+txt', xlsx', and xls formats, apply normalization techniques to the dataset,
+perform hierarchical clustering and construct scatter plot from principal
+component analysis to evaluate the groups obtained.")
+    (license license:gpl2)))
+
 (define-public r-hclust1d
   (package
     (name "r-hclust1d")

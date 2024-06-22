@@ -4468,13 +4468,13 @@ analysis more parsimonious.")
 (define-public r-brazilcrime
   (package
     (name "r-brazilcrime")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilCrime" version))
        (sha256
-        (base32 "12sxh6wa5paw89nyv2f33rwis94vzdj4166gmzw8pdrfvknqqmkg"))))
+        (base32 "17p8fgv7pqdx19fpgjax95bl90918w34qxfnhw6xy2wsmp28y6fn"))))
     (properties `((upstream-name . "BrazilCrime")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-openxlsx r-janitor r-geobr r-dplyr))
@@ -9770,13 +9770,13 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
 (define-public r-blendstat
   (package
     (name "r-blendstat")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Blendstat" version))
        (sha256
-        (base32 "0nh5nq8g009vbb4mmjcrhg46yi77dk1gza4si21m58b26qf5riy5"))))
+        (base32 "1nz5gwsjlvk6lajiyf0j2max6q5ifsj1arsbn1l4x6z8m7psm9wp"))))
     (properties `((upstream-name . "Blendstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lattice))
@@ -9785,7 +9785,7 @@ Kieser, M. (2011) <doi:10.3414/ME09-01-0063>.")
     (description
      "This package performs a joint analysis of experiments with mixtures and random
 effects, taking on a process variable represented by a covariable.")
-    (license license:gpl2+)))
+    (license license:gpl3)))
 
 (define-public r-blender
   (package
@@ -18369,13 +18369,13 @@ Ye et al (2023) <doi:10.1080/24754269.2023.2205802>.")
 (define-public r-beebdc
   (package
     (name "r-beebdc")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BeeBDC" version))
        (sha256
-        (base32 "05c215m8zd6wcyjgvpkdmzghb2sp8677mj4shnjzqknbvmgqm9hh"))))
+        (base32 "1x2inx2rvlskzpjgivw0wndihsbbbw85nm0avg2csfk8388qwx9c"))))
     (properties `((upstream-name . "BeeBDC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -25954,16 +25954,16 @@ regression model (Hill (2012) <doi:10.1198/jcgs.2010.08162>).")
 (define-public r-bart
   (package
     (name "r-bart")
-    (version "2.9.7")
+    (version "2.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BART" version))
        (sha256
-        (base32 "15nm6ahi5kq2fd9zrksqq7ybmlzrw7hds5ws27zvlayyy2qxyq17"))))
+        (base32 "1jm17n2p6n0knbjzy3sqxaljbq9qfm7mn1swb6zpgw172hr7l22v"))))
     (properties `((upstream-name . "BART")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpp r-nnet r-nlme))
+    (propagated-inputs (list r-survival r-rcpp r-nlme))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=BART")
     (synopsis "Bayesian Additive Regression Trees")

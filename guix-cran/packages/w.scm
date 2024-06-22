@@ -7881,13 +7881,13 @@ Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
 (define-public r-wals
   (package
     (name "r-wals")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WALS" version))
        (sha256
-        (base32 "0pqvmdvgxrf05avkgynx2hwqp6k3a3vhhiis5vwijz9ccjgac0kz"))))
+        (base32 "0z3863ml85065w23m6wr4hd5a0vdaiavpmrbal8kz4igj6j34ff6"))))
     (properties `((upstream-name . "WALS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mass r-formula))
@@ -7895,9 +7895,10 @@ Experimental and Computer Laboratory at ETH Zurich, Switzerland.")
     (synopsis "Weighted-Average Least Squares Model Averaging")
     (description
      "This package implements Weighted-Average Least Squares model averaging for
-negative binomial regression models of Huynh (2023) (mimeo), generalized linear
-models of De Luca, Magnus, Peracchi (2018) <doi:10.1016/j.jeconom.2017.12.007>
-and linear regression models of Magnus, Powell, Pruefer (2010)
+negative binomial regression models of Huynh (2024)
+<doi:10.48550/@code{arXiv.2404.11324>}, generalized linear models of De Luca,
+Magnus, Peracchi (2018) <doi:10.1016/j.jeconom.2017.12.007> and linear
+regression models of Magnus, Powell, Pruefer (2010)
 <doi:10.1016/j.jeconom.2009.07.004>, see also Magnus, De Luca (2016)
 <doi:10.1111/joes.12094>.  Weighted-Average Least Squares for the linear
 regression model is based on the original MATLAB code by Magnus and De Luca

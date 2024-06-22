@@ -3236,6 +3236,30 @@ evapotranspiration in forest
 ecosystems.<https://github.com/@code{ShulanSun/rTRIPLEX_CW_Flux>}.")
     (license license:expat)))
 
+(define-public r-rtrim
+  (package
+    (name "r-rtrim")
+    (version "2.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtrim" version))
+       (sha256
+        (base32 "14i81rd4iyych1yrqf3y1b3nf5hrpfjfdb4xync2v4mqqrhx0cmx"))))
+    (properties `((upstream-name . "rtrim")))
+    (build-system r-build-system)
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://github.com/SNStatComp/rtrim")
+    (synopsis "Trends and Indices for Monitoring Data")
+    (description
+     "The TRIM model is widely used for estimating growth and decline of animal
+populations based on (possibly sparsely available) count data.  The current
+package is a reimplementation of the original TRIM software developed at
+Statistics Netherlands by Jeroen Pannekoek.  See
+<https://www.cbs.nl/en-gb/society/nature-and-environment/indices-and-trends%2d%2dtrim%2d%2d>
+for more information about TRIM.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-rtriangle
   (package
     (name "r-rtriangle")
@@ -5820,13 +5844,13 @@ format.  See rsppfp website for more information, documentation an examples.")
 (define-public r-rspm
   (package
     (name "r-rspm")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspm" version))
        (sha256
-        (base32 "0zl3mpr1k40jfhx45xhjvwr4p7qpyxnaphrc5mbjypflaxcns4ym"))))
+        (base32 "0jr4zqz0jw8i5zvp8sf5irsz08sbcs8d8jdvqlda9ajv42qmqhna"))))
     (properties `((upstream-name . "rspm")))
     (build-system r-build-system)
     (home-page "https://cran4linux.github.io/rspm/")
@@ -5837,7 +5861,7 @@ RStudio public repositories at <https://packagemanager.posit.co>, and
 transparent management of system requirements without administrative privileges.
  Currently supported distributions are @code{CentOS} / RHEL 7-9, and several
 RHEL derivatives ('Rocky Linux', @code{AlmaLinux}', Oracle Linux', and Amazon
-Linux 2), @code{openSUSE} / SLES 15.4-5, Debian 11-12, and Ubuntu LTS 20-22.")
+Linux'), @code{openSUSE} / SLES 15.4-5, Debian 11-12, and Ubuntu LTS 20-22.")
     (license (list license:gpl2 license:gpl3 license:expat))))
 
 (define-public r-rspiro
@@ -6536,13 +6560,13 @@ population mean and variance on samples drawn by r-size biased sampling schemes.
 (define-public r-rsinaica
   (package
     (name "r-rsinaica")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsinaica" version))
        (sha256
-        (base32 "0ndskcgzd38mblk3xfazszhh3f5fjlmz6rmc297nka2c8rw56lz2"))))
+        (base32 "00fnz0afa635zbkphc92wbwzarxa5dnvxy2g4gry43zykq1m3wgd"))))
     (properties `((upstream-name . "rsinaica")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-lubridate r-jsonlite r-httr r-dplyr))

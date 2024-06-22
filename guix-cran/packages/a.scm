@@ -1115,13 +1115,13 @@ function.")
 (define-public r-avidar
   (package
     (name "r-avidar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avidaR" version))
        (sha256
-        (base32 "12z2cs5cayj72c6nx5y086m823grcmhq5m24aaqx4qn36lb6cdbb"))))
+        (base32 "1rm37lsmi5cyrkdpb55hr5m1pklwv5czzk4m1dzqzdvn4qp95ms7"))))
     (properties `((upstream-name . "avidaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

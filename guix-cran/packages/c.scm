@@ -5735,6 +5735,29 @@ from randomized controlled trials or non-randomized studies or mixtures of both.
 models are described by Hamza et al.  2023 <DOI:10.1002/jrsm.1619>.")
     (license license:gpl2+)))
 
+(define-public r-crossmatch
+  (package
+    (name "r-crossmatch")
+    (version "1.4-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crossmatch" version))
+       (sha256
+        (base32 "104qbc8p9ip446035xilgswhqfdvrqxqh5sirp6sc2rvy6lr1xng"))))
+    (properties `((upstream-name . "crossmatch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nbpmatching))
+    (home-page "https://cran.r-project.org/package=crossmatch")
+    (synopsis "The Cross-Match Test")
+    (description
+     "This package performs the cross-match test that is an exact, distribution free
+test of equality of 2 high dimensional multivariate distributions.  The input is
+a distance matrix and the labels of the two groups to be compared, the output is
+the number of cross-matches and a p-value.  See Rosenbaum (2005)
+<doi:10.1111/j.1467-9868.2005.00513.x>.")
+    (license license:gpl2)))
+
 (define-public r-crossmap
   (package
     (name "r-crossmap")
@@ -22724,30 +22747,6 @@ files are included in the package.  See Reich et al. (2009)
 <doi:10.1111/j.1541-0420.2011.01709.x>, and Lessler et al. (2009)
 <doi:10.1016/S1473-3099(09)70069-6>.")
     (license license:gpl2+)))
-
-(define-public r-coap
-  (package
-    (name "r-coap")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "COAP" version))
-       (sha256
-        (base32 "1772aiy9ywvgb1k9qn41l00qhsmhxkx53mdl16ggcwq0c3gdm8ly"))))
-    (properties `((upstream-name . "COAP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/feiyoung/COAP")
-    (synopsis
-     "High-Dimensional Covariate-Augmented Overdispersed Poisson Factor Model")
-    (description
-     "This package provides a covariate-augmented overdispersed Poisson factor model
-is proposed to jointly perform a high-dimensional Poisson factor analysis and
-estimate a large coefficient matrix for overdispersed count data.  More details
-can be referred to Liu et al. (2024) <doi:10.1093/biomtc/ujae031>.")
-    (license license:gpl3)))
 
 (define-public r-coalescentmcmc
   (package

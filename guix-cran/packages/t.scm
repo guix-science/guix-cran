@@ -10337,6 +10337,27 @@ predicted response as well as the moment matrix based on a third order response
 surface model.")
     (license license:gpl2+)))
 
+(define-public r-torchvisionlib
+  (package
+    (name "r-torchvisionlib")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "torchvisionlib" version))
+       (sha256
+        (base32 "1n9gvidi3lvcq730c70mzh94w42asv903708fqyqp2wrs68884na"))))
+    (properties `((upstream-name . "torchvisionlib")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-torch r-rlang r-rcpp r-glue))
+    (home-page "https://github.com/mlverse/torchvisionlib")
+    (synopsis "Additional Operators for Image Models")
+    (description
+     "This package implements additional operators for computer vision models,
+including operators necessary for image segmentation and object detection deep
+learning models.")
+    (license license:expat)))
+
 (define-public r-torchvision
   (package
     (name "r-torchvision")
@@ -10854,13 +10875,13 @@ bug fixes to the original code.")
 (define-public r-topchef
   (package
     (name "r-topchef")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "topChef" version))
        (sha256
-        (base32 "13gqifd3l47pand0bf0993x6fhm9vgj3l95lkc055rq3ffzpdyl4"))))
+        (base32 "0nad6a8iqgpyjj8hxj9lk48y4dvqiak267ikmjgv1avwayc4sa16"))))
     (properties `((upstream-name . "topChef")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-dplyr))
@@ -21235,13 +21256,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "1byv3q2kjd1aibzxhvwnm7fl2vsz069pxmcjx1zjl6w6453y5s3h"))))
+        (base32 "0pmx2f9xjw463jnnbdbpvlwjaq5c04lry8iavisxniwshr5piqfm"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
