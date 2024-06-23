@@ -22748,6 +22748,30 @@ files are included in the package.  See Reich et al. (2009)
 <doi:10.1016/S1473-3099(09)70069-6>.")
     (license license:gpl2+)))
 
+(define-public r-coap
+  (package
+    (name "r-coap")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COAP" version))
+       (sha256
+        (base32 "1772aiy9ywvgb1k9qn41l00qhsmhxkx53mdl16ggcwq0c3gdm8ly"))))
+    (properties `((upstream-name . "COAP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/feiyoung/COAP")
+    (synopsis
+     "High-Dimensional Covariate-Augmented Overdispersed Poisson Factor Model")
+    (description
+     "This package provides a covariate-augmented overdispersed Poisson factor model
+is proposed to jointly perform a high-dimensional Poisson factor analysis and
+estimate a large coefficient matrix for overdispersed count data.  More details
+can be referred to Liu et al. (2024) <doi:10.1093/biomtc/ujae031>.")
+    (license license:gpl3)))
+
 (define-public r-coalescentmcmc
   (package
     (name "r-coalescentmcmc")
