@@ -1352,13 +1352,13 @@ United States Environmental Protection Agency (2015)
 (define-public r-swmpr
   (package
     (name "r-swmpr")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SWMPr" version))
        (sha256
-        (base32 "1p7gzyzdm3fiam76dwl2sb3drphifakx2mj5jz1v3gp57xyhihiz"))))
+        (base32 "15193hv4hvr46l42qvpi5pd187bjjcmrs7akm13vm3nr6nlvzpkx"))))
     (properties `((upstream-name . "SWMPr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2504,13 +2504,13 @@ bookdown or quarto'.  Supporting functions for using Sweave and Knitr with
 (define-public r-svs
   (package
     (name "r-svs")
-    (version "3.0.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svs" version))
        (sha256
-        (base32 "1jn3dbaqpgydkwf9y7hq97nva26vvrpl9zmw2bw4ky1qgzgz1ypb"))))
+        (base32 "0hfs0dif4b9ssi98mv2aa849blgdgvphymafabmsix4nkdjqzi2k"))))
     (properties `((upstream-name . "svs")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-gtools))
@@ -25486,13 +25486,13 @@ non-zero elements.  Documentation is provided in Gerber, Moesinger and Furrer
 (define-public r-spagmix
   (package
     (name "r-spagmix")
-    (version "0.4-1")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spagmix" version))
        (sha256
-        (base32 "1vy951y7c1dabykqiij56qa56hc2lqahrav80698hpjbmxcr3w5f"))))
+        (base32 "0s3y0xapqn67hjl42g9w6jkcip5x5fbv8fyq2angkvqahps1nrg4"))))
     (properties `((upstream-name . "spagmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -29512,13 +29512,13 @@ generates random numbers.")
 (define-public r-smplot2
   (package
     (name "r-smplot2")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smplot2" version))
        (sha256
-        (base32 "1cn4sv7a7gra2b7xwkwjglaygrrcd9b6mdh00dgq3mpf0b8rllvg"))))
+        (base32 "1aigy0md8xgv9yfr0391wpc9a36566m5avm71g48688hg26djrh7"))))
     (properties `((upstream-name . "smplot2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -32599,13 +32599,13 @@ Binary Data described by Chen, Y., Culpepper, S. A., and Liang, F. (2020)
 (define-public r-slcare
   (package
     (name "r-slcare")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLCARE" version))
        (sha256
-        (base32 "0l2r7rqyvrisjdl721n6jbbv8y579l3m3i1c3xsn4r2fnry125yx"))))
+        (base32 "0ci04i231dgnknqaw2wwv9q7q6psazd537c2x3330kk6zydgass8"))))
     (properties `((upstream-name . "SLCARE")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -47016,36 +47016,6 @@ Sequential Experiments that Iteratively Learns which Covariates Improve Power\"
 (2020) <@code{arXiv:2010.05980>}.")
     (license license:gpl3)))
 
-(define-public r-seqest
-  (package
-    (name "r-seqest")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "seqest" version))
-       (sha256
-        (base32 "06zk87n26305m0hy6lg7v3bpxmsqvinwkvw3dvmzkqp5jdkhwikb"))))
-    (properties `((upstream-name . "seqest")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vgam
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-nnet
-                             r-mvtnorm
-                             r-mass
-                             r-geepack
-                             r-foreach))
-    (home-page "https://cran.r-project.org/package=seqest")
-    (synopsis
-     "Sequential Method for Classification and Generalized Estimating Equations Problem")
-    (description
-     "Sequential method to solve the the binary classification problem by Wang (2019)
-<@code{arXiv:arXiv:1901.10079>}, multi-class classification problem by Li (2020)
-<doi:10.1016/j.csda.2020.106911> and the highly stratified multiple-response
-problem by Chen (2019) <doi:10.1111/biom.13160>.")
-    (license license:gpl2+)))
-
 (define-public r-seqdetect
   (package
     (name "r-seqdetect")
@@ -55164,13 +55134,13 @@ matrices using a pre-determined sequence of notes.")
 (define-public r-schemr
   (package
     (name "r-schemr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "schemr" version))
        (sha256
-        (base32 "192dk2b69wlwwkqrkk1n05q8hsn6djxhscjizj3amj4b701xw612"))))
+        (base32 "0g27w49mg3sd2mc82cj18dafhg757nig1gax8aiqyraga55a4hb1"))))
     (properties `((upstream-name . "schemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -59816,6 +59786,28 @@ documentation, and examples.")
 paths of the sparse and coupled sparse asymmetric least squares, including the
 (adaptive) elastic net and Lasso penalized SALES and COSALES regressions.")
     (license license:gpl2+)))
+
+(define-public r-salad
+  (package
+    (name "r-salad")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "salad" version))
+       (sha256
+        (base32 "1fcs6g1ld514gkr5rxbawpxd81p9ywfxfhrh3jjwd3807gc9l2r4"))))
+    (properties `((upstream-name . "salad")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=salad")
+    (synopsis "Simple Automatic Differentiation")
+    (description
+     "Handles both vector and matrices, using a flexible S4 class for automatic
+differentiation.  The method used is forward automatic differentiation.  Many
+functions and methods have been defined, so that in most cases, functions
+written without automatic differentiation in mind can be used without change.")
+    (license license:expat)))
 
 (define-public r-saive
   (package

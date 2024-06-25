@@ -10222,13 +10222,13 @@ researchers.")
 (define-public r-eph
   (package
     (name "r-eph")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eph" version))
        (sha256
-        (base32 "06dk7j85p0l4n4fsdzjwazk8sh2c7frddwmhmdqzsqswv3zqaxm8"))))
+        (base32 "02yl12chvqz02dk7f1asb21axr4g6yyd91dzpjcggdv6zrjpfbvx"))))
     (properties `((upstream-name . "eph")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10245,8 +10245,7 @@ researchers.")
                              r-expss
                              r-dplyr
                              r-curl
-                             r-cli
-                             r-attempt))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/eph")
     (synopsis
@@ -13367,13 +13366,13 @@ package.  The core module of this package is developed in C++'.")
 (define-public r-emayili
   (package
     (name "r-emayili")
-    (version "0.8.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emayili" version))
        (sha256
-        (base32 "0cpg77w8z1j05mqkkji7hqpan8p1kq6l1r07iwpsany0y5di0mlf"))))
+        (base32 "04dlya7fki6gq98rws5b3577lrs0cd213ml3w8qcsyzn7bbpz7np"))))
     (properties `((upstream-name . "emayili")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

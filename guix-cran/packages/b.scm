@@ -7090,13 +7090,13 @@ in practical clinical trial analyses.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsai" version))
        (sha256
-        (base32 "048nfgnzsi0zz0nsxl30nsjg63nszy44881s49g9hgs3vng2vmp2"))))
+        (base32 "1hr7ilq9ll4vpqqif3v6yjxi9n0dcm1xxzmp6p5r73p9pdwrhy0q"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7113,9 +7113,10 @@ in practical clinical trial analyses.")
     (description
      "Bindings for additional tree-based model engines for use with the parsnip
 package.  Models include gradient boosted decision trees with @code{LightGBM}
-(Ke et al, 2017.) and conditional inference trees and conditional random forests
+(Ke et al, 2017.), conditional inference trees and conditional random forests
 with partykit (Hothorn and Zeileis, 2015.  and Hothorn et al, 2006.
-<doi:10.1198/106186006X133933>).")
+<doi:10.1198/106186006X133933>), and accelerated oblique random forests with
+aorsf (Jaeger et al, 2022 <doi:10.5281/zenodo.7116854>).")
     (license license:expat)))
 
 (define-public r-bonn
@@ -11939,13 +11940,13 @@ developed in C to achieve adequate performance.")
 (define-public r-biopixr
   (package
     (name "r-biopixr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biopixR" version))
        (sha256
-        (base32 "1ab5sqik4pnkq4f3dhf27z5c74jqrj8r95pwz2rdhaagm5ac8iyy"))))
+        (base32 "0avdpg73s9hqkyfgrfmprhcc5hpxf4in6s3221n5gf3pcii8jw0c"))))
     (properties `((upstream-name . "biopixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-magick r-imager r-data-table r-cluster))
@@ -16202,13 +16203,13 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "1k83x9x48vls5ahvl4fm3salss4vf27z23iiylkj7fcrf4br6q27"))))
+        (base32 "1cvz1srygaxxywlyp09aa4a6hlf504455ka1l8rwsa37m7h8k1bi"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -20173,13 +20174,13 @@ bias-corrected maximum likelihood estimator.")
 (define-public r-bcclong
   (package
     (name "r-bcclong")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BCClong" version))
        (sha256
-        (base32 "06i77iz6i79dbwnjic7x7dgysbh4x22ixhzlpkmpb47yx7c2qmvf"))))
+        (base32 "1ighfc6zsgclvpfan0vdi0k896y4lnwkvm9g3fj1zmmzf2pym3mj"))))
     (properties `((upstream-name . "BCClong")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -20195,6 +20196,7 @@ bias-corrected maximum likelihood estimator.")
                              r-lme4
                              r-laplacesdemon
                              r-label-switching
+                             r-gridextra
                              r-ggplot2
                              r-coda
                              r-cluster
@@ -23633,13 +23635,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "1.0.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "1mkz9viwjf9syfgb5dnzknc96qypsjdkwijky4ybyankzg8nwwrs"))))
+        (base32 "1s291ins320iqfbrqixxaxvizc8ili27xqp0syy21cjc8y6yl2nn"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -23657,7 +23659,7 @@ to use and research on Bayesian Neural Networks.")
 flexible baseline hazard function is achieved via a piecewise exponential
 likelihood with time varying split points and smoothing prior on the historic
 baseline hazards.  The method is described in Scott and Lewin (2024)
-<@code{arXiv:2401.06082>}.")
+<doi:10.48550/@code{arXiv.2401.06082>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesess

@@ -8326,6 +8326,30 @@ Lindgren et.  al. (2023) <doi:10.48550/@code{arXiv.2006.04917>}.  Details are
 provided in the available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
+(define-public r-inlamemi
+  (package
+    (name "r-inlamemi")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inlamemi" version))
+       (sha256
+        (base32 "0l18skd43kl99xjyw59pil9rmm60jlkgr7iklghrid280p2984zj"))))
+    (properties `((upstream-name . "inlamemi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://emmaskarstein.github.io/inlamemi/")
+    (synopsis "Missing Data and Measurement Error Modelling in INLA")
+    (description
+     "Facilitates fitting measurement error and missing data imputation models using
+integrated nested Laplace approximations, according to the method described in
+Skarstein, Martino and Muff (2023) <doi:10.1002/bimj.202300078>.  See Skarstein
+and Muff (2024) <doi:10.48550/@code{arXiv.2406.08172>} for details on using the
+package.")
+    (license license:expat)))
+
 (define-public r-inlajoint
   (package
     (name "r-inlajoint")
@@ -11972,6 +11996,41 @@ perform oversampling.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-imanr
+  (package
+    (name "r-imanr")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imanr" version))
+       (sha256
+        (base32 "1lkgyq4nkyjdz3hgygrx9gjcwhrvcnbwwq5s3a7qrcgl8gn8ls49"))))
+    (properties `((upstream-name . "imanr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger
+                             r-missforest
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=imanr")
+    (synopsis "Identify the Racial Complex of Native Corns from Mexico")
+    (description
+     "This package provides a model that provides researchers with a powerful tool for
+the classification and study of native corn by aiding in the identification of
+racial complexes which are fundamental to Mexico's agriculture and culture.
+This package has been developed based on data collected by \"Proyecto Global de
+@code{MaÃ­ces} Nativos MÃ©xico\", which has conducted exhaustive surveys across
+the country to document the qualitative and quantitative characteristics of
+different types of native maize.  The trained model uses a robust and diverse
+dataset, enabling it to achieve an 80% accuracy in classifying maize racial
+complexes.  The characteristics included in the analysis comprise geographic
+location, grain and cob colors, as well as various physical measurements, such
+as lengths and widths.")
+    (license license:gpl3+)))
+
 (define-public r-imak
   (package
     (name "r-imak")
@@ -15561,13 +15620,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "0ssvsdkzh9mk6jcg88sljgqdcwwbwy55si855mk8ihpcddvsy61x"))))
+        (base32 "0g90nczc9d0y1fpkw3x89iiqkpn9ibdld0r9yc9y2sjdjj587lzw"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

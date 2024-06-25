@@ -256,6 +256,30 @@ manuscript corresponding to this package [Lyu, P. et al., (2023),
 <https://www.biorxiv.org/content/10.1101/2023.02.13.528417v2>].")
     (license license:gpl3)))
 
+(define-public r-juliaformulae
+  (package
+    (name "r-juliaformulae")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "JuliaFormulae" version))
+       (sha256
+        (base32 "0m1rn9ix66p5qgzhvlw1a7j91k21pc6kmfjr3p1c62fq6jdrzgip"))))
+    (properties `((upstream-name . "JuliaFormulae")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rrapply))
+    (home-page "https://cran.r-project.org/package=JuliaFormulae")
+    (synopsis "Translate R Regression Model Formulae to 'Julia' Syntax")
+    (description
+     "Metaprogramming utilities for converting R regression model formulae to
+equivalents in Julia <doi:10.1137/141000671>, via modifications to the abstract
+syntax tree.  Supports translations in zero correlation random effects syntax,
+protection of expressions to be evaluated as-is, interaction terms, and more.
+Accepts strings or R formula objects and returns modified R formula objects
+where possible (or a modified string, if not a valid formula in R).")
+    (license license:expat)))
+
 (define-public r-juliaconnector
   (package
     (name "r-juliaconnector")
@@ -697,13 +721,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstager
   (package
     (name "r-jstager")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstager" version))
        (sha256
-        (base32 "14n4j8imka9rrnxidvsh3rax4qqbg2ccnj6pwcwgqyw897fimjkv"))))
+        (base32 "0mgh87vm9a7jz7imgqwwwgzzfqkkjxmbdb6lmhzf43p56cg9cxab"))))
     (properties `((upstream-name . "jstager")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3078,13 +3102,13 @@ cross-validation function to perform hyperparameter tuning.")
 (define-public r-jgsbook
   (package
     (name "r-jgsbook")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jgsbook" version))
        (sha256
-        (base32 "04y4pr1apny79n9ia1iplx5ac7xg7l56sbbdzz3zv0x0jd3h6vxn"))))
+        (base32 "1k0jcfjxn5qf67533br3p6zj464knnakxvr563lvgvqxjv4j8sh2"))))
     (properties `((upstream-name . "jgsbook")))
     (build-system r-build-system)
     (propagated-inputs (list r-statip r-jsonlite r-httr r-curl))
@@ -3546,6 +3570,28 @@ local region or the whole map),it computes at each grid the 11 weather types
 during the period considered for the analysis.  See Otero et al., (2017)
 <doi:10.1007/s00382-017-3705-y> for more information.")
     (license license:gpl2+)))
+
+(define-public r-jcalendar
+  (package
+    (name "r-jcalendar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "jcalendaR" version))
+       (sha256
+        (base32 "1b8khcdxz77rd7k87462vwwykr2gi5lv0lzj7nm9famid3q7gh1l"))))
+    (properties `((upstream-name . "jcalendaR")))
+    (build-system r-build-system)
+    (home-page "https://github.com/indenkun/jcalendaR")
+    (synopsis
+     "Interconversion Between the Japanese Calendar System and the Western Calendar")
+    (description
+     "This is a set of simple utility functions to perform mutual conversion between
+the current Japanese calendar system that Wareki, the old Japanese calendar
+system that the Kyureki calendar and the Julian and Gregorian calendar.  To
+calculate each calendar method, it converts to the Julian Day Number.")
+    (license license:expat)))
 
 (define-public r-jbrowser
   (package

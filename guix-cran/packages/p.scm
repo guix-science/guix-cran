@@ -77,13 +77,13 @@
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pysparklyr" version))
        (sha256
-        (base32 "1qya9v6hh2jrsxihz87yk2sxhyp7mcnjl4invv7n5awq9ljz946l"))))
+        (base32 "1029way7vq02bi6hj78vxfqgq3ccbzyv7b758lv51rjm6fm9ckpr"))))
     (properties `((upstream-name . "pysparklyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -103,7 +103,8 @@
                              r-dplyr
                              r-dbplyr
                              r-dbi
-                             r-cli))
+                             r-cli
+                             r-arrow))
     (home-page "https://github.com/mlverse/pysparklyr")
     (synopsis "Provides a 'PySpark' Back-End for the 'sparklyr' Package")
     (description
@@ -8078,13 +8079,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "0y1yj03msaj5cp9kyfmfr3nysk7lzbphwg55ahmb5yh8l9fz13ci"))))
+        (base32 "105igqm57470znpnh2p63ilw0d5gc6f6ij997fdka7x3vmkll4b2"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10992,13 +10993,13 @@ attained.")
 (define-public r-practools
   (package
     (name "r-practools")
-    (version "1.4.3")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PracTools" version))
        (sha256
-        (base32 "14bgwmly49ba0xrvlns9dfn3q5yz38q3kvc3g6swryzhfb5wjb4r"))))
+        (base32 "1ridvpj9zgf987ysg86620r7daxh6r48gfjnyd6amsb8i6rdvp31"))))
     (properties `((upstream-name . "PracTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-usmap r-ggplot2 r-geosphere r-dplyr))

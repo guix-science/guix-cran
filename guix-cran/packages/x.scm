@@ -2071,13 +2071,13 @@ to the 3D surface measurements.")
 (define-public r-x13binary
   (package
     (name "r-x13binary")
-    (version "1.1.60")
+    (version "1.1.61")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "x13binary" version))
        (sha256
-        (base32 "1hc5knakha9pwlm9irrrjav012a53x97jv2wpw4lwhfnp6lwy118"))))
+        (base32 "0v7cwgq3xkz4k9l2drxa4bjgam1drs43chfwvs8hbcl1ybrxi2h4"))))
     (properties `((upstream-name . "x13binary")))
     (build-system r-build-system)
     (native-inputs (list gfortran))

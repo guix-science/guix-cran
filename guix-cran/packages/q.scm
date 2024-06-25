@@ -2790,6 +2790,31 @@ likelihood radio test.  See Zhou et al. (2022) <doi:10.1093/bib/bbab596> and Wen
 et al. (2018) <doi:10.1093/bib/bby058>.")
     (license license:gpl2+)))
 
+(define-public r-qtkit
+  (package
+    (name "r-qtkit")
+    (version "0.10.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qtkit" version))
+       (sha256
+        (base32 "11mj6mlcfmdm2v40l9hml1ybqn2s9dkir9igl45ysk5b8855i8db"))))
+    (properties `((upstream-name . "qtkit")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://qtalr.github.io/qtkit/")
+    (synopsis "Quantitative Text Kit")
+    (description
+     "Support package for the textbook \"An Introduction to Quantitative Text Analysis
+for Linguists: Reproducible Research using R\" (Francom, 2024)
+<doi:10.4324/9781003393764> (available only after August 12, 2024).  Includes
+functions to acquire, clean, and analyze text data as well as functions to
+document and share the results of text analysis.  The package is designed to be
+used in conjunction with the book, but can also be used as a standalone package
+for text analysis.")
+    (license license:gpl3+)))
+
 (define-public r-qte-rd
   (package
     (name "r-qte-rd")

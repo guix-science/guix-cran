@@ -14735,13 +14735,13 @@ dice.")
 (define-public r-dibble
   (package
     (name "r-dibble")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dibble" version))
        (sha256
-        (base32 "02sf7d50a8w14xjwzdc5fq2xprlzl03yc4xs8qr4p8ycwvmlwwb1"))))
+        (base32 "1s845ii2hd0d2aam3wp3rb7r7i60plzqdmgdgix1pwbam02cfymn"))))
     (properties `((upstream-name . "dibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -26134,6 +26134,36 @@ two populations or create a new genlight object based on allele frequencies of
 an existing genlight object.")
     (license license:gpl3+)))
 
+(define-public r-dartr-sexlinked
+  (package
+    (name "r-dartr-sexlinked")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dartR.sexlinked" version))
+       (sha256
+        (base32 "07x9zly2vwzd9riw0hfwl8nqq4chs9rgwjj7b39whz25an6aqvvw"))))
+    (properties `((upstream-name . "dartR.sexlinked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-patchwork
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel
+                             r-dartr-data
+                             r-dartr-base
+                             r-adegenet))
+    (home-page "https://green-striped-gecko.github.io/dartR/")
+    (synopsis "Analysing SNP Data to Identify Sex-Linked Markers")
+    (description
+     "Identifies, filters and exports sex linked markers using SNP (single nucleotide
+polymorphism) data.  To install the other packages, we recommend to install the
+@code{dartRverse} package, that supports the installation of all packages in the
+@code{dartRverse}'.  If you want understand the applied rational to identify
+sexlinked markers and/or want to cite @code{dartR.sexlinked}', you find the
+information by typing citation('@code{dartR.sexlinked}') in the console.")
+    (license license:gpl3+)))
+
 (define-public r-dartr-popgen
   (package
     (name "r-dartr-popgen")
@@ -27872,27 +27902,27 @@ partition chart, ...")
 (define-public r-d3mirt
   (package
     (name "r-d3mirt")
-    (version "1.1.0")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "D3mirt" version))
        (sha256
-        (base32 "1a7c2q1rm8yhdsszh4lg6nca8sfyyvba3v4gchdjll7660grpyr7"))))
+        (base32 "0mdiirc0k8hlqyj9fq62bpgin6nk2jl604qdrcfh2ympwkm54iz6"))))
     (properties `((upstream-name . "D3mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-mirt))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/ForsbergPyschometrics/D3mirt")
-    (synopsis "Descriptive 3D Multidimensional Item Response Theory Modeling")
+    (synopsis "Descriptive 3D Multidimensional Item Response Theory Modelling")
     (description
      "For identifying, estimating, and plotting descriptive multidimensional item
 response theory models, restricted to 3D and dichotomous or polytomous data that
 fit the two-parameter logistic model or the graded response model.  The method
 is foremost explorative and centered around the plot function that exposes item
 characteristics and constructs, represented by vector arrows, located in a
-three-dimensional interactive space.  The results can be useful for item-level
-analysis as well as test development.")
+three-dimensional interactive latent space.  The results can be useful for
+item-level analysis as well as test development.")
     (license license:gpl3+)))
 
 (define-public r-d3gb

@@ -739,13 +739,13 @@ matrices, data frames, time series (in ts or zoo format).")
 (define-public r-ltsk
   (package
     (name "r-ltsk")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltsk" version))
        (sha256
-        (base32 "01f0jvm4fihssgfhb062wlqqvrfdikixycxfz93dkqahjmrjz5dl"))))
+        (base32 "1l599dc52l5sq9avrb6ij6apxwba3qqa4vgcngmwsn9y76h3wal7"))))
     (properties `((upstream-name . "ltsk")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -2035,13 +2035,13 @@ based on the likelihood ratio
 (define-public r-lrstat
   (package
     (name "r-lrstat")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lrstat" version))
        (sha256
-        (base32 "01hhjywz9ndjn070h8dy4fcs2ldmhfhql4v562jk71vfpjh9wvas"))))
+        (base32 "046j8v4faj4hfap7hn1bdin7zwxbck8732c3ay8ncxilh46bpgs9"))))
     (properties `((upstream-name . "lrstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-mvtnorm r-lpsolve))
@@ -11388,13 +11388,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.3")
+    (version "4.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "0yg9galvwnjzgkfj8hrmrscsdd7qh0g9fqxdqh444wkfarw55n0k"))))
+        (base32 "1d0k41fg66g0x6apd6yvc74gnl3mgs16kmykz53qhnd4zi5rj99k"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -15144,6 +15144,30 @@ approximation method of computation, see Yoon G., MÃ¼ller C.L. and Gaynanova I
 interpolation originally implemented in the R package
 <https://cran.r-project.org/package=chebpol>.")
     (license license:gpl3)))
+
+(define-public r-latent2likert
+  (package
+    (name "r-latent2likert")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latent2likert" version))
+       (sha256
+        (base32 "1fph5jfvmaw3js1gzv8vys5dck0kca9mysnqpyspsh53dwrji40p"))))
+    (properties `((upstream-name . "latent2likert")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://lalovic.io/latent2likert/")
+    (synopsis "Converting Latent Variables into Likert Scale Responses")
+    (description
+     "Effectively simulates the discretization process inherent to Likert scales while
+minimizing distortion.  It converts continuous latent variables into ordinal
+categories to generate Likert scale item responses.  Particularly useful for
+accurately modeling and analyzing survey data that use Likert scales, especially
+when applying statistical techniques that require metric data.")
+    (license license:expat)))
 
 (define-public r-latenetwork
   (package

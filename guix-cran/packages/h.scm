@@ -8702,16 +8702,16 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heimdall
   (package
     (name "r-heimdall")
-    (version "1.0.3")
+    (version "1.0.707")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heimdall" version))
        (sha256
-        (base32 "02lpyiphzyirmi6fl0l4k3vm5b3gvw1f8ha5mmsrkcnnvixakb2y"))))
+        (base32 "0r78igy5dp2h5xdrcz607si80gxc8q33li4df99clz2qp507c3w5"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-daltoolbox r-caret))
+    (propagated-inputs (list r-reticulate r-ggplot2 r-daltoolbox r-caret))
     (home-page "https://github.com/cefet-rj-dal/heimdall")
     (synopsis "Drift Adaptable Models")
     (description

@@ -1576,6 +1576,26 @@ identified subsets in the training set.  This package implements customized
 training for the glmnet() and cv.glmnet() functions.")
     (license license:gpl2)))
 
+(define-public r-customiser
+  (package
+    (name "r-customiser")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "customiser" version))
+       (sha256
+        (base32 "11lh949ybrz0dmsy4kxnacawqsybzs6nayxnlq6465slwnfy6slf"))))
+    (properties `((upstream-name . "customiser")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-rmarkdown r-rlang r-knitr r-fs))
+    (home-page "https://github.com/jameslairdsmith/customiser")
+    (synopsis "Use R Markdown to Write your \"Rprofile\"")
+    (description
+     "This package provides a simple way to write \".Rprofile\" code in an R Markdown
+file and have it knit to the correct location for your operating system.")
+    (license license:expat)))
+
 (define-public r-customerscoringmetrics
   (package
     (name "r-customerscoringmetrics")
@@ -3734,6 +3754,33 @@ Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006> and Chetverikov
 and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
     (license license:gpl3+)))
 
+(define-public r-csquares
+  (package
+    (name "r-csquares")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "csquares" version))
+       (sha256
+        (base32 "08p36fmd6c5yd45ik87c3x5iny9pk21ljgy2903v7qhhcnkpddw7"))))
+    (properties `((upstream-name . "csquares")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-stars
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=csquares")
+    (synopsis "Concise Spatial Query and Representation System (c-Squares)")
+    (description
+     "Encode and decode c-squares, from and to simple feature (sf) or spatiotemporal
+arrays (stars) objects.  Use c-squares codes to quickly join or query spatial
+data.")
+    (license license:gpl3+)))
+
 (define-public r-csppdata
   (package
     (name "r-csppdata")
@@ -4375,17 +4422,19 @@ regression model.")
 (define-public r-csalert
   (package
     (name "r-csalert")
-    (version "2023.6.17")
+    (version "2024.6.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csalert" version))
        (sha256
-        (base32 "004rsqf912f9ladp9kvx26fhmkna61cxlgjfzmlxzirm1h2iw1vs"))))
+        (base32 "0ahafz39x8zh4yrwhjkbv2fwvz1vpckksj935k9g18ympdg4nnyz"))))
     (properties `((upstream-name . "csalert")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
+    (propagated-inputs (list r-surveillance
+                             r-stringr
                              r-magrittr
+                             r-lubridate
                              r-glm2
                              r-ggplot2
                              r-data-table
@@ -6917,13 +6966,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew
   (package
     (name "r-crew")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew" version))
        (sha256
-        (base32 "1a2nfd5fxvcsvpwrhi3fcrwzzjkk0fd1da46r3qrlx0m6qpr3ga8"))))
+        (base32 "1js1znvvp650v8zpsh0vy58m5plylhq5h4x26pijk3vr6w3bl7q2"))))
     (properties `((upstream-name . "crew")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -25917,32 +25966,6 @@ simulated results as well.")
 and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
     (license license:expat)))
 
-(define-public r-clrng
-  (package
-    (name "r-clrng")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clrng" version))
-       (sha256
-        (base32 "19yssgpnb5n52iwqpii73c5j9my7936i8nhl7v9j5grvfl5w52wv"))))
-    (properties `((upstream-name . "clrng")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-gpur))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=clrng")
-    (synopsis "Parallel Random Number Generation on GPU")
-    (description
-     "Builds on @code{gpuR} and utilizes the @code{clRNG} ('@code{OpenCL}') library to
-provide efficient tools to generate independent random numbers in parallel on a
-GPU and save the results as R objects, ensuring high-quality random numbers even
-when R is used interactively or in an ad-hoc manner.  Includes Fisher's
-simulation method adapted from Patefield, William M (1981) <doi:10.2307/2346669>
-and MRG31k3p Random Number Generator from @code{clRNG} library by Advanced Micro
-Devices, Inc. (2015) <https://github.com/@code{clMathLibraries/clRNG>}.")
-    (license license:gpl3)))
-
 (define-public r-clr
   (package
     (name "r-clr")
@@ -28272,15 +28295,16 @@ confident it is about each of the labels.")
 (define-public r-clarabel
   (package
     (name "r-clarabel")
-    (version "0.5.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clarabel" version))
        (sha256
-        (base32 "12kds0pwvs2wrv23pjs6bbh49gymak7as46qjz65is4ssd12fbs8"))))
+        (base32 "1g66y8s4v7qzm92dhnsmng28sm4lf6wggb4kc6arvp75z0i315jh"))))
     (properties `((upstream-name . "clarabel")))
     (build-system r-build-system)
+    (inputs (list))
     (native-inputs (list r-knitr))
     (home-page "https://oxfordcontrol.github.io/clarabel-r/")
     (synopsis "Interior Point Conic Optimization Solver")
@@ -28288,13 +28312,13 @@ confident it is about each of the labels.")
      "This package provides a versatile interior point solver that solves linear
 programs (LPs), quadratic programs (QPs), second-order cone programs (SOCPs),
 semidefinite programs (SDPs), and problems with exponential and power cone
-constraints (<https://oxfordcontrol.github.io/@code{ClarabelDocs/stable/>}).
-For quadratic objectives, unlike interior point solvers based on the standard
-homogeneous self-dual embedding (HSDE) model, Clarabel handles quadratic
-objective without requiring any epigraphical reformulation of its objective
-function.  It can therefore be significantly faster than other HSDE-based
-solvers for problems with quadratic objective functions.  Infeasible problems
-are detected using using a homogeneous embedding technique.")
+constraints (<https://clarabel.org/stable/>).  For quadratic objectives, unlike
+interior point solvers based on the standard homogeneous self-dual embedding
+(HSDE) model, Clarabel handles quadratic objective without requiring any
+epigraphical reformulation of its objective function.  It can therefore be
+significantly faster than other HSDE-based solvers for problems with quadratic
+objective functions.  Infeasible problems are detected using using a homogeneous
+embedding technique.")
     (license license:asl2.0)))
 
 (define-public r-clamr
@@ -33829,16 +33853,16 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "17qjjcyhfn2n9fkbc4dciscr35dnnvv15csh7yw738kzfvybvrvp"))))
+        (base32 "09bgpw7j3l08prjj2nkcd92qwx89i6ibaahzb7mkfgvmm9wq4p66"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-iso r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-survival r-pbapply r-iso r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=CFO")
     (synopsis "CFO-Type Designs in Phase I Clinical Trials")
     (description
@@ -34363,13 +34387,13 @@ on expression of @code{ceRNA} ternary pair.")
 (define-public r-ceriolioutlierdetection
   (package
     (name "r-ceriolioutlierdetection")
-    (version "1.1.13")
+    (version "1.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CerioliOutlierDetection" version))
        (sha256
-        (base32 "1m1mj5cf0sfdfci05ayc86wfx3cj12dfn98pi7cqxcf5nbn3h3n5"))))
+        (base32 "1ngwq99q5xi3n06df36dhbgdpjdldfzsi70vhplwlha9cihd71k2"))))
     (properties `((upstream-name . "CerioliOutlierDetection")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase))
@@ -34381,7 +34405,9 @@ on expression of @code{ceRNA} ternary pair.")
 multivariate outlier detection via robust Mahalanobis distances.  Also provides
 the finite-sample RMCD method discussed in the paper, as well as the methods
 provided in Hardin and Rocke (2005) <doi:10.1198/106186005X77685> and Green and
-Martin (2017).")
+Martin (2017) <https://christopherggreen.github.io/papers/hr05_extension.pdf>.
+See also Chapter 2 of Green (2017)
+<https://digital.lib.washington.edu/researchworks/handle/1773/40304>.")
     (license license:gpl2+)))
 
 (define-public r-cerfit
@@ -39862,36 +39888,6 @@ grouped bar plots, and a demo of the quantile-normal plot for data drawn from
 different distributions.")
     (license license:gpl2)))
 
-(define-public r-carlasso
-  (package
-    (name "r-carlasso")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CARlasso" version))
-       (sha256
-        (base32 "05r5n5bh0fpwfigr6czh9pg29zyrw73idfvs9qm8vr3dvcmvc42r"))))
-    (properties `((upstream-name . "CARlasso")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/YunyiShen/CAR-LASSO")
-    (synopsis "Conditional Autoregressive LASSO")
-    (description
-     "Algorithms to fit Bayesian Conditional Autoregressive LASSO with automatic and
-adaptive shrinkage described in Shen and Solis-Lemus (2020)
-<@code{arXiv:2012.08397>}.")
-    (license license:gpl3)))
-
 (define-public r-caribou
   (package
     (name "r-caribou")
@@ -40868,13 +40864,13 @@ Arias-Pulido H et al. (2008) <doi:10.1002/gcc.20577>.  Davis S, Meltzer PS
 (define-public r-canvasxpress
   (package
     (name "r-canvasxpress")
-    (version "1.46.9-1")
+    (version "1.50.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "canvasXpress" version))
        (sha256
-        (base32 "0zb6cgpxzd9245jzabvw9x09ziihkfjc3gx1qclpqkvdbyq85qx6"))))
+        (base32 "04ibr6ksqcn7kngxy65gqx8cc2p1a5acpwg2m800csnn0x7yk05x"))))
     (properties `((upstream-name . "canvasXpress")))
     (build-system r-build-system)
     (arguments

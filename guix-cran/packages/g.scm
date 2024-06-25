@@ -15251,13 +15251,13 @@ Julian Hernandez-Serano.")
 (define-public r-ggupset
   (package
     (name "r-ggupset")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggupset" version))
        (sha256
-        (base32 "079a1fghhbxhkx42ac0n5chmh07i60m2pkdk76frqbbmwrw7inx4"))))
+        (base32 "0cycnnycn1qazy35s4w746zlfraayf109bq40fglklmick6kfwsz"))))
     (properties `((upstream-name . "ggupset")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-scales r-rlang r-gtable r-ggplot2))
@@ -20947,6 +20947,37 @@ implemented on high dimensional datasets in practice.  See Robbins (2021)
 <@code{arXiv:2008.02243>}.")
     (license license:gpl2)))
 
+(define-public r-geppe
+  (package
+    (name "r-geppe")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geppe" version))
+       (sha256
+        (base32 "08d50sg80dj3jazznszs7b0jpb21jp9khjvplx1qgdlpnlljwq4h"))))
+    (properties `((upstream-name . "geppe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast2))
+    (home-page "https://cran.r-project.org/package=geppe")
+    (synopsis
+     "Generalised Exponential Poisson and Poisson Exponential Distributions")
+    (description
+     "Maximum likelihood estimation, random values generation, density computation and
+other functions for the exponential-Poisson generalised exponential-Poisson and
+Poisson-exponential distributions.  References include: Rodrigues G. C., Louzada
+F. and Ramos P. L. (2018). \"Poisson-exponential distribution: different methods
+of estimation\".  Journal of Applied Statistics, 45(1): 128--144.
+<doi:10.1080/02664763.2016.1268571>.  Louzada F., Ramos, P. L. and Ferreira, H.
+P. (2020). \"Exponential-Poisson distribution: estimation and applications to
+rainfall and aircraft data with zero occurrence\".  Communications in
+Statistics--Simulation and Computation, 49(4): 1024--1043.
+<doi:10.1080/03610918.2018.1491988>.  Barreto-Souza W. and Cribari-Neto F.
+(2009). \"A generalization of the exponential-Poisson distribution\".  Statistics
+and Probability Letters, 79(24): 2493--2500. <doi:10.1016/j.spl.2009.09.003>.")
+    (license license:gpl2+)))
+
 (define-public r-gepaf
   (package
     (name "r-gepaf")
@@ -21795,13 +21826,13 @@ in polar co-ordinates.")
 (define-public r-geomorph
   (package
     (name "r-geomorph")
-    (version "4.0.7")
+    (version "4.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomorph" version))
        (sha256
-        (base32 "16rqf1g5g3gvzjvjjahs06h00gl3n1vbmk8xzyh0c3rjmgdiz2x3"))))
+        (base32 "0m8c1y3mi794k7b8zrnkvs098gjmaq3lvp1ds3kxjn7v0ddavd0l"))))
     (properties `((upstream-name . "geomorph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrpp
@@ -22115,13 +22146,13 @@ is approximately 12 MB.")
 (define-public r-geomarchetypal
   (package
     (name "r-geomarchetypal")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeomArchetypal" version))
        (sha256
-        (base32 "112drwxh4khcplrf3krf97v2wxf5qvfgm58mjaswjcdk1zkjdfi0"))))
+        (base32 "072llxc2chj5acbpyg5h9hyi9mrwr0s7xg508bs2sxjx4s77kf5l"))))
     (properties `((upstream-name . "GeomArchetypal")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -28631,13 +28662,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0bs557cv74wcizw7j1xswx8lf3rl6vc3ybdn71854mjrab0sjz85"))))
+        (base32 "0bwka0i9afc9vdw94mbjvqz54w4bfywm84c7mchazr4jwc5p309g"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))

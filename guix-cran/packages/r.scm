@@ -2040,39 +2040,6 @@ can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
 
-(define-public r-rusquant
-  (package
-    (name "r-rusquant")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rusquant" version))
-       (sha256
-        (base32 "02saxymlmjmbzczhn2ihyn09106005wi39f2q9dyasrzi7n6v6pk"))))
-    (properties `((upstream-name . "rusquant")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xts
-                             r-xml
-                             r-stringr
-                             r-rvest
-                             r-quantmod
-                             r-jsonlite
-                             r-jose
-                             r-httr
-                             r-data-table
-                             r-base64enc))
-    (home-page "https://rusquant.ru")
-    (synopsis "Quantitative Trading Framework")
-    (description
-     "Collection of functions to retrieve financial data from various sources,
-including brokerage and exchange platforms, financial websites, and data
-providers.  Includes functions to retrieve account information, portfolio
-information, and place/cancel orders from different brokers.  Additionally,
-allows users to download historical data such as earnings, dividends, stock
-splits.")
-    (license license:gpl3)))
-
 (define-public r-rusk
   (package
     (name "r-rusk")
@@ -2999,6 +2966,48 @@ document that support @code{JavaScript} typed data
 (https://github.com/tercen/TSON).")
     (license (license:fsdg-compatible "Apache License Version 2.0"))))
 
+(define-public r-rtseva
+  (package
+    (name "r-rtseva")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RtsEva" version))
+       (sha256
+        (base32 "0bnpplsyc4k4gs5gh2hxr4597xqsfpd9kvkfhp7s802xby4hqnia"))))
+    (properties `((upstream-name . "RtsEva")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-tsibble
+                             r-texmex
+                             r-scales
+                             r-rlang
+                             r-pracma
+                             r-pot
+                             r-moments
+                             r-lubridate
+                             r-ggplot2
+                             r-evd
+                             r-dplyr
+                             r-changepoint))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/r-lib/devtools")
+    (synopsis "Performs the Transformed-Stationary Extreme Values Analysis")
+    (description
+     "Adaptation of the Matlab @code{tsEVA} toolbox developed by Lorenzo Mentaschi
+available here: <https://github.com/menta78/@code{tsEva>}.  It contains an
+implementation of the Transformed-Stationary (TS) methodology for non-stationary
+extreme value Analysis (EVA) as described in Mentaschi et al. (2016)
+<doi:10.5194/hess-20-3527-2016>.  In synthesis this approach consists in: (i)
+transforming a non-stationary time series into a stationary one to which the
+stationary extreme value theory can be applied; and (ii) reverse-transforming
+the result into a non-stationary extreme value distribution. @code{RtsEva}
+offers several options for trend estimation (mean, extremes, seasonal) and
+contains multiple plotting functions displaying different aspects of the
+non-stationarity of extremes.")
+    (license license:gpl3+)))
+
 (define-public r-rtsdata
   (package
     (name "r-rtsdata")
@@ -3066,13 +3075,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.4")
+    (version "0.7.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "13s1v4izqhq3w6ahna228wgs3n9zxqbmxzjjy69lmvrksfrkdy57"))))
+        (base32 "0qzdcwrs326vl5m82x06029a8y85k2ysxbwy1lzgdnhwqp127a42"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -3098,10 +3107,10 @@ case counts, and predictions and visualisation.  Both Bayesian and maximum
 likelihood methods are provided.  Log-Gaussian Cox Processes are described by
 Diggle et al. (2013) <doi:10.1214/13-STS441> and we provide both the low-rank
 approximation for Gaussian processes described by Solin and SÃ¤@code{rkkÃ¤}
-(2020) <doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2020)
-<@code{arXiv:2004.11408>} and the nearest neighbour Gaussian process described
-by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.  cmdstanr can be
-downloaded at <https://mc-stan.org/cmdstanr/>.")
+(2020) <doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2023)
+<doi:10.1007/s11222-022-10167-2> and the nearest neighbour Gaussian process
+described by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.  cmdstanr
+can be downloaded at <https://mc-stan.org/cmdstanr/>.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-rts
@@ -5867,13 +5876,13 @@ Linux'), @code{openSUSE} / SLES 15.4-5, Debian 11-12, and Ubuntu LTS 20-22.")
 (define-public r-rspiro
   (package
     (name "r-rspiro")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rspiro" version))
        (sha256
-        (base32 "1k91zdph8inkdyafz73lacbgq8x7rp55407rkpnr7nf0sbshxrr2"))))
+        (base32 "0vwbgrgdgvj52y290rh70c1hwfi1sa915qpss400r5405j8sgvkw"))))
     (properties `((upstream-name . "rspiro")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rspiro")
@@ -5882,12 +5891,15 @@ Linux'), @code{openSUSE} / SLES 15.4-5, Debian 11-12, and Ubuntu LTS 20-22.")
      "Implementation of various spirometry equations in R, currently the GLI-2012
 (Global Lung Initiative; Quanjer et al.  2012 <doi:10.1183/09031936.00080312>),
 the race-neutral GLI global 2022 (Global Lung Initiative; Bowerman et al.  2023
-<doi:10.1164/rccm.202205-0963OC>) and the NHANES3 (National Health and Nutrition
+<doi:10.1164/rccm.202205-0963OC>), the NHANES3 (National Health and Nutrition
 Examination Survey; Hankinson et al.  1999 <doi:10.1164/ajrccm.159.1.9712108>)
-equations.  Contains user-friendly functions to calculate predicted and LLN
-(Lower Limit of Normal) values for different spirometric parameters such as FEV1
-(Forced Expiratory Volume in 1 second), FVC (Forced Vital Capacity), etc, and to
-convert absolute spirometry measurements to percent (%) predicted and z-scores.")
+and the JRS 2014 (Japanese Respiratory Society; Kubota et al.  2014
+<doi:10.1016/j.resinv.2014.03.003>) equations.  Also the GLI-2017 diffusing
+capacity equations <doi:10.1183/13993003.00010-2017> are implemented.  Contains
+user-friendly functions to calculate predicted and LLN (Lower Limit of Normal)
+values for different spirometric parameters such as FEV1 (Forced Expiratory
+Volume in 1 second), FVC (Forced Vital Capacity), etc, and to convert absolute
+spirometry measurements to percent (%) predicted and z-scores.")
     (license license:gpl2+)))
 
 (define-public r-rspincalc
@@ -8124,13 +8136,13 @@ Research Methods, 49, 724â732, <doi:10.3758/s13428-016-0729-x>).")
 (define-public r-rrpp
   (package
     (name "r-rrpp")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRPP" version))
        (sha256
-        (base32 "10hd5mp4a39gh6d13lw8xnn4qvziacywls33dngvjxaq9ccxc05p"))))
+        (base32 "1dd2v1zsi1hgb73a4fjd54k2mg43sb26h9l45nq9phsn8rnrfw7z"))))
     (properties `((upstream-name . "RRPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-ggplot2 r-ape))
@@ -12829,26 +12841,6 @@ detection of events or structural breaks.")
 (<https://github.com/russellgoldenberg/scrollama>) for storytelling.")
     (license license:expat)))
 
-(define-public r-rollbar
-  (package
-    (name "r-rollbar")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rollbar" version))
-       (sha256
-        (base32 "1q2ym0vkgbdnibxmwx0bp9c20g3bm8fzwwgs3j4bxg1ydg3gnkj4"))))
-    (properties `((upstream-name . "rollbar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr))
-    (home-page "https://cran.r-project.org/package=rollbar")
-    (synopsis "Error Tracking and Logging")
-    (description
-     "Reports errors and messages to Rollbar, the error tracking platform
-<https://rollbar.com>.")
-    (license license:expat)))
-
 (define-public r-rollama
   (package
     (name "r-rollama")
@@ -15760,24 +15752,26 @@ Du, Yanyao Yi, Ting Ye (2024) <doi:10.48550/@code{arXiv.2306.10213>}.")
 (define-public r-robin
   (package
     (name "r-robin")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robin" version))
        (sha256
-        (base32 "1xzcq81a08mpj7nx11z8vq0g1w8jq2257glvm5jgzz9z4spcc0xz"))))
+        (base32 "0d61gibxs2cx6k8l4j0g8vcrprpa4m4242r9qcq5p3slr4hwrk2q"))))
     (properties `((upstream-name . "robin")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
                              r-qpdf
+                             r-perturbr
                              r-networkd3
                              r-matrix
                              r-igraph
                              r-gridextra
                              r-ggplot2
                              r-fdatest
-                             r-desctools))
+                             r-desctools
+                             r-biocparallel))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ValeriaPolicastro/robin")
     (synopsis "ROBustness in Network")
@@ -19390,21 +19384,27 @@ source files.")
 (define-public r-rmaczek
   (package
     (name "r-rmaczek")
-    (version "1.5.1")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMaCzek" version))
        (sha256
-        (base32 "1zbpwhfa9mb55yglf4kgvch3hg7pvsfga4kpq45lz1cbs9454mzw"))))
+        (base32 "17vnan5c4yxzbx95x4mk9j7ff0nz26rzdpxydv7dnsqygpcf58a5"))))
     (properties `((upstream-name . "RMaCzek")))
     (build-system r-build-system)
-    (propagated-inputs (list r-seriation r-rcolorbrewer r-ga r-ecp r-e1071))
+    (propagated-inputs (list r-seriation
+                             r-rcolorbrewer
+                             r-ga
+                             r-fuzzydbscan
+                             r-ecp
+                             r-e1071))
     (home-page "https://cran.r-project.org/package=RMaCzek")
     (synopsis "Czekanowski's Diagrams")
     (description
-     "Allows for production of Czekanowski's Diagrams.  See K. Bartoszek, A.
-Vasterlund (2020) <doi:10.2478/bile-2020-0008>.")
+     "Allows for production of Czekanowski's Diagrams with clusters.  See K.
+Bartoszek, A. Vasterlund (2020) <doi:10.2478/bile-2020-0008> and K. Bartoszek,
+Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
     (license license:gpl3)))
 
 (define-public r-rma-exact
@@ -28436,13 +28436,13 @@ sample gene set testing based on randomized reduced rank reconstruction error\"
 (define-public r-reservr
   (package
     (name "r-reservr")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reservr" version))
        (sha256
-        (base32 "0w6bax0ycmix46mm5jmr49vl7l3rnvwg4vv6xq78hdczspdbc0g7"))))
+        (base32 "1p0jxjv5kc6ggxynvxs3ikrrkdn5nv68h0sk2bvnvdariqhn0cny"))))
     (properties `((upstream-name . "reservr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -28454,7 +28454,7 @@ sample gene set testing based on randomized reduced rank reconstruction error\"
                              r-numderiv
                              r-nloptr
                              r-matrixstats
-                             r-keras
+                             r-keras3
                              r-glue
                              r-generics
                              r-bh
@@ -34857,13 +34857,13 @@ and combine bibliographies from both sources.")
 (define-public r-rebayes
   (package
     (name "r-rebayes")
-    (version "2.54")
+    (version "2.56")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REBayes" version))
        (sha256
-        (base32 "1kg105jnc7hjxihvrjcfklz6i29kznz9aqh6303v9v6hfmy6a094"))))
+        (base32 "0wfqibyzj3kcydsv2jr8x5pmcrig9y7183r7raqnqkss9iy60qyj"))))
     (properties `((upstream-name . "REBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lattice))
@@ -40951,13 +40951,13 @@ change-points is not required.  The code is written in Go and interfaced with R.
 (define-public r-rcheology
   (package
     (name "r-rcheology")
-    (version "4.4.0.0")
+    (version "4.4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcheology" version))
        (sha256
-        (base32 "1iazraakb1jvcjs2ygay1r7f04fpnmsgcgv028bdxj8ck6pqksrq"))))
+        (base32 "1k49z9czxdksvc7m7767q52l613lv7fsfykx0yaajjlvp67ac4ly"))))
     (properties `((upstream-name . "rcheology")))
     (build-system r-build-system)
     (home-page "https://github.com/hughjonesd/rcheology")
@@ -41479,6 +41479,37 @@ Hsu, W. and Ma, Y. Integrating Classification and Association Rule Mining.
 Proceedings KDD-98, New York, 27-31 August.  AAAI. pp80-86 (1998,
 ISBN:1-57735-070-7).")
     (license license:asl2.0)))
+
+(define-public r-rcausim
+  (package
+    (name "r-rcausim")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rcausim" version))
+       (sha256
+        (base32 "1h1ml452xc8m1mzz2y915x9vzyykq6wgfbayabdjk14k2w6n1a0n"))))
+    (properties `((upstream-name . "rcausim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-purrr r-magrittr r-igraph r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rcausim")
+    (synopsis "Generate Causally-Simulated Data")
+    (description
+     "Generate causally-simulated data to serve as ground truth for evaluating methods
+in causal discovery and effect estimation.  The package provides tools to assist
+in defining functions based on specified edges, and conversely, defining edges
+based on functions.  It enables the generation of data according to these
+predefined functions and causal structures.  This is particularly useful for
+researchers in fields such as artificial intelligence, statistics, biology,
+medicine, epidemiology, economics, and social sciences, who are developing a
+general or a domain-specific methods to discover causal structures and estimate
+causal effects.  Data simulation adheres to principles of structural causal
+modeling.  Detailed methodologies and examples are documented in our vignette,
+available at
+<https://htmlpreview.github.io/?https://github.com/herdiantrisufriyana/rcausim/blob/master/doc/causal_simulation_exemplar.html>.")
+    (license license:gpl3)))
 
 (define-public r-rcausalegm
   (package

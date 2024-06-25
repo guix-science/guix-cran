@@ -2861,13 +2861,13 @@ functional and structural imaging.")
 (define-public r-kira
   (package
     (name "r-kira")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Kira" version))
        (sha256
-        (base32 "02h80rmrkggmavbvz1d6p3q7gllf8m6g7vx2k01hxy1c8l237i2b"))))
+        (base32 "1ja9ibhmm6757w27i5mnw8s72pk2qf0xwi9fiq35kwc1pmb59c6w"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

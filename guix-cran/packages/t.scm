@@ -6573,6 +6573,50 @@ Moreover, it allows the assessment of novel temporal rates for various
 phylogenetic indexes, which can be quickly displayed graphically.")
     (license license:expat)))
 
+(define-public r-treesitter-r
+  (package
+    (name "r-treesitter-r")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treesitter.r" version))
+       (sha256
+        (base32 "1bxliv544w2aa033r4nhqzs5cmsiriymfcxwcc76v05nm82dncim"))))
+    (properties `((upstream-name . "treesitter.r")))
+    (build-system r-build-system)
+    (home-page "https://github.com/r-lib/tree-sitter-r")
+    (synopsis "'R' Grammar for 'Tree-Sitter'")
+    (description
+     "This package provides bindings to an R grammar for Tree-sitter', to be used
+alongside the treesitter package.  Tree-sitter builds concrete syntax trees for
+source files of any language, and can efficiently update those syntax trees as
+the source file is edited.")
+    (license license:expat)))
+
+(define-public r-treesitter
+  (package
+    (name "r-treesitter")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "treesitter" version))
+       (sha256
+        (base32 "1yppwpayv4krwyxzqcg9aisdlascksym603ad0a9qpjrsivqyhh9"))))
+    (properties `((upstream-name . "treesitter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-rlang r-r6 r-cli))
+    (home-page "https://github.com/DavisVaughan/r-tree-sitter")
+    (synopsis "Bindings to 'Tree-Sitter'")
+    (description
+     "This package provides bindings to Tree-sitter', an incremental parsing system
+for programming tools.  Tree-sitter builds concrete syntax trees for source
+files of any language, and can efficiently update those syntax trees as the
+source file is edited.  It also includes a robust error recovery system that
+provides useful parse results even in the presence of syntax errors.")
+    (license license:expat)))
+
 (define-public r-treesimgm
   (package
     (name "r-treesimgm")
@@ -15079,13 +15123,13 @@ to estimate latent class analyses.")
 (define-public r-tidysdm
   (package
     (name "r-tidysdm")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidysdm" version))
        (sha256
-        (base32 "14z6qawbqhs77m842bj1ls9cnb7v35vs6aqbvha0s7kkqlcs1k7l"))))
+        (base32 "0vpxral92mnaisz39nkib6mpllwpaw38s9qaly1djyxm8s4lrl48"))))
     (properties `((upstream-name . "tidysdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -15116,10 +15160,11 @@ to estimate latent class analyses.")
     (description
      "Fit species distribution models (SDMs) using the tidymodels framework, which
 provides a standardised interface to define models and process their outputs.
-tidysdm expands tidymodels by providing methods for spatial objects, as well as
-a number of specialised functions to process presences and pseudoabsences for
-contemporary and palaeo datasets.  The full functionalities of the package are
-described in Leonardi et al. (2023) <doi:10.1101/2023.07.24.550358>.")
+tidysdm expands tidymodels by providing methods for spatial objects, models and
+metrics specific to SDMs, as well as a number of specialised functions to
+process occurrences for contemporary and palaeo datasets.  The full
+functionalities of the package are described in Leonardi et al. (2023)
+<doi:10.1101/2023.07.24.550358>.")
     (license license:agpl3+)))
 
 (define-public r-tidyrules

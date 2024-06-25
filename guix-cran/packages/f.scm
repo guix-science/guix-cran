@@ -221,23 +221,23 @@ weight.")
 (define-public r-fwlplot
   (package
     (name "r-fwlplot")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fwlplot" version))
        (sha256
-        (base32 "1fi2ijfkpxfbwxfcyc5mk2c7mpj6z7lrwm8wlilk2g04y6jmw84l"))))
+        (base32 "1pklfvf68lz6wais9zr770kcr2v3cfhc4di2vadr3dinqjl1gzlw"))))
     (properties `((upstream-name . "fwlplot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-fixest r-data-table))
+    (propagated-inputs (list r-tinyplot r-fixest r-data-table))
     (home-page "https://cran.r-project.org/package=fwlplot")
     (synopsis "Scatter Plot After Residualizing Using 'fixest' Package")
     (description
      "This package creates a scatter plot after residualizing using a set of
 covariates.  The residuals are calculated using the fixest package which allows
 very fast estimation that scales.  Details of the (Yule-)Frisch-Waugh-Lovell
-theorem is given in Basu (2023) <@code{arXiv:2307.00369>}.")
+theorem is given in Basu (2023) <doi:10.48550/@code{arXiv.2307.00369>}.")
     (license license:expat)))
 
 (define-public r-fwdselect
@@ -5115,29 +5115,6 @@ using the box-counting method.  See Klinkenberg B. (1994)
 <doi:10.1007/BF02065874>.")
     (license license:gpl3)))
 
-(define-public r-fractalregression
-  (package
-    (name "r-fractalregression")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fractalRegression" version))
-       (sha256
-        (base32 "1d79bv3lpg1p6zvjsnf8qwm5ajpsklm8gpqm241jv1cgjyfsi64x"))))
-    (properties `((upstream-name . "fractalRegression")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpparmadillo r-rcpp r-colorramps))
-    (home-page "https://cran.r-project.org/package=fractalRegression")
-    (synopsis "Performs Fractal Analysis and Fractal Regression")
-    (description
-     "Various functions for performing fractal and multifractal analysis including
-performing fractal regression.  Please refer to Peng and colleagues (1994)
-<doi:10.1103/physreve.49.1685>, Kantelhardt and colleagues
-(2002)<doi:10.1016/S0378-4371(02)01383-3>, and Likens and colleagues (2019)
-<doi:10.1016/j.physa.2019.121580>.")
-    (license license:gpl3+)))
-
 (define-public r-fractalparameterestimation
   (package
     (name "r-fractalparameterestimation")
@@ -6326,13 +6303,13 @@ packages such as dplyr and tidyr'.")
 (define-public r-forsearch
   (package
     (name "r-forsearch")
-    (version "6.0.0")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forsearch" version))
        (sha256
-        (base32 "1x2q13wmdczyn9lwrmrissc2cp001ca3gyyvy32vjg3844arxckk"))))
+        (base32 "0da558kwya54rir9965ihjj5sc931jrag6rr0xhni0xq97rx32g6"))))
     (properties `((upstream-name . "forsearch")))
     (build-system r-build-system)
     (inputs (list gmp))
@@ -13537,13 +13514,13 @@ saved filter expressions.")
 (define-public r-fillpattern
   (package
     (name "r-fillpattern")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fillpattern" version))
        (sha256
-        (base32 "0xysrb3yzvlag9zpsq7hhqqyrhwapnzc66d636wvxpsi4r50lp0w"))))
+        (base32 "0qwrzxjw4br9sbh0zxry72j6rgvb1s8cwvwqigf7dg1zi4hk4i74"))))
     (properties `((upstream-name . "fillpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -15151,13 +15128,13 @@ non-linear and linear models.")
 (define-public r-ferrn
   (package
     (name "r-ferrn")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ferrn" version))
        (sha256
-        (base32 "0yxw18yzj5j2fpj4rf9flmmng4s2ldgx4yaywa2hrclbnl43c578"))))
+        (base32 "1x3vislwcjlcvgd4dinzi6skqgp4ic1mq4srqkwrk1xr90l2wywn"))))
     (properties `((upstream-name . "ferrn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tourr
@@ -15167,13 +15144,16 @@ non-linear and linear models.")
                              r-scales
                              r-rlang
                              r-purrr
+                             r-progress
                              r-magrittr
+                             r-gpgp
+                             r-glue
                              r-ggrepel
                              r-ggplot2
                              r-ggforce
                              r-gganimate
-                             r-geozoo
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://github.com/huizezhang-sherry/ferrn/")
     (synopsis "Facilitate Exploration of touRR optimisatioN")
     (description
@@ -21068,31 +21048,44 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAIRmaterials" version))
        (sha256
-        (base32 "0434spa644g44qy7k0kapxxj34ch5vns8j27slx6j8i14ffxmzqq"))))
+        (base32 "0v9dkq8s7lpa95d44ylx3chrlq9ffsm7a0g36glisa9m9cpm7m5y"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyjson
-                             r-svdialogs
+    (inputs (list))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
                              r-stringr
-                             r-rcolorbrewer
-                             r-jsonlite
+                             r-readr
+                             r-rdflib
                              r-jsonld
-                             r-igraph
-                             r-dplyr))
+                             r-httr
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FAIRmaterials")
-    (synopsis "Make Materials Data FAIR")
+    (synopsis "Ontology Tools with Data FAIRification in Development")
     (description
-     "We provide here tools used by the Solar Durability and Lifetime Extension Center
-(SDLE) for FAIRifying data from materials science projects.  Functions have been
-created for numerous tools common in the field in order to make the metadata
-more Findable, Accessible, Interoperable, and Reproducible.")
+     "Translates several CSV files with ontological terms and corresponding data into
+RDF triples.  These RDF triples are stored in OWL and JSON-LD files,
+facilitating data accessibility, interoperability, and knowledge unification.
+The triples are also visualized in a graph saved as an SVG. The input CSVs must
+be formatted with a template from a public Google Sheet; see README or vignette
+for more information.  This is a tool is used by the SDLE Research Center at
+Case Western Reserve University to create and visualize material science
+ontologies, and it includes example ontologies to demonstrate its capabilities.
+This work was supported by the U.S. Department of Energyâs Office of Energy
+Efficiency and Renewable Energy (EERE) under Solar Energy Technologies Office
+(SETO) Agreement Numbers E-EE0009353 and DE-EE0009347, Department of Energy
+(National Nuclear Security Administration) under Award Number DE-NA0004104 and
+Contract number B647887, and U.S. National Science Foundation Award under Award
+Number 2133576.")
     (license license:bsd-3)))
 
 (define-public r-fairadapt
@@ -21150,13 +21143,13 @@ Useful when using the book.")
 (define-public r-faersquarterlydata
   (package
     (name "r-faersquarterlydata")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "faersquarterlydata" version))
        (sha256
-        (base32 "0qld9d56qwcs6xh1248b7ssarwfqk8rvipiflzhpcy5fb4gzh43i"))))
+        (base32 "1qh96k0jkx75707jx7r6cqfj8xskp5vqgqkki3riarz31m6fhznf"))))
     (properties `((upstream-name . "faersquarterlydata")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

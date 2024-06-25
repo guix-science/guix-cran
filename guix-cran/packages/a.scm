@@ -2434,33 +2434,6 @@ original article where the algorithm is described by Schneeweiss et.al. (2009)
 objects.  Results are returned in a nested data frame.")
     (license license:expat)))
 
-(define-public r-autocart
-  (package
-    (name "r-autocart")
-    (version "1.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "autocart" version))
-       (sha256
-        (base32 "1zgcmrm4dkdnr130hwwka2nwdczgvc3jc9hxrb6nfs8ijb24gl36"))))
-    (properties `((upstream-name . "autocart")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-mgcv
-                             r-fields))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=autocart")
-    (synopsis "Autocorrelation Regression Trees")
-    (description
-     "This package provides a modified version of the classification and regression
-tree (CART) algorithm for modelling spatial data that features coordinate
-information.  Coordinate information can be used to evaluate measures of spatial
-autocorrelation and spatial compactness during the splitting phase of the tree,
-leading to better predictions and more physically realistic predictions on these
-types of datasets.  These methods are described in Ancell and Bean (2021)
-<@code{arXiv:2101.08258>}.")
-    (license license:expat)))
-
 (define-public r-autobagging
   (package
     (name "r-autobagging")
@@ -7763,24 +7736,31 @@ the Geocode service API reference
 (define-public r-arcgis
   (package
     (name "r-arcgis")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgis" version))
        (sha256
-        (base32 "0vgixd9pv312h9c2afrslrmzh2jcx4r17iki15x8i9zhhgq5dw7y"))))
+        (base32 "04k22569xsdl8bsi3r1bfwcdrjcdypm4b6sbjyf7yrglyyyqlpq3"))))
     (properties `((upstream-name . "arcgis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr2 r-cli r-arcgisutils r-arcgislayers))
+    (inputs (list))
+    (propagated-inputs (list r-httr2
+                             r-cli
+                             r-arcgisutils
+                             r-arcgisplaces
+                             r-arcgislayers
+                             r-arcgisgeocode))
     (home-page "https://github.com/R-ArcGIS/arcgis/")
     (synopsis "ArcGIS Location Services Meta-Package")
     (description
      "This package provides easy installation and loading of core @code{ArcGIS}
-location services packages arcgislayers and arcgisutils'.  Enabling developers
-to interact with spatial data and services from @code{ArcGIS} Online',
-@code{ArcGIS} Enterprise', and @code{ArcGIS} Platform'.  Learn more about the
-arcgis meta-package at <https://r.esri.com/r-bridge-site/>.")
+location services packages arcgislayers', arcgisutils', arcgisgeocode', and
+arcgisplaces'.  Enabling developers to interact with spatial data and services
+from @code{ArcGIS} Online', @code{ArcGIS} Enterprise', and @code{ArcGIS}
+Platform'.  Learn more about the arcgis meta-package at
+<https://r.esri.com/r-bridge-site/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgeocoder

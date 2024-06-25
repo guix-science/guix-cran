@@ -2871,47 +2871,6 @@ the fit of regression models arising from a wide variety of models in R ('lm',
 glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
     (license license:gpl3)))
 
-(define-public r-visr
-  (package
-    (name "r-visr")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "visR" version))
-       (sha256
-        (base32 "1ra2fky23fv3rc9gj4zg64s2c2xcc52whf24wp2nfmg1f0nr278g"))))
-    (properties `((upstream-name . "visR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tidycmprsk
-                             r-tibble
-                             r-survival
-                             r-rlang
-                             r-lifecycle
-                             r-knitr
-                             r-kableextra
-                             r-gtable
-                             r-gt
-                             r-gridextra
-                             r-ggplot2
-                             r-forcats
-                             r-dt
-                             r-dplyr
-                             r-cowplot
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://openpharma.github.io/visR/")
-    (synopsis "Clinical Graphs and Tables Adhering to Graphical Principles")
-    (description
-     "To enable fit-for-purpose, reusable clinical and medical research focused
-visualizations and tables with sensible defaults and based on graphical
-principles as described in: \"Vandemeulebroecke et al. (2018)\"
-<doi:10.1002/pst.1912>, \"Vandemeulebroecke et al. (2019)\"
-<doi:10.1002/psp4.12455>, and \"Morris et al. (2019)\"
-<doi:10.1136/bmjopen-2019-030215>.")
-    (license license:expat)))
-
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")

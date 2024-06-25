@@ -5501,13 +5501,13 @@ search engines.")
 (define-public r-websdm
   (package
     (name "r-websdm")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "webSDM" version))
        (sha256
-        (base32 "1ix1sl5nyki8p5g7fwmrskz0ys8drdbyap5nbrw9kv3kjxd7dz14"))))
+        (base32 "0dcqq99779isn5456j9zd1pvhrnx7b1gblwmm9v8qkjaf7darbg6"))))
     (properties `((upstream-name . "webSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstantools

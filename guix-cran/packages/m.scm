@@ -16242,18 +16242,20 @@ purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
 (define-public r-mmirestriktor
   (package
     (name "r-mmirestriktor")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmirestriktor" version))
        (sha256
-        (base32 "1qgj3rrri87dj3h3v6r7f5kjyy8b85qn0s7i62qll0lf8fnj334d"))))
+        (base32 "1fncfjsi0mi8jicy48z11s2xrcz5qpx8akm90b8l4z6dj174c59b"))))
     (properties `((upstream-name . "mmirestriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
                              r-shiny
+                             r-rpostgres
                              r-restriktor
+                             r-pool
                              r-mmcards
                              r-mass
                              r-dt))
@@ -17410,36 +17412,6 @@ assume symmetric, non-reflexive graphs (no self-loops) with unweighted, binary
 edges.  Data are input as a symmetric binary adjacency matrix (SBMs), or list of
 such matrices (MLSBMs).")
     (license license:gpl2+)))
-
-(define-public r-mlrv
-  (package
-    (name "r-mlrv")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlrv" version))
-       (sha256
-        (base32 "1r6q8wakvyz0d1fjc0xpl66yxj0c9jr721yx3h3986x6gi6s0k81"))))
-    (properties `((upstream-name . "mlrv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xtable
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-numderiv
-                             r-mathjaxr
-                             r-magrittr
-                             r-foreach
-                             r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mlrv")
-    (synopsis "Long-Run Variance Estimation in Time Series Regression")
-    (description
-     "Plug-in and difference-based long-run covariance matrix estimation for time
-series regression.  Two applications of hypothesis testing are also provided.
-The first one is for testing for structural stability in coefficient functions.
-The second one is aimed at detecting long memory in time series regression.")
-    (license license:expat)))
 
 (define-public r-mlrpro
   (package
@@ -22995,13 +22967,13 @@ This package provides a flexible and high-performance alternative to aws.s3'.")
 (define-public r-minimeta
   (package
     (name "r-minimeta")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miniMeta" version))
        (sha256
-        (base32 "0qd55a0a03a3q62hjpmi0815x4jff6zhrxavm1wb46c09y1hm62j"))))
+        (base32 "1v0nfmk034xz6nn0pnas0g11bbg0k86c99qykqadqr9kr9iwjrki"))))
     (properties `((upstream-name . "miniMeta")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -23016,7 +22988,7 @@ This package provides a flexible and high-performance alternative to aws.s3'.")
                              r-jsonlite
                              r-colourpicker))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=miniMeta")
+    (home-page "https://github.com/thlytras/miniMeta")
     (synopsis "Web Application to Run Meta-Analyses")
     (description
      "Shiny web application to run meta-analyses.  Essentially a graphical front-end
@@ -23181,6 +23153,27 @@ packages from this repository directly, rather than from CRAN. This is useful in
 production settings, e.g. server behind a firewall, or remote locations with
 slow (or zero) Internet access.")
     (license license:gpl2)))
+
+(define-public r-minic
+  (package
+    (name "r-minic")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minic" version))
+       (sha256
+        (base32 "1n7xhgwlfyy18y1d0rjnkrvfdblkd4n55c673fyrkdc1q8lpmngw"))))
+    (properties `((upstream-name . "minic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp))
+    (home-page "https://github.com/BertvanderVeen/minic")
+    (synopsis "Minimization Methods for Ill-Conditioned Problems")
+    (description
+     "Implementation of methods for minimizing ill-conditioned problems.  Currently
+only includes regularized (quasi-)newton optimization (Kanzow and Steck et al.
+(2023), <doi:10.1007/s12532-023-00238-4>).")
+    (license license:gpl2+)))
 
 (define-public r-minesweepr
   (package
@@ -33012,13 +33005,13 @@ D, Stefanski LA & Crainiceanu CM (2006, ISBN:1584886331).")
 (define-public r-meconetcomp
   (package
     (name "r-meconetcomp")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "meconetcomp" version))
        (sha256
-        (base32 "0fxgm8bhjs1vn1l0vb7jx7gvg3w4k0bwng66sfp87l5b0z2j082q"))))
+        (base32 "00k9n3sbr6216zld4prl0v6mig472mhwca4ah8hr2s8q24v6ridx"))))
     (properties `((upstream-name . "meconetcomp")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2
@@ -43156,13 +43149,13 @@ More information about @code{WeMo} Switch can be found at
 (define-public r-magi
   (package
     (name "r-magi")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "magi" version))
        (sha256
-        (base32 "047wzhqkdpjlhz7r6cks7pwvjc4bwv8hsd41zqm5gcvfhwjrnyxm"))))
+        (base32 "0xri39mjq9x8gdj1a69h1sby2i6vcx4vx86zv483128wb0qwgfww"))))
     (properties `((upstream-name . "magi")))
     (build-system r-build-system)
     (propagated-inputs (list r-roptim

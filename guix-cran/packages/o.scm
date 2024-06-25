@@ -471,6 +471,29 @@ different tables (e.g., time and scope conditions).  The package also provides
 publishable @code{LaTeX} code to present the sample information.")
     (license license:gpl3)))
 
+(define-public r-overturemapsr
+  (package
+    (name "r-overturemapsr")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overturemapsr" version))
+       (sha256
+        (base32 "176vh7gp6ijqb4dqnk3shhrs1q0x3gz0gj1w24a7qrcp5zdp24ff"))))
+    (properties `((upstream-name . "overturemapsr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-dplyr r-arrow))
+    (home-page "https://cran.r-project.org/package=overturemapsr")
+    (synopsis "Download Overture Maps Data in R")
+    (description
+     "Overture Maps offers free and open geospatial map data sourced from various
+providers and standardized to a common schema.  This tool allows you to download
+Overture Maps data for a specific region of interest and convert it to several
+different file formats.  For more information, visit
+<https://overturemaps.org/download/>.")
+    (license license:expat)))
+
 (define-public r-overture
   (package
     (name "r-overture")
@@ -10933,13 +10956,13 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 (define-public r-occcite
   (package
     (name "r-occcite")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occCite" version))
        (sha256
-        (base32 "08bc0pi2i2fmc9fcmir150b7g8jnd58q3qaakw2gk25yjy14rp7j"))))
+        (base32 "130fk8m1dcid4kiswr4fpq6da84b2gfjwa20gmcsp1r75yzi95nx"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
     (propagated-inputs (list r-waffle
@@ -10953,7 +10976,6 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
                              r-rcolorbrewer
                              r-lubridate
                              r-leaflet
-                             r-httr
                              r-htmltools
                              r-ggplot2
                              r-dplyr
