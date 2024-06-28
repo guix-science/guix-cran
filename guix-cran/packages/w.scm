@@ -6527,13 +6527,13 @@ to Beguin and Hulliger (2008)
 (define-public r-waywiser
   (package
     (name "r-waywiser")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "waywiser" version))
        (sha256
-        (base32 "1ffi4422dph90lwdc72za0sj224mwwddr66awf9yicszj42a6q81"))))
+        (base32 "0n6p7p6m5yspmxva7gb3s7drcznxmvx7yb6iccz6h7z8j7yvqv22"))))
     (properties `((upstream-name . "waywiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -7567,32 +7567,6 @@ determines the calculation formula, as there are those criteria that we want the
 highest possible value (e.g. durability) and others that we want the lowest
 possible value (e.g. price).")
     (license license:gpl2+)))
-
-(define-public r-wasp
-  (package
-    (name "r-wasp")
-    (version "1.4.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WASP" version))
-       (sha256
-        (base32 "1w822wl8zp94a60y9jsryc1r1m025pl2100fx5i8np46mm3pmn58"))))
-    (properties `((upstream-name . "WASP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waveslim r-tidyr r-sp r-rlang r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zejiang-unsw/WASP#readme")
-    (synopsis "Wavelet System Prediction")
-    (description
-     "The wavelet-based variance transformation method is used for system modelling
-and prediction.  It refines predictor spectral representation using Wavelet
-Theory, which leads to improved model specifications and prediction accuracy.
-Details of methodologies used in the package can be found in Jiang, Z., Sharma,
-A., & Johnson, F. (2020) <doi:10.1029/2019WR026962>, Jiang, Z., Rashid, M. M.,
-Johnson, F., & Sharma, A. (2020) <doi:10.1016/j.envsoft.2020.104907>, and Jiang,
-Z., Sharma, A., & Johnson, F. (2021) <doi:10.1016/J.JHYDROL.2021.126816>.")
-    (license license:gpl3)))
 
 (define-public r-washi
   (package

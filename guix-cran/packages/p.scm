@@ -23524,6 +23524,46 @@ confirmatory phylogenetic path analysis as described by Von Hardenberg and
 Gonzalez-Voyer (2012) <doi:10.1111/j.1558-5646.2012.01790.x>.")
     (license license:gpl3)))
 
+(define-public r-phylopairs
+  (package
+    (name "r-phylopairs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "phylopairs" version))
+       (sha256
+        (base32 "0rspl6py8zjx5cs4q3cba1f7lvfvry4c06m5ng2ckwggjwpjcnam"))))
+    (properties `((upstream-name . "phylopairs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-phytools
+                             r-loo
+                             r-bh
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=phylopairs")
+    (synopsis "Comparative Analyses of Lineage-Pair Traits")
+    (description
+     "Facilitates the testing of causal relationships among lineage-pair traits in a
+phylogenetically informed context.  Lineage-pair traits are characters that are
+defined for pairs of lineages instead of individual taxa.  Examples include the
+strength of reproductive isolation, range overlap, competition coefficient, diet
+niche similarity, and relative hybrid fitness.  Users supply a lineage-pair
+dataset and a phylogeny.  phylopairs calculates a covariance matrix for the
+pairwise-defined data and provides built-in models to test for relationships
+among variables while taking this covariance into account.  Bayesian sampling is
+run through built-in Stan programs via the rstan package.  The various models
+and methods that this package makes available are described in Anderson et al.
+(In Review), Coyne and Orr (1989) <doi:10.1111/j.1558-5646.1989.tb04233.x>,
+Fitzpatrick (2002) <doi:10.1111/j.0014-3820.2002.tb00860.x>, and Castillo (2007)
+<doi:10.1002/ece3.3093>.")
+    (license license:gpl3+)))
+
 (define-public r-phylometrics
   (package
     (name "r-phylometrics")
@@ -24385,13 +24425,13 @@ contributed equally).")
 (define-public r-phoenics
   (package
     (name "r-phoenics")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenics" version))
        (sha256
-        (base32 "06312f3awzpgfhzl4ahla37hkw0nqyw8zb5yv7m25i53x0afxwr5"))))
+        (base32 "0g66hv29rr9gvmclwgv1scdkw4zpx38licys26rkbkxivpbq07c6"))))
     (properties `((upstream-name . "phoenics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29498,13 +29538,13 @@ al.")
 (define-public r-peaksegjoint
   (package
     (name "r-peaksegjoint")
-    (version "2024.1.24")
+    (version "2024.6.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegJoint" version))
        (sha256
-        (base32 "0jq6ch623vgxmg8z6jwgprk6szqp8qbjzy743yl7qgj906pdg79v"))))
+        (base32 "0rlm9adjrnbh58j7vb6lvqam13crgcrdcfs7rl7cbarfj3k9d8nr"))))
     (properties `((upstream-name . "PeakSegJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-penaltylearning r-peakerror))
@@ -29515,7 +29555,7 @@ al.")
 same and different across samples.  The fast approximate maximum Poisson
 likelihood algorithm is described in \"@code{PeakSegJoint}: fast supervised peak
 detection via joint segmentation of multiple count data samples\"
-<@code{arXiv:1506.01286>} by TD Hocking and G Bourque.")
+<doi:10.48550/@code{arXiv.1506.01286>} by TD Hocking and G Bourque.")
     (license license:gpl3)))
 
 (define-public r-peaksegdp
@@ -30444,13 +30484,13 @@ regression models.  S. Kucheryavskiy (2023) <doi:10.1016/j.aca.2023.341096>.")
 (define-public r-pcutils
   (package
     (name "r-pcutils")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcutils" version))
        (sha256
-        (base32 "1fq8gzc63951q87akjqklvi4mqy29wywg0hknw7mn5zs9bim0zdd"))))
+        (base32 "1732qrr9f419a2g4wi7dnf97209k57qk9myb839sybdb3irvra9j"))))
     (properties `((upstream-name . "pcutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

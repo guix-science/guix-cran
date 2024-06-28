@@ -421,32 +421,6 @@ bibliographic data from a range of formats (such as bibtex', ris', or ciw') in a
 standard way, and allows merging and deduplication of the resulting dataset.")
     (license license:gpl3)))
 
-(define-public r-synthesis
-  (package
-    (name "r-synthesis")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "synthesis" version))
-       (sha256
-        (base32 "1yb0z4klz4hd7ab83j3h4x8v2yp2glmnnvz64g76iclx5mcgl6az"))))
-    (properties `((upstream-name . "synthesis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/zejiang-unsw/synthesis#readme")
-    (synopsis "Generate Synthetic Data from Statistical Models")
-    (description
-     "Generate synthetic time series from commonly used statistical models, including
-linear, nonlinear and chaotic systems.  Applications to testing methods can be
-found in Jiang, Z., Sharma, A., & Johnson, F. (2019)
-<doi:10.1016/j.advwatres.2019.103430> and Jiang, Z., Sharma, A., & Johnson, F.
-(2020) <doi:10.1029/2019WR026962> associated with an open-source tool by Jiang,
-Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
-<doi:10.1016/j.envsoft.2020.104907>.")
-    (license license:gpl3+)))
-
 (define-public r-synthacs
   (package
     (name "r-synthacs")
@@ -10531,6 +10505,46 @@ genomic selection.  STGS is a comprehensive package which gives single step
 solution for genomic selection based on most commonly used statistical methods.")
     (license license:gpl3)))
 
+(define-public r-stgam
+  (package
+    (name "r-stgam")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stgam" version))
+       (sha256
+        (base32 "1f2xr4s2n5r5rs12i92f9gvcjcc3h3i2q8kx27xnxfalq166lxa0"))))
+    (properties `((upstream-name . "stgam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-mgcv
+                             r-metr
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cowplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lexcomber/stgam")
+    (synopsis
+     "Spatially and Temporally Varying Coefficient Models Using Generalized Additive Models")
+    (description
+     "This package provides a framework for specifying spatially, temporally and
+spatial-and-temporally varying coefficient models using Generalized Additive
+Models with Gaussian Process smooths.  The smooths are parameterised with
+location and / or time attributes.  Importantly the framework supports the
+investigation of the presence and nature of any space-time dependencies in the
+data, allows the user to evaluate different model forms (specifications) and to
+pick the most probable model or to combine multiple varying coefficient models
+using Bayesian Model Averaging.  For more details see: Brunsdon et al (2023)
+<doi:10.4230/LIPIcs.GIScience.2023.17>, Comber et al (2023)
+<doi:10.4230/LIPIcs.GIScience.2023.22> and Comber et al (2024)
+<doi:10.1080/13658816.2023.2270285>.")
+    (license license:expat)))
+
 (define-public r-stfts
   (package
     (name "r-stfts")
@@ -16324,6 +16338,33 @@ Statistical Papers.  Cardozo C.A and Alonso-Malaver C.E. (2022).
 \"Semi-parametric model assisted estimation in finite populations.\" In
 preparation.")
     (license license:gpl3)))
+
+(define-public r-sreg
+  (package
+    (name "r-sreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sreg" version))
+       (sha256
+        (base32 "05rvx5frd9c7qz00wjk8qirsnj1hmqlpvmzvf6lwbhbx2abwzd1j"))))
+    (properties `((upstream-name . "sreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-rlang r-extradistr r-dplyr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jutrifonov/sreg")
+    (synopsis "Stratified Randomized Experiments")
+    (description
+     "Estimate average treatment effects (ATEs) in stratified randomized experiments.
+sreg is designed to accommodate scenarios with multiple treatments and
+cluster-level treatment assignments, and accommodates optimal linear covariate
+adjustment based on baseline observable characteristics.  sreg computes
+estimators and standard errors based on Bugni, Canay, Shaikh (2018)
+<doi:10.1080/01621459.2017.1375934>; Bugni, Canay, Shaikh, Tabord-Meehan (2024+)
+<doi:10.48550/@code{arXiv.2204.08356>}; and Jiang, Linton, Tang, Zhang (2023+)
+<doi:10.48550/@code{arXiv.2201.13004>}.")
+    (license license:expat)))
 
 (define-public r-srdpdata
   (package
@@ -23819,18 +23860,17 @@ whether the idiosyncratic variances are identified or not.")
 (define-public r-spartaas
   (package
     (name "r-spartaas")
-    (version "1.2.1")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPARTAAS" version))
        (sha256
-        (base32 "1syk48pz3f9dcz03104k9g8l48fjzx3raz3zzggbpbkdbw7hvc9f"))))
+        (base32 "0795n9z8z4mr0fc4mrdq8xgnn3jaqcqsdpfq0iyyl7zn3nl3bgca"))))
     (properties `((upstream-name . "SPARTAAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-sp
                              r-shinywidgets
                              r-shinythemes
                              r-shinyjs
@@ -23844,7 +23884,6 @@ whether the idiosyncratic variances are identified or not.")
                              r-plotly
                              r-nor1mix
                              r-mass
-                             r-mapview
                              r-lmtest
                              r-leaflet
                              r-ks
@@ -23858,7 +23897,6 @@ whether the idiosyncratic variances are identified or not.")
                              r-factominer
                              r-explor
                              r-dplyr
-                             r-crayon
                              r-colorspace
                              r-cluster
                              r-ape
@@ -23869,11 +23907,11 @@ whether the idiosyncratic variances are identified or not.")
     (description
      "Statistical pattern recognition and dating using archaeological artefacts
 assemblages.  Package of statistical tools for archaeology.
-hclustcompro(perioclust): Bellanger Lise, Coulon Arthur, Husi Philippe (2021,
-ISBN:978-3-030-60103-4).  mapclust: Bellanger Lise, Coulon Arthur, Husi Philippe
-(2021) <doi:10.1016/j.jas.2021.105431>.  seriograph: Desachy Bruno (2004)
-<doi:10.3406/pica.2004.2396>.  cerardat: Bellanger Lise, Husi Philippe (2012)
-<doi:10.1016/j.jas.2011.06.031>.")
+hclustcompro()/perioclust(): Bellanger Lise, Coulon Arthur, Husi Philippe (2021,
+ISBN:978-3-030-60103-4).  mapclust(): Bellanger Lise, Coulon Arthur, Husi
+Philippe (2021) <doi:10.1016/j.jas.2021.105431>.  seriograph(): Desachy Bruno
+(2004) <doi:10.3406/pica.2004.2396>.  cerardat(): Bellanger Lise, Husi Philippe
+(2012) <doi:10.1016/j.jas.2011.06.031>.")
     (license license:gpl2+)))
 
 (define-public r-sparta
@@ -24169,13 +24207,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseR" version))
        (sha256
-        (base32 "1q77n45kl1hqx5a6cr4hschj8zv0ymw8v7yvm748sdplan2dj417"))))
+        (base32 "0a8wijy1qp3p2y2733dk6j5g1x7gq8samxczqp5navhsq67w6k38"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-recipes r-ncvreg r-magrittr r-dplyr))
@@ -24570,13 +24608,13 @@ based on code from www.sparse-grids.de.")
 (define-public r-sparsegl
   (package
     (name "r-sparsegl")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsegl" version))
        (sha256
-        (base32 "0c5iqhq3rn5wsy8a5lj37b4spqhy46d7d5k5q3kn034amml4cyfb"))))
+        (base32 "0931wsd905bhrqkwjdv6m3vg7wpzdqyvzkkqp5pcwilvrswh0kdb"))))
     (properties `((upstream-name . "sparsegl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24597,7 +24635,7 @@ returning coefficient estimates in a sparse matrix.  Furthermore, it correctly
 calculates the degrees of freedom to allow for information criteria rather than
 cross-validation with very large data.  Finally, the interface to compiled code
 avoids unnecessary copies and allows for the use of long integers.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-sparsegam
   (package
@@ -36174,6 +36212,28 @@ correlation.  Residual analysis is also involved.  Some subroutines are written
 in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
     (license license:gpl2)))
 
+(define-public r-simpletex
+  (package
+    (name "r-simpletex")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simpletex" version))
+       (sha256
+        (base32 "124a8pkf38n7mhk23g2fsy5lbmwnm2k5dqhrvxcsihnbwkp4lfas"))))
+    (properties `((upstream-name . "simpletex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-glue r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/chuxinyuan/simpletex")
+    (synopsis "Mathematical Formulas and Character Recognition")
+    (description
+     "By calling the @code{SimpleTex} <https://simpletex.cn/> open API implements text
+and mathematical formula recognition on the image, and the output formula can be
+used directly with Markdown and @code{LaTeX}'.")
+    (license license:expat)))
+
 (define-public r-simplesetup
   (package
     (name "r-simplesetup")
@@ -45472,6 +45532,40 @@ Houpt, Blaha, @code{McIntire}, Havig, and Townsend (2013)
 Factorial Technology along with examples using the sft R package.")
     (license license:gpl2+)))
 
+(define-public r-sfsi
+  (package
+    (name "r-sfsi")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFSI" version))
+       (sha256
+        (base32 "1ikw1mksgzbznhraa15ckhrbygidvwjl5h2psvzv81j9547f7zbq"))))
+    (properties `((upstream-name . "SFSI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tensorevd
+                             r-stringr
+                             r-scales
+                             r-reshape2
+                             r-igraph
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MarcooLopez/SFSI")
+    (synopsis "Sparse Family and Selection Index")
+    (description
+     "Here we provide tools for the estimation of coefficients in penalized
+regressions when the (co)variance matrix of predictors and the covariance vector
+between predictors and response, are provided.  These methods are extended to
+the context of a Selection Index (commonly used for breeding value prediction).
+The approaches offer opportunities such as the integration of high-throughput
+traits in genetic evaluations ('Lopez-Cruz et al., 2020')
+<doi:10.1038/s41598-020-65011-2> and solutions for training set optimization in
+Genomic Prediction ('Lopez-Cruz & de los Campos, 2021')
+<doi:10.1093/genetics/iyab030>.")
+    (license license:gpl3)))
+
 (define-public r-sfs
   (package
     (name "r-sfs")
@@ -50587,13 +50681,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "0s856sr4ld6l9r6zp9z7ki291i9m16zrd8lq0sh9w021wd61qswg"))))
+        (base32 "04zdvn3rmk45z3641hrxglvr17g8nnbrm9biw8vrrjh219mfwjb9"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -54031,6 +54125,46 @@ series.  The methods implemented in this package are based on Girish Keshav
 Palshikar (2009)
 <https://www.researchgate.net/publication/228853276_Simple_Algorithms_for_Peak_Detection_in_Time-Series>.")
     (license license:gpl3)))
+
+(define-public r-scorematchingad
+  (package
+    (name "r-scorematchingad")
+    (version "0.0.64")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scorematchingad" version))
+       (sha256
+        (base32 "0c8y1v2gz50a5qamh16dvad4c9ya8kgyk9xyf44mbixkzza0723f"))))
+    (properties `((upstream-name . "scorematchingad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-rdpack
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-optimx
+                             r-mcmcpack
+                             r-fixedpoint
+                             r-ellipsis))
+    (home-page "https://cran.r-project.org/package=scorematchingad")
+    (synopsis "Score Matching Estimation by Automatic Differentiation")
+    (description
+     "@code{HyvÃ¤rinen's} score matching (@code{HyvÃ¤rinen}, 2005)
+<https://jmlr.org/papers/v6/hyvarinen05a.html> is a useful estimation technique
+when the normalising constant for a probability distribution is difficult to
+compute.  This package implements score matching estimators using automatic
+differentiation in the @code{CppAD} library
+<https://github.com/coin-or/@code{CppAD>} and is designed for quickly
+implementing score matching estimators for new models.  Also available is
+general robustification (Windham, 1995) <https://www.jstor.org/stable/2346159>.
+Already in the package are estimators for directional distributions (Mardia,
+Kent and Laha, 2016) <doi:10.48550/@code{arXiv.1604.08470>} and the flexible
+Polynomially-Tilted Pairwise Interaction model for compositional data.  The
+latter estimators perform well when there are zeros in the compositions (Scealy
+and Wood, 2023) <doi:10.1080/01621459.2021.2016422>, even many zeros (Scealy,
+Hingee, Kent, and Wood, 2024) <doi:10.1007/s11222-024-10412-w>.")
+    (license license:gpl3+)))
 
 (define-public r-scoreeb
   (package
@@ -57750,13 +57884,13 @@ contain more robust readers for sas7bdat files.")
 (define-public r-sarsop
   (package
     (name "r-sarsop")
-    (version "0.6.14")
+    (version "0.6.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarsop" version))
        (sha256
-        (base32 "0y315gg3masbpvsf9zk0abj0mh0834h1yhmjg1fwwbqvygg64cjp"))))
+        (base32 "0793pvfldbxnqsm0gzpwr792xvvzcr35yj75s5wc4hbv2adv9mvn"))))
     (properties `((upstream-name . "sarsop")))
     (build-system r-build-system)
     (inputs (list))

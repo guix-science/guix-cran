@@ -6379,13 +6379,13 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
 (define-public r-crmpack
   (package
     (name "r-crmpack")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crmPack" version))
        (sha256
-        (base32 "086r12vfp1am7aavmq5yvbgg4w7vjdabjvzlnd5la92y01dcs32h"))))
+        (base32 "1wdar6i0h184ynddvl2w6ipbdappncl0grsw7g4hnfiz1hw9x9p4"))))
     (properties `((upstream-name . "crmPack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjags
@@ -6395,7 +6395,7 @@ Debruyne et al. (2019) <DOI:10.1007/s11222-018-9831-5>).")
                              r-ggplot2
                              r-gensa))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/roche/crmPack")
+    (home-page "https://github.com/openpharma/crmPack")
     (synopsis "Object-Oriented Implementation of CRM Designs")
     (description
      "This package implements a wide range of model-based dose escalation designs,
@@ -13425,30 +13425,30 @@ copula adopted in particular.")
 (define-public r-cops
   (package
     (name "r-cops")
-    (version "1.3-1")
+    (version "1.11-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cops" version))
        (sha256
-        (base32 "17lq7ag0bwg3i7jvzca4qyzg8ixhdikrcgpgskkm26i83886zid2"))))
+        (base32 "04rmi45yjzll52dsdf4qci0a06v5a9kslr36c16ginkf3w64s48y"))))
     (properties `((upstream-name . "cops")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
+                             r-smacofx
                              r-smacof
-                             r-scatterplot3d
                              r-rsolnp
                              r-rgenoud
                              r-pso
                              r-nloptr
                              r-nlcoptim
                              r-minqa
-                             r-mass
                              r-gensa
                              r-dfoptim
                              r-crs
                              r-cordillera
-                             r-cmaes))
+                             r-cmaes
+                             r-analogue))
     (native-inputs (list r-r-rsp))
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Cluster Optimized Proximity Scaling")
@@ -13456,27 +13456,20 @@ copula adopted in particular.")
      "Multidimensional scaling (MDS) methods that aim at pronouncing the clustered
 appearance of the configuration (Rusch, Mair & Hornik, 2021,
 <doi:10.1080/10618600.2020.1869027>).  They achieve this by transforming
-proximities/distances with power functions and augment the fitting criterion
-with a clusteredness index, the OPTICS Cordillera (Rusch, Hornik & Mair, 2018,
-<doi:10.1080/10618600.2017.1349664>).  There are two variants: One for finding
-the configuration directly (COPS-C) for ratio, power, interval and non-metric
-MDS (Borg & Groenen, 2005, ISBN:978-0-387-28981-6), and one for using the
-augmented fitting criterion to find optimal parameters (P-COPS).  The package
-contains various functions, wrappers, methods and classes for fitting, plotting
-and displaying different MDS models in a COPS framework like ratio, interval and
-non-metric MDS for COPS-C and P-COPS with Torgerson scaling (Torgerson, 1958,
-ISBN:978-0471879459), scaling by majorizing a complex function (SMACOF; de
-Leeuw, 1977, <https://escholarship.org/uc/item/4ps3b5mj>), Sammon mapping
-(Sammon, 1969, <doi:10.1109/T-C.1969.222678>), elastic scaling (@code{McGee},
-1966, <doi:10.1111/j.2044-8317.1966.tb00367.x>), s-stress (Takane, Young & de
-Leeuw, 1977, <doi:10.1007/BF02293745>), r-stress (de Leeuw, Groenen & Mair,
-2016, <https://rpubs.com/deleeuw/142619>), power stress (Buja & Swayne, 2002
-<doi:10.1007/s00357-001-0031-0>), restricted power stress, approximate power
-stress, power elastic scaling, power Sammon mapping (for all Rusch, Mair &
-Hornik, 2021, <doi:10.1080/10618600.2020.1869027>).  All of these models can
-also solely be fit as MDS with power transformations.  The package further
-contains a function for pattern search optimization, the ``Adaptive Luus-Jaakola
-Algorithm (Rusch, Mair & Hornik, 2021,<doi:10.1080/10618600.2020.1869027>).")
+proximities/distances with explicit power functions and penalizing the fitting
+criterion with a clusteredness index, the OPTICS Cordillera (Rusch, Hornik &
+Mair, 2018, <doi:10.1080/10618600.2017.1349664>).  There are two variants: One
+for finding the configuration directly (COPS-C) with given explicit power
+transformations and implicit ratio, interval and non-metric optimal scaling
+transformations (Borg & Groenen, 2005, ISBN:978-0-387-28981-6), and one for
+using the augmented fitting criterion to find optimal hyperparameters for the
+explicit transformations (P-COPS).  The package contains various functions,
+wrappers, methods and classes for fitting, plotting and displaying a large
+number of different MDS models (most of the functionality in smacofx) in the
+COPS framework.  The package further contains a function for pattern search
+optimization, the ``Adaptive Luus-Jaakola Algorithm (Rusch, Mair & Hornik,
+2021,<doi:10.1080/10618600.2020.1869027>) and a functions to calculate the
+phi-distances for count data or histograms.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-copre
@@ -23931,6 +23924,29 @@ interface.  It enables programmatic and reproducible access to a wide variety of
 housing data from CMHC.")
     (license license:expat)))
 
+(define-public r-cmgfm
+  (package
+    (name "r-cmgfm")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CMGFM" version))
+       (sha256
+        (base32 "0km485aajgwb0jyp7fvgz82dw22la659js4d4hg2zbkn562pz4m3"))))
+    (properties `((upstream-name . "CMGFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-irlba r-gfm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CMGFM")
+    (synopsis "Covariate-Augumented Generalized Factor Model")
+    (description
+     "Covariate-augumented generalized factor model is designed to account for
+cross-modal heterogeneity, capture nonlinear dependencies among the data,
+incorporate additional information, and provide excellent interpretability while
+maintaining high computational efficiency.")
+    (license license:gpl3)))
+
 (define-public r-cmfsurrogate
   (package
     (name "r-cmfsurrogate")
@@ -24898,17 +24914,17 @@ partitioning algorithms.")
 (define-public r-clustersim
   (package
     (name "r-clustersim")
-    (version "0.51-3")
+    (version "0.51-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterSim" version))
        (sha256
-        (base32 "0wlsr9700f3j9wcjzpiaqwj09i5v8n9bvwxvj4vmq1sqvz97v681"))))
+        (base32 "1bvjhbwxxn7mxdspjyly36d258p8js9l1zxsm15kj7nplj4pnkkn"))))
     (properties `((upstream-name . "clusterSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r2html r-mass r-e1071 r-cluster r-ade4))
-    (home-page "http://keii.ue.wroc.pl/clusterSim/")
+    (propagated-inputs (list r-mass r-e1071 r-cluster r-ade4))
+    (home-page "https://cran.r-project.org/package=clusterSim")
     (synopsis "Searching for Optimal Clustering Procedure for a Data Set")
     (description
      "Distance measures (GDM1, GDM2,	Sokal-Michener, Bray-Curtis, for symbolic
@@ -26762,6 +26778,29 @@ if an intervention has a meaningful or practical effect for patients.  You
 provide a tidy data set plus a few more metrics and this package will take care
 of it to make your results publication ready.")
     (license license:gpl3+)))
+
+(define-public r-clinicalomicsdbr
+  (package
+    (name "r-clinicalomicsdbr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clinicalomicsdbR" version))
+       (sha256
+        (base32 "1al919bdvmxfs8kxgi4hxwgsc9gjml6d00b7h813jhc4fi7ncq3p"))))
+    (properties `((upstream-name . "clinicalomicsdbR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-jsonlite r-httr2 r-dplyr))
+    (home-page "https://github.com/bzhanglab/clinicalomicsdbR")
+    (synopsis
+     "Interface with the 'ClinicalOmicsDB' API, Allowing for Easy Data Downloading and Importing")
+    (description
+     "This package provides an interface to the @code{ClinicalOmicsDB} API, allowing
+for easy data downloading and importing. @code{ClinicalOmicsDB} is a database of
+clinical and omics data from cancer patients.  The database is accessible at
+<http://trials.linkedomics.org>.")
+    (license license:expat)))
 
 (define-public r-clinfun
   (package
@@ -30133,13 +30172,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.14.0")
+    (version "0.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "0any2442p9jmlzmhh5blclp7w07ff1m266sbjqx5yjw92hvxc311"))))
+        (base32 "0wf2yqpdccriww942lyic13rsxylx4zcl670gyd81d41lj0xf5rc"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -32128,13 +32167,13 @@ ATE with high-dimensional and error-prone data accommodated.")
 (define-public r-chemdeg
   (package
     (name "r-chemdeg")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chemdeg" version))
        (sha256
-        (base32 "0ipj7988bwrcz489wa5mx789aw9dij6003rbdndbl3m2r3hi9pnv"))))
+        (base32 "092d3nfkhgwy1wg5aqp6p1kd36q2s82vw6ymz0h10rqxsj84mx3f"))))
     (properties `((upstream-name . "chemdeg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -33853,13 +33892,13 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "09bgpw7j3l08prjj2nkcd92qwx89i6ibaahzb7mkfgvmm9wq4p66"))))
+        (base32 "0zm55sdj8z1lq5aar891pxrvww6dk42sz21i5ij2gk0gis820773"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pbapply r-iso r-ggplot2 r-dplyr))

@@ -3072,6 +3072,27 @@ possible interactions are calculated, we use an operator matrix presented in
 Poelwijk, Krishna, and Ranganathan (2016) <doi:10.1371/journal.pcbi.1004771>.")
     (license license:expat)))
 
+(define-public r-exactcox
+  (package
+    (name "r-exactcox")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ExactCox" version))
+       (sha256
+        (base32 "050d4g2jyp8qncy5biim45xvl8kkjg3rwwdcakmwjgs9c88zvls5"))))
+    (properties `((upstream-name . "ExactCox")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-biasedurn))
+    (home-page "https://cran.r-project.org/package=ExactCox")
+    (synopsis "Exact Test and Exact Confidence Interval for the Cox Model")
+    (description
+     "This package performs the exact test on whether there is a difference between
+two survival curves.  Exact confidence interval for the hazard ratio can also be
+generated for the Cox model.")
+    (license license:gpl3)))
+
 (define-public r-exactcione
   (package
     (name "r-exactcione")
@@ -3323,6 +3344,27 @@ method for correction autocorrelation, Hausman Test for identification and
 computes LM, LR and Wald test statistics for redundant variable by using the
 functions written in this package.")
     (license license:gpl2+)))
+
+(define-public r-ewp
+  (package
+    (name "r-ewp")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ewp" version))
+       (sha256
+        (base32 "18qcndxr5x6z5m91r9q8lzq0fmwli1w03x91z0rr03n3dw5c3kdx"))))
+    (properties `((upstream-name . "ewp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-bh))
+    (home-page "https://cran.r-project.org/package=ewp")
+    (synopsis "An Empirical Model for Underdispersed Count Data")
+    (description
+     "Count regression models for underdispersed small counts (lambda < 20) based on
+the three-parameter exponentially weighted Poisson distribution of Ridout &
+Besbeas (2004) <DOI:10.1191/1471082X04st064oa>.")
+    (license license:expat)))
 
 (define-public r-ewoc
   (package
@@ -6872,13 +6914,13 @@ hypothesis test functions.  Data sets are included for all examples from Cumming
 (define-public r-escalation
   (package
     (name "r-escalation")
-    (version "0.1.9")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "escalation" version))
        (sha256
-        (base32 "1y25xmwf4gb5d5n6z8n06ignjkcrgffak5ca4gjw89pr05284q5q"))))
+        (base32 "0qsr58jcw48lypddbyfpkx51riasxzq2c6098zhcypj8kf98rfvw"))))
     (properties `((upstream-name . "escalation")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16869,13 +16911,13 @@ Data API <https://educationdata.urban.org/> into a data.frame for analysis.")
 (define-public r-edsurvey
   (package
     (name "r-edsurvey")
-    (version "4.0.6")
+    (version "4.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EdSurvey" version))
        (sha256
-        (base32 "1f26cmbfqb660335wzi0lx48q8dp0dbypykyskv7njf7rf0mg1cr"))))
+        (base32 "1bdnwhdqk3m6134wibsbzkvy1fys2n4yf02i1wq9hzwh2g9alpp4"))))
     (properties `((upstream-name . "EdSurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -19994,18 +20036,18 @@ and some multivariate extensions are given.")
 (define-public r-ecce
   (package
     (name "r-ecce")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecce" version))
        (sha256
-        (base32 "09zyrjld16byc8fs76b46hh6p2saybq00y28gfmflhzb5fhc34a2"))))
+        (base32 "1rxvcix414w9hmv9snmndq1ivg27njvvqh9zk7xjxlnf0d8ffc81"))))
     (properties `((upstream-name . "ecce")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-jsonlite r-httr r-digest r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://cxy.rbind.io/rproj/ecce/")
+    (home-page "https://cxy.cc/rproj/ecce/")
     (synopsis
      "Translate English Sentence into Chinese, or Translate Chinese Sentence into English")
     (description

@@ -750,13 +750,13 @@ matrices and vectors, ROC and PR statistics.")
 (define-public r-usedthese
   (package
     (name "r-usedthese")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usedthese" version))
        (sha256
-        (base32 "0qzhydj0i6cg2w8qfgabx10vqfzkfhv7vq8qds6d624c3ayc653h"))))
+        (base32 "0ahcyvy2w87mx2qr7pl1fzihiqnsjqbbx1ba435b8ypyz7fzrpy6"))))
     (properties `((upstream-name . "usedthese")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -764,14 +764,18 @@ matrices and vectors, ROC and PR statistics.")
                              r-tidyr
                              r-tibble
                              r-stringr
+                             r-rvest
                              r-rlang
                              r-readr
                              r-purrr
+                             r-lifecycle
                              r-knitr
                              r-kableextra
+                             r-httr
                              r-highr
                              r-dplyr
-                             r-conflicted))
+                             r-conflicted
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://cgoo4.github.io/usedthese/")
     (synopsis "Summarises Package & Function Usage")
@@ -4090,13 +4094,13 @@ datasets from 1998-2014.")
 (define-public r-ucomp
   (package
     (name "r-ucomp")
-    (version "4.0.2")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UComp" version))
        (sha256
-        (base32 "0k89palrdifgrz45ar3dcnrwpxwb01nqsg9k1qkwrilhyj9c254k"))))
+        (base32 "0xa9a8yg4lmkax2jrb21np40d58yqibfka54c7zqvylcx0rdqc1j"))))
     (properties `((upstream-name . "UComp")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsoutliers
@@ -4107,14 +4111,16 @@ datasets from 1998-2014.")
                              r-ggplot2
                              r-ggforce))
     (home-page "https://cran.r-project.org/package=UComp")
-    (synopsis "Automatic Unobserved Components and Other Time Series Models")
+    (synopsis "Automatic Univariate Time Series Modelling of many Kinds")
     (description
      "Comprehensive analysis and forecasting of univariate time series using automatic
-unobserved components models and algorithms.  Harvey, AC (1989)
+time series models of many kinds.  Harvey AC (1989)
 <doi:10.1017/CBO9781107049994>.  Pedregal DJ and Young PC (2002)
 <doi:10.1002/9780470996430>.  Durbin J and Koopman SJ (2012)
 <doi:10.1093/acprof:oso/9780199641178.001.0001>.  Hyndman RJ, Koehler AB, Ord
-JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.")
+JK, and Snyder RD (2008) <doi:10.1007/978-3-540-71918-2>.  GÃ³mez V, Maravall A
+(2000) <doi:10.1002/9781118032978>.  Pedregal DJ, Trapero JR and Holgado E
+(2024) <doi:10.1016/j.ijforecast.2023.09.004>.")
     (license license:gpl3)))
 
 (define-public r-uclust

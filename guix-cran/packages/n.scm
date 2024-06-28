@@ -2310,13 +2310,13 @@ credentials, and other attributes exposed by the API.")
 (define-public r-nphrct
   (package
     (name "r-nphrct")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nphRCT" version))
        (sha256
-        (base32 "0b29izx3rz17g0jx72s33jj8ps0z3kq8fj2v0035hcjacnswz9ya"))))
+        (base32 "0znc5z9yfan6m2yy96x661xnklgqdws0zar4jl1p5jjj8azwg9sb"))))
     (properties `((upstream-name . "nphRCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-purrr r-ggplot2))
@@ -2327,8 +2327,9 @@ credentials, and other attributes exposed by the API.")
      "Perform a stratified weighted log-rank test in a randomized controlled trial.
 Tests can be visualized as a difference in average score on the two treatment
 arms.  These methods are described in Magirr and Burman (2018)
-<@code{arXiv:1807.11097v1>}, Magirr (2020) <@code{arXiv:2007.04767v1>}, and
-Magirr and Jimenez (2022) <@code{arXiv:2201.10445v1>}.")
+<doi:10.48550/@code{arXiv.1807.11097>}, Magirr (2020)
+<doi:10.48550/@code{arXiv.2007.04767>}, and Magirr and Jimenez (2022)
+<doi:10.48550/@code{arXiv.2201.10445>}.")
     (license license:gpl3+)))
 
 (define-public r-nphpower
@@ -7895,13 +7896,13 @@ configuration objects which employ HMC sampling.")
 (define-public r-nimbleecology
   (package
     (name "r-nimbleecology")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleEcology" version))
        (sha256
-        (base32 "1z4byxsana1fa2y7qhmiqbb8ana6zbas0cmbgcc703mqh1642jb2"))))
+        (base32 "0xnrbkd7q4r6q33vl03i5jzangq05w4q24wrc32f5njlsk10qdbc"))))
     (properties `((upstream-name . "nimbleEcology")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -12585,6 +12586,42 @@ una Generalizzazione dello Schema della Curva Normale\".  Rigby, R. A.,
 Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
 <doi:10.1201/9780429298547>.")
     (license license:gpl2)))
+
+(define-public r-neodistr
+  (package
+    (name "r-neodistr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neodistr" version))
+       (sha256
+        (base32 "1g27z8qnk98fgblpprvb55lfly79dcfa9kcfz7rhx1hnarbzf85p"))))
+    (properties `((upstream-name . "neodistr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes
+                             r-shiny
+                             r-rstan
+                             r-rmpfr
+                             r-plotly
+                             r-ggplot2
+                             r-brms))
+    (home-page "https://github.com/madsyair/neodistr")
+    (synopsis "Neo-Normal Distribution")
+    (description
+     "This package provides functions for calculating the density, cumulative
+distribution, quantile, and random number of neo-normal distribution.  It also
+interfaces with the brms package, allowing the use of the neo-normal
+distribution as a custom family.  This integration enables the application of
+various brms formulas for neo-normal regression.  The package implements the
+following distributions: Modified to be Stable as Normal from Burr (MSNBurr),
+Modified to be Stable as Normal from Burr-IIa (MSNBurr-IIa), Generalized of
+MSNBurr (GMSNBurr), and Jones-Faddy Skew-t.  References: Choir, A. S.
+(2020).Unpublished Dissertation.  Iriawan, N. (2000).Unpublished Dissertation.
+Jones, M. C. and Faddy,M. J. (2003).<doi:10.1111/1467-9868.00378>.  Rigby, R.
+A., Stasinopoulos, M. D., Heller, G. Z., & Bastiani, F. D. (2019)
+<doi:10.1201/9780429298547>.")
+    (license license:gpl3)))
 
 (define-public r-neo4r
   (package

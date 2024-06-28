@@ -5250,6 +5250,50 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
+(define-public r-greenr
+  (package
+    (name "r-greenr")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "greenR" version))
+       (sha256
+        (base32 "12hlz2yasajhl0yvn1skfjdy732cch0al9zgr4d3r9vyayf7x39q"))))
+    (properties `((upstream-name . "greenR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-units
+                             r-tibble
+                             r-superpixelimagesegmentation
+                             r-spatstat-geom
+                             r-shiny
+                             r-sf
+                             r-rstudioapi
+                             r-rcolorbrewer
+                             r-osrm
+                             r-osmdata
+                             r-openimager
+                             r-magrittr
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-ggplot2
+                             r-duckdb
+                             r-dt
+                             r-dplyr
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=greenR")
+    (synopsis "Green Index Quantification, Analysis and Visualization")
+    (description
+     "Quantification, analysis, and visualization of urban greenness within city
+networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
+    (license license:gpl3+)))
+
 (define-public r-greener
   (package
     (name "r-greener")
@@ -5973,13 +6017,13 @@ lines.")
 (define-public r-gratia
   (package
     (name "r-gratia")
-    (version "0.9.0")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gratia" version))
        (sha256
-        (base32 "1hkfaw2vwm4dw73fn4glkwnhvbf2wc3iyz5979rsfabn5i6g91br"))))
+        (base32 "0jjjncs5c3zd3jlxk5ywkg31lhxafdj5b58k664yd29193f2w3m0"))))
     (properties `((upstream-name . "gratia")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16781,13 +16825,13 @@ ggplot2.")
 (define-public r-ggplot2-utils
   (package
     (name "r-ggplot2-utils")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplot2.utils" version))
        (sha256
-        (base32 "0fsardsv77rfm2idynqi5zb3wrqcjyckxxchvj894kgb1qfpa27v"))))
+        (base32 "07svk16j9mc3d1fgkd5zpilnr82f7r40y9nachkp32s2bsg1a29g"))))
     (properties `((upstream-name . "ggplot2.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -17606,16 +17650,16 @@ diagnostic plots and an array of four standard diagnostic plots.")
 (define-public r-gglgbtq
   (package
     (name "r-gglgbtq")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gglgbtq" version))
        (sha256
-        (base32 "0z03rckalci6g9cd69mz3b7mz8q5z8313ci0q0qcfpkvfxmrz2py"))))
+        (base32 "1971cjn3xyn5wf2g9a8in05w3wjpvyql7928nkm3gxw23caczpd1"))))
     (properties `((upstream-name . "gglgbtq")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-tibble r-rlang r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/turtletopia/gglgbtq")
     (synopsis "Show Pride on 'ggplot2' Plots")
@@ -18317,19 +18361,21 @@ grouped multi-'fixest object faceting and programmatic updates to existing plots
 (define-public r-ggfishplots
   (package
     (name "r-ggfishplots")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggFishPlots" version))
        (sha256
-        (base32 "1zp4g29p15ac0g8cywhsagsxkagvah4xwfhv8j9djkbi7ijdx8fq"))))
+        (base32 "12p3ldbfxp51sqswms9zk6chmi8qy0ncv3l2bh9i6b1xhjcx86b2"))))
     (properties `((upstream-name . "ggFishPlots")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
+                             r-scales
                              r-rlang
+                             r-purrr
                              r-magrittr
                              r-ggridges
                              r-ggrepel
@@ -18337,14 +18383,14 @@ grouped multi-'fixest object faceting and programmatic updates to existing plots
                              r-fishmethods
                              r-dplyr
                              r-broom))
-    (home-page "https://github.com/DeepWaterIMR/ggFishPlots")
+    (home-page "https://deepwaterimr.github.io/ggFishPlots/")
     (synopsis
      "Visualise and Calculate Life History Parameters for Fisheries Science using 'ggplot2'")
     (description
      "This package contains functions to create life history parameter plots from raw
 data.  The plots are created using ggplot2', and calculations done using the
 tidyverse collection of packages.  The package contains references to
-@code{FishBase} (Froese R., Pauly.  D., 2023) <https://www.fishbase.se/>.")
+@code{FishBase} (Froese R., Pauly D., 2023) <https://www.fishbase.se/>.")
     (license license:gpl3)))
 
 (define-public r-ggfields
@@ -21982,13 +22028,13 @@ Kriging technique.")
 (define-public r-geommc
   (package
     (name "r-geommc")
-    (version "0.0.0")
+    (version "0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geommc" version))
        (sha256
-        (base32 "0wjlarfx47h1vskpdr22d7l7ji5pcaw8095a7xigzqm8af1i9jla"))))
+        (base32 "0jc5fm2qrbhdk2dnh00yffjr07j8bg20h5dm0vj6qy1xkq7mrpx0"))))
     (properties `((upstream-name . "geommc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -22390,6 +22436,92 @@ coordinate system, including API for interacting with other common R GIS
 libraries.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-geohabnet
+  (package
+    (name "r-geohabnet")
+    (version "2.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geohabnet" version))
+       (sha256
+        (base32 "16a1qvmlynsvws3kl1l1apds8gxgf4yx1c7z92qcp73kilbmgp3x"))))
+    (properties `((upstream-name . "geohabnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-viridislite
+                             r-terra
+                             r-stringr
+                             r-rnaturalearth
+                             r-rlang
+                             r-patchwork
+                             r-memoise
+                             r-magrittr
+                             r-igraph
+                             r-ggplot2
+                             r-geosphere
+                             r-geodata
+                             r-future-apply
+                             r-future
+                             r-easycsv
+                             r-config
+                             r-beepr))
+    (native-inputs (list r-knitr))
+    (home-page "https://garrettlab.github.io/HabitatConnectivity/")
+    (synopsis "Geographical Risk Analysis Based on Habitat Connectivity")
+    (description
+     "The geohabnet package is designed to perform a geographically or spatially
+explicit risk analysis of habitat connectivity.  Xing et al (2021)
+<doi:10.1093/biosci/biaa067> proposed the concept of cropland connectivity as a
+risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
+were initially developed thinking on cropland connectivity, users are
+recommended to first be familiar with the concept by looking at the Xing et al
+paper.  In a nutshell, a habitat connectivity analysis combines information from
+maps of host density, estimates the relative likelihood of pathogen movement
+between habitat locations in the area of interest, and applies network analysis
+to calculate the connectivity of habitat locations.  The functions of geohabnet
+are built to conduct a habitat connectivity analysis relying on geographic
+parameters (spatial resolution and spatial extent), dispersal parameters (in two
+commonly used dispersal kernels: inverse power law and negative exponential
+models), and network parameters (link weight thresholds and network metrics).
+The functionality and main extensions provided by the functions in geohabnet to
+habitat connectivity analysis are a) Capability to easily calculate the
+connectivity of locations in a landscape using a single function, such as
+sensitivity_analysis() or msean().  b) As backbone datasets, the geohabnet
+package supports the use of two publicly available global datasets to calculate
+cropland density.  The backbone datasets in the geohabnet package include crop
+distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley (2008)
+<doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic distribution of
+crop areas, yields, physiological types, and net primary production in the year
+2000, Global Biogeochem.  Cycles, 22, GB1022\" and International Food Policy
+Research Institute (2019) <doi:10.7910/DVN/PRFF8V> \"Global
+Spatially-Disaggregated Crop Production Statistics Data for 2010 Version 2.0,
+Harvard Dataverse, V4\".  Users can also provide any other geographic dataset
+that represents host density.  c) Because the geohabnet package allows R users
+to provide maps of host density (as originally in Xing et al (2021)), host
+landscape density (representing the geographic distribution of either crops or
+wild species), or habitat distribution (such as host landscape density adjusted
+by climate suitability) as inputs, we propose the term habitat connectivity.  d)
+The geohabnet package allows R users to customize parameter values in the
+habitat connectivity analysis, facilitating context-specific (pathogen- or
+pest-specific) analyses.  e) The geohabnet package allows users to automatically
+visualize maps of the habitat connectivity of locations resulting from a
+sensitivity analysis across all customized parameter combinations.  The primary
+function is sean() and sensitivity analysis().  Most functions in geohabnet
+provide as three main outcomes: i) A map of mean habitat connectivity across
+parameters selected by the user, ii) a map of variance of habitat connectivity
+across the selected parameters, and iii) a map of the difference between the
+ranks of habitat connectivity and habitat density.  Each function can be used to
+generate these maps as final outcomes.  Each function can also provide
+intermediate outcomes, such as the adjacency matrices built to perform the
+analysis, which can be used in other network analysis.  Refer to article at
+<https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
+to see examples of each function and how to access each of these outcome types.
+To change parameter values, the file called parameters.yaml stores the
+parameters and their values, can be accessed using get_parameters() and set new
+parameter values with set_parameters().  Users can modify up to ten parameters.")
+    (license license:gpl3)))
 
 (define-public r-geogrid
   (package
@@ -28086,13 +28218,13 @@ benchmarks collected from a wide range of applications.")
 (define-public r-gasp
   (package
     (name "r-gasp")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaSP" version))
        (sha256
-        (base32 "1xwh8wmvwsqf0d0zra65gadvbra229daiimz0zqnmlrlga2hdfqp"))))
+        (base32 "0hyalvx7j434g4z7imkwn6anl7sp8pp076v6a2bbsy054vh5l59z"))))
     (properties `((upstream-name . "GaSP")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -28768,13 +28900,13 @@ He and Wand (2023) <@code{arXiv:2201.00412>}.")
 (define-public r-gamsel
   (package
     (name "r-gamsel")
-    (version "1.8-2")
+    (version "1.8-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamsel" version))
        (sha256
-        (base32 "1w1z2g0njsfv1ah6w3zw4lcgnaxask5mgykb204jzp6hpnc1a6cb"))))
+        (base32 "0kjp7959k1dfdb49s1bxs019miwsy8i76ihrwbl69xwihj1rk5ij"))))
     (properties `((upstream-name . "gamsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mda r-foreach))
@@ -28784,7 +28916,8 @@ He and Wand (2023) <@code{arXiv:2201.00412>}.")
      "Using overlap grouped-lasso penalties, gamsel selects whether a term in a gam is
 nonzero, linear, or a non-linear spline (up to a specified max df per variable).
  It fits the entire regularization path on a grid of values for the overall
-penalty lambda, both for gaussian and binomial families.")
+penalty lambda, both for gaussian and binomial families.  See
+<doi:10.48550/@code{arXiv.1506.03850>} for more details.")
     (license license:gpl2)))
 
 (define-public r-gamrr
@@ -28899,6 +29032,30 @@ It provides methods for estimating the gamma dose rate by the use of a
 calibration curve as described in Mercier and @code{FalguÃ¨res} (2007).  The
 package only supports Canberra CNF and TKA files.")
     (license license:gpl3)))
+
+(define-public r-gamlssx
+  (package
+    (name "r-gamlssx")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gamlssx" version))
+       (sha256
+        (base32 "0lhn0rif1k6978j50cvb3krknn09dzvdln1dh4amz3h2jqsh6434"))))
+    (properties `((upstream-name . "gamlssx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nieve r-gamlss-dist r-gamlss))
+    (home-page "https://paulnorthrop.github.io/gamlssx/")
+    (synopsis
+     "Generalized Additive Extreme Value Models for Location, Scale and Shape")
+    (description
+     "Fits generalized additive models for the location, scale and shape parameters of
+a generalized extreme value response distribution.  The methodology is based on
+Rigby, R.A. and Stasinopoulos, D.M. (2005),
+<doi:10.1111/j.1467-9876.2005.00510.x> and implemented using functions from the
+gamlss package <doi:10.32614/CRAN.package.gamlss>.")
+    (license license:gpl3+)))
 
 (define-public r-gamlssbssn
   (package

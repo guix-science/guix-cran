@@ -189,13 +189,13 @@ condition.")
 (define-public r-ows4r
   (package
     (name "r-ows4r")
-    (version "0.3-6")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ows4R" version))
        (sha256
-        (base32 "1nzvvkixgcqpz0hxzb4fyby5c3rlh0ac3i5q00wz3w3bhhdzrdcb"))))
+        (base32 "0isp6f4q900yzx2fbm3nflm7ngpvycz33a6i1zilcjxsbyjkhxxk"))))
     (properties `((upstream-name . "ows4R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -205,7 +205,8 @@ condition.")
                              r-openssl
                              r-keyring
                              r-httr
-                             r-geometa))
+                             r-geometa
+                             r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eblondel/ows4R")
     (synopsis "Interface to OGC Web-Services (OWS)")
@@ -7322,21 +7323,21 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
 (define-public r-onesamplemr
   (package
     (name "r-onesamplemr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OneSampleMR" version))
        (sha256
-        (base32 "11wcrmhibr02wbkdw77imcjancfdfzcqkz6wfjiiydx3hsksymck"))))
+        (base32 "1swjc1gsddihdcx9c219vzh9xn379fp8jlvvs5jhikixkk1frqdq"))))
     (properties `((upstream-name . "OneSampleMR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-msm
+    (propagated-inputs (list r-rlang
+                             r-msm
                              r-lmtest
                              r-ivreg
                              r-gmm
-                             r-formula
-                             r-ellipsis))
+                             r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/remlapmot/OneSampleMR")
     (synopsis
@@ -8779,13 +8780,13 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.7.0")
+    (version "3.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0rj57ipm2lk11ysscgqaa38hgysyxr9nb5zvp17kxf5cla17dskc"))))
+        (base32 "0i8bpx3baq6x2hkk2zf45yxjk4mzhrw6wbksw1z1w11hghyld6vs"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

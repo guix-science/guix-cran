@@ -1330,6 +1330,32 @@ A. Lama and B. Gurung in Mausam, vol.  72, pp.879-886,
 2021,<doi:10.54302/mausam.v72i4.670>.")
     (license license:gpl3)))
 
+(define-public r-autovi
+  (package
+    (name "r-autovi")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autovi" version))
+       (sha256
+        (base32 "1f0pmcqjzb4w10693khakva84dn32k01a655c5r4xf1n86vvq2jv"))))
+    (properties `((upstream-name . "autovi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-reticulate
+                             r-ggplot2
+                             r-cli
+                             r-cassowaryr
+                             r-bandicoot))
+    (home-page "https://tengmcing.github.io/autovi/")
+    (synopsis "Auto Visual Inference with Computer Vision Models")
+    (description
+     "This package provides automated visual inference of residual plots using
+computer vision models, facilitating diagnostic checks for classical normal
+linear regression models.")
+    (license license:expat)))
+
 (define-public r-autots
   (package
     (name "r-autots")
@@ -10334,13 +10360,13 @@ online: <https://www.who.int/tools/child-growth-standards>.")
 (define-public r-antaresviz
   (package
     (name "r-antaresviz")
-    (version "0.18.0")
+    (version "0.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresViz" version))
        (sha256
-        (base32 "1lffsxv8fy3yq6rx6520rizp9f74d8bd78by5n209yr9yhw1629r"))))
+        (base32 "0wy1ab94af1vl9ip6x7qy5k95f2vma3hdbafm4kzr58yp9bvqyzb"))))
     (properties `((upstream-name . "antaresViz")))
     (build-system r-build-system)
     (arguments
@@ -10368,6 +10394,7 @@ online: <https://www.who.int/tools/child-growth-standards>.")
                              r-plotly
                              r-manipulatewidget
                              r-lubridate
+                             r-lifecycle
                              r-leaflet-minicharts
                              r-leaflet
                              r-htmlwidgets
@@ -10432,13 +10459,13 @@ here : <https://antares-simulator.org/>).")
 (define-public r-antaresprocessing
   (package
     (name "r-antaresprocessing")
-    (version "0.18.1")
+    (version "0.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresProcessing" version))
        (sha256
-        (base32 "1dlq850xqh9534ws88ma3vv5r79cbabn6r6a2jmicxx116s7wjrz"))))
+        (base32 "1cks6v8zqfrihp50gfm1n9aiylmccjd424lwg01k5k7dpf5n0jp2"))))
     (properties `((upstream-name . "antaresProcessing")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-antaresread))
@@ -15320,13 +15347,13 @@ included.  Use help(@code{airGR}) for package description and references.")
 (define-public r-aire-zmvm
   (package
     (name "r-aire-zmvm")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aire.zmvm" version))
        (sha256
-        (base32 "1jb86dkqj8vbbg7iq4852bjdlc4i9mn0x6rc7lhl81nf6rfi9wql"))))
+        (base32 "10x22n9cjr2zcjm84j6l3i9lywfw744giww4h2ki3iq3v4qli09y"))))
     (properties `((upstream-name . "aire.zmvm")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16945,13 +16972,13 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1rrn0ag70bix45kkzpvkyz5hqnh86p0pw902is19gxf3qb8nj2bd"))))
+        (base32 "1l25f0qq5lqc5jpcwvvnl6qysrgyz1g8wgqqw10d8z38jks2mrg3"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -20524,13 +20551,13 @@ component, and push it to an Acumos platform.")
 (define-public r-actxps
   (package
     (name "r-actxps")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "actxps" version))
        (sha256
-        (base32 "0c0n93zl4ag5mkaw37y2zyg75x9ga4fb5pxz71iidlfj1xblaywa"))))
+        (base32 "1mabhbv5mg4afcxwv4fn2f7847scmddmyfqzzhypypj4pll61nr3"))))
     (properties `((upstream-name . "actxps")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -20542,12 +20569,12 @@ component, and push it to an Acumos platform.")
                              r-readr
                              r-purrr
                              r-paletteer
-                             r-lubridate
                              r-gt
                              r-glue
                              r-ggplot2
                              r-generics
-                             r-dplyr))
+                             r-dplyr
+                             r-clock))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/mattheaphy/actxps/")
     (synopsis

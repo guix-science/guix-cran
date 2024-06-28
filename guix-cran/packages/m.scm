@@ -12,8 +12,6 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
-  #:use-module (gnu packages cmake)
-  #:use-module (gnu packages version-control)
   #:use-module (gnu packages python-xyz)
   #:use-module (gnu packages python-science)
   #:use-module (gnu packages python)
@@ -3673,13 +3671,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.3")
+    (version "3.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "0j9wkvskxvxvl1qhk9fl21ay7bx4bm2vl0wpvxjhhk82nrjr4fg7"))))
+        (base32 "0h13i894m7b9h3n10gad1332s9x4hzlsd2nsw4cggjcbpiq3qjkr"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -5884,13 +5882,13 @@ R.S., Preve, D. (2012) <doi:10.1016/j.jeconom.2012.01.014>.")
 (define-public r-multbxxc
   (package
     (name "r-multbxxc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multbxxc" version))
        (sha256
-        (base32 "1g8m3mgqfvqf097rd3v78575gci77gphygjv66n0nlnv06hqrhr1"))))
+        (base32 "0pb8pf66jribf1riyzsv9snmhvf3vivzklkmfhzadgrs72sxlgw4"))))
     (properties `((upstream-name . "multbxxc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmumps r-rcpparmadillo r-rcpp))
@@ -7294,6 +7292,29 @@ database and examine individual tables and views.")
 Primary Cancer data, including functions to reshape data, to calculate patient
 states and analyze cancer incidence.")
     (license license:gpl3)))
+
+(define-public r-mssearchr
+  (package
+    (name "r-mssearchr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mssearchr" version))
+       (sha256
+        (base32 "0w5i2vcnargw8z80sgmh0qrb5sdv5s3fi3b05qvyc0mx0k6b77lh"))))
+    (properties `((upstream-name . "mssearchr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://mass-spec.ru/projects/gcmsdata/mssearchr/eng/")
+    (synopsis
+     "Library Search Against Electron Ionization Mass Spectral Databases")
+    (description
+     "Perform library searches against electron ionization mass spectral databases
+using either the API provided by MS Search software
+(<https://chemdata.nist.gov/dokuwiki/doku.php?id=chemdata:nistlibs>) or custom
+implementations of the Identity and Similarity algorithms.")
+    (license license:expat)))
 
 (define-public r-msrdt
   (package
@@ -10591,42 +10612,6 @@ Pasaniuc, WJ Gauderman, JS Witte (2020) <doi:10.1101/2020.07.06.190256>.")
      "Data sets and scripts for Modeling Psychophysical Data in R (Springer).")
     (license license:gpl2)))
 
-(define-public r-mpcr
-  (package
-    (name "r-mpcr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MPCR" version))
-       (sha256
-        (base32 "0hq6df8rz7hi1s4kpcxlx21kppn70fjki8wfy6gi8kna8bmayyf7"))))
-    (properties `((upstream-name . "MPCR")))
-    (build-system r-build-system)
-    (inputs (list git cmake))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/stsds/MPCR")
-    (synopsis "Multi- And Mixed-Precision Computations")
-    (description
-     "Designed for multi- and mixed-precision computations, accommodating 64-bit and
-32-bit data structures.  This flexibility enables fast execution across various
-applications.  The package enhances performance by optimizing operations in both
-precision levels, which is achieved by integrating with high-speed BLAS and
-LAPACK libraries like MKL and @code{OpenBLAS}'.  Including a 32-bit option
-caters to applications where high precision is unnecessary, accelerating
-computational processes whenever feasible.  The package also provides support
-for tile-based algorithms in three linear algebra operations: CHOL(), TRSM(),
-and GEMM().  The tile-based algorithm splits the matrix into smaller tiles,
-facilitating parallelization through a predefined Directed Acyclic Graph (DAG)
-for each operation.  Enabling @code{OpenMP} enhances the efficiency of these
-operations, leveraging multi-core parallelism.  In this case, MPCR facilitates
-mixed-precision execution by permitting varying precision levels for different
-tiles.  This approach is advantageous in numerous applications, as it maintains
-the accuracy of the application while accelerating execution in scenarios where
-single-precision alone does not significantly affect the accuracy of the
-application.")
-    (license license:gpl3+)))
-
 (define-public r-mpci
   (package
     (name "r-mpci")
@@ -10712,18 +10697,17 @@ convenience functions to aid in data processing.")
 (define-public r-mpath
   (package
     (name "r-mpath")
-    (version "0.4-2.25")
+    (version "0.4-2.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpath" version))
        (sha256
-        (base32 "1131bmp0jqz846snjbg57pd8kmn2jynz4xsck119qxspclw476ab"))))
+        (base32 "1pzmcp3kznkfi0bh7pcpgciwla3wgzbb2h1mrngfd1pmm3406pvr"))))
     (properties `((upstream-name . "mpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightsvm
                              r-pscl
-                             r-pamr
                              r-numderiv
                              r-mass
                              r-glmnet
@@ -15952,13 +15936,13 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.11")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "1w7kpjsa59zri2jqaxlr4b7lg57xrnnwlak9wb6midlb3n8pw5f1"))))
+        (base32 "0bgvh7bjijsfv6rb8syhmiqd600pdc3kg9z1dx2iskghxjwiww93"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -17202,6 +17186,44 @@ inter-level represents an affiliation relationship.")
 Three network structures are obtained: temporal networks, contemporaneous
 networks and between-subjects networks.")
     (license license:gpl2)))
+
+(define-public r-mlts
+  (package
+    (name "r-mlts")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlts" version))
+       (sha256
+        (base32 "017kl04f70iglrpzxc24kl4v65rf3lqi3fy0wdhnaffr0bf7qyri"))))
+    (properties `((upstream-name . "mlts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rmarkdown
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-pdftools
+                             r-mvtnorm
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/munchfab/mlts")
+    (synopsis "Multilevel Latent Time Series Models with 'R' and 'Stan'")
+    (description
+     "Fit multilevel manifest or latent time-series models, including popular Dynamic
+Structural Equation Models (DSEM).  The models can be set up and modified with
+user-friendly functions and are fit to the data using Stan for Bayesian
+inference.  Path models and formulas for user-defined models can be easily
+created with functions using knitr'.  Asparouhov, Hamaker, & Muthen (2018)
+<doi:10.1080/10705511.2017.1406803>.")
+    (license license:gpl3+)))
 
 (define-public r-mltools
   (package
@@ -21245,13 +21267,13 @@ full technical documentation.  All data is sourced from
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.3")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "1s0vkxxh13r62rdq2xlwkw93chi862ynr7lznp29g5iz3r3dz103"))))
+        (base32 "0w379vmh62fjsjqqmwyqsya8kx703b53w65xzi3flmvy400aql64"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -25979,13 +26001,13 @@ distribution of p values as a way to detect the true signals in the data.")
 (define-public r-mhorseshoe
   (package
     (name "r-mhorseshoe")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Mhorseshoe" version))
        (sha256
-        (base32 "0ra7mswvqjm8vma4d1r3piz0wpsm1d4qwf39h99migri4mn2080y"))))
+        (base32 "064wyih65sqy66v5yr5cvvdm2crgbfkq8pzzcxvbp74vr8gxljdp"))))
     (properties `((upstream-name . "Mhorseshoe")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -25993,12 +26015,9 @@ distribution of p values as a way to detect the true signals in the data.")
     (home-page "https://cran.r-project.org/package=Mhorseshoe")
     (synopsis "Approximate Algorithm for Horseshoe Prior")
     (description
-     "This package provides an approximate algorithm for the horseshoe estimator used
-in Bayesian linear models.  By implementing a sampler with high computational
-cost in the Rcpp package and using an approximate algorithm that reduces matrix
-calculation complexity, parameter estimation speed for high-dimensional sparse
-data is faster.  The approximate algorithm is described in Johndrow et al.
-(2020) <https://www.jmlr.org/papers/v21/19-536.html>.")
+     "This package provides exact and approximate algorithms for the horseshoe prior
+in linear regression models, which were proposed by Johndrow et al. (2020)
+<https://www.jmlr.org/papers/v21/19-536.html>.")
     (license license:expat)))
 
 (define-public r-mhmmbayes
@@ -29869,16 +29888,22 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
 (define-public r-metahd
   (package
     (name "r-metahd")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaHD" version))
        (sha256
-        (base32 "0qgzipw3gfhm22x70z83zinp7zr5xbyyw502j6p3r31r4k2glkp9"))))
+        (base32 "0b28qi0a7142lqj1gwi4ih61im5983a6wm7p2w63kdvc8apxaa76"))))
     (properties `((upstream-name . "MetaHD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrixcalc r-matrix
+    (propagated-inputs (list r-tidyr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-metafor
+                             r-matrixcalc
+                             r-matrix
+                             r-dplyr
                              r-corpcor))
     (home-page "https://cran.r-project.org/package=MetaHD")
     (synopsis "Multivariate Meta-Analysis Model for Metabolomics Data")
@@ -29888,7 +29913,9 @@ metabolomics data for integrating and collectively analysing individual-level
 metabolomics data generated from multiple studies as well as for combining
 summary estimates.  This approach accounts for correlation between metabolites,
 considers variability within and between studies, handles missing values and
-uses shrinkage estimation to allow for high dimensionality.")
+uses shrinkage estimation to allow for high dimensionality.  A detailed vignette
+with example datasets and code to prepare data and analyses are available on
+<https://bookdown.org/a2delivera/@code{MetaHD/>}.")
     (license license:gpl3)))
 
 (define-public r-metaggr
@@ -31394,13 +31421,13 @@ being the number of trees to aggregate.")
 (define-public r-mergen
   (package
     (name "r-mergen")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mergen" version))
        (sha256
-        (base32 "0nzgqsmbgk4472c64pr1qhmbhdk69qmicb5qni744crxlar92g5x"))))
+        (base32 "0mrrqxjj0w2yw5q0g23wq4knpvv2hi4lhc9z7289id4n3xhw37xz"))))
     (properties `((upstream-name . "mergen")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown
@@ -31410,7 +31437,7 @@ being the number of trees to aggregate.")
                              r-biocmanager
                              r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mergen")
+    (home-page "https://github.com/BIMSBbioinfo/mergen")
     (synopsis
      "AI-Driven Code Generation, Explanation and Execution for Data Analysis")
     (description

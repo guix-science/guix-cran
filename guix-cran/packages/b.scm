@@ -1809,6 +1809,49 @@ Denuit, M., Trufin, J., Verdebout, T. (2022)
 <https://dial.uclouvain.be/pr/boreal/fr/object/boreal%3A268577>.")
     (license license:gpl3+)))
 
+(define-public r-bsynth
+  (package
+    (name "r-bsynth")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bsynth" version))
+       (sha256
+        (base32 "1hgq999pkk54cnw21xgpmksr1x4lr2y23c3ma8fyn4637mqa0z7r"))))
+    (properties `((upstream-name . "bsynth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vizdraws
+                             r-tidyr
+                             r-tibble
+                             r-stanheaders
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-cubelyr
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/google/bsynth")
+    (synopsis "Bayesian Synthetic Control")
+    (description
+     "This package implements the Bayesian Synthetic Control method for causal
+inference in comparative case studies.  This package provides tools for
+estimating treatment effects in settings with a single treated unit and multiple
+control units, allowing for uncertainty quantification and flexible modeling of
+time-varying effects.  The methodology is based on the paper by Vives and
+Martinez (2022) <doi:10.48550/@code{arXiv.2206.01779>}.")
+    (license license:asl2.0)))
+
 (define-public r-bsw
   (package
     (name "r-bsw")
@@ -3544,13 +3587,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "12srwi69mkhnj2m711r9pag89jlmxxsjksr1fhb5w5cbn0lyk9in"))))
+        (base32 "0pg0f0glqz3m2kj44lg4fg6g7icigkzb578k1kjw2lhs2vjbaqbw"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4420,26 +4463,53 @@ every indicator available in the weather products (BR-DWGD and
 calculated statistics on the Parquet files and returns easy-to-use data.frames.")
     (license license:expat)))
 
+(define-public r-brcal
+  (package
+    (name "r-brcal")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BRcal" version))
+       (sha256
+        (base32 "0i24bgmj3px40j86yqp9rdx1s2xjbxckfbr8qsclbkzh6xl73ra0"))))
+    (properties `((upstream-name . "BRcal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr r-ggplot2 r-fields))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/apguthrie/BRcal")
+    (synopsis "Boldness-Recalibration of Binary Events")
+    (description
+     "Boldness-recalibration maximally spreads out probability predictions while
+maintaining a user specified level of calibration, facilitated the brcal()
+function.  Supporting functions to assess calibration via Bayesian and
+Frequentist approaches, Maximum Likelihood Estimator (MLE) recalibration, Linear
+in Log Odds (LLO)-adjust via any specified parameters, and visualize results are
+also provided.  Methodological details can be found in Guthrie & Franck (2024)
+<doi:10.1080/00031305.2024.2339266>.")
+    (license license:expat)))
+
 (define-public r-brbvs
   (package
     (name "r-brbvs")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BRBVS" version))
        (sha256
-        (base32 "0ibbnfgna80xdb7lzmc0jvlkgw4xrgva1s4bnm0cq93412r2lnay"))))
+        (base32 "0vhwwsdbslr6craaflvllvba7s1b1jzhjqpmmh70f7k0qi61x5qc"))))
     (properties `((upstream-name . "BRBVS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gjrm r-ggplot2 r-copent))
     (home-page "https://cran.r-project.org/package=BRBVS")
     (synopsis
-     "Variable Ranking in Copula Survival Models Affected by General Censoring Scheme")
+     "Variable Selection and Ranking in Copula Survival Models Affected by General Censoring Scheme")
     (description
-     "This package performs variable ranking based on several measures for the class
-of copula survival model(s) in high dimensional domain.  The package is based on
-the class of copula survival model(s) implemented in the GJRM package.")
+     "This package performs variable selection and ranking based on several measures
+for the class of copula survival model(s) in high dimensional domain.  The
+package is based on the class of copula survival model(s) implemented in the
+GJRM package.")
     (license license:gpl3+)))
 
 (define-public r-brazilmet
@@ -10631,24 +10701,26 @@ Hidasi-Neto, J (2015)
 (define-public r-bittermelon
   (package
     (name "r-bittermelon")
-    (version "1.1.2")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bittermelon" version))
        (sha256
-        (base32 "0v1i7pmblin55vz94i68fwih9djp40wqqyibl361dwyz345j3in5"))))
+        (base32 "0nd0jn28rfkqzvji54i4b53qjzl4xjbwnhsw55vyb3209hk84q1w"))))
     (properties `((upstream-name . "bittermelon")))
     (build-system r-build-system)
-    (propagated-inputs (list r-unicode r-rappdirs r-png r-findpython))
+    (propagated-inputs (list r-unicode r-png r-cli))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://trevorldavis.com/R/bittermelon/")
-    (synopsis "Monochrome Bitmap Font Tools")
+    (synopsis "Bitmap Tools")
     (description
-     "This package provides functions for creating and modifying bitmaps with special
-emphasis on bitmap fonts and their glyphs.  Provides native read/write support
-for the hex and yaff bitmap font formats and if Python is installed can also
-read/write several more bitmap font formats using an embedded version of
-monobit'.")
+     "This package provides functions for creating, modifying, and displaying bitmaps
+including printing them in the terminal.  There is a special emphasis on
+monochrome bitmap fonts and their glyphs as well as colored pixel art/sprites.
+Provides native read/write support for the hex and yaff bitmap font formats and
+if monobit <https://github.com/robhagemans/monobit> is installed can also
+read/write several additional bitmap font formats.")
     (license license:expat)))
 
 (define-public r-bitrina
@@ -14667,13 +14739,13 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.9.1")
+    (version "1.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGL" version))
        (sha256
-        (base32 "0cc67fg6b5vjjvq485bw374h1d0l7klcgprwpb472srsbdx6l4y2"))))
+        (base32 "1szd0ll2xfgkmap15vgizsjm610ch6znicgi8lccrb68kf6gbq7p"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -22817,13 +22889,13 @@ of specific algorithms.")
 (define-public r-bayesianvars
   (package
     (name "r-bayesianvars")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesianVARs" version))
        (sha256
-        (base32 "05vx1v7znj12b1h1wks7azi2xrwhdzxjljjsshp3x5zmjm5kg169"))))
+        (base32 "04q140gpwk8wsybg4jcqdhxln6f4gbg5pca369rfi7yp3xffrbyp"))))
     (properties `((upstream-name . "bayesianVARs")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -22843,9 +22915,9 @@ of specific algorithms.")
      "Efficient Markov Chain Monte Carlo (MCMC) algorithms for the fully Bayesian
 estimation of vectorautoregressions (VARs) featuring stochastic volatility (SV).
  Implements state-of-the-art shrinkage priors following Gruber & Kastner (2023)
-<@code{arXiv:2206.04902>}.  Efficient equation-per-equation estimation following
-Kastner & Huber (2020) <doi:10.1002/for.2680> and Carrerio et al. (2021)
-<doi:10.1016/j.jeconom.2021.11.010>.")
+<doi:10.48550/@code{arXiv.2206.04902>}.  Efficient equation-per-equation
+estimation following Kastner & Huber (2020) <doi:10.1002/for.2680> and Carrerio
+et al. (2021) <doi:10.1016/j.jeconom.2021.11.010>.")
     (license license:gpl3+)))
 
 (define-public r-bayesiantreg
@@ -24007,6 +24079,45 @@ hierarchical clustering (single, average, and complete linkage).  Though BCVI is
 compatible with any underlying existing CVIs, we recommend users to use either
 WI or WP as the underlying CVI.")
     (license license:gpl3+)))
+
+(define-public r-bayescureratemodel
+  (package
+    (name "r-bayescureratemodel")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesCureRateModel" version))
+       (sha256
+        (base32 "167sbrfrys24m6nvdajbji3zxmy8qqgb45irdzpgin84ynrgi5f6"))))
+    (properties `((upstream-name . "bayesCureRateModel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mclust
+                             r-hdinterval
+                             r-foreach
+                             r-flexsurv
+                             r-doparallel
+                             r-coda
+                             r-calculus))
+    (home-page "https://github.com/mqbssppe/Bayesian_cure_rate_model")
+    (synopsis "Bayesian Cure Rate Modeling for Time-to-Event Data")
+    (description
+     "This package provides a fully Bayesian approach in order to estimate a general
+family of cure rate models under the presence of covariates, see Papastamoulis
+and Milienos (2023) <doi:10.48550/@code{arXiv.2310.06926>}.  The promotion time
+can be modelled (a) parametrically using typical distributional assumptions for
+time to event data (including the Weibull, Exponential, Gompertz, log-Logistic
+distributions), or (b) semiparametrically using finite mixtures of Gamma
+distributions.  Posterior inference is carried out by constructing a
+Metropolis-coupled Markov chain Monte Carlo (MCMC) sampler, which combines Gibbs
+sampling for the latent cure indicators and Metropolis-Hastings steps with
+Langevin diffusion dynamics for parameter updates.  The main MCMC algorithm is
+embedded within a parallel tempering scheme by considering heated versions of
+the target posterior distribution.")
+    (license license:gpl2)))
 
 (define-public r-bayesctdesign
   (package
@@ -27760,6 +27871,39 @@ downloaded from:
      "US baby names provided by the SSA. This package contains all names used for at
 least 5 children of either sex.")
     (license license:cc0)))
+
+(define-public r-babette
+  (package
+    (name "r-babette")
+    (version "2.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "babette" version))
+       (sha256
+        (base32 "1hir478scnfm87j2r6f48sr9sxwv2n9b6vcmwjvq58m6s0j8mzfi"))))
+    (properties `((upstream-name . "babette")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-xml2
+                             r-tracerer
+                             r-stringr
+                             r-rlang
+                             r-phangorn
+                             r-mauricer
+                             r-beautier
+                             r-beastier))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/babette/")
+    (synopsis "Control 'BEAST2'")
+    (description
+     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
+that uses DNA/RNA/protein data and many model priors to create a posterior of
+jointly estimated phylogenies and parameters.  BEAST2 is commonly accompanied by
+BEAUti 2', Tracer and @code{DensiTree}'.  babette provides for an alternative
+workflow of using all these tools separately.  This allows doing complex
+Bayesian phylogenetics easily and reproducibly from R'.")
+    (license license:gpl3)))
 
 (define-public r-babelmixr2
   (package

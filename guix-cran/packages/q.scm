@@ -1972,13 +1972,13 @@ resistance surface.")
 (define-public r-quadrupen
   (package
     (name "r-quadrupen")
-    (version "0.2-11")
+    (version "0.2-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quadrupen" version))
        (sha256
-        (base32 "1gmq6wqf4qaamz33qk1y7003lbbfg34rcr48a3jp7fd3aww0yp9c"))))
+        (base32 "1h05cywpi83saaqg1m8zb49nxn9ablzb8152yd5rynp877cc636h"))))
     (properties `((upstream-name . "quadrupen")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -1992,8 +1992,8 @@ resistance surface.")
     (description
      "Fits classical sparse regression models with efficient active set algorithms by
 solving quadratic problems as described by Grandvalet, Chiquet and Ambroise
-(2017) <@code{arXiv:1210.2077>}.  Also provides a few methods for model
-selection purpose (cross-validation, stability selection).")
+(2017) <doi:10.48550/@code{arXiv.1210.2077>}.  Also provides a few methods for
+model selection purpose (cross-validation, stability selection).")
     (license license:gpl3+)))
 
 (define-public r-quadroot
@@ -2428,13 +2428,13 @@ causality for pairs of phenotypes in system genetics.  Genetics 193 : 1003-1013.
 (define-public r-qtlemm
   (package
     (name "r-qtlemm")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTLEMM" version))
        (sha256
-        (base32 "0xr5yjfn9ndgivqa4a9s05vwg8h9prdjci3l9vs22yj6ncc79jgr"))))
+        (base32 "1w2h094ihvfybaq7gr9l0x6b1d81yvf921rki1bz263jbc9x57h3"))))
     (properties `((upstream-name . "QTLEMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))

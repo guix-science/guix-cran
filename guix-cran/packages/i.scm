@@ -3078,33 +3078,36 @@ likelihood estimates are available.")
 (define-public r-irtawsi
   (package
     (name "r-irtawsi")
-    (version "0.3.4")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtawsi" version))
        (sha256
-        (base32 "1fxz0k9pyf1h0mv64lj8p1n5yhgmrzs5q0vq8l77sg3zd8gv66pf"))))
+        (base32 "0il4v2lilj310nviv2va9g6iddh8dk6wpxiwifk4wnmkxbkjmfv0"))))
     (properties `((upstream-name . "irtawsi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinywidgets
+    (propagated-inputs (list r-writexl
+                             r-wrightmap
+                             r-shinywidgets
                              r-shinycssloaders
                              r-shiny
                              r-rmarkdown
                              r-readxl
                              r-psych
+                             r-mirtcat
                              r-mirt
                              r-gt
                              r-dt
                              r-diagram
                              r-bs4dash))
-    (home-page "https://cran.r-project.org/package=irtawsi")
+    (home-page "https://github.com/SusantoHP/irtawsi")
     (synopsis "Items Response Theory Analysis with Steps and Interpretation")
     (description
-     "Analysis of Dichotomous and polytomous data using unidimensional Item Response
-Theory model (Chalmers (2012) <doi:10.18637/jss.v048.i06>) with user friendly
-Graphical User Interface.  Suitable for beginners who are learning Item Response
-Theory.")
+     "Dichotomous and polytomous data analysis and their scoring using the
+unidimensional Item Response Theory model (Chalmers (2012)
+<doi:10.18637/jss.v048.i06>) with user-friendly graphic User Interface.
+Suitable for beginners who are learning item response theory.")
     (license license:gpl3+)))
 
 (define-public r-irt
@@ -9168,19 +9171,19 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "1c2aaysyjvxxynwp877bhi9w3lrydg96gp2is6a919dgmwi7ilvx"))))
+        (base32 "01wzimr1gjj4993k15w8kyq1rmc5a2a9q68hv19gdkrwsyd2zspa"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
                              r-rcpp
                              r-purrr
-                             r-progress
+                             r-pbapply
                              r-patchwork
                              r-matrix
                              r-ggraph

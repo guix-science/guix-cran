@@ -6263,16 +6263,17 @@ model inference feature through simulation and games.")
 (define-public r-lmtp
   (package
     (name "r-lmtp")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmtp" version))
        (sha256
-        (base32 "12vq5rail8xdw84ms6nv4ncmdygk485vffyzqc9kcc7wxlbr127i"))))
+        (base32 "10gy8nb64vp36q6yy0kp0g2dvv514gvq4vfc5az4ydlx29qyc6bn"))))
     (properties `((upstream-name . "lmtp")))
     (build-system r-build-system)
     (propagated-inputs (list r-superlearner
+                             r-schoolmath
                              r-r6
                              r-progressr
                              r-origami
@@ -6282,19 +6283,19 @@ model inference feature through simulation and games.")
                              r-data-table
                              r-cli
                              r-checkmate))
-    (home-page "https://github.com/nt-williams/lmtp")
+    (home-page "https://beyondtheate.com/")
     (synopsis
      "Non-Parametric Causal Effects of Feasible Interventions Based on Modified Treatment Policies")
     (description
      "Non-parametric estimators for casual effects based on longitudinal modified
 treatment policies as described in Diaz, Williams, Hoffman, and Schenck
 <doi:10.1080/01621459.2021.1955691>, traditional point treatment, and
-traditional longitudinal effects.  Continuous, binary, and categorical
-treatments are allowed as well are censored outcomes.  The treatment mechanism
-is estimated via a density ratio classification procedure irrespective of
-treatment variable type.  For both continuous and binary outcomes, additive
-treatment effects can be calculated and relative risks and odds ratios may be
-calculated for binary outcomes.")
+traditional longitudinal effects.  Continuous, binary, categorical treatments,
+and multivariate treatments are allowed as well are censored outcomes.  The
+treatment mechanism is estimated via a density ratio classification procedure
+irrespective of treatment variable type.  For both continuous and binary
+outcomes, additive treatment effects can be calculated and relative risks and
+odds ratios may be calculated for binary outcomes.")
     (license license:agpl3)))
 
 (define-public r-lmtestrob
@@ -7065,13 +7066,13 @@ or gls models.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.1")
+    (version "1.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "12156nll73lwmf0si6pm46gvkc3pdgqwg6yc9bqdvgdggf7pnjqc"))))
+        (base32 "085zmg9p9n5lxmz9ay9mk1gav82hcz0vknprn5s85s151n2bsz2z"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4 r-crayon))
@@ -15145,6 +15146,36 @@ interpolation originally implemented in the R package
 <https://cran.r-project.org/package=chebpol>.")
     (license license:gpl3)))
 
+(define-public r-latentbma
+  (package
+    (name "r-latentbma")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LatentBMA" version))
+       (sha256
+        (base32 "0ywhlplja69nai0cz0ck6i863i9201ykgjyrkh555k6vl26ngrwq"))))
+    (properties `((upstream-name . "LatentBMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-progress r-mnormt r-knitr r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LatentBMA")
+    (synopsis
+     "Bayesian Model Averaging for Univariate Link Latent Gaussian Models")
+    (description
+     "Bayesian model averaging (BMA) algorithms for univariate link latent Gaussian
+models (ULLGMs).  For detailed information, refer to Steel M.F.J. & Zens G.
+(2024) \"Model Uncertainty in Latent Gaussian Models with Univariate Link
+Function\" <doi:10.48550/@code{arXiv.2406.17318>}.  The package supports various
+g-priors and a beta-binomial prior on the model space.  It also includes
+auxiliary functions for visualizing and tabulating BMA results.  Currently, it
+offers an out-of-the-box solution for model averaging of Poisson log-normal
+(PLN) and binomial logistic-normal (@code{BiL}) models.  The codebase is
+designed to be easily extendable to other likelihoods, priors, and link
+functions.")
+    (license license:expat)))
+
 (define-public r-latent2likert
   (package
     (name "r-latent2likert")
@@ -15746,13 +15777,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "0inzgd76wm63d35hwxz6if0y5glyl7v3zyl26z0c3sxxpnpq14bm"))))
+        (base32 "06q5ysgvr20k60rz3ppav7hppw882kpn2qyd8k7smq1j614nk91j"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

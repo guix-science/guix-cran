@@ -1307,25 +1307,26 @@ Austrian catchments, Hydrological Processes, 21, 435-446.")
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
-    (version "0.2.7")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tutorial.helpers" version))
        (sha256
-        (base32 "0r8dadwd6gcvbcyy7kj0l0n8rmbmjfjg3d31pjlfmmgbv0ax21hc"))))
+        (base32 "0q8rwa2x7ail9rswlldbi8i7dly0yafc4ch4pbz7widgxv1wwc7l"))))
     (properties `((upstream-name . "tutorial.helpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-stringr
                              r-shiny
+                             r-rvest
                              r-rstudioapi
                              r-rmarkdown
                              r-readr
                              r-purrr
                              r-parsermd
+                             r-mime
                              r-learnr
-                             r-gridextra
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://ppbds.github.io/tutorial.helpers/")
@@ -3037,13 +3038,13 @@ created by CS-UCR <http://www.cs.ucr.edu/~eamonn/@code{MatrixProfile.html>}.")
 (define-public r-tsmodel
   (package
     (name "r-tsmodel")
-    (version "0.6-1")
+    (version "0.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsModel" version))
        (sha256
-        (base32 "16cyq4xisrp4i8bd8wayzzk08ws0rfq9zrafphb9cssx50gbqb8q"))))
+        (base32 "1v9dbznngs1ws5339f7583hjgbj4i8zv9skkg3c09wpw2r9ggfzq"))))
     (properties `((upstream-name . "tsModel")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=tsModel")
@@ -3277,13 +3278,13 @@ tidied, visualised, and forecasted.")
 (define-public r-tsibble
   (package
     (name "r-tsibble")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsibble" version))
        (sha256
-        (base32 "17zdlrp9rfh61q23k21yqzs6q7c0g5r93cxxqa3ig5ibmvhsfsrl"))))
+        (base32 "1ay4i9lc380y2h21l64sabv9lfz0dhzvldnhb6nakm0l176q6cg6"))))
     (properties `((upstream-name . "tsibble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -11313,13 +11314,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tok" version))
        (sha256
-        (base32 "1rbn5b6gc5qx8d8rggxbvcs2phrdxj9r72sl6l75vpn4hh4ffpi6"))))
+        (base32 "06nslkpnwf8g21rgk8dbkxazdfg9rg3b62k4q3ha5ljpj16iivmw"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (inputs (list))
@@ -18841,13 +18842,13 @@ generalization, and speed up training.")
 (define-public r-tfevents
   (package
     (name "r-tfevents")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfevents" version))
        (sha256
-        (base32 "1a8dgmi71smaqc71r7pjpdgks6z7s0wkz5nll951846sxkhxpg5v"))))
+        (base32 "06ll43agal3pgq6avfmz5fsf8kzgrh4c2zk823hk80mfpilrskj1"))))
     (properties `((upstream-name . "tfevents")))
     (build-system r-build-system)
     (inputs (list))
@@ -18858,7 +18859,6 @@ generalization, and speed up training.")
                              r-rcpp
                              r-png
                              r-fs
-                             r-ellipsis
                              r-digest
                              r-cli
                              r-blob))
@@ -26457,17 +26457,17 @@ abstraction.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.25")
+    (version "0.9.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tables" version))
        (sha256
-        (base32 "1yqwnq44ylvqhr0lpadff6y9x362naz00j76jbfirjrrdrwhw05r"))))
+        (base32 "0adkbx8jcjxlx9jhg4ic1jyclx2x8ky9z8zd9x14xw8a94yczlnc"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmltools))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown))
     (home-page "https://dmurdoch.github.io/tables/")
     (synopsis "Formula-Driven Table Generation")
     (description

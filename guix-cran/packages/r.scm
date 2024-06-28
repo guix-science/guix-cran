@@ -1789,13 +1789,13 @@ to build expressions in a chain-like fashion.")
 (define-public r-rveg
   (package
     (name "r-rveg")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rveg" version))
        (sha256
-        (base32 "1a4cb19gvq1lm2v918pskpfpxl4xqb06hm08wacv7gj4wyvj7adi"))))
+        (base32 "0avnsbddsls55q9c2cbfy103yxrkay7812a2wfij27y9s7p66v3x"))))
     (properties `((upstream-name . "Rveg")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -4652,13 +4652,13 @@ computational time.  See Llaberia-Robledillo et al., (2023)
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.8")
+    (version "0.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "1qvhi1vrmaqiijbdw4s5ndbhcc0h7kx2yw0ca4w4r53qax3hgx09"))))
+        (base32 "137c8ks15v1w19a3g7pvnwabzpj1vj277r46npr6ymr90ddb5ha7"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -6704,13 +6704,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "1r6igxar0mbnqscnrp7mq98isi40njiwf8377rk2qpyq69108v7h"))))
+        (base32 "03vipq6ykq5px705r1ixaj02770rh6wpmk0zjw73zr04dzrg878n"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7626,13 +7626,13 @@ Send and retrieve files from @code{SauceLabs} and manage tunnels associated with
 (define-public r-rsatscan
   (package
     (name "r-rsatscan")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsatscan" version))
        (sha256
-        (base32 "14q568xyigjsq8g98y393ln7m45bnrf3sy201mi7432wzxjl6ia8"))))
+        (base32 "018958mln4gfqk9xmiqma2gp5drysf9z17ilraf4wlaxi7dm7qf6"))))
     (properties `((upstream-name . "rsatscan")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreign))
@@ -8851,13 +8851,13 @@ extended as introducing potential feature regularization by LASSO etc.")
 (define-public r-rrapply
   (package
     (name "r-rrapply")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrapply" version))
        (sha256
-        (base32 "05shia32hs6y739dfk35y671c8nrifhb415mn3sdg4v065j2k1jc"))))
+        (base32 "04qzfkf011fvvc3ll8qcn300d63z2p2p7qri24ylrsyl5g0v1w9i"))))
     (properties `((upstream-name . "rrapply")))
     (build-system r-build-system)
     (home-page "https://jorischau.github.io/rrapply/")
@@ -8871,7 +8871,7 @@ result.  In addition, special arguments can be supplied to access the name,
 location, parents and siblings in the nested list of the element under
 evaluation.  The rrapply() function builds upon rapply()'s native C
 implementation and requires no other package dependencies.")
-    (license license:gpl3)))
+    (license license:lgpl3)))
 
 (define-public r-rrap
   (package
@@ -10191,6 +10191,34 @@ performance.  For more information see, Markowitz, H.M. (1952),
 objects and rgl visualizing capabilities.")
     (license license:expat)))
 
+(define-public r-rpointcloud
+  (package
+    (name "r-rpointcloud")
+    (version "0.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RPointCloud" version))
+       (sha256
+        (base32 "1n2rlw7zpmwsk95glgfa1wcr1k4hpyknd6xcc4996305k0s0lim2"))))
+    (properties `((upstream-name . "RPointCloud")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tda r-rgl r-mercator r-classdiscovery
+                             r-circlize))
+    (native-inputs (list r-knitr))
+    (home-page "http://oompa.r-forge.r-project.org/")
+    (synopsis "Visualizing Topological Loops and Voids")
+    (description
+     "Visualizations to explain the results of a topological data analysis.  The goal
+of topological data analysis is to identify persistent topological structures,
+such as loops (topological circles) and voids (topological spheres), in data
+sets.  The output of an analysis using the TDA package is a Rips diagram (named
+after the mathematician Eliyahu Rips).  The goal of R@code{PointCloud} is to
+fill in these holes in the data by providing tools to visualize the features
+that help explain the structures found in the Rips diagram.  See @code{McGee}
+and colleagues (2024) <doi:10.1101/2024.05.16.593927>.")
+    (license license:artistic2.0)))
+
 (define-public r-rpoet
   (package
     (name "r-rpoet")
@@ -10271,17 +10299,17 @@ for use with these object types.")
 (define-public r-rpmodel
   (package
     (name "r-rpmodel")
-    (version "1.2.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpmodel" version))
        (sha256
-        (base32 "131kzag51r1fpa63xzj77b9hh4b1723lc424ch8dhbrcdrnjh730"))))
+        (base32 "1vpgc38waijd670pydankq0vqz53zi3jxj8621xxg3wiwga91sl3"))))
     (properties `((upstream-name . "rpmodel")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/stineb/rpmodel")
+    (home-page "https://github.com/geco-bern/rpmodel")
     (synopsis "P-Model")
     (description
      "This package implements the P-model (Stocker et al., 2020
@@ -12841,6 +12869,26 @@ detection of events or structural breaks.")
 (<https://github.com/russellgoldenberg/scrollama>) for storytelling.")
     (license license:expat)))
 
+(define-public r-rollbar
+  (package
+    (name "r-rollbar")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollbar" version))
+       (sha256
+        (base32 "1q2ym0vkgbdnibxmwx0bp9c20g3bm8fzwwgs3j4bxg1ydg3gnkj4"))))
+    (properties `((upstream-name . "rollbar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr))
+    (home-page "https://cran.r-project.org/package=rollbar")
+    (synopsis "Error Tracking and Logging")
+    (description
+     "Reports errors and messages to Rollbar, the error tracking platform
+<https://rollbar.com>.")
+    (license license:expat)))
+
 (define-public r-rollama
   (package
     (name "r-rollama")
@@ -14067,13 +14115,13 @@ calculate the aggregated precision-recall (PR) curve.")
 (define-public r-robyn
   (package
     (name "r-robyn")
-    (version "3.11.0")
+    (version "3.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Robyn" version))
        (sha256
-        (base32 "193b70pbnhasdf24936hbi7mby5mgbk6zzs5w0kw3n3c1smazmyb"))))
+        (base32 "0bcam3ki00s4rn1jyny7n9azandpl72b4w6gm1s50iivx17w6km2"))))
     (properties `((upstream-name . "Robyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16151,13 +16199,13 @@ an in-depth presentation of the roahd package.  See Aleman-Gomez et al. (2021)
 (define-public r-roads
   (package
     (name "r-roads")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roads" version))
        (sha256
-        (base32 "0n0azkvpgiw0d649y7608izy9vp96vfbj27nr3vl6pi481w7ajcz"))))
+        (base32 "1hpa74mqihf90nv2q1bcmkc2xq0ay5i2jl4vq484nxgaicms69ws"))))
     (properties `((upstream-name . "roads")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -16172,12 +16220,16 @@ an in-depth presentation of the roahd package.  See Aleman-Gomez et al. (2021)
     (home-page "https://github.com/LandSciTech/roads")
     (synopsis "Road Network Projection")
     (description
-     "Project road network development based on an existing road network, target
-locations to be connected by roads and a cost surface.  Road projection methods
-include minimum spanning tree with least cost path (Kruskal's algorithm (1956)
-<doi:10.2307/2033241>), least cost path (Dijkstra's algorithm (1959)
-<doi:10.1007/BF01386390>) or snapping.  These road network projection methods
-are ideal for use with land cover change projection models.")
+     "Iterative least cost path and minimum spanning tree methods for projecting
+forest road networks.  The methods connect a set of target points to an existing
+road network using igraph <https://igraph.org> to identify least cost routes.
+The cost of constructing a road segment between adjacent pixels is determined by
+a user supplied weight raster and a weight function; options include the average
+of adjacent weight raster values, and a function of the elevation differences
+between adjacent cells that penalizes steep grades.  These road network
+projection methods are intended for integration into R workflows and modelling
+frameworks used for forecasting forest change, and can be applied over multiple
+time-steps without rebuilding a graph at each time-step.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-roadoi
@@ -21720,18 +21772,18 @@ non-proportional hazard assumption of Heagerty & Zheng (Biometrics, Vol 61 No 1,
 (define-public r-riskscorescvd
   (package
     (name "r-riskscorescvd")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RiskScorescvd" version))
        (sha256
-        (base32 "1lh0ag5k72msvj2pg3v2ajvwysjd638hxbifqklvsv5qjv7hzwfy"))))
+        (base32 "0mv4xk98l8pq7s6bx246h5w8k49yhv4x5m5gajrg5kxq1mgcjfh4"))))
     (properties `((upstream-name . "RiskScorescvd")))
     (build-system r-build-system)
     (propagated-inputs (list r-pooledcohort r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RiskScorescvd")
+    (home-page "https://github.com/dvicencio/RiskScorescvd")
     (synopsis "Cardiovascular Risk Scores Calculator")
     (description
      "This package provides a tool to calculate Cardiovascular Risk Scores in large
@@ -21740,14 +21792,17 @@ individual's likelihood of developing a cardiovascular disease based on various
 risk factors, such as age, gender, blood pressure, cholesterol levels, and
 smoking.  Here we bring together the six most commonly used in the emergency
 department.  Using @code{RiskScorescvd}', you can calculate all the risk scores
-in an extended dataset in seconds.  ASCVD described in Goff, et al (2013)
+in an extended dataset in seconds.  PCE (ASCVD) described in Goff, et al (2013)
 <doi:10.1161/01.cir.0000437741.48606.98>.  EDACS described in Mark DG, et al
 (2016) <doi:10.1016/j.jacc.2017.11.064>.  GRACE described in Fox KA, et al
 (2006) <doi:10.1136/bmj.38985.646481.55>.  HEART is described in Mahler SA, et
 al (2017) <doi:10.1016/j.clinbiochem.2017.01.003>.  SCORE2/OP described in
 SCORE2 working group and ESC Cardiovascular risk collaboration (2021)
 <doi:10.1093/eurheartj/ehab309>.  TIMI described in Antman EM, et al (2000)
-<doi:10.1001/jama.284.7.835>.")
+<doi:10.1001/jama.284.7.835>.  SCORE2-Diabetes described in SCORE2-Diabetes
+working group and ESC Cardiovascular risk collaboration (2023)
+<doi:10.1093/eurheartj/ehab260>.  SCORE2/OP with CKD add-on described in
+Kunihiro M et al (2022) <doi:10.1093/eurjpc/zwac176>.")
     (license license:expat)))
 
 (define-public r-riskscores
@@ -21972,6 +22027,35 @@ F. Spinu (2013), An Algorithm for Computing Risk Parity Weights.
     (description
      "Facilities for assessing R packages against a number of metrics to help quantify
 their robustness.")
+    (license license:expat)))
+
+(define-public r-riskmap
+  (package
+    (name "r-riskmap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RiskMap" version))
+       (sha256
+        (base32 "17najil5lddwbzwd1ja44jpiwp2iva2y27p6lw0s0qhnlyr8vz4y"))))
+    (properties `((upstream-name . "RiskMap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-terra
+                             r-sf
+                             r-maxlik
+                             r-matrix
+                             r-ggplot2))
+    (home-page "https://claudiofronterre.github.io/RiskMap/")
+    (synopsis "Geo-Statistical Modeling of Spatially Referenced Data")
+    (description
+     "This package provides functions for geo-statistical analysis of both continuous
+and count data using maximum likelihood methods.  The models implemented in the
+package use stationary Gaussian processes with Matern correlation function to
+carry out spatial prediction in a geographical area of interest.  The
+underpinning theory of the methods implemented in the package are found in
+Diggle and Giorgi (2019, ISBN: 978-1-138-06102-7).")
     (license license:expat)))
 
 (define-public r-riskcommunicator
@@ -22244,13 +22328,13 @@ be used as a rapid calculation tool in topological data analysis pipelines.")
 (define-public r-ripc
   (package
     (name "r-ripc")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ripc" version))
        (sha256
-        (base32 "1a89qg6q6ysvaggf50qdrpcfcjk6zrv133g93p9pq35d2ldava55"))))
+        (base32 "0pb19jx682xabfymyc97hnw4w5im285gkjmsa6pa5y5gd4gc8ikb"))))
     (properties `((upstream-name . "ripc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29415,13 +29499,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "0dcxaf8yvcvzxwfk3y8knkk03qr9wa5g382k0cllxjwq8ly0nxcw"))))
+        (base32 "13ha7xncl1slmvhi2pb6l4qwzmgrmj1fp2m6vmwxbig7fvcw0rkg"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -35523,6 +35607,33 @@ medications, patient history, diagnostics, payment, and readmission.")
 formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
     (license license:gpl3)))
 
+(define-public r-readme2vignette
+  (package
+    (name "r-readme2vignette")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readme2vignette" version))
+       (sha256
+        (base32 "1nrcmi5g0fa2jnmaw7kc9zir4nvn64imwz8b2jmhcg7k0nxakybv"))))
+    (properties `((upstream-name . "readme2vignette")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-whisker
+                             r-usethis
+                             r-rmarkdown
+                             r-remotes
+                             r-pkgbuild
+                             r-knitr
+                             r-glue
+                             r-fs
+                             r-desc))
+    (home-page "https://github.com/indenkun/readme2vignette")
+    (synopsis "Convert README to Vignette During Package Installation")
+    (description
+     "Convert README.md to vignettes when installing packages without vignettes.")
+    (license license:expat)))
+
 (define-public r-readjdx
   (package
     (name "r-readjdx")
@@ -35847,13 +35958,13 @@ porous media, in estuaries, and in bodies with variable shape.")
 (define-public r-reactr
   (package
     (name "r-reactr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactR" version))
        (sha256
-        (base32 "14pi2wc25qa9q0hp8jby07798l53phyj1zifj46fg2pjq8vkz7p7"))))
+        (base32 "0mi9zfy50njvykmp4rfgpvsmf7q8l92n2196jw9sc06q7ybjn92v"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (arguments
@@ -40121,13 +40232,13 @@ menu items for functions we use in our introductory courses.")
 (define-public r-rcmdrplugin-ezr
   (package
     (name "r-rcmdrplugin-ezr")
-    (version "1.67")
+    (version "1.68")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.EZR" version))
        (sha256
-        (base32 "035a1ch36ygwknk2hwjxs6ir1izwbqn0iq3y0qxv8iw4qa668ar8"))))
+        (base32 "0ppdn3fz8y3ckhhzhn0bhis4i2wd0r2ll8xmvvp6vnx42q9vnh0z"))))
     (properties `((upstream-name . "RcmdrPlugin.EZR")))
     (build-system r-build-system)
     (propagated-inputs (list r-readstata13 r-rcmdr))

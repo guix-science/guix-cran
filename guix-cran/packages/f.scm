@@ -78,13 +78,13 @@ tries to make validation of financial years quicker while retaining clarity.")
 (define-public r-fxtwapls
   (package
     (name "r-fxtwapls")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fxTWAPLS" version))
        (sha256
-        (base32 "1bxrwkf65qw3k6mqvp27lqw6i2r7bdbilnl9406k1nva353gcxxm"))))
+        (base32 "1i1wv6vpnkfxn6vw2hdi5bh1b1dvq572c7mka4z8rxi2xj52whiy"))))
     (properties `((upstream-name . "fxTWAPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-progressr
@@ -3884,13 +3884,13 @@ efficient implementation of the generic magging estimator.")
 (define-public r-fresa-cad
   (package
     (name "r-fresa-cad")
-    (version "3.4.7")
+    (version "3.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRESA.CAD" version))
        (sha256
-        (base32 "1lczys1pcs15w8bz3i6kxglfhi4gih5ayrs51kg7d3c4la4di57a"))))
+        (base32 "1jxbdn3acz6xwka1mkdwlamm00rj7vga4rnypz9qljjngk3vlzkp"))))
     (properties `((upstream-name . "FRESA.CAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -3907,6 +3907,33 @@ models (linear, logistic,ordinal or COX) for Computer Aided Diagnosis/Prognosis
 applications.  Utilities include data adjustment, univariate analysis, model
 building, model-validation, longitudinal analysis, reporting and visualization.")
     (license license:lgpl2.0+)))
+
+(define-public r-frequentistssdbinary
+  (package
+    (name "r-frequentistssdbinary")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frequentistSSDBinary" version))
+       (sha256
+        (base32 "05lcspm6a6rmsvgki5japmfzfa53dpa7z65n4my42xbjzyr3hnfx"))))
+    (properties `((upstream-name . "frequentistSSDBinary")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ph2mult r-mvtnorm r-clinfun))
+    (home-page "https://cran.r-project.org/package=frequentistSSDBinary")
+    (synopsis "Screened Selection Design with Binary Endpoints")
+    (description
+     "This package provides a study based on the screened selection design (SSD) is an
+exploratory phase II randomized trial with two or more arms but without
+concurrent control.  The primary aim of the SSD trial is to pick a desirable
+treatment arm (e.g., in terms of the response rate) to recommend to the
+subsequent randomized phase IIb (with the concurrent control) or phase III. The
+proposed designs can âpartiallyâ control or provide the empirical type I
+error/false positive rate by an optimal algorithm (implemented by the
+optimal_2arm_binary() or optimal_3arm_binary() function) for each arm.  All the
+design needed components (sample size, operating characteristics) are supported.")
+    (license license:gpl2)))
 
 (define-public r-frequentistssd
   (package
@@ -4880,6 +4907,73 @@ Currently supports: gamma, power variance function, log-normal, and inverse
 Gaussian frailty models.")
     (license license:lgpl2.0)))
 
+(define-public r-frailtypack
+  (package
+    (name "r-frailtypack")
+    (version "3.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frailtypack" version))
+       (sha256
+        (base32 "1yaqy9xpk5an6m98l8f4jf4fvfnkv0ffj7g9dxm2r0hfiyz3bvq8"))))
+    (properties `((upstream-name . "frailtypack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-survc1
+                             r-statmod
+                             r-shiny
+                             r-rootsolve
+                             r-nlme
+                             r-mass
+                             r-doby
+                             r-boot))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=frailtypack")
+    (synopsis
+     "Shared, Joint (Generalized) Frailty Models; Surrogate Endpoints")
+    (description
+     "The following several classes of frailty models using a penalized likelihood
+estimation on the hazard function but also a parametric estimation can be fit
+using this R package: 1) A shared frailty model (with gamma or log-normal
+frailty distribution) and Cox proportional hazard model.  Clustered and
+recurrent survival times can be studied.  2) Additive frailty models for
+proportional hazard models with two correlated random effects (intercept random
+effect with random slope).  3) Nested frailty models for hierarchically
+clustered data (with 2 levels of clustering) by including two iid gamma random
+effects.  4) Joint frailty models in the context of the joint modelling for
+recurrent events with terminal event for clustered data or not.  A joint frailty
+model for two semi-competing risks and clustered data is also proposed.  5)
+Joint general frailty models in the context of the joint modelling for recurrent
+events with terminal event data with two independent frailty terms.  6) Joint
+Nested frailty models in the context of the joint modelling for recurrent events
+with terminal event, for hierarchically clustered data (with two levels of
+clustering) by including two iid gamma random effects.  7) Multivariate joint
+frailty models for two types of recurrent events and a terminal event.  8) Joint
+models for longitudinal data and a terminal event.  9) Trivariate joint models
+for longitudinal data, recurrent events and a terminal event.  10) Joint frailty
+models for the validation of surrogate endpoints in multiple randomized clinical
+trials with failure-time and/or longitudinal endpoints with the possibility to
+use a mediation analysis model.  11) Conditional and Marginal two-part joint
+models for longitudinal semicontinuous data and a terminal event.  12) Joint
+frailty-copula models for the validation of surrogate endpoints in multiple
+randomized clinical trials with failure-time endpoints.  13) Generalized shared
+and joint frailty models for recurrent and terminal events.  Proportional
+hazards (PH), additive hazard (AH), proportional odds (PO) and probit models are
+available in a fully parametric framework.  For PH and AH models, it is possible
+to consider type-varying coefficients and flexible semiparametric hazard
+function.  Prediction values are available (for a terminal event or for a new
+recurrent event).  Left-truncated (not for Joint model), right-censored data,
+interval-censored data (only for Cox proportional hazard and shared frailty
+model) and strata are allowed.  In each model, the random effects have the gamma
+or normal distribution.  Now, you can also consider time-varying covariates
+effects in Cox, shared and joint frailty models (1-5).  The package includes
+concordance measures for Cox proportional hazards models and for shared frailty
+models.  14) Competing Joint Frailty Model: A single type of recurrent event and
+two terminal events.  Moreover, the package can be used with its shiny
+application, in a local mode or by following the link below.")
+    (license license:gpl2+)))
+
 (define-public r-frailtymmpen
   (package
     (name "r-frailtymmpen")
@@ -5421,13 +5515,13 @@ based on the First Passage Time Location (FPTL) function.")
 (define-public r-fpp3
   (package
     (name "r-fpp3")
-    (version "0.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpp3" version))
        (sha256
-        (base32 "1yg2wv1mdqrmpxbz9kdsxw84q5hg12rsmz1k3i4dq1nymqbkkfq2"))))
+        (base32 "15kgllix1syi7974d5mrfa20zgx8s0hj2wq6wz1mlpzkaa6w2i9j"))))
     (properties `((upstream-name . "fpp3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibbledata
@@ -5436,7 +5530,6 @@ based on the First Passage Time Location (FPTL) function.")
                              r-tibble
                              r-rstudioapi
                              r-purrr
-                             r-magrittr
                              r-lubridate
                              r-ggplot2
                              r-feasts
@@ -5445,14 +5538,14 @@ based on the First Passage Time Location (FPTL) function.")
                              r-dplyr
                              r-crayon
                              r-cli))
-    (home-page "https://github.com/robjhyndman/fpp3package")
+    (home-page "https://pkg.robjhyndman.com/fpp3package/")
     (synopsis
               "Data for \"Forecasting: Principles and Practice\" (3rd Edition)")
     (description
      "All data sets required for the examples and exercises in the book \"Forecasting:
 principles and practice\" by Rob J Hyndman and George Athanasopoulos
 <https://OTexts.com/fpp3/>.  All packages required to run the examples are also
-loaded.")
+loaded.  Additional data sets not used in the book are also included.")
     (license license:gpl3)))
 
 (define-public r-fpp2
@@ -16416,32 +16509,32 @@ financial data for FDIC-insured institutions and accessing the data taxonomy.")
 (define-public r-fddm
   (package
     (name "r-fddm")
-    (version "0.5-2")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fddm" version))
        (sha256
-        (base32 "0sh3qnsakl02wpzwhxyqdikn7xx5crh401w3d149ww2jxvagjmsf"))))
+        (base32 "1nnfwfqbqk6a9m42cyc1lwwmd2l8xi3icpx4h05z5852hn6kzkcp"))))
     (properties `((upstream-name . "fddm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-rcppeigen r-rcpp r-formula))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rtdists/fddm")
     (synopsis "Fast Implementation of the Diffusion Decision Model")
     (description
      "This package provides the probability density function (PDF), cumulative
-distribution function (CDF), and the partial derivatives of the PDF of the
-diffusion decision model (DDM; e.g., Ratcliff & @code{McKoon}, 2008,
-<doi:10.1162/neco.2008.12-06-420>) with across-trial variability in the drift
-rate.  Because the PDF, its partial derivatives, and the CDF of the DDM both
-contain an infinite sum, they need to be approximated.  fddm implements all
-published approximations (Navarro & Fuss, 2009, <doi:10.1016/j.jmp.2009.02.003>;
-Gondan, Blurton, & Kesselmeier, 2014, <doi:10.1016/j.jmp.2014.05.002>; Blurton,
-Kesselmeier, & Gondan, 2017, <doi:10.1016/j.jmp.2016.11.003>; Hartmann & Klauer,
-2021, <doi:10.1016/j.jmp.2021.102550>) plus new approximations.  All
-approximations are implemented purely in C++ providing faster speed than
-existing packages.")
+distribution function (CDF), the first-order and second-order partial
+derivatives of the PDF, and a fitting function for the diffusion decision model
+(DDM; e.g., Ratcliff & @code{McKoon}, 2008, <doi:10.1162/neco.2008.12-06-420>)
+with across-trial variability in the drift rate.  Because the PDF, its partial
+derivatives, and the CDF of the DDM both contain an infinite sum, they need to
+be approximated.  fddm implements all published approximations (Navarro & Fuss,
+2009, <doi:10.1016/j.jmp.2009.02.003>; Gondan, Blurton, & Kesselmeier, 2014,
+<doi:10.1016/j.jmp.2014.05.002>; Blurton, Kesselmeier, & Gondan, 2017,
+<doi:10.1016/j.jmp.2016.11.003>; Hartmann & Klauer, 2021,
+<doi:10.1016/j.jmp.2021.102550>) plus new approximations.  All approximations
+are implemented purely in C++ providing faster speed than existing packages.")
     (license license:gpl2+)))
 
 (define-public r-fdboost
@@ -18495,6 +18588,49 @@ where m is the number of edges, a dramatic improvement over element-wise
 algorithms that which require O(n^2) operations to sample a random graph, where
 n is the number of nodes.")
     (license license:expat)))
+
+(define-public r-fastret
+  (package
+    (name "r-fastret")
+    (version "1.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastRet" version))
+       (sha256
+        (base32 "141yww9ql4fhkgiazh9vp6axq4sqvzh4fssm0fmn812hmybmlkzi"))))
+    (properties `((upstream-name . "FastRet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xlsx
+                             r-xgboost
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinybusy
+                             r-shiny
+                             r-readxl
+                             r-rcdk
+                             r-promises
+                             r-htmltools
+                             r-glmnet
+                             r-ggplot2
+                             r-future
+                             r-dt
+                             r-digest
+                             r-data-table
+                             r-cluster
+                             r-caret
+                             r-bslib))
+    (home-page "https://github.com/spang-lab/FastRet/")
+    (synopsis "Retention Time Prediction in Liquid Chromatography")
+    (description
+     "This package provides a framework for predicting retention times in liquid
+chromatography.  Users can train custom models for specific chromatography
+columns, predict retention times using existing models, or adjust existing
+models to account for altered experimental conditions.  The provided
+functionalities can be accessed either via the R console or via a graphical user
+interface.  Related work: Bonini et al. (2020)
+<doi:10.1021/acs.analchem.9b05765>.")
+    (license license:gpl3)))
 
 (define-public r-fastrep
   (package
@@ -21048,16 +21184,15 @@ extension of the methodology proposed by \"Santos & Heras (2020)
 (define-public r-fairmaterials
   (package
     (name "r-fairmaterials")
-    (version "0.4.2")
+    (version "0.4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FAIRmaterials" version))
        (sha256
-        (base32 "0v9dkq8s7lpa95d44ylx3chrlq9ffsm7a0g36glisa9m9cpm7m5y"))))
+        (base32 "1hps94zc1pla3nhqayxhqnhws7sqhdg2xwyfw192v9zq7hincd8n"))))
     (properties `((upstream-name . "FAIRmaterials")))
     (build-system r-build-system)
-    (inputs (list))
     (propagated-inputs (list r-xml2
                              r-tidyr
                              r-stringr

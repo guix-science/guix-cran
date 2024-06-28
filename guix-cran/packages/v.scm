@@ -624,6 +624,32 @@ labels, classes, value labels (if applicable), value ranges, and summary
 statistics.  See the vignette \"vtable\" for a package overview.")
     (license license:expat)))
 
+(define-public r-vsusp
+  (package
+    (name "r-vsusp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VsusP" version))
+       (sha256
+        (base32 "1nrs94gyxc2ldihnn28wijigfs13ipigcvkycnxnzd60hg5j8c7i"))))
+    (properties `((upstream-name . "VsusP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-bayesreg))
+    (native-inputs (list r-knitr))
+    (home-page
+     "https://github.com/nilson01/VsusP-variable-selection-using-shrinkage-priors")
+    (synopsis "Variable Selection using Shrinkage Priors")
+    (description
+     "Bayesian variable selection using shrinkage priors to identify significant
+variables in high-dimensional datasets.  The package includes methods for
+determining the number of significant variables through innovative clustering
+techniques of posterior distributions, specifically utilizing the 2-Means and
+Sequential 2-Means (S2M) approaches.  The package aims to simplify the variable
+selection process with minimal tuning required in statistical analysis.")
+    (license license:gpl3+)))
+
 (define-public r-vsurf
   (package
     (name "r-vsurf")
@@ -4943,13 +4969,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verbalisr" version))
        (sha256
-        (base32 "1h00dwfsw2k5x2m0mpwh2ni8wsvixv7i4ps4vl4pmhq73xxx3f9a"))))
+        (base32 "1i324dmcbm9pgkmb0v21x3z89vvb6805ziq059xf49p3m6m3ad8s"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))

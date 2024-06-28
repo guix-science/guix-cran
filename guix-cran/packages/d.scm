@@ -12596,13 +12596,13 @@ the documentation for Rmosek'.")
 (define-public r-dipsaus
   (package
     (name "r-dipsaus")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dipsaus" version))
        (sha256
-        (base32 "1gmb5jlvxwhj2ryqgvw8mfq30h414cgsa9jf6psz4qrr5dssh98l"))))
+        (base32 "12bhxys313iqrfkd0cpr2ibv94v14vjj3sxkhvhxqhclf1d19qc6"))))
     (properties `((upstream-name . "dipsaus")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15676,13 +15676,13 @@ assays (rows) by samples (columns).")
 (define-public r-dgear
   (package
     (name "r-dgear")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DGEAR" version))
        (sha256
-        (base32 "0pnfaamrqban478vxcr4cjklxqxh9kmxzd724jwq8a1xfgscs8pw"))))
+        (base32 "0knai1098ayp2z1s2x4zkk5npmakw30qk8qdp4hsmvwh21rijnzw"))))
     (properties `((upstream-name . "DGEAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-desctools))
@@ -15696,7 +15696,7 @@ significance testing, etc.  It simplifies the process of uncovering meaningful
 patterns and trends within gene expression data, aiding researchers in
 downstream analysis.  Boyer, R.S., Moore, J.S. (1991)
 <doi:10.1007/978-94-011-3488-0_5>.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-dgaselid
   (package
@@ -19766,13 +19766,13 @@ and Khan and Akbar (2021) <doi:10.4236/ojs.2021.112018 >.")
 (define-public r-deet
   (package
     (name "r-deet")
-    (version "1.0.11")
+    (version "1.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEET" version))
        (sha256
-        (base32 "1jb7mp84h6s26abn3ra0pjqra5ha1m4j4yvfvdi074wvd2zzkns5"))))
+        (base32 "19y9s2v65z7g36akpyr0ljzch4csq9la0cafkh5xb4d18xpr2h0h"))))
     (properties `((upstream-name . "DEET")))
     (build-system r-build-system)
     (propagated-inputs (list r-pbapply
@@ -21553,13 +21553,13 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
 (define-public r-ddml
   (package
     (name "r-ddml")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddml" version))
        (sha256
-        (base32 "17v3yhgs440flyqvfhjapc03xvwnvg7c0kr8cphvnhx6nmwjsq53"))))
+        (base32 "0362sr8ivx3jcf0l28a6d1kb0zrcb0jqm2dcy9s9qq5d843r79xz"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -21577,8 +21577,8 @@ H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
      "Estimate common causal parameters using double/debiased machine learning as
 proposed by Chernozhukov et al. (2018) <doi:10.1111/ectj.12097>.  ddml
 simplifies estimation based on (short-)stacking as discussed in Ahrens et al.
-(2024) <doi:10.48550/@code{arXiv.2401.01645>}, which leverages multiple base
-learners to increase robustness to the underlying data generating process.")
+(2024) <doi:10.1177/1536867X241233641>, which leverages multiple base learners
+to increase robustness to the underlying data generating process.")
     (license license:gpl3+)))
 
 (define-public r-ddm
@@ -25334,13 +25334,13 @@ individual vectors.  For more information see
 (define-public r-datagovsgr
   (package
     (name "r-datagovsgr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datagovsgR" version))
        (sha256
-        (base32 "1vi3pql1k563ggvqr0d673z2aspvqi1w384lslinnsq85cwcfcly"))))
+        (base32 "1z3zrvz9dc9a06kp8agrgvx1l6g5hq2cmmn6xpabp68pkw4jdpc6"))))
     (properties `((upstream-name . "datagovsgR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-purrr r-httr r-dplyr r-data-table))
@@ -26167,19 +26167,22 @@ information by typing citation('@code{dartR.sexlinked}') in the console.")
 (define-public r-dartr-popgen
   (package
     (name "r-dartr-popgen")
-    (version "0.32")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.popgen" version))
        (sha256
-        (base32 "1sr9dd6nyspcv0lvj42qa1wpnichjxq1nqp6rl0i6f6jz00fm5mv"))))
+        (base32 "0wi2pkd3c2f05m0g3mhr3j6nq0wgn656c6z8h4vlphfinnz0knja"))))
     (properties `((upstream-name . "dartR.popgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-patchwork
                              r-mass
                              r-ggplot2
+                             r-ggdendro
+                             r-future
+                             r-furrr
                              r-dplyr
                              r-data-table
                              r-dartr-data
@@ -27493,16 +27496,23 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-3")
+    (version "0.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dacc" version))
        (sha256
-        (base32 "1hd6n6411pb3r9s69b0b9b5a94cnbq6b098yj681bn737ldraj52"))))
+        (base32 "09mnmlh3b0xlh3qcf7k0cfaszybj9dgpxczlllwjyymx7zmi1pmk"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-mass r-magrittr r-janitor r-iso))
+    (propagated-inputs (list r-sp
+                             r-pracma
+                             r-ncdf4
+                             r-mass
+                             r-magrittr
+                             r-janitor
+                             r-iso
+                             r-cftime))
     (home-page "https://github.com/LiYanStat/dacc")
     (synopsis "Detection and Attribution Analysis of Climate Change")
     (description
