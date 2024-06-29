@@ -2375,6 +2375,34 @@ performance\".  Perspectives on Psychological Science, 15(3), 589-607.
 <doi:10.1177/1745691620902426>.")
     (license license:gpl3+)))
 
+(define-public r-fullrankmatrix
+  (package
+    (name "r-fullrankmatrix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fullRankMatrix" version))
+       (sha256
+        (base32 "1jlrifgy4fk07a4qfym3ywqnjb1x7grcdc42cncbj2n87w7p6yy4"))))
+    (properties `((upstream-name . "fullRankMatrix")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Pweidemueller/fullRankMatrix")
+    (synopsis "Generation of Full Rank Design Matrix")
+    (description
+     "This package creates a full rank matrix out of a given matrix.  The intended use
+is for one-hot encoded design matrices that should be used in linear models to
+ensure that significant associations can be correctly interpreted.  However,
+@code{fullRankMatrix} can be applied to any matrix to make it full rank.  It
+removes columns with only 0's, merges duplicated columns and discovers linearly
+dependent columns and replaces them with linearly independent columns that span
+the space of the original columns.  Columns are renamed to reflect those
+modifications.  This results in a full rank matrix that can be used as a design
+matrix in linear models.  The algorithm and some functions are inspired by Kuhn,
+M. (2008) <doi:10.18637/jss.v028.i05>.")
+    (license license:expat)))
+
 (define-public r-fullfact
   (package
     (name "r-fullfact")
@@ -11833,16 +11861,16 @@ Distributions are fitted when overdispersion is available.")
 (define-public r-fitodbod
   (package
     (name "r-fitodbod")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitODBOD" version))
        (sha256
-        (base32 "001lc33w3s6liyq558l44kd877bz6js1rkafbz1blgp8csb8ljxy"))))
+        (base32 "1gmpdg07vadc0f17l7g9p5gda347bd183d26dlzi4pnx6ywjl4k8"))))
     (properties `((upstream-name . "fitODBOD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-mass r-hypergeo r-bbmle))
+    (propagated-inputs (list r-rdpack r-mvtnorm r-mass r-hypergeo r-bbmle))
     (home-page "https://github.com/Amalan-ConStat/fitODBOD")
     (synopsis
      "Modeling Over Dispersed Binomial Outcome Data Using BMD and ABD")

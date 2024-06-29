@@ -1878,13 +1878,13 @@ model under linear inequality constraints.")
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "3.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "0hk80x46ydxzhdpwp8w9g54b8618irhmi1gxl99chid283318ml7"))))
+        (base32 "0fk4xzc650bd3yfdapzxk0zx78cgv6pswy2qx087d5ihnv4ipyg9"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -14993,22 +14993,23 @@ of functions of R API to communicate with UCI-protocol based chess engines.")
 (define-public r-bigbits
   (package
     (name "r-bigbits")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigBits" version))
        (sha256
-        (base32 "0qrbm4d3rihy7dvc3lvailmarq1n2hs7qv6wqrgjd0pxnz62j7p7"))))
+        (base32 "1aajx0cg3ljjmvc50qx3v2halqksj54i2krcm7ib33cnqaxzbfbb"))))
     (properties `((upstream-name . "bigBits")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr r-gmp))
     (home-page "https://cran.r-project.org/package=bigBits")
     (synopsis "Perform Boolean Operations on Large Numbers")
     (description
-     "These tools accept integers in any base from 2 to 36, including 2's complement
-format, and perform actions like \"AND,\" \"OR\", \"NOT\", \"SHIFTR/L\" etc.  The output
-can be in any base specified.  A direct base to base converter is included.")
+     "This package provides a set of Boolean operators which accept integers of any
+size, in any base from 2 to 36, including 2's complement format, and perform
+actions like \"AND,\" \"OR\", \"NOT\", \"SHIFTR/L\" etc.  The output can be in any base
+specified.  A direct base to base converter is included.")
     (license license:lgpl3)))
 
 (define-public r-bigassertr

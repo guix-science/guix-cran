@@ -3864,6 +3864,32 @@ phylogenetic tree, and statistical distribution Shiny interactive simulations
 for use in teaching.")
     (license license:gpl2+)))
 
+(define-public r-evitaicossa
+  (package
+    (name "r-evitaicossa")
+    (version "0.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evitaicossa" version))
+       (sha256
+        (base32 "13vxbf3cf0bbdbqj2dw9f5ckih42c5wikdn6mh106yyq27rxw7kb"))))
+    (properties `((upstream-name . "evitaicossa")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp r-disordr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RobinHankin/evitaicossa")
+    (synopsis "Antiassociative Algebra")
+    (description
+     "This package provides methods to deal with the free antiassociative algebra over
+the reals with an arbitrary number of indeterminates.  Antiassociativity means
+that (xy)z = -x(yz).  Antiassociative algebras are nilpotent with nilindex four
+(Remm, 2022, <doi:10.48550/@code{arXiv.2202.10812>}) and this drives the design
+and philosophy of the package.  Methods are defined to create and manipulate
+arbitrary elements of the antiassociative algebra, and to extract and replace
+coefficients.  A vignette is provided.")
+    (license license:gpl2+)))
+
 (define-public r-evir
   (package
     (name "r-evir")
@@ -10174,6 +10200,44 @@ contacts.")
 contact data, composed of case line lists and contacts between cases.  Also
 contains procedures for data handling, interactive graphics, and statistics.")
     (license license:gpl2+)))
+
+(define-public r-epico
+  (package
+    (name "r-epico")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epiCo" version))
+       (sha256
+        (base32 "1x7icsihh7yk0l13xr5l2jsx2hwxdww8gi8pl9xil5hjclpiasbi"))))
+    (properties `((upstream-name . "epiCo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treemapify
+                             r-spdep
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-incidence
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://epiverse-trace.github.io/epiCo/")
+    (synopsis
+     "Statistical and Viz Tools for Vector-Borne Diseases in Colombia")
+    (description
+     "This package provides statistical and visualization tools for the analysis of
+demographic indicators, and spatio-temporal behavior and characterization of
+outbreaks of vector-borne diseases (VBDs) in Colombia.  It implements travel
+times estimated in Bravo-Vega C., Santos-Vega M., & Cordovez J.M. (2022), and
+the endemic channel method (Bortman, M. (1999)
+<https://iris.paho.org/handle/10665.2/8562>).")
+    (license license:expat)))
 
 (define-public r-epicleanr
   (package
@@ -20955,13 +21019,13 @@ estimating technical efficiency is also included.  More details in:
 (define-public r-easywechat
   (package
     (name "r-easywechat")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyWechat" version))
        (sha256
-        (base32 "0cay298hp2q82vkx9crv1f5bqjwk1b3il1n7i1nlavpcwmmlq6ip"))))
+        (base32 "1rqdx6lwhaj1g439c3qr8y88k16a2ad77rkdg74wqi255lldjq4j"))))
     (properties `((upstream-name . "easyWechat")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))

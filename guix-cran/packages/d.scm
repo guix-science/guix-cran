@@ -985,13 +985,13 @@ tutorial of the package, see (Tikka and Helske, 2024)
 (define-public r-dynamicsdm
   (package
     (name "r-dynamicsdm")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynamicSDM" version))
        (sha256
-        (base32 "08kv5bp8yqlrxxlr4fz4zzzcgh3sc6y9dg934gh97p5vxmwjravq"))))
+        (base32 "0126yj2qafg93jipkbszlwjcy20yxnd4adn8r5b7cwf5ipkp92mc"))))
     (properties `((upstream-name . "dynamicSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14196,13 +14196,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.12")
+    (version "1.0.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0szkp3pdkb91xm7dldx82iv0cw60x8408g4axy9dim36wc0g42qj"))))
+        (base32 "0is3hy0f0riik1xniv5yiwf9zpkcadbja8m551rpk4zwpby098cx"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -18089,13 +18089,13 @@ special, roxygen'-style comments.")
 (define-public r-depons2r
   (package
     (name "r-depons2r")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DEPONS2R" version))
        (sha256
-        (base32 "0izcmi194pd96gafma5hnnqgavwm51q7l9wnmbpl9siyxb7xfij6"))))
+        (base32 "1l09nl6dvm0h005m7wpic95d710qv0v7q4ac67cr5zsr2l0prj1z"))))
     (properties `((upstream-name . "DEPONS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

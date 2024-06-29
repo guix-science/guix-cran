@@ -4100,13 +4100,13 @@ Statistics, 16, 2206-2251.")
 (define-public r-qlifetable
   (package
     (name "r-qlifetable")
-    (version "0.0.2-4")
+    (version "0.0.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlifetable" version))
        (sha256
-        (base32 "01p5gkadmfw2hc9h1gdg88k2g7rq204km9ncldmpf10vnglpiww0"))))
+        (base32 "1r1pxj35k5vyvq3gc7nzp7q2zwvvqjzs9xzw3i8pv5sixmaqv47a"))))
     (properties `((upstream-name . "qlifetable")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=qlifetable")
@@ -4118,11 +4118,11 @@ general or an insured population.  References: @code{PavÃ­a} and @code{LledÃ�
 (2022) <doi:10.1111/rssa.12769>. @code{PavÃ­a} and @code{LledÃ³} (2023)
 <doi:10.1017/asb.2023.16>.  Acknowledgements: The authors wish to thank
 @code{ConsellerÃ­a} de @code{EducaciÃ³n}, Universidades y Empleo, Generalitat
-Valenciana (grant AICO/2021/257), Ministerio de @code{EconomÃ­a} e
-@code{InnovaciÃ³n} (grant PID2021-128228NB-I00) and @code{FundaciÃ³n} Mapfre
-(grant @code{ModelizaciÃ³n} espacial e intra-anual de la mortalidad en
-@code{EspaÃ±a}.  Una herramienta @code{automÃ¡tica} para el @code{cÃ¡lculo} de
-productos de vida') for supporting this research.")
+Valenciana (grant AICO/2021/257), Ministerio de Ciencia e @code{InnovaciÃ³n}
+(grant PID2021-128228NB-I00) and @code{FundaciÃ³n} Mapfre (grant
+@code{ModelizaciÃ³n} espacial e intra-anual de la mortalidad en @code{EspaÃ±a}.
+Una herramienta @code{automÃ¡tica} para el @code{cÃ¡lculo} de productos de
+vida') for supporting this research.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-qlearning

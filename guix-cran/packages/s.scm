@@ -9079,16 +9079,17 @@ al., 2019 <DOI:10.1016/j.spasta.2018.12.004>).")
 (define-public r-stpp
   (package
     (name "r-stpp")
-    (version "2.0-7")
+    (version "2.0-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stpp" version))
        (sha256
-        (base32 "1w9jn71ha817gldfhkmr2vfx3nkr78g1y662rfxg6flx2wyxs3kq"))))
+        (base32 "1xb80nbfx7f1frzcw61fr2vnb8br8355f7aaifrjfz6vclf2ax1z"))))
     (properties `((upstream-name . "stpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-splancs
+                             r-spatstat-univar
                              r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
@@ -9406,26 +9407,24 @@ application-specific functionality rather than Storm/R communications plumbing."
 (define-public r-stops
   (package
     (name "r-stops")
-    (version "1.0-1")
+    (version "1.6-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stops" version))
        (sha256
-        (base32 "12zc338wh78an1nsmqr7sbfcr96yrb6xqzg9miwlb58sv28hm8i3"))))
+        (base32 "1fn1xbxq1ls5xw38hnv0kh5gx9pd4myspkj146q6w83yzzrwjnry"))))
     (properties `((upstream-name . "stops")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-tgp
+                             r-smacofx
                              r-smacof
-                             r-scatterplot3d
                              r-scagnostics
-                             r-rgl
                              r-pso
                              r-pomp
                              r-nloptr
                              r-minerva
-                             r-mass
                              r-energy
                              r-diceoptim
                              r-dicekriging
@@ -9438,22 +9437,31 @@ application-specific functionality rather than Storm/R communications plumbing."
     (home-page "https://r-forge.r-project.org/projects/stops/")
     (synopsis "Structure Optimized Proximity Scaling")
     (description
-     "This package provides a collection of methods that fit nonlinear distance
-transformations in multidimensional scaling (MDS) and trade-off the fit with
-structure considerations to find optimal parameters also known as structure
-optimized proximity scaling (STOPS) (Rusch, Mair & Hornik,
-2023,<doi:10.1007/s11222-022-10197-w>).  The package contains various functions,
-wrappers, methods and classes for fitting, plotting and displaying different MDS
-models in a STOPS framework like Torgerson (classical) scaling, scaling by
-majorizing a complex function (SMACOF), Sammon mapping, elastic scaling,
-symmetric SMACOF, spherical SMACOF, s-stress, r-stress, power MDS, power elastic
-scaling, power Sammon mapping, power stress MDS (POST-MDS), approximate power
-stress, Box-Cox MDS, local MDS and Isomap.  All of these models can also be fit
-individually with given hyperparameters or by optimizing over hyperparameters
-based on fit only (i.e., no structure considerations).  The package further
-contains functions for optimization, specifically the adaptive Luus-Jaakola
-algorithm and a wrapper for Bayesian optimization with treed Gaussian process
-with jumps to linear models, and functions for various c-structuredness indices.")
+     "This package provides methods that use flexible variants of multidimensional
+scaling (MDS) which incorporate parametric nonlinear distance transformations
+and trade-off the goodness-of-fit fit with structure considerations to find
+optimal hyperparameters, also known as structure optimized proximity scaling
+(STOPS) (Rusch, Mair & Hornik, 2023,<doi:10.1007/s11222-022-10197-w>).  The
+package contains various functions, wrappers, methods and classes for fitting,
+plotting and displaying different 1-way MDS models with ratio, interval, ordinal
+optimal scaling in a STOPS framework.  These cover essentially the functionality
+of the package smacofx, including Torgerson (classical) scaling with power
+transformations of dissimilarities, SMACOF MDS with powers of dissimilarities,
+Sammon mapping with powers of dissimilarities, elastic scaling with powers of
+dissimilarities, spherical SMACOF with powers of dissimilarities, (ALSCAL)
+s-stress MDS with powers of dissimilarities, r-stress MDS, MDS with powers of
+dissimilarities and configuration distances, elastic scaling powers of
+dissimilarities and configuration distances, Sammon mapping powers of
+dissimilarities and configuration distances, power stress MDS (POST-MDS),
+approximate power stress, Box-Cox MDS, local MDS, Isomap, curvilinear component
+analysis (CLCA), curvilinear distance analysis (CLDA) and sparsified (power)
+multidimensional scaling and (power) multidimensional distance analysis
+(experimental models from smacofx influenced by CLCA).  All of these models can
+also be fit by optimizing over hyperparameters based on goodness-of-fit fit only
+(i.e., no structure considerations).  The package further contains functions for
+optimization, specifically the adaptive Luus-Jaakola algorithm and a wrapper for
+Bayesian optimization with treed Gaussian process with jumps to linear models,
+and functions for various c-structuredness indices.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-stoppingrule
@@ -12788,13 +12796,13 @@ Warin, Le Duc (2019) <doi:10.6084/m9.figshare.10544735>.")
 (define-public r-statbasics
   (package
     (name "r-statbasics")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statBasics" version))
        (sha256
-        (base32 "1yphfzwj8hmqsz1qfckb05xxjyyi9r6g6iqcl8n20bs5hgr3d2s9"))))
+        (base32 "1hhwg2190bndjgmxmv37ihqdg665s9zn1h1smwshs59wk0r7bzjx"))))
     (properties `((upstream-name . "statBasics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-stringr))
@@ -22258,13 +22266,13 @@ flexible spatial survival models.  See Benjamin M. Taylor, Barry S. Rowlingson
 (define-public r-spatstat-univar
   (package
     (name "r-spatstat-univar")
-    (version "2.0-3")
+    (version "3.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.univar" version))
        (sha256
-        (base32 "0lsn7hjvrzfz0nzp601izm856ccm14zqwx8gpw84n772b9lmz4z8"))))
+        (base32 "0wa7zys089sym8f16rg4dih81miv34rj8mph0w926cpckcfm1g00"))))
     (properties `((upstream-name . "spatstat.univar")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils))
@@ -50022,13 +50030,13 @@ proteins.")
 (define-public r-segregatr
   (package
     (name "r-segregatr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "segregatr" version))
        (sha256
-        (base32 "1n6fdq16lymfk49z75y2d9s8n9l0v8i0987cfnxigqz8h5jyzm6x"))))
+        (base32 "12par5appi94jliz8lghrhj3q6ws99hw49r2mcgs8g5c0mzgmp4x"))))
     (properties `((upstream-name . "segregatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedprobr))
@@ -50037,10 +50045,13 @@ proteins.")
     (description
      "An implementation of the full-likelihood Bayes factor (FLB) for evaluating
 segregation evidence in clinical medical genetics.  The method was introduced by
-Thompson et al. (2003) <doi:10.1086/378100>, and further popularised by
-Bayrak-Toydemir et al. (2008) <doi:10.1016/j.yexmp.2008.03.006>.  This
-implementation allows custom penetrance values and liability classes, and
-includes specialised pedigree visualisations.")
+Thompson et al. (2003) <doi:10.1086/378100>.  This implementation supports
+custom penetrance values and liability classes, and allows visualisations and
+robustness analysis as presented in Ratajska et al. (2023)
+<doi:10.1002/mgg3.2107>.  See also the online app shinyseg',
+<https://chrcarrizosa.shinyapps.io/shinyseg>, which offers interactive
+segregation analysis with many additional features (Carrizosa et al. (2024)
+<doi:10.1093/bioinformatics/btae201>).")
     (license license:gpl3)))
 
 (define-public r-segregation

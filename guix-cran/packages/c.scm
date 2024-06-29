@@ -702,13 +702,13 @@ convex hull: edges, ridges, facets, adjacencies.  Triangulation is optional.")
 (define-public r-cwt
   (package
     (name "r-cwt")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CWT" version))
        (sha256
-        (base32 "1afa94694fyqm947ncp96sxf7wyn095a66hyw8xharb30jf1b6q7"))))
+        (base32 "0xwvzbz81j5mqkzhb0qc1srm5k9ygnl81nbq5xp9rc4yfa4yw2wq"))))
     (properties `((upstream-name . "CWT")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))
@@ -14298,6 +14298,28 @@ determine the most likely current Gene Symbol.")
 including B-S theory and Monte Carlo method.")
     (license license:gpl2)))
 
+(define-public r-convertbcd
+  (package
+    (name "r-convertbcd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "convertBCD" version))
+       (sha256
+        (base32 "1lk87kppzr8wzbjx04grhc29srv22199c17nvch3c7pf1lw5v1nr"))))
+    (properties `((upstream-name . "convertBCD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmpfr r-gmp))
+    (home-page "https://cran.r-project.org/package=convertBCD")
+    (synopsis
+     "Convert Decimal to Binary-Coded Decimal (BCD) Form and Vice Versa")
+    (description
+     "Convert BCD (raw bytes) to decimal numbers and vice versa.  BCD format is used
+to preserve decimals exactly, as opposed to the binary rounding errors inherent
+in \"numeric\" or \"floating-point\" formats.")
+    (license license:lgpl3)))
+
 (define-public r-convergeu
   (package
     (name "r-convergeu")
@@ -19023,6 +19045,37 @@ statistical inference to be performed to test for potential associations between
 these community structures and an outcome of interest (binary or continuous).")
     (license license:gpl2+)))
 
+(define-public r-commecol
+  (package
+    (name "r-commecol")
+    (version "1.8.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CommEcol" version))
+       (sha256
+        (base32 "11pzb6m4ywkdrpckqahq1fddhgb9z6148vhaawyawyi7n3p7sggp"))))
+    (properties `((upstream-name . "CommEcol")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-rncl
+                             r-picante
+                             r-gmp
+                             r-betapart
+                             r-ape
+                             r-adespatial))
+    (home-page "https://cran.r-project.org/package=CommEcol")
+    (synopsis "Community Ecology Analyses")
+    (description
+     "Autosimilarity curves, standardization of spatial extent, dissimilarity indexes
+that overweight rare species, phylogenetic and functional (pairwise and
+multisample) dissimilarity indexes and nestedness for phylogenetic, functional
+and other diversity metrics.  The methods for phylogenetic and functional
+nestedness is described in Melo, Cianciaruso and Almeida-Neto (2014)
+<doi:10.1111/2041-210X.12185>.  This should be a complement to available
+packages, particularly vegan'.")
+    (license license:gpl2)))
+
 (define-public r-commafree
   (package
     (name "r-commafree")
@@ -23265,13 +23318,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.6.0")
+    (version "3.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "1g0h4c8xba7i0fv5azdhx0c403w9ccs3hyarsr2qxnw64f05yazh"))))
+        (base32 "0imc7m825hxrksrph0rh64bqzwld3ws6i68c5bc144hn2kzvl366"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixstats r-matrix r-car))
@@ -27381,13 +27434,13 @@ than processx::run().")
 (define-public r-clidamonger
   (package
     (name "r-clidamonger")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clidamonger" version))
        (sha256
-        (base32 "1kpfldyadrk7ayg9kjbs1kswdvzsy3qb5qr5mqrprx7mm8plsz6s"))))
+        (base32 "1rcfa6d3vfx6bbjjggrqfz10lppql7hjiy06jsrgybw2j0x73hmk"))))
     (properties `((upstream-name . "clidamonger")))
     (build-system r-build-system)
     (home-page "https://github.com/IWUGERMANY/clidamonger")
@@ -28360,6 +28413,29 @@ objective functions.  Infeasible problems are detected using using a homogeneous
 embedding technique.")
     (license license:asl2.0)))
 
+(define-public r-clap
+  (package
+    (name "r-clap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clap" version))
+       (sha256
+        (base32 "1mc2aqvf4l4dp39if2m60vn01nww3pikpsmw2m42iw5rzzxgswpq"))))
+    (properties `((upstream-name . "clap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-mclust r-fnn r-dplyr))
+    (home-page "https://github.com/pridiltal/clap")
+    (synopsis "Detecting Class Overlapping Regions in Multidimensional Data")
+    (description
+     "The issue of overlapping regions in multidimensional data arises when different
+classes or clusters share similar feature representations, making it challenging
+to delineate distinct boundaries between them accurately.  This package provides
+methods for detecting and visualizing these overlapping regions using
+partitional clustering techniques based on nearest neighbor distances.")
+    (license license:gpl3)))
+
 (define-public r-clamr
   (package
     (name "r-clamr")
@@ -29324,13 +29400,13 @@ deprecated, see agop instead.")
 (define-public r-cit
   (package
     (name "r-cit")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cit" version))
        (sha256
-        (base32 "1i1179d0rjnmrlwh031dxmvwp2w6k1c9fj5g3cfmzjk4xxb2bjha"))))
+        (base32 "0dipl9d96f59zdc5bpw5xpls78mm614ljz95k898q35qzsz8g5lf"))))
     (properties `((upstream-name . "cit")))
     (build-system r-build-system)
     (inputs (list gsl gsl))
@@ -39585,6 +39661,40 @@ graphic presentation of maps, for instance, map palettes, layout elements
 (scale, north arrow, title...), labels or legends.  See Giraud and Lambert
 (2017) <doi:10.1007/978-3-319-57336-6_13>.")
     (license license:gpl3)))
+
+(define-public r-cartographr
+  (package
+    (name "r-cartographr")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cartographr" version))
+       (sha256
+        (base32 "0difm4rnsbjr103fhabvg4g41qwa9klpp65k2yzn25x02caypg4v"))))
+    (properties `((upstream-name . "cartographr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sysfonts
+                             r-showtext
+                             r-sf
+                             r-osmdata
+                             r-ggplot2
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://da-wi.github.io/cartographr/")
+    (synopsis "Crafting Print-Ready Maps and Layered Visualizations")
+    (description
+     "Simplifying the creation of print-ready maps, this package offers a
+user-friendly interface derived from ggplot2 for handling @code{OpenStreetMap}
+data.  It streamlines the map-making process, allowing users to focus on the
+story their maps tell.  Transforming raw geospatial data into informative
+visualizations is made easy with simple features sf geometries.  Whether for
+urban planning, environmental studies, or impactful public presentations, this
+tool facilitates straightforward and effective map creation.  Enhance the
+dissemination of spatial information with high-quality, narrative-driven
+visualizations!")
+    (license license:gpl3+)))
 
 (define-public r-cartographer
   (package

@@ -2249,17 +2249,17 @@ regression models with a lack of identifiability.")
 (define-public r-lqr
   (package
     (name "r-lqr")
-    (version "5.0")
+    (version "5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lqr" version))
        (sha256
-        (base32 "1qhzsr6sls9f49aa6m72qhffzxqvsvzqlx47h29z8mm37bd74v8b"))))
+        (base32 "0wlfp63i800xxy0n9nv2qvmcj87ixhzjhawg3yv84gx6wiq265yb"))))
     (properties `((upstream-name . "lqr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-quantreg r-numderiv r-momtrunc
-                             r-mass))
+    (propagated-inputs (list r-spatstat-univar r-quantreg r-numderiv
+                             r-momtrunc r-mass))
     (home-page "https://cran.r-project.org/package=lqr")
     (synopsis "Robust Linear Quantile Regression")
     (description
@@ -4636,6 +4636,44 @@ is helpful to detect patients that may present cognitive decline.")
 Method for fitting logistic curve by Rhodes Method is described in
 A.M.Gun,M.K.Gupta and B.Dasgupta(2019,ISBN:81-87567-81-3).")
     (license license:gpl3)))
+
+(define-public r-logisticcopula
+  (package
+    (name "r-logisticcopula")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LogisticCopula" version))
+       (sha256
+        (base32 "1ld8s3swxx93xh14agpk4ygq3majc52pkdkzp4ma24hxjcasn367"))))
+    (properties `((upstream-name . "LogisticCopula")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vinecopula
+                             r-stringr
+                             r-rvinecopulib
+                             r-numderiv
+                             r-igraph
+                             r-brglm2))
+    (home-page "https://cran.r-project.org/package=LogisticCopula")
+    (synopsis "Copula Based Extension of Logistic Regression")
+    (description
+     "An implementation of a method of extending a logistic regression model beyond
+linear effects of the co-variates.  The extension in is constructed by first
+equating the logistic regression model to a naive Bayes model where all the
+margins are specified to follow natural exponential distributions conditional on
+Y, that is, a model for Y given X that is specified through the distribution of
+X given Y, where the columns of X are assumed to be mutually independent
+conditional on Y. Subsequently, the model is expanded by adding vine - copulas
+to relax the assumption of mutual independence, where pair-copulas are added in
+a stage-wise, forward selection manner.  Some heuristics are employed during the
+process of selecting edges, as well as the families of pair-copula models.
+After each component is added, the parameters are updated by a (smaller) number
+of gradient steps to maximise the likelihood.  When the algorithm has stopped
+adding edges, based the criterion that a new edge should improve the likelihood
+more than k times the number new parameters, the parameters are updated with a
+larger number of gradient steps, or until convergence.")
+    (license license:expat)))
 
 (define-public r-logistic4p
   (package

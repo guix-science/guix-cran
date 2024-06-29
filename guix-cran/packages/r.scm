@@ -8277,25 +8277,6 @@ al. (2021) <doi:10.1007/s00285-021-01685-0>, and Collienne (2021)
 <http://hdl.handle.net/10523/12606>.")
     (license license:gpl3+)))
 
-(define-public r-rrna
-  (package
-    (name "r-rrna")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RRNA" version))
-       (sha256
-        (base32 "0bgsakpz1wr3wr6c5xa7wx2xmzs3xzkscrgwn6dc7f93kpq1j17p"))))
-    (properties `((upstream-name . "RRNA")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=RRNA")
-    (synopsis "Secondary Structure Plotting for RNA")
-    (description
-     "This package provides functions for creating and manipulating RNA secondary
-structure plots.")
-    (license license:gpl3)))
-
 (define-public r-rrmlrfmc
   (package
     (name "r-rrmlrfmc")
@@ -20334,13 +20315,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.2.2")
+    (version "3.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "1s7j9vcy0mb358wk0rdc73g94i1xpi3cwxw33gsw0cvga4pmhk6s"))))
+        (base32 "17z9fk89wj81z3cfs1g545im87191jbkh4ka849nra51dpdq4zmi"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -45057,6 +45038,29 @@ alternative R front-end similar to Rscript', that enables this.")
      "This package provides XML parsing capability through the Rapidxml C++
 header-only library.")
     (license license:expat)))
+
+(define-public r-rapidsplithalf
+  (package
+    (name "r-rapidsplithalf")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rapidsplithalf" version))
+       (sha256
+        (base32 "0dp384jpwgp4widnbdb8w7lsc9f6hh74p47357691a5qnmbd5209"))))
+    (properties `((upstream-name . "rapidsplithalf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rapidsplithalf")
+    (synopsis "Fast Split-Half Reliability Algorithm")
+    (description
+     "Accurately estimates the reliability of cognitive tasks using a fast and
+flexible permutated split-half reliability algorithm that supports stratified
+splitting while maintaining equal split sizes.  See Kahveci, Bathke, and
+Blechert (2022) <doi:10.31234/osf.io/ta59r> for details.")
+    (license license:gpl2+)))
 
 (define-public r-rapidraker
   (package

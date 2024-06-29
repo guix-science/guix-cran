@@ -10246,17 +10246,17 @@ et al. (2022) <doi:10.48550/@code{arXiv.2012.11100>}.")
 (define-public r-toscutil
   (package
     (name "r-toscutil")
-    (version "2.7.4")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toscutil" version))
        (sha256
-        (base32 "07b89f43d9dm0lyfc0fd15bv2gxqmzz3ly9gzggix04v8zxivm2i"))))
+        (base32 "1k2p3kd29bi79lfaiinl96jbi3nfj9lfx2fgzvpbhxzgzfkxpg09"))))
     (properties `((upstream-name . "toscutil")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-languageserver))
-    (home-page "https://toscm.github.io/toscutil/")
+    (propagated-inputs (list r-rlang))
+    (home-page "https://github.com/toscm/toscutil/")
     (synopsis "Utility Functions")
     (description
      "Base R sometimes requires verbose statements for simple, often recurring tasks,
@@ -10890,32 +10890,6 @@ can represent the full trajectory. @code{McCool}, Lugtig, and Schouten (2022)
 <doi:10.1007/s11116-022-10328-2> describe this method as implemented here in
 more detail.")
     (license license:gpl3+)))
-
-(define-public r-topdom
-  (package
-    (name "r-topdom")
-    (version "0.10.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TopDom" version))
-       (sha256
-        (base32 "1rryfnwvdlpdrjgs6sciy91cxfp4jykll0swclasydjvj4n642i6"))))
-    (properties `((upstream-name . "TopDom")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-reshape2 r-matrixstats r-ggplot2))
-    (home-page "https://github.com/HenrikBengtsson/TopDom")
-    (synopsis
-     "An Efficient and Deterministic Method for Identifying Topological Domains in Genomes")
-    (description
-     "The @code{TopDom} method identifies topological domains in genomes from Hi-C
-sequence data (Shin et al., 2016 <doi:10.1093/nar/gkv1505>).  The authors
-published an implementation of their method as an R script (two different
-versions; also available in this package).  This package originates from those
-original @code{TopDom} R scripts and provides help pages adopted from the
-original @code{TopDom} PDF documentation.  It also provides a small number of
-bug fixes to the original code.")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-topchef
   (package
@@ -25682,13 +25656,13 @@ estimate of the parameter for the classified-distribution as a reference.")
 (define-public r-tagtools
   (package
     (name "r-tagtools")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tagtools" version))
        (sha256
-        (base32 "18r4hjip7dsij476h3fj8q7dgpnwh9fcbyvkly3669m5pqc1m3dw"))))
+        (base32 "03vmvbhwrk105dzyfz1cjw6ar37rgacmc85fvcx85qh4rp0kbi53"))))
     (properties `((upstream-name . "tagtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoom
@@ -25702,7 +25676,9 @@ estimate of the parameter for the classified-distribution as a reference.")
                              r-matlab
                              r-lubridate
                              r-latex2exp
+                             r-ggplot2
                              r-dplyr
+                             r-cowplot
                              r-circstats))
     (home-page "<https://animaltags.org>")
     (synopsis "Work with Data from High-Resolution Biologging Tags")

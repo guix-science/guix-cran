@@ -1619,6 +1619,27 @@ classification of OSM features by economic function/significance, following
 Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
     (license license:gpl3)))
 
+(define-public r-osmapir
+  (package
+    (name "r-osmapir")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osmapiR" version))
+       (sha256
+        (base32 "1bdfi1ykw3vjlca44kpn69b0snz948r8nyvg3dn1ik89f8xc9sj7"))))
+    (properties `((upstream-name . "osmapiR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-httr2 r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://jmaspons.github.io/osmapiR/")
+    (synopsis "'OpenStreetMap' API")
+    (description
+     "Interface to @code{OpenStreetMap} API for fetching and saving data from/to the
+@code{OpenStreetMap} database (<https://wiki.openstreetmap.org/wiki/API_v0.6>).")
+    (license license:gpl3+)))
+
 (define-public r-osldecomposition
   (package
     (name "r-osldecomposition")
@@ -3458,32 +3479,6 @@ classification.")
 Counts orbits of nodes and edges from edge matrix or data frame, or a graph
 object from the graph package.")
     (license license:lgpl3)))
-
-(define-public r-orbweaver
-  (package
-    (name "r-orbweaver")
-    (version "0.10.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "orbweaver" version))
-       (sha256
-        (base32 "1n8gay2nsxh0pc1jc6hgs2n5knk5ajaaqisq2l5dsnkl172r62rf"))))
-    (properties `((upstream-name . "orbweaver")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-rlang r-glue))
-    (home-page "https://github.com/ixpantia/orbweaver-r")
-    (synopsis "Fast and Efficient Graph Data Structures")
-    (description
-     "Empower your data analysis with orbweaver', an R package designed for effortless
-construction and analysis of graph data structures.  With orbweaver', you can
-seamlessly build and manipulate graph structures, leveraging its
-high-performance methods for filtering, joining, and mutating data within the R
-environment.  Drawing inspiration from the efficiency of the data.table package,
-orbweaver ensures that mutations and changes to the graph are performed in
-place, streamlining your workflow for optimal productivity.")
-    (license license:expat)))
 
 (define-public r-oralopioids
   (package

@@ -10797,13 +10797,13 @@ representations of multidimensional data sets.")
 (define-public r-movieroc
   (package
     (name "r-movieroc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "movieROC" version))
        (sha256
-        (base32 "1afdb2hb3cmbfgx70xnm1xzjsk855847824qrfaa4ldh9hg403yb"))))
+        (base32 "0znqdqdl7hszg0q9a5sbaj5m9h0lglk33jrxbvfhyw1dfkg29v93"))))
     (properties `((upstream-name . "movieROC")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10815,26 +10815,23 @@ representations of multidimensional data sets.")
                              r-gtools
                              r-e1071
                              r-animation))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=movieROC")
     (synopsis
      "Visualizing the Decision Rules Underlying Binary Classification")
     (description
      "Visualization of decision rules for binary classification and Receiver Operating
-Characteristic (ROC) curve estimation under different generalizations: - making
-the classification subsets flexible to cover those scenarios where both extremes
-of the marker are associated with a higher risk of being positive, considering
-two thresholds (@code{gROC} curve); - transforming the marker by a function
-either defined by the user or resulting from a logistic regression model
-(@code{hROC} curve); - considering a linear transformation with some fixed
-parameters introduced by the user, dynamic parameters or empirically maximizing
-TPR for each FPR for a bivariate marker.  Also a quadratic transformation with
-particular coefficients or a function fitted by a logistic regression model can
-be considered (@code{biROC} curve); - considering a linear transformation with
-some fixed parameters introduced by the user, dynamic parameters or a function
-fitted by a logistic regression model (@code{multiROC} curve).  The
-classification regions behind each point of the ROC curve are displayed in both
-fixed graphics (plot.@code{buildROC}(), plot.regions() or plot.funregions()
-function) or videos (@code{movieROC}() function).")
+Characteristic (ROC) curve estimation under different generalizations proposed
+in the literature: - making the classification subsets flexible to cover those
+scenarios where both extremes of the marker are associated with a higher risk of
+being positive, considering two thresholds (@code{gROC}() function); -
+transforming the marker by a proper function trying to improve the
+classification performance (@code{hROC}() function); - when dealing with
+multivariate markers, considering a proper transformation to univariate space
+trying to maximize the resulting AUC of the TPR for each FPR (@code{multiROC}()
+function).  The classification regions behind each point of the ROC curve are
+displayed in both static graphics (plot_@code{buildROC}(), plot_regions() or
+plot_funregions() function) or videos (@code{movieROC}() function).")
     (license license:gpl3)))
 
 (define-public r-movewindspeed
@@ -18605,13 +18602,13 @@ increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.13.1")
+    (version "2.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "0jzqqdwychrandbcsih3g1gcpj0hg7lw53c6c762akll14g7yd5k"))))
+        (base32 "17rdg8admwih6dhmci089l8kwidbbjni98fl2al5480abhm63n74"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -25024,13 +25021,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "1w01k7vd1s5w3xkjxkz5gwbql92k3r2nvxzhxhbpkj9amz1rb5wl"))))
+        (base32 "16q1n3gks0s4w8g3hnzxliczxl43zgfk6kc5y040g3ngbn5shicv"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -26610,6 +26607,34 @@ Benjamin A. Logsdon, Su-In Lee, Proceedings of The 31st International Conference
 on Machine Learning, 2014, p.  1953--1961.")
     (license license:gpl2+)))
 
+(define-public r-mgi-report-reader
+  (package
+    (name "r-mgi-report-reader")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mgi.report.reader" version))
+       (sha256
+        (base32 "1bsyxijmij5vnablhkmvvq22xss7xz2gpq32w9qxd13vxam1l392"))))
+    (properties `((upstream-name . "mgi.report.reader")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vroom
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://www.pattern.institute/mgi.report.reader/")
+    (synopsis "Read Mouse Genome Informatics Reports")
+    (description
+     "This package provides readers for easy and consistent importing of Mouse Genome
+Informatics (MGI) report files:
+<https://www.informatics.jax.org/downloads/reports/index.html>.  These data are
+provided by Baldarelli RM, Smith CL, Ringwald M, Richardson JE, Bult CJ, Mouse
+Genome Informatics Group. (2024) <doi:10.1093/genetics/iyae031>.")
+    (license license:expat)))
+
 (define-public r-mggd
   (package
     (name "r-mggd")
@@ -27453,13 +27478,13 @@ including dozens of shades graded from red to green.")
 (define-public r-mexhaz
   (package
     (name "r-mexhaz")
-    (version "2.5")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mexhaz" version))
        (sha256
-        (base32 "0lpymgfknr8szpxf7g7qmvdklsclfsmvjjws7cdpxsiv6hv8y3p2"))))
+        (base32 "160ilpb6zydjpj82nhbh0wha71cmmvyw7wmhqfvj3jbli22vyn8q"))))
     (properties `((upstream-name . "mexhaz")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-statmod r-numderiv r-mass r-lamw))
@@ -29704,39 +29729,6 @@ A., Beja, P. (2016) <doi:10.1016/j.envsoft.2016.03.007>; Mestre, F., Risk, B.,
 Mira, A., Beja, P., Pita, R. (2017) <doi:10.1016/j.ecolmodel.2017.06.013>;
 Mestre, F., Pita, R., Mira, A., Beja, P. (2020) <doi:10.1186/s12898-019-0273-5>.")
     (license license:gpl2+)))
-
-(define-public r-metajam
-  (package
-    (name "r-metajam")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metajam" version))
-       (sha256
-        (base32 "0ryzsnwfhapsyz40ckjj6gn2chf37m62z3l7xv703878bghpdqwc"))))
-    (properties `((upstream-name . "metajam")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-lubridate
-                             r-emld
-                             r-eml
-                             r-dplyr
-                             r-dataone))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/nceas/metajam")
-    (synopsis "Easily Download Data and Metadata from 'DataONE'")
-    (description
-     "This package provides a set of tools to foster the development of reproducible
-analytical workflow by simplifying the download of data and metadata from
-@code{DataONE} (<https://www.dataone.org>) and easily importing this information
-into R.")
-    (license license:asl2.0)))
 
 (define-public r-metaintegrator
   (package
@@ -43024,13 +43016,13 @@ well as for uploading local data to magma'.")
 (define-public r-magmaclustr
   (package
     (name "r-magmaclustr")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MagmaClustR" version))
        (sha256
-        (base32 "1hbdppqymi4qsacp0f1lpq3042zs5gbpdshmmg3mb2v26badss4h"))))
+        (base32 "0gwfb5p5garycnvqsd4l80yqna7y09xs9ffgr2ah6150s9w3r0q0"))))
     (properties `((upstream-name . "MagmaClustR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

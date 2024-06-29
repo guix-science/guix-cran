@@ -12745,13 +12745,13 @@ for Rao's score test.  See Wald (1943) <doi:10.2307/1990256> for Wald's test.")
 (define-public r-glmertree
   (package
     (name "r-glmertree")
-    (version "0.2-4")
+    (version "0.2-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmertree" version))
        (sha256
-        (base32 "0d7wjn9bqja05d0g8rqy1d5c53h00dcyr08589cwflkbx3yxxg6s"))))
+        (base32 "0qwfracqrxs471fmz2rcnaw6kc0b2csldm2n4vfc5jlq1k46fljk"))))
     (properties `((upstream-name . "glmertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-partykit r-lme4 r-formula))
@@ -18193,6 +18193,45 @@ moon.  As such, they work best with only one or two groups.  gggibbous extends
 ggplot2 to allow for plotting multiple moon charts in a single panel and does
 not require a square coordinate system.")
     (license license:gpl3)))
+
+(define-public r-gggenomes
+  (package
+    (name "r-gggenomes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gggenomes" version))
+       (sha256
+        (base32 "0f3mkwbxmbszahfwr11big9cwlgp7nwbhfsxxfrhqshmr56ydpiw"))))
+    (properties `((upstream-name . "gggenomes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-snakecase
+                             r-scales
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-ggplot2
+                             r-ellipsis
+                             r-dplyr
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/thackl/gggenomes")
+    (synopsis "Grammar of Graphics for Comparative Genomics")
+    (description
+     "An extension of ggplot2 for creating complex genomic maps.  It builds on the
+power of ggplot2 and tidyverse adding new ggplot2'-style geoms & positions and
+dplyr'-style verbs to manipulate the underlying data.  It implements a layout
+concept inspired by ggraph and introduces tracks to bring tidiness to the mess
+that is genomics data.")
+    (license license:expat)))
 
 (define-public r-gggenes
   (package
@@ -27816,13 +27855,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.8.5")
+    (version "0.8.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "0f6kq34z7p2qws94lwm0c1bnnys7hq0xzjpnhgnbxski4hc3wxqw"))))
+        (base32 "0alfkb9bbixs1h7i2b0vdmkx8g8ncv9wsdkfb6hx9yl4vj9033ra"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))

@@ -3971,13 +3971,13 @@ J.L. Lopez-Martinez (2021) <doi:10.1016/j.ecoinf.2021.101379>.")
 (define-public r-nonpareil
   (package
     (name "r-nonpareil")
-    (version "3.4.0")
+    (version "3.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Nonpareil" version))
        (sha256
-        (base32 "130aags0pgry0d34mj1n4lavc8q43hls7c3jhmkr8k6vyg3ij372"))))
+        (base32 "1ih284darcb7y657xfm1zp1hzh3h8dj78n9q12gc0xpmwwffvp17"))))
     (properties `((upstream-name . "Nonpareil")))
     (build-system r-build-system)
     (home-page "http://enve-omics.ce.gatech.edu/nonpareil/")
@@ -7868,13 +7868,13 @@ increased MCMC efficiency.")
 (define-public r-nimblehmc
   (package
     (name "r-nimblehmc")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimbleHMC" version))
        (sha256
-        (base32 "1id9pqs1phc2vf8mwz2gdgirhmki4shw8h77828nbj10b3zik3zj"))))
+        (base32 "0xy8rhpskfb41pa2gsx2qy1bza3rqh5ihiaipc8xpsd2d22c1xnc"))))
     (properties `((upstream-name . "nimbleHMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble))
@@ -7886,11 +7886,12 @@ increased MCMC efficiency.")
 MCMC engine provided by the nimble package.  This includes two versions of
 Hamiltonian Monte Carlo (HMC) No-U-Turn (NUTS) sampling, and (under development)
 Langevin samplers.  The `NUTS_classic` sampler implements the original HMC-NUTS
-algorithm as described in Hoffman and Gelman (2014) <@code{arXiv:1111.4246>}.
-The `NUTS` sampler is a modern version of HMC-NUTS sampling matching the HMC
-sampler available in version 2.32.2 of Stan (Stan Development Team, 2023).  In
-addition, convenience functions are provided for generating and modifying MCMC
-configuration objects which employ HMC sampling.")
+algorithm as described in Hoffman and Gelman (2014)
+<doi:10.48550/@code{arXiv.1111.4246>}.  The `NUTS` sampler is a modern version
+of HMC-NUTS sampling matching the HMC sampler available in version 2.32.2 of
+Stan (Stan Development Team, 2023).  In addition, convenience functions are
+provided for generating and modifying MCMC configuration objects which employ
+HMC sampling.")
     (license (list license:bsd-3 license:gpl2+))))
 
 (define-public r-nimbleecology

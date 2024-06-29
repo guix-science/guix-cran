@@ -12650,6 +12650,41 @@ provided.  Administrative tasks such as monitoring refresh statuses and pulling
 metadata about workspaces and users are also supported.")
     (license license:expat)))
 
+(define-public r-powerbal
+  (package
+    (name "r-powerbal")
+    (version "0.0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poweRbal" version))
+       (sha256
+        (base32 "1bb4mdjmqi161gv2070qcps4rn57la0qrmba4hs2npjdp3hfjyh9"))))
+    (properties `((upstream-name . "poweRbal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treebalance
+                             r-scales
+                             r-r-utils
+                             r-phytools
+                             r-diversitree
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=poweRbal")
+    (synopsis
+     "Phylogenetic Tree Models and the Power of Tree Shape Statistics")
+    (description
+     "The first goal of this package is to provide a multitude of tree models, i.e.,
+functions that generate rooted binary trees with a given number of leaves.
+Second, the package allows for an easy evaluation and comparison of tree shape
+statistics by estimating their power to differentiate between different tree
+models.  Please note that this R package was developed alongside the manuscript
+\"Tree balance in phylogenetic models\" by S. J. Kersting, K. Wicke, and M.
+Fischer (2024) <doi:10.48550/@code{arXiv.2406.05185>}, which provides further
+background and the respective mathematical definitions.  This project was
+supported by the project @code{ArtIGROW}, which is a part of the WIR!-Alliance
+@code{ArtIFARM} â Artificial Intelligence in Farming funded by the German
+Federal Ministry of Education and Research (No.  03WIR4805).")
+    (license license:gpl3+)))
+
 (define-public r-power2stage
   (package
     (name "r-power2stage")
@@ -22672,26 +22707,28 @@ repositories.")
 (define-public r-pieglyph
   (package
     (name "r-pieglyph")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PieGlyph" version))
        (sha256
-        (base32 "1wg8b0zsgcsgrmx5yz0sj6bifk76zr085lac3xlkrxqnxwxvlk0n"))))
+        (base32 "1fjcxap6af2h9j2v26r3f4f1gyhgkar06p2y8p7j862i1fpgrrcd"))))
     (properties `((upstream-name . "PieGlyph")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-scales
                              r-rlang
+                             r-purrr
                              r-plyr
                              r-ggplot2
+                             r-ggiraph
                              r-ggforce
                              r-forcats
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/rishvish/PieGlyph")
+    (home-page "https://rishvish.github.io/PieGlyph/")
     (synopsis "Axis Invariant Scatter Pie Plots")
     (description
      "Extends ggplot2 to help replace points in a scatter plot with pie-chart glyphs
@@ -28956,13 +28993,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.6.0")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "1df3dh0znwwp556krnfais7cs7970jzz8kgmmiiqz6c7g3acchrp"))))
+        (base32 "01zh9jks0qdry8yszfdb8rkmmp8035av3y4vxkybnaryymlnmaqy"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))
