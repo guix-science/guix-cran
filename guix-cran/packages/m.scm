@@ -21264,13 +21264,13 @@ full technical documentation.  All data is sourced from
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0w379vmh62fjsjqqmwyqsya8kx703b53w65xzi3flmvy400aql64"))))
+        (base32 "1gj244gywajfp7gzcn4rdcy88n1qp2gj9jn9aswhhhiha4fp620k"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -35631,13 +35631,13 @@ diagnostic.")
 (define-public r-mcgf
   (package
     (name "r-mcgf")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcgf" version))
        (sha256
-        (base32 "0lgvd9ibyg2rbccz9q5mmh0d85bli8qi7jwwh5kh5bbp754vss1f"))))
+        (base32 "1xgrswmz4ra18qh3m46l4xkj13bq0lx15flhnx97j16y5dq3rl1k"))))
     (properties `((upstream-name . "mcgf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-mass))

@@ -1336,13 +1336,13 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
 (define-public r-xhaz
   (package
     (name "r-xhaz")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xhaz" version))
        (sha256
-        (base32 "1kipqscniyb4s7p29pdkg8hg95wb78jpnax8qh058vzrk5vqz181"))))
+        (base32 "0d91afvjrwgwf5h1p2z6q15psf3n9hvshb75jyxvyxnhq8c5darw"))))
     (properties `((upstream-name . "xhaz")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1351,6 +1351,7 @@ The reference for the methods implemented here is Chatterjee, Sourav (2020)
                              r-statmod
                              r-optimparallel
                              r-numderiv
+                             r-mexhaz
                              r-gtools))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=xhaz")
@@ -1364,14 +1365,16 @@ mortality in the studied group is not comparable to that of the general
 population or in population-based studies where the available life tables used
 for net survival estimation are insufficiently stratified.  In the latter case,
 the proposed model by Touraine et al. (2020) <doi:10.1177/0962280218823234> can
-be used.  The user can also fit a model that relax the proportional expected
+be used.  The user can also fit a model that relaxes the proportional expected
 hazards assumption considered in the Touraine et al.  excess hazard model.  This
 extension was proposed by Mba et al. (2020) <doi:10.1186/s12874-020-01139-z> to
 allow non-proportional effects of the additional variable on the general
 population mortality.  In non-population-based studies, researchers can identify
 non-comparability source of bias in terms of expected mortality of selected
-individuals.  A proposed excess hazard model correcting this selection bias is
-presented in Goungounga et al. (2019) <doi:10.1186/s12874-019-0747-3>.")
+individuals.  An excess hazard model correcting this selection bias is presented
+in Goungounga et al. (2019) <doi:10.1186/s12874-019-0747-3>.  This class of
+model with a random effect at the cluster level on excess hazard is presented in
+Goungounga et al. (2023) <doi:10.1002/bimj.202100210>.")
     (license license:agpl3+)))
 
 (define-public r-xgxr

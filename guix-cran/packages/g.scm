@@ -1468,25 +1468,26 @@ historical interest.")
 (define-public r-gud
   (package
     (name "r-gud")
-    (version "0.0.5")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUD" version))
        (sha256
-        (base32 "0h8ihaph1lwnzzayn3ks09xvjxg2c57048az29zmc2paxbz0mwq3"))))
+        (base32 "1yzil57chcpi0rhzwd0lgvy23gvq9i8ljadj5lc9y7q649dhd51x"))))
     (properties `((upstream-name . "GUD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rdpack
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpp
                              r-posterior
-                             r-mass
                              r-bh))
-    (home-page "https://arxiv.org/pdf/2211.10776")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rh8liuqy/Bayesian_modal_regression")
     (synopsis "Bayesian Modal Regression Based on the GUD Family")
     (description
      "This package provides probability density functions and sampling algorithms for
@@ -1496,8 +1497,8 @@ distribution, and the Two-Piece Scale (TPSC) Student-t distribution.
 Additionally, this package includes a function for Bayesian linear modal
 regression, leveraging these three distributions for model fitting.  The details
 of the Bayesian modal regression model based on the GUD family can be found at
-Liu, Huang, and Bai (2022) <doi:10.48550/@code{arXiv.2211.10776>}.")
-    (license license:expat)))
+Liu, Huang, and Bai (2022) <doi:10.1016/j.csda.2024.108012>.")
+    (license license:gpl3+)))
 
 (define-public r-guardianapi
   (package
@@ -5253,13 +5254,13 @@ Cox regressions.")
 (define-public r-greenr
   (package
     (name "r-greenr")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greenR" version))
        (sha256
-        (base32 "12hlz2yasajhl0yvn1skfjdy732cch0al9zgr4d3r9vyayf7x39q"))))
+        (base32 "0xa6ip3hqzn7h60s97q3qcx78fyhvjdgciicayx5faxrinkyiip8"))))
     (properties `((upstream-name . "greenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -10479,16 +10480,21 @@ and gmse_gui() functions.")
 (define-public r-gms
   (package
     (name "r-gms")
-    (version "0.4.0")
+    (version "0.31.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gms" version))
        (sha256
-        (base32 "1m7bhy4vsz6l09pal9ibjlskmbyjmc29hqwjim1x8yansd5bxpzv"))))
+        (base32 "1mf1pxxi9c62zvz3mnl0s616ps9cjhkm6xm3c2ak25saxmw5kfnv"))))
     (properties `((upstream-name . "gms")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-stringr r-rlang r-dplyr))
+    (propagated-inputs (list r-yaml
+                             r-withr
+                             r-stringr
+                             r-rlang
+                             r-filelock
+                             r-dplyr))
     (home-page "https://github.com/pik-piam/gms")
     (synopsis "'GAMS' Modularization Support Package")
     (description
@@ -16282,13 +16288,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "02zvg802wq7nr4ksm0kngi3ka7jv8rc0xsc6d3wgvkk33vvr2902"))))
+        (base32 "0zb97wnhlwvi5kd7q20ah5hk3775c7lx7avp32gq5kj0xx7ck647"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))

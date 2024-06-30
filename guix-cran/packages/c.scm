@@ -2340,13 +2340,13 @@ of GPU-accelerated machine learning libraries powered by CUDA
 (define-public r-cucumber
   (package
     (name "r-cucumber")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cucumber" version))
        (sha256
-        (base32 "1drdx59pzm8fwmp1hjliq21ba16jahlx5f0ban5qgig0xni3vz8y"))))
+        (base32 "0wgj0pb0h4f1n6gaml0hgbxs5pdwq6dhlmc40nk80zh95shfbhj6"))))
     (properties `((upstream-name . "cucumber")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -21072,13 +21072,13 @@ Common Data Model.")
 (define-public r-cohortsurvival
   (package
     (name "r-cohortsurvival")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSurvival" version))
        (sha256
-        (base32 "03pca2isc7gq9nkkghwqcjf35fn23iacdxsx04v3yacapl8975cn"))))
+        (base32 "02p0n7nhwa50z3w3q20nx2pp6sdkbyqwmk7ix7s2cc8i7qxxhlfl"))))
     (properties `((upstream-name . "CohortSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -21088,6 +21088,7 @@ Common Data Model.")
                              r-stringr
                              r-scales
                              r-rlang
+                             r-purrr
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr

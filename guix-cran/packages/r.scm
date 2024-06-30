@@ -3350,13 +3350,13 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
 (define-public r-rtrek
   (package
     (name "r-rtrek")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtrek" version))
        (sha256
-        (base32 "0w5726mjy8yf9h1kk3snqc4rqbg6b55ybvkbk5xqnp5iarnsd7v4"))))
+        (base32 "0sra9v02vh6x8jydgibd2962f9nkzbdx02r4gn9b6qsirgsgn502"))))
     (properties `((upstream-name . "rtrek")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3364,6 +3364,7 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
                              r-tibble
                              r-rvest
                              r-purrr
+                             r-png
                              r-memoise
                              r-jsonlite
                              r-jpeg

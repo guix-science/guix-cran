@@ -15145,29 +15145,41 @@ functionalities of the package are described in Leonardi et al. (2023)
 (define-public r-tidyrules
   (package
     (name "r-tidyrules")
-    (version "0.1.5")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyrules" version))
        (sha256
-        (base32 "04y6pnrp132sckjpp9g8yl0z7glcsx9dcfdpa8r27wsc2g491i63"))))
+        (base32 "1h81bffqshasfgjdy9rlvi6jqd89r933p324x172mzcpqkvp484n"))))
     (properties `((upstream-name . "tidyrules")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidytable
+                             r-tibble
                              r-stringr
+                             r-rlang
                              r-purrr
+                             r-proxy
+                             r-pheatmap
                              r-partykit
+                             r-metricsweighted
                              r-magrittr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
+                             r-glue
+                             r-generics
+                             r-desctools
+                             r-data-table
+                             r-cli
+                             r-checkmate))
     (home-page "https://github.com/talegari/tidyrules")
-    (synopsis "Obtain Rules from Rule Based Models as Tidy Dataframe")
+    (synopsis
+     "Utilities to Retrieve Rulelists from Model Fits, Filter, Prune, Reorder and Predict on Unseen Data")
     (description
-     "Utility to convert text based summary of rule based models to a tidy dataframe
-(where each row represents a rule) with related metrics such as support,
-confidence and lift.  Rule based models from these packages are supported:
-C5.0', rpart and Cubist'.")
+     "This package provides a framework to work with decision rules.  Rules can be
+extracted from supported models, augmented with (custom) metrics using
+validation data, manipulated using standard dataframe operations, reordered and
+pruned based on a metric, predict on unseen (test) data.  Utilities include;
+Creating a rulelist manually, Exporting a rulelist as a SQL case statement and
+so on.  The package offers two classes; rulelist and ruleset based on dataframe.")
     (license license:gpl3)))
 
 (define-public r-tidyrss
@@ -17776,13 +17788,13 @@ University and Thomas Jefferson University Hospital, Philadelphia, PA.")
 (define-public r-this-path
   (package
     (name "r-this-path")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "this.path" version))
        (sha256
-        (base32 "10zll3bh20wc3swk5y0if1bgx40pjz87yk9z7np5g3wgxp0wzcdv"))))
+        (base32 "0ickm26sqlgi6kz8vh92408l04brxqznwrrmhcs2pvk2czj6dr0p"))))
     (properties `((upstream-name . "this.path")))
     (build-system r-build-system)
     (home-page "https://github.com/ArcadeAntics/this.path")
@@ -26175,13 +26187,13 @@ them into a standardised (tidy) output format.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.4.9")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabr" version))
        (sha256
-        (base32 "0dsm98lhl7j2bb3z5cliz1f34sv904svhniw6iar1nqh6p9y8a5l"))))
+        (base32 "0b8qg6zkfm7hqclpb79asjsz3p8kg0645n8gxc61r6gcv7hyzdvc"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

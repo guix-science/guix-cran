@@ -3646,13 +3646,13 @@ Churpek M. M., Zeng D., and Fine J. P. (2015)
 (define-public r-survivor
   (package
     (name "r-survivor")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivoR" version))
        (sha256
-        (base32 "08ficbw2bwc7pk5gcis6q6ghm7ivs47j5x3bjw4grrbr1jwssy18"))))
+        (base32 "1jc6qfms8awd49vgv9ncdbaqmm7c9ynx9azgbdcbvpp9pb9f3glc"))))
     (properties `((upstream-name . "survivoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -26407,17 +26407,18 @@ Sotkanet open data portal <https://sotkanet.fi/sotkanet/fi/index>.")
 (define-public r-sos
   (package
     (name "r-sos")
-    (version "2.1-7")
+    (version "2.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sos" version))
        (sha256
-        (base32 "11q698wr3xnzr0nmzb9frifrizfl27f1ymdi6mrvyzw0y9cv3sq6"))))
+        (base32 "02wvdskc6fpb9yp83703xh332g69dhmvcfdjr47fcbfrzmvw1r0q"))))
     (properties `((upstream-name . "sos")))
     (build-system r-build-system)
     (propagated-inputs (list r-brew))
-    (home-page "https://cran.r-project.org/package=sos")
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/sbgraves237/sos")
     (synopsis "Search Contributed R Packages, Sort by Package")
     (description "Search contributed R packages, sort by package.")
     (license license:gpl2+)))
@@ -51106,13 +51107,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.7")
+    (version "4.6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1zr2yp51dx5f8ggvwd9bspa3j08yjh6bpph7mpxqky7cn2clbf9b"))))
+        (base32 "1rm7hlfwz8wf4551dw79figmx6n968dlyrq1n2agdv5wdv97gjdg"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -53653,13 +53654,13 @@ based on model departure as a novel data representation.")
 (define-public r-scplot
   (package
     (name "r-scplot")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scplot" version))
        (sha256
-        (base32 "09a7nj95jwmp99jcx6jb0pqgmb651xmf1zdmwi1qi62142lxqwvx"))))
+        (base32 "0ksk93i7vj616kbzs1i6wrngrzwqjb70imb1vmbk5r5lf9sningn"))))
     (properties `((upstream-name . "scplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-scan r-mblm r-ggplot2))

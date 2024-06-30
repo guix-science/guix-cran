@@ -1685,18 +1685,18 @@ Nonparametric estimation of conditional quantiles is also available.")
 (define-public r-quantdates
   (package
     (name "r-quantdates")
-    (version "1.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantdates" version))
        (sha256
-        (base32 "1hyds8rwr1yg740aq4w5fqjrwdf3dl4phf8mj8qsgbb7i0wbbf3q"))))
+        (base32 "1lpnrv64m4qn934za2b4d568rcg18g6nscs8g2rq5bj7h61bdr4f"))))
     (properties `((upstream-name . "quantdates")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=quantdates")
+    (home-page "https://github.com/quantilma/quantdates")
     (synopsis "Manipulate Dates for Finance")
     (description
      "This package provides functions to manipulate dates and count days for

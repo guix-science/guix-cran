@@ -1021,35 +1021,6 @@ containing financial time series.  Practitioners from a broad variety of fields
 could benefit from the general framework provided by otsfeatures'.")
     (license license:gpl2)))
 
-(define-public r-otsad
-  (package
-    (name "r-otsad")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "otsad" version))
-       (sha256
-        (base32 "1jb6raxm70aywbgs7bdyw8vccy1nj924f4hkpjrlgnvzmy0hyhvs"))))
-    (properties `((upstream-name . "otsad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sigmoid r-reticulate r-plotly r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/alaineiturria/otsad")
-    (synopsis "Online Time Series Anomaly Detectors")
-    (description
-     "This package implements a set of online fault detectors for time-series, called:
-PEWMA see M. Carter et al. (2012) <doi:10.1109/SSP.2012.6319708>, SD-EWMA and
-TSSD-EWMA see H. Raza et al. (2015) <doi:10.1016/j.patcog.2014.07.028>, KNN-CAD
-see E. Burnaev et al. (2016) <@code{arXiv:1608.04585>}, KNN-LDCD see V.
-Ishimtsev et al. (2017) <@code{arXiv:1706.03412>} and CAD-OSE see M. Smirnov
-(2018) <https://github.com/smirmik/CAD>.  The first three algorithms belong to
-prediction-based techniques and the last three belong to window-based
-techniques.  In addition, the SD-EWMA and PEWMA algorithms are algorithms
-designed to work in stationary environments, while the other four are algorithms
-designed to work in non-stationary environments.")
-    (license license:agpl3+)))
-
 (define-public r-otrselect
   (package
     (name "r-otrselect")

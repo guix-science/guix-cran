@@ -18313,17 +18313,18 @@ Emergency Department with concurrent local temperature.")
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
-    (version "0.6-163")
+    (version "0.6-186")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTopics" version))
        (sha256
-        (base32 "1nir53ich0xkpclrw34ry4mwih9s4vr7qv8xy6511ny43awznikm"))))
+        (base32 "12dc6l9n7h4hgqqbl19hicgmv7hp71068d9cfnsl80ax4xf1723d"))))
     (properties `((upstream-name . "fastTopics")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
                              r-rtsne
+                             r-rhpcblasctl
                              r-rcppparallel
                              r-rcpparmadillo
                              r-rcpp
@@ -18341,7 +18342,7 @@ Emergency Department with concurrent local temperature.")
                              r-cowplot
                              r-ashr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/stephenslab/fastTopics")
+    (home-page "https://stephenslab.github.io/fastTopics/")
     (synopsis
      "Fast Algorithms for Fitting Topic Models and Non-Negative Matrix Factorizations to Count Data")
     (description
@@ -18352,9 +18353,9 @@ multinomial topic model (also, \"probabilistic latent semantic indexing\") and
 Poisson non-negative matrix factorization.  The package provides tools to
 compare, annotate and visualize model fits, including functions to efficiently
 create \"structure plots\" and identify key features in topics.  The
-@code{fastTopics} package is a successor to the @code{CountClust} package.  Note
-that the @code{fastTopicis} package on @code{GitHub} has more vignettes
-illustrating application to single-cell RNA-seq data.")
+@code{fastTopics} package is a successor to the @code{CountClust} package.  For
+more information, see <doi:10.48550/@code{arXiv.2105.13440>} and
+<doi:10.1186/s13059-023-03067-9>.")
     (license license:bsd-2)))
 
 (define-public r-fasttime
@@ -19140,28 +19141,6 @@ Using a Probabilistic Model to Assist Merging of Large-scale Administrative
 Records <doi:10.1017/S0003055418000783> and is available at
 <https://imai.fas.harvard.edu/research/linkage.html>.")
     (license license:gpl3+)))
-
-(define-public r-fastlaplace
-  (package
-    (name "r-fastlaplace")
-    (version "0.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastLaplace" version))
-       (sha256
-        (base32 "172irl97sxkc5m1rk2kxxl8hkb1yf0029k9szkw9qyz0ki8d657w"))))
-    (properties `((upstream-name . "fastLaplace")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-fields r-bbmle))
-    (native-inputs (list r-knitr))
-    (home-page "<https://www.naver.com/>")
-    (synopsis "Fast Laplace Method for Spatial Generalized Linear Mixed Model")
-    (description
-     "Fitting a fast Laplace approximation for Spatial Generalized Linear Mixed Model
-as described in Park and Lee (2021)
-<https://github.com/sangwan93/@code{fastLaplace/blob/main/FastLaplaceMain.pdf>}.")
-    (license license:gpl3)))
 
 (define-public r-fastkqr
   (package
