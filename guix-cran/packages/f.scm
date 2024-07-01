@@ -13889,13 +13889,13 @@ complex, integer, logical, and raw).")
 (define-public r-file2meco
   (package
     (name "r-file2meco")
-    (version "0.7.1")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "file2meco" version))
        (sha256
-        (base32 "0ksk7clcya24l3ji4p5k4876d1pg8dwihs7vmlwf8hkp3vqg048b"))))
+        (base32 "15k3yg7kx63bwfj21xa8raca06bcc6sa2n1c0qkw5wz07apqmyvk"))))
     (properties `((upstream-name . "file2meco")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -19396,30 +19396,6 @@ Collins M, Dasgupta S, Schapire RE (2002, ISBN:9780262271738), and subsequently
 \"Feature Selection and Dimension Reduction for Single-Cell RNA-Seq Based on a
 Multinomial Model\" Townes FW, Hicks SC, Aryee MJ, Irizarry RA (2019)
 <doi:10.1186/s13059-019-1861-6>.")
-    (license license:gpl2+)))
-
-(define-public r-fastglm
-  (package
-    (name "r-fastglm")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastglm" version))
-       (sha256
-        (base32 "0283kgk81cxbii7ljmp1rzqg5mzkvf7cj7lflhhhkgj5ljqina2i"))))
-    (properties `((upstream-name . "fastglm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-bigmemory r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=fastglm")
-    (synopsis
-     "Fast and Stable Fitting of Generalized Linear Models using 'RcppEigen'")
-    (description
-     "Fits generalized linear models efficiently using @code{RcppEigen}'.  The
-iteratively reweighted least squares implementation utilizes the step-halving
-approach of Marschner (2011) <doi:10.32614/RJ-2011-012> to help safeguard
-against convergence issues.")
     (license license:gpl2+)))
 
 (define-public r-fastglcm

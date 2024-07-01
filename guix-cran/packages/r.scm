@@ -14514,13 +14514,13 @@ variables; test of endogeneity in high dimensions ('Guo et al. (2016)
 (define-public r-robusthd
   (package
     (name "r-robusthd")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robustHD" version))
        (sha256
-        (base32 "16ihvb2v4i3ld3hx4vjkqc4fs07hnp8zi35pijcayxpp09bfk6s3"))))
+        (base32 "0f42x3r8g9nppfdd9vfqhq1ccj4sv8q1g7mdwlkmcyak3fajswcv"))))
     (properties `((upstream-name . "robustHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -39408,13 +39408,13 @@ results.  The package is a wrapper of the following packages: Ritchie et al.
 (define-public r-rcorpora
   (package
     (name "r-rcorpora")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcorpora" version))
        (sha256
-        (base32 "1b8xa81mn3afadz77576vda9b0d99f1k096drxrpqd989g993aqy"))))
+        (base32 "1gwiqp0ysw509pjggiw6czw8yf8lz917gvrnish0wgivc317x268"))))
     (properties `((upstream-name . "rcorpora")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite))

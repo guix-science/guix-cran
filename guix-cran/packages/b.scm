@@ -21421,13 +21421,13 @@ Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
 (define-public r-bayessur
   (package
     (name "r-bayessur")
-    (version "2.2-0")
+    (version "2.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesSUR" version))
        (sha256
-        (base32 "1v5m4m1dqvn1scg27ll4bfq656zxx26jbvgk47p83vlll9k6msn3"))))
+        (base32 "0zm1591y4iwz006p6a6vjv1q0vl8jdzr5v1cfqixqvi8wd3rs1s4"))))
     (properties `((upstream-name . "BayesSUR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -26014,35 +26014,6 @@ package without @code{bartMachine}.")
      "An advanced implementation of Bayesian Additive Regression Trees with expanded
 features for data analysis and visualization.")
     (license license:gpl3)))
-
-(define-public r-bartcs
-  (package
-    (name "r-bartcs")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bartcs" version))
-       (sha256
-        (base32 "0kajw5phkymvkilwb7bf3qdc24h369yvb1zmc49kk6k7bdpbxcrr"))))
-    (properties `((upstream-name . "bartcs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve
-                             r-rlang
-                             r-rcpp
-                             r-mcmcpack
-                             r-invgamma
-                             r-ggplot2
-                             r-ggcharts
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/yooyh/bartcs")
-    (synopsis "Bayesian Additive Regression Trees for Confounder Selection")
-    (description
-     "Fit Bayesian Regression Additive Trees (BART) models to select true confounders
-from a large set of potential confounders and to estimate average treatment
-effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
-    (license license:gpl3+)))
 
 (define-public r-bartcause
   (package

@@ -273,29 +273,6 @@ time until all regression coefficients are significantly different from 0 at the
 chosen alpha level of 0.05.")
     (license license:gpl3+)))
 
-(define-public r-mxsem
-  (package
-    (name "r-mxsem")
-    (version "0.0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mxsem" version))
-       (sha256
-        (base32 "1n8dwb41gr2z8sjrkf0f75mcrvigr5p9p399s5bbi74kf9dsw0hr"))))
-    (properties `((upstream-name . "mxsem")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-openmx r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://jhorzek.github.io/mxsem/")
-    (synopsis "Specify 'OpenMx' Models with a 'lavaan'-Style Syntax")
-    (description
-     "This package provides a lavaan'-like syntax for @code{OpenMx} models.  The
-syntax supports definition variables, bounds, and parameter transformations.
-This allows for latent growth curve models with person-specific measurement
-occasions, moderated nonlinear factor analysis and much more.")
-    (license license:gpl3+)))
-
 (define-public r-mxnorm
   (package
     (name "r-mxnorm")
@@ -4639,13 +4616,13 @@ supported.  Factors for any predictors must be numerically represented.")
 (define-public r-multilevelcoda
   (package
     (name "r-multilevelcoda")
-    (version "1.3.0")
+    (version "1.3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelcoda" version))
        (sha256
-        (base32 "1hmnapmcaa1m56afvx3ylikii462fhq8qy64xs0a8gpkg9d5ir0v"))))
+        (base32 "1g0jlzwmk4w80shj5ma8crx4p0w7xrsan9g5kii1sxfi50k7k6d0"))))
     (properties `((upstream-name . "multilevelcoda")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinystan
@@ -14118,13 +14095,13 @@ schools effectiveness.  The standard value-added model is also an option.")
 (define-public r-moderndive
   (package
     (name "r-moderndive")
-    (version "0.5.5")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderndive" version))
        (sha256
-        (base32 "0bgq6wsyyi6nsxqqh2k3zsmk64pfvb57z8pzk8ych3xih491hzlm"))))
+        (base32 "1gd4mb8i2bl5h9q0ahcpqjqw1ji120q9p305q9rfkfpv5nzwbwyr"))))
     (properties `((upstream-name . "moderndive")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -27542,13 +27519,13 @@ using a fixed amount of memory.")
 (define-public r-mevr
   (package
     (name "r-mevr")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mevr" version))
        (sha256
-        (base32 "0klhmlhn2v4ncsrwvpzhxxn8bbrjn5qjzi6rlxrxmp9yfk5wnxhy"))))
+        (base32 "107gp0lbgy4hfi38x07h4z8sf1phkywqk58hfr2d97dil4mnwlz0"))))
     (properties `((upstream-name . "mevr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -27568,11 +27545,12 @@ metastatistical extreme value distribution SMEV (Marra et al., 2019,
 <doi:10.1016/j.advwatres.2019.04.002>) and the temporal metastatistical extreme
 value distribution TMEV (Falkensteiner et al., 2023,
 <doi:10.1016/j.wace.2023.100601>).  Parameters can be estimated with probability
-weighted moments, maximum likelihood and least squares.  Density, distribution
-function, quantile function and random generation for the MEVD, SMEV and TMEV
-are included.  In addition, functions for the calculation of return levels
-including confidence intervals are provided.  For a description of use cases
-please see the provided references.")
+weighted moments, maximum likelihood and least squares.  The data can also be
+left-censored prior to a fit.  Density, distribution function, quantile function
+and random generation for the MEVD, SMEV and TMEV are included.  In addition,
+functions for the calculation of return levels including confidence intervals
+are provided.  For a description of use cases please see the provided
+references.")
     (license license:gpl3)))
 
 (define-public r-mev
@@ -27889,13 +27867,13 @@ Wallin (2023) <doi:10.48550/@code{arXiv.2304.03190>} and
 (define-public r-metrica
   (package
     (name "r-metrica")
-    (version "2.0.3")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metrica" version))
        (sha256
-        (base32 "10pkd29vcrm74fxf4i5bmkrj6528vfzipf53nfdpic9bavk2s2i7"))))
+        (base32 "1hb7m0adz3a31c0rqjfpz8lincsclcpn02jhn0idpbppp86h6pck"))))
     (properties `((upstream-name . "metrica")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

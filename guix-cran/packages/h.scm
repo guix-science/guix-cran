@@ -8702,13 +8702,13 @@ Australia's higher education system, as well as a range of relevant information.
 (define-public r-heimdall
   (package
     (name "r-heimdall")
-    (version "1.0.707")
+    (version "1.0.717")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heimdall" version))
        (sha256
-        (base32 "0r78igy5dp2h5xdrcz607si80gxc8q33li4df99clz2qp507c3w5"))))
+        (base32 "0qqr084h30p7aiv7cfz7g39qgswz4d249s90cck6xhbc8la9jbc3"))))
     (properties `((upstream-name . "heimdall")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-ggplot2 r-daltoolbox r-caret))

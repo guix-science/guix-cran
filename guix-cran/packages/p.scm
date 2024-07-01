@@ -14489,13 +14489,13 @@ systems.  The methods are described in Nyberg et al. (2012)
 (define-public r-popdesign
   (package
     (name "r-popdesign")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoPdesign" version))
        (sha256
-        (base32 "03nskqhc4xc40lww0q2gfd76rs8d5ypc571s9qhaibq7zslmy2h2"))))
+        (base32 "14vgxjzq9wlg3fgh1vy84v04ij51bgy97pl9yi61ysa84pgac6cb"))))
     (properties `((upstream-name . "PoPdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-magick r-knitr r-iso))

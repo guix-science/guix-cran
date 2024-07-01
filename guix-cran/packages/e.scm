@@ -7417,13 +7417,13 @@ sources.")
 (define-public r-erify
   (package
     (name "r-erify")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "erify" version))
        (sha256
-        (base32 "014q4crfa92i4fb4mrbl68ai0l8asjwwnv3l2m11gfnny41p4bks"))))
+        (base32 "0qgv1lsg30gpris1q5wh258sspxiyccs18mzvsgs0kdynhf0aj0p"))))
     (properties `((upstream-name . "erify")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue))

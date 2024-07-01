@@ -1399,42 +1399,6 @@ that have approximately the same log hazard value based on Cox regression model
 and divides individuals into different groups according to their HR values.")
     (license license:gpl3)))
 
-(define-public r-cutpointr
-  (package
-    (name "r-cutpointr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cutpointr" version))
-       (sha256
-        (base32 "1qxnh20hs3bh9v04ls7gwwl7lfc6bwl8c88dn8lkcdqyp3nyr01j"))))
-    (properties `((upstream-name . "cutpointr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-rcpp
-                             r-purrr
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/thie1e/cutpointr")
-    (synopsis
-     "Determine and Evaluate Optimal Cutpoints in Binary Classification Tasks")
-    (description
-     "Estimate cutpoints that optimize a specified metric in binary classification
-tasks and validate performance using bootstrapping.  Some methods for more
-robust cutpoint estimation are supported, e.g. a parametric method assuming
-normal distributions, bootstrapped cutpoints, and smoothing of the metric values
-per cutpoint using Generalized Additive Models.  Various plotting functions are
-included.  For an overview of the package see Thiele and Hirschfeld (2021)
-<doi:10.18637/jss.v098.i11>.")
-    (license license:gpl3)))
-
 (define-public r-cutoff
   (package
     (name "r-cutoff")

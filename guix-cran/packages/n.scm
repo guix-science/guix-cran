@@ -11170,13 +11170,13 @@ Methods for graph pre-processing and for filtering edges of the graph.")
 (define-public r-netplot
   (package
     (name "r-netplot")
-    (version "0.2-0")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netplot" version))
        (sha256
-        (base32 "0l4sy8wn2fd04fpkrh853r923dajpqldc78ws4kmh6ixn1l43c21"))))
+        (base32 "0bka77jls97xlwmcmzg0rw3y5r9ff6g4ag082vwjc3yrh0nmm29c"))))
     (properties `((upstream-name . "netplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna r-network r-igraph))
@@ -11184,10 +11184,10 @@ Methods for graph pre-processing and for filtering edges of the graph.")
     (home-page "https://github.com/USCCANA/netplot")
     (synopsis "Beautiful Graph Drawing")
     (description
-     "This package provides a graph visualization engine that puts an emphasis on
-aesthetics at the same time of providing default parameters that yield
-out-of-the-box-nice visualizations.  The package is built on top of The Grid
-Graphics Package and seamlessly work with igraph and network objects.")
+     "This package provides a graph visualization engine that emphasizes on aesthetics
+at the same time providing default parameters that yield out-of-the-box-nice
+visualizations.  The package is built on top of The Grid Graphics Package and
+seamlessly work with igraph and network objects.")
     (license license:expat)))
 
 (define-public r-netorigin

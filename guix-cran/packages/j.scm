@@ -2917,17 +2917,21 @@ estimation.  See Saulnier et al, 2022 <doi:10.1016/j.ymeth.2022.03.003>.")
 (define-public r-jlmerclusterperm
   (package
     (name "r-jlmerclusterperm")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlmerclusterperm" version))
        (sha256
-        (base32 "1vkc0hk5ln2vwxsf9pn6bpwn8dbk77s8nz6100scqa1y5kgfjhri"))))
+        (base32 "16k325cpsnvd4j97r8j2i8fwwd5mabizg7dbqnwxq5j8l2qr8b9w"))))
     (properties `((upstream-name . "jlmerclusterperm")))
     (build-system r-build-system)
     (inputs (list julia))
-    (propagated-inputs (list r-lme4 r-juliaconnector r-generics r-cli
+    (propagated-inputs (list r-lme4
+                             r-juliaformulae
+                             r-juliaconnector
+                             r-generics
+                             r-cli
                              r-backports))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/yjunechoe/jlmerclusterperm")

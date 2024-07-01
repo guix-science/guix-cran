@@ -9118,17 +9118,17 @@ Constraints.  108. <arxiv:1910.09328>.")
 (define-public r-lincom
   (package
     (name "r-lincom")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lincom" version))
        (sha256
-        (base32 "1krvpk8m2bnkxm3z10sgbx4fcj54kb1sc9n63zjq33ygl4bhnm6d"))))
+        (base32 "076pnzdr4h62h4grlk5vcbwl0aikl87ks0my86mbjzg7isyngyja"))))
     (properties `((upstream-name . "lincom")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-sparsem r-rmosek r-matrix))
+    (propagated-inputs (list r-sparsem r-rmosek))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=lincom")
     (synopsis
