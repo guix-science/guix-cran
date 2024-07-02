@@ -3935,13 +3935,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1q5y38jzxmvdicjcmck0bmai6xvpi3hzzngrsgdy5bks9mqdgnlj"))))
+        (base32 "1cxi5swa3507flg25vz7s8ncdcv9svjijcc8vgk48v7qn1719f2f"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))

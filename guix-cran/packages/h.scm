@@ -9149,13 +9149,13 @@ takes the guesswork out of everything.")
 (define-public r-healthyr
   (package
     (name "r-healthyr")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR" version))
        (sha256
-        (base32 "0wlw6sd187sw5ar58c4a5yz9fw0bc044cik1xsq54ipp4xprlnxp"))))
+        (base32 "1fa2w3w2cfn5ak01kls8yxxzyfvmp2v43q0bfr4ylrimd1fvbhbp"))))
     (properties `((upstream-name . "healthyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

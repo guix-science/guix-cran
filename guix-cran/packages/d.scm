@@ -20094,13 +20094,13 @@ the service (see <https://www.deepl.com/pro#developer>).")
 (define-public r-deeplearningcausal
   (package
     (name "r-deeplearningcausal")
-    (version "0.0.102")
+    (version "0.0.103")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeepLearningCausal" version))
        (sha256
-        (base32 "0ynsdfa55cqxd3qjbyacvbx6rc64hj4c1mzkfs5ircnak04835j1"))))
+        (base32 "1qwf39pc12fd5cvhqx5mca0307736a4xk0s42bnhhjkr6wpsi2d7"))))
     (properties `((upstream-name . "DeepLearningCausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -25771,21 +25771,19 @@ extra layer of validation around input and output data.")
 (define-public r-databraryr
   (package
     (name "r-databraryr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "databraryr" version))
        (sha256
-        (base32 "0ycpkdz3ln9a1yvcl142agk7cfzz0qh8yzx6y7ihy7zkl646m99m"))))
+        (base32 "0cwjd3mgxb0xl3l3xg96iiri55phw2g84p5s2ka1w6541cwl3i6m"))))
     (properties `((upstream-name . "databraryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
                              r-tibble
                              r-stringr
-                             r-rvest
                              r-purrr
-                             r-plyr
                              r-magrittr
                              r-magick
                              r-lifecycle

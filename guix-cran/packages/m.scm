@@ -1808,18 +1808,17 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "1hgrhly2wsrmsgbd888sx38hyl44bgicw54z8bgf4i54n4mmw8ph"))))
+        (base32 "1cbqz680844zjd0girpivig11infzn417cra3r87yg0iai7cz5zd"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-smooth
-                             r-scoringrules
                              r-rstantools
                              r-rstan
                              r-rlang
@@ -1830,7 +1829,6 @@ sampling positive stable variates not chi/sqrt(nu).")
                              r-pbapply
                              r-mvnfast
                              r-mgcv
-                             r-matrixstats
                              r-matrix
                              r-marginaleffects
                              r-magrittr
@@ -10269,17 +10267,18 @@ Aerobic Plate Count (APC) for similar microbial enumeration experiments.")
 (define-public r-mpmsim
   (package
     (name "r-mpmsim")
-    (version "2.0.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mpmsim" version))
        (sha256
-        (base32 "040zbjp95yvl3zwiixjd93yzqgzny8qyy8dyrjfp8rqcr9i8g3q1"))))
+        (base32 "1bbbprdx2z7sm6m6419vcd4kz194p98n3xrk1y918jas5mi75i95"))))
     (properties `((upstream-name . "mpmsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape
                              r-rcompadre
+                             r-rage
                              r-popdemo
                              r-popbio
                              r-ggplot2
@@ -18055,67 +18054,6 @@ is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
     (license license:gpl2)))
 
-(define-public r-mlmts
-  (package
-    (name "r-mlmts")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mlmts" version))
-       (sha256
-        (base32 "10xy4qzdik1rjs11ql798ig7y5cm3hjc61n5dhxfzpi1w0wk3smi"))))
-    (properties `((upstream-name . "mlmts")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waveslim
-                             r-tsfeatures
-                             r-tserieschaos
-                             r-tseries
-                             r-tsdist
-                             r-tsclust
-                             r-tsa
-                             r-rfast
-                             r-rdpack
-                             r-ranger
-                             r-randomforest
-                             r-quantspec
-                             r-psych
-                             r-pspline
-                             r-pracma
-                             r-multiwave
-                             r-mts
-                             r-matrix
-                             r-mass
-                             r-igraph
-                             r-ggplot2
-                             r-geigen
-                             r-freqdom
-                             r-forecast
-                             r-fda-usc
-                             r-e1071
-                             r-dtw
-                             r-desctools
-                             r-complexplus
-                             r-clusterr
-                             r-caret
-                             r-aid))
-    (home-page "https://cran.r-project.org/package=mlmts")
-    (synopsis "Machine Learning Algorithms for Multivariate Time Series")
-    (description
-     "An implementation of several machine learning algorithms for multivariate time
-series.  The package includes functions allowing the execution of clustering,
-classification or outlier detection methods, among others.  It also incorporates
-a collection of multivariate time series datasets which can be used to analyse
-the performance of new proposed algorithms.  Some of these datasets are stored
-in @code{GitHub} data packages ueadata1 to ueadata8'.  To access these data
-packages, run install.packages(c('ueadata1', ueadata2', ueadata3', ueadata4',
-ueadata5', ueadata6', ueadata7', ueadata8'),
-repos='<https://anloor7.github.io/drat/>')'.  The installation takes a couple of
-minutes but we strongly encourage the users to do it if they want to have
-available all datasets of mlmts.  Practitioners from a broad variety of fields
-could benefit from the general framework provided by mlmts'.")
-    (license license:gpl2)))
-
 (define-public r-mlmtools
   (package
     (name "r-mlmtools")
@@ -22644,13 +22582,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "0nq3wrgizlii8a17i033glbl5ixgdwjxzpyi5yzf0icxbqaylm5w"))))
+        (base32 "07sri0s38849fsrgg32l23ps62clxivvclchp1n4cbi1iqdkvdk6"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22658,7 +22596,7 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
-     "High performance parallel code execution and distributed computing.  Designed
+     "High-performance parallel code execution and distributed computing.  Designed
 for simplicity, a mirai evaluates an R expression asynchronously, on local or
 network resources, resolving automatically upon completion.  Modern networking
 and concurrency built on nanonext and NNG (Nanomsg Next Gen) ensures reliable
@@ -38219,13 +38157,13 @@ their original counterparts, with more to come as this package grows.")
 (define-public r-matlab
   (package
     (name "r-matlab")
-    (version "1.0.4")
+    (version "1.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matlab" version))
        (sha256
-        (base32 "1shnq9z7n8yp3l457swrhm3p3nm0j2q4xb9bbxblli030wia520r"))))
+        (base32 "0l7xqim6sziz3wlxzxc0rjfjrbwidj2l0wri9w5bzabk1dbblgzw"))))
     (properties `((upstream-name . "matlab")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=matlab")
@@ -38419,13 +38357,13 @@ Result and Option enums from Rust.")
 (define-public r-matchmulti
   (package
     (name "r-matchmulti")
-    (version "1.1.12")
+    (version "1.1.12.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matchMulti" version))
        (sha256
-        (base32 "1mkp4pkqhfrv3a0js8yc25gd2ifk8wwyrsskwggyxpqv6pnmpapw"))))
+        (base32 "07c02dwim46f511fswbkr7s25inli7nblvf11gb5npz7p7yjc9bw"))))
     (properties `((upstream-name . "matchMulti")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -43988,25 +43926,23 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "0z4d1g4b3fv63r1c4b64aj0lg0dyzyhvjgmj59gpcizl65jg6dw6"))))
+        (base32 "16jcksyy8wira7i5gpl27fmbq3wzfsyp4v4xqq7r78qi2rv16wgg"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjson r-openxlsx r-httr))
+    (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))
     (home-page "https://cran.r-project.org/package=MacBehaviour")
     (synopsis "Behavioural Studies of Large Language Models")
     (description
-     "We provide an efficient way to design and conduct psycholinguistic experiments
-for testing the performance of large language models.  It simplifies the process
-of setting up experiments, and data collection via large language models API,
-streamlining workflow for researchers in the field of machine behavior.  For
-methodology details, see Duan, X., Li, S., & Cai, Z. G. (2023)
-<doi:10.31234/osf.io/ywtfd>.")
+     "Efficient way to design and conduct psychological experiments for testing the
+performance of large language models.  It simplifies the process of setting up
+experiments and data collection via language modelsâ API, facilitating a
+smooth workflow for researchers in the field of machine behaviour.")
     (license license:lgpl3)))
 
 (define-public r-maboust

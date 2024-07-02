@@ -1468,13 +1468,13 @@ historical interest.")
 (define-public r-gud
   (package
     (name "r-gud")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUD" version))
        (sha256
-        (base32 "1yzil57chcpi0rhzwd0lgvy23gvq9i8ljadj5lc9y7q649dhd51x"))))
+        (base32 "0sbimcsclibjgilwy3p7h5lcz9dcvvfi36pcx9zkbdk765w5d5zg"))))
     (properties `((upstream-name . "GUD")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -1497,7 +1497,7 @@ distribution, and the Two-Piece Scale (TPSC) Student-t distribution.
 Additionally, this package includes a function for Bayesian linear modal
 regression, leveraging these three distributions for model fitting.  The details
 of the Bayesian modal regression model based on the GUD family can be found at
-Liu, Huang, and Bai (2022) <doi:10.1016/j.csda.2024.108012>.")
+Liu, Huang, and Bai (2024) <doi:10.1016/j.csda.2024.108012>.")
     (license license:gpl3+)))
 
 (define-public r-guardianapi

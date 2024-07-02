@@ -27408,13 +27408,13 @@ data, and give out unknown concentrations from absorption/emission readings.")
 (define-public r-soiltestcorr
   (package
     (name "r-soiltestcorr")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soiltestcorr" version))
        (sha256
-        (base32 "1c5w3w4nrxdy2cdch048kmb35jqm8rws0am31vgn263y1045shwd"))))
+        (base32 "1p1nimd7d0m2qb2rdj0pfrcw95rrch2vqkwhqbwsn2bxbgn942yj"))))
     (properties `((upstream-name . "soiltestcorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -37985,6 +37985,30 @@ methods can be slower in specific situations where there are existing non-MCMC
 simulation methods (see Section 8 of Kent, Ganeiber and Mardia (2018)
 <doi:10.1080/10618600.2017.1390468> for further details).")
     (license license:gpl2)))
+
+(define-public r-simdata
+  (package
+    (name "r-simdata")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simdata" version))
+       (sha256
+        (base32 "1yzxa2xfjclhwbzvzdivgd99h8n9cvb16ws074r5gw2xvd0ilf3m"))))
+    (properties `((upstream-name . "simdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrix r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://matherealize.github.io/simdata/")
+    (synopsis "Generate Simulated Datasets")
+    (description
+     "Generate simulated datasets from an initial underlying distribution and apply
+transformations to obtain realistic data.  Implements the NORTA
+(Normal-to-anything) approach from Cario and Nelson (1997) and other data
+generating mechanisms.  Simple network visualization tools are provided to
+facilitate communicating the simulation setup.")
+    (license license:gpl3)))
 
 (define-public r-simdag
   (package
@@ -56467,13 +56491,13 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
 (define-public r-scan
   (package
     (name "r-scan")
-    (version "0.60.0")
+    (version "0.61.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scan" version))
        (sha256
-        (base32 "0ncysjc28maq0ghpj8bpcppmdyllclsshwvd0hvwkc48xnji488q"))))
+        (base32 "04a43vyz8brl4mzn2pzbhdap49zzb64rwb40lzc6150mqmb09bcs"))))
     (properties `((upstream-name . "scan")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl
@@ -56482,6 +56506,7 @@ Zhang.(2022)<doi:10.1101/2022.02.19.481159> for more details.")
                              r-magrittr
                              r-knitr
                              r-kableextra
+                             r-gt
                              r-car))
     (home-page "https://github.com/jazznbass/scan/")
     (synopsis

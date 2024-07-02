@@ -3126,15 +3126,31 @@ Deep Learning\".")
 (define-public r-attachment
   (package
     (name "r-attachment")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "attachment" version))
        (sha256
-        (base32 "1ba5116193psx8yzfw00v4l441a5wdwsxi03wkizqccmc2j62b6g"))))
+        (base32 "1plc7mplqky5als8gzp01g55378smikxx6l42b2xyp9knxxprysg"))))
     (properties `((upstream-name . "attachment")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-yaml
                              r-withr
                              r-stringr
@@ -3145,7 +3161,7 @@ Deep Learning\".")
                              r-glue
                              r-desc
                              r-cli))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://thinkr-open.github.io/attachment/")
     (synopsis "Deal with Dependencies")
     (description

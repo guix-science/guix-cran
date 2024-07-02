@@ -545,13 +545,13 @@ Equivalence Bound: A New Procedure of Hypothesis Testing\"
 (define-public r-buysetest
   (package
     (name "r-buysetest")
-    (version "3.0.2")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BuyseTest" version))
        (sha256
-        (base32 "04na2yiykcnbscg5ibrkynjhp0ywdlc11fpz2p68bzz928bp9zyx"))))
+        (base32 "17nf1wy5dyxigr7w2bfj34kx94y7qdh60ra2j6f4kkpy7q0awl3y"))))
     (properties `((upstream-name . "BuyseTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -15569,13 +15569,13 @@ They can be used to test the different features of the package bibliometrix
 (define-public r-bibliometrix
   (package
     (name "r-bibliometrix")
-    (version "4.2.3")
+    (version "4.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bibliometrix" version))
        (sha256
-        (base32 "0amlqzc3ngh4r0gzk4y110kjl79gd4h5b4i6bid19v8q5qi3g3gm"))))
+        (base32 "1cas914ach2d2r8pjybyx2lvhydlsx89y2bgkqn40vhg8d40zc5d"))))
     (properties `((upstream-name . "bibliometrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytext
@@ -26015,6 +26015,35 @@ package without @code{bartMachine}.")
 features for data analysis and visualization.")
     (license license:gpl3)))
 
+(define-public r-bartcs
+  (package
+    (name "r-bartcs")
+    (version "1.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bartcs" version))
+       (sha256
+        (base32 "0kajw5phkymvkilwb7bf3qdc24h369yvb1zmc49kk6k7bdpbxcrr"))))
+    (properties `((upstream-name . "bartcs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rootsolve
+                             r-rlang
+                             r-rcpp
+                             r-mcmcpack
+                             r-invgamma
+                             r-ggplot2
+                             r-ggcharts
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yooyh/bartcs")
+    (synopsis "Bayesian Additive Regression Trees for Confounder Selection")
+    (description
+     "Fit Bayesian Regression Additive Trees (BART) models to select true confounders
+from a large set of potential confounders and to estimate average treatment
+effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
+    (license license:gpl3+)))
+
 (define-public r-bartcause
   (package
     (name "r-bartcause")
@@ -27941,18 +27970,17 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "1zj5zfd5dpzmzzkh2x51qpdfl1dzbimsd83fp8fsr6yh66c66xzq"))))
+        (base32 "0wfnwqyk42xwy6qmg1xyj60zlv1pps2g1dfk79af4jlyhbv9f4ik"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-rlang r-cli r-blob))
-    (home-page "https://cran.r-project.org/package=b64")
+    (home-page "https://extendr.github.io/b64/")
     (synopsis "Fast and Vectorized Base 64 Engine")
     (description
      "This package provides a fast, lightweight, and vectorized base 64 engine to

@@ -24731,13 +24731,13 @@ covariate adjustment.")
 (define-public r-clustmixtype
   (package
     (name "r-clustmixtype")
-    (version "0.3-14")
+    (version "0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustMixType" version))
        (sha256
-        (base32 "0i3wlnwa075rlwgv5b2kzgnswv6r7hha7biq84jqsa61hhysjxxw"))))
+        (base32 "1clby7x9jz0jpzmzni6g8zicysnf7ccxliglxr6ljigvkf747bg1"))))
     (properties `((upstream-name . "clustMixType")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-rcolorbrewer r-dplyr
@@ -26629,13 +26629,13 @@ Beam (2018) <@code{arXiv:1804.01486>}.")
 (define-public r-clinsigmeasures
   (package
     (name "r-clinsigmeasures")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClinSigMeasures" version))
        (sha256
-        (base32 "0dm2shknf83d6wmmjqly1493g30qm68sizj2n5jcc8gwi3xfcs9z"))))
+        (base32 "0vyn1j4qfxgh65jrq7wmm8nfw78vqllmrsdbzspl7hgf5zh477k1"))))
     (properties `((upstream-name . "ClinSigMeasures")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClinSigMeasures")
@@ -32258,19 +32258,24 @@ functions work on model objects from - optionally weighted - linear regression
 (define-public r-chem16s
   (package
     (name "r-chem16s")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chem16S" version))
        (sha256
-        (base32 "0a4r1sca2fsadaz3bmkrkylbdabwjw2ja6p9s9hgkgg4k6h3vslr"))))
+        (base32 "0jjxirnjg966rbjv1lv889xpzjlspp0a3d41f90x8hqys6bbkln7"))))
     (properties `((upstream-name . "chem16S")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-reshape2 r-plyr r-phyloseq r-ggplot2))
+    (propagated-inputs (list r-rlang
+                             r-reshape2
+                             r-plyr
+                             r-phyloseq
+                             r-ggplot2
+                             r-canprot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/jedick/chem16S")
-    (synopsis "Chemical Metrics of Community Reference Proteomes")
+    (synopsis "Chemical Metrics for Microbial Communities")
     (description
      "Combines taxonomic classifications of high-throughput 16S @code{rRNA} gene
 sequences with reference proteomes of archaeal and bacterial taxa to generate
@@ -41534,13 +41539,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "01ylxdvl0wi313r5mj8s6xz596b7an08hslrym2y69c9qv8a62cg"))))
+        (base32 "0xjwx33y383a8ax9vwd30zsb3k7l0g95llnrgjpmmj4inrarb5a7"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

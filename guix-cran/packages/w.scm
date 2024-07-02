@@ -2138,13 +2138,13 @@ data or keyword matching Watanabe & Zhou (2020) <doi:10.1177/0894439320907027>."
 (define-public r-wordlistsanalytics
   (package
     (name "r-wordlistsanalytics")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WordListsAnalytics" version))
        (sha256
-        (base32 "1q4plzw4akm7dw59qbwwnd0dxzjiqfbpiqa9h967kvdqdalwkjzz"))))
+        (base32 "0vw354gldqawxa1xw6abf76yh8r6jgfsc8vrppl5arj4kw72zrya"))))
     (properties `((upstream-name . "WordListsAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-reshape2 r-readr r-ggplot2 r-dplyr))

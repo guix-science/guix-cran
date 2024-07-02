@@ -3451,6 +3451,27 @@ Counts orbits of nodes and edges from edge matrix or data frame, or a graph
 object from the graph package.")
     (license license:lgpl3)))
 
+(define-public r-orbital
+  (package
+    (name "r-orbital")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orbital" version))
+       (sha256
+        (base32 "0i3ryz6hff5j7212v4n2b1psvzahbarb6iw4xvb6z0ly8qzfgzd3"))))
+    (properties `((upstream-name . "orbital")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-cli))
+    (home-page "https://github.com/tidymodels/orbital")
+    (synopsis "Predict with 'tidymodels' Workflows in Databases")
+    (description
+     "Turn tidymodels workflows into objects containing the sufficient sequential
+equations to perform predictions.  These smaller objects allow for low
+dependency prediction locally or directly in databases.")
+    (license license:expat)))
+
 (define-public r-oralopioids
   (package
     (name "r-oralopioids")

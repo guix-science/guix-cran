@@ -17088,41 +17088,38 @@ product uses the NASS API but is not endorsed or certified by NASS.")
 (define-public r-rnaseqqc
   (package
     (name "r-rnaseqqc")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAseqQC" version))
        (sha256
-        (base32 "0f9k3ba2w75sjywngmvp7g10837wx65v112inpag3rplk9ljahvp"))))
+        (base32 "1a35brc1m4ndwvvz0ldhlyab5y3fkkc9x5q2s5mqsnvpsvr2wyrm"))))
     (properties `((upstream-name . "RNAseqQC")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vsn
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-summarizedexperiment
                              r-stringr
-                             r-rcolorbrewer
                              r-purrr
                              r-patchwork
                              r-matrixstats
                              r-magrittr
-                             r-ggsci
                              r-ggrepel
                              r-ggpointdensity
                              r-ggplot2
-                             r-gghighlight
                              r-ensembldb
                              r-dplyr
                              r-deseq2
                              r-cowplot
                              r-complexheatmap
                              r-circlize
+                             r-biocgenerics
                              r-annotationhub
                              r-annotationfilter))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=RNAseqQC")
+    (home-page "https://github.com/frederikziebell/RNAseqQC")
     (synopsis "Quality Control for RNA-Seq Data")
     (description
      "This package provides functions for semi-automated quality control of bulk
@@ -30432,13 +30429,13 @@ W., et al. (2015)
 (define-public r-rempsyc
   (package
     (name "r-rempsyc")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rempsyc" version))
        (sha256
-        (base32 "1s4iv2ssz12pppjc9glhnryfkqnafid3fz9gmvhs9k5jk3cnq4pa"))))
+        (base32 "0y5b0cv6zpdg51jlxkhnyvpk55v4pd188y87q2rx1zkj82v6cdlh"))))
     (properties `((upstream-name . "rempsyc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-dplyr))

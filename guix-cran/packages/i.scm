@@ -8389,13 +8389,13 @@ reliable inference technique implemented in the INLA package for joint modeling.
 (define-public r-inlabru
   (package
     (name "r-inlabru")
-    (version "2.10.1")
+    (version "2.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlabru" version))
        (sha256
-        (base32 "1sazv0jz458lvdslza1d4y53q6ws9rn2g6sfgv3hin30qk6jzizg"))))
+        (base32 "07iwi0m8wa1hybl5pjsdkq21zbchm6pimjvpxma72lpdcbmijfxy"))))
     (properties `((upstream-name . "inlabru")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -10036,21 +10036,18 @@ delay distribution.")
 (define-public r-incidenceprevalence
   (package
     (name "r-incidenceprevalence")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IncidencePrevalence" version))
        (sha256
-        (base32 "0cw2075z492sav1nqlvq8s6xm6835s07g1zkwjmg81mb95a060f0"))))
+        (base32 "172difb7qikd8390zyn5cgl6m598wyn1bh8wpra9gih3f3kg40j7"))))
     (properties `((upstream-name . "IncidencePrevalence")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-tidyselect
+    (propagated-inputs (list r-visomopresults
                              r-tidyr
-                             r-tibble
                              r-stringr
-                             r-scales
                              r-rlang
                              r-purrr
                              r-patientprofiles
@@ -10059,10 +10056,8 @@ delay distribution.")
                              r-lubridate
                              r-lifecycle
                              r-glue
-                             r-ggplot2
                              r-dplyr
                              r-dbplyr
-                             r-dbi
                              r-clock
                              r-cli
                              r-checkmate
@@ -13664,16 +13659,16 @@ software is described in Pritikin & Falk (2020) <doi:10.1177/0146621620929431>."
 (define-public r-ieugwasr
   (package
     (name "r-ieugwasr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ieugwasr" version))
        (sha256
-        (base32 "0pgx2ii23rvflvz55hf31956rzp8y4avski27i2xmx3gqydzhgqr"))))
+        (base32 "0kicfbjv50d75si4dw9s5528l4pl8v7qhpw6y89sawgbj0fwrprr"))))
     (properties `((upstream-name . "ieugwasr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/MRCIEU/ieugwasr")
     (synopsis "Interface to the 'OpenGWAS' Database API")

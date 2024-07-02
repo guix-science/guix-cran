@@ -9161,13 +9161,13 @@ individual behavior, for use in evolutionary and ecological studies.")
 (define-public r-track2kba
   (package
     (name "r-track2kba")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "track2KBA" version))
        (sha256
-        (base32 "0lhx18vilxlac3z9vrwjcxjvinkdpp1njkvg82dyz1sqby3fa9f8"))))
+        (base32 "1y5mj2qakwvgxh0s8dli9d2i97g1y19k0v3q20zgj7j3wx7x8fw4"))))
     (properties `((upstream-name . "track2KBA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17763,19 +17763,20 @@ transactions and cursors.")
 (define-public r-thomasjeffersonuniv
   (package
     (name "r-thomasjeffersonuniv")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ThomasJeffersonUniv" version))
        (sha256
-        (base32 "1flj8jrkaj7l3a6lq2ir365rfnyd883kbd90lbfal44nsb7y3j43"))))
+        (base32 "1bf5dch0z077is7zz49hhwf3l2y4qpg47gdhvbp2968pb35mn35j"))))
     (properties `((upstream-name . "ThomasJeffersonUniv")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-writexl
                              r-timedate
                              r-survival
+                             r-stringi
                              r-stringdist
                              r-lubridate))
     (home-page "https://cran.r-project.org/package=ThomasJeffersonUniv")
@@ -24326,13 +24327,13 @@ optionally with generalized Pareto p-value estimation.")
 (define-public r-tbea
   (package
     (name "r-tbea")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tbea" version))
        (sha256
-        (base32 "1lffwmy4qiy24vkhizv8vxhffm35xh7ls818fhn50j7my8gzpip1"))))
+        (base32 "0h2v6h93r36h9v7g6w4jrj38rln9qqck5xnwcljdrhnd8r5x3v29"))))
     (properties `((upstream-name . "tbea")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfit r-coda r-boot r-ape))
@@ -24518,37 +24519,6 @@ allows the user to download NCBI data dumps and create a local database for fast
 and local taxonomic assignment.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-taxonbridge
-  (package
-    (name "r-taxonbridge")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxonbridge" version))
-       (sha256
-        (base32 "1ivks3bvwyn0ybvyz6dhsx7qxnlskf4icjkgsichdv4p24w5iwb9"))))
-    (properties `((upstream-name . "taxonbridge")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-withr
-                             r-vroom
-                             r-stringr
-                             r-rje
-                             r-purrr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/MoultDB/taxonbridge")
-    (synopsis
-     "Create Custom Taxonomies Based on the NCBI Taxonomy and GBIF Backbone Taxonomy")
-    (description
-     "The NCBI taxonomy is a popular resource for taxonomic studies but it only
-contains data on species with sequence data whereas the GBIF has a more
-extensive coverage of extinct species.  Taxonbridge is useful for the creation
-and analysis of custom taxonomies based on the NCBI taxonomy and GBIF backbone
-taxonomy.")
-    (license license:cc0)))
 
 (define-public r-taxlist
   (package

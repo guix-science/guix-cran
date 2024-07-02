@@ -4296,13 +4296,13 @@ dynamic borrowing methods.")
 (define-public r-psbcspeedup
   (package
     (name "r-psbcspeedup")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psbcSpeedUp" version))
        (sha256
-        (base32 "0dyvpdr9jafnac0m7x8rdsjbsl0fbd3c5lzc5483p3nnnynnml4q"))))
+        (base32 "12nzqg67wpycalv31d04h8qq519c2i2rkxpqdnf1vb6w84c6nknv"))))
     (properties `((upstream-name . "psbcSpeedUp")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -6311,13 +6311,13 @@ projects.")
 (define-public r-projecttemplate
   (package
     (name "r-projecttemplate")
-    (version "0.10.4")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProjectTemplate" version))
        (sha256
-        (base32 "08idly6fdxhv2rx5s4309snvzpd9rhd5bq9vq4rw13hnvnbdzyya"))))
+        (base32 "1898dfrfrilpa9gackifgnyf5m5j6r9359c7m8avcxn0qsygiviz"))))
     (properties `((upstream-name . "ProjectTemplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-digest))
@@ -15114,13 +15114,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.9")
+    (version "5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "1hhsv06vcqfzzb42nk0sidp9gd1larqrr3s6f5qh7hf1jv1b0d86"))))
+        (base32 "0pz12apfh600nnbdcrm3p9xr47p3qlc9bp80ahkvixb17vkr9z30"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -25772,16 +25772,16 @@ CDISC Submission Data Standards Team (2021)
 (define-public r-pharmaverseadam
   (package
     (name "r-pharmaverseadam")
-    (version "0.2.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pharmaverseadam" version))
        (sha256
-        (base32 "18pmbvjy4v7182kriffp733snb84inqjii6gj1g0l5ahh24k7xim"))))
+        (base32 "1nwm0mbaaca5ry449h1llvv44wcy2lgd4bs3wfacb9ag2pfgglc8"))))
     (properties `((upstream-name . "pharmaverseadam")))
     (build-system r-build-system)
-    (home-page "https://pharmaverse.github.io/pharmaverseadam/main/")
+    (home-page "https://pharmaverse.github.io/pharmaverseadam/")
     (synopsis "ADaM Test Data for the 'Pharmaverse' Family of Packages")
     (description
      "This package provides a set of Analysis Data Model (A@code{DaM}) datasets
@@ -34899,13 +34899,13 @@ that of the pcalg package but will be much more efficient.")
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
-    (version "1.4")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parallelpam" version))
        (sha256
-        (base32 "0iv11jqr9040rnw7hkfdj4vq4s7lhzz6as7f0zcy6jm36b3hllh2"))))
+        (base32 "06kr4zabnh5q5w3qnrkn1sw5wn61kkvhcdn8gzfb08394xfpl2kj"))))
     (properties `((upstream-name . "parallelpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))

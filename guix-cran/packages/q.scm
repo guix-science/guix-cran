@@ -1164,27 +1164,6 @@ Can be used with the gridsynth algorithm <@code{arXiv:1212.6253>} to perform
 decomposition into the Clifford+T set.")
     (license license:gpl3)))
 
-(define-public r-quantspec
-  (package
-    (name "r-quantspec")
-    (version "1.2-3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quantspec" version))
-       (sha256
-        (base32 "0ifwq2jmvxhpijz9yd9hffkff6ixcliaqkp9ispp9k1b8icwi8zn"))))
-    (properties `((upstream-name . "quantspec")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-snowfall r-rcpp r-quantreg r-abind))
-    (home-page "http://github.com/tobiaskley/quantspec")
-    (synopsis "Quantile-Based Spectral Analysis of Time Series")
-    (description
-     "This package provides methods to determine, smooth and plot quantile
-periodograms for univariate and multivariate time series.  See Kley (2016)
-<doi:10.18637/jss.v070.i03> for a description and tutorial.")
-    (license license:gpl2+)))
-
 (define-public r-quantregranger
   (package
     (name "r-quantregranger")

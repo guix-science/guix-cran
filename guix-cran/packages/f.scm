@@ -8755,13 +8755,13 @@ up the calculation of distances between observations.")
 (define-public r-fmesher
   (package
     (name "r-fmesher")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fmesher" version))
        (sha256
-        (base32 "0dszz7a6asyjwwgq8ggqll48ndyfn14lndf77arl60ns3h7v3ygn"))))
+        (base32 "1kwy04qs8pkjyd9ad55x8dr006z2nv0dyvgvhx15s3p3qhxgg6mm"))))
     (properties `((upstream-name . "fmesher")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -17154,29 +17154,6 @@ framework to measure FD that allows any number and type of functional traits,
 and can also consider species relative abundances.  Also contains other useful
 tools for functional ecology.")
     (license license:gpl2)))
-
-(define-public r-fcwtr
-  (package
-    (name "r-fcwtr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fCWTr" version))
-       (sha256
-        (base32 "0bm2cwsal0cxaqrkzs3j4ihvnyad91gywbf1q5zaryxcvmzf07fi"))))
-    (properties `((upstream-name . "fCWTr")))
-    (build-system r-build-system)
-    (inputs (list fftw))
-    (propagated-inputs (list r-cpp11))
-    (home-page "https://lschneiderbauer.github.io/fCWTr/")
-    (synopsis "Fast Continuous Wavelet Transform")
-    (description
-     "Enables the usage of the fast continuous wavelet transform, originally
-implemented in the C++ library @code{fCWT} by Lukas Arts.  See Arts, P.A. and
-Van den Broek, E.L. (2022) <doi:10.1038/s43588-021-00183-z> for details.  The
-package includes simple helpers such as a plotting function.")
-    (license license:gpl3+)))
 
 (define-public r-fcvar
   (package

@@ -674,13 +674,13 @@ non-genetic covariates.")
 (define-public r-luajr
   (package
     (name "r-luajr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "luajr" version))
        (sha256
-        (base32 "123zvkq57n787l1aqnyddxzd1d45899hlbgb5ikzk1xy85851zsr"))))
+        (base32 "0f4p7f6qcpib1gqnsm08lqpcawafk7r5n10yjqf5hw4dpsfz934g"))))
     (properties `((upstream-name . "luajr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -1695,6 +1695,37 @@ data with missing value under missing at random, missing completely at random
 are also supported.  Various diagnostic plots are available to inspect the
 latent space and summary of estimated parameters.")
     (license license:gpl3)))
+
+(define-public r-lsebootls
+  (package
+    (name "r-lsebootls")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LSEbootLS" version))
+       (sha256
+        (base32 "11ckfrlhz4zgz5bzbvbrx5j8dcxs2ka4xv8f2b2mlpv6jr9f5h1y"))))
+    (properties `((upstream-name . "LSEbootLS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlecuyer
+                             r-lsts
+                             r-iterators
+                             r-foreach
+                             r-dorng
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=LSEbootLS")
+    (synopsis
+     "Bootstrap Methods for Regression Models with Locally Stationary Errors")
+    (description
+     "This package implements bootstrap methods for linear regression models with
+errors following a time-varying process, focusing on approximating the
+distribution of the least-squares estimator for regression models with locally
+stationary errors.  It enables the construction of bootstrap and classical
+confidence intervals for regression coefficients, leveraging intensive
+simulation studies and real data analysis.")
+    (license license:gpl3+)))
 
 (define-public r-lse
   (package
@@ -7406,13 +7437,13 @@ models for portfolios.")
 (define-public r-lkt
   (package
     (name "r-lkt")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LKT" version))
        (sha256
-        (base32 "0a57817ddni9hl916dvs3spsvqpjfnla8dyrl2v8q5y0faqhagml"))))
+        (base32 "163vg974x7bav5fc6sd8pnnrkwcwy6kqdd66k8zg89m8jmy9iffp"))))
     (properties `((upstream-name . "LKT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem
@@ -14768,13 +14799,13 @@ lavaan path model without having to write the DOT language graph specification."
 (define-public r-lavaanextra
   (package
     (name "r-lavaanextra")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lavaanExtra" version))
        (sha256
-        (base32 "0q443wx983vy2i4bn39psw2nwaqzjncdpm7lpwsj7bifjnsic5sb"))))
+        (base32 "1h83a7mxyqqlnjk2vddy6ngshinl0sih3m21hl7qbc84spx1g96b"))))
     (properties `((upstream-name . "lavaanExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan r-insight))
@@ -15187,13 +15218,13 @@ interpolation originally implemented in the R package
 (define-public r-latentbma
   (package
     (name "r-latentbma")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LatentBMA" version))
        (sha256
-        (base32 "0ywhlplja69nai0cz0ck6i863i9201ykgjyrkh555k6vl26ngrwq"))))
+        (base32 "0gkcmc87ikq4n3zhga9pi2s3gdcf9h450xm8z4i855kf2h8ib2ky"))))
     (properties `((upstream-name . "LatentBMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-progress r-mnormt r-knitr r-ggplot2))
@@ -15288,13 +15319,13 @@ obtain the graph using dot from graphviz'.")
 (define-public r-latcontrol
   (package
     (name "r-latcontrol")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latcontrol" version))
        (sha256
-        (base32 "0y5amp5w8faw69lsi55akqfzgr8bwacvyi0whkxz2ik9dlxcwv3b"))))
+        (base32 "1rkzc1kc5x5ndjl4p1jgzqc393cgb0sqm3x3pg5a5ci14j4jf8sf"))))
     (properties `((upstream-name . "latcontrol")))
     (build-system r-build-system)
     (propagated-inputs (list r-lavaan))
@@ -15698,13 +15729,13 @@ presentation, or used in a Shiny app.")
 (define-public r-langevin
   (package
     (name "r-langevin")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Langevin" version))
        (sha256
-        (base32 "0sg3way9hlk875dfwbby59qm5dxwq7d763a0xjgjwaygpwqc83kz"))))
+        (base32 "18pri14f9x4svcdq100lmzjjqahnkw83z3a62r48pqrs14zap7hw"))))
     (properties `((upstream-name . "Langevin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

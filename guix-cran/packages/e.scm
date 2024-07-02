@@ -15194,6 +15194,36 @@ in Barreto, M., Collingwood, L., Garcia-Rios, S., & Oskooii, K. A. (2022).
 and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
     (license license:gpl3)))
 
+(define-public r-eientropy
+  (package
+    (name "r-eientropy")
+    (version "0.0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EIEntropy" version))
+       (sha256
+        (base32 "1vw7y3i3qpxaj4m7s8yxi0c4bzipm5ggp2b1f0251xzlhffiisb7"))))
+    (properties `((upstream-name . "EIEntropy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-dplyr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=EIEntropy")
+    (synopsis "Ecological Inference Applying Entropy")
+    (description
+     "This package implements two estimations related to the foundations of info
+metrics applied to ecological inference.  These methodologies assess the lack of
+disaggregated data and provide an approach to obtaining disaggregated
+territorial-level data.  For more details, see the following references:
+@code{FernÃ¡ndez-VÃ¡zquez}, E., DÃ­az-Dapena, A., Rubiera-@code{MorollÃ³n}, F.
+et al. (2020) \"Spatial Disaggregation of Social Indicators: An Info-Metrics
+Approach.\" <doi:10.1007/s11205-020-02455-z>.  DÃ­az-Dapena, A.,
+@code{FernÃ¡ndez-VÃ¡zquez}, E., Rubiera-@code{MorollÃ³n}, F., & Vinuela, A.
+(2021) \"Mapping poverty at the local level in Europe: A consistent spatial
+disaggregation of the AROPE indicator for France, Spain, Portugal and the United
+Kingdom.\" <doi:10.1111/rsp3.12379>.")
+    (license license:gpl3)))
+
 (define-public r-eider
   (package
     (name "r-eider")

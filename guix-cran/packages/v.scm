@@ -843,6 +843,28 @@ exponential, gamma, Weibull, Pareto, Fisher, Laplace and beta distributions; see
 Lequesne and Regnault (2020) <doi:10.18637/jss.v096.c01>.")
     (license license:gpl2+)))
 
+(define-public r-vse4ts
+  (package
+    (name "r-vse4ts")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vse4ts" version))
+       (sha256
+        (base32 "1js4iawg3c3hcflc7xmy8iif95l545mgg4cc5cmkp8jlfcdmbrig"))))
+    (properties `((upstream-name . "vse4ts")))
+    (build-system r-build-system)
+    (home-page "https://z-my-cn.github.io/vse4ts/")
+    (synopsis
+     "Identify Memory Patterns in Time Series Using Variance Scale Exponent")
+    (description
+     "This package provides methods for calculating the variance scale exponent to
+identify memory patterns in time series data.  Includes tests for white noise,
+short memory, and long memory.  See Fu, H. et al. (2018)
+<doi:10.1016/j.physa.2018.06.092>.")
+    (license license:expat)))
+
 (define-public r-vsd
   (package
     (name "r-vsd")
@@ -5422,13 +5444,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "00j2blaf5l8ancn4yjfywmw4l1kysxqkqfd5pg4klcr0h4idcnqd"))))
+        (base32 "17h634yb4fqc3xgp48qxvrfzn0ly2x91j76i8cap90rhidq0vqxx"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
