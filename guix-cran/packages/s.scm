@@ -6102,27 +6102,6 @@ predictor variables, such as genes etc, implementing algorithms PELORA and
 WILMA'.")
     (license license:gpl3)))
 
-(define-public r-supc
-  (package
-    (name "r-supc")
-    (version "0.2.6.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "supc" version))
-       (sha256
-        (base32 "0gvrmhvjkfbgi0ivwa8ri69rxj4kqn3xqrc2d5rfrdfm9jmqb56h"))))
-    (properties `((upstream-name . "supc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-bh))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/wush978/supc")
-    (synopsis "The Self-Updating Process Clustering Algorithms")
-    (description
-     "This package implements the self-updating process clustering algorithms proposed
-in Shiu and Chen (2016) <doi:10.1080/00949655.2015.1049605>.")
-    (license license:gpl3+)))
-
 (define-public r-sunsvoc
   (package
     (name "r-sunsvoc")
@@ -6161,6 +6140,32 @@ managed by Oak Ridge Associated Universities (ORAU) under DOE contract number
 DE-SC0014664. [1] Wang, M. et al, 2018. <doi:10.1109/PVSC.2018.8547772>. [2]
 Walters et al, 2018 <doi:10.1109/PVSC.2018.8548187>. [3] Guo, S. et al, 2016.
 <doi:10.1117/12.2236939>.")
+    (license license:bsd-3)))
+
+(define-public r-sundialr
+  (package
+    (name "r-sundialr")
+    (version "0.1.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sundialr" version))
+       (sha256
+        (base32 "1qzak0zrdj2ygw4h6cn28z6q5qxaam8dybqblmf17xq2lkvn2bpn"))))
+    (properties `((upstream-name . "sundialr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sn248/sundialr")
+    (synopsis
+     "An Interface to 'SUNDIALS' Ordinary Differential Equation (ODE) Solvers")
+    (description
+     "This package provides a way to call the functions in SUNDIALS C ODE solving
+library (<https://computing.llnl.gov/projects/sundials>).  Currently the serial
+version of ODE solver, CVODE', sensitivity calculator CVODES and differential
+algebraic solver IDA from the SUNDIALS library are implemented.  The package
+requires ODE to be written as an R or Rcpp function and does not require the
+SUNDIALS library to be installed on the local machine.")
     (license license:bsd-3)))
 
 (define-public r-sunclarco
@@ -46104,13 +46109,13 @@ them clearer and friendlier to the user.")
 (define-public r-sevenbridges2
   (package
     (name "r-sevenbridges2")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sevenbridges2" version))
        (sha256
-        (base32 "1z3sp85jvqzzf6szi2bz69wyp44spvc0r2gm81shak2fk5z8460f"))))
+        (base32 "065r7qggr3hb4jzwbw5sfkimyvaqr9pgyqa5k7aagmy5xdsgzczp"))))
     (properties `((upstream-name . "sevenbridges2")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -55549,36 +55554,6 @@ Soudeep Deb, Joshua Falk, and Arun Srinivasan. (2019) \"New Statistical
 Approaches to Intra-Individual Isotopic Analysis and Modeling Birth Seasonality
 in Studies of Herd Animals.\" <doi:10.1111/arcm.12432>.")
     (license license:gpl3)))
-
-(define-public r-scellpam
-  (package
-    (name "r-scellpam")
-    (version "1.4.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "scellpam" version))
-       (sha256
-        (base32 "0sgwqpmjwnwvs8s3l4x264kndjsh3k7h5mpxyl0za9s4na3y6s9j"))))
-    (properties `((upstream-name . "scellpam")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-memuse r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=scellpam")
-    (synopsis
-     "Applying Partitioning Around Medoids to Single Cell Data with High Number of Cells")
-    (description
-     "PAM (Partitioning Around Medoids) algorithm application to samples of single
-cell sequencing techniques with a high number of cells (as many as the computer
-memory allows).  The package uses a binary format to store matrices (either
-full, sparse or symmetric) in files written in the disk that can contain any
-data type (not just double) which allows its manipulation when memory is
-sufficient to load them as int or float, but not as double.  The PAM
-implementation is done in parallel, using several/all the cores of the machine,
-if it has them.  This package shares a great part of its code with packages
-jmatrix and parallelpam but their functionality is included here so there is no
-need to install them.")
-    (license license:gpl2+)))
 
 (define-public r-scdtb
   (package

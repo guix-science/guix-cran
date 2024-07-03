@@ -19420,16 +19420,16 @@ hinges), negative logarithms and generalized logarithms for ggplot2 (Wickham
 (define-public r-mkde
   (package
     (name "r-mkde")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mkde" version))
        (sha256
-        (base32 "0ihf3ahlppriba9j29zs7gfjxl49nsrrinnjzcxgca1yc5fikqcf"))))
+        (base32 "1g6g8zh0inza6lak4l6az2czqz22c8sf1pbcakibbhc5f1h2b8g9"))))
     (properties `((upstream-name . "mkde")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-rcpp r-raster))
+    (propagated-inputs (list r-terra r-stars r-sf r-rcpp))
     (home-page "https://cran.r-project.org/package=mkde")
     (synopsis "2D and 3D Movement-Based Kernel Density Estimates (MKDEs)")
     (description
@@ -34860,6 +34860,26 @@ district names and their county-district-school codes, accessing the local SQL
 table and making thematically consistent graphs.")
     (license license:expat)))
 
+(define-public r-mcode
+  (package
+    (name "r-mcode")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcODE" version))
+       (sha256
+        (base32 "1rnh9hqw97gxxs3ai5nnaszmyzyvv558p2b25i5h4218a2pkf8h3"))))
+    (properties `((upstream-name . "mcODE")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mcODE")
+    (synopsis "Monte Carlo Solution of First Order Differential Equations")
+    (description
+     "Two functions for simulating the solution of initial value problems of the form
+g'(x) = G(x, g) with g(x0) = g0.  One is an acceptance-rejection method.  The
+other is a method based on the Mean Value Theorem.")
+    (license license:gpl2+)))
+
 (define-public r-mco
   (package
     (name "r-mco")
@@ -37723,6 +37743,27 @@ all-pairs-similarity for a given window size for time series data.")
 (Pocuca et al. (2019) <doi:10.48550/@code{arXiv.1910.02859>}).  Also includes
 simple but useful matrix functions.  See the vignette for more information.")
     (license license:gpl3)))
+
+(define-public r-matrixmodp
+  (package
+    (name "r-matrixmodp")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "matrixmodp" version))
+       (sha256
+        (base32 "0axl3nvzsalxdmislw1vm9fg7dw39xqs7yr5jfl49h4l7h6ljzix"))))
+    (properties `((upstream-name . "matrixmodp")))
+    (build-system r-build-system)
+    (home-page "https://github.com/rhigginbottom/matrixmodp")
+    (synopsis "Working with Matrices over Finite Prime Fields")
+    (description
+     "This package provides functions for row-reducing and inverting matrices with
+entries in many of the finite fields (those with a prime number of elements).
+With this package, users will be able to find the reduced row echelon form
+(RREF) of a matrix and calculate the inverse of a (square, invertible) matrix.")
+    (license license:gpl2+)))
 
 (define-public r-matrixmixtures
   (package

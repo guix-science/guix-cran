@@ -3857,13 +3857,13 @@ Weisberg, Herbert (2005, ISBN:0-226-89128-3); Biemer, Paul (2010)
 (define-public r-tseal
   (package
     (name "r-tseal")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSEAL" version))
        (sha256
-        (base32 "1z1912mmmzyn4nh6cnkpddm5v25n87q1pqhd2q8k136xzncf9h57"))))
+        (base32 "1h0h5m19sp3g8nyj1hd7k4wbgal0ydvfw7f1kn6isfpk031bz5yb"))))
     (properties `((upstream-name . "TSEAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -8287,18 +8287,19 @@ al. (2016) <arxiv:1703.03373>, respectively.")
 (define-public r-tramme
   (package
     (name "r-tramme")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramME" version))
        (sha256
-        (base32 "1rfs38v0w2rxldxngbc1d6118cjnc8ad4zn2csqk8bg882b1yn18"))))
+        (base32 "00i0813czlwlb6lxsljhsp644mpz3zwcy068lb1z7qkxncic377d"))))
     (properties `((upstream-name . "tramME")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
                              r-tram
                              r-tmb
+                             r-reformulas
                              r-rcppeigen
                              r-numderiv
                              r-nlme
@@ -8307,7 +8308,6 @@ al. (2016) <arxiv:1703.03373>, respectively.")
                              r-mgcv
                              r-matrix
                              r-mass
-                             r-lme4
                              r-coneproj
                              r-basefun
                              r-alabama))
@@ -13890,13 +13890,13 @@ correlate two timelines of events.  A brief description is available at
 (define-public r-timeless
   (package
     (name "r-timeless")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeless" version))
        (sha256
-        (base32 "061pfg9p15kywzwmg7mfacj9mdrcn7zxlspb7fjfnmcay40v39n7"))))
+        (base32 "0x40zn58yfxpqhibhwjjrg2pvlr00r9z498q7f4fmm28dsgr7asb"))))
     (properties `((upstream-name . "timeless")))
     (build-system r-build-system)
     (home-page "https://github.com/schochastics/timeless")
@@ -16681,13 +16681,13 @@ Methods follow those introduced in Fine and Gray (1999) <doi:10.1002/sim.7501>."
 (define-public r-tidyclust
   (package
     (name "r-tidyclust")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyclust" version))
        (sha256
-        (base32 "19lvxbzzsnx2q5ji800wm8jk48y5ip53v95kaxyjlpslclv40l8z"))))
+        (base32 "1z5fhs4ws7cbvsxkwcd4plj968glfing2jgy2hqs1m49di8gjrib"))))
     (properties `((upstream-name . "tidyclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

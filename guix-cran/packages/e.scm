@@ -19354,6 +19354,30 @@ the JAGS software and the @code{jagsUI} package to run a Markov chain Monte
 Carlo approximation of the different variables.")
     (license license:gpl2+)))
 
+(define-public r-ecode
+  (package
+    (name "r-ecode")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecode" version))
+       (sha256
+        (base32 "138gs67z35nxa9a1y0v327qs0c695dy5la68ld17m9xrsg2rjz85"))))
+    (properties `((upstream-name . "ecode")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-rlang r-ggplot2 r-cowplot))
+    (home-page "https://github.com/HaoranPopEvo/ecode")
+    (synopsis "Ordinary Differential Equation Systems in Ecology")
+    (description
+     "This package provides a framework to simulate ecosystem dynamics through
+ordinary differential equations (ODEs).  You create an ODE model, tells ecode to
+explore its behaviour, and perform numerical simulations on the model.  ecode
+also allows you to fit model parameters by machine learning algorithms.
+Potential users include researchers who are interested in the dynamics of
+ecological community and biogeochemical cycles.")
+    (license license:expat)))
+
 (define-public r-ecocopula
   (package
     (name "r-ecocopula")

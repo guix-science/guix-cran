@@ -7555,13 +7555,13 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 (define-public r-one4all
   (package
     (name "r-one4all")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "One4All" version))
        (sha256
-        (base32 "1f0gymlpdyz9dm71mj99cyp58c1nwxr8d4g9c976mf5mimz2rhyn"))))
+        (base32 "081d40n8whvhykzdpm2crwmpr3mlczd6svhcpr48nxdhh56pyhjf"))))
     (properties `((upstream-name . "One4All")))
     (build-system r-build-system)
     (propagated-inputs (list r-validate
@@ -7589,7 +7589,7 @@ design method can be found in: Wu, J, Chen L, Wei J, Weiss H, Chauhan A. (2020).
 of functions that read a set of rules from a CSV or Excel file and apply them to
 a dataset.  Funded by the National Renewable Energy Laboratory and Possibility
 Lab, maintained by the Moore Institute for Plastic Pollution Research.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
+    (license license:expat)))
 
 (define-public r-ondisc
   (package

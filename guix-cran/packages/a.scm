@@ -8304,6 +8304,26 @@ package is useful because its computer implementation of these tables duplicates
 that available in other commercial software and subscription online calculators.")
     (license license:gpl2)))
 
+(define-public r-aqfig
+  (package
+    (name "r-aqfig")
+    (version "0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aqfig" version))
+       (sha256
+        (base32 "0pqg54bch6xjd1ybqciil1w52b7bi6d3q41dqafi830zvmq0hb11"))))
+    (properties `((upstream-name . "aqfig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-geor))
+    (home-page "https://cran.r-project.org/package=aqfig")
+    (synopsis "Display Air Quality Model Output and Monitoring Data")
+    (description
+     "Display air quality model output and monitoring data using scatterplots, grids,
+and legends.")
+    (license (license:fsdg-compatible "Unlimited"))))
+
 (define-public r-aqeval
   (package
     (name "r-aqeval")
@@ -14800,16 +14820,17 @@ solve other tasks in text mining as well.")
 (define-public r-aiuq
   (package
     (name "r-aiuq")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AIUQ" version))
        (sha256
-        (base32 "00abxp3sd5ri4rny38q0125i8bb71hv5riicd7m8n9hz9hgww12j"))))
+        (base32 "0bbqckp0s9f9ljp0b8z65pzfh3hhfp910ca7hsivwi9j7vr61jaz"))))
     (properties `((upstream-name . "AIUQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-supergauss r-plot3d r-fftwtools))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=AIUQ")
     (synopsis "Ab Initio Uncertainty Quantification")
     (description
@@ -21787,13 +21808,13 @@ screening <doi:10.1111/j.1467-9868.2008.00674.x> are also provided.")
 (define-public r-aberrance
   (package
     (name "r-aberrance")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aberrance" version))
        (sha256
-        (base32 "0wjckww2dc3q17ln4r0sjgbvi5zxbsh5cz383x02xkkq5va7lrb3"))))
+        (base32 "0rpmapx5ji69hfszbhrhvjmn5i6a4jdgy0g11w59xdsrpzc40sv8"))))
     (properties `((upstream-name . "aberrance")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))

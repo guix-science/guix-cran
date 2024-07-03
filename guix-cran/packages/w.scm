@@ -1799,6 +1799,28 @@ Taxonomic Backbone is an updated version of The Plant List
 static since 2013.")
     (license license:gpl3)))
 
+(define-public r-worldbank
+  (package
+    (name "r-worldbank")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "worldbank" version))
+       (sha256
+        (base32 "0m9j4hzd3brb5n36wypq1njjg9ch0kvrp3rydxhn8icd6xwc1l5b"))))
+    (properties `((upstream-name . "worldbank")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2))
+    (home-page "https://m-muecke.github.io/worldbank/")
+    (synopsis "Client for the 'World Bank Indicators API'")
+    (description
+     "Download and search data from the World Bank Indicators API', which provides
+access to nearly 16,000 time series indicators.  See
+<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>
+for further details about the API.")
+    (license license:expat)))
+
 (define-public r-workloopr
   (package
     (name "r-workloopr")

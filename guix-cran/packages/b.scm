@@ -2313,13 +2313,13 @@ Meyer, R. and Christensen, N., Statistics and Computing (2018).
 (define-public r-bspline
   (package
     (name "r-bspline")
-    (version "2.2")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bspline" version))
        (sha256
-        (base32 "0v7kbg7h0d0s2ywvjpahk2y2ncbv8kmacdznaixxakccqbl8piip"))))
+        (base32 "1m214gp6kjpl56vd7w8h1lwgwrh46pds5i77ilvgiv64nrccqih7"))))
     (properties `((upstream-name . "bspline")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-nlsic r-arrapply))
@@ -4386,21 +4386,21 @@ automatically to the PATH.")
 (define-public r-brea
   (package
     (name "r-brea")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brea" version))
        (sha256
-        (base32 "0mb043fdhxrg9gyf4g55ydjx37j20394nvd4d0fmiym98lccyi04"))))
+        (base32 "1p26fps2sjbyq549j5f6pv00wzjkzzph2bm8s9vfncgv92sjv2iy"))))
     (properties `((upstream-name . "brea")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=brea")
-    (synopsis "Bayesian Recurrent Event Analysis")
+    (synopsis "Bayesian Recurrent Events Analysis")
     (description
-     "This package provides a function to produce MCMC samples for posterior inference
-in semiparametric Bayesian discrete time competing risks recurrent events
-models.")
+     "This package provides functions to produce MCMC samples for posterior inference
+in semiparametric Bayesian discrete time competing risks recurrent events models
+and multistate models.")
     (license license:gpl3)))
 
 (define-public r-brdt

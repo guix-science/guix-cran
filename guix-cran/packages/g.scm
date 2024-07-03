@@ -17826,13 +17826,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.1-1")
+    (version "3.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1vmx4bmjsk0sdxpafmpsiiiv0z4pyi6lfsxbb9mrqmhkqdhp2yrf"))))
+        (base32 "1vy57qbnav1kl71wwznb0kl3s06csqm0sx5k90hzwqjignxnc223"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

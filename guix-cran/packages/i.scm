@@ -15,9 +15,10 @@
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pdf)
+  #:use-module (gnu packages xml)
+  #:use-module (gnu packages image)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages image)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -8209,15 +8210,16 @@ Vanilla Gradient'.")
 (define-public r-inlpubs
   (package
     (name "r-inlpubs")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inlpubs" version))
        (sha256
-        (base32 "0gg39mkid9s57hd9r5y5pa8228m965diz61s94v38qyix8pjdj37"))))
+        (base32 "1l9xngsia76yfq3g550nwgj7s2d33jl0s2k7f89majvkaxldbs47"))))
     (properties `((upstream-name . "inlpubs")))
     (build-system r-build-system)
+    (inputs (list pandoc optipng libxml2))
     (propagated-inputs (list r-tm r-checkmate))
     (home-page "https://rconnect.usgs.gov/INLPO/inlpubs-main/")
     (synopsis "USGS INL Project Office Publications")
@@ -15468,6 +15470,34 @@ use of parallel threads where supported.")
      "Reproducible, programmatic retrieval of datasets from the Inter-university
 Consortium for Political and Social Research archive.")
     (license license:expat)))
+
+(define-public r-icpack
+  (package
+    (name "r-icpack")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icpack" version))
+       (sha256
+        (base32 "07vc910g7xy7drvd3ry4xw4j7gw34hvgnmafwwycc1ff060pjj6k"))))
+    (properties `((upstream-name . "icpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-rlang
+                             r-reshape2
+                             r-matrixstats
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=icpack")
+    (synopsis "Survival Analysis of Interval-Censored Data")
+    (description
+     "Survival analysis of interval-censored data with proportional hazards, and an
+explicit smooth estimate of the baseline log-hazard with P-splines.")
+    (license license:gpl2+)))
 
 (define-public r-icosa
   (package

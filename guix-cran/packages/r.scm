@@ -30251,13 +30251,13 @@ block data) can be used in a Maximum-Likelihood framework.")
 (define-public r-rendo
   (package
     (name "r-rendo")
-    (version "2.4.9")
+    (version "2.4.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REndo" version))
        (sha256
-        (base32 "08am92h1j2zx7pannnd6z9h4xr14awdp4rzv4sdmgf3x7sfjcp5g"))))
+        (base32 "08wxk8s4bwxbvk4d49dd3nb5nhngd0rvh8nfnncsm0agrly82k78"))))
     (properties `((upstream-name . "REndo")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -33777,25 +33777,25 @@ with the definitions in a database's data dictionary.")
 (define-public r-redbookperu
   (package
     (name "r-redbookperu")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "redbookperu" version))
        (sha256
-        (base32 "0pf6ihk5k4milzz9j2y5wsxj7ishadlx1zvffhkw600c3i7ssi5b"))))
+        (base32 "1v90xrvwcfbkgqm6yq0dhsp9i9wfgwv3ijyja70v3bqa46klvq91"))))
     (properties `((upstream-name . "redbookperu")))
     (build-system r-build-system)
     (home-page "https://github.com/PaulESantos/redbookperu")
     (synopsis
-     "Access and Analyze the Data from the Red Book of Endemic Plants of Peru")
+     "Access and Analyze Data from the Red Book of Endemic Plants of Peru")
     (description
-     "Access and analysis of data from `The Red Book of Endemic Plants of Peru`
-@code{LeÃ³n}, B., Roque, J., Ulloa, C., Jorgensen, P.M., Pitman, N., Cano, A.
-(2006)<doi:10.15381/rpb.v13i2.1782> providing taxonomic, geographic, and
-conservation information about Peru's endemic plant species.  The package offers
-functions to check species inclusion, obtain updated taxonomic details, and
-explore the dataset.")
+     "This package provides access to and analysis of data from \"The Red Book of
+Endemic Plants of Peru\" (@code{LeÃ³n}, B., Roque, J., Ulloa, C., Jorgensen,
+P.M., Pitman, N., Cano, A. 2006) <doi:10.15381/rpb.v13i2.1782>.  This package
+offers comprehensive taxonomic, geographic, and conservation information about
+Peru's endemic plant species.  It includes functions to verify species
+inclusion, obtain updated taxonomic details, and explore the dataset.")
     (license license:expat)))
 
 (define-public r-redas

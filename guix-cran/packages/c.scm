@@ -2337,18 +2337,18 @@ code works.")
 (define-public r-cubist
   (package
     (name "r-cubist")
-    (version "0.4.2.1")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Cubist" version))
        (sha256
-        (base32 "0mwis0qjjj7wz4lxb8a0168l4az4523ybhxc0jygx8qrj3azwyph"))))
+        (base32 "140m4if4g4v74dwhzdp4bgdgy4zzcyplxqd311gfg7dn0kqzzmai"))))
     (properties `((upstream-name . "Cubist")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-lattice))
     (native-inputs (list r-knitr))
-    (home-page "https://topepo.github.io/Cubist//")
+    (home-page "https://topepo.github.io/Cubist/")
     (synopsis "Rule- And Instance-Based Regression Modeling")
     (description
      "Regression modeling using rules with added instance-based corrections.")
@@ -2505,13 +2505,13 @@ compatibility.")
 (define-public r-cubble
   (package
     (name "r-cubble")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubble" version))
        (sha256
-        (base32 "0jjdz7yi58h2rvwbanzq4nq9lrbx4dcb03l1qlfkbqamn4s4hz5v"))))
+        (base32 "0nm6bcs4k2h7jxc6xgsqgqf4by46fm7b8r436x41nbasii0dahn8"))))
     (properties `((upstream-name . "cubble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -2534,36 +2534,6 @@ compatibility.")
     (description
      "This package provides a spatiotemperal data object in a relational data
 structure to separate the recording of time variant/ invariant variables.")
-    (license license:expat)))
-
-(define-public r-cubar
-  (package
-    (name "r-cubar")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cubar" version))
-       (sha256
-        (base32 "12rqg50v7f0akd5d698lmf0vg1gg84lx9wjv7wvfikbyhpqk9wq6"))))
-    (properties `((upstream-name . "cubar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
-                             r-biostrings))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mt1022/cubar")
-    (synopsis "Codon Usage Bias Analysis")
-    (description
-     "This package provides a suite of functions for rapid and flexible analysis of
-codon usage bias.  It provides in-depth analysis at the codon level, including
-relative synonymous codon usage (RSCU), @code{tRNA} weight calculations, machine
-learning predictions for optimal or preferred codons, and visualization of
-codon-anticodon pairing.  Additionally, it can calculate various gene- specific
-codon indices such as codon adaptation index (CAI), effective number of codons
-(ENC), fraction of optimal codons (Fop), @code{tRNA} adaptation index
-(@code{tAI}), mean codon stabilization coefficients (CSCg), and GC contents
-(GC/GC3s/GC4d).  It also supports both standard and non-standard genetic code
-tables found in NCBI, as well as custom genetic code tables.")
     (license license:expat)))
 
 (define-public r-cub
@@ -8593,6 +8563,32 @@ algorithm, with improved efficiency using Armadillo templated C++ linear algebra
 library, and flexibility for user-specified preconditioning method.  Please
 check <https://github.com/styvon/@code{cPCG>} for latest updates.")
     (license license:gpl2+)))
+
+(define-public r-cpcat
+  (package
+    (name "r-cpcat")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CPCAT" version))
+       (sha256
+        (base32 "0vi98pxpmrrkz15rn1b4kcs7x1fbkili10qw2p4ins7lrjvqjvdp"))))
+    (properties `((upstream-name . "CPCAT")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CPCAT")
+    (synopsis "The Closure Principle Computational Approach Test")
+    (description
+     "P-values and no/lowest observed (adverse) effect concentration values derived
+from the closure principle computational approach test (Lehmann, R. et al.
+(2015) <doi:10.1007/s00477-015-1079-4>) are provided.  The package contains
+functions to generate intersection hypotheses according to the closure principle
+(Bretz, F., Hothorn, T., Westfall, P. (2010) <doi:10.1201/9781420010909>), an
+implementation of the computational approach test (Ching-Hui, C., Nabendu, P.,
+Jyh-Jiuan, L. (2010) <doi:10.1080/03610918.2010.508860>) and the combination of
+both, that is, the closure principle computational approach test.")
+    (license license:gpl3+)))
 
 (define-public r-cpc
   (package
@@ -14891,13 +14887,13 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "065ajq3ah3gk2chpd62bwnz72z0xy5kcmwm7mcxkaxq1xps3wfd9"))))
+        (base32 "1xdgzh5sr4awzl7z0l4cg1f4hvi5ch031qc34xz0x0gdqy7gsqww"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (propagated-inputs (list r-waldo r-rlang r-diffobj r-cli))
@@ -37268,6 +37264,29 @@ other settings including the generalization of experimental and instrumental
 variable estimates.")
     (license license:gpl2+)))
 
+(define-public r-cbpe
+  (package
+    (name "r-cbpe")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CBPE" version))
+       (sha256
+        (base32 "1l6vs2dq0ckspy9ksdwkds5jyr7a14c34bd9lpx1hnfw3savhhcp"))))
+    (properties `((upstream-name . "CBPE")))
+    (build-system r-build-system)
+    (home-page "https://github.com/mnrzrad/CBPE")
+    (synopsis "Correlation-Based Penalized Estimators")
+    (description
+     "This package provides correlation-based penalty estimators for both linear and
+logistic regression models by implementing a new regularization method that
+incorporates correlation structures within the data.  This method encourages a
+grouping effect where strongly correlated predictors tend to be in or out of the
+model together.  See Tutz and Ulbricht (2009) <doi:10.1007/s11222-008-9088-5>
+and Algamal and Lee (2015) <doi:10.1016/j.eswa.2015.08.016>.")
+    (license license:gpl2+)))
+
 (define-public r-cbnetworkma
   (package
     (name "r-cbnetworkma")
@@ -42026,13 +42045,13 @@ especially simple one dimensional examples appears in inst/doc/one.dim/.")
 (define-public r-calibrationcurves
   (package
     (name "r-calibrationcurves")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CalibrationCurves" version))
        (sha256
-        (base32 "02r4qmim6pan3rpr3md68v0sik7n6lhcr7gsyl9qm45xf3v1x9gr"))))
+        (base32 "102kpgjfasyyrfpxrv1mzrl40fhh6blml6lbiha4s6p0fav7dj8n"))))
     (properties `((upstream-name . "CalibrationCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

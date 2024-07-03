@@ -11141,6 +11141,27 @@ fast out-of-the-box solutions but also a high extent of flexibility.  Also
 provides options for embedding audio in figures and animating figures.")
     (license license:expat)))
 
+(define-public r-pra
+  (package
+    (name "r-pra")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PRA" version))
+       (sha256
+        (base32 "1lpafrpzw43k29vk2y52wixdzgli9z8c3bvv2liypmlxmqmjfxly"))))
+    (properties `((upstream-name . "PRA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-minpack-lm r-mc2d))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulgovan.github.io/PRA/")
+    (synopsis "Project Risk Analysis")
+    (description
+     "Data analysis for Project Risk Management via the Second Moment Method, Monte
+Carlo Simulation, Bayesian methods, Design Structure Matrices, and more.")
+    (license license:expat)))
+
 (define-public r-pqrfe
   (package
     (name "r-pqrfe")
@@ -11547,6 +11568,35 @@ privacy-preserving techniques.")
      "This package provides functionality for Bayesian analysis of replication studies
 using power prior approaches (Pawel et al., 2023)
 <doi:10.1007/s11749-023-00888-5>.")
+    (license license:gpl3)))
+
+(define-public r-pprank
+  (package
+    (name "r-pprank")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ppRank" version))
+       (sha256
+        (base32 "1843cnrdiwns14471dnjq8i5wxkp3p1sj4rw74zzy9w3ydcc3v1z"))))
+    (properties `((upstream-name . "ppRank")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ppRank")
+    (synopsis "Classification of Algorithms")
+    (description
+     "This package implements the Bi-objective Lexicographical Classification method
+and Performance Assessment Ratio at 10% metric for algorithm classification.
+Constructs matrices representing algorithm performance under multiple criteria,
+facilitating decision-making in algorithm selection and evaluation.  Analyzes
+and compares algorithm performance based on various metrics to identify the most
+suitable algorithms for specific tasks.  This package includes methods for
+algorithm classification and evaluation, with examples provided in the
+documentation.  Carvalho (2019) presents a statistical evaluation of algorithmic
+computational experimentation with infeasible solutions
+<doi:10.48550/@code{arXiv.1902.00101>}.  Moreira and Carvalho (2023) analyze
+power in preprocessing methodologies for datasets with missing values
+<doi:10.1080/03610918.2023.2234683>.")
     (license license:gpl3)))
 
 (define-public r-ppqplan
@@ -29190,38 +29240,6 @@ stepwise models, as well as random models for experimental work, and custom
 models allowing the user to apply any valid mutation matrix.  Allele lumping is
 done following the lumpability criteria of Kemeny and Snell (1976),
 ISBN:0387901922.")
-    (license license:gpl3)))
-
-(define-public r-pedmod
-  (package
-    (name "r-pedmod")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "pedmod" version))
-       (sha256
-        (base32 "1xr98vp2s3s2cw4bjdw6156zas15jxvp9fbyz9rxd68i3zrblplx"))))
-    (properties `((upstream-name . "pedmod")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-psqn
-                             r-bh
-                             r-alabama))
-    (native-inputs (list r-r-rsp gfortran))
-    (home-page "https://github.com/boennecd/pedmod")
-    (synopsis "Pedigree Models")
-    (description
-     "This package provides functions to estimate mixed probit models using, for
-instance, pedigree data like in <doi:10.1002/sim.1603>.  The models are also
-commonly called liability threshold models.  The approximation is based on
-direct log marginal likelihood approximations like the randomized Quasi-Monte
-Carlo suggested by <doi:10.1198/106186002394> with a similar procedure to
-approximate the derivatives.  The minimax tilting method suggested by
-<doi:10.1111/rssb.12162> is also supported.  Graph-based methods are also
-provided that can be used to simplify pedigrees.")
     (license license:gpl3)))
 
 (define-public r-pedmermaid

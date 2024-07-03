@@ -2409,17 +2409,18 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "0.7.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "1q2znry97rly1nj7crqqfm5c41sxcia6i4b080ccdwzap26pm17i"))))
+        (base32 "0gx8kvpyv149g1vk17ym8zfyv0wg4qgmp314vsfv140a9mj2f051"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip
+    (propagated-inputs (list r-xml2
                              r-verbalisr
+                             r-shinyjs
                              r-shinydashboard
                              r-shiny
                              r-pedtools

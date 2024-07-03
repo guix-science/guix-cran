@@ -8250,13 +8250,13 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
 (define-public r-foghorn
   (package
     (name "r-foghorn")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "foghorn" version))
        (sha256
-        (base32 "1xmyl4m2chv2z6adfyzmv93zqjl0pxk364zy0jfym8vgnzrmcb26"))))
+        (base32 "1x3zgjy1pnjv0a2dra5a36fwg3lgq8yfqdm731r28kdwy6d1az85"))))
     (properties `((upstream-name . "foghorn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -8265,8 +8265,7 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
                              r-rlang
                              r-httr2
                              r-curl
-                             r-crayon
-                             r-clisymbols))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://fmichonneau.github.io/foghorn/")
     (synopsis "Summarize CRAN Check Results in the Terminal")
@@ -9329,47 +9328,6 @@ machines, this package offers a suite of tools for data handling and analysis.
 It includes functions for converting Fluidigm data to format used by PLINK',
 estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
-    (license license:gpl3)))
-
-(define-public r-flsss
-  (package
-    (name "r-flsss")
-    (version "9.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FLSSS" version))
-       (sha256
-        (base32 "1mjjnasc5f3l44dch7wjxl0b6jbcyjkk6m5b3xgjrir5qyy7fmdk"))))
-    (properties `((upstream-name . "FLSSS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcppparallel r-rcpp))
-    (home-page "https://cran.r-project.org/package=FLSSS")
-    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
-    (description
-     "Specialized solvers for combinatorial optimization problems in the Subset Sum
-family.  The solvers differ from the mainstream in the options of (i)
-restricting subset size, (ii) bounding subset elements, (iii) mining real-value
-multisets with predefined subset sum errors, (iv) finding one or more subsets in
-limited time.  A novel algorithm for mining the one-dimensional Subset Sum
-induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
- The multi-threaded framework for the latter offers exact algorithms to the
-multidimensional Knapsack and the Generalized Assignment problems.  Historical
-updates include (a) renewed implementation of the multi-Subset Sum,
-multidimensional Knapsack and Generalized Assignment solvers; (b) availability
-of bounding solution space in the multidimensional Subset Sum; (c) fundamental
-data structure and architectural changes for enhanced cache locality and better
-chance of SIMD vectorization; (d) option of mapping floating-point instance to
-compressed 64-bit integer instance with user-controlled precision loss, which
-could yield substantial speedup due to the dimension reduction and efficient
-compressed integer arithmetic via bit-manipulations; (e) distributed computing
-infrastructure for multidimensional subset sum; (f) arbitrary-precision
-zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
-Bloom filter.  The package contains a copy of @code{xxHash} from
-<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
-(<@code{arXiv:1612.04484v3>}) detailed a few historical updates.  Functions
-prefixed with aux (auxiliary) are independent implementations of published
-algorithms for solving optimization problems less relevant to Subset Sum.")
     (license license:gpl3)))
 
 (define-public r-flsa
@@ -16537,13 +16495,13 @@ financial data for FDIC-insured institutions and accessing the data taxonomy.")
 (define-public r-fddm
   (package
     (name "r-fddm")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fddm" version))
        (sha256
-        (base32 "1nnfwfqbqk6a9m42cyc1lwwmd2l8xi3icpx4h05z5852hn6kzkcp"))))
+        (base32 "1nlnn409frlhhc47z33bgxdcix20csl4bk85x4ybhknvdfffyh1a"))))
     (properties `((upstream-name . "fddm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-formula))
@@ -20757,13 +20715,13 @@ tests.  Methods for visualizing output are provided.")
 (define-public r-famevent
   (package
     (name "r-famevent")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FamEvent" version))
        (sha256
-        (base32 "1b2dh0kcvarczp3666by66sx6v1p2xbj1k43nji7cks1mmmln3qn"))))
+        (base32 "05p8k1kqqbsc4n1gbfcmsq9s7hrp3q7460rb8nw5ms7w06wvkvpp"))))
     (properties `((upstream-name . "FamEvent")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

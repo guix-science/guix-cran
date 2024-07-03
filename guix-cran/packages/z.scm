@@ -68,17 +68,17 @@ package is not supported by Zoom (owner of the software).")
 (define-public r-zoomerjoin
   (package
     (name "r-zoomerjoin")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "zoomerjoin" version))
        (sha256
-        (base32 "00ckdb9nxvxwk8rw8dxa7craq1hah26bnhl70cgrhw72mmxggvmb"))))
+        (base32 "09k18igddp4lwakd0k8vg767sahw5rq6ww9fkwhxwh6rxlx4bj2y"))))
     (properties `((upstream-name . "zoomerjoin")))
     (build-system r-build-system)
     (inputs (list zlib))
-    (propagated-inputs (list r-tidyr r-tibble r-dplyr))
+    (propagated-inputs (list r-tidyr r-tibble r-dplyr r-collapse))
     (native-inputs (list r-knitr))
     (home-page "https://beniamino.org/zoomerjoin/")
     (synopsis "Superlatively Fast Fuzzy Joins")

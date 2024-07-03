@@ -2886,6 +2886,35 @@ described in Meucci, Attilio (2013) <doi:10.2139/ssrn.2276632>.")
 for UNC men's basketball team.")
     (license license:cc0)))
 
+(define-public r-uncertainucdp
+  (package
+    (name "r-uncertainucdp")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uncertainUCDP" version))
+       (sha256
+        (base32 "0jrwwdnb7ss5w8ihlxvpjwi2c039kys9lmbdkxsdglkf2a0ck6hx"))))
+    (properties `((upstream-name . "uncertainUCDP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-rlang r-mistr r-dplyr))
+    (home-page "https://cran.r-project.org/package=uncertainUCDP")
+    (synopsis
+     "Parametric Mixture Models for Uncertainty Estimation of Fatalities in UCDP Conflict Data")
+    (description
+     "This package provides functions for estimating uncertainty in the number of
+fatalities in the Uppsala Conflict Data Program (UCDP) data.  The package
+implements a parametric reported-value Gumbel mixture distribution that accounts
+for the uncertainty in the number of fatalities in the UCDP data.  The model is
+based on information from a survey on UCDP coders and how they view the
+uncertainty of the number of fatalities from UCDP events.  The package provides
+functions for making random draws of fatalities from the mixture distribution,
+as well as to estimate percentiles, quantiles, means, and other statistics of
+the distribution.  Full details on the survey and estimation procedure can be
+found in Vesco et al (2024).")
+    (license license:expat)))
+
 (define-public r-uncertainty
   (package
     (name "r-uncertainty")

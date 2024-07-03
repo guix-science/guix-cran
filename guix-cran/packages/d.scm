@@ -4060,13 +4060,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1yy8wqprvqc0sa7nxw044g5j18vy395zkbfsr8ibdnbd4hzxvgkf"))))
+        (base32 "0rlll9fd7jcc047k87akskg209hz4b0x2p3mb3i8cqwk775ng79i"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -8614,47 +8614,6 @@ Bootstrap-based computational methods of the confidence interval for AUC of
 summary ROC curve and some related AUC-based inference methods are available
 (Noma et al. (2021) <doi:10.1080/23737484.2021.1894408>).")
     (license license:gpl3)))
-
-(define-public r-dmcfun
-  (package
-    (name "r-dmcfun")
-    (version "3.5.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "DMCfun" version))
-       (sha256
-        (base32 "0kw0hzg5hwj76yz02ws62dmji7ggjm5isnh4blfhw55fsn7b6aic"))))
-    (properties `((upstream-name . "DMCfun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rcpp
-                             r-pbapply
-                             r-dplyr
-                             r-deoptim
-                             r-bh))
-    (home-page "https://github.com/igmmgi/DMCfun")
-    (synopsis "Diffusion Model of Conflict (DMC) in Reaction Time Tasks")
-    (description
-     "DMC model simulation detailed in Ulrich, R., Schroeter, H., Leuthold, H., &
-Birngruber, T. (2015).  Automatic and controlled stimulus processing in conflict
-tasks: Superimposed diffusion processes and delta functions.  Cognitive
-Psychology, 78, 148-174.  Ulrich et al. (2015)
-<doi:10.1016/j.cogpsych.2015.02.005>.  Decision processes within choice
-reaction-time (CRT) tasks are often modelled using evidence accumulation models
-(EAMs), a variation of which is the Diffusion Decision Model (DDM, for a review,
-see Ratcliff & @code{McKoon}, 2008).  Ulrich et al. (2015) introduced a
-Diffusion Model for Conflict tasks (DMC).  The DMC model combines common
-features from within standard diffusion models with the addition of superimposed
-controlled and automatic activation.  The DMC model is used to explain
-distributional reaction time (and error rate) patterns in common behavioural
-conflict-like tasks (e.g., Flanker task, Simon task).  This R-package implements
-the DMC model and provides functionality to fit the model to observed data.
-Further details are provided in the following paper: Mackenzie, I.G., &
-Dudschig, C. (2021).  DMCfun: An R package for fitting Diffusion Model of
-Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
-100074. <doi:10.1016/j.metip.2021.100074>.")
-    (license license:expat)))
 
 (define-public r-dmbc
   (package
