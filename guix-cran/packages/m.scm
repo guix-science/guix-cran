@@ -29646,6 +29646,40 @@ Mira, A., Beja, P., Pita, R. (2017) <doi:10.1016/j.ecolmodel.2017.06.013>;
 Mestre, F., Pita, R., Mira, A., Beja, P. (2020) <doi:10.1186/s12898-019-0273-5>.")
     (license license:gpl2+)))
 
+(define-public r-metajam
+  (package
+    (name "r-metajam")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metajam" version))
+       (sha256
+        (base32 "0ckipmy6pmvcbw0cc8dw0k060c9qg8b5my1gkfi346mw054dv9c2"))))
+    (properties `((upstream-name . "metajam")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-xml
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-lubridate
+                             r-emld
+                             r-eml
+                             r-dplyr
+                             r-dataone))
+    (native-inputs (list r-knitr))
+    (home-page "https://nceas.github.io/metajam/")
+    (synopsis "Easily Download Data and Metadata from 'DataONE'")
+    (description
+     "This package provides a set of tools to foster the development of reproducible
+analytical workflow by simplifying the download of data and metadata from
+@code{DataONE} (<https://www.dataone.org>) and easily importing this information
+into R.")
+    (license license:asl2.0)))
+
 (define-public r-metaintegrator
   (package
     (name "r-metaintegrator")
@@ -40717,13 +40751,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "093ffdmnfgfjs4ja07xp9knalnqx9il08vbkiq8i0y21g3q11k62"))))
+        (base32 "1fx8779vp4a1k5qy4csqhj5wmhd7aamkzl9mlwk6v4rx667szdzj"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -40731,9 +40765,9 @@ looking maps in R, with support for map projections.  See Brown (2016)
                              r-tibble
                              r-terra
                              r-sf
-                             r-r-utils
                              r-purrr
                              r-magrittr
+                             r-jsonlite
                              r-httr
                              r-furrr
                              r-dplyr))

@@ -4627,13 +4627,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "0jj6ld4xy1dxc7g317dfjd46vrpbiayskcnvhmapr0rnga60c78r"))))
+        (base32 "00ab8hnmfpw6r1q4ifylyga51ilij33p6g56xv5kh74w9g5slplw"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -23442,16 +23442,16 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafvis" version))
        (sha256
-        (base32 "18mdzvm0sxsr9fqrpd65kld8mnpjlmi0z6mn6dfgdbbx0qs85rgl"))))
+        (base32 "1l1gsbadwgvxvbv37kzsnns4xvhzpmhfrqnzcgd97l7fqwr3yng4"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-terra
+    (propagated-inputs (list r-sp
                              r-sf
                              r-rcolorbrewer
                              r-rastervis

@@ -5339,13 +5339,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "1bah3sr0srnvafm69h62hfw5gajsnrasqwzzsk391ga73mqbi8mz"))))
+        (base32 "1rp8gv846jfi688xkl0mbspbj9rzs0bqddl5fmp13vb1kslys8w5"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

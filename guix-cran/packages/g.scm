@@ -27333,13 +27333,13 @@ categories.")
 (define-public r-gcalignr
   (package
     (name "r-gcalignr")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GCalignR" version))
        (sha256
-        (base32 "1cgsmz1793yw9v4wwcd1a9igsjjhpzv0inikj2q2p98pzshhkwcb"))))
+        (base32 "1c8vsklvkggwarh38rd1k88n0jaqcy7r23gyy5khsfkglzgkg2ns"))))
     (properties `((upstream-name . "GCalignR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -30134,13 +30134,13 @@ sum of residuals squared).")
 (define-public r-gadget3
   (package
     (name "r-gadget3")
-    (version "0.11-1")
+    (version "0.12-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gadget3" version))
        (sha256
-        (base32 "0infyxg05y865k41kk47ylzp0skdr4ypv7x6zg67v8lrwwyx77kh"))))
+        (base32 "1jw834v98mwlx7pf78xcqvpqnlrdwl03qm1m4fd5x7yxkn5nhk92"))))
     (properties `((upstream-name . "gadget3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rlang r-digest))

@@ -847,6 +847,25 @@ authors in the recent years.  See Patro and Smarandache (2016)
 <doi:10.5281/zenodo.571153> and Rao et al (2023) <doi:10.5281/zenodo.7832786>.")
     (license license:gpl2+)))
 
+(define-public r-ntsdatasets
+  (package
+    (name "r-ntsdatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ntsDatasets" version))
+       (sha256
+        (base32 "136anddd8012xs9xf3q0mbmzzzqfglqk7jq4z43g769d3g3qy39y"))))
+    (properties `((upstream-name . "ntsDatasets")))
+    (build-system r-build-system)
+    (home-page "https://github.com/a-roshani/ntsDatasets")
+    (synopsis "Neutrosophic Data Sets")
+    (description
+     "This package provides a collection of datasets related to neutrosophic sets for
+statistical modeling and analysis.")
+    (license license:gpl3)))
+
 (define-public r-nts
   (package
     (name "r-nts")
@@ -3857,6 +3876,28 @@ equilibrium along a one-dimensional space.")
 differences between concordances in (un)balanced data.")
     (license license:gpl3+)))
 
+(define-public r-nonsmooth
+  (package
+    (name "r-nonsmooth")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nonsmooth" version))
+       (sha256
+        (base32 "02hb9fwz3gc2kgvnvxrwsjacxj1p76qz7ss9504w9fm1pdxly837"))))
+    (properties `((upstream-name . "nonsmooth")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reshape2 r-np))
+    (home-page "https://github.com/jrjthompson/R-package-nonsmooth/")
+    (synopsis "Nonparametric Methods for Smoothing Nonsmooth Data")
+    (description
+     "Nonparametric methods for smoothing regression function data with change-points,
+utilizing range kernels for iterative and anisotropic smoothing methods.  For
+further details, see the paper by John R.J. Thompson (2024)
+<doi:10.1080/02664763.2024.2352759>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-nonprobsvy
   (package
     (name "r-nonprobsvy")
@@ -5711,13 +5752,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "1lmfb6h78vj6r6n6br9awkxrq445f9cgzhsz06rzkydnb10xldrk"))))
+        (base32 "03qxijpx4k81bwsgzwdw7ywcy9z42zwp3bvwyf2md6iahp4g4dhx"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -9885,6 +9926,39 @@ spiking under stimuli-bundle exposure\", is in press for publication by the
 Annals of Applied Statistics.  A preprint may be found at
 <@code{arXiv:1911.04387>}.")
     (license license:gpl2)))
+
+(define-public r-neuroimagene
+  (package
+    (name "r-neuroimagene")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroimaGene" version))
+       (sha256
+        (base32 "1axdb20zv7y1rkazm6ppmkf09czff2bp2ylcl1ahn5sw5fi7adcc"))))
+    (properties `((upstream-name . "neuroimaGene")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsqlite
+                             r-ggseg
+                             r-ggplot2
+                             r-dbi
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=neuroimaGene")
+    (synopsis "Transcriptomic Atlas of Neuroimaging Derived Phenotypes")
+    (description
+     "This package contains functions to query and visualize the Neuroimaging features
+associated with genetically regulated gene expression (G@code{ReX}).  The
+primary utility, @code{neuroimaGene}(), relies on a list of user-defined genes
+and returns a table of neuroimaging features (NIDPs) associated with each gene.
+This resource is designed to assist in the interpretation of genome-wide and
+transcriptome-wide association studies that evaluate brain related traits.
+Bledsoe (2024) <doi:10.1016/j.ajhg.2024.06.002>.  In addition there are several
+visualization functions that generate summary plots and 2-dimensional
+visualizations of regional brain measures.  Mowinckel (2020).")
+    (license license:gpl3+)))
 
 (define-public r-neuroim
   (package

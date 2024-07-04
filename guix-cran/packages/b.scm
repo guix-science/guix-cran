@@ -15996,13 +15996,13 @@ is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.5")
+    (version "2.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "10cj8lx63jdzmvw674zj4vawvf3mwvyjxjpqicy9ajm6r6gbccj8"))))
+        (base32 "1grpmgihy620sdxazw03fcbjm96ik7lh191nj6da4jbjzgn7hwy5"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

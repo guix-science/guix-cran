@@ -7127,39 +7127,6 @@ successfully replicating the results of Pesaran et al. (2001) in Natsiopoulos
 and Tzeremes (2022) <doi:10.1002/jae.2919>.")
     (license license:gpl3)))
 
-(define-public r-ardeco
-  (package
-    (name "r-ardeco")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ARDECO" version))
-       (sha256
-        (base32 "1m249r65kh18v57wlhg9fv26fla5sbxqfqm725f95677ck852jf2"))))
-    (properties `((upstream-name . "ARDECO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-rjstat
-                             r-jsonlite
-                             r-httr
-                             r-ghql
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ARDECO")
-    (synopsis "Annual Regional Database of the European Commission (ARDECO)")
-    (description
-     "This package provides a set of functions to access the ARDECO (Annual Regional
-Database of the European Commission) data directly from the official ARDECO
-public repository through the exploitation of the ARDECO APIs.  The APIs are
-completely transparent to the user and the provided functions provide a direct
-access to the ARDECO data.  The ARDECO database is a collection of variables
-related to demography, employment, labour market, domestic product, capital
-formation.  Each variable can be exposed in one or more units of measure as well
-as refers to total values plus economic sectors.  The description of the ARDECO
-database can be found at the following URL
-<https://urban.jrc.ec.europa.eu/ardeco>.")
-    (license license:gpl3)))
-
 (define-public r-ardec
   (package
     (name "r-ardec")
@@ -7744,13 +7711,13 @@ via @code{ArcGIS} location services REST API endpoints
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "0fz4gk6yml6scycrdw1fyhvrs63hp0k8li2yjym037kb91qc8b0p"))))
+        (base32 "0zxihxlg6nwnzklark4slxlbf6fzfx3nm9y1xnnvlac1ihgbafz1"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
     (inputs (list openssl))

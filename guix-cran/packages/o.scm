@@ -5217,17 +5217,17 @@ elaborado por la Universidad Torcuato Di Tella.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "2.11.2")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "0r1v1l04y39w5p99szwhrh1n0vjvk99pdnrc4c72rvlzcaq11zzx"))))
+        (base32 "05x8879c2db82byvg9w2fkmqfl89gxn87gpj5h784wg5bwigc3kn"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rfast r-openssl r-abind))
-    (home-page "https://people.eng.unimelb.edu.au/aturpin/opi/index.html")
+    (propagated-inputs (list r-rfast r-openssl r-jsonlite r-abind))
+    (home-page "https://opi.lei.org.au/")
     (synopsis "Open Perimetry Interface")
     (description
      "Implementation of the Open Perimetry Interface (OPI) for simulating and
@@ -5235,11 +5235,12 @@ controlling visual field machines using R. The OPI is a standard for interfacing
 with visual field testing machines (perimeters) first started as an open source
 project with support of Haag-Streit in 2010.  It specifies basic functions that
 allow many visual field tests to be constructed.  As of February 2022 it is
-fully implemented on the Haag-Streit Octopus 900 with partial implementations on
-the Centervue Compass, Kowa AP 7000, Android phones and the @code{CrewT} IMO. It
-also has a cousin: the R package @code{visualFields}', which has tools for
-analysing and manipulating visual field data.")
-    (license license:asl2.0)))
+fully implemented on the Haag-Streit Octopus 900 and @code{CrewT} @code{ImoVifa}
+('Topcon Tempo') with partial implementations on the Centervue Compass, Kowa AP
+7000 and Android phones.  It also has a cousin: the R package
+@code{visualFields}', which has tools for analysing and manipulating visual
+field data.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-opgmmassessment
   (package
@@ -8182,13 +8183,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0w3zzds236bgn2lr0v70lj3q7zmws832wk3rdhc0ln1857pzp3fv"))))
+        (base32 "0vq73b4p3a99fm1rl0dm98cy6jjnrjn349plyzc7zac9xfblnb1m"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

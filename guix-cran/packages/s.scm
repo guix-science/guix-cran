@@ -1761,13 +1761,13 @@ Fisheries Science Center of the National Oceanic and Atmospheric Administration.
 (define-public r-swfscdas
   (package
     (name "r-swfscdas")
-    (version "0.6.2")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swfscDAS" version))
        (sha256
-        (base32 "146xm4i0khdk217x4mgxi1j006fk8xpqqjf1hll6p2ky65iklmj4"))))
+        (base32 "0xyhaabbcmb3hja6pylnmr2vwxqhsxa47ih8chdwcnrz5lqz9inw"))))
     (properties `((upstream-name . "swfscDAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1780,18 +1780,17 @@ Fisheries Science Center of the National Oceanic and Atmospheric Administration.
                              r-lubridate
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://smwoodman.github.io/swfscDAS/")
-    (synopsis
-     "Southwest Fisheries Science Center Shipboard DAS Data Processing")
+    (home-page "https://swfsc.github.io/swfscDAS/")
+    (synopsis "Processing DAS Data Files")
     (description
-     "Process and summarize shipboard DAS
+     "Process and summarize DAS data files.  These files are typically, but do not
+have to be DAS
 <https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-305.PDF>
 data produced by the Southwest Fisheries Science Center (SWFSC) program
-@code{WinCruz}
-<https://www.fisheries.noaa.gov/west-coast/science-data/california-current-marine-mammal-assessment-program>.
- This package standardizes and streamlines basic DAS data processing, and
-includes a PDF with the DAS data format requirements.")
-    (license license:cc0)))
+@code{WinCruz}'.  This package standardizes and streamlines basic DAS data
+processing, and includes a PDF with the DAS data format requirements expected by
+the package.")
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
 
 (define-public r-swfscairdas
   (package
@@ -12284,13 +12283,13 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "0jqb8bp0szzp67n52y0wsxpb0amb3sy00l25l933pxgfcj5hpdnz"))))
+        (base32 "1fk9gzv2v9cmgmdj42qagqdm38q59hnmrghl4czlgiiwc7bcq24b"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack
@@ -38651,6 +38650,46 @@ control (FDR) using scaled Lasso or Lasso (Liu (2013) <doi:10.1214/13-AOS1169>).
  Windows users should install Rtools before the installation of this package.")
     (license license:gpl2+)))
 
+(define-public r-silfs
+  (package
+    (name "r-silfs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SILFS" version))
+       (sha256
+        (base32 "0rr27bmmjw2hb6w3d6jw1kpk3y212n652qlglnlpryhp7gcckq26"))))
+    (properties `((upstream-name . "SILFS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-glmnet r-ckmeans-1d-dp))
+    (home-page "https://cran.r-project.org/package=SILFS")
+    (synopsis "Subgroup Identification with Latent Factor Structure")
+    (description
+     "In various domains, many datasets exhibit both high variable dependency and
+group structures, which necessitates their simultaneous estimation.  This
+package provides functions for two subgroup identification methods based on
+penalized functions, both of which utilize factor model structures to adapt to
+data with cross-sectional dependency.  The first method is the Subgroup
+Identification with Latent Factor Structure Method (SILFSM) we proposed.  By
+employing Center-Augmented Regularization and factor structures, the SILFSM
+effectively eliminates data dependencies while identifying subgroups within
+datasets.  For this model, we offer optimization functions based on two
+different methods: Coordinate Descent and our newly developed Difference of
+Convex-Alternating Direction Method of Multipliers (DC-ADMM) algorithms; the
+latter can be applied to cases where the distance function in Center-Augmented
+Regularization takes L1 and L2 forms.  The other method is the Factor-Adjusted
+Pairwise Fusion Penalty (FA-PFP) model, which incorporates factor augmentation
+into the Pairwise Fusion Penalty (PFP) developed by Ma, S. and Huang, J. (2017)
+<doi:10.1080/01621459.2016.1148039>.  Additionally, we provide a function for
+the Standard CAR (S-CAR) method, which does not consider the dependency and is
+for comparative analysis with other approaches.  Furthermore, functions based on
+the Bayesian Information Criterion (BIC) of the SILFSM and the FA-PFP method are
+also included in SILFS for selecting tuning parameters.  For more details of
+Subgroup Identification with Latent Factor Structure Method, please refer to He
+et al. (2024) <doi:10.48550/@code{arXiv.2407.00882>}.")
+    (license (list license:gpl2 license:gpl3))))
+
 (define-public r-siland
   (package
     (name "r-siland")
@@ -50722,13 +50761,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "04zdvn3rmk45z3641hrxglvr17g8nnbrm9biw8vrrjh219mfwjb9"))))
+        (base32 "0333b74aiam8k8rgqbbaqqlnh1mbqlyz0lxbpbqpvd2sb50ic3fx"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -55554,6 +55593,36 @@ Soudeep Deb, Joshua Falk, and Arun Srinivasan. (2019) \"New Statistical
 Approaches to Intra-Individual Isotopic Analysis and Modeling Birth Seasonality
 in Studies of Herd Animals.\" <doi:10.1111/arcm.12432>.")
     (license license:gpl3)))
+
+(define-public r-scellpam
+  (package
+    (name "r-scellpam")
+    (version "1.4.6.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scellpam" version))
+       (sha256
+        (base32 "1xnyii39lgj31m7cqd1mw92ga5igy5q2vhk1lpz353j8g85gxw24"))))
+    (properties `((upstream-name . "scellpam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-memuse r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=scellpam")
+    (synopsis
+     "Applying Partitioning Around Medoids to Single Cell Data with High Number of Cells")
+    (description
+     "PAM (Partitioning Around Medoids) algorithm application to samples of single
+cell sequencing techniques with a high number of cells (as many as the computer
+memory allows).  The package uses a binary format to store matrices (either
+full, sparse or symmetric) in files written in the disk that can contain any
+data type (not just double) which allows its manipulation when memory is
+sufficient to load them as int or float, but not as double.  The PAM
+implementation is done in parallel, using several/all the cores of the machine,
+if it has them.  This package shares a great part of its code with packages
+jmatrix and parallelpam but their functionality is included here so there is no
+need to install them.")
+    (license license:gpl2+)))
 
 (define-public r-scdtb
   (package

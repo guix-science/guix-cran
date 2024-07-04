@@ -17554,6 +17554,30 @@ al(2022)<https://CRAN.R-project.org/package=@code{survRM2>}, Ueno and
 Morita(2023)<doi:10.1007/s43441-022-00484-z>.")
     (license license:gpl2)))
 
+(define-public r-rmstbayespara
+  (package
+    (name "r-rmstbayespara")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmstBayespara" version))
+       (sha256
+        (base32 "0qggmlf6li4sibb0lzzymm80242qnbivpiwd5yh35mcrwy820qsq"))))
+    (properties `((upstream-name . "rmstBayespara")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zipfr r-rstan r-loo r-crayon r-brms))
+    (home-page "https://cran.r-project.org/package=rmstBayespara")
+    (synopsis "Bayesian Restricted Mean Survival Time for Cluster Effect")
+    (description
+     "The parametric Bayes analysis for the restricted mean survival time (RMST) with
+cluster effect, as described in Hanada and Kojima (2024)
+<doi:10.48550/@code{arXiv.2406.06071>}.  Bayes estimation with random-effect and
+frailty-effect can be applied to several parametric models useful in survival
+time analysis.  The RMST under these parametric models can be computed from the
+obtained posterior samples.")
+    (license license:gpl3+)))
+
 (define-public r-rmst
   (package
     (name "r-rmst")
@@ -39356,13 +39380,13 @@ Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
 (define-public r-rcpa
   (package
     (name "r-rcpa")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCPA" version))
        (sha256
-        (base32 "116qb2zqlw6jsxz5mn7s35nv3d27kzpfjmnqk3whh9r91dkdhfyk"))))
+        (base32 "0jk53sqcjy6a2ydv4b2ai57lbpjpva1ssmfqgzb3nl7j8iqk2ggl"))))
     (properties `((upstream-name . "RCPA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -39393,11 +39417,11 @@ Analysis, 3rd Edition,\" Thousand Oaks, CA: Sage Publications.")
     (description
      "This package provides a set of functions to perform pathway analysis and meta
 analysis from multiple gene expression datasets, as well as visualization of the
-results.  The package is a wrapper of the following packages: Ritchie et al.
-(2015) <doi:10.1093/nar/gkv007>, Love et al. (2014)
-<doi:10.1186/s13059-014-0550-8>, Robinson et al. (2010)
-<doi:10.1093/bioinformatics/btp616>, Korotkevich et al. (2016)
-<arxiv:10.1101/060012>, Efron et al. (2015)
+results (Nguyen et al. (2024) <doi:10.1002/cpz1.1036>).  The package is a
+wrapper of the following packages: Ritchie et al. (2015)
+<doi:10.1093/nar/gkv007>, Love et al. (2014) <doi:10.1186/s13059-014-0550-8>,
+Robinson et al. (2010) <doi:10.1093/bioinformatics/btp616>, Korotkevich et al.
+(2016) <arxiv:10.1101/060012>, Efron et al. (2015)
 <https://CRAN.R-project.org/package=GSA>, and Gu, Z. (2012)
 <https://CRAN.R-project.org/package=@code{CePa>}.")
     (license license:gpl3)))
@@ -48735,13 +48759,13 @@ that enables advertisers to display advertising to web users (see
 (define-public r-r4ds-tutorials
   (package
     (name "r-r4ds-tutorials")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r4ds.tutorials" version))
        (sha256
-        (base32 "0cb8fp65ys1cmxx9zrna8cnj72yind05l70b7gbgqgaaaahd7rjp"))))
+        (base32 "05wy99n3i43wgzpqd4gsj1skz1jgp2q4q8s99q0ia453xig49shm"))))
     (properties `((upstream-name . "r4ds.tutorials")))
     (build-system r-build-system)
     (propagated-inputs (list r-tutorial-helpers))

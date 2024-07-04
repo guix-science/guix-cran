@@ -8638,28 +8638,29 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
 (define-public r-heiscore
   (package
     (name "r-heiscore")
-    (version "0.0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heiscore" version))
        (sha256
-        (base32 "0bj1li0m4mpd04f4zqh1dj4v593cv5nvv17n2yasjbqrymi15mr5"))))
+        (base32 "0c5vycgzbabcnsqbnshwhrwxpvwg8lcwpx2lc9lg5yh29n0qjiqp"))))
     (properties `((upstream-name . "heiscore")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-viridis
+                             r-tidyr
                              r-tibble
                              r-stringr
+                             r-shinywidgets
                              r-shinythemes
                              r-shiny
                              r-rlang
-                             r-rcolorbrewer
                              r-magrittr
                              r-ggpubr
                              r-ggplot2
                              r-fmsb
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=heiscore")
+    (home-page "https://github.com/abhrastat/heiscore")
     (synopsis "Score and Plot the Healthy Eating Index from NHANES Data")
     (description
      "Calculate and visualize Healthy Eating Index (HEI) scores from National Health

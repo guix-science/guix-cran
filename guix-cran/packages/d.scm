@@ -4300,6 +4300,36 @@ Ambient Liquid Oxygen and Pressurized Liquid and Gaseous Oxygen Environments\"
 <doi:10.1520/G0086-17>.")
     (license license:expat)))
 
+(define-public r-dropr
+  (package
+    (name "r-dropr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dropR" version))
+       (sha256
+        (base32 "159kw9wxglc7rbb5bvvg1ixi0j1y22179wn7g40k9ahpfvfmbqy4"))))
+    (properties `((upstream-name . "dropR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-shiny r-lifecycle r-ggplot2
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://iscience-kn.github.io/dropR/")
+    (synopsis "Dropout Analysis by Condition")
+    (description
+     "Analysis and visualization of dropout between conditions in surveys and (online)
+experiments.  Features include computation of dropout statistics, comparing
+dropout between conditions (e.g. Chi square), analyzing survival (e.g.
+Kaplan-Meier estimation), comparing conditions with the most different rates of
+dropout (Kolmogorov-Smirnov) and visualizing the result of each in designated
+plotting functions.  Sources: Andrea Frick, Marie-Terese Baechtiger &
+Ulf-Dietrich Reips (2001)
+<https://www.researchgate.net/publication/223956222_Financial_incentives_personal_information_and_drop-out_in_online_studies>;
+Ulf-Dietrich Reips (2002) \"Standards for Internet-Based Experimenting\"
+<doi:10.1027//1618-3169.49.4.243>.")
+    (license license:gpl3+)))
+
 (define-public r-dropout
   (package
     (name "r-dropout")

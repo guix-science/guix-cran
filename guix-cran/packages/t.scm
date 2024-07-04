@@ -12503,13 +12503,13 @@ CR2) can be handled using the @code{tkImg} package for Tcl/Tk'.")
 (define-public r-tkcat
   (package
     (name "r-tkcat")
-    (version "1.1.8")
+    (version "1.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TKCat" version))
        (sha256
-        (base32 "0a2jfgg8rcgx4nckzmxk9a9jm4250a78pzcfaxj08d2gbkxairwz"))))
+        (base32 "1vwv7z669i7m0dq8jn24mia7y2pnbjvyprias8hnzh9gpwsv2b3w"))))
     (properties `((upstream-name . "TKCat")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16167,13 +16167,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "1vch27q03gg447hkndl55fgmwxl0ggq524zbrkslj1cf9dzs9r20"))))
+        (base32 "0kb30nggk0b8a8yaka0ccpfx21j382sdh0p2lbqvvgkr07bi1nw5"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24523,13 +24523,13 @@ and local taxonomic assignment.")
 (define-public r-taxlist
   (package
     (name "r-taxlist")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "taxlist" version))
        (sha256
-        (base32 "144nsiz90nkrm2v4nnhpvdnzpvjg2jh88dkqrm4gjm0drl9s981g"))))
+        (base32 "15abqk70dmz39m85aczwfvrhyvmw53r49l6ywip1i84pla991wsg"))))
     (properties `((upstream-name . "taxlist")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegdata

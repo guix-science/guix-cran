@@ -992,13 +992,13 @@ them in package tests and in Continuous Integration (CI) pipelines.")
 (define-public r-future-mirai
   (package
     (name "r-future-mirai")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "future.mirai" version))
        (sha256
-        (base32 "1ihi9n9wgxq43cx7cxzzay4j8g19jxhyww1h40rr84qzqdj6nk62"))))
+        (base32 "0fq01gzcby7sy51vhq2jdrrvfa14i94jjdf80jwvm9lwmc3p20d8"))))
     (properties `((upstream-name . "future.mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-parallelly r-mirai r-future))
@@ -16776,13 +16776,13 @@ Equation Regularisation\" for an overview.  The release 1.1-9 requires R (>=
 (define-public r-fdapace
   (package
     (name "r-fdapace")
-    (version "0.5.9")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdapace" version))
        (sha256
-        (base32 "16j731d7y290xk5qvld59pb78mrch5i61szcf3j79kkirmz6hh8f"))))
+        (base32 "1jrvbln0dcyiagdym60g0dwdhfh43vzyvxwrb8dhk2mbhpc80ghx"))))
     (properties `((upstream-name . "fdapace")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

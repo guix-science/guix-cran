@@ -13775,21 +13775,29 @@ plotted in a number of ways with nice barplots and boxplots.")
 (define-public r-portfolioanalytics
   (package
     (name "r-portfolioanalytics")
-    (version "1.1.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PortfolioAnalytics" version))
        (sha256
-        (base32 "1jy89brrdw8ilbi9pjxxq5yhqw85ik4kzdd2sa60crjlhvipx0ff"))))
+        (base32 "0rncchlc3n5kyfw7hfbxivi45gr64i89ylzr20mh9lqrqi0rif6a"))))
     (properties `((upstream-name . "PortfolioAnalytics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-performanceanalytics r-foreach))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-roi-plugin-symphony
+                             r-pso
+                             r-performanceanalytics
+                             r-mco
+                             r-gensa
+                             r-foreach))
+    (native-inputs (list r-r-rsp))
     (home-page "https://github.com/braverock/PortfolioAnalytics")
     (synopsis
      "Portfolio Analysis, Including Numerical Methods for Optimization of Portfolios")
     (description "Portfolio optimization and analysis routines and graphics.")
-    (license (list license:gpl2 license:gpl3))))
+    (license license:gpl3)))
 
 (define-public r-portfolio-optimization
   (package

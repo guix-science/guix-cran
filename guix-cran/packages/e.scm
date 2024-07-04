@@ -5149,13 +5149,13 @@ interpolate them to a standard one.  Potentially works with many CF-conform
 (define-public r-eurlex
   (package
     (name "r-eurlex")
-    (version "0.4.7")
+    (version "0.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eurlex" version))
        (sha256
-        (base32 "1arpixy6hcqdfn83rkb23s5zgvhkw1nv2hjv09k2k0g8s642y6yf"))))
+        (base32 "13f8bfkcda0n6fnh8hp398prx6nb18wfzxy7bklvj91s0y158j8s"))))
     (properties `((upstream-name . "eurlex")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5163,7 +5163,6 @@ interpolate them to a standard one.  Potentially works with many CF-conform
                              r-stringr
                              r-rvest
                              r-rlang
-                             r-readr
                              r-pdftools
                              r-magrittr
                              r-httr

@@ -4499,25 +4499,25 @@ available at <https://imai.fas.harvard.edu/research/FEmatch.html>.")
 (define-public r-weyl
   (package
     (name "r-weyl")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "weyl" version))
        (sha256
-        (base32 "1i6kzadw37l2bj8n6z2c9j7h7jk2gjhx7lizwlgpjn8sycm2rkqr"))))
+        (base32 "18gapsjvv3xj161kk8y8cwq4c3zxc8gjamkmzxm68vfgixf8bkh8"))))
     (properties `((upstream-name . "weyl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spray r-mathjaxr r-freealg r-disordr))
+    (propagated-inputs (list r-spray r-freealg r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/weyl")
     (synopsis "The Weyl Algebra")
     (description
      "This package provides a suite of routines for Weyl algebras.  Notation follows
 Coutinho (1995, ISBN 0-521-55119-6, \"A Primer of Algebraic D-Modules\").  Uses
-@code{disordR} discipline (Hankin 2022 <doi:10.48550/ARXIV.2210.03856>).  To
-cite the package in publications, use Hankin 2022
-<doi:10.48550/ARXIV.2212.09230>.")
+@code{disordR} discipline (Hankin 2022 <doi:10.48550/@code{arXiv.2210.03856>}).
+To cite the package in publications, use Hankin 2022
+<doi:10.48550/@code{arXiv.2212.09230>}.")
     (license license:gpl2+)))
 
 (define-public r-wevid
