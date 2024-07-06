@@ -4854,16 +4854,16 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "1grhnk0b6v5c31497mfr9b4n2fn3flkw40r3lznhxgn2psphpjz7"))))
+        (base32 "0a4hp5ngwjgdfphphdpp09g08wrfx130wdqngaza468kv8zp7prf"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
-    (propagated-inputs (list r-trust r-bmisc))
+    (propagated-inputs (list r-trust r-rcpp r-bmisc))
     (home-page "https://psantanna.com/DRDID/")
     (synopsis "Doubly Robust Difference-in-Differences Estimators")
     (description
@@ -6221,13 +6221,13 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
 (define-public r-downloadthis
   (package
     (name "r-downloadthis")
-    (version "0.3.3")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "downloadthis" version))
        (sha256
-        (base32 "14c85cradmm187jzwf3njgshmzq53xr4dla39dkxmhnw07mgdw4l"))))
+        (base32 "0hl0xgvlami8q265kyc9nfi916qyr5wh3422rzz3pl5razv09pdp"))))
     (properties `((upstream-name . "downloadthis")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -6239,7 +6239,7 @@ modelling.  See Marsh et.  al. (2018) <doi:10.18637/jss.v086.c03>.")
                              r-ggplot2
                              r-fs
                              r-bsplus
-                             r-base64enc))
+                             r-b64))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/fmmattioni/downloadthis")
     (synopsis "Implement Download Buttons in 'rmarkdown'")
@@ -12400,13 +12400,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.6")
+    (version "6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "0fgwhah78psgd7fhjgk9rw1hyhfx9qbj93bznsjs6dhjkp9wyn4q"))))
+        (base32 "1i9dwk1r44b47insw5iz5vgk7g9zi78wlix2cv2g02phcrz5wqa2"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -16469,13 +16469,13 @@ educational and psychological tests.")
 (define-public r-dexter
   (package
     (name "r-dexter")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dexter" version))
        (sha256
-        (base32 "196c12kmp5xjhgywr26p7k78p9mvpzz74rckfq88xgx9j012rwl7"))))
+        (base32 "1sppaqnv9nkxww0bw0x2sp51fl4v7845npvmhwwdh4yrnrmzbd07"))))
     (properties `((upstream-name . "dexter")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -25755,41 +25755,6 @@ data.  Decide whether violations of these expectations should throw an error or
 a warning.  This package is useful for validating data within R processes which
 pull from dynamic data sources such as databases and web APIs to provide an
 extra layer of validation around input and output data.")
-    (license license:expat)))
-
-(define-public r-databraryr
-  (package
-    (name "r-databraryr")
-    (version "0.6.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "databraryr" version))
-       (sha256
-        (base32 "0cwjd3mgxb0xl3l3xg96iiri55phw2g84p5s2ka1w6541cwl3i6m"))))
-    (properties `((upstream-name . "databraryr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xfun
-                             r-tibble
-                             r-stringr
-                             r-purrr
-                             r-magrittr
-                             r-magick
-                             r-lifecycle
-                             r-keyring
-                             r-jsonlite
-                             r-httr2
-                             r-httr
-                             r-getpass
-                             r-dplyr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://databrary.github.io/databraryr/")
-    (synopsis "Interact with the 'Databrary.org' API")
-    (description
-     "Databrary.org is a restricted access repository for research data, especially
-video and audio.  This package provides commands to interact with the data
-stored on Databrary.org'.")
     (license license:expat)))
 
 (define-public r-databionicswarm

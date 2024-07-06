@@ -354,6 +354,42 @@ for Order preference by similarity to an ideal solution method.  Reference:
 Hwang CL. (1981, ISBN:978-3-540-10558-9).")
     (license license:expat)))
 
+(define-public r-wto
+  (package
+    (name "r-wto")
+    (version "2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wTO" version))
+       (sha256
+        (base32 "11400qmpkpk4y9af4c0q7ir32gwrxgyjspkxk0xlid2an7pbrsr3"))))
+    (properties `((upstream-name . "wTO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visnetwork
+                             r-som
+                             r-rfast
+                             r-reshape2
+                             r-plyr
+                             r-magrittr
+                             r-igraph
+                             r-hiclimr
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=wTO")
+    (synopsis
+     "Computing Weighted Topological Overlaps (wTO) & Consensus wTO Network")
+    (description
+     "Computes the Weighted Topological Overlap with positive and negative signs
+(@code{wTO}) networks given a data frame containing the @code{mRNA} count/
+expression/ abundance per sample, and a vector containing the interested nodes
+of interaction (a subset of the elements of the full data frame).  It also
+computes the cut-off threshold or p-value based on the individuals bootstrap or
+the values reshuffle per individual.  It also allows the construction of a
+consensus network, based on multiple @code{wTO} networks.  The package includes
+a visualization tool for the networks.  More about the methodology can be found
+at <doi:10.1186/s12859-018-2351-7>.")
+    (license license:gpl2)))
+
 (define-public r-wtest
   (package
     (name "r-wtest")

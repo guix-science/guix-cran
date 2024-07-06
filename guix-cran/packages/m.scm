@@ -3953,16 +3953,17 @@ and Erhardt (2021) \"A spatiotemporal model for multivariate occupancy data\"
 (define-public r-multiobjmatch
   (package
     (name "r-multiobjmatch")
-    (version "0.1.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiObjMatch" version))
        (sha256
-        (base32 "1a20ca8k7plgdz084hrjrlx7p1nm1cl74v3vlk3jk1dwbgq04833"))))
+        (base32 "0pgmhwydxi741ys8j1ba00rp6gbssjzgamqrywhvpc0jddaqdmrc"))))
     (properties `((upstream-name . "MultiObjMatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlemon
+                             r-rlang
                              r-rcurl
                              r-rcbalance
                              r-plyr
@@ -3970,6 +3971,7 @@ and Erhardt (2021) \"A spatiotemporal model for multivariate occupancy data\"
                              r-matchmulti
                              r-mass
                              r-gtools
+                             r-ggplot2
                              r-fields
                              r-dplyr
                              r-cobalt))
@@ -17304,18 +17306,18 @@ likely transformation approach described in Hothorn et al. (2018)
 (define-public r-mlsurvlrnrs
   (package
     (name "r-mlsurvlrnrs")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlsurvlrnrs" version))
        (sha256
-        (base32 "0x4spjcgbqz13fxnyabd1vypbdg6r94zmh7h5h65rhnb5j8fgsm3"))))
+        (base32 "11yp41fvmr2ij3sqky5hjzblqsdwsywyn3r62cdld5b5fiv487hg"))))
     (properties `((upstream-name . "mlsurvlrnrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mllrnrs r-mlexperiments r-kdry
                              r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/mlsurvlrnrs")
     (synopsis "R6-Based ML Survival Learners for 'mlexperiments'")
     (description
@@ -17620,13 +17622,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2024.4.14")
+    (version "2024.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "0fgn46vh8m9i2vb3ppkghl54a4rrp2mw8fm54l2kzj53y6hsjbvd"))))
+        (base32 "0wjbvvk0ngfliprvnn667bf3zldmw7010hiqqn5fpjjn5x5mi1ic"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -18344,17 +18346,17 @@ Analysis with Multilevel Additive Models\", P@code{LoS} ONE 15(10): e0241072.")
 (define-public r-mllrnrs
   (package
     (name "r-mllrnrs")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mllrnrs" version))
        (sha256
-        (base32 "08xrinkbl4bws7hbid6907b618mqays4zimkwdni9s2amah3ja4b"))))
+        (base32 "0yrsab0m3p8fjxhbvb58k7lz3l2vvnf339gfb1wfc68wjmpczk5z"))))
     (properties `((upstream-name . "mllrnrs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-mlexperiments r-kdry r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/mllrnrs")
     (synopsis "R6-Based ML Learners for 'mlexperiments'")
     (description
@@ -18619,17 +18621,17 @@ SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 (define-public r-mlexperiments
   (package
     (name "r-mlexperiments")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlexperiments" version))
        (sha256
-        (base32 "0xkrppicb8h9ccnk25bl957ip6di19vk6fnc25r8q4ckpsyw2kz1"))))
+        (base32 "1l2zrlar8wv4hi1w76kcbrhx8fbnbh03wq0jj5y0sbmy9x3aza76"))))
     (properties `((upstream-name . "mlexperiments")))
     (build-system r-build-system)
     (propagated-inputs (list r-splittools r-r6 r-progress r-kdry r-data-table))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-quarto))
     (home-page "https://github.com/kapsner/mlexperiments")
     (synopsis "Machine Learning Experiments")
     (description
@@ -26525,19 +26527,20 @@ on Machine Learning, 2014, p.  1953--1961.")
 (define-public r-mgi-report-reader
   (package
     (name "r-mgi-report-reader")
-    (version "0.0.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgi.report.reader" version))
        (sha256
-        (base32 "1bsyxijmij5vnablhkmvvq22xss7xz2gpq32w9qxd13vxam1l392"))))
+        (base32 "0sl89lyg9h1vyln2q82l0b5f1ywxvclq8cl0hxsn7snq4asazvpf"))))
     (properties `((upstream-name . "mgi.report.reader")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
                              r-tibble
                              r-stringr
                              r-rlang
+                             r-httr2
                              r-dplyr
                              r-data-table))
     (home-page "https://www.pattern.institute/mgi.report.reader/")
@@ -26547,22 +26550,22 @@ on Machine Learning, 2014, p.  1953--1961.")
 Informatics (MGI) report files:
 <https://www.informatics.jax.org/downloads/reports/index.html>.  These data are
 provided by Baldarelli RM, Smith CL, Ringwald M, Richardson JE, Bult CJ, Mouse
-Genome Informatics Group. (2024) <doi:10.1093/genetics/iyae031>.")
+Genome Informatics Group (2024) <doi:10.1093/genetics/iyae031>.")
     (license license:expat)))
 
 (define-public r-mggd
   (package
     (name "r-mggd")
-    (version "1.2.3")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mggd" version))
        (sha256
-        (base32 "0zh3af2qqlz59nkqip2kwn51zcfy7kk45cyz6952vg276cv0a5hd"))))
+        (base32 "07ajrhbsxr608688qppg6p2q7i3bh67fr6q9hvl9cs12av4bdznq"))))
     (properties `((upstream-name . "mggd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass r-lifecycle))
+    (propagated-inputs (list r-rgl r-mass r-lifecycle r-data-table))
     (home-page "https://forgemia.inra.fr/imhorphen/mggd")
     (synopsis
      "Multivariate Generalised Gaussian Distribution; Kullback-Leibler Divergence")
@@ -29021,13 +29024,13 @@ code, and functions to read solved @code{MetaPost} paths back into R.")
 (define-public r-metaplus
   (package
     (name "r-metaplus")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaplus" version))
        (sha256
-        (base32 "1lrlw5h3fgcrp0cdawxala36m8mpljbmp20fhf4sc0qj51h2ccs4"))))
+        (base32 "0cknvgnkvqdw00600akpxrrdbg7h0sdyv15vmhs9dsfdf1ag6z51"))))
     (properties `((upstream-name . "metaplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -36061,16 +36064,16 @@ multiple ca and ordered multiple ca via orthogonal polynomials of Emerson.")
 (define-public r-mcauchyd
   (package
     (name "r-mcauchyd")
-    (version "1.2.0")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcauchyd" version))
        (sha256
-        (base32 "18615ac3z8vgkqr0xslaama9sbvn7m4p116vv8l2wz65f623l0d4"))))
+        (base32 "1n0vgp526wlyf553n2cvxkawzxdvvzqhgar5sqnhiidas7iri3zc"))))
     (properties `((upstream-name . "mcauchyd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass r-lifecycle))
+    (propagated-inputs (list r-rgl r-mass r-lifecycle r-data-table))
     (home-page "https://forgemia.inra.fr/imhorphen/mcauchyd")
     (synopsis "Multivariate Cauchy Distribution; Kullback-Leibler Divergence")
     (description

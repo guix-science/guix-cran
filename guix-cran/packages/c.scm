@@ -2536,6 +2536,36 @@ compatibility.")
 structure to separate the recording of time variant/ invariant variables.")
     (license license:expat)))
 
+(define-public r-cubar
+  (package
+    (name "r-cubar")
+    (version "0.6.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cubar" version))
+       (sha256
+        (base32 "1m131ir8fjhjgaqq8xh6pilpjgw5lsvb58gwz6b68kxfqmryb1qd"))))
+    (properties `((upstream-name . "cubar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
+                             r-biostrings))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mt1022/cubar")
+    (synopsis "Codon Usage Bias Analysis")
+    (description
+     "This package provides a suite of functions for rapid and flexible analysis of
+codon usage bias.  It provides in-depth analysis at the codon level, including
+relative synonymous codon usage (RSCU), @code{tRNA} weight calculations, machine
+learning predictions for optimal or preferred codons, and visualization of
+codon-anticodon pairing.  Additionally, it can calculate various gene- specific
+codon indices such as codon adaptation index (CAI), effective number of codons
+(ENC), fraction of optimal codons (Fop), @code{tRNA} adaptation index
+(@code{tAI}), mean codon stabilization coefficients (CSCg), and GC contents
+(GC/GC3s/GC4d).  It also supports both standard and non-standard genetic code
+tables found in NCBI, as well as custom genetic code tables.")
+    (license license:expat)))
+
 (define-public r-cub
   (package
     (name "r-cub")
@@ -2558,6 +2588,42 @@ models and their extensions (where CUB stands for Combination of a discrete
 Uniform and a shifted Binomial distributions); Simulation routines, plotting
 facilities and fitting measures are also provided.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-ctxr
+  (package
+    (name "r-ctxr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ctxR" version))
+       (sha256
+        (base32 "1m3hj5cwghm7nx9s5z3j6yby2i04ykich213x6j0gps4n4c8zanr"))))
+    (properties `((upstream-name . "ctxR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urltools
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-data-table
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/USEPA/ctxR")
+    (synopsis "Utilities for Interacting with the 'CTX' APIs")
+    (description
+     "Access chemical, hazard, bioactivity, and exposure data from the Computational
+Toxicology and Exposure ('CTX') APIs <https://api-ccte.epa.gov/docs/>.
+@code{ctxR} was developed to streamline the process of accessing the information
+available through the CTX APIs without requiring prior knowledge of how to use
+APIs.  Most data is also available on the @code{CompTox} Chemical Dashboard
+('CCD') <https://comptox.epa.gov/dashboard/> and other resources found at the
+EPA Computational Toxicology and Exposure Online Resources
+<https://www.epa.gov/comptox-tools>.")
+    (license license:gpl3+)))
 
 (define-public r-ctv
   (package
@@ -3691,23 +3757,26 @@ and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
 (define-public r-csquares
   (package
     (name "r-csquares")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csquares" version))
        (sha256
-        (base32 "08p36fmd6c5yd45ik87c3x5iny9pk21ljgy2903v7qhhcnkpddw7"))))
+        (base32 "0cd36pf2mp5nn9dk2a71aqs35diwz9nr6092xf7k9aq3b9v9z7xs"))))
     (properties `((upstream-name . "csquares")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tidyr
                              r-stringr
                              r-stars
                              r-sf
                              r-rlang
                              r-purrr
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=csquares")
+    (native-inputs (list r-knitr))
+    (home-page "https://pepijn-devries.github.io/csquares/")
     (synopsis "Concise Spatial Query and Representation System (c-Squares)")
     (description
      "Encode and decode c-squares, from and to simple feature (sf) or spatiotemporal
@@ -8112,13 +8181,13 @@ recommendations on the code.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.2.5")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1bn72wwlj6k9lg36ah4r69jgpqsvlcmkzn6czwz10dgi341ca5sx"))))
+        (base32 "1hn7yksy6rhb9kmykf2w677555zbxdwxpzasi1g3mp3riqssabib"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -19186,17 +19255,17 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "1qxy0cdp8cjkwlgii00lq5qzcimlrb8fqlg2xrw8rn6ik1nrmhs0"))))
+        (base32 "13ni4c0szfizgad56ydxz8i5w25vr76h18jspc260z2mzcns084z"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ranger r-glmnet r-formula))
-    (home-page "https://cran.r-project.org/package=comets")
+    (propagated-inputs (list r-survival r-ranger r-glmnet r-formula r-coin))
+    (home-page "https://github.com/LucasKook/comets")
     (synopsis "Covariance Measure Tests for Conditional Independence")
     (description
      "Covariance measure tests for conditional independence testing against
@@ -21535,25 +21604,35 @@ base matrix.")
 (define-public r-cofad
   (package
     (name "r-cofad")
-    (version "0.1.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cofad" version))
        (sha256
-        (base32 "0c27wfdk98mq0531avlgfxf2wmxcjyg39pgl9i37im7ri2s7kpnr"))))
+        (base32 "00m32r1rbc5f2b7viks68ff3sv7p4qvc1i8qag0z75l2jxi839f0"))))
     (properties `((upstream-name . "cofad")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://gitlab.hrz.tu-chemnitz.de/burma--tu-chemnitz.de/cofad.git")
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-shinyjs
+                             r-shinydashboard
+                             r-shiny
+                             r-rlang
+                             r-rhandsontable
+                             r-readr
+                             r-magrittr
+                             r-hmisc
+                             r-dplyr))
+    (home-page "https://github.com/johannes-titz/cofad")
     (synopsis "Contrast Analyses for Factorial Designs")
     (description
-     "Contrast analysis for factorial designs is an alternative to the classical ANOVA
-approach with the advantage of testing focused hypothesis.  The method is mainly
-based on Rosenthal, Rosnow and Rubin (2000, ISBN:978-0521659802) and Sedlmeier
-and Renkewitz (2018, ISBN:978-3868943214).")
-    (license license:gpl2)))
+     "Contrast analysis for factorial designs provides an alternative to the
+traditional ANOVA approach, offering the distinct advantage of testing targeted
+hypotheses.  The foundation of this package is primarily rooted in the works of
+Rosenthal, Rosnow, and Rubin (2000, ISBN: 978-0521659802) as well as Sedlmeier
+and Renkewitz (2018, ISBN: 978-3868943214).")
+    (license license:lgpl3+)))
 
 (define-public r-coenoflex
   (package
@@ -23279,13 +23358,13 @@ and cables.  Results are visualized in an easy-to-understand risk matrix.")
 (define-public r-cna
   (package
     (name "r-cna")
-    (version "3.6.1")
+    (version "3.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cna" version))
        (sha256
-        (base32 "0imc7m825hxrksrph0rh64bqzwld3ws6i68c5bc144hn2kzvl366"))))
+        (base32 "1jjq77a2zzzkzv6sgl7274c8chznwc59cv8gnph3xya2ysmybspq"))))
     (properties `((upstream-name . "cna")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-matrixstats r-matrix r-car))
@@ -25115,17 +25194,16 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "0zrwan1myq2lw15ga0xfxkwszq09bp25qj8dn9z9zrmb9s3lfsj7"))))
+        (base32 "02mnv09misgpwjmziqcb8zxhwfvy6dlysicp67lh53li1hnnyw62"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
-                             r-usedist
                              r-rfast
                              r-reshape2
                              r-rcpparmadillo
@@ -25135,15 +25213,15 @@ and mouse cell identity markers sourced from a variety of databases.")
                              r-micemd
                              r-mice
                              r-mclust
-                             r-lattice
                              r-knockoff
+                             r-gridextra
                              r-glmnet
+                             r-ggplot2
                              r-fpc
                              r-factominer
                              r-e1071
                              r-dicer
                              r-clusterr
-                             r-cluster
                              r-cat))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=clusterMI")
@@ -29789,6 +29867,44 @@ circles.")
 querying build logs and restarting builds, this package also helps setting up
 permissions to deploy from builds.")
     (license license:gpl3)))
+
+(define-public r-circhelp
+  (package
+    (name "r-circhelp")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "circhelp" version))
+       (sha256
+        (base32 "1w8m4dawq6hd9pjgmqydhf4c3f7gllzlwmxmbxirg61psk38x4wk"))))
+    (properties `((upstream-name . "circhelp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-patchwork
+                             r-mathjaxr
+                             r-mass
+                             r-ggplot2
+                             r-gamlss
+                             r-data-table))
+    (native-inputs (list r-ragg
+                         r-patchwork
+                         r-mgcv
+                         r-mass
+                         r-knitr
+                         r-ggplot2
+                         r-gamlss))
+    (home-page "https://achetverikov.github.io/circhelp/index.html")
+    (synopsis "Circular Analyses Helper Functions")
+    (description
+     "Light-weight functions for computing descriptive statistics in different
+circular spaces (e.g., 2pi, 180, or 360 degrees), to handle angle-dependent
+biases, pad circular data, and more.  Specifically aimed for psychologists and
+neuroscientists analyzing circular data.  Basic methods are based on
+Jammalamadaka and @code{SenGupta} (2001) <doi:10.1142/4031>, removal of cardinal
+biases is based on the approach introduced in van Bergen, Ma, Pratte, & Jehee
+(2015) <doi:10.1038/nn.4150> and Chetverikov and Jehee (2023)
+<doi:10.1038/s41467-023-43251-w>.")
+    (license license:cc0)))
 
 (define-public r-circer
   (package
@@ -41467,13 +41583,13 @@ data and provides simple mapping functions with GIS export.")
 (define-public r-camtrapdp
   (package
     (name "r-camtrapdp")
-    (version "0.2.1")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "camtrapdp" version))
        (sha256
-        (base32 "0nx9w5h8py8cjqynlknh8klvzy2mhacv96vybkv7hcyhpdsnmfs7"))))
+        (base32 "0aspfqjiv5xq8p7rchg4aqsnl0s7692pgq1bvgiq3i0vhlwizcd5"))))
     (properties `((upstream-name . "camtrapdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-readr

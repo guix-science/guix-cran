@@ -4462,17 +4462,17 @@ how we take folds based on survey design is useful.")
 (define-public r-surveycc
   (package
     (name "r-surveycc")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurveyCC" version))
        (sha256
-        (base32 "1jhgc6alrpib0qhnh2l9zp9nvy8vfgi2y4dy26vh92rqhdym19ss"))))
+        (base32 "04p0g3dffk4khb2f2i9zzcqk8y1d13vyaf2vbn37zpc1c4zd9pvn"))))
     (properties `((upstream-name . "SurveyCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-candisc))
-    (home-page "https://cran.r-project.org/package=SurveyCC")
+    (home-page "https://github.com/237triangle/SurveyCC")
     (synopsis "Canonical Correlation for Survey Data")
     (description
      "This package performs canonical correlation for survey data, including multiple
@@ -8149,36 +8149,6 @@ stream networks as directed acyclic graphs: The R-package @code{streamDAG}\" (Ah
 et al., 2023) <doi:10.1016/j.envsoft.2023.105775>, and in the introductory
 package vignette.")
     (license license:gpl2+)))
-
-(define-public r-streamconnect
-  (package
-    (name "r-streamconnect")
-    (version "0.0-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "streamConnect" version))
-       (sha256
-        (base32 "0pmf54b7m4x619ailzcyhpnrk3ig6z9w7a35h2mpgxb8r0yaijq3"))))
-    (properties `((upstream-name . "streamConnect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-stream
-                             r-readr
-                             r-plumber
-                             r-jsonlite
-                             r-httr
-                             r-callr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=streamConnect")
-    (synopsis
-     "Connecting Stream Mining Components Using Sockets and Web Services")
-    (description
-     "Adds functionality to connect stream mining components from package stream using
-sockets and Web services.  The package can be used create distributed workflows
-and create plumber-based Web services which can be deployed on most common cloud
-services.")
-    (license license:gpl3)))
 
 (define-public r-streambugs
   (package
@@ -20896,13 +20866,13 @@ stand-alone.  Binary (application) part is installed separately using
 (define-public r-spectran
   (package
     (name "r-spectran")
-    (version "1.0.3")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Spectran" version))
        (sha256
-        (base32 "1ylw4klxvklrgpanp4lz4q6kvrg0n51xrnxz0nw1s782ag1c5ndg"))))
+        (base32 "03nqfsg0hia8v1i7npzxjin3zm4x7sihk389h7cky46vfd95g627"))))
     (properties `((upstream-name . "Spectran")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -26893,6 +26863,36 @@ created, representing the regional heterogeneity of a single variable.  More
 information and an example of implementation can be found in Markonis and Strnad
 (2020, <doi:10.1177/0959683620913924>).")
     (license license:gpl3)))
+
+(define-public r-somnmr
+  (package
+    (name "r-somnmr")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SOMnmR" version))
+       (sha256
+        (base32 "16vd41x4sazjlqwp5fdxcxs8n8rkgjdg819yrbnjlhp54938laj3"))))
+    (properties `((upstream-name . "SOMnmR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-quadprog
+                             r-pracma
+                             r-minpack-lm
+                             r-intervalsurgeon
+                             r-ggplot2
+                             r-dplyr
+                             r-data-table))
+    (home-page "https://github.com/LuisCol8/SOMnmR/")
+    (synopsis
+     "Analysis of Soil Organic Matter using Nuclear Magnetic Resonance")
+    (description
+     "Integrates the 13C nuclear magnetic resonance spectra using different
+integration ranges.  Output depends on the method chosen.  For the Molecular
+Mixing Model, a measurement of the fitting quality is given by its R-factor.
+For more details see: <doi:10.5281/zenodo.10137768>.")
+    (license license:expat)))
 
 (define-public r-sommer
   (package
@@ -37017,13 +37017,13 @@ trajectories.")
 (define-public r-simmer
   (package
     (name "r-simmer")
-    (version "4.4.6.3")
+    (version "4.4.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmer" version))
        (sha256
-        (base32 "03fns5z7qvmx42cj5q9k5mc3klbb3wi23qzwym6rjcik6zrlyasx"))))
+        (base32 "110wjmhr4645nrrjx4vk8inpz543qkrz8zg4avv4i05zrad2393x"))))
     (properties `((upstream-name . "simmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-codetools))

@@ -1810,16 +1810,16 @@ vignette further explains the use of the implemented functions.")
 (define-public r-jordan
   (package
     (name "r-jordan")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jordan" version))
        (sha256
-        (base32 "10va924f3fjasmqahlrk0k7fmnyjfqmkcgimqpvhfk0vwgr8pv3a"))))
+        (base32 "1c5s12s3qbffk5rlmigmy5hhqd6ln43z5scn5vl4cc05ix64zh15"))))
     (properties `((upstream-name . "jordan")))
     (build-system r-build-system)
-    (propagated-inputs (list r-onion r-matrix r-mathjaxr r-emulator))
+    (propagated-inputs (list r-quadform r-onion r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/jordan")
     (synopsis "Suite of Routines for Working with Jordan Algebras")
@@ -1828,8 +1828,8 @@ vignette further explains the use of the implemented functions.")
 designed to study observables in quantum mechanics.  Jordan algebras are
 commutative but non-associative; they satisfy the Jordan identity.  The package
 follows the ideas and notation of K. @code{McCrimmon} (2004, ISBN:0-387-95447-3)
-\"A Taste of Jordan Algebras\".  To cite in publications please use Hankin (2023)
-<@code{arXiv:2303.06062v1>}.")
+\"A Taste of Jordan Algebras\".  To cite the package in publications, please use
+Hankin (2023) <doi:10.48550/@code{arXiv.2303.06062>}.")
     (license license:gpl2+)))
 
 (define-public r-jops
@@ -2795,13 +2795,13 @@ data using MCMC; Dimitris Rizopoulos (2016) <doi:10.18637/jss.v072.i07>.")
 (define-public r-jmatrix
   (package
     (name "r-jmatrix")
-    (version "1.5")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmatrix" version))
        (sha256
-        (base32 "1kcz2zvi044aqp9v057x686jbmirc3p2s995vrb0cym1jvw53crh"))))
+        (base32 "1na1jqm9ck6qwlk09f9ab34sf0kamgcay5a7rxclz5skrxzjffci"))))
     (properties `((upstream-name . "jmatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))

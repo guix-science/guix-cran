@@ -10164,6 +10164,46 @@ airfares and on every international flight to and from Brazil, as well as
 domestic flights within the country.")
     (license license:expat)))
 
+(define-public r-flightr
+  (package
+    (name "r-flightr")
+    (version "0.5.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLightR" version))
+       (sha256
+        (base32 "0sw6qls30gr2hp7mwvjyh9h7cqga0ahkzg61d8pgdrc1fgbvsx0x"))))
+    (properties `((upstream-name . "FLightR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-suntools
+                             r-sf
+                             r-rcpparmadillo
+                             r-nlme
+                             r-mgcv
+                             r-maps
+                             r-ggplot2
+                             r-ggmap
+                             r-geosphere
+                             r-fields
+                             r-circular
+                             r-circstats
+                             r-bit))
+    (native-inputs (list r-knitr))
+    (home-page "https://CRAN.R-project.org/package=FLightR")
+    (synopsis "Reconstruct Animal Paths from Solar Geolocation Loggers Data")
+    (description
+     "Spatio-temporal locations of an animal are computed from annotated data with a
+hidden Markov model via particle filter algorithm.  The package is relatively
+robust to varying degrees of shading.  The hidden Markov model is described in
+Movement Ecology - Rakhimberdiev et al. (2015) <doi:10.1186/s40462-015-0062-5>,
+general package description is in the Methods in Ecology and Evolution -
+Rakhimberdiev et al. (2017) <doi:10.1111/2041-210X.12765> and package accuracy
+assessed in the Journal of Avian Biology - Rakhimberdiev et al. (2016)
+<doi:10.1111/jav.00891>.")
+    (license license:gpl3)))
+
 (define-public r-flightplot
   (package
     (name "r-flightplot")

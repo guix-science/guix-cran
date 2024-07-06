@@ -3656,16 +3656,17 @@ performing the analysis itself.")
 (define-public r-hotellingellipse
   (package
     (name "r-hotellingellipse")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HotellingEllipse" version))
        (sha256
-        (base32 "1xvm54iqgdnqjpkmgi4ssgpdz2pap60y9z9whrv2ky3q16mjqycz"))))
+        (base32 "1d7af7wdjkp2r5x49p76si5jwj7jxd5mngkip7x91rbjj0v0wagp"))))
     (properties `((upstream-name . "HotellingEllipse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-rgl
                              r-purrr
                              r-magrittr
                              r-lifecycle
@@ -3675,10 +3676,14 @@ performing the analysis itself.")
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ChristianGoueguel/HotellingEllipse")
-    (synopsis "Hotelling T-Square and Confidence Ellipse")
+    (synopsis "Hotellingâs T-Squared Statistic and Ellipse")
     (description
-     "This package provides functions to compute the semi-axes lengths and coordinate
-points of Hotelling ellipse.  Bro and Smilde (2014) <DOI:10.1039/c3ay41907j>.
+     "This package provides functions to calculate the Hotellingâs T-squared
+statistic and corresponding confidence ellipses.  Provides the semi-axes of the
+Hotellingâs T-squared ellipses at 95% and 99% confidence levels.  Enables
+users to obtain the coordinates in two or three dimensions at user-defined
+confidence levels, allowing for the construction of 2D or 3D ellipses with
+customized confidence levels.  Bro and Smilde (2014) <DOI:10.1039/c3ay41907j>.
 Brereton (2016) <DOI:10.1002/cem.2763>.")
     (license license:expat)))
 
@@ -4665,13 +4670,13 @@ et al. (2020) <doi:10.1111/2041-210X.13345>).")
 (define-public r-hmr
   (package
     (name "r-hmr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMR" version))
        (sha256
-        (base32 "1r0aw3x26a0w1pa02m449bpg6xrp1ikxv44f403snb8k48la9brc"))))
+        (base32 "14hhdk8l3kx0388ixa2facrw8h5blry1sxch6sci60g4iwwcwi8v"))))
     (properties `((upstream-name . "HMR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HMR")
@@ -6834,6 +6839,35 @@ describe comparable comparable entities as it relies on the sets to have a
 meaningful relational structure.")
     (license license:expat)))
 
+(define-public r-hidradenitis
+  (package
+    (name "r-hidradenitis")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hidradenitis" version))
+       (sha256
+        (base32 "0dzdllmsj98yl178fg25vny0vaxhra88zd6ifzv06fcjma53svrj"))))
+    (properties `((upstream-name . "hidradenitis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-checkmate))
+    (home-page "https://billdenney.github.io/hidradenitis/")
+    (synopsis
+     "Calculate Clinical Scores for Hidradenitis Suppurativa (HS), a Dermatologic Disease")
+    (description
+     "Calculate clinical scores for hidradenitis suppurativa (HS), a dermatologic
+disease.  The scores are typically used for evaluation of efficacy in clinical
+trials.  The scores are not commonly used in clinical practice.  The specific
+scores implemented are Hidradenitis Suppurativa Clinical Response (@code{HiSCR})
+(Kimball, et al. (2015) <doi:10.1111/jdv.13216>), Hidradenitis Suppurativa Area
+and Severity Index Revised (HASI-R) (Goldfarb, et al. (2020)
+<doi:10.1111/bjd.19565>), hidradenitis suppurativa Physician Global Assessment
+(HS PGA) (Marzano, et al. (2020) <doi:10.1111/jdv.16328>), and the International
+Hidradenitis Suppurativa Severity Score System (IHS4) (Zouboulis, et al. (2017)
+<doi:10.1111/bjd.15748>).")
+    (license license:gpl3+)))
+
 (define-public r-hidimda
   (package
     (name "r-hidimda")
@@ -8857,17 +8891,17 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "0mpfxkzk171qql9jx8byaiyinyb1ibla11jzljlw9pkdf4gs6m4b"))))
+        (base32 "0s4j0cyac3lqk4jjlbwamdk3nkdicq0nxaa579j9k63azcdz49rs"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (inputs (list))
-    (home-page "https://cran.r-project.org/package=heck")
+    (home-page "https://github.com/DyfanJones/heck")
     (synopsis "Highly Performant String Case Converter")
     (description
      "This package provides a case conversion between common cases like
@@ -9084,13 +9118,13 @@ that takes the guesswork out of everything.")
 (define-public r-healthyr-data
   (package
     (name "r-healthyr-data")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.data" version))
        (sha256
-        (base32 "025pgadi0rgwz0yvkx3mgf6r66sk2phmsmvgpykwd6jxyfwix2yk"))))
+        (base32 "1g8fd2s60i6yhfp6z2g0ib6zz4n2xvwswbzacbffbvakf21djwvc"))))
     (properties `((upstream-name . "healthyR.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

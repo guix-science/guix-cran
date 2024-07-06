@@ -3071,13 +3071,13 @@ generally instead of specifying parts of matrices to estimate.")
 (define-public r-lost
   (package
     (name "r-lost")
-    (version "2.0.2")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOST" version))
        (sha256
-        (base32 "15ggmvjy2k4j692y9h3anfzmb0hgnx66cbr76grwvcfysdx87ick"))))
+        (base32 "1zcs8vq4nkn059lfyw0nlb4wnn1rq2s1qiw1ggsr3mb847wka6ry"))))
     (properties `((upstream-name . "LOST")))
     (build-system r-build-system)
     (propagated-inputs (list r-shapes
@@ -9795,6 +9795,49 @@ accessible from R. The server itself can be found at http://lightning-viz.org/
 and is required to work with this package.  Package by itself cannot and will
 not create any visualizations.")
     (license license:expat)))
+
+(define-public r-lightlogr
+  (package
+    (name "r-lightlogr")
+    (version "0.3.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LightLogR" version))
+       (sha256
+        (base32 "124kd9ai0xxqzdyqj1npa711nkia520glca6a9jqsrsk6ld30765"))))
+    (properties `((upstream-name . "LightLogR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-slider
+                             r-scales
+                             r-rsconnect
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-plotly
+                             r-pkgload
+                             r-magrittr
+                             r-lubridate
+                             r-hms
+                             r-ggtext
+                             r-ggsci
+                             r-ggplot2
+                             r-flextable
+                             r-dplyr
+                             r-cowplot))
+    (home-page "https://github.com/tscnlab/LightLogR")
+    (synopsis
+     "Process Data from Wearable Light Loggers and Optical Radiation Dosimeters")
+    (description
+     "Import, processing, validation, and visualization of personal light exposure
+measurement data from wearable devices.  The package implements features such as
+the import of data and metadata files, conversion of common file formats,
+validation of light logging data, verification of crucial metadata, calculation
+of common parameters, and semi-automated analysis and visualization.")
+    (license license:gpl3+)))
 
 (define-public r-lifx
   (package

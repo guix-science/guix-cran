@@ -7458,18 +7458,18 @@ Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
 (define-public r-treasury
   (package
     (name "r-treasury")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treasury" version))
        (sha256
-        (base32 "1h87pwzd474bw2rsq2cvv2jw2nkr9lxjnc5grhqsq6vd2hlkwch5"))))
+        (base32 "0dg7yik152gikxn35khcrc098li6n3ppb7d78cwmxl2ikvzcgbbm"))))
     (properties `((upstream-name . "treasury")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rlang r-httr2))
+    (propagated-inputs (list r-xml2 r-tidyr r-rlang r-readxl r-httr2))
     (home-page "https://m-muecke.github.io/treasury/")
-    (synopsis "US Treasury XML Feed Wrapper")
+    (synopsis "Client for US Treasury XML Feed and Published Data")
     (description
      "Download daily interest rates from the US Treasury XML feed.  Leveraging
 <https://home.treasury.gov/treasury-daily-interest-rate-xml-feed>, this package
@@ -8547,13 +8547,13 @@ generalization, aggregation, intersection, simulation, and plotting.")
 (define-public r-traj
   (package
     (name "r-traj")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "traj" version))
        (sha256
-        (base32 "157v3bhb10x0fndx64pq3m5ddmwj070j1ca3d8ff64kpkfbxdgd3"))))
+        (base32 "1pv47ww443i290yjiqwx3bk1kynsv4kzhpq65mspbjdy61ilq5aq"))))
     (properties `((upstream-name . "traj")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-cluster))
@@ -8561,9 +8561,9 @@ generalization, aggregation, intersection, simulation, and plotting.")
     (home-page "https://CRAN.R-project.org/package=traj")
     (synopsis "Clustering of Functional Data Based on Measures of Change")
     (description
-     "This package implements a three-step procedure in the spirit of Leffondree et
-al. (2004) to identify clusters of individual longitudinal trajectories.  The
-procedure involves (1) computing a number of \"measures of change\"\" capturing
+     "This package implements a three-step procedure in the spirit of Leffondre et al.
+(2004) to identify clusters of individual longitudinal trajectories.  The
+procedure involves (1) computing a number of \"measures of change\" capturing
 various features of the trajectories; (2) using a Principal Component Analysis
 based dimension reduction algorithm to select a subset of measures and (3) using
 the k-means clustering algorithm to identify clusters of trajectories.")
@@ -13890,15 +13890,16 @@ correlate two timelines of events.  A brief description is available at
 (define-public r-timeless
   (package
     (name "r-timeless")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeless" version))
        (sha256
-        (base32 "0x40zn58yfxpqhibhwjjrg2pvlr00r9z498q7f4fmm28dsgr7asb"))))
+        (base32 "0wq98ngwn9ajgxmc1ybfgzmxr21jsvjqsc3crrkska7vpzxpjy11"))))
     (properties `((upstream-name . "timeless")))
     (build-system r-build-system)
+    (inputs (list))
     (home-page "https://github.com/schochastics/timeless")
     (synopsis "Fast General Purpose Date/Time Converter")
     (description

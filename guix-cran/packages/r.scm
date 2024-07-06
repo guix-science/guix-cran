@@ -2073,17 +2073,18 @@ you use.")
 (define-public r-rush
   (package
     (name "r-rush")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rush" version))
        (sha256
-        (base32 "1qi074wxnsd1ypjqzi10m0i5g81nq58pw7lcfsq6qx4wiqw00xff"))))
+        (base32 "1lq1yikhykxa70ypn7y2s3njj0b8vnazjd24766sq4bgmyp60fdj"))))
     (properties `((upstream-name . "rush")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid
                              r-redux
+                             r-r6
                              r-processx
                              r-mlr3misc
                              r-lgr
@@ -13465,16 +13466,16 @@ functional data by being robust against the presence of outliers.")
 (define-public r-rodeo
   (package
     (name "r-rodeo")
-    (version "0.7.8")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rodeo" version))
        (sha256
-        (base32 "0sqds225bvnw1z6a36f14fck0jnaa0ilz2n8ylkw6j5f7dx1yf0n"))))
+        (base32 "0nv5j9wcqfal92smls67ipa82bzva13y1kg9wnly59bdmhs3jcsm"))))
     (properties `((upstream-name . "rodeo")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-desolve))
+    (propagated-inputs (list r-readxl r-readods r-r6 r-desolve))
     (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/dkneis/rodeo")
     (synopsis "Code Generator for ODE-Based Models")
@@ -18981,13 +18982,13 @@ biological data.  M. Draminski, J. Koronacki (2018) <doi:10.18637/jss.v085.i12>.
 (define-public r-rmcc
   (package
     (name "r-rmcc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMCC" version))
        (sha256
-        (base32 "12ksv4yms1pgk7yj40yjmbc5rz1ai1mn8xd3a4w2pdx0mwjin6sz"))))
+        (base32 "0nzbjnayp85541pnibal517dhc0s7mhlllshx36m44lv2x3figpl"))))
     (properties `((upstream-name . "RMCC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -27516,6 +27517,38 @@ programmatic access to the NCBI Entrez query and database system for searching
 and retrieving biological data.")
     (license license:expat)))
 
+(define-public r-returncurves
+  (package
+    (name "r-returncurves")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReturnCurves" version))
+       (sha256
+        (base32 "0bcj8qcky9hqgnm2b1m7c207bx6ybzmd9v6v7ri20mddmxbpkz15"))))
+    (properties `((upstream-name . "ReturnCurves")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shiny
+                             r-rdpack
+                             r-openair
+                             r-mathjaxr
+                             r-ismev
+                             r-gridextra
+                             r-ggplot2
+                             r-evd
+                             r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ReturnCurves")
+    (synopsis "Estimation of Return Curves")
+    (description
+     "Estimates the p-probability return curve proposed by Murphy-Barltrop et al.
+(2023) <doi:10.1002/env.2797>.  Implements pointwise and smooth estimation of
+the angular dependence function introduced by Wadsworth and Tawn (2013)
+<doi:10.3150/12-BEJ471>.")
+    (license license:gpl3+)))
+
 (define-public r-retry
   (package
     (name "r-retry")
@@ -34717,13 +34750,13 @@ NAID:20001644490, Cohen (1988) ISBN:0-12-179060-6, Darroch (1961)
 (define-public r-recalibratinn
   (package
     (name "r-recalibratinn")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recalibratiNN" version))
        (sha256
-        (base32 "10baqzbwggry9lwydr6vbsx5mx2jpbggm7dxamz9887min8n2lfa"))))
+        (base32 "1xa70a8w9fi3yq6x1f5jch0ids5zkxq1ij5y5hd124q53bp0q90l"))))
     (properties `((upstream-name . "recalibratiNN")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -34736,13 +34769,17 @@ NAID:20001644490, Cohen (1988) ISBN:0-12-179060-6, Darroch (1961)
                              r-glue
                              r-ggplot2
                              r-dplyr))
-    (home-page "https://github.com/cmusso86/recalibratiNN")
+    (native-inputs (list r-knitr))
+    (home-page "https://bdm.unb.br/handle/10483/38504")
     (synopsis "Quantile Recalibration for Regression Models")
     (description
-     "Enables the diagnostics and enhancement of calibration of regression models.  It
-offers both global and local visualization tools to calibration diagnostics and
-provides one recalibration method : Torres R, Nott DJ, Sisson SA, Rodrigues T,
-Reis JG, Rodrigues GS (2024) <doi:10.48550/@code{arXiv.2403.05756>}.")
+     "Enables the diagnostics and enhancement of regression model calibration.It
+offers both global and local visualization tools for calibration diagnostics and
+provides one recalibration method: Torres R, Nott DJ, Sisson SA, Rodrigues T,
+Reis JG, Rodrigues GS (2024) <doi:10.48550/@code{arXiv.2403.05756>}.  The method
+leverages on Probabilistic Integral Transform (PIT) values to both evaluate and
+perform the calibration of statistical models.  For a more detailed description
+of the package, please refer to the bachelor's thesis available bellow.")
     (license license:expat)))
 
 (define-public r-reca
@@ -35165,13 +35202,13 @@ projects for changes.")
 (define-public r-ready4
   (package
     (name "r-ready4")
-    (version "0.1.9")
+    (version "0.1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ready4" version))
        (sha256
-        (base32 "0y7mjsah7a1f8jzz9mf3f9dvqnv30qdn2m4hccw0hyqvwcr1a4pf"))))
+        (base32 "09kf290dq1qdafyx8f12sasf10chiqrh8d1wa1apfkrr01n4b45j"))))
     (properties `((upstream-name . "ready4")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -35188,19 +35225,21 @@ projects for changes.")
                              r-kableextra
                              r-gh
                              r-dplyr
-                             r-dataverse))
+                             r-dataverse
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://ready4-dev.github.io/ready4/")
-    (synopsis "Implement Modular and Open-Source Health Economic Models")
+    (synopsis "Develop and Use Modular Health Economic Models")
     (description
-     "Programming syntax, a template model module and tools to help maintain a modular
-and open-source health economic model's project documentation website.  These
-elements are the foundation for a prototype software framework to support
-replicable and transferable health economic models.  The software framework is
+     "This package provides a template model module, tools to help find model modules
+derived from this template and a programming syntax to use these modules in
+health economic analyses.  These elements are the foundation for a prototype
+software framework for developing living and transferable models and using those
+models in reproducible health economic analyses.  The software framework is
 extended by other R libraries.  For detailed documentation about the framework
 and how to use it visit <https://www.ready4-dev.com/>.  For a background to the
 methodological issues that the framework is attempting to help solve, see
-Hamilton et al. (2024) <doi:10.48550/@code{arXiv.2310.14138>}.")
+Hamilton et al. (2024) <doi:10.1007/s40273-024-01378-8>.")
     (license license:gpl3)))
 
 (define-public r-readxlsb
@@ -39093,13 +39132,13 @@ API in the Rcpp package.")
 (define-public r-rcppcgal
   (package
     (name "r-rcppcgal")
-    (version "5.6.3")
+    (version "5.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCGAL" version))
        (sha256
-        (base32 "0jb410wcf9djlii2ry27xbykkanld6vngl141b6i68v40y1c2n73"))))
+        (base32 "0dll6s8asylvghdzjjj1sxckyczkdjw111bfdiz0rb0ylc27yf7x"))))
     (properties `((upstream-name . "RcppCGAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

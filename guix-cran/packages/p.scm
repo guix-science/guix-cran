@@ -17972,6 +17972,29 @@ has been developed using concept of CÃ³rdova et al.
 <doi:10.1007/s40710-015-0107-1>.")
     (license license:gpl3)))
 
+(define-public r-pmev
+  (package
+    (name "r-pmev")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pmev" version))
+       (sha256
+        (base32 "02qkajcmv46s1aapxmm59k7y8mcnjdcgvhirdzqmzj88li3sgm3f"))))
+    (properties `((upstream-name . "pmev")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-rlang r-magrittr r-lubridate r-dplyr))
+    (home-page "https://github.com/david-hammond/pmev")
+    (synopsis "Calculates Earned Value for a Project Schedule")
+    (description
+     "Given a project schedule and associated costs, this package calculates the
+earned value to date.  It is an implementation of Project Management Body of
+Knowledge (PMBOK) methodologies (reference Project Management Institute. (2021).
+ A guide to the Project Management Body of Knowledge (PMBOK guide) (7th ed.).
+Project Management Institute, Newtown Square, PA, ISBN 9781628256673 (pdf)).")
+    (license license:expat)))
+
 (define-public r-pmetar
   (package
     (name "r-pmetar")
@@ -28529,21 +28552,22 @@ automatic selection of optimal smoothing parameter.")
 (define-public r-pencoxfrail
   (package
     (name "r-pencoxfrail")
-    (version "1.0.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PenCoxFrail" version))
        (sha256
-        (base32 "0snjf8jxzyf30xj3wx9p6g073dqw592l1j1c6yxfg8y4kgzhzwq7"))))
+        (base32 "1g5qggazvfj38436kj144q46aa59s4idnqnr5yv9c3svjikmw1r7"))))
     (properties `((upstream-name . "PenCoxFrail")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-matrix))
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-matrix
+                             r-coxme))
     (home-page "https://cran.r-project.org/package=PenCoxFrail")
     (synopsis "Regularization in Cox Frailty Models")
     (description
-     "This package provides a regularization approach for Cox Frailty Models by
-penalization methods is provided.")
+     "Different regularization approaches for Cox Frailty Models by penalization
+methods are provided.")
     (license license:gpl2+)))
 
 (define-public r-pencopulacond

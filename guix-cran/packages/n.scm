@@ -13296,13 +13296,13 @@ outlined in further detail in Rigdon, Baiocchi, and Basu (2018)
 (define-public r-ndtv
   (package
     (name "r-ndtv")
-    (version "0.13.3")
+    (version "0.13.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ndtv" version))
        (sha256
-        (base32 "05kaqd7p77rfls0s1gqv74j3svh5xdvqni0jin5vxl8y900yc56j"))))
+        (base32 "0s7c5gskndqqy1m1n6a66dpr5krdk1prsgankgkwdbrpraqvi9cr"))))
     (properties `((upstream-name . "ndtv")))
     (build-system r-build-system)
     (arguments
@@ -13321,12 +13321,15 @@ outlined in further detail in Rigdon, Baiocchi, and Basu (2018)
                                     ((source . target) (minify source
                                                                #:target target)))
                                   '())))))))
-    (propagated-inputs (list r-statnet-common
+    (propagated-inputs (list r-tsna
+                             r-statnet-common
                              r-sna
+                             r-scatterplot3d
                              r-networkdynamic
                              r-network
                              r-mass
                              r-jsonlite
+                             r-htmlwidgets
                              r-base64
                              r-animation))
     (native-inputs (list esbuild))

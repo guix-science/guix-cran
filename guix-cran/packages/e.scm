@@ -18636,13 +18636,13 @@ paper for more details.")
 (define-public r-ecostats
   (package
     (name "r-ecostats")
-    (version "1.1.11")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecostats" version))
        (sha256
-        (base32 "11h5s196aap64jch1123srbwy3907cvc4vgh0lvn5wkxbszrzypc"))))
+        (base32 "0zf3kw0kbwg759ixzwxilagx7h1xhdjsfvp8gb86b9m6pnwsiqr7"))))
     (properties `((upstream-name . "ecostats")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm
@@ -18652,7 +18652,7 @@ paper for more details.")
                              r-get
                              r-ecocopula))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ecostats")
+    (home-page "https://dwarton.github.io/ecostats/")
     (synopsis "Code and Data Accompanying the Eco-Stats Text (Warton 2022)")
     (description
      "This package provides functions and data supporting the Eco-Stats text (Warton,
@@ -18666,13 +18666,13 @@ text with solutions to exercises.")
 (define-public r-ecospat
   (package
     (name "r-ecospat")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecospat" version))
        (sha256
-        (base32 "1sxvbzdrdr5dda1ds7i669rkaxngp93dpdzqkip07dv28yvjhp02"))))
+        (base32 "097cr6qwf2hqm8v3afabnm7lmmv2awih2kz26vd28jr179af8p65"))))
     (properties `((upstream-name . "ecospat")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

@@ -11085,13 +11085,13 @@ using statistics not available with base R and manipulate objects for analyses."
 (define-public r-birdscanr
   (package
     (name "r-birdscanr")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "birdscanR" version))
        (sha256
-        (base32 "0vbvf9512214sgah3jsn7cdy8abkyr9pvaqaivqjrhyfpv9fvbr1"))))
+        (base32 "1brgz6x8ljgy9y87znx93d6d68vsr7a75i1p86rxnxvka0s91r15"))))
     (properties `((upstream-name . "birdscanR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11101,6 +11101,7 @@ using statistics not available with base R and manipulate objects for analyses."
                              r-rstudioapi
                              r-rpostgresql
                              r-rodbc
+                             r-rlang
                              r-reshape2
                              r-modi
                              r-magrittr
@@ -11113,16 +11114,17 @@ using statistics not available with base R and manipulate objects for analyses."
      "Migration Traffic Rate Calculation Package for 'Birdscan MR1' Radars")
     (description
      "Extract data from Birdscan MR1 SQL vertical-looking radar databases, filter, and
-process them to Migration Traffic Rates (#objects per hour and km) of, for
-example birds, and insects.  Object classifications in the Birdscan MR1
-databases are based on the dataset of Haest et al. (2021)
-<doi:10.5281/zenodo.5734960>).  Migration Traffic Rates can be calculated
-separately for different height bins (with a height resolution of choice) as
-well as over time periods of choice (e.g., 1/2 hour, 1 hour, 1 day, day/night,
-the full time period of observation, and anything in between).  Two plotting
-functions are also included to explore the data in the SQL databases and the
-resulting Migration Traffic Rate results.  For details on the Migration Traffic
-Rate calculation procedures, see Schmid et al. (2019) <doi:10.1111/ecog.04025>.")
+process them to Migration Traffic Rates (#objects per hour and km) or density
+(#objects per km3) of, for example birds, and insects.  Object classifications
+in the Birdscan MR1 databases are based on the dataset of Haest et al. (2021)
+<doi:10.5281/zenodo.5734960>).  Migration Traffic Rates and densities can be
+calculated separately for different height bins (with a height resolution of
+choice) as well as over time periods of choice (e.g., 1/2 hour, 1 hour, 1 day,
+day/night, the full time period of observation, and anything in between).  Two
+plotting functions are also included to explore the data in the SQL databases
+and the resulting Migration Traffic Rate results.  For details on the Migration
+Traffic Rate calculation procedures, see Schmid et al. (2019)
+<doi:10.1111/ecog.04025>.")
     (license license:gpl3)))
 
 (define-public r-birdring
@@ -16276,13 +16278,13 @@ the generalized graded unfolding model of Roberts, Donoghue, and Laughlin (2000)
 (define-public r-bggm
   (package
     (name "r-bggm")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGGM" version))
        (sha256
-        (base32 "1cvz1srygaxxywlyp09aa4a6hlf504455ka1l8rwsa37m7h8k1bi"))))
+        (base32 "15yqbifnxlpwk25ki1yxfylkyb061375cxwq7dbid2381lvnslih"))))
     (properties `((upstream-name . "BGGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -16675,24 +16677,27 @@ and Held, L. (2011) <doi:10.1007/s11222-010-9170-7>.")
 (define-public r-bfi
   (package
     (name "r-bfi")
-    (version "1.1.4")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFI" version))
        (sha256
-        (base32 "10xy9acjvq1c21wsb3lfhpza56zcb4ifb4i4330i02phxxc8a9fa"))))
+        (base32 "0szx9cjzhlxk6n83i6rm48db2lkj4zdsaqrgzipr71bwwjfk08nr"))))
     (properties `((upstream-name . "BFI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-devtools))
     (native-inputs (list r-knitr))
     (home-page "https://hassanpazira.github.io/BFI/")
     (synopsis "Bayesian Federated Inference")
     (description
      "The Bayesian Federated Inference ('BFI') method combines inference results
 obtained from local data sets in the separate centers.  In this version of the
-package, the BFI methodology is programmed for linear and logistic regression
-models; see Jonker, Pazira and Coolen (2024) <doi:10.1002/sim.10072>.")
+package, the BFI methodology is programmed for linear, logistic and survival
+regression models.  For GLMs, see Jonker, Pazira and Coolen (2024)
+<doi:10.1002/sim.10072>; for survival models, see Pazira, Massa, Weijers, Coolen
+and Jonker (2024) <doi:10.48550/@code{arXiv.2404.17464>}; and for heterogeneous
+populations, see Jonker, Pazira and Coolen (2024)
+<doi:10.48550/@code{arXiv.2402.02898>}.")
     (license license:expat)))
 
 (define-public r-bff

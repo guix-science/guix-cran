@@ -1664,13 +1664,13 @@ Nonparametric estimation of conditional quantiles is also available.")
 (define-public r-quantdates
   (package
     (name "r-quantdates")
-    (version "2.0.2")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantdates" version))
        (sha256
-        (base32 "1lpnrv64m4qn934za2b4d568rcg18g6nscs8g2rq5bj7h61bdr4f"))))
+        (base32 "1xlrbxslm4i3cwhzw3xa67vib43gpfclz18hkjbvas5ij68axvap"))))
     (properties `((upstream-name . "quantdates")))
     (build-system r-build-system)
     (propagated-inputs (list r-lubridate))

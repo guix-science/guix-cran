@@ -10571,13 +10571,13 @@ polynomials with rational coefficients.")
 (define-public r-gmotree
   (package
     (name "r-gmotree")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmoTree" version))
        (sha256
-        (base32 "11fyachzqr4nkf23l5l5f8qdmj7xvlf526p4zf5inc51xdf27dyl"))))
+        (base32 "1f8n3j0rzps3pfi4ps71f6jn51mlnvk3chi5khnfqydz4ifhwal5"))))
     (properties `((upstream-name . "gmoTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10592,12 +10592,12 @@ polynomials with rational coefficients.")
     (synopsis "Get and Modify 'oTree' Data")
     (description
      "Manage data from @code{oTree} experiments.  Import @code{oTree} data and clean
-them up by using functions to deal with messy data, dropouts, and other
-problematic cases.  Create IDs, calculate the time, transfer variables between
-app data frames, and delete sensitive information.  You can also check your
-experimental data before running the experiment.  Information on @code{oTree} is
-found in Chen, D. L., Schonger, M., & Wickens, C. (2016) <doi:
-10.1016/j.jbef.2015.12.001>.")
+them by using functions to deal with messy data, dropouts, and other problematic
+cases.  Create IDs, calculate the time, transfer variables between app data
+frames, and delete sensitive information.  You can also check your experimental
+data before running the experiment.  Information on @code{oTree} is found in
+Chen, D. L., Schonger, M., & Wickens, C. (2016)
+<doi:10.1016/j.jbef.2015.12.001>.")
     (license license:gpl3+)))
 
 (define-public r-gmoip
@@ -14827,13 +14827,13 @@ the sf and sp packages and for types in the trip and silicate packages.")
 (define-public r-gibasa
   (package
     (name "r-gibasa")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gibasa" version))
        (sha256
-        (base32 "1biy8vqvbc3mbf2p8kffpifdagyv7k5p28kdwyp9hgp996lj5pqk"))))
+        (base32 "1j6k11vq9n9bh8f1sdc14maj88nd5vacl3xq9v54nb2phi55rp72"))))
     (properties `((upstream-name . "gibasa")))
     (build-system r-build-system)
     (inputs (list mecab))

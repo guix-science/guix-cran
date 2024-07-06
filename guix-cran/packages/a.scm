@@ -7229,13 +7229,13 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.0")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "0mmr5q5j4i9qq8m7ybgjz6m40g0qq0z24cznygrsi01kas11s8qd"))))
+        (base32 "1kp96nixy9y7i51jv73b9s0gz3via0ryp9cmh6ybbmyfv15qkr4s"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (inputs (list))
@@ -7681,13 +7681,13 @@ API reference <https://developers.arcgis.com/rest/places/>.")
 (define-public r-arcgislayers
   (package
     (name "r-arcgislayers")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgislayers" version))
        (sha256
-        (base32 "0micx725r6ln7i0xnrw4543qfrynvjqhg8081vi4falj2zbniz48"))))
+        (base32 "02zx66iszhw2kik0yg4djzlig6rc505igp3ginxhfcnb04blbz53"))))
     (properties `((upstream-name . "arcgislayers")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -7698,8 +7698,9 @@ API reference <https://developers.arcgis.com/rest/places/>.")
                              r-jsonify
                              r-httr2
                              r-cli
+                             r-arcpbf
                              r-arcgisutils))
-    (home-page "https://cran.r-project.org/package=arcgislayers")
+    (home-page "https://r.esri.com/arcgislayers/")
     (synopsis "An Interface to ArcGIS Data Services")
     (description
      "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
@@ -11356,6 +11357,27 @@ hierarchy and estimate the uncertainty of a given data set.")
 See <https://www.myroms.org/> for more information about ROMS'.")
     (license license:gpl3)))
 
+(define-public r-angstromate
+  (package
+    (name "r-angstromate")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "angstromATE" version))
+       (sha256
+        (base32 "0chmzliwd9ygcjvvd20vfp1immmrnhxwdc83la11l8v0ind10syl"))))
+    (properties `((upstream-name . "angstromATE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml))
+    (home-page "https://cran.r-project.org/package=angstromATE")
+    (synopsis "Imports Log Files from Angstrom Engineering Thermal Evaporator")
+    (description
+     "Opens and imports log files from Angstrom Engineering Thermal Evaporator and
+extracts basic characteristics, such as base pressure, time of the evaporation.
+It can visualize the deposition observables for review.")
+    (license license:gpl3+)))
+
 (define-public r-anglercreelsurveysimulation
   (package
     (name "r-anglercreelsurveysimulation")
@@ -12629,13 +12651,13 @@ dimensions.")
 (define-public r-amberr
   (package
     (name "r-amberr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amberr" version))
        (sha256
-        (base32 "1m9mjxah9kk5d7rw7xanqwyjlwp924f6vw7glbj26n2f8k27ja7g"))))
+        (base32 "0fqn79lw4zf2yip6qbn3wkcdz44zrf9awq3kjw8smhbv84dcddll"))))
     (properties `((upstream-name . "amberr")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -20825,6 +20847,35 @@ transcripts, audio/video cuts using FFmpeg and video sub titles in Subrib title
 interact with Praat using Praat'-scripts, and exchange data with the
 @code{rPraat} package.  The package is itself written in R and may be expanded
 by other users.")
+    (license license:gpl3)))
+
+(define-public r-acsspack
+  (package
+    (name "r-acsspack")
+    (version "0.0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ACSSpack" version))
+       (sha256
+        (base32 "18xj0svysm9qm6dyhx7ib2krwcfds8i3rrcd03ph3kz597vf41zi"))))
+    (properties `((upstream-name . "ACSSpack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-hdci r-extradistr))
+    (home-page "https://cran.r-project.org/package=ACSSpack")
+    (synopsis "ACSS, Corresponding ACSS, and GLP Algorithm")
+    (description
+     "Allow user to run the Adaptive Correlated Spike and Slab (ACSS) algorithm,
+corresponding INdependent Spike and Slab (INSS) algorithm, and Giannone, Lenza
+and Primiceri (GLP) algorithm with adaptive burn-in.  All of the three
+algorithms are used to fit high dimensional data set with either sparse
+structure, or dense structure with smaller contributions from all predictors.
+The state-of-the-art GLP algorithm is in Giannone, D., Lenza, M., & Primiceri,
+G. E. (2021, ISBN:978-92-899-4542-4) \"Economic predictions with big data: The
+illusion of sparsity\".  The two new algorithms, ACSS algorithm and INSS
+algorithm, and the discussion on their performance can be seen in Yang, Z.,
+Khare, K., & Michailidis, G. (2024, preprint) \"Bayesian methodology for adaptive
+sparsity and shrinkage in regression\".")
     (license license:gpl3)))
 
 (define-public r-acroname
