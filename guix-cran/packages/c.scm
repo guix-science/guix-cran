@@ -19351,15 +19351,16 @@ community assembly processes.  Includes a vignette outlining usage.")
 (define-public r-combo
   (package
     (name "r-combo")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "COMBO" version))
        (sha256
-        (base32 "12k5lchxdxql3q7si05404f8dc26xjxqf95mq5jykgp9chgl6i5w"))))
+        (base32 "0073cwbggmqgm13nmg8b6lq3gb5qid73nhh0jb0ldmabwn1bw3hk"))))
     (properties `((upstream-name . "COMBO")))
     (build-system r-build-system)
+    (inputs (list jags))
     (propagated-inputs (list r-turboem
                              r-tidyr
                              r-samba
@@ -19373,9 +19374,9 @@ community assembly processes.  Includes a vignette outlining usage.")
     (description
      "Use frequentist and Bayesian methods to estimate parameters from a binary
 outcome misclassification model.  These methods correct for the problem of
-\"label switching\" by assuming that correct outcome classification occurs in at
-least 50% of observations.  A description of the analysis methods is available
-in Hochstedler and Wells (2023) <@code{arXiv:2303.10215>}.")
+\"label switching\" by assuming that the sum of outcome sensitivity and
+specificity is at least 1.  A description of the analysis methods is available
+in Hochstedler and Wells (2023) <doi:10.48550/@code{arXiv.2303.10215>}.")
     (license license:expat)))
 
 (define-public r-combiter

@@ -29911,37 +29911,6 @@ of Portland inventoried every tree in over 170 parks and along the streets in 96
 neighborhoods.")
     (license license:gpl3)))
 
-(define-public r-pdxpower
-  (package
-    (name "r-pdxpower")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PDXpower" version))
-       (sha256
-        (base32 "0h822wc8a92z4a4zvh3pqf3nzvjnz99ydx613jrv4jx2jqjd4j9j"))))
-    (properties `((upstream-name . "PDXpower")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
-                             r-frailtypack))
-    (home-page "https://cran.r-project.org/package=PDXpower")
-    (synopsis
-     "Time to Event Outcome in Experimental Designs of Pre-Clinical Studies")
-    (description
-     "Conduct simulation-based customized power calculation for clustered time to
-event data in a mixed crossed/nested design, where a number of cell lines and a
-number of mice within each cell line are considered to achieve a desired
-statistical power, motivated by Eckel-Passow and colleagues (2021)
-<doi:10.1093/neuonc/noab137> and Li and colleagues (2024)
-<doi:10.48550/@code{arXiv.2404.08927>}.  This package provides two commonly used
-models for powering a design, linear mixed effects and Cox frailty model.  Both
-models account for within-subject (cell line) correlation while holding
-different distributional assumptions about the outcome.  Alternatively, the
-counterparts of fixed effects model are also available, which produces similar
-estimates of statistical power.")
-    (license license:gpl2+)))
-
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
@@ -36376,13 +36345,13 @@ shifts).")
 (define-public r-paleotree
   (package
     (name "r-paleotree")
-    (version "3.4.5")
+    (version "3.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleotree" version))
        (sha256
-        (base32 "09fi0fq0xpxa4d3k7fhl6rvfc302gzmjrxm979j30ixpa8rypp64"))))
+        (base32 "05v35w84xm186mc0f9k53fpgfx4ihfvj7523jh0ba1crjakwha6b"))))
     (properties `((upstream-name . "paleotree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl

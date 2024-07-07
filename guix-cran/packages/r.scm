@@ -27797,16 +27797,17 @@ transaction scripts using then_try(), to gracefully handle errors at any step.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.5-60")
+    (version "0.5-80")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restriktor" version))
        (sha256
-        (base32 "0ksb1jqrkvqjhxcfx4wc6f27p097228h5ck3682409lmj3amp11r"))))
+        (base32 "1dpkwwkww19pr57rqx77g8q1b0chflyihgb4nsdkaizgc5mh5r04"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
+                             r-scales
                              r-quadprog
                              r-pbapply
                              r-norm
@@ -27814,6 +27815,7 @@ transaction scripts using then_try(), to gracefully handle errors at any step.")
                              r-mass
                              r-lavaan
                              r-ic-infer
+                             r-gridextra
                              r-glue
                              r-ggplot2
                              r-boot))
@@ -28431,13 +28433,13 @@ details.")
 (define-public r-resilience
   (package
     (name "r-resilience")
-    (version "2023.1.1")
+    (version "2024.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resilience" version))
        (sha256
-        (base32 "0pa0c5l3jm5szn7vffg030krn7f9lz9riqvjz9n7waiszfs0mzdr"))))
+        (base32 "0rzjj6bsi9dwis0k3zl329njcb6khr4a037k7i8s20v28qvs760c"))))
     (properties `((upstream-name . "resilience")))
     (build-system r-build-system)
     (propagated-inputs (list r-nptest r-foreach r-doparallel))
@@ -35923,28 +35925,6 @@ of files contains detailed records of DNA samples (locus, organism, type of
 sequence, source of the sequence...).  An example of record can be found at
 <https://www.ncbi.nlm.nih.gov/nuccore/HE799070>.")
     (license license:gpl3)))
-
-(define-public r-read-dbc
-  (package
-    (name "r-read-dbc")
-    (version "1.0.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "read.dbc" version))
-       (sha256
-        (base32 "1virjl00x1yzby6wvxjdf1kqbjgm2kkdv53b72c0jq4nrfrl55nw"))))
-    (properties `((upstream-name . "read.dbc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-foreign))
-    (home-page "https://github.com/danicat/read.dbc")
-    (synopsis "Read Data Stored in DBC (Compressed DBF) Files")
-    (description
-     "This package provides functions for reading and decompressing the DBC
-(compressed DBF) files.  Please note that this is the file format used by the
-Brazilian Ministry of Health (DATASUS) to publish healthcare datasets.  It is
-not related to the @code{FoxPro} or CANdb DBC file formats.")
-    (license license:agpl3)))
 
 (define-public r-read
   (package

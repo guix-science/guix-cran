@@ -11889,47 +11889,6 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (2019) <doi:10.1002/ece3.4718> and Leroy et al. (2019) <doi:10.1111/jbi.13674>).")
     (license license:gpl3)))
 
-(define-public r-biorad
-  (package
-    (name "r-biorad")
-    (version "0.7.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bioRad" version))
-       (sha256
-        (base32 "0gschmraqc76yiqdn48cg1qnd0p7b6x7h2gr54a84pb4ivbn6vyy"))))
-    (properties `((upstream-name . "bioRad")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-viridis
-                             r-tidyr
-                             r-suntools
-                             r-sp
-                             r-rlang
-                             r-rhdf5
-                             r-readr
-                             r-raster
-                             r-lutz
-                             r-lubridate
-                             r-jsonlite
-                             r-glue
-                             r-ggplot2
-                             r-frictionless
-                             r-fields
-                             r-dplyr
-                             r-curl
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/adokter/bioRad/")
-    (synopsis "Biological Analysis and Visualization of Weather Radar Data")
-    (description
-     "Extract, visualize and summarize aerial movements of birds and insects from
-weather radar data.  See Dokter, A. M. et al. (2018) \"@code{bioRad}: biological
-analysis and visualization of weather radar data\" <doi:10.1111/ecog.04028> for a
-software paper describing package and methodologies.")
-    (license license:expat)))
-
 (define-public r-bioprobability
   (package
     (name "r-bioprobability")
@@ -13728,16 +13687,16 @@ estimate the cross-correlation between the binned time series).")
 (define-public r-binb
   (package
     (name "r-binb")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binb" version))
        (sha256
-        (base32 "0j9iyawkn1mqvf52q1abp0k00r5239rkvvmvl3cmp4jlffxd4xd7"))))
+        (base32 "18f4l7fa3b0h1r91xy9nvplllgnsx3r765qibbbz1rz5zq6cnjpg"))))
     (properties `((upstream-name . "binb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rmarkdown r-knitr))
+    (propagated-inputs (list r-rmarkdown r-knitr r-codetools))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/eddelbuettel/binb")
     (synopsis "'binb' is not 'Beamer'")
@@ -18361,17 +18320,17 @@ Also	supports plotting and comparing data.")
 (define-public r-beepr
   (package
     (name "r-beepr")
-    (version "1.3")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "beepr" version))
        (sha256
-        (base32 "061sfld23b516jws4llml0a4jsdk4z74rll4z58l2rvahkqsdrfp"))))
+        (base32 "0xq4qs06f61m1q6gb157n4c3j7pf7wanh27nr2lr228s7k4mw3k2"))))
     (properties `((upstream-name . "beepr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-audio))
-    (home-page "https://cran.r-project.org/package=beepr")
+    (propagated-inputs (list r-audio))
+    (home-page "https://github.com/rasmusab/beepr")
     (synopsis "Easily Play Notification Sounds on any Platform")
     (description
      "The main function of this package is beep(), with the purpose to make it easy to
@@ -19095,13 +19054,13 @@ biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
 (define-public r-bdsvd
   (package
     (name "r-bdsvd")
-    (version "0.1-0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bdsvd" version))
        (sha256
-        (base32 "0jpli8mdrjbgcvgvj2rwac49147l7h91n2mbsi89pw7m5ydimvvp"))))
+        (base32 "02fhhwlnq31yzf0m3qyk14w1f9d4xn0ygnjcwx7m28z34l18547m"))))
     (properties `((upstream-name . "bdsvd")))
     (build-system r-build-system)
     (propagated-inputs (list r-irlba))
@@ -19110,8 +19069,9 @@ biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
     (description
      "This package performs block diagonal covariance matrix detection using singular
 vectors (BD-SVD), which can be extended to hierarchical variable clustering
-(HC-SVD).  The methods are described in Bauer (202Xa) <@code{arXiv:2211.16155>}
-and Bauer (202Xb) <@code{arXiv:2308.06820>}.")
+(HC-SVD).  The methods are described in Bauer (202Xa)
+<doi:10.48550/@code{arXiv.2211.16155>} and Bauer (202Xb)
+<doi:10.48550/@code{arXiv.2308.06820>}.")
     (license license:gpl2+)))
 
 (define-public r-bdscale
@@ -26731,13 +26691,13 @@ models using Bayes factors, and more.")
 (define-public r-bamm
   (package
     (name "r-bamm")
-    (version "0.4.3")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamm" version))
        (sha256
-        (base32 "1dda2inq8afcp09qwqjfkg572glkw9rpf6c477wcrslkcnlpkc9x"))))
+        (base32 "1m48bszhqhzsjnr70pv5lmx19x13gm9nfg1idcr2jrn87xcm8mlb"))))
     (properties `((upstream-name . "bamm")))
     (build-system r-build-system)
     (inputs (list sqlite geos))
@@ -26748,6 +26708,7 @@ models using Bayes factors, and more.")
                              r-rcpp
                              r-raster
                              r-purrr
+                             r-plotly
                              r-matrix
                              r-magrittr
                              r-leaflet
@@ -26755,6 +26716,7 @@ models using Bayes factors, and more.")
                              r-future
                              r-furrr
                              r-dplyr
+                             r-crosstalk
                              r-animation))
     (native-inputs (list r-knitr))
     (home-page "https://luismurao.github.io/bamm/")
@@ -26776,7 +26738,7 @@ occupied area of a species at time t is estimated by the multiplication of three
 binary matrices: one matrix represents movements (M), another abiotic -niche-
 tolerances (A), and a third, biotic interactions (B).  The theoretical
 background of the package can be found in @code{SoberÃ³n} and Osorio-Olvera
-(2022) <@code{arXiv:2212.06308>}.")
+(2023) <doi:10.1111/jbi.14587>.")
     (license license:gpl3+)))
 
 (define-public r-bamlss

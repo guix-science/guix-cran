@@ -3996,13 +3996,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.0.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "01apxwslkyk8v6zqwaf0hl391mcgqi7nmkw3wal757d8dawvdnaj"))))
+        (base32 "0fi1g9lmnh0ynwls7l251z1nbn5kxf8vfr458jkrb9ljg97l6xyx"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-rlang r-rcpparmadillo r-rcpp
@@ -12931,13 +12931,13 @@ general (not R specific) information on the algorithm Leabra see
 (define-public r-ldt
   (package
     (name "r-ldt")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ldt" version))
        (sha256
-        (base32 "0dl9fy83a00rrslg3lp9fa64ps0d3mgll31w1n2m7bn1sq4y75s0"))))
+        (base32 "1l6q5rx8iqcsk8475vv0pxnzgxlf4lklpb1pdy3vmrgyffm644i3"))))
     (properties `((upstream-name . "ldt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tdata r-rdpack r-rcpp r-mass r-bh))

@@ -14057,13 +14057,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "1cqc2mn4f6g18vb8cng0l11w1glyxk3k6sqsdzla0vbwlxs9d5z0"))))
+        (base32 "0j2nqv3l25j39jn6bndj5hafr2k88324jap4zwcx22mxkamb6m8g"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-jsonlite r-geojsonsf
@@ -18306,16 +18306,16 @@ the exact pixel dimensions needed.")
 (define-public r-ggfoundry
   (package
     (name "r-ggfoundry")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfoundry" version))
        (sha256
-        (base32 "06nc6866lzb417z2bdcjy2qv799bfgkbkalgrsvx5nc1ggq2vpxf"))))
+        (base32 "0m7r1845vx3snxadqbg3vxyxsh115h7bi5h3q3x1n4c1nd5y45r7"))))
     (properties `((upstream-name . "ggfoundry")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-lifecycle r-grimport2 r-ggplot2))
+    (propagated-inputs (list r-rlang r-lifecycle r-grimport2 r-ggplot2 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/cgoo4/ggfoundry")
     (synopsis "Shape Foundry & Geom for 'ggplot2'")

@@ -25036,41 +25036,6 @@ were applied in Tewes and Muller (2020) <doi:10.1038/s41598-020-67600-7>.")
 Spanish official statistics with R.")
     (license license:gpl3)))
 
-(define-public r-microdatasus
-  (package
-    (name "r-microdatasus")
-    (version "2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "microdatasus" version))
-       (sha256
-        (base32 "05abgn46qs3l5n67v19fcnllicmcrvxpn1xx95pkdm0b9r5f0kh4"))))
-    (properties `((upstream-name . "microdatasus")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-tibble
-                             r-stringi
-                             r-rlang
-                             r-read-dbc
-                             r-rcurl
-                             r-magrittr
-                             r-lubridate
-                             r-foreign
-                             r-dtplyr
-                             r-dplyr
-                             r-data-table
-                             r-curl
-                             r-cli
-                             r-checkmate))
-    (home-page "https://github.com/rfsaldanha/microdatasus")
-    (synopsis "Download and Process 'DataSUS' Files")
-    (description
-     "Downloads data files from @code{DataSUS} health information systems from
-<ftp.datasus.gov.br> and process the data, including labeling categorical
-variables.")
-    (license license:expat)))
-
 (define-public r-microcran
   (package
     (name "r-microcran")

@@ -11288,13 +11288,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tok" version))
        (sha256
-        (base32 "06nslkpnwf8g21rgk8dbkxazdfg9rg3b62k4q3ha5ljpj16iivmw"))))
+        (base32 "0grnqf0k8vlyfsy8nwaawbyd91l6j8kyvny3cnn8xjgws0pyslli"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (inputs (list))
@@ -18598,13 +18598,13 @@ import, modify, and export tables and templates with little to no code.")
 (define-public r-tfrmt
   (package
     (name "r-tfrmt")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfrmt" version))
        (sha256
-        (base32 "1jz5xvmfi53mki0d0jx5bvlmmz2y6pmmasij4c9jgdpd9p57ryaf"))))
+        (base32 "19ymfvz9pdlrgz2z6mnwz6w4wk7v3mj1pnfzddsy997ii4qh8y5k"))))
     (properties `((upstream-name . "tfrmt")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

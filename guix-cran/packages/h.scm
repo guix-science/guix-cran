@@ -1218,43 +1218,16 @@ hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
 Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
     (license license:gpl2)))
 
-(define-public r-hydflood
-  (package
-    (name "r-hydflood")
-    (version "0.5.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hydflood" version))
-       (sha256
-        (base32 "18gw2jipssaid5q004gyvfk56vgvajv69kd0f6zh2fp7sgq5w33d"))))
-    (properties `((upstream-name . "hydflood")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-sf r-rdpack r-raster r-hyd1d))
-    (native-inputs (list r-knitr))
-    (home-page "https://hydflood.bafg.de")
-    (synopsis "Flood Extents and Durations along the Rivers Elbe and Rhine")
-    (description
-     "Raster based flood modelling internally using hyd1d', an R package to
-interpolate 1d water level and gauging data.  The package computes flood extent
-and durations through strategies originally developed for INFORM', an
-@code{ArcGIS'-based} hydro-ecological modelling framework.  It does not provide
-a full, physical hydraulic modelling algorithm, but a simplified, near real time
-GIS approach for flood extent and duration modelling.  Computationally demanding
-annual flood durations have been computed already and data products were
-published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
-    (license license:gpl2)))
-
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hyd1d" version))
        (sha256
-        (base32 "0ixklk8g3d5bayv4jwprknb1f7pzhxqd60lk8v5j1i6zcpjad0mw"))))
+        (base32 "0k34blmjyradfbrq5j6lqkhs64q80k9a5pdrc3anyvanadcz32af"))))
     (properties `((upstream-name . "hyd1d")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-httr2 r-curl))
@@ -1267,8 +1240,8 @@ gauging data enable 1d water level interpolation.  The S4 class
 (@code{WaterLevelDataFrame}) structures the computation and visualisation of 1d
 water level information along the German federal waterways Elbe and Rhine.
 hyd1d delivers 1d water level data - extracted from the FLYS database - and
-validated gauging data - extracted from the hydrological database @code{HyDaBa}
-- package-internally.  For computations near real time gauging data are queried
+validated gauging data - extracted from the hydrological database WISKI7 -
+package-internally.  For computations near real time gauging data are queried
 externally from the PEGELONLINE REST API
 <https://pegelonline.wsv.de/webservice/@code{dokuRestapi>}.")
     (license license:gpl2+)))

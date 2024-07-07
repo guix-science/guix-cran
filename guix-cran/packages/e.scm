@@ -13052,6 +13052,30 @@ distribution of emissions such as satellite images (Gavidia Calderon et.  al,
 2015) <doi:10.3389/fenvs.2015.00009>.")
     (license license:expat)))
 
+(define-public r-emirt
+  (package
+    (name "r-emirt")
+    (version "0.0.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "emIRT" version))
+       (sha256
+        (base32 "1vdmrad9f0ywrlb3xqwysm8vps5dz9xc3xq6jl82gr6xl3rr54zi"))))
+    (properties `((upstream-name . "emIRT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-pscl))
+    (home-page "https://cran.r-project.org/package=emIRT")
+    (synopsis "EM Algorithms for Estimating Item Response Theory Models")
+    (description
+     "Various Expectation-Maximization (EM) algorithms are implemented for item
+response theory (IRT) models.  The package includes IRT models for binary and
+ordinal responses, along with dynamic and hierarchical IRT models with binary
+responses.  The latter two models are fitted using variational EM. The package
+also includes variational network and text scaling models.  The algorithms are
+described in Imai, Lo, and Olmsted (2016) <DOI:10.1017/S000305541600037X>.")
+    (license license:gpl3+)))
+
 (define-public r-emir
   (package
     (name "r-emir")

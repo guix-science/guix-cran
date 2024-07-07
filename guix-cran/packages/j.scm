@@ -721,13 +721,13 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstager
   (package
     (name "r-jstager")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstager" version))
        (sha256
-        (base32 "0mgh87vm9a7jz7imgqwwwgzzfqkkjxmbdb6lmhzf43p56cg9cxab"))))
+        (base32 "0x6pwpzyls8267f0n62bm9s350wr6770vzh46cz382sri8hx8013"))))
     (properties `((upstream-name . "jstager")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -735,7 +735,8 @@ full-texts delivered by Data for Research by JSTOR.")
                              r-rvest
                              r-openxlsx
                              r-httr
-                             r-dplyr))
+                             r-dplyr
+                             r-chromote))
     (home-page "https://github.com/takeshinishimura/jstager")
     (synopsis "Retrieve Information Published on J-STAGE")
     (description
@@ -746,13 +747,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.2.6")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "1g8qfbm8fxjm48dwmwfgckdsynicbmpnj35yjy34nal98qs5andp"))))
+        (base32 "0gz2cx1qlgq2ghmlk452clhvzqf18ir3bfc81mfg1jb24l7n2129"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2406,13 +2407,13 @@ jamovi platform (see <https://www.jamovi.org> for more information).")
 (define-public r-jmvconnect
   (package
     (name "r-jmvconnect")
-    (version "2.3.13")
+    (version "2.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvconnect" version))
        (sha256
-        (base32 "0b5klfn4986haw3hhy3aarf88g08s1d46b8xrpxxqnwqw8yd7l88"))))
+        (base32 "17zyl1cdkain0l1sl8i1ajysmhm60585w4bjrwjjafz2r0rpydxg"))))
     (properties `((upstream-name . "jmvconnect")))
     (build-system r-build-system)
     (inputs (list))
