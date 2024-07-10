@@ -2760,13 +2760,13 @@ the result can be used in E-prime (<https://pstnet.com/products/e-prime/>).")
 (define-public r-excel-link
   (package
     (name "r-excel-link")
-    (version "0.9.12")
+    (version "0.9.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "excel.link" version))
        (sha256
-        (base32 "0r9f18f3c6jkf6m59c432i7xckd62f3q4xphzrw7j3kiggcbns80"))))
+        (base32 "1inpwdaa2ja4y9xgs3nnkikws55h3h1ac38wcq56lqjaqc6flnlj"))))
     (properties `((upstream-name . "excel.link")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3475,13 +3475,13 @@ value (GEV) distribution.  For details, see Vignotto, E., & Engelke, S. (2018)
 (define-public r-evt0
   (package
     (name "r-evt0")
-    (version "1.1-4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evt0" version))
        (sha256
-        (base32 "0hqsv72wswnmgirhwb671snmg65qb1j77pfvzaqw9mi8lmvqalpq"))))
+        (base32 "08a34p0jbphhwiyxnk0yy830w1xr4dxzqj8bij828kxrhzc30pbb"))))
     (properties `((upstream-name . "evt0")))
     (build-system r-build-system)
     (propagated-inputs (list r-evd))
@@ -6899,13 +6899,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "0rc43xwkn1l5qxkki88d51yp3qbdw2r369f6i04r5yxa042a5kqj"))))
+        (base32 "1mb23j6yhlakzmz2ph6w3wbasjl5wv2l3i8qjg8knkm2h1yg3kgc"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -11905,16 +11905,15 @@ of animals.")
 (define-public r-energyr
   (package
     (name "r-energyr")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "energyr" version))
        (sha256
-        (base32 "0gjw2cvpvhyywxlx3vfkhlh7zjwig46z1zwdc01zxwflvdx3z40n"))))
+        (base32 "0g4zsnpbsgyvkcvsrpwwi17zbkj51zavsps53lsny4wrlwr3fg4v"))))
     (properties `((upstream-name . "energyr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgooglemaps))
     (home-page "https://github.com/paulgovan/energyr")
     (synopsis
      "Data Published by the United States Federal Energy Regulatory Commission")

@@ -284,6 +284,35 @@ applied to the data rather than resampling units from the data.  See Xu et al.
 (2020) <doi:10.1080/00031305.2020.1731599> for details.")
     (license license:gpl2+)))
 
+(define-public r-fvddppkg
+  (package
+    (name "r-fvddppkg")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FVDDPpkg" version))
+       (sha256
+        (base32 "0277cdllqdvkzs888hbn4ygppni09ky64n3pl8gnm244px36fqy5"))))
+    (properties `((upstream-name . "FVDDPpkg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FVDDPpkg")
+    (synopsis "Implement Fleming-Viot-Dependent Dirichlet Processes")
+    (description
+     "This package provides a Bayesian Nonparametric model for the study of
+time-evolving frequencies, which has become renowned in the study of population
+genetics.  The model consists of a Hidden Markov Model (HMM) in which the latent
+signal is a distribution-valued stochastic process that takes the form of a
+finite mixture of Dirichlet Processes, indexed by vectors that count how many
+times each value is observed in the population.  The package implements
+methodologies presented in Ascolani, Lijoi and Ruggiero (2021)
+<doi:10.1214/20-BA1206> and Ascolani, Lijoi and Ruggiero (2023)
+<doi:10.3150/22-BEJ1504> that make it possible to study the process at the time
+of data collection or to predict its evolution in future or in the past.")
+    (license license:lgpl3+)))
+
 (define-public r-fuzzywuzzyr
   (package
     (name "r-fuzzywuzzyr")
@@ -311,13 +340,13 @@ calculate the differences between sequences.")
 (define-public r-fuzzysts
   (package
     (name "r-fuzzysts")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySTs" version))
        (sha256
-        (base32 "0zs1pyn9apysspxa0glqc96h6npmvvhiqvqpcm0brslz0b6xnilp"))))
+        (base32 "01bzkq9aj2afj87vz6vn6i8cs2368ppb5z9fpwlpkyjpp2a0cxsv"))))
     (properties `((upstream-name . "FuzzySTs")))
     (build-system r-build-system)
     (propagated-inputs (list r-polynom r-fuzzynumbers))
@@ -327,26 +356,26 @@ calculate the differences between sequences.")
     (description
      "The main goal of this package is to present various fuzzy statistical tools.  It
 intends to provide an implementation of the theoretical and empirical approaches
-presented in the thesis entitled \"The signed distance measure in fuzzy
-statistical analysis.  Some theoretical, empirical and programming advances\"
-(Thesis to be published soon.  For the theoretical approaches, see Berkachy R.
-and Donze L. (2019) <doi:10.1007/978-3-030-03368-2_1>.  For the empirical
+presented in the book entitled \"The signed distance measure in fuzzy statistical
+analysis.  Some theoretical, empirical and programming advances\" <doi:
+10.1007/978-3-030-76916-1>.  For the theoretical approaches, see Berkachy R. and
+Donze L. (2019) <doi:10.1007/978-3-030-03368-2_1>.  For the empirical
 approaches, see Berkachy R. and Donze L. (2016) <ISBN: 978-989-758-201-1>).
 Important (non-exhaustive) implementation highlights of this package are as
 follows: (1) a numerical procedure to estimate the fuzzy difference and the
 fuzzy square. (2) two numerical methods of fuzzification. (3) a function
 performing different possibilities of distances, including the signed distance
-and the generalized signed distance for instance. (4) numerical estimations of
-fuzzy statistical measures such as the variance, the moment, etc. (5) two
-methods of estimation of the bootstrap distribution of the likelihood ratio in
-the fuzzy context. (6) an estimation of a fuzzy confidence interval by the
-likelihood ratio method. (7) testing fuzzy hypotheses and/or fuzzy data by fuzzy
-confidence intervals in the Kwakernaak - Kruse and Meyer sense. (8) a general
-method to estimate the fuzzy p-value with fuzzy hypotheses and/or fuzzy data.
-(9) a method of estimation of global and individual evaluations of linguistic
-questionnaires. (10) numerical estimations of multi-ways analysis of variance
-models in the fuzzy context.  The unbalance in the considered designs are also
-foreseen.")
+and the generalized signed distance for instance with all its properties. (4)
+numerical estimations of fuzzy statistical measures such as the variance, the
+moment, etc. (5) two methods of estimation of the bootstrap distribution of the
+likelihood ratio in the fuzzy context. (6) an estimation of a fuzzy confidence
+interval by the likelihood ratio method. (7) testing fuzzy hypotheses and/or
+fuzzy data by fuzzy confidence intervals in the Kwakernaak - Kruse and Meyer
+sense. (8) a general method to estimate the fuzzy p-value with fuzzy hypotheses
+and/or fuzzy data. (9) a method of estimation of global and individual
+evaluations of linguistic questionnaires. (10) numerical estimations of
+multi-ways analysis of variance models in the fuzzy context.  The unbalance in
+the considered designs are also foreseen.")
     (license license:expat)))
 
 (define-public r-fuzzystattraeoo
@@ -4935,6 +4964,73 @@ Currently supports: gamma, power variance function, log-normal, and inverse
 Gaussian frailty models.")
     (license license:lgpl2.0)))
 
+(define-public r-frailtypack
+  (package
+    (name "r-frailtypack")
+    (version "3.6.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "frailtypack" version))
+       (sha256
+        (base32 "06nwm4dvhszg2843d75rf42wrrglmlqg61baz7zpymxq4717chj4"))))
+    (properties `((upstream-name . "frailtypack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-survc1
+                             r-statmod
+                             r-shiny
+                             r-rootsolve
+                             r-nlme
+                             r-mass
+                             r-doby
+                             r-boot))
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://cran.r-project.org/package=frailtypack")
+    (synopsis
+     "Shared, Joint (Generalized) Frailty Models; Surrogate Endpoints")
+    (description
+     "The following several classes of frailty models using a penalized likelihood
+estimation on the hazard function but also a parametric estimation can be fit
+using this R package: 1) A shared frailty model (with gamma or log-normal
+frailty distribution) and Cox proportional hazard model.  Clustered and
+recurrent survival times can be studied.  2) Additive frailty models for
+proportional hazard models with two correlated random effects (intercept random
+effect with random slope).  3) Nested frailty models for hierarchically
+clustered data (with 2 levels of clustering) by including two iid gamma random
+effects.  4) Joint frailty models in the context of the joint modelling for
+recurrent events with terminal event for clustered data or not.  A joint frailty
+model for two semi-competing risks and clustered data is also proposed.  5)
+Joint general frailty models in the context of the joint modelling for recurrent
+events with terminal event data with two independent frailty terms.  6) Joint
+Nested frailty models in the context of the joint modelling for recurrent events
+with terminal event, for hierarchically clustered data (with two levels of
+clustering) by including two iid gamma random effects.  7) Multivariate joint
+frailty models for two types of recurrent events and a terminal event.  8) Joint
+models for longitudinal data and a terminal event.  9) Trivariate joint models
+for longitudinal data, recurrent events and a terminal event.  10) Joint frailty
+models for the validation of surrogate endpoints in multiple randomized clinical
+trials with failure-time and/or longitudinal endpoints with the possibility to
+use a mediation analysis model.  11) Conditional and Marginal two-part joint
+models for longitudinal semicontinuous data and a terminal event.  12) Joint
+frailty-copula models for the validation of surrogate endpoints in multiple
+randomized clinical trials with failure-time endpoints.  13) Generalized shared
+and joint frailty models for recurrent and terminal events.  Proportional
+hazards (PH), additive hazard (AH), proportional odds (PO) and probit models are
+available in a fully parametric framework.  For PH and AH models, it is possible
+to consider type-varying coefficients and flexible semiparametric hazard
+function.  Prediction values are available (for a terminal event or for a new
+recurrent event).  Left-truncated (not for Joint model), right-censored data,
+interval-censored data (only for Cox proportional hazard and shared frailty
+model) and strata are allowed.  In each model, the random effects have the gamma
+or normal distribution.  Now, you can also consider time-varying covariates
+effects in Cox, shared and joint frailty models (1-5).  The package includes
+concordance measures for Cox proportional hazards models and for shared frailty
+models.  14) Competing Joint Frailty Model: A single type of recurrent event and
+two terminal events.  Moreover, the package can be used with its shiny
+application, in a local mode or by following the link below.")
+    (license license:gpl2+)))
+
 (define-public r-frailtymmpen
   (package
     (name "r-frailtymmpen")
@@ -6173,13 +6269,13 @@ models of speciation, preservation and sampling.")
 (define-public r-fossilbrush
   (package
     (name "r-fossilbrush")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fossilbrush" version))
        (sha256
-        (base32 "0h5grarpk6ml07gxb3bmb93fys55f6pp4qr60fqq97zx1lg9hns4"))))
+        (base32 "056krpxsx0gz47py6v2ldik74gsnhbc1d0v144i7v4f4qcm14hs1"))))
     (properties `((upstream-name . "fossilbrush")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -6187,8 +6283,7 @@ models of speciation, preservation and sampling.")
                              r-pbapply
                              r-matrix
                              r-igraph
-                             r-data-table
-                             r-curl))
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=fossilbrush")
     (synopsis "Automated Cleaning of Fossil Occurrence Data")
@@ -6926,26 +7021,28 @@ Husch (2016). <doi:10.1002/9781118902028>.")
 (define-public r-forestly
   (package
     (name "r-forestly")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestly" version))
        (sha256
-        (base32 "1pbq60agq62aiqgg48r92zpk89y74x80hwidqivjrmjkpjx92sgj"))))
+        (base32 "0ihn48bmnlhjqwvaxzinfdbnzjz9cqn3amw0gnyqzdlai81md3dx"))))
     (properties `((upstream-name . "forestly")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-uuid
+                             r-rlang
                              r-reactr
                              r-reactable
                              r-metalite-ae
                              r-metalite
                              r-htmltools
                              r-glue
+                             r-ggplot2
                              r-crosstalk
                              r-brew))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=forestly")
+    (home-page "https://merck.github.io/forestly/")
     (synopsis "Interactive Forest Plot")
     (description
      "Interactive forest plot for clinical trial safety analysis using metalite',
@@ -14101,13 +14198,13 @@ wrapper functions for the R package `@code{AlphaSimR`}.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.3.7")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FielDHub" version))
        (sha256
-        (base32 "1w0hwqah5h41423sc6ggcwcsxczwy0bs7mc2zy98g1fhsnk3ipfj"))))
+        (base32 "1fyqpw7815vikpdam1mpx03bbswlhkqq36zckrz6887jbvwkjm79"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -18183,6 +18280,38 @@ larger-than-memory processing, and compilation of R code are listed in the
 README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
     (license license:gpl3)))
 
+(define-public r-fastutils
+  (package
+    (name "r-fastutils")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FastUtils" version))
+       (sha256
+        (base32 "03j4pv1vqcr5xy48mr7xrcv9zlk5jypxyz7kfgvqpigwhq8yzry2"))))
+    (properties `((upstream-name . "FastUtils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usethis
+                             r-testthat
+                             r-rlang
+                             r-rcpp
+                             r-lifecycle
+                             r-hash
+                             r-ggplot2
+                             r-dplyr
+                             r-devtools
+                             r-biocmanager
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Qile0317/FastUtils")
+    (synopsis "Fast, Readable Utility Functions")
+    (description
+     "This package provides a wide variety of tools for general data analysis,
+wrangling, spelling, statistics, visualizations, package development, and more.
+All functions have vectorized implementations whenever possible.")
+    (license license:expat)))
+
 (define-public r-fastts
   (package
     (name "r-fastts")
@@ -18221,13 +18350,13 @@ Emergency Department with concurrent local temperature.")
 (define-public r-fasttopics
   (package
     (name "r-fasttopics")
-    (version "0.6-186")
+    (version "0.6-192")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastTopics" version))
        (sha256
-        (base32 "12dc6l9n7h4hgqqbl19hicgmv7hp71068d9cfnsl80ax4xf1723d"))))
+        (base32 "17dydlgwzdd4n0d4xjz64z8w4vrmrfn3lqx128840x7zvgg0kg38"))))
     (properties `((upstream-name . "fastTopics")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot
@@ -18263,7 +18392,8 @@ compare, annotate and visualize model fits, including functions to efficiently
 create \"structure plots\" and identify key features in topics.  The
 @code{fastTopics} package is a successor to the @code{CountClust} package.  For
 more information, see <doi:10.48550/@code{arXiv.2105.13440>} and
-<doi:10.1186/s13059-023-03067-9>.")
+<doi:10.1186/s13059-023-03067-9>.  Please also see the @code{GitHub} repository
+for additional vignettes not included in the package on CRAN.")
     (license license:bsd-2)))
 
 (define-public r-fasttime
@@ -18525,49 +18655,6 @@ where m is the number of edges, a dramatic improvement over element-wise
 algorithms that which require O(n^2) operations to sample a random graph, where
 n is the number of nodes.")
     (license license:expat)))
-
-(define-public r-fastret
-  (package
-    (name "r-fastret")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FastRet" version))
-       (sha256
-        (base32 "141yww9ql4fhkgiazh9vp6axq4sqvzh4fssm0fmn812hmybmlkzi"))))
-    (properties `((upstream-name . "FastRet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xlsx
-                             r-xgboost
-                             r-shinyjs
-                             r-shinyhelper
-                             r-shinybusy
-                             r-shiny
-                             r-readxl
-                             r-rcdk
-                             r-promises
-                             r-htmltools
-                             r-glmnet
-                             r-ggplot2
-                             r-future
-                             r-dt
-                             r-digest
-                             r-data-table
-                             r-cluster
-                             r-caret
-                             r-bslib))
-    (home-page "https://github.com/spang-lab/FastRet/")
-    (synopsis "Retention Time Prediction in Liquid Chromatography")
-    (description
-     "This package provides a framework for predicting retention times in liquid
-chromatography.  Users can train custom models for specific chromatography
-columns, predict retention times using existing models, or adjust existing
-models to account for altered experimental conditions.  The provided
-functionalities can be accessed either via the R console or via a graphical user
-interface.  Related work: Bonini et al. (2020)
-<doi:10.1021/acs.analchem.9b05765>.")
-    (license license:gpl3)))
 
 (define-public r-fastrep
   (package
@@ -21165,6 +21252,48 @@ protected attribute.  The procedure uses tree ensembles for quantile regression.
 Generalized Linear Models\", first edition, by Ludwig Fahrmeir and Gerhard Tutz.
 Useful when using the book.")
     (license license:gpl2+)))
+
+(define-public r-fafa
+  (package
+    (name "r-fafa")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FAfA" version))
+       (sha256
+        (base32 "1cqfbd49pqn132l6nhp9v8jqj2vjkbsrzcph593n15vvgw3xbl2v"))))
+    (properties `((upstream-name . "FAfA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinydashboard
+                             r-shinycssloaders
+                             r-shiny
+                             r-psych
+                             r-magrittr
+                             r-lavaan
+                             r-golem
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=FAfA")
+    (synopsis "Factor Analysis for All")
+    (description
+     "This Shiny application offers researchers a comprehensive tool for performing
+factor analysis.  Users can upload datasets, validate assumptions, manage
+missing and outlier data, split data for different analyses, and run exploratory
+and confirmatory factor analyses (\"EFA\" and \"CFA\").  The software also offers
+reliability analysis, exploratory graph analysis, and item weighting.  With a
+user-friendly interface, this tool simplifies the EFA and CFA processes.  The
+main features are data submission and simple data inspection.  Data manipulation
+(excluding variables, splitting data, checking for outliers), assumption
+checking (Tabachnik & Fidell (2012) <ISBN:978-0-205-84957-4> and Field (2009)
+<ISBN:978-1-84787-906-6>) for factor analysis, exploratory factor analysis (with
+various factor number determination methods (Lorenzo-Seva & Ferrando (2021)
+<doi:10.5964/meth.7185>)), confirmatory factor analysis (model definition and
+modification suggestions (Kline (2011) <ISBN:978-1-60623-877-6>)), reliability
+analysis (Cronbach's alpha, @code{McDonald's} omega, Armor's theta, structural
+reliability, stratified alpha), item weighting (Kilic & Dogan (2019)
+<doi:10.21031/epod.516057>).")
+    (license license:gpl3)))
 
 (define-public r-faersquarterlydata
   (package

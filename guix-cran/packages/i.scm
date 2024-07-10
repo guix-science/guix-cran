@@ -7150,20 +7150,19 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
 (define-public r-interactionpower
   (package
     (name "r-interactionpower")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "InteractionPoweR" version))
        (sha256
-        (base32 "1mff2kasdrkk56xqvw66m8sn6186dk0nbv8bx0izpr5qf9dz308q"))))
+        (base32 "12bnmsx9xf5124vfnbpmfwsswaifaywbg26prsmmsmkjiarplfvl"))))
     (properties `((upstream-name . "InteractionPoweR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-polynom
                              r-matrix
-                             r-mass
                              r-ggplot2
                              r-ggbeeswarm
                              r-foreach
@@ -7174,16 +7173,17 @@ Assmann et al. (1996), [<doi:10.1097/00001648-199605000-00012>]).")
     (synopsis
      "Power Analyses for Interaction Effects in Cross-Sectional Regressions")
     (description
-     "Power analysis for regression models which test the interaction of two
+     "Power analysis for regression models which test the interaction of two or three
 independent variables on a single dependent variable.  Includes options for
-continuous, binary, or ordinal variables, as well as correlated interacting
-variables.  Also includes options to specify variable reliability.  Power
+correlated interacting variables and specifying variable reliability.  Two-way
+interactions can include continuous, binary, or ordinal variables.  Power
 analyses can be done either analytically or via simulation.  Includes tools for
 simulating single data sets and visualizing power analysis results.  The primary
-functions are power_interaction_r2() and power_interaction().  Please cite as:
-Baranger DAA, Finsaas MC, Goldstein BL, Vize CE, Lynam DR, Olino TM (2022).
-\"Tutorial: Power analyses for interaction effects in cross-sectional
-regressions.\" <doi:10.31234/osf.io/5ptd7>.")
+functions are power_interaction_r2() and power_interaction() for two-way
+interactions, and power_interaction_3way_r2() for three-way interactions.
+Please cite as: Baranger DAA, Finsaas MC, Goldstein BL, Vize CE, Lynam DR, Olino
+TM (2023). \"Tutorial: Power analyses for interaction effects in cross-sectional
+regressions.\" <doi:10.1177/25152459231187531>.")
     (license license:gpl3+)))
 
 (define-public r-intensitynet

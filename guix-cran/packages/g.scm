@@ -2060,13 +2060,13 @@ as Kendall tau correlation or sensitivity.")
 (define-public r-gt
   (package
     (name "r-gt")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gt" version))
        (sha256
-        (base32 "11rkrkj9ic8wl0jbzigyrsb31crqbz1gpmb9qmavg424vpi60ry5"))))
+        (base32 "1jg9kg2b1qig1awfgnb5fi54qjmvl2qw1ny0l4vsqh87c2f3yij3"))))
     (properties `((upstream-name . "gt")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -2848,13 +2848,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.2")
+    (version "3.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "171xbfyrnrsncg4znd8m0r1r9kxrdcxrs03ncmchq1qifq5nc4al"))))
+        (base32 "1n91kzsqvi148fllmjb3nni10gkpf112fb35z3ir9wakzmp16v4a"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -11752,17 +11752,17 @@ performance of global optimization algorithms.")
 (define-public r-globalkinhom
   (package
     (name "r-globalkinhom")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "globalKinhom" version))
        (sha256
-        (base32 "0xs1s8gp8786w1n69hbxffi7sw9hyhgb8kp3h4q85b1rlrkqsn4p"))))
+        (base32 "12y9pc78mw5ry7plb86a4af6lycyn177biqcdrxs1s90qx7fmp4b"))))
     (properties `((upstream-name . "globalKinhom")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random r-spatstat-geom
-                             r-spatstat-explore))
+    (propagated-inputs (list r-spatstat-univar r-spatstat-random
+                             r-spatstat-geom r-spatstat-explore))
     (home-page "https://cran.r-project.org/package=globalKinhom")
     (synopsis
      "Inhomogeneous K- And Pair Correlation Functions Using Global Estimators")
@@ -11770,7 +11770,8 @@ performance of global optimization algorithms.")
      "Second-order summary statistics K- and pair-correlation functions describe
 interactions in point pattern data.  This package provides computations to
 estimate those statistics on inhomogeneous point processes, using the methods of
-in T Shaw, J MÃ¸ller, R Waagepetersen, 2020 <@code{arXiv:2004.00527>}.")
+in T Shaw, J MÃ¸ller, R Waagepetersen, 2020
+<doi:10.48550/@code{arXiv.2004.00527>}.")
     (license license:gpl2+)))
 
 (define-public r-glmxdiag
@@ -13396,6 +13397,35 @@ intercept.  Also provided are functions, @code{glamlassoRR}() and
 @code{glamlassoS}(), fitting special cases of GLAMs.")
     (license license:gpl3)))
 
+(define-public r-glam
+  (package
+    (name "r-glam")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "glam" version))
+       (sha256
+        (base32 "0fwh6x1y1d7fi0d4qh0vdmlr324zqil91zmi79w2mxs9q1w9a2ws"))))
+    (properties `((upstream-name . "glam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gam))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=glam")
+    (synopsis "Generalized Additive and Linear Models (GLAM)")
+    (description
+     "This package contains methods for fitting Generalized Linear Models (GLMs) and
+Generalized Additive Models (GAMs).  Generalized regression models are common
+methods for handling data for which assuming Gaussian-distributed errors is not
+appropriate.  For instance, if the response of interest is binary, count, or
+proportion data, one can instead model the expectation of the response based on
+an appropriate data-generating distribution.  This package provides methods for
+fitting GLMs and GAMs under Beta regression, Poisson regression, Gamma
+regression, and Binomial regression (currently GLM only) settings.  Models are
+fit using local scoring algorithms described in Hastie and Tibshirani (1990)
+<doi:10.1214/ss/1177013604>.")
+    (license license:expat)))
+
 (define-public r-gkrls
   (package
     (name "r-gkrls")
@@ -13734,13 +13764,13 @@ or used on <https://about.gitlab.com>.")
 (define-public r-gitignore
   (package
     (name "r-gitignore")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gitignore" version))
        (sha256
-        (base32 "1cjfqbch614w75lxc8pw44aryxgcswbhydd48q10ch128x2gvw5a"))))
+        (base32 "047626a31rksyqcxfkvn1rpyv6gbls0b72blaifmy37nhrmwgykz"))))
     (properties `((upstream-name . "gitignore")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -13749,9 +13779,8 @@ or used on <https://about.gitlab.com>.")
                              r-here
                              r-glue
                              r-curl
-                             r-crayon
-                             r-clisymbols
-                             r-clipr))
+                             r-clipr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/gitignore/")
     (synopsis "Create Useful .gitignore Files for your Project")
@@ -21970,13 +21999,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0v3mwngmsqqbjbg1hwl993263r98hb60b5slaa3mhcsbchyfhcwf"))))
+        (base32 "0hqj4ddil9qf15vi65lrs6qk4y9v4mdj70iajm734skm95pi1l0l"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -22297,13 +22326,13 @@ map, USA map, Coso map, Japan Map.")
 (define-public r-geomap
   (package
     (name "r-geomap")
-    (version "2.5-5")
+    (version "2.5-11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GEOmap" version))
        (sha256
-        (base32 "0gs8zd8rcdxgz0pm3nlynf4qy8axfsv7syagb22zi8yd4s4sf5wa"))))
+        (base32 "1h6f8wyf3p5a0mr5mvm7cv9v67gjfyzip1fw4rsqx6zkc9nyaswp"))))
     (properties `((upstream-name . "GEOmap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rpmg r-mba r-fields))
@@ -23023,19 +23052,20 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "0kbjyk9al54y2k9w96rpchv2gwk5f96g6a536fp4sfbhqlmpc0f3"))))
+        (base32 "0q15n8gp3mcmimj9glas4nw0xd8hajvkh88rz0kz29242p94afn3"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
                              r-tidyselect
                              r-tidyr
                              r-terra
+                             r-spatstat-univar
                              r-spatstat-model
                              r-spatstat-geom
                              r-spatstat-explore
@@ -25172,16 +25202,15 @@ skewed symmetric models and arc tan models.")
 (define-public r-genderstat
   (package
     (name "r-genderstat")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genderstat" version))
        (sha256
-        (base32 "02g9hhy17m3fdvg6hkl8l2njzys6z3xssdwb094q31kffl987bqx"))))
+        (base32 "05i89xn1r94q53rnw5njj19nmix2ldywkadvinfc47nn60h6zfgx"))))
     (properties `((upstream-name . "genderstat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-ggplot2 r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=genderstat")
     (synopsis "Quantitative Analysis Tools for Gender Studies")
@@ -25189,11 +25218,10 @@ skewed symmetric models and arc tan models.")
      "This package provides tools for quantitative analysis in gender studies,
 including functions to calculate various gender inequality metrics such as the
 Gender Pay Gap, Gender Inequality Index (GII), Gender Development Index (GDI),
-and Gender Empowerment Measure (GEM).  Also includes extracted real datasets for
-practice and learning purposes, which were obtained from the UNDP Human
-Development Reports Data Center
-<https://hdr.undp.org/data-center/documentation-and-downloads> and the World
-Bank Gender Data Portal <https://genderdata.worldbank.org/indicators/>.
+and Gender Empowerment Measure (GEM).  Also includes extracted secondary example
+datasets for practice and learning purposes, which were obtained from the UNDP
+Human Development Reports Data Center and the World Bank Gender Data Portal by
+the author the dataset is available on <doi:10.34740/kaggle/dsv/6359326>.
 References: Miller, Kevin; Vagins, Deborah J. (2021)
 <https://eric.ed.gov/?id=ED596219>.  Jacques Charmes & Saskia Wieringa (2003)
 <doi:10.1080/1464988032000125773>. @code{GaÃ«lle} Ferrant (2010)
@@ -26558,6 +26586,34 @@ individual-level infectious disease transmission in
 Susceptible-Infected-Recovered (SIR) framework.")
     (license license:expat)))
 
+(define-public r-gdilm-me
+  (package
+    (name "r-gdilm-me")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GDILM.ME" version))
+       (sha256
+        (base32 "1gq2snfbmzfddh3bnga26p37ywahqxq5mnnmr3in8an3x5fdpw2v"))))
+    (properties `((upstream-name . "GDILM.ME")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psych
+                             r-numderiv
+                             r-ngspatial
+                             r-mvtnorm
+                             r-mass
+                             r-corpcor))
+    (home-page "https://cran.r-project.org/package=GDILM.ME")
+    (synopsis "Spatial Modeling of Infectious Diseases with Co-Variate Error")
+    (description
+     "This package provides tools for simulating from spatial modeling of individual
+level of infectious disease transmission when co-variates measured with error,
+and carrying out infectious disease data analyses with the same models.  The
+epidemic models considered are distance-based model within
+Susceptible-Infectious-Removed (SIR) compartmental frameworks.")
+    (license license:expat)))
+
 (define-public r-gdiff
   (package
     (name "r-gdiff")
@@ -26976,13 +27032,13 @@ to quantify model sensitivities.")
 (define-public r-gcplyr
   (package
     (name "r-gcplyr")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gcplyr" version))
        (sha256
-        (base32 "0j584jh0kqwazgfk12gfbvivqhfgi3gb9hbw55fgv36an4x7q22h"))))
+        (base32 "04g8p92aw8ihndlrlxlhvhrqgqv9x6izykpfs8rfn1jc3bisbyyd"))))
     (properties `((upstream-name . "gcplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-dplyr))

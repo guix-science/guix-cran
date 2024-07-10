@@ -794,13 +794,13 @@ history data (e.g. FHX).  Described in Malevich et al. (2018)
 (define-public r-burgle
   (package
     (name "r-burgle")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "burgle" version))
        (sha256
-        (base32 "11696f86vh2iflc6fignvip206kfsh3hh17x764jgng587v59zz2"))))
+        (base32 "05i5n3a9l087wcyvgdf638961i19d939zfv3d58h3cxhxsnyn4c4"))))
     (properties `((upstream-name . "burgle")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-riskregression r-mass))
@@ -7020,6 +7020,39 @@ explanation of the Gaussian case.")
     (license (list license:lgpl2.1
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-boomer
+  (package
+    (name "r-boomer")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "boomer" version))
+       (sha256
+        (base32 "1v3fiif0xrrpvl9m7mbqn3c3nv04r0xxsa0fji6grzk6prqw9zqd"))))
+    (properties `((upstream-name . "boomer")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'set-HOME
+                    (lambda _
+                      (setenv "HOME" "/tmp"))))))
+    (propagated-inputs (list r-withr
+                             r-styler
+                             r-rstudioapi
+                             r-rlang
+                             r-pryr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/moodymudskipper/boomer")
+    (synopsis "Debugging Tools to Inspect the Intermediate Steps of a Call")
+    (description
+     "This package provides debugging tools that let you inspect the intermediate
+results of a call.  The output looks as if we explode a call into its parts
+hence the package name.")
+    (license license:gpl3)))
+
 (define-public r-boom
   (package
     (name "r-boom")
@@ -11242,17 +11275,17 @@ biplots.")
 (define-public r-biplotez
   (package
     (name "r-biplotez")
-    (version "1.2.0")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotEZ" version))
        (sha256
-        (base32 "0fhafa00x1vj8lvhjm10daw8an62jsycsiq31skm547ig09fccym"))))
+        (base32 "0wdsxipgfjdfa09zilqzzhpa36wg48z4alf3p7a8vgg9458igblb"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
-    (propagated-inputs (list r-withr r-ggrepel r-ggplot2))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-withr r-plotrix))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://cran.r-project.org/package=biplotEZ")
     (synopsis "EZ-to-Use Biplots")
     (description
@@ -15957,13 +15990,13 @@ is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.6")
+    (version "2.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "1grpmgihy620sdxazw03fcbjm96ik7lh191nj6da4jbjzgn7hwy5"))))
+        (base32 "1djccjwknghq33kzdyisfk0gxcqd54fmwad59kadgp39fah9hz9k"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16997,25 +17030,28 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betareg
   (package
     (name "r-betareg")
-    (version "3.1-4")
+    (version "3.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betareg" version))
        (sha256
-        (base32 "00c1l5ah74vf7ljpja4iwyf9cwcvb1c835hmc98jp2x6jrh9h1ji"))))
+        (base32 "1r5k0y6lyrygbwzjf5y882rdwf1dr17cppj1vy8fiyysn6zrxd0h"))))
     (properties `((upstream-name . "betareg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-modeltools r-lmtest r-formula
                              r-flexmix))
-    (home-page "https://cran.r-project.org/package=betareg")
+    (home-page "https://betareg.R-Forge.R-project.org/")
     (synopsis "Beta Regression")
     (description
-     "Beta regression for modeling beta-distributed dependent variables, e.g., rates
-and proportions.  In addition to maximum likelihood regression (for both mean
-and precision of a beta-distributed response), bias-corrected and bias-reduced
-estimation as well as finite mixture models and recursive partitioning for beta
-regressions are provided.")
+     "Beta regression for modeling beta-distributed dependent variables on the open
+unit interval (0, 1), e.g., rates and proportions, see Cribari-Neto and Zeileis
+(2010) <doi:10.18637/jss.v034.i02>.  Moreover, extended-support beta regression
+models can accommodate dependent variables with boundary observations at 0
+and/or 1.  For the classical beta regression model, alternative specifications
+are provided: Bias-corrected and bias-reduced estimation, finite mixture models,
+and recursive partitioning for beta regression, see @code{GrÃ¼n}, Kosmidis, and
+Zeileis (2012) <doi:10.18637/jss.v048.i11>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-betaper
@@ -20606,21 +20642,24 @@ now can be used with Seurat seamlessly.")
 (define-public r-bbk
   (package
     (name "r-bbk")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bbk" version))
        (sha256
-        (base32 "0dhbpc051xs1mz778a56h269ykwnlgh33k4cj88c2mb2rifmw9fa"))))
+        (base32 "1dnr024app4xp7qj777vzia72jjc8ak128dcd27879cqfzixail5"))))
     (properties `((upstream-name . "bbk")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-httr2))
     (home-page "https://m-muecke.github.io/bbk/")
-    (synopsis "Client for the Bundesbank API")
+    (synopsis
+     "Client for the Deutsche Bundesbank and European Central Bank APIs")
     (description
      "Download data and metadata from the Bundesbank SDMX Web Service API found at
-<https://www.bundesbank.de/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data>.")
+<https://www.bundesbank.de/en/statistics/time-series-databases/help-for-sdmx-web-service/web-service-interface-data>
+and the ECB Data Portal API found at
+<https://data.ecb.europa.eu/help/api/overview>.")
     (license license:expat)))
 
 (define-public r-bbi
@@ -25103,6 +25142,31 @@ distances, trees, convex-hulls or kernel density n-dimensional hypervolumes
 depicting species relationships.  Cardoso et al. (2015)
 <doi:10.1111/2041-210X.12310>.")
     (license license:gpl3)))
+
+(define-public r-basta
+  (package
+    (name "r-basta")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BaSTA" version))
+       (sha256
+        (base32 "1db4qyg6dmcq2mzmf55n3lxxqk4i7jfz9s32560754h9n0y1l92p"))))
+    (properties `((upstream-name . "BaSTA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-snowfall))
+    (home-page "https://cran.r-project.org/package=BaSTA")
+    (synopsis
+     "Age-Specific Bayesian Survival Trajectory Analysis from Incomplete Census or Capture-Recapture/Recovery Data")
+    (description
+     "Estimates survival and mortality with covariates from census or
+capture-recapture/recovery data in a Bayesian framework when many individuals
+are of unknown age.  It includes tools for data checking, model diagnostics and
+outputs such as life-tables and plots, as described in Colchero, Jones, and
+Rebke (2012) <doi:10.1111/j.2041-210X.2012.00186.x> and Colchero et al. (2021)
+<doi:10.1038/s41467-021-23894-3>.")
+    (license license:gpl3+)))
 
 (define-public r-bass
   (package

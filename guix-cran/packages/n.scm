@@ -14939,6 +14939,29 @@ R package uses the Nasdaq Data Link API. For more information go to
 <https://data.nasdaq.com/tools/r>.")
     (license license:expat)))
 
+(define-public r-nascar-data
+  (package
+    (name "r-nascar-data")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nascaR.data" version))
+       (sha256
+        (base32 "0hipjm9xxskmb8qvipvsiry5qmfpw7blnyip9ldx3xnjik7lx87c"))))
+    (properties `((upstream-name . "nascaR.data")))
+    (build-system r-build-system)
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/kyleGrealis/nascaR.data/")
+    (synopsis "NASCAR Race Data")
+    (description
+     "This package provides a collection of NASCAR race, driver, owner and
+manufacturer data across the three major NASCAR divisions: NASCAR Cup Series,
+NASCAR Xfinity Series, and NASCAR Craftsman Truck Series.  The curated data
+begins with the 1949 season and extends through the end of the 2023 season.
+Data was sourced with permission from @code{DriverAverages.com}.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-nasaweather
   (package
     (name "r-nasaweather")

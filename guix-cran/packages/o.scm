@@ -3895,13 +3895,13 @@ package has been developed using concept of Wang et al. (2022)
 (define-public r-optisel
   (package
     (name "r-optisel")
-    (version "2.0.8")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optiSel" version))
        (sha256
-        (base32 "1fgh9lb4pmis8wm9vr5p7883xnhx50r5a2swdy2vlhwpgcc3caqz"))))
+        (base32 "0n1snxh05dsrgcgzl5xm65ghixja8yb1kbkxws9i0i1zy7qm6kzp"))))
     (properties `((upstream-name . "optiSel")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -5217,13 +5217,13 @@ elaborado por la Universidad Torcuato Di Tella.")
 (define-public r-opi
   (package
     (name "r-opi")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OPI" version))
        (sha256
-        (base32 "05x8879c2db82byvg9w2fkmqfl89gxn87gpj5h784wg5bwigc3kn"))))
+        (base32 "19fgfkd8zf8r7cqmkqvhzkv8lwnbg33cvm8kapqp7sb6g4i3qk1x"))))
     (properties `((upstream-name . "OPI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-openssl r-jsonlite r-abind))
@@ -5331,13 +5331,13 @@ Lugosi (2006) <doi:10.1017/CBO9780511546921> for an overview.")
 (define-public r-openxlsx2
   (package
     (name "r-openxlsx2")
-    (version "1.7")
+    (version "1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openxlsx2" version))
        (sha256
-        (base32 "0kkkb755z2wqyjszpqsq3db489qblbkq733lr83sj01b00chw0sy"))))
+        (base32 "1gicp19n8y4hid0mh3yig9cx6p0b25f56v6ndb4pggzzlff3s994"))))
     (properties `((upstream-name . "openxlsx2")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-stringi r-rcpp r-r6 r-magrittr))

@@ -252,13 +252,13 @@ consistent with wood formation mechanisms through time.")
 (define-public r-dynsurv
   (package
     (name "r-dynsurv")
-    (version "0.4-6")
+    (version "0.4-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynsurv" version))
        (sha256
-        (base32 "0nxksy8q1r82qak77sb99kpwhq011d4jh4iicc7c0iin04r5nym4"))))
+        (base32 "0rp51kr6rsfqdcl4gswqz56ppnxa81ak023x3gdxsdf4p9jjhdcy"))))
     (properties `((upstream-name . "dynsurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -1910,13 +1910,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.0.0")
+    (version "1.0.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "08hcrbfcf76d7dbgngzz48l07ahzkf9vkb236h06mw9k820dlzm5"))))
+        (base32 "1aac9ms2cscnr48z70bngrwfbdi3rljr80sganfvrp4imvfdqzlq"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -3308,20 +3308,22 @@ APIs, including @code{OpenTopography}
 (define-public r-dsmolgenisarmadillo
   (package
     (name "r-dsmolgenisarmadillo")
-    (version "2.0.5")
+    (version "2.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DSMolgenisArmadillo" version))
        (sha256
-        (base32 "0bz0gkymd49sswwkj9hq9b6d0dcny74r70fsbpr2s189j5kx98ns"))))
+        (base32 "0myhpkblj8dl1csqd91wk7xr4zvnk400ygqbwbajayjn6l7dvqmd"))))
     (properties `((upstream-name . "DSMolgenisArmadillo")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
                              r-stringr
                              r-molgenisauth
+                             r-jsonlite
                              r-httr
                              r-dsi
+                             r-dplyr
                              r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/molgenis/molgenis-r-datashield/")
@@ -6890,33 +6892,34 @@ optimal experimental design.")
 (define-public r-dosearch
   (package
     (name "r-dosearch")
-    (version "1.0.8")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dosearch" version))
        (sha256
-        (base32 "1jymk03snrfmr9da7h7l9823mzlcn6y4z6ay6nzi82n08d9xmp06"))))
+        (base32 "0m7ic713l2dbxfq39z3fh8lfsazjlhn9i5fpcj311brd2zjs46xh"))))
     (properties `((upstream-name . "dosearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=dosearch")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/santikka/dosearch")
     (synopsis
      "Causal Effect Identification from Multiple Incomplete Data Sources")
     (description
      "Identification of causal effects from arbitrary observational and experimental
 probability distributions via do-calculus and standard probability manipulations
-using a search-based algorithm by Tikka et al. (2021)
+using a search-based algorithm by Tikka, Hyttinen and Karvanen (2021)
 <doi:10.18637/jss.v099.i05>.  Allows for the presence of mechanisms related to
-selection bias (Bareinboim, E. and Tian, J. (2015)
-<http://ftp.cs.ucla.edu/pub/stat_ser/r445.pdf>), transportability (Bareinboim,
-E. and Pearl, J. (2014) <http://ftp.cs.ucla.edu/pub/stat_ser/r443.pdf>), missing
-data (Mohan, K. and Pearl, J. and Tian., J. (2013)
-<http://ftp.cs.ucla.edu/pub/stat_ser/r410.pdf>) and arbitrary combinations of
-these.  Also supports identification in the presence of context-specific
-independence (CSI) relations through labeled directed acyclic graphs (LDAG).
-For details on CSIs see Corander et al. (2019) <doi:10.1016/j.apal.2019.04.004>.")
-    (license license:gpl2+)))
+selection bias (Bareinboim and Tian, 2015) <doi:10.1609/aaai.v29i1.9679>,
+transportability (Bareinboim and Pearl, 2014)
+<http://ftp.cs.ucla.edu/pub/stat_ser/r443.pdf>, missing data (Mohan, Pearl, and
+Tian, 2013) <http://ftp.cs.ucla.edu/pub/stat_ser/r410.pdf>) and arbitrary
+combinations of these.  Also supports identification in the presence of
+context-specific independence (CSI) relations through labeled directed acyclic
+graphs (LDAG).  For details on CSIs see (Corander et al., 2019)
+<doi:10.1016/j.apal.2019.04.004>.")
+    (license license:gpl3+)))
 
 (define-public r-dos2
   (package
@@ -7526,13 +7529,13 @@ by other packages for designed experiments.")
 (define-public r-dodgr
   (package
     (name "r-dodgr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dodgr" version))
        (sha256
-        (base32 "0r1p2zj6f2y6v2mk59apas8hcxcfxg6b2mniz5d6nnq074a57s9m"))))
+        (base32 "12vsw3yi99jalhz41fiq67fhb4jk0rrcfwb06gfkrifalp2p9jws"))))
     (properties `((upstream-name . "dodgr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread
@@ -7847,18 +7850,19 @@ container.")
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockerfiler" version))
        (sha256
-        (base32 "0j5j93hbqgc9qscadldk8j2knx87q2l91fwsjhh792jflvwxgfzi"))))
+        (base32 "1fy9mdq24v48vv3fkglwv1rqhlm4chlgli6d7arw0wa9s4h9bh2z"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-remotes
                              r-r6
+                             r-purrr
                              r-pkgbuild
                              r-pak
                              r-memoise
@@ -11563,28 +11567,35 @@ and Ward (2011) <doi:10.1016/j.amc.2011.03.124>.")
 (define-public r-discretefdr
   (package
     (name "r-discretefdr")
-    (version "1.3.7")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteFDR" version))
        (sha256
-        (base32 "0yph01q0aw7dfv3cmhv6mjb0vcphifzj1z9iddpw9zhkryadj7gg"))))
+        (base32 "02yj9pfxh1f4fgij4gq29aijd42im9b6npyhw4jirdpl7zkh0j8i"))))
     (properties `((upstream-name . "DiscreteFDR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-lifecycle))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-lifecycle
+                             r-discretetests
+                             r-discretedatasets
+                             r-checkmate))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/DISOhda/DiscreteFDR")
-    (synopsis "Multiple Testing Procedures with Adaptation for Discrete Tests")
+    (synopsis
+     "FDR Based Multiple Testing Procedures with Adaptation for Discrete Tests")
     (description
-     "Multiple testing procedures described in the paper DÃ¶hler, Durand and Roquain
-(2018) \"New FDR bounds for discrete and heterogeneous tests\"
-<doi:10.1214/18-EJS1441>.  The main procedures of the paper (HSU and HSD), their
-adaptive counterparts (AHSU and AHSD), and the HBR variant are available and are
-coded to take as input a set of observed p-values and their discrete support
-under the null.  A function to compute such p-values and supports for Fisher's
-exact tests is also provided, along with a wrapper allowing to apply discrete
-procedures directly from contingency tables.")
+     "Implementations of the multiple testing procedures for discrete tests described
+in the paper DÃ¶hler, Durand and Roquain (2018) \"New FDR bounds for discrete and
+heterogeneous tests\" <doi:10.1214/18-EJS1441>.  The main procedures of the paper
+(HSU and HSD), their adaptive counterparts (AHSU and AHSD), and the HBR variant
+are available and are coded to take as input the results of a test procedure
+from package @code{DiscreteTests}', or a set of observed p-values and their
+discrete support under their nulls.  A shortcut function to obtain such p-values
+and supports is also provided, along with a wrapper allowing to apply discrete
+procedures directly to data.")
     (license license:gpl3)))
 
 (define-public r-discretedatasets
@@ -18058,13 +18069,13 @@ multivariate generalization of QQ-plots).")
 (define-public r-deps
   (package
     (name "r-deps")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deps" version))
        (sha256
-        (base32 "1v274l8gs5by7vzgcsdsf8m3m9gkwdmw6dqvrmjx2q9j40i7wf69"))))
+        (base32 "147lb9dibn8ayj6znld64sk1qn6lzpp5pamxkagmqcbxl78r1g6h"))))
     (properties `((upstream-name . "deps")))
     (build-system r-build-system)
     (propagated-inputs (list r-renv r-remotes r-jsonlite))
@@ -19385,13 +19396,13 @@ library (<https://www.dask.org/>), for the Python language.")
 (define-public r-dejavu
   (package
     (name "r-dejavu")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dejaVu" version))
        (sha256
-        (base32 "0l30m707zrp05d7hywlx443n02mflxqsampmcblj3fvcbyywc1fd"))))
+        (base32 "102jg8bfhxbynk6v8ly73pkkhbqvgx4x1gmr7kxkdc648zspg48d"))))
     (properties `((upstream-name . "dejaVu")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -20407,6 +20418,37 @@ editing.  Deducer works best when used with the Java based R GUI JGR, but the
 dialogs can be called from the command line.  Dialogs have also been integrated
 into the Windows Rgui.")
     (license license:gpl2)))
+
+(define-public r-decp
+  (package
+    (name "r-decp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "decp" version))
+       (sha256
+        (base32 "1ydp2czgbfarhn6d6g34q7dvfkj3b97ql6jn5cp7gnxycj53c0k6"))))
+    (properties `((upstream-name . "decp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-purrr
+                             r-matrixcalc
+                             r-magrittr
+                             r-ggplot2
+                             r-geigen))
+    (home-page "https://cran.r-project.org/package=decp")
+    (synopsis "Complete Change Point Analysis")
+    (description
+     "This package provides a comprehensive approach for identifying and estimating
+change points in multivariate time series through various statistical methods.
+Implements the multiple change point detection methodology from Ryan & Killick
+(2023) <doi:10.1080/00401706.2023.2183261> and a novel estimation methodology
+from Fotopoulos et al. (2023) <doi:10.1007/s00362-023-01495-0> generalized to
+fit the detection methodologies.  Performs both detection and estimation of
+change points, providing visualization and summary information of the estimation
+process for each detected change point.")
+    (license license:gpl3)))
 
 (define-public r-decorators
   (package
@@ -26464,6 +26506,42 @@ package @code{bupaR}'.  Methods to identify data quality issues either consider
 each activity log entry independently (e.g. missing values, activity duration
 outliers,...), or focus on the relation amongst several activity log entries
 (e.g. batch registrations, violations of the expected activity order,...).")
+    (license license:expat)))
+
+(define-public r-dapper
+  (package
+    (name "r-dapper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dapper" version))
+       (sha256
+        (base32 "06s78b80215lxsi68isaha6kfrr0490s4bg0y9yf5v5ns9a6x0wv"))))
+    (properties `((upstream-name . "dapper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progressr
+                             r-posterior
+                             r-memoise
+                             r-furrr
+                             r-checkmate
+                             r-bayesplot))
+    (home-page "https://github.com/mango-empire/dapper")
+    (synopsis "Data Augmentation for Private Posterior Estimation")
+    (description
+     "This package provides a data augmentation based sampler for conducting
+privacy-aware Bayesian inference.  The dapper_sample() function takes an
+existing sampler as input and automatically constructs a privacy-aware sampler.
+The process of constructing a sampler is simplified through the specification of
+four independent modules, allowing for easy comparison between different privacy
+mechanisms by only swapping out the relevant modules.  Probability mass
+functions for the discrete Gaussian and discrete Laplacian are provided to
+facilitate analyses dealing with privatized count data.  The output of
+dapper_sample() can be analyzed using many of the same tools from the `rstan`
+ecosystem.  For methodological details on the sampler see Ju et al. (2022)
+<doi:10.48550/@code{arXiv.2206.00710>}, and for details on the discrete Gaussian
+and discrete Laplacian distributions see Canonne et al. (2020)
+<doi:10.48550/@code{arXiv.2004.00010>}.")
     (license license:expat)))
 
 (define-public r-danstat

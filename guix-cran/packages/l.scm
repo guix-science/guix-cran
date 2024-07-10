@@ -563,13 +563,13 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 (define-public r-lucidus
   (package
     (name "r-lucidus")
-    (version "3.0.1")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LUCIDus" version))
        (sha256
-        (base32 "0y8l82q5qzc9k88cc7afqnlixrnfamm58j2fxz22x37yxaad20j1"))))
+        (base32 "0wy35s0cnnx04ic8gpf4ikm4mpxm72x4k3hrp2h6gz8fmb6iw1qm"))))
     (properties `((upstream-name . "LUCIDus")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -586,14 +586,15 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
      "An implementation of estimating the Latent Unknown Clusters By Integrating
 Multi-omics Data (LUCID) model (Peng (2019)
 <doi:10.1093/bioinformatics/btz667>).  LUCID conducts integrated clustering
-using exposures, omics data (and outcome as an option).  This is a major update
-from the last version while conserving all the previous features.  This package
-implements three different integration strategies for multiple omics data
+using exposures, omics information (and outcome information as an option).  This
+package implements three different integration strategies for multi-omics data
 analysis within the LUCID framework: LUCID early integration (the original LUCID
-model), LUCID in parallel (intermediate), and LUCID in serial (late).  Automated
-model selection for each LUCID model is available to obtain the optimal number
-of latent clusters, and an integrated imputation approach is implemented to
-handle sporadic and list-wise missing multiple omics data.")
+model), LUCID in parallel (intermediate integration), and LUCID in serial (late
+integration).  Automated model selection for each LUCID model is available to
+obtain the optimal number of latent clusters, and an integrated imputation
+approach is implemented to handle sporadic and list-wise missingness in
+multi-omics data.  Lasso-type regularity for exposure and omics features were
+added.  S3 methods for summary and plotting functions were fixed.")
     (license license:expat)))
 
 (define-public r-lucid
@@ -10240,13 +10241,13 @@ is available at the Supplementary Data section at Nucleic Acids Research Online
 (define-public r-lidr
   (package
     (name "r-lidr")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lidR" version))
        (sha256
-        (base32 "0n0w5qv5mjfnxk7wixwivm68y8pb67sqyfkqinq85rnybhgzshmd"))))
+        (base32 "1sx903krq6hn9gdz3k7kq88yxzm6hh8wpcjkvgzbrf4z31fc6lp4"))))
     (properties `((upstream-name . "lidR")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -16639,13 +16640,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-ladderfuelsr
   (package
     (name "r-ladderfuelsr")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LadderFuelsR" version))
        (sha256
-        (base32 "16x3f6hl5qby05z2yd319454rwss77kmy2xq549z7hhypw1mxqmq"))))
+        (base32 "08l0hg1n90cydlh6035hfc1r4gdhxn79g4s397q8684cqr2g2sxc"))))
     (properties `((upstream-name . "LadderFuelsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -16666,21 +16667,20 @@ Airborne Laser Scanning data.  The workflow consisted of: 1) calculating the
 vertical height profiles of each segmented tree; 2) identifying gaps and fuel
 layers; 3) estimating the distance between fuel layers; and 4) retrieving the
 fuel layers base height and depth.  Additionally, other functions recalculate
-previous metrics after considering distances greater than 1 m and calculate the
-canopy base height as the fuel base height located at the largest- and at the
-last-distance.  Moreover, the package calculates: i) the percentage of Leaf Area
-Density comprised in each fuel layer, ii) remove fuel layers with Leaf Area
-Density percentage less than 25, iii) recalculate the distances among the
-reminder ones, and iv) identify the canopy base height as the fuel base height
-with the highest Leaf Area Density percentage.  On the other hand, when there is
-only one fuel layer, it identifies the canopy base height performing a segmented
-linear regression (breaking points) on the cumulative sum of Leaf Area Density
-as a function of height.  Finally, a collection of plotting functions is
-developed to represent: i) the initial gaps and fuel layers; ii) the fuels base
-height, depths and gaps with distances greater than 1 m and, iii) the fuels base
-height and depths after applying the breaking point method over trees with only
-one fuel layer.  The methods implemented in this package are original and have
-not been published elsewhere.")
+previous metrics after considering distances greater than certain threshold.
+Moreover, the package calculates: i) the percentage of Leaf Area Density
+comprised in each fuel layer, ii) remove fuel layers with Leaf Area Density
+(LAD) percentage less than 10, and iii) recalculate the distances among the
+reminder ones.  On the other hand, it identifies the crown base height (CBH)
+based on different criteria: the fuel layer with the highest LAD percentage and
+the fuel layers located at the largest- and at the last-distance.  When there is
+only one fuel layer, it also identifies the CBH performing a segmented linear
+regression (breaking points) on the cumulative sum of LAD as a function of
+height.  Finally, a collection of plotting functions is developed to represent:
+i) the initial gaps and fuel layers; ii) the fuels base height, depths and gaps
+with distances greater than certain threshold and, iii) the CBH based on
+different criteria.  The methods implemented in this package are original and
+have not been published elsewhere.")
     (license license:gpl3)))
 
 (define-public r-lad

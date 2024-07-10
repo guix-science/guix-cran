@@ -262,6 +262,35 @@ isoprobability ellipsoid in d dimensions (Flood, Mark D. & Korenko, George G.
 the Matlab code published by Flood & Korenko in above-mentioned paper.")
     (license license:cc0)))
 
+(define-public r-syrup
+  (package
+    (name "r-syrup")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "syrup" version))
+       (sha256
+        (base32 "1smkgxsvgljy6240ib8r218m7qy10idv065gavrvimx8pyw6br69"))))
+    (properties `((upstream-name . "syrup")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-ps
+                             r-dplyr
+                             r-callr
+                             r-bench))
+    (home-page "https://github.com/simonpcouch/syrup")
+    (synopsis "Measure Memory and CPU Usage for Parallel R Code")
+    (description
+     "Measures memory and CPU usage of R code by regularly taking snapshots of calls
+to the system command ps'.  The package provides an entry point (albeit coarse)
+to profile usage of system resources by R code run in parallel.")
+    (license license:expat)))
+
 (define-public r-synthtools
   (package
     (name "r-synthtools")
@@ -420,6 +449,32 @@ on the tools outlined by Westgate (2019) <doi:10.1002/jrsm.1374> to import
 bibliographic data from a range of formats (such as bibtex', ris', or ciw') in a
 standard way, and allows merging and deduplication of the resulting dataset.")
     (license license:gpl3)))
+
+(define-public r-synthesis
+  (package
+    (name "r-synthesis")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "synthesis" version))
+       (sha256
+        (base32 "0zsk3y322qzmq3rcclka176xbqfwqkg2r4p3k0cx057dkn4v7866"))))
+    (properties `((upstream-name . "synthesis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zejiang-unsw/synthesis#readme")
+    (synopsis "Generate Synthetic Data from Statistical Models")
+    (description
+     "Generate synthetic time series from commonly used statistical models, including
+linear, nonlinear and chaotic systems.  Applications to testing methods can be
+found in Jiang, Z., Sharma, A., & Johnson, F. (2019)
+<doi:10.1016/j.advwatres.2019.103430> and Jiang, Z., Sharma, A., & Johnson, F.
+(2020) <doi:10.1029/2019WR026962> associated with an open-source tool by Jiang,
+Z., Rashid, M. M., Johnson, F., & Sharma, A. (2020)
+<doi:10.1016/j.envsoft.2020.104907>.")
+    (license license:gpl3+)))
 
 (define-public r-synthacs
   (package
@@ -1164,13 +1219,13 @@ subscribe to the @code{koRpus-dev} mailing list (<http://korpusml.reaktanz.de>).
 (define-public r-syllogi
   (package
     (name "r-syllogi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syllogi" version))
        (sha256
-        (base32 "0f461qak9naglyfqisc6fbv076v5ncijrv5ja2p37h39dc8i3fxz"))))
+        (base32 "1rdgkc4vncx74awznjkfldma5n7jbv2cd7sapyl064vlh0hhrlqf"))))
     (properties `((upstream-name . "syllogi")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=syllogi")
@@ -4666,13 +4721,13 @@ phenomena is given by Meyer et al. (2017) <doi:10.18637/jss.v077.i11>.")
 (define-public r-surveil
   (package
     (name "r-surveil")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveil" version))
        (sha256
-        (base32 "1bk048mjnviwrls2s25wqrrm3iwi6qjkjlhnpb0i7wjm9cckzz7j"))))
+        (base32 "18q7i3pi5b4nx24zfkcswvdivqa7s0zri1gfimygyaz4mdpza1y1"))))
     (properties `((upstream-name . "surveil")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4694,17 +4749,15 @@ phenomena is given by Meyer et al. (2017) <doi:10.18637/jss.v077.i11>.")
     (home-page "https://connordonegan.github.io/surveil/")
     (synopsis "Time Series Models for Disease Surveillance")
     (description
-     "Fits time series models for routine disease surveillance tasks and returns
+     "Fits time trend models for routine disease surveillance tasks and returns
 probability distributions for a variety of quantities of interest, including
 age-standardized rates, period and cumulative percent change, and measures of
-health inequality.  Calculates Theil's index to measure inequality among
-multiple groups, and can be extended to measure inequality across multiple
-groups nested within geographies.  Inference is completed using Markov chain
-Monte Carlo via the Stan modeling language.  The models are appropriate for
-count data such as disease incidence and mortality data, employing a Poisson or
-binomial likelihood and the first-difference (random-walk) prior for unknown
-risk.  Optionally add a covariance matrix for multiple, correlated time series
-models.  References: Donegan, Hughes, and Lee (2022) <doi:10.2196/34589>; Stan
+health inequality.  The models are appropriate for count data such as disease
+incidence and mortality data, employing a Poisson or binomial likelihood and the
+first-difference (random-walk) prior for unknown risk.  Optionally add a
+covariance matrix for multiple, correlated time series models.  Inference is
+completed using Markov chain Monte Carlo via the Stan modeling language.
+References: Donegan, Hughes, and Lee (2022) <doi:10.2196/34589>; Stan
 Development Team (2021) <https://mc-stan.org>; Theil (1972, ISBN:0-444-10378-3).")
     (license license:gpl3+)))
 
@@ -11975,13 +12028,13 @@ designed to be suitable for use at the console, in Rmarkdown and @code{LaTeX}.")
 (define-public r-statpsych
   (package
     (name "r-statpsych")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statpsych" version))
        (sha256
-        (base32 "0sgdz97svj2krg6576pc74jiqpws4qjvvk351d88av3cc9s3g9y8"))))
+        (base32 "1kxgwzg6qwkrlih0rwllmm31c9yyxp6w051wslb4q695piq4las2"))))
     (properties `((upstream-name . "statpsych")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mnonr r-mathjaxr))
@@ -19326,13 +19379,13 @@ of response trajectories.")
 (define-public r-splines2
   (package
     (name "r-splines2")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "splines2" version))
        (sha256
-        (base32 "1wvj57b92qpqnn4bmd5gbbnnds32s6bm04bq72c1q3fr069r9r8b"))))
+        (base32 "1p0xl3k33b539j6fifxaack956z3p4yfvhglcpvral315p8pnzn2"))))
     (properties `((upstream-name . "splines2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -24977,16 +25030,17 @@ re-compute risk scores, to simulate a semi-realistic dataset.")
 (define-public r-sparr
   (package
     (name "r-sparr")
-    (version "2.3-10")
+    (version "2.3-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparr" version))
        (sha256
-        (base32 "03dp6gvkpw8vjsf0p4igr2q4lgahn24j5f94h43jdrm4ppz860zh"))))
+        (base32 "140gdk12dsl39k13g77iaqh0kzdi19ys3l00008fqn807mhcn2hz"))))
     (properties `((upstream-name . "sparr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-random
                              r-spatstat-geom
                              r-spatstat-explore
@@ -27020,6 +27074,25 @@ respectively, in Kohonen (2001) <isbn:3-540-67921-9>, Olteanu & Villa-Vialaneix
 features (to help the user interpret the results), can handle (and impute)
 missing values and is delivered with a graphical user interface based on shiny'.")
     (license license:gpl2+)))
+
+(define-public r-somaticflags
+  (package
+    (name "r-somaticflags")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "somaticflags" version))
+       (sha256
+        (base32 "0b7g1i8qgrks6prdcmhdqpq9ivrlk47j8najq0baz02drrrf3fhm"))))
+    (properties `((upstream-name . "somaticflags")))
+    (build-system r-build-system)
+    (home-page "https://github.com/CCICB/somaticflags")
+    (synopsis "Database of Somatic Flags")
+    (description
+     "Database of genes which frequently sustain somatic mutations, but are unlikely
+to drive cancer.")
+    (license license:expat)))
 
 (define-public r-somadataio
   (package
@@ -31894,34 +31967,28 @@ by the user and does not depend on a penalty value.")
 (define-public r-slope
   (package
     (name "r-slope")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SLOPE" version))
        (sha256
-        (base32 "0v176w2zj32j8988xf0d7myfcr0ahh49gckfav4v73z6ilfmbchy"))))
+        (base32 "1fwfk6caj3hhb1nc3msky3faakfkvilxqna8564zki5hnmbjny69"))))
     (properties `((upstream-name . "SLOPE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
-                             r-rcpp
-                             r-mice
-                             r-matrix
-                             r-glmnet
-                             r-ggplot2
-                             r-foreach
-                             r-checkmate))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-matrix r-ggplot2
+                             r-foreach))
     (native-inputs (list r-knitr))
     (home-page "https://jolars.github.io/SLOPE/")
     (synopsis "Sorted L1 Penalized Estimation")
     (description
      "Efficient implementations for Sorted L-One Penalized Estimation (SLOPE):
 generalized linear models regularized with the sorted L1-norm (Bogdan et al.
-(2015) <doi:10/gfgwzt>).  Supported models include ordinary least-squares
-regression, binomial regression, multinomial regression, and Poisson regression.
- Both dense and sparse predictor matrices are supported.  In addition, the
-package features predictor screening rules that enable fast and efficient
-solutions to high-dimensional problems.")
+2015).  Supported models include ordinary least-squares regression, binomial
+regression, multinomial regression, and Poisson regression.  Both dense and
+sparse predictor matrices are supported.  In addition, the package features
+predictor screening rules that enable fast and efficient solutions to
+high-dimensional problems.")
     (license license:gpl3)))
 
 (define-public r-slmodels
@@ -36228,13 +36295,13 @@ in C with GNU Scientific Library (GSL) so as to facilitate the computation.")
 (define-public r-simpletex
   (package
     (name "r-simpletex")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpletex" version))
        (sha256
-        (base32 "124a8pkf38n7mhk23g2fsy5lbmwnm2k5dqhrvxcsihnbwkp4lfas"))))
+        (base32 "13hcb3k5car0q5yqb9wqccdzgrqxvjbbzn8c9rcrx23wgwpr226l"))))
     (properties `((upstream-name . "simpletex")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-glue r-digest))
@@ -37924,23 +37991,23 @@ al. (2018) <doi:10.1002/sim.7689> for details.")
 (define-public r-simdesign
   (package
     (name "r-simdesign")
-    (version "2.15.1")
+    (version "2.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SimDesign" version))
        (sha256
-        (base32 "045bw9zjwhpfgvcl7vfgszxlb6h6wxp83fjh79rm2spnq96vzwk2"))))
+        (base32 "015lw3npsyy7ap3vrs6grm0y9i68z60ikmvd3kknkpdmwyvm62yc"))))
     (properties `((upstream-name . "SimDesign")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sessioninfo
+    (propagated-inputs (list r-testthat
+                             r-sessioninfo
                              r-rpushbullet
                              r-r-utils
                              r-progressr
                              r-pbapply
                              r-future-apply
                              r-future
-                             r-foreach
                              r-dplyr
                              r-beepr))
     (native-inputs (list r-knitr))
@@ -44499,31 +44566,6 @@ temporal pattern including year(s) of inflection, magnitude of change, pre- and
 post-inflection rates of growth or recovery.  In addition, it contains routines
 for converting a flat map of disturbance agents to time-series disturbance maps
 and a graphical routine displaying the fitted trajectory of Landsat imagery.")
-    (license license:gpl2+)))
-
-(define-public r-shaperotator
-  (package
-    (name "r-shaperotator")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ShapeRotator" version))
-       (sha256
-        (base32 "1pg2m1wh7fbchm8gp3mngfnf5g2rbhvzim1bpzqyvxqpx6ynicsa"))))
-    (properties `((upstream-name . "ShapeRotator")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-plot3d))
-    (home-page "https://github.com/marta-vidalgarcia/ShapeRotator")
-    (synopsis
-     "Standardised Rigid Rotations of Articulated Three-Dimensional Structures")
-    (description
-     "Here we describe a simple geometric rigid rotation approach that removes the
-effect of random translation and rotation, enabling the morphological analysis
-of 3D articulated structures.  Our method is based on Cartesian coordinates in
-3D space so it can be applied to any morphometric problem that also uses 3D
-coordinates.  See Vidal-@code{GarcÃ­a}, M., Bandara, L., Keogh, J.S. (2018)
-<doi:10.1002/ece3.4018>.")
     (license license:gpl2+)))
 
 (define-public r-shaper
@@ -56884,16 +56926,17 @@ number of clusters as well.")
 (define-public r-sbw
   (package
     (name "r-sbw")
-    (version "1.1.5")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbw" version))
        (sha256
-        (base32 "10ks912f4xiy0i484vf24w5zz9n7kxlcy77ikz95p8vr5zlqkvgc"))))
+        (base32 "11ncmxgwdv7n51ds5zwcdym2q66d2xpm4irivg0hixvfm800lw6x"))))
     (properties `((upstream-name . "sbw")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-slam r-quadprog r-matrix r-mass))
+    (propagated-inputs (list r-spatstat-univar r-slam r-quadprog r-matrix
+                             r-mass))
     (home-page "https://cran.r-project.org/package=sbw")
     (synopsis "Stable Balancing Weights for Causal Inference and Missing Data")
     (description
@@ -56901,13 +56944,13 @@ number of clusters as well.")
 <DOI:10.1080/01621459.2015.1023805>.  These are the weights of minimum variance
 that approximately balance the empirical distribution of the observed
 covariates.  For an overview, see Chattopadhyay, Hase and Zubizarreta (2020)
-<DOI:10.1002/(ISSN)1097-0258>.  To solve the optimization problem in sbw', the
-default solver is quadprog', which is readily available through CRAN. The solver
-osqp is also posted on CRAN. To enhance the performance of sbw', users are
-encouraged to install other solvers such as gurobi and Rmosek', which require
-special installation.  For the installation of gurobi and pogs, please follow
-the instructions at
-<https://www.gurobi.com/documentation/9.1/quickstart_mac/r_ins_the_r_package.html>
+<DOI:10.1002/sim.8659>.  To solve the optimization problem in sbw', the default
+solver is quadprog', which is readily available through CRAN. The solver osqp is
+also posted on CRAN. To enhance the performance of sbw', users are encouraged to
+install other solvers such as gurobi and Rmosek', which require special
+installation.  For the installation of gurobi and pogs, please follow the
+instructions at
+<https://www.gurobi.com/documentation/current/refman/r_ins_the_r_package.html>
 and <http://foges.github.io/pogs/stp/r>.")
     (license (list license:gpl2 license:gpl3))))
 

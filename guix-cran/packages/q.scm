@@ -680,13 +680,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "04v95f8ppxqiyqi42z8lrgcygdfc9vb3zk30824jh83vwba9h2y8"))))
+        (base32 "0nym69ky24702ccjwz835gf98gk23bh6v5i7cm0a6z0c15db6mh7"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
@@ -695,8 +695,8 @@ magnitude quicker than other methods.")
     (synopsis "Quick and Essential 'R' Tricks for Better Scripts")
     (description
      "The NOT functions, R tricks and a compilation of some simple quick plus often
-used R codes to improve your scripts.  Improve the quality and reproducibilty of
-R scripts.")
+used R codes to improve your scripts.  Improve the quality and reproducibility
+of R scripts.")
     (license license:expat)))
 
 (define-public r-quickcheck
@@ -4477,13 +4477,13 @@ ISBN:978-0972072427).")
 (define-public r-qgisprocess
   (package
     (name "r-qgisprocess")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qgisprocess" version))
        (sha256
-        (base32 "0l7696hl728vcjapsczkj3lvip23b1n22skk6cinwkjb8hyc7h9y"))))
+        (base32 "0dshfyfhn9lwr8rx1d0ys0bg6m1y99wma0v07h5r8gz8h7zzm1hb"))))
     (properties `((upstream-name . "qgisprocess")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -4505,7 +4505,7 @@ processing toolbox using the standalone qgis_process command-line utility.  Both
 native and third-party (plugin) processing providers are supported.  Beside
 referring data sources from file, also common objects from sf', terra and stars
 are supported.  The native processing algorithms are documented by QGIS.org
-(2023) <https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/>.")
+(2024) <https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/>.")
     (license license:gpl3+)))
 
 (define-public r-qgglmm

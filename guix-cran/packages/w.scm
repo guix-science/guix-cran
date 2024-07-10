@@ -5176,13 +5176,13 @@ analysis.")
 (define-public r-weibullr-plotly
   (package
     (name "r-weibullr-plotly")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.plotly" version))
        (sha256
-        (base32 "1ymggxqhn2bc6r25vzp4vlr18pcw9vnn24ylwspk8vq8j00pn197"))))
+        (base32 "1hhcr31kn3bcaj562x8hdh5gg7nkmwcbish8yq4faj9bhrm0lg6h"))))
     (properties `((upstream-name . "WeibullR.plotly")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr r-plotly))
@@ -5199,13 +5199,13 @@ interactive web-based graphing library.")
 (define-public r-weibullr-learnr
   (package
     (name "r-weibullr-learnr")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.learnr" version))
        (sha256
-        (base32 "0m3dajyxr6m2w8s1qlwfr1iq2x2s5khs9x1qj4r4fr6zqhp53pbx"))))
+        (base32 "14v64jr4z8j9gv4qqpwk013d6rjc5g3yisqn8lkibccgb78ifdxn"))))
     (properties `((upstream-name . "WeibullR.learnr")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr r-learnr))
@@ -5218,7 +5218,7 @@ interactive web-based graphing library.")
 Analysis, and learnr by Garrick Aden-Buie et al. (2023)
 <https://CRAN.R-project.org/package=learnr>, a framework for building
 interactive learning modules in R.")
-    (license (license:fsdg-compatible "Apache License"))))
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-weibullr-alt
   (package

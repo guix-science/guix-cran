@@ -12119,28 +12119,30 @@ clusterability, Hofmeyr and Pavlidis (2015) <doi:10.1109/SSCI.2015.116>.")
 (define-public r-ppcdt
   (package
     (name "r-ppcdt")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PPCDT" version))
        (sha256
-        (base32 "0i3j959i7rd5k1qkj1lknvsbksl15ir06avcffai4pbnpx7bl8dm"))))
+        (base32 "06984x73pb37vw8wjgpwd27j6h5j30p0idppmbbap0zz4vprgmpm"))))
     (properties `((upstream-name . "PPCDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
     (home-page "https://cran.r-project.org/package=PPCDT")
     (synopsis "An Optimal Subset Selection for Distributed Hypothesis Testing")
     (description
-     "In the era of big data, data redundancy and distributed characteristics pose new
-challenges to data analysis.  This article proposes a method of optimal subset
-estimation for redundant distributed data based on PPC. Through PPC technology,
-this method can effectively extract useful information from redundant
-distributed data and estimate the optimal subset.  Experimental results show
-that this method can improve data quality and utilization efficiency and
-evaluate its performance.The philosophy of the package is described in Guo G.
-(2020) <doi:10.1007/s00180-020-00974-4>.")
-    (license license:expat)))
+     "In the era of big data, data redundancy and distributed characteristics present
+novel challenges to data analysis.  This package introduces a method for
+estimating optimal subsets of redundant distributed data, based on PPCDT
+(Conjunction of Power and P-value in Distributed Settings).  Leveraging PPC
+technology, this approach can efficiently extract valuable information from
+redundant distributed data and determine the optimal subset.  Experimental
+results demonstrate that this method not only enhances data quality and
+utilization efficiency but also assesses its performance effectively.  The
+philosophy of the package is described in Guo G. (2020)
+<doi:10.1007/s00180-020-00974-4>.")
+    (license license:asl2.0)))
 
 (define-public r-ppcc
   (package
@@ -16927,13 +16929,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "1.3.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "1279zjjzxfyqaqwz9qji58rr4gjniplfb9hyg7kfqx062nlac49a"))))
+        (base32 "17z51hcpr2a3z49yjp4nn532assi6nws0adcs204jnr2i0zwb8a5"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -24516,13 +24518,13 @@ elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
 (define-public r-phoenix
   (package
     (name "r-phoenix")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenix" version))
        (sha256
-        (base32 "1yhjbj1wgjlywa965d89pzk9c8gm3bjaapmi2dpdf7nzj9114n9r"))))
+        (base32 "0vb1y6ga3gjgm7xhaa2pv61cc4a8i45bdf1pvk2ym4l6c717s3yp"))))
     (properties `((upstream-name . "phoenix")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -24534,10 +24536,13 @@ elements (i.e., \"2\" becomes a vector of \"A,\" \"B,\" and \"C\").")
 Septic Shock\" by Sanchez-Pinto, Bennett, @code{DeWitt}, Russell et al. (2024)
 <doi:10.1001/jama.2024.0196> (Drs.  Sanchez-Pinto and Bennett contributed
 equally to this manuscript; Dr. @code{DeWitt} and Mr. Russell contributed
-equally to the manuscript) and \"International Consensus Criteria for Pediatric
+equally to the manuscript), \"International Consensus Criteria for Pediatric
 Sepsis and Septic Shock\" by Schlapbach, Watson, Sorce, Argent, et al. (2024)
 <doi:10.1001/jama.2024.0179> (Drs Schlapbach, Watson, Sorce, and Argent
-contributed equally).")
+contributed equally) and the application note \"phoenix: an R package and Python
+module for calculating the Phoenix pediatric sepsis score and criteria\" by
+@code{DeWitt}, Russell, Rebull, Sanchez-Pinto, and Bennett (2024)
+<doi:10.1093/jamiaopen/ooae066>.")
     (license license:expat)))
 
 (define-public r-phoenics
@@ -28280,6 +28285,27 @@ Model Composition (MC3) algorithm (Madigan and York (1995) <doi:
 plotting and printing the results are also provided.")
     (license license:gpl2+)))
 
+(define-public r-pepa
+  (package
+    (name "r-pepa")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pEPA" version))
+       (sha256
+        (base32 "1a2jij7rwkcf77krwgazldbgh0hjg7dg0911x7np42sjgiqn2li5"))))
+    (properties `((upstream-name . "pEPA")))
+    (build-system r-build-system)
+    (home-page "https://CRAN.R-project.org/package=pEPA")
+    (synopsis "Tests of Equal Predictive Accuracy for Panels of Forecasts")
+    (description
+     "Allows to perform the tests of equal predictive accuracy for panels of
+forecasts.  Main references: Qu et al. (2024)
+<doi:10.1016/j.ijforecast.2023.08.001> and Akgun et al. (2024)
+<doi:10.1016/j.ijforecast.2023.02.001>.")
+    (license license:gpl3)))
+
 (define-public r-peopleanalyticsdata
   (package
     (name "r-peopleanalyticsdata")
@@ -31722,6 +31748,33 @@ flexibility and reduces computational requirements.  Methods:
 tasks and retrieve results.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-pcapam50
+  (package
+    (name "r-pcapam50")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PCAPAM50" version))
+       (sha256
+        (base32 "09jmpw38q3j0yk27r54d3y6fbgh69a6712zklv8qrfyq59kkshnc"))))
+    (properties `((upstream-name . "PCAPAM50")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lattice r-impute r-complexheatmap r-biobase))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PCAPAM50")
+    (synopsis "Enhanced 'PAM50' Subtyping of Breast Cancer")
+    (description
+     "Accurate classification of breast cancer tumors based on gene expression data is
+not a trivial task, and it lacks standard practices.The PAM50 classifier, which
+uses 50 gene centroid correlation distances to classify tumors, faces challenges
+with balancing estrogen receptor (ER) status and gene centering.  The PCAPAM50
+package leverages principal component analysis and iterative PAM50 calls to
+create a gene expression-based ER-balanced subset for gene centering, avoiding
+the use of protein expression-based ER data resulting into an enhanced Breast
+Cancer subtyping.")
+    (license license:gpl3+)))
+
 (define-public r-pcaone
   (package
     (name "r-pcaone")
@@ -34852,6 +34905,30 @@ generalized linear models.")
 by time-resolved spectroscopy via a Shiny GUI.")
     (license license:gpl2+)))
 
+(define-public r-paramdemo
+  (package
+    (name "r-paramdemo")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paramDemo" version))
+       (sha256
+        (base32 "165fz12cqpc88cmfx0xq80dnbxgkmbn8v84dxv96ggh9jsxh06d9"))))
+    (properties `((upstream-name . "paramDemo")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=paramDemo")
+    (synopsis
+     "Parametric and Non-Parametric Demographic Functions and Applications")
+    (description
+     "Calculate parametric mortality and Fertility models, following packages
+@code{BaSTA} in Colchero, Jones and Rebke (2012)
+<doi:10.1111/j.2041-210X.2012.00186.x> and @code{BaFTA}
+<https://github.com/fercol/@code{BaFTA>}, summary statistics (e.g. ageing rates,
+life expectancy, lifespan equality, etc.), life table and product limit
+estimators from census data.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-param2moment
   (package
     (name "r-param2moment")
@@ -35782,13 +35859,13 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.5.8")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "094084w6zamchzh6fwcgy839brq28vqkji2p335bpni9dfkz3cd5"))))
+        (base32 "0w8jrlr4j6fagzgqksbcrxn7zjqkwh4f5vaf958r48k8y6nfqpih"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

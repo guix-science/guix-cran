@@ -1078,13 +1078,13 @@ and longitudinal data.  Refer to the Journal of Statistical Software article:
 (define-public r-jskm
   (package
     (name "r-jskm")
-    (version "0.5.3")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jskm" version))
        (sha256
-        (base32 "078aij3n53q1pj5wb32bvmzncw9hhwxxp3s0lg8iqgpcyb4cgbj0"))))
+        (base32 "16a1v5vs9hdsyp5x0r237lc4vh7mdvylplb6ad2c9q09xdglrgs6"))))
     (properties `((upstream-name . "jskm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -2363,13 +2363,13 @@ and continuous moderators.  Allows correcting for phylogenetic relatedness.")
 (define-public r-jmvreadwrite
   (package
     (name "r-jmvreadwrite")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvReadWrite" version))
        (sha256
-        (base32 "02db03vmj377z5nyc7j8myrcxq48wqspnjf1v1sksdz66jxh4f7k"))))
+        (base32 "11dynr6gs4jh2q5s1wqvd8vmld0c1yyylmvy5dskndj2xxvcgx48"))))
     (properties `((upstream-name . "jmvReadWrite")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip r-jsonlite))

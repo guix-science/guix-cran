@@ -1062,13 +1062,13 @@ in the corresponding help files.")
 (define-public r-mvord
   (package
     (name "r-mvord")
-    (version "1.2.2")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvord" version))
        (sha256
-        (base32 "15ln55a1lxpfka4lva84nsznbl8wgi95hvbr8wisqh05c5940s3x"))))
+        (base32 "0hxgz5gjrvapfdjyf5w9wcankbwkd32ii291nzmlh8n8gb7pr067"))))
     (properties `((upstream-name . "mvord")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -4616,13 +4616,13 @@ supported.  Factors for any predictors must be numerically represented.")
 (define-public r-multilevelcoda
   (package
     (name "r-multilevelcoda")
-    (version "1.3.0.1")
+    (version "1.3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multilevelcoda" version))
        (sha256
-        (base32 "1g0jlzwmk4w80shj5ma8crx4p0w7xrsan9g5kii1sxfi50k7k6d0"))))
+        (base32 "0dd31bs1wfwfmi65aj8ycmipyszpl79cik5z2w7rkii4pl1zc6ja"))))
     (properties `((upstream-name . "multilevelcoda")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinystan
@@ -4635,6 +4635,7 @@ supported.  Factors for any predictors must be numerically represented.")
                              r-future
                              r-foreach
                              r-extraoperators
+                             r-emmeans
                              r-dt
                              r-dofuture
                              r-data-table
@@ -4821,13 +4822,13 @@ implements the sequential graphical procedure described in Maurer and Bretz
 (define-public r-multigroupo
   (package
     (name "r-multigroupo")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiGroupO" version))
        (sha256
-        (base32 "0vyq1xzxh6zjzdsvp0gib32xxz1c3672kj3ifn5fv0bf8yjjc2gk"))))
+        (base32 "0yiia0zf54hwr9gd2jisasmg996w1ajnak1i1ls5dl2bpfic31gn"))))
     (properties `((upstream-name . "MultiGroupO")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlist
@@ -6952,16 +6953,16 @@ gain and symmetrical uncertainty of categorical variables.")
 (define-public r-mstudentd
   (package
     (name "r-mstudentd")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mstudentd" version))
        (sha256
-        (base32 "03css731hv96nj8y07y4ngzv97fypiqcfynscxw5fx0s05c51331"))))
+        (base32 "0s5kidcz6sv9gaa0mdx2lawn79qd1y5j3vpr76bpv91fibfpzpa6"))))
     (properties `((upstream-name . "mstudentd")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-mass))
+    (propagated-inputs (list r-rgl r-mass r-data-table))
     (home-page "https://forgemia.inra.fr/imhorphen/mstudentd")
     (synopsis "Multivariate t Distribution")
     (description
@@ -13668,13 +13669,13 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "0.1.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "06abbk34blacwf7w38fxjh88l26v7wcpg8svmj76ll2pssybxv8r"))))
+        (base32 "0kypl30gj1k1ng1zilc859rcx7q4yc1n4nirmb4a9y68g8ykmq9y"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -13689,7 +13690,7 @@ nutrition analyses.")
                              r-mplusautomation
                              r-lavaan
                              r-ggplot2
-                             r-gaussquad
+                             r-fastghquad
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Kss2k/modsem")
@@ -13705,14 +13706,14 @@ equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
 likelihood (QML) approach (Klein & @code{MuthÃ©n}, 2007) (temporarily
 unavailable) The constrained- unconstrained, residual- and double centering-
 approaches are estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML-
-approaches are estimated via by @code{ModSEM} it self.  Alternatively model can
-be estimated via Mplus (@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).
-References: Algina, J., & Moulder, B. C. (2001).
-<doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the JÃ¶reskog-Yang model
-for latent variable interaction using LISREL 8.3.\" Klein, A., & Moosbrugger, H.
-(2000). <doi:10.1007/BF02296338>. \"Maximum likelihood estimation of latent
-interaction effects with the LMS method.\" Klein, A. G., & @code{MuthÃ©n}, B. O.
-(2007). <doi:10.1080/00273170701710205>. \"Quasi-maximum likelihood estimation of
+approaches are estimated via by modsem it self.  Alternatively model can be
+estimated via Mplus (@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).  References:
+Algina, J., & Moulder, B. C. (2001). <doi:10.1207/S15328007SEM0801_3>. \"A note
+on estimating the JÃ¶reskog-Yang model for latent variable interaction using
+LISREL 8.3.\" Klein, A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>.
+\"Maximum likelihood estimation of latent interaction effects with the LMS
+method.\" Klein, A. G., & @code{MuthÃ©n}, B. O. (2007).
+<doi:10.1080/00273170701710205>. \"Quasi-maximum likelihood estimation of
 structural equation models with multiple interaction and quadratic effects.\"
 Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
 <doi:10.1080/10705511.2010.488999>. \"Structural equation models of latent
@@ -15278,37 +15279,6 @@ indices.  Relative, mixed, and absolute transition matrices are supported.  The
 Prais-Bibby, Absolute Movement, Origin Specific, and Weighted Group Mobility
 indices are supported.  Example income and grade data are included.")
     (license license:expat)))
-
-(define-public r-mobiletrigger
-  (package
-    (name "r-mobiletrigger")
-    (version "0.0.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MobileTrigger" version))
-       (sha256
-        (base32 "1zbnxdxh6gr4sgpi10i0pnd85f7i842105jgjswacziqamby6mcy"))))
-    (properties `((upstream-name . "MobileTrigger")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml
-                             r-plyr
-                             r-mailr
-                             r-knitr
-                             r-kableextra
-                             r-ggplot2
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=MobileTrigger")
-    (synopsis "Run Reports, Models, and Scripts from a Mobile Device")
-    (description
-     "This package provides a framework for interacting with R modules such as
-Reports, Models, and Scripts from a mobile device.  The framework allows you to
-list available modules and select a module of interest using a basic e-mail
-interface.  After selecting a specific module, you can either run it as is or
-provide input via the e-mail interface.  After parsing your request, R will send
-the results back to your mobile device.")
-    (license license:gpl3)))
 
 (define-public r-mob
   (package
@@ -17495,6 +17465,38 @@ be applied to data.frames and mlr \"Task\"s to modify data, can be attached to m
 \"Learner\"s to add preprocessing to machine learning algorithms, and can be
 composed to form preprocessing pipelines.")
     (license license:bsd-2)))
+
+(define-public r-mlr3torch
+  (package
+    (name "r-mlr3torch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3torch" version))
+       (sha256
+        (base32 "100fwy1qg14z4wxv8gvq3aib4a59r2hviij9mkdd3vamkbjbf827"))))
+    (properties `((upstream-name . "mlr3torch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-torch
+                             r-r6
+                             r-paradox
+                             r-mlr3pipelines
+                             r-mlr3misc
+                             r-mlr3
+                             r-lgr
+                             r-data-table
+                             r-checkmate
+                             r-backports))
+    (home-page "https://cran.r-project.org/package=mlr3torch")
+    (synopsis "Deep Learning with 'mlr3'")
+    (description
+     "Deep Learning library that extends the mlr3 framework by building upon the torch
+package.  It allows to conveniently build, train, and evaluate deep learning
+models without having to worry about low level details.  Custom architectures
+can be created using the graph language defined in mlr3pipelines'.")
+    (license license:lgpl3+)))
 
 (define-public r-mlr3summary
   (package
@@ -21935,13 +21937,13 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
 (define-public r-mispitools
   (package
     (name "r-mispitools")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mispitools" version))
        (sha256
-        (base32 "1s54dm6c48ahib2p5firx3l0fxqxrcvfpk02smisbxna85vbfwd5"))))
+        (base32 "1n18nsxsbjck29w86c2qhy1wjjiihvxxz1valhyl9099rkh0sil5"))))
     (properties `((upstream-name . "mispitools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -21960,14 +21962,15 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
     (home-page "https://github.com/MarsicoFL/mispitools")
     (synopsis "Missing Person Identification Tools")
     (description
-     "This package provides a set of decision making tools to conduct missing person
-searches.  Particularly, it allows computing optimal LR threshold for declaring
-potential matches in DNA-based database search.  More recently mispitools
-incorporates preliminary investigation data based LRs.  Statistical weight of
-different traces of evidence such as biological sex, age and hair color are
-presented.  For citing mispitools please use the following references: Marsico
-and Caridi, 2023 <doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al.
- 2021 <doi:10.1016/j.fsigen.2021.102519>.")
+     "An open source software package written in R statistical language.  It consist
+in a set of decision making tools to conduct missing person searches.
+Particularly, it allows computing optimal LR threshold for declaring potential
+matches in DNA-based database search.  More recently mispitools incorporates
+preliminary investigation data based LRs.  Statistical weight of different
+traces of evidence such as biological sex, age and hair color are presented.
+For citing mispitools please use the following references: Marsico and Caridi,
+2023 <doi:10.1016/j.fsigen.2023.102891> and Marsico, Vigeland et al.  2021
+<doi:10.1016/j.fsigen.2021.102519>.")
     (license license:gpl3+)))
 
 (define-public r-miselect
@@ -24053,13 +24056,13 @@ principal components.  The method is described in Nassiri et al. (2018)
 (define-public r-miesmuschel
   (package
     (name "r-miesmuschel")
-    (version "0.0.4-1")
+    (version "0.0.4-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miesmuschel" version))
        (sha256
-        (base32 "1n2svgi926m8i8d1yzj4dyy1nhxr8m46qp3fpi2kjnprxs303rnd"))))
+        (base32 "0pqp9rpk0jmbkfxi5vq8ij7s3y9ykk9kn0bsz9y4qw8z8j8grmv1"))))
     (properties `((upstream-name . "miesmuschel")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -26492,19 +26495,20 @@ on Machine Learning, 2014, p.  1953--1961.")
 (define-public r-mgi-report-reader
   (package
     (name "r-mgi-report-reader")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mgi.report.reader" version))
        (sha256
-        (base32 "0sl89lyg9h1vyln2q82l0b5f1ywxvclq8cl0hxsn7snq4asazvpf"))))
+        (base32 "0r0s8ji2mdi9hkls7ly645sa06hmcl903v9ys6cxzadbiprwnbnv"))))
     (properties `((upstream-name . "mgi.report.reader")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom
                              r-tibble
                              r-stringr
                              r-rlang
+                             r-memoise
                              r-httr2
                              r-dplyr
                              r-data-table))
@@ -27462,13 +27466,13 @@ references.")
 (define-public r-mev
   (package
     (name "r-mev")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mev" version))
        (sha256
-        (base32 "0kavj6mzzsjxkac2q0fxyhnzwy51pwld4r77fg024ggliiswjmms"))))
+        (base32 "0gzi48kwp6hb9p28km43kf76r55cbqgmjkfn8nylhkah7zx1gvxc"))))
     (properties `((upstream-name . "mev")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-rcpparmadillo r-rcpp r-nleqslv

@@ -4697,16 +4697,20 @@ truncated sample by maximum-likelihood estimation.")
 (define-public r-truncatednormal
   (package
     (name "r-truncatednormal")
-    (version "2.2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncatedNormal" version))
        (sha256
-        (base32 "05cfn7mdq0hgw97bbb227in9ccjz727sp67xpnpx2r1ajvl6gxdf"))))
+        (base32 "0r40l1nc7k4q0mfzs5iv2jvj565qrzk8qrblkliwqqyjwab7kdzg"))))
     (properties `((upstream-name . "TruncatedNormal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-nleqslv
+    (propagated-inputs (list r-spacefillr
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-qrng
+                             r-nleqslv
                              r-alabama))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TruncatedNormal")
@@ -7909,6 +7913,26 @@ transformation models proposed by Liu XX, Zeng D(2013)
 complex loops.  The coefficient vector and cumulative baseline hazard function
 can be estimated, along with the corresponding standard errors and P values.")
     (license license:gpl2+)))
+
+(define-public r-translit-uk
+  (package
+    (name "r-translit-uk")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "translit.uk" version))
+       (sha256
+        (base32 "1c8pp0b23kmrnlbmkcx8ws5c2bcj1p3vbrz9cxkphvvai5b0rkci"))))
+    (properties `((upstream-name . "translit.uk")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Amice13/translit.uk")
+    (synopsis "Ukrainian to Latin Transliteration")
+    (description
+     "This package provides a robust and user-friendly solution for transliterating
+Ukrainian strings into Latin symbols.")
+    (license license:expat)))
 
 (define-public r-translated
   (package
@@ -24520,6 +24544,27 @@ allows the user to download NCBI data dumps and create a local database for fast
 and local taxonomic assignment.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-taxnames
+  (package
+    (name "r-taxnames")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "taxnames" version))
+       (sha256
+        (base32 "02f3n010gc91jd2l20w7kvjjsd2cix32xy0p4jx0aywb0mx8sxj2"))))
+    (properties `((upstream-name . "taxnames")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-taxlist))
+    (home-page "https://github.com/kamapu/taxnames")
+    (synopsis "Formatting Taxonomic Names in Markdown")
+    (description
+     "This package provides a collection of functions used to format taxonomic names
+in Markdown documents.  Those functions work with data structured according to
+Alvarez and Luebert (2018) <doi:10.3897/bdj.6.e23635>.")
+    (license license:gpl3)))
 
 (define-public r-taxlist
   (package

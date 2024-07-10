@@ -2328,13 +2328,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.4")
+    (version "2.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htsr" version))
        (sha256
-        (base32 "1z4s3xn82fq3gh2fp7ys0vifmpgxksi0hvjj9whlkjv2dmsnzqyz"))))
+        (base32 "0hmc06pmpya0jjdh4h1aizyanaad0qys7xqrjqrhw37yamh3ywmk"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -7218,18 +7218,19 @@ included in the scripts directory of the package.")
 (define-public r-hgwrr
   (package
     (name "r-hgwrr")
-    (version "0.3-0")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hgwrr" version))
        (sha256
-        (base32 "0m3h5zwdnj4l7i6nh0mrjj4wprajgazninzffxpy14g7fy907ifn"))))
+        (base32 "0gsq5lvirxhsmwjw3lyzy5bq9h3hrbjrin3fnz938w5wpwdn2krz"))))
     (properties `((upstream-name . "hgwrr")))
     (build-system r-build-system)
     (inputs (list gsl))
-    (propagated-inputs (list r-rcpparmadillo r-rcpp))
-    (home-page "https://github.com/HPDell/hgwr/")
+    (propagated-inputs (list r-sf r-rcpparmadillo r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HPDell/hgwrr/")
     (synopsis "Hierarchical and Geographically Weighted Regression")
     (description
      "This model divides coefficients into three types, i.e., local fixed effects,
@@ -8015,13 +8016,13 @@ implements the methodological developments found in Hermes et al. (2022)
 (define-public r-heterometa
   (package
     (name "r-heterometa")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heterometa" version))
        (sha256
-        (base32 "01sahscx2lx9z7l0fpxqbrq34c6zkyyclwdcam27vcwj8189w2n1"))))
+        (base32 "1z295l3kzz0c3q6qx5qhf0nr73db13vjvn1lnis05509mga9i28w"))))
     (properties `((upstream-name . "heterometa")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-mathjaxr))
@@ -8030,8 +8031,8 @@ implements the methodological developments found in Hermes et al. (2022)
     (description
      "Published meta-analyses routinely present one of the measures of heterogeneity
 introduced in Higgins and Thompson (2002) <doi:10.1002/sim.1186>.  For
-critiquing articles it is often better to convert to another measure.  Some
-conversions are provided here and confidence intervals are also available.")
+critiquing articles it is often better to convert to another of those measures.
+Some conversions are provided here and confidence intervals are also available.")
     (license license:gpl2)))
 
 (define-public r-heteroggm

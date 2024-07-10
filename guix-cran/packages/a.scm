@@ -14525,6 +14525,43 @@ age-structured population dynamics models described in Erguler and others (2016)
 <doi:10.1371/journal.pone.0174293>.")
     (license license:gpl3+)))
 
+(define-public r-albi
+  (package
+    (name "r-albi")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aLBI" version))
+       (sha256
+        (base32 "1qsgl1vpl1kp1xz9pmpprjfcc5qpi3dgj7830pd8gwyicdd67il4"))))
+    (properties `((upstream-name . "aLBI")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ataher76/aLBI")
+    (synopsis "Estimating Length-Based Indicators for Fish Stock")
+    (description
+     "This package provides tools for estimating length-based indicators from length
+frequency data to assess fish stock status and manage fisheries sustainably.
+Implements methods from Cope and Punt (2009) <doi:10.1577/C08-025.1> for
+data-limited stock assessment and Froese (2004)
+<doi:10.1111/j.1467-2979.2004.00144.x> for detecting overfishing using simple
+indicators.  Key functions include: @code{CalPar}(): Calculates various lengths
+used in fish stock assessment as biological length indicators such as asymptotic
+length (Linf), maximum length (Lmax), length at sexual maturity (Lm), and
+optimal length (Lopt). @code{FishPar}(): Calculates length-based indicators
+(LBIs) proposed by Froese (2004) <doi:10.1111/j.1467-2979.2004.00144.x> such as
+the percentage of mature fish (Pmat), percentage of optimal length fish (Popt),
+percentage of mega spawners (Pmega), and the sum of these as Pobj.  This
+function also estimates confidence intervals for different lengths, visualizes
+length frequency distributions, and provides data frames containing calculated
+values. @code{FishSS}(): Makes decisions based on input from Cope and Punt
+(2009) <doi:10.1577/C08-025.1> and parameters calculated by @code{FishPar}()
+(e.g., Pobj, Pmat, Popt, LM_ratio) to determine stock status as target spawning
+biomass (TSB40) and limit spawning biomass (LSB25).  These tools support
+fisheries management decisions by providing robust, data-driven insights.")
+    (license license:gpl3)))
+
 (define-public r-albatross
   (package
     (name "r-albatross")
@@ -17551,6 +17588,40 @@ introduced by Dongming and Zinde-Walsh (2009)
 <doi:10.1016/j.jeconom.2008.09.038>.")
     (license license:gpl2+)))
 
+(define-public r-aelab
+  (package
+    (name "r-aelab")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aelab" version))
+       (sha256
+        (base32 "0v4mm9nq5l7hm3mh421xw5rnc0ibhc9jy5pqfqhcw3brygffdhbf"))))
+    (properties `((upstream-name . "aelab")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-readr
+                             r-openxlsx
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=aelab")
+    (synopsis "Calculation of Greenhouse Gas Flux")
+    (description
+     "Facilitate the analysis of data related to ecology, specifically the
+establishment of carbon budget.  Currently, the package allows the below
+analysis. (i) the calculation of greenhouse gas flux based on data obtained from
+trace gas analyzer using the method described in Lin et al. (2024). (ii) the
+calculation of Dissolved Oxygen (DO) metabolism based on data obtained from
+dissolved oxygen data logger using the method described in Staehr et al. (2010).
+ Lin et al. (2024) <doi:10.1016/j.scitotenv.2024.170768>.  Staehr et al. (2024)
+<doi:10.4319/lom.2010.8.0628>.")
+    (license license:gpl3+)))
+
 (define-public r-aeenrich
   (package
     (name "r-aeenrich")
@@ -19821,13 +19892,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "085djnpafh4gdklai3x54bjbkqkiyjlz9nygddmid3x3x4xg01vj"))))
+        (base32 "1vqabya705454lsxis73j2nflqp6jydk1hhcjnc79kjxf332nq5z"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -19845,13 +19916,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "031qv19rx389br9dv3nxpghy580g1aywv265la03s9g6d5jw9j4r"))))
+        (base32 "0lspgnimsgpkyf6q0qk5gjf9kij5w2x6xjcp6cy8hpwbp6xci8yr"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -19870,13 +19941,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.12.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "0kvn6agx5vscdl77zzkz8lhlr2i7p9qda6q52ligwvjyrh5zyi48"))))
+        (base32 "0d0fcjqcmbfbpln3s6n3aas9pz3ich43vnm6qnl8sf6dil3fxnsg"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

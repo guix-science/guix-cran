@@ -1543,13 +1543,13 @@ training for the glmnet() and cv.glmnet() functions.")
 (define-public r-customiser
   (package
     (name "r-customiser")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "customiser" version))
        (sha256
-        (base32 "11lh949ybrz0dmsy4kxnacawqsybzs6nayxnlq6465slwnfy6slf"))))
+        (base32 "0rwky3nrg6xhxb07v24d9j4359rmsn78xfxnv57kay8n5pmmh1s0"))))
     (properties `((upstream-name . "customiser")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rmarkdown r-rlang r-knitr r-fs))
@@ -3218,13 +3218,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.9")
+    (version "2.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "0gdni6jfqq4k4w5b42va0hm7fc1k8v8b3imlip6fn9kni388a2xl"))))
+        (base32 "1zafnsy8xz7pk5xnaqj1sf01ijw4mqcxk5lcm5dzjnmwr10p509r"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9250,6 +9250,29 @@ dependent and two independent variables are known a prior, which is usually the
 case when those values are derived from Likert scales.")
     (license license:gpl3)))
 
+(define-public r-covtracer
+  (package
+    (name "r-covtracer")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "covtracer" version))
+       (sha256
+        (base32 "1ndps8hmj8qpd4wl9p14ahr8n62rlgb2psvncfjmxs26p8dx90r3"))))
+    (properties `((upstream-name . "covtracer")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/genentech/covtracer")
+    (synopsis "Contextualizing Tests")
+    (description
+     "Dissects a package environment or covr coverage object in order to cross
+reference tested code with the lines that are evaluated, as well as linking
+those evaluated lines to the documentation that they are described within.
+Connecting these three pieces of information provides a mechanism of linking
+tests to documented behaviors.")
+    (license license:expat)))
+
 (define-public r-covtools
   (package
     (name "r-covtools")
@@ -14210,23 +14233,23 @@ complex sample survey designs.  Wrapper around the survey package.")
 (define-public r-convevol
   (package
     (name "r-convevol")
-    (version "2.0.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convevol" version))
        (sha256
-        (base32 "12i8hgyf2d8fgzblcnrqdpz8wlb8fvczp8aqz23pndp6l7isvgyj"))))
+        (base32 "0r2zvawqy2d6j4l906m02864d0j5p5b6l4wxx1mszz0vc9bslqla"))))
     (properties `((upstream-name . "convevol")))
     (build-system r-build-system)
-    (propagated-inputs (list r-phytools r-mass r-geiger r-cluster r-ape))
+    (propagated-inputs (list r-phytools r-magick r-geiger r-cluster r-ape))
     (home-page "https://cran.r-project.org/package=convevol")
     (synopsis "Analysis of Convergent Evolution")
     (description
      "Quantifies and assesses the significance of convergent evolution using multiple
 methods and measures as described in Stayton (2015) <DOI: 10.1111/evo.12729> and
 Grossnickle et al.  2023.  Also displays results in various ways.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-convertr
   (package
@@ -14956,13 +14979,13 @@ research.")
 (define-public r-constructive
   (package
     (name "r-constructive")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constructive" version))
        (sha256
-        (base32 "1xdgzh5sr4awzl7z0l4cg1f4hvi5ch031qc34xz0x0gdqy7gsqww"))))
+        (base32 "1w75ydhpm49a4prkb9kys1866jn552i85p71y446qj7cj46m8yih"))))
     (properties `((upstream-name . "constructive")))
     (build-system r-build-system)
     (propagated-inputs (list r-waldo r-rlang r-diffobj r-cli))
@@ -17805,13 +17828,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "6.8")
+    (version "6.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "066fn6qndxgz6lp15wznjq1jhbiq917iiidkx5py3ixdk3gbbg7c"))))
+        (base32 "09xv3r9g5bkn2ra11zswvly1x9bj7xq1z39fd2kl0w3vxg9mjih1"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -17819,21 +17842,20 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
                              r-rfast2
                              r-rfast
                              r-regda
+                             r-quantreg
                              r-quadprog
-                             r-pchc
                              r-nnet
                              r-mvhtests
                              r-mixture
+                             r-minpack-lm
                              r-mda
                              r-matrix
                              r-mass
                              r-glmnet
                              r-foreach
-                             r-flexdir
                              r-energy
                              r-emplik
                              r-doparallel
-                             r-directional
                              r-cluster))
     (home-page "https://cran.r-project.org/package=Compositional")
     (synopsis "Compositional Data Analysis")
@@ -17880,7 +17902,8 @@ Innovations in Statistics and Data Science, pp.  225--234.
 (2023). \"Flexible non-parametric regression models for compositional response
 data with zeros\".  Statistics and Computing, 33(106).
 <doi:10.1007/s11222-023-10277-5>.  n) Tsagris.  M. (2024). \"Constrained least
-squares simplicial-simplicial regression\". <arxiv:2403.19835>.")
+squares simplicial-simplicial regression\".
+<doi:10.48550/@code{arXiv.2403.19835>}.")
     (license license:gpl2+)))
 
 (define-public r-compositereliability
@@ -25195,13 +25218,13 @@ and mouse cell identity markers sourced from a variety of databases.")
 (define-public r-clustermi
   (package
     (name "r-clustermi")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterMI" version))
        (sha256
-        (base32 "02mnv09misgpwjmziqcb8zxhwfvy6dlysicp67lh53li1hnnyw62"))))
+        (base32 "0irc1fcsvwkyv1g9zyjk9l6hmr1mj78rlndkd2ggg44r22mc1p0m"))))
     (properties `((upstream-name . "clusterMI")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -25915,13 +25938,13 @@ in Soale and Tsyawo (2019) <doi:10.13140/RG.2.2.32355.81441>.")
 (define-public r-clusboot
   (package
     (name "r-clusboot")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusBoot" version))
        (sha256
-        (base32 "03xch4s8xlvl17vbpm3jk0a6faa57hq0amyg91d9kjr4d6bb4km1"))))
+        (base32 "08b3mw4r20z6d6d7w0rmzsz3f11icpzmca5fv7p1mk1m0l1nckfw"))))
     (properties `((upstream-name . "ClusBoot")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ClusBoot")
@@ -31817,13 +31840,13 @@ for full list.")
 (define-public r-childfree
   (package
     (name "r-childfree")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childfree" version))
        (sha256
-        (base32 "0p1b1bi6shkg2lzl0q07al80sc5gw3yrz3cj8sp5rfpnrfa12ard"))))
+        (base32 "1hss91cls38zj4dibcr9whjlmbs4w2b7xfpgfqkkd6xa6xmcxd6v"))))
     (properties `((upstream-name . "childfree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rio))
@@ -36278,13 +36301,13 @@ download service for accessing historical records.")
 (define-public r-cdcsis
   (package
     (name "r-cdcsis")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdcsis" version))
        (sha256
-        (base32 "0hv52valyig3zzywm3058c5nxb2n7y3j2vfibxdbfg8414wwapd9"))))
+        (base32 "0p3nlp3pqblgw753lrh4xfm3lbx8j9bqwm6gnvdibcsrszzr0zw7"))))
     (properties `((upstream-name . "cdcsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-ks))
@@ -36297,7 +36320,7 @@ conditional dependence measurement of two multivariate random variables given a
 confounding variable.  This package provides conditional distance correlation,
 performs the conditional distance correlation sure independence screening
 procedure for ultrahigh dimensional data
-<http://www3.stat.sinica.edu.tw/statistica/J28N1/J28N114/J28N114.html>, and
+<https://www3.stat.sinica.edu.tw/statistica/J28N1/J28N114/J28N114.html>, and
 conducts conditional distance covariance test for conditional independence
 assumption of two multivariate variable.")
     (license license:gpl2+)))
@@ -37031,13 +37054,13 @@ where the subcohort was selected by stratified simple random sampling.")
 (define-public r-ccdr
   (package
     (name "r-ccdr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccdR" version))
        (sha256
-        (base32 "04g8i39p11yyrrgs3lpwj095hnyncdljyz4mxsl9pcql4hwp4v39"))))
+        (base32 "1fy6fici3f2p7v0ys2jabahd3phqpf9z0rvrydqdr19srllzspgm"))))
     (properties `((upstream-name . "ccdR")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -37052,14 +37075,16 @@ where the subcohort was selected by stratified simple random sampling.")
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/USEPA/ccdR")
-    (synopsis "Utilities for Interacting with the 'CCTE' APIs")
+    (synopsis "Utilities for Interacting with the 'CTX' APIs")
     (description
-     "Access chemical, hazard, and bioactivity data from the Center for Computational
-Toxicology and Exposure ('CCTE') APIs <https://api-ccte.epa.gov/docs/>.
+     "Access chemical, hazard, bioactivity, and exposure data from the Computational
+Toxicology and Exposure ('CTX') APIs <https://api-ccte.epa.gov/docs/>.
 @code{ccdR} was developed to streamline the process of accessing the information
-available through the CCTE APIs without requiring prior knowledge of how to use
-APIs.  All data is also available on the @code{CompTox} Chemical Dashboard
-('CCD') <https://comptox.epa.gov/dashboard/>.")
+available through the CTX APIs without requiring prior knowledge of how to use
+APIs.  Most data is also available on the @code{CompTox} Chemical Dashboard
+('CCD') <https://comptox.epa.gov/dashboard/> and other resources found at the
+EPA Computational Toxicology and Exposure Online Resources
+<https://www.epa.gov/comptox-tools>.")
     (license license:gpl3+)))
 
 (define-public r-ccda

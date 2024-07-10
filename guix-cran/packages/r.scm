@@ -3448,13 +3448,13 @@ centered on an approach using machine learning for path classification.")
 (define-public r-rtpcr
   (package
     (name "r-rtpcr")
-    (version "1.0.9")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtpcr" version))
        (sha256
-        (base32 "0pwwkcgzhmhdc5fic8h623w1qggmaa3cb1li6vprsxi4k5diq44c"))))
+        (base32 "17jbwyi19h5x9sbn14rgpbp2c23qi4w3jxdsvscrbhfrmckwfj90"))))
     (properties `((upstream-name . "rtpcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4876,13 +4876,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.5.1")
+    (version "9.3.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "07l9vrjn4cfzz517sqn9q7aj4026b2bqbqm15agr2211z3ppjfmz"))))
+        (base32 "1wyyvv8nrgfk811vbsixyiyhz0yq65bls420d5fl9rrcwzdv3rkj"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -12705,13 +12705,13 @@ outcomes with ties are supported.")
 (define-public r-rolog
   (package
     (name "r-rolog")
-    (version "0.9.17")
+    (version "0.9.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rolog" version))
        (sha256
-        (base32 "1h69xgj1gx8w8vrkrnwpcs1cakz08k8c9fzdh62bxbk512y7p5za"))))
+        (base32 "0wdz2mnmih0hxrylqnrqrzgpwji3gi7mxzk9h60idfpwdhgc1krq"))))
     (properties `((upstream-name . "rolog")))
     (build-system r-build-system)
     (inputs (list swi-prolog))
@@ -13466,13 +13466,13 @@ functional data by being robust against the presence of outliers.")
 (define-public r-rodeo
   (package
     (name "r-rodeo")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rodeo" version))
        (sha256
-        (base32 "0nv5j9wcqfal92smls67ipa82bzva13y1kg9wnly59bdmhs3jcsm"))))
+        (base32 "14bs944nn7avb06j7xb24qphr09n2i011skfdgqgybm9q5dxawpk"))))
     (properties `((upstream-name . "rodeo")))
     (build-system r-build-system)
     (propagated-inputs (list r-readxl r-readods r-r6 r-desolve))
@@ -17181,13 +17181,13 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
 (define-public r-rnamf
   (package
     (name "r-rnamf")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAmf" version))
        (sha256
-        (base32 "0hshkb5dhfpvgwpcp7a1rlp27a78lp48v7zsciw1lmga2igq5x42"))))
+        (base32 "13c00l660f6yl5hhbv99h95q0nvzrfv0svm40bzfaz88q54pv9q1"))))
     (properties `((upstream-name . "RNAmf")))
     (build-system r-build-system)
     (propagated-inputs (list r-plgp r-lhs r-foreach r-doparallel))
@@ -17195,10 +17195,10 @@ nanoflann library is exported and ready to be used via the linking to mechanism.
     (synopsis "Recursive Non-Additive Emulator for Multi-Fidelity Data")
     (description
      "This package performs RNA emulation and active learning proposed by Heo and Sung
-(2023+) <@code{arXiv:2309.11772>} for multi-fidelity computer experiments.  The
-RNA emulator is particularly useful when the simulations with different fidelity
-level are nonlinearly correlated.  The hyperparameters in the model are
-estimated by maximum likelihood estimation.")
+(2024) <doi:10.1080/00401706.2024.2376173> for multi-fidelity computer
+experiments.  The RNA emulator is particularly useful when the simulations with
+different fidelity level are nonlinearly correlated.  The hyperparameters in the
+model are estimated by maximum likelihood estimation.")
     (license license:expat)))
 
 (define-public r-rnames
@@ -17760,13 +17760,13 @@ Wada, Kawano & Tsubaki (2020) <doi:10.17713/ajs.v49i2.872>.")
 (define-public r-rmsb
   (package
     (name "r-rmsb")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmsb" version))
        (sha256
-        (base32 "1pwx9y1jppy7fvm7wr5gnxmjrcfzc1x9n5p2ybc5xisz1ymb2fdn"))))
+        (base32 "1f33wv5bjqp59r4sdz8c3ckxhv4xz3clnsswpqxx6zagm7v572vp"))))
     (properties `((upstream-name . "rmsb")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -20440,6 +20440,27 @@ the Seasonal and the Regional Kendall Tests for trend (SKT and RKT) and
 Theil-Sen's slope estimator.")
     (license license:gpl2)))
 
+(define-public r-rkriging
+  (package
+    (name "r-rkriging")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rkriging" version))
+       (sha256
+        (base32 "0ii57kjbh2g8zhwrmk8l1r8rc1z7f2f0vc883fzfd0szz79c60x5"))))
+    (properties `((upstream-name . "rkriging")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr r-bh))
+    (home-page "https://cran.r-project.org/package=rkriging")
+    (synopsis "Kriging Modeling")
+    (description
+     "An Eigen'-based computationally efficient C++ implementation for fitting various
+kriging models to data.  This research is supported by U.S. National Science
+Foundation grant DMS-2310637.")
+    (license license:gpl2+)))
+
 (define-public r-rkorapclient
   (package
     (name "r-rkorapclient")
@@ -20936,16 +20957,16 @@ power of R and the visualization libraries of @code{JavaScript} in one package."
 (define-public r-rjsoncons
   (package
     (name "r-rjsoncons")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rjsoncons" version))
        (sha256
-        (base32 "09dxvw64kri4dx5hn399r0w50zvi13sk9fzyijy45a7m5366wq0w"))))
+        (base32 "1icp56jimfsjjniq1sg45g89xfq56x8728dkp0c2pv7snjpxjcjl"))))
     (properties `((upstream-name . "rjsoncons")))
     (build-system r-build-system)
-    (propagated-inputs (list r-cpp11 r-cli))
+    (propagated-inputs (list r-tibble r-cpp11 r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://mtmorgan.github.io/rjsoncons/")
     (synopsis "Query, Pivot, Patch, and Validate 'JSON' and 'NDJSON'")
@@ -27691,13 +27712,13 @@ compound in a given disease.")
 (define-public r-rethnicity
   (package
     (name "r-rethnicity")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rethnicity" version))
        (sha256
-        (base32 "1h8d9q06dc98l55lqmjxf69ngvdj6r9fcck1bdvk0rin40q07zfk"))))
+        (base32 "0v2v2vajidw9nv1c9drglyyy4smxz740zx3kvl77pn9djf2im85v"))))
     (properties `((upstream-name . "rethnicity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppthread r-rcppeigen r-rcpp r-cli))
@@ -27708,7 +27729,7 @@ compound in a given disease.")
      "Implementation of the race/ethnicity prediction method, described in
 \"rethnicity: An R package for predicting ethnicity from names\" by Fangzhou Xie
 (2022) <doi:10.1016/j.softx.2021.100965> and \"Rethnicity: Predicting Ethnicity
-from Names\" by Fangzhou Xie (2021) <@code{arXiv:2109.09228>}.")
+from Names\" by Fangzhou Xie (2021) <doi:10.48550/@code{arXiv.2109.09228>}.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
 
 (define-public r-rethinker
@@ -33880,13 +33901,13 @@ angewandte Statistik (second edition).")
 (define-public r-redamor
   (package
     (name "r-redamor")
-    (version "0.7.4")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReDaMoR" version))
        (sha256
-        (base32 "14msbr297haj1v8aq61m0zbj98sphcx0q8g3883lnrabjsshkws2"))))
+        (base32 "1pl5yg7dxlg719zhbsywg4y9yqn8fyk5h6kqjl37gs7czb8s6ak1"))))
     (properties `((upstream-name . "ReDaMoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -36249,6 +36270,28 @@ according to <https://bookdown.org/brry/rdwd/raster-data.html>.  Download
 datasets with @code{readDWD}()'.")
     (license license:gpl2+)))
 
+(define-public r-rdune
+  (package
+    (name "r-rdune")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rdune" version))
+       (sha256
+        (base32 "14xzdnm0j942bcy4jdcfc9zpraqm5hkk8yyj69kfhh6f87rdzkhv"))))
+    (properties `((upstream-name . "Rdune")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/nvietto/Rdune")
+    (synopsis "'Creates Color Palettes Inspired by Dune'")
+    (description
+     "Enables the use of color palettes inspired by the Dune movies.  These palettes
+are compatible with ggplot2'.  See Wickham (2016)
+<doi:10.1007/978-3-319-24277-4> for more details on ggplot2'.")
+    (license license:expat)))
+
 (define-public r-rduinoiot
   (package
     (name "r-rduinoiot")
@@ -36748,27 +36791,6 @@ classifying all German and German-language publications, foreign publications
 about Germany, translations of German works, and the works of German-speaking
 emigrants published abroad between 1933 and 1945.")
     (license license:expat)))
-
-(define-public r-rdnase
-  (package
-    (name "r-rdnase")
-    (version "1.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rDNAse" version))
-       (sha256
-        (base32 "0cl51q61kwvdsm5f49cjjbzggqam1fnr6gp15cmy6m2yahyxg1lk"))))
-    (properties `((upstream-name . "rDNAse")))
-    (build-system r-build-system)
-    (home-page "https://github.com/wind22zhu/rDNAse")
-    (synopsis
-     "Generating Various Numerical Representation Schemes of DNA Sequences")
-    (description
-     "Comprehensive toolkit for generating various numerical representation schemes of
-DNA sequence.  The descriptors and similarity scores included are extensively
-used in bioinformatics and chemogenomics.")
-    (license license:gpl2+)))
 
 (define-public r-rdmulti
   (package
@@ -38480,13 +38502,13 @@ Further integration and extensions are planned.")
 (define-public r-rcppsimdjson
   (package
     (name "r-rcppsimdjson")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppSimdJson" version))
        (sha256
-        (base32 "1q5gqa1pp71f952wvl1fpw9r2qm92112x5irw1splf3y6k6m4r6h"))))
+        (base32 "0fvmcn56d8p0wf3ax9w7l8s72zfmxkq0pf8z5lm4v6l6vj7wrfgz"))))
     (properties `((upstream-name . "RcppSimdJson")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -38497,9 +38519,10 @@ Further integration and extensions are planned.")
      "The JSON format is ubiquitous for data interchange, and the simdjson library
 written by Daniel Lemire (and many contributors) provides a high-performance
 parser for these files which by relying on parallel SIMD instruction manages to
-parse these files as faster than disk speed.  See the <@code{arXiv:1902.08318>}
-paper for more details about simdjson'.  This package parses JSON from string,
-file, or remote URLs under a variety of settings.")
+parse these files as faster than disk speed.  See the
+<doi:10.48550/@code{arXiv.1902.08318>} paper for more details about simdjson'.
+This package parses JSON from string, file, or remote URLs under a variety of
+settings.")
     (license license:gpl2+)))
 
 (define-public r-rcppredis
@@ -45740,6 +45763,28 @@ T. (2007) <doi:10.1016/j.cor.2005.05.030>.")
 several different algorithms: Cross-Entropy Monte Carlo algorithm, Genetic
 algorithm, and a brute force algorithm (for small problems).")
     (license license:lgpl2.0+)))
+
+(define-public r-rank
+  (package
+    (name "r-rank")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rank" version))
+       (sha256
+        (base32 "1pbi2s7361v6jzv9574dhcvdryachrw8s25vk2ca5jjvp9yrj2li"))))
+    (properties `((upstream-name . "rank")))
+    (build-system r-build-system)
+    (home-page "https://github.com/selkamand/rank")
+    (synopsis "Customisable Ranking of Numerical and Categorical Data")
+    (description
+     "This package provides a flexible alternative to the built-in rank() function
+called smartrank().  Optionally rank categorical variables by frequency (instead
+of in alphabetical order), and control whether ranking is based on
+descending/ascending order.  smartrank() is suitable for both numerical and
+categorical data.")
+    (license license:expat)))
 
 (define-public r-ranglapunjab
   (package
