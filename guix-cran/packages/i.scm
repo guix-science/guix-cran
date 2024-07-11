@@ -3949,13 +3949,13 @@ Stieger, & Reips (2019) <doi:10.1177/2059799119884283>.")
 (define-public r-ipumsr
   (package
     (name "r-ipumsr")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipumsr" version))
        (sha256
-        (base32 "0zkj33xg6b7aapmp8qd333qc6mmcwhbqx3pd8ibhdlcd1pc89hww"))))
+        (base32 "04gmvp8vwzfi22lm6cir02gikk32s7j7cy2rmq5sy88s68j520zi"))))
     (properties `((upstream-name . "ipumsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot

@@ -11275,37 +11275,25 @@ Granger Mediation Analysis of Multiple Time Series with an Application to
 (define-public r-gm
   (package
     (name "r-gm")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gm" version))
        (sha256
-        (base32 "1g0frcfk2ybhhz0sixdmj8h3z61acaxs10ybja60q91mxlyix2zx"))))
+        (base32 "0vjq3nj1wv4jy0rqi4f03kq3bdamfw63vncbhfmih063rpf7i69h"))))
     (properties `((upstream-name . "gm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rstudioapi
-                             r-rlang
-                             r-mass
-                             r-magrittr
-                             r-magick
-                             r-knitr
-                             r-htmltools
-                             r-glue
-                             r-base64enc))
+    (propagated-inputs (list r-htmltools r-erify r-base64enc))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/flujoo/gm")
-    (synopsis "Generate Music Easily and Show Them Anywhere")
+    (synopsis "Create Music with Ease")
     (description
-     "This package provides a simple and intuitive high-level language, with which you
-can create music easily.  Takes care of all the dirty technical details in
-converting your music to musical scores and audio files.  Works in R Markdown
-documents <https://rmarkdown.rstudio.com/>, R Jupyter Notebooks
-<https://jupyter.org/>, and RStudio <https://www.rstudio.com/>, so you can embed
-generated music anywhere.  Internally, uses @code{MusicXML}
-<https://www.musicxml.com/> to represent musical scores, and @code{MuseScore}
-<https://musescore.org/> to convert @code{MusicXML}'.")
+     "This package provides a simple and intuitive high-level language for music
+representation.  Generates and embeds music scores and audio files in RStudio',
+R Markdown documents, and R Jupyter Notebooks'.  Internally, uses
+@code{MusicXML} <https://github.com/w3c/musicxml> to represent music, and
+@code{MuseScore} <https://musescore.org/> to convert @code{MusicXML}'.")
     (license license:expat)))
 
 (define-public r-glycanr
@@ -16892,13 +16880,13 @@ make sure that they work reliably.")
 (define-public r-ggplate
   (package
     (name "r-ggplate")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplate" version))
        (sha256
-        (base32 "18ibiizxbzyshaxgw2ff639nn36mha5bv6yxa6960wjyx3z78772"))))
+        (base32 "0n2c9g6rl5vn5gki43xcc22p8hv2gyj7qr6jdbmllx22ld7zsz43"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

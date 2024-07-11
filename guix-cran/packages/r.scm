@@ -6898,16 +6898,16 @@ Centre: <https://cmc.leeds.ac.uk/>.")
 (define-public r-rsgeo
   (package
     (name "r-rsgeo")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsgeo" version))
        (sha256
-        (base32 "04mv8ifl1k2vqacglw0j41j96l9ls8khiligjhk499c5zg4aadip"))))
+        (base32 "161g4yr8lw9wgkd86wymp14121wz0vfc0br630y8fdn49yd4kl46"))))
     (properties `((upstream-name . "rsgeo")))
     (build-system r-build-system)
-    (inputs (list))
+    (inputs (list openssl))
     (propagated-inputs (list r-vctrs r-rlang))
     (home-page "https://github.com/JosiahParry/rsgeo")
     (synopsis "An Interface to Rust's 'geo' Library")
@@ -10775,27 +10775,6 @@ distributed data using the Randomized phi-divergence test statistics.  Details
 of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (2023) <doi:10.1214/22-AIHP1299>.")
     (license license:expat)))
-
-(define-public r-rpdo
-  (package
-    (name "r-rpdo")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rpdo" version))
-       (sha256
-        (base32 "0sh52y7hmnm9qhyp0m6vp3c23wzz3ds8j577z105s6f3pdf398l0"))))
-    (properties `((upstream-name . "rpdo")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lifecycle r-chk))
-    (home-page "https://github.com/poissonconsulting/rpdo")
-    (synopsis "Pacific Decadal Oscillation Index Data")
-    (description
-     "Monthly Pacific Decadal Oscillation (PDO) index values from January 1900 to
-September 2018.  Superseded by rsoi package which includes the historical and
-most recent monthly PDO index values together with related climate indices.")
-    (license license:cc0)))
 
 (define-public r-rpdbapi
   (package
@@ -24037,13 +24016,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "1vsf5bvbqdrvsd21z1ps1hxxmpkf39x2xk5wk45695pg9zq8dy19"))))
+        (base32 "0s7l23zmdskidqhc49j77qxi1nj321q5rgdayq91fdg1vcchrwvp"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -29662,13 +29641,13 @@ footers, spanning headers, page by variables, and automatic page numbering.")
 (define-public r-report
   (package
     (name "r-report")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "report" version))
        (sha256
-        (base32 "0frqqijhr98nqpy157capkx6h93z2jaxsl8r0vl9vk3k2g120wq1"))))
+        (base32 "075x4kzqjwrfqp2130ahcvj70vip9k000pg6z48y75ry58y80iyx"))))
     (properties `((upstream-name . "report")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -34935,13 +34914,13 @@ rebus.* dependencies.")
 (define-public r-rebmix
   (package
     (name "r-rebmix")
-    (version "2.15.0")
+    (version "2.16.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rebmix" version))
        (sha256
-        (base32 "1ikpfsdjwlck9nmx781k0783r94f3ngxixrv1q3w9r7rgk769mx4"))))
+        (base32 "12scbgbjyfpskv1lly34r0iwci13pad4g7lgiz7wsph0gynmai13"))))
     (properties `((upstream-name . "rebmix")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=rebmix")

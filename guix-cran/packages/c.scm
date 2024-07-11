@@ -6898,13 +6898,13 @@ discrete data with pairwise and unary potentials.")
 (define-public r-crew-cluster
   (package
     (name "r-crew-cluster")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.cluster" version))
        (sha256
-        (base32 "1qn3pxyhfyb47cgyzmw2l07dhpvbf0yicxxbxh82scmlj5pqbkhf"))))
+        (base32 "1n40rl1z64ig7jp637xrydnvzmpjad76xsd2avhb8nkbcima89f8"))))
     (properties `((upstream-name . "crew.cluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -6934,13 +6934,13 @@ Surmann (2017). <doi:10.21105/joss.00135>.")
 (define-public r-crew-aws-batch
   (package
     (name "r-crew-aws-batch")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crew.aws.batch" version))
        (sha256
-        (base32 "1gssnvmszq89cfprwrgiq1gajf9q2s8kdj03gbza194p4646lj6p"))))
+        (base32 "06q06jc53w0yh91vs45r8g9q13avcfi6s30h2bwqbdsqsx6rk54r"))))
     (properties `((upstream-name . "crew.aws.batch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -24961,13 +24961,13 @@ soft spatial/geographical constraints.")
 (define-public r-clustervar
   (package
     (name "r-clustervar")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClusterVAR" version))
        (sha256
-        (base32 "03iwwy8ijz4rxsainlriy6g5mkn4wl7hwgk9mm0cwfxvai3r1n28"))))
+        (base32 "1596imfnk0kfygw3p7pcn3wkcppkq15rqvm1sdn3kfykwcb794jr"))))
     (properties `((upstream-name . "ClusterVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -32712,6 +32712,32 @@ analysis.")
      "Checks that students have the correct version of R', R packages, RStudio and
 other dependencies installed, and that the recommended RStudio configuration has
 been applied.")
+    (license license:expat)))
+
+(define-public r-checked
+  (package
+    (name "r-checked")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "checked" version))
+       (sha256
+        (base32 "1fnqmjm7lpwlcch7bfx3pkq0wm77xl9gk0yvnpcd2d8pr78p1z0h"))))
+    (properties `((upstream-name . "checked")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcmdcheck
+                             r-r6
+                             r-jsonlite
+                             r-igraph
+                             r-cli
+                             r-callr))
+    (home-page "https://cran.r-project.org/package=checked")
+    (synopsis "Systematically Run R CMD Checks")
+    (description
+     "Systematically Run R checks against multiple packages.  Checks are run in
+parallel with strategies to minimize dependency installation.  Provides out of
+the box interface for running reverse dependency check.")
     (license license:expat)))
 
 (define-public r-checkdown

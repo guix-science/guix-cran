@@ -1124,13 +1124,13 @@ addin.  The report appears in the RStudio viewer pane.")
 (define-public r-jsdne
   (package
     (name "r-jsdne")
-    (version "4.3.2")
+    (version "4.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSDNE" version))
        (sha256
-        (base32 "1j3ish1kfhx8in37l8ljd22qmaqi6wlsjchzwhfi21rhjrynqzkz"))))
+        (base32 "04vaalcwixzi1si814zmh6w9rfircj9rd5y3gx64d5l4f5illsn5"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-nnet r-molar r-mass r-dplyr))
@@ -1642,13 +1642,13 @@ city codes at a specific point in time.")
 (define-public r-joyn
   (package
     (name "r-joyn")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joyn" version))
        (sha256
-        (base32 "0p8s90fkjwlllhk7a60xs6pfvgbhyz5sk3rdvdp5sb4l037rb4m2"))))
+        (base32 "1pcg70znihl310aibhd2k8w8nc5960wj7g418f2xb1rx9yxvwn8g"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-data-table r-collapse r-cli))

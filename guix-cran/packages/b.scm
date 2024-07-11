@@ -13966,13 +13966,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "3.0.2")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "0cnpx2c2ik9ih5hvgl91abn9xpq1xdvv2dfxsiz77dmhwk9xrpv9"))))
+        (base32 "19j51qpvkg09al8r64q3d9czgmp2saihclsadh8jmiyc1s97plvm"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
@@ -13985,9 +13985,9 @@ and product, selection by index, date and year-period, conversion to daily,
 monthly, quarterly, (semi)annually.  Simultaneous equation models definition,
 estimation, simulation and forecasting with coefficient restrictions, error
 autocorrelation, exogenization, add-factors, impact and interim multipliers
-analysis, conditional equation evaluation, endogenous targeting and model
-renormalization, structural stability, stochastic simulation and forecast,
-optimal control.")
+analysis, conditional equation evaluation, rational expectations, endogenous
+targeting and model renormalization, structural stability, stochastic simulation
+and forecast, optimal control.")
     (license license:gpl3)))
 
 (define-public r-billboard

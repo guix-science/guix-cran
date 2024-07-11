@@ -23895,26 +23895,31 @@ migration.")
 (define-public r-migrate
   (package
     (name "r-migrate")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migrate" version))
        (sha256
-        (base32 "0yf0c7gcn2q8sx0havhqaxk6z69bagfd58drpbqkkpsp62bnq875"))))
+        (base32 "04whq58zm83s9y66bzb390q6cwj006gv4abv0b63fx1rkvfh9drw"))))
     (properties `((upstream-name . "migrate")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-tibble r-rlang r-magrittr r-dplyr))
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-glue
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mthomas-ketchbrook/migrate")
+    (home-page "https://github.com/ketchbrookanalytics/migrate")
     (synopsis "Create Credit State Migration (Transition) Matrices")
     (description
-     "This package provides tools to help convert credit risk data at two time points
+     "This package provides tools to help convert credit risk data at two timepoints
 into traditional credit state migration (aka, \"transition\") matrices.  At a
 higher level, migrate is intended to help an analyst understand how risk moved
 in their credit portfolio over a time interval.  References to this methodology
 include: 1.  Schuermann, T. (2008) <doi:10.1002/9780470061596.risk0409>.  2.
-Perederiy, V. (2017) <@code{arXiv:1708.00062>}.")
+Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
     (license license:expat)))
 
 (define-public r-migraph

@@ -7229,17 +7229,17 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "1kp96nixy9y7i51jv73b9s0gz3via0ryp9cmh6ybbmyfv15qkr4s"))))
+        (base32 "1gv7nvcd6qssvm21vz2vgd49abypsff5zjlxarb64ggkpiqrgdw8"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-rlang))
+    (propagated-inputs (list r-rlang r-arcgisutils))
     (home-page "https://r.esri.com/arcpbf/")
     (synopsis "Process ArcGIS Protocol Buffer FeatureCollections")
     (description
@@ -8903,13 +8903,13 @@ field.")
 (define-public r-apoderoides
   (package
     (name "r-apoderoides")
-    (version "2.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Apoderoides" version))
        (sha256
-        (base32 "1i38haakkgaj3rk9grp2shw64y3rydl8c5v4ivbrwbx6hrgxdp7i"))))
+        (base32 "1hlcps0zf9ymcrfac7jhrnqzd0qihxfw363qj8zmjj3q6aa3v2k9"))))
     (properties `((upstream-name . "Apoderoides")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-ape))
@@ -11916,6 +11916,38 @@ and shiny-based GUI.")
 methods to calculate home ranges, track statistics (e.g. step lengths, speed, or
 turning angles), prepare data for fitting habitat selection analyses, and
 simulation of space-use from fitted step-selection functions.")
+    (license license:gpl3)))
+
+(define-public r-amscorer
+  (package
+    (name "r-amscorer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amscorer" version))
+       (sha256
+        (base32 "15c9crj52m93122yp2fvx75vgm73lq3f3hc9jkg2f122mz6ml65x"))))
+    (properties `((upstream-name . "amscorer")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=amscorer")
+    (synopsis "Clinical Scores Calculator for Healthcare")
+    (description
+     "This package provides functions to compute various clinical scores used in
+healthcare.  These include the Charlson Comorbidity Index (CCI), predicting
+10-year survival in patients with multiple comorbidities; the EPICES score, an
+individual indicator of precariousness considering its multidimensional nature;
+the MELD score for chronic liver disease severity; the Alternative Fistula Risk
+Score (a-FRS) for postoperative pancreatic fistula risk; and the Distal
+Pancreatectomy Fistula Risk Score (D-FRS) for risk following distal
+pancreatectomy.  For detailed methodology, refer to Charlson et al. (1987)
+<doi:10.1016/0021-9681(87)90171-8> , Sass et al. (2006)
+<doi:10.1007/s10332-006-0131-5>, Kamath et al. (2001)
+<doi:10.1053/jhep.2001.22172>, Kim et al. (2008) <doi:10.1056/NEJMoa0801209> Kim
+et al. (2021) <doi:10.1053/j.gastro.2021.08.050>, Mungroop et al. (2019)
+<doi:10.1097/SLA.0000000000002620>, and de Pastena et al. (2023)
+<doi:10.1097/SLA.0000000000005497>..")
     (license license:gpl3)))
 
 (define-public r-amregtest

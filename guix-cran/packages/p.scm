@@ -1127,6 +1127,36 @@ purrr'.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-purpleair
+  (package
+    (name "r-purpleair")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PurpleAir" version))
+       (sha256
+        (base32 "0xsqd839x55m7wmr2knznqyrmvpa5kcxi16izxl5h2539diqssjx"))))
+    (properties `((upstream-name . "PurpleAir")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/cole-brokamp/PurpleAir")
+    (synopsis "Query the 'PurpleAir' Application Programming Interface")
+    (description
+     "Send requests to the @code{PurpleAir} Application Programming Interface (API;
+<https://community.purpleair.com/c/data/api/18>).  Check a @code{PurpleAir} API
+key and get information about the related organization.  Download real-time data
+from a single @code{PurpleAir} sensor or many sensors by sensor identifier,
+geographical bounding box, or time since modified.  Download historical data
+from a single sensor.")
+    (license license:expat)))
+
 (define-public r-purging
   (package
     (name "r-purging")

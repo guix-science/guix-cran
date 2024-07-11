@@ -26414,16 +26414,22 @@ the year, president, party, and format, are also included.")
 (define-public r-sotkanet
   (package
     (name "r-sotkanet")
-    (version "0.9.79")
+    (version "0.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sotkanet" version))
        (sha256
-        (base32 "1d6g09rf7irk3d8hkm6ahp8zl6lj24jnipwvzr0njx2sqi3fwd4f"))))
+        (base32 "1384rsvhz39i8s8wvgik3jgv1h9yrdy7qmxpvmdqay6wjimmjz09"))))
     (properties `((upstream-name . "sotkanet")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-curl))
+    (propagated-inputs (list r-refmanager
+                             r-magrittr
+                             r-lubridate
+                             r-httr2
+                             r-frictionless
+                             r-digest
+                             r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://ropengov.github.io/sotkanet/")
     (synopsis "Sotkanet Open Data Access and Analysis")

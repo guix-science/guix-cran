@@ -2896,16 +2896,63 @@ of the R/exams package (see <http://www.r-exams.org/>) are transformed into XML
 format required by @code{MyLearn}'.")
     (license license:gpl3)))
 
+(define-public r-exams-forge
+  (package
+    (name "r-exams-forge")
+    (version "1.0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "exams.forge" version))
+       (sha256
+        (base32 "0kj6c26nhzvwqdfc61hfssq8mwm665ay0p4ycn1161d3ixm7p9j9"))))
+    (properties `((upstream-name . "exams.forge")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-xtable
+                             r-xml2
+                             r-tinytex
+                             r-stringr
+                             r-stringdist
+                             r-stranslate
+                             r-spelling
+                             r-rstudioapi
+                             r-rjson
+                             r-psych
+                             r-polynom
+                             r-mass
+                             r-magrittr
+                             r-knitr
+                             r-extradistr
+                             r-exams
+                             r-base64enc))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=exams.forge")
+    (synopsis
+     "Support for Compiling Examination Tasks using the 'exams' Package")
+    (description
+     "The main aim is to further facilitate the creation of exercises based on the
+package exams by @code{GrÃ¼n}, B., and Zeileis, A. (2009)
+<doi:10.18637/jss.v029.i10>.  Creating effective student exercises involves
+challenges such as creating appropriate data sets and ensuring access to
+intermediate values for accurate explanation of solutions.  The functionality
+includes the generation of univariate and bivariate data including simple time
+series, functions for theoretical distributions and their approximation,
+statistical and mathematical calculations for tasks in basic statistics courses
+as well as general tasks such as string manipulation, @code{LaTeX/HTML}
+formatting and the editing of XML task files for Moodle'.")
+    (license license:gpl3)))
+
 (define-public r-exams
   (package
     (name "r-exams")
-    (version "2.4-0")
+    (version "2.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams" version))
        (sha256
-        (base32 "0g2m51i7lf62hy4v9ns3l7bv3jh367fwi6hgz94iw7n8pjhkh47v"))))
+        (base32 "1ld2j22kxgbx3d9nmhzb0cnmb5a1pz1skx6y87i6ifmjhm1ib78q"))))
     (properties `((upstream-name . "exams")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -20305,13 +20352,13 @@ about the drc package is available in Ritz C, Baty F, Streibig JC, Gerhard D
 (define-public r-ebvcube
   (package
     (name "r-ebvcube")
-    (version "0.2.1")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ebvcube" version))
        (sha256
-        (base32 "1dx75sf60ifg1cld7n65imzs0lm2w4f5613qzrr76pf5zfpxq61p"))))
+        (base32 "0637q8795n7k2mnwdvnamnkdrz4akh458ijry7x3068kfzgr778y"))))
     (properties `((upstream-name . "ebvcube")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
