@@ -8220,6 +8220,28 @@ decision making problems, by a probabilistic approach.  The CPP was created and
 expanded by Sant'Anna, Annibal P. (2015) <doi:10.1007/978-3-319-11277-0>.")
     (license license:gpl2+)))
 
+(define-public r-cpoptim
+  (package
+    (name "r-cpoptim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CPoptim" version))
+       (sha256
+        (base32 "1i0rlv7k6mhh71hya5nc2xbk7061jghgcnlgdwiqb3zag709pf8c"))))
+    (properties `((upstream-name . "CPoptim")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=CPoptim")
+    (synopsis "Convex Partition Optimisation")
+    (description
+     "Convex Partition is a black-box optimisation algorithm for single objective
+real-parameters functions.  The basic principle is to progressively estimate and
+exploit a regression tree similar to a CART (Classification and Regression Tree)
+of the objective function.  For more details see de Paz (2024)
+<doi:10.1007/978-3-031-62836-8_3> and Loh (2011) <doi:10.1002/widm.8> .")
+    (license license:gpl2)))
+
 (define-public r-cpop
   (package
     (name "r-cpop")
@@ -22114,13 +22136,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "1fg9xbznd5zmn35rfg52899yx0di7hqx6sznvd8a9gnc2xrp4723"))))
+        (base32 "045jkffcyawk72w7x1gxh6i0y8aigj59g2cn6qflr0x8jpxwg4x9"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -24015,13 +24037,13 @@ Non-Parametric ANOVA. The package also contains the data sets used in that text.
 (define-public r-cmhc
   (package
     (name "r-cmhc")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmhc" version))
        (sha256
-        (base32 "1iy7qslr1an5q1dpdx02p9734ghnmwql1cf5jcnl2a8cjhcgyxxn"))))
+        (base32 "1rjwc58f43iv3ri7z42z3gzfxcpkrzbd20r07rm6m14d7d5wqw0w"))))
     (properties `((upstream-name . "cmhc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -30611,17 +30633,18 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
 (define-public r-cica
   (package
     (name "r-cica")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICA" version))
        (sha256
-        (base32 "1z584rdmr5m8sqvymb12fv7i7gc6b9kj3ddl38j2qvjf668zw1dc"))))
+        (base32 "048g5qiwcf7ly9i8y7m37jl8dmqsn8pmy4kyvpf88bl2yjb90vn9"))))
     (properties `((upstream-name . "CICA")))
     (build-system r-build-system)
     (propagated-inputs (list r-servr
                              r-rnifti
+                             r-rfast
                              r-plotly
                              r-oro-nifti
                              r-neurobase
@@ -30639,7 +30662,7 @@ data.  This methods enables the clustering of subjects based on multi-subject
 resting state functional Magnetic Resonance Imaging data.  Objects are clustered
 based on similarities and differences in cluster-specific estimated components
 obtained by Independent Component Analysis.")
-    (license license:gpl3+)))
+    (license license:gpl3)))
 
 (define-public r-ciaawconsensus
   (package
@@ -38772,13 +38795,13 @@ characteristics of the designs are calculated.")
 (define-public r-catregs
   (package
     (name "r-catregs")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catregs" version))
        (sha256
-        (base32 "1d5a8mwwyxx6rmm4ngjkgy787x23l9a0crhvn594vhl90r92jpbi"))))
+        (base32 "1i94pcfcda0pgvgvfgajmyjg91ia4qi8abjydh3ljywnsjc3bm3p"))))
     (properties `((upstream-name . "catregs")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

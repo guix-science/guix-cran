@@ -1830,13 +1830,13 @@ friendly way.")
 (define-public r-duckplyr
   (package
     (name "r-duckplyr")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckplyr" version))
        (sha256
-        (base32 "00fdpf9kgzcic0wf43xzh56mdscf0vds91s1anayqjaq9b8g58dn"))))
+        (base32 "1lrg5prs6gy1iv6i5n970miafvz1jqnv6bzvw2lciszrj5d2a8ry"))))
     (properties `((upstream-name . "duckplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -4647,6 +4647,38 @@ user through the marks of the pattern (Kelsall and Diggle 1995)
 <doi:10.2307/3318678>.  The goal is to detect microzones of the linear network
 where the type of event indicated by the user is overrepresented.")
     (license license:gpl2)))
+
+(define-public r-drglm
+  (package
+    (name "r-drglm")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "drglm" version))
+       (sha256
+        (base32 "08abcb0rqadck0zlzz7cv21vz0kqr7n1iz4mn2gi07ks8z1adpdw"))))
+    (properties `((upstream-name . "drglm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-speedglm r-nnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://nayemmh.github.io/drglm/")
+    (synopsis
+     "Fitting Linear and Generalized Linear Models in \"Divide and Recombine\" Approach to Large Data Sets")
+    (description
+     "To overcome the memory limitations for fitting linear (LM) and Generalized
+Linear Models (GLMs) to large data sets, this package implements the Divide and
+Recombine (D&R) strategy.  It basically divides the entire large data set into
+suitable subsets manageable in size and then fits model to each subset.
+Finally, results from each subset are aggregated to obtain the final estimate.
+This package also supports fitting GLMs to data sets that cannot fit into memory
+and provides methods for fitting GLMs under linear regression, binomial
+regression, Poisson regression, and multinomial logistic regression settings.
+Respective models are fitted using different D&R strategies as described by: Xi,
+Lin, and Chen (2009) <doi:10.1109/TKDE.2008.186>, Xi, Lin and Chen (2006)
+<doi:10.1109/TKDE.2006.196>, Zuo and Li (2018) <doi:10.4236/ojs.2018.81003>,
+Karim, M.R., Islam, M.A. (2019) <doi:10.1007/978-981-13-9776-9>.")
+    (license license:gpl3+)))
 
 (define-public r-drgee
   (package
@@ -7819,6 +7851,30 @@ rendering can be sometimes different from the original documents.")
     (description
      "Gives you the ability to use arbitrary Docker images (including custom ones) to
 process Rmarkdown code chunks.")
+    (license license:expat)))
+
+(define-public r-docket
+  (package
+    (name "r-docket")
+    (version "1.33")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "docket" version))
+       (sha256
+        (base32 "0hwmnclknik9pkzncbnqabvln276lcyb3rh5dy1wxibq85qax84f"))))
+    (properties `((upstream-name . "docket")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip r-xml2 r-xml r-stringr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/JonathanConrad98/docket")
+    (synopsis "Insert R Data into 'Word' Documents")
+    (description
+     "Populate data from an R environment into .doc and .docx templates.  Create a
+template document in a program such as Word', and add strings encased in
+guillemet characters to create flags (Â«@code{exampleÂ}»).  Use
+@code{getDictionary}() to create a dictionary of flags and replacement values,
+then call docket() to generate a populated document.")
     (license license:expat)))
 
 (define-public r-dockerparallel
@@ -12211,13 +12267,13 @@ indicator matrices.")
 (define-public r-disaggr
   (package
     (name "r-disaggr")
-    (version "1.0.5.2")
+    (version "1.0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disaggR" version))
        (sha256
-        (base32 "11lj0x7mq3lmsg03anyk3jnkl0calgipyar2d76rb2x13b33v3kd"))))
+        (base32 "1i2in27gygmh1l05371hzbf8zssgsjl6jyljsr964gk02l0ghkpn"))))
     (properties `((upstream-name . "disaggR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -17436,16 +17492,17 @@ investigate the characterization properties of any block design.")
 (define-public r-deseats
   (package
     (name "r-deseats")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deseats" version))
        (sha256
-        (base32 "144906bjb4hxv5m3cf8cjpp35548icnjfzxlqj17g2sc62wx6ngl"))))
+        (base32 "11qhsiqq0f1s6b7x7fmvgwwhirhilf9x37pk90pwgg3h4khjl1j5"))))
     (properties `((upstream-name . "deseats")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
+                             r-tidyr
                              r-shiny
                              r-rlang
                              r-rcpparmadillo
@@ -26785,13 +26842,13 @@ Generate tournament predictions and write them to a CSV.")
 (define-public r-damaoi
   (package
     (name "r-damaoi")
-    (version "0.0")
+    (version "0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "damAOI" version))
        (sha256
-        (base32 "1vfc1nwzr76djmwriln9dh8hj6iq5ji9vxfnpzydl34niqckscf0"))))
+        (base32 "14cfixlc50ml9l2b8m397b292ddq1l36bp8yqw8jw93c3d1q3zpp"))))
     (properties `((upstream-name . "damAOI")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -26807,7 +26864,7 @@ Generate tournament predictions and write them to a CSV.")
                              r-fnn
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=damAOI")
+    (home-page "https://github.com/chrislittleboy/damaoi")
     (synopsis
      "Create an 'Area of Interest' Around a Constructed Dam for Comparative Impact Evaluations")
     (description

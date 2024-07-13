@@ -18775,13 +18775,13 @@ causality-oriented workflows.")
 (define-public r-rmdhelpers
   (package
     (name "r-rmdhelpers")
-    (version "1.2")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmdHelpers" version))
        (sha256
-        (base32 "1ahzbs8z7wvh1dwbq1kq8wrjrknxi2gck63k70gj0swjvgk0ih5r"))))
+        (base32 "0bmdq6s8ywakz3gxskm6ph2gc80yzrjnzns4q09n05hy6l034058"))))
     (properties `((upstream-name . "rmdHelpers")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-dplyr))
@@ -26787,13 +26787,13 @@ reproducibility.  For more information on FACTS itself, please visit
 (define-public r-rfacebookstat
   (package
     (name "r-rfacebookstat")
-    (version "2.10.0")
+    (version "2.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfacebookstat" version))
        (sha256
-        (base32 "179wwpyzhli8h1skn7y3jjms3rigfrgxsv9v0n0npwr1g0r5sv8r"))))
+        (base32 "1xlj65pg87hhpc9cg9cz8xzg8f0dx4qcg76bvgpvdsd55pn8qilf"))))
     (properties `((upstream-name . "rfacebookstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -37736,13 +37736,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rczechia
   (package
     (name "r-rczechia")
-    (version "1.12.0")
+    (version "1.12.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCzechia" version))
        (sha256
-        (base32 "1yvwnxab3h1ai2nr8aaw5hbp13a4ayq4cq2f5sbzx1x8szq97sni"))))
+        (base32 "0qkg307cik7bvhgi8rm8h27pv1247559ndk39r4mjf6wql7bylwb"))))
     (properties `((upstream-name . "RCzechia")))
     (build-system r-build-system)
     (inputs (list proj geos gdal))

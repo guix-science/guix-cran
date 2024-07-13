@@ -1113,16 +1113,16 @@ International Conference on Machine Learning and Applications (ICMLA) (pp.
 (define-public r-ltable
   (package
     (name "r-ltable")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltable" version))
        (sha256
-        (base32 "09njp8xmfm1ci94ma8vm89994kkz7p7ka6z3gjc9va8jgpl0r5r3"))))
+        (base32 "1z3wbmxmjjwkb7f8qcpyn7a8wnh6q7592j39l4r92gq9gcg39n8x"))))
     (properties `((upstream-name . "ltable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-clipr))
+    (propagated-inputs (list r-nloptr r-mass r-clipr))
     (home-page "https://cran.r-project.org/package=ltable")
     (synopsis "Easy to Make (Lazy) Tables")
     (description
@@ -2281,13 +2281,13 @@ regression models with a lack of identifiability.")
 (define-public r-lqr
   (package
     (name "r-lqr")
-    (version "5.1")
+    (version "5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lqr" version))
        (sha256
-        (base32 "0wlfp63i800xxy0n9nv2qvmcj87ixhzjhawg3yv84gx6wiq265yb"))))
+        (base32 "073n59niqy27zchmwp0y7a5p8dnkn5libzs5lbbwfnp0j2mkc7n1"))))
     (properties `((upstream-name . "lqr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-univar r-quantreg r-numderiv

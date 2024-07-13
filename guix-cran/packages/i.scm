@@ -2231,13 +2231,13 @@ fact that the PIT tags will transmit their binary code Least Significant Bit
 (define-public r-isnullptr
   (package
     (name "r-isnullptr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isnullptr" version))
        (sha256
-        (base32 "0kwjxq59n3qncdw63vsdvz7v5mzbl5lmckdfgiiw35pzmahnxzh9"))))
+        (base32 "0p8a290chq01800avvrsljmxvmhhk0hazrd2dry04w7qkxbzyn93"))))
     (properties `((upstream-name . "isnullptr")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=isnullptr")

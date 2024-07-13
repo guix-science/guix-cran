@@ -4154,16 +4154,16 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernelshap" version))
        (sha256
-        (base32 "0wxv9b0h5kzikxglmhcirjpa0dv488ibdxd7n1x5ii6wz2bpzn7i"))))
+        (base32 "11wmcv96sxbwpspiq735wj6ngd5dyia426wlr31zfgm7hx1yhn73"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-foreach))
+    (propagated-inputs (list r-mass r-foreach))
     (home-page "https://github.com/ModelOriented/kernelshap")
     (synopsis "Kernel SHAP")
     (description
@@ -4996,13 +4996,13 @@ and he starred in the film Kazaam'.")
 (define-public r-kayadata
   (package
     (name "r-kayadata")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kayadata" version))
        (sha256
-        (base32 "1fq8yaiis38avmnklq2g17sz1aphplraqgw40q5zfs1kdvhr39gp"))))
+        (base32 "14fn7ryrssj2c83w23hqm8ai8d5f4lf5raqyvj4qij514jfxrhzq"))))
     (properties `((upstream-name . "kayadata")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

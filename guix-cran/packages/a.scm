@@ -19160,37 +19160,37 @@ import and export files from and to such virtual DOS-formatted disks.")
 (define-public r-adestr
   (package
     (name "r-adestr")
-    (version "0.5.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adestr" version))
        (sha256
-        (base32 "0gwkmj0fg732ci02cgyr95s245vfakjzqacsa7g5k258w8wyxwip"))))
+        (base32 "1inzp6ar5mg08cq2mmh7f0m87yvmf2cihv2zysn9v00x1g5zcb48"))))
     (properties `((upstream-name . "adestr")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-rdpack
                              r-progressr
-                             r-pracma
                              r-latex2exp
                              r-ggpubr
                              r-ggplot2
                              r-future-apply
                              r-forcats
-                             r-cubature))
+                             r-cubature
+                             r-adoptr))
     (native-inputs (list r-knitr))
     (home-page "https://jan-imbi.github.io/adestr/")
     (synopsis "Estimation in Optimal Adaptive Two-Stage Designs")
     (description
      "This package provides methods to evaluate the performance characteristics of
-various point and interval estimators for optimal adaptive two-stage designs.
-Specifically, this package is written to work with trial designs created by the
-adoptr package (Kunzmann et al. (2021) <doi:10.18637/jss.v098.i09>; Pilz et al.
-(2021) <doi:10.1002/sim.8953>)).  Apart from the a priori evaluation of
-performance characteristics, this package also allows for the evaluation of the
-implemented estimators on real datasets, and it implements methods to calculate
-p-values.")
+various point and interval estimators for optimal adaptive two-stage designs as
+described in Meis et al. (2024) <doi:10.1002/sim.10020>.  Specifically, this
+package is written to work with trial designs created by the adoptr package
+(Kunzmann et al. (2021) <doi:10.18637/jss.v098.i09>; Pilz et al. (2021)
+<doi:10.1002/sim.8953>)).  Apart from the a priori evaluation of performance
+characteristics, this package also allows for the evaluation of the implemented
+estimators on real datasets, and it implements methods to calculate p-values.")
     (license license:gpl2+)))
 
 (define-public r-adespatial
@@ -20020,13 +20020,13 @@ Ormerod, J., Liu, W., Ma, C., Zomaya, A., Yang, J. (2018)
 (define-public r-adar
   (package
     (name "r-adar")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adaR" version))
        (sha256
-        (base32 "0ficdvfpb6lhhbyifvy9r9z6lvxp4ric2aiarfij7r38a8m83j06"))))
+        (base32 "0vd79id211n1w8hqr3jpncdf3x8rg80gkdwfg4618hkadzdf2a2h"))))
     (properties `((upstream-name . "adaR")))
     (build-system r-build-system)
     (propagated-inputs (list r-triebeard r-rcpp))

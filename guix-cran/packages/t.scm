@@ -16046,6 +16046,42 @@ is inspired by the popular bedtools and the genome_join() method from the
 fuzzyjoin package.")
     (license license:gpl3)))
 
+(define-public r-tidygate
+  (package
+    (name "r-tidygate")
+    (version "1.0.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidygate" version))
+       (sha256
+        (base32 "1ighc3193ifvk3qisxinlgkw3p70ap64w7skspms648x7n89bb4a"))))
+    (properties `((upstream-name . "tidygate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-shiny
+                             r-scales
+                             r-rlang
+                             r-rcolorbrewer
+                             r-purrr
+                             r-plotly
+                             r-magrittr
+                             r-lifecycle
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/stemangiola/tidygate")
+    (synopsis "Interactively Gate Points")
+    (description
+     "Interactively gate points on a scatter plot.  Interactively drawn gates are
+recorded and can be applied programmatically to reproduce results exactly.
+Programmatic gating is based on the package gatepoints by Wajid Jawaid (who is
+also an author of this package).")
+    (license license:gpl3)))
+
 (define-public r-tidygapminder
   (package
     (name "r-tidygapminder")

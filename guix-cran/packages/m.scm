@@ -592,13 +592,13 @@ in spatiotemporal event data, introduced by Schutte and Donnay (2014)
 (define-public r-mvtsplot
   (package
     (name "r-mvtsplot")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvtsplot" version))
        (sha256
-        (base32 "1391m4r58hbaqbq46isi15jx6vhx7frdspbs1ippbpw7rsanch9w"))))
+        (base32 "0n7lfxr3hq32fpg0vv9v0426k4dlgadfcjrjg7kj3abahykx7zl9"))))
     (properties `((upstream-name . "mvtsplot")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -5816,13 +5816,13 @@ single-step procedure is also available.")
 (define-public r-multe
   (package
     (name "r-multe")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multe" version))
        (sha256
-        (base32 "1b6c2sz6r3r4bhp3680ya45rrnyvmxjkjwshpgykvflddcmkj0p4"))))
+        (base32 "1827787d3prv94asyqw4h91z7w9k5yzp0d79afxrnp3b9q9vp5v3"))))
     (properties `((upstream-name . "multe")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet))
@@ -17624,13 +17624,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2024.7.3")
+    (version "2024.7.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "0wjbvvk0ngfliprvnn667bf3zldmw7010hiqqn5fpjjn5x5mi1ic"))))
+        (base32 "114vcxrmkr37yzlc14454phgl7mr49j482pcwa6c700k6d5l00ja"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -21337,13 +21337,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missRanger" version))
        (sha256
-        (base32 "1zycbpxqc04f65nqfv0zdi0q5kp9kmaw7s868v959198a4r23lc1"))))
+        (base32 "1zp49wfh6wgha2170y6fjz2052zqw1vfjxa09zink71v693pflv2"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -21354,12 +21354,12 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
      "Alternative implementation of the beautiful @code{MissForest} algorithm used to
 impute mixed-type data sets by chaining random forests, introduced by Stekhoven,
 D.J. and Buehlmann, P. (2012) <doi:10.1093/bioinformatics/btr597>.  Under the
-hood, it uses the lightning fast random jungle package ranger'.  Between the
+hood, it uses the lightning fast random forest package ranger'.  Between the
 iterative model fitting, we offer the option of using predictive mean matching.
 This firstly avoids imputation with values not already present in the original
 data (like a value 0.3334 in 0-1 coded variable).  Secondly, predictive mean
 matching tries to raise the variance in the resulting conditional distributions
-to a realistic level.  This would allow e.g. to do multiple imputation when
+to a realistic level.  This would allow, e.g., to do multiple imputation when
 repeating the call to @code{missRanger}().  A formula interface allows to
 control which variables should be imputed by which.")
     (license license:gpl2+)))
@@ -22264,13 +22264,13 @@ Association, <doi: 10.1080/01621459.2019.1635485>.")
 (define-public r-mirtcat
   (package
     (name "r-mirtcat")
-    (version "1.13")
+    (version "1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirtCAT" version))
        (sha256
-        (base32 "1vlv93wjwj3ajf0mqjz38bi9fdk1sl0wqyqr7kjhhdj4znhrprbs"))))
+        (base32 "02774rxl1rpk7j60bhib77yygj80c0c0s3fzzwjzdpsz91hg29z1"))))
     (properties `((upstream-name . "mirtCAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -31336,6 +31336,72 @@ format is used to encode both the aggregated trees and the final consensus tree.
  The method is exact and proven to be O(nqlog(n)), n being the individuals and q
 being the number of trees to aggregate.")
     (license license:gpl2+)))
+
+(define-public r-mergenstudio
+  (package
+    (name "r-mergenstudio")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mergenstudio" version))
+       (sha256
+        (base32 "1s83h2xglmf21sg6brb67lcw3kch097vykmr3bpc6h8ljmr0qi27"))))
+    (properties `((upstream-name . "mergenstudio")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-yaml
+                             r-waiter
+                             r-stringr
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shiny-i18n
+                             r-shiny
+                             r-rvest
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-rlang
+                             r-purrr
+                             r-mergen
+                             r-magrittr
+                             r-jsonlite
+                             r-ids
+                             r-httr2
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue
+                             r-fs
+                             r-fontawesome
+                             r-colorspace
+                             r-cli
+                             r-bslib
+                             r-assertthat))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=mergenstudio")
+    (synopsis
+     "'Mergen' Studio: An 'RStudio' Addin Wrapper for the 'Mergen' Package")
+    (description
+     "An RStudio Addin wrapper for the mergen package.  This package employs
+artificial intelligence to convert data analysis questions into executable code,
+explanations, and algorithms.  This package makes it easier to use Large
+Language Models in your development environment by providing a chat-like
+interface, while also allowing you to inspect and execute the returned code.")
+    (license license:expat)))
 
 (define-public r-mergen
   (package

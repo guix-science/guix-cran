@@ -6845,13 +6845,13 @@ seismic data, and generate reports of the processing history.")
 (define-public r-esdm
   (package
     (name "r-esdm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eSDM" version))
        (sha256
-        (base32 "0xlqgsk6anpan996q9lxh8c3i6n6vg070g9z9j3z66mh6riyn9rq"))))
+        (base32 "14h353kw32lb3ik8fqqsb7bb1sxf445js8mw07almq9hpl3srcbn"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -6863,7 +6863,7 @@ seismic data, and generate reports of the processing history.")
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/smwoodman/eSDM/")
+    (home-page "https://github.com/swfsc/eSDM/")
     (synopsis "Ensemble Tool for Predictions from Species Distribution Models")
     (description
      "This package provides a tool which allows users to create and evaluate ensembles
@@ -6872,7 +6872,7 @@ through R functions or a GUI (R Shiny app).  This tool can assist users in
 identifying spatial uncertainties and making informed conservation and
 management decisions.  The package is further described in Woodman et al (2019)
 <doi:10.1111/2041-210X.13283>.")
-    (license license:gpl3)))
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
 
 (define-public r-esdesign
   (package

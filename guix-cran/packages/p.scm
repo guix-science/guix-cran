@@ -29908,13 +29908,13 @@ transparently in the R programming language.")
 (define-public r-pdynmc
   (package
     (name "r-pdynmc")
-    (version "0.9.10")
+    (version "0.9.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdynmc" version))
        (sha256
-        (base32 "1zz0q3s7cj3ypqz2hp3x2hy7d0m10130qdlk501l8w9z22f7raxq"))))
+        (base32 "0lw0hnqp3czwrjwm7jbbqmkdp1rwwkfffrahs28ywbxpka0mzv1v"))))
     (properties `((upstream-name . "pdynmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-optimx r-matrix r-mass r-data-table))
@@ -29928,21 +29928,23 @@ conditions as proposed by Holtz-Eakin, Newey, and Rosen (1988)
 <doi:10.2307/1913103>, Ahn and Schmidt (1995)
 <doi:10.1016/0304-4076(94)01641-C>, and Arellano and Bover (1995)
 <doi:10.1016/0304-4076(94)01642-D>.  Estimation of the model parameters relies
-on the Generalized Method of Moments (GMM), numerical optimization (when
-nonlinear moment conditions are employed) and the computation of closed form
-solutions (when estimation is based on linear moment conditions).  One-step,
-two-step and iterated estimation is available.  For inference and specification
-testing, Windmeijer (2005) <doi:10.1016/j.jeconom.2004.02.005> and doubly
-corrected standard errors (Hwang, Kang, Lee, 2021
-<doi:10.1016/j.jeconom.2020.09.010>) are available.  Additionally, serial
-correlation tests, tests for overidentification, and Wald tests are provided.
-Functions for visualizing panel data structures and modeling results obtained
-from GMM estimation are also available.  The plot methods include functions to
-plot unbalanced panel structure, coefficient ranges and coefficient paths across
-GMM iterations (the latter is implemented according to the plot shown in Hansen
-and Lee, 2021 <doi:10.3982/ECTA16274>).  For a more detailed description of the
-functionality, please see Fritsch, Pua, Schnurbus (2021)
-<doi:10.32614/RJ-2021-035>.")
+on the Generalized Method of Moments (GMM) and instrumental variables (IV)
+estimation, numerical optimization (when nonlinear moment conditions are
+employed) and the computation of closed form solutions (when estimation is based
+on linear moment conditions).  One-step, two-step and iterated estimation is
+available.  For inference and specification testing, Windmeijer (2005)
+<doi:10.1016/j.jeconom.2004.02.005> and doubly corrected standard errors (Hwang,
+Kang, Lee, 2021 <doi:10.1016/j.jeconom.2020.09.010>) are available.
+Additionally, serial correlation tests, tests for overidentification, and Wald
+tests are provided.  Functions for visualizing panel data structures and
+modeling results obtained from GMM estimation are also available.  The plot
+methods include functions to plot unbalanced panel structure, coefficient ranges
+and coefficient paths across GMM iterations (the latter is implemented according
+to the plot shown in Hansen and Lee, 2021 <doi:10.3982/ECTA16274>).  For a more
+detailed description of the GMM-based functionality, please see Fritsch, Pua,
+Schnurbus (2021) <doi:10.32614/RJ-2021-035>.  For more detail on the IV-based
+estimation routines, see Fritsch, Pua, and Schnurbus (WP, 2024) and Han and
+Phillips (2010) <doi:10.1017/S026646660909063X>.")
     (license license:gpl2+)))
 
 (define-public r-pdxtrees
@@ -35955,20 +35957,20 @@ by the intervention.")
 (define-public r-pampal
   (package
     (name "r-pampal")
-    (version "1.0.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMpal" version))
        (sha256
-        (base32 "0mr4c7ckw05mh5lmr0qhpas98122yn257gip6w2hwrcyziy5sc4v"))))
+        (base32 "1jb89rl1apb1nb1yfhq0knqkw7n6jcb2l4aqq61qy28iwl7vanr5"))))
     (properties `((upstream-name . "PAMpal")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tuner
                              r-tidyr
-                             r-stringr
                              r-signal
+                             r-shiny
                              r-seewave
                              r-rsqlite
                              r-rlang
@@ -35976,7 +35978,6 @@ by the intervention.")
                              r-purrr
                              r-pammisc
                              r-pambinaries
-                             r-manipulate
                              r-lubridate
                              r-knitr
                              r-ggplot2

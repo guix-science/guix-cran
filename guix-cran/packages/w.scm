@@ -4585,6 +4585,54 @@ risk stratifier, the quantiles of the distributions of weight of evidence in
 cases and controls can be calculated and plotted.")
     (license license:gpl3)))
 
+(define-public r-wes
+  (package
+    (name "r-wes")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WES" version))
+       (sha256
+        (base32 "11dsn0dkc0z313x8md6qhkafk9cnbp4v64a895d54b27329ryzis"))))
+    (properties `((upstream-name . "WES")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xml
+                             r-whitebox
+                             r-stars
+                             r-sp
+                             r-sf
+                             r-rworldmap
+                             r-rcurl
+                             r-raster
+                             r-openmeteo
+                             r-jsonlite
+                             r-httr
+                             r-hdinterval
+                             r-glue
+                             r-foreach
+                             r-exactextractr
+                             r-elevatr
+                             r-dplyr
+                             r-data-table
+                             r-chirps))
+    (home-page "https://www.r-wes.com/")
+    (synopsis "Tools for Analyzing Wastewater and Environmental Sampling Data")
+    (description
+     "This package provides reproducible functions for collating and analyzing data
+from environmental sampling studies.  Environmental Sampling (ES) of infectious
+diseases involves collecting samples from various sources (such as sewage,
+water, air, soil, or surfaces) to monitor the presence of pathogens in the
+environment.  Analysis of ES data often requires the calculation of Real-Time
+Quantitative PCR (@code{qPCR}) variables, normalizing ES observations, and
+analyzing sampling site characteristics.  To help reduce the complexity of these
+analyses we have implemented tools that assist with establishing standardized ES
+data formats, absolute and relative quantification of @code{qPCR} data,
+estimation of @code{qPCR} amplification efficiency, and collating open-source
+spatial data for sampling sites.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
 (define-public r-wemix
   (package
     (name "r-wemix")
@@ -5153,13 +5201,13 @@ bounds to existing plots are supported.")
 (define-public r-weibullr-shiny
   (package
     (name "r-weibullr-shiny")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeibullR.shiny" version))
        (sha256
-        (base32 "0qzwn967p54j03h9nmzljx547iqgnyq3xzfri5k0i5lpvxsdp7hs"))))
+        (base32 "0p4vsc153x96w73bg9s0bcnfnk70qmfi9n2d57vcw0z4ppm1gdr4"))))
     (properties `((upstream-name . "WeibullR.shiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-weibullr-plotly r-weibullr r-shinydashboard

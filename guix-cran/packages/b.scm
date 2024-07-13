@@ -23100,13 +23100,13 @@ effect in platform trial are described in: Saville et al. (2022)
 (define-public r-bayesiannetwork
   (package
     (name "r-bayesiannetwork")
-    (version "0.3")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesianNetwork" version))
        (sha256
-        (base32 "0nyv2maqssayd79fs0zhpblscd7nsvw7k4fmqzpfz2xgivnx2i5p"))))
+        (base32 "1j0mgjib2v60sfjic8kli69lcbdkakp0fcgx2dhh7p1rq4xx88j1"))))
     (properties `((upstream-name . "BayesianNetwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -26844,13 +26844,13 @@ Simon, Zeileis (2021) <doi:10.18637/jss.v100.i04>.")
 (define-public r-bamdit
   (package
     (name "r-bamdit")
-    (version "3.4.0")
+    (version "3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamdit" version))
        (sha256
-        (base32 "0x7dl2f8qg8df07g4k692501rqn3q5zf12npx9zbbbvv7zb23rlf"))))
+        (base32 "01530avwkhhvpdwr0kc50y67klqlzr6zxc2njfwy8imgy3yvg842"))))
     (properties `((upstream-name . "bamdit")))
     (build-system r-build-system)
     (inputs (list jags))

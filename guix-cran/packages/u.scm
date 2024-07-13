@@ -1122,13 +1122,13 @@ Studies with Binary Dependent Variables\" that is included in this package.")
 (define-public r-ura
   (package
     (name "r-ura")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ura" version))
        (sha256
-        (base32 "18gs49hcmii951f995ch1sbk69lpf458halff539l8birv26q70d"))))
+        (base32 "1ahj58yn7gn8lcj95xxzg39p7vznppslqj4vyq5x66c21vq7dmn4"))))
     (properties `((upstream-name . "ura")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1142,9 +1142,9 @@ Studies with Binary Dependent Variables\" that is included in this package.")
     (description
      "This package provides researchers with a simple set of diagnostic tools for
 monitoring the progress and reliability of raters conducting content coding
-tasks.  Goehring (2023)
-<https://bengoehring.github.io/files/ps-paper-anon-word-ca.docx> argues that
-supervisors---especially supervisors of small teams---should utilize
+tasks.  Goehring (2024)
+<https://bengoehring.github.io/improving-content-analysis-tools-for-working-with-undergraduate-research-assistants.pdf>
+argues that supervisors---especially supervisors of small teams---should utilize
 computational tools to monitor reliability in real time.  As such, this package
 provides easy-to-use functions for calculating inter-rater reliability
 statistics and measuring the reliability of one coder compared to the rest of

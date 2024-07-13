@@ -8524,6 +8524,30 @@ their Application Programming Interface (http://statdb.nstac.go.jp/).")
 @code{GovInfo} API (<https://github.com/usgpo/api>).")
     (license license:expat)))
 
+(define-public r-governor
+  (package
+    (name "r-governor")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "governor" version))
+       (sha256
+        (base32 "0prvpab34jr59n9j3xqkapwrd51cm00w47dkvi5f6w414791ayzw"))))
+    (properties `((upstream-name . "governor")))
+    (build-system r-build-system)
+    (home-page "https://github.com/coolbutuseless/governor")
+    (synopsis "Speed Limiter to Control Rate of Execution of Loops")
+    (description
+     "Speed limiter for controlling rate of execution of loops.  It can be necessary
+to limit the rate of execution of a loop or repeated function call e.g. to show
+or gather data only at particular intervals.  This package includes two methods
+for limiting this execution rate; speed governors and timers.  A speed governor
+will insert pauses during execution to meet a user-specified loop time.  Timers
+are alarm clocks which will indicate whether a certain time has passed.  These
+mechanisms are implemented in C to minimize processing overhead.")
+    (license license:expat)))
+
 (define-public r-govdown
   (package
     (name "r-govdown")
@@ -12151,13 +12175,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "03jinkwfz8v7cbp0jj4hhr7sgn71giqin3bxs80hary4vx79vwsy"))))
+        (base32 "1iw9xpai55dyz5k80f469i0czcqsa9ws7j13dcdj6m6nlw6fwiac"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -12181,24 +12205,26 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
      "Cross validation informed Relaxed LASSO, Artificial Neural Network (ANN),
 gradient boosting machine ('xgboost'), Random Forest ('@code{RandomForestSRC}'),
 Oblique Random Forest ('aorsf'), Recursive Partitioning ('RPART') or step wise
-regression models are fit.  Nested cross validation (or analogous for the random
-forest) is used to estimate and compare performances between these models with
-results presented in tabular or graphical means.  Calibration plots can also be
-generated, again based upon (nested) cross validation.  For some datasets, for
-example when the design matrix is not of full rank, glmnet may have very long
-run times when fitting the relaxed lasso model, from our experience when fitting
-Cox models on data with many predictors and many patients, making it difficult
-to get solutions from either glmnet() or cv.glmnet().  This may be remedied with
-the path=TRUE options when calling glmnet() and cv.glmnet().  Within the glmnetr
-package the approach of path=TRUE is taken by default.  When fitting not a
-relaxed lasso model but an elastic-net model, then the R-packages nestedcv
+regression models are fit.  Cross validation leave out samples (leading to
+nested cross validation) or bootstrap out-of-bag samples are used to evaluate
+and compare performances between these models with results presented in tabular
+or graphical means.  Calibration plots can also be generated, again based upon
+(outer nested) cross validation or bootstrap leave out (out of bag) samples.
+For some datasets, for example when the design matrix is not of full rank,
+glmnet may have very long run times when fitting the relaxed lasso model, from
+our experience when fitting Cox models on data with many predictors and many
+patients, making it difficult to get solutions from either glmnet() or
+cv.glmnet().  This may be remedied by using the path=TRUE option when calling
+glmnet() and cv.glmnet().  Within the glmnetr package the approach of path=TRUE
+is taken by default.  When fitting not a relaxed lasso model but an elastic-net
+model, then the R-packages nestedcv
 <https://cran.r-project.org/package=nestedcv>, @code{glmnetSE}
 <https://cran.r-project.org/package=@code{glmnetSE>} or others may provide
 greater functionality when performing a nested CV. Use of the glmnetr has many
 similarities to the glmnet package and it is recommended that the user of
 glmnetr also become familiar with the glmnet package
 <https://cran.r-project.org/package=glmnet>, with the \"An Introduction to
-glmnet'\" and \"The Relaxed Lasso\" being especially helpful in this regard.")
+glmnet'\" and \"The Relaxed Lasso\" being especially useful in this regard.")
     (license license:gpl3)))
 
 (define-public r-glmnetcr
@@ -23936,13 +23962,13 @@ some of the stability issues in the previous version (0.1).")
 (define-public r-genmcmcdiag
   (package
     (name "r-genmcmcdiag")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genMCMCDiag" version))
        (sha256
-        (base32 "03vxmsf3vh125a87pchdpnkp5n3sqg44nkrlf8l91jicxa6p6rrx"))))
+        (base32 "0vf9r9qc477mdjvi54sh0m67lscb8j6lfc7ikqpd4xnzsd4aklb6"))))
     (properties `((upstream-name . "genMCMCDiag")))
     (build-system r-build-system)
     (propagated-inputs (list r-mcmcse r-lifecycle r-knitr r-ggplot2 r-coda))
@@ -24158,13 +24184,13 @@ more metrics, and even larger datasets.")
 (define-public r-geniebpc
   (package
     (name "r-geniebpc")
-    (version "1.1.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieBPC" version))
        (sha256
-        (base32 "1s8qi5i10a3qkpgls2589m6aiyda2k7gbfjmbpkbjw73girkh5ln"))))
+        (base32 "02jfa24qjpdn6z25312hs9vgasr6pkfab5apmmsh3yqhq6l4g7jg"))))
     (properties `((upstream-name . "genieBPC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

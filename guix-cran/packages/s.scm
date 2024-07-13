@@ -10543,13 +10543,13 @@ solution for genomic selection based on most commonly used statistical methods."
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "0.0.1.0")
+    (version "0.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "1f2xr4s2n5r5rs12i92f9gvcjcc3h3i2q8kx27xnxfalq166lxa0"))))
+        (base32 "1z77qi733sif53z49q4dlc41m5di9ffy8nj82sj0pr02wfy32wjp"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -23513,18 +23513,18 @@ Greece.")
 (define-public r-spaths
   (package
     (name "r-spaths")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spaths" version))
        (sha256
-        (base32 "08gzw4lbk288230309g1craf4jm5xv4kqxcbpy649g1cdzqq4lf1"))))
+        (base32 "1637y3ws9ivjkc5k4r3cwza485ynyjya1wgk866g0h6v7rpfx7xq"))))
     (properties `((upstream-name . "spaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-data-table))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ChristianDueben/spaths")
+    (home-page "https://github.com/cdueben/spaths")
     (synopsis "Shortest Paths Between Points in Grids")
     (description
      "Shortest paths between points in grids.  Optional barriers and custom transition
@@ -25388,13 +25388,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.21.0")
+    (version "2.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "0qaspbgphlicaak1c2n7bip60dv5wib1nxhv4x8za33s1v45h549"))))
+        (base32 "01snrzvyxc48dy2md3iac0c858i016wykmyhnk3p7gjh7bmh12s5"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -30597,6 +30597,25 @@ sequencing data (SMITID).  It allow sequence-space-time host and viral
 population data storage, indexation and querying.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-smithwilsonyieldcurve
+  (package
+    (name "r-smithwilsonyieldcurve")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SmithWilsonYieldCurve" version))
+       (sha256
+        (base32 "0p24ay1y874qi4yvfa6b3xkf0m2gjwl8sl2dp59k0g20v0qzynzb"))))
+    (properties `((upstream-name . "SmithWilsonYieldCurve")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=SmithWilsonYieldCurve")
+    (synopsis "Smith-Wilson Yield Curve Construction")
+    (description
+     "Constructs a yield curve by the Smith-Wilson method from a table of libor and
+swap rates.  Now updated to take bond coupons and prices in the same table.")
+    (license license:gpl3)))
 
 (define-public r-smirnov
   (package
@@ -36579,13 +36598,13 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simpleboot
   (package
     (name "r-simpleboot")
-    (version "1.1-7")
+    (version "1.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simpleboot" version))
        (sha256
-        (base32 "0769dmrk8rw5v9598p7xlpawybwsdxnrqkxhavqpzy1vwg885575"))))
+        (base32 "18pqsjkpl7szwfinc842q6s6vjlsr0gkkqr1l6174ibryqvlf2fx"))))
     (properties `((upstream-name . "simpleboot")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -51904,6 +51923,29 @@ the official programs for submittals and these are written in SAS'.  Validation
 runs can be programmed in another language, in this case R'.")
     (license license:expat)))
 
+(define-public r-sdtmchecks
+  (package
+    (name "r-sdtmchecks")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdtmchecks" version))
+       (sha256
+        (base32 "0dpnvyfgvaqj3n4ci7hjqb1mvj3f5hsab4h02vz5q2brx7fq4ll0"))))
+    (properties `((upstream-name . "sdtmchecks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect r-openxlsx r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/sdtmchecks/")
+    (synopsis
+     "Data Quality Checks for Study Data Tabulation Model (SDTM) Datasets")
+    (description
+     "This package provides a series of checks to identify common issues in Study Data
+Tabulation Model (SDTM) datasets.  These checks are intended to be
+generalizable, actionable, and meaningful for analysis.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-sdt
   (package
     (name "r-sdt")
@@ -54904,6 +54946,47 @@ includes functions for Winsorizing data based on a Z-statistic cutoff.")
      "This package provides a collection of functions that creates graphs with error
 bars for data collected from one-way or higher factorial designs.")
     (license license:gpl2+)))
+
+(define-public r-scintruler
+  (package
+    (name "r-scintruler")
+    (version "0.99.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCIntRuler" version))
+       (sha256
+        (base32 "1ap23iighbx1x3blfh0b9srgk5mzinl3gy0addfwd6i40a160brp"))))
+    (properties `((upstream-name . "SCIntRuler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-summarizedexperiment
+                             r-singlecellexperiment
+                             r-seuratobject
+                             r-seurat
+                             r-rcpp
+                             r-matrixgenerics
+                             r-matrix
+                             r-magrittr
+                             r-harmony
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr
+                             r-cowplot
+                             r-coin
+                             r-batchelor))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/yuelyu21/SCIntRuler")
+    (synopsis
+     "Guiding the Integration of Multiple Single-Cell RNA-Seq Datasets")
+    (description
+     "The accumulation of single-cell RNA-seq ('@code{scRNA-seq}') studies highlights
+the potential benefits of integrating multiple datasets.  By augmenting sample
+sizes and enhancing analytical robustness, integration can lead to more
+insightful biological conclusions.  However, challenges arise due to the
+inherent diversity and batch discrepancies within and across studies.
+SC@code{IntRuler}', a novel R package, addresses these challenges by guiding the
+integration of multiple @code{scRNA-seq} datasets.")
+    (license license:expat)))
 
 (define-public r-scinsight
   (package
@@ -59639,6 +59722,57 @@ data analysis, including proportions, margins of error and upper and lower
 bounds for simple, stratified and cluster sample designs.")
     (license license:expat)))
 
+(define-public r-sampcompr
+  (package
+    (name "r-sampcompr")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sampcompR" version))
+       (sha256
+        (base32 "008m2hhcj2rn8w8h34in4adw5h4942q5ffw21gq2rbqxmxd3g7gd"))))
+    (properties `((upstream-name . "sampcompR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-svrep
+                             r-survey
+                             r-sandwich
+                             r-reshape2
+                             r-readr
+                             r-purrr
+                             r-psych
+                             r-magrittr
+                             r-lmtest
+                             r-hmisc
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-forcats
+                             r-dplyr
+                             r-data-table
+                             r-boot-pval
+                             r-boot))
+    (home-page "https://cran.r-project.org/package=sampcompR")
+    (synopsis "Comparing and Visualizing Differences Between Surveys")
+    (description
+     "Easily analyze and visualize differences between samples (e.g., benchmark
+comparisons, nonresponse comparisons in surveys) on three levels.  The
+comparisons can be univariate, bivariate or multivariate.  On univariate level
+the variables of interest of a survey and a comparison survey (i.e.  benchmark)
+are compared, by calculating one of several difference measures (e.g., relative
+difference in mean), and an average difference between the surveys.  On
+bivariate level a function can calculate significant differences in correlations
+for the surveys.  And on multivariate levels a function can calculate
+significant differences in model coefficients between the surveys of comparison.
+ All of those differences can be easily plotted and outputted as a table.  For
+more detailed information on the methods and example use see Rohr, B., Silber,
+H., & Felderer, B. (2024).  âComparing the Accuracy of Univariate, Bivariate,
+and Multivariate Estimates across Probability and Non-Probability Surveys with
+Population Benchmarksâ <doi:10.31235/osf.io/n6ehf> .")
+    (license license:gpl3)))
+
 (define-public r-sampbias
   (package
     (name "r-sampbias")
@@ -59767,13 +59901,13 @@ Ying Yuan, Beibei Guo, Mark Munsell, Karen Lu, Amir Jazaeri (2016)
 (define-public r-samc
   (package
     (name "r-samc")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samc" version))
        (sha256
-        (base32 "0i5k27699p28xzfbdk41ni45l5lp1k2zla5mf15x3livmnn8c3d4"))))
+        (base32 "0vr6f63phzki3wsq3c4db00wzzfbfnbym33skvxn41c3xggvl324"))))
     (properties `((upstream-name . "samc")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -59796,7 +59930,7 @@ with spatial absorbing Markov chains (SAMC) to provide several short-term and
 long-term predictions for metrics related to connectivity in landscapes.
 Despite the ecological context of the framework, this package can be used in any
 application of absorbing Markov chains.")
-    (license license:gpl3+)))
+    (license license:agpl3+)))
 
 (define-public r-sambia
   (package

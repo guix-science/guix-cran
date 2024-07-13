@@ -1164,6 +1164,27 @@ Can be used with the gridsynth algorithm <@code{arXiv:1212.6253>} to perform
 decomposition into the Clifford+T set.")
     (license license:gpl3)))
 
+(define-public r-quantspec
+  (package
+    (name "r-quantspec")
+    (version "1.2-4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quantspec" version))
+       (sha256
+        (base32 "1azwxxn4831fdqfz36mb5bv5ji4das2wh0r6qakrycqj1zjilk6k"))))
+    (properties `((upstream-name . "quantspec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo r-snowfall r-rcpp r-quantreg r-abind))
+    (home-page "https://github.com/tobiaskley/quantspec")
+    (synopsis "Quantile-Based Spectral Analysis of Time Series")
+    (description
+     "This package provides methods to determine, smooth and plot quantile
+periodograms for univariate and multivariate time series.  See Kley (2016)
+<doi:10.18637/jss.v070.i03> for a description and tutorial.")
+    (license license:gpl2+)))
+
 (define-public r-quantregranger
   (package
     (name "r-quantregranger")
@@ -3112,13 +3133,13 @@ the ability to fit multiple non-crossing quantile functions following Cannon
 (define-public r-qrnlmm
   (package
     (name "r-qrnlmm")
-    (version "3.3")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrNLMM" version))
        (sha256
-        (base32 "085xjxgswzfra90s88h0mhpns9fpm9pjpi6y2zcv46a67zfvpn9v"))))
+        (base32 "0kzyk01c20bzglkdapy8gwnvkmrjndakm2lj9svx4lhl80v1jh31"))))
     (properties `((upstream-name . "qrNLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg
@@ -3260,13 +3281,13 @@ Ruediger Frey, and Paul Embrechts.")
 (define-public r-qrlmm
   (package
     (name "r-qrlmm")
-    (version "2.2")
+    (version "2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrLMM" version))
        (sha256
-        (base32 "1y612kqnwqzrg5b7c4fc0al8zxycb6g6bgq747yvkm9kqyhbxszh"))))
+        (base32 "0j42akh84jawjq4dslqcf0yg5k4r6dz8psgv812l4qmrl3s9frnz"))))
     (properties `((upstream-name . "qrLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-psych r-mvtnorm r-lqr r-ald))

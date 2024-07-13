@@ -2671,17 +2671,17 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.1.2")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "00rjki2gb1rhmp4hbhdzpygjzq4j3dnilrg6pmnspqwzja5cfbbj"))))
+        (base32 "1ax73chiv86adnvym4fi9c04yicpb8d8wrmyykx08rp6pqb6icwa"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
-    (home-page "https://github.com/mayer79/hstats")
+    (home-page "https://github.com/ModelOriented/hstats/")
     (synopsis "Interaction Statistics")
     (description
      "Fast, model-agnostic implementation of different H-statistics introduced by
