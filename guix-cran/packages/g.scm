@@ -3463,13 +3463,13 @@ visit the package homepage <https://pbreheny.github.io/grpreg/>.")
 (define-public r-grpnet
   (package
     (name "r-grpnet")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpnet" version))
        (sha256
-        (base32 "1ka9i7fg9y87rabjdnggclb1f395m1pbmhwics2wayd9q3m5a6mk"))))
+        (base32 "131g08gwvsiaxlsz7ihrhd6n33rjjczh72fh9wfa2ibc247g48w5"))))
     (properties `((upstream-name . "grpnet")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -6332,6 +6332,32 @@ data, using the Graphical vector autoregression model in combination with
 regularization.  See also Epskamp, Waldorp, Mottus & Borsboom (2018)
 <doi:10.1080/00273171.2018.1454823>.")
     (license license:gpl2+)))
+
+(define-public r-graphicalmcp
+  (package
+    (name "r-graphicalmcp")
+    (version "0.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "graphicalMCP" version))
+       (sha256
+        (base32 "0bs4d1fz6l2rwssh8wq5sakkl478lr6vsx6lb1jz8qnryk6cb3wy"))))
+    (properties `((upstream-name . "graphicalMCP")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-matrixstats))
+    (native-inputs (list r-knitr))
+    (home-page "https://gilead-biostats.github.io/graphicalMCP/")
+    (synopsis "Graphical Multiple Comparison Procedures")
+    (description
+     "Multiple comparison procedures (MCPs) control the familywise error rate in
+clinical trials.  Graphical MCPs include many commonly used procedures as
+special cases; see Bretz et al. (2011) <doi:10.1002/bimj.201000239>, Lu (2016)
+<doi:10.1002/sim.6985>, and Xi et al. (2017) <doi:10.1002/bimj.201600233>.  This
+package is a low-dependency implementation of graphical MCPs which allow mixed
+types of tests.  It also includes power simulations and visualization of
+graphical MCPs.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-graphicalextremes
   (package

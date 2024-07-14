@@ -43057,13 +43057,13 @@ Blaauw & Christen (2011).")
 (define-public r-rb3
   (package
     (name "r-rb3")
-    (version "0.0.10")
+    (version "0.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rb3" version))
        (sha256
-        (base32 "1gf4i5fbpx238af5f5bzcfmb763mlyk97aq8335slyc8828b9a9c"))))
+        (base32 "1nxh4a3ihjdm1xp3sam9pqh56q2yic97fssm00g7djdfcxq6y0fy"))))
     (properties `((upstream-name . "rb3")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -43246,16 +43246,21 @@ Database) files for 3D rendering.")
 (define-public r-rayimage
   (package
     (name "r-rayimage")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayimage" version))
        (sha256
-        (base32 "1ss1l8cbm0p7d413s81ncqhd7dqhyd22v5z1z48s9a56pxm2lw5l"))))
+        (base32 "056j9fbhglkf5hnh7ql99wfzf0qf6rls93wmdlyabpdnssq01nma"))))
     (properties `((upstream-name . "rayimage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-progress r-png r-jpeg))
+    (propagated-inputs (list r-tiff
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-png
+                             r-jpeg))
     (home-page "https://www.rayimage.dev")
     (synopsis "Image Processing for Simulated Cameras")
     (description

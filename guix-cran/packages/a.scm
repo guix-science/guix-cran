@@ -10034,16 +10034,22 @@ S4 package aod.")
 (define-public r-ao
   (package
     (name "r-ao")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ao" version))
        (sha256
-        (base32 "0hz2ba1n2q3scwbsnyv0znmqcqdp2289hdyplbggk8726hks32sh"))))
+        (base32 "0d7c7g4s0m46qhjrbpd4cfq61z5y3s9f5k69ramn16sc4l0ybsqw"))))
     (properties `((upstream-name . "ao")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-optimizer r-oeli r-cli r-checkmate))
+    (propagated-inputs (list r-r6
+                             r-progressr
+                             r-optimizer
+                             r-oeli
+                             r-future-apply
+                             r-cli
+                             r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://loelschlaeger.de/ao/")
     (synopsis "Alternating Optimization")

@@ -42129,15 +42129,16 @@ vocal behaviour.")
 (define-public r-callback
   (package
     (name "r-callback")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "callback" version))
        (sha256
-        (base32 "069dqihw5ll9n5n35vya5jqy9rc9r46g4jyw6b2dbz4s4sblimsq"))))
+        (base32 "04j00c8i14i3ic3ccdglj8fyaa9924dsgmichidk8jh2qj7c22ny"))))
     (properties `((upstream-name . "callback")))
     (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=callback")
     (synopsis "Computes Statistics from Discrimination Experimental Data")
@@ -42146,8 +42147,8 @@ vocal behaviour.")
 house rental) and one examines whether they receive the same outcome.  The
 number of non negative answers are first examined in details looking for outcome
 differences.  Then various answering rates and their exacts confidence intervals
-are computed.  Last, exact and asymptotic discrimination tests are performed
-(Student, binomial).")
+are computed.  Last, exact and asymptotic discrimination tests are performed.
+Graphical methods are also available.")
     (license license:gpl3)))
 
 (define-public r-calidad

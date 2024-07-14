@@ -2037,19 +2037,18 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "1.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "00x9hm6mibla8ngwqx29n2v7zy4ichbymm4ahsg4r96c3hpp331z"))))
+        (base32 "0c8n77r0yxjcb217xgalrvfwhajzkk7h0kfsg6k8jhvlvfrj7n00"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-xml
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-testthat
                              r-stringr
                              r-rsvg
                              r-rjsonio
@@ -2059,7 +2058,8 @@ is for educational purposes only.")
                              r-magick
                              r-httr
                              r-dplyr))
-    (home-page "https://cran.r-project.org/package=PubChemR")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/selcukorkmaz/PubChemR")
     (synopsis
      "Interface to the 'PubChem' Database for Chemical Data Retrieval")
     (description
@@ -22118,18 +22118,18 @@ styling/formatting.")
 (define-public r-pivotea
   (package
     (name "r-pivotea")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pivotea" version))
        (sha256
-        (base32 "1lrxpvas2m3p25x8j9mjbvpnsz984i847knibfjpmhkwyd3ik86z"))))
+        (base32 "104xpmanp0l3fw2hnay6xpbzgcjfpqzbjp5mz6imyzwv5199fw4m"))))
     (properties `((upstream-name . "pivotea")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-rlang r-purrr r-magrittr r-dplyr))
+    (propagated-inputs (list r-tidyr r-rlang r-purrr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=pivotea")
+    (home-page "https://github.com/matutosi/pivotea")
     (synopsis "Create Pivot Table Easily")
     (description "Pivot easily by specifying rows, columns, values and split.")
     (license license:expat)))
@@ -24485,13 +24485,13 @@ Metaphone, NYSIIS, Caverphone, and others.  The package is documented in
 (define-public r-phonfieldwork
   (package
     (name "r-phonfieldwork")
-    (version "0.0.14")
+    (version "0.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phonfieldwork" version))
        (sha256
-        (base32 "130gcpcblniasnqjjp085225ccq98wyqhcknxcn0iqs4v6m59dyc"))))
+        (base32 "1lx6qsirwkj6jdanbyhs2zwfblglld3bag2zp9hpxzkgxsnhrhlb"))))
     (properties `((upstream-name . "phonfieldwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -36348,13 +36348,13 @@ GPL3 (<https://www.gimp.org/about/COPYING>), and Inkscape distributed under GPL2
 (define-public r-palettes
   (package
     (name "r-palettes")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palettes" version))
        (sha256
-        (base32 "1clgzlhyg2iw1mgf7v6nx6vs4bvqs83c6431i59vgkmz0qbgqfik"))))
+        (base32 "0s0pdza87jq5p7biq4vnajl59gnw77m2yi0x05gb31nmvcicxf2b"))))
     (properties `((upstream-name . "palettes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

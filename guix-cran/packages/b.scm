@@ -8073,13 +8073,13 @@ package is used to speed up the computation.")
 (define-public r-bnmonitor
   (package
     (name "r-bnmonitor")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnmonitor" version))
        (sha256
-        (base32 "0sbpfgm7yibh84m1zmn7b1ixzc2x1m2nlms7zpxp4c6fkv2c225r"))))
+        (base32 "0ygsk817x5m474kk1vfnzkr23gj3cbsj69jxbsbvzwwimmhz0094"))))
     (properties `((upstream-name . "bnmonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8088,6 +8088,7 @@ package is used to speed up the computation.")
                              r-rcolorbrewer
                              r-qgraph
                              r-purrr
+                             r-igraph
                              r-grbase
                              r-grain
                              r-ggplot2
@@ -8101,10 +8102,9 @@ R. It includes methods to perform parameter variations via a variety of
 co-variation schemes, to compute sensitivity functions and to quantify the
 dissimilarity of two Bayesian networks via distances and divergences.  It
 further includes diagnostic methods to assess the goodness of fit of a Bayesian
-networks to data, including global, node and parent-child monitors.  References:
-H. Chan, A. Darwiche (2002) <doi:10.1613/jair.967>; C. Goergen, M. Leonelli
-(2020) <@code{ArXiv:1809.10794>}; M. Leonelli, R. Ramanathan, R.L. Wilkerson
-(2021) <@code{ArXiv:2107.11785>}.")
+networks to data, including global, node and parent-child monitors.  Reference:
+M. Leonelli, R. Ramanathan, R.L. Wilkerson (2022)
+<doi:10.1016/j.knosys.2023.110882>.")
     (license license:gpl3)))
 
 (define-public r-bnma

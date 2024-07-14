@@ -303,13 +303,13 @@ was described by Gauthier et al. (2021) <doi:10.1038/s41467-021-25801-2>.")
 (define-public r-nuts
   (package
     (name "r-nuts")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nuts" version))
        (sha256
-        (base32 "0g2gxpaqg56c0s34prcmy3das4yspjc71zawnqhp4am6v4bgbq5v"))))
+        (base32 "028n53zancc8ca0l0lis9zbj5hbqk780adjvx5ifz90c5my4brjv"))))
     (properties `((upstream-name . "nuts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-glue r-dplyr r-cli))
@@ -13248,27 +13248,6 @@ variables (e.g. ego networks).  This package contains the necessary tools for
 exploring such data, from the data pre-processing stage to the creation of
 dynamic visualizations.")
     (license license:expat)))
-
-(define-public r-neat
-  (package
-    (name "r-neat")
-    (version "1.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "neat" version))
-       (sha256
-        (base32 "0sqzkl75wdj6bha341lkndl35fccj2bk41a9nl9bm9d17lvyyp3r"))))
-    (properties `((upstream-name . "neat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://mirkosignorelli.github.io/r")
-    (synopsis "Efficient Network Enrichment Analysis Test")
-    (description
-     "Includes functions and examples to compute NEAT, the Network Enrichment Analysis
-Test described in Signorelli et al. (2016, <DOI:10.1186/s12859-016-1203-6>).")
-    (license license:gpl3)))
 
 (define-public r-nearfar
   (package
