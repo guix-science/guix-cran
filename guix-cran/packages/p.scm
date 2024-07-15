@@ -12011,15 +12011,25 @@ classification.")
 (define-public r-ppendemic
   (package
     (name "r-ppendemic")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppendemic" version))
        (sha256
-        (base32 "0f9gqhkgg1vd3di1xfx0ix4is30v3abcyldpkbnj81kv60zmzcfr"))))
+        (base32 "1glk6l78pb4076a059api2a963yfly5d47dc4pkf6bj3df927l10"))))
     (properties `((upstream-name . "ppendemic")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-purrr
+                             r-progress
+                             r-memoise
+                             r-fuzzyjoin
+                             r-dplyr
+                             r-assertthat))
     (home-page "https://github.com/PaulESantos/ppendemic/")
     (synopsis "Glimpse at the Diversity of Peru's Endemic Plants")
     (description

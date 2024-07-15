@@ -13887,6 +13887,40 @@ Products Subsets web services
 downloads of MODIS time series directly to your R workspace or your computer.")
     (license license:agpl3)))
 
+(define-public r-modisfast
+  (package
+    (name "r-modisfast")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modisfast" version))
+       (sha256
+        (base32 "1h3r5iwqrjzvfavsmvr6i5x2gvl76g44d712gnir9jl8sdhk0ynr"))))
+    (properties `((upstream-name . "modisfast")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rvest
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-curl))
+    (home-page "https://github.com/ptaconet/modisfast")
+    (synopsis "Fast and Efficient Access to MODIS Earth Observation Data")
+    (description
+     "Programmatic interface to several NASA Earth Observation O@code{PeNDAP} servers
+(Open-source Project for a Network Data Access Protocol)
+(<https://www.opendap.org/>).  Allows for easy downloads of MODIS subsets, as
+well as other Earth Observation datacubes, in a time-saving and efficient way :
+by sampling it at the very downloading phase (spatially, temporally and
+dimensionally).")
+    (license license:gpl3+)))
+
 (define-public r-modifiedmk
   (package
     (name "r-modifiedmk")
@@ -22300,16 +22334,17 @@ simulations for studying test item banks.")
 (define-public r-mirt
   (package
     (name "r-mirt")
-    (version "1.41")
+    (version "1.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirt" version))
        (sha256
-        (base32 "0qx8qr4zd5jliamsmpr0c321g3k9ks1ki4fvy5lia3xgihp2s6yh"))))
+        (base32 "15yzgph7957wvrfnxwc9p27hckamkkxmi0c02x6p5i505ya16lly"))))
     (properties `((upstream-name . "mirt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-simdesign
                              r-rcpparmadillo
                              r-rcpp
                              r-pbapply
@@ -22333,7 +22368,7 @@ testlets using dimension reduction EM algorithms, while multiple group analyses
 and mixed effects designs are included for detecting differential item, bundle,
 and test functioning, and for modeling item and person covariates.  Finally,
 latent class models such as the DINA, DINO, multidimensional latent class,
-mixture, and zero-inflated response models are supported.")
+mixture IRT models, and zero-inflated response models are supported.")
     (license license:gpl3+)))
 
 (define-public r-mirsea
@@ -24032,6 +24067,33 @@ migratory connectivity strength, incorporating uncertainty.  See Cohen et al.
 <doi:10.1111/ecog.03974>, and Roberts et al. (2023) <doi:10.1002/eap.2788> for
 details on some of these methods.")
     (license license:gpl3+)))
+
+(define-public r-mig
+  (package
+    (name "r-mig")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mig" version))
+       (sha256
+        (base32 "1l7p2bbcz888s3m339p63i6490savjqvv5g4awznzpfbllp0zi4i"))))
+    (properties `((upstream-name . "mig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal r-statmod r-rcpparmadillo
+                             r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mig")
+    (synopsis "Multivariate Inverse Gaussian Distribution")
+    (description
+     "This package provides utilities for estimation for the multivariate inverse
+Gaussian distribution of Minami (2003) <doi:10.1081/STA-120025379>, including
+random vector generation and explicit estimators of the location vector and
+scale matrix.  The package implements kernel density estimators discussed in
+Belzile, Desgagnes, Genest and Ouimet (2024)
+<doi:10.48550/@code{arXiv.2209.04757>} for smoothing multivariate data on
+half-spaces.")
+    (license license:expat)))
 
 (define-public r-mifa
   (package

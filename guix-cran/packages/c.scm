@@ -26300,6 +26300,31 @@ functions for both Google Drive (<https://www.google.com/drive/>) and Amazon S3
 (<https://aws.amazon.com/s3/>).")
     (license license:expat)))
 
+(define-public r-closeloop
+  (package
+    (name "r-closeloop")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "closeloop" version))
+       (sha256
+        (base32 "1imwd16im4wvnha24gk453xrqq0bhhhbnn21pimfq0v02lj0248w"))))
+    (properties `((upstream-name . "closeloop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-combinat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/heorlytics/closeloop")
+    (synopsis
+     "Integrate Single-Arm Observational Data in Network Meta Analysis")
+    (description
+     "Calculate the distance between single-arm observational studies using covariate
+information to remove heterogeneity in Network Meta-Analysis (NMA) of randomized
+clinical trials.  Facilitate the inclusion of observational data in NMA,
+enhancing the comprehensiveness and robustness of comparative effectiveness
+research.  Schmitz (2018) <doi:10.1186/s12874-018-0509-7>.")
+    (license license:expat)))
+
 (define-public r-clordr
   (package
     (name "r-clordr")
@@ -30633,13 +30658,13 @@ standard errors (Pawel et al., 2022) <doi:10.48550/@code{arXiv.2206.12290>}.")
 (define-public r-cica
   (package
     (name "r-cica")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CICA" version))
        (sha256
-        (base32 "048g5qiwcf7ly9i8y7m37jl8dmqsn8pmy4kyvpf88bl2yjb90vn9"))))
+        (base32 "0kl6hg2vn8w6imvrimwscj2qpgjg3fbvcjv06ax17ilci87zahx6"))))
     (properties `((upstream-name . "CICA")))
     (build-system r-build-system)
     (propagated-inputs (list r-servr
@@ -33277,6 +33302,38 @@ is more sensitive to detecting signals of low magnitude than standard methods.
 Additionally, sporadic small p-values appearing within a null hypotheses
 sequence are avoided by averaging on the neighboring p-values.")
     (license license:gpl2)))
+
+(define-public r-changepointtaylor
+  (package
+    (name "r-changepointtaylor")
+    (version "0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChangePointTaylor" version))
+       (sha256
+        (base32 "17gyiwvg41zc31kmhv55037dm416vwlkrmrwswilbqksqq1fzk06"))))
+    (properties `((upstream-name . "ChangePointTaylor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-rcpp
+                             r-purrr
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ChangePointTaylor")
+    (synopsis "Identify Changes in Mean")
+    (description
+     "This package provides a basic implementation of the change in mean detection
+method outlined in: Taylor, Wayne A. (2000)
+<https://variation.com/wp-content/uploads/change-point-analyzer/change-point-analysis-a-powerful-new-tool-for-detecting-changes.pdf>.
+ The package recursively uses the mean-squared error change point calculation to
+identify candidate change points.  The candidate change points are then
+re-estimated and Taylor's backwards elimination process is then employed to come
+up with a final set of change points.  Many of the underlying functions are
+written in C++ for improved performance.")
+    (license license:gpl2+)))
 
 (define-public r-changepointsvar
   (package

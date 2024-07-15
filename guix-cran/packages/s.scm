@@ -36616,26 +36616,27 @@ enough for use in large-scale data analysis projects.")
 (define-public r-simple-regression
   (package
     (name "r-simple-regression")
-    (version "0.1.6")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMPLE.REGRESSION" version))
        (sha256
-        (base32 "06kqmvj8pbfgnlib0d6dzg1bh41l6jgwx6b02lgvc6z3nqnpm08w"))))
+        (base32 "0drcf4f1ypg667rkbfd4gcmnijbzx9j9qirvja0w2cqhv48mzj9g"))))
     (properties `((upstream-name . "SIMPLE.REGRESSION")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme))
+    (propagated-inputs (list r-nlme r-mass))
     (home-page "https://cran.r-project.org/package=SIMPLE.REGRESSION")
-    (synopsis "Multiple Regression and Moderated Regression Made Simple")
+    (synopsis "OLS, Moderated, Logistic, and Count Regressions Made Simple")
     (description
      "This package provides SPSS- and SAS-like output for least squares multiple
-regression and moderated regression, as well as interaction plots and
-Johnson-Neyman regions of significance for interactions.  The output includes
-standardized coefficients, partial and semi-partial correlations, collinearity
-diagnostics, plots of residuals, and detailed information about simple slopes
-for interactions.  There are numerous options for designing interaction plots,
-including plots of interactions for both lm and lme models.")
+regression, logistic regression, and Poisson regression.  Detailed output is
+also provided for OLS moderated regression, interaction plots, and
+Johnson-Neyman regions of significance.  The output includes standardized
+coefficients, partial and semi-partial correlations, collinearity diagnostics,
+plots of residuals, and detailed information about simple slopes for
+interactions.  There are numerous options for model plots, including plots of
+interactions for both lm and lme models.")
     (license license:gpl2+)))
 
 (define-public r-simplanonym
@@ -44869,13 +44870,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "0glyxlimh97qyhjsqkal05ncjmr6wqa00y9fa4j9ilkqyq6nn0jq"))))
+        (base32 "1vkg7pw83hf12j8sjxpc9n6c6cpc7w2llry263lcw7a6293j69vr"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (propagated-inputs (list r-slope
@@ -44891,11 +44892,15 @@ and sampling approaches.")
     (synopsis
      "Sparse-Group SLOPE: Adaptive Bi-Level Selection with FDR Control")
     (description
-     "Implementation of Sparse-group SLOPE: Adaptive bi-level with FDR-control (Feser
-et al. (2023) <@code{arXiv:2305.09467>}).  Linear and logistic regression models
-are supported, both of which can be fit using k-fold cross-validation.  Dense
-and sparse input matrices are supported.  In addition, a general adaptive three
-operator splitting (ATOS) implementation is provided.")
+     "Implementation of Sparse-group SLOPE (SGS) (Feser and Evangelou (2023)
+<doi:10.48550/@code{arXiv.2305.09467>}) models.  Linear and logistic regression
+models are supported, both of which can be fit using k-fold cross-validation.
+Dense and sparse input matrices are supported.  In addition, a general adaptive
+three operator splitting (ATOS) implementation is provided.  Group SLOPE
+(@code{gSLOPE}) (Brzyski et al. (2019) <doi:10.1080/01621459.2017.1411269>)
+models are also implemented.  Both @code{gSLOPE} and SGS are available with
+strong screening rules (Feser and Evangelou (2024)
+<doi:10.48550/@code{arXiv.2405.15357>}) for computational speed-up.")
     (license license:gpl3+)))
 
 (define-public r-sgraph

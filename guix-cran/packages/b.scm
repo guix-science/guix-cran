@@ -1878,13 +1878,13 @@ model under linear inequality constraints.")
 (define-public r-bsvars
   (package
     (name "r-bsvars")
-    (version "3.0.1")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvars" version))
        (sha256
-        (base32 "0fk4xzc650bd3yfdapzxk0zx78cgv6pswy2qx087d5ihnv4ipyg9"))))
+        (base32 "138810300y0lfmzbch5syp3sd2cfcvqvgnnvvy4xlbys9p6aif5a"))))
     (properties `((upstream-name . "bsvars")))
     (build-system r-build-system)
     (propagated-inputs (list r-stochvol
@@ -24812,6 +24812,28 @@ performance by periods, personal fouls and offensive rebounds.  Please see Vinue
 orthogonal rotations to find out a subset of variables best representing the
 original set of variables.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-batss
+  (package
+    (name "r-batss")
+    (version "0.7.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BATSS" version))
+       (sha256
+        (base32 "1252hxqdplbk12m6ri9fh4p4zy8q561n8ix6m2qy404idggklnxc"))))
+    (properties `((upstream-name . "BATSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-r-utils r-plyr r-cli r-abind))
+    (home-page "https://batss-dev.github.io/BATSS/")
+    (synopsis
+     "Bayesian Adaptive Trial Simulator Software (BATSS) for Generalised Linear Models")
+    (description
+     "Defines operating characteristics of Bayesian Adaptive Trials considering a
+generalised linear model response via Monte Carlo simulations of Bayesian GLM
+fitted via integrated Laplace approximations (INLA).")
+    (license license:gpl2)))
 
 (define-public r-batsch
   (package

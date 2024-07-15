@@ -16739,6 +16739,33 @@ provided to calculate common metrics such as humification index and fluorescence
 index.")
     (license license:gpl2+)))
 
+(define-public r-eeml
+  (package
+    (name "r-eeml")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EEML" version))
+       (sha256
+        (base32 "0cv6c8xijfanfh07bmdhnnfpmk6fl7lh1x7k7iz1kj7n1zbrvl1z"))))
+    (properties `((upstream-name . "EEML")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weightedensemble r-topsis r-mcs))
+    (home-page "https://cran.r-project.org/package=EEML")
+    (synopsis "Ensemble Explainable Machine Learning Models")
+    (description
+     "We introduced a novel ensemble-based explainable machine learning model using
+Model Confidence Set (MCS) and two stage Technique for Order of Preference by
+Similarity to Ideal Solution (TOPSIS) algorithm.  The model combined the
+predictive capabilities of different machine-learning models and integrates the
+interpretability of explainability methods.  To develop the proposed algorithm,
+a two-stage Technique for Order of Preference by Similarity to Ideal Solution
+(TOPSIS) framework was employed.  The package has been developed using the
+algorithm of Paul et al. <doi:10.1007/s40009-023-01218-x> and Yeasin and Paul
+(2024) <doi:10.1007/s11227-023-05542-3>.")
+    (license license:gpl3)))
+
 (define-public r-eemdtdnn
   (package
     (name "r-eemdtdnn")

@@ -6603,13 +6603,13 @@ nonnormal distributions.")
 (define-public r-nls2
   (package
     (name "r-nls2")
-    (version "0.3-3")
+    (version "0.3-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nls2" version))
        (sha256
-        (base32 "05miqxfpg29jpf1p3bi347w5565bd3cih8dpvnc3p0i0hcbzmlkl"))))
+        (base32 "15wj76sa292i33275g7a32m5kamawx6zjrdmnbpac2mm2byzg9n8"))))
     (properties `((upstream-name . "nls2")))
     (build-system r-build-system)
     (propagated-inputs (list r-proto))
@@ -13248,6 +13248,27 @@ variables (e.g. ego networks).  This package contains the necessary tools for
 exploring such data, from the data pre-processing stage to the creation of
 dynamic visualizations.")
     (license license:expat)))
+
+(define-public r-neat
+  (package
+    (name "r-neat")
+    (version "1.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neat" version))
+       (sha256
+        (base32 "0sqzkl75wdj6bha341lkndl35fccj2bk41a9nl9bm9d17lvyyp3r"))))
+    (properties `((upstream-name . "neat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://mirkosignorelli.github.io/r")
+    (synopsis "Efficient Network Enrichment Analysis Test")
+    (description
+     "Includes functions and examples to compute NEAT, the Network Enrichment Analysis
+Test described in Signorelli et al. (2016, <DOI:10.1186/s12859-016-1203-6>).")
+    (license license:gpl3)))
 
 (define-public r-nearfar
   (package

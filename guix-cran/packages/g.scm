@@ -20357,13 +20357,13 @@ reverse causal approach of causal inference, see Pretis and Schwarz (2022)
 (define-public r-gets
   (package
     (name "r-gets")
-    (version "0.37")
+    (version "0.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gets" version))
        (sha256
-        (base32 "1h7hn8n08sqnygbzyiq9zg11b5i9g6islc72c0qypx4j4wba5z55"))))
+        (base32 "0jwjwlg8r4mgk12iszxyy2nfnmqy75ajal3nzdgb8rn2xa3q35vc"))))
     (properties `((upstream-name . "gets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo))
@@ -20374,7 +20374,9 @@ reverse causal approach of causal inference, see Pretis and Schwarz (2022)
      "Automated General-to-Specific (GETS) modelling of the mean and variance of a
 regression, and indicator saturation methods for detecting and testing for
 structural breaks in the mean, see Pretis, Reade and Sucarrat (2018)
-<doi:10.18637/jss.v086.i03>.")
+<doi:10.18637/jss.v086.i03> for an overview of the package.  In advanced use,
+the estimator and diagnostics tests can be fully user-specified, see Sucarrat
+(2021) <doi:10.32614/RJ-2021-024>.")
     (license license:gpl2+)))
 
 (define-public r-getquandldata

@@ -310,6 +310,41 @@ details for the method at the following preprint e.g.:
 cbind.")
     (license license:gpl3)))
 
+(define-public r-zipper
+  (package
+    (name "r-zipper")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "zippeR" version))
+       (sha256
+        (base32 "0cvgkaisig3h1rqwxxwn22wv8d0p5a8y3m93s7crqx2b8dabw2ql"))))
+    (properties `((upstream-name . "zippeR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tigris
+                             r-tidyr
+                             r-tidycensus
+                             r-tibble
+                             r-stringr
+                             r-spatstat-univar
+                             r-sf
+                             r-readr
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pfizer-opensource/zippeR")
+    (synopsis
+     "Working with United States ZIP Code and ZIP Code Tabulation Area Data")
+    (description
+     "This package provides a set of functions for working with American postal codes,
+which are known as ZIP Codes.  These include accessing ZIP Code to ZIP Code
+Tabulation Area (ZCTA) crosswalks, retrieving demographic data for ZCTAs, and
+tabulating demographic data for three-digit ZCTAs.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-zipg
   (package
     (name "r-zipg")

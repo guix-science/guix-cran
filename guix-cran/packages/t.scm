@@ -10540,13 +10540,13 @@ deep learning in audio.")
 (define-public r-tor
   (package
     (name "r-tor")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tor" version))
        (sha256
-        (base32 "1s34hzw3a4cm9gk85fcxgxwmn2xc7njs1iw1snd91id3gdl6vppx"))))
+        (base32 "0azizqb37gh8k7n1jkmxwh7923pyhjp0srdpxyf45w3g69clshaz"))))
     (properties `((upstream-name . "tor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlang r-readr r-fs))
@@ -14960,13 +14960,13 @@ based on the morphological tagset from the Universal Dependencies.")
 (define-public r-tidystats
   (package
     (name "r-tidystats")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidystats" version))
        (sha256
-        (base32 "1cq4xkmjk2q9fds8m21l4dhmr9jivk9n1g199kn3jprjwfydhy96"))))
+        (base32 "0y9l72915cq7dkdw7c4l931niq9rdadjvgr8w33s05a5vawg3w40"))))
     (properties `((upstream-name . "tidystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

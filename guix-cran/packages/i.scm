@@ -4068,6 +4068,41 @@ distance-dependent detection are fitted by simulation and inverse prediction as
 proposed by Efford (2004) <doi:10.1111/j.0030-1299.2004.13043.x>.")
     (license license:gpl2+)))
 
+(define-public r-iprism
+  (package
+    (name "r-iprism")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iPRISM" version))
+       (sha256
+        (base32 "0zn139a3pfwhsxb1564n7fxw0qv96lhaipl0yjns8by7vc3pv6pi"))))
+    (properties `((upstream-name . "iPRISM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-pbapply
+                             r-matrix
+                             r-igraph
+                             r-hmisc
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=iPRISM")
+    (synopsis
+     "Intelligent Predicting Response to Cancer Immunotherapy Through Systematic Modeling")
+    (description
+     "Immunotherapy has revolutionized cancer treatment, but predicting patient
+response remains challenging.  Here, we presented Intelligent Predicting
+Response to cancer Immunotherapy through Systematic Modeling (@code{iPRISM}), a
+novel network-based model that integrates multiple data types to predict
+immunotherapy outcomes.  It incorporates gene expression, biological functional
+network, tumor microenvironment characteristics, immune-related pathways, and
+clinical data to provide a comprehensive view of factors influencing
+immunotherapy efficacy.  By identifying key genetic and immunological factors,
+it provides an insight for more personalized treatment strategies and
+combination therapies to overcome resistance mechanisms.")
+    (license license:gpl2+)))
+
 (define-public r-iprior
   (package
     (name "r-iprior")

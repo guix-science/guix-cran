@@ -4037,6 +4037,47 @@ active subscription the capability to scrape the website tables and analyze the
 data for themselves.")
     (license license:expat)))
 
+(define-public r-honestdid
+  (package
+    (name "r-honestdid")
+    (version "0.2.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HonestDiD" version))
+       (sha256
+        (base32 "1ywq7a4lz9w2k4yzqlljrb0qa623lgn3wngx00vapdx6a14vfaam"))))
+    (properties `((upstream-name . "HonestDiD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal
+                             r-tibble
+                             r-rlang
+                             r-rglpk
+                             r-purrr
+                             r-pracma
+                             r-mvtnorm
+                             r-matrixstats
+                             r-matrix
+                             r-lpsolveapi
+                             r-latex2exp
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-cvxr))
+    (home-page "https://cran.r-project.org/package=HonestDiD")
+    (synopsis
+     "Robust Inference in Difference-in-Differences and Event Study Designs")
+    (description
+     "This package provides functions to conduct robust inference in
+difference-in-differences and event study designs by implementing the methods
+developed in Rambachan & Roth (2023) <doi:10.1093/restud/rdad018>, \"A More
+Credible Approach to Parallel Trends\" [Previously titled \"An Honest
+Approach...\"].  Inference is conducted under a weaker version of the parallel
+trends assumption.  Uniformly valid confidence sets are constructed based upon
+conditional confidence sets, fixed-length confidence sets and hybridized
+confidence sets.")
+    (license license:expat)))
+
 (define-public r-homomorphicencryption
   (package
     (name "r-homomorphicencryption")
@@ -8791,6 +8832,30 @@ coverage compared to unit testing.  One of the key benefits of Hedgehog is
 integrated shrinking of counterexamples, which allows one to quickly find the
 cause of bugs, given salient examples when incorrect behaviour occurs.")
     (license license:expat)))
+
+(define-public r-hedgedrf
+  (package
+    (name "r-hedgedrf")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hedgedrf" version))
+       (sha256
+        (base32 "1ka2pp1df00j63g15arcnndzribgkkaimvhxgiia9g409pmyizpc"))))
+    (properties `((upstream-name . "hedgedrf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-cvxr))
+    (home-page "https://cran.r-project.org/package=hedgedrf")
+    (synopsis "An Implementation of the Hedged Random Forest Algorithm")
+    (description
+     "This algorithm is described in detail in the paper \"Hedging Forecast
+Combinations With an Application to the Random Forest\" by Beck et al. (2023)
+<doi:10.48550/@code{arXiv.2308.15384>}.  The package provides a function
+hedgedrf() that can be used to train a Hedged Random Forest model on a dataset,
+and a function predict.hedgedrf() that can be used to make predictions with the
+model.")
+    (license license:gpl3)))
 
 (define-public r-heddlr
   (package
