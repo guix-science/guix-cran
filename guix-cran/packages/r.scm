@@ -17068,13 +17068,13 @@ product uses the NASS API but is not endorsed or certified by NASS.")
 (define-public r-rnaseqqc
   (package
     (name "r-rnaseqqc")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RNAseqQC" version))
        (sha256
-        (base32 "1a35brc1m4ndwvvz0ldhlyab5y3fkkc9x5q2s5mqsnvpsvr2wyrm"))))
+        (base32 "1041whycnph2bdmphy9k27b39g541lxa210jbnfxc5r9617rcavh"))))
     (properties `((upstream-name . "RNAseqQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -32621,13 +32621,13 @@ update the original object when they are changed.")
 (define-public r-refseqr
   (package
     (name "r-refseqr")
-    (version "1.0.2")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refseqR" version))
        (sha256
-        (base32 "076ai3jgpll30fx7hnvy5b11n7v4c9vgsnkw98pfddi7p5xxiw2f"))))
+        (base32 "1kcxr8nimjd74waksiggrb6shzqv05s267sc099cc6pnnc8q3mqh"))))
     (properties `((upstream-name . "refseqR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rentrez r-iranges r-biostrings))
@@ -45050,17 +45050,17 @@ now available in the unix package.")
 (define-public r-rapp
   (package
     (name "r-rapp")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rapp" version))
        (sha256
-        (base32 "06rixyz2r4w82dbpr0d3z74hv0kxgd677d9c690jjnm9hrskwfbn"))))
+        (base32 "18d62wn808673qx3qclvi119i29r8pzm634x2zyy4mx59ixka9l4"))))
     (properties `((upstream-name . "Rapp")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml))
-    (home-page "https://cran.r-project.org/package=Rapp")
+    (home-page "https://github.com/r-lib/Rapp")
     (synopsis "Easily Build Command Line Applications")
     (description
      "Run simple R scripts as command line applications, with automatic robust and

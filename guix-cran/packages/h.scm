@@ -4358,6 +4358,42 @@ Additional information about the package can be found in the reference manual,
 the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
     (license license:gpl3)))
 
+(define-public r-holi
+  (package
+    (name "r-holi")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "holi" version))
+       (sha256
+        (base32 "08q9b4vji3ak75kvkmzx0nb6pmq9bzv6r9rwj1pdk9sj0pswkp3c"))))
+    (properties `((upstream-name . "holi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sn
+                             r-shinythemes
+                             r-shiny
+                             r-rpostgres
+                             r-pool
+                             r-mass
+                             r-likelihoodasy
+                             r-ggplot2
+                             r-dt))
+    (home-page "https://github.com/mightymetrika/holi")
+    (synopsis "Higher Order Likelihood Inference Web Applications")
+    (description
+     "Higher order likelihood inference is a promising approach for analyzing small
+sample size data.  The holi package provides web applications for higher order
+likelihood inference.  It currently supports linear, logistic, and Poisson
+generalized linear models through the rstar_glm() function, based on Pierce and
+Bellio (2017) <doi:10.1111/insr.12232> and @code{likelihoodAsy}'.  The package
+offers two main features: LA_rstar(), which launches an interactive shiny
+application allowing users to fit models with rstar_glm() through their web
+browser, and sim_rstar_glm_pgsql(), which streamlines the process of launching a
+web-based shiny simulation application that saves results to a user-created
+@code{PostgreSQL} database.")
+    (license license:expat)))
+
 (define-public r-hodgestools
   (package
     (name "r-hodgestools")

@@ -13896,13 +13896,13 @@ scores.")
 (define-public r-elorating
   (package
     (name "r-elorating")
-    (version "0.46.11")
+    (version "0.46.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EloRating" version))
        (sha256
-        (base32 "09nh3ia4s3c9yjhw0f0haqb26fryfc4lf9rgfcbqqzzwgdr1invj"))))
+        (base32 "10j60fj4kxsm2rps3f3khvp91cb8srgnbxqna4yn0gsbdr0l138d"))))
     (properties `((upstream-name . "EloRating")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

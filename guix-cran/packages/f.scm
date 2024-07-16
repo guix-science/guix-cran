@@ -16108,13 +16108,13 @@ from the actual target variable.  S. Chatterjee, A. S. Hadi (2006)
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.5.2")
+    (version "3.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "0gl2j3kiap00yc8krs9ki9v91qfa082yprnzgr9nyp9c15gggmmx"))))
+        (base32 "0d4r65aacxz9pzsxlzavl95j7v6qc2i86bc89439fdh2iwc4lyz9"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -16784,13 +16784,13 @@ Functional Data\".  Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-18")
+    (version "1.1-19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPDE" version))
        (sha256
-        (base32 "0l5kv7vwwjbnfq13l74ij860fpp45hgvwqpxfnpqbxdkq2lfymcn"))))
+        (base32 "0vd1rhh2ks6s738g4d687v3ndpjvb8lypzfpfqpwbkjzx29g60wn"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))

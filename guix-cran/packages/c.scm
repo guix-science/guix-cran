@@ -9463,13 +9463,13 @@ neighbor variance estimation (NNVE) method of Wang and Raftery (2002)
 (define-public r-covregrf
   (package
     (name "r-covregrf")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CovRegRF" version))
        (sha256
-        (base32 "17wr2k6ws1l8lf4gfq59l7c2p95181sk5r2acay21pnh7q39x8wd"))))
+        (base32 "0pzcdbwj1an8fls04g7znhbfaybqdp4rsjgnsvrh8rcmphnh48c9"))))
     (properties `((upstream-name . "CovRegRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-diagrammer r-data-tree r-data-table))

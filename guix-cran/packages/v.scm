@@ -8223,38 +8223,6 @@ with input validation checks, in a manner suitable for both programmatic and
 interactive use.")
     (license license:expat)))
 
-(define-public r-vajointsurv
-  (package
-    (name "r-vajointsurv")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VAJointSurv" version))
-       (sha256
-        (base32 "19ib4b1kf1zg4l571f2asxkwbab44pzs954agj0wx1p6kb2v608q"))))
-    (properties `((upstream-name . "VAJointSurv")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-survival
-                             r-simsurvnmarker
-                             r-rcppeigen
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-psqn
-                             r-matrix
-                             r-lme4))
-    (native-inputs (list r-r-rsp))
-    (home-page "https://github.com/boennecd/VAJointSurv")
-    (synopsis "Variational Approximation for Joint Survival and Marker Models")
-    (description
-     "Estimates joint marker (longitudinal) and and survival (time-to-event) outcomes
-using variational approximations.  The package supports multivariate markers
-allowing for correlated error terms and multiple types of survival outcomes
-which may be left-truncated, right-censored, and recurrent.  Time-varying fixed
-and random covariate effects are supported along with non-proportional hazards.")
-    (license license:expat)))
-
 (define-public r-vagam
   (package
     (name "r-vagam")

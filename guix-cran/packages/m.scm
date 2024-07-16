@@ -33720,13 +33720,13 @@ p-values and compute measures of effect size.  For details on the method, see
 (define-public r-mdmb
   (package
     (name "r-mdmb")
-    (version "1.8-7")
+    (version "1.9-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdmb" version))
        (sha256
-        (base32 "0qx1ipq8ra2c3f4hnnlj0h1viky5ld694ga6rkp53196s2yn0vhy"))))
+        (base32 "09lsp0niazw0v9pqnw5inw65j7p0irwwnxrr09iqbpjd7gqnlkrz"))))
     (properties `((upstream-name . "mdmb")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt
@@ -37337,32 +37337,6 @@ Experiments\", Biometrika, 102, 371-380, and (2) Joseph, Gul, and Ba. (2018)
 \"Designing Computer Experiments with Multiple Types of Factors: The
 @code{MaxPro} Approach\", Journal of Quality Technology, to appear.")
     (license license:lgpl2.1)))
-
-(define-public r-maxnodf
-  (package
-    (name "r-maxnodf")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "maxnodf" version))
-       (sha256
-        (base32 "1czhy3177bb4a5rxi2s4j3c9xn9f0b2pbkdka1dzw6ga389wdwb3"))))
-    (properties `((upstream-name . "maxnodf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=maxnodf")
-    (synopsis "Approximate Maximisation of Nestedness in Bipartite Graphs")
-    (description
-     "This package provides functions to generate graphs that maximise the NODF
-(nestedness metric based on overlap and decreasing fill) metric for a given
-number of rows, columns and links.  NODF was originally defined by Almeida-Neto
-et al. (2008) <doi:10.1111/j.0030-1299.2008.16644.x>.  As nestedness in
-ecological networks depends on the size of the networks we require normalisation
-to make them comparable.  We offer three highly optimised algorithms to find the
-optimising graphs so that users can choose an appropriate trade off between
-computation time and NODF value for the task at hand.")
-    (license license:expat)))
 
 (define-public r-maxnet
   (package

@@ -5752,13 +5752,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "03qxijpx4k81bwsgzwdw7ywcy9z42zwp3bvwyf2md6iahp4g4dhx"))))
+        (base32 "14n4zr32vjsdjafx7rc9x8x9hjdmvw86lh9hy66lavp3005xznia"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -15788,47 +15788,6 @@ functions have been created to be used in conjunction with the R package asreml
 for the ASReml software, which can be obtained upon purchase from VSN
 international (<https://vsni.co.uk/software/asreml>).")
     (license license:gpl2+)))
-
-(define-public r-nadia
-  (package
-    (name "r-nadia")
-    (version "0.4.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NADIA" version))
-       (sha256
-        (base32 "19545sc75a82smjvvyd353wjlh3wwzhwapcrk9fkg3ffjv9p4a3n"))))
-    (properties `((upstream-name . "NADIA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vim
-                             r-testthat
-                             r-softimpute
-                             r-rpart
-                             r-paradox
-                             r-mlr3pipelines
-                             r-mlr3learners
-                             r-mlr3
-                             r-missranger
-                             r-missmda
-                             r-missforest
-                             r-mice
-                             r-glmnet
-                             r-foreach
-                             r-doparallel
-                             r-data-table
-                             r-amelia))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=NADIA")
-    (synopsis "NA Data Imputation Algorithms")
-    (description
-     "This package creates a uniform interface for several advanced imputations
-missing data methods.  Every available method can be used as a part of mlr3
-pipelines which allows easy tuning and performance evaluation.  Most of the used
-functions work separately on the training and test sets (imputation is trained
-on the training set and impute training data.  After that imputation is again
-trained on the test set and impute test data).")
-    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-nada2
   (package

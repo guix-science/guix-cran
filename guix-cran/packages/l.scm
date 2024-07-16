@@ -8861,13 +8861,13 @@ to the qtl package.")
 (define-public r-lineup
   (package
     (name "r-lineup")
-    (version "0.42")
+    (version "0.44")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lineup" version))
        (sha256
-        (base32 "1k6l3vl9g6cz3jl1fz6r1dm3lfpmis6yylra69c3s8l8l4fz0gzy"))))
+        (base32 "1km5mafaww12pck0n3lgpx7sp0hpzi5h173m4apv8bbiy7cdn6x6"))))
     (properties `((upstream-name . "lineup")))
     (build-system r-build-system)
     (propagated-inputs (list r-qtl r-class))
@@ -16293,13 +16293,13 @@ show how to simulate data from and estimate all the above model classes.")
 (define-public r-lam
   (package
     (name "r-lam")
-    (version "0.6-19")
+    (version "0.7-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LAM" version))
        (sha256
-        (base32 "1bns8m48rlkv1d87wvhlvkplr8kpm2rda5wb9xcvjqr7bf65nk8b"))))
+        (base32 "02kssj47nmps5yf4hqa2g9mwbml52gckj19w7mpqahzlnzib9xi3"))))
     (properties `((upstream-name . "LAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sirt r-rcpparmadillo r-rcpp r-cdm))

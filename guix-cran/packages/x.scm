@@ -376,6 +376,30 @@ chart, meanwhile the we_rules() function detects non random patterns in sample."
 form described in package XR and in the book \"Extending R\".")
     (license license:gpl2+)))
 
+(define-public r-xrnet
+  (package
+    (name "r-xrnet")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xrnet" version))
+       (sha256
+        (base32 "04zcpxzam4avsc8qxvd5ssjxzg07xf2wjx90y6df4df2dpm7sr6i"))))
+    (properties `((upstream-name . "xrnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-foreach r-bigmemory r-bh))
+    (home-page "https://github.com/USCbiostats/xrnet")
+    (synopsis "Hierarchical Regularized Regression")
+    (description
+     "Fits hierarchical regularized regression models to incorporate potentially
+informative external data, Weaver and Lewinger (2019) <doi:10.21105/joss.01761>.
+ Utilizes coordinate descent to efficiently fit regularized regression models
+both with and without external information with the most common penalties used
+in practice (i.e.  ridge, lasso, elastic net).  Support for standard R matrices,
+sparse matrices and big.matrix objects.")
+    (license license:gpl2)))
+
 (define-public r-xrjulia
   (package
     (name "r-xrjulia")

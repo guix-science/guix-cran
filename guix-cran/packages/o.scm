@@ -4285,31 +4285,6 @@ Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
     (license license:gpl3)))
 
-(define-public r-optimcheck
-  (package
-    (name "r-optimcheck")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "optimCheck" version))
-       (sha256
-        (base32 "1qjkv1mfyn7sw0dkxxcdaqj85vl71cgffpf3k3mvzy0s8yhxjb4n"))))
-    (properties `((upstream-name . "optimCheck")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mlysy/optimCheck")
-    (synopsis "Graphical and Numerical Checks for Mode-Finding Routines")
-    (description
-     "This package provides tools for checking that the output of an optimization
-algorithm is indeed at a local mode of the objective function.  This is
-accomplished graphically by calculating all one-dimensional \"projection plots\"
-of the objective function, i.e., varying each input variable one at a time with
-all other elements of the potential solution being fixed.  The numerical values
-in these plots can be readily extracted for the purpose of automated and
-systematic unit-testing of optimization routines.")
-    (license license:gpl3)))
-
 (define-public r-optimbase
   (package
     (name "r-optimbase")

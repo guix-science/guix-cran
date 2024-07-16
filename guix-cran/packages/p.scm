@@ -5124,13 +5124,13 @@ Prisonniere\", \"Albertine disparue\", and \"Le Temps retrouve\".")
 (define-public r-protti
   (package
     (name "r-protti")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protti" version))
        (sha256
-        (base32 "052ffldvy7a1h1z1c2gq9hdmhhwwiia5l6cyikq5j7yb8g1ff1n3"))))
+        (base32 "1lnlikkgw0cvyw6sh49fzzwin31vya3dgq6zyash51vf6i3nc992"))))
     (properties `((upstream-name . "protti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -7210,15 +7210,31 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
 (define-public r-processmapr
   (package
     (name "r-processmapr")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "processmapR" version))
        (sha256
-        (base32 "1q3zppi2hmvqaydwyjyann1zajvk19rww0mj4ra7kj20icg8520h"))))
+        (base32 "0jb69si8npmw92nfsd35wfzrj8jwfflaajsd6xxvyp1bhfvjsvn6"))))
     (properties `((upstream-name . "processmapR")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shiny
@@ -7229,6 +7245,7 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
                              r-plotly
                              r-miniui
                              r-lifecycle
+                             r-htmlwidgets
                              r-htmltools
                              r-hms
                              r-glue
@@ -7241,7 +7258,7 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
                              r-cli
                              r-bupar
                              r-bh))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://bupar.net/")
     (synopsis "Construct Process Maps Using Event Data")
     (description
@@ -35037,13 +35054,13 @@ that of the pcalg package but will be much more efficient.")
 (define-public r-parallelpam
   (package
     (name "r-parallelpam")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parallelpam" version))
        (sha256
-        (base32 "06kr4zabnh5q5w3qnrkn1sw5wn61kkvhcdn8gzfb08394xfpl2kj"))))
+        (base32 "0dq50b3nrmzjjn1p05iykvvnl5g4pyx7jl552czfprsjw4wx7ans"))))
     (properties `((upstream-name . "parallelpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse))
@@ -37320,13 +37337,13 @@ Painbow in your own ggplot graphs.")
 (define-public r-paice
   (package
     (name "r-paice")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAICE" version))
        (sha256
-        (base32 "1qnyg5p62xryifjnbc2z5yxy4s5fszxf713cgaisds96wjqvzx8a"))))
+        (base32 "04zqyi5zvigg21pa4mqz948gxiqixc8j12n47c1ndjsd2ras98wb"))))
     (properties `((upstream-name . "PAICE")))
     (build-system r-build-system)
     (home-page "<https://github.com/PAICEcode/PAICE>")

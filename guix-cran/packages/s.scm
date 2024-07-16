@@ -26101,13 +26101,13 @@ analysis.")
 (define-public r-sox
   (package
     (name "r-sox")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sox" version))
        (sha256
-        (base32 "03lnl431k0fr19akhdwzci2dgmcclkqqj30984wp05ldn87drcyy"))))
+        (base32 "1phrs0mxycimzf7zz0g7bzkdkzf0fvqa86jwqnvmfyjjzqplpf2p"))))
     (properties `((upstream-name . "sox")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpp r-glmnet))
@@ -45060,13 +45060,13 @@ also provided.")
 (define-public r-sgpdata
   (package
     (name "r-sgpdata")
-    (version "27.0-0.0")
+    (version "28.0-0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SGPdata" version))
        (sha256
-        (base32 "0d6lwxqp9ajzinfg258gaqr2k537v32f1gfn7565vsdrlp9miki3"))))
+        (base32 "03x4ihxhwisrq6bwqclxh56n88b7z0b4yfcrfxxfrgc7zqs9adv2"))))
     (properties `((upstream-name . "SGPdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-crayon))
@@ -46311,13 +46311,13 @@ and options() to their factory defaults'.")
 (define-public r-settest
   (package
     (name "r-settest")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SetTest" version))
        (sha256
-        (base32 "08wc6cbnannmwkncqhpcw6l0y7c1v7z3awk5j7fd853nszfmpbk0"))))
+        (base32 "12w297xmq76afiwj1h8ygk24rjhhd7a77fj12dsksw20y1g0f30d"))))
     (properties `((upstream-name . "SetTest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SetTest")
@@ -46334,9 +46334,11 @@ detection, the null hypothesis means no signals.  In the context of the
 goodness-of-fit testing, which contrasts a group of i.i.d.  random variables to
 a given continuous distribution, the input p-values can be obtained by the CDF
 transformation.  The null hypothesis means that these random variables follow
-the given distribution.  For reference, see Hong Zhang, Jiashun Jin and Zheyang
-Wu. \"Distributions and Statistical Power of Optimal Signal-Detection Methods In
-Finite Cases\", submitted.")
+the given distribution.  For reference, see [1]Hong Zhang, Jiashun Jin and
+Zheyang Wu. \"Distributions and power of optimal signal-detection statistics in
+finite case\", IEEE Transactions on Signal Processing (2020) 68, 1021-1033; [2]
+Hong Zhang and Zheyang Wu. \"The general goodness-of-fit tests for correlated
+data\", Computational Statistics & Data Analysis (2022) 167, 107379.")
     (license license:gpl2)))
 
 (define-public r-setmethods
@@ -59730,13 +59732,13 @@ bounds for simple, stratified and cluster sample designs.")
 (define-public r-sampcompr
   (package
     (name "r-sampcompr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sampcompR" version))
        (sha256
-        (base32 "008m2hhcj2rn8w8h34in4adw5h4942q5ffw21gq2rbqxmxd3g7gd"))))
+        (base32 "003rf8dq6jwacscyhfcdm7kia5lq3lwdqxcmb2sad9a3qv3w2vk4"))))
     (properties `((upstream-name . "sampcompR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -59759,7 +59761,7 @@ bounds for simple, stratified and cluster sample designs.")
                              r-data-table
                              r-boot-pval
                              r-boot))
-    (home-page "https://cran.r-project.org/package=sampcompR")
+    (home-page "https://bjoernrohr.github.io/sampcompR/")
     (synopsis "Comparing and Visualizing Differences Between Surveys")
     (description
      "Easily analyze and visualize differences between samples (e.g., benchmark

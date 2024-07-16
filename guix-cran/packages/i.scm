@@ -458,13 +458,13 @@ install.packages(\"@code{locClass}\", repos=\"<http://R-Forge.R-project.org>\")'
 (define-public r-ivgets
   (package
     (name "r-ivgets")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivgets" version))
        (sha256
-        (base32 "19bqfasrvdqvs2fvxh7h2l16qkm3rmcsv6m83x726i1i6adqj2bq"))))
+        (base32 "1nkwg35h0g15rzdjs0hqa8sqwgj8mjllwscqyjdxrzr35ffys5gn"))))
     (properties `((upstream-name . "ivgets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-ivreg r-gets))

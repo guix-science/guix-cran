@@ -5802,19 +5802,24 @@ random effects.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.9.1")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "1v0czkz09gp58ap7n847pcwqsd1n11i44wz6cppnlxhl1wcw8vzn"))))
+        (base32 "0m31r5bs49bw9660hsxsmnk131hf6vrzqxank39hvlnid70z9l18"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlparsedata
                              r-xml2
+                             r-xfun
+                             r-withr
+                             r-treesitter-r
+                             r-treesitter
                              r-stringr
                              r-rlang
+                             r-purrr
                              r-lintr
                              r-glue
                              r-fs

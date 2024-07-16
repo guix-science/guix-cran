@@ -11279,13 +11279,13 @@ gene expressions.")
 (define-public r-diseasystore
   (package
     (name "r-diseasystore")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diseasystore" version))
        (sha256
-        (base32 "17ypayb3bnan6ar6yv3n1l56yb3wzxpj7vc1fzbkxg1pgqrm43jg"))))
+        (base32 "1024r1p4wawcg1346vk91xk7x5hxasliiyjp2y0nk085s4lb7s96"))))
     (properties `((upstream-name . "diseasystore")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -25854,6 +25854,40 @@ data.  Decide whether violations of these expectations should throw an error or
 a warning.  This package is useful for validating data within R processes which
 pull from dynamic data sources such as databases and web APIs to provide an
 extra layer of validation around input and output data.")
+    (license license:expat)))
+
+(define-public r-databraryr
+  (package
+    (name "r-databraryr")
+    (version "0.6.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "databraryr" version))
+       (sha256
+        (base32 "0mws4jw81l91cml8fh4n244nzjrfznsg05vsqfbyc75ciqlmw8hk"))))
+    (properties `((upstream-name . "databraryr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-options
+                             r-magrittr
+                             r-magick
+                             r-lifecycle
+                             r-keyring
+                             r-httr2
+                             r-getpass
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://databrary.github.io/databraryr/")
+    (synopsis "Interact with the 'Databrary.org' API")
+    (description
+     "Databrary.org is a restricted access repository for research data, especially
+video and audio.  This package provides commands to interact with the data
+stored on Databrary.org'.")
     (license license:expat)))
 
 (define-public r-databionicswarm
