@@ -5251,50 +5251,6 @@ functions for time-splitting a dataset when modeling non-proportional hazards in
 Cox regressions.")
     (license license:gpl3+)))
 
-(define-public r-greenr
-  (package
-    (name "r-greenr")
-    (version "0.0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "greenR" version))
-       (sha256
-        (base32 "0xa6ip3hqzn7h60s97q3qcx78fyhvjdgciicayx5faxrinkyiip8"))))
-    (properties `((upstream-name . "greenR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-viridislite
-                             r-units
-                             r-tibble
-                             r-superpixelimagesegmentation
-                             r-spatstat-geom
-                             r-shiny
-                             r-sf
-                             r-rstudioapi
-                             r-rcolorbrewer
-                             r-osrm
-                             r-osmdata
-                             r-openimager
-                             r-magrittr
-                             r-leaflet
-                             r-jsonlite
-                             r-httr
-                             r-htmlwidgets
-                             r-htmltools
-                             r-ggplot2
-                             r-duckdb
-                             r-dt
-                             r-dplyr
-                             r-dbi
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=greenR")
-    (synopsis "Green Index Quantification, Analysis and Visualization")
-    (description
-     "Quantification, analysis, and visualization of urban greenness within city
-networks using data from @code{OpenStreetMap} <https://www.openstreetmap.org>.")
-    (license license:gpl3+)))
-
 (define-public r-greener
   (package
     (name "r-greener")
@@ -8232,13 +8188,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.1")
+    (version "1.5.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "0c5r9kay8az8szf324qfln8lz8wsnggimsphcrsj1ssfv17dq37w"))))
+        (base32 "1qnw64lmiv8yyd69hyxqg7x90y9nxcdbipvb6kzpb34if8x2hqgq"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -28426,13 +28382,13 @@ missing values.  Model estimation is performed by the maximum likelihood method.
 (define-public r-gasfluxes
   (package
     (name "r-gasfluxes")
-    (version "0.6-2")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasfluxes" version))
        (sha256
-        (base32 "18yr3331wriddxbnxag3ms6lmx709mhrngv8sxfg0zcm271pkl1r"))))
+        (base32 "1gvm8rj67mbj3dsqv5nxvv3gixp31gnq6df3bqfw8j26xk4r5frd"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table))

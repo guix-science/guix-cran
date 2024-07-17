@@ -2878,13 +2878,13 @@ error and statistical power.")
 (define-public r-npboottprm
   (package
     (name "r-npboottprm")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprm" version))
        (sha256
-        (base32 "076s49mq9vm6qkgjcpxn2dqwk917fd3sw4kc6z7a06xg2npbgsag"))))
+        (base32 "0ipicpy1hfxbj7mw18slykxwyyav8r2z8rsnqhhvxw3f9w656nhd"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn

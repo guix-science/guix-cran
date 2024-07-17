@@ -9389,13 +9389,13 @@ The method is based on Jie Ding, Yu Xiang, Lu Shen, Vahid Tarokh (2017)
 (define-public r-officedown
   (package
     (name "r-officedown")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "officedown" version))
        (sha256
-        (base32 "0ymidhrnbk8z7ni4y0ngizyc7d3f35nmhmhpfqw8jg9faizich8z"))))
+        (base32 "0mxg46jg4vb6bxxqayvf84g8bllwsf11ybkfinrsdzdlkw89s3vk"))))
     (properties `((upstream-name . "officedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

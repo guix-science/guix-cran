@@ -8126,13 +8126,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "105igqm57470znpnh2p63ilw0d5gc6f6ij997fdka7x3vmkll4b2"))))
+        (base32 "1gilv3w1nn7ika226p78lj4fba7icp5xc8wgf1vg3fg8m2jjq356"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

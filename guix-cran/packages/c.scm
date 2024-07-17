@@ -982,13 +982,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "0m11pzmhw7g25x4dmjakc5i66x5vvn086j6vj3r0bvyxiyyvi3gj"))))
+        (base32 "04ad10sgmhy4n3c76l46sn5j1k62yfh4ipldln1kfkygl3zis1xf"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap r-stmomo r-sf r-gnm r-forecast))
@@ -4080,13 +4080,13 @@ MED-GOLD (776467) and S2S4E (776787) projects.  See @code{LledÃ³} et al. (2019
 (define-public r-cshshydrology
   (package
     (name "r-cshshydrology")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CSHShydRology" version))
        (sha256
-        (base32 "06hdqdzvfpfn4r6x1d2m24lz2w5sj20fr7d791zqzd16mp767qcc"))))
+        (base32 "0f90k32ngfkb7cp9s79h50qmxxxggkkm8a72diz9981wz6n3zjaa"))))
     (properties `((upstream-name . "CSHShydRology")))
     (build-system r-build-system)
     (propagated-inputs (list r-whitebox
@@ -4094,10 +4094,8 @@ MED-GOLD (776467) and S2S4E (776787) projects.  See @code{LledÃ³} et al. (2019
                              r-tidyhydat
                              r-stringr
                              r-sf
-                             r-rnaturalearth
                              r-raster
                              r-plotrix
-                             r-openstreetmap
                              r-magrittr
                              r-lubridate
                              r-kendall
@@ -8522,13 +8520,13 @@ accommodates any replicate design.")
 (define-public r-cpgassoc
   (package
     (name "r-cpgassoc")
-    (version "2.60")
+    (version "2.70")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CpGassoc" version))
        (sha256
-        (base32 "1zx18x8pxjl2ajnj7a7lb8383m75ysg17f4mzz0vkgl5mnf617ny"))))
+        (base32 "0y3jwy4kpqw6r4w93bm1c7yjxpv5jyhpmgbbkagb7qjvbsg935qx"))))
     (properties `((upstream-name . "CpGassoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -18903,13 +18901,13 @@ ggplot2 object.")
 (define-public r-comorbidity
   (package
     (name "r-comorbidity")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comorbidity" version))
        (sha256
-        (base32 "189z23a66mz10rzqzgljkygyrgishm4mzzrqhqs1ba335dzvzm3d"))))
+        (base32 "1j86631kyh774hs6a4ivmhkbj6kc733vy0pn1sa86yh0s6iqbmdb"))))
     (properties `((upstream-name . "comorbidity")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-data-table r-checkmate))
@@ -26119,6 +26117,32 @@ simulated results as well.")
      "Calculations of \"EP15-A3 document.  A manual for user verification of precision
 and estimation of bias\" CLSI (2014, ISBN:1-56238-966-1).")
     (license license:expat)))
+
+(define-public r-clrng
+  (package
+    (name "r-clrng")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clrng" version))
+       (sha256
+        (base32 "18brzhpivgzmvvjqkbkmrzw52ylz3d9l02l88020rb18pgr78clp"))))
+    (properties `((upstream-name . "clrng")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rviennacl r-rcppeigen r-rcpp r-gpur))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=clrng")
+    (synopsis "Parallel Random Number Generation on GPU")
+    (description
+     "Builds on @code{gpuR} and utilizes the @code{clRNG} ('@code{OpenCL}') library to
+provide efficient tools to generate independent random numbers in parallel on a
+GPU and save the results as R objects, ensuring high-quality random numbers even
+when R is used interactively or in an ad-hoc manner.  Includes Fisher's
+simulation method adapted from Patefield, William M (1981) <doi:10.2307/2346669>
+and MRG31k3p Random Number Generator from @code{clRNG} library by Advanced Micro
+Devices, Inc. (2015) <https://github.com/@code{clMathLibraries/clRNG>}.")
+    (license license:gpl3)))
 
 (define-public r-clr
   (package
@@ -36195,13 +36219,13 @@ random Q-matrix generation and detection of complete/identified Q-matrices.")
 (define-public r-cdmconnector
   (package
     (name "r-cdmconnector")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDMConnector" version))
        (sha256
-        (base32 "1b129mm7qpfl57bf2spcr6wkq3ha2mxmacx17lnaln47a0n2nm5y"))))
+        (base32 "1ma5hjldcnsw6h007s1yyzv5iix8z8vz5yfxx5g3z74kwlpa4jjy"))))
     (properties `((upstream-name . "CDMConnector")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

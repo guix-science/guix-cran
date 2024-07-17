@@ -11782,13 +11782,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imf-data
   (package
     (name "r-imf-data")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imf.data" version))
        (sha256
-        (base32 "1p9jk3m4d87ly1h2g14mqfnkry0ydvvb44kicxnn4xy1pi1jqhxq"))))
+        (base32 "081p2vv022c3585j9dqalqgk8y1gnx0z7h0mwh57dmk8adbb1zb0"))))
     (properties `((upstream-name . "imf.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))
@@ -15780,28 +15780,6 @@ Council for the Exploration of the Sea) Vocabularies database
 <https://vocab.ices.dk/services/POX.aspx>.")
     (license license:gpl3)))
 
-(define-public r-icesvms
-  (package
-    (name "r-icesvms")
-    (version "1.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "icesVMS" version))
-       (sha256
-        (base32 "0ppml34s4zz3vav08fjaj71bml8amaslw22zmib0scvw8k70jlir"))))
-    (properties `((upstream-name . "icesVMS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-icesvocab r-icesconnect r-httr r-glue))
-    (home-page "https://data.ices.dk/vms")
-    (synopsis
-     "Link to the ICES Vessel Monitoring System and Logbook Database Web Services")
-    (description
-     "Links to the ICES Vessel Monitoring System (VMS) and logbook database web
-services <https://data.ices.dk/vms/webservices> to allow users to download
-summaries and data products.")
-    (license license:gpl2+)))
-
 (define-public r-icestaf
   (package
     (name "r-icestaf")
@@ -15824,26 +15802,6 @@ ICES assessments.  ICES is an organization facilitating international
 collaboration in marine science.")
     (license license:gpl3)))
 
-(define-public r-icessd
-  (package
-    (name "r-icessd")
-    (version "2.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "icesSD" version))
-       (sha256
-        (base32 "1k0i79hh63bmsqw5m6ym2h3dydrjji57lkysp5n9x293lgh04pf2"))))
-    (properties `((upstream-name . "icesSD")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-icesconnect r-httr))
-    (home-page "https://sd.ices.dk")
-    (synopsis "Stock Database Web Services")
-    (description
-     "R interface to access the web services of the ICES Stock Database
-<https://sd.ices.dk>.")
-    (license license:gpl2+)))
-
 (define-public r-icessag
   (package
     (name "r-icessag")
@@ -15862,47 +15820,6 @@ collaboration in marine science.")
     (description
      "R interface to access the web services of the ICES Stock Assessment Graphs
 database <https://sg.ices.dk>.")
-    (license license:gpl2+)))
-
-(define-public r-icesdatsuqc
-  (package
-    (name "r-icesdatsuqc")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "icesDatsuQC" version))
-       (sha256
-        (base32 "0pspd702vg2k7fza9jvj7hdnpjlg4k41mwiq45k7bsr0cbksggsg"))))
-    (properties `((upstream-name . "icesDatsuQC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sqldf r-icesdatsu))
-    (home-page "https://datsu.ices.dk/web/index.aspx")
-    (synopsis "Run Quality Checks on Data Prior to Submission to ICES")
-    (description
-     "Run quality checks on data sets using the same checks that are conducted on the
-ICES Data Submission Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
-    (license license:gpl2+)))
-
-(define-public r-icesdatsu
-  (package
-    (name "r-icesdatsu")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "icesDatsu" version))
-       (sha256
-        (base32 "0vprh8y6x28q33b6zx9qhq991q0aqn5rhccf44k8211n5dwa555k"))))
-    (properties `((upstream-name . "icesDatsu")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-icesconnect r-httr))
-    (home-page "https://datsu.ices.dk/web/index.aspx")
-    (synopsis
-     "Functions to Interact with the ICES Data Submission Utility (DATSU)")
-    (description
-     "This package provides functions to Interact with the ICES Data Submission
-Utility (DATSU) <https://datsu.ices.dk/web/index.aspx>.")
     (license license:gpl2+)))
 
 (define-public r-icesdatras
@@ -16948,13 +16865,13 @@ schedules, birthdays, and the like.")
 (define-public r-ic10trainingdata
   (package
     (name "r-ic10trainingdata")
-    (version "1.3.1")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iC10TrainingData" version))
        (sha256
-        (base32 "175ymib3h359296hk36psryksisipx63ybvacz8hys21irzx58j1"))))
+        (base32 "0hab5frxrlxxpxxs13h6x39pp7j6438kdqw55kxy29340ihyg32y"))))
     (properties `((upstream-name . "iC10TrainingData")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=iC10TrainingData")

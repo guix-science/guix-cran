@@ -14414,13 +14414,13 @@ design custom and complex tables for reporting results.")
 (define-public r-lazytrade
   (package
     (name "r-lazytrade")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lazytrade" version))
        (sha256
-        (base32 "055wyaf36f5g27wly24i0sbf2k0rriga8xcgn241gszlzagrnh55"))))
+        (base32 "0yl3hndvzavag397071mkr8z7v7hb9b2dzcls5llqjpi7ayvbi8b"))))
     (properties `((upstream-name . "lazytrade")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -14445,9 +14445,8 @@ several utilities such as dynamic and adaptive risk management using
 reinforcement learning and even functions to generate predictions of price
 changes using pattern recognition deep regression learning.  Summary of Methods
 used: Awesome H2O tutorials: <https://github.com/h2oai/awesome-h2o>, Market Type
-research of Van Tharp Institute: <https://www.vantharp.com/>, Reinforcement
-Learning R package:
-<https://CRAN.R-project.org/package=@code{ReinforcementLearning>}.")
+research of Van Tharp Institute: <https://vantharp.com/>, Reinforcement Learning
+R package: <https://CRAN.R-project.org/package=@code{ReinforcementLearning>}.")
     (license license:expat)))
 
 (define-public r-lazysql

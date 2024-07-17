@@ -867,30 +867,6 @@ version of the e-book is available for free at
 <https://www.thepiratesguidetor.com>.")
     (license license:gpl2)))
 
-(define-public r-yarr
-  (package
-    (name "r-yarr")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "yarr" version))
-       (sha256
-        (base32 "16q109jrydckz7s1rkmr2sh8q92cgr1c534fvpbh3h0bc3fvvf8g"))))
-    (properties `((upstream-name . "yarr")))
-    (build-system r-build-system)
-    (home-page "https://github.com/fdavidcl/yarr")
-    (synopsis "Yet Another 'ARFF' Reader")
-    (description
-     "This package provides a parser and a writer for WEKA Attribute-Relation File
-Format <https://waikato.github.io/weka-wiki/arff_stable/> in pure R, with no
-dependencies.  As opposed to other R implementations, this package can read
-standard (dense) as well as sparse files, i.e.  those where each row does only
-contain nonzero components.  Unlike RWeka', yarr does not require any Java
-installation nor is dependent on external software.  This implementation is
-generalized from those in packages mldr and mldr.datasets'.")
-    (license license:gpl3+)))
-
 (define-public r-yamlme
   (package
     (name "r-yamlme")

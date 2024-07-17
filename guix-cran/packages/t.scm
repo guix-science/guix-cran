@@ -19004,13 +19004,13 @@ provides a local server for testing cloudml compatible services.")
 (define-public r-tfdatasets
   (package
     (name "r-tfdatasets")
-    (version "2.9.0")
+    (version "2.17.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tfdatasets" version))
        (sha256
-        (base32 "1q8zznwjjx809qvfjg07dhprqcsibzwq9i5sj377y4ypychxq2nl"))))
+        (base32 "1bvm1yk204c64ywva672q1pf9safnkyb7jlwaqz9jkgmqa9wwlxy"))))
     (properties `((upstream-name . "tfdatasets")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -24527,35 +24527,6 @@ Spotify (song characteristics).  Additional functions are included for easily
 creating data visualizations with color palettes inspired by Taylor Swift's
 album covers.")
     (license license:expat)))
-
-(define-public r-taxotools
-  (package
-    (name "r-taxotools")
-    (version "0.0.139")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxotools" version))
-       (sha256
-        (base32 "1nx79a0jfy0xrd83zk3zwk65mdk35lgz564b3fmhdv9rqpmg9q7n"))))
-    (properties `((upstream-name . "taxotools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-wikitaxa
-                             r-taxize
-                             r-stringr
-                             r-stringi
-                             r-stringdist
-                             r-sqldf
-                             r-rmarkdown
-                             r-plyr))
-    (home-page "https://cran.r-project.org/package=taxotools")
-    (synopsis "Taxonomic List Processing")
-    (description
-     "Taxonomic lists matching and merging, casting and melting scientific names,
-managing taxonomic lists from Global Biodiversity Information Facility GBIF or
-Integrated Taxonomic Information System ITIS', harvesting names from Wikipedia
-and fuzzy matching.")
-    (license license:cc0)))
 
 (define-public r-taxonomizr
   (package

@@ -15854,13 +15854,13 @@ scalar-on-function linear regression and function-on-function linear regression.
 (define-public r-robfilter
   (package
     (name "r-robfilter")
-    (version "4.1.4")
+    (version "4.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robfilter" version))
        (sha256
-        (base32 "10wrfd2ii99vscnajjrd48msn4ka75pn7h9yhgclilc9l9r0q1wn"))))
+        (base32 "18yqrwl60srr6r3hg6qcv8li91qz83xksvs383zs5bxa5y400azj"))))
     (properties `((upstream-name . "robfilter")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-mass r-lattice))
@@ -19969,13 +19969,13 @@ from @code{GitHub}: <https://github.com/helske/Rlibeemd/>.")
 (define-public r-rlgt
   (package
     (name "r-rlgt")
-    (version "0.2-1")
+    (version "0.2-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlgt" version))
        (sha256
-        (base32 "0hrqishf056d8nivm2rya2xxpdzmn69ajnxdp9w39fhdfjhzv90p"))))
+        (base32 "1c23flwrw2b361dgjms3h5407w3ll98gsbsy0nmi3000wza5xdzz"))))
     (properties `((upstream-name . "Rlgt")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -20246,16 +20246,16 @@ to other interactive elements with just few lines of code.")
 (define-public r-rlas
   (package
     (name "r-rlas")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlas" version))
        (sha256
-        (base32 "0abbzh17cyiamgdln55b23nsywr3p60bk7n3wv70asg945pqnxhi"))))
+        (base32 "0fqlg2hqyxvv7lfrqy8qjf1vbxwf5irsw70h7qqw1n5wrv7h6yfw"))))
     (properties `((upstream-name . "rlas")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-data-table r-bh))
+    (propagated-inputs (list r-rcpp r-data-table))
     (home-page "https://github.com/r-lidar/rlas")
     (synopsis
      "Read and Write 'las' and 'laz' Binary File Formats Used for Remote Sensing Data")
@@ -48976,6 +48976,32 @@ from the R console and RStudio Viewer.  r3dmol includes an extensive API to
 manipulate the visualization after creation, and supports getting data out of
 the visualization into R. Based on the 3dmol.js and the htmlwidgets R package.")
     (license license:bsd-3)))
+
+(define-public r-r311
+  (package
+    (name "r-r311")
+    (version "0.3.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r311" version))
+       (sha256
+        (base32 "1gnyccin2f6wg7g2knnzsckkf3wrfb6xrkw8cg2z9db61nxacdrq"))))
+    (properties `((upstream-name . "r311")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jslth/r311")
+    (synopsis "Interface to the 'open311' Standard")
+    (description
+     "Access and handle APIs that use the international open311 @code{GeoReport} v2
+standard for civic issue tracking
+<https://wiki.open311.org/@code{GeoReport_v2/>}.  Retrieve civic service types
+and request data.  Select and add available open311 endpoints and jurisdictions.
+ Implicitly supports custom queries and open311 extensions.  Requires a minimal
+number of hard dependencies while still allowing the integration in common R
+formats ('xml2', tibble', sf').")
+    (license license:expat)))
 
 (define-public r-r2winbugs
   (package

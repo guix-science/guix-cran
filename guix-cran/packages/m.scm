@@ -41621,58 +41621,6 @@ to help researchers work with and contribute to event datasets on global
 governance.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
-(define-public r-mantaid
-  (package
-    (name "r-mantaid")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MantaID" version))
-       (sha256
-        (base32 "01rc9p4ydq7s2iwqc017ijdbw8w8n0s82f0j69gsl6m5fbqm9a4k"))))
-    (properties `((upstream-name . "MantaID")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-scutr
-                             r-reshape2
-                             r-rcolorbrewer
-                             r-purrr
-                             r-paradox
-                             r-mlr3tuning
-                             r-mlr3
-                             r-magrittr
-                             r-keras
-                             r-ggplot2
-                             r-ggcorrplot
-                             r-dplyr
-                             r-data-table
-                             r-caret
-                             r-biomart))
-    (home-page "https://cran.r-project.org/package=MantaID")
-    (synopsis
-     "Machine-Learning Based Tool to Automate the Identification of Biological Database IDs")
-    (description
-     "The number of biological databases is growing rapidly, but different databases
-use different IDs to refer to the same biological entity.  The inconsistency in
-IDs impedes the integration of various types of biological data.  To resolve the
-problem, we developed @code{MantaID}', a data-driven, machine-learning based
-approach that automates identifying IDs on a large scale.  The @code{MantaID}
-model's prediction accuracy was proven to be 99%, and it correctly and
-effectively predicted 100,000 ID entries within two minutes. @code{MantaID}
-supports the discovery and exploitation of ID patterns from large quantities of
-databases. (e.g., up to 542 biological databases).  An easy-to-use freely
-available open-source software R package, a user-friendly web application, and
-APIs were also developed for @code{MantaID} to improve applicability.  To our
-knowledge, @code{MantaID} is the first tool that enables an automatic, quick,
-accurate, and comprehensive identification of large quantities of IDs, and can
-therefore be used as a starting point to facilitate the complex assimilation and
-aggregation of biological data across diverse databases.")
-    (license license:gpl3+)))
-
 (define-public r-manta
   (package
     (name "r-manta")

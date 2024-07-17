@@ -6924,13 +6924,13 @@ optimal experimental design.")
 (define-public r-dosearch
   (package
     (name "r-dosearch")
-    (version "1.0.10")
+    (version "1.0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dosearch" version))
        (sha256
-        (base32 "0m7ic713l2dbxfq39z3fh8lfsazjlhn9i5fpcj311brd2zjs46xh"))))
+        (base32 "0ghwk0h9rrfg4i6xdiybirqvrpzm3rv0w41jqqlhm43jf7796pmj"))))
     (properties `((upstream-name . "dosearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -11505,16 +11505,16 @@ distributions.")
 (define-public r-discretetests
   (package
     (name "r-discretetests")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiscreteTests" version))
        (sha256
-        (base32 "1cx3n2z6qx3x6k3mb75qk1n6zd95s6mgs047dhq6nvac921fnd12"))))
+        (base32 "18257srwfz99531wks60isi1dg95yv1xvpb4hhxh9qw9wijw08sp"))))
     (properties `((upstream-name . "DiscreteTests")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-checkmate))
+    (propagated-inputs (list r-r6 r-lifecycle r-checkmate))
     (home-page "https://github.com/DISOhda/DiscreteTests")
     (synopsis
      "Vectorised Computation of P-Values and Their Supports for Several Discrete Statistical Tests")
@@ -13348,13 +13348,13 @@ Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "1.2")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "0bchk3vqdvn6hnw6cglsr7i7nvcdk5c4kyw4jainq08i7zc4jwsv"))))
+        (base32 "1912wmcdpi80daiqgclh6dgmkwppz95wnh5ggh7pz8pk8b89587b"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14204,13 +14204,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "1abvk6hk3vnfdd4yif0n1ngw68h32r001a0v6xi4n9qi72g82p9j"))))
+        (base32 "1s7ljcgrffb11cd0w2amrdyp75a8m9cv3g8zwizk2gll6p0yqpgg"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-vcfr))
@@ -14287,45 +14287,28 @@ that may increase or decrease multiple times.")
 (define-public r-didmultiplegt
   (package
     (name "r-didmultiplegt")
-    (version "0.1.4")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegt" version))
        (sha256
-        (base32 "07rky436q6bq9ag6ix5r4k7i4ahbifx89c2dv9isag634kva6pvm"))))
+        (base32 "14fa7zmhyz815z6h1ycvhcvq072g09jfjkcpyllxim4dl5430hdc"))))
     (properties `((upstream-name . "DIDmultiplegt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wooldridge
-                             r-stringr
+    (propagated-inputs (list r-stringr
                              r-sampling
                              r-plotrix
+                             r-magrittr
                              r-fixest
                              r-dplyr
-                             r-assertthat))
+                             r-didmultiplegtdyn
+                             r-didhad))
     (home-page "https://cran.r-project.org/package=DIDmultiplegt")
-    (synopsis "Estimation in DID with Multiple Groups and Periods")
+    (synopsis "Estimators DID with Multiple Groups and Periods")
     (description
-     "Estimate the effect of a treatment on an outcome in sharp
-Difference-in-Difference designs with multiple groups and periods.  It computes
-the DIDM estimator introduced in Section 4 of \"Two-Way Fixed Effects Estimators
-with Heterogeneous Treatment Effects\" (Chaisemartin, D'Haultfoeuille (2020)
-<doi:10.1257/aer.20181169>), which generalizes the standard DID estimator with
-two groups, two periods and a binary treatment to situations with many
-groups,many periods and a potentially non-binary treatment.  For each pair of
-consecutive time periods t-1 and t and for each value of the treatment d, the
-package computes a DID estimator comparing the outcome evolution among the
-switchers, the groups whose treatment changes from d to some other value between
-t-1 and t, to the same evolution among control groups whose treatment is equal
-to d both in t-1 and t.  Then the DIDM estimator is equal to the average of
-those DIDs across all pairs of consecutive time periods and across all values of
-the treatment.  Under a parallel trends assumption, DIDM is an unbiased and
-consistent estimator of the average treatment effect among switchers, at the
-time period when they switch.  The package can also compute placebo estimators
-that can be used to test the parallel trends assumption.  Finally, in staggered
-adoption designs where each group's treatment is weakly increasing over time, it
-can compute estimators of switchers dynamic treatment effects, one time period
-or more after they have started receiving the treatment.")
+     "Estimators of Difference-in-Differences based on de Chaisemartin and
+D'Haultfoeuille.")
     (license license:expat)))
 
 (define-public r-didimputation

@@ -3677,13 +3677,13 @@ blog Lijun Wang (2017)
 (define-public r-frk
   (package
     (name "r-frk")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FRK" version))
        (sha256
-        (base32 "02fsvklh5cx6072yrfyqrr8yh9x6ajfnyk3qx1xq2kjq8k7j15sh"))))
+        (base32 "1zlghqkljvajsab3xdq564r289cd9b85h4002rnyg23jj32ga6dl"))))
     (properties `((upstream-name . "FRK")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -13894,13 +13894,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "1xf48fgf70s9h5gjls8625m553lkdbinnz89nxn05l9wakhf5qgv"))))
+        (base32 "06f209qvmhpj36xdxiqds5kpvxhac2mr7lci80i4bqik1brxpv17"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-rcpp r-fastmap r-digest r-bh))
@@ -16655,13 +16655,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1dkwhb5in9dqw5wh2zx05s8ijk351ln2nr05bfkbymx9rdfrqbg5"))))
+        (base32 "1vjlcmw9mclhlsq9yr98ijwry3bhmld1kcdm858a0dz692dfw38w"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -16682,7 +16682,7 @@ the plot of the functional data.")
     (description
      "This package performs alignment, PCA, and modeling of multidimensional and
 unidimensional functions using the square-root velocity framework (Srivastava et
-al., 2011 <@code{arXiv:1103.3817>} and Tucker et al., 2014
+al., 2011 <doi:10.48550/@code{arXiv.1103.3817>} and Tucker et al., 2014
 <DOI:10.1016/j.csda.2012.12.001>).  This framework allows for elastic analysis
 of functional data through phase and amplitude separation.")
     (license license:gpl3)))
@@ -17250,33 +17250,6 @@ functions [\\phi_1, ..., \\phi_n] that can represent a smooth function, i.e. $f(
 = \\sum c_k \\phi_k(t)$.  First- and second-order derivatives are also included.
 These are the mathematically correct ones, no approximations applied.  As of
 version 1.1, this package includes B-splines, Fourier bases and polynomials.")
-    (license license:gpl3)))
-
-(define-public r-fcslib
-  (package
-    (name "r-fcslib")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FCSlib" version))
-       (sha256
-        (base32 "1191ba6dwpakcdnbcq61zm5xq24isxjnn98nmvk67fpf1ycw70w9"))))
-    (properties `((upstream-name . "FCSlib")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tiff r-stringr r-fields r-bitops))
-    (home-page "https://cran.r-project.org/package=FCSlib")
-    (synopsis
-     "Collection of Fluorescence Fluctuation Spectroscopy Analysis Methods")
-    (description
-     "This is a package for fluorescence fluctuation spectroscopy data analysis
-methods such as @code{spFCS}, FCCS, scanning-FCS, @code{pCF}, N&B and
-@code{pCOMB}, among others.  In addition, several data detrending tools are
-provided.  For an extensive user's guide for the use of FCSlib, please navigate
-to (<https://github.com/FCSlib/FCSlib/tree/master/Documentation>).  Sample data
-can be found at (<https://github.com/FCSlib/FCSlib/tree/master/Sample%20Data>).
-The original paper where this package is presented can be found at
-(<doi:10.1093/bioinformatics/btaa876>).")
     (license license:gpl3)))
 
 (define-public r-fcros

@@ -169,13 +169,13 @@ smart summaries that allows you to focus on dysfunctional cases.")
 (define-public r-wxgenr
   (package
     (name "r-wxgenr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wxgenR" version))
        (sha256
-        (base32 "00i89r7299psykl1pgaxp3hmkx7na0g9m0yh4gp68cnp6xla7wxh"))))
+        (base32 "057wvdkanzwc900fcfn26bs29sq4xsbvmp4xm6bvh21iy2ijj96d"))))
     (properties `((upstream-name . "wxgenR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sm
@@ -192,7 +192,7 @@ smart summaries that allows you to focus on dysfunctional cases.")
     (description
      "This package provides a weather generator to simulate precipitation and
 temperature for regions with seasonality.  Users input training data containing
-precipitation, temperature, and seasonality (up to 20 seasons).  Including
+precipitation, temperature, and seasonality (up to 26 seasons).  Including
 weather season as a training variable allows users to explore the effects of
 potential changes in season duration as well as average start- and end-time
 dates due to phenomena like climate change.  Data for training should be a
@@ -3486,27 +3486,6 @@ combination with the function gallery() in @code{netCoin} package.")
 Wikidata'.  Functions included for getting taxonomic information from each of
 the sources just listed, as well performing taxonomic search.")
     (license license:expat)))
-
-(define-public r-wikiprofiler
-  (package
-    (name "r-wikiprofiler")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wikiprofiler" version))
-       (sha256
-        (base32 "1az2phwgy8aqbl9sxvsq1madrdlrw7zshq9fhw5q580xx0lfhkmk"))))
-    (properties `((upstream-name . "wikiprofiler")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yulab-utils r-rsvg r-gson r-ggplotify r-ggplot2))
-    (home-page "https://cran.r-project.org/package=wikiprofiler")
-    (synopsis "'WikiPathway' Based Data Integration and Visualization")
-    (description
-     "Queries online @code{WikiPathway} graphics and allows mapping user data (e.g.,
-expression values) on the graph.  The package designs a grammar of graphic
-syntax that using pipe operator to add graphic layer.")
-    (license license:artistic2.0)))
 
 (define-public r-wikipedir
   (package
