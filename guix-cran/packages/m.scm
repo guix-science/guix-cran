@@ -16205,13 +16205,13 @@ purposes).  Research project No.  1.1.1.2/VIAA/1/16/075.")
 (define-public r-mmirestriktor
   (package
     (name "r-mmirestriktor")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmirestriktor" version))
        (sha256
-        (base32 "1fncfjsi0mi8jicy48z11s2xrcz5qpx8akm90b8l4z6dj174c59b"))))
+        (base32 "008x9bypp34aq59v6dqns5qjnh94lrng6yjiiaybi5acdyrvipbr"))))
     (properties `((upstream-name . "mmirestriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -19878,13 +19878,13 @@ skew-normal (FM-SMSN) distributions, details in Prates, Lachos and Cabral (2013)
 (define-public r-mixsim
   (package
     (name "r-mixsim")
-    (version "1.1-7")
+    (version "1.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixSim" version))
        (sha256
-        (base32 "1n6c3q78hbnjmwqxwr7i4lsv10mqkcwzf1jnlp6l9fxayhfz7jg7"))))
+        (base32 "0zfk3qkwap6p014jfdkl1ng5w4mqdm4klij7cnkx8zsgigs938lk"))))
     (properties `((upstream-name . "MixSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -22705,26 +22705,6 @@ distributions (which, in turn can be multidimensional).  The package also
 provides an application of the IPFP to simulate multivariate Bernoulli
 distributions.")
     (license license:gpl2)))
-
-(define-public r-minty
-  (package
-    (name "r-minty")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "minty" version))
-       (sha256
-        (base32 "1kbs4f36s5bnjpc5wcqawbk154n9wjpf549hsjj4xdcg7ihcdgfg"))))
-    (properties `((upstream-name . "minty")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tzdb r-cpp11))
-    (home-page "https://gesistsa.github.io/minty/")
-    (synopsis "Minimal Type Guesser")
-    (description
-     "Port the type guesser from readr (so-called readr first edition parsing engine,
-now superseded by vroom').")
-    (license license:expat)))
 
 (define-public r-mintplates
   (package
@@ -41474,18 +41454,19 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "0.4.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "1k17yikr7p6pvx5sm3k4xr0954r0a9sllrwywbkwz11w5703sk3y"))))
+        (base32 "0i0k04hy3b9mf8sp0wqzqdcaas9lj0xmaiwc0c12j6vfzg7agp50"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
                              r-pillar
                              r-network
+                             r-minmse
                              r-igraph
                              r-ggraph
                              r-ggplot2
@@ -41493,13 +41474,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
     (home-page "https://stocnet.github.io/manynet/")
     (synopsis "Many Ways to Make, Modify, Mark, and Map Myriad Networks")
     (description
-     "This package provides a set of tools for making, modifying, marking, and mapping
-many different types of networks.  All functions operate with matrices, edge
-lists, and igraph', network', and tidygraph objects, and on one-mode, two-mode
-(bipartite), and sometimes three-mode networks.  The package includes functions
-for importing and exporting, creating and generating networks, modifying
-networks and node and tie attributes, and describing and visualizing networks
-with sensible defaults.")
+     "Many tools for making, modifying, mapping, marking, measuring, and motifs and
+memberships of many different types of networks.  All functions operate with
+matrices, edge lists, and igraph', network', and tidygraph objects, and on
+one-mode, two-mode (bipartite), and sometimes three-mode networks.  The package
+includes functions for importing and exporting, creating and generating
+networks, modifying networks and node and tie attributes, and describing and
+visualizing networks with sensible defaults.")
     (license license:expat)))
 
 (define-public r-manymome-table

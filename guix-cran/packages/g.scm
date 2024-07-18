@@ -8251,27 +8251,6 @@ simulating GPs with all the implemented covariance functions; (5) unified
 implementation to allow easy specification of various GPs'.")
     (license license:gpl2+)))
 
-(define-public r-gparotation
-  (package
-    (name "r-gparotation")
-    (version "2024.3-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GPArotation" version))
-       (sha256
-        (base32 "1njl4qg5jgmx14r41q1kzfmhf4zga3yjkig0h7ar35bq56pmgxl8"))))
-    (properties `((upstream-name . "GPArotation")))
-    (build-system r-build-system)
-    (home-page "https://optimizer.r-forge.r-project.org/GPArotation_www/")
-    (synopsis "Gradient Projection Factor Rotation")
-    (description
-     "Gradient Projection Algorithms for Factor Rotation.  For details see
-?GPArotation.  When using this package, please cite: Bernaards and Jennrich
-(2005) <doi:10.1177/0013164404272507>. \"Gradient Projection Algorithms and
-Software for Arbitrary Rotation Criteria in Factor Analysis\".")
-    (license license:gpl2+)))
-
 (define-public r-gparotatedf
   (package
     (name "r-gparotatedf")

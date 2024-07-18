@@ -8384,27 +8384,6 @@ values and true positive fractions at the specified marker cut-off values, and a
 plot of the time-dependent AP versus time (available for event time data).")
     (license license:lgpl3)))
 
-(define-public r-apt
-  (package
-    (name "r-apt")
-    (version "3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "apt" version))
-       (sha256
-        (base32 "14njvpf6q34nffm3r9gqcszlabzbydsxqj0ln9nk4mv59izp8sqm"))))
-    (properties `((upstream-name . "apt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-urca r-erer r-car))
-    (home-page "https://cran.r-project.org/package=apt")
-    (synopsis "Asymmetric Price Transmission")
-    (description
-     "Asymmetric price transmission between two time series is assessed.  Several
-functions are available for linear and nonlinear threshold cointegration, and
-furthermore, symmetric and asymmetric error correction model.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-apsimx
   (package
     (name "r-apsimx")
@@ -18348,13 +18327,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "11xp0zcv0qj0l4nq1c5wc4w6zc569qfhd4ir6knwynq68n89p8c2"))))
+        (base32 "01vawhabsj09zf8126wfyawp3likf2i0k7micwjdmll33ykl8254"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))

@@ -9771,13 +9771,13 @@ data.")
 (define-public r-bliss
   (package
     (name "r-bliss")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bliss" version))
        (sha256
-        (base32 "0s5xbk78ygyk8nc3b2279hr3cp4f0nk7nr0cam4n5h5s77cxi3fw"))))
+        (base32 "0ayqzkwq897nx02clw1qb413m1a6bzfdgxw8vmmpbqld8y6ajyk9"))))
     (properties `((upstream-name . "bliss")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-mass
@@ -26526,13 +26526,13 @@ calculate the centroids of those areas.")
 (define-public r-bang
   (package
     (name "r-bang")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bang" version))
        (sha256
-        (base32 "1zgxgpiqszgnmbqb1dd1d3na11bam56fw9qlz1kfxkr0n8pxic0w"))))
+        (base32 "0v2iwy52knvsnr2ldcdqm1z99ag047fxbch56nvs6mki6zbn1vwf"))))
     (properties `((upstream-name . "bang")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-bayesplot))

@@ -13819,19 +13819,19 @@ tags and proper file extensions.")
 (define-public r-filehashsqlite
   (package
     (name "r-filehashsqlite")
-    (version "0.2-6")
+    (version "0.2-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filehashSQLite" version))
        (sha256
-        (base32 "1758wpzq2h7biwpdlrqhi84k35fbpfpxnji6j79zisr825fqjkpq"))))
+        (base32 "1j1n9bsans8zi8fa5shri4k4ra1dmspxd5k9lxr8qjli24na0hhx"))))
     (properties `((upstream-name . "filehashSQLite")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsqlite r-filehash r-dbi))
     (home-page "https://github.com/rdpeng/filehashsqlite")
-    (synopsis "Simple Key-Value Database Using SQLite")
-    (description "Simple key-value database using SQLite as the back end.")
+    (synopsis "Simple Key-Value Database using SQLite")
+    (description "Simple key-value database using SQLite as the backend.")
     (license license:gpl2+)))
 
 (define-public r-filecacher
@@ -17024,34 +17024,6 @@ standard fraction of variance explained (FVE) criterion commonly used for
 functional data is adapted to the transformation setting, also allowing for an
 alternative quantification of variability for density data through the
 Wasserstein metric of optimal transport.")
-    (license license:bsd-3)))
-
-(define-public r-fdaconcur
-  (package
-    (name "r-fdaconcur")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdaconcur" version))
-       (sha256
-        (base32 "1ajmm8lrd9lnl8smkjrnnsnfjmb0dnbhrglg1gdcajvr937rhjsa"))))
-    (properties `((upstream-name . "fdaconcur")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-fdapace))
-    (home-page "https://github.com/functionaldata/tFDAconcur")
-    (synopsis
-     "Concurrent Regression and History Index Models for Functional Data")
-    (description
-     "This package provides an implementation of concurrent or varying coefficient
-regression methods for functional data.  The implementations are done for both
-dense and sparsely observed functional data.  Pointwise confidence bands can be
-constructed for each case.  Further, the influence of past predictor values are
-modeled by a smooth history index function, while the effects on the response
-are described by smooth varying coefficient functions, which are very useful in
-analyzing real data such as COVID data.  References: Yao, F., MÃ¼ller, H.G.,
-Wang, J.L. (2005) <doi: 10.1214/009053605000000660>. @code{SentÃ¼rk}, D.,
-MÃ¼ller, H.G. (2010) <doi: 10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
 (define-public r-fdacluster

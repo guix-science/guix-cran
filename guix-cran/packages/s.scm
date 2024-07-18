@@ -10421,13 +10421,13 @@ parameter space.")
 (define-public r-sticsrfiles
   (package
     (name "r-sticsrfiles")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SticsRFiles" version))
        (sha256
-        (base32 "0ldc0rl5www8bz9qc80198h0yiz10kqr9zmlhd7b510bhms0i1wp"))))
+        (base32 "1afn65z2pz99k3a1fq8w9jjy05bvsdy7p8f829iap1jaahnbz14m"))))
     (properties `((upstream-name . "SticsRFiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -12142,13 +12142,13 @@ database, @code{StÃ¡tnÃ­} pokladna <https://monitor.statnipokladna.cz/>.")
 (define-public r-statnetweb
   (package
     (name "r-statnetweb")
-    (version "0.5.6")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statnetWeb" version))
        (sha256
-        (base32 "1haf2kr1mwvaz4hlwla2ysbcy3sbfcg3i4hyiy9y6lcffvy4w9w0"))))
+        (base32 "12qwx0gnrmb449rz5a2qhds6rparfpw8ak4n0cxk9dmy6d47903l"))))
     (properties `((upstream-name . "statnetWeb")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -12158,11 +12158,11 @@ database, @code{StÃ¡tnÃ­} pokladna <https://monitor.statnipokladna.cz/>.")
                              r-latticeextra
                              r-lattice
                              r-ergm))
-    (home-page "https://cran.r-project.org/package=statnetWeb")
-    (synopsis "Graphical User Interface for Network Modeling with 'Statnet'")
+    (home-page "https://statnet.org")
+    (synopsis "Shiny App for Network Modeling with 'statnet'")
     (description
-     "This package provides a graphical user interface for network modeling with the
-statnet software <https://github.com/statnet>.")
+     "This package provides a graphical user interface for cross-sectional network
+modeling with the statnet software suite <https://github.com/statnet>.")
     (license license:gpl3)))
 
 (define-public r-statnet
@@ -14145,29 +14145,6 @@ numerical methods from Ament and O'Neil (2017) <doi:10.1007/s11222-017-9725-y>.
 Parts of the code have been ported to C from Ament's Matlab code available at
 <https://gitlab.com/s_ament/qastable>.")
     (license license:gpl3)))
-
-(define-public r-stabm
-  (package
-    (name "r-stabm")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stabm" version))
-       (sha256
-        (base32 "1vslidq2pzpwhsrsklghaqsdjjf4w4wqs2dng0p68zhrv5vlivhq"))))
-    (properties `((upstream-name . "stabm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://bommert.github.io/stabm/")
-    (synopsis "Stability Measures for Feature Selection")
-    (description
-     "An implementation of many measures for the assessment of the stability of
-feature selection.  Both simple measures and measures which take into account
-the similarities between features are available, see Bommert (2020)
-<doi:10.17877/DE290R-21906>.")
-    (license license:lgpl3)))
 
 (define-public r-stablespec
   (package
@@ -24242,13 +24219,13 @@ variable analysis.")
 (define-public r-sparser
   (package
     (name "r-sparser")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseR" version))
        (sha256
-        (base32 "0a8wijy1qp3p2y2733dk6j5g1x7gq8samxczqp5navhsq67w6k38"))))
+        (base32 "166140mb4d63z59whg8c8478n5zx8jlmw7m4ji77ma9wws4pr6ww"))))
     (properties `((upstream-name . "sparseR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-recipes r-ncvreg r-magrittr r-dplyr))
@@ -43196,16 +43173,33 @@ that it does not freeze your Shiny app.")
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shiny.telemetry" version))
        (sha256
-        (base32 "0kp0wb3rh501bg7y8r90bwy1bbz5skmlvfjsqxj3nc1gpanndbjs"))))
+        (base32 "190cpxx9ddapixv8ci6xkabmyb0i8qb1kak49c286p43psm6dy66"))))
     (properties `((upstream-name . "shiny.telemetry")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-tidyr
+                             r-stringr
                              r-shiny
                              r-rsqlite
                              r-rlang
@@ -43214,12 +43208,15 @@ that it does not freeze your Shiny app.")
                              r-odbc
                              r-lubridate
                              r-logger
+                             r-lifecycle
                              r-jsonlite
                              r-httr2
+                             r-htmltools
                              r-glue
                              r-dplyr
                              r-digest
                              r-checkmate))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://appsilon.github.io/shiny.telemetry/")
     (synopsis "'Shiny' App Usage Telemetry")
     (description
@@ -45151,13 +45148,13 @@ implemented in frequency space, using a Fast Fourier Transform (FFT).")
 (define-public r-sgof
   (package
     (name "r-sgof")
-    (version "2.3.4")
+    (version "2.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgof" version))
        (sha256
-        (base32 "11y3c77yvq3xl3l596zgc1da4jdicyrrxn751dxh5ha21y98w31m"))))
+        (base32 "028gas18jrfg6ww5r0p32am7x0rjk0a9bcb84pdg9k091dz4b120"))))
     (properties `((upstream-name . "sgof")))
     (build-system r-build-system)
     (propagated-inputs (list r-poibin))
@@ -50975,13 +50972,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.8.4")
+    (version "0.8.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "0xz1n8n232jhp8r8w5isp1nzxscj0fqfm3hxgq6725hm14sl9wqj"))))
+        (base32 "1c0pgl9k0m2zdwcz4sf158wpg1gkza1hqcry6hjqql7rg2dga7f8"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -52312,13 +52309,13 @@ MARSPEC <http://www.marspec.org/>.")
 (define-public r-sdm
   (package
     (name "r-sdm")
-    (version "1.2-40")
+    (version "1.2-46")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdm" version))
        (sha256
-        (base32 "1mcalw96mpylgi9yalm0pxxcmv9724vaylgkanmx2cbnsjracq2z"))))
+        (base32 "035x08bml5d3yw5ikh8kicvlzd2hnv679cpfab3ssib96scd6662"))))
     (properties `((upstream-name . "sdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sp r-raster))

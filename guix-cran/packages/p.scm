@@ -7657,13 +7657,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.3.2")
+    (version "1.0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "150kbj6mkabgswxjg9adihz7i4paaknni49j2x9i7jyaw79iym78"))))
+        (base32 "1rjryvhw9gd0lzmfmz971zzvf1hnrxy2mr5605jrfqh7ilimywbb"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstan r-rlang r-lifecycle r-ggplot2))
@@ -27527,17 +27527,16 @@ Lee & Braun (2012) <doi:10.1111/j.1541-0420.2011.01675.x>.")
 (define-public r-permutations
   (package
     (name "r-permutations")
-    (version "1.1-2")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permutations" version))
        (sha256
-        (base32 "0ilwf5d3cl6vv7dgdcdw4crlrxa6h5q4d3z17la71k3cz6ib3hvk"))))
+        (base32 "1cw6z9cw1pvkyf6c9v0rkfx3mr0bpncji4hsj1smxpq3y0pdwajx"))))
     (properties `((upstream-name . "permutations")))
     (build-system r-build-system)
-    (propagated-inputs (list r-partitions r-numbers r-mathjaxr r-magic
-                             r-freealg))
+    (propagated-inputs (list r-partitions r-numbers r-magic r-freealg))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/permutations")
     (synopsis "The Symmetric Group: Permutations of a Finite Set")
@@ -37430,13 +37429,13 @@ granularity, through the new RESTful API and data source
 (define-public r-pagenum
   (package
     (name "r-pagenum")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pagenum" version))
        (sha256
-        (base32 "0nid26wmrm76ifxqpqqry232q4alf80i7df1rg237qil8asx06k1"))))
+        (base32 "0gcy9gsjb75v9wc03n1yazxnf1b4v5x8w4mwlsvv9d42kbx1ib3r"))))
     (properties `((upstream-name . "pagenum")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -37445,7 +37444,7 @@ granularity, through the new RESTful API and data source
     (description
      "This package provides a simple way to add page numbers to base/ggplot/lattice
 graphics.")
-    (license license:gpl3)))
+    (license license:expat)))
 
 (define-public r-pagemap
   (package

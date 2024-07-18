@@ -6467,16 +6467,16 @@ Dennis, A., & Didelot, X. (2020) <doi:10.1093/sysbio/syaa009>.")
 (define-public r-treestats
   (package
     (name "r-treestats")
-    (version "1.0.5")
+    (version "1.70.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treestats" version))
        (sha256
-        (base32 "0j4bsag1fha3rnysidhd937vpxzvmq3vm1q4brqjpl08pniy9f9f"))))
+        (base32 "0nfs4432q8nirhspdqnkp02a50c0rcphf1anx5qgqdal2njmk146"))))
     (properties `((upstream-name . "treestats")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rspectra r-rcpp r-nloptr r-matrix r-ape))
+    (propagated-inputs (list r-rcpp r-nloptr r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/thijsjanzen/treestats")
     (synopsis "Phylogenetic Tree Statistics")
@@ -17438,13 +17438,13 @@ generation.  To learn more about Thrift go to <https://thrift.apache.org>.")
 (define-public r-threshr
   (package
     (name "r-threshr")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "threshr" version))
        (sha256
-        (base32 "0gr5vnb3bc6b2blpa63mvyhgyjkplq8x0p27h7czjnwinzwsrwrg"))))
+        (base32 "1ws40jlc22p4fb0wcczqf5aqgvsq464nr39rdm6vwwz7spvr8vly"))))
     (properties `((upstream-name . "threshr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-revdbayes))

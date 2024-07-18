@@ -11583,13 +11583,13 @@ Harvesting (OAI-PMH) version 2.0 (for more information, see
 (define-public r-o2plsda
   (package
     (name "r-o2plsda")
-    (version "0.0.18")
+    (version "0.0.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "o2plsda" version))
        (sha256
-        (base32 "17dmb82q4g7lspvrvrz9324qinkr07vlhxsr2vd5ikj7cqxivgmv"))))
+        (base32 "03z6544w8j1jb69rij7lk3wyq7sm8w050gscjjkcrjyl53yfbfal"))))
     (properties `((upstream-name . "o2plsda")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo

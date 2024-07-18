@@ -3218,13 +3218,13 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
 (define-public r-cthist
   (package
     (name "r-cthist")
-    (version "2.1.10")
+    (version "2.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cthist" version))
        (sha256
-        (base32 "1zafnsy8xz7pk5xnaqj1sf01ijw4mqcxk5lcm5dzjnmwr10p509r"))))
+        (base32 "01d5fkc15k96bp3ymvxlf27789d4wl1913w0vlshq0sdaknsq1xy"))))
     (properties `((upstream-name . "cthist")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3234,6 +3234,7 @@ the existence of change point, for the paper, \"Feipeng Zhang and Qunhua Li
                              r-readr
                              r-purrr
                              r-magrittr
+                             r-lubridate
                              r-jsonlite
                              r-httr
                              r-dplyr
@@ -10560,25 +10561,6 @@ matrix are from a Poisson or a negative binomial distribution.")
      "Modeling under- and over-dispersed count data using extended Poisson process
 models as in the article Faddy and Smith (2011) <doi:10.18637/jss.v069.i06> .")
     (license license:gpl2)))
-
-(define-public r-countrycode
-  (package
-    (name "r-countrycode")
-    (version "1.6.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "countrycode" version))
-       (sha256
-        (base32 "1dix4prcavwbi7l7ifw1frvpmqqdcrvk4c45xl7ckg6068713nzr"))))
-    (properties `((upstream-name . "countrycode")))
-    (build-system r-build-system)
-    (home-page "https://vincentarelbundock.github.io/countrycode/")
-    (synopsis "Convert Country Names and Country Codes")
-    (description
-     "Standardize country names, convert them into one of 40 different coding schemes,
-convert between coding schemes, and assign region descriptors.")
-    (license license:gpl3)))
 
 (define-public r-countries
   (package
@@ -22474,13 +22456,13 @@ dependent variable.")
 (define-public r-coda4microbiome
   (package
     (name "r-coda4microbiome")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coda4microbiome" version))
        (sha256
-        (base32 "1nr2xq7pal90dnc76y9hj3qfy5anxjihrlb8sfxnvx5pz590m2wb"))))
+        (base32 "1gslvlhnps5ibrcgm6b487ii9z4blk92mnp26z4xb7m23l7349c1"))))
     (properties `((upstream-name . "coda4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -28518,35 +28500,6 @@ with descriptive labels of the things in an image.  It also provides how
 confident it is about each of the labels.")
     (license license:expat)))
 
-(define-public r-clarabel
-  (package
-    (name "r-clarabel")
-    (version "0.9.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clarabel" version))
-       (sha256
-        (base32 "1g66y8s4v7qzm92dhnsmng28sm4lf6wggb4kc6arvp75z0i315jh"))))
-    (properties `((upstream-name . "clarabel")))
-    (build-system r-build-system)
-    (inputs (list))
-    (native-inputs (list r-knitr))
-    (home-page "https://oxfordcontrol.github.io/clarabel-r/")
-    (synopsis "Interior Point Conic Optimization Solver")
-    (description
-     "This package provides a versatile interior point solver that solves linear
-programs (LPs), quadratic programs (QPs), second-order cone programs (SOCPs),
-semidefinite programs (SDPs), and problems with exponential and power cone
-constraints (<https://clarabel.org/stable/>).  For quadratic objectives, unlike
-interior point solvers based on the standard homogeneous self-dual embedding
-(HSDE) model, Clarabel handles quadratic objective without requiring any
-epigraphical reformulation of its objective function.  It can therefore be
-significantly faster than other HSDE-based solvers for problems with quadratic
-objective functions.  Infeasible problems are detected using using a homogeneous
-embedding technique.")
-    (license license:asl2.0)))
-
 (define-public r-clap
   (package
     (name "r-clap")
@@ -33048,6 +33001,36 @@ example, to generate a bar chart of company sales faceted by product category
 further faceted by season of the year, we simply write: \"CHART bar X category,
 season Y sales\".")
     (license license:gpl3)))
+
+(define-public r-charlesschwabapi
+  (package
+    (name "r-charlesschwabapi")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "charlesschwabapi" version))
+       (sha256
+        (base32 "0pmf25d6vvfyxxwh7g29iwd5di3b82vw128n15amakxfjibb8rjs"))))
+    (properties `((upstream-name . "charlesschwabapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-openssl
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-anytime))
+    (home-page "https://cran.r-project.org/package=charlesschwabapi")
+    (synopsis
+     "Wrapper Functions Around 'Charles Schwab Individual Trader API'")
+    (description
+     "For those wishing to interact with the Charles Schwab Individual Trader API
+(<https://developer.schwab.com/products/trader-api--individual>) with R in a
+simplified manner, this package offers wrapper functions around authentication
+and the available API calls to streamline the process.")
+    (license license:expat)))
 
 (define-public r-charlatan
   (package

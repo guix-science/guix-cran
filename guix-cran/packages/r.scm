@@ -10437,6 +10437,39 @@ with a single character (e.g. tab) between each column.  Optionally, the file
 could include data columns for showing confidence intervals.")
     (license license:gpl2+)))
 
+(define-public r-rplanes
+  (package
+    (name "r-rplanes")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rplanes" version))
+       (sha256
+        (base32 "1pv45g55rgsgjljqlz8sb3q4iimn1921ibihmlf32myilnavs87b"))))
+    (properties `((upstream-name . "rplanes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-ecp
+                             r-dtw
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://signaturescience.github.io/rplanes/")
+    (synopsis "Plausibility Analysis of Epidemiological Signals")
+    (description
+     "This package provides functionality to prepare data and analyze plausibility of
+both forecasted and reported epidemiological signals.  The functions implement a
+set of plausibility algorithms that are agnostic to geographic and time
+resolutions and are calculated independently then presented as a combined score.")
+    (license license:expat)))
+
 (define-public r-rpivottable
   (package
     (name "r-rpivottable")
@@ -27444,13 +27477,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revdbayes" version))
        (sha256
-        (base32 "1pcz09zbgpivzykag087b0f2fz82m48idasddn85yh8wpv6ijsah"))))
+        (base32 "0a263vlzg7fwxczzh7dgj149fhm6s12ivyy5ybf8zhdr88wsigcn"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-rcpparmadillo r-rcpp r-exdex r-bayesplot))
@@ -28845,13 +28878,13 @@ forms for both the recurrent event process and the terminal event.")
 (define-public r-rerddapxtracto
   (package
     (name "r-rerddapxtracto")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rerddapXtracto" version))
        (sha256
-        (base32 "0vd2zm3zmcssfr5p392kqmp70dwa7dxsmgp5pwm9cg0hs66i975m"))))
+        (base32 "0bamid5820zxbr4byqbzvflvgcbagd8lyyr72hbnfns9ficnj7xc"))))
     (properties `((upstream-name . "rerddapXtracto")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -28868,14 +28901,14 @@ forms for both the recurrent event process and the terminal event.")
                              r-abind))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rmendels/rerddapXtracto")
-    (synopsis "Extracts Environmental Data from 'ERDDAP' Web Services")
+    (synopsis "Extracts Environmental Data from 'ERDDAPâ¢' Web Services")
     (description
      "This package contains three functions that access environmental data from any
-ERDDAP data web service.  The rxtracto() function extracts data along a
+ERDDAPâ¢ data web service.  The rxtracto() function extracts data along a
 trajectory for a given \"radius\" around the point.  The rxtracto_3D() function
 extracts data in a box.  The rxtractogon() function extracts data in a polygon.
 All of those three function use the rerddap package to extract the data, and
-should work with any ERDDAP server.  There are also two functions,
+should work with any ERDDAPâ¢ server.  There are also two functions,
 @code{plotBBox}() and @code{plotTrack}() that use the plotdap package to
 simplify the creation of maps of the data.")
     (license license:cc0)))
@@ -43415,23 +43448,23 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "1akid3qsjppracvqz6cxwaz1w9v251m0xb534gd2dsfibk1s2jli"))))
+        (base32 "1y0zpbdyr8izdjdgxma8v226fqacrg0j0ykiivqarkkdq82gvbj5"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list pkg-config fftw))
     (propagated-inputs (list r-waveslim
-                             r-signal
                              r-rniftyreg
                              r-rcppeigen
                              r-rcpp
                              r-r6
                              r-pracma
+                             r-gsignal
                              r-filearray
                              r-digest))
     (native-inputs (list pkg-config))

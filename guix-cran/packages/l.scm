@@ -7725,13 +7725,13 @@ potentially a limited number of times.")
 (define-public r-lite
   (package
     (name "r-lite")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lite" version))
        (sha256
-        (base32 "0gfbffh4511c7hwy6js0bip69j340f7qmrjaslnjgyx1nvmi7dxd"))))
+        (base32 "005lagzgyc05ssy4bvj6vlfjypqpacqh60bfj8yhj75b81m321a9"))))
     (properties `((upstream-name . "lite")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-rust r-revdbayes r-exdex r-chandwich))
@@ -13536,13 +13536,13 @@ search.")
 (define-public r-ldacoop
   (package
     (name "r-ldacoop")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LDAcoop" version))
        (sha256
-        (base32 "1a2935kqd7pxdpgc1v6inx9z963dd33scc9viwdfbd0s6vlj8lq8"))))
+        (base32 "0nvf4j0akpbh03b2rldfzrvzkyxgjq0i375qxbxi96lm4h8yayfh"))))
     (properties `((upstream-name . "LDAcoop")))
     (build-system r-build-system)
     (propagated-inputs (list r-hmisc))

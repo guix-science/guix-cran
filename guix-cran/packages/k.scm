@@ -2099,6 +2099,30 @@ analyses of the cumulative incidence functions (Allignol and Beyersmann, 2010
 <doi:10.1093/biostatistics/kxq018>).")
     (license license:gpl2+)))
 
+(define-public r-kmers
+  (package
+    (name "r-kmers")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kmeRs" version))
+       (sha256
+        (base32 "0wybkzf3l5adgchdxklipkmd063x5nsdqrnhjz0kghc27v7h5zdg"))))
+    (properties `((upstream-name . "kmeRs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pwalign r-biostrings r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/urniaz/kmeRs")
+    (synopsis "K-Mers Similarity Score Matrix and HeatMap")
+    (description
+     "Similarity Score Matrix and @code{HeatMap} for nucleic and amino acid k-mers.
+Similarity score is evaluated by Point Accepted Mutation (PAM) and BLOcks
+SUbstitution Matrix (BLOSUM).  The 30, 40, 70, 120, 250 and 62, 45, 50, 62, 80,
+100 matrix versions are available for PAM and BLOSUM, respectively.  Alignment
+is evaluated by local and global alignment.")
+    (license license:gpl3)))
+
 (define-public r-kmedians
   (package
     (name "r-kmedians")
@@ -2750,29 +2774,6 @@ ifelse()/nested if()/switch() functions, psum()/pprod() functions equivalent to
 pmin()/pmax() plus others which are missing from base R. Most of these functions
 are callable at C level.")
     (license license:gpl3)))
-
-(define-public r-kissmig
-  (package
-    (name "r-kissmig")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "kissmig" version))
-       (sha256
-        (base32 "0qm9psbi42xv69y2095j6nk51w15x6gl71qjhmfk9jq0r9llfbax"))))
-    (properties `((upstream-name . "kissmig")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-raster))
-    (home-page "https://purl.oclc.org/wsl/kissmig")
-    (synopsis "a Keep It Simple Species Migration Model")
-    (description
-     "Simulating species migration and range dynamics under stable or changing
-environmental conditions based on a simple, raster-based, stochastic migration
-model.  Providing accessibility from an origin or previous distribution for
-niche-based species distribution models.  Nobis & Normand (2014)
-<doi:10.1111/ecog.00930>.")
-    (license license:gpl3+)))
 
 (define-public r-kisopenapi
   (package
@@ -4391,13 +4392,13 @@ requiring you to change a few lines of code.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "173l57wgnbjwmb8cgsmifk22dwiib50mkx0k68v080iavh4x44g6"))))
+        (base32 "0dssv7n34lc934z16kpcjiyf30qgnmn5sqyyhbqxbxs23g2mvmjl"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -4411,7 +4412,7 @@ requiring you to change a few lines of code.")
                              r-fastmap
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://keras.posit.co/")
+    (home-page "https://keras3.posit.co/")
     (synopsis "R Interface to 'Keras'")
     (description
      "Interface to Keras <https://keras.io>, a high-level neural networks API. Keras

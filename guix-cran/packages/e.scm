@@ -7291,31 +7291,6 @@ validate'.  See also Van der Loo and De Jonge (2018)
 occur during the execution of code to automatically search for solutions.")
     (license license:gpl2+)))
 
-(define-public r-err
-  (package
-    (name "r-err")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "err" version))
-       (sha256
-        (base32 "1915b0vmqdd8whwdrqjphld1jaxawh5b7di6wf7q3sx779lblsrs"))))
-    (properties `((upstream-name . "err")))
-    (build-system r-build-system)
-    (home-page "https://github.com/poissonconsulting/err")
-    (synopsis "Customizable Object Sensitive Messages")
-    (description
-     "Messages should provide users with readable information about R objects without
-flooding their console.  cc() concatenates vector and data frame values into a
-grammatically correct string using commas, an ellipsis and conjunction.  cn()
-allows the user to define a string which varies based on a count.  co() combines
-the two to produce a customizable object aware string.  The package further
-facilitates this process by providing five sprintf'-like types such as %n for
-the length of an object and %o for its name as well as wrappers for pasting
-objects and issuing errors, warnings and messages.")
-    (license license:expat)))
-
 (define-public r-erpm
   (package
     (name "r-erpm")
@@ -7778,29 +7753,6 @@ estimate corresponds to the classical fixed-effect within-estimator when the
 asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
 <@code{arXiv:2108.04737>}) gives more details about the ERFE model.")
     (license license:gpl3)))
-
-(define-public r-erer
-  (package
-    (name "r-erer")
-    (version "3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "erer" version))
-       (sha256
-        (base32 "03pdq3p5c5f20959hgk5q2cx5x10bpgf0qg4z1nvsf31vc5ni77v"))))
-    (properties `((upstream-name . "erer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-urca r-tseries r-systemfit r-lmtest))
-    (home-page "https://cran.r-project.org/package=erer")
-    (synopsis "Empirical Research in Economics with R")
-    (description
-     "Functions, datasets, and sample codes related to the book of Empirical Research
-in Economics: Growing up with R by Dr. Changyou Sun are included.  Marginal
-effects for binary or ordered choice models can be calculated.  Static and
-dynamic Almost Ideal Demand System (AIDS) models can be estimated.  A typical
-event analysis in finance can be conducted with several functions included.")
-    (license license:gpl2+)))
 
 (define-public r-erdbuilder
   (package
