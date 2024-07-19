@@ -7815,13 +7815,13 @@ this package.")
 (define-public r-warbler
   (package
     (name "r-warbler")
-    (version "1.1.30")
+    (version "1.1.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "warbleR" version))
        (sha256
-        (base32 "1fdlivdqawk4g9xb1zc4hdbdd0v44kpdzfb8z75i09zg2nqhgpw1"))))
+        (base32 "0ym28dkfa5v3vam96vzrzda26x6hwqmlr4nzaiz7fb045j0mllcl"))))
     (properties `((upstream-name . "warbleR")))
     (build-system r-build-system)
     (inputs (list sox libsndfile ghostscript gdal fftw))
@@ -7845,18 +7845,18 @@ this package.")
     (description
      "This package provides functions aiming to facilitate the analysis of the
 structure of animal acoustic signals in R'. @code{warbleR} makes use of the
-basic sound analysis tools from the package seewave', and offers new tools for
-acoustic structure analysis.  The main features of the package are the use of
-loops to apply tasks through acoustic signals referenced in a selection
-(annotation) table and the production of spectrograms in image files that allow
-to organize data and verify acoustic analyzes.  The package offers functions to
-explore, organize and manipulate multiple sound files, explore and download
-Xeno-Canto recordings, detect signals automatically, create spectrograms of
-complete recordings or individual signals, run different measures of acoustic
-signal structure, evaluate the performance of measurement methods, catalog
-signals, characterize different structural levels in acoustic signals, run
-statistical analysis of duet coordination and consolidate databases and
-annotation tables, among others.")
+basic sound analysis tools from the packages @code{tuneR} and seewave', and
+offers new tools for acoustic structure analysis.  The main features of the
+package are the use of loops to apply tasks through acoustic signals referenced
+in a selection (annotation) table and the production of spectrograms in image
+files that allow to organize data and verify acoustic analyzes.  The package
+offers functions to explore, organize and manipulate multiple sound files,
+explore and download Xeno-Canto recordings, create spectrograms of complete
+recordings or individual signals, run different measures of acoustic signal
+structure, evaluate the performance of measurement methods, catalog signals,
+characterize different structural levels in acoustic signals, run statistical
+analysis of duet coordination and consolidate databases and annotation tables,
+among others.")
     (license license:gpl2+)))
 
 (define-public r-warabandi
@@ -8078,13 +8078,13 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
 (define-public r-wallace
   (package
     (name "r-wallace")
-    (version "2.1.2")
+    (version "2.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wallace" version))
        (sha256
-        (base32 "1clg0h25cxjfcp6d3pscsakcbrcgcsbfazdsim08jw88hz5nxziq"))))
+        (base32 "0zij0r5y7ra402w7x52mb9xzk2wdxq898ysyy3w32lwvbjs5lck9"))))
     (properties `((upstream-name . "wallace")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8105,6 +8105,7 @@ Durufle et al (2020) <doi:10.1093/bib/bbaa166> and Durufle et al (2020)
                              r-leaflet
                              r-leafem
                              r-knitcitations
+                             r-geodata
                              r-enmeval
                              r-ecospat
                              r-dt

@@ -14857,13 +14857,13 @@ convenient way of visualizing terra objects with ggplot2'.")
 (define-public r-tidytable
   (package
     (name "r-tidytable")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidytable" version))
        (sha256
-        (base32 "09xcjh9vpkz6bcv8rg8g25rpirvsjvbl282ys6y1r1npgb3mrdgm"))))
+        (base32 "0mhwfa8zaljnsxm5bkhkfjy3v5a4hlf55qjvy840rgyyw06vfw06"))))
     (properties `((upstream-name . "tidytable")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16496,6 +16496,34 @@ tidyverse'.")
      "Cleans spectrophotometry data obtained from the Denovix instrument.  The package
 also provides an option to normalize the data in order to compare the quality of
 the samples obtained.")
+    (license license:expat)))
+
+(define-public r-tidydelta
+  (package
+    (name "r-tidydelta")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidydelta" version))
+       (sha256
+        (base32 "0my8mxk9gx2pk3hjnd50gd6322i1l1ll4z3l4k2mr2nahbdfhbwh"))))
+    (properties `((upstream-name . "tidydelta")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-purrr
+                             r-numderiv
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/JavierMtzRdz/tidydelta")
+    (synopsis "Estimation of Standard Errors using Delta Method")
+    (description
+     "Delta Method implementation to estimate standard errors with known asymptotic
+properties within the tidyverse workflow.  The Delta Method is a statistical
+tool that approximates an estimatorâs behaviour using a Taylor Expansion.  For
+a comprehensive explanation, please refer to Chapter 3 of van der Vaart (1998,
+ISBN: 9780511802256).")
     (license license:expat)))
 
 (define-public r-tidydatatutor

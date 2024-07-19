@@ -28978,16 +28978,17 @@ He and Wand (2023) <@code{arXiv:2201.00412>}.")
 (define-public r-gamsel
   (package
     (name "r-gamsel")
-    (version "1.8-3")
+    (version "1.8-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamsel" version))
        (sha256
-        (base32 "0kjp7959k1dfdb49s1bxs019miwsy8i76ihrwbl69xwihj1rk5ij"))))
+        (base32 "1w6s19fwrqldacw4qlx3xcq33v0vx332hcyfg2qdcni6yi80fdkg"))))
     (properties `((upstream-name . "gamsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mda r-foreach))
+    (native-inputs (list r-knitr))
     (home-page "https://arxiv.org/abs/1506.03850")
     (synopsis "Fit Regularization Path for Generalized Additive Models")
     (description

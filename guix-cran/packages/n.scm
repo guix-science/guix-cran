@@ -850,13 +850,13 @@ authors in the recent years.  See Patro and Smarandache (2016)
 (define-public r-ntsdatasets
   (package
     (name "r-ntsdatasets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ntsDatasets" version))
        (sha256
-        (base32 "136anddd8012xs9xf3q0mbmzzzqfglqk7jq4z43g769d3g3qy39y"))))
+        (base32 "0nya8zhm4lf7d4n2c4wgq144s1lxjb3qc7572gl9ppmgcaa3a9ig"))))
     (properties `((upstream-name . "ntsDatasets")))
     (build-system r-build-system)
     (home-page "https://github.com/a-roshani/ntsDatasets")

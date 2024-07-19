@@ -22942,6 +22942,26 @@ systems.  Includes configurations for several public domain game systems such as
 checkers, (double-18) dominoes, go, piecepack', playing cards, etc.")
     (license license:expat)))
 
+(define-public r-piecenorms
+  (package
+    (name "r-piecenorms")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "piecenorms" version))
+       (sha256
+        (base32 "12ih5xygigiirxzc8gy6d6k6a9x861i7miqrx4rkfqfpfc7r8vac"))))
+    (properties `((upstream-name . "piecenorms")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-rlang r-dplyr))
+    (home-page "https://github.com/david-hammond/piecenorms")
+    (synopsis "Calculate a Piecewise Normalised Score Using Class Intervals")
+    (description
+     "This package provides an implementation of piecewise normalisation techniques
+useful when dealing with the communication of skewed and highly skewed data.")
+    (license license:expat)))
+
 (define-public r-piecemaker
   (package
     (name "r-piecemaker")
@@ -24081,13 +24101,13 @@ efficient and reproducible.")
 (define-public r-phreeqc
   (package
     (name "r-phreeqc")
-    (version "3.7.6")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phreeqc" version))
        (sha256
-        (base32 "086c8lpg6sq57j4q1nazl9gx51mfc5yz22yrw9qz115v8hbmq7w3"))))
+        (base32 "0ywhxqc33ybwlch2ym6wgm5s4dillhwg3ccdiz9iklv0i85grmd8"))))
     (properties `((upstream-name . "phreeqc")))
     (build-system r-build-system)
     (home-page "https://www.usgs.gov/software/phreeqc-version-3")
@@ -33695,13 +33715,13 @@ completely re-written.")
 (define-public r-party
   (package
     (name "r-party")
-    (version "1.3-15")
+    (version "1.3-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "party" version))
        (sha256
-        (base32 "05r2mp7hfqxqnhk5wy73510x7yn1r15gww4mhxkvl9jm44p7rqn0"))))
+        (base32 "11p1ra223acw822c0z7mglh8l0s1ijrgbawi1mdn61v4lxjilsdf"))))
     (properties `((upstream-name . "party")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

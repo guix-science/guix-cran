@@ -2302,13 +2302,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "0ybxz6dw7kmd1638kp5qllfczdcpz9r06da1jqww4gfz4rw7q821"))))
+        (base32 "1hlj4hj3c9z8szcwshh9l5lx75d5zg683ffb282bxd8sdndax9as"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (inputs (list perl))
@@ -3412,6 +3412,28 @@ functions written in this package.")
 the three-parameter exponentially weighted Poisson distribution of Ridout &
 Besbeas (2004) <DOI:10.1191/1471082X04st064oa>.")
     (license license:expat)))
+
+(define-public r-ewoc-comb
+  (package
+    (name "r-ewoc-comb")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EWOC.Comb" version))
+       (sha256
+        (base32 "0ck8sqy729qsry290fgrn829vsv7snxjlwbn725q6adg8239v4z8"))))
+    (properties `((upstream-name . "EWOC.Comb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rjags r-mass))
+    (home-page "https://cran.r-project.org/package=EWOC.Comb")
+    (synopsis "Escalation with Overdose Control using 2 Drug Combinations")
+    (description
+     "This package implements Escalation With Overdose Control trial designs using two
+drug combinations described by this paper <doi:10.1002/sim.6961>(Tighiouart et
+al., 2016).  It calculates the recommended dose for next cohorts and perform
+simulations to obtain operating characteristics.")
+    (license license:gpl2+)))
 
 (define-public r-ewoc
   (package

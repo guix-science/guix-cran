@@ -6496,6 +6496,31 @@ Cancers.  Cancer informatics, 13, CIN-S14021.")
     (description "Linear model functions using permutation tests.")
     (license license:gpl2+)))
 
+(define-public r-lmpdata
+  (package
+    (name "r-lmpdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LMPdata" version))
+       (sha256
+        (base32 "0k92ps7rjj2s2n2sa9v840nf6h87sws5fimijz1kpmjj5i96qkik"))))
+    (properties `((upstream-name . "LMPdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-data-table))
+    (home-page "https://github.com/alekrutkowski/LMPdata")
+    (synopsis "Easy Import of the EU Labour Market Policy Data")
+    (description
+     "European Commission's Labour Market Policy (LMP) database
+(<https://webgate.ec.europa.eu/empl/redisstat/databrowser/explore/all/lmp?lang=en&display=card&sort=category>)
+provides information on labour market interventions, which are government
+actions to help and support the unemployed and other disadvantaged groups in the
+transition from unemployment or inactivity to work.  It covers the EU countries
+and Norway.  This package provides functions for downloading and importing the
+LMP data and metadata (codelists).")
+    (license license:expat)))
+
 (define-public r-lmomrfa
   (package
     (name "r-lmomrfa")

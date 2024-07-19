@@ -265,13 +265,13 @@ the Matlab code published by Flood & Korenko in above-mentioned paper.")
 (define-public r-syrup
   (package
     (name "r-syrup")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syrup" version))
        (sha256
-        (base32 "1smkgxsvgljy6240ib8r218m7qy10idv065gavrvimx8pyw6br69"))))
+        (base32 "008h2fzj620fh4gkbfjs40yk2mq047512djraqkj501s80x0rvib"))))
     (properties `((upstream-name . "syrup")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -18715,13 +18715,13 @@ in residuals and regression coefficients.  For details see Murakami (2021)
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "0dllygmpc75s8cwxxgzy49a8098zb37k3xalk4l0n1ccfqxspf8b"))))
+        (base32 "099ki3j9zafxczx0bw6sc5gv1pzj6xc4vdxm34bh3h16bkwgxs0q"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -34930,13 +34930,13 @@ improve feature extraction.  Benjamin B.Risk, Irina Gaynanova (2021)
 (define-public r-singlercapture
   (package
     (name "r-singlercapture")
-    (version "0.2.1.1")
+    (version "0.2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "singleRcapture" version))
        (sha256
-        (base32 "184kvkjjhm3ak58yg0sdzkjnw0jzsm22pxlx3nq5a4jv6ckaxrix"))))
+        (base32 "18h10ms9xh97c4s9sa33bcvv341img73b9vh4ppgyk1lpissa1mb"))))
     (properties `((upstream-name . "singleRcapture")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mathjaxr r-lamw r-foreach
@@ -55732,13 +55732,13 @@ in Studies of Herd Animals.\" <doi:10.1111/arcm.12432>.")
 (define-public r-scellpam
   (package
     (name "r-scellpam")
-    (version "1.4.6.1")
+    (version "1.4.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scellpam" version))
        (sha256
-        (base32 "1xnyii39lgj31m7cqd1mw92ga5igy5q2vhk1lpz353j8g85gxw24"))))
+        (base32 "0hxbvgq6mq365q8hw91k0pm0ky9psivcd98bxafrgrncqc117cd1"))))
     (properties `((upstream-name . "scellpam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-memuse r-cluster))

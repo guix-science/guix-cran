@@ -2220,13 +2220,13 @@ and reference).")
 (define-public r-dtts
   (package
     (name "r-dtts")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtts" version))
        (sha256
-        (base32 "1qlk2rk43nwgr2z1dkv6fi0llq0wvzb59a5m5n79fqnf7hv2fp8k"))))
+        (base32 "0n13q14a4vhfx6jvjg4zbch0874agfm8z5mlwzvpvh4vc5rcc4bk"))))
     (properties `((upstream-name . "dtts")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppdate

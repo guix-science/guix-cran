@@ -19979,6 +19979,33 @@ and building high-level database interfaces for users.  ADBC
 libraries that uses Arrow for result sets and query parameters.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-adass
+  (package
+    (name "r-adass")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "adass" version))
+       (sha256
+        (base32 "1shp1yja5zqikl29j2xi4jlwsbkrlg593isnclhy7bwaqyn3qm14"))))
+    (properties `((upstream-name . "adass")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sparsem
+                             r-rfast
+                             r-plot3d
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-fda))
+    (home-page "https://github.com/unina-sfere/adass")
+    (synopsis
+     "Adaptive Smoothing Spline (AdaSS) Estimator for the Function-on-Function Linear Regression")
+    (description
+     "This package implements the adaptive smoothing spline estimator for the
+function-on-function linear regression model described in Centofanti et al.
+(2023) <doi:10.1007/s00180-022-01223-6>.")
+    (license license:gpl3+)))
+
 (define-public r-adasampling
   (package
     (name "r-adasampling")

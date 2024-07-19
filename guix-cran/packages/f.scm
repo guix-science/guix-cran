@@ -16655,13 +16655,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "1vjlcmw9mclhlsq9yr98ijwry3bhmld1kcdm858a0dz692dfw38w"))))
+        (base32 "0n6r0j07dhzffa0phnmjwdiqq76m37a8w6aqaa5lvbws5lilvh4n"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

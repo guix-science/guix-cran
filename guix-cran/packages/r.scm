@@ -5452,13 +5452,13 @@ stack may contain arbitrary objects.")
 (define-public r-rstac
   (package
     (name "r-rstac")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstac" version))
        (sha256
-        (base32 "0ivd7ahaynfwz5w1cr2qvz2bhjx710pgj533gi8l9akln59fqzzf"))))
+        (base32 "024av3pl9xgd45fr7lxd2y09nbgkjs0rp0rl91lgsvzvgr5qc8q6"))))
     (properties `((upstream-name . "rstac")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -13057,13 +13057,13 @@ solver @code{qpOASES}'.  More information about @code{qpOASES} can be found at
 (define-public r-roi-plugin-osqp
   (package
     (name "r-roi-plugin-osqp")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROI.plugin.osqp" version))
        (sha256
-        (base32 "1b62jwj946mxlq7n2ilk2v7bknkjhifxy15yaqvbfxvkyk0r8jfi"))))
+        (base32 "0jz8yzq6p50s3ggm1dkmfw1a14l5yz5ag2fdknf62xljhzwgv62a"))))
     (properties `((upstream-name . "ROI.plugin.osqp")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-roi r-osqp r-matrix))
@@ -28183,13 +28183,13 @@ responses and identify those that may be problematic.  See Gottfried et al.
 (define-public r-respirometry
   (package
     (name "r-respirometry")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "respirometry" version))
        (sha256
-        (base32 "17sfg3c1y7yhyyvq7krii2vazyvnqf1l0ifcdqsr477wwlnwyynr"))))
+        (base32 "0z8600bwh8c7kg69qf4nab26sqbxs73h24dfwk2fiispxvs1c83k"))))
     (properties `((upstream-name . "respirometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented
@@ -34010,13 +34010,13 @@ according to the IUCN (International Union for Conservation of Nature, see
 (define-public r-recurse
   (package
     (name "r-recurse")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "recurse" version))
        (sha256
-        (base32 "05x2qcabxw0xgirvb39si1j8szrz328fx1f3v8yvdysmfa3bg408"))))
+        (base32 "1rv2pa8ghmxdl3s2s16m1xci6v9kjpilyfsmzacmnfgx734c4ihf"))))
     (properties `((upstream-name . "recurse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -36285,13 +36285,13 @@ datasets with @code{readDWD}()'.")
 (define-public r-rdune
   (package
     (name "r-rdune")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdune" version))
        (sha256
-        (base32 "14xzdnm0j942bcy4jdcfc9zpraqm5hkk8yyj69kfhh6f87rdzkhv"))))
+        (base32 "1m9pqvvk1r2iipn0ppfnk9hzrxl4yg8cz4i5f19hdh97prcnw88w"))))
     (properties `((upstream-name . "Rdune")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -43957,13 +43957,13 @@ CMH test) or incorporating stratum heterogeneity.")
 (define-public r-raters
   (package
     (name "r-raters")
-    (version "2.0.4")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raters" version))
        (sha256
-        (base32 "1ypg3inqbn4rkwcmqbcwkiydp7sb2bpfrcfdgd1pfp0k73zbin2s"))))
+        (base32 "0pjyg4g8z6ixcypi4sz4asgbafcfg0kchza1fpa65xvjmss681bj"))))
     (properties `((upstream-name . "raters")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=raters")

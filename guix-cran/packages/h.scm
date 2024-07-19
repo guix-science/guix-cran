@@ -5494,17 +5494,21 @@ Intermediates in a Mendelian Randomization or Transcriptome Analysis.\"
 (define-public r-hiver
   (package
     (name "r-hiver")
-    (version "0.3.63")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HiveR" version))
        (sha256
-        (base32 "1vi24k23a017czfy9kihmq4s1dywzm274dyhyp1imx94afsnmhc3"))))
+        (base32 "1fddyqx781vw2k9kxnsxzf5j2i9340a5ljpr1ddrcl1h88qnqpjs"))))
     (properties `((upstream-name . "HiveR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rgl r-rcolorbrewer r-png r-plyr r-jpeg))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-xtable
+                             r-rgl
+                             r-rcolorbrewer
+                             r-png
+                             r-plyr
+                             r-jpeg))
     (home-page "https://github.com/bryanhanson/HiveR")
     (synopsis "2D and 3D Hive Plots for R")
     (description

@@ -12846,18 +12846,19 @@ origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
 (define-public r-iimi
   (package
     (name "r-iimi")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iimi" version))
        (sha256
-        (base32 "1bkxbqxa6i42mvz7j3191pzd2z35pqbzmn2b0kgbijlrfv8rg18z"))))
+        (base32 "11xkf1bkhsbmjqsawny6kq7ma3sw66sya4kg4npxd6pm1xv4yr09"))))
     (properties `((upstream-name . "iimi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-stringr
                              r-rsamtools
+                             r-rdpack
                              r-randomforest
                              r-r-utils
                              r-mtps

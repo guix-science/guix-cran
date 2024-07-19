@@ -2505,13 +2505,13 @@ compatibility.")
 (define-public r-cubble
   (package
     (name "r-cubble")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubble" version))
        (sha256
-        (base32 "0nm6bcs4k2h7jxc6xgsqgqf4by46fm7b8r436x41nbasii0dahn8"))))
+        (base32 "1nbamkzzlzabgq41szc4kp1q58sirq0gp0x95wv1idax37p4gh9i"))))
     (properties `((upstream-name . "cubble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -4798,13 +4798,13 @@ errors\".  The Review of Economics and Statistics, 90(3): 414--427.
 (define-public r-cruzplot
   (package
     (name "r-cruzplot")
-    (version "1.4.8")
+    (version "1.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CruzPlot" version))
        (sha256
-        (base32 "19dza13mdd67g7710bzzg1bi32nhgr3c5vcyh98igw3q8hfk7ac8"))))
+        (base32 "1x9cm4773xps2q1z8vpgb8fkdrrfcrvrz6qk2m734zz9c1v39733"))))
     (properties `((upstream-name . "CruzPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-swfscdas
@@ -4818,15 +4818,16 @@ errors\".  The Review of Economics and Statistics, 90(3): 414--427.
                              r-geosphere
                              r-dt
                              r-dplyr))
-    (home-page "https://smwoodman.github.io/CruzPlot/")
+    (home-page "https://github.com/swfsc/CruzPlot/")
     (synopsis "Plot Shipboard DAS Data")
     (description
      "This package provides a utility program oriented to create maps, plot data, and
-do basic data summaries of DAS data
+do basic data summaries of DAS data files.  These files are typically, but do
+not have to be DAS
 <https://swfsc-publications.fisheries.noaa.gov/publications/TM/SWFSC/NOAA-TM-NMFS-SWFSC-305.PDF>
-produced by @code{WinCruz} from the Southwest Fisheries Science Center.
-<https://www.fisheries.noaa.gov/west-coast/science-data/california-current-marine-mammal-assessment-program>.")
-    (license license:cc0)))
+data produced by the Southwest Fisheries Science Center (SWFSC) program
+@code{WinCruz}'.")
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
 
 (define-public r-cruts
   (package
@@ -11006,18 +11007,19 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.4-4")
+    (version "0.5-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cotram" version))
        (sha256
-        (base32 "152jxkfwcqs1k7xcr1dlqbf0jpc9423g48dxwgjy3bvqnwgi6k21"))))
+        (base32 "1i5r74by4iw3f69zxrrql29c77jvwmn72sp8hdcglldil6xxkcjl"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
                              r-tram
                              r-survival
+                             r-qrng
                              r-mlt
                              r-matrix
                              r-basefun
@@ -11034,7 +11036,7 @@ discrete log-likelihood using the computational framework provided in package
 mlt', technical details are given in Siegfried & Hothorn (2020)
 <DOI:10.1111/2041-210X.13383>.  The package also contains an experimental
 implementation of multivariate count transformation models with an application
-to multi-species distribution models <@code{arXiv:2201.13095>}.")
+to multi-species distribution models <DOI:10.48550/@code{arXiv.2201.13095>}.")
     (license license:gpl2)))
 
 (define-public r-cotima
@@ -13974,6 +13976,50 @@ resolved automatically based on the input data, handled by R's S3 methods.  Full
 descriptions of the algorithms and benchmarks are available in the package
 vignettes.")
     (license (license:fsdg-compatible "BSD 2-clause License + file LICENSE"))))
+
+(define-public r-cooltools
+  (package
+    (name "r-cooltools")
+    (version "2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cooltools" version))
+       (sha256
+        (base32 "1ammi354y2cbaarf29s9kjks8k0zdimcxif6crakn9p3vi30h0nk"))))
+    (properties `((upstream-name . "cooltools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp
+                             r-rcpp
+                             r-raster
+                             r-randtoolbox
+                             r-pracma
+                             r-png
+                             r-plotrix
+                             r-mass
+                             r-jpeg
+                             r-fnn
+                             r-data-table
+                             r-cubature
+                             r-celestial
+                             r-bit64))
+    (home-page "https://cran.r-project.org/package=cooltools")
+    (synopsis "Practical Tools for Scientific Computations and Visualizations")
+    (description
+     "Collection of routines for efficient scientific computations in physics and
+astrophysics.  These routines include utility functions, numerical computation
+tools, as well as visualisation tools.  They can be used, for example, for
+generating random numbers from spherical and custom distributions, information
+and entropy analysis, special Fourier transforms, two-point correlation
+estimation (e.g. as in Landy & Szalay (1993) <doi:10.1086/172900>), binning &
+gridding of point sets, 2D interpolation, Monte Carlo integration, vector
+arithmetic and coordinate transformations.  Also included is a non-exhaustive
+list of important constants and cosmological conversion functions.  The graphics
+routines can be used to produce and export publication-ready scientific plots
+and movies, e.g. as used in Obreschkow et al. (2020, MNRAS Vol 493, Issue 3,
+Pages 4551â4569).  These routines include special color scales, projection
+functions, and bitmap handling routines.")
+    (license license:gpl3)))
 
 (define-public r-cool
   (package

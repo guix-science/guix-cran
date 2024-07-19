@@ -12238,13 +12238,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "1nr8vb5vw5r91vp700c2p4bqx99gp9xb9ch00fwad8rhv0h1yy4x"))))
+        (base32 "0qdccy4bphdh4c16jxg7lafmcjb0s0zma0s6fdk4pblmkdr8496a"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2

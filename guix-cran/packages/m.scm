@@ -5303,16 +5303,16 @@ training methodology in each line.  Reference: Marzouka & Eriksson (2021)
 (define-public r-multichull
   (package
     (name "r-multichull")
-    (version "1.0.1")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multichull" version))
        (sha256
-        (base32 "1ghkyypp7pij62iz33di6af27hkvy5rfrh6hpms21v4a43z2ljb7"))))
+        (base32 "17c2hwgnlw67s2209ran6gz0mdg66kzxzp6d484dp53gggnpdw0l"))))
     (properties `((upstream-name . "multichull")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinythemes r-shiny r-plotly r-igraph))
+    (propagated-inputs (list r-shinythemes r-shiny r-plotly r-igraph r-dt))
     (home-page "https://cran.r-project.org/package=multichull")
     (synopsis "Generic Convex-Hull-Based Model Selection Method")
     (description
@@ -5657,67 +5657,6 @@ parameter ncores'.  In contrast to the base apply function, this package
 suggests the use of target dimensions as opposite to the margins for specifying
 the dimensions relevant to the function to be applied.")
     (license license:gpl3)))
-
-(define-public r-multiaovbay
-  (package
-    (name "r-multiaovbay")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Multiaovbay" version))
-       (sha256
-        (base32 "0c5563h9v2xnxbxf9qkd567v154lnjnlyvc5aqbv4vd7awi8mn71"))))
-    (properties `((upstream-name . "Multiaovbay")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-waiter
-                             r-tibble
-                             r-stringr
-                             r-shinydashboardplus
-                             r-shinydashboard
-                             r-shinycssloaders
-                             r-shiny
-                             r-reshape
-                             r-purrr
-                             r-pmcmrplus
-                             r-nortest
-                             r-moments
-                             r-htmltools
-                             r-highcharter
-                             r-ggstatsplot
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-car
-                             r-broom
-                             r-bayesfactor))
-    (home-page "https://cran.r-project.org/package=Multiaovbay")
-    (synopsis
-     "Classic, Nonparametric and Bayesian Two-Way Analysis of Variance Panel")
-    (description
-     "Covers several approaches to ANOVA (Analysis of Variance), specifically studying
-a balanced two-factor fixed-fixed ANOVA design.  It consists of four sections.
-The first section uses a dynamic scheme to indicate which possible alternatives
-to follow depending on the fulfillment of the assumptions of the model.  It also
-presents an analysis on the fulfillment of the assumptions of linearity,
-homoscedasticity, normality, and independence in the residuals of the model, as
-well as dynamic statistical graphs on the residuals of the model.  The second
-section presents an analysis with a non-parametric approach of Kruskal Wallis.
-After Kruskal Wallis, a Post-Hoc analysis of multiple comparisons on the medians
-of the treatments is carried out.  The third section presents a classical
-parametric ANOVA. Following classical ANOVA, a post-hoc analysis of multiple
-comparisons on the medians of the treatments, factor levels by Dunn's test, and
-statistical graphs for the treatments and factor levels are shown.
-Additionally, a post-hoc analysis of multiple comparisons on the means of the
-treatments is done.  The fourth section presents an analysis of variance under a
-Bayesian approach.  In this section, interactive statistical graphs are
-presented on the posterior distributions of treatments, factor levels, and a
-convergence analysis of the estimated parameters, using MCMC (Markov Chain Monte
-Carlo).  These results are displayed in an interactive glossy panel which allows
-modification of the test arguments, contains interactive statistical plots, and
-presents automatic conclusions depending on the fulfillment of the assumptions
-of the balanced two-factor fixed ANOVA model.")
-    (license license:expat)))
 
 (define-public r-multiactionbutton
   (package
@@ -11728,44 +11667,6 @@ survivorship, probability of death, life expectancy, percentage of population)."
 expelled tags in aquatic acoustic telemetry arrays.  Designed for arrays with
 non-overlapping receivers.")
     (license license:gpl3+)))
-
-(define-public r-morse
-  (package
-    (name "r-morse")
-    (version "3.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "morse" version))
-       (sha256
-        (base32 "0534k96fhfdkfr3dh6q85fmsqqld7xv1zxvikwcb6z6by3nr9cpp"))))
-    (properties `((upstream-name . "morse")))
-    (build-system r-build-system)
-    (inputs (list jags))
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-tibble
-                             r-rjags
-                             r-reshape2
-                             r-magrittr
-                             r-gridextra
-                             r-ggplot2
-                             r-epitools
-                             r-dplyr
-                             r-desolve
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=morse")
-    (synopsis "Modelling Reproduction and Survival Data in Ecotoxicology")
-    (description
-     "Advanced methods for a valuable quantitative environmental risk assessment using
-Bayesian inference of survival and reproduction Data.  Among others, it
-facilitates Bayesian inference of the general unified threshold model of
-survival (GUTS).  See our companion paper Baudrot and Charles (2021)
-<doi:10.21105/joss.03200>, as well as complementary details in Baudrot et al.
-(2018) <doi:10.1021/acs.est.7b05464> and Delignette-Muller et al. (2017)
-<doi:10.1021/acs.est.6b05326>.")
-    (license license:expat)))
 
 (define-public r-morrowplots
   (package
@@ -23347,13 +23248,13 @@ M., Wu, M., & Ma, S. (2023) <@code{arXiv:2309.15585>}.")
 (define-public r-mimsy
   (package
     (name "r-mimsy")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mimsy" version))
        (sha256
-        (base32 "1hbgjrgm4d4bvdkr8wvirvvv87f1wcnasd0909x38zjivr57dgda"))))
+        (base32 "1cxr3pcm32cbl3nqblh8s8lx6pn72sgnp63ib0gvcysr8rdx1gza"))))
     (properties `((upstream-name . "mimsy")))
     (build-system r-build-system)
     (propagated-inputs (list r-openxlsx r-magrittr r-lubridate r-dplyr))
@@ -40544,13 +40445,13 @@ arrow, title, labels).  mapsf maps sf objects on base graphics.")
 (define-public r-mapscanner
   (package
     (name "r-mapscanner")
-    (version "0.0.6")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapscanner" version))
        (sha256
-        (base32 "017m33v2523rjmspfbzq1xnb3clzmbn4p1qqzp480j71wy5c1dry"))))
+        (base32 "1fi8zsaylspbwxlh0sw82mhq8m4szl6sggvl3r1c2fwkpckn9qkn"))))
     (properties `((upstream-name . "mapscanner")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -42258,13 +42159,13 @@ normalized words.")
 (define-public r-malariaatlas
   (package
     (name "r-malariaatlas")
-    (version "1.5.1")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "malariaAtlas" version))
        (sha256
-        (base32 "1fr1dwlv6q8fb0m0jccd2hymi4m62kgjxbkras07zmsk8sci5zmn"))))
+        (base32 "05d62m4w93bfx868sk8w6navw8w5z0jx30w2wnzma27gjydyc0z1"))))
     (properties `((upstream-name . "malariaAtlas")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -42281,6 +42182,7 @@ normalized words.")
                              r-httr
                              r-gridextra
                              r-ggplot2
+                             r-ggnewscale
                              r-future-apply
                              r-dplyr))
     (native-inputs (list r-knitr))
