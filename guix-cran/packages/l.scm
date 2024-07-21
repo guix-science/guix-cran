@@ -3997,13 +3997,13 @@ Using R and @code{OpenBUGS}\" by Bhattacharjee A (2020)
 (define-public r-longevity
   (package
     (name "r-longevity")
-    (version "1.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longevity" version))
        (sha256
-        (base32 "0fi1g9lmnh0ynwls7l251z1nbn5kxf8vfr458jkrb9ljg97l6xyx"))))
+        (base32 "1p1sd4ahfbbj1fhgnw914yw06z6q0hbswiwb1gvmc2ks8i2ngi1r"))))
     (properties `((upstream-name . "longevity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsolnp r-rlang r-rcpparmadillo r-rcpp
@@ -10036,13 +10036,13 @@ observations and create a report of the top sites to visit to see new species.")
 (define-public r-lifemapr
   (package
     (name "r-lifemapr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LifemapR" version))
        (sha256
-        (base32 "0wwszxbwxncvzcv81jchk9qcd14g0ncsb17lwjcz6vnv6dn1vdlv"))))
+        (base32 "1zbdv950gxvvq033qs7p9644hybgy8ll4x8a08diq2829fxrvcc8"))))
     (properties `((upstream-name . "LifemapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -10056,7 +10056,7 @@ observations and create a report of the top sites to visit to see new species.")
                              r-fastmatch
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LifemapR")
+    (home-page "https://lifemap-tol.github.io/LifemapR/")
     (synopsis "Data Visualisation on 'Lifemap' Tree")
     (description
      "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
@@ -10450,13 +10450,13 @@ penalty.")
 (define-public r-libr
   (package
     (name "r-libr")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "libr" version))
        (sha256
-        (base32 "0xx4wpkwnraw3w0mf6k3p1l3y27dd1h94wvi3nbalyb8vm6igjiz"))))
+        (base32 "16q65f1slbzlysqcn5mzj7ws8cm59qk3yxgippwhcjmrswrfk5y2"))))
     (properties `((upstream-name . "libr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -16664,13 +16664,13 @@ Furthermore, an opened file can be accessed as one would an ordinary data.frame.
 (define-public r-ladderfuelsr
   (package
     (name "r-ladderfuelsr")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LadderFuelsR" version))
        (sha256
-        (base32 "08l0hg1n90cydlh6035hfc1r4gdhxn79g4s397q8684cqr2g2sxc"))))
+        (base32 "0amdnn0n8rb5dmm9cmj7bw9kidal3agd6m3655xal2ay62rxq6mn"))))
     (properties `((upstream-name . "LadderFuelsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -17251,13 +17251,13 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "1nf1gr876zr0l9nxisvy1h7k0f3a9f49g257lh967n9iin6vrj4q"))))
+        (base32 "0gp0y2jqdjyw3z6zxwrqk690vvgysgrkif4vjpia0szwbh8lw9x0"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -5519,20 +5519,19 @@ description of the interpretive clustering (IC) method.")
 (define-public r-openrepgrid
   (package
     (name "r-openrepgrid")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenRepGrid" version))
        (sha256
-        (base32 "1gy06cyjb50673jb9548c9v37im4hsm245r7rwhx280q9fsn17ws"))))
+        (base32 "0sdqz9bhwfqcpggd2yw4inlfzn4qkzv1vxnri6mxqmjpkb7arysw"))))
     (properties `((upstream-name . "OpenRepGrid")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
                              r-tidyr
                              r-stringr
                              r-scales
-                             r-rgl
                              r-pvclust
                              r-psych
                              r-plyr
@@ -5548,7 +5547,9 @@ description of the interpretive clustering (IC) method.")
      "Analyze repertory grids, a qualitative-quantitative data collection technique
 devised by George A. Kelly in the 1950s.  Today, grids are used across various
 domains ranging from clinical psychology to marketing.  The package contains
-functions to quantitatively analyze and visualize repertory grid data.")
+functions to quantitatively analyze and visualize repertory grid data (e.g.
+Fransella', Bell', & Bannister', 2004, ISBN: 978-0-470-09080-0).  The package is
+part of the The package is part of the <https://openrepgrid.org/> project.")
     (license license:gpl2+)))
 
 (define-public r-opennlpdata
@@ -8976,13 +8977,13 @@ specify your own temporal, spatial and/or thematic filters.")
 (define-public r-ohpl
   (package
     (name "r-ohpl")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OHPL" version))
        (sha256
-        (base32 "0svim112khdymdj1bsj8vri6r0zph5312y148mlh5h98rah40i08"))))
+        (base32 "1bcg97lgjs00xka2k5k8kdnc42vz10g78cb9mh5jz2g58iamjzbk"))))
     (properties `((upstream-name . "OHPL")))
     (build-system r-build-system)
     (propagated-inputs (list r-pls r-mvtnorm r-glmnet))

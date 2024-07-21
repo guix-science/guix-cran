@@ -7001,13 +7001,13 @@ variance tables and p-values from several other tests of non-additivity.")
 (define-public r-hicp
   (package
     (name "r-hicp")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hicp" version))
        (sha256
-        (base32 "1xzjlwbmibzs362k6c9y346scqvx3lf6n3pnq6bhbklwfw8jd3hz"))))
+        (base32 "085wqqr24ncvl55vh2gigv4ba3mi95pxc5gkmcvfx7kabm4a23rg"))))
     (properties `((upstream-name . "hicp")))
     (build-system r-build-system)
     (propagated-inputs (list r-restatapi r-data-table))

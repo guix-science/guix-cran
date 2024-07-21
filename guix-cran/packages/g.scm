@@ -4464,15 +4464,31 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
 (define-public r-grim
   (package
     (name "r-grim")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRim" version))
        (sha256
-        (base32 "1injdhl0xgx9702k4jxdy0wpkf2d4k31m9fi5g9sf572i288lrns"))))
+        (base32 "126ip5bvqipfrclmclv0gskf2a1d0z7m5965c477q831s3a1wbb8"))))
     (properties `((upstream-name . "gRim")))
     (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
@@ -4483,6 +4499,7 @@ Details of the method can be found in Dufey (2017) <@code{arXiv:1703.00070>}.")
                              r-grain
                              r-glue
                              r-doby))
+    (native-inputs (list r-knitr esbuild))
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis "Graphical Interaction Models")
     (description
@@ -23029,13 +23046,13 @@ Apparicio <doi:10.4000/cybergeo.36414>).")
 (define-public r-geocausal
   (package
     (name "r-geocausal")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocausal" version))
        (sha256
-        (base32 "0q15n8gp3mcmimj9glas4nw0xd8hajvkh88rz0kz29242p94afn3"))))
+        (base32 "0cz1pzfyygiriwagqlhcwibmr2zakkdcnz9jnkghyw7s9xqvnnd6"))))
     (properties `((upstream-name . "geocausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -26134,13 +26151,13 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "09aimlk72x82yxnikb75vj9qpz1qg8a6623i61db0g88csashf8c"))))
+        (base32 "01zi5q78chcd6a3v3506nhnm5nlnpgglaazsf2cr1zdi7xrxgnyr"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-th-data

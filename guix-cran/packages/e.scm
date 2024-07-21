@@ -2302,13 +2302,13 @@ Gul, Dost Muhammad Khan, Saeed Aldahmani, Zardad Khan (2022)
 (define-public r-exiftoolr
   (package
     (name "r-exiftoolr")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exiftoolr" version))
        (sha256
-        (base32 "1hlj4hj3c9z8szcwshh9l5lx75d5zg683ffb282bxd8sdndax9as"))))
+        (base32 "05gdmyn01br93smw5gxc0jvfhrr9x2ly0jbfrcfvf3r2bw3kjwnr"))))
     (properties `((upstream-name . "exiftoolr")))
     (build-system r-build-system)
     (inputs (list perl))

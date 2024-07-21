@@ -2242,13 +2242,13 @@ identify any library() calls to unused packages.")
 (define-public r-funcharts
   (package
     (name "r-funcharts")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "funcharts" version))
        (sha256
-        (base32 "0rxj7cpvl0ng1drqp5iyg7j39pn3pss2zg3zk8kf0vc6ajzfvr5g"))))
+        (base32 "1klw181lmxr0hph9hq87ka9c85jhyjgdkb8mkpbp6arkx57vh0gz"))))
     (properties `((upstream-name . "funcharts")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2259,6 +2259,9 @@ identify any library() calls to unused packages.")
                              r-robustbase
                              r-roahd
                              r-rlang
+                             r-rfast
+                             r-rcpparmadillo
+                             r-rcpp
                              r-patchwork
                              r-mvtnorm
                              r-matrixstats
@@ -2274,8 +2277,9 @@ identify any library() calls to unused packages.")
     (description
      "This package provides functional control charts for statistical process
 monitoring of functional data, using the methods of Capezza et al. (2020)
-<doi:10.1002/asmb.2507> and Centofanti et al. (2021)
-<doi:10.1080/00401706.2020.1753581>.  The package is thoroughly illustrated in
+<doi:10.1002/asmb.2507>, Centofanti et al. (2021)
+<doi:10.1080/00401706.2020.1753581>, and Capezza et al. (2024)
+<doi:10.1080/00401706.2024.2327346>.  The package is thoroughly illustrated in
 the paper of Capezza et al (2023) <doi:10.1080/00224065.2023.2219012>.")
     (license license:gpl3)))
 
@@ -10565,16 +10569,16 @@ aiding in the interpretation of the predictor's effect.")
 (define-public r-flexmsm
   (package
     (name "r-flexmsm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flexmsm" version))
        (sha256
-        (base32 "07m2dsc1a4qschprcqljzv8kpqjl1bw0bkhqbcr821xrf1id0xxr"))))
+        (base32 "1kgbnic93b58xp5hirwpxv5x50y69fczqm023kah3g1jx2fw8i7g"))))
     (properties `((upstream-name . "flexmsm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-trust r-msm r-mgcv r-matrixstats r-gjrm))
+    (propagated-inputs (list r-trust r-mgcv r-matrixstats r-gjrm))
     (home-page "https://cran.r-project.org/package=flexmsm")
     (synopsis "General Framework for Flexible Multi-State Survival Modelling")
     (description
@@ -13713,41 +13717,6 @@ assumptions and models.  We provide a collection of methods from multiple
 disciplines under Matrix Completion, Imputation, and Inpainting.  See Davenport
 and Romberg (2016) <doi:10.1109/JSTSP.2016.2539100> for an overview of the
 topic.")
-    (license license:expat)))
-
-(define-public r-filibustr
-  (package
-    (name "r-filibustr")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "filibustr" version))
-       (sha256
-        (base32 "1q7307fwwrvpgf0ypkhs4ayg4m27vpf3kazsvnf73jk3gi33i0ki"))))
-    (properties `((upstream-name . "filibustr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-r-utils
-                             r-lifecycle
-                             r-httr2
-                             r-haven
-                             r-dplyr
-                             r-crul))
-    (home-page "https://github.com/feinleib/filibustr")
-    (synopsis "Data Utilities for Congressional Research")
-    (description
-     "This package provides easy-to-understand and consistent interfaces for accessing
-data on the U.S. Congress.  The functions in filibustr streamline the process
-for importing data on Congress into R, removing the need to download and work
-from CSV files and the like.  Data sources include Voteview
-(<https://voteview.com/>), the U.S. Senate website (<https://www.senate.gov/>),
-and more.")
     (license license:expat)))
 
 (define-public r-filest
@@ -17024,6 +16993,34 @@ standard fraction of variance explained (FVE) criterion commonly used for
 functional data is adapted to the transformation setting, also allowing for an
 alternative quantification of variability for density data through the
 Wasserstein metric of optimal transport.")
+    (license license:bsd-3)))
+
+(define-public r-fdaconcur
+  (package
+    (name "r-fdaconcur")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdaconcur" version))
+       (sha256
+        (base32 "1aflg0fc5x0brkz87jhz27xcx8fkimx7g9nsd99j3w9ck2sqrdki"))))
+    (properties `((upstream-name . "fdaconcur")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-fdapace))
+    (home-page "https://github.com/functionaldata/tFDAconcur")
+    (synopsis
+     "Concurrent Regression and History Index Models for Functional Data")
+    (description
+     "This package provides an implementation of concurrent or varying coefficient
+regression methods for functional data.  The implementations are done for both
+dense and sparsely observed functional data.  Pointwise confidence bands can be
+constructed for each case.  Further, the influence of past predictor values are
+modeled by a smooth history index function, while the effects on the response
+are described by smooth varying coefficient functions, which are very useful in
+analyzing real data such as COVID data.  References: Yao, F., MÃ¼ller, H.G.,
+Wang, J.L. (2005) <doi:10.1214/009053605000000660>. @code{SentÃ¼rk}, D.,
+MÃ¼ller, H.G. (2010) <doi:10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
 (define-public r-fdacluster

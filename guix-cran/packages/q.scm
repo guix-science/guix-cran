@@ -988,13 +988,13 @@ potential for forest restoration as described in Axer et al. (2021)
 (define-public r-quarto
   (package
     (name "r-quarto")
-    (version "1.4")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quarto" version))
        (sha256
-        (base32 "092v5vbrqb1qbmzf0wv29lrkhcbk4nz8kz8cb27dmhx08ns7zk5c"))))
+        (base32 "18403v03hh57fm09csg6jmxh6biih7dgq9sakn0hg6x3kn8vnnaf"))))
     (properties `((upstream-name . "quarto")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

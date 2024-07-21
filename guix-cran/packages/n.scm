@@ -4579,13 +4579,13 @@ API documentation.")
 (define-public r-nominatimlite
   (package
     (name "r-nominatimlite")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nominatimlite" version))
        (sha256
-        (base32 "1qvbg4dpy65xjmh7i96xhm7cw07w375hm119540gqmc9z1zdh4g3"))))
+        (base32 "0vnpd21ybwmkkafsd65zg9bdcnmffxwqxrdfhgwdv82sclnd8xa8"))))
     (properties `((upstream-name . "nominatimlite")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-dplyr))

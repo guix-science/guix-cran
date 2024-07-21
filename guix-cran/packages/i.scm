@@ -13771,98 +13771,6 @@ file for the reference copyright information and for the complete citations of
 the reference sources, respectively.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
-(define-public r-iemiscdata
-  (package
-    (name "r-iemiscdata")
-    (version "1.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemiscdata" version))
-       (sha256
-        (base32 "1wsakabhj9majl4w63bpc95ccdvfg7xz9arj0ikvdj6dh1ardac6"))))
-    (properties `((upstream-name . "iemiscdata")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemiscdata")
-    (synopsis "Irucka Embry's Miscellaneous Data Collection")
-    (description
-     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
-Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
-Continental Congress Presidents].")
-    (license license:gpl3+)))
-
-(define-public r-iemisc
-  (package
-    (name "r-iemisc")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemisc" version))
-       (sha256
-        (base32 "0dr9p4y0vdwxsd5dqp5ahqnv1sfckb3xy9i0bbas009g5hnzxp92"))))
-    (properties `((upstream-name . "iemisc")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-zoo
-                             r-usa-state-boundaries
-                             r-units
-                             r-stringi
-                             r-sjmisc
-                             r-signal
-                             r-sf
-                             r-round
-                             r-roperators
-                             r-rivr
-                             r-ramify
-                             r-qdapregex
-                             r-pracma
-                             r-mgsub
-                             r-measurements
-                             r-matlab2r
-                             r-matlab
-                             r-lubridate
-                             r-iemiscdata
-                             r-gsubfn
-                             r-ggpubr
-                             r-ggplot2
-                             r-geosphere
-                             r-fpcompare
-                             r-foreach
-                             r-data-table
-                             r-chem-databases
-                             r-checkmate
-                             r-berryfunctions
-                             r-assertthat
-                             r-anytime))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://gitlab.com/iembry/iemisc")
-    (synopsis "Irucka Embry's Miscellaneous Functions")
-    (description
-     "This package provides a collection of Irucka Embry's miscellaneous functions
-(Engineering Economics, Civil & Environmental/Water Resources Engineering,
-Construction Measurements, GNU Octave compatible functions, Python compatible
-function, Trigonometric functions in degrees and function in radians, Geometry,
-Statistics, Mortality Calculators, Quick Search, etc.).")
-    (license (list license:gpl3+
-                   (license:fsdg-compatible "file://LICENSE")))))
-
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")
@@ -16885,6 +16793,28 @@ and/or expression form breast cancer data, trains a pamr classifier (Tibshirani
 et al.) with the features available and predicts the @code{iC10} group.  Genomic
 annotation for the training dataset has been obtained from Mark Dunning's
 @code{lluminaHumanv3.db} package.")
+    (license license:gpl3)))
+
+(define-public r-ic10
+  (package
+    (name "r-ic10")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iC10" version))
+       (sha256
+        (base32 "0chvkh84qmw0c1m8z1ayl03dq43rj4qglkbammm5fx2vfsbp0hcc"))))
+    (properties `((upstream-name . "iC10")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pamr r-impute r-ic10trainingdata))
+    (home-page "https://cran.r-project.org/package=iC10")
+    (synopsis "Copy Number and Expression-Based Classifier for Breast Tumours")
+    (description
+     "Implementation of the classifier described in the paper Ali HR et al (2014)
+<doi:10.1186/s13059-014-0431-1>.  It uses copy number and/or expression form
+breast cancer data, trains a Tibshirani's pamr classifier with the features
+available and predicts the @code{iC10} group.")
     (license license:gpl3)))
 
 (define-public r-ic-infer

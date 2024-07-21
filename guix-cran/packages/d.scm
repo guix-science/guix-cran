@@ -1910,13 +1910,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.0.0-1")
+    (version "1.0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "1aac9ms2cscnr48z70bngrwfbdi3rljr80sganfvrp4imvfdqzlq"))))
+        (base32 "00dzrjwpd94k11gqvdafxkd8pqlwav6l4haim88p8ann48gxad9p"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))

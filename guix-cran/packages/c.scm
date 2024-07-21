@@ -50,13 +50,13 @@
 (define-public r-czso
   (package
     (name "r-czso")
-    (version "0.3.12")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "czso" version))
        (sha256
-        (base32 "0zg1sqka0m1cc5cwdkb0b12fb27mj4skz2vbvn6xqjbww1yjxrpd"))))
+        (base32 "0hsml601swdig8ky210c8w3n2zfgn3f14ai9l43ni1iplkcpcdxi"))))
     (properties `((upstream-name . "czso")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -3758,13 +3758,13 @@ and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
 (define-public r-csquares
   (package
     (name "r-csquares")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csquares" version))
        (sha256
-        (base32 "0cd36pf2mp5nn9dk2a71aqs35diwz9nr6092xf7k9aq3b9v9z7xs"))))
+        (base32 "0zvx2xfpi138a2lhc7qwlpfa9rn954avb89g88m79l63sj9r2f11"))))
     (properties `((upstream-name . "csquares")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -11007,13 +11007,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.5-0")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cotram" version))
        (sha256
-        (base32 "1i5r74by4iw3f69zxrrql29c77jvwmn72sp8hdcglldil6xxkcjl"))))
+        (base32 "0ckbkhgg7026nf9xkqq3lnfi8gzb78vj4crpxms8ljxxbgv6zai1"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -23201,13 +23201,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.0.4")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "1qhp59hz9k2yq7rb60v9zv0bfnrfz99dk74v5fbip1wadzcbyrnp"))))
+        (base32 "01cq2pyl0q45csjp9jj0x528432gi490ic0p6kmzzn40xl5l0j1n"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-latticeextra r-lattice))
@@ -31565,13 +31565,13 @@ posterior', cmdstanr', and bayesplot'.")
 (define-public r-chisquare
   (package
     (name "r-chisquare")
-    (version "0.9")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chisquare" version))
        (sha256
-        (base32 "11pypv6nmqqwrjvrzakn8x4ap0jw23dk3ij4i2kxx340j0gqk8qh"))))
+        (base32 "1vjhsi520p9m46xay9dh0la5ypyhi19gyg5i568d2ywka4g2ssac"))))
     (properties `((upstream-name . "chisquare")))
     (build-system r-build-system)
     (propagated-inputs (list r-gt))
@@ -31582,12 +31582,15 @@ posterior', cmdstanr', and bayesplot'.")
      "This package provides the facility to perform the chi-square and G-square test
 of independence, calculates the power of the traditional chi-square test,
 compute permutation and Monte Carlo p-value, and provides measures of
-association such as Phi, odds ratio with 95 percent CI and p-value, adjusted
-contingency coefficient, Cramer's V and 95 percent CI, bias-corrected Cramer's
-V, W, Cohen's w, Goodman-Kruskal's lambda, gamma and its p-value, and tau,
-Cohen's k and its 95 percent CI. It also calculates standardized,
-moment-corrected standardized, and adjusted standardized residuals, and their
-significance.  Different outputs are returned in nicely formatted tables.")
+association for tables of any size such as Phi, Phi corrected, odds ratio with
+95 percent CI and p-value, Yule Q and Y, adjusted contingency coefficient,
+Cramer's V, V corrected, V standardised, bias-corrected V, W, Cohen's w,
+Goodman-Kruskal's lambda, gamma, tau, Cohen's k.  It also calculates
+standardised, moment-corrected standardised, and adjusted standardised
+residuals, and their significance, as well as the Quetelet Index, IJ association
+factor, and adjusted standardised counts.  It also computes the
+chi-square-maximising version of the input table.  Different outputs are
+returned in nicely formatted tables.")
     (license license:gpl2+)))
 
 (define-public r-chisq-posthoc-test
@@ -40574,13 +40577,13 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardx
   (package
     (name "r-cardx")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardx" version))
        (sha256
-        (base32 "1zw9l8w1jv7hs55jc7c5m2vxmsxv9lfzsvm23zwfpcks4ich26gb"))))
+        (base32 "1286hv6d1l6k0rsh996risdzbmby3z2szswvpl0vca5gb8a319ir"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -40601,13 +40604,13 @@ re-used to construct summary tables, visualizations, and written reports.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "1a7khr8jzzvhb3lxb088d3akpq0jd7mjnb2y3z445mxl55wqgk2c"))))
+        (base32 "0vadra5d9bbair6z5qfj77y4h6qa6gzk929mj8xq41iyv5nkpp6i"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -40619,7 +40622,7 @@ re-used to construct summary tables, visualizations, and written reports.")
     (home-page "https://github.com/insightsengineering/cards")
     (synopsis "Analysis Results Data")
     (description
-     "Construct Clinical Data Interchange Standards Consortium (CDISC) compliant
+     "Construct CDISC (Clinical Data Interchange Standards Consortium) compliant
 Analysis Results Data objects.  These objects are used and re-used to construct
 summary tables, visualizations, and written reports.  The package also exports
 utilities for working with these objects and creating new Analysis Results Data

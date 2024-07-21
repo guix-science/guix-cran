@@ -22293,17 +22293,18 @@ properties, quantiles and integration.")
 (define-public r-spatstat-local
   (package
     (name "r-spatstat-local")
-    (version "5.0-1")
+    (version "5.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.local" version))
        (sha256
-        (base32 "02ip6d2mr07n3lv4i5xdmb1j55syk5hwjwr7j81ibxkp3gj8gm61"))))
+        (base32 "1brbk98hibsb7nh71xb3nhxsj8bb6lzclg746xd62cn9y72dl0v0"))))
     (properties `((upstream-name . "spatstat.local")))
     (build-system r-build-system)
     (propagated-inputs (list r-tensor
                              r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-sparse
                              r-spatstat-random
                              r-spatstat-model
@@ -22322,16 +22323,17 @@ regression').")
 (define-public r-spatstat-knet
   (package
     (name "r-spatstat-knet")
-    (version "3.0-2")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.Knet" version))
        (sha256
-        (base32 "1yvdasrxmsa2m9016kclb33kv5893fsz5rcr416yhpf6jixdsfh8"))))
+        (base32 "1n9hqq0pamk4bm9jbl1plpsa6ynab7kll6j3dhcvpmyai462wcxa"))))
     (properties `((upstream-name . "spatstat.Knet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-sparse
                              r-spatstat-random
                              r-spatstat-model
@@ -22353,16 +22355,17 @@ Baddeley and Nair (2019).")
 (define-public r-spatstat-gui
   (package
     (name "r-spatstat-gui")
-    (version "3.0-1")
+    (version "3.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.gui" version))
        (sha256
-        (base32 "1y6z3gdad0nhqg494b5pjq4h0mr3mcrhnnc0chy56lf8chb6p5jb"))))
+        (base32 "108ls75y8zhcygfra9zbd2c0gfpf6n0kl2d6jlixa712l3m6lx8l"))))
     (properties `((upstream-name . "spatstat.gui")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-univar
                              r-spatstat-random
                              r-spatstat-model
                              r-spatstat-linnet
@@ -41924,13 +41927,13 @@ generated, as well as the errors displayed in the interface.")
 (define-public r-shinyloadtest
   (package
     (name "r-shinyloadtest")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyloadtest" version))
        (sha256
-        (base32 "0684p9anbc3qdn4rqkxp33nm0d04zb264b3blwa23pa5akis2klq"))))
+        (base32 "01y75imwjbg1wdw7xx50a48py23ya0hgl4jm24lgfl60llm2lfrz"))))
     (properties `((upstream-name . "shinyloadtest")))
     (build-system r-build-system)
     (arguments
@@ -41962,7 +41965,8 @@ generated, as well as the errors displayed in the interface.")
                              r-httpuv
                              r-ggplot2
                              r-dplyr
-                             r-curl))
+                             r-curl
+                             r-cli))
     (native-inputs (list esbuild))
     (home-page "https://rstudio.github.io/shinyloadtest/")
     (synopsis "Load Test Shiny Applications")
@@ -41977,21 +41981,28 @@ resulting metrics.")
 (define-public r-shinylive
   (package
     (name "r-shinylive")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinylive" version))
        (sha256
-        (base32 "1hsvcsbzrzv0gb99mfc02sd77mlwcxjqzzr5v2jfr5ajq33q3ffb"))))
+        (base32 "16r3fbzgv9qjdr08cdazddjxanliymi2mhlx56p0bdrn10miiyp9"))))
     (properties `((upstream-name . "shinylive")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang
+    (propagated-inputs (list r-withr
+                             r-whisker
+                             r-rlang
+                             r-renv
                              r-rappdirs
                              r-progress
+                             r-pkgdepends
                              r-jsonlite
                              r-httr2
+                             r-glue
+                             r-gh
                              r-fs
+                             r-cli
                              r-brio
                              r-archive))
     (home-page "https://posit-dev.github.io/r-shinylive/")
@@ -43694,16 +43705,16 @@ distribution.")
 (define-public r-shide
   (package
     (name "r-shide")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shide" version))
        (sha256
-        (base32 "1czdl0i93plqc1d2cf874603s4fiym96kv4d23vr1kvy2kx1jnh9"))))
+        (base32 "0wf84npx431c9hb09yxgbi0w1apzrfh7qisamlybvq3mhs8aaqdr"))))
     (properties `((upstream-name . "shide")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11))
+    (propagated-inputs (list r-vctrs r-tzdb r-rlang r-cpp11 r-cli))
     (home-page "https://github.com/mmollayi/shide")
     (synopsis "Date/Time Classes Based on Jalali Calendar")
     (description
@@ -55390,13 +55401,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1mhjlll6vplg7alnrl359bb5gvf5b54f2pf4lpazsv29hqiavhqg"))))
+        (base32 "1yi65xzi4h0aviisswrn78zgqzp17y4vvjnfcvphlgyr67nh3g6k"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -55405,7 +55416,6 @@ focus is set to prime-calculation.")
                              r-sf
                              r-rvest
                              r-rlang
-                             r-readxl
                              r-readr
                              r-mapview
                              r-magrittr
@@ -55414,7 +55424,7 @@ focus is set to prime-calculation.")
                              r-ggplot2
                              r-dplyr
                              r-curl))
-    (home-page "https://cran.r-project.org/package=SchoolDataIT")
+    (home-page "https://github.com/lcef97/SchoolDataIT")
     (synopsis
      "Retrieve, Harmonise and Map Open Data Regarding the Italian School System")
     (description

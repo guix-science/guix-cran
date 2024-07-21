@@ -9079,13 +9079,13 @@ S., and J. M. Lees (1996)<doi:10.1785/BSSA0860061853>.")
 (define-public r-rqti
   (package
     (name "r-rqti")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rqti" version))
        (sha256
-        (base32 "0waayqsqwydd3mv5zplbivqspxnkdznq47mj8v5yyzf28042aax7"))))
+        (base32 "12jx51cvc7d9plmvjsrnkcgaadhn8hdxc5l3fqm592wd6sfw3l6x"))))
     (properties `((upstream-name . "rqti")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -20455,13 +20455,13 @@ Theil-Sen's slope estimator.")
 (define-public r-rkriging
   (package
     (name "r-rkriging")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rkriging" version))
        (sha256
-        (base32 "0ii57kjbh2g8zhwrmk8l1r8rc1z7f2f0vc883fzfd0szz79c60x5"))))
+        (base32 "05hi1b2qlsc93iq4rhczrimc9pqnfmssmxmsa0fcgqwvpn0l934q"))))
     (properties `((upstream-name . "rkriging")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr r-bh))
@@ -24822,37 +24822,6 @@ algorithm details please refer to Qin et.  al. (2018)
 <doi:10.1029/2017WR022488>.")
     (license license:expat)))
 
-(define-public r-rgmm
-  (package
-    (name "r-rgmm")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "RGMM" version))
-       (sha256
-        (base32 "1b0r1scxd40d93s96xa1cc9ls1f7vs2g5g8sjnm0kd562mwj4pxp"))))
-    (properties `((upstream-name . "RGMM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rspectra
-                             r-reshape2
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mclust
-                             r-laplacesdemon
-                             r-ggplot2
-                             r-genieclust
-                             r-foreach
-                             r-doparallel
-                             r-desctools))
-    (home-page "https://cran.r-project.org/package=RGMM")
-    (synopsis "Robust Mixture Model")
-    (description
-     "Algorithms for estimating robustly the parameters of a Gaussian, Student, or
-Laplace Mixture Model.")
-    (license license:gpl2+)))
-
 (define-public r-rgm
   (package
     (name "r-rgm")
@@ -28322,13 +28291,13 @@ the resources.")
 (define-public r-resmush
   (package
     (name "r-resmush")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resmush" version))
        (sha256
-        (base32 "1qmgkxnbdlb544vyzwcsinpdafgq07bligx05pilcz73kic4bwla"))))
+        (base32 "0d4mldxxgfypfm9p2b38iqr55j31vcyim018m7csqxplmvxrs45b"))))
     (properties `((upstream-name . "resmush")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2 r-curl r-cli))

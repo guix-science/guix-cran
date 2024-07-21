@@ -14188,6 +14188,49 @@ tools that assess time-based model performance and stability for a single time
 series, panel data, and cross-sectional time series analysis.")
     (license license:expat)))
 
+(define-public r-modeltime-ensemble
+  (package
+    (name "r-modeltime-ensemble")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modeltime.ensemble" version))
+       (sha256
+        (base32 "1262p4lp4vr3d6s5x5cwrbib5vfr9apl4fvyhxzpvvc1vck5a94p"))))
+    (properties `((upstream-name . "modeltime.ensemble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yardstick
+                             r-workflows
+                             r-tune
+                             r-timetk
+                             r-tidyr
+                             r-tictoc
+                             r-tibble
+                             r-stringr
+                             r-rsample
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-modeltime-resample
+                             r-modeltime
+                             r-magrittr
+                             r-glmnet
+                             r-generics
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://business-science.github.io/modeltime.ensemble/")
+    (synopsis "Ensemble Algorithms for Time Series Forecasting with Modeltime")
+    (description
+     "This package provides a modeltime extension that implements time series ensemble
+forecasting methods including model averaging, weighted averaging, and stacking.
+ These techniques are popular methods to improve forecast accuracy and
+stability.")
+    (license license:expat)))
+
 (define-public r-modeltime
   (package
     (name "r-modeltime")
@@ -23841,40 +23884,33 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.3.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "1j43apygc7m5gff07zabv3plm3hhhnv091fdxkvzlms9w0f2j1zy"))))
+        (base32 "0nr5y9yxwny8k4z5jm742k7n9r4s00xlkqbynfdf4apd5y6q8snm"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tidygraph
-                             r-sna
-                             r-rlang
-                             r-purrr
-                             r-pillar
-                             r-network
+    (propagated-inputs (list r-purrr
                              r-manynet
-                             r-igraph
                              r-ggplot2
                              r-generics
                              r-future
                              r-furrr
                              r-dplyr))
     (home-page "https://stocnet.github.io/migraph/")
-    (synopsis "Many Network Measures, Motifs, Members, and Models")
+    (synopsis
+     "Univariate and Multivariate Tests for Multimodal and Other Networks")
     (description
-     "This package provides a set of tools for analysing multimodal networks.  It
-includes functions for measuring centrality, centralization, cohesion, closure,
-constraint and diversity, as well as for network block-modelling, regression,
-and diffusion models.  The package is released as a complement to Multimodal
-Political Networks (2021, ISBN:9781108985000), and includes various datasets
-used in the book.  Built on the manynet package, all functions operate with
-matrices, edge lists, and igraph', network', and tidygraph objects, and on
-one-mode, two-mode (bipartite), and sometimes three-mode networks.")
+     "This package provides a set of tools for testing networks.  It includes
+functions for univariate and multivariate conditional uniform graph and
+quadratic assignment procedure testing, and network regression.  The package is
+a complement to Multimodal Political Networks (2021, ISBN:9781108985000), and
+includes various datasets used in the book.  Built on the manynet package, all
+functions operate with matrices, edge lists, and igraph', network', and
+tidygraph objects, and on one-mode and two-mode (bipartite) networks.")
     (license license:expat)))
 
 (define-public r-migest
@@ -27912,13 +27948,13 @@ Methods in Medical Research, P. @code{TaffÃ©} (2018)
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "03ncpy01dvmxrr43jyl8am9hkzp872rdph5padiy9ih4nzxdncmq"))))
+        (base32 "1jzg1mk3l66vyx0b96v7xbzsz56hl8nvwbi9xm4w7x9k79p7qb35"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
