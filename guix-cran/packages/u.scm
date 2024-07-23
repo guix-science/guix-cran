@@ -3658,13 +3658,13 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
 (define-public r-ukb-covid19
   (package
     (name "r-ukb-covid19")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKB.COVID19" version))
        (sha256
-        (base32 "0f684nkyrk9dl7hz9mzbb3x8gza5prd8zrg8ajfyjiqif7c6hkbg"))))
+        (base32 "0v1ppk62nm4cx0n028bd9pr8cadcpy2kr2ir21hnzhsb7m15j1dc"))))
     (properties `((upstream-name . "UKB.COVID19")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -3673,6 +3673,7 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
                              r-here
                              r-dplyr
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/bahlolab/UKB.COVID19")
     (synopsis
      "UK Biobank COVID-19 Data Processing and Risk Factor Association Tests")

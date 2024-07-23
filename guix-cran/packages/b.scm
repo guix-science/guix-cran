@@ -1875,6 +1875,47 @@ solving the maximum likelihood estimation problem in fitting a log-binomial
 model under linear inequality constraints.")
     (license license:gpl3+)))
 
+(define-public r-bsvarsigns
+  (package
+    (name "r-bsvarsigns")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bsvarSIGNs" version))
+       (sha256
+        (base32 "1gfzv5q7blwxgk0ihz68h28b81xkwg4d2x2r3829apcqwnvfwd7p"))))
+    (properties `((upstream-name . "bsvarSIGNs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-r6
+                             r-bsvars))
+    (home-page "https://bsvars.github.io/bsvarSIGNs/")
+    (synopsis "Bayesian SVARs with Sign, Zero, and Narrative Restrictions")
+    (description
+     "This package implements state-of-the-art algorithms for the Bayesian analysis of
+Structural Vector Autoregressions (SVARs) identified by sign, zero, and
+narrative restrictions.  The core model is based on a flexible Vector
+Autoregression with estimated hyper-parameters of the Minnesota prior and the
+dummy observation priors as in Giannone, Lenza, Primiceri (2015)
+<doi:10.1162/REST_a_00483>.  The sign restrictions are implemented employing the
+methods proposed by Rubio-@code{RamÃ­rez}, Waggoner & Zha (2010)
+<doi:10.1111/j.1467-937X.2009.00578.x>, while identification through sign and
+zero restrictions follows the approach developed by Arias,
+Rubio-@code{RamÃ­rez}, & Waggoner (2018) <doi:10.3982/ECTA14468>.  Furthermore,
+our tool provides algorithms for identification via sign and narrative
+restrictions, in line with the methods introduced by @code{AntolÃ­n-DÃ­az} and
+Rubio-@code{RamÃ­rez} (2018) <doi:10.1257/aer.20161852>.  Users can also
+estimate a model with sign, zero, and narrative restrictions imposed at once.
+The package facilitates predictive and structural analyses using impulse
+responses, forecast error variance and historical decompositions, forecasting
+and conditional forecasting, as well as analyses of structural shocks and fitted
+values.  All this is complemented by colourful plots, user-friendly summary
+functions, and comprehensive documentation.  The @code{bsvarSIGNs} package is
+aligned regarding objects, workflows, and code structure with the R package
+bsvars by @code{WoÅºniak} (2024) <doi:10.32614/CRAN.package.bsvars>, and they
+constitute an integrated toolset.")
+    (license license:gpl3+)))
+
 (define-public r-bsvars
   (package
     (name "r-bsvars")
@@ -4386,15 +4427,16 @@ automatically to the PATH.")
 (define-public r-brea
   (package
     (name "r-brea")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brea" version))
        (sha256
-        (base32 "1p26fps2sjbyq549j5f6pv00wzjkzzph2bm8s9vfncgv92sjv2iy"))))
+        (base32 "1sh0m4hfik0kzc19ygqcbrxn67n52zz9l90gs494iqqwj1fzs8f7"))))
     (properties `((upstream-name . "brea")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=brea")
     (synopsis "Bayesian Recurrent Events Analysis")
     (description
@@ -7651,6 +7693,36 @@ dilution series.  For each concentration there are two replicates.  Each
 amplification curve is 40 cycles long.  Original raw data file:
 <https://journals.plos.org/plosone/article/file?type=supplementary&id=10.1371/journal.pone.0012355.s004>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-bodycompref
+  (package
+    (name "r-bodycompref")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bodycompref" version))
+       (sha256
+        (base32 "1nsgn3x2w8ri059iwpj9rhg4abxrk6ryq1lbbrwihrxdq9xqvg4v"))))
+    (properties `((upstream-name . "bodycompref")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sae r-gamlss r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://bodycomp-metrics.mgh.harvard.edu")
+    (synopsis "Reference Values for CT-Assessed Body Composition")
+    (description
+     "Get z-scores, percentiles, absolute values, and percent of predicted of a
+reference cohort.  Functionality requires installing the data packages
+adiposerefdata and musclerefdata'.  For more information on the underlying
+research, please visit our website which also includes a graphical interface.
+The models and underlying data are described in Marquardt JP et al.(planned
+publication 2025; reserved doi 10.1097/RLI.0000000000001104), \"Subcutaneous and
+Visceral adipose tissue Reference Values from Framingham Heart Study Thoracic
+and Abdominal CT\", *Investigative Radiology* and Tonnesen PE et al. (2023),
+\"Muscle Reference Values from Thoracic and Abdominal CT for Sarcopenia
+Assessment [column] The Framingham Heart Study\", *Investigative Radiology*,
+<doi:10.1097/RLI.0000000000001012>.")
+    (license license:gpl3+)))
 
 (define-public r-bodycomp
   (package

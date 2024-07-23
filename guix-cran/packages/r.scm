@@ -13648,6 +13648,28 @@ ROC-SVM, see the report in the ROC Analysis in AI workshop(ROCAI-2004) :
 <doi:10.1145/1046456.1046489>.")
     (license license:gpl2)))
 
+(define-public r-rocsurf
+  (package
+    (name "r-rocsurf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ROCsurf" version))
+       (sha256
+        (base32 "0jamyidfh6f6z1j4z1q5wspvvr873idkfqv0g8fp1bhgl4r30732"))))
+    (properties `((upstream-name . "ROCsurf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-plotly))
+    (home-page "https://github.com/ErtanSU/ROCsurf")
+    (synopsis "ROC Surface Analysis Under the Three-Class Problems")
+    (description
+     "Receiver Operating Characteristic (ROC) analysis is performed assuming samples
+are from the proposed distributions.  In addition, the volume under the ROC
+surface and true positive fractions values are evaluated by ROC surface
+analysis.")
+    (license license:gpl3)))
+
 (define-public r-rocsi
   (package
     (name "r-rocsi")
@@ -24822,6 +24844,37 @@ algorithm details please refer to Qin et.  al. (2018)
 <doi:10.1029/2017WR022488>.")
     (license license:expat)))
 
+(define-public r-rgmm
+  (package
+    (name "r-rgmm")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RGMM" version))
+       (sha256
+        (base32 "1b0r1scxd40d93s96xa1cc9ls1f7vs2g5g8sjnm0kd562mwj4pxp"))))
+    (properties `((upstream-name . "RGMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rspectra
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mclust
+                             r-laplacesdemon
+                             r-ggplot2
+                             r-genieclust
+                             r-foreach
+                             r-doparallel
+                             r-desctools))
+    (home-page "https://cran.r-project.org/package=RGMM")
+    (synopsis "Robust Mixture Model")
+    (description
+     "Algorithms for estimating robustly the parameters of a Gaussian, Student, or
+Laplace Mixture Model.")
+    (license license:gpl2+)))
+
 (define-public r-rgm
   (package
     (name "r-rgm")
@@ -27772,6 +27825,44 @@ and DMS-2015552.")
     (description
      "Using a CSV, @code{LaTeX} and R to easily build attractive resumes.")
     (license license:bsd-3)))
+
+(define-public r-resultmodelmanager
+  (package
+    (name "r-resultmodelmanager")
+    (version "0.5.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ResultModelManager" version))
+       (sha256
+        (base32 "0adjf9b9j4qmn55zlh6sq55vdvpkdbfkbbwvjy0d2y8bw0yfscxs"))))
+    (properties `((upstream-name . "ResultModelManager")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-withr
+                             r-sqlrender
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-pool
+                             r-parallellogger
+                             r-lubridate
+                             r-fastmap
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi
+                             r-databaseconnector
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OHDSI/ResultModelManager")
+    (synopsis "Result Model Manager")
+    (description
+     "Database data model management utilities for R packages in the Observational
+Health Data Sciences and Informatics program <https://ohdsi.org>.
+@code{ResultModelManager} provides utility functions to allow package
+maintainers to migrate existing SQL database models, export and import results
+in consistent patterns.")
+    (license license:asl2.0)))
 
 (define-public r-result
   (package
@@ -43097,21 +43188,26 @@ formats and data structures common to data analysis practitioners.")
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
-    (version "0.10.4")
+    (version "0.11.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayvertex" version))
        (sha256
-        (base32 "16rkin3dq648x1gwi9kdpaamb4zsvp326y84pnbwrivny2g9j7q3"))))
+        (base32 "0xbhkv77238y742vpci6d2z87n6mnnp80qxv938rwb9hfs4c66j4"))))
     (properties `((upstream-name . "rayvertex")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spacefillr
+    (propagated-inputs (list r-withr
+                             r-vctrs
+                             r-tibble
+                             r-spacefillr
                              r-rcppthread
                              r-rcpp
                              r-rayimage
                              r-png
-                             r-digest))
+                             r-pillar
+                             r-digest
+                             r-cli))
     (home-page "https://www.rayvertex.com")
     (synopsis "3D Software Rasterizer")
     (description
@@ -49117,13 +49213,13 @@ of other formats ('SVG', PNG', JPEG') into SWF'.")
 (define-public r-r2sundials
   (package
     (name "r-r2sundials")
-    (version "6.5.0-4")
+    (version "6.5.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2sundials" version))
        (sha256
-        (base32 "03ibv93yh7idjrrrkjdbpsi4pnb3rjd48qdlqa89w0wn99lf5qqd"))))
+        (base32 "0zbaqfml3f778zip3aggy17l1wzn26z41bzx9mk0wbgzx2mi0dwf"))))
     (properties `((upstream-name . "r2sundials")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmumps r-rcpparmadillo r-rcpp))

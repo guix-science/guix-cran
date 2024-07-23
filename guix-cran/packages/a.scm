@@ -14839,6 +14839,28 @@ co-occurrence network, and focuses on co-word analysis of bibliometric research.
 solve other tasks in text mining as well.")
     (license license:expat)))
 
+(define-public r-aka
+  (package
+    (name "r-aka")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aka" version))
+       (sha256
+        (base32 "0370rs9kz43azgclc11x8185sr5hq507mvk2pmwprwwj86j65vpk"))))
+    (properties `((upstream-name . "aka")))
+    (build-system r-build-system)
+    (home-page "https://klmr.me/aka/")
+    (synopsis "Define Aliases for R Expressions")
+    (description
+     "Create aliases for other R names or arbitrarily complex R expressions.
+Accessing the alias acts as-if the aliased expression were invoked instead, and
+continuously reflects the current value of that expression: updates to the
+original expression will be reflected in the alias; and updates to the alias
+will automatically be reflected in the original expression.")
+    (license license:expat)))
+
 (define-public r-ajv
   (package
     (name "r-ajv")

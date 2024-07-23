@@ -5191,13 +5191,13 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.7-1")
+    (version "1.7-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protr" version))
        (sha256
-        (base32 "1dakbkj07l2mnmnmi9j2xv0lk1bm8qpzac8s9gg7j4xpwsf0yyl7"))))
+        (base32 "0qkp9h6kndr5vkgqckzhhy7dsidbynpns3bap3r3gy2p1wzwmhx5"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (inputs (list))
@@ -10585,13 +10585,13 @@ can be used in place of base::stopifnot().")
 (define-public r-precommit
   (package
     (name "r-precommit")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "precommit" version))
        (sha256
-        (base32 "15ll48m3aw7gg99vqvbrygms6hwlpgmpnz56n7x1drqwzl59qgf7"))))
+        (base32 "0rh5vrr6q3z4pqm4548v3mxfcf681kpamkq8q54w49hhlp73dgmi"))))
     (properties `((upstream-name . "precommit")))
     (build-system r-build-system)
     (inputs (list git))
@@ -16444,6 +16444,34 @@ generate measures of portfolio characteristics and facilitates their
 visualization.")
     (license license:gpl3)))
 
+(define-public r-poldis
+  (package
+    (name "r-poldis")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poldis" version))
+       (sha256
+        (base32 "02043wqc2ja12pybaid7c1a33s14q7dhj7mzca5z6i5ganqihrgr"))))
+    (properties `((upstream-name . "poldis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-textstem
+                             r-stringr
+                             r-stringi
+                             r-stringdist
+                             r-spacyr
+                             r-quanteda
+                             r-purrr
+                             r-dplyr))
+    (home-page "http://henriquesposito.com/poldis/")
+    (synopsis "Analyse Political Texts")
+    (description
+     "Wrangle and annotate different types of political texts.  It also introduces
+Urgency Analysis, a new method for the analysis of urgency in political texts.")
+    (license license:expat)))
+
 (define-public r-polca
   (package
     (name "r-polca")
@@ -17688,13 +17716,13 @@ for various modeling and simulation software platforms.")
 (define-public r-pmwr
   (package
     (name "r-pmwr")
-    (version "0.19-3")
+    (version "0.19-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PMwR" version))
        (sha256
-        (base32 "11pmhhyk39wc9qcgy16gavyqrrh5wkzvnk85jb9mnr9g673ljgfi"))))
+        (base32 "1yhqbp5f6a7rkxxljqw5xsl1v0yysxjlx2r99w3h2hka44mksm21"))))
     (properties `((upstream-name . "PMwR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -17703,12 +17731,18 @@ for various modeling and simulation software platforms.")
                              r-nmof
                              r-fastmatch
                              r-datetimeutils))
-    (home-page "http://enricoschumann.net/PMwR/")
+    (home-page "https://enricoschumann.net/PMwR/")
     (synopsis "Portfolio Management with R")
     (description
-     "This package provides functions and examples for Portfolio Management with R':
-backtesting investment and trading strategies, computing profit/loss and
-returns, analysing trades, handling lists of transactions, reporting, and more.")
+     "This package provides tools for the practical management of financial
+portfolios: backtesting investment and trading strategies, computing profit/loss
+and returns, analysing trades, handling lists of transactions, reporting, and
+more.  The package provides a small set of reliable, efficient and convenient
+tools for processing and analysing trade/portfolio data.  The Manual provides
+all the details; it is available from
+<https://enricoschumann.net/R/packages/P@code{MwR/manual/PMwR.html>}.  Examples
+and descriptions of new features are provided at
+<https://enricoschumann.net/notes/P@code{MwR/>}.")
     (license license:gpl3)))
 
 (define-public r-pmwg
@@ -18296,13 +18330,13 @@ Laurentiu et al (2008) <doi:10.1093/bioinformatics/btn577>).")
 (define-public r-pm3
   (package
     (name "r-pm3")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pm3" version))
        (sha256
-        (base32 "03q36qmq9hvkws5v79c39z698fjgfpyfxz5nx7g8diy6sj834mw6"))))
+        (base32 "0mnhjvgra6a270ji1916siyn63qz9w1kmpqabsg3r68cjqbp0a0w"))))
     (properties `((upstream-name . "pm3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tableone))
@@ -24625,13 +24659,13 @@ module for calculating the Phoenix pediatric sepsis score and criteria\" by
 (define-public r-phoenics
   (package
     (name "r-phoenics")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phoenics" version))
        (sha256
-        (base32 "0g66hv29rr9gvmclwgv1scdkw4zpx38licys26rkbkxivpbq07c6"))))
+        (base32 "1a7dws11pf2bpgkvchddr14v6zvbn16xwqrdmmz9plw9lindc00j"))))
     (properties `((upstream-name . "phoenics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33440,6 +33474,35 @@ an example in the roxygen block.")
 reconstructions for ecological and anthropological analyses, as described in
 Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-pastboon
+  (package
+    (name "r-pastboon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pastboon" version))
+       (sha256
+        (base32 "144mlz8629lrbsgd46hzcsl2agzkk4kkxan1chk0xawscfj70kmv"))))
+    (properties `((upstream-name . "pastboon")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=pastboon")
+    (synopsis "Simulation of Parameterized Stochastic Boolean Networks")
+    (description
+     "Applying stochastic noise to Boolean networks is a useful approach for
+representing the effects of various perturbing stimuli on complex systems.  A
+number of methods have been developed to control noise effects on Boolean
+networks using parameters integrated into the update rules.  This package
+provides functions to examine three such methods: BNp (Boolean network with
+perturbations), described by Trairatphisan et al. (2013)
+<doi:10.1186/1478-811X-11-46>, SDDS (stochastic discrete dynamical systems),
+proposed by Murrugarra et al. (2012) <doi:10.1186/1687-4153-2012-5>, and PEW
+(Boolean network with probabilistic edge weights), presented by Deritei et al.
+(2022) <doi:10.1371/journal.pcbi.1010536>.  This package includes source code
+derived from the @code{BoolNet} package, which is licensed under the Artistic
+License 2.0.")
+    (license license:artistic2.0)))
 
 (define-public r-pastaplot
   (package

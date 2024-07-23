@@ -19197,6 +19197,31 @@ function call, supply your arguments as standard R expressions enclosed by { }',
 and be free of commas (for that call).")
     (license license:gpl3+)))
 
+(define-public r-comma
+  (package
+    (name "r-comma")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "COMMA" version))
+       (sha256
+        (base32 "1yaac6kgx3912l8iac4ybhm9drs7hy5x4wxiyc4w35clkg6r76vc"))))
+    (properties `((upstream-name . "COMMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-turboem r-matrix))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=COMMA")
+    (synopsis "Correcting Misclassified Mediation Analysis")
+    (description
+     "Use three methods to estimate parameters from a mediation analysis with a binary
+misclassified mediator.  These methods correct for the problem of \"label
+switching\" using Youden's J criteria.  A detailed description of the analysis
+methods is available in Webb and Wells (2024), \"Effect estimation in the
+presence of a misclassified binary mediator\"
+<doi:10.48550/@code{arXiv.2407.06970>}.")
+    (license license:expat)))
+
 (define-public r-comix
   (package
     (name "r-comix")
@@ -33555,13 +33580,13 @@ models can be compared using an adjusted likelihood ratio test.")
 (define-public r-chainladder
   (package
     (name "r-chainladder")
-    (version "0.2.18")
+    (version "0.2.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ChainLadder" version))
        (sha256
-        (base32 "0q0ycwswi1hxcv1apq40kzb91sgzbwb84nynd84750r449hbwrif"))))
+        (base32 "0i5mif26m4kdii7rx7dvsk98d53qyrzdd2x7x9idqsrs7cl5srm9"))))
     (properties `((upstream-name . "ChainLadder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tweedie
@@ -35131,6 +35156,28 @@ data stored in the servers of the CEO and returns it in a tidy format.")
 show various ways to load them.  Refer to Pham (2020)
 <doi:10.31224/osf.io/4xs38> for more information on package functionality.")
     (license license:gpl3)))
+
+(define-public r-centr
+  (package
+    (name "r-centr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "centr" version))
+       (sha256
+        (base32 "12kf4j75q6jyyypa3cqj5pn9gn7z2nj0mp35j9dqq42qn6mwpgv7"))))
+    (properties `((upstream-name . "centr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf))
+    (home-page "https://ryanzomorrodi.github.io/centr/")
+    (synopsis "Weighted and Unweighted Spatial Centers")
+    (description
+     "Generate mean and median weighted or unweighted spatial centers.  Functions are
+analogous to their identically named counterparts within @code{ArcGIS} Pro'.
+Median center methodology based off of Kuhn and Kuenne (1962)
+<doi:10.1111/j.1467-9787.1962.tb00902.x>.")
+    (license license:expat)))
 
 (define-public r-centiserve
   (package

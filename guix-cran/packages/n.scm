@@ -601,30 +601,26 @@ written out in English, French, or Spanish.")
 (define-public r-nullabor
   (package
     (name "r-nullabor")
-    (version "0.3.9")
+    (version "0.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nullabor" version))
        (sha256
-        (base32 "19nfmsnzndg9pdjg7m9w4vm4c3209ny52cpjdhmmhggvf7dxaiyg"))))
+        (base32 "0ymdw07x6xh204nzcd05d40zmxgnk7ny73qwbvy1gz5qh9617v96"))))
     (properties `((upstream-name . "nullabor")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
-                             r-tsibble
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-rlang
                              r-purrr
                              r-moments
                              r-mass
                              r-magrittr
                              r-ggplot2
                              r-fpc
-                             r-forecast
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "http://github.com/dicook/nullabor")
+    (home-page "https://github.com/dicook/nullabor")
     (synopsis "Tools for Graphical Inference")
     (description
      "This package provides tools for visual inference.  Generate null data sets and

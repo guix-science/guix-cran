@@ -7955,37 +7955,6 @@ customization for @code{InSilicoVA} algorithm and basic graphical visualization
 of the output.")
     (license license:gpl2)))
 
-(define-public r-insee
-  (package
-    (name "r-insee")
-    (version "1.1.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "insee" version))
-       (sha256
-        (base32 "1f6y19dysm0mh3fkrwnqcgi5j1lzy08m3ij3wrx26q2vgwv5lkfg"))))
-    (properties `((upstream-name . "insee")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-rappdirs
-                             r-purrr
-                             r-openssl
-                             r-httr
-                             r-dplyr
-                             r-crayon))
-    (native-inputs (list r-knitr))
-    (home-page "https://pyr-opendatafr.github.io/R-Insee-Data/")
-    (synopsis "Tools to Easily Download Data from INSEE BDM Database")
-    (description
-     "Using embedded sdmx queries, get the data of more than 150 000 insee series from
-bdm macroeconomic database.")
-    (license license:gpl3)))
-
 (define-public r-insectdisease
   (package
     (name "r-insectdisease")
@@ -9132,6 +9101,28 @@ orthogonalization procedures and resolution of column label and sign switching.
 This package was developed with the support of the National Institute of
 Environmental Health Sciences grant 1R01ES028804-01.")
     (license license:gpl2)))
+
+(define-public r-infiltrodiscr
+  (package
+    (name "r-infiltrodiscr")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "infiltrodiscR" version))
+       (sha256
+        (base32 "1nlkpvkkky1wjsdycxr3m658krpxr706xfjcy2gqlbsx5nl22v5m"))))
+    (properties `((upstream-name . "infiltrodiscR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-dplyr))
+    (home-page "https://cran.r-project.org/package=infiltrodiscR")
+    (synopsis "Minidisc Infiltrometer Data Management")
+    (description
+     "This package provides a set of functions for the modeling of data derived from
+the Minidisc Infiltrometer device.  It calculates cumulative infiltration and
+square root of time.  Also, it calculates the A parameter based on soil physical
+properties.")
+    (license license:expat)))
 
 (define-public r-inferr
   (package

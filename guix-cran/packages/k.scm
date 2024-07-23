@@ -975,6 +975,38 @@ uses kernel based independence criteria in order to be able to deal with
 non-linear relationships and non-Gaussian noise.")
     (license license:gpl2+)))
 
+(define-public r-kpcaig
+  (package
+    (name "r-kpcaig")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kpcaIG" version))
+       (sha256
+        (base32 "1jnlldr721c2an8npv1w6q4sk6fkamff8a5c3p9kcb575wrk4kqz"))))
+    (properties `((upstream-name . "kpcaIG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wallomicsdata
+                             r-viridis
+                             r-rgl
+                             r-progress
+                             r-kernlab
+                             r-ggplot2))
+    (home-page "https://cran.r-project.org/package=kpcaIG")
+    (synopsis "Variables Interpretability with Kernel PCA")
+    (description
+     "The kernelized version of principal component analysis (KPCA) has proven to be a
+valid nonlinear alternative for tackling the nonlinearity of biological sample
+spaces.  However, it poses new challenges in terms of the interpretability of
+the original variables. @code{kpcaIG} aims to provide a tool to select the most
+relevant variables based on the kernel PCA representation of the data as in
+Briscik et al. (2023) <doi:10.1186/s12859-023-05404-y>.  It also includes
+functions for 2D and 3D visualization of the original variables (as arrows) into
+the kernel principal components axes, highlighting the contribution of the most
+important ones.")
+    (license license:gpl3)))
+
 (define-public r-kpc
   (package
     (name "r-kpc")

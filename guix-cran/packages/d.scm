@@ -3606,13 +3606,13 @@ repositories.")
 (define-public r-dsem
   (package
     (name "r-dsem")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsem" version))
        (sha256
-        (base32 "08k4h81zm3clzxr0lff7kxbfgnn66jzh0x5bm1jv9ag08p67392i"))))
+        (base32 "1zqywsa2ip48vpzbk1xml1glrihgfwf37z25pzs07xzj0ij1lwjy"))))
     (properties `((upstream-name . "dsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-sem r-rcppeigen r-matrix r-igraph))
@@ -27396,13 +27396,13 @@ CRC Press in 2010 (ISBN: 978-1-4200-8826-7).")
 (define-public r-dafishr
   (package
     (name "r-dafishr")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dafishr" version))
        (sha256
-        (base32 "1n6b1r1awwxvdhn4znwp1p4jp3gvrjz017darjagx4cix0iisw1p"))))
+        (base32 "1pdw0qrsln6cf7k1r0a09j7va5nzyz7a484nz5fjccxs0lwgxhjx"))))
     (properties `((upstream-name . "dafishr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vroom

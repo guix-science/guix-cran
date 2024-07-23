@@ -6488,6 +6488,31 @@ flexible framework for gene-based association studies using GWAS summary
 statistics.  PLOS Comp Biol.")
     (license license:gpl3)))
 
+(define-public r-sumcaver1
+  (package
+    (name "r-sumcaver1")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SumcaVer1" version))
+       (sha256
+        (base32 "0czswr99s0i2q942yld0qqyhaxyxjv5wa8lqv8nk59y9phwss904"))))
+    (properties `((upstream-name . "SumcaVer1")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psych r-lme4))
+    (home-page "https://cran.r-project.org/package=SumcaVer1")
+    (synopsis
+     "Mean Square Prediction Error Estimation in Small Area Estimation")
+    (description
+     "Estimation of mean squared prediction error of a small area predictor is
+provided.  In particular, the recent method of Simple, Unified, Monte-Carlo
+Assisted approach for the mean squared prediction error estimation of small area
+predictor is provided.  We also provide other existing methods of mean squared
+prediction error estimation such as jackknife method for the mixed logistic
+model.")
+    (license license:expat)))
+
 (define-public r-sugrrants
   (package
     (name "r-sugrrants")
@@ -7361,6 +7386,28 @@ uses the Cambridge method for surplus allocation and Droop method for quota
 calculation.  Fractional surplus allocation and the Hare quota are available as
 options.")
     (license license:lgpl3)))
+
+(define-public r-stutetest
+  (package
+    (name "r-stutetest")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StuteTest" version))
+       (sha256
+        (base32 "1gkhs3f3pa96a80pipndlxbrwfn9x1l6xzkqmbd6781d90nnk939"))))
+    (properties `((upstream-name . "StuteTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rnames r-rcpparmadillo r-rcpp r-plm r-dplyr))
+    (native-inputs (list r-r-rsp))
+    (home-page "https://cran.r-project.org/package=StuteTest")
+    (synopsis "Stute (1997) Linearity Test")
+    (description
+     "Non-parametric test, originally proposed by Stute (1997)
+<https://www.jstor.org/stable/2242560>, that the expectation of a dependent
+variable Y given an independent variable D is linear in D.")
+    (license license:expat)))
 
 (define-public r-studystrap
   (package
@@ -13999,13 +14046,13 @@ This version is available in French and English.  See
 (define-public r-stacks
   (package
     (name "r-stacks")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacks" version))
        (sha256
-        (base32 "1i28m6jxg83h3as74ax39frdwbzwnsq20vb18shswc62azrimw9q"))))
+        (base32 "1bhfdnyf4w5r5bmfnrcwwy9h6qdimklbcr0b50vwmkj4jcyin48a"))))
     (properties `((upstream-name . "stacks")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
@@ -15783,6 +15830,39 @@ specific evaluation metric or by drawing repeatedly from a Bernoulli
 distribution.  The SSDM package also provides a user-friendly interface.")
     (license (list license:gpl3+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-ssdgsa
+  (package
+    (name "r-ssdgsa")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssdGSA" version))
+       (sha256
+        (base32 "1ga0crvhxbjsjdr0algkm9yjqla9gnk4kqryzq8x2wcx6x8w51z1"))))
+    (properties `((upstream-name . "ssdGSA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-purrr
+                             r-org-hs-eg-db
+                             r-gsva
+                             r-dplyr
+                             r-clusterprofiler))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ssdGSA")
+    (synopsis "Single Sample Directional Gene Set Analysis")
+    (description
+     "This package provides a method that inherits the standard gene set variation
+analysis (GSVA) method and also provides the option to use summary statistics
+from any analysis (disease vs healthy, lesional side vs nonlesional side, etc..)
+input to define the direction of gene sets used for directional gene set score
+calculation for a given disease.  Hanzelmann, S., Castelo, R., and Guinney, J.
+(2013) <doi:10.1186/1471-2105-14-7>.")
+    (license license:gpl2)))
 
 (define-public r-ssdforr
   (package
@@ -46631,6 +46711,46 @@ penalty implemented here, see, Ugba (2021) <doi:10.21105/joss.03705> and Ugba et
 al. (2021) <doi:10.3390/stats4030037>.")
     (license license:gpl2)))
 
+(define-public r-serocalculator
+  (package
+    (name "r-serocalculator")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "serocalculator" version))
+       (sha256
+        (base32 "1cxwii35gp9dybjp2989wbmsrv9f3s1qxrrsl4s57lj3q1by2kpk"))))
+    (properties `((upstream-name . "serocalculator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rngtools
+                             r-rlang
+                             r-rcpp
+                             r-mixtools
+                             r-magrittr
+                             r-lifecycle
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli))
+    (home-page "https://github.com/UCD-SERG/serocalculator")
+    (synopsis "Estimating Infection Rates from Serological Data")
+    (description
+     "Translates antibody levels measured in cross-sectional population samples into
+estimates of the frequency with which seroconversions (infections) occur in the
+sampled populations.  Replaces the previous seroincidence package.  Methods
+originally published in Simonsen et al. (2009) <doi:10.1002/sim.3592> and Teunis
+et al. (2012) <doi:10.1002/sim.5322>, and further developed in subsequent
+publications by de Graaf et al. (2014) <doi:10.1016/j.epidem.2014.08.002>,
+Teunis et al. (2016) <doi:10.1016/j.epidem.2016.04.001>, and Teunis et al.
+(2020) <doi:10.1002/sim.8578>.")
+    (license license:gpl3)))
+
 (define-public r-serieslcb
   (package
     (name "r-serieslcb")
@@ -48321,13 +48441,13 @@ for more informations.")
 (define-public r-sensemakr
   (package
     (name "r-sensemakr")
-    (version "0.1.4")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensemakr" version))
        (sha256
-        (base32 "1bwc4m9fz250iyq5rl63ncgnb5f9490aas8gp51r7yljagq584va"))))
+        (base32 "1r4vmprwq91bda9klmw6aaqg1fklqs9da094ggf6qx7lh4kvj9xz"))))
     (properties `((upstream-name . "sensemakr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -49234,13 +49354,13 @@ with as few dependencies as possible.")
 (define-public r-semgraph
   (package
     (name "r-semgraph")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEMgraph" version))
        (sha256
-        (base32 "1ch82mqhmjyk7lz8hxzl17w342bcviyhsja50gm0j99bh6a8gwz7"))))
+        (base32 "08lka7zv3w8m4l855whcjwijqyhv7x45m6bcqaivbw5clxhidmgw"))))
     (properties `((upstream-name . "SEMgraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgraphviz

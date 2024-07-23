@@ -6697,13 +6697,13 @@ output) and Shiny file editing.")
 (define-public r-mtarm
   (package
     (name "r-mtarm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mtarm" version))
        (sha256
-        (base32 "1zmqpaw7yirs62xg20vfp6m481089651z5qhr52lqsqy537z2vby"))))
+        (base32 "19830spz9r1bj520vkafiq3inb45ydzwx6fjaa2vadr6mxr7b2l0"))))
     (properties `((upstream-name . "mtarm")))
     (build-system r-build-system)
     (propagated-inputs (list r-gigrvg r-formula r-coda))
@@ -15152,6 +15152,39 @@ multi-objective optimization of cluster validation indices.  For details see
 Kraus et al. (2011) <doi:10.1007/s00180-011-0244-6>.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
+(define-public r-moc-gapbk
+  (package
+    (name "r-moc-gapbk")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moc.gapbk" version))
+       (sha256
+        (base32 "1d29aiks5qpn983b5yamsw8h0gh9hh4lgjdx0sgi6aj79sg0lfa8"))))
+    (properties `((upstream-name . "moc.gapbk")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nsga2r
+                             r-foreach
+                             r-dosnow
+                             r-doparallel
+                             r-dompi
+                             r-amap))
+    (home-page "https://cran.r-project.org/package=moc.gapbk")
+    (synopsis
+     "Multi-Objective Clustering Algorithm Guided by a-Priori Biological Knowledge")
+    (description
+     "This package implements the Multi-Objective Clustering Algorithm Guided by
+a-Priori Biological Knowledge (MOC-@code{GaPBK}) which was proposed by
+Parraga-Alava, J. et.  al. (2018) <doi:10.1186/s13040-018-0178-4>.  It was
+designed for clustering genes based on co-expression, biological coherence,
+compactness, and separation criteria.  However, its flexible design allows it to
+be applied to cluster data of various types and domains.  The algorithm
+optimizes object relationships based on two objective functions using cluster
+quality indexes, incorporating intensification and diversification strategies to
+enhance the search process.")
+    (license license:gpl2)))
+
 (define-public r-mobsim
   (package
     (name "r-mobsim")
@@ -17678,13 +17711,13 @@ with more upload options, see the @code{OpenML} package.")
 (define-public r-mlr3fda
   (package
     (name "r-mlr3fda")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3fda" version))
        (sha256
-        (base32 "1r1dqhh9s09vz3fsxwss7af7wb4nmm7lynh9wl67mjs52yf5d4k2"))))
+        (base32 "0y086z58zbazcxcdqk82rvfs1yifah6y4ps3vd679n09z08wg3mm"))))
     (properties `((upstream-name . "mlr3fda")))
     (build-system r-build-system)
     (propagated-inputs (list r-tf
@@ -18787,6 +18820,45 @@ corresponding MLEs.  Further details and explanations of MLEces can be found in.
     (description
      "Calculates the expected/observed Fisher information and the bias-corrected
 maximum likelihood estimate(s) via Cox-Snell Methodology.")
+    (license license:gpl2+)))
+
+(define-public r-mle
+  (package
+    (name "r-mle")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MLE" version))
+       (sha256
+        (base32 "0z5ny5lcng03rrpd6mjynxgvi3rx6pc6cm6kpv2dn89lzysv3r4r"))))
+    (properties `((upstream-name . "MLE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-skellam
+                             r-rfast2
+                             r-rfast
+                             r-mn
+                             r-gp
+                             r-geppe
+                             r-directional
+                             r-compositional
+                             r-bivpois
+                             r-bgfd))
+    (home-page "https://cran.r-project.org/package=MLE")
+    (synopsis
+     "Maximum Likelihood Estimation of Various Univariate and Multivariate Distributions")
+    (description
+     "Maximum likelihood estimation of various univariate and multivariate
+distributions.  The list includes univariate continuous and discrete
+distributions, distributions that lie on the real line, the positive line,
+interval restricted, circular distributions.  Further, multivariate continuous
+and discrete distributions, distributions for compositional and directional
+data, etc.  Some references include Johnson N. L., Kotz S. and Balakrishnan N.
+(1994). \"Continuous Univariate Distributions, Volume 1\"
+<ISBN:978-0-471-58495-7>, Johnson, Norman L. Kemp, Adrianne W. Kotz, Samuel
+(2005). \"Univariate Discrete Distributions\". <ISBN:978-0-471-71580-1> and
+Mardia, K. V. and Jupp, P. E. (2000). \"Directional Statistics\".
+<ISBN:978-0-471-95333-3>.")
     (license license:gpl2+)))
 
 (define-public r-mlds
@@ -22937,6 +23009,33 @@ minimax approximation.")
 family, but computationally a lot more tractible.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-minimapr
+  (package
+    (name "r-minimapr")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minimapR" version))
+       (sha256
+        (base32 "1cf0mp0mc3zalsi4fa2khz139hky0vjzj0cfay70prh5cll7dm3b"))))
+    (properties `((upstream-name . "minimapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsamtools r-pafr r-git2r))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jake-bioinfo/minimapR")
+    (synopsis "Wrapper for 'minimap2'")
+    (description
+     "Wrapper for Minimap2'.  Minimap2 is a very valuable long read aligner for the
+Pacbio and Oxford Nanopore Technologies sequencing platforms. @code{minimapR} is
+an R wrapper for minimap2 which was developed by Heng Li <me@@liheng.org>.
+*SPECIAL NOTES 1.  Examples can only be run from @code{GitHub} installation.  2.
+ If using a Windows operating system, installation of the MSYS2 Linux emulator
+is required.  3.  If using a Mac operating system, installation of Homebrew is
+required.  Li, Heng (2018) <doi:10.1093/bioinformatics/bty191> \"Minimap2:
+pairwise alignment for nucleotide sequences\".")
+    (license license:expat)))
+
 (define-public r-minimap
   (package
     (name "r-minimap")
@@ -23486,6 +23585,26 @@ particularly in antimicrobial resistance(AMR) studies.  It simplifies complex
 data manipulation tasks, allowing researchers to focus on their primary
 inquiries without being bogged down by wrangling complexities.")
     (license license:gpl3+)))
+
+(define-public r-mimdo
+  (package
+    (name "r-mimdo")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mimdo" version))
+       (sha256
+        (base32 "1p0qz2z421pw2yaglg745ccs6yyn5ww4rzspsfikdpr1js7lx4a4"))))
+    (properties `((upstream-name . "mimdo")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=mimdo")
+    (synopsis "Multivariate Imputation by Mahalanobis Distance Optimization")
+    (description
+     "Imputes missing values of an incomplete data matrix by minimizing the
+Mahalanobis distance of each sample from the overall mean [Labita, GJ.D. and
+Tubo, B.F. (2024) <doi:10.24412/1932-2321-2024-278-115-123>].")
+    (license license:gpl3)))
 
 (define-public r-milr
   (package
@@ -29786,13 +29905,13 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
 (define-public r-metahd
   (package
     (name "r-metahd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaHD" version))
        (sha256
-        (base32 "0b28qi0a7142lqj1gwi4ih61im5983a6wm7p2w63kdvc8apxaa76"))))
+        (base32 "1fciy4zarl9gx1zdvrsgzq8y7jl59z8ljl2s2faqigsyd3nw3mbk"))))
     (properties `((upstream-name . "MetaHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -41391,13 +41510,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0i0k04hy3b9mf8sp0wqzqdcaas9lj0xmaiwc0c12j6vfzg7agp50"))))
+        (base32 "0bqd46n30rsy87nc5ylwp7k0wzfmddkq3in38420c4rds3gf1m51"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -41409,7 +41528,8 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
                              r-ggplot2
                              r-dplyr))
     (home-page "https://stocnet.github.io/manynet/")
-    (synopsis "Many Ways to Make, Modify, Mark, and Map Myriad Networks")
+    (synopsis
+     "Many Ways to Make, Modify, Map, Mark, and Measure Myriad Networks")
     (description
      "Many tools for making, modifying, mapping, marking, measuring, and motifs and
 memberships of many different types of networks.  All functions operate with

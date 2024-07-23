@@ -969,13 +969,13 @@ continuous treatments.  Journal of Causal Inference, 3(1), 25-40.
 (define-public r-twang
   (package
     (name "r-twang")
-    (version "2.6")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "twang" version))
        (sha256
-        (base32 "1nvzcrgaspl987ny49rxf3lm3mqiw286kipzrmszdsqwy4m3ha0b"))))
+        (base32 "0yci9qp9pvp4a8py2rb18kmxy8k2mblnbdahdkcjh1lviz6pvf0b"))))
     (properties `((upstream-name . "twang")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -4855,6 +4855,38 @@ flip-style experiments, where subjects report a random outcome and are paid for
 reporting a \"good\" outcome.")
     (license license:expat)))
 
+(define-public r-trud
+  (package
+    (name "r-trud")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trud" version))
+       (sha256
+        (base32 "1mknagpm7m6m48hbzwc9r6sx657h792wmv6qpwb0x88rgla3wrn9"))))
+    (properties `((upstream-name . "trud")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (home-page "https://rmgpanw.github.io/trud/")
+    (synopsis "Query the 'NHS TRUD API'")
+    (description
+     "This package provides a convenient R interface to the National Health Service
+(NHS) Technology Reference Update Distribution (TRUD) API'.  Retrieve available
+releases for items that you are subscribed to and download these with ease.  For
+more information on the API, see
+<https://isd.digital.nhs.uk/trud/users/guest/filters/0/api>.")
+    (license license:expat)))
+
 (define-public r-trtf
   (package
     (name "r-trtf")
@@ -7481,6 +7513,27 @@ serves as a wrapper, facilitating the retrieval of daily treasury rates across
 various categories, including par yield curves, treasury bills, long-term rates,
 and real yield curves.")
     (license license:expat)))
+
+(define-public r-trdist
+  (package
+    (name "r-trdist")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "trdist" version))
+       (sha256
+        (base32 "11j0giccn5vyr97c44nvgy678qckajmn0lq9li4pf2swf18v3ji7"))))
+    (properties `((upstream-name . "trdist")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=trdist")
+    (synopsis "Univariate Proability Distributions with Truncation")
+    (description
+     "Truncation of univariate probability distributions.  The probability
+distribution can come from other packages so long as the function names follow
+the standard d, p, q, r naming format.  Also other univariate probability
+distributions are included.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-trd
   (package
@@ -13221,13 +13274,13 @@ legends, facets, and various other enhancements.")
 (define-public r-tinycodet
   (package
     (name "r-tinycodet")
-    (version "0.5.0")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinycodet" version))
        (sha256
-        (base32 "1zw9f0586mf78hs115l6bib6c3r1d5n8c9mgyxhqc52vdxv0cqhn"))))
+        (base32 "0pc0dlp5s96g37bm1d8fy64rmg8ji4ysr98wd6yddx4j3vghlm9d"))))
     (properties `((upstream-name . "tinycodet")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-rcpp))
@@ -20226,6 +20279,27 @@ Linear Algebra.  The output of the developed functions can be used in Sweave
 files.")
     (license license:gpl2+)))
 
+(define-public r-tetrys
+  (package
+    (name "r-tetrys")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tetRys" version))
+       (sha256
+        (base32 "1hr3p91l8fj6lm2vky3ipjrqwvrnnx5xgyff6z85ijm7wnh89cj0"))))
+    (properties `((upstream-name . "tetRys")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-audio))
+    (home-page "https://cran.r-project.org/package=tetRys")
+    (synopsis "Game of 'tetRys'")
+    (description
+     "This package provides a game inspired by Tetris'.  Opens a plot window device
+and starts a game of @code{tetRys} in it.  Steer the tetrominos with the arrow
+keys, press Pause to pause and Esc to end the game.")
+    (license license:gpl3)))
+
 (define-public r-tetrascatt
   (package
     (name "r-tetrascatt")
@@ -21868,6 +21942,46 @@ missing value prediction and model visualization.  The method performs
 factorization for three-way tensor datasets and the inference is implemented
 with Gibbs sampling.")
     (license license:expat)))
+
+(define-public r-tenm
+  (package
+    (name "r-tenm")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tenm" version))
+       (sha256
+        (base32 "1dx60ilpwzsn5gkm50pyxq1hkpk11i8gz9yj823ylqc5qbbrsq1q"))))
+    (properties `((upstream-name . "tenm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rgl
+                             r-purrr
+                             r-mass
+                             r-lubridate
+                             r-future
+                             r-furrr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://luismurao.github.io/tenm/")
+    (synopsis "Temporal Ecological Niche Models")
+    (description
+     "This package implements methods and functions to calibrate time-specific niche
+models (multi-temporal calibration), letting users execute a strict calibration
+and selection process of niche models based on ellipsoids, as well as functions
+to project the potential distribution in the present and in global change
+scenarios.The tenm package has functions to recover information that may be lost
+or overlooked while applying a data curation protocol.  This curation involves
+preserving occurrences that may appear spatially redundant (occurring in the
+same pixel) but originate from different time periods.  A novel aspect of this
+package is that it might reconstruct the fundamental niche more accurately than
+mono-calibrated approaches.  The theoretical background of the package can be
+found in Peterson et al. (2011)<doi:10.5860/CHOICE.49-6266>.")
+    (license license:gpl3)))
 
 (define-public r-tenispolar
   (package

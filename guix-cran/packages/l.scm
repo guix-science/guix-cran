@@ -10033,38 +10033,6 @@ of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
 observations and create a report of the top sites to visit to see new species.")
     (license license:bsd-2)))
 
-(define-public r-lifemapr
-  (package
-    (name "r-lifemapr")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LifemapR" version))
-       (sha256
-        (base32 "1zbdv950gxvvq033qs7p9644hybgy8ll4x8a08diq2829fxrvcc8"))))
-    (properties `((upstream-name . "LifemapR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-shiny
-                             r-rlang
-                             r-rcurl
-                             r-leaflet-minicharts
-                             r-leaflet
-                             r-jsonlite
-                             r-htmltools
-                             r-fastmatch
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://lifemap-tol.github.io/LifemapR/")
-    (synopsis "Data Visualisation on 'Lifemap' Tree")
-    (description
-     "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
-<http://lifemap.univ-lyon1.fr/>'.  It takes as input a dataframe with at least a
-\"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
-layers with different visualisation tools.")
-    (license license:expat)))
-
 (define-public r-lifelogr
   (package
     (name "r-lifelogr")
@@ -15914,13 +15882,13 @@ are raster dataset exportable to any common GIS format.")
 (define-public r-landscapemetrics
   (package
     (name "r-landscapemetrics")
-    (version "2.1.3")
+    (version "2.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landscapemetrics" version))
        (sha256
-        (base32 "06q5ysgvr20k60rz3ppav7hppw882kpn2qyd8k7smq1j614nk91j"))))
+        (base32 "0yq04y8gchwssmaj0xg02jxixx9q7ffdfl91l31q6hkibh4lz8pl"))))
     (properties `((upstream-name . "landscapemetrics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

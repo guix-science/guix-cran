@@ -15079,13 +15079,13 @@ effective information, effectiveness and causal emergence.")
 (define-public r-eimpute
   (package
     (name "r-eimpute")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eimpute" version))
        (sha256
-        (base32 "02zsz7hrcfypvpkvjyzfmwxpbr03chj2qcqmxkn3dr3zffwp93fq"))))
+        (base32 "1yx2ck74g3229n159z7p453dfdsy6hrjfkgsi4wcnxg3hi214wff"))))
     (properties `((upstream-name . "eimpute")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -21250,13 +21250,13 @@ flexsurvcure::flexsurvcure()', and survival::survreg()'.")
 (define-public r-easystats
   (package
     (name "r-easystats")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easystats" version))
        (sha256
-        (base32 "0rfqzi5s0xxz30nii2ahr4hrymmkcx4spla7sdklkidvvrsrmsvc"))))
+        (base32 "1mxkqm977wgnqd54paifyy5drl7zyb39lm2icps6vls4702zjzis"))))
     (properties `((upstream-name . "easystats")))
     (build-system r-build-system)
     (propagated-inputs (list r-see

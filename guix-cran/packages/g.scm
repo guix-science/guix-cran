@@ -2421,13 +2421,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "1c8hsan8jsqz303pwd8bm4xy98qwfdj1nf96dybq0c6yg101fhvf"))))
+        (base32 "1mlx95rh1yiimn29wgy6i41d44sbjfqv87qdjb1naa942cbhmr17"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))
@@ -18888,13 +18888,13 @@ invert_geom_defaults().")
 (define-public r-ggdag
   (package
     (name "r-ggdag")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggdag" version))
        (sha256
-        (base32 "0q5iwafrhq77wxdc9dj9jl5a0rsj3rz3bjz8qb2yjd5j1qlj2mlx"))))
+        (base32 "074n9w1vgzmx677nppjfp4k3wf7rp0yfh9fbyhb3man4gl2w17df"))))
     (properties `((upstream-name . "ggdag")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
@@ -21292,6 +21292,31 @@ available on www.geotop.org.  Technical details about the model are available in
 Endrizzi et al (2014)
 <https://gmd.copernicus.org/articles/7/2831/2014/gmd-7-2831-2014.html>.")
     (license license:gpl3+)))
+
+(define-public r-geotoolsr
+  (package
+    (name "r-geotoolsr")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geotoolsR" version))
+       (sha256
+        (base32 "0chiyvc3f3y45v4ja1jhj4pag54ir18d42qnfd3q8dnyisk8cags"))))
+    (properties `((upstream-name . "geotoolsR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-ggplot2 r-geor r-dplyr))
+    (home-page "https://cran.r-project.org/package=geotoolsR")
+    (synopsis "Tools to Improve the Use of Geostatistic")
+    (description
+     "The basic idea of this package is provides some tools to help the researcher to
+work with geostatistics.  Initially, we present a collection of functions that
+allow the researchers to deal with spatial data using bootstrap procedure.
+There are five methods available and two ways to display them: bootstrap
+confidence interval - provides a two-sided bootstrap confidence interval;
+bootstrap plot - a graphic with the original variogram and each of the B
+bootstrap variograms.")
+    (license license:gpl2+)))
 
 (define-public r-geotools
   (package
@@ -24891,20 +24916,22 @@ design for GWAS studies.")
 (define-public r-genenmf
   (package
     (name "r-genenmf")
-    (version "0.4.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeneNMF" version))
        (sha256
-        (base32 "0bfqxy7zxd1vdpxnn6sj8xzpmmsn2rcvnac0prqxbd0byj1shfra"))))
+        (base32 "1szmkfijy84dl0zbr08cw7likqmziwm85dhvhzqvhybd17g9ahlj"))))
     (properties `((upstream-name . "GeneNMF")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
                              r-seurat
                              r-rcppml
                              r-pheatmap
-                             r-nmf
+                             r-matrix
+                             r-lsa
+                             r-irlba
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/carmonalab/GeneNMF")
@@ -28916,13 +28943,13 @@ graphics processing units is available.  Reference: Goodfellow et al. (2014)
 (define-public r-gandatamodel
   (package
     (name "r-gandatamodel")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganDataModel" version))
        (sha256
-        (base32 "1fff76zh6bn94y57qnxbya3xrshp99pxk5ks2p9i7i4p1f8xvhvd"))))
+        (base32 "0zp6nx43qza572nl7wibxamw5ca56b3955z6zfjxq77kwlc8jcl7"))))
     (properties `((upstream-name . "ganDataModel")))
     (build-system r-build-system)
     (inputs (list tensorflow))

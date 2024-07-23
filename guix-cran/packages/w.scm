@@ -772,13 +772,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.15.0.3")
+    (version "1.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "0680lxkwyxyy0ks3cyp41gxkv7vjf235mwml5ixk07rkin195w9c"))))
+        (base32 "1ii3dl2dpxrshhh8dfvn75s7rn99ylvldb46cc3pdadjb8czzgmn"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -3661,13 +3661,13 @@ collection of functions and datas used in the german @code{WikiBook} \"GNU R\"."
 (define-public r-wiesbaden
   (package
     (name "r-wiesbaden")
-    (version "1.2.9")
+    (version "1.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wiesbaden" version))
        (sha256
-        (base32 "0sf61xrkzlk1pbjv1ha019nav20a5w1svx5jnsyck5050xxs2y06"))))
+        (base32 "0kmapfksrxkr3dry8didznhv3q0827183532s78bai9l2hm8is1p"))))
     (properties `((upstream-name . "wiesbaden")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -5357,13 +5357,13 @@ Algorithms to Aid Software System Users: optimx for R\"
 (define-public r-wehoop
   (package
     (name "r-wehoop")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wehoop" version))
        (sha256
-        (base32 "031z2lr1sjnmb8awcd3r8ygj20c0p57sjhim9p7ifv5vkv0044g9"))))
+        (base32 "0lg5k4w7k9pcp8dv4ayzlnd3xc39z5p6wabqnnhicy0byhjny838"))))
     (properties `((upstream-name . "wehoop")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -5524,13 +5524,13 @@ Stier et al., 2022 <doi:10.1017/S0003055421001222>).")
 (define-public r-websocket
   (package
     (name "r-websocket")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "websocket" version))
        (sha256
-        (base32 "1ks9cyj39jnb0rkx2ii3ckmpl373m5f8sz0i4q3gk7kkv3js07r8"))))
+        (base32 "040kawypkkim5scjp86immcqn42jj8s591hvypx1anyf7d8nls4w"))))
     (properties `((upstream-name . "websocket")))
     (build-system r-build-system)
     (inputs (list zlib openssl))

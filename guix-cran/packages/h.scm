@@ -1650,13 +1650,13 @@ one-liners to print data to a new document.")
 (define-public r-hutilscpp
   (package
     (name "r-hutilscpp")
-    (version "0.10.4")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hutilscpp" version))
        (sha256
-        (base32 "0gjj2808dc4c1s28d94sc1iwb88n61lsplqvhlhn2yab3qa0ljf9"))))
+        (base32 "1f4ywd8ibg2349fvp7ypiqyslb64gdqi64fwhnag7d6qhrhm563b"))))
     (properties `((upstream-name . "hutilscpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-hutils r-data-table))
@@ -9745,13 +9745,13 @@ summary and its standard errors, as described in Liang and Heagerty (2016)
 (define-public r-hdrfa
   (package
     (name "r-hdrfa")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDRFA" version))
        (sha256
-        (base32 "1dwys28vj5icv33x9zy4r62dslvwr1ajv29gs9lkalrc2wjh2qx2"))))
+        (base32 "00rggyq5sz73jnv4s8zfjw6hx08fw0qaadw0rng695ri17m0czxg"))))
     (properties `((upstream-name . "HDRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-pracma))
