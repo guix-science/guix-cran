@@ -34391,13 +34391,13 @@ package.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "1h8kk2zjp5c86a2r64ad88zs1w80gc5x8dlr4a16h9w6r98zjxpd"))))
+        (base32 "0yjwk4lv05h1sz8847krh2r22rq572xc49cqhxh8b20w9wzrv4bx"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
@@ -38018,17 +38018,18 @@ by the gut bacteria.")
 (define-public r-causalweight
   (package
     (name "r-causalweight")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "causalweight" version))
        (sha256
-        (base32 "1i01909zfvrxyjpl1zl58s2y3b27xd1rbi3yhmzqlw9q0yxlbnn8"))))
+        (base32 "0412ald8wq2fnam4bb2dc1yrx21vk2c6vbn76lf46c5apb9sw3ij"))))
     (properties `((upstream-name . "causalweight")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
                              r-superlearner
+                             r-sandwich
                              r-ranger
                              r-np
                              r-mvtnorm

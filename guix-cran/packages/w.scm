@@ -1668,13 +1668,13 @@ synonyms, as well as fetching taxonomic children and taxonomic classification.")
 (define-public r-wormtensor
   (package
     (name "r-wormtensor")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WormTensor" version))
        (sha256
-        (base32 "0l55dbcf65cpw03b26va4ssvk3wc0i6hnchb9jyw44369y5xfniy"))))
+        (base32 "1xnjp6m3h0q6phmn2c2wkbjzyl8lpx07jsryz0i8rxr6ny591ja2"))))
     (properties `((upstream-name . "WormTensor")))
     (build-system r-build-system)
     (propagated-inputs (list r-uwot

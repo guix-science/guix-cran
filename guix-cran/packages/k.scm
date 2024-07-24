@@ -1842,18 +1842,18 @@ and presentation.")
 (define-public r-knitrprogressbar
   (package
     (name "r-knitrprogressbar")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "knitrProgressBar" version))
        (sha256
-        (base32 "18v5jrscfrin3mcs63bpj0q1drxk3zkhlbw93sqh0qrq04d4x02v"))))
+        (base32 "09jw75m39vxkwwy05if3z280kww3qzyw5d1jplwy76dxgsf3cmz1"))))
     (properties `((upstream-name . "knitrProgressBar")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-r-oo))
     (native-inputs (list r-knitr))
-    (home-page "https://rmflight.github.io/knitrProgressBar")
+    (home-page "https://rmflight.github.io/knitrProgressBar/")
     (synopsis "Provides Progress Bars in 'knitr'")
     (description
      "This package provides a progress bar similar to dplyr that can write progress

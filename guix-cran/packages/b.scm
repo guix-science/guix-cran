@@ -7240,13 +7240,13 @@ in practical clinical trial analyses.")
 (define-public r-bonsai
   (package
     (name "r-bonsai")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsai" version))
        (sha256
-        (base32 "1hr7ilq9ll4vpqqif3v6yjxi9n0dcm1xxzmp6p5r73p9pdwrhy0q"))))
+        (base32 "01k4b1d0rl6fry1y5594fca7rsp7i55d0wadm7ibydn9jf1hmsiv"))))
     (properties `((upstream-name . "bonsai")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -13044,13 +13044,13 @@ recursive partition methods and clustering.")
 (define-public r-binsreg
   (package
     (name "r-binsreg")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "binsreg" version))
        (sha256
-        (base32 "1lsfh45psa85vxr8ll2297syjszfasgay946n7pzfw1nizfc29b9"))))
+        (base32 "04afp5sixn51kf519sgrra50knmkz1a1gsz28xbdjph9vx5bv6jl"))))
     (properties `((upstream-name . "binsreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-quantreg r-matrixstats r-ggplot2))
@@ -13058,22 +13058,24 @@ recursive partition methods and clustering.")
     (synopsis "Binscatter Estimation and Inference")
     (description
      "This package provides tools for statistical analysis using the binscatter
-methods developed by Cattaneo, Crump, Farrell and Feng (2023a)
-<@code{arXiv:1902.09608>}, Cattaneo, Crump, Farrell and Feng (2023b)
-<https://nppackages.github.io/references/Cattaneo-Crump-Farrell-Feng_2023_@code{NonlinearBinscatter.pdf>}
-and Cattaneo, Crump, Farrell and Feng (2023c) <@code{arXiv:1902.09615>}.
-Binscatter provides a flexible way of describing the relationship between two
-variables based on partitioning/binning of the independent variable of interest.
- binsreg(), binsqreg() and binsglm() implement binscatter least squares
-regression, quantile regression and generalized linear regression respectively,
-with particular focus on constructing binned scatter plots.  They also implement
-robust (pointwise and uniform) inference of regression functions and derivatives
-thereof.  binstest() implements hypothesis testing procedures for parametric
-functional forms of and nonparametric shape restrictions on the regression
-function.  binspwc() implements hypothesis testing procedures for pairwise group
-comparison of binscatter estimators.  binsregselect() implements data-driven
-procedures for selecting the number of bins for binscatter estimation.  All the
-commands allow for covariate adjustment, smoothness restrictions and clustering.")
+methods developed by Cattaneo, Crump, Farrell and Feng (2024a)
+<doi:10.48550/@code{arXiv.1902.09608>}, Cattaneo, Crump, Farrell and Feng
+(2024b)
+<https://nppackages.github.io/references/Cattaneo-Crump-Farrell-Feng_2024_@code{NonlinearBinscatter.pdf>}
+and Cattaneo, Crump, Farrell and Feng (2024c)
+<doi:10.48550/@code{arXiv.1902.09615>}.  Binscatter provides a flexible way of
+describing the relationship between two variables based on partitioning/binning
+of the independent variable of interest.  binsreg(), binsqreg() and binsglm()
+implement binscatter least squares regression, quantile regression and
+generalized linear regression respectively, with particular focus on
+constructing binned scatter plots.  They also implement robust (pointwise and
+uniform) inference of regression functions and derivatives thereof.  binstest()
+implements hypothesis testing procedures for parametric functional forms of and
+nonparametric shape restrictions on the regression function.  binspwc()
+implements hypothesis testing procedures for pairwise group comparison of
+binscatter estimators.  binsregselect() implements data-driven procedures for
+selecting the number of bins for binscatter estimation.  All the commands allow
+for covariate adjustment, smoothness restrictions and clustering.")
     (license license:gpl2)))
 
 (define-public r-binspp

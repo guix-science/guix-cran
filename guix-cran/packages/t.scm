@@ -16281,17 +16281,16 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "0kb30nggk0b8a8yaka0ccpfx21j382sdh0p2lbqvvgkr07bi1nw5"))))
+        (base32 "01vk9h6p4kk9qh07c8mhwk6267j6p05lblc74zmwxqcfblf0zymn"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
-                             r-tibble
                              r-rlang
                              r-purrr
                              r-lubridate

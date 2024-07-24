@@ -1576,30 +1576,24 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "1.7.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "02jbsdv8wwncnrmqmf12pz3ld759s8ll5dl5rrxv8ad6qgqjbhnx"))))
+        (base32 "0xg3lvnl822vwrd8rr31vmv1lp9yg2i2p9l8fa77l07nkvalvg32"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyr
-                             r-tibble
-                             r-stringr
                              r-rlang
-                             r-purrr
                              r-lifecycle
-                             r-knitr
                              r-gt
                              r-glue
-                             r-forcats
                              r-dplyr
                              r-cli
-                             r-broom-helpers
-                             r-broom))
+                             r-cards))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ddsjoberg/gtsummary")
     (synopsis "Presentation-Ready Data Summary and Analytic Result Tables")
@@ -2421,13 +2415,13 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "1mlx95rh1yiimn29wgy6i41d44sbjfqv87qdjb1naa942cbhmr17"))))
+        (base32 "1q4jpv38x4z7bdqy49iaxgsfvy0iiicfvc4w8mpj0qjm9cj81gym"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
     (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))

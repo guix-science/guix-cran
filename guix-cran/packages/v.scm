@@ -5898,13 +5898,13 @@ was published by Burgin and Ritschard (2017) <doi:10.18637/jss.v080.i06>.")
 (define-public r-vcr
   (package
     (name "r-vcr")
-    (version "1.2.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcr" version))
        (sha256
-        (base32 "0vqq4lwgk9ss3x2vhkmgcymdwfppxjbaycm7pwik70sz9pkdk2d4"))))
+        (base32 "0jp6p9k6y2rshxyq5hb3gv3idk2l426cizy1j2aqcz3s503axsxf"))))
     (properties `((upstream-name . "vcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -5912,12 +5912,12 @@ was published by Burgin and Ritschard (2017) <doi:10.18637/jss.v080.i06>.")
                              r-urltools
                              r-rprojroot
                              r-r6
+                             r-httr2
                              r-httr
                              r-crul
                              r-base64enc))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://github.com/ropensci/vcr/https://books.ropensci.org/http-testing/")
+    (home-page "https://github.com/ropensci/vcr/")
     (synopsis "Record 'HTTP' Calls to Disk")
     (description
      "Record test suite HTTP requests and replays them during future runs.  A port of

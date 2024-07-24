@@ -59,13 +59,13 @@
 (define-public r-syt
   (package
     (name "r-syt")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "syt" version))
        (sha256
-        (base32 "1iw3nx0xsjrmmxmvr88nkawix7imdwv2agzhg7hqy6iaa263k6mi"))))
+        (base32 "1xpvvknyv5c0kvvipmyzrzrvqj51kkp86yl5gkgxfzs570zafwzp"))))
     (properties `((upstream-name . "syt")))
     (build-system r-build-system)
     (propagated-inputs (list r-partitions r-matrix))
@@ -76,7 +76,8 @@
 performs enumeration, counting, random generation, the Robinson-Schensted
 correspondence, and conversion to and from paths on the Young lattice.  Also
 performs enumeration and counting of semistandard Young tableaux, enumeration of
-skew semistandard Young tableaux, and computation of Kostka numbers.")
+skew semistandard Young tableaux, enumeration of Gelfand-Tsetlin patterns, and
+computation of Kostka numbers.")
     (license license:gpl3)))
 
 (define-public r-systemicrisk
@@ -36803,13 +36804,13 @@ described in Gandrud (2015) <doi:10.18637/jss.v065.i03>.")
 (define-public r-simodels
   (package
     (name "r-simodels")
-    (version "0.0.5")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simodels" version))
        (sha256
-        (base32 "149490vgw0549x5zym28kyxgyjhjl2wx7rcak9gabkznwjjrhqk5"))))
+        (base32 "0fhrlmyh0hnv518131wabadidim5k6f2gjsq5k4jc9zwmm5qbgfz"))))
     (properties `((upstream-name . "simodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-od r-geodist r-dplyr))

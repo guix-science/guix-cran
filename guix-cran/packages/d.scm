@@ -2150,18 +2150,19 @@ can review working examples of coding syntax and calculations.")
 (define-public r-dtwclust
   (package
     (name "r-dtwclust")
-    (version "5.5.12")
+    (version "6.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtwclust" version))
        (sha256
-        (base32 "19dmy9jalwp2vcfkzm58g5wf4nmp3290rrsa51prw8xrjj0hk1g3"))))
+        (base32 "0by01x4qpf1pin5l61wmm600bmsnlnns9knwb0qmjlj72pmwfkqh"))))
     (properties `((upstream-name . "dtwclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
                              r-shiny
                              r-rspectra
+                             r-rlang
                              r-reshape2
                              r-rcppthread
                              r-rcppparallel
@@ -11802,13 +11803,13 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
 (define-public r-discos
   (package
     (name "r-discos")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiSCos" version))
        (sha256
-        (base32 "0n74v8r14ny1njbvlbbm4i275x7x923aw2v2wqag6d4q38w5237g"))))
+        (base32 "0xwbiaqmlp7bpnkagadc87ay7shp9gls7d6vhi7ksws9r03134sm"))))
     (properties `((upstream-name . "DiSCos")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -11820,7 +11821,7 @@ out in Chai et al. (2019) <doi:10.1187/cbe.18-11-0222>.")
                              r-data-table
                              r-cvxr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DiSCos")
+    (home-page "http://www.davidvandijcke.com/DiSCos/")
     (synopsis "Distributional Synthetic Controls Estimation")
     (description
      "The method of synthetic controls is a widely-adopted tool for evaluating causal
@@ -14252,13 +14253,13 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.13")
+    (version "1.0.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "0is3hy0f0riik1xniv5yiwf9zpkcadbja8m551rpk4zwpby098cx"))))
+        (base32 "050cjc66ydidqc633kyw5l7s7jlcpjj8nyaqkcwkgcxx349rag5m"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
@@ -14346,13 +14347,13 @@ using the imputation-based approach proposed by Borusyak, Jaravel, and Spiess
 (define-public r-didhad
   (package
     (name "r-didhad")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDHAD" version))
        (sha256
-        (base32 "0h2j59rb9mnjcqvs7dikdd3wh4hycwwcs07nr9f816gqmxgssq8n"))))
+        (base32 "1cmzsa1yn19gw5mc5lyrsnf1ghil7a3mgh2a1ana6rfzb5bpq4fq"))))
     (properties `((upstream-name . "DIDHAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-yatchewtest
@@ -21951,13 +21952,13 @@ the paper (Ma et al (2017) <doi:10.1109/ICDMW.2017.11>).")
 (define-public r-dcurves
   (package
     (name "r-dcurves")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dcurves" version))
        (sha256
-        (base32 "1hlpii7ba19g4gg3cj071hy3mhp80rya079118xmrcxzhn68102c"))))
+        (base32 "01w20d7j9f667spmg28pp6mj5f4sxdx9z6waz2yaijgyif14drak"))))
     (properties `((upstream-name . "dcurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

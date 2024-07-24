@@ -13031,16 +13031,16 @@ tested condition.")
 (define-public r-altdoc
   (package
     (name "r-altdoc")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altdoc" version))
        (sha256
-        (base32 "1d5p61ffnldprlk87mvhx81byv7p5502pahlval2g3y8g3byya4w"))))
+        (base32 "0qp2k7mmpklh484ci2p9g4n7iyjy8ibzmh9w4a2h4sabvlm6v3f0"))))
     (properties `((upstream-name . "altdoc")))
     (build-system r-build-system)
-    (propagated-inputs (list r-quarto r-fs r-desc r-cli))
+    (propagated-inputs (list r-quarto r-fs r-evaluate r-desc r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://altdoc.etiennebacher.com")
     (synopsis
@@ -15159,13 +15159,13 @@ Air Quality Index (AQI) are defined at the US Environmental Projection Agency
 (define-public r-airgrteaching
   (package
     (name "r-airgrteaching")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRteaching" version))
        (sha256
-        (base32 "1lhzvhhrylp1c2znrz9b1vni9mqc6kkl7bjc6p3kjwph1vw9ka72"))))
+        (base32 "0dsxj20g63a4y4a865qsqdk8w1w0ybcam6x4f10bmppallkalagz"))))
     (properties `((upstream-name . "airGRteaching")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts

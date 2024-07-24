@@ -28657,13 +28657,13 @@ from a web browser (<https://www.metaumbrella.org/>).")
 (define-public r-metatools
   (package
     (name "r-metatools")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metatools" version))
        (sha256
-        (base32 "0lcpq0k73kcr7fr8i7dyi785mapvyd6slz93r4spd7z8bg71nm25"))))
+        (base32 "09rr7hfzkwk2ddc9cs9x8yvqbizk0bxfflkn9vdlf1b9kvrpknh9"))))
     (properties `((upstream-name . "metatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -28674,7 +28674,7 @@ from a web browser (<https://www.metaumbrella.org/>).")
                              r-metacore
                              r-magrittr
                              r-dplyr))
-    (home-page "https://pharmaverse.github.io/metatools/")
+    (home-page "https://github.com/pharmaverse/metatools")
     (synopsis "Enable the Use of 'metacore' to Help Create and Check Dataset")
     (description
      "Uses the metadata information stored in metacore objects to check and build
@@ -32923,13 +32923,13 @@ including spatial processes such as lateral water transfer and seed dispersal.")
 (define-public r-medfate
   (package
     (name "r-medfate")
-    (version "4.3.1")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfate" version))
        (sha256
-        (base32 "0gs47ms58s86nclz1p1b12xi34b4p3q5py7f5kda4pffpbd9msh0"))))
+        (base32 "19ljklfvzxvf3pxpx88r0im9f8kw261d6drhyj3njiv0ykxy19qq"))))
     (properties `((upstream-name . "medfate")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rcpp r-meteoland r-ggplot2))

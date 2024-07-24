@@ -13429,13 +13429,13 @@ Systems\" (@code{NeurIPS}).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "08vbs7s0d873033sw5nc3x6hmi21yvz0lvg4zcbv2ii40napwjsx"))))
+        (base32 "15bys4amh2hw6sz3bby61lrw6m1nb8jwrnz0m47cmlcz770acsaz"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-httr r-digest))

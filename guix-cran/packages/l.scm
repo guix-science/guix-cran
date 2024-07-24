@@ -15102,13 +15102,13 @@ comparison of datasets, along with fitting of datasets using the LATER model.")
 (define-public r-laterality
   (package
     (name "r-laterality")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Laterality" version))
        (sha256
-        (base32 "1p91xnqmiy232i18masqgly5wcp8zzx8kl8y5v0ra6548np31qmf"))))
+        (base32 "0n6qr6xbz79acjv2r1gic0cknpnm2cig37nzs7sb6x6hna39yscc"))))
     (properties `((upstream-name . "Laterality")))
     (build-system r-build-system)
     (propagated-inputs (list r-ade4))

@@ -1290,13 +1290,13 @@ This package lets you use them.")
 (define-public r-ximple
   (package
     (name "r-ximple")
-    (version "0.11-2")
+    (version "0.11-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "XiMpLe" version))
        (sha256
-        (base32 "0pa06jm9g308pbh8bal7mjaiwbsjbdsxiyvm0f01405j3wkf64m3"))))
+        (base32 "1hpy1yls4hhlbf2hjyfjqrxcrcpbakk4irqzl795rarzm790hgfq"))))
     (properties `((upstream-name . "XiMpLe")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -11977,13 +11977,13 @@ using phylogenetic niche modelling.\".")
 (define-public r-ppgam
   (package
     (name "r-ppgam")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppgam" version))
        (sha256
-        (base32 "0w2jci5k0y8m7rapj8w6xq849y59m7y4fp9n3f5l6q954mbc6bv0"))))
+        (base32 "0k5xcsjk3kb6k702dd5aq1z6m8g6w0kly0z169ymviidicgqphw3"))))
     (properties `((upstream-name . "ppgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-mass r-evgam))
@@ -37461,13 +37461,13 @@ Fisher's product method is included as well.")
 (define-public r-pagfl
   (package
     (name "r-pagfl")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAGFL" version))
        (sha256
-        (base32 "1dh3hdrr5dhs7azvcn1r6lgyy2sqkr0nfzkcf2sh0vm6zxz85ssy"))))
+        (base32 "0as4azrg4hmh5slljjasvq248r0qylvgyqcz1myfxgja9lpzd604"))))
     (properties `((upstream-name . "PAGFL")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcpparmadillo r-rcpp r-lifecycle
