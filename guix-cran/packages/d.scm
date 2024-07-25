@@ -23747,13 +23747,13 @@ computes several estimations of the true error rate.")
 (define-public r-dauphin
   (package
     (name "r-dauphin")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dauphin" version))
        (sha256
-        (base32 "0p84hnvipi5pvyzwrgl7a1xv7lmq2vm96l6dfbpd2r9vb4mhbrn7"))))
+        (base32 "1cl0jipwnarkx26bhv9s1bk9q9y6ni2568xqy2w7x5nh5v38rvfx"))))
     (properties `((upstream-name . "dauphin")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=dauphin")

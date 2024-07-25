@@ -3598,13 +3598,13 @@ growth curves) at isolated time points.")
 (define-public r-growthpheno
   (package
     (name "r-growthpheno")
-    (version "2.1.24")
+    (version "2.1.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "growthPheno" version))
        (sha256
-        (base32 "0cwdxd47jpgvr9i7xj7hibaa8l8n7gm91i3qv5ikp9p2y93qwbzs"))))
+        (base32 "1bz1411ka1pghaa67ad0jkdzykadd64wzn8g37gp7z8zm1ablhzh"))))
     (properties `((upstream-name . "growthPheno")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi

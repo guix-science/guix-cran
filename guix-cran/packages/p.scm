@@ -3568,13 +3568,13 @@ Durban, M. (2020) <doi:10.1007/s10260-019-00492-8>.")
 (define-public r-psp
   (package
     (name "r-psp")
-    (version "1.0.0")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psp" version))
        (sha256
-        (base32 "0fjpjzf0m1f5xw1jrxn78m4r8ghwkcs2fsfhivbvws31gc11h7k0"))))
+        (base32 "10b93c3x39304j9wz2fqlmx1x417vpzdi9b11bjil8brdg5qipk6"))))
     (properties `((upstream-name . "psp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-data-table))

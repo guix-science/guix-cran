@@ -32885,13 +32885,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.4.3")
+    (version "2.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "0h24s5sg2nl83jqarb6m6sw5gi0d5x9284ysgl2p38637qrim55w"))))
+        (base32 "0rklmkq53c1xi8i89422c0jvfvhppr1a52f5xc87xzfh5z3jnhmk"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra
@@ -32911,7 +32911,7 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
                              r-ggplot2
                              r-dplyr
                              r-cli))
-    (home-page "https://emf-creaf.github.io/medfateland/index.html")
+    (home-page "https://emf-creaf.github.io/medfateland/")
     (synopsis "Mediterranean Landscape Simulation")
     (description
      "Simulate forest hydrology, forest function and dynamics over landscapes [De
@@ -36848,13 +36848,13 @@ transform (MBCn) â as is the Rank Resampling for Distributions and Dependen
 (define-public r-mbbefdlite
   (package
     (name "r-mbbefdlite")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBBEFDLite" version))
        (sha256
-        (base32 "0cbhhsp27irssz8g1f1wzyb8064j9jwb1h7bcjc5lcmyg29g6cha"))))
+        (base32 "1cczc45gw0ksisagjhyjf7zck00qqpdpa02w2wkbdx8bhvllkl62"))))
     (properties `((upstream-name . "MBBEFDLite")))
     (build-system r-build-system)
     (home-page "https://github.com/aadler/MBBEFDLite")

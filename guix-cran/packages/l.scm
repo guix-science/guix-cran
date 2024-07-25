@@ -4504,13 +4504,13 @@ variety of kernels.  It follows the methods described in Jones, Nguyen and
 (define-public r-logitr
   (package
     (name "r-logitr")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logitr" version))
        (sha256
-        (base32 "0w12rpvyxvmqdlbp8j7394x4c0m0yhv0li7rr4jliygzp4xnh8lz"))))
+        (base32 "0ns7z0g2r0ypisb924mkzzpd0p9x0zrhnc0slk55g90d4kbi51gv"))))
     (properties `((upstream-name . "logitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-randtoolbox r-nloptr r-mass r-generics))

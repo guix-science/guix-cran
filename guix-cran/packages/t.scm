@@ -20057,13 +20057,13 @@ according to various dimensions etc.  For more information see
 (define-public r-texreg
   (package
     (name "r-texreg")
-    (version "1.39.3")
+    (version "1.39.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "texreg" version))
        (sha256
-        (base32 "0kbdnxfgdin4vydrw84xzbw9xldvn8paikij9ya8976la6gpf6il"))))
+        (base32 "1h4377j18rja8mb72779zpj0ls5fxk15qdc92frx2av5c8wxvciy"))))
     (properties `((upstream-name . "texreg")))
     (build-system r-build-system)
     (inputs (list texlive-booktabs))
@@ -20077,11 +20077,7 @@ documents or to nicely formatted screen output for the R console for easy model
 comparison.  A list of several models can be combined in a single table.  The
 output is highly customizable.  New model types can be easily implemented.
 Details can be found in Leifeld (2013), J@code{StatSoft}
-<doi:10.18637/jss.v055.i08>. (If the Zelig package, which this package enhances,
-cannot be found on CRAN, you can find it at <https://github.com/IQSS/Zelig>.  If
-the mnlogit package, which this package enhances, cannot be found on CRAN, you
-can find an old version in the CRAN Archive at
-<https://cran.r-project.org/src/contrib/Archive/mnlogit/>.).")
+<doi:10.18637/jss.v055.i08>.).")
     (license license:gpl3)))
 
 (define-public r-texpreview

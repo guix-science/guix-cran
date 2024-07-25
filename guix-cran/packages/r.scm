@@ -9032,13 +9032,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.22")
+    (version "0.4.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "0zs8ldaf1h8hr6czlvj457rr0w4z0rjgj290r3krg4a9ilb1iink"))))
+        (base32 "114hlq7i8x0sbw1zv249vic9v2nwvcb32n72gknxy9jcpay631hx"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -13651,13 +13651,13 @@ ROC-SVM, see the report in the ROC Analysis in AI workshop(ROCAI-2004) :
 (define-public r-rocsurf
   (package
     (name "r-rocsurf")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROCsurf" version))
        (sha256
-        (base32 "0jamyidfh6f6z1j4z1q5wspvvr873idkfqv0g8fp1bhgl4r30732"))))
+        (base32 "0xp1v95kfwkizm194hrcypc0lvaq111v7c3lqai6vkbz444al4dp"))))
     (properties `((upstream-name . "ROCsurf")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-plotly))
@@ -49295,37 +49295,6 @@ regression, as well as box plots, histograms, scatter plots, and line plots
 (including profile plots).")
     (license license:gpl3+)))
 
-(define-public r-r2social
-  (package
-    (name "r-r2social")
-    (version "1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "r2social" version))
-       (sha256
-        (base32 "0lwdjbb99zab94nkbdw6ilkz3rvgv6lkrgcvb1z24midiykwfmfs"))))
-    (properties `((upstream-name . "r2social")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://r2social.obi.obianom.com")
-    (synopsis
-     "Seamless Integration of Sharing and Connect Buttons in Markdown and Apps")
-    (description
-     "Implementation of JQuery <https://jquery.com> and CSS styles to allow easy
-incorporation of various social media elements on a page.  The elements include
-addition of share buttons or connect with us buttons or hyperlink buttons to
-Shiny applications or dashboards and Rmarkdown documents.Sharing capability on
-social media platforms including Facebook <https://www.facebook.com>, Linkedin
-<https://www.linkedin.com>, X/Twitter <https://x.com>, Tumblr
-<https://www.tumblr.com>, Pinterest <https://www.pinterest.com>, Whatsapp
-<https://www.whatsapp.com>, Reddit <https://www.reddit.com>, Baidu
-<https://www.baidu.com>, Blogger <https://www.blogger.com>, Weibo
-<https://www.weibo.com>, Instagram <https://www.instagram.com>, Telegram
-<https://www.telegram.me>, Youtube <https://www.youtube.com>.")
-    (license license:expat)))
-
 (define-public r-r2shortcode
   (package
     (name "r-r2shortcode")
@@ -49421,30 +49390,6 @@ significance test.  Variance and covariance of AUC values used to assess the 95%
 Confidence interval (CI) and p-value of the AUC difference for both nested and
 non-nested model.")
     (license license:gpl3+)))
-
-(define-public r-r2resize
-  (package
-    (name "r-r2resize")
-    (version "1.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "r2resize" version))
-       (sha256
-        (base32 "19dsc3ljvgi8f4na71gbkz7fgq63y7vvwknzbwfrgz2ygpd0vyqg"))))
-    (properties `((upstream-name . "r2resize")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-quickcode r-nextgenshinyapps
-                             r-htmltools r-dt))
-    (native-inputs (list r-knitr))
-    (home-page "https://r2resize.obi.obianom.com")
-    (synopsis
-     "In-Text Resizer for Images, Tables and Fancy Resizable Containers in 'shiny', 'rmarkdown' and 'quarto' Documents")
-    (description
-     "Automatic resizing toolbar for containers, images and tables.  Various resizable
-or expandable container functionalities are also included.  Most suitable to
-include in shiny', markdown and quarto documents.")
-    (license license:expat)))
 
 (define-public r-r2redux
   (package
@@ -49932,30 +49877,6 @@ based htmlwidgets in R packages.")
 conf2d to calculate a smooth empirical confidence region, and freq2d to
 calculate a frequency distribution.")
     (license license:gpl3)))
-
-(define-public r-r2country
-  (package
-    (name "r-r2country")
-    (version "2.0.2.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "r2country" version))
-       (sha256
-        (base32 "02xz9an51qd3b92s8fask5rgmv227di21yv6xzgkz9ccabp12lq7"))))
-    (properties `((upstream-name . "r2country")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-quickcode))
-    (native-inputs (list r-knitr))
-    (home-page "https://r2country.obi.obianom.com")
-    (synopsis
-     "Country Data with Names, Capitals, Currencies, Populations, Time, Languages and so on")
-    (description
-     "Obtain information about countries around the globe.  Information for names,
-states, languages, time, capitals, currency and many more.  Data source are
-Wikipedia <https://www.wikipedia.org>, @code{TimeAndDate}
-<https://www.timeanddate.com> and @code{CountryCode} <https://countrycode.org>.")
-    (license license:expat)))
 
 (define-public r-r2beat
   (package

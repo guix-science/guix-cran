@@ -24167,13 +24167,13 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "167sbrfrys24m6nvdajbji3zxmy8qqgb45irdzpgin84ynrgi5f6"))))
+        (base32 "0klmlrglkisf82q050vnf8hpgj2yfnrpag43lff8z1yiqa4hzngi"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -26050,13 +26050,13 @@ necessarily reflect the views of the National Science Foundation.")
 (define-public r-bartman
   (package
     (name "r-bartman")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartMan" version))
        (sha256
-        (base32 "09pmkqbvgw9l95c36izdmi3h8pjx7vmzmfak2hll4q6npl5fr27x"))))
+        (base32 "10g9ymfjnjzykrxkws4iayzz69mi4a5vjba49js740ds6i1r3zq5"))))
     (properties `((upstream-name . "bartMan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytreatment

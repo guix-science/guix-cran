@@ -1114,34 +1114,6 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
 <doi:10.1007/978-3-540-70981-7_4>).")
     (license license:gpl2+)))
 
-(define-public r-symbol-equation-gpt
-  (package
-    (name "r-symbol-equation-gpt")
-    (version "1.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "symbol.equation.gpt" version))
-       (sha256
-        (base32 "1z7ww9wvyd4ma7bk0ynp2rbkrajd8b3frb1msh8wn2msj5k7pfpg"))))
-    (properties `((upstream-name . "symbol.equation.gpt")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinystoreplus
-                             r-shiny
-                             r-rstudioapi
-                             r-r2symbols
-                             r-nextgenshinyapps
-                             r-markdown
-                             r-htmltools))
-    (native-inputs (list r-knitr))
-    (home-page "https://symbols-ui.obi.obianom.com")
-    (synopsis "Powerful User Interface to Build Equations and Add Symbols")
-    (description
-     "User Interface for adding symbols, smileys, arrows, building mathematical
-equations using @code{LaTeX} or r2symbols'.  Built for use in development of
-Markdown and Shiny Outputs.")
-    (license license:expat)))
-
 (define-public r-sym-arma
   (package
     (name "r-sym-arma")
@@ -9073,13 +9045,13 @@ components.  The methods can be used for forecasting.")
 (define-public r-stppsim
   (package
     (name "r-stppsim")
-    (version "1.3.2")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stppSim" version))
        (sha256
-        (base32 "00wxbahfamxf4y2fmscq48n5j81qx4xsnh8har2mhhnqvaiikbvz"))))
+        (base32 "0rrridj6r354lz3fbpyzhbvbb72cif0yxmd7d5ghbv2ig9dwz310"))))
     (properties `((upstream-name . "stppSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -9111,18 +9083,18 @@ components.  The methods can be used for forecasting.")
     (home-page "https://github.com/MAnalytics/stppSim")
     (synopsis "Spatiotemporal Point Patterns Simulation")
     (description
-     "Generates artificial spatiotemporal (ST) point patterns and/or interactions
-through the integration of microsimulation (Holm, E.,
+     "Generates artificial point patterns marked by their spatial and temporal
+signatures.  The resulting point cloud may exhibit inherent interactions between
+both signatures.  The simulation integrates microsimulation (Holm, E.,
 (2017)<doi:10.1002/9781118786352.wbieg0320>) and agent-based models (Bonabeau,
-E., (2002)<doi:10.1073/pnas.082080899>).  The tool enables users to configure
-the actions of a group of walkers', which can be agents, objects, individuals,
-and more.  Their engagements with both spatial landscapes (Quaglietta, L. and
-Porto, M., (2019)<doi:10.1186/s40462-019-0154-8>) and time domains result in
-specific spatiotemporal point patterns and/or interactions.  These emerging
-spatiotemporal patterns can be visualized, analyzed, and then employed for both
-spatial and temporal model assessments.  Given the growing scarcity of detailed
-spatiotemporal data, this package offers an alternative dataset for a broad
-spectrum of studies in both the social and life sciences.")
+E., (2002)<doi:10.1073/pnas.082080899>), beginning with the configuration of
+movement characteristics for the specified agents (referred to as walkers') and
+their interactions within the simulation environment.  These interactions
+(Quaglietta, L. and Porto, M., (2019)<doi:10.1186/s40462-019-0154-8>) result in
+specific spatiotemporal patterns that can be visualized, analyzed, and used for
+various analytical purposes.  Given the growing scarcity of detailed
+spatiotemporal data across many domains, this package provides an alternative
+data source for applications in social and life sciences.")
     (license license:gpl3)))
 
 (define-public r-stpphawkes
@@ -9425,13 +9397,13 @@ methods and support for file system, in-memory and DBI-based database stores.")
 (define-public r-stormr
   (package
     (name "r-stormr")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StormR" version))
        (sha256
-        (base32 "02pxdalkls5qyhms0micjx3w4vvqisv4rc4h7dmyszmacki4kn49"))))
+        (base32 "0b425783y36lqlydxmm95lwcxb6xf893sfpa9wjfn976bqa6kpvv"))))
     (properties `((upstream-name . "StormR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9440,7 +9412,8 @@ methods and support for file system, in-memory and DBI-based database stores.")
                              r-sf
                              r-rworldmap
                              r-ncdf4
-                             r-maps))
+                             r-maps
+                             r-leaflet))
     (native-inputs (list r-knitr))
     (home-page "https://umr-amap.github.io/StormR/")
     (synopsis
@@ -54435,13 +54408,13 @@ Palshikar (2009)
 (define-public r-scorematchingad
   (package
     (name "r-scorematchingad")
-    (version "0.0.64")
+    (version "0.0.67")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scorematchingad" version))
        (sha256
-        (base32 "0c8y1v2gz50a5qamh16dvad4c9ya8kgyk9xyf44mbixkzza0723f"))))
+        (base32 "1dfnnb5fd16i5m6mwxw60jq42cn8migpqmy0s2rbpd9jdg96lwpj"))))
     (properties `((upstream-name . "scorematchingad")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -54451,9 +54424,8 @@ Palshikar (2009)
                              r-r6
                              r-optimx
                              r-mcmcpack
-                             r-fixedpoint
-                             r-ellipsis))
-    (home-page "https://cran.r-project.org/package=scorematchingad")
+                             r-fixedpoint))
+    (home-page "https://github.com/kasselhingee/scorematchingad")
     (synopsis "Score Matching Estimation by Automatic Differentiation")
     (description
      "@code{HyvÃ¤rinen's} score matching (@code{HyvÃ¤rinen}, 2005)

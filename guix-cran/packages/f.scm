@@ -5387,16 +5387,16 @@ M. Ã.  Nielsen (2014) <doi:10.1002/jae.2295>.")
 (define-public r-frab
   (package
     (name "r-frab")
-    (version "0.0-5")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frab" version))
        (sha256
-        (base32 "0mbm3rg3c6hdqzvlknb3y16bkf7ambcajz2zld4msmwxnph83ayn"))))
+        (base32 "1w57icar18xfgk4jx5v5b69xn0msjndw13j6kplgvk1q50hryx5c"))))
     (properties `((upstream-name . "frab")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-mathjaxr r-disordr))
+    (propagated-inputs (list r-rcpp r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/frab")
     (synopsis "How to Add Two R Tables")
@@ -13543,17 +13543,16 @@ disease, as discussed in Miller (2012) <doi:10.1007/s11538-012-9749-6>.")
 (define-public r-finalfit
   (package
     (name "r-finalfit")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finalfit" version))
        (sha256
-        (base32 "04nskvkqd999wjxy7lkanrd4iyfn8xljagyafw1ai7mfiqxgmfag"))))
+        (base32 "0g0vrzdr0f591q0sh0an0rvbvss05cp5hghbh9jmcprlr018wbm4"))))
     (properties `((upstream-name . "finalfit")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-survival
                              r-stringr
                              r-scales

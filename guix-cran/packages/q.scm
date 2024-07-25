@@ -677,28 +677,6 @@ made with large data sets in mind and derives matches more than an order of
 magnitude quicker than other methods.")
     (license license:gpl3+)))
 
-(define-public r-quickcode
-  (package
-    (name "r-quickcode")
-    (version "0.9")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quickcode" version))
-       (sha256
-        (base32 "0nym69ky24702ccjwz835gf98gk23bh6v5i7cm0a6z0c15db6mh7"))))
-    (properties `((upstream-name . "quickcode")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
-    (native-inputs (list r-knitr))
-    (home-page "https://quickcode.obi.obianom.com")
-    (synopsis "Quick and Essential 'R' Tricks for Better Scripts")
-    (description
-     "The NOT functions, R tricks and a compilation of some simple quick plus often
-used R codes to improve your scripts.  Improve the quality and reproducibility
-of R scripts.")
-    (license license:expat)))
-
 (define-public r-quickcheck
   (package
     (name "r-quickcheck")
