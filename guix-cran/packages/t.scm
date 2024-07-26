@@ -6434,13 +6434,13 @@ package.")
 (define-public r-treetools
   (package
     (name "r-treetools")
-    (version "1.11.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeTools" version))
        (sha256
-        (base32 "067cxg655bkbcp5ngj3r1i6hs49j8ql1dh1dafzv3gjalx735iav"))))
+        (base32 "1pqz5nnrwp4v7h0kz21ny3mdlw9qdqf69hh2mrc92piivx1w3ck5"))))
     (properties `((upstream-name . "TreeTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack
@@ -6464,12 +6464,12 @@ and extraction of subtrees; calculation and depiction of split support; plotting
 the position of rogue taxa (Klopfstein & Spasojevic 2019)
 <doi:10.1371/journal.pone.0212942>; calculation of ancestor-descendant
 relationships, of stemwardness (Asher & Smith, 2022)
-<doi:10.1093/sysbio/syab072>, and of tree balance (Mir et al.  2013)
-<doi:10.1016/j.mbs.2012.10.005>; artificial extinction (Asher & Smith, 2022)
-<doi:10.1093/sysbio/syab072>; import and export of trees from Newick, Nexus
-(Maddison et al.  1997) <doi:10.1093/sysbio/46.4.590>, and TNT
-<https://www.lillo.org.ar/phylogeny/tnt/> formats; and analysis of splits and
-cladistic information.")
+<doi:10.1093/sysbio/syab072>, and of tree balance (Mir et al.  2013, Lemant et
+al.  2022) <doi:10.1016/j.mbs.2012.10.005>, <doi:10.1093/sysbio/syac027>;
+artificial extinction (Asher & Smith, 2022) <doi:10.1093/sysbio/syab072>; import
+and export of trees from Newick, Nexus (Maddison et al.  1997)
+<doi:10.1093/sysbio/46.4.590>, and TNT <https://www.lillo.org.ar/phylogeny/tnt/>
+formats; and analysis of splits and cladistic information.")
     (license license:gpl3+)))
 
 (define-public r-treestructure
@@ -14267,13 +14267,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.28.0")
+    (version "0.29.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "1m4larx3d6si1283hza8pvf0z49rb7h2v3dv5bn9mm6cf82xm5fx"))))
+        (base32 "1fzmsgn9x4z5ya7rrb83nlwarjswbq5gpjb0lka0xldmdzl9f22j"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -16900,13 +16900,13 @@ knitr'/'markdown'.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6.3")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "160swqjrcfkqrjpgvyxqqpvm2xnbb1yr0jb89w9mva4mmlnncfj4"))))
+        (base32 "08pi8pzxvlprjii11xrfw1kyqpyvx9wh9zkcbw1zh77jxxp40imq"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -21343,13 +21343,13 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "0amdyg41mhny74zdl8xm9f4ljii4w6lncq57xgw7qlq946dfp8zg"))))
+        (base32 "0jsb67zcp2q3mmkx6c1ns34i0x98xkzvbpmvpwn5mjssc6ir3q3m"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-sp r-shiny r-rcpphungarian
@@ -21360,8 +21360,9 @@ forecasts, as discussed in the paper by Jupp (2012)
     (description
      "Plots ternary diagrams (simplex plots / Gibbs triangles) and Holdridge life zone
 plots <doi:10.1126/science.105.2727.367> using the standard graphics functions.
-An alternative to ggtern', which uses the ggplot2 family of plotting functions.
-Includes a Shiny user interface for point-and-click ternary plotting.")
+Allows custom annotation, interpolating, contouring and scaling of plotting
+region.  Includes a Shiny user interface for point-and-click ternary plotting.
+An alternative to ggtern', which uses the ggplot2 family of plotting functions.")
     (license license:gpl2+)))
 
 (define-public r-tern-mmrm
@@ -21685,13 +21686,13 @@ discussed in Li et al (2021) <doi:10.48550/@code{arXiv.2110.00928>}, Chen et al
 (define-public r-tensortest2d
   (package
     (name "r-tensortest2d")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TensorTest2D" version))
        (sha256
-        (base32 "1yx1ggsbximbsrwimyg7jblbqr0f75z278f38hg61qjxzf9m4ndk"))))
+        (base32 "18q4a155cxgzlbq5d4nfqvj88m5hc5ysdshkpcbih98axc6zm071"))))
     (properties `((upstream-name . "TensorTest2D")))
     (build-system r-build-system)
     (home-page "https://github.com/yuting1214/TensorTest2D")

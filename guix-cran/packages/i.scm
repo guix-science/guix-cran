@@ -12611,19 +12611,20 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 (define-public r-ilsm
   (package
     (name "r-ilsm")
-    (version "1.0.2")
+    (version "1.0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSM" version))
        (sha256
-        (base32 "079szirz5a1rcza756bjjdlz0wwdg8jifnz5kiw1wlkmc3x2m7sz"))))
+        (base32 "0x9khrli414qg4i5kqcspz44w9vjcl13qadgf90rgmkcwqqmw3dn"))))
     (properties `((upstream-name . "ILSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ILSM")
-    (synopsis "Analyze Inter-Layer Structure of Multilayer Ecological Network")
+    (synopsis
+     "Analyze Interconnection Structure of Multilayer Interaction Networks")
     (description
      "In view of the analysis of the structural characteristics of the multilayer
 network has been complete, however, there is still a lack of a unified operation

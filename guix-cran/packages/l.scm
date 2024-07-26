@@ -4919,13 +4919,13 @@ possibilities.")
 (define-public r-loggit2
   (package
     (name "r-loggit2")
-    (version "2.3.0")
+    (version "2.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "loggit2" version))
        (sha256
-        (base32 "06gvfh3jhgfiyxi950648ha123np77xqd2n2rh41pf1ipnhaxpca"))))
+        (base32 "1y971pb8v5s57hnvbrz11m2jwfxbid5dwlj4asazd5vf9xq04adx"))))
     (properties `((upstream-name . "loggit2")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -4933,10 +4933,10 @@ possibilities.")
     (synopsis "Easy-to-Use, Dependencyless Logger")
     (description
      "An easy-to-use ndjson (newline-delimited JSON') logger.  It provides a set of
-wrappings for base R's message(), warning(), and stop() functions that maintain
+wrappers for base R's message(), warning(), and stop() functions that maintain
 identical functionality, but also log the handler message to an ndjson log file.
- No change in existing code is necessary to use this package, and should only
-require additions to fully leverage the power of the logging system.")
+ No change in existing code is necessary to use this package, and only a few
+additional adjustments are needed to fully utilize its potential.")
     (license license:expat)))
 
 (define-public r-loggit

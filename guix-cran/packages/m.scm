@@ -38271,16 +38271,16 @@ development of items.")
 (define-public r-matlib
   (package
     (name "r-matlib")
-    (version "0.9.6")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matlib" version))
        (sha256
-        (base32 "0sm1mm5m242j472hddj9nzfyf235i7w8qxhcbgqwxf35fvdmah2h"))))
+        (base32 "0nknc17wxdf7svp91ak6y1h83yyacqfz528lwyqg9zdfcnax08nm"))))
     (properties `((upstream-name . "matlib")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-rgl r-mass r-car))
+    (propagated-inputs (list r-xtable r-rgl r-mass r-dplyr r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/friendly/matlib")
     (synopsis

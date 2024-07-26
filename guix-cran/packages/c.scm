@@ -1245,13 +1245,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.1.0")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "17w13b1h8nri74j5s94klwmrzjcd88llz2n84v54nc6nza77yk9g"))))
+        (base32 "0915nxf2g2v2z8mdah2cshba2ji00v3m3mbj4djfnqjcvnj8p829"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -3758,13 +3758,13 @@ and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
 (define-public r-csquares
   (package
     (name "r-csquares")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csquares" version))
        (sha256
-        (base32 "0zvx2xfpi138a2lhc7qwlpfa9rn954avb89g88m79l63sj9r2f11"))))
+        (base32 "0ah6w153vawv4047196rcwpd1vrs8czya8pl1pmxdqm2kn0g7f9x"))))
     (properties `((upstream-name . "csquares")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -4908,13 +4908,13 @@ team members, managers, and clients who prefer a point-and-click interface.")
 (define-public r-crtspat
   (package
     (name "r-crtspat")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CRTspat" version))
        (sha256
-        (base32 "1qhb4kzdq588hvd05dz9np4zhdbbp77d6ihjkkn1x1niz61n5bmp"))))
+        (base32 "0n60i8fx28mfgmzb33jz7nngrdhx8sj5lv3jl49h0xd80x7d9csb"))))
     (properties `((upstream-name . "CRTspat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsp

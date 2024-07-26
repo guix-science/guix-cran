@@ -1632,13 +1632,13 @@ geographic representation of the results can be displayed.")
 (define-public r-gtreg
   (package
     (name "r-gtreg")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtreg" version))
        (sha256
-        (base32 "1kvzi16ziy37zyal2ibgfpzbr5qf26z94v1381qsqhiwn382xng9"))))
+        (base32 "1ldlv43hgxb6dzs4d2ha1rd5qyyia5pyih2v7rfhmjdnz9qdwl6d"))))
     (properties `((upstream-name . "gtreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11914,13 +11914,13 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
 (define-public r-glmtoolbox
   (package
     (name "r-glmtoolbox")
-    (version "0.1.11")
+    (version "0.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtoolbox" version))
        (sha256
-        (base32 "1d7nc2yr01wp2gjd6jx5i51z3vx5ppc625159l1rxp630d0xxq8f"))))
+        (base32 "1nzn5nqicry2687d0nx6dacy0kbl0fzsw2wqwwi07mc12b84m7j9"))))
     (properties `((upstream-name . "glmtoolbox")))
     (build-system r-build-system)
     (propagated-inputs (list r-suppdists
@@ -11928,7 +11928,8 @@ relevant paper is available on @code{arXiv}: <@code{arXiv:2105.14328>}.")
                              r-rfast
                              r-numderiv
                              r-mass
-                             r-formula))
+                             r-formula
+                             r-broom))
     (home-page "https://mlgs.netlify.app/")
     (synopsis "Set of Tools to Data Analysis using Generalized Linear Models")
     (description

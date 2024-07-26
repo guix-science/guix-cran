@@ -4159,13 +4159,13 @@ telegram channel analytics data.")
 (define-public r-rtg
   (package
     (name "r-rtg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTG" version))
        (sha256
-        (base32 "1zg8ly42z7dy2b7iaggfc1wgf7hw2fsaj0ixbf5kw0gqmf7gxzss"))))
+        (base32 "00kdibqi54f6f3zjmmmjyrxh3kg91qvzi5pzwapx86fij8x188jb"))))
     (properties `((upstream-name . "rTG")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm
@@ -28106,31 +28106,32 @@ on id.")
 (define-public r-restatis
   (package
     (name "r-restatis")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restatis" version))
        (sha256
-        (base32 "0y36qdnadmcdmwik2iyjh8h47jchrbwpal8djy29hx7q1140ra2r"))))
+        (base32 "0n55gn2srd6m4a62bv6c6dcnfxy4lb4zhk7i2ggg8vz9xhxxwhnd"))))
     (properties `((upstream-name . "restatis")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tibble
                              r-readr
+                             r-purrr
                              r-memoise
                              r-httr2
                              r-askpass))
     (native-inputs (list r-knitr))
     (home-page "https://correlaid.github.io/restatis/")
     (synopsis
-     "Web API Client for the German Federal Statistical Office Database")
+     "R Wrapper to Access a Wide Range of Germany's Federal Statistical System Databases Based on the GENESIS Web Service RESTful API of the German Federal Statistical Office (Statistisches Bundesamt/Destatis)")
     (description
      "This package provides a RESTful API wrapper for accessing the GENESIS database
-of the German Federal Statistical Office (Destatis)
-<https://www-genesis.destatis.de/>.  Also supports data search functions,
-credential management, result caching, and handling remote background jobs for
-large datasets.")
+of the German Federal Statistical Office (Destatis) as well as its Census
+Database and the database of Germany's regional statistics.  Supports data
+search functions, credential management, result caching, and handling remote
+background jobs for large datasets.")
     (license license:expat)))
 
 (define-public r-restatapi
@@ -37613,13 +37614,13 @@ to test the assumption of no-sorting effects.")
 (define-public r-rdataretriever
   (package
     (name "r-rdataretriever")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdataretriever" version))
        (sha256
-        (base32 "06jbsrrl4db4w1ksjy7p0ywqba1di3nf491zfpgni8bz3a90ia0w"))))
+        (base32 "0ill7bgah219zp33yr9crq4fvzkhjbqm3y5y70nx14zq2jn5v9dg"))))
     (properties `((upstream-name . "rdataretriever")))
     (build-system r-build-system)
     (inputs (list python))
@@ -47169,13 +47170,13 @@ several spectra of plastic colorants.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.4.5")
+    (version "1.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "1bg2s12803q2rayjmwbksm7ncpb6lbhhx9b6zj8gd12n8dxn0syy"))))
+        (base32 "1m9fp1y5fgyngm5n6kgwfdpr8pnczs250hy63dd3ld3n50qdmc4l"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -49476,13 +49477,13 @@ soon to be archived from CRAN.")
 (define-public r-r2pmml
   (package
     (name "r-r2pmml")
-    (version "0.27.1")
+    (version "0.28.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "r2pmml" version))
        (sha256
-        (base32 "1liixrwrr23k96rkl3ijfcvxmfh43ffj8y7qr2zr50c1ampipnkr"))))
+        (base32 "110hr4cj4xlm050hmhag0v32jw6g5ka2ws0jibjw58zm4fg3c0x0"))))
     (properties `((upstream-name . "r2pmml")))
     (build-system r-build-system)
     (inputs (list openjdk))

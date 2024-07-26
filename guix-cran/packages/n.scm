@@ -1971,6 +1971,30 @@ different methods for smoothing parameter selection, and flexible tools for
 diagnostics, inference, and prediction.")
     (license license:gpl2+)))
 
+(define-public r-npred
+  (package
+    (name "r-npred")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPRED" version))
+       (sha256
+        (base32 "1gn70lcmkqn686a486b7h8f98kb17y358l1kbxpn4m7mjyy5l862"))))
+    (properties `((upstream-name . "NPRED")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/zejiang-unsw/NPRED#readme")
+    (synopsis "Predictor Identifier: Nonparametric Prediction")
+    (description
+     "Partial informational correlation (PIC) is used to identify the meaningful
+predictors to the response from a large set of potential predictors.  Details of
+methodologies used in the package can be found in Sharma, A., Mehrotra, R.
+(2014). <doi:10.1002/2013WR013845>, Sharma, A., Mehrotra, R., Li, J., & Jha, S.
+(2016). <doi:10.1016/j.envsoft.2016.05.021>, and Mehrotra, R., & Sharma, A.
+(2006). <doi:10.1016/j.advwatres.2005.08.007>.")
+    (license license:gpl3)))
+
 (define-public r-npphen
   (package
     (name "r-npphen")

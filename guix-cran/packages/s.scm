@@ -30959,17 +30959,16 @@ visualization of immune cell abundance of samples in different mutation status..
 (define-public r-smdi
   (package
     (name "r-smdi")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smdi" version))
        (sha256
-        (base32 "0bjwh9qbcr8221k43gayridqrsr3sf7mwgvlwy76k9dmjr0bid63"))))
+        (base32 "0grgj1wf2pdcz1wangnsni5x6idqz19plr7jghq6p0a7w9b89d6q"))))
     (properties `((upstream-name . "smdi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-tibble
                              r-tableone
                              r-survival
@@ -30987,6 +30986,7 @@ visualization of immune cell abundance of samples in different mutation status..
                              r-forcats
                              r-fastdummies
                              r-dplyr
+                             r-caret
                              r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://janickweberpals.gitlab-pages.partners.org/smdi")
@@ -30995,11 +30995,11 @@ visualization of immune cell abundance of samples in different mutation status..
      "An easy to use implementation of routine structural missing data diagnostics
 with functions to visualize the proportions of missing observations, investigate
 missing data patterns and conduct various empirical missing data diagnostic
-tests.  Reference: Weberpals J, Raman SR, Shaw PA, Lee H, Russo M, Hammil BG,
-Toh D, Connolly JG, Dandreo KJ, Tian F, Liu W, Li Jie, Hernandez-Munos JJ, Glynn
-RJ, Desai RJ (2023, in submission). \"A Principled Approach to Characterize and
-Analyze Partially Observed Confounder Data From Electronic Health Records: A
-Plasmode Simulation Study.\".")
+tests.  Reference: Weberpals J, Raman SR, Shaw PA, Lee H, Hammill BG, Toh S,
+Connolly JG, Dandreo KJ, Tian F, Liu W, Li J, @code{HernÃ¡ndez-MuÃ±oz} JJ, Glynn
+RJ, Desai RJ. smdi: an R package to perform structural missing data
+investigations on partially observed confounders in real-world evidence studies.
+ JAMIA Open.  2024 Jan 31;7(1):ooae008. <doi:10.1093/jamiaopen/ooae008>.")
     (license license:gpl3+)))
 
 (define-public r-smdata
@@ -61804,13 +61804,13 @@ object and thus all methods of the biclust package can be applied.")
 (define-public r-s3fs
   (package
     (name "r-s3fs")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3fs" version))
        (sha256
-        (base32 "08i8a1629b63b1ai3ngh59xwnh8vzmzpz1wvxhwylpk7igwwsbg0"))))
+        (base32 "18v81w2b7xgq8x66x3z893bg456qq38v1f9n4xx12vhk45sh8y2h"))))
     (properties `((upstream-name . "s3fs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

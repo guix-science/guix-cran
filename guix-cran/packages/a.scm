@@ -8092,24 +8092,24 @@ shark and ray growth studies: strengths, weaknesses and the future\"
 (define-public r-aquality
   (package
     (name "r-aquality")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AQuality" version))
        (sha256
-        (base32 "0zjv5wwdr4ivm1nx1yw27n1fxajxv9mdljd5jj95bv2wpvkn0pcz"))))
+        (base32 "17sd90va6wp6vyg1bjriyv0zkn1hqnrwkm2w92yc0n2kbdffq74l"))))
     (properties `((upstream-name . "AQuality")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=AQuality")
     (synopsis "Water and Measurements Quality")
     (description
-     "The function proposed in this package allows to graphically evaluate the process
-of measurement of the chemical components of water.  The TSSS() function is
-useful to control the quality of measurements of chemical components of a sample
-of water.  If one or more measurements include an error, the generated graph
-will indicate it with a position of the point that represents the sample outside
-the confidence interval.")
+     "The functions proposed in this package allows to graphically evaluate the
+process of measurement of the chemical components of water.  TSSS() and ICHS
+functions are useful to control the quality of measurements of chemical
+components of a sample of water.  If one or more measurements include an error,
+the generated graph will indicate it with a position of the point that
+represents the sample outside the confidence interval.")
     (license license:gpl2)))
 
 (define-public r-aquaenv
@@ -14497,18 +14497,18 @@ family of distributions available in Galarza et.al. (2017)
 (define-public r-alcyon
   (package
     (name "r-alcyon")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alcyon" version))
        (sha256
-        (base32 "0byc1h82k06ss6a39w2m252ivlmm4pvvn5gc18nk6l7y0pzqa342"))))
+        (base32 "1l3z7bsspxbhfxldq4pbh7lmwfmmfqry99xhk125ja19h1xfyxl4"))))
     (properties `((upstream-name . "alcyon")))
     (build-system r-build-system)
     (propagated-inputs (list r-stars r-sf r-rcpp r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=alcyon")
+    (home-page "https://github.com/spatialnous/alcyon")
     (synopsis "Spatial Network Analysis")
     (description
      "Interface package for sala', the spatial network analysis library from the

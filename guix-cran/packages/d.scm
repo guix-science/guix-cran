@@ -13349,13 +13349,13 @@ Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "1912wmcdpi80daiqgclh6dgmkwppz95wnh5ggh7pz8pk8b89587b"))))
+        (base32 "0cnl53b26zwk576n4igakpk0plbpmf4s18pvzk5nm6k64fzy816w"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
