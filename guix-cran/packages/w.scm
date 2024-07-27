@@ -13,11 +13,6 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages algebra)
-  #:use-module (gnu packages geo)
-  #:use-module (gnu packages ghostscript)
-  #:use-module (gnu packages pulseaudio)
-  #:use-module (gnu packages audio)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -716,13 +711,13 @@ Operating Policy (SOP).")
 (define-public r-wrproteo
   (package
     (name "r-wrproteo")
-    (version "1.11.0.1")
+    (version "1.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrProteo" version))
        (sha256
-        (base32 "0v9a62r4881aax5h5mnzgjzk2mgkrfa14lvy2w8i9mhcz5q6dg7k"))))
+        (base32 "1ghkh0j4sh7bv6zz73bdbdyjqhyc1q53flzzpq0khr98hl4rn6dv"))))
     (properties `((upstream-name . "wrProteo")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrmisc r-limma r-knitr))
@@ -738,8 +733,9 @@ multiple annotation types (like species origin, abbreviated gene names, etc)
 extracted.  Initial results from multiple software for protein (and peptide)
 quantitation can be imported (to a common format): @code{MaxQuant} (Tyanova et
 al 2016 <doi:10.1038/nprot.2016.136>), Dia-NN (Demichev et al 2020
-<doi:10.1038/s41592-019-0638-x>), Fragpipe(da Veiga et al 2020
-<doi:10.1038/s41592-020-0912-y>), @code{MassChroq} (Valot et al 2011
+<doi:10.1038/s41592-019-0638-x>), Fragpipe (da Veiga et al 2020
+<doi:10.1038/s41592-020-0912-y>), ionbot (Degroeve et al 2021
+<doi:10.1101/2021.07.02.450686>), @code{MassChroq} (Valot et al 2011
 <doi:10.1002/pmic.201100120>), @code{OpenMS} (Strauss et al 2021
 <doi:10.1038/nmeth.3959>), @code{ProteomeDiscoverer} (Orsburn 2021
 <doi:10.3390/proteomes9010015>), Proline (Bouyssie et al 2020
@@ -4835,16 +4831,21 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "00p5ylc0jahb8dqc2z7x5kvx40rlbvrrpfpfhg0dxyrd6qas71w5"))))
+        (base32 "0mgwjl2d17m80pwj0n2mmnrqcymg9lgc9kz0sh9bwsq7icjdslyv"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-ggplot2 r-crayon r-cobalt r-chk))
+    (propagated-inputs (list r-rlang
+                             r-ggplot2
+                             r-generics
+                             r-crayon
+                             r-cobalt
+                             r-chk))
     (native-inputs (list r-knitr))
     (home-page "https://ngreifer.github.io/WeightIt/")
     (synopsis "Weighting for Covariate Balance in Observational Studies")
@@ -4852,15 +4853,14 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
      "Generates balancing weights for causal effect estimation in observational
 studies with binary, multi-category, or continuous point or longitudinal
 treatments by easing and extending the functionality of several R packages and
-providing in-house estimation methods.  Available methods include propensity
-score weighting using generalized linear models, gradient boosting machines, the
-covariate balancing propensity score algorithm, inverse probability tilting,
-Bayesian additive regression trees, and @code{SuperLearner}, and directly
-estimating balancing weights using entropy balancing, energy balancing, and
-optimization-based weights.  Also allows for assessment of weights and checking
-of covariate balance by interfacing directly with the cobalt package.  See the
-vignette \"Installing Supporting Packages\" for instructions on how to install any
-package @code{WeightIt} uses, including those that may not be on CRAN.")
+providing in-house estimation methods.  Available methods include those that
+rely on parameteric modeling, optimization, and machine learning.  Also allows
+for assessment of weights and checking of covariate balance by interfacing
+directly with the cobalt package.  Methods for estimating weighted regression
+models that take into account uncertainty in the estimation of the weights via
+M-estimation or bootstrapping are available.  See the vignette \"Installing
+Supporting Packages\" for instructions on how to install any package
+@code{WeightIt} uses, including those that may not be on CRAN.")
     (license license:gpl2+)))
 
 (define-public r-weightedtreemaps
@@ -5980,6 +5980,61 @@ to web development.")
      "This package provides Apache and IIS log analytics for transaction performance,
 client populations and workload definitions.")
     (license license:gpl3)))
+
+(define-public r-weatheroz
+  (package
+    (name "r-weatheroz")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "weatherOz" version))
+       (sha256
+        (base32 "14zr8gvrmkarpsdqmc35c6hxl2xyiz463d2bk0a7vv9qvsrrld2i"))))
+    (properties `((upstream-name . "weatherOz")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-terra
+                             r-stars
+                             r-sf
+                             r-magick
+                             r-lubridate
+                             r-knitr
+                             r-jsonlite
+                             r-foreign
+                             r-data-table
+                             r-curl
+                             r-crul
+                             r-crayon
+                             r-clock
+                             r-apsimx))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/weatherOz/")
+    (synopsis
+     "An API Client for Australian Weather and Climate Data Resources")
+    (description
+     "This package provides automated downloading, parsing and formatting of weather
+data for Australia through API endpoints provided by the Department of Primary
+Industries and Regional Development ('DPIRD') of Western Australia and by the
+Science and Technology Division of the Queensland Government's Department of
+Environment and Science ('DES').  As well as the Bureau of Meteorology ('BOM')
+of the Australian government precis and coastal forecasts, agriculture bulletin
+data, and downloading and importing radar and satellite imagery files.  DPIRD
+weather data are accessed through public APIs provided by DPIRD',
+<https://www.agric.wa.gov.au/weather-api-20>, providing access to weather
+station data from the DPIRD weather station network.  Australia-wide weather
+data are based on data from the Australian Bureau of Meteorology ('BOM') data
+and accessed through SILO (Scientific Information for Land Owners) Jeffrey et
+al. (2001) <doi:10.1016/S1364-8152(01)00008-1>.  DPIRD data are made available
+under a Creative Commons Attribution 3.0 Licence (CC BY 3.0 AU) license
+<https://creativecommons.org/licenses/by/3.0/au/deed.en>.  SILO data are
+released under a Creative Commons Attribution 4.0 International licence (CC BY
+4.0) <https://creativecommons.org/licenses/by/4.0/>.  BOM data are (c)
+Australian Government Bureau of Meteorology and released under a Creative
+Commons (CC) Attribution 3.0 licence or Public Access Licence ('PAL') as
+appropriate, see <http://www.bom.gov.au/other/copyright.shtml> for further
+details.")
+    (license license:gpl3+)))
 
 (define-public r-weathermetrics
   (package
@@ -7843,53 +7898,6 @@ the stable nitrogen isotope ratios of them.  Bone collagen turnover rates
 estimated anew and the approximate Bayesian computation (ABC) were adopted in
 this package.")
     (license license:gpl3+)))
-
-(define-public r-warbler
-  (package
-    (name "r-warbler")
-    (version "1.1.31")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "warbleR" version))
-       (sha256
-        (base32 "0ym28dkfa5v3vam96vzrzda26x6hwqmlr4nzaiz7fb045j0mllcl"))))
-    (properties `((upstream-name . "warbleR")))
-    (build-system r-build-system)
-    (inputs (list sox libsndfile ghostscript gdal fftw))
-    (propagated-inputs (list r-tuner
-                             r-testthat
-                             r-seewave
-                             r-rjson
-                             r-rcurl
-                             r-rcpp
-                             r-pbapply
-                             r-naturesounds
-                             r-monitor
-                             r-knitr
-                             r-fftw
-                             r-dtw
-                             r-cli
-                             r-bioacoustics))
-    (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://marce10.github.io/warbleR/")
-    (synopsis "Streamline Bioacoustic Analysis")
-    (description
-     "This package provides functions aiming to facilitate the analysis of the
-structure of animal acoustic signals in R'. @code{warbleR} makes use of the
-basic sound analysis tools from the packages @code{tuneR} and seewave', and
-offers new tools for acoustic structure analysis.  The main features of the
-package are the use of loops to apply tasks through acoustic signals referenced
-in a selection (annotation) table and the production of spectrograms in image
-files that allow to organize data and verify acoustic analyzes.  The package
-offers functions to explore, organize and manipulate multiple sound files,
-explore and download Xeno-Canto recordings, create spectrograms of complete
-recordings or individual signals, run different measures of acoustic signal
-structure, evaluate the performance of measurement methods, catalog signals,
-characterize different structural levels in acoustic signals, run statistical
-analysis of duet coordination and consolidate databases and annotation tables,
-among others.")
-    (license license:gpl2+)))
 
 (define-public r-warabandi
   (package

@@ -3686,38 +3686,6 @@ time-dependent coefficients.  Cao, H., Li, J., and Fine, J. P. (2016)
 <doi:10.1111/rssb.12086>.")
     (license license:gpl2)))
 
-(define-public r-async
-  (package
-    (name "r-async")
-    (version "0.3.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "async" version))
-       (sha256
-        (base32 "0xf3c6gr04drv7xxzpshycd13h5lm7r529f5q4ajrsl0m3hp9xpv"))))
-    (properties `((upstream-name . "async")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-testthat
-                             r-stringr
-                             r-promises
-                             r-nseval
-                             r-later
-                             r-iterors))
-    (native-inputs (list r-knitr))
-    (home-page "https://crowding.github.io/async/")
-    (synopsis "Coroutines: Generators / Yield, Async / Await, and Streams")
-    (description
-     "Write sequential-looking code that pauses and resumes.  gen() creates a
-generator, an iterator that returns a value and pauses each time it reaches a
-yield() call.  async() creates a promise, which runs until it reaches a call to
-await(), then resumes when information is available.  These work similarly to
-generator and async constructs from Python or @code{JavaScript}'.  Objects
-produced are compatible with the iterators and promises packages.  Version 0.3
-supports on.exit, single-step debugging, stream() for making asynchronous
-iterators, and delimited goto() in switch() calls.")
-    (license license:gpl2)))
-
 (define-public r-asymptor
   (package
     (name "r-asymptor")
@@ -13976,13 +13944,13 @@ any repository.")
 (define-public r-alkahest
   (package
     (name "r-alkahest")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alkahest" version))
        (sha256
-        (base32 "1wbdhvak4984rdglsx2h7wwazxkvz2wv93lnizw7b4dm8aqrnapg"))))
+        (base32 "18gfj0g1ccisvls4czh24bp3bcakyjfhddkl92fsmy9wpq2i3qhx"))))
     (properties `((upstream-name . "alkahest")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14545,13 +14513,13 @@ age-structured population dynamics models described in Erguler and others (2016)
 (define-public r-albi
   (package
     (name "r-albi")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aLBI" version))
        (sha256
-        (base32 "1qsgl1vpl1kp1xz9pmpprjfcc5qpi3dgj7830pd8gwyicdd67il4"))))
+        (base32 "03xh0m6nn81sig20p3k24zx131fmi9q5wqx2d4qjlx0wzrmf36px"))))
     (properties `((upstream-name . "aLBI")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -15372,13 +15340,13 @@ Visit: <https://yqzhong7.github.io/AIPW/> for more information.")
 (define-public r-aion
   (package
     (name "r-aion")
-    (version "1.0.2")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aion" version))
        (sha256
-        (base32 "01h7w39gz03wydxsk2ikikbhi9nw46qq2wl3nksvi91zydyls5zf"))))
+        (base32 "0acm2nffrpqbli358cbpl0sd7bq9m5qbnnrk01xd7h9l63xzs67c"))))
     (properties `((upstream-name . "aion")))
     (build-system r-build-system)
     (propagated-inputs (list r-arkhe))
@@ -19010,6 +18978,35 @@ biodiversity, ordination approaches are available which rely on diversity
 indices and allow the detailed identification of species, functional or
 phylogenetic differences between communities.")
     (license license:gpl2+)))
+
+(define-public r-adismf
+  (package
+    (name "r-adismf")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AdIsMF" version))
+       (sha256
+        (base32 "1ddwnn6jmj0sm1b9mxdaa88rngn4vfw59malqqg5whq0hnl4mhwx"))))
+    (properties `((upstream-name . "AdIsMF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nls2 r-ggplot2 r-aiccmodavg))
+    (home-page "https://cran.r-project.org/package=AdIsMF")
+    (synopsis "Adsorption Isotherm Model Fitting")
+    (description
+     "The Langmuir and Freundlich adsorption isotherms are pivotal in characterizing
+adsorption processes, essential across various scientific disciplines.  Proper
+interpretation of adsorption isotherms involves robust fitting of data to the
+models, accurate estimation of parameters, and efficiency evaluation of the
+models, both in linear and non-linear forms.  For researchers and practitioners
+in the fields of chemistry, environmental science, soil science, and
+engineering, a comprehensive package that satisfies all these requirements would
+be ideal for accurate and efficient analysis of adsorption data, precise model
+selection and validation for rigorous scientific inquiry and real-world
+applications.  Details can be found in Langmuir (1918) <doi:10.1021/ja02242a004>
+and Giles (1973) <doi:10.1111/j.1478-4408.1973.tb03158.x>.")
+    (license license:gpl3)))
 
 (define-public r-adhererviz
   (package

@@ -21158,13 +21158,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "0xk8kwaawfpb3dsir5xhs4qm24xp3bilrlqnigqhv00b34b6alja"))))
+        (base32 "13qv4fa673lnq3jyp97bbrcax0sw0lk2w2xxy8vyb8jnf5ajlydr"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -32816,13 +32816,13 @@ been applied.")
 (define-public r-checked
   (package
     (name "r-checked")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "checked" version))
        (sha256
-        (base32 "1fnqmjm7lpwlcch7bfx3pkq0wm77xl9gk0yvnpcd2d8pr78p1z0h"))))
+        (base32 "0yzg8y236w72694raz0x7ic70a0fzn9c3pl2x868rfyvq3ivsv7d"))))
     (properties `((upstream-name . "checked")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcmdcheck
@@ -32831,7 +32831,7 @@ been applied.")
                              r-igraph
                              r-cli
                              r-callr))
-    (home-page "https://cran.r-project.org/package=checked")
+    (home-page "https://github.com/Genentech/checked")
     (synopsis "Systematically Run R CMD Checks")
     (description
      "Systematically Run R checks against multiple packages.  Checks are run in
@@ -33280,42 +33280,6 @@ algorithms are implemented in C++.")
 confidence intervals for changepoint locations and magnitudes.  Both abrupt and
 gradual changes can be modeled.")
     (license license:gpl2+)))
-
-(define-public r-changeranger
-  (package
-    (name "r-changeranger")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "changeRangeR" version))
-       (sha256
-        (base32 "0y13wwz62wsh29flb7v094gb47gd6xwjq6fvmkzmlhz8x71f5g1v"))))
-    (properties `((upstream-name . "changeRangeR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp
-                             r-sf
-                             r-raster
-                             r-rangemodelmetadata
-                             r-phylobase
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=changeRangeR")
-    (synopsis "Change Metrics for Species Geographic Ranges")
-    (description
-     "Facilitates workflows to reproducibly transform estimates of speciesâ
-distributions into metrics relevant for conservation.  For example, combining
-predictions from species distribution models with other maps of environmental
-data to characterize the proportion of a speciesâ range that is under
-protection, calculating metrics used under the International Union for
-Conservation of Nature (IUCN) Criteria A and B guidelines (Area of Occupancy and
-Extent of Occurrence), and calculating more general metrics such as taxonomic
-and phylogenetic diversity, as well as endemism.  Also facilitates temporal
-comparisons among biodiversity metrics to inform efforts towards complementarity
-and consideration of future scenarios in conservation decisions.
-@code{changeRangeR} also provides tools to determine the effects of modeling
-decisions through sensitivity tests.")
-    (license license:gpl3)))
 
 (define-public r-changer
   (package
@@ -40064,13 +40028,13 @@ by other packages (or your own code).")
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.0-10")
+    (version "1.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartogramR" version))
        (sha256
-        (base32 "1yviplg837pzlyzhalqybd3pjda6rr2947a766g4wvbpj4qf4b64"))))
+        (base32 "1zyrfxknm6acrgc7k8yanqkbznp5nq41y0gdd99b5wrhp7w01qr8"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-data-table))

@@ -12327,16 +12327,17 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "1fk9gzv2v9cmgmdj42qagqdm38q59hnmrghl4czlgiiwc7bcq24b"))))
+        (base32 "0rwmn6mhvvahzdqhp58v3icas4mlr73jizmb7lv8dzgxvq8dz0i0"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack
+                             r-mvtnorm
                              r-mass
                              r-igraph
                              r-foreach
@@ -14964,16 +14965,17 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "0j3523fc5ilh5z3dmml5fqxgnjykm7qqlfvzb0ay8p60l43aybss"))))
+        (base32 "05q6vhpf305jqq9spkiwkyam6l9rjj4vhdvq1lf1a1dmync7i4x7"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-withr
+                             r-tibble
                              r-spmodel
                              r-sf
                              r-rsqlite
@@ -15808,13 +15810,13 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 (define-public r-ssdgsa
   (package
     (name "r-ssdgsa")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssdGSA" version))
        (sha256
-        (base32 "1ga0crvhxbjsjdr0algkm9yjqla9gnk4kqryzq8x2wcx6x8w51z1"))))
+        (base32 "1167vfacvhkc9p7pv30snj24jz2x09fpfvad5qb3brw7lkr0japs"))))
     (properties `((upstream-name . "ssdGSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15834,8 +15836,9 @@ distribution.  The SSDM package also provides a user-friendly interface.")
 analysis (GSVA) method and also provides the option to use summary statistics
 from any analysis (disease vs healthy, lesional side vs nonlesional side, etc..)
 input to define the direction of gene sets used for directional gene set score
-calculation for a given disease.  Hanzelmann, S., Castelo, R., and Guinney, J.
-(2013) <doi:10.1186/1471-2105-14-7>.")
+calculation for a given disease.  Note to use this package, GSVA(>= 1.52.1) is
+needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
+<doi:10.1186/1471-2105-14-7>.")
     (license license:gpl2)))
 
 (define-public r-ssdforr
@@ -42584,13 +42587,13 @@ popovers or tooltips.")
 (define-public r-shinyexprportal
   (package
     (name "r-shinyexprportal")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyExprPortal" version))
        (sha256
-        (base32 "0740qzwz2wcl5avby2x50kjg51la6nfzz92lfk2ysnfvq58ph6aa"))))
+        (base32 "00jlxj69x665fya9sjh904j7agd9czpx5nhsf21vlwcbzcap3686"))))
     (properties `((upstream-name . "shinyExprPortal")))
     (build-system r-build-system)
     (arguments
@@ -45807,6 +45810,29 @@ iterations (at most n sweeps for a matrix of size n).  If the data matrix has a
 Robinsonian structure, then the ranking returned by the multistep SFS algorithm
 is a Robinson ordering of the input matrix.  Otherwise the algorithm can be used
 as a heuristic to return a ranking partially satisfying the Robinson property.")
+    (license license:gpl3)))
+
+(define-public r-sfpl
+  (package
+    (name "r-sfpl")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SFPL" version))
+       (sha256
+        (base32 "03axwipil1k1dcjc2zsc62a464qqrncyl2z828w7dqkhp2mfyz2s"))))
+    (properties `((upstream-name . "SFPL")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-gtools))
+    (home-page "https://cran.r-project.org/package=SFPL")
+    (synopsis "Sparse Fused Plackett-Luce")
+    (description
+     "This package implements the methodological developments found in Hermes, van
+Heerwaarden, and Behrouzi (2024) <doi:10.48550/@code{arXiv.2308.04325>}, and
+allows for the statistical modeling of multi-group rank data in combination with
+object variables.  The package also allows for the simulation of synthetic
+multi-group rank data.")
     (license license:gpl3)))
 
 (define-public r-sfo
@@ -59684,6 +59710,27 @@ estimating relative risk with stated precision, testing relative risk with a
 reference value, testing a correlation coefficient with a specified value, etc.
 <https://www.academia.edu/39511442/Adequacy_of_Sample_Size_in_Health_Studies#:~:text=Determining%20the%20sample%20size%20for,may%20yield%20statistically%20inconclusive%20results.>.")
     (license license:gpl2+)))
+
+(define-public r-samplesizediagnostics
+  (package
+    (name "r-samplesizediagnostics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SampleSizeDiagnostics" version))
+       (sha256
+        (base32 "1h4scywysya36sc6qvfn5csdghb38wicr96xgwhba289zrd9j2az"))))
+    (properties `((upstream-name . "SampleSizeDiagnostics")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SampleSizeDiagnostics")
+    (synopsis "Choosing Sample Size for Evaluating a Diagnostic Test")
+    (description
+     "Calculates the sample size needed for evaluating a diagnostic test based on
+sensitivity, specificity, prevalence, and desired precision.  Based on Buderer
+(1996) <doi:10.1111/j.1553-2712.1996.tb03538.x>.")
+    (license license:gpl3)))
 
 (define-public r-samplesizecmh
   (package

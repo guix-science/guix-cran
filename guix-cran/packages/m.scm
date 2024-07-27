@@ -3154,13 +3154,13 @@ the results.")
 (define-public r-multistatm
   (package
     (name "r-multistatm")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MultiStatM" version))
        (sha256
-        (base32 "0b0wk2zz8p0zqhv6f5030jpl4wxlnx3yya5i1jh7bm0rxyyx6d18"))))
+        (base32 "1d2dzchg6xmaazr6sajxq7f5bkx24m70w593wbmn49xxq8fbf1hp"))))
     (properties `((upstream-name . "MultiStatM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrix r-mass r-arrangements))
@@ -9147,13 +9147,13 @@ Stindl and Chen (2018) <doi:10.1016/j.csda.2018.01.021>.")
 (define-public r-mrgsolve
   (package
     (name "r-mrgsolve")
-    (version "1.4.1")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrgsolve" version))
        (sha256
-        (base32 "035k5qlpkxyn2fj5kc9i0kfbmdan33mjw9ig8rg5mibsgw5r0iry"))))
+        (base32 "0bzvzj346ssys7wl7pb0mddg8k0la2sw0q2dxapwvlmasbj4x81g"))))
     (properties `((upstream-name . "mrgsolve")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11473,20 +11473,19 @@ train().  It's straightforward to add in other other model architectures.")
 (define-public r-mosaiccalc
   (package
     (name "r-mosaiccalc")
-    (version "0.6.1")
+    (version "0.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mosaicCalc" version))
        (sha256
-        (base32 "1538g36cfg3hlig8fcclri5cfqs94s8qxaqw4pa85c8s14k59dda"))))
+        (base32 "1fq3fjsj7jwai5hg36bi1d3plf98mywyn08yrcwrphnh4h42i71r"))))
     (properties `((upstream-name . "mosaicCalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-sp
                              r-ryacas
                              r-rlang
-                             r-plotly
                              r-orthopolynom
                              r-mosaiccore
                              r-mosaic
@@ -11498,7 +11497,7 @@ train().  It's straightforward to add in other other model architectures.")
                              r-ggformula
                              r-dplyr
                              r-deriv
-                             r-cubature))
+                             r-calculus))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ProjectMOSAIC/mosaicCalc")
     (synopsis "R-Language Based Calculus Operations for Teaching")
@@ -24699,6 +24698,38 @@ analysis.")
 generic R data structures as much as possible, making R data wrangling possible
 also for sequence data.")
     (license license:gpl2)))
+
+(define-public r-microsec
+  (package
+    (name "r-microsec")
+    (version "2.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MicroSEC" version))
+       (sha256
+        (base32 "1n9j955yy613qhs9zhy2mhy9mg95fp1q8jxxxgsy3n2kjim33pgv"))))
+    (properties `((upstream-name . "MicroSEC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsamtools
+                             r-genomeinfodb
+                             r-dplyr
+                             r-biostrings
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MANO-B/MicroSEC/")
+    (synopsis
+     "Sequence Error Filter for Formalin-Fixed and Paraffin-Embedded Samples")
+    (description
+     "Clinical sequencing of tumor is usually performed on formalin-fixed and
+paraffin-embedded samples and have many sequencing errors.  We found that the
+majority of these errors are detected in chimeric read caused by single-strand
+DNA with micro-homology.  Our filtering pipeline focuses on the uneven
+distribution of the artifacts in each read and removes such errors in
+formalin-fixed and paraffin-embedded samples without over-eliminating the true
+mutations detected in fresh frozen samples.")
+    (license license:expat)))
 
 (define-public r-micropop
   (package
@@ -43256,13 +43287,13 @@ software paper Wong, Yang, and Kou (2024) <doi:10.18637/jss.v109.i04>.")
 (define-public r-magee
   (package
     (name "r-magee")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGEE" version))
        (sha256
-        (base32 "0xkabvj222xrm62fvaaj0fhdybankz2a01rlxn84n0xvv4hlap7s"))))
+        (base32 "1gwm82iwji0wviy2d3brws9d3iqwgxlkcf4b24b9hcvfl1kgglb6"))))
     (properties `((upstream-name . "MAGEE")))
     (build-system r-build-system)
     (inputs (list zlib))

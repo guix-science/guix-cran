@@ -1282,35 +1282,16 @@ mutation are called in the main program.  The methods are described in Deb et
 al. (2002) <doi:10.1109/4235.996017>.")
     (license license:lgpl3)))
 
-(define-public r-nseval
-  (package
-    (name "r-nseval")
-    (version "0.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "nseval" version))
-       (sha256
-        (base32 "10b9kvvnlgc0jpbjnpkjmrkbl8plbkbggckwzy41kv41ha7rgda2"))))
-    (properties `((upstream-name . "nseval")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=nseval")
-    (synopsis "Tools for Lazy and Non-Standard Evaluation")
-    (description
-     "This package provides functions to capture, inspect, manipulate, and create lazy
-values (promises), \"...\" lists, and active calls.")
-    (license license:gpl2+)))
-
 (define-public r-nser
   (package
     (name "r-nser")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nser" version))
        (sha256
-        (base32 "0p7yz561m85962l0cfld7aa932rkiypjg8lc46zf43wzk2idlgxi"))))
+        (base32 "0v88gbcak22wpqanp5b4j1fdsp3s4jdhwq4a399msmjd1kxzf5f6"))))
     (properties `((upstream-name . "nser")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1321,6 +1302,7 @@ values (promises), \"...\" lists, and active calls.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-httr
                              r-googlevis
                              r-dplyr
                              r-curl))

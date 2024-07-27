@@ -705,19 +705,19 @@ support for parallel computation.")
 (define-public r-yesno
   (package
     (name "r-yesno")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "yesno" version))
        (sha256
-        (base32 "1n9v8m1wkk9p2ahl7d1khbffxmshv68q1v44v04y4v1k6qjvm0i2"))))
+        (base32 "06qxjacvx17b0mry2qk5ksh814gyz88av80cpgz3d9fx01x3sxlv"))))
     (properties `((upstream-name . "yesno")))
     (build-system r-build-system)
     (home-page "https://github.com/poissonconsulting/yesno")
     (synopsis "Ask Yes-No Questions")
     (description "Asks Yes-No questions with variable or custom responses.")
-    (license license:gpl2+)))
+    (license license:expat)))
 
 (define-public r-ycevo
   (package

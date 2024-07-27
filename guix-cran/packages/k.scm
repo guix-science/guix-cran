@@ -2807,6 +2807,30 @@ pmin()/pmax() plus others which are missing from base R. Most of these functions
 are callable at C level.")
     (license license:gpl3)))
 
+(define-public r-kissmig
+  (package
+    (name "r-kissmig")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kissmig" version))
+       (sha256
+        (base32 "0q2kn394kzziywb1a0h1s0845q8b83fqv4s5qk1vx03kppd93smv"))))
+    (properties `((upstream-name . "kissmig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-raster))
+    (home-page "https://purl.oclc.org/wsl/kissmig")
+    (synopsis "a Keep It Simple Species Migration Model")
+    (description
+     "Simulating species migration and range dynamics under stable or changing
+environmental conditions based on a simple, raster-based, deterministic or
+stochastic migration model.  Kissmig runs on binary or quantitative suitability
+maps, which are pre-calculated with niche-based habitat suitability models (also
+called ecological niche models (ENMs) or species distribution models (SDMs)).
+Nobis & Normand (2014), <doi:10.1111/ecog.00930>.")
+    (license license:gpl3+)))
+
 (define-public r-kisopenapi
   (package
     (name "r-kisopenapi")
@@ -5611,13 +5635,13 @@ Switching: Classical and Gibbs-Sampling Approaches with Applications\"
 (define-public r-kairos
   (package
     (name "r-kairos")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kairos" version))
        (sha256
-        (base32 "1n59sicqffj7gn3l2726w0dnfxx4j8h16jkjv5lp4h3acpdnx6c9"))))
+        (base32 "07vlw4vyrkx1j12z8ik7fl9xqy3zmvx6nhcv8vwmzjbzhr3bv2j6"))))
     (properties `((upstream-name . "kairos")))
     (build-system r-build-system)
     (propagated-inputs (list r-extradistr r-dimensio r-arkhe r-aion))

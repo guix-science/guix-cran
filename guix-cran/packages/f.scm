@@ -14166,13 +14166,13 @@ wrapper functions for the R package `@code{AlphaSimR`}.")
 (define-public r-fieldhub
   (package
     (name "r-fieldhub")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FielDHub" version))
        (sha256
-        (base32 "1fyqpw7815vikpdam1mpx03bbswlhkqq36zckrz6887jbvwkjm79"))))
+        (base32 "1sfrhz6b3pzrcjp3jdg35yxj3j2m7mvzhwwv49f7nvfmrs3fx936"))))
     (properties `((upstream-name . "FielDHub")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

@@ -8253,40 +8253,6 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-inldata
-  (package
-    (name "r-inldata")
-    (version "1.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inldata" version))
-       (sha256
-        (base32 "0155mx8nx5g1vp3mcfar0n4qbxqyvs0fzqnmd8skrrygfk1aw0y5"))))
-    (properties `((upstream-name . "inldata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
-    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
-    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
-    (description
-     "This package provides a collection of analysis-ready datasets for the U.S.
-Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
-surface-water monitoring networks, administered by the USGS-INL Project Office
-in cooperation with the U.S. Department of Energy.  The data collected from
-wells and surface-water stations at the Idaho National Laboratory and
-surrounding areas have been used to describe the effects of waste disposal on
-water contained in the eastern Snake River Plain aquifer, located in the
-southeastern part of Idaho, and the availability of water for long-term
-consumptive and industrial use.  The package includes long-term monitoring
-records dating back to measurements from 1922.  Geospatial data describing the
-areas from which samples were collected or observations were made are also
-included in the package.  Bundling this data into a single package significantly
-reduces the magnitude of data processing for researchers and provides a way to
-distribute the data along with its documentation in a standard format.
-Geospatial datasets are made available in a common projection and datum, and
-geohydrologic data have been structured to facilitate analysis.")
-    (license license:cc0)))
-
 (define-public r-inlcolor
   (package
     (name "r-inlcolor")
@@ -12838,13 +12804,13 @@ origin, with the three functions of @code{iGini}(), @code{iTheiT}(), and
 (define-public r-iimi
   (package
     (name "r-iimi")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iimi" version))
        (sha256
-        (base32 "11xkf1bkhsbmjqsawny6kq7ma3sw66sya4kg4npxd6pm1xv4yr09"))))
+        (base32 "05v6j1mmygr67jsgv68b506xabpnl912hxyrz02l87xfb69c5cv8"))))
     (properties `((upstream-name . "iimi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -15772,16 +15738,17 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site."
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IceSat2R" version))
        (sha256
-        (base32 "1jwy1fwnc2rq3c643maa2h7hrwzq0sm6iv35kil95n3pw7pkgdy3"))))
+        (base32 "03j9ygabadhniybfngv10klj1180g40sgybrwn5wv6pb02kdpr58"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units
+    (propagated-inputs (list r-withr
+                             r-units
                              r-shiny
                              r-sf
                              r-rvest
@@ -15804,18 +15771,18 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site."
     (synopsis "ICESat-2 Altimeter Data using R")
     (description
      "Programmatic connection to the @code{OpenAltimetry} API
-<https://openaltimetry.org/data/swagger-ui/> to download and process ATL03
-(Global Geolocated Photon Data), ATL06 (Land Ice Height), ATL07 (Sea Ice
-Height), ATL08 (Land and Vegetation Height), ATL10 (Sea Ice Freeboard), ATL12
-(Ocean Surface Height) and ATL13 (Inland Water Surface Height) ICESat-2
-Altimeter Data.  The user has the option to download the data by selecting a
-bounding box from a 1- or 5-degree grid globally utilizing a shiny application.
-The ICESat-2 mission collects altimetry data of the Earth's surface.  The sole
-instrument on ICESat-2 is the Advanced Topographic Laser Altimeter System
-(ATLAS) instrument that measures ice sheet elevation change and sea ice
-thickness, while also generating an estimate of global vegetation biomass.
-ICESat-2 continues the important observations of ice-sheet elevation change,
-sea-ice freeboard, and vegetation canopy height begun by ICESat in 2003.")
+<https://openaltimetry.earthdatacloud.nasa.gov/data/openapi/swagger-ui/index.html/>
+to download and process ATL03 (Global Geolocated Photon Data), ATL06 (Land Ice
+Height), ATL07 (Sea Ice Height), ATL08 (Land and Vegetation Height), ATL10 (Sea
+Ice Freeboard), ATL12 (Ocean Surface Height) and ATL13 (Inland Water Surface
+Height) ICESat-2 Altimeter Data.  The user has the option to download the data
+by selecting a bounding box from a 1- or 5-degree grid globally utilizing a
+shiny application.  The ICESat-2 mission collects altimetry data of the Earth's
+surface.  The sole instrument on ICESat-2 is the Advanced Topographic Laser
+Altimeter System (ATLAS) instrument that measures ice sheet elevation change and
+sea ice thickness, while also generating an estimate of global vegetation
+biomass.  ICESat-2 continues the important observations of ice-sheet elevation
+change, sea-ice freeboard, and vegetation canopy height begun by ICESat in 2003.")
     (license license:gpl3)))
 
 (define-public r-icesadvice

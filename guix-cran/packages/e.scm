@@ -14563,6 +14563,35 @@ Dirichlet-tree prior distributions.  Everest et al. (2022)
 <https://www.vanderwalresearch.com/blog/15-elections>.")
     (license license:gpl2+)))
 
+(define-public r-electdecomp
+  (package
+    (name "r-electdecomp")
+    (version "0.0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ElectDecomp" version))
+       (sha256
+        (base32 "1wqcmrbmhi6fpmbb40yy59s6il02k9bxmw1nfk21m4rgb65ssggk"))))
+    (properties `((upstream-name . "ElectDecomp")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ElectDecomp")
+    (synopsis
+     "Decomposition of Seats-to-Votes Distortion in Multimember Elections")
+    (description
+     "Decomposes the seat-to-vote distortion for every party (individual party bias or
+individual party deviation from proportional representation) into segments that
+can be attributed to separate causes for the party infra or over-representation:
+the electoral system effect (separating the mean and the variance effect within
+it) and the population effect (separating malapportionment and unequal
+participation effect within it).  It works on (single tired) districted
+electoral systems with any number of seats per district.  In addition, the
+package aggregates the individual party distortion into an index of deviation
+from proportionality (the Losemore-Hanby index) whose value is also decomposed
+into segments attributed to the major causes of deviation from proportionality
+(plus the interactions among them).")
+    (license (license:fsdg-compatible "EPL"))))
+
 (define-public r-elect
   (package
     (name "r-elect")

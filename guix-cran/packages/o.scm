@@ -8897,38 +8897,6 @@ useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
 
-(define-public r-ohun
-  (package
-    (name "r-ohun")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ohun" version))
-       (sha256
-        (base32 "103s9sv70p9hw6q55j98wri5bxqazfn9hxpk1mm39x7navx3qzvp"))))
-    (properties `((upstream-name . "ohun")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-warbler
-                             r-tuner
-                             r-sf
-                             r-seewave
-                             r-rlang
-                             r-igraph
-                             r-ggplot2
-                             r-fftw
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/ohun/")
-    (synopsis "Optimizing Acoustic Signal Detection")
-    (description
-     "Facilitates the automatic detection of acoustic signals, providing functions to
-diagnose and optimize the performance of detection routines.  Detections from
-other software can also be explored and optimized.  Araya-Salas et al. (2022)
-<doi:10.1101/2022.12.13.520253>.")
-    (license license:gpl2+)))
-
 (define-public r-ohtadstats
   (package
     (name "r-ohtadstats")

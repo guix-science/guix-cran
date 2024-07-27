@@ -10,6 +10,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
+  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages photo)
   #:use-module (gnu packages python)
   #:use-module (gnu packages tcl)
@@ -21,7 +22,6 @@
   #:use-module (gnu packages perl)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages tex)
-  #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -293,13 +293,13 @@ and plots.  All twowaytests functions are designed for two-way layout.")
 (define-public r-twowayfeweights
   (package
     (name "r-twowayfeweights")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TwoWayFEWeights" version))
        (sha256
-        (base32 "0glwykcbnp65nc345b6k8dc74dvn7bghr045mvqk3jqmmrha0pd8"))))
+        (base32 "0jx12g2igyir50mq1wm2nl76lw02wf5gw837wvl19ffsji19mn4p"))))
     (properties `((upstream-name . "TwoWayFEWeights")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -308,7 +308,7 @@ and plots.  All twowaytests functions are designed for two-way layout.")
                              r-fixest
                              r-dplyr
                              r-cli))
-    (home-page "https://cran.r-project.org/package=TwoWayFEWeights")
+    (home-page "https://github.com/chaisemartinPackages")
     (synopsis
      "Estimation of the Weights Attached to the Two-Way Fixed Effects Regressions")
     (description
@@ -6979,21 +6979,21 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.7.0")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1x92z0ipk3rk94hxc3al76y51pzha2csry3vrflll7sgshkbr5rj"))))
+        (base32 "1l8clk5b4fivinxjr0amd0kcwa2bg4mb4cjk8f9cxhbp2kk78kr0"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
+    (inputs (list pandoc))
     (propagated-inputs (list r-treetools
                              r-shinyjs
                              r-shiny
                              r-rdpack
                              r-rcpp
-                             r-phangorn
                              r-memoise
                              r-colorspace
                              r-cli
@@ -7013,8 +7013,9 @@ Agreement Subtree distances; the Kendall-Colijn (2016) distance
 <doi:10.1093/molbev/msw124>, and the Nearest Neighbour Interchange (NNI)
 distance, approximated per Li et al. (1996) <doi:10.1007/3-540-61332-3_168>.
 Includes tools for visualizing mappings of tree space (Smith 2022)
-<doi:10.1093/sysbio/syab100>, for calculating the median of sets of trees, and
-for computing the information content of trees and splits.")
+<doi:10.1093/sysbio/syab100>, for identifying islands of trees (Silva and
+Wilkinson 2021) <doi:10.1093/sysbio/syab015>, for calculating the median of sets
+of trees, and for computing the information content of trees and splits.")
     (license license:gpl3+)))
 
 (define-public r-treedimensiontest
@@ -20277,13 +20278,13 @@ files.")
 (define-public r-tetrys
   (package
     (name "r-tetrys")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tetRys" version))
        (sha256
-        (base32 "1hr3p91l8fj6lm2vky3ipjrqwvrnnx5xgyff6z85ijm7wnh89cj0"))))
+        (base32 "0xqvkr6lick8isykgdpb9bmag6w19br2k6w26j8zlwa2kf84hw85"))))
     (properties `((upstream-name . "tetRys")))
     (build-system r-build-system)
     (propagated-inputs (list r-audio))

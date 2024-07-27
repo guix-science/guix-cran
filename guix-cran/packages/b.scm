@@ -20853,13 +20853,13 @@ others ('erase', %nin%', unwhich', top', bot', normalize').")
 (define-public r-baytrends
   (package
     (name "r-baytrends")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baytrends" version))
        (sha256
-        (base32 "1kvp17a6q6d59lhpxs702403rp7hsl77l69vs6injrffzpz9si79"))))
+        (base32 "05gd8i6y5fvkx12v55drff0fqpkg7bs3qjcaqmmcid9sl4168ms8"))))
     (properties `((upstream-name . "baytrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

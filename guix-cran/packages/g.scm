@@ -2842,13 +2842,13 @@ logrank tests in Yung and Liu (2019) <doi:10.1111/biom.13196>, and
 (define-public r-gsdesign
   (package
     (name "r-gsdesign")
-    (version "3.6.3")
+    (version "3.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsDesign" version))
        (sha256
-        (base32 "1n91kzsqvi148fllmjb3nni10gkpf112fb35z3ir9wakzmp16v4a"))))
+        (base32 "1lknw7n2zd9mfr13lyn9ny3d0lgla56hkdvqmgmvkjsv19jpaq5r"))))
     (properties `((upstream-name . "gsDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -19285,13 +19285,13 @@ Kindlmann and Scheidegger (2014) <doi:10.1109/TVCG.2014.2346325>.")
 (define-public r-ggblanket
   (package
     (name "r-ggblanket")
-    (version "9.1.1")
+    (version "10.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggblanket" version))
        (sha256
-        (base32 "1nnb6kx6yl4rdfjib9xp406wb533zwl3wcfv0d8nljq094n8j7hy"))))
+        (base32 "1ym4sv692ly1r16hf1cxkm6mjz6djik3hwsw2gj2ydchypkdsq3q"))))
     (properties `((upstream-name . "ggblanket")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -29792,13 +29792,13 @@ details can be found in Faith (1992) <doi:10.1016/0006-3207(92)91201-3>.")
 (define-public r-gam-hp
   (package
     (name "r-gam-hp")
-    (version "0.0-1")
+    (version "0.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gam.hp" version))
        (sha256
-        (base32 "038ngqjnk7n71s4900qx4nszvf55qrn282psv2bs3lg2jrvzk8cd"))))
+        (base32 "0zhnwl533vb094vbn5bxggav3fqh0ahrdrhjliwrgwh2h3bwqpp7"))))
     (properties `((upstream-name . "gam.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-mgcv r-ggplot2))
@@ -29809,7 +29809,7 @@ details can be found in Faith (1992) <doi:10.1016/0006-3207(92)91201-3>.")
      "Conducts hierarchical partitioning to calculate individual contributions of each
 predictor towards adjusted R2 and explained deviance for generalized additive
 models based on output of gam()in mgcv package, applying the algorithm in this
-paper: Lai(2022) <doi:10.1093/jpe/rtac096>.")
+paper: Lai(2024) <doi:10.1016/j.pld.2024.06.002>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-galvanizer

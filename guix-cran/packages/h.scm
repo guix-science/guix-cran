@@ -5307,6 +5307,40 @@ using either lmer in the lme4 package or lme in the nlme package.")
 @code{stÃ¡tu} <https://www.hlidacstatu.cz/>, a Czech watchdog, via their API.")
     (license license:expat)))
 
+(define-public r-hlatools
+  (package
+    (name "r-hlatools")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HLAtools" version))
+       (sha256
+        (base32 "0nx2vd2xa5bz5b5pl6vx798ma0109rxyl6gjx5iw12ylh02k9bgq"))))
+    (properties `((upstream-name . "HLAtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun
+                             r-tibble
+                             r-stringr
+                             r-fmsb
+                             r-dplyr
+                             r-desctools))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/sjmack/HLAtools>")
+    (synopsis "Toolkit for HLA Immunogenomics")
+    (description
+     "This package provides a toolkit for the analysis and management of data for
+genes in the so-called \"Human Leukocyte Antigen\" (HLA) region.  Functions
+extract reference data from the Anthony Nolan HLA Informatics
+Group/@code{ImmunoGeneTics} HLA @code{GitHub} repository (ANHIG/IMGTHLA)
+<https://github.com/ANHIG/IMGTHLA>, validate Genotype List (GL) Strings, convert
+between UNIFORMAT and GL String Code (GLSC) formats, translate HLA alleles and
+GLSCs across @code{ImmunoPolymorphism} Database (IPD) IMGT/HLA Database release
+versions, identify differences between pairs of alleles at a locus, generate
+customized, multi-position sequence alignments, trim and convert allele-names
+across nomenclature epochs, and extend existing data-analysis methods.")
+    (license license:gpl3+)))
+
 (define-public r-hlar
   (package
     (name "r-hlar")

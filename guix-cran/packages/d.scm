@@ -15264,13 +15264,13 @@ Sampling and Household Listing Manual\" (ICF International 2012,
 (define-public r-dhlabr
   (package
     (name "r-dhlabr")
-    (version "1.0.2")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dhlabR" version))
        (sha256
-        (base32 "1hqs31ddh82mx8zw8lyzcdl3x5dgpx88shjk8frzib6i4cgq48s8"))))
+        (base32 "185gp7bgaw0rhl29f2gijsqx3da3mzzp06hmi187ywv8i6lsi750"))))
     (properties `((upstream-name . "dhlabR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15633,16 +15633,16 @@ the paper linked to via the URL below.")
 (define-public r-dggridr
   (package
     (name "r-dggridr")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dggridR" version))
        (sha256
-        (base32 "1915lc81yw6ns02fi37xjqd2zbdzhdsvqqb6c9w4b6i0665yb9ja"))))
+        (base32 "1vwmf5m1k40kk68vil280gnzh028y04wi5q3xjacyhaw8di0w9d5"))))
     (properties `((upstream-name . "dggridR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sp r-sf r-rlang r-rcpp r-dplyr))
+    (propagated-inputs (list r-sf r-s2 r-rcpp r-collapse))
     (native-inputs (list r-r-rsp r-knitr))
     (home-page "https://github.com/r-barnes/dggridR/")
     (synopsis "Discrete Global Grids")
@@ -16675,13 +16675,13 @@ maintainability of your code.")
 (define-public r-devemf
   (package
     (name "r-devemf")
-    (version "4.4-2")
+    (version "4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "devEMF" version))
        (sha256
-        (base32 "10gk60irfpflshzshl4vad1dynfj1hnyjycsnfa8bn0gq20ipj5x"))))
+        (base32 "03iwl6h6f158qc2i5b0ac9g1nnspqr958cvprjm4rgs1pcywplga"))))
     (properties `((upstream-name . "devEMF")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))

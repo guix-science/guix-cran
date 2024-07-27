@@ -457,13 +457,13 @@ analysis of variance design with mixed classification.")
 (define-public r-pwrgsd
   (package
     (name "r-pwrgsd")
-    (version "2.3.6")
+    (version "2.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PwrGSD" version))
        (sha256
-        (base32 "1sxm4g4hrnn7rqxgx4pi98jlh15a8hm8jnrnmcyi2yj86x5l35r0"))))
+        (base32 "0gxyx2z4yjqvivwslb31ai2vpg664p6pvyhz23s9n43wlqahvjg1"))))
     (properties `((upstream-name . "PwrGSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -7657,30 +7657,38 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.0")
+    (version "1.0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "1rjryvhw9gd0lzmfmz971zzvf1hnrxy2mr5605jrfqh7ilimywbb"))))
+        (base32 "1m224wxzighadp8gdch4fg8pc5df4xphf75ixq6r99x7klp4mcah"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rstan r-rlang r-lifecycle r-ggplot2))
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-lifecycle
+                             r-ggplot2
+                             r-bh))
     (home-page "https://github.com/saulo-chaves/ProbBreed")
     (synopsis "Probability Theory for Selecting Candidates in Plant Breeding")
     (description
      "Use probability theory under the Bayesian framework for calculating the risk of
-selecting candidates in a multi-environment context [Dias et al. (2022)
-<doi:10.1007/s00122-022-04041-y>].  Contained are functions used to fit a
-Bayesian multi-environment model (based on the available presets), extract
-posterior values and maximum posterior values, compute the variance components,
-check the modelâs convergence, and calculate the probabilities.  For both
-across and within-environments scopes, the package computes the probability of
-superior performance and the pairwise probability of superior performance.
-Furthermore, the probability of superior stability and the pairwise probability
-of superior stability across environments is estimated.  A joint probability of
-superior performance and stability is also provided.")
+selecting candidates in a multi-environment context.  Contained are functions
+used to fit a Bayesian multi-environment model (based on the available presets),
+extract posterior values and maximum posterior values, compute the variance
+components, check the modelâs convergence, and calculate the probabilities.
+For both across and within-environments scopes, the package computes the
+probability of superior performance and the pairwise probability of superior
+performance.  Furthermore, the probability of superior stability and the
+pairwise probability of superior stability across environments is estimated.  A
+joint probability of superior performance and stability is also provided.")
     (license license:agpl3+)))
 
 (define-public r-probbayes
@@ -14504,32 +14512,24 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "0s7grqzh3dy6rn7ricq79sr936q3prnj9zq2c5474pyl0pypv85p"))))
+        (base32 "0swdjqcy6rm7jv5bh7a3j7pn64k9ydaxy9iclca4qc7ivg6j4nwg"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr
-                             r-stampp
                              r-spdep
                              r-spdata
-                             r-sp
                              r-scatterpie
                              r-rlang
                              r-reshape2
-                             r-raster
-                             r-poppr
                              r-magrittr
-                             r-hierfstat
-                             r-gstat
                              r-ggplot2
-                             r-dplyr
-                             r-dartr
-                             r-adegenet))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://kfarleigh.github.io/PopGenHelpR/")
     (synopsis "Streamline Population Genomic and Genetic Analyses")

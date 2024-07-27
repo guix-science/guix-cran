@@ -5373,13 +5373,13 @@ writing Stan model code.")
 (define-public r-rstanbdp
   (package
     (name "r-rstanbdp")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rstanbdp" version))
        (sha256
-        (base32 "0244gbi449nd5q80i1y0k56114c6x9a8k83hvbbc5ny10lmn980j"))))
+        (base32 "1cd411qjw3qc9klihxya75r948ii3i2gpy0yjab6b2ci19fwcy6a"))))
     (properties `((upstream-name . "rstanbdp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -8760,29 +8760,6 @@ simulation section of the paper: L2Boost, LADBoost, MBoost (Friedman, J. H.
 effects by ridge regression; alternatively, BLUPs can be calculated based on an
 additive relationship matrix or a Gaussian kernel.")
     (license license:gpl3)))
-
-(define-public r-rraven
-  (package
-    (name "r-rraven")
-    (version "1.0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Rraven" version))
-       (sha256
-        (base32 "0nlqr1hzbzbz4rb3hjy01iw8czhaqvwmy9hh728fgl5vajwqwn8g"))))
-    (properties `((upstream-name . "Rraven")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-warbler r-tuner r-seewave r-pbapply
-                             r-naturesounds))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/maRce10/Rraven")
-    (synopsis "Connecting R and 'Raven' Sound Analysis Software")
-    (description
-     "This package provides a tool to exchange data between R and Raven sound analysis
-software (Cornell Lab of Ornithology).  Functions work on data formats
-compatible with the R package @code{warbleR}'.")
-    (license license:gpl2+)))
 
 (define-public r-rrate
   (package
@@ -18955,13 +18932,13 @@ cross-validation is also provided.")
 (define-public r-rmcorr
   (package
     (name "r-rmcorr")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmcorr" version))
        (sha256
-        (base32 "0p3vqhqyh4lrnlj05bdqxza2dl08nmfadsl0dg67vbr3rjzfh62k"))))
+        (base32 "03i460ccajvy2swb86mcygs2wxjiyw0k9vx6vc4gqvh0l772ciha"))))
     (properties `((upstream-name . "rmcorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer r-psych))
@@ -23149,13 +23126,13 @@ manifolds.")
 (define-public r-riem
   (package
     (name "r-riem")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "riem" version))
        (sha256
-        (base32 "04j9g0g3wgwm0qikad35vi0jb55n7bna12gq5jgy1kkc26l1srgw"))))
+        (base32 "0cvgddp7k7905k7cfz12cz48iv8ygli2n2nk1jyaxjxqvghv5zql"))))
     (properties `((upstream-name . "riem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -48459,13 +48436,13 @@ Cabezas-Wallscheid, N., Grun, D. (2023) <DOI:10.1186/s13059-023-02974-1>).")
 (define-public r-racademyocean
   (package
     (name "r-racademyocean")
-    (version "0.3.2")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "racademyocean" version))
        (sha256
-        (base32 "0p16xwlm67rvbla6mnky6yv5aa2r61v645jlwhg0zn2dyc8xpajk"))))
+        (base32 "14dj4vizs8yvmmf5ny5d0cz7g42ncrk2aibb139vkd69h2a3xaax"))))
     (properties `((upstream-name . "racademyocean")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
