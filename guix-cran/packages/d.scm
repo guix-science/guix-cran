@@ -3340,17 +3340,17 @@ MOLGENIS Armadillo server.  MOLGENIS Armadillo is a light-weight
 (define-public r-dsmmr
   (package
     (name "r-dsmmr")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmmR" version))
        (sha256
-        (base32 "05hbwdycbz58mn01xl6958w03z4adjb00bgl1f9sqbhgy4x23397"))))
+        (base32 "0pdhpshdhpd1cvgnx3cnbkczwychxv49w90sc4lvgviknl7wd4c1"))))
     (properties `((upstream-name . "dsmmR")))
     (build-system r-build-system)
     (propagated-inputs (list r-discreteweibull))
-    (home-page "https://cran.r-project.org/package=dsmmR")
+    (home-page "https://github.com/Mavrogiannis-Ioannis/dsmmR")
     (synopsis "Estimation and Simulation of Drifting Semi-Markov Models")
     (description
      "This package performs parametric and non-parametric estimation and simulation of
@@ -17519,13 +17519,13 @@ Statistical Office of Germany.")
 (define-public r-desctoolsaddins
   (package
     (name "r-desctoolsaddins")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DescToolsAddIns" version))
        (sha256
-        (base32 "0wgcfrxf2vygr7rylkbfzlgldg6llg4k4bzwrq8c73miwac158js"))))
+        (base32 "160xd95njj1pk11grdrs2mzx1h98q8fin46yg8jiyi16rlyvxm4l"))))
     (properties `((upstream-name . "DescToolsAddIns")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl r-rstudioapi r-manipulate r-foreign

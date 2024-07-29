@@ -5165,6 +5165,27 @@ results in a back and forth ping-pong of conclusions when evaluating a sequence
 of studies.  O'Connor & Ermacora (2021, <doi:10.1037/cbs0000259>).")
     (license license:gpl2+)))
 
+(define-public r-nntmvn
+  (package
+    (name "r-nntmvn")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nntmvn" version))
+       (sha256
+        (base32 "0anv6vl9md127y59k6sqvpx7sacfwz62amgc4x0yb0rj7xwvzjnd"))))
+    (properties `((upstream-name . "nntmvn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal r-gpgp))
+    (home-page "https://cran.r-project.org/package=nntmvn")
+    (synopsis "Draw Samples of Truncated Multivariate Normal Distributions")
+    (description
+     "Use the sequential nearest neighbor (SNN) method introduced in Jian Cao and
+Matthias Katzfuss (2024) <doi:10.48550/@code{arXiv.2406.17307>} to draw samples
+from the truncated multivariate normal (TMVN) distributions.")
+    (license license:gpl2+)))
+
 (define-public r-nntensor
   (package
     (name "r-nntensor")
@@ -12402,6 +12423,43 @@ protein-protein interaction network.")
      "Set of functions to estimate kidney function and other phenotypes of interest in
 nephrology based on different biomechimal traits.")
     (license license:gpl3+)))
+
+(define-public r-neotoma2
+  (package
+    (name "r-neotoma2")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neotoma2" version))
+       (sha256
+        (base32 "0dhbb7hhbw508mc4zwa2hr5kx5gaz4fj2vp2mrgjqww3dr55c1kp"))))
+    (properties `((upstream-name . "neotoma2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wk
+                             r-uuid
+                             r-tidyr
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-magrittr
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-gtools
+                             r-geojsonsf
+                             r-dplyr
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/NeotomaDB/neotoma2")
+    (synopsis "Working with the Neotoma Paleoecology Database")
+    (description
+     "Access and manipulation of data using the Neotoma Paleoecology Database.
+<https://api.neotomadb.org/api-docs/>.")
+    (license license:expat)))
 
 (define-public r-neonutilities
   (package

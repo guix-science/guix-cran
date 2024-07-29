@@ -9314,6 +9314,30 @@ the National Research Foundation of Korea (NRF) grant funded by the Korea
 government (MSIT) (No.  2022R1A2C1091319).")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-rqcanon
+  (package
+    (name "r-rqcanon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rqcanon" version))
+       (sha256
+        (base32 "17h5bsi2iqhfjm4mdi65ni2qi8n8dm4g5wgmgg50g1kv07n18l9s"))))
+    (properties `((upstream-name . "rqcanon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg))
+    (home-page "https://cran.r-project.org/package=rqcanon")
+    (synopsis "Canonical Quantile Regression")
+    (description
+     "This package provides a quantile regression method for multivariate data to find
+linear combinations of explanatory and response variables generalizing canonical
+correlation.  The package consists of functions, rqcan() for fitting the
+coefficients, and summary.rqcan(), which calls a bootstrap function.  For
+details, see the help files for rqcan() and summary.rqcan(), and the reference:
+Portnoy (2022) <doi:10.1016/j.jmva.2022.105071>.")
+    (license license:expat)))
+
 (define-public r-rpymat
   (package
     (name "r-rpymat")
@@ -29049,16 +29073,17 @@ a string containing diverse packages from several resources like Github or CRAN.
 (define-public r-require
   (package
     (name "r-require")
-    (version "0.3.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Require" version))
        (sha256
-        (base32 "1d87vzxix2lwqjkl5h5kcpvjyd794li5z8vxf1r5dyd7nzmkm1qq"))))
+        (base32 "10mir99f4gl0s9lp73cb8yxrr2lngdqm1by2j4d66gs61qirdch0"))))
     (properties `((upstream-name . "Require")))
     (build-system r-build-system)
-    (propagated-inputs (list r-data-table))
+    (propagated-inputs (list r-sys r-data-table))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://Require.predictiveecology.org")
     (synopsis "Installing and Loading R Packages for Reproducible Workflows")
     (description
@@ -43264,13 +43289,13 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.32.2")
+    (version "0.34.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "1vmxnwr8bf4w8kfizqvbi94p2bh7cnwsl8xcljvf4cslsx2ky8l3"))))
+        (base32 "0rgrxbzcl5bd9c3xgd58ssh0isfy82xg7gky9zi0cp1a5nb51d21"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -43772,19 +43797,18 @@ concentrations can be corrected for adhering particles (soil, airborne dust).")
 (define-public r-ratioofqsprays
   (package
     (name "r-ratioofqsprays")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ratioOfQsprays" version))
        (sha256
-        (base32 "1xzss28wpyx9c5n504sllnlsjqv6ybiswbn3ws9is03024fzcaa9"))))
+        (base32 "1g5xpjqwp8rplz85vrjmy9fjg1vf4gs793immljac8c8pcvxixds"))))
     (properties `((upstream-name . "ratioOfQsprays")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-ryacas
                              r-rcppcgal
-                             r-rcpparmadillo
                              r-rcpp
                              r-qspray
                              r-gmp

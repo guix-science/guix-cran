@@ -2350,6 +2350,27 @@ data.  The philosophy of the package is described in Guo G. (2020)
 <doi:10.1080/02331888.2020.1823979>.")
     (license license:expat)))
 
+(define-public r-orionz-g
+  (package
+    (name "r-orionz-g")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORIONZ.G" version))
+       (sha256
+        (base32 "05223qkvqpr1nr7jxznin11jcyapzp76p47xqhl1jr1hif3akvrb"))))
+    (properties `((upstream-name . "ORIONZ.G")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ORIONZ.G")
+    (synopsis
+     "EAP Scoring in Exploratory FA Solutions with Correlated Residuals")
+    (description
+     "Obtaining Bayes Expected A Posteriori (EAP) individual score estimates based on
+linear and non-linear extended Exploratoy Factor Analysis solutions that include
+a correlated-residual structure.")
+    (license license:gpl3)))
+
 (define-public r-orion
   (package
     (name "r-orion")
@@ -3454,16 +3475,17 @@ object from the graph package.")
 (define-public r-orbital
   (package
     (name "r-orbital")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orbital" version))
        (sha256
-        (base32 "0i3ryz6hff5j7212v4n2b1psvzahbarb6iw4xvb6z0ly8qzfgzd3"))))
+        (base32 "167hpki2v1m8n0fpx3giy7pdc49lwcsn1qacgi38f7m8v0dca4ga"))))
     (properties `((upstream-name . "orbital")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-cli))
+    (propagated-inputs (list r-rlang r-dplyr r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/tidymodels/orbital")
     (synopsis "Predict with 'tidymodels' Workflows in Databases")
     (description
@@ -10266,6 +10288,32 @@ consumption data.")
 Connect to various databases to send queries, upload files, preview tables, and
 more.")
     (license license:expat)))
+
+(define-public r-octopucs
+  (package
+    (name "r-octopucs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "octopucs" version))
+       (sha256
+        (base32 "1h7rd8an244k5jngshxqcmdr5fpn9l97bkw22cffa1pizmv2d1ac"))))
+    (properties `((upstream-name . "octopucs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-stringr r-progress))
+    (home-page "https://cran.r-project.org/package=octopucs")
+    (synopsis "Statistical Support for Hierarchical Clusters")
+    (description
+     "Generates n hierarchical clustering hypotheses on subsets of classifiers
+(usually species in community ecology studies).  The n clustering hypotheses are
+combined to generate a generalized cluster, and computes three metrics of
+support.  1) The average proportion of elements conforming the group in each of
+the n clusters (integrity).  And 2) the contamination, i.e., the average
+proportion of elements from other groups that enter a focal group.  3) The
+probability of existence of the group gives the integrity and contamination in a
+Bayesian approach.")
+    (license license:gpl3)))
 
 (define-public r-ocsdata
   (package

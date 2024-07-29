@@ -4180,6 +4180,28 @@ Cybis (2020) <doi:10.1080/10618600.2020.1796398>, Debora Z. Bello, Marcio Valk
 and Gabriela B. Cybis (2021) <@code{arXiv:2106.09115>}.")
     (license license:gpl3)))
 
+(define-public r-ucimlrepo
+  (package
+    (name "r-ucimlrepo")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ucimlrepo" version))
+       (sha256
+        (base32 "0v0qprchgi8553hf4aqwd4gn06spbr0yzym8c5z1c3dqy9vp8bax"))))
+    (properties `((upstream-name . "ucimlrepo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2))
+    (home-page "https://r-pkg.thecoatlessprofessor.com/ucimlrepo/")
+    (synopsis "Explore UCI ML Repository Datasets")
+    (description
+     "Find and import datasets from the University of California Irvine Machine
+Learning (UCI ML) Repository into R. Supports working with data from UCI ML
+repository inside of R scripts, notebooks, and Quarto'/'RMarkdown documents.
+Access the UCI ML repository directly at <https://archive.ics.uci.edu/>.")
+    (license license:expat)))
+
 (define-public r-ucie
   (package
     (name "r-ucie")

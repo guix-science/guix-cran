@@ -2936,18 +2936,17 @@ functions provided by similar packages.")
 (define-public r-qspray
   (package
     (name "r-qspray")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qspray" version))
        (sha256
-        (base32 "1vxs8z6whl5a829nk4cjljl47722nzgi8pl0wfhry1skans6gbkq"))))
+        (base32 "0i5sq29zdcvdrmzsd0xxrw200q6nhg8b00n2jwya8hq4al9xq2z6"))))
     (properties `((upstream-name . "qspray")))
     (build-system r-build-system)
     (inputs (list gmp))
     (propagated-inputs (list r-ryacas
-                             r-rcpparmadillo
                              r-rcpp
                              r-rationalmatrix
                              r-purrr
@@ -2962,10 +2961,11 @@ functions provided by similar packages.")
      "Symbolic calculation and evaluation of multivariate polynomials with rational
 coefficients.  This package is strongly inspired by the spray package.  It
 provides a function to compute @code{GrÃ¶bner} bases (reference
-<doi:10.1007/978-3-319-16721-3>).  The header file of the C++ code can be used
-by other packages.  It provides the templated class Qspray that can be used to
-represent and to deal with multivariate polynomials with another type of
-coefficients.")
+<doi:10.1007/978-3-319-16721-3>).  It also includes some features for symmetric
+polynomials, such as the Hall inner product.  The header file of the C++ code
+can be used by other packages.  It provides the templated class Qspray that can
+be used to represent and to deal with multivariate polynomials with another type
+of coefficients.")
     (license license:gpl3)))
 
 (define-public r-qsplines

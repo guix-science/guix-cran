@@ -1015,18 +1015,17 @@ partitioned into file-backed blocks.")
 (define-public r-symbolicqspray
   (package
     (name "r-symbolicqspray")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "symbolicQspray" version))
        (sha256
-        (base32 "03znlsgyli2jdbv4i1k358j1796w11zbiidl3iy9lgv9adrh3cnh"))))
+        (base32 "0l7lhpxnbbfgwypyqy3sy13vcjv63fv707i5d4r9gh2almk373s7"))))
     (properties `((upstream-name . "symbolicQspray")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
     (propagated-inputs (list r-rcppcgal
-                             r-rcpparmadillo
                              r-rcpp
                              r-ratioofqsprays
                              r-qspray
@@ -9016,31 +9015,31 @@ of R objects.  To do so, it only works with common structuring of R objects
 (define-public r-str
   (package
     (name "r-str")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stR" version))
        (sha256
-        (base32 "1gh26yhcpkiif6zyrrg0rw4118xcf7j1d1wf70wgyrwb1hrr6vcv"))))
+        (base32 "1ihhz62ajkiq4d5s9zvqfp2h4k7hwgynfdy7walrhpxlcb9pjgay"))))
     (properties `((upstream-name . "stR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-quantreg r-matrix r-forecast
                              r-foreach))
     (native-inputs (list r-knitr))
-    (home-page "https://bitbucket.org/alexanderdokumentov/strpackage")
-    (synopsis "STR Decomposition")
+    (home-page "https://pkg.robjhyndman.com/stR/")
+    (synopsis "Seasonal Trend Decomposition Using Regression")
     (description
      "This package provides methods for decomposing seasonal data: STR (a
-Seasonal-Trend decomposition procedure based on Regression) and Robust STR. In
-some ways, STR is similar to Ridge Regression and Robust STR can be related to
-LASSO. They allow for multiple seasonal components, multiple linear covariates
-with constant, flexible and seasonal influence.  Seasonal patterns (for both
-seasonal components and seasonal covariates) can be fractional and flexible over
-time; moreover they can be either strictly periodic or have a more complex
-topology.  The methods provide confidence intervals for the estimated
-components.  The methods can be used for forecasting.")
-    (license license:gpl2+)))
+Seasonal-Trend time series decomposition procedure based on Regression) and
+Robust STR. In some ways, STR is similar to Ridge Regression and Robust STR can
+be related to LASSO. They allow for multiple seasonal components, multiple
+linear covariates with constant, flexible and seasonal influence.  Seasonal
+patterns (for both seasonal components and seasonal covariates) can be
+fractional and flexible over time; moreover they can be either strictly periodic
+or have a more complex topology.  The methods provide confidence intervals for
+the estimated components.  The methods can also be used for forecasting.")
+    (license license:gpl3)))
 
 (define-public r-stppsim
   (package
@@ -18705,13 +18704,13 @@ ISBN:978-0470770818);Baddeley et al (2015, ISBN:9781482210200).")
 (define-public r-spnaf
   (package
     (name "r-spnaf")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spnaf" version))
        (sha256
-        (base32 "1xiky882smpyqscdwaqgjx505f5gwpl9i419n15j90lv4f768k6q"))))
+        (base32 "1l9p56f6yg10drag7mphk183kzz6s4b2ghfn3dlifgq76yqi7zfl"))))
     (properties `((upstream-name . "spnaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -57148,13 +57147,13 @@ number of clusters as well.")
 (define-public r-sbw
   (package
     (name "r-sbw")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbw" version))
        (sha256
-        (base32 "11ncmxgwdv7n51ds5zwcdym2q66d2xpm4irivg0hixvfm800lw6x"))))
+        (base32 "0815xxgzz0b79bv9g4cw144dl6y6f2yi2k2n2khfhpwd8ipgmsr7"))))
     (properties `((upstream-name . "sbw")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-univar r-slam r-quadprog r-matrix

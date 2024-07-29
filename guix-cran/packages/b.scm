@@ -11999,6 +11999,49 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (2019) <doi:10.1002/ece3.4718> and Leroy et al. (2019) <doi:10.1111/jbi.13674>).")
     (license license:gpl3)))
 
+(define-public r-biorad
+  (package
+    (name "r-biorad")
+    (version "0.8.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bioRad" version))
+       (sha256
+        (base32 "0bkj2yhmg61h3pflvaw3pwvisylflhgmhs405a468v8qf29vd6fb"))))
+    (properties `((upstream-name . "bioRad")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridislite
+                             r-viridis
+                             r-tidyselect
+                             r-tidyr
+                             r-suntools
+                             r-stringr
+                             r-sp
+                             r-sf
+                             r-rlang
+                             r-rhdf5
+                             r-readr
+                             r-raster
+                             r-lutz
+                             r-lubridate
+                             r-jsonlite
+                             r-glue
+                             r-ggplot2
+                             r-fields
+                             r-dplyr
+                             r-curl
+                             r-assertthat))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/adokter/bioRad/")
+    (synopsis "Biological Analysis and Visualization of Weather Radar Data")
+    (description
+     "Extract, visualize and summarize aerial movements of birds and insects from
+weather radar data.  See Dokter, A. M. et al. (2018) \"@code{bioRad}: biological
+analysis and visualization of weather radar data\" <doi:10.1111/ecog.04028> for a
+software paper describing package and methodologies.")
+    (license license:expat)))
+
 (define-public r-bioprobability
   (package
     (name "r-bioprobability")
@@ -16774,18 +16817,18 @@ populations, see Jonker, Pazira and Coolen (2024)
 (define-public r-bff
   (package
     (name "r-bff")
-    (version "3.0.1")
+    (version "4.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFF" version))
        (sha256
-        (base32 "1sya6ww8jwi56zb3i2rjhk1qd52n5s9sqlzndyk812zyxj6h5zim"))))
+        (base32 "1s4f9mjhx24hxm2aan25kmb5akpxl25ggic3mkwmh1d0npbgip6a"))))
     (properties `((upstream-name . "BFF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-hypergeo r-gsl r-ggplot2 r-bsda))
+    (propagated-inputs (list r-rlang r-matrix r-gsl r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=BFF")
+    (home-page "https://github.com/rshudde/BFF")
     (synopsis "Bayes Factor Functions")
     (description
      "Bayes factors represent the ratio of probabilities assigned to data by competing
@@ -16802,10 +16845,8 @@ the need for arbitrary thresholds to determine \"statistical significance.\" BFF
 are available in closed form and can be easily computed from z, t, chi-squared,
 and F statistics.  They depend on hyperparameters \"r\" and \"tau^2\", which
 determine the shape and scale of the prior distributions defining the
-alternative hypotheses.  For replicated designs, the \"r\" parameter in each
-function can be adjusted to be greater than 1.  Plots of BFFs versus effect size
-provide informative summaries of hypothesis tests that can be easily aggregated
-across studies.")
+alternative hypotheses.  Plots of BFFs versus effect size provide informative
+summaries of hypothesis tests that can be easily aggregated across studies.")
     (license license:gpl2+)))
 
 (define-public r-bfast
@@ -18935,6 +18976,39 @@ models, and produce posterior inferences about HTE. See Wang et al. (2018)
      "These data contain morphological image measurements for dried beans from Koklu
 and Ozkan (2020) <doi:10.1016/j.compag.2020.105507>.")
     (license license:expat)))
+
+(define-public r-beamr
+  (package
+    (name "r-beamr")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BEAMR" version))
+       (sha256
+        (base32 "0187ka2lgkkqbvkrss4sgfnihicvkyi9zp6dk79cfxjvl3jyh2xm"))))
+    (properties `((upstream-name . "BEAMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survminer
+                             r-survival
+                             r-stringr
+                             r-rlist
+                             r-purrr
+                             r-mass
+                             r-magrittr
+                             r-logistf
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggmosaic
+                             r-dplyr))
+    (home-page "https://annaseffernick.github.io/BEAMR/")
+    (synopsis "Bootstrap Evaluation of Association Matrices")
+    (description
+     "This package provides a bootstrap-based approach to integrate multiple forms of
+high dimensional genomic data with multiple clinical endpoints.  This method is
+used to find clinically meaningful groups of genomic features, such as genes or
+pathways.  A manuscript describing this method is in preparation.")
+    (license license:gpl3+)))
 
 (define-public r-beakr
   (package
@@ -27598,6 +27672,38 @@ Stan, including convenience functions for formatting data, plotting and pooling
 measures specific to meta-analysis.  This implements many models from Meager
 (2019) <doi:10.1257/app.20170299>.")
     (license license:gpl3+)))
+
+(define-public r-baggingbwsel
+  (package
+    (name "r-baggingbwsel")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baggingbwsel" version))
+       (sha256
+        (base32 "0za7a7l4dzg0djzdrrz9axry61h8m41qkgay37ymy4lfkdwawjcx"))))
+    (properties `((upstream-name . "baggingbwsel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sm
+                             r-rcpp
+                             r-nor1mix
+                             r-misc3d
+                             r-mclust
+                             r-kedd
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://rubenfcasal.github.io/baggingbwsel/")
+    (synopsis
+     "Bagging Bandwidth Selection in Kernel Density and Regression Estimation")
+    (description
+     "Bagging bandwidth selection methods for the Parzen-Rosenblatt and
+Nadaraya-Watson estimators.  These bandwidth selectors can achieve greater
+statistical precision than their non-bagged counterparts while being
+computationally fast.  See Barreiro-Ures et al. (2020)
+<doi:10.1093/biomet/asaa092> and Barreiro-Ures et al. (2021)
+<doi:10.48550/@code{arXiv.2105.04134>}.")
+    (license license:gpl3)))
 
 (define-public r-bagged-outliertrees
   (package

@@ -2666,6 +2666,25 @@ continuous outcome (Mollan, Trumble, Reifeis et.  al., Mar.  2020)
 <doi:10.1080/10485250500473099>.")
     (license license:gpl3)))
 
+(define-public r-wmwm
+  (package
+    (name "r-wmwm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wmwm" version))
+       (sha256
+        (base32 "0dhh36wzcjg4c3yrg2qgb6kj7p8fpadvfwiach04dlqmbzjj2knw"))))
+    (properties `((upstream-name . "wmwm")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=wmwm")
+    (synopsis "Performs Wilcoxon-Mann-Whitney Test with Missing Data")
+    (description
+     "This package performs Wilcoxon-Mann-Whitney test in the presence of missing data
+with controlled Type I error regardless of the values of missing data.")
+    (license license:expat)))
+
 (define-public r-wmm
   (package
     (name "r-wmm")
@@ -3434,16 +3453,17 @@ correct, and receive results in tidy tibbles.")
 (define-public r-wikitools
   (package
     (name "r-wikitools")
-    (version "1.2.4")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikiTools" version))
        (sha256
-        (base32 "1s6rssxalg3p4xfh1dc2igiqpiwyd8h5dlyfs5vwixn7pjyd3ac5"))))
+        (base32 "0yw1afj926pki61kfgmb5s4whaj25c93hqs4yja8gqb87pky5010"))))
     (properties `((upstream-name . "wikiTools")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ratelimitr r-jsonlite r-httr))
+    (propagated-inputs (list r-ratelimitr r-jsonlite r-httr r-curl
+                             r-collections))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=wikiTools")
     (synopsis "Tools for Wikidata and Wikipedia")

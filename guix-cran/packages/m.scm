@@ -273,6 +273,29 @@ time until all regression coefficients are significantly different from 0 at the
 chosen alpha level of 0.05.")
     (license license:gpl3+)))
 
+(define-public r-mxsem
+  (package
+    (name "r-mxsem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mxsem" version))
+       (sha256
+        (base32 "0mhy8nbg9xagsdacyy1q0ri0j6jdsidsmcx12k736axi0805x0m1"))))
+    (properties `((upstream-name . "mxsem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-openmx r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jhorzek.github.io/mxsem/")
+    (synopsis "Specify 'OpenMx' Models with a 'lavaan'-Style Syntax")
+    (description
+     "This package provides a lavaan'-like syntax for @code{OpenMx} models.  The
+syntax supports definition variables, bounds, and parameter transformations.
+This allows for latent growth curve models with person-specific measurement
+occasions, moderated nonlinear factor analysis and much more.")
+    (license license:gpl3+)))
+
 (define-public r-mxnorm
   (package
     (name "r-mxnorm")
@@ -4208,13 +4231,13 @@ to igraph'.")
 (define-public r-multinet
   (package
     (name "r-multinet")
-    (version "4.1.2")
+    (version "4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinet" version))
        (sha256
-        (base32 "0i87r6k6pzr7gbspcq9d101gwnnlwqpr0y4s1dgqsa2abivk0p55"))))
+        (base32 "1rrb03nl658r28sjn4d1g7hdwz5jsg8hgwhygy79xfsqf1pykmy8"))))
     (properties `((upstream-name . "multinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcolorbrewer r-igraph))
@@ -12174,6 +12197,33 @@ examples and a shiny app.")
 elements taking advantage of the power that R offers.  In this first version, it
 allows the definition of questions to be included in the question bank.")
     (license license:expat)))
+
+(define-public r-moocore
+  (package
+    (name "r-moocore")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moocore" version))
+       (sha256
+        (base32 "0xnix4izfl7hs8an1w8jvdsd6gcw61njqhzh2wy9mxkvl7kjw7jg"))))
+    (properties `((upstream-name . "moocore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-matrixstats))
+    (home-page "https://multi-objective.github.io/moocore/r/")
+    (synopsis "Core Mathematical Functions for Multi-Objective Optimization")
+    (description
+     "Fast implementation of mathematical operations and performance metrics for
+multi-objective optimization, including filtering and ranking of dominated
+vectors according to Pareto optimality, computation of the empirical attainment
+function, V.G. da Fonseca, C.M. Fonseca, A.O. Hall (2001)
+<doi:10.1007/3-540-44719-9_15>, hypervolume metric, C.M. Fonseca, L. Paquete, M.
+LÃ³pez-@code{IbÃ¡Ã±ez} (2006) <doi:10.1109/CEC.2006.1688440>), epsilon
+indicator, inverted generational distance, and Vorob\\'ev threshold, expectation
+and deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
+<doi:10.1016/j.ejor.2014.07.032>, among others.")
+    (license license:lgpl2.0+)))
 
 (define-public r-montecarlosem
   (package
@@ -29932,6 +29982,45 @@ gravitational based search (Rashedi et al., 2009) and black hole optimization
 (Hatamlou, 2013).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-metahelper
+  (package
+    (name "r-metahelper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "metaHelper" version))
+       (sha256
+        (base32 "0nsrsaklxbr4clg3ka8rrpp162bl9qcxkffqkmdz5ha4dfs028vm"))))
+    (properties `((upstream-name . "metaHelper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-confintr))
+    (home-page "https://github.com/RobertEmprechtinger/metaHelper")
+    (synopsis
+     "Transforms Statistical Measures Commonly Used for Meta-Analysis")
+    (description
+     "Helps calculate statistical values commonly used in meta-analysis.  It provides
+several methods to compute different forms of standardized mean differences, as
+well as other values such as standard errors and standard deviations.  The
+methods used in this package are described in the following references: Altman D
+G, Bland J M. (2011) <doi:10.1136/bmj.d2090> Borenstein, M., Hedges, L.V.,
+Higgins, J.P.T. and Rothstein, H.R. (2009) <doi:10.1002/9780470743386.ch4> Chinn
+S. (2000) <doi:10.1002/1097-0258(20001130)19:22%3C3127::aid-sim784%3E3.0.co;2-m>
+Cochrane Handbook (2011) <https://handbook-5-1.cochrane.org/front_page.htm>
+Cooper, H., Hedges, L. V., & Valentine, J. C. (2009)
+<https://psycnet.apa.org/record/2009-05060-000> Cohen, J. (1977)
+<https://psycnet.apa.org/record/1987-98267-000> Ellis, P.D. (2009)
+<https://www.psychometrica.de/effect_size.html> Goulet-Pelletier, J.-C., &
+Cousineau, D. (2018) <doi:10.20982/tqmp.14.4.p242> Hedges, L. V. (1981)
+<doi:10.2307/1164588> Hedges L. V., Olkin I. (1985)
+<doi:10.1016/C2009-0-03396-0> Murad M H, Wang Z, Zhu Y, Saadi S, Chu H, Lin L et
+al. (2023) <doi:10.1136/bmj-2022-073141> Mayer M (2023)
+<https://search.r-project.org/CRAN/refmans/confintr/html/ci_proportion.html>
+Stackoverflow (2014)
+<https://stats.stackexchange.com/questions/82720/confidence-interval-around-binomial-estimate-of-0-or-1>
+Stackoverflow (2018) <https://stats.stackexchange.com/q/338043>.")
+    (license license:expat)))
 
 (define-public r-metahd
   (package

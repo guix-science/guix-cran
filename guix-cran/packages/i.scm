@@ -13142,6 +13142,29 @@ Koenigsberg's bridges, visuotactile brain areas of the macaque monkey, UK
 faculty friendship network, domestic US flights network, etc.")
     (license (license:fsdg-compatible "CC BY-SA 4.0 + file LICENSE"))))
 
+(define-public r-igr
+  (package
+    (name "r-igr")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "igr" version))
+       (sha256
+        (base32 "0kb3jnh2z1fklbhf00cf8s2l3kd3g3nim4dllyc59ivgj66a5yf8"))))
+    (properties `((upstream-name . "igr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/digitalnature-ie/igr")
+    (synopsis "Irish Grid Reference Utilities")
+    (description
+     "Convert between Irish grid references and Irish Grid coordinates.  Irish grid
+references can also be converted to or from an sf object in any coordinate
+reference system.  Precisions from 1 m to 100 km are supported, as are datasets
+with mixed precision.  Conversion to sf polygons is precision-aware.")
+    (license license:gpl3+)))
+
 (define-public r-igorrr
   (package
     (name "r-igorrr")
@@ -13825,6 +13848,27 @@ very simple file format designed for storing vectors and multidimensional
 matrices in binary format.  The format is described on the website from Yann
 @code{LeCun} <http://yann.lecun.com/exdb/mnist/>.")
     (license license:expat)))
+
+(define-public r-idspatialstats
+  (package
+    (name "r-idspatialstats")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IDSpatialStats" version))
+       (sha256
+        (base32 "0skvyh6p31afdqsvqn6k9k18js4zx8dh95v3zswln1ym46v8rs8f"))))
+    (properties `((upstream-name . "IDSpatialStats")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-geom r-spatstat-explore r-igraph
+                             r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=IDSpatialStats")
+    (synopsis "Estimate Global Clustering in Infectious Disease")
+    (description
+     "This package implements various novel and standard clustering statistics and
+other analyses useful for understanding the spread of infectious disease.")
+    (license license:gpl2+)))
 
 (define-public r-idsl-ufax
   (package

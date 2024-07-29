@@ -11715,6 +11715,29 @@ information about the method, refer to the paper Province MA. (2013)
 <doi:10.1142/9789814447973_0023>.")
     (license license:expat)))
 
+(define-public r-corrmct
+  (package
+    (name "r-corrmct")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corrMCT" version))
+       (sha256
+        (base32 "00v4fkkss188yac8micpx2vmj0nqrmrmm93lyqvf119c3khhh5f4"))))
+    (properties `((upstream-name . "corrMCT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble r-matrix r-magrittr r-glue r-dplyr))
+    (home-page "https://cran.r-project.org/package=corrMCT")
+    (synopsis "Correlated Weighted Hochberg")
+    (description
+     "Perform additional multiple testing procedure methods to p.adjust(), such as
+weighted Hochberg (Tamhane, A. C., & Liu, L., 2008) <doi:10.1093/biomet/asn018>,
+ICC adjusted Bonferroni method (Shi, Q., Pavey, E. S., & Carter, R. E., 2012)
+<doi:10.1002/pst.1514> and a new correlation corrected weighted Hochberg for
+correlated endpoints.")
+    (license license:gpl3+)))
+
 (define-public r-corrgrapher
   (package
     (name "r-corrgrapher")
@@ -22720,6 +22743,34 @@ repository, as it is a part of RKWard.")
 samples, and then applying the derived correction parameters to non-control
 samples to obtain bias-free, inter-dataset corrected data.")
     (license license:gpl3)))
+
+(define-public r-cocons
+  (package
+    (name "r-cocons")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cocons" version))
+       (sha256
+        (base32 "17xr2268vfgqs2h6n9wgkja8jc52m9himk7v4jfg7qick3amar73"))))
+    (properties `((upstream-name . "cocons")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spam
+                             r-rcpp
+                             r-optimparallel
+                             r-knitr
+                             r-fields
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=cocons")
+    (synopsis
+     "Covariate-Based Covariance Functions for Nonstationary Gaussian Processes")
+    (description
+     "Estimation and prediction of nonstationary Gaussian process with modular
+covariate-based covariance functions.  Routines for handling large datasets are
+also provided.")
+    (license license:gpl3+)))
 
 (define-public r-coconots
   (package
@@ -36501,20 +36552,21 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "0q785ryilzqab730vg1ba2q738xxrasyzdq3ckc69dsxjp0cpn3s"))))
+        (base32 "0dhdh5k9wy62285mz2g02rl38r5nzpdhrbsa3l05z30ca459rh08"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
-    (propagated-inputs (list r-usa
+    (propagated-inputs (list r-zctacrosswalk
+                             r-yyjsonr
+                             r-usa
                              r-tigris
                              r-tidyr
                              r-sf
-                             r-jsonlite
                              r-httr2
                              r-httr
                              r-dplyr
@@ -42250,6 +42302,30 @@ function to run spectrographic cross correlation, which can be used to compare
 vocalisations.  It also includes multiple other functions related to analysis of
 vocal behaviour.")
     (license license:gpl3)))
+
+(define-public r-callme
+  (package
+    (name "r-callme")
+    (version "0.1.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "callme" version))
+       (sha256
+        (base32 "1agyflf9ch5xyxmfdcv6shxz8h7ibp6rd3d6x1g7gk1cblvshlar"))))
+    (properties `((upstream-name . "callme")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/callme")
+    (synopsis "Easily Compile and Call Inline C Functions")
+    (description
+     "Compile inline C code and easily call with automatically generated wrapper
+functions.  By allowing user-defined headers and compilation flags
+(preprocessor, compiler and linking flags) the user can configure optimization
+options and linking to third party libraries.  Multiple functions may be defined
+in a single block of code - which may be defined in a string or a path to a
+source file.")
+    (license license:expat)))
 
 (define-public r-callback
   (package

@@ -15859,6 +15859,34 @@ extensible layers and themes, it is designed to work smoothly with a variety of
 popular sports data providers.")
     (license license:expat)))
 
+(define-public r-ggsmc
+  (package
+    (name "r-ggsmc")
+    (version "0.1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggsmc" version))
+       (sha256
+        (base32 "1wgb5ml1bgfi6rddbvm3rfk6di9imyx17iflg8h42hhbvbvm93iy"))))
+    (properties `((upstream-name . "ggsmc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-poorman r-ggplot2 r-gganimate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/richardgeveritt/ggsmc")
+    (synopsis
+     "Visualising Output from Sequential Monte Carlo Samplers and Ensemble-Based Methods")
+    (description
+     "This package provides functions for plotting, and animating, the output of
+importance samplers, sequential Monte Carlo samplers (SMC) and ensemble-based
+methods.  The package can be used to plot and animate histograms, densities,
+scatter plots and time series, and to plot the genealogy of an SMC or
+ensemble-based algorithm.  These functions all rely on algorithm output to be
+supplied in tidy format.  A function is provided to transform algorithm output
+from matrix format (one Monte Carlo point per row) to the tidy format required
+by the plotting and animating functions.")
+    (license license:expat)))
+
 (define-public r-ggshadow
   (package
     (name "r-ggshadow")

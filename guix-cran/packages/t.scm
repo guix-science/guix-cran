@@ -10912,6 +10912,30 @@ Dieng, Francisco J. R. Ruiz, David M. Blei (2019), available at
 <@code{arXiv:1907.04907>}.")
     (license license:expat)))
 
+(define-public r-topiclabels
+  (package
+    (name "r-topiclabels")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "topiclabels" version))
+       (sha256
+        (base32 "0x56bgm609xzx844j0qamyix3nr8ziqzj5rd33qgj023gfgrhg8i"))))
+    (properties `((upstream-name . "topiclabels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-progress r-jsonlite r-httr r-checkmate))
+    (home-page "https://github.com/PetersFritz/topiclabels")
+    (synopsis "Automated Topic Labeling with Language Models")
+    (description
+     "Leveraging (large) language models for automatic topic labeling.  The main
+function converts a list of top terms into a label for each topic.  Hence, it is
+complementary to any topic modeling package that produces a list of top terms
+for each topic.  While human judgement is indispensable for topic validation
+(i.e., inspecting top terms and most representative documents), automatic topic
+labeling can be a valuable tool for researchers in various scenarios.")
+    (license license:gpl3+)))
+
 (define-public r-topicdoc
   (package
     (name "r-topicdoc")

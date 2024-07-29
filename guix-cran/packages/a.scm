@@ -3277,6 +3277,38 @@ private practitioners, scholars as well as policymakers.")
 layout.")
     (license license:gpl2)))
 
+(define-public r-atq
+  (package
+    (name "r-atq")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ATQ" version))
+       (sha256
+        (base32 "1sxrking1cfbsp135afbgbvgcv20179i335bzvh32y6arml99jr4"))))
+    (properties `((upstream-name . "ATQ")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-scales
+                             r-rlang
+                             r-purrr
+                             r-gridextra
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/vjoshy/ATQ_Surveillance_Package")
+    (synopsis "Alert Time Quality - Evaluating Timely Epidemic Metrics")
+    (description
+     "This package provides tools for evaluating timely epidemic detection models
+within school absenteeism-based surveillance systems.  Introduces the concept of
+alert time quality as an evaluation metric.  Includes functions to simulate
+populations, epidemics, and alert metrics associated with epidemic spread using
+population census data.  The methods are based on research published in
+Vanderkruk et al. (2023) <doi:10.1186/s12889-023-15747-z> and Jarvis et al.
+(2019) <doi:10.1186/s12889-019-7521-7>.")
+    (license license:gpl3+)))
+
 (define-public r-atpolr
   (package
     (name "r-atpolr")
@@ -20740,13 +20772,13 @@ al. (JCGS, 2021) <doi:10.48550/@code{arXiv.1907.11572>}.")
 (define-public r-activatr
   (package
     (name "r-activatr")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "activatr" version))
        (sha256
-        (base32 "0d3r9xp7nrva84az3p211f3g995g8p0lz49f6fjlmzd9pc3jzxg9"))))
+        (base32 "1lga186jfymbs9padvv3zb25ccrfqhriszql3bbh0pb5ilqf3qdy"))))
     (properties `((upstream-name . "activatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

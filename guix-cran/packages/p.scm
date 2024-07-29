@@ -11022,6 +11022,31 @@ double input symmetrical relevance ('DISR') method by Meyer and Bontempi (2006)
 <doi:10.1016/j.eswa.2015.07.007>.")
     (license license:gpl3)))
 
+(define-public r-prana
+  (package
+    (name "r-prana")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PRANA" version))
+       (sha256
+        (base32 "0y7hrb1lx6mbkpayic20sr08x410cgwfvmx2a5nrssfzvxqbk5y1"))))
+    (properties `((upstream-name . "PRANA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-robustbase r-minet r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PRANA")
+    (synopsis "Pseudo-Value Regression Approach for Network Analysis (PRANA)")
+    (description
+     "This package provides a novel pseudo-value regression approach for the
+differential co-expression network analysis in expression data, which can
+incorporate additional clinical variables in the model.  This is a direct
+regression modeling for the differential network analysis, and it is therefore
+computationally amenable for the most users.  The full methodological details
+can be found in Ahn S et al (2023) <doi:10.1186/s12859-022-05123-w>.")
+    (license license:gpl3)))
+
 (define-public r-prais
   (package
     (name "r-prais")
@@ -15902,13 +15927,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "0v3ada7279i619gv5r92xnyhjgb3qyydq88b5w7mj58al1wni6cg"))))
+        (base32 "00h9v05sv6bqyp2wqa6dvxix9psa2i6csx4yig74i8iycl9issfb"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -28507,13 +28532,13 @@ Elastic Net.")
 (define-public r-pense
   (package
     (name "r-pense")
-    (version "2.2.0")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pense" version))
        (sha256
-        (base32 "1v077lmi7hs793yqv9m4ir0hd8s671714nj2gf3ya48qjmbizyg0"))))
+        (base32 "00z4safn8p0k7ib3jks60lz5cdbm5384cpf95p6js8a8an8p8lb6"))))
     (properties `((upstream-name . "pense")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpparmadillo r-rcpp r-matrix
@@ -32980,13 +33005,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0f2qnf150h47ld5n2718r6iyxkb5hi2r6z3m7krdbr1i4fd2h5w2"))))
+        (base32 "0h9d4qm83qkfdvdmz0vm29yhn50vrbf9qxp2mbgmxx067yynncz6"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
