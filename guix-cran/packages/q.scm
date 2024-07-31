@@ -1386,13 +1386,13 @@ ability to automatically perform leave-one-out cross validation.")
 (define-public r-quantities
   (package
     (name "r-quantities")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantities" version))
        (sha256
-        (base32 "15z988jz1kza162qwfbiz90wjm3sc8kfkylwa73nkjifcd9l2ir5"))))
+        (base32 "0rybq5q5airh01lp779hmqw448szx0i56sp5fv8aza2hmh6f7gxz"))))
     (properties `((upstream-name . "quantities")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-rcpp r-errors))

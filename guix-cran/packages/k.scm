@@ -501,13 +501,13 @@ excision criteria.")
 (define-public r-ksgeneral
   (package
     (name "r-ksgeneral")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KSgeneral" version))
        (sha256
-        (base32 "1imwzx03idl9d61bgqs1pkpp0l1rsajgqdgqimygbygw20wh0xkg"))))
+        (base32 "155fr49pvsbjkjh96aidw3fs6gb4q1i9c9v7qmk7nnfh6gnx0q3c"))))
     (properties `((upstream-name . "KSgeneral")))
     (build-system r-build-system)
     (inputs (list fftw))

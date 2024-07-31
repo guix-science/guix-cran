@@ -512,13 +512,13 @@ sparse non-negative principal components analyses
 (define-public r-gwmodel
   (package
     (name "r-gwmodel")
-    (version "2.3-2")
+    (version "2.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWmodel" version))
        (sha256
-        (base32 "16brnvq9r5qcyk5rxrak85hsp76z6l6q0vwg40pyd6444n6qkxhx"))))
+        (base32 "0g6kd8yic2dlm192429ii2rbvjsz1gndbfmg3lglkfpzsw0d0saz"))))
     (properties `((upstream-name . "GWmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -527,6 +527,7 @@ sparse non-negative principal components analyses
                              r-sp
                              r-sf
                              r-robustbase
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-fnn))
@@ -1370,13 +1371,13 @@ section of @code{GitHub} README.md
 (define-public r-guest
   (package
     (name "r-guest")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GUEST" version))
        (sha256
-        (base32 "1fbad8kf0l69mzagiagf7i5dk7sq8a8qazfxywzppz7xy15acy42"))))
+        (base32 "045cb9k99mrnx8c6xrshsca6dlyw3wqj57i5j34cjz39g4bmwxl6"))))
     (properties `((upstream-name . "GUEST")))
     (build-system r-build-system)
     (propagated-inputs (list r-xicor r-network r-ggally))
@@ -6670,24 +6671,18 @@ Bioinformatics, 18:317 (June 2017).")
 (define-public r-grantham
   (package
     (name "r-grantham")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grantham" version))
        (sha256
-        (base32 "0c7kw7yh5n6mgbplnbdcviwc3r2b321v7s334b0cljz6i3c3cr76"))))
+        (base32 "1bcycvf1sjzwxsmdbscj1q8i7kigy6gx5r202ihb1ilvdi1nmx7l"))))
     (properties `((upstream-name . "grantham")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://maialab.org/grantham/")
-    (synopsis "Calculate the 'Grantham' Distance")
+    (propagated-inputs (list r-vctrs r-tibble r-dplyr))
+    (home-page "https://www.pattern.institute/grantham/")
+    (synopsis "Calculate the Grantham Distance")
     (description
      "This package provides a minimal set of routines to calculate the Grantham
 distance <doi:10.1126/science.185.4154.862>.  The Grantham distance attempts to
@@ -9701,13 +9696,13 @@ bootstrapping tasks.  The package provides an interface to perform new
 (define-public r-gofcens
   (package
     (name "r-gofcens")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GofCens" version))
        (sha256
-        (base32 "1kflcbydh2p78fqdfz35gp0jsp6xl2823mvsqq0yany9294bdqmr"))))
+        (base32 "1xixv05wlwlyga5br9jzrg68rhc71ibhfbyjkmiy0dh9xwyrygsy"))))
     (properties `((upstream-name . "GofCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survminer
@@ -21930,13 +21925,13 @@ exist.")
 (define-public r-geomultistar
   (package
     (name "r-geomultistar")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geomultistar" version))
        (sha256
-        (base32 "00fkrbsi4gw7jkvfwwxnxxq9fbbkl6i2n5wmpzglwiy21y74y6pn"))))
+        (base32 "0vvk48na7130d8j3gm0c5vgi1riqwkjk314pd03i7b4mw00pcm92"))))
     (properties `((upstream-name . "geomultistar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -25946,13 +25941,13 @@ variance corrections.")
 (define-public r-geeverse
   (package
     (name "r-geeverse")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geeVerse" version))
        (sha256
-        (base32 "14yy7qfjql2p6hhm2h5v2j29528085chp84s7q5i9x5x84zpmqvi"))))
+        (base32 "04hfw7y3bfgngiv5cahx3hckfl1i83x2vjc5vabqqk2nq400c4x5"))))
     (properties `((upstream-name . "geeVerse")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen

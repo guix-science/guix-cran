@@ -3669,13 +3669,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.3-2")
+    (version "3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "0h13i894m7b9h3n10gad1332s9x4hzlsd2nsw4cggjcbpiq3qjkr"))))
+        (base32 "00dxlign3l34vjjpzasj6jiyzr53lppq7hw5xb5rm9zqiw31cd2w"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -14283,20 +14283,19 @@ stability.")
 (define-public r-modeltime
   (package
     (name "r-modeltime")
-    (version "1.2.8")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modeltime" version))
        (sha256
-        (base32 "1wvmz4wr972msfrld26ygahn1sky3p10x18975kbaksrw8qgz4ag"))))
+        (base32 "035y6qcz4jkgf1k297ykyglp82303a69iswymx8c0qmcvw4x66nc"))))
     (properties `((upstream-name . "modeltime")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
                              r-xgboost
                              r-workflows
                              r-timetk
-                             r-tidyverse
                              r-tidyr
                              r-tidymodels
                              r-tibble
@@ -17440,6 +17439,42 @@ edges.  Data are input as a symmetric binary adjacency matrix (SBMs), or list of
 such matrices (MLSBMs).")
     (license license:gpl2+)))
 
+(define-public r-mlrv
+  (package
+    (name "r-mlrv")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlrv" version))
+       (sha256
+        (base32 "1q3xjbdl729q5l2iljyj4m7k04lg1i0vg0vm8s3qlkpjidazxd5r"))))
+    (properties `((upstream-name . "mlrv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-mathjaxr
+                             r-magrittr
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=mlrv")
+    (synopsis "Long-Run Variance Estimation in Time Series Regression")
+    (description
+     "Plug-in and difference-based long-run covariance matrix estimation for time
+series regression.  Two applications of hypothesis testing are also provided.
+The first one is for testing for structural stability in coefficient functions.
+The second one is aimed at detecting long memory in time series regression.
+Lujia Bai and Weichi Wu (2024)<doi:10.3150/23-BEJ1680> Zhou Zhou and Wei Biao
+Wu(2010)<doi:10.1111/j.1467-9868.2010.00743.x> Jianqing Fan and Wenyang
+Zhang<doi:10.1214/aos/1017939139> Lujia Bai and Weichi
+Wu(2024)<doi:10.1093/biomet/asae013> Dimitris N. Politis, Joseph P. Romano,
+Michael Wolf(1999)<doi:10.1007/978-1-4612-1554-7> Weichi Wu and Zhou
+Zhou(2018)<doi:10.1214/17-AOS1582>.")
+    (license license:expat)))
+
 (define-public r-mlrpro
   (package
     (name "r-mlrpro")
@@ -20242,6 +20277,34 @@ by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
      "Mixed variable optimization for non-linear functions.  Can optimize function
 whose inputs are a combination of continuous, ordered, and unordered variables.")
     (license license:lgpl3+)))
+
+(define-public r-mixoofa
+  (package
+    (name "r-mixoofa")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixOofA" version))
+       (sha256
+        (base32 "1npa4hbs9xgirb4smsbjpwvk8jk8nh4y6i644lwdsr3zf34rxr7d"))))
+    (properties `((upstream-name . "mixOofA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp r-mixexp r-doofa r-crossdes r-combinat))
+    (home-page "https://cran.r-project.org/package=mixOofA")
+    (synopsis "Design and Analysis of Order-of-Addition Mixture Experiments")
+    (description
+     "This package provides a facility to generate various classes of fractional
+designs for order-of-addition experiments namely fractional order-of-additions
+orthogonal arrays, see Voelkel, Joseph G. (2019). \"The design of
+order-of-addition experiments.\" Journal of Quality Technology 51:3, 230-241,
+<doi:10.1080/00224065.2019.1569958>.  Provides facility to construct component
+orthogonal arrays, see Jian-Feng Yang, Fasheng Sun and Hongquan Xu (2020). \"A
+Component Position Model, Analysis and Design for Order-of-Addition
+Experiments.\" Technometrics, <doi:10.1080/00401706.2020.1764394>.  Supports
+generation of fractional designs for order-of-addition mixture experiments.
+Analysis of data from order-of-addition mixture experiments is also supported.")
+    (license license:gpl2+)))
 
 (define-public r-mixmeta
   (package
@@ -25880,16 +25943,16 @@ extraction for reporting purposes.")
 (define-public r-miamaxent
   (package
     (name "r-miamaxent")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIAmaxent" version))
        (sha256
-        (base32 "0r4q1735f7apfj0jz4f52ra7sisbkkkk2n6i0kii3q64sx2h3xbj"))))
+        (base32 "0xnl21d1jybrff711ndij71ihfarjq5lwpw26frfsni2k4wlbwfy"))))
     (properties `((upstream-name . "MIAmaxent")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-raster r-e1071 r-dplyr))
+    (propagated-inputs (list r-terra r-rlang r-e1071 r-dplyr))
     (native-inputs (list r-r-rsp))
     (home-page "https://github.com/julienvollering/MIAmaxent")
     (synopsis
@@ -25901,7 +25964,8 @@ provides tools for user-controlled transformation of explanatory variables,
 selection of variables by nested model comparison, and flexible model evaluation
 and projection.  It follows principles based on the maximum- likelihood
 interpretation of maximum entropy modeling, and uses infinitely- weighted
-logistic regression for model fitting.")
+logistic regression for model fitting.  The package is described in Vollering et
+al. (2019; <doi:10.1002/ece3.5654>).")
     (license license:expat)))
 
 (define-public r-mi4p
@@ -28126,35 +28190,34 @@ Irrigation and drainage paper 56.  FAO, Rome, 300(9).")
 (define-public r-methodcompare
   (package
     (name "r-methodcompare")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethodCompare" version))
        (sha256
-        (base32 "1nxr2fgmfixjkdparavi156qqqchjwaxpjk9i2xgc1yhp1p01pll"))))
+        (base32 "10i9bxjsd7gdcdmrlyl1qymrhaikcb9jpzqi2hnnwcjaf0p1hfkr"))))
     (properties `((upstream-name . "MethodCompare")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nlme))
-    (home-page "https://cran.r-project.org/package=MethodCompare")
-    (synopsis "Bias and Precision Plots")
+    (propagated-inputs (list r-rockchalk r-mfp r-matrix r-lme4 r-estimatr))
+    (home-page "https://github.com/UBERLULU/MethodCompare")
+    (synopsis "Evaluating Bias and Precision in Method Comparison Studies")
     (description
-     "Implementation of the methodology from the paper entitled \"Effective plots to
-assess bias and precision in method comparison studies\" published in Statistical
-Methods in Medical Research, P. @code{TaffÃ©} (2018)
-<doi:10.1177/0962280218759693>.")
-    (license license:gpl3)))
+     "Evaluate bias and precision in method comparison studies.  One provides
+measurements for each method and it takes care of the estimates.  Multiple plots
+to evaluate bias, precision and compare methods.")
+    (license license:gpl3+)))
 
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "1jzg1mk3l66vyx0b96v7xbzsz56hl8nvwbi9xm4w7x9k79p7qb35"))))
+        (base32 "0w31rxgi68flpfmx9d7yym3cxf2jigifzydimzxwddfq329y6qhy"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -30426,40 +30489,6 @@ which takes use of any one of these three methods to analyze time-series data
 individual by individual and gives out integrated values based on analysis
 result of each individual.")
     (license license:gpl2+)))
-
-(define-public r-metaculr
-  (package
-    (name "r-metaculr")
-    (version "0.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MetaculR" version))
-       (sha256
-        (base32 "130ic9q221lmnr5wzmw7bbskqzi5gmw8ark5zpw3y8wy9zbv2m98"))))
-    (properties `((upstream-name . "MetaculR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-verification
-                             r-tidyr
-                             r-spatstat-geom
-                             r-progress
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-ggrepel
-                             r-ggplot2
-                             r-dplyr
-                             r-cowplot
-                             r-clipr
-                             r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://ntrlshrp.gitlab.io/metaculr")
-    (synopsis "Analyze Metaculus Predictions and Questions")
-    (description
-     "Login, download, and analyze questions predicted by you and/or the Metaculus
-community by interacting with the Metaculus API, currently located at
-<https://www.metaculus.com/api2/>.")
-    (license license:gpl3)))
 
 (define-public r-metacore
   (package
@@ -34577,25 +34606,26 @@ indicates which regressors may be the reason of collinearity among regressors.")
 (define-public r-mcstatsim
   (package
     (name "r-mcstatsim")
-    (version "0.1.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcstatsim" version))
        (sha256
-        (base32 "13ifkqx2c9v0pvkjg0r0sy07s2q7rp7wfx4q27vx4d7f7yk6va6r"))))
+        (base32 "0v1nxn4jbk941x6vskpiqrgdzfijlhlwzhavwzyy19x2f3wc91iy"))))
     (properties `((upstream-name . "mcstatsim")))
     (build-system r-build-system)
+    (propagated-inputs (list r-pbapply))
     (home-page "https://github.com/ielbadisy/mcstatsim")
     (synopsis
      "Monte Carlo Statistical Simulation Tools Using a Functional Approach")
     (description
-     "This package provides a lightweight, dependency-free tool designed to facilitate
-statistical simulations through functional programming.  It centralizes the
-simulation process into a single higher-order function, enhancing manageability
-and usability without adding overhead from external dependencies.  The package
-includes ready-to-use functions for common simulation targets and processes.  A
-detailed example can be found on <https://github.com/ielbadisy/mcstatsim>.")
+     "This package provides a lightweight package designed to facilitate statistical
+simulations through functional programming.  It centralizes the simulation
+process into a single higher-order function, enhancing manageability and
+usability without adding overhead from external dependencies.  The package
+includes ready-to-use functions for common simulation targets.  A detailed
+example can be found on <https://github.com/ielbadisy/mcstatsim>.")
     (license license:agpl3+)))
 
 (define-public r-mcstats
@@ -40696,13 +40726,13 @@ plugin and the ability of downloading and processing static tiles.")
 (define-public r-mapsf
   (package
     (name "r-mapsf")
-    (version "0.10.1")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapsf" version))
        (sha256
-        (base32 "134hmnlbc7pmazkfm3jmisklgpnxvjhdwfandxclxy4pfrp92ixq"))))
+        (base32 "0vyy88fflkz5iaanbp77dxznw528ikr06q4q4srxcp0ylg71fq4m"))))
     (properties `((upstream-name . "mapsf")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-s2 r-maplegend r-classint))

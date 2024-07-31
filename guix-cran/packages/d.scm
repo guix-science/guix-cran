@@ -3960,30 +3960,28 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "1b89g84xzdq8sc9nf8vc13x97cgbz0764j21gwkzasn693rn38ym"))))
+        (base32 "09wvw1cv0l3vcsarwiwsiyyakd2i9iw3kj13f2w4lwgw5d225cdc"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
                              r-tidyr
-                             r-tictoc
+                             r-stringr
                              r-rlang
-                             r-rjsonio
                              r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
-                             r-lubridate
                              r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr
-                             r-dbi
+                             r-codelistgenerator
+                             r-clock
                              r-cli
                              r-checkmate
                              r-cdmconnector))
@@ -4063,13 +4061,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0rlll9fd7jcc047k87akskg209hz4b0x2p3mb3i8cqwk775ng79i"))))
+        (base32 "0m3mfnavqnx53i8p723j4mc0r20b3c21i1svrg7dclx0f2c8np8n"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -4652,13 +4650,13 @@ where the type of event indicated by the user is overrepresented.")
 (define-public r-drglm
   (package
     (name "r-drglm")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drglm" version))
        (sha256
-        (base32 "08abcb0rqadck0zlzz7cv21vz0kqr7n1iz4mn2gi07ks8z1adpdw"))))
+        (base32 "1v3n546ivvh5hfwlz7m1wn6jdgcd9yjnricah1y7v6r15zy3jyds"))))
     (properties `((upstream-name . "drglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-speedglm r-nnet))
@@ -13137,16 +13135,16 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "0xrlik2f08j76q542dgzwi597qavync7qnv2nzlk2blgcgd9i8g0"))))
+        (base32 "1vk3maraqipmdk8jv22nxmkj6ab7lr2z4if49398irdmvyk8g7l8"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-arkhe))
+    (propagated-inputs (list r-khroma r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/dimensio/")
     (synopsis "Multivariate Data Analysis")
@@ -20135,13 +20133,13 @@ the service (see <https://www.deepl.com/pro#developer>).")
 (define-public r-deeplearningcausal
   (package
     (name "r-deeplearningcausal")
-    (version "0.0.103")
+    (version "0.0.104")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DeepLearningCausal" version))
        (sha256
-        (base32 "1qwf39pc12fd5cvhqx5mca0307736a4xk0s42bnhhjkr6wpsi2d7"))))
+        (base32 "02n0prw6g0sslxwr3p5msbcqr2bny702pbf22vs6f0f9xc5gqkd6"))))
     (properties `((upstream-name . "DeepLearningCausal")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -24771,13 +24769,13 @@ and ANCOVA.")
 (define-public r-dataretrieval
   (package
     (name "r-dataretrieval")
-    (version "2.7.15")
+    (version "2.7.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataRetrieval" version))
        (sha256
-        (base32 "0h5k68541nqg03hmfzfg4bqwjggl95yk9s2hlmfjxx3gxg4g5719"))))
+        (base32 "11hwk81vyzn6jx0z3flhh7gfwmfr1irysxghsbb2sgdqdffs6vh1"))))
     (properties `((upstream-name . "dataRetrieval")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -25166,13 +25164,13 @@ ability to get this data from supported sources.")
 (define-public r-datanugget
   (package
     (name "r-datanugget")
-    (version "1.2.4")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datanugget" version))
        (sha256
-        (base32 "0r75vc6fzafv2kwq228w9iw0ryhwmly839dhcgf8bqgxyzd9gs16"))))
+        (base32 "0l39yxvbxnzmxq1zjrm30a34ipwhjh5vnn7bqmsivbjci4z7mbyi"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-foreach r-dosnow))
@@ -25184,20 +25182,21 @@ small collection of nuggets of data, each containing a center (location), weight
 (importance), and scale (variability) parameter.  Data nugget centers are
 created by choosing observations in the dataset which are as equally spaced
 apart as possible.  Data nugget weights are created by counting the number
-observations closest to a given data nuggetâs center.  We then say the data
-nugget contains these observations and the data nugget center is recalculated as
-the mean of these observations.  Data nugget scales are created by calculating
-the trace of the covariance matrix of the observations contained within a data
+observations closest to a given data nugget center.  We then say the data nugget
+contains these observations and the data nugget center is recalculated as the
+mean of these observations.  Data nugget scales are created by calculating the
+trace of the covariance matrix of the observations contained within a data
 nugget divided by the dimension of the dataset.  Data nuggets are refined by
 splitting data nuggets which have scales or shapes (defined as the ratio of the
 two largest eigenvalues of the covariance matrix of the observations contained
-within the data nugget) Reference paper: [1] Cherasia, K. E., Cabrera, J.,
-Fernholz, L. T., & Fernholz, R. (2022).  Data Nuggets in Supervised Learning.
-\\emph{In Robust and Multivariate Statistical Methods: Festschrift in Honor of
-David E. Tyler} (pp.  429-449).  Cham: Springer International Publishing. [2]
-Beavers, T., Cheng, G., Duan, Y., Cabrera, J., Lubomirski, M., Amaratunga, D.,
-Teigler, J. (2023).  Data Nuggets: A Method for Reducing Big Data While
-Preserving Data Structure (Submitted for Publication).")
+within the data nugget) Reference paper: [1] Beavers, T. E., Cheng, G., Duan,
+Y., Cabrera, J., Lubomirski, M., Amaratunga, D., & Teigler, J. E. (2024).  Data
+Nuggets: A Method for Reducing Big Data While Preserving Data Structure.
+Journal of Computational and Graphical Statistics, 1-21. [2] Cherasia, K. E.,
+Cabrera, J., Fernholz, L. T., & Fernholz, R. (2022).  Data Nuggets in Supervised
+Learning. \\emph{In Robust and Multivariate Statistical Methods: Festschrift in
+Honor of David E. Tyler} (pp.  429-449).  Cham: Springer International
+Publishing.")
     (license license:gpl2)))
 
 (define-public r-datana

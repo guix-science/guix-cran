@@ -2428,6 +2428,29 @@ provided in the RStudio Markers pane.  Lives in the spirit of lintr and styler'.
  Can also be used for checking which packages are actually used in a project.")
     (license license:expat)))
 
+(define-public r-origamiplot
+  (package
+    (name "r-origamiplot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OrigamiPlot" version))
+       (sha256
+        (base32 "1p2fzv8bx3pxhskf1h9b6mk72b15g0l0ribp4da1vq58xn9cjgil"))))
+    (properties `((upstream-name . "OrigamiPlot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-plotrix r-fmsb))
+    (home-page "https://cran.r-project.org/package=OrigamiPlot")
+    (synopsis
+     "Visualization Tool Enhancing Radar Plot Visualizations for Multivariate Data")
+    (description
+     "This package provides a visualization tool for multivariate data.  This package
+maintains the original functionality of a radar chart and avoids potential
+misuse of its connected regions, with newly added features to better assist
+multi-criteria decision-making.")
+    (license license:gpl2+)))
+
 (define-public r-origami
   (package
     (name "r-origami")

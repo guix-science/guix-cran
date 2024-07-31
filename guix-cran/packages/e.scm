@@ -7251,13 +7251,13 @@ model (@code{ErRUM}) described by Culpepper and Chen (2018)
 (define-public r-errors
   (package
     (name "r-errors")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "errors" version))
        (sha256
-        (base32 "0pyp1adhyp5kak4x9niyj3ncmda1xydsx2sfa7gjbm2fzazyslbh"))))
+        (base32 "17almk09rl6q0g88kwkdcf30280s56ay6vx3sancnn9qfsp9zzrg"))))
     (properties `((upstream-name . "errors")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8133,13 +8133,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equateirt
   (package
     (name "r-equateirt")
-    (version "2.4.0")
+    (version "2.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateIRT" version))
        (sha256
-        (base32 "0i3bvldalqrlz9qalpylybn896nkdpm5xk4m62sxhm1bfrd0nm98"))))
+        (base32 "09g4wk41fi6sav71cnkj1gy43cb1jc8yz408kxhccyb22z8ib4z0"))))
     (properties `((upstream-name . "equateIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-mirt))
@@ -8153,7 +8153,7 @@ standard errors using Item Response Theory (IRT) methods for dichotomous items
 <doi:10.18637/jss.v068.i07>).  Test scoring can be performed by true score
 equating and observed score equating methods.  DIF detection can be performed
 using a Wald-type test (Battauz (2019) <doi:10.1007/s10260-018-00442-w>).  The
-package includes tests to access the stability of the equating transformations
+package includes tests to assess the stability of the equating transformations
 (Battauz(2022) <doi:10.1111/stan.12277>).")
     (license license:gpl3)))
 

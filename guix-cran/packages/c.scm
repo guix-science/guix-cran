@@ -15342,6 +15342,28 @@ diagrams, see Moher, Schulz and Altman (2001)
 menu in the console for the user to choose an option.")
     (license license:expat)))
 
+(define-public r-consibiocloudclient
+  (package
+    (name "r-consibiocloudclient")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "consibiocloudclient" version))
+       (sha256
+        (base32 "09miin2w37lgga8r31yd1gk7h5gmmz0mmlvz4skr2ppnfkp9nli6"))))
+    (properties `((upstream-name . "consibiocloudclient")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magrittr r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=consibiocloudclient")
+    (synopsis "Client for the 'Consibio Cloud' API")
+    (description
+     "Enable seamless interaction with Consibio Cloud <https://consibio.cloud> API
+<https://api.v2.consibio.com/api-docs/>.  This package provides tools to query
+data from resources like projects, elements, devices, and datalogs.")
+    (license license:expat)))
+
 (define-public r-conserver
   (package
     (name "r-conserver")
@@ -15416,13 +15438,13 @@ DQ2 coefficients.  J. Boccard and D.N. Rutledge (2013)
 (define-public r-consensusclustering
   (package
     (name "r-consensusclustering")
-    (version "1.2.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ConsensusClustering" version))
        (sha256
-        (base32 "1la9pp8jk5mcn1y80h3wfxw30pnys6p573iv7r3b8lgf233cnjar"))))
+        (base32 "0l9xc39zbxqiq5z9n8qxgwq19hx5n72vq1vyz98dy79p7wrl10nv"))))
     (properties `((upstream-name . "ConsensusClustering")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-igraph r-dplyr r-cluster r-assertthat))
@@ -20816,6 +20838,26 @@ Basagana and Barrera-Gomez (2021) <doi:10.1093/ije/dyab179>.")
 name) and half a million packages and functions on CRAN.")
     (license license:expat)))
 
+(define-public r-collegescorecard
+  (package
+    (name "r-collegescorecard")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "collegeScorecard" version))
+       (sha256
+        (base32 "06v8r8ldlx1n4wp5mhzizh92pyysj7zjvcn6vrh5n4w28f719i8q"))))
+    (properties `((upstream-name . "collegeScorecard")))
+    (build-system r-build-system)
+    (home-page "https://github.com/gadenbuie/scorecard-db")
+    (synopsis "US College Scorecard Data")
+    (description
+     "This package provides a tidied subset of the US College Scorecard dataset,
+containing institutional characteristics, enrollment, student aid, costs, and
+student outcomes at institutions of higher education in the United States.")
+    (license license:cc0)))
+
 (define-public r-collatz
   (package
     (name "r-collatz")
@@ -21389,13 +21431,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "1hyd0pl3aq7ww3szr7p0zb4cnvk9x1a6kpg04qdv9x72wkl6mscq"))))
+        (base32 "11cg3shf62njzpqh6wahgpg2c1ymqf4xkn6ip6ymab7dvq2w12wh"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -21406,9 +21448,7 @@ Outcomes Partnership Common Data Model.")
                              r-patientprofiles
                              r-omopgenerics
                              r-magrittr
-                             r-ggpubr
                              r-dplyr
-                             r-diagrammer
                              r-cli
                              r-checkmate
                              r-cdmconnector))
@@ -28805,13 +28845,13 @@ and estimate_ancestral_states() implements the ancestral state options of Lloyd
 (define-public r-cla
   (package
     (name "r-cla")
-    (version "0.96-2")
+    (version "0.96-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLA" version))
        (sha256
-        (base32 "0cfa7zm13bin8hx8ki20kaz8fvkwdaiyl0pjghhld8vr5d3289kq"))))
+        (base32 "1jrk6zr5x5kypa4zgwdhbnihxgi9bl34xmgqg7rlpsl2v53013mi"))))
     (properties `((upstream-name . "CLA")))
     (build-system r-build-system)
     (home-page "https://gitlab.math.ethz.ch/maechler/CLA/")
@@ -32983,13 +33023,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "06slf0b5qv8ypmcyw6r7ip3sgx6x44bvwy0zgfwhm8kawkjxir24"))))
+        (base32 "1zf9jnwcvpw9zlh7dyrmw4wwjc3fxll0q3mkivd5q5vikmzvy0y7"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -33004,13 +33044,13 @@ R functions, as well as some additional functions.")
 (define-public r-chattr
   (package
     (name "r-chattr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chattr" version))
        (sha256
-        (base32 "0sgaanmvnmcqn57ks7xdc3bvdzifrkqkz6bpjq8978jrpysxm2cw"))))
+        (base32 "1jvzk62h5dgshqadin3n55600yy965xgssb6akywixyik8qipscl"))))
     (properties `((upstream-name . "chattr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -41020,28 +41060,25 @@ tests based on various criteria.  See Ma W, Ye X, Tu F, and Hu F (2023) <doi:
 (define-public r-caramel
   (package
     (name "r-caramel")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caRamel" version))
        (sha256
-        (base32 "0l83z74q1as4w33vqsbybyz2vkdqgw7y56jkw0s6f36mph8fdpf9"))))
+        (base32 "17g1y634a02819kw19kbvifzpsacifvgw2gifjmw99vf1mijyj9h"))))
     (properties `((upstream-name . "caRamel")))
     (build-system r-build-system)
     (propagated-inputs (list r-geometry))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-knitr gfortran))
     (home-page "https://github.com/fzao/caRamel")
     (synopsis
      "Automatic Calibration by Evolutionary Multi Objective Algorithm")
     (description
-     "Multi-objective optimizer initially developed for the calibration of
-hydrological models.  The algorithm is a hybrid of the MEAS algorithm
-(Efstratiadis and Koutsoyiannis (2005) <doi:10.13140/RG.2.2.32963.81446>) by
-using the directional search method based on the simplexes of the objective
-space and the epsilon-NGSA-II algorithm with the method of classification of the
-parameter vectors archiving management by epsilon-dominance (Reed and Devireddy
-<doi:10.1142/9789812567796_0004>).")
+     "The @code{caRamel} optimizer has been developed to meet the requirement for an
+automatic calibration procedure that delivers a family of parameter sets that
+are optimal with regard to a multi-objective target (Monteil et al.
+<doi:10.5194/hess-24-3189-2020>).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 

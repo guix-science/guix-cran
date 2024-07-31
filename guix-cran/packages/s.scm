@@ -1113,6 +1113,34 @@ Dudek, A. (2008) <doi:10.1007/978-3-540-78246-9_11>, Dudek, A. (2007),
 <doi:10.1007/978-3-540-70981-7_4>).")
     (license license:gpl2+)))
 
+(define-public r-symbol-equation-gpt
+  (package
+    (name "r-symbol-equation-gpt")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "symbol.equation.gpt" version))
+       (sha256
+        (base32 "0h1301406spbl7yz0i0b1vqqrf5zd0yxvxx3ljsi5pj4mdhp5j32"))))
+    (properties `((upstream-name . "symbol.equation.gpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinystoreplus
+                             r-shiny
+                             r-rstudioapi
+                             r-r2symbols
+                             r-nextgenshinyapps
+                             r-markdown
+                             r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://symbols-ui.obi.obianom.com")
+    (synopsis "Simple User Interface to Build Equations and Add Symbols")
+    (description
+     "Powerful user interface for adding symbols, smileys, arrows, building
+mathematical equations using @code{LaTeX} or r2symbols'.  Built for use in
+development of Markdown and Shiny Outputs.")
+    (license license:expat)))
+
 (define-public r-sym-arma
   (package
     (name "r-sym-arma")
@@ -6921,35 +6949,6 @@ provides a theoretical performance guarantee for Subsemble.  The paper,
 authored by Stephanie Sapp, Mark J. van der Laan & John Canny (2014)
 <doi:10.1080/02664763.2013.864263>.")
     (license license:asl2.0)))
-
-(define-public r-subselect
-  (package
-    (name "r-subselect")
-    (version "0.15.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "subselect" version))
-       (sha256
-        (base32 "1xw8ya8kq1b7vn7rp976b3i4bsxvnw53xw34bhsq6xk2c9idk3pw"))))
-    (properties `((upstream-name . "subselect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-iswr r-corpcor))
-    (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=subselect")
-    (synopsis "Selecting Variable Subsets")
-    (description
-     "This package provides a collection of functions which (i) assess the quality of
-variable subsets as surrogates for a full data set, in either an exploratory
-data analysis or in the context of a multivariate linear model, and (ii) search
-for subsets which are optimal under various criteria.  Theoretical support for
-the heuristic search methods and exploratory data analysis criteria is in
-Cadima, Cerdeira, Minhoto (2003, <doi:10.1016/j.csda.2003.11.001>).  Theoretical
-support for the leap and bounds algorithm and the criteria for the general
-multivariate linear model is in Duarte Silva (2001,
-<doi:10.1006/jmva.2000.1920>).  There is a package vignette \"subselect\", which
-includes additional references.")
-    (license license:gpl2+)))
 
 (define-public r-subscreen
   (package
@@ -13115,13 +13114,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startup
   (package
     (name "r-startup")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startup" version))
        (sha256
-        (base32 "0iwq1nbiv2j78g17mq566qqv5p5msk1gmi0bb0hs1j1xx9vjamnl"))))
+        (base32 "04hifi5cck1vzhacmy9kg7k1f278lvvsrj6p0d1n61fiiv3fqscm"))))
     (properties `((upstream-name . "startup")))
     (build-system r-build-system)
     (home-page "https://henrikbengtsson.github.io/startup/")
@@ -16875,13 +16874,13 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
 (define-public r-sqltargets
   (package
     (name "r-sqltargets")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqltargets" version))
        (sha256
-        (base32 "1w3id7vw3ppmpbrl68sw3gyprb4pbfbh1hvzc01rv27kngdm00d9"))))
+        (base32 "08jwbpdzs686yx433l066qpyxb2c2nv0vpbhj5ybsm6x7q8nsb9a"))))
     (properties `((upstream-name . "sqltargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -16891,6 +16890,7 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
                              r-rlang
                              r-readr
                              r-purrr
+                             r-jinjar
                              r-glue
                              r-fs
                              r-dbi
@@ -21641,6 +21641,37 @@ likelihood inference for Spearman's rho (de Carvalho and Marques (2012)
 plotting.  It also adds support for literate markdown tangling.  The package is
 designed to bring reproducible phonetic research into R.")
     (license license:expat)))
+
+(define-public r-speakeasyr
+  (package
+    (name "r-speakeasyr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "speakeasyR" version))
+       (sha256
+        (base32 "0idymzf2rh0vzgi3x84prqkkr6rjzf7whbj8ax11v141abwb7nlk"))))
+    (properties `((upstream-name . "speakeasyR")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list pkg-config r-knitr gfortran))
+    (home-page "https://github.com/SpeakEasy-2/speakeasyR")
+    (synopsis "Fast and Robust Multi-Scale Graph Clustering")
+    (description
+     "This package provides a graph community detection algorithm that aims to be
+performant on large graphs and robust, returning consistent results across runs.
+@code{SpeakEasy} 2 (SE2), the underlying algorithm, is described in Chris
+Gaiteri, David R. Connell & Faraz A. Sultan et al. (2023)
+<doi:10.1186/s13059-023-03062-0>.  The core algorithm is written in C',
+providing speed and keeping the memory requirements low.  This implementation
+can take advantage of multiple computing cores without increasing memory usage.
+SE2 can detect community structure across scales, making it a good choice for
+biological data, which often has hierarchical structure.  Graphs can be passed
+to the algorithm as adjacency matrices using base R matrices, the Matrix
+library, igraph graphs, or any data that can be coerced into a matrix.")
+    (license license:gpl3+)))
 
 (define-public r-spdynmod
   (package
@@ -32002,29 +32033,6 @@ Butler & King (2004) <doi:10.1086/426002>, Hansen et al. (2008)
 <doi:10.1111/j.1558-5646.2008.00412.x>.")
     (license license:gpl2)))
 
-(define-public r-slopeop
-  (package
-    (name "r-slopeop")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "slopeOP" version))
-       (sha256
-        (base32 "0rcxa2wdj57aj7n17sxv05dvwchhfsnhssmc372xjfgi72gdnv58"))))
-    (properties `((upstream-name . "slopeOP")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://cran.r-project.org/package=slopeOP")
-    (synopsis "Change-in-Slope OP Algorithm with a Finite Number of States")
-    (description
-     "Optimal partitioning algorithm for change-in-slope problem with continuity
-constraint and a finite number of states.  Some constraints can be enforced in
-the inference: isotonic, unimodal or smoothing.  With the function
-@code{slopeSN}() (segment neighborhood) the number of segments to infer is fixed
-by the user and does not depend on a penalty value.")
-    (license license:expat)))
-
 (define-public r-slope
   (package
     (name "r-slope")
@@ -35684,13 +35692,13 @@ Lambert (2013) <doi:10.1002/sim.5823>).")
 (define-public r-simstudy
   (package
     (name "r-simstudy")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simstudy" version))
        (sha256
-        (base32 "1xdqk5jikhvxxd78frfj3s3m7aigkhkavzryifhzv47l22rmpkcb"))))
+        (base32 "1qj0f5c40z1dhxm6wfrl83nd4h1s90qy7aa1ka3ziz8bpkpxkcnw"))))
     (properties `((upstream-name . "simstudy")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp
@@ -42586,13 +42594,13 @@ popovers or tooltips.")
 (define-public r-shinyexprportal
   (package
     (name "r-shinyexprportal")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyExprPortal" version))
        (sha256
-        (base32 "00jlxj69x665fya9sjh904j7agd9czpx5nhsf21vlwcbzcap3686"))))
+        (base32 "1cldz5m7w3db3izgqcpichpixfixhdy7rz4iksnsdywih0kdhqwc"))))
     (properties `((upstream-name . "shinyExprPortal")))
     (build-system r-build-system)
     (arguments

@@ -1006,13 +1006,13 @@ switching between week-based date definitions.")
 (define-public r-avotrex
   (package
     (name "r-avotrex")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "avotrex" version))
        (sha256
-        (base32 "013j4av3hwxfh68myfpvxhzs2zsr470x81j90hh8bqmjs3a1wmlf"))))
+        (base32 "1qr9yhwrllpk0drg3s1r4f5hsx78yfys6nyj2vdk70n8na102243"))))
     (properties `((upstream-name . "avotrex")))
     (build-system r-build-system)
     (propagated-inputs (list r-treetools
@@ -3280,13 +3280,13 @@ layout.")
 (define-public r-atq
   (package
     (name "r-atq")
-    (version "0.2.0")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ATQ" version))
        (sha256
-        (base32 "1sxrking1cfbsp135afbgbvgcv20179i335bzvh32y6arml99jr4"))))
+        (base32 "11gkx4pb4474v2cgx8wjfzx1jb25digkvv3glf9zi771d8qjjyqq"))))
     (properties `((upstream-name . "ATQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3305,8 +3305,8 @@ within school absenteeism-based surveillance systems.  Introduces the concept of
 alert time quality as an evaluation metric.  Includes functions to simulate
 populations, epidemics, and alert metrics associated with epidemic spread using
 population census data.  The methods are based on research published in
-Vanderkruk et al. (2023) <doi:10.1186/s12889-023-15747-z> and Jarvis et al.
-(2019) <doi:10.1186/s12889-019-7521-7>.")
+Vanderkruk et al. (2023) <doi:10.1186/s12889-023-15747-z> and Ward et al. (2019)
+<doi:10.1186/s12889-019-7521-7>.")
     (license license:gpl3+)))
 
 (define-public r-atpolr
@@ -6361,13 +6361,13 @@ Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
 (define-public r-arkhe
   (package
     (name "r-arkhe")
-    (version "1.6.0")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arkhe" version))
        (sha256
-        (base32 "0d6di3a17zjr468prj2bpi1ls0cqg46gks10irn2qdjifwiy6r4z"))))
+        (base32 "1ray8scf2w9bgxkrkwi11iashphg4xbbgb7crbxcw7zf1pk03zi8"))))
     (properties `((upstream-name . "arkhe")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/arkhe/")
@@ -8197,13 +8197,13 @@ Doorenbos and Pruitt (1975, ISBN:9251002797) Guo et al. (2016)
 (define-public r-aqp
   (package
     (name "r-aqp")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aqp" version))
        (sha256
-        (base32 "1rpa1zhcl5j8zl3hj8pb68vzyggdmbgnl9ss3vz3z7z57hsrngc2"))))
+        (base32 "0p43q6xvvks0f424h1rgzwx3ykpb4wrh5xd24khpkxwwigmm5jc4"))))
     (properties `((upstream-name . "aqp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -17341,28 +17341,6 @@ The app is ran by the function @code{runShinyApp}().  For more information see
 Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-affluenceindex
-  (package
-    (name "r-affluenceindex")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "affluenceIndex" version))
-       (sha256
-        (base32 "0vcg4gphs0yxdxsgw7kj9r3hvjpfs2z8sjvllvfw9ki3y7jy5jb8"))))
-    (properties `((upstream-name . "affluenceIndex")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-spatstat))
-    (home-page "https://cran.r-project.org/package=affluenceIndex")
-    (synopsis "Affluence (Richness) Indices")
-    (description
-     "Enables to compute the statistical indices of affluence (richness) with
-bootstrap errors, and inequality and polarization indices.  Moreover, gives the
-possibility of calculation of Medeiros affluence line.  In 2.1 version some
-simple errors are fixed.")
-    (license license:gpl2)))
-
 (define-public r-affinitymatrix
   (package
     (name "r-affinitymatrix")
@@ -18835,13 +18813,13 @@ space for ease of reuse.")
 (define-public r-adjustedcurves
   (package
     (name "r-adjustedcurves")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adjustedCurves" version))
        (sha256
-        (base32 "047r9fi9ilcfnb6shkqsnrz4c4gs6x1nbff00wfamncjv19s74yh"))))
+        (base32 "11bc2hrxr65i1rk2zv7r7daqm7m5v9xhhgk1fwr0jbs6c4dk2niw"))))
     (properties `((upstream-name . "adjustedCurves")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival

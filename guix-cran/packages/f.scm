@@ -9054,13 +9054,13 @@ common conventions or those defined by International Swap Dealer Association
 (define-public r-fmat
   (package
     (name "r-fmat")
-    (version "2024.6")
+    (version "2024.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FMAT" version))
        (sha256
-        (base32 "082i5hzw41vmdg1q7c42jpnisn0mip3mgs0z440dckv7dk2pnr2i"))))
+        (base32 "1cijvrp9rzznjn8lvclzvjv2kqi412n512mwnkddr617vdxy4gn5"))))
     (properties `((upstream-name . "FMAT")))
     (build-system r-build-system)
     (inputs (list python))
@@ -9080,13 +9080,13 @@ common conventions or those defined by International Swap Dealer Association
     (home-page "https://psychbruce.github.io/FMAT/")
     (synopsis "The Fill-Mask Association Test")
     (description
-     "The Fill-Mask Association Test ('FMAT') is an integrative and probability-based
-method using Masked Language Models to measure conceptual associations (e.g.,
-attitudes, biases, stereotypes, social norms, cultural values) as propositions
-in natural language.  Supported language models include BERT
-<doi:10.48550/@code{arXiv.1810.04805>} and its variants available at Hugging
-Face <https://huggingface.co/models?pipeline_tag=fill-mask>.  Methodological
-references and installation guidance are provided at
+     "The Fill-Mask Association Test ('FMAT') <doi:10.1037/pspa0000396> is an
+integrative and probability-based method using Masked Language Models to measure
+conceptual associations (e.g., attitudes, biases, stereotypes, social norms,
+cultural values) as propositions in natural language.  Supported language models
+include BERT <doi:10.48550/@code{arXiv.1810.04805>} and its variants available
+at Hugging Face <https://huggingface.co/models?pipeline_tag=fill-mask>.
+Methodological references and installation guidance are provided at
 <https://psychbruce.github.io/FMAT/>.")
     (license license:gpl3)))
 
@@ -11299,26 +11299,26 @@ visualization of the state vector and graphical diagnostics of the residuals.")
 (define-public r-fjordlight
   (package
     (name "r-fjordlight")
-    (version "0.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FjordLight" version))
        (sha256
-        (base32 "031wpxvdbwkj6ay18l594hs0w45amdxd2lppwpa8sx4jyycfwbn9"))))
+        (base32 "07rb1x5b6wywla4jg6vb5s50c7a0m4bwgchxj4bnbcx53swrh2sf"))))
     (properties `((upstream-name . "FjordLight")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-ncdf4 r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/FACE-IT-project/FjordLight")
+    (home-page "https://face-it-project.github.io/FjordLight/index.html")
     (synopsis
-     "Available Light Within the Water Column and Seafloor of Arctic Fjords")
+     "Available Light Within the Water Column and on the Seafloor of Arctic Fjords")
     (description
      "Satellite data collected between 2003 and 2022, in conjunction with gridded
 bathymetric data (50-150 m resolution), are used to estimate the irradiance
 reaching the bottom of a series of representative EU Arctic fjords.  An Earth
-System Science Data (ESSD) manuscript, Schlegel et al. (2023, in review), that
-provides a detailed explanation of the methodology is currently in review.")
+System Science Data (ESSD) manuscript, Schlegel et al. (2024), provides a
+detailed explanation of the methodology.")
     (license license:expat)))
 
 (define-public r-fizzbuzzr
@@ -11578,13 +11578,13 @@ models commonly used by practitioners are implemented.")
 (define-public r-fitzroy
   (package
     (name "r-fitzroy")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fitzRoy" version))
        (sha256
-        (base32 "07qk0kgbsrpjkfm9jqd5zsyg1lj96fj31a413qn7y66vpyljd3p3"))))
+        (base32 "0fw0prfl6iivbsprv0qw13dg5ff80621ziwz5gcy012v6hsbpk25"))))
     (properties `((upstream-name . "fitzRoy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -11600,6 +11600,7 @@ models commonly used by practitioners are implemented.")
                              r-lubridate
                              r-lifecycle
                              r-jsonlite
+                             r-janitor
                              r-httr2
                              r-httr
                              r-glue

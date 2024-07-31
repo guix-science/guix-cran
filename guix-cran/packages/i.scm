@@ -7096,13 +7096,13 @@ interaction terms.")
 (define-public r-interactions
   (package
     (name "r-interactions")
-    (version "1.1.5")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "interactions" version))
        (sha256
-        (base32 "16lrlj0rc9bkxgmackpvcx8wx9pbsnr55vak6zx022ss820h3ljj"))))
+        (base32 "1j4bb3xjdw2xs82nv3l1va2gfk5blzqdz6db1zb31yanhrvv7j9y"))))
     (properties `((upstream-name . "interactions")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7110,8 +7110,8 @@ interaction terms.")
                              r-jtools
                              r-ggplot2
                              r-generics
-                             r-crayon
-                             r-cli))
+                             r-cli
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://interactions.jacob-long.com")
     (synopsis "Comprehensive, User-Friendly Toolkit for Probing Interactions")
@@ -8252,6 +8252,40 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 (2) function argument names are not repeated in comments, and (3) examples are
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-inldata
+  (package
+    (name "r-inldata")
+    (version "1.2.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inldata" version))
+       (sha256
+        (base32 "1rqk76z7c032hzk6g45xvzjz84kwjp6yrg475cmgxqg5rgrvdyw0"))))
+    (properties `((upstream-name . "inldata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
+    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
+    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
+    (description
+     "This package provides a collection of analysis-ready datasets for the U.S.
+Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
+surface-water monitoring networks, administered by the USGS-INL Project Office
+in cooperation with the U.S. Department of Energy.  The data collected from
+wells and surface-water stations at the Idaho National Laboratory and
+surrounding areas have been used to describe the effects of waste disposal on
+water contained in the eastern Snake River Plain aquifer, located in the
+southeastern part of Idaho, and the availability of water for long-term
+consumptive and industrial use.  The package includes long-term monitoring
+records dating back to measurements from 1922.  Geospatial data describing the
+areas from which samples were collected or observations were made are also
+included in the package.  Bundling this data into a single package significantly
+reduces the magnitude of data processing for researchers and provides a way to
+distribute the data along with its documentation in a standard format.
+Geospatial datasets are made available in a common projection and datum, and
+geohydrologic data have been structured to facilitate analysis.")
+    (license license:cc0)))
 
 (define-public r-inlcolor
   (package
@@ -15555,6 +15589,43 @@ regression which sparse coefficients.  This package allows incorporating the
 Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
+
+(define-public r-iclustervb
+  (package
+    (name "r-iclustervb")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iClusterVB" version))
+       (sha256
+        (base32 "17jwpl1h7khcz6isix88ia95p1fldl2mh4lsjiyfi1adyylqpvdq"))))
+    (properties `((upstream-name . "iClusterVB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-varsellcm
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r-utils
+                             r-polca
+                             r-pheatmap
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-mclust
+                             r-inline
+                             r-ggplot2
+                             r-cowplot
+                             r-clustmixtype
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AbdalkarimA/iClusterVB")
+    (synopsis
+     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
+    (description
+     "This package provides a variational Bayesian approach for fast integrative
+clustering and feature selection, facilitating the analysis of multi-view, mixed
+type, high-dimensional datasets with applications in fields like cancer
+research, genomics, and more.")
+    (license license:expat)))
 
 (define-public r-iclick
   (package

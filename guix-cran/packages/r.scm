@@ -6895,27 +6895,6 @@ Centre: <https://cmc.leeds.ac.uk/>.")
     (description "Import SGF (Smart Game File) into R.")
     (license license:expat)))
 
-(define-public r-rsgeo
-  (package
-    (name "r-rsgeo")
-    (version "0.1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsgeo" version))
-       (sha256
-        (base32 "161g4yr8lw9wgkd86wymp14121wz0vfc0br630y8fdn49yd4kl46"))))
-    (properties `((upstream-name . "rsgeo")))
-    (build-system r-build-system)
-    (inputs (list openssl))
-    (propagated-inputs (list r-vctrs r-rlang))
-    (home-page "https://github.com/JosiahParry/rsgeo")
-    (synopsis "An Interface to Rust's 'geo' Library")
-    (description
-     "An R interface to the @code{GeoRust} crates geo and geo-types providing access
-to geometry primitives and algorithms.")
-    (license license:expat)))
-
 (define-public r-rsfar
   (package
     (name "r-rsfar")
@@ -36348,13 +36327,13 @@ datasets with @code{readDWD}()'.")
 (define-public r-rdune
   (package
     (name "r-rdune")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rdune" version))
        (sha256
-        (base32 "1m9pqvvk1r2iipn0ppfnk9hzrxl4yg8cz4i5f19hdh97prcnw88w"))))
+        (base32 "1q4jql23h4yk970dr6mk8ykjisdyn5lwrlhgjxgzwxrdkmrs92pj"))))
     (properties `((upstream-name . "Rdune")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -49297,6 +49276,37 @@ regression, as well as box plots, histograms, scatter plots, and line plots
 (including profile plots).")
     (license license:gpl3+)))
 
+(define-public r-r2social
+  (package
+    (name "r-r2social")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2social" version))
+       (sha256
+        (base32 "19q4sndbz5hxvkqy7w9s33l03jv26n4sp6vmcpb08ifxrxjxjsca"))))
+    (properties `((upstream-name . "r2social")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://r2social.obi.obianom.com")
+    (synopsis
+     "Seamless Integration of Sharing and Connect Buttons in Markdown and Apps")
+    (description
+     "Implementation of JQuery <https://jquery.com> and CSS styles to allow easy
+incorporation of various social media elements on a page.  The elements include
+addition of share buttons or connect with us buttons or hyperlink buttons to
+Shiny applications or dashboards and Rmarkdown documents.Sharing capability on
+social media platforms including Facebook <https://www.facebook.com>, Linkedin
+<https://www.linkedin.com>, X/Twitter <https://x.com>, Tumblr
+<https://www.tumblr.com>, Pinterest <https://www.pinterest.com>, Whatsapp
+<https://www.whatsapp.com>, Reddit <https://www.reddit.com>, Baidu
+<https://www.baidu.com>, Blogger <https://www.blogger.com>, Weibo
+<https://www.weibo.com>, Instagram <https://www.instagram.com>, Telegram
+<https://www.telegram.me>, Youtube <https://www.youtube.com>.")
+    (license license:expat)))
+
 (define-public r-r2shortcode
   (package
     (name "r-r2shortcode")
@@ -49392,6 +49402,29 @@ significance test.  Variance and covariance of AUC values used to assess the 95%
 Confidence interval (CI) and p-value of the AUC difference for both nested and
 non-nested model.")
     (license license:gpl3+)))
+
+(define-public r-r2resize
+  (package
+    (name "r-r2resize")
+    (version "1.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2resize" version))
+       (sha256
+        (base32 "1s5mkgrq66kbwh8vm2dnbhn801b44ym3vr98nvv9bn81cbn4ifaf"))))
+    (properties `((upstream-name . "r2resize")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools r-dt))
+    (native-inputs (list r-knitr))
+    (home-page "https://r2resize.obi.obianom.com")
+    (synopsis
+     "In-Text Resize for Images, Tables and Fancy Resize Containers in 'shiny', 'rmarkdown' and 'quarto' Documents")
+    (description
+     "Automatic resizing toolbar for containers, images and tables.  Various resizer
+or expandable container functionalities are also included.  Most suitable to
+include in shiny', markdown and quarto documents.")
+    (license license:expat)))
 
 (define-public r-r2redux
   (package

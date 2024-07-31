@@ -23004,21 +23004,30 @@ checkers, (double-18) dominoes, go, piecepack', playing cards, etc.")
 (define-public r-piecenorms
   (package
     (name "r-piecenorms")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecenorms" version))
        (sha256
-        (base32 "12ih5xygigiirxzc8gy6d6k6a9x861i7miqrx4rkfqfpfc7r8vac"))))
+        (base32 "0cxr26j7gda9c8zqw4rcnhbm8740gfrq9fi7p24bg4z4cp78fl5n"))))
     (properties `((upstream-name . "piecenorms")))
     (build-system r-build-system)
-    (propagated-inputs (list r-scales r-rlang r-dplyr))
+    (propagated-inputs (list r-vdiffr
+                             r-univariateml
+                             r-scales
+                             r-rlang
+                             r-r6
+                             r-dplyr
+                             r-coinr
+                             r-classint))
     (home-page "https://github.com/david-hammond/piecenorms")
     (synopsis "Calculate a Piecewise Normalised Score Using Class Intervals")
     (description
      "This package provides an implementation of piecewise normalisation techniques
-useful when dealing with the communication of skewed and highly skewed data.")
+useful when dealing with the communication of skewed and highly skewed data.  It
+also provides utilities that recommends a normalisation technique based on the
+distribution of the data.")
     (license license:expat)))
 
 (define-public r-piecemaker
@@ -24591,13 +24600,13 @@ Metaphone, NYSIIS, Caverphone, and others.  The package is documented in
 (define-public r-phonfieldwork
   (package
     (name "r-phonfieldwork")
-    (version "0.0.15")
+    (version "0.0.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phonfieldwork" version))
        (sha256
-        (base32 "1lx6qsirwkj6jdanbyhs2zwfblglld3bag2zp9hpxzkgxsnhrhlb"))))
+        (base32 "0ysxa6zxd8mb798bm6vsdhnnnl2y2vyhfi4kbv64qsgjbyjqjkvh"))))
     (properties `((upstream-name . "phonfieldwork")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -26754,6 +26763,30 @@ filter, the Auxiliary Particle Filter from Pitt et al (1999)
 inspired by Andrieu et al. (2002) <doi:10.1111/1467-9868.00363>.  For more
 details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
     (license license:gpl3+)))
+
+(define-public r-pflr
+  (package
+    (name "r-pflr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PFLR" version))
+       (sha256
+        (base32 "1iplycif2c9kaaxbibk1skbdnmsn0mxgbdj78lg8bgkf25gvzzii"))))
+    (properties `((upstream-name . "PFLR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-psych r-mass r-glmnet r-flare r-fda))
+    (home-page "https://cran.r-project.org/package=PFLR")
+    (synopsis "Estimating Penalized Functional Linear Regression")
+    (description
+     "Implementation of commonly used penalized functional linear regression models,
+including the Smooth and Locally Sparse (S@code{LoS}) method by Lin et al.
+(2016) <doi:10.1080/10618600.2016.1195273>, Nested Group bridge Regression (NGR)
+method by Guan et al. (2020) <doi:10.1080/10618600.2020.1713797>, Functional
+Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
+<doi:10.1214/08-AOS641>, and the Penalized B-spline regression method.")
+    (license license:gpl2)))
 
 (define-public r-pfim
   (package
@@ -38235,6 +38268,29 @@ multiple samples.  It is particularly useful for analyzing single-cell data set.
  Please see Li et al. (2017) <doi:10.1371/journal.pcbi.1005875> for detail
 method description.")
     (license license:gpl3)))
+
+(define-public r-paar
+  (package
+    (name "r-paar")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paar" version))
+       (sha256
+        (base32 "1yc5yqx1rdvmkwz0pmzbdlpbnb4vxxhzyp0h5j74nzk22j9332f3"))))
+    (properties `((upstream-name . "paar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spdep r-sf r-gstat r-e1071 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://ppaccioretti.github.io/paar/")
+    (synopsis "Precision Agriculture Data Analysis")
+    (description
+     "Precision agriculture spatial data depuration and homogeneous zones (management
+zone) delineation.  The package includes functions that performs protocols for
+data cleaning management zone delineation and zone comparison; protocols are
+described in Paccioretti et al., (2020) <doi:10.1016/j.compag.2020.105556>.")
+    (license license:expat)))
 
 (define-public r-pa
   (package

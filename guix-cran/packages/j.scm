@@ -3962,13 +3962,13 @@ methodology, please refer to the documentation of targets
 (define-public r-jagshelper
   (package
     (name "r-jagshelper")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagshelper" version))
        (sha256
-        (base32 "1zcq5vhs4wf9m214wwlwdhrh90hfb0j6bnikn723cf5b2lmpwhv4"))))
+        (base32 "105v1clrhr17l78dyi28c21y48sbwbwzjj1irwyrlxinbpxclr2q"))))
     (properties `((upstream-name . "jagshelper")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-jagsui))
@@ -4273,22 +4273,23 @@ file formats.")
 (define-public r-jack
   (package
     (name "r-jack")
-    (version "6.0.0")
+    (version "6.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jack" version))
        (sha256
-        (base32 "11clvyv09kfxwwbx1kmxzvc8j6frkx45k8hzcvjigbc8wais7ffi"))))
+        (base32 "03kfvd43b3skx3x4ky3qxg80m3w1cj2vln018qq7fj7b47ddfiqy"))))
     (properties `((upstream-name . "jack")))
     (build-system r-build-system)
     (inputs (list mpfr gmp))
-    (propagated-inputs (list r-symbolicqspray
+    (propagated-inputs (list r-syt
+                             r-symbolicqspray
                              r-spray
                              r-rcppcgal
-                             r-rcpparmadillo
                              r-rcpp
                              r-ratioofqsprays
+                             r-rationalmatrix
                              r-qspray
                              r-partitions
                              r-mvp
@@ -4298,14 +4299,18 @@ file formats.")
                              r-bh))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/stla/jackR")
-    (synopsis "Jack, Zonal, and Schur Polynomials")
+    (synopsis "Jack, Zonal, Schur, and Other Symmetric Polynomials")
     (description
-     "Symbolic calculation and evaluation of the Jack polynomials, zonal polynomials,
-and Schur polynomials.  Mainly based on Demmel & Koev's paper (2006)
-<doi:10.1090/S0025-5718-05-01780-1>.  Zonal polynomials and Schur polynomials
-are particular cases of Jack polynomials.  Zonal polynomials appear in random
-matrix theory.  Schur polynomials appear in the field of combinatorics.  The
-package can also compute the skew Schur polynomials.")
+     "Schur polynomials appear in combinatorics and zonal polynomials appear in random
+matrix theory.  They are particular cases of Jack polynomials.  This package
+allows to compute these polynomials and other symmetric multivariate
+polynomials: flagged Schur polynomials, factorial Schur polynomials, t-Schur
+polynomials, Hall-Littlewood polynomials, Macdonald polynomials, and modified
+Macdonald polynomials.  In addition, it can compute the Kostka-Jack numbers, the
+Kostka-Foulkes polynomials, the Kostka-Macdonald polynomials, and the Hall
+polynomials.  Mainly based on Demmel & Koev's paper (2006)
+<doi:10.1090/S0025-5718-05-01780-1> and Macdonald's book (1995)
+<doi:10.1093/oso/9780198534891.003.0001>.")
     (license license:gpl3)))
 
 (define-public r-jaccard

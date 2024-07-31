@@ -2418,17 +2418,16 @@ the model to the seed germination time course.  Details can be found in Bradford
 (define-public r-hts
   (package
     (name "r-hts")
-    (version "6.0.2")
+    (version "6.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hts" version))
        (sha256
-        (base32 "06mmxdm7a2fb1r4mb2x12b00rnkaxlrmlkv5yizr3yixmn4is9wb"))))
+        (base32 "04s4ndvlxbjz2hamnhakibj92ipbppf1sj1pfc571lkz2c91ggf9"))))
     (properties `((upstream-name . "hts")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparsem r-rcppeigen r-rcpp r-matrix r-forecast))
-    (native-inputs (list r-knitr))
     (home-page "https://pkg.earo.me/hts/")
     (synopsis "Hierarchical and Grouped Time Series")
     (description
@@ -8121,13 +8120,13 @@ and notably fast update functions when adding new observations.")
 (define-public r-heteromixgm
   (package
     (name "r-heteromixgm")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heteromixgm" version))
        (sha256
-        (base32 "0jhvjalpx7licjjvj8ld4als1jkm22mkbxmz893h91qzacznx8zk"))))
+        (base32 "0263kddf1krg7bn0xsf663q4kdal7gjhy9ahphj2v8i8qy7xb968"))))
     (properties `((upstream-name . "heteromixgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -8147,8 +8146,8 @@ sciences.  The package also includes an option to perform model selection using
 the AIC, BIC and EBIC information criteria, as well as simulate mixed
 heterogeneous data for exploratory or simulation purposes and one multi-group
 multivariate mixed agricultural dataset pertaining to maize yields.  The package
-implements the methodological developments found in Hermes et al. (2022)
-<doi:10.48550/@code{arXiv.2210.13140>}.")
+implements the methodological developments found in Hermes et al. (2024)
+<doi:10.1080/10618600.2023.2289545>.")
     (license license:gpl3)))
 
 (define-public r-heterometa
@@ -8784,13 +8783,13 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
 (define-public r-heiscore
   (package
     (name "r-heiscore")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heiscore" version))
        (sha256
-        (base32 "0c5vycgzbabcnsqbnshwhrwxpvwg8lcwpx2lc9lg5yh29n0qjiqp"))))
+        (base32 "1yh4khm83aw56f8xkjan0a3v0xcc7idg6agpp2mk39dwzaqmxbk0"))))
     (properties `((upstream-name . "heiscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -9357,13 +9356,13 @@ consistent verb framework that takes the guesswork out of everything.")
 (define-public r-healthyaddress
   (package
     (name "r-healthyaddress")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyAddress" version))
        (sha256
-        (base32 "1fbqka0gg7l11n6czb2z2480r7v5ispn54a17xjad547ndy12n5v"))))
+        (base32 "0rj2cd34dw17bdw3m6dkgyaji72f3sapf9jnvlr8sima6nfiacqd"))))
     (properties `((upstream-name . "healthyAddress")))
     (build-system r-build-system)
     (propagated-inputs (list r-qs

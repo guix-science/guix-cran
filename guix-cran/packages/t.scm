@@ -2768,17 +2768,19 @@ GPH estimator proposed by Reisen et al. (2017) <doi:10.1016/j.jspi.2017.02.008>.
 (define-public r-tspredit
   (package
     (name "r-tspredit")
-    (version "1.0.767")
+    (version "1.0.777")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tspredit" version))
        (sha256
-        (base32 "0gxsbhigq0qxiw6kx4p7wgqjx7c09qj03w7j6600p2jzaqz959zj"))))
+        (base32 "0yqgd9rlqldplcsq8hk1wkgjq0931sbqdxd31ynylkpiy4d0psca"))))
     (properties `((upstream-name . "tspredit")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mfilter
+    (propagated-inputs (list r-wavelets
+                             r-mfilter
                              r-kfas
+                             r-hht
                              r-forecast
                              r-dplyr
                              r-desctools
@@ -5245,13 +5247,13 @@ for any predictive machine learning models.  Find more details in Biecek (2018)
 (define-public r-triplesmatch
   (package
     (name "r-triplesmatch")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "triplesmatch" version))
        (sha256
-        (base32 "1qjwnyijk3yf9dl18baww806xz2w1jhxcnaw3nlb27g24m28j2dq"))))
+        (base32 "0k1kwv6yk5gwwqvn7wwhg02ny8avd70mqs91b4hm5bi6857wfg0h"))))
     (properties `((upstream-name . "triplesmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlemon r-rlang r-rcbalance r-optmatch r-mass))
@@ -11919,17 +11921,16 @@ values or a user-supplied regression function are passed in as arguments.")
 (define-public r-tml
   (package
     (name "r-tml")
-    (version "1.2.0")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TML" version))
        (sha256
-        (base32 "0krnh14mi3vi4msiz84f56kmzq12b1qc246jny37isl1b2wz2zrp"))))
+        (base32 "1157saqs5wczzz45pk966pi5wswlcm2fa22f0q9kdsg92rfgxja7"))))
     (properties `((upstream-name . "TML")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rocr
+    (propagated-inputs (list r-rocr
                              r-rgl
                              r-rfast
                              r-rcppalgos
@@ -11940,7 +11941,6 @@ values or a user-supplied regression function are passed in as arguments.")
                              r-matrix
                              r-mass
                              r-maps
-                             r-magick
                              r-lpsolveapi
                              r-lpsolve
                              r-gtools
@@ -11952,10 +11952,12 @@ values or a user-supplied regression function are passed in as arguments.")
     (description
      "Suite of tropical geometric tools for use in machine learning applications.
 These methods may be summarized in the following references: Yoshida, et al.
-(2022) <arxiv:2209.15045>, Barnhill et al. (2023) <arxiv:2303.02539>, Barnhill
-and Yoshida (2023) <doi:10.3390/math11153433>, Aliatimis et al. (2023)
-<@code{arXiv:2306.08796>}, Yoshida et al. (2022) <@code{arXiv:2206.04206>}, and
-Yoshida et al. (2019) <doi:10.1007/s11538-018-0493-4>.")
+(2022) <doi:10.2140/astat.2023.14.37>, Barnhill et al. (2023)
+<doi:10.48550/@code{arXiv.2303.02539>}, Barnhill and Yoshida (2023)
+<doi:10.3390/math11153433>, Aliatimis et al. (2023)
+<doi:10.1007/s11538-024-01327-8>, Yoshida et al. (2022)
+<doi:10.1109/TCBB.2024.3420815>, and Yoshida et al. (2019)
+<doi:10.1007/s11538-018-0493-4>.")
     (license license:expat)))
 
 (define-public r-tmisc
@@ -12815,13 +12817,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipsae" version))
        (sha256
-        (base32 "1ay67c3hlfzzflzcjwh9jqmy70jbvxp0bri1cc8vvs3ipdinygg9"))))
+        (base32 "14x5g5qc1lnc2p0vkmf8vs7gkjlbkahgaf38j9q23xx8dizym6w9"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -14631,17 +14633,16 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
 (define-public r-tidywikidatar
   (package
     (name "r-tidywikidatar")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidywikidatar" version))
        (sha256
-        (base32 "1f6651nh98assi6wr6k1qp55bspqln83arz6di1fx8p7mlkrh8li"))))
+        (base32 "1ff5qlz4h99d7x1pcjcji5li2421mlr55yfv6b32165f1yrkm8qw"))))
     (properties `((upstream-name . "tidywikidatar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wikipedir
-                             r-wikidatar
+    (propagated-inputs (list r-wikidatar
                              r-wikidataqueryservicer
                              r-vctrs
                              r-tidyr
@@ -14654,6 +14655,7 @@ formulas.  Supports .xlsx and .xlsm via the embedded @code{RapidXML} C++ library
                              r-pool
                              r-magrittr
                              r-jsonlite
+                             r-httr2
                              r-glue
                              r-fs
                              r-dplyr
@@ -18319,13 +18321,13 @@ majority cases using @code{NearMiss} 2003
 (define-public r-thematic
   (package
     (name "r-thematic")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thematic" version))
        (sha256
-        (base32 "1ims007m3h9qhfbav21hinqmkgs8kblslr22pvqp19ndlsibllki"))))
+        (base32 "00ym9blns25cq6wij8bjgq3g79bllm8h617lvd9ald51q78pd52h"))))
     (properties `((upstream-name . "thematic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -20036,13 +20038,13 @@ molecular sequences.")
 (define-public r-text
   (package
     (name "r-text")
-    (version "1.2.1")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "text" version))
        (sha256
-        (base32 "06rvcdl06ki3qw46r7yp21jjjbgmmr2cyb0rgr7d1kqcwl12gcg4"))))
+        (base32 "0mgjc9yjrb3y1avzdqzx01zbdy1sl7glfgv2yvjrxkw3lw9lwjlb"))))
     (properties `((upstream-name . "text")))
     (build-system r-build-system)
     (inputs (list python))

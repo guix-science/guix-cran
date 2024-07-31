@@ -3628,13 +3628,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "0pg0f0glqz3m2kj44lg4fg6g7icigkzb578k1kjw2lhs2vjbaqbw"))))
+        (base32 "1v64wx6nylzrfzby8p7l3s1dn6naqnjw7vamlwm12xvq303xgap1"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8212,13 +8212,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "4.9.4")
+    (version "5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "1spf8q1bhxc1mdx5hd8z7yqwlyn15fq3ph3rz1vr5v8z8n4qsgff"))))
+        (base32 "18br08n7dbykdhx8adwvizm9m3r1pin76qqy7v1p42cq44qj11p7"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")
@@ -12002,13 +12002,13 @@ non-hierarchical clustering algorithms (Kreft & Jetz (2010)
 (define-public r-biorad
   (package
     (name "r-biorad")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bioRad" version))
        (sha256
-        (base32 "0bkj2yhmg61h3pflvaw3pwvisylflhgmhs405a468v8qf29vd6fb"))))
+        (base32 "1c7wl1wk1lh31dr7a7lwbjib4v1mfvvyi8iwfc9svj07y4wpzj58"))))
     (properties `((upstream-name . "bioRad")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -17673,17 +17673,17 @@ use with the caret package.")
 (define-public r-bessel
   (package
     (name "r-bessel")
-    (version "0.6-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Bessel" version))
        (sha256
-        (base32 "0iwm08nhlivi4zwcqdi296a1l4n4lfanfxhaysh9vcsyk1kpiacf"))))
+        (base32 "0n2k33n4r1hx20qr2hh5i6a2rcyikd6iwihhknzz8nvx8f2ms9yh"))))
     (properties `((upstream-name . "Bessel")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmpfr))
-    (home-page "http://specfun.r-forge.r-project.org/")
+    (home-page "https://specfun.r-forge.r-project.org/")
     (synopsis "Computations and Approximations for Bessel Functions")
     (description
      "Computations for Bessel function for complex, real and partly mpfr (arbitrary
@@ -26514,13 +26514,13 @@ rmaaddon() can be used.")
 (define-public r-baorista
   (package
     (name "r-baorista")
-    (version "0.1.4")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baorista" version))
        (sha256
-        (base32 "1ljqkplhnfxcs0jvmg589x7j00pciqk829vg5gi4c2i69yxd7mc1"))))
+        (base32 "044p2r5wmpm8l8q1z1g3a7x15bclcbgjb2a3qvl0438div8y5llz"))))
     (properties `((upstream-name . "baorista")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-coda))

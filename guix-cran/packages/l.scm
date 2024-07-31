@@ -1659,22 +1659,25 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "0w26zq4lylg9x2qyxx4d46phlkih2cdcgjar45k9x7fav8gw6cry"))))
+        (base32 "0fsn1p9jdh3v64b473g1jz0nv0vr1psza9s4lijflyc2rmgnx9cd"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-tidyr
+                             r-spatstat-random
                              r-spatstat-geom
                              r-spatstat
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
+                             r-purrr
                              r-proc
+                             r-plyr
                              r-plotly
                              r-mcmcpack
                              r-kernlab
@@ -1825,13 +1828,13 @@ software available at <https://www.labsimdev.org/>).")
 (define-public r-lsdinterface
   (package
     (name "r-lsdinterface")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSDinterface" version))
        (sha256
-        (base32 "0zp7bgdbcah6hsfqbz7lq6f7g8xcqhjsr7pjpwjf9brnmy0l7xki"))))
+        (base32 "10g7hlqg99hjachjsfa7bx1s7h4f7avf3jway7zdmagv0kh54rxs"))))
     (properties `((upstream-name . "LSDinterface")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsdist r-boot r-abind))
@@ -3817,13 +3820,13 @@ fractionally cointegrated systems.")
 (define-public r-longmemo
   (package
     (name "r-longmemo")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longmemo" version))
        (sha256
-        (base32 "01rj5x9cgscsrakbx9155mbvs35fd3j484cfz5cds9vl521fjr3r"))))
+        (base32 "0c4ahci4bf630pcm9zfjwipbq2rb7yi55w91yi6qy39fzdj4v568"))))
     (properties `((upstream-name . "longmemo")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=longmemo")
@@ -4262,13 +4265,13 @@ functions has been derived.")
 (define-public r-lokern
   (package
     (name "r-lokern")
-    (version "1.1-11")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lokern" version))
        (sha256
-        (base32 "1psv3c59lxn7nrb04v7kydlk4q1cg3v8hb1s1v2al19f0p2jhyhz"))))
+        (base32 "0xymmkq5pnqiv5ipakx5w8nl0qhxix0lz8xvn88801r5zygyywbc"))))
     (properties `((upstream-name . "lokern")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -7161,13 +7164,13 @@ or gls models.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.22")
+    (version "1.0.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "085zmg9p9n5lxmz9ay9mk1gav82hcz0vknprn5s85s151n2bsz2z"))))
+        (base32 "1zwbb4f2r0gmdvcnf4sh38ispqb7gifxi7gl04rfyxabbsanmvbb"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4 r-crayon))

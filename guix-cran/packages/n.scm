@@ -8038,13 +8038,13 @@ NIMBLE models.  Adapted from Lacki & Miasojedow (2016)
 (define-public r-nimble
   (package
     (name "r-nimble")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nimble" version))
        (sha256
-        (base32 "16mq49fynkq3ki7g4dv5cxc493gi1sh728jaslzxzh1124n645f4"))))
+        (base32 "11r5h2v8q4n50i843va2lm5is8cfq5268dyvhkp56xav7vkp319f"))))
     (properties `((upstream-name . "nimble")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-pracma r-numderiv r-igraph r-coda))
@@ -9241,13 +9241,13 @@ seasons including the sophisticated tie-breaking procedures.")
 (define-public r-nflreadr
   (package
     (name "r-nflreadr")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflreadr" version))
        (sha256
-        (base32 "1437nzvqj0w5p3wxb0zfwjkn34ssd4q9zbsw0lmrbs0afifaf6dd"))))
+        (base32 "0c5vbyh56m8mqlwriw0fzcv1bankg4hb81j98j1wsdg886wiab1m"))))
     (properties `((upstream-name . "nflreadr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -9491,6 +9491,29 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (1986, ISBN: 978-94-010-8324-9).  This package provides tools for chemical
 fingerprinting and source tracking of ancient materials.")
     (license license:gpl3+)))
+
+(define-public r-nextgenshinyapps
+  (package
+    (name "r-nextgenshinyapps")
+    (version "2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nextGenShinyApps" version))
+       (sha256
+        (base32 "1q10qpqwxddq7qi7wjczny3hfkrf0vxvmkb9wxxvsk6k9pn6p5mx"))))
+    (properties `((upstream-name . "nextGenShinyApps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://nextgenshinyapps.obi.obianom.com")
+    (synopsis
+     "Craft Exceptional 'R Shiny' Applications and Dashboards with Novel Responsive Tools")
+    (description
+     "Novel responsive tools for developing R based Shiny dashboards and applications.
+ The scripts and style sheets are based on @code{jQuery} <https://jquery.com/>
+and Bootstrap <https://getbootstrap.com/>.")
+    (license license:expat)))
 
 (define-public r-newtestsurvrec
   (package
@@ -11771,30 +11794,6 @@ al., (2015) <DOI:10.1016/j.socscimed.2015.10.001>; Valente (1995) <ISBN:
      "Implementation of discriminant analysis with network structures in predictors
 accommodated to do classification and prediction.")
     (license license:gpl2)))
-
-(define-public r-netcox
-  (package
-    (name "r-netcox")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "netcox" version))
-       (sha256
-        (base32 "04biaynmvqrilp0kdxw55b990j7iqnvn8gr07dhzm9f7r9sr7xk6"))))
-    (properties `((upstream-name . "netcox")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival r-rcpp r-glmnet))
-    (home-page "https://cran.r-project.org/package=netcox")
-    (synopsis
-     "Structural Learning in Cox Models with Time-Dependent Covariates")
-    (description
-     "Efficient procedures for fitting and cross-validating the overlapping group
-Lasso (implemented in C++) for Cox models with time-dependent covariates.  The
-penalty term is a weighted sum of infinity norms of (overlapping) groups of
-coefficients, which can select variables structurally with a specific grouping
-structure.")
-    (license license:gpl3+)))
 
 (define-public r-netcoupler
   (package
