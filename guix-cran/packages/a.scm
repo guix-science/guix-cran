@@ -4934,6 +4934,31 @@ Discriminant Analysis is also included, which extends Adaptive Sparse
 Multi-block Partial Least Square for classifying the categorical outcome.")
     (license license:gpl2+)))
 
+(define-public r-asmbook
+  (package
+    (name "r-asmbook")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ASMbook" version))
+       (sha256
+        (base32 "18nprjb54kr5yvpfnmji8p5a9ggc33h5wkgvni567rdsnq7jv0d7"))))
+    (properties `((upstream-name . "ASMbook")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmb r-mass r-lattice r-coda))
+    (home-page
+     "https://shop.elsevier.com/books/applied-statistical-modelling-for-ecologists/kery/978-0-443-13715-0")
+    (synopsis
+     "Functions for the Book \"Applied Statistical Modeling for Ecologists\"")
+    (description
+     "This package provides functions to accompany the book \"Applied Statistical
+Modeling for Ecologists\" by Marc KÃ©ry and Kenneth F. Kellner (2024, ISBN:
+9780443137150).  Included are functions for simulating and customizing the
+datasets used for the example models in each chapter, summarizing output from
+model fitting engines, and running custom Markov Chain Monte Carlo.")
+    (license license:gpl3)))
+
 (define-public r-asmap
   (package
     (name "r-asmap")
@@ -6258,55 +6283,6 @@ in studies to process tens of thousands of arrays.  This package has actively
 been used since 2006.")
     (license license:lgpl2.1+)))
 
-(define-public r-aroc
-  (package
-    (name "r-aroc")
-    (version "1.0-4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AROC" version))
-       (sha256
-        (base32 "0wwv63mlh8pl5pzaih57l2qy70fz2wpfyxns1lyp95sxhq7ddwza"))))
-    (properties `((upstream-name . "AROC")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-np
-                             r-nor1mix
-                             r-moments
-                             r-matrix
-                             r-mass
-                             r-hmisc))
-    (home-page "https://cran.r-project.org/package=AROC")
-    (synopsis
-     "Covariate-Adjusted Receiver Operating Characteristic Curve Inference")
-    (description
-     "Estimates the covariate-adjusted Receiver Operating Characteristic (AROC) curve
-and pooled (unadjusted) ROC curve by different methods.  Inacio de Carvalho, V.,
-and Rodriguez-Alvarez, M. X. (2018) <@code{arXiv:1806.00473>}.  NOTE: We have
-created a new package, RO@code{CnReg}', with more functionalities.  It also
-implements all the methods included in AROC'.  We, therefore, recommend using
-RO@code{CnReg} ('AROC will no longer be maintained).")
-    (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-arnie
-  (package
-    (name "r-arnie")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arnie" version))
-       (sha256
-        (base32 "14xkgyfn9zvkbgram15w7qzqc5pl1a8ig66cif7a79najrgd914r"))))
-    (properties `((upstream-name . "arnie")))
-    (build-system r-build-system)
-    (home-page "https://github.com/imanuelcostigan/arnie")
-    (synopsis "\"Arnie\" box office records 1982-2014")
-    (description
-     "Arnold Schwarzenegger movie weekend box office records from 1982-2014.")
-    (license license:cc-by-sa4.0)))
-
 (define-public r-armspp
   (package
     (name "r-armspp")
@@ -7229,13 +7205,13 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "1gv7nvcd6qssvm21vz2vgd49abypsff5zjlxarb64ggkpiqrgdw8"))))
+        (base32 "1bbkcvi982xkjwjadfxc73rmip9hwlh3x0iyqms3pzfs1p32ansr"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (inputs (list))
@@ -11860,6 +11836,27 @@ implemented as in (<doi:10.1177/1177932218821383>,
      "Predicts amyloid proteins using random forests trained on the n-gram encoded
 peptides.  The implemented algorithm can be accessed from both the command line
 and shiny-based GUI.")
+    (license license:gpl3)))
+
+(define-public r-amvenndiagram5
+  (package
+    (name "r-amvenndiagram5")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amVennDiagram5" version))
+       (sha256
+        (base32 "0f4w66pqb95bk5h0xi35lxq4535rjpbgkl6j9r3wx7rl8g6lpl7q"))))
+    (properties `((upstream-name . "amVennDiagram5")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-venn r-partitions r-htmlwidgets))
+    (home-page "https://github.com/stla/amVennDiagram5")
+    (synopsis "Interactive Venn Diagrams")
+    (description
+     "This package creates interactive Venn diagrams using the @code{amCharts5}
+library for @code{JavaScript}'.  They can be used directly from the R console,
+from RStudio', in shiny applications, and in rmarkdown documents.")
     (license license:gpl3)))
 
 (define-public r-amt

@@ -21,7 +21,6 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages xml)
@@ -19699,72 +19698,6 @@ details can be found in Hong Zhang and Zheyang Wu (2020)
 <@code{arXiv:2003.01286>}.")
     (license license:gpl2)))
 
-(define-public r-gfilogisreg
-  (package
-    (name "r-gfilogisreg")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfilogisreg" version))
-       (sha256
-        (base32 "1x9j2ac7lk2gkcwxkvyc3bj23z5bibhx64lj4nwsgdjq14677502"))))
-    (properties `((upstream-name . "gfilogisreg")))
-    (build-system r-build-system)
-    (inputs (list gmp))
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat
-                             r-roptim
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcdd
-                             r-lazyeval
-                             r-eigenr
-                             r-bh))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=gfilogisreg")
-    (synopsis
-     "Generalized Fiducial Inference for Binary Logistic Regression Models")
-    (description
-     "Fiducial framework for the logistic regression model.  The fiducial distribution
-of the parameters of the logistic regression is simulated, allowing to perform
-statistical inference on any parameter of interest.  The algorithm is taken from
-Jessi Cisewski's @code{PhD} thesis: Jessi Cisewski (2012), \"Generalized fiducial
-inference for mixed linear models\".")
-    (license license:gpl3)))
-
-(define-public r-gfilmm
-  (package
-    (name "r-gfilmm")
-    (version "2.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gfilmm" version))
-       (sha256
-        (base32 "0mn2z4aihz0anpm6d0cpyabhbd88x1cp0wgwxl5hgvkw547818pb"))))
-    (properties `((upstream-name . "gfilmm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom
-                             r-spatstat
-                             r-rcppeigen
-                             r-rcpp
-                             r-matrix
-                             r-lazyeval
-                             r-forcats))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/stla/gfilmm")
-    (synopsis "Generalized Fiducial Inference for Normal Linear Mixed Models")
-    (description
-     "Simulation of the generalized fiducial distribution for normal linear mixed
-models with interval data.  Fiducial inference is somehow similar to Bayesian
-inference, in the sense that it is based on a distribution that represents the
-uncertainty about the parameters, like the posterior distribution in Bayesian
-statistics.  It does not require a prior distribution, and it yields results
-close to frequentist results.  Reference: Cisewski and Hannig (2012)
-<doi:10.1214/12-AOS1030>.")
-    (license license:gpl3)))
-
 (define-public r-gfiextremes
   (package
     (name "r-gfiextremes")
@@ -23645,13 +23578,13 @@ allows running the hybrid multi-group approach (Lamberti (2021)
 (define-public r-genotriplo
   (package
     (name "r-genotriplo")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GenoTriplo" version))
        (sha256
-        (base32 "0pfq3k4szmkk3swzkcxm99qnmnw1ikknjg21pghgnr3g7437vlmp"))))
+        (base32 "04v1llw3ppzx9s9cm8wp78n5hpm65bpmkmsliczlp33l91cbspp8"))))
     (properties `((upstream-name . "GenoTriplo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

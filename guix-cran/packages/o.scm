@@ -472,6 +472,33 @@ different tables (e.g., time and scope conditions).  The package also provides
 publishable @code{LaTeX} code to present the sample information.")
     (license license:gpl3)))
 
+(define-public r-overturer
+  (package
+    (name "r-overturer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overtureR" version))
+       (sha256
+        (base32 "03ffnw45iyysvqijkbmba3b2vjkpr8hn5ycqn9pqgnsh5qhw807p"))))
+    (properties `((upstream-name . "overtureR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
+    (home-page "https://github.com/arthurgailes/overtureR")
+    (synopsis
+     "Load 'Overture' Datasets as 'dbplyr' and 'sf'-Ready Data Frames")
+    (description
+     "An integrated R interface to the Overture API
+(<https://docs.overturemaps.org/>).  Allows R users to return Overture data as
+dbplyr data frames or materialized sf spatial data frames.")
+    (license license:expat)))
+
 (define-public r-overturemapsr
   (package
     (name "r-overturemapsr")
@@ -9493,16 +9520,17 @@ production: Use of methodology for modeling\". <doi:10.1016/j.lwt.2020.109660>."
 (define-public r-oem
   (package
     (name "r-oem")
-    (version "2.0.11")
+    (version "2.0.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oem" version))
        (sha256
-        (base32 "0p9s68zgma9mcjnz0xg6h07yp38rqj209asg18hji8528iazbv8g"))))
+        (base32 "1a12d4fnrkrawb5f7rfidjixjl1v5qznqdyv8a5s1bp37pf1gh89"))))
     (properties `((upstream-name . "oem")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen
+    (propagated-inputs (list r-rspectra
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-matrix

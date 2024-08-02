@@ -3309,13 +3309,13 @@ bias.")
 (define-public r-multisite-accuracy
   (package
     (name "r-multisite-accuracy")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multisite.accuracy" version))
        (sha256
-        (base32 "1hj1gjc8833np9cahpw1f1p2yg95xx32rbzj6l9sc65dv5ncq5jf"))))
+        (base32 "0d2i34pphvilzmjvqpxnp76d2dzy4ncg6xvxdg7752gcnp5j1mvl"))))
     (properties `((upstream-name . "multisite.accuracy")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -3324,8 +3324,7 @@ bias.")
                              r-logistf
                              r-lmertest
                              r-lme4
-                             r-coxme
-                             r-aroc))
+                             r-coxme))
     (home-page "https://cran.r-project.org/package=multisite.accuracy")
     (synopsis "Estimation of Accuracy in Multisite Machine-Learning Models")
     (description
@@ -12003,6 +12002,42 @@ forest and variable importance functions.  Also modules and a shiny app for
 conditional inference trees.")
     (license license:gpl2+)))
 
+(define-public r-moranajp
+  (package
+    (name "r-moranajp")
+    (version "0.9.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moranajp" version))
+       (sha256
+        (base32 "1vzid1j09s7v20y8bpfrl7xcz8lf8f5dg5npw3iz2ibvp2w5vjl7"))))
+    (properties `((upstream-name . "moranajp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringi
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matutosi/moranajp")
+    (synopsis "Morphological Analysis for Japanese")
+    (description
+     "Supports morphological analysis for Japanese by using @code{MeCab}
+<https://taku910.github.io/mecab/>, Sudachi
+<https://github.com/@code{WorksApplications/Sudachi>}, Chamame
+<https://chamame.ninjal.ac.jp/>, or Ginza
+<https://github.com/megagonlabs/ginza>.  Can input a data.frame and obtain all
+results of @code{MeCab} and the row number of the original data.frame as a text
+id.")
+    (license license:expat)))
+
 (define-public r-moqa
   (package
     (name "r-moqa")
@@ -13545,13 +13580,13 @@ method.")
 (define-public r-modtools
   (package
     (name "r-modtools")
-    (version "0.9.6")
+    (version "0.9.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ModTools" version))
        (sha256
-        (base32 "0f5afik98wg1yv722k3aycm35h3lv0pbd6zlsy4nvrnd51pdda4c"))))
+        (base32 "09ag46i8a2lk99qxyf3jzsssv5k5jix8vvvdq2s89im20n8pk2q6"))))
     (properties `((upstream-name . "ModTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -13573,8 +13608,9 @@ method.")
                              r-class
                              r-car
                              r-c50
+                             r-boot
                              r-aer))
-    (home-page "https://cran.r-project.org/package=ModTools")
+    (home-page "https://andrisignorell.github.io/ModTools/")
     (synopsis "Tools for Building Regression and Classification Models")
     (description
      "Collection of tools for regression and classification tasks.  The package
@@ -30198,16 +30234,17 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
 (define-public r-metage
   (package
     (name "r-metage")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaGE" version))
        (sha256
-        (base32 "0w639hxildzcd2kwjs9r3iykccd8qhxpiarj95zpd89fzkkqzknx"))))
+        (base32 "01507d85fpiqrbir1rjy5vczrv9cjfscwbl3746rr8x1x8danz7w"))))
     (properties `((upstream-name . "metaGE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-yarrr
+                             r-viridis
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -30228,16 +30265,14 @@ Ecology and Evolution 7, 323-330 <doi:10.1111/2041-210X.12472>.")
     (synopsis
      "Meta-Analysis for Detecting Genotype x Environment Associations")
     (description
-     "Meta-analysis of genome-wide association studies for studying Genotype x
-Environment interactions.  The 4 main functions of the package
-@code{metaGE.collect}(), @code{metaGE.cor}(), @code{metaGE.fit}() and
-@code{metaGE.test}() correspond to 4 steps to perform the meta-analysis:
-Collecting the results of genome-wide association studies data from different
-files; Inferring the inter-environment correlation matrix; Performing global
-test procedure for quantitative trait loci detection (using a Fixed or Random
-effect model); Performing tests of contrast or meta-regression using an
-environmental co-factor. (De Walsche, A., et al. (2023)
-<doi:10.1101/2023.03.01.530237>).")
+     "This package provides functions to perform all steps of genome-wide association
+meta-analysis for studying Genotype x Environment interactions, from collecting
+the data to the manhattan plot.  The procedure accounts for the potential
+correlation between studies.  In addition to the Fixed and Random models, one
+can investigate the relationship between QTL effects and some qualitative or
+quantitative covariate via the test of contrast and the meta-regression,
+respectively.  The methodology is available from: (De Walsche, A., et al. (2023)
+\\doi{10.1101/2023.03.01.530237}).")
     (license license:gpl3)))
 
 (define-public r-metagam
@@ -33531,13 +33566,13 @@ are computed in parallel via @code{OpenMP}'.")
 (define-public r-mdw
   (package
     (name "r-mdw")
-    (version "2020.6-17")
+    (version "2024.8-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdw" version))
        (sha256
-        (base32 "0jjajgb1w3vx7vqn2z90xq39hvbcrrd2ky8p31g5absqwwm7lwpa"))))
+        (base32 "1qvz84qrsm904ia8vr0n07magkj1ydgiw1hgmncchmq8l1a2fw6f"))))
     (properties `((upstream-name . "mdw")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass r-kyotil))
@@ -40119,13 +40154,13 @@ and simulation (marima.sim()).")
 (define-public r-margins
   (package
     (name "r-margins")
-    (version "0.3.27")
+    (version "0.3.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "margins" version))
        (sha256
-        (base32 "1jlxg8pwmyd4nzmczp2909rjd68nz7vl8m2g35jywh05b85b0slk"))))
+        (base32 "01wlx5f2kjc4n9md0zr9m73li6iwlngk1rdwifhhwc22hf4jijc9"))))
     (properties `((upstream-name . "margins")))
     (build-system r-build-system)
     (propagated-inputs (list r-prediction r-mass r-data-table))
@@ -41174,6 +41209,38 @@ graphical representations summarizing the spatial variation of pairwise metrics
 (eg.  distance, similarity coefficient, ...) computed between georeferenced
 samples.")
     (license license:gpl3+)))
+
+(define-public r-mapgl
+  (package
+    (name "r-mapgl")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mapgl" version))
+       (sha256
+        (base32 "0vda7873sczq1qa145y8ynqaccgcmy10p2lab2wx9aa61g4z9sgc"))))
+    (properties `((upstream-name . "mapgl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rlang
+                             r-htmlwidgets
+                             r-htmltools
+                             r-geojsonsf
+                             r-base64enc))
+    (home-page "https://walker-data.com/mapgl/")
+    (synopsis "Interactive Maps with 'Mapbox GL JS' and 'MapLibre GL JS' in R")
+    (description
+     "This package provides an interface to the Mapbox GL JS
+(<https://docs.mapbox.com/mapbox-gl-js/guides>) and the @code{MapLibre} GL JS
+(<https://maplibre.org/maplibre-gl-js/docs/>) interactive mapping libraries to
+help users create custom interactive maps in R. Users can create interactive
+globe visualizations; layer sf objects to create filled maps, circle maps,
+heatmaps', and three-dimensional graphics; and customize map styles and views.
+The package also includes utilities to use Mapbox and @code{MapLibre} maps in
+Shiny web applications.")
+    (license license:expat)))
 
 (define-public r-mapgam
   (package
@@ -43480,6 +43547,38 @@ data order in calculations).")
 files,reading output files, and visualizing the stand in 3D. Handy for running
 sensitivity analyses, scenario analyses, etc.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-maestro
+  (package
+    (name "r-maestro")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maestro" version))
+       (sha256
+        (base32 "0mdrphwsr4wywgndi90hif688sah7brx45g62q8hjbyqpvx272ly"))))
+    (properties `((upstream-name . "maestro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timechange
+                             r-tictoc
+                             r-roxygen2
+                             r-rlang
+                             r-r-utils
+                             r-purrr
+                             r-lubridate
+                             r-logger
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/whipson/maestro")
+    (synopsis "Orchestration of Data Pipelines")
+    (description
+     "Framework for creating and orchestrating data pipelines.  Organize, orchestrate,
+and monitor multiple pipelines in a single project.  Use tags to decorate
+functions with scheduling parameters and configuration.")
+    (license license:expat)))
 
 (define-public r-madsim
   (package

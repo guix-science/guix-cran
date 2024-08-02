@@ -2831,13 +2831,13 @@ matrices of any standard data type.")
 (define-public r-jmastats
   (package
     (name "r-jmastats")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmastats" version))
        (sha256
-        (base32 "1k82iwb8sjhha1r4vzrnncvzjjpnl8css6b2mscp26wg593q9hd3"))))
+        (base32 "0cwripcb5j3x893j6v095dzzjr64q9ibp1wj0aq4cc8a51p0gjp8"))))
     (properties `((upstream-name . "jmastats")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

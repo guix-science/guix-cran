@@ -10562,13 +10562,13 @@ solution for genomic selection based on most commonly used statistical methods."
 (define-public r-stgam
   (package
     (name "r-stgam")
-    (version "0.0.1.1")
+    (version "0.0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stgam" version))
        (sha256
-        (base32 "1z77qi733sif53z49q4dlc41m5di9ffy8nj82sj0pr02wfy32wjp"))))
+        (base32 "0p6w0yb0cyc4zpsb7nwkxh8s7vlssprb5ssg0rfbmh83n37faqb4"))))
     (properties `((upstream-name . "stgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -10587,7 +10587,7 @@ solution for genomic selection based on most commonly used statistical methods."
      "Spatially and Temporally Varying Coefficient Models Using Generalized Additive Models")
     (description
      "This package provides a framework for specifying spatially, temporally and
-spatial-and-temporally varying coefficient models using Generalized Additive
+spatially-and-temporally varying coefficient models using Generalized Additive
 Models with Gaussian Process smooths.  The smooths are parameterised with
 location and / or time attributes.  Importantly the framework supports the
 investigation of the presence and nature of any space-time dependencies in the
@@ -11962,13 +11962,13 @@ measures (Anova & Multiple Regression). - Clinical Assay.")
 (define-public r-stats19
   (package
     (name "r-stats19")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stats19" version))
        (sha256
-        (base32 "001bmwkr07lv0r02i5glssqw2kf6b6n8m3bwgz3rpljqz07y0j80"))))
+        (base32 "1af7a2p1n1rxgx25qpkw27qmhy0gyiq2549vibdp8gfdybsf38g6"))))
     (properties `((upstream-name . "stats19")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-readr))
@@ -27024,13 +27024,13 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
 (define-public r-sommer
   (package
     (name "r-sommer")
-    (version "4.3.4")
+    (version "4.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sommer" version))
        (sha256
-        (base32 "0c6g0ldla3ix40aw0h7mylz3xlvdnvrlz288hjkq86r8g9i5mq2b"))))
+        (base32 "0lhbrv4m44zgd178xpm5h0qdn54ldfjz7c96mmhm41pz0zn97h5h"))))
     (properties `((upstream-name . "sommer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -27040,7 +27040,7 @@ For more details see: <doi:10.5281/zenodo.10137768>.")
                              r-mass
                              r-crayon))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sommer")
+    (home-page "https://github.com/covaruber/sommer")
     (synopsis "Solving Mixed Model Equations in R")
     (description
      "Structural multivariate-univariate linear mixed model solver for estimation of
@@ -56241,13 +56241,13 @@ probability matrix from double-censored data is added.")
 (define-public r-scclust
   (package
     (name "r-scclust")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scclust" version))
        (sha256
-        (base32 "0rhr5qnsc0ylgs4gmn3d3d4ah2ijnd24n029vik1f0n4ykszn3np"))))
+        (base32 "028ssw7k4sj4vzyylb5njfbjisir2vas0xzh63hmwkalncr2dcpv"))))
     (properties `((upstream-name . "scclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-distances))
@@ -59415,6 +59415,38 @@ refer to Yang et al. (2023) <doi:10.1111/biom.13927>.")
     (description
      "This package contains human behaviour datasets collected by the SAMPLING project
 (<https://sampling.warwick.ac.uk>).")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-samplr
+  (package
+    (name "r-samplr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "samplr" version))
+       (sha256
+        (base32 "1zmh68518vz3nfjch524b9q5fi8wap54qziq6z5mz9ymaqrwayaa"))))
+    (properties `((upstream-name . "samplr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-testthat
+                             r-rdpack
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-pracma
+                             r-lme4
+                             r-latex2exp
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lucas-castillo/samplr")
+    (synopsis "Compare Human Performance to Sampling Algorithms")
+    (description
+     "Understand human performance from the perspective of sampling, both looking at
+how people generate samples and how people use the samples they have generated.
+A longer overview and other resources can be found at
+<https://sampling.warwick.ac.uk>.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-samplingvarest

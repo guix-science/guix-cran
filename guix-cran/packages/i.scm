@@ -4298,13 +4298,13 @@ can find the full API documentation at <https://iplookupapi.com/docs> .")
 (define-public r-iplgp
   (package
     (name "r-iplgp")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPLGP" version))
        (sha256
-        (base32 "0sv4zl6kn72ajnp32k9xg011y0bjxsq3a0vcj3s0w4wwkcr1h2w5"))))
+        (base32 "1c8xqdgs5jq01fnppy2r4wx8y6avzmqaq1id5jxq1ds96dpr72cf"))))
     (properties `((upstream-name . "IPLGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-sommer r-ggplot2))
@@ -6931,6 +6931,47 @@ plots non-linear marginal effects of a treatment on an outcome across different
 values of a moderator.")
     (license license:expat)))
 
+(define-public r-interfacer
+  (package
+    (name "r-interfacer")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interfacer" version))
+       (sha256
+        (base32 "0ymmm5ij5q8jg1la1k7wfdhb8p8c6kzwf6jqcsa86snz3ssmlrvm"))))
+    (properties `((upstream-name . "interfacer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-roxygen2
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-knitr
+                             r-glue
+                             r-forcats
+                             r-dplyr
+                             r-digest))
+    (native-inputs (list r-knitr))
+    (home-page "https://bristol-vaccine-centre.github.io/interfacer/")
+    (synopsis
+     "Define and Enforce Contracts for Dataframes as Function Parameters")
+    (description
+     "This package provides a dataframe validation framework for package builders who
+use dataframes as function parameters.  It performs checks on column names,
+coerces data-types, and checks grouping to make sure user inputs conform to a
+specification provided by the package author.  It provides a mechanism for
+package authors to automatically document supported dataframe inputs and
+selectively dispatch to functions depending on the format of a dataframe much
+like S3 does for classes.  It also contains some developer tools to make working
+with and documenting dataframe specifications easier.  It helps package
+developers to improve their documentation and simplifies parameter validation
+where dataframes are used as function parameters.")
+    (license license:expat)))
+
 (define-public r-interfaceqpcr
   (package
     (name "r-interfaceqpcr")
@@ -8252,40 +8293,6 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 (2) function argument names are not repeated in comments, and (3) examples are
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
-
-(define-public r-inldata
-  (package
-    (name "r-inldata")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "inldata" version))
-       (sha256
-        (base32 "1rqk76z7c032hzk6g45xvzjz84kwjp6yrg475cmgxqg5rgrvdyw0"))))
-    (properties `((upstream-name . "inldata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
-    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
-    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
-    (description
-     "This package provides a collection of analysis-ready datasets for the U.S.
-Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
-surface-water monitoring networks, administered by the USGS-INL Project Office
-in cooperation with the U.S. Department of Energy.  The data collected from
-wells and surface-water stations at the Idaho National Laboratory and
-surrounding areas have been used to describe the effects of waste disposal on
-water contained in the eastern Snake River Plain aquifer, located in the
-southeastern part of Idaho, and the availability of water for long-term
-consumptive and industrial use.  The package includes long-term monitoring
-records dating back to measurements from 1922.  Geospatial data describing the
-areas from which samples were collected or observations were made are also
-included in the package.  Bundling this data into a single package significantly
-reduces the magnitude of data processing for researchers and provides a way to
-distribute the data along with its documentation in a standard format.
-Geospatial datasets are made available in a common projection and datum, and
-geohydrologic data have been structured to facilitate analysis.")
-    (license license:cc0)))
 
 (define-public r-inlcolor
   (package
@@ -16209,13 +16216,13 @@ to what extent they may exist.")
 (define-public r-icds
   (package
     (name "r-icds")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ICDS" version))
        (sha256
-        (base32 "1bnj2ngh2n2yhgx8z9kawnpgkfgqw3b8xw9wkhimws4f2ir4k1zl"))))
+        (base32 "12zg6bixwqn6m25pnmyqh7fpy5rlkp5warfw5nlmmay0hjydm03q"))))
     (properties `((upstream-name . "ICDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-org-hs-eg-db r-metap r-igraph r-graphite))

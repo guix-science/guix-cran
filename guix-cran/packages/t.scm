@@ -13282,13 +13282,13 @@ project template for Rstudio'.")
 (define-public r-tinyplot
   (package
     (name "r-tinyplot")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tinyplot" version))
        (sha256
-        (base32 "1rjbyznjgkh28xfgms4acbg5943yk5bm7hk5krcl0dnvqc824gsn"))))
+        (base32 "0cd934pzrfg49f1l4pm2g8r83h8zzid23brh2jyl5ydlmfks1zmy"))))
     (properties `((upstream-name . "tinyplot")))
     (build-system r-build-system)
     (home-page "https://grantmcdermott.com/tinyplot/")

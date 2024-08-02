@@ -3952,6 +3952,32 @@ described in e.g. Feng Y., Beran J., Letmathe S. and Ghosh S. (2020)
 and Uhde A. (2021) <https://ideas.repec.org/p/pdn/ciepap/141.html>.")
     (license license:gpl3)))
 
+(define-public r-uei
+  (package
+    (name "r-uei")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UEI" version))
+       (sha256
+        (base32 "0q72avm90x518dcnl60jvg1rpxnizz0hr02mc8wlfr9cinz7r841"))))
+    (properties `((upstream-name . "UEI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-metrics r-factominer r-factoextra))
+    (home-page "https://cran.r-project.org/package=UEI")
+    (synopsis "Compute Uniform Error Index")
+    (description
+     "Uniform Error Index is the weighted average of different error measures.
+Uniform Error Index utilizes output from different error function and gives more
+robust and stable error values.  This package has been developed to compute
+Uniform Error Index from ten different loss function like Error Square, Square
+of Square Error, Quasi Likelihood Error, @code{LogR-Square}, Absolute Error,
+Absolute Square Error etc.  The weights are determined using Principal Component
+Analysis (PCA) algorithm of Yeasin and Paul (2024)
+<doi:10.1007/s11227-023-05542-3>.")
+    (license license:gpl3)))
+
 (define-public r-udpipe
   (package
     (name "r-udpipe")

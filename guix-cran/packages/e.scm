@@ -6533,13 +6533,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.7.2")
+    (version "1.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "08pjzi992apgkxiwv88m0gq7i156lqz5vmlkm5lfcx8w3bjj0j3d"))))
+        (base32 "057c321ww1fiwpsybrgyn9rs18j28xq3smv5bbxk370zz7fn9mch"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium
@@ -16745,13 +16745,13 @@ index.")
 (define-public r-eeml
   (package
     (name "r-eeml")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EEML" version))
        (sha256
-        (base32 "0cv6c8xijfanfh07bmdhnnfpmk6fl7lh1x7k7iz1kj7n1zbrvl1z"))))
+        (base32 "1cwl5qyhxf4d51f0awx8ks355pi5mj6rhl6md5763bnrlakfrbpq"))))
     (properties `((upstream-name . "EEML")))
     (build-system r-build-system)
     (propagated-inputs (list r-weightedensemble r-topsis r-mcs))
@@ -16765,8 +16765,8 @@ predictive capabilities of different machine-learning models and integrates the
 interpretability of explainability methods.  To develop the proposed algorithm,
 a two-stage Technique for Order of Preference by Similarity to Ideal Solution
 (TOPSIS) framework was employed.  The package has been developed using the
-algorithm of Paul et al. <doi:10.1007/s40009-023-01218-x> and Yeasin and Paul
-(2024) <doi:10.1007/s11227-023-05542-3>.")
+algorithm of Paul et al. (2023) <doi:10.1007/s40009-023-01218-x> and Yeasin and
+Paul (2024) <doi:10.1007/s11227-023-05542-3>.")
     (license license:gpl3)))
 
 (define-public r-eemdtdnn
@@ -19126,13 +19126,13 @@ also included.  Algorithms implemented here are described in de Aguiar et al.
 (define-public r-econet
   (package
     (name "r-econet")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "econet" version))
        (sha256
-        (base32 "1igcyhn0gzv82rm5ki59ivmr3q9ryrimyfwybnppcpvg38wdpvwj"))))
+        (base32 "13kvx8ikfljxa21r1rjz3xj7liwllfp73nn57cmlhaqgxgw5wpzx"))))
     (properties `((upstream-name . "econet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
@@ -21168,25 +21168,6 @@ adaptation of Random Forest by a set of individual Efficiency Analysis Trees for
 estimating technical efficiency is also included.  More details in:
 <doi:10.1016/j.eswa.2020.113783>.")
     (license license:gpl3)))
-
-(define-public r-easywechat
-  (package
-    (name "r-easywechat")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "easyWechat" version))
-       (sha256
-        (base32 "1rqdx6lwhaj1g439c3qr8y88k16a2ad77rkdg74wqi255lldjq4j"))))
-    (properties `((upstream-name . "easyWechat")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-httr))
-    (home-page "https://cran.r-project.org/package=easyWechat")
-    (synopsis "Notifier for R Users by 'WeChat'")
-    (description
-     "This is a @code{WeChat} Notifier for R users to notice when script run complete.")
-    (license license:expat)))
 
 (define-public r-easyverification
   (package

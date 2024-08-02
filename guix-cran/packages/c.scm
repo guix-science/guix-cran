@@ -940,13 +940,13 @@ validation.")
 (define-public r-cvms
   (package
     (name "r-cvms")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvms" version))
        (sha256
-        (base32 "0iwg6biy700lgn038ws0dk0qqfl7nws1nxcgkhdd4wm6ki4qb1pq"))))
+        (base32 "08l33vianqd7kdxy5mys54cqahnp10sdzs2pmpd3iq97cs1qx4qb"))))
     (properties `((upstream-name . "cvms")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1081,6 +1081,30 @@ partial linear functional additive models, using multi-fold cross-validation
 criterion.  More details can be referred to Shishi Liu and Jingxiao Zhang.
 (2021) <@code{arXiv:2105.00966>}.")
     (license license:gpl3+)))
+
+(define-public r-cvlm
+  (package
+    (name "r-cvlm")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cvLM" version))
+       (sha256
+        (base32 "1mbafa75l1y757nvcqlamr98vd5qnaxakx3bsvjwrknyq29z27fs"))))
+    (properties `((upstream-name . "cvLM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp))
+    (home-page "https://cran.r-project.org/package=cvLM")
+    (synopsis "Cross-Validation for Linear & Ridge Regression Models")
+    (description
+     "Efficient implementations of cross-validation techniques for linear and ridge
+regression models, leveraging C++ code with Rcpp', @code{RcppParallel}', and
+Eigen libraries.  It supports leave-one-out, generalized, and K-fold
+cross-validation methods, utilizing Eigen matrices for high performance.
+Methodology references: Hastie, Tibshirani, and Friedman (2009)
+<doi:10.1007/978-0-387-84858-7>.")
+    (license license:expat)))
 
 (define-public r-cvglasso
   (package
@@ -2539,13 +2563,13 @@ structure to separate the recording of time variant/ invariant variables.")
 (define-public r-cubar
   (package
     (name "r-cubar")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubar" version))
        (sha256
-        (base32 "1m131ir8fjhjgaqq8xh6pilpjgw5lsvb58gwz6b68kxfqmryb1qd"))))
+        (base32 "1hggjq1p6xcffvr13pxjc4345gzrbaxppryn6ijf2b56ffzy7xgx"))))
     (properties `((upstream-name . "cubar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-iranges r-ggplot2 r-data-table
@@ -13801,13 +13825,13 @@ methods based on L2 distance from empirical copula function are also included.")
 (define-public r-copcor
   (package
     (name "r-copcor")
-    (version "2023.8-27")
+    (version "2024.7-31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copcor" version))
        (sha256
-        (base32 "0fs6zaxjv7ww2f35hwbdgb810cb4mcqxg260fxk3pfcfq3rwdw9a"))))
+        (base32 "1m9a831m290q6ihxriknpbysp1694lcbb7j7knkcgnnqfkh08y5n"))))
     (properties `((upstream-name . "copcor")))
     (build-system r-build-system)
     (propagated-inputs (list r-kyotil))
@@ -21399,13 +21423,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0wa02j80zy4sq7p7hyx97yvfbgfgb1zr0qa9vlhv6xy7m0wggqlz"))))
+        (base32 "0wpfawsvdbllbr7vm83agyzcw64fjn4pwl1hzqm966iim118ch7n"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -22787,13 +22811,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-cocons
   (package
     (name "r-cocons")
-    (version "0.1")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocons" version))
        (sha256
-        (base32 "17xr2268vfgqs2h6n9wgkja8jc52m9himk7v4jfg7qick3amar73"))))
+        (base32 "1kcnbhvh42v5rgm730j8qy3xz5bwq265dvj2690p1b2add10v4ml"))))
     (properties `((upstream-name . "cocons")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -22805,7 +22829,7 @@ samples to obtain bias-free, inter-dataset corrected data.")
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=cocons")
     (synopsis
-     "Covariate-Based Covariance Functions for Nonstationary Gaussian Processes")
+     "Covariate-Based Covariance Functions for Nonstationary Spatial Modeling")
     (description
      "Estimation and prediction of nonstationary Gaussian process with modular
 covariate-based covariance functions.  Routines for handling large datasets are
@@ -25576,31 +25600,6 @@ DNA sequence of cancer genome.  The extremely mutated zones are searched in the
 symmetric dissimilarity matrix using the anti-Robinson matrix properties.
 Different data sets are obtained to describe and plot the clustered mutations
 information.")
-    (license license:gpl3)))
-
-(define-public r-clusteredinterference
-  (package
-    (name "r-clusteredinterference")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "clusteredinterference" version))
-       (sha256
-        (base32 "01w7i9pmvwmrlf5q6y2d48ib0bm16j16xiw4pqnrvbndx4d6wf6n"))))
-    (properties `((upstream-name . "clusteredinterference")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rootsolve r-numderiv r-lme4 r-formula
-                             r-cubature))
-    (native-inputs (list r-knitr))
-    (home-page "http://github.com/BarkleyBG/clusteredinterference")
-    (synopsis
-     "Causal Effects from Observational Studies with Clustered Interference")
-    (description
-     "Estimating causal effects from observational studies assuming clustered (or
-partial) interference.  These inverse probability-weighted estimators target new
-estimands arising from population-level treatment policies.  The estimands and
-estimators are introduced in Barkley et al. (2017) <@code{arXiv:1711.04834>}.")
     (license license:gpl3)))
 
 (define-public r-clustercons
@@ -30058,16 +30057,16 @@ circles.")
 (define-public r-circle
   (package
     (name "r-circle")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "circle" version))
        (sha256
-        (base32 "0nn14ky8df8ra03sh9ds7lkcksf9lysc1981dh19pca7iqbdydkx"))))
+        (base32 "1179gh3psicj5pcaqdhn4cfvj9dwwflwk0jz3lwd9yvgmbhcp2zs"))))
     (properties `((upstream-name . "circle")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-cli))
+    (propagated-inputs (list r-jsonlite r-httr r-gh r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/circle/")
     (synopsis "R Client Package for Circle CI")

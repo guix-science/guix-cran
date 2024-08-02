@@ -1834,13 +1834,13 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0m9j4hzd3brb5n36wypq1njjg9ch0kvrp3rydxhn8icd6xwc1l5b"))))
+        (base32 "0bl8c5cqz5s8yl06qy7xg92nhgald7xil4ck7vb4h6rln210bz9v"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2))
@@ -4092,6 +4092,39 @@ random orthogonal matrices, compute (correlation) loadings and explained
 variation.  It also contains four example data sets (extended UCI wine data,
 TCGA LUSC data, nutrimouse data, extended pitprops data).")
     (license license:gpl3+)))
+
+(define-public r-whitelabrt
+  (package
+    (name "r-whitelabrt")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WhiteLabRt" version))
+       (sha256
+        (base32 "00jhdxm7lfd7bllmmrlchyaa77qgdx8lfcvh6b7y9m6g13sl6xvf"))))
+    (properties `((upstream-name . "WhiteLabRt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=WhiteLabRt")
+    (synopsis
+     "Novel Methods for Reproduction Number Estimation, Back-Calculation, and Forecasting")
+    (description
+     "This package provides a collection of functions related to novel methods for
+estimating R(t), created by the lab of Professor Laura White.  Currently
+implemented methods include two-step Bayesian back-calculation and now-casting
+for line-list data with missing reporting delays, adapted in STAN from Li (2021)
+<doi:10.1371/journal.pcbi.1009210>, and calculation of time-varying reproduction
+number assuming a flux between various adjacent states, adapted into STAN from
+Zhou (2021) <doi:10.1371/journal.pcbi.1010434>.")
+    (license license:expat)))
 
 (define-public r-whitechapelr
   (package

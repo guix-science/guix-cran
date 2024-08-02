@@ -10791,13 +10791,13 @@ distance surface.  But the workhorse is distance_to.")
 (define-public r-distances
   (package
     (name "r-distances")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distances" version))
        (sha256
-        (base32 "0rni8naaryvhmldk8zflwlb4kdrvjfcmfb0j5nxfm4yndqad557b"))))
+        (base32 "0v2i1q16kcxr1v988zcgpqgrwvagzfcafzxjkkz06x72j8s63jrd"))))
     (properties `((upstream-name . "distances")))
     (build-system r-build-system)
     (home-page "https://github.com/fsavje/distances")
@@ -13347,13 +13347,13 @@ Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.
 (define-public r-digirhythm
   (package
     (name "r-digirhythm")
-    (version "2.1")
+    (version "2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digiRhythm" version))
        (sha256
-        (base32 "0cnl53b26zwk576n4igakpk0plbpmf4s18pvzk5nm6k64fzy816w"))))
+        (base32 "1z8arjp4pk8iq7jwigyh7bxfd33dhdxc9blmy1j8kssml152ilhn"))))
     (properties `((upstream-name . "digiRhythm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -13368,7 +13368,7 @@ Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.
                              r-dplyr
                              r-crayon))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=digiRhythm")
+    (home-page "https://nasserdr.github.io/digiRhythm/")
     (synopsis "Analyzing Animal's Rhythmicity")
     (description
      "Analyze and visualize the rhythmic behavior of animals using the degree of

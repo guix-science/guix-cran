@@ -2265,13 +2265,13 @@ Partial Dependence Profiles.")
 (define-public r-vivid
   (package
     (name "r-vivid")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivid" version))
        (sha256
-        (base32 "0zl9p8dsrz9lmylnfxj4b50g1lvk7563ss0w3k1pidkwrs4kazin"))))
+        (base32 "13iagv585a5z7pggzlcgc8h17r5lx4nq2gljy58238nsi0xc9549"))))
     (properties `((upstream-name . "vivid")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -2934,16 +2934,16 @@ International Meteor Organization <https://www.imo.net/>.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisitorCounts" version))
        (sha256
-        (base32 "1i43g2k3n3c1baxj8q86v33mvvmcg16vv2a46y4ji5nqnqay7183"))))
+        (base32 "0nazr2bmxlrr07idsykff3iq1sif3ja42f028rmh83ihlwzf033n"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rssa r-ggplot2))
+    (propagated-inputs (list r-zoo r-rssa r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=VisitorCounts")
     (synopsis "Modeling and Forecasting Visitor Counts Using Social Media")
@@ -2954,8 +2954,8 @@ is built based on an automatic decomposition of the trend and seasonal
 components of the social media-based park visitor counts, from which short-term
 forecasts of the visitor counts and percent changes in the visitor counts can be
 made.  A reference for the underlying model that @code{VisitorCounts} uses can
-be found at Russell Goebel', Austin Schmaltz, Beth Ann Brackett', Spencer A.
-Wood, Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
+be found at Russell Goebel, Austin Schmaltz, Beth Ann Brackett, Spencer A. Wood,
+Kimihiro Noguchi (2023) <doi:10.1002/for.2965> .")
     (license license:gpl3)))
 
 (define-public r-visit

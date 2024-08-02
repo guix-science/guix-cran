@@ -657,13 +657,13 @@ Simon Fraser University.\".")
 (define-public r-quickmatch
   (package
     (name "r-quickmatch")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickmatch" version))
        (sha256
-        (base32 "0y1yss83q4mpdb5ipldg2080vrnc5725452zrs89gxnsykx1qv6j"))))
+        (base32 "1r369153zfxy7xzwzixigpz6ai6avmc5kvcqrf7nvr210xbs72r1"))))
     (properties `((upstream-name . "quickmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-sandwich r-distances))
@@ -729,13 +729,13 @@ is designed to seamlessly integrate with testthat'.")
 (define-public r-quickblock
   (package
     (name "r-quickblock")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickblock" version))
        (sha256
-        (base32 "1pl3cwb4byz3b4s08rahk20ckkwrl977qr4a7cw0pd09qm0qgcq3"))))
+        (base32 "0xlx6g73qxrijxmjzbw980abvk60rvkm847b5in1izwf5fiv7m0p"))))
     (properties `((upstream-name . "quickblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-scclust r-distances))
@@ -4148,16 +4148,17 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
 (define-public r-qlcvisualize
   (package
     (name "r-qlcvisualize")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qlcVisualize" version))
        (sha256
-        (base32 "0njckbdrvzjlmdxmdygcxh6zc30r0gcna5i8jyr1cibmckcbl96h"))))
+        (base32 "13bznvc1915igbaj5bkc96lzsjpvpbkixs3gqpdgl1nzmakrlpjj"))))
     (properties `((upstream-name . "qlcVisualize")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-random
+    (propagated-inputs (list r-stars
+                             r-spatstat-random
                              r-spatstat-geom
                              r-sp
                              r-sf
@@ -4167,12 +4168,14 @@ described in work by Strehl, Li, Wiewiora, Langford & Littman (2006)
                              r-mass
                              r-maps
                              r-mapplots
+                             r-gstat
                              r-geodata
                              r-fields
                              r-concaveman
                              r-cartogramr
+                             r-automap
                              r-alphahull))
-    (home-page "https://cran.r-project.org/package=qlcVisualize")
+    (home-page "https://github.com/cysouw/qlcVisualize")
     (synopsis "Visualization for Quantitative Language Comparison")
     (description
      "Collection of visualizations as used in quantitative language comparison.

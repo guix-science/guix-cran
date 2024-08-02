@@ -6620,6 +6620,40 @@ threshold values.  The functions methodology is based on by Sonabend et al
 in two sample populations.")
     (license license:gpl2+)))
 
+(define-public r-highlightr
+  (package
+    (name "r-highlightr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highlightr" version))
+       (sha256
+        (base32 "14as9gqikswfpwzvq0v9s03r6rwzdsa0k9wad6f6zs416a65v1i4"))))
+    (properties `((upstream-name . "highlightr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tm
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-purrr
+                             r-magrittr
+                             r-ggplot2
+                             r-fuzzyjoin
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://rachelesrogers.github.io/highlightr/")
+    (synopsis "Highlight Conserved Edits Across Versions of a Document")
+    (description
+     "Input multiple versions of a source document, and receive HTML code for a
+highlighted version of the source document indicating the frequency of
+occurrence of phrases in the different versions.  This method is described in
+Chapter 3 of Rogers (2024)
+<https://digitalcommons.unl.edu/dissertations/AAI31240449/>.")
+    (license license:expat)))
+
 (define-public r-highlighthtml
   (package
     (name "r-highlighthtml")
@@ -8120,13 +8154,13 @@ and notably fast update functions when adding new observations.")
 (define-public r-heteromixgm
   (package
     (name "r-heteromixgm")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heteromixgm" version))
        (sha256
-        (base32 "0263kddf1krg7bn0xsf663q4kdal7gjhy9ahphj2v8i8qy7xb968"))))
+        (base32 "111qhf88bjkpraaqabyq8m40yk99jkmd2b6m7d7502gac3a0bf6z"))))
     (properties `((upstream-name . "heteromixgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -8143,11 +8177,12 @@ modeling of multi-group multivariate mixed data using Gaussian graphical models.
  Combining the Gaussian copula framework with the fused graphical lasso penalty,
 the heteromixgm package can handle a wide variety of datasets found in various
 sciences.  The package also includes an option to perform model selection using
-the AIC, BIC and EBIC information criteria, as well as simulate mixed
-heterogeneous data for exploratory or simulation purposes and one multi-group
-multivariate mixed agricultural dataset pertaining to maize yields.  The package
-implements the methodological developments found in Hermes et al. (2024)
-<doi:10.1080/10618600.2023.2289545>.")
+the AIC, BIC and EBIC information criteria, a function that plots partial
+correlation graphs based on the selected precision matrices, as well as simulate
+mixed heterogeneous data for exploratory or simulation purposes and one
+multi-group multivariate mixed agricultural dataset pertaining to maize yields.
+The package implements the methodological developments found in Hermes et al.
+(2024) <doi:10.1080/10618600.2023.2289545>.")
     (license license:gpl3)))
 
 (define-public r-heterometa

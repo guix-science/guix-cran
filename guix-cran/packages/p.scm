@@ -12538,6 +12538,41 @@ distribution.  This miscellaneous will be extend for more distributions into the
 power family and the three-parameter model.")
     (license license:gpl2)))
 
+(define-public r-powernlsem
+  (package
+    (name "r-powernlsem")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "powerNLSEM" version))
+       (sha256
+        (base32 "08l8yfry95zdfdi809vyymv71gal54jb8jlyxkpa08iwj7zyybc4"))))
+    (properties `((upstream-name . "powerNLSEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-pbapply
+                             r-numderiv
+                             r-mvtnorm
+                             r-lavaan
+                             r-ggplot2
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jpirmer/powerNLSEM")
+    (synopsis "Simulation-Based Power Estimation (MSPE) for Nonlinear SEM")
+    (description
+     "Model-implied simulation-based power estimation (MSPE) for nonlinear (and
+linear) SEM, path analysis and regression analysis.  A theoretical framework is
+used to approximate the relation between power and sample size for given type I
+error rates and effect sizes.  The package offers an adaptive search algorithm
+to find the optimal N for given effect sizes and type I error rates.  Plots can
+be used to visualize the power relation to N for different parameters of
+interest (POI).  Theoretical justifications are given in Irmer et al. (2024a)
+<doi:10.31219/osf.io/pe5bj> and detailed description are given in Irmer et al.
+(2024b).")
+    (license license:gpl3)))
+
 (define-public r-powermediation
   (package
     (name "r-powermediation")
@@ -30107,6 +30142,37 @@ of Portland inventoried every tree in over 170 parks and along the streets in 96
 neighborhoods.")
     (license license:gpl3)))
 
+(define-public r-pdxpower
+  (package
+    (name "r-pdxpower")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PDXpower" version))
+       (sha256
+        (base32 "0dpwc3wpsqm844lzlymanfi4pj7ajhqsqf025vx64j815j3q1122"))))
+    (properties `((upstream-name . "PDXpower")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-nlme r-ggpubr r-ggplot2
+                             r-frailtypack))
+    (home-page "https://cran.r-project.org/package=PDXpower")
+    (synopsis
+     "Time to Event Outcome in Experimental Designs of Pre-Clinical Studies")
+    (description
+     "Conduct simulation-based customized power calculation for clustered time to
+event data in a mixed crossed/nested design, where a number of cell lines and a
+number of mice within each cell line are considered to achieve a desired
+statistical power, motivated by Eckel-Passow and colleagues (2021)
+<doi:10.1093/neuonc/noab137> and Li and colleagues (2024)
+<doi:10.48550/@code{arXiv.2404.08927>}.  This package provides two commonly used
+models for powering a design, linear mixed effects and Cox frailty model.  Both
+models account for within-subject (cell line) correlation while holding
+different distributional assumptions about the outcome.  Alternatively, the
+counterparts of fixed effects model are also available, which produces similar
+estimates of statistical power.")
+    (license license:gpl2+)))
+
 (define-public r-pdtoolkit
   (package
     (name "r-pdtoolkit")
@@ -32953,6 +33019,29 @@ either through fixed landmarks or image registration.  Pattern identification is
 performed by categorizing the distribution of colors using RGB thresholds or
 image segmentation.")
     (license license:gpl3)))
+
+(define-public r-patterncausality
+  (package
+    (name "r-patterncausality")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "patterncausality" version))
+       (sha256
+        (base32 "1p96p53h877p56dzaah2d7kasnfxqiz3cmnpavcnvq1kdqyjwvfn"))))
+    (properties `((upstream-name . "patterncausality")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tcltk2 r-snowfall r-moments))
+    (home-page "https://cran.r-project.org/package=patterncausality")
+    (synopsis "Pattern Causality Algorithm")
+    (description
+     "The model proposes a robust methodology for detecting and reconstructing the
+hidden structure of dynamic complex systems through short-term forecasts and
+information embedded in reconstructed state spaces.  The approach not only
+identifies critical components and causal interactions within these systems but
+also provides a practical tool for optimizing system performance and stability.")
+    (license license:expat)))
 
 (define-public r-patternator
   (package
@@ -38061,13 +38150,13 @@ provided the data file follows some standard data entry rules.")
 (define-public r-packagerank
   (package
     (name "r-packagerank")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "packageRank" version))
        (sha256
-        (base32 "1d8savfry05xy3lxd5yhvmpky34563y433yxqsa2v6p252s6d6p7"))))
+        (base32 "0k5lby2gfvqa6d9r0js3n9k6s62cnj2b31vrpik6wf4nbrps709m"))))
     (properties `((upstream-name . "packageRank")))
     (build-system r-build-system)
     (propagated-inputs (list r-sugrrants

@@ -3344,13 +3344,13 @@ exploratory data analysis.")
 (define-public r-fsdam
   (package
     (name "r-fsdam")
-    (version "2024.1-30")
+    (version "2024.7-30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSDAM" version))
        (sha256
-        (base32 "1jikdfhqb985a1g0r1z70n9wwnlw1ag32jdc74938ny65gqnp5sb"))))
+        (base32 "0fv64dls0z8fb7pfgmqxnzmdqdf4dwr8z9xq18pswf14r7b425bc"))))
     (properties `((upstream-name . "FSDAM")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate r-kyotil))
@@ -7206,6 +7206,30 @@ biases, and conditional quantiles, by out-of-bag weighting of out-of-bag
 prediction errors as proposed by Lu and Hardin (2021).  This package is
 compatible with several existing packages that implement random forests in R.")
     (license license:gpl3)))
+
+(define-public r-forested
+  (package
+    (name "r-forested")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forested" version))
+       (sha256
+        (base32 "0aaikr5n2x1ap78diyvn56hnshdqk65x7ykrrx4mjb3w4c66jw9b"))))
+    (properties `((upstream-name . "forested")))
+    (build-system r-build-system)
+    (home-page "https://github.com/simonpcouch/forested")
+    (synopsis "Forest Attributes in Washington State")
+    (description
+     "This package provides a small subset of plots in Washington State are sampled
+and assessed \"on-the-ground\" as forested or non-forested by the U.S. Department
+of Agriculture, Forest Service, Forest Inventory and Analysis (FIA) Program, but
+the FIA also has access to remotely sensed data for all land in the state.  The
+forested package contains a data frame by the same name intended for use in
+predictive modeling applications where the more easily-accessible remotely
+sensed data can be used to predict whether a plot is forested or non-forested.")
+    (license license:expat)))
 
 (define-public r-forestecology
   (package
@@ -12704,6 +12728,39 @@ Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
 information about 5-digit or 2-digit US FIPS codes.")
     (license license:expat)))
 
+(define-public r-fio
+  (package
+    (name "r-fio")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fio" version))
+       (sha256
+        (base32 "1s7xai5gw4sx6c0cxy7d7v1kq8sj4vl7hcn2bj6wm9gsv5n3zna2"))))
+    (properties `((upstream-name . "fio")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-readxl
+                             r-rdpack
+                             r-miniui
+                             r-fs
+                             r-emoji
+                             r-clipr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://albersonmiranda.github.io/fio/")
+    (synopsis "Friendly Input-Output Analysis")
+    (description
+     "Simplifies the process of importing and managing input-output matrices from
+Microsoft Excel into R, and provides a suite of functions for analysis.  It
+leverages the R6 class for clean, memory-efficient object-oriented programming.
+Furthermore, all linear algebra computations are implemented in Rust to achieve
+highly optimized performance.")
+    (license license:expat)))
+
 (define-public r-fints
   (package
     (name "r-fints")
@@ -13645,6 +13702,26 @@ saved filter expressions.")
      "Generate search filters to query scientific bibliographic sources, such as
 @code{PubMed} and Web of Science, for non-human primate related publications.")
     (license license:agpl3+)))
+
+(define-public r-filmsgmoog
+  (package
+    (name "r-filmsgmoog")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FilmsGmooG" version))
+       (sha256
+        (base32 "0572vnjp8ycgpkdm4h4rws9rjhhc9iqyc65zzin9bfawa4ic81rd"))))
+    (properties `((upstream-name . "FilmsGmooG")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=FilmsGmooG")
+    (synopsis "IMDb Film Ratings from the Summer of 2022")
+    (description
+     "Average rating and number of votes reported by IMDb for films and shorts with
+over 100 votes in 2022.  The data are analysed in Chapter 3 of the Book Getting
+(more out of) Graphics (Antony Unwin, CRC Press 2024).")
+    (license license:gpl2+)))
 
 (define-public r-fillr
   (package
@@ -17448,35 +17525,6 @@ for modeling and simulating dynamic systems.")
      "Algorithms for fuzzy clustering, cluster validity indices and plots for cluster
 validity and visualizing fuzzy clustering results.")
     (license license:gpl2+)))
-
-(define-public r-fcl
-  (package
-    (name "r-fcl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fcl" version))
-       (sha256
-        (base32 "0rskl9q7z5k5q17m3c5w4pdc96m6fdag7nkkjmyyh43wbm4bjb0a"))))
-    (properties `((upstream-name . "fcl")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-ymd r-xts))
-    (home-page "https://github.com/shrektan/fcl")
-    (synopsis "Financial Calculator")
-    (description
-     "This package provides a financial calculator that provides very fast
-implementations of common financial indicators using Rust code.  It includes
-functions for bond-related indicators, such as yield to maturity ('YTM'),
-modified duration, and Macaulay duration, as well as functions for calculating
-time-weighted and money-weighted rates of return (using Modified Dietz method)
-for multiple portfolios, given their market values and profit and loss
-('@code{PnL}') data.  fcl is designed to be efficient and accurate for financial
-analysis and computation.  The methods used in this package are based on the
-following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
-<https://en.wikipedia.org/wiki/Time-weighted_return>.")
-    (license license:expat)))
 
 (define-public r-fcirt
   (package

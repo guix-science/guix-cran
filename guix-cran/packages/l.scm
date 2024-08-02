@@ -10036,6 +10036,38 @@ of Economic Entomology, Volume 93, Issue 2) <doi:10.1603/0022-0493-93.2.511>.")
 observations and create a report of the top sites to visit to see new species.")
     (license license:bsd-2)))
 
+(define-public r-lifemapr
+  (package
+    (name "r-lifemapr")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LifemapR" version))
+       (sha256
+        (base32 "0f09lgpsmg45f072901v59niakx65wvmcz67zjzz4lsy35k74q9k"))))
+    (properties `((upstream-name . "LifemapR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-shiny
+                             r-rlang
+                             r-rcurl
+                             r-leaflet-minicharts
+                             r-leaflet
+                             r-jsonlite
+                             r-htmltools
+                             r-fastmatch
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://lifemap-tol.github.io/LifemapR/")
+    (synopsis "Data Visualisation on 'Lifemap' Tree")
+    (description
+     "Allow to visualise data on the NCBI phylogenetic tree as presented in Lifemap
+<http://lifemap.univ-lyon1.fr/>.  It takes as input a dataframe with at least a
+\"taxid\" column containing NCBI format @code{TaxIds} and allows to draw multiple
+layers with different visualisation tools.")
+    (license license:expat)))
+
 (define-public r-lifelogr
   (package
     (name "r-lifelogr")
@@ -12377,6 +12409,28 @@ estimation and adjustment of latent effects are proposed by Sun, Zhang and Owen
 be used as a general tool for high throughput data sets where dependence may be
 involved.")
     (license license:gpl2+)))
+
+(define-public r-leapgp
+  (package
+    (name "r-leapgp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "leapgp" version))
+       (sha256
+        (base32 "1nvi0r2iipiznjwfvdw34bm071z1j15rj600964grgz88qip0018"))))
+    (properties `((upstream-name . "leapgp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rann r-lagp r-cluster))
+    (home-page "https://cran.r-project.org/package=leapgp")
+    (synopsis "Localized Ensemble of Approximate Gaussian Processes")
+    (description
+     "An emulator designed for rapid sequential emulation (e.g., Markov chain Monte
+Carlo applications).  Works via extension of the @code{laGP} approach by Gramacy
+and Apley (2015 <doi:10.1080/10618600.2014.914442>).  Details are given in
+Rumsey et al. (2023 <doi:10.1002/sta4.576>).")
+    (license license:gpl3+)))
 
 (define-public r-leanpubr
   (package

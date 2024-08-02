@@ -11593,6 +11593,40 @@ approaches for performing non-parametric spatial predictions of generic response
 variables and spatial gene diversity are implemented.")
     (license license:gpl2+)))
 
+(define-public r-biotimer
+  (package
+    (name "r-biotimer")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "BioTIMEr" version))
+       (sha256
+        (base32 "027kx7244j575wn3yxhsmhbg2yaf1w611jvjnzaxivpns56rvg33"))))
+    (properties `((upstream-name . "BioTIMEr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-ggplot2
+                             r-dplyr
+                             r-dggridr
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bioTIMEHub/BioTIMEr")
+    (synopsis "Tools to Use and Explore the 'BioTIME' Database")
+    (description
+     "The @code{BioTIME} database was first published in 2018 and inspired ideas,
+questions, project and research article.  To make it even more accessible, an R
+package was created.  The @code{BioTIMEr} package provides tools designed to
+interact with the @code{BioTIME} database.  The functions provided include the
+@code{BioTIME} recommended methods for preparing (gridding and rarefaction) time
+series data, a selection of standard biodiversity metrics (including species
+richness, numerical abundance and exponential Shannon) alongside examples on how
+to display change over time.  It also includes a sample subset of both the query
+and meta data, the full versions of which are freely available on the
+@code{BioTIME} website <https://biotime.st-andrews.ac.uk/home.php>.")
+    (license license:expat)))
+
 (define-public r-biotic
   (package
     (name "r-biotic")
@@ -12353,13 +12387,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "0qdccy4bphdh4c16jxg7lafmcjb0s0zma0s6fdk4pblmkdr8496a"))))
+        (base32 "1x2d0y6jbwvdb8ixpi918g4apcmf018rk18s0h81qzbfp61l9yl3"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -14855,13 +14889,13 @@ an ordinary laptop.")
 (define-public r-bigl
   (package
     (name "r-bigl")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BIGL" version))
        (sha256
-        (base32 "1szd0ll2xfgkmap15vgizsjm610ch6znicgi8lccrb68kf6gbq7p"))))
+        (base32 "17skfw03f6ycfkqinisd9mrslwj19g5mm99s4ma65kln3xlx692j"))))
     (properties `((upstream-name . "BIGL")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -14872,7 +14906,9 @@ an ordinary laptop.")
                              r-nleqslv
                              r-minpack-lm
                              r-mass
+                             r-magrittr
                              r-lifecycle
+                             r-htmlwidgets
                              r-ggplot2
                              r-data-table))
     (native-inputs (list r-rmarkdown r-knitr))
@@ -28208,13 +28244,13 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "0wfnwqyk42xwy6qmg1xyj60zlv1pps2g1dfk79af4jlyhbv9f4ik"))))
+        (base32 "0r4g2xikfczfhhv74jz8pp0q7rxzi789s3qqrfrq2rvi6pm9lnna"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (inputs (list))

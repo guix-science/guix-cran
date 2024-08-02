@@ -8213,6 +8213,28 @@ problem.")
     (description "Computes and plots the boundary between night and day.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-nifti-pbcor
+  (package
+    (name "r-nifti-pbcor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nifti.pbcor" version))
+       (sha256
+        (base32 "1wlqyxflf7nibx5kik359vn37rf46liklpjmb7sd0972i1dpiaqi"))))
+    (properties `((upstream-name . "nifti.pbcor")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=nifti.pbcor")
+    (synopsis "Parcel-Based Correlation Between NIfTI Images")
+    (description
+     "Estimate the correlation between two N@code{IfTI} images across random
+parcellations of the images (Fortea et al., under review).  This approach
+overcomes the problems of both voxel-based correlations (neighbor voxels may be
+spatially dependent) and atlas-based correlations (the correlation may depend on
+the atlas used).")
+    (license (license:fsdg-compatible "Artistic License 2.0"))))
+
 (define-public r-nifti-io
   (package
     (name "r-nifti-io")
@@ -15696,6 +15718,34 @@ outcomes to immune repertoires based on their network properties, or to
 particular clusters and clones within a repertoire.  Yang et al. (2023)
 <doi:10.3389/fimmu.2023.1181825>.")
     (license license:gpl3+)))
+
+(define-public r-nailer
+  (package
+    (name "r-nailer")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NaileR" version))
+       (sha256
+        (base32 "03vrsv2mx4k3hp3wiscsvmg7kgscaikrx5a1qyybawl7vy92j0p4"))))
+    (properties `((upstream-name . "NaileR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-ollamar
+                             r-magrittr
+                             r-glue
+                             r-factominer
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=NaileR")
+    (synopsis "Interpreting Latent Variables with AI")
+    (description
+     "This package provides a small package designed for interpreting continuous and
+categorical latent variables.  You provide a data set with a latent variable you
+want to understand and some other explanatory variables.  It provides a
+description of the latent variable based on the explanatory variables.  It also
+provides a name to the latent variable.")
+    (license license:gpl2+)))
 
 (define-public r-naijr
   (package

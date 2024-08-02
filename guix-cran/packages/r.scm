@@ -28,10 +28,10 @@
   #:use-module (gnu packages c)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages python-science)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages databases)
   #:use-module (gnu packages pcre)
   #:use-module (gnu packages documentation)
-  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages fontutils)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -8988,13 +8988,13 @@ a recent evaluation and improvements.")
 (define-public r-rquantlib
   (package
     (name "r-rquantlib")
-    (version "0.4.23")
+    (version "0.4.24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RQuantLib" version))
        (sha256
-        (base32 "114hlq7i8x0sbw1zv249vic9v2nwvcb32n72gknxy9jcpay631hx"))))
+        (base32 "1wcc93vmkzycq19cc6byp66svwcv4za27izzywszqyd9a93a99rg"))))
     (properties `((upstream-name . "RQuantLib")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcpp))
@@ -12324,17 +12324,16 @@ authorized to a free, registered account.")
 (define-public r-ropencvlite
   (package
     (name "r-ropencvlite")
-    (version "4.90.1")
+    (version "4.90.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROpenCVLite" version))
        (sha256
-        (base32 "0kmz4vfpwpjhbx12qvpwz9vhz3ab61kf6sz4mmpzcr54r5v8l71r"))))
+        (base32 "0iiyajrc9njx41f1mm4jhdj2a8ljzasn8lmbnrpv2bvppclsqc8q"))))
     (properties `((upstream-name . "ROpenCVLite")))
     (build-system r-build-system)
     (inputs (list cmake))
-    (propagated-inputs (list r-pkgbuild))
     (native-inputs (list r-knitr))
     (home-page "https://swarm-lab.github.io/ROpenCVLite/")
     (synopsis "Helper Package for Installing OpenCV with R")
@@ -19476,6 +19475,28 @@ source files.")
 Bartoszek, A. Vasterlund (2020) <doi:10.2478/bile-2020-0008> and K. Bartoszek,
 Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
     (license license:gpl3)))
+
+(define-public r-rmacrostrat
+  (package
+    (name "r-rmacrostrat")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rmacrostrat" version))
+       (sha256
+        (base32 "1db884smxz6vymvm7ihm63gvwiv8hpragk0cmjzpfw6qrl76sn40"))))
+    (properties `((upstream-name . "rmacrostrat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-jsonlite r-httr r-geojsonsf r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://rmacrostrat.palaeoverse.org")
+    (synopsis "Fetch Geologic Data from the 'Macrostrat' Platform")
+    (description
+     "Work with the Macrostrat Web Service (<https://macrostrat.org/>) to fetch
+geological data relevant to the spatial and temporal distribution of
+sedimentary, igneous, and metamorphic rocks as well as data extracted from them.")
+    (license license:gpl3+)))
 
 (define-public r-rma-exact
   (package
@@ -27843,6 +27864,37 @@ Health Data Sciences and Informatics program <https://ohdsi.org>.
 maintainers to migrate existing SQL database models, export and import results
 in consistent patterns.")
     (license license:asl2.0)))
+
+(define-public r-resultant
+  (package
+    (name "r-resultant")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resultant" version))
+       (sha256
+        (base32 "0d9mql0cn48mx3id6gfi3lqgbn1vbx0dpp3lvfcd7x3n3j9wdw1x"))))
+    (properties `((upstream-name . "resultant")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcppcgal r-rcpp r-qspray r-gmp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/stla/resultant")
+    (synopsis
+     "Utilities for Multivariate Polynomials with Rational Coefficients")
+    (description
+     "Computation of resultant, subresultants, greatest common divisor, integral
+division (aka division without remainder) of two multivariate polynomials with
+rational coefficients, Sturm-Habicht sequence and square-free factorization of a
+multivariate polynomial with rational coefficients.  The computations are
+performed by the C++ library CGAL (<https://www.cgal.org/>).  Resultants have
+applications in polynomial systems solving, number theory, and algebraic
+geometry.  The package also contains some functions computing the number of real
+roots of a univariate polynomial with rational coefficients, and a function
+computing the division with remainder of two univariate polynomials with
+rational coefficients.")
+    (license license:gpl3)))
 
 (define-public r-result
   (package
@@ -43268,13 +43320,13 @@ file export, and the ability to save 3D visualizations to a 3D printable format.
 (define-public r-rayrender
   (package
     (name "r-rayrender")
-    (version "0.34.2")
+    (version "0.34.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rayrender" version))
        (sha256
-        (base32 "0rgrxbzcl5bd9c3xgd58ssh0isfy82xg7gky9zi0cp1a5nb51d21"))))
+        (base32 "1dcrkd4pncmxvi8n5lzy11amcbrrw7c7h2gxgjsywb180kimvv5g"))))
     (properties `((upstream-name . "rayrender")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -49912,6 +49964,30 @@ based htmlwidgets in R packages.")
 conf2d to calculate a smooth empirical confidence region, and freq2d to
 calculate a frequency distribution.")
     (license license:gpl3)))
+
+(define-public r-r2country
+  (package
+    (name "r-r2country")
+    (version "2.0.2.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r2country" version))
+       (sha256
+        (base32 "1a98zq4xyni0lx7x2vhnwill9d5c0f17l49ashpj2mh81y76c1s7"))))
+    (properties `((upstream-name . "r2country")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quickcode))
+    (native-inputs (list r-knitr))
+    (home-page "https://r2country.obi.obianom.com")
+    (synopsis
+     "Country Data with Names, Capitals, Currencies, Populations, Time, Languages and so on")
+    (description
+     "Obtain information about countries around the globe.  Information for names,
+states, languages, time, capitals, currency and many more.  Data source are
+Wikipedia <https://www.wikipedia.org>, @code{TimeAndDate}
+<https://www.timeanddate.com> and @code{CountryCode} <https://countrycode.org>.")
+    (license license:expat)))
 
 (define-public r-r2beat
   (package
