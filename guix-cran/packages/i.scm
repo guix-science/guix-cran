@@ -13793,6 +13793,27 @@ file for the reference copyright information and for the complete citations of
 the reference sources, respectively.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
+(define-public r-iemiscdata
+  (package
+    (name "r-iemiscdata")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iemiscdata" version))
+       (sha256
+        (base32 "0hj60zdg66bsbma8b3ma226bfam8k5zg4b2xvy3as6657av64yz9"))))
+    (properties `((upstream-name . "iemiscdata")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/iembry/iemiscdata")
+    (synopsis "Irucka Embry's Miscellaneous Data Collection")
+    (description
+     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
+Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
+Continental Congress Presidents].")
+    (license license:gpl3+)))
+
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")

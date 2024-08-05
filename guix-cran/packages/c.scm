@@ -11742,13 +11742,13 @@ information about the method, refer to the paper Province MA. (2013)
 (define-public r-corrmct
   (package
     (name "r-corrmct")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corrMCT" version))
        (sha256
-        (base32 "00v4fkkss188yac8micpx2vmj0nqrmrmm93lyqvf119c3khhh5f4"))))
+        (base32 "03qhvw2gcxxbv8smphd8dx5gg0zj3b50p5x5gqs3rnns1c2lqbc1"))))
     (properties `((upstream-name . "corrMCT")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-matrix r-magrittr r-glue r-dplyr))

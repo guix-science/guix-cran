@@ -12728,39 +12728,6 @@ Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
 information about 5-digit or 2-digit US FIPS codes.")
     (license license:expat)))
 
-(define-public r-fio
-  (package
-    (name "r-fio")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fio" version))
-       (sha256
-        (base32 "1s7xai5gw4sx6c0cxy7d7v1kq8sj4vl7hcn2bj6wm9gsv5n3zna2"))))
-    (properties `((upstream-name . "fio")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-shiny
-                             r-rlang
-                             r-readxl
-                             r-rdpack
-                             r-miniui
-                             r-fs
-                             r-emoji
-                             r-clipr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://albersonmiranda.github.io/fio/")
-    (synopsis "Friendly Input-Output Analysis")
-    (description
-     "Simplifies the process of importing and managing input-output matrices from
-Microsoft Excel into R, and provides a suite of functions for analysis.  It
-leverages the R6 class for clean, memory-efficient object-oriented programming.
-Furthermore, all linear algebra computations are implemented in Rust to achieve
-highly optimized performance.")
-    (license license:expat)))
-
 (define-public r-fints
   (package
     (name "r-fints")

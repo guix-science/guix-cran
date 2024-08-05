@@ -14572,13 +14572,13 @@ ISBN:9780198829546).")
 (define-public r-popgenhelpr
   (package
     (name "r-popgenhelpr")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PopGenHelpR" version))
        (sha256
-        (base32 "0swdjqcy6rm7jv5bh7a3j7pn64k9ydaxy9iclca4qc7ivg6j4nwg"))))
+        (base32 "0qkfrv5qshzb06q0y6vp9f01xcs9zqc7zb8nmpyl1sb18a6bvv2r"))))
     (properties `((upstream-name . "PopGenHelpR")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcfr

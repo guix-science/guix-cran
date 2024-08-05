@@ -6283,6 +6283,24 @@ in studies to process tens of thousands of arrays.  This package has actively
 been used since 2006.")
     (license license:lgpl2.1+)))
 
+(define-public r-arnie
+  (package
+    (name "r-arnie")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arnie" version))
+       (sha256
+        (base32 "14xkgyfn9zvkbgram15w7qzqc5pl1a8ig66cif7a79najrgd914r"))))
+    (properties `((upstream-name . "arnie")))
+    (build-system r-build-system)
+    (home-page "https://github.com/imanuelcostigan/arnie")
+    (synopsis "\"Arnie\" box office records 1982-2014")
+    (description
+     "Arnold Schwarzenegger movie weekend box office records from 1982-2014.")
+    (license license:cc-by-sa4.0)))
+
 (define-public r-armspp
   (package
     (name "r-armspp")
@@ -7688,13 +7706,13 @@ via @code{ArcGIS} location services REST API endpoints
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "0zxihxlg6nwnzklark4slxlbf6fzfx3nm9y1xnnvlac1ihgbafz1"))))
+        (base32 "0mnkp50k02p10nk4wbwyilldzwdhcfkiqv2w85spir5kip670j8m"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
     (inputs (list openssl))
