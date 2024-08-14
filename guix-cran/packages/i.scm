@@ -692,6 +692,39 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
 <doi:10.1038/s41597-020-00726-5>.")
     (license license:expat)))
 
+(define-public r-itscalledsoccer
+  (package
+    (name "r-itscalledsoccer")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "itscalledsoccer" version))
+       (sha256
+        (base32 "1xyfs9y60mrmmrpx5rhm2xg3ysgc75wfb62vb63rr7nlv6sfisgl"))))
+    (properties `((upstream-name . "itscalledsoccer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringi
+                             r-rlang
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-httpcache
+                             r-glue
+                             r-dplyr
+                             r-data-table
+                             r-crayon
+                             r-clisymbols))
+    (home-page "https://github.com/American-Soccer-Analysis/itscalledsoccer-r")
+    (synopsis "American Soccer Analysis API Client")
+    (description
+     "This package provides a wrapper around the same API
+<https://app.americansocceranalysis.com/api/v1/__docs__/> that powers the
+American Soccer Analysis app.")
+    (license license:expat)))
+
 (define-public r-its-analysis
   (package
     (name "r-its-analysis")

@@ -10109,13 +10109,13 @@ performance.  For more information see, Markowitz, H.M. (1952),
 (define-public r-rpoppler
   (package
     (name "r-rpoppler")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rpoppler" version))
        (sha256
-        (base32 "11m3vw1an91567nf72vz2cbm520vbh6h4dmfzbrxbw24qy3y58x3"))))
+        (base32 "1nyl3zcn5664hbzcqi4r86d9imbviwis9amj1kxb2fcx70n0pr9s"))))
     (properties `((upstream-name . "Rpoppler")))
     (build-system r-build-system)
     (native-inputs (list pkg-config))

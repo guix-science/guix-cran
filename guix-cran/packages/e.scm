@@ -15506,6 +15506,38 @@ tables using exclusively aggregate results from voting units.  Reference:
 Problem. (1997).  Princeton University Press.  ISBN 978-0691012407.")
     (license license:gpl2+)))
 
+(define-public r-ehymet
+  (package
+    (name "r-ehymet")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ehymet" version))
+       (sha256
+        (base32 "1ywsv8dlkp9fpvfgdpv27yjpa2wyzfx0bq6cb7fbd90b89j59lpp"))))
+    (properties `((upstream-name . "ehymet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tf r-kernlab))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/bpulidob/ehymet")
+    (synopsis
+     "Methodologies for Functional Data Based on the Epigraph and Hypograph Indices")
+    (description
+     "This package implements methods for functional data analysis based on the
+epigraph and hypograph indices.  These methods transform functional datasets,
+whether in one or multiple dimensions, into multivariate datasets.  The
+transformation involves applying the epigraph, hypograph, and their modified
+versions to both the original curves and their first and second derivatives.
+The calculation of these indices is tailored to the dimensionality of the
+functional dataset, with special considerations for dependencies between
+dimensions in multidimensional cases.  This approach extends traditional
+multivariate data analysis techniques to the functional data setting.  A key
+application of this package is the E@code{HyClus} method, which enhances
+clustering analysis for functional data across one or multiple dimensions using
+the epigraph and hypograph indices.")
+    (license license:expat)))
+
 (define-public r-ehrtemporalvariability
   (package
     (name "r-ehrtemporalvariability")
