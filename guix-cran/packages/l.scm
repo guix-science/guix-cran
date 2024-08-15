@@ -12317,30 +12317,6 @@ undergraduate level with the aim of being helpful to young students with little
 programming skills.")
     (license license:gpl2)))
 
-(define-public r-learnclust
-  (package
-    (name "r-learnclust")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LearnClust" version))
-       (sha256
-        (base32 "0r2ns1bnsygc6jhr83v1ylfp8fkn3j76233zk5cwsxrq0grx5iqs"))))
-    (properties `((upstream-name . "LearnClust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-magick))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LearnClust")
-    (synopsis "Learning Hierarchical Clustering Algorithms")
-    (description
-     "Classical hierarchical clustering algorithms, agglomerative and divisive
-clustering.  Algorithms are implemented as a theoretical way, step by step.  It
-includes some detailed functions that explain each step.  Every function allows
-options to get different results using different techniques.  The package
-explains non expert users how hierarchical clustering algorithms work.")
-    (license (license:fsdg-compatible "Unlimited"))))
-
 (define-public r-learest
   (package
     (name "r-learest")
