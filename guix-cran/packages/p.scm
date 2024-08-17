@@ -1993,13 +1993,13 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
 (define-public r-pubh
   (package
     (name "r-pubh")
-    (version "1.3.2")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubh" version))
        (sha256
-        (base32 "1a4hmnzg2ghh5785yzw6bj0zr7mvx6kdyynv21pd2m16kx1jm8ia"))))
+        (base32 "16z0icqzcjz28wqjjmgv66v5x4m8kdf6vakqq1ihvghz5dyv1j8c"))))
     (properties `((upstream-name . "pubh")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -2008,9 +2008,10 @@ CTN-0030 (<https://ctnlibrary.org/protocol/ctn0030/>), and CTN-0051
                              r-sjmisc
                              r-sjlabelled
                              r-sandwich
+                             r-performance
                              r-moonbook
-                             r-magrittr
                              r-lmtest
+                             r-jtools
                              r-huxtable
                              r-gtsummary
                              r-ggplot2
@@ -5414,13 +5415,13 @@ distributions available for the latent variable.")
 (define-public r-proteomicscv
   (package
     (name "r-proteomicscv")
-    (version "0.2.5")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "proteomicsCV" version))
        (sha256
-        (base32 "0wkyp21ns3k8812k109ilm9yi1y89m524cwwpa4wr0vqy65lrgba"))))
+        (base32 "0gvjl47x1wca2y386if2fgzp8k7a1xn9qxlq82ml66n193bp4k6a"))))
     (properties `((upstream-name . "proteomicsCV")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=proteomicsCV")
@@ -8762,13 +8763,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.1.9")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "06mm2zn8j7jvqfmgw07q4rhpbp56y4w3jb03fwzkks9qavaimy4l"))))
+        (base32 "01r2pcq26kbz861gw2dg2crvc1dla8h7aknz7ym9ndk10v3gyl6r"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -12830,13 +12831,13 @@ metadata about workspaces and users are also supported.")
 (define-public r-powerbal
   (package
     (name "r-powerbal")
-    (version "0.0.0.3")
+    (version "0.0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poweRbal" version))
        (sha256
-        (base32 "1bb4mdjmqi161gv2070qcps4rn57la0qrmba4hs2npjdp3hfjyh9"))))
+        (base32 "16n331pyc41cy59cvp9fidvy3dzi68nw64lg6862amzna72nk85b"))))
     (properties `((upstream-name . "poweRbal")))
     (build-system r-build-system)
     (propagated-inputs (list r-treebalance
@@ -23007,13 +23008,13 @@ more.")
 (define-public r-piecepackr
   (package
     (name "r-piecepackr")
-    (version "1.13.10")
+    (version "1.13.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piecepackr" version))
        (sha256
-        (base32 "1pplmwgi0wyp4qx6arlh96qiqxhlwb77g57bx70r10p99pfmjhyn"))))
+        (base32 "12xcl0p85dxa1zr5ps4aa3jqqlf2hnwyghj8g00f5km7534irxcs"))))
     (properties `((upstream-name . "piecepackr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

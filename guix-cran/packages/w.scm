@@ -4096,13 +4096,13 @@ TCGA LUSC data, nutrimouse data, extended pitprops data).")
 (define-public r-whitelabrt
   (package
     (name "r-whitelabrt")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WhiteLabRt" version))
        (sha256
-        (base32 "00jhdxm7lfd7bllmmrlchyaa77qgdx8lfcvh6b7y9m6g13sl6xvf"))))
+        (base32 "05vdk83xxyphhhyfcb01kscr0gwxrd01yjwlpr4afxh6ppbgvx6v"))))
     (properties `((upstream-name . "WhiteLabRt")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

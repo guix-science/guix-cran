@@ -28247,13 +28247,13 @@ to evaluate bias, precision and compare methods.")
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "0w31rxgi68flpfmx9d7yym3cxf2jigifzydimzxwddfq329y6qhy"))))
+        (base32 "14lnj2jgxi4y5q26bzblc7f0ljlgj8c9gnh32jbyikyych28fb1k"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -29904,13 +29904,13 @@ Mestre, F., Pita, R., Mira, A., Beja, P. (2020) <doi:10.1186/s12898-019-0273-5>.
 (define-public r-metajam
   (package
     (name "r-metajam")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metajam" version))
        (sha256
-        (base32 "0ckipmy6pmvcbw0cc8dw0k060c9qg8b5my1gkfi346mw054dv9c2"))))
+        (base32 "1sqxybxzi198a6b1za33xyb42ii3v8d5p5bx6i393r9qkniry69s"))))
     (properties `((upstream-name . "metajam")))
     (build-system r-build-system)
     (inputs (list))

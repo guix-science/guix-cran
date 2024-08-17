@@ -7934,13 +7934,13 @@ building block for a beginner.")
 (define-public r-gpindex
   (package
     (name "r-gpindex")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpindex" version))
        (sha256
-        (base32 "1xl2hcw3qpqwlg655ajg8snyp41s5cb9kxridysch7fjmyj7iymy"))))
+        (base32 "1hif169xsvfvsnbgmad8v9qwq1d6hxvn74zyqkbmic8v3yxifs56"))))
     (properties `((upstream-name . "gpindex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -7953,9 +7953,9 @@ generalized-mean indexes (e.g., superlative quadratic-mean indexes, GEKS).
 Covers the core mathematical machinery for making bilateral price indexes,
 computing price relatives, detecting outliers, and decomposing indexes, with
 wrappers for all common (and many uncommon) index-number formulas.  Implements
-and extends many of the methods in Balk (2008, ISBN:978-1-107-40496-0), von der
-Lippe (2001, ISBN:3-8246-0638-0), and the CPI manual (2020,
-ISBN:978-1-51354-298-0).")
+and extends many of the methods in Balk (2008, <doi:10.1017/CBO9780511720758>),
+von der Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
+<doi:10.5089/9781484354841.069>).")
     (license license:expat)))
 
 (define-public r-gpic
@@ -9158,13 +9158,13 @@ Shiny compatibility.")
 (define-public r-googleanalyticsr
   (package
     (name "r-googleanalyticsr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googleAnalyticsR" version))
        (sha256
-        (base32 "0js73jwdsk3bgak61na0sqadjmb74b88rfgi0fxbgafz68xg5rgr"))))
+        (base32 "0syqlmrq4l8qnqzh6csfyf075fkfv1bmgglrmgynsbs16f4x195v"))))
     (properties `((upstream-name . "googleAnalyticsR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker
@@ -9179,10 +9179,11 @@ Shiny compatibility.")
                              r-jsonlite
                              r-httr
                              r-googleauthr
+                             r-gargle
                              r-dplyr
                              r-cli
                              r-assertthat))
-    (home-page "https://code.markedmondson.me/googleAnalyticsR/")
+    (home-page "https://github.com/8-bit-sheep/googleAnalyticsR/")
     (synopsis "Google Analytics API into R")
     (description
      "Interact with the Google Analytics APIs
@@ -15176,17 +15177,17 @@ genome data and visualising the output and results.  Beissinger et al., (2018)
 (define-public r-ghapps
   (package
     (name "r-ghapps")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghapps" version))
        (sha256
-        (base32 "12z234lc7iy8svnm37ybj9ym0zd3jq5q9fng9h7dxdw2p9id7y30"))))
+        (base32 "0dv48rd7yw4l927p25x26whh2x2g30b0g4afcx6hzj6mghgg0xyn"))))
     (properties `((upstream-name . "ghapps")))
     (build-system r-build-system)
     (propagated-inputs (list r-openssl r-jose r-gh))
-    (home-page "https://github.com/r-lib/ghapps")
+    (home-page "https://r-lib.r-universe.dev/ghapps")
     (synopsis "Authenticate as a 'GitHub' App")
     (description
      "@code{GitHub} apps provide a powerful way to manage fine grained programmatic
@@ -28356,13 +28357,13 @@ missing values.  Model estimation is performed by the maximum likelihood method.
 (define-public r-gasfluxes
   (package
     (name "r-gasfluxes")
-    (version "0.6-4")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gasfluxes" version))
        (sha256
-        (base32 "1gvm8rj67mbj3dsqv5nxvv3gixp31gnq6df3bqfw8j26xk4r5frd"))))
+        (base32 "1n2cfm3fa22nbirgkv91qapw5mipsw59m8kwvmb4ljgcslpzjrzp"))))
     (properties `((upstream-name . "gasfluxes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mass r-data-table))

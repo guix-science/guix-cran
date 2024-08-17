@@ -475,21 +475,23 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "03ffnw45iyysvqijkbmba3b2vjkpr8hn5ycqn9pqgnsh5qhw807p"))))
+        (base32 "07m6ly4wci51zsrszznpcds9z8acv4lajf29s8icn21xkfsnr32f"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
+                             r-rlang
                              r-glue
                              r-duckdb
                              r-dplyr
                              r-dbplyr
                              r-dbi))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/arthurgailes/overtureR")
     (synopsis
      "Load 'Overture' Datasets as 'dbplyr' and 'sf'-Ready Data Frames")
@@ -10343,13 +10345,13 @@ more.")
 (define-public r-octopucs
   (package
     (name "r-octopucs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "octopucs" version))
        (sha256
-        (base32 "1h7rd8an244k5jngshxqcmdr5fpn9l97bkw22cffa1pizmv2d1ac"))))
+        (base32 "0l9km2q9yjv43bis32gmw6sc7y5c425plgs0vi9sjx17pgsyvqdw"))))
     (properties `((upstream-name . "octopucs")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-stringr r-progress))

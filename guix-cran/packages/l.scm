@@ -8733,13 +8733,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.17")
+    (version "1.1.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "07r9p41jhrx7hgy5h3bfhnry5b88chbim6nnvisw5v39b2mm1p9n"))))
+        (base32 "041l20dsp2jdnpvdlawb0xn6hawym5wkxyhhvbl5y8mfxibdq37h"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -12316,6 +12316,30 @@ sexually transmitted diseases.")
 undergraduate level with the aim of being helpful to young students with little
 programming skills.")
     (license license:gpl2)))
+
+(define-public r-learnclust
+  (package
+    (name "r-learnclust")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LearnClust" version))
+       (sha256
+        (base32 "0r2ns1bnsygc6jhr83v1ylfp8fkn3j76233zk5cwsxrq0grx5iqs"))))
+    (properties `((upstream-name . "LearnClust")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-magick))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=LearnClust")
+    (synopsis "Learning Hierarchical Clustering Algorithms")
+    (description
+     "Classical hierarchical clustering algorithms, agglomerative and divisive
+clustering.  Algorithms are implemented as a theoretical way, step by step.  It
+includes some detailed functions that explain each step.  Every function allows
+options to get different results using different techniques.  The package
+explains non expert users how hierarchical clustering algorithms work.")
+    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-learest
   (package

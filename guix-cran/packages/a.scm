@@ -1280,13 +1280,13 @@ Checks for unintended meanings by querying Wiktionary and Wikipedia.")
 (define-public r-av
   (package
     (name "r-av")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "av" version))
        (sha256
-        (base32 "0zyp6dh4kl717w68i417byya5j43h44rql11ihi88x47c9dxbirp"))))
+        (base32 "0j2ajlkncdw181i2psmpahgmpxjkcg4ph2zp6iqb3nx5cyj441a3"))))
     (properties `((upstream-name . "av")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -8693,28 +8693,6 @@ in R. It combines different methods to measure the amount of extrapolation new
 samples can have from the training set.  See Gadaleta et al (2016)
 <doi:10.4018/IJQSPR.2016010102> for an overview of applicability domains.")
     (license license:expat)))
-
-(define-public r-appler
-  (package
-    (name "r-appler")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "appler" version))
-       (sha256
-        (base32 "0y0nj8ac6cm1qvbzy2w93j638s0f4mj2b1b9g2rw046rrf7maiz4"))))
-    (properties `((upstream-name . "appler")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://ashbaldry.github.io/appler/")
-    (synopsis "'Apple App Store' and 'iTunes' Data Extraction")
-    (description
-     "Using Apple App Store <https://www.apple.com/app-store/> web scraping and
-@code{iTunes} API <https://performance-partners.apple.com/search-api> to extract
-content information, app ratings and reviews.")
-    (license license:gpl2)))
 
 (define-public r-appleadsr
   (package
@@ -22078,13 +22056,13 @@ based on the work by Ziembowicz, K., Rychwalska, A., & Nowak, A. (2022).
 (define-public r-aattools
   (package
     (name "r-aattools")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AATtools" version))
        (sha256
-        (base32 "10adwxyqnbjw2a0pxrp4qbs68fn2bdxwcbaqmvx5xfgrj4skl68z"))))
+        (base32 "0sn8sc25syvni45w99h76z0als91a9cc4jg3visp81dqw1z4mml9"))))
     (properties `((upstream-name . "AATtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-foreach r-dplyr r-doparallel))

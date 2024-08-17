@@ -9898,13 +9898,13 @@ details.")
 (define-public r-incubate
   (package
     (name "r-incubate")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incubate" version))
        (sha256
-        (base32 "1ip5vbk5d3a4sci09azmbqd1s2cm83l65yaq6fxjswizw3kvmscp"))))
+        (base32 "1vgmdjk355f33kr8fdpzyvpxyl2qiq53hvdl8l0jbsznn6n75786"))))
     (properties `((upstream-name . "incubate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -9922,9 +9922,9 @@ details.")
      "Fit parametric models for time-to-event data that show an initial incubation
 period', i.e., a variable delay phase where the hazard is zero.  The delayed
 Weibull distribution serves as foundational data model.  The specific method of
-MPSE (maximum product of spacings estimation) is used for parameter estimation.
-Bootstrap confidence intervals for parameters and significance tests in a two
-group setting are provided.")
+MPSE (maximum product of spacings estimation) and MLE-based methods are used for
+parameter estimation.  Bootstrap confidence intervals for parameters and
+significance tests in a two group setting are provided.")
     (license license:lgpl3+)))
 
 (define-public r-inctools
@@ -13793,27 +13793,6 @@ file for the reference copyright information and for the complete citations of
 the reference sources, respectively.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
-(define-public r-iemiscdata
-  (package
-    (name "r-iemiscdata")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iemiscdata" version))
-       (sha256
-        (base32 "0hj60zdg66bsbma8b3ma226bfam8k5zg4b2xvy3as6657av64yz9"))))
-    (properties `((upstream-name . "iemiscdata")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://gitlab.com/iembry/iemiscdata")
-    (synopsis "Irucka Embry's Miscellaneous Data Collection")
-    (description
-     "Miscellaneous data sets [Chemistry, Engineering Economics, Environmental/Water
-Resources Engineering, Nuclear Accidents, US Presidential Elections, and US
-Continental Congress Presidents].")
-    (license license:gpl3+)))
-
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")
@@ -15510,18 +15489,18 @@ explicit smooth estimate of the baseline log-hazard with P-splines.")
 (define-public r-icosa
   (package
     (name "r-icosa")
-    (version "0.11.0")
+    (version "0.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "icosa" version))
        (sha256
-        (base32 "1z1xajdg7q5n3ijjy45klrh4q3i855afl9088f42dwidyban3w3h"))))
+        (base32 "07jg847p3x0i8rim10bvj8v6jkms4m547rwy9h8s5n3rc6dxnizp"))))
     (properties `((upstream-name . "icosa")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcpp r-igraph))
     (native-inputs (list r-knitr))
-    (home-page "https://adamkocsis.github.io/icosa/")
+    (home-page "https://icosa-grid.github.io/R-icosa/")
     (synopsis
      "Global Triangular and Penta-Hexagonal Grids Based on Tessellated Icosahedra")
     (description

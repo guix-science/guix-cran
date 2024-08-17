@@ -9344,13 +9344,13 @@ DLNM methodology in Gasparrini et al. <doi:10.1002/sim.3940> (DLNMs),
 (define-public r-fluidsynth
   (package
     (name "r-fluidsynth")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fluidsynth" version))
        (sha256
-        (base32 "04jn17rxafrw47gc98c5k4jzsbdsml0brq85zr7xvijirnd15yxn"))))
+        (base32 "1vqi9p69wjsh9shhjg0rk025hf4rawj0piw5037y97ml3n858k2l"))))
     (properties `((upstream-name . "fluidsynth")))
     (build-system r-build-system)
     (propagated-inputs (list r-rappdirs r-av))

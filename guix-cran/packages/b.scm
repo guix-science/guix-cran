@@ -14122,13 +14122,13 @@ al. (2009) <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730180/>,
 (define-public r-bimets
   (package
     (name "r-bimets")
-    (version "4.0.1")
+    (version "4.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bimets" version))
        (sha256
-        (base32 "19j51qpvkg09al8r64q3d9czgmp2saihclsadh8jmiyc1s97plvm"))))
+        (base32 "155radkxpjqkpdyg52qck8yiffp29nk1bplalwqkvy50lz97wrai"))))
     (properties `((upstream-name . "bimets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))

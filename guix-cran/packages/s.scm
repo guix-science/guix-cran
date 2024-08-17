@@ -3554,13 +3554,13 @@ results to an Excel sheet.")
 (define-public r-survobj
   (package
     (name "r-survobj")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survobj" version))
        (sha256
-        (base32 "0wd6ghnzvla7lxpg8nnjxmal6v82321q7kpwmvlswp8b4s0rp89l"))))
+        (base32 "0vxv34sj15077jgiq1jfw7wdi0j396scp7ngz9nzg7zq1icg214q"))))
     (properties `((upstream-name . "survobj")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-survival r-ggplot2 r-dplyr))
@@ -10936,13 +10936,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "0a7ywq6sfvny4mnknr15vqi2466vmv00qh6hwzdbr0lk873gq000"))))
+        (base32 "1v7inw48dg5mhhlmqvlj7s97w93sjha0djgrl1ninhgp08fl2njh"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -27273,13 +27273,13 @@ is particularly useful in marine chemistry involving dissolved inorganic carbon.
 (define-public r-solvebio
   (package
     (name "r-solvebio")
-    (version "2.14.0")
+    (version "2.15.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "solvebio" version))
        (sha256
-        (base32 "182ybiia1qc25fnc9wrzrfzvgd4m340nrrn7llx0pbc1iq1q7as2"))))
+        (base32 "0risi2s3m73hn7ip3x6gva6cr8dw9vmk237jncx9hcq07n5wr630"))))
     (properties `((upstream-name . "solvebio")))
     (build-system r-build-system)
     (propagated-inputs (list r-mime r-jsonlite r-httr))
@@ -27288,8 +27288,7 @@ is particularly useful in marine chemistry involving dissolved inorganic carbon.
     (description
      "R language bindings for @code{SolveBio's} API. @code{SolveBio} is a biomedical
 knowledge hub that enables life science organizations to collect and harmonize
-the complex, disparate \"multi-omic\" data essential for today's R&D and BI needs.
- For more information, visit <https://www.solvebio.com>.")
+the complex, disparate \"multi-omic\" data essential for today's R&D and BI needs.")
     (license license:expat)))
 
 (define-public r-solrium
@@ -34438,13 +34437,13 @@ requirements.  Theory and functions are specified in Metzner (2020, ISBN:
 (define-public r-sisir
   (package
     (name "r-sisir")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SISIR" version))
        (sha256
-        (base32 "0lmhwi8cm1gq761wzjmsgmqb6p62asr881yjwvyc4hxm2sybfqyz"))))
+        (base32 "01kgvk2m7wqn74nnihkqi7kps1fj7s6glx1why36jylllck3vbvb"))))
     (properties `((upstream-name . "SISIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -34475,7 +34474,8 @@ requirements.  Theory and functions are specified in Metzner (2020, ISBN:
      "Interval fusion and selection procedures for regression with functional inputs.
 Methods include a semiparametric approach based on Sliced Inverse Regression
 (SIR), as described in <doi:10.1007/s11222-018-9806-6> (standard ridge and
-sparse SIR are also included in the package) and a random forest based approach.")
+sparse SIR are also included in the package) and a random forest based approach,
+as described in <doi:10.1002/sam.11705>.")
     (license license:gpl2+)))
 
 (define-public r-sisal
@@ -46668,13 +46668,13 @@ weighted particles.")
 (define-public r-serpstatr
   (package
     (name "r-serpstatr")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "serpstatr" version))
        (sha256
-        (base32 "09yzxkwgargd42f0bngv6jzhd8arzbvwj2js7lb9yf7vhjq1xv5f"))))
+        (base32 "087rlfqdx74rx9fil4lgchl0v8mzs3ld46ji89nx885913wfhjf2"))))
     (properties `((upstream-name . "serpstatr")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr))

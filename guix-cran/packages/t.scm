@@ -12151,16 +12151,16 @@ executed, and cube and dimension metadata information can be taken.")
 (define-public r-tm-plugin-mail
   (package
     (name "r-tm-plugin-mail")
-    (version "0.2-2")
+    (version "0.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.mail" version))
        (sha256
-        (base32 "03d0y19yn4akkcjlyc17rb2r9nv8rfnqx1l8i5gp07w5s8czvfxf"))))
+        (base32 "02gbpdqi9cqk0na7ali1wwjapnf497hwv3k8mx354496pcrbi8m5"))))
     (properties `((upstream-name . "tm.plugin.mail")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tm r-nlp))
+    (propagated-inputs (list r-tm r-reticulate r-nlp))
     (home-page "https://cran.r-project.org/package=tm.plugin.mail")
     (synopsis "Text Mining E-Mail Plug-in")
     (description

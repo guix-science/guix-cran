@@ -18044,16 +18044,16 @@ package @code{bupaR}'.")
 (define-public r-eddington
   (package
     (name "r-eddington")
-    (version "4.1.3")
+    (version "4.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eddington" version))
        (sha256
-        (base32 "1i04ldq8p7a8wx3l4ln47q07djhcg60560d1j9xg0ridsdi5qjaf"))))
+        (base32 "0nr9mv6vjd0m0n23p9ydamf23rfb9xhy6h8q27qic327avsa3a7g"))))
     (properties `((upstream-name . "eddington")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml r-rcpp r-r6))
+    (propagated-inputs (list r-xml2 r-rcpp r-r6))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pegeler/eddington2")
     (synopsis "Compute a Cyclist's Eddington Number")
@@ -18938,13 +18938,13 @@ based on ecological dynamic regimes (SÃ¡nchez-Pinillos et al., 2024
 (define-public r-ecoreg
   (package
     (name "r-ecoreg")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecoreg" version))
        (sha256
-        (base32 "09iyzl4d68angcrqifpl62y4y4flhib34g8wgq2xxaggmbhvyzwa"))))
+        (base32 "09nfi0l06swa1xgziyqznydrv3irv1irpqpxab0f6pbw4fqj7nh8"))))
     (properties `((upstream-name . "ecoreg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ecoreg")
@@ -19515,13 +19515,13 @@ graphical models.  Methods described in Popovic, GC., Hui, FKC., Warton, DI.,
 (define-public r-ecocomdp
   (package
     (name "r-ecocomdp")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecocomDP" version))
        (sha256
-        (base32 "0gvqrcan27hsykwshvs76v5gh79bmlbmsmfhxk0yrpnwh2qrbl03"))))
+        (base32 "0l7f4fisk5hsvfpsvnpr3s6pb7x9daq6wklws3damdgljml95c3n"))))
     (properties `((upstream-name . "ecocomDP")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

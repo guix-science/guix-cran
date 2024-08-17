@@ -3362,13 +3362,13 @@ functions to read and write CTF data from R.")
 (define-public r-ctd
   (package
     (name "r-ctd")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CTD" version))
        (sha256
-        (base32 "1zigym3cy5p3wgw2b2rji72qgy4fmpcscc9281x5m5qndsl5gyy5"))))
+        (base32 "0wvz1b7dyypamaxr1zp836sxj2a9xi8yp8lnbbsjp8djpzvcv7gm"))))
     (properties `((upstream-name . "CTD")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph))
@@ -10382,22 +10382,22 @@ imbalance measures.  See Baldi Antognini A, Frieri R, Zagoraiou M and Novelli M
 (define-public r-coursekata
   (package
     (name "r-coursekata")
-    (version "0.17.0")
+    (version "0.18.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coursekata" version))
        (sha256
-        (base32 "0g0hz4zbqmz7rxhvnd67hx0mfqx997k27p1382j0qwqa26bv943h"))))
+        (base32 "05rqbi8sxr2fgaldg8fppil43a7pdw86wxpsgizln1bgncjpyywf"))))
     (properties `((upstream-name . "coursekata")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
                              r-vctrs
                              r-supernova
                              r-rlang
+                             r-remotes
                              r-purrr
                              r-palmerpenguins
-                             r-pak
                              r-mosaic
                              r-metrics
                              r-lsr
@@ -14328,16 +14328,17 @@ complex sample survey designs.  Wrapper around the survey package.")
 (define-public r-convevol
   (package
     (name "r-convevol")
-    (version "2.2.0")
+    (version "2.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "convevol" version))
        (sha256
-        (base32 "0r2zvawqy2d6j4l906m02864d0j5p5b6l4wxx1mszz0vc9bslqla"))))
+        (base32 "0j4vbas5lhgbyia15if2hcvjldgln2017n62bs17h7z66n3ps6cv"))))
     (properties `((upstream-name . "convevol")))
     (build-system r-build-system)
     (propagated-inputs (list r-phytools r-magick r-geiger r-cluster r-ape))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cran.r-project.org/package=convevol")
     (synopsis "Analysis of Convergent Evolution")
     (description
@@ -34445,13 +34446,13 @@ package.")
 (define-public r-cffr
   (package
     (name "r-cffr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cffr" version))
        (sha256
-        (base32 "0yjwk4lv05h1sz8847krh2r22rq572xc49cqhxh8b20w9wzrv4bx"))))
+        (base32 "1aja12kn1f6h3zydfichiq2l2qd0qd7fl794v6ypp433hh54yvxg"))))
     (properties `((upstream-name . "cffr")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-jsonvalidate r-jsonlite r-desc r-cli))
@@ -37926,13 +37927,13 @@ statistics based on the variable types.")
 (define-public r-cba
   (package
     (name "r-cba")
-    (version "0.2-24")
+    (version "0.2-25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cba" version))
        (sha256
-        (base32 "0lhx813wpb544p9akaj89hmfx95ka46h6xykxly0dpf7ck00brsh"))))
+        (base32 "0a05nfmi9a1gj1r2ms310360wxdw5zgvgb9rc0awf684i5cibjy7"))))
     (properties `((upstream-name . "cba")))
     (build-system r-build-system)
     (propagated-inputs (list r-proxy))

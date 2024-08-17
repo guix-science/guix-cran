@@ -31951,13 +31951,13 @@ generate novel regression problems.")
 (define-public r-regressinator
   (package
     (name "r-regressinator")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "regressinator" version))
        (sha256
-        (base32 "103f940cy4xy0zs2j1jsx1kwwa5vy5j7975zl5qxaj1fn3a3jqcq"))))
+        (base32 "1wl8xsy0q1g9rv203yl9jkqxi2cwfb80zax43vs6zr1ibyb3vf2d"))))
     (properties `((upstream-name . "regressinator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -31969,6 +31969,7 @@ generate novel regression problems.")
                              r-insight
                              r-ggplot2
                              r-dplyr
+                             r-dharma
                              r-cli
                              r-broom))
     (native-inputs (list r-knitr))
@@ -45221,13 +45222,13 @@ header-only library.")
 (define-public r-rapidsplithalf
   (package
     (name "r-rapidsplithalf")
-    (version "0.2")
+    (version "0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rapidsplithalf" version))
        (sha256
-        (base32 "0dp384jpwgp4widnbdb8w7lsc9f6hh74p47357691a5qnmbd5209"))))
+        (base32 "1ac7hpvi26gjzwxf6xma0307222aiap9029kpv8w9abpyz7v34jw"))))
     (properties `((upstream-name . "rapidsplithalf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-doparallel))

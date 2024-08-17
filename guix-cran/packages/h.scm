@@ -5184,13 +5184,13 @@ learning model, and the joint learning model for responses and response times.")
 (define-public r-hmc
   (package
     (name "r-hmc")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HMC" version))
        (sha256
-        (base32 "1zmppanwfdhpvi5pxw067287zy5xw2ipw8p7q7c7b3gq7n3xm4hx"))))
+        (base32 "0xsf9ry019r21yjfrm1bxkr60dzvmy7lj4is0l5qfr7g0bskg1lc"))))
     (properties `((upstream-name . "HMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-pma r-mass r-irlba r-glmnet))

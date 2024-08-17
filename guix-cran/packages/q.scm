@@ -1829,13 +1829,13 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
 (define-public r-qualtrics
   (package
     (name "r-qualtrics")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qualtRics" version))
        (sha256
-        (base32 "1sxpvi2cyasmq2ywg979l75qg8g9ahzzhxjxi8rnx5qmvzlj7br8"))))
+        (base32 "1f63524a4xwdd2wgv4b8ny24xqc4kgcca7ql9c0v71l7yx6ia06r"))))
     (properties `((upstream-name . "qualtRics")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -1853,7 +1853,8 @@ Eckert, S. Morin, and D. Verfaillie. (2019) <doi:10.1175/JCLI-D-18-0606.1>.")
                              r-glue
                              r-fs
                              r-dplyr
-                             r-cli))
+                             r-cli
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/qualtRics/")
     (synopsis "Download 'Qualtrics' Survey Data")

@@ -5511,24 +5511,25 @@ the items) tools functionality.")
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "1kyq2wgdc3gdg2c3j8j578yhkhiw9r7c6q1z4k2r2vhbakr4fg7f"))))
+        (base32 "008r2fkp16l8sdyn6is0n0v7m8lvx0zn7c3jscd1gfdzkf82zb2a"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
                              r-truncatednormal
                              r-rcpparmadillo
                              r-rcpp
+                             r-nleqslv
                              r-matrix
                              r-gpvecchia
                              r-gpgp))
     (native-inputs (list gfortran))
-    (home-page "https://cran.r-project.org/package=VeccTMVN")
+    (home-page "https://github.com/JCatwood/VeccTMVN")
     (synopsis "Multivariate Normal Probabilities using Vecchia Approximation")
     (description
      "Under a different representation of the multivariate normal (MVN) probability,
@@ -5537,12 +5538,12 @@ complexity with respect to n.  Additionally, both the SOV algorithm from Genz
 (92) and the exponential-tilting method from Botev (2017) can be adapted to
 linear complexity.  The reference for the method implemented in this package is
 Jian Cao and Matthias Katzfuss (2024) \"Linear-Cost Vecchia Approximation of
-Multivariate Normal Probabilities\" <@code{arXiv:2311.09426>}.  Two major
-references for the development of our method are Alan Genz (1992) \"Numerical
-Computation of Multivariate Normal Probabilities\"
+Multivariate Normal Probabilities\" <doi:10.48550/@code{arXiv.2311.09426>}.  Two
+major references for the development of our method are Alan Genz (1992)
+\"Numerical Computation of Multivariate Normal Probabilities\"
 <doi:10.1080/10618600.1992.10477010> and Z. I. Botev (2017) \"The Normal Law
 Under Linear Restrictions: Simulation and Estimation via Minimax Tilting\"
-<@code{arXiv:1603.04166>}.")
+<doi:10.48550/@code{arXiv.1603.04166>}.")
     (license license:gpl2+)))
 
 (define-public r-veccompare
