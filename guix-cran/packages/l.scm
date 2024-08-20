@@ -5343,13 +5343,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "1rp8gv846jfi688xkl0mbspbj9rzs0bqddl5fmp13vb1kslys8w5"))))
+        (base32 "0ka8702r2ywvr3v1vy7qx4rwkhmvil7m0qyrvhgvsx40c8bqi2b4"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -7164,13 +7164,13 @@ or gls models.")
 (define-public r-lme4breeding
   (package
     (name "r-lme4breeding")
-    (version "1.0.30")
+    (version "1.0.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lme4breeding" version))
        (sha256
-        (base32 "1zwbb4f2r0gmdvcnf4sh38ispqb7gifxi7gl04rfyxabbsanmvbb"))))
+        (base32 "0by3cvnlap50fhag9vsqxpsbi4ywk1cf72v8p48ckx31x130vh1p"))))
     (properties `((upstream-name . "lme4breeding")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-lme4 r-crayon))
@@ -12743,13 +12743,13 @@ leaflet package.")
 (define-public r-leaflet-extras
   (package
     (name "r-leaflet-extras")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "leaflet.extras" version))
        (sha256
-        (base32 "0bhqid6sqgfmk8ipjy34h54la0mbx02169rc7l3h3fkqs8ffpw0c"))))
+        (base32 "0yhn8dz33wq1yka480hqbsn4izzj9xp2vj4m072dpc6iwgp5rjny"))))
     (properties `((upstream-name . "leaflet.extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-magrittr r-leaflet r-htmlwidgets
@@ -14344,13 +14344,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "18hnvhgl2lji5jawxir1fw7qcmky48qnh8xb5gmnxff8mplwjk0c"))))
+        (base32 "1fh121dl4d3i67blgibq087zs5li8zg7j284xgcgk5i789a80ksh"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LBI")

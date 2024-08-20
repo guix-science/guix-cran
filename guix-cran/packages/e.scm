@@ -2974,13 +2974,13 @@ scanned, and automatically evaluated.")
 (define-public r-exampletestr
   (package
     (name "r-exampletestr")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exampletestr" version))
        (sha256
-        (base32 "06vyrb6zhzmiwbiwgzjfgzzf04fznjqv5fpfgf06ir1p0wjgrnk6"))))
+        (base32 "1npsvx9ibg0v4v1pw89jk46sg1rqj58yxjgramz3rjf9d9dp9x61"))))
     (properties `((upstream-name . "exampletestr")))
     (build-system r-build-system)
     (arguments
@@ -10714,13 +10714,13 @@ Dalthorp and Huso (2015) <doi:10.3133/ofr20151227>.")
 (define-public r-envvar
   (package
     (name "r-envvar")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "envvar" version))
        (sha256
-        (base32 "161ncksw9l0fjf54i9yv8gfq5vggiv50sphfdc7ik7m3avdw1hqs"))))
+        (base32 "1nrcnipxljpwavfmm5m107zihvm2dj07wgrgkpzx3ph2mzjbzx81"))))
     (properties `((upstream-name . "envvar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lubridate r-fs r-cli))
@@ -19373,13 +19373,13 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
 (define-public r-ecoensemble
   (package
     (name "r-ecoensemble")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EcoEnsemble" version))
        (sha256
-        (base32 "0d5kha5i49p7fd8g4f1i999sag4jz8if6yashshr9hp6jr6mibpc"))))
+        (base32 "0yzd38nwn4qdkqnm9hkyck1n1pscbca7payqp4gq5glwnipjg7iq"))))
     (properties `((upstream-name . "EcoEnsemble")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -19396,7 +19396,7 @@ Souza et al. (2016) <doi:10.1002/hyp.10953>.")
                              r-cowplot
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EcoEnsemble")
+    (home-page "https://github.com/CefasRepRes/EcoEnsemble")
     (synopsis "General Framework for Combining Ecosystem Models")
     (description
      "Fit and sample from the ensemble model described in Spence et al (2018): \"A
@@ -22291,13 +22291,13 @@ for the input of data, and for performing genome-wide analysis.")
 (define-public r-eaf
   (package
     (name "r-eaf")
-    (version "2.5")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eaf" version))
        (sha256
-        (base32 "0krvl6gk44yy9r30sck7mn0k37mi8j7nw90b56klww1zqh0ihs8p"))))
+        (base32 "03039hjrpkgh9kzasd0q8x4k6nnzkmhyrf39psg1zizfdfdh2y4p"))))
     (properties `((upstream-name . "eaf")))
     (build-system r-build-system)
     (inputs (list gsl))

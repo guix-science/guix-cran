@@ -2136,13 +2136,13 @@ depends on the observed states themselves.  See Zambom, Kim, and Garcia (2022)
 (define-public r-vlmc
   (package
     (name "r-vlmc")
-    (version "1.4-3-1")
+    (version "1.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VLMC" version))
        (sha256
-        (base32 "0cwfpxcj8g68j9z9fl66i0amj8ypf199iv3yyxzsmniqv4w5x4ar"))))
+        (base32 "1mcypnr956jfq0iyfak6bhfv99p0zzal9r0bd10py5qwzal0n6i8"))))
     (properties `((upstream-name . "VLMC")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -2934,13 +2934,13 @@ International Meteor Organization <https://www.imo.net/>.")
 (define-public r-visitorcounts
   (package
     (name "r-visitorcounts")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VisitorCounts" version))
        (sha256
-        (base32 "0nazr2bmxlrr07idsykff3iq1sif3ja42f028rmh83ihlwzf033n"))))
+        (base32 "0iaik54zcq0vxfzfdgq90lxrr1b1824q5zicbpbczm4dxlc17q2q"))))
     (properties `((upstream-name . "VisitorCounts")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rssa r-ggplot2))
@@ -3530,33 +3530,30 @@ populations.")
 (define-public r-viraldomain
   (package
     (name "r-viraldomain")
-    (version "0.0.3")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viraldomain" version))
        (sha256
-        (base32 "10lk3rjfr2faj8wdxd0v1c0xk22bzsrl1arz6ab5xxsd0zzc9kxh"))))
+        (base32 "0cm6k88jr1vyc2k61cpkj49kcha1v9cpkafslzdh8zy5ngbsfy1j"))))
     (properties `((upstream-name . "viraldomain")))
     (build-system r-build-system)
     (propagated-inputs (list r-workflows
-                             r-vdiffr
+                             r-tidyselect
                              r-recipes
                              r-parsnip
-                             r-nnet
-                             r-kknn
                              r-ggplot2
-                             r-earth
                              r-dplyr
                              r-applicable))
-    (home-page "https://cran.r-project.org/package=viraldomain")
+    (home-page "https://github.com/juanv66x/viraldomain")
     (synopsis "Applicability Domain Methods of Viral Load and CD4 Lymphocytes")
     (description
      "This package provides methods for assessing the applicability domain of models
 that predict viral load and CD4 (Cluster of Differentiation 4) lymphocyte
 counts.  These methods help determine the extent of extrapolation when making
 predictions.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-vip
   (package
@@ -3664,13 +3661,13 @@ nonparametric pair-copulas.  See Kraus and Czado (2017)
 (define-public r-vinecopula
   (package
     (name "r-vinecopula")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VineCopula" version))
        (sha256
-        (base32 "0s2v27i5cljvxzh3awpf3bcfbbghch0lphhghqnc7x51w1prxfai"))))
+        (base32 "0p3bwhfy59887a8la97919zx90fzpfqgg646d93nw4dvr3n84gpi"))))
     (properties `((upstream-name . "VineCopula")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-lattice r-adgoftest))

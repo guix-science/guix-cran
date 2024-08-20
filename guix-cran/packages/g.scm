@@ -1576,13 +1576,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "0xg3lvnl822vwrd8rr31vmv1lp9yg2i2p9l8fa77l07nkvalvg32"))))
+        (base32 "13p3ii63whd0vgx5lnvdaqhmi6if492r9x2v769vnck2dzpsrjbp"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -2159,13 +2159,13 @@ easily obtained.")
 (define-public r-gsw
   (package
     (name "r-gsw")
-    (version "1.1-1")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsw" version))
        (sha256
-        (base32 "10nxyi1kqq9ypincpr347iqixfz17nd69g7ikhyid1djqfy1v8nj"))))
+        (base32 "08lmw719mhdzg4g8384y3fbhm6lx8a1hzz5zdlfqq5xv3n4s974z"))))
     (properties `((upstream-name . "gsw")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -3857,22 +3857,22 @@ threshold.")
 (define-public r-grouptesting
   (package
     (name "r-grouptesting")
-    (version "1.1.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groupTesting" version))
        (sha256
-        (base32 "06cd6w5ysh0bi7mkvra4mzlfdpfqa40im8f5krp4cbd3nkjskdif"))))
+        (base32 "10scrwi5g2i4g32wfksfhmmbhiddcnj4khh7ls32kx2m4lhmll53"))))
     (properties `((upstream-name . "groupTesting")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pracma))
+    (propagated-inputs (list r-pracma r-bingroup2))
     (native-inputs (list gfortran))
     (home-page "https://cran.r-project.org/package=groupTesting")
     (synopsis "Simulating and Modeling Group (Pooled) Testing Data")
     (description
      "This package provides an expectation-maximization (EM) algorithm using the
-approach introduced in Warasi (2021) <doi:10.1080/03610918.2021.2009867>.  The
+approach introduced in Warasi (2023) <doi:10.1080/03610918.2021.2009867>.  The
 EM algorithm can be used to estimate the prevalence (overall proportion) of a
 disease and to estimate a binary regression model from among the class of
 generalized linear models based on group testing data.  The estimation framework
@@ -3883,7 +3883,9 @@ hierarchical testing, array testing, and quality control pooling.  Also,
 provided are functions that can be used to conduct the Wald tests described in
 Buse (1982) <doi:10.1080/00031305.1982.10482817> and to simulate the group
 testing data described in Kim et al. (2007)
-<doi:10.1111/j.1541-0420.2007.00817.x>.")
+<doi:10.1111/j.1541-0420.2007.00817.x>.  We offer a function to compute relative
+efficiency measures, which can be used to optimize the maximum likelihood
+estimator of disease prevalence.")
     (license license:gpl3)))
 
 (define-public r-grouptest
@@ -13147,13 +13149,13 @@ model\"<doi:10.1080/10543406.2021.1934854>.")
 (define-public r-glcmtextures
   (package
     (name "r-glcmtextures")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLCMTextures" version))
        (sha256
-        (base32 "1bh5kw46fpgawxgfif3m6vsr2zcngb7n1ass9cdx0cdkb525n7xi"))))
+        (base32 "0sfa05nm2riv8mnldq9hf7p0rcwwycc627ccwjkgh9a754fzxhcv"))))
     (properties `((upstream-name . "GLCMTextures")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rcpparmadillo r-rcpp r-raster))
@@ -19847,13 +19849,13 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
 (define-public r-gfdrmst
   (package
     (name "r-gfdrmst")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GFDrmst" version))
        (sha256
-        (base32 "1qas9dj65mqjfzslxxljy17370vc0v6fwypgv971kvk9wx1a2a00"))))
+        (base32 "0d1cfy97qclymycq03i8gqnivm1x2slqmbv4zlyxk8frg7j4wb57"))))
     (properties `((upstream-name . "GFDrmst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tippy
@@ -20670,13 +20672,13 @@ Markdown HTML documents.")
 (define-public r-get
   (package
     (name "r-get")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GET" version))
        (sha256
-        (base32 "0z977w3chrwr9bxlx7l45qqc7nj2z5gx886ybjxclh6s5zgc2d9f"))))
+        (base32 "0mg6q10022f35aqnvfrh2czvk2m31d5jsidhc85bjgnkhwg65pcy"))))
     (properties `((upstream-name . "GET")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite r-gridextra r-ggplot2 r-cluster))
@@ -20707,7 +20709,8 @@ See @code{MyllymÃ¤ki} and @code{MrkviÄka} (2023)
 <doi:10.1016/j.spasta.2020.100436>, @code{MrkviÄka} et al. (2022)
 <doi:10.1002/sim.9236>, Dai et al. (2022) <doi:10.5772/intechopen.100124>,
 @code{DvoÅÃ¡k} and @code{MrkviÄka} (2022) <doi:10.1007/s00180-021-01134-y>,
-and @code{MrkviÄka} et al. (2023) <doi:10.48550/@code{arXiv.2309.04746>}.")
+@code{MrkviÄka} et al. (2023) <doi:10.48550/@code{arXiv.2309.04746>}, and
+Konstantinou et al. (2024) <doi: 10.48550/@code{arXiv.2403.01838>}.")
     (license license:gpl3)))
 
 (define-public r-gesttools
@@ -22706,13 +22709,13 @@ Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
 (define-public r-geofi
   (package
     (name "r-geofi")
-    (version "1.0.15")
+    (version "1.0.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geofi" version))
        (sha256
-        (base32 "1v4gnbm5lfnd9rjiwjakbh73rifa084nhwdvjizmcfmznk0x0hxb"))))
+        (base32 "1hf8q6k41d2mj4k34yqy6a0mbhrjz9ci5iplfrcb3qy4nppns14w"))))
     (properties `((upstream-name . "geofi")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -28435,13 +28438,13 @@ See also Tholen (2024) <doi:10.1093/aobpla/plae035>.")
 (define-public r-gas
   (package
     (name "r-gas")
-    (version "0.3.4")
+    (version "0.3.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GAS" version))
        (sha256
-        (base32 "014b2y9qrv44j5v559bnw7yiacs9aarsgpbrj3clxm4n0srhv843"))))
+        (base32 "16348wz41silrrp7vb5qscydf9di8zrbydyvhpkv7dl003c9x0rp"))))
     (properties `((upstream-name . "GAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29920,13 +29923,13 @@ materials.")
 (define-public r-galamm
   (package
     (name "r-galamm")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "galamm" version))
        (sha256
-        (base32 "1pyckh5yb9asgk47za9a1791hzkr0w978bf5b7qjca2gw1yymarw"))))
+        (base32 "1gjz1hmfimld6drildhmlf8xgh6s3p7l6064bsjvp58ggvlmwawk"))))
     (properties `((upstream-name . "galamm")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack

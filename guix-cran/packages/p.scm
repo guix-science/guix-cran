@@ -1416,31 +1416,6 @@ where the statistical errors of each model are ranked for a more straightforward
 determination of the best fit model.")
     (license license:gpl2)))
 
-(define-public r-pupaim
-  (package
-    (name "r-pupaim")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PUPAIM" version))
-       (sha256
-        (base32 "1sypmlpjsdn2rm6pci64xv6ibixz43zhjaw0k8q9jp3cajbb11qh"))))
-    (properties `((upstream-name . "PUPAIM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nls2 r-metrics r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PUPAIM")
-    (synopsis "Collection of Physical and Chemical Adsorption Isotherm Models")
-    (description
-     "The PUPAIM R package can generally fit any adsorption experimental data to any
-of the 55 available adsorption isotherm models - 32 nonlinear models and 23
-linear models.  This package provides parameter estimation, model accuracy
-analysis, model error analysis, and adsorption plot created using the package
-ggplot2'.  This package will help the users for a much easier way of adsorption
-model data fitting.")
-    (license license:gpl2)))
-
 (define-public r-pump
   (package
     (name "r-pump")
@@ -7839,13 +7814,13 @@ transforming the PRN's in order to control the sample overlap.")
 (define-public r-prng
   (package
     (name "r-prng")
-    (version "0.0.2")
+    (version "0.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRNG" version))
        (sha256
-        (base32 "1x1nv5pfz521jkwsnafc55d4mlkp5yfy3ywya7y8p1qjsj0bisfx"))))
+        (base32 "0lsr0jf08mwi4ip3hcmk8y2jxk89366skqcx85yr8j2wzqwyds15"))))
     (properties `((upstream-name . "PRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PRNG")
@@ -8330,6 +8305,41 @@ disease and the sensitivity/specificity of diagnostic tests and any other
 binomial experiment.")
     (license license:gpl3+)))
 
+(define-public r-priorcon
+  (package
+    (name "r-priorcon")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "priorCON" version))
+       (sha256
+        (base32 "03jiqhjzc5lay70jf9xnqlbxh16d86irzpgn7962lw9jgg846sp7"))))
+    (properties `((upstream-name . "priorCON")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmap
+                             r-terra
+                             r-sf
+                             r-prioritizr
+                             r-igraph
+                             r-highs
+                             r-braingraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cadam00/priorCON")
+    (synopsis
+     "Graph Community Detection Methods into Systematic Conservation Planning")
+    (description
+     "An innovative tool-set that incorporates graph community detection methods into
+systematic conservation planning.  It is designed to enhance spatial
+prioritization by focusing on the protection of areas with high ecological
+connectivity.  Unlike traditional approaches that prioritize individual planning
+units, @code{priorCON} focuses on clusters of features that exhibit strong
+ecological linkages.  The @code{priorCON} package is built upon the prioritizr
+package <doi:10.32614/CRAN.package.prioritizr>, using commercial and open-source
+exact algorithm solvers that ensure optimal solutions to prioritization
+problems.")
+    (license license:gpl3)))
+
 (define-public r-priogene
   (package
     (name "r-priogene")
@@ -8707,13 +8717,13 @@ Westendorp 1976, isbn:9789283100386).")
 (define-public r-pricer
   (package
     (name "r-pricer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priceR" version))
        (sha256
-        (base32 "0yf7hgvbm8a0ks2c8wnim8b9kqk7dljnaahw7faq2lzn67751dqc"))))
+        (base32 "08s3sx3cmvvr7ibrybbw35pkvizhc8yqdikwhv9c0ljmv5q3qww9"))))
     (properties `((upstream-name . "priceR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8932,13 +8942,13 @@ package, see Giorgi and Diggle (2017) <doi:10.18637/jss.v078.i08>.")
 (define-public r-preventr
   (package
     (name "r-preventr")
-    (version "0.9.0")
+    (version "0.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "preventr" version))
        (sha256
-        (base32 "06rl3xm8h5zmpmf9v7ibs12i2b4i8r9vlk56d4iyzbsww2hh13a7"))))
+        (base32 "1m7g2p38wb95m3rci29b4x65ks1m4cwlawxwkqqzshcwnknxm57g"))))
     (properties `((upstream-name . "preventr")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -21460,13 +21470,13 @@ Applications.  5th ed.  2016. (ISBN:9198299107).")
 (define-public r-pkpdsim
   (package
     (name "r-pkpdsim")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKPDsim" version))
        (sha256
-        (base32 "1n86zl8gka78anny7fj7l95bamckwkv5ijjiihpcfyj7fmac3y72"))))
+        (base32 "0pzpr2lqgcssz5mgsb27z48x8sf9plbsd2m8rmkha1926fxks6na"))))
     (properties `((upstream-name . "PKPDsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -27792,20 +27802,20 @@ updated dabestr functions.")
 (define-public r-perms
   (package
     (name "r-perms")
-    (version "1.13")
+    (version "1.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "perms" version))
        (sha256
-        (base32 "0zi7a8pai7j2i9ckfn87f2g5nm3r54631cib0lz0xdzczad2j2nr"))))
+        (base32 "1qw6pqiw4jn5qgdr0i8h0m1jlaa218khbn8z3xdp82csx4y8ia1l"))))
     (properties `((upstream-name . "perms")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-mclust r-mass r-foreach r-doparallel))
+    (propagated-inputs (list r-rdpack r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=perms")
     (synopsis "Fast Permutation Computation")
     (description
-     "This package implements the algorithm of Christensen (2023)
+     "This package implements the algorithm of Christensen (2024)
 <doi:10.1214/22-BA1353> for estimating marginal likelihoods via permutation
 counting.")
     (license license:bsd-2)))
@@ -27881,6 +27891,32 @@ distributions are equal in the treatment and the control group and approximate
 imputation-permutation methods when the censoring distributions are different.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-permcor
+  (package
+    (name "r-permcor")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PermCor" version))
+       (sha256
+        (base32 "1ib8126hi9chch4jgyd0h26qjc791197yx7rzq88dkj0aaqlrrr1"))))
+    (properties `((upstream-name . "PermCor")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=PermCor")
+    (synopsis "Robust Permutation Tests of Correlation Coefficients")
+    (description
+     "This package provides tools for statistical testing of correlation coefficients
+through robust permutation method and large sample approximation method.
+Tailored to different types of correlation coefficients including Pearson
+correlation coefficient, weighted Pearson correlation coefficient, Spearman
+correlation coefficient, and Lin's concordance correlation coefficient.The
+robust permutation test controls type I error under general scenarios when
+sample size is small and two variables are dependent but uncorrelated.  The
+large sample approximation test generally controls type I error when the sample
+size is large (>200).")
+    (license license:gpl3)))
 
 (define-public r-permchacko
   (package
@@ -30300,13 +30336,13 @@ Calculations and Graphs are provided.")
 (define-public r-pdr
   (package
     (name "r-pdr")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdR" version))
        (sha256
-        (base32 "1g7qs1x4794rdkb0z25qxqyg3mgq8b4iq7fbiz51s6sjrmdwljk4"))))
+        (base32 "1rf7wpdswhn0m6nikzsj0xr0v1rdl4g96gkp59ikbvwjvzf58l7s"))))
     (properties `((upstream-name . "pdR")))
     (build-system r-build-system)
     (propagated-inputs (list r-plm r-pglm r-lme4 r-glmmtmb))
@@ -33024,17 +33060,17 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "1p96p53h877p56dzaah2d7kasnfxqiz3cmnpavcnvq1kdqyjwvfn"))))
+        (base32 "0gsh7wca9ncs8ixsj2j3vz28ab7xfmvim1zzwrn3clgwp0g1rasf"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tcltk2 r-snowfall r-moments))
-    (home-page "https://cran.r-project.org/package=patterncausality")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/skstavroglou/pattern_causality/")
     (synopsis "Pattern Causality Algorithm")
     (description
      "The model proposes a robust methodology for detecting and reconstructing the
@@ -33626,30 +33662,33 @@ Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
 (define-public r-pastboon
   (package
     (name "r-pastboon")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastboon" version))
        (sha256
-        (base32 "144mlz8629lrbsgd46hzcsl2agzkk4kkxan1chk0xawscfj70kmv"))))
+        (base32 "17qaglv3hf0llkf5v16pdb8ym5p2lhxvhvaj025qpf60x20y6zmc"))))
     (properties `((upstream-name . "pastboon")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pastboon")
     (synopsis "Simulation of Parameterized Stochastic Boolean Networks")
     (description
-     "Applying stochastic noise to Boolean networks is a useful approach for
-representing the effects of various perturbing stimuli on complex systems.  A
-number of methods have been developed to control noise effects on Boolean
-networks using parameters integrated into the update rules.  This package
-provides functions to examine three such methods: BNp (Boolean network with
-perturbations), described by Trairatphisan et al. (2013)
-<doi:10.1186/1478-811X-11-46>, SDDS (stochastic discrete dynamical systems),
-proposed by Murrugarra et al. (2012) <doi:10.1186/1687-4153-2012-5>, and PEW
-(Boolean network with probabilistic edge weights), presented by Deritei et al.
-(2022) <doi:10.1371/journal.pcbi.1010536>.  This package includes source code
-derived from the @code{BoolNet} package, which is licensed under the Artistic
-License 2.0.")
+     "This package provides a Boolean network is a particular kind of discrete
+dynamical system where the variables are simple binary switches.  Although its
+simplicity, Boolean network modeling has been a successful method to describe
+the behavioral pattern of various phenomena.  Applying stochastic noise to
+Boolean networks is a useful approach for representing the effects of various
+perturbing stimuli on complex systems.  A number of methods have been developed
+to control noise effects on Boolean networks using parameters integrated into
+the update rules.  This package provides functions to examine three such
+methods: Boolean network with perturbations (BNp), described by Trairatphisan et
+al. (2013) <doi:10.1186/1478-811X-11-46>, stochastic discrete dynamical systems
+(SDDS), proposed by Murrugarra et al. (2012) <doi:10.1186/1687-4153-2012-5>, and
+Boolean network with probabilistic edge weights (PEW), presented by Deritei et
+al. (2022) <doi:10.1371/journal.pcbi.1010536>.  This package includes source
+code derived from the @code{BoolNet} package, which is licensed under the
+Artistic License 2.0.")
     (license license:artistic2.0)))
 
 (define-public r-pastaplot
@@ -33926,13 +33965,13 @@ completely re-written.")
 (define-public r-party
   (package
     (name "r-party")
-    (version "1.3-16")
+    (version "1.3-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "party" version))
        (sha256
-        (base32 "11p1ra223acw822c0z7mglh8l0s1ijrgbawi1mdn61v4lxjilsdf"))))
+        (base32 "0jvxy9v30aazh9rkvhwz95gaq7s64sasdlsp9ckm1ks3wyqpdq7h"))))
     (properties `((upstream-name . "party")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -34830,44 +34869,6 @@ theoretical background of the matching algorithm and most other methods are
 described in Ulrich Riegel (2018) <doi:10.1007/s13385-018-0177-3>.")
     (license license:gpl2+)))
 
-(define-public r-pare
-  (package
-    (name "r-pare")
-    (version "0.1.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PaRe" version))
-       (sha256
-        (base32 "1p65p3anwyk1zg82lir7wqvl9zxi7p4hjb70kvfhj06p1n8f653c"))))
-    (properties `((upstream-name . "PaRe")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rsvg
-                             r-rmarkdown
-                             r-r6
-                             r-pak
-                             r-magrittr
-                             r-lintr
-                             r-igraph
-                             r-glue
-                             r-git2r
-                             r-dplyr
-                             r-diagrammersvg
-                             r-diagrammer
-                             r-desc
-                             r-cyclocomp
-                             r-cli
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/darwin-eu-dev/PaRe")
-    (synopsis "Way to Perform Code Review or QA on Other Packages")
-    (description
-     "Reviews other packages during code review by looking at their dependencies, code
-style, code complexity, and how internally defined functions interact with one
-another.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-pardnacopy
   (package
     (name "r-pardnacopy")
@@ -35564,28 +35565,6 @@ PS1 images. (see <https://outerspace.stsci.edu/display/PANSTARRS/> for more
 information).  You can use it to plan astronomical observations, make guidance
 pictures, find magnitudes in five broadband filters (g, r, i, z, y) and more.")
     (license license:expat)))
-
-(define-public r-panprsnext
-  (package
-    (name "r-panprsnext")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PANPRSnext" version))
-       (sha256
-        (base32 "1s9kv58af7hj65qxcnrsfjrh8xfqhm5m4kpg279li5b4g4cpnqx9"))))
-    (properties `((upstream-name . "PANPRSnext")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-gtools))
-    (home-page "https://cran.r-project.org/package=PANPRSnext")
-    (synopsis "Building PRS Models Based on Summary Statistics of GWAs")
-    (description
-     "Shrinkage estimator for polygenic risk prediction (PRS) models based on summary
-statistics of genome-wide association (GWA) studies.  Based upon the methods and
-original PANPRS package as found in: Chen, Chatterjee, Landi, and Shi (2020)
-<doi:10.1080/01621459.2020.1764849>.")
-    (license license:gpl3)))
 
 (define-public r-panjen
   (package
@@ -38093,60 +38072,6 @@ NPM', yarn', and webpack that enables to compartmentalize @code{JavaScript}
 code, leverage NPM and yarn packages, include @code{TypeScript}', React', or Vue
 in web applications, and much more.")
     (license license:expat)))
-
-(define-public r-packdamipd
-  (package
-    (name "r-packdamipd")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "packDAMipd" version))
-       (sha256
-        (base32 "0y81ap4nhvfc5k0xfcbghnf32svgkx8p01g0md3hzhyfvmgjffqm"))))
-    (properties `((upstream-name . "packDAMipd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-valueeq5d
-                             r-tidyr
-                             r-systemfit
-                             r-survregcenscov
-                             r-survminer
-                             r-survival
-                             r-stringr
-                             r-rlang
-                             r-reshape2
-                             r-relaimpo
-                             r-readxl
-                             r-purrr
-                             r-mass
-                             r-lmtest
-                             r-lme4
-                             r-labelled
-                             r-islr
-                             r-ipdfilecheck
-                             r-haven
-                             r-hash
-                             r-gvlma
-                             r-ggpubr
-                             r-ggplot2
-                             r-flextable
-                             r-effects
-                             r-dplyr
-                             r-data-table
-                             r-car
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/sheejamk/packDAMipd")
-    (synopsis
-     "Decision Analysis Modelling Package with Parameters Estimation Ability from Individual Patient Level Data")
-    (description
-     "This package provides a collection of functions to construct Markov model for
-model-based cost-effectiveness analysis.  This includes creating Markov model
-(both time homogenous and time dependent models), decision analysis, sensitivity
-analysis (deterministic and probabilistic).  The package allows estimation of
-parameters for the Markov model from a given individual patient level data,
-provided the data file follows some standard data entry rules.")
-    (license license:gpl3)))
 
 (define-public r-packagerank
   (package

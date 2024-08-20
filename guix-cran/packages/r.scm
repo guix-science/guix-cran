@@ -2013,13 +2013,13 @@ different formats a RUT can have.")
 (define-public r-rust
   (package
     (name "r-rust")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rust" version))
        (sha256
-        (base32 "1pp37h27pyjzcwabazyfmlgrma6x0k8hbq3ksfvlgphsk9hac93z"))))
+        (base32 "069zybqgmf1mnhw9g6kr7ypm0r9ghlw9kndqigvwgzqwfmqj62c9"))))
     (properties `((upstream-name . "rust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -2631,13 +2631,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-rugarch
   (package
     (name "r-rugarch")
-    (version "1.5-1")
+    (version "1.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rugarch" version))
        (sha256
-        (base32 "07nyfwaqqlizg0cawgiv8wdj7qr36pgi0z1mk9lambzb0w453zlz"))))
+        (base32 "0xmckgsdid7fq4637kyk5jyzg39l1cvy3vc8hlqayxsa0xljk21l"))))
     (properties `((upstream-name . "rugarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4028,13 +4028,13 @@ provided in vignettes.  Theoretical background can be found in Butler (2011)
 (define-public r-rtide
   (package
     (name "r-rtide")
-    (version "0.0.9")
+    (version "0.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtide" version))
        (sha256
-        (base32 "0gr0j52jy7y1w1s0s88rjv9l85yvavypagmi0qw2ix9ca2xadlzl"))))
+        (base32 "0911i51sy3pgqcx5al3nf18ncmwafl1xdxhj46j8rmblzqz2iras"))))
     (properties `((upstream-name . "rtide")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-dttr2 r-chk r-abind))
@@ -4043,7 +4043,7 @@ provided in vignettes.  Theoretical background can be found in Butler (2011)
     (description
      "Calculates tide heights based on tide station harmonics.  It includes the
 harmonics data for 637 US stations.  The harmonics data was converted from
-<https://github.com/poissonconsulting/rtide/blob/master/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
+<https://github.com/poissonconsulting/rtide/blob/main/data-raw/harmonics-dwf-20151227-free.tar.bz2>,
 NOAA web site data processed by David Flater for XTide'.  The code to calculate
 tide heights from the harmonics is based on XTide'.")
     (license license:gpl3)))
@@ -4950,17 +4950,20 @@ of different algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.1.6")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "1w9xg2qcgqachc8y24vqxgw701si5g9qb5ps68lrn4w33hbywzjl"))))
+        (base32 "10ahwi1xiy2gw3abj6scrp1qdlqg3js4h9q2z6d7a5vwaxpz95hh"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-vctrs
                              r-rlang
+                             r-readxl
+                             r-lifecycle
                              r-jsonlite
                              r-httr
                              r-glue
@@ -8616,13 +8619,13 @@ purposes.")
 (define-public r-rrcovna
   (package
     (name "r-rrcovna")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcovNA" version))
        (sha256
-        (base32 "0bf3r5j37pfv84fmmgsaq4ddrq7f290w8673fapqrirci7dnawxc"))))
+        (base32 "1hp6cji9w38qq00bb0jyx0s2lh74960qciwhbc1vdiv5dfg38qmx"))))
     (properties `((upstream-name . "rrcovNA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rrcov r-robustbase r-norm r-lattice r-cluster))
@@ -8639,13 +8642,13 @@ High Breakdown Point for Incomplete Data (missing values) (Todorov et al. (2010)
 (define-public r-rrcovhd
   (package
     (name "r-rrcovhd")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rrcovHD" version))
        (sha256
-        (base32 "13g2akydz05933jv9fgc8jpqi8lcm506pcrdpjs88yapb4p5ar4j"))))
+        (base32 "0ybj4lqfn27a1f0k434my6plk8zh6xmfgfmyavpl01pb16f7c30m"))))
     (properties `((upstream-name . "rrcovHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -8739,6 +8742,28 @@ simulation section of the paper: L2Boost, LADBoost, MBoost (Friedman, J. H.
 effects by ridge regression; alternatively, BLUPs can be calculated based on an
 additive relationship matrix or a Gaussian kernel.")
     (license license:gpl3)))
+
+(define-public r-rraven
+  (package
+    (name "r-rraven")
+    (version "1.0.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rraven" version))
+       (sha256
+        (base32 "1sfzsf1f758sicild58hi5lqbs1vmzma9znni3is2vlcsn9pyn5s"))))
+    (properties `((upstream-name . "Rraven")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-warbler r-tuner r-seewave r-pbapply))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maRce10/Rraven")
+    (synopsis "Connecting R and 'Raven' Sound Analysis Software")
+    (description
+     "This package provides a tool to exchange data between R and Raven sound analysis
+software (Cornell Lab of Ornithology).  Functions work on data formats
+compatible with the R package @code{warbleR}'.")
+    (license license:gpl2+)))
 
 (define-public r-rrate
   (package
@@ -10157,16 +10182,20 @@ objects and rgl visualizing capabilities.")
 (define-public r-rpointcloud
   (package
     (name "r-rpointcloud")
-    (version "0.6.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RPointCloud" version))
        (sha256
-        (base32 "1n2rlw7zpmwsk95glgfa1wcr1k4hpyknd6xcc4996305k0s0lim2"))))
+        (base32 "1rzqfszcras62gndzg3z34qlhkqjdrrf3z5gcxfqdfmn6cj2ynm9"))))
     (properties `((upstream-name . "RPointCloud")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tda r-rgl r-mercator r-classdiscovery
+    (propagated-inputs (list r-tda
+                             r-rgl
+                             r-mercator
+                             r-classdiscovery
+                             r-classcomparison
                              r-circlize))
     (native-inputs (list r-knitr))
     (home-page "http://oompa.r-forge.r-project.org/")
@@ -16389,13 +16418,13 @@ et al. (2017) <@code{arXiv:1702.04690>} based on Rosenbaum and Rubin (1983)
 (define-public r-rnpn
   (package
     (name "r-rnpn")
-    (version "1.2.8.0")
+    (version "1.2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnpn" version))
        (sha256
-        (base32 "1svamnpfs76551cil1grch4nr6716j2qncdq7nqzp3ni5ia8522w"))))
+        (base32 "0dlxc0gr4bxkwkah0sfwxhqkfzg8v4mvwr37xxc7i43jbvyd7c0w"))))
     (properties `((upstream-name . "rnpn")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -18961,13 +18990,13 @@ and Marusich (2017) <doi:10.3389/fpsyg.2017.00456>.")
 (define-public r-rmcfs
   (package
     (name "r-rmcfs")
-    (version "1.3.5")
+    (version "1.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmcfs" version))
        (sha256
-        (base32 "0rbq2b9fw1x44v7ifxp8qgp4yciinw2sw9mqp4ms5jsxznpi2pi6"))))
+        (base32 "0hj3nnbihvy37ky89x8frfd95slh8ff6l6msr0xdm03bl8jqcd72"))))
     (properties `((upstream-name . "rmcfs")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -20373,13 +20402,13 @@ thermocline depth, lake number, Wedderburn number, Schmidt stability and others.
 (define-public r-rlabkey
   (package
     (name "r-rlabkey")
-    (version "3.2.3")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rlabkey" version))
        (sha256
-        (base32 "17z9fk89wj81z3cfs1g545im87191jbkh4ka849nra51dpdq4zmi"))))
+        (base32 "01arnz3q2x0amgx6qqkg7wbpk66nq2abj9s9lbssi7wqw79hwgqy"))))
     (properties `((upstream-name . "Rlabkey")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-jsonlite r-httr))
@@ -22813,22 +22842,22 @@ in plots or for fun!")
 (define-public r-rimagejroi
   (package
     (name "r-rimagejroi")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RImageJROI" version))
        (sha256
-        (base32 "1rsc8iv80zyjzpj80yyyhndxvskdbldsfc2gskrr1r8yh5gmhn23"))))
+        (base32 "058l1lgxjw70cn1dmmxd9ap7lrnj98kl495v3j6zn91afwshic4w"))))
     (properties `((upstream-name . "RImageJROI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-spatstat-geom r-spatstat))
+    (propagated-inputs (list r-spatstat-geom))
     (home-page "https://github.com/davidcsterratt/RImageJROI")
-    (synopsis "Read 'ImageJ' Region of Interest (ROI) Files")
+    (synopsis "Read and Write 'ImageJ' Region of Interest (ROI) Files")
     (description
-     "This package provides functions to read @code{ImageJ}
-(<http://imagej.nih.gov/ij/>) Region of Interest (ROI) files, to plot the ROIs
-and to convert them to spatstat (<http://spatstat.org/>) spatial patterns.")
+     "This package provides functions to read and write @code{ImageJ}
+(<https://imagej.net>) Region of Interest (ROI) files, to plot the ROIs and to
+convert them to spatstat (<https://spatstat.org/>) spatial patterns.")
     (license license:gpl3)))
 
 (define-public r-rim
@@ -24491,13 +24520,13 @@ still permitting the use of GRASS 7'.")
 (define-public r-rgraphspace
   (package
     (name "r-rgraphspace")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RGraphSpace" version))
        (sha256
-        (base32 "1w1dflh35j44ypdy8nd6l9i9la49hjvwkrlk74mch5knafgb8xzw"))))
+        (base32 "1rdq9gnmc2znlpq60n3sn8zpir3wfa2k2ds63pcw1v4w921dmz55"))))
     (properties `((upstream-name . "RGraphSpace")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-igraph r-ggplot2))
@@ -27500,13 +27529,13 @@ follow Crawford and Pendakur (2012) <doi:10.1111/j.1468-0297.2012.02545.x>.")
 (define-public r-revdbayes
   (package
     (name "r-revdbayes")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "revdbayes" version))
        (sha256
-        (base32 "0a263vlzg7fwxczzh7dgj149fhm6s12ivyy5ybf8zhdr88wsigcn"))))
+        (base32 "1s8hnc2izd2117njidgw4jj5qpwgn28nmghg69i0dhbw6vb5mhk0"))))
     (properties `((upstream-name . "revdbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rust r-rcpparmadillo r-rcpp r-exdex r-bayesplot))
@@ -29104,13 +29133,13 @@ a string containing diverse packages from several resources like Github or CRAN.
 (define-public r-require
   (package
     (name "r-require")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Require" version))
        (sha256
-        (base32 "10mir99f4gl0s9lp73cb8yxrr2lngdqm1by2j4d66gs61qirdch0"))))
+        (base32 "0038rr91hfx7q0rcbkl76sjjykx2wnxr5fc6zdgfqy31p0j6c9aj"))))
     (properties `((upstream-name . "Require")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys r-data-table))
@@ -32749,13 +32778,13 @@ update the original object when they are changed.")
 (define-public r-refseqr
   (package
     (name "r-refseqr")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refseqR" version))
        (sha256
-        (base32 "1kcxr8nimjd74waksiggrb6shzqv05s267sc099cc6pnnc8q3mqh"))))
+        (base32 "09zh4fq232arcykaflgjy2bmjikfqhrqbwfy6pdhj48ixwxbwdbf"))))
     (properties `((upstream-name . "refseqR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rentrez r-iranges r-biostrings))
@@ -35571,13 +35600,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.8")
+    (version "0.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "0hvz8zss5gh7r2w9ar3qh66k7vgbdikz942fp8pbzag8khah5rza"))))
+        (base32 "16g1zwib8f4vm4jb8lc9w2rfvszajfrs978gbgdgqz0raw7h4grf"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -37345,18 +37374,18 @@ documentation, and examples.")
 (define-public r-rdflib
   (package
     (name "r-rdflib")
-    (version "0.2.8")
+    (version "0.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdflib" version))
        (sha256
-        (base32 "0massic915hyw2752jkaa3rx9nf2v7a87gp3c5qpyn4fnqjai4dn"))))
+        (base32 "0cfkbqr4m9dqbiqnr01wkxl6qd09384aq5x0d8vycylmngvmh4ay"))))
     (properties `((upstream-name . "rdflib")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-stringi r-redland r-readr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/rdflib")
+    (home-page "https://docs.ropensci.org/rdflib/")
     (synopsis "Tools to Manipulate and Query Semantic Data")
     (description
      "The Resource Description Framework, or RDF is a widely used data representation
@@ -38755,6 +38784,28 @@ parallel programming for providing highly efficient text preprocessing
 @code{posParallel}() function.  For installation, please refer to README.md
 file.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-rcppmagicenum
+  (package
+    (name "r-rcppmagicenum")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppMagicEnum" version))
+       (sha256
+        (base32 "0lz13kr3l753qdkw9bvcgb998ylr2160c9688nv5bzsy5937y1pa"))))
+    (properties `((upstream-name . "RcppMagicEnum")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://github.com/eddelbuettel/rcppmagicenum")
+    (synopsis "'Rcpp' Bindings to 'Magic Enum' 'C++' 'Enum' Support")
+    (description
+     "The header-only modern C++ template library Magic Enum for static reflection of
+enums (to string, from string, iteration) is provided by this package.  More
+information about the underlying library can be found at its repository at
+<https://github.com/Neargye/magic_enum>.")
+    (license license:expat)))
 
 (define-public r-rcpplbfgsblaze
   (package
@@ -44476,13 +44527,13 @@ sources can be found in the github repository
 (define-public r-rassta
   (package
     (name "r-rassta")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rassta" version))
        (sha256
-        (base32 "0yia0pwg29fd6hq0f96hdf6k70pj296805a4lgxn4qqwn3gw7006"))))
+        (base32 "1f3npgq5qxdj98jpl84givkg77z7n09hksbj1pcpsapn5a688vz3"))))
     (properties `((upstream-name . "rassta")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -44516,8 +44567,8 @@ techniques allow to measure the correspondence between the geographic space and
 the landscape configuration represented by the units.  These correspondence
 metrics are useful to define sampling schemes and to model the spatial
 variability of environmental phenomena.  The theoretical background of the
-algorithms and code examples are presented in Fuentes, Dorantes, and Tipton
-(2021). <doi:10.31223/X50S57>.")
+algorithms and code examples are presented in Fuentes et al. (2022).
+<doi:10.32614/RJ-2022-036>.")
     (license license:agpl3+)))
 
 (define-public r-rasen

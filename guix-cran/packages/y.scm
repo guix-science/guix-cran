@@ -552,6 +552,27 @@ current version of package contains miscellaneous functions for brain data to
 compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data.")
     (license license:gpl2+)))
 
+(define-public r-ymd
+  (package
+    (name "r-ymd")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ymd" version))
+       (sha256
+        (base32 "03lsq0prm4pzqmaiap5yddnpfl544ippp8vmdrvnc3d8n9fi6fg2"))))
+    (properties `((upstream-name . "ymd")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://shrektan.github.io/ymd/")
+    (synopsis "Parse 'YMD' Format Number or String to Date")
+    (description
+     "Convert YMD format number or string to Date efficiently, using Rust's standard
+library.  It also provides helper functions to handle Date, e.g., quick finding
+the beginning or end of the given period, adding months to Date, etc.")
+    (license license:expat)))
+
 (define-public r-yll
   (package
     (name "r-yll")

@@ -8164,13 +8164,13 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
 (define-public r-mscquartets
   (package
     (name "r-mscquartets")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSCquartets" version))
        (sha256
-        (base32 "0ahmg7f5ikkihpanl0jbxd4sqmw85m88r789z53iqr4rbp23gdb8"))))
+        (base32 "1d1bgvwz88q2sipqzhiybwflixb45nc1fw9isf7xbhq18msr9vmh"))))
     (properties `((upstream-name . "MSCquartets")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -8182,6 +8182,7 @@ Allman, Banos, and Rhodes (2019) <@code{arXiv:1908.01424>}.")
                              r-foreach
                              r-doparallel
                              r-ape))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MSCquartets")
     (synopsis
      "Analyzing Gene Tree Quartets under the Multi-Species Coalescent")
@@ -9616,21 +9617,22 @@ network models.")
 (define-public r-mrbayes
   (package
     (name "r-mrbayes")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mrbayes" version))
        (sha256
-        (base32 "11n3d18di01vmwqs5a0i1h8839aammzbcavi1jk58bmrwb3l771j"))))
+        (base32 "0jvfqfyds3g8dfh946l08vkgx3kqwjkp5vph20mhi20qqqiw21di"))))
     (properties `((upstream-name . "mrbayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
                              r-rstantools
                              r-rstan
+                             r-rcppparallel
                              r-rcppeigen
                              r-rcpp
-                             r-plyr
+                             r-desctools
                              r-bh))
     (home-page "https://github.com/okezie94/mrbayes")
     (synopsis
@@ -9862,13 +9864,13 @@ time precision etc.  Various software outputs are supported such as
 (define-public r-mpv
   (package
     (name "r-mpv")
-    (version "1.63")
+    (version "1.64")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPV" version))
        (sha256
-        (base32 "0nylp38fxk3nabg8apcnb1f45q1z8667vswdzds6nzm2v8a94p5j"))))
+        (base32 "0alvs1jm1qqnswhm62a0ky070dskk6syjsa5bkcssg1zin8xcyhv"))))
     (properties `((upstream-name . "MPV")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-lattice r-kernsmooth))
@@ -12233,33 +12235,6 @@ elements taking advantage of the power that R offers.  In this first version, it
 allows the definition of questions to be included in the question bank.")
     (license license:expat)))
 
-(define-public r-moocore
-  (package
-    (name "r-moocore")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "moocore" version))
-       (sha256
-        (base32 "0xnix4izfl7hs8an1w8jvdsd6gcw61njqhzh2wy9mxkvl7kjw7jg"))))
-    (properties `((upstream-name . "moocore")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-matrixstats))
-    (home-page "https://multi-objective.github.io/moocore/r/")
-    (synopsis "Core Mathematical Functions for Multi-Objective Optimization")
-    (description
-     "Fast implementation of mathematical operations and performance metrics for
-multi-objective optimization, including filtering and ranking of dominated
-vectors according to Pareto optimality, computation of the empirical attainment
-function, V.G. da Fonseca, C.M. Fonseca, A.O. Hall (2001)
-<doi:10.1007/3-540-44719-9_15>, hypervolume metric, C.M. Fonseca, L. Paquete, M.
-LÃ³pez-@code{IbÃ¡Ã±ez} (2006) <doi:10.1109/CEC.2006.1688440>), epsilon
-indicator, inverted generational distance, and Vorob\\'ev threshold, expectation
-and deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
-<doi:10.1016/j.ejor.2014.07.032>, among others.")
-    (license license:lgpl2.0+)))
-
 (define-public r-montecarlosem
   (package
     (name "r-montecarlosem")
@@ -13655,13 +13630,13 @@ nutrition analyses.")
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "0kypl30gj1k1ng1zilc859rcx7q4yc1n4nirmb4a9y68g8ykmq9y"))))
+        (base32 "1qab2lqj6p3lkfnyf72a2sk18lclnlisl3ky59998nylx3raanan"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -15298,18 +15273,20 @@ distance decay of similarity.")
 (define-public r-mobr
   (package
     (name "r-mobr")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mobr" version))
        (sha256
-        (base32 "0dvsarxkjcjn3f40qkx5pdjpvq7hr6l5nvdz6adxlr1sdbadfcws"))))
+        (base32 "02bxacq7m1ln4abd0kdzqndwj3384kfbfxcn13qqmix0i6q1i4y6"))))
     (properties `((upstream-name . "mobr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
                              r-tidyr
                              r-tibble
+                             r-sf
+                             r-scam
                              r-scales
                              r-rlang
                              r-purrr
@@ -15320,15 +15297,16 @@ distance decay of similarity.")
                              r-egg
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=mobr")
+    (home-page "https://github.com/MoBiodiv/mobr")
     (synopsis "Measurement of Biodiversity")
     (description
      "This package provides functions for calculating metrics for the measurement
 biodiversity and its changes across scales, treatments, and gradients.  The
 methods implemented in this package are described in: Chase, J.M., et al. (2018)
 <doi:10.1111/ele.13151>, @code{McGlinn}, D.J., et al. (2019)
-<doi:10.1111/2041-210X.13102>, and @code{McGlinn}, D.J., et al. (2021)
-<doi:10.1002/ecy.3233>.")
+<doi:10.1111/2041-210X.13102>, @code{McGlinn}, D.J., et al. (2020)
+<doi:10.1101/851717>, and @code{McGlinn}, D.J., et al. (2023)
+<doi:10.1101/2023.09.19.558467>.")
     (license license:expat)))
 
 (define-public r-mobps
@@ -18187,6 +18165,67 @@ Liang and Zeger (1986) <doi:10.1093/biomet/73.1.13> and Bell and
 <https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2002002/article/9058-eng.pdf?st=@code{NxMjN1YZ>}
 is included as well as a function for checking for level-one homoskedasticity
 (Raudenbush & Bryk, 2002, ISBN:076191904X).")
+    (license license:gpl2)))
+
+(define-public r-mlmts
+  (package
+    (name "r-mlmts")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlmts" version))
+       (sha256
+        (base32 "0268zypg99yhizh5ashdwivckaqzfw60fb01f2lryz8c9hpa21mr"))))
+    (properties `((upstream-name . "mlmts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-waveslim
+                             r-tsfeatures
+                             r-tserieschaos
+                             r-tseries
+                             r-tsdist
+                             r-tsclust
+                             r-tsa
+                             r-rfast
+                             r-rdpack
+                             r-ranger
+                             r-randomforest
+                             r-quantspec
+                             r-psych
+                             r-pspline
+                             r-pracma
+                             r-multiwave
+                             r-mts
+                             r-matrix
+                             r-mass
+                             r-igraph
+                             r-ggplot2
+                             r-geigen
+                             r-freqdom
+                             r-forecast
+                             r-fda-usc
+                             r-e1071
+                             r-dtw
+                             r-desctools
+                             r-complexplus
+                             r-clusterr
+                             r-caret
+                             r-aid))
+    (home-page "https://cran.r-project.org/package=mlmts")
+    (synopsis "Machine Learning Algorithms for Multivariate Time Series")
+    (description
+     "An implementation of several machine learning algorithms for multivariate time
+series.  The package includes functions allowing the execution of clustering,
+classification or outlier detection methods, among others.  It also incorporates
+a collection of multivariate time series datasets which can be used to analyse
+the performance of new proposed algorithms.  Some of these datasets are stored
+in @code{GitHub} data packages ueadata1 to ueadata8'.  To access these data
+packages, run install.packages(c('ueadata1', ueadata2', ueadata3', ueadata4',
+ueadata5', ueadata6', ueadata7', ueadata8'),
+repos='<https://anloor7.github.io/drat/>')'.  The installation takes a couple of
+minutes but we strongly encourage the users to do it if they want to have
+available all datasets of mlmts.  Practitioners from a broad variety of fields
+could benefit from the general framework provided by mlmts'.")
     (license license:gpl2)))
 
 (define-public r-mlmtools
@@ -21535,13 +21574,13 @@ various missing data conditions, as described in Tabouy, Barbillon and Chiquet
 (define-public r-missranger
   (package
     (name "r-missranger")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missRanger" version))
        (sha256
-        (base32 "1zp49wfh6wgha2170y6fjz2052zqw1vfjxa09zink71v693pflv2"))))
+        (base32 "1qwjimdzb88pmqscpkl35y2lawrybps5wn3dnrpkh2zj2zxjf1md"))))
     (properties `((upstream-name . "missRanger")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger r-fnn))
@@ -21558,8 +21597,8 @@ This firstly avoids imputation with values not already present in the original
 data (like a value 0.3334 in 0-1 coded variable).  Secondly, predictive mean
 matching tries to raise the variance in the resulting conditional distributions
 to a realistic level.  This would allow, e.g., to do multiple imputation when
-repeating the call to @code{missRanger}().  A formula interface allows to
-control which variables should be imputed by which.")
+repeating the call to @code{missRanger}().  Out-of-sample application is
+supported as well.")
     (license license:gpl2+)))
 
 (define-public r-missplot
@@ -22135,13 +22174,13 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
 (define-public r-mispitools
   (package
     (name "r-mispitools")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mispitools" version))
        (sha256
-        (base32 "1n18nsxsbjck29w86c2qhy1wjjiihvxxz1valhyl9099rkh0sil5"))))
+        (base32 "09sgs6s005s8lqxb7v21k4vjwkw5kz0dg4b44k11fvgvb8l1i3ba"))))
     (properties `((upstream-name . "mispitools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -22149,10 +22188,8 @@ For more details see Zahid and Heumann (2018) <doi:10.1177/0962280218755574>.")
                              r-shiny
                              r-reshape2
                              r-purrr
-                             r-plotly
                              r-pedtools
                              r-patchwork
-                             r-highcharter
                              r-ggplot2
                              r-forrel
                              r-dplyr
@@ -22786,13 +22823,13 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
 (define-public r-mirai
   (package
     (name "r-mirai")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mirai" version))
        (sha256
-        (base32 "07sri0s38849fsrgg32l23ps62clxivvclchp1n4cbi1iqdkvdk6"))))
+        (base32 "18x7imacq8gj44afjh77pq4cvnqnjfcnvqdp7hkmh19qbl708cpk"))))
     (properties `((upstream-name . "mirai")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanonext))
@@ -22800,12 +22837,15 @@ imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} 
     (home-page "https://shikokuchuo.net/mirai/")
     (synopsis "Minimalist Async Evaluation Framework for R")
     (description
-     "High-performance parallel code execution and distributed computing.  Designed
-for simplicity, a mirai evaluates an R expression asynchronously, on local or
-network resources, resolving automatically upon completion.  Modern networking
-and concurrency built on nanonext and NNG (Nanomsg Next Gen) ensures reliable
-and efficient scheduling, over fast inter-process communications or TCP/IP
-secured by TLS.")
+     "Designed for simplicity, a mirai evaluates an R expression asynchronously in a
+parallel process, locally or distributed over the network, with the result
+automatically available upon completion.  Modern networking and concurrency
+built on nanonext and NNG (Nanomsg Next Gen) ensures reliable and efficient
+scheduling, over fast inter-process communications or TCP/IP secured by TLS.
+Advantages include being inherently queued thus handling many more tasks than
+available processes, no storage on the file system, support for otherwise
+non-exportable reference objects, an event-driven promises implementation, and
+built-in asynchronous parallel map.")
     (license license:gpl3+)))
 
 (define-public r-mipplot
@@ -24797,13 +24837,13 @@ emails and mail folders.")
 (define-public r-microsimulation
   (package
     (name "r-microsimulation")
-    (version "1.4.3")
+    (version "1.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microsimulation" version))
        (sha256
-        (base32 "0vn7lx6qa0dqd7h208s36jwcxswmnhdp4kazkavagd61sqr2gah2"))))
+        (base32 "0fc3ppmj7rl5dnkrvky8d1lj7w2rp7rv0ahmlwd1r5wl4qhh6lmp"))))
     (properties `((upstream-name . "microsimulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-ascii))
@@ -25224,13 +25264,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.8.0")
+    (version "1.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "16q1n3gks0s4w8g3hnzxliczxl43zgfk6kc5y040g3ngbn5shicv"))))
+        (base32 "0hk1mria8r0jqq8q0qxhpq42j9cna64ip4z056jda8n7l9jympsf"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -33609,13 +33649,13 @@ in stable isotope analyses, can be calculated by using this package.")
 (define-public r-mdsr
   (package
     (name "r-mdsr")
-    (version "0.2.7")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdsr" version))
        (sha256
-        (base32 "0b1z1ng6zzqwrn0a5i17jcqwh5yyv7nqyghp8w9r6ik1q46hmvz1"))))
+        (base32 "171c79kl32qam0fm9hxikbfimfvccazmnlz08kg10dkv8l67b423"))))
     (properties `((upstream-name . "mdsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -33635,12 +33675,12 @@ in stable isotope analyses, can be calculated by using this package.")
     (home-page "https://github.com/mdsr-book/mdsr")
     (synopsis "Complement to 'Modern Data Science with R'")
     (description
-     "This package provides a complement to *Modern Data Science with R*, both the
-first and second editions (ISBN: 978-0367191498, publisher URL:
+     "This package provides a complement to all editions of *Modern Data Science with
+R* (ISBN: 978-0367191498, publisher URL:
 <https://www.routledge.com/Modern-Data-Science-with-R/Baumer-Kaplan-Horton/p/book/9780367191498>).
  This package contains data and code to complete exercises and reproduce
 examples from the text.  It also facilitates connections to the SQL database
-server used in the book.  Both editions of the book are supported by this
+server used in the book.  All editions of the book are supported by this
 package.")
     (license license:cc0)))
 
@@ -34359,13 +34399,13 @@ values of the joint and conditional PDFs and CDFs.  Nagao M, Kadoya M (1971)
 (define-public r-mdatools
   (package
     (name "r-mdatools")
-    (version "0.14.1")
+    (version "0.14.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mdatools" version))
        (sha256
-        (base32 "1fbjrg0xwa9bgm8gkvd2xk17xax3yzf3zjzkh7c9627v8r6gnp8j"))))
+        (base32 "0w54phv95cv1mvz2mq7bijw9b03byg7bvxz98a81dzc907j8r2bh"))))
     (properties `((upstream-name . "mdatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -35243,13 +35283,13 @@ other is a method based on the Mean Value Theorem.")
 (define-public r-mco
   (package
     (name "r-mco")
-    (version "1.16")
+    (version "1.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mco" version))
        (sha256
-        (base32 "1sz5gfhniv4rjd7kq8kx7604dybim06559l0wdrwkvixs0hm44ax"))))
+        (base32 "18lyd6qp320jxw50hi6jvy3f408jws3gbfl6s9dqahd5b68yk242"))))
     (properties `((upstream-name . "mco")))
     (build-system r-build-system)
     (home-page "https://github.com/olafmersmann/mco")
@@ -36291,6 +36331,39 @@ developed for logic expressions resulting from a logic regression analysis, i.e.
 implicants are typically composed of a maximum of 4 or 5 literals.")
     (license license:lgpl2.0+)))
 
+(define-public r-mcbette
+  (package
+    (name "r-mcbette")
+    (version "1.15.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcbette" version))
+       (sha256
+        (base32 "11r2mc1scgvvgffhpmvakj1a9i9q1b0a0rk6m40vdd9m5dkhxnk8"))))
+    (properties `((upstream-name . "mcbette")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-txtplot
+                             r-testit
+                             r-rmpfr
+                             r-mauricer
+                             r-devtools
+                             r-curl
+                             r-beautier
+                             r-beastier
+                             r-babette))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/mcbette/")
+    (synopsis "Model Comparison Using 'babette'")
+    (description
+     "BEAST2 (<https://www.beast2.org>) is a widely used Bayesian phylogenetic tool,
+that uses DNA/RNA/protein data and many model priors to create a posterior of
+jointly estimated phylogenies and parameters.  mcbette allows to do a Bayesian
+model comparison over some site and clock models, using babette
+(<https://github.com/ropensci/babette/>).")
+    (license license:gpl3)))
+
 (define-public r-mcbackscattering
   (package
     (name "r-mcbackscattering")
@@ -37144,13 +37217,13 @@ variables measured on the same individuals.")
 (define-public r-mba
   (package
     (name "r-mba")
-    (version "0.1-0")
+    (version "0.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBA" version))
        (sha256
-        (base32 "1bw3a8xcbjmhb3mfzblx8kpj3jiag8c95wm5g6xy52xrql2rj0vq"))))
+        (base32 "16yyjwnl78j6an8jqsxj9pq0d31plzhm0fifmgd6s2bzyhbfqbx2"))))
     (properties `((upstream-name . "MBA")))
     (build-system r-build-system)
     (propagated-inputs (list r-bh))
@@ -37422,13 +37495,13 @@ of data processing systems for environmental time series.")
 (define-public r-mazamalocationutils
   (package
     (name "r-mazamalocationutils")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MazamaLocationUtils" version))
        (sha256
-        (base32 "0adzwzykp410d63dxn3izkf7nmpvlxabzzw80d0205gbs3624yrd"))))
+        (base32 "1xyfashhapzw7j5svzgv6p7ngxy09zpsp5da9x51w4r3z5f4id7w"))))
     (properties `((upstream-name . "MazamaLocationUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygeocoder
@@ -41213,13 +41286,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "0vda7873sczq1qa145y8ynqaccgcmy10p2lab2wx9aa61g4z9sgc"))))
+        (base32 "0azjdkywmyn9njddy1kish69as8dg9yp18qly6fqljbh50c2rlkj"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -41228,6 +41301,7 @@ samples.")
                              r-htmlwidgets
                              r-htmltools
                              r-geojsonsf
+                             r-classint
                              r-base64enc))
     (home-page "https://walker-data.com/mapgl/")
     (synopsis "Interactive Maps with 'Mapbox GL JS' and 'MapLibre GL JS' in R")
@@ -44210,13 +44284,13 @@ spatial data on various man-made and natural structures.")
 (define-public r-machineshop
   (package
     (name "r-machineshop")
-    (version "3.7.0")
+    (version "3.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MachineShop" version))
        (sha256
-        (base32 "073v778c7zkpxhhdvqc4hiqlgj5ws9490cqpz22bk659f8f63bav"))))
+        (base32 "0kpk3fvp7w6qx71556jplpl0wsm5q4fhxzcyz9np2gq3idxl7q37"))))
     (properties `((upstream-name . "MachineShop")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

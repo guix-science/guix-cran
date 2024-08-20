@@ -1593,39 +1593,6 @@ occurrence, readability, and lexical diversity.  These functions extend the
 quanteda package and are specially designed for sparse textual data.")
     (license license:gpl3)))
 
-(define-public r-quanteda-textplots
-  (package
-    (name "r-quanteda-textplots")
-    (version "0.94.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quanteda.textplots" version))
-       (sha256
-        (base32 "0adl3dahr51f2sqdr0fng99r87pq4mknlqmhg6nfjx617rni9w2a"))))
-    (properties `((upstream-name . "quanteda.textplots")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-sna
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-quanteda
-                             r-network
-                             r-matrix
-                             r-igraph
-                             r-ggrepel
-                             r-ggplot2
-                             r-extrafont))
-    (home-page "https://cran.r-project.org/package=quanteda.textplots")
-    (synopsis "Plots for the Quantitative Analysis of Textual Data")
-    (description
-     "Plotting functions for visualising textual data.  Extends quanteda and related
-packages with plot methods designed specifically for text data, textual
-statistics, and models fit to textual data.  Plot types include word clouds,
-lexical dispersion plots, scaling plots, network visualisations, and word
-keyness plots.")
-    (license license:gpl3)))
-
 (define-public r-quanteda-textmodels
   (package
     (name "r-quanteda-textmodels")
@@ -2794,26 +2761,40 @@ et al. (2018) <doi:10.1093/bib/bby058>.")
 (define-public r-qtkit
   (package
     (name "r-qtkit")
-    (version "0.10.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qtkit" version))
        (sha256
-        (base32 "11mj6mlcfmdm2v40l9hml1ybqn2s9dkir9igl45ysk5b8855i8db"))))
+        (base32 "0bplhks1sbhx5h34ijx3xdalgvczl8zg4vi6hh7iyp92wncid1vx"))))
     (properties `((upstream-name . "qtkit")))
     (build-system r-build-system)
+    (propagated-inputs (list r-tidytext
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-openai
+                             r-matrix
+                             r-knitr
+                             r-kableextra
+                             r-gutenbergr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-chromote))
     (native-inputs (list r-knitr))
-    (home-page "https://qtalr.github.io/qtkit/")
+    (home-page "https://cran.r-project.org/package=qtkit")
     (synopsis "Quantitative Text Kit")
     (description
      "Support package for the textbook \"An Introduction to Quantitative Text Analysis
-for Linguists: Reproducible Research using R\" (Francom, 2024)
-<doi:10.4324/9781003393764> (available only after August 12, 2024).  Includes
-functions to acquire, clean, and analyze text data as well as functions to
-document and share the results of text analysis.  The package is designed to be
-used in conjunction with the book, but can also be used as a standalone package
-for text analysis.")
+for Linguists: Reproducible Research Using R\" (Francom, 2024)
+<doi:10.4324/9781003393764>.  Includes functions to acquire, clean, and analyze
+text data as well as functions to document and share the results of text
+analysis.  The package is designed to be used in conjunction with the book, but
+can also be used as a standalone package for text analysis.")
     (license license:gpl3+)))
 
 (define-public r-qte-rd

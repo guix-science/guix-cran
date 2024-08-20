@@ -1627,13 +1627,13 @@ LICENSE.note for additional license information.")
 (define-public r-tukeygh77
   (package
     (name "r-tukeygh77")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TukeyGH77" version))
        (sha256
-        (base32 "0mlq79km9m1ssa876fh93n2462i8bpwgcdxhx7j3rqhnx4q3y32q"))))
+        (base32 "0lzjvbl29aqhq6d5yg0ngs32nwl4dx26fhfi5sa6fz8vx3mwbxcz"))))
     (properties `((upstream-name . "TukeyGH77")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstpm2))
@@ -7204,32 +7204,6 @@ selecting molecular clock models.  The methods are described in Volz, E.M. and
 S.D.W. Frost (2017) <doi:10.1093/ve/vex025>.")
     (license license:gpl2)))
 
-(define-public r-treedata-table
-  (package
-    (name "r-treedata-table")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "treedata.table" version))
-       (sha256
-        (base32 "0dhnb8if5wq6hzhjg40cw80sacigqmlm7nplm1f1ay5cqx1ynfi7"))))
-    (properties `((upstream-name . "treedata.table")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lazyeval r-geiger r-data-table r-ape))
-    (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/treedata.table/https://github.com/ropensci/treedata.table/")
-    (synopsis
-     "Manipulation of Matched Phylogenies and Data using 'data.table'")
-    (description
-     "An implementation that combines trait data and a phylogenetic tree (or trees)
-into a single object of class treedata.table.  The resulting object can be
-easily manipulated to simultaneously change the trait- and tree-level sampling.
-Currently implemented functions allow users to use a data.table syntax when
-performing operations on the trait dataset within the treedata.table object.")
-    (license license:expat)))
-
 (define-public r-treeda
   (package
     (name "r-treeda")
@@ -8411,13 +8385,13 @@ mgcv'.")
 (define-public r-traminerextras
   (package
     (name "r-traminerextras")
-    (version "0.6.7")
+    (version "0.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TraMineRextras" version))
        (sha256
-        (base32 "06kl8xxszwdra3dyapnk76frnz416lbkqfvxc115pnwxlf8ad8v5"))))
+        (base32 "1nwhy0l9af9k320bwzd0klrz3n7kad95j2pr813x4b5jb7nxrr92"))))
     (properties `((upstream-name . "TraMineRextras")))
     (build-system r-build-system)
     (propagated-inputs (list r-traminer
@@ -8435,8 +8409,8 @@ the @code{TraMineR} package for sequence data exploration.  Includes, among
 others, specific functions such as state survival plots, position-wise
 group-typical states, dynamic sequence indicators, and dissimilarities between
 event sequences.  Also includes contributions by non-members of the
-@code{TraMineR} team such as the relative frequency plot and methods for
-polyadic data.")
+@code{TraMineR} team such as methods for polyadic data and for the comparison of
+groups of sequences.")
     (license license:gpl2+)))
 
 (define-public r-traminer
@@ -8508,13 +8482,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "04hbvsqawfqvfgmzbnbwxy6jlpnglpgmrnl9gp5kb6in36as92jz"))))
+        (base32 "12466rha6h7i034pwqjl37isga6lzxagjj7ppaffqg3aajzdlzss"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -13865,13 +13839,13 @@ recordings as data frame for later use.")
 (define-public r-timeplyr
   (package
     (name "r-timeplyr")
-    (version "0.8.1")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeplyr" version))
        (sha256
-        (base32 "0ghr0vrg53fgxmi1w8lx7nfrfxfxhcd4rbi2qrk6pl254n41zwm7"))))
+        (base32 "1fcczr3q7c1sqwsk2i4vqy8bpipzvl5f99j1q972c3syzyas0rqa"))))
     (properties `((upstream-name . "timeplyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -15437,43 +15411,40 @@ package.")
 (define-public r-tidyquant
   (package
     (name "r-tidyquant")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyquant" version))
        (sha256
-        (base32 "1pb7d6x2b8kf16aah1n9kq4il4kp54lcvzd27r5viwdbgvk1sr4h"))))
+        (base32 "0ysh91phdpi311ck54m1parfd1rp9q23w75q59673zkhnvzvczyl"))))
     (properties `((upstream-name . "tidyquant")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xts
+    (propagated-inputs (list r-zoo
+                             r-xts
                              r-ttr
                              r-timetk
                              r-timedate
-                             r-tidyverse
-                             r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
                              r-rlang
-                             r-riingo
                              r-readxl
                              r-readr
                              r-quantmod
-                             r-quandl
                              r-purrr
                              r-performanceanalytics
                              r-magrittr
                              r-lubridate
                              r-lazyeval
-                             r-jsonlite
+                             r-httr2
                              r-httr
                              r-ggplot2
                              r-dplyr
                              r-curl
-                             r-alphavantager))
+                             r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/business-science/tidyquant")
+    (home-page "https://business-science.github.io/tidyquant/")
     (synopsis "Tidy Quantitative Financial Analysis")
     (description
      "Bringing business and financial analysis to the tidyverse'.  The tidyquant
@@ -15623,13 +15594,13 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
 (define-public r-tidync
   (package
     (name "r-tidync")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidync" version))
        (sha256
-        (base32 "0w8i8h3rr7mjxbc5zasw6zi9v95z51635pdl91ip4awgkrkyn9f3"))))
+        (base32 "0rm62pcxchknaz0bgfy1fcam33asspbzhwf03jx9vl5vx78ymk04"))))
     (properties `((upstream-name . "tidync")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15641,7 +15612,8 @@ Dunnington et al. (2021) <doi:10.18637/jss.v101.i07>.")
                              r-ncdf4
                              r-magrittr
                              r-forcats
-                             r-dplyr))
+                             r-dplyr
+                             r-cftime))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/tidync/")
     (synopsis "Tidy Approach to 'NetCDF' Data Exploration and Extraction")
@@ -16815,13 +16787,13 @@ Additionally, it facilitates code classification via included lexicons.")
 (define-public r-tidycmprsk
   (package
     (name "r-tidycmprsk")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycmprsk" version))
        (sha256
-        (base32 "15a3v0lmqnqf3zc0mdjrxpvm02r20fbmh7ma3y1myl00gs7swv8l"))))
+        (base32 "1w88zz5wscb25j59hx1bzlmf13mh8wqngkffnhmp6vwn1a53i8lx"))))
     (properties `((upstream-name . "tidycmprsk")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16922,6 +16894,49 @@ wanted the package to be helpful in writing reports, so we also made joining
 charts in a one, clear image possible.  All charts are generated in SVG format
 and can be shown in the RStudio viewer pane or exported to HTML output of
 knitr'/'markdown'.")
+    (license license:gpl3+)))
+
+(define-public r-tidychangepoint
+  (package
+    (name "r-tidychangepoint")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidychangepoint" version))
+       (sha256
+        (base32 "15wdwpglm6pxq3211crqsi0m047b4lwvlk8bnm4d01vpgq3dz2iq"))))
+    (properties `((upstream-name . "tidychangepoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-wbs
+                             r-vctrs
+                             r-tsibble
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scales
+                             r-purrr
+                             r-patchwork
+                             r-memoise
+                             r-lifecycle
+                             r-ggplot2
+                             r-ga
+                             r-dplyr
+                             r-cli
+                             r-changepoint
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://beanumber.github.io/tidychangepoint/")
+    (synopsis "Tidy Framework for Changepoint Detection Analysis")
+    (description
+     "Changepoint detection algorithms for R are widespread but have different
+interfaces and reporting conventions.  This makes the comparative analysis of
+results difficult.  We solve this problem by providing a tidy, unified interface
+for several different changepoint detection algorithms.  We also provide
+consistent numerical and graphical reporting leveraging the broom and ggplot2
+packages.")
     (license license:gpl3+)))
 
 (define-public r-tidycensus
@@ -24156,13 +24171,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "00x6iyf61igagcjyrl5623yymcrplm35k8j7326vx13g4lzsmnln"))))
+        (base32 "0v9zabnvm196053srcbfrg5aml8rrcbx5v9byq60gv8p588yfmf8"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

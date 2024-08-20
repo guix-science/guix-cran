@@ -5111,37 +5111,6 @@ flat-top kernels.")
     (description "Collection of functions for IO Psychologists.")
     (license license:bsd-3)))
 
-(define-public r-iopspackage
-  (package
-    (name "r-iopspackage")
-    (version "2.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iopspackage" version))
-       (sha256
-        (base32 "1l51h8ljcqdrbcn10d0x98ycnz8xd9da4r6y4wc8dbkvaafynm42"))))
-    (properties `((upstream-name . "iopspackage")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-tidyr
-                             r-readxl
-                             r-openxlsx
-                             r-economiccomplexity
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=iopspackage")
-    (synopsis "IO-PS Framework Package")
-    (description
-     "This package provides a developmental R tool related to the input-output product
-space (IO-PS).  The package requires two compulsory user inputs (raw CEPPI BACI
-trade data, and any acceptable ISO country code) and has 4 optional user inputs
-(a value chain map, chosen complexity method, number of iterations to be
-performed, and a trade digit level).  Various metrics are calculated, such as
-Economic- and Product complexity, distance, opportunity gain, and inequality
-metrics, to facilitate better decision making regarding industrial policy
-making.")
-    (license license:gpl3)))
-
 (define-public r-ionr
   (package
     (name "r-ionr")
@@ -8319,13 +8288,13 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 (define-public r-inlaspacetime
   (package
     (name "r-inlaspacetime")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INLAspacetime" version))
        (sha256
-        (base32 "0yyhcizaj90qqvirrk74whynxf7zvv09w79k4j61i4n84hm0njdm"))))
+        (base32 "06wn4za5lbcj135xrh4pxcll3wwm1g5yjs61wngp98yhlik8i1hl"))))
     (properties `((upstream-name . "INLAspacetime")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-sp r-sf r-matrix r-fmesher))
@@ -8337,8 +8306,9 @@ Geological Survey (USGS) Idaho National Laboratory Project Office.")
 INLA package (<https://www.r-inla.org>).  These objects contain data to for the
 cgeneric interface in INLA', enabling fast parallel computations.  We
 implemented the spatial barrier model, see Bakka et.  al. (2019)
-<doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models in
-Lindgren et.  al. (2023) <doi:10.48550/@code{arXiv.2006.04917>}.  Details are
+<doi:10.1016/j.spasta.2019.01.002>, and some of the spatio-temporal models
+proposed in Lindgren et.  al. (2023)
+<https://www.idescat.cat/sort/sort481/48.1.1.Lindgren-etal.pdf>.  Details are
 provided in the available vignettes and from the URL bellow.")
     (license license:gpl2+)))
 
@@ -15597,43 +15567,6 @@ Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
 
-(define-public r-iclustervb
-  (package
-    (name "r-iclustervb")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "iClusterVB" version))
-       (sha256
-        (base32 "17jwpl1h7khcz6isix88ia95p1fldl2mh4lsjiyfi1adyylqpvdq"))))
-    (properties `((upstream-name . "iClusterVB")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-varsellcm
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-r-utils
-                             r-polca
-                             r-pheatmap
-                             r-mvtnorm
-                             r-mcmcpack
-                             r-mclust
-                             r-inline
-                             r-ggplot2
-                             r-cowplot
-                             r-clustmixtype
-                             r-cluster))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/AbdalkarimA/iClusterVB")
-    (synopsis
-     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
-    (description
-     "This package provides a variational Bayesian approach for fast integrative
-clustering and feature selection, facilitating the analysis of multi-view, mixed
-type, high-dimensional datasets with applications in fields like cancer
-research, genomics, and more.")
-    (license license:expat)))
-
 (define-public r-iclick
   (package
     (name "r-iclick")
@@ -15672,13 +15605,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "0g90nczc9d0y1fpkw3x89iiqkpn9ibdld0r9yc9y2sjdjj587lzw"))))
+        (base32 "09s7x956bx84z9ci017zzf96306wwdy78v1jaknps2rl85xfh0bi"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -15860,13 +15793,13 @@ VMS database, the ICES DATSU web services, and the ICES @code{SharePoint} site."
 (define-public r-icesat2r
   (package
     (name "r-icesat2r")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IceSat2R" version))
        (sha256
-        (base32 "03j9ygabadhniybfngv10klj1180g40sgybrwn5wv6pb02kdpr58"))))
+        (base32 "1l4lafbnlll3x9dyzb1mz4dw7dk2bdc22wq1vydwg22gd113wxxl"))))
     (properties `((upstream-name . "IceSat2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -17280,13 +17213,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "0s0mnyhd0xcrr75qhqwgyipn22hlbgjf9nfi7gxbmwns16g3crb8"))))
+        (base32 "0bgjhfsplqs4j20x2d1mdhqpdjfnvicgzac62mv4284blzjhnz2d"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-rcpp r-pedtools r-glue r-ggplot2))

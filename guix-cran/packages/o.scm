@@ -472,35 +472,6 @@ different tables (e.g., time and scope conditions).  The package also provides
 publishable @code{LaTeX} code to present the sample information.")
     (license license:gpl3)))
 
-(define-public r-overturer
-  (package
-    (name "r-overturer")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "overtureR" version))
-       (sha256
-        (base32 "07m6ly4wci51zsrszznpcds9z8acv4lajf29s8icn21xkfsnr32f"))))
-    (properties `((upstream-name . "overtureR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sf
-                             r-rlang
-                             r-glue
-                             r-duckdb
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/arthurgailes/overtureR")
-    (synopsis
-     "Load 'Overture' Datasets as 'dbplyr' and 'sf'-Ready Data Frames")
-    (description
-     "An integrated R interface to the Overture API
-(<https://docs.overturemaps.org/>).  Allows R users to return Overture data as
-dbplyr data frames or materialized sf spatial data frames.")
-    (license license:expat)))
-
 (define-public r-overturemapsr
   (package
     (name "r-overturemapsr")
@@ -8178,19 +8149,22 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "0vq73b4p3a99fm1rl0dm98cy6jjnrjn349plyzc7zac9xfblnb1m"))))
+        (base32 "07w2k4hp33ll0adlcnpi7pbv3zqq806dish1vghigcx4wzvpsfgi"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
                              r-stringr
                              r-snakecase
                              r-rlang
+                             r-purrr
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-dbplyr
@@ -8741,16 +8715,21 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-ollamar
   (package
     (name "r-ollamar")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ollamar" version))
        (sha256
-        (base32 "0zw71221fyjczkfj47hbs2ddl7p8h8igzp9zijfb5c6m4qg03gbl"))))
+        (base32 "1cs12w5rcm2v7bnzbmqpycm5r2n8c7iw6g6jzzw272hbsjjqkm8a"))))
     (properties `((upstream-name . "ollamar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-jsonlite r-httr2 r-glue))
+    (propagated-inputs (list r-tibble
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-crayon
+                             r-base64enc))
     (home-page "https://hauselin.github.io/ollama-r/")
     (synopsis "'Ollama' Language Models")
     (description
@@ -8970,6 +8949,39 @@ Internet Institute (OII), University of Oxford, but the functions should be
 useful for general data analysis and especially for analysis of categorical and
 ordinal data.")
     (license license:expat)))
+
+(define-public r-ohun
+  (package
+    (name "r-ohun")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ohun" version))
+       (sha256
+        (base32 "0l3c6p1q2mjvr03q905ygmaax94bn3a0fkfn8kfjr6d5bs60283s"))))
+    (properties `((upstream-name . "ohun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-warbler
+                             r-tuner
+                             r-sf
+                             r-seewave
+                             r-rlang
+                             r-igraph
+                             r-ggplot2
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/ohun/")
+    (synopsis "Optimizing Acoustic Signal Detection")
+    (description
+     "Facilitates the automatic detection of acoustic signals, providing functions to
+diagnose and optimize the performance of detection routines.  Detections from
+other software can also be explored and optimized.  This package has been
+peer-reviewed by @code{rOpenSci}.  Araya-Salas et al. (2022)
+<doi:10.1101/2022.12.13.520253>.")
+    (license license:gpl2+)))
 
 (define-public r-ohtadstats
   (package
@@ -10806,13 +10818,13 @@ found here: <https://www.ncei.noaa.gov/products/world-ocean-atlas>.")
 (define-public r-oce
   (package
     (name "r-oce")
-    (version "1.8-2")
+    (version "1.8-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oce" version))
        (sha256
-        (base32 "1a9zld3q009v9bvqpkn4fy0qfrsjmcz9j1f0jva75ygi8hdywpyg"))))
+        (base32 "13vg1g3pn1bmmjb5sb34qmwy2czxigin02nz4vkwlw9z4vpjkwgi"))))
     (properties `((upstream-name . "oce")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gsw))
@@ -11063,31 +11075,27 @@ before the conclusions change.  This package provides tools for doing a
 sensitivity analysis for regression (linear, logistic, and cox) style models.")
     (license license:gpl2)))
 
-(define-public r-observer
+(define-public r-obsmd
   (package
-    (name "r-observer")
-    (version "0.1.2")
+    (name "r-obsmd")
+    (version "12.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "observer" version))
+       (uri (cran-uri "OBsMD" version))
        (sha256
-        (base32 "1027827k57qb4xppx0xxxffd1s3n7pz754irdx3v1v3piix8xi8m"))))
-    (properties `((upstream-name . "observer")))
+        (base32 "02ik14vpj8diwc0ylp37bk6s96mp9b79myzy8y9mmp7krj5p473q"))))
+    (properties `((upstream-name . "OBsMD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-magrittr
-                             r-lazyeval
-                             r-dplyr
-                             r-bit
-                             r-bazar))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulponcet/observer")
-    (synopsis "Observe and Check your Data")
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=OBsMD")
+    (synopsis "Objective Bayesian Model Discrimination in Follow-Up Designs")
     (description
-     "Checks that a given dataset passes user-specified rules.  The main functions are
-observe_if() and inspect().")
-    (license license:expat)))
+     "This package implements the objective Bayesian methodology proposed in Consonni
+and Deldossi in order to choose the optimal experiment that better discriminate
+between competing models, see Deldossi and Nai Ruscone (2020)
+<doi:10.18637/jss.v094.i02>.")
+    (license license:gpl2+)))
 
 (define-public r-observation
   (package

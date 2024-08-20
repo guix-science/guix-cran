@@ -13,6 +13,11 @@
   #:use-module (gnu packages web)
   #:use-module (gnu packages tls)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages algebra)
+  #:use-module (gnu packages geo)
+  #:use-module (gnu packages ghostscript)
+  #:use-module (gnu packages pulseaudio)
+  #:use-module (gnu packages audio)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -3419,16 +3424,17 @@ ISBN:013850363X).")
 (define-public r-wikkitidy
   (package
     (name "r-wikkitidy")
-    (version "0.1.12")
+    (version "0.1.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wikkitidy" version))
        (sha256
-        (base32 "11i9spgl9zicy980a9r93277b7y6zqixnn8cks8yfh0phvazfgvj"))))
+        (base32 "03gdzmmic45z82a4c6cvdmispjl2r8iwkmmdzxm2b7ag4f7araak"))))
     (properties `((upstream-name . "wikkitidy")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-webfakes
+                             r-vctrs
                              r-tibble
                              r-stringr
                              r-rlang
@@ -4612,54 +4618,6 @@ learned on a training dataset.  To quantify how the predictor will behave as a
 risk stratifier, the quantiles of the distributions of weight of evidence in
 cases and controls can be calculated and plotted.")
     (license license:gpl3)))
-
-(define-public r-wes
-  (package
-    (name "r-wes")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WES" version))
-       (sha256
-        (base32 "11dsn0dkc0z313x8md6qhkafk9cnbp4v64a895d54b27329ryzis"))))
-    (properties `((upstream-name . "WES")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-xml
-                             r-whitebox
-                             r-stars
-                             r-sp
-                             r-sf
-                             r-rworldmap
-                             r-rcurl
-                             r-raster
-                             r-openmeteo
-                             r-jsonlite
-                             r-httr
-                             r-hdinterval
-                             r-glue
-                             r-foreach
-                             r-exactextractr
-                             r-elevatr
-                             r-dplyr
-                             r-data-table
-                             r-chirps))
-    (home-page "https://www.r-wes.com/")
-    (synopsis "Tools for Analyzing Wastewater and Environmental Sampling Data")
-    (description
-     "This package provides reproducible functions for collating and analyzing data
-from environmental sampling studies.  Environmental Sampling (ES) of infectious
-diseases involves collecting samples from various sources (such as sewage,
-water, air, soil, or surfaces) to monitor the presence of pathogens in the
-environment.  Analysis of ES data often requires the calculation of Real-Time
-Quantitative PCR (@code{qPCR}) variables, normalizing ES observations, and
-analyzing sampling site characteristics.  To help reduce the complexity of these
-analyses we have implemented tools that assist with establishing standardized ES
-data formats, absolute and relative quantification of @code{qPCR} data,
-estimation of @code{qPCR} amplification efficiency, and collating open-source
-spatial data for sampling sites.")
-    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-wemix
   (package
@@ -6034,6 +5992,47 @@ to web development.")
 client populations and workload definitions.")
     (license license:gpl3)))
 
+(define-public r-weathersentiment
+  (package
+    (name "r-weathersentiment")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WeatherSentiment" version))
+       (sha256
+        (base32 "1v8bi4w9h1yi0fk9l4in7f7fhqv8ws85n06134x740rscrsa3aws"))))
+    (properties `((upstream-name . "WeatherSentiment")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud
+                             r-tidyverse
+                             r-tidytext
+                             r-tidyr
+                             r-stringr
+                             r-sentimentr
+                             r-rcolorbrewer
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=WeatherSentiment")
+    (synopsis "Comprehensive Analysis of Tweet Sentiments and Weather Data")
+    (description
+     "This package provides a comprehensive suite of functions for processing,
+analyzing, and visualizing textual data from tweets is offered.  Users can clean
+tweets, analyze their sentiments, visualize data, and examine the correlation
+between sentiments and environmental data such as weather conditions.  Main
+features include text processing, sentiment analysis, data visualization,
+correlation analysis, and synthetic data generation.  Text processing involves
+cleaning and preparing tweets by removing textual noise and irrelevant words.
+Sentiment analysis extracts and accurately analyzes sentiments from tweet texts
+using advanced algorithms.  Data visualization creates various charts like word
+clouds and sentiment polarity graphs for visual representation of data.
+Correlation analysis examines and calculates the correlation between tweet
+sentiments and environmental variables such as weather conditions.
+Additionally, random tweets can be generated for testing and evaluating the
+performance of analyses, empowering users to effectively analyze and interpret
+Twitter data for research and commercial purposes.")
+    (license license:gpl3)))
+
 (define-public r-weatheroz
   (package
     (name "r-weatheroz")
@@ -6413,13 +6412,13 @@ correlation as a specific case of the polyserial.")
 (define-public r-wconf
   (package
     (name "r-wconf")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wconf" version))
        (sha256
-        (base32 "0860shxvyzgvbnfr0xrpi5cx0r5n6bcrk6ivhgryn48r0k3yrlp4"))))
+        (base32 "01ngm0ragl9fqhnk9l9pxdf23n16mvmy9znfdfd1q70qvj9y8v22"))))
     (properties `((upstream-name . "wconf")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -6438,11 +6437,13 @@ can also work standalone when provided data in matrix form.  References: Kuhn,
 M. (2008) \"Building Perspective Models in R Using the caret Package\"
 <doi:10.18637/jss.v028.i05> Monahov, A. (2021) \"Model Evaluation with Weighted
 Threshold Optimization (and the mewto R package)\" <doi:10.2139/ssrn.3805911>
-Starovoitov, V., Golub, Y. (2020).  New Function for Estimating Imbalanced Data
-Classification Results.  Pattern Recognition and Image Analysis, 295â302 Van
-de Velden, M., Iodice D'Enza, A., Markos, A., Cavicchia, C. (2023) \"A general
-framework for implementing distances for categorical variables\"
-<doi:10.48550/@code{arXiv.2301.02190>}.")
+Monahov, A. (2024) \"Improved Accuracy Metrics for Classification with Imbalanced
+Data and Where Distance from the Truth Matters, with the wconf R Package\"
+<doi:10.2139/ssrn.4802336> Starovoitov, V., Golub, Y. (2020).  New Function for
+Estimating Imbalanced Data Classification Results.  Pattern Recognition and
+Image Analysis, 295â302 Van de Velden, M., Iodice D'Enza, A., Markos, A.,
+Cavicchia, C. (2023) \"A general framework for implementing distances for
+categorical variables\" <doi:10.48550/@code{arXiv.2301.02190>}.")
     (license license:cc-by-sa4.0)))
 
 (define-public r-wcompo
@@ -6841,13 +6842,13 @@ index and windowed scale index (Benitez et al. (2010)
 (define-public r-wavethresh
   (package
     (name "r-wavethresh")
-    (version "4.7.2")
+    (version "4.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wavethresh" version))
        (sha256
-        (base32 "0mmn8f5x8iw8vn0zsskzs3g41bm28prvzy9bmbng8va94g5795ws"))))
+        (base32 "133msy9bn32531n9z9wr9z6hccz5w8zczv0a5f2awkfbap8nlwn2"))))
     (properties `((upstream-name . "wavethresh")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -7951,6 +7952,53 @@ the stable nitrogen isotope ratios of them.  Bone collagen turnover rates
 estimated anew and the approximate Bayesian computation (ABC) were adopted in
 this package.")
     (license license:gpl3+)))
+
+(define-public r-warbler
+  (package
+    (name "r-warbler")
+    (version "1.1.32")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "warbleR" version))
+       (sha256
+        (base32 "0wkblxs30a8iz63dp7yls03jsa12w05nnb9p5kc986m589nrj5a6"))))
+    (properties `((upstream-name . "warbleR")))
+    (build-system r-build-system)
+    (inputs (list sox libsndfile ghostscript gdal fftw))
+    (propagated-inputs (list r-tuner
+                             r-testthat
+                             r-seewave
+                             r-rjson
+                             r-rcurl
+                             r-rcpp
+                             r-pbapply
+                             r-naturesounds
+                             r-monitor
+                             r-knitr
+                             r-fftw
+                             r-dtw
+                             r-cli
+                             r-bioacoustics))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://marce10.github.io/warbleR/")
+    (synopsis "Streamline Bioacoustic Analysis")
+    (description
+     "This package provides functions aiming to facilitate the analysis of the
+structure of animal acoustic signals in R'. @code{warbleR} makes use of the
+basic sound analysis tools from the packages @code{tuneR} and seewave', and
+offers new tools for acoustic structure analysis.  The main features of the
+package are the use of loops to apply tasks through acoustic signals referenced
+in a selection (annotation) table and the production of spectrograms in image
+files that allow to organize data and verify acoustic analyzes.  The package
+offers functions to explore, organize and manipulate multiple sound files,
+explore and download Xeno-Canto recordings, create spectrograms of complete
+recordings or individual signals, run different measures of acoustic signal
+structure, evaluate the performance of measurement methods, catalog signals,
+characterize different structural levels in acoustic signals, run statistical
+analysis of duet coordination and consolidate databases and annotation tables,
+among others.")
+    (license license:gpl2+)))
 
 (define-public r-warabandi
   (package

@@ -3237,13 +3237,13 @@ Jacobian actions etc.")
 (define-public r-umatrix
   (package
     (name "r-umatrix")
-    (version "4.0")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umatrix" version))
        (sha256
-        (base32 "0mpn61hiqx5ql23qwi299ifmpgcyx2px1hj70kq1ybqwxi9kyc1w"))))
+        (base32 "03ci20nz0vfaw36miq1gvyg0spmmg2bd229xkrnbv6za1q18y08l"))))
     (properties `((upstream-name . "Umatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -3658,13 +3658,13 @@ Data (2023) <doi:10.1038/s41597-023-01949-y>.")
 (define-public r-ukb-covid19
   (package
     (name "r-ukb-covid19")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKB.COVID19" version))
        (sha256
-        (base32 "0v1ppk62nm4cx0n028bd9pr8cadcpy2kr2ir21hnzhsb7m15j1dc"))))
+        (base32 "02crz9spzl7xpa1csrwrrja9a6z8937rghfkm1awwwv4nrx1cwr6"))))
     (properties `((upstream-name . "UKB.COVID19")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse

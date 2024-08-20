@@ -1366,13 +1366,13 @@ level citizen voting age population from block group data.")
 (define-public r-cv
   (package
     (name "r-cv")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cv" version))
        (sha256
-        (base32 "1jhvi0bf8r66q2kqjylg0fdnzxpsaxq1ivm82akhczivjn39wvv8"))))
+        (base32 "0ng9fvc2xizmbn0fn9nkkj2ryf0xnx95nvwsxa71awjzs7zjd2ai"))))
     (properties `((upstream-name . "cv")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
@@ -1657,13 +1657,13 @@ moment-based method via moment determinants.  Paul Kabaila (2022)
 (define-public r-cusp
   (package
     (name "r-cusp")
-    (version "2.3.6")
+    (version "2.3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cusp" version))
        (sha256
-        (base32 "0rpljddawrbq2q04fc426s57wbl3adp6mfkdv8bpjkfcyq2swbdh"))))
+        (base32 "010qb3asn3nml44xyn7ch2vm8fhjh3a28hqivvr1q7mdzqjq6v3x"))))
     (properties `((upstream-name . "cusp")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cusp")
@@ -2854,13 +2854,13 @@ the number of individuals is large.  For the main ctsem package, see
 (define-public r-ctsem
   (package
     (name "r-ctsem")
-    (version "3.10.0")
+    (version "3.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ctsem" version))
        (sha256
-        (base32 "10ip34y03jiidwcmqlvhb4sw0f0972l3pkx694whr1dlnlb57yjr"))))
+        (base32 "040risfqqb8zbnd9ingfv6labqg8lry43943h2kr6vlaq4h3jdwb"))))
     (properties `((upstream-name . "ctsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7609,18 +7609,16 @@ sorting.")
 (define-public r-crandep
   (package
     (name "r-crandep")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crandep" version))
        (sha256
-        (base32 "0g807ph2fnpg6ll4li0pgw7gd61wzyibjnl74dzl1jaq7n1ymh2h"))))
+        (base32 "07y5gkxdr12v715zy9skgjhw3sjsjlscpfril4hcdz0qwhr5cy5d"))))
     (properties `((upstream-name . "crandep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-rvest
+    (propagated-inputs (list r-stringr
                              r-rcpparmadillo
                              r-rcpp
                              r-pracma
@@ -7638,8 +7636,7 @@ and analyse the dependency network, enabling us to have a bird's-eye view of the
 CRAN ecosystem.  One aspect of interest is the number of reverse dependencies of
 the packages, or equivalently the in-degree distribution of the dependency
 network.  This can be fitted by the power law and/or an extreme value mixture
-distribution <doi:10.48550/@code{arXiv.2008.03073>}, of which functions are
-provided.")
+distribution <doi:10.1111/stan.12355>, of which functions are provided.")
     (license license:gpl2+)))
 
 (define-public r-cramer
@@ -13459,13 +13456,13 @@ revision).")
 (define-public r-copula
   (package
     (name "r-copula")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "copula" version))
        (sha256
-        (base32 "19kp6q052jp0wsn2zh6wz6m9hk04nhwlc2pqwrma9ynny6s6q6cv"))))
+        (base32 "0kshyr77qiidcmi51dyapbdv46dkxv5n4p71vwh7cyb091zqpmzl"))))
     (properties `((upstream-name . "copula")))
     (build-system r-build-system)
     (propagated-inputs (list r-stabledist
@@ -13719,13 +13716,13 @@ software.")
 (define-public r-copernicusdem
   (package
     (name "r-copernicusdem")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CopernicusDEM" version))
        (sha256
-        (base32 "073glifdcrg11ffnz1gim36800jn0saqdamqlda81q4a4lla7il5"))))
+        (base32 "00rpdfspyd94jr2ahw7dc661wdgxnxzcxgg40yn48c1v6hxjhfhp"))))
     (properties `((upstream-name . "CopernicusDEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-glue r-foreach r-doparallel))
@@ -15487,13 +15484,13 @@ Melograna, et.  al., (2023) <doi:10.3389/fmicb.2023.1170391>.")
 (define-public r-conrad
   (package
     (name "r-conrad")
-    (version "1.0.0")
+    (version "1.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "conrad" version))
        (sha256
-        (base32 "0n0snn7ppmr1l5y0978sl6bj614p0b5vvh4hw55pjbj9qn1fshaj"))))
+        (base32 "19ya71qn898rfrbn5v72dhawsr56b29k3nw9zx096rr6iqws023p"))))
     (properties `((upstream-name . "conrad")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-jsonlite r-httr2))
@@ -16822,31 +16819,6 @@ package condvis'.  Catherine B. Hurley, Mark O'Connell,Katarina Domijan (2021)
      "Exploring fitted models by interactively taking 2-D and 3-D sections in data
 space.")
     (license license:gpl2+)))
-
-(define-public r-condusco
-  (package
-    (name "r-condusco")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "condusco" version))
-       (sha256
-        (base32 "0zydinzlksynkz4r712rzv9qqdx8dkdz3h1ygi9cfmd6hya3580s"))))
-    (properties `((upstream-name . "condusco")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-dbi r-bigrquery r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ras44/condusco")
-    (synopsis "Query-Driven Pipeline Execution and Query Templates")
-    (description
-     "Runs a function iteratively over each row of either a dataframe or the results
-of a query.  Use the @code{BigQuery} and DBI wrappers to iteratively pass each
-row of query results to a function.  If a field contains a JSON string, it will
-be converted to an object.  This is helpful for queries that return JSON strings
-that represent objects.  These fields can then be treated as objects by the
-pipeline.")
-    (license license:gpl3)))
 
 (define-public r-conductor
   (package
@@ -18443,13 +18415,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "17ib9ln5rwy0jmadciqiynfqxyx57hfjyvp46pr9alix3sgh140q"))))
+        (base32 "1nx2ndv42vxaxv3g2cfd7n0xsdb0kdcaa2b43rf2yazyc8a5hdw1"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -18462,9 +18434,9 @@ designs (LHDs) etc.  For further references one can see Mckay (1979)
 <https://cir.nii.ac.jp/crid/1570291225616774784>.  In this package, we have
 provided algorithms for generate efficient LHDs and UDs.  Here, generated LHDs
 are efficient as they possess lower value of Maxpro measure, Phi_p value and
-Maximum Absolute Correlation (MAC) value.  On the other hand, the produced UDs
-are having good space-filling property as they attained the lower bound of
-Discrete Discrepancy measure.")
+Maximum Absolute Correlation (MAC) value based on the weightage given to each
+criterion.  On the other hand, the produced UDs are having good space-filling
+property as they attained the lower bound of Discrete Discrepancy measure.")
     (license license:gpl2+)))
 
 (define-public r-competitiontoolbox
@@ -23342,37 +23314,35 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "01cq2pyl0q45csjp9jj0x528432gi490ic0p6kmzzn40xl5l0j1n"))))
+        (base32 "038192srvmfasa9vg5d79imh9nr3pllf2lcn5q5gwgas38c4mmli"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
-    (propagated-inputs (list r-leaps r-latticeextra r-lattice))
+    (propagated-inputs (list r-leaps r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://www.psychometrica.de/cNorm_en.html")
     (synopsis "Continuous Norming")
     (description
-     "Conventional methods for producing standard scores or percentiles in
-psychometrics or biometrics are often plagued with jumps or gaps (i.e.,
-discontinuities) in norm tables and low confidence for assessing extreme scores.
- The continuous norming method introduced by A. Lenhard et al. (2016,
-<doi:10.1177/1073191116656437>; 2019, <doi:10.1371/journal.pone.0222279>; 2021
-<doi: 10.1177/0013164420928457>) estimates percentile development (e.  g.  over
-age) and generates continuous test norm scores on the basis of the raw data from
-standardization samples, without requiring assumptions about the distribution of
-the raw data: Norm scores are directly established from raw data by modeling the
-latter ones as a function of both percentile scores and an explanatory variable
-(e.g., age).  The method minimizes bias arising from sampling and measurement
-error, while handling marked deviations from normality, addressing bottom or
-ceiling effects and capturing almost all of the variance in the original norm
-data sample.  It includes procedures for post stratification of norm samples to
-overcome bias in data collection and to mitigate violations of
-representativeness.  An online demonstration is available via
-<https://cnorm.shinyapps.io/@code{cNORM/>}.")
+     "This package provides a comprehensive toolkit for generating continuous test
+norms in psychometrics and biometrics, and analyzing model fit. @code{cNORM}
+offers both distribution-free modeling using Taylor polynomials and parametric
+modeling using the beta-binomial distribution.  Originally developed for
+achievement tests, it's applicable to a wide range of mental, physical, or other
+test scores dependent on continuous or discrete explanatory variables.  The
+package provides several advantages: It minimizes deviations from
+representativeness in subsamples, interpolates between discrete levels of
+explanatory variables, and significantly reduces the required sample size
+compared to conventional norming per age group. @code{cNORM} enables graphical
+and analytical evaluation of model fit, accommodates a wide range of scales
+including those with negative and descending values, and even supports
+conventional norming.  It generates norm tables including confidence intervals.
+It also includes methods for addressing representativeness issues through
+Iterative Proportional Fitting.")
     (license license:agpl3)))
 
 (define-public r-cnmap
@@ -24622,13 +24592,13 @@ multidimensional contexts.")
 (define-public r-clvtools
   (package
     (name "r-clvtools")
-    (version "0.10.0")
+    (version "0.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CLVTools" version))
        (sha256
-        (base32 "0l6jp6h2c0gcav3mnw9rz1wba7va2261pjjw5r3hqjjg8jrhfp0r"))))
+        (base32 "102r2p8y9pr03gj3s7pn0chy56300gxffmnadm0qfklwl0mlv63g"))))
     (properties `((upstream-name . "CLVTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -24636,11 +24606,13 @@ multidimensional contexts.")
                              r-rcpparmadillo
                              r-rcpp
                              r-optimx
+                             r-numderiv
                              r-matrix
                              r-mass
                              r-lubridate
                              r-ggplot2
                              r-formula
+                             r-digest
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bachmannpatrick/CLVTools")
@@ -25349,13 +25321,13 @@ clusters that exist across the datasets.")
 (define-public r-clustermq
   (package
     (name "r-clustermq")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clustermq" version))
        (sha256
-        (base32 "1wrbkimckskldb77cyicqklrhyzp5d58hjgnzp2gwj73cysiw5zx"))))
+        (base32 "1zr3na4if3a6za0fmx37slz3gjhgddc6ca78mvmgfi7n9wlczhyx"))))
     (properties `((upstream-name . "clustermq")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -28564,13 +28536,13 @@ trees in practice.")
 (define-public r-classcomparison
   (package
     (name "r-classcomparison")
-    (version "3.1.8")
+    (version "3.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ClassComparison" version))
        (sha256
-        (base32 "0fd5s4697pvj295fzvvn5mislf42wfzrcvks17v98388rph586gl"))))
+        (base32 "0lyc437cmf5yv6ikfcvqdi21z8f2pa60z0czf0cig1w1n65x3lw1"))))
     (properties `((upstream-name . "ClassComparison")))
     (build-system r-build-system)
     (propagated-inputs (list r-oompabase r-biobase))
@@ -36864,6 +36836,34 @@ Bioinformatics where the samples are expensive and must be precise in reflecting
 the population by possessing least sampling variance.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-ccsrfind
+  (package
+    (name "r-ccsrfind")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CCSRfind" version))
+       (sha256
+        (base32 "0h1nr91d3b8hwl7b8djhrmcf7bbxdl2y6krbqd31zfm5ly1bd7cc"))))
+    (properties `((upstream-name . "CCSRfind")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CCSRfind")
+    (synopsis "Convert ICD-10 Codes to CCSR Codes")
+    (description
+     "This package provides a tool for matching ICD-10 codes to corresponding Clinical
+Classification Software Refined (CCSR) codes.  The main function, CCSRfind(),
+identifies each CCSR code that applies to an individual given their diagnosis
+codes.  It also provides a summary of CCSR codes that are matched to a dataset.
+The package contains 3 datasets: DXCCSR (mapping of ICD-10 codes to CCSR codes),
+Legend (conversion of DXCCSR to CCSRfind-usable format for CCSR codes with less
+than or equal to 1000 ICD-10 diagnosis codes), and @code{LegendExtend}
+(conversion of DXCCSR to CCSRfind-usable format for CCSR codes with more than
+1000 ICD-10 dx codes).  The disc() function applies grepl() ('base') to multiple
+columns and is used in CCSRfind().")
+    (license license:gpl3)))
+
 (define-public r-ccrtm
   (package
     (name "r-ccrtm")
@@ -39838,13 +39838,13 @@ similar cases.  The underlying concept is inspired by the work of Dippon J.
 (define-public r-casebase
   (package
     (name "r-casebase")
-    (version "0.10.5")
+    (version "0.10.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "casebase" version))
        (sha256
-        (base32 "0i9x0z6b3s2qzdyjsaj4bafk20yhbgggljxdwhmm52b4qm7rrgzz"))))
+        (base32 "0p2dixiww3l1lwbr512is6prjm606kx8y0wlq90mwfkxbzzq59d9"))))
     (properties `((upstream-name . "casebase")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam r-survival r-mgcv r-ggplot2 r-data-table))
@@ -40708,13 +40708,13 @@ re-used to construct summary tables, visualizations, and written reports.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "0vadra5d9bbair6z5qfj77y4h6qa6gzk929mj8xq41iyv5nkpp6i"))))
+        (base32 "1hikcd696f6i74nlqgkfi7nip99xw25pkqxxn78c5bawmxxfq15v"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -41132,28 +41132,25 @@ read <https://shreddr.captricity.com/developer/overview/>.")
 (define-public r-capo4sim
   (package
     (name "r-capo4sim")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CaPO4Sim" version))
        (sha256
-        (base32 "0s4mqlas41ll656hj1imzqydgwgw002d469z01fjdcs4d6daljw6"))))
+        (base32 "1dnaskasjzhsvnxqfgww2nwy8ccciilgn1kd7jjj3mx9ksc2wnhr"))))
     (properties `((upstream-name . "CaPO4Sim")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
                              r-shinywidgets
                              r-shinyjs
                              r-shinyjqui
-                             r-shinydashboardplus
-                             r-shinydashboard
                              r-shinycssloaders
                              r-shiny
                              r-rintrojs
                              r-purrr
                              r-plotly
                              r-magrittr
-                             r-htmltools
                              r-dt))
     (home-page "https://cran.r-project.org/package=CaPO4Sim")
     (synopsis
@@ -41165,8 +41162,7 @@ ensure efficient computations.  The underlying model is accessible here
 <https://pubmed.ncbi.nlm.nih.gov/28747359/)>.  The first application explores
 the fundamentals of Ca-Pi homeostasis, while the second provides interactive
 case studies for in-depth exploration of the topic, thereby seeking to foster
-student engagement and an integrative understanding of Ca-Pi regulation.  These
-applications are hosted at <https://rinterface.com/@code{AppsPhysiol.html>}.")
+student engagement and an integrative understanding of Ca-Pi regulation.")
     (license license:gpl3)))
 
 (define-public r-capn

@@ -397,6 +397,35 @@ intake level of a given nutrient.  A shiny app exposing the main functionalities
 of the package is also provided.")
     (license license:gpl3)))
 
+(define-public r-nuss
+  (package
+    (name "r-nuss")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NUSS" version))
+       (sha256
+        (base32 "10xwcihr8lfrr1s6bgh7drzc1i2hb1q2v00db2n36xjm9x4im77a"))))
+    (properties `((upstream-name . "NUSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-textclean
+                             r-text2vec
+                             r-stringr
+                             r-rcpp
+                             r-magrittr
+                             r-dplyr
+                             r-bh))
+    (home-page "https://github.com/theogrost/NUSS")
+    (synopsis "Mixed N-Grams and Unigram Sequence Segmentation")
+    (description
+     "Segmentation of short text sequences - like hashtags - into the separated words
+sequence, done with the use of dictionary, which may be built on custom corpus
+of texts.  Unigram dictionary is used to find most probable sequence, and
+n-grams approach is used to determine possible segmentation given the text
+corpus.")
+    (license license:gpl3+)))
+
 (define-public r-numosl
   (package
     (name "r-numosl")
@@ -5308,13 +5337,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.8.2")
+    (version "10.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "11jacanqf7c7kaarwc6micmhzg47sna1lfj5fkpvpa9396xpbrjd"))))
+        (base32 "162mk4wfs85gk2hjdg8inj58cn7m3drvgb5xms1by8kxq3knldg9"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5324,7 +5353,6 @@ chi-square tests.")
                              r-rcppparallel
                              r-rcpp
                              r-quantmod
-                             r-plyr
                              r-foreach
                              r-doparallel
                              r-data-table))
@@ -15323,13 +15351,13 @@ See docs for limitations.")
 (define-public r-nanonext
   (package
     (name "r-nanonext")
-    (version "1.1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanonext" version))
        (sha256
-        (base32 "15p3ri6dg7x5vki9lfzp35h20633dwqz1pyqm0p5yfgzics4qlgm"))))
+        (base32 "0rd0f0fnvjv3y7pkkdlm8fi5708nx4v78xw9r0k6b7rr2ww70hrr"))))
     (properties `((upstream-name . "nanonext")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

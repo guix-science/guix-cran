@@ -23,7 +23,6 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages algebra)
-  #:use-module (gnu packages geo)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
   #:use-module (guix-cran packages x)
@@ -665,16 +664,16 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "2.1.0")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "0nqjiz8f0vqcmlcqva5zr971rrcfbw6gak22y2wqbila0za6asfv"))))
+        (base32 "0xv9h1vdp5lvriz97ljjb9kzikawmb1xln1jsbp0gafk6jcbmsvk"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-ggplot2 r-ecp r-dplyr))
+    (propagated-inputs (list r-tidyr r-sampling r-ggplot2 r-ecp r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FuzzyPovertyR")
     (synopsis "Estimation of Fuzzy Poverty Measures")
@@ -5141,13 +5140,13 @@ for Polymerase Chain Reaction) in biparental populations such as F1, F2, BC
 (define-public r-fragility
   (package
     (name "r-fragility")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fragility" version))
        (sha256
-        (base32 "1izb3mkqxkhayfszlspqpjhai3wif6clv5yyc22pacc207p19542"))))
+        (base32 "0das343cjixmlsdbx9i897yf3fcaj55f2dxh0wd6jsqypf67lk0q"))))
     (properties `((upstream-name . "fragility")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-netmeta r-metafor))
@@ -5175,7 +5174,8 @@ fragility quotients of multiple datasets (e.g., a collection of clinical trials
 or meta-analyses) and produce plots of their overall distributions.  The outputs
 from these functions may inform the robustness of clinical results in terms of
 statistical significance and aid the interpretation of fragility measures.  The
-usage of this package is detailed in Lin and Chu (2022
+usage of this package is illustrated in Lin et al. (2023
+<doi:10.1016/j.ajog.2022.08.053>) and detailed in Lin and Chu (2022
 <doi:10.1371/journal.pone.0268754>).")
     (license license:gpl2+)))
 
@@ -11323,13 +11323,13 @@ visualization of the state vector and graphical diagnostics of the residuals.")
 (define-public r-fjordlight
   (package
     (name "r-fjordlight")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FjordLight" version))
        (sha256
-        (base32 "07rb1x5b6wywla4jg6vb5s50c7a0m4bwgchxj4bnbcx53swrh2sf"))))
+        (base32 "1hb80nwa13rqxqbm2xfw0cf7b1ywbiip74djil89nqmwa8gfjpjq"))))
     (properties `((upstream-name . "FjordLight")))
     (build-system r-build-system)
     (propagated-inputs (list r-raster r-ncdf4 r-curl))
@@ -13454,13 +13454,13 @@ Systems\" (@code{NeurIPS}).")
 (define-public r-finbif
   (package
     (name "r-finbif")
-    (version "0.9.7")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finbif" version))
        (sha256
-        (base32 "15bys4amh2hw6sz3bby61lrw6m1nb8jwrnz0m47cmlcz770acsaz"))))
+        (base32 "12ss8ixs2ncyvavb4cckyk9dsky8zfipb9f3vldy19n3dwrpqxys"))))
     (properties `((upstream-name . "finbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-lutz r-httr r-digest))
@@ -15807,56 +15807,6 @@ response theory models\"
 <https://www.federalregister.gov/developers/api/v1>.")
     (license license:gpl2)))
 
-(define-public r-feddata
-  (package
-    (name "r-feddata")
-    (version "4.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "FedData" version))
-       (sha256
-        (base32 "0shpkv2v5bc09dwqb89xv3df069wgiz3g8y3if2f7kg58ghgg5kn"))))
-    (properties `((upstream-name . "FedData")))
-    (build-system r-build-system)
-    (inputs (list gdal))
-    (propagated-inputs (list r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-terra
-                             r-stringr
-                             r-sf
-                             r-readr
-                             r-purrr
-                             r-progress
-                             r-magrittr
-                             r-lubridate
-                             r-lifecycle
-                             r-igraph
-                             r-httr
-                             r-dplyr
-                             r-curl
-                             r-arcgislayers))
-    (home-page "https://docs.ropensci.org/FedData/")
-    (synopsis
-     "Functions to Automate Downloading Geospatial Data Available from Several Federated Data Sources")
-    (description
-     "This package provides functions to automate downloading geospatial data
-available from several federated data sources (mainly sources maintained by the
-US Federal government).  Currently, the package enables extraction from nine
-datasets: The National Elevation Dataset digital elevation models (1 and 1/3
-arc-second; USGS); The National Hydrography Dataset (USGS); The Soil Survey
-Geographic (SSURGO) database from the National Cooperative Soil Survey (NCSS),
-which is led by the Natural Resources Conservation Service (NRCS) under the
-USDA; the Global Historical Climatology Network (GHCN), coordinated by National
-Climatic Data Center at NOAA; the Daymet gridded estimates of daily weather
-parameters for North America, version 4, available from the Oak Ridge National
-Laboratory's Distributed Active Archive Center (DAAC); the International Tree
-Ring Data Bank; the National Land Cover Database (NLCD); the Cropland Data Layer
-from the National Agricultural Statistics Service; and the PAD-US dataset of
-protected area boundaries from the USGS.")
-    (license license:expat)))
-
 (define-public r-fect
   (package
     (name "r-fect")
@@ -16668,13 +16618,13 @@ the plot of the functional data.")
 (define-public r-fdasrvf
   (package
     (name "r-fdasrvf")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdasrvf" version))
        (sha256
-        (base32 "0n6r0j07dhzffa0phnmjwdiqq76m37a8w6aqaa5lvbws5lilvh4n"))))
+        (base32 "10rzrhsi5hg0liawf6yvn55yzcmi3accp1941l0whwf6ccqbpkac"))))
     (properties `((upstream-name . "fdasrvf")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -18240,13 +18190,13 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
 (define-public r-fastutils
   (package
     (name "r-fastutils")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FastUtils" version))
        (sha256
-        (base32 "03j4pv1vqcr5xy48mr7xrcv9zlk5jypxyz7kfgvqpigwhq8yzry2"))))
+        (base32 "0nscg4kjgi5s8fpr8ni2d4rf4s362gkamvlz3nc3lp7mdniaxkyj"))))
     (properties `((upstream-name . "FastUtils")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -18258,6 +18208,7 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
                              r-ggplot2
                              r-dplyr
                              r-devtools
+                             r-cli
                              r-biocmanager
                              r-assertthat))
     (native-inputs (list r-knitr))
@@ -18266,7 +18217,8 @@ README file: <https://github.com/fastverse/fastverse#suggested-extensions>.")
     (description
      "This package provides a wide variety of tools for general data analysis,
 wrangling, spelling, statistics, visualizations, package development, and more.
-All functions have vectorized implementations whenever possible.")
+All functions have vectorized implementations whenever possible.  Exported names
+are designed to be readable, with longer names possessing short aliases.")
     (license license:expat)))
 
 (define-public r-fastts
@@ -18934,29 +18886,6 @@ the Mahalanobis distance (checking the positive defineteness), and the
 Wilson-Hilferty transformation of gamma variables.  Furthermore, the package
 provides interfaces to C code callable by another C code from other R packages.")
     (license license:gpl3)))
-
-(define-public r-fastmatmr
-  (package
-    (name "r-fastmatmr")
-    (version "1.2.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fastMatMR" version))
-       (sha256
-        (base32 "0lh2nrfj8pbhl56pg0icw0ln2bg411sjdkjb76lar3rsb67ifxvb"))))
-    (properties `((upstream-name . "fastMatMR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/fastMatMR")
-    (synopsis "High-Performance Matrix Market File Operations")
-    (description
-     "An interface to the fast_matrix_market C++ library, this package offers
-efficient read and write operations for Matrix Market files in R. It supports
-both sparse and dense matrix formats.  Peer-reviewed at R@code{OpenSci}
-(<https://github.com/ropensci/software-review/issues/606>).")
-    (license license:expat)))
 
 (define-public r-fastm
   (package

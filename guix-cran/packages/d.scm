@@ -1478,24 +1478,24 @@ reads these files and enables a fast conversion into numerical format.")
 (define-public r-dwdlarger
   (package
     (name "r-dwdlarger")
-    (version "0.1-0")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DWDLargeR" version))
        (sha256
-        (base32 "1bxdvgj38xv2xj98njpyhy12b54nccwnc3v92kkpd3i7nwbw48dy"))))
+        (base32 "03i3gycbmxpikqqqhchprm2qji5dgjbvm3ggvmgyc1vh5ap075by"))))
     (properties `((upstream-name . "DWDLargeR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparsem r-matrix))
-    (home-page "https://arxiv.org/pdf/1604.05473.pdf")
+    (propagated-inputs (list r-matrix))
+    (home-page "https://arxiv.org/pdf/1604.05473")
     (synopsis
      "Fast Algorithms for Large Scale Generalized Distance Weighted Discrimination")
     (description
      "Solving large scale distance weighted discrimination.  The main algorithm is a
 symmetric Gauss-Seidel based alternating direction method of multipliers (ADMM)
 method.  See Lam, X.Y., Marron, J.S., Sun, D.F., and Toh, K.C. (2018)
-<@code{arXiv:1604.05473>} for more details.")
+<doi:10.48550/@code{arXiv.1604.05473>} for more details.")
     (license license:gpl2)))
 
 (define-public r-dwctaxon
@@ -1882,13 +1882,13 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "0d23ji2pwg5xmqj584174194yh4sn74skqjmz2s1vzzgpprazclh"))))
+        (base32 "1vj3ay4lr0whzvkljha1sk4cqjsngj7k1zykjfmj67drljvy7m64"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue
@@ -5677,13 +5677,13 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
 (define-public r-dptm
   (package
     (name "r-dptm")
-    (version "1.3.8")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPTM" version))
        (sha256
-        (base32 "01zc74g7pyh9xbb11gisrszzdhxx1902970ka30ivzcwvi81243s"))))
+        (base32 "1qjk6q4kx7mlzmp15gz468ky6jia3pf16jxyzjhf857z4yi5szl6"))))
     (properties `((upstream-name . "DPTM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -5759,13 +5759,13 @@ distributions.")
 (define-public r-dpqmpfr
   (package
     (name "r-dpqmpfr")
-    (version "0.3-2")
+    (version "0.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQmpfr" version))
        (sha256
-        (base32 "0inj9i876bx2d9pvbazl0q1x2anc4raknay4y9iqkqskm72pwkvp"))))
+        (base32 "0m0dyiy0mj1rg59lk90kk7lnhvgxs2k9ycbpc8sxwx3raf20gdy6"))))
     (properties `((upstream-name . "DPQmpfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-rmpfr r-gmp r-dpq))
@@ -12715,38 +12715,6 @@ matched sample in the direction of satisfying a linear constraint that would not
 be satisfied without penalization.  Yu and Rosenbaum (2019)
 <doi:10.1111/biom.13098>.")
     (license license:expat)))
-
-(define-public r-diproperm
-  (package
-    (name "r-diproperm")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diproperm" version))
-       (sha256
-        (base32 "0qh8zzpbsjfwh8q833n5pchb6dakqdza77ab7vmsidfbzndka11m"))))
-    (properties `((upstream-name . "diproperm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-sparsem
-                             r-sampling
-                             r-matrix
-                             r-lemon
-                             r-gridextra
-                             r-ggplot2
-                             r-e1071
-                             r-dwdlarger
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=diproperm")
-    (synopsis
-     "Conduct Direction-Projection-Permutation Tests and Display Plots")
-    (description
-     "Conducts a direction-projection-permutation test and displays diagnostic plots
-to facilitate the visual assessment of the test.  See Wei et al. (2016)
-<doi:10.1080/10618600.2015.1027773> and Lam et al. (2018)
-<doi:10.1080/10618600.2017.1366915> for more details.")
-    (license license:gpl3)))
 
 (define-public r-dipm
   (package
@@ -19884,37 +19852,35 @@ transformation ensembles (Kook et al, 2022,
 (define-public r-deeptime
   (package
     (name "r-deeptime")
-    (version "1.1.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deeptime" version))
        (sha256
-        (base32 "1d586102ya3rplpb1za6irclpbmw4ax9rxs1547cd0g2igfwmx74"))))
+        (base32 "1hk5c7x0wrinmi51xgnh9srisfm2n98xbzaxp7i2lpz4fvphd7im"))))
     (properties `((upstream-name . "deeptime")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-rlang
-                             r-phytools
                              r-lifecycle
                              r-lattice
                              r-gtable
+                             r-grimport2
                              r-gridextra
                              r-ggplot2
-                             r-ggnewscale
                              r-ggforce
                              r-ggfittext
-                             r-geomtextpath
                              r-curl
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/willgearty/deeptime")
+    (home-page "https://williamgearty.com/deeptime/")
     (synopsis "Plotting Tools for Anyone Working in Deep Time")
     (description
-     "Extends the functionality of other plotting packages like ggplot2 and lattice to
-help facilitate the plotting of data over long time intervals, including, but
-not limited to, geological, evolutionary, and ecological data.  The primary goal
-of deeptime is to enable users to add highly customizable timescales to their
+     "Extends the functionality of other plotting packages (notably ggplot2') to help
+facilitate the plotting of data over long time intervals, including, but not
+limited to, geological, evolutionary, and ecological data.  The primary goal of
+deeptime is to enable users to add highly customizable timescales to their
 visualizations.  Other functions are also included to assist with other areas of
 deep time visualization.")
     (license license:gpl3+)))
@@ -20174,13 +20140,13 @@ the SL ensemble method and deep neural networks.")
 (define-public r-deepgp
   (package
     (name "r-deepgp")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "deepgp" version))
        (sha256
-        (base32 "0anrc209bvi061y0f7ms5hyb2k6rgfp627w0800aw8gxhl4mli4b"))))
+        (base32 "1vdqsf0gn55j15dsfmbj76c5bb4799rkiwiq57n2rhl7sprvpdyr"))))
     (properties `((upstream-name . "deepgp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -20204,7 +20170,9 @@ examples.  Models are trained through MCMC including elliptical slice sampling
 of latent Gaussian layers and Metropolis-Hastings sampling of kernel
 hyperparameters.  Vecchia-approximation for faster computation is implemented
 following Sauer, Cooper, and Gramacy (2023,
-<doi:10.48550/@code{arXiv.2204.02904>}).  Downstream tasks include sequential
+<doi:10.48550/@code{arXiv.2204.02904>}).  Optional monotonic warpings are
+implemented following Barnett et al. (2024,
+<doi:10.48550/@code{arXiv.2408.01540>}).  Downstream tasks include sequential
 design through active learning Cohn/integrated mean squared error (ALC/IMSE;
 Sauer, Gramacy, and Higdon, 2023), optimization through expected improvement
 (EI; Gramacy, Sauer, and Wycoff, 2022 <doi:10.48550/@code{arXiv.2112.07457>}),
@@ -20461,13 +20429,13 @@ into the Windows Rgui.")
 (define-public r-decp
   (package
     (name "r-decp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decp" version))
        (sha256
-        (base32 "1ydp2czgbfarhn6d6g34q7dvfkj3b97ql6jn5cp7gnxycj53c0k6"))))
+        (base32 "0hmd6k64g8xi5n99a9jf892dq0yxdc9llfxa4ynnw2l9pfcim170"))))
     (properties `((upstream-name . "decp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

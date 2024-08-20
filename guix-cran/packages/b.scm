@@ -1878,13 +1878,13 @@ model under linear inequality constraints.")
 (define-public r-bsvarsigns
   (package
     (name "r-bsvarsigns")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bsvarSIGNs" version))
        (sha256
-        (base32 "1gfzv5q7blwxgk0ihz68h28b81xkwg4d2x2r3829apcqwnvfwd7p"))))
+        (base32 "15kjmjzrn5vp9r35mjyh009v174jlz670kqchz6jhp7yqlxhnbqc"))))
     (properties `((upstream-name . "bsvarSIGNs")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-r6
@@ -6163,39 +6163,6 @@ unitary matrices, evaluation of matrix permanents (both real and complex) and
 evaluation of complex permanent minors.")
     (license license:gpl2)))
 
-(define-public r-boso
-  (package
-    (name "r-boso")
-    (version "1.0.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BOSO" version))
-       (sha256
-        (base32 "1g7277xw9bgq575x7fhjwpja6sfbg51di7hawxhmc57kvvmpx032"))))
-    (properties `((upstream-name . "BOSO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-matrix r-mass))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/lvalcarcel/BOSO")
-    (synopsis "Bilevel Optimization Selector Operator")
-    (description
-     "This package provides a novel feature selection algorithm for linear regression
-called BOSO (Bilevel Optimization Selector Operator).  The main contribution is
-the use a bilevel optimization problem to select the variables in the training
-problem that minimize the error in the validation set.  Preprint available:
-[Valcarcel, L. V., San Jose-Eneriz, E., Cendoya, X., Rubio, A., Agirre, X.,
-Prosper, F., & Planes, F. J. (2020). \"BOSO: a novel feature selection algorithm
-for linear regression with high-dimensional data.\" @code{bioRxiv}.
-<doi:10.1101/2020.11.18.388579>].  In order to run the vignette, it is
-recommended to install the bestsubset package, using the following command:
-devtools::install_github(repo=\"ryantibs/best-subset\", subdir=\"bestsubset\").  If
-you do not have gurobi, run
-devtools::install_github(repo=\"lvalcarcel/best-subset\", subdir=\"bestsubset\").
-Moreover, to install @code{cplexAPI} you can check
-<https://github.com/lvalcarcel/@code{cplexAPI>}.")
-    (license license:gpl3)))
-
 (define-public r-borrowr
   (package
     (name "r-borrowr")
@@ -8212,13 +8179,13 @@ Includes standard diagnostics and visualization tools to evaluate the results.")
 (define-public r-bnlearn
   (package
     (name "r-bnlearn")
-    (version "5.0")
+    (version "5.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnlearn" version))
        (sha256
-        (base32 "18br08n7dbykdhx8adwvizm9m3r1pin76qqy7v1p42cq44qj11p7"))))
+        (base32 "17pr1b3dg576fsrzgvhdh0c4vfi3cl4ngkak8njddd6v4favsli4"))))
     (properties `((upstream-name . "bnlearn")))
     (build-system r-build-system)
     (home-page "https://www.bnlearn.com/")
@@ -10401,13 +10368,13 @@ datasets that exhibit upper boundary structures.")
 (define-public r-bktr
   (package
     (name "r-bktr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BKTR" version))
        (sha256
-        (base32 "07qq6jxrwyvid6j54vzvf7a28ryk478kscn3z7dk9ic2y9c5ljj0"))))
+        (base32 "17nibqn0bwbzdrxqyq10m7ll958cp5v431zda3ja16az2mss38cy"))))
     (properties `((upstream-name . "BKTR")))
     (build-system r-build-system)
     (propagated-inputs (list r-torch
@@ -10571,13 +10538,13 @@ biweight M-estimator.")
 (define-public r-biwavelet
   (package
     (name "r-biwavelet")
-    (version "0.20.21")
+    (version "0.20.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biwavelet" version))
        (sha256
-        (base32 "0v7arwmng2i22svj836i57q8by9x5pghjv7d35g7r35wakrm8jyx"))))
+        (base32 "0j9y81rg9rmri39fjvy9s0wckxcdylbwm1ak62rxy65p397ppgcr"))))
     (properties `((upstream-name . "biwavelet")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-foreach r-fields))
@@ -11732,16 +11699,16 @@ The package also includes 19 datasets which are used in the tutorials.")
 (define-public r-biostat3
   (package
     (name "r-biostat3")
-    (version "0.1.9")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostat3" version))
        (sha256
-        (base32 "1pq8w7xh4l1f6z9k9k022a3szhkhsyhrkzdmqqfjhwx2cymcxalp"))))
+        (base32 "0g3phkzkidxrf0ajxywvw77x0cpcyhmgp9wqw13p2nnp38lak9l5"))))
     (properties `((upstream-name . "biostat3")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-muhaz r-mass))
+    (propagated-inputs (list r-survival r-mass))
     (home-page "https://cran.r-project.org/package=biostat3")
     (synopsis
      "Utility Functions, Datasets and Extended Examples for Survival Analysis")
@@ -14999,13 +14966,13 @@ simulating networks with local dependence to assess the goodness-of-fit.")
 (define-public r-bigdm
   (package
     (name "r-bigdm")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigDM" version))
        (sha256
-        (base32 "0m1q8b4d20iqamypmalh66gkp0rba8ir2m48k5y9j05wfmshkqc4"))))
+        (base32 "183px40ah4043q2yc2811hlwx8vinqk5xxhz1wmgw4m8cig62xgw"))))
     (properties `((upstream-name . "bigDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -15370,27 +15337,27 @@ the approach by Tobler (1965).")
 (define-public r-bidask
   (package
     (name "r-bidask")
-    (version "2.0.4")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bidask" version))
        (sha256
-        (base32 "1sdzn2src3m4w6mjn9v67qyn0g0pzmgbkwqqphnq7pwwy94qd6i3"))))
+        (base32 "1kavjvllp1vf01xj9mnngd6k1r5zx48zp5kvsv5c8qsa53l5gzxl"))))
     (properties `((upstream-name . "bidask")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-xts))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/eguidotti/bidask")
     (synopsis
      "Efficient Estimation of Bid-Ask Spreads from Open, High, Low, and Close Prices")
     (description
      "This package implements an efficient estimator of bid-ask spreads from open,
-high, low, and close prices as described in Ardia, Guidotti, & Kroencke (2021)
-<https://www.ssrn.com/abstract=3892335>.  It also provides an implementation of
-the estimators described in Roll (1984)
-<doi:10.1111/j.1540-6261.1984.tb03897.x>, Corwin & Schultz (2012)
-<doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi & Ranaldo (2017)
-<doi:10.1093/rfs/hhx084>.")
+high, low, and close prices as described in Ardia, Guidotti, & Kroencke (2024)
+<doi:10.1016/j.jfineco.2024.103916>.  It also provides an implementation of the
+estimators described in Roll (1984) <doi:10.1111/j.1540-6261.1984.tb03897.x>,
+Corwin & Schultz (2012) <doi:10.1111/j.1540-6261.2012.01729.x>, and Abdi &
+Ranaldo (2017) <doi:10.1093/rfs/hhx084>.")
     (license license:gpl3)))
 
 (define-public r-bidag
@@ -22441,13 +22408,13 @@ package from @code{GitHub}.")
 (define-public r-bayesnec
   (package
     (name "r-bayesnec")
-    (version "2.1.2.0")
+    (version "2.1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesnec" version))
        (sha256
-        (base32 "1ja4yl3fqs5cg3n8gn7r7a2shdxkwcshbmy7cyn3l97zsrdw4a3m"))))
+        (base32 "0pac8s3zqg6z2x3jf4j2kkvra6mpc5aa723b4mp2pygs9x6sjn41"))))
     (properties `((upstream-name . "bayesnec")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -22473,9 +22440,11 @@ concentration(dose)-response data using Bayesian methods for the purpose of
 estimating ECx values, but more particularly NEC (see Fox
 (2010)<doi:10.1016/j.ecoenv.2009.09.012>), NSEC (see Fisher and Fox
 (2023)<doi:10.1002/etc.5610>), and N(S)EC (see Fisher et al.
-2023<doi:10.1002/ieam.4809>).  This package expands and supersedes an original
-version implemented in R2jags, see Fisher, Ricardo and Fox
-(2020)<doi:10.5281/ZENODO.3966864>.")
+2023<doi:10.1002/ieam.4809>).  A full description of this package can be found
+in Fisher et al. (2024)<doi:10.18637/jss.v110.i05>.  This package expands and
+supersedes an original version implemented in R2jags (see Su and Yajima
+(2020)<https://CRAN.R-project.org/package=R2jags>; Fisher et al.
+(2020)<doi:10.5281/ZENODO.3966864>).")
     (license license:gpl2)))
 
 (define-public r-bayesmultmeta
@@ -22863,13 +22832,13 @@ selection.  Marginal likelihood is approximated by methods in Chib S (1995)
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesMallows" version))
        (sha256
-        (base32 "0i922b8qapm1k4wvy3f6xbf138ihgyv8l2ixsbfl73z3mrm6nyr4"))))
+        (base32 "1jgv654k0qkspardlma2z7a854zw7zxk4fflc027wf7mlvs29b4h"))))
     (properties `((upstream-name . "BayesMallows")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -26550,13 +26519,13 @@ rmaaddon() can be used.")
 (define-public r-baorista
   (package
     (name "r-baorista")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "baorista" version))
        (sha256
-        (base32 "044p2r5wmpm8l8q1z1g3a7x15bclcbgjb2a3qvl0438div8y5llz"))))
+        (base32 "06dgqzkl9a2v3izpwlgvc31lg2b4yh3pynhs4wgjzhrn58lf6rp1"))))
     (properties `((upstream-name . "baorista")))
     (build-system r-build-system)
     (propagated-inputs (list r-nimble r-coda))

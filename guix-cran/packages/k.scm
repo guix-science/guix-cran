@@ -2465,13 +2465,13 @@ National Nuclear Security Administration under Award Number DE-NA0004104.")
 (define-public r-klink
   (package
     (name "r-klink")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KLINK" version))
        (sha256
-        (base32 "0gx8kvpyv149g1vk17ym8zfyv0wg4qgmp314vsfv140a9mj2f051"))))
+        (base32 "06hfm3k21pq1dck5f4gxl0m8w5a8ixw8av4gqpn64ms158l7bcwa"))))
     (properties `((upstream-name . "KLINK")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -4211,13 +4211,13 @@ for right-censored data including methods of bandwidth selection.")
 (define-public r-kernelshap
   (package
     (name "r-kernelshap")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kernelshap" version))
        (sha256
-        (base32 "11wmcv96sxbwpspiq735wj6ngd5dyia426wlr31zfgm7hx1yhn73"))))
+        (base32 "0p0zi0l3b7axcp3r34arwbpbbj8bibgryza7g5f45ngm77nlbc5f"))))
     (properties `((upstream-name . "kernelshap")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-foreach))

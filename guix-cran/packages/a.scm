@@ -3280,13 +3280,13 @@ layout.")
 (define-public r-atq
   (package
     (name "r-atq")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ATQ" version))
        (sha256
-        (base32 "11gkx4pb4474v2cgx8wjfzx1jb25digkvv3glf9zi771d8qjjyqq"))))
+        (base32 "1hj1phyr8mr7xfbaizmsfh5j36paa6xlyg83v4vryplikba617gm"))))
     (properties `((upstream-name . "ATQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -4695,13 +4695,13 @@ Galli, and Murray (2022)
 (define-public r-asremlplus
   (package
     (name "r-asremlplus")
-    (version "4.4.35")
+    (version "4.4.38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asremlPlus" version))
        (sha256
-        (base32 "016xxl928pdwpglmm3gg0rq4y04nlzbla46k7a6nmfsfygyz8gxv"))))
+        (base32 "16hgzbdx7jaq7jkil97iwx1r4agbw34jcz7iap3ir18v8jp19y2c"))))
     (properties `((upstream-name . "asremlPlus")))
     (build-system r-build-system)
     (inputs (list))
@@ -5238,13 +5238,13 @@ anthracnose in a lupin field.")
 (define-public r-asciisetupreader
   (package
     (name "r-asciisetupreader")
-    (version "2.5.1")
+    (version "2.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "asciiSetupReader" version))
        (sha256
-        (base32 "1g21yycql1ik02gp37d0m5fxsn9d7sibxn5vm1ngmynx2a8a8jq7"))))
+        (base32 "116xj2d4hbvf0hgac0nqja758chgyf3ycivj0h3pmb0y75dlcbl9"))))
     (properties `((upstream-name . "asciiSetupReader")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -6423,13 +6423,13 @@ model for time series forecasting.For method details see Zhang, GP (2003)
 (define-public r-arima2
   (package
     (name "r-arima2")
-    (version "3.1.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arima2" version))
        (sha256
-        (base32 "0sfg7h7rvvrsa2bjmipvm49cr26imnaf3h53czgkprw4knarx8z3"))))
+        (base32 "115igm3g8hd0ccs5si7siwr56hynjj84abrivg9ri4zld7vc8lws"))))
     (properties `((upstream-name . "arima2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -6445,7 +6445,7 @@ arima() function from the stats package.  This package enables proper
 optimization of model likelihoods, which is a necessary condition for performing
 likelihood ratio tests.  This package relies heavily on the source code of the
 arima() function of the stats package.  For more information, please see Jesse
-Wheeler and Edward L. Ionides (2023) <@code{arXiv:2310.01198>}.")
+Wheeler and Edward L. Ionides (2023) <doi:10.48550/@code{arXiv.2310.01198>}.")
     (license license:gpl3+)))
 
 (define-public r-arigamyannsvr
@@ -7220,27 +7220,6 @@ to retrieve data.  Simple Feature (sf) objects are utilized to perform spatial
 queries.  This package was neither produced nor is maintained by Esri.")
     (license license:gpl3)))
 
-(define-public r-arcpbf
-  (package
-    (name "r-arcpbf")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arcpbf" version))
-       (sha256
-        (base32 "1bbkcvi982xkjwjadfxc73rmip9hwlh3x0iyqms3pzfs1p32ansr"))))
-    (properties `((upstream-name . "arcpbf")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-rlang r-arcgisutils))
-    (home-page "https://r.esri.com/arcpbf/")
-    (synopsis "Process ArcGIS Protocol Buffer FeatureCollections")
-    (description
-     "Fast processing of @code{ArcGIS} @code{FeatureCollection} protocol buffers in R.
-It is designed to work seamlessly with httr2 and integrates with sf'.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-arcokrig
   (package
     (name "r-arcokrig")
@@ -7672,37 +7651,6 @@ compatibility with other spatial libraries.  Learn more in the Places service
 API reference <https://developers.arcgis.com/rest/places/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
-(define-public r-arcgislayers
-  (package
-    (name "r-arcgislayers")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arcgislayers" version))
-       (sha256
-        (base32 "02zx66iszhw2kik0yg4djzlig6rc505igp3ginxhfcnb04blbz53"))))
-    (properties `((upstream-name . "arcgislayers")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-sf
-                             r-rlang
-                             r-rcppsimdjson
-                             r-lifecycle
-                             r-jsonify
-                             r-httr2
-                             r-cli
-                             r-arcpbf
-                             r-arcgisutils))
-    (home-page "https://r.esri.com/arcgislayers/")
-    (synopsis "An Interface to ArcGIS Data Services")
-    (description
-     "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
-@code{ArcGIS} Platform to read, write, publish, or manage vector and raster data
-via @code{ArcGIS} location services REST API endpoints
-<https://developers.arcgis.com/rest/>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
@@ -7736,36 +7684,6 @@ integrates with arcgisutils to provide access to custom locators or private
 @code{ArcGIS} World Geocoder hosted on @code{ArcGIS} Enterprise'.  Learn more in
 the Geocode service API reference
 <https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm>.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
-(define-public r-arcgis
-  (package
-    (name "r-arcgis")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "arcgis" version))
-       (sha256
-        (base32 "04k22569xsdl8bsi3r1bfwcdrjcdypm4b6sbjyf7yrglyyyqlpq3"))))
-    (properties `((upstream-name . "arcgis")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-httr2
-                             r-cli
-                             r-arcgisutils
-                             r-arcgisplaces
-                             r-arcgislayers
-                             r-arcgisgeocode))
-    (home-page "https://github.com/R-ArcGIS/arcgis/")
-    (synopsis "ArcGIS Location Services Meta-Package")
-    (description
-     "This package provides easy installation and loading of core @code{ArcGIS}
-location services packages arcgislayers', arcgisutils', arcgisgeocode', and
-arcgisplaces'.  Enabling developers to interact with spatial data and services
-from @code{ArcGIS} Online', @code{ArcGIS} Enterprise', and @code{ArcGIS}
-Platform'.  Learn more about the arcgis meta-package at
-<https://r.esri.com/r-bridge-site/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgeocoder
@@ -8160,34 +8078,6 @@ are created following the guidelines for grid datasets from the European Forum
 for Geography and Statistics.")
     (license license:expat)))
 
-(define-public r-aquabeher
-  (package
-    (name "r-aquabeher")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "AquaBEHER" version))
-       (sha256
-        (base32 "0rgkwy1sfdkcjk69cncxd2zxlkn9kyvq8iwmz83d2gwzdzfbjqdd"))))
-    (properties `((upstream-name . "AquaBEHER")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-raster r-lubridate r-ggplot2 r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RobelTakele/AquaBEHER")
-    (synopsis
-     "Estimation of Rainy Season Calendar and Soil Water Balance for Agriculture")
-    (description
-     "Computes and integrates daily reference evapotranspiration ('Eto') into a water
-balance model, to estimate the calendar of wet-season (Onset, Cessation and
-Duration) based on agroclimatic approach, for further information please refer
-to Allen et al. (1998, ISBN:92-5-104219-5), Allen (2005, ISBN:9780784408056),
-Doorenbos and Pruitt (1975, ISBN:9251002797) Guo et al. (2016)
-<doi:10.1016/j.envsoft.2015.12.019>, Hargreaves and Samani (1985)
-<doi:10.13031/2013.26773>, Priestley and Taylor (1972)
-<https://journals.ametsoc.org/downloadpdf/journals/mwre/100/2/1520-0493_1972_100_0081_otaosh_2_3_co_2.pdf>.")
-    (license license:gpl3+)))
-
 (define-public r-aqp
   (package
     (name "r-aqp")
@@ -8381,13 +8271,13 @@ plot of the time-dependent AP versus time (available for event time data).")
 (define-public r-apsimx
   (package
     (name "r-apsimx")
-    (version "2.7.7")
+    (version "2.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apsimx" version))
        (sha256
-        (base32 "18q9lynfy0y7abp2zlclp75xcixd022m9hqqaqjh6z7wy9z3rxbs"))))
+        (base32 "0k14qmwq2kdwd5z6ciw18wsg1jh1xcspszha5694xbfmip71cqh1"))))
     (properties `((upstream-name . "apsimx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rsqlite r-knitr r-jsonlite r-dbi))
@@ -9479,13 +9369,13 @@ all possible comparisons (APC) methodology developed by Miller (2005)
 (define-public r-apcalign
   (package
     (name "r-apcalign")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCalign" version))
        (sha256
-        (base32 "0v1m3m6r85yip449pcbn7vk3c4zm0y3w4lf9rwqv3cis8gd9xfap"))))
+        (base32 "0g59k5hr9rj25xqawrnhdxjh1qfwbc1gzgzp56hbpp04n7dy4xwl"))))
     (properties `((upstream-name . "APCalign")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -9959,28 +9849,6 @@ for the S4 class system and two alternative new implementations.  One is an
 experimental version built around S4 and the other one makes it more convenient
 to work with lists as objects.")
     (license license:expat)))
-
-(define-public r-aods3
-  (package
-    (name "r-aods3")
-    (version "0.4-1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "aods3" version))
-       (sha256
-        (base32 "0rd4xr7nwac49m8h4pr8hv79giyv2rrlnz78r7mxa6lpgkmgqp4d"))))
-    (properties `((upstream-name . "aods3")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=aods3")
-    (synopsis "Analysis of Overdispersed Data using S3 Methods")
-    (description
-     "This package provides functions to analyse overdispersed counts or proportions.
-These functions should be considered as complements to more sophisticated
-methods such as generalized estimating equations (GEE) or generalized linear
-mixed effect models (GLMM).  aods3 is an S3 re-implementation of the deprecated
-S4 package aod.")
-    (license license:gpl2+)))
 
 (define-public r-ao
   (package
@@ -10545,13 +10413,13 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 (define-public r-anomaly
   (package
     (name "r-anomaly")
-    (version "4.3.2")
+    (version "4.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anomaly" version))
        (sha256
-        (base32 "1w0bc5147rqsakiz3cs37xcd27i2b5ni1dva2kxv8l17ma0519v3"))))
+        (base32 "12xm04qnbgc6i5w9vnvaaqfjyn014gbcb4401l1843rjr73kkv24"))))
     (properties `((upstream-name . "anomaly")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10572,8 +10440,10 @@ Anomaly (MVCAPA) Fisch, Eckley, and Fearnhead (2021)
 <doi:10.1080/10618600.2021.1987257>, Proportion Adaptive Segment Selection
 (PASS) Jeng, Cai, and Li (2012) <doi:10.1093/biomet/ass059>, and Bayesian
 Abnormal Region Detector (BARD) Bardwell and Fearnhead (2015)
-<@code{arXiv:1412.5565>}.  These methods are for the detection of anomalies in
-time series data.")
+<doi:10.1214/16-BA998>.  These methods are for the detection of anomalies in
+time series data.  Further information regarding the use of this package along
+with detailed examples can be found in Fisch, Grose, Eckley, Fearnhead, and
+Bardwell (2024) <doi:10.18637/jss.v110.i01>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-anomalize
@@ -13221,13 +13091,13 @@ symmetric stable and mixture of Cauchy distributions.")
 (define-public r-alphasimr
   (package
     (name "r-alphasimr")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AlphaSimR" version))
        (sha256
-        (base32 "1qv3bfn4xnpkiblzdig1zn3cli5g1h2binnsi4znxzd6z1406sq9"))))
+        (base32 "02cz2kppvw9ccx99r0i5afhqcprv1qsdbjq14r9v6b3pcpvsdvia"))))
     (properties `((upstream-name . "AlphaSimR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-r6 r-bh))
@@ -14486,33 +14356,6 @@ defined in Koenker and Machado (1999).  This is a special case of the skewed
 family of distributions available in Galarza et.al. (2017)
 <doi:10.1002/sta4.140> useful for quantile regression.")
     (license license:gpl2+)))
-
-(define-public r-alcyon
-  (package
-    (name "r-alcyon")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "alcyon" version))
-       (sha256
-        (base32 "1l3z7bsspxbhfxldq4pbh7lmwfmmfqry99xhk125ja19h1xfyxl4"))))
-    (properties `((upstream-name . "alcyon")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stars r-sf r-rcpp r-igraph))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/spatialnous/alcyon")
-    (synopsis "Spatial Network Analysis")
-    (description
-     "Interface package for sala', the spatial network analysis library from the
-@code{depthmapX} software application.  The R parts of the code are based on the
-rdepthmap package.  Allows for the analysis of urban and building-scale networks
-and provides metrics and methods usually found within the Space Syntax domain.
-Methods in this package are described by K. Al-Sayed, A. Turner, B. Hillier, S.
-Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (2004)
-<https://discovery.ucl.ac.uk/id/eprint/2651> \"Depthmap 4: a researcher's
-handbook\".")
-    (license license:gpl3)))
 
 (define-public r-albopictus
   (package
@@ -17755,6 +17598,29 @@ models, consult Henrik Madsen and Poul Thyregod's book (2011), ISBN:
 9781420091557.")
     (license license:expat)))
 
+(define-public r-aebdata
+  (package
+    (name "r-aebdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aebdata" version))
+       (sha256
+        (base32 "1l49ldz2qgdcw66q221g2k0kny77px807337cj96zbll8cic4lxa"))))
+    (properties `((upstream-name . "aebdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rvest r-readr r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/hhmacedo/aebdata")
+    (synopsis "Access Data from the Atlas do Estado Brasileiro")
+    (description
+     "Facilitates access to the data from the Atlas do Estado Brasileiro
+(<https://www.ipea.gov.br/atlasestado/>), maintained by the Instituto de
+Pesquisa @code{EconÃ´mica} Aplicada (Ipea).  It allows users to search for
+specific series, list series or themes, and download data when available.")
+    (license license:gpl3+)))
+
 (define-public r-adwordsr
   (package
     (name "r-adwordsr")
@@ -18069,20 +17935,28 @@ Predetermination of adaptation rule is not required.")
 (define-public r-adproclus
   (package
     (name "r-adproclus")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adproclus" version))
        (sha256
-        (base32 "1aj9bb86fmgq6ln39pmkws0bp07wf02k3fahgsv3hq86yflgac8q"))))
+        (base32 "00n7nc11c47vcjz8zlx855dw9lq9d12qghx42hz1xy0ah0iqjh3q"))))
     (properties `((upstream-name . "adproclus")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-scales
+                             r-rlang
+                             r-readr
                              r-qgraph
                              r-nmfn
+                             r-multichull
+                             r-matrixstats
                              r-igraph
                              r-gtools
+                             r-ggrepel
+                             r-ggplot2
                              r-corrplot
                              r-checkmate))
     (home-page "https://github.com/henry-heppe/adproclus")
@@ -18195,13 +18069,13 @@ Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
 (define-public r-adoptr
   (package
     (name "r-adoptr")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adoptr" version))
        (sha256
-        (base32 "0crlwk6nk88lxz76klss7igmdx8sw99yj52kkmsa6l49s29wwqv2"))))
+        (base32 "12ihlvnnpnkc6w12bhrppf6cc9y5qb3x9k21n558i9h929l7052i"))))
     (properties `((upstream-name . "adoptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-glue))
@@ -21045,27 +20919,26 @@ arbitrary text input.")
 (define-public r-acro
   (package
     (name "r-acro")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "acro" version))
        (sha256
-        (base32 "1jfrv7v7mh0laiiffgcnk0sm3kkan4ycfhnb0r43dc5mrckvk7ml"))))
+        (base32 "1mipd7p47b3m2klmxfpdy04dm3sk5yaiyz0wgmd5zmci5ha2jvp8"))))
     (properties `((upstream-name . "acro")))
     (build-system r-build-system)
     (inputs (list python))
     (propagated-inputs (list r-reticulate r-png r-admiraldev))
-    (home-page "https://cran.r-project.org/package=acro")
+    (home-page "https://github.com/AI-SDC/ACRO-R")
     (synopsis
      "Tool for Automating the Statistical Disclosure Control of Research Outputs")
     (description
      "Assists researchers and output checkers by distinguishing between research
 output that is safe to publish, output that requires further analysis, and
 output that cannot be published because of substantial disclosure risk.  A paper
-about the tool was presented at The United Nations Economic Commission for
-Europe Expert Meeting on Statistical Data Confidentiality, see
-<https://unece.org/statistics/events/SDC2023> and
+about the tool was presented at the UNECE Expert Meeting on Statistical Data
+Confidentiality 2023; see
 <https://uwe-repository.worktribe.com/output/11060964>.")
     (license license:expat)))
 

@@ -941,17 +941,17 @@ on the event detection implemented in hydropeak'.")
 (define-public r-hydroportailstats
   (package
     (name "r-hydroportailstats")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HydroPortailStats" version))
        (sha256
-        (base32 "1f5h9xqn4vn9wbnvlshbc8r200vx1pwm9ic7sdzsv4z0j7z7wl1j"))))
+        (base32 "05fa03j0x0639langkhp40ds3d8j9a1i2f05m1svq6iysx2r0dmy"))))
     (properties `((upstream-name . "HydroPortailStats")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mvtnorm r-evd))
-    (home-page "https://cran.r-project.org/package=HydroPortailStats")
+    (home-page "https://github.com/benRenard/HydroPortailStats")
     (synopsis "'HydroPortail' Statistical Functions")
     (description
      "Statistical functions used in the French @code{HydroPortail}
@@ -2351,13 +2351,13 @@ probing (HR-SIP), multi-window high resolution stable isotope probing
 (define-public r-htsr
   (package
     (name "r-htsr")
-    (version "2.1.5")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "htsr" version))
        (sha256
-        (base32 "0hmc06pmpya0jjdh4h1aizyanaad0qys7xqrjqrhw37yamh3ywmk"))))
+        (base32 "0rk11gnwws6fsmbh9zk5cpxavqkrxd4kja3wzhlh4jn5b4ypblps"))))
     (properties `((upstream-name . "htsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexls
@@ -2481,6 +2481,45 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
      "Facilitates automated HTML report creation, in particular framed HTML pages and
 dynamically sortable tables.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-htmlreportr
+  (package
+    (name "r-htmlreportr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htmlreportR" version))
+       (sha256
+        (base32 "0zvjpm4dd0zd9h4x2wi1m6a8x63kjgjm0x2yyzw9f0nk5jcy2wwv"))))
+    (properties `((upstream-name . "htmlreportR")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-xfun r-mime r-knitr r-jsonlite r-ggplot2))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/AEstebanMar/htmlreportR")
+    (synopsis "'HTML' Reporting Made Simple(R)")
+    (description
+     "Create compressed, interactive HTML (Hypertext Markup Language) reports with
+embedded Python code, custom JS ('@code{JavaScript}') and CSS (Cascading Style
+Sheets), and wrappers for @code{CanvasXpress} plots, networks and more.  Based
+on <https://pypi.org/project/py-report-html/>, its sister project.")
+    (license license:gpl3+)))
 
 (define-public r-htmldf
   (package
@@ -2693,13 +2732,13 @@ H., and Datta, S. (2017) <doi:10.1002/sim.7288> Dutta, S. and Datta, S. (2015)
 (define-public r-hstats
   (package
     (name "r-hstats")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hstats" version))
        (sha256
-        (base32 "1ax73chiv86adnvym4fi9c04yicpb8d8wrmyykx08rp6pqb6icwa"))))
+        (base32 "1my1zxwvdzajp75lxyqmwr7z8ci9ldvlmpqxapyqbj0d5ibn2sbn"))))
     (properties `((upstream-name . "hstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -3038,13 +3077,13 @@ polymorphisms for association analyses using linkage disequilibrium\"
 (define-public r-hsaur3
   (package
     (name "r-hsaur3")
-    (version "1.0-14")
+    (version "1.0-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HSAUR3" version))
        (sha256
-        (base32 "1fsil4n4s71ff8np9w65h8n8b1b2rh017ja8vjd4wq07xi3prbwp"))))
+        (base32 "17yg6ql9c88pg5higmrvhnavx6hcbr4nm5r65d8q3iqfkgnc6ym1"))))
     (properties `((upstream-name . "HSAUR3")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HSAUR3")
@@ -3057,7 +3096,7 @@ Introduction to R'', is completely included in this package, for all other
 chapters, a vignette containing all data analyses is available.  In addition,
 Sweave source code for slides of selected chapters is included in this package
 (see HSAUR3/inst/slides).  The publishers web page is
-<http://www.crcpress.com/product/isbn/9781482204582>'.")
+<https://www.routledge.com/A-Handbook-of-Statistical-Analyses-using-R/Hothorn-Everitt/p/book/9781482204582>'.")
     (license license:gpl2)))
 
 (define-public r-hsaur2
@@ -4651,23 +4690,23 @@ Xu, and Xin Gao (2022)
 (define-public r-hmstimer
   (package
     (name "r-hmstimer")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hmstimer" version))
        (sha256
-        (base32 "178jnxhbpa5y2k2cw3w7czyapb23n6yygmymijvn3pzcgx607y3v"))))
+        (base32 "100jkilzpr02ccdywwqnj2fvfmv23l9qiw837jdn8y1ggmn87rzy"))))
     (properties `((upstream-name . "hmstimer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-hms))
-    (home-page "https://cran.r-project.org/package=hmstimer")
+    (propagated-inputs (list r-rlang r-lifecycle r-hms))
+    (home-page "https://github.com/poissonconsulting/hmstimer")
     (synopsis "'hms' Based Timer")
     (description
-     "Tracks elapsed clock time using a `hms::hms()` scalar, which if running has an
-attribute named start that specifies the system time when the timer was started.
- The elapsed time is the value of the scalar plus the difference between the
-current system time and the system time when the timer was started.")
+     "Tracks elapsed clock time using a `hms::hms()` scalar.  It was was originally
+developed to time Bayesian model runs.  It should not be used to estimate how
+long extremely fast code takes to execute as the package code adds a small time
+cost.")
     (license license:expat)))
 
 (define-public r-hmsr
@@ -6872,26 +6911,26 @@ of Huling and Yu (2021) <doi:10.1111/biom.13546>.")
 (define-public r-hierportfolios
   (package
     (name "r-hierportfolios")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HierPortfolios" version))
        (sha256
-        (base32 "1l0ac3sx7q0xgqv6w0c7rahgjqpy045whih7r88wnj8qqwl1x1bp"))))
+        (base32 "0hpr8rxpzgbr1v6fh4wxx140nh2017cvrk8anaczv1rnq75j2bdp"))))
     (properties `((upstream-name . "HierPortfolios")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastcluster r-cluster))
     (home-page "https://github.com/ctruciosm/HierPortfolios")
-    (synopsis "Hierarchical Clustering-Based Portfolio Allocation Strategies")
+    (synopsis "Hierarchical Risk Clustering Portfolio Allocation Strategies")
     (description
-     "Machine learning portfolio allocation strategies based on hierarchical
-clustering methods.  The implemented methods are: Hierarchical risk parity (De
-Prado, 2016) <DOI: 10.3905/jpm.2016.42.4.059>.  Hierarchical clustering-based
-asset allocation (Raffinot, 2017) <DOI: 10.3905/jpm.2018.44.2.089>.
-Hierarchical equal risk contribution portfolio (Raffinot, 2018) <DOI:
-10.2139/ssrn.3237540>.  A Constrained Hierarchical Risk Parity Algorithm with
-Cluster-based Capital Allocation (Pfitzingera and Katzke, 2019)
+     "Machine learning hierarchical risk clustering portfolio allocation strategies.
+The implemented methods are: Hierarchical risk parity (De Prado, 2016) <DOI:
+10.3905/jpm.2016.42.4.059>.  Hierarchical clustering-based asset allocation
+(Raffinot, 2017) <DOI: 10.3905/jpm.2018.44.2.089>.  Hierarchical equal risk
+contribution portfolio (Raffinot, 2018) <DOI: 10.2139/ssrn.3237540>.  A
+Constrained Hierarchical Risk Parity Algorithm with Cluster-based Capital
+Allocation (Pfitzingera and Katzke, 2019)
 <https://www.ekon.sun.ac.za/wpapers/2019/wp142019/wp142019.pdf>.")
     (license license:gpl2)))
 
@@ -8154,13 +8193,13 @@ and notably fast update functions when adding new observations.")
 (define-public r-heteromixgm
   (package
     (name "r-heteromixgm")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heteromixgm" version))
        (sha256
-        (base32 "111qhf88bjkpraaqabyq8m40yk99jkmd2b6m7d7502gac3a0bf6z"))))
+        (base32 "02vy3v62mr5kn56w60ckcl8gcwks5z950vaxyk0aps428q1f954f"))))
     (properties `((upstream-name . "heteromixgm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
@@ -11285,13 +11324,13 @@ Nine-dotted line, South Tibet, Hong Kong, Macao and Taiwan.")
 (define-public r-hce
   (package
     (name "r-hce")
-    (version "0.6.0")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hce" version))
        (sha256
-        (base32 "0a9fdb3mx1rgnmdpjxjwgj0xlcd2cw43ydrj5mmld186w0c14kdz"))))
+        (base32 "0ywyj2c97p125y1sjik4zbdlcswc1x0zxwksl3jlrx68zbc0xpff"))))
     (properties `((upstream-name . "hce")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -94,13 +94,13 @@ available from <https://github.com/Cyan4973/@code{xxHash>}.")
 (define-public r-xxdi
   (package
     (name "r-xxdi")
-    (version "1.1.0")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xxdi" version))
        (sha256
-        (base32 "0kdv48p2z6l2ihrlygsqpfjppb3pn5h308q5jgw5m8hjv8p97wsd"))))
+        (base32 "07yjq9f6dw1xvd5map5aj42qhbgdqyla270vqn0h8x2h8wfqjfgq"))))
     (properties `((upstream-name . "xxdi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-matrix r-ggplot2 r-dplyr r-agop))
