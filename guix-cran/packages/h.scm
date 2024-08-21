@@ -12338,13 +12338,13 @@ French et al. (2006) <doi:10.1002/gepi.20161>.")
 (define-public r-haplin
   (package
     (name "r-haplin")
-    (version "7.3.1")
+    (version "7.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Haplin" version))
        (sha256
-        (base32 "0vyykbq2f5w4h7nai8w8krpax8q6v2hx76rr6xqy938rza5rfm79"))))
+        (base32 "0igijgzcs2bkh2yg58jzyixnxhg6d8rb4yvvwyqf0czi0rv1kzyl"))))
     (properties `((upstream-name . "Haplin")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mgcv r-mass r-ff))

@@ -5844,21 +5844,19 @@ random effects.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.0")
+    (version "0.10.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "0m31r5bs49bw9660hsxsmnk131hf6vrzqxank39hvlnid70z9l18"))))
+        (base32 "0nmk063qvf5c717512qcs8jb80y75iqdfr0cdjxgfl6rn5gmrwyh"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlparsedata
                              r-xml2
                              r-xfun
                              r-withr
-                             r-treesitter-r
-                             r-treesitter
                              r-stringr
                              r-rlang
                              r-purrr
@@ -12354,13 +12352,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.9")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "1x2d0y6jbwvdb8ixpi918g4apcmf018rk18s0h81qzbfp61l9yl3"))))
+        (base32 "09zi2cfd61gn3k8fvn8my9wxy4bg3s9bq3yqkw9rl27p9z4qwins"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2

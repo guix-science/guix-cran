@@ -35768,42 +35768,6 @@ order to reproduce the analysis used to obtain Table 1 in the paper, execute the
 command \"example(@code{fitVolDist})\".")
     (license license:gpl2+)))
 
-(define-public r-celltrackr
-  (package
-    (name "r-celltrackr")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "celltrackR" version))
-       (sha256
-        (base32 "1y0bdn75malabyrnrqrw5vh2sr6j09hpy8gbk1vnmkbvg9dy2xh3"))))
-    (properties `((upstream-name . "celltrackR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-ellipse))
-    (native-inputs (list r-knitr))
-    (home-page "http://www.motilitylab.net")
-    (synopsis "Motion Trajectory Analysis")
-    (description
-     "This package provides methods for analyzing (cell) motion in two or three
-dimensions.  Available measures include displacement, confinement ratio,
-autocorrelation, straightness, turning angle, and fractal dimension.  Measures
-can be applied to entire tracks, steps, or subtracks with varying length.  While
-the methodology has been developed for cell trajectory analysis, it is
-applicable to anything that moves including animals, people, or vehicles.  Some
-of the methodology implemented in this packages was described by: Beauchemin,
-Dixit, and Perelson (2007) <doi:10.4049/jimmunol.178.9.5505>, Beltman, Maree,
-and de Boer (2009) <doi:10.1038/nri2638>, Gneiting and Schlather (2004)
-<doi:10.1137/S0036144501394387>, Mokhtari, Mech, Zitzmann, Hasenberg, Gunzer,
-and Figge (2013) <doi:10.1371/journal.pone.0080808>, Moreau, Lemaitre, Terriac,
-Azar, Piel, Lennon-Dumenil, and Bousso (2012)
-<doi:10.1016/j.immuni.2012.05.014>, Textor, Peixoto, Henrickson, Sinn, von
-Andrian, and Westermann (2011) <doi:10.1073/pnas.1102288108>, Textor, Sinn, and
-de Boer (2013) <doi:10.1186/1471-2105-14-S6-S10>, Textor, Henrickson, Mandl, von
-Andrian, Westermann, de Boer, and Beltman (2014)
-<doi:10.1371/journal.pcbi.1003752>.")
-    (license license:gpl2)))
-
 (define-public r-cellpypes
   (package
     (name "r-cellpypes")
@@ -42769,23 +42733,23 @@ print A4 format PDF files.")
 (define-public r-calendar
   (package
     (name "r-calendar")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "calendar" version))
        (sha256
-        (base32 "0kjapjjjqmc4v2jvfnzy096m82m7xybcj952vmrx7kgnz07kynai"))))
+        (base32 "0gci7xlws9l93xrl3ksx85vqv9c2z86bmarivqjpigs40ppnsyn2"))))
     (properties `((upstream-name . "calendar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-lubridate))
+    (propagated-inputs (list r-tibble r-lubridate r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/atfutures/calendar")
     (synopsis
-     "Create, Read, Write, and Work with 'iCalander' Files, Calendars and Scheduling Data")
+     "Create, Read, Write, and Work with 'iCalendar' Files, Calendars and Scheduling Data")
     (description
      "This package provides function to create, read, write, and work with
-@code{iCalander} files (which typically have .ics or .ical extensions), and the
+@code{iCalendar} files (which typically have .ics or .ical extensions), and the
 scheduling data, calendars and timelines of people, organisations and other
 entities that they represent. @code{iCalendar} is an open standard for
 exchanging calendar and scheduling information between users and computers,

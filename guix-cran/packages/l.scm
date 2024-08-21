@@ -7750,6 +7750,35 @@ Crashed jobs can be automatically marked as \"failed\", or put in the queue agai
 potentially a limited number of times.")
     (license license:expat)))
 
+(define-public r-litedown
+  (package
+    (name "r-litedown")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "litedown" version))
+       (sha256
+        (base32 "16w5rhrczbfizm25z4sxhs08ys2phxlbimqfxbyqr4871yqz6vzm"))))
+    (properties `((upstream-name . "litedown")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun r-commonmark))
+    (home-page "https://github.com/yihui/litedown")
+    (synopsis "Lightweight Version of R Markdown")
+    (description
+     "Render R Markdown to Markdown (without using knitr'), and Markdown to
+lightweight HTML/'@code{LaTeX} documents with the commonmark package (instead of
+Pandoc').  Some missing Markdown features in commonmark are also supported, such
+as raw HTML/'@code{LaTeX} blocks, @code{LaTeX} math, superscripts, subscripts,
+footnotes, element attributes, appendices, and fenced Divs', but not all Pandoc
+Markdown features are (or will be) supported.  With additional @code{JavaScript}
+and CSS, you can also create HTML slides and articles.  This package can be
+viewed as a trimmed-down version of R Markdown and knitr'.  It does not aim at
+rich Markdown features or a large variety of output formats (the primary formats
+are HTML and @code{LaTeX}').  Book and website projects of multiple input
+documents are also supported.")
+    (license license:expat)))
+
 (define-public r-lite
   (package
     (name "r-lite")
@@ -11984,16 +12013,17 @@ ETS and simulation function for VES.")
 (define-public r-lefko3
   (package
     (name "r-lefko3")
-    (version "6.2.1")
+    (version "6.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lefko3" version))
        (sha256
-        (base32 "027x9k6wl59mbwfi1pd8jjhj60sbxi4gw27xb47rksbwkqbp0q4d"))))
+        (base32 "1avwk08ngvr5l0mvrz6zfljgwhf6bnffllarwgq8w4pna9102m2l"))))
     (properties `((upstream-name . "lefko3")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
+                             r-rlang
                              r-rcpparmadillo
                              r-rcpp
                              r-pscl
@@ -17617,13 +17647,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "1qjvyplkc957mhcyd4fly6il93mm5bj2v6azmr4vqc31lpx7j295"))))
+        (base32 "0qkzpx81gs0hkbzizrv4841jpalq06h6h7lw53088b7rmqahcraj"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rcpp r-igraph))
@@ -17631,10 +17661,9 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
     (synopsis "Graph/Network Analysis Based on L1 Centrality")
     (description
      "Analyze graph/network data using L1 centrality and prestige.  Functions for
-deriving global and local L1 centrality/prestige and L1
-centrality/prestige-based neighborhoods of vertices are provided.  Routines for
-visual inspection of a graph/network are also provided.  Details are in Kang and
-Oh (2024) <doi:10.48550/@code{arXiv.2404.13233>}.")
+deriving global, local, and group L1 centrality/prestige are provided.  Routines
+for visual inspection of a graph/network are also provided.  Details are in Kang
+and Oh (2024) <doi:10.48550/@code{arXiv.2404.13233>}.")
     (license license:gpl3+)))
 
 (define-public r-l1ball

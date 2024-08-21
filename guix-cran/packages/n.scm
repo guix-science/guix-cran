@@ -5144,29 +5144,6 @@ the Colorado Water Center, the National Institute of Environmental Health
 Sciences (R00ES022631) and the National Science Foundation (1331399).")
     (license license:gpl2+)))
 
-(define-public r-noaaoceans
-  (package
-    (name "r-noaaoceans")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "noaaoceans" version))
-       (sha256
-        (base32 "0pxsddzkrprzjch173shhmd7c2h6rh5xzs3n5bbs97l51ni8m60m"))))
-    (properties `((upstream-name . "noaaoceans")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-rvest r-jsonlite r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=noaaoceans")
-    (synopsis "Collect Ocean Data from NOAA")
-    (description
-     "This package provides a small set of tools for collecting data from National
-Oceanic and Atmospheric Administration (NOAA) data sources.  The functions
-provided in the package are wrappers around NOAA's existing APIs which is found
-at <https://api.tidesandcurrents.noaa.gov/api/prod/>.")
-    (license license:expat)))
-
 (define-public r-no-ping-pong
   (package
     (name "r-no-ping-pong")
@@ -12476,13 +12453,13 @@ nephrology based on different biomechimal traits.")
 (define-public r-neotoma2
   (package
     (name "r-neotoma2")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neotoma2" version))
        (sha256
-        (base32 "0dhbb7hhbw508mc4zwa2hr5kx5gaz4fj2vp2mrgjqww3dr55c1kp"))))
+        (base32 "13l41cypjpiqdkpkdwz7z39iiza2z6jcxj4sgm85713m7ws9dyak"))))
     (properties `((upstream-name . "neotoma2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wk
@@ -14251,6 +14228,32 @@ distances between mates; hence, it is referred to as an \"optimal\" matching.  T
 assign.grp() function aids in performing a matched randomization.  Note
 bipartite matching can be performed using the prevent option in gendistance()'.")
     (license license:gpl2+)))
+
+(define-public r-nbody
+  (package
+    (name "r-nbody")
+    (version "1.41")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "nbody" version))
+       (sha256
+        (base32 "19l6w5axpahcnm2kxlbl61gkkhg1r947z23cjlw4ln7n7vgcrxxn"))))
+    (properties `((upstream-name . "nbody")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-magicaxis))
+    (home-page "https://cran.r-project.org/package=nbody")
+    (synopsis "Gravitational N-Body Simulation")
+    (description
+     "Run simple direct gravitational N-body simulations.  The package can access
+different external N-body simulators (e.g. GADGET-4 by Springel et al. (2021)
+<doi:10.48550/@code{arXiv.2010.03567>}), but also has a simple built-in
+simulator.  This default simulator uses a variable block time step and lets the
+user choose between a range of integrators, including 4th and 6th order
+integrators for high-accuracy simulations.  Basic top-hat smoothing is available
+as an option.  The code also allows the definition of background particles that
+are fixed or in uniform motion, not subject to acceleration by other particles.")
+    (license license:gpl3)))
 
 (define-public r-nblr
   (package

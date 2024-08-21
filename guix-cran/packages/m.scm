@@ -42603,46 +42603,6 @@ a dataset of Malay stop words, a dataset of sentiment words and a dataset of
 normalized words.")
     (license license:expat)))
 
-(define-public r-malariaatlas
-  (package
-    (name "r-malariaatlas")
-    (version "1.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "malariaAtlas" version))
-       (sha256
-        (base32 "05d62m4w93bfx868sk8w6navw8w5z0jx30w2wnzma27gjydyc0z1"))))
-    (properties `((upstream-name . "malariaAtlas")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tidyterra
-                             r-tidyr
-                             r-terra
-                             r-stringr
-                             r-sf
-                             r-rlang
-                             r-ows4r
-                             r-lubridate
-                             r-lifecycle
-                             r-jsonlite
-                             r-httr
-                             r-gridextra
-                             r-ggplot2
-                             r-ggnewscale
-                             r-future-apply
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/malaria-atlas-project/malariaAtlas")
-    (synopsis
-     "An R Interface to Open-Access Malaria Data, Hosted by the 'Malaria Atlas Project'")
-    (description
-     "This package provides a suite of tools to allow you to download all publicly
-available parasite rate survey points, mosquito occurrence points and raster
-surfaces from the Malaria Atlas Project <https://malariaatlas.org/> servers as
-well as utility functions for plotting the downloaded data.")
-    (license license:expat)))
-
 (define-public r-malani
   (package
     (name "r-malani")

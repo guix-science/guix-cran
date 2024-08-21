@@ -1503,13 +1503,13 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
 (define-public r-volumodel
   (package
     (name "r-volumodel")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voluModel" version))
        (sha256
-        (base32 "1kkqgbsjsgwia03v7mfbn2zc830hfsayx4q6f4qmrv6ql6x5imcg"))))
+        (base32 "1pl4rxqpsh2kvnqph53nbcv4kj9zj7i3krn7y0h1mcvp0pzz1yva"))))
     (properties `((upstream-name . "voluModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -1517,6 +1517,7 @@ Brandes (2012) <doi:10.1111/j.1467-8659.2012.03078.x>.")
                              r-sf
                              r-rangebuilder
                              r-modeva
+                             r-metr
                              r-ggtext
                              r-ggplot2
                              r-fields

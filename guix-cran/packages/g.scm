@@ -17014,22 +17014,22 @@ parameters manageably low.")
 (define-public r-ggpath
   (package
     (name "r-ggpath")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggpath" version))
        (sha256
-        (base32 "0iq9fl8zcyc5ihi3pf6h8pb6j7ys506yziq0qr0xgyw803cvl23m"))))
+        (base32 "19rsshpcgdwccv790bydvp68p4797p5d6zyqwqbahd7xa1bwmg86"))))
     (properties `((upstream-name . "ggpath")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
-                             r-rappdirs
                              r-memoise
                              r-magick
                              r-ggplot2
                              r-cli
-                             r-cachem))
+                             r-cachem
+                             r-backports))
     (home-page "https://github.com/mrcaseb/ggpath")
     (synopsis "Robust Image Rendering Support for 'ggplot2'")
     (description
@@ -20173,13 +20173,13 @@ returns NULL.")
 (define-public r-gettddata
   (package
     (name "r-gettddata")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GetTDData" version))
        (sha256
-        (base32 "085rsqqrmda6mzb7n7kq00hpim62qqa85qk8kx8x5ch4j1qdhwi0"))))
+        (base32 "1l2kc85sxnwmccyyjf18d8npg40pa3kgsvd73lj6b8pxwrsg9wj7"))))
     (properties `((upstream-name . "GetTDData")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22849,6 +22849,60 @@ Details are described in Shin, H.-Y. and Oh, H.-S. (2020)
 analyst who want to check their own geospatial hypothesis but has no ready-made
 geospatial objects.")
     (license license:gpl3)))
+
+(define-public r-geodl
+  (package
+    (name "r-geodl")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geodl" version))
+       (sha256
+        (base32 "0fds29bsijihi47g3bh5796ni42shap8jyqrml385is6g50x9yy5"))))
+    (properties `((upstream-name . "geodl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torchvision
+                             r-torch
+                             r-terra
+                             r-rlang
+                             r-readr
+                             r-r6
+                             r-psych
+                             r-multiscaledtm
+                             r-luz
+                             r-dplyr
+                             r-coro))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/maxwell-geospatial/geodl")
+    (synopsis "Geospatial Semantic Segmentation with Torch and Terra")
+    (description
+     "This package provides tools for semantic segmentation of geospatial data using
+convolutional neural network-based deep learning.  Utility functions allow for
+creating masks, image chips, data frames listing image chips in a directory, and
+@code{DataSets} for use within @code{DataLoaders}.  Additional functions are
+provided to serve as checks during the data preparation and training process.  A
+UNet architecture can be defined with 4 blocks in the encoder, a bottleneck
+block, and 4 blocks in the decoder.  The UNet can accept a variable number of
+input channels, and the user can define the number of feature maps produced in
+each encoder and decoder block and the bottleneck.  Users can also choose to (1)
+replace all rectified linear unit (@code{ReLU}) activation functions with leaky
+@code{ReLU} or swish, (2) implement attention gates along the skip connections,
+(3) implement squeeze and excitation modules within the encoder blocks, (4) add
+residual connections within all blocks, (5) replace the bottleneck with a
+modified atrous spatial pyramid pooling (ASPP) module, and/or (6) implement deep
+supervision using predictions generated at each stage in the decoder.  A unified
+focal loss framework is implemented after Yeung et al. (2022)
+<doi:10.1016/j.compmedimag.2021.102026>.  We have also implemented assessment
+metrics using the luz package including F1-score, recall, and precision.
+Trained models can be used to predict to spatial data without the need to
+generate chips from larger spatial extents.  Functions are available for
+performing accuracy assessment.  The package relies on torch for implementing
+deep learning, which does not require the installation of a Python environment.
+Raster geospatial data are handled with terra'.  Models can be trained using a
+Compute Unified Device Architecture (CUDA)-enabled graphics processing unit
+(GPU); however, multi-GPU training is not supported by torch in R'.")
+    (license license:gpl3+)))
 
 (define-public r-geodiv
   (package

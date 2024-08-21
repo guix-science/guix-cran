@@ -2817,32 +2817,29 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
 (define-public r-rtwig
   (package
     (name "r-rtwig")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rTwig" version))
        (sha256
-        (base32 "1d3h4ym2vrlp04arjxg4s8zd9d5kyxf6ibvv169calsvkd4rfcn7"))))
+        (base32 "1v8xm7xnla335aijwbr3nmkx8ayf2p0d3qln47xh9smr2vrm88b4"))))
     (properties `((upstream-name . "rTwig")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytable
                              r-rmatio
+                             r-rlang
                              r-rgl
                              r-rdpack
-                             r-randomcolor
+                             r-rcppsimdjson
+                             r-rcpp
                              r-r-matlab
-                             r-purrr
                              r-progressr
-                             r-morpho
-                             r-matrix
-                             r-kit
                              r-igraph
+                             r-geometry
                              r-future
                              r-foreach
                              r-dofuture
-                             r-desctools
-                             r-data-table
                              r-colourvalues
                              r-cobs))
     (native-inputs (list r-knitr))
@@ -2852,9 +2849,9 @@ packages who wish to use the 2bit C library in their own C'/'C++ code.")
      "Real Twig is a method to correct branch overestimation in quantitative structure
 models.  Overestimated cylinders are correctly tapered using measured twig
 diameters of corresponding tree species.  Supported quantitative structure
-modeling software includes @code{TreeQSM} and @code{SimpleForest}'.  Also
-included is a novel database of twig diameters and tools for fractal analysis of
-point clouds.")
+modeling software includes @code{TreeQSM}', @code{SimpleForest} and Treegraph'.
+Also included is a novel database of twig diameters and tools for fractal
+analysis of point clouds.")
     (license license:gpl3+)))
 
 (define-public r-rtwalk
@@ -23230,16 +23227,23 @@ and pain-rating scales.")
 (define-public r-ridigbio
   (package
     (name "r-ridigbio")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ridigbio" version))
        (sha256
-        (base32 "1202w1gf77xnbgiwjyajjf2bvi879q4nlfnq6fwd03bzmypdn675"))))
+        (base32 "1schwqpfckfw25g9z7m3qphv5bcf8g1dvxggs6l19klf3a3lxjis"))))
     (properties `((upstream-name . "ridigbio")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-jsonlite r-httr))
+    (propagated-inputs (list r-tidyverse
+                             r-plyr
+                             r-leaflet
+                             r-kableextra
+                             r-jsonlite
+                             r-httr
+                             r-cowplot))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/iDigBio/ridigbio")
     (synopsis "Interface to the iDigBio Data API")
     (description
@@ -24596,17 +24600,17 @@ formats and methods are described in @code{McKay}, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgplates" version))
        (sha256
-        (base32 "1yrqx0m9va1izszpz6s2vd3hx5db9p4hsbj3i1ismd5pryb4xk1j"))))
+        (base32 "03qm51745bcyv118ghxqh5738fiqqgygcsd6xy4yzv54ya0cz28v"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
-    (home-page "https://adamtkocsis.com/rgplates/")
+    (home-page "https://gplates.github.io/rgplates/")
     (synopsis
      "R Interface for the GPlates Web Service and Desktop Application")
     (description
@@ -35357,49 +35361,6 @@ where we distinguish between expected, acceptable, current, fallback, ideal, or
 regressive behaviour.  It can also be used for monitoring third-party software
 projects for changes.")
     (license license:gpl2+)))
-
-(define-public r-ready4
-  (package
-    (name "r-ready4")
-    (version "0.1.14")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ready4" version))
-       (sha256
-        (base32 "09kf290dq1qdafyx8f12sasf10chiqrh8d1wa1apfkrr01n4b45j"))))
-    (properties `((upstream-name . "ready4")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyrss
-                             r-tibble
-                             r-stringr
-                             r-stringi
-                             r-rvest
-                             r-rlang
-                             r-purrr
-                             r-piggyback
-                             r-magrittr
-                             r-lifecycle
-                             r-kableextra
-                             r-gh
-                             r-dplyr
-                             r-dataverse
-                             r-curl))
-    (native-inputs (list r-knitr))
-    (home-page "https://ready4-dev.github.io/ready4/")
-    (synopsis "Develop and Use Modular Health Economic Models")
-    (description
-     "This package provides a template model module, tools to help find model modules
-derived from this template and a programming syntax to use these modules in
-health economic analyses.  These elements are the foundation for a prototype
-software framework for developing living and transferable models and using those
-models in reproducible health economic analyses.  The software framework is
-extended by other R libraries.  For detailed documentation about the framework
-and how to use it visit <https://www.ready4-dev.com/>.  For a background to the
-methodological issues that the framework is attempting to help solve, see
-Hamilton et al. (2024) <doi:10.1007/s40273-024-01378-8>.")
-    (license license:gpl3)))
 
 (define-public r-readxlsb
   (package

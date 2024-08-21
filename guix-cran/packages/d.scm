@@ -3279,13 +3279,13 @@ reference implementation of the @code{DataSHIELD} infrastructure.")
 (define-public r-dsmsearch
   (package
     (name "r-dsmsearch")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dsmSearch" version))
        (sha256
-        (base32 "04phbkav0ryj62aqghmlrraai419qlfd03f0as248s1hmwig5xg2"))))
+        (base32 "1kif46mjhrxxmdv4jahagjd3bz47na3k4r8m10cm85cac88iichm"))))
     (properties `((upstream-name . "dsmSearch")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

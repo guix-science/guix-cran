@@ -3768,38 +3768,6 @@ facilitate the data preparation process, transforming raw PSID files into a
 well-organized format ready for further analysis.")
     (license license:gpl3+)))
 
-(define-public r-psidr
-  (package
-    (name "r-psidr")
-    (version "2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "psidR" version))
-       (sha256
-        (base32 "0vfvx5aidd7g3s02hajnlfr8c0czzzbsrkgzfw5zx1lm4rxw8z26"))))
-    (properties `((upstream-name . "psidR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sascii
-                             r-rcurl
-                             r-openxlsx
-                             r-futile-logger
-                             r-foreign
-                             r-data-table))
-    (home-page "https://github.com/floswald/psidR")
-    (synopsis "Build Panel Data Sets from PSID Raw Data")
-    (description
-     "Makes it easy to build panel data in wide format from Panel Survey of Income
-Dynamics ('PSID') delivered raw data.  Downloads data directly from the PSID
-server using the SAScii package. @code{psidR} takes care of merging data from
-each wave onto a cross-period index file, so that individuals can be followed
-over time.  The user must specify which years they are interested in, and the
-PSID variable names (e.g. ER21003) for each year (they differ in each year).
-The package offers helper functions to retrieve variable names from different
-waves.  There are different panel data designs and sample subsetting criteria
-implemented (\"SRC\", \"SEO\", \"immigrant\" and \"latino\" samples).")
-    (license license:gpl3)))
-
 (define-public r-psica
   (package
     (name "r-psica")
@@ -11235,13 +11203,13 @@ provides options for embedding audio in figures and animating figures.")
 (define-public r-pra
   (package
     (name "r-pra")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRA" version))
        (sha256
-        (base32 "1lpafrpzw43k29vk2y52wixdzgli9z8c3bvv2liypmlxmqmjfxly"))))
+        (base32 "0j5lhaw4vhmcsxbi4fymky9zi8yk3zgkjlqjm7899w7y48qdcnfq"))))
     (properties `((upstream-name . "PRA")))
     (build-system r-build-system)
     (propagated-inputs (list r-minpack-lm r-mc2d))
@@ -11250,7 +11218,8 @@ provides options for embedding audio in figures and animating figures.")
     (synopsis "Project Risk Analysis")
     (description
      "Data analysis for Project Risk Management via the Second Moment Method, Monte
-Carlo Simulation, Bayesian methods, Design Structure Matrices, and more.")
+Carlo Simulation, Contingency Analysis, Sensitivity Analysis, Earned Value
+Management, Learning Curves, Design Structure Matrices, and more.")
     (license license:expat)))
 
 (define-public r-pqrfe

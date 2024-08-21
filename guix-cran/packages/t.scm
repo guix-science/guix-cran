@@ -4965,17 +4965,17 @@ publication by Fourer et al. (<doi:10.1287/mnsc.36.5.519>).")
 (define-public r-troubblme4solver
   (package
     (name "r-troubblme4solver")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trouBBlme4SolveR" version))
        (sha256
-        (base32 "0718n2lgwyj8c2cnxs6r6gy41ygv8pl04fnjb07c6jhzr30ndc6l"))))
+        (base32 "0rcsv0nrrwvgicrwig5278rb861ynh6crgixbg2400wxc30r9g24"))))
     (properties `((upstream-name . "trouBBlme4SolveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4))
-    (home-page "https://gitlab.com/iagogv/trouBBlme4SolveR")
+    (home-page "https://gitlab.com/iagogv/troubblme4solver")
     (synopsis "Troubles Solver for 'lme4'")
     (description
      "The main function of the package aims to update lmer()'/'glmer() models
@@ -5062,13 +5062,13 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "0y7rkb2lvv8yy3sl4r0zha873basfbh51gpwcxcqb1ihrn8i8c4c"))))
+        (base32 "1li3rcqfiqn586bm95cyl17rzsxg9hjxi6lywg3lk0g8qzgs2rnb"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -8197,13 +8197,13 @@ plots.")
 (define-public r-transforemotion
   (package
     (name "r-transforemotion")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transforEmotion" version))
        (sha256
-        (base32 "0vm6jls2whqkr1x7gwa9h6x1phng908z9qyfmpjr6nrykkwmk5va"))))
+        (base32 "13a6gcw9ifzy1x7dj5p3qnapf4l1nrsgxq8dn31hlk9dkl51c1hp"))))
     (properties `((upstream-name . "transforEmotion")))
     (build-system r-build-system)
     (propagated-inputs (list r-reticulate

@@ -1265,40 +1265,6 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
-(define-public r-otargen
-  (package
-    (name "r-otargen")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "otargen" version))
-       (sha256
-        (base32 "0hdnxwrlqchmbbg3fvcbfdr6m3igdcmd1i0plmhh2vy5xg3fn1r9"))))
-    (properties `((upstream-name . "otargen")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-rlang
-                             r-magrittr
-                             r-jsonlite
-                             r-janitor
-                             r-ghql
-                             r-ggrepel
-                             r-ggplot2
-                             r-ggiraphextra
-                             r-dplyr
-                             r-cli))
-    (home-page "https://amirfeizi.github.io/otargen/")
-    (synopsis "Access Open Target Genetics")
-    (description
-     "Interact seamlessly with Open Target Genetics @code{GraphQL} endpoint to query
-and retrieve tidy data tables, facilitating the analysis of genetic data.  For
-more information about the Open Target Genetics
-API(<https://genetics.opentargets.org/api>).")
-    (license license:expat)))
-
 (define-public r-oste
   (package
     (name "r-oste")
@@ -10162,36 +10128,6 @@ are accounted for when identifying anomalies (Kandanaarachchi, Hyndman 2022)
 <@code{arXiv:2210.07407>}.")
     (license license:gpl3+)))
 
-(define-public r-odbr
-  (package
-    (name "r-odbr")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "odbr" version))
-       (sha256
-        (base32 "03bdhmya86whrzijc8h6gvd4yzmivdskm42a80n4ryqn4szfyrpd"))))
-    (properties `((upstream-name . "odbr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-sf
-                             r-r-utils
-                             r-piggyback
-                             r-haven
-                             r-fs
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=odbr")
-    (synopsis "Download Data from Brazil's Origin Destination Surveys")
-    (description
-     "Download data from Brazil's Origin Destination Surveys.  The package covers both
-data from household travel surveys, dictionaries of variables, and the spatial
-geometries of surveys conducted in different years and across various urban
-areas in Brazil.  For some cities, the package will include enhanced versions of
-the data sets with variables \"harmonized\" across different years.")
-    (license license:gpl3+)))
-
 (define-public r-odbc
   (package
     (name "r-odbc")
@@ -10265,13 +10201,13 @@ be manipulated and provides features such as selection, filtering and ordering."
 (define-public r-od
   (package
     (name "r-od")
-    (version "0.4.4")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "od" version))
        (sha256
-        (base32 "0msfgqcx2qh728fqzdkhaab7b5na8wa3sga7hfzvxjy996bdfliw"))))
+        (base32 "16lal5asj6h9i5zwafpgzplcbl5pmwfn9gs2azi5swq5v6n0i748"))))
     (properties `((upstream-name . "od")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs r-sfheaders))

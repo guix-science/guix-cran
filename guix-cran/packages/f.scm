@@ -7548,25 +7548,25 @@ robust the testing outcomes are.")
 (define-public r-foreco
   (package
     (name "r-foreco")
-    (version "0.2.6")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FoReco" version))
        (sha256
-        (base32 "07ivfjs836g3k13kfv188lxv300n43vczmkcapxnwiii643y1kw8"))))
+        (base32 "1spzhiijpbrhlxassilnbrbdbghfr6sz8m43q756c7mikan9wag7"))))
     (properties `((upstream-name . "FoReco")))
     (build-system r-build-system)
-    (propagated-inputs (list r-osqp r-matrix r-mathjaxr r-corpcor r-cli))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-osqp r-matrix r-cli))
     (home-page "https://github.com/daniGiro/FoReco")
     (synopsis "Forecast Reconciliation")
     (description
-     "Classical (bottom-up and top-down), optimal and heuristic combination forecast
-point (Di Fonzo and Girolimetto, 2023) <doi:10.1016/j.ijforecast.2021.08.004>
-and probabilistic (Girolimetto et al.  2023) <@code{arXiv:2303.17277>}
-reconciliation procedures for cross-sectional, temporal, and cross-temporal
-linearly constrained time series.")
+     "Classical (bottom-up and top-down), optimal combination and heuristic point (Di
+Fonzo and Girolimetto, 2023 <doi:10.1016/j.ijforecast.2021.08.004>) and
+probabilistic (Girolimetto et al.  2023 <doi:10.1016/j.ijforecast.2023.10.003>)
+forecast reconciliation procedures for linearly constrained time series (e.g.,
+hierarchical or grouped time series) in cross-sectional, temporal, or
+cross-temporal frameworks.")
     (license license:gpl3)))
 
 (define-public r-forecasttb
@@ -9705,13 +9705,13 @@ or between modules in a shiny app, and more.")
 (define-public r-floral
   (package
     (name "r-floral")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FLORAL" version))
        (sha256
-        (base32 "1a1jnvbfk2fyqs5jw3y04wxln4hxsahv4yiwrhdgdbk4az3yxp9p"))))
+        (base32 "13gqy0c3zz3rs9lv6r5qrl9mzmg4zvaimxirr1p5bvmvwbaa256r"))))
     (properties `((upstream-name . "FLORAL")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9721,13 +9721,15 @@ or between modules in a shiny app, and more.")
                              r-rcpparmadillo
                              r-rcpp
                              r-mvtnorm
+                             r-msm
                              r-glmnet
                              r-ggplot2
                              r-foreach
                              r-dplyr
                              r-dorng
                              r-doparallel
-                             r-caret))
+                             r-caret
+                             r-ast2ast))
     (native-inputs (list r-knitr))
     (home-page "https://vdblab.github.io/FLORAL/")
     (synopsis "Fit Log-Ratio Lasso Regression for Compositional Data")

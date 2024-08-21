@@ -970,13 +970,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.6")
+    (version "1.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "1yyyrl6pgi4hzjcr20p2930iivi1mzyafw6cihny0lr81yv0kyh7"))))
+        (base32 "0xg76j82v1yqm69i0qwnnys2mf1wqvm4wafdjp8cixl8yw8c0995"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -1642,13 +1642,13 @@ city codes at a specific point in time.")
 (define-public r-joyn
   (package
     (name "r-joyn")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joyn" version))
        (sha256
-        (base32 "1pcg70znihl310aibhd2k8w8nc5960wj7g418f2xb1rx9yxvwn8g"))))
+        (base32 "10ww6y3c9h3y2h8dpgq2asl1nyphkkl3xp3p3vj68nlnprkdanq9"))))
     (properties `((upstream-name . "joyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-lifecycle r-data-table r-collapse r-cli))

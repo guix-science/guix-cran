@@ -2426,6 +2426,33 @@ poisson, quasibinomial, and quasipoisson) as described in Liao (U. Maryland
 thesis, 2010).")
     (license license:gpl3)))
 
+(define-public r-svycdiff
+  (package
+    (name "r-svycdiff")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "svycdiff" version))
+       (sha256
+        (base32 "1hfgrcrkwgsi3d71aih9w866cwnidhkl45bnw29g0gz3wyvxj9gs"))))
+    (properties `((upstream-name . "svycdiff")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survey r-numderiv r-betareg))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/salernos/svycdiff")
+    (synopsis "Controlled Difference Estimation for Complex Surveys")
+    (description
+     "Estimates the population average controlled difference for a given outcome
+between levels of a binary treatment, exposure, or other group membership
+variable of interest for clustered, stratified survey samples where sample
+selection depends on the comparison group.  Provides three methods for
+estimation, namely outcome modeling and two factorizations of inverse
+probability weighting.  Under stronger assumptions, these methods estimate the
+causal population average treatment effect.  Salerno et al., (2024)
+<doi:10.48550/@code{arXiv.2406.19597>}.")
+    (license license:gpl3+)))
+
 (define-public r-svwidgets
   (package
     (name "r-svwidgets")
@@ -3899,6 +3926,27 @@ estimator based on weighted cumulative hazard estimator.  The package also
 provides nonparametric estimator conditional to a given continuous covariate.
 All these methods have been submitted to be published.")
     (license license:gpl3)))
+
+(define-public r-survivalplann
+  (package
+    (name "r-survivalplann")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survivalPLANN" version))
+       (sha256
+        (base32 "0vkpclsirb37a0xdzbbk7z0ajnp398l12mwkrxh2nprngsnfvywn"))))
+    (properties `((upstream-name . "survivalPLANN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-nnet))
+    (home-page "https://cran.r-project.org/package=survivalPLANN")
+    (synopsis "Neural Networks to Predict Survival")
+    (description
+     "Several functions and S3 methods to predict survival by using neural networks.
+We implemented Partial Logistic Artificial Neural Networks (PLANN) as proposed
+by Biganzoli et al. (1998) <https://pubmed.ncbi.nlm.nih.gov/9618776>.")
+    (license license:gpl2+)))
 
 (define-public r-survivalmpldc
   (package
@@ -21592,6 +21640,37 @@ plotting.  It also adds support for literate markdown tangling.  The package is
 designed to bring reproducible phonetic research into R.")
     (license license:expat)))
 
+(define-public r-speakeasyr
+  (package
+    (name "r-speakeasyr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "speakeasyR" version))
+       (sha256
+        (base32 "1v893sxxdmzp3c0n727jas6l2ppgb3pjc5rf6rrp1lgf29fzrm3z"))))
+    (properties `((upstream-name . "speakeasyR")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-matrix))
+    (native-inputs (list pkg-config r-knitr gfortran))
+    (home-page "https://github.com/SpeakEasy-2/speakeasyR")
+    (synopsis "Fast and Robust Multi-Scale Graph Clustering")
+    (description
+     "This package provides a graph community detection algorithm that aims to be
+performant on large graphs and robust, returning consistent results across runs.
+@code{SpeakEasy} 2 (SE2), the underlying algorithm, is described in Chris
+Gaiteri, David R. Connell & Faraz A. Sultan et al. (2023)
+<doi:10.1186/s13059-023-03062-0>.  The core algorithm is written in C',
+providing speed and keeping the memory requirements low.  This implementation
+can take advantage of multiple computing cores without increasing memory usage.
+SE2 can detect community structure across scales, making it a good choice for
+biological data, which often has hierarchical structure.  Graphs can be passed
+to the algorithm as adjacency matrices using base R matrices, the Matrix
+library, igraph graphs, or any data that can be coerced into a matrix.")
+    (license license:gpl3+)))
+
 (define-public r-spdynmod
   (package
     (name "r-spdynmod")
@@ -22413,13 +22492,13 @@ two-dimensional Penalised spline (P-spline) models.")
 (define-public r-spatpomp
   (package
     (name "r-spatpomp")
-    (version "0.35.0")
+    (version "0.36.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatPomp" version))
        (sha256
-        (base32 "0zz6xbbxrj287mjphhq21jpmnbdm60fii13sv8dg8v95l4lhi8pl"))))
+        (base32 "1dg7f65mk8mrspccb8kbssbswpx3dmp15q6mksdis8k0mk4br9qz"))))
     (properties `((upstream-name . "spatPomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -44346,13 +44425,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.9.3")
+    (version "0.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapviz" version))
        (sha256
-        (base32 "01zq6kr5na40xgypif6sv2pjynhva9v0npx779k7fxck1db68z80"))))
+        (base32 "024xzyfr5m88njqzjkzbascnnmyss6h5vmjp3agn26xrswg2pfib"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -55511,13 +55590,13 @@ between colour spaces.")
 (define-public r-sched
   (package
     (name "r-sched")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sched" version))
        (sha256
-        (base32 "0cbbchax694aqbi12hxnssmfk8x56k5wdzkshbzanwjn2ivvr1rb"))))
+        (base32 "1cpc9apvn5479vddvadh66dnwlhkqp80hb3762dd26jwmpfmq43h"))))
     (properties `((upstream-name . "sched")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl

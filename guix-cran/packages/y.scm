@@ -479,16 +479,16 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "12bs2b4gb4767sbkpvykspm5ip62y88bk3rxbmn6l23i3k2j1fl4"))))
+        (base32 "1is2n0rf2kpvfjfhf26q1ll1pkw00kxawc0wbkbc2jsh2nsqlfw1"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
-    (home-page "https://sr.ht/~tim-taylor/ympes/")
+    (home-page "https://timtaylor.github.io/ympes/")
     (synopsis "Collection of Helper Functions")
     (description
      "This package provides a collection of lightweight helper functions (imps) both

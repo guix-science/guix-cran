@@ -773,13 +773,13 @@ heterologous spike-in proteins.")
 (define-public r-wrmisc
   (package
     (name "r-wrmisc")
-    (version "1.15.1")
+    (version "1.15.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wrMisc" version))
        (sha256
-        (base32 "1ii3dl2dpxrshhh8dfvn75s7rn99ylvldb46cc3pdadjb8czzgmn"))))
+        (base32 "0pp1m2ijvkdyagc6rzfafgq2348lxdi5rplnsslg5wx0j88g5m92"))))
     (properties `((upstream-name . "wrMisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4399,30 +4399,6 @@ Political Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche
 Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
 Inference,\" International Studies Quarterly 51 (March)
 <DOI:10.1111/j.1468-2478.2007.00445.x>.")
-    (license license:gpl3+)))
-
-(define-public r-wh
-  (package
-    (name "r-wh")
-    (version "1.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WH" version))
-       (sha256
-        (base32 "1df2m8m17pv9wn555i7h7nrxmk7cj1znwmgfd78ybjrckijzb61m"))))
-    (properties `((upstream-name . "WH")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/GuillaumeBiessy/WH")
-    (synopsis "Enhanced Implementation of Whittaker-Henderson Smoothing")
-    (description
-     "An enhanced implementation of Whittaker-Henderson smoothing for the gradation of
-one-dimensional and two-dimensional actuarial tables used to quantify Life
-Insurance risks.  WH is based on the methods described in Biessy (2023)
-<doi:10.48550/@code{arXiv.2306.06932>}.  Among other features, it generalizes
-the original smoothing algorithm to maximum likelihood estimation, automatically
-selects the smoothing parameter(s) and extrapolates beyond the range of data.")
     (license license:gpl3+)))
 
 (define-public r-wgteff

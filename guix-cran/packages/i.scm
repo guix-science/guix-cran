@@ -15567,6 +15567,42 @@ Ising prior to capture structure of predictors in the modeling process.  More
 information can be found in the papers listed in the URL below.")
     (license license:gpl2+)))
 
+(define-public r-iclustervb
+  (package
+    (name "r-iclustervb")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iClusterVB" version))
+       (sha256
+        (base32 "0iwlxz1xcfziqigkr2lkcdmk1zdg09pkbxy0vxh26nyn2gz3nf4w"))))
+    (properties `((upstream-name . "iClusterVB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-varsellcm
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r-utils
+                             r-polca
+                             r-pheatmap
+                             r-mvtnorm
+                             r-mcmcpack
+                             r-mclust
+                             r-ggplot2
+                             r-cowplot
+                             r-clustmixtype
+                             r-cluster))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/AbdalkarimA/iClusterVB")
+    (synopsis
+     "Fast Integrative Clustering and Feature Selection for High Dimensional Data")
+    (description
+     "This package provides a variational Bayesian approach for fast integrative
+clustering and feature selection, facilitating the analysis of multi-view, mixed
+type, high-dimensional datasets with applications in fields like cancer
+research, genomics, and more.")
+    (license license:expat)))
+
 (define-public r-iclick
   (package
     (name "r-iclick")
@@ -16221,6 +16257,28 @@ icdpicr is an open-access update that accepts both ICD-9 and ICD-10 codes.")
 data for discrete covariates.  The estimation is based on the EM algorithm by
 the method of weights by Ibrahim (1990) <DOI:10.2307/2290013>.")
     (license license:gpl2+)))
+
+(define-public r-icdcomorbid
+  (package
+    (name "r-icdcomorbid")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "icdcomorbid" version))
+       (sha256
+        (base32 "15si1kp96agpwh7b47pk225js25aaycigz0q9c2kahhrx8pf3sna"))))
+    (properties `((upstream-name . "icdcomorbid")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=icdcomorbid")
+    (synopsis "Mapping ICD Codes to Comorbidity")
+    (description
+     "This package provides tools for mapping International Classification of Diseases
+codes to comorbidity, enabling the identification and analysis of various
+medical conditions within healthcare data.")
+    (license license:expat)))
 
 (define-public r-icd10gm
   (package
