@@ -20,6 +20,7 @@
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages bioinformatics)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages base)
   #:use-module (gnu packages algebra)
@@ -11065,13 +11066,13 @@ variance reduction among linear projections.")
 (define-public r-flan
   (package
     (name "r-flan")
-    (version "0.9")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flan" version))
        (sha256
-        (base32 "0g4prvlwiaf6ig6kghniqpcaxyws27345mb5qmcpgsy4jzdc4k7j"))))
+        (base32 "1v2agnabvymygaqn47lf4wfmmviqkn1wh1crzdqy05ihvmhz23bl"))))
     (properties `((upstream-name . "flan")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppgsl r-rcpparmadillo r-rcpp))
@@ -12728,6 +12729,40 @@ Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
     (description
      "This package provides a lightweight suite of functions for retrieving
 information about 5-digit or 2-digit US FIPS codes.")
+    (license license:expat)))
+
+(define-public r-fio
+  (package
+    (name "r-fio")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fio" version))
+       (sha256
+        (base32 "105dh96zjwa02kdkax1l52rsixr1615bjd72g1hk1x8lv217fjnw"))))
+    (properties `((upstream-name . "fio")))
+    (build-system r-build-system)
+    (inputs (list xz))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-readxl
+                             r-rdpack
+                             r-r6
+                             r-miniui
+                             r-fs
+                             r-emoji
+                             r-clipr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://albersonmiranda.github.io/fio/")
+    (synopsis "Friendly Input-Output Analysis")
+    (description
+     "Simplifies the process of importing and managing input-output matrices from
+Microsoft Excel into R, and provides a suite of functions for analysis.  It
+leverages the R6 class for clean, memory-efficient object-oriented programming.
+Furthermore, all linear algebra computations are implemented in Rust to achieve
+highly optimized performance.")
     (license license:expat)))
 
 (define-public r-fints

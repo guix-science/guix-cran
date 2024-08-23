@@ -1813,13 +1813,13 @@ export data tables to files before being able to complete their analysis.")
 (define-public r-worldflora
   (package
     (name "r-worldflora")
-    (version "1.14-3")
+    (version "1.14-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WorldFlora" version))
        (sha256
-        (base32 "0vibkgp83ligznkamqzs01j7hq6cqd42x1avcn0bp0zpdf38abcz"))))
+        (base32 "03ggpy5g74x1hg7vwvxvy8rjwvi75awiyyxs3irrm9aib539gbr8"))))
     (properties `((upstream-name . "WorldFlora")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=WorldFlora")

@@ -4752,13 +4752,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "2.1.6")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "05q9w2qq7pl9zw0nxnlvmj79cb8sc9r3w4d3n355vzhf9qnzbqk4"))))
+        (base32 "17chkg72zbf5ydz813yjc6ldv5y0q5nw2y8ipmnjhhibz63s0i4d"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -5818,13 +5818,13 @@ slowly-changing physiological variable.For more information see Signer
 (define-public r-boxcoxmix
   (package
     (name "r-boxcoxmix")
-    (version "0.42")
+    (version "0.46")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boxcoxmix" version))
        (sha256
-        (base32 "0z4iagli47i5jd9fi849wglwj2mbrn60wikb6n041k9yrfhgccma"))))
+        (base32 "0lalj4sd9ydk2k5r5jww60bm68fbwhin0p81wzraq025pil5cddm"))))
     (properties `((upstream-name . "boxcoxmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-qicharts r-npmlreg))
@@ -5844,13 +5844,13 @@ random effects.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.2")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "0nmk063qvf5c717512qcs8jb80y75iqdfr0cdjxgfl6rn5gmrwyh"))))
+        (base32 "1prd266h5bbzaqx4r0yz0rvcqslgdgxk1g686x83g5qrsz58blxa"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlparsedata
@@ -10991,13 +10991,13 @@ the approximation.")
 (define-public r-bispdep
   (package
     (name "r-bispdep")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bispdep" version))
        (sha256
-        (base32 "18rbzfp5ql0qhglmibzvdj1lbq48cvkzz4rpjgam43xkknhyivra"))))
+        (base32 "1bcqj50snjzvggii3kd69wc0kqfldb6fc3w8nxwb1v828hml6b83"))))
     (properties `((upstream-name . "bispdep")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -11009,7 +11009,7 @@ the approximation.")
                              r-ggplot2
                              r-combinat
                              r-boot))
-    (home-page "https://cran.r-project.org/package=bispdep")
+    (home-page "https://github.com/carlosm77/bispdep")
     (synopsis "Statistical Tools for Bivariate Spatial Dependence Analysis")
     (description
      "This package provides a collection of functions to test spatial autocorrelation

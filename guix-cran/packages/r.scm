@@ -8147,17 +8147,17 @@ biology, but certainly other fields, as well.")
 (define-public r-rrphylo
   (package
     (name "r-rrphylo")
-    (version "2.8.0")
+    (version "2.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RRphylo" version))
        (sha256
-        (base32 "1s79x7b4qbsm412vp4z8pq1803jwnr0i6mgggpk8h5pk5j3klc3f"))))
+        (base32 "0hgywjh0lac626ybfvycykhacav10pzrf6vcy3bp2nf4ihik7yhy"))))
     (properties `((upstream-name . "RRphylo")))
     (build-system r-build-system)
     (propagated-inputs (list r-phytools r-foreach r-emmeans r-doparallel r-ape))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://cran.r-project.org/package=RRphylo")
     (synopsis "Phylogenetic Ridge Regression Methods for Comparative Studies")
     (description
@@ -10814,36 +10814,6 @@ distributed data using the Randomized phi-divergence test statistics.  Details
 of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (2023) <doi:10.1214/22-AIHP1299>.")
     (license license:expat)))
-
-(define-public r-rpdbapi
-  (package
-    (name "r-rpdbapi")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rPDBapi" version))
-       (sha256
-        (base32 "16vfwln7k55010h3x9f7znljf0m4x0x97dgnaycxnqf5gpsv65iw"))))
-    (properties `((upstream-name . "rPDBapi")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-purrr
-                             r-magrittr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-bio3d))
-    (home-page "https://cran.r-project.org/package=rPDBapi")
-    (synopsis "Comprehensive Interface for Accessing the Protein Data Bank")
-    (description
-     "Streamlines the interaction with the RCSB Protein Data Bank (PDB)
-<https://www.rcsb.org/>.  This interface offers an intuitive and powerful tool
-for searching and retrieving a diverse range of data types from the PDB. It
-includes advanced functionalities like BLAST and sequence motif queries.  Built
-upon the existing XML-based API of the PDB, it simplifies the creation of custom
-requests, thereby enhancing usability and flexibility for researchers.")
-    (license license:gpl2+)))
 
 (define-public r-rpdb
   (package
@@ -15022,13 +14992,13 @@ convenient functions for summary, visualizations, and fit diagnostics.")
 (define-public r-robsurvey
   (package
     (name "r-robsurvey")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robsurvey" version))
        (sha256
-        (base32 "0y1yw89ms0805iixv5xz9sq8zbdr7l89hb1nhwccdn7v62ydpxip"))))
+        (base32 "1jvjmgykslc8wbirpi5ysnpjrxp6xf9v4cpzma6bf6zq9cf3r5q4"))))
     (properties `((upstream-name . "robsurvey")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey r-kernsmooth))
@@ -27863,13 +27833,13 @@ and DMS-2015552.")
 (define-public r-resultmodelmanager
   (package
     (name "r-resultmodelmanager")
-    (version "0.5.9")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResultModelManager" version))
        (sha256
-        (base32 "0adjf9b9j4qmn55zlh6sq55vdvpkdbfkbbwvjy0d2y8bw0yfscxs"))))
+        (base32 "0azmc0dqsk4r4ln2rp2w9dsmmlnx6axjw40lk3b2ib51czdr37vp"))))
     (properties `((upstream-name . "ResultModelManager")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -28592,13 +28562,13 @@ details.")
 (define-public r-resilience
   (package
     (name "r-resilience")
-    (version "2024.1.1")
+    (version "2024.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "resilience" version))
        (sha256
-        (base32 "0rzjj6bsi9dwis0k3zl329njcb6khr4a037k7i8s20v28qvs760c"))))
+        (base32 "05rwyw77sws7d04gxafj41x5amih39lf63mb71vn6b16fgf6mg61"))))
     (properties `((upstream-name . "resilience")))
     (build-system r-build-system)
     (propagated-inputs (list r-nptest r-foreach r-doparallel))
@@ -29697,13 +29667,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "13ha7xncl1slmvhi2pb6l4qwzmgrmj1fp2m6vmwxbig7fvcw0rkg"))))
+        (base32 "11qi12m34lnj3a8mhpi3xdlaw8ji9pscyg110lvd3rrxlaxsijbz"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -33026,13 +32996,13 @@ More info on key collision and ngram fingerprint can be found here
 (define-public r-refiner
   (package
     (name "r-refiner")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refineR" version))
        (sha256
-        (base32 "1bwafqcvsvmb6svdcr4ri31wvyzws33xfxrf42g4dzx03q0wwkin"))))
+        (base32 "1ygfs0fdx8bj3a2i15l3218837phf52lapf0v7agmm95jciw7wip"))))
     (properties `((upstream-name . "refineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-future r-ash))
@@ -42469,13 +42439,13 @@ possible to link behavioral labels extracted from BORIS software
 (define-public r-rbldatalicense
   (package
     (name "r-rbldatalicense")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RblDataLicense" version))
        (sha256
-        (base32 "05xwk8j8qgy89vg1dkjwslbbbb3nrqagbiwag8giyzifx7w0gfsp"))))
+        (base32 "1nh8gw4c94zxfx5fhvgn9hg8nqb31r6gzjdmj22q0sbsrfq5adv5"))))
     (properties `((upstream-name . "RblDataLicense")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts r-rcurl))

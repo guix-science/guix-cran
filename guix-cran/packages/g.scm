@@ -4658,13 +4658,13 @@ viewports and grobs that @code{gridGraphviz} produces.")
 (define-public r-gridgeometry
   (package
     (name "r-gridgeometry")
-    (version "0.3-0")
+    (version "0.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gridGeometry" version))
        (sha256
-        (base32 "0x2b993ffqp8hk0sml6yhmpzy89inv4cjr7f2j60m5jlk55zvx55"))))
+        (base32 "1j19bwkc33r85xkc9vlphyyq3w8gwfigjkifikl7yi216fhgfrgr"))))
     (properties `((upstream-name . "gridGeometry")))
     (build-system r-build-system)
     (propagated-inputs (list r-polyclip))
@@ -5871,13 +5871,13 @@ without access to Hugin to use code written to use RHugin'.")
 (define-public r-grattaninflators
   (package
     (name "r-grattaninflators")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grattanInflators" version))
        (sha256
-        (base32 "1pky7gi9rwxggzv2rhqjkzlql16xs506ba0yhqy1dqs219k1dvwd"))))
+        (base32 "1mls2pnnds5c2ys5wsiki0xrwcn9l4bfpl785817cbfw61rwwi3h"))))
     (properties `((upstream-name . "grattanInflators")))
     (build-system r-build-system)
     (propagated-inputs (list r-hutils r-fy r-data-table))
@@ -21480,18 +21480,23 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "2.2")
+    (version "3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "1mkab3377r04zybqsswakcgqwgby9iwb8bhxkr8s27blxha44jcp"))))
+        (base32 "1rpzmpswss5z5ya4xwrfg4dmza9il790alwb3zv5ksfzsvfhqmwh"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-secdim r-ggrepel r-ggplot2 r-dplyr r-desctools))
+    (propagated-inputs (list r-tibble
+                             r-purrr
+                             r-magrittr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=geosimilarity")
+    (home-page "https://github.com/ausgis/geosimilarity")
     (synopsis "Geographically Optimal Similarity")
     (description
      "Understanding spatial association is essential for spatial statistical
@@ -21502,7 +21507,7 @@ developed based on the geographical similarity principle, as described in Axing
 Zhu (2018) <doi:10.1080/19475683.2018.1534890>.  GOS has advantages in more
 accurate spatial prediction using fewer samples and critically reduced
 prediction uncertainty.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-geosed
   (package
@@ -24161,13 +24166,13 @@ genotype data.")
 (define-public r-genieclust
   (package
     (name "r-genieclust")
-    (version "1.1.5-2")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genieclust" version))
        (sha256
-        (base32 "0n8r3wvync041ppf72gd3yx1yj9b4fdbcb4gw3lhvsxx1gxwym0k"))))
+        (base32 "131nax76dsg3b6700qwgq3gpin4pl152rjsfqgh41m89ffchk0m4"))))
     (properties `((upstream-name . "genieclust")))
     (build-system r-build-system)
     (inputs (list))

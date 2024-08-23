@@ -1481,13 +1481,13 @@ Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
 (define-public r-koboconnectr
   (package
     (name "r-koboconnectr")
-    (version "1.2.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "KoboconnectR" version))
        (sha256
-        (base32 "09cg03hd8wp458d487qbx6giqqw6lc0gavx8isn067wqyfsscg16"))))
+        (base32 "082yh0hfygg1favnxa2yxi96w44r11a033ypzvddzgvf0i9fd5dw"))))
     (properties `((upstream-name . "KoboconnectR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -1497,7 +1497,7 @@ Tenori L. (2014) Proc Natl Acad Sci USA <doi:10.1073/pnas.1220873111>.")
                              r-openssl
                              r-mime
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-dplyr
                              r-curl))
     (native-inputs (list r-knitr))

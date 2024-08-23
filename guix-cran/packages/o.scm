@@ -472,6 +472,35 @@ different tables (e.g., time and scope conditions).  The package also provides
 publishable @code{LaTeX} code to present the sample information.")
     (license license:gpl3)))
 
+(define-public r-overturer
+  (package
+    (name "r-overturer")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "overtureR" version))
+       (sha256
+        (base32 "07m0fkcix5s6diw3dcqyi45r04x66h6khpjgi96mww1k8gl37kg6"))))
+    (properties `((upstream-name . "overtureR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-rlang
+                             r-glue
+                             r-duckdb
+                             r-dplyr
+                             r-dbplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/arthurgailes/overtureR")
+    (synopsis
+     "Load 'Overture' Datasets as 'dbplyr' and 'sf'-Ready Data Frames")
+    (description
+     "An integrated R interface to the Overture API
+(<https://docs.overturemaps.org/>).  Allows R users to return Overture data as
+dbplyr data frames or materialized sf spatial data frames.")
+    (license license:expat)))
+
 (define-public r-overturemapsr
   (package
     (name "r-overturemapsr")
@@ -2842,13 +2871,13 @@ Technometrics paper.")
 (define-public r-ordinalpattern
   (package
     (name "r-ordinalpattern")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ordinalpattern" version))
        (sha256
-        (base32 "0d2vb73318agam3bmcva2mirwlskhfl66jzla36yihkb2r64cxgn"))))
+        (base32 "0vczxz0z3ixn0gv694dy31ywcx0iz8x821129jisy1x79yi36f29"))))
     (properties `((upstream-name . "ordinalpattern")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-gtools))
@@ -2861,7 +2890,9 @@ Schnurr (2014) <doi:10.1007/s00362-013-0536-8> defines a robust and
 non-parametric dependence measure: the ordinal pattern coefficient.  Functions
 to calculate this and a method to detect a change in the pattern coefficient
 proposed in Schnurr and Dehling (2017) <doi:10.1080/01621459.2016.1164706> are
-provided.")
+provided.  Furthermore, the package contains a function for calculating the
+ordinal pattern frequencies.  Generalized ordinal patterns as proposed by
+Schnurr and Fischer (2022) <doi:10.1016/j.csda.2022.107472> are also considered.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-ordinalnet
@@ -5483,6 +5514,38 @@ and visualize aviation data.  It includes a client interface to the
 @code{OpenSky} API <https://opensky-network.org>.  It allows retrieval of flight
 information, as well as aircraft state vectors.")
     (license (license:fsdg-compatible "CC BY-NC 4.0"))))
+
+(define-public r-openscoring
+  (package
+    (name "r-openscoring")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "openscoring" version))
+       (sha256
+        (base32 "0h10dh0ssxk32x9adjlsbnjxb3s2p9ma0kz1fjfh37gqrc84h4xa"))))
+    (properties `((upstream-name . "openscoring")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (home-page "https://github.com/jakub-jedrusiak/openscoring")
+    (synopsis "'Open Scoring' API Client")
+    (description
+     "Creativity research involves the need to score open-ended problems.  Usually
+done by humans, automatic scoring using AI becomes more and more accurate.  This
+package provides a simple interface to the Open Scoring API
+<https://openscoring.du.edu/docs>, leading creativity scoring technology by
+Organiscak et al. (2023) <doi:10.1016/j.tsc.2023.101356>.  With it, you can
+score your own data directly from an R script.")
+    (license license:expat)))
 
 (define-public r-openrepgrid-ic
   (package
@@ -10922,23 +10985,22 @@ enhanced ability to repeat analyses.")
 (define-public r-occ
   (package
     (name "r-occ")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occ" version))
        (sha256
-        (base32 "1aka29qqwbd494kvi15yyyqkb9hks4ky2gcvykxhx2drm2fnsn4g"))))
+        (base32 "043n429q4md3x7bzgr22gh5mmbdx27b0vi161sw31vkmmzk1mblw"))))
     (properties `((upstream-name . "occ")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=occ")
-    (synopsis "Estimates PET Neuroreceptor Occupancies")
+    (synopsis "Estimation of PET Neuroreceptor Occupancies")
     (description
-     "Generic function for estimating positron emission tomography (PET) neuroreceptor
-occupancies from the total volumes of distribution of a set of regions of
-interest.  Fittings methods include the simple reference region and ordinary
-least squares (sometimes known as occupancy plot) methods, as well as the more
-efficient restricted maximum likelihood estimation'.")
+     "Estimate the positron emission tomography (PET) neuroreceptor occupancies from
+the total volumes of distribution of a set of regions of interest.  Fitting
+methods include the simple reference region', ordinary least squares (sometimes
+known as occupancy plot), and restricted maximum likelihood estimation'.")
     (license license:gpl3)))
 
 (define-public r-oca

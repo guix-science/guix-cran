@@ -6821,6 +6821,30 @@ tests proposed by Zhang (2019) <http://hdl.handle.net/2097/40235>, referred to
 as zwl_test() in this package, provide a reliable and powerful test.")
     (license license:gpl2)))
 
+(define-public r-highd2means
+  (package
+    (name "r-highd2means")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "highd2means" version))
+       (sha256
+        (base32 "10gy9rhbpllp6qq8ribjswp3h0cdli6qhnh87ccb1ag252383kqc"))))
+    (properties `((upstream-name . "highd2means")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=highd2means")
+    (synopsis "High-Dimensional Tests for Two Population Mean Vectors")
+    (description
+     "Tests for two high-dimensional population mean vectors.  The user has the option
+to compute the asymptotic, the permutation or the bootstrap based p-value of the
+test.  Some references are: Chen S.X. and Qin Y.L. (2010).
+<doi:10.1214/09-AOS716>, Cai T.T., Liu W., and Xia Y. (2014)
+<doi:10.1111/rssb.12034> and Yu X., Li D., Xue L. and Li, R. (2023)
+<doi:10.1080/01621459.2022.2061354>.")
+    (license license:gpl2+)))
+
 (define-public r-highcharter
   (package
     (name "r-highcharter")
@@ -10995,17 +11019,18 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
 (define-public r-hdbayes
   (package
     (name "r-hdbayes")
-    (version "0.0.3")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdbayes" version))
        (sha256
-        (base32 "19c8nxa30sngrz8z01xc2qxkyi4vjjnvqacphm318ianpwi7pi69"))))
+        (base32 "1vm89cdi2dfx6dhv62s3c0iv81rd2mfp1m99am4r6bdc71rqi0qi"))))
     (properties `((upstream-name . "hdbayes")))
     (build-system r-build-system)
     (inputs (list))
     (propagated-inputs (list r-posterior
+                             r-mvtnorm
                              r-mclust
                              r-instantiate
                              r-fs
@@ -11013,22 +11038,25 @@ described in Cho and Fryzlewicz (2014) <doi:10.1111/rssb.12079> and Cho (2016)
                              r-enrichwith
                              r-callr
                              r-bridgesampling))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/ethan-alt/hdbayes")
     (synopsis
      "Bayesian Analysis of Generalized Linear Models with Historical Data")
     (description
      "User-friendly functions for leveraging (multiple) historical data set(s) for
-generalized linear models.  Contains functions for sampling from the posterior
-distribution of a generalized linear model using the prior induced by the
-Bayesian hierarchical model, power prior by Ibrahim and Chen (2000)
+generalized linear models.  The package contains functions for sampling from the
+posterior distribution of a generalized linear model using the prior induced by
+the Bayesian hierarchical model, power prior by Ibrahim and Chen (2000)
 <doi:10.1214/ss/1009212673>, normalized power prior by Duan et al. (2006)
 <doi:10.1002/env.752>, normalized asymptotic power prior by Ibrahim et al.
 (2015) <doi:10.1002/sim.6728>, commensurate prior by Hobbs et al. (2011)
 <doi:10.1111/j.1541-0420.2011.01564.x>, robust meta-analytic-predictive prior by
-Schmidli et al. (2014) <doi:10.1111/biom.12242>, and the latent exchangeability
-prior (LEAP) by Alt et al. (2023) <@code{arXiv:2303.05223>}.  The package
-compiles all the @code{CmdStan} models once during installation using the
-instantiate package.")
+Schmidli et al. (2014) <doi:10.1111/biom.12242>, the latent exchangeability
+prior by Alt et al. (2023) <doi:10.48550/@code{arXiv.2303.05223>}, and a normal
+(or half-normal) prior.  Functions for computing the marginal log-likelihood
+under each of the implemented priors are also included.  The package compiles
+all the @code{CmdStan} models once during installation using the instantiate
+package.")
     (license license:expat)))
 
 (define-public r-hda

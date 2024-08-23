@@ -191,13 +191,13 @@ of this package.")
 (define-public r-myclim
   (package
     (name "r-myclim")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "myClim" version))
        (sha256
-        (base32 "1wy5yzx4z2c9n9bq3imih339h20wigwy7120kk3wclpfxvhfi2b4"))))
+        (base32 "0ss1wvvl46nkw93zgl0p89z7y7sqgfw1kqkbhvyalhyyxvvjy5nm"))))
     (properties `((upstream-name . "myClim")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5551,13 +5551,13 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "16fbrc2phljrvmlraii31g16z41lid9x9s5sw1d03v6vzgca09aj"))))
+        (base32 "0jbp9fg38488wx5bypmmicbjnkpf70qja52jnybjz2db632gjbkm"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -7635,6 +7635,34 @@ merits, a combination of both models has shown to increase the performance of
 machine learning classifiers in terms of their capabilities in discrimination
 between true and false positive interactions.")
     (license license:gpl3)))
+
+(define-public r-msinference
+  (package
+    (name "r-msinference")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSinference" version))
+       (sha256
+        (base32 "0xazpyycpc4p2lhxfszy5ga8synwdvwilhzqhp7dv4900zsysbk7"))))
+    (properties `((upstream-name . "MSinference")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MSinference")
+    (synopsis "Multiscale Inference for Nonparametric Time Trend(s)")
+    (description
+     "This package performs a multiscale analysis of a nonparametric regression or
+nonparametric regressions with time series errors.  In case of one regression,
+with the help of this package it is possible to detect the regions where the
+trend function is increasing or decreasing.  In case of multiple regressions,
+the test identifies regions where the trend functions are different from each
+other.  See Khismatullina and Vogt (2020) <doi:10.1111/rssb.12347>,
+Khismatullina and Vogt (2022) <doi:10.48550/@code{arXiv.2209.10841>} and
+Khismatullina and Vogt (2023) <doi:10.1016/j.jeconom.2021.04.010> for more
+details on theory and applications.")
+    (license license:gpl2+)))
 
 (define-public r-msimcc
   (package
@@ -11782,6 +11810,40 @@ described in Å lenker et al.  2022.")
 al. (2016) <doi:10.1080/02724634.2016.1111225> for the integration, analysis and
 visualization of biological trait data on a phenotypic morphospace - typically
 defined by shape metrics.")
+    (license license:gpl2+)))
+
+(define-public r-morphoregions
+  (package
+    (name "r-morphoregions")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MorphoRegions" version))
+       (sha256
+        (base32 "1w4b666m7whp8vydrvkn0b4va89s18iz74njkjcq1r23rpczvli1"))))
+    (properties `((upstream-name . "MorphoRegions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rcolorbrewer
+                             r-pbapply
+                             r-ggplot2
+                             r-cluster
+                             r-chk))
+    (native-inputs (list r-knitr))
+    (home-page "https://aagillet.github.io/MorphoRegions/")
+    (synopsis
+     "Analysis of Regionalization Patterns in Serially Homologous Structures")
+    (description
+     "Computes the optimal number of regions (or subdivisions) and their position in
+serial structures without a priori assumptions and to visualize the results.
+After reducing data dimensionality with the built-in function for data
+ordination, regions are fitted as segmented linear regressions along the serial
+structure.  Every region boundary position and increasing number of regions are
+iteratively fitted and the best model (number of regions and boundary positions)
+is selected with an information criterion.  This package expands on the previous
+regions package (Jones et al., Science 2018) with improved computation and more
+fitting and plotting options.")
     (license license:gpl2+)))
 
 (define-public r-morphomap
@@ -24662,13 +24724,13 @@ multiple comparison and the definition of potential biological markers.")
 (define-public r-micss
   (package
     (name "r-micss")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micss" version))
        (sha256
-        (base32 "1npamxj7jc6qkkswwm7gb0x7naii93m53dnwqlnv6a8v3q4whm6n"))))
+        (base32 "094h7jf38k8mijkr546s5cg6nm0s86qd81wizgjxxppf78k36sxf"))))
     (properties `((upstream-name . "micss")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -29428,13 +29490,13 @@ Health and Merck & Co., Inc., Kenilworth, NJ, USA.")
 (define-public r-metansue
   (package
     (name "r-metansue")
-    (version "2.5")
+    (version "2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metansue" version))
        (sha256
-        (base32 "098f3jfqxraf86p6ciqpryqs1vwbhsmy3wngqj50d5ndf302qxmc"))))
+        (base32 "0mi688060xqxb63wnszpwvag08p1czzggapmy15rzrzysz5j0dsz"))))
     (properties `((upstream-name . "metansue")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=metansue")
@@ -29442,15 +29504,15 @@ Health and Merck & Co., Inc., Kenilworth, NJ, USA.")
      "Meta-Analysis of Studies with Non-Statistically Significant Unreported Effects")
     (description
      "Novel method to unbiasedly include studies with Non-statistically Significant
-Unreported Effects (NSUEs) in a meta-analysis.  First, the method calculates the
-interval where the unreported effects (e.g., t-values) should be according to
-the threshold of statistical significance used in each study.  Afterwards, the
+Unreported Effects (NSUEs) in a meta-analysis.  First, the function calculates
+the interval where the unreported effects (e.g., t-values) should be according
+to the threshold of statistical significance used in each study.  Afterward, the
 method uses maximum likelihood techniques to impute the expected effect size of
 each study with NSUEs, accounting for between-study heterogeneity and potential
 covariates.  Multiple imputations of the NSUEs are then randomly created based
 on the expected value, variance, and statistical significance bounds.  Finally,
 it conducts a restricted-maximum likelihood random-effects meta-analysis
-separately for each set of imputations and it conducts estimations from these
+separately for each set of imputations, and it performs estimations from these
 meta-analyses.  Please read the reference in metansue for details of the
 procedure.")
     (license license:gpl3)))
@@ -29864,16 +29926,16 @@ Study Reports and Submission\" by Zhang et al. (2022) <https://r4csr.org/>.")
 (define-public r-metalite
   (package
     (name "r-metalite")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metalite" version))
        (sha256
-        (base32 "1pai4a5mnba80cyvhpdxhk0hwzhmw2xa23px1x7154ddl6rnykvg"))))
+        (base32 "1l6n31l5qb4x15k88jpanrhd20i8cbm3rllgkzww7b85wib8vy1h"))))
     (properties `((upstream-name . "metalite")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-glue))
+    (propagated-inputs (list r-rlang))
     (native-inputs (list r-knitr))
     (home-page "https://merck.github.io/metalite/")
     (synopsis "ADaM Metadata Structure")
@@ -34981,16 +35043,16 @@ with normally distributed, binary and count endpoints (Bretz et al. (2005)
 (define-public r-mcpmodgeneral
   (package
     (name "r-mcpmodgeneral")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCPModGeneral" version))
        (sha256
-        (base32 "0izhbiivlb818ak49hl1f7li1chlyrxk5f80cmw4zkim3l6ddaxq"))))
+        (base32 "0yb60kq9fpcc5h9rbk0v5fnf762fhj5512mjjgjpk8jcnx4s0izp"))))
     (properties `((upstream-name . "MCPModGeneral")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-dosefinding))
+    (propagated-inputs (list r-mvtnorm r-mass r-dosefinding))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MCPModGeneral")
     (synopsis "Supplement to the 'DoseFinding' Package for the General Case")

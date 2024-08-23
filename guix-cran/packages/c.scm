@@ -7345,17 +7345,18 @@ al. (2023) <doi:10.1002/sim.9831>.")
 (define-public r-crch
   (package
     (name "r-crch")
-    (version "1.1-2")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crch" version))
        (sha256
-        (base32 "1iwamq8iq51sbwbis2fc783y7a0k4a7v103f4mx7mp6wrcpsg9rq"))))
+        (base32 "1h8z2gsnrds3k1003fgw95j6dr95vc4nixna8zg6l221kk70ar0i"))))
     (properties `((upstream-name . "crch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scoringrules r-sandwich r-ordinal r-formula))
-    (home-page "https://cran.r-project.org/package=crch")
+    (native-inputs (list r-quarto))
+    (home-page "https://topmodels.R-Forge.R-project.org/crch/")
     (synopsis "Censored Regression with Conditional Heteroscedasticity")
     (description
      "Different approaches to censored or truncated regression with conditional
@@ -18415,13 +18416,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "1nx2ndv42vxaxv3g2cfd7n0xsdb0kdcaa2b43rf2yazyc8a5hdw1"))))
+        (base32 "0g0zkxrsmvqnzq261za7wqj26z1h2c9xjqy614crrrn28bb9my36"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -21522,13 +21523,13 @@ cohorts and create new cohorts.")
 (define-public r-cohensdplibrary
   (package
     (name "r-cohensdplibrary")
-    (version "0.5.10")
+    (version "0.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohensdpLibrary" version))
        (sha256
-        (base32 "1d3nk3wr23skmzskglw7n8vpj9ja6ak4q9db9xlmf1j3plsx5g98"))))
+        (base32 "16zsjc6n05ffk35qrdslgvzdva9cwq7by1vsjr3y35zv4wcvnxd8"))))
     (properties `((upstream-name . "CohensdpLibrary")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))

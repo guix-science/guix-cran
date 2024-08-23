@@ -1835,44 +1835,6 @@ implements the mixture of truncated normals model for p-hacking described in
 Moss and De Bin (2019) <@code{arXiv:1911.12445>}.")
     (license license:gpl3)))
 
-(define-public r-publicworksfinanceit
-  (package
-    (name "r-publicworksfinanceit")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PublicWorksFinanceIT" version))
-       (sha256
-        (base32 "15401mwmw87w7m2kdf6b0c0zbxfqxxb04z4a3nk0wycwxkk3jzfv"))))
-    (properties `((upstream-name . "PublicWorksFinanceIT")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-sf
-                             r-scales
-                             r-rvest
-                             r-rlang
-                             r-magrittr
-                             r-lubridate
-                             r-leaflet
-                             r-httr
-                             r-ggplot2
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=PublicWorksFinanceIT")
-    (synopsis
-     "Soil Defense Investments in Italy: Data Retrieval, Analysis, Visualization")
-    (description
-     "Facilitates the retrieval and analysis of financial data related to public works
-in Italy, focusing on soil defense investments.  It extracts data from
-@code{OpenCoesione}', @code{OpenBDAP}', and the @code{ReNDiS} database,
-eliminating the need for direct access to these platforms.  The package boasts a
-user-friendly design, featuring real time updates and a set of functions
-tailored for data retrieval and visualization.  See the webpages for further
-information <http://www.rendis.isprambiente.it/rendisweb/>,
-<https://opencoesione.gov.it/en/>, and <https://bdap-opendata.rgs.mef.gov.it/>.")
-    (license license:gpl3+)))
-
 (define-public r-publicationbias
   (package
     (name "r-publicationbias")
@@ -2013,13 +1975,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "0c8n77r0yxjcb217xgalrvfwhajzkk7h0kfsg6k8jhvlvfrj7n00"))))
+        (base32 "06762lf01d82sq2n34qwx53qiwhvfdqhpxw00f9zhrm4k7g6ms7l"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -17054,13 +17016,13 @@ point forecast.")
 (define-public r-pointedsdms
   (package
     (name "r-pointedsdms")
-    (version "2.1.0")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PointedSDMs" version))
        (sha256
-        (base32 "17z51hcpr2a3z49yjp4nn532assi6nws0adcs204jnr2i0zwb8a5"))))
+        (base32 "0cy5a6v1qn5n6rzw21lwx0yz9x6d6jc85ypr8sijvirqkw4h6x46"))))
     (properties `((upstream-name . "PointedSDMs")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -26782,13 +26744,13 @@ details on the c++ library pf', see Brown (2020) <doi:10.21105/joss.02599>.")
 (define-public r-pflr
   (package
     (name "r-pflr")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PFLR" version))
        (sha256
-        (base32 "1iplycif2c9kaaxbibk1skbdnmsn0mxgbdj78lg8bgkf25gvzzii"))))
+        (base32 "1i4fsab96iiidnjk3lzd1zlz5yc665lsv4lk7d18aw4npr6gzpl8"))))
     (properties `((upstream-name . "PFLR")))
     (build-system r-build-system)
     (propagated-inputs (list r-psych r-mass r-glmnet r-flare r-fda))
@@ -33029,13 +32991,13 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "0gsh7wca9ncs8ixsj2j3vz28ab7xfmvim1zzwrn3clgwp0g1rasf"))))
+        (base32 "1drsg9yxqki867slnlw54rvxsalk1fxyqlpxyn76a2f8msdqmnza"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33631,20 +33593,20 @@ Leonardi et al. (2023) <doi:10.1111/ecog.06481>.")
 (define-public r-pastboon
   (package
     (name "r-pastboon")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pastboon" version))
        (sha256
-        (base32 "17qaglv3hf0llkf5v16pdb8ym5p2lhxvhvaj025qpf60x20y6zmc"))))
+        (base32 "06xp6p4vrdkblhypz745r6sl0n1a7wxhinfb6sx18hiaaaw73ixh"))))
     (properties `((upstream-name . "pastboon")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=pastboon")
     (synopsis "Simulation of Parameterized Stochastic Boolean Networks")
     (description
      "This package provides a Boolean network is a particular kind of discrete
-dynamical system where the variables are simple binary switches.  Although its
+dynamical system where the variables are simple binary switches.  Despite its
 simplicity, Boolean network modeling has been a successful method to describe
 the behavioral pattern of various phenomena.  Applying stochastic noise to
 Boolean networks is a useful approach for representing the effects of various

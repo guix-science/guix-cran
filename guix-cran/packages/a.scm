@@ -5555,13 +5555,13 @@ visualizations for rule exploration.  Michael Hahsler (2017)
 (define-public r-arulessequences
   (package
     (name "r-arulessequences")
-    (version "0.2-30")
+    (version "0.2-31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arulesSequences" version))
        (sha256
-        (base32 "1bnsgjjwrp1n5szhlyg3lhrhcz0sgdxsfdilbi5id9jbdkq9632a"))))
+        (base32 "03bs2l9zmjlcjmd18gm0ci2xq0b57wapp5hdiv7icdxqagb4j57n"))))
     (properties `((upstream-name . "arulesSequences")))
     (build-system r-build-system)
     (propagated-inputs (list r-arules))
@@ -6351,6 +6351,27 @@ fractionally integrated moving average (ARFIMA) models can be implemented.
 Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
 Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
     (license license:gpl3)))
+
+(define-public r-armadillo
+  (package
+    (name "r-armadillo")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "armadillo" version))
+       (sha256
+        (base32 "1vry227x04z3r92qg2g3vw6vw2gfz7ii4wcr3rh8s34zdni786x3"))))
+    (properties `((upstream-name . "armadillo")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/armadillo/")
+    (synopsis "An 'Armadillo' Interface")
+    (description
+     "This package provides function declarations and inline function definitions that
+facilitate communication between R and the Armadillo C++ library for linear
+algebra and scientific computing.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arkhe
   (package
@@ -11288,13 +11309,13 @@ evaluation of the outputs.")
 (define-public r-andromeda
   (package
     (name "r-andromeda")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Andromeda" version))
        (sha256
-        (base32 "0k7w9jk9aw6pays5lg1spzac5kpka0i9vc2v5sxn2r4shbxr9yf9"))))
+        (base32 "1v3pg8vskr079yv8yg2lby8agvcc1jhkbr7nnvgz26fgb2nwfq3c"))))
     (properties `((upstream-name . "Andromeda")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -18425,6 +18446,41 @@ implemented in accordance with the \"Analysis Data Model Implementation Guide\"
 (CDISC Analysis Data Model Team (2021),
 <https://www.cdisc.org/standards/foundational/adam/adamig-v1-3-release-package>).
  The package is an extension package of the admiral package.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-admiralpeds
+  (package
+    (name "r-admiralpeds")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "admiralpeds" version))
+       (sha256
+        (base32 "06821f08f7mgl20p1i90h6bwzhhcnb6clmqxrygxn9fs9iza4ha0"))))
+    (properties `((upstream-name . "admiralpeds")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-cli
+                             r-admiraldev
+                             r-admiral))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/admiralpeds/")
+    (synopsis "Pediatrics Extension Package for ADaM in 'R' Asset Library")
+    (description
+     "This package provides a toolbox for programming Clinical Data Standards
+Interchange Consortium (CDISC) compliant Analysis Data Model (A@code{DaM})
+datasets in R. A@code{DaM} datasets are a mandatory part of any New Drug or
+Biologics License Application submitted to the United States Food and Drug
+Administration (FDA).  Analysis derivations are implemented in accordance with
+the \"Analysis Data Model Implementation Guide\" (CDISC Analysis Data Model Team,
+2021, <https://www.cdisc.org/standards/foundational/adam>).  The package is an
+extension package of the admiral package for pediatric clinical trials.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-admiralophtha

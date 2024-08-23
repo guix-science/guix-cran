@@ -760,13 +760,13 @@ matrices of 2-way and 3-way.  The GUI can be run in multiple languages.")
 (define-public r-dynatree
   (package
     (name "r-dynatree")
-    (version "1.2-16")
+    (version "1.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynaTree" version))
        (sha256
-        (base32 "14yxs9f03bdmrf3lis7hzk04smz0dddammbd0na4gw7bq14341bm"))))
+        (base32 "1w7z1qjyhhcymi9if1x8i8sniya642diwnvkf0qhwzan8scig1yj"))))
     (properties `((upstream-name . "dynaTree")))
     (build-system r-build-system)
     (home-page "https://bobby.gramacy.com/r_packages/dynaTree/")
@@ -4912,13 +4912,13 @@ estimation methods can be used to estimate the nuisance functions.")
 (define-public r-drda
   (package
     (name "r-drda")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "drda" version))
        (sha256
-        (base32 "1s3d0hpxl47rirsig5gbs0q3i6dj2hjzza3655381fla5n0yx9ap"))))
+        (base32 "0npw800swbdv3s0qj345101y5c8f7am40w8cf7krmyh3jj50cyx0"))))
     (properties `((upstream-name . "drda")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -10227,13 +10227,13 @@ special computational programs.")
 (define-public r-distrex
   (package
     (name "r-distrex")
-    (version "2.9.2")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEx" version))
        (sha256
-        (base32 "1r7k81vlryjglf6i5z1xh71dn234czaddcn8yxszfbmmrjhwlsyh"))))
+        (base32 "03394f01wxzpk3by0yza3195dvvv4rcqyx6n63z2i2i8gdvlj42s"))))
     (properties `((upstream-name . "distrEx")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-distr))
@@ -14692,6 +14692,32 @@ clusters.")
 infill, and problems with constraints.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-dicem
+  (package
+    (name "r-dicem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DICEM" version))
+       (sha256
+        (base32 "099z5ns939az3nkajw179cc02ldagpwyvb9bhbvkvaxz5cpfn3j0"))))
+    (properties `((upstream-name . "DICEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-vader
+                             r-stringr
+                             r-quanteda
+                             r-politeness
+                             r-matrix
+                             r-doc2concrete))
+    (home-page "https://cran.r-project.org/package=DICEM")
+    (synopsis "Directness and Intensity of Conflict Expression")
+    (description
+     "This package provides a Natural Language Processing Model trained to detect
+directness and intensity during conflict.  See <https://www.mikeyeomans.info>.")
+    (license license:expat)))
+
 (define-public r-diceeval
   (package
     (name "r-diceeval")
@@ -16119,17 +16145,23 @@ post-hoc power calculations (Cervantes, 2017, <doi:10.18637/jss.v076.i05>).")
 (define-public r-dfidx
   (package
     (name "r-dfidx")
-    (version "0.0-5")
+    (version "0.1-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfidx" version))
        (sha256
-        (base32 "02ka119nxn9258hz51m603s0gwmdi8a98z0j9lx7fqjxnd01jlip"))))
+        (base32 "0ygbw1z0v2s2w7d45b09x54xycfglpd1ipgkgxq8w2q004rkdp9d"))))
     (properties `((upstream-name . "dfidx")))
     (build-system r-build-system)
-    (propagated-inputs (list r-formula r-dplyr))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-rdpack
+                             r-pillar
+                             r-glue
+                             r-formula
+                             r-dplyr))
+    (native-inputs (list r-quarto))
     (home-page "https://cran.r-project.org/package=dfidx")
     (synopsis "Indexed Data Frames")
     (description
@@ -17093,6 +17125,28 @@ roxygen2 documentation.")
 experiments that are laid out in grids.  See Ryder (1981)
 <doi:10.1017/S0014479700011601>.")
     (license license:gpl3)))
+
+(define-public r-despair
+  (package
+    (name "r-despair")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "despair" version))
+       (sha256
+        (base32 "03lsyfqbywrqa8jnnybjvacgmxy12kqnsql8y7iqmh770i602qp1"))))
+    (properties `((upstream-name . "despair")))
+    (build-system r-build-system)
+    (home-page "https://github.com/jpmonteagudo28/despair")
+    (synopsis
+     "Motivational Quotes and Shakespearean Bardâbits for Personal Projects")
+    (description
+     "Generate motivational quotes and Shakespearean word combinations (bardâbits)
+that a user can consider for their personal projects.  Each of the package
+functions takes two arguments, cat which default to any, and a a numeric or
+character seed to ensure reproducible results.")
+    (license license:gpl3+)))
 
 (define-public r-desla
   (package
@@ -20429,13 +20483,13 @@ into the Windows Rgui.")
 (define-public r-decp
   (package
     (name "r-decp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "decp" version))
        (sha256
-        (base32 "0hmd6k64g8xi5n99a9jf892dq0yxdc9llfxa4ynnw2l9pfcim170"))))
+        (base32 "0mzpq8034yyhy9lika80mmwpixk120crgzj4kllypqhnvbcg1v4l"))))
     (properties `((upstream-name . "decp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -24829,13 +24883,13 @@ information.")
 (define-public r-datardis
   (package
     (name "r-datardis")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datardis" version))
        (sha256
-        (base32 "0zcgl4jyz0xphliwjg8x5hqg9avflk0s5mgxd7gl52pxrki4mak3"))))
+        (base32 "0p2cn96ydl9h7fh0cnkr0v11kjpsw9whf9zzrgy07knqiqq0da24"))))
     (properties `((upstream-name . "datardis")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -26647,13 +26701,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "08wrhzsv8w7ivvxzrmnwic3yzywls6kx1gg1lxsg1s7mqrxzx9w8"))))
+        (base32 "0sqpk4ngzw5w7spfk69b7xywicvfvkdki9pm9n4dc3z0fa9mxvng"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-e1071))

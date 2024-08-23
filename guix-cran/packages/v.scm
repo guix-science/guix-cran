@@ -10,13 +10,13 @@
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages curl)
   #:use-module (gnu packages maths)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages tls)
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages gcc)
-  #:use-module (gnu packages curl)
-  #:use-module (gnu packages ssh)
-  #:use-module (gnu packages tls)
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages pcre)
@@ -1727,16 +1727,22 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "0pryk17cyimli1wgb573kq162pwkxir4nrmp3lbv6f4i61nyxxch"))))
+        (base32 "1rk5c5ckdk20d4bpxivin7v8szriy6qp1p1yrha75qbrsagixhqh"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
-    (inputs (list zlib proj hdf5 gsl))
+    (inputs (list zlib
+                  proj
+                  openssl
+                  openssh
+                  hdf5
+                  gsl
+                  curl))
     (propagated-inputs (list r-withr
                              r-rlang
                              r-rcppgsl

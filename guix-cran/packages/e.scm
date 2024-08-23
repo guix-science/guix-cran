@@ -962,13 +962,13 @@ package.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.6.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extras" version))
        (sha256
-        (base32 "1m807qay8zj4wbghajvmph87rwsjfhra5090adf8i42bif29phwb"))))
+        (base32 "12d2jsf9ssvrl38j1vbsial9wrfzs19cqn3c0m95lr613y7d2dl4"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
@@ -19599,20 +19599,23 @@ Continuous Tree Cover data (Sexton et al., 2013)
 (define-public r-ecocbo
   (package
     (name "r-ecocbo")
-    (version "0.10.2")
+    (version "0.12.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecocbo" version))
        (sha256
-        (base32 "003fdvlzalga0s968mznaa7i32v5v4ppw9n0dknqw0xh53fcg5zf"))))
+        (base32 "1dixh1rdrfw419wdcp81hac2sali03wg7x9fr1x77rgy2q059370"))))
     (properties `((upstream-name . "ecocbo")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
+                             r-ssp
                              r-sampling
+                             r-rlang
                              r-ggpubr
                              r-ggplot2
                              r-foreach
+                             r-dosnow
                              r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=ecocbo")
@@ -19621,13 +19624,14 @@ Continuous Tree Cover data (Sexton et al., 2013)
      "This package provides a system for calculating the optimal sampling effort,
 based on the ideas of \"Ecological cost-benefit optimization\" as developed by A.
 Underwood (1997, ISBN 0 521 55696 1).  Data is obtained from simulated
-ecological communities, and the optimization follows the following procedure of
-four functions (1) sim_beta() estimates statistical power and type 2 error by
-using Permutational Multivariate Analysis of Variance, (2) plot_power()
-represents the results of the previous function, (3) scompvar() calculates the
-variation components necessary for (4) sim_cbo() to calculate the optimal
-combination of number of sites and samples depending on either an economical
-budget or on a desired statistical accuracy.")
+ecological communities with prep_data() which formats and arranges the initial
+data, and then the optimization follows the following procedure of four
+functions: (1) scompvar() calculates the variation components necessary for (2)
+sim_cbo() to calculate the optimal combination of number of sites and samples
+depending on either an economic budget or on a desired statistical accuracy.
+Additionally, (3) sim_beta() estimates statistical power and type 2 error by
+using Permutational Multivariate Analysis of Variance, and (6) plot_power()
+represents the results of the previous function.")
     (license license:gpl3+)))
 
 (define-public r-ecmwfr

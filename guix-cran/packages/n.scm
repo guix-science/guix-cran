@@ -9296,18 +9296,17 @@ repositories of the nflverse project.")
 (define-public r-nflplotr
   (package
     (name "r-nflplotr")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nflplotR" version))
        (sha256
-        (base32 "1j6vhd1ysanc47ixa56gj0dgxqhiwdkbvkcmhdpkwc3zs5c78lzn"))))
+        (base32 "153hw03p1cbrl2nmglspldapyrah35xvnnv6lw37v3aligh7414n"))))
     (properties `((upstream-name . "nflplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
                              r-rlang
-                             r-rappdirs
                              r-nflreadr
                              r-memoise
                              r-magick
@@ -9317,7 +9316,8 @@ repositories of the nflverse project.")
                              r-ggpath
                              r-data-table
                              r-cli
-                             r-cachem))
+                             r-cachem
+                             r-backports))
     (home-page "https://nflplotr.nflverse.com")
     (synopsis "NFL Logo Plots in 'ggplot2' and 'gt'")
     (description

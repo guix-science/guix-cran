@@ -721,18 +721,19 @@ full-texts delivered by Data for Research by JSTOR.")
 (define-public r-jstager
   (package
     (name "r-jstager")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstager" version))
        (sha256
-        (base32 "0x6pwpzyls8267f0n62bm9s350wr6770vzh46cz382sri8hx8013"))))
+        (base32 "136qzh5ymag7m6vyn9qq7yc9i3i4izlx6780ysvkkxclwamvc7rg"))))
     (properties `((upstream-name . "jstager")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
                              r-tibble
                              r-rvest
+                             r-purrr
                              r-openxlsx
                              r-httr
                              r-dplyr

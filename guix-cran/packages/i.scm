@@ -5856,6 +5856,48 @@ models proposed by Asano and Hirakawa (2017)
 <doi:10.1080/10543406.2017.1293082>.")
     (license license:gpl3+)))
 
+(define-public r-intsdm
+  (package
+    (name "r-intsdm")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "intSDM" version))
+       (sha256
+        (base32 "1h8npxwv9rnnaxkxf82s82qg9yc90shz99xi6bgsx2p9pf74d5mg"))))
+    (properties `((upstream-name . "intSDM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyterra
+                             r-terra
+                             r-sf
+                             r-rgbif
+                             r-r6
+                             r-pointedsdms
+                             r-inlabru
+                             r-giscor
+                             r-ggplot2
+                             r-geodata
+                             r-blockcv))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=intSDM")
+    (synopsis
+     "Reproducible Integrated Species Distribution Models Across Norway using 'INLA'")
+    (description
+     "Integration of disparate datasets is needed in order to make efficient use of
+all available data and thereby address the issues currently threatening
+biodiversity.  Data integration is a powerful modeling framework which allows us
+to combine these datasets together into a single model, yet retain the strengths
+of each individual dataset.  We therefore introduce the package, @code{intSDM}':
+an R package designed to help ecologists develop a reproducible workflow of
+integrated species distribution models, using data both provided from the user
+as well as data obtained freely online.  An introduction to data integration
+methods is discussed in Issac, Jarzyna, Keil, Dambly, Boersch-Supan, Browning,
+Freeman, Golding, Guillera-Arroita, Henrys, Jarvis, Lahoz-Monfort, Pagel,
+Pescott, Schmucki, Simmonds and OâHara (2020)
+<doi:10.1016/j.tree.2019.08.006>.")
+    (license license:gpl3+)))
+
 (define-public r-intrvals
   (package
     (name "r-intrvals")
@@ -9285,13 +9327,13 @@ et al. (2020) <doi:10.1111/1440-1703.12102> for statistical background.")
 (define-public r-inext-3d
   (package
     (name "r-inext-3d")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iNEXT.3D" version))
        (sha256
-        (base32 "1dpfwf95sin8yn9mn60d9jappsq1spm02x4p0ikjj637qwisgpjs"))))
+        (base32 "074lz7ld2q4h1dk0anxjwk5dpgbp42lvgh5r9c3pz0k6wj4vsk1s"))))
     (properties `((upstream-name . "iNEXT.3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidytree
@@ -9551,13 +9593,13 @@ functions that produce @code{LaTeX} code.")
 (define-public r-indicspecies
   (package
     (name "r-indicspecies")
-    (version "1.7.14")
+    (version "1.7.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "indicspecies" version))
        (sha256
-        (base32 "15cfmjwblq3fcd2mymvh9p09jfgcifs2sngwnlfz3290glfb6zzm"))))
+        (base32 "0h434wvqcl43k4wqqqch1jglcsqvp2z8xr9imrrw7xaa7dn1zgqp"))))
     (properties `((upstream-name . "indicspecies")))
     (build-system r-build-system)
     (propagated-inputs (list r-permute))
@@ -12669,13 +12711,13 @@ smoothing bootstrap resampling.")
 (define-public r-ilabelled
   (package
     (name "r-ilabelled")
-    (version "0.9.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ilabelled" version))
        (sha256
-        (base32 "0a77dq1bf0ha6r0l2x7kq8nbmssprs8m62b8jsw3yh12f3kh895v"))))
+        (base32 "1s37k1ylcyayckk4ib52bm3i76q42grd51nayj8vdkv62fdyjbsz"))))
     (properties `((upstream-name . "ilabelled")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -20862,13 +20862,13 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
 (define-public r-testdesign
   (package
     (name "r-testdesign")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestDesign" version))
        (sha256
-        (base32 "0f13d6j9x9knsd7ynz025x4pv61n49jk5m9ih09cm8xz9g1ypb4n"))))
+        (base32 "0vrlvmwa6rh4pf8wrzhqk5y6293fd15bqmnkqgd38m1zgl7clyd5"))))
     (properties `((upstream-name . "TestDesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -20885,8 +20885,9 @@ D. L. (1989) <doi:10.1002/ajpa.1330790113> and Konigsberg, L. W. (1991)
      "Uses the optimal test design approach by Birnbaum (1968, ISBN:9781593119348) and
 van der Linden (2018) <doi:10.1201/9781315117430> to construct fixed, adaptive,
 and parallel tests.  Supports the following mixed-integer programming (MIP)
-solver packages: Rsymphony', gurobi', @code{lpSolve}', and Rglpk'.  The gurobi
-package is not available from CRAN; see <https://www.gurobi.com/downloads/>.")
+solver packages: Rsymphony', highs', gurobi', @code{lpSolve}', and Rglpk'.  The
+gurobi package is not available from CRAN; see
+<https://www.gurobi.com/downloads/>.")
     (license license:gpl2+)))
 
 (define-public r-testdataimputation
@@ -22748,13 +22749,13 @@ been published.")
 (define-public r-tectonicr
   (package
     (name "r-tectonicr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tectonicr" version))
        (sha256
-        (base32 "0w2pg7b3bk4vc72aw2n7hcp47aq7a25l41m9yh3x3a6ssnzcg350"))))
+        (base32 "154kxk5ggzqz2s4cira9i3anl3bw9v4a5h0gqvixsq6gjsrj115c"))))
     (properties `((upstream-name . "tectonicr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -22770,6 +22771,7 @@ been published.")
                              r-rcolorbrewer
                              r-ggplot2
                              r-dplyr
+                             r-circular
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://tobiste.github.io/tectonicr/")

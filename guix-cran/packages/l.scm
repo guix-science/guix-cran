@@ -1053,13 +1053,13 @@ available in Mendeley data) <doi:10.17632/kpjp3gnwbt.1>.")
 (define-public r-ltasr
   (package
     (name "r-ltasr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LTASR" version))
        (sha256
-        (base32 "1dab18np0jkb9s8lkrmsk52h0f714ry851kvbnqs2kdl3zrsrl2f"))))
+        (base32 "07vkdk5pfhxw4xw5m46bqhdkgyqwjjfd7jw9g4m2vmj5dr648gyk"))))
     (properties `((upstream-name . "LTASR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2048,18 +2048,18 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LRTesteR" version))
        (sha256
-        (base32 "00p9mnlnj2md14c7vhhfs6bq0f2dwhb7r4dxjv6d1b62vfr2v4iv"))))
+        (base32 "1s4i9j2gz1dgssyjlz032f59ph65g8spa09479jfc15szprjg6qv"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod r-rlang))
+    (propagated-inputs (list r-stringr r-statmod r-rlang))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LRTesteR")
+    (home-page "https://github.com/gmcmacran/LRTesteR")
     (synopsis "Likelihood Ratio Tests and Confidence Intervals")
     (description
      "This package provides a collection of hypothesis tests and confidence intervals
@@ -11559,13 +11559,13 @@ package is heavily inspired by the
 (define-public r-lessr
   (package
     (name "r-lessr")
-    (version "4.3.6")
+    (version "4.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lessR" version))
        (sha256
-        (base32 "1d0k41fg66g0x6apd6yvc74gnl3mgs16kmykz53qhnd4zi5rj99k"))))
+        (base32 "0f5y80n661p7wyf84vwq671kqgvnwp3l22zajvdh2kaqkrfs036k"))))
     (properties `((upstream-name . "lessR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny

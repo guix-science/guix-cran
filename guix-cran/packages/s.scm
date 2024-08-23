@@ -9216,13 +9216,13 @@ are they related?\" by Yashin A. et al. (2007), Biogerontology 8(3), 291(302),
 (define-public r-stplanr
   (package
     (name "r-stplanr")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stplanr" version))
        (sha256
-        (base32 "08hhx6lagfwy153xwbpqbvsz13dfq29607bp2640c5bfmddgnaxp"))))
+        (base32 "111hhmixq3h2f4hrzpldzkq3wwipwggalavy8wszkwbs3l35h487"))))
     (properties `((upstream-name . "stplanr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfheaders
@@ -12147,13 +12147,13 @@ et al. (2015) <doi:10.1016/j.ijforecast.2013.11.007>.")
 (define-public r-statnipokladna
   (package
     (name "r-statnipokladna")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statnipokladna" version))
        (sha256
-        (base32 "0zym16mmimyfkz4f9h5xm9ispqnr7pbfxragv71d6kl3iz2185hp"))))
+        (base32 "0hdpyqq6qa01kvwa2ml8virm6h75xwlck2xx3madh9jkgijnysfa"))))
     (properties `((upstream-name . "statnipokladna")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -16129,13 +16129,13 @@ this package.")
 (define-public r-srtsim
   (package
     (name "r-srtsim")
-    (version "0.99.6")
+    (version "0.99.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SRTsim" version))
        (sha256
-        (base32 "1436lhpjbciln8xmr9sd7d0akh5kap8a9f0az7209c1zqc46i576"))))
+        (base32 "0gfi3dng3pl2ki4g6nbwjxhq4zbj3j4yq95j4dyfzbqj8k4ah7lv"))))
     (properties `((upstream-name . "SRTsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -16154,9 +16154,11 @@ this package.")
                              r-matrix
                              r-mass
                              r-magrittr
+                             r-magick
                              r-ggpubr
                              r-ggplot2
                              r-fnn
+                             r-dt
                              r-dplyr
                              r-dashboardthemes
                              r-concaveman))
@@ -16949,13 +16951,13 @@ including the model's response function.")
 (define-public r-sqlrender
   (package
     (name "r-sqlrender")
-    (version "1.18.0")
+    (version "1.18.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SqlRender" version))
        (sha256
-        (base32 "0vkxz5gl0df4yw81a698jclsph4z65v74qglfhagp1p3xknkjwy9"))))
+        (base32 "1mlmpi1yywsxc6famid6ndwm9xs9w2ilkc1id3h824hk4qj636g9"))))
     (properties `((upstream-name . "SqlRender")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -18199,40 +18201,6 @@ spreads as illustrated in the examples.")
     (synopsis "Spatiotemporal Clustering of Satellite Hot Spot Data")
     (description
      "An algorithm to cluster satellite hot spot data spatially and temporally.")
-    (license license:expat)))
-
-(define-public r-spotifyr
-  (package
-    (name "r-spotifyr")
-    (version "2.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spotifyr" version))
-       (sha256
-        (base32 "14rq4yzvly3yl1xnndpzp6mp2mmbvc0qwkx75lb85gad8271a4ij"))))
-    (properties `((upstream-name . "spotifyr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-tibble
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-janitor
-                             r-httr
-                             r-dplyr
-                             r-assertthat))
-    (home-page "https://github.com/charlie86/spotifyr")
-    (synopsis "R Wrapper for the 'Spotify' Web API")
-    (description
-     "An R wrapper for pulling data from the Spotify Web API
-<https://developer.spotify.com/documentation/web-api/> in bulk, or post items on
-a Spotify user's playlist.")
     (license license:expat)))
 
 (define-public r-spotidy
@@ -36779,13 +36747,13 @@ described in Gandrud (2015) <doi:10.18637/jss.v065.i03>.")
 (define-public r-simodels
   (package
     (name "r-simodels")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simodels" version))
        (sha256
-        (base32 "0fhrlmyh0hnv518131wabadidim5k6f2gjsq5k4jc9zwmm5qbgfz"))))
+        (base32 "0jbfkd2db38z1h0lww7ql5vizr1pniripa83ivzs00mvaj9xc2q6"))))
     (properties `((upstream-name . "simodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rlang r-od r-geodist r-dplyr))
@@ -51328,13 +51296,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.9")
+    (version "4.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "1rm7hlfwz8wf4551dw79figmx6n968dlyrq1n2agdv5wdv97gjdg"))))
+        (base32 "12gr4agc1nlrg3g041q3qd5h29pcyzj1xpff98nvar3gi05a6fdw"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
