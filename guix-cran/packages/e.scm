@@ -5400,13 +5400,13 @@ plots.  The App is called using eufmdis.adapt::run_adapt().")
 (define-public r-eudract
   (package
     (name "r-eudract")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eudract" version))
        (sha256
-        (base32 "0p7524xm0yzj1yqs667n026kf7hyvvkv8z8n0avnzswhkyga3cnd"))))
+        (base32 "10fnxgkaplc1cz2b6cx0pnhmv5g9mxa9y7pna6kasqjih0dfaplp"))))
     (properties `((upstream-name . "eudract")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -5419,7 +5419,7 @@ plots.  The App is called using eufmdis.adapt::run_adapt().")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://eudract-tool.medschl.cam.ac.uk/")
+    (home-page "https://shug0131.github.io/eudraCT/")
     (synopsis
      "Creates Safety Results Summary in XML to Upload to EudraCT, or ClinicalTrials.gov")
     (description
@@ -11223,13 +11223,13 @@ visualizing distributional characteristics among multiple populations (groups)."
 (define-public r-entropart
   (package
     (name "r-entropart")
-    (version "1.6-13")
+    (version "1.6-15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "entropart" version))
        (sha256
-        (base32 "1y2gdfnqz52w03g9zij07fkjhh3yf3qflk75j0bvfk7n727rz2jp"))))
+        (base32 "07ppccnxl97v403hcmyx3aw82iv7vvfigxrkmqmh5iypn5zvyyg7"))))
     (properties `((upstream-name . "entropart")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -11242,7 +11242,7 @@ visualizing distributional characteristics among multiple populations (groups)."
                              r-entropyestimation
                              r-ape))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/EricMarcon/entropart")
+    (home-page "https://ericmarcon.github.io/entropart/")
     (synopsis "Entropy Partitioning to Measure Diversity")
     (description
      "Measurement and partitioning of diversity, based on Tsallis entropy, following
@@ -13399,16 +13399,21 @@ in both of unsupervised and semi-supervised learning.")
 (define-public r-embryogrowth
   (package
     (name "r-embryogrowth")
-    (version "9.1")
+    (version "9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "embryogrowth" version))
        (sha256
-        (base32 "0c7ggpa2i9j17zzknx9h5w6sibk5pdy81484gl6sb5s88wmn16qm"))))
+        (base32 "059q5bp1pfz1hpas144jvb60izrl0f3nrn4ddm27h0haffx20s59"))))
     (properties `((upstream-name . "embryogrowth")))
     (build-system r-build-system)
-    (propagated-inputs (list r-optimx r-numderiv r-helpersmg r-desolve))
+    (propagated-inputs (list r-rdpack
+                             r-optimx
+                             r-numderiv
+                             r-helpersmg
+                             r-ggplot2
+                             r-desolve))
     (home-page "https://cran.r-project.org/package=embryogrowth")
     (synopsis "Tools to Analyze the Thermal Reaction Norm of Embryo Growth")
     (description
@@ -14281,13 +14286,13 @@ there are more than one batches of ELISAs.  Feng (2018) <doi:10.1101/483800>.")
 (define-public r-elhmc
   (package
     (name "r-elhmc")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "elhmc" version))
        (sha256
-        (base32 "0ngva7rnfj75fq93ycsv929m9ykijp48r7cvd6sfmi0sqsjinax5"))))
+        (base32 "0wnw76247kxq7i4nrq2nmx4dywaanw04l8gi18k5gmqj0hq3a2dy"))))
     (properties `((upstream-name . "elhmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-mass r-emplik))

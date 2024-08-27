@@ -16367,19 +16367,21 @@ analogous environments using new microbial feature abundances.")
 (define-public r-mmicats
   (package
     (name "r-mmicats")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmiCATs" version))
        (sha256
-        (base32 "1dnh77ac2m8sbv3ly1wny2nn86f13bs90f91gzzy83x2r4a3bvfj"))))
+        (base32 "0g4w0h15dglyk28dibz2vp780s7zygwpvm87hc1gl2a3lb9kzy2v"))))
     (properties `((upstream-name . "mmiCATs")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
                              r-shiny
+                             r-rpostgres
                              r-robustbase
                              r-robust
+                             r-pool
                              r-mmcards
                              r-mass
                              r-lmertest
@@ -16803,13 +16805,13 @@ Scutari (2010) <doi:10.18637/jss.v035.i03>.")
 (define-public r-mmarch-ac
   (package
     (name "r-mmarch-ac")
-    (version "2.9.2.0")
+    (version "2.9.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mMARCH.AC" version))
        (sha256
-        (base32 "0lp32m6cfplbm72g0j1cm1c7rcpmy5jrsd3p577p9a4bwqf5ynxc"))))
+        (base32 "0mrhr1f5qvqdv1mwzd8iqgfjwq9n4ny1s8a5sppkdp9zyvvmwv81"))))
     (properties `((upstream-name . "mMARCH.AC")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -16859,18 +16861,18 @@ Individual Variation Explained (JIVE), an unsupervised machine learning
 dimension reduction technique that identifies latent factors capturing joint
 across and individual to each of three domains of PA/SL/CR. In detail, the
 pipeline generates all necessary R/Rmd/shell files for data processing after
-running GGIR (v2.4.0) for accelerometer data.  In module 1, all csv files in the
-GGIR output directory were read, transformed and then merged.  In module 2, the
-GGIR output files were checked and summarized in one excel sheet.  In module 3,
-the merged data was cleaned according to the number of valid hours on each night
-and the number of valid days for each subject.  In module 4, the cleaned
-activity data was imputed by the average Euclidean norm minus one (ENMO) over
-all the valid days for each subject.  Finally, a comprehensive report of data
-processing was created using Rmarkdown, and the report includes few exploratory
-plots and multiple commonly used features extracted from minute level actigraphy
-data.  Reference: Guo W, Leroux A, Shou S, Cui L, Kang S, Strippoli MP, Preisig
-M, Zipunnikov V, Merikangas K (2022) Processing of accelerometry data with GGIR
-in Motor Activity Research Consortium for Health (@code{mMARCH}) Journal for the
+running GGIR for accelerometer data.  In module 1, all csv files in the GGIR
+output directory were read, transformed and then merged.  In module 2, the GGIR
+output files were checked and summarized in one excel sheet.  In module 3, the
+merged data was cleaned according to the number of valid hours on each night and
+the number of valid days for each subject.  In module 4, the cleaned activity
+data was imputed by the average Euclidean norm minus one (ENMO) over all the
+valid days for each subject.  Finally, a comprehensive report of data processing
+was created using Rmarkdown, and the report includes few exploratory plots and
+multiple commonly used features extracted from minute level actigraphy data.
+Reference: Guo W, Leroux A, Shou S, Cui L, Kang S, Strippoli MP, Preisig M,
+Zipunnikov V, Merikangas K (2022) Processing of accelerometry data with GGIR in
+Motor Activity Research Consortium for Health (@code{mMARCH}) Journal for the
 Measurement of Physical Behaviour, 6(1): 37-44.")
     (license license:gpl3)))
 
@@ -17381,13 +17383,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.5-1")
+    (version "1.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1bhcw5b2mwvr9qsssxd9qd9qn5k0v8g925dqfm1ziycniaprm9g6"))))
+        (base32 "1bgq5g05b4va4772y974blm9chr0qyax56wgfcig7c28va35zs8g"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -21482,20 +21484,18 @@ full technical documentation.  All data is sourced from
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "1gj244gywajfp7gzcn4rdcy88n1qp2gj9jn9aswhhhiha4fp620k"))))
+        (base32 "0cdcx9d2pbfd3whdyh9h14s0j07a2jkb0k1lw30sfxggsc8qzkyj"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-rstudioapi
                              r-readxl
-                             r-norm
-                             r-nlme
                              r-lme4
                              r-lavaan
                              r-haven
@@ -21514,10 +21514,11 @@ between-group correlation matrix, multilevel confirmatory factor analysis,
 level-specific fit indices, cross-level measurement equivalence evaluation,
 multilevel composite reliability, and multilevel R-squared measures), (5) item
 analysis (e.g., confirmatory factor analysis, coefficient alpha and omega,
-between-group and longitudinal measurement equivalence evaluation), and (6)
+between-group and longitudinal measurement equivalence evaluation), (6)
 statistical analysis (e.g., confidence intervals, collinearity and residual
 diagnostics, dominance analysis, between- and within-subject analysis of
-variance, latent class analysis, t-test, z-test, sample size determination).")
+variance, latent class analysis, t-test, z-test, sample size determination), and
+(7) functions to interact with Blimp and Mplus'.")
     (license license:expat)))
 
 (define-public r-mistral
@@ -24953,13 +24954,13 @@ also for sequence data.")
 (define-public r-microsec
   (package
     (name "r-microsec")
-    (version "2.1.3")
+    (version "2.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MicroSEC" version))
        (sha256
-        (base32 "1n9j955yy613qhs9zhy2mhy9mg95fp1q8jxxxgsy3n2kjim33pgv"))))
+        (base32 "161m2l9ar8amfbcdj72gmlaajvbycj69g5rwfnml1xkw5rh6ywnd"))))
     (properties `((upstream-name . "MicroSEC")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -25251,13 +25252,13 @@ in US State Data., Journal of Statistical Software, 63(3), 1-25.,
 (define-public r-micromap
   (package
     (name "r-micromap")
-    (version "1.9.8")
+    (version "1.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "micromap" version))
        (sha256
-        (base32 "129q0a6jywxmhgddyacjl150zfxr04qdv17pqngp4xl0rd9r5zcz"))))
+        (base32 "1qbc2v3h46csca88y1n820hk2j2pc67z2gwf83f2lrsa7mim00x2"))))
     (properties `((upstream-name . "micromap")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-ggplot2))
@@ -25326,13 +25327,13 @@ curation of microhaplotypes from short read sequences.")
 (define-public r-microeco
   (package
     (name "r-microeco")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "microeco" version))
        (sha256
-        (base32 "0hk1mria8r0jqq8q0qxhpq42j9cna64ip4z056jda8n7l9jympsf"))))
+        (base32 "0xi9idvlsyazqqd0zvvjy32ggvwnc9jm0997p7q4w1cix2p7nh31"))))
     (properties `((upstream-name . "microeco")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -26081,13 +26082,13 @@ extraction for reporting purposes.")
 (define-public r-miamaxent
   (package
     (name "r-miamaxent")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MIAmaxent" version))
        (sha256
-        (base32 "0xnl21d1jybrff711ndij71ihfarjq5lwpw26frfsni2k4wlbwfy"))))
+        (base32 "0jshi9p0q8j5j0s65s4n14b5r6gpzsigygdibmhnvvqygflyzzqa"))))
     (properties `((upstream-name . "MIAmaxent")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra r-rlang r-e1071 r-dplyr))
@@ -39400,6 +39401,26 @@ an existing map.  Methods include expert opinion and data-driven tools to
 generate thresholds for binary masks.")
     (license license:gpl3)))
 
+(define-public r-maskr
+  (package
+    (name "r-maskr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maskr" version))
+       (sha256
+        (base32 "0vqxwhmyp9w0i76px6407k5fcyhs4s552xv45wdig4b8268mpnmj"))))
+    (properties `((upstream-name . "maskr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-rlang r-pillar r-cli))
+    (home-page "https://github.com/inpowell/maskr")
+    (synopsis "Visual Class for Vectors with Non-Publishing Requirements")
+    (description
+     "Create vectors with sticky flags for elements that should not be displayed.
+Numeric vectors have basic subset and arithmetic methods implemented.")
+    (license license:expat)))
+
 (define-public r-mashr
   (package
     (name "r-mashr")
@@ -39849,6 +39870,29 @@ publication-ready figures, analyze xyz data to extract transects, get depth /
 altitude based on geographical coordinates, or calculate z-constrained
 least-cost paths.")
     (license license:gpl3+)))
+
+(define-public r-marlod
+  (package
+    (name "r-marlod")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "marlod" version))
+       (sha256
+        (base32 "0a6jdf55s947l0cr1wzmhn0inai0hyf0vfcvl63m0fh666s3cms6"))))
+    (properties `((upstream-name . "marlod")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quantreg r-miwqs r-mass r-knitr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=marlod")
+    (synopsis "Marginal Modeling for Exposure Data with Values Below the LOD")
+    (description
+     "This package provides functions of marginal mean and quantile regression models
+for analyzing environmental exposure and biomonitoring data with repeated
+measurements and non-detects, and for longitudinal exposure data with
+non-detects and time-dependent covariates.")
+    (license license:gpl3)))
 
 (define-public r-markowitzr
   (package
@@ -40855,13 +40899,13 @@ departments, provinces and districts of Peru.")
 (define-public r-mapspain
   (package
     (name "r-mapspain")
-    (version "0.9.1")
+    (version "0.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapSpain" version))
        (sha256
-        (base32 "144i03v3sjq1fsywhc2dgkm7p5gg019gvd5milga6hiirnhm3k5d"))))
+        (base32 "1jbwvw9r37yq32ynb6jq682ln6lh97k2vmc91g6sc1kqyc5kq059"))))
     (properties `((upstream-name . "mapSpain")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-giscor r-countrycode))
@@ -42665,6 +42709,46 @@ a dataset of Malay stop words, a dataset of sentiment words and a dataset of
 normalized words.")
     (license license:expat)))
 
+(define-public r-malariaatlas
+  (package
+    (name "r-malariaatlas")
+    (version "1.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "malariaAtlas" version))
+       (sha256
+        (base32 "1ipjhds73pcw30y3ks9glqlxng97fnavvpi1v9s01jr7m0l587xs"))))
+    (properties `((upstream-name . "malariaAtlas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyterra
+                             r-tidyr
+                             r-terra
+                             r-stringr
+                             r-sf
+                             r-rlang
+                             r-ows4r
+                             r-lubridate
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-gridextra
+                             r-ggplot2
+                             r-ggnewscale
+                             r-future-apply
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/malaria-atlas-project/malariaAtlas")
+    (synopsis
+     "An R Interface to Open-Access Malaria Data, Hosted by the 'Malaria Atlas Project'")
+    (description
+     "This package provides a suite of tools to allow you to download all publicly
+available parasite rate survey points, mosquito occurrence points and raster
+surfaces from the Malaria Atlas Project <https://malariaatlas.org/> servers as
+well as utility functions for plotting the downloaded data.")
+    (license license:expat)))
+
 (define-public r-malani
   (package
     (name "r-malani")
@@ -42855,13 +42939,13 @@ from an image, using mathematical algorithms.")
 (define-public r-makemyprior
   (package
     (name "r-makemyprior")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "makemyprior" version))
        (sha256
-        (base32 "02zhgskkfr964g813rly0lym4j0msgmyggfgz6l00vcpnffqy9fq"))))
+        (base32 "03njj91hwmfpxwv3srjfylcnv02h17f5dnbawnrqxrgakpwsxib4"))))
     (properties `((upstream-name . "makemyprior")))
     (build-system r-build-system)
     (propagated-inputs (list r-visnetwork
@@ -42873,7 +42957,7 @@ from an image, using mathematical algorithms.")
                              r-mass
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=makemyprior")
+    (home-page "https://github.com/ingebogh/makemyprior")
     (synopsis "Intuitive Construction of Joint Priors for Variance Parameters")
     (description
      "Tool for easy prior construction and visualization.  It helps to formulates
@@ -42886,7 +42970,9 @@ model and prior.  Using a hierarchical variance decomposition, we formulate a
 joint variance prior that takes the whole model structure into account.  In this
 way, existing knowledge can intuitively be incorporated at the level it applies
 to.  Alternatively, one can use independent variance priors for each model
-components in the latent Gaussian model.")
+components in the latent Gaussian model.  Details can be found in the
+accompanying scientific paper: Hem, Fuglstad, Riebler (2024, Journal of
+Statistical Software, <doi:10.18637/jss.v110.i03>).")
     (license license:gpl2+)))
 
 (define-public r-makeit

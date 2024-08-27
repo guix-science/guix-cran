@@ -555,13 +555,13 @@ compute Asymmetry Index (AI) and bilateral (L+R) measures and reshape the data."
 (define-public r-ymd
   (package
     (name "r-ymd")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ymd" version))
        (sha256
-        (base32 "03lsq0prm4pzqmaiap5yddnpfl544ippp8vmdrvnc3d8n9fi6fg2"))))
+        (base32 "0cq7s1vz5j3jyypnsb6frimp3v6vf243knjy02qvnn144rfl3494"))))
     (properties `((upstream-name . "ymd")))
     (build-system r-build-system)
     (inputs (list))

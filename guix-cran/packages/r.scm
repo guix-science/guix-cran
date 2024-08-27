@@ -365,13 +365,13 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-rxylib
   (package
     (name "r-rxylib")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxylib" version))
        (sha256
-        (base32 "1drmizyvbhza6p5gdqn2ahkppa99z1xvc1w7s4mbxjh15x3c633g"))))
+        (base32 "0kl4d3h5xky5439wmx4h5f2dd3wy9f9vq81wrks8x60yi6g45rj4"))))
     (properties `((upstream-name . "rxylib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
@@ -12755,6 +12755,30 @@ name.  The user can select and create different lists of colour names and
 different colour metrics for the conversion.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-rollup
+  (package
+    (name "r-rollup")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rollup" version))
+       (sha256
+        (base32 "0nb58m30h7hy1irvws82khc6475w8ywbg07hiwdagzqzlrygiwfb"))))
+    (properties `((upstream-name . "rollup")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-sparklyr r-rlang r-magrittr r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rollup")
+    (synopsis "Tidy Grouping Set Aggregation")
+    (description
+     "This package provides a Tidy implementation of grouping sets', rollup and cube -
+extensions of the group_by clause that allow for computing multiple group_by
+clauses in a single statement.  For more detailed information on these
+functions, please refer to \"Enhanced Aggregation, Cube, Grouping and Rollup\"
+<https://cwiki.apache.org/confluence/display/Hive/Enhanced+Aggregation%2C+Cube%2C+Grouping+and+Rollup>.")
+    (license license:expat)))
+
 (define-public r-rollmatch
   (package
     (name "r-rollmatch")
@@ -19331,51 +19355,6 @@ Mapzen has gone out of business, but rmapzen can be set up to work with any
 provider who implements the Mapzen API.")
     (license license:expat)))
 
-(define-public r-rmapshaper
-  (package
-    (name "r-rmapshaper")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rmapshaper" version))
-       (sha256
-        (base32 "01c1sd02ws3k2dmlj964c4j5jg93x192s3brhmaw4pi4qfjzc21x"))))
-    (properties `((upstream-name . "rmapshaper")))
-    (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
-    (propagated-inputs (list r-v8
-                             r-sp
-                             r-sf
-                             r-readr
-                             r-jsonify
-                             r-geojsonsf))
-    (native-inputs (list r-knitr esbuild))
-    (home-page "https://github.com/ateucher/rmapshaper")
-    (synopsis "Client for 'mapshaper' for 'Geospatial' Operations")
-    (description
-     "Edit and simplify geojson', Spatial', and sf objects.  This is wrapper around
-the mapshaper @code{JavaScript} library by Matthew Bloch
-<https://github.com/mbloch/mapshaper/> to perform topologically-aware polygon
-simplification, as well as other operations such as clipping, erasing,
-dissolving, and converting multi-part to single-part geometries.")
-    (license license:expat)))
-
 (define-public r-rmalschains
   (package
     (name "r-rmalschains")
@@ -19926,16 +19905,16 @@ information about using the API please visit <https://developer.linkedin.com/>."
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.8-0.1")
+    (version "0.9-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "07k0vb21bk83ygvgks4fspfik5zjwlqilwjy2rjzimhikx87srgk"))))
+        (base32 "0mmxahfavmw98z4jf99znqdzsyqpjxzfxjsslg9df7ffcdl9g6k6"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
-    (inputs (list hdf5 gfortran gcc cmake))
+    (inputs (list gfortran gcc cmake))
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-dicekriging))
     (native-inputs (list gfortran))
     (home-page "https://github.com/libKriging")
@@ -19947,9 +19926,7 @@ information about using the API please visit <https://developer.linkedin.com/>."
 @code{RobustGaSP} packages). @code{libKriging} relies on Armadillo linear
 algebra library (Apache 2 license) by Conrad Sanderson, lbfgsb_cpp is a C++ port
 around lbfgsb library (BSD-3 license) by Ciyou Zhu, Richard Byrd, Jorge Nocedal
-and Jose Luis Morales used for hyperparameters optimization, and HDF5 features
-coming from HDF Group (see HDF5_LICENSE file) possibly provided by Rhdf5lib by
-Mike Smith (Artistic-2.0 license).")
+and Jose Luis Morales used for hyperparameters optimization.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-rlibkdv
@@ -21255,6 +21232,41 @@ type \"help('simulate_HD_data')\" and to learn how to use the clustering
 algorithm, type \"help('RJclust')\".  To cite this package, type
 citation(\"RJcluster\")'.")
     (license license:gpl2+)))
+
+(define-public r-rjavaenv
+  (package
+    (name "r-rjavaenv")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rJavaEnv" version))
+       (sha256
+        (base32 "1gprfpjfblvfn2hg00vgsrvn8p0paz9gfqljszyi1is1z925s2h1"))))
+    (properties `((upstream-name . "rJavaEnv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-curl r-cli r-checkmate))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/e-kotov/rJavaEnv")
+    (synopsis "'Java' Environments for R Projects")
+    (description
+     "The @code{rJavaEnv} package addresses common issues with Java environment
+management in R for users of Java'/'@code{rJava'-dependent} R packages such as
+r5r', opentripplanner', xlsx', @code{openNLP}', @code{rWeka}', RJDBC',
+tabulapdf', and many more.  It resolves common problems like Java not found,
+Java version conflicts, missing Java installations, and the inability to install
+Java due to lack of administrative privileges. @code{rJavaEnv} automates the
+download, installation, and setup of the Java Development Kit ('JDK') on a
+per-project basis by setting the relevant JAVA_HOME in the current R session or
+the current working directory (via .Rprofile', with the user's consent).
+Similar to what renv does for R packages, @code{rJavaEnv} allows different Java
+versions to be used across different projects, but can also be configured to
+allow multiple versions within the same project (e.g. with the help of targets
+package).  Note: there are a few extra steps for Linux users, who don't have any
+Java previously installed in their system, and who prefer package installation
+from source, rather then installing binaries from Posit Package Manager'.  See
+documentation for details.")
+    (license license:expat)))
 
 (define-public r-rjafroc
   (package
@@ -29667,13 +29679,13 @@ parameterisation and provision of helper functions to manage dependencies.")
 (define-public r-reporterscore
   (package
     (name "r-reporterscore")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReporterScore" version))
        (sha256
-        (base32 "11qi12m34lnj3a8mhpi3xdlaw8ji9pscyg110lvd3rrxlaxsijbz"))))
+        (base32 "0h56g0mdyldn4j7v3qs0qgspi3gv3jfxf9w5s05sg8rhis64z947"))))
     (properties `((upstream-name . "ReporterScore")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -33098,49 +33110,6 @@ active bindings as workarounds.  Users can also create expression references
 that allow subsets of any object to be referenced or expressions containing
 references to multiple objects.")
     (license license:expat)))
-
-(define-public r-refdb
-  (package
-    (name "r-refdb")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "refdb" version))
-       (sha256
-        (base32 "1g30n7jvn532nhbn4mrfkfym40vw1ha0q8yi3d3d3v86gyr5ga4n"))))
-    (properties `((upstream-name . "refdb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml2
-                             r-tidyr
-                             r-tibble
-                             r-taxize
-                             r-stringr
-                             r-rmarkdown
-                             r-rlang
-                             r-rentrez
-                             r-readr
-                             r-leaflet
-                             r-igraph
-                             r-ggraph
-                             r-ggplot2
-                             r-dplyr
-                             r-bold
-                             r-bioseq
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://fkeck.github.io/refdb/")
-    (synopsis "DNA Reference Library Manager")
-    (description
-     "Reference database manager offering a set of functions to import, organize,
-clean, filter, audit and export reference genetic data.  Provide functions to
-download sequence data from Bold Systems (<https://www.boldsystems.org/>) and
-NCBI @code{GenBank} <https://www.ncbi.nlm.nih.gov/genbank/>.  Designed as an
-environment for semi-automatic and assisted construction of reference databases
-and to improve standardization and repeatability in barcoding and metabarcoding
-studies.")
-    (license license:gpl3)))
 
 (define-public r-refa
   (package
@@ -37710,13 +37679,13 @@ natively.")
 (define-public r-rdacca-hp
   (package
     (name "r-rdacca-hp")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdacca.hp" version))
        (sha256
-        (base32 "1ac558vwd0sfalmb39gaa5vrmrmj55l0lk6xp6cnig9gp60x1wcr"))))
+        (base32 "0bgsr2a7xb82q5rnfdxd0h2c923c1s8jc7jgglbzqbinlwqjry5i"))))
     (properties `((upstream-name . "rdacca.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-ggplot2))
@@ -43164,44 +43133,6 @@ dates with prior information on accumulation rates and their variability.  See
 Blaauw & Christen (2011).")
     (license license:gpl2+)))
 
-(define-public r-rb3
-  (package
-    (name "r-rb3")
-    (version "0.0.11")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rb3" version))
-       (sha256
-        (base32 "1nxh4a3ihjdm1xp3sam9pqh56q2yic97fssm00g7djdfcxq6y0fy"))))
-    (properties `((upstream-name . "rb3")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-xml
-                             r-tidyr
-                             r-stringr
-                             r-rvest
-                             r-rlang
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-proto
-                             r-jsonlite
-                             r-httr
-                             r-dplyr
-                             r-digest
-                             r-cli
-                             r-bizdays
-                             r-base64enc
-                             r-ascii))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ropensci/rb3")
-    (synopsis "Download and Parse Public Data Released by B3 Exchange")
-    (description
-     "Download and parse public files released by B3 and convert them into useful
-formats and data structures common to data analysis practitioners.")
-    (license license:expat)))
-
 (define-public r-rayvertex
   (package
     (name "r-rayvertex")
@@ -47658,6 +47589,33 @@ algorithm.  It utilises popularity counting, hierarchical clustering with
 feature dissimilarity measures, and prefiltering with all-relevant feature
 selection method to obtain the minimal-optimal set of features.")
     (license license:gpl3)))
+
+(define-public r-raem
+  (package
+    (name "r-raem")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "raem" version))
+       (sha256
+        (base32 "1hn4a8sys57lk4x984z4skg874r77ybid9w725yxh0wb5v5rr40k"))))
+    (properties `((upstream-name . "raem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-desolve))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/cneyens/raem")
+    (synopsis
+     "Analytic Element Modeling of Steady Single-Layer Groundwater Flow")
+    (description
+     "This package provides a model of single-layer groundwater flow in steady-state
+under the Dupuit-Forchheimer assumption can be created by placing elements such
+as wells, area-sinks and line-sinks at arbitrary locations in the flow field.
+Output variables include hydraulic head and the discharge vector.  Particle
+traces can be computed numerically in three dimensions.  The underlying theory
+is described in Haitjema (1995) <doi:10.1016/B978-0-12-316550-3.X5000-4> and
+references therein.")
+    (license license:expat)))
 
 (define-public r-radwords
   (package

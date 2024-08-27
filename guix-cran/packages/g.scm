@@ -915,13 +915,13 @@ package is implementation of method proposed in Xu et al (2019)
 (define-public r-gwalkr
   (package
     (name "r-gwalkr")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWalkR" version))
        (sha256
-        (base32 "0c5nzqw4q1gn36h7pz43imbbirpwg7snszg9qqn6hzfzgcnqshay"))))
+        (base32 "0j81m6x6w654kd659jswj4283ps6z12r4jpav2qyzslkhhxbmp2a"))))
     (properties `((upstream-name . "GWalkR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-openssl r-jsonlite r-htmlwidgets))
@@ -4746,13 +4746,13 @@ points on curves, tangents to curves, and normals to curves.")
 (define-public r-grfa
   (package
     (name "r-grfa")
-    (version "0.1.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GrFA" version))
        (sha256
-        (base32 "1gbvcv8al6zay4zr3vcfiycywk7j191srkzfkllwm79bqwh55lmp"))))
+        (base32 "1qlj3zxv7fy7mwqrmpidn2z3ni8vwp1yvz8w5gvzrxac39xqc2dv"))))
     (properties `((upstream-name . "GrFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
@@ -4762,9 +4762,9 @@ points on curves, tangents to curves, and normals to curves.")
      "Several group factor analysis algorithms are implemented, including Canonical
 Correlation-based Estimation by Choi et al. (2021)
 <doi:10.1016/j.jeconom.2021.09.008> , Generalised Canonical Correlation
-Estimation by Lin and Shin (2022) <doi:10.2139/ssrn.4295429>, Circularly
-Projected Estimation by Chen (2022) <doi:10.1080/07350015.2022.2051520>, and the
-approach we recently proposed, named Aggregated Projection Method.")
+Estimation by Lin and Shin (2023) <doi:10.2139/ssrn.4295429>, Circularly
+Projected Estimation by Chen (2022) <doi:10.1080/07350015.2022.2051520>, and
+Aggregated projection method.")
     (license license:gpl3)))
 
 (define-public r-grf
@@ -8195,13 +8195,13 @@ Griffing, B. (1956) <https://www.publish.csiro.au/bi/pdf/BI9560463>.")
 (define-public r-gpboost
   (package
     (name "r-gpboost")
-    (version "1.5.1.1")
+    (version "1.5.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpboost" version))
        (sha256
-        (base32 "1qnw64lmiv8yyd69hyxqg7x90y9nxcdbipvb6kzpb34if8x2hqgq"))))
+        (base32 "04vq8vic040id09052l732pw231maghpja9j01whil9cvj5k97sj"))))
     (properties `((upstream-name . "gpboost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjsonio r-r6 r-matrix r-data-table))
@@ -8495,25 +8495,26 @@ their Application Programming Interface (http://statdb.nstac.go.jp/).")
 (define-public r-governor
   (package
     (name "r-governor")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "governor" version))
        (sha256
-        (base32 "0prvpab34jr59n9j3xqkapwrd51cm00w47dkvi5f6w414791ayzw"))))
+        (base32 "0nm6bdlzm0qbk5pdy77iahq44ya86dkfkabx0hyalprdrn3cbpm2"))))
     (properties `((upstream-name . "governor")))
     (build-system r-build-system)
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/coolbutuseless/governor")
     (synopsis "Speed Limiter to Control Rate of Execution of Loops")
     (description
-     "Speed limiter for controlling rate of execution of loops.  It can be necessary
-to limit the rate of execution of a loop or repeated function call e.g. to show
-or gather data only at particular intervals.  This package includes two methods
-for limiting this execution rate; speed governors and timers.  A speed governor
-will insert pauses during execution to meet a user-specified loop time.  Timers
-are alarm clocks which will indicate whether a certain time has passed.  These
-mechanisms are implemented in C to minimize processing overhead.")
+     "It can be necessary to limit the rate of execution of a loop or repeated
+function call e.g. to show or gather data only at particular intervals.  This
+package includes two methods for limiting this execution rate; speed governors
+and timers.  A speed governor will insert pauses during execution to meet a
+user-specified loop time.  Timers are alarm clocks which will indicate whether a
+certain time has passed.  These mechanisms are implemented in C to minimize
+processing overhead.")
     (license license:expat)))
 
 (define-public r-govdown
@@ -12636,13 +12637,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-3")
+    (version "0.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "07pqwgqdr2a1mxzh7sca6n0cklic4mmyp3vr6yk0485780ysh0wy"))))
+        (base32 "1xxp960irvrk8s0q4kggzzzgxnpcpribk6x0dlyv2xa90429l9mz"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -14934,13 +14935,13 @@ Schweitzer, F. (2019) <doi:10.1145/3341161.3342926> Casiraghi, G. (2019)
 (define-public r-ghyp
   (package
     (name "r-ghyp")
-    (version "1.6.4")
+    (version "1.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ghyp" version))
        (sha256
-        (base32 "0964gr8hmqrbg7rwm4hplxfqz2iccpir1dchmnqidkjqj8p9yy1d"))))
+        (base32 "10w3wlr9wk6z4ph2m8qip6bdsr3gg4nl7v5k277zswkyz26fg135"))))
     (properties `((upstream-name . "ghyp")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv r-mass))
@@ -22106,29 +22107,6 @@ contains a function implementing a specific geometric MH algorithm for
 performing high dimensional Bayesian variable selection.")
     (license license:gpl3+)))
 
-(define-public r-geometries
-  (package
-    (name "r-geometries")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geometries" version))
-       (sha256
-        (base32 "040ljxmzbjdr76p81ygnn5y0gzckz5k2arxkih5m5f3b6g62laf6"))))
-    (properties `((upstream-name . "geometries")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-knitr))
-    (home-page "https://dcooley.github.io/geometries/")
-    (synopsis "Convert Between R Objects and Geometric Structures")
-    (description
-     "Geometry shapes in R are typically represented by matrices (points, lines), with
-more complex shapes being lists of matrices (polygons).  Geometries will convert
-various R objects into these shapes.  Conversion functions are available at both
-the R level, and through Rcpp'.")
-    (license license:expat)))
-
 (define-public r-geometa
   (package
     (name "r-geometa")
@@ -22360,26 +22338,6 @@ problems, such as linking different levels of spatial units or estimating how to
 break up units.  Functions exist for creating redistricting-focused data for the
 US.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
-
-(define-public r-geojsonsf
-  (package
-    (name "r-geojsonsf")
-    (version "2.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geojsonsf" version))
-       (sha256
-        (base32 "1la6zfzv14ascwds0bp67d7x3am0v14mylc4b2lyd0nrf93a2p17"))))
-    (properties `((upstream-name . "geojsonsf")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sfheaders r-rcpp r-rapidjsonr r-jsonify
-                             r-geometries))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/SymbolixAU/geojsonsf")
-    (synopsis "GeoJSON to Simple Feature Converter")
-    (description "Converts Between @code{GeoJSON} and simple feature objects.")
-    (license license:expat)))
 
 (define-public r-geojsonr
   (package
@@ -22991,6 +22949,35 @@ dimensions from layers of geographic information related to each other.  It
 makes it easy to define relationships between layers and obtain the necessary
 data from them.")
     (license license:expat)))
+
+(define-public r-geodetector
+  (package
+    (name "r-geodetector")
+    (version "1.0-5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geodetector" version))
+       (sha256
+        (base32 "17651yppczr3rdnd1zb34pxllg42fs7j7hcg96vzljsaaaziv4bj"))))
+    (properties `((upstream-name . "geodetector")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geodetector")
+    (synopsis
+     "Stratified Heterogeneity Measure, Dominant Driving Force Detection, Interaction Relationship Investigation")
+    (description
+     "Spatial stratified heterogeneity (SSH), referring to the within strata are more
+similar than the between strata, a model with global parameters would be
+confounded if input data is SSH. Note that the \"spatial\" here can be either
+geospatial or the space in mathematical meaning.  Geographical detector is a
+novel tool to investigate SSH: (1) measure and find SSH of a variable Y; (2)
+test the power of determinant X of a dependent variable Y according to the
+consistency between their spatial distributions; and (3) investigate the
+interaction between two explanatory variables X1 and X2 to a dependent variable
+Y (Wang et al 2014 <doi:10.1080/13658810802443457>, Wang, Zhang, and Fu 2016
+<doi:10.1016/j.ecolind.2016.02.052>).")
+    (license license:gpl2+)))
 
 (define-public r-geodata
   (package
@@ -25714,6 +25701,30 @@ maximum likelihood (REML) methods.  Genome-wide efficient mixed-model
 association (GEMMA), as implemented in the package gemma2', uses an
 expectation-maximization algorithm for variance components inference for use in
 quantitative trait locus studies.")
+    (license license:expat)))
+
+(define-public r-gemini-r
+  (package
+    (name "r-gemini-r")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gemini.R" version))
+       (sha256
+        (base32 "1xppmjpsm670nak4c8bc7ssasrzjh56144xwsrc0sfnb28lp3n2l"))))
+    (properties `((upstream-name . "gemini.R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-httr2 r-cli r-base64enc))
+    (home-page "https://github.com/jhk0530/gemini.R")
+    (synopsis "Interface for 'Google Gemini' API")
+    (description
+     "This package provides a comprehensive interface for Google Gemini API, enabling
+users to access and utilize Gemini Large Language Model (LLM) functionalities
+directly from R. This package facilitates seamless integration with Google
+Gemini, allowing for advanced language processing, text generation, and other
+AI-driven capabilities within the R environment.  For more information, please
+visit <https://ai.google.dev/docs/gemini_api_overview>.")
     (license license:expat)))
 
 (define-public r-gemetrics
@@ -28549,32 +28560,25 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.13")
+    (version "0.9.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "0h61f29x2261vky4cwmcfwlix7x1yg8qkhgkhiw1aryqmzvwf0lc"))))
+        (base32 "03qywfw5pha3y3m4bvxm4nni0sziwy0s4rr4w6qnm71252piim9x"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
-                             r-tswge
                              r-signal
                              r-rsolnp
-                             r-pso
+                             r-rlang
                              r-pracma
                              r-nloptr
                              r-lubridate
-                             r-ltsa
-                             r-hypergeo
                              r-ggplot2
-                             r-ga
                              r-forecast
-                             r-fkf
-                             r-dfoptim
-                             r-crayon
-                             r-bb))
+                             r-crayon))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rlph50/garma")
     (synopsis "Fitting and Forecasting Gegenbauer ARMA Time Series Models")

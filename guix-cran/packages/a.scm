@@ -6077,13 +6077,13 @@ only for the normal case).  Olivari et all (2021)
 (define-public r-arpaldata
   (package
     (name "r-arpaldata")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARPALData" version))
        (sha256
-        (base32 "066d2n9l6k1zg5d48dj7936ppz9d5fkspz20sdylxmy8568dzv9n"))))
+        (base32 "1mkaryyrzj7mkd7lam122nkq5r02wylhaiyl5r4q7hk8jw3cxpxk"))))
     (properties `((upstream-name . "ARPALData")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm
@@ -6112,16 +6112,17 @@ only for the normal case).  Olivari et all (2021)
 quality and weather data from Regione Lombardia open database
 (<https://www.dati.lombardia.it/>).  Data are collected by ARPA Lombardia
 (Lombardia Environmental Protection Agency), Italy, through its ground
-monitoring network.  See the webpage <https://www.arpalombardia.it/> for further
-information on ARPA Lombardia's activities and history.  Data quality (e.g.
-missing values, exported values, graphical mapping) has been checked involving
-members of the ARPA Lombardia's office for air quality control.  The package
-makes available observations since 1989 (for weather) and 1968 (for air quality)
-and are updated with daily frequency by the regional agency.  Full description
-of the package can be retrieved in the companion paper Maranzano \\& Algieri
-(2024), \"ARPALData: an R package for retrieving and analyzing air quality and
-weather data from ARPA Lombardia (Italy)\", Environmental and Ecological
-Statistics, <doi:10.1007/s10651-024-00599-6>.")
+monitoring network (<https://www.dati.lombardia.it/stories/s/auv9-c2sj>).  See
+the webpage <https://www.arpalombardia.it/> for further information on ARPA
+Lombardia's activities and history.  Data quality (e.g. missing values, exported
+values, graphical mapping) has been checked involving members of the ARPA
+Lombardia's office for air quality control.  The package makes available
+observations since 1989 (for weather) and 1968 (for air quality) and are updated
+with daily frequency by the regional agency.  Full description of the package
+can be retrieved in the companion paper Maranzano \\& Algieri (2024), \"ARPALData:
+an R package for retrieving and analyzing air quality and weather data from ARPA
+Lombardia (Italy)\", Environmental and Ecological Statistics,
+<doi:10.1007/s10651-024-00599-6>.")
     (license license:gpl2+)))
 
 (define-public r-arothron
@@ -9572,13 +9573,13 @@ frames.")
 (define-public r-apache-sedona
   (package
     (name "r-apache-sedona")
-    (version "1.6.0")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apache.sedona" version))
        (sha256
-        (base32 "1n5qcjhcb801sjm6yanqvlxqicc2sxlsk4g5qyf1w3zc38cbz0kx"))))
+        (base32 "0wn3qh3m8fzy7c1647grajy0lkc7cw9d7fgmv8sc78pnxb4ji3vz"))))
     (properties `((upstream-name . "apache.sedona")))
     (build-system r-build-system)
     (propagated-inputs (list r-sparklyr r-rlang r-lifecycle r-dbplyr r-cli))
@@ -14377,6 +14378,33 @@ defined in Koenker and Machado (1999).  This is a special case of the skewed
 family of distributions available in Galarza et.al. (2017)
 <doi:10.1002/sta4.140> useful for quantile regression.")
     (license license:gpl2+)))
+
+(define-public r-alcyon
+  (package
+    (name "r-alcyon")
+    (version "0.5.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "alcyon" version))
+       (sha256
+        (base32 "0kd9jw167p4cay301y5g4jfkpwgnzxpp6lpnn9q056c6jh447gix"))))
+    (properties `((upstream-name . "alcyon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stars r-sf r-rcpp r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/spatialnous/alcyon")
+    (synopsis "Spatial Network Analysis")
+    (description
+     "Interface package for sala', the spatial network analysis library from the
+@code{depthmapX} software application.  The R parts of the code are based on the
+rdepthmap package.  Allows for the analysis of urban and building-scale networks
+and provides metrics and methods usually found within the Space Syntax domain.
+Methods in this package are described by K. Al-Sayed, A. Turner, B. Hillier, S.
+Iida and A. Penn (2014) \"Space Syntax methodology\", and also by A. Turner (2004)
+<https://discovery.ucl.ac.uk/id/eprint/2651> \"Depthmap 4: a researcher's
+handbook\".")
+    (license license:gpl3)))
 
 (define-public r-albopictus
   (package

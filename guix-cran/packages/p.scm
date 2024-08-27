@@ -5912,6 +5912,34 @@ ratio of two proportions.")
 time-series database, using the @code{PromQL} query language.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-promptr
+  (package
+    (name "r-promptr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "promptr" version))
+       (sha256
+        (base32 "17yi549a2xx9dmsaqwckbyagjgymjrc1d8nzffmr24pk9sh2z3fj"))))
+    (properties `((upstream-name . "promptr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-jsonlite
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-curl))
+    (home-page "https://github.com/joeornstein/promptr")
+    (synopsis "Format and Complete Few-Shot LLM Prompts")
+    (description
+     "Format and submit few-shot prompts to @code{OpenAI's} Large Language Models
+(LLMs).  Designed to be particularly useful for text classification problems in
+the social sciences.  Methods are described in Ornstein, Blasingame, and
+Truscott (2024)
+<https://joeornstein.github.io/publications/ornstein-blasingame-truscott.pdf>.")
+    (license license:expat)))
+
 (define-public r-prompter
   (package
     (name "r-prompter")
@@ -7350,16 +7378,16 @@ and higher-order asymptotic procedures.")
 (define-public r-probstats4econ
   (package
     (name "r-probstats4econ")
-    (version "0.2.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "probstats4econ" version))
        (sha256
-        (base32 "1xjf4i5jw0qf87zmizkwbb9i0fd0gji40kwvm9nz5gxyns98fqmk"))))
+        (base32 "1by0g4jvilxygfhgz9mzkxz6jlvjy0dsik7faa2b4awfckhb15nh"))))
     (properties `((upstream-name . "probstats4econ")))
     (build-system r-build-system)
-    (home-page "https://www.probstats4econ.com/package.html")
+    (home-page "https://probstats4econ.com/package.html")
     (synopsis
      "Companion Package to Probability and Statistics for Economics and Business")
     (description
@@ -8268,6 +8296,39 @@ ecological linkages.  The @code{priorCON} package is built upon the prioritizr
 package <doi:10.32614/CRAN.package.prioritizr>, using commercial and open-source
 exact algorithm solvers that ensure optimal solutions to prioritization
 problems.")
+    (license license:gpl3)))
+
+(define-public r-prior3d
+  (package
+    (name "r-prior3d")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "prior3D" version))
+       (sha256
+        (base32 "08w461526hfm1vgsyx2p69jv60k2jv8x5bz0jr0a6bilg67fb6yv"))))
+    (properties `((upstream-name . "prior3D")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-terra
+                             r-readxl
+                             r-rasterdiv
+                             r-prioritizr
+                             r-maps
+                             r-highs
+                             r-geodiv))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/prior3D")
+    (synopsis "3D Prioritization Algorithm")
+    (description
+     "3D systematic conservation planning, conducting nested prioritization analyses
+across multiple depth levels and ensuring efficient resource allocation
+throughout the water column (Doxa et al.  2024 <doi:10.1111/gcb.16268>).  It
+provides a structured workflow designed to address biodiversity conservation and
+management challenges in the 3 dimensions, such as the incorporation of multiple
+costs at different depth levels, while facilitating usersâ choices and
+parameterization.")
     (license license:gpl3)))
 
 (define-public r-priogene
@@ -9929,13 +9990,13 @@ Characteristic (@code{mROC}) based on Sadatsafavi et al (2021)
 (define-public r-predrupdate
   (package
     (name "r-predrupdate")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "predRupdate" version))
        (sha256
-        (base32 "087jkaw27lssh7400gjbjd9d583aiz7fm6a70cjhxwf5f8s8qpp8"))))
+        (base32 "0wy5yrzsp36gyb6za4965xnk1pkii895a510zkghybarxnsxcb1h"))))
     (properties `((upstream-name . "predRupdate")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rlang r-proc r-ggpubr r-ggplot2))
@@ -13575,6 +13636,31 @@ estimates are computed as described in Kang et al. (2012)
 <doi:10.4196/kjpp.2012.16.2.97>.")
     (license license:agpl3)))
 
+(define-public r-posiadjrsquared
+  (package
+    (name "r-posiadjrsquared")
+    (version "0.0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PoSIAdjRSquared" version))
+       (sha256
+        (base32 "1awdrw16pansw8m0lvm2ahbrmv2h3mv7yrcknj6dqypjqpiv5adg"))))
+    (properties `((upstream-name . "PoSIAdjRSquared")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam r-lmf))
+    (home-page "https://cran.r-project.org/package=PoSIAdjRSquared")
+    (synopsis "Post-Selection Inference for Adjusted R Squared")
+    (description
+     "Conduct post-selection inference for regression coefficients in linear models
+after they have been selected by adjusted R squared.  The p-values and
+confidence intervals are valid after model selection with the same data.  This
+allows the user to use all data for both model selection and inference without
+losing control over the type I error rate.  The provided tests are more powerful
+than data splitting, which bases inference on less data since it discards all
+information used for selection.")
+    (license license:expat)))
+
 (define-public r-posi
   (package
     (name "r-posi")
@@ -13897,13 +13983,13 @@ methods implemented are described by Konno and Yamazaki (1991)
 (define-public r-portfolio
   (package
     (name "r-portfolio")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portfolio" version))
        (sha256
-        (base32 "13w8gyaphg0qspjl6d0jh0jf3wvz4agy8vzkriba0k59qhdbi52f"))))
+        (base32 "12nbv64gwycshcrsiilfvsw9f6p24c8vdr2jbv9a5xx4c5r7xpaa"))))
     (properties `((upstream-name . "portfolio")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lattice))
@@ -15904,13 +15990,13 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
 (define-public r-polyglotr
   (package
     (name "r-polyglotr")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyglotr" version))
        (sha256
-        (base32 "00h9v05sv6bqyp2wqa6dvxix9psa2i6csx4yig74i8iycl9issfb"))))
+        (base32 "1l6dpbsslc1lynm39nx5x9kxb6zh54klfnrqb0i8lybavd14i24k"))))
     (properties `((upstream-name . "polyglotr")))
     (build-system r-build-system)
     (propagated-inputs (list r-urltools
@@ -15928,8 +16014,8 @@ based on bi-allelic marker dosage data.  Submitted to BMC Bioinformatics (2021).
     (home-page "https://github.com/Tomeriko96/polyglotr/")
     (synopsis "Translate Text")
     (description
-     "The goal of the this package is to provide easy methods to translate pieces of
-text.  Functions send requests to translation services online.")
+     "Provide easy methods to translate pieces of text.  Functions send requests to
+translation services online.")
     (license license:expat)))
 
 (define-public r-polycub
@@ -24477,13 +24563,13 @@ materials.  Part of the r4photobiology suite, Aphalo P. J. (2015)
 (define-public r-photobiology
   (package
     (name "r-photobiology")
-    (version "0.11.2")
+    (version "0.11.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiology" version))
        (sha256
-        (base32 "1vsxkcjng0cdjzg76k944cm01jfmq52vqqwvblsq6hr8klbcvp8k"))))
+        (base32 "1n5hilm5i2hyb9ksfhz88fv65n70gbc2j2xqjxlqhhzmvyz26ikc"))))
     (properties `((upstream-name . "photobiology")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -25127,13 +25213,13 @@ projection raster, following methodologies described in John (2016)
 (define-public r-phenology
   (package
     (name "r-phenology")
-    (version "9.1")
+    (version "10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phenology" version))
        (sha256
-        (base32 "095697ahyhl70h9wlwfbxqp6d9z8kc08k450apx65m1jvcl6jq1b"))))
+        (base32 "088288idp4jgj1jcrqxij9p5phlh425r41v7wnvxghp066cg1snr"))))
     (properties `((upstream-name . "phenology")))
     (build-system r-build-system)
     (propagated-inputs (list r-optimx r-numderiv r-helpersmg))
@@ -27288,6 +27374,31 @@ The package requires symmetric, weighted (specifically, count)
 matrices/networks.")
     (license license:gpl2)))
 
+(define-public r-persval
+  (package
+    (name "r-persval")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "persval" version))
+       (sha256
+        (base32 "0208f33yhsvipy52b4931v4iqzgmapb4i14mnnq6cshpi4s6cp0q"))))
+    (properties `((upstream-name . "persval")))
+    (build-system r-build-system)
+    (home-page "https://github.com/g-corbelli/persval")
+    (synopsis "Computing Personal Values Scores")
+    (description
+     "Compute personal values scores from various questionnaires based on the
+theoretical constructs proposed by professor Shalom H. Schwartz.  Designed for
+researchers and practitioners in psychology, sociology, and related fields, the
+package facilitates the quantification of different dimensions related to
+personal values from survey data.  It incorporates the recommended statistical
+adjustment to enhance the accuracy and interpretation of the results.  Note: The
+package persval is independently developed based on the personal values
+theoretical framework, and is not directly endorsed by professor Schwartz.")
+    (license license:gpl3)))
+
 (define-public r-perspectev
   (package
     (name "r-perspectev")
@@ -27658,13 +27769,13 @@ permutation types for two-way designs.")
 (define-public r-permuco
   (package
     (name "r-permuco")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permuco" version))
        (sha256
-        (base32 "0lh7n94hchq7wcp8j27c1m2v0xa5mq1dzpdvzkv2cwagy45v4383"))))
+        (base32 "1zih4hb91507cqd6r6vsxqsv8q299i37p764mf33yyplr9w22vrb"))))
     (properties `((upstream-name . "permuco")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-permute r-matrix))
@@ -35290,13 +35401,13 @@ not split into subsets.")
 (define-public r-parallellogger
   (package
     (name "r-parallellogger")
-    (version "3.3.0")
+    (version "3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ParallelLogger" version))
        (sha256
-        (base32 "0arfmjxc68yfznggfv5mmafxn9xvagwxslynhqapw4yf7vlqjjam"))))
+        (base32 "05f3ysa5vipjl43pmllyq1wypbc5ddn33ysmhcrh8h6sx3j36jc7"))))
     (properties `((upstream-name . "ParallelLogger")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-snow r-jsonlite))
@@ -37246,13 +37357,13 @@ Population Census 2017 (<http://www.pbscensus.gov.pk/>).")
 (define-public r-pak
   (package
     (name "r-pak")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pak" version))
        (sha256
-        (base32 "0bgl3np3x2a4si99mx618jd8c4skq8bfdnxjwq7m59bapqc1s7c8"))))
+        (base32 "0rr8ikhy0zg2n0dqjrdmjdb8qdmzncrpizy1dqzqqlmfrpmxsgw5"))))
     (properties `((upstream-name . "pak")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

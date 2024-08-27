@@ -3312,13 +3312,13 @@ common ones with rio (C-h.  Chan and al. (2018))
 (define-public r-khroma
   (package
     (name "r-khroma")
-    (version "1.13.0")
+    (version "1.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "khroma" version))
        (sha256
-        (base32 "0h84ds9cihd0kacrziq1j562wqcdx06ib6m7a4b786c3ck696l69"))))
+        (base32 "00kb8k5np6inxdjcjbmr36xp6qckf3qmc9p210g7r70pshzxgszp"))))
     (properties `((upstream-name . "khroma")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

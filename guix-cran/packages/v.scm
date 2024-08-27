@@ -86,13 +86,13 @@ maintenance and the addition of minor functionality.")
 (define-public r-vwline
   (package
     (name "r-vwline")
-    (version "0.2-2")
+    (version "0.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vwline" version))
        (sha256
-        (base32 "1hilr996xn5wh8kfyab55w2i1c02a8x909h4ahag5q6s7603qng5"))))
+        (base32 "0cyv3kn6wza7bh7nzzq74s08b4ifr7cs6kkmqpdxqbh2yabim207"))))
     (properties `((upstream-name . "vwline")))
     (build-system r-build-system)
     (propagated-inputs (list r-polyclip r-gridbezier))

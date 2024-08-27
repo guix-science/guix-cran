@@ -3703,13 +3703,13 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
 (define-public r-longreadvqs
   (package
     (name "r-longreadvqs")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longreadvqs" version))
        (sha256
-        (base32 "07pdnipq4nl7v8sgbfrcz7slz36gnfj3zj6i6pcvq6zh4fy1bw3g"))))
+        (base32 "07b55vkklz3qrkdlsnydkpj1kgrkqmprvd9p7iqk86cyr4bdhgna"))))
     (properties `((upstream-name . "longreadvqs")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3723,6 +3723,7 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
                              r-purrr
                              r-plyr
                              r-magrittr
+                             r-iranges
                              r-ggpubr
                              r-ggplot2
                              r-dplyr
@@ -3734,10 +3735,11 @@ in Barbati and Farcomeni (2017) <doi:10.1007/s10260-017-0410-2>.")
     (synopsis "Viral Quasispecies Comparison from Long-Read Sequencing Data")
     (description
      "This package performs variety of viral quasispecies diversity analyses [see
-Gregori et al. (2016) <doi:10.1016/j.virol.2016.03.017>] based on long-read
-sequence alignment.  Main functions include 1) sequencing error minimization and
-read sampling, 2) Single nucleotide variant (SNV) profiles comparison, and 3)
-viral quasispecies profiles comparison and visualization.")
+Pamornchainavakul et al. (2024) <doi:10.21203/rs.3.rs-4637890/v1>] based on
+long-read sequence alignment.  Main functions include 1) sequencing error and
+other noise minimization and read sampling, 2) Single nucleotide variant (SNV)
+profiles comparison, and 3) viral quasispecies profiles comparison and
+visualization.")
     (license license:gpl3)))
 
 (define-public r-longpower
@@ -6709,13 +6711,13 @@ to covariates only or also to outcome values.")
 (define-public r-lmmsolver
   (package
     (name "r-lmmsolver")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMMsolver" version))
        (sha256
-        (base32 "0vzgbq2hpj65c7y1gkxz80smrl693basffkvv9gb7l29ifp10gs5"))))
+        (base32 "07klvcs24niwj04x298ljhiszf5g2n66112r3zn57wbmj0n8yssq"))))
     (properties `((upstream-name . "LMMsolver")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -15097,6 +15099,29 @@ cluster analyses, including repeated estimation, model validation, and model
 assessment.  The interface enables users to compare results between methods, and
 to implement and evaluate new methods with ease.  The akmedoids package is
 available from <https://github.com/MAnalytics/akmedoids>.")
+    (license license:gpl2+)))
+
+(define-public r-latexsymb
+  (package
+    (name "r-latexsymb")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "latexSymb" version))
+       (sha256
+        (base32 "174awf6wznmp2klp287n1x0hhx61004mw054pli73ypx7cmwdjwc"))))
+    (properties `((upstream-name . "latexSymb")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://cran.r-project.org/package=latexSymb")
+    (synopsis "Use 'R' to Write 'LaTeX' Code")
+    (description
+     "Simplify the task of writing @code{LaTeX} code by using R'.  Instead of using
+@code{LaTeX} utilities like newcommand', write R functions for more flexibility
+and readability.  Also, additional support for grouping makes it easier to write
+complicated expressions.")
     (license license:gpl2+)))
 
 (define-public r-latexpdf

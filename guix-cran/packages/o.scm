@@ -1294,6 +1294,28 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
+(define-public r-osum
+  (package
+    (name "r-osum")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "osum" version))
+       (sha256
+        (base32 "066h6xylagrs313zy4p9qm5rgml6pkz6kq4jvpw922f89q5cd04m"))))
+    (properties `((upstream-name . "osum")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://zivankaraman.github.io/osum/")
+    (synopsis "Provide Summary Information About R Objects")
+    (description
+     "Inspired by S-PLUS function objects.summary(), provides a function with the same
+name that returns data class, storage mode, mode, type, dimension, and size
+information for R objects in the specified environment.  Various filtering and
+sorting options are also proposed.")
+    (license license:gpl3)))
+
 (define-public r-oste
   (package
     (name "r-oste")
@@ -2122,6 +2144,35 @@ dimension reduction methods such as @code{hMave} by Xia, Zhang, & Xu (2010)
 optimization solver for problems with orthogonality constraints, i.e., in
 Stiefel manifold.  Parallel computing for approximating the gradient is enabled
 through @code{OpenMP}'.")
+    (license license:gpl2+)))
+
+(define-public r-orth-ord
+  (package
+    (name "r-orth-ord")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ORTH.Ord" version))
+       (sha256
+        (base32 "0n8m8dpxbb6zss7mlyq6v44yja566q3hf23qqspk88ksrah8wgiv"))))
+    (properties `((upstream-name . "ORTH.Ord")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-magic))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ORTH.Ord")
+    (synopsis
+     "Alternating Logistic Regression with Orthogonalized Residuals for Correlated Ordinal Outcomes")
+    (description
+     "This package provides a modified version of alternating logistic regressions
+(ALR) with estimation based on orthogonalized residuals (ORTH) is implemented,
+which use paired estimating equations to jointly estimate parameters in marginal
+mean and within-association models.  The within-cluster association between
+ordinal responses is modeled by global pairwise odds ratios (POR).  A
+finite-sample bias correction is provided to POR parameter estimates based on
+matrix multiplicative adjusted orthogonalized residuals (MMORTH) for correcting
+estimating equations, and different bias-corrected variance estimators such as
+BC1, BC2, and BC3.")
     (license license:gpl2+)))
 
 (define-public r-orsk
@@ -5518,13 +5569,13 @@ information, as well as aircraft state vectors.")
 (define-public r-openscoring
   (package
     (name "r-openscoring")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openscoring" version))
        (sha256
-        (base32 "0h10dh0ssxk32x9adjlsbnjxb3s2p9ma0kz1fjfh37gqrc84h4xa"))))
+        (base32 "0y7yfqk0bqj03fvzni8dwvv0dhis1dp3h0gzbnfky9kmw43iinjv"))))
     (properties `((upstream-name . "openscoring")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8744,13 +8795,13 @@ different authors in the recent years.  See Alizadeh (2019)
 (define-public r-ollamar
   (package
     (name "r-ollamar")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ollamar" version))
        (sha256
-        (base32 "1cs12w5rcm2v7bnzbmqpycm5r2n8c7iw6g6jzzw272hbsjjqkm8a"))))
+        (base32 "0l9k84hf5y46ci6l2sy1zi3423akip2jr0zi8cnjh337dfww9sis"))))
     (properties `((upstream-name . "ollamar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

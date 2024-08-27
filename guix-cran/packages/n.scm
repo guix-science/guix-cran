@@ -5314,13 +5314,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.9")
+    (version "10.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "162mk4wfs85gk2hjdg8inj58cn7m3drvgb5xms1by8kxq3knldg9"))))
+        (base32 "0g058hxzlsxkqrjvplhb7h11j8k0nkfzrn97wax3q58fadajd6rq"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -5780,13 +5780,13 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
 (define-public r-nmsim
   (package
     (name "r-nmsim")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMsim" version))
        (sha256
-        (base32 "14n4zr32vjsdjafx7rc9x8x9hjdmvw86lh9hy66lavp3005xznia"))))
+        (base32 "1ykq7sf8qqylwlyr687ckd1yxvd3xpsqm6sy884k4bw1w2rg2n78"))))
     (properties `((upstream-name . "NMsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -5798,11 +5798,11 @@ functions based on the NMSLIB <https://github.com/nmslib/nmslib> Python Library.
     (home-page "https://philipdelff.github.io/NMsim/")
     (synopsis "Seamless 'Nonmem' Simulation Platform")
     (description
-     "This package provides a complete and seamless Nonmem simulation interface from
-within R. Turns Nonmem control streams into simulation control streams, executes
-them with specified simulation input data and returns the results.  The
-simulation is performed by Nonmem', eliminating time spent and risks of
-re-implementation of models in other tools.")
+     "This package provides a complete and seamless Nonmem simulation interface within
+R. Turns Nonmem control streams into simulation control streams, executes them
+with specified simulation input data and returns the results.  The simulation is
+performed by Nonmem', eliminating manual work and risks of re-implementation of
+models in other tools.")
     (license license:expat)))
 
 (define-public r-nmrrr
@@ -6044,13 +6044,13 @@ the updating process.  See e.g. @code{TomÃ©} et al (2015)
 (define-public r-nmdata
   (package
     (name "r-nmdata")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMdata" version))
        (sha256
-        (base32 "0jyfms68p18503460phhc9cw3vrv2lp7mcg9d2x498vqn0kbs5xb"))))
+        (base32 "148d427b0brni7rab6rrln4d7afdd4qs7dbmx4b8fv46zjvnbcfi"))))
     (properties `((upstream-name . "NMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-fst r-data-table))
@@ -6068,13 +6068,13 @@ but easily integrated with base and tidyverse'.")
 (define-public r-nmcalc
   (package
     (name "r-nmcalc")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NMcalc" version))
        (sha256
-        (base32 "199pd9wmakrk96vqb1gwwq6pwsk00r4vn6r3ff9awylwl6vbs7bq"))))
+        (base32 "12wrywa32xsky2414h98vlmr5zjqldv5scnz5v62wz9q4sjjz7ss"))))
     (properties `((upstream-name . "NMcalc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -8329,17 +8329,18 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
 (define-public r-nichetools
   (package
     (name "r-nichetools")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nichetools" version))
        (sha256
-        (base32 "12hcgqwq74pkf0x4240blb699qnazsls1dsni9arnf9hq06zypdy"))))
+        (base32 "191cibap3vvmn2mjpk5544i0n8x930k41giii832rxkwzxl10vjb"))))
     (properties `((upstream-name . "nichetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
+                             r-siber
                              r-rlang
                              r-purrr
                              r-nicherover
@@ -8355,8 +8356,9 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
 SIBER allowing the user to extract Bayesian estimates from data objects created
 by the packages @code{nicheROVER} and SIBER'.  Please see the following
 publications for detailed methods on @code{nicheROVER} and SIBER Hansen et al.
-(2015) <doi:10.1890/14-0235.1> and SIBER', Jackson et al. (2011)
-<doi:10.1111/j.1365-2656.2011.01806.x>, respectfully.")
+(2015) <doi:10.1890/14-0235.1>, Jackson et al. (2011)
+<doi:10.1111/j.1365-2656.2011.01806.x>, and Layman et al. (2007)
+<doi:10.1890/0012-9658(2007)88[42:CSIRPF]2.0.CO;2>, respectfully.")
     (license license:cc0)))
 
 (define-public r-nicherover

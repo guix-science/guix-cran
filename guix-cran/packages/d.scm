@@ -3067,13 +3067,13 @@ density) and random generation for discrete stable random variables.")
 (define-public r-dst
   (package
     (name "r-dst")
-    (version "1.7.0")
+    (version "1.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dst" version))
        (sha256
-        (base32 "1l3bc2pn092wawf11dmjyv67c280c4p9j3maillc10mpaxav5k99"))))
+        (base32 "0cxlzbcda5q1fqvcslm9bfy0la4mcy1s99yyf7r6yqd6svci47a3"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-matrix r-ggplot2 r-dplyr))
@@ -5781,13 +5781,13 @@ the Rmpfr package and hence the underlying MPFR and GMP C libraries.")
 (define-public r-dpq
   (package
     (name "r-dpq")
-    (version "0.5-8")
+    (version "0.5-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPQ" version))
        (sha256
-        (base32 "0wdhx937dp2lmcqzf64jrbg7a20r6rjvdjrpyzn072r94zn2r4dz"))))
+        (base32 "04bmsqp4mkrf4y1s161ql77f2zpqi66cyqyz9xpzgdf0dizsvn50"))))
     (properties `((upstream-name . "DPQ")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc))
@@ -6863,18 +6863,18 @@ and intervals from English-language prescriptions.  Based on Karystianis et al.
 (define-public r-dosefinding
   (package
     (name "r-dosefinding")
-    (version "1.1-1")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DoseFinding" version))
        (sha256
-        (base32 "052ic1d7qlcvcglzskdv97v7dnbi2lh8xpkbxf9srqn3sgs812n3"))))
+        (base32 "0chy4xl7faflp3cf27sf2ayzkvay13vf2cgdxmihsrbxkib2f01f"))))
     (properties `((upstream-name . "DoseFinding")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-lattice r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=DoseFinding")
+    (home-page "https://github.com/openpharma/DoseFinding")
     (synopsis "Planning and Analyzing Dose Finding Experiments")
     (description
      "The @code{DoseFinding} package provides functions for the design and analysis of
@@ -7905,13 +7905,13 @@ container.")
 (define-public r-dockerfiler
   (package
     (name "r-dockerfiler")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dockerfiler" version))
        (sha256
-        (base32 "1fy9mdq24v48vv3fkglwv1rqhlm4chlgli6d7arw0wa9s4h9bh2z"))))
+        (base32 "0axiqvd3hbrb6br56qhjc5cpxv230x4j02ly9aa98gcrwwpc1w59"))))
     (properties `((upstream-name . "dockerfiler")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
@@ -13103,13 +13103,13 @@ Digital Science Dimensions using DSL API
 (define-public r-dimensio
   (package
     (name "r-dimensio")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dimensio" version))
        (sha256
-        (base32 "1vk3maraqipmdk8jv22nxmkj6ab7lr2z4if49398irdmvyk8g7l8"))))
+        (base32 "1vdmd2lzmj246jaamkxda2w899yxrzhbj7mk01rzd8zysqjdkbj9"))))
     (properties `((upstream-name . "dimensio")))
     (build-system r-build-system)
     (propagated-inputs (list r-khroma r-arkhe))
@@ -14390,6 +14390,39 @@ based on modularity and heterocitation metrics, assess the degree of
 awareness/cross-fertilization between two corpora/communities.  This toolset is
 optimized for Scopus data.")
     (license license:gpl2+)))
+
+(define-public r-didec
+  (package
+    (name "r-didec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "didec" version))
+       (sha256
+        (base32 "0x1ib0jnp1y7d5rpkf1m485bzyamfzx2i64my5ldwvr738sl2bdk"))))
+    (properties `((upstream-name . "didec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang
+                             r-phylogram
+                             r-gtools
+                             r-ggplot2
+                             r-foci
+                             r-factoextra
+                             r-dendextend
+                             r-cowplot
+                             r-copbasic))
+    (home-page "https://cran.r-project.org/package=didec")
+    (synopsis "Directed Dependence Coefficient")
+    (description
+     "Directed Dependence Coefficient (didec) is a measure of directed dependence.
+Multivariate Feature Ordering by Conditional Independence (MFOCI) is a variable
+selection algorithm based on didec.  Hierarchical Variable Clustering
+(@code{VarClustPartition}) is a variable clustering method based on didec.  For
+more information, see the paper by Ansari and Fuchs (2024,
+<doi:10.48550/@code{arXiv.2212.01621>}), and the paper by Fuchs and Wang (2024,
+<doi:10.1016/j.ijar.2024.109185>).")
+    (license license:expat)))
 
 (define-public r-didacticboost
   (package
@@ -23156,13 +23189,13 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
 (define-public r-dbmss
   (package
     (name "r-dbmss")
-    (version "2.9-0")
+    (version "2.9-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dbmss" version))
        (sha256
-        (base32 "16bmaq8wd7v6vqnycr670sajcyaplkw1g5w5m2ri7ch16ccpqk6j"))))
+        (base32 "1131lfli0fna2yvq383f710sr87fwfg5gngiawrhdx8b14zn796p"))))
     (properties `((upstream-name . "dbmss")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -23178,7 +23211,7 @@ Nagarajan, Scutari and LÃ¨bre (2013) <doi:10.1007/978-1-4614-6446-4>.")
                              r-ggplot2
                              r-cubature))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/EricMarcon/dbmss")
+    (home-page "https://ericmarcon.github.io/dbmss/")
     (synopsis "Distance-Based Measures of Spatial Structures")
     (description
      "Simple computation of spatial statistic functions of distance to characterize
@@ -24091,67 +24124,6 @@ for selecting dates, times, or predefined ranges like \"Last 30 Days\".  It wrap
 the @code{JavaScript} library daterangepicker which is available at
 <https://www.daterangepicker.com>.")
     (license license:expat)))
-
-(define-public r-datelife
-  (package
-    (name "r-datelife")
-    (version "0.6.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "datelife" version))
-       (sha256
-        (base32 "154nmpvslnizd03jaxbhkc7vjzjx7j18zlwmrpx2qidqk424k1i9"))))
-    (properties `((upstream-name . "datelife")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-treebase
-                             r-taxize
-                             r-stringr
-                             r-rotl
-                             r-plyr
-                             r-phytools
-                             r-phylocomr
-                             r-phylobase
-                             r-phangorn
-                             r-paleotree
-                             r-knitcitations
-                             r-ips
-                             r-httr
-                             r-geiger
-                             r-data-table
-                             r-curl
-                             r-compare
-                             r-cluster
-                             r-bold
-                             r-biocmanager
-                             r-ape
-                             r-abind))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/phylotastic/datelife")
-    (synopsis "Scientific Data on Time of Lineage Divergence for Your Taxa")
-    (description
-     "This package provides methods and workflows to get chronograms (i.e.,
-phylogenetic trees with branch lengths proportional to time), using open,
-peer-reviewed, state-of-the-art scientific data on time of lineage divergence.
-This package constitutes the main underlying code of the @code{DateLife} web
-service at <https://www.datelife.org>.  To obtain a single summary chronogram
-from a group of relevant chronograms, we implement the Super Distance Matrix
-(SDM) method described in Criscuolo et al. (2006)
-<doi:10.1080/10635150600969872>.  To find the grove of chronograms with a
-sufficiently overlapping set of taxa for summarizing, we implement theorem 1.1.
-from @code{AnÃ©} et al. (2009) <doi:10.1007/s00026-009-0017-x>.  A given
-phylogenetic tree can be dated using time of lineage divergence data as
-secondary calibrations (with caution, see Schenk (2016)
-<doi:10.1371/journal.pone.0148228>).  To obtain and apply secondary
-calibrations, the package implements the congruification method described in
-Eastman et al. (2013) <doi:10.1111/2041-210X.12051>.  Tree dating can be
-performed with different methods including BLADJ (Webb et al. (2008)
-<doi:10.1093/bioinformatics/btn358>), PATHd8 (Britton et al. (2007)
-<doi:10.1080/10635150701613783>), @code{mrBayes} (Huelsenbeck and Ronquist
-(2001) <doi:10.1093/bioinformatics/17.8.754>), and @code{treePL} (Smith and
-O'Meara (2012) <doi:10.1093/bioinformatics/bts492>).")
-    (license license:gpl2+)))
 
 (define-public r-datefixr
   (package
@@ -25224,23 +25196,23 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "0vci2nhavqrpah4n5gr0rhihlp9qa41mfgg8w2k7fdak65hdz3hq"))))
+        (base32 "1r13ywazj9dr8ilr37mzm01hb4675s66a3maf33ck5w3fkzydxah"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lattice r-ggplot2))
+    (propagated-inputs (list r-ggplot2))
     (home-page "https://eljatib.com/rlibro")
-    (synopsis "Data and Functions to Accompany Analisis De Datos Con R")
+    (synopsis "Datasets and Functions to Accompany Analisis De Datos Con R")
     (description
-     "Datasets and Functions to Accompany Salas-Eljatib (2021, ISBN: 9789566086109)
-\"Analisis de datos con el programa estadistico R: una introduccion aplicada\".
-The package helps carry out data management, exploratory analyses, and model
-fitting.")
+     "Datasets and functions to accompany the book Analisis de datos con el programa
+estadistico R: una introduccion aplicada by Salas-Eljatib (2021, ISBN:
+9789566086109).  The package helps carry out data management, exploratory
+analyses, and model fitting.")
     (license license:gpl3)))
 
 (define-public r-datamojo

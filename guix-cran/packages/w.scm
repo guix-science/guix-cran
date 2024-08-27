@@ -1839,18 +1839,19 @@ static since 2013.")
 (define-public r-worldbank
   (package
     (name "r-worldbank")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worldbank" version))
        (sha256
-        (base32 "0bl8c5cqz5s8yl06qy7xg92nhgald7xil4ck7vb4h6rln210bz9v"))))
+        (base32 "0cqnp8c3n7kvbkv2s4jqqvmzf8g86drywv7y05mnrgidynhr975d"))))
     (properties `((upstream-name . "worldbank")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2))
     (home-page "https://m-muecke.github.io/worldbank/")
-    (synopsis "Client for the 'World Bank Indicators API'")
+    (synopsis
+     "Client for World Banks's 'Indicators' and 'Poverty and Inequality Platform (PIP)' APIs")
     (description
      "Download and search data from the World Bank Indicators API', which provides
 access to nearly 16,000 time series indicators.  See
@@ -2863,6 +2864,34 @@ Spotfire'.")
 arguments.")
     (license license:expat)))
 
+(define-public r-wishmom
+  (package
+    (name "r-wishmom")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wishmom" version))
+       (sha256
+        (base32 "0lx9gigw7lm51bpz4djwgxjzhw71pbvwqfcy9gjdwkflknyz8wdf"))))
+    (properties `((upstream-name . "wishmom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-roxygen2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=wishmom")
+    (synopsis
+     "Compute Moments Related to Beta-Wishart and Inverse Beta-Wishart Distributions")
+    (description
+     "This package provides functions for computing moments and coefficients related
+to the Beta-Wishart and Inverse Beta-Wishart distributions.  It includes
+functions for calculating the expectation of matrix-valued functions of the
+Beta-Wishart distribution, coefficient matrices C_k and H_k, expectation of
+matrix-valued functions of the inverse Beta-Wishart distribution, and inverse
+coefficient matrices tilde C_k and tilde H_k.  For more details, refer to the
+paper \"On the Expectations of Equivariant Matrix-valued Functions of Wishart and
+Inverse Wishart Matrices\" by Grant Hillier and Raymond Kan.")
+    (license license:expat)))
+
 (define-public r-wisam
   (package
     (name "r-wisam")
@@ -3508,6 +3537,27 @@ combination with the function gallery() in @code{netCoin} package.")
 Wikidata'.  Functions included for getting taxonomic information from each of
 the sources just listed, as well performing taxonomic search.")
     (license license:expat)))
+
+(define-public r-wikiprofiler
+  (package
+    (name "r-wikiprofiler")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wikiprofiler" version))
+       (sha256
+        (base32 "180hgqc1saqc280p423qhgm5h106kd783l4ckhxs5nnhygm3yiv4"))))
+    (properties `((upstream-name . "wikiprofiler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yulab-utils r-rsvg r-gson r-ggplotify r-ggplot2))
+    (home-page "https://yulab-smu.top/contribution-knowledge-mining/")
+    (synopsis "'WikiPathway' Based Data Integration and Visualization")
+    (description
+     "Queries online @code{WikiPathway} graphics and allows mapping user data (e.g.,
+expression values) on the graph.  The package designs a grammar of graphic
+syntax that using pipe operator to add graphic layer.")
+    (license license:artistic2.0)))
 
 (define-public r-wikipedir
   (package
@@ -4818,13 +4868,13 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 (define-public r-weightit
   (package
     (name "r-weightit")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightIt" version))
        (sha256
-        (base32 "0mgwjl2d17m80pwj0n2mmnrqcymg9lgc9kz0sh9bwsq7icjdslyv"))))
+        (base32 "1dlwx63rzphlqlfs0s8jjsqqg88fwm256ngjw4fhqyv26rxdcv5q"))))
     (properties `((upstream-name . "WeightIt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -4841,7 +4891,7 @@ Rouanet, Mba, Philipps, Dartigues (2020) for details
 studies with binary, multi-category, or continuous point or longitudinal
 treatments by easing and extending the functionality of several R packages and
 providing in-house estimation methods.  Available methods include those that
-rely on parameteric modeling, optimization, and machine learning.  Also allows
+rely on parametric modeling, optimization, and machine learning.  Also allows
 for assessment of weights and checking of covariate balance by interfacing
 directly with the cobalt package.  Methods for estimating weighted regression
 models that take into account uncertainty in the estimation of the weights via

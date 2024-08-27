@@ -982,13 +982,13 @@ P., Olsen, L. R., & Wambugu M. (2019, ISBN: 9781838550134).")
 (define-public r-cvmortalitymult
   (package
     (name "r-cvmortalitymult")
-    (version "1.0.3")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CvmortalityMult" version))
        (sha256
-        (base32 "04ad10sgmhy4n3c76l46sn5j1k62yfh4ipldln1kfkygl3zis1xf"))))
+        (base32 "0n1xghird2kazpzbxjsz63sfflwaxsgcsmn58vmg711p09bdrs8p"))))
     (properties `((upstream-name . "CvmortalityMult")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap r-stmomo r-sf r-gnm r-forecast))
@@ -8203,13 +8203,13 @@ recommendations on the code.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.2.8")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1hn7yksy6rhb9kmykf2w677555zbxdwxpzasi1g3mp3riqssabib"))))
+        (base32 "1f6b42lwzag5rrqpgqm3vszc3gydipwjc7ww3waqzniidxszcz8b"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -9084,13 +9084,13 @@ functions, key literature is mentioned below.  Terry M Therneau (2024)
 (define-public r-coxme
   (package
     (name "r-coxme")
-    (version "2.2-20")
+    (version "2.2-22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coxme" version))
        (sha256
-        (base32 "0qnbhywav7xhs6r3f6m4lb1pvw8gfylnrll0zss5h578mgdfmvm0"))))
+        (base32 "09p179ks8f2s6qmgsvcyl2d3vwwrwwjmbv50c41kl9ymikm95d0v"))))
     (properties `((upstream-name . "coxme")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nlme r-matrix r-bdsmatrix))
@@ -15130,13 +15130,13 @@ output.  See the paper for more details on the model and its utility.")
 (define-public r-constrainedkriging
   (package
     (name "r-constrainedkriging")
-    (version "0.2-7")
+    (version "0.2-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "constrainedKriging" version))
        (sha256
-        (base32 "06hx4kj9dfvw16fw3imxkiw1cc4k7a9pky34mrvdwhb205x91dii"))))
+        (base32 "0qbbjb1dhdsrgpnnsfwys28xhlsy8xj35pdqrza8hih5z2vp4nq6"))))
     (properties `((upstream-name . "constrainedKriging")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatialcovariance r-sp r-sf))
@@ -17736,6 +17736,27 @@ classes.  Journal of Statistical Distributions and Applications, 3, 1-35.
 <doi:10.1186/s40488-016-0052-1>.")
     (license license:gpl2+)))
 
+(define-public r-comradesm
+  (package
+    (name "r-comradesm")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ComradesM" version))
+       (sha256
+        (base32 "0z1fxmsbswd6cnv4r557g55a8lsiwwv13v6i5kw8yayg9xh43knx"))))
+    (properties `((upstream-name . "ComradesM")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ComradesM")
+    (synopsis "The Comrades Marathon 1921 to 2019")
+    (description
+     "Datasets related to the Comrades Marathon used in the book Antony Unwin (2024,
+ISBN:978-0367674007) \"Getting (more out of) Graphics\".  The main dataset
+contains the times of every runner that finished in the time limit for each year
+the race was run.")
+    (license license:gpl2+)))
+
 (define-public r-compute-es
   (package
     (name "r-compute-es")
@@ -17919,13 +17940,13 @@ advances\".  Communications in Statistics--Theory and Methods, 52(16):
 (define-public r-compositional
   (package
     (name "r-compositional")
-    (version "6.9")
+    (version "7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Compositional" version))
        (sha256
-        (base32 "09xv3r9g5bkn2ra11zswvly1x9bj7xq1z39fd2kl0w3vxg9mjih1"))))
+        (base32 "1ldw7v8jil7cs1kxgx78r69wlvc6x5y5hjccyfm26qwr5yih8gq6"))))
     (properties `((upstream-name . "Compositional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -23315,13 +23336,13 @@ genomic regions where the copy number differs from the norm.")
 (define-public r-cnorm
   (package
     (name "r-cnorm")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cNORM" version))
        (sha256
-        (base32 "038192srvmfasa9vg5d79imh9nr3pllf2lcn5q5gwgas38c4mmli"))))
+        (base32 "0z3m3kzn2ffk872xql3k6qsg2lraf5sbizkhav0b0wbs8qk0dda2"))))
     (properties `((upstream-name . "cNORM")))
     (build-system r-build-system)
     (propagated-inputs (list r-leaps r-ggplot2))
@@ -23330,12 +23351,12 @@ genomic regions where the copy number differs from the norm.")
     (synopsis "Continuous Norming")
     (description
      "This package provides a comprehensive toolkit for generating continuous test
-norms in psychometrics and biometrics, and analyzing model fit. @code{cNORM}
+norms in psychometrics and biometrics, and analyzing model fit.  The package
 offers both distribution-free modeling using Taylor polynomials and parametric
 modeling using the beta-binomial distribution.  Originally developed for
-achievement tests, it's applicable to a wide range of mental, physical, or other
-test scores dependent on continuous or discrete explanatory variables.  The
-package provides several advantages: It minimizes deviations from
+achievement tests, it is applicable to a wide range of mental, physical, or
+other test scores dependent on continuous or discrete explanatory variables.
+The package provides several advantages: It minimizes deviations from
 representativeness in subsamples, interpolates between discrete levels of
 explanatory variables, and significantly reduces the required sample size
 compared to conventional norming per age group. @code{cNORM} enables graphical
@@ -35769,6 +35790,42 @@ order to reproduce the analysis used to obtain Table 1 in the paper, execute the
 command \"example(@code{fitVolDist})\".")
     (license license:gpl2+)))
 
+(define-public r-celltrackr
+  (package
+    (name "r-celltrackr")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "celltrackR" version))
+       (sha256
+        (base32 "0gmdxs9s3c1rk8mqc2pp6zdmzy9nij51m29vf24ii8s201f9raj6"))))
+    (properties `((upstream-name . "celltrackR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-ellipse))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.motilitylab.net")
+    (synopsis "Motion Trajectory Analysis")
+    (description
+     "This package provides methods for analyzing (cell) motion in two or three
+dimensions.  Available measures include displacement, confinement ratio,
+autocorrelation, straightness, turning angle, and fractal dimension.  Measures
+can be applied to entire tracks, steps, or subtracks with varying length.  While
+the methodology has been developed for cell trajectory analysis, it is
+applicable to anything that moves including animals, people, or vehicles.  Some
+of the methodology implemented in this packages was described by: Beauchemin,
+Dixit, and Perelson (2007) <doi:10.4049/jimmunol.178.9.5505>, Beltman, Maree,
+and de Boer (2009) <doi:10.1038/nri2638>, Gneiting and Schlather (2004)
+<doi:10.1137/S0036144501394387>, Mokhtari, Mech, Zitzmann, Hasenberg, Gunzer,
+and Figge (2013) <doi:10.1371/journal.pone.0080808>, Moreau, Lemaitre, Terriac,
+Azar, Piel, Lennon-Dumenil, and Bousso (2012)
+<doi:10.1016/j.immuni.2012.05.014>, Textor, Peixoto, Henrickson, Sinn, von
+Andrian, and Westermann (2011) <doi:10.1073/pnas.1102288108>, Textor, Sinn, and
+de Boer (2013) <doi:10.1186/1471-2105-14-S6-S10>, Textor, Henrickson, Mandl, von
+Andrian, Westermann, de Boer, and Beltman (2014)
+<doi:10.1371/journal.pcbi.1003752>.")
+    (license license:gpl2)))
+
 (define-public r-cellpypes
   (package
     (name "r-cellpypes")
@@ -36502,13 +36559,13 @@ download service for accessing historical records.")
 (define-public r-cdcsis
   (package
     (name "r-cdcsis")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cdcsis" version))
        (sha256
-        (base32 "0p3nlp3pqblgw753lrh4xfm3lbx8j9bqwm6gnvdibcsrszzr0zw7"))))
+        (base32 "1vxhikdx4kqac29spzwwv696kax5fsdmmhnqgm8gjk538zq6kw4f"))))
     (properties `((upstream-name . "cdcsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mvtnorm r-ks))
@@ -36529,25 +36586,16 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "0dhdh5k9wy62285mz2g02rl38r5nzpdhrbsa3l05z30ca459rh08"))))
+        (base32 "0z751pk8mf8a7csrbyv76183q34ffjfg386jlf30mip8kn0nmi2s"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zctacrosswalk
-                             r-yyjsonr
-                             r-usa
-                             r-tigris
-                             r-tidyr
-                             r-sf
-                             r-httr2
-                             r-httr
-                             r-dplyr
-                             r-curl))
+    (propagated-inputs (list r-zctacrosswalk r-yyjsonr r-tigris r-sf r-curl))
     (home-page "https://github.com/brendensm/CDCPLACES")
     (synopsis "Access the 'CDC PLACES' API")
     (description

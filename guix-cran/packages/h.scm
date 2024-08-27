@@ -1020,13 +1020,13 @@ package has new models for water retention characteristic curves.")
 (define-public r-hydroloom
   (package
     (name "r-hydroloom")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hydroloom" version))
        (sha256
-        (base32 "0hh8j9a3rkg81mp9als41rvvmwfclbwg92jx6rzy5fn2qvlxx36m"))))
+        (base32 "1m69bh09ci3zbwpqlkfjjp66l3lsav62sxb0y3ilb57cfswdd7qz"))))
     (properties `((upstream-name . "hydroloom")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -2461,6 +2461,50 @@ Methods for implementing HTRX are described in Yang Y, Lawson DJ (2023)
 <doi:10.1093/bioadv/vbad038> and Barrie W, Yang Y, Irving-Pease E.K, et al
 (2024) <doi:10.1038/s41586-023-06618-z>.")
     (license license:gpl3)))
+
+(define-public r-htrspranalysis
+  (package
+    (name "r-htrspranalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "htrSPRanalysis" version))
+       (sha256
+        (base32 "1r8vyi6r0k6cm1mv10vr0xd9jqvg491z70rmwkhw7dfq4dpkhd90"))))
+    (properties `((upstream-name . "htrSPRanalysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-readxl
+                             r-readr
+                             r-purrr
+                             r-openxlsx
+                             r-minpack-lm
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=htrSPRanalysis")
+    (synopsis "Analysis of Surface Plasmon Resonance Data")
+    (description
+     "Analysis of Surface Plasmon Resonance (SPR) and Biolayer Interferometry data,
+with automations for high-throughput SPR. This version of the package fits the
+1: 1 binding model, with and without bulkshift.  It offers optional local or
+global Rmax fitting.  The user must provide a sample sheet and a Carterra output
+file in Carterra's current format.  There is a utility function to convert from
+Carterra's old output format.  The user may run a custom pipeline or use the
+provided Runscript', which will produce a pdf file containing fitted Rmax, ka,
+kd and standard errors, a plot of the sensorgram and fits, and a plot of
+residuals.  The script will also produce a .csv file with all of the relevant
+parameters for each spot on the SPR chip.")
+    (license license:gpl3+)))
 
 (define-public r-htmlutils
   (package
@@ -4422,13 +4466,13 @@ the README and the accompanying paper <doi:10.18637/jss.v108.i07>.")
 (define-public r-holi
   (package
     (name "r-holi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "holi" version))
        (sha256
-        (base32 "08q9b4vji3ak75kvkmzx0nb6pmq9bzv6r9rwj1pdk9sj0pswkp3c"))))
+        (base32 "0bmi95q4lbphs261hhsq1a2d9qvf1177z0dszdff53ch3ip9w9ak"))))
     (properties `((upstream-name . "holi")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
@@ -6209,13 +6253,13 @@ forecasting, not for planning your flight!")
 (define-public r-hima
   (package
     (name "r-hima")
-    (version "2.2.1")
+    (version "2.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HIMA" version))
        (sha256
-        (base32 "0r9dr3dvav8m8sxk84fm6m8y7fvsbd6dfblma17vizvslxpi5vwm"))))
+        (base32 "0fkp232fy2g6d9i3z8cqixi0pixw1lsrm7z6mzxpjzwp31kxgpyd"))))
     (properties `((upstream-name . "HIMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -8703,13 +8747,13 @@ Events API, and Helsinki Region Infoshare statistics API.")
 (define-public r-helpersmg
   (package
     (name "r-helpersmg")
-    (version "6.1")
+    (version "6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HelpersMG" version))
        (sha256
-        (base32 "1cggzna2gdl8pxdj2s0swlbwxs9qzz276x43inr87i9yxfqwv5q8"))))
+        (base32 "0q887lgyb92lii1x83saz2jjwh25h6l26jfkhjblfma37615cbj9"))))
     (properties `((upstream-name . "HelpersMG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-matrix r-mass r-ggplot2 r-coda))
@@ -9652,13 +9696,13 @@ package.")
 (define-public r-hdxboxer
   (package
     (name "r-hdxboxer")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDXBoxeR" version))
        (sha256
-        (base32 "10p41sawddrdpj5sji1jzp63hr6v6hvihb4n3yzci5wvh2a2lx9c"))))
+        (base32 "1blfqm1h54gq551g0gvprsyd66r9pbirh8f1d0grchv8b7mnydml"))))
     (properties `((upstream-name . "HDXBoxeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrapr r-tidyr r-stringr r-rcolorbrewer r-dplyr))
@@ -9671,14 +9715,15 @@ Hydrogen-Deuterium Exchange Mass Spectrometry data using p-value statistics and
 Critical Interval analysis.  It provides a pipeline for analyzing data from
 HDXExaminer (Sierra Analytics, Trajan Scientific), automating matching and
 comparison of protein states through Welch's T-test and the Critical Interval
-statistical framework.  Additionally, it simplifies data export, generates Pymol
-scripts, and ensures calculations meet publication standards.  HDX@code{BoxeR}
-assists in various aspects of hydrogen-deuterium exchange data analysis,
-including reprocessing data, calculating parameters, identifying significant
-peptides, generating plots, and facilitating comparison between protein states.
-For details check papers by Hageman and Weis (2019)
+statistical framework.  Additionally, it simplifies data export, generates
+@code{PyMol} scripts, and ensures calculations meet publication standards.
+HDX@code{BoxeR} assists in various aspects of hydrogen-deuterium exchange data
+analysis, including reprocessing data, calculating parameters, identifying
+significant peptides, generating plots, and facilitating comparison between
+protein states.  For details check papers by Hageman and Weis (2019)
 <doi:10.1021/acs.analchem.9b01325> and Masson et al. (2019)
-<doi:10.1038/s41592-019-0459-y>.")
+<doi:10.1038/s41592-019-0459-y>.  HDX@code{BoxeR} citation: Janowska et al.
+(2024) <doi:10.1093/bioinformatics/btae479>.")
     (license license:gpl2+)))
 
 (define-public r-hdtweedie
@@ -12928,13 +12973,13 @@ Spreadsheet, @code{HaGiS}', previously used for pathotype analysis.")
 (define-public r-hadibds
   (package
     (name "r-hadibds")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HadIBDs" version))
        (sha256
-        (base32 "1mj6a4cp51kpsw93hz67smz9vc17ss5675wnalbq84wj89p2ma3l"))))
+        (base32 "1k3p3mpzs235inrxnqx0q75ckam629d3pcp176mf2m6c0y4f7iri"))))
     (properties `((upstream-name . "HadIBDs")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=HadIBDs")

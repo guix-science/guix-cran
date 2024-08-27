@@ -139,6 +139,37 @@ spectral decomposition of the Hamiltonian.  E. Farhi (1997):
 <@code{arXiv:quant-ph/9706062v2>}; C. Godsil (2011) <@code{arXiv:1103.2578v3>}.")
     (license license:expat)))
 
+(define-public r-qvirus
+  (package
+    (name "r-qvirus")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qvirus" version))
+       (sha256
+        (base32 "07c113xh7qvg58xmxn6fvqgg25q8ficfsq2w3f4sky1v17r2phwq"))))
+    (properties `((upstream-name . "qvirus")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/juanv66x/qvirus")
+    (synopsis
+     "Quantum Computing for Analyzing CD4 Lymphocytes and Antiretroviral Therapy")
+    (description
+     "Resources, tutorials, and code snippets dedicated to exploring the intersection
+of quantum computing and artificial intelligence (AI) in the context of
+analyzing Cluster of Differentiation 4 (CD4) lymphocytes and optimizing
+antiretroviral therapy (ART) for human immunodeficiency virus (HIV).  With the
+emergence of quantum artificial intelligence and the development of small-scale
+quantum computers, there's an unprecedented opportunity to revolutionize the
+understanding of HIV dynamics and treatment strategies.  This project leverages
+the R package @code{qsimulatR} (Ostmeyer and Urbach, 2023,
+<https://CRAN.R-project.org/package=@code{qsimulatR>}), a quantum computer
+simulator, to explore these applications in quantum computing techniques,
+addressing the challenges in studying CD4 lymphocytes and enhancing ART
+efficacy.")
+    (license license:expat)))
+
 (define-public r-qvcalc
   (package
     (name "r-qvcalc")
@@ -1591,41 +1622,6 @@ for measuring term and document frequency, the co-occurrence of words,
 similarity and distance between features and documents, feature entropy, keyword
 occurrence, readability, and lexical diversity.  These functions extend the
 quanteda package and are specially designed for sparse textual data.")
-    (license license:gpl3)))
-
-(define-public r-quanteda-textmodels
-  (package
-    (name "r-quanteda-textmodels")
-    (version "0.9.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "quanteda.textmodels" version))
-       (sha256
-        (base32 "0whzy9hbybxmlzkckhlp6whbbg17vskx9bk40iy02j2z6fw6bqxg"))))
-    (properties `((upstream-name . "quanteda.textmodels")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringi
-                             r-sparsem
-                             r-rspectra
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-quanteda
-                             r-matrix
-                             r-liblinear
-                             r-glmnet))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/quanteda/quanteda.textmodels")
-    (synopsis "Scaling Models and Classifiers for Textual Data")
-    (description
-     "Scaling models and classifiers for sparse matrix objects representing textual
-data in the form of a document-feature matrix.  Includes original
-implementations of Laver', Benoit', and Garry's (2003)
-<doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
-<doi:10.48550/@code{arXiv.1710.08963>} class affinity scaling model, and the
-Slapin and Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model,
-as well as methods for correspondence analysis, latent semantic analysis, and
-fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
     (license license:gpl3)))
 
 (define-public r-quantdr

@@ -488,23 +488,26 @@ cycles, optimal interest rate, and recession forecasts.")
 (define-public r-jtools
   (package
     (name "r-jtools")
-    (version "2.2.2")
+    (version "2.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jtools" version))
        (sha256
-        (base32 "1fcpsh9kdr83ngxab6y9b00ridsz764qj3rdlc3dcmqbgas6m8vr"))))
+        (base32 "04g9r8pfvzkx7x1gjwlc93wrbpcwhk8cc7y0niqk3gg0z8q6vz7y"))))
     (properties `((upstream-name . "jtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
+                             r-sandwich
                              r-rlang
                              r-pkgconfig
                              r-pander
                              r-magrittr
                              r-ggplot2
                              r-generics
-                             r-crayon))
+                             r-cli
+                             r-broom-mixed
+                             r-broom))
     (native-inputs (list r-knitr))
     (home-page "https://jtools.jacob-long.com")
     (synopsis "Analysis and Presentation of Social Scientific Data")
@@ -3252,13 +3255,13 @@ enhanced procedures for computing the investment performance indices of Bacon
 (define-public r-jfa
   (package
     (name "r-jfa")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jfa" version))
        (sha256
-        (base32 "167n554hpmz4iqszlsjzjiphsf857hysfjkd2gx9kwv6r1crmv3k"))))
+        (base32 "19vr5146fp0gnsjp4nif2gms27f7x98awjvyi05fxklddkrl6j44"))))
     (properties `((upstream-name . "jfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -3286,7 +3289,7 @@ values.  Finally, the package includes methods for auditing algorithms on the
 aspect of fairness and bias.  Next to classical statistical methodology, the
 package implements Bayesian equivalents of these methods whose statistical
 underpinnings are described in Derks et al. (2021) <doi:10.1111/ijau.12240>,
-Derks et al. (2021) <doi:10.31234/osf.io/kzqp5>, and Derks et al. (2022)
+Derks et al. (2024) <doi:10.2308/AJPT-2021-086>, and Derks et al. (2022)
 <doi:10.31234/osf.io/8nf3e>.")
     (license license:gpl3+)))
 

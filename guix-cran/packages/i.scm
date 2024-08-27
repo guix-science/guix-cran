@@ -2895,16 +2895,17 @@ models from data with different shape and using different software.")
 (define-public r-irtq
   (package
     (name "r-irtq")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "irtQ" version))
        (sha256
-        (base32 "1728699zrzpazjs7csvlzlcz7mncxspsq3lykd3i0rrpw6cixwsn"))))
+        (base32 "0jql9lz6f2ik5ixv66028h45wh1jcb54rbgmazsgrzvjpb12zybg"))))
     (properties `((upstream-name . "irtQ")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-statmod
                              r-rlang
                              r-rfast
@@ -8007,6 +8008,37 @@ customization for @code{InSilicoVA} algorithm and basic graphical visualization
 of the output.")
     (license license:gpl2)))
 
+(define-public r-insee
+  (package
+    (name "r-insee")
+    (version "1.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "insee" version))
+       (sha256
+        (base32 "0ksh8dbk5856zikvj9h39ckl8brp3bl77m216shg75j2qz36rzld"))))
+    (properties `((upstream-name . "insee")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-rappdirs
+                             r-purrr
+                             r-openssl
+                             r-httr
+                             r-dplyr
+                             r-crayon))
+    (native-inputs (list r-knitr))
+    (home-page "https://pyr-opendatafr.github.io/R-Insee-Data/")
+    (synopsis "Tools to Easily Download Data from INSEE BDM Database")
+    (description
+     "Using embedded sdmx queries, get the data of more than 150 000 insee series from
+bdm macroeconomic database.")
+    (license license:expat)))
+
 (define-public r-insectdisease
   (package
     (name "r-insectdisease")
@@ -9218,16 +9250,17 @@ package is based on methods described in Sasieni (2003) <doi:
 (define-public r-infercsn
   (package
     (name "r-infercsn")
-    (version "1.0.5")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inferCSN" version))
        (sha256
-        (base32 "01wzimr1gjj4993k15w8kyq1rmc5a2a9q68hv19gdkrwsyd2zspa"))))
+        (base32 "0n8048g1bmqk9fpapbrjffa40s7zp3idd03mxhv6gkxixmz3bar3"))))
     (properties `((upstream-name . "inferCSN")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo
+    (propagated-inputs (list r-rcppparallel
+                             r-rcpparmadillo
                              r-rcpp
                              r-purrr
                              r-pbapply
@@ -9239,12 +9272,12 @@ package is based on methods described in Sasieni (2003) <doi:
                              r-foreach
                              r-dplyr
                              r-doparallel
-                             r-complexheatmap))
+                             r-cli))
     (home-page "https://mengxu98.github.io/inferCSN/")
     (synopsis "Inferring Cell-Specific Gene Regulatory Network")
     (description
-     "This package provides a method for inferring cell-specific gene regulatory
-network from single-cell sequencing data.")
+     "An R package for inferring cell-type specific gene regulatory network from
+single-cell RNA data.")
     (license license:expat)))
 
 (define-public r-inext-beta3d
@@ -13198,13 +13231,13 @@ faculty friendship network, domestic US flights network, etc.")
 (define-public r-igr
   (package
     (name "r-igr")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "igr" version))
        (sha256
-        (base32 "0kb3jnh2z1fklbhf00cf8s2l3kd3g3nim4dllyc59ivgj66a5yf8"))))
+        (base32 "18lkbx6r11p06y1i1jl6iwxijnwlv6qycm95609qh8ckhqr9qiwp"))))
     (properties `((upstream-name . "igr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -13214,8 +13247,9 @@ faculty friendship network, domestic US flights network, etc.")
     (description
      "Convert between Irish grid references and Irish Grid coordinates.  Irish grid
 references can also be converted to or from an sf object in any coordinate
-reference system.  Precisions from 1 m to 100 km are supported, as are datasets
-with mixed precision.  Conversion to sf polygons is precision-aware.")
+reference system.  Precisions from 1 m to 100 km including 2 km (tetrads) are
+supported, as are datasets with mixed precision.  Conversion to sf polygons is
+precision-aware.")
     (license license:gpl3+)))
 
 (define-public r-igorrr

@@ -7282,13 +7282,13 @@ discoveries.")
 (define-public r-boneprofiler
   (package
     (name "r-boneprofiler")
-    (version "2.5")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BoneProfileR" version))
        (sha256
-        (base32 "0fmqzfqv08f0vpiwvl2gdix0fvk6w1jkpcv8jb9wgsq63fij0ly9"))))
+        (base32 "0r9fmrb2v0jlbp9f2c644v17hbdfz91dl6j87mgxwkpc472iz9w8"))))
     (properties `((upstream-name . "BoneProfileR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rmarkdown r-knitr r-imager r-helpersmg))
@@ -7440,29 +7440,6 @@ securities of varying prices traded on the Bolivian Securities Exchange, website
 correlation, and descriptive statistics table for the securities.")
     (license license:gpl3)))
 
-(define-public r-bold
-  (package
-    (name "r-bold")
-    (version "1.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bold" version))
-       (sha256
-        (base32 "0pwglcykyl5dnhqs8jg4hzih286v17w5dafkg3ahqk3c73a13b8f"))))
-    (properties `((upstream-name . "bold")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2 r-stringi r-jsonlite r-data-table r-crul))
-    (home-page "https://docs.ropensci.org/bold/")
-    (synopsis "Interface to Bold Systems API")
-    (description
-     "This package provides a programmatic interface to the Web Service methods
-provided by Bold Systems (<http://www.boldsystems.org/>) for genetic barcode
-data.  Functions include methods for searching by sequences by taxonomic names,
-ids, collectors, and institutions; as well as a function for searching for
-specimens, and downloading trace files.")
-    (license license:expat)))
-
 (define-public r-bolasso
   (package
     (name "r-bolasso")
@@ -7550,13 +7527,13 @@ Ginker (2023) <doi:10.13140/RG.2.2.12221.44000>.")
 (define-public r-boinet
   (package
     (name "r-boinet")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boinet" version))
        (sha256
-        (base32 "1i023h1kzf5xk92dp9iyllw2b1lprs0xz2hp23lqq9vx36cpird3"))))
+        (base32 "0jk1igg45zpds8qadzwaifmcj3b61ghn2rqx4x8b4pv3mi2sk2cn"))))
     (properties `((upstream-name . "boinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-mfp r-iso r-copula))
@@ -10851,43 +10828,6 @@ one-dimensional data and some visualization functions.")
 and place, edit and cancel orders. @code{BitMEX's} Testnet and live API are both
 supported.")
     (license license:expat)))
-
-(define-public r-bite
-  (package
-    (name "r-bite")
-    (version "0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bite" version))
-       (sha256
-        (base32 "00sph3pdbb9p21s3263ni4by2ivvya1sbjm9wvwx1rwjr4f31jps"))))
-    (properties `((upstream-name . "bite")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-vioplot
-                             r-sm
-                             r-phytools
-                             r-mass
-                             r-coda
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=bite")
-    (synopsis "Bayesian Integrative Models of Trait Evolution")
-    (description
-     "This package contains the JIVE (joint inter and intra-specific model of variance
-evolution) model and other Bayesian models aimed at understanding trait
-evolution.  The goal of the package is to join phylogenetic comparative models
-(PCM) that tend to integrate various type of data (individual observations,
-environmental data, fossil data) into a hierarchical Bayesian framework.  It
-contains various PCMs as well as functions to join those models into a
-hierarchical Bayesian framework in a flexible and user friendly way.  It
-contains various Markov chain Monte-Carlo (MCMC) algorithms, methods for model
-comparison and many plotting function for pre- and post-processing data
-visualization.  Finally, this package integrates functions allowing bridges
-between R and the BEAST2 implementations of PCMs. Kostikova A, Silvestro D,
-Pearman PB, Salamin N (2016) <doi:10.1093/sysbio/syw010>.  Gaboriau T, Mendes
-FK, Joly S, Silvestro D, Salamin N (in prep).")
-    (license license:gpl2)))
 
 (define-public r-bistablehistory
   (package
@@ -16943,13 +16883,13 @@ the goodness of fit via Pearson's chi-squared test (with the chi2() function).")
 (define-public r-bexy
   (package
     (name "r-bexy")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bexy" version))
        (sha256
-        (base32 "053k7b9ilvsawh6ajh2v794snsw6b5qf9s7bqfl555w5ia6cl6ri"))))
+        (base32 "0dznrvdklfrf14p9z1pmmixac086xf0a0w8zii08lqmb3blq66lk"))))
     (properties `((upstream-name . "bexy")))
     (build-system r-build-system)
     (propagated-inputs (list r-ternary r-teachingdemos))
@@ -19666,13 +19606,13 @@ details, see Karasiewicz et al. (2022) <doi:10.3390/jmse10020174>.")
 (define-public r-bda
   (package
     (name "r-bda")
-    (version "18.2.2")
+    (version "18.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bda" version))
        (sha256
-        (base32 "04n5lvcl5i0aziqgs6smvkr6gk8ky8gl3wf1crpzihxa3s6fb601"))))
+        (base32 "0kdm46rq939pqk0hv9x0fk9nkv45d8k2bakyhm0p4l9jcjb0vwfa"))))
     (properties `((upstream-name . "bda")))
     (build-system r-build-system)
     (propagated-inputs (list r-boot))
@@ -26294,6 +26234,42 @@ modeling of covariates for continuous, binary, categorical and time-to-event
 outcomes.  For more information see Sparapani, Spanbauer and @code{McCulloch}
 <doi:10.18637/jss.v097.i01>.")
     (license license:gpl2+)))
+
+(define-public r-barrks
+  (package
+    (name "r-barrks")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "barrks" version))
+       (sha256
+        (base32 "0idaq93alsjry7v63xm3mq3ap840vap8b7saanr286ssm26p61hd"))))
+    (properties `((upstream-name . "barrks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-stringr
+                             r-readr
+                             r-rdpack
+                             r-purrr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://jjentschke.github.io/barrks/")
+    (synopsis "Calculate Bark Beetle Phenology Using Different Models")
+    (description
+     "Calculate the bark beetle phenology based on raster data or point-related data.
+There are multiple models implemented for two bark beetle species.  The models
+can be customized and their submodels (onset of infestation, beetle development,
+diapause initiation, mortality) can be combined.  The following models are
+available in the package: PHENIPS-Clim (first-time release in this package),
+PHENIPS (Baier et al.  2007) <doi:10.1016/j.foreco.2007.05.020>, RITY (Ogris et
+al.  2019) <doi:10.1016/j.ecolmodel.2019.108775>, CHAPY (Ogris et al.  2020)
+<doi:10.1016/j.ecolmodel.2020.109137>, BSO (Jakoby et al.  2019)
+<doi:10.1111/gcb.14766>, Lange et al. (2008) <doi:10.1007/978-3-540-85081-6_32>,
+JÃ¶nsson et al. (2011) <doi:10.1007/s10584-011-0038-4>.  The package may be
+expanded by models for other bark beetle species in the future.")
+    (license license:gpl3+)))
 
 (define-public r-barnard
   (package

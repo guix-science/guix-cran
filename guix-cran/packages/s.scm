@@ -7917,13 +7917,13 @@ This represents an attempt to replicate some of python's string formatting.")
 (define-public r-string2path
   (package
     (name "r-string2path")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "string2path" version))
        (sha256
-        (base32 "00gzfibv3pw35r9lqzxpik1x3daffrs5xlbbxm46d9gvd2bhrzxd"))))
+        (base32 "1grp1r2dgng1p436g1hx01w8m3a8r37x30q9b38lfrjsmzqqzgzp"))))
     (properties `((upstream-name . "string2path")))
     (build-system r-build-system)
     (inputs (list))
@@ -8463,6 +8463,35 @@ generic functions to print and plot objects of its class as well as the
 necessary functions to create tables for @code{LaTeX}.  There is also a function
 to create dyadic data sets.")
     (license license:gpl2+)))
+
+(define-public r-stratpal
+  (package
+    (name "r-stratpal")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "StratPal" version))
+       (sha256
+        (base32 "0si4fmrplzzm7r8vmwrfzrpc3kisa9va7mv0hlk600smzwmra1j6"))))
+    (properties `((upstream-name . "StratPal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-admtools))
+    (native-inputs (list r-knitr))
+    (home-page "https://mindthegap-erc.github.io/StratPal/")
+    (synopsis "Stratigraphic Paleobiology Modeling Pipelines")
+    (description
+     "The fossil record is a joint expression of ecological, taphonomic, evolutionary,
+and stratigraphic processes (Holland and Patzkowsky, 2012, ISBN:978-0226649382).
+ This package allowing to simulate biological processes in the time domain
+(e.g., trait evolution, fossil abundance), and examine how their expression in
+the rock record (stratigraphic domain) is influenced based on age-depth models,
+ecological niche models, and taphonomic effects.  Functions simulating common
+processes used in modeling trait evolution or event type data such as first/last
+occurrences are provided and can be used standalone or as part of a pipeline.
+The package comes with example data sets and tutorials in several vignettes,
+which can be used as a template to set up one's own simulation.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-stratigrapher
   (package
@@ -10723,13 +10752,13 @@ Markdown for things like your CV or your articles and manuscripts.")
 (define-public r-stevemisc
   (package
     (name "r-stevemisc")
-    (version "1.7.0")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stevemisc" version))
        (sha256
-        (base32 "1xngshwsqd3z0zygrzxwnmr3jwha2kbw7fcf0vc0yngqg62gzrvn"))))
+        (base32 "1xbhmz3yh7qjchq07khd8qa61654x3chj3srlyd8c15in0dxch5z"))))
     (properties `((upstream-name . "stevemisc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12323,13 +12352,13 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "0rwmn6mhvvahzdqhp58v3icas4mlr73jizmb7lv8dzgxvq8dz0i0"))))
+        (base32 "1qlr09n2lxc7n47zx1nm9ah1xd1038c1wnm7dzlh5wjvxggnnvqs"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack
@@ -15071,20 +15100,28 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
 (define-public r-ssmrcd
   (package
     (name "r-ssmrcd")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssMRCD" version))
        (sha256
-        (base32 "16s7jpm9yik1l5s682hdrmh22hrxk5qzy31ls54g48125j8v96la"))))
+        (base32 "056yk3bahjc2vd8nxg9anjzb3jz61ymgrp0wcv1381ci2qymzrvc"))))
     (properties `((upstream-name . "ssMRCD")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
+                             r-rrcov
+                             r-rootsolve
                              r-robustbase
+                             r-reshape2
                              r-plot3d
+                             r-matrix
                              r-ggplot2
+                             r-foreach
+                             r-expm
                              r-dplyr
+                             r-doparallel
+                             r-desctools
                              r-dbscan
                              r-car))
     (native-inputs (list r-knitr))
@@ -15094,7 +15131,9 @@ Zhelonkin and Ronchetti (2021) <doi:10.18637/jss.v099.i04>.")
      "Estimation of the Spatially Smoothed Minimum Regularized Determinant
 (@code{ssMRCD}) estimator and its usage in an @code{ssMRCD-based} outlier
 detection method as described in Puchhammer and Filzmoser (2023)
-<doi:10.48550/@code{arXiv.2305.05371>}.  Included are also complementary
+<doi:10.1080/10618600.2023.2277875> and for sparse robust PCA for multi-source
+data described in Puchhammer, Wilms and Filzmoser (2024)
+<doi:10.48550/@code{arXiv.2407.16299>}.  Included are also complementary
 visualization and parameter tuning tools.")
     (license license:gpl3)))
 
@@ -17440,25 +17479,6 @@ Gaussian Process (GP): (1) spatially varying coefficient process models and (2)
 spatio-temporal dynamic linear models.  Bakar et al., (2016).  Bakar et al.,
 (2015).")
     (license license:gpl2+)))
-
-(define-public r-spt
-  (package
-    (name "r-spt")
-    (version "2.5.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "spt" version))
-       (sha256
-        (base32 "04j38d2b35p4798znnc49vqrg8r8bygwi07vybfj3nzimlp2mkrn"))))
-    (properties `((upstream-name . "spt")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=spt")
-    (synopsis "Sierpinski Pedal Triangle")
-    (description
-     "This package provides a collection of algorithms related to Sierpinski pedal
-triangle (SPT).")
-    (license (license:fsdg-compatible "Unlimited"))))
 
 (define-public r-spsutil
   (package
@@ -24653,13 +24673,13 @@ based on code from www.sparse-grids.de.")
 (define-public r-sparsegl
   (package
     (name "r-sparsegl")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparsegl" version))
        (sha256
-        (base32 "0931wsd905bhrqkwjdv6m3vg7wpzdqyvzkkqp5pcwilvrswh0kdb"))))
+        (base32 "1fp3csfs56nshw19yhr8nq77af9mbmpcncckifrx7spsl6ywl8w9"))))
     (properties `((upstream-name . "sparsegl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24671,15 +24691,16 @@ based on code from www.sparse-grids.de.")
                              r-dotcall64
                              r-cli))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://github.com/dajmcdon/sparsegl/")
+    (home-page "https://github.com/dajmcdon/sparsegl")
     (synopsis "Sparse Group Lasso")
     (description
      "Efficient implementation of sparse group lasso with optional bound constraints
-on the coefficients.  It supports the use of a sparse design matrix as well as
-returning coefficient estimates in a sparse matrix.  Furthermore, it correctly
-calculates the degrees of freedom to allow for information criteria rather than
-cross-validation with very large data.  Finally, the interface to compiled code
-avoids unnecessary copies and allows for the use of long integers.")
+on the coefficients; see <doi:10.18637/jss.v110.i06>.  It supports the use of a
+sparse design matrix as well as returning coefficient estimates in a sparse
+matrix.  Furthermore, it correctly calculates the degrees of freedom to allow
+for information criteria rather than cross-validation with very large data.
+Finally, the interface to compiled code avoids unnecessary copies and allows for
+the use of long integers.")
     (license license:expat)))
 
 (define-public r-sparsegam
@@ -30650,6 +30671,33 @@ uniqueness of giving taxon.  It is possible to use smirnov() output as a
 distance measure: convert it to distance by \"as.dist(1 - smirnov(x))\".")
     (license license:gpl2+)))
 
+(define-public r-smiles
+  (package
+    (name "r-smiles")
+    (version "0.1-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smiles" version))
+       (sha256
+        (base32 "0bjdp4198069hmlcxy718idv50jbscl0l4ffl8aqvqh7iqmy14cz"))))
+    (properties `((upstream-name . "smiles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-meta r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=smiles")
+    (synopsis "Sequential Method in Leading Evidence Synthesis")
+    (description
+     "Trial sequential analysis emerges as an important method in data synthesis
+realm.  It is necessary to integrate pooling methods and sequential analysis
+coherently, as discussed in the Chapter by Thomas, J., Askie, L.M., Berlin,
+J.A., Elliott, J.H., Ghersi, D., Simmonds, M., Takwoingi, Y., Tierney, J.F. and
+Higgins, J.P. (2019). \"Prospective approaches to accumulating evidence\".  In
+Cochrane Handbook for Systematic Reviews of Interventions (eds J.P.T. Higgins,
+J. Thomas, J. Chandler, M. Cumpston, T. Li, M.J. Page and V.A. Welch).
+<doi:10.1002/9781119536604.ch22>.")
+    (license license:gpl3+)))
+
 (define-public r-smile
   (package
     (name "r-smile")
@@ -36156,16 +36204,22 @@ Network, DFID Trust Fund TF011722 and funds from the World bank.")
 (define-public r-simplybee
   (package
     (name "r-simplybee")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMplyBee" version))
        (sha256
-        (base32 "0013sdgyq29w9yah1yafkd0vj9sgw5lkhi5g5fcb59w386nlfhm5"))))
+        (base32 "0cjj61366y1h8bg93lygfdqrbd3rzs9vf0hdiarnw87jc6lwlh9s"))))
     (properties `((upstream-name . "SIMplyBee")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r6 r-extradistr r-alphasimr))
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-rann
+                             r-r6
+                             r-extradistr
+                             r-bh
+                             r-alphasimr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/HighlanderLab/SIMplyBee")
     (synopsis
@@ -36226,31 +36280,6 @@ simple tests of agreement, agreement analysis for nested and replicate data, and
 provide robust analyses of reliability.  In addition, this package contains a
 set of functions to help when planning studies looking to assess measurement
 agreement.")
-    (license license:gpl3+)))
-
-(define-public r-simplifynet
-  (package
-    (name "r-simplifynet")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "simplifyNet" version))
-       (sha256
-        (base32 "04iv1alkd85lwwyf8k6iwsj9fbxl6smsjm2b34z91za70n0rsw5q"))))
-    (properties `((upstream-name . "simplifyNet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sanic r-matrix r-igraph r-dplyr))
-    (home-page "https://cran.r-project.org/package=simplifyNet")
-    (synopsis "Network Sparsification")
-    (description
-     "Network sparsification with a variety of novel and known network sparsification
-techniques.  All network sparsification techniques reduce the number of edges,
-not the number of nodes.  Network sparsification is sometimes referred to as
-network dimensionality reduction.  This package is based on the work of
-Spielman, D., Srivastava, N. (2009)<@code{arXiv:0803.0929>}.  Koutis I., Levin,
-A., Peng, R. (2013)<@code{arXiv:1209.5821>}.  Toivonen, H., Mahler, S., Zhou, F.
-(2010)<doi:10.1007>.  Foti, N., Hughes, J., Rockmore, D. (2011)<doi:10.1371>.")
     (license license:gpl3+)))
 
 (define-public r-simplicialcubature
@@ -38636,6 +38665,44 @@ bias arising from unmeasured confounding.  Users can specify their desired data
 generating mechanisms to simulate data and quantitatively summarize findings in
 an end-to-end application using this package.")
     (license license:gpl2+)))
+
+(define-public r-silp
+  (package
+    (name "r-silp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "silp" version))
+       (sha256
+        (base32 "1a0ng4lmibcx1afkxxd17593h5dn6iizi6x5kgdy9660llfs1q57"))))
+    (properties `((upstream-name . "silp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-semtools
+                             r-purrr
+                             r-matrix
+                             r-mass
+                             r-lavaan))
+    (home-page "https://github.com/TomBJJJ/silp")
+    (synopsis
+     "Conditional Process Analysis (CPA) via Structural Equation Modeling (SEM) Approach")
+    (description
+     "This package provides Reliability-Adjusted Product Indicator (RAPI) method to
+estimate effects among latent variables, thus allowing for more precise
+definition and analysis of mediation and moderation models.  Our simulation
+studies reveal that while silp may exhibit instability with smaller sample sizes
+and lower reliability scores (e.g., N = 100, omega = 0.7), implementing nearest
+positive definite matrix correction and bootstrap confidence interval estimation
+can significantly ameliorate this volatility.  When these adjustments are
+applied, silp achieves estimations akin in quality to those derived from latent
+moderated structural equations (LMS).  In conclusion, the silp package is a
+valuable tool for researchers seeking to explore complex relational structures
+between variables without resorting to commercial software.  Hsiao et
+al.(2018)<doi:10.1177/0013164416679877> Kline &
+Moosbrugger(2000)<doi:10.1007/BF02296338> Cheung et
+al.(2021)<doi:10.1007/s10869-020-09717-0>.")
+    (license license:expat)))
 
 (define-public r-silm
   (package
@@ -42705,33 +42772,6 @@ the download button.  The download button can be used to allow users to download
 the dataset used for a plot.")
     (license license:expat)))
 
-(define-public r-shinydisconnect
-  (package
-    (name "r-shinydisconnect")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shinydisconnect" version))
-       (sha256
-        (base32 "1yhppfx8jpvz48iwxnimcwqhj02vqjrfmh4z5rdn9d35p51c8zjc"))))
-    (properties `((upstream-name . "shinydisconnect")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-htmltools r-glue r-checkmate))
-    (home-page "https://github.com/daattali/shinydisconnect")
-    (synopsis "Show a Nice Message When a 'Shiny' App Disconnects or Errors")
-    (description
-     "This package provides a Shiny app can disconnect for a variety of reasons: an
-unrecoverable error occurred in the app, the server went down, the user lost
-internet connection, or any other reason that might cause the Shiny app to lose
-connection to its server.  With shinydisconnect', you can call
-@code{disonnectMessage}() anywhere in a Shiny app's UI to add a nice message
-when this happens.  Works locally (running Shiny apps within RStudio') and on
-Shiny servers (such as shinyapps.io, RStudio Connect', Shiny Server Open
-Source', Shiny Server Pro').  See demo online at
-<https://daattali.com/shiny/shinydisconnect-demo/>.")
-    (license license:expat)))
-
 (define-public r-shinydbauth
   (package
     (name "r-shinydbauth")
@@ -44794,6 +44834,32 @@ define the value function, it retures the estimated Shapley values based on
 sampling methods or experimental designs.")
     (license license:expat)))
 
+(define-public r-shannon
+  (package
+    (name "r-shannon")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shannon" version))
+       (sha256
+        (base32 "010w30pj9ci1qgsi0zv2nixvqcwbhgpd998fvqn248458lrf0jdi"))))
+    (properties `((upstream-name . "shannon")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vares r-extradistr))
+    (home-page "https://cran.r-project.org/package=shannon")
+    (synopsis "Computation of Entropy Measures and Relative Loss")
+    (description
+     "The functions allow for the numerical evaluation of some commonly used entropy
+measures, such as Shannon entropy, RÃ©nyi entropy, Havrda and Charvat entropy,
+and Arimoto entropy, at selected parametric values from several well-known and
+widely used probability distributions.  Moreover, the functions also compute the
+relative loss of these entropies using the truncated distributions.  Related
+works include: Awad, A. M., & Alawneh, A. J. (1987).  Application of entropy to
+a life-time model.  IMA Journal of Mathematical Control and Information, 4(2),
+143-148. <doi:10.1093/imamci/4.2.143>.")
+    (license license:gpl2)))
+
 (define-public r-shadowr
   (package
     (name "r-shadowr")
@@ -45717,13 +45783,13 @@ Factorial Technology along with examples using the sft R package.")
 (define-public r-sfsi
   (package
     (name "r-sfsi")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SFSI" version))
        (sha256
-        (base32 "1ikw1mksgzbznhraa15ckhrbygidvwjl5h2psvzv81j9547f7zbq"))))
+        (base32 "1l4fqg55jjlyidbdfksvc80zkvjbg4vz89ibqxpm38j2c0vi4h9a"))))
     (properties `((upstream-name . "SFSI")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -45942,27 +46008,6 @@ starting out.  Functions available include kernel density estimation (for
 details, see Yip (2020) <doi:10.22224/gistbok/2020.1.12>), analysis of spatial
 association (Getis and Ord (1992) <doi:10.1111/j.1538-4632.1992.tb00261.x>) and
 hot-spot classification (Chainey (2020) ISBN:158948584X).")
-    (license license:expat)))
-
-(define-public r-sfheaders
-  (package
-    (name "r-sfheaders")
-    (version "0.4.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sfheaders" version))
-       (sha256
-        (base32 "01xxp7lpf333djs0lifnnhk5akv8prk0r5mq0ilynyyhn5kzwpzn"))))
-    (properties `((upstream-name . "sfheaders")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-geometries))
-    (home-page "https://dcooley.github.io/sfheaders/")
-    (synopsis "Converts Between R Objects and Simple Feature Objects")
-    (description
-     "Converts between R and Simple Feature sf objects, without depending on the
-Simple Feature library.  Conversion functions are available at both the R level,
-and through Rcpp'.")
     (license license:expat)))
 
 (define-public r-sfflhd
@@ -48938,13 +48983,13 @@ robust LBCI proposed by Falk (2018) <doi:10.1080/10705511.2017.1367254>.")
 (define-public r-semipar-depcens
   (package
     (name "r-semipar-depcens")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SemiPar.depCens" version))
        (sha256
-        (base32 "1dkyq8gilcxy4rml917851f7yn252g8xf6rr0glvai1jz5iyi8js"))))
+        (base32 "0ig7w36by5970p02859p8z9licmw1myy5r84hfd31ndkymv3hca7"))))
     (properties `((upstream-name . "SemiPar.depCens")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pbivnorm r-foreach r-doparallel
@@ -48963,7 +49008,7 @@ copulas.  Only Weibull and lognormal models are allowed for the censoring model,
 even though any parametric model that satisfies certain identifiability
 conditions could be used.  Implemented methods are described in the article
 \"Copula based Cox proportional hazards models for dependent censoring\" by Deresa
-and Van Keilegom (2023) <doi:10.1080/01621459.2022.2161387>.")
+and Van Keilegom (2024) <doi:10.1080/01621459.2022.2161387>.")
     (license license:gpl3)))
 
 (define-public r-semipar
@@ -58232,16 +58277,16 @@ Techel, and Schweizer (2022) <doi:10.5194/tc-2022-34>.")
 (define-public r-sarp-snowprofile-alignment
   (package
     (name "r-sarp-snowprofile-alignment")
-    (version "1.2.2")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sarp.snowprofile.alignment" version))
        (sha256
-        (base32 "1cjs31m3y9971m5zq9fpv4p2l6wjm5kb1wj6r42yj5p27yajv3vy"))))
+        (base32 "00i8j267zbv8ln52cr25drj06n3qhkgvbh184aq3rvvrpwrg846x"))))
     (properties `((upstream-name . "sarp.snowprofile.alignment")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sarp-snowprofile r-dtw r-data-table))
+    (propagated-inputs (list r-sarp-snowprofile r-dtw r-data-table r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://avalancheresearch.ca/")
     (synopsis "Snow Profile Alignment, Aggregation, and Clustering")
@@ -58260,8 +58305,9 @@ particular, this package allows for averaging large numbers of snow profiles
 with DTW Barycenter Averaging and thereby facilitates the computation of
 individual layer distributions and summary statistics that are relevant for
 avalanche forecasting purposes.  For more background information refer to Herla,
-Horton, Mair, and Haegeli (2021) <doi:10.5194/gmd-14-239-2021>, and Herla, Mair,
-and Haegeli (2022) <doi:10.5194/tc-16-3149-2022>.")
+Horton, Mair, and Haegeli (2021) <doi:10.5194/gmd-14-239-2021>, Herla, Mair, and
+Haegeli (2022) <doi:10.5194/tc-16-3149-2022>, and Horton, Herla, and Haegeli
+(2024) <doi:10.5194/egusphere-2024-1609>.")
     (license license:gpl3+)))
 
 (define-public r-sarp-snowprofile

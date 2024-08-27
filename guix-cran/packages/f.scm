@@ -775,34 +775,6 @@ fuzzy constraints (following different approaches proposed by Verdegay,
 Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
     (license license:gpl3+)))
 
-(define-public r-fuzzyjoin
-  (package
-    (name "r-fuzzyjoin")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fuzzyjoin" version))
-       (sha256
-        (base32 "0s5rhqz8vih4za3a8k1k7i3gq8hj0w7bqnakw40k6mg87jvyzsj7"))))
-    (properties `((upstream-name . "fuzzyjoin")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-purrr
-                             r-geosphere
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/dgrtwo/fuzzyjoin")
-    (synopsis "Join Tables Together on Inexact Matching")
-    (description
-     "Join tables together based not on whether columns match exactly, but whether
-they are similar by some comparison.  Implementations include string distance
-and regular expression matching.")
-    (license license:expat)))
-
 (define-public r-fuzzyforest
   (package
     (name "r-fuzzyforest")
@@ -4607,16 +4579,16 @@ package relies on the optimization software MOSEK', <https://www.mosek.com>.")
 (define-public r-freealg
   (package
     (name "r-freealg")
-    (version "1.1-1")
+    (version "1.1-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "freealg" version))
        (sha256
-        (base32 "0jx9r40hql8fkpjr005snavj8fw5ykqa4ya7cy59jhxr31byma3j"))))
+        (base32 "13ma3lg9vjmxpnaw2zwanag1dmc09q5gx5g2mgdc9fy43rka7yv2"))))
     (properties `((upstream-name . "freealg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp r-partitions r-mathjaxr r-disordr))
+    (propagated-inputs (list r-rcpp r-partitions r-disordr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/RobinHankin/freealg")
     (synopsis "The Free Algebra")
@@ -8384,6 +8356,30 @@ see the paper: Azadkia and Chatterjee (2019),\"A simple measure of conditional
 dependence\" <@code{arXiv:1910.12327>}.")
     (license license:gpl3)))
 
+(define-public r-fntl
+  (package
+    (name "r-fntl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fntl" version))
+       (sha256
+        (base32 "1980zwx8dspc704qcywwyyk9ma6p698b7in9x0b4xs6yg2srziz8"))))
+    (properties `((upstream-name . "fntl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/andrewraim/fntl")
+    (synopsis "Numerical Tools for 'Rcpp' and Lambda Functions")
+    (description
+     "This package provides a C++ API for routinely used numerical tools such as
+integration, root-finding, and optimization, where function arguments are given
+as lambdas.  This facilitates Rcpp programming, enabling the development of
+R'-like code in C++ where functions can be defined on the fly and use variables
+in the surrounding environment.")
+    (license license:expat)))
+
 (define-public r-fnr
   (package
     (name "r-fnr")
@@ -9387,6 +9383,48 @@ machines, this package offers a suite of tools for data handling and analysis.
 It includes functions for converting Fluidigm data to format used by PLINK',
 estimating errors, calculating pairwise similarities, determining pairwise
 similarity loci, and generating a similarity matrix.")
+    (license license:gpl3)))
+
+(define-public r-flsss
+  (package
+    (name "r-flsss")
+    (version "9.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FLSSS" version))
+       (sha256
+        (base32 "1ld0lrzwjj47gb95zii7v9qbp1dbiwww6hxq7vc82l6jlllsw3f6"))))
+    (properties `((upstream-name . "FLSSS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppparallel r-rcpp))
+    (home-page "https://cran.r-project.org/package=FLSSS")
+    (synopsis "Mining Rigs for Problems in the Subset Sum Family")
+    (description
+     "Specialized solvers for combinatorial optimization problems in the Subset Sum
+family.  The solvers differ from the mainstream in the options of (i)
+restricting subset size, (ii) bounding subset elements, (iii) mining real-value
+multisets with predefined subset sum errors, (iv) finding one or more subsets in
+limited time.  A novel algorithm for mining the one-dimensional Subset Sum
+induced algorithms for the multi-Subset Sum and the multidimensional Subset Sum.
+ The multi-threaded framework for the latter offers exact algorithms to the
+multidimensional Knapsack and the Generalized Assignment problems.  Historical
+updates include (a) renewed implementation of the multi-Subset Sum,
+multidimensional Knapsack and Generalized Assignment solvers; (b) availability
+of bounding solution space in the multidimensional Subset Sum; (c) fundamental
+data structure and architectural changes for enhanced cache locality and better
+chance of SIMD vectorization; (d) option of mapping floating-point instance to
+compressed 64-bit integer instance with user-controlled precision loss, which
+could yield substantial speedup due to the dimension reduction and efficient
+compressed integer arithmetic via bit-manipulations; (e) distributed computing
+infrastructure for multidimensional subset sum; (f) arbitrary-precision
+zero-margin-of-error multidimensional Subset Sum accelerated by a simplified
+Bloom filter.  The package contains a copy of @code{xxHash} from
+<https://github.com/Cyan4973/@code{xxHash>}.  Package vignette
+(<doi:10.48550/@code{arXiv.1612.04484>}) detailed a few historical updates.
+Functions prefixed with aux (auxiliary) are independent implementations of
+published algorithms for solving optimization problems less relevant to Subset
+Sum.")
     (license license:gpl3)))
 
 (define-public r-flsa
@@ -11575,31 +11613,6 @@ outputs to the function are the same vector).  These algorithms include Anderson
 (1965) acceleration <doi:10.1145/321296.321305>, epsilon extrapolation methods
 (Wynn 1962 <doi:10.2307/2004051>) and minimal polynomial methods (Cabay and
 Jackson 1976 <doi:10.1137/0713060>).")
-    (license license:expat)))
-
-(define-public r-fixedincome
-  (package
-    (name "r-fixedincome")
-    (version "0.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fixedincome" version))
-       (sha256
-        (base32 "16wxd12hid468d1rfczyrb2ffnja0vx9mnqdg9dhdp0nlj78xx99"))))
-    (properties `((upstream-name . "fixedincome")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-scales r-ggplot2 r-bizdays))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/wilsonfreitas/R-fixedincome")
-    (synopsis
-     "Fixed Income Models, Calculations, Data Structures and Instruments")
-    (description
-     "Fixed income mathematics made easy.  A rich set of functions that helps with
-calculations of interest rates and fixed income.  It has objects that abstract
-interest rates, compounding factors, day count rules, forward rates and term
-structure of interest rates.  Many interpolation methods and parametric curve
-models commonly used by practitioners are implemented.")
     (license license:expat)))
 
 (define-public r-fitzroy
@@ -14479,13 +14492,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form.")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.3.1")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "1ha935ibhz4iicyx3azlk867pkrmj4lrjs1rsyqljf46zd63nfan"))))
+        (base32 "1d7x63xylfcdm5y9kfpmi31g73f7j0xp409x0z54hnrikh3bdyq0"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -17479,6 +17492,35 @@ for modeling and simulating dynamic systems.")
      "Algorithms for fuzzy clustering, cluster validity indices and plots for cluster
 validity and visualizing fuzzy clustering results.")
     (license license:gpl2+)))
+
+(define-public r-fcl
+  (package
+    (name "r-fcl")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fcl" version))
+       (sha256
+        (base32 "1ha53zh55blgkw2njrgmd973bp3h2dx79h90lfdgq1czmvvbaf9r"))))
+    (properties `((upstream-name . "fcl")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-ymd r-xts))
+    (home-page "https://github.com/shrektan/fcl")
+    (synopsis "Financial Calculator")
+    (description
+     "This package provides a financial calculator that provides very fast
+implementations of common financial indicators using Rust code.  It includes
+functions for bond-related indicators, such as yield to maturity ('YTM'),
+modified duration, and Macaulay duration, as well as functions for calculating
+time-weighted and money-weighted rates of return (using Modified Dietz method)
+for multiple portfolios, given their market values and profit and loss
+('@code{PnL}') data.  fcl is designed to be efficient and accurate for financial
+analysis and computation.  The methods used in this package are based on the
+following references: <https://en.wikipedia.org/wiki/Modified_Dietz_method>,
+<https://en.wikipedia.org/wiki/Time-weighted_return>.")
+    (license license:expat)))
 
 (define-public r-fcirt
   (package

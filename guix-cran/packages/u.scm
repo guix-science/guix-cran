@@ -4291,6 +4291,27 @@ polycentric patterns and values closer to 1 indicate a more monocentric urban
 form.")
     (license license:expat)))
 
+(define-public r-ubstats
+  (package
+    (name "r-ubstats")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "UBStats" version))
+       (sha256
+        (base32 "1x8pc1lb7xbjbydyl6bsckws7as6mgxr0nvmgg06kilk7s07ahmm"))))
+    (properties `((upstream-name . "UBStats")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=UBStats")
+    (synopsis "Basic Statistics")
+    (description
+     "Basic statistical analyses.  The package has been developed to be used in
+statistics courses at Bocconi University (Milan, Italy).  Currently, the package
+includes some exploratory and inferential analyses usually presented in
+introductory statistics courses.")
+    (license license:gpl3)))
+
 (define-public r-ubms
   (package
     (name "r-ubms")
