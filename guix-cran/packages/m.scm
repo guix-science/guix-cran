@@ -1382,13 +1382,13 @@ transformation (Korkmaz et al, (2014),
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.1.9")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "0061jzmrhgp029a22c53pyjdlc492rlvxhdxrbcd3x0ni2b1nh6x"))))
+        (base32 "05d1ipmx69mnmwzpipwjsyamn4m5ifba241zplcfpqm3pi9jarmy"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -34840,13 +34840,13 @@ frequently is a candidate for being the optimal number of clusters.")
 (define-public r-mcrpioda
   (package
     (name "r-mcrpioda")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcrPioda" version))
        (sha256
-        (base32 "16n9dgmv3cjk4qy27n62n5hw43slp8hxkfdhbl60qxyrmw80lijn"))))
+        (base32 "1f3gwcbm7sgy0ny9q7l6dkc1a74sjh92x8h54rimm57b98avij4k"))))
     (properties `((upstream-name . "mcrPioda")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -39874,13 +39874,13 @@ least-cost paths.")
 (define-public r-marlod
   (package
     (name "r-marlod")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marlod" version))
        (sha256
-        (base32 "0a6jdf55s947l0cr1wzmhn0inai0hyf0vfcvl63m0fh666s3cms6"))))
+        (base32 "1sncr219jbkl4vfazdrjj2rv714zy2jvzmywdfaxv7d1aakl2s5l"))))
     (properties `((upstream-name . "marlod")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-miwqs r-mass r-knitr))
@@ -39889,8 +39889,8 @@ least-cost paths.")
     (synopsis "Marginal Modeling for Exposure Data with Values Below the LOD")
     (description
      "This package provides functions of marginal mean and quantile regression models
-for analyzing environmental exposure and biomonitoring data with repeated
-measurements and non-detects, and for longitudinal exposure data with
+are used to analyze environmental exposure and biomonitoring data with repeated
+measurements and non-detects, as well as longitudinal exposure data that include
 non-detects and time-dependent covariates.")
     (license license:gpl3)))
 
@@ -41230,13 +41230,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "1fx8779vp4a1k5qy4csqhj5wmhd7aamkzl9mlwk6v4rx667szdzj"))))
+        (base32 "1rv3mx7nv4byy0j1i9d4grvbkysq3cqji5g251rnm7nljjk1zj8b"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -41247,7 +41247,7 @@ looking maps in R, with support for map projections.  See Brown (2016)
                              r-purrr
                              r-magrittr
                              r-jsonlite
-                             r-httr
+                             r-httr2
                              r-furrr
                              r-dplyr))
     (native-inputs (list r-knitr))
@@ -42055,6 +42055,58 @@ read syntax.  Kuhn(2014) <@code{arXiv:1405.6974>}.")
 to help researchers work with and contribute to event datasets on global
 governance.")
     (license (license:fsdg-compatible "CC BY 4.0"))))
+
+(define-public r-mantaid
+  (package
+    (name "r-mantaid")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MantaID" version))
+       (sha256
+        (base32 "0fwdvz6xj9b1x4k985mqqf3h1nvf4ksy7yzm70wdh9kxpr0sx5vv"))))
+    (properties `((upstream-name . "MantaID")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-scutr
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-purrr
+                             r-paradox
+                             r-mlr3tuning
+                             r-mlr3
+                             r-magrittr
+                             r-keras
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-dplyr
+                             r-data-table
+                             r-caret
+                             r-biomart))
+    (home-page "https://molaison.github.io/MantaID/")
+    (synopsis
+     "Machine-Learning Based Tool to Automate the Identification of Biological Database IDs")
+    (description
+     "The number of biological databases is growing rapidly, but different databases
+use different IDs to refer to the same biological entity.  The inconsistency in
+IDs impedes the integration of various types of biological data.  To resolve the
+problem, we developed @code{MantaID}', a data-driven, machine-learning based
+approach that automates identifying IDs on a large scale.  The @code{MantaID}
+model's prediction accuracy was proven to be 99%, and it correctly and
+effectively predicted 100,000 ID entries within two minutes. @code{MantaID}
+supports the discovery and exploitation of ID patterns from large quantities of
+databases. (e.g., up to 542 biological databases).  An easy-to-use freely
+available open-source software R package, a user-friendly web application, and
+API were also developed for @code{MantaID} to improve applicability.  To our
+knowledge, @code{MantaID} is the first tool that enables an automatic, quick,
+accurate, and comprehensive identification of large quantities of IDs, and can
+therefore be used as a starting point to facilitate the complex assimilation and
+aggregation of biological data across diverse databases.")
+    (license license:gpl3+)))
 
 (define-public r-manta
   (package
@@ -43518,18 +43570,19 @@ training, prediction) of standard Gaussian processes are also implemented.")
 (define-public r-magma-r
   (package
     (name "r-magma-r")
-    (version "1.0.1")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAGMA.R" version))
        (sha256
-        (base32 "0i474az77w9nfmxhz2z76v483vsny1gkpzv3mb1zaqdcv26yqpzq"))))
+        (base32 "07jicr9axlb8cnjjprzrkad57r2wrnap52n45sia5qfjp53ys12g"))))
     (properties `((upstream-name . "MAGMA.R")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
                              r-tidyselect
                              r-tibble
+                             r-stddiff
                              r-robumeta
                              r-rlang
                              r-purrr
@@ -43550,12 +43603,12 @@ training, prediction) of standard Gaussian processes are also implemented.")
 fundamental for drawing causal inference.  Propensity Score Matching deals with
 this issue but current techniques are restricted to binary treatment variables.
 Moreover, they provide several solutions without providing a comprehensive
-framework on choosing the best model.  The MAGMA.R -package addresses these
+framework on choosing the best model.  The MAGMA R-package addresses these
 restrictions by offering nearest neighbor matching for two to four groups.  It
-also includes the option to match data of a 2x2 design.  In addition, MAGMA.R
+also includes the option to match data of a 2x2 design.  In addition, MAGMA
 includes a framework for evaluating the post-matching balance.  The package
 includes functions for the matching process and matching reporting.  We provide
-a tutorial on MAGMA.R as vignette.  More information on MAGMA.R can be found in
+a tutorial on MAGMA as vignette.  More information on MAGMA can be found in
 Feuchter, M. D., Urban, J., Scherrer V., Breit, M. L., and Preckel F. (2022)
 <https://osf.io/p47nc/>.")
     (license license:gpl3)))
@@ -43733,13 +43786,13 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "0mdrphwsr4wywgndi90hif688sah7brx45g62q8hjbyqpvx272ly"))))
+        (base32 "1n3jnrqdg8m1q3hvjqqnbzi10sa2jdw0xjg70hfcsj66q60wnmn9"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (propagated-inputs (list r-timechange

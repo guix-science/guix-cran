@@ -1864,13 +1864,13 @@ accepting suggestions for species with greater weight and cluster medoids.")
 (define-public r-isoorbi
   (package
     (name "r-isoorbi")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "isoorbi" version))
        (sha256
-        (base32 "1n0mga4djak8qsfjjaaqd2wfw842qp4vqfq3n3lrimlrn8l52l0j"))))
+        (base32 "0nc1mn7l9jbgg7fkls1zwzvgbi1lj575ksn0m0wmap50c7ladfvn"))))
     (properties `((upstream-name . "isoorbi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -1884,11 +1884,11 @@ accepting suggestions for species with greater weight and cluster medoids.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/isoverse/isoorbi")
+    (home-page "https://isoorbi.isoverse.org/")
     (synopsis "Process Orbitrap Isotopocule Data")
     (description
      "Read and process isotopocule data from an Orbitrap Isotope Solutions mass
-spectrometer.  Citation: Kantnerova et al. (in review).")
+spectrometer.  Citation: Kantnerova et al. (Nature Protocols, 2024).")
     (license license:expat)))
 
 (define-public r-isomemo
@@ -4671,39 +4671,6 @@ implements the modified iterative K-M estimation algorithm (modified-@code{iKM})
 improved upon the approach proposed by Guyot (2012) <doi:10.1186/1471-2288-12-9>
 with some modifications.")
     (license license:gpl2)))
-
-(define-public r-ipdfilecheck
-  (package
-    (name "r-ipdfilecheck")
-    (version "0.8.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IPDFileCheck" version))
-       (sha256
-        (base32 "0xab1z8fj7clz00bk230krlmfmywwv4bwdvn2w8b4l0hgh9b9a8z"))))
-    (properties `((upstream-name . "IPDFileCheck")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-testthat
-                             r-stringr
-                             r-lubridate
-                             r-kableextra
-                             r-hash
-                             r-gtsummary
-                             r-effsize
-                             r-eeptools
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=IPDFileCheck")
-    (synopsis
-     "Basic Functions to Check Readability, Consistency, and Content of an Individual Participant Data File")
-    (description
-     "Basic checks needed with an individual level participant data from randomised
-controlled trial.  This checks files for existence, read access and individual
-columns for formats.  The checks on format is currently implemented for gender
-and age formats.")
-    (license license:gpl3)))
 
 (define-public r-ipcwswitch
   (package
@@ -14141,30 +14108,6 @@ Dependent Acquisition (DDA) analysis, and various Data-Independent Acquisition
 (DIA) methods such as MS^E, All-Ion Fragmentation (AIF) and SWATH-MS analysis.
 The IDSL.CSA package was introduced in <doi:10.1021/acs.analchem.3c00376>.")
     (license license:expat)))
-
-(define-public r-idsa
-  (package
-    (name "r-idsa")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "IDSA" version))
-       (sha256
-        (base32 "0ld2359ksnw9jrjicnqikh5r321mfy2i7vzlhh9phm60k0qf5j98"))))
-    (properties `((upstream-name . "IDSA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-kableextra r-ggplot2 r-gd))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=IDSA")
-    (synopsis "An Interactive Detector for Spatial Associations")
-    (description
-     "Method of interactive detector for spatial associations (IDSA) as described in
-Yongze Song (2021) <doi:10.1080/13658816.2021.1882680>.  IDSA is used to
-quantify the power of interactive determinant (PID) between a spatial response
-variable and explanatory variables.  IDSA is developed based on methods of
-spatial heterogeneity.")
-    (license license:gpl2)))
 
 (define-public r-idpsurvival
   (package

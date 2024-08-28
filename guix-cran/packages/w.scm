@@ -2867,13 +2867,13 @@ arguments.")
 (define-public r-wishmom
   (package
     (name "r-wishmom")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wishmom" version))
        (sha256
-        (base32 "0lx9gigw7lm51bpz4djwgxjzhw71pbvwqfcy9gjdwkflknyz8wdf"))))
+        (base32 "1j43s6n9y757gs7q9xjps9qsy81jznh5vyij1yds8nfz1r53wg3h"))))
     (properties `((upstream-name . "wishmom")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2))
@@ -2886,10 +2886,11 @@ arguments.")
 to the Beta-Wishart and Inverse Beta-Wishart distributions.  It includes
 functions for calculating the expectation of matrix-valued functions of the
 Beta-Wishart distribution, coefficient matrices C_k and H_k, expectation of
-matrix-valued functions of the inverse Beta-Wishart distribution, and inverse
-coefficient matrices tilde C_k and tilde H_k.  For more details, refer to the
-paper \"On the Expectations of Equivariant Matrix-valued Functions of Wishart and
-Inverse Wishart Matrices\" by Grant Hillier and Raymond Kan.")
+matrix-valued functions of the inverse Beta-Wishart distribution, and
+coefficient matrices \\tilde{C}_k and \\tilde{H}_k.  For more details, refer
+Hillier and Kan (2024)
+<https://www-2.rotman.utoronto.ca/~kan/papers/wishmom.pdf>, \"On the Expectations
+of Equivariant Matrix-valued Functions of Wishart and Inverse Wishart Matrices\".")
     (license license:expat)))
 
 (define-public r-wisam

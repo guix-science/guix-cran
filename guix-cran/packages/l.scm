@@ -3745,13 +3745,13 @@ visualization.")
 (define-public r-longpower
   (package
     (name "r-longpower")
-    (version "1.0.25")
+    (version "1.0.26")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longpower" version))
        (sha256
-        (base32 "023s4ckc6695l51025qji2ggkad8cj0gz5h4zmk7i5d3pwk7g14y"))))
+        (base32 "1m0583cki8p88kp7h24zxp4m5kldl85qiaq6vrw2dqswvrasvdh4"))))
     (properties `((upstream-name . "longpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lme4))
@@ -17331,13 +17331,13 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "0gp0y2jqdjyw3z6zxwrqk690vvgysgrkif4vjpia0szwbh8lw9x0"))))
+        (base32 "124mlhjk8l2m7ly9kzfp0s69czpbjjz4yq56g0mryzjrp0cdq31n"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

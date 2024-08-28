@@ -365,17 +365,17 @@ computer algebra system (<http://www.yacas.org/>).")
 (define-public r-rxylib
   (package
     (name "r-rxylib")
-    (version "0.2.13")
+    (version "0.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxylib" version))
        (sha256
-        (base32 "0kl4d3h5xky5439wmx4h5f2dd3wy9f9vq81wrks8x60yi6g45rj4"))))
+        (base32 "0g9rrn9xjwscq0k8cd4zwx1vdbgajbc493gk0mibpjg8lcvmc53k"))))
     (properties `((upstream-name . "rxylib")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))
-    (home-page "https://github.com/R-Lum/rxylib")
+    (home-page "https://r-lum.github.io/rxylib/")
     (synopsis "Import XY-Data into R")
     (description
      "This package provides access to the xylib C library for to import xy data from
@@ -1715,13 +1715,13 @@ Linux for haplotyping.")
 (define-public r-rvg
   (package
     (name "r-rvg")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvg" version))
        (sha256
-        (base32 "0m9xfii35rv5dkk1n675s2schnxy90344ccbk1998g1qw9x1bj0m"))))
+        (base32 "0s173s4bxi44s4j30y804vffsccir74jx2awsv0r45g1007w6mx0"))))
     (properties `((upstream-name . "rvg")))
     (build-system r-build-system)
     (inputs (list zlib libpng))
@@ -19905,13 +19905,13 @@ information about using the API please visit <https://developer.linkedin.com/>."
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.9-0")
+    (version "0.9-0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "0mmxahfavmw98z4jf99znqdzsyqpjxzfxjsslg9df7ffcdl9g6k6"))))
+        (base32 "0jr2dwsbsb18v2mp3pdzqjv9knxrrj4aypi9sb0fgv5pkfdyv3rp"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -39332,6 +39332,29 @@ the C library GMP (GNU Multiple Precision Arithmetic).  For smaller integers, a
 simple Elliptic Curve algorithm is attempted followed by a constrained version
 of Pollard's rho algorithm.  The Pollard's rho algorithm is the same algorithm
 used by the factorize function in the gmp package.")
+    (license license:gpl2+)))
+
+(define-public r-rcppbessel
+  (package
+    (name "r-rcppbessel")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RcppBessel" version))
+       (sha256
+        (base32 "19fls01nafnp8l0bdxwa188qa6r608xg7v6kgkrld3y1hqdm71x9"))))
+    (properties `((upstream-name . "RcppBessel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/alexiosg/RcppBessel")
+    (synopsis "Bessel Functions Rcpp Interface")
+    (description
+     "Exports an Rcpp interface for the Bessel functions in the Bessel package, which
+can then be called from the C++ code of other packages.  For the original
+Fortran implementation of these functions see Amos (1995)
+<doi:10.1145/212066.212078>.")
     (license license:gpl2+)))
 
 (define-public r-rcppbdt

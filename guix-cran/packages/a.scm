@@ -6353,27 +6353,6 @@ Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
 Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
     (license license:gpl3)))
 
-(define-public r-armadillo
-  (package
-    (name "r-armadillo")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "armadillo" version))
-       (sha256
-        (base32 "1vry227x04z3r92qg2g3vw6vw2gfz7ii4wcr3rh8s34zdni786x3"))))
-    (properties `((upstream-name . "armadillo")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://pacha.dev/armadillo/")
-    (synopsis "An 'Armadillo' Interface")
-    (description
-     "This package provides function declarations and inline function definitions that
-facilitate communication between R and the Armadillo C++ library for linear
-algebra and scientific computing.")
-    (license (license:fsdg-compatible "Apache License (>= 2)"))))
-
 (define-public r-arkhe
   (package
     (name "r-arkhe")
@@ -9827,18 +9806,18 @@ through integer programming.  Communications in Statistics - Theory and Methods
 (define-public r-aopdata
   (package
     (name "r-aopdata")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aopdata" version))
        (sha256
-        (base32 "13i8fjvqx42jslgyl271cbnpmsxqxmkrs5hiaxr5i8srrq55d60m"))))
+        (base32 "07vcxz1njl1hb8p25ni11l39llb9bl19yq3an5rarjj7mxyp8m40"))))
     (properties `((upstream-name . "aopdata")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-httr r-data-table r-curl r-checkmate))
+    (propagated-inputs (list r-sf r-data-table r-curl r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/aopdata")
+    (home-page "https://ipeagit.github.io/aopdata/")
     (synopsis "Data from the 'Access to Opportunities Project (AOP)'")
     (description
      "Download data from the Access to Opportunities Project (AOP)'.  The aopdata
@@ -12778,6 +12757,55 @@ meta-analysis.  Vote-counting reports for metabolites.  And explore plot to
 detect discrepancies between studies at a first glance.  Methodology is
 described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
     (license license:gpl3)))
+
+(define-public r-amadeus
+  (package
+    (name "r-amadeus")
+    (version "1.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "amadeus" version))
+       (sha256
+        (base32 "0qjf0qnnfn957whj14nkq1f0qp2c04zbsgl2bx7qzypndlbi3397"))))
+    (properties `((upstream-name . "amadeus")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-testthat
+                             r-terra
+                             r-stringi
+                             r-stars
+                             r-sftime
+                             r-sf
+                             r-rvest
+                             r-rlang
+                             r-rdpack
+                             r-parallelly
+                             r-nhdplustools
+                             r-httr
+                             r-future-apply
+                             r-future
+                             r-exactextractr
+                             r-dplyr
+                             r-data-table
+                             r-collapse
+                             r-archive))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/NIEHS/amadeus")
+    (synopsis "Accessing and Analyzing Large-Scale Environmental Data")
+    (description
+     "This package provides functions are designed to facilitate access to and utility
+with large scale, publicly available environmental data in R. The package
+contains functions for downloading raw data files from web URLs
+(download_data()), processing the raw data files into clean spatial objects
+(process_covariates()), and extracting values from the spatial data objects at
+point and polygon locations (calc_covariates()).  These functions call a series
+of source-specific functions which are tailored to each data sources/datasets
+particular URL structure, data format, and spatial/temporal resolution.  The
+functions are tested, versioned, and open source and open access.  For
+calc_sedc() method details, see Messier, Akita, and Serre (2012)
+<doi:10.1021/es203152a>.")
+    (license license:expat)))
 
 (define-public r-alues
   (package

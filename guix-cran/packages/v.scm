@@ -1007,29 +1007,6 @@ Oceanography'.  Functions are designed to process automated image classification
 output and create organized and easily portable data products.")
     (license license:expat)))
 
-(define-public r-vpdtw
-  (package
-    (name "r-vpdtw")
-    (version "2.1-14")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "VPdtw" version))
-       (sha256
-        (base32 "1pr8jrd7ymgf46h2gbvanqjrvpc4xs39sk86vvxhawzf3w31g257"))))
-    (properties `((upstream-name . "VPdtw")))
-    (build-system r-build-system)
-    (home-page "https://github.com/ethanbass/VPdtw/")
-    (synopsis "Variable Penalty Dynamic Time Warping")
-    (description
-     "Variable Penalty Dynamic Time Warping (VPdtw) for aligning chromatographic
-signals.  With an appropriate penalty this method performs good alignment of
-chromatographic data without deforming the peaks (Clifford, D., Stone, G.,
-Montoliu, I., Rezzi S., Martin F., Guy P., Bruce S., and Kochhar S.(2009)
-<doi:10.1021/ac802041e>; Clifford, D. and Stone, G. (2012)
-<doi:10.18637/jss.v047.i08>).")
-    (license license:gpl2)))
-
 (define-public r-vpc
   (package
     (name "r-vpc")
@@ -3192,37 +3169,6 @@ of both model averaging (ARM, Yuhong Yang, 2001)
 Ailin Fan, Rui Song and Wenbin Lu, 2018) <doi:10.1214/17-AOS1570>.  The package
 is an implementation of Zishu Zhan and Jingxiao Zhang. (2022+).")
     (license license:gpl3)))
-
-(define-public r-visae
-  (package
-    (name "r-visae")
-    (version "0.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "visae" version))
-       (sha256
-        (base32 "0ycwb380z8nb646w7w42952lwvdi8prmph7yv1lraswvp4wjfx3p"))))
-    (properties `((upstream-name . "visae")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-shinyjs
-                             r-shiny
-                             r-rlang
-                             r-magrittr
-                             r-ggrepel
-                             r-ggplot2
-                             r-dt
-                             r-dplyr
-                             r-ca))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=visae")
-    (synopsis "Visualization of Adverse Events")
-    (description
-     "Implementation of shiny app to visualize adverse events based on the Common
-Terminology Criteria for Adverse Events (CTCAE) using stacked correspondence
-analysis as described in Diniz et.  al (2021)<doi:10.1186/s12874-021-01368-w>.")
-    (license license:gpl2+)))
 
 (define-public r-visachartr
   (package

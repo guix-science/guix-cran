@@ -13614,13 +13614,13 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
 (define-public r-posologyr
   (package
     (name "r-posologyr")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "posologyr" version))
        (sha256
-        (base32 "1m05cs72npvsz1pj44q1sn80gwd2fzlb3mira3wdqqy91f02qd00"))))
+        (base32 "1rpk46hiaxrxd49ggi1kmvjxir8272ysx5d5gcgbnbnv2yiw922n"))))
     (properties `((upstream-name . "posologyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-mvtnorm r-data-table))
@@ -13628,12 +13628,12 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
     (home-page "https://levenc.github.io/posologyr/")
     (synopsis "Individual Dose Optimization using Population Pharmacokinetics")
     (description
-     "Determine individual pharmacokinetic (and pharmacokinetic-pharmacodynamic)
-profiles and use them to personalise drug regimens.  You provide the data and a
-population pharmacokinetic model, posologyr provides the individual a posteriori
-estimate and allows you to determine the optimal dosing.  The empirical Bayes
-estimates are computed as described in Kang et al. (2012)
-<doi:10.4196/kjpp.2012.16.2.97>.")
+     "Personalize drug regimens using individual pharmacokinetic and
+pharmacokinetic-pharmacodynamic profiles.  Using combining therapeutic drug
+monitoring (TDM) data and a population model, posologyr provides accurate a
+posteriori estimates and allows you to compute the optimal individualized dosing
+regimen.  The empirical Bayes estimates are computed as described in Kang et al.
+(2012) <doi:10.4196/kjpp.2012.16.2.97>.")
     (license license:agpl3)))
 
 (define-public r-posiadjrsquared
@@ -18156,16 +18156,22 @@ has been developed using concept of CÃ³rdova et al.
 (define-public r-pmev
   (package
     (name "r-pmev")
-    (version "0.0.2")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pmev" version))
        (sha256
-        (base32 "02qkajcmv46s1aapxmm59k7y8mcnjdcgvhirdzqmzj88li3sgm3f"))))
+        (base32 "0pyzxp1i62y04yzv729mmn5iaz02gi3gg73h5yd35ksihd46vqfy"))))
     (properties `((upstream-name . "pmev")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-rlang r-magrittr r-lubridate r-dplyr))
+    (propagated-inputs (list r-zoo
+                             r-vdiffr
+                             r-scales
+                             r-rlang
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://github.com/david-hammond/pmev")
     (synopsis "Calculates Earned Value for a Project Schedule")
     (description
@@ -24989,22 +24995,23 @@ is described in preprint by @code{FertÃ©} et al. (2020)
 (define-public r-pheval
   (package
     (name "r-pheval")
-    (version "0.5.4")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHeval" version))
        (sha256
-        (base32 "06fy5dm4mnp29f01163rw1d1hyl7rlcp4pfw18s87ckpr931qyma"))))
+        (base32 "1nmdfxzpqq2w6pfzxc0dkx6c2acdssvg8rpy1dv68mb5zgp64rav"))))
     (properties `((upstream-name . "PHeval")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival))
+    (propagated-inputs (list r-survival r-mvtnorm))
     (home-page "https://cran.r-project.org/package=PHeval")
     (synopsis
-     "Evaluation of the Proportional Hazards Assumption with a Standardized Score Process")
+     "Evaluation of the Proportional Hazards Assumption and Test for Comparing Survival Curves with a Standardized Score Process")
     (description
-     "This package provides tools for the evaluation of the goodness of fit and the
-predictive capacity of the proportional hazards model.")
+     "This package provides tools for the test for the comparison of survival curves,
+the evaluation of the goodness-of-fit and the predictive capacity of the
+proportional hazards model.")
     (license license:gpl2+)))
 
 (define-public r-phers
@@ -32020,22 +32027,22 @@ classification system using R and C++.")
 (define-public r-pcbs
   (package
     (name "r-pcbs")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PCBS" version))
        (sha256
-        (base32 "1sy2r55dard7hlha4k2b2i41y21a3nk786nzrbzicyvv6v093cd2"))))
+        (base32 "0hvqcmrx2aszmgw24bhvnj8am3bk05hnzk63pvmnc7p7f21hmdf6"))))
     (properties `((upstream-name . "PCBS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-ggrepel r-ggplot2 r-dplyr r-data-table))
     (home-page "https://github.com/katlande/PCBS")
-    (synopsis "Principle Component BiSulfite")
+    (synopsis "Principal Component BiSulfite")
     (description
      "This package provides a system for fast, accurate, and flexible whole genome
 bisulfite sequencing (WGBS) data analysis of two-condition comparisons.
-Principle Component @code{BiSulfite}, PCBS', assigns methylated loci eigenvector
+Principal Component @code{BiSulfite}, PCBS', assigns methylated loci eigenvector
 values from the treatment-delineating principal component in lieu of running
 millions of pairwise statistical tests, which dramatically increases analysis
 flexibility and reduces computational requirements.  Methods:

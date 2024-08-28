@@ -464,13 +464,13 @@ the output probabilities.")
 (define-public r-fuzzysimres
   (package
     (name "r-fuzzysimres")
-    (version "0.4.0")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzySimRes" version))
        (sha256
-        (base32 "0zhzzjr28c7byx4vkh8y8a6b6v9isa2wyhwldpzsml2mxg0f3300"))))
+        (base32 "1my73zaykbnak8bhhcg74fksxzdcnf4rldzy8yjs5lwc2p1a5r32"))))
     (properties `((upstream-name . "FuzzySimRes")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-fuzzynumbers))
@@ -7978,16 +7978,16 @@ TUV model:
 (define-public r-footprint
   (package
     (name "r-footprint")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "footprint" version))
        (sha256
-        (base32 "00m3jaxiacf9wxa0wg0qxhp6c0prbf2l5c2cid6anz8rc5b6angv"))))
+        (base32 "1mmv0pj19zlab3yk5ffbjzl2kda8w03dvmkw0ws0sl5ga56sqbws"))))
     (properties `((upstream-name . "footprint")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr r-airportr))
+    (propagated-inputs (list r-rlang r-dplyr r-airportr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/acircleda/footprint")
     (synopsis "Calculate Air Travel Emissions")
@@ -9239,6 +9239,47 @@ highly complex food webs.  It implements the approach described in Gauzens et
 al. (2017) <doi:10.1101/229450> to calculate energy fluxes, which are also used
 to calculate equilibrium stability.")
     (license license:gpl2+)))
+
+(define-public r-fluxible
+  (package
+    (name "r-fluxible")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fluxible" version))
+       (sha256
+        (base32 "1d4j3qzqnsj842qzkkfi0g51ac6a2cgy0lkqi78y7f7sqx7pqzc1"))))
+    (properties `((upstream-name . "fluxible")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-progress
+                             r-lubridate
+                             r-haven
+                             r-ggplot2
+                             r-ggforce
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://plant-functional-trait-course.github.io/fluxible/")
+    (synopsis
+     "Ecosystem Gas Fluxes Calculations for Closed Loop Chamber Setup")
+    (description
+     "Processes the raw data from closed loop flux chamber (or tent) setups into
+ecosystem gas fluxes usable for analysis.  It goes from a data frame of gas
+concentration over time (which can contain several measurements) and a meta data
+file indicating which measurement was done when, to a data frame of ecosystem
+gas fluxes including quality diagnostics.  Functions provided include different
+models (exponential as described in Zhao et al (2018)
+<doi:10.1016/j.agrformet.2018.08.022>, quadratic and linear) to estimate the
+fluxes from the raw data, quality assessment, plotting for visual check and
+calculation of fluxes based on the setup specific parameters (chamber size, plot
+area, ...).")
+    (license license:gpl3+)))
 
 (define-public r-flux
   (package
@@ -12747,13 +12788,13 @@ information about 5-digit or 2-digit US FIPS codes.")
 (define-public r-fio
   (package
     (name "r-fio")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fio" version))
        (sha256
-        (base32 "105dh96zjwa02kdkax1l52rsixr1615bjd72g1hk1x8lv217fjnw"))))
+        (base32 "1m8xmfzxz41rhawy9kcrl6krjb05xv4mrxn7yfcjkk5xs77inx7d"))))
     (properties `((upstream-name . "fio")))
     (build-system r-build-system)
     (inputs (list xz))
@@ -12893,13 +12934,13 @@ financial forecasters.  Happy forecasting!")
 (define-public r-finnsurveytext
   (package
     (name "r-finnsurveytext")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "finnsurveytext" version))
        (sha256
-        (base32 "0hi0b6i37lpfs2xhb0k1qdlm91mils1kl2dl9gz3qx5hz8f9342s"))))
+        (base32 "0f3gf5qdmkc1psdsvx5nkzxic2cx9hja4sisxnmwza4cb56lasi5"))))
     (properties `((upstream-name . "finnsurveytext")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -12910,13 +12951,14 @@ financial forecasters.  Happy forecasting!")
                              r-stringr
                              r-stopwords
                              r-rcolorbrewer
+                             r-purrr
                              r-magrittr
                              r-igraph
-                             r-gridextra
                              r-ggraph
                              r-ggpubr
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page
      "https://dariah-fi-survey-concept-network.github.io/finnsurveytext/")
@@ -22580,13 +22622,13 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
 (define-public r-f1datar
   (package
     (name "r-f1datar")
-    (version "1.5.3")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "f1dataR" version))
        (sha256
-        (base32 "1w6h6626yjh5wsdlzq28mgmg0jr7z3zdfkcg12rf9znwbkw8wl01"))))
+        (base32 "16j0fh3shnglrbywnilk76hp2x7fwfrigw9lw83vhvwadn5cs2x0"))))
     (properties `((upstream-name . "f1dataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -22610,7 +22652,7 @@ storage: Amazon Web Services (AWS) Simple Storage Service (S3)
     (synopsis "Access Formula 1 Data")
     (description
      "Obtain Formula 1 data via the Ergast API <https://ergast.com/mrd/> and the
-unofficial API <https://www.formula1.com/en/f1-live.html> via the fastf1 Python
-library <https://docs.fastf1.dev/>.")
+unofficial API <https://www.formula1.com/en/timing/f1-live> via the fastf1
+Python library <https://docs.fastf1.dev/>.")
     (license license:expat)))
 

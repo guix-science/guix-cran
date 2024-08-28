@@ -2529,13 +2529,13 @@ compatibility.")
 (define-public r-cubble
   (package
     (name "r-cubble")
-    (version "0.3.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cubble" version))
        (sha256
-        (base32 "1nbamkzzlzabgq41szc4kp1q58sirq0gp0x95wv1idax37p4gh9i"))))
+        (base32 "0x05mizhhmy332ivhly5g8184s2b0q394rj2klf27qfi1fyp1vg5"))))
     (properties `((upstream-name . "cubble")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -2557,7 +2557,8 @@ compatibility.")
     (synopsis "Vector Spatio-Temporal Data Structure for Data Analysis")
     (description
      "This package provides a spatiotemperal data object in a relational data
-structure to separate the recording of time variant/ invariant variables.")
+structure to separate the recording of time variant/ invariant variables.  See
+the Journal of Statistical Software reference: <doi:10.18637/jss.v110.i07>.")
     (license license:expat)))
 
 (define-public r-cubar
@@ -14830,28 +14831,6 @@ displaying circular shaped plots such as those often seen in the semi-conductor
 industry.")
     (license license:expat)))
 
-(define-public r-contourfunctions
-  (package
-    (name "r-contourfunctions")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ContourFunctions" version))
-       (sha256
-        (base32 "00p5bdiq8hj95lkr86iwyh50qw0d0d4gs9hhbzcix6lwn8dwqd3s"))))
-    (properties `((upstream-name . "ContourFunctions")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/contour")
-    (synopsis "Create Contour Plots from Data or a Function")
-    (description
-     "This package provides functions for making contour plots.  The contour plot can
-be created from grid data, a function, or a data set.  If non-grid data is
-given, then a Gaussian process is fit to the data and used to create the contour
-plot.")
-    (license license:gpl3)))
-
 (define-public r-contourer
   (package
     (name "r-contourer")
@@ -25061,6 +25040,41 @@ binary, ordinal or nominal variables) using a parsimonious mixture of latent
 Gaussian variable models.")
     (license license:gpl2)))
 
+(define-public r-clustmc
+  (package
+    (name "r-clustmc")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ClustMC" version))
+       (sha256
+        (base32 "1b7l5b9h93qyfh8bbk70a0cyrv4d37vm2d141y743d3vyr711l8y"))))
+    (properties `((upstream-name . "ClustMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-usedist
+                             r-psych
+                             r-procs
+                             r-magrittr
+                             r-lifecycle
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SGS2000/ClustMC")
+    (synopsis "Cluster-Based Multiple Comparisons")
+    (description
+     "Multiple comparison techniques are typically applied following an F test from an
+ANOVA to decide which means are significantly different from one another.  As an
+alternative to traditional methods, cluster analysis can be performed to group
+the means of different treatments into non-overlapping clusters.  Treatments in
+different groups are considered statistically different.  Several approaches
+have been proposed, with varying clustering methods and cut-off criteria.  This
+package implements cluster-based multiple comparisons tests and also provides a
+visual representation in the form of a dendrogram.  Di Rienzo, J. A., Guzman, A.
+W., & Casanoves, F. (2002) <jstor.org/stable/1400690>.  Bautista, M. G., Smith,
+D. W., & Steiner, R. L. (1997) <doi:10.2307/1400402>.")
+    (license license:expat)))
+
 (define-public r-clustlearn
   (package
     (name "r-clustlearn")
@@ -32247,6 +32261,26 @@ logistic regression, negative binomial regression, Cox proportional hazards
 model and conditional logistic regression.")
     (license license:gpl2)))
 
+(define-public r-chessgmoog
+  (package
+    (name "r-chessgmoog")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChessGmooG" version))
+       (sha256
+        (base32 "00szz48avd3cnis5xbvgqj3fkvcy5w0v57i8pbd8ga4jl59308zg"))))
+    (properties `((upstream-name . "ChessGmooG")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=ChessGmooG")
+    (synopsis "FIDE Chess Players Ratings for 2015 and 2020")
+    (description
+     "Datasets of the International Chess Federation's player ratings and country
+information analysed in the book Antony Unwin (2024, ISBN:978-0367674007)
+\"Getting (more out of) Graphics\".")
+    (license license:gpl2+)))
+
 (define-public r-chessboard
   (package
     (name "r-chessboard")
@@ -36803,6 +36837,30 @@ binary, ordinal, and continuous data formats.")
      "This package implements the uniform scaled beta distribution and the continuous
 convolution kernel density estimator.")
     (license license:gpl3)))
+
+(define-public r-cctest
+  (package
+    (name "r-cctest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cctest" version))
+       (sha256
+        (base32 "1zw5f7rsswsh30g21jz6fql7brislgrpd3icld5p9mqqi1zy55x5"))))
+    (properties `((upstream-name . "cctest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=cctest")
+    (synopsis "Canonical Correlations and Tests of Independence")
+    (description
+     "This package provides a simple interface for multivariate correlation analysis
+that unifies various classical statistical procedures including t-tests, tests
+in univariate and multivariate linear models, parametric and nonparametric tests
+for correlation, Kruskal-Wallis tests, standard non-exact versions of Wilcoxon
+rank-sum and signed rank tests, chi-squared tests of independence, score tests
+of particular hypotheses in generalized linear models, canonical correlation
+analysis and linear discriminant analysis.")
+    (license (license:fsdg-compatible "EUPL (>= 1.1)"))))
 
 (define-public r-cctensor
   (package

@@ -1443,30 +1443,36 @@ vignettes; see citation(\"quantities\") for details.")
 (define-public r-quantilogram
   (package
     (name "r-quantilogram")
-    (version "2.2.1")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quantilogram" version))
        (sha256
-        (base32 "0gvr93d6jjixcrislym0mna2l3plqhl8adaqiagdvxg4y0adfmf0"))))
+        (base32 "1r5fg0jj1f7knabbr7h13sjniy6f6jnk4lnq41acq5sllxm565ip"))))
     (properties `((upstream-name . "quantilogram")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sparsem r-quantreg r-np))
+    (propagated-inputs (list r-scales r-rlang r-quantreg r-np r-ggplot2))
     (home-page "https://cran.r-project.org/package=quantilogram")
     (synopsis "Cross-Quantilogram")
     (description
      "Estimation and inference methods for the cross-quantilogram.  The
 cross-quantilogram is a measure of nonlinear dependence between two variables,
-based on either unconditional or conditional quantile functions.  The
-cross-quantilogram can be considered as an extension of the correlogram, which
-is a correlation function over multiple lag periods and mainly focuses on linear
-dependency.  One can use the cross-quantilogram to detect the presence of
-directional predictability from one time series to another.  This package
-provides a statistical inference method based on the stationary bootstrap.  See
-Linton and Whang (2007) <doi:10.1016/j.jeconom.2007.01.004> for univariate time
-series analysis and Han, Linton, Oka and Whang (2016)
-<doi:10.1016/j.jeconom.2016.03.001> for multivariate time series analysis.")
+based on either unconditional or conditional quantile functions.  It can be
+considered an extension of the correlogram, which is a correlation function over
+multiple lag periods that mainly focuses on linear dependency.  One can use the
+cross-quantilogram to detect the presence of directional predictability from one
+time series to another.  This package provides a statistical inference method
+based on the stationary bootstrap.  For detailed theoretical and empirical
+explanations, see Linton and Whang (2007) for univariate time series analysis
+and Han, Linton, Oka and Whang (2016) for multivariate time series analysis.
+The full references for these key publications are as follows: (1) Linton, O.,
+and Whang, Y. J. (2007).  The quantilogram: with an application to evaluating
+directional predictability.  Journal of Econometrics, 141(1), 250-282
+<doi:10.1016/j.jeconom.2007.01.004>; (2) Han, H., Linton, O., Oka, T., and
+Whang, Y. J. (2016).  The cross-quantilogram: measuring quantile dependence and
+testing directional predictability between time series.  Journal of
+Econometrics, 193(1), 251-270 <doi:10.1016/j.jeconom.2016.03.001>.")
     (license license:gpl3+)))
 
 (define-public r-quantilenpci
@@ -1596,13 +1602,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.97")
+    (version "0.97.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textstats" version))
        (sha256
-        (base32 "0h8fyb8smyyhbfk677a2ldyl6b7sdjl0pzk5bbgz8qymw6yg1zdj"))))
+        (base32 "1zl0wa1ydz5b4dv7m38m2rd06w9piv2djsl5f6y21p2xdgi6q1i9"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -4807,13 +4813,13 @@ Please refer to the vignette for additional details and references.")
 (define-public r-qfasa
   (package
     (name "r-qfasa")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QFASA" version))
        (sha256
-        (base32 "1dhnfr4f5ij3irkragyllfjqisgm27phk40c9i539vm6046sc2w2"))))
+        (base32 "09rdlw30jlag9lyqdvmpcqxqsrwxwrarsqkp2vp4ay11nn6xi6ka"))))
     (properties `((upstream-name . "QFASA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

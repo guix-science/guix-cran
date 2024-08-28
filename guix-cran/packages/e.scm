@@ -962,13 +962,13 @@ package.")
 (define-public r-extras
   (package
     (name "r-extras")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extras" version))
        (sha256
-        (base32 "12d2jsf9ssvrl38j1vbsial9wrfzs19cqn3c0m95lr613y7d2dl4"))))
+        (base32 "1r0i9l49klkvibbylcj13wvbmxqn9xmpzm42s606v75mwmqgvxg1"))))
     (properties `((upstream-name . "extras")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-chk))
@@ -18198,30 +18198,6 @@ A.C. Matheson (2023).  Experimental Design and Analysis for Tree Improvement,
 CSIRO Publishing.")
     (license license:gpl3)))
 
-(define-public r-eda
-  (package
-    (name "r-eda")
-    (version "1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EDA" version))
-       (sha256
-        (base32 "08zqykvga7w07iy00c94q03mrxmjv649ggk7lmksjzy5j3wgyb6d"))))
-    (properties `((upstream-name . "EDA")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EDA")
-    (synopsis "Energy Decomposition Analysis")
-    (description
-     "Energy decomposition analysis for measuring contributions of components and
-factors on energy or carbon emission changes, as described in B.W. Ang (2005)
-<doi:10.1016/j.enpol.2003.10.010>.  Includes Log Mean Devisia Index method and
-multi-year energy decomposition analysis using five methods.  Please refer P. Wu
-(2019) <doi:10.1016/j.jclepro.2019.02.200> to use the package.")
-    (license license:gpl2)))
-
 (define-public r-ed50simulation
   (package
     (name "r-ed50simulation")
@@ -21773,13 +21749,13 @@ a local directory, a zip file or a zip file on a remote directory.")
 (define-public r-easycoda
   (package
     (name "r-easycoda")
-    (version "0.34.3")
+    (version "0.40.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyCODA" version))
        (sha256
-        (base32 "1s1zjjvswl3444m84n6c5sznva4y19kcm171xkcy1zdx3wqmd2m3"))))
+        (base32 "01qjlv5qhl2pzyizcx93qvlrn44dic8hy4xaj6zbx4xkcpvr13l7"))))
     (properties `((upstream-name . "easyCODA")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-ellipse r-ca))

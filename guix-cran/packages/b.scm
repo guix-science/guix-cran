@@ -22734,39 +22734,6 @@ marginal effects of the count probabilities for Poisson and negative binomial
 models can be computed.")
     (license license:gpl3+)))
 
-(define-public r-bayesmassbal
-  (package
-    (name "r-bayesmassbal")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "BayesMassBal" version))
-       (sha256
-        (base32 "1cgcx8kvn0bmn8kmq8ri3k98yx085d2qndislbwhn833ws6vkl88"))))
-    (properties `((upstream-name . "BayesMassBal")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmvtnorm
-                             r-rdpack
-                             r-pracma
-                             r-matrix
-                             r-laplacesdemon
-                             r-hdinterval
-                             r-coda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/skoermer/BayesMassBal")
-    (synopsis "Bayesian Data Reconciliation of Separation Processes")
-    (description
-     "Bayesian tools that can be used to reconcile, or mass balance, mass flow rate
-data collected from chemical or particulate separation processes aided by
-constraints governed by the conservation of mass.  Functions included in the
-package aid the user in organizing and constraining data, using Markov chain
-Monte Carlo methods to obtain samples from Bayesian models, and in computation
-of the marginal likelihood of the data, given a particular model, for model
-selection.  Marginal likelihood is approximated by methods in Chib S (1995)
-<doi:10.2307/2291521>.")
-    (license license:gpl3)))
-
 (define-public r-bayesmallows
   (package
     (name "r-bayesmallows")

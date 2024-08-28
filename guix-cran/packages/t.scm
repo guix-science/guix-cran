@@ -6934,13 +6934,13 @@ performance converting to polynomials and calculating distances.")
 (define-public r-treeminer
   (package
     (name "r-treeminer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeMineR" version))
        (sha256
-        (base32 "04rd7yrp69lz2qavfhdvbcwd0jy2qpng2xcgmbn69wp6yrm79r6y"))))
+        (base32 "0i3zwr2gx09zpa77cmc6h5cyahdch97bpvyhbfn5l67fxmyjm7l9"))))
     (properties `((upstream-name . "TreeMineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-future r-data-table r-cli))
@@ -15506,13 +15506,13 @@ documentation and examples.")
 (define-public r-tidypmc
   (package
     (name "r-tidypmc")
-    (version "1.7")
+    (version "2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidypmc" version))
        (sha256
-        (base32 "1fijlvdiw4vwm34wizm4xlm0x10vvpkldzk7rrla44apq7y2w3yq"))))
+        (base32 "03zs394raq0igpps5y2bvzs0kvlcsxrv1njp7ardglan9jnfvmjc"))))
     (properties `((upstream-name . "tidypmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -15522,7 +15522,7 @@ documentation and examples.")
                              r-readr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/cstubben/tidypmc")
+    (home-page "https://github.com/ropensci/tidypmc")
     (synopsis "Parse Full Text XML Documents from PubMed Central")
     (description
      "Parse XML documents from the Open Access subset of Europe @code{PubMed} Central
@@ -20397,16 +20397,16 @@ files.")
 (define-public r-tetrys
   (package
     (name "r-tetrys")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tetRys" version))
        (sha256
-        (base32 "0xqvkr6lick8isykgdpb9bmag6w19br2k6w26j8zlwa2kf84hw85"))))
+        (base32 "0inbkdlw1dra4yqg46rf331jdgxj34647c3501sw43gqnjmx4ynj"))))
     (properties `((upstream-name . "tetRys")))
     (build-system r-build-system)
-    (propagated-inputs (list r-audio))
+    (propagated-inputs (list r-tuner r-audio))
     (home-page "https://cran.r-project.org/package=tetRys")
     (synopsis "Game of 'tetRys'")
     (description
@@ -21464,17 +21464,16 @@ forecasts, as discussed in the paper by Jupp (2012)
 (define-public r-ternary
   (package
     (name "r-ternary")
-    (version "2.3.2")
+    (version "2.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Ternary" version))
        (sha256
-        (base32 "0jsb67zcp2q3mmkx6c1ns34i0x98xkzvbpmvpwn5mjssc6ir3q3m"))))
+        (base32 "1pzkz4k0qkqdalk4fxrrkwn025197qghqxvj84r68fhcipjqsv4a"))))
     (properties `((upstream-name . "Ternary")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridislite r-sp r-shiny r-rcpphungarian
-                             r-plottools))
+    (propagated-inputs (list r-sp r-shiny r-rcpphungarian r-plottools))
     (native-inputs (list r-knitr))
     (home-page "https://ms609.github.io/Ternary/")
     (synopsis "Create Ternary and Holdridge Plots")

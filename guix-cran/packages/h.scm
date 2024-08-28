@@ -3189,34 +3189,6 @@ Introduction to R'', is completely included in this package, for all other
 chapters, a vignette containing all data analyses is available.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-hs
-  (package
-    (name "r-hs")
-    (version "1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HS" version))
-       (sha256
-        (base32 "1vhbchc446j49jj7jgmy4l59n8ahk5l8jp1rl5xwsmn9iqir62mp"))))
-    (properties `((upstream-name . "HS")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zoo
-                             r-tidyr
-                             r-reshape2
-                             r-partitions
-                             r-ggpubr
-                             r-ggplot2
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=HS")
-    (synopsis "Homogenous Segmentation for Spatial Lines Data")
-    (description
-     "This package provides methods of homogenous segmentation for spatial lines data,
-such as pavement performance indicators and traffic volumes.  Three methods are
-available for homogenous segmentation, including cumulative difference approach,
-minimization coefficient of variation, and spatial heterogeneity based method.")
-    (license license:gpl2)))
-
 (define-public r-hrw
   (package
     (name "r-hrw")

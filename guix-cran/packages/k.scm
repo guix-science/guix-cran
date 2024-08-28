@@ -4121,6 +4121,30 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 <@code{arXiv:2206.01853>}.")
     (license license:gpl2+)))
 
+(define-public r-kerntools
+  (package
+    (name "r-kerntools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kerntools" version))
+       (sha256
+        (base32 "15g0q0manlrx6nxw6sd1191hazh0q78qhrb2wik7r7dw0ksv4125"))))
+    (properties `((upstream-name . "kerntools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi r-reshape2 r-kernlab r-ggplot2 r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kerntools")
+    (synopsis "Kernel Functions and Tools for Machine Learning Applications")
+    (description
+     "Kernel functions for diverse types of data (including, but not restricted to:
+nonnegative and real vectors, real matrices, categorical and ordinal variables,
+sets, strings), plus other utilities like kernel similarity, kernel Principal
+Components Analysis (PCA) and features importance for Support Vector Machines
+(SVMs), which expand other R packages like kernlab'.")
+    (license license:gpl3+)))
+
 (define-public r-kernsmoothirt
   (package
     (name "r-kernsmoothirt")
@@ -4714,6 +4738,33 @@ development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
     (synopsis "Fast Multidimensional Entropy Estimation by k-d Partitioning")
     (description "Estimate entropy of multidimensional data set.")
     (license license:gpl3+)))
+
+(define-public r-kdml
+  (package
+    (name "r-kdml")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kdml" version))
+       (sha256
+        (base32 "07vx0crgfzl8yhvvgi50lmpyywk0xhml86salnvnp5fz7hmdfsw7"))))
+    (properties `((upstream-name . "kdml")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-np r-mass r-markdown))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kdml")
+    (synopsis "Kernel Distance Metric Learning for Mixed-Type Data")
+    (description
+     "Distance metrics for mixed-type data consisting of continuous, nominal, and
+ordinal variables.  This methodology uses additive and product kernels to
+calculate similarity functions and metrics, and selects variables relevant to
+the underlying distance through bandwidth selection via maximum similarity
+cross-validation.  These methods can be used in any distance-based algorithm,
+such as distance-based clustering.  For further details, we refer the reader to
+Ghashti and Thompson (2024) <<doi:10.48550/@code{arXiv.2306.01890>>} for dkps()
+methodology, and Ghashti (2024) <doi:10.14288/1.0443975> for dkss() methodology.")
+    (license license:gpl2+)))
 
 (define-public r-kdist
   (package

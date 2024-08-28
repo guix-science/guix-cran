@@ -4877,13 +4877,13 @@ details see Hsu, L. and Wang, C. (2007). <doi:10.1016/j.techfore.2006.02.005>.")
 (define-public r-greybox
   (package
     (name "r-greybox")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greybox" version))
        (sha256
-        (base32 "053id2kd7q4ydxlrg6yi39y72idicp0cjgrhvmnwyv6zh2jd3ahk"))))
+        (base32 "0qkydablpwjmp15pamdgh063pkq03zc2hyx9vnr08fyj9n2jdaaz"))))
     (properties `((upstream-name . "greybox")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -9216,6 +9216,44 @@ Multi-Channel Funnel API.")
 <https://windsor.ai/api-fields/>.")
     (license license:expat)))
 
+(define-public r-goodreader
+  (package
+    (name "r-goodreader")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Goodreader" version))
+       (sha256
+        (base32 "0d7i0h28v0kxd5hbrg8m6kg9qww5y4zsz1a3j5436qdn9x3s8kyb"))))
+    (properties `((upstream-name . "Goodreader")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wordcloud2
+                             r-topicmodels
+                             r-tm
+                             r-tidytext
+                             r-tidyr
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-httr
+                             r-ggplot2
+                             r-dplyr
+                             r-cld2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Goodreader")
+    (synopsis "Scrape and Analyze 'Goodreads' Book Data")
+    (description
+     "This package provides a comprehensive toolkit for scraping and analyzing book
+data from <https://www.goodreads.com/>.  This package provides functions to
+search for books, scrape book details and reviews, perform sentiment analysis on
+reviews, and conduct topic modeling.  It's designed for researchers, data
+analysts, and book enthusiasts who want to gain insights from Goodreads data.")
+    (license license:gpl3)))
+
 (define-public r-goodpractice
   (package
     (name "r-goodpractice")
@@ -13198,13 +13236,13 @@ Supports processing images that cannot fit in memory.")
 (define-public r-glca
   (package
     (name "r-glca")
-    (version "1.4.0")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glca" version))
        (sha256
-        (base32 "13dzv5d7i3nq3866wcx4gccxacbqsshb2nriqsnsgbdrgpwk88h9"))))
+        (base32 "0vvd8m015g5rabpmkmfp20kh15d7ck8aamr9l9mbs2vapqs5k9c7"))))
     (properties `((upstream-name . "glca")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass))
@@ -21048,6 +21086,31 @@ Statistics--Simulation and Computation, 49(4): 1024--1043.
 and Probability Letters, 79(24): 2493--2500. <doi:10.1016/j.spl.2009.09.003>.")
     (license license:gpl2+)))
 
+(define-public r-gephiforr
+  (package
+    (name "r-gephiforr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GephiForR" version))
+       (sha256
+        (base32 "0g1aq1k25pipnkm1xbsb7f9nx4j86ra2a39h9nrq9jzh40vd3ldr"))))
+    (properties `((upstream-name . "GephiForR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-igraph))
+    (home-page "https://cran.r-project.org/package=GephiForR")
+    (synopsis "'Gephi' Network Visualization")
+    (description
+     "This package implements key features of Gephi for network visualization,
+including @code{ForceAtlas2} (with @code{LinLog} mode), network scaling, and
+network rotations.  It also includes easy network visualization tools such as
+edge and node color assignment for recreating Gephi'-style graphs in R. The
+package references layout algorithms developed by Jacomy, M., Venturini T.,
+Heymann S., and Bastian M. (2014) <doi:10.1371/journal.pone.0098679> and Noack,
+A. (2009) <doi:10.48550/@code{arXiv.0807.4052>}.")
+    (license license:expat)))
+
 (define-public r-gepaf
   (package
     (name "r-gepaf")
@@ -28863,13 +28926,13 @@ ALHD2 markers and alcoholism (aldh2), APOE/APOC1 markers and Schizophrenia
 (define-public r-gap
   (package
     (name "r-gap")
-    (version "1.5-3")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gap" version))
        (sha256
-        (base32 "1kjjnh0s9aicwkd7wsisi4c75y701irigsbzp7y6f2264bcgj6bf"))))
+        (base32 "1pz0j3vglccrwm3p9lj6wbq58varb8b0xg5r97gmz8c3biprpzww"))))
     (properties `((upstream-name . "gap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack r-plotly r-ggplot2 r-gap-datasets

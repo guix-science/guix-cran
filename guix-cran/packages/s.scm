@@ -3867,16 +3867,17 @@ constraints in the same model.")
 (define-public r-survivalsl
   (package
     (name "r-survivalsl")
-    (version "0.94")
+    (version "0.96")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survivalSL" version))
        (sha256
-        (base32 "03d38fh8pw5m2cd3v6hvcwc9d9b15idzrh9nj48cn6k27cnzf8qg"))))
+        (base32 "0mjaklq2zkz35z4y1w11yv5pc520a3xkinrynkkmrpdmvhlwjsk9"))))
     (properties `((upstream-name . "survivalSL")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
+    (propagated-inputs (list r-survivalplann
+                             r-survival
                              r-rpart
                              r-randomforestsrc
                              r-mass
@@ -18757,13 +18758,13 @@ in residuals and regression coefficients.  For details see Murakami (2021)
 (define-public r-spmodel
   (package
     (name "r-spmodel")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmodel" version))
        (sha256
-        (base32 "099ki3j9zafxczx0bw6sc5gv1pzj6xc4vdxm34bh3h16bkwgxs0q"))))
+        (base32 "1kywpczgj1iiml7h1c3l7x9yc557iwnfypjqq8fvh2p7sl8c68cx"))))
     (properties `((upstream-name . "spmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-sf r-matrix r-generics))
@@ -22092,13 +22093,13 @@ Apley (2019b) <doi:10.1016/j.csda.2019.01.019>.")
 (define-public r-spc
   (package
     (name "r-spc")
-    (version "0.6.8")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spc" version))
        (sha256
-        (base32 "1w63rwalw6m4dd44nhpdvvwawj1i8001vli9359a6q50m96i4ij5"))))
+        (base32 "0lp9ngjshkpww28vqsbazh1wila8p1v5x4xq04x58acwhf3cpjxx"))))
     (properties `((upstream-name . "spc")))
     (build-system r-build-system)
     (home-page "https://www.r-project.org")
@@ -25419,13 +25420,13 @@ of the American Statistical Association 105(490): 713-726.")
 (define-public r-spant
   (package
     (name "r-spant")
-    (version "2.22.0")
+    (version "2.23.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spant" version))
        (sha256
-        (base32 "01snrzvyxc48dy2md3iac0c858i016wykmyhnk3p7gjh7bmh12s5"))))
+        (base32 "0z0wlw937c1a1m3wc36gzhnzyl84344wij0rsyjgjvh7haax2biy"))))
     (properties `((upstream-name . "spant")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -36282,6 +36283,31 @@ set of functions to help when planning studies looking to assess measurement
 agreement.")
     (license license:gpl3+)))
 
+(define-public r-simplifynet
+  (package
+    (name "r-simplifynet")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "simplifyNet" version))
+       (sha256
+        (base32 "04iv1alkd85lwwyf8k6iwsj9fbxl6smsjm2b34z91za70n0rsw5q"))))
+    (properties `((upstream-name . "simplifyNet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sanic r-matrix r-igraph r-dplyr))
+    (home-page "https://cran.r-project.org/package=simplifyNet")
+    (synopsis "Network Sparsification")
+    (description
+     "Network sparsification with a variety of novel and known network sparsification
+techniques.  All network sparsification techniques reduce the number of edges,
+not the number of nodes.  Network sparsification is sometimes referred to as
+network dimensionality reduction.  This package is based on the work of
+Spielman, D., Srivastava, N. (2009)<@code{arXiv:0803.0929>}.  Koutis I., Levin,
+A., Peng, R. (2013)<@code{arXiv:1209.5821>}.  Toivonen, H., Mahler, S., Zhou, F.
+(2010)<doi:10.1007>.  Foti, N., Hughes, J., Rockmore, D. (2011)<doi:10.1371>.")
+    (license license:gpl3+)))
+
 (define-public r-simplicialcubature
   (package
     (name "r-simplicialcubature")
@@ -43227,26 +43253,6 @@ package for a Grammar of Graphics declarative HTML syntax to create
 3-dimensional data visualizations with Mozilla A-Frame <https://aframe.io>.")
     (license license:agpl3)))
 
-(define-public r-shiny-worker
-  (package
-    (name "r-shiny-worker")
-    (version "0.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "shiny.worker" version))
-       (sha256
-        (base32 "1l30dx46s3q1x9nd42r6dracd3lqkjk80r9jyjqy8lmdsq48300i"))))
-    (properties `((upstream-name . "shiny.worker")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-r6 r-future))
-    (home-page "https://cran.r-project.org/package=shiny.worker")
-    (synopsis "Delegate Jobs for Shiny Web Applications")
-    (description
-     "It allows you to delegate heavy computation tasks to a separate process, such
-that it does not freeze your Shiny app.")
-    (license license:expat)))
-
 (define-public r-shiny-telemetry
   (package
     (name "r-shiny-telemetry")
@@ -50187,16 +50193,23 @@ negative rate and symptom based administration of diagnostic tests.
 (define-public r-sei
   (package
     (name "r-sei")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SEI" version))
        (sha256
-        (base32 "0ncrsqai3zp7f0yx3h905645kd31zcf3qlcy08ah5v4qbdzdb7fh"))))
+        (base32 "14qcj2bw11xqh9ff3mpxfmcd0mg61lsdqc1cg4ffd507knf0kb2m"))))
     (properties `((upstream-name . "SEI")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts r-ggplot2 r-fitdistrplus))
+    (propagated-inputs (list r-zoo
+                             r-xts
+                             r-lmom
+                             r-ggplot2
+                             r-gamlss-dist
+                             r-gamlss
+                             r-flexsurv
+                             r-fitdistrplus))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/noeliaof/SEI")
     (synopsis "Calculating Standardised Indices")
@@ -50205,8 +50218,8 @@ negative rate and symptom based administration of diagnostic tests.
 that can be used to monitor variables on a common and probabilistically
 interpretable scale.  The indices can be aggregated and rescaled to different
 time scales, visualised using plot capabilities, and calculated using a range of
-distributions.  This includes flexible non- and semi-parametric methods, as
-suggested by Allen and Otero (2023) <doi:10.1016/j.renene.2023.119206>.")
+distributions.  This includes flexible non-parametric and non-stationary
+methods.")
     (license license:gpl2+)))
 
 (define-public r-sehrnett
@@ -50673,13 +50686,13 @@ implementation of the FFORMS algorithm.  For more details see our paper at
 (define-public r-seeker
   (package
     (name "r-seeker")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seeker" version))
        (sha256
-        (base32 "14gxxa7d929ynlrsxz24nprfy1q2x51lh2zxg8wpi3yswphkvd6b"))))
+        (base32 "0xzlm0ph1g88ccv1f4k7nicsmmzcsdxmwbzpdx8vvpfihjy808qa"))))
     (properties `((upstream-name . "seeker")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -56021,13 +56034,13 @@ data (Tran et.al. (2021) <DOI:10.1038/s41467-021-21312-2>).")
 (define-public r-scdensity
   (package
     (name "r-scdensity")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scdensity" version))
        (sha256
-        (base32 "173xm3bf8vxl30zk4n451al7m003byg9q4d1l1pfyfa4xnv8qdg9"))))
+        (base32 "00r06syfhg26mhnpnkvswgyqyagxh35j1jxg4ay72l4d05b9pnkg"))))
     (properties `((upstream-name . "scdensity")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-lpsolve))
@@ -56044,7 +56057,7 @@ function in stats', allowing shape-restricted estimates to be obtained with
 little effort.  The methods implemented in this package are described in Wolters
 and Braun (2017) <doi:10.1080/03610918.2017.1288247>, Wolters (2012)
 <doi:10.18637/jss.v047.i06>, and Hall and Huang (2002)
-<http://www3.stat.sinica.edu.tw/statistica/j12n4/j12n41/j12n41.htm>.  See the
+<https://www3.stat.sinica.edu.tw/statistica/j12n4/j12n41/j12n41.htm>.  See the
 scdensity() help for for full citations.")
     (license license:gpl2)))
 
