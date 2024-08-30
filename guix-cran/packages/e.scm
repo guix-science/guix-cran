@@ -3910,6 +3910,28 @@ maps allows their components to evolve over a continuous period of time or by
 periods.")
     (license license:bsd-2)))
 
+(define-public r-evola
+  (package
+    (name "r-evola")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "evola" version))
+       (sha256
+        (base32 "1hji6pzvahqk2kww30fkk2p7j5157w3jbvi5b92r3avjrvvmfzp5"))))
+    (properties `((upstream-name . "evola")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-crayon r-alphasimr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=evola")
+    (synopsis "Evolutionary Algorithm")
+    (description
+     "Runs a genetic algorithm using the @code{AlphaSimR} machinery
+<doi:10.1093/g3journal/jkaa017> and the coalescent simulator @code{MaCS}
+<doi:10.1101/gr.083634.108>.")
+    (license license:gpl2+)))
+
 (define-public r-evobir
   (package
     (name "r-evobir")
@@ -19618,30 +19640,27 @@ represents the results of the previous function.")
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
-    (version "1.5.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecmwfr" version))
        (sha256
-        (base32 "0bicldir8cmfd25wzmqhcawv94q2xmqwbzsqbk08w9y8x6yhxhic"))))
+        (base32 "1lfz5924nxknadfi1vg112wjn32i09wj2gg5gkgdx42pxc7hm17l"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-uuid
-                             r-r6
-                             r-memoise
-                             r-keyring
-                             r-httr
-                             r-getpass
-                             r-curl))
+    (propagated-inputs (list r-r6 r-memoise r-keyring r-httr r-getpass))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/bluegreen-labs/ecmwfr")
     (synopsis "Interface to 'ECMWF' and 'CDS' Data Web Services")
     (description
      "Programmatic interface to the European Centre for Medium-Range Weather Forecasts
-dataset web services (ECMWF; <https://www.ecmwf.int/>) and Copernicus's Climate
-Data Store (CDS; <https://cds.climate.copernicus.eu>).  Allows for easy
-downloads of weather forecasts and climate reanalysis data in R.")
+dataset web services (ECMWF; <https://www.ecmwf.int/>) and Copernicus's Data
+Stores.  Allows for easy downloads of weather forecasts and climate reanalysis
+data in R. Data stores covered include the Climate Data Store (CDS;
+<https://cds-beta.climate.copernicus.eu>), Atmosphere Data Store (ADS;
+<https://ads-beta.atmosphere.copernicus.eu>) and Early Warning Data Store (CEMS;
+<https://ewds-beta.climate.copernicus.eu>).")
     (license license:agpl3)))
 
 (define-public r-ecm

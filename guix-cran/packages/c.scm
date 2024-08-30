@@ -3783,13 +3783,13 @@ and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
 (define-public r-csquares
   (package
     (name "r-csquares")
-    (version "0.0.7")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csquares" version))
        (sha256
-        (base32 "0ah6w153vawv4047196rcwpd1vrs8czya8pl1pmxdqm2kn0g7f9x"))))
+        (base32 "0x748vc146ynf2hkpb701nqnya1lkzsyplfz13v7pfn0zaw7639j"))))
     (properties `((upstream-name . "csquares")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -5989,16 +5989,16 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "0l65mxajhzdxwwx31mlfx38fsgkwd9iziyn8a6cca9pjhkf7qldg"))))
+        (base32 "1nzps0b63p44402m4vsjiz35bbishpgdmggy0wfmvh5clpfwnswy"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-geepack r-gee r-dplyr))
+    (propagated-inputs (list r-mass r-ggplot2 r-gee r-dplyr))
     (home-page "https://cran.r-project.org/package=CrossCarry")
     (synopsis "Analysis of Data from a Crossover Design with GEE")
     (description
@@ -14854,13 +14854,13 @@ non-regular canvas.")
 (define-public r-contingencytables
   (package
     (name "r-contingencytables")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contingencytables" version))
        (sha256
-        (base32 "1cp5cmvcxqzsagkmy4h612zrfxvaiv0ililvnzbcpxlxva3xmyba"))))
+        (base32 "0fy5rrwkas8rxvl08vvhxzcdddkhd3qy9fxxx0sgjw034k3fps3h"))))
     (properties `((upstream-name . "contingencytables")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-boot))
@@ -31092,13 +31092,13 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "0x888796760gglxqzd0i5mqim3j878dkyip64m26irprl9ksyxm3"))))
+        (base32 "0mkbrmls6c4pqw4hckl7ph5jchq1i7mn2l03x2a6qql65xlq110g"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (propagated-inputs (list r-websocket
@@ -41372,6 +41372,27 @@ scores and interpretations from raw data.")
 Annuity loan functions.  Also computes Loan Amortization Schedules including
 schedules with irregular payments.")
     (license license:gpl3)))
+
+(define-public r-capesdata
+  (package
+    (name "r-capesdata")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "capesData" version))
+       (sha256
+        (base32 "0g1frx57ch0b80dbf08a5yba2zxbizdqb9xpjjdy0l0idkc0vxfm"))))
+    (properties `((upstream-name . "capesData")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=capesData")
+    (synopsis "Data on Scholarships in CAPES International Mobility Programs")
+    (description
+     "Information on activities to promote scholarships in Brazil and abroad for
+international mobility programs, recorded in Capes computerized payment systems.
+ The CAPES database refers to international mobility programs for the period
+from 2010 to 2019 <https://dadosabertos.capes.gov.br/dataset/>.")
+    (license license:cc0)))
 
 (define-public r-caper
   (package

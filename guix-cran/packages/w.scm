@@ -2547,6 +2547,28 @@ for depths beyond 26.  For a reference to letter-values see Heike Hofmann and
 Hadley Wickham and Karen Kafadar (2017) <doi:10.1080/10618600.2017.1305277>.")
     (license license:expat)))
 
+(define-public r-woakmedoids
+  (package
+    (name "r-woakmedoids")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WOAkMedoids" version))
+       (sha256
+        (base32 "0hh5dkjzqxwkzx5d28cywr9q5bdk3a44md57irj3gp6bd00rv0p6"))))
+    (properties `((upstream-name . "WOAkMedoids")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-proxy r-dtwclust r-cluster))
+    (home-page "https://cran.r-project.org/package=WOAkMedoids")
+    (synopsis "Whale Optimization Algorithm for K-Medoids Clustering")
+    (description
+     "This package implements the Whale Optimization Algorithm(WOA) for k-medoids
+clustering, providing tools for effective and efficient cluster analysis in
+various data sets.  The methodology is based on \"The Whale Optimization
+Algorithm\" by Mirjalili and Lewis (2016) <doi:10.1016/j.advengsoft.2016.01.008>.")
+    (license license:gpl2+)))
+
 (define-public r-wnominate
   (package
     (name "r-wnominate")
@@ -4450,6 +4472,30 @@ Political Analysis 14 (2) <DOI:10.1093/pan/mpj004>; and Gary King and Langche
 Zeng, 2007, \"When Can History Be Our Guide? The Pitfalls of Counterfactual
 Inference,\" International Studies Quarterly 51 (March)
 <DOI:10.1111/j.1468-2478.2007.00445.x>.")
+    (license license:gpl3+)))
+
+(define-public r-wh
+  (package
+    (name "r-wh")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WH" version))
+       (sha256
+        (base32 "0hvlyb3vb4lk4sn6vqj80y0ps5jx8fdlcniiqhy803v04cph7v4y"))))
+    (properties `((upstream-name . "WH")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GuillaumeBiessy/WH")
+    (synopsis "Enhanced Implementation of Whittaker-Henderson Smoothing")
+    (description
+     "An enhanced implementation of Whittaker-Henderson smoothing for the gradation of
+one-dimensional and two-dimensional actuarial tables used to quantify Life
+Insurance risks.  WH is based on the methods described in Biessy (2023)
+<doi:10.48550/@code{arXiv.2306.06932>}.  Among other features, it generalizes
+the original smoothing algorithm to maximum likelihood estimation, automatically
+selects the smoothing parameter(s) and extrapolates beyond the range of data.")
     (license license:gpl3+)))
 
 (define-public r-wgteff

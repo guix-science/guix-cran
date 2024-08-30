@@ -804,13 +804,13 @@ multivariate normality proposed by Villasenor-Alva and Gonzalez-Estrada (2009)."
 (define-public r-mvs
   (package
     (name "r-mvs")
-    (version "1.0.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvs" version))
        (sha256
-        (base32 "1p0782c940chysr4sk746gl9gjxzx7rx8xyxbkdp3y6z0904ib5w"))))
+        (base32 "1fkkxrx5mraa2zlmgq9fgka2rvzn95yzaqby8slhyfpsrzxqwm4y"))))
     (properties `((upstream-name . "mvs")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet r-foreach))
@@ -1382,13 +1382,13 @@ transformation (Korkmaz et al, (2014),
 (define-public r-mvmorph
   (package
     (name "r-mvmorph")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvMORPH" version))
        (sha256
-        (base32 "05d1ipmx69mnmwzpipwjsyamn4m5ifba241zplcfpqm3pi9jarmy"))))
+        (base32 "1ga9ngbanavlix5jhr32924lz45mxwdinx0vrbxh7b594iwb385y"))))
     (properties `((upstream-name . "mvMORPH")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex
@@ -14027,13 +14027,13 @@ resulting sheet(s) as a vector and data in dataframe(s).")
 (define-public r-modeva
   (package
     (name "r-modeva")
-    (version "3.17")
+    (version "3.18.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modEvA" version))
        (sha256
-        (base32 "1c7kv3jn38kxxxgzmpanla5jnhadh3qzvjw8w5bivdmv1gda6yzj"))))
+        (base32 "176m1r3ml30iqsk4mrhsi994ymnpqs2yk1pg0z6lk6vhxgnjrzn1"))))
     (properties `((upstream-name . "modEvA")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra))
@@ -15276,13 +15276,13 @@ Kraus et al. (2011) <doi:10.1007/s00180-011-0244-6>.")
 (define-public r-moc-gapbk
   (package
     (name "r-moc-gapbk")
-    (version "0.1.1")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moc.gapbk" version))
        (sha256
-        (base32 "1d29aiks5qpn983b5yamsw8h0gh9hh4lgjdx0sgi6aj79sg0lfa8"))))
+        (base32 "1zjyaybrjxr2krx66spa93bf2q1zl5izfh6ir3r7w3n02sx9g25y"))))
     (properties `((upstream-name . "moc.gapbk")))
     (build-system r-build-system)
     (propagated-inputs (list r-nsga2r
@@ -15297,13 +15297,7 @@ Kraus et al. (2011) <doi:10.1007/s00180-011-0244-6>.")
     (description
      "This package implements the Multi-Objective Clustering Algorithm Guided by
 a-Priori Biological Knowledge (MOC-@code{GaPBK}) which was proposed by
-Parraga-Alava, J. et.  al. (2018) <doi:10.1186/s13040-018-0178-4>.  It was
-designed for clustering genes based on co-expression, biological coherence,
-compactness, and separation criteria.  However, its flexible design allows it to
-be applied to cluster data of various types and domains.  The algorithm
-optimizes object relationships based on two objective functions using cluster
-quality indexes, incorporating intensification and diversification strategies to
-enhance the search process.")
+Parraga-Alava, J. et.  al. (2018) <doi:10.1186/s13040-018-0178-4>.")
     (license license:gpl2)))
 
 (define-public r-mobsim
@@ -22666,6 +22660,27 @@ of a @code{microRNA} set that co-regulate to a pathway , which reflects the
 degree to which a given pathway is associated with the specific phenotype. (4)
 This package can provide the visualization of the results.")
     (license license:gpl2+)))
+
+(define-public r-mirrorselect
+  (package
+    (name "r-mirrorselect")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mirrorselect" version))
+       (sha256
+        (base32 "1xxgf1w7njylgm8zjp36js8wirxbvc4q0kj6xh8y5lmb7hklnk7i"))))
+    (properties `((upstream-name . "mirrorselect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yulab-utils))
+    (home-page "https://cran.r-project.org/package=mirrorselect")
+    (synopsis "Test CRAN/Bioconductor Mirror Speed")
+    (description
+     "Testing CRAN and Bioconductor mirror speed by recording download time of
+src/base/COPYING (for CRAN) and packages/release/bioc/html/ggtree.html (for
+Bioconductor).")
+    (license license:artistic2.0)))
 
 (define-public r-mirnass
   (package
@@ -35044,13 +35059,13 @@ with normally distributed, binary and count endpoints (Bretz et al. (2005)
 (define-public r-mcpmodgeneral
   (package
     (name "r-mcpmodgeneral")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MCPModGeneral" version))
        (sha256
-        (base32 "0yb60kq9fpcc5h9rbk0v5fnf762fhj5512mjjgjpk8jcnx4s0izp"))))
+        (base32 "011rvj9rp5hj5nwxdkfg1i7n2121pqh8f4hk0dvbyf62121k0gxp"))))
     (properties `((upstream-name . "MCPModGeneral")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mass r-dosefinding))
@@ -38301,6 +38316,43 @@ Molstad and Rothman (2018) <doi:10.1080/10618600.2018.1476249>.")
      "Constructs the normalized Laplacian matrix of a square matrix, returns the
 eigenvectors (singular vectors) and visualization of normalized Laplacian map.")
     (license license:gpl2)))
+
+(define-public r-matrixhmm
+  (package
+    (name "r-matrixhmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MatrixHMM" version))
+       (sha256
+        (base32 "09jzhyzszra40jbxwr1np3s2s59n0gnz6x49c4gzib4fdlngxbdg"))))
+    (properties `((upstream-name . "MatrixHMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-tidyr
+                             r-tensor
+                             r-snow
+                             r-progress
+                             r-mclust
+                             r-laplacesdemon
+                             r-foreach
+                             r-dosnow
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=MatrixHMM")
+    (synopsis
+     "Parsimonious Families of Hidden Markov Models for Matrix-Variate Longitudinal Data")
+    (description
+     "This package implements three families of parsimonious hidden Markov models
+(HMMs) for matrix-variate longitudinal data using the Expectation-Conditional
+Maximization (ECM) algorithm.  The package supports matrix-variate normal, t,
+and contaminated normal distributions as emission distributions.  For each
+hidden state, parsimony is achieved through the eigen-decomposition of the
+covariance matrices associated with the emission distribution.  This approach
+results in a comprehensive set of 98 parsimonious HMMs for each type of emission
+distribution.  Atypical matrix detection is also supported, utilizing the fitted
+(heavy-tailed) models.")
+    (license license:gpl3+)))
 
 (define-public r-matrixeqtl
   (package
@@ -42731,6 +42783,43 @@ and/or clusters to accommodate complex cherry-picking strategies.
 Alternatively, cherry-picking using taxonomic identification MALDI-TOF data is
 made easy with functions to import inconsistently formatted reports.")
     (license license:gpl3+)))
+
+(define-public r-maldicellassay
+  (package
+    (name "r-maldicellassay")
+    (version "0.4.47")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MALDIcellassay" version))
+       (sha256
+        (base32 "0bxspf3i57qz5hybjh3hfasn95m8k3ijfi2js1rsnz8pn9x6isqb"))))
+    (properties `((upstream-name . "MALDIcellassay")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-svmisc
+                             r-scales
+                             r-purrr
+                             r-nplr
+                             r-maldiquantforeign
+                             r-maldiquant
+                             r-ggplot2
+                             r-forcats
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CeMOS-Mannheim/MALDIcellassay")
+    (synopsis "Automated MALDI Cell Assays Using Dose-Response Curve Fitting")
+    (description
+     "Conduct automated cell-based assays using Matrix-Assisted Laser
+Desorption/Ionization (MALDI) methods for high-throughput screening of signals
+responsive to treatments.  The package efficiently identifies high variance
+signals and fits dose-response curves to them.  Quality metrics such as Z', V',
+log2FC, and CRS are provided for evaluating the potential of signals as
+biomarkers.  The methodologies were introduced by Weigt et al. (2018)
+<doi:10.1038/s41598-018-29677-z> and refined by Unger et al. (2021)
+<doi:10.1038/s41596-021-00624-z>.")
+    (license license:expat)))
 
 (define-public r-malaytextr
   (package

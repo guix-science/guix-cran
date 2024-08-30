@@ -7485,13 +7485,13 @@ details.")
 (define-public r-treatmentpatterns
   (package
     (name "r-treatmentpatterns")
-    (version "2.6.7")
+    (version "2.6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreatmentPatterns" version))
        (sha256
-        (base32 "1s6rvsqa4q6nr9vlfmcysn58qw88df05fp638y8yxc791bw120gm"))))
+        (base32 "00vj76jw1pdifsyfrcp0qagqy05lyq1jaf1xnxrfjyk70qjk7f4w"))))
     (properties `((upstream-name . "TreatmentPatterns")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11813,13 +11813,13 @@ simulating various types of multistage designs.")
 (define-public r-tmsens
   (package
     (name "r-tmsens")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tmsens" version))
        (sha256
-        (base32 "0xdcmz2mqfb7agjgmkv4kgschsdlxqsjv5z30z8bpqxbi45x9ry0"))))
+        (base32 "10z4c5dzayhgf73zb64x7gy67j4xw17qmvyj44g9mgczppz4sadi"))))
     (properties `((upstream-name . "tmsens")))
     (build-system r-build-system)
     (home-page "https://github.com/dea-hazewinkel/tmsens")
@@ -13378,6 +13378,34 @@ databases.  Our platform integrates routine analysis and visualization tools for
 expression data to provide concise and intuitive data analysis and presentation.")
     (license license:expat)))
 
+(define-public r-tintin
+  (package
+    (name "r-tintin")
+    (version "0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tintin" version))
+       (sha256
+        (base32 "1pz6nfzd7vj2bhg5g2xzxnx98gd2l67ahjb75x74v84cxl5swsl9"))))
+    (properties `((upstream-name . "tintin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-scales
+                             r-rlang
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=tintin")
+    (synopsis "Tintin Palette Generator")
+    (description
+     "Palettes generated from Tintin covers.  There is one palette per cover, with a
+total of 24 palettes of 5 colours each.  Includes functions to interpolate
+colors in order to create more colors based on the provided palettes.The data is
+based on Cyr, et al. (2004) <doi:10.1503/cmaj.1041405> and Wikipedia
+<https://en.wikipedia.org/wiki/The_Adventures_of_Tintin>.")
+    (license license:expat)))
+
 (define-public r-tinter
   (package
     (name "r-tinter")
@@ -14031,6 +14059,34 @@ correlate two timelines of events.  A brief description is available at
      "Fast general purpose date/time converter using Rust'.  The package implements
 date time, date and epoch time parser for heterogeneous vectors of dates.")
     (license license:expat)))
+
+(define-public r-timeel
+  (package
+    (name "r-timeel")
+    (version "0.9.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeEL" version))
+       (sha256
+        (base32 "1dwm3dk2pa7a9sbarjyavzkj2hpw08k8ljghl4ibjncwv9k0x9zq"))))
+    (properties `((upstream-name . "timeEL")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=timeEL")
+    (synopsis "Time to Event Analysis via Empirical Likelihood Inference")
+    (description
+     "Computation of t-year survival probabilities and t-year risks with right
+censored survival data.  The Kaplan-Meier estimator is used to provide estimates
+for data without competing risks and the Aalen-Johansen estimator is used when
+there are competing risks.  Confidence intervals and p-values are obtained using
+either usual Wald-type inference or empirical likelihood inference, as described
+in Thomas and Grunkemeier (1975) <doi:10.1080/01621459.1975.10480315> and
+Blanche (2020) <doi:10.1007/s10985-018-09458-6>.  Functions for both one-sample
+and two-sample inference are provided.  Unlike Wald-type inference, empirical
+likelihood inference always leads to consistent conclusions, in terms of
+statistical significance, when comparing two risks (or survival probabilities)
+via either a ratio or a difference.")
+    (license license:gpl3+)))
 
 (define-public r-timedf
   (package
@@ -17442,6 +17498,27 @@ to synthesize or predict a tidal time series.")
      "This package implements tic-tac-toe game to play on console, either with human
 or AI players.  Various levels of AI players are trained through the Q-learning
 algorithm.")
+    (license license:expat)))
+
+(define-public r-tican
+  (package
+    (name "r-tican")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tican" version))
+       (sha256
+        (base32 "0mh4x7qa8q5jgvf0zbdqmgv0qqj338b2878ngik98d5jz7iwy138"))))
+    (properties `((upstream-name . "tican")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sjtingle/tican")
+    (synopsis "Plot and Analyse Time-Intensity Data")
+    (description
+     "Plots and analyzes time-intensity curve data, such as data from
+(contrast-enhanced) ultrasound.  Values such as peak intensity, time to peak and
+area under the curve are calculated.")
     (license license:expat)))
 
 (define-public r-tibblify
@@ -26726,13 +26803,13 @@ abstraction.")
 (define-public r-tables
   (package
     (name "r-tables")
-    (version "0.9.28")
+    (version "0.9.31")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tables" version))
        (sha256
-        (base32 "0adkbx8jcjxlx9jhg4ic1jyclx2x8ky9z8zd9x14xw8a94yczlnc"))))
+        (base32 "1378kj6y166p8kgd8jqq795rbd6p7y1qv23kqapmk8ih7qcwy6mq"))))
     (properties `((upstream-name . "tables")))
     (build-system r-build-system)
     (propagated-inputs (list r-knitr r-htmltools))

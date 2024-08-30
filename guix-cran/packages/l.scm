@@ -1659,13 +1659,13 @@ likelihood (PL) or penalized least squares (PLS).  For details, please see Huang
 (define-public r-lsirm12pl
   (package
     (name "r-lsirm12pl")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsirm12pl" version))
        (sha256
-        (base32 "0fsn1p9jdh3v64b473g1jz0nv0vr1psza9s4lijflyc2rmgnx9cd"))))
+        (base32 "1sq54klskfdml2qyp7n0cc3zk58hk4x80izn3dnkslys1lj5adah"))))
     (properties `((upstream-name . "lsirm12pl")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -3099,6 +3099,53 @@ generally instead of specifying parts of matrices to estimate.")
 randomly, with taxonomic bias and with anatomical bias.  LOST also includes
 functions for estimating linear and geometric morphometric data.")
     (license license:gpl2+)))
+
+(define-public r-lorme
+  (package
+    (name "r-lorme")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LorMe" version))
+       (sha256
+        (base32 "19vb0rg8xffzhfwrwnnhaa5h8c1yyjygmndfkvlhbngkvv6408n6"))))
+    (properties `((upstream-name . "LorMe")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rcolorbrewer
+                             r-multcompview
+                             r-magrittr
+                             r-igraph
+                             r-hmisc
+                             r-hh
+                             r-ggpubr
+                             r-ggplot2
+                             r-ggalluvial
+                             r-fdrtool
+                             r-dplyr
+                             r-desctools
+                             r-coin
+                             r-ape
+                             r-agricolae))
+    (home-page "https://cran.r-project.org/package=LorMe")
+    (synopsis "Lightening One-Code Resolving Microbial Ecology Solution")
+    (description
+     "This package provides a robust collection of functions tailored for microbial
+ecology analysis, encompassing both data analysis and visualization.  It
+introduces an encapsulation feature that streamlines the process into a summary
+object.  With the initial configuration of this summary object, users can
+execute a wide range of analyses with a single line of code, requiring only two
+essential parameters for setup.  The package delivers comprehensive outputs
+including analysis objects, statistical outcomes, and visualization-ready data,
+enhancing the efficiency of research workflows.  Designed with user-friendliness
+in mind, it caters to both novices and seasoned researchers, offering an
+intuitive interface coupled with adaptable customization options to meet diverse
+analytical needs.")
+    (license license:gpl3)))
 
 (define-public r-lori
   (package

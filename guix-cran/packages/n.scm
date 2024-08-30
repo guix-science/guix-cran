@@ -9901,6 +9901,37 @@ model fits.  See Williams et al 2016 <doi:10.1038/ng.3489> and Williams et al
 2017 <doi:10.1101/096305> for further details of the method.")
     (license license:expat)))
 
+(define-public r-neuroup
+  (package
+    (name "r-neuroup")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "neuroUp" version))
+       (sha256
+        (base32 "0j8czjpw3inj1nmca55cz0yxwffdcwdr8vjq0z9c0diij9460lb7"))))
+    (properties `((upstream-name . "neuroUp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rlang
+                             r-psychometric
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr
+                             r-bootstrap))
+    (native-inputs (list r-knitr))
+    (home-page "https://eduardklap.github.io/neuroUp/")
+    (synopsis
+     "Plan Sample Size for Task fMRI Research using Bayesian Updating")
+    (description
+     "Calculate the precision in mean differences (raw or Cohen's D) and correlation
+coefficients for different sample sizes.  Uses permutations of the collected
+functional magnetic resonance imaging (@code{fMRI}) region of interest data.
+Method described in Klapwijk, Jongerling, Hoijtink and Crone (2024)
+<doi:10.31234/osf.io/cz32t>.")
+    (license license:expat)))
+
 (define-public r-neurosim
   (package
     (name "r-neurosim")

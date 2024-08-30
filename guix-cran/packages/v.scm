@@ -129,13 +129,13 @@ for details.")
 (define-public r-vvtableau
   (package
     (name "r-vvtableau")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vvtableau" version))
        (sha256
-        (base32 "0l5ma8004zw69w55qvdmrl1jzg25bp69szyhqddn2h5qcnbg9r1j"))))
+        (base32 "1d2d8zd6zp9dsmmzjrslhjkm41312g7dl0a333yrs57cwzxarc5l"))))
     (properties `((upstream-name . "vvtableau")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -1006,6 +1006,29 @@ Plankton Recorder data.  This package was developed at Bedford Institute of
 Oceanography'.  Functions are designed to process automated image classification
 output and create organized and easily portable data products.")
     (license license:expat)))
+
+(define-public r-vpdtw
+  (package
+    (name "r-vpdtw")
+    (version "2.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "VPdtw" version))
+       (sha256
+        (base32 "0ya9wa0wzv8z9cc8gyrwdvk7vsil45j37xjz46p04c0cgzr0l7mb"))))
+    (properties `((upstream-name . "VPdtw")))
+    (build-system r-build-system)
+    (home-page "https://github.com/ethanbass/VPdtw/")
+    (synopsis "Variable Penalty Dynamic Time Warping")
+    (description
+     "Variable Penalty Dynamic Time Warping (VPdtw) for aligning chromatographic
+signals.  With an appropriate penalty this method performs good alignment of
+chromatographic data without deforming the peaks (Clifford, D., Stone, G.,
+Montoliu, I., Rezzi S., Martin F., Guy P., Bruce S., and Kochhar S.(2009)
+<doi:10.1021/ac802041e>; Clifford, D. and Stone, G. (2012)
+<doi:10.18637/jss.v047.i08>).")
+    (license license:gpl2)))
 
 (define-public r-vpc
   (package
@@ -4174,13 +4197,13 @@ Geosci.  Model Dev., 11, 3481-3496, <doi:10.5194/gmd-11-3481-2018>\".")
 (define-public r-viafr
   (package
     (name "r-viafr")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "viafr" version))
        (sha256
-        (base32 "1cxmk82cr2ci99j7wgfp7slqwyk5rxv109mk2c09mxqn3pdavil9"))))
+        (base32 "1b8gxn1zbr032xp11247agqyhi3iypr65a9jvkgg57l6b92hf6cq"))))
     (properties `((upstream-name . "viafr")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8

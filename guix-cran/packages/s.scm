@@ -13124,13 +13124,13 @@ constructed from stock market prices or returns, as explained in Andersen et al.
 (define-public r-startupmsg
   (package
     (name "r-startupmsg")
-    (version "0.9.6.1")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startupmsg" version))
        (sha256
-        (base32 "10aqls30yqi2mzy1ph8s67rji4kww95cs94ba4hz9wg9bzm4w6s3"))))
+        (base32 "17h57636d0c1wcidw5ivqqf4wpyy402i24rj0vl5yszj99szgy29"))))
     (properties `((upstream-name . "startupmsg")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=startupmsg")
@@ -14991,13 +14991,13 @@ autoregression methods.")
 (define-public r-ssn2
   (package
     (name "r-ssn2")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSN2" version))
        (sha256
-        (base32 "05q6vhpf305jqq9spkiwkyam6l9rjj4vhdvq1lf1a1dmync7i4x7"))))
+        (base32 "0yzhg5pvmm7bpv8c2qy345iv4r3s2liaxwmz87p9fscv01wx7m3i"))))
     (properties `((upstream-name . "SSN2")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -15880,13 +15880,13 @@ needed to pre-installed.  Hanzelmann, S., Castelo, R., and Guinney, J. (2013)
 (define-public r-ssdforr
   (package
     (name "r-ssdforr")
-    (version "1.5.34")
+    (version "1.5.35")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSDforR" version))
        (sha256
-        (base32 "12lrvh9231cix5lkc53cf4fk11sfa89011kj2qddk3lkmcyvcwfz"))))
+        (base32 "0x8wkck67n74wdx6my8hfv1iz9dyh88ai1ipjkljjsfjmcgfg23q"))))
     (properties `((upstream-name . "SSDforR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ttr
@@ -48354,13 +48354,13 @@ Cochran-Mantel-Haenszel-Birch tests and sensitivity analyses for one or two
 (define-public r-sensitivity
   (package
     (name "r-sensitivity")
-    (version "1.30.0")
+    (version "1.30.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensitivity" version))
        (sha256
-        (base32 "1larcjjl3yy8rk448m0k77h9bc1mfsm7n8wxf6i2ig2fbyh1rlkl"))))
+        (base32 "1k9ka5jszlrbgz57383632znv7n2vdnbf81scmqh87jyay7bp55m"))))
     (properties `((upstream-name . "sensitivity")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -58186,13 +58186,13 @@ R in just one step.")
 (define-public r-sas7bdat
   (package
     (name "r-sas7bdat")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sas7bdat" version))
        (sha256
-        (base32 "0pwmngwmkybz64sqby86vzxq5wwfkh5hxnqncdv0fmp6w6x7jhjn"))))
+        (base32 "1ml9r4am13c3f0lmhzxl5m9v0lgkjb7cylfasqn7ghc27cc9yx70"))))
     (properties `((upstream-name . "sas7bdat")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=sas7bdat")
@@ -58200,8 +58200,8 @@ R in just one step.")
     (description
      "Documentation and prototypes for the earliest (circa 2010) open-source effort to
 reverse engineer the sas7bdat file format.  The package includes a prototype
-reader for sas7bdat files.  However, newer packages (notably the haven package)
-contain more robust readers for sas7bdat files.")
+reader for sas7bdat files.  However, newer packages may contain more robust
+readers for sas7bdat files.")
     (license license:gpl2+)))
 
 (define-public r-sarsop
@@ -59265,13 +59265,13 @@ cancer data <@code{arXiv:2012.06093>}.")
 (define-public r-samtool
   (package
     (name "r-samtool")
-    (version "1.6.4")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SAMtool" version))
        (sha256
-        (base32 "187j6i0giq45mgg1bb33ssiryipdk7ahc8jpimij3icxy9v73d4b"))))
+        (base32 "136g14lbdn07d24v46crbbmws3y2aj0qp8d0afazb0yqkb67nzxw"))))
     (properties `((upstream-name . "SAMtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-vars
@@ -61861,13 +61861,13 @@ object and thus all methods of the biclust package can be applied.")
 (define-public r-s3fs
   (package
     (name "r-s3fs")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3fs" version))
        (sha256
-        (base32 "18v81w2b7xgq8x66x3z893bg456qq38v1f9n4xx12vhk45sh8y2h"))))
+        (base32 "16692xrdgvijhdaqaysr61bl8hfjx0li7xnbk9rbnvj4g196zq2n"))))
     (properties `((upstream-name . "s3fs")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6

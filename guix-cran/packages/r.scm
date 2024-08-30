@@ -183,6 +183,36 @@ weather stations from the ZENTRA Cloud API
 and direct communication with Zabbix API from R'.")
     (license license:gpl2)))
 
+(define-public r-rywaasb
+  (package
+    (name "r-rywaasb")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rYWAASB" version))
+       (sha256
+        (base32 "085j9i072iyafkx7yn1sb8y91yd4kwdiicgr2h3k2kar2znhwim0"))))
+    (properties `((upstream-name . "rYWAASB")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abeyran/Stability1")
+    (synopsis "Simultaneous Selection of Trait and WAASB Index")
+    (description
+     "Proposes a new ranking algorithm that utilizes a \"Y*WAASB\" biplot generated from
+the metan package.  The aim of the package is to effectively distinguish the
+top-ranked genotypes.  For a detailed explanation of the process of obtaining a
+\"Y*WAASB\" biplot and the related data, please refer to the manual included in
+this package as well as the study by Olivoto & LÃºcio (2020)
+<doi:10.1111/2041-210X.13384>.  In this context, \"WAASB\" refers to the \"Weighted
+Average of Absolute Scores\" provided by Olivoto et al. (2019)
+<doi:10.2134/agronj2019.03.0220>, which quantifies the stability of genotypes
+across different environments using linear mixed-effect models.  In order to run
+the package, it is necessary to extract the \"WAASB\" coefficients using the metan
+package.")
+    (license license:gpl3)))
+
 (define-public r-rytstat
   (package
     (name "r-rytstat")
@@ -2229,13 +2259,13 @@ equally and unequally spaced time series.")
 (define-public r-runmcmcbtadjust
   (package
     (name "r-runmcmcbtadjust")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "runMCMCbtadjust" version))
        (sha256
-        (base32 "1m4f0vx69y060pm1asbbk166y0ih0vmqywwwc7fn8c4frj07g40k"))))
+        (base32 "1gplz947hschc5kwm5rd70hvs4d582cs4m7mvlsxhh536xrdf3j2"))))
     (properties `((upstream-name . "runMCMCbtadjust")))
     (build-system r-build-system)
     (propagated-inputs (list r-coda))
@@ -12758,18 +12788,18 @@ different colour metrics for the conversion.")
 (define-public r-rollup
   (package
     (name "r-rollup")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rollup" version))
        (sha256
-        (base32 "0nb58m30h7hy1irvws82khc6475w8ywbg07hiwdagzqzlrygiwfb"))))
+        (base32 "1d22kp4qdw9wj365y9q375mhkczadfyjn8k1py4c84hnbp680kba"))))
     (properties `((upstream-name . "rollup")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-sparklyr r-rlang r-magrittr r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=rollup")
+    (home-page "https://juyoungahn.github.io/rollup/")
     (synopsis "Tidy Grouping Set Aggregation")
     (description
      "This package provides a Tidy implementation of grouping sets', rollup and cube -
@@ -15287,21 +15317,17 @@ Statistical Software 69(9), 1-36, <doi:10.18637/jss.v069.i09>.")
 (define-public r-robotstxt
   (package
     (name "r-robotstxt")
-    (version "0.7.13")
+    (version "0.7.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robotstxt" version))
        (sha256
-        (base32 "1x5sachf7g5c2aj1mg3z2lf60723k1ad80bdr89szkgi92jkfal7"))))
+        (base32 "1pjspm9cw25mmsg7hxpp51ni76wlqi72avkar1fg5j7x8j5xj8ch"))))
     (properties `((upstream-name . "robotstxt")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-spiderbar
-                             r-magrittr
-                             r-httr
-                             r-future-apply
-                             r-future))
+    (propagated-inputs (list r-stringr r-spiderbar r-magrittr r-httr
+                             r-future-apply))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/robotstxt/")
     (synopsis

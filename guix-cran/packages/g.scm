@@ -6028,13 +6028,13 @@ tidyverse compatible representations of estimated smooths.")
 (define-public r-grates
   (package
     (name "r-grates")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grates" version))
        (sha256
-        (base32 "1sqvrjyv8ncls9nvhfw6y4nyfdc349n8hyrmnfbqlm2rdhgnf6qr"))))
+        (base32 "11014vf4w7l5hsx9r9c6r6y5vn1i3avrgs58wsymxrq9nhpphcbk"))))
     (properties `((upstream-name . "grates")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -12184,13 +12184,13 @@ described in Friedman et al. (2010) <doi:10.18637/jss.v033.i01> and Simon et al.
 (define-public r-glmnetr
   (package
     (name "r-glmnetr")
-    (version "0.5-2")
+    (version "0.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmnetr" version))
        (sha256
-        (base32 "1iw9xpai55dyz5k80f469i0czcqsa9ws7j13dcdj6m6nlw6fwiac"))))
+        (base32 "1kk0wf59blxjr35wcamb7wfggnskk3q02mx3z8lcjlrhmbdl6mm4"))))
     (properties `((upstream-name . "glmnetr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -12425,13 +12425,13 @@ calculation, data simulation, and more.  See
 (define-public r-glmmpen
   (package
     (name "r-glmmpen")
-    (version "1.5.4.4")
+    (version "1.5.4.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmPen" version))
        (sha256
-        (base32 "0vmgzmdrhkvlm6z80ia7b195zhspi75ks3ha7jnrayxnrrzfvqxb"))))
+        (base32 "1rlwfw54scd0l9n1jisf9dxjddc5fzw8ryakgdxk8k9zs5jzscbd"))))
     (properties `((upstream-name . "glmmPen")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -14109,13 +14109,13 @@ that the data are optimally primed for precise and thorough analysis.")
 (define-public r-giscor
   (package
     (name "r-giscor")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "giscoR" version))
        (sha256
-        (base32 "0j2nqv3l25j39jn6bndj5hafr2k88324jap4zwcx22mxkamb6m8g"))))
+        (base32 "1zdm79h9mxwv72y9s1nznr39zxrpl4jmqyb6b9nc7nnij9w145yf"))))
     (properties `((upstream-name . "giscoR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-rappdirs r-jsonlite r-geojsonsf
@@ -16368,13 +16368,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "0zb97wnhlwvi5kd7q20ah5hk3775c7lx7avp32gq5kj0xx7ck647"))))
+        (base32 "01gvxrpp9a9kbkgc4qqg4rzkk55j9n9hdp9mq7zmap5i0rpx47f9"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))
@@ -21544,13 +21544,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.0")
+    (version "3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "1rpzmpswss5z5ya4xwrfg4dmza9il790alwb3zv5ksfzsvfhqmwh"))))
+        (base32 "14a8r2rha89gdv3yb4rf8kjla32i2858mpf02r9s4xhl1rsg4qb4"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

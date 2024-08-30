@@ -1066,6 +1066,39 @@ exploration of the bullwhip effect,i.e, the increase in demand variability along
 the supply chain.  Marchena Marlene (2010) <@code{arXiv:1009.3977>}.")
     (license license:gpl3)))
 
+(define-public r-bullseye
+  (package
+    (name "r-bullseye")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bullseye" version))
+       (sha256
+        (base32 "03lzd4xw9yh3kgp53w3cpli6n0m8z1ww5744pii35vyw9456bdik"))))
+    (properties `((upstream-name . "bullseye")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-polycor
+                             r-labeling
+                             r-ggplot2
+                             r-ggiraph
+                             r-dplyr
+                             r-dendser
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://cbhurley.github.io/bullseye/")
+    (synopsis
+     "Visualising Multiple Pairwise Variable Correlations and Other Scores")
+    (description
+     "We provide a tidy data structure and visualisations for multiple or grouped
+variable correlations, general association measures scagnostics and other
+pairwise scores suitable for numerical, ordinal and nominal variables.
+Supported measures include distance correlation, maximal information, ace
+correlation, Kendall's tau, and polychoric correlation.")
+    (license license:expat)))
+
 (define-public r-bullishtrader
   (package
     (name "r-bullishtrader")
@@ -1565,13 +1598,13 @@ Lee 2005 <doi:10.1509/jmkr.2005.42.4.415>) models.")
 (define-public r-bttest
   (package
     (name "r-bttest")
-    (version "0.10.2")
+    (version "0.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BTtest" version))
        (sha256
-        (base32 "1p32i8fynjh3dkp1jk92v8wa3x9hw4hr9rjvsj6gz7cp79596fb3"))))
+        (base32 "1bp7x9j3ckndsga8q8j1k0vlz0pfsw6n6nmqwl2zzm9v2inc3jvi"))))
     (properties `((upstream-name . "BTtest")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -21916,13 +21949,13 @@ using the algorithms summarized in Makalic and Schmidt (2016)
 (define-public r-bayesrecon
   (package
     (name "r-bayesrecon")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesRecon" version))
        (sha256
-        (base32 "11gmav4cb89fmlpwg387sik3fllvscgn778c5smwnk5lp5sl430j"))))
+        (base32 "1vnnf709m5mq2bbf9z2287paymv25pm6jzncm99zkpwqjilq9rh2"))))
     (properties `((upstream-name . "bayesRecon")))
     (build-system r-build-system)
     (propagated-inputs (list r-lpsolve))
@@ -27679,6 +27712,36 @@ aggregating (bagging) to improve robustness by reducing the possible masking
 effect and subsequent high variance (similarly to Isolation Forest), hence the
 name \"Bagged @code{OutlierTrees}\".  To learn more about the base procedure
 @code{OutlierTree} (Cortes, 2020), please refer to <@code{arXiv:2001.00636>}.")
+    (license license:expat)))
+
+(define-public r-bage
+  (package
+    (name "r-bage")
+    (version "0.7.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bage" version))
+       (sha256
+        (base32 "1pld907impj1l4sbr8ndk9dsxcy6kzlb799pni2pqldriaax1xwc"))))
+    (properties `((upstream-name . "bage")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tmb
+                             r-tibble
+                             r-rvec
+                             r-rcppeigen
+                             r-poputils
+                             r-matrixstats
+                             r-matrix
+                             r-generics
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://bayesiandemography.github.io/bage/")
+    (synopsis "Bayesian Estimation and Forecasting of Age-Specific Rates")
+    (description
+     "Fast Bayesian estimation and forecasting of age-specific rates, probabilities,
+and means, based on Template Model Builder'.")
     (license license:expat)))
 
 (define-public r-baffle

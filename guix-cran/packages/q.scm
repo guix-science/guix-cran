@@ -1630,6 +1630,74 @@ occurrence, readability, and lexical diversity.  These functions extend the
 quanteda package and are specially designed for sparse textual data.")
     (license license:gpl3)))
 
+(define-public r-quanteda-textplots
+  (package
+    (name "r-quanteda-textplots")
+    (version "0.95")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textplots" version))
+       (sha256
+        (base32 "1lgardgbwc3rhla6bxq4cy4wif7w0s3s5pyvyswb9fz6yyfw0wrk"))))
+    (properties `((upstream-name . "quanteda.textplots")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-sna
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-quanteda
+                             r-network
+                             r-matrix
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2
+                             r-extrafont))
+    (home-page "https://cran.r-project.org/package=quanteda.textplots")
+    (synopsis "Plots for the Quantitative Analysis of Textual Data")
+    (description
+     "Plotting functions for visualising textual data.  Extends quanteda and related
+packages with plot methods designed specifically for text data, textual
+statistics, and models fit to textual data.  Plot types include word clouds,
+lexical dispersion plots, scaling plots, network visualisations, and word
+keyness plots.")
+    (license license:gpl3)))
+
+(define-public r-quanteda-textmodels
+  (package
+    (name "r-quanteda-textmodels")
+    (version "0.9.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "quanteda.textmodels" version))
+       (sha256
+        (base32 "0msad04i2rjgwq0shr6jzpshv8h1yvpk5lhv2wqkajdyyk2v5k9c"))))
+    (properties `((upstream-name . "quanteda.textmodels")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi
+                             r-sparsem
+                             r-rspectra
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-quanteda
+                             r-matrix
+                             r-liblinear
+                             r-glmnet))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/quanteda/quanteda.textmodels")
+    (synopsis "Scaling Models and Classifiers for Textual Data")
+    (description
+     "Scaling models and classifiers for sparse matrix objects representing textual
+data in the form of a document-feature matrix.  Includes original
+implementations of Laver', Benoit', and Garry's (2003)
+<doi:10.1017/S0003055403000698>, Wordscores model, the Perry and Benoit (2017)
+<doi:10.48550/@code{arXiv.1710.08963>} class affinity scaling model, and the
+Slapin and Proksch (2008) <doi:10.1111/j.1540-5907.2008.00338.x> wordfish model,
+as well as methods for correspondence analysis, latent semantic analysis, and
+fast Naive Bayes and linear SVMs specially designed for sparse textual data.")
+    (license license:gpl3)))
+
 (define-public r-quantdr
   (package
     (name "r-quantdr")
@@ -2802,13 +2870,13 @@ can also be used as a standalone package for text analysis.")
 (define-public r-qte-rd
   (package
     (name "r-qte-rd")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QTE.RD" version))
        (sha256
-        (base32 "0svm97qm08ma201layin6lmym737d1gykcvlbq9n8nycria4sdfh"))))
+        (base32 "13cs1l2x0lz36zpy8bpz0jwgq5yg4rm7vvjsaadzli5drky6ymip"))))
     (properties `((upstream-name . "QTE.RD")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-plotrix))
@@ -5388,25 +5456,28 @@ and EWMA charts.  Operating characteristic curves.  Process capability analysis.
 (define-public r-qcba
   (package
     (name "r-qcba")
-    (version "0.5.1")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qCBA" version))
        (sha256
-        (base32 "1r9khpmdxjcnlbx4ccg26vsyp3wdc06bvlx9yl9zm4kwfi68aj9y"))))
+        (base32 "0dayvrhy3y0ksslgxiwwv330k0x7cqmpjjz2l4z6c8s2mjz0j9iv"))))
     (properties `((upstream-name . "qCBA")))
     (build-system r-build-system)
     (inputs (list openjdk))
-    (propagated-inputs (list r-rjava r-arules r-arc))
+    (propagated-inputs (list r-rjava r-arulescba r-arules r-arc))
     (home-page "https://github.com/kliegr/QCBA")
-    (synopsis "Quantitative Classification by Association Rules")
+    (synopsis
+     "Postprocessing of Rule Classification Models Learnt on Quantized Data")
     (description
-     "CBA postprocessing algorithm that creates smaller models for datasets containing
-quantitative (numerical) attributes.  Article describing QCBA is published in
-Tomas Kliegr (2017) <@code{arXiv:1711.10166>}.  The package can also postprocess
-results of the SBRL package, which is no longer in CRAN, but can be obtained
-from <https://github.com/cran/sbrl>.")
+     "This package implements the Quantitative Classification-based on Association
+Rules (QCBA) algorithm (<doi:10.1007/s10489-022-04370-x>).  QCBA postprocesses
+rule classification models making them typically smaller and in some cases more
+accurate.  Supported are CBA implementations from @code{rCBA}', @code{arulesCBA}
+and arc packages, and CPAR', CMAR', FOIL2 and PRM implementations from
+@code{arulesCBA} package and SBRL implementation from the sbrl package.  The
+result of the post-processing is an ordered CBA-like rule list.")
     (license license:gpl3)))
 
 (define-public r-qcauchyreg

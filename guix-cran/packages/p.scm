@@ -7591,13 +7591,13 @@ More information can be found in @code{McLain}, Zgodic, and Bondell (2022)
 (define-public r-probbreed
   (package
     (name "r-probbreed")
-    (version "1.0.4.1")
+    (version "1.0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ProbBreed" version))
        (sha256
-        (base32 "1m224wxzighadp8gdch4fg8pc5df4xphf75ixq6r99x7klp4mcah"))))
+        (base32 "05rzc77swaig5k9nyzgswm6nn8p9ifhhfycwwla9lm6rrlxjzdmx"))))
     (properties `((upstream-name . "ProbBreed")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -14027,13 +14027,13 @@ multivariate seasonal time series models.")
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portalr" version))
        (sha256
-        (base32 "1i241nn694nyyljldpsah1555spbhksassf7i18pmqigzpk01qix"))))
+        (base32 "17djwiid9mp16ch7yyyqpg7ixm61wqhgb1h4k8gqnyh399wjkazc"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -14046,16 +14046,15 @@ multivariate seasonal time series models.")
                              r-httr
                              r-forecast
                              r-dplyr
-                             r-crayon
-                             r-clisymbols
-                             r-clipr))
+                             r-clipr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://weecology.github.io/portalr/")
     (synopsis "Create Useful Summaries of the Portal Data")
     (description
      "Download and generate summaries for the rodent, plant, ant, and weather data
 from the Portal Project.  Portal is a long-term (and ongoing) experimental
-monitoring site in the Chihuahua desert.  The raw data files can be found at
+monitoring site in the Chihuahuan desert.  The raw data files can be found at
 <https://github.com/weecology/portaldata>.")
     (license license:expat)))
 

@@ -3641,13 +3641,13 @@ Sabri Taylanâs @code{PhD} dissertation.")
 (define-public r-atable
   (package
     (name "r-atable")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atable" version))
        (sha256
-        (base32 "1dyg7zc19518dp3yxgyhcfklkmard9iwjkbnsl6sx5wkyk3s0vin"))))
+        (base32 "1x2j48wqycl9y4b8wnbhkfm2clhq5x8grw7ipjbhpxj3y3dlrh0b"))))
     (properties `((upstream-name . "atable")))
     (build-system r-build-system)
     (propagated-inputs (list r-settings
@@ -7120,6 +7120,40 @@ bounds-test for cointegration as described in Pesaran et al. (2001)
 equation.  The validity and the accuracy of this package have been verified by
 successfully replicating the results of Pesaran et al. (2001) in Natsiopoulos
 and Tzeremes (2022) <doi:10.1002/jae.2919>.")
+    (license license:gpl3)))
+
+(define-public r-ardeco
+  (package
+    (name "r-ardeco")
+    (version "2.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ARDECO" version))
+       (sha256
+        (base32 "0jdkrv53h71r068rp8kbakz86ahif1jqhmcjp5lwyaj97gw7ssgf"))))
+    (properties `((upstream-name . "ARDECO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rjstat
+                             r-jsonlite
+                             r-httr
+                             r-ghql
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ARDECO")
+    (synopsis "Annual Regional Database of the European Commission (ARDECO)")
+    (description
+     "This package provides a set of functions to access the ARDECO (Annual Regional
+Database of the European Commission) data directly from the official ARDECO
+public repository through the exploitation of the ARDECO APIs.  The APIs are
+completely transparent to the user and the provided functions provide a direct
+access to the ARDECO data.  The ARDECO database is a collection of variables
+related to demography, employment, labour market, domestic product, capital
+formation.  Each variable can be exposed in one or more units of measure as well
+as refers to total values plus economic sectors.  The description of the ARDECO
+database can be found at the following URL
+<https://urban.jrc.ec.europa.eu/ardeco>.")
     (license license:gpl3)))
 
 (define-public r-ardec
@@ -15195,6 +15229,36 @@ the associated functions for the calibration and evaluation of models are also
 included.  Use help(@code{airGR}) for package description and references.")
     (license license:gpl2)))
 
+(define-public r-airexposure
+  (package
+    (name "r-airexposure")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AirExposure" version))
+       (sha256
+        (base32 "0x2wpwynm03azz04dksgk4rri46dvbpkah3d39v7b53inrwb9i8h"))))
+    (properties `((upstream-name . "AirExposure")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf
+                             r-lubridate
+                             r-leaflet
+                             r-jsonlite
+                             r-httr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-dplyr))
+    (home-page "https://github.com/flortames/Air-Exposure-Model")
+    (synopsis
+     "Exposure Model to Air Pollutants Based on Mobility and Daily Activities")
+    (description
+     "Model that assesses daily exposure to air pollution, which considers daily
+population mobility on a geographical scale and the spatial and temporal
+variability of pollutant concentrations, in addition to traditional parameters
+such as exposure time and pollutant concentration.")
+    (license license:gpl3)))
+
 (define-public r-aire-zmvm
   (package
     (name "r-aire-zmvm")
@@ -18465,13 +18529,13 @@ quantities of interest for the target density itself.")
 (define-public r-admiralvaccine
   (package
     (name "r-admiralvaccine")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admiralvaccine" version))
        (sha256
-        (base32 "0asi4939k50y05f1klga4i8wyw4hxlczsz3sg3as39pdsp6zzn48"))))
+        (base32 "17p7l8rx40zjaxc2ap1n1pi1025qn1cw17m26haw6d5vr1p9sk1k"))))
     (properties `((upstream-name . "admiralvaccine")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18479,7 +18543,6 @@ quantities of interest for the target density itself.")
                              r-stringr
                              r-rlang
                              r-purrr
-                             r-metatools
                              r-magrittr
                              r-lubridate
                              r-lifecycle

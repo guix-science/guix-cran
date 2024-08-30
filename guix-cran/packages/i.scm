@@ -346,13 +346,13 @@ other standard model tools.")
 (define-public r-ivo-table
   (package
     (name "r-ivo-table")
-    (version "0.4.1")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivo.table" version))
        (sha256
-        (base32 "0hs3x52566y7axri1wyzr2c5w156nwfiq0j9sddvl1lcvsrxdivg"))))
+        (base32 "1h9k5xn04fs86g2iny18cwnlpsdyd4mvxi9h2hlll3rp35nfglvx"))))
     (properties `((upstream-name . "ivo.table")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-officer r-flextable r-dplyr r-checkmate))
@@ -4181,13 +4181,13 @@ Based on Hohmann (2019) <@code{arXiv:1901.10754>}.")
 (define-public r-ipolygrowth
   (package
     (name "r-ipolygrowth")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipolygrowth" version))
        (sha256
-        (base32 "0q3n2mbkkra09kxq3scglli0ghj4g0j4xv3py9maq0ii7mbx0547"))))
+        (base32 "0pz0abbj1wq0p80f1ayimpq2b7ca41c18xx4qk4chbl0hyl40zyy"))))
     (properties `((upstream-name . "ipolygrowth")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect r-tidyr r-rlang r-magrittr r-dplyr))
@@ -4477,13 +4477,13 @@ finance, banking, telecommunications or operational marketing.")
 (define-public r-ipedsuploadables
   (package
     (name "r-ipedsuploadables")
-    (version "2.8.7")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IPEDSuploadables" version))
        (sha256
-        (base32 "0v168v83b5aj86rahlz80ggb7x99npq8gx30szcp0vxicz8a0nyk"))))
+        (base32 "163v3n9c7dqpn05wy0lwvic0sjlqrcihwk5ng9594fv4k9hiqj41"))))
     (properties `((upstream-name . "IPEDSuploadables")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -4493,6 +4493,7 @@ finance, banking, telecommunications or operational marketing.")
                              r-purrr
                              r-magrittr
                              r-lubridate
+                             r-lifecycle
                              r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlisonLanski/IPEDSuploadables")
@@ -13276,6 +13277,32 @@ depend on I@code{GoR} and can be manually modified by the user or copied
 elsewhere.")
     (license license:gpl2+)))
 
+(define-public r-igorr
+  (package
+    (name "r-igorr")
+    (version "0.9.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IgorR" version))
+       (sha256
+        (base32 "1xdkbl6w9vwjgplygm527gl5y7bqd0dbn8nb9szyc6438hpswmb2"))))
+    (properties `((upstream-name . "IgorR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timechange r-bitops))
+    (home-page "https://github.com/jefferis/IgorR")
+    (synopsis
+     "Read Binary Files Saved by 'Igor Pro' (Including 'Neuromatic' Data)")
+    (description
+     "This package provides function to read data from the Igor Pro data analysis
+program by Wavemetrics'.  The data formats supported are Igor packed experiment
+format ('pxp') and Igor binary wave ('ibw').  See:
+<https://www.wavemetrics.com/> for details.  Also includes functions to load
+special pxp files produced by the Igor Pro Neuromatic and Nclamp packages for
+recording and analysing neuronal data.  See
+<https://github.com/@code{SilverLabUCL/NeuroMatic>} for details.")
+    (license license:gpl2+)))
+
 (define-public r-igor
   (package
     (name "r-igor")
@@ -14427,6 +14454,44 @@ simulations on composite scores.")
     (synopsis "Incremental Decomposition Methods")
     (description
      "Incremental Multiple Correspondence Analysis and Principal Component Analysis.")
+    (license license:gpl2+)))
+
+(define-public r-idiolect
+  (package
+    (name "r-idiolect")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "idiolect" version))
+       (sha256
+        (base32 "1wmigxzja5wkr7s2zp67fd2n77b67s2l4jllhrcn2zji8s6qlv2m"))))
+    (properties `((upstream-name . "idiolect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-textclean
+                             r-stringr
+                             r-spacyr
+                             r-quanteda-textstats
+                             r-quanteda
+                             r-proxy
+                             r-proc
+                             r-pbapply
+                             r-kgrams
+                             r-ggplot2
+                             r-fdrtool
+                             r-dplyr
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/andreanini/idiolect")
+    (synopsis "Forensic Authorship Analysis")
+    (description
+     "Carry out comparative authorship analysis of disputed and undisputed texts
+within the Likelihood Ratio Framework for expressing evidence in forensic
+science.  This package contains implementations of well-known algorithms for
+comparative authorship analysis, such as Smith and Aldridge's (2011) Cosine
+Delta <doi:10.1080/09296174.2011.533591> or Koppel and Winter's (2014) Impostors
+Method <doi:10.1002/asi.22954>, as well as functions to measure their
+performance and to calibrate their outputs into Log-Likelihood Ratios.")
     (license license:gpl2+)))
 
 (define-public r-idiogramfish

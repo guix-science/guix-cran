@@ -3773,13 +3773,13 @@ this package to practice data wrangling, text analysis and network analysis.")
 (define-public r-frictionless
   (package
     (name "r-frictionless")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "frictionless" version))
        (sha256
-        (base32 "0d23gbaikwhr7jac9b21p8a3hj1rwh766v752axikbq02hf3a6vg"))))
+        (base32 "1mnrkrslwvqrlsib73gv160482hdcnxfy6cvdmfgi0qbfam0xx9n"))))
     (properties `((upstream-name . "frictionless")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -12427,6 +12427,38 @@ Pyro Oxygen Logger ('@code{PyroScience}') and Q-box Aqua
 <doi:10.1093/conphys/coz003>.")
     (license license:gpl3)))
 
+(define-public r-fishproxcompanalyzer
+  (package
+    (name "r-fishproxcompanalyzer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FishProxCompAnalyzer" version))
+       (sha256
+        (base32 "0f0w6dq0dag3msi7r9snpizmg24d7gxx4q7pgqhca6gihl3rr9nq"))))
+    (properties `((upstream-name . "FishProxCompAnalyzer")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=FishProxCompAnalyzer")
+    (synopsis "Proximate Composition Analysis of Fish and Feed Ingredients")
+    (description
+     "The proximate composition analysis is the quantification of main components that
+constitutes nutritional profile of any food and food products including fish,
+shellfish, fish feed and their ingredients.  Understanding this composition is
+essential for evaluating their nutritional value and for making informed dietary
+choices.  The primary components typically analyzed include; moisture/ water in
+foods, crude protein, crude fat/ lipid, total ash, fiber and carbohydrates
+AOAC(2005,ISBN:0-935584-77-3).  In case of fish, shellfish and its products, the
+proximate composition consists of four primary constituents - water, protein,
+fat, and ash (mostly minerals).  Fish exhibit significant variation in their
+chemical makeup based on age, sex, environment, and season, both within the same
+species and between individual fish.  There is minimal fluctuation in the
+content of ash and protein.  The lipid concentration varies remarkably and is
+inversely correlated with the water content.  In case of fish, carbohydrates are
+present in minor quantity so that are quantified by subtracting total of other
+components from 100 to get percentage of carbohydrates.")
+    (license license:gpl3)))
+
 (define-public r-fishphylomaker
   (package
     (name "r-fishphylomaker")
@@ -16616,6 +16648,30 @@ Informatique DÃ©cisionnelle\".")
 from the Federal Deposit Insurance Corporation (FDIC), including retrieving
 financial data for FDIC-insured institutions and accessing the data taxonomy.")
     (license license:expat)))
+
+(define-public r-fdesigns
+  (package
+    (name "r-fdesigns")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdesigns" version))
+       (sha256
+        (base32 "0hsn325jgzvd4bjpmy5rglnz9035k1lb4h8yf2hbajnxxald0kal"))))
+    (properties `((upstream-name . "fdesigns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mvtnorm r-mvquad
+                             r-matrix))
+    (home-page "https://cran.r-project.org/package=fdesigns")
+    (synopsis "Optimal Experimental Designs for Functional/Dynamic Models")
+    (description
+     "Optimal experimental designs for functional linear and functional generalised
+linear models, for scalar responses and profile/dynamic factors.  The designs
+are optimised using the coordinate exchange algorithm.  The methods are
+discussed by Michaelides (2023)
+<https://eprints.soton.ac.uk/474982/1/Thesis_@code{DamianosMichaelides_Final_pdfa_1_.pdf>}.")
+    (license license:gpl2)))
 
 (define-public r-fddm
   (package

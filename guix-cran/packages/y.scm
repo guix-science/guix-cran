@@ -149,23 +149,22 @@ functionality).")
 (define-public r-ytanalytics
   (package
     (name "r-ytanalytics")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "YTAnalytics" version))
        (sha256
-        (base32 "1kvw5p0fy3vqvlqwg2dnvpkq21rmf3c3xl46b2a9lifnr9fpncgk"))))
+        (base32 "1p3919avqxxb9w5x28mf09kfhw4md8q7rcd1v71jfasn9yqfnxcf"))))
     (properties `((upstream-name . "YTAnalytics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-dplyr))
-    (home-page "https://cran.r-project.org/package=YTAnalytics")
+    (propagated-inputs (list r-progress r-jsonlite r-httr r-dplyr))
+    (home-page "https://github.com/davisj95/YTAnalytics")
     (synopsis "Wrapper for 'YouTube Analytics' API")
     (description
      "Simplify working with the @code{YouTube} Analytics API
-<https://developers.google.com/youtube/analytics>.  Collect traffic, time
-period, location, and other data quickly and efficiently.  For working with the
-@code{YouTube} Data API, use the tuber R Package.")
+<https://developers.google.com/youtube/analytics>.  Collect data for your
+channel including geography, traffic sources, time period, etc.")
     (license license:expat)))
 
 (define-public r-yrmisc
@@ -479,15 +478,16 @@ likelihoods or log-predictive likelihoods as in Ando, T., & Tsay, R. (2010)
 (define-public r-ympes
   (package
     (name "r-ympes")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ympes" version))
        (sha256
-        (base32 "1is2n0rf2kpvfjfhf26q1ll1pkw00kxawc0wbkbc2jsh2nsqlfw1"))))
+        (base32 "01skbm8y5hck7xr97d6h3v38rawpnxww0y8rc4nswnrbdlri7580"))))
     (properties `((upstream-name . "ympes")))
     (build-system r-build-system)
+    (native-inputs (list r-litedown))
     (home-page "https://timtaylor.github.io/ympes/")
     (synopsis "Collection of Helper Functions")
     (description

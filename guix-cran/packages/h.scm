@@ -742,13 +742,13 @@ intrinsic scatter in the generative model orthogonal to the hyperplane.")
 (define-public r-hymett
   (package
     (name "r-hymett")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HyMETT" version))
        (sha256
-        (base32 "0f1gismhkwi8ynnxlbsvpal15ab2d2j4arrvah25bchybwffhqqg"))))
+        (base32 "0j613j7p80sa5rp5qdzri51wjsl1zmzk3acrhb0df62d8fxnlzl2"))))
     (properties `((upstream-name . "HyMETT")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8127,6 +8127,29 @@ et al (2022) <@code{arXiv:2209.08315>}.")
      "This package provides functions for the fitting and summarizing of
 heteroscedastic t-regression.")
     (license license:gpl2+)))
+
+(define-public r-hetsurrsurv
+  (package
+    (name "r-hetsurrsurv")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hetsurrSurv" version))
+       (sha256
+        (base32 "01i918hq0rsmagpzld9zg7zzsv1i94y4dcm9apzb71pn90rmmg3n"))))
+    (properties `((upstream-name . "hetsurrSurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsurrogate r-mass r-groc))
+    (home-page "https://cran.r-project.org/package=hetsurrSurv")
+    (synopsis "Assessing Heterogeneity in Surrogacy Using Censored Data")
+    (description
+     "This package provides functions to assess and test for heterogeneity in the
+utility of a surrogate marker with respect to a baseline covariate using
+censored (survival data), and to test for heterogeneity across multiple time
+points.  More details are available in Parast et al (2024)
+<doi:10.1002/sim.10122>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-hetsurr
   (package

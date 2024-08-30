@@ -1882,13 +1882,13 @@ implementer's interface for the high-level user interface of dplyr'.")
 (define-public r-duckdbfs
   (package
     (name "r-duckdbfs")
-    (version "0.0.5")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdbfs" version))
        (sha256
-        (base32 "1vj3ay4lr0whzvkljha1sk4cqjsngj7k1zykjfmj67drljvy7m64"))))
+        (base32 "0rp8w8slmy3sbm143z9qy18bfwpnzad8jfw6ylccf3dmryh9siab"))))
     (properties `((upstream-name . "duckdbfs")))
     (build-system r-build-system)
     (propagated-inputs (list r-glue
@@ -9945,13 +9945,13 @@ secondary school.")
 (define-public r-distrsim
   (package
     (name "r-distrsim")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrSim" version))
        (sha256
-        (base32 "11dd09v8fx19xglmpkhc0j3gdrzh94cpidjks54g8lkzgv5ichr7"))))
+        (base32 "0b2cyfz1ghbkz7ps4lzwkkfakxq9wc1yd53zh8pzd1r8zjkb9c7y"))))
     (properties `((upstream-name . "distrSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-setrng r-distr))
@@ -10246,13 +10246,13 @@ special computational programs.")
 (define-public r-distrellipse
   (package
     (name "r-distrellipse")
-    (version "2.8.2")
+    (version "2.8.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEllipse" version))
        (sha256
-        (base32 "1k42wspzq73mxa2y9szcryx6284qbw23z1rjlfj0zfbl62qvq3p7"))))
+        (base32 "08gq3yq71kjh0bm2xj2r1r90xkk3pppwc24laqsvgnd467a2mf7y"))))
     (properties `((upstream-name . "distrEllipse")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -10349,13 +10349,13 @@ distr', @code{distrEx}', @code{distrMod}', @code{distrSim}', @code{distrTEst}',
 (define-public r-distr
   (package
     (name "r-distr")
-    (version "2.9.3")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distr" version))
        (sha256
-        (base32 "0n6vsyyw8fakxd0qmj6kfvc3n6hmz0ssnbz43w990nyabf1prb0m"))))
+        (base32 "1zmgmcw118cg7pbzn15kdl3n59hjyma4907yz4nbqpywp5kq07az"))))
     (properties `((upstream-name . "distr")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-sfsmisc r-mass))
@@ -16249,16 +16249,21 @@ gradients, Hessian and Jacobian matrices is possible.")
 (define-public r-dfd
   (package
     (name "r-dfd")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DFD" version))
        (sha256
-        (base32 "1msyfzcxrqz9wq675ml00sigsyg94wl36yw4759fkr1q99iggxcc"))))
+        (base32 "11nqhhngxhb2zk63zychkxi55jqrxr28yz4l9vin29hd391wqwzd"))))
     (properties `((upstream-name . "DFD")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-gprofiler2))
+    (propagated-inputs (list r-stringr
+                             r-scales
+                             r-gridextra
+                             r-gprofiler2
+                             r-ggpubr
+                             r-ggplot2))
     (home-page "https://github.com/MohmedSoudy/DFD")
     (synopsis
      "Extract Drugs from Differential Expression Data from LINCS Database")
@@ -22929,6 +22934,37 @@ tables.  To use the resultant functions, the output files containing those
 functions must be read into the R environment (perhaps using base::source()).")
     (license license:gpl2+)))
 
+(define-public r-dbw
+  (package
+    (name "r-dbw")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dbw" version))
+       (sha256
+        (base32 "0sz8wcknmxaqgwqliahvh5vf3j7h9iayjm8kwqgn4qpkm4b4hni3"))))
+    (properties `((upstream-name . "dbw")))
+    (build-system r-build-system)
+    (home-page "https://github.com/hirotokatsumata/dbw")
+    (synopsis "Doubly Robust Distribution Balancing Weighting Estimation")
+    (description
+     "This package implements the doubly robust distribution balancing weighting
+proposed by Katsumata (2024) <doi:10.1017/psrm.2024.23>, which improves the
+augmented inverse probability weighting (AIPW) by estimating propensity scores
+with estimating equations suitable for the pre-specified parameter of interest
+(e.g., the average treatment effects or the average treatment effects on the
+treated) and estimating outcome models with the estimated inverse probability
+weights.  It also implements the covariate balancing propensity score proposed
+by Imai and Ratkovic (2014) <doi:10.1111/rssb.12027> and the entropy balancing
+weighting proposed by Hainmueller (2012) <doi:10.1093/pan/mpr025>, both of which
+use covariate balancing conditions in propensity score estimation.  The point
+estimate of the parameter of interest and its uncertainty as well as
+coefficients for propensity score estimation and outcome regression are produced
+using the M-estimation.  The same functions can be used to estimate average
+outcomes in missing outcome cases.")
+    (license license:expat)))
+
 (define-public r-dbtcshiny
   (package
     (name "r-dbtcshiny")
@@ -24359,6 +24395,42 @@ versions <= 3.0, use the archived dvn package
 package acts as a thin wrapper around more powerful data packages such as
 dplyr', data.table', arrow', and DBI ('SQL'), which do the heavy lifting.")
     (license license:expat)))
+
+(define-public r-datasum
+  (package
+    (name "r-datasum")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DataSum" version))
+       (sha256
+        (base32 "0afz60zy1fn34hf2awizv3k0da4k2rchj2z20cy8n2g1k80sspcd"))))
+    (properties `((upstream-name . "DataSum")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nortest r-moments r-dplyr))
+    (home-page "https://github.com/Uzairkhan11w/DataSum")
+    (synopsis "Comprehensive Data Summarization for Statistical Analysis")
+    (description
+     "Summarizing data frames by calculating various statistical measures, including
+measures of central tendency, dispersion, skewness(), kurtosis(), and normality
+tests.  The package leverages the moments package for calculating statistical
+moments and related measures, the dplyr package for data manipulation, and the
+nortest package for normality testing. @code{DataSum} includes functions such as
+getmode() for finding the mode(s) of a data vector, shapiro_normality_test() for
+performing the Shapiro-Wilk test (Shapiro & Wilk 1965
+<doi:10.1093/biomet/52.3-4.591>) (or the Anderson-Darling test when the data
+length is outside the valid range for the Shapiro-Wilk test) (Stephens 1974
+<doi:10.1080/01621459.1974.10480196>), Datum() for generating a comprehensive
+summary of a data vector with various statistics (including data type, sample
+size, mean, mode, median, variance, standard deviation, maximum, minimum, range,
+skewness(), kurtosis(), and normality test result) (Joanes & Gill 1998
+<doi:10.1111/1467-9884.00122>), and @code{DataSumm}() for applying the Datum()
+function to each column of a data frame.  Emphasizing the importance of
+normality testing, the package provides robust tools to validate whether data
+follows a normal distribution, a fundamental assumption in many statistical
+analyses and models.")
+    (license license:gpl3)))
 
 (define-public r-datastudio
   (package
@@ -26673,13 +26745,13 @@ package implements dann and sub_dann from Hastie (1996)
 (define-public r-danielbiostatistics10th
   (package
     (name "r-danielbiostatistics10th")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DanielBiostatistics10th" version))
        (sha256
-        (base32 "0sqpk4ngzw5w7spfk69b7xywicvfvkdki9pm9n4dc3z0fa9mxvng"))))
+        (base32 "0vr0mni4qafcpl70lxszi4yic6ha291jpzw3nnkvi3jkbcx0nj3r"))))
     (properties `((upstream-name . "DanielBiostatistics10th")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-e1071))

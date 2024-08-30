@@ -1668,13 +1668,13 @@ on unsystematic sub-samples.")
 (define-public r-unstruwwel
   (package
     (name "r-unstruwwel")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unstruwwel" version))
        (sha256
-        (base32 "1s8vfmh1lafb244r0bwp4m0r9x5la95lglxqvhb4sq9wmah04ka7"))))
+        (base32 "01zaa1vbflbjx6pgaclcbnymkmlnnmy3y3ggiy185iq5p5hhaw1i"))))
     (properties `((upstream-name . "unstruwwel")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1851,13 +1851,13 @@ unmeasured confounders using JAGS.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "1ishwzqkkvin7vralpxnb2fdc75gvsxz1l5b9902y4h0mm4749qw"))))
+        (base32 "1md8b80wmk3664rp482xl8bw5w64mp25klsdx35z4rq8d85nd5zh"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
