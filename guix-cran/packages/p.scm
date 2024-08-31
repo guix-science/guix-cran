@@ -3082,6 +3082,31 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 <DOI:10.1080/01621459.2016.1260466>.")
     (license license:gpl2+)))
 
+(define-public r-psvmsdr
+  (package
+    (name "r-psvmsdr")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "psvmSDR" version))
+       (sha256
+        (base32 "037l2gfpfrqhr29fv9yjmvpllj9k20k3n5ycsv0s9cqcb1hcsb52"))))
+    (properties `((upstream-name . "psvmSDR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=psvmSDR")
+    (synopsis "Unified Principal Sufficient Dimension Reduction Package")
+    (description
+     "This package provides a unified and user-friendly framework for applying the
+principal sufficient dimension reduction methods for both linear and nonlinear
+cases.  The package has an extendable power by varying loss functions for the
+support vector machine, even for an user-defined arbitrary function, unless
+those are convex and differentiable everywhere over the support (Li et al.
+(2011) <doi:10.1214/11-AOS932>).  Also, it provides a real-time sufficient
+dimension reduction update procedure using the principal least squares support
+vector machine (Artemiou et al. (2021) <doi:10.1016/j.patcog.2020.107768>).")
+    (license license:gpl2)))
+
 (define-public r-pstrata
   (package
     (name "r-pstrata")
@@ -5097,13 +5122,13 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.7-2")
+    (version "1.7-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protr" version))
        (sha256
-        (base32 "0qkp9h6kndr5vkgqckzhhy7dsidbynpns3bap3r3gy2p1wzwmhx5"))))
+        (base32 "0d7dwcg4qlsrmpkw2i2ycknlx6kijbwnkgx5x1pbzb6naj2lyszh"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (inputs (list))
@@ -7144,13 +7169,13 @@ monitoring.  Building on the event log objects class from package @code{bupaR}'.
 (define-public r-processmapr
   (package
     (name "r-processmapr")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "processmapR" version))
        (sha256
-        (base32 "0jb69si8npmw92nfsd35wfzrj8jwfflaajsd6xxvyp1bhfvjsvn6"))))
+        (base32 "1bih54laq2njk4l51i45j43b4qwgp9qbx3yz04jb7miz5v6zqb8j"))))
     (properties `((upstream-name . "processmapR")))
     (build-system r-build-system)
     (arguments
@@ -7772,13 +7797,13 @@ transforming the PRN's in order to control the sample overlap.")
 (define-public r-prng
   (package
     (name "r-prng")
-    (version "0.0.2.1")
+    (version "0.0.2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRNG" version))
        (sha256
-        (base32 "0lsr0jf08mwi4ip3hcmk8y2jxk89366skqcx85yr8j2wzqwyds15"))))
+        (base32 "00y8kdjaggjcyy370q9m1klzv26bmha71ash1jw3pibx9sdv6lir"))))
     (properties `((upstream-name . "PRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PRNG")
@@ -21776,13 +21801,13 @@ text file and restores the package structures from the file.")
 (define-public r-pkgkitten
   (package
     (name "r-pkgkitten")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgKitten" version))
        (sha256
-        (base32 "10q0sa6l4phi04d7a2pdiy5pykg9y4c8sp3hhg6g19jbldvyhx2w"))))
+        (base32 "1ff2qhrgmlbayz7k12p7qs42w38g7ipwnq97wiw830dyf7k7c3f7"))))
     (properties `((upstream-name . "pkgKitten")))
     (build-system r-build-system)
     (home-page "https://github.com/eddelbuettel/pkgkitten")

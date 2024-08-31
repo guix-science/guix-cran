@@ -19168,26 +19168,6 @@ Patacchini, and Leone Sciabolazza (2020).  For additional details, see the
 vignette <doi:10.18637/jss.v102.i08>.")
     (license license:expat)))
 
-(define-public r-econdemand
-  (package
-    (name "r-econdemand")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EconDemand" version))
-       (sha256
-        (base32 "1slpwiaxj7w21zdri9myrzwbwzl62m3cnp0g4fr2rkdlzgb6j5yj"))))
-    (properties `((upstream-name . "EconDemand")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=EconDemand")
-    (synopsis "General Analysis of Various Economics Demand Systems")
-    (description
-     "This package provides tools for general properties including price, quantity,
-elasticity, convexity, marginal revenue and manifold of various economics demand
-systems including Linear, Translog, CES, LES and CREMR.")
-    (license license:gpl2)))
-
 (define-public r-econandprodefficiency
   (package
     (name "r-econandprodefficiency")

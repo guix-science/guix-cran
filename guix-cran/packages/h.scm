@@ -3214,6 +3214,41 @@ packages.  Functions that aid semiparametric regression analysis are also
 included.")
     (license license:gpl2+)))
 
+(define-public r-hrtlfmc
+  (package
+    (name "r-hrtlfmc")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hrtlFMC" version))
+       (sha256
+        (base32 "1pzfdr1ylqcp7mnxx3wmxdf89g2mqpfx2sfmkhybwqqk5irqspnm"))))
+    (properties `((upstream-name . "hrtlFMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-fmc))
+    (home-page "https://cran.r-project.org/package=hrtlFMC")
+    (synopsis
+     "Half Replicate of Two Level Factorial Run Order with Minimum Level Changes")
+    (description
+     "It is used to construct run sequences with minimum changes for half replicate of
+two level factorial run order.  Experimenter can save time and resources by
+minimizing the number of changes in levels of individual factor and therefore
+the total number of changes.  It consists of the function minimal_hrtlf().  This
+technique can be employed to any half replicate of two level factorial run order
+where the number of factors are greater than two.  In Design of Experiments
+(DOE) theory, two level of a factor can be represented as integers e.g. - 1 for
+low and 1 for high.  User is expected to enter total number of factors to be
+considered in the experiment.  minimal_hrtlf() provides the required run
+sequences for the input number of factors.  The output also gives the number of
+changes of each factor along with total number of changes in the run sequence.
+Due to restricted randomization the minimally changed run sequences of half
+replicate of two level factorial run order will be affected by trend effect.
+The output also provides the Trend Factor value of the run order.  Trend factor
+value will lies between 0 to 1.  Higher the values, lesser the influence of
+trend effects on the run order.")
+    (license license:gpl3)))
+
 (define-public r-hrt
   (package
     (name "r-hrt")

@@ -2793,13 +2793,13 @@ than the number of individuals.  LPDA method is published in Nueda, et al.
 (define-public r-lpcm
   (package
     (name "r-lpcm")
-    (version "0.47-4")
+    (version "0.47-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LPCM" version))
        (sha256
-        (base32 "0vjdnrc4jcp8l12x57qdj21k325n98wrr1x7f76z3s5fwk2s1kwg"))))
+        (base32 "0876211qxadwzaqgxpvm10mymqwjx1k9jay0nwhrz7w377mi3zni"))))
     (properties `((upstream-name . "LPCM")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LPCM")
@@ -7036,13 +7036,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.1.2")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "0a9lch9bylhy5r4v865lwzzz9qqi98na8bfnr5ga8kzy7akbnza0"))))
+        (base32 "1axbw73nfcn1s3r0smba0wg7v63zx79cxdp1629bzdwqnjvl7xxg"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d

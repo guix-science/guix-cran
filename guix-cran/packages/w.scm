@@ -2198,16 +2198,21 @@ data or keyword matching Watanabe & Zhou (2020) <doi:10.1177/0894439320907027>."
 (define-public r-wordlistsanalytics
   (package
     (name "r-wordlistsanalytics")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WordListsAnalytics" version))
        (sha256
-        (base32 "0vw354gldqawxa1xw6abf76yh8r6jgfsc8vrppl5arj4kw72zrya"))))
+        (base32 "0ynn3wb3b226mnj6a51xb3an2vdn4v6ckaykbf52wyrnd94a6i7x"))))
     (properties `((upstream-name . "WordListsAnalytics")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-reshape2 r-readr r-ggplot2 r-dplyr))
+    (propagated-inputs (list r-shiny
+                             r-reshape2
+                             r-readr
+                             r-lsa
+                             r-ggplot2
+                             r-dplyr))
     (home-page "https://cran.r-project.org/package=WordListsAnalytics")
     (synopsis "Multiple Data Analysis Tools for Property Listing Tasks")
     (description
@@ -8388,13 +8393,13 @@ proprietary API that assigns locations a walkability score between 0 and 100.")
 (define-public r-walker
   (package
     (name "r-walker")
-    (version "1.0.8")
+    (version "1.0.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "walker" version))
        (sha256
-        (base32 "1y8jj3kf8wrkw3rkai0scnakb9cyb8dbvhji3vprs3cyprcrkf4r"))))
+        (base32 "135psiyyhv91x5rfj2y8im3a0l4gkby75p9k5d1kdb5lrkyhq8ib"))))
     (properties `((upstream-name . "walker")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

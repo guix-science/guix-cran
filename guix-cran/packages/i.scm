@@ -10662,6 +10662,26 @@ methods like PCA and PLS.")
 multinomial data following the work of Schafer 1997 <ISBN: 978-0-412-04061-0>.")
     (license license:gpl3)))
 
+(define-public r-imputemissings
+  (package
+    (name "r-imputemissings")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imputeMissings" version))
+       (sha256
+        (base32 "0mlppw8g8ngiyxc572jlayc1xhmfvg03z3v5qs8wvfc58rkfrvvw"))))
+    (properties `((upstream-name . "imputeMissings")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-randomforest))
+    (home-page "https://cran.r-project.org/package=imputeMissings")
+    (synopsis "Impute Missing Values in a Predictive Context")
+    (description
+     "Compute missing values on a training data set and impute them on a new data set.
+ Current available options are median/mode and random forest.")
+    (license license:gpl2+)))
+
 (define-public r-imputelongicovs
   (package
     (name "r-imputelongicovs")

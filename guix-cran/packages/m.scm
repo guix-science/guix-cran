@@ -1085,13 +1085,13 @@ in the corresponding help files.")
 (define-public r-mvord
   (package
     (name "r-mvord")
-    (version "1.2.4")
+    (version "1.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvord" version))
        (sha256
-        (base32 "0hxgz5gjrvapfdjyf5w9wcankbwkd32ii291nzmlh8n8gb7pr067"))))
+        (base32 "08b4q7rbfq1b1ll2xlw1d28m744xng5b6b0xglxvhrxxm1wj3xac"))))
     (properties `((upstream-name . "mvord")))
     (build-system r-build-system)
     (propagated-inputs (list r-ucminf
@@ -1106,7 +1106,7 @@ in the corresponding help files.")
                              r-dfoptim
                              r-bb))
     (native-inputs (list r-knitr gfortran))
-    (home-page "https://cran.r-project.org/package=mvord")
+    (home-page "https://github.com/lauravana/mvord")
     (synopsis "Multivariate Ordinal Regression Models")
     (description
      "This package provides a flexible framework for fitting multivariate ordinal
@@ -7091,13 +7091,13 @@ Schwartzman (2015) <@code{arXiv:1504.06384>}.")
 (define-public r-mstdif
   (package
     (name "r-mstdif")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mstDIF" version))
        (sha256
-        (base32 "0krb3g1njm97cnjjhc2p5r8djgnzarn5gm65x76h1k43qxfb5iw1"))))
+        (base32 "010v2rbwv7fl4w3jln6isjx8nm8lv4p6iimhrwwkp5vnbvxs3jkq"))))
     (properties `((upstream-name . "mstDIF")))
     (build-system r-build-system)
     (propagated-inputs (list r-scdiftest
@@ -23470,6 +23470,27 @@ instructions, please run `help(run_game)` and check details.  This game runs in
 X11-compatible devices with `@code{grDevices::x11()`}.")
     (license license:expat)))
 
+(define-public r-minesweeper
+  (package
+    (name "r-minesweeper")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "minesweeper" version))
+       (sha256
+        (base32 "17f4phqayjl82y8p80y0bmmigs244lj7c0jyl8mpa89vib5vnpr7"))))
+    (properties `((upstream-name . "minesweeper")))
+    (build-system r-build-system)
+    (home-page "https://github.com/hrryt/minesweeper")
+    (synopsis "Play Minesweeper")
+    (description
+     "Play and record games of minesweeper using a graphics device that supports event
+handling.  Replay recorded games and save GIF animations of them.  Based on
+classic minesweeper as detailed by Crow P. (1997)
+<https://minesweepergame.com/math/a-mathematical-introduction-to-the-game-of-minesweeper-1997.pdf>.")
+    (license license:expat)))
+
 (define-public r-minerva
   (package
     (name "r-minerva")
@@ -34911,13 +34932,13 @@ while also not adding capabilities to this function.")
 (define-public r-mcradds
   (package
     (name "r-mcradds")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcradds" version))
        (sha256
-        (base32 "11pa8y6q20rqsflxlsnyjq79l6xbfqy1739zvnvdl024mv0jvrw7"))))
+        (base32 "07wh4xh1dr966ybncbh3938kpnjny7qikiiwagivv90mzapf2g7m"))))
     (properties `((upstream-name . "mcradds")))
     (build-system r-build-system)
     (propagated-inputs (list r-vca
@@ -41959,13 +41980,13 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.0.2")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0bqd46n30rsy87nc5ylwp7k0wzfmddkq3in38420c4rds3gf1m51"))))
+        (base32 "0xzbcdimx8vjpwqh7zdd9mafi3vr7rlg0xgx91sgfjpd1k22bsq7"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph

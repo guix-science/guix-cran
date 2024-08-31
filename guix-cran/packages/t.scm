@@ -16328,13 +16328,13 @@ other data frame.  The main function is predict_gam().")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.7.9")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "114wdgrcwkl5mpjxdilp51xc9qn4sa3qj5fclyz84s305hiaba6d"))))
+        (base32 "0z4mblhh3jlf1111r68ykhr17z049w10r69w2zx782n1qid0b3d3"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -16414,21 +16414,24 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "01vk9h6p4kk9qh07c8mhwk6267j6p05lblc74zmwxqcfblf0zymn"))))
+        (base32 "0bkql1r8xixvmiri6qhlj0jsk99kbrfjivczhqhnhmzx8a0by3fv"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-slider
                              r-rlang
                              r-purrr
                              r-lubridate
                              r-lifecycle
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://www.tidy-finance.org/r/")
     (synopsis "Tidy Finance Helper Functions")
@@ -26246,13 +26249,13 @@ detailed overview of tacmagic functions.")
 (define-public r-tabxplor
   (package
     (name "r-tabxplor")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabxplor" version))
        (sha256
-        (base32 "1fxcbw117sz564ylxch7jgs6zv5d3lniyam5vlxfbdgvszlw9vhh"))))
+        (base32 "0dfv2zwlx43b941izxd0d4h3cvmrh0vmzgh01p3ka994anrhvsyk"))))
     (properties `((upstream-name . "tabxplor")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -26279,11 +26282,11 @@ detailed overview of tacmagic functions.")
      "Make it easy to deal with multiple cross-tables in data exploration, by creating
 them, manipulating them, and adding color helpers to highlight important
 informations (differences from totals, comparisons between lines or columns,
-contributions to variance, margins of error, etc.).  All functions are
-pipe-friendly and render data frames which can be easily manipulated.  In the
-same time, time-taking operations are done with data.table to go faster with big
-dataframes.  Tables can be exported to Excel and in html with formats and
-colors.")
+contributions to variance, confidence intervals, odds ratios, etc.).  All
+functions are pipe-friendly and render data frames which can be easily
+manipulated.  In the same time, time-taking operations are done with data.table
+to go faster with big dataframes.  Tables can be exported with formats and
+colors to Excel', plot and html.")
     (license license:gpl3+)))
 
 (define-public r-tabusearch

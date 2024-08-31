@@ -9691,6 +9691,28 @@ this package can easily be integrated into computation pipelines (e.g. nextflow
 re-producibility in the context of machine-learning.")
     (license license:gpl3+)))
 
+(define-public r-flowmapper
+  (package
+    (name "r-flowmapper")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowmapper" version))
+       (sha256
+        (base32 "150avmxpx20n6vv4rdqvcbj6j0np4r3sf9iadzsas81s3sx4zlk6"))))
+    (properties `((upstream-name . "flowmapper")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-forcats r-dplyr))
+    (home-page "https://github.com/JohMast/flowmapper")
+    (synopsis
+     "Draw Flows (Migration, Goods, Money, Information) on 'ggplot2' Plots")
+    (description
+     "Adds flow maps to ggplot2 plots.  The flow maps consist of ggplot2 layers which
+visualize the nodes as circles and the bilateral flows between the nodes as
+bidirectional half-arrows.")
+    (license license:expat)))
+
 (define-public r-flowermate
   (package
     (name "r-flowermate")
@@ -14309,16 +14331,22 @@ create your web app the way you want.")
 (define-public r-fieldsimr
   (package
     (name "r-fieldsimr")
-    (version "1.3.0")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FieldSimR" version))
        (sha256
-        (base32 "1yhys0zb6rzd3xx8lwxg6n9dak15nlhyg8a0bkgjfad8ljihlkyj"))))
+        (base32 "0y59lymyz3a8ricpf7cyk9a5h4wdh4wsbv599857wkgbqan56nk3"))))
     (properties `((upstream-name . "FieldSimR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mbend r-lattice r-interp r-ggplot2 r-cluster))
+    (propagated-inputs (list r-rcolorbrewer
+                             r-mbend
+                             r-matrix
+                             r-lattice
+                             r-interp
+                             r-ggplot2
+                             r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/crWerner/fieldsimr")
     (synopsis

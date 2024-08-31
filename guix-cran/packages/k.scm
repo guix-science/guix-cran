@@ -10,6 +10,7 @@
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages bioconductor)
+  #:use-module (gnu packages compression)
   #:use-module (gnu packages web)
   #:use-module (gnu packages multiprecision)
   #:use-module (guix-cran packages z)
@@ -2130,6 +2131,60 @@ right-censored methods could be applied to the imputed data sets to perform
 analyses of the cumulative incidence functions (Allignol and Beyersmann, 2010
 <doi:10.1093/biostatistics/kxq018>).")
     (license license:gpl2+)))
+
+(define-public r-kmertone
+  (package
+    (name "r-kmertone")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kmeRtone" version))
+       (sha256
+        (base32 "0aq7smn0ga60x5s69x6d0hln85d69q02w1b75gsp1fpzyf5mqw1w"))))
+    (properties `((upstream-name . "kmeRtone")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (propagated-inputs (list r-venneuler
+                             r-stringi
+                             r-seqlogo
+                             r-rcppsimdjson
+                             r-rcpp
+                             r-r6
+                             r-r-utils
+                             r-progressr
+                             r-png
+                             r-openxlsx
+                             r-jsonlite
+                             r-future-apply
+                             r-future
+                             r-data-table
+                             r-curl
+                             r-biostrings))
+    (home-page "https://github.com/SahakyanLab/kmeRtone")
+    (synopsis
+     "Multi-Purpose and Flexible k-Meric Enrichment Analysis Software")
+    (description
+     "This package provides a multi-purpose and flexible k-meric enrichment analysis
+software. @code{kmeRtone} measures the enrichment of k-mers by comparing the
+population of k-mers in the case loci with a carefully devised internal negative
+control group, consisting of k-mers from regions close to, yet sufficiently
+distant from, the case loci to mitigate any potential sequencing bias.  This
+method effectively captures both the local sequencing variations and broader
+sequence influences, while also correcting for potential biases, thereby
+ensuring more accurate analysis.  The core functionality of @code{kmeRtone} is
+the SCORE() function, which calculates the susceptibility scores for k-mers in
+case and control regions.  Case regions are defined by the genomic coordinates
+provided in a file by the user and the control regions can be constructed
+relative to the case regions or provided directly.  The k-meric susceptibility
+scores are calculated by using a one-proportion z-statistic. @code{kmeRtone} is
+highly flexible by allowing users to also specify their target k-mer patterns
+and quantify the corresponding k-mer enrichment scores in the context of these
+patterns, allowing for a more comprehensive approach to understanding the
+functional implications of specific DNA sequences on a genomic scale (e.g., CT
+motifs upon UV radiation damage).  Adib A. Abdullah, Patrick Pflughaupt, Claudia
+Feng, Aleksandr B. Sahakyan (2024) Bioinformatics (submitted).")
+    (license license:gpl3)))
 
 (define-public r-kmers
   (package

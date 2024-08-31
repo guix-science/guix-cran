@@ -751,13 +751,13 @@ information published on J-STAGE <https://www.jstage.jst.go.jp/browse/-char/ja>.
 (define-public r-jstable
   (package
     (name "r-jstable")
-    (version "1.3.0")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jstable" version))
        (sha256
-        (base32 "0gz2cx1qlgq2ghmlk452clhvzqf18ir3bfc81mfg1jb24l7n2129"))))
+        (base32 "0q0hwz7p5bs4ap952dxxpglq9rrxc5ry6s9xygda7gv7n7gqi9kb"))))
     (properties `((upstream-name . "jstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4133,21 +4133,24 @@ Dixon elliptic functions.  Complex values of the variable are supported.")
 (define-public r-jackstraw
   (package
     (name "r-jackstraw")
-    (version "1.3.9")
+    (version "1.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackstraw" version))
        (sha256
-        (base32 "0wgqj1n4nvj0jdlm6kzg0r2c93m7ynm49azffd4qhr1wh31rwnba"))))
+        (base32 "08420qhy5ffxq36dy0krjsjkb02jraw2xcqj4zdwqpz9giy3mpir"))))
     (properties `((upstream-name . "jackstraw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvd
                              r-qvalue
+                             r-lfa
                              r-irlba
+                             r-genio
                              r-corpcor
                              r-clusterr
-                             r-cluster))
+                             r-cluster
+                             r-bedmatrix))
     (home-page "https://cran.r-project.org/package=jackstraw")
     (synopsis "Statistical Inference for Unsupervised Learning")
     (description
@@ -4156,21 +4159,22 @@ variables.  The jackstraw package provides a resampling strategy and testing
 scheme to estimate statistical significance of association between the observed
 data and their latent variables.  Depending on the data type and the analysis
 aim, the latent variables may be estimated by principal component analysis
-(PCA), factor analysis (FA), K-means clustering, and related algorithms.  The
-jackstraw methods learn over-fitting characteristics inherent in this circular
-analysis, where the observed data are used to estimate the latent variables and
-used again to test against that estimated latent variables.  When latent
-variables are estimated by PCA, the jackstraw enables statistical testing for
-association between observed variables and latent variables, as estimated by
-low-dimensional principal components (PCs).  This essentially leads to
-identifying variables that are significantly associated with PCs.  Similarly,
-unsupervised clustering, such as K-means clustering, partition around medoids
-(PAM), and others, finds coherent groups in high-dimensional data.  The
-jackstraw estimates statistical significance of cluster membership, by testing
-association between data and cluster centers.  Clustering membership can be
-improved by using the resulting jackstraw p-values and posterior inclusion
-probabilities (PIPs), with an application to unsupervised evaluation of cell
-identities in single cell RNA-seq.")
+(PCA), factor analysis (FA), K-means clustering, and related unsupervised
+learning algorithms.  The jackstraw methods learn over-fitting characteristics
+inherent in this circular analysis, where the observed data are used to estimate
+the latent variables and used again to test against that estimated latent
+variables.  When latent variables are estimated by PCA, the jackstraw enables
+statistical testing for association between observed variables and latent
+variables, as estimated by low-dimensional principal components (PCs).  This
+essentially leads to identifying variables that are significantly associated
+with PCs.  Similarly, unsupervised clustering, such as K-means clustering,
+partition around medoids (PAM), and others, finds coherent groups in
+high-dimensional data.  The jackstraw estimates statistical significance of
+cluster membership, by testing association between data and cluster centers.
+Clustering membership can be improved by using the resulting jackstraw p-values
+and posterior inclusion probabilities (PIPs), with an application to
+unsupervised evaluation of cell identities in single cell RNA-seq
+(@code{scRNA-seq}).")
     (license license:gpl2)))
 
 (define-public r-jackstrap

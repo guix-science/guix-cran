@@ -7346,13 +7346,13 @@ linear models.")
 (define-public r-rscorecard
   (package
     (name "r-rscorecard")
-    (version "0.28.1")
+    (version "0.29.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rscorecard" version))
        (sha256
-        (base32 "090n5sw7r6qhcryi41agnh65mqny01s1a0h7m9ksf8mzvwpqdqv5"))))
+        (base32 "0h895yrbgc9xbl7kaxhi0yrykj3px1pzjml9zk67bn5gvam4xmiq"))))
     (properties `((upstream-name . "rscorecard")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -7363,15 +7363,15 @@ linear models.")
                              r-jsonlite
                              r-httr
                              r-dplyr))
-    (home-page "https://github.com/btskinner/rscorecard")
+    (home-page "https://www.btskinner.io/rscorecard/")
     (synopsis
      "Method to Download Department of Education College Scorecard Data")
     (description
      "This package provides a method to download Department of Education College
 Scorecard data using the public API
-<https://collegescorecard.ed.gov/data/documentation/>.  It is based on the dplyr
-model of piped commands to select and filter data in a single chained function
-call.  An API key from the U.S. Department of Education is required.")
+<https://collegescorecard.ed.gov/data/data-documentation/>.  It is based on the
+dplyr model of piped commands to select and filter data in a single chained
+function call.  An API key from the U.S. Department of Education is required.")
     (license license:expat)))
 
 (define-public r-rscopus
@@ -17123,13 +17123,13 @@ R objects.")
 (define-public r-rnassqs
   (package
     (name "r-rnassqs")
-    (version "0.6.1")
+    (version "0.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rnassqs" version))
        (sha256
-        (base32 "00daka4pgvmipqq3151jj35fsicpfc06mnim8mm5jx5cyqcvilf7"))))
+        (base32 "0l7fk172xfkc1fksf2f83201s1xrnfwcpf6mviiw7whyb9v80my1"))))
     (properties `((upstream-name . "rnassqs")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr))
@@ -17140,7 +17140,7 @@ R objects.")
     (description
      "Interface to access data via the United States Department of Agriculture's
 National Agricultural Statistical Service (NASS) Quick Stats web API
-<https://quickstats.nass.usda.gov/api>.  Convenience functions facilitate
+<https://quickstats.nass.usda.gov/api/>.  Convenience functions facilitate
 building queries based on available parameters and valid parameter values.  This
 product uses the NASS API but is not endorsed or certified by NASS.")
     (license license:expat)))
@@ -42899,13 +42899,13 @@ Supports the analysis and management of these worlds and game saves.")
 (define-public r-rbeast
   (package
     (name "r-rbeast")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rbeast" version))
        (sha256
-        (base32 "1k36rinhm8r6czk60f51p2d895g280k6qrr6qkcqc33l60jl6khi"))))
+        (base32 "0mwa4gqv3m9rvdja4spsh3bzyp9xyw2hlqs76pxyby581vaqa33j"))))
     (properties `((upstream-name . "Rbeast")))
     (build-system r-build-system)
     (home-page "https://github.com/zhaokg/Rbeast")
@@ -42918,17 +42918,18 @@ estimator of abrupt change,seasonality, and trend (BEAST) of this package.
 BEAST seeks to improve time series decomposition by forgoing the
 \"single-best-model\" concept and embracing all competing models into the
 inference via a Bayesian model averaging scheme.  It is a flexible tool to
-uncover abrupt changes (i.e., change-points), cyclic variations (e.g.,
-seasonality), and nonlinear trends in time-series observations.  BEAST not just
-tells when changes occur but also quantifies how likely the detected changes are
-true.  It detects not just piecewise linear trends but also arbitrary nonlinear
-trends.  BEAST is applicable to real-valued time series data of all kinds, be it
-for remote sensing, economics, climate sciences, ecology, and hydrology.
-Example applications include its use to identify regime shifts in ecological
-data, map forest disturbance and land degradation from satellite imagery, detect
-market trends in economic data, pinpoint anomaly and extreme events in climate
-data, and unravel system dynamics in biological data.  Details on BEAST are
-reported in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
+uncover abrupt changes (i.e., change-points, breakpoints, structural breaks, or
+join-points), cyclic variations (e.g., seasonality), and nonlinear trends in
+time-series observations.  BEAST not just tells when changes occur but also
+quantifies how likely the detected changes are true.  It detects not just
+piecewise linear trends but also arbitrary nonlinear trends.  BEAST is
+applicable to real-valued time series data of all kinds, be it for remote
+sensing, economics, climate sciences, ecology, and hydrology.  Example
+applications include its use to identify regime shifts in ecological data, map
+forest disturbance and land degradation from satellite imagery, detect market
+trends in economic data, pinpoint anomaly and extreme events in climate data,
+and unravel system dynamics in biological data.  Details on BEAST are reported
+in Zhao et al. (2019) <doi:10.1016/j.rse.2019.04.034>.")
     (license license:gpl2+)))
 
 (define-public r-rbe3

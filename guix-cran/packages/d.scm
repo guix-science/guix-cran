@@ -6618,6 +6618,27 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
     (description "Quick and easy dot-and-whisker plots of regression results.")
     (license license:expat)))
 
+(define-public r-dotty
+  (package
+    (name "r-dotty")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dotty" version))
+       (sha256
+        (base32 "1w41cm1h6g2r1r6iqwyfw0m0qyg296yv5nbsav90vg9a9knq56cf"))))
+    (properties `((upstream-name . "dotty")))
+    (build-system r-build-system)
+    (home-page "https://kevinushey.github.io/dotty/")
+    (synopsis "The Unpacking Dot Operator")
+    (description
+     "This package provides a `.` object which can be used for unpacking assignments.
+For example, `.[rows, columns] <- dim(cars)` could be used to pull the number of
+rows and number of columns from `dim(cars)` into individual variables `rows` and
+`columns` in a single step.")
+    (license license:expat)))
+
 (define-public r-dotsviolin
   (package
     (name "r-dotsviolin")
@@ -10049,13 +10070,13 @@ name.")
 (define-public r-distrmod
   (package
     (name "r-distrmod")
-    (version "2.9.1")
+    (version "2.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrMod" version))
        (sha256
-        (base32 "0gpa19xdw4gl8impn9lq8xxc8qwzs1wygfglzfn7hjin8l588avj"))))
+        (base32 "1g8d89czawzcggy568wxhcl3l9k7yicaxhl9zfbfca6ymac4ywb7"))))
     (properties `((upstream-name . "distrMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg

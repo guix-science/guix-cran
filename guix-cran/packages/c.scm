@@ -12100,16 +12100,16 @@ and Wallace (2018) <doi:10.1093/bioinformatics/bty898>.")
 (define-public r-corrbin
   (package
     (name "r-corrbin")
-    (version "1.6.1")
+    (version "1.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CorrBin" version))
        (sha256
-        (base32 "07nxara80zjpvaqjfjpwi2aw909wp1jj0v42dd0s06w00v502438"))))
+        (base32 "0dzd25a43rr22si9jpscgwglmf5s8q6gg5hch69xcbh3rarxqcd4"))))
     (properties `((upstream-name . "CorrBin")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-geepack r-dirmult r-combinat r-boot))
+    (propagated-inputs (list r-mvtnorm r-dirmult r-combinat r-boot))
     (home-page "https://cran.r-project.org/package=CorrBin")
     (synopsis "Nonparametrics with Clustered Binary and Multinomial Data")
     (description
@@ -23984,16 +23984,16 @@ Kalbfleisch & Prentice (2002)<doi:10.1002/9781118032985>; Hernan et al
 (define-public r-cmocean
   (package
     (name "r-cmocean")
-    (version "0.3-1")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmocean" version))
        (sha256
-        (base32 "0y6yd3x2swx88r7kv6f9lrbf3zzawhf2x8izszgg4zb21pkal6k8"))))
+        (base32 "0a4wxakh22rxv9xrmvj0rmky9pbsf4j9dl9fvj9v002flbkw9yv4"))))
     (properties `((upstream-name . "cmocean")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://matplotlib.org/cmocean/")
     (synopsis "Beautiful Colour Maps for Oceanography")
     (description
@@ -31092,13 +31092,13 @@ finding.  Howard Y. Chang(2019) <doi:10.1038/s41587-019-0206-z>.")
 (define-public r-chromote
   (package
     (name "r-chromote")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "chromote" version))
        (sha256
-        (base32 "0mkbrmls6c4pqw4hckl7ph5jchq1i7mn2l03x2a6qql65xlq110g"))))
+        (base32 "0iwxrw3sbdanqzd49p809hvw839fmv93g7a862s2rf8m00x5ccx2"))))
     (properties `((upstream-name . "chromote")))
     (build-system r-build-system)
     (propagated-inputs (list r-websocket
@@ -42051,13 +42051,13 @@ mrgsolve'.")
 (define-public r-campsis
   (package
     (name "r-campsis")
-    (version "1.5.3")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "campsis" version))
        (sha256
-        (base32 "0xjwx33y383a8ax9vwd30zsb3k7l0g95llnrgjpmmj4inrarb5a7"))))
+        (base32 "05ls3vgaplfjqs91gpzpwy5nhv7falxr14p1vz1waaqlj1qphyq9"))))
     (properties `((upstream-name . "campsis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -42080,15 +42080,15 @@ mrgsolve'.")
     (description
      "This package provides a generic, easy-to-use and intuitive
 pharmacokinetic/pharmacodynamic (PK/PD) simulation platform based on R packages
-rxode2', @code{RxODE} and mrgsolve'.  CAMPSIS provides an abstraction layer over
-the underlying processes of writing a PK/PD model, assembling a custom dataset
-and running a simulation.  CAMPSIS has a strong dependency to the R package
-campsismod', which allows to read/write a model from/to files and adapt it
-further on the fly in the R environment.  Package campsis allows the user to
-assemble a dataset in an intuitive manner.  Once the userâs dataset is ready,
-the package is in charge of preparing the simulation, calling rxode2',
-@code{RxODE} or mrgsolve (at the user's choice) and returning the results, for
-the given model, dataset and desired simulation settings.")
+rxode2 and mrgsolve'.  CAMPSIS provides an abstraction layer over the underlying
+processes of writing a PK/PD model, assembling a custom dataset and running a
+simulation.  CAMPSIS has a strong dependency to the R package campsismod', which
+allows to read/write a model from/to files and adapt it further on the fly in
+the R environment.  Package campsis allows the user to assemble a dataset in an
+intuitive manner.  Once the userâs dataset is ready, the package is in charge
+of preparing the simulation, calling rxode2 or mrgsolve (at the user's choice)
+and returning the results, for the given model, dataset and desired simulation
+settings.")
     (license license:gpl3+)))
 
 (define-public r-campfin

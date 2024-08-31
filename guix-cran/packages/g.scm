@@ -9219,13 +9219,13 @@ Multi-Channel Funnel API.")
 (define-public r-goodreader
   (package
     (name "r-goodreader")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Goodreader" version))
        (sha256
-        (base32 "0d7i0h28v0kxd5hbrg8m6kg9qww5y4zsz1a3j5436qdn9x3s8kyb"))))
+        (base32 "14bsgjqy2is5wimrz0biaw882p2zyna1p6lv1py8p0xgcxadg4a1"))))
     (properties `((upstream-name . "Goodreader")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -16313,6 +16313,35 @@ over-shrinking of predictors as compared to the ridge method.Aldahmani, S. and
 Zoubeidi, T. (2020) <DOI:10.1080/00949655.2020.1803320>.")
     (license license:gpl2)))
 
+(define-public r-ggreveal
+  (package
+    (name "r-ggreveal")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggreveal" version))
+       (sha256
+        (base32 "1dgm33y6swc75p6d992wv5m47kgl36g0fvp2s79byl51llm6940k"))))
+    (properties `((upstream-name . "ggreveal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-rlang
+                             r-lemon
+                             r-ggplotify
+                             r-ggplot2
+                             r-dplyr
+                             r-cli))
+    (home-page "http://www.weverthon.com/ggreveal/")
+    (synopsis "Reveal a 'ggplot' Incrementally")
+    (description
+     "This package provides functions that make it easy to reveal ggplot2 graphs
+incrementally.  The functions take a plot produced with ggplot2 and return a
+list of plots showing data incrementally by panels, layers, groups, the values
+in an axis or any arbitrary aesthetic.")
+    (license license:expat)))
+
 (define-public r-ggresidpanel
   (package
     (name "r-ggresidpanel")
@@ -18283,13 +18312,13 @@ not require a square coordinate system.")
 (define-public r-gggenomes
   (package
     (name "r-gggenomes")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gggenomes" version))
        (sha256
-        (base32 "0f3mkwbxmbszahfwr11big9cwlgp7nwbhfsxxfrhqshmr56ydpiw"))))
+        (base32 "1imahf69d17l7fk8j3jkiwlhbbc71yvdvp4q440w2mn4pnbzf6xx"))))
     (properties `((upstream-name . "gggenomes")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -18545,13 +18574,13 @@ and radii.")
 (define-public r-ggfacto
   (package
     (name "r-ggfacto")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfacto" version))
        (sha256
-        (base32 "069qzz2192vq6zsqpq2wqxhj6a26g4mpdbng7ing4ha9xfnp9h7g"))))
+        (base32 "15q2v52i0dsp8skcgznsy6mp7jwfh9qrball7vh3n1xc3d01yl8s"))))
     (properties `((upstream-name . "ggfacto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

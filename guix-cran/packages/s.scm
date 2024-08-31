@@ -5402,6 +5402,35 @@ BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
 (HBC.2022.0145), and Johnson & Johnson Innovative Medicine.")
     (license license:gpl2+)))
 
+(define-public r-surfrough
+  (package
+    (name "r-surfrough")
+    (version "0.0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurfRough" version))
+       (sha256
+        (base32 "1nvia5y38y2hx3w3k89cf4hrpl44sj23444xdr4vbpifrgy6qgpf"))))
+    (properties `((upstream-name . "SurfRough")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra))
+    (home-page "https://github.com/strevisani/SurfRough")
+    (synopsis "Calculate Surface/Image Texture Indexes")
+    (description
+     "This package provides methods for the computation of surface/image texture
+indices using a geostatistical based approach (Trevisani et al. (2023)
+<doi:10.1016/j.geomorph.2023.108838>).  It provides various functions for the
+computation of surface texture indices (e.g., omnidirectional roughness and
+roughness anisotropy), including the ones based on the robust MAD estimator.
+The kernels included in the software permit also to calculate the surface/image
+texture indices directly from the input surface (i.e., without de-trending)
+using increments of order 2.  It also provides the new radial roughness index
+(RRI), representing the improvement of the popular topographic roughness index
+(TRI).  The framework can be easily extended with ad-hoc surface/image texture
+indices.")
+    (license license:expat)))
+
 (define-public r-surfacetortoise
   (package
     (name "r-surfacetortoise")
@@ -12353,13 +12382,13 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "1qlr09n2lxc7n47zx1nm9ah1xd1038c1wnm7dzlh5wjvxggnnvqs"))))
+        (base32 "1a2cd5yp4gsm166middh956fda4a3jp5ssyhz0x4znb98p3hbpw8"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack
@@ -52080,6 +52109,32 @@ and of the original and adjusted self-determination or relative autonomy index.
 SDT was introduced by Deci and Ryan (1985) <doi:10.1007/978-1-4899-2271-7>.  See
 package?SDT for an overview.")
     (license license:gpl2+)))
+
+(define-public r-sdsfun
+  (package
+    (name "r-sdsfun")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdsfun" version))
+       (sha256
+        (base32 "19hqb2q96w4qq09sy09b17s8khnwicqg2ak61l6sqh5jg3j3k3h5"))))
+    (properties `((upstream-name . "sdsfun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-spdep
+                             r-sf
+                             r-magrittr
+                             r-geosphere
+                             r-dplyr))
+    (home-page "https://spatlyu.github.io/sdsfun/")
+    (synopsis "Spatial Data Science Complementary Features")
+    (description
+     "Wrapping and supplementing commonly used functions in the R ecosystem related to
+spatial data science, while serving as a basis for other packages maintained by
+Wenbo Lv.")
+    (license license:gpl3)))
 
 (define-public r-sdrt
   (package
