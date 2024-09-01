@@ -845,9 +845,8 @@ Heterogeneous Outcomes.  Obenchain and Young (2013)
     (description
      "Nonparametric test of independence between a pair of spatial objects (random
 fields, point processes) based on random shifts with torus or variance
-correction.  See @code{MrkviÄka} et al. (2021)
-<doi:10.1016/j.spasta.2020.100430>, @code{DvoÅÃ¡k} et al. (2022)
-<doi:10.1111/insr.12503>, @code{DvoÅÃ¡k} and @code{MrkviÄka} (2024)
+correction.  See MrkviÄka et al. (2021) <doi:10.1016/j.spasta.2020.100430>,
+DvoÅÃ¡k et al. (2022) <doi:10.1111/insr.12503>, DvoÅÃ¡k and MrkviÄka (2024)
 <doi:10.1080/10618600.2024.2357626>.")
     (license license:gpl3)))
 
@@ -960,9 +959,9 @@ Miari, Mahmoud; Anan, Mohamad Taher; Zeina, Mohamed Bisher(2022)
     (description
      "This package implements statistical tools for analyzing, simulating, and
 computing properties of the New Topp-Leone Kumaraswamy Inverse Exponential
-(NTL@code{KwIEx}) distribution.  See @code{AtchadÃ©} M, Otodji T, and Djibril A
-(2024) <doi:10.1063/5.0179458> and @code{AtchadÃ©} M, Otodji T, Djibril A, and
-N'@code{boukÃ©} M (2023) <doi:10.1515/phys-2023-0151> for details.")
+(NTL@code{KwIEx}) distribution.  See AtchadÃ© M, Otodji T, and Djibril A (2024)
+<doi:10.1063/5.0179458> and AtchadÃ© M, Otodji T, Djibril A, and N'boukÃ© M
+(2023) <doi:10.1515/phys-2023-0151> for details.")
     (license license:gpl2)))
 
 (define-public r-ntdr
@@ -2028,7 +2027,7 @@ applied to time series of vegetation indices derived from remote sensing data or
 field measurements.  The package implements basic and high-level functions for
 manipulating vector data (numerical series) and raster data (satellite derived
 products).  Processing of very large raster files is supported.  For more
-information, please check the following paper: @code{ChÃ¡vez} et al. (2023)
+information, please check the following paper: ChÃ¡vez et al. (2023)
 <doi:10.3390/rs15010073>.")
     (license license:gpl3+)))
 
@@ -6037,7 +6036,7 @@ in network analysis.")
     (synopsis "Non-Negative Matrix Factorization for Binary Data")
     (description
      "Factorize binary matrices into rank-k components using the logistic function in
-the updating process.  See e.g. @code{TomÃ©} et al (2015)
+the updating process.  See e.g. TomÃ© et al (2015)
 <doi:10.1007/s11045-013-0240-9> .")
     (license license:expat)))
 
@@ -8317,8 +8316,8 @@ in occurrence records and accessible areas, preparation of data for phylogenetic
 analyses, executing comparative phylogenetic analyses of ecological niches, and
 plotting for interpretations.  Details on the theoretical background and methods
 used can be found in: Owens et al. (2020) <doi:10.1002/ece3.6359>, Peterson et
-al. (1999) <doi:10.1126/science.285.5431.1265>, @code{SoberÃ³n} and Peterson
-(2005) <doi:10.17161/bi.v2i0.4>, Peterson (2011)
+al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
+<doi:10.17161/bi.v2i0.4>, Peterson (2011)
 <doi:10.1111/j.1365-2699.2010.02456.x>, Barve et al. (2011)
 <doi:10.1111/ecog.02671>, Machado-Stredel et al. (2021)
 <doi:10.21425/F5FBG48814>, Owens et al. (2013)

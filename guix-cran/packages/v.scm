@@ -2704,20 +2704,19 @@ research.  The package is described in Marin-Franch and Swanson (2013)
     (synopsis "Visualize Dominant Variables in Wavelet Multiple Correlation")
     (description
      "Estimates and plots as a heat map the correlation coefficients obtained via the
-wavelet local multiple correlation WLMC (@code{FernÃ¡ndez-Macho} 2018) and the
-dominant variable/s, i.e., the variable/s that maximizes the multiple
-correlation through time and scale (Polanco-@code{MartÃ­nez} et al.  2020,
-Polanco-@code{MartÃ­nez} 2022).  We improve the graphical outputs of WLMC
-proposing a didactic and useful way to visualize the dominant variable(s) for a
-set of time series.  The WLMC was designed for financial time series, but other
-kinds of data (e.g., climatic, ecological, etc.) can be used.  The functions
-contained in @code{VisualDom} are highly flexible since these contains several
-parameters to personalize the time series under analysis and the heat maps.  In
-addition, we have also included two data sets (named rdata_climate and
-rdata_Lorenz') to exemplify the use of the functions contained in
-@code{VisualDom}'.  Methods derived from @code{FernÃ¡ndez-Macho} (2018)
-<doi:10.1016/j.physa.2017.11.050>, Polanco-@code{MartÃ­nez} et al. (2020)
-<doi:10.1038/s41598-020-77767-8> and Polanco-@code{MartÃ­nez} (2023, in press).")
+wavelet local multiple correlation WLMC (FernÃ¡ndez-Macho 2018) and the dominant
+variable/s, i.e., the variable/s that maximizes the multiple correlation through
+time and scale (Polanco-MartÃ­nez et al.  2020, Polanco-MartÃ­nez 2022).  We
+improve the graphical outputs of WLMC proposing a didactic and useful way to
+visualize the dominant variable(s) for a set of time series.  The WLMC was
+designed for financial time series, but other kinds of data (e.g., climatic,
+ecological, etc.) can be used.  The functions contained in @code{VisualDom} are
+highly flexible since these contains several parameters to personalize the time
+series under analysis and the heat maps.  In addition, we have also included two
+data sets (named rdata_climate and rdata_Lorenz') to exemplify the use of the
+functions contained in @code{VisualDom}'.  Methods derived from FernÃ¡ndez-Macho
+(2018) <doi:10.1016/j.physa.2017.11.050>, Polanco-MartÃ­nez et al. (2020)
+<doi:10.1038/s41598-020-77767-8> and Polanco-MartÃ­nez (2023, in press).")
     (license license:gpl2+)))
 
 (define-public r-vistributions
@@ -4294,8 +4293,8 @@ transposable element sequences with that of regular genes.")
 various codon usage bias measurements as: effective number of codons (ENc)
 Novembre (2002) <doi:10.1093/oxfordjournals.molbev.a004201>, codon adaptation
 index (CAI) Sharp and Li (1987) <doi:10.1093/nar/15.3.1281>, relative codon
-deoptimization index (RCDI) @code{PuigbÃ²} et al (2010)
-<doi:10.1186/1756-0500-3-87>, similarity index (@code{SiD}) Zhou et al (2013)
+deoptimization index (RCDI) PuigbÃ² et al (2010) <doi:10.1186/1756-0500-3-87>,
+similarity index (@code{SiD}) Zhou et al (2013)
 <doi:10.1371/journal.pone.0077239>, synonymous codon usage orderliness (SCUO)
 Wan et al (2004) <doi:10.1186/1471-2148-4-19> and, relative synonymous codon
 usage (RSCU) Sharp et al (1986) <doi:10.1093/nar/14.13.5125>.  Also, it provides
@@ -6156,9 +6155,9 @@ from the @code{VineCopula} API can easily be converted.")
     (description
      "Time series decomposition for univariate time series using the \"Verallgemeinerte
 Berliner Verfahren\" (Generalized Berlin Method) as described in Kontinuierliche
-@code{MessgrÃ¶Ãen} und Stichprobenstrategien in Raum und Zeit mit Anwendungen
-in den Natur-, Umwelt-, Wirtschafts- und Finanzwissenschaften', by Hebbel and
-Steuer, Springer Berlin Heidelberg, 2022 <doi:10.1007/978-3-662-65638-9>, or
+MessgrÃ¶Ãen und Stichprobenstrategien in Raum und Zeit mit Anwendungen in den
+Natur-, Umwelt-, Wirtschafts- und Finanzwissenschaften', by Hebbel and Steuer,
+Springer Berlin Heidelberg, 2022 <doi:10.1007/978-3-662-65638-9>, or
 Decomposition of Time Series using the Generalised Berlin Method (VBV) by Hebbel
 and Steuer, in Jan Beran, Yuanhua Feng, Hartmut Hebbel (Eds.): Empirical
 Economic and Financial Research - Theory, Methods and Practice, Festschrift in
@@ -6677,7 +6676,7 @@ Variates and Importance Sampling algorithms are available in the framework.
 User can write its own simulation function and use the Variance Reduction
 techniques in this package to obtain more efficient simulations.  An
 implementation of Asian Option simulation is already available within the
-package.  See Kemal @code{DinÃ§er} @code{DingeÃ}§ & Wolfgang HÃ¶rmann (2012)
+package.  See Kemal DinÃ§er DingeÃ§ & Wolfgang HÃ¶rmann (2012)
 <doi:10.1016/j.ejor.2012.03.046>.")
     (license license:gpl2)))
 
@@ -7493,9 +7492,9 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
     (description
      "Collection of functions to evaluate presence-absence models.  The main function
 corrects discrimination for the representativeness effect following:
-@code{JimÃ©nez-Valverde} (2022) \"The uniform AUC: dealing with the
-representativeness effect in presence-absence models.  Methods Ecol.  Evol,
-accepted on 28 January 2022.")
+JimÃ©nez-Valverde (2022) \"The uniform AUC: dealing with the representativeness
+effect in presence-absence models.  Methods Ecol.  Evol, accepted on 28 January
+2022.")
     (license license:gpl3)))
 
 (define-public r-vancouvr

@@ -3012,7 +3012,7 @@ functions provided by similar packages.")
     (description
      "Symbolic calculation and evaluation of multivariate polynomials with rational
 coefficients.  This package is strongly inspired by the spray package.  It
-provides a function to compute @code{GrÃ¶bner} bases (reference
+provides a function to compute GrÃ¶bner bases (reference
 <doi:10.1007/978-3-319-16721-3>).  It also includes some features for symmetric
 polynomials, such as the Hall inner product.  The header file of the C++ code
 can be used by other packages.  It provides the templated class Qspray that can
@@ -3737,14 +3737,13 @@ configurations.")
 Fieller's formula methodology, for calculating a confidence interval for a ratio
 of (commonly, correlated) means.  See Fieller (1954)
 <doi:10.1111/j.2517-6161.1954.tb00159.x>.  Here, the application of primary
-interest is to studies @code{ofÂ insect} mortality response
-@code{toÂ increasing} doses of a fumigant, or, e.g., to time in coolstorage.
-The formula is used to calculate a confidence interval for the dose or time
-required to achieve a specified mortality proportion, commonly 0.5 or 0.99.
-Vignettes demonstrate link functions that may be considered, checks on fitted
-models, and alternative choices of error family.  Note in particular the
-betabinomial error family.  See also Maindonald, Waddell, and Petry (2001)
-<doi:10.1016/S0925-5214(01)00082-5>.")
+interest is to studies ofÂ insect mortality response toÂ increasing doses of a
+fumigant, or, e.g., to time in coolstorage.  The formula is used to calculate a
+confidence interval for the dose or time required to achieve a specified
+mortality proportion, commonly 0.5 or 0.99.  Vignettes demonstrate link
+functions that may be considered, checks on fitted models, and alternative
+choices of error family.  Note in particular the betabinomial error family.  See
+also Maindonald, Waddell, and Petry (2001) <doi:10.1016/S0925-5214(01)00082-5>.")
     (license license:gpl3)))
 
 (define-public r-qr
@@ -4166,15 +4165,14 @@ Statistics, 16, 2206-2251.")
     (description
      "Manages, builds and computes statistics and datasets for the construction of
 quarterly (sub-annual) life tables by exploiting micro-data from either a
-general or an insured population.  References: @code{PavÃ­a} and @code{LledÃ³}
-(2022) <doi:10.1111/rssa.12769>. @code{PavÃ­a} and @code{LledÃ³} (2023)
-<doi:10.1017/asb.2023.16>.  Acknowledgements: The authors wish to thank
-@code{ConsellerÃ­a} de @code{EducaciÃ³n}, Universidades y Empleo, Generalitat
-Valenciana (grant AICO/2021/257), Ministerio de Ciencia e @code{InnovaciÃ³n}
-(grant PID2021-128228NB-I00) and @code{FundaciÃ³n} Mapfre (grant
-@code{ModelizaciÃ³n} espacial e intra-anual de la mortalidad en @code{EspaÃ±a}.
-Una herramienta @code{automÃ¡tica} para el @code{cÃ¡lculo} de productos de
-vida') for supporting this research.")
+general or an insured population.  References: PavÃ­a and LledÃ³ (2022)
+<doi:10.1111/rssa.12769>.  PavÃ­a and LledÃ³ (2023) <doi:10.1017/asb.2023.16>.
+Acknowledgements: The authors wish to thank ConsellerÃ­a de EducaciÃ³n,
+Universidades y Empleo, Generalitat Valenciana (grant AICO/2021/257), Ministerio
+de Ciencia e InnovaciÃ³n (grant PID2021-128228NB-I00) and FundaciÃ³n Mapfre
+(grant ModelizaciÃ³n espacial e intra-anual de la mortalidad en EspaÃ±a.  Una
+herramienta automÃ¡tica para el cÃ¡lculo de productos de vida') for supporting
+this research.")
     (license (license:fsdg-compatible "EPL"))))
 
 (define-public r-qlearning

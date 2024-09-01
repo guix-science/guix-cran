@@ -1501,7 +1501,7 @@ Institute, or the National Institutes of Health.")
 <doi:10.1016/j.tree.2017.02.002>.  Various indices can be computed using both
 regional and local information.  Functional Rarity combines both the functional
 aspect of rarity as well as the extent aspect of rarity.  funrar is presented in
-@code{GreniÃ©} et al. (2017) <doi:10.1111/ddi.12629>.")
+GreniÃ© et al. (2017) <doi:10.1111/ddi.12629>.")
     (license license:gpl2+)))
 
 (define-public r-funr
@@ -1980,7 +1980,7 @@ functional subspace.")
      "Computes six functional diversity indices.  These are namely, Functional
 Divergence (FDiv), Function Evenness (FEve), Functional Richness (FRic),
 Functional Richness intersections (FRic_intersect), Functional Dispersion
-(FDis), and Rao's entropy (Q) (reviewed in @code{VillÃ©ger} et al.  2008
+(FDis), and Rao's entropy (Q) (reviewed in VillÃ©ger et al.  2008
 <doi:10.1890/07-1206.1>).  Provides efficient, modular, and parallel functions
 to compute functional diversity indices (preprint: <doi:10.32942/osf.io/dg7hw>).")
     (license license:gpl3)))
@@ -4669,12 +4669,12 @@ time series and other data from FRED'.")
     (description
      "This package provides implementation of statistical methods for random objects
 lying in various metric spaces, which are not necessarily linear spaces.  The
-core of this package is @code{FrÃ©chet} regression for random objects with
-Euclidean predictors, which allows one to perform regression analysis for
-non-Euclidean responses under some mild conditions.  Examples include
-distributions in 2-Wasserstein space, covariance matrices endowed with power
-metric (with Frobenius metric as a special case), Cholesky and log-Cholesky
-metrics, spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
+core of this package is FrÃ©chet regression for random objects with Euclidean
+predictors, which allows one to perform regression analysis for non-Euclidean
+responses under some mild conditions.  Examples include distributions in
+2-Wasserstein space, covariance matrices endowed with power metric (with
+Frobenius metric as a special case), Cholesky and log-Cholesky metrics,
+spherical data.  References: Petersen, A., & MÃ¼ller, H.-G. (2019)
 <doi:10.1214/17-AOS1624>.")
     (license license:bsd-3)))
 
@@ -5942,10 +5942,10 @@ of the package is described in Guo G. (2020) <doi:10.1007/s00180-020-00974-4>.")
      "Predictive Confidence Bands for Functional Time Series Forecasting")
     (description
      "This package provides functions to represent functional objects under a
-Reproducing Kernel Hilbert Space (RKHS) framework as described in @code{MuÃ±oz}
-& @code{GonzÃ¡lez} (2010).  Autoregressive Hilbertian Model for functional time
-series using RKHS and predictive confidence bands construction as proposed in
-@code{HernÃ¡ndez} et al (2021).")
+Reproducing Kernel Hilbert Space (RKHS) framework as described in MuÃ±oz &
+GonzÃ¡lez (2010).  Autoregressive Hilbertian Model for functional time series
+using RKHS and predictive confidence bands construction as proposed in
+HernÃ¡ndez et al (2021).")
     (license license:gpl3+)))
 
 (define-public r-fpca3d
@@ -7740,9 +7740,9 @@ supported to evaluate model accuracy.")
     (description
      "This package provides a web application for displaying, analysing and
 forecasting univariate time series.  Includes basic methods such as mean,
-@code{naÃ¯ve}, seasonal @code{naÃ¯ve} and drift, as well as more complex methods
-such as Holt-Winters Box,G and Jenkins, G (1976) <doi:10.1111/jtsa.12194> and
-ARIMA Brockwell, P.J. and R.A.Davis (1991) <doi:10.1007/978-1-4419-0320-4>.")
+naÃ¯ve, seasonal naÃ¯ve and drift, as well as more complex methods such as
+Holt-Winters Box,G and Jenkins, G (1976) <doi:10.1111/jtsa.12194> and ARIMA
+Brockwell, P.J. and R.A.Davis (1991) <doi:10.1007/978-1-4419-0320-4>.")
     (license license:gpl2+)))
 
 (define-public r-forecastcombinations
@@ -9610,7 +9610,7 @@ many other agencies.")
     (synopsis "The Environmental Costs of Flow Regulation")
     (description
      "An application to calculate the daily environmental costs of river flow
-regulation by dams based on @code{GarcÃ­a} de Jalon et al.  2017
+regulation by dams based on GarcÃ­a de Jalon et al.  2017
 <doi:10.1007/s11269-017-1663-0>.")
     (license license:expat)))
 
@@ -9732,8 +9732,8 @@ bidirectional half-arrows.")
      "Computes unidimensional and multidimensional Reciprocity and Inaccuracy indices.
  These indices are applicable to common heterostylous populations and to any
 other type of stylar dimorphic and trimorphic populations, such as in
-enantiostylous and three-dimensional heterostylous plants. @code{SimÃ³n-Porcar},
-V., A. J. @code{MuÃ±oz-Pajares}, J. Arroyo, and S. D. Johnson. (in press)
+enantiostylous and three-dimensional heterostylous plants.  SimÃ³n-Porcar, V.,
+A. J. MuÃ±oz-Pajares, J. Arroyo, and S. D. Johnson. (in press)
 \"@code{FlowerMate}: multidimensional reciprocity and inaccuracy indices for
 style-polymorphic plant populations.\".")
     (license license:gpl2+)))
@@ -12813,10 +12813,10 @@ of three Mixtures of Finite Mixtures models: Dirichlet Process Mixtures (DPMs;
 Escobar and West (1995) <doi:10.1080/01621459.1995.10476550>), Static Mixtures
 of Finite Mixtures (Static MFMs; Miller and Harrison (2018)
 <doi:10.1080/01621459.2016.1255636>), and Dynamic Mixtures of Finite Mixtures
-(Dynamic MFMs; @code{FrÃ¼hwirth-Schnatter}, Malsiner-Walli and @code{GrÃ¼n}
-(2020) <@code{arXiv:2005.09918>}).  For methodological details, please refer to
-Greve, @code{GrÃ¼n}, Malsiner-Walli and @code{FrÃ¼hwirth-Schnatter} (2020)
-<@code{arXiv:2012.12337>}) as well as the package vignette.")
+(Dynamic MFMs; FrÃ¼hwirth-Schnatter, Malsiner-Walli and GrÃ¼n (2020)
+<@code{arXiv:2005.09918>}).  For methodological details, please refer to Greve,
+GrÃ¼n, Malsiner-Walli and FrÃ¼hwirth-Schnatter (2020) <@code{arXiv:2012.12337>})
+as well as the package vignette.")
     (license license:gpl2)))
 
 (define-public r-fipio
@@ -13020,11 +13020,11 @@ financial forecasters.  Happy forecasting!")
     (description
      "Annotates Finnish textual survey responses into @code{CoNLL-U} format using
 Finnish treebanks from <https://universaldependencies.org/format.html> using
-UDPipe as described in Straka and @code{StrakovÃ}¡ (2017)
-<doi:10.18653/v1/K17-3009>.  Formatted data is then analysed using single or
-comparison n-gram plots, wordclouds, summary tables and Concept Network plots.
-The Concept Network plots use the @code{TextRank} algorithm as outlined in
-Mihalcea, Rada & Tarau, Paul (2004) <https://aclanthology.org/W04-3252/>.")
+UDPipe as described in Straka and StrakovÃ¡ (2017) <doi:10.18653/v1/K17-3009>.
+Formatted data is then analysed using single or comparison n-gram plots,
+wordclouds, summary tables and Concept Network plots.  The Concept Network plots
+use the @code{TextRank} algorithm as outlined in Mihalcea, Rada & Tarau, Paul
+(2004) <https://aclanthology.org/W04-3252/>.")
     (license license:expat)))
 
 (define-public r-finnishgrid
@@ -13120,10 +13120,10 @@ This package does that following the test suggested by Trapani (2016)
     (synopsis
      "Computation of the Probability of Ruin Within a Finite Time Horizon")
     (description
-     "In the @code{CramÃ©râLundberg} risk process perturbed by a Wiener process,
-this packages provides approximations to the probability of ruin within a finite
-time horizon.  Currently, there are three methods implemented: The first one
-uses saddlepoint approximation (two variants are provided), the second one uses
+     "In the CramÃ©râLundberg risk process perturbed by a Wiener process, this
+packages provides approximations to the probability of ruin within a finite time
+horizon.  Currently, there are three methods implemented: The first one uses
+saddlepoint approximation (two variants are provided), the second one uses
 importance sampling and the third one is based on the simulation of a dual
 process.  This last method is not very accurate and only given here for
 completeness.")
@@ -14618,13 +14618,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form.")
     (synopsis "Fitting Hidden Markov Models to Financial Data")
     (description
      "Fitting (hierarchical) hidden Markov models to financial data via maximum
-likelihood estimation.  See @code{OelschlÃ¤ger}, L. and Adam, T. \"Detecting
-Bearish and Bullish Markets in Financial Time Series Using Hierarchical Hidden
-Markov Models\" (2021, Statistical Modelling) <doi:10.1177/1471082X211034048> for
-a reference on the method.  A user guide is provided by the accompanying
-software paper \"@code{fHMM}: Hidden Markov Models for Financial Time Series in
-R\", @code{OelschlÃ¤ger}, L., Adam, T., and Michels, R. (2024, Journal of
-Statistical Software) <doi:10.18637/jss.v109.i09>.")
+likelihood estimation.  See OelschlÃ¤ger, L. and Adam, T. \"Detecting Bearish and
+Bullish Markets in Financial Time Series Using Hierarchical Hidden Markov
+Models\" (2021, Statistical Modelling) <doi:10.1177/1471082X211034048> for a
+reference on the method.  A user guide is provided by the accompanying software
+paper \"@code{fHMM}: Hidden Markov Models for Financial Time Series in R\",
+OelschlÃ¤ger, L., Adam, T., and Michels, R. (2024, Journal of Statistical
+Software) <doi:10.18637/jss.v109.i09>.")
     (license license:gpl3)))
 
 (define-public r-fhircrackr
@@ -14716,9 +14716,9 @@ of this package is provide functions to support these activities.")
     (home-page "https://cran.r-project.org/package=fgm")
     (synopsis "Partial Separability and Functional Gaussian Graphical Models")
     (description
-     "Estimates a functional graphical model and a partially separable
-Karhunen-@code{LoÃ¨ve} decomposition for a multivariate Gaussian process.  See
-Zapata J., Oh S. and Petersen A. (2019) <@code{arXiv:1910.03134>}.")
+     "Estimates a functional graphical model and a partially separable Karhunen-LoÃ¨ve
+decomposition for a multivariate Gaussian process.  See Zapata J., Oh S. and
+Petersen A. (2019) <@code{arXiv:1910.03134>}.")
     (license license:gpl2+)))
 
 (define-public r-fglsnet
@@ -16652,8 +16652,8 @@ Karny, M., Ettler, P. (2010) <doi:10.1198/TECH.2009.08104>.")
 programming.  Various R packages are used and wrappers are built around the main
 functions, to standardize the use of data mining methods (input/output): it
 brings a certain loss of flexibility, but also a gain of simplicity.  The
-package name came from the French \"Fouille de @code{DonnÃ©es} en Master 2
-Informatique DÃ©cisionnelle\".")
+package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatique
+DÃ©cisionnelle\".")
     (license license:gpl3)))
 
 (define-public r-fdicdata
@@ -16914,9 +16914,9 @@ J. L. (2005) <doi:10.1198/016214504000001745>.")
     (synopsis "Partially Observed Integrated Functional Depth")
     (description
      "Applications to visualization, outlier detection and classification.  Software
-companion for @code{ElÃ­as}, Antonio, @code{JimÃ©nez}, @code{RaÃºl}, Paganoni,
-Anna M. and Sangalli, Laura M., (2022), \"Integrated Depth for Partially Observed
-Functional Data\".  Journal of Computational and Graphical Statistics.
+companion for ElÃ­as, Antonio, JimÃ©nez, RaÃºl, Paganoni, Anna M. and Sangalli,
+Laura M., (2022), \"Integrated Depth for Partially Observed Functional Data\".
+Journal of Computational and Graphical Statistics.
 <doi:10.1080/10618600.2022.2070171>.")
     (license license:gpl3)))
 
@@ -17108,10 +17108,10 @@ functional data) together with scalar covariates.  The spline coefficients and
 the covariates are modelled as a multivariate Gaussian mixture model, where the
 number of mixtures corresponds to the number of clusters.  The parameters of the
 model are estimated by maximizing the observed mixture likelihood via an EM
-algorithm (Arnqvist and @code{SjÃ¶stedt} de Luna, 2019)
-<@code{arXiv:1904.10265>}.  The clustering method is used to analyze annual lake
-sediment from lake @code{KassjÃ¶n} (Northern Sweden) which cover more than 6400
-years and can be seen as historical records of weather and climate.")
+algorithm (Arnqvist and SjÃ¶stedt de Luna, 2019) <@code{arXiv:1904.10265>}.  The
+clustering method is used to analyze annual lake sediment from lake KassjÃ¶n
+(Northern Sweden) which cover more than 6400 years and can be seen as historical
+records of weather and climate.")
     (license license:gpl2+)))
 
 (define-public r-fdamixed
@@ -17189,8 +17189,8 @@ constructed for each case.  Further, the influence of past predictor values are
 modeled by a smooth history index function, while the effects on the response
 are described by smooth varying coefficient functions, which are very useful in
 analyzing real data such as COVID data.  References: Yao, F., MÃ¼ller, H.G.,
-Wang, J.L. (2005) <doi:10.1214/009053605000000660>. @code{SentÃ¼rk}, D.,
-MÃ¼ller, H.G. (2010) <doi:10.1198/jasa.2010.tm09228>.")
+Wang, J.L. (2005) <doi:10.1214/009053605000000660>.  SentÃ¼rk, D., MÃ¼ller, H.G.
+(2010) <doi:10.1198/jasa.2010.tm09228>.")
     (license license:bsd-3)))
 
 (define-public r-fdacluster
@@ -17936,7 +17936,7 @@ delete custom audiences, images, campaigns, ad sets, ads and related content.")
      "Open-source package for computing likelihood ratios in kinship testing and human
 identification cases (Chernomoretz et al. (2021)
 <doi:10.1016/j.fsir.2020.100132>).  It has the core function of the software
-GENis, developed by @code{FundaciÃ³n} Sadosky.  It relies on a Bayesian Networks
+GENis, developed by FundaciÃ³n Sadosky.  It relies on a Bayesian Networks
 framework and is particularly well suited to efficiently perform large-size
 queries against databases of missing individuals (Darwiche (2009)
 <doi:10.1017/CBO9780511811357>).")
@@ -18314,7 +18314,7 @@ shortfall.  Include power hyperbolas and power hyperbolic functions.")
     (description
      "Application of @code{FateID} allows computation and visualization of cell fate
 bias for multi-lineage single cell transcriptome data.  Herman, J.S., Sagar,
-@code{GrÃ¼n} D. (2018) <DOI:10.1038/nmeth.4662>.")
+GrÃ¼n D. (2018) <DOI:10.1038/nmeth.4662>.")
     (license license:gpl3)))
 
 (define-public r-fat2lpoly
@@ -21191,7 +21191,7 @@ Statistical Parity, Equal odds to detect the discrimination against unprivileged
 groups.  Visualize the bias using heatmap, radar plot, biplot, bar chart (and
 more!).  There are various pre-processing and post-processing bias mitigation
 algorithms implemented.  Package also supports calculating fairness metrics for
-regression models.  Find more details in (@code{WiÅniewski}, Biecek (2021))
+regression models.  Find more details in (WiÅniewski, Biecek (2021))
 <@code{arXiv:2104.00507>}.")
     (license license:gpl3)))
 

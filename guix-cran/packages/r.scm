@@ -1663,14 +1663,13 @@ licensed under the GNU GPL version 3.")
 regression model is a classical problem in Econometrics.  The objective of this
 package is to detect it using the variance inflation factor redefined and the
 scatterplot between the variance inflation factor and the coefficient of
-variation.  For more details see @code{SalmerÃ³n} R., @code{GarcÃ­a} C.B. and
-@code{GarcÃ­a} J. (2018) <doi:10.1080/00949655.2018.1463376>, @code{SalmerÃ³n},
-R., @code{RodrÃ­guez}, A. and @code{GarcÃ­a} C. (2020)
-<doi:10.1007/s00180-019-00922-x>, @code{SalmerÃ³n}, R., @code{GarcÃ­a}, C.B,
-@code{RodrÃ­guez}, A. and @code{GarcÃ­a}, C. \"Limitations in Detecting
-Multicollinearity due to Scaling Issues in the mcvis Package\" (2022, to appear
-in The R Journal) and @code{SalmerÃ³n}, R., @code{GarcÃ­a}, C.B, @code{GarcÃ­a}
-J. (2023, working paper) <@code{arXiv:2005.02245>}.")
+variation.  For more details see SalmerÃ³n R., GarcÃ­a C.B. and GarcÃ­a J.
+(2018) <doi:10.1080/00949655.2018.1463376>, SalmerÃ³n, R., RodrÃ­guez, A. and
+GarcÃ­a C. (2020) <doi:10.1007/s00180-019-00922-x>, SalmerÃ³n, R., GarcÃ­a, C.B,
+RodrÃ­guez, A. and GarcÃ­a, C. \"Limitations in Detecting Multicollinearity due
+to Scaling Issues in the mcvis Package\" (2022, to appear in The R Journal) and
+SalmerÃ³n, R., GarcÃ­a, C.B, GarcÃ­a J. (2023, working paper)
+<@code{arXiv:2005.02245>}.")
     (license license:gpl2+)))
 
 (define-public r-rviewgraph
@@ -1835,10 +1834,9 @@ to build expressions in a chain-like fashion.")
     (description
      "Simple and fast tool for transforming phytosociological vegetation data into
 digital form for the following analysis.  Danihelka, Chrtek, and Kaplan (2012,
-ISSN:00327786).  Hennekens, and @code{SchaminÃ©e} (2001) <doi:10.2307/3237010>.
-@code{TichÃ½} (2002) <doi:10.1111/j.1654-1103.2002.tb02069.x>.  Wickham,
-@code{FranÃ§ois}, Henry, MÃ¼ller (2022)
-<https://CRAN.R-project.org/package=dplyr>.")
+ISSN:00327786).  Hennekens, and SchaminÃ©e (2001) <doi:10.2307/3237010>.  TichÃ½
+(2002) <doi:10.1111/j.1654-1103.2002.tb02069.x>.  Wickham, FranÃ§ois, Henry,
+MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
     (license license:gpl3+)))
 
 (define-public r-rvec
@@ -3134,8 +3132,8 @@ map covariates between geographies, model fitting including spatially aggregated
 case counts, and predictions and visualisation.  Both Bayesian and maximum
 likelihood methods are provided.  Log-Gaussian Cox Processes are described by
 Diggle et al. (2013) <doi:10.1214/13-STS441> and we provide both the low-rank
-approximation for Gaussian processes described by Solin and SÃ¤@code{rkkÃ¤}
-(2020) <doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2023)
+approximation for Gaussian processes described by Solin and SÃ¤rkkÃ¤ (2020)
+<doi:10.1007/s11222-019-09886-w> and Riutort-Mayol et al (2023)
 <doi:10.1007/s11222-022-10167-2> and the nearest neighbour Gaussian process
 described by Datta et al (2016) <doi:10.1080/01621459.2015.1044091>.  cmdstanr
 can be downloaded at <https://mc-stan.org/cmdstanr/>.")
@@ -3588,7 +3586,7 @@ performing calculations in CPUs as well as GPUs to accelerate tensor operations.
      "Data with irregular spatial support, such as runoff related data or data from
 administrative units, can with rtop be interpolated to locations without
 observations with the top-kriging method.  A description of the package is given
-by @code{SkÃ¸ien} et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
+by SkÃ¸ien et al (2014) <doi:10.1016/j.cageo.2014.02.009>.")
     (license license:gpl2+)))
 
 (define-public r-rtoot
@@ -3775,9 +3773,9 @@ U.H., Albertsen, C.M., Berg, C.W. et al. (2017) <DOI:10.1007/s10651-017-0372-4>.
     (synopsis "Post-Hurricane Damage Severity Classification from TLS and AI")
     (description
      "Terrestrial laser scanning (TLS) data processing and post-hurricane damage
-severity classification at the individual tree level
-@code{usingÂ deepÂ Learning}.  Further details were published in Klauberg et al.
-(2023) <doi:10.3390/rs15041165>.")
+severity classification at the individual tree level usingÂ deepÂ Learning.
+Further details were published in Klauberg et al. (2023)
+<doi:10.3390/rs15041165>.")
     (license license:gpl3)))
 
 (define-public r-rtlr
@@ -5723,7 +5721,7 @@ input, then calculating and comparing the distances between the solutions and
 the reference - the latter is measured in the L1 norm.  The reference can be an
 external benchmark (e.g. an established gold standard) or can be aggregated from
 the data.  The calculated distances, called SRD scores, are validated in two
-ways, see HÃ©berger and @code{KollÃ¡r-Hunek} (2011) <doi:10.1002/cem.1320>.  A
+ways, see HÃ©berger and KollÃ¡r-Hunek (2011) <doi:10.1002/cem.1320>.  A
 randomization test (also called permutation test) compares the SRD scores of the
 solutions to the SRD scores of randomly generated rankings.  The second
 validation option is cross-validation that checks whether the rankings generated
@@ -9880,10 +9878,9 @@ was taken.  References were Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
     (description
      "Routines to select and visualize the maxima for a given strict partial order.
 This especially includes the computation of the Pareto frontier, also known as
-(Top-k) Skyline operator (see BÃ¶@code{rzsÃ¶nyi}, et al. (2001)
+(Top-k) Skyline operator (see BÃ¶rzsÃ¶nyi, et al. (2001)
 <doi:10.1109/ICDE.2001.914855>), and some generalizations known as database
-preferences (see @code{KieÃling} (2002)
-<doi:10.1016/B978-155860869-6/50035-4>).")
+preferences (see KieÃling (2002) <doi:10.1016/B978-155860869-6/50035-4>).")
     (license license:gpl2+)))
 
 (define-public r-rpredictit
@@ -11599,13 +11596,13 @@ implementations for the basic concepts of RST and FRST but also popular
 algorithms that derive from those theories.  The methods included in the package
 can be divided into several categories based on their functionality:
 discretization, feature selection, instance selection, rule induction and
-classification based on nearest neighbors.  RST was introduced by
-@code{ZdzisÅaw} Pawlak in 1982 as a sophisticated mathematical tool to model
-and process imprecise or incomplete information.  By using the indiscernibility
-relation for objects/instances, RST does not require additional parameters to
-analyze the data.  FRST is an extension of RST. The FRST combines concepts of
-vagueness and indiscernibility that are expressed with fuzzy sets (as proposed
-by Zadeh, in 1965) and RST.")
+classification based on nearest neighbors.  RST was introduced by ZdzisÅaw
+Pawlak in 1982 as a sophisticated mathematical tool to model and process
+imprecise or incomplete information.  By using the indiscernibility relation for
+objects/instances, RST does not require additional parameters to analyze the
+data.  FRST is an extension of RST. The FRST combines concepts of vagueness and
+indiscernibility that are expressed with fuzzy sets (as proposed by Zadeh, in
+1965) and RST.")
     (license license:gpl2+)))
 
 (define-public r-roughnet
@@ -11778,7 +11775,7 @@ partitions of the feature set.")
     (synopsis "Tests for Rotational Symmetry on the Hypersphere")
     (description
      "Implementation of the tests for rotational symmetry on the hypersphere proposed
-in @code{GarcÃ­a-PortuguÃ©s}, Paindaveine and Verdebout (2020)
+in GarcÃ­a-PortuguÃ©s, Paindaveine and Verdebout (2020)
 <doi:10.1080/01621459.2019.1665527>.  The package also implements the proposed
 distributions on the hypersphere, based on the tangent-normal decomposition, and
 allows for the replication of the data application considered in the paper.")
@@ -12114,11 +12111,11 @@ Options and Corporate Liabilities\" <doi:10.1086/260062>.")
 Monte Carlo optimisation with Metropolis criterion [Metropolis et al. (1953)
 <doi:10.1063/1.1699114>, Hastings (1970) <doi:10.1093/biomet/57.1.97>] and
 Acceptance Ratio Simulated Annealing [Kirkpatrick et al. (1983)
-<doi:10.1126/science.220.4598.671>, Ä@code{ernÃ½} (1985)
-<doi:10.1007/BF00940812>] on multiple cores, and ii) Acceptance Ratio Replica
-Exchange Monte Carlo Optimisation.  In each case, the system pseudo-temperature
-is dynamically adjusted such that the observed acceptance ratio is kept near to
-the desired (fixed or changing) acceptance ratio.")
+<doi:10.1126/science.220.4598.671>, ÄernÃ½ (1985) <doi:10.1007/BF00940812>] on
+multiple cores, and ii) Acceptance Ratio Replica Exchange Monte Carlo
+Optimisation.  In each case, the system pseudo-temperature is dynamically
+adjusted such that the observed acceptance ratio is kept near to the desired
+(fixed or changing) acceptance ratio.")
     (license license:gpl3+)))
 
 (define-public r-roptest
@@ -12624,8 +12621,7 @@ personalize the time series under analysis and the heat maps of the rolling
 window wavelet correlation coefficients.  Moreover, we have also included a data
 set (named EU_stock_markets) that contains nine European stock market indices to
 exemplify the use of the functions contained in @code{RolWinWavCor}'.  Methods
-derived from Polanco-@code{MartÃ­nez} et al (2018)
-<doi:10.1016/j.physa.2017.08.065>).")
+derived from Polanco-MartÃ­nez et al (2018) <doi:10.1016/j.physa.2017.08.065>).")
     (license license:gpl2+)))
 
 (define-public r-rolwinmulcor
@@ -13673,8 +13669,7 @@ The ROC-SVM solution path algorithm greatly facilitates the tuning procedure for
 regularization parameter, lambda in ROC-SVM by avoiding grid search algorithm
 which may be computationally too intensive.  For more information on the
 ROC-SVM, see the report in the ROC Analysis in AI workshop(ROCAI-2004) :
-@code{HernÃ ndez-Orallo}, @code{JosÃ©}, et al. (2004)
-<doi:10.1145/1046456.1046489>.")
+HernÃ ndez-Orallo, JosÃ©, et al. (2004) <doi:10.1145/1046456.1046489>.")
     (license license:gpl2)))
 
 (define-public r-rocsurf
@@ -13958,9 +13953,9 @@ representations: 1) parametric curves - the true positive rate (TPR) and the
 false positive rate (FPR) are functions of a parameter (the score), 2) functions
 - TPR is a function of FPR. There are several ROC curve estimation methods
 available.  An introduction to the mathematical background of the implemented
-methods (and much more) can be found in de Zea Bermudez, @code{GonÃ§alves},
-Oliveira & Subtil (2014) <https://www.ine.pt/revstat/pdf/rs140101.pdf> and Cai &
-Pepe (2004) <doi:10.1111/j.0006-341X.2004.00200.x>.")
+methods (and much more) can be found in de Zea Bermudez, GonÃ§alves, Oliveira &
+Subtil (2014) <https://www.ine.pt/revstat/pdf/rs140101.pdf> and Cai & Pepe
+(2004) <doi:10.1111/j.0006-341X.2004.00200.x>.")
     (license license:gpl3)))
 
 (define-public r-rocker
@@ -15211,10 +15206,10 @@ uses Bayesian model-averaging to combine the competing parametric survival
 models into a model ensemble, weights the posterior parameter distributions
 based on posterior model probabilities and uses Bayes factors to test for the
 presence or absence of the individual predictors or preference for a parametric
-family (@code{BartoÅ}¡, Aust & Haaf, 2022, <doi:10.1186/s12874-022-01676-9>).
-The user can define a wide range of informative priors for all parameters of
-interest.  The package provides convenient functions for summary,
-visualizations, fit diagnostics, and prior distribution calibration.")
+family (BartoÅ¡, Aust & Haaf, 2022, <doi:10.1186/s12874-022-01676-9>).  The user
+can define a wide range of informative priors for all parameters of interest.
+The package provides convenient functions for summary, visualizations, fit
+diagnostics, and prior distribution calibration.")
     (license license:gpl3)))
 
 (define-public r-robregression
@@ -15633,8 +15628,8 @@ publication bias).  The @code{RoBMA} framework uses Bayesian model-averaging to
 combine the competing meta-analytic models into a model ensemble, weights the
 posterior parameter distributions based on posterior model probabilities and
 uses Bayes factors to test for the presence or absence of the individual
-components (e.g., effect vs. no effect; @code{BartoÅ}¡ et al., 2022,
-<doi:10.1002/jrsm.1594>; Maier, @code{BartoÅ}¡ & Wagenmakers, 2022,
+components (e.g., effect vs. no effect; BartoÅ¡ et al., 2022,
+<doi:10.1002/jrsm.1594>; Maier, BartoÅ¡ & Wagenmakers, 2022,
 <doi:10.1037/met0000405>).  Users can define a wide range of non-informative or
 informative prior distributions for the effect size, heterogeneity, and
 publication bias components (including selection models and PET-PEESE).  The
@@ -17385,13 +17380,13 @@ Grange et al. (2021) <doi:10.5194/acp-2020-1171>.")
 (define-public r-rmvp
   (package
     (name "r-rmvp")
-    (version "1.0.8")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rMVP" version))
        (sha256
-        (base32 "1k7n8hmwybbp41iqgckkvzqa75kl0ikl5mpq2c5ynmlfkr244by8"))))
+        (base32 "156bmpdp8r69097cig07bq5h9pqb1d5zkd57qxfjm1070h3f39xw"))))
     (properties `((upstream-name . "rMVP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -17762,8 +17757,8 @@ vectors and changing the console prompt to reflect time.")
     (description
      "Display a randomly selected quote about Richard M. Stallman based on the
 collection in the GNU Octave function fact() which was aggregated by Jordi
-@code{GutiÃ©rrez} Hermoso based on the (now defunct) site stallmanfacts.com
-(which is accessible only via <http://archive.org>).")
+GutiÃ©rrez Hermoso based on the (now defunct) site stallmanfacts.com (which is
+accessible only via <http://archive.org>).")
     (license license:gpl3)))
 
 (define-public r-rmsdp
@@ -18652,8 +18647,7 @@ useful for exploratory and probabilistic analysis.")
 new objective weighting method for determining criteria weights for Multiple
 Criteria Decision Making problems, created by Mehdi Keshavarz-Ghorabaee (2021)
 <doi:10.3390/sym13040525>.  Given a decision matrix, the function return the
-@code{MerecÂ´s} weight vector and all intermediate matrix/vectors used to
-calculate it.")
+MerecÂ´s weight vector and all intermediate matrix/vectors used to calculate it.")
     (license license:gpl3+)))
 
 (define-public r-rmediation
@@ -20012,7 +20006,7 @@ Tsz Nam Chan, Leong Hou U, Reynold Cheng, Man Lung Yiu, Shivansh Mittal (2020)
     (synopsis
      "Ensemble Empirical Mode Decomposition (EEMD) and Its Complete Variant (CEEMDAN)")
     (description
-     "An R interface for libeemd (Luukko, Helske, RÃ¤@code{sÃ¤nen}, 2016)
+     "An R interface for libeemd (Luukko, Helske, RÃ¤sÃ¤nen, 2016)
 <doi:10.1007/s00180-015-0603-9>, a C library of highly efficient parallelizable
 functions for performing the ensemble empirical mode decomposition (EEMD), its
 complete variant (CEEMDAN), the regular empirical mode decomposition (EMD), and
@@ -22448,10 +22442,9 @@ be used as a rapid calculation tool in topological data analysis pipelines.")
     (synopsis "Download and Tidy IPC and CH Data")
     (description
      "Utilities to access Integrated Food Security Phase Classification (IPC) and
-Cadre @code{HarmonisÃ©} (CH) food security data.  Wrapper functions are
-available for all of the IPC-CH Public API (<https://docs.api.ipcinfo.org>)
-simplified and advanced endpoints to easily download the data in a clean and
-tidy format.")
+Cadre HarmonisÃ© (CH) food security data.  Wrapper functions are available for
+all of the IPC-CH Public API (<https://docs.api.ipcinfo.org>) simplified and
+advanced endpoints to easily download the data in a clean and tidy format.")
     (license license:gpl3+)))
 
 (define-public r-rioplot
@@ -23139,9 +23132,9 @@ Investors Exchange Group (IEX Group) terms and conditions before using Riex
     (synopsis "Functions and C++ Header Files for Computation on Manifolds")
     (description
      "We provide a number of algorithms to estimate fundamental statistics including
-@code{FrÃ©chet} mean and geometric median for manifold-valued data.  Also, C++
-header files are contained that implement elementary operations on manifolds
-such as Sphere, Grassmann, and others.  See Bhattacharya and Bhattacharya (2012)
+FrÃ©chet mean and geometric median for manifold-valued data.  Also, C++ header
+files are contained that implement elementary operations on manifolds such as
+Sphere, Grassmann, and others.  See Bhattacharya and Bhattacharya (2012)
 <doi:10.1017/CBO9781139094764> if you are interested in statistics on manifolds,
 and Absil et al (2007, ISBN:9780691132983) on computational aspects of
 optimization on matrix manifolds.")
@@ -23174,11 +23167,10 @@ optimization on matrix manifolds.")
     (home-page "https://kisungyou.com/Riemann/")
     (synopsis "Learning with Data on Riemannian Manifolds")
     (description
-     "We provide a variety of algorithms for manifold-valued data, including
-@code{FrÃ©chet} summaries, hypothesis testing, clustering, visualization, and
-other learning tasks.  See Bhattacharya and Bhattacharya (2012)
-<doi:10.1017/CBO9781139094764> for general exposition to statistics on
-manifolds.")
+     "We provide a variety of algorithms for manifold-valued data, including FrÃ©chet
+summaries, hypothesis testing, clustering, visualization, and other learning
+tasks.  See Bhattacharya and Bhattacharya (2012) <doi:10.1017/CBO9781139094764>
+for general exposition to statistics on manifolds.")
     (license license:expat)))
 
 (define-public r-riem
@@ -23316,8 +23308,8 @@ ridge estimation.  The main function, ridge_pca(), obtains the relevant density
 ridge for bivariate sine von Mises and bivariate wrapped Cauchy distribution
 models and provides the associated scores and variance decomposition.  Auxiliary
 functions for evaluating, fitting, and sampling these models are also provided.
-The package provides replicability to @code{GarcÃ­a-PortuguÃ©s} and
-Prieto-Tirado (2023) <doi:10.1007/s11222-023-10273-9>.")
+The package provides replicability to GarcÃ­a-PortuguÃ©s and Prieto-Tirado
+(2023) <doi:10.1007/s11222-023-10273-9>.")
     (license license:gpl3)))
 
 (define-public r-ridge
@@ -24355,7 +24347,7 @@ host of glycemic variability metrics, and plots glucose over time.")
     (synopsis "Search and Retrieve Spatial Data from 'GUGiK'")
     (description
      "Automatic open data acquisition from resources of Polish Head Office of Geodesy
-and Cartography ('GÅÃ³wny @code{UrzÄd} Geodezji i Kartografii')
+and Cartography ('GÅÃ³wny UrzÄd Geodezji i Kartografii')
 (<https://www.gov.pl/web/gugik>).  Available datasets include various types of
 numeric, raster and vector data, such as orthophotomaps, digital elevation
 models (digital terrain models, digital surface model, point clouds), state
@@ -26208,10 +26200,9 @@ as well as the sample code for each chapter.")
 X (d dimensional, n samples), the test checks whether the distribution of the
 data are rather unimodal or rather multimodal.  This package stems from the
 following research publication: Siffer Alban, Pierre-Alain Fouque, Alexandre
-Termier, and Christine @code{LargouÃ«t}. \"Are your data gathered?\" In
-Proceedings of the 24th ACM SIGKDD International Conference on Knowledge
-Discovery Data Mining, pp.  2210-2218.  ACM, 2018.
-<doi:10.1145/3219819.3219994>.")
+Termier, and Christine LargouÃ«t. \"Are your data gathered?\" In Proceedings of
+the 24th ACM SIGKDD International Conference on Knowledge Discovery Data Mining,
+pp.  2210-2218.  ACM, 2018. <doi:10.1145/3219819.3219994>.")
     (license license:gpl3)))
 
 (define-public r-rfold
@@ -31400,15 +31391,14 @@ disproportionality, such as, Rae index, LoosemoreâHanby index, etc.  The
 second group is intended to study the dimensions of the party system vote,
 through the indicators of electoral fragmentation, polarization, volatility,
 etc.  Moreover, multiple seat allocation simulations can also be performed based
-on different allocation systems, such as the D'Hondt method,
-Sainte-@code{LaguÃ}«, etc.  Finally, some of these functions have been built so
-that, if the user wishes, the data provided by the Spanish Ministry of Home
-Office for different electoral processes held in Spain can be obtained
-automatically.  All the above will allow the users to carry out deep studies on
-the results obtained in any type of electoral process.  The methods are
-described in: OÃ±ate, Pablo and @code{OcaÃ±a}, Francisco A. (1999,
-ISBN:9788474762815); Ruiz @code{RodrÃ­guez}, Leticia M. and Otero Felipe,
-Patricia (2011, ISBN:9788474766226).")
+on different allocation systems, such as the D'Hondt method, Sainte-LaguÃ«, etc.
+ Finally, some of these functions have been built so that, if the user wishes,
+the data provided by the Spanish Ministry of Home Office for different electoral
+processes held in Spain can be obtained automatically.  All the above will allow
+the users to carry out deep studies on the results obtained in any type of
+electoral process.  The methods are described in: OÃ±ate, Pablo and OcaÃ±a,
+Francisco A. (1999, ISBN:9788474762815); Ruiz RodrÃ­guez, Leticia M. and Otero
+Felipe, Patricia (2011, ISBN:9788474766226).")
     (license license:gpl2)))
 
 (define-public r-reldists
@@ -31558,9 +31548,9 @@ the impact of reinsurance, producing a table or graphical output.  This package
 can be used for estimating the impact of reinsurance on several portfolios or
 for pricing treaties through statistical analysis.  Documentation for the
 implemented methods can be found in \"Reinsurance: Actuarial and Statistical
-Aspects\" by @code{HansjÃ¶erg} Albrecher, Jan Beirlant, Jozef L. Teugels (2017,
-ISBN: 978-0-470-77268-3) and \"REINSURANCE: A Basic Guide to Facultative and
-Treaty Reinsurance\" by Munich Re (2010)
+Aspects\" by HansjÃ¶erg Albrecher, Jan Beirlant, Jozef L. Teugels (2017, ISBN:
+978-0-470-77268-3) and \"REINSURANCE: A Basic Guide to Facultative and Treaty
+Reinsurance\" by Munich Re (2010)
 <https://www.munichre.com/site/mram/get/documents_E96160999/mram/assetpool.mr_america/PDFs/3_Publications/reinsurance_basic_guide.pdf>.")
     (license license:gpl2+)))
 
@@ -33976,11 +33966,11 @@ with the definitions in a database's data dictionary.")
      "Access and Analyze Data from the Red Book of Endemic Plants of Peru")
     (description
      "This package provides access to and analysis of data from \"The Red Book of
-Endemic Plants of Peru\" (@code{LeÃ³n}, B., Roque, J., Ulloa, C., Jorgensen,
-P.M., Pitman, N., Cano, A. 2006) <doi:10.15381/rpb.v13i2.1782>.  This package
-offers comprehensive taxonomic, geographic, and conservation information about
-Peru's endemic plant species.  It includes functions to verify species
-inclusion, obtain updated taxonomic details, and explore the dataset.")
+Endemic Plants of Peru\" (LeÃ³n, B., Roque, J., Ulloa, C., Jorgensen, P.M.,
+Pitman, N., Cano, A. 2006) <doi:10.15381/rpb.v13i2.1782>.  This package offers
+comprehensive taxonomic, geographic, and conservation information about Peru's
+endemic plant species.  It includes functions to verify species inclusion,
+obtain updated taxonomic details, and explore the dataset.")
     (license license:expat)))
 
 (define-public r-redas
@@ -33999,8 +33989,8 @@ inclusion, obtain updated taxonomic details, and explore the dataset.")
     (synopsis
      "Companion Package to the Book 'R: EinfÃ¼hrung durch angewandte Statistik'")
     (description
-     "This package provides functions used in the R: @code{EinfÃ¼hrung} durch
-angewandte Statistik (second edition).")
+     "This package provides functions used in the R: EinfÃ¼hrung durch angewandte
+Statistik (second edition).")
     (license license:gpl2)))
 
 (define-public r-redamor
@@ -37254,8 +37244,8 @@ from the DHS website, (4) loading datasets and associate metadata into R, and
     (description
      "Honest and nearly-optimal confidence intervals in fuzzy and sharp regression
 discontinuity designs and for inference at a point based on local linear
-regression.  The implementation is based on Armstrong and @code{KolesÃ¡r} (2018)
-<doi:10.3982/ECTA14434>, and @code{KolesÃ¡r} and Rothe (2018)
+regression.  The implementation is based on Armstrong and KolesÃ¡r (2018)
+<doi:10.3982/ECTA14434>, and KolesÃ¡r and Rothe (2018)
 <doi:10.1257/aer.20160945>.  Supports covariates, clustering, and weighting.")
     (license license:gpl3)))
 

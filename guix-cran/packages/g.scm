@@ -82,12 +82,12 @@
     (home-page "https://github.com/stla/gyro")
     (synopsis "Hyperbolic Geometry")
     (description
-     "Hyperbolic geometry in the Minkowski model and the @code{PoincarÃ©} model.  The
-methods are based on the gyrovector space theory developed by A. A. Ungar that
-can be found in the book Analytic Hyperbolic Geometry: Mathematical Foundations
-And Applications <doi:10.1142/5914>.  The package provides functions to plot
+     "Hyperbolic geometry in the Minkowski model and the PoincarÃ© model.  The methods
+are based on the gyrovector space theory developed by A. A. Ungar that can be
+found in the book Analytic Hyperbolic Geometry: Mathematical Foundations And
+Applications <doi:10.1142/5914>.  The package provides functions to plot
 three-dimensional hyperbolic polyhedra and to plot hyperbolic tilings of the
-@code{PoincarÃ©} disk.")
+PoincarÃ© disk.")
     (license license:gpl3)))
 
 (define-public r-gym
@@ -2200,9 +2200,9 @@ Association for the Physical Sciences of the Oceans).")
      "Implementations of the algorithms present article Generalized Spatial-Time
 Sequence Miner, original title (Castro, Antonio; Borges, Heraldo ; Pacitti,
 Esther ; Porto, Fabio ; Coutinho, Rafaelli ; Ogasawara, Eduardo .
-@code{GeneralizaÃ§Ã£o} de @code{MineraÃ§Ã£o} de @code{SequÃªncias} Restritas no
-@code{EspaÃ§o} e no Tempo.  In: XXXVI SBBD - @code{SimpÃ³sio} Brasileiro de
-Banco de Dados, 2021 <doi:10.5753/sbbd.2021.17891>).")
+GeneralizaÃ§Ã£o de MineraÃ§Ã£o de SequÃªncias Restritas no EspaÃ§o e no Tempo.
+In: XXXVI SBBD - SimpÃ³sio Brasileiro de Banco de Dados, 2021
+<doi:10.5753/sbbd.2021.17891>).")
     (license license:expat)))
 
 (define-public r-gstream
@@ -3752,9 +3752,9 @@ effects dependence.")
     (synopsis "Implementation of the Vegetation Model ModVege")
     (description
      "Run grass growth simulations using a grass growth model based on @code{ModVege}
-(Jouven, M., P. @code{CarrÃ¨re}, and R. Baumont \"Model Predicting Dynamics of
-Biomass, Structure and Digestibility of Herbage in Managed Permanent Pastures.
-1.  Model Description.\" (2006) <doi:10.1111/j.1365-2494.2006.00515.x>).  The
+(Jouven, M., P. CarrÃ¨re, and R. Baumont \"Model Predicting Dynamics of Biomass,
+Structure and Digestibility of Herbage in Managed Permanent Pastures.  1.  Model
+Description.\" (2006) <doi:10.1111/j.1365-2494.2006.00515.x>).  The
 implementation in this package contains a few additions to the above cited
 version of @code{ModVege}, such as simulations of management decisions, and
 influences of snow cover.  As such, the model is fit to simulate grass growth in
@@ -8244,18 +8244,18 @@ quantification, and machine learning.  This package creates basic tools for
 fitting and prediction based on GPs with spatial data, spatio'-temporal data,
 and computer experiments.  Key characteristics for this GP tool include: (1) the
 comprehensive implementation of various covariance functions including the
-@code{MatÃ©rn} family and the Confluent Hypergeometric family with isotropic
-form, tensor form, and automatic relevance determination form, where the
-isotropic form is widely used in spatial statistics, the tensor form is widely
-used in design and analysis of computer experiments and uncertainty
-quantification, and the automatic relevance determination form is widely used in
-machine learning; (2) implementations via Markov chain Monte Carlo ('MCMC')
-algorithms and optimization algorithms for GP models with all the implemented
-covariance functions.  The methods for fitting and prediction are mainly
-implemented in a Bayesian framework; (3) model evaluation via Fisher information
-and predictive metrics such as predictive scores; (4) built-in functionality for
-simulating GPs with all the implemented covariance functions; (5) unified
-implementation to allow easy specification of various GPs'.")
+MatÃ©rn family and the Confluent Hypergeometric family with isotropic form,
+tensor form, and automatic relevance determination form, where the isotropic
+form is widely used in spatial statistics, the tensor form is widely used in
+design and analysis of computer experiments and uncertainty quantification, and
+the automatic relevance determination form is widely used in machine learning;
+(2) implementations via Markov chain Monte Carlo ('MCMC') algorithms and
+optimization algorithms for GP models with all the implemented covariance
+functions.  The methods for fitting and prediction are mainly implemented in a
+Bayesian framework; (3) model evaluation via Fisher information and predictive
+metrics such as predictive scores; (4) built-in functionality for simulating GPs
+with all the implemented covariance functions; (5) unified implementation to
+allow easy specification of various GPs'.")
     (license license:gpl2+)))
 
 (define-public r-gparotatedf
@@ -9663,9 +9663,8 @@ the gamma law are implemented using the method of Bhattacharya (2001)
      "Implementation of several goodness-of-fit tests for functional data.  Currently,
 mostly related with the functional linear model with functional/scalar response
 and functional/scalar predictor.  The package allows for the replication of the
-data applications considered in @code{GarcÃ­a-PortuguÃ©s},
-Ãlvarez-@code{LiÃ©bana}, Ãlvarez-PÃ©rez and @code{GonzÃ¡lez-Manteiga} (2021)
-<doi:10.1111/sjos.12486>.")
+data applications considered in GarcÃ­a-PortuguÃ©s, Ãlvarez-LiÃ©bana,
+Ãlvarez-PÃ©rez and GonzÃ¡lez-Manteiga (2021) <doi:10.1111/sjos.12486>.")
     (license license:gpl3)))
 
 (define-public r-gofedf
@@ -9757,13 +9756,13 @@ bootstrapping tasks.  The package provides an interface to perform new
     (synopsis "Goodness-of-Fit Methods for Complete and Right-Censored Data")
     (description
      "Graphical tools and goodness-of-fit tests for complete and right-censored data:
-1.  Kolmogorov-Smirnov, @code{CramÃ©r-von} Mises, and Anderson-Darling tests,
-which use the empirical distribution function for complete data and are extended
-for right-censored data.  2.  Generalized chi-squared-type test, which is based
-on the squared differences between observed and expected counts using random
-cells with right-censored data.  3.  A series of graphical tools such as
-probability or cumulative hazard plots to guide the decision about the most
-suitable parametric model for the data.")
+1.  Kolmogorov-Smirnov, CramÃ©r-von Mises, and Anderson-Darling tests, which use
+the empirical distribution function for complete data and are extended for
+right-censored data.  2.  Generalized chi-squared-type test, which is based on
+the squared differences between observed and expected counts using random cells
+with right-censored data.  3.  A series of graphical tools such as probability
+or cumulative hazard plots to guide the decision about the most suitable
+parametric model for the data.")
     (license license:gpl2+)))
 
 (define-public r-gofcat
@@ -12838,12 +12837,12 @@ inference.")
      "In statistical modeling, there is a wide variety of regression models for
 categorical dependent variables (nominal or ordinal data); yet, there is no
 software embracing all these models together in a uniform and generalized
-format.  Following the methodology proposed by Peyhardi, Trottier, and
-@code{GuÃ©don} (2015) <doi:10.1093/biomet/asv042>, we introduce GLMcat', an R
-package to estimate generalized linear models implemented under the unified
-specification (r, F, Z).  Where r represents the ratio of probabilities
-(reference, cumulative, adjacent, or sequential), F the cumulative cdf function
-for the linkage, and Z, the design matrix.")
+format.  Following the methodology proposed by Peyhardi, Trottier, and GuÃ©don
+(2015) <doi:10.1093/biomet/asv042>, we introduce GLMcat', an R package to
+estimate generalized linear models implemented under the unified specification
+(r, F, Z).  Where r represents the ratio of probabilities (reference,
+cumulative, adjacent, or sequential), F the cumulative cdf function for the
+linkage, and Z, the design matrix.")
     (license license:gpl3)))
 
 (define-public r-glmc
@@ -14276,7 +14275,7 @@ Normal (GIN) distribution from Robert (1991) <doi:10.1016/0167-7152(91)90174-P>.
 truncated to positive or negative reals.  Theoretical guarantees supporting the
 sampling algorithms and an application to Bayesian estimation of network
 formation models can be found in the working paper Ding, Estrada and
-Montoya-@code{BlandÃ³n} (2023)
+Montoya-BlandÃ³n (2023)
 <https://www.smontoyablandon.com/publication/networks/network_externalities.pdf>.")
     (license license:gpl3+)))
 
@@ -14302,9 +14301,9 @@ Montoya-@code{BlandÃ³n} (2023)
 finite and infinite populations, using different methods; also computes Gini
 index for continuous probability distributions, draws samples from continuous
 probability distributions with Gini indices set by the user; uses Rcpp'.
-References: @code{MuÃ±oz} et al. (2023) <doi:10.1177/00491241231176847>.
-Ãlvarez et al. (2021) <doi:10.3390/math9243252>.  Giorgi and Gigliarano (2017)
-<doi:10.1111/joes.12185>.  Langel and @code{TillÃ©} (2013)
+References: MuÃ±oz et al. (2023) <doi:10.1177/00491241231176847>.  Ãlvarez et
+al. (2021) <doi:10.3390/math9243252>.  Giorgi and Gigliarano (2017)
+<doi:10.1111/joes.12185>.  Langel and TillÃ© (2013)
 <doi:10.1111/j.1467-985X.2012.01048.x>.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -16015,7 +16014,7 @@ atlases (Desikan-Killiany and aseg).  By far, the largest bit of the package is
 the data for each of the atlases.  The functions and data enable users to plot
 tri-surface mesh plots of brain atlases, and customise these by projecting
 colours onto the brain segments based on values in their own data sets.
-Functions are wrappers for plotly'.  Mowinckel & Vidal-@code{PiÃ±eiro} (2020)
+Functions are wrappers for plotly'.  Mowinckel & Vidal-PiÃ±eiro (2020)
 <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
@@ -16039,8 +16038,7 @@ Functions are wrappers for plotly'.  Mowinckel & Vidal-@code{PiÃ±eiro} (2020)
     (description
      "This package contains ggplot2 geom for plotting brain atlases using simple
 features.  The largest component of the package is the data for the two built-in
-atlases.  Mowinckel & Vidal-@code{PiÃ±eiro} (2020)
-<doi:10.1177/2515245920928009>.")
+atlases.  Mowinckel & Vidal-PiÃ±eiro (2020) <doi:10.1177/2515245920928009>.")
     (license license:expat)))
 
 (define-public r-ggsector
@@ -17659,7 +17657,7 @@ Chain Monte Carlo simulations, as well as for graphically display results from
 full MCMC analysis.  The package also facilitates the graphical interpretation
 of models by providing flexible functions to plot the results against observed
 variables, and functions to work with hierarchical/multilevel batches of
-parameters (@code{FernÃ¡ndez-i-MarÃ­n}, 2016 <doi:10.18637/jss.v070.i09>).")
+parameters (FernÃ¡ndez-i-MarÃ­n, 2016 <doi:10.18637/jss.v070.i09>).")
     (license license:gpl2)))
 
 (define-public r-ggmatplot
@@ -20766,19 +20764,18 @@ functional general linear model, n-sample test of correspondence of distribution
 functions), for central regions of functional or multivariate data (e.g. outlier
 detection, functional boxplot) and for global confidence and prediction bands
 (e.g. confidence band in polynomial regression, Bayesian posterior prediction).
-See @code{MyllymÃ¤ki} and @code{MrkviÄka} (2023)
-<doi:10.48550/@code{arXiv.1911.06583>}, @code{MyllymÃ¤ki} et al. (2017)
-<doi:10.1111/rssb.12172>, @code{MrkviÄka} and @code{MyllymÃ¤ki} (2023)
-<doi:10.1007/s11222-023-10275-7>, @code{MrkviÄka} et al. (2016)
-<doi:10.1016/j.spasta.2016.04.005>, @code{MrkviÄka} et al. (2017)
-<doi:10.1007/s11222-016-9683-9>, @code{MrkviÄka} et al. (2020)
-<doi:10.14736/kyb-2020-3-0432>, @code{MrkviÄka} et al. (2021)
-<doi:10.1007/s11009-019-09756-y>, @code{MyllymÃ¤ki} et al. (2021)
-<doi:10.1016/j.spasta.2020.100436>, @code{MrkviÄka} et al. (2022)
+See MyllymÃ¤ki and MrkviÄka (2023) <doi:10.48550/@code{arXiv.1911.06583>},
+MyllymÃ¤ki et al. (2017) <doi:10.1111/rssb.12172>, MrkviÄka and MyllymÃ¤ki
+(2023) <doi:10.1007/s11222-023-10275-7>, MrkviÄka et al. (2016)
+<doi:10.1016/j.spasta.2016.04.005>, MrkviÄka et al. (2017)
+<doi:10.1007/s11222-016-9683-9>, MrkviÄka et al. (2020)
+<doi:10.14736/kyb-2020-3-0432>, MrkviÄka et al. (2021)
+<doi:10.1007/s11009-019-09756-y>, MyllymÃ¤ki et al. (2021)
+<doi:10.1016/j.spasta.2020.100436>, MrkviÄka et al. (2022)
 <doi:10.1002/sim.9236>, Dai et al. (2022) <doi:10.5772/intechopen.100124>,
-@code{DvoÅÃ¡k} and @code{MrkviÄka} (2022) <doi:10.1007/s00180-021-01134-y>,
-@code{MrkviÄka} et al. (2023) <doi:10.48550/@code{arXiv.2309.04746>}, and
-Konstantinou et al. (2024) <doi: 10.48550/@code{arXiv.2403.01838>}.")
+DvoÅÃ¡k and MrkviÄka (2022) <doi:10.1007/s00180-021-01134-y>, MrkviÄka et al.
+(2023) <doi:10.48550/@code{arXiv.2309.04746>}, and Konstantinou et al. (2024)
+<doi: 10.48550/@code{arXiv.2403.01838>}.")
     (license license:gpl3)))
 
 (define-public r-gesttools
@@ -24464,7 +24461,7 @@ the Additive Main effects and Multiplicative Interaction model or AMMI ('Gauch
 performance under the presence of outliers and missing values, this package
 includes robust versions of the AMMI model ('Rodrigues 2016,
 <doi:10.1093/bioinformatics/btv533>), and also imputation techniques
-specifically developed for this kind of data ('Arciniegas-@code{AlarcÃ³n} 2014,
+specifically developed for this kind of data ('Arciniegas-AlarcÃ³n 2014,
 <doi:10.2478/bile-2014-0006>).")
     (license license:gpl2)))
 
@@ -24705,11 +24702,11 @@ inference.")
     (description
      "Generic Machine Learning Inference on heterogeneous treatment effects in
 randomized experiments as proposed in Chernozhukov, Demirer, Duflo and
-@code{FernÃ¡ndez-Val} (2020) <@code{arXiv:1712.04802>}.  This package's
-workhorse is the mlr3 framework of Lang et al. (2019) <doi:10.21105/joss.01903>,
-which enables the specification of a wide variety of machine learners.  The main
+FernÃ¡ndez-Val (2020) <@code{arXiv:1712.04802>}.  This package's workhorse is
+the mlr3 framework of Lang et al. (2019) <doi:10.21105/joss.01903>, which
+enables the specification of a wide variety of machine learners.  The main
 functionality, @code{GenericML}(), runs Algorithm 1 in Chernozhukov, Demirer,
-Duflo and @code{FernÃ¡ndez-Val} (2020) <@code{arXiv:1712.04802>} for a suite of
+Duflo and FernÃ¡ndez-Val (2020) <@code{arXiv:1712.04802>} for a suite of
 user-specified machine learners.  All steps in the algorithm are customizable
 via setup functions.  Methods for printing and plotting are available for
 objects returned by @code{GenericML}().  Parallel computing is supported.")
@@ -24787,9 +24784,9 @@ approximating it via covariance interpolation.  The available methods are linear
 interpolation, polynomial interpolation, and cubic spline interpolation.  Moreno
 Bevilacqua and Reinhard Furrer and Tarik Faouzi and Emilio Porcu (2019)
 <url:<https://projecteuclid.org/@code{journalArticle/Download?urlId=10.1214%2F17-AOS1652}
->>.  Moreno Bevilacqua and Christian @code{CaamaÃ±o-Carrillo} and Emilio Porcu
-(2022) <@code{arXiv:2008.02904>}.  Reinhard Furrer and Roman Flury and Florian
-Gerber (2022) <url:<https://CRAN.R-project.org/package=spam >>.")
+>>.  Moreno Bevilacqua and Christian CaamaÃ±o-Carrillo and Emilio Porcu (2022)
+<@code{arXiv:2008.02904>}.  Reinhard Furrer and Roman Flury and Florian Gerber
+(2022) <url:<https://CRAN.R-project.org/package=spam >>.")
     (license license:gpl2+)))
 
 (define-public r-generalizedumatrix
@@ -25338,7 +25335,7 @@ Human Development Reports Data Center and the World Bank Gender Data Portal by
 the author the dataset is available on <doi:10.34740/kaggle/dsv/6359326>.
 References: Miller, Kevin; Vagins, Deborah J. (2021)
 <https://eric.ed.gov/?id=ED596219>.  Jacques Charmes & Saskia Wieringa (2003)
-<doi:10.1080/1464988032000125773>. @code{GaÃ«lle} Ferrant (2010)
+<doi:10.1080/1464988032000125773>.  GaÃ«lle Ferrant (2010)
 <https://shs.hal.science/halshs-00462463/>.")
     (license license:expat)))
 
@@ -26587,9 +26584,9 @@ exchange rates and international dollars via purchasing power parities.")
     (synopsis "Generalized Dynamic Principal Components")
     (description
      "This package provides functions to compute the Generalized Dynamic Principal
-Components introduced in @code{PeÃ±a} and Yohai (2016)
+Components introduced in PeÃ±a and Yohai (2016)
 <DOI:10.1080/01621459.2015.1072542>.  The implementation includes an automatic
-procedure proposed in @code{PeÃ±a}, Smucler and Yohai (2020)
+procedure proposed in PeÃ±a, Smucler and Yohai (2020)
 <DOI:10.18637/jss.v092.c02> for the identification of both the number of lags to
 be used in the generalized dynamic principal components as well as the number of
 components required for a given reconstruction accuracy.")
@@ -29262,8 +29259,8 @@ follows lineal regression structures.")
      "Process in-situ Gamma-Ray Spectrometry for Luminescence Dating.  This package
 allows to import, inspect and correct the energy shifts of Gamma-ray spectra.
 It provides methods for estimating the gamma dose rate by the use of a
-calibration curve as described in Mercier and @code{FalguÃ¨res} (2007).  The
-package only supports Canberra CNF and TKA files.")
+calibration curve as described in Mercier and FalguÃ¨res (2007).  The package
+only supports Canberra CNF and TKA files.")
     (license license:gpl3)))
 
 (define-public r-gamlssx

@@ -1087,11 +1087,11 @@ directory within functions and wrap console messages around other functions.")
      "The main functionalities of wrappedtools are: adding backticks to variable
 names; rounding to desired precision with special case for p-values; selecting
 columns based on pattern and storing their position, name, and backticked name;
-computing and formatting of descriptive statistics (e.g. @code{meanÂ±SD}),
-comparing groups and creating publication-ready tables with descriptive
-statistics and p-values; creating specialized plots for correlation matrices.
-Functions were mainly written for my own daily work or teaching, but may be of
-use to others as well.")
+computing and formatting of descriptive statistics (e.g. meanÂ±SD), comparing
+groups and creating publication-ready tables with descriptive statistics and
+p-values; creating specialized plots for correlation matrices.  Functions were
+mainly written for my own daily work or teaching, but may be of use to others as
+well.")
     (license license:gpl3)))
 
 (define-public r-wrangle
@@ -5709,7 +5709,7 @@ species as a function of its prey (or predators) and environmental conditions.
 It exploits the topological ordering of the known trophic interaction network to
 predict species distribution in space and/or time, where the prey (or predator)
 distribution is unavailable.  The method implemented by the package is described
-in Poggiato, @code{AndrÃ©oletti}, Pollock and Thuiller (2022)
+in Poggiato, AndrÃ©oletti, Pollock and Thuiller (2022)
 <doi:10.22541/au.166853394.45823739/v1>.")
     (license license:gpl3)))
 
@@ -6275,9 +6275,9 @@ nonlinear time series models through weak ARMA representations.  It determines
 identification, estimation and validation for ARMA models and for AR and MA
 models in particular.  Functions can also be used in the strong case.  This
 package also works on white noises by omitting arguments p', q', ar and ma'.
-See Francq, C. and @code{ZakoÃ¯an}, J. (1998)
-<doi:10.1016/S0378-3758(97)00139-0> and Boubacar @code{MaÃ¯nassara}, Y. and
-Saussereau, B. (2018) <doi:10.1080/01621459.2017.1380030> for more details.")
+See Francq, C. and ZakoÃ¯an, J. (1998) <doi:10.1016/S0378-3758(97)00139-0> and
+Boubacar MaÃ¯nassara, Y. and Saussereau, B. (2018)
+<doi:10.1080/01621459.2017.1380030> for more details.")
     (license license:gpl3+)))
 
 (define-public r-weaana
@@ -6890,8 +6890,8 @@ ones involve negative feedback (inhibition).")
  It is known from physics that only gradient fields, also known as conservative,
 have a well defined potential function.  Here we present an algorithm, based on
 the classical Helmholtz decomposition, to obtain an approximate potential
-function for non gradient fields.  More information in
-@code{RodrÃ­guez-SÃ¡nchez} (2020) <doi:10.1371/journal.pcbi.1007788>.")
+function for non gradient fields.  More information in RodrÃ­guez-SÃ¡nchez
+(2020) <doi:10.1371/journal.pcbi.1007788>.")
     (license license:expat)))
 
 (define-public r-wavscalogram
@@ -6963,8 +6963,8 @@ sample is well spread over space.  A new method to draw a sample from a
 population with spatial coordinates is proposed.  This method is called wave
 (Weakly Associated Vectors) sampling.  It uses the less correlated vector to a
 spatial weights matrix to update the inclusion probabilities vector into a
-sample.  For more details see @code{RaphaÃ«l} Jauslin and Yves @code{TillÃ©}
-(2019) <doi:10.1007/s13253-020-00407-1>.")
+sample.  For more details see RaphaÃ«l Jauslin and Yves TillÃ© (2019)
+<doi:10.1007/s13253-020-00407-1>.")
     (license license:gpl2+)))
 
 (define-public r-waves
@@ -7009,8 +7009,8 @@ cross-validation set formation, model training, and prediction functions to
 enable open-source association of spectral and reference data.  This package is
 documented in a peer-reviewed manuscript in the Plant Phenome Journal
 <doi:10.1002/ppj2.20012>.  Specialized cross-validation schemes are described in
-detail in @code{JarquÃ­n} et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.
-Example data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
+detail in JarquÃ­n et al. (2017) <doi:10.3835/plantgenome2016.12.0130>.  Example
+data is from Ikeogu et al. (2017) <doi:10.1371/journal.pone.0188918>.")
     (license license:expat)))
 
 (define-public r-waverr

@@ -445,8 +445,8 @@ reading exercises.  The functions allow some basic data preparations and code
 fixations as first and second pass.  First passes can be further devided into
 forward and reading.  The package further allows for aggregating fixation times
 per AOI or per AOI and per type of pass (first forward, first rereading,
-second).  These methods are based on @code{HyÃ¶nÃ¤}, Lorch, and Rinck (2003)
-<doi:10.1016/B978-044451020-4/50018-9> and @code{HyÃ¶nÃ¤}, and Lorch (2004)
+second).  These methods are based on HyÃ¶nÃ¤, Lorch, and Rinck (2003)
+<doi:10.1016/B978-044451020-4/50018-9> and HyÃ¶nÃ¤, and Lorch (2004)
 <doi:10.1016/j.learninstruc.2004.01.001>.  It is also possible to convert
 between metric length and visual degrees.")
     (license license:gpl3)))
@@ -2014,7 +2014,7 @@ boosting; also supplies expectiles for common distributions.")
     (home-page "https://cran.r-project.org/package=ExpDes.pt")
     (synopsis "Pacote Experimental Designs (Portugues)")
     (description
-     "Pacote para @code{anÃ¡lise} de delineamentos experimentais (DIC, DBC e DQL),
+     "Pacote para anÃ¡lise de delineamentos experimentais (DIC, DBC e DQL),
 experimentos em esquema fatorial duplo (em DIC e DBC), experimentos em parcelas
 subdivididas (em DIC e DBC), experimentos em esquema fatorial duplo com um
 tratamento adicional (em DIC e DBC), experimentos em fatorial triplo (em DIC e
@@ -2932,15 +2932,15 @@ format required by @code{MyLearn}'.")
      "Support for Compiling Examination Tasks using the 'exams' Package")
     (description
      "The main aim is to further facilitate the creation of exercises based on the
-package exams by @code{GrÃ¼n}, B., and Zeileis, A. (2009)
-<doi:10.18637/jss.v029.i10>.  Creating effective student exercises involves
-challenges such as creating appropriate data sets and ensuring access to
-intermediate values for accurate explanation of solutions.  The functionality
-includes the generation of univariate and bivariate data including simple time
-series, functions for theoretical distributions and their approximation,
-statistical and mathematical calculations for tasks in basic statistics courses
-as well as general tasks such as string manipulation, @code{LaTeX/HTML}
-formatting and the editing of XML task files for Moodle'.")
+package exams by GrÃ¼n, B., and Zeileis, A. (2009) <doi:10.18637/jss.v029.i10>.
+Creating effective student exercises involves challenges such as creating
+appropriate data sets and ensuring access to intermediate values for accurate
+explanation of solutions.  The functionality includes the generation of
+univariate and bivariate data including simple time series, functions for
+theoretical distributions and their approximation, statistical and mathematical
+calculations for tasks in basic statistics courses as well as general tasks such
+as string manipulation, @code{LaTeX/HTML} formatting and the editing of XML task
+files for Moodle'.")
     (license license:gpl3)))
 
 (define-public r-exams
@@ -3593,7 +3593,7 @@ estimators are implemented.")
     (description
      "Simulation of Electric Vehicles charging sessions using Gaussian models,
 together with time-series power demand calculations.  The simulation methodology
-is published in @code{CaÃ±igueral} et al. (2023, ISBN:0957-4174)
+is published in CaÃ±igueral et al. (2023, ISBN:0957-4174)
 <doi:10.1016/j.eswa.2023.120318>.")
     (license license:gpl3)))
 
@@ -3657,8 +3657,8 @@ or combining Gaussian random fuzzy numbers).")
      "This package provides tools for modelling electric vehicle charging sessions
 into generic groups with similar connection patterns called \"user profiles\",
 using Gaussian Mixture Models clustering.  The clustering and profiling
-methodology is described in @code{CaÃ±igueral} and @code{MelÃ©ndez} (2021,
-ISBN:0142-0615) <doi:10.1016/j.ijepes.2021.107195>.")
+methodology is described in CaÃ±igueral and MelÃ©ndez (2021, ISBN:0142-0615)
+<doi:10.1016/j.ijepes.2021.107195>.")
     (license license:gpl3)))
 
 (define-public r-evots
@@ -3716,7 +3716,7 @@ package and the implemented models.")
      "This package performs automated morphological character partitioning for
 phylogenetic analyses and analyze macroevolutionary parameter outputs from clock
 (time-calibrated) Bayesian inference analyses, following concepts introduced by
-@code{SimÃµes} and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
+SimÃµes and Pierce (2021) <doi:10.1038/s41559-021-01532-x>.")
     (license license:gpl2+)))
 
 (define-public r-evoper
@@ -4738,8 +4738,7 @@ state of charge is not trivial.  This library implements an algorithm to compute
 the optimal charging cost function, that is, it plots for a given state of
 charge r (between 0 and 1) the minimum cost we need to pay in order to charge
 the EV to that state of charge r.  The details of the algorithm are described in
-@code{GonzÃ¡lez-RodrÃ­guez} et at (2023)
-<https://inria.hal.science/hal-04362876v1>.")
+GonzÃ¡lez-RodrÃ­guez et at (2023) <https://inria.hal.science/hal-04362876v1>.")
     (license license:gpl3)))
 
 (define-public r-evapotranspiration
@@ -6373,17 +6372,17 @@ official statistics of the Japanese government.")
     (home-page "https://www.uv.es/estadistic/")
     (synopsis "Fundamentos De Estadistica Descriptiva e Inferencial")
     (description
-     "Este paquete pretende apoyar el proceso @code{enseÃ±anza-aprendizaje} de
-@code{estadÃ­stica} descriptiva e inferencial.  Las funciones contenidas en el
-paquete estadistica cubren los conceptos @code{bÃ¡sicos} estudiados en un curso
-introductorio.  Muchos conceptos son ilustrados con @code{grÃ¡ficos}
-@code{dinÃ¡micos} o web apps para facilitar su @code{comprensiÃ³n}.  This
-package aims to help the teaching-learning process of descriptive and
-inferential statistics.  The functions contained in the package estadistica
-cover the basic concepts studied in a statistics introductory course.  Many
-concepts are illustrated with dynamic graphs or web apps to make the
-understanding easier.  See: Esteban et al. (2005, ISBN: 9788497323741), Newbold
-et al.(2019, ISBN:9781292315034 ), Murgui et al. (2002, ISBN:9788484424673) .")
+     "Este paquete pretende apoyar el proceso enseÃ±anza-aprendizaje de estadÃ­stica
+descriptiva e inferencial.  Las funciones contenidas en el paquete estadistica
+cubren los conceptos bÃ¡sicos estudiados en un curso introductorio.  Muchos
+conceptos son ilustrados con grÃ¡ficos dinÃ¡micos o web apps para facilitar su
+comprensiÃ³n.  This package aims to help the teaching-learning process of
+descriptive and inferential statistics.  The functions contained in the package
+estadistica cover the basic concepts studied in a statistics introductory
+course.  Many concepts are illustrated with dynamic graphs or web apps to make
+the understanding easier.  See: Esteban et al. (2005, ISBN: 9788497323741),
+Newbold et al.(2019, ISBN:9781292315034 ), Murgui et al. (2002,
+ISBN:9788484424673) .")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-essurvey
@@ -6675,8 +6674,8 @@ This hierarchy evolved out of my personal experience in working with ESM data.")
     (home-page "https://github.com/EDiLD/esmisc")
     (synopsis "Misc Functions of Eduard SzÃ¶cs")
     (description
-     "Misc functions programmed by Eduard @code{SzÃ¶cs}.  Provides read_regnie() to
-read gridded precipitation data from German Weather Service (DWD, see
+     "Misc functions programmed by Eduard SzÃ¶cs.  Provides read_regnie() to read
+gridded precipitation data from German Weather Service (DWD, see
 <http://www.dwd.de/> for more information).")
     (license license:expat)))
 
@@ -6811,7 +6810,7 @@ Feng, Y., (2023) <doi:10.1080/03610926.2023.2276049>.")
     (description
      "This package provides a collection of functions developed to support the
 tutorial on using Exploratory Structural Equiation Modeling (ESEM) (Asparouhov &
-@code{MuthÃ©n}, 2009) <https://www.statmodel.com/download/EFACFA810.pdf>) with
+MuthÃ©n, 2009) <https://www.statmodel.com/download/EFACFA810.pdf>) with
 Longitudinal Study of Australian Children (LSAC) dataset (Mohal et al., 2023)
 <doi:10.26193/QR4L6Q>.  The package uses tidyverse','psych',
 lavaan','@code{semPlot} and provides additional functions to conduct ESEM. The
@@ -8759,10 +8758,10 @@ kidney injury (AKI), anemia, and chronic kidney disease (CKD).")
 transcript levels Y and CNA profiles U. Two models are provided, E@code{PoC} A
 where AY + U + R = 0 and E@code{PoC} G where Y = GU + E, the matrices R and E
 are so far treated as noise.  For details see the manual page of lassoshooting
-and the article Rebecka JÃ¶rnsten, Tobias Abenius, Teresia Kling, @code{LinnÃ©a}
-Schmidt, Erik Johansson, @code{TorbjÃ¶rn} E M Nordling, Bodil Nordlander, Chris
-Sander, Peter Gennemark, Keiko Funa, @code{BjÃ¶rn} Nilsson, Linda Lindahl, Sven
-Nelander (2011) <doi:10.1038/msb.2011.17>.")
+and the article Rebecka JÃ¶rnsten, Tobias Abenius, Teresia Kling, LinnÃ©a
+Schmidt, Erik Johansson, TorbjÃ¶rn E M Nordling, Bodil Nordlander, Chris Sander,
+Peter Gennemark, Keiko Funa, BjÃ¶rn Nilsson, Linda Lindahl, Sven Nelander (2011)
+<doi:10.1038/msb.2011.17>.")
     (license license:lgpl3)))
 
 (define-public r-epo
@@ -10449,11 +10448,11 @@ main audience is from this country, the documentation was written in Spanish.")
     (synopsis
      "EPE's 4MD Model to Forecast the Adoption of Distributed Generation")
     (description
-     "EPE's (Empresa de Pesquisa @code{EnergÃ©tica}) 4MD (Modelo de Mercado da Micro e
-@code{MinigeraÃ§Ã£o} @code{DistribuÃ­da} - Micro and Mini Distributed Generation
-Market Model) model to forecast the adoption of Distributed Generation.  Given
-the user's assumptions, it is possible to estimate how many consumer units will
-have distributed generation in Brazil over the next 10 years, for example.  In
+     "EPE's (Empresa de Pesquisa EnergÃ©tica) 4MD (Modelo de Mercado da Micro e
+MinigeraÃ§Ã£o DistribuÃ­da - Micro and Mini Distributed Generation Market Model)
+model to forecast the adoption of Distributed Generation.  Given the user's
+assumptions, it is possible to estimate how many consumer units will have
+distributed generation in Brazil over the next 10 years, for example.  In
 addition, it is possible to estimate the installed capacity, the amount of
 investments that will be made in the country and the monthly energy contribution
 of this type of generation.
@@ -12541,21 +12540,22 @@ likelihood, as described in
 (define-public r-emplik2
   (package
     (name "r-emplik2")
-    (version "1.32")
+    (version "1.33")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emplik2" version))
        (sha256
-        (base32 "0d4fzyxa7kynxgx8187vqxnb25kv1m1pkawxdpng6nfaiy76w67m"))))
+        (base32 "0rjsk7j1likvhv88zdmbcam1nif0iilwfsry0amf6m7yb5qfppzv"))))
     (properties `((upstream-name . "emplik2")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=emplik2")
     (synopsis
-     "Empirical Likelihood Ratio Test for Two Samples with Censored Data")
+     "Empirical Likelihood Ratio Test for Two-Sample U-Statistics with Censored Data")
     (description
-     "Calculates the p-value for a mean-type hypothesis (or multiple mean-type
-hypotheses) based on two samples with possible censored data.")
+     "Calculates the empirical likelihood ratio and p-value for a mean-type hypothesis
+(or multiple mean-type hypotheses) based on two samples with possible censored
+data.")
     (license license:gpl2+)))
 
 (define-public r-empiricalcalibration
@@ -13213,10 +13213,10 @@ maximum likelihood method, introduced by introduced by Ozaki (1979)
     (description
      "Initially designed to distribute code for estimating the Gaussian graphical
 model with Lasso regularization, also known as the graphical lasso (glasso),
-using an Expectation-Maximization (EM) algorithm based on work by
-@code{StÃ¤dler} and BÃ¼hlmann (2012) <doi:10.1007/s11222-010-9219-7>.  As a
-byproduct, code for estimating means and covariances (or the precision matrix)
-under a multivariate normal (Gaussian) distribution is also available.")
+using an Expectation-Maximization (EM) algorithm based on work by StÃ¤dler and
+BÃ¼hlmann (2012) <doi:10.1007/s11222-010-9219-7>.  As a byproduct, code for
+estimating means and covariances (or the precision matrix) under a multivariate
+normal (Gaussian) distribution is also available.")
     (license license:gpl3+)))
 
 (define-public r-emg
@@ -13638,7 +13638,7 @@ Log-likelihood, AIC: Akaike information criterion, AICc: corrected Akaike
 information criterion, BIC: Bayesian information criterion, HQC: Hannan-Quin
 information criterion.  The	lower the better for the SSR, TRE, Bias, MRB, MAB,
 MAPE, MSE, RMSE, Percent.RMSE, APC, AIC, AICc, BIC and HQC indices.  The higher
-the better for R2 and R2adj indices.  Petre Stoica, P., @code{SelÃ©n}, Y. (2004)
+the better for R2 and R2adj indices.  Petre Stoica, P., SelÃ©n, Y. (2004)
 <doi:10.1109/MSP.2004.1311138>\\n Zhou et al. (2023)
 <doi:10.3389/fpls.2023.1186250>\\n Ogana, F.N., Ercanli, I. (2021)
 <doi:10.1007/s11676-021-01373-1>\\n Musabbikhah et al. (2019)
@@ -14746,8 +14746,8 @@ settings where these curves are only sparsely and irregularly observed.  It uses
 a novel approach for elastic shape mean estimation, where planar curves are
 treated as complex functions and a full Procrustes mean is estimated from the
 corresponding smoothed Hermitian covariance surface.  This is combined with the
-methods for elastic mean estimation proposed in Steyer, @code{StÃ¶cker},
-Greven	(2022) <doi:10.1111/biom.13706>.  See @code{StÃ¶cker} et.  al. (2022)
+methods for elastic mean estimation proposed in Steyer, StÃ¶cker, Greven	(2022)
+<doi:10.1111/biom.13706>.  See StÃ¶cker et.  al. (2022)
 <@code{arXiv:2203.10522>} for details.")
     (license license:gpl3+)))
 
@@ -15314,13 +15314,12 @@ and EI-RÃC Methods\" <doi:10.1177/0049124119852394>.")
 metrics applied to ecological inference.  These methodologies assess the lack of
 disaggregated data and provide an approach to obtaining disaggregated
 territorial-level data.  For more details, see the following references:
-@code{FernÃ¡ndez-VÃ¡zquez}, E., DÃ­az-Dapena, A., Rubiera-@code{MorollÃ³n}, F.
-et al. (2020) \"Spatial Disaggregation of Social Indicators: An Info-Metrics
-Approach.\" <doi:10.1007/s11205-020-02455-z>.  DÃ­az-Dapena, A.,
-@code{FernÃ¡ndez-VÃ¡zquez}, E., Rubiera-@code{MorollÃ³n}, F., & Vinuela, A.
-(2021) \"Mapping poverty at the local level in Europe: A consistent spatial
-disaggregation of the AROPE indicator for France, Spain, Portugal and the United
-Kingdom.\" <doi:10.1111/rsp3.12379>.")
+FernÃ¡ndez-VÃ¡zquez, E., DÃ­az-Dapena, A., Rubiera-MorollÃ³n, F. et al. (2020)
+\"Spatial Disaggregation of Social Indicators: An Info-Metrics Approach.\"
+<doi:10.1007/s11205-020-02455-z>.  DÃ­az-Dapena, A., FernÃ¡ndez-VÃ¡zquez, E.,
+Rubiera-MorollÃ³n, F., & Vinuela, A. (2021) \"Mapping poverty at the local level
+in Europe: A consistent spatial disaggregation of the AROPE indicator for
+France, Spain, Portugal and the United Kingdom.\" <doi:10.1111/rsp3.12379>.")
     (license license:gpl3)))
 
 (define-public r-eider
@@ -15496,8 +15495,8 @@ of the data sets includes aggregate party and candidate outcomes at the voting
 unit (polling stations) level and two-way cross-tabulated results at the
 district level.  These data sets can be used to assess ecological inference
 algorithms devised for estimating @code{RxC} (global) ecological contingency
-tables using exclusively aggregate results from voting units.  Reference:
-@code{PavÃ­a} (2022) <doi:10.1177/08944393211040808>.")
+tables using exclusively aggregate results from voting units.  Reference: PavÃ­a
+(2022) <doi:10.1177/08944393211040808>.")
     (license (list (license:fsdg-compatible "EPL")
                    (license:fsdg-compatible "CC BY 4.0")
                    (license:fsdg-compatible "file://LICENSE")))))
@@ -15779,7 +15778,7 @@ for common families of distributions, piecewise constant hazards, and discrete
 models.  Parametric accelerated failure time models for left truncated and right
 censored data.  Proportional hazards models for tabular and register data.
 Sampling of risk sets in Cox regression, selections in the Lexis diagram,
-bootstrapping. @code{BrostrÃ¶m} (2022) <doi:10.1201/9780429503764>.")
+bootstrapping.  BrostrÃ¶m (2022) <doi:10.1201/9780429503764>.")
     (license license:gpl2+)))
 
 (define-public r-egst
@@ -17436,7 +17435,7 @@ ultrafast and require little memory, with the capability to handle very large
 sequences.  Three alignment methods are supported: global (Needleman-Wunsch),
 infix (Hybrid Wunsch), and prefix (Semi-Hybrid Wunsch).  The original C/C++
 library is described in \"Edlib: a C/C++ library for fast, exact sequence
-alignment using edit distance\", M. Å @code{oÅ¡iÄ}, M. Å @code{ikiÄ},
+alignment using edit distance\", M. Å oÅ¡iÄ, M. Å ikiÄ,
 <doi:10.1093/bioinformatics/btw753>.")
     (license license:expat)))
 
@@ -19168,6 +19167,26 @@ Patacchini, and Leone Sciabolazza (2020).  For additional details, see the
 vignette <doi:10.18637/jss.v102.i08>.")
     (license license:expat)))
 
+(define-public r-econdemand
+  (package
+    (name "r-econdemand")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EconDemand" version))
+       (sha256
+        (base32 "1slpwiaxj7w21zdri9myrzwbwzl62m3cnp0g4fr2rkdlzgb6j5yj"))))
+    (properties `((upstream-name . "EconDemand")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=EconDemand")
+    (synopsis "General Analysis of Various Economics Demand Systems")
+    (description
+     "This package provides tools for general properties including price, quantity,
+elasticity, convexity, marginal revenue and manifold of various economics demand
+systems including Linear, Translog, CES, LES and CREMR.")
+    (license license:gpl2)))
+
 (define-public r-econandprodefficiency
   (package
     (name "r-econandprodefficiency")
@@ -20803,8 +20822,8 @@ Bayes estimation procedure based on Dynamic Bayesian Networks.")
 normal means model.  The intervals are robust in the sense that they achieve
 correct coverage regardless of the distribution of the means.  If the means are
 treated as fixed, the intervals have an average coverage guarantee.  The
-implementation is based on Armstrong, @code{KolesÃ¡r} and Plagborg-MÃ¸ller
-(2020) <@code{arXiv:2004.03448>}.")
+implementation is based on Armstrong, KolesÃ¡r and Plagborg-MÃ¸ller (2020)
+<@code{arXiv:2004.03448>}.")
     (license license:expat)))
 
 (define-public r-ebchs
@@ -22291,9 +22310,8 @@ for the input of data, and for performing genome-wide analysis.")
     (synopsis "Plots of the Empirical Attainment Function")
     (description
      "Computation and visualization of the empirical attainment function (EAF) for the
-analysis of random sets in multi-criterion optimization.  M.
-LÃ³pez-@code{IbÃ¡Ã±ez}, L. Paquete, and T. @code{StÃ¼tzle} (2010)
-<doi:10.1007/978-3-642-02538-9_9>.")
+analysis of random sets in multi-criterion optimization.  M. LÃ³pez-IbÃ¡Ã±ez, L.
+Paquete, and T. StÃ¼tzle (2010) <doi:10.1007/978-3-642-02538-9_9>.")
     (license license:gpl2+)))
 
 (define-public r-eadrm

@@ -313,8 +313,8 @@ and plots.  All twowaytests functions are designed for two-way layout.")
      "Estimation of the Weights Attached to the Two-Way Fixed Effects Regressions")
     (description
      "Estimates the weights and measure of robustness to treatment effect
-heterogeneity attached to two-way fixed effects regressions. @code{ClÃ©ment} de
-Chaisemartin, Xavier D'@code{HaultfÅuille} (2020) <DOI: 10.1257/aer.20181169>.")
+heterogeneity attached to two-way fixed effects regressions.  ClÃ©ment de
+Chaisemartin, Xavier D'HaultfÅuille (2020) <DOI: 10.1257/aer.20181169>.")
     (license license:expat)))
 
 (define-public r-twoway
@@ -2138,10 +2138,10 @@ wine, beer, champagne, and tobacco products as individual data sets.")
     (description
      "Computes a point pattern in R^2 or on a graph that is representative of a
 collection of many data patterns.  The result is an approximate barycenter (also
-known as @code{FrÃ©chet} mean or prototype) based on a transport-transform
-metric.  Possible choices include Optimal @code{SubPattern} Assignment (OSPA)
-and Spike Time metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu
-(2020) <doi:10.1007/s11222-020-09932-y>.")
+known as FrÃ©chet mean or prototype) based on a transport-transform metric.
+Possible choices include Optimal @code{SubPattern} Assignment (OSPA) and Spike
+Time metrics.  Details can be found in MÃ¼ller, Schuhmacher and Mateu (2020)
+<doi:10.1007/s11222-020-09932-y>.")
     (license license:gpl2+)))
 
 (define-public r-ttainterfacetrendanalysis
@@ -3697,7 +3697,7 @@ TARMA models.")
     (home-page "https://cran.r-project.org/package=TSeriesMMA")
     (synopsis "Multiscale Multifractal Analysis of Time Series Data")
     (description
-     "Multiscale multifractal analysis (MMA) (@code{GieraÅtowski} et al.,
+     "Multiscale multifractal analysis (MMA) (GieraÅtowski et al.,
 2012)<DOI:10.1103/@code{PhysRevE.85.021915>} is a time series analysis method,
 designed to describe scaling properties of fluctuations within the signal
 analyzed.  The main result of this procedure is the so called Hurst surface
@@ -5734,12 +5734,12 @@ Goodrich B, Gabry J, and Vehtari A (2018) <doi:10.1080/00031305.2018.1549100>)."
      "Compositional data consisting of three-parts can be color mapped with a ternary
 color scale.  Such a scale is provided by the tricolore packages with options
 for discrete and continuous colors, mean-centering and scaling.  See Jonas
-@code{SchÃ¶ley} (2021) \"The centered ternary balance scheme.  A technique to
-visualize surfaces of unbalanced three-part compositions\"
-<doi:10.4054/@code{DemRes.2021.44.19>}, Jonas @code{SchÃ¶ley}, Frans Willekens
-(2017) \"Visualizing compositional data on the Lexis surface\"
-<doi:10.4054/@code{DemRes.2017.36.21>}, and Ilya Kashnitsky, Jonas
-@code{SchÃ¶ley} (2018) \"Regional population structures at a glance\"
+SchÃ¶ley (2021) \"The centered ternary balance scheme.  A technique to visualize
+surfaces of unbalanced three-part compositions\"
+<doi:10.4054/@code{DemRes.2021.44.19>}, Jonas SchÃ¶ley, Frans Willekens (2017)
+\"Visualizing compositional data on the Lexis surface\"
+<doi:10.4054/@code{DemRes.2017.36.21>}, and Ilya Kashnitsky, Jonas SchÃ¶ley
+(2018) \"Regional population structures at a glance\"
 <doi:10.1016/S0140-6736(18)31194-2>.")
     (license license:gpl3)))
 
@@ -6894,9 +6894,9 @@ resolution tree disk image.")
      "Correction Factors for Tree Plot Areas Intersected by Stand Boundaries")
     (description
      "The German national forest inventory uses angle count sampling, a sampling
-method first published as `Bitterlich, W.: Die @code{WinkelzÃ¤hlmessung}.
-Allgemeine Forst- und Holzwirtschaftliche Zeitung, 58.  Jahrg., Folge 11/12 vom
-Juni 1947` and extended by Grosenbaugh
+method first published as `Bitterlich, W.: Die WinkelzÃ¤hlmessung.  Allgemeine
+Forst- und Holzwirtschaftliche Zeitung, 58.  Jahrg., Folge 11/12 vom Juni 1947`
+and extended by Grosenbaugh
 (<https://academic.oup.com/jof/article-abstract/50/1/32/4684174>) as probability
 proportional to size sampling.  When plots are located near stand boundaries,
 their sizes and hence their probabilities need to be corrected.")
@@ -8132,7 +8132,7 @@ directed acyclic graph with diverging number of nodes\".")
      "This package provides a geomorphology-based hydrological modelling for
 transferring streamflow measurements from gauged to ungauged catchments.
 Inverse modelling enables to estimate net rainfall from streamflow measurements
-following @code{BoudhraÃ¢} et al. (2018) <doi:10.1080/02626667.2018.1425801>.
+following BoudhraÃ¢ et al. (2018) <doi:10.1080/02626667.2018.1425801>.
 Resulting net rainfall is then estimated on the ungauged catchments by spatial
 interpolation in order to finally simulate streamflow following de Lavenne et
 al. (2016) <doi:10.1002/2016WR018716>.")
@@ -8848,7 +8848,7 @@ models and their different predictive formats for classification and regression.
  It includes methods such as K-Nearest Neighbors Schliep, K. P. (2004)
 <doi:10.5282/ubm/epub.1769>, Decision Trees Leo Breiman, Jerome H. Friedman,
 Richard A. Olshen, Charles J. Stone (2017) <doi:10.1201/9781315139470>, ADA
-Boosting Esteban Alfaro, Matias Gamez, Noelia @code{GarcÃ­a} (2013)
+Boosting Esteban Alfaro, Matias Gamez, Noelia GarcÃ­a (2013)
 <doi:10.18637/jss.v054.i02>, Extreme Gradient Boosting Chen & Guestrin (2016)
 <doi:10.1145/2939672.2939785>, Random Forest Breiman (2001)
 <doi:10.1023/A:1010933404324>, Neural Networks Venables, W. N., & Ripley, B. D.
@@ -10312,7 +10312,7 @@ bounds in raw scale units or in terms of effect sizes.  See: Lakens (2017)
     (description
      "The goal of tosr is to create the Tree of Science from Web of Science
 (@code{WoS}) and Scopus data.  It can read files from both sources at the same
-time.  More information can be found in Valencia-@code{HernÃ¡ndez} (2020)
+time.  More information can be found in Valencia-HernÃ¡ndez (2020)
 <https://revistas.unal.edu.co/index.php/ingeinv/article/view/77718>.")
     (license license:expat)))
 
@@ -12481,8 +12481,8 @@ the tableone package to make the results knit-able.")
 simulating, and computing properties of the Topp-Leone Cauchy Rayleigh (TLCAR)
 distribution, a versatile distribution amalgamating features of the Topp-Leone,
 Cauchy, and Rayleigh distributions, ideal for modeling intricate, heterogeneous
-data across scientific domains.  See @code{AtchadÃ©}, M.N., Bogninou, M.J., and
-Djibril, A.M. (2023) <doi:10.1007/s44199-023-00066-4> and @code{AtchadÃ©}, M.N.,
+data across scientific domains.  See AtchadÃ©, M.N., Bogninou, M.J., and
+Djibril, A.M. (2023) <doi:10.1007/s44199-023-00066-4> and AtchadÃ©, M.N.,
 Bogninou, M.J., and Djibril, A.M. (2024) <doi:10.1007/s44199-023-00069-1> for
 further insights.")
     (license license:gpl2)))
@@ -12872,7 +12872,7 @@ developed within a Bayesian framework through Stan <https://mc-stan.org/>, come
 equipped with a set of diagnostics and complementary tools, visualizing and
 exporting functions.  A Shiny application with a user-friendly interface can be
 launched to further simplify the process.  For further details, refer to De
-@code{NicolÃ²} and Gardini (2024 <doi:10.18637/jss.v108.i01>).")
+NicolÃ² and Gardini (2024 <doi:10.18637/jss.v108.i01>).")
     (license license:gpl3)))
 
 (define-public r-tips
@@ -14043,13 +14043,13 @@ correlate two timelines of events.  A brief description is available at
 (define-public r-timeless
   (package
     (name "r-timeless")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeless" version))
        (sha256
-        (base32 "0wq98ngwn9ajgxmc1ybfgzmxr21jsvjqsc3crrkska7vpzxpjy11"))))
+        (base32 "0mg7c94494nllynlk48f1nlf8420bz2rcd4ingxa56ps71ma1i15"))))
     (properties `((upstream-name . "timeless")))
     (build-system r-build-system)
     (inputs (list))
@@ -14810,39 +14810,6 @@ Estimated Scatterplot Smoothing (LOESS) prediction correction.")
      "This package provides a consistent API to pull United States Department of
 Agriculture census and survey data from the National Agricultural Statistics
 Service (NASS) @code{QuickStats} service.")
-    (license license:expat)))
-
-(define-public r-tidytuesdayr
-  (package
-    (name "r-tidytuesdayr")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "tidytuesdayR" version))
-       (sha256
-        (base32 "0n6pl2n3gv3f1idqfgb5w2pr71za551kgc4whxda4dwzl5ylkc0v"))))
-    (properties `((upstream-name . "tidytuesdayR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-usethis
-                             r-rvest
-                             r-rstudioapi
-                             r-readxl
-                             r-readr
-                             r-purrr
-                             r-magrittr
-                             r-lubridate
-                             r-jsonlite
-                             r-httr))
-    (home-page "https://github.com/thebioengineer/tidytuesdayR")
-    (synopsis "Access the Weekly 'TidyTuesday' Project Dataset")
-    (description
-     "@code{TidyTuesday} is a project by the R4DS Online Learning Community in which
-they post a weekly dataset onto post a weekly dataset in a public data
-repository (<https://github.com/rfordatascience/tidytuesday>) for people to
-analyze and visualize.  This package provides the tools to easily download this
-data and the description of the source.")
     (license license:expat)))
 
 (define-public r-tidytreatment
@@ -17286,12 +17253,12 @@ automatically summarize the properties of the binned columns.")
     (home-page "https://ropenspain.github.io/tidyBdE/")
     (synopsis "Download Data from Bank of Spain")
     (description
-     "This package provides tools to download data series from Banco de @code{EspaÃ±a}
-('@code{BdE}') on tibble format.  Banco de @code{EspaÃ±a} is the national
-central bank and, within the framework of the Single Supervisory Mechanism
-('SSM'), the supervisor of the Spanish banking system along with the European
-Central Bank.  This package is in no way sponsored endorsed or administered by
-Banco de @code{EspaÃ±a}'.")
+     "This package provides tools to download data series from Banco de EspaÃ±a
+('@code{BdE}') on tibble format.  Banco de EspaÃ±a is the national central bank
+and, within the framework of the Single Supervisory Mechanism ('SSM'), the
+supervisor of the Spanish banking system along with the European Central Bank.
+This package is in no way sponsored endorsed or administered by Banco de
+EspaÃ±a'.")
     (license license:gpl3+)))
 
 (define-public r-tidybayes
@@ -18680,9 +18647,8 @@ package library and maybe say thank you'.")
     (description
      "This package implements the truncated harmonic mean estimator (THAMES) of the
 reciprocal marginal likelihood using posterior samples and unnormalized log
-posterior values via reciprocal importance sampling.  Metodiev,
-Perrot-@code{DockÃ¨s}, Ouadah, Irons, & Raftery (2023)
-<@code{arXiv:2305.08952>}.")
+posterior values via reciprocal importance sampling.  Metodiev, Perrot-DockÃ¨s,
+Ouadah, Irons, & Raftery (2023) <@code{arXiv:2305.08952>}.")
     (license license:gpl3+)))
 
 (define-public r-thaipdf
@@ -18997,12 +18963,12 @@ approach to high-dimensional regression\".  Journal of the American Statistical
 Association, 115, 1726-1729, <doi:10.1080/01621459.2020.1843865>; Peng, B. and
 Wang, L. (2015), \"An Iterative Coordinate Descent Algorithm for High-Dimensional
 Nonconvex Penalized Quantile Regression\", Journal of Computational and Graphical
-Statistics, 24:3, 676-694, <doi:10.1080/10618600.2014.913516>;
-@code{ClÃ©menÃ§on}, S., Colin, I., and Bellet, A. (2016), \"Scaling-up empirical
-risk minimization: optimization of incomplete u-statistics\", The Journal of
-Machine Learning Research, 17(1):2682â2717; Fan, J. and Li, R. (2001),
-\"Variable Selection via Nonconcave Penalized Likelihood and its Oracle
-Properties\", Journal of the American Statistical Association, 96:456, 1348-1360,
+Statistics, 24:3, 676-694, <doi:10.1080/10618600.2014.913516>; ClÃ©menÃ§on, S.,
+Colin, I., and Bellet, A. (2016), \"Scaling-up empirical risk minimization:
+optimization of incomplete u-statistics\", The Journal of Machine Learning
+Research, 17(1):2682â2717; Fan, J. and Li, R. (2001), \"Variable Selection via
+Nonconcave Penalized Likelihood and its Oracle Properties\", Journal of the
+American Statistical Association, 96:456, 1348-1360,
 <doi:10.1198/016214501753382273>.")
     (license license:gpl2+)))
 
@@ -21178,8 +21144,8 @@ select which parameters they are interested in comparing and methods for
 correction for multiple comparisons.  Confidence intervals are calculated using
 the methods with the best coverage.  Hypothesis tests use the methods with the
 best asymptotic performance.  A summary of the methods is available in
-@code{RoldÃ¡n-Nofuentes} (2020) <doi:10.1186/s12874-020-00988-y>.  This package
-is targeted at clinical researchers who want to rapidly and effectively compare
+RoldÃ¡n-Nofuentes (2020) <doi:10.1186/s12874-020-00988-y>.  This package is
+targeted at clinical researchers who want to rapidly and effectively compare
 results from binary diagnostic tests.")
     (license license:gpl3)))
 
@@ -21402,8 +21368,8 @@ about tesselle at <https://www.tesselle.org>.")
     (home-page "https://github.com/stla/tessellation")
     (synopsis "Delaunay and VoronoÃ¯ Tessellations")
     (description
-     "Delaunay and @code{VoronoÃ¯} tessellations, with emphasis on the two-dimensional
-and the three-dimensional cases (the package provides functions to plot the
+     "Delaunay and VoronoÃ¯ tessellations, with emphasis on the two-dimensional and
+the three-dimensional cases (the package provides functions to plot the
 tessellations for these cases).  Delaunay tessellations are computed in C with
 the help of the Qhull library <http://www.qhull.org/>.")
     (license license:gpl3)))
@@ -21605,8 +21571,8 @@ This package provides an interface for fitting MMRM within the tern
 <https://cran.r-project.org/package=tern> framework by Zhu et al. (2023) and
 tabulate results easily using rtables
 <https://cran.r-project.org/package=rtables> by Becker et al. (2023).  It builds
-on mmrm <https://cran.r-project.org/package=mmrm> by @code{SabanÃ©s}
-@code{BovÃ©} et al. (2023) for the actual MMRM computations.")
+on mmrm <https://cran.r-project.org/package=mmrm> by SabanÃ©s BovÃ© et al.
+(2023) for the actual MMRM computations.")
     (license license:asl2.0)))
 
 (define-public r-tern-gee
@@ -21637,8 +21603,8 @@ on mmrm <https://cran.r-project.org/package=mmrm> by @code{SabanÃ©s}
      "Generalized estimating equations (GEE) are a popular choice for analyzing
 longitudinal binary outcomes.  This package provides an interface for fitting
 GEE, currently for logistic regression, within the tern
-<https://cran.r-project.org/package=tern> framework (Zhu, @code{SabanÃ©s}
-@code{BovÃ©} et al., 2023) and tabulate results easily using rtables
+<https://cran.r-project.org/package=tern> framework (Zhu, SabanÃ©s BovÃ© et al.,
+2023) and tabulate results easily using rtables
 <https://cran.r-project.org/package=rtables> (Becker, Waddell et al., 2023).  It
 builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 2006) for the actual GEE model fitting.")
@@ -22332,11 +22298,10 @@ et al. (2011) <doi:10.1137/S0040585X97984632> Carrasco (2017)
     (description
      "Analysis and visualization of data from temporal sensory methods, including for
 temporal check-all-that-apply (TCATA) and temporal dominance of sensations
-(TDS).  Methods are mainly from manuscripts by Castura, J.C., @code{AntÃºnez},
-L., @code{GimÃ©nez}, A., and Ares, G. (2016)
-<doi:10.1016/j.foodqual.2015.06.017>, Castura, Baker, and Ross (2016)
-<doi:10.1016/j.foodqual.2016.06.011>, and Pineau et al. (2009)
-<doi:10.1016/j.foodqual.2009.04.005>.")
+(TDS).  Methods are mainly from manuscripts by Castura, J.C., AntÃºnez, L.,
+GimÃ©nez, A., and Ares, G. (2016) <doi:10.1016/j.foodqual.2015.06.017>, Castura,
+Baker, and Ross (2016) <doi:10.1016/j.foodqual.2016.06.011>, and Pineau et al.
+(2009) <doi:10.1016/j.foodqual.2009.04.005>.")
     (license license:gpl2+)))
 
 (define-public r-temporalgssa
@@ -22576,7 +22541,7 @@ Denton-Cholette, summarized in Sax and Steiner (2013)
     (description
      "Method to estimate the effect of the trend in predictor variables on the
 observed trend of the response variable using mixed models with temporal
-autocorrelation.  See @code{FernÃ¡ndez-MartÃ­nez} et al. (2017 and 2019)
+autocorrelation.  See FernÃ¡ndez-MartÃ­nez et al. (2017 and 2019)
 <doi:10.1038/s41598-017-08755-8> <doi:10.1038/s41558-018-0367-7>.")
     (license license:gpl2+)))
 
@@ -22673,7 +22638,7 @@ seeks to create a profile that define a social group.")
     (description
      "Fits Bayesian finite mixtures with an unknown number of components using the
 telescoping sampler and different component distributions.  For more details see
-@code{FrÃ¼hwirth-Schnatter} et al. (2021) <doi:10.1214/21-BA1294>.")
+FrÃ¼hwirth-Schnatter et al. (2021) <doi:10.1214/21-BA1294>.")
     (license license:gpl2)))
 
 (define-public r-telemetr
@@ -24940,37 +24905,6 @@ provides functions to import species lists from Turboveg
 backups from resulting R-objects.  Also quick displays are implemented as
 summary-methods.")
     (license license:gpl2+)))
-
-(define-public r-taxizedb
-  (package
-    (name "r-taxizedb")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "taxizedb" version))
-       (sha256
-        (base32 "157xpbmqp3l0blf6n7cb0qswj12v39rhvx0zkbrc2w73g601naj5"))))
-    (properties `((upstream-name . "taxizedb")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rsqlite
-                             r-rlang
-                             r-readr
-                             r-magrittr
-                             r-hoardr
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-curl))
-    (home-page "https://docs.ropensci.org/taxizedb/")
-    (synopsis "Tools for Working with 'Taxonomic' Databases")
-    (description
-     "This package provides tools for working with taxonomic databases, including
-utilities for downloading databases, loading them into various SQL databases,
-cleaning up files, and providing a SQL connection that can be used to do SQL
-queries directly or used in dplyr'.")
-    (license license:expat)))
 
 (define-public r-taxize
   (package
@@ -27260,9 +27194,8 @@ use linear, logistic, or Poisson regression to modify the specified variable.")
     (description
      "Transport theory has seen much success in many fields of statistics and machine
 learning.  We provide a variety of algorithms to compute Wasserstein distance,
-barycenter, and others.  See @code{PeyrÃ©} and Cuturi (2019)
-<doi:10.1561/2200000073> for the general exposition to the study of
-computational optimal transport.")
+barycenter, and others.  See PeyrÃ© and Cuturi (2019) <doi:10.1561/2200000073>
+for the general exposition to the study of computational optimal transport.")
     (license license:expat)))
 
 (define-public r-t4cluster

@@ -1287,7 +1287,7 @@ book.")
 the Single-Channel Algorithm for Land Surface Temperature Retrieval From Landsat
 Thermal-Infrared Data.  Jimenez-Munoz JC, Cristobal J, Sobrino JA, et al (2009).
 <doi: 10.1109/TGRS.2008.2007125>.  Land surface temperature retrieval from
-LANDSAT TM 5.  Sobrino JA, @code{JimÃ©nez-MuÃ±oz} JC, Paolini L (2004).
+LANDSAT TM 5.  Sobrino JA, JimÃ©nez-MuÃ±oz JC, Paolini L (2004).
 <doi:10.1016/j.rse.2004.02.003>.  Surface temperature estimation in Singhbhum
 Shear Zone of India using Landsat-7 ETM+ thermal infrared data.  Srivastava PK,
 Majumdar TJ, Bhattacharya AK (2009). <doi: 10.1016/j.asr.2009.01.023>.  Mapping
@@ -1299,9 +1299,8 @@ index for natural surfaces.  Van de Griend AA, Owe M (1993).
 Landsat 8 TIRSâComparison between Radiative Transfer Equation-Based Method,
 Split Window Algorithm and Single Channel Method.  Yu X, Guo X, Wu Z (2014).
 <doi:10.3390/rs6109829>.  Calibration and Validation of land surface temperature
-for Landsat8-TIRS sensor.  Land product validation and evolution.
-@code{SkokoviÄ} D, Sobrino JA, Jimenez-Munoz JC, Soria G, Julien Y, Mattar C,
-@code{CristÃ³bal} J. (2014).")
+for Landsat8-TIRS sensor.  Land product validation and evolution.  SkokoviÄ D,
+Sobrino JA, Jimenez-Munoz JC, Soria G, Julien Y, Mattar C, CristÃ³bal J. (2014).")
     (license license:agpl3)))
 
 (define-public r-lss2
@@ -1974,12 +1973,12 @@ foundation can be found on Matta, T.H., Rutkowski, L., Rutkowski, D. et al.
      "Daten, Beispiele und Funktionen zu 'Large-Scale Assessment mit R'")
     (description
      "Dieses R-Paket stellt Zusatzmaterial in Form von Daten, Funktionen und
-R-Hilfe-Seiten @code{fÃ¼r} den Herausgeberband Breit, S. und Schreiner, C.
-(Hrsg.). (2016). \"Large-Scale Assessment mit R: Methodische Grundlagen der
-Ã¶sterreichischen @code{BildungsstandardÃ¼berprÃ¼fung}.\" Wien: facultas. (ISBN:
+R-Hilfe-Seiten fÃ¼r den Herausgeberband Breit, S. und Schreiner, C. (Hrsg.).
+(2016). \"Large-Scale Assessment mit R: Methodische Grundlagen der
+Ã¶sterreichischen BildungsstandardÃ¼berprÃ¼fung.\" Wien: facultas. (ISBN:
 978-3-7089-1343-8,
 <https://www.iqs.gv.at/themen/bildungsforschung/publikationen/veroeffentlichte-publikationen>)
-zur @code{VerfÃ¼gung}.")
+zur VerfÃ¼gung.")
     (license license:gpl3+)))
 
 (define-public r-lsafun
@@ -2656,9 +2655,9 @@ Mukhopadhyay, S. and Wang, K. (2020, Biometrika); <@code{arXiv:1810.01724>}.")
     (synopsis "Local Projections Impulse Response Functions")
     (description
      "This package provides functions to estimate and visualize linear as well as
-nonlinear impulse responses based on local projections by @code{JordÃ } (2005)
+nonlinear impulse responses based on local projections by JordÃ  (2005)
 <doi:10.1257/0002828053828518>.  The methods and the package are explained in
-detail in @code{AdÃ¤mmer} (2019) <doi:10.32614/RJ-2019-052>.")
+detail in AdÃ¤mmer (2019) <doi:10.32614/RJ-2019-052>.")
     (license license:gpl2+)))
 
 (define-public r-lpint
@@ -2701,17 +2700,15 @@ polynomial method.")
      "This package provides a bunch of algorithms based on linear programming for
 estimating, under the homogeneity hypothesis, @code{RxC} ecological contingency
 tables (or vote transition matrices) using mainly aggregate data (from voting
-units).  References: @code{PavÃ­a} and Romero (2022)
-<doi:10.1177/00491241221092725>. @code{PavÃ­a} (2023)
-<doi:10.1007/s43545-023-00658-y>. @code{PavÃ­a} and Romero (2024)
-<doi:10.1093/jrsssa/qnae013>. @code{PavÃ­a} (2024) A local convergent ecological
-inference algorithm for @code{RxC} tables. @code{PavÃ­a} and @code{PenadÃ©s}
-(2024).  A bottom-up approach for ecological inference.  Romero, @code{PavÃ­a},
-@code{MartÃ­n} and Romero (2020) <doi:10.1080/02664763.2020.1804842>.
-Acknowledgements: The authors wish to thank @code{ConsellerÃ­a} de
-@code{EducaciÃ³n}, Universidades y Empleo, Generalitat Valenciana (grant
-AICO/2021/257) and Ministerio de @code{EconomÃ­a} e @code{InnovaciÃ³n} (grant
-PID2021-128228NB-I00) for supporting this research.")
+units).  References: PavÃ­a and Romero (2022) <doi:10.1177/00491241221092725>.
+PavÃ­a (2023) <doi:10.1007/s43545-023-00658-y>.  PavÃ­a and Romero (2024)
+<doi:10.1093/jrsssa/qnae013>.  PavÃ­a (2024) A local convergent ecological
+inference algorithm for @code{RxC} tables.  PavÃ­a and PenadÃ©s (2024).  A
+bottom-up approach for ecological inference.  Romero, PavÃ­a, MartÃ­n and Romero
+(2020) <doi:10.1080/02664763.2020.1804842>.  Acknowledgements: The authors wish
+to thank ConsellerÃ­a de EducaciÃ³n, Universidades y Empleo, Generalitat
+Valenciana (grant AICO/2021/257) and Ministerio de EconomÃ­a e InnovaciÃ³n
+(grant PID2021-128228NB-I00) for supporting this research.")
     (license (list (license:fsdg-compatible "EPL")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -3033,8 +3030,8 @@ use.  It also provides a number of utility functions such as BIC calculations.")
     (synopsis "Lottery Datasets from Caixa Economica Federal")
     (description
      "This package provides a collection of functions designed to streamline the
-retrieval of data from Brazilian lottery games operated by Caixa
-@code{EconÃ´mica} Federal, accessible through the official website at
+retrieval of data from Brazilian lottery games operated by Caixa EconÃ´mica
+Federal, accessible through the official website at
 <https://loterias.caixa.gov.br/Paginas/default.aspx/>.  Datasets for each game
 are conveniently stored on the @code{GitHub} page at
 <https://github.com/tomasbp2/@code{LotteryBrasilDATA/>}.  Each game within this
@@ -4072,8 +4069,8 @@ estimator for arbitrary truncation and censoring pattern based on Turnbull
 (1976) <doi:10.1111/j.2517-6161.1976.tb01597.x>, along with graphical
 goodness-of-fit diagnostics.  Parametric models for positive random variables
 and peaks over threshold models based on extreme value theory are described in
-@code{RootzÃ©n} and Zholud (2017) <doi:10.1007/s10687-017-0305-5>; Belzile et
-al. (2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
+RootzÃ©n and Zholud (2017) <doi:10.1007/s10687-017-0305-5>; Belzile et al.
+(2021) <doi:10.1098/rsos.202097> and Belzile et al. (2022)
 <doi:10.1146/annurev-statistics-040120-025426>.")
     (license license:gpl3)))
 
@@ -5906,8 +5903,7 @@ detection.  The approximating neighbor curves are piecewise functions built from
 a functional sample.  Instead of a distance on a function space we use a locally
 defined distance function that satisfies stabilization criteria.  The package
 allows the implementation of the methodology and the replication of the results
-in @code{ElÃ­as}, A., @code{JimÃ©nez}, R. and Yukich, J. (2020)
-<@code{arXiv:2007.16059>}.")
+in ElÃ­as, A., JimÃ©nez, R. and Yukich, J. (2020) <@code{arXiv:2007.16059>}.")
     (license license:gpl3)))
 
 (define-public r-localcop
@@ -6943,21 +6939,21 @@ they can also be used in other scenarios.")
 (define-public r-lmforc
   (package
     (name "r-lmforc")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmForc" version))
        (sha256
-        (base32 "0v1r7yv0i3sc6cii78d9f9d3a6rvpvwrs6k3byi825r497xjgw3j"))))
+        (base32 "1dx65bnwz2x83yw4v86zzwkgvyy3vh3609yxv80nz1aq4hj54zqw"))))
     (properties `((upstream-name . "lmForc")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=lmForc")
     (synopsis "Linear Model Forecasting")
     (description
-     "Introduces in-sample, out-of-sample, pseudo out-of-sample, and benchmark linear
-model forecast tests and a new class for working with forecast data: Forecast.")
+     "Introduces in-sample, out-of-sample, pseudo out-of-sample, and benchmark model
+forecast tests and a new class for working with forecast data, Forecast.")
     (license license:gpl3)))
 
 (define-public r-lmfor
@@ -7478,11 +7474,10 @@ Caigny et al., (2018) <DOI:10.1016/j.ejor.2018.02.009>).")
     (home-page "https://cran.r-project.org/package=llbayesireg")
     (synopsis "The L-Logistic Bayesian Regression")
     (description
-     "R functions and data sets for the work Paz, R.F., Balakrishnan, N and
-@code{BazÃ¡n}, J.L. (2018).  L-logistic regression models: Prior sensitivity
-analysis, robustness to outliers and applications.  Brazilian Journal of
-Probability and Statistics,
-<https://www.imstat.org/wp-content/uploads/2018/05/BJPS397.pdf>.")
+     "R functions and data sets for the work Paz, R.F., Balakrishnan, N and BazÃ¡n,
+J.L. (2018).  L-logistic regression models: Prior sensitivity analysis,
+robustness to outliers and applications.  Brazilian Journal of Probability and
+Statistics, <https://www.imstat.org/wp-content/uploads/2018/05/BJPS397.pdf>.")
     (license license:gpl3+)))
 
 (define-public r-llama
@@ -10577,9 +10572,9 @@ will generate data dictionaries for individual data frames or an entire library.
     (synopsis "Design of Optimum-Path Forest Classifiers")
     (description
      "The @code{LibOPF} is a framework to develop pattern recognition techniques based
-on optimum-path forests (OPF), @code{JoÃ£o} P. Papa and Alexandre X.
-@code{FalcÃ£o} (2008) <doi:10.1007/978-3-540-89639-5_89>, with methods for
-supervised learning and data clustering.")
+on optimum-path forests (OPF), JoÃ£o P. Papa and Alexandre X. FalcÃ£o (2008)
+<doi:10.1007/978-3-540-89639-5_89>, with methods for supervised learning and
+data clustering.")
     (license license:bsd-2)))
 
 (define-public r-liblinear
@@ -15531,7 +15526,7 @@ obtain the graph using dot from graphviz'.")
      "Various opportunities to evaluate the effects of including one or more control
 variable(s) in structural equation models onto model-implied variances,
 covariances, and parameter estimates.  The derivation of the methodology
-employed in this package can be obtained from @code{BlÃ¶tner} (2023)
+employed in this package can be obtained from BlÃ¶tner (2023)
 <doi:10.31234/osf.io/dy79z>.")
     (license license:gpl3)))
 
@@ -15979,8 +15974,8 @@ dispersal kernel for the dissemination of the pathogen, and a SEIR
 ('Susceptible-Exposed-Infectious-Removedâ) structure with a discrete time
 step.  It provides a useful tool to assess the performance of a wide range of
 deployment options with respect to their epidemiological, evolutionary and
-economic outcomes.  Loup Rimbaud, Julien @code{PapaÃ¯x}, Jean-@code{FranÃ§ois}
-Rey, Luke G Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
+economic outcomes.  Loup Rimbaud, Julien PapaÃ¯x, Jean-FranÃ§ois Rey, Luke G
+Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -16261,11 +16256,11 @@ using a landmark estimation approach.")
     (description
      "Changes of landscape diversity and structure can be detected soon if relying on
 landscape class combinations and analysing patterns at multiple scales.
-@code{LandComp} provides such an opportunity, based on @code{JuhÃ¡sz-Nagy's}
-functions (@code{JuhÃ¡sz-Nagy} P, Podani J 1983 <doi:10.1007/BF00129432>).
-Functions can handle multilayered data.  Requirements of the input: binary data
-contained by a regular square or hexagonal grid, and the grid should have
-projected coordinates.")
+@code{LandComp} provides such an opportunity, based on JuhÃ¡sz-Nagy's functions
+(JuhÃ¡sz-Nagy P, Podani J 1983 <doi:10.1007/BF00129432>).  Functions can handle
+multilayered data.  Requirements of the input: binary data contained by a
+regular square or hexagonal grid, and the grid should have projected
+coordinates.")
     (license license:expat)))
 
 (define-public r-lancor
@@ -17659,8 +17654,8 @@ and coordinate direction (design matrix columns) basis functions.")
      "This package provides an l1-version of the spectral clustering algorithm devoted
 to robustly clustering highly perturbed graphs using l1-penalty.  This algorithm
 is described with more details in the preprint C. Champion, M. Champion, M.
-@code{BlazÃ¨re}, R. Burcelin and J.M. Loubes, \"l1-spectral clustering algorithm:
-a spectral clustering method using l1-regularization\" (2022).")
+BlazÃ¨re, R. Burcelin and J.M. Loubes, \"l1-spectral clustering algorithm: a
+spectral clustering method using l1-regularization\" (2022).")
     (license license:gpl2)))
 
 (define-public r-l1pack

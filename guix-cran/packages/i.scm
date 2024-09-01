@@ -2303,9 +2303,9 @@ see Troxel Ma and Heitjan (2004) and Xie and Heitjan (2004)
     (home-page "https://cran.r-project.org/package=ismtchile")
     (synopsis "Calculating Socio Material Territorial Index")
     (description
-     "Paquete creado con el fin de facilitar el @code{cÃ¡lculo} y @code{distribuciÃ³n}
-del Ã­ndice Socio Material Territorial (ISMT), elaborado por el Observatorio de
-Ciudades UC. La @code{metodologÃ­a} completa @code{estÃ}¡ disponible en \"ISMT\"
+     "Paquete creado con el fin de facilitar el cÃ¡lculo y distribuciÃ³n del Ã­ndice
+Socio Material Territorial (ISMT), elaborado por el Observatorio de Ciudades UC.
+La metodologÃ­a completa estÃ¡ disponible en \"ISMT\"
 (<https://ideocuc-ocuc.hub.arcgis.com/datasets/6ed956450cfc4293b7d90df3ce3474e4/about>)
 [Observatorio de Ciudades UC (2019)]. || Package created to facilitate the
 calculation and distribution of the Socio-Material Territorial Index by
@@ -2660,7 +2660,7 @@ for parsing entire files, or individual lines of data.")
      "Datasets for Introduction to Statistical Data Analysis for the Life Sciences")
     (description
      "This package provides datasets for the book \"Introduction to Statistical Data
-Analysis for the Life Sciences, Second edition\" by @code{EkstrÃ¸m} and SÃ¸rensen
+Analysis for the Life Sciences, Second edition\" by EkstrÃ¸m and SÃ¸rensen
 (2014).")
     (license license:gpl2)))
 
@@ -2933,7 +2933,7 @@ functions, respectively (Weeks (2010) <doi:10.18637/jss.v035.i12>).  The
 bisection() function was written by modifying the bisection() function (Howard
 (2017, ISBN:9780367657918)).  The code of the inverse test characteristic curve
 scoring in the est_score() function was written by modifying the irt.eq.tse()
-function (@code{GonzÃ¡lez} (2014) <doi:10.18637/jss.v059.i07>).  In est_score()
+function (GonzÃ¡lez (2014) <doi:10.18637/jss.v059.i07>).  In est_score()
 function, the code of weighted likelihood estimation method was written by
 referring to the Pi(), Ji(), and Ii() functions of the @code{catR} package
 (Magis & Barrada (2017) <doi:10.18637/jss.v076.c01>).")
@@ -3065,14 +3065,14 @@ algorithm to estimate: (1) Three parameter logistic (3PL) model proposed by
 Birnbaum (1968, ISBN:9780201043105); (2) four parameter logistic (4PL) model
 proposed by Barton & Lord (1981) <doi:10.1002/j.2333-8504.1981.tb01255.x>; (3)
 one parameter logistic guessing (1PLG) and (4) one parameter logistic
-ability-based guessing (1PLAG) models proposed by San @code{MartÃ­n} et al
-(2006) <doi:10.1177/0146621605282773>.  The BEMM family includes (1) the BEMM
-algorithm for 3PL model proposed by Guo & Zheng (2019)
-<doi:10.3389/fpsyg.2019.01175>; (2) the BEMM algorithm for 1PLG model and (3)
-the BEMM algorithm for 1PLAG model proposed by Guo, Wu, Zheng, & Chen (2021)
-<doi:10.1177/0146621621990761>; (4) the BEMM algorithm for 4PL model proposed by
-Zheng, Guo, & Kern (2021) <doi:10.1177/21582440211052556>; and (5) their maximum
-likelihood estimation versions proposed by Zheng, Meng, Guo, & Liu (2018)
+ability-based guessing (1PLAG) models proposed by San MartÃ­n et al (2006)
+<doi:10.1177/0146621605282773>.  The BEMM family includes (1) the BEMM algorithm
+for 3PL model proposed by Guo & Zheng (2019) <doi:10.3389/fpsyg.2019.01175>; (2)
+the BEMM algorithm for 1PLG model and (3) the BEMM algorithm for 1PLAG model
+proposed by Guo, Wu, Zheng, & Chen (2021) <doi:10.1177/0146621621990761>; (4)
+the BEMM algorithm for 4PL model proposed by Zheng, Guo, & Kern (2021)
+<doi:10.1177/21582440211052556>; and (5) their maximum likelihood estimation
+versions proposed by Zheng, Meng, Guo, & Liu (2018)
 <doi:10.3389/fpsyg.2017.02302>.  Thus, both Bayesian modal estimates and maximum
 likelihood estimates are available.")
     (license license:gpl2+)))
@@ -3255,8 +3255,7 @@ Inter-Rater Reliability,\" 4th edition, Advanced Analytics, LLC.")
     (description
      "This package implements a Shiny Item Analysis module and functions for computing
 false positive rate and other binary classification metrics from inter-rater
-reliability based on @code{BartoÅ}¡ & @code{MartinkovÃ}¡ (2024)
-<doi:10.1111/bmsp.12343>.")
+reliability based on BartoÅ¡ & MartinkovÃ¡ (2024) <doi:10.1111/bmsp.12343>.")
     (license license:gpl3)))
 
 (define-public r-irr
@@ -3730,9 +3729,8 @@ with user-provided data.")
      "Iterated race is an extension of the Iterated F-race method for the automatic
 configuration of optimization algorithms, that is, (offline) tuning their
 parameters by finding the most appropriate settings given a set of instances of
-an optimization problem.  M. LÃ³pez-@code{IbÃ¡Ã±ez}, J. Dubois-Lacoste, L.
-PÃ©rez CÃ¡ceres, T. @code{StÃ¼tzle}, and M. Birattari (2016)
-<doi:10.1016/j.orp.2016.09.002>.")
+an optimization problem.  M. LÃ³pez-IbÃ¡Ã±ez, J. Dubois-Lacoste, L. PÃ©rez
+CÃ¡ceres, T. StÃ¼tzle, and M. Birattari (2016) <doi:10.1016/j.orp.2016.09.002>.")
     (license license:gpl2+)))
 
 (define-public r-ir
@@ -12088,8 +12086,8 @@ perform oversampling.")
 the classification and study of native corn by aiding in the identification of
 racial complexes which are fundamental to Mexico's agriculture and culture.
 This package has been developed based on data collected by \"Proyecto Global de
-@code{MaÃ­ces} Nativos MÃ©xico\", which has conducted exhaustive surveys across
-the country to document the qualitative and quantitative characteristics of
+MaÃ­ces Nativos MÃ©xico\", which has conducted exhaustive surveys across the
+country to document the qualitative and quantitative characteristics of
 different types of native maize.  The trained model uses a robust and diverse
 dataset, enabling it to achieve an 80% accuracy in classifying maize racial
 complexes.  The characteristics included in the analysis comprise geographic
@@ -13035,9 +13033,9 @@ toolkit.")
 significant change over time in drug utilization, and ii) characterize common
 change over time patterns among the time series for multiple geographic areas.
 For reference, see below: 1.  Song, J., Carey, M., Zhu, H., Miao, H.,
-@code{RamÂ´Ä±rez}, J. C., & Wu, H. (2018) <doi:10.1504/IJCBDD.2018.10011910> 2.
-Wu, S., Wu, H. (2013) <doi:10.1186/1471-2105-14-6> 3.  Carey, M., Wu, S., Gan,
-G. & Wu, H. (2016) <doi:10.1016/j.idm.2016.07.001>.")
+RamÂ´Ä±rez, J. C., & Wu, H. (2018) <doi:10.1504/IJCBDD.2018.10011910> 2.  Wu,
+S., Wu, H. (2013) <doi:10.1186/1471-2105-14-6> 3.  Carey, M., Wu, S., Gan, G. &
+Wu, H. (2016) <doi:10.1016/j.idm.2016.07.001>.")
     (license license:gpl3+)))
 
 (define-public r-igst
@@ -13656,9 +13654,9 @@ models.")
 Intuitionistic Fuzzy Synthetic Measure (IFSM) and Intuitionistic Fuzzy Technique
 for Order of Preference by Similarity to Ideal Solution (IFTOPSIS) for
 intuitionistic fuzzy data sets for multi-criteria decision making problems.
-References describing the methods: @code{JefmaÅski} (2020)
-<doi:10.1007/978-3-030-52348-0_4>; @code{JefmaÅski}, Roszkowska,
-Kusterka-@code{JefmaÅska} (2021) <doi:10.3390/e23121636>.")
+References describing the methods: JefmaÅski (2020)
+<doi:10.1007/978-3-030-52348-0_4>; JefmaÅski, Roszkowska, Kusterka-JefmaÅska
+(2021) <doi:10.3390/e23121636>.")
     (license license:gpl2+)))
 
 (define-public r-ifctools
@@ -13727,16 +13725,16 @@ details about the method can be found in the paper by Cabello-Aguilar (2022)
     (synopsis "Tools for Imaging Flow Cytometry")
     (description
      "This package contains several tools to treat imaging flow cytometry data from
-@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers ('@code{AmnisÂ®}
-@code{CytekÂ®}').  Provides an easy and simple way to read and write .fcs, .rif,
-.cif and .daf files.  Information such as masks, features, regions and
-populations set within these files can be retrieved for each single cell.  In
-addition, raw data such as images stored can also be accessed.  Users, may
-hopefully increase their productivity thanks to dedicated functions to extract,
-visualize, manipulate and export IFC data.  Toy data example can be installed
-through the IFCdata package of approximately 32 MB, which is available in a drat
-repository <https://gitdemont.github.io/IFCdata/>.  See file COPYRIGHTS and file
-AUTHORS for a list of copyright holders and authors.")
+@code{ImageStreamÂ®} and @code{FlowSightÂ®} cytometers ('AmnisÂ® CytekÂ®').
+Provides an easy and simple way to read and write .fcs, .rif, .cif and .daf
+files.  Information such as masks, features, regions and populations set within
+these files can be retrieved for each single cell.  In addition, raw data such
+as images stored can also be accessed.  Users, may hopefully increase their
+productivity thanks to dedicated functions to extract, visualize, manipulate and
+export IFC data.  Toy data example can be installed through the IFCdata package
+of approximately 32 MB, which is available in a drat repository
+<https://gitdemont.github.io/IFCdata/>.  See file COPYRIGHTS and file AUTHORS
+for a list of copyright holders and authors.")
     (license license:gpl3)))
 
 (define-public r-ifatools
@@ -16088,8 +16086,8 @@ Andrea S Foulkes, Yunsheng Ma, and Raji Balasubramanian (2020) <doi:
     (description
      "This package contains datasets and several smaller functions suitable for
 analysis of interval-censored data.  The package complements the book Bogaerts,
-@code{KomÃ¡rek} and Lesaffre (2017, ISBN: 978-1-4200-7747-6) \"Survival Analysis
-with Interval-Censored Data: A Practical Approach\"
+KomÃ¡rek and Lesaffre (2017, ISBN: 978-1-4200-7747-6) \"Survival Analysis with
+Interval-Censored Data: A Practical Approach\"
 <https://www.routledge.com/Survival-Analysis-with-Interval-Censored-Data-A-Practical-Approach-with/Bogaerts-Komarek-Lesaffre/p/book/9781420077476>.
  Full R code related to the examples presented in the book can be found at
 <https://ibiostat.be/online-resources/icbook/supplemental>.  Packages mentioned
@@ -16468,7 +16466,7 @@ by the icd package for finding comorbidities.")
      "Estimates the intraclass correlation coefficient for trajectory data using a
 matrix of distances between trajectories.  The distances implemented are the
 extended Hausdorff distances (Min et al.  2007) <doi:10.1080/13658810601073315>
-and the discrete @code{FrÃ©chet} distance (Magdy et al.  2015)
+and the discrete FrÃ©chet distance (Magdy et al.  2015)
 <doi:10.1109/@code{IntelCIS.2015.7397286>}.")
     (license license:gpl2+)))
 
@@ -17094,7 +17092,7 @@ has a graphing function to perform radarplots that make great data visualization
 for this type of data.  Beliaeff, B., & Burgeot, T. (2002).
 <https://pubmed.ncbi.nlm.nih.gov/12069320/>.  Sanchez, W., Burgeot, T., &
 Porcher, J.-M. (2013).<doi:10.1007/s11356-012-1359-1>.  Devin, S., Burgeot, T.,
-@code{GiambÃ©rini}, L., Minguez, L., & Pain-Devin, S. (2014).
+GiambÃ©rini, L., Minguez, L., & Pain-Devin, S. (2014).
 <doi:10.1007/s11356-013-2169-9>.  Minato N. (2022).
 <https://minato.sip21c.org/msb/>.")
     (license license:gpl3)))
@@ -17499,8 +17497,8 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
     (synopsis "R Wrapper for Istanbul Municipality Open Data Portal")
     (description
      "Call wrappers for Istanbul Metropolitan Municipality's Open Data Portal
-(Turkish: Ä°stanbul BÃ¼@code{yÃ¼kÅehir} Belediyesi AÃ§Ä±k Veri @code{PortalÄ±})
-at <https://data.ibb.gov.tr/en/>.")
+(Turkish: Ä°stanbul BÃ¼yÃ¼kÅehir Belediyesi AÃ§Ä±k Veri PortalÄ±) at
+<https://data.ibb.gov.tr/en/>.")
     (license license:expat)))
 
 (define-public r-ibawds

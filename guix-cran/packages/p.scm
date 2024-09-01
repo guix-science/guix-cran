@@ -877,7 +877,7 @@ closure can be derived.  Methods adapted from Bartlett, Scoffoni, Sack (2012)
      "This package provides tools for performing disproportionality analysis using the
 information component, proportional reporting rate and the reporting odds ratio.
  The anticipated use is passing data to the da() function, which executes the
-disproportionality analysis.  See @code{NorÃ©n} et al (2011)
+disproportionality analysis.  See NorÃ©n et al (2011)
 <doi:10.1177/0962280211403604> and Montastruc et al (2011)
 <doi:10.1111/j.1365-2125.2011.04037.x> for further details.")
     (license license:gpl3+)))
@@ -977,7 +977,7 @@ several commonly used estimates.  Instead of just calculating one p-value and
 one confidence interval, p-value functions display p-values and confidence
 intervals for many levels thereby allowing to gauge the compatibility of several
 parameter values with the data.  These methods are discussed by Infanger D,
-Schmidt-@code{TrucksÃ¤ss} A. (2019) <doi:10.1002/sim.8293>; Poole C. (1987)
+Schmidt-TrucksÃ¤ss A. (2019) <doi:10.1002/sim.8293>; Poole C. (1987)
 <doi:10.2105/AJPH.77.2.195>; Schweder T, Hjort NL. (2002)
 <doi:10.1111/1467-9469.00285>; Bender R, Berg G, Zeeb H. (2005)
 <doi:10.1002/bimj.200410104> ; Singh K, Xie M, Strawderman WE. (2007)
@@ -6376,7 +6376,7 @@ deterministic context.  In addition it obtains a schedule of activities time
 allows the management of resources.  When the project is done, and the actual
 duration for each activity is known, then it can know how long the project is
 delayed and make a fair delivery of the delay between each activity
-(@code{BergantiÃ±os}, Valencia-Toledo & Vidal-Puga (2018)
+(BergantiÃ±os, Valencia-Toledo & Vidal-Puga (2018)
 <doi:10.1016/j.dam.2017.08.012>).  In a stochastic context it can estimate the
 average duration of the project and plot the density of this duration, as well
 as, the density of the early and last times of the chosen activities.  As in the
@@ -8814,9 +8814,8 @@ sampling and characterizing price data.")
      "Preparing a scanner data set for price dynamics calculations (data selecting,
 data classification, data matching, data filtering).  Computing bilateral and
 multilateral indexes.  For details on these methods see: Diewert and Fox (2020)
-<doi:10.1080/07350015.2020.1816176>, @code{BiaÅek} (2019)
-<doi:10.2478/jos-2019-0014> or @code{BiaÅek} (2020)
-<doi:10.2478/jos-2020-0037>.")
+<doi:10.1080/07350015.2020.1816176>, BiaÅek (2019) <doi:10.2478/jos-2019-0014>
+or BiaÅek (2020) <doi:10.2478/jos-2020-0037>.")
     (license license:gpl3)))
 
 (define-public r-prf
@@ -10923,9 +10922,8 @@ of rules, hinge and linear functions of the predictor variables.")
      "An implementation of the \"Design Analysis\" proposed by Gelman and Carlin (2014)
 <doi:10.1177/1745691614551642>.  It combines the evaluation of Power-Analysis
 with other inferential-risks as Type-M error (i.e.  Magnitude) and Type-S error
-(i.e.  Sign).  See also @code{AltoÃ¨} et al. (2020)
-<doi:10.3389/fpsyg.2019.02893> and Bertoldo et al. (2020)
-<doi:10.31234/osf.io/q9f86>.")
+(i.e.  Sign).  See also AltoÃ¨ et al. (2020) <doi:10.3389/fpsyg.2019.02893> and
+Bertoldo et al. (2020) <doi:10.31234/osf.io/q9f86>.")
     (license license:gpl3)))
 
 (define-public r-prcr
@@ -11596,13 +11594,13 @@ semiparametric variational expectation-maximization algorithm.  Two versions of
 the method are developed, using either a nonparametric histogram approach (with
 an adaptive choice of the partition size) or kernel intensity estimators.  The
 number of latent groups can be selected by an integrated classification
-likelihood criterion.  Y. Baraud and L. @code{BirgÃ©} (2009).
+likelihood criterion.  Y. Baraud and L. BirgÃ© (2009).
 <doi:10.1007/s00440-007-0126-6>.  C. Biernacki, G. Celeux and G. Govaert (2000).
 <doi:10.1109/34.865189>.  M. Corneli, P. Latouche and F. Rossi (2016).
 <doi:10.1016/j.neucom.2016.02.031>.  J.-J. Daudin, F. Picard and S. Robin
 (2008). <doi:10.1007/s11222-007-9046-7>.  A. P. Dempster, N. M. Laird and D. B.
-Rubin (1977). <http://www.jstor.org/stable/2984875>.  G. @code{GrÃ©goire}
-(1993). <http://www.jstor.org/stable/4616289>.  L. Hubert and P. Arabie (1985).
+Rubin (1977). <http://www.jstor.org/stable/2984875>.  G. GrÃ©goire (1993).
+<http://www.jstor.org/stable/4616289>.  L. Hubert and P. Arabie (1985).
 <doi:10.1007/BF01908075>.  M. Jordan, Z. Ghahramani, T. Jaakkola and L. Saul
 (1999). <doi:10.1023/A:1007665907178>.  C. Matias, T. Rebafka and F. Villers
 (2018). <doi:10.1093/biomet/asy016>.  C. Matias and S. Robin (2014).
@@ -13610,7 +13608,7 @@ and easy to personalize single page websites.")
 as well as for multiple hypotheses (multiple tests included in an analysis),
 given any specified global error rate.  This enables the sequential use of
 practically any significance test, as long as the underlying data can be
-simulated in advance to a reasonable approximation. @code{LukÃ¡cs} (2022)
+simulated in advance to a reasonable approximation.  LukÃ¡cs (2022)
 <doi:10.21105/joss.04643>.")
     (license license:bsd-2)))
 
@@ -14478,8 +14476,8 @@ pyramids.")
     (description
      "Population genetic analyses for hierarchical analysis of partially clonal
 populations built upon the architecture of the adegenet package.  Originally
-described in Kamvar, Tabima, and @code{GrÃ¼nwald} (2014) <doi:10.7717/peerj.281>
-with version 2.0 described in Kamvar, Brooks, and @code{GrÃ¼nwald} (2015)
+described in Kamvar, Tabima, and GrÃ¼nwald (2014) <doi:10.7717/peerj.281> with
+version 2.0 described in Kamvar, Brooks, and GrÃ¼nwald (2015)
 <doi:10.3389/fgene.2015.00208>.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -15846,9 +15844,9 @@ Bjerrum, L., Rosholm, J. U., Hallas, J., & Kragstrup, J. (1997)
 Standring, P., Fiore, L., ...  Gagnon, D.R. (2005) <doi:10.1002/pds.966>.
 Hovstadius, B., Astrand, B., & Petersson, G. (2009)
 <doi:10.1186/1472-6904-9-11>.  Hovstadius, B., Astrand, B., & Petersson, G.
-(2010) <doi:10.1002/pds.1921>.  Kennerfalk, A., @code{RuigÃ³mez}, A., Wallander,
-M.-A., Wilhelmsen, L., & Johansson, S. (2002) <doi:10.1345/aph.1A226>.  Masnoon,
-N., Shakib, S., Kalisch-Ellett, L., & Caughey, G. E. (2017)
+(2010) <doi:10.1002/pds.1921>.  Kennerfalk, A., RuigÃ³mez, A., Wallander, M.-A.,
+Wilhelmsen, L., & Johansson, S. (2002) <doi:10.1345/aph.1A226>.  Masnoon, N.,
+Shakib, S., Kalisch-Ellett, L., & Caughey, G. E. (2017)
 <doi:10.1186/s12877-017-0621-2>.  Narayan, S. W., & Nishtala, P. S. (2015)
 <doi:10.1007/s40801-015-0020-y>.  Nishtala, P. S., & Salahudeen, M. S. (2015)
 <doi:10.1159/000368191>.  Park, H. Y., Ryu, H. N., Shim, M. K., Sohn, H. S., &
@@ -16326,11 +16324,10 @@ parliamentary studies, as well as others.  Main references are: Loosemore and
 Hanby (1971) <doi:10.1017/S000712340000925X>; Gallagher (1991)
 <doi:10.1016/0261-3794(91)90004-C>; Laakso and Taagepera (1979)
 <doi:10.1177/001041407901200101>; Rae (1968) <doi:10.1177/001041406800100305>;
-@code{HirschmaÅ} (1945) <ISBN:0-520-04082-1>; Kesselman (1966)
-<doi:10.2307/1953769>; Jones and Mainwaring (2003)
-<doi:10.1177/13540688030092002>; Rice (1925) <doi:10.2307/2142407>; Pedersen
-(1979) <doi:10.1111/j.1475-6765.1979.tb01267.x>; SANTOS (2002)
-<ISBN:85-225-0395-8>.")
+HirschmaÅ (1945) <ISBN:0-520-04082-1>; Kesselman (1966) <doi:10.2307/1953769>;
+Jones and Mainwaring (2003) <doi:10.1177/13540688030092002>; Rice (1925)
+<doi:10.2307/2142407>; Pedersen (1979) <doi:10.1111/j.1475-6765.1979.tb01267.x>;
+SANTOS (2002) <ISBN:85-225-0395-8>.")
     (license license:gpl3+)))
 
 (define-public r-politeness
@@ -19325,13 +19322,13 @@ confidence interval and plot the results using ggplot2'.")
 (define-public r-plotmo
   (package
     (name "r-plotmo")
-    (version "3.6.3")
+    (version "3.6.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotmo" version))
        (sha256
-        (base32 "0ywv334n0f9x8iy0vxwcf0dkznd8wvwxw57vk0liyprjhn0ws5v9"))))
+        (base32 "0wl2xlidib4r54nm1q5zndr9iilagpyc3xlxs0cpd487hdh3zcn8"))))
     (properties `((upstream-name . "plotmo")))
     (build-system r-build-system)
     (propagated-inputs (list r-plotrix r-formula))
@@ -20818,10 +20815,9 @@ analysis against the query results.")
 tumor, at each base position of an Next Generation Sequencing (NGS) analysis
 using barcoding.  Mutations are assessed by comparing the minor-allele frequency
 at each position to the measured PER in control samples.  This package has been
-used for Kjersti Tjensvoll, Morten Lapin, @code{BjÃ¸rnar} Gilje, Herish
-Garresori, Satu Oltedal, Rakel Brendsdal Forthun, Anders Molven, Yves Rozenholc
-and Oddmund N\\o{o}rdgaard (2022)
-<https://www.nature.com/articles/s41598-022-09698-5>.")
+used for Kjersti Tjensvoll, Morten Lapin, BjÃ¸rnar Gilje, Herish Garresori, Satu
+Oltedal, Rakel Brendsdal Forthun, Anders Molven, Yves Rozenholc and Oddmund
+N\\o{o}rdgaard (2022) <https://www.nature.com/articles/s41598-022-09698-5>.")
     (license license:expat)))
 
 (define-public r-plasmamutationdetector
@@ -22368,7 +22364,7 @@ interface to that API, allowing you to query it and work with its responses.")
 undo the label switching problem in Bayesian mixture models; fitting sparse
 finite mixtures; initializing the centers of the classical k-means algorithm in
 order to obtain a better clustering solution.  For further details see Egidi,
-@code{PappadÃ }, Pauli and Torelli (2018b)<ISBN:9788891910233>.")
+PappadÃ , Pauli and Torelli (2018b)<ISBN:9788891910233>.")
     (license license:gpl2)))
 
 (define-public r-pisart
@@ -25012,7 +25008,7 @@ unsupervised fashion.  It can be used for chronic or acute diseases.  An example
 of how to use @code{PheVis} is available in the vignette.  Basically there are
 two functions that are to be used: `train_phevis()` which trains the algorithm
 and `test_phevis()` which get the predicted probabilities.  The detailed method
-is described in preprint by @code{FertÃ©} et al. (2020)
+is described in preprint by FertÃ© et al. (2020)
 <doi:10.1101/2020.06.15.20131458>.")
     (license license:gpl2+)))
 
@@ -26238,10 +26234,10 @@ changed to obtain, as minimum, this quantity of candidates (phages).  Then, it
 calculates the best combination of Phi phages using those selected during the
 clustering with Ward algorithm.  If you use @code{PhageCocktail}, please cite it
 as: \"@code{PhageCocktail}: An R Package to Design Phage Cocktails from
-Experimental Phage-Bacteria Infection Networks\". @code{MarÃ­a} Victoria
-DÃ­az-@code{GaliÃ¡n}, Miguel A. Vega-@code{RodrÃ­guez}, Felipe Molina.  Computer
-Methods and Programs in Biomedicine, 221, 106865, Elsevier Ireland, Clare,
-Ireland, 2022, pp.  1-9, ISSN: 0169-2607. <doi:10.1016/j.cmpb.2022.106865>.")
+Experimental Phage-Bacteria Infection Networks\".  MarÃ­a Victoria DÃ­az-GaliÃ¡n,
+Miguel A. Vega-RodrÃ­guez, Felipe Molina.  Computer Methods and Programs in
+Biomedicine, 221, 106865, Elsevier Ireland, Clare, Ireland, 2022, pp.  1-9,
+ISSN: 0169-2607. <doi:10.1016/j.cmpb.2022.106865>.")
     (license license:gpl3)))
 
 (define-public r-phacking
@@ -26912,13 +26908,13 @@ Linear Regression That's interpretable (FLIRTI) by James et al. (2009)
     (synopsis "Population Fisher Information Matrix")
     (description
      "Evaluate or optimize designs for nonlinear mixed effects models using the Fisher
-Information matrix.  Methods used in the package refer to @code{MentrÃ©} F,
-Mallet A, Baccar D (1997) <doi:10.1093/biomet/84.2.429>, Retout S, Comets E,
-Samson A, @code{MentrÃ©} F (2007) <doi:10.1002/sim.2910>, Bazzoli C, Retout S,
-@code{MentrÃ©} F (2009) <doi:10.1002/sim.3573>, Le Nagard H, Chao L, Tenaillon O
-(2011) <doi:10.1186/1471-2148-11-326>, Combes FP, Retout S, Frey N,
-@code{MentrÃ©} F (2013) <doi:10.1007/s11095-013-1079-3> and Seurat J, Tang Y,
-@code{MentrÃ©} F, Nguyen TT (2021) <doi:10.1016/j.cmpb.2021.106126>.")
+Information matrix.  Methods used in the package refer to MentrÃ© F, Mallet A,
+Baccar D (1997) <doi:10.1093/biomet/84.2.429>, Retout S, Comets E, Samson A,
+MentrÃ© F (2007) <doi:10.1002/sim.2910>, Bazzoli C, Retout S, MentrÃ© F (2009)
+<doi:10.1002/sim.3573>, Le Nagard H, Chao L, Tenaillon O (2011)
+<doi:10.1186/1471-2148-11-326>, Combes FP, Retout S, Frey N, MentrÃ© F (2013)
+<doi:10.1007/s11095-013-1079-3> and Seurat J, Tang Y, MentrÃ© F, Nguyen TT
+(2021) <doi:10.1016/j.cmpb.2021.106126>.")
     (license license:gpl2+)))
 
 (define-public r-pfica
@@ -27334,7 +27330,7 @@ semi-integrated likelihood\" (2017) <doi:10.1080/10618600.2017.1340302>.")
     (synopsis "Catalogue of the Timber Forest Species of the Peruvian Amazon")
     (description
      "Access the data of the Catalogue of the Timber Forest Species of the Peruvian
-Amazon VÃ¡squez @code{MartÃ­nez}, R., & Rojas @code{GonzÃ¡les},
+Amazon VÃ¡squez MartÃ­nez, R., & Rojas GonzÃ¡les,
 R.D.P.(2022)<doi:10.21704/rfp.v37i3.1956>.")
     (license license:expat)))
 
@@ -28727,7 +28723,7 @@ Elastic Net.")
     (description
      "Robust penalized (adaptive) elastic net S and M estimators for linear
 regression.  The methods are proposed in Cohen Freue, G. V., Kepplinger, D.,
-@code{SalibiÃ¡n-Barrera}, M., and Smucler, E. (2019)
+SalibiÃ¡n-Barrera, M., and Smucler, E. (2019)
 <https://projecteuclid.org/euclid.aoas/1574910036>.  The package implements the
 extensions and algorithms described in Kepplinger, D. (2020)
 <doi:10.14288/1.0392915>.")
@@ -31142,13 +31138,13 @@ al. (2020) <doi:10.1142/9789811215636_0063> and Gasdaska et al. (2019)
     (description
      "Parallel Constraint Satisfaction (PCS) models are an increasingly common class
 of models in Psychology, with applications to reading and word recognition
-(@code{McClelland} & Rumelhart, 1981), judgment and decision making
-(@code{GlÃ¶ckner} & Betsch, 2008; @code{GlÃ¶ckner}, Hilbig, & Jekel, 2014), and
-several other fields (e.g. Read, Vanman, & Miller, 1997).  In each of these
-fields, they provide a quantitative model of psychological phenomena, with
-precise predictions regarding choice probabilities, decision times, and often
-the degree of confidence.  This package provides the necessary functions to
-create and simulate basic Parallel Constraint Satisfaction networks within R.")
+(@code{McClelland} & Rumelhart, 1981), judgment and decision making (GlÃ¶ckner &
+Betsch, 2008; GlÃ¶ckner, Hilbig, & Jekel, 2014), and several other fields (e.g.
+Read, Vanman, & Miller, 1997).  In each of these fields, they provide a
+quantitative model of psychological phenomena, with precise predictions
+regarding choice probabilities, decision times, and often the degree of
+confidence.  This package provides the necessary functions to create and
+simulate basic Parallel Constraint Satisfaction networks within R.")
     (license license:gpl3+)))
 
 (define-public r-pcse
@@ -32383,7 +32379,7 @@ original dataset.")
      "This package provides methods to detect genetic markers involved in biological
 adaptation.  pcadapt provides statistical tools for outlier detection based on
 Principal Component Analysis.  Implements the method described in (Luu, 2016)
-<DOI:10.1111/1755-0998.12592> and later revised in (@code{PrivÃ©}, 2020)
+<DOI:10.1111/1755-0998.12592> and later revised in (PrivÃ©, 2020)
 <DOI:10.1093/molbev/msaa053>.")
     (license license:gpl2+)))
 
@@ -34384,7 +34380,7 @@ result.")
      "This package implements IV-estimator and Bayesian estimator for linear-in-means
 Spatial Autoregressive (SAR) model (see @code{LeSage}, 1997
 <doi:10.1177/016001769702000107>; Lee, 2004
-<doi:10.1111/j.1468-0262.2004.00558.x>; @code{BramoullÃ©} et al., 2009
+<doi:10.1111/j.1468-0262.2004.00558.x>; BramoullÃ© et al., 2009
 <doi:10.1016/j.jeconom.2008.12.021>), while assuming that only a partial
 information about the network structure is available.  Examples are when the
 adjacency matrix is not fully observed or when only consistent estimation of the
@@ -34891,9 +34887,9 @@ Quality Standards (NAAQS).")
     (synopsis "Parametric Frailty Models")
     (description
      "Fits Parametric Frailty Models by maximum marginal likelihood.  Possible
-baseline hazards: exponential, Weibull, inverse Weibull (@code{FrÃ©chet}),
-Gompertz, lognormal, log-skew-normal, and loglogistic.  Possible Frailty
-distributions: gamma, positive stable, inverse Gaussian and lognormal.")
+baseline hazards: exponential, Weibull, inverse Weibull (FrÃ©chet), Gompertz,
+lognormal, log-skew-normal, and loglogistic.  Possible Frailty distributions:
+gamma, positive stable, inverse Gaussian and lognormal.")
     (license license:gpl2)))
 
 (define-public r-paretoposstable
@@ -35820,8 +35816,8 @@ series.  In addition, random number generation is also implemented.")
      "Generalized Least Squares (GLS) estimation of Seemingly Unrelated Regression
 (SUR) systems on unbalanced panel in the one/two-way cases also taking into
 account the possibility of cross equation restrictions.  Methodological details
-can be found in @code{BiÃ¸rn} (2004) <doi:10.1016/j.jeconom.2003.10.023> and
-Platoni, Sckokai, Moro (2012) <doi:10.1080/07474938.2011.607098>.")
+can be found in BiÃ¸rn (2004) <doi:10.1016/j.jeconom.2003.10.023> and Platoni,
+Sckokai, Moro (2012) <doi:10.1080/07474938.2011.607098>.")
     (license license:gpl3+)))
 
 (define-public r-panelsummary
@@ -37916,7 +37912,7 @@ imputing records where observations were absent (pad).")
     (synopsis "PadÃ© Approximant Coefficients")
     (description
      "Given a vector of Taylor series coefficients of sufficient length as input, the
-function returns the numerator and denominator coefficients for the @code{PadÃ©}
+function returns the numerator and denominator coefficients for the PadÃ©
 approximant of appropriate order (Baker, 1975) <ISBN:9780120748556>.")
     (license (list license:gpl2+ license:bsd-2))))
 
@@ -38420,6 +38416,6 @@ analysis.")
      "This package contains functions for data preparation, prediction of transition
 probabilities, estimating semi-parametric regression models and for implementing
 nonparametric estimators for other quantities.  See Meira-Machado and
-Roca-@code{PardiÃ±as} (2011) <doi:10.18637/jss.v038.i03>.")
+Roca-PardiÃ±as (2011) <doi:10.18637/jss.v038.i03>.")
     (license license:gpl3)))
 

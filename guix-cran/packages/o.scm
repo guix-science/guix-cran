@@ -793,8 +793,8 @@ Alfandi (2020) <doi:10.1145/3381028>, Abir Smiti (2020)
 series from homogeneous and heterogeneous databases using an Orthogonal Greedy
 Algorithm (OGA) for saturated linear regression models.  The programs implement
 the procedures presented in the paper entitled \"Efficient outlier detection in
-heterogeneous time series databases\" by Pedro Galeano, Daniel @code{PeÃ±a} and
-Ruey S. Tsay (2024), working paper, Universidad Carlos III de Madrid.")
+heterogeneous time series databases\" by Pedro Galeano, Daniel PeÃ±a and Ruey S.
+Tsay (2024), working paper, Universidad Carlos III de Madrid.")
     (license license:gpl3)))
 
 (define-public r-outlierensembles
@@ -4741,7 +4741,7 @@ efficiency or gain achieved through the optimal design is quantified by
 comparing it to a random allocation.  This comparison allows for an assessment
 of how much improvement or advantage is gained by using the optimal design
 approach.  This work was supported by the Swedish Research Council
-(@code{VetenskapsrÃ¥det}) Grant 2019-02706.")
+(VetenskapsrÃ¥det) Grant 2019-02706.")
     (license license:gpl3+)))
 
 (define-public r-optic
@@ -5221,10 +5221,10 @@ Argentina.  It facilitates access to microdata and the calculation of indicators
 of the Trust in Government Index (ICG), prepared by the Torcuato Di Tella
 University.  Although we will try to document everything possible in English, by
 its very nature Spanish will be the main language.  El paquete fue pensado como
-una caja de herramientas para el trabajo con datos de @code{opiniÃ³n}
-@code{pÃºblica} de Argentina.  El mismo facilita el acceso a los microdatos y el
-@code{cÃ¡lculos} de indicadores del Ãndice de Confianza en el Gobierno (ICG),
-elaborado por la Universidad Torcuato Di Tella.")
+una caja de herramientas para el trabajo con datos de opiniÃ³n pÃºblica de
+Argentina.  El mismo facilita el acceso a los microdatos y el cÃ¡lculos de
+indicadores del Ãndice de Confianza en el Gobierno (ICG), elaborado por la
+Universidad Torcuato Di Tella.")
     (license license:expat)))
 
 (define-public r-opi
@@ -7380,10 +7380,10 @@ data from Rimm et al. (2017 <doi:10.1001/jamaoncol.2017.0013>).")
      "Useful functions for one-sample (individual level data) Mendelian randomization
 and instrumental variable analyses.  The package includes implementations of;
 the Sanderson and Windmeijer (2016) <doi:10.1016/j.jeconom.2015.06.004>
-conditional F-statistic, the multiplicative structural mean model @code{HernÃ¡n}
-and Robins (2006) <doi:10.1097/01.ede.0000222409.00878.37>, and two-stage
-predictor substitution and two-stage residual inclusion estimators explained by
-Terza et al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
+conditional F-statistic, the multiplicative structural mean model HernÃ¡n and
+Robins (2006) <doi:10.1097/01.ede.0000222409.00878.37>, and two-stage predictor
+substitution and two-stage residual inclusion estimators explained by Terza et
+al. (2008) <doi:10.1016/j.jhealeco.2007.09.009>.")
     (license license:gpl3+)))
 
 (define-public r-onesamplelogranktest
@@ -9703,9 +9703,9 @@ helpers and more.  The vignettes illustrate use cases.")
      "Optimal Estimation of Function Parameters by Iterated Linearization")
     (description
      "Package for estimating the parameters of a nonlinear function using iterated
-linearization via Taylor series.  Method is based on @code{KubÃ¡Äek} (2000)
-ISBN: 80-244-0093-6.  The algorithm is a generalization of the procedure given
-in KÃ¶ning, R., Wimmer, G. and @code{WitkovskÃ½}, V. (2014)
+linearization via Taylor series.  Method is based on KubÃ¡Äek (2000) ISBN:
+80-244-0093-6.  The algorithm is a generalization of the procedure given in
+KÃ¶ning, R., Wimmer, G. and WitkovskÃ½, V. (2014)
 <doi:10.1088/0957-0233/25/11/115001>.")
     (license license:gpl2+)))
 
@@ -11074,7 +11074,7 @@ known as occupancy plot), and restricted maximum likelihood estimation'.")
 Haircut, Overbeck type II and the Covariance Allocation Principle.  It also
 provides some shortcuts for obtaining the Value at Risk and the Expectation
 Shortfall, using both the normal and the t-student distribution, see Urbina and
-@code{GuillÃ©n} (2014)<doi:10.1016/j.eswa.2014.05.017> and Urbina
+GuillÃ©n (2014)<doi:10.1016/j.eswa.2014.05.017> and Urbina
 (2013)<http://hdl.handle.net/2099.1/19443>.")
     (license license:gpl2)))
 

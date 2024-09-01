@@ -2114,7 +2114,7 @@ uses standard calibration via the survey', sampling or laeken packages.  In
 addition, entropy balancing via the ebal package and empirical likelihood based
 on codes from Wu (2005)
 <https://www150.statcan.gc.ca/n1/pub/12-001-x/2005002/article/9051-eng.pdf> can
-be used.  See the paper by @code{BerÄsewicz} and Szymkowiak (2023) for details
+be used.  See the paper by BerÄsewicz and Szymkowiak (2023) for details
 <@code{arXiv:2308.13281>}.")
     (license license:gpl3)))
 
@@ -2957,13 +2957,13 @@ functionalities for interfacing with Julia from R powered by the
 (define-public r-jlme
   (package
     (name "r-jlme")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlme" version))
        (sha256
-        (base32 "06fkxb73mv63v4yhgn66dh8dyk45n3mcrqykhy5mgdbnd3a54vjd"))))
+        (base32 "0yyymf4aidkkc80v4fgjhzywk7zkbq4jj129rmw95wnp7ndq0l9m"))))
     (properties `((upstream-name . "jlme")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -4273,7 +4273,7 @@ simulations include sequencing errors, mapping qualities, multiplexing, and
 optical/polymerase chain reaction (PCR) duplicates.  Simulating Illumina
 sequencing is based on ART by Huang et al. (2012)
 <doi:10.1093/bioinformatics/btr708>. @code{PacBio} sequencing simulation is
-based on @code{SimLoRD} by @code{StÃ¶cker} et al. (2016)
+based on @code{SimLoRD} by StÃ¶cker et al. (2016)
 <doi:10.1093/bioinformatics/btw286>.  All outputs can be written to standard
 file formats.")
     (license license:expat)))

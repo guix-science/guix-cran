@@ -1931,22 +1931,21 @@ narrative restrictions.  The core model is based on a flexible Vector
 Autoregression with estimated hyper-parameters of the Minnesota prior and the
 dummy observation priors as in Giannone, Lenza, Primiceri (2015)
 <doi:10.1162/REST_a_00483>.  The sign restrictions are implemented employing the
-methods proposed by Rubio-@code{RamÃ­rez}, Waggoner & Zha (2010)
+methods proposed by Rubio-RamÃ­rez, Waggoner & Zha (2010)
 <doi:10.1111/j.1467-937X.2009.00578.x>, while identification through sign and
-zero restrictions follows the approach developed by Arias,
-Rubio-@code{RamÃ­rez}, & Waggoner (2018) <doi:10.3982/ECTA14468>.  Furthermore,
-our tool provides algorithms for identification via sign and narrative
-restrictions, in line with the methods introduced by @code{AntolÃ­n-DÃ­az} and
-Rubio-@code{RamÃ­rez} (2018) <doi:10.1257/aer.20161852>.  Users can also
-estimate a model with sign, zero, and narrative restrictions imposed at once.
-The package facilitates predictive and structural analyses using impulse
-responses, forecast error variance and historical decompositions, forecasting
-and conditional forecasting, as well as analyses of structural shocks and fitted
-values.  All this is complemented by colourful plots, user-friendly summary
-functions, and comprehensive documentation.  The @code{bsvarSIGNs} package is
-aligned regarding objects, workflows, and code structure with the R package
-bsvars by @code{WoÅºniak} (2024) <doi:10.32614/CRAN.package.bsvars>, and they
-constitute an integrated toolset.")
+zero restrictions follows the approach developed by Arias, Rubio-RamÃ­rez, &
+Waggoner (2018) <doi:10.3982/ECTA14468>.  Furthermore, our tool provides
+algorithms for identification via sign and narrative restrictions, in line with
+the methods introduced by AntolÃ­n-DÃ­az and Rubio-RamÃ­rez (2018)
+<doi:10.1257/aer.20161852>.  Users can also estimate a model with sign, zero,
+and narrative restrictions imposed at once.  The package facilitates predictive
+and structural analyses using impulse responses, forecast error variance and
+historical decompositions, forecasting and conditional forecasting, as well as
+analyses of structural shocks and fitted values.  All this is complemented by
+colourful plots, user-friendly summary functions, and comprehensive
+documentation.  The @code{bsvarSIGNs} package is aligned regarding objects,
+workflows, and code structure with the R package bsvars by WoÅºniak (2024)
+<doi:10.32614/CRAN.package.bsvars>, and they constitute an integrated toolset.")
     (license license:gpl3+)))
 
 (define-public r-bsvars
@@ -1985,9 +1984,9 @@ on autoregressive parameters, as well as analyses of structural shocks,
 volatilities, and fitted values.  Beautiful plots, informative summary
 functions, and extensive documentation complement all this.  The implemented
 techniques align closely with those presented in LÃ¼tkepohl, Shang, Uzeda, &
-@code{WoÅºniak} (2024) <doi:10.48550/@code{arXiv.2404.11057>}, LÃ¼tkepohl &
-@code{WoÅºniak} (2020) <doi:10.1016/j.jedc.2020.103862>, and Song &
-@code{WoÅºniak} (2021) <doi:10.1093/acrefore/9780190625979.013.174>.")
+WoÅºniak (2024) <doi:10.48550/@code{arXiv.2404.11057>}, LÃ¼tkepohl & WoÅºniak
+(2020) <doi:10.1016/j.jedc.2020.103862>, and Song & WoÅºniak (2021)
+<doi:10.1093/acrefore/9780190625979.013.174>.")
     (license license:gpl3+)))
 
 (define-public r-bsub
@@ -5047,7 +5046,7 @@ producing full BRAID analysis reports.")
     (description
      "Forecasters predicting the chances of a future event may disagree due to
 differing evidence or noise.  To harness the collective evidence of the crowd,
-Ville @code{SatopÃ¤Ã¤} (2021) \"Regularized Aggregation of One-off Probability
+Ville SatopÃ¤Ã¤ (2021) \"Regularized Aggregation of One-off Probability
 Predictions\" <https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3769945>
 proposes a Bayesian aggregator that is regularized by analyzing the forecasters
 disagreement and ascribing over-dispersion to noise.  This aggregator requires
@@ -5220,8 +5219,8 @@ Information Facility <https://www.gbif.org/> and from the Global Inventory of
 Floras and Traits <https://gift.uni-goettingen.de/home>.  Alternatively, the
 user can input their own data.  Furthermore, provides easy visualisation of the
 data and the results through the plotting functions.  Especially suited for
-large datasets.  The reference for the methodology is: @code{ArlÃ©} et al.
-(under review).")
+large datasets.  The reference for the methodology is: ArlÃ© et al. (under
+review).")
     (license license:gpl2+)))
 
 (define-public r-bqror
@@ -5376,8 +5375,7 @@ predictors can be included.  Sampling from the posterior is performed via an
 MCMC algorithm.  Posterior descriptives of all parameters, model fit statistics
 and Bayes factors for hypothesis tests for inequality constrained hypotheses are
 provided.  See Cremers, Mulder & Klugkist (2018) <doi:10.1111/bmsp.12108> and
-@code{NuÃ±ez-Antonio} & @code{GuttiÃ©rez-PeÃ±a} (2014)
-<doi:10.1016/j.csda.2012.07.025>.")
+NuÃ±ez-Antonio & GuttiÃ©rez-PeÃ±a (2014) <doi:10.1016/j.csda.2012.07.025>.")
     (license license:gpl3)))
 
 (define-public r-bpmnvisualizationr
@@ -5778,7 +5776,7 @@ style.  Visualize the effect of factor.")
     (home-page "https://cran.r-project.org/package=boxplotcluster")
     (synopsis "Clustering Method Based on Boxplot Statistics")
     (description
-     "Following Arroyo-@code{MatÃ©-Roque} (2006), the function calculates the distance
+     "Following Arroyo-MatÃ©-Roque (2006), the function calculates the distance
 between rows or columns of the dataset using the generalized Minkowski metric as
 described by Ichino-Yaguchi (1994).  The distance measure gives more weight to
 differences between quartiles than to differences between extremes, making it
@@ -5788,7 +5786,7 @@ of clusters that maximizes the average silhouette width, unless a specific
 number of clusters is provided by the user.  The approach implemented in this
 package is based on the following publications: Rousseeuw (1987)
 <doi:10.1016/0377-0427(87)90125-7>; Ichino-Yaguchi (1994)
-<doi:10.1109/21.286391>; Arroyo-@code{MatÃ©-Roque} (2006)
+<doi:10.1109/21.286391>; Arroyo-MatÃ©-Roque (2006)
 <doi:10.1007/3-540-34416-0_7>.")
     (license license:gpl2+)))
 
@@ -9718,7 +9716,7 @@ Valavi, R. et al. (2019) <doi:10.1111/2041-210X.13107>.")
      "Computation of large covariance matrices having a block structure up to a
 permutation of their columns and rows from a small number of samples with
 respect to the dimension of the matrix.  The method is described in the paper
-Perrot-@code{DockÃ¨s} et al. (2019) <@code{arXiv:1806.10093>}.")
+Perrot-DockÃ¨s et al. (2019) <@code{arXiv:1806.10093>}.")
     (license license:gpl2+)))
 
 (define-public r-blockcluster
@@ -10494,9 +10492,9 @@ binomial), and several marginal link functions.  Built-in methods for
 publication-quality tables using texreg', post-estimation diagnostics using
 DHARMa', and testing for marginal zero-modification via
 <doi:10.1177/0962280217749991>.  For information on copula regression for count
-data, see Genest and @code{NeÅ¡lehovÃ}¡ (2007) <doi:10.1017/S0515036100014963>
-as well as Nikoloulopoulos (2013) <doi:10.1007/978-3-642-35407-6_11>.  For
-information on zero-inflated count regression generally, see Lambert (1992)
+data, see Genest and NeÅ¡lehovÃ¡ (2007) <doi:10.1017/S0515036100014963> as well
+as Nikoloulopoulos (2013) <doi:10.1007/978-3-642-35407-6_11>.  For information
+on zero-inflated count regression generally, see Lambert (1992)
 <https://www.jstor.org/stable/1269547?origin=crossref>.  The author acknowledges
 support by NSF DMS-1925119 and DMS-212324.")
     (license license:gpl3+)))
@@ -11412,8 +11410,7 @@ mice-related packages.")
      "Function bipmod() that partitions a bipartite network into non-overlapping
 biclusters by maximizing bipartite modularity defined in Barber (2007)
 <doi:10.1103/@code{PhysRevE.76.066102>} using the bipartite version of the
-algorithm described in @code{TreviÃ±o} (2015)
-<doi:10.1088/1742-5468/2015/02/P02003>.")
+algorithm described in TreviÃ±o (2015) <doi:10.1088/1742-5468/2015/02/P02003>.")
     (license license:expat)))
 
 (define-public r-bipartited3
@@ -13031,9 +13028,9 @@ diminishing noise, or increasing information.  It also provides insight into how
 much tamping down bias and noise in judgment or enhancing the efficient
 extraction of valid information from the environment improves forecasting
 accuracy.  This package provides easy access to the BIN model.  For further
-information refer to the paper Ville A. @code{SatopÃ¤Ã¤}, Marat Salikhov, Philip
-E. Tetlock, and Barbara Mellers (2021) \"Bias, Information, Noise: The BIN Model
-of Forecasting\" <doi:10.1287/mnsc.2020.3882>.")
+information refer to the paper Ville A. SatopÃ¤Ã¤, Marat Salikhov, Philip E.
+Tetlock, and Barbara Mellers (2021) \"Bias, Information, Noise: The BIN Model of
+Forecasting\" <doi:10.1287/mnsc.2020.3882>.")
     (license license:gpl3)))
 
 (define-public r-binst
@@ -13124,9 +13121,8 @@ of parent points, (ii) mean number of points in a cluster, (iii) cluster spread.
  The package also allows for the Bayesian MCMC algorithm for the homogeneous
 generalized Thomas process.  The cluster size is allowed to have a variance that
 is greater or less than the expected value (cluster sizes are over or under
-dispersed).  Details are described in @code{DvoÅÃ¡k}, @code{RemeÅ}¡,
-@code{BerÃ¡nek} & @code{MrkviÄka} (2022) <@code{arXiv}:
-10.48550/@code{arXiv.2205.07946>}.")
+dispersed).  Details are described in DvoÅÃ¡k, RemeÅ¡, BerÃ¡nek & MrkviÄka
+(2022) <@code{arXiv}: 10.48550/@code{arXiv.2205.07946>}.")
     (license license:gpl3)))
 
 (define-public r-binsmooth
@@ -14485,7 +14481,7 @@ compact format is also now available.")
     (synopsis "Analysis of Massive SNP Arrays")
     (description
      "Easy-to-use, efficient, flexible and scalable tools for analyzing massive SNP
-arrays. @code{PrivÃ©} et al. (2018) <doi:10.1093/bioinformatics/bty185>.")
+arrays.  PrivÃ© et al. (2018) <doi:10.1093/bioinformatics/bty185>.")
     (license license:gpl3)))
 
 (define-public r-bigsimr
@@ -14709,11 +14705,11 @@ suffer from computational problems and MDS configuration can not be obtained.
 With this package, we address these problems by means of six algorithms, being
 two of them original proposals: - Landmark MDS proposed by De Silva V. and JB.
 Tenenbaum (2004). - Interpolation MDS proposed by Delicado P. and C.
-@code{PachÃ³n-GarcÃ­a} (2021) <@code{arXiv:2007.11919>} (original proposal). -
-Reduced MDS proposed by Paradis E (2018). - Pivot MDS proposed by Brandes U. and
-C. Pich (2007) - Divide-and-conquer MDS proposed by Delicado P. and C.
-@code{PachÃ³n-GarcÃ­a} (2021) <@code{arXiv:2007.11919>} (original proposal). -
-Fast MDS, proposed by Yang, T., J. Liu, L. @code{McMillan} and W. Wang (2006).")
+PachÃ³n-GarcÃ­a (2021) <@code{arXiv:2007.11919>} (original proposal). - Reduced
+MDS proposed by Paradis E (2018). - Pivot MDS proposed by Brandes U. and C. Pich
+(2007) - Divide-and-conquer MDS proposed by Delicado P. and C. PachÃ³n-GarcÃ­a
+(2021) <@code{arXiv:2007.11919>} (original proposal). - Fast MDS, proposed by
+Yang, T., J. Liu, L. @code{McMillan} and W. Wang (2006).")
     (license license:expat)))
 
 (define-public r-bigmatch
@@ -16421,7 +16417,7 @@ the Gaussian graphical model literature, including Williams (2019)
      "Application of genome prediction for a continuous variable, focused on genotype
 by environment (GE) genomic selection models (GS).  It consists a group of
 functions that help to create regression kernels for some GE genomic models
-proposed by @code{JarquÃ­n} et al. (2014) <doi:10.1007/s00122-013-2243-1> and
+proposed by JarquÃ­n et al. (2014) <doi:10.1007/s00122-013-2243-1> and
 Lopez-Cruz et al. (2015) <doi:10.1534/g3.114.016097>.  Also, it computes genomic
 predictions based on Bayesian approaches.  The prediction function uses an
 orthogonal transformation of the data and specific priors present by Cuevas et
@@ -17144,8 +17140,8 @@ unit interval (0, 1), e.g., rates and proportions, see Cribari-Neto and Zeileis
 models can accommodate dependent variables with boundary observations at 0
 and/or 1.  For the classical beta regression model, alternative specifications
 are provided: Bias-corrected and bias-reduced estimation, finite mixture models,
-and recursive partitioning for beta regression, see @code{GrÃ¼n}, Kosmidis, and
-Zeileis (2012) <doi:10.18637/jss.v048.i11>.")
+and recursive partitioning for beta regression, see GrÃ¼n, Kosmidis, and Zeileis
+(2012) <doi:10.18637/jss.v048.i11>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-betaper
@@ -21151,7 +21147,7 @@ models, considering species-specific calibration parameters and seasonality.")
     (description
      "Fits a Bayesian zero-inflated Bernoulli regression model handling (potentially)
 different covariates for the zero-inflated and non zero-inflated parts.  See
-@code{MoriÃ±a} D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
+MoriÃ±a D, Puig P, Navarro A. (2021) <doi:10.1186/s12874-021-01427-2>.")
     (license license:gpl2+)))
 
 (define-public r-bayesxsrc
@@ -21540,13 +21536,12 @@ uncertainty quantification.")
 Failure Time (MEAFT) models for censored data.  Those can be not only
 right-censored but also interval-censored, doubly-interval-censored or
 misclassified interval-censored.  The methods implemented in the package have
-been published in @code{KomÃ¡rek} and Lesaffre (2006, Stat.  Modelling)
-<doi:10.1191/1471082X06st107oa>, @code{KomÃ¡rek}, Lesaffre and Legrand (2007,
-Stat.  in Medicine) <doi:10.1002/sim.3083>, @code{KomÃ¡rek} and Lesaffre (2007,
-Stat.  Sinica) <https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>,
-@code{KomÃ¡rek} and Lesaffre (2008, JASA) <doi:10.1198/016214507000000563>,
-@code{GarcÃ­a-Zattera}, Jara and @code{KomÃ¡rek} (2016, Biometrics)
-<doi:10.1111/biom.12424>.")
+been published in KomÃ¡rek and Lesaffre (2006, Stat.  Modelling)
+<doi:10.1191/1471082X06st107oa>, KomÃ¡rek, Lesaffre and Legrand (2007, Stat.  in
+Medicine) <doi:10.1002/sim.3083>, KomÃ¡rek and Lesaffre (2007, Stat.  Sinica)
+<https://www3.stat.sinica.edu.tw/statistica/oldpdf/A17n27.pdf>, KomÃ¡rek and
+Lesaffre (2008, JASA) <doi:10.1198/016214507000000563>, GarcÃ­a-Zattera, Jara
+and KomÃ¡rek (2016, Biometrics) <doi:10.1111/biom.12424>.")
     (license license:gpl2+)))
 
 (define-public r-bayessur
@@ -21638,8 +21633,8 @@ auxiliary information) - BLE_Ratio() - and to categorical data -
 BLE_Categorical().  The Bayes linear estimation approach is applied to a general
 linear regression model for finite population prediction in BLE_Reg() and it is
 also possible to achieve the design based estimators using vague prior
-distributions.  Based on @code{GonÃ§alves}, K.C.M, Moura, F.A.S and Migon,
-H.S.(2014) <https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X201400111886>.")
+distributions.  Based on GonÃ§alves, K.C.M, Moura, F.A.S and Migon, H.S.(2014)
+<https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X201400111886>.")
     (license license:gpl3)))
 
 (define-public r-bayess5
@@ -23776,7 +23771,7 @@ and D. Spencer, Y. R. Yue, D. Bolin, S. Ryan, A. F. Mejia (2022)
     (description
      "Collection of procedures to perform Bayesian analysis on a variety of factor
 models.  Currently, it includes: \"Bayesian Exploratory Factor Analysis\" (befa)
-from G. Conti, S. @code{FrÃ¼hwirth-Schnatter}, J.J. Heckman, R. Piatek (2014)
+from G. Conti, S. FrÃ¼hwirth-Schnatter, J.J. Heckman, R. Piatek (2014)
 <doi:10.1016/j.jeconom.2014.06.008>, an approach to dedicated factor analysis
 with stochastic search on the structure of the factor loading matrix.  The
 number of latent factors, as well as the allocation of the manifest variables to
@@ -23959,8 +23954,8 @@ different algorithms to perform inference on the state parameter to assess brain
 activation for both individual and group stages.  Those functions allow for
 parallel computation when the analysis is performed for the entire brain as well
 as analysis at specific voxels when it is required.  References:
-Cardona-@code{JimÃ©nez} (2021) <doi:10.1016/j.csda.2021.107297>;
-Cardona-@code{JimÃ©nez} (2021) <@code{arXiv:2111.01318>}.")
+Cardona-JimÃ©nez (2021) <doi:10.1016/j.csda.2021.107297>; Cardona-JimÃ©nez
+(2021) <@code{arXiv:2111.01318>}.")
     (license license:gpl2)))
 
 (define-public r-bayesdistreg
@@ -25571,7 +25566,7 @@ for the purpose of making a classification between the classes of the sequences.
 the article (LI, Aimin; ZHANG, Junying; ZHOU, Zhongyin, 2014)
 <doi:10.1186/1471-2105-15-311>, these sequences are used to run examples.  The
 BA@code{SiNET} was published on Nucleic Acids Research, (ITO, Eric; KATAHIRA,
-Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, @code{FabrÃ­cio}, 2018)
+Isaque; VICENTE, FÃ¡bio; PEREIRA, Felipe; LOPES, FabrÃ­cio, 2018)
 <doi:10.1093/nar/gky462>.")
     (license license:gpl3)))
 
@@ -26063,6 +26058,43 @@ Sciences grant 1106891.  Any opinions, findings, and conclusions or
 recommendations expressed in this material are those of the author(s) and do not
 necessarily reflect the views of the National Science Foundation.")
     (license license:gpl3+)))
+
+(define-public r-barulho
+  (package
+    (name "r-barulho")
+    (version "2.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baRulho" version))
+       (sha256
+        (base32 "0ymdz8dpkk8xw4baiz0xamwx526gmaf59w3nzbppckiqacjr6qvd"))))
+    (properties `((upstream-name . "baRulho")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-warbler
+                             r-viridis
+                             r-tuner
+                             r-sim-diffproc
+                             r-seewave
+                             r-rlang
+                             r-png
+                             r-ohun
+                             r-fftw
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/baRulho")
+    (synopsis "Quantifying (Animal) Sound Degradation")
+    (description
+     "Intended to facilitate acoustic analysis of (animal) sound transmission
+experiments, which typically aim to quantify changes in signal structure when
+transmitted in a given habitat by broadcasting and re-recording animal sounds at
+increasing distances.  The package offers a workflow with functions to prepare
+the data set for analysis as well as to calculate and visualize several
+degradation metrics, including blur ratio, signal-to-noise ratio, excess
+attenuation and envelope correlation among others (Dabelsteen et al 1993
+<doi:10.1121/1.406682>).")
+    (license license:gpl2+)))
 
 (define-public r-bartman
   (package
@@ -26946,17 +26978,17 @@ estimate the area of distribution of a species.  However, most of the work has
 focused on estimating static expressions of the correlation between
 environmental variables.  The outputs of correlative species distribution models
 can be interpreted as maps of the suitable environment for a species but not
-generally as maps of its actual distribution. @code{SoberÃ³n} and Peterson
-(2005) <doi:10.17161/bi.v2i0.4> presented the BAM scheme, a heuristic framework
-that states that the occupied area of a species occurs on sites that have been
+generally as maps of its actual distribution.  SoberÃ³n and Peterson (2005)
+<doi:10.17161/bi.v2i0.4> presented the BAM scheme, a heuristic framework that
+states that the occupied area of a species occurs on sites that have been
 accessible through dispersal (M) and have both favorable biotic (B) and abiotic
 conditions (A).  The bamm package implements classes and functions to operate on
 each element of the BAM and by using a cellular automata model where the
 occupied area of a species at time t is estimated by the multiplication of three
 binary matrices: one matrix represents movements (M), another abiotic -niche-
 tolerances (A), and a third, biotic interactions (B).  The theoretical
-background of the package can be found in @code{SoberÃ³n} and Osorio-Olvera
-(2023) <doi:10.1111/jbi.14587>.")
+background of the package can be found in SoberÃ³n and Osorio-Olvera (2023)
+<doi:10.1111/jbi.14587>.")
     (license license:gpl3+)))
 
 (define-public r-bamlss
@@ -27300,11 +27332,11 @@ which a statistical decision can be made.  See Berg and Popescu for details
      "Select balanced and spatially balanced probability samples in multi-dimensional
 spaces with any prescribed inclusion probabilities.  It contains fast (C++ via
 Rcpp) implementations of the included sampling methods.  The local pivotal
-method by @code{GrafstrÃ¶m}, @code{LundstrÃ¶m} and Schelin (2012)
+method by GrafstrÃ¶m, LundstrÃ¶m and Schelin (2012)
 <doi:10.1111/j.1541-0420.2011.01699.x> and spatially correlated Poisson sampling
-by @code{GrafstrÃ¶m} (2012) <doi:10.1016/j.jspi.2011.07.003> are included.  Also
-the cube method (for balanced sampling) and the local cube method (for doubly
-balanced sampling) are included, see @code{GrafstrÃ¶m} and @code{TillÃ©} (2013)
+by GrafstrÃ¶m (2012) <doi:10.1016/j.jspi.2011.07.003> are included.  Also the
+cube method (for balanced sampling) and the local cube method (for doubly
+balanced sampling) are included, see GrafstrÃ¶m and TillÃ© (2013)
 <doi:10.1002/env.2194>.")
     (license license:gpl2+)))
 

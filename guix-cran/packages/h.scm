@@ -3859,7 +3859,7 @@ variables in a data frame.")
      "Set of tools to help interested researchers to build hospital networks from data
 on hospitalized patients transferred between hospitals.  Methods provided have
 been used in Donker T, Wallinga J, Grundmann H. (2010)
-<doi:10.1371/journal.pcbi.1000715>, and Nekkab N, @code{CrÃ©pey} P, Astagneau P,
+<doi:10.1371/journal.pcbi.1000715>, and Nekkab N, CrÃ©pey P, Astagneau P,
 Opatowski L, Temime L. (2020) <doi:10.1038/s41598-020-71212-6>.")
     (license license:gpl3)))
 
@@ -4262,7 +4262,7 @@ Bartlett, M. S. (1937) <doi:10.1098/rspa.1937.0109> Bhandary, M., & Dai, H.
 (2017) <doi:10.1080/03610918.2016.1202277> Gokpinar E. & Gokpinar F. (2017)
 <doi:10.1080/03610918.2014.955110> Liu, X., & Xu, X. (2010)
 <doi:10.1016/j.spl.2010.05.017> Levene, H. (1960)
-<https://cir.nii.ac.jp/crid/1573950400526848896> GÃ¶@code{kpÄ±nar}, E. (2020)
+<https://cir.nii.ac.jp/crid/1573950400526848896> GÃ¶kpÄ±nar, E. (2020)
 <doi:10.1080/03610918.2020.1800037>.")
     (license license:gpl2)))
 
@@ -4387,7 +4387,7 @@ selection and dataset reduction.  These datasets are used for pairwise- and
 multi-omics analyses, where automatic tuning is done to identify correlations
 between the datasets - the end goal of the recommended Holomics workflow.
 Methods used in the package were implemented in the package mixomics by Florian
-Rohart,@code{BenoÃ®t} Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
+Rohart,BenoÃ®t Gautier,Amrit Singh,Kim-Anh LÃª Cao (2017)
 <doi:10.1371/journal.pcbi.1005752> and are described there in further detail.")
     (license license:gpl3+)))
 
@@ -4783,8 +4783,8 @@ that provides an organization among the component populations.  It is a tree
 with a fixed maximal height and variable internal node degree.  Each component
 population is governed by a particular evolutionary engine.  This package
 provides a simple R implementation with examples of using different genetic
-algorithms as the population engines.  References: J. Sawicki, M. Å@code{oÅ},
-M. @code{SmoÅka}, J. Alvarez-Aramberri (2022) <doi:10.1007/s11047-020-09836-w>.")
+algorithms as the population engines.  References: J. Sawicki, M. ÅoÅ, M.
+SmoÅka, J. Alvarez-Aramberri (2022) <doi:10.1007/s11047-020-09836-w>.")
     (license license:expat)))
 
 (define-public r-hmsc
@@ -5415,8 +5415,8 @@ using either lmer in the lme4 package or lme in the nlme package.")
     (home-page "https://github.com/skvrnami/hlidacr")
     (synopsis "Access Data from the 'HlÃ­daÄ StÃ¡tu' API")
     (description
-     "This package provides access to datasets published by @code{HlÃ­daÄ}
-@code{stÃ¡tu} <https://www.hlidacstatu.cz/>, a Czech watchdog, via their API.")
+     "This package provides access to datasets published by HlÃ­daÄ stÃ¡tu
+<https://www.hlidacstatu.cz/>, a Czech watchdog, via their API.")
     (license license:expat)))
 
 (define-public r-hlatools
@@ -10303,7 +10303,7 @@ Methylation Data: Possible Choices and Comparison\"---and the original
 publications that proposed them.  The specific methods offered by our package
 include the Bayesian sparse linear mixed model (BSLMM) by Song et al. (2019);
 high-dimensional mediation analysis (HDMA) by Gao et al. (2019);
-high-dimensional multivariate mediation (HDMM) by @code{ChÃ©n} et al. (2018);
+high-dimensional multivariate mediation (HDMM) by ChÃ©n et al. (2018);
 high-dimensional linear mediation analysis (HILMA) by Zhou et al. (2020);
 high-dimensional mediation analysis (HIMA) by Zhang et al. (2016); latent
 variable mediation analysis (LVMA) by Derkach et al. (2019); mediation by
@@ -11376,7 +11376,7 @@ complexity is paired with an efficient C++ implementation.")
 and the original publication linked.  All paper authors of included data have
 consented to the inclusion of their data in this package.  The datasets include
 data from a range of HCI studies, such as pointing tasks, user experience
-ratings, and steering tasks.  Dataset sources: @code{BergstrÃ¶m} et al. (2022)
+ratings, and steering tasks.  Dataset sources: BergstrÃ¶m et al. (2022)
 <doi:10.1145/3490493>; Dalsgaard et al. (2021) <doi:10.1145/3489849.3489853>;
 Larsen et al. (2019) <doi:10.1145/3338286.3340115>; Lilija et al. (2019)
 <doi:10.1145/3290605.3300676>; Pohl and Murray-Smith (2013)
@@ -11555,13 +11555,13 @@ German, Danish, English, Spanish and French.")
     (home-page "https://gitlab.com/ezetoum27/hbv.ianigla")
     (synopsis "Modular Hydrological Model")
     (description
-     "The HBV hydrological model (@code{BergstrÃ¶m}, S. and @code{LindstrÃ¶m}, G.,
-(2015) <doi:10.1002/hyp.10510>) has been split in modules to allow the user to
-build his/her own model.  This version was developed by the author in
-IANIGLA-CONICET (Instituto Argentino de Nivologia, Glaciologia y Ciencias
-Ambientales - Consejo Nacional de Investigaciones Cientificas y Tecnicas) for
-hydroclimatic studies in the Andes.  HBV.IANIGLA incorporates routines for clean
-and debris covered glacier melt simulations.")
+     "The HBV hydrological model (BergstrÃ¶m, S. and LindstrÃ¶m, G., (2015)
+<doi:10.1002/hyp.10510>) has been split in modules to allow the user to build
+his/her own model.  This version was developed by the author in IANIGLA-CONICET
+(Instituto Argentino de Nivologia, Glaciologia y Ciencias Ambientales - Consejo
+Nacional de Investigaciones Cientificas y Tecnicas) for hydroclimatic studies in
+the Andes.  HBV.IANIGLA incorporates routines for clean and debris covered
+glacier melt simulations.")
     (license license:gpl3+)))
 
 (define-public r-hbstm

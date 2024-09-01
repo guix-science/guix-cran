@@ -1224,7 +1224,7 @@ easy and fun.")
     (description
      "Variance approximations for the Horvitz-Thompson total estimator in Unequal
 Probability Sampling using only first-order inclusion probabilities.  See Matei
-and @code{TillÃ©} (2005) and Haziza, Mecatti and Rao (2008) for details.")
+and TillÃ© (2005) and Haziza, Mecatti and Rao (2008) for details.")
     (license license:gpl3)))
 
 (define-public r-upstartr
@@ -1371,9 +1371,9 @@ binomial logit models.  Functions for plotting and tabulating the estimation
 output are available as well.  Estimation is based on Gibbs sampling where the
 Markov chain Monte Carlo algorithms are based on the latent variable
 representations and marginal data augmentation algorithms described in \"Gregor
-Zens, Sylvia @code{FrÃ¼hwirth-Schnatter} & Helga Wagner (2023).  Ultimate PÃ³lya
-Gamma Samplers â Efficient MCMC for possibly imbalanced binary and categorical
-data, Journal of the American Statistical Association
+Zens, Sylvia FrÃ¼hwirth-Schnatter & Helga Wagner (2023).  Ultimate PÃ³lya Gamma
+Samplers â Efficient MCMC for possibly imbalanced binary and categorical data,
+Journal of the American Statistical Association
 <doi:10.1080/01621459.2023.2259030>\".")
     (license license:gpl3)))
 
@@ -3033,14 +3033,13 @@ Gaussian noise using Unbalanced Haar wavelets.")
     (home-page "https://unal.edu.co")
     (synopsis "Una implementaciÃ³n de funciones de uso interno")
     (description
-     "Una herramienta @code{rÃ¡pida} y consistente para la @code{disposiciÃ³n} de
-microdatos y la @code{visualizaciÃ³n} de las cifras y @code{estadÃ­sticas}
-oficiales de la Universidad Nacional de Colombia <https://unal.edu.co>.
-Contiene una biblioteca de funciones @code{grÃ¡ficas}, tanto @code{estÃ¡ticas}
-como interactivas, que ofrece numerosos tipos de @code{grÃ¡ficos} con una
-sintaxis altamente configurable y simple.  Entre estos encontramos la
-@code{visualizaciÃ³n} de tablas HTML, series, @code{grÃ¡ficos} de barras y
-circulares, mapas, etc.  Todo lo anterior apoyado en bibliotecas de
+     "Una herramienta rÃ¡pida y consistente para la disposiciÃ³n de microdatos y la
+visualizaciÃ³n de las cifras y estadÃ­sticas oficiales de la Universidad
+Nacional de Colombia <https://unal.edu.co>.  Contiene una biblioteca de
+funciones grÃ¡ficas, tanto estÃ¡ticas como interactivas, que ofrece numerosos
+tipos de grÃ¡ficos con una sintaxis altamente configurable y simple.  Entre
+estos encontramos la visualizaciÃ³n de tablas HTML, series, grÃ¡ficos de barras
+y circulares, mapas, etc.  Todo lo anterior apoyado en bibliotecas de
 @code{JavaScript}.  English: A fast and consistent tool for the arrangement of
 microdata and the visualization of official figures and statistics from the
 National University of Colombia <https://unal.edu.co>.  It includes a library of
@@ -4209,13 +4208,13 @@ and Gabriela B. Cybis (2021) <@code{arXiv:2106.09115>}.")
 (define-public r-ucimlrepo
   (package
     (name "r-ucimlrepo")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ucimlrepo" version))
        (sha256
-        (base32 "0v0qprchgi8553hf4aqwd4gn06spbr0yzym8c5z1c3dqy9vp8bax"))))
+        (base32 "19r8iy0s4jwjs99bx49l8acx94c5jgn1kzpvlmyqv0311kydry51"))))
     (properties `((upstream-name . "ucimlrepo")))
     (build-system r-build-system)
     (propagated-inputs (list r-httr2))

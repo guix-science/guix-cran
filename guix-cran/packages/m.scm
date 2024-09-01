@@ -2922,8 +2922,8 @@ alternate ways of performing an analysis step, in R and R Notebooks.")
      "It performs variable selection in a multivariate linear model by estimating the
 covariance matrix of the residuals then use it to remove the dependence that may
 exist among the responses and eventually performs variable selection by using
-the Lasso criterion.  The method is described in the paper Perrot-@code{DockÃ¨s}
-et al. (2017) <@code{arXiv:1704.00076>}.")
+the Lasso criterion.  The method is described in the paper Perrot-DockÃ¨s et al.
+(2017) <@code{arXiv:1704.00076>}.")
     (license license:gpl2+)))
 
 (define-public r-multivarmi
@@ -3045,8 +3045,8 @@ the linear relation among the output features, see details in Rahman et al
      "Package with multivariate analysis methodologies for experiment evaluation.  The
 package estimates dissimilarity measures, builds dendrograms, obtains MANOVA,
 principal components, canonical variables, etc. (Pacote com metodologias de
-analise multivariada para @code{avaliaÃ§Ã£o} de experimentos.  O pacote estima
-medidas de dissimilaridade, construi de dendogramas, obtem a MANOVA, componentes
+analise multivariada para avaliaÃ§Ã£o de experimentos.  O pacote estima medidas
+de dissimilaridade, construi de dendogramas, obtem a MANOVA, componentes
 principais, variaveis canonicas, etc.).")
     (license license:gpl3)))
 
@@ -4312,7 +4312,7 @@ Sundararajan, Patricia Halfon, et al. (2005)
 Robert J Glynn, et al. (2018) <doi:10.1093/gerona/glx229>, Melissa Y Wei, David
 Ratz, Kenneth J Mukamal (2020) <doi:10.1111/jgs.16310>, Kathryn Nicholson,
 Amanda L. Terry, Martin Fortin, et al. (2015) <doi:10.15256/joc.2015.5.61>,
-Martin Fortin, @code{JosÃ©} Almirall, and Kathryn Nicholson
+Martin Fortin, JosÃ© Almirall, and Kathryn Nicholson
 (2017)<doi:10.15256/joc.2017.7.122>.")
     (license license:expat)))
 
@@ -4629,7 +4629,7 @@ Models include longitudinal generalized linear models (Liang and Zeger, 1986)
 mediation, the option of a moderating variable for either the a, b, or both
 paths, and covariates.  Currently the 1-1-1 model is supported and several
 options of random effects; the initial code for bootstrapping was evaluated in
-simulations by Falk, Vogel, Hammami, and @code{MioÄeviÄ} (2024)
+simulations by Falk, Vogel, Hammami, and MioÄeviÄ (2024)
 <doi:10.3758/s13428-023-02079-4>.  Support for Bayesian estimation using brms
 comprises ongoing work.  Currently only continuous mediators and outcomes are
 supported.  Factors for any predictors must be numerically represented.")
@@ -5793,7 +5793,7 @@ single-step procedure is also available.")
     (description
      "This package implements contamination bias diagnostics and alternative
 estimators for regressions with multiple treatments.  The implementation is
-based on Goldsmith-Pinkham, Hull, and @code{KolesÃ¡r} (2024)
+based on Goldsmith-Pinkham, Hull, and KolesÃ¡r (2024)
 <doi:10.48550/@code{arXiv.2106.05024>}.")
     (license license:expat)))
 
@@ -8296,8 +8296,8 @@ multiple outcome variables, second, time series can be supplied as economic
 predictors, and third, a well-defined cross-validation approach can be used.
 Much effort has been taken to make the implementation as stable as possible
 (including edge cases) without losing computational efficiency.  A detailed
-description of the main algorithms is given in Becker and @code{KlÃ¶Ãner}
-(2018) <doi:10.1016/j.ecosta.2017.08.002>.")
+description of the main algorithms is given in Becker and KlÃ¶Ãner (2018)
+<doi:10.1016/j.ecosta.2017.08.002>.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-msclust
@@ -11354,11 +11354,10 @@ For more information, visit <https://www.aggieerin.com/shiny-server>.")
      "Learning, manipulation and evaluation of mixtures of truncated basis functions
 (@code{MoTBFs}), which include mixtures of polynomials (MOPs) and mixtures of
 truncated exponentials (MTEs). @code{MoTBFs} are a flexible framework for
-modelling hybrid Bayesian networks (I. PÃ©rez-@code{BernabÃ©}, A.
-@code{SalmerÃ³n}, H. Langseth (2015) <doi:10.1007/978-3-319-20807-7_36>; H.
-Langseth, T.D. Nielsen, I. PÃ©rez-@code{BernabÃ©}, A. @code{SalmerÃ³n} (2014)
-<doi:10.1016/j.ijar.2013.09.012>; I. PÃ©rez-@code{BernabÃ©}, A.
-@code{FernÃ¡ndez}, R. @code{RumÃ­}, A. @code{SalmerÃ³n} (2016)
+modelling hybrid Bayesian networks (I. PÃ©rez-BernabÃ©, A. SalmerÃ³n, H.
+Langseth (2015) <doi:10.1007/978-3-319-20807-7_36>; H. Langseth, T.D. Nielsen,
+I. PÃ©rez-BernabÃ©, A. SalmerÃ³n (2014) <doi:10.1016/j.ijar.2013.09.012>; I.
+PÃ©rez-BernabÃ©, A. FernÃ¡ndez, R. RumÃ­, A. SalmerÃ³n (2016)
 <doi:10.1007/s10618-015-0429-7>).  The package provides functionality for
 learning univariate, multivariate and conditional densities, with the
 possibility of incorporating prior knowledge.  Structural learning of hybrid
@@ -12320,8 +12319,8 @@ package data sets can be simulated and run based on the given model.  First,
 continuous and normal data sets are generated based on the given model.  Later
 Fleishman's power method (1978) <DOI:10.1007/BF02293811> is used to add
 non-normality if exists.  When data generation is completed (or when generated
-data sets are given) model test can also be run.  Please cite as \"@code{OrÃ§an},
-F. (2021). @code{MonteCarloSEM}: An R Package to Simulate Data for SEM.
+data sets are given) model test can also be run.  Please cite as \"OrÃ§an, F.
+(2021). @code{MonteCarloSEM}: An R Package to Simulate Data for SEM.
 International Journal of Assessment Tools in Education, 8 (3), 704-713.\".")
     (license license:gpl3)))
 
@@ -13673,20 +13672,19 @@ functions, such as variable importance and a tuning function for the parameters.
     (home-page "https://fbertran.github.io/homepage/")
     (synopsis "Statistical Modelling in Action with R")
     (description
-     "Datasets and functions for the book \"@code{ModÃ©lisation} statistique par la
-pratique avec R\", F. Bertrand, E. Claeys and M. Maumy-Bertrand (2019,
-ISBN:9782100793525, Dunod, Paris).  The first chapter of the book is dedicated
-to an introduction to the R statistical software.  The second chapter deals with
-correlation analysis: Pearson, Spearman and Kendall simple, multiple and partial
-correlation coefficients.  New wrapper functions for permutation tests or
-bootstrap of matrices of correlation are provided with the package.  The third
-chapter is dedicated to data exploration with factorial analyses (PCA, CA, MCA,
-MDA) and clustering.  The fourth chapter is dedicated to regression analysis:
-fitting and model diagnostics are detailed.  The exercises focus on covariance
-analysis, logistic regression, Poisson regression, two-way analysis of variance
-for fixed or random factors.  Various example datasets are shipped with the
-package: for instance on pokemon, world of warcraft, house tasks or food
-nutrition analyses.")
+     "Datasets and functions for the book \"ModÃ©lisation statistique par la pratique
+avec R\", F. Bertrand, E. Claeys and M. Maumy-Bertrand (2019, ISBN:9782100793525,
+Dunod, Paris).  The first chapter of the book is dedicated to an introduction to
+the R statistical software.  The second chapter deals with correlation analysis:
+Pearson, Spearman and Kendall simple, multiple and partial correlation
+coefficients.  New wrapper functions for permutation tests or bootstrap of
+matrices of correlation are provided with the package.  The third chapter is
+dedicated to data exploration with factorial analyses (PCA, CA, MCA, MDA) and
+clustering.  The fourth chapter is dedicated to regression analysis: fitting and
+model diagnostics are detailed.  The exercises focus on covariance analysis,
+logistic regression, Poisson regression, two-way analysis of variance for fixed
+or random factors.  Various example datasets are shipped with the package: for
+instance on pokemon, world of warcraft, house tasks or food nutrition analyses.")
     (license license:gpl3)))
 
 (define-public r-modsem
@@ -13726,19 +13724,18 @@ approach (Algina & Moulder, 2001).  The unconstrained approach (Marsh et al.,
 2004).  The residual centering approach (Little et al., 2006).  The double
 centering approach (Lin et al., 2010).  The latent moderated structural
 equations (LMS) approach (Klein & Moosbrugger, 2000).  The quasi-maximum
-likelihood (QML) approach (Klein & @code{MuthÃ©n}, 2007) (temporarily
-unavailable) The constrained- unconstrained, residual- and double centering-
-approaches are estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML-
-approaches are estimated via by modsem it self.  Alternatively model can be
-estimated via Mplus (@code{MuthÃ©n} & @code{MuthÃ©n}, 1998-2017).  References:
-Algina, J., & Moulder, B. C. (2001). <doi:10.1207/S15328007SEM0801_3>. \"A note
-on estimating the JÃ¶reskog-Yang model for latent variable interaction using
-LISREL 8.3.\" Klein, A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>.
-\"Maximum likelihood estimation of latent interaction effects with the LMS
-method.\" Klein, A. G., & @code{MuthÃ©n}, B. O. (2007).
-<doi:10.1080/00273170701710205>. \"Quasi-maximum likelihood estimation of
-structural equation models with multiple interaction and quadratic effects.\"
-Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
+likelihood (QML) approach (Klein & MuthÃ©n, 2007) (temporarily unavailable) The
+constrained- unconstrained, residual- and double centering- approaches are
+estimated via lavaan (Rosseel, 2012), whilst the LMS- and QML- approaches are
+estimated via by modsem it self.  Alternatively model can be estimated via Mplus
+(MuthÃ©n & MuthÃ©n, 1998-2017).  References: Algina, J., & Moulder, B. C.
+(2001). <doi:10.1207/S15328007SEM0801_3>. \"A note on estimating the
+JÃ¶reskog-Yang model for latent variable interaction using LISREL 8.3.\" Klein,
+A., & Moosbrugger, H. (2000). <doi:10.1007/BF02296338>. \"Maximum likelihood
+estimation of latent interaction effects with the LMS method.\" Klein, A. G., &
+MuthÃ©n, B. O. (2007). <doi:10.1080/00273170701710205>. \"Quasi-maximum
+likelihood estimation of structural equation models with multiple interaction
+and quadratic effects.\" Lin, G. C., Wen, Z., Marsh, H. W., & Lin, H. S. (2010).
 <doi:10.1080/10705511.2010.488999>. \"Structural equation models of latent
 interactions: Clarification of orthogonalizing and double-mean-centering
 strategies.\" Little, T. D., Bovaird, J. A., & Widaman, K. F. (2006).
@@ -13746,8 +13743,8 @@ strategies.\" Little, T. D., Bovaird, J. A., & Widaman, K. F. (2006).
 product terms: Implications for modeling interactions among latent variables.\"
 Marsh, H. W., Wen, Z., & Hau, K. T. (2004). <doi:10.1037/1082-989X.9.3.275>.
 \"Structural equation models of latent interactions: evaluation of alternative
-estimation strategies and indicator construction.\" @code{MuthÃ©n}, L.K. and
-@code{MuthÃ©n}, B.O. (1998-2017). \"'Mplus Userâs Guide.  Eighth Edition.\"
+estimation strategies and indicator construction.\" MuthÃ©n, L.K. and MuthÃ©n,
+B.O. (1998-2017). \"'Mplus Userâs Guide.  Eighth Edition.\"
 <https://www.statmodel.com/>.  Rosseel Y (2012). <doi:10.18637/jss.v048.i02>.
 \"'lavaan': An R Package for Structural Equation Modeling.\".")
     (license license:expat)))
@@ -13969,7 +13966,7 @@ Bootstrapping (BBS), Prewhitening (PW) , Trend Free Prewhitening (TFPW), Bias
 Corrected Prewhitening and Variance Correction Approach by calculating effective
 sample size.  Mann, H. B. (1945).<doi:10.1017/CBO9781107415324.004>.  Kendall,
 M. (1975).  Multivariate analysis.  Charles Griffin&Company Ltd,.  sen, P. K.
-(1968).<doi:10.2307/2285891>.  Ã@code{nÃ¶z}, B., & Bayazit, M. (2012)
+(1968).<doi:10.2307/2285891>.  ÃnÃ¶z, B., & Bayazit, M. (2012)
 <doi:10.1002/hyp.8438>.  Hamed, K. H.
 (2009).<doi:10.1016/j.jhydrol.2009.01.040>.  Yue, S., & Wang, C. Y. (2002)
 <doi:10.1029/2001WR000861>.  Yue, S., Pilon, P., Phinney, B., & Cavadias, G.
@@ -14140,7 +14137,7 @@ permits estimating a school's value-added based on specific quantiles of the
 post-test distribution.  Estimating value-added based on quantiles of the
 post-test distribution provides a more complete picture of an education
 institution's contribution to learning for students of all abilities.  See Page,
-G.L.; San @code{MartÃ­n}, E.; Orellana, J.; Gonzalez, J. (2017)
+G.L.; San MartÃ­n, E.; Orellana, J.; Gonzalez, J. (2017)
 <doi:10.1111/rssa.12195> for more details.  The second model is a temporally
 dependent value-added model.  This model takes into account the temporal
 dependence that may exist in school performance between two cohorts in one of
@@ -15454,17 +15451,16 @@ designed to accompany the survey article Ebner, B. and Henze, N. (2020)
 review with emphasis on weighted L^2-statistics\".  We implement new and time
 honoured L^2-type tests of multivariate normality, such as the
 Baringhaus-Henze-Epps-Pulley (BHEP) test, the Henze-Zirkler test, the test of
-Henze-@code{JimÃ©nes-Gamero}, the test of
-Henze-@code{JimÃ©nes-Gamero-Meintanis}, the test of Henze-Visage, the
-DÃ¶rr-Ebner-Henze test based on harmonic oscillator and the DÃ¶rr-Ebner-Henze
-test based on a double estimation in a PDE. Secondly, we include the measures of
-multivariate skewness and kurtosis by Mardia, Koziol, Malkovich and Afifi and
-MÃ³ri, Rohatgi and @code{SzÃ©kely}, as well as the associated tests.  Thirdly,
-we include the tests of multivariate normality by Cox and Small, the energy test
-of @code{SzÃ©kely} and Rizzo, the tests based on spherical harmonics by Manzotti
-and Quiroz and the test of Pudelko.  All the functions and tests need the data
-to be a n x d matrix where n is the samplesize (number of rows) and d is the
-dimension (number of columns).")
+Henze-JimÃ©nes-Gamero, the test of Henze-JimÃ©nes-Gamero-Meintanis, the test of
+Henze-Visage, the DÃ¶rr-Ebner-Henze test based on harmonic oscillator and the
+DÃ¶rr-Ebner-Henze test based on a double estimation in a PDE. Secondly, we
+include the measures of multivariate skewness and kurtosis by Mardia, Koziol,
+Malkovich and Afifi and MÃ³ri, Rohatgi and SzÃ©kely, as well as the associated
+tests.  Thirdly, we include the tests of multivariate normality by Cox and
+Small, the energy test of SzÃ©kely and Rizzo, the tests based on spherical
+harmonics by Manzotti and Quiroz and the test of Pudelko.  All the functions and
+tests need the data to be a n x d matrix where n is the samplesize (number of
+rows) and d is the dimension (number of columns).")
     (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-mns
@@ -16554,7 +16550,7 @@ Tantisira K, Weiss ST, Qiu W. (2018) <doi:10.1155/2018/6591634>.")
     (description
      "This package provides functions for the robust estimation of parametric families
 of copulas using minimization of the Maximum Mean Discrepancy, following the
-article Alquier, @code{ChÃ©rief-Abdellatif}, Derumigny and Fermanian (2022)
+article Alquier, ChÃ©rief-Abdellatif, Derumigny and Fermanian (2022)
 <doi:10.1080/01621459.2021.2024836>.")
     (license license:gpl3)))
 
@@ -18436,10 +18432,10 @@ marginal predictive likelihood (MPL) and the mean squared prediction error
     (synopsis "Pipeline for GWAS Using MLMM")
     (description
      "Pipeline for Genome-Wide Association Study using Multi-Locus Mixed Model from
-Segura V, @code{VilhjÃ¡lmsson} BJ et al. (2012) <doi:10.1038/ng.2314>.  The
-pipeline include detection of associated SNPs with MLMM, model selection by
-lowest @code{eBIC} and p-value threshold, estimation of the effects of the SNPs
-in the selected model and graphical functions.")
+Segura V, VilhjÃ¡lmsson BJ et al. (2012) <doi:10.1038/ng.2314>.  The pipeline
+include detection of associated SNPs with MLMM, model selection by lowest
+@code{eBIC} and p-value threshold, estimation of the effects of the SNPs in the
+selected model and graphical functions.")
     (license license:gpl3)))
 
 (define-public r-mlml2r
@@ -18740,9 +18736,9 @@ Pace (2020, ISBN:978-88-470-4002-1) \"Modelli Lineari Generalizzati\".")
      "Climate-sensitive forest simulator based on the principles of machine learning.
 It stimulates all key processes in the forest: radial growth, height growth,
 mortality, crown recession, regeneration and harvesting.  The method for
-predicting tree heights was described by Skudnik and @code{JevÅ¡enak} (2022)
+predicting tree heights was described by Skudnik and JevÅ¡enak (2022)
 <doi:10.1016/j.foreco.2022.120017>, while the method for predicting basal area
-increments (BAI) was described by @code{JevÅ¡enak} and Skudnik (2021)
+increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 <doi:10.1016/j.foreco.2020.118601>.")
     (license license:gpl3)))
 
@@ -18842,7 +18838,7 @@ provided such as Truncate, replicate, sample
      "Offers a gentle introduction to machine learning concepts for practitioners with
 a statistical pedigree: decomposition of model error (bias-variance trade-off),
 nonlinear correlations, information theory and functional permutation/bootstrap
-simulations. @code{SzÃ©kely} GJ, Rizzo ML, Bakirov NK. (2007).
+simulations.  SzÃ©kely GJ, Rizzo ML, Bakirov NK. (2007).
 <doi:10.1214/009053607000000505>.  Reshef DN, Reshef YA, Finucane HK, Grossman
 SR, @code{McVean} G, Turnbaugh PJ, Lander ES, Mitzenmacher M, Sabeti PC. (2011).
 <doi:10.1126/science.1205438>.")
@@ -19222,8 +19218,8 @@ around health and other domains.")
     (description
      "This package provides several classifiers based on probabilistic models.  These
 classifiers allow to model the dependence structure of continuous features
-through bivariate copula functions and graphical models, see
-Salinas-@code{GutiÃ©rrez} et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
+through bivariate copula functions and graphical models, see Salinas-GutiÃ©rrez
+et al. (2014) <doi:10.1007/s00180-013-0457-y>.")
     (license license:gpl3)))
 
 (define-public r-mlcm
@@ -20989,8 +20985,8 @@ series with arbitrary distribution (discrete, continuous, mixture of both types)
 and for testing independence between random variables with arbitrary
 distributions.  The test statistics are based on the multilinear empirical
 copula and multipliers are used to compute P-values.  The test of independence
-between random variables appeared in Genest, @code{NeÅ¡lehovÃ}¡, RÃ©millard &
-Murphy (2019) and the test of randomness appeared in Nasri (2022).")
+between random variables appeared in Genest, NeÅ¡lehovÃ¡, RÃ©millard & Murphy
+(2019) and the test of randomness appeared in Nasri (2022).")
     (license license:gpl3)))
 
 (define-public r-mixedcca
@@ -21160,9 +21156,9 @@ thermogravimetric analysis (TGA) are imported, modified, and then modelled in a
 three- or four- part mixture model using the Fraser-Suzuki function.  The output
 is estimates for weights of pseudo-components corresponding to hemicellulose,
 cellulose, and lignin.  For more information see: MÃ¼ller-Hagedorn, M. and
-Bockhorn, H. (2007) <doi:10.1016/j.jaap.2006.12.008>, Ã@code{rfÃ£o}, J. J. M.
-and Figueiredo, J. L. (2001) <doi:10.1016/S0040-6031(01)00634-7>, and Yang, H.
-and Yan, R. and Chen, H. and Zheng, C. and Lee, D. H. and Liang, D. T. (2006)
+Bockhorn, H. (2007) <doi:10.1016/j.jaap.2006.12.008>, ÃrfÃ£o, J. J. M. and
+Figueiredo, J. L. (2001) <doi:10.1016/S0040-6031(01)00634-7>, and Yang, H. and
+Yan, R. and Chen, H. and Zheng, C. and Lee, D. H. and Liang, D. T. (2006)
 <doi:10.1021/ef0580117>.")
     (license license:expat)))
 
@@ -22149,9 +22145,8 @@ algorithm Strobl, C., Boulesteix, A. L., Zeileis, A., & Hothorn, T. (2007)
     (synopsis "Misreported Time Series Analysis")
     (description
      "This package provides a simple and trustworthy methodology for the analysis of
-misreported continuous time series.  See @code{MoriÃ±a}, D,
-@code{FernÃ¡ndez-Fontelo}, A, @code{CabaÃ±a}, A, Puig P. (2021)
-<@code{arXiv:2003.09202v2>}.")
+misreported continuous time series.  See MoriÃ±a, D, FernÃ¡ndez-Fontelo, A,
+CabaÃ±a, A, Puig P. (2021) <@code{arXiv:2003.09202v2>}.")
     (license license:gpl2+)))
 
 (define-public r-mispu
@@ -22355,7 +22350,7 @@ phyloseq', dada2 and targets R packages.  It helps to build reproducible and
 robust bioinformatics pipelines in R. @code{MiscMetabar} makes ecological
 analysis of alpha and beta-diversity easier, more reproducible and more powerful
 by integrating a large number of tools.  Important features are described in
-@code{TaudiÃ¨re} A. (2023) <doi:10.21105/joss.06038>.")
+TaudiÃ¨re A. (2023) <doi:10.21105/joss.06038>.")
     (license license:agpl3)))
 
 (define-public r-misclassglm
@@ -22894,8 +22889,8 @@ invariance.  Martin, Williams, and Rast (2020) <doi:10.31234/osf.io/qbdjt>.")
     (synopsis "Left-Censored Recurrent Events Survival Models")
     (description
      "Fitting recurrent events survival models for left-censored data with multiple
-imputation of the number of previous episodes.  See @code{HernÃ¡ndez-Herrera} G,
-@code{MoriÃ±a} D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
+imputation of the number of previous episodes.  See HernÃ¡ndez-Herrera G,
+MoriÃ±a D, Navarro A. (2020) <@code{arXiv:2007.15031>}.")
     (license license:gpl2+)))
 
 (define-public r-mirai
@@ -23836,8 +23831,8 @@ function may be used for dimensionality reduction of imputation of numeric,
 binary and count data (simultaneously).  Main effects such as column means,
 group effects, or effects of row-column side information (e.g. user/item
 attributes in recommendation system) may also be modelled in addition to the
-low-rank model. @code{GeneviÃ¨ve} Robin, Olga Klopp, Julie Josse, Ãric
-Moulines, Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
+low-rank model.  GeneviÃ¨ve Robin, Olga Klopp, Julie Josse, Ãric Moulines,
+Robert Tibshirani (2018) <@code{arXiv:1806.09734>}.")
     (license license:gpl3)))
 
 (define-public r-mimer
@@ -24079,9 +24074,9 @@ duration?\", M. Opalek, B. Smug, D. Wloch-Salamon (2022)
      "User-Friendly R Package for Supervised Machine Learning Pipelines")
     (description
      "An interface to build machine learning models for classification and regression
-problems.  mikropml implements the ML pipeline described by @code{TopÃ§uoÄlu}
-et al. (2020) <doi:10.1128/@code{mBio.00434-20>} with reasonable default options
-for data preprocessing, hyperparameter tuning, cross-validation, testing, model
+problems.  mikropml implements the ML pipeline described by TopÃ§uoÄlu et al.
+(2020) <doi:10.1128/@code{mBio.00434-20>} with reasonable default options for
+data preprocessing, hyperparameter tuning, cross-validation, testing, model
 evaluation, and interpretation steps.  See the website
 <https://www.schlosslab.org/mikropml/> for more information, documentation, and
 examples.")
@@ -24774,19 +24769,19 @@ multiple comparison and the definition of potential biological markers.")
     (home-page "https://cran.r-project.org/package=micss")
     (synopsis "Modified Iterative Cumulative Sum of Squares Algorithm")
     (description
-     "Companion package of Carrion-i-Silvestre & @code{SansÃ³} (2023): \"Generalized
-Extreme Value Approximation to the CUMSUMQ Test for Constant Unconditional
-Variance in Heavy-Tailed Time Series\".  It implements the Modified Iterative
-Cumulative Sum of Squares Algorithm, which is an extension of the Iterative
-Cumulative Sum of Squares (ICSS) Algorithm of Inclan and Tiao (1994), and it
-checks for changes in the unconditional variance of a time series controlling
-for the tail index of the underlying distribution.  The fourth order moment is
-estimated non-parametrically to avoid the size problems when the innovations are
-non-Gaussian (see, @code{SansÃ³} et al., 2004).  Critical values and p-values
-are generated using a Generalized Extreme Value distribution approach.
-References Carrion-i-Silvestre J.J & @code{SansÃ³} A (2023)
+     "Companion package of Carrion-i-Silvestre & SansÃ³ (2023): \"Generalized Extreme
+Value Approximation to the CUMSUMQ Test for Constant Unconditional Variance in
+Heavy-Tailed Time Series\".  It implements the Modified Iterative Cumulative Sum
+of Squares Algorithm, which is an extension of the Iterative Cumulative Sum of
+Squares (ICSS) Algorithm of Inclan and Tiao (1994), and it checks for changes in
+the unconditional variance of a time series controlling for the tail index of
+the underlying distribution.  The fourth order moment is estimated
+non-parametrically to avoid the size problems when the innovations are
+non-Gaussian (see, SansÃ³ et al., 2004).  Critical values and p-values are
+generated using a Generalized Extreme Value distribution approach.  References
+Carrion-i-Silvestre J.J & SansÃ³ A (2023)
 <https://www.ub.edu/irea/working_papers/2023/202309.pdf>.  Inclan C & Tiao G.C
-(1994) <doi:10.1080/01621459.1994.10476824>, @code{SansÃ³} A & @code{AragÃ³} V &
+(1994) <doi:10.1080/01621459.1994.10476824>, SansÃ³ A & AragÃ³ V &
 Carrion-i-Silvestre J.L (2004)
 <https://dspace.uib.es/xmlui/bitstream/handle/11201/152078/524035.pdf>.")
     (license license:gpl2)))
@@ -25737,10 +25732,10 @@ summarize and plot the results.  The methods are described in Basagana et al.
     (description
      "Michel Rodange was a Luxembourguish writer and poet who lived in the 19th
 century.  His most notable work is Rodange (1872, ISBN:1166177424), (\"Renert
-oder de @code{FuuÃ} am Frack an a Ma'@code{nsgrÃ«Ãt}\"), but he also wrote many
-more works, including Rodange, Tockert (1928)
+oder de FuuÃ am Frack an a Ma'nsgrÃ«Ãt\"), but he also wrote many more works,
+including Rodange, Tockert (1928)
 <https://www.autorenlexikon.lu/page/document/361/3614/1/FRE/index.html>
-(\"D'LÃ©ierchen - Dem LÃ©iweckerche @code{sÃ¤i} Lidd\") and Rodange, Welter (1929)
+(\"D'LÃ©ierchen - Dem LÃ©iweckerche sÃ¤i Lidd\") and Rodange, Welter (1929)
 <https://www.autorenlexikon.lu/page/document/361/3615/1/FRE/index.html> (\"Dem
 Grow Sigfrid seng Goldkuommer\").  This package contains three datasets, each
 made from the plain text versions of his works available on
@@ -27447,7 +27442,7 @@ key reference is Royston and Altman, 1994.")
 maximal fat oxidation and the SIN model to represent the fat oxidation kinetics.
  Three variables can be obtained from the SIN model: dilatation, symmetry and
 translation.  Examples of these methods can be found in Montes de Oca et al
-(2021) <doi:10.1080/17461391.2020.1788650> and @code{CheneviÃ¨re} et al. (2009)
+(2021) <doi:10.1080/17461391.2020.1788650> and CheneviÃ¨re et al. (2009)
 <doi:10.1249/MSS.0b013e31819e2f91>.")
     (license license:expat)))
 
@@ -28765,10 +28760,10 @@ detection of fronts based on the thermic front parameter [Hewson, 1998,
     (synopsis
      "RFSI & STRK Interpolation for Meteo and Environmental Variables")
     (description
-     "Random Forest Spatial Interpolation (RFSI, @code{SekuliÄ} et al. (2020)
+     "Random Forest Spatial Interpolation (RFSI, SekuliÄ et al. (2020)
 <doi:10.3390/rs12101687>) and spatio-temporal geostatistical (spatio-temporal
 regression Kriging (STRK)) interpolation for meteorological (Kilibarda et al.
-(2014) <doi:10.1002/2013JD020803>, @code{SekuliÄ} et al. (2020)
+(2014) <doi:10.1002/2013JD020803>, SekuliÄ et al. (2020)
 <doi:10.1007/s00704-019-03077-3>) and other environmental variables.  Contains
 global spatio-temporal models calculated using publicly available data.")
     (license (list license:gpl2+
@@ -30315,8 +30310,8 @@ estimates from multiple judges often provides a more accurate aggregate estimate
 than using a point estimate from a single judge.  However, if the judges use
 shared information in their estimates, the simple average will over-emphasize
 this common component at the expense of the judgesâ private information.  Asa
-Palley & Ville @code{SatopÃ¤Ã¤} (2021) \"Boosting the Wisdom of Crowds Within a
-Single Judgment Problem: Selective Averaging Based on Peer Predictions\"
+Palley & Ville SatopÃ¤Ã¤ (2021) \"Boosting the Wisdom of Crowds Within a Single
+Judgment Problem: Selective Averaging Based on Peer Predictions\"
 <https://papers.ssrn.com/sol3/Papers.cfm?abstract_id=3504286> proposes a
 procedure for calculating a weighted average of the judgesâ individual
 estimates such that resulting aggregate estimate appropriately combines the
@@ -31101,7 +31096,7 @@ test set and inference is mainly based on resampling and permutations technique.
 Sports & Exercise.  It contains all the data and functions to reproduce the
 analysis. \"Effectiveness of HIIE versus MICT in Improving Cardiometabolic Risk
 Factors in Health and Disease: A Meta-analysis\".  Felipe Mattioni Maturana,
-Peter Martus, Stephan Zipfel, Andreas M @code{NieÃ} (2020)
+Peter Martus, Stephan Zipfel, Andreas M NieÃ (2020)
 <doi:10.1249/MSS.0000000000002506>.")
     (license license:cc0)))
 
@@ -32624,8 +32619,8 @@ models are included.")
 <https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
 Includes functions for reading, downloading, and selecting data for main series.
  This package is not sponsored or supported by the @code{MoE} Spain.  Importa
-datos con indicadores del Ministerio de @code{EducaciÃ³n} y @code{FormaciÃ³n}
-Profesional (MEFD) de @code{EspaÃ±Ã}¡.  Los datos @code{estÃ¡n} en
+datos con indicadores del Ministerio de EducaciÃ³n y FormaciÃ³n Profesional
+(MEFD) de EspaÃ±Ã¡.  Los datos estÃ¡n en
 <https://www.educacionyfp.gob.es/servicios-al-ciudadano/estadisticas/no-universitaria.html>
 Contiene funciones para leer, descargar, y seleccionar bases de datos de series
 principales.  Este paquete no es patrocinado o respaldado por el MEFD.")
@@ -35251,9 +35246,9 @@ combination of these, as well as the parameters of the segments in between.  All
 parameters are estimated with uncertainty and prediction intervals are supported
 - also near the change points.  mcp supports hypothesis testing via
 Savage-Dickey density ratio, posterior contrasts, and cross-validation.  mcp is
-described in @code{LindelÃ¸v} (submitted) <doi:10.31219/osf.io/fzqxv> and
-generalizes the approach described in Carlin, Gelfand, & Smith (1992)
-<doi:10.2307/2347570> and Stephens (1994) <doi:10.2307/2986119>.")
+described in LindelÃ¸v (submitted) <doi:10.31219/osf.io/fzqxv> and generalizes
+the approach described in Carlin, Gelfand, & Smith (1992) <doi:10.2307/2347570>
+and Stephens (1994) <doi:10.2307/2986119>.")
     (license license:gpl2)))
 
 (define-public r-mcount
@@ -39441,9 +39436,8 @@ package provides classes, functions, and methods for storing information
 contained in calibration certificates and converting balance readings to both
 conventional mass and real mass.  For the latter, the Magnitude of the Air
 Buoyancy Correction factor employs models (such as the CIMP-2007 formula revised
-by Picard, Davis, @code{GlÃ¤ser}, and Fujii (2008)
-<doi:10.1088/0026-1394/45/2/004>) to estimate the local air density using
-measured environmental conditions.")
+by Picard, Davis, GlÃ¤ser, and Fujii (2008) <doi:10.1088/0026-1394/45/2/004>) to
+estimate the local air density using measured environmental conditions.")
     (license license:gpl3+)))
 
 (define-public r-maskranger
@@ -40483,13 +40477,13 @@ a conditional risk model.")
 (define-public r-marginaleffects
   (package
     (name "r-marginaleffects")
-    (version "0.21.0")
+    (version "0.22.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "marginaleffects" version))
        (sha256
-        (base32 "1zq9xkaacgy3d3rsbhdjaprd352mcpbfwn9jazijx6csjs5pxqmp"))))
+        (base32 "1xb1s8vkqk8jykpmngv26knc0c32lkxj7z4iiryyjbj1zd9v7gx5"))))
     (properties `((upstream-name . "marginaleffects")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -42200,8 +42194,8 @@ aggregation of biological data across diverse databases.")
 non-parametric, asymptotic P-value computation for multivariate linear models.
 MANTA relies on the asymptotic null distribution of the PERMANOVA test
 statistic.  P-values are computed using a highly accurate approximation of the
-corresponding cumulative distribution function.  Garrido-@code{MartÃ­n} et al.
-(2022) <doi:10.1101/2022.06.06.493041>.")
+corresponding cumulative distribution function.  Garrido-MartÃ­n et al. (2022)
+<doi:10.1101/2022.06.06.493041>.")
     (license license:gpl3)))
 
 (define-public r-manova-rm
@@ -42680,14 +42674,13 @@ and known variance.")
     (synopsis "Islas Malvinas, Georgias Del Sur y SÃ¡ndwich Del Sur")
     (description
      "Data sets related to the Islas Malvinas /// Sets de datos relacionados a las
-Islas Malvinas - La @code{NaciÃ³n} Argentina ratifica su @code{legÃ­tima} e
-imprescriptible @code{soberanÃ­a} sobre las islas Malvinas, Georgias del Sur y
-SÃ¡ndwich del Sur y los espacios @code{marÃ­timos} e insulares correspondientes,
-por ser parte integrante del territorio nacional.  La @code{recuperaciÃ³n} de
-dichos territorios y el ejercicio pleno de la @code{soberanÃ­a}, respetando el
-modo de vida de sus habitantes y conforme a los principios del Derecho
-Internacional, constituyen un objetivo permanente e irrenunciable del pueblo
-argentino.")
+Islas Malvinas - La NaciÃ³n Argentina ratifica su legÃ­tima e imprescriptible
+soberanÃ­a sobre las islas Malvinas, Georgias del Sur y SÃ¡ndwich del Sur y los
+espacios marÃ­timos e insulares correspondientes, por ser parte integrante del
+territorio nacional.  La recuperaciÃ³n de dichos territorios y el ejercicio
+pleno de la soberanÃ­a, respetando el modo de vida de sus habitantes y conforme
+a los principios del Derecho Internacional, constituyen un objetivo permanente e
+irrenunciable del pueblo argentino.")
     (license license:gpl3)))
 
 (define-public r-mallet

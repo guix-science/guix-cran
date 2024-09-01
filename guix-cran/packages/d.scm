@@ -242,8 +242,8 @@ Laber, E. B., Chapman & Hall/CRC Press, 2020, ISBN:978-1-4987-6977-8.")
     (synopsis "Dynamic Stem Profile Models, AKA Tree Taper Equations")
     (description
      "This package performs calculations with tree taper (or stem profile) equations,
-including model fitting.  The package implements the methods from
-@code{GarcÃ­a}, O. (2015) \"Dynamic modelling of tree form\"
+including model fitting.  The package implements the methods from GarcÃ­a, O.
+(2015) \"Dynamic modelling of tree form\"
 <http://mcfns.net/index.php/Journal/article/view/MCFNS7.1_2>.  The models are
 parsimonious, describe well the tree bole shape over its full length, and are
 consistent with wood formation mechanisms through time.")
@@ -4703,8 +4703,8 @@ outcome is used; E-estimation where a nuisance model for the association between
 the covariates and the exposure is used, and doubly robust (DR) estimation where
 both nuisance models are used.  In DR-estimation, the estimates will be
 consistent when at least one of the nuisance models is correctly specified, not
-necessarily both.  For more information, see Zetterqvist and @code{SjÃ¶lander}
-(2015) <doi:10.1515/em-2014-0021>.")
+necessarily both.  For more information, see Zetterqvist and SjÃ¶lander (2015)
+<doi:10.1515/em-2014-0021>.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-drf
@@ -5697,8 +5697,8 @@ non-parametric Bayesian method, Dirichlet-based Polya Tree.  See Ning (2018)
     (synopsis "Dynamic Panel Multiple Threshold Model with Fixed Effects")
     (description
      "Compute the fixed effects dynamic panel threshold model suggested by
-@code{RamÃ­rez-RondÃ¡n} (2020) <doi:10.1080/07474938.2019.1624401>, and dynamic
-panel linear model suggested by Hsiao et al. (2002)
+RamÃ­rez-RondÃ¡n (2020) <doi:10.1080/07474938.2019.1624401>, and dynamic panel
+linear model suggested by Hsiao et al. (2002)
 <doi:10.1016/S0304-4076(01)00143-9>, where maximum likelihood type estimators
 are used.  Multiple threshold estimation based on Markov Chain Monte Carlo
 (MCMC) is allowed, and model selection of linear model, threshold model and
@@ -6827,10 +6827,9 @@ combines them according to principles of (multivariate) random-effects models.")
     (description
      "Constructs dynamic optimal shrinkage estimators for the weights of the global
 minimum variance portfolio which are reconstructed at given reallocation points
-as derived in Bodnar, Parolya, and @code{ThorsÃ©n} (2021)
-(<@code{arXiv:2106.02131>}).  Two dynamic shrinkage estimators are available in
-this package.  One using overlapping samples while the other use nonoverlapping
-samples.")
+as derived in Bodnar, Parolya, and ThorsÃ©n (2021) (<@code{arXiv:2106.02131>}).
+Two dynamic shrinkage estimators are available in this package.  One using
+overlapping samples while the other use nonoverlapping samples.")
     (license license:gpl3)))
 
 (define-public r-dosesens
@@ -7252,7 +7251,7 @@ package.")
 analysis for R functions.  This package supports the application of
 decomposition methods by providing lapply'- or Map'-like meta-functions that
 compute dominance analysis (Azen, R., & Budescu, D. V. (2003)
-<doi:10.1037/1082-989X.8.2.129>; @code{GrÃ¶mping}, U. (2007)
+<doi:10.1037/1082-989X.8.2.129>; GrÃ¶mping, U. (2007)
 <doi:10.1198/000313007X188252>) an extension of Shapley value regression
 (Lipovetsky, S., & Conklin, M. (2001) <doi:10.1002/asmb.446>) based on the
 values returned from other functions.")
@@ -7892,9 +7891,9 @@ process Rmarkdown code chunks.")
     (description
      "Populate data from an R environment into .doc and .docx templates.  Create a
 template document in a program such as Word', and add strings encased in
-guillemet characters to create flags (Â«@code{exampleÂ}»).  Use
-@code{getDictionary}() to create a dictionary of flags and replacement values,
-then call docket() to generate a populated document.")
+guillemet characters to create flags (Â«exampleÂ»).  Use @code{getDictionary}()
+to create a dictionary of flags and replacement values, then call docket() to
+generate a populated document.")
     (license license:expat)))
 
 (define-public r-dockerparallel
@@ -8508,18 +8507,18 @@ submitted.")
 predictors can be continuous or categorical and the number of regressors may
 exceed the number of observations.  The selected model consists of a subset of
 numerical regressors and partitions of levels of factors.  Szymon Nowakowski,
-Piotr Pokarowski, Wojciech Rejchel and Agnieszka @code{SoÅtys}, 2023.
-Improving Group Lasso for High-Dimensional Categorical Data.  In: Computational
-Science â ICCS 2023.  Lecture Notes in Computer Science, vol 14074, p.
-455-470.  Springer, Cham. <doi:10.1007/978-3-031-36021-3_47>.  Aleksandra
-Maj-@code{KaÅska}, Piotr Pokarowski and Agnieszka Prochenka, 2015.  Delete or
-merge regressors for linear model selection.  Electronic Journal of Statistics
-9(2): 1749-1778. <doi:10.1214/15-EJS1050>.  Piotr Pokarowski and Jan Mielniczuk,
-2015.  Combined l1 and greedy l0 penalized least squares for linear model
-selection.  Journal of Machine Learning Research 16(29): 961-992.
+Piotr Pokarowski, Wojciech Rejchel and Agnieszka SoÅtys, 2023.  Improving Group
+Lasso for High-Dimensional Categorical Data.  In: Computational Science â ICCS
+2023.  Lecture Notes in Computer Science, vol 14074, p.  455-470.  Springer,
+Cham. <doi:10.1007/978-3-031-36021-3_47>.  Aleksandra Maj-KaÅska, Piotr
+Pokarowski and Agnieszka Prochenka, 2015.  Delete or merge regressors for linear
+model selection.  Electronic Journal of Statistics 9(2): 1749-1778.
+<doi:10.1214/15-EJS1050>.  Piotr Pokarowski and Jan Mielniczuk, 2015.  Combined
+l1 and greedy l0 penalized least squares for linear model selection.  Journal of
+Machine Learning Research 16(29): 961-992.
 <https://www.jmlr.org/papers/volume16/pokarowski15a/pokarowski15a.pdf>.  Piotr
-Pokarowski, Wojciech Rejchel, Agnieszka @code{SoÅtys}, @code{MichaÅ} Frej and
-Jan Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
+Pokarowski, Wojciech Rejchel, Agnieszka SoÅtys, MichaÅ Frej and Jan
+Mielniczuk, 2022.  Improving Lasso for model selection and prediction.
 Scandinavian Journal of Statistics, 49(2): 831â863. <doi:10.1111/sjos.12546>.")
     (license license:gpl2)))
 
@@ -11905,9 +11904,9 @@ for kin pairs.")
     (description
      "Tests whether multivariate ordinal data may stem from discretizing a
 multivariate normal distribution.  The test is described by Foldnes and
-@code{GrÃ¸nneberg} (2019) <doi:10.1080/10705511.2019.1673168>.  In addition, an
+GrÃ¸nneberg (2019) <doi:10.1080/10705511.2019.1673168>.  In addition, an
 adjusted polychoric correlation estimator is provided that takes marginal
-knowledge into account, as described by @code{GrÃ¸nneberg} and Foldnes (2022)
+knowledge into account, as described by GrÃ¸nneberg and Foldnes (2022)
 <doi:10.1037/met0000495>.")
     (license license:gpl2+)))
 
@@ -12029,7 +12028,7 @@ models.")
      "Computes discrete fast Fourier transform of river discharge data and the derived
 metrics.  The methods are described in J. L. Sabo, D. M. Post (2008)
 <doi:10.1890/06-1340.1> and J. L. Sabo, A. Ruhi, G. W. Holtgrieve, V. Elliott,
-M. E. Arias, P. B. Ngor, T. A. RÃ¤@code{sÃ¤nsen}, S. Nam (2017)
+M. E. Arias, P. B. Ngor, T. A. RÃ¤sÃ¤nsen, S. Nam (2017)
 <doi:10.1126/science.aao1053>.")
     (license license:gpl3)))
 
@@ -12369,7 +12368,7 @@ utilities for analyzing directional data.  Implements the estimator in Bai, Rao
 and Zhao (1987) <doi:10.1016/0047-259X(88)90113-3>, the cross-validation
 bandwidth selectors in Hall, Watson and Cabrera (1987)
 <doi:10.1093/biomet/74.4.751> and the plug-in bandwidth selectors in
-@code{GarcÃ­a-PortuguÃ©s} (2013) <doi:10.1214/13-ejs821>.")
+GarcÃ­a-PortuguÃ©s (2013) <doi:10.1214/13-ejs821>.")
     (license license:gpl3)))
 
 (define-public r-dirmcmc
@@ -14891,12 +14890,11 @@ index by Leclercq & Maquet (1987,
 (1982,
 <https://www.oieau.org/eaudoc/notice/ETUDE-DES-METHODES-BIOLOGIQUES-DAPPRECIATION-QUANTITATIVE-DE-LA-QUALITE-DES-EAUX>),
 the LOBO index by Lobo, Callegaro, & Bender (2002, ISBN:9788585869908), the SLA
-by @code{SlÃ¡deÄek} (1986, <doi:10.1002/aheh.19860140519>), the TDI index by
-Kelly, & Whitton (1995, <doi:10.1007/BF00003802>), the SPEAR(herbicide) index by
-Wood, Mitrovic, Lim, Warne, Dunlop, & Kefford (2019,
+by SlÃ¡deÄek (1986, <doi:10.1002/aheh.19860140519>), the TDI index by Kelly, &
+Whitton (1995, <doi:10.1007/BF00003802>), the SPEAR(herbicide) index by Wood,
+Mitrovic, Lim, Warne, Dunlop, & Kefford (2019,
 <doi:10.1016/j.ecolind.2018.12.035>), the PBIDW index by Castro-Roa &
-Pinilla-Agudelo (2014), and the DISP index by Stenger-@code{KovÃ¡csa} et al.
-(2018).")
+Pinilla-Agudelo (2014), and the DISP index by Stenger-KovÃ¡csa et al. (2018).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-diaplt
@@ -16404,8 +16402,8 @@ about measurement error and is robust to problem of extreme outlier scores.")
     (description
      "Computes small-sample degrees of freedom adjustment for heteroskedasticity
 robust standard errors, and for clustered standard errors in linear regression.
-See Imbens and @code{KolesÃ¡r} (2016) <doi:10.1162/REST_a_00552> for a
-discussion of these adjustments.")
+See Imbens and KolesÃ¡r (2016) <doi:10.1162/REST_a_00552> for a discussion of
+these adjustments.")
     (license license:expat)))
 
 (define-public r-dfa-cancor
@@ -17893,10 +17891,10 @@ The package is based on Gerring, Jerzak, and Oncel (2023)
     (synopsis "Descriptive Statistical Analysis")
     (description
      "Description of statistical associations between two variables : measures of
-local and global association between variables (phi, @code{CramÃ©r} V,
-correlations, eta-squared, Goodman and Kruskal tau, permutation tests, etc.),
-multiple graphical representations of the associations between two variables
-(using ggplot2') and weighted statistics.")
+local and global association between variables (phi, CramÃ©r V, correlations,
+eta-squared, Goodman and Kruskal tau, permutation tests, etc.), multiple
+graphical representations of the associations between two variables (using
+ggplot2') and weighted statistics.")
     (license license:gpl2+)))
 
 (define-public r-describer
@@ -18307,23 +18305,23 @@ examples and applications.")
     (home-page "https://corradolanera.github.io/depigner/")
     (synopsis "Utility Package to Help you Deal with \"Pignas\"")
     (description
-     "Pigna [_@code{pÃ¬n'n'a}_] is the Italian word for pine cone.  In jargon, it is
-used to identify a task which is boring, banal, annoying, painful, frustrating
-and maybe even with a not so beautiful or rewarding result, just like the
-obstinate act of trying to challenge yourself in extracting pine nuts from a
-pine cone, provided that, in the end, you will find at least one inside it.
-Here you can find a backpack of functions to be used to solve small everyday
-problems of coding or analyzing (clinical) data, which would be normally solved
-using quick-and-dirty patches.  You will be able to convert Hmisc and rms
-summary()es into data.frames ready to be rendered by pander and knitr'.  You can
-access easy-to-use wrappers to activate essential but useful progress bars (from
-progress') into your loops or functionals.  Easy setup and control Telegram's
-bots (from telegram.bot') to send messages or to divert error messages to a
-Telegram's chat.  You also have some utilities helping you in the development of
-packages, like the activation of the same user interface of usethis into your
-package, or call polite functions to ask a user to install other packages.
-Finally, you find a set of thematic sets of packages you may use to set up new
-environments quickly, installing them in a single call.")
+     "Pigna [_pÃ¬n'n'a_] is the Italian word for pine cone.  In jargon, it is used to
+identify a task which is boring, banal, annoying, painful, frustrating and maybe
+even with a not so beautiful or rewarding result, just like the obstinate act of
+trying to challenge yourself in extracting pine nuts from a pine cone, provided
+that, in the end, you will find at least one inside it.  Here you can find a
+backpack of functions to be used to solve small everyday problems of coding or
+analyzing (clinical) data, which would be normally solved using quick-and-dirty
+patches.  You will be able to convert Hmisc and rms summary()es into data.frames
+ready to be rendered by pander and knitr'.  You can access easy-to-use wrappers
+to activate essential but useful progress bars (from progress') into your loops
+or functionals.  Easy setup and control Telegram's bots (from telegram.bot') to
+send messages or to divert error messages to a Telegram's chat.  You also have
+some utilities helping you in the development of packages, like the activation
+of the same user interface of usethis into your package, or call polite
+functions to ask a user to install other packages.  Finally, you find a set of
+thematic sets of packages you may use to set up new environments quickly,
+installing them in a single call.")
     (license license:gpl3)))
 
 (define-public r-depend-truncation
@@ -18889,9 +18887,9 @@ principal angle determination are also included.  Position and dispersion
 parameters usually found in forest studies are implemented.  The package
 contains Fibonacci series, its extensions and the Golden Number computation.
 Useful references are Arcadius Y. J. Akossou, Soufianou Arzouma, Eloi Y.
-Attakpa, @code{NoÃ«l} H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099>
-and W. Bonou, R. Glele @code{KakaÃ¯}, A.E. Assogbadjo, H.N. Fonton, B. Sinsin
-(2009) <doi:10.1016/j.foreco.2009.05.032> .")
+Attakpa, NoÃ«l H. Fonton and Kouami Kokou (2013) <doi:10.3390/d5010099> and W.
+Bonou, R. Glele KakaÃ¯, A.E. Assogbadjo, H.N. Fonton, B. Sinsin (2009)
+<doi:10.1016/j.foreco.2009.05.032> .")
     (license license:gpl3)))
 
 (define-public r-dendroextras
@@ -19445,7 +19443,7 @@ incomplete.  See Shilts et al. (2018) <doi:10.7717/peerj.4327>.")
     (home-page "https://cran.r-project.org/package=Delta")
     (synopsis "Measure of Agreement Between Two Raters")
     (description
-     "Measure of agreement delta was originally by @code{MartÃ­n} & Femia (2004)
+     "Measure of agreement delta was originally by MartÃ­n & Femia (2004)
 <DOI:10.1348/000711004849268>.  Since then has been considered as agreement
 measure for different fields, since their behavior is usually better than the
 usual kappa index by Cohen (1960) <DOI:10.1177/001316446002000104>.  The main
@@ -21693,7 +21691,7 @@ approaches, see Tang, J., Chen, Z., Fu, A. W. C., & Cheung, D. W. (2002)
 (2007) <doi:10.1007/978-3-540-73499-4_6>, Papadimitriou, S., Gibbons, P. B., &
 Faloutsos, C. (2003) <doi:10.1109/ICDE.2003.1260802>, Breunig, M. M., Kriegel,
 H.-P., Ng, R. T., & Sander, J. (2000) <doi:10.1145/342009.335388>, Kriegel,
-H.-P., @code{KrÃ¶ger}, P., Schubert, E., & Zimek, A. (2009)
+H.-P., KrÃ¶ger, P., Schubert, E., & Zimek, A. (2009)
 <doi:10.1145/1645953.1646195>, Zhu, Q., Feng, Ji. & Huang, J. (2016)
 <doi:10.1016/j.patrec.2016.05.007>, Huang, J., Zhu, Q., Yang, L. & Feng, J.
 (2015) <doi:10.1016/j.knosys.2015.10.014>, Tang, B. & Haibo, He. (2017)
@@ -22269,10 +22267,10 @@ Covariance/Correlation for Time Series'.  R Journal, 8(2):324-340.
     (synopsis "Fast Implementation of Distance Covariance")
     (description
      "Efficient methods for computing distance covariance and relevant statistics.
-See @code{SzÃ©kely} et al.(2007) <doi:10.1214/009053607000000505>;
-@code{SzÃ©kely} and Rizzo (2013) <doi:10.1016/j.jmva.2013.02.012>;
-@code{SzÃ©kely} and Rizzo (2014) <doi:10.1214/14-AOS1255>; Huo and
-@code{SzÃ©kely} (2016) <doi:10.1080/00401706.2015.1054435>.")
+See SzÃ©kely et al.(2007) <doi:10.1214/009053607000000505>; SzÃ©kely and Rizzo
+(2013) <doi:10.1016/j.jmva.2013.02.012>; SzÃ©kely and Rizzo (2014)
+<doi:10.1214/14-AOS1255>; Huo and SzÃ©kely (2016)
+<doi:10.1080/00401706.2015.1054435>.")
     (license license:gpl2)))
 
 (define-public r-dcorvs
@@ -23189,10 +23187,10 @@ order.  Extends some of the functionality offered by the bnlearn package to
 learn the networks from data and perform exact inference.  It offers three
 structure learning algorithms for dynamic Bayesian networks: Trabelsi G. (2013)
 <doi:10.1007/978-3-642-41398-8_34>, Santos F.P. and Maciel C.D. (2014)
-<doi:10.1109/BRC.2014.6880957>, Quesada D., Bielza C. and @code{LarraÃ±aga} P.
-(2021) <doi:10.1007/978-3-030-86271-8_14>.  It also offers the possibility to
-perform forecasts of arbitrary length.  A tool for visualizing the structure of
-the net is also provided via the @code{visNetwork} package.")
+<doi:10.1109/BRC.2014.6880957>, Quesada D., Bielza C. and LarraÃ±aga P. (2021)
+<doi:10.1007/978-3-030-86271-8_14>.  It also offers the possibility to perform
+forecasts of arbitrary length.  A tool for visualizing the structure of the net
+is also provided via the @code{visNetwork} package.")
     (license license:gpl3)))
 
 (define-public r-dbnmfrank
@@ -23973,13 +23971,13 @@ concept of aoristic analysis.")
     (home-page "https://github.com/cienciadedatos/datos")
     (synopsis "Traduce al EspaÃ±ol Varios Conjuntos de Datos de PrÃ¡ctica")
     (description
-     "Provee una @code{versiÃ³n} traducida de los siguientes conjuntos de datos:
-airlines', airports', @code{AwardsManagers}', babynames', Batting',
-credit_data', diamonds', faithful', fueleconomy', Fielding', flights',
-gapminder', gss_cat', iris', Managers', mpg', mtcars', atmos', palmerpenguins',
-People, Pitching', planes', presidential', table1', table2', table3', table4a',
-table4b', table5', vehicles', weather', who'.  English: It provides a Spanish
-translated version of the datasets listed above.")
+     "Provee una versiÃ³n traducida de los siguientes conjuntos de datos: airlines',
+airports', @code{AwardsManagers}', babynames', Batting', credit_data',
+diamonds', faithful', fueleconomy', Fielding', flights', gapminder', gss_cat',
+iris', Managers', mpg', mtcars', atmos', palmerpenguins', People, Pitching',
+planes', presidential', table1', table2', table3', table4a', table4b', table5',
+vehicles', weather', who'.  English: It provides a Spanish translated version of
+the datasets listed above.")
     (license license:cc0)))
 
 (define-public r-datoramar
@@ -24939,7 +24937,7 @@ documentation see
 @code{dataReporter} auto generates a customizable data report with a thorough
 summary of the checks and the results that a human can use to identify possible
 errors.  It provides an extendable suite of test for common potential errors in
-a dataset.  See Petersen AH, @code{EkstrÃ¸m} CT (2019). \"@code{dataMaid}: Your
+a dataset.  See Petersen AH, EkstrÃ¸m CT (2019). \"@code{dataMaid}: Your
 Assistant for Documenting Supervised Data Quality Screening in R.\" _Journal of
 Statistical Software_, *90*(6), 1-38 <doi:10.18637/jss.v090.i06> for more
 information.")
@@ -25687,10 +25685,10 @@ data analysis.  For more details on the methods, please check to the following
 sources.  Gama et al. (2004) <doi:10.1007/978-3-540-28645-5_29>, Baena-Garcia et
 al. (2006)
 <https://www.researchgate.net/publication/245999704_Early_Drift_Detection_Method>,
-@code{FrÃ­as-Blanco} et al. (2014)
-<https://ieeexplore.ieee.org/document/6871418>, Raab et al. (2020)
-<doi:10.1016/j.neucom.2019.11.111>, Page (1954) <doi:10.1093/biomet/41.1-2.100>,
-Montiel et al. (2018) <https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
+FrÃ­as-Blanco et al. (2014) <https://ieeexplore.ieee.org/document/6871418>, Raab
+et al. (2020) <doi:10.1016/j.neucom.2019.11.111>, Page (1954)
+<doi:10.1093/biomet/41.1-2.100>, Montiel et al. (2018)
+<https://jmlr.org/papers/volume19/18-251/18-251.pdf>.")
     (license license:gpl2+)))
 
 (define-public r-datadogr
