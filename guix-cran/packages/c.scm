@@ -35192,16 +35192,17 @@ show various ways to load them.  Refer to Pham (2020)
 (define-public r-centr
   (package
     (name "r-centr")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "centr" version))
        (sha256
-        (base32 "12kf4j75q6jyyypa3cqj5pn9gn7z2nj0mp35j9dqq42qn6mwpgv7"))))
+        (base32 "1hk30x8icgcr53gdn88nimvs80djl310l59hfknd1a8z60ccnpsi"))))
     (properties `((upstream-name . "centr")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
+    (native-inputs (list r-knitr))
     (home-page "https://ryanzomorrodi.github.io/centr/")
     (synopsis "Weighted and Unweighted Spatial Centers")
     (description

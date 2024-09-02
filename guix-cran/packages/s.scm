@@ -12382,13 +12382,13 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 (define-public r-statgraph
   (package
     (name "r-statgraph")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statGraph" version))
        (sha256
-        (base32 "1a2cd5yp4gsm166middh956fda4a3jp5ssyhz0x4znb98p3hbpw8"))))
+        (base32 "0342hxbf4irhkr7i4ggq63ac66i97y4fcixm1jvbwbdahss6f38y"))))
     (properties `((upstream-name . "statGraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-rarpack

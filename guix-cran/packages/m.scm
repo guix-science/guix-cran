@@ -14151,18 +14151,20 @@ schools effectiveness.  The standard value-added model is also an option.")
 (define-public r-moderndive
   (package
     (name "r-moderndive")
-    (version "0.6.1")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "moderndive" version))
        (sha256
-        (base32 "1gd4mb8i2bl5h9q0ahcpqjqw1ji120q9p305q9rfkfpv5nzwbwyr"))))
+        (base32 "0pvmqkgxnjj5sw8bj0m7d6k9imcyrfndn3g09qwk83k8jsbwg85d"))))
     (properties `((upstream-name . "moderndive")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
+    (propagated-inputs (list r-tidyr
+                             r-tibble
                              r-stringr
                              r-rlang
+                             r-purrr
                              r-magrittr
                              r-knitr
                              r-janitor
@@ -20602,13 +20604,13 @@ developed in this package.")
 (define-public r-mixhvg
   (package
     (name "r-mixhvg")
-    (version "0.1.1")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixhvg" version))
        (sha256
-        (base32 "1vwn4wdxs81r08x4f8zlpdqr1hvf6dk59qqrbxyj9xdk35hw9il4"))))
+        (base32 "1gpjab7cg6xj1wgd3sbrp30mafhxv24d4rpxfsrq0rybm4frir43"))))
     (properties `((upstream-name . "mixhvg")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-seurat r-scuttle r-scran
@@ -20618,7 +20620,8 @@ developed in this package.")
     (description
      "Highly variable gene selection methods, including popular public available
 methods, and also the mixture of multiple highly variable gene selection
-methods, <https://github.com/@code{RuzhangZhao/mixhvg>}.")
+methods, <https://github.com/@code{RuzhangZhao/mixhvg>}.  Reference:
+<doi:10.1101/2024.08.25.608519>.")
     (license license:gpl3)))
 
 (define-public r-mixghd

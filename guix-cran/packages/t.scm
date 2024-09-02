@@ -7482,39 +7482,6 @@ H, Brown MD, Huang Y, et al. (2014) <doi:10.1515/ijb-2012-0052> for further
 details.")
     (license license:gpl3)))
 
-(define-public r-treatmentpatterns
-  (package
-    (name "r-treatmentpatterns")
-    (version "2.6.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TreatmentPatterns" version))
-       (sha256
-        (base32 "00vj76jw1pdifsyfrcp0qagqy05lyq1jaf1xnxrfjyk70qjk7f4w"))))
-    (properties `((upstream-name . "TreatmentPatterns")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-sunburstr
-                             r-stringr
-                             r-shinydashboard
-                             r-shiny
-                             r-r6
-                             r-networkd3
-                             r-htmlwidgets
-                             r-dplyr
-                             r-checkmate
-                             r-andromeda))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/darwin-eu/TreatmentPatterns")
-    (synopsis
-     "Analyzes Real-World Treatment Patterns of a Study Population of Interest")
-    (description
-     "Computes treatment patterns within a given cohort using the Observational
-Medical Outcomes Partnership (OMOP) common data model (CDM).  As described in
-Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
-    (license license:asl2.0)))
-
 (define-public r-treasury
   (package
     (name "r-treasury")
@@ -11160,17 +11127,18 @@ GK (1972).  Wricke G (1962).")
 (define-public r-toolsforcoda
   (package
     (name "r-toolsforcoda")
-    (version "1.0.6")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ToolsForCoDa" version))
        (sha256
-        (base32 "1c37xv8h4jycnn9cnxlvby3p8hl3gfp4bdsbxm06bb323qj774pd"))))
+        (base32 "1rns11sddijajjnp5xc8b9n0k88zr6022ra7afd9qmf7k8pmpdp3"))))
     (properties `((upstream-name . "ToolsForCoDa")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-hardyweinberg r-calibrate))
-    (home-page "www.R-project.org")
+    (propagated-inputs (list r-mass r-correlplot r-calibrate))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.r-project.org")
     (synopsis "Multivariate Tools for Compositional Data Analysis")
     (description
      "This package provides functions for multivariate analysis with compositional
@@ -11179,8 +11147,9 @@ analysis.  This analysis requires two data matrices of compositions, which can
 be adequately transformed and used as entries in a specialized program for
 canonical correlation analysis, that is able to deal with singular covariance
 matrices.  The methodology is described in Graffelman et al. (2017)
-<doi:10.1101/144584>.  A function for log-ratio principal component analysis
-with condition number computations has been added to the package.")
+<doi:10.1101/144584>.  Functions for log-ratio principal component analysis with
+condition number computations and log-ratio discriminant analysis have been
+added to the package.")
     (license license:gpl2+)))
 
 (define-public r-tools4uplift

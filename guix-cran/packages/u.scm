@@ -1851,13 +1851,13 @@ unmeasured confounders using JAGS.")
 (define-public r-unmarked
   (package
     (name "r-unmarked")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmarked" version))
        (sha256
-        (base32 "1md8b80wmk3664rp482xl8bw5w64mp25klsdx35z4rq8d85nd5zh"))))
+        (base32 "126svli0755263kc0gn6yf9lzhc3c3jpabsa481r2zf16l6r3br1"))))
     (properties `((upstream-name . "unmarked")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb

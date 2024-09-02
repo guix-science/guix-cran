@@ -5144,42 +5144,6 @@ data, including EM-type algorithms with more stable convergence properties than
 standard methods.")
     (license license:gpl2+)))
 
-(define-public r-logantree
-  (package
-    (name "r-logantree")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LOGANTree" version))
-       (sha256
-        (base32 "0zbll6bb9c3zrmnw8ccknfi6my4pkv0pq4hq742w393nni3dlahq"))))
-    (properties `((upstream-name . "LOGANTree")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-rpart-plot
-                             r-rocr
-                             r-ggplot2
-                             r-gbm
-                             r-dplyr
-                             r-caretensemble
-                             r-caret))
-    (home-page "https://cran.r-project.org/package=LOGANTree")
-    (synopsis
-     "Tree-Based Models for the Analysis of Log Files from Computer-Based Assessments")
-    (description
-     "Enables researchers to model log-file data from computer-based assessments using
-machine-learning techniques.  It allows researchers to generate new knowledge by
-comparing the performance of three tree-based classification models (i.e.,
-decision trees, random forest, and gradient boosting) to predict student's
-outcome.  It also contains a set of handful functions for the analysis of the
-features influence on the modeling.  Data from the Climate control item from the
-2012 Programme for International Student Assessment (PISA,
-<https://www.oecd.org/pisa/>) is available for an illustration of the package's
-capability.  He, Q., & von Davier, M. (2015) <doi:10.1007/978-3-319-19977-1_13>
-Boehmke, B., & Greenwell, B. M. (2019) <doi:10.1201/9780367816377> .")
-    (license license:gpl3)))
-
 (define-public r-logan
   (package
     (name "r-logan")
@@ -13249,42 +13213,6 @@ using LDlink'.  LDlink is an interactive and powerful suite of web-based tools
 for querying germline variants in human population groups of interest.  For more
 details, please see Machiela et al. (2015) <doi:10.1093/bioinformatics/btv402>.")
     (license license:gpl2+)))
-
-(define-public r-ldlcalc
-  (package
-    (name "r-ldlcalc")
-    (version "2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "LDLcalc" version))
-       (sha256
-        (base32 "0bw0a7dh8j215y09n17w1zvnx72s9i5pv509wayl46wl2v6zz4rx"))))
-    (properties `((upstream-name . "LDLcalc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-resample
-                             r-rcolorbrewer
-                             r-philentropy
-                             r-moments
-                             r-lattice
-                             r-lares
-                             r-janitor
-                             r-ggplot2
-                             r-data-table
-                             r-corrplot
-                             r-caretensemble
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=LDLcalc")
-    (synopsis "Calculate and Predict the Low Density Lipoprotein Values")
-    (description
-     "This package provides a wide variety of ways to calculate (through equations) or
-predict (using 9 Machine learning methods as well as a stack algorithm
-combination of them all) the Low Density Lipoprotein values of patients based on
-the values of three other metrics, namely Total Cholesterol , Triglycerides and
-High Density Lipoprotein.  It can also calculate the variance of LDL and the
-Atherogenic Index of Plasma (AIP) using error propagation and bootstrapping.")
-    (license license:gpl3)))
 
 (define-public r-ldhmm
   (package

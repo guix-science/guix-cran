@@ -30730,13 +30730,13 @@ README'-file.")
 (define-public r-pdfetch
   (package
     (name "r-pdfetch")
-    (version "0.2.9")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfetch" version))
        (sha256
-        (base32 "03hx8h2sfahfy05wwrac048wzzlh1d1g6hbr0qzkkhk4xsv69qa1"))))
+        (base32 "134m00nw3k9bv2inpc3wxihyh17m3mbvqra9ajmj1b726xk4n41b"))))
     (properties `((upstream-name . "pdfetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

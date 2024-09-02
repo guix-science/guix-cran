@@ -16368,20 +16368,24 @@ motifs of interest using regular expression searches and hidden Markov models
 (define-public r-effectliter
   (package
     (name "r-effectliter")
-    (version "0.4-6")
+    (version "0.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EffectLiteR" version))
        (sha256
-        (base32 "0h8cbpcnwxll5asjfay06zzh7imzqxbiv5b8iv4wbdkzwh68830r"))))
+        (base32 "1axjjhlhvbwg7w2a4p92l36ps1zqhx6zvn82mpaxdfkhs15pd322"))))
     (properties `((upstream-name . "EffectLiteR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
+                             r-restriktor
+                             r-numderiv
                              r-nnet
                              r-lavaan
+                             r-ic-infer
                              r-ggplot2
                              r-foreign
+                             r-dt
                              r-car))
     (home-page "https://github.com/amayer2010/EffectLiteR")
     (synopsis "Average and Conditional Effects")
