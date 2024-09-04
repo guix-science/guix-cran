@@ -529,6 +529,45 @@ See Haaf and Rouder (2017) <doi:10.1037/met0000156>; Haaf, Klaassen and Rouder
 <doi:10.5334/joc.131>.")
     (license license:gpl3)))
 
+(define-public r-quicseedr
+  (package
+    (name "r-quicseedr")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "QuICSeedR" version))
+       (sha256
+        (base32 "0ajl92rsp8kikpvslsg72g3jbnjhq8khmsirlr947mdzx7mab7fj"))))
+    (properties `((upstream-name . "QuICSeedR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wrs2
+                             r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-readxl
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=QuICSeedR")
+    (synopsis
+     "Analyze Data for Fluorophore-Assisted Seed Amplification Assays")
+    (description
+     "This package provides a toolkit for analysis and visualization of data from
+fluorophore-assisted seed amplification assays, such as Real-Time
+Quaking-Induced Conversion (RT-@code{QuIC}) and Fluorophore-Assisted Protein
+Misfolding Cyclic Amplification (PMCA). @code{QuICSeedR} addresses limitations
+in existing software by automating data processing, supporting large-scale
+analysis, and enabling comparative studies of analysis methods.  It incorporates
+methods described in Henderson et al. (2015) <doi:10.1099/vir.0.069906-0>, Li et
+al. (2020) <doi:10.1038/s41598-021-96127-8>, Rowden et al. (2023)
+<doi:10.3390/pathogens12020309>, Haley et al. (2013)
+<doi:10.1371/journal.pone.0081488>, and Mair and Wilcox (2020)
+<doi:10.3758/s13428-019-01246-w>.  Please refer to the original publications for
+details.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
+
 (define-public r-quickregression
   (package
     (name "r-quickregression")
@@ -711,13 +750,13 @@ magnitude quicker than other methods.")
 (define-public r-quickcode
   (package
     (name "r-quickcode")
-    (version "0.9.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quickcode" version))
        (sha256
-        (base32 "0q9pmnwxrhkf4x78wgfdz3ysahfg4yn51m2ljsk4nf4zvhgdi1yr"))))
+        (base32 "1z7qjkna814vjjafjmxppbjymz8ix3y07p6k3kawfb0kybz8dvrn"))))
     (properties `((upstream-name . "quickcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-polychrome r-fitdistrplus))
@@ -1602,13 +1641,13 @@ balance approach and the conditional expectations method.")
 (define-public r-quanteda-textstats
   (package
     (name "r-quanteda-textstats")
-    (version "0.97.1")
+    (version "0.97.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textstats" version))
        (sha256
-        (base32 "1zl0wa1ydz5b4dv7m38m2rd06w9piv2djsl5f6y21p2xdgi6q1i9"))))
+        (base32 "0bzlbwjlwjrmwa1anzarhmbgzsg0gwynlwpwxv786yb235x8znrn"))))
     (properties `((upstream-name . "quanteda.textstats")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -1666,13 +1705,13 @@ keyness plots.")
 (define-public r-quanteda-textmodels
   (package
     (name "r-quanteda-textmodels")
-    (version "0.9.8")
+    (version "0.9.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "quanteda.textmodels" version))
        (sha256
-        (base32 "0msad04i2rjgwq0shr6jzpshv8h1yvpk5lhv2wqkajdyyk2v5k9c"))))
+        (base32 "0k6kx0aym2gyl5c537kj728pbf6l3zzcr7mfrv6i5r4gfdcx4bw5"))))
     (properties `((upstream-name . "quanteda.textmodels")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi

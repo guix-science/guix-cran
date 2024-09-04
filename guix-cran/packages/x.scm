@@ -1852,6 +1852,33 @@ computing environments) is available for all algorithms.  See
 supporting in other packages maintained by Shichen Xie'.")
     (license license:expat)))
 
+(define-public r-xdnuts
+  (package
+    (name "r-xdnuts")
+    (version "1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "XDNUTS" version))
+       (sha256
+        (base32 "1jjz64859fg9rydr1k3i4sbmnnignpa9hiacgl8yfh6x7fdxya5q"))))
+    (properties `((upstream-name . "XDNUTS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpparmadillo r-rcpp r-purrr r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=XDNUTS")
+    (synopsis
+     "Discontinuous Hamiltonian Monte Carlo with Varying Trajectory Length")
+    (description
+     "Hamiltonian Monte Carlo for both continuous and discontinuous posterior
+distributions with customisable trajectory length termination criterion.  See
+Nishimura et al. (2020) <doi:10.1093/biomet/asz083> for the original
+Discontinuous Hamiltonian Monte Carlo, Hoffman et al. (2014)
+<doi:10.48550/@code{arXiv.1111.4246>} and Betancourt (2016)
+<doi:10.48550/@code{arXiv.1601.00225>} for the definition of possible
+Hamiltonian Monte Carlo termination criteria.")
+    (license license:expat)))
+
 (define-public r-xdcclarge
   (package
     (name "r-xdcclarge")

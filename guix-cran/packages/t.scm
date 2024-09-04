@@ -229,6 +229,30 @@ ensemble model in sl3', available for download from @code{GitHub} using
 remotes::install_github(\"tlverse/sl3\")'.")
     (license license:expat)))
 
+(define-public r-tww
+  (package
+    (name "r-tww")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TWW" version))
+       (sha256
+        (base32 "1i3blld1irp5j6i2dgafxg1f9g08g62ml3ybbx5z6fds1z97yhng"))))
+    (properties `((upstream-name . "TWW")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=TWW")
+    (synopsis "Growth Models")
+    (description
+     "This package provides a model for the growth of self-limiting populations using
+three, four, or five parameter functions, which have wide applications in a
+variety of fields.  The dependent variable in a dynamical modeling could be the
+population size at time x, where x is the independent variable.  In the analysis
+of quantitative polymerase chain reaction (@code{qPCR}), the dependent variable
+would be the fluorescence intensity and the independent variable the cycle
+number.  This package then would calculate the TWW cycle threshold.")
+    (license license:gpl3)))
+
 (define-public r-twoxtwo
   (package
     (name "r-twoxtwo")
@@ -7028,13 +7052,13 @@ data.")
 (define-public r-treedist
   (package
     (name "r-treedist")
-    (version "2.8.0")
+    (version "2.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TreeDist" version))
        (sha256
-        (base32 "1l8clk5b4fivinxjr0amd0kcwa2bg4mb4cjk8f9cxhbp2kk78kr0"))))
+        (base32 "0fa5l0nyb8z8yvjv9m2qfdiqqcrmwsrkgz7mjbv784mraly3hi7q"))))
     (properties `((upstream-name . "TreeDist")))
     (build-system r-build-system)
     (inputs (list pandoc))
@@ -7481,6 +7505,39 @@ models; and plot, evaluate, and compare markers.  Please see the reference Janes
 H, Brown MD, Huang Y, et al. (2014) <doi:10.1515/ijb-2012-0052> for further
 details.")
     (license license:gpl3)))
+
+(define-public r-treatmentpatterns
+  (package
+    (name "r-treatmentpatterns")
+    (version "2.6.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TreatmentPatterns" version))
+       (sha256
+        (base32 "11fh2c53v286y5v2hh6w9vkbhf50fr7lyi0b75wapxi19kn3yxak"))))
+    (properties `((upstream-name . "TreatmentPatterns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-sunburstr
+                             r-stringr
+                             r-shinydashboard
+                             r-shiny
+                             r-r6
+                             r-networkd3
+                             r-htmlwidgets
+                             r-dplyr
+                             r-checkmate
+                             r-andromeda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/darwin-eu/TreatmentPatterns")
+    (synopsis
+     "Analyzes Real-World Treatment Patterns of a Study Population of Interest")
+    (description
+     "Computes treatment patterns within a given cohort using the Observational
+Medical Outcomes Partnership (OMOP) common data model (CDM).  As described in
+Markus, Verhamme, Kors, and Rijnbeek (2022) <doi:10.1016/j.cmpb.2022.107081>.")
+    (license license:asl2.0)))
 
 (define-public r-treasury
   (package
@@ -15450,13 +15507,13 @@ package.")
 (define-public r-tidyquant
   (package
     (name "r-tidyquant")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyquant" version))
        (sha256
-        (base32 "0ysh91phdpi311ck54m1parfd1rp9q23w75q59673zkhnvzvczyl"))))
+        (base32 "1caazsqwf505i7anhn8cr48c8x26msvg4bwpj3i412b8rim25xx7"))))
     (properties `((upstream-name . "tidyquant")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21940,13 +21997,13 @@ functionalities related to missingness are also supported.")
 (define-public r-tensorevd
   (package
     (name "r-tensorevd")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorEVD" version))
        (sha256
-        (base32 "0gqcnigv5hwp955q21ms7xgn30926yqi8bg8vnc409jp9mz5km8a"))))
+        (base32 "0gzl02y4zwirlk07b7aavrz17djk5qqbgsfsh00qbj8zisf6fjkk"))))
     (properties `((upstream-name . "tensorEVD")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))

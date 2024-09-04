@@ -5461,6 +5461,38 @@ background information, refer to following publications: Jingjing Deng (2015)
 <doi:10.7171/jbt.16-2702-002>.")
     (license license:gpl2)))
 
+(define-public r-prosportsdraftdata
+  (package
+    (name "r-prosportsdraftdata")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ProSportsDraftData" version))
+       (sha256
+        (base32 "0x5f0gz8cigrlpla3bf7vpwn8ndmmd49crb2m3g27zv2hn5b850r"))))
+    (properties `((upstream-name . "ProSportsDraftData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Ginsburg1/ProSportsDraftData")
+    (synopsis "Professional Sports Draft Data")
+    (description
+     "We provide comprehensive draft data for major professional sports leagues,
+including the National Football League (NFL), National Basketball Association
+(NBA), and National Hockey League (NHL).  It offers access to both historical
+and current draft data, allowing for detailed analysis and research on player
+biases and player performance.  The package is useful for sports fans and
+researchers interested in identifying biases and trends within scouting reports.
+ Created by web scraping data from leading websites that cover professional
+sports player scouting reports, the package allows users to filter and summarize
+data for analytical purposes.  For further details on the methods used, please
+refer to Wickham (2022) \"rvest: Easily Harvest (Scrape) Web Pages\"
+<https://CRAN.R-project.org/package=rvest> and Harrison (2023) \"RSelenium: R
+Bindings for Selenium @code{WebDriver}\"
+<https://CRAN.R-project.org/package=RSelenium>.")
+    (license license:gpl3)))
+
 (define-public r-prosper
   (package
     (name "r-prosper")
@@ -15070,6 +15102,46 @@ the package also includes utilities to manipulate standard allele count data
 (e.g., stored in @code{TreeMix}', @code{BayPass} or @code{SelEstim} format).")
     (license license:gpl2+)))
 
+(define-public r-pooledpeaks
+  (package
+    (name "r-pooledpeaks")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pooledpeaks" version))
+       (sha256
+        (base32 "01djsklh6bxalzwgiz02dw7k4hd6w0g6l9kvf2k3vb0kay38plx4"))))
+    (properties `((upstream-name . "pooledpeaks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-qpdf
+                             r-pdftools
+                             r-magrittr
+                             r-fragman
+                             r-dplyr
+                             r-ape))
+    (home-page "https://github.com/kmkuesters/pooledpeaks")
+    (synopsis "Genetic Analysis of Pooled Samples")
+    (description
+     "Analyzing genetic data obtained from pooled samples.  This package can read in
+Fragment Analysis output files, process the data, and score peaks, as well as
+facilitate various analyses, including cluster analysis, calculation of genetic
+distances and diversity indices, as well as bootstrap resampling for statistical
+inference.  Specifically tailored to handle genetic data efficiently,
+researchers can explore population structure, genetic differentiation, and
+genetic relatedness among samples.  We updated some functions from
+Covarrubias-Pazaran et al. (2016) <doi:10.1186/s12863-016-0365-6> to allow for
+the use of new file formats and referenced the following to write our genetic
+analysis functions: Long et al. (2022) <doi:10.1038/s41598-022-04776-0>, Jost
+(2008) <doi:10.1111/j.1365-294x.2008.03887.x>, Nei (1973)
+<doi:10.1073/pnas.70.12.3321>, Foulley et al. (2006)
+<doi:10.1016/j.livprodsci.2005.10.021>, Chao et al. (2008)
+<doi:10.1111/j.1541-0420.2008.01010.x>.")
+    (license license:gpl3+)))
+
 (define-public r-pooledmeangroup
   (package
     (name "r-pooledmeangroup")
@@ -18551,13 +18623,13 @@ functions to retrieve neighbouring pluscodes'.")
 (define-public r-plume
   (package
     (name "r-plume")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plume" version))
        (sha256
-        (base32 "00czlz71wwj77kxppxrfvsgi23g71h5r4xbdsadqjr8jidcplhch"))))
+        (base32 "1zl3mbi6igv3wirg6zjil1l36vlja1h964v6kwh7ma97mfrdh1km"))))
     (properties `((upstream-name . "plume")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -19167,13 +19239,13 @@ color space based tools to modify colors or palettes.")
 (define-public r-plottools
   (package
     (name "r-plottools")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PlotTools" version))
        (sha256
-        (base32 "1mm3cs1bgs4xscmk1k8nxq9zxddzj486fx4xnsmrc5mbr34ikgkg"))))
+        (base32 "1pf04nci0kz2f2d8xxkw72zmfypz80zq86fii3pnqhsv6d1pk800"))))
     (properties `((upstream-name . "PlotTools")))
     (build-system r-build-system)
     (home-page "https://ms609.github.io/PlotTools/")
@@ -25015,13 +25087,13 @@ is described in preprint by FertÃ© et al. (2020)
 (define-public r-pheval
   (package
     (name "r-pheval")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PHeval" version))
        (sha256
-        (base32 "1nmdfxzpqq2w6pfzxc0dkx6c2acdssvg8rpy1dv68mb5zgp64rav"))))
+        (base32 "1xr525f9v1py61kmv9n50dy89f7nc6mvdb0gqab23frn21f4bawv"))))
     (properties `((upstream-name . "PHeval")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-mvtnorm))
@@ -33301,6 +33373,41 @@ profiles to identify cancer-specific dysfunction pathways, which can be a
 biomarker of prognostic and predictive for cancer immunotherapy.")
     (license license:gpl2+)))
 
+(define-public r-pathwayspace
+  (package
+    (name "r-pathwayspace")
+    (version "0.99.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PathwaySpace" version))
+       (sha256
+        (base32 "1wfml9krib7x0l4016hsn5n8s2p9v9v3sh7kfk0c4da5czsc52i0"))))
+    (properties `((upstream-name . "PathwaySpace")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales
+                             r-rgraphspace
+                             r-rann
+                             r-igraph
+                             r-ggrepel
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/sysbiolab/PathwaySpace")
+    (synopsis "Spatial Projection of Network Signals along Geodesic Paths")
+    (description
+     "For a given graph containing vertices, edges, and a signal associated with the
+vertices, the @code{PathwaySpace} package performs a convolution operation,
+which involves a weighted combination of neighboring vertices and their
+associated signals.  The package then uses a decay function to project these
+signals, creating geodesic paths on a 2D-image space. @code{PathwaySpace} could
+have various applications, such as visualizing and analyzing network data in a
+graphical format that highlights the relationships and signal strengths between
+vertices.  It can be particularly useful for understanding the influence of
+signals through complex networks.  By combining graph theory, signal processing,
+and visualization, the @code{PathwaySpace} package provides a novel way of
+representing and analyzing graph data.")
+    (license license:artistic2.0)))
+
 (define-public r-pathviewr
   (package
     (name "r-pathviewr")
@@ -37018,6 +37125,28 @@ Telford (2016) <doi:10.5194/cp-12-1215-2016>.  Age-depth models with generalized
 mixed-effect regression from Heegaard et al (2005)
 <doi:10.1191/0959683605hl836rr> are also included.")
     (license license:gpl3)))
+
+(define-public r-pakret
+  (package
+    (name "r-pakret")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pakret" version))
+       (sha256
+        (base32 "0mky2nrb6jrfjda1ds81qjmvj5fcl94qaq5idnm08llssy6zjnv8"))))
+    (properties `((upstream-name . "pakret")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr r-rmarkdown r-readr r-knitr))
+    (home-page "https://arnaudgallou.github.io/pakret/")
+    (synopsis "Cite 'R' Packages on the Fly in 'R Markdown' and 'Quarto'")
+    (description
+     "References and cites R and R packages on the fly in R Markdown and Quarto'.
+pakret provides a minimalistic API that generates preformatted citations of R
+and R packages, and adds their reference to a .bib file directly from within
+your document.")
+    (license license:gpl3+)))
 
 (define-public r-pakpmics2018mn
   (package

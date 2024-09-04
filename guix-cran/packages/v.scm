@@ -4923,13 +4923,13 @@ input number.")
 (define-public r-verbalisr
   (package
     (name "r-verbalisr")
-    (version "0.6.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "verbalisr" version))
        (sha256
-        (base32 "1i324dmcbm9pgkmb0v21x3z89vvb6805ziq059xf49p3m6m3ad8s"))))
+        (base32 "0xkqz3hbxp885bsxxiqh0a240745wi13f6kqvxfb5jgacmbpwyi7"))))
     (properties `((upstream-name . "verbalisr")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-pedtools))

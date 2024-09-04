@@ -5422,13 +5422,13 @@ using either lmer in the lme4 package or lme in the nlme package.")
 (define-public r-hlatools
   (package
     (name "r-hlatools")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HLAtools" version))
        (sha256
-        (base32 "0nx2vd2xa5bz5b5pl6vx798ma0109rxyl6gjx5iw12ylh02k9bgq"))))
+        (base32 "1sy8zxdb90av9fy06gx2c7pj66w1s1kyy4i7ndq3nx0305bl3b2m"))))
     (properties `((upstream-name . "HLAtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun
@@ -7335,13 +7335,13 @@ spectrum.")
 (define-public r-hhsmm
   (package
     (name "r-hhsmm")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhsmm" version))
        (sha256
-        (base32 "15lqb4k8q0c9w2fi03ndrzs5vdnh7r5wa4ifpzqvggw5vrnfmfy8"))))
+        (base32 "0bgkvqfg2a9fj7gba728m1w6r94krhb380xdkw1rb9478wj72dsj"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -9782,13 +9782,13 @@ elastic net methods.")
 (define-public r-hdtsa
   (package
     (name "r-hdtsa")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDTSA" version))
        (sha256
-        (base32 "1syrqygfdr12sd32wq2ab0gibwbljlbrwzzkfnmhgh8js9dxv6j8"))))
+        (base32 "1jsrzyxlcaz5l8zq9hxd7hf1kgs4lvq13z78lhmq68z9vxlln38j"))))
     (properties `((upstream-name . "HDTSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -12242,17 +12242,18 @@ including most of the delicious Cantonese cuisine.")
 (define-public r-happign
   (package
     (name "r-happign")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "happign" version))
        (sha256
-        (base32 "0mg3w5djg0hg8x1826kqj3b75zyhibcpxrh5sp6w17pmamfif9a4"))))
+        (base32 "05lcl8r63f8rjzjs8bgl3n97lh73hnwaw7r4i0hz4qc68fxggn1r"))))
     (properties `((upstream-name . "happign")))
     (build-system r-build-system)
     (inputs (list sqlite proj geos gdal))
-    (propagated-inputs (list r-xml2
+    (propagated-inputs (list r-yyjsonr
+                             r-xml2
                              r-terra
                              r-sf
                              r-jsonlite

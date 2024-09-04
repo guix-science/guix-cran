@@ -9327,13 +9327,13 @@ Issue 13, 4099-4101.")
 (define-public r-apci
   (package
     (name "r-apci")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APCI" version))
        (sha256
-        (base32 "1a3ghbxsvlq3z8nk6xr5jvmpxala9axfm3wd8i6mhjbsfyq8ijv6"))))
+        (base32 "0d1blmybqp1srgnjn2n3v9i4rz0k7r4p0mcg35kjqsny2firignl"))))
     (properties `((upstream-name . "APCI")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -9884,6 +9884,30 @@ for the S4 class system and two alternative new implementations.  One is an
 experimental version built around S4 and the other one makes it more convenient
 to work with lists as objects.")
     (license license:expat)))
+
+(define-public r-aoboot
+  (package
+    (name "r-aoboot")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AOboot" version))
+       (sha256
+        (base32 "187kfm9sq0afc4086sw4rsyfq7zbhyqg2cmvx5x0iq38w2v2x5dr"))))
+    (properties `((upstream-name . "AOboot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lsr r-emmeans r-cardata r-afex))
+    (home-page "https://cran.r-project.org/package=AOboot")
+    (synopsis "Bootstrapping in Different One-Way and Two-Way ANOVA")
+    (description
+     "To address the violation of the assumption of normally distributed variables,
+researchers frequently employ bootstrapping.  Building upon established packages
+for R (Sigmann et al. (2024) <doi:10.32614/CRAN.package.afex>, Lenth (2024)
+<doi:10.32614/CRAN.package.emmeans>), we provide bootstrapping functions to
+approximate a normal distribution of the parameter estimates for
+between-subject, within-subject, and mixed one-way and two-way ANOVA.")
+    (license license:gpl2+)))
 
 (define-public r-ao
   (package
@@ -12836,13 +12860,13 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
 (define-public r-amadeus
   (package
     (name "r-amadeus")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "amadeus" version))
        (sha256
-        (base32 "0qjf0qnnfn957whj14nkq1f0qp2c04zbsgl2bx7qzypndlbi3397"))))
+        (base32 "08wzcmg1dcl1a2fkbs10asm1kcp9liyw8749xp0bfxfym0sagrxx"))))
     (properties `((upstream-name . "amadeus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12866,7 +12890,7 @@ described in the Llambrich et al. (2021) <doi:10.1093/bioinformatics/btab591>.")
                              r-collapse
                              r-archive))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://github.com/NIEHS/amadeus")
+    (home-page "https://niehs.github.io/amadeus/")
     (synopsis "Accessing and Analyzing Large-Scale Environmental Data")
     (description
      "This package provides functions are designed to facilitate access to and utility
@@ -12915,13 +12939,13 @@ optimized library with core algorithms written in C++.")
 (define-public r-altr2
   (package
     (name "r-altr2")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "altR2" version))
        (sha256
-        (base32 "15nvbq3n76p2857ipyf3q6rs2mwjqsp9gr3rmzbjfm8lrj0faxsv"))))
+        (base32 "1whs3zqccyayv0slsd8bzfkp26q2shkdz7l7ickfxc3wnar8nrwa"))))
     (properties `((upstream-name . "altR2")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr r-gsl))
@@ -12931,7 +12955,7 @@ optimized library with core algorithms written in C++.")
      "This package provides alternatives to the normal adjusted R-squared estimator
 for the estimation of the multiple squared correlation in regression models, as
 fitted by the lm() function.  The alternative estimators are described in Karch
-(2016) <DOI:10.31234/osf.io/v8dz5>.")
+(2020) <DOI:10.1525/collabra.343>.")
     (license license:gpl2)))
 
 (define-public r-altopt
@@ -13552,13 +13576,13 @@ models, helping to select the best model.")
 (define-public r-alone
   (package
     (name "r-alone")
-    (version "0.4")
+    (version "0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "alone" version))
        (sha256
-        (base32 "1smfn3b1lcbccsi41548pr6yyld9nh74apxp54yad5ga20r68462"))))
+        (base32 "0iwamh7sxq62rw5vlkfh9fjlj6mwz7fbpd3cbmqb1iw1l6yc8b9c"))))
     (properties `((upstream-name . "alone")))
     (build-system r-build-system)
     (home-page "https://github.com/doehm/alone")
@@ -18376,13 +18400,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "01vawhabsj09zf8126wfyawp3likf2i0k7micwjdmll33ykl8254"))))
+        (base32 "1dh1bgzq5z3xjcxwy6szkf5rh4pfvj2ynw7yrz7llbc3rvczr1kx"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))
@@ -19475,25 +19499,30 @@ autocorrelation.  The package is described in Jombart et al (2010)
 (define-public r-adelie
   (package
     (name "r-adelie")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adelie" version))
        (sha256
-        (base32 "1h6i2swda173mfilib8cg535w4ba1yciliy071brazhh4r9zcm8m"))))
+        (base32 "10sjpdp990jhzypkyywywl3hqrwnp0srdn2zgijm5g80w1420s52"))))
     (properties `((upstream-name . "adelie")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcppeigen r-rcpp r-r2r r-matrix))
+    (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-r2r r-matrix))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/JamesYang007/adelie-r")
-    (synopsis "Fast and Flexible Group Elastic Net Solver")
+    (synopsis
+     "Group Lasso and Elastic Net Solver for Generalized Linear Models")
     (description
-     "R bindings for the Python package adelie'.  These bindings offer a general
-purpose group elastic net solver, a wide range of matrix classes that can
-exploit special structure to allow large-scale inputs, and an assortment of
+     "Extremely efficient procedures for fitting the entire group lasso and group
+elastic net regularization path for GLMs, multinomial, the Cox model and
+multi-task Gaussian models.  Similar to the R package glmnet in scope of models,
+and in computational speed.  This package provides R bindings to the C++ code
+underlying the corresponding Python package adelie'.  These bindings offer a
+general purpose group elastic net solver, a wide range of matrix classes that
+can exploit special structure to allow large-scale inputs, and an assortment of
 generalized linear model classes for fitting various types of data.  The package
-is an implementation of Yang, J. and Hastie, T. (2024)
+includes The package is an implementation of Yang, J. and Hastie, T. (2024)
 <doi:10.48550/@code{arXiv.2405.08631>}.")
     (license license:expat)))
 

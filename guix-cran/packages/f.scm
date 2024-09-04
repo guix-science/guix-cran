@@ -8241,13 +8241,13 @@ format similar to shiny', form validation and more.")
 (define-public r-folio
   (package
     (name "r-folio")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "folio" version))
        (sha256
-        (base32 "1ny0psm4awdf6jk9dnd15w2706rl99smpacydy106f252qmqm79m"))))
+        (base32 "1hrw0bf6nmid40cr9pzqmrv3libc1y8dka2g2ax7ma0msccqx57p"))))
     (properties `((upstream-name . "folio")))
     (build-system r-build-system)
     (home-page "https://packages.tesselle.org/folio/")
@@ -8355,30 +8355,6 @@ algorithm based on the measure of conditional dependence.  For more information,
 see the paper: Azadkia and Chatterjee (2019),\"A simple measure of conditional
 dependence\" <@code{arXiv:1910.12327>}.")
     (license license:gpl3)))
-
-(define-public r-fntl
-  (package
-    (name "r-fntl")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fntl" version))
-       (sha256
-        (base32 "1980zwx8dspc704qcywwyyk9ma6p698b7in9x0b4xs6yg2srziz8"))))
-    (properties `((upstream-name . "fntl")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
-    (native-inputs (list r-quarto))
-    (home-page "https://github.com/andrewraim/fntl")
-    (synopsis "Numerical Tools for 'Rcpp' and Lambda Functions")
-    (description
-     "This package provides a C++ API for routinely used numerical tools such as
-integration, root-finding, and optimization, where function arguments are given
-as lambdas.  This facilitates Rcpp programming, enabling the development of
-R'-like code in C++ where functions can be defined on the fly and use variables
-in the surrounding environment.")
-    (license license:expat)))
 
 (define-public r-fnr
   (package
@@ -14053,13 +14029,13 @@ convenient file sharing on the web.")
 (define-public r-filearray
   (package
     (name "r-filearray")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "filearray" version))
        (sha256
-        (base32 "06f209qvmhpj36xdxiqds5kpvxhac2mr7lci80i4bqik1brxpv17"))))
+        (base32 "0z3sl2lg9nyfd45w0d19ni9a0x8iqr79j2jn9b05bkc6qsh1qc4g"))))
     (properties `((upstream-name . "filearray")))
     (build-system r-build-system)
     (propagated-inputs (list r-uuid r-rcpp r-fastmap r-digest r-bh))
@@ -16223,13 +16199,13 @@ from the actual target variable.  S. Chatterjee, A. S. Hadi (2006)
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.6.0")
+    (version "3.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "0d4r65aacxz9pzsxlzavl95j7v6qc2i86bc89439fdh2iwc4lyz9"))))
+        (base32 "0hiflcxh39v6jlnbd9gq59q4v3qkvkifmns7ihjidi9rdyplk72n"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender

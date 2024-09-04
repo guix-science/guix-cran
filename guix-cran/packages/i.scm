@@ -4559,22 +4559,20 @@ model/data set combination is close-to-linear or not.  See Bates and Watts
 (define-public r-ipeaplot
   (package
     (name "r-ipeaplot")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ipeaplot" version))
        (sha256
-        (base32 "0bhqgxx2jc8abn73slk2w0961d51kx0sj5cs8b3livp3idxdrl4l"))))
+        (base32 "1vkfb651m8cs5m8y8vid0h4khzmhadcvywrlsys2g7qx9qbmv0zn"))))
     (properties `((upstream-name . "ipeaplot")))
     (build-system r-build-system)
-    (propagated-inputs (list r-showtext
-                             r-scales
+    (propagated-inputs (list r-scales
                              r-rlang
                              r-paletteer
                              r-ggthemes
                              r-ggplot2
-                             r-extrafont
                              r-checkmate))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeadata-lab/ipeaplot")
@@ -6246,19 +6244,18 @@ wrappers to functions in the gstat and sp packages.")
 (define-public r-inti
   (package
     (name "r-inti")
-    (version "0.6.5")
+    (version "0.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "inti" version))
        (sha256
-        (base32 "1zbfxc34613r460mhln3qn4fsx999vi4qamf5c8pkjdwyd8nvvbz"))))
+        (base32 "1kznq589q3x1pfjwfhr41x37b3qdidxmh2h6kfszxj3d57j34skn"))))
     (properties `((upstream-name . "inti")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
                              r-stringr
-                             r-stringi
                              r-shiny
                              r-purrr
                              r-lme4
@@ -10122,16 +10119,17 @@ cohort.")
 (define-public r-incidence2
   (package
     (name "r-incidence2")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "incidence2" version))
        (sha256
-        (base32 "1zv31csmvfia8m1z1cql17my5xvnhfjc6647g0f4bpcba33vqk9i"))))
+        (base32 "01ydgnbal5y7b85smqf27qksbz9p9jqb1185l1s3f9x90064y3dk"))))
     (properties `((upstream-name . "incidence2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-vctrs
+    (propagated-inputs (list r-ympes
+                             r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-tibble
@@ -10446,6 +10444,51 @@ using the algorithm of Sharma et al. (2017) <doi:10.13140/RG.2.2.33786.62407>.")
 models.")
     (license license:gpl2+)))
 
+(define-public r-imt
+  (package
+    (name "r-imt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "imt" version))
+       (sha256
+        (base32 "0adx632v7nz9pjpl0gzc9d7h1isabv7qnlwm28wrkp1fvr36h38a"))))
+    (properties `((upstream-name . "imt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vizdraws
+                             r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stanheaders
+                             r-scales
+                             r-rstantools
+                             r-rstan
+                             r-rlang
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-magrittr
+                             r-glue
+                             r-ggplot2
+                             r-dplyr
+                             r-caret
+                             r-bh
+                             r-bayesplot))
+    (home-page "https://github.com/google/imt")
+    (synopsis "Impact Measurement Toolkit")
+    (description
+     "This package provides a toolkit for causal inference in experimental and
+observational studies.  Implements various simple Bayesian models including
+linear, negative binomial, and logistic regression for impact estimation.
+Provides functionality for randomization and checking baseline equivalence in
+experimental designs.  The package aims to simplify the process of impact
+measurement for researchers and analysts across different fields.  Examples and
+detailed usage instructions are available at <https://book.martinez.fyi>.")
+    (license license:asl2.0)))
+
 (define-public r-imsig
   (package
     (name "r-imsig")
@@ -10475,15 +10518,16 @@ abundances using gene expression data.")
 (define-public r-imrmc
   (package
     (name "r-imrmc")
-    (version "2.0.0")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iMRMC" version))
        (sha256
-        (base32 "13dz307rqyf9pm6pc8qzx2r8whvcm8k53pryzxh10pyqdswy8wgm"))))
+        (base32 "19shm3fcflhk223a520g38adkcslaifyf4nxa1bkpws1qxshk03x"))))
     (properties `((upstream-name . "iMRMC")))
     (build-system r-build-system)
+    (propagated-inputs (list r-matrix))
     (home-page "https://github.com/DIDSR/iMRMC")
     (synopsis
      "Multi-Reader, Multi-Case Analysis Methods (ROC, Agreement, and Other Metrics)")

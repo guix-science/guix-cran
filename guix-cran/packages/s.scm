@@ -2994,13 +2994,13 @@ The algorithm is implemented following the work of BÃ©gin and Boudreault (2021
 (define-public r-svd
   (package
     (name "r-svd")
-    (version "0.5.5")
+    (version "0.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svd" version))
        (sha256
-        (base32 "1ilcz7qjykawrd0r74k51f7xryy6d30dmf7zzpbwga6i99wkj0g2"))))
+        (base32 "02gw8avdi2n0kvw3jnzb3813dvabq13dwzp1m475q5dxyl3szqkp"))))
     (properties `((upstream-name . "svd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -4722,19 +4722,18 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.23.0")
+    (version "1.23.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "1xqcm71mfmk3x8kq9sb66a4654c1vblpjz4may4xn7yh62nbcy2n"))))
+        (base32 "1y2m2ia287vz8gapriwxzihxhj5kag50yf0wskmsd074gwph65a4"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
                              r-spatstat-geom
                              r-sp
-                             r-rcpp
                              r-polycub
                              r-nlme
                              r-matrix
@@ -7698,6 +7697,30 @@ structural changes can be estimated together with confidence intervals, and
 their magnitude as well as the model fit can be evaluated using a variety of
 statistical measures.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-strs
+  (package
+    (name "r-strs")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "strs" version))
+       (sha256
+        (base32 "072abw4am93h51zd4yi48fprvgg61rzif259i1150aav2n43aklw"))))
+    (properties `((upstream-name . "strs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (home-page "https://github.com/pythonicr/strs")
+    (synopsis "'Python' Style String Functions")
+    (description
+     "This package provides a comprehensive set of string manipulation functions based
+on those found in Python without relying on reticulate'.  It provides functions
+that intend to (1) make it easier for users familiar with Python to work with
+strings, (2) reduce the complexity often associated with string operations, (3)
+and enable users to write more readable and maintainable code that manipulates
+strings.")
+    (license license:expat)))
 
 (define-public r-stroupglmm
   (package
@@ -33173,13 +33196,13 @@ testing sample.")
 (define-public r-skmeans
   (package
     (name "r-skmeans")
-    (version "0.2-16")
+    (version "0.2-17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "skmeans" version))
        (sha256
-        (base32 "0rigfkjq41ivj2hz35rqak23mmzyz15ic5izzkm3vxbwhsmk9ars"))))
+        (base32 "0686i48xpcis3m4352lhygff15j5dvd91f7q7dfkkbsnasl17ivw"))))
     (properties `((upstream-name . "skmeans")))
     (build-system r-build-system)
     (propagated-inputs (list r-slam r-cluster r-clue))
@@ -33548,16 +33571,18 @@ a P-P plot and a tail plot.")
 (define-public r-sketchy
   (package
     (name "r-sketchy")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sketchy" version))
        (sha256
-        (base32 "1vr3vwzbm1k1g05wxdv0y543zn1fspprr121i8pxqmgbyhcs1i65"))))
+        (base32 "090gsly8ih3k8c6vbs32ikwd5j5l906mwj3xfbpa1mr2pdpg7sxd"))))
     (properties `((upstream-name . "sketchy")))
     (build-system r-build-system)
     (propagated-inputs (list r-xaringanextra
+                             r-urlchecker
+                             r-stringr
                              r-stringi
                              r-rmarkdown
                              r-remotes
@@ -38197,13 +38222,13 @@ facilitate communicating the simulation setup.")
 (define-public r-simdag
   (package
     (name "r-simdag")
-    (version "0.1.2")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simDAG" version))
        (sha256
-        (base32 "18zbqpvndblrqmdz7hsbc0kf1w8v6a75z4x9yr95f3saazirrj6p"))))
+        (base32 "160q8f65na8kbl3069hrjapz8cb9f1kk5kxp7928756jkak7ifvq"))))
     (properties `((upstream-name . "simDAG")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rfast r-igraph r-data-table))
@@ -52083,6 +52108,45 @@ Tabulation Model (SDTM) datasets.  These checks are intended to be
 generalizable, actionable, and meaningful for analysis.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-sdtm-oak
+  (package
+    (name "r-sdtm-oak")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sdtm.oak" version))
+       (sha256
+        (base32 "0sldjys6aam6kg3jq2sz6m3i71k5hf1ydhxmfmg9kdk5hmnf7f1j"))))
+    (properties `((upstream-name . "sdtm.oak")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-pillar
+                             r-dplyr
+                             r-cli
+                             r-assertthat
+                             r-admiraldev))
+    (native-inputs (list r-knitr))
+    (home-page "https://pharmaverse.github.io/sdtm.oak/")
+    (synopsis "SDTM Data Transformation Engine")
+    (description
+     "An Electronic Data Capture system (EDC) and Data Standard agnostic solution that
+enables the pharmaceutical programming community to develop Clinical Data
+Interchange Standards Consortium (CDISC) Study Data Tabulation Model (SDTM)
+datasets in R. The reusable algorithms concept in sdtm.oak provides a framework
+for modular programming and can potentially automate the conversion of raw
+clinical data to SDTM through standardized SDTM specifications.  SDTM is one of
+the required standards for data submission to the Food and Drug Administration
+(FDA) in the United States and Pharmaceuticals and Medical Devices Agency (PMDA)
+in Japan.  SDTM standards are implemented following the SDTM Implementation
+Guide as defined by CDISC <https://www.cdisc.org/standards/foundational/sdtmig>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-sdt
   (package
     (name "r-sdt")
@@ -58446,46 +58510,43 @@ a network.")
 (define-public r-saros
   (package
     (name "r-saros")
-    (version "1.0.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saros" version))
        (sha256
-        (base32 "1b43hzvhagv43g7p2xqzk3ay3ylph41l4d69zm7hvbq6sdm69s27"))))
+        (base32 "03ignw4ah05nkfkck1dn6ghy13d892dy4sw6h8ijn2lmkxbjlgkm"))))
     (properties `((upstream-name . "saros")))
     (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-vctrs
+    (propagated-inputs (list r-vctrs
                              r-tidyselect
                              r-tidyr
                              r-stringi
-                             r-rvest
-                             r-rstudioapi
                              r-rlang
                              r-officer
                              r-mschart
+                             r-lifecycle
                              r-glue
                              r-ggplot2
                              r-ggiraph
                              r-fs
                              r-forcats
                              r-dplyr
-                             r-clipr
-                             r-cli
-                             r-bcrypt))
+                             r-cli))
     (home-page "https://nifu-no.github.io/saros/")
     (synopsis "Semi-Automatic Reporting of Ordinary Surveys")
     (description
-     "This package produces highly customized reports, primarily intended for survey
-research.  Building on Quarto (<https://quarto.org>), it generates draft
-chapters of all specified dependent/independent variables, which can be further
-edited by hand, containing figures, tables and analyses (currently only
-uni-/bivariate tests of equivalent means/proportions).  The feature
-mesos'-reports offer tailor-made batch report production where e.g. an
-institution can compare itself to all other participants.  Publication tools are
-also included, such as password generation for mesos'-report sections on a
-Quarto Website.")
+     "Offers a systematic way for conditional reporting of figures and tables for many
+(and bivariate combinations of) variables, typically from survey data.  Contains
+interactive ggiraph'-based (<https://CRAN.R-project.org/package=ggiraph>)
+plotting functions and data frame-based summary tables (bivariate significance
+tests, frequencies/proportions, unique open ended responses, etc) with many
+arguments for customization, and extensions possible.  Uses a global options()
+system for neatly reducing redundant code.  Also contains tools for immediate
+saving of objects and returning a hashed link to the object, useful for creating
+download links to high resolution images upon rendering in Quarto'.  Suitable
+for highly customized reports, primarily intended for survey research.")
     (license license:expat)))
 
 (define-public r-sarima

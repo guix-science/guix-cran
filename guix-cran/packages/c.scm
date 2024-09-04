@@ -570,13 +570,13 @@ be visualised with any appropriate graphics function in R.")
 (define-public r-cyclestreets
   (package
     (name "r-cyclestreets")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cyclestreets" version))
        (sha256
-        (base32 "0xrgwhlq670m109j27ln93zzq0wm8cfbkivd45v2rldxgvd50348"))))
+        (base32 "0sci6bg9xb7044sm41ycykdwah9rn4227m9140dx0rhbn60i1y7m"))))
     (properties `((upstream-name . "cyclestreets")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -4672,13 +4672,13 @@ Wikipedia; (<https://en.wikipedia.org/wiki/Classical_cipher>).")
 (define-public r-crypto2
   (package
     (name "r-crypto2")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crypto2" version))
        (sha256
-        (base32 "00ab8hnmfpw6r1q4ifylyga51ilij33p6g56xv5kh74w9g5slplw"))))
+        (base32 "06q8znxzw8ff28gk1jgihwdjg0cc0k7h9nnza3wnzcz6pibcd2rh"))))
     (properties `((upstream-name . "crypto2")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8155,13 +8155,13 @@ recommendations on the code.")
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpp11armadillo" version))
        (sha256
-        (base32 "1f6b42lwzag5rrqpgqm3vszc3gydipwjc7ww3waqzniidxszcz8b"))))
+        (base32 "1kd66cfmxgbh45358iy031hxxqcx4y4yrbc04sqlpjyqif31ja25"))))
     (properties `((upstream-name . "cpp11armadillo")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8170,7 +8170,8 @@ recommendations on the code.")
     (description
      "This package provides function declarations and inline function definitions that
 facilitate communication between R and the Armadillo C++ library for linear
-algebra and scientific computing.")
+algebra and scientific computing.  This implementation is detailed in Vargas
+Sepulveda and Schneider Malamud (2024) <doi:10.48550/@code{arXiv.2408.11074>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-cpp
@@ -12217,13 +12218,13 @@ endpoint data for both treatment and placebo groups.")
 (define-public r-corporaexplorer
   (package
     (name "r-corporaexplorer")
-    (version "0.8.6")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corporaexplorer" version))
        (sha256
-        (base32 "1d3a1dfch9fsgq0d3am3j4ygab9k1n7px3crwwr33f8n9r3vdwmp"))))
+        (base32 "1cr5jqdqyr22x31m1qgprdisybzg90s8fifg8c5dvvnmkv9ifp78"))))
     (properties `((upstream-name . "corporaexplorer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12251,13 +12252,11 @@ endpoint data for both treatment and placebo groups.")
     (description
      "Facilitates dynamic exploration of text collections through an intuitive
 graphical user interface and the power of regular expressions.  The package
-contains 1) a helper function to convert a data frame to a
-corporaexplorerobject', 2) a Shiny app for fast and flexible exploration of a
-corporaexplorerobject', and 3) a Shiny app for simple retrieval/extraction of
-documents from a corporaexplorerobject in a reading-friendly format.  The
-package also includes demo apps with which one can explore Jane Austen's novels
-and the State of the Union Addresses (data from the janeaustenr and sotu
-packages respectively).")
+contains 1) a helper function to convert a data frame to a corporaexplorerobject
+and 2) a Shiny app for fast and flexible exploration of a
+corporaexplorerobject'.  The package also includes demo apps with which one can
+explore Jane Austen's novels and the State of the Union Addresses (data from the
+janeaustenr and sotu packages respectively).")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -16001,6 +16000,36 @@ reconstructed trees from the generative tree, as analysed by Smith (2019)
 <doi:10.1098/rsbl.2018.0632>.")
     (license license:gpl2+)))
 
+(define-public r-congressdata
+  (package
+    (name "r-congressdata")
+    (version "1.5.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CongressData" version))
+       (sha256
+        (base32 "0hbsbszcwj81p2jnsh9k3ggnn2l0xvj0yk0c9fvqnlqhm07zm3l1"))))
+    (properties `((upstream-name . "CongressData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-fst
+                             r-dplyr
+                             r-curl))
+    (home-page "https://cran.r-project.org/package=CongressData")
+    (synopsis "Functional Tool for 'CongressData'")
+    (description
+     "This package provides a tool that imports, subsets, and exports the
+@code{CongressData} dataset. @code{CongressData} contains approximately 800
+variables concerning all US congressional districts with data back to 1789.  The
+dataset tracks district characteristics, members of Congress, and the political
+behavior of those members.  Users with only a basic understanding of R can
+subset this data across multiple dimensions, export their search results,
+identify the citations associated with their searches, and more.")
+    (license license:gpl3)))
+
 (define-public r-congress
   (package
     (name "r-congress")
@@ -17120,13 +17149,13 @@ using CSS flexbox.")
 (define-public r-condcopulas
   (package
     (name "r-condcopulas")
-    (version "0.1.3")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CondCopulas" version))
        (sha256
-        (base32 "0yfph755iwdmkf453jkcf71i25z1v604swh7ggbbdv2awsb4isd9"))))
+        (base32 "0ad7yapm0vv681d17wqrsvms5nma1wk6hl2ashhrpfzwlndadw0v"))))
     (properties `((upstream-name . "CondCopulas")))
     (build-system r-build-system)
     (propagated-inputs (list r-wdm
@@ -18366,13 +18395,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "0g0zkxrsmvqnzq261za7wqj26z1h2c9xjqy614crrrn28bb9my36"))))
+        (base32 "1szc3vwq3b5pxcz4vbb7vl89858wg2jxzkfrcdm2mdlvdalsq943"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -26829,6 +26858,43 @@ subset of patients/domains from the CDISC Pilot 01 study are also available as R
 datasets to demonstrate the package functionalities.")
     (license license:expat)))
 
+(define-public r-clintrialx
+  (package
+    (name "r-clintrialx")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "clintrialx" version))
+       (sha256
+        (base32 "1bzhw9mspxc45min7y0qa31iklahpq6i7c8v3n9m4fszb7xsyafs"))))
+    (properties `((upstream-name . "clintrialx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xfun
+                             r-tibble
+                             r-rpostgresql
+                             r-rmarkdown
+                             r-readr
+                             r-progress
+                             r-lubridate
+                             r-httr
+                             r-dplyr
+                             r-dbi))
+    (native-inputs (list r-knitr))
+    (home-page "http://www.indraneelchakraborty.com/clintrialx/")
+    (synopsis "Connect and Work with Clinical Trials Data Sources")
+    (description
+     "Are you spending too much time fetching and managing clinical trial data?
+Struggling with complex queries and bulk data extraction? What if you could
+simplify this process with just a few lines of code? Introducing clintrialx -
+Fetch clinical trial data from sources like @code{ClinicalTrials.gov}
+<https://clinicaltrials.gov/> and the Clinical Trials Transformation Initiative
+- Access to Aggregate Content of @code{ClinicalTrials.gov} database
+<https://aact.ctti-clinicaltrials.org/>, supporting pagination and bulk
+downloads.  Also, you can generate HTML reports based on the data obtained from
+the sources!")
+    (license license:asl2.0)))
+
 (define-public r-clintools
   (package
     (name "r-clintools")
@@ -28048,34 +28114,6 @@ dependencies but still look great, making them suitable for use a package
 vignettes or for sharing results via email.")
     (license license:expat)))
 
-(define-public r-cleanr
-  (package
-    (name "r-cleanr")
-    (version "1.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cleanr" version))
-       (sha256
-        (base32 "04rjl8q6hlmw4xc4p4khda6090d39dwig331fzjqiad3bs2xavdy"))))
-    (properties `((upstream-name . "cleanr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rprojroot r-pkgload r-fritools r-checkmate))
-    (native-inputs (list r-rasciidoc))
-    (home-page "https://gitlab.com/fvafrcu/cleanr")
-    (synopsis "Helps You to Code Cleaner")
-    (description
-     "Check your R code for some of the most common layout flaws.  Many tried to teach
-us how to write code less dreadful, be it implicitly as B. W. Kernighan and D.
-M. Ritchie (1988) <ISBN:0-13-110362-8> in The C Programming Language did, be it
-explicitly as R.C. Martin (2008) <ISBN:0-13-235088-2> in Clean Code: A Handbook
-of Agile Software Craftsmanship did.  So we should check our code for files too
-long or wide, functions with too many lines, too wide lines, too many arguments
-or too many levels of nesting.  Note: This is not a static code analyzer like
-pylint or the like.  Checkout <https://cran.r-project.org/package=lintr>
-instead.")
-    (license license:bsd-2)))
-
 (define-public r-cleannlp
   (package
     (name "r-cleannlp")
@@ -28758,16 +28796,22 @@ it! Type: citation(package=\"@code{cladoRcpp}\") to get the citation information
 (define-public r-claddis
   (package
     (name "r-claddis")
-    (version "0.6.3")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Claddis" version))
        (sha256
-        (base32 "0wq34n6vj5sdc22yf9p4g9iy8ssgr4kkrsr2ak4sqahadwgngl8i"))))
+        (base32 "1a5zfqv94bfk24g99r4yaqsydny0sl638zhm4k175xc250yraj7p"))))
     (properties `((upstream-name . "Claddis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-strap r-phytools r-geoscale r-clipr r-ape))
+    (propagated-inputs (list r-strap
+                             r-phytools
+                             r-partitions
+                             r-multicool
+                             r-geoscale
+                             r-clipr
+                             r-ape))
     (home-page "https://cran.r-project.org/package=Claddis")
     (synopsis "Measuring Morphological Diversity and Evolutionary Tempo")
     (description
@@ -28781,8 +28825,8 @@ character rates introduced across Lloyd et al. (2012)
 <doi:10.1111/j.1558-5646.2011.01460.x>, Brusatte et al. (2014)
 <doi:10.1016/j.cub.2014.08.034>, Close et al. (2015)
 <doi:10.1016/j.cub.2015.06.047>, and Lloyd (2016) <doi:10.1111/bij.12746>, and
-@code{MatrixDistances}(), which implements multiple discrete character distance
-metrics from Gower (1971) <doi:10.2307/2528823>, Wills (1998)
+calculate_morphological_distances(), which implements multiple discrete
+character distance metrics from Gower (1971) <doi:10.2307/2528823>, Wills (1998)
 <doi:10.1006/bijl.1998.0255>, Lloyd (2016) <doi:10.1111/bij.12746>, and Hopkins
 and St John (2018) <doi:10.1098/rspb.2018.1784>.  This also includes the GED
 correction from Lehmann et al. (2019) <doi:10.1111/pala.12430>.  Multiple
@@ -28796,7 +28840,9 @@ safe_taxonomic_reduction(), which implements Wilkinson (1995)
 <doi:10.1093/sysbio/44.4.501>, map_dollo_changes() implements the Dollo
 stochastic character mapping of Tarver et al. (2018) <doi:10.1093/gbe/evy096>,
 and estimate_ancestral_states() implements the ancestral state options of Lloyd
-(2018) <doi:10.1111/pala.12380>.")
+(2018) <doi:10.1111/pala.12380>.  calculate_tree_length() and
+reconstruct_ancestral_states() implements the generalised algorithms from
+Swofford and Maddison (1992; no doi).")
     (license license:gpl2+)))
 
 (define-public r-cla
@@ -37895,6 +37941,27 @@ automatically judge the type and distribution of the variables, and make
 statistical description and bivariate analysis.")
     (license license:gpl2)))
 
+(define-public r-cbbinom
+  (package
+    (name "r-cbbinom")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cbbinom" version))
+       (sha256
+        (base32 "0g6yn5zg4yijh24yjf4i8i2zx4brr8ppax44r8l7q22aq0c0mb0f"))))
+    (properties `((upstream-name . "cbbinom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://cran.r-project.org/package=cbbinom")
+    (synopsis "Continuous Analog of a Beta-Binomial Distribution")
+    (description
+     "Implementation of the d/p/q/r family of functions for a continuous analog to the
+standard discrete beta-binomial with continuous size parameter and continuous
+support with x in [0, size + 1].")
+    (license license:expat)))
+
 (define-public r-cbass
   (package
     (name "r-cbass")
@@ -40142,16 +40209,16 @@ by other packages (or your own code).")
 (define-public r-cartogramr
   (package
     (name "r-cartogramr")
-    (version "1.1-0")
+    (version "1.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cartogramR" version))
        (sha256
-        (base32 "1zyrfxknm6acrgc7k8yanqkbznp5nq41y0gdd99b5wrhp7w01qr8"))))
+        (base32 "16xa989hiaq17qgys14p68z2jdn79pyylzhnd5y5cqd43hiixkn0"))))
     (properties `((upstream-name . "cartogramR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-data-table))
+    (propagated-inputs (list r-sf r-data-table r-cleancall))
     (home-page "https://cran.r-project.org/package=cartogramR")
     (synopsis "Continuous Cartogram")
     (description
@@ -40703,22 +40770,23 @@ coefficients.  Both shrinkage as well as empirical estimators are available.")
 (define-public r-cardx
   (package
     (name "r-cardx")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cardx" version))
        (sha256
-        (base32 "1286hv6d1l6k0rsh996risdzbmby3z2szswvpl0vca5gb8a319ir"))))
+        (base32 "0p10sm10b4d7qnpn96yq4akvx3m5wrczg3zz12jlx8776x33m6vq"))))
     (properties `((upstream-name . "cardx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-cli
                              r-cards))
-    (home-page "https://github.com/insightsengineering/cardx")
+    (home-page "https://insightsengineering.github.io/cardx/")
     (synopsis "Extra Analysis Results Data Utilities")
     (description
      "Create extra Analysis Results Data (ARD) summary objects.  The package
@@ -40730,13 +40798,13 @@ re-used to construct summary tables, visualizations, and written reports.")
 (define-public r-cards
   (package
     (name "r-cards")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cards" version))
        (sha256
-        (base32 "1hikcd696f6i74nlqgkfi7nip99xw25pkqxxn78c5bawmxxfq15v"))))
+        (base32 "1sw4qic8p539lxx0rz3wy87k3jr06izdlwnvli41s8ij8yl4s124"))))
     (properties `((upstream-name . "cards")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

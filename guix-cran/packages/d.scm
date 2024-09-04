@@ -3067,13 +3067,13 @@ density) and random generation for discrete stable random variables.")
 (define-public r-dst
   (package
     (name "r-dst")
-    (version "1.7.1")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dst" version))
        (sha256
-        (base32 "0cxlzbcda5q1fqvcslm9bfy0la4mcy1s99yyf7r6yqd6svci47a3"))))
+        (base32 "1h91pz04cr9frnrnz7zdrn5lwhfsgfx1q9xk0wwifpzhkfy2h9ix"))))
     (properties `((upstream-name . "dst")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rlang r-matrix r-ggplot2 r-dplyr))
@@ -6112,6 +6112,38 @@ weights.")
 can be used for clustering of RNA methylation sequencing data.")
     (license license:gpl2+)))
 
+(define-public r-dpasurv
+  (package
+    (name "r-dpasurv")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dpasurv" version))
+       (sha256
+        (base32 "1dzlry0pr8i39ix0hnhg19fi00kz5jf2l568230mc1k6fv7fidbv"))))
+    (properties `((upstream-name . "dpasurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-timereg
+                             r-tidyr
+                             r-survival
+                             r-rlang
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "http://opensource.nibr.com/dpasurv/")
+    (synopsis
+     "Dynamic Path Analysis of Survival Data via Aalen's Additive Hazards Model")
+    (description
+     "Dynamic path analysis with estimation of the corresponding direct, indirect, and
+total effects, based on Fosen et al., (2006) <doi:10.1007/s10985-006-9004-2>.
+The main outcome of interest is a counting process from survival analysis (or
+recurrent events) data.  At each time of event, ordinary linear regression is
+used to estimate the relation between the covariates, while Aalen's additive
+hazard model is used for the regression of the counting process on the
+covariates.")
+    (license license:expat)))
+
 (define-public r-dparser
   (package
     (name "r-dparser")
@@ -6149,16 +6181,17 @@ The fastest parsing, of course, occurs at the C level, and is suggested.")
 (define-public r-doypacolors
   (package
     (name "r-doypacolors")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DOYPAColors" version))
        (sha256
-        (base32 "0d8xsnl910hmcvd38mqbdnl7nvx3y9f065y90dqq36pcqvrd57h1"))))
+        (base32 "0ranqbczq65gdqm0csanmphcnnqxkxm8jiw61f1z1cz3rb7bhd5n"))))
     (properties `((upstream-name . "DOYPAColors")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2))
+    (propagated-inputs (list r-gridextra r-ggplot2))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jmestret/DOYPAColors")
     (synopsis "Don't Overthink Your Palette of Colors")
     (description
@@ -10069,13 +10102,13 @@ name.")
 (define-public r-distrmod
   (package
     (name "r-distrmod")
-    (version "2.9.3")
+    (version "2.9.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrMod" version))
        (sha256
-        (base32 "1g8d89czawzcggy568wxhcl3l9k7yicaxhl9zfbfca6ymac4ywb7"))))
+        (base32 "15wjizl3kbv39ri3bnikrdzf61vbvfgq9r1vln8663y0da0sv7d8"))))
     (properties `((upstream-name . "distrMod")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -10247,13 +10280,13 @@ special computational programs.")
 (define-public r-distrex
   (package
     (name "r-distrex")
-    (version "2.9.3")
+    (version "2.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distrEx" version))
        (sha256
-        (base32 "03394f01wxzpk3by0yza3195dvvv4rcqyx6n63z2i2i8gdvlj42s"))))
+        (base32 "1zxw0ml9rs771n3zsxhv03hdyn1jb46zfrihy4ykdsnbbn8pj8g0"))))
     (properties `((upstream-name . "distrEx")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-distr))

@@ -9501,16 +9501,16 @@ error of the regression coeffcient (sescree); 8.  Nelson R2; 9.  Bartlett khi-2;
 (define-public r-nexus
   (package
     (name "r-nexus")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nexus" version))
        (sha256
-        (base32 "0dyhgd18kz7yfdziycxkmqb58zx99fr99wxp3dfjfxip537sx1sn"))))
+        (base32 "0288hjbw5xisrv1wsd2msl8i7migpw1yi2lnwh4cl5r42mn2wcj9"))))
     (properties `((upstream-name . "nexus")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mass r-isopleuros r-dimensio r-arkhe))
+    (propagated-inputs (list r-mass r-khroma r-isopleuros r-dimensio r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/nexus/")
     (synopsis "Sourcing Archaeological Materials by Chemical Composition")
@@ -13570,13 +13570,13 @@ feature selection.  Plot functions.  Automated feature selections.  Kosztyan et.
 (define-public r-ncvreg
   (package
     (name "r-ncvreg")
-    (version "3.14.2")
+    (version "3.14.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ncvreg" version))
        (sha256
-        (base32 "1hbidxb9f6ygvjkvcdr1b642akgz25kzamnav55snjny82fmfspv"))))
+        (base32 "0kisb28qb8vya2b77jacfy0y4vdf7krqps4761b27nh0a8ybbdgd"))))
     (properties `((upstream-name . "ncvreg")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

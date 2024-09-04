@@ -10,11 +10,11 @@
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
   #:use-module (gnu packages multiprecision)
+  #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages finance)
   #:use-module (gnu packages java)
-  #:use-module (gnu packages maths)
   #:use-module (gnu packages linux)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -111,13 +111,13 @@ regression, as per Gennings et al (2020) <doi:10.1016/j.envres.2020.109529>.")
 (define-public r-lwfbrook90r
   (package
     (name "r-lwfbrook90r")
-    (version "0.5.3")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LWFBrook90R" version))
        (sha256
-        (base32 "10fr3p6lgym5dlz92867yq1drv2ygx4nq8zkap5756khv0drf8za"))))
+        (base32 "1hh0b21czf1sib05y67x5qajkhig25b2mpxccj2hq69wkfdw2spz"))))
     (properties `((upstream-name . "LWFBrook90R")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegperiod
@@ -6147,6 +6147,49 @@ Pareto tail is also implemented.  See Bee, M. (2022)
 <doi:10.1007/s11634-022-00497-4>.")
     (license license:expat)))
 
+(define-public r-lnmixsurv
+  (package
+    (name "r-lnmixsurv")
+    (version "3.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lnmixsurv" version))
+       (sha256
+        (base32 "0ddjsnl8r5sk1jnf2kg6yh80qankfdjkfcwx9fjm2mm4yk8cf5bv"))))
+    (properties `((upstream-name . "lnmixsurv")))
+    (build-system r-build-system)
+    (inputs (list gsl))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rlang
+                             r-readr
+                             r-rcppparallel
+                             r-rcppgsl
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-posterior
+                             r-parsnip
+                             r-hardhat
+                             r-ggplot2
+                             r-generics
+                             r-dplyr
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://vivianalobo.github.io/lnmixsurv/")
+    (synopsis "Bayesian Mixture Log-Normal Survival Model")
+    (description
+     "Bayesian Survival models via the mixture of Log-Normal distribution extends the
+well-known survival models and accommodates different behaviour over time and
+considers higher censored survival times.  The proposal combines mixture
+distributions Fruhwirth-Schnatter(2006) <doi:10.1007/s11336-009-9121-4>, and
+data augmentation techniques Tanner and Wong (1987)
+<doi:10.1080/01621459.1987.10478458>.")
+    (license license:expat)))
+
 (define-public r-lnmcluster
   (package
     (name "r-lnmcluster")
@@ -7709,17 +7752,17 @@ In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
 (define-public r-literanger
   (package
     (name "r-literanger")
-    (version "0.0.2")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "literanger" version))
        (sha256
-        (base32 "0n39kr8gnps5vyifbafq736s05h939p7ys31s58zz3rg64k6l1bp"))))
+        (base32 "19y8vp1ggy7ndj3w4247m23b21k3693a1d3z524h6g6mykq27236"))))
     (properties `((upstream-name . "literanger")))
     (build-system r-build-system)
-    (propagated-inputs (list r-cpp11))
-    (home-page "https://github.com/stephematician/literanger")
+    (propagated-inputs (list r-rcereal r-cpp11))
+    (home-page "https://gitlab.com/stephematician/literanger")
     (synopsis "Random Forests for Multiple Imputation Based on 'ranger'")
     (description
      "An updated implementation of R package ranger by Wright et al, (2017)
@@ -10712,13 +10755,13 @@ gene/region.")
 (define-public r-lgrextra
   (package
     (name "r-lgrextra")
-    (version "0.0.8")
+    (version "0.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lgrExtra" version))
        (sha256
-        (base32 "19qg67mjq0n5zbrcfhjhxfwl1jlq11iblhczl3m22n2nplpi70q8"))))
+        (base32 "1qjm6pz7s2nhx78cgc9si2mfcrqimpv2i11gqiznfxcy6rq2n3lp"))))
     (properties `((upstream-name . "lgrExtra")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-lgr r-data-table))
@@ -15867,13 +15910,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landsepi" version))
        (sha256
-        (base32 "0hd4cvik5bfw2yjls4wxnzxq7ylcg69yz34ncj7c3zrg4agka1nm"))))
+        (base32 "1p194nqfpc50sspj75s63mzhjxpgx9v4mcnpkxz6sxhpf1lslpvx"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (inputs (list gsl))

@@ -3067,13 +3067,13 @@ trials with the objective of equivalence assessment.")
 (define-public r-bs4dash
   (package
     (name "r-bs4dash")
-    (version "2.3.3")
+    (version "2.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bs4Dash" version))
        (sha256
-        (base32 "1vhjrgy3344fgbqxadj16sncrgkkcy1xrg69nmjizn9s757gyvri"))))
+        (base32 "1swh87gx6qzkxqa9wf2x7f20pnpq94gm4dgvkhh3kwwz1gv9c2g2"))))
     (properties `((upstream-name . "bs4Dash")))
     (build-system r-build-system)
     (arguments
@@ -3102,7 +3102,7 @@ trials with the objective of equivalence assessment.")
                              r-fresh
                              r-bslib))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://rinterface.github.io/bs4Dash/index.html")
+    (home-page "https://github.com/RinteRface/bs4Dash")
     (synopsis "'Bootstrap 4' Version of 'shinydashboard'")
     (description
      "Make Bootstrap 4 Shiny dashboards.  Use the full power of @code{AdminLTE3}', a
@@ -5872,16 +5872,37 @@ for linear models with random effects and boxcoxtype() for logistic models with
 random effects.")
     (license license:gpl3+)))
 
+(define-public r-box-lsp
+  (package
+    (name "r-box-lsp")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "box.lsp" version))
+       (sha256
+        (base32 "04qi3iq41w1rxxk11rir2gas1l3iswd8qlsdphvqgz1gvln4cx16"))))
+    (properties `((upstream-name . "box.lsp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-fs r-cli r-box))
+    (home-page "https://github.com/Appsilon/box.lsp")
+    (synopsis "Provides 'box' Compatibility for 'languageserver'")
+    (description
+     "This package provides a box compatible custom language parser for the
+languageserver package to provide completion and signature hints in code
+editors.")
+    (license license:lgpl3+)))
+
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.3")
+    (version "0.10.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "1prd266h5bbzaqx4r0yz0rvcqslgdgxk1g686x83g5qrsz58blxa"))))
+        (base32 "0nnxhsj21a0yid4srf36kf46n721ql92rqra85i8ais1glwdbcj6"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlparsedata
@@ -11416,13 +11437,13 @@ algorithm described in TreviÃ±o (2015) <doi:10.1088/1742-5468/2015/02/P02003>.
 (define-public r-bipartited3
   (package
     (name "r-bipartited3")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bipartiteD3" version))
        (sha256
-        (base32 "0w2bnlaga8nxdidrhgz34hqbxb5882jbz31a7g4n283gbz5w1b9g"))))
+        (base32 "0njqj4rz054vjp9chm14i20rl9hssvbf3hmrp1w1a4rnjabcijmd"))))
     (properties `((upstream-name . "bipartiteD3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11431,15 +11452,15 @@ algorithm described in TreviÃ±o (2015) <doi:10.1088/1742-5468/2015/02/P02003>.
                              r-rcolorbrewer
                              r-r2d3
                              r-purrr
-                             r-dplyr
-                             r-downloader))
+                             r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=bipartiteD3")
     (synopsis "Interactive Bipartite Graphs")
     (description
      "Generates interactive bipartite graphs using the D3 library.  Designed for use
-with the bipartite analysis package.  Sources open source viz-js library Adapted
-from examples at <https://bl.ocks.org/N@code{PashaP>} (released under GPL-3).")
+with the bipartite analysis package.  Includes open source viz-js library
+Adapted from examples at <https://bl.ocks.org/N@code{PashaP>} (released under
+GPL-3).")
     (license license:gpl3)))
 
 (define-public r-bipartite

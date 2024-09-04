@@ -1016,13 +1016,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.10")
+    (version "1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "1bkm1ja9ksd7b70sxc6jg2ha2ml0l5hwh4j2ph02imjxwcnanach"))))
+        (base32 "154c2xzspzdz72n5j1w4pn1nd4bzwqjhvvqy9z33w713lmyys9kw"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -1032,11 +1032,13 @@ those values that are true.")
     (description
      "Provide estimation and data generation tools for some new multivariate frailty
 models.  This version includes the gamma, inverse Gaussian, weighted Lindley,
-Birnbaum-Saunders, truncated normal and mixture of inverse Gaussian as the
-distribution for the frailty terms.  For the basal model, it is considered a
-parametric approach based on the exponential, Weibull and the piecewise
-exponential distributions as well as a semiparametric approach.  For details,
-see Gallardo and Bourguignon (2022) <doi:10.48550/@code{arXiv.2206.12973>}.")
+Birnbaum-Saunders, truncated normal, mixture of inverse Gaussian and mixture of
+Birnbaum-Saunders as the distribution for the frailty terms.  For the basal
+model, it is considered a parametric approach based on the exponential, Weibull
+and the piecewise exponential distributions as well as a semiparametric
+approach.  For details, see Gallardo and Bourguignon (2022)
+<doi:10.48550/@code{arXiv.2206.12973>} and Gallardo et al. (2024)
+<doi:10.1007/s11222-024-10458-w>.")
     (license license:gpl2+)))
 
 (define-public r-extracttraindata
@@ -1548,13 +1550,13 @@ remove as much redundant typing as possible.")
 (define-public r-explore
   (package
     (name "r-explore")
-    (version "1.3.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explore" version))
        (sha256
-        (base32 "0ays8gj7ba5rdih2hszgfz0asxsmx2jxna1cxv2ahni8rjr3h632"))))
+        (base32 "0blsv9qi9gfzmldkmqnwi191iagqmya56j7l3ybmka1lpi4vmnni"))))
     (properties `((upstream-name . "explore")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -2829,13 +2831,13 @@ for exceedance sets and contour lines.")
 (define-public r-exams2sakai
   (package
     (name "r-exams2sakai")
-    (version "0.3")
+    (version "0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exams2sakai" version))
        (sha256
-        (base32 "0lgnk2g4q0vbkvcrhb815lah24rhaknnmsbhhkgbdkl0c5mx1yjg"))))
+        (base32 "1qljhqac15qz1vjrp59l7xs7yd4y3p2f3wdryrfflb5b6a1qcmbf"))))
     (properties `((upstream-name . "exams2sakai")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringr r-stringi r-glue r-exams))
@@ -2843,7 +2845,7 @@ for exceedance sets and contour lines.")
     (synopsis "Automatic Generation of Exams in R for 'Sakai'")
     (description
      "Automatic Generation of Exams in R for Sakai'.  Question templates in the form
-of the exams package (see <http://www.r-exams.org/>) are transformed into XML
+of the exams package (see <https://www.r-exams.org/>) are transformed into XML
 format required by Sakai'.")
     (license (list license:gpl2 license:gpl3))))
 
@@ -8046,6 +8048,43 @@ equivalence.  Such tests have similarity as the alternative hypothesis instead
 of the null.  Sample data sets are included.")
     (license license:gpl2)))
 
+(define-public r-equitrends
+  (package
+    (name "r-equitrends")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EquiTrends" version))
+       (sha256
+        (base32 "1gdmaqm18mk93bfcf6qm247v7j61hi0lssmskcrlblk1snnli49l"))))
+    (properties `((upstream-name . "EquiTrends")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vgam
+                             r-rlang
+                             r-rcppparallel
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-plm
+                             r-nloptr
+                             r-dplyr
+                             r-clubsandwich))
+    (home-page "https://github.com/TiesBos/EquiTrends")
+    (synopsis
+     "Equivalence Testing for Pre-Trends in Difference-in-Differences Designs")
+    (description
+     "Testing for parallel trends is crucial in the Difference-in-Differences
+framework.  To this end, this package performs equivalence testing in the
+context of Difference-in-Differences estimation.  It allows users to test if
+pre-treatment trends in the treated group are âequivalentâ to those in the
+control group.  Here, âequivalenceâ means that rejection of the null
+hypothesis implies that a function of the pre-treatment placebo effects (maximum
+absolute, average or root mean squared value) does not exceed a pre-specified
+threshold below which trend differences are considered negligible.  The package
+is based on the theory developed in Dette & Schumann (2024)
+<doi:10.1080/07350015.2024.2308121>.")
+    (license license:expat)))
+
 (define-public r-equisurv
   (package
     (name "r-equisurv")
@@ -8254,6 +8293,84 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
 <doi:10.1007/s11336-015-9491-8>, and Jiang, G., Mai, Y., & Yuan, K. H. (2017)
 <doi:10.3389/fpsyg.2017.01823>.")
     (license license:gpl3)))
+
+(define-public r-equalstats
+  (package
+    (name "r-equalstats")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQUALSTATS" version))
+       (sha256
+        (base32 "0pan7h6iqbbcfi746i77lgn0fday7v735ivb7njl5ii2axc202dd"))))
+    (properties `((upstream-name . "EQUALSTATS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-thresholdroc
+                             r-survival
+                             r-stringr
+                             r-shiny
+                             r-pwr
+                             r-proc
+                             r-ordinal
+                             r-nnet
+                             r-mumin
+                             r-mclogit
+                             r-mass
+                             r-lmtest
+                             r-lmertest
+                             r-lme4
+                             r-ggsurvfit
+                             r-ggplot2
+                             r-ggcorrplot
+                             r-desctools
+                             r-coxme
+                             r-cowplot
+                             r-boot))
+    (home-page "https://sites.google.com/view/equal-group/home")
+    (synopsis
+     "Algorithm Driven Statistical Analysis for Researchers without Coding Skills")
+    (description
+     "Support functions for R-based EQUAL-STATS software which automatically
+classifies the data and performs appropriate statistical tests.  EQUAL-STATS
+software is a shiny application with an user-friendly interface to perform
+complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
+    (license license:gpl3+)))
+
+(define-public r-equalrepeat
+  (package
+    (name "r-equalrepeat")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EQUALrepeat" version))
+       (sha256
+        (base32 "1khd4lf1vfbi4wz0cdgyxj5q730cv8hliq4cg5gdc1b14b1fr769"))))
+    (properties `((upstream-name . "EQUALrepeat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zip
+                             r-viridislite
+                             r-vars
+                             r-urca
+                             r-tseries
+                             r-stringr
+                             r-rstatix
+                             r-irr
+                             r-ggplot2
+                             r-forecast
+                             r-desctools
+                             r-cowplot))
+    (home-page "https://sites.google.com/view/equal-group/home")
+    (synopsis
+     "Algorithm Driven Time Series Analysis for Researchers without Coding Skills")
+    (description
+     "Support functions for R-based EQUAL-STATS software which automatically
+classifies the data and performs appropriate statistical tests.  EQUAL-STATS
+software is a shiny application with an user-friendly interface to perform
+complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
+    (license license:gpl3+)))
 
 (define-public r-equalden-hd
   (package
@@ -10678,26 +10795,25 @@ figures to lots of different type of formats.  Now this package provide function
 to extract colors from all types of figures and pdf files.")
     (license license:gpl2)))
 
-(define-public r-eodhd
+(define-public r-eodhdr2
   (package
-    (name "r-eodhd")
-    (version "1.0.4")
+    (name "r-eodhdr2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
-       (uri (cran-uri "eodhd" version))
+       (uri (cran-uri "eodhdR2" version))
        (sha256
-        (base32 "0hm66d9dm3l87pdkv7154x7gp24v1d1aqm22p6bkzqwis1vc1rph"))))
-    (properties `((upstream-name . "eodhd")))
+        (base32 "1ynshnjawbfs54l3h36kixb2aiq6z095f4wf251fxc1lh3v130s7"))))
+    (properties `((upstream-name . "eodhdR2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr))
     (home-page
-     "https://github.com/EodHistoricalData/EODHD-APIs-R-Financial-Library")
-    (synopsis "Official 'eodhd' API R Financial Library")
+     "https://github.com/EodHistoricalData/R-Library-for-financial-data-2024")
+    (synopsis "Official R API for Fetching Data from 'EODHD'")
     (description
-     "Official eodhd API R Library.  It helps to get and work with financial data,
-historical data and etc.  API reference available at
-<https://eodhd.com/financial-apis/>.")
+     "Second and backward-incompatible version of R package eodhd
+<https://eodhd.com/>, extended with a cache and quota system, also offering
+functions for cleaning and aggregating the financial data.")
     (license license:expat)))
 
 (define-public r-eoa3
@@ -16081,13 +16197,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.6")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "1mdnbxmpghk95wm3vy3m1yb0w39ym5v15cjznnyg17w7fy48mk3y"))))
+        (base32 "1hqzvdp0h3xrkr673i73c04g17hj9ajzqh81gc236hi455c46dnh"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -20217,6 +20333,49 @@ papers by De la Cruz et al. (2008) <doi:10.1111/j.0906-7590.2008.05299.x> and
 Olano et al. (2009) <doi:10.1051/forest:2008074>.")
     (license license:gpl2+)))
 
+(define-public r-ecerto
+  (package
+    (name "r-ecerto")
+    (version "0.5.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eCerto" version))
+       (sha256
+        (base32 "1s2dz4dq0r2fhiinnlaqpg42bfzvdlh0inkyfdz0khapd67shbgq"))))
+    (properties `((upstream-name . "eCerto")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyxl
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shiny
+                             r-rmarkdown
+                             r-r6
+                             r-purrr
+                             r-plyr
+                             r-openxlsx
+                             r-moments
+                             r-markdown
+                             r-magick
+                             r-knitr
+                             r-golem
+                             r-dt
+                             r-config
+                             r-bslib))
+    (home-page "https://github.com/janlisec/eCerto")
+    (synopsis "Statistical Tests for the Production of Reference Materials")
+    (description
+     "The production of certified reference materials (CRMs) requires various
+statistical tests depending on the task and recorded data to ensure that
+reported values of CRMs are appropriate.  Often these tests are performed
+according to the procedures described in ISO GUIDE 35:2017'.  The @code{eCerto}
+package contains a Shiny app which provides functionality to load, process,
+report and backup data recorded during CRM production and facilitates following
+the recommended procedures.  It is described in Lisec et al (2023)
+<doi:10.1007/s00216-023-05099-3> and can also be accessed online
+<https://apps.bam.de/shn00/@code{eCerto/>} without package installation.")
+    (license license:expat)))
+
 (define-public r-ecdfht
   (package
     (name "r-ecdfht")
@@ -20804,6 +20963,31 @@ non-zero effects.")
     (description
      "Infer the adjacency matrix of a network from time course data using an empirical
 Bayes estimation procedure based on Dynamic Bayesian Networks.")
+    (license license:gpl3+)))
+
+(define-public r-ebcobart
+  (package
+    (name "r-ebcobart")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EBcoBART" version))
+       (sha256
+        (base32 "1m1zp2zvsk6jlbgvfffkfdfwbaksqg7zxydg94nhz316rrnb13ic"))))
+    (properties `((upstream-name . "EBcoBART")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-univariateml r-posterior r-loo r-extradistr
+                             r-dbarts))
+    (home-page "https://github.com/JeroenGoedhart/EBcoBART")
+    (synopsis "Co-Data Learning for Bayesian Additive Regression Trees")
+    (description
+     "Estimate prior variable weights for Bayesian Additive Regression Trees (BART).
+These weights correspond to the probabilities of the variables being selected in
+the splitting rules of the sum-of-trees.  Weights are estimated using empirical
+Bayes and external information on the explanatory variables (co-data).  BART
+models are fitted using the dbarts R package.  See Goedhart and others (2023)
+<doi:10.48550/@code{arXiv.2311.09997>} for details.")
     (license license:gpl3+)))
 
 (define-public r-ebci

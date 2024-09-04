@@ -902,6 +902,33 @@ Wit et al. (2019) <doi:10.1016/j.agsy.2018.06.018> for a recent review of the
 history and use of the model.")
     (license license:gpl3+)))
 
+(define-public r-rwnn
+  (package
+    (name "r-rwnn")
+    (version "0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RWNN" version))
+       (sha256
+        (base32 "1xr2p98rx2q6l4jfhm99xbhzmi0sgnysh8gd8ddvg9g1122vz7aw"))))
+    (properties `((upstream-name . "RWNN")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-randtoolbox r-quadprog))
+    (home-page "https://cran.r-project.org/package=RWNN")
+    (synopsis "Random Weight Neural Networks")
+    (description
+     "Creation, estimation, and prediction of random weight neural networks (RWNN),
+Schmidt et al. (1992) <doi:10.1109/ICPR.1992.201708>, including popular variants
+like extreme learning machines, Huang et al. (2006)
+<doi:10.1016/j.neucom.2005.12.126>, sparse RWNN, Zhang et al. (2019)
+<doi:10.1016/j.neunet.2019.01.007>, and deep RWNN, HenrÃ­quez et al. (2018)
+<doi:10.1109/IJCNN.2018.8489703>.  It further allows for the creation of
+ensemble RWNNs like bagging RWNN, Sui et al. (2021)
+<doi:10.1109/ECCE47101.2021.9595113>, boosting RWNN, stacking RWNN, and ensemble
+deep RWNN, Shi et al. (2021) <doi:10.1016/j.patcog.2021.107978>.")
+    (license license:expat)))
+
 (define-public r-rwmisc
   (package
     (name "r-rwmisc")
@@ -2126,39 +2153,6 @@ you use.")
 results between the workers through a Redis database.  Key features include task
 queues, local caching, and sophisticated error handling.")
     (license license:expat)))
-
-(define-public r-rusda
-  (package
-    (name "r-rusda")
-    (version "1.0.8")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rusda" version))
-       (sha256
-        (base32 "0xx72jjf1pyixwpnvvgx5n2vc5gl46bam1caav043iqki68wb338"))))
-    (properties `((upstream-name . "rusda")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml
-                             r-testthat
-                             r-taxize
-                             r-stringr
-                             r-rcurl
-                             r-plyr
-                             r-httr
-                             r-foreach))
-    (home-page "http://www.usda.gov/wps/portal/usda/usdahome")
-    (synopsis "Interface to USDA Databases")
-    (description
-     "An interface to the web service methods provided by the United States Department
-of Agriculture (USDA).  The Agricultural Research Service (ARS) provides a large
-set of databases.  The current version of the package holds interfaces to the
-Systematic Mycology and Microbiology Laboratory (SMML), which consists of four
-databases: Fungus-Host Distributions, Specimens, Literature and the Nomenclature
-database.  It provides functions for querying these databases.  The main
-function is \\code{associations}, which allows searching for fungus-host
-combinations.")
-    (license license:gpl2+)))
 
 (define-public r-runuran
   (package
@@ -4975,13 +4969,13 @@ of different algorithms.")
 (define-public r-rsurveycto
   (package
     (name "r-rsurveycto")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsurveycto" version))
        (sha256
-        (base32 "10ahwi1xiy2gw3abj6scrp1qdlqg3js4h9q2z6d7a5vwaxpz95hh"))))
+        (base32 "1s2slc7wlbrsvw0jnsimchypn6f8jmcs8fkc12a0f02lalgm21qn"))))
     (properties `((upstream-name . "rsurveycto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -6770,13 +6764,13 @@ rstac'.")
 (define-public r-rshift
   (package
     (name "r-rshift")
-    (version "3.0.0")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rshift" version))
        (sha256
-        (base32 "0w82dqya4qmcdpin1d7pg2cri69qjsm1qhjn2gfpbs6wkd7m7mic"))))
+        (base32 "0wpzbddv259b92sylgznsbznbrnjp2znzd2ajmnfi82frky1r6c8"))))
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-ggplot2 r-dplyr))
@@ -12121,13 +12115,13 @@ adjusted such that the observed acceptance ratio is kept near to the desired
 (define-public r-roptest
   (package
     (name "r-roptest")
-    (version "1.3.3")
+    (version "1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ROptEst" version))
        (sha256
-        (base32 "0mid70i7mjic6s5vswbggpln9iv78sm9h8lrqqg2a0g379n9brbp"))))
+        (base32 "0hkasa1lzxyj6d4lbrgq9pghgvgpvj8hbygizyb7iywcdsaakz1f"))))
     (properties `((upstream-name . "ROptEst")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -12141,7 +12135,7 @@ adjusted such that the observed acceptance ratio is kept near to the desired
     (synopsis "Optimally Robust Estimation")
     (description
      "R infrastructure for optimally robust estimation in general smoothly
-parameterized models using S4 classes and methods as decribed Kohl, M.,
+parameterized models using S4 classes and methods as described Kohl, M.,
 Ruckdeschel, P., and Rieder, H. (2010), <doi:10.1007/s10260-010-0133-0>, and in
 Rieder, H., Kohl, M., and Ruckdeschel, P. (2008),
 <doi:10.1007/s10260-007-0047-7>.")
@@ -12275,6 +12269,37 @@ forecast weather for 5 days with data for every 3 hours.")
     (description
      "An R package for the @code{OpenSecrets.org} web services API.")
     (license license:lgpl3)))
+
+(define-public r-ropenmeteo
+  (package
+    (name "r-ropenmeteo")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ropenmeteo" version))
+       (sha256
+        (base32 "0y07dqmcn31gjghvzwgnl8311iqc4yjc5w3s6rb0z82z1ag1s7y2"))))
+    (properties `((upstream-name . "ropenmeteo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-purrr
+                             r-lubridate
+                             r-jsonlite
+                             r-imputets
+                             r-httr2
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "http://flare-forecast.org/ropenmeteo/")
+    (synopsis "Wrappers for 'Open-Meteo' API")
+    (description
+     "Wrappers for the Application Programming Interface from the
+<https://open-meteo.com> project along with helper functions.  The
+<https://open-meteo.com> project streamlines access to a range of publicly
+historical and forecast meteorology data from agencies across the world.")
+    (license license:expat)))
 
 (define-public r-ropenfigi
   (package
@@ -16162,13 +16187,13 @@ packages; is currently used by package @code{RobExtremes} only.")
 (define-public r-robastbase
   (package
     (name "r-robastbase")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobAStBase" version))
        (sha256
-        (base32 "16sl3nlb1cl3xyski05l0qhrl23w615sbdmvnnzxnkva6sppxqcx"))))
+        (base32 "08b6jdvgs711zppjknzbskay04h3j0nkw5ld81k2wg42yh1b6ari"))))
     (properties `((upstream-name . "RobAStBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -21256,13 +21281,13 @@ citation(\"RJcluster\")'.")
 (define-public r-rjavaenv
   (package
     (name "r-rjavaenv")
-    (version "0.1.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rJavaEnv" version))
        (sha256
-        (base32 "1gprfpjfblvfn2hg00vgsrvn8p0paz9gfqljszyi1is1z925s2h1"))))
+        (base32 "0clivhqgrg2irh03bfcsf4p70hnvv2x3g3kk6sy38wlk02bw3144"))))
     (properties `((upstream-name . "rJavaEnv")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl r-cli r-checkmate))
@@ -21270,22 +21295,23 @@ citation(\"RJcluster\")'.")
     (home-page "https://github.com/e-kotov/rJavaEnv")
     (synopsis "'Java' Environments for R Projects")
     (description
-     "The @code{rJavaEnv} package addresses common issues with Java environment
-management in R for users of Java'/'@code{rJava'-dependent} R packages such as
-r5r', opentripplanner', xlsx', @code{openNLP}', @code{rWeka}', RJDBC',
-tabulapdf', and many more.  It resolves common problems like Java not found,
-Java version conflicts, missing Java installations, and the inability to install
-Java due to lack of administrative privileges. @code{rJavaEnv} automates the
-download, installation, and setup of the Java Development Kit ('JDK') on a
-per-project basis by setting the relevant JAVA_HOME in the current R session or
-the current working directory (via .Rprofile', with the user's consent).
-Similar to what renv does for R packages, @code{rJavaEnv} allows different Java
-versions to be used across different projects, but can also be configured to
-allow multiple versions within the same project (e.g. with the help of targets
-package).  Note: there are a few extra steps for Linux users, who don't have any
-Java previously installed in their system, and who prefer package installation
-from source, rather then installing binaries from Posit Package Manager'.  See
-documentation for details.")
+     "Quickly install Java Development Kit (JDK) without administrative privileges and
+set environment variables in current R session or project to solve common issues
+with Java environment management in R'.  Recommended to users of
+Java'/'@code{rJava'-dependent} R packages such as r5r', opentripplanner', xlsx',
+@code{openNLP}', @code{rWeka}', RJDBC', tabulapdf', and many more.
+@code{rJavaEnv} prevents common problems like Java not found, Java version
+conflicts, missing Java installations, and the inability to install Java due to
+lack of administrative privileges. @code{rJavaEnv} automates the download,
+installation, and setup of the Java on a per-project basis by setting the
+relevant JAVA_HOME in the current R session or the current working directory
+(via .Rprofile', with the user's consent).  Similar to what renv does for R
+packages, @code{rJavaEnv} allows different Java versions to be used across
+different projects, but can also be configured to allow multiple versions within
+the same project (e.g. with the help of targets package).  Note: there are a few
+extra steps for Linux users, who don't have any Java previously installed in
+their system, and who prefer package installation from source, rather then
+installing binaries from Posit Package Manager'.  See documentation for details.")
     (license license:expat)))
 
 (define-public r-rjafroc
@@ -22886,13 +22912,13 @@ knitr'-engine enabling Maxima code chunks to be written in RMarkdown documents."
 (define-public r-rilostat
   (package
     (name "r-rilostat")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rilostat" version))
        (sha256
-        (base32 "1h4vp6gim5swiy07fhf6l4agh6pi0vlz2f778s2rzsgqc4jdnawj"))))
+        (base32 "1j8pmd9xm27abyghfvifmh0mvlkn5hc11y6lhn365is1a95zy29a"))))
     (properties `((upstream-name . "Rilostat")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23227,13 +23253,13 @@ and pain-rating scales.")
 (define-public r-ridigbio
   (package
     (name "r-ridigbio")
-    (version "0.3.9")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ridigbio" version))
        (sha256
-        (base32 "1schwqpfckfw25g9z7m3qphv5bcf8g1dvxggs6l19klf3a3lxjis"))))
+        (base32 "13qh340almhkv7c23jgmxp0b4ys4d7w625fhmqrjb6f950iq1c33"))))
     (properties `((upstream-name . "ridigbio")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -23531,6 +23557,32 @@ the annotation file from the website
 return some information, including the from position, the end position, the
 position type and the chromosome number.")
     (license license:artistic2.0)))
+
+(define-public r-rice
+  (package
+    (name "r-rice")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rice" version))
+       (sha256
+        (base32 "0sncfrw8a927jarwzaclzjrh73jlclzw2z29xfzwzxsdm6sb5c0i"))))
+    (properties `((upstream-name . "rice")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rintcal r-jsonlite r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rice")
+    (synopsis "Radiocarbon Calibration Equations")
+    (description
+     "This package provides functions for the calibration of radiocarbon dates, as
+well as options to calculate different radiocarbon realms (C14 age, F14C,
+@code{pMC}, D14C) and estimating the effects of contamination.  The methods
+follow long-established recommendations such as Stuiver and Polach (1977)
+<doi:10.1017/S0033822200003672> and Reimer et al. (2004)
+<doi:10.1017/S0033822200033154>.  This package accompanies the data package
+rintcal'.")
+    (license license:gpl2+)))
 
 (define-public r-ribench
   (package
@@ -24493,13 +24545,13 @@ open-source parallel database.  This is an extension of the RPostgres package
 (define-public r-rgrass
   (package
     (name "r-rgrass")
-    (version "0.4-3")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgrass" version))
        (sha256
-        (base32 "1zn549yas4j8m9qn3c0zsa0qfbc221v7q612rhb5rg45jw2bfy19"))))
+        (base32 "00vbnc5p8fffkxl2bg4p5mvkygp3hqqlsmfqcixgs8mpigqyp04a"))))
     (properties `((upstream-name . "rgrass")))
     (build-system r-build-system)
     (inputs (list grass))
@@ -26590,32 +26642,24 @@ now out-dated @code{fishBC} software
 (define-public r-rfishbase
   (package
     (name "r-rfishbase")
-    (version "4.1.2")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rfishbase" version))
        (sha256
-        (base32 "1v0dzgzxl1p6ay60z0dfmi499hzywi5k4vdrf5ag4q6zvrk0vp8w"))))
+        (base32 "0bpzwsvg9d09xfpscjnyw49m46vam3dvl35rkdfc77zn18gabip8"))))
     (properties `((upstream-name . "rfishbase")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-rstudioapi
+    (propagated-inputs (list r-stringr
                              r-rlang
-                             r-readr
                              r-purrr
-                             r-progress
                              r-memoise
                              r-magrittr
                              r-jsonlite
                              r-glue
-                             r-fs
-                             r-duckdb
-                             r-dplyr
-                             r-dbplyr
-                             r-dbi
-                             r-contentid))
+                             r-duckdbfs
+                             r-dplyr))
     (home-page "https://docs.ropensci.org/rfishbase/")
     (synopsis "R Interface to 'FishBase'")
     (description
@@ -35592,13 +35636,13 @@ in a form directly compatible with the rgl package.")
 (define-public r-readnsx
   (package
     (name "r-readnsx")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readNSx" version))
        (sha256
-        (base32 "1mllas238wvmpc094vw242h2gv9qgdyfml9k618ijp1s0mabnwcc"))))
+        (base32 "1fl4lr6yax8nn06pna4mcxjfc4zjf42whaslxvvy40008wm2bkqj"))))
     (properties `((upstream-name . "readNSx")))
     (build-system r-build-system)
     (inputs (list hdf5))
@@ -36266,6 +36310,30 @@ Consistent interface (similar to stringr').  RE2 uses finite-automata based
 techniques, and offers a fast and safe alternative to backtracking
 regular-expression engines like those used in stringr', stringi and other PCRE
 implementations.")
+    (license license:expat)))
+
+(define-public r-re
+  (package
+    (name "r-re")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "re" version))
+       (sha256
+        (base32 "1lh75gm42kvazgr1f6v3wrxac2i28fi0khbsw749iidk4xay39ba"))))
+    (properties `((upstream-name . "re")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringi))
+    (home-page "https://pythonicr.github.io/re/")
+    (synopsis "'Python' Style Regular Expression Functions")
+    (description
+     "This package provides a comprehensive set of regular expression functions based
+on those found in Python without relying on reticulate'.  It provides functions
+that intend to (1) make it easier for users familiar with Python to work with
+regular expressions, (2) reduce the complexity often associated with regular
+expressions code, (3) and enable users to write more readable and maintainable
+code that relies on regular expression-based pattern matching.")
     (license license:expat)))
 
 (define-public r-rdwplus
@@ -39116,13 +39184,13 @@ space for usage in R. HSLuv is a human-friendly alternative to HSL.")
 (define-public r-rcppcnpy
   (package
     (name "r-rcppcnpy")
-    (version "0.2.12")
+    (version "0.2.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCNPy" version))
        (sha256
-        (base32 "16n3c2pfz9i95ngalxc5wvigwd1jfi2qwqm1v605qhidgf2vqvc5"))))
+        (base32 "0v2y1y1j2gfqyj9as556vy6pfc4fj16sk3dyzikwagpav4a83p01"))))
     (properties `((upstream-name . "RcppCNPy")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -43501,13 +43569,13 @@ routinely.  Finally, there is an R markdown skeleton for basic reserve analysis.
 (define-public r-ravetools
   (package
     (name "r-ravetools")
-    (version "0.1.7")
+    (version "0.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ravetools" version))
        (sha256
-        (base32 "1y0zpbdyr8izdjdgxma8v226fqacrg0j0ykiivqarkkdq82gvbj5"))))
+        (base32 "0vy466xyzc22bwhr719znph2hd1xf74r9vzi7zb6pdqycjn11mgl"))))
     (properties `((upstream-name . "ravetools")))
     (build-system r-build-system)
     (inputs (list pkg-config fftw))
@@ -44009,13 +44077,13 @@ CMH test) or incorporating stratum heterogeneity.")
 (define-public r-raters
   (package
     (name "r-raters")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "raters" version))
        (sha256
-        (base32 "0pjyg4g8z6ixcypi4sz4asgbafcfg0kchza1fpa65xvjmss681bj"))))
+        (base32 "0yxwvziajzwnbqsnjf8myvx5jxzrickzm4b6zqy2s5fm2xh9675q"))))
     (properties `((upstream-name . "raters")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=raters")
@@ -46006,13 +46074,13 @@ with Rocker <https://rocker-project.org>.")
 (define-public r-randvar
   (package
     (name "r-randvar")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandVar" version))
        (sha256
-        (base32 "00zpbbf7b3g38lh1krvwhfyxlz3f9cklfg9z2adi65lwqc27w54b"))))
+        (base32 "1w7dv3cskmwnln0i76kqqis23i4zqlcfs43rkl9sp60rprfihm7w"))))
     (properties `((upstream-name . "RandVar")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg r-distrex r-distr))

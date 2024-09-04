@@ -9472,6 +9472,41 @@ Gehlert, T.; Thrun, M.C. Multiresolution Forecasting for Industrial
 Applications.  Processes 2021, 9, 1697. <doi:10.3390/pr9101697>.")
     (license license:gpl3)))
 
+(define-public r-mregions2
+  (package
+    (name "r-mregions2")
+    (version "1.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mregions2" version))
+       (sha256
+        (base32 "1hhl3y8x777yfnn5l92nv6cc4kfk1alg64anzaz589g8802al7aw"))))
+    (properties `((upstream-name . "mregions2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-wrapr
+                             r-sf
+                             r-rdflib
+                             r-memoise
+                             r-magrittr
+                             r-isocodes
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-digest
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ropensci/mregions2")
+    (synopsis "Access Data from Marineregions.org: Gazetteer & Data Products")
+    (description
+     "Explore and retrieve marine geospatial data from the Marine Regions Gazetteer
+<https://marineregions.org/gazetteer.php?p=webservices> and the Marine Regions
+Data Products <https://marineregions.org/webservices.php>.")
+    (license license:expat)))
+
 (define-public r-mreg
   (package
     (name "r-mreg")
@@ -14432,13 +14467,13 @@ objects.")
 (define-public r-modelsummary
   (package
     (name "r-modelsummary")
-    (version "2.1.1")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelsummary" version))
        (sha256
-        (base32 "1sqb5c34ymv2bvkrc2c3fd24ajjn2zz0rhasv3gdmbrp8fxgyxf8"))))
+        (base32 "185nnazkvqfnhiafzp0kdgrclsqvkpwa477ckfz0np32v9sykzqn"))))
     (properties `((upstream-name . "modelsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-tinytable
@@ -16439,6 +16474,37 @@ shiny card game to simulate the evaluation of replication studies while the
 mmibain() function launches a shiny application to fit Bayesian informative
 hypotheses evaluation models from bain'.")
     (license license:expat)))
+
+(define-public r-mmgfm
+  (package
+    (name "r-mmgfm")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MMGFM" version))
+       (sha256
+        (base32 "1alsgv7wjb6mcg0zgcxkpfr89hr3yclgc68yv88wzq8ad9py9wzg"))))
+    (properties `((upstream-name . "MMGFM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpparmadillo
+                             r-rcpp
+                             r-multicoap
+                             r-mass
+                             r-irlba
+                             r-gfm))
+    (home-page "https://cran.r-project.org/package=MMGFM")
+    (synopsis "Multi-Study Multi-Modality Generalized Factor Model")
+    (description
+     "We introduce a generalized factor model designed to jointly analyze
+high-dimensional multi-modality data from multiple studies by extracting
+study-shared and specified factors.  Our factor models account for heterogeneous
+noises and overdispersion among modality variables with augmented covariates.
+We propose an efficient and speedy variational estimation procedure for
+estimating model parameters, along with a novel criterion for selecting the
+optimal number of factors.  More details can be referred to Liu et al. (2024)
+<doi:10.48550/@code{arXiv.2408.10542>}.")
+    (license license:gpl3)))
 
 (define-public r-mmem
   (package
@@ -37684,6 +37750,29 @@ to explicitly acknowledge the potential absence of a value, helping to avoid the
 existence of unexpected behaviour.")
     (license license:expat)))
 
+(define-public r-maxstablepca
+  (package
+    (name "r-maxstablepca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxstablePCA" version))
+       (sha256
+        (base32 "0jwnb85pw0sqlrw8h8sdrck98a3psb3savhbjgpjf2n9d2p7h6sz"))))
+    (properties `((upstream-name . "maxstablePCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr))
+    (home-page "https://cran.r-project.org/package=maxstablePCA")
+    (synopsis
+     "Apply a PCA Like Procedure Suited for Multivariate Extreme Value Distributions")
+    (description
+     "Dimension reduction for multivariate data of extreme events with a PCA like
+procedure as described in Reinbott, JanÃen, (2024),
+<doi:10.48550/@code{arXiv.2408.10650>}.  Tools for necessary transformations of
+the data are provided.")
+    (license license:expat)))
+
 (define-public r-maxskew
   (package
     (name "r-maxskew")
@@ -41300,13 +41389,13 @@ looking maps in R, with support for map projections.  See Brown (2016)
 (define-public r-mapme-biodiversity
   (package
     (name "r-mapme-biodiversity")
-    (version "0.9.0")
+    (version "0.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapme.biodiversity" version))
        (sha256
-        (base32 "1rv3mx7nv4byy0j1i9d4grvbkysq3cqji5g251rnm7nljjk1zj8b"))))
+        (base32 "16czhahg97ysz4ga5r200p8krw7hs3r3i6d8fssnvnkarq50qxvp"))))
     (properties `((upstream-name . "mapme.biodiversity")))
     (build-system r-build-system)
     (inputs (list proj gdal))
@@ -44657,13 +44746,13 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "16jcksyy8wira7i5gpl27fmbq3wzfsyp4v4xqq7r78qi2rv16wgg"))))
+        (base32 "1r3ak5hckzw85dp7lhqwp61h5dy3zwb0yp0smp4gb13czb10n4qq"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))

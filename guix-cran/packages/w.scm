@@ -2976,6 +2976,35 @@ single and multi-season occupancy, closed capture population estimation,
 survival, species richness and distance measures.")
     (license license:gpl3)))
 
+(define-public r-wintime
+  (package
+    (name "r-wintime")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wintime" version))
+       (sha256
+        (base32 "0jr3xwamknlkqnahl78jsdc9pk1q6hj8zfay8fmqpvsl8ydki9ll"))))
+    (properties `((upstream-name . "wintime")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://pubmed.ncbi.nlm.nih.gov/38417455/")
+    (synopsis "Win Time Methods for Time-to-Event Data in Clinical Trials")
+    (description
+     "This package performs an analysis of time-to-event clinical trial data using
+various \"win time\" methods, including ewt', ewtr', rmt', max', wtr', rwtr', and
+pwt'.  These methods are used to calculate and compare treatment effects on
+ordered composite endpoints.  The package handles event times, event indicators,
+and treatment arm indicators and supports calculations on observed and resampled
+data.  Detailed explanations of each method and usage examples are provided in
+\"Use of win time for ordered composite endpoints in clinical trials,\" by
+Troendle et al. (2024)<https://pubmed.ncbi.nlm.nih.gov/38417455/>.  For more
+information, see the package documentation or the vignette titled \"Introduction
+to wintime.\".")
+    (license license:expat)))
+
 (define-public r-wins
   (package
     (name "r-wins")
@@ -4548,6 +4577,28 @@ studies to simultaneously detect the existence, and estimate the locations of
 association signals at genome-wide scale.  The functions allow genome-wide
 association scan, candidate region scan and single window test.")
     (license license:gpl3)))
+
+(define-public r-wget
+  (package
+    (name "r-wget")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "wget" version))
+       (sha256
+        (base32 "1mrnkiipbrzss5ljdxmdvh7cga8596vc4fmimrwnc88mdi488nc8"))))
+    (properties `((upstream-name . "wget")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yulab-utils))
+    (home-page "https://cran.r-project.org/package=wget")
+    (synopsis "Setting Download Method to 'wget'")
+    (description
+     "This package provides function, wget_set(), to change the method (default to
+wget -c') using in download.file().  Using wget -c allowing continued
+downloading, which is especially useful for slow internet connection and for
+downloading large files.  User can run wget_unset() to restore previous setting.")
+    (license license:artistic2.0)))
 
 (define-public r-wflo
   (package

@@ -21,6 +21,7 @@
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages language)
   #:use-module (gnu packages image)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages perl)
   #:use-module (gnu packages curl)
   #:use-module (gnu packages xml)
@@ -576,13 +577,13 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
 (define-public r-gwid
   (package
     (name "r-gwid")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gwid" version))
        (sha256
-        (base32 "1qkj6773ywm3mxry9d9yzf2m52dcmjg5h5031h48x6gpg4qjf1k2"))))
+        (base32 "1rkq7pzqinsrjbidmjyjfkcwm2hldk8fnmkp4s222xlbj230ybwv"))))
     (properties `((upstream-name . "gwid")))
     (build-system r-build-system)
     (propagated-inputs (list r-snprelate
@@ -595,7 +596,6 @@ selection: An application to gastric cancer screening <doi:10.1038/srep26582>.")
                              r-ggplot2
                              r-gdsfmt
                              r-data-table))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/soroushmdg/gwid")
     (synopsis "Genome-Wide Identity-by-Descent")
     (description
@@ -1726,37 +1726,6 @@ and standard errors when observed scores contain variation from one or more
 measurement facets (e.g., items and raters).")
     (license license:gpl3)))
 
-(define-public r-gtfstools
-  (package
-    (name "r-gtfstools")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtfstools" version))
-       (sha256
-        (base32 "03gc784dvskvg8m0fcqc966ka0slnh10in5gk7bba8h7lnfb893w"))))
-    (properties `((upstream-name . "gtfstools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-units
-                             r-sfheaders
-                             r-sf
-                             r-processx
-                             r-gtfsio
-                             r-data-table
-                             r-curl
-                             r-cpp11
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ipeagit.github.io/gtfstools/")
-    (synopsis
-     "General Transit Feed Specification (GTFS) Editing and Analysing Tools")
-    (description
-     "Utility functions to read, manipulate, analyse and write transit feeds in the
-General Transit Feed Specification (GTFS) data format.")
-    (license license:expat)))
-
 (define-public r-gtfsrouter
   (package
     (name "r-gtfsrouter")
@@ -1803,80 +1772,6 @@ functions to read and write GTFS feeds while sticking to this standard.  Defines
 a basic gtfs class which is meant to be extended by packages that depend on it.
 And offers utility functions that support checking the structure of GTFS
 objects.")
-    (license license:expat)))
-
-(define-public r-gtfs2gps
-  (package
-    (name "r-gtfs2gps")
-    (version "2.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtfs2gps" version))
-       (sha256
-        (base32 "0k65iy7armdn13bs31wr6gq7hdxpz5nqqzpdxpm5g1mkxwc9fi1g"))))
-    (properties `((upstream-name . "gtfs2gps")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-terra
-                             r-sfheaders
-                             r-sf
-                             r-rcpp
-                             r-progressr
-                             r-lwgeom
-                             r-gtfstools
-                             r-future
-                             r-furrr
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/ipeaGIT/gtfs2gps")
-    (synopsis "Converting Transport Data from GTFS Format to GPS-Like Records")
-    (description
-     "Convert general transit feed specification (GTFS) data to global positioning
-system (GPS) records in data.table format.  It also has some functions to subset
-GTFS data in time and space and to convert both representations to simple
-feature format.")
-    (license license:expat)))
-
-(define-public r-gtfs2emis
-  (package
-    (name "r-gtfs2emis")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "gtfs2emis" version))
-       (sha256
-        (base32 "1nh3m57xhh12sm18d5lvf0i9z4ayn6kgbmp036lw89wz10s42w6z"))))
-    (properties `((upstream-name . "gtfs2emis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-units
-                             r-terra
-                             r-sfheaders
-                             r-sf
-                             r-gtfs2gps
-                             r-future
-                             r-furrr
-                             r-data-table
-                             r-checkmate))
-    (native-inputs (list r-knitr))
-    (home-page "https://ipeagit.github.io/gtfs2emis/")
-    (synopsis
-     "Estimating Public Transport Emissions from General Transit Feed Specification (GTFS) Data")
-    (description
-     "This package provides a bottom up model to estimate the emission levels of
-public transport systems based on General Transit Feed Specification (GTFS)
-data.  The package requires two main inputs: i) Public transport data in the
-GTFS standard format; and ii) Some basic information on fleet characteristics
-such as fleet age, technology, fuel and Euro stage.  As it stands, the package
-estimates several pollutants at high spatial and temporal resolutions.
-Pollution levels can be calculated for specific transport routes, trips, time of
-the day or for the transport system as a whole.  The output with emission
-estimates can be extracted in different formats, supporting analysis on how
-emission levels vary across space, time and by fleet characteristics.  A full
-description of the methods used in the gtfs2emis model is presented in Vieira,
-J. P. B.; Pereira, R. H. M.; Andrade, P. R. (2022) <doi:10.31219/osf.io/8m2cy>.")
     (license license:expat)))
 
 (define-public r-gtexture
@@ -3428,13 +3323,13 @@ overlapping groups.")
 (define-public r-grpreg
   (package
     (name "r-grpreg")
-    (version "3.4.0")
+    (version "3.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grpreg" version))
        (sha256
-        (base32 "1bfnahkb249996m3qmf96g4ldgnw7xfcm2wr45ccrlk3mw5x4mzx"))))
+        (base32 "0344k07xy64byfp01qkp5fmwykl8nflz2l6zkk613f8bxqd342qn"))))
     (properties `((upstream-name . "grpreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -9478,13 +9373,13 @@ similarity between samples visually in a low (2 or 3) dimensional space.")
 (define-public r-goldfish
   (package
     (name "r-goldfish")
-    (version "1.6.8")
+    (version "1.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goldfish" version))
        (sha256
-        (base32 "1c49xmn29c1qvx2rmhyvwy5ql2b4zsk4chrv8bni6lwiprib5d9q"))))
+        (base32 "0y6x3zlsgq48kv5mhgcaaczjz8zlf8yvs5z7hgdc8jdzi1dl0vw8"))))
     (properties `((upstream-name . "goldfish")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10630,6 +10525,25 @@ data before running the experiment.  Information on @code{oTree} is found in
 Chen, D. L., Schonger, M., & Wickens, C. (2016)
 <doi:10.1016/j.jbef.2015.12.001>.")
     (license license:gpl3+)))
+
+(define-public r-gmoog
+  (package
+    (name "r-gmoog")
+    (version "0.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GmooG" version))
+       (sha256
+        (base32 "019vxm1vwlsjkw6zgvmkg87bhnikl0i3mqhwqzm94vr4p406dgaz"))))
+    (properties `((upstream-name . "GmooG")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=GmooG")
+    (synopsis "Datasets for the Book 'Getting (more out of) Graphics'")
+    (description
+     "Datasets analysed in the book Antony Unwin (2024, ISBN:978-0367674007) \"Getting
+(more out of) Graphics\".")
+    (license license:gpl2+)))
 
 (define-public r-gmoip
   (package
@@ -11824,13 +11738,13 @@ and Smyth (1996) <doi:10.2307/1390802>, O'Hara Hines and Carter (1993)
 (define-public r-glmx
   (package
     (name "r-glmx")
-    (version "0.2-0")
+    (version "0.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmx" version))
        (sha256
-        (base32 "07fgxyfz0jcp4ks2lpnbifjrnik2vwg1c5wl7m3a290rqsnzv5gx"))))
+        (base32 "0mg7m981fvnywm4kv2v4hq9r7y18pjcmhzxy7w7lfi8gak75wcpg"))))
     (properties `((upstream-name . "glmx")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-mass r-lmtest r-formula))
@@ -17933,13 +17847,13 @@ ggiraph'.")
 (define-public r-ggir
   (package
     (name "r-ggir")
-    (version "3.1-2")
+    (version "3.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GGIR" version))
        (sha256
-        (base32 "1vy57qbnav1kl71wwznb0kl3s06csqm0sx5k90hzwqjignxnc223"))))
+        (base32 "07d64kq788w4xsy51f0g5iw0cwknk106fs2qywfrq1bc29mm1lmj"))))
     (properties `((upstream-name . "GGIR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21380,6 +21294,37 @@ bootstrap variograms.")
     (description "This package provides tools.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-geothinner
+  (package
+    (name "r-geothinner")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoThinneR" version))
+       (sha256
+        (base32 "1lrhf6j50sig1jyxy8b1ad9c17sj6q1nn78kyyqp97jdmb8kc6ny"))))
+    (properties `((upstream-name . "GeoThinneR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-rcpp
+                             r-nabor
+                             r-matrixstats
+                             r-fields
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmestret/GeoThinneR")
+    (synopsis "Simple Spatial Thinning for Ecological and Spatial Analysis")
+    (description
+     "This package provides efficient geospatial thinning algorithms to reduce the
+density of coordinate data while maintaining spatial relationships.  Implements
+K-D Tree Approximate Nearest Neighbors (ANN), R-Tree, and brute force thinning
+methods.  It uses a modified version of the R-tree structure from the rtree
+package <https://github.com/akoyabio/rtree>.  The modified version can be
+downloaded from <https://github.com/jmestret/rtree>.  For more information on
+the methods, see Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
+    (license license:expat)))
+
 (define-public r-geostatsp
   (package
     (name "r-geostatsp")
@@ -22757,6 +22702,44 @@ curves in the functional dataset are smoothed using Fourier series.  The
 functional Kriging of this package is a modification of the method proposed by
 Giraldo (2011) <doi:10.1007/s10651-010-0143-y>.")
     (license license:expat)))
+
+(define-public r-geofis
+  (package
+    (name "r-geofis")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoFIS" version))
+       (sha256
+        (base32 "0akcs04ip30jb37jh0nmc3vdmhlr8zmpspgnbsaz9w3qxklhlarw"))))
+    (properties `((upstream-name . "GeoFIS")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-sp
+                             r-sf
+                             r-rdpack
+                             r-rcpp
+                             r-r6
+                             r-purrr
+                             r-nnls
+                             r-magrittr
+                             r-itertools
+                             r-foreach
+                             r-fispro
+                             r-data-tree
+                             r-bh))
+    (native-inputs (list r-r-rsp r-knitr))
+    (home-page "https://www.geofis.org")
+    (synopsis "Spatial Data Processing for Decision Making")
+    (description
+     "This package provides methods for processing spatial data for decision-making.
+This package is an R implementation of methods provided by the open source
+software @code{GeoFIS} <https://www.geofis.org> (Leroux et al.  2018)
+<doi:10.3390/agriculture8060073>.  The main functionalities are the management
+zone delineation (Pedroso et al.  2010) <doi:10.1016/j.compag.2009.10.007> and
+data aggregation (Mora-Herrera et al.  2020) <doi:10.1016/j.compag.2020.105624>.")
+    (license license:cecill)))
 
 (define-public r-geofi
   (package
