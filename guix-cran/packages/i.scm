@@ -695,13 +695,13 @@ CMCC-@code{BioClimInd} (see Noce, S., Caporaso, L. and Santini, M. (2020)
 (define-public r-itscalledsoccer
   (package
     (name "r-itscalledsoccer")
-    (version "0.2.4")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "itscalledsoccer" version))
        (sha256
-        (base32 "1xyfs9y60mrmmrpx5rhm2xg3ysgc75wfb62vb63rr7nlv6sfisgl"))))
+        (base32 "0jw65h5ypn0wf6hlyk7vk7q3z2zm78yrwb1zd4a3ydpi06k15xmh"))))
     (properties `((upstream-name . "itscalledsoccer")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12693,13 +12693,13 @@ more details see Rutter, Ozik, @code{DeYoreo}, and Collier (2018)
 (define-public r-ilsm
   (package
     (name "r-ilsm")
-    (version "1.0.3.1")
+    (version "1.0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ILSM" version))
        (sha256
-        (base32 "0x9khrli414qg4i5kqcspz44w9vjcl13qadgf90rgmkcwqqmw3dn"))))
+        (base32 "1wqw33yg3r6bdwhhczaxhkdpzpmxjd58ns2j9q55lx5vvk4q97dh"))))
     (properties `((upstream-name . "ILSM")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-igraph))

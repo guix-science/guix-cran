@@ -2950,25 +2950,32 @@ data [dissertation].  Stockholm: Almqvist & Wiksell International; 1993.")
 (define-public r-svdnf
   (package
     (name "r-svdnf")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SVDNF" version))
        (sha256
-        (base32 "1dps1qjr3a9wwzmi6vdr515lhvqligjhm7qdh7frii1y9lc4hzc2"))))
+        (base32 "0r5720nkz2qib4b5nzyj5czka34wx617dbc3v46zxl83v6c0jxyk"))))
     (properties `((upstream-name . "SVDNF")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpp))
+    (propagated-inputs (list r-zoo r-xts r-rcpp))
     (home-page "https://cran.r-project.org/package=SVDNF")
     (synopsis "Discrete Nonlinear Filtering for Stochastic Volatility Models")
     (description
-     "Generates simulated paths from various financial stochastic volatility models
-with jumps and applies the discrete nonlinear filter (DNF) of Kitagawa (1987)
-<doi:10.1080/01621459.1987.10478534> to compute likelihood evaluations,
-filtering distribution estimates, and maximum likelihood parameter estimates.
-The algorithm is implemented following the work of BÃ©gin and Boudreault (2021)
-<doi:10.1080/10618600.2020.1840995>.")
+     "This package implements the discrete nonlinear filter (DNF) of Kitagawa (1987)
+<doi:10.1080/01621459.1987.10478534> to a wide class of stochastic volatility
+(SV) models with return and volatility jumps following the work of BÃ©gin and
+Boudreault (2021) <doi:10.1080/10618600.2020.1840995>.  Offers several built-in
+SV models and a flexible framework for users to create customized models by
+specifying drift and diffusion functions along with a jump arrival distribution
+for the return and volatility dynamics.  Allows for the estimation of factor
+models with stochastic volatility (e.g., heteroskedastic volatility CAPM) by
+incorporating expected return predictors. `Includes functions to compute
+likelihood evaluations, filtering and prediction distribution estimates, maximum
+likelihood parameter estimates, to simulate data from built-in and custom SV
+models with jumps, and to forecast future returns and volatility values using
+Monte Carlo simulation from a given SV model.")
     (license license:gpl3)))
 
 (define-public r-svdialogstcltk
@@ -13843,13 +13850,13 @@ exact methods are also provided for the lognormal model.  Revised from
 (define-public r-stan4bart
   (package
     (name "r-stan4bart")
-    (version "0.0-8")
+    (version "0.0-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stan4bart" version))
        (sha256
-        (base32 "1i0asl380p38ksi59wmyi23jwq05mm9kxymphyqjniq68i0lban4"))))
+        (base32 "0gf89r4wj1ahkzbc6hhbsf5xmnz092y9rb6qwfysf9ix5a6g281a"))))
     (properties `((upstream-name . "stan4bart")))
     (build-system r-build-system)
     (inputs (list tbb))
@@ -37570,19 +37577,19 @@ unknown but known to fall between two time points.")
 (define-public r-simhelpers
   (package
     (name "r-simhelpers")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simhelpers" version))
        (sha256
-        (base32 "0awj430nmwgh2v19zy9sfkq06kjnbr7hp9mrnz4ziwlzm7bzv9wk"))))
+        (base32 "0xxnzs98q4py1z19g7hamfgd3gfhg4fc63w1drzbfsg53kzgxk13"))))
     (properties `((upstream-name . "simhelpers")))
     (build-system r-build-system)
     (inputs (list))
-    (propagated-inputs (list r-tidyr r-tibble r-rstudioapi r-rdpack r-furrr))
+    (propagated-inputs (list r-tidyr r-rstudioapi r-rdpack r-furrr))
     (native-inputs (list r-knitr))
-    (home-page "https://meghapsimatrix.github.io/simhelpers/index.html")
+    (home-page "https://meghapsimatrix.github.io/simhelpers/")
     (synopsis "Helper Functions for Simulation Studies")
     (description
      "Calculates performance criteria measures and associated Monte Carlo standard
@@ -61293,13 +61300,13 @@ ISBN:978-1-118-73578-7) and Battese et al. (1988)
 (define-public r-saehb-panel-beta
   (package
     (name "r-saehb-panel-beta")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "saeHB.panel.beta" version))
        (sha256
-        (base32 "1zhg53nkwky76v1wdiqfmljkz95k6fgz0hvxy1l8mhdfx3d79srk"))))
+        (base32 "0mpq6wskfna4v7wdlq35sg2qjr6l55mq9n87pv71j41yvq3ymanm"))))
     (properties `((upstream-name . "saeHB.panel.beta")))
     (build-system r-build-system)
     (inputs (list jags))
@@ -62018,25 +62025,24 @@ file to be read by Apache Spark.")
 (define-public r-s3
   (package
     (name "r-s3")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "s3" version))
        (sha256
-        (base32 "1cb9xmi4fb0bi3vglbg3jk872nci015v1yxk3049482r92v6lnsn"))))
+        (base32 "10nrm45zji8k1paz7zkmq4ankwz8nisv8ngc459j1bd4578mzv9y"))))
     (properties `((upstream-name . "s3")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-rlang
+                             r-purrr
                              r-prettyunits
                              r-httr
                              r-glue
                              r-fs
                              r-dplyr
-                             r-digest
-                             r-cli
-                             r-aws-signature))
-    (home-page "https://github.com/geomarker-io/s3")
+                             r-cli))
+    (home-page "https://github.com/brokamp-group/s3")
     (synopsis "Download Files from 'AWS S3'")
     (description
      "Download files hosted on AWS S3 (Amazon Web Services Simple Storage Service;

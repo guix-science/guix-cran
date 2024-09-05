@@ -3292,13 +3292,13 @@ for more information about TRIM.")
 (define-public r-rtriangle
   (package
     (name "r-rtriangle")
-    (version "1.6-0.13")
+    (version "1.6-0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTriangle" version))
        (sha256
-        (base32 "1rbilz34fm8i6krvbpzhv3d0s1ix1lcc3n82jmhdddkvdh465pc6"))))
+        (base32 "04x7xyyrh2hz556iv133iynf0vy17g8m4bli9jb6b1inrq6bdg9v"))))
     (properties `((upstream-name . "RTriangle")))
     (build-system r-build-system)
     (home-page "https://github.com/davidcsterratt/RTriangle")
@@ -5662,13 +5662,13 @@ basic RSS.")
 (define-public r-rssa
   (package
     (name "r-rssa")
-    (version "1.0.5")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rssa" version))
        (sha256
-        (base32 "0bajpvrj7cfch7v83dl2swa62kd59xk0lavjcx20lczvd9iijn27"))))
+        (base32 "16f3nyh46kvvqaym0s4ngqxg3b1snp7bmyhnfz5krjwhq371d4fr"))))
     (properties `((upstream-name . "Rssa")))
     (build-system r-build-system)
     (inputs (list fftw))
@@ -10559,16 +10559,17 @@ in @code{JavaScript} by Nicolas Kruchten.  Aligned to pivottable v2.19.0.")
 (define-public r-rphylopic
   (package
     (name "r-rphylopic")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rphylopic" version))
        (sha256
-        (base32 "13kgk5icqs6n6v985p0r0ifiham0m7i2w4ds8pr52mvizg76ymmi"))))
+        (base32 "1flfxxmrn537f9vlnynrwjsjm3gak90m69jwrl5nms06y25wvyih"))))
     (properties `((upstream-name . "rphylopic")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rsvg
+    (propagated-inputs (list r-scales
+                             r-rsvg
                              r-png
                              r-pbapply
                              r-lifecycle
@@ -10835,6 +10836,37 @@ distributed data using the Randomized phi-divergence test statistics.  Details
 of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (2023) <doi:10.1214/22-AIHP1299>.")
     (license license:expat)))
+
+(define-public r-rpdbapi
+  (package
+    (name "r-rpdbapi")
+    (version "2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rPDBapi" version))
+       (sha256
+        (base32 "0ys2kl5wg8vamj6l9jk9z134wkcax8np2b7rpfcykgvybjm3dv11"))))
+    (properties `((upstream-name . "rPDBapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-testthat
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-bio3d))
+    (home-page "https://cran.r-project.org/package=rPDBapi")
+    (synopsis "Comprehensive Interface for Accessing the Protein Data Bank")
+    (description
+     "Streamlines the interaction with the RCSB Protein Data Bank ('PDB')
+<https://www.rcsb.org/>.  This interface offers an intuitive and powerful tool
+for searching and retrieving a diverse range of data types from the PDB'.  It
+includes advanced functionalities like BLAST and sequence motif queries.  Built
+upon the existing XML-based API of the PDB', it simplifies the creation of
+custom requests, thereby enhancing usability and flexibility for researchers.")
+    (license license:gpl2+)))
 
 (define-public r-rpdb
   (package
@@ -15987,13 +16019,13 @@ replacement and shift detection is provided; see Fried (2004)
 (define-public r-robextremes
   (package
     (name "r-robextremes")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RobExtremes" version))
        (sha256
-        (base32 "0dziaykrnhy8ijbq0pxwl5p9xjlbz3kxkmwl3s21kmjnv7nm8sx4"))))
+        (base32 "1l0csq3qldaz6wn87bfx3yw04ay7fxakm80q4ynsy2vw27rjkjck"))))
     (properties `((upstream-name . "RobExtremes")))
     (build-system r-build-system)
     (propagated-inputs (list r-startupmsg
@@ -25354,13 +25386,13 @@ the publication by Runfola et al. (2020) <doi:10.1371/journal.pone.0231866>.")
 (define-public r-rgenoud
   (package
     (name "r-rgenoud")
-    (version "5.9-0.10")
+    (version "5.9-0.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgenoud" version))
        (sha256
-        (base32 "1sfd59lislwcb81j56a5z9b1d62r69hb6gg05g9x4zh919jfwi76"))))
+        (base32 "12pf7kvyvly0aqrk84k07cx7gnqmnrpfzs41ys960gx70lzf77f6"))))
     (properties `((upstream-name . "rgenoud")))
     (build-system r-build-system)
     (home-page "https://github.com/JasjeetSekhon/rgenoud")
@@ -27402,25 +27434,25 @@ original nonsense SNV into an amino acid, etc.")
 (define-public r-reverser
   (package
     (name "r-reverser")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reverseR" version))
        (sha256
-        (base32 "0pzk97q1zs5g1v4ngqd6bkwwxcp89j890nycpc99ipycbgm2r9yw"))))
+        (base32 "1rgp0i4f332w6bshaw0vjch7pgs2jsxqv2292281p2j6wsm9c99b"))))
     (properties `((upstream-name . "reverseR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-markdown r-knitr r-dt))
+    (propagated-inputs (list r-robustbase
+                             r-quantreg
+                             r-l1pack
+                             r-isotree
+                             r-boot-pval
+                             r-boot))
     (home-page "https://cran.r-project.org/package=reverseR")
     (synopsis "Linear Regression Stability to Significance Reversal")
-    (description
-     "Tests linear regressions for significance reversal through
-leave-one(multiple)-out and shifting/addition of response values.  The paradigm
-of the package is loosely based on the somewhat forgotten \"dfstat\" criterion
-(Belsley, Kuh & Welsch 1980 <doi:10.1002/0471725153.ch2>), which tests
-influential values in linear models from their effect on statistical inference,
-i.e.  changes in p-value.")
+    (description "Tests linear regressions for significance reversal through
+leave-one(multiple)-out.")
     (license license:gpl2+)))
 
 (define-public r-revengc
@@ -37898,13 +37930,13 @@ into a markdown version of the package reference manual.")
 (define-public r-rcytogps
   (package
     (name "r-rcytogps")
-    (version "1.2.5")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RCytoGPS" version))
        (sha256
-        (base32 "0a5ap6dizxsilsrv0gyg9vjawm9b6r91a8kbmyd66lpssk4mzc1i"))))
+        (base32 "1xix60ch4zmx60nvyjb69ihg2axqbvdsphw5my68g17am0gk41bd"))))
     (properties `((upstream-name . "RCytoGPS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson))

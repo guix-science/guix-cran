@@ -6462,16 +6462,22 @@ display the descriptive statistics.")
 (define-public r-forrel
   (package
     (name "r-forrel")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forrel" version))
        (sha256
-        (base32 "1xq94rn86nclh0935jqxvlbqjx5qi0mdj9i6b9sb2qbzjjnm1gcl"))))
+        (base32 "03hsnzn5vkhdnf63pv4fq4zxgj2hm4g7jxn0gdr3cg9l4ahwams2"))))
     (properties `((upstream-name . "forrel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-pedfamilias r-glue))
+    (propagated-inputs (list r-verbalisr
+                             r-ribd
+                             r-pedtools
+                             r-pedprobr
+                             r-pedfamilias
+                             r-pbapply
+                             r-glue))
     (home-page "https://github.com/magnusdv/forrel")
     (synopsis "Forensic Pedigree Analysis and Relatedness Inference")
     (description
@@ -18913,6 +18919,34 @@ report with result interpretations.")
 to stabilize in Schoenbrodt and Perugini's definition of sequential stability
 (see <doi:10.1016/j.jrp.2013.05.009>).")
     (license license:gpl3)))
+
+(define-public r-fastpng
+  (package
+    (name "r-fastpng")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastpng" version))
+       (sha256
+        (base32 "00jajshdg6sjmyxv33c171ss0mpbr80f9h41xqsrgi9p8fknx9lq"))))
+    (properties `((upstream-name . "fastpng")))
+    (build-system r-build-system)
+    (inputs (list zlib))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/coolbutuseless/fastpng")
+    (synopsis
+     "Read and Write PNG Files with Configurable Decoder/Encoder Options")
+    (description
+     "Read and write PNG images with arrays, rasters, native rasters, numeric arrays,
+integer arrays, raw vectors and indexed values.  This PNG encoder exposes
+configurable internal options enabling the user to select a speed-size tradeoff.
+ For example, disabling compression can speed up writing PNG by a factor of 50.
+Multiple image formats are supported including raster, native rasters, and
+integer and numeric arrays at color depths of 1, 2, 3 or 4.  16-bit images are
+also supported.  This implementation uses the libspng C library which is
+available from <https://github.com/randy408/libspng/>.")
+    (license license:expat)))
 
 (define-public r-fastpcs
   (package

@@ -7335,13 +7335,13 @@ spectrum.")
 (define-public r-hhsmm
   (package
     (name "r-hhsmm")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hhsmm" version))
        (sha256
-        (base32 "0bgkvqfg2a9fj7gba728m1w6r94krhb380xdkw1rb9478wj72dsj"))))
+        (base32 "0liyx7jii3ryg8zffr9qjq92mdp193p8zzv0azajs038s4flzrlx"))))
     (properties `((upstream-name . "hhsmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-splines2
@@ -8263,13 +8263,13 @@ generate and take coefficient modulo are provided.")
 (define-public r-hetgp
   (package
     (name "r-hetgp")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hetGP" version))
        (sha256
-        (base32 "1rw8ss67d2zglnc0vl2kvmkgglks1666d1ps0bpqgn1f8mdwv2kr"))))
+        (base32 "0h4lhy3ifmdh51f91a5i5cw85mhzszcijrafg1andhkm4fsps5m8"))))
     (properties `((upstream-name . "hetGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-mass r-dicedesign))
@@ -8280,12 +8280,12 @@ generate and take coefficient modulo are provided.")
     (description
      "This package performs Gaussian process regression with heteroskedastic noise
 following the model by Binois, M., Gramacy, R., Ludkovski, M. (2016)
-<@code{arXiv:1611.05902>}, with implementation details in Binois, M. & Gramacy,
-R. B. (2021) <doi:10.18637/jss.v098.i13>.  The input dependent noise is modeled
-as another Gaussian process.  Replicated observations are encouraged as they
-yield computational savings.  Sequential design procedures based on the
-integrated mean square prediction error and lookahead heuristics are provided,
-and notably fast update functions when adding new observations.")
+<doi:10.48550/@code{arXiv.1611.05902>}, with implementation details in Binois,
+M. & Gramacy, R. B. (2021) <doi:10.18637/jss.v098.i13>.  The input dependent
+noise is modeled as another Gaussian process.  Replicated observations are
+encouraged as they yield computational savings.  Sequential design procedures
+based on the integrated mean square prediction error and lookahead heuristics
+are provided, and notably fast update functions when adding new observations.")
     (license license:lgpl2.0+)))
 
 (define-public r-heteromixgm
@@ -9198,13 +9198,13 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "0s4j0cyac3lqk4jjlbwamdk3nkdicq0nxaa579j9k63azcdz49rs"))))
+        (base32 "0dmj55pzfqgp9xb1pi4sjpi8pp40sk5r5vd1qjmjlf16gnw1jlkl"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (inputs (list))

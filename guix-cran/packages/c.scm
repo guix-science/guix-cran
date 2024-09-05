@@ -8152,6 +8152,27 @@ shiny application.  Cppcheck can spot many error types and it can also give some
 recommendations on the code.")
     (license license:gpl3)))
 
+(define-public r-cpp11eigen
+  (package
+    (name "r-cpp11eigen")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cpp11eigen" version))
+       (sha256
+        (base32 "1bnr08a0pspgbzpjgbvkgng9i4z094ljlw9zxf8gl83mygdh93xy"))))
+    (properties `((upstream-name . "cpp11eigen")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://pacha.dev/cpp11eigen/")
+    (synopsis "An 'Eigen' Interface")
+    (description
+     "This package provides function declarations and inline function definitions that
+facilitate communication between R and the Eigen C++ library for linear algebra
+and scientific computing.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-cpp11armadillo
   (package
     (name "r-cpp11armadillo")
@@ -21690,16 +21711,16 @@ inhabit only freshwater.")
 (define-public r-coffee
   (package
     (name "r-coffee")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coffee" version))
        (sha256
-        (base32 "0vq9mwlc014vfbwyn4id99gx2dm3hyazy0qas0bv30x4fk2z2822"))))
+        (base32 "1980dqc8qp6v6d3x9iflbccrlniy8xscjarqdll8p8f6divc9zga"))))
     (properties `((upstream-name . "coffee")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rintcal r-data-table))
+    (propagated-inputs (list r-rice r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Maarten14C/coffee")
     (synopsis "Chronological Ordering for Fossils and Environmental Events")
@@ -28114,6 +28135,34 @@ dependencies but still look great, making them suitable for use a package
 vignettes or for sharing results via email.")
     (license license:expat)))
 
+(define-public r-cleanr
+  (package
+    (name "r-cleanr")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cleanr" version))
+       (sha256
+        (base32 "04rjl8q6hlmw4xc4p4khda6090d39dwig331fzjqiad3bs2xavdy"))))
+    (properties `((upstream-name . "cleanr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rprojroot r-pkgload r-fritools r-checkmate))
+    (native-inputs (list r-rasciidoc))
+    (home-page "https://gitlab.com/fvafrcu/cleanr")
+    (synopsis "Helps You to Code Cleaner")
+    (description
+     "Check your R code for some of the most common layout flaws.  Many tried to teach
+us how to write code less dreadful, be it implicitly as B. W. Kernighan and D.
+M. Ritchie (1988) <ISBN:0-13-110362-8> in The C Programming Language did, be it
+explicitly as R.C. Martin (2008) <ISBN:0-13-235088-2> in Clean Code: A Handbook
+of Agile Software Craftsmanship did.  So we should check our code for files too
+long or wide, functions with too many lines, too wide lines, too many arguments
+or too many levels of nesting.  Note: This is not a static code analyzer like
+pylint or the like.  Checkout <https://cran.r-project.org/package=lintr>
+instead.")
+    (license license:bsd-2)))
+
 (define-public r-cleannlp
   (package
     (name "r-cleannlp")
@@ -28702,16 +28751,16 @@ analysis, applied to isotope data extracted from clams.")
 (define-public r-clam
   (package
     (name "r-clam")
-    (version "2.5.0")
+    (version "2.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clam" version))
        (sha256
-        (base32 "16yq457a2c8d47szimad7rx0q31h0g7iirmb75xxjicvkxqprmaz"))))
+        (base32 "0a292s1prw757ivgmxdcvqa77gnqymhjbml6rn4j0q6jg24d7g6x"))))
     (properties `((upstream-name . "clam")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rintcal))
+    (propagated-inputs (list r-rice r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=clam")
     (synopsis "Classical Age-Depth Modelling of Cores from Deposits")
@@ -32033,16 +32082,16 @@ for full list.")
 (define-public r-childfree
   (package
     (name "r-childfree")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "childfree" version))
        (sha256
-        (base32 "1hss91cls38zj4dibcr9whjlmbs4w2b7xfpgfqkkd6xa6xmcxd6v"))))
+        (base32 "1lqwn7b0mc5v5lqqx2bhh5j110zl119whi7qwgzj0y05fdri98z2"))))
     (properties `((upstream-name . "childfree")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rio))
+    (propagated-inputs (list r-survey r-rio r-rcurl))
     (native-inputs (list r-knitr))
     (home-page "https://www.zacharyneal.com/childfree")
     (synopsis "Access and Harmonize Childfree Demographic Data")
@@ -37515,18 +37564,18 @@ the cross-classification credibility model.")
 (define-public r-ccapp
   (package
     (name "r-ccapp")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ccaPP" version))
        (sha256
-        (base32 "1p08gih67950khfkzhiksa8qw2f9mrmyqiiapsjpv6zc5g0lchhk"))))
+        (base32 "16bw98wqjm62gjcznlwj24akng1csi3dciw6v5rkg9v2xkjn44d5"))))
     (properties `((upstream-name . "ccaPP")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-rcpparmadillo r-rcpp r-pcapp))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=ccaPP")
+    (home-page "https://github.com/aalfons/ccaPP")
     (synopsis "(Robust) Canonical Correlation Analysis via Projection Pursuit")
     (description
      "Canonical correlation analysis and maximum correlation via projection pursuit,
@@ -39101,13 +39150,13 @@ characteristics of the designs are calculated.")
 (define-public r-catregs
   (package
     (name "r-catregs")
-    (version "0.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catregs" version))
        (sha256
-        (base32 "1i94pcfcda0pgvgvfgajmyjg91ia4qi8abjydh3ljywnsjc3bm3p"))))
+        (base32 "0zmgq5w8kd8ldfkz9j43vpzjnyv5rcaaj57r7b7gsxwi3gdvqr4a"))))
     (properties `((upstream-name . "catregs")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

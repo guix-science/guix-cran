@@ -8303,16 +8303,21 @@ classification model pipelines can be implemented using their model name from
 (define-public r-tramvs
   (package
     (name "r-tramvs")
-    (version "0.0-4")
+    (version "0.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tramvs" version))
        (sha256
-        (base32 "0vvdj4q5pf1p0yzpx17h76pgvwmca51dkjx0m33c74vcxp5wmrks"))))
+        (base32 "1j0ymgr09vfhpcg684ggs0zynpy48mgmmymzkq806dqv85qhjq4f"))))
     (properties `((upstream-name . "tramvs")))
     (build-system r-build-system)
-    (propagated-inputs (list r-variables r-tram r-cotram))
+    (propagated-inputs (list r-variables
+                             r-tram
+                             r-mvtnorm
+                             r-future-apply
+                             r-future
+                             r-cotram))
     (native-inputs (list r-knitr))
     (home-page "http://ctm.R-forge.R-project.org")
     (synopsis "Optimal Subset Selection for Transformation Models")
@@ -8649,13 +8654,13 @@ Brophy, J., MÃ©sidor, M., Blais, C. and Hamel, D., (2023)
 (define-public r-trajectories
   (package
     (name "r-trajectories")
-    (version "0.2-8")
+    (version "0.2-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajectories" version))
        (sha256
-        (base32 "0rs4jlj2w9byvx47kvp4aayh485ck2xra3pkpjl95dyk8b0xpl4d"))))
+        (base32 "1wwkkz96wp300ps8jqg4bi7arb43z81821rziw7n31yhag38h3zp"))))
     (properties `((upstream-name . "trajectories")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-spacetime r-sp r-lattice))
@@ -11439,13 +11444,13 @@ annotate the texts.")
 (define-public r-tok
   (package
     (name "r-tok")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tok" version))
        (sha256
-        (base32 "0grnqf0k8vlyfsy8nwaawbyd91l6j8kyvny3cnn8xjgws0pyslli"))))
+        (base32 "0912zzi0sjd2ad5qhnglrlbvcxcvba1v0hrbaxrrfz23f3i6ic4s"))))
     (properties `((upstream-name . "tok")))
     (build-system r-build-system)
     (inputs (list))
@@ -16407,13 +16412,13 @@ classification algorithms on grouped data.")
 (define-public r-tidyfinance
   (package
     (name "r-tidyfinance")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfinance" version))
        (sha256
-        (base32 "0bkql1r8xixvmiri6qhlj0jsk99kbrfjivczhqhnhmzx8a0by3fv"))))
+        (base32 "0xiz3v5wkfrv0r14prx25kkj4q73qd7qhd6gsx1lc2hmrjam91pd"))))
     (properties `((upstream-name . "tidyfinance")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

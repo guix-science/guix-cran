@@ -10019,13 +10019,13 @@ Meucci, Attilio (2008) <doi:10.2139/ssrn.1117574>.")
 (define-public r-blavaan
   (package
     (name "r-blavaan")
-    (version "0.5-5")
+    (version "0.5-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "blavaan" version))
        (sha256
-        (base32 "0v8b6dax5wk3y3hnih0yfsg7cvdwqv9pxs2hd54yi8hmkmgbrlx8"))))
+        (base32 "0lbvsga6ba4n05xnzahmj2dw3jjpjhkg93p9kadb656wxffkq7qy"))))
     (properties `((upstream-name . "blavaan")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvnsim
@@ -11639,6 +11639,31 @@ Whalley, WHPT, Habitat-specific BMWP, AWIC, LIFE and PSI.")
     (description
      "This package provides tools and code snippets for summarizing nested data,
 adverse events and REDCap study information.")
+    (license license:expat)))
+
+(define-public r-biostats101
+  (package
+    (name "r-biostats101")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "biostats101" version))
+       (sha256
+        (base32 "1s8hhj9g8590zz4a07mqsaflhyxfqf0v5yi9vii27d1li23igjvq"))))
+    (properties `((upstream-name . "biostats101")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
+    (home-page "https://cran.r-project.org/package=biostats101")
+    (synopsis "Practical Functions for Biostatistics Beginners")
+    (description
+     "This package provides a set of user-friendly functions designed to fill gaps in
+existing introductory biostatistics R tools, making it easier for newcomers to
+perform basic biostatistical analyses without needing advanced programming
+skills.  The methods implemented in this package are based on the works: Connor
+(1987) <doi:10.2307/2531961> Fleiss, Levin, & Paik (2013,
+ISBN:978-1-118-62561-3) Levin & Chen (1999) <doi:10.1080/00031305.1999.10474431>
+@code{McNemar} (1947) <doi:10.1007/BF02295996>.")
     (license license:expat)))
 
 (define-public r-biostatr
@@ -23003,40 +23028,6 @@ of specific algorithms.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
 
-(define-public r-bayesianvars
-  (package
-    (name "r-bayesianvars")
-    (version "0.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bayesianVARs" version))
-       (sha256
-        (base32 "04q140gpwk8wsybg4jcqdhxln6f4gbg5pca369rfi7yp3xffrbyp"))))
-    (properties `((upstream-name . "bayesianVARs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stochvol
-                             r-scales
-                             r-rcppprogress
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-mvtnorm
-                             r-mass
-                             r-gigrvg
-                             r-factorstochvol
-                             r-colorspace))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/luisgruber/bayesianVARs")
-    (synopsis "MCMC Estimation of Bayesian Vectorautoregressions")
-    (description
-     "Efficient Markov Chain Monte Carlo (MCMC) algorithms for the fully Bayesian
-estimation of vectorautoregressions (VARs) featuring stochastic volatility (SV).
- Implements state-of-the-art shrinkage priors following Gruber & Kastner (2023)
-<doi:10.48550/@code{arXiv.2206.04902>}.  Efficient equation-per-equation
-estimation following Kastner & Huber (2020) <doi:10.1002/for.2680> and Carrerio
-et al. (2021) <doi:10.1016/j.jeconom.2021.11.010>.")
-    (license license:gpl3+)))
-
 (define-public r-bayesiantreg
   (package
     (name "r-bayesiantreg")
@@ -24169,13 +24160,13 @@ Rubin.  Not all datasets yet, hopefully completed soon.")
 (define-public r-bayescvi
   (package
     (name "r-bayescvi")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesCVI" version))
        (sha256
-        (base32 "1vm3nkgq7nc3d8zpxhb6p62yf4bhk2xdqkivdw94ml0npd4xsppb"))))
+        (base32 "0j2kaq0ssbs9d0y17kmj8p89g7gh8dpaa8wrf6ylm3jy27g8b48j"))))
     (properties `((upstream-name . "BayesCVI")))
     (build-system r-build-system)
     (propagated-inputs (list r-universalcvi r-mclust r-ggplot2 r-e1071))
@@ -24183,12 +24174,13 @@ Rubin.  Not all datasets yet, hopefully completed soon.")
     (synopsis "Bayesian Cluster Validity Index")
     (description
      "Algorithms for computing and generating plots with and without error bars for
-Bayesian cluster validity index (BCVI) (N. Wiroonsri, O. Preedasawakul (2024)
-<@code{arXiv:2402.02162>}) based on several underlying cluster validity indexes
-(CVIs) including Calinski-Harabasz, Chou-Su-Lai, Davies-Bouldin, Dunn,
-Pakhira-Bandyopadhyay-Maulik, Point biserial correlation, the score function,
-Starczewski, and Wiroonsri indices for hard clustering, and Correlation Cluster
-Validity, the generalized C, HF, KWON, KWON2, Modified
+Bayesian cluster validity index (BCVI) (O. Preedasawakul, and N. Wiroonsri, A
+Bayesian Cluster Validity Index, Computational Statistics & Data Analysis, 202,
+108053, 2025. <doi:10.1016/j.csda.2024.108053>) based on several underlying
+cluster validity indexes (CVIs) including Calinski-Harabasz, Chou-Su-Lai,
+Davies-Bouldin, Dunn, Pakhira-Bandyopadhyay-Maulik, Point biserial correlation,
+the score function, Starczewski, and Wiroonsri indices for hard clustering, and
+Correlation Cluster Validity, the generalized C, HF, KWON, KWON2, Modified
 Pakhira-Bandyopadhyay-Maulik, Pakhira-Bandyopadhyay-Maulik, Tang,
 Wiroonsri-Preedasawakul, Wu-Li, and Xie-Beni indices for soft clustering.  The
 package is compatible with K-means, fuzzy C means, EM clustering, and

@@ -11572,13 +11572,13 @@ Luo and Chen (2021, <doi:10.4310/21-SII706>).")
 (define-public r-ppseq
   (package
     (name "r-ppseq")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppseq" version))
        (sha256
-        (base32 "1yf0pyfkb2knjn2gf36jhy0qpxwzil37s3zhp3a97cq80jza47hd"))))
+        (base32 "1bprhx8cqn8bsr5ypg2i9mp9pwhk679axvw68f0398ql6yc6bk3h"))))
     (properties `((upstream-name . "ppseq")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -16628,13 +16628,13 @@ visualization.")
 (define-public r-poldis
   (package
     (name "r-poldis")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poldis" version))
        (sha256
-        (base32 "02043wqc2ja12pybaid7c1a33s14q7dhj7mzca5z6i5ganqihrgr"))))
+        (base32 "0si3lvxajp4jlgwh1paksd48yqk3qknh8k5p4zas61056ckdyj8q"))))
     (properties `((upstream-name . "poldis")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -36224,6 +36224,34 @@ it can create documents in many formats (for more information see
      "This package provides a set of tools to install, manage and run several Pandoc
 versions.")
     (license license:expat)))
+
+(define-public r-pandemics
+  (package
+    (name "r-pandemics")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pandemics" version))
+       (sha256
+        (base32 "17rivm44crgws0pcpw7ii8kqzq7r18bwawpfchx4fzgql8647d8d"))))
+    (properties `((upstream-name . "pandemics")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=pandemics")
+    (synopsis "Monitoring a Developing Pandemic with Available Data")
+    (description
+     "Full dynamic system to describe and forecast the spread and the severity of a
+developing pandemic, based on available data.  These data are number of
+infections, hospitalizations, deaths and recoveries notified each day.  The
+system consists of three transitions, infection-infection, infection-hospital
+and hospital-death/recovery.  The intensities of these transitions are dynamic
+and estimated using non-parametric local linear estimators.  The package can be
+used to provide forecasts and survival indicators such as the median time spent
+in hospital and the probability that a patient who has been in hospital for a
+number of days can leave it alive.  Methods are described in GÃ¡miz, Mammen,
+MartÃ­nez-Miranda, and Nielsen (2024) <doi:10.48550/@code{arXiv.2308.09918>} and
+<doi:10.48550/@code{arXiv.2308.09919>}.")
+    (license license:gpl2)))
 
 (define-public r-pancanvarsel
   (package

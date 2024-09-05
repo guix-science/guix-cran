@@ -2507,13 +2507,13 @@ National Football League players.")
 (define-public r-gsignal
   (package
     (name "r-gsignal")
-    (version "0.3-5")
+    (version "0.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsignal" version))
        (sha256
-        (base32 "0qyb8p8vg7sfx6kgib03lwidxh9my669asbjwvbpwzxd4sb51gsf"))))
+        (base32 "13cn82lh0jknhqbql6zcp70ls1f7lq8407lb47qig3ip01a01zxp"))))
     (properties `((upstream-name . "gsignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma))
@@ -5944,13 +5944,13 @@ grouped date classes.  This package is part of the RECON
 (define-public r-grateful
   (package
     (name "r-grateful")
-    (version "0.2.4")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "grateful" version))
        (sha256
-        (base32 "0g1xn8chm4if31xfd012w6zj6gl7s19yifp1pyp6v0frpslcks4b"))))
+        (base32 "02flwjchvqr7wx5rsbiq3l8pgkmg6anw30piydnw0dsp5pmxrq1b"))))
     (properties `((upstream-name . "grateful")))
     (build-system r-build-system)
     (propagated-inputs (list r-rstudioapi r-rmarkdown r-renv r-remotes r-knitr))
@@ -7991,6 +7991,34 @@ covariates.  The development version of the package can be found on
 <https://github.com/gpfda/GPFDA-dev>.")
     (license license:gpl3)))
 
+(define-public r-gpemr
+  (package
+    (name "r-gpemr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPEMR" version))
+       (sha256
+        (base32 "174zhr0nj6z4myvy24j1dx6j44fn30nwbjcpl95wpsz9rsrl41rm"))))
+    (properties `((upstream-name . "GPEMR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GPEMR")
+    (synopsis "Growth Parameter Estimation Method")
+    (description
+     "This package provides functions for simulating and estimating parameters of
+various growth models, including Logistic, Exponential, Theta-logistic,
+Von-Bertalanffy, and Gompertz models.  The package supports both simulated and
+real data analysis, including parameter estimation, visualization, and
+calculation of global and local estimates.  The methods are based on research
+described by Md Aktar Ul Karim and Amiya Ranjan Bhowmick (2022) in
+(<https://www.researchsquare.com/article/rs-2363586/v1>).  An interactive web
+application is also available at [GPEMR Web
+App](<https://gpem-r.shinyapps.io/GPEM-R/>).")
+    (license license:expat)))
+
 (define-public r-gpcmlasso
   (package
     (name "r-gpcmlasso")
@@ -8640,13 +8668,13 @@ places, directions, roads, distances, geocoding, elevation and timezone.")
 (define-public r-googletraffic
   (package
     (name "r-googletraffic")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "googletraffic" version))
        (sha256
-        (base32 "18hk7rg60s8bbr0kn0mi1j7r8iycjfmpnmp88lslzvhq0d1mvaxx"))))
+        (base32 "0zy3dn8rzhdwlxpxmpj8j3m5nzx1hkk733lcvfl6dl7z61n72s7a"))))
     (properties `((upstream-name . "googletraffic")))
     (build-system r-build-system)
     (propagated-inputs (list r-webshot2
@@ -13365,13 +13393,13 @@ fit using local scoring algorithms described in Hastie and Tibshirani (1990)
 (define-public r-gkrls
   (package
     (name "r-gkrls")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gKRLS" version))
        (sha256
-        (base32 "0kkk463mgrypc5vihv9hvj7dsdwv6yvmhxp6iy6ip1k7nqi8xdvf"))))
+        (base32 "0di8hczllxrww6xhcl6hi67p8ihxa09dgd9nbkcx39akv3cwxa8q"))))
     (properties `((upstream-name . "gKRLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -13391,7 +13419,7 @@ facilitate scalable estimation on large datasets.  It provides additional
 functions for calculating marginal effects after estimation and for use with
 ensembles ('@code{SuperLearning}'), double/debiased machine learning
 ('@code{DoubleML}'), and robust/clustered standard errors ('sandwich').  Chang
-and Goplerud (2023) <@code{arXiv:2209.14355>} provide further details.")
+and Goplerud (2024) <doi:10.1017/pan.2023.27> provide further details.")
     (license license:gpl2+)))
 
 (define-public r-gkgraphr
@@ -20899,6 +20927,38 @@ sequencing studies.  Genet Epidemiol 41(4):309-319.  More details can be found
 at <http://scholar.harvard.edu/dqiao/gese>.")
     (license license:gpl2)))
 
+(define-public r-gernika
+  (package
+    (name "r-gernika")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeRnika" version))
+       (sha256
+        (base32 "0d61vx33rxlmjk5kazji0a6wli6cfcardn308wzbjqpvixsqy2vl"))))
+    (properties `((upstream-name . "GeRnika")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-reshape2
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-diagrammer
+                             r-data-tree
+                             r-colorspace))
+    (native-inputs (list r-rmarkdown r-knitr r-knitcitations r-ggpubr
+                         r-ggplot2))
+    (home-page "https://cran.r-project.org/package=GeRnika")
+    (synopsis
+     "Simulation, Visualization and Comparison of Tumor Evolution Data")
+    (description
+     "Simulating, visualizing and comparing tumor clonal data by using simple
+commands.  This aims at providing a tool to help researchers to easily simulate
+tumor data and analyze the results of their approaches for studying the
+composition and the evolutionary history of tumors.")
+    (license license:gpl3+)))
+
 (define-public r-germinationmetrics
   (package
     (name "r-germinationmetrics")
@@ -26515,13 +26575,13 @@ calculations we use moments.")
 (define-public r-gdpuc
   (package
     (name "r-gdpuc")
-    (version "1.0.0")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GDPuc" version))
        (sha256
-        (base32 "0in9nywf4nq8ivr142z15srf71rwm5mxnf8s7dp9fxl6axmizjs1"))))
+        (base32 "0g3s6jhn8ndx7jy97kmfzmxcc2b40k9j47rx703g61la1mm0a4fg"))))
     (properties `((upstream-name . "GDPuc")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -30471,6 +30531,49 @@ objects.  Inputs are : data frame, RDA (package vegan') and PCA (package
 displayed in console and saved in tables ; displayed and saved objects of PCA
 graphic visualization of individuals and variables projections with multiple
 graphic parameters.")
+    (license license:expat)))
+
+(define-public r-g3viz
+  (package
+    (name "r-g3viz")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "g3viz" version))
+       (sha256
+        (base32 "1lkasna05pp5sc9jqgqmias8kl7h1fb64jfb9rpld575lmy2n2gv"))))
+    (properties `((upstream-name . "g3viz")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-stringr
+                             r-org-hs-eg-db
+                             r-jsonlite
+                             r-httr2
+                             r-htmlwidgets
+                             r-annotationdbi))
+    (native-inputs (list esbuild))
+    (home-page "https://github.com/G3viz/g3viz")
+    (synopsis
+     "Interactively Visualize Genetic Mutation Data using a Lollipop-Diagram")
+    (description
+     "Interface for g3-lollipop @code{JavaScript} library.  Visualize genetic mutation
+data using an interactive lollipop diagram in RStudio or your web browser.")
     (license license:expat)))
 
 (define-public r-g2sd

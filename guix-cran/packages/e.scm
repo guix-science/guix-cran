@@ -8480,13 +8480,13 @@ data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.")
 (define-public r-eq5d
   (package
     (name "r-eq5d")
-    (version "0.15.3")
+    (version "0.15.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eq5d" version))
        (sha256
-        (base32 "1rynjc0bvihkk3arrcl0s16fa9p8avddhr62k60crc4xaibhvkz6"))))
+        (base32 "1y01v5mxgj30halsslhc8rhkz6g8jri8ackpsmxc7l18fj6nnvms"))))
     (properties `((upstream-name . "eq5d")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -8508,17 +8508,19 @@ scale.  Frequently the scores on these five dimensions are converted to a single
 utility index using country specific value sets, which can be used in the
 clinical and economic evaluation of health care as well as in population health
 surveys.  The eq5d package provides methods to calculate index scores from a
-subject's dimension scores.  30 TTO and 11 VAS EQ-5D-3L value sets including
+subject's dimension scores.  31 TTO and 11 VAS EQ-5D-3L value sets including
 those for countries in Szende et al (2007) <doi:10.1007/1-4020-5511-0> and
-Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 42 EQ-5D-5L EQ-VT value
+Szende et al (2014) <doi:10.1007/978-94-007-7596-1>, 43 EQ-5D-5L EQ-VT value
 sets, the EQ-5D-5L crosswalk value sets developed by van Hout et al. (2012)
-<doi:10.1016/j.jval.2012.02.008>, the crosswalk value set for Russia and reverse
-crosswalk value sets.  Nine EQ-5D-Y value sets are also included as are the NICE
-DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to EQ-5D-3L mappings.
-Methods are also included for the analysis of EQ-5D profiles along with a shiny
-web tool to enable the calculation, visualisation and automated statistical
-analysis of EQ-5D data via a web browser using EQ-5D dimension scores stored in
-CSV or Excel files.")
+<doi:10.1016/j.jval.2012.02.008>, the crosswalk value sets for Bermuda and
+Russia and the reverse crosswalk value sets.  10 EQ-5D-Y value sets are also
+included as are the NICE DSU age-sex based EQ-5D-3L to EQ-5D-5L and EQ-5D-5L to
+EQ-5D-3L mappings.  Methods are also included for the analysis of EQ-5D
+profiles, including those from the book \"Methods for Analyzing and Reporting
+EQ-5D data\" by Devlin et al. (2020) <doi:10.1007/978-3-030-47622-9>.
+Additionally a shiny web tool is included to enable the calculation,
+visualisation and automated statistical analysis of EQ-5D data via a web browser
+using EQ-5D dimension scores stored in CSV or Excel files.")
     (license license:expat)))
 
 (define-public r-epxtor

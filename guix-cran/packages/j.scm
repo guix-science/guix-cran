@@ -1128,13 +1128,13 @@ addin.  The report appears in the RStudio viewer pane.")
 (define-public r-jsdne
   (package
     (name "r-jsdne")
-    (version "4.3.4")
+    (version "4.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "JSDNE" version))
        (sha256
-        (base32 "04vaalcwixzi1si814zmh6w9rfircj9rd5y3gx64d5l4f5illsn5"))))
+        (base32 "1sw5bdf3mmnp3wqbnlifxh6ppb62rv6x46l5nfnxadmcv503c0f2"))))
     (properties `((upstream-name . "JSDNE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rvcg r-nnet r-molar r-mass r-dplyr))

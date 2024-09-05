@@ -4179,13 +4179,13 @@ particularly for high-dimensional data.  Song, H. and Chen, H. (2022)
 (define-public r-kerntools
   (package
     (name "r-kerntools")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kerntools" version))
        (sha256
-        (base32 "15g0q0manlrx6nxw6sd1191hazh0q78qhrb2wik7r7dw0ksv4125"))))
+        (base32 "13vzpjwgjqc9529lfxzf72mzc4pjc6p16fv6y05xkawy67mvkqib"))))
     (properties `((upstream-name . "kerntools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-reshape2 r-kernlab r-ggplot2 r-dplyr))

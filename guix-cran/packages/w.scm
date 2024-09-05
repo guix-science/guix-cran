@@ -1150,13 +1150,13 @@ al., 2021 <doi:10.1111/biom.13501>).")
 (define-public r-wqtrends
   (package
     (name "r-wqtrends")
-    (version "1.4.2")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wqtrends" version))
        (sha256
-        (base32 "17hgh4kp5nlq5n8nrd0zrjj87rlk8ny67nbdlqnr9q0y5yxbyw63"))))
+        (base32 "0swgjxq1i6pgflvavwq2dcdw21mc9bngqy18l089xrdv8kvilw4m"))))
     (properties `((upstream-name . "wqtrends")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite

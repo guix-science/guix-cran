@@ -475,13 +475,13 @@ publishable @code{LaTeX} code to present the sample information.")
 (define-public r-overturer
   (package
     (name "r-overturer")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "overtureR" version))
        (sha256
-        (base32 "07m0fkcix5s6diw3dcqyi45r04x66h6khpjgi96mww1k8gl37kg6"))))
+        (base32 "0x4z1dyijw4qrf5g89mskvmxvy01xa94bkdk2ybp2ykfgbh3svcy"))))
     (properties `((upstream-name . "overtureR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf

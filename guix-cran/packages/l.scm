@@ -3789,13 +3789,13 @@ visualization.")
 (define-public r-longpower
   (package
     (name "r-longpower")
-    (version "1.0.26")
+    (version "1.0.27")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "longpower" version))
        (sha256
-        (base32 "1m0583cki8p88kp7h24zxp4m5kldl85qiaq6vrw2dqswvrasvdh4"))))
+        (base32 "1n6g2frmpsg8990gcvnky9s96qql816zn1r01vn7kjbkyba99vx9"))))
     (properties `((upstream-name . "longpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme r-lme4))
@@ -5898,17 +5898,18 @@ quasi-Newton algorithms may be used for parameter estimation.")
 (define-public r-localcontrol
   (package
     (name "r-localcontrol")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LocalControl" version))
        (sha256
-        (base32 "0pi5z3i5hmb8nrqg6nyqrd4hx80xjgc5m3ra1z5r8rvjhw4mz0ik"))))
+        (base32 "0c8032657nhk62c5a4nd3ja5kq5igmnfxqi3r5fkpjgvx43s82s6"))))
     (properties `((upstream-name . "LocalControl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-lattice r-gss r-cluster))
-    (home-page "https://cran.r-project.org/package=LocalControl")
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OHDSI/LocalControl")
     (synopsis
      "Nonparametric Methods for Generating High Quality Comparative Effectiveness Evidence")
     (description
@@ -17685,13 +17686,13 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
 (define-public r-l1centrality
   (package
     (name "r-l1centrality")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1centrality" version))
        (sha256
-        (base32 "0qkzpx81gs0hkbzizrv4841jpalq06h6h7lw53088b7rmqahcraj"))))
+        (base32 "1dcdkd0l9i8bpyc5clp0yb8zg2nrwklha3p814jpbi9chpm2010v"))))
     (properties `((upstream-name . "L1centrality")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rcpp r-igraph))
@@ -17701,7 +17702,8 @@ performance than methods commonly used in LINCS L1000 data deconvolution.")
      "Analyze graph/network data using L1 centrality and prestige.  Functions for
 deriving global, local, and group L1 centrality/prestige are provided.  Routines
 for visual inspection of a graph/network are also provided.  Details are in Kang
-and Oh (2024) <doi:10.48550/@code{arXiv.2404.13233>}.")
+and Oh (2024a) <doi:10.48550/@code{arXiv.2404.13233>} and Kang and Oh (2024b)
+<doi:10.48550/@code{arXiv.2408.12078>}.")
     (license license:gpl3+)))
 
 (define-public r-l1ball

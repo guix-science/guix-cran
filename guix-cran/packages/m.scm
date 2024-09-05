@@ -1831,13 +1831,13 @@ sampling positive stable variates not chi/sqrt(nu).")
 (define-public r-mvgam
   (package
     (name "r-mvgam")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgam" version))
        (sha256
-        (base32 "1cbqz680844zjd0girpivig11infzn417cra3r87yg0iai7cz5zd"))))
+        (base32 "03nirq7wn3rp9lwkagvqcjrzihq0vmj8dijpn350j8cxvcdvbscl"))))
     (properties `((upstream-name . "mvgam")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -10095,19 +10095,19 @@ over discrete, often discontinuous depth intervals.")
 (define-public r-mpsem
   (package
     (name "r-mpsem")
-    (version "0.4-1")
+    (version "0.4-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MPSEM" version))
        (sha256
-        (base32 "0cq7vyyif7gxywrj420msscjf1aq427g88x8yvxf3a5a6mqapkr8"))))
+        (base32 "0g3rv4gizsdjhiip6inv0pcmbjd9px8c4wn6vsz77ya05g4427an"))))
     (properties `((upstream-name . "MPSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=MPSEM")
-    (synopsis "Modeling Phylogenetic Signals using Eigenvector Maps")
+    (synopsis "Modelling Phylogenetic Signals using Eigenvector Maps")
     (description
      "Computational tools to represent phylogenetic signals using adapted eigenvector
 maps.")
@@ -17729,6 +17729,33 @@ models without having to worry about low level details.  Custom architectures
 can be created using the graph language defined in mlr3pipelines'.")
     (license license:lgpl3+)))
 
+(define-public r-mlr3superlearner
+  (package
+    (name "r-mlr3superlearner")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlr3superlearner" version))
+       (sha256
+        (base32 "090d6524rf1f4gpmkhgqzfs1zxhnlqwd9wc1x8lvvlx22246xj6h"))))
+    (properties `((upstream-name . "mlr3superlearner")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-mlr3learners
+                             r-mlr3
+                             r-lgr
+                             r-glmnet
+                             r-data-table
+                             r-cli
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=mlr3superlearner")
+    (synopsis "Super Learner Fitting and Prediction")
+    (description
+     "An implementation of the Super Learner prediction algorithm from van der Laan,
+Polley, and Hubbard (2007) <doi:10.2202/1544-6115.1309 using the mlr3 framework.")
+    (license license:gpl3+)))
+
 (define-public r-mlr3summary
   (package
     (name "r-mlr3summary")
@@ -18608,6 +18635,29 @@ ISBN:9781849202015).")
      "This package provides a collection of evaluation metrics, including loss, score
 and utility functions, that measure regression, classification and ranking
 performance.")
+    (license license:gpl2)))
+
+(define-public r-mlmc
+  (package
+    (name "r-mlmc")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mlmc" version))
+       (sha256
+        (base32 "177ih6x701pnjnwrs34pwj8376s6177a1xkmr8zkcgx2wjwjiv4x"))))
+    (properties `((upstream-name . "mlmc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-ggplot2))
+    (home-page "https://mlmc.louisaslett.com/")
+    (synopsis "Multi-Level Monte Carlo")
+    (description
+     "An implementation of MLMC (Multi-Level Monte Carlo), Giles (2008)
+<doi:10.1287/opre.1070.0496>, Heinrich (1998) <doi:10.1006/jcom.1998.0471>, for
+R. This package builds on the original Matlab and C++ implementations by Mike
+Giles to provide a full MLMC driver and example level samplers.  Multi-core
+parallel sampling of levels is provided built-in.")
     (license license:gpl2)))
 
 (define-public r-mlma
@@ -24354,13 +24404,13 @@ Perederiy, V. (2017) <doi:10.48550/@code{arXiv.1708.00062>}.")
 (define-public r-migraph
   (package
     (name "r-migraph")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "migraph" version))
        (sha256
-        (base32 "0nr5y9yxwny8k4z5jm742k7n9r4s00xlkqbynfdf4apd5y6q8snm"))))
+        (base32 "1iz2xnf8r9w0swqpjwgaais85qlk3l1n7r5qwg5pxjmv2h1bwj7k"))))
     (properties `((upstream-name . "migraph")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -41551,13 +41601,13 @@ samples.")
 (define-public r-mapgl
   (package
     (name "r-mapgl")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapgl" version))
        (sha256
-        (base32 "0azjdkywmyn9njddy1kish69as8dg9yp18qly6fqljbh50c2rlkj"))))
+        (base32 "0rkj2zvf2hjq8pxbhd8j7nijms5hss5zawy4mnwgbx6vv7qbwcb2"))))
     (properties `((upstream-name . "mapgl")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

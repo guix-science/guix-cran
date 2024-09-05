@@ -5483,13 +5483,13 @@ the items) tools functionality.")
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "008r2fkp16l8sdyn6is0n0v7m8lvx0zn7c3jscd1gfdzkf82zb2a"))))
+        (base32 "0yv324h14gmdllapfr17h2jkixrpzwdgjq002xm0gjpwqhg3qd0p"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
