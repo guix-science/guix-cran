@@ -6984,36 +6984,6 @@ Inspiration also comes from packages.  future by Bengtsson (2021)
 Surmann (2017) <doi:10.21105/joss.00135>.")
     (license license:expat)))
 
-(define-public r-cregg
-  (package
-    (name "r-cregg")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cregg" version))
-       (sha256
-        (base32 "1a34jhdk4r9ywsrc5dc8wq5am3059cli60f6n2n8j04ls13fvlkd"))))
-    (properties `((upstream-name . "cregg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survey
-                             r-scales
-                             r-sandwich
-                             r-lmtest
-                             r-ggstance
-                             r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/leeper/cregg")
-    (synopsis "Simple Conjoint Tidying, Analysis, and Visualization")
-    (description
-     "Simple tidying, analysis, and visualization of conjoint (factorial) experiments,
-including estimation and visualization of average marginal component effects
-('AMCEs') and marginal means ('MMs') for weighted and un-weighted survey data,
-along with useful reference category diagnostics and statistical tests.
-Estimation of AMCEs is based upon methods described by Hainmueller, Hopkins, and
-Yamamoto (2014) <doi:10.1093/pan/mpt024>.")
-    (license license:expat)))
-
 (define-public r-credule
   (package
     (name "r-credule")
@@ -15713,13 +15683,13 @@ connectedness papers.")
 (define-public r-connectapi
   (package
     (name "r-connectapi")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "connectapi" version))
        (sha256
-        (base32 "0k3z30kgz8yl07kxfbqy1w8bdr0viyglibxv6y36f46q6nf1mf6a"))))
+        (base32 "02vrsfwzwsr0nnb26yp1bfgjzl7cgwdakl1m0gp6s4zirg9nhj9d"))))
     (properties `((upstream-name . "connectapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -43037,17 +43007,16 @@ estimates.")
 (define-public r-calango
   (package
     (name "r-calango")
-    (version "1.0.16")
+    (version "1.0.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CALANGO" version))
        (sha256
-        (base32 "1rs992i6xmisx180yyc6z7qlig9a4kj7r3vr5ysf6kcgycj72nj1"))))
+        (base32 "1fh42my2fs142qzq5b1q5b2zr8pbw12h1pp8c53z0ii0g5pz075h"))))
     (properties `((upstream-name . "CALANGO")))
     (build-system r-build-system)
-    (propagated-inputs (list r-taxize
-                             r-rmarkdown
+    (propagated-inputs (list r-rmarkdown
                              r-plotly
                              r-pkgdown
                              r-pbmcapply

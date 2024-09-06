@@ -15525,6 +15525,32 @@ those observations) only half of the study follow-up period.  We use them only
 to illustrate methods, not to draw substantive conclusions.")
     (license license:gpl2+)))
 
+(define-public r-aifftools
+  (package
+    (name "r-aifftools")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AIFFtools" version))
+       (sha256
+        (base32 "0r3ksaag7xpfzi1v944fhv89ygp9ikhyw6kfspihcnxw767iz70i"))))
+    (properties `((upstream-name . "AIFFtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tuner r-r-utils))
+    (home-page "https://cran.r-project.org/package=AIFFtools")
+    (synopsis "Read AIFF Files and Convert to WAVE Format")
+    (description
+     "This package provides functions are provided to read and convert AIFF audio
+files to WAVE (WAV) format.  This supports, for example, use of the @code{tuneR}
+package, which does not currently handle AIFF files.  The AIFF file format is
+defined in
+<https://web.archive.org/web/20080125221040/http://www.borg.com/~jglatt/tech/aiff.htm>
+and
+<https://www.mmsp.ece.mcgill.ca/Documents/@code{AudioFormats/AIFF/Docs/AIFF-1.3.pdf>}
+.")
+    (license license:lgpl3)))
+
 (define-public r-aifeducation
   (package
     (name "r-aifeducation")

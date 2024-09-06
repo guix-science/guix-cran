@@ -16470,33 +16470,6 @@ orthogonal transformation of the data and specific priors present by Cuevas et
 al. (2014) <doi:10.1534/g3.114.013094>.")
     (license license:gpl3)))
 
-(define-public r-bgganalytics
-  (package
-    (name "r-bgganalytics")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bggAnalytics" version))
-       (sha256
-        (base32 "0c761f04vr63zsavj3vzxxab30zn4p5zpi5gyfkqplm96brpkg3m"))))
-    (properties `((upstream-name . "bggAnalytics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-stringr
-                             r-r6
-                             r-pryr
-                             r-data-table
-                             r-checkmate))
-    (home-page "https://github.com/JakubBujnowicz/bggAnalytics")
-    (synopsis "BoardGameGeek's Board Game Data Analysis Tools")
-    (description
-     "This package provides tools for analysing board game data.  Mainly focused on
-providing an interface for @code{BoardGameGeek's} XML API2 through R6 class
-system objects.  More details about the @code{BoardGameGeek's} API can be
-obtained here <https://boardgamegeek.com/wiki/page/BGG_XML_API2>.")
-    (license license:gpl3)))
-
 (define-public r-bgfd
   (package
     (name "r-bgfd")

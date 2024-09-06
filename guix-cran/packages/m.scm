@@ -13648,49 +13648,6 @@ estimation.  This package contains the modified function of Choi's turning point
 method.")
     (license license:gpl3)))
 
-(define-public r-modtools
-  (package
-    (name "r-modtools")
-    (version "0.9.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ModTools" version))
-       (sha256
-        (base32 "09ag46i8a2lk99qxyf3jzsssv5k5jix8vvvdq2s89im20n8pk2q6"))))
-    (properties `((upstream-name . "ModTools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-sandwich
-                             r-rpart-plot
-                             r-rpart
-                             r-robustbase
-                             r-relaimpo
-                             r-randomforest
-                             r-proc
-                             r-nnet
-                             r-neuralnettools
-                             r-naivebayes
-                             r-mass
-                             r-lmtest
-                             r-lattice
-                             r-e1071
-                             r-desctools
-                             r-class
-                             r-car
-                             r-c50
-                             r-boot
-                             r-aer))
-    (home-page "https://andrisignorell.github.io/ModTools/")
-    (synopsis "Tools for Building Regression and Classification Models")
-    (description
-     "Collection of tools for regression and classification tasks.  The package
-implements a consistent user interface to the most popular regression and
-classification algorithms, such as random forest, neural networks, C5 trees and
-support vector machines, and complements it with a handful of auxiliary
-functions, such as variable importance and a tuning function for the parameters.")
-    (license license:gpl2+)))
-
 (define-public r-modstatr
   (package
     (name "r-modstatr")
@@ -16364,6 +16321,34 @@ launches a card game application which can help build intuition about
 informative hypothesis testing.  The iht_interpreter() helps interpret
 informative hypothesis testing results based on guidelines in Vanbrabant and
 Rosseel (2020) <doi:10.4324/9780429273872-14>.")
+    (license license:expat)))
+
+(define-public r-mmints
+  (package
+    (name "r-mmints")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mmints" version))
+       (sha256
+        (base32 "0ddqbnj466sd56470sc8m1irzgch7nqidrbb01axwmyqjnfy56jv"))))
+    (properties `((upstream-name . "mmints")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rpostgres r-pool r-dt))
+    (home-page "https://github.com/mightymetrika/mmints")
+    (synopsis "Workflows for Building Web Applications")
+    (description
+     "Sharing statistical methods or simulation frameworks through shiny applications
+often requires workflows for handling data.  To help save and display simulation
+results, the @code{postgresUI}() and @code{postgresServer}() functions in mmints
+help with persistent data storage using a @code{PostgreSQL} database.  The
+mmints package also offers data upload functionality through the
+@code{csvUploadUI}() and @code{csvUploadServer}() functions which allow users to
+upload data, view variables and their types, and edit variable types before
+fitting statistical models within the shiny application.  These tools aim to
+enhance efficiency and user interaction in shiny based statistical and
+simulation applications.")
     (license license:expat)))
 
 (define-public r-mminp

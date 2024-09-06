@@ -817,6 +817,36 @@ algorithm can be set by the user.  Default values are set based on arguments in
 Oliveira and Takahashi (2021).")
     (license license:gpl2+)))
 
+(define-public r-itos
+  (package
+    (name "r-itos")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "iTOS" version))
+       (sha256
+        (base32 "0zi8q5vhmmyc1n4g8ccvf7mdr5740llkmrcbpddl7nzfjgx9n6c3"))))
+    (properties `((upstream-name . "iTOS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xtable r-rcbalance r-mass r-biasedurn))
+    (home-page "https://cran.r-project.org/package=iTOS")
+    (synopsis
+     "Methods and Examples from Introduction to the Theory of Observational Studies")
+    (description
+     "Supplements for a book, \"@code{iTOS}\" = \"Introduction to the Theory of
+Observational Studies.\" Data sets are @code{aHDL} from Rosenbaum (2023a)
+<doi:10.1111/biom.13558> and @code{bingeM} from Rosenbaum (2023b)
+<doi:10.1111/biom.13921>.  The function makematch() uses two-criteria matching
+from Zhang et al. (2023) <doi:10.1080/01621459.2021.1981337> to create the
+matched data @code{bingeM} from binge'.  The makematch() function also
+implements optimal matching (Rosenbaum (1989) <doi:10.2307/2290079>) and
+matching with fine or near-fine balance (Rosenbaum et al. (2007)
+<doi:10.1198/016214506000001059> and Yang et al (2012)
+<doi:10.1111/j.1541-0420.2011.01691.x>).  The book makes use of two other R
+packages, @code{weightedRank} and @code{tightenBlock}'.")
+    (license license:gpl2)))
+
 (define-public r-itop
   (package
     (name "r-itop")
@@ -8634,6 +8664,37 @@ hierarchical agglomerative clustering approach proposed by Gan et.  al. (2015)
 <doi:10.1080/14697688.2015.1023336> and later extended by Ersan and Alici (2016)
 <doi:10.1016/j.intfin.2016.04.001> .")
     (license license:gpl3)))
+
+(define-public r-infoset
+  (package
+    (name "r-infoset")
+    (version "4.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "INFOSET" version))
+       (sha256
+        (base32 "0acy50q9nm9wq40dkf7if5ayrvbwia0ym66kw72zvm0bxf9ww8j4"))))
+    (properties `((upstream-name . "INFOSET")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-quadprog r-mixtools r-matrix r-dendextend
+                             r-colorspace))
+    (home-page "https://cran.r-project.org/package=INFOSET")
+    (synopsis "Computing a New Informative Distribution Set of Asset Returns")
+    (description
+     "Estimation of the most-left informative set of gross returns (i.e., the
+informative set).  The procedure to compute the informative set adjusts the
+method proposed by Mariani et al. (2022a) <doi:10.1007/s11205-020-02440-6> and
+Mariani et al. (2022b) <doi:10.1007/s10287-022-00422-2> to gross returns of
+financial assets.  This is accomplished through an adaptive algorithm that
+identifies sub-groups of gross returns in each iteration by approximating their
+distribution with a sequence of two-component log-normal mixtures.  These
+sub-groups emerge when a significant change in the distribution occurs below the
+median of the financial returns, with their boundary termed as the âchange
+point\" of the mixture.  The process concludes when no further change points are
+detected.  The outcome encompasses parameters of the leftmost mixture
+distributions and change points of the analyzed financial time series.")
+    (license license:gpl2+)))
 
 (define-public r-informedsen
   (package

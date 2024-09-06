@@ -1576,13 +1576,13 @@ regression analysis.")
 (define-public r-gtsummary
   (package
     (name "r-gtsummary")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gtsummary" version))
        (sha256
-        (base32 "13p3ii63whd0vgx5lnvdaqhmi6if492r9x2v769vnck2dzpsrjbp"))))
+        (base32 "0vq6dzwvlnqdiin76icbi0yidw1cwrg5aj2cxg88hii228lgr8ym"))))
     (properties `((upstream-name . "gtsummary")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -14846,6 +14846,26 @@ Chinese, Japanese, and Korean text into tokens.  The main goal of this package
 is to provide an alternative to tidytext using morphological analysis.")
     (license license:gpl3+)))
 
+(define-public r-giant
+  (package
+    (name "r-giant")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GiANT" version))
+       (sha256
+        (base32 "01gvaian8a1dnlfvvbbxshfvfwr50dl9l1d41cq1nmy37gilj0pk"))))
+    (properties `((upstream-name . "GiANT")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=GiANT")
+    (synopsis "Gene Set Uncertainty in Enrichment Analysis")
+    (description
+     "Toolbox for various enrichment analysis methods and quantification of
+uncertainty of gene sets, Schmid et al. (2016)
+<doi:10.1093/bioinformatics/btw030>.")
+    (license license:artistic2.0)))
+
 (define-public r-giacr
   (package
     (name "r-giacr")
@@ -15270,6 +15290,28 @@ font size and such), which then are translated into valid ggplot2 commands.")
 that they do not overlap as in ggrepel'.  The algorithm used is a variation
 around the one of wordcloud2.js'.")
     (license license:gpl3)))
+
+(define-public r-ggvolcano
+  (package
+    (name "r-ggvolcano")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggvolcano" version))
+       (sha256
+        (base32 "1sj5g3gsdk3bi9vvnjmsfx6c68dhg0b4lpsq9ljxsx2xzapmilmm"))))
+    (properties `((upstream-name . "ggvolcano")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-golem r-ggrepel r-ggplot2 r-config))
+    (home-page "https://cran.r-project.org/package=ggvolcano")
+    (synopsis "Publication-Ready Volcano Plots")
+    (description
+     "This package provides publication-ready volcano plots for visualizing
+differential expression results, commonly used in RNA-seq and similar analyses.
+This tool helps create high-quality visual representations of data using the
+ggplot2 framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
+    (license license:expat)))
 
 (define-public r-ggversa
   (package
@@ -21731,13 +21773,13 @@ formats are provided.")
 (define-public r-georob
   (package
     (name "r-georob")
-    (version "0.3-19")
+    (version "0.3-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "georob" version))
        (sha256
-        (base32 "0mxd29viapqzwmqy097r2ykkqjch5v3qn5p3ixz5kp2q9xlqfq2p"))))
+        (base32 "0z1g26z4dbayxbh506ynh03v51v0q9dgz2b98l3cfbb9g53q1d7q"))))
     (properties `((upstream-name . "georob")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -22518,6 +22560,56 @@ brief summary output, and a few methods such as extracting and adding bounding
 boxes, properties, and coordinate reference systems; working with newline
 delimited @code{GeoJSON}'; and serializing to/from Geobuf binary @code{GeoJSON}
 format.")
+    (license license:expat)))
+
+(define-public r-geoidep
+  (package
+    (name "r-geoidep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoidep" version))
+       (sha256
+        (base32 "0pcdxbwkar45dgc5bbvpyzga31kyy70ic48rajl1663m6kn1fjpx"))))
+    (properties `((upstream-name . "geoidep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-httr r-archive))
+    (native-inputs (list r-knitr))
+    (home-page "https://geografo.pe/geoidep/")
+    (synopsis
+     "Download Geographic Data on Various Topics Provided and Managed by the Spatial Data Infrastructure of Peru")
+    (description
+     "This package provides R users with easy access to official cartographic data
+from Peru across a range of topics, including society, transport, environment,
+agriculture, climate, and more.  It also includes data from regional government
+entities and technical-scientific institutions, all managed by Peru's Spatial
+Data Infrastructure.  For more information, please visit:
+<https://www.geoidep.gob.pe/catalogos-de-metadatos>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
+(define-public r-geoheatmap
+  (package
+    (name "r-geoheatmap")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geoheatmap" version))
+       (sha256
+        (base32 "1jqbvzz3cjyrkxj7q50w1hl62q5pdw0qfi1l7ca0j3b0m4ndbhgi"))))
+    (properties `((upstream-name . "geoheatmap")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-statebins r-rlang r-plotly r-ggplot2 r-geofacet))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=geoheatmap")
+    (synopsis "Create Geospatial Cartogram Heatmaps")
+    (description
+     "The functionality provided by this package is an expansion of the code of the
+statebins package, created by B. Rudis (2022),
+<doi:10.32614/CRAN.package.statebins>.  It allows for the creation of square
+choropleths for the entire world, provided an appropriate specified grid is
+supplied.")
     (license license:expat)))
 
 (define-public r-geohashtools
@@ -28692,13 +28784,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.20")
+    (version "0.9.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "03qywfw5pha3y3m4bvxm4nni0sziwy0s4rr4w6qnm71252piim9x"))))
+        (base32 "07m6n4520p465mc6a8nb7b96p1i4n6ljssmak4ia4f8i3zrhlbdh"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

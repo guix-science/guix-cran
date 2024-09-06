@@ -6158,6 +6158,51 @@ rasters).  It is based on the SLIC algorithm (Achanta et al. (2012)
 dissimilarity measures.")
     (license license:gpl3+)))
 
+(define-public r-supercell
+  (package
+    (name "r-supercell")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SuperCell" version))
+       (sha256
+        (base32 "01zdh9fz174rys9vixcpskxyva511p7xww3xlkmsp01j4prg0gba"))))
+    (properties `((upstream-name . "SuperCell")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-weights
+                             r-weightedcluster
+                             r-umap
+                             r-scales
+                             r-rtsne
+                             r-rlang
+                             r-rann
+                             r-proxy
+                             r-plyr
+                             r-plotfunctions
+                             r-patchwork
+                             r-matrixstats
+                             r-matrix
+                             r-irlba
+                             r-igraph
+                             r-hmisc
+                             r-ggplot2
+                             r-entropy
+                             r-dbscan
+                             r-corpcor))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=SuperCell")
+    (synopsis
+     "Simplification of scRNA-Seq Data by Merging Together Similar Cells")
+    (description
+     "Aggregates large single-cell data into metacell dataset by merging together gene
+expression of very similar cells. @code{SuperCell} uses velocyto.R
+<doi:10.1038/s41586-018-0414-6> <https://github.com/velocyto-team/velocyto.R>
+for RNA velocity.  We also recommend installing scater Bioconductor package
+<doi:10.18129/B9.bioc.scater>
+<https://bioconductor.org/packages/release/bioc/html/scater.html>.")
+    (license license:gpl3)))
+
 (define-public r-superbiclust
   (package
     (name "r-superbiclust")
@@ -14598,6 +14643,38 @@ log-contaminated-normal, log-slash, Birnbaum-Saunders and Birnbaum-Saunders-t
 distributions.")
     (license (list license:gpl2 license:gpl3))))
 
+(define-public r-ssw
+  (package
+    (name "r-ssw")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ssw" version))
+       (sha256
+        (base32 "1dqdh0rs82frck4z3bafhimc6bdasjw45fyl96mzk1kajb92y16y"))))
+    (properties `((upstream-name . "ssw")))
+    (build-system r-build-system)
+    (inputs (list python))
+    (propagated-inputs (list r-reticulate))
+    (native-inputs (list r-knitr))
+    (home-page "https://nanx.me/ssw-r/")
+    (synopsis
+     "Striped Smith-Waterman Algorithm for Sequence Alignment using SIMD")
+    (description
+     "This package provides an R interface for SSW (Striped Smith-Waterman) via its
+Python binding ssw-py'.  SSW is a fast C/C++ implementation of the
+Smith-Waterman algorithm for pairwise sequence alignment using
+Single-Instruction-Multiple-Data (SIMD) instructions.  SSW enhances the standard
+algorithm by efficiently returning alignment information and suboptimal
+alignment scores.  The core SSW library offers performance improvements for
+various bioinformatics tasks, including protein database searches, short-read
+alignments, primary and split-read mapping, structural variant detection, and
+read-overlap graph generation.  These features make SSW particularly useful for
+genomic applications.  Zhao et al. (2013) <doi:10.1371/journal.pone.0082138>
+developed the original C/C++ implementation.")
+    (license license:expat)))
+
 (define-public r-ssvs
   (package
     (name "r-ssvs")
@@ -22432,13 +22509,13 @@ regression').")
 (define-public r-spatstat-knet
   (package
     (name "r-spatstat-knet")
-    (version "3.1-0")
+    (version "3.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatstat.Knet" version))
        (sha256
-        (base32 "1n9hqq0pamk4bm9jbl1plpsa6ynab7kll6j3dhcvpmyai462wcxa"))))
+        (base32 "1l5742m0sq94fl055anxdxl5fr3b4nv6l82kjrxfrpfnyv6kpkib"))))
     (properties `((upstream-name . "spatstat.Knet")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-utils
@@ -31705,18 +31782,18 @@ smallsets vignette.")
 (define-public r-smallcountrounding
   (package
     (name "r-smallcountrounding")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SmallCountRounding" version))
        (sha256
-        (base32 "1jnhfzjd2x54h35si1wrr91dkzdzc502m07mvvb894y5pq5q823a"))))
+        (base32 "04h7mqjnnxjqi63x476fz5pm78y8ylk8x3h8mzlnfpq068gknzlc"))))
     (properties `((upstream-name . "SmallCountRounding")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-matrix))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/statisticsnorway/SmallCountRounding")
+    (home-page "https://github.com/statisticsnorway/ssb-smallcountrounding")
     (synopsis "Small Count Rounding of Tabular Data")
     (description
      "This package provides a statistical disclosure control tool to protect frequency
@@ -31727,7 +31804,7 @@ rounded.  This is equivalent to changing micro data since frequencies of unique
 combinations are changed.  Thus, additivity and consistency are guaranteed.  The
 methodology is described in Langsrud and Heldal (2018)
 <https://www.researchgate.net/publication/327768398_An_Algorithm_for_Small_Count_Rounding_of_Tabular_Data>.")
-    (license license:asl2.0)))
+    (license license:expat)))
 
 (define-public r-smallarea
   (package
@@ -50997,21 +51074,23 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.3.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "0333b74aiam8k8rgqbbaqqlnh1mbqlyz0lxbpbqpvd2sb50ic3fx"))))
+        (base32 "0r08zffzhm6gdwivnan94dm10s0sd8zr9r3g08ql3pqx3059hk6i"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
+    (inputs (list tbb))
     (propagated-inputs (list r-testthat
                              r-rcpparmadillo
                              r-rcpp
                              r-quanteda
                              r-proxyc
                              r-matrix))
+    (native-inputs (list pkg-config))
     (home-page "https://github.com/koheiw/seededlda")
     (synopsis "Seeded Sequential LDA for Topic Modeling")
     (description
@@ -54418,13 +54497,13 @@ the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
 (define-public r-scoringrules
   (package
     (name "r-scoringrules")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringRules" version))
        (sha256
-        (base32 "1qy521jhr5mj7999ncz27f3ggld2rqvgy3y3wznk23772xpgjgrr"))))
+        (base32 "0vd1zk09spkn3mibag7nyr0kycp280vx942g1fk1dj31mrfngkh9"))))
     (properties `((upstream-name . "scoringRules")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-knitr))
@@ -54435,7 +54514,9 @@ the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
     (description
      "Dictionary-like reference for computing scoring rules in a wide range of
 situations.  Covers both parametric forecast distributions (such as mixtures of
-Gaussians) and distributions generated via simulation.")
+Gaussians) and distributions generated via simulation.  Further details can be
+found in the package vignettes <doi:10.18637/jss.v090.i12>,
+<doi:10.18637/jss.v110.i08>.")
     (license license:gpl2+)))
 
 (define-public r-scoringfunctions

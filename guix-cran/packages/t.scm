@@ -384,6 +384,31 @@ the row and column effects.")
 random coefficients: A stable and efficient two-step estimation method.")
     (license license:gpl2)))
 
+(define-public r-twostagedesigntmle
+  (package
+    (name "r-twostagedesigntmle")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twoStageDesignTMLE" version))
+       (sha256
+        (base32 "134yiwmkyqq80zvk328fl5mzyp5h2i68n8m544maipi5kjhv4sz7"))))
+    (properties `((upstream-name . "twoStageDesignTMLE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tmle))
+    (home-page "https://cran.r-project.org/package=twoStageDesignTMLE")
+    (synopsis
+     "Targeted Maximum Likelihood Estimation for Two-Stage Study Design")
+    (description
+     "An inverse probability of censoring weighted (IPCW) targeted maximum likelihood
+estimator (TMLE) for evaluating a marginal point treatment effect from data
+where some variables were collected on only a subset of participants using a
+two-stage design (or marginal mean outcome for a single arm study).  A TMLE for
+conditional parameters defined by a marginal structural model (MSM) is also
+available.")
+    (license license:gpl3)))
+
 (define-public r-twosigma
   (package
     (name "r-twosigma")
@@ -26454,16 +26479,16 @@ retrieval.")
 (define-public r-tabula
   (package
     (name "r-tabula")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabula" version))
        (sha256
-        (base32 "03h4i899ciiwhwjwbkkm6x93r3469r1bmw6dfrrya5iykk434v0d"))))
+        (base32 "0vw1ksjv82azg97k2kvszvp5d8nqprk9g3i0i5mx20iymxjjv032"))))
     (properties `((upstream-name . "tabula")))
     (build-system r-build-system)
-    (propagated-inputs (list r-arkhe))
+    (propagated-inputs (list r-khroma r-arkhe))
     (native-inputs (list r-knitr))
     (home-page "https://packages.tesselle.org/tabula/")
     (synopsis "Analysis and Visualization of Archaeological Count Data")

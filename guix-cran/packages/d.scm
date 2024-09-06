@@ -4887,16 +4887,16 @@ to the software and explicitly not to the included data.")
 (define-public r-drdid
   (package
     (name "r-drdid")
-    (version "1.0.7")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRDID" version))
        (sha256
-        (base32 "0a4hp5ngwjgdfphphdpp09g08wrfx130wdqngaza468kv8zp7prf"))))
+        (base32 "1x9sy9srzslhjzc8ybczpn1hkvmxihqjqpwannj9hb6zlaa1lc95"))))
     (properties `((upstream-name . "DRDID")))
     (build-system r-build-system)
-    (propagated-inputs (list r-trust r-rcpp r-bmisc))
+    (propagated-inputs (list r-trust r-rcpp r-parglm r-fastglm r-bmisc))
     (home-page "https://psantanna.com/DRDID/")
     (synopsis "Doubly Robust Difference-in-Differences Estimators")
     (description
@@ -24547,13 +24547,13 @@ Office.")
 (define-public r-datastreamdsws2r
   (package
     (name "r-datastreamdsws2r")
-    (version "1.9.7")
+    (version "1.9.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DatastreamDSWS2R" version))
        (sha256
-        (base32 "117ahby12i6w93rk41f4cg0v179nk3gr73729v1iclkagizi8hpp"))))
+        (base32 "0qyd4mml2j6gk4nsy59lm7317n6g975rb9k2a1h71d7kbbh5801b"))))
     (properties `((upstream-name . "DatastreamDSWS2R")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -24565,14 +24565,13 @@ Office.")
                              r-foreach
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=DatastreamDSWS2R")
-    (synopsis
-     "Provides a Link Between the 'Refinitiv Datastream' System and R")
+    (synopsis "Provides a Link Between the 'LSEG Datastream' System and R")
     (description
      "This package provides a set of functions and a class to connect, extract and
-upload information from the Refinitiv Datastream database.  This package uses
-the DSWS API and server used by the Datastream DFO addin'.  Details of this API
-are available at <https://www.lseg.com/en/data-analytics>.  Please report issues
-at <https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
+upload information from the LSEG Datastream database.  This package uses the
+DSWS API and server used by the Datastream DFO addin'.  Details of this API are
+available at <https://www.lseg.com/en/data-analytics>.  Please report issues at
+<https://github.com/@code{CharlesCara/DatastreamDSWS2R/issues>}.")
     (license license:gpl3)))
 
 (define-public r-datastepr
@@ -25364,13 +25363,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.5.1")
+    (version "1.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "0bxfa001j9vib0sj9d32qyzrqjvdzm5zxcpg1mm3jw31546jl46p"))))
+        (base32 "0g0s3lbz8kdpciq9ra7v719f8q10q23mp12w4lr9p50742zm10bd"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -25386,7 +25385,8 @@ data manipulation challenges.")
                              r-phosphoricons
                              r-htmltools
                              r-data-table
-                             r-classint))
+                             r-classint
+                             r-bslib))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dreamRs/datamods")
     (synopsis "Modules to Import and Manipulate Data in 'Shiny'")

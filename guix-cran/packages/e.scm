@@ -18560,6 +18560,30 @@ a black-box approach for standard tasks (plug-and-play style) and a much more
 flexible white-box approach where the evolutionary cycle is written by hand.")
     (license license:gpl3)))
 
+(define-public r-ecpdist
+  (package
+    (name "r-ecpdist")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ecpdist" version))
+       (sha256
+        (base32 "1an8j13ms7blyx084y1jgbf32qp2gjw62mdxyl418y4ygl6f7gji"))))
+    (properties `((upstream-name . "ecpdist")))
+    (build-system r-build-system)
+    (home-page "<https://github.com/abreu-uma/ecpdist>")
+    (synopsis "Extended Chen-Poisson Lifetime Distribution")
+    (description
+     "Computes the Extended Chen-Poisson (ecp) distribution, survival, density,
+hazard, cumulative hazard and quantile functions.  It also allows to generate a
+pseudo-random sample from this distribution.  The corresponding graphics are
+available.  Functions to obtain measures of skewness and kurtosis, k-th raw
+moments, conditional k-th moments and mean residual life function were added.
+For details about ecp distribution, see Sousa-Ferreira, I., Abreu, A.M. & Rocha,
+C. (2023). <doi:10.57805/revstat.v21i2.405>.")
+    (license license:gpl3)))
+
 (define-public r-ecpc
   (package
     (name "r-ecpc")
@@ -22025,6 +22049,34 @@ maximum temperatures) for points and polygons within Europe.")
 time-consuming.  This package takes the pain out of that process by providing
 functions to quickly locate variables and download labeled tables from the
 Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
+    (license license:expat)))
+
+(define-public r-easybio
+  (package
+    (name "r-easybio")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easybio" version))
+       (sha256
+        (base32 "0nc15qbwmmcbvb36ia9kpvljwbjn8h4ing62l6951c906j652yg4"))))
+    (properties `((upstream-name . "easybio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-limma r-ggplot2 r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/person-c/easybio")
+    (synopsis
+     "Comprehensive Single-Cell Annotation and Transcriptomic Analysis Toolkit")
+    (description
+     "This package provides a comprehensive toolkit for single-cell annotation with
+the @code{CellMarker2.0} database
+<http://bio-bigdata.hrbmu.edu.cn/@code{CellMarker/>}.  Streamlines biological
+label assignment in single-cell RNA-seq data and facilitates transcriptomic
+analysis, including preparation of TCGA<https://portal.gdc.cancer.gov/> and
+GEO<https://www.ncbi.nlm.nih.gov/geo/> datasets, differential expression
+analysis and visualization of enrichment analysis results.  Additional utility
+functions support various bioinformatics workflows.")
     (license license:expat)))
 
 (define-public r-easybgm

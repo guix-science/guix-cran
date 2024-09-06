@@ -14213,35 +14213,6 @@ functionality for ridge-type estimation of the generalized linear model (as
 presented in van Wieringen, Binder, 2022, <doi:10.1080/10618600.2022.2035231>).")
     (license license:gpl2+)))
 
-(define-public r-popvar
-  (package
-    (name "r-popvar")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "PopVar" version))
-       (sha256
-        (base32 "165c6gfj8qgpvv7ybl571abzf011c738l7xk5lkq9fbvbdqgdc5d"))))
-    (properties `((upstream-name . "PopVar")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rrblup r-qtl r-bglr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=PopVar")
-    (synopsis
-     "Genomic Breeding Tools: Genetic Variance Prediction and Cross-Validation")
-    (description
-     "The main attribute of @code{PopVar} is the prediction of genetic variance in
-bi-parental populations, from which the package derives its name. @code{PopVar}
-contains a set of functions that use phenotypic and genotypic data from a set of
-candidate parents to 1) predict the mean, genetic variance, and superior progeny
-value of all, or a defined set of pairwise bi-parental crosses, and 2) perform
-cross-validation to estimate genome-wide prediction accuracy of multiple
-statistical models.  More details are available in Mohammadi, Tiede, and Smith
-(2015, <doi:10.2135/cropsci2015.01.0030>).  A dataset think_barley.rda is
-included for reference and examples.")
-    (license license:gpl3)))
-
 (define-public r-poputils
   (package
     (name "r-poputils")
@@ -17707,13 +17678,13 @@ using package survey'.")
 (define-public r-pnar
   (package
     (name "r-pnar")
-    (version "1.6")
+    (version "1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PNAR" version))
        (sha256
-        (base32 "18nq5g2vsc8xy4l1km710l2v8frw3wwpn4yx23s3xczqd8hj9wfw"))))
+        (base32 "0x7vfj4r3z3rsh056j8sh7jzsmk6wpzgksvidybl8ra2z1sc69x9"))))
     (properties `((upstream-name . "PNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast2
@@ -17730,11 +17701,12 @@ Network Autoregression models with p lags and covariates.  Tools for testing the
 linearity versus several non-linear alternatives.  Tools for simulation of
 multivariate count distributions, from linear and non-linear PNAR models, by
 using a specific copula construction.  References include: Armillotta, M. and K.
-Fokianos (2022a).  Poisson network autoregression. <@code{arXiv:2104.06296>}.
-Armillotta, M. and K. Fokianos (2022b).  Testing linearity for network
-autoregressive models. <@code{arXiv:2202.03852>}.  Armillotta, M., Tsagris, M.
-and Fokianos, K. (2022c).  The R-package PNAR for modelling count network time
-series. <@code{arXiv:2211.02582>}.")
+Fokianos (2023). \"Nonlinear network autoregression\".  Annals of Statistics,
+51(6): 2526--2552. <doi:10.1214/23-AOS2345>.  Armillotta, M. and K. Fokianos
+(2024). \"Count network autoregression\".  Journal of Time Series Analysis, 45(4):
+584--612. <doi:10.1111/jtsa.12728>.  Armillotta, M., Tsagris, M. and Fokianos,
+K. (2024). \"Inference for Network Count Time Series with the R Package PNAR\".
+The R Journal, 15/4: 255--269. <doi:10.32614/RJ-2023-094>.")
     (license license:gpl2+)))
 
 (define-public r-pnadcibge
@@ -30987,6 +30959,49 @@ together with the online system (<https://pda-ota.pdamethods.org/>) for safe and
 convenient collaboration.  For more information, please visit our software
 websites: <https://github.com/Penncil/pda>, and <https://pdamethods.org/>.")
     (license license:asl2.0)))
+
+(define-public r-pcvr
+  (package
+    (name "r-pcvr")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pcvr" version))
+       (sha256
+        (base32 "12zkw3xlzclms5bj477aarxxnl28p77hakvf38y2r09vzbjhs0bv"))))
+    (properties `((upstream-name . "pcvr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-survival
+                             r-scales
+                             r-rlang
+                             r-quantreg
+                             r-patchwork
+                             r-nlme
+                             r-mgcv
+                             r-lmesplines
+                             r-lme4
+                             r-jsonlite
+                             r-igraph
+                             r-ggridges
+                             r-ggplot2
+                             r-factominer
+                             r-extradistr
+                             r-data-table
+                             r-car
+                             r-bayestestr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/danforthcenter/pcvr")
+    (synopsis "Plant Phenotyping and Bayesian Statistics")
+    (description
+     "Analyse common types of plant phenotyping data, provide a simplified interface
+to longitudinal growth modeling and select Bayesian statistics, and streamline
+use of @code{PlantCV} output.  Several Bayesian methods and reporting guidelines
+for Bayesian methods are described in Kruschke (2018)
+<doi:10.1177/2515245918771304>, Kruschke (2013) <doi:10.1037/a0029146>, and
+Kruschke (2021) <doi:10.1038/s41562-021-01177-7>.")
+    (license license:gpl2)))
 
 (define-public r-pcv
   (package

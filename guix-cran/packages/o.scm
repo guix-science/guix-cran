@@ -1610,18 +1610,18 @@ Krantz (2023) <https://www.ssrn.com/abstract=4537867>.")
 (define-public r-osmapir
   (package
     (name "r-osmapir")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "osmapiR" version))
        (sha256
-        (base32 "1bdfi1ykw3vjlca44kpn69b0snz948r8nyvg3dn1ik89f8xc9sj7"))))
+        (base32 "1c0x6132h0wa3652sy4kxzq2mkzik8nk0kdxz3357a3pfh0d9n0x"))))
     (properties `((upstream-name . "osmapiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-httr2 r-curl))
     (native-inputs (list r-knitr))
-    (home-page "https://jmaspons.github.io/osmapiR/")
+    (home-page "https://docs.ropensci.org/osmapiR/")
     (synopsis "'OpenStreetMap' API")
     (description
      "Interface to @code{OpenStreetMap} API for fetching and saving data from/to the
@@ -4321,6 +4321,31 @@ steepest gradient descent methods for function optimization; for details see
 Ruder (2016) <@code{arXiv:1609.04747v2>}.  Currently, the Steepest 2-Groups
 Gradient Descent and the Adaptive Moment Estimation (Adam) are the methods
 implemented.  Other methods will be implemented in the future.")
+    (license license:gpl3)))
+
+(define-public r-optimcheck
+  (package
+    (name "r-optimcheck")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optimCheck" version))
+       (sha256
+        (base32 "0nxvq6xmcgfdnmlva65swi519vysa1dya14r5vna4ma006229ncy"))))
+    (properties `((upstream-name . "optimCheck")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/mlysy/optimCheck")
+    (synopsis "Graphical and Numerical Checks for Mode-Finding Routines")
+    (description
+     "This package provides tools for checking that the output of an optimization
+algorithm is indeed at a local mode of the objective function.  This is
+accomplished graphically by calculating all one-dimensional \"projection plots\"
+of the objective function, i.e., varying each input variable one at a time with
+all other elements of the potential solution being fixed.  The numerical values
+in these plots can be readily extracted for the purpose of automated and
+systematic unit-testing of optimization routines.")
     (license license:gpl3)))
 
 (define-public r-optimbase
@@ -10997,19 +11022,18 @@ an efficient survey design.  Reference: Fukaya et al. (2022)
 (define-public r-occcite
   (package
     (name "r-occcite")
-    (version "0.5.7")
+    (version "0.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "occCite" version))
        (sha256
-        (base32 "130fk8m1dcid4kiswr4fpq6da84b2gfjwa20gmcsp1r75yzi95nx"))))
+        (base32 "0147c89yppj4mq3s2r49bwl64kw7nlsa81p7ljhiqzh80scq8fg3"))))
     (properties `((upstream-name . "occCite")))
     (build-system r-build-system)
     (propagated-inputs (list r-waffle
                              r-viridis
                              r-tidyr
-                             r-taxize
                              r-stringr
                              r-rpostgresql
                              r-rlang

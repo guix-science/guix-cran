@@ -352,13 +352,13 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
 (define-public r-hypetools
   (package
     (name "r-hypetools")
-    (version "1.6.2")
+    (version "1.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HYPEtools" version))
        (sha256
-        (base32 "0g6gb3ig3qrqi9p8i35lxdgcz92ibjg2qdldnl1b3j1b6assza71"))))
+        (base32 "02svacsfqva5kfjypy0ilarig1gbla9jcsprmvyb5aqmh4rhfa92"))))
     (properties `((upstream-name . "HYPEtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -387,7 +387,9 @@ Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
      "Work with model files (setup, input, output) from the hydrological catchment
 model HYPE: Streamlined file import and export, standard evaluation plot
 routines, diverse post-processing and aggregation routines for hydrological
-model analysis.")
+model analysis.  The HYPEtools package is also archived at
+<doi:10.5281/zenodo.7627955> and can be cited in publications with Brendel et
+al. (2024) <doi:10.1016/j.envsoft.2024.106094>.")
     (license license:lgpl3)))
 
 (define-public r-hypervolume
@@ -1985,13 +1987,13 @@ Beffa, Junxi Wang, Jialiang Li, Frank Pessler, Frank Klawonn (2014)
 (define-public r-huito
   (package
     (name "r-huito")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huito" version))
        (sha256
-        (base32 "0i7wxgddgdk72r6a2zmfi8b84ism0551f9n0hz8jx6aj21wqkx4r"))))
+        (base32 "08p60mdmnpvqii75psza79yi4wasbnfwf5qay68lsyw836nylnra"))))
     (properties `((upstream-name . "huito")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -2232,13 +2234,13 @@ performance.")
 (define-public r-httk
   (package
     (name "r-httk")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "httk" version))
        (sha256
-        (base32 "1ws9bxrl0r59nni6avvr7qgs866p90l88x9xyfw2s90j5q2zzil5"))))
+        (base32 "0p1vxy8pl38aqa6xq84g1pandc4h0cg53aykn6xf1difbkjz9a9z"))))
     (properties `((upstream-name . "httk")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -10168,13 +10170,13 @@ Zhu, Tianming, Liang Zhang, and Jin-Ting Zhang.(2022)
 (define-public r-hdnom
   (package
     (name "r-hdnom")
-    (version "6.0.3")
+    (version "6.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdnom" version))
        (sha256
-        (base32 "0n6wvjkg4dyq140a5grpnv526v2z5m7w726cnslrshcj31mngr46"))))
+        (base32 "0d9khk2a16p4j6vcj109pn695fbrra8vx821fzzyg56px5j1j8k0"))))
     (properties `((upstream-name . "hdnom")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -11133,6 +11135,37 @@ under each of the implemented priors are also included.  The package compiles
 all the @code{CmdStan} models once during installation using the instantiate
 package.")
     (license license:expat)))
+
+(define-public r-hdar
+  (package
+    (name "r-hdar")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hdar" version))
+       (sha256
+        (base32 "0jjzzwgsp0shb6j5d28xmf2467055l45wra86q124gnxk70j6cmp"))))
+    (properties `((upstream-name . "hdar")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-r6
+                             r-magrittr
+                             r-jsonlite
+                             r-humanize
+                             r-httr2
+                             r-htmltools))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.wekeo.eu/")
+    (synopsis "'REST' API Client for Accessing Data on 'WEkEO HDA V2'")
+    (description
+     "This package provides seamless access to the W@code{EkEO} Harmonised Data Access
+(HDA) API, enabling users to query, download, and process data efficiently from
+the HDA platform.  With hdar', researchers and data scientists can integrate the
+extensive HDA datasets into their R workflows, enhancing their data analysis
+capabilities.  Comprehensive information on the API functionality and usage is
+available at <https://gateway.prod.wekeo2.eu/hda-broker/docs>.")
+    (license (license:fsdg-compatible "EUPL (>= 1.2)"))))
 
 (define-public r-hda
   (package

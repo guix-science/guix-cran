@@ -5551,16 +5551,15 @@ series.\" Journal of the Royal Statistical Society, Series B, 75, 879-904.
 (define-public r-locatt
   (package
     (name "r-locatt")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LocaTT" version))
        (sha256
-        (base32 "0wbzyw0h6mz5kh9k5x45vffzp6wa76y9qz5s534vvnmgcic2vqnm"))))
+        (base32 "0zbhf5mpyg1cn0ab033lajjaqh7j2614lhwcxxwra5by26b6gh75"))))
     (properties `((upstream-name . "LocaTT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-taxize))
     (home-page "https://github.com/Urodelan/LocaTT")
     (synopsis
      "Geographically-Conscious Taxonomic Assignment for Metabarcoding")
@@ -7573,13 +7572,13 @@ in R.")
 (define-public r-liver
   (package
     (name "r-liver")
-    (version "1.15")
+    (version "1.16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "liver" version))
        (sha256
-        (base32 "0b786f9r3i2cskshzqgwkb2wx33xv82kl2rxfy047jda2y938lhc"))))
+        (base32 "0vwrzl34yfm1117ylfdxi2aw803yvj89xpv48f8rkkk42nz6m8wx"))))
     (properties `((upstream-name . "liver")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-class))

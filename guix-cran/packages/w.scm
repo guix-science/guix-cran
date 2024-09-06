@@ -2177,16 +2177,16 @@ where available, or direct download from
 (define-public r-wordmap
   (package
     (name "r-wordmap")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wordmap" version))
        (sha256
-        (base32 "04s77aghy7q2x9khhl49xv2kbkhim39pmrr9ra3wrlm7map47ygr"))))
+        (base32 "1wqrl2m8a6icvls9ski5k474y0v7l9jdkk8jz2fqgksaqq4y94z1"))))
     (properties `((upstream-name . "wordmap")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-quanteda r-matrix))
+    (propagated-inputs (list r-stringi r-quanteda r-matrix r-ggrepel r-ggplot2))
     (home-page "https://github.com/koheiw/wordmap")
     (synopsis
      "Feature Extraction and Document Classification with Noisy Labels")

@@ -2974,13 +2974,13 @@ functional and structural imaging.")
 (define-public r-kira
   (package
     (name "r-kira")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Kira" version))
        (sha256
-        (base32 "1ynf31wy93agwn5apaskyj3whdzgb83r4j4h0b455f2j7h5yac49"))))
+        (base32 "1m5a551vlvd7ndmphqs182kmva7qyyh2rqxkmck7vjcil0qw11bk"))))
     (properties `((upstream-name . "Kira")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -4527,13 +4527,13 @@ requiring you to change a few lines of code.")
 (define-public r-keras3
   (package
     (name "r-keras3")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "keras3" version))
        (sha256
-        (base32 "0dssv7n34lc934z16kpcjiyf30qgnmn5sqyyhbqxbxs23g2mvmjl"))))
+        (base32 "05g2kqf9ffk94vgclndyf5hqx9g5gnl0skzn5bfx48qlsi9g3m37"))))
     (properties `((upstream-name . "keras3")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot

@@ -6225,22 +6225,22 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.3.3")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "011lvhvlqwra6fzdszd6pq82h9r5fsx98d9afcc1z1ksa87md8vq"))))
+        (base32 "1f86hmdykdzq9jg95zzsxh6dlg03wgadp6s7pkgq2fihq0zaxqsz"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ape))
+    (propagated-inputs (list r-tidytree r-rlang r-ggtree r-ggplot2 r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FossilSim")
-    (synopsis "Simulation of Fossil and Taxonomy Data")
+    (synopsis "Simulation and Plots for Fossil and Taxonomy Data")
     (description
-     "Simulating taxonomy and fossil data on phylogenetic trees under mechanistic
-models of speciation, preservation and sampling.")
+     "Simulating and plotting taxonomy and fossil data on phylogenetic trees under
+mechanistic models of speciation, preservation and sampling.")
     (license license:gpl3)))
 
 (define-public r-fossilbrush
@@ -9693,6 +9693,50 @@ re-producibility in the context of machine-learning.")
      "Adds flow maps to ggplot2 plots.  The flow maps consist of ggplot2 layers which
 visualize the nodes as circles and the bilateral flows between the nodes as
 bidirectional half-arrows.")
+    (license license:expat)))
+
+(define-public r-flowmapblue
+  (package
+    (name "r-flowmapblue")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "flowmapblue" version))
+       (sha256
+        (base32 "0l4pp5dmyifqrzna3cadyb6xsiqjifgb1pl8r6whw4gi11b9vxzx"))))
+    (properties `((upstream-name . "flowmapblue")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-htmlwidgets))
+    (native-inputs (list r-quarto esbuild))
+    (home-page "https://github.com/FlowmapBlue/flowmapblue.R")
+    (synopsis "Flow Map Rendering")
+    (description
+     "Create interactive flow maps using @code{FlowmapBlue} @code{TypeScript} library
+<https://github.com/@code{FlowmapBlue/FlowmapBlue>}, which is a free tool for
+representing aggregated numbers of movements between geographic locations as
+flow maps.  It is used to visualize urban mobility, commuting behavior, bus,
+subway and air travels, bicycle sharing, human and bird migration, refugee
+flows, freight transportation, trade, supply chains, scientific collaboration,
+epidemiological and historical data and many other topics.  The package allows
+to either create standalone flow maps in form of htmlwidgets and save them in
+HTML files, or integrate flow maps into Shiny applications.")
     (license license:expat)))
 
 (define-public r-flowermate
