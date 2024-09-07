@@ -7829,13 +7829,13 @@ transforming the PRN's in order to control the sample overlap.")
 (define-public r-prng
   (package
     (name "r-prng")
-    (version "0.0.2.1.1")
+    (version "0.0.2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRNG" version))
        (sha256
-        (base32 "00y8kdjaggjcyy370q9m1klzv26bmha71ash1jw3pibx9sdv6lir"))))
+        (base32 "0dildm11z7p5m0lxcqiwg1bm25hsczyba68cnkdcj1bankd5gcwx"))))
     (properties `((upstream-name . "PRNG")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=PRNG")
@@ -16315,13 +16315,13 @@ the base temperature for growing degree days (Yang et al. (1995)
 (define-public r-polle
   (package
     (name "r-polle")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polle" version))
        (sha256
-        (base32 "11n2g4gbwvcgw49pfr7qgbfidfwliqkag3n6wxcinl44b2l6jjfi"))))
+        (base32 "1adzq67nqgdfi0n1fjag19pl529qwj0w70wrs182m4zp5a5k2zvl"))))
     (properties `((upstream-name . "polle")))
     (build-system r-build-system)
     (propagated-inputs (list r-targeted
@@ -16337,10 +16337,11 @@ the base temperature for growing degree days (Yang et al. (1995)
     (home-page "https://cran.r-project.org/package=polle")
     (synopsis "Policy Learning")
     (description
-     "Framework for evaluating user-specified finite stage policies and learning
-realistic policies via doubly robust loss functions.  Policy learning methods
-include doubly robust Q-learning, sequential policy tree learning, and outcome
-weighted learning.  See Nordland and Holst (2022)
+     "Package for evaluating user-specified finite stage policies and learning optimal
+treatment policies via doubly robust loss functions.  Policy learning methods
+include doubly robust learning of the blip/conditional average treatment effect
+and sequential policy tree learning.  The package also include methods for
+optimal subgroup analysis.  See Nordland and Holst (2022)
 <doi:10.48550/@code{arXiv.2212.02335>} for documentation and references.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
@@ -29483,13 +29484,13 @@ ISBN:9780128244302).")
 (define-public r-pedsuite
   (package
     (name "r-pedsuite")
-    (version "1.2.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedsuite" version))
        (sha256
-        (base32 "1l7yyn8w1lsqlnd79vp2yaxyh6wrkxn4rm1kcbcv5bd9ivxc9k8b"))))
+        (base32 "0arydd5lmwsqp0g7akd7w0w5mc7bs4dap38bnap9qh0znf94kka2"))))
     (properties `((upstream-name . "pedsuite")))
     (build-system r-build-system)
     (propagated-inputs (list r-verbalisr
@@ -29498,6 +29499,7 @@ ISBN:9780128244302).")
                              r-pedtools
                              r-pedprobr
                              r-pedmut
+                             r-pedfamilias
                              r-pedbuildr
                              r-paramlink2
                              r-ibdsim2
@@ -29506,11 +29508,11 @@ ISBN:9780128244302).")
     (native-inputs (list r-knitr))
     (home-page "https://magnusdv.github.io/pedsuite/")
     (synopsis
-     "Easy Installation of the 'ped suite' Packages for Pedigree Analysis")
+     "Easy Installation of the 'pedsuite' Packages for Pedigree Analysis")
     (description
-     "The ped suite is a collection of packages for pedigree analysis, covering
+     "The pedsuite is a collection of packages for pedigree analysis, covering
 applications in forensic genetics, medical genetics and more.  A detailed
-presentation of the ped suite is given in the book Pedigree Analysis in R
+presentation of the pedsuite is given in the book Pedigree Analysis in R
 (Vigeland, 2021, ISBN: 9780128244302).")
     (license license:gpl3+)))
 
@@ -29762,13 +29764,13 @@ kernel and burden association statistics.")
 (define-public r-pedfamilias
   (package
     (name "r-pedfamilias")
-    (version "0.2.2")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedFamilias" version))
        (sha256
-        (base32 "0fxwsamflw4vkw2hi0gmgkds0vx9yikda31s6fdcvnbjs1cpf1zd"))))
+        (base32 "015cpgzk7ampam0q85hmwnscwxv72kiyvs4p9rsp00r468zwyfca"))))
     (properties `((upstream-name . "pedFamilias")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedmut))
@@ -34911,13 +34913,13 @@ visualizations.  Length of color palettes is configurable.")
 (define-public r-pari
   (package
     (name "r-pari")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pARI" version))
        (sha256
-        (base32 "17dxrs4ckxh70d33n93bxr0gzsidychnyclwvnb42cqfplbndca5"))))
+        (base32 "0c6lbzam854j9c442jxgshkb18zr2jdwlc5kbddll64ijxxk5cym"))))
     (properties `((upstream-name . "pARI")))
     (build-system r-build-system)
     (propagated-inputs (list r-rnifti
@@ -34928,11 +34930,11 @@ visualizations.  Length of color palettes is configurable.")
                              r-aribrain))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/angeella/pARI")
-    (synopsis "Permutation-Based All-Resolutions Inference Method")
+    (synopsis "Permutation-Based All-Resolutions Inference")
     (description
-     "It computes the All-Resolution Inference method in the permutation framework,
-i.e., simultaneous lower confidence bounds for the number of true discoveries.
-<@code{arXiv:2012.00368>}.")
+     "Computes the All-Resolution Inference method in the permutation framework, i.e.,
+simultaneous lower confidence bounds for the number of true discoveries.
+<doi:10.1002/sim.9725>.")
     (license license:gpl2+)))
 
 (define-public r-parglm

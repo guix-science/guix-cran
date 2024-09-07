@@ -2334,13 +2334,13 @@ Functions in vivaldi primarily operate on vcf files.")
 (define-public r-vivainsights
   (package
     (name "r-vivainsights")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vivainsights" version))
        (sha256
-        (base32 "0gdhq8qdzzzvv2l5cr57wp6lnn082hcs7svbdjaphzx6ryw1bqna"))))
+        (base32 "0h2xk3wcfwnd0wy722glq46ybpk384rkgr6y1hfv5yn5bsnarffr"))))
     (properties `((upstream-name . "vivainsights")))
     (build-system r-build-system)
     (propagated-inputs (list r-wpa
@@ -4715,23 +4715,28 @@ Factorization algorithms - Random generators of diferent types of integers.")
 (define-public r-vertexwiser
   (package
     (name "r-vertexwiser")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VertexWiseR" version))
        (sha256
-        (base32 "14ria7wf080zszjqml96dm2jb4ppjlcrhckk82x3mpyw7xsmpclh"))))
+        (base32 "0hs6g09cd5c7ysxrcspkz2b3iq9iz790yb7ykf2fk3nmz3p8a961"))))
     (properties `((upstream-name . "VertexWiseR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reticulate
+    (propagated-inputs (list r-stringr
+                             r-reticulate
+                             r-rappdirs
+                             r-png
                              r-igraph
                              r-gifti
                              r-fs
                              r-freesurferformats
                              r-foreach
                              r-dosnow
-                             r-doparallel))
+                             r-doparallel
+                             r-ciftitools))
+    (native-inputs (list r-r-rsp))
     (home-page "https://cogbrainhealthlab.github.io/VertexWiseR/")
     (synopsis
      "Simplified Vertex-Wise Analyses of Whole-Brain and Hippocampal Surface")
@@ -4739,10 +4744,11 @@ Factorization algorithms - Random generators of diferent types of integers.")
      "This package provides functions to run statistical analyses on surface-based
 neuroimaging data, computing measures including cortical thickness and surface
 area of the whole-brain and of the hippocampi.  It can make use of
-@code{FreeSurfer} preprocessed datasets and @code{HippUnfold} hippocampal
-segmentation outputs for a given sample by restructuring the data values into a
-single file.  The single file can then be used by the package for analyses
-independently from its base dataset and without need for its access.")
+@code{FreeSurfer}', @code{fMRIprep} and HCP preprocessed datasets and
+@code{HippUnfold} hippocampal segmentation outputs for a given sample by
+restructuring the data values into a single file.  The single file can then be
+used by the package for analyses independently from its base dataset and without
+need for its access.")
     (license license:gpl3)))
 
 (define-public r-vertexsimilarity
@@ -7477,24 +7483,25 @@ scatter(), p.corr(), ow.anova(), and rm.anova().")
 (define-public r-vandalico
   (package
     (name "r-vandalico")
-    (version "0.0.1")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vandalico" version))
        (sha256
-        (base32 "0ipx9yq5wgpwphy1wzpa8jh605k3b5nkhplj4k0bym107010s3qd"))))
+        (base32 "06lfxcn5f042vkxprkagfcwp0dlm5pgw82k63a89ya9yfq71xhsw"))))
     (properties `((upstream-name . "vandalico")))
     (build-system r-build-system)
     (propagated-inputs (list r-rocr))
     (home-page "https://cran.r-project.org/package=vandalico")
     (synopsis "Evaluation of Presence-Absence Models")
     (description
-     "Collection of functions to evaluate presence-absence models.  The main function
-corrects discrimination for the representativeness effect following:
-JimÃ©nez-Valverde (2022) \"The uniform AUC: dealing with the representativeness
-effect in presence-absence models.  Methods Ecol.  Evol, accepted on 28 January
-2022.")
+     "Collection of functions to evaluate presence-absence models.  It comprises
+functions to adjust discrimination statistics for the representativeness effect
+through case-weighting, along with functions for visualizing the outcomes.
+Originally outlined in: JimÃ©nez-Valverde (2022) The uniform AUC: dealing with
+the representativeness effect in presence-absence models.  Methods Ecol.  Evol,
+13, 1224-1236.")
     (license license:gpl3)))
 
 (define-public r-vancouvr

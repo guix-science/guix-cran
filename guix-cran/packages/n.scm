@@ -5313,13 +5313,13 @@ chi-square tests.")
 (define-public r-nns
   (package
     (name "r-nns")
-    (version "10.9.1")
+    (version "10.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NNS" version))
        (sha256
-        (base32 "0g058hxzlsxkqrjvplhb7h11j8k0nkfzrn97wax3q58fadajd6rq"))))
+        (base32 "1qz810jj63wfkbwqrkd90x6m08j1k8c66mk01hx4bha6vqx48cww"))))
     (properties `((upstream-name . "NNS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8328,13 +8328,13 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
 (define-public r-nichetools
   (package
     (name "r-nichetools")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nichetools" version))
        (sha256
-        (base32 "191cibap3vvmn2mjpk5544i0n8x930k41giii832rxkwzxl10vjb"))))
+        (base32 "0ddajk6i0r93316liw3vglf7vrwp5akpcjycdhkffj6p51jk61yn"))))
     (properties `((upstream-name . "nichetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -11227,23 +11227,22 @@ predict the graph structure at a future time point Kandanaarachchi (2024)
 (define-public r-netropy
   (package
     (name "r-netropy")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "netropy" version))
        (sha256
-        (base32 "1c7gmv4lm2i2bmvhan5v0w3s3qvaxq0l7f4q76jhcc9mlz0plbh1"))))
+        (base32 "1v5nmcpf47jxqdzxaly649fvbcn3li3lpfp540rgd2prlaplialc"))))
     (properties `((upstream-name . "netropy")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-ggraph r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=netropy")
+    (home-page "https://github.com/termehs/netropy")
     (synopsis "Statistical Entropy Analysis of Network Data")
     (description
      "Statistical entropy analysis of network data as introduced by Frank and Shafie
-(2016) <doi:10.1177/0759106315615511>, and in a forthcoming book by Nowicki,
-Shafie and Frank (2022).")
+(2016) <doi:10.1177/0759106315615511>, and a in textbook which is in progress.")
     (license license:expat)))
 
 (define-public r-netregr
@@ -15941,13 +15940,13 @@ international (<https://vsni.co.uk/software/asreml>).")
 (define-public r-nada2
   (package
     (name "r-nada2")
-    (version "1.1.6")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "NADA2" version))
        (sha256
-        (base32 "1kz1rvzjp18avm2jbsswnzz9jsdmk20h0vj9gs5bvjl56llih48q"))))
+        (base32 "0m06kbx7z9ad7f3xf0r6gh1rbrgin2lcsc4hvdfsrayq1n4zfdap"))))
     (properties `((upstream-name . "NADA2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan

@@ -3095,13 +3095,13 @@ ISBN:9780849303166).")
 (define-public r-rts2
   (package
     (name "r-rts2")
-    (version "0.7.5")
+    (version "0.7.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rts2" version))
        (sha256
-        (base32 "0qzdcwrs326vl5m82x06029a8y85k2ysxbwy1lzgdnhwqp127a42"))))
+        (base32 "1kbnw6s71y7arafcvwrbr67nplvxcyqnhdawl1i526qmf7cfvz6x"))))
     (properties `((upstream-name . "rts2")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -10840,13 +10840,13 @@ of this kind of statistics can be found at Nikita Puchkin, Vladimir Ulyanov
 (define-public r-rpdbapi
   (package
     (name "r-rpdbapi")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rPDBapi" version))
        (sha256
-        (base32 "0ys2kl5wg8vamj6l9jk9z134wkcax8np2b7rpfcykgvybjm3dv11"))))
+        (base32 "1cbzmzrh8v6lzq7l8kijaviqkr7nii4g18d00nsjkgs69vhry496"))))
     (properties `((upstream-name . "rPDBapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -22751,18 +22751,18 @@ open source software that builds installers for Windows programs
 (define-public r-ring
   (package
     (name "r-ring")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ring" version))
        (sha256
-        (base32 "0mvrmh0axqlrdq3y5qaxydbindhv34gm4jagmq0bchrdvh1db2s4"))))
+        (base32 "0mmjlbmv46wz2ph2cmkxrn1kldih581wpfj8398vrajajkx8k35l"))))
     (properties `((upstream-name . "ring")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/mrc-ide/ring")
+    (home-page "https://mrc-ide.gitub.io/ring")
     (synopsis "Circular / Ring Buffers")
     (description
      "Circular / ring buffers in R and C. There are a couple of different buffers here
@@ -24684,13 +24684,13 @@ formats and methods are described in @code{McKay}, B.D. and Piperno, A (2014)
 (define-public r-rgplates
   (package
     (name "r-rgplates")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgplates" version))
        (sha256
-        (base32 "03qm51745bcyv118ghxqh5738fiqqgygcsd6xy4yzv54ya0cz28v"))))
+        (base32 "1mxr7h42cbcpapm976c3pwsvhkqfm38kxcpms2pr79blgb2yd12j"))))
     (properties `((upstream-name . "rgplates")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf))
@@ -36611,13 +36611,13 @@ interior-point method.")
 (define-public r-rds
   (package
     (name "r-rds")
-    (version "0.9-9")
+    (version "0.9-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RDS" version))
        (sha256
-        (base32 "02gd6jara1hi6h9rqcxb0an9dvnvajdi1x10cf3kqfvaa0i64igf"))))
+        (base32 "0pba1pdc6mzm9463azp36c6rsl7x8b4c0hsp9h7i5z467z7yshj0"))))
     (properties `((upstream-name . "RDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-statnet-common
@@ -36640,7 +36640,7 @@ and RDS-II estimators as well as Gile's Sequential Sampling estimator.  The
 package is part of the \"RDS Analyst\" suite of packages for the analysis of
 respondent-driven sampling data.  See Gile and Handcock (2010)
 <doi:10.1111/j.1467-9531.2010.01223.x>, Gile and Handcock (2015)
-<doi:10.1111/rssa.12091> and Gile and Beaudry and Handcock and Ott (2018)
+<doi:10.1111/rssa.12091> and Gile, Beaudry, Handcock and Ott (2018)
 <doi:10.1146/annurev-statistics-031017-100704>.")
     (license license:lgpl2.1)))
 
@@ -43253,16 +43253,16 @@ provided in: Border and Malik (2022) <doi:10.1101/2022.10.13.512132>.")
 (define-public r-rbacon
   (package
     (name "r-rbacon")
-    (version "3.2.0")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbacon" version))
        (sha256
-        (base32 "18d0mcfmslycbsi9sgqkxw1xwm9cgq4rxkwrvlbm67g0ryad86l3"))))
+        (base32 "1i5a85276wq7pkw0n9byqnc463b3klm7s22ks9dvc1nmvwvmi1s1"))))
     (properties `((upstream-name . "rbacon")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rintcal r-rcpp r-data-table r-coda))
+    (propagated-inputs (list r-rice r-rcpp r-data-table r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rbacon")
     (synopsis "Age-Depth Modelling using Bayesian Statistics")

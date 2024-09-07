@@ -5353,13 +5353,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.2")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "0ka8702r2ywvr3v1vy7qx4rwkhmvil7m0qyrvhgvsx40c8bqi2b4"))))
+        (base32 "0ynm49xbhn0dcqvw22g106vdwg09gckfcn4iwbjq8hm108qdr1m0"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -8868,13 +8868,13 @@ Implements forms of Language Style Matching (Ireland & Pennebaker, 2010)
 (define-public r-lingglosses
   (package
     (name "r-lingglosses")
-    (version "0.0.7")
+    (version "0.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingglosses" version))
        (sha256
-        (base32 "0qa42bjx9mszdfnzgmi7i23czrqnz8vbdaj0vq5sx8rn547dhymx"))))
+        (base32 "03skh28dhqjkc6clxqrknfmkbxyxfkb3nmbdhs5dd32xc5gqa63c"))))
     (properties `((upstream-name . "lingglosses")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmarkdown r-knitr r-kableextra r-htmltools))
@@ -11031,13 +11031,13 @@ and produces plots similar to the ones in the manual.")
 (define-public r-lfproqc
   (package
     (name "r-lfproqc")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfproQC" version))
        (sha256
-        (base32 "0cs6x5nqwm1n11i287f26x4lclpmd5vwj9wwnzlr7cr95riwrqxk"))))
+        (base32 "00d6jcn6p9qdhxwnl2zijy638bayg76h1zspassia0dv4npmzsx4"))))
     (properties `((upstream-name . "lfproQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-vsn

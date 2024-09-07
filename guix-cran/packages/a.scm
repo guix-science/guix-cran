@@ -5477,13 +5477,13 @@ finance, and statistics.")
 (define-public r-arutools
   (package
     (name "r-arutools")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ARUtools" version))
        (sha256
-        (base32 "0qgx1flyxqaqrd7idfwaaf9y58qmkw6967a0n6m9y4p21n5zsck9"))))
+        (base32 "136nbn8p19agckjnaa5ggs039c5ya6a9qpnkgq0w4m2pkz6ljs6j"))))
     (properties `((upstream-name . "ARUtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -5863,13 +5863,13 @@ performance without return to baseline).")
 (define-public r-ars
   (package
     (name "r-ars")
-    (version "0.7")
+    (version "0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ars" version))
        (sha256
-        (base32 "03hgbyg667d0c22am5r45g6p6l5fii3x760khajjjcy8y0mqrq11"))))
+        (base32 "0d9p6ps074d9h20c096kmy1ny6pydfq3qw3srd6mhsw6si5rcq78"))))
     (properties `((upstream-name . "ars")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ars")
@@ -9125,13 +9125,13 @@ found in Quatto P, Margaritella N, et al. (2019) <doi:10.1177/0962280219844288>.
 (define-public r-apexcharter
   (package
     (name "r-apexcharter")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apexcharter" version))
        (sha256
-        (base32 "0g5bg6py5a9fwqm2qsqwn6r9xcij11s4xccf6cimrx74ly4h5lff"))))
+        (base32 "1pw36j2b9ypi8gwkc5vgknsbz88ich5d71cpq7rj9xrrkdwh04jn"))))
     (properties `((upstream-name . "apexcharter")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny
@@ -17276,22 +17276,25 @@ Institute for the World Economy <https://www.ifw-kiel.de/>.")
 (define-public r-afr
   (package
     (name "r-afr")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AFR" version))
        (sha256
-        (base32 "0ismghsl2qi2q81c5ipgdxs6s6rw3kk8sz9yx16g6scnbyisa41y"))))
+        (base32 "07i6slw5ksw6s1n0i9p2x6898k4fqx5n13qycshfllczrp0pwwyf"))))
     (properties `((upstream-name . "AFR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
                              r-xts
+                             r-writexl
                              r-tseries
                              r-rlang
+                             r-regclass
                              r-olsrr
                              r-nortest
                              r-nlme
+                             r-mfilter
                              r-lmtest
                              r-gridextra
                              r-goftest
@@ -19344,13 +19347,13 @@ estimators on real datasets, and it implements methods to calculate p-values.")
 (define-public r-adespatial
   (package
     (name "r-adespatial")
-    (version "0.3-23")
+    (version "0.3-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adespatial" version))
        (sha256
-        (base32 "0cszq382vpd8alc98hnrzqj1wyp8bcfbvqpi1d2rqbr12f5qgq3h"))))
+        (base32 "0lrjm3hb6jn30w7kg1lcx1jk66cciyxq7gayhl2jvp6xipg10b8y"))))
     (properties `((upstream-name . "adespatial")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -19363,7 +19366,7 @@ estimators on real datasets, and it implements methods to calculate p-values.")
                              r-adegraphics
                              r-ade4))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/sdray/adespatial")
+    (home-page "https://github.com/adeverse/adespatial")
     (synopsis "Multivariate Multiscale Spatial Analysis")
     (description
      "This package provides tools for the multiscale spatial analysis of multivariate
@@ -19555,13 +19558,13 @@ includes The package is an implementation of Yang, J. and Hastie, T. (2024)
 (define-public r-adehabitatma
   (package
     (name "r-adehabitatma")
-    (version "0.3.16")
+    (version "0.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adehabitatMA" version))
        (sha256
-        (base32 "1jmmi6rh3rnv5b3qy1xhy0rs4dnkysf4rxjfs0im1i5n4rd437h8"))))
+        (base32 "10ynrw4w00ai303i39ciip810h6wj0iqmwk0qrb1p1g6jc5jvjmb"))))
     (properties `((upstream-name . "adehabitatMA")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp))
@@ -19575,13 +19578,13 @@ includes The package is an implementation of Yang, J. and Hastie, T. (2024)
 (define-public r-adehabitatlt
   (package
     (name "r-adehabitatlt")
-    (version "0.3.27")
+    (version "0.3.28")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adehabitatLT" version))
        (sha256
-        (base32 "0siaj9h9gyar6pmnv9bp4k7lcpfcvhykl3jj80pzdb6yyybgj2zx"))))
+        (base32 "1hixi29v6p2479hy5y907mfz3ij01dkiyxd62mx348pnh5nkn8bc"))))
     (properties `((upstream-name . "adehabitatLT")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-circstats r-adehabitatma r-ade4))
@@ -19596,13 +19599,13 @@ movements.")
 (define-public r-adehabitaths
   (package
     (name "r-adehabitaths")
-    (version "0.3.17")
+    (version "0.3.18")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adehabitatHS" version))
        (sha256
-        (base32 "040qbhfrsxjnl75lmc3fmyrvqblfcp0mmagk8sj225069c64k62n"))))
+        (base32 "06k2ch6khn4g068n9fchbqkr3yr15jqax1zksdqaz566513ky6n8"))))
     (properties `((upstream-name . "adehabitatHS")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitathr r-ade4))
@@ -19617,13 +19620,13 @@ selection.")
 (define-public r-adehabitathr
   (package
     (name "r-adehabitathr")
-    (version "0.4.21")
+    (version "0.4.22")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adehabitatHR" version))
        (sha256
-        (base32 "0ji4a27z5qsi8xpzlx9z8m9hg9k81bb6mkbwzpsinsn1x1dipg0n"))))
+        (base32 "09nllgkbpkcv9p6314216lal2937ffhiaahrx8319wkk4f1d9wvw"))))
     (properties `((upstream-name . "adehabitatHR")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-adehabitatma r-adehabitatlt r-ade4))
@@ -20077,13 +20080,13 @@ for analytical applications.")
 (define-public r-adbcsqlite
   (package
     (name "r-adbcsqlite")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcsqlite" version))
        (sha256
-        (base32 "1vqabya705454lsxis73j2nflqp6jydk1hhcjnc79kjxf332nq5z"))))
+        (base32 "1xda25z4dmli07bi6kfzda0zhb4nkma98n19206qmgvjbb6klf18"))))
     (properties `((upstream-name . "adbcsqlite")))
     (build-system r-build-system)
     (inputs (list sqlite))
@@ -20101,13 +20104,13 @@ parameters.")
 (define-public r-adbcpostgresql
   (package
     (name "r-adbcpostgresql")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcpostgresql" version))
        (sha256
-        (base32 "0lspgnimsgpkyf6q0qk5gjf9kij5w2x6xjcp6cy8hpwbp6xci8yr"))))
+        (base32 "1lfvn7gcx5g84rqh400zbs7qlc39r2nz7nw7s1dij7yh9hdysdj0"))))
     (properties `((upstream-name . "adbcpostgresql")))
     (build-system r-build-system)
     (inputs (list zlib openssl))
@@ -20126,13 +20129,13 @@ and query parameters.")
 (define-public r-adbcdrivermanager
   (package
     (name "r-adbcdrivermanager")
-    (version "0.13.0")
+    (version "0.14.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adbcdrivermanager" version))
        (sha256
-        (base32 "0d0fcjqcmbfbpln3s6n3aas9pz3ich43vnm6qnl8sf6dil3fxnsg"))))
+        (base32 "1qhwx1ywqyr0arladcyh58xq69mgvqj35a4pcq0i0mf048xpsly3"))))
     (properties `((upstream-name . "adbcdrivermanager")))
     (build-system r-build-system)
     (propagated-inputs (list r-nanoarrow))

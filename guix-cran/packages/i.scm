@@ -3218,16 +3218,16 @@ Advanced Analytics, LLC.")
 (define-public r-irreglong
   (package
     (name "r-irreglong")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IrregLong" version))
        (sha256
-        (base32 "0gavbvmn9m1kamlyg9sb5zxpwq9gc32xcz14m6aqqrdps2xyv3kn"))))
+        (base32 "1ppvdan5dm5sv7p2afmlc8nm3lgn29ssvabv5ask0ilh36rbrmn7"))))
     (properties `((upstream-name . "IrregLong")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-geepack r-data-table))
+    (propagated-inputs (list r-survival r-geem r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://epullenayegum.github.io/IrregLong/")
     (synopsis "Analysis of Longitudinal Data with Irregular Observation Times")
@@ -8668,13 +8668,13 @@ hierarchical agglomerative clustering approach proposed by Gan et.  al. (2015)
 (define-public r-infoset
   (package
     (name "r-infoset")
-    (version "4.0.5")
+    (version "4.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "INFOSET" version))
        (sha256
-        (base32 "0acy50q9nm9wq40dkf7if5ayrvbwia0ym66kw72zvm0bxf9ww8j4"))))
+        (base32 "1z91gy1zlpn25mm8gigiw1v74mzw3q3gal8y66w8cf2j0kg0si8n"))))
     (properties `((upstream-name . "INFOSET")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-mixtools r-matrix r-dendextend
@@ -17713,13 +17713,13 @@ robust statistics (Richetin, Costantini, Perugini, and Schonbrodt, 2015,
 (define-public r-iatscore
   (package
     (name "r-iatscore")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IATScore" version))
        (sha256
-        (base32 "0sg4apj1sp0xc311cbkvflhv9kw1jxvjhdr0xjw79s662mnhkhgz"))))
+        (base32 "1jz7l1g53lqnkab66fcdwpvj9ibabwmlhqshg6crjwfy4m4hgbrb"))))
     (properties `((upstream-name . "IATScore")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IATScore")
@@ -17750,13 +17750,13 @@ IAT', @code{TooFastIAT}', and @code{BriefIAT}') to practice with.")
 (define-public r-iatanalytics
   (package
     (name "r-iatanalytics")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IATanalytics" version))
        (sha256
-        (base32 "10g9iscfjmlxrkzls9320h9azpc5fnhh6276p7zn8sxqgp1nvnz9"))))
+        (base32 "199wgn2n6gwn0k996f8c47wmfpg6aqr400k1jrvqpmf2lpi1q7dv"))))
     (properties `((upstream-name . "IATanalytics")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=IATanalytics")

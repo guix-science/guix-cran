@@ -3960,13 +3960,13 @@ drum patterns.")
 (define-public r-drugutilisation
   (package
     (name "r-drugutilisation")
-    (version "0.7.0")
+    (version "0.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugUtilisation" version))
        (sha256
-        (base32 "09wvw1cv0l3vcsarwiwsiyyakd2i9iw3kj13f2w4lwgw5d225cdc"))))
+        (base32 "17896mf0mryqrmlllkh7dhf65id31n26z4h757kdsb2wj32my7k9"))))
     (properties `((upstream-name . "DrugUtilisation")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults

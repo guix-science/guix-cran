@@ -680,13 +680,13 @@ survreg', and ivreg outputs.")
 (define-public r-outliertree
   (package
     (name "r-outliertree")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "outliertree" version))
        (sha256
-        (base32 "1sk4bdkqd4i47zh0hlaviyif936v608qrgirpi6pdry3r24jgwbl"))))
+        (base32 "13z39pfc7fzxil5gc48s7b2f0zal4l4d8qw5xvwy4mlp010mwrc5"))))
     (properties `((upstream-name . "outliertree")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-rcereal))
@@ -698,8 +698,8 @@ survreg', and ivreg outputs.")
      "Outlier detection method that flags suspicious values within observations,
 constrasting them against the normal values in a user-readable format,
 potentially describing conditions within the data that make a given outlier more
-rare.  Full procedure is described in Cortes (2020) <@code{arXiv:2001.00636>}.
-Loosely based on the @code{GritBot}
+rare.  Full procedure is described in Cortes (2020)
+<doi:10.48550/@code{arXiv.2001.00636>}.  Loosely based on the @code{GritBot}
 <https://www.rulequest.com/gritbot-info.html> software.")
     (license license:gpl3+)))
 

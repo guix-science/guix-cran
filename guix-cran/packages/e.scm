@@ -8297,13 +8297,13 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
 (define-public r-equalstats
   (package
     (name "r-equalstats")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALSTATS" version))
        (sha256
-        (base32 "0pan7h6iqbbcfi746i77lgn0fday7v735ivb7njl5ii2axc202dd"))))
+        (base32 "0lp99zgz2vggv4pwxdwbnm9mwf7pwsr683cpkpzl3gnvfsirdhnz"))))
     (properties `((upstream-name . "EQUALSTATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -8319,7 +8319,6 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
                              r-mclogit
                              r-mass
                              r-lmtest
-                             r-lmertest
                              r-lme4
                              r-ggsurvfit
                              r-ggplot2
@@ -8341,13 +8340,13 @@ complex statistical analysis.  Gurusamy,K (2024)<doi:10.5281/zenodo.13354162>.")
 (define-public r-equalrepeat
   (package
     (name "r-equalrepeat")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALrepeat" version))
        (sha256
-        (base32 "1khd4lf1vfbi4wz0cdgyxj5q730cv8hliq4cg5gdc1b14b1fr769"))))
+        (base32 "0djrdakdz9fhd7gvz80ky9wsjdvpv3j834arfnc9djnzmizg9732"))))
     (properties `((upstream-name . "EQUALrepeat")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip

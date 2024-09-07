@@ -3924,13 +3924,13 @@ switching between MCMC samplers.")
 (define-public r-jagstargets
   (package
     (name "r-jagstargets")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jagstargets" version))
        (sha256
-        (base32 "10bx1sy5lcq1k1nliiwqjyq5hrywa97dh5zyyjdxq9rh94xhcc7p"))))
+        (base32 "1n407kacc1ws9sh486wncilbklyrdjjq389sc5a9id1zd23v26va"))))
     (properties `((upstream-name . "jagstargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr

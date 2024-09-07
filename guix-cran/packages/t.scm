@@ -3178,13 +3178,13 @@ details can be found in Garai and Paul (2023) <doi:10.1016/j.iswa.2023.200202>."
 (define-public r-tslstmplus
   (package
     (name "r-tslstmplus")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TSLSTMplus" version))
        (sha256
-        (base32 "1r85pdf6gs7p512fhijryj76l24j7qhq7apci07iiw85y9nkv0jm"))))
+        (base32 "06jmy66brdk3c368qkljqi1a8kk7b3h0ld0ddzms1if63xgsl2cs"))))
     (properties `((upstream-name . "TSLSTMplus")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsutils r-tensorflow r-keras r-abind))
@@ -6711,13 +6711,13 @@ phylogenetic indexes, which can be quickly displayed graphically.")
 (define-public r-treesitter-r
   (package
     (name "r-treesitter-r")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "treesitter.r" version))
        (sha256
-        (base32 "1bxliv544w2aa033r4nhqzs5cmsiriymfcxwcc76v05nm82dncim"))))
+        (base32 "15kbbzz0mfs9wwm0lk7v764m85fjwbng881r1yhyjklc9zlxanx3"))))
     (properties `((upstream-name . "treesitter.r")))
     (build-system r-build-system)
     (home-page "https://github.com/r-lib/tree-sitter-r")
@@ -13923,13 +13923,13 @@ implemented in the package.")
 (define-public r-timereg
   (package
     (name "r-timereg")
-    (version "2.0.5")
+    (version "2.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timereg" version))
        (sha256
-        (base32 "1vzphh7hfkc65r61wms1dh58i3ng7340whqkw947yb4nyvmdvld0"))))
+        (base32 "1jscqask74l8hr68grjfvgm30v00aixf1459ws5s332l5brp7awb"))))
     (properties `((upstream-name . "timereg")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-numderiv r-lava))
@@ -24351,13 +24351,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "0v9zabnvm196053srcbfrg5aml8rrcbx5v9byq60gv8p588yfmf8"))))
+        (base32 "1jqw1k9pfywc3971lsjwh51f1qar7l7hcphqgk9y1c9nwr0nl6f2"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra

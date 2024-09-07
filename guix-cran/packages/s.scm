@@ -14995,13 +14995,13 @@ custom functions.")
 (define-public r-sspse
   (package
     (name "r-sspse")
-    (version "1.1.0-1")
+    (version "1.1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sspse" version))
        (sha256
-        (base32 "0dy78fkazjm6ai2smxfkkhfzgbqk4sxvq7yhj89zdnk1vp1p1fy7"))))
+        (base32 "1qm6gy689yy1hfffzhvw5y984cvx0hsqjh6nh97fni2hidwwxpqn"))))
     (properties `((upstream-name . "sspse")))
     (build-system r-build-system)
     (propagated-inputs (list r-scam r-rds r-kernsmooth r-coda))
@@ -22765,13 +22765,13 @@ in htmlwidgets mapping libraries.")
 (define-public r-spatialwarnings
   (package
     (name "r-spatialwarnings")
-    (version "3.0.3")
+    (version "3.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialwarnings" version))
        (sha256
-        (base32 "03a0gb8v6028v6q5w3iap8fn9nkb2rpnabqgzmr2dyxnpfgr9dn3"))))
+        (base32 "0k3xzc5xrdmgx2ax85qn2gb8cchwj031x1n3b2hsajrfwl6cgwzi"))))
     (properties `((upstream-name . "spatialwarnings")))
     (build-system r-build-system)
     (propagated-inputs (list r-segmented
@@ -22786,10 +22786,10 @@ in htmlwidgets mapping libraries.")
     (synopsis "Spatial Early Warning Signals of Ecosystem Degradation")
     (description
      "This package provides tools to compute and assess significance of early-warnings
-signals (EWS) of ecosystem degradation on raster data sets.  EWS are metrics
-derived from the observed spatial structure of an ecosystem -- e.g. spatial
-autocorrelation -- that increase before an ecosystem undergoes a non-linear
-transition (Genin et al. (2018) <doi:10.1111/2041-210X.13058>).")
+signals (EWS) of ecosystem degradation on raster data sets.  EWS are spatial
+metrics derived from raster data -- e.g. spatial autocorrelation -- that
+increase before an ecosystem undergoes a non-linear transition (Genin et al.
+(2018) <doi:10.1111/2041-210X.13058>).")
     (license license:expat)))
 
 (define-public r-spatialvx
@@ -31949,13 +31949,13 @@ implemented as well.")
 (define-public r-smaa
   (package
     (name "r-smaa")
-    (version "0.3-2")
+    (version "0.3-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smaa" version))
        (sha256
-        (base32 "0cv6xa6miy45pj0lskg70bq7bmwxdprwjl51ghlxgifkv1qdxqhc"))))
+        (base32 "1lasa8179bp9fs49n26b41mw8vwkqnz5a051913rd246lmdjnyb0"))))
     (properties `((upstream-name . "smaa")))
     (build-system r-build-system)
     (home-page "https://github.com/gertvv/rsmaa")
@@ -44137,16 +44137,18 @@ shell carbonate) through input parameters.")
 (define-public r-shelf
   (package
     (name "r-shelf")
-    (version "1.10.0")
+    (version "1.11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SHELF" version))
        (sha256
-        (base32 "0867d66iak8kb4mkbj16k5b5dm58xsk5djm7r1xha3m2f73yalvd"))))
+        (base32 "1pmbn3bqb6d5mdvyadxxf8dpdvkl8kc7g0cc1b0qvd3531b7zzaw"))))
     (properties `((upstream-name . "SHELF")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
+                             r-survminer
+                             r-survival
                              r-sn
                              r-shinymatrix
                              r-shiny
@@ -44155,7 +44157,8 @@ shell carbonate) through input parameters.")
                              r-hmisc
                              r-ggridges
                              r-ggplot2
-                             r-ggextra))
+                             r-ggextra
+                             r-flexsurv))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/OakleyJ/SHELF")
     (synopsis "Tools to Support the Sheffield Elicitation Framework")
@@ -44167,10 +44170,10 @@ his or her cumulative distribution function.  A range of parametric
 distributions can then be fitted and displayed, with feedback provided in the
 form of fitted probabilities and percentiles.  For multiple experts, a weighted
 linear pool can be calculated.  Also includes functions for eliciting beliefs
-about population distributions, eliciting multivariate distributions using a
-Gaussian copula, eliciting a Dirichlet distribution, and eliciting distributions
-for variance parameters in a random effects meta-analysis model.  R Shiny apps
-for most of the methods are included.")
+about population distributions; eliciting multivariate distributions using a
+Gaussian copula; eliciting a Dirichlet distribution; eliciting distributions for
+variance parameters in a random effects meta-analysis model; survival
+extrapolation.  R Shiny apps for most of the methods are included.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-sheetreader
@@ -51074,13 +51077,13 @@ the first stages of root water absorption.")
 (define-public r-seededlda
   (package
     (name "r-seededlda")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seededlda" version))
        (sha256
-        (base32 "0r08zffzhm6gdwivnan94dm10s0sd8zr9r3g08ql3pqx3059hk6i"))))
+        (base32 "1v5cy47asihjsxkywfa3rpc93a7s6qkmfmk2sbqygx9gr08r8ac0"))))
     (properties `((upstream-name . "seededlda")))
     (build-system r-build-system)
     (inputs (list tbb))
@@ -51216,13 +51219,13 @@ easy-to-use dataframe format manipulable in standard R functions.")
 (define-public r-see
   (package
     (name "r-see")
-    (version "0.8.5")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "see" version))
        (sha256
-        (base32 "1c0pgl9k0m2zdwcz4sf158wpg1gkza1hqcry6hjqql7rg2dga7f8"))))
+        (base32 "002cszzsykwgvxwbqhpfxbf6vsbwq6rqkb1qhbdvfmfvgfplr8wi"))))
     (properties `((upstream-name . "see")))
     (build-system r-build-system)
     (propagated-inputs (list r-performance
@@ -60454,13 +60457,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.35")
+    (version "0.3.41")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "1jgslcn5lc34aj58kg1madbhf3v9n9ap70jv349rsr97p9vqi2bx"))))
+        (base32 "1va5plx45bfy8mfciq7hv8jqhs6b8zal9ls1ac0jjazxms5fmd0s"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (inputs (list))

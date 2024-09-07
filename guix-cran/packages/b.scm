@@ -14471,13 +14471,13 @@ non-Gaussian: Binomial, Poisson, Gamma, Inverse Gaussian, or Negative Binomial."
 (define-public r-bigsparser
   (package
     (name "r-bigsparser")
-    (version "0.7.1")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsparser" version))
        (sha256
-        (base32 "0ppmv09n5ypm8jhsd580flk4k6p255k7az9k96fzjwjfrn0vmm74"))))
+        (base32 "0v28k0jh7nw3ms5sh2izd28b4p5b9qf4rrnps0pfwpq0xmigr4ch"))))
     (properties `((upstream-name . "bigsparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmio r-rcppeigen r-rcpp r-matrix r-bigassertr))
@@ -18597,13 +18597,13 @@ al. (2023) <doi:10.1101/2023.06.30.547152> and package website - Dorey et al.
 (define-public r-bedmatrix
   (package
     (name "r-bedmatrix")
-    (version "2.0.3")
+    (version "2.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BEDMatrix" version))
        (sha256
-        (base32 "1pq333x1shxw3wcqgcb4gqg6rwa0hyc24rib235q4zg10r2gyrbm"))))
+        (base32 "0dxkhag4jxjlbv8vx59l30rc9vc2m1szalapsxgm4mqd56llp52k"))))
     (properties `((upstream-name . "BEDMatrix")))
     (build-system r-build-system)
     (propagated-inputs (list r-crochet))
@@ -23000,6 +23000,40 @@ approximate Bayesian (PFAB) algorithm.  Refer to
 of specific algorithms.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-bayesianvars
+  (package
+    (name "r-bayesianvars")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bayesianVARs" version))
+       (sha256
+        (base32 "1c9m45b6szcxy1igi0vs9gpnxyn23a6s376zhl3m72c7x5ghyhz6"))))
+    (properties `((upstream-name . "bayesianVARs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stochvol
+                             r-scales
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-gigrvg
+                             r-factorstochvol
+                             r-colorspace))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/luisgruber/bayesianVARs")
+    (synopsis "MCMC Estimation of Bayesian Vectorautoregressions")
+    (description
+     "Efficient Markov Chain Monte Carlo (MCMC) algorithms for the fully Bayesian
+estimation of vectorautoregressions (VARs) featuring stochastic volatility (SV).
+ Implements state-of-the-art shrinkage priors following Gruber & Kastner (2023)
+<doi:10.48550/@code{arXiv.2206.04902>}.  Efficient equation-per-equation
+estimation following Kastner & Huber (2020) <doi:10.1002/for.2680> and Carrerio
+et al. (2021) <doi:10.1016/j.jeconom.2021.11.010>.")
+    (license license:gpl3+)))
 
 (define-public r-bayesiantreg
   (package

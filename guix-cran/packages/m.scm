@@ -5907,13 +5907,13 @@ Allocation Problems.")
 (define-public r-mult-latent-reg
   (package
     (name "r-mult-latent-reg")
-    (version "0.1.7")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mult.latent.reg" version))
        (sha256
-        (base32 "0lvkysncxjlzlzdy1a7vvcr03sd6vcfqgflgaxxy6k1j9qvx92wf"))))
+        (base32 "0cppmlk7dfbs4h1z83vkmp6y1yr078ky2hb4lbpi8xlycjaydc4k"))))
     (properties `((upstream-name . "mult.latent.reg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-matrixstats r-lme4))
@@ -37788,13 +37788,13 @@ existence of unexpected behaviour.")
 (define-public r-maxstablepca
   (package
     (name "r-maxstablepca")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maxstablePCA" version))
        (sha256
-        (base32 "0jwnb85pw0sqlrw8h8sdrck98a3psb3savhbjgpjf2n9d2p7h6sz"))))
+        (base32 "02lxvkg9ia25cvwppf8qf84mwzjkfc8w9acc99wnisddrdq7l1h2"))))
     (properties `((upstream-name . "maxstablePCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr))
@@ -44781,13 +44781,13 @@ Estimating Mediation Effects under Correlated Errors with an Application to
 (define-public r-macbehaviour
   (package
     (name "r-macbehaviour")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MacBehaviour" version))
        (sha256
-        (base32 "1r3ak5hckzw85dp7lhqwp61h5dy3zwb0yp0smp4gb13czb10n4qq"))))
+        (base32 "0i11vvc66zw2r1gnphp0j65q9ar92m5f890bd6c0b31mm49ca6pk"))))
     (properties `((upstream-name . "MacBehaviour")))
     (build-system r-build-system)
     (propagated-inputs (list r-rjson r-openxlsx r-httr r-dplyr))

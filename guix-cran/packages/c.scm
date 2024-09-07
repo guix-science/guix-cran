@@ -19987,13 +19987,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.1.1")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "01mra2ai88p10qwmsc1ph4kpgyvd4f3crk2gl5w782qggfgfabv8"))))
+        (base32 "0basdf31595vvb6vj5v53jbpwg0zixzczvd6jdmvi9758m65fx6n"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (inputs (list))
@@ -22755,13 +22755,13 @@ samples to obtain bias-free, inter-dataset corrected data.")
 (define-public r-cocons
   (package
     (name "r-cocons")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cocons" version))
        (sha256
-        (base32 "1kcnbhvh42v5rgm730j8qy3xz5bwq265dvj2690p1b2add10v4ml"))))
+        (base32 "0km96f23svwraab6z4zcngq024hmgdwb18j10pna7izm4gd8ndn5"))))
     (properties `((upstream-name . "cocons")))
     (build-system r-build-system)
     (propagated-inputs (list r-spam
@@ -38091,13 +38091,13 @@ in Jeong et al. (2019) <doi:10.1101/gr.245571.118> and Baggerly et al. (2003)
 (define-public r-caviarpd
   (package
     (name "r-caviarpd")
-    (version "0.3.9")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "caviarpd" version))
        (sha256
-        (base32 "0dd1z7n06k578rz985hvpa9h8axik93fil1qysjx98faszxxnk2r"))))
+        (base32 "0zf9s8wnyxfzmnxrq80xbxr1lrlgqdclwjbdrs6pfmdqmyix8dp6"))))
     (properties `((upstream-name . "caviarpd")))
     (build-system r-build-system)
     (inputs (list))

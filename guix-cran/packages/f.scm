@@ -9676,13 +9676,13 @@ re-producibility in the context of machine-learning.")
 (define-public r-flowmapper
   (package
     (name "r-flowmapper")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowmapper" version))
        (sha256
-        (base32 "150avmxpx20n6vv4rdqvcbj6j0np4r3sf9iadzsas81s3sx4zlk6"))))
+        (base32 "11jj09bdkdiss10xmzmyk68bsqr6jljwzmrabc3mq8qqx8qwpgml"))))
     (properties `((upstream-name . "flowmapper")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-scales r-ggplot2 r-forcats r-dplyr))
@@ -19116,13 +19116,13 @@ extend it to tackle datasets in metric spaces.")
 (define-public r-fastmatrix
   (package
     (name "r-fastmatrix")
-    (version "0.5-772")
+    (version "0.5-7721")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastmatrix" version))
        (sha256
-        (base32 "0mcwzwr2cam48fmb5di04jxwscq2ixw0ikwwvb2ngx2rkap1nq3j"))))
+        (base32 "1q0swa420a2hiyi7q7xc42igil2h8wrdvhf74563m184b2bvxajv"))))
     (properties `((upstream-name . "fastmatrix")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -20628,13 +20628,13 @@ For further information on the method see Fruth, J., Roustant, O., Kuhnt, S.
 (define-public r-fangs
   (package
     (name "r-fangs")
-    (version "0.2.13")
+    (version "0.2.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fangs" version))
        (sha256
-        (base32 "11jcj9mk20lmqdwl5cczki5kzx4fdrci8xjg6g401ca1m00hhb1v"))))
+        (base32 "0szjpldld3cq8dwwldv35rbaji307n6bi5k4kxma91rxhjz0id4v"))))
     (properties `((upstream-name . "fangs")))
     (build-system r-build-system)
     (inputs (list))
@@ -21349,13 +21349,13 @@ Number 2133576.")
 (define-public r-fairadapt
   (package
     (name "r-fairadapt")
-    (version "0.2.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fairadapt" version))
        (sha256
-        (base32 "19jagj8kva94kfvg9c5aqr0vm5swjq79j3ny307wacgb9g8hkhvm"))))
+        (base32 "02xsd76bpxs8iiwsh22w99qgq0rwfvhz5vq8qw7kzyjyxxyvr7z2"))))
     (properties `((upstream-name . "fairadapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -21371,10 +21371,12 @@ Number 2133576.")
     (synopsis "Fair Data Adaptation with Quantile Preservation")
     (description
      "An implementation of the fair data adaptation with quantile preservation
-described in Plecko & Meinshausen (2019) <@code{arXiv:1911.06685>}.  The
-adaptation procedure uses the specified causal graph to pre-process the given
-training and testing data in such a way to remove the bias caused by the
-protected attribute.  The procedure uses tree ensembles for quantile regression.")
+described in Plecko & Meinshausen (JMLR 2020, 21(242), 1-44).  The adaptation
+procedure uses the specified causal graph to pre-process the given training and
+testing data in such a way to remove the bias caused by the protected attribute.
+ The procedure uses tree ensembles for quantile regression.  Instructions for
+using the methods are further elaborated in the corresponding JSS manuscript,
+see <doi:10.18637/jss.v110.i04>.")
     (license license:gpl3+)))
 
 (define-public r-fahrmeir

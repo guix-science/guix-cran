@@ -13945,13 +13945,13 @@ on-premises remote option.")
 (define-public r-git2rdata
   (package
     (name "r-git2rdata")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "git2rdata" version))
        (sha256
-        (base32 "05hr4ks2rdnjhbd5v865r9h6gnw149n5h6nwilw5xfx00gj86b9d"))))
+        (base32 "0vj308ilycfv9jhi6ixk7n3pg6m8dh86rzcjnh78rzrd72fvcg9h"))))
     (properties `((upstream-name . "git2rdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-git2r r-assertthat))
@@ -23357,16 +23357,16 @@ other Geocaching-related tasks.")
 (define-public r-geobr
   (package
     (name "r-geobr")
-    (version "1.9.0")
+    (version "1.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geobr" version))
        (sha256
-        (base32 "1q7gichqlyahzmn4wmg2v1gbg0p3p40n19amz5m0vqxx2vbpq6dl"))))
+        (base32 "0mn6qrlxxhf444ngdvq5gwvi1kadpg57zgg4gzmmrv186n709s0j"))))
     (properties `((upstream-name . "geobr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-httr r-dplyr r-data-table r-curl))
+    (propagated-inputs (list r-sf r-fs r-dplyr r-data-table r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://ipeagit.github.io/geobr/")
     (synopsis "Download Official Spatial Data Sets of Brazil")
@@ -25193,13 +25193,13 @@ other gene features.")
 (define-public r-genekitr
   (package
     (name "r-genekitr")
-    (version "1.2.7")
+    (version "1.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "genekitr" version))
        (sha256
-        (base32 "0qymmprifw429542ns0dns801m3kvsskgddz2zvb8ny36sdrvrqm"))))
+        (base32 "04hjz6g4jzbghv28z1nfz7adx9lk93v0h1m17vpf548z0mkv6zyh"))))
     (properties `((upstream-name . "genekitr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
