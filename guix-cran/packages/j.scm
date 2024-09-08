@@ -2391,16 +2391,16 @@ easy transfer of data and analyses between jamovi and R.")
 (define-public r-jmvcore
   (package
     (name "r-jmvcore")
-    (version "2.4.7")
+    (version "2.6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jmvcore" version))
        (sha256
-        (base32 "1pzcv5rkkhff73cf9kfp56d5frk5vjjj6ls1cd4bskyrm0754p3a"))))
+        (base32 "02micn8g1l21x10sqcw6h2866drb8828723spvn3wg5gqm19f15p"))))
     (properties `((upstream-name . "jmvcore")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringi r-rlang r-r6 r-jsonlite r-base64enc))
+    (propagated-inputs (list r-rlang r-r6 r-jsonlite r-base64enc))
     (home-page "https://www.jamovi.org")
     (synopsis "Dependencies for the 'jamovi' Framework")
     (description

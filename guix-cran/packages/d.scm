@@ -25319,13 +25319,13 @@ Publishing.")
 (define-public r-datana
   (package
     (name "r-datana")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datana" version))
        (sha256
-        (base32 "1r13ywazj9dr8ilr37mzm01hb4675s66a3maf33ck5w3fkzydxah"))))
+        (base32 "1dxcx9hrw7z8iizgn3bh6mg512pbf37ncyzwh67zc4jcydlm0p3p"))))
     (properties `((upstream-name . "datana")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))

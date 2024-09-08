@@ -8323,13 +8323,13 @@ binomial experiment.")
 (define-public r-priorcon
   (package
     (name "r-priorcon")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorCON" version))
        (sha256
-        (base32 "03jiqhjzc5lay70jf9xnqlbxh16d86irzpgn7962lw9jgg846sp7"))))
+        (base32 "1dy0n57hlii7p5gna3jbr0xq7yacvcc3qxvngq00m21s6vxza1ic"))))
     (properties `((upstream-name . "priorCON")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmap
@@ -8339,7 +8339,7 @@ binomial experiment.")
                              r-igraph
                              r-highs
                              r-braingraph))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/cadam00/priorCON")
     (synopsis
      "Graph Community Detection Methods into Systematic Conservation Planning")
@@ -35290,13 +35290,13 @@ options().")
 (define-public r-paramlink2
   (package
     (name "r-paramlink2")
-    (version "1.0.4")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paramlink2" version))
        (sha256
-        (base32 "1dw6z49yd7g89hmnzpb5m0w8fz56iwwf7zr01kji0ss9p9vnr9pg"))))
+        (base32 "1qdpwmrxjl5109wvgdc05yyifm9myhc852dzy96ypi6lqhyn5snr"))))
     (properties `((upstream-name . "paramlink2")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedtools r-pedprobr))
@@ -35308,7 +35308,7 @@ include singlepoint analysis, multipoint analysis via MERLIN (Abecasis et al.
 (2002) <doi:10.1038/ng786>), visualisation of log of the odds (LOD) scores and
 summaries of linkage peaks.  Disease models may be specified to accommodate
 phenocopies, reduced penetrance and liability classes.  paramlink2 is part of
-the ped suite package ecosystem, presented in Pedigree Analysis in R (Vigeland,
+the pedsuite package ecosystem, presented in Pedigree Analysis in R (Vigeland,
 2021, ISBN:9780128244302).")
     (license license:gpl3)))
 

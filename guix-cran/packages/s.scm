@@ -11805,13 +11805,13 @@ the balance between two groups before and after propensity score matching.")
 (define-public r-stcpr6
   (package
     (name "r-stcpr6")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stcpR6" version))
        (sha256
-        (base32 "1336fdr5gy84j9mj15r4kgc88p53x4alk8z5gd3j4b7f1fd9skpa"))))
+        (base32 "0liwx2y5lyvf8dd0vkhfa6bffs4fk0r38jn5mar89nbq5m65f0lb"))))
     (properties `((upstream-name . "stcpR6")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-r6))
@@ -35204,21 +35204,16 @@ Reports, 2023) <doi:10.1038/s41598-023-38965-2>.")
 (define-public r-singlecasees
   (package
     (name "r-singlecasees")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SingleCaseES" version))
        (sha256
-        (base32 "0yp7h13g9lq9ym8jzxlzc0m2vmp63kvnmf7ysyxinjardigng6k7"))))
+        (base32 "198rfvs45bqaaj91lcmasc98jximivksv6m1ik7wr49daifikddv"))))
     (properties `((upstream-name . "SingleCaseES")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-purrr
-                             r-magrittr
-                             r-dplyr))
+    (propagated-inputs (list r-tidyselect r-tidyr r-rlang r-purrr r-dplyr))
     (native-inputs (list r-rmarkdown r-knitr r-cleanrmd))
     (home-page "https://jepusto.github.io/SingleCaseES/")
     (synopsis "Calculator for Single-Case Effect Sizes")

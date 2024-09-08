@@ -512,13 +512,13 @@ sparse non-negative principal components analyses
 (define-public r-gwmodel
   (package
     (name "r-gwmodel")
-    (version "2.3-3")
+    (version "2.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWmodel" version))
        (sha256
-        (base32 "0g6kd8yic2dlm192429ii2rbvjsz1gndbfmg3lglkfpzsw0d0saz"))))
+        (base32 "1mlgcmr1s8gn52q32jxj2hfrymrc033w56bx0cm40m0mi657p3fb"))))
     (properties `((upstream-name . "GWmodel")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep
@@ -12332,13 +12332,13 @@ this package can be found in Watson, Hemming, and Girling (2023)
 (define-public r-glmmrbase
   (package
     (name "r-glmmrbase")
-    (version "0.9.2")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmrBase" version))
        (sha256
-        (base32 "162lb0zv5xk25adargc064gd7g13a4k8p6p7npzzmppx5235gnp4"))))
+        (base32 "1yq80s4j7riw2hrgcxjys5ljx32vm6ckhx0mcbxjqq6wggkwhzzl"))))
     (properties `((upstream-name . "glmmrBase")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders

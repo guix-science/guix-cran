@@ -2844,13 +2844,13 @@ earth tides.")
 (define-public r-kit
   (package
     (name "r-kit")
-    (version "0.0.18")
+    (version "0.0.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kit" version))
        (sha256
-        (base32 "0iv1bnh9gcxdxm4ydgsgsgrhygy7km94y3azk4q4xmg6s362q7hq"))))
+        (base32 "0a0q57q3c5kfjd2c3vz1918hgzsh2ik1rwkr7kdrmzn45xs1nmdy"))))
     (properties `((upstream-name . "kit")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=kit")

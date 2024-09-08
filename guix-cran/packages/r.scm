@@ -10392,16 +10392,16 @@ See Goyal, Handcock, Jackson, Rendall and Yeung (2022)
 (define-public r-rplum
   (package
     (name "r-rplum")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rplum" version))
        (sha256
-        (base32 "0fwzfbbg5dv0rg0w8xijn9zjrp5gclzrf8m2m8nla61dzbpn2jsx"))))
+        (base32 "049jiqkcbv9pa22rxjy6krl7xq668vn24hg4bs1qklbcrkmwcf9l"))))
     (properties `((upstream-name . "rplum")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rintcal r-rbacon))
+    (propagated-inputs (list r-rbacon))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rplum")
     (synopsis "Bayesian Age-Depth Modelling of Cores Dated by Pb-210")

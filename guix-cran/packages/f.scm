@@ -8362,6 +8362,30 @@ see the paper: Azadkia and Chatterjee (2019),\"A simple measure of conditional
 dependence\" <@code{arXiv:1910.12327>}.")
     (license license:gpl3)))
 
+(define-public r-fntl
+  (package
+    (name "r-fntl")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fntl" version))
+       (sha256
+        (base32 "0rl7bx2mvjwnl1r53ja7v2nvdic5jssm8q4lvkp33l02krjfjsmi"))))
+    (properties `((upstream-name . "fntl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (native-inputs (list r-quarto))
+    (home-page "https://github.com/andrewraim/fntl")
+    (synopsis "Numerical Tools for 'Rcpp' and Lambda Functions")
+    (description
+     "This package provides a C++ API for routinely used numerical tools such as
+integration, root-finding, and optimization, where function arguments are given
+as lambdas.  This facilitates Rcpp programming, enabling the development of
+R'-like code in C++ where functions can be defined on the fly and use variables
+in the surrounding environment.")
+    (license license:expat)))
+
 (define-public r-fnr
   (package
     (name "r-fnr")

@@ -17123,49 +17123,6 @@ trials.  This package can be used to evaluate other intervention designs using
 Frequentist and Bayesian multilevel models.")
     (license license:agpl3+)))
 
-(define-public r-eeaaq
-  (package
-    (name "r-eeaaq")
-    (version "0.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EEAaq" version))
-       (sha256
-        (base32 "0qs6sqiqwl33bjz9k8hlfsqaawq3cc0ygm73pc8h200c5jwdk94n"))))
-    (properties `((upstream-name . "EEAaq")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tictoc
-                             r-tibble
-                             r-stringr
-                             r-sf
-                             r-readr
-                             r-raster
-                             r-mondate
-                             r-lubridate
-                             r-leaflet
-                             r-htmlwidgets
-                             r-gstat
-                             r-gifski
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr
-                             r-curl
-                             r-aweek))
-    (home-page "https://cran.r-project.org/package=EEAaq")
-    (synopsis
-     "Handle Air Quality Data from the European Environment Agency Data Portal")
-    (description
-     "This software downloads and manages air quality data at the European level from
-the European Environmental Agency (EEA) dataflows
-(<https://www.eea.europa.eu/data-and-maps/data/aqereporting-9>).  The package
-allows dynamically mapping the stations, summarising and time aggregating the
-measurements and building spatial interpolation maps.  See the webpage
-<https://www.eea.europa.eu/en> for further information on EEA's activities and
-history.")
-    (license license:gpl3+)))
-
 (define-public r-edwards97
   (package
     (name "r-edwards97")

@@ -4012,13 +4012,13 @@ downloaded from Github at <https://github.com/josherrickson/rrelaxiv/>.")
 (define-public r-multinttestfunc
   (package
     (name "r-multinttestfunc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multIntTestFunc" version))
        (sha256
-        (base32 "0z2wsbhb8lbmb5favqaang3rq4fk6ln9d5spssinzlbpqb04y6nk"))))
+        (base32 "02gv9fjjhm7d77g6jmkf52b7xchsx123zz4bkdxl0xn8s64z4jpk"))))
     (properties `((upstream-name . "multIntTestFunc")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-mvtnorm))

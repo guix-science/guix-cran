@@ -40814,34 +40814,6 @@ to put statistical results in the ARD format.  These objects are used and
 re-used to construct summary tables, visualizations, and written reports.")
     (license license:asl2.0)))
 
-(define-public r-cards
-  (package
-    (name "r-cards")
-    (version "0.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "cards" version))
-       (sha256
-        (base32 "1sw4qic8p539lxx0rz3wy87k3jr06izdlwnvli41s8ij8yl4s124"))))
-    (properties `((upstream-name . "cards")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect
-                             r-tidyr
-                             r-rlang
-                             r-glue
-                             r-dplyr
-                             r-cli))
-    (home-page "https://github.com/insightsengineering/cards")
-    (synopsis "Analysis Results Data")
-    (description
-     "Construct CDISC (Clinical Data Interchange Standards Consortium) compliant
-Analysis Results Data objects.  These objects are used and re-used to construct
-summary tables, visualizations, and written reports.  The package also exports
-utilities for working with these objects and creating new Analysis Results Data
-objects.")
-    (license license:asl2.0)))
-
 (define-public r-cardinalr
   (package
     (name "r-cardinalr")
