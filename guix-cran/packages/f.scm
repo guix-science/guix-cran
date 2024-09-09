@@ -8411,13 +8411,13 @@ between individuals using the method of Van Vleck (2007)
 (define-public r-fnonlinear
   (package
     (name "r-fnonlinear")
-    (version "4021.81")
+    (version "4041.82")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fNonlinear" version))
        (sha256
-        (base32 "1dpzg880wnja357qy3r4v5qbqhx7pkknd0rph75xvvn38p4rc0ca"))))
+        (base32 "0zbi1l4r7vccs375mx6m0djlk3z767i0cp4g2rgvzh8f6wq6q08y"))))
     (properties `((upstream-name . "fNonlinear")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate r-fbasics))
@@ -11453,13 +11453,13 @@ in general, a faster Kalman filter/smoother.")
 (define-public r-fkf
   (package
     (name "r-fkf")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FKF" version))
        (sha256
-        (base32 "0mfz03yv8h7nfw3xqy88j49yj035px9z88w7kjjqwkpkb9lib92w"))))
+        (base32 "0wv8g6f5y0qdpzd3x8xmfs9s9czwa39xdiy2llbz0lf00awyyzkk"))))
     (properties `((upstream-name . "FKF")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

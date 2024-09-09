@@ -8647,19 +8647,18 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 (define-public r-trajmsm
   (package
     (name "r-trajmsm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajmsm" version))
        (sha256
-        (base32 "1nxklv2hsv4kry3zzyga2qgjjb0jhsx4f3l8a0k1j6lx2p7ysjah"))))
+        (base32 "0yf95azpikzhh7c7nbjjnx0f3ksk1myj8y7axy91kapykg0f3j34"))))
     (properties `((upstream-name . "trajmsm")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
                              r-sandwich
                              r-ggplot2
-                             r-geepack
                              r-flexmix
                              r-e1071
                              r-class))

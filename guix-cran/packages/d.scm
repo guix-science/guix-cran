@@ -20900,13 +20900,13 @@ can also make it easier for designs to be shared, replicated, and critiqued.")
 (define-public r-declared
   (package
     (name "r-declared")
-    (version "0.24")
+    (version "0.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "declared" version))
        (sha256
-        (base32 "0zj5rvdj2jcy23nms5dhqjp9w4sd87r7cr4slh6qli15w75ryr50"))))
+        (base32 "0qdzrmmn2p5wb502syk05hj3jn3wbqhjhs7ya08r5gp1fapsalq4"))))
     (properties `((upstream-name . "declared")))
     (build-system r-build-system)
     (home-page "https://github.com/dusadrian/declared")
@@ -24216,13 +24216,13 @@ the @code{JavaScript} library daterangepicker which is available at
 (define-public r-datefixr
   (package
     (name "r-datefixr")
-    (version "1.6.1")
+    (version "1.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datefixR" version))
        (sha256
-        (base32 "1xmrx8djxc05r9yvgfgkvmp19m2pj6n2g1r4siikwkzlssh2x8fz"))))
+        (base32 "1nsfi0hjamd83icxqdx4s284jrjxp13nygxbzd9vaknfl2fv3dpi"))))
     (properties `((upstream-name . "datefixR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-rlang r-rcpp r-lifecycle))

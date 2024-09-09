@@ -7760,13 +7760,13 @@ performance.")
 (define-public r-rsagacmd
   (package
     (name "r-rsagacmd")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rsagacmd" version))
        (sha256
-        (base32 "08xj6dinqnr9ir0ljz0ybyh3wqsbw5hdp27xfvcmc8vi48gf4rlj"))))
+        (base32 "1kddbmzkmpxc8cx34vsgaqhrw6jwvx8llh5bny63zx64hlrr20nh"))))
     (properties `((upstream-name . "Rsagacmd")))
     (build-system r-build-system)
     (inputs (list))
@@ -7791,7 +7791,7 @@ These functions are contained within an S3 object and are accessed as a named
 list of libraries and tools.  This structure facilitates an easier scripting
 experience by organizing the large number of SAGA-GIS geoprocessing tools (>700)
 by their respective library.  Interactive scripting can fully take advantage of
-code autocompletion tools (e.g. in Rstudio'), allowing for each tools syntax to
+code autocompletion tools (e.g. in RStudio'), allowing for each tools syntax to
 be quickly recognized.  Furthermore, the most common types of spatial data (via
 the terra', sp', and sf packages) along with non-spatial data are automatically
 passed from R to the SAGA-GIS command line tool for geoprocessing operations,
@@ -7802,7 +7802,7 @@ statement.  SAGA-GIS is available under a GPLv2 / LGPLv2 licence from
 <https://sourceforge.net/projects/saga-gis/> including Windows x86/x64 and
 @code{macOS} binaries.  SAGA-GIS is also included in Debian/Ubuntu default
 software repositories.  Rsagacmd has currently been tested on SAGA-GIS versions
-from 2.3.1 to 9.2 on Windows, Linux and @code{macOS}.")
+from 2.3.1 to 9.5.1 on Windows, Linux and @code{macOS}.")
     (license license:gpl3)))
 
 (define-public r-rsaga

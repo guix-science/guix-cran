@@ -2878,16 +2878,22 @@ empirical applications and simulated examples.")
 (define-public r-npboottprmfbar
   (package
     (name "r-npboottprmfbar")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprmFBar" version))
        (sha256
-        (base32 "039da7k4mbw08siwicfvfn12v7ngc9989rw4f1rsyqskgj7s4h4g"))))
+        (base32 "1hww2jdb6sgkn9mq3wi2139l7i0dki48v3s91c8advck8214p4vq"))))
     (properties `((upstream-name . "npboottprmFBar")))
     (build-system r-build-system)
-    (propagated-inputs (list r-restriktor r-npboottprm r-lmperm r-fgarch))
+    (propagated-inputs (list r-shiny
+                             r-restriktor
+                             r-npboottprm
+                             r-mmints
+                             r-lmperm
+                             r-fgarch
+                             r-dt))
     (home-page "https://github.com/mightymetrika/npboottprmFBar")
     (synopsis
      "Informative Nonparametric Bootstrap Test with Pooled Resampling")
@@ -15780,34 +15786,6 @@ outcomes to immune repertoires based on their network properties, or to
 particular clusters and clones within a repertoire.  Yang et al. (2023)
 <doi:10.3389/fimmu.2023.1181825>.")
     (license license:gpl3+)))
-
-(define-public r-nailer
-  (package
-    (name "r-nailer")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "NaileR" version))
-       (sha256
-        (base32 "03vrsv2mx4k3hp3wiscsvmg7kgscaikrx5a1qyybawl7vy92j0p4"))))
-    (properties `((upstream-name . "NaileR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-ollamar
-                             r-magrittr
-                             r-glue
-                             r-factominer
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=NaileR")
-    (synopsis "Interpreting Latent Variables with AI")
-    (description
-     "This package provides a small package designed for interpreting continuous and
-categorical latent variables.  You provide a data set with a latent variable you
-want to understand and some other explanatory variables.  It provides a
-description of the latent variable based on the explanatory variables.  It also
-provides a name to the latent variable.")
-    (license license:gpl2+)))
 
 (define-public r-naijr
   (package

@@ -13147,13 +13147,13 @@ collected from the open source Star Wars API <https://swapi.dev/>.")
 (define-public r-starvz
   (package
     (name "r-starvz")
-    (version "0.8.0")
+    (version "0.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starvz" version))
        (sha256
-        (base32 "0slym8xwvihbslxm4llbzb8fybjbk040lbzng4fh5dsw58zf04r1"))))
+        (base32 "0rgrbnsn1cx6255scqyjrywbq2bn3mpn7aq60p31k6f80dd850lg"))))
     (properties `((upstream-name . "starvz")))
     (build-system r-build-system)
     (inputs (list))
@@ -17510,13 +17510,13 @@ package.")
 (define-public r-sptimer
   (package
     (name "r-sptimer")
-    (version "3.3.2")
+    (version "3.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spTimer" version))
        (sha256
-        (base32 "0dlsyj0mawpgxr1yn4ldqm3xh148c79lk55fq475zjzyiwz9ynfc"))))
+        (base32 "0xibbwsvnfs43q58bbld23mbpzhby2qcwavhr30k4yd5fxzfpzbr"))))
     (properties `((upstream-name . "spTimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-spacetime r-sp r-extradistr r-coda))
@@ -52257,13 +52257,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "19hqb2q96w4qq09sy09b17s8khnwicqg2ak61l6sqh5jg3j3k3h5"))))
+        (base32 "106arvv5qsz2b1qj5fag995iiydvzc76vqg913h2l86z7v6m0s3n"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -52272,7 +52272,7 @@ package?SDT for an overview.")
                              r-magrittr
                              r-geosphere
                              r-dplyr))
-    (home-page "https://spatlyu.github.io/sdsfun/")
+    (home-page "https://stscl.github.io/sdsfun/")
     (synopsis "Spatial Data Science Complementary Features")
     (description
      "Wrapping and supplementing commonly used functions in the R ecosystem related to

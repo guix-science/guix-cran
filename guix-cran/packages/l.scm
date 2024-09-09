@@ -2047,16 +2047,16 @@ images, see Taylor et al (2014) <doi:10.1080/00401706.2013.823890>.")
 (define-public r-lrtester
   (package
     (name "r-lrtester")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LRTesteR" version))
        (sha256
-        (base32 "1s4i9j2gz1dgssyjlz032f59ph65g8spa09479jfc15szprjg6qv"))))
+        (base32 "0xrx9q2jnfjy4d8aqx7y1ycl2wn61riap7kaw78ng33xks8l6b93"))))
     (properties `((upstream-name . "LRTesteR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-statmod r-rlang))
+    (propagated-inputs (list r-stringr r-statmod r-rlang r-envstats))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gmcmacran/LRTesteR")
     (synopsis "Likelihood Ratio Tests and Confidence Intervals")
@@ -7804,13 +7804,13 @@ potentially a limited number of times.")
 (define-public r-litedown
   (package
     (name "r-litedown")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "litedown" version))
        (sha256
-        (base32 "16w5rhrczbfizm25z4sxhs08ys2phxlbimqfxbyqr4871yqz6vzm"))))
+        (base32 "1c60bmw02yqq96106q227sjw6nly8r0fhs2yvm32zhhzs4j5ldcj"))))
     (properties `((upstream-name . "litedown")))
     (build-system r-build-system)
     (propagated-inputs (list r-xfun r-commonmark))
@@ -7818,16 +7818,16 @@ potentially a limited number of times.")
     (synopsis "Lightweight Version of R Markdown")
     (description
      "Render R Markdown to Markdown (without using knitr'), and Markdown to
-lightweight HTML/'@code{LaTeX} documents with the commonmark package (instead of
+lightweight HTML/@code{LaTeX} documents with the commonmark package (instead of
 Pandoc').  Some missing Markdown features in commonmark are also supported, such
-as raw HTML/'@code{LaTeX} blocks, @code{LaTeX} math, superscripts, subscripts,
-footnotes, element attributes, appendices, and fenced Divs', but not all Pandoc
-Markdown features are (or will be) supported.  With additional @code{JavaScript}
-and CSS, you can also create HTML slides and articles.  This package can be
-viewed as a trimmed-down version of R Markdown and knitr'.  It does not aim at
-rich Markdown features or a large variety of output formats (the primary formats
-are HTML and @code{LaTeX}').  Book and website projects of multiple input
-documents are also supported.")
+as raw HTML/@code{LaTeX} blocks, @code{LaTeX} math, superscripts, subscripts,
+footnotes, element attributes, and appendices, but not all Pandoc Markdown
+features are (or will be) supported.  With additional @code{JavaScript} and CSS,
+you can also create HTML slides and articles.  This package can be viewed as a
+trimmed-down version of R Markdown and knitr'.  It does not aim at rich Markdown
+features or a large variety of output formats (the primary formats are HTML and
+@code{LaTeX}).  Book and website projects of multiple input documents are also
+supported.")
     (license license:expat)))
 
 (define-public r-lite
@@ -17344,13 +17344,13 @@ packages.")
 (define-public r-labelr
   (package
     (name "r-labelr")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "labelr" version))
        (sha256
-        (base32 "124mlhjk8l2m7ly9kzfp0s69czpbjjz4yq56g0mryzjrp0cdq31n"))))
+        (base32 "09fw3nxbkjvjkgyh6rmm3bzqgwir9z9vqz4svrwz4hfagprapxhk"))))
     (properties `((upstream-name . "labelr")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -17632,13 +17632,13 @@ spectral clustering method using l1-regularization\" (2022).")
 (define-public r-l1pack
   (package
     (name "r-l1pack")
-    (version "0.41-245")
+    (version "0.50")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "L1pack" version))
        (sha256
-        (base32 "1frhma6ipycgiq23fsbcnii2rqw53xpd202d7sjpqhi8xpvkawsc"))))
+        (base32 "1ipyx70y83295a6shjzgzmk1zipx4xbv9pnibjh2pxl01vc7myhx"))))
     (properties `((upstream-name . "L1pack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
@@ -17651,7 +17651,9 @@ spectral clustering method using l1-regularization\" (2022).")
 Estimation of mean and covariance matrix using the multivariate Laplace
 distribution, density, distribution function, quantile function and random
 number generation for univariate and multivariate Laplace distribution
-<doi:10.1080/03610929808832115>.")
+<doi:10.1080/03610929808832115>.  Implementation of Naik and Plungpongpun
+<doi:10.1007/0-8176-4487-3_7> for the Generalized spatial median estimator is
+included.")
     (license license:gpl3)))
 
 (define-public r-l1kdeconv

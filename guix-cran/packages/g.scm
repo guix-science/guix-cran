@@ -21617,13 +21617,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.1")
+    (version "3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "14a8r2rha89gdv3yb4rf8kjla32i2858mpf02r9s4xhl1rsg4qb4"))))
+        (base32 "1i62mz80mcxhb3xc1rs1yahmnhvdrirm0pq8a905krhv446av1m7"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -26202,13 +26202,13 @@ equations.")
 (define-public r-geessbin
   (package
     (name "r-geessbin")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geessbin" version))
        (sha256
-        (base32 "06phzv4mwa4lk93xq5824s6zxz81xi0cmwh10d53h9iakynisnw1"))))
+        (base32 "0vj1z29hccvwqsqj8gclmwzrqsqimzsr0sy2hh81jaznw9hghw5x"))))
     (properties `((upstream-name . "geessbin")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -26216,9 +26216,9 @@ equations.")
     (synopsis "Modified Generalized Estimating Equations for Binary Outcome")
     (description
      "Analyze small-sample clustered or longitudinal data with binary outcome using
-modified generalized estimating equations with bias-adjusted covariance
-estimator.  The package provides any combination of three modified generalized
-estimating equations and 11 bias-adjusted covariance estimators.")
+modified generalized estimating equations (GEE) with bias-adjusted covariance
+estimator.  The package provides any combination of three GEE methods and 12
+covariance estimators.")
     (license license:gpl2+)))
 
 (define-public r-geesmv

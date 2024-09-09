@@ -13516,13 +13516,13 @@ Spectrum, The R Journal, 1, 40-46).")
 (define-public r-emcluster
   (package
     (name "r-emcluster")
-    (version "0.2-15")
+    (version "0.2-16")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EMCluster" version))
        (sha256
-        (base32 "1p8zfavx9waz3n4nkz8f6cd5hlcjb53r4wiwnrll5dx8zpfjj8g2"))))
+        (base32 "1hy2w7i367id0s6vl8m87d1s275638y767fx39xim9jrz6dwdzvx"))))
     (properties `((upstream-name . "EMCluster")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-mass))
@@ -22010,13 +22010,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "0nc15qbwmmcbvb36ia9kpvljwbjn8h4ing62l6951c906j652yg4"))))
+        (base32 "1k6qpr8m3ijxnfb0laqydfscmi0m0ca41vx07jxy0120rkavm01w"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-limma r-ggplot2 r-data-table))

@@ -1718,13 +1718,13 @@ Chemistry.  See: Lacki, Valkenborg, Startek (2020)
 (define-public r-isorix
   (package
     (name "r-isorix")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoriX" version))
        (sha256
-        (base32 "1izpxibyz4wwpdr01z4a4zw1r1c528ydznvwrc064j9c55fiz4s2"))))
+        (base32 "1z86qgl68l9mpyf0ym1szvwv416mx7gqkr15gs5i0jlw4zafc1jc"))))
     (properties `((upstream-name . "IsoriX")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -17478,13 +17478,13 @@ management.")
 (define-public r-ibdsim2
   (package
     (name "r-ibdsim2")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibdsim2" version))
        (sha256
-        (base32 "0bgjhfsplqs4j20x2d1mdhqpdjfnvicgzac62mv4284blzjhnz2d"))))
+        (base32 "13w5cfbbm90v822ylz8m4khy33x7blmag6h0051lw9v655km2gcs"))))
     (properties `((upstream-name . "ibdsim2")))
     (build-system r-build-system)
     (propagated-inputs (list r-ribd r-rcpp r-pedtools r-glue r-ggplot2))
@@ -17495,10 +17495,10 @@ management.")
 Using sex specific recombination rates along the human genome (Halldorsson et
 al. (2019) <doi:10.1126/science.aau1043>), phased chromosomes are simulated for
 all pedigree members.  Applications include calculation of realised relatedness
-coefficients and IBD segment distributions.  ibdsim2 is part of the ped suite
+coefficients and IBD segment distributions.  ibdsim2 is part of the pedsuite
 collection of packages for pedigree analysis.  A detailed presentation of the
 ped suite', including a separate chapter on ibdsim2', is available in the book
-Pedigree analysis in R (Vigeland, 2021, ISBN:9780128244302).  A shiny app for
+Pedigree analysis in R (Vigeland, 2021, ISBN:9780128244302).  A Shiny app for
 visualising and comparing IBD distributions is available at
 <https://magnusdv.shinyapps.io/ibdsim2-shiny/>.")
     (license license:gpl3)))

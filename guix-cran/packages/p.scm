@@ -1763,13 +1763,13 @@ version updates.")
 (define-public r-pubmed-miner
   (package
     (name "r-pubmed-miner")
-    (version "1.0.20")
+    (version "1.0.21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pubmed.mineR" version))
        (sha256
-        (base32 "0apmdrn5bdis55d73j8xgfvv4x54fplmny5c28y5pwa262kchbid"))))
+        (base32 "1dwcpzxqx5672yq7pf7jd692w0pj4737sjdkh395nwpqsllp0sw9"))))
     (properties `((upstream-name . "pubmed.mineR")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-rjsonio r-rcurl r-r2html r-boot))
@@ -29455,13 +29455,13 @@ server of the Peer Models Network.")
 (define-public r-pedtools
   (package
     (name "r-pedtools")
-    (version "2.7.0")
+    (version "2.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedtools" version))
        (sha256
-        (base32 "01zh9jks0qdry8yszfdb8rkmmp8035av3y4vxkybnaryymlnmaqy"))))
+        (base32 "0ip8r88xky8z6dphif2p86l7mfasgaxac0bgi1rrfj385lr5swbb"))))
     (properties `((upstream-name . "pedtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-pedmut r-kinship2))
