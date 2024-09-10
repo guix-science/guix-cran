@@ -14254,16 +14254,16 @@ symmetry that are described in Babic et al. (2021) <@code{arXiv:2011.12560v2>}."
 (define-public r-elliptcopulas
   (package
     (name "r-elliptcopulas")
-    (version "0.1.3")
+    (version "0.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ElliptCopulas" version))
        (sha256
-        (base32 "1hnkhd9hw2550kzjyycl1hzm9pk9j11n96hka59z8x74vrz980qp"))))
+        (base32 "0arrvcs3ylh849bw76wl98qj40w7w3r6f1yqszphqf7nnw0i6x9n"))))
     (properties `((upstream-name . "ElliptCopulas")))
     (build-system r-build-system)
-    (propagated-inputs (list r-wdm r-runuran r-rmpfr r-pbapply r-matrix))
+    (propagated-inputs (list r-wdm r-runuran r-pbapply r-matrix r-kstatistics))
     (home-page "https://github.com/AlexisDerumigny/ElliptCopulas")
     (synopsis "Inference of Elliptical Distributions and Copulas")
     (description

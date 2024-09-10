@@ -5933,13 +5933,13 @@ a method you would like implemented, please get in touch.")
 (define-public r-trialemulation
   (package
     (name "r-trialemulation")
-    (version "0.0.3.8")
+    (version "0.0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TrialEmulation" version))
        (sha256
-        (base32 "05gm3fpwdam3cnm0x6s4mzpjvb98yfi4alxgdanmscvx44c5ry8i"))))
+        (base32 "0ygagg6f2a0wvqslgs2jq5qrlbmwn8avxjhvir801s6cj0i1s0rn"))))
     (properties `((upstream-name . "TrialEmulation")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich
@@ -14865,6 +14865,41 @@ Estimated Scatterplot Smoothing (LOESS) prediction correction.")
      "This package provides a consistent API to pull United States Department of
 Agriculture census and survey data from the National Agricultural Statistics
 Service (NASS) @code{QuickStats} service.")
+    (license license:expat)))
+
+(define-public r-tidytuesdayr
+  (package
+    (name "r-tidytuesdayr")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidytuesdayR" version))
+       (sha256
+        (base32 "0ja78nngnqcdnhnkcrxgnyychf83izn88yv5b2kpif72qdz8qny3"))))
+    (properties `((upstream-name . "tidytuesdayR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-usethis
+                             r-tidyr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-magrittr
+                             r-lubridate
+                             r-jsonlite
+                             r-glue
+                             r-gh
+                             r-cli))
+    (home-page "https://dslc-io.github.io/tidytuesdayR/")
+    (synopsis "Access the Weekly 'TidyTuesday' Project Dataset")
+    (description
+     "@code{TidyTuesday} is a project by the Data Science Learning Community in which
+they post a weekly dataset in a public data repository
+(<https://github.com/rfordatascience/tidytuesday>) for people to analyze and
+visualize.  This package provides the tools to easily download this data and the
+description of the source.")
     (license license:expat)))
 
 (define-public r-tidytreatment

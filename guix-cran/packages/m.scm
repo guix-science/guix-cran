@@ -590,6 +590,34 @@ regional, and federal agencies that have different identifiers on lakes.  This
 package helps you to go between them.")
     (license license:expat)))
 
+(define-public r-mwcsr
+  (package
+    (name "r-mwcsr")
+    (version "0.1.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mwcsr" version))
+       (sha256
+        (base32 "09pw4x9kbmbk3cnvh1xxwfan6kc4bmab52jly9fm3b0nji3apbkj"))))
+    (properties `((upstream-name . "mwcsr")))
+    (build-system r-build-system)
+    (inputs (list openjdk))
+    (propagated-inputs (list r-rcpp r-igraph))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ctlab/mwcsr")
+    (synopsis
+     "Solvers for Maximum Weight Connected Subgraph Problem and Its Variants")
+    (description
+     "Algorithms for solving various Maximum Weight Connected Subgraph Problems,
+including variants with budget constraints, cardinality constraints, weighted
+edges and signals.  The package represents an R interface to high-efficient
+solvers based on relax-and-cut approach (Ãlvarez-Miranda E., Sinnl M. (2017)
+<doi:10.1016/j.cor.2017.05.015>) mixed-integer programming (Loboda A., Artyomov
+M., and Sergushichev A. (2016) <doi:10.1007/978-3-319-43681-4_17>) and simulated
+annealing.")
+    (license license:expat)))
+
 (define-public r-mwa
   (package
     (name "r-mwa")
@@ -22427,13 +22455,13 @@ default values for important parameters.")
 (define-public r-miscmetabar
   (package
     (name "r-miscmetabar")
-    (version "0.9.1")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MiscMetabar" version))
        (sha256
-        (base32 "002vnd2hbd5r5zjm461w7wsfngpc9zpwidnyiimmhazdm3jbrrbi"))))
+        (base32 "0jfdb7qnhv6y8swrlb3npjkin5glrmn1x5fh0p5bravfsq9d4jlk"))))
     (properties `((upstream-name . "MiscMetabar")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -28485,13 +28513,13 @@ to evaluate bias, precision and compare methods.")
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "14lnj2jgxi4y5q26bzblc7f0ljlgj8c9gnh32jbyikyych28fb1k"))))
+        (base32 "0ldn5alsxv8bsr1107628ajl95jfshk05ljshw2l87jkxfqi3q5v"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))
@@ -42253,13 +42281,13 @@ governance.")
 (define-public r-mantaid
   (package
     (name "r-mantaid")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MantaID" version))
        (sha256
-        (base32 "0fwdvz6xj9b1x4k985mqqf3h1nvf4ksy7yzm70wdh9kxpr0sx5vv"))))
+        (base32 "0myy75psf2v22rl4ajg73sh4y7fvkfjcvdkbwi4bjg6rd1r5j49g"))))
     (properties `((upstream-name . "MantaID")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

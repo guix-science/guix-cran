@@ -2455,28 +2455,6 @@ inference of causal network and genetic architecture for correlated phenotypes.
 Annals of Applied Statistics 4: 320-339. <doi:10.1214/09-AOAS288>.")
     (license license:gpl2+)))
 
-(define-public r-qtlmt
-  (package
-    (name "r-qtlmt")
-    (version "0.1-6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "qtlmt" version))
-       (sha256
-        (base32 "023h60z8d05832l2g7mg776hfjb0i7xpvhz3i899rc3h5pgjd94c"))))
-    (properties `((upstream-name . "qtlmt")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=qtlmt")
-    (synopsis "Tools for Mapping Multiple Complex Traits")
-    (description
-     "This package provides tools for joint analysis of multiple traits in a backcross
-(BC) or recombinant inbred lines (RIL) population.  It can be used to select an
-optimal subset of traits for multiple-trait mapping, analyze multiple traits via
-the SURE model, which can associate different QTL with different traits, and
-perform multiple-trait composite multiple-interval mapping.")
-    (license license:gpl2+)))
-
 (define-public r-qtlhot
   (package
     (name "r-qtlhot")

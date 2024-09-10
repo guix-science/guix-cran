@@ -3529,13 +3529,13 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
 (define-public r-normmix
   (package
     (name "r-normmix")
-    (version "0.1-1")
+    (version "0.2-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "norMmix" version))
        (sha256
-        (base32 "1nkgidzbqp83bqvkpalxs58s2blpx9s1j9dm2i13plfx3kv0d6x3"))))
+        (base32 "1hlyfqgcb7yxmc4qls5k9q5jxxdpp5hffz3k4hv3bsg6gvh200hm"))))
     (properties `((upstream-name . "norMmix")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc r-mvtnorm r-mclust r-mass r-cluster))
@@ -3545,11 +3545,9 @@ estimated on the normalized scores are also provided.  See Philipps et al (2014)
     (description
      "Multivariate Normal (i.e.  Gaussian) Mixture Models (S3) Classes.  Fitting
 models to data using MLE (maximum likelihood estimation) for multivariate normal
-mixtures via smart parametrization using the LDLt (Cholesky) decomposition.
-@code{McLachlan}, G. and Peel, D. (2000, ISBN:9780471006268) \"Finite Mixture
-Models\".  Celeux, G. and Govaert, G. (1995) <doi:10.1016/0031-3203(94)00125-6>
-\"Gaussian parsimonious clustering models\".  Marron, S. and Wand, M. (1992)
-<doi:10.1214/aos/1176348653> \"Exact Mean Integrated Squared Error\".")
+mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
+@code{McLachlan} and Peel (2000, ISBN:9780471006268), Celeux and Govaert (1995)
+<doi:10.1016/0031-3203(94)00125-6>.")
     (license license:gpl3+)))
 
 (define-public r-normfluodbf
@@ -13038,13 +13036,13 @@ uncertainty.")
 (define-public r-negligible
   (package
     (name "r-negligible")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "negligible" version))
        (sha256
-        (base32 "0ammn1zfzy2q4vd20bj40ix58lz5rkjl7csyp98hq6mq2h091gmv"))))
+        (base32 "085pv5nh7v6mwyvhdr2nqnh0z6729lq86nwb6klhzhqi376i1r6q"))))
     (properties `((upstream-name . "negligible")))
     (build-system r-build-system)
     (propagated-inputs (list r-wrs2

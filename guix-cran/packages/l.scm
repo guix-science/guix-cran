@@ -3176,32 +3176,36 @@ are described in Robin, Josse, Moulines and Sardy (2019)
 (define-public r-lorenzregression
   (package
     (name "r-lorenzregression")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorenzRegression" version))
        (sha256
-        (base32 "1jxz753bcq8b16ncjk6v8c8ylv8brlqd90fdzn9lappm1k4y0r46"))))
+        (base32 "1j5xfc56zw801qdkh6z19053qsiln15b6zyvxvvfnslj1ds3z70f"))))
     (properties `((upstream-name . "LorenzRegression")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rearrangement
+    (propagated-inputs (list r-scales
+                             r-rsample
+                             r-rearrangement
                              r-rcpparmadillo
                              r-rcpp
+                             r-parsnip
                              r-mass
                              r-locpol
-                             r-knitr
                              r-ggplot2
                              r-ga
                              r-foreach
-                             r-doparallel))
-    (home-page "https://cran.r-project.org/package=LorenzRegression")
+                             r-doparallel
+                             r-boot))
+    (home-page "https://github.com/AlJacq/LorenzRegression")
     (synopsis "Lorenz and Penalized Lorenz Regressions")
     (description
      "Inference for the Lorenz and penalized Lorenz regressions.  More broadly, the
 package proposes functions to assess inequality and graphically represent it.
 The Lorenz Regression procedure is introduced in Heuchenne and Jacquemain (2022)
-<doi:10.1016/j.csda.2021.107347>.")
+<doi:10.1016/j.csda.2021.107347> and in Jacquemain, A., C. Heuchenne, and E.
+Pircalabelu (2024) <doi:10.1214/23-EJS2200>.")
     (license license:gpl3)))
 
 (define-public r-lorenz
@@ -7039,13 +7043,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "1axbw73nfcn1s3r0smba0wg7v63zx79cxdp1629bzdwqnjvl7xxg"))))
+        (base32 "14p5l50jqbi1zqzkxhs9hlks23007si8xnj3cil02kmyy0v88gnz"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -17481,6 +17485,37 @@ as well as several novel analyses.")
      "Miscellaneous scripts, e.g. functionality to make and plot factor diagrams for
 the statistical design.")
     (license license:gpl3)))
+
+(define-public r-lab2clean
+  (package
+    (name "r-lab2clean")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lab2clean" version))
+       (sha256
+        (base32 "1836dr3g32lw71z8fgrbzn6fn9r6a92ckkk85m9fjwxp9xcmb9lj"))))
+    (properties `((upstream-name . "lab2clean")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=lab2clean")
+    (synopsis "Automation and Standardization of Cleaning Clinical Lab Data")
+    (description
+     "Navigating the shift of clinical laboratory data from primary everyday clinical
+use to secondary research purposes presents a significant challenge.  Given the
+substantial time and expertise required for lab data pre-processing and cleaning
+and the lack of all-in-one tools tailored for this need, we developed our
+algorithm lab2clean as an open-source R-package.  lab2clean package is set to
+automate and standardize the intricate process of cleaning clinical laboratory
+results.  With a keen focus on improving the data quality of laboratory result
+values, our goal is to equip researchers with a straightforward, plug-and-play
+tool, making it smoother for them to unlock the true potential of clinical
+laboratory data in clinical research and clinical machine learning (ML) model
+development.  Version 1.0 of the algorithm is described in detail in Zayed et
+al. (2024) <doi:10.1186/s12911-024-02652-7>.")
+    (license license:gpl3+)))
 
 (define-public r-la
   (package

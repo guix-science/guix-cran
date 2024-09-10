@@ -5006,13 +5006,13 @@ differences of two Kaplan-Meier curves.")
 (define-public r-survauc
   (package
     (name "r-survauc")
-    (version "1.2-0")
+    (version "1.3-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "survAUC" version))
        (sha256
-        (base32 "138z4my55lbaxvvk6fih2vn16vvmdy0a07l0yjdhfy87yq7vhvki"))))
+        (base32 "18j3fmn0ac97pl3bwnj0iamgcnva0198g7g09gdqml1dp9vh4k8y"))))
     (properties `((upstream-name . "survAUC")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rms))
@@ -17597,13 +17597,13 @@ the online spatio-temporal disease surveillance method described in Yang and Qiu
 (define-public r-sptdyn
   (package
     (name "r-sptdyn")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spTDyn" version))
        (sha256
-        (base32 "010x3rjncasly1scngwyiys7asmk4ay51bzhk0zfjazwfkmqd12r"))))
+        (base32 "05f9ginar5xc3aiyvy2dlad4bs62x2z492h096g77pj2wbba8ysh"))))
     (properties `((upstream-name . "spTDyn")))
     (build-system r-build-system)
     (propagated-inputs (list r-sptimer r-spacetime r-sp r-coda))
@@ -29021,17 +29021,27 @@ set.")
 (define-public r-snplinkage
   (package
     (name "r-snplinkage")
-    (version "1.0.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snplinkage" version))
        (sha256
-        (base32 "112wg2gnr4ikj916nb71sm39g41ls05d4j56hhml9hfnkiv76x5p"))))
+        (base32 "1kfmpr81wc8ckz0mr093a7nk2x6xihss2ziwd7d7ykwl6pcl1w6k"))))
     (properties `((upstream-name . "snplinkage")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-gwastools r-gtable r-ggplot2
-                             r-gdsfmt))
+    (propagated-inputs (list r-snprelate
+                             r-reshape2
+                             r-magrittr
+                             r-knitr
+                             r-gwastools
+                             r-gtable
+                             r-ggrepel
+                             r-ggplot2
+                             r-gdsfmt
+                             r-data-table
+                             r-cowplot
+                             r-biomart))
     (native-inputs (list r-knitr))
     (home-page "https://gitlab.com/thomaschln/snplinkage")
     (synopsis

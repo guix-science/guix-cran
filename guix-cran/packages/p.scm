@@ -3085,13 +3085,13 @@ Davidian (2004) <DOI:10.1002/sim.1903>, Li and Greene (2013)
 (define-public r-psvmsdr
   (package
     (name "r-psvmsdr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psvmSDR" version))
        (sha256
-        (base32 "037l2gfpfrqhr29fv9yjmvpllj9k20k3n5ycsv0s9cqcb1hcsb52"))))
+        (base32 "1mlxrlq3h3q6230xkb15cn7pyccvi7flbkm8q7dsp812dadsf449"))))
     (properties `((upstream-name . "psvmSDR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=psvmSDR")
@@ -12787,6 +12787,38 @@ case-control studies of candidate genes and genome-wide association studies
 procedures.  It can also calculate power for @code{GxE} and @code{GxG} without
 any screening.")
     (license license:gpl2+)))
+
+(define-public r-powerest
+  (package
+    (name "r-powerest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PoweREST" version))
+       (sha256
+        (base32 "0y101jbazh2hfly08p5yfipdqyahxx668dm135ik20arqpfl01cl"))))
+    (properties `((upstream-name . "PoweREST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-seurat
+                             r-scam
+                             r-resample
+                             r-rayshader
+                             r-plotly
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PoweREST")
+    (synopsis
+     "Bootstrap-Based Power Estimation Tool for Spatial Transcriptomics")
+    (description
+     "Power estimation and sample size calculation for 10X Visium Spatial
+Transcriptomics data to detect differential expressed genes between two
+conditions based on bootstrap resampling.  See Shui et al. (2024)
+<doi:10.1101/2024.08.30.610564> for method details.")
+    (license license:expat)))
 
 (define-public r-powereqtl
   (package
@@ -29451,6 +29483,35 @@ funds returns as described in Ardia and Boudt (2018)
      "Enables direct cloud access to health care decision models hosted on the PRISM
 server of the Peer Models Network.")
     (license license:gpl3)))
+
+(define-public r-pedtricks
+  (package
+    (name "r-pedtricks")
+    (version "0.4.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pedtricks" version))
+       (sha256
+        (base32 "1l1ysyipwlbfvhm6d8dqyvn2hchy7dnmlgnx5l32znv0dv4s0zcl"))))
+    (properties `((upstream-name . "pedtricks")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-nadiv
+                             r-mvtnorm
+                             r-mcmcglmm
+                             r-matrix
+                             r-kinship2
+                             r-igraph
+                             r-ggplot2
+                             r-genetics
+                             r-dplyr))
+    (home-page "https://juliengamartin.github.io/pedtricks/")
+    (synopsis "Visualize, Summarize and Simulate Data from Pedigrees")
+    (description
+     "Sensitivity and power analysis, for calculating statistics describing pedigrees
+from wild populations, and for visualizing pedigrees.")
+    (license license:expat)))
 
 (define-public r-pedtools
   (package

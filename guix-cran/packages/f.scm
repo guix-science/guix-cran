@@ -775,6 +775,32 @@ fuzzy constraints (following different approaches proposed by Verdegay,
 Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
     (license license:gpl3+)))
 
+(define-public r-fuzzyimputationtest
+  (package
+    (name "r-fuzzyimputationtest")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FuzzyImputationTest" version))
+       (sha256
+        (base32 "0iplqirwrfxahf3akzmgl9lnw52fgh1mfz6dpchmnfzg3pc5gqys"))))
+    (properties `((upstream-name . "FuzzyImputationTest")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vim r-missforest r-miceranger r-fuzzysimres
+                             r-fuzzynumbers))
+    (home-page "https://cran.r-project.org/package=FuzzyImputationTest")
+    (synopsis "Imputation Procedures and Quality Tests for Fuzzy Data")
+    (description
+     "Special procedures for the imputation of missing fuzzy numbers are still
+underdeveloped.  The goal of the package is to provide the new d-imputation
+method (DIMP for short, Romaniuk, M. and Grzegorzewski, P. \"Fuzzy Data
+Imputation with DIMP and FGAIN\" RB/23/2023 (2023)) and covert some classical
+ones applied in R packages ('@code{missForest','miceRanger','knn}') for use with
+fuzzy datasets.  Additionally, specially tailored benchmarking tests are
+provided to check and compare these imputation procedures with fuzzy datasets.")
+    (license license:gpl3)))
+
 (define-public r-fuzzyforest
   (package
     (name "r-fuzzyforest")
@@ -9894,16 +9920,21 @@ compositional features.  See Fei and others (2023)
 (define-public r-florabr
   (package
     (name "r-florabr")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "florabr" version))
        (sha256
-        (base32 "0rfzvrsv4aai3ynwxvnqiki58gbjp4lwrr36kfnkn59bpicvxmzg"))))
+        (base32 "1lrdclync6y61ark4czcl8kbvksakbzf5pj1gkvk1f8wwmfb0kp6"))))
     (properties `((upstream-name . "florabr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml r-terra r-httr r-data-table))
+    (propagated-inputs (list r-xml
+                             r-terra
+                             r-httr
+                             r-foreach
+                             r-dosnow
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://wevertonbio.github.io/florabr/")
     (synopsis "Explore Flora e Funga do Brasil Database")
@@ -16705,27 +16736,6 @@ brings a certain loss of flexibility, but also a gain of simplicity.  The
 package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatique
 DÃ©cisionnelle\".")
     (license license:gpl3)))
-
-(define-public r-fdicdata
-  (package
-    (name "r-fdicdata")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fdicdata" version))
-       (sha256
-        (base32 "1zz8wd124bbjn2fjllq8hc00r475w96bcaphcgxbqr9hfzzjpg2f"))))
-    (properties `((upstream-name . "fdicdata")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml r-httr r-dplyr))
-    (home-page "https://github.com/visbanking/fdicdata")
-    (synopsis "Accessing FDIC Bank Data")
-    (description
-     "This package provides a system provides a set of functions for working with data
-from the Federal Deposit Insurance Corporation (FDIC), including retrieving
-financial data for FDIC-insured institutions and accessing the data taxonomy.")
-    (license license:expat)))
 
 (define-public r-fdesigns
   (package

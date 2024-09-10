@@ -4396,13 +4396,13 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
 (define-public r-breadr
   (package
     (name "r-breadr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BREADR" version))
        (sha256
-        (base32 "1bvi3zvsqrin3jl2dwvrw18k9bbrhzcjhnr18sz9pmbgkfkjs4wk"))))
+        (base32 "1hbjwf86575hqxbz3lz89r0sbzfr5cyy8jmid2jx4yj9f9lqc8h5"))))
     (properties `((upstream-name . "BREADR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -4410,6 +4410,7 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
                              r-readr
                              r-purrr
                              r-matrixstats
+                             r-mass
                              r-magrittr
                              r-ggpubr
                              r-ggplot2
@@ -4423,8 +4424,7 @@ described in Barger and Bunge (2010) <doi:10.1214/10-BA527>.")
      "The goal of the package is to provide an easy-to-use method for estimating
 degrees of relatedness (up to the second degree) for extreme low-coverage data.
 The package also allows users to quantify and visualise the level of confidence
-in the estimated degrees of relatedness.  A paper describing the method is
-available at Rohrlach, A. B. et al (2023) <https://tinyurl.com/29t6gbbx>.")
+in the estimated degrees of relatedness.")
     (license license:expat)))
 
 (define-public r-bread
@@ -14414,13 +14414,13 @@ exceed RAM capacity.  Bogdan et al., (2004) <doi:10.1534/genetics.103.021683>.")
 (define-public r-bigstatsr
   (package
     (name "r-bigstatsr")
-    (version "1.5.12")
+    (version "1.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigstatsr" version))
        (sha256
-        (base32 "1wj169j91yjlb12dzy80q7rvi102l7fhlzfvc93rxifq2w3px9x8"))))
+        (base32 "1c445mm11gsvs2sqmrblig1d3456vwb1n3rz08mhkpxghjaf4dci"))))
     (properties `((upstream-name . "bigstatsr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17467,13 +17467,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
 (define-public r-bet
   (package
     (name "r-bet")
-    (version "0.5.3")
+    (version "0.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BET" version))
        (sha256
-        (base32 "1c2zz1nfjvaq6skk81hidimlbgajcl3zp5cnl3innh3yrl818wbl"))))
+        (base32 "13yc78idgdxp2sadx3pl8c8dffxinr0aywygbfmbz35zvwl7qa4r"))))
     (properties `((upstream-name . "BET")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -17483,10 +17483,11 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou and Huang (2022)
      "Nonparametric detection of nonuniformity and dependence with Binary Expansion
 Testing (BET).  See Kai Zhang (2019) BET on Independence, Journal of the
 American Statistical Association, 114:528, 1620-1637,
-<DOI:10.1080/01621459.2018.1537921>, Kai Zhang, Zhigen Zhai, and Wen Zhou.
-(2021).  BEAUTY Powered BEAST, <@code{arXiv:2103.00674>} and Wan Zhang, Zhigen
-Zhao, Michael Baiocchi, Yao Li, Kai Zhang. @code{SorBET}: A Fast and Powerful
-Algorithm to Test Dependence of Variables, Techinical report, 2023.")
+<DOI:10.1080/01621459.2018.1537921>, Kai Zhang, Wan Zhang, Zhigen Zhao, Wen
+Zhou. (2023).  BEAUTY Powered BEAST, <doi:10.48550/@code{arXiv.2103.00674>} and
+Wan Zhang, Zhigen Zhao, Michael Baiocchi, Yao Li, Kai Zhang. (2023)
+@code{SorBET}: A Fast and Powerful Algorithm to Test Dependence of Variables,
+Techinical report.")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-bestsdp

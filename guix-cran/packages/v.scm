@@ -8331,6 +8331,42 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 <https://www.jstor.org/stable/2237638>.")
     (license license:expat)))
 
+(define-public r-vachette
+  (package
+    (name "r-vachette")
+    (version "0.40.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "vachette" version))
+       (sha256
+        (base32 "1210zajbg73z0ahyylgk2y9jzkybyf7h5wpyvvzjrbanpamlq9ng"))))
+    (properties `((upstream-name . "vachette")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-prospectr
+                             r-progress
+                             r-photobiology
+                             r-minpack-lm
+                             r-magrittr
+                             r-hmisc
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/certara/vachette")
+    (synopsis "Method for Visualization of Pharmacometric Models")
+    (description
+     "This package provides a method to visualize pharmacometric analyses which are
+impacted by covariate effects.  Variability-aligned covariate harmonized-effects
+and time-transformation equivalent ('vachette') facilitates intuitive overlays
+of data and model predictions, allowing for comprehensive comparison without
+dilution effects.  vachette improves upon previous methods Lommerse et al.
+(2021) <doi:10.1002/psp4.12679>, enabling its application to all pharmacometric
+models and enhancing Visual Predictive Checks (VPC) by integrating data into
+cohesive plots that can highlight model misspecification.")
+    (license license:lgpl3)))
+
 (define-public r-vaccine
   (package
     (name "r-vaccine")

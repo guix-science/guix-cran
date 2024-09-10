@@ -26246,13 +26246,13 @@ variance estimators for improving the finite small-sample performance.")
 (define-public r-geepack
   (package
     (name "r-geepack")
-    (version "1.3.11")
+    (version "1.3.11.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geepack" version))
        (sha256
-        (base32 "0y74allpn9bcc5hlqlr97qb9siig52qvaf1lyd4ffpg72k9z1qi9"))))
+        (base32 "11jkg00sx89glrgwmng6rkbfc7h3nwr4hny26rhcr9wdkqk6q352"))))
     (properties `((upstream-name . "geepack")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-magrittr r-broom))
@@ -26614,6 +26614,45 @@ Kemeny is a co-inventor of the computer language BASIC.")
 gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 <https://support.gams.com/doku.php?id=gdxrrw:interfacing_gams_and_r>.")
     (license (license:fsdg-compatible "MIT + file LICENCE"))))
+
+(define-public r-gdverse
+  (package
+    (name "r-gdverse")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gdverse" version))
+       (sha256
+        (base32 "0bk04p0zlgapg04yvydzys59h3i19v8jrlpnlnqq8ymdbsp80lam"))))
+    (properties `((upstream-name . "gdverse")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-spdep
+                             r-sf
+                             r-scatterpie
+                             r-rpart
+                             r-reticulate
+                             r-rcpp
+                             r-purrr
+                             r-patchwork
+                             r-magrittr
+                             r-ggplot2
+                             r-geosphere
+                             r-forcats
+                             r-dplyr
+                             r-classint))
+    (native-inputs (list r-knitr))
+    (home-page "https://ausgis.github.io/gdverse/")
+    (synopsis "Geographical Detector Models")
+    (description
+     "Analyzing spatial factors and exploring spatial associations based on the
+concept of spatial stratified heterogeneity, and also takes into account local
+spatial dependencies, spatial interpretability, potential spatial interactions,
+and robust spatial stratification.  Additionally, it supports geographical
+detector models established in academic literature.")
+    (license license:gpl3)))
 
 (define-public r-gdsarm
   (package

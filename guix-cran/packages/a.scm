@@ -10611,6 +10611,28 @@ intervals as input and produces ANOM decision charts that illustrate which group
 means deviate significantly from the grand mean.")
     (license license:gpl2+)))
 
+(define-public r-anoint
+  (package
+    (name "r-anoint")
+    (version "1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anoint" version))
+       (sha256
+        (base32 "158r7dp5cyjap0qrn1p4bl4csy2wph0zly03rvnsjvp8h6nxkrgr"))))
+    (properties `((upstream-name . "anoint")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mass r-glmnet))
+    (home-page "https://cran.r-project.org/package=anoint")
+    (synopsis "Analysis of Interactions")
+    (description
+     "The tools in this package are intended to help researchers assess multiple
+treatment-covariate interactions with data from a parallel-group randomized
+controlled clinical trial.  The methods implemented in the package were proposed
+in Kovalchik, Varadhan and Weiss (2013) <doi: 10.1002/sim.5881>.")
+    (license license:gpl2+)))
+
 (define-public r-anofa
   (package
     (name "r-anofa")
@@ -16874,13 +16896,13 @@ trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
 (define-public r-aggtrees
   (package
     (name "r-aggtrees")
-    (version "2.0.2")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aggTrees" version))
        (sha256
-        (base32 "15dz96g8vyyijbv7nm9wwzwwsm0kzv8mwhrirnm14219cx4z2r76"))))
+        (base32 "060m8k16gplbjf2jy0qh4qv2046bwzj54y9xsjj5gxnzq169ds2x"))))
     (properties `((upstream-name . "aggTrees")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -16900,8 +16922,8 @@ trimmed mean\" (Powell et al. (2022) <doi:10.1037/dec0000191>).")
 selection-on-observables framework. @code{aggTrees} allows researchers to assess
 whether there exists relevant heterogeneity in treatment effects by generating a
 sequence of optimal groupings, one for each level of granularity.  For each
-grouping, we obtain point estimation and inference about the Group Average
-Treatment Effects.  Please reference the use as Di Francesco (2022)
+grouping, we obtain point estimation and inference about the group average
+treatment effects.  Please reference the use as Di Francesco (2022)
 <doi:10.2139/ssrn.4304256>.")
     (license license:expat)))
 
@@ -16979,16 +17001,16 @@ bounded, multi-modal, or heavily skewed sampling errors.")
 (define-public r-ageutils
   (package
     (name "r-ageutils")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ageutils" version))
        (sha256
-        (base32 "1l25f0qq5lqc5jpcwvvnl6qysrgyz1g8wgqqw10d8z38jks2mrg3"))))
+        (base32 "1mnvssc8npj2fg2vclg1i2gp6mywb4ij6pm0jnrbc8ayazsj1rv5"))))
     (properties `((upstream-name . "ageutils")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-tibble r-rlang r-cli))
     (home-page "https://timtaylor.github.io/ageutils/")
     (synopsis "Collection of Functions for Working with Age Intervals")
     (description
@@ -22079,13 +22101,13 @@ original MATLAB routine proposed in Wang (2012) <doi:10.1214/12-BA729>.")
 (define-public r-abess
   (package
     (name "r-abess")
-    (version "0.4.8")
+    (version "0.4.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "abess" version))
        (sha256
-        (base32 "02261lda38931n3rgfm67ml85618wcysvl3hvr4yg9rc5y26gbfs"))))
+        (base32 "19zw9f5z4m6951gm9bg03lilbpnxz6yi0sf14gqw3aym60r49wm4"))))
     (properties `((upstream-name . "abess")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix r-mass))

@@ -4,8 +4,8 @@
   #:use-module (guix build-system r)
   #:use-module ((guix licenses)
                 #:prefix license:)
-  #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages statistics)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
@@ -46,15 +46,16 @@
 (define-public r-hytest
   (package
     (name "r-hytest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hytest" version))
        (sha256
-        (base32 "0zqbfra2ynnk7xhqbisrbjycydz4f91m6aljyym67iv0lpizdrwi"))))
+        (base32 "067b44yrjqnr8zrb4f532nyry5z5faijaxi55zmi2vkxvgvw0pxr"))))
     (properties `((upstream-name . "hytest")))
     (build-system r-build-system)
+    (propagated-inputs (list r-gamlss-dist r-gamlss))
     (home-page "https://cran.r-project.org/package=hytest")
     (synopsis
      "Hypothesis Testing Based on Neyman-Pearson Lemma and Likelihood Ratio Test")
@@ -62,12 +63,13 @@
      "Error type I and Optimal critical values to test statistical hypothesis based on
 Neyman-Pearson Lemma and Likelihood ratio test based on random samples from
 several distributions.  The families of distributions are Bernoulli,
-Exponential, Geometric, Normal, Gamma, Lognormal, and Poisson.  This package is
-an ideal resource to help with the teaching of Statistics.  The main references
-for this package are Casella G. and Berger R. (2003,ISBN:0-534-24312-6 ,
-\"Statistical Inference.  Second Edition\", Duxbury Press) and Hogg, R.,
-@code{McKean}, J., and Craig, A. (2019,ISBN:013468699, \"Introduction to
-Mathematical Statistic.  Eighth edition\", Pearson).")
+Exponential, Geometric, Inverse Normal, Normal, Gamma, Gumbel, Lognormal,
+Poisson, and Weibull.  This package is an ideal resource to help with the
+teaching of Statistics.  The main references for this package are Casella G. and
+Berger R. (2003,ISBN:0-534-24312-6 , \"Statistical Inference.  Second Edition\",
+Duxbury Press) and Hogg, R., @code{McKean}, J., and Craig, A.
+(2019,ISBN:013468699, \"Introduction to Mathematical Statistic.  Eighth edition\",
+Pearson).")
     (license license:gpl3)))
 
 (define-public r-hystreet
@@ -12662,6 +12664,37 @@ format.  It mainly includes the following sections: @code{ReformatDataframe}
 <doi:10.1093/bioinformatics/btr330> or plink Chang et al (2015)
 <doi:10.1186/s13742-015-0047-8>.")
     (license license:expat)))
+
+(define-public r-handwriterapp
+  (package
+    (name "r-handwriterapp")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "handwriterApp" version))
+       (sha256
+        (base32 "1b5pszazz03lv6fvj6fkczdsmv0ykmk8s80119wdwmg8vd53k79r"))))
+    (properties `((upstream-name . "handwriterApp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-shinyjs
+                             r-shinyfiles
+                             r-shinycssloaders
+                             r-shiny
+                             r-rmarkdown
+                             r-magrittr
+                             r-magick
+                             r-handwriter
+                             r-dplyr
+                             r-bslib))
+    (home-page "https://github.com/CSAFE-ISU/handwriterApp")
+    (synopsis "'shiny' Application for Handwriting Analysis")
+    (description
+     "Perform statistical writership analysis of scanned handwritten documents with a
+shiny app for handwriter'.")
+    (license license:gpl3+)))
 
 (define-public r-handwriter
   (package

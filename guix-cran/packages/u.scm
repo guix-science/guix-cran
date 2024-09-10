@@ -1830,22 +1830,22 @@ data.frames with a flexible spec language.")
 (define-public r-unmconf
   (package
     (name "r-unmconf")
-    (version "0.1.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "unmconf" version))
        (sha256
-        (base32 "1cs9kjyq4s6s48ck1wg7piy9r9f6s27kiawzpv6mb514z09gvgr7"))))
+        (base32 "0h07n154z5pwrvllan4gpgmcnsqnpq8aiyrjhpyvsdgbgn6s89wm"))))
     (properties `((upstream-name . "unmconf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rjags r-janitor r-glue))
+    (propagated-inputs (list r-rjags r-janitor r-glue r-coda))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=unmconf")
     (synopsis "Modeling with Unmeasured Confounding")
     (description
-     "Fit and assess Bayesian multi-staged regression models that account for
-unmeasured confounders using JAGS.")
+     "This package provides tools for fitting and assessing Bayesian multilevel
+regression models that account for unmeasured confounders.")
     (license license:expat)))
 
 (define-public r-unmarked

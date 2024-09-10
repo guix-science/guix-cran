@@ -21112,13 +21112,13 @@ Cap <https://coinmarketcap.com/api/>.")
 (define-public r-coimp
   (package
     (name "r-coimp")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CoImp" version))
        (sha256
-        (base32 "0g6fd0rzab5wn19iljr5zjbffrgs9nyljjccwb0fnarmp48lfrwk"))))
+        (base32 "1hn6nf37z90pwhixfwjj5r9avv03k6bsc099j3d4j8g3wc40mlx4"))))
     (properties `((upstream-name . "CoImp")))
     (build-system r-build-system)
     (propagated-inputs (list r-nnet r-locfit r-gtools r-copula r-cluster))

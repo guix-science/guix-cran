@@ -6764,13 +6764,13 @@ rstac'.")
 (define-public r-rshift
   (package
     (name "r-rshift")
-    (version "3.1.0")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rshift" version))
        (sha256
-        (base32 "0wpzbddv259b92sylgznsbznbrnjp2znzd2ajmnfi82frky1r6c8"))))
+        (base32 "103sadb3fz6xysxmz1i3zvjawvb8wsdr2632f5m1rqibknjb6l94"))))
     (properties `((upstream-name . "rshift")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-ggplot2 r-dplyr))
@@ -33203,6 +33203,40 @@ that allow subsets of any object to be referenced or expressions containing
 references to multiple objects.")
     (license license:expat)))
 
+(define-public r-refbasedmi
+  (package
+    (name "r-refbasedmi")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RefBasedMI" version))
+       (sha256
+        (base32 "1vv5h96y0xjwglmzpg6jnbvmc8glmmarb1abzg6v064x0dgy03l0"))))
+    (properties `((upstream-name . "RefBasedMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pastecs r-mice r-hmisc r-data-table
+                             r-assertthat))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/UCL/RefBasedMI")
+    (synopsis
+     "Reference-Based Imputation for Longitudinal Clinical Trials with Protocol Deviation")
+    (description
+     "Imputation of missing numerical outcomes for a longitudinal trial with protocol
+deviations.  The package uses distinct treatment arm-based assumptions for the
+unobserved data, following the general algorithm of Carpenter, Roger, and
+Kenward (2013) <doi:10.1080/10543406.2013.834911>, and the causal model of
+White, Royes and Best (2020) <doi:10.1080/10543406.2019.1684308>.  Sensitivity
+analyses to departures from these assumptions can be done by the Delta method of
+Roger.  The program uses the same algorithm as the mimix Stata package written
+by Suzie Cro, with additional coding for the causal model and delta method.  The
+reference-based methods are jump to reference (J2R), copy increments in
+reference (CIR), copy reference (CR), and the causal model, all of which must
+specify the reference treatment arm.  Other methods are missing at random (MAR)
+and the last mean carried forward (LMCF).  Individual-specific imputation
+methods (and their reference groups) can be specified.")
+    (license license:gpl3)))
+
 (define-public r-refa
   (package
     (name "r-refa")
@@ -33849,13 +33883,13 @@ instruments and event arms.")
 (define-public r-redcapr
   (package
     (name "r-redcapr")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapR" version))
        (sha256
-        (base32 "02d41mbplc7fb0yf6sf62fzfzai95vjqxhz2hkz7135w17s31j8r"))))
+        (base32 "01nkyv3fkzgvycn236i0jj45k0jb259v2wfyi8hwaviyvhqa8qln"))))
     (properties `((upstream-name . "REDCapR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -543,13 +543,13 @@ the Lauritzen-Spiegelhalter scheme; S. L. Lauritzen and D. J. Spiegelhalter
 (define-public r-jtdm
   (package
     (name "r-jtdm")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jtdm" version))
        (sha256
-        (base32 "034hajlqz7mypnia77nm1fihhc5sjwaxvrk83qj1miqd5yilygvx"))))
+        (base32 "14v0nvrfvxqf1lxcshk2apfkksnqgjvyg8kiybksnb1kpzrsnwm6"))))
     (properties `((upstream-name . "jtdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2

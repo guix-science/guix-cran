@@ -11394,13 +11394,13 @@ defining enumerated types, as well as other bounded types, as S4 classes.")
 (define-public r-obic
   (package
     (name "r-obic")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OBIC" version))
        (sha256
-        (base32 "0qsl9nhl71z8m9kx8cf71zhaylcbsh318crlzzs5b0aalkkl0hi2"))))
+        (base32 "0bhmry7214i018r5cjxlrf07x5wbbg0aysish053wdcgrkzjplrs"))))
     (properties `((upstream-name . "OBIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table r-checkmate))

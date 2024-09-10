@@ -1559,16 +1559,22 @@ offline and online monitoring.See in Danilo Marcondes Filho and Marcio Valk
 (define-public r-dvir
   (package
     (name "r-dvir")
-    (version "3.2.1")
+    (version "3.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dvir" version))
        (sha256
-        (base32 "09fcqhzy53bfkzlff2jpq76d9sygj6vcs85k70n06p633ldvayap"))))
+        (base32 "1anqm4lfr911yzj3v9953b72y7mbvbm4x52vkblwzlnxznkhmcn4"))))
     (properties `((upstream-name . "dvir")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ribd r-pedtools r-pedprobr r-forrel))
+    (propagated-inputs (list r-verbalisr
+                             r-ribd
+                             r-pedtools
+                             r-pedprobr
+                             r-pedfamilias
+                             r-pbapply
+                             r-forrel))
     (home-page "https://github.com/magnusdv/dvir")
     (synopsis "Disaster Victim Identification")
     (description
@@ -12519,13 +12525,13 @@ a node, the corresponding text is displayed as a tooltip.")
 (define-public r-directional
   (package
     (name "r-directional")
-    (version "6.7")
+    (version "6.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Directional" version))
        (sha256
-        (base32 "1i9dwk1r44b47insw5iz5vgk7g9zi78wlix2cv2g02phcrz5wqa2"))))
+        (base32 "0ncr8ihzmmk3yw5393mlj3k536nqx1wm2vl045m4drjp1845dqdy"))))
     (properties `((upstream-name . "Directional")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -12561,7 +12567,12 @@ spherical mean vectors\".  Communications in Statistics-Simulation and
 Computation, 53(3): 1387--1408. <doi:10.1080/03610918.2022.2045499>.  e) Tsagris
 M. and Alzeley O. (2023). \"Circular and spherical projected Cauchy
 distributions: A Novel Framework for Circular and Directional Data Modeling\".
-<doi:10.48550/@code{arXiv.2302.02468>}.")
+<doi:10.48550/@code{arXiv.2302.02468>}.  f) Zehao Yu and Xianzheng Huang (2024).
+ A new parameterization for elliptically symmetric angular Gaussian
+distributions of arbitrary dimension.  Electronic Journal of Statistics, 18(1):
+301--334. <doi:10.1214/23-EJS2210>.  g) Tsagris M. (2024). \"Directional data
+analysis using the spherical Cauchy and the Poisson-kernel based distribution\".
+<doi:10.48550/@code{arXiv.2409.03292>}.")
     (license license:gpl2+)))
 
 (define-public r-directeffects
