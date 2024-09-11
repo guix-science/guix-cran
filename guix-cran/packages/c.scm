@@ -2881,6 +2881,34 @@ see
 housekeeping genes is implemented in this package.")
     (license license:gpl2+)))
 
+(define-public r-ctring
+  (package
+    (name "r-ctring")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CTRing" version))
+       (sha256
+        (base32 "1gi8xmd7hs23war2ixxgbmmkairrmbjdfmlkrzbaqlbwl3pgz5r9"))))
+    (properties `((upstream-name . "CTRing")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xring r-oro-dicom r-functional))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=CTRing")
+    (synopsis "Density Profiles of Wood from CT Scan Images")
+    (description
+     "Computerized tomography (CT) can be used to assess certain wood properties when
+wood disks or logs are scanned.  Wood density profiles (i.e.  variations of wood
+density from pith to bark) can yield important information used for studies in
+forest resource assessment, wood quality and dendrochronology studies.  The
+first step consists in transforming grey values from the scan images to density
+values.  The packages then proposes a unique method to automatically locate the
+pith by combining an adapted Hough Transform method and a one-dimensional edge
+detector.  Tree ring profiles (average ring density, earlywood and latewood
+density, ring width and percent latewood for each ring) are then obtained.")
+    (license license:gpl3)))
+
 (define-public r-ctqr
   (package
     (name "r-ctqr")
@@ -14771,6 +14799,29 @@ displaying circular shaped plots such as those often seen in the semi-conductor
 industry.")
     (license license:expat)))
 
+(define-public r-contourfunctions
+  (package
+    (name "r-contourfunctions")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ContourFunctions" version))
+       (sha256
+        (base32 "0p18zd9fq7p130b47wsbpqhgqximfmrf5pvhbzscrz2ji7rhsnmr"))))
+    (properties `((upstream-name . "ContourFunctions")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-rlang r-lhs r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CollinErickson/ContourFunctions")
+    (synopsis "Create Contour Plots from Data or a Function")
+    (description
+     "This package provides functions for making contour plots.  The contour plot can
+be created from grid data, a function, or a data set.  If non-grid data is
+given, then a Gaussian process is fit to the data and used to create the contour
+plot.")
+    (license license:gpl3)))
+
 (define-public r-contourer
   (package
     (name "r-contourer")
@@ -18605,33 +18656,6 @@ category, Kappa (unweighted), Kappa (quadratic weighted) and symmetry tests
 Edelstein DW, Castle PE. Estimating the agreement and diagnostic accuracy of two
 diagnostic tests when one test is conducted on only a subsample of specimens.
 Stat Med.  2012 Feb 28; 31(5) <doi:10.1002/sim.4422>.")
-    (license license:gpl3)))
-
-(define-public r-comparer
-  (package
-    (name "r-comparer")
-    (version "0.2.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "comparer" version))
-       (sha256
-        (base32 "1025r91cag4d1bpnpx5h7ja0a57k4rs9z1s3a90pq3h91rdcsr1c"))))
-    (properties `((upstream-name . "comparer")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/comparer")
-    (synopsis "Compare Output and Run Time")
-    (description
-     "Quickly run experiments to compare the run time and output of code blocks.  The
-function mbc() can make fast comparisons of code, and will calculate statistics
-comparing the resulting outputs.  It can be used to compare model fits to the
-same data or see which function runs faster.  The R6 class ffexp$new() runs a
-function using all possible combinations of selected inputs.  This is useful for
-comparing the effect of different parameter values.  It can also run in parallel
-and automatically save intermediate results, which is very useful for long
-computations.")
     (license license:gpl3)))
 
 (define-public r-comparemultiplemodels
@@ -33263,6 +33287,28 @@ numbers, DNA sequences, doubles and integers from distributions and within a
 range.")
     (license license:expat)))
 
+(define-public r-charcuterie
+  (package
+    (name "r-charcuterie")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "charcuterie" version))
+       (sha256
+        (base32 "0rlls8naq43v0qgnjyz6raaqkws3vm7dpdzcnns7qm0m6wqr5ffa"))))
+    (properties `((upstream-name . "charcuterie")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-generics))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jonocarroll/charcuterie")
+    (synopsis "Handle Strings as Vectors of Characters")
+    (description
+     "This package creates a new chars class which looks like a string but is actually
+a vector of individual characters, making strings iterable.  This class enables
+vector operations on strings such as reverse, sort, head, and set operations.")
+    (license license:expat)))
+
 (define-public r-chaosgame
   (package
     (name "r-chaosgame")
@@ -34358,40 +34404,44 @@ survival analysis models.")
 (define-public r-cfo
   (package
     (name "r-cfo")
-    (version "1.3.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFO" version))
        (sha256
-        (base32 "0zm55sdj8z1lq5aar891pxrvww6dk42sz21i5ij2gk0gis820773"))))
+        (base32 "12qbg1b3gad3bhqcqnhgqnb3hnpk6bwxpnza1wb9qw6hlkfdxgz4"))))
     (properties `((upstream-name . "CFO")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pbapply r-iso r-ggplot2 r-dplyr))
     (home-page "https://cran.r-project.org/package=CFO")
-    (synopsis "CFO-Type Designs in Phase I Clinical Trials")
+    (synopsis "CFO-Type Designs in Phase I/II Clinical Trials")
     (description
      "In phase I clinical trials, the primary objective is to ascertain the maximum
-tolerated dose (MTD) corresponding to a specified target toxicity rate.  The CFO
-package facilitates the implementation of dose-finding trials by utilizing
-calibration-free odds type (CFO-type) designs.  Specifically, it encompasses the
-calibration-free odds (CFO) (Jin and Yin (2022)
-<doi:10.1177/09622802221079353>), two-dimensional CFO (2@code{dCFO}) (Wang et
-al. (2023) <doi:10.3389/fonc.2023.1294258>), time-to-event CFO (TITE-CFO) (Jin
-and Yin (2023) <doi:10.1002/pst.2304>), fractional CFO (@code{fCFO}),
-accumulative CFO (@code{aCFO}), TITE-@code{aCFO}, and f-@code{aCFO} designs
-(Fang and Yin (2024) <doi: 10.1002/sim.10127>).  The âCFO package accommodates
-diverse CFO-type designs, allowing users to tailor the approach based on factors
-such as dose information inclusion, handling of late-onset toxicity, and the
-nature of the target drug (single-drug or drug-combination).  The
-functionalities embedded in CFO package include the determination of the dose
-level for the next cohort, the selection of the MTD for a real trial, and the
-execution of single or multiple simulations to obtain operating characteristics.
- Moreover, these functions are equipped with early stopping and dose elimination
-rules to address safety considerations.  Users have the flexibility to choose
-different distributions, thresholds, and cohort sizes among others for their
-specific needs.  The output of the CFO package can be summary statistics as well
-as various plots for better visualization.")
+tolerated dose (MTD) corresponding to a specified target toxicity rate.  The
+subsequent phase II trials are designed to examine the potential efficacy of the
+drug based on the MTD obtained from the phase I trials, with the aim of
+identifying the optimal biological dose (OBD).  The CFO package facilitates the
+implementation of dose-finding trials by utilizing calibration-free odds type
+(CFO-type) designs.  Specifically, it encompasses the calibration-free odds
+(CFO) (Jin and Yin (2022) <doi:10.1177/09622802221079353>), two-dimensional CFO
+(2@code{dCFO}) (Wang et al. (2023) <doi:10.3389/fonc.2023.1294258>),
+time-to-event CFO (TITE-CFO) (Jin and Yin (2023) <doi:10.1002/pst.2304>),
+fractional CFO (@code{fCFO}), accumulative CFO (@code{aCFO}), TITE-@code{aCFO},
+and f-@code{aCFO} designs (Fang and Yin (2024) <doi: 10.1002/sim.10127>).  It
+supports phase I/II trials for the CFO design and only phase I trials for the
+other CFO-type designs.  The âCFO package accommodates diverse CFO-type
+designs, allowing users to tailor the approach based on factors such as dose
+information inclusion, handling of late-onset toxicity, and the nature of the
+target drug (single-drug or drug-combination).  The functionalities embedded in
+CFO package include the determination of the dose level for the next cohort, the
+selection of the MTD for a real trial, and the execution of single or multiple
+simulations to obtain operating characteristics.  Moreover, these functions are
+equipped with early stopping and dose elimination rules to address safety
+considerations.  Users have the flexibility to choose different distributions,
+thresholds, and cohort sizes among others for their specific needs.  The output
+of the CFO package can be summary statistics as well as various plots for better
+visualization.")
     (license license:gpl2)))
 
 (define-public r-cfmortality

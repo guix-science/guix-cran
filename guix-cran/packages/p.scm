@@ -2862,13 +2862,13 @@ exploratory model search.")
 (define-public r-psychomix
   (package
     (name "r-psychomix")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psychomix" version))
        (sha256
-        (base32 "0lfhfcmrk65gkr1yp317b515vmadbcf0vjcnc76d07yp6yfkz5qw"))))
+        (base32 "0mr9ibzzn203r8hxvgf3927r7ml30ikifv6ghc0apj5v50phjhvv"))))
     (properties `((upstream-name . "psychomix")))
     (build-system r-build-system)
     (propagated-inputs (list r-psychotools r-modeltools r-lattice r-formula
@@ -2880,8 +2880,9 @@ exploratory model search.")
 Rasch mixture models with different parameterizations of the score distribution
 (saturated vs. mean/variance specification), Bradley-Terry mixture models, and
 MPT mixture models are implemented.  These mixture models can be estimated with
-or without concomitant variables.  See vignette('raschmix', package =
-psychomix') for details on the Rasch mixture models.")
+or without concomitant variables.  See Frick et al. (2012)
+<doi:10.18637/jss.v048.i07> and Frick et al. (2015)
+<doi:10.1177/0013164414536183> for details on the Rasch mixture models.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-psychometric
@@ -36947,13 +36948,13 @@ pillar'.")
 (define-public r-paleots
   (package
     (name "r-paleots")
-    (version "0.6.1")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "paleoTS" version))
        (sha256
-        (base32 "0ni3rxhmd30gqm2hkq23qr106pkxr2rnl318lzgrh7hxk9nwpgnl"))))
+        (base32 "1cz390nbiy28zgi4nc8w57bkljrx5sz5l7kcwbrvyya1n83r59dz"))))
     (properties `((upstream-name . "paleoTS")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-foreach r-doparallel))

@@ -677,6 +677,37 @@ al (2012).")
 survreg', and ivreg outputs.")
     (license license:expat)))
 
+(define-public r-outqrf
+  (package
+    (name "r-outqrf")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "outqrf" version))
+       (sha256
+        (base32 "0gl3ix39kx7n1akg1789nfqg84jxq5q9qdxwcmf8ch7zklbkgccb"))))
+    (properties `((upstream-name . "outqrf")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-ranger
+                             r-missranger
+                             r-ggpubr
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/flystar233/outqrf")
+    (synopsis "Find the Outlier by Quantile Random Forests")
+    (description
+     "This package provides a method to find the outlier in custom data by quantile
+random forests method.  Introduced by Meinshausen Nicolai (2006)
+<https://dl.acm.org/doi/10.5555/1248547.1248582>.  It directly calls the
+ranger() function of the ranger package to perform data fitting and prediction.
+We also implement the evaluation of outlier prediction results.  Compared with
+random forest detection of outliers, this method has higher accuracy and
+stability on large datasets.")
+    (license license:expat)))
+
 (define-public r-outliertree
   (package
     (name "r-outliertree")

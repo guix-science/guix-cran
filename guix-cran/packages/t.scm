@@ -1353,6 +1353,33 @@ objective calibration in regional water balance modelling: case study in 320
 Austrian catchments, Hydrological Processes, 21, 435-446.")
     (license license:gpl2+)))
 
+(define-public r-tuvalues
+  (package
+    (name "r-tuvalues")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TUvalues" version))
+       (sha256
+        (base32 "1v0dxwwkxzrz07yqi4k9gx9327ic6pvm5ylznv7m43rsbdmmampw"))))
+    (properties `((upstream-name . "TUvalues")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-gtools))
+    (home-page "https://github.com/mariaguilleng/TUvalues")
+    (synopsis
+     "Tools for Calculating Allocations in Game Theory using Exact and Approximated Methods")
+    (description
+     "The main objective of cooperative games is to allocate a good among the agents
+involved.  This package includes the most well-known allocation rules, i.e., the
+Shapley value, the Banzhaf value, the egalitarian rule, and the equal surplus
+division value.  In addition, it considers the point of view of a priori unions
+(situations in which agents can form coalitions).  For this purpose, the package
+includes the Owen value, the Banzhaf-Owen value, and the corresponding
+extensions of the egalitarian rules.  All these values can be calculated exactly
+or estimated by sampling.")
+    (license license:agpl3+)))
+
 (define-public r-tutorial-helpers
   (package
     (name "r-tutorial-helpers")
@@ -5158,13 +5185,13 @@ Science, pages 107-120 <doi: 10.1007/BFb0017135>.")
 (define-public r-troopdata
   (package
     (name "r-troopdata")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "troopdata" version))
        (sha256
-        (base32 "1li3rcqfiqn586bm95cyl17rzsxg9hjxi6lywg3lk0g8qzgs2rnb"))))
+        (base32 "13a1a6d724816s5mkx4hxn7syvwy34l8bdffas76g0g3kadkpvj7"))))
     (properties `((upstream-name . "troopdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-dplyr))
@@ -21305,27 +21332,28 @@ finding the optimal argument combinations with respect to each diagnostic.")
 (define-public r-testanaapp
   (package
     (name "r-testanaapp")
-    (version "1.0.1")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestAnaAPP" version))
        (sha256
-        (base32 "0550i7d4bpbd9bvs7sbjd5aaqpqjpd2fzfbplxfcvz2q9dwbcp49"))))
+        (base32 "074nvgdfpd98ycnykj03hvnz9nnpnk7s8w25p4mc9vba8g11xjza"))))
     (properties `((upstream-name . "TestAnaAPP")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidysem
-                             r-tidyr
+    (propagated-inputs (list r-tidyr
                              r-stringr
                              r-shinydashboard
                              r-shinycssloaders
                              r-shiny
+                             r-semplot
                              r-rmarkdown
                              r-plotrix
                              r-openxlsx
                              r-officer
                              r-officedown
                              r-mirt
+                             r-lordif
                              r-latticeextra
                              r-golem
                              r-ggplot2

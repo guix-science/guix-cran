@@ -2682,6 +2682,28 @@ criterion) is the P-value threshold given by an argument (specified by user).
 This tree construction algorithm is proposed by Emura et al. (2021, in review).")
     (license license:gpl3)))
 
+(define-public r-uni-shrinkage
+  (package
+    (name "r-uni-shrinkage")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "uni.shrinkage" version))
+       (sha256
+        (base32 "0pba68jnsipc52rw091mx3dmxk1cp4w8f4dn0w7nmk7q93av09kp"))))
+    (properties `((upstream-name . "uni.shrinkage")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=uni.shrinkage")
+    (synopsis "Shrinkage Estimation for Univariate Normal Mean")
+    (description
+     "Implement a shrinkage estimation for the univariate normal mean based on a
+preliminary test (pretest) estimator.  This package also provides the confidence
+interval based on pivoting the cumulative density function.  The methodologies
+are published in Taketomi et al.(2024) <doi:10.1007/s42081-023-00221-2> and
+Taketomi et al.(2024-)(under review).")
+    (license license:gpl2)))
+
 (define-public r-unheadr
   (package
     (name "r-unheadr")
@@ -3534,13 +3556,13 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.5")
+    (version "0.3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "0z7jqxp34005m3331crhkqgwgh9fg2p57jnj7kxp0r5bda5vdvzd"))))
+        (base32 "1h1vw9ncq4pbbwlbsag50yflfcxvjlkcdi4am6m5b49fwv8x4f0d"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2))
@@ -3549,7 +3571,7 @@ electric power transmission network) in the UK since 2011.")
     (description
      "This package provides functions to implement the methods of the Flood Estimation
 Handbook (FEH), associated updates and the revitalised flood hydrograph model
-(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 12.1.
+(@code{ReFH}).  Currently the package uses NRFA peak flow dataset version 13.
 Aside from FEH functionality, further hydrological functions are available.
 Most of the methods implemented in this package are described in one or more of
 the following: \"Flood Estimation Handbook\", Centre for Ecology & Hydrology

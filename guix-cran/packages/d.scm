@@ -4067,13 +4067,13 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "0m3mfnavqnx53i8p723j4mc0r20b3c21i1svrg7dclx0f2c8np8n"))))
+        (base32 "1w0a9jcfzf92vl1a3fpywh1hkwcvkig3pbhrqghijri4cv935f28"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

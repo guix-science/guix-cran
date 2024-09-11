@@ -2369,18 +2369,18 @@ diverse combination.  Presently, only models from h2o.ai are supported.")
 (define-public r-autodeskr
   (package
     (name "r-autodeskr")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AutoDeskR" version))
        (sha256
-        (base32 "1n7c8ris8b517bs1wahpvrhwfbvn2q4jbq01kgiv9lfmkjckzfkc"))))
+        (base32 "06rpcs9qpqrydqvbawsrnxjvkrbhd525f89i3y5l518yyk2ldpcj"))))
     (properties `((upstream-name . "AutoDeskR")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-jsonlite r-httr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/paulgovan/autodeskr")
+    (home-page "https://aps.autodesk.com")
     (synopsis "An Interface to the 'AutoDesk' 'API' Platform")
     (description
      "An interface to the @code{AutoDesk} API Platform including the Authentication
@@ -2389,8 +2389,7 @@ Management API for managing data across the platform's cloud services, Design
 Automation API for performing automated tasks on design files in the cloud,
 Model Derivative API for translating design files into different formats,
 sending them to the viewer app, and extracting design data, and Viewer for
-rendering 2D and 3D models (see <https://developer.autodesk.com> for more
-information).")
+rendering 2D and 3D models.")
     (license (list (license:fsdg-compatible "Apache License")
                    (license:fsdg-compatible "file://LICENSE")))))
 
@@ -3539,6 +3538,37 @@ ways to correct for the measurement error effects, distinct choices of penalty
 functions to do variable selection, and various regression models to
 characterize propensity scores.")
     (license license:gpl2)))
+
+(define-public r-ate-error
+  (package
+    (name "r-ate-error")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ATE.ERROR" version))
+       (sha256
+        (base32 "137ajc4khzljpszj2cgylirmjyq0fiw1fh0vgrkpaah0g78plr28"))))
+    (properties `((upstream-name . "ATE.ERROR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-mvtnorm r-mass r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ATE.ERROR")
+    (synopsis
+     "Estimating ATE with Misclassified Outcomes and Mismeasured Covariates")
+    (description
+     "Addressing measurement error in covariates and misclassification in binary
+outcome variables within causal inference, the ATE.ERROR package implements
+inverse probability weighted estimation methods proposed by Shu and Yi (2017,
+<doi:10.1177/0962280217743777>; 2019, <doi:10.1002/sim.8073>).  These methods
+correct errors to accurately estimate average treatment effects (ATE).  The
+package includes two main functions: ATE.ERROR.Y() for handling
+misclassification in the outcome variable and ATE.ERROR.XY() for correcting both
+outcome misclassification and covariate measurement error.  It employs logistic
+regression for treatment assignment and uses bootstrap sampling to calculate
+standard errors and confidence intervals, with simulated datasets provided for
+practical demonstration.")
+    (license license:gpl3+)))
 
 (define-public r-atbounds
   (package

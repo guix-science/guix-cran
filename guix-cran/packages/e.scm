@@ -9813,13 +9813,13 @@ methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
 (define-public r-epilogi
   (package
     (name "r-epilogi")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epilogi" version))
        (sha256
-        (base32 "0p5aidj9xmlw6lyb4bscb7xkjkfs4jmc4ax844bhsgl6v2y91n6b"))))
+        (base32 "13x07w7idik7lmsp0zgbgdf49yxl5igy1dbnfyxf1bsn8id06ric"))))
     (properties `((upstream-name . "epilogi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast))
@@ -9830,7 +9830,7 @@ methodology of Gressani et al. (2022) <doi:10.1371/journal.pcbi.1010618>.")
 continuous response and predictor variables.  The relevant paper is: Lakiotaki
 K., Papadovasilakis Z., Lagani V., Fafalios S., Charonyktakis P., Tsagris M. and
 Tsamardinos I. (2023). \"Automated machine learning for Genome Wide Association
-Studies\".  Bioinformatics. <doi:10.1002/sim.4780120902>.")
+Studies\".  Bioinformatics. <doi:10.1093/bioinformatics/btad545>.")
     (license license:gpl2+)))
 
 (define-public r-epikit
@@ -13534,6 +13534,52 @@ Spectrum, The R Journal, 1, 40-46).")
 clustering of finite mixture Gaussian distribution with unstructured dispersion
 in both of unsupervised and semi-supervised learning.")
     (license (license:fsdg-compatible "Mozilla Public License 2.0"))))
+
+(define-public r-emc2
+  (package
+    (name "r-emc2")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EMC2" version))
+       (sha256
+        (base32 "0aiamalnnmdh052870vjwyycg38kw4sa5z6cfy1i634wxp5xl5x7"))))
+    (properties `((upstream-name . "EMC2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rtdists
+                             r-rcpp
+                             r-psych
+                             r-mvtnorm
+                             r-msm
+                             r-matrixcalc
+                             r-matrix
+                             r-mass
+                             r-magic
+                             r-lpsolve
+                             r-corrplot
+                             r-corpcor
+                             r-colorspace
+                             r-coda
+                             r-brobdingnag
+                             r-abind))
+    (home-page "https://cran.r-project.org/package=EMC2")
+    (synopsis "Bayesian Hierarchical Analysis of Cognitive Models of Choice")
+    (description
+     "Fit Bayesian (hierarchical) cognitive models using a linear modeling language
+interface using particle metropolis Markov chain Monte Carlo sampling with Gibbs
+steps.  The diffusion decision model (DDM), linear ballistic accumulator model
+(LBA), racing diffusion model (RDM), and the lognormal race model (LNR) are
+supported.  Additionally, users can specify their own likelihood function and/or
+choose for non-hierarchical estimation, as well as for a diagonal, blocked or
+full multivariate normal group-level distribution to test individual
+differences.  Prior specification is facilitated through methods that visualize
+the (implied) prior.  A wide range of plotting functions assist in assessing
+model convergence and posterior inference.  Models can be easily evaluated using
+functions that plot posterior predictions or using relative model comparison
+metrics such as information criteria or Bayes factors.  References: Stevenson et
+al. (2024) <doi:10.31234/osf.io/2e4dq>.")
+    (license license:gpl3+)))
 
 (define-public r-embryogrowth
   (package

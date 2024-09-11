@@ -1318,6 +1318,48 @@ Craig, A., Barton, R. H., Trygg, J., Hudson, J., Blancher, C., Gauguier, D.,
 Lindon, J. C., Holmes, E. & Nicholson, J. (2005) <doi:10.1021/ac048630x>.")
     (license license:gpl3+)))
 
+(define-public r-istat
+  (package
+    (name "r-istat")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "istat" version))
+       (sha256
+        (base32 "14ilhx3zwn8vpir2lc7lz4n6m5wkpxjzimkrwgl1ri1g4shr5kgx"))))
+    (properties `((upstream-name . "istat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-writexl
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyhelper
+                             r-shinydashboard
+                             r-shinybs
+                             r-shiny
+                             r-rsdmx
+                             r-readxl
+                             r-reactable
+                             r-openxlsx
+                             r-magrittr
+                             r-httr
+                             r-htmltools
+                             r-ggplot2
+                             r-dt
+                             r-dplyr
+                             r-datamods))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=istat")
+    (synopsis "Download and Manipulate Data from Istat")
+    (description
+     "Download data from Istat (Italian Institute of Statistics) database, both old
+and new provider (respectively, <http://dati.istat.it/> and
+<https://esploradati.istat.it/databrowser/>).  Additional functions for
+manipulating data are provided.  Moreover, a shiny application called
+@code{shinyIstat} can be used to search, download and filter datasets in an
+easier way.")
+    (license license:gpl2+)))
+
 (define-public r-istacr
   (package
     (name "r-istacr")
@@ -2027,27 +2069,26 @@ International Organization for Standardization.")
 (define-public r-isocor
   (package
     (name "r-isocor")
-    (version "0.1.40")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoCor" version))
        (sha256
-        (base32 "191y51mg6kii4x99c7437888kkacml0ch53qh1gbwv10gl2c4w8z"))))
+        (base32 "0bphylk5d0rvx8cjkvr85xr0jfwy9kpkkn210g4cag5mxdxjlxhm"))))
     (properties `((upstream-name . "IsoCor")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
                              r-shinyalert
                              r-shiny
-                             r-rmarkdown
                              r-plyr
                              r-markdown
                              r-maldiquant
-                             r-htmltools
                              r-golem
                              r-dt
-                             r-bsplus))
-    (home-page "https://jali.shinyapps.io/isocor")
+                             r-config
+                             r-bslib))
+    (home-page "https://github.com/janlisec/IsoCor")
     (synopsis "Analyze Isotope Ratios in a 'Shiny'-App")
     (description
      "Analyzing Inductively Coupled Plasma - Mass Spectrometry (ICP-MS) measurement
@@ -2059,11 +2100,9 @@ detection and perform calculation of IRs and delta values.  Results are provided
 as figures and tables and can be exported.  The App, therefore, facilitates data
 processing of ICP-MS experiments to quickly obtain optimal processing parameters
 compared to traditional Excel worksheet based approaches.  A more detailed
-description can be found in the corresponding article \"Data processing made
-easy: standalone tool for automated calculation of isotope ratio from transient
-signals â @code{IsoCor}\" by Tukhmetova et al.  in Journal of Analytical Atomic
-Spectrometry (JAAS).  The most recent version of @code{IsoCor} can be tested
-online at <https://jali.shinyapps.io/isocor>.")
+description can be found in the corresponding article <doi:10.1039/D2JA00208F>.
+The most recent version of @code{IsoCor} can be tested online at
+<https://apps.bam.de/shn00/@code{IsoCor/>}.")
     (license license:gpl3+)))
 
 (define-public r-isocir
@@ -7000,6 +7039,28 @@ to use because no knowledge in R commands is necessary.  A graphic represents
 the standard curve, and a table containing the result for each sample is
 created.")
     (license license:gpl2)))
+
+(define-public r-interface
+  (package
+    (name "r-interface")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "interface" version))
+       (sha256
+        (base32 "1y1z8gc7y8b9521p6wz9kjqjp9pwll9zicck6jiw7av1x11x03h2"))))
+    (properties `((upstream-name . "interface")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/dereckmezquita/interface")
+    (synopsis "Runtime Type System")
+    (description
+     "This package provides a runtime type system, allowing users to define and
+implement interfaces, enums, typed data.frame/data.table, as well as typed
+functions.  This package enables stricter type checking and validation,
+improving code structure, robustness and reliability.")
+    (license license:expat)))
 
 (define-public r-interep
   (package

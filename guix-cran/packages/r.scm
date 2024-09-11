@@ -24189,13 +24189,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.9.0")
+    (version "1.10.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "0s7l23zmdskidqhc49j77qxi1nj321q5rgdayq91fdg1vcchrwvp"))))
+        (base32 "0v0qi6kmc5v07llg88pkbbd5kkf2bn2m1phpp9qji20xvy6iibci"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -24219,6 +24219,7 @@ Monte Carlo.  Automatic parameter selection is not supported.")
                              r-fs
                              r-config
                              r-cli
+                             r-box-lsp
                              r-box-linters
                              r-box))
     (home-page "https://appsilon.github.io/rhino/")
@@ -35348,6 +35349,47 @@ Cooper DJ, Grey A. (2023) <doi:10.1016/j.jclinepi.2022.12.018>.  Carlisle JB,
 Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 <doi:10.1111/anae.13938>.")
     (license license:expat)))
+
+(define-public r-ream
+  (package
+    (name "r-ream")
+    (version "1.0-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ream" version))
+       (sha256
+        (base32 "1knf8v71y6dw63i8pfvlsdg45q2vg20wmmpk0za72m2h84ddx4il"))))
+    (properties `((upstream-name . "ream")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RaphaelHartmann/ream")
+    (synopsis
+     "Density, Distribution, and Sampling Functions for Evidence Accumulation Models")
+    (description
+     "Calculate the probability density functions (PDFs) for two threshold evidence
+accumulation models (EAMs).  These are defined using the following Stochastic
+Differential Equation (SDE), dx(t) = v(x(t),t)*dt+D(x(t),t)*@code{dW}, where
+x(t) is the accumulated evidence at time t, v(x(t),t) is the drift rate,
+D(x(t),t) is the noise scale, and W is the standard Wiener process.  The
+boundary conditions of this process are the upper and lower decision thresholds,
+represented by b_u(t) and b_l(t), respectively.  Upper threshold b_u(t) > 0,
+while lower threshold b_l(t) < 0.  The initial condition of this process x(0) =
+z where b_l(t) < z < b_u(t).  We represent this as the relative start point w =
+z/(b_u(0)-b_l(0)), defined as a ratio of the initial threshold location.  This
+package generates the PDF using the same approach as the python package it is
+based upon, @code{PyBEAM} by Murrow and Holmes (2023)
+<doi:10.3758/s13428-023-02162-w>.  First, it converts the SDE model into the
+forwards Fokker-Planck equation dp(x,t)/dt =
+d(v(x,t)*p(x,t))/dt-0.5*d^2(D(x,t)^2*p(x,t))/dx^2, then solves this equation
+using the Crank-Nicolson method to determine p(x,t).  Finally, it calculates the
+flux at the decision thresholds, f_i(t) = 0.5*d(D(x,t)^2*p(x,t))/dx evaluated at
+x = b_i(t), where i is the relevant decision threshold, either upper (i = u) or
+lower (i = l).  The flux at each thresholds f_i(t) is the PDF for each
+threshold, specifically its PDF. We discuss further details of this approach in
+this package and @code{PyBEAM} publications.  Additionally, one can calculate
+the cumulative distribution functions of and sampling from the EAMs.")
+    (license license:gpl2+)))
 
 (define-public r-realvams
   (package

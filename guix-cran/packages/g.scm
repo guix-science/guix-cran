@@ -8350,13 +8350,13 @@ the methods explicitly in the following article
 (define-public r-goweragreement
   (package
     (name "r-goweragreement")
-    (version "1.0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "goweragreement" version))
        (sha256
-        (base32 "1z0a0z920r51kyq15jkdypyp0hq3vsbhs40vn4gkg5way95zqf85"))))
+        (base32 "0jcnl8snw6chz6hy5a7hnmzsxkzf4hhimrnp3igpg23gl0pgc2yx"))))
     (properties `((upstream-name . "goweragreement")))
     (build-system r-build-system)
     (home-page "http://www.johnhughes.org")
@@ -18529,6 +18529,54 @@ tidyverse collection of packages.  The package contains references to
 @code{FishBase} (Froese R., Pauly D., 2023) <https://www.fishbase.se/>.")
     (license license:gpl3)))
 
+(define-public r-ggfigdone
+  (package
+    (name "r-ggfigdone")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggfigdone" version))
+       (sha256
+        (base32 "1kd6k2lh6ah4faprg1vk2ala2iw136mqkw2f8gvpzgg3spc4s7q7"))))
+    (properties `((upstream-name . "ggfigdone")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-uuid
+                             r-readr
+                             r-jsonlite
+                             r-httr
+                             r-httpuv
+                             r-ggplot2
+                             r-filelock
+                             r-data-table))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=ggfigdone")
+    (synopsis "Manage & Modify 'ggplot' Figures using 'ggfigdone'")
+    (description
+     "When you prepare a presentation or a report, you often need to manage a large
+number of ggplot figures.  You need to change the figure size, modify the title,
+label, themes, etc.  It is inconvenient to go back to the original code to make
+these changes.  This package provides a simple way to manage ggplot figures.
+You can easily add the figure to the database and update them later using CLI
+(command line interface) or GUI (graphical user interface).")
+    (license license:gpl3)))
+
 (define-public r-ggfields
   (package
     (name "r-ggfields")
@@ -26769,19 +26817,18 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.5.0-9.1")
+    (version "1.6.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "10c4fk6pbd946is8h8cr8qblrq6cch5zhlhrxqd8ix5wknm8cqn8"))))
+        (base32 "1a0lc2yh8hbjxr6yrgilg6bx87vjx1nav9640n8911rhi9pnjqa4"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
                              r-reshape2
                              r-rcpp
-                             r-raster
                              r-pbapply
                              r-foreach
                              r-doparallel))
@@ -28442,31 +28489,6 @@ available at <http://hdl.handle.net/11299/204551>, and in Lina K. MÃ¼hlbauer,
 Maximilienne Schulze, W. Stanley Harpole, and Adam T. Clark. @code{gauseR}':
 Simple methods for fitting Lotka-Volterra models describing Gause's Struggle for
 Existence in the journal Ecology and Evolution.")
-    (license license:gpl3)))
-
-(define-public r-gaupro
-  (package
-    (name "r-gaupro")
-    (version "0.2.12")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GauPro" version))
-       (sha256
-        (base32 "03v4bhm5c32gql2s0ysxd4r12yjv28ar7nmap55rc38kj66pgzwx"))))
-    (properties `((upstream-name . "GauPro")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-r6 r-lbfgs))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/CollinErickson/GauPro")
-    (synopsis "Gaussian Process Fitting")
-    (description
-     "Fits a Gaussian process model to data.  Gaussian processes are commonly used in
-computer experiments to fit an interpolating model.  The model is stored as an
-R6 object and can be easily updated with new data.  There are options to run in
-parallel, and Rcpp has been used to speed up calculations.  For more info about
-Gaussian process software, see Erickson et al. (2018)
-<doi:10.1016/j.ejor.2017.10.002>.")
     (license license:gpl3)))
 
 (define-public r-gators

@@ -508,6 +508,36 @@ an existing script.  Track changes in multiple datasets, using multiple loggers.
 modelling in R.")
     (license license:gpl2+)))
 
+(define-public r-lulab-utils
+  (package
+    (name "r-lulab-utils")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lulab.utils" version))
+       (sha256
+        (base32 "01mr0piqcass0fxa0x9qgczwn3cnbng5vn8i7bmsv00wi5lr6lc9"))))
+    (properties `((upstream-name . "lulab.utils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-table1
+                             r-stringr
+                             r-purrr
+                             r-openxlsx
+                             r-magrittr
+                             r-dplyr
+                             r-descr
+                             r-car
+                             r-boot))
+    (native-inputs (list r-knitr))
+    (home-page "https://leslie-lu.github.io/")
+    (synopsis "Supporting Functions Maintained by Zhen Lu")
+    (description
+     "Miscellaneous functions commonly used by @code{LuLab}.  This package aims to
+help more researchers on epidemiology to perform data management and
+visualization more efficiently.")
+    (license license:artistic2.0)))
+
 (define-public r-lue
   (package
     (name "r-lue")
@@ -10689,13 +10719,13 @@ individuals have unknown sex.")
 (define-public r-lhd
   (package
     (name "r-lhd")
-    (version "1.3.3")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LHD" version))
        (sha256
-        (base32 "0wqjf0wl0l3kq7i030qjzdavsn75jmghjvzk76b9d22fhk356yh8"))))
+        (base32 "106563435lycw1z7bd54k6sjlkwhh3di5cjgl9ndgig37dw9fhns"))))
     (properties `((upstream-name . "LHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-numbers))
@@ -10709,9 +10739,9 @@ comprehensive since it is capable of generating maximin distance LHDs, maximum
 projection LHDs, and orthogonal and nearly orthogonal LHDs.  Detailed
 comparisons and summary of all the algorithms and construction methods in this
 package can be found at Hongzhi Wang, Qian Xiao and Abhyuday Mandal (2021)
-<@code{arXiv:2010.09154>}.  This package is particularly useful in the area of
-Design and Analysis of Experiments (DAE).  More specifically, design of computer
-experiments.")
+<doi:10.48550/@code{arXiv.2010.09154>}.  This package is particularly useful in
+the area of Design and Analysis of Experiments (DAE).  More specifically, design
+of computer experiments.")
     (license license:expat)))
 
 (define-public r-lgtdl

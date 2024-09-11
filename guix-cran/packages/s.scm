@@ -36081,16 +36081,16 @@ reported using the progressr package.")
 (define-public r-simriv
   (package
     (name "r-simriv")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SiMRiv" version))
        (sha256
-        (base32 "1xwbfwhmlmgsbrg0cfgn1yp8f29vzsga8sw7fyclsf76dx9sbmc6"))))
+        (base32 "069cjkwbzp7c62zgj939h5nbfmpcxkfx1sbk4np1hgzjfv3ybz86"))))
     (properties `((upstream-name . "SiMRiv")))
     (build-system r-build-system)
-    (propagated-inputs (list r-raster r-mco))
+    (propagated-inputs (list r-terra r-mco))
     (home-page "https://www.r-project.org")
     (synopsis
      "Simulating Multistate Movements in River/Heterogeneous Landscapes")

@@ -5115,6 +5115,36 @@ observations given the parameters of the model.  Auxiliary predictors are
 accommodated in the univariate setting.")
     (license license:gpl2+)))
 
+(define-public r-hmix
+  (package
+    (name "r-hmix")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hmix" version))
+       (sha256
+        (base32 "1h1qj4c0f3nbw3p61n8fvwqr1q2da1q476xinj6bl7pcy4y5l6mb"))))
+    (properties `((upstream-name . "hmix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-normalp
+                             r-mc2d
+                             r-hmm
+                             r-glogis
+                             r-gld
+                             r-edfun
+                             r-dplyr
+                             r-cubature))
+    (home-page "https://rpubs.com/giancarlo_vercellino/hmix")
+    (synopsis
+     "Hidden Markov Model for Predicting Time Sequences with Mixture Sampling")
+    (description
+     "An algorithm for time series analysis that leverages hidden Markov models,
+cluster analysis, and mixture distributions to segment data, detect patterns and
+predict future sequences.")
+    (license license:gpl3)))
+
 (define-public r-hmer
   (package
     (name "r-hmer")
@@ -5830,13 +5860,13 @@ hierarchical model approach to historical borrowing is discussed by Viele et al.
 (define-public r-historicalborrow
   (package
     (name "r-historicalborrow")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "historicalborrow" version))
        (sha256
-        (base32 "0g7fs6qn957s3zw4ibbqszn2zpncpf6m41r68dw8g6x942mr0fhv"))))
+        (base32 "19z7v6a0yw5z0niyf7a5l3ydr2wrbvmrd3ly7zbkd9as6scks8hb"))))
     (properties `((upstream-name . "historicalborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

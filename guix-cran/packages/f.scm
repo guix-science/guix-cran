@@ -7314,6 +7314,40 @@ in 2012 by adopting the idea of moment matching optimization related by Hoyland
 and Wallace (2001) <doi: 10.1287/mnsc.47.2.295.9834>.")
     (license license:gpl3+)))
 
+(define-public r-forestdata
+  (package
+    (name "r-forestdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "forestdata" version))
+       (sha256
+        (base32 "0c6fjx9ix2cnbc88wwnj1g9cr7ry8znzlpzpzgaw1rhaqb52s8xa"))))
+    (properties `((upstream-name . "forestdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-terra
+                             r-stringr
+                             r-stringi
+                             r-sf
+                             r-rvest
+                             r-rodbc
+                             r-rlang
+                             r-purrr
+                             r-foreign
+                             r-dplyr
+                             r-archive))
+    (home-page "https://cidree.github.io/forestdata/")
+    (synopsis "Download Forestry Data")
+    (description
+     "This package provides functions for downloading forestry and land use data for
+use in spatial analysis.  This packages offers a user-friendly solution to
+quickly obtain datasets such as forest height, forest types, tree species under
+various climate change scenarios, or land use data among others.")
+    (license license:gpl3+)))
+
 (define-public r-forestcontrol
   (package
     (name "r-forestcontrol")

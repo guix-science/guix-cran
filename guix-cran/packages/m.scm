@@ -10788,6 +10788,41 @@ aprendizaje estadistico\"
 <https://rubenfcasal.github.io/aprendizaje_estadistico/>.")
     (license license:gpl2+)))
 
+(define-public r-mpactr
+  (package
+    (name "r-mpactr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mpactr" version))
+       (sha256
+        (base32 "0hb1d2afjsl9zj6bmjh6hzzc07h0ip1lc8r40w9c9ikl1klm2x23"))))
+    (properties `((upstream-name . "mpactr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-viridis
+                             r-treemapify
+                             r-readr
+                             r-r6
+                             r-ggplot2
+                             r-data-table
+                             r-cli))
+    (home-page "https://mums2.github.io/mpactr/")
+    (synopsis "Correction of Preprocessed MS Data")
+    (description
+     "An R implementation of the python program Metabolomics Peak Analysis
+Computational Tool ('MPACT') (Robert M. Samples, Sara P. Puckett, and Marcy J.
+Balunas (2023) <doi:10.1021/acs.analchem.2c04632>).  Filters in the package
+serve to address common errors in tandem mass spectrometry preprocessing,
+including: (1) isotopic patterns that are incorrectly split during
+preprocessing, (2) features present in solvent blanks due to carryover between
+samples, (3) features whose abundance is greater than user-defined abundance
+threshold in a specific group of samples, for example media blanks, (4) ions
+that are inconsistent between technical replicates, and (5) in-source fragment
+ions created during ionization before fragmentation in the tandem mass
+spectrometry workflow.")
+    (license license:expat)))
+
 (define-public r-mp
   (package
     (name "r-mp")
@@ -19169,13 +19204,13 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
 (define-public r-mle
   (package
     (name "r-mle")
-    (version "1.0")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MLE" version))
        (sha256
-        (base32 "0z5ny5lcng03rrpd6mjynxgvi3rx6pc6cm6kpv2dn89lzysv3r4r"))))
+        (base32 "1nj7jl33k0nwkjd3k5hpmxkypmym8kzqgahyjqgsxsq91jighpxg"))))
     (properties `((upstream-name . "MLE")))
     (build-system r-build-system)
     (propagated-inputs (list r-skellam
@@ -19192,14 +19227,14 @@ maximum likelihood estimate(s) via Cox-Snell Methodology.")
     (synopsis
      "Maximum Likelihood Estimation of Various Univariate and Multivariate Distributions")
     (description
-     "Maximum likelihood estimation of various univariate and multivariate
-distributions.  The list includes univariate continuous and discrete
-distributions, distributions that lie on the real line, the positive line,
-interval restricted, circular distributions.  Further, multivariate continuous
-and discrete distributions, distributions for compositional and directional
-data, etc.  Some references include Johnson N. L., Kotz S. and Balakrishnan N.
-(1994). \"Continuous Univariate Distributions, Volume 1\"
-<ISBN:978-0-471-58495-7>, Johnson, Norman L. Kemp, Adrianne W. Kotz, Samuel
+     "Several functions for maximum likelihood estimation of various univariate and
+multivariate distributions.  The list includes more than 100 univariate
+continuous and discrete distributions, distributions that lie on the real line,
+the positive line, interval restricted, circular distributions.  Further,
+multivariate continuous and discrete distributions, distributions for
+compositional and directional data, etc.  Some references include Johnson N. L.,
+Kotz S. and Balakrishnan N. (1994). \"Continuous Univariate Distributions, Volume
+1\" <ISBN:978-0-471-58495-7>, Johnson, Norman L. Kemp, Adrianne W. Kotz, Samuel
 (2005). \"Univariate Discrete Distributions\". <ISBN:978-0-471-71580-1> and
 Mardia, K. V. and Jupp, P. E. (2000). \"Directional Statistics\".
 <ISBN:978-0-471-95333-3>.")
@@ -20518,25 +20553,6 @@ assumed over the single variables.")
      "Simple tools to perform mixture optimization based on the desirability package
 by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
     (license license:gpl2)))
-
-(define-public r-mixopt
-  (package
-    (name "r-mixopt")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mixopt" version))
-       (sha256
-        (base32 "06al9nsgf1lz397w62dzlkqy1r9agrl8sr3waw0mh02c209mjmiy"))))
-    (properties `((upstream-name . "mixopt")))
-    (build-system r-build-system)
-    (home-page "https://github.com/CollinErickson/mixopt")
-    (synopsis "Mixed Variable Optimization")
-    (description
-     "Mixed variable optimization for non-linear functions.  Can optimize function
-whose inputs are a combination of continuous, ordered, and unordered variables.")
-    (license license:lgpl3+)))
 
 (define-public r-mixoofa
   (package

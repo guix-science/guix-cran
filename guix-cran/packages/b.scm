@@ -5875,13 +5875,13 @@ random effects.")
 (define-public r-box-lsp
   (package
     (name "r-box-lsp")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.lsp" version))
        (sha256
-        (base32 "04qi3iq41w1rxxk11rir2gas1l3iswd8qlsdphvqgz1gvln4cx16"))))
+        (base32 "1w3v2c469sqn7llydxi85vm3lwm27x9pzxh62n3h6gdp5f1yn7cf"))))
     (properties `((upstream-name . "box.lsp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-fs r-cli r-box))
@@ -5896,13 +5896,13 @@ editors.")
 (define-public r-box-linters
   (package
     (name "r-box-linters")
-    (version "0.10.4")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.linters" version))
        (sha256
-        (base32 "0nnxhsj21a0yid4srf36kf46n721ql92rqra85i8ais1glwdbcj6"))))
+        (base32 "1j6zjs5cpafyk1f74p059mggr9kp7c92fv4msyycs0lwji01ar88"))))
     (properties `((upstream-name . "box.linters")))
     (build-system r-build-system)
     (propagated-inputs (list r-xmlparsedata
