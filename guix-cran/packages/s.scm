@@ -3385,6 +3385,27 @@ competing risks outcomes.  Huang, R., Xu, R. and Dulai, P.S.(2020)
 <doi:10.1002/sim.8672>.")
     (license license:gpl2)))
 
+(define-public r-survsakk
+  (package
+    (name "r-survsakk")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "survSAKK" version))
+       (sha256
+        (base32 "0j2avaf08jn7llbik1pfjlbficn79s7x2by1fyni3l7bjk6lhpb1"))))
+    (properties `((upstream-name . "survSAKK")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival))
+    (native-inputs (list r-knitr))
+    (home-page "https://sakk-statistics.github.io/survSAKK/")
+    (synopsis "Create Publication Ready Kaplan-Meier Plots")
+    (description
+     "Incorporate various statistics and layout customization options to enhance the
+efficiency and adaptability of the Kaplan-Meier plots.")
+    (license license:gpl2+)))
+
 (define-public r-survrm2perm
   (package
     (name "r-survrm2perm")
@@ -4498,16 +4519,16 @@ weights.  Ideal for quickly uncovering descriptive patterns in survey data.")
 (define-public r-surveydefense
   (package
     (name "r-surveydefense")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SurveyDefense" version))
        (sha256
-        (base32 "1n0a1h4bzmxidzf5rszrpsmxj7kd7dw0flrpc8mps6glf8ikw7pq"))))
+        (base32 "13x89nnqlycdvdya8p0qphsmq4kf94m6g3s4dy1npnhddjww277s"))))
     (properties `((upstream-name . "SurveyDefense")))
     (build-system r-build-system)
-    (propagated-inputs (list r-flextable))
+    (propagated-inputs (list r-flextable r-dplyr))
     (home-page "https://cran.r-project.org/package=SurveyDefense")
     (synopsis "Survey Defense Tool")
     (description
@@ -5407,6 +5428,30 @@ research, technological development and demonstration (Grant Agreement no
 BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
 (HBC.2022.0145), and Johnson & Johnson Innovative Medicine.")
     (license license:gpl2+)))
+
+(define-public r-surreal
+  (package
+    (name "r-surreal")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "surreal" version))
+       (sha256
+        (base32 "1d1hymkb8asqrhjz7c1shf3mm3c2y0d9pbjapfq5xz52vp01sawb"))))
+    (properties `((upstream-name . "surreal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-png))
+    (home-page "https://github.com/coatless-rpkg/surreal")
+    (synopsis "Create Datasets with Hidden Images in Residual Plots")
+    (description
+     "This package implements the \"Residual (Sur)Realism\" algorithm described by
+Stefanski (2007) <doi:10.1198/000313007X190079> to generate datasets that reveal
+hidden images or messages in their residual plots.  It offers both predefined
+datasets and tools to embed custom text or images into residual structures.
+Allowing users to create intriguing visual demonstrations for teaching model
+diagnostics.")
+    (license license:gpl3+)))
 
 (define-public r-surfrough
   (package
@@ -14193,13 +14238,13 @@ grammar for tidymodels'-aligned model stacking.")
 (define-public r-stacking
   (package
     (name "r-stacking")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stacking" version))
        (sha256
-        (base32 "0kizp8ivkan5qjqvc19fg5f5n1k32z1nw81m41nrnblp5c9klvg7"))))
+        (base32 "0clxlkzz4dmri2ykk9aj9mfixpi2k0jhn2jw6zf6yyq1w70vscr7"))))
     (properties `((upstream-name . "stacking")))
     (build-system r-build-system)
     (propagated-inputs (list r-caret))
@@ -14209,7 +14254,8 @@ grammar for tidymodels'-aligned model stacking.")
      "Building predictive models with stacking which is a type of ensemble learning.
 Learners can be specified from those implemented in caret'.  For more
 information of the package, see Nukui and Onogi (2023)
-<doi:10.1101/2023.06.06.543970>.")
+<doi:10.1101/2023.06.06.543970>.  Packages caret, parallel, snow, and packages
+for base and meta learners should be installed.")
     (license license:expat)))
 
 (define-public r-stackimpute
@@ -15020,13 +15066,13 @@ al. (2023) <doi:10.1214/23-AOAS1807>.")
 (define-public r-ssplots
   (package
     (name "r-ssplots")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSplots" version))
        (sha256
-        (base32 "1ja631xdv2bhq7g8vs1cdg3b453zwz7h6rl9n1zma25v2z87gazi"))))
+        (base32 "15qh8yak1v8wc5mp5by7cfbqswlbhmkazsf050p6ysvm0ypq3jyd"))))
     (properties `((upstream-name . "SSplots")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-reshape2 r-ggplot2))
@@ -15036,16 +15082,17 @@ al. (2023) <doi:10.1214/23-AOAS1807>.")
      "Pauly et al. (2008)
 <http://legacy.seaaroundus.s3.amazonaws.com/doc/Researcher+Publications/dpauly/PDF/2008/Books%26Chapters/@code{FisheriesInLargeMarineEcosystems.pdf>}
 created (and coined the name) Stock Status Plots for a UNEP compendium on Large
-Marine Ecosystems (LMEs, Sherman and Hempel 2008
-<https://agris.fao.org/agris-search/search.do?@code{recordID=XF2015036057>}).
-Stock status plots are bivariate graphs summarizing the status (e.g.,
+Marine Ecosystems(LMEs, Sherman and Hempel
+(2009)<https://marineinfo.org/imis?module=ref&refid=142061&printversion=1&@code{dropIMIStitle=1>}).
+ Stock status plots are bivariate graphs summarizing the status (e.g.,
 developing, fully exploited, overexploited, etc.), through time, of the
-multispecies fisheries of a fished area or ecosystem.  This package contains two
-functions to generate stock status plots viz., SSplots_pauly() (as per the
-criteria proposed by Pauly et al.,2008) and SSplots_kleisner() (as per the
-criteria proposed by Kleisner and Pauly (2011)
+multispecies fisheries of a fished area or ecosystem.  This package contains
+three functions to generate stock status plots viz., SSplots_pauly() (as per the
+criteria proposed by Pauly et al.,2008), SSplots_kleisner() (as per the criteria
+proposed by Kleisner and Pauly (2011)
 <http://www.ecomarres.com/downloads/regional.pdf> and Kleisner et al. (2013)
-<doi:10.1111/j.1467-2979.2012.00469.x>).")
+<doi:10.1111/j.1467-2979.2012.00469.x>)and SSplots_EPI() (as per the criteria
+proposed by Jayasankar et al.,2021 <https://eprints.cmfri.org.in/11364/>).")
     (license license:gpl2+)))
 
 (define-public r-ssp
@@ -19085,6 +19132,25 @@ a list are null, data.frames, lists, or fully named lists.  Other functionality
 is provided for the handling of lists, such as the easy splitting of lists into
 equally sized groups, and the unnesting of data.frames within fully named lists.")
     (license license:expat)))
+
+(define-public r-splustimedate
+  (package
+    (name "r-splustimedate")
+    (version "2.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splusTimeDate" version))
+       (sha256
+        (base32 "1avas42g0bm40vzj9fag6p5wzw5cd43vv9xx2ycgc48579lfyh7v"))))
+    (properties `((upstream-name . "splusTimeDate")))
+    (build-system r-build-system)
+    (home-page "https://github.com/spkaluzny/splusTimeDate")
+    (synopsis "Times and Dates from 'S-PLUS'")
+    (description
+     "This package provides a collection of classes and methods for working with times
+and dates.  The code was originally available in S-PLUS'.")
+    (license license:bsd-3)))
 
 (define-public r-spls
   (package
@@ -26392,13 +26458,13 @@ package).  For more information, please see Rocha and Romano (2021) and check
 (define-public r-soundgen
   (package
     (name "r-soundgen")
-    (version "2.6.3")
+    (version "2.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "soundgen" version))
        (sha256
-        (base32 "1d865daz5ylbcklb67yqwjflw5pv16rgyvjqxlwnn2knkxhm6m92"))))
+        (base32 "1mkn5qa4mxvsmjhkdcixd1wyr8l8jf04k88vvm317mv0lgcc45h2"))))
     (properties `((upstream-name . "soundgen")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -42604,16 +42670,39 @@ developers.")
 (define-public r-shinygovstyle
   (package
     (name "r-shinygovstyle")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyGovstyle" version))
        (sha256
-        (base32 "1czyz51k0xm62b9bzcsygslm2nd3fnmll4wjxwimlngy00rnjnng"))))
+        (base32 "1irhcyj4ixlfz4qilz2vwls6a6sc0zzzixgvizh7cwnkjf962cg9"))))
     (properties `((upstream-name . "shinyGovstyle")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs r-shiny r-jsonlite r-htmltools))
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-stringr
+                             r-shinyjs
+                             r-shiny
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-htmltools))
+    (native-inputs (list esbuild))
     (home-page "https://github.com/moj-analytical-services/shinyGovstyle")
     (synopsis "Custom Gov Style Inputs for Shiny")
     (description
@@ -49557,13 +49646,13 @@ and approximate casewise influence using scores and casewise likelihood.")
 (define-public r-semeff
   (package
     (name "r-semeff")
-    (version "0.6.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semEff" version))
        (sha256
-        (base32 "0vqvmjp9b9qcl0l3gbxijp73qmcy0czdgc0hq2mr129l7qshigla"))))
+        (base32 "1a71yaw20l5wsmgchwf4p3yhwbb2g65aw5i8cmajyhwp0hhvgyls"))))
     (properties `((upstream-name . "semEff")))
     (build-system r-build-system)
     (propagated-inputs (list r-lme4 r-gsl r-boot))
@@ -57698,13 +57787,13 @@ latent class analyses, and reduced rank regressions.")
 (define-public r-sbi
   (package
     (name "r-sbi")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SBI" version))
        (sha256
-        (base32 "1m4s0qmk1z3npxk952w57dxrp4asb9ixx0clxh7xjl24kvymrnrs"))))
+        (base32 "0kbcy95dq8kkqaknj8yi33nhvhhd3si2yj0xg1swq15v48ffnrak"))))
     (properties `((upstream-name . "SBI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SBI")
@@ -58135,13 +58224,13 @@ compatibility is ensured for the Landsat Global Land Survey data set.")
 (define-public r-sate
   (package
     (name "r-sate")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sate" version))
        (sha256
-        (base32 "19jd8z1343ajx27b14grjnvxxf38b008fzclv7rcpqqp717ajpnv"))))
+        (base32 "137q4636x0wizfiq2smf8gc8x3k31mkm5i6nmb7s3arl250qcv0n"))))
     (properties `((upstream-name . "sate")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ellipse))

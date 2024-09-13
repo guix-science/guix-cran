@@ -18,6 +18,7 @@
   #:use-module (gnu packages python)
   #:use-module (gnu packages cmake)
   #:use-module (gnu packages machine-learning)
+  #:use-module (gnu packages julia)
   #:use-module (gnu packages pkg-config)
   #:use-module (guix-cran packages z)
   #:use-module (guix-cran packages y)
@@ -4925,6 +4926,35 @@ in Le Rouzic & Alvarez-Castro (2008).")
      "This package provides a compact variation of the usual syntax of function
 declaration, in order to support tidyverse-style quasiquotation of a function's
 arguments and body.")
+    (license license:expat)))
+
+(define-public r-noegletalr
+  (package
+    (name "r-noegletalr")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "noegletalR" version))
+       (sha256
+        (base32 "0kjbkisxm1kyb55sgphqsl29sfrwrwbfynfmlv70b31axyhvp6b4"))))
+    (properties `((upstream-name . "noegletalR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-readr
+                             r-httr
+                             r-dplyr))
+    (home-page "https://github.com/FrLars21/noegletalR")
+    (synopsis "Tidy Tibbles of Noegletal")
+    (description
+     "Work with data from <https://noegletal.dk> in a tidy manner.  Tidy up previously
+downloaded data or retrieve new data directly from the comfort of R. You can
+also browse an up-to-date list of available data, including thorough variable
+descriptions.")
     (license license:expat)))
 
 (define-public r-nodiv
@@ -10319,6 +10349,40 @@ additive.  The resultant Neural Network is a highly accurate and interpretable
 deep learning model, which can be used for high-risk AI practices where
 decision-making should be based on accountable and interpretable algorithms.")
     (license (license:fsdg-compatible "MPL-2.0"))))
+
+(define-public r-neuralestimators
+  (package
+    (name "r-neuralestimators")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NeuralEstimators" version))
+       (sha256
+        (base32 "1bxmw4abrhqvfs5jhga9d8y5c3m2ps4lk6wcr1dac6xhvx2yf58z"))))
+    (properties `((upstream-name . "NeuralEstimators")))
+    (build-system r-build-system)
+    (inputs (list julia))
+    (propagated-inputs (list r-magrittr r-juliaconnector))
+    (home-page "https://cran.r-project.org/package=NeuralEstimators")
+    (synopsis "Likelihood-Free Parameter Estimation using Neural Networks")
+    (description
+     "An R interface to the Julia package @code{NeuralEstimators.jl}'.  The package
+facilitates the user-friendly development of neural point estimators, which are
+neural networks that map data to a point summary of the posterior distribution.
+These estimators are likelihood-free and amortised, in the sense that, after an
+initial setup cost, inference from observed data can be made in a fraction of
+the time required by conventional approaches; see Sainsbury-Dale,
+Zammit-Mangion, and Huser (2024) <doi:10.1080/00031305.2023.2249522> for further
+details and an accessible introduction.  The package also enables the
+construction of neural networks that approximate the likelihood-to-evidence
+ratio in an amortised manner, allowing one to perform inference based on the
+likelihood function or the entire posterior distribution; see Zammit-Mangion,
+Sainsbury-Dale, and Huser (2024, Sec.  5.2)
+<doi:10.48550/@code{arXiv.2404.12484>}, and the references therein.  The package
+accommodates any model for which simulation is feasible by allowing the user to
+implicitly define their model through simulated data.")
+    (license license:gpl2+)))
 
 (define-public r-networktree
   (package
@@ -16022,13 +16086,13 @@ clustering (CAclustering) and semidefinite programming (SDP).")
 (define-public r-naaccr
   (package
     (name "r-naaccr")
-    (version "2.0.2")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naaccr" version))
        (sha256
-        (base32 "1j30fb7qvxzpx0y7hq8sbqvszwjfnc4r2g0j8885fmn2wxvcgzdx"))))
+        (base32 "0ngrkhkz6880mpza6kbwnszvgabrkd8ag2706v19synrwpigarn8"))))
     (properties `((upstream-name . "naaccr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-stringi r-data-table))

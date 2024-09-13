@@ -6069,13 +6069,13 @@ dimensions are provided.")
 (define-public r-intrinsic
   (package
     (name "r-intrinsic")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "intRinsic" version))
        (sha256
-        (base32 "07hs1srvdzrqqqzzxkbrc10sns3i7nlp41b3ysaf1j03jgxwdyid"))))
+        (base32 "1nkp2zb0wz1kw61lsm39d72k927hgdvck9asxy7495qa10dpl9ac"))))
     (properties `((upstream-name . "intRinsic")))
     (build-system r-build-system)
     (propagated-inputs (list r-salso
@@ -8390,6 +8390,40 @@ default syntax are that (1) docs are defined in comments near the relevant code,
 (2) function argument names are not repeated in comments, and (3) examples are
 defined in R code, not comments.  It is also easy to define a new syntax.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-inldata
+  (package
+    (name "r-inldata")
+    (version "1.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "inldata" version))
+       (sha256
+        (base32 "1hi2rzh95in4zgy9vwsnb9vddl64ia9jsb0mvcpgr7fciqnfp0rw"))))
+    (properties `((upstream-name . "inldata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra r-stringi r-sf r-checkmate))
+    (home-page "https://rconnect.usgs.gov/INLPO/inldata-main/")
+    (synopsis "Collection of Datasets for the USGS-INL Monitoring Networks")
+    (description
+     "This package provides a collection of analysis-ready datasets for the U.S.
+Geological Survey - Idaho National Laboratory (USGS-INL) groundwater and
+surface-water monitoring networks, administered by the USGS-INL Project Office
+in cooperation with the U.S. Department of Energy.  The data collected from
+wells and surface-water stations at the Idaho National Laboratory and
+surrounding areas have been used to describe the effects of waste disposal on
+water contained in the eastern Snake River Plain aquifer, located in the
+southeastern part of Idaho, and the availability of water for long-term
+consumptive and industrial use.  The package includes long-term monitoring
+records dating back to measurements from 1922.  Geospatial data describing the
+areas from which samples were collected or observations were made are also
+included in the package.  Bundling this data into a single package significantly
+reduces the magnitude of data processing for researchers and provides a way to
+distribute the data along with its documentation in a standard format.
+Geospatial datasets are made available in a common projection and datum, and
+geohydrologic data have been structured to facilitate analysis.")
+    (license license:cc0)))
 
 (define-public r-inlcolor
   (package
@@ -11912,13 +11946,13 @@ also includes functions for analyzing image annotations.")
 (define-public r-imgpalr
   (package
     (name "r-imgpalr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imgpalr" version))
        (sha256
-        (base32 "0wdddswyakcgwvp75ydp8q3wmxdgrms8r2lh9jm024f8im3j5ccw"))))
+        (base32 "15v0zsy36gd270vg841d39q6av0wfz160lgdbwdqva14i5pppfj8"))))
     (properties `((upstream-name . "imgpalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -15909,13 +15943,13 @@ financial-economic time series data.")
 (define-public r-ichimoku
   (package
     (name "r-ichimoku")
-    (version "1.5.4")
+    (version "1.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ichimoku" version))
        (sha256
-        (base32 "09s7x956bx84z9ci017zzf96306wwdy78v1jaknps2rl85xfh0bi"))))
+        (base32 "1llc7ps19pqmcwm33avbscn0izh30x164xxcn1b28pyppnzwggxf"))))
     (properties `((upstream-name . "ichimoku")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

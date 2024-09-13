@@ -1282,6 +1282,36 @@ for details.")
 proposed by Gottwald and Melbourne (2004) <DOI:10.1137/080718851>.")
     (license license:gpl3)))
 
+(define-public r-dycdtools
+  (package
+    (name "r-dycdtools")
+    (version "0.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dycdtools" version))
+       (sha256
+        (base32 "0c5ds2bnnv08c68hyxr4p4p6h9cc2pbivgyyqglaz23317rcxlcp"))))
+    (properties `((upstream-name . "dycdtools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rcolorbrewer
+                             r-r-utils
+                             r-ncdf4
+                             r-lubridate
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/SongyanYu/dycdtools")
+    (synopsis
+     "Calibration Assistant and Post-Processing Tool for Aquatic Ecosystem Model DYRESM-CAEDYM")
+    (description
+     "Dynamic Reservoir Simulation Model (DYRESM) and Computational Aquatic Ecosystem
+Dynamics Model (CAEDYM) model development, including assisting with calibrating
+selected model parameters and visualising model output through time series plot,
+profile plot, contour plot, and scatter plot.  For more details, see Yu et al.
+(2023) <https://journal.r-project.org/articles/RJ-2023-008/>.")
+    (license license:expat)))
+
 (define-public r-dyads
   (package
     (name "r-dyads")
@@ -8074,13 +8104,13 @@ outliers to the fore-front using fewer basis vectors (Kandanaarachchi, Hyndman
 (define-public r-do
   (package
     (name "r-do")
-    (version "2.0.0.0")
+    (version "2.0.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "do" version))
        (sha256
-        (base32 "16c6ksdas678k1285vk526ga3qkfb658nq4j5z9safjkyl1d5lrp"))))
+        (base32 "1qfhlhlyd1yg1jfsf492nhxv9n8giqjc2rdv7wgxd4bpgcx6vi9h"))))
     (properties `((upstream-name . "do")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -14111,13 +14141,13 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
 (define-public r-diffcor
   (package
     (name "r-diffcor")
-    (version "0.8.3")
+    (version "0.8.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffcor" version))
        (sha256
-        (base32 "0r5hc058h59hz249dx2nf91i45ldjilfrq1a2c4vyp9jvi12qpj5"))))
+        (base32 "1dg0qdhnf33mn3853c23jlbd4d10aa7qhmqhpffhz91fcy3rivkn"))))
     (properties `((upstream-name . "diffcor")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -14125,14 +14155,16 @@ variables (e.g., genes and metabolites) between 2 experimental conditions.")
     (synopsis "Fisher's z-Tests Concerning Differences Between Correlations")
     (description
      "Computations of Fisher's z-tests concerning different kinds of correlation
-differences.  Additionally, approaches to estimating statistical power via Monte
-Carlo simulations are implemented.  Important to note, the Pearson correlation
+differences.  The diffpwr family entails approaches to estimating statistical
+power via Monte Carlo simulations.  Important to note, the Pearson correlation
 coefficient is sensitive to linear association, but also to a host of
 statistical issues such as univariate and bivariate outliers, range
 restrictions, and heteroscedasticity (e.g., Duncan & Layard, 1973
 <doi:10.1093/BIOMET/60.3.551>; Wilcox, 2013 <doi:10.1016/C2010-0-67044-1>).
 Thus, every power analysis requires that specific statistical prerequisites are
-fulfilled and can be invalid if the prerequisites do not hold.")
+fulfilled and can be invalid if the prerequisites do not hold.  To this end, the
+bootcor family provides bootstrapping confidence intervals for the incorporated
+correlation difference tests.")
     (license license:gpl2+)))
 
 (define-public r-difconet

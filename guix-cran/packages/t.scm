@@ -6517,13 +6517,13 @@ provided for creating new interfaces.")
 (define-public r-trekfont
   (package
     (name "r-trekfont")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trekfont" version))
        (sha256
-        (base32 "1c0rwjmpg6b83kvkwrc0fcg1adx5is1g0wn01iss037jph5j0f2l"))))
+        (base32 "0sbc3bwa2nyvqkbr3v5si4sxaipgsq7qc2i1zbyzfkxd8vs8mh6q"))))
     (properties `((upstream-name . "trekfont")))
     (build-system r-build-system)
     (home-page "https://github.com/leonawicz/trekfont")
@@ -6536,13 +6536,13 @@ fonts.")
 (define-public r-trekcolors
   (package
     (name "r-trekcolors")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trekcolors" version))
        (sha256
-        (base32 "0jm85lrsqlpl1k62fbim48kprsqs50bm0dbajnk8f42x6i3m1xav"))))
+        (base32 "0rjlwi0rnyx2dmxm0903cgbfdxr7fg320qflhc1p9yggrgjrhy5v"))))
     (properties `((upstream-name . "trekcolors")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -10087,16 +10087,21 @@ clinical trials.")
 (define-public r-toxpir
   (package
     (name "r-toxpir")
-    (version "1.2.1")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toxpiR" version))
        (sha256
-        (base32 "0n6x87gyzxsib267h0gs5b4sdkwmgjpgqzipfhlrjsnxq55q6599"))))
+        (base32 "1d19zpf2i5yrnby2ypfq4q8fahjfrdagvzparkaynwipwcs1qhkm"))))
     (properties `((upstream-name . "toxpiR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr r-s4vectors r-rlang r-pryr r-biocgenerics))
+    (propagated-inputs (list r-tidyr
+                             r-s4vectors
+                             r-rlang
+                             r-pryr
+                             r-ggplot2
+                             r-biocgenerics))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ToxPi/toxpiR")
     (synopsis "Create ToxPi Prioritization Models")
@@ -12254,13 +12259,13 @@ executed, and cube and dimension metadata information can be taken.")
 (define-public r-tm-plugin-mail
   (package
     (name "r-tm-plugin-mail")
-    (version "0.3-0")
+    (version "0.3-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tm.plugin.mail" version))
        (sha256
-        (base32 "02gbpdqi9cqk0na7ali1wwjapnf497hwv3k8mx354496pcrbi8m5"))))
+        (base32 "181ar4n7fp8babpigv72fsb02pvg45wi364h9nqyk5ijsyyf9fw4"))))
     (properties `((upstream-name . "tm.plugin.mail")))
     (build-system r-build-system)
     (propagated-inputs (list r-tm r-reticulate r-nlp))
@@ -14122,26 +14127,6 @@ correlate two timelines of events.  A brief description is available at
 <https://barryzee.github.io/@code{timeLineGraphics_manuscript/golden_age.html>}.")
     (license license:gpl2+)))
 
-(define-public r-timeless
-  (package
-    (name "r-timeless")
-    (version "0.2.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "timeless" version))
-       (sha256
-        (base32 "0mg7c94494nllynlk48f1nlf8420bz2rcd4ingxa56ps71ma1i15"))))
-    (properties `((upstream-name . "timeless")))
-    (build-system r-build-system)
-    (inputs (list))
-    (home-page "https://github.com/schochastics/timeless")
-    (synopsis "Fast General Purpose Date/Time Converter")
-    (description
-     "Fast general purpose date/time converter using Rust'.  The package implements
-date time, date and epoch time parser for heterogeneous vectors of dates.")
-    (license license:expat)))
-
 (define-public r-timeel
   (package
     (name "r-timeel")
@@ -14370,13 +14355,13 @@ correlations among the variables in a data-driven way.")
 (define-public r-tiler
   (package
     (name "r-tiler")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiler" version))
        (sha256
-        (base32 "09xxfkbgjd9x27fjkbk1ady7sxz9lqkmaw5027xgakn65g9vmssz"))))
+        (base32 "052dv3lca6yr0d9i5ysgw8yazvv046z4j9ka588p7xmfvjhkwbig"))))
     (properties `((upstream-name . "tiler")))
     (build-system r-build-system)
     (inputs (list python))
@@ -14453,13 +14438,13 @@ is proportional to the certain characteristics of the dataset.")
 (define-public r-tiledb
   (package
     (name "r-tiledb")
-    (version "0.29.0")
+    (version "0.30.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tiledb" version))
        (sha256
-        (base32 "1fzmsgn9x4z5ya7rrb83nlwarjswbq5gpjb0lka0xldmdzl9f22j"))))
+        (base32 "0js51pix6p7fi3gf2i036bl4mj1gbqaj2w07vyikl92wf85821pi"))))
     (properties `((upstream-name . "tiledb")))
     (build-system r-build-system)
     (inputs (list zlib pcre2))
@@ -16894,6 +16879,32 @@ functions giving a tidier representation of the underlying data structures and
 functionality using a header-only implementation without additional
 dependencies.")
     (license license:gpl2+)))
+
+(define-public r-tidycountries
+  (package
+    (name "r-tidycountries")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "tidycountries" version))
+       (sha256
+        (base32 "1785nvw2jhnslyib6zgxvdv2kzj3r5hiagplrv12i490sdqsj47j"))))
+    (properties `((upstream-name . "tidycountries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-dplyr))
+    (home-page "https://github.com/denironyx/tidycountries")
+    (synopsis
+     "Access and Manipulate Comprehensive Country Level Data in Tidy Format")
+    (description
+     "This package provides a comprehensive and user-friendly interface for accessing,
+manipulating, and analyzing country-level data from around the world.  It allows
+users to retrieve detailed information on countries, including names, regions,
+continents, populations, currencies, calling codes, and more, all in a tidy data
+format.  The package is designed to work seamlessly within the tidyverse
+ecosystem, making it easy to filter, arrange, and visualize country-level data
+in R.")
+    (license license:expat)))
 
 (define-public r-tidyconsultant
   (package
@@ -22169,13 +22180,13 @@ Mai, Zhang, Pan and Deng (2021) <DOI: 10.1080/01621459.2021.1904959>.")
 (define-public r-tensorbss
   (package
     (name "r-tensorbss")
-    (version "0.3.8")
+    (version "0.3.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tensorBSS" version))
        (sha256
-        (base32 "1chgkdshjpxzy0cxkgjzpr5k4v2hyad1vchrxyqhsj9isfic2581"))))
+        (base32 "01w7bv7cnbjy3v7i49337gfwdmsqijp5jzf4w51ii3wpvvgx4935"))))
     (properties `((upstream-name . "tensorBSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsbss
@@ -26600,13 +26611,13 @@ them into a standardised (tidy) output format.")
 (define-public r-tabr
   (package
     (name "r-tabr")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tabr" version))
        (sha256
-        (base32 "0b8qg6zkfm7hqclpb79asjsz3p8kg0645n8gxc61r6gcv7hyzdvc"))))
+        (base32 "1y14whqm0xw9n14nc2r27c6i6hchcbmbzidkyi9nhjn3prdln5b2"))))
     (properties `((upstream-name . "tabr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

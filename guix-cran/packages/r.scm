@@ -3370,13 +3370,13 @@ test for autocorrelated data.  Journal of hydrology, 204(1-4), 182-196.
 (define-public r-rtrek
   (package
     (name "r-rtrek")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtrek" version))
        (sha256
-        (base32 "0sra9v02vh6x8jydgibd2962f9nkzbdx02r4gn9b6qsirgsgn502"))))
+        (base32 "0hc58h2g3xldlcqlns43xf01sj09lmb7wnjlngsg6dr31z59xbk2"))))
     (properties `((upstream-name . "rtrek")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -3718,13 +3718,13 @@ RT-MPTs).")
 (define-public r-rtmb
   (package
     (name "r-rtmb")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RTMB" version))
        (sha256
-        (base32 "1sgkvr0kyr46lvmp1vyv5fcqaf1qsnm24zbwlh42qrhgh8hxa871"))))
+        (base32 "1d9b8rxx9nj7psjcsvsv51lyik6cki3dqm996yhjysycd8ncpfx7"))))
     (properties `((upstream-name . "RTMB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb r-rcppeigen r-rcpp r-matrix r-mass))
@@ -7076,13 +7076,13 @@ then to estimate a structural equation model.")
 (define-public r-rseis
   (package
     (name "r-rseis")
-    (version "4.2-0")
+    (version "4.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RSEIS" version))
        (sha256
-        (base32 "051dd1g188llwrc5g8w3k8wxmni24lqnp8brxvggy3v6d4gkkv4k"))))
+        (base32 "1angs16rm2077cnjq6hs3n7qhdpfljsmv9yf5dm6wsmgbq9h96vs"))))
     (properties `((upstream-name . "RSEIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rwave r-rpmg))
@@ -17392,6 +17392,36 @@ Statistics API v3
 ads, campaigns, agency clients and statistic from your ads account.")
     (license license:expat)))
 
+(define-public r-rmx
+  (package
+    (name "r-rmx")
+    (version "0.1-6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RMX" version))
+       (sha256
+        (base32 "077l2z8z2kv8lvsff5jikranchw49g9x9g029klsp4813hy7nqn5"))))
+    (properties `((upstream-name . "RMX")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=RMX")
+    (synopsis "Rasch Models -- eXtensions")
+    (description
+     "Extend Rasch and Item Response Theory (IRT) analyses by providing tools for
+post-processing the output from five major IRT packages (i.e., @code{eRm}',
+psychotools', ltm', mirt', and TAM').  The current version provides the
+@code{plotPIccc}() function, which extracts from the return object of the
+originating package all information required to draw an extended Person-Item-Map
+(PIccc), showing any combination of * category characteristic curves (CCCs), *
+threshold characteristic curves (TCCs), * item characteristic curves (ICCs), *
+category information functions (CIFs), * item information functions (IIFs), *
+test information function (TIF), and the * standard error curve (S.E.).  for
+uni- and multidimensional models (as far as supported by each package).  It
+allows for selecting dimensions, items, and categories to plot and offers
+numerous options to adapt the output.  The return object contains all calculated
+values for further processing.")
+    (license license:gpl3+)))
+
 (define-public r-rmweather
   (package
     (name "r-rmweather")
@@ -21345,6 +21375,28 @@ extra steps for Linux users, who don't have any Java previously installed in
 their system, and who prefer package installation from source, rather then
 installing binaries from Posit Package Manager'.  See documentation for details.")
     (license license:expat)))
+
+(define-public r-rjalalidate
+  (package
+    (name "r-rjalalidate")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RJalaliDate" version))
+       (sha256
+        (base32 "0q03q95wy3zj98fn0fg9k4vqkkfvfn59v9ajsfm3b6baqkj8ppdk"))))
+    (properties `((upstream-name . "RJalaliDate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-stringi r-settings r-lubridate))
+    (home-page "https://cran.r-project.org/package=RJalaliDate")
+    (synopsis "Handling Jalali Date (Persian / Solar Hijri)")
+    (description
+     "Jalali calendar, or solar Hijri, is calendar of Iran and Afghanistan
+(<https://en.wikipedia.org/wiki/Solar_Hijri_calendar>).  This package is
+designed to working with Jalali date.  For this purpose, It defines
+@code{JalaliDate} class that is similar to Date class.")
+    (license license:gpl3+)))
 
 (define-public r-rjafroc
   (package
@@ -28031,27 +28083,27 @@ transaction scripts using then_try(), to gracefully handle errors at any step.")
 (define-public r-restriktor
   (package
     (name "r-restriktor")
-    (version "0.5-80")
+    (version "0.5-90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "restriktor" version))
        (sha256
-        (base32 "1dpkwwkww19pr57rqx77g8q1b0chflyihgb4nsdkaizgc5mh5r04"))))
+        (base32 "1fsai03i25idd59n20ca268123plmiw5v1yjys4pvgaf7zj6a18j"))))
     (properties `((upstream-name . "restriktor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmvtnorm
                              r-scales
                              r-quadprog
-                             r-pbapply
+                             r-progressr
                              r-norm
                              r-mvtnorm
                              r-mass
                              r-lavaan
-                             r-ic-infer
                              r-gridextra
-                             r-glue
                              r-ggplot2
+                             r-future-apply
+                             r-future
                              r-boot))
     (native-inputs (list r-knitr))
     (home-page "https://restriktor.org")
@@ -28326,6 +28378,31 @@ captures the output of the specified statements into R dataframes.  Essentia can
 be downloaded for free at
 http://www.auriq.com/documentation/source/install/index.html.")
     (license license:lgpl3)))
+
+(define-public r-resquin
+  (package
+    (name "r-resquin")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "resquin" version))
+       (sha256
+        (base32 "0h3wmmhx3bqy1li6nvgdxfvdr9k2yiw2b7h74jbc4mvpil747l7l"))))
+    (properties `((upstream-name . "resquin")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs r-purrr r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MatRoth/resquin")
+    (synopsis "Response Quality Indicators for Survey Research")
+    (description
+     "Calculate common survey data quality indicators for multi-item scales and matrix
+questions.  Currently supports the calculation of response style indicators and
+response distribution indicators.  For an overview on response quality
+indicators see Bhaktha N, Henning S, Clemens L (2024).  Characterizing response
+quality in surveys with multi-item scales: A unified framework
+<https://osf.io/9gs67/>.")
+    (license license:gpl3+)))
 
 (define-public r-respr
   (package
@@ -41400,13 +41477,13 @@ packages of R versions 0.50 onwards.")
 (define-public r-rchemo
   (package
     (name "r-rchemo")
-    (version "0.1-2")
+    (version "0.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rchemo" version))
        (sha256
-        (base32 "06wrpv3bnzq9sz6wq4f1sgcq549rafnqh6rzldl160hv7yb7rl80"))))
+        (base32 "0jpd62mggsysh95dqp5dy0w1nhp06rc55fk7d4a7vqbblfipxihm"))))
     (properties `((upstream-name . "rchemo")))
     (build-system r-build-system)
     (propagated-inputs (list r-signal r-fnn r-e1071 r-data-table))
@@ -43796,34 +43873,6 @@ Hydrologic Modelling Framework method can be referenced with Craig et al. (2020)
 @code{DataFrames}.  Defines functions to both read and write @code{DataFrame}
 files, as well as serialize/deserialize data.frames/@code{DataFrames}.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
-
-(define-public r-ravelry
-  (package
-    (name "r-ravelry")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ravelRy" version))
-       (sha256
-        (base32 "07mywv57rw2b309i2qisbpx1x3sb3z6n2b5gia9bdmb2m4hhpdai"))))
-    (properties `((upstream-name . "ravelRy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-purrr
-                             r-jsonlite
-                             r-httr
-                             r-dplyr))
-    (home-page "https://cran.r-project.org/package=ravelRy")
-    (synopsis "An Interface to the 'Ravelry' API")
-    (description
-     "This package provides access to the Ravelry API
-<https://www.ravelry.com/groups/ravelry-api>.  An R wrapper for pulling data
-from Ravelry.com', an organizational tool for crocheters, knitters, spinners,
-and weavers.  You can retrieve pattern, yarn, author, and shop information by
-search or by a given id.")
-    (license license:expat)))
 
 (define-public r-ravages
   (package

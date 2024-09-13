@@ -1596,23 +1596,25 @@ problems.")
 (define-public r-hvt
   (package
     (name "r-hvt")
-    (version "24.5.2")
+    (version "24.9.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HVT" version))
        (sha256
-        (base32 "18a4gr2v2qn2n9z9w89pjq1plzdggzlyprh249srf3sbqw1pn1qq"))))
+        (base32 "00awnlswkwki1fjjf7rq6s6k4vahb3vyzbzj2wbbhc3ihbv354jf"))))
     (properties `((upstream-name . "HVT")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-umap
+                             r-tidyr
                              r-splancs
                              r-scales
+                             r-rtsne
                              r-rlang
                              r-reshape2
                              r-purrr
-                             r-polyclip
                              r-plyr
+                             r-nbclust
                              r-mass
                              r-markovchain
                              r-magrittr
@@ -1620,10 +1622,8 @@ problems.")
                              r-ggplot2
                              r-ggforce
                              r-gganimate
+                             r-fnn
                              r-dplyr
-                             r-deldir
-                             r-data-table
-                             r-conf-design
                              r-cluster))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Mu-Sigma/HVT")
@@ -8868,32 +8868,6 @@ existing currently
 geographic location.")
     (license license:gpl3)))
 
-(define-public r-hellorust
-  (package
-    (name "r-hellorust")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "hellorust" version))
-       (sha256
-        (base32 "0x2lnbrii9z4kyd810rphcip9wpx7ibqx9b4fs5c5msrqa03amk3"))))
-    (properties `((upstream-name . "hellorust")))
-    (build-system r-build-system)
-    (inputs (list))
-    (home-page "https://github.com/r-rust/hellorust")
-    (synopsis "Minimal Examples of Using Rust Code in R")
-    (description
-     "Template R package with minimal setup to use Rust code in R without hacks or
-frameworks.  Includes basic examples of importing cargo dependencies, spawning
-threads and passing numbers or strings from Rust to R. Cargo crates are
-automatically vendored in the R source package to support offline installation.
-The @code{GitHub} repository for this package has more details and also explains
-how to set up CI. This project was first presented at Erum2018 to showcase
-R-Rust integration <https://jeroen.github.io/erum2018/>; for a real world
-use-case, see the gifski package on CRAN'.")
-    (license license:expat)))
-
 (define-public r-hellojavaworld
   (package
     (name "r-hellojavaworld")
@@ -9078,13 +9052,13 @@ described in Tavares (2022) <doi:10.1007/s12530-021-09415-z>.")
 (define-public r-heemod
   (package
     (name "r-heemod")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heemod" version))
        (sha256
-        (base32 "09kj8gy74dklkbvxxh95qa5s7iaksvyamggppcpnp5c115625rrb"))))
+        (base32 "0zcj2g578m6pxv7iz3xlypka64qm2j906w10n69wplpn9h9cp3s4"))))
     (properties `((upstream-name . "heemod")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -9232,13 +9206,13 @@ global and local influence for four possible perturbation schema.")
 (define-public r-heck
   (package
     (name "r-heck")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heck" version))
        (sha256
-        (base32 "0dmj55pzfqgp9xb1pi4sjpi8pp40sk5r5vd1qjmjlf16gnw1jlkl"))))
+        (base32 "0kr4ch84j0fnj9zhmfnvwn24kfnz8kcykg0vhqvw5grnx7971sq9"))))
     (properties `((upstream-name . "heck")))
     (build-system r-build-system)
     (inputs (list))
@@ -9484,13 +9458,13 @@ package.")
 (define-public r-healthyr-ai
   (package
     (name "r-healthyr-ai")
-    (version "0.0.13")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyR.ai" version))
        (sha256
-        (base32 "0qck4118f0kg9rfnmjc14qh7kdzvxh28rdlydhz8i5j91a6731a4"))))
+        (base32 "1wfwjl1v91y16v6x2zzag8h85lvrq4m9jnh041s9gxmv0wpccnqr"))))
     (properties `((upstream-name . "healthyR.ai")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -9512,7 +9486,7 @@ package.")
                              r-dials
                              r-broom))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/spsanderson/healthyR.ai")
+    (home-page "https://www.spsanderson.com/healthyR.ai/")
     (synopsis "The Machine Learning and AI Modeling Companion to 'healthyR'")
     (description
      "Hospital machine learning and ai data analysis workflow tools, modeling, and

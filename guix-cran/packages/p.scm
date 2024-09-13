@@ -5123,13 +5123,13 @@ legacy of @code{ProTracker} and the Commodore Amiga alive.")
 (define-public r-protr
   (package
     (name "r-protr")
-    (version "1.7-3")
+    (version "1.7-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "protr" version))
        (sha256
-        (base32 "0d7dwcg4qlsrmpkw2i2ycknlx6kijbwnkgx5x1pbzb6naj2lyszh"))))
+        (base32 "0r7ccnj34m26r91pgcvwpvdm0n7k6yd4cbkl8d5zdvghgj7md4ld"))))
     (properties `((upstream-name . "protr")))
     (build-system r-build-system)
     (inputs (list))
@@ -15109,13 +15109,13 @@ the package also includes utilities to manipulate standard allele count data
 (define-public r-pooledpeaks
   (package
     (name "r-pooledpeaks")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pooledpeaks" version))
        (sha256
-        (base32 "01djsklh6bxalzwgiz02dw7k4hd6w0g6l9kvf2k3vb0kay38plx4"))))
+        (base32 "1q9ycn19rn8g1yfccrljmh7s0b192z40k02cy74l684sipafbra1"))))
     (properties `((upstream-name . "pooledpeaks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -15417,13 +15417,13 @@ ISBN:3540262393).")
 (define-public r-pomp
   (package
     (name "r-pomp")
-    (version "5.10")
+    (version "5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pomp" version))
        (sha256
-        (base32 "0pz12apfh600nnbdcrm3p9xr47p3qlc9bp80ahkvixb17vkr9z30"))))
+        (base32 "059j6g2ckyr0818llabwr05p1hfjwr9pb7bwyd9qgc6mdkdc0p50"))))
     (properties `((upstream-name . "pomp")))
     (build-system r-build-system)
     (inputs (list))
@@ -22008,13 +22008,13 @@ base of multiple R packages.")
 (define-public r-pkgdepends
   (package
     (name "r-pkgdepends")
-    (version "0.7.2")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgdepends" version))
        (sha256
-        (base32 "09nddbcz0z5lh6aaspjvfvbp74na7693a5w3hq36p4ah2b824zmi"))))
+        (base32 "025ni959zvqfaxs6af9pka7gn23yzgbabpy28bsa45v75hi4i79m"))))
     (properties `((upstream-name . "pkgdepends")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -22065,13 +22065,13 @@ on where the error originated.")
 (define-public r-pkgcache
   (package
     (name "r-pkgcache")
-    (version "2.2.2")
+    (version "2.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkgcache" version))
        (sha256
-        (base32 "1qsvgdhinrz2mb4fr33pp6rm23pra6bgwzc70kjyl983zk2nrgby"))))
+        (base32 "1isvbb2l6l2wk2grh7cz85q80nbghp5287jr137sal4gviprgk7v"))))
     (properties `((upstream-name . "pkgcache")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -23410,13 +23410,13 @@ memory-optimized using the sparse matrix output.")
 (define-public r-piar
   (package
     (name "r-piar")
-    (version "0.7.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "piar" version))
        (sha256
-        (base32 "04m2xcym1pm0v6riz18mdfjzhgw9hpi67djym2a15970av15ld9l"))))
+        (base32 "0153cyfnw7cprvm2gkk0ajishs2rhbwdlx6xd07ls8jpzm3jl5k6"))))
     (properties `((upstream-name . "piar")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-gpindex))
@@ -23429,11 +23429,11 @@ elemental indexes are first calculated for a collection of elemental aggregates
 at each point in time, and then aggregated according to a price index
 aggregation structure.  These indexes can then be chained together to form a
 time series that gives the evolution of prices with respect to a fixed base
-period.  This package contains a collections of functions that revolve around
+period.  This package contains a collection of functions that revolve around
 this work flow, making it easy to build standard price indexes, and implement
-the methods described by Balk (2008, ISBN:978-1-107-40496-0), von der Lippe
-(2001, ISBN:3-8246-0638-0), and the CPI manual (2020, ISBN:978-1-51354-298-0)
-for bilateral price indexes.")
+the methods described by Balk (2008, <doi:10.1017/CBO9780511720758>), von der
+Lippe (2007, <doi:10.3726/978-3-653-01120-3>), and the CPI manual (2020,
+<doi:10.5089/9781484354841.069>) for bilateral price indexes.")
     (license license:expat)))
 
 (define-public r-phytosanitarycalculator
@@ -32383,13 +32383,13 @@ tests and the F-test.")
 (define-public r-pcalg
   (package
     (name "r-pcalg")
-    (version "2.7-11")
+    (version "2.7-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcalg" version))
        (sha256
-        (base32 "14709561m2vz3y0qx1jwnxq0z464j9ddmvr8p765aclm97n87rvm"))))
+        (base32 "0wz94x8jg9810pr3sx8zccsidqz99xbffq4smwqn0hnz3r00g3w9"))))
     (properties `((upstream-name . "pcalg")))
     (build-system r-build-system)
     (propagated-inputs (list r-vcd
@@ -33384,13 +33384,13 @@ patient profile report(s) or can be embedded in custom report(s).")
 (define-public r-patientprofiles
   (package
     (name "r-patientprofiles")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PatientProfiles" version))
        (sha256
-        (base32 "0h9d4qm83qkfdvdmz0vm29yhn50vrbf9qxp2mbgmxx067yynncz6"))))
+        (base32 "0h3vcn17aa0gy0iff70grw4kd6mrmjzyq7d0iypzkxjzkrvjs16c"))))
     (properties `((upstream-name . "PatientProfiles")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -33403,7 +33403,6 @@ patient profile report(s) or can be embedded in custom report(s).")
                              r-lifecycle
                              r-dplyr
                              r-cli
-                             r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/PatientProfiles/")
@@ -36087,16 +36086,17 @@ generalized linear model extension thereof using GEE.")
 (define-public r-panelpomp
   (package
     (name "r-panelpomp")
-    (version "1.1")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "panelPomp" version))
        (sha256
-        (base32 "054nma2h355xd8bazbjrwgxa825qrwfjjwny5m9hry5pyb2vszwm"))))
+        (base32 "1ld0f2pf24lf20xalgapkid9zh7gmc202lkmnqih2sx4gh4l1086"))))
     (properties `((upstream-name . "panelPomp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pomp))
+    (propagated-inputs (list r-pomp r-lifecycle))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=panelPomp")
     (synopsis "Inference for Panel Partially Observed Markov Processes")
     (description

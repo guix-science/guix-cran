@@ -431,13 +431,13 @@ environmental covariates.")
 (define-public r-luminescence
   (package
     (name "r-luminescence")
-    (version "0.9.24")
+    (version "0.9.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Luminescence" version))
        (sha256
-        (base32 "0i4z0pyykvp0kxv5xg2id9p3829wxivvn5lgqickb2xql4rrggp6"))))
+        (base32 "0m9vfpydihkfpg8pmdqx70p54nv61578kcazzcwcbcblc1gs2wxm"))))
     (properties `((upstream-name . "Luminescence")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -456,7 +456,7 @@ environmental covariates.")
                              r-data-table
                              r-bbmle))
     (native-inputs (list r-r-rsp))
-    (home-page "https://CRAN.R-project.org/package=Luminescence")
+    (home-page "https://r-lum.github.io/Luminescence/")
     (synopsis "Comprehensive Luminescence Dating Data Analysis")
     (description
      "This package provides a collection of various R functions for the purpose of
@@ -2765,6 +2765,34 @@ Laplacian basis.  The approximation results can then be used for tasks like
 change point detection, k-sample testing, and so on.  The primary reference is
 Mukhopadhyay, S. and Wang, K. (2018, Technical Report).")
     (license license:gpl2)))
+
+(define-public r-lpdynr
+  (package
+    (name "r-lpdynr")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LPDynR" version))
+       (sha256
+        (base32 "1p74wwcs1h6sy9x8naag76xw5ichwwd9103f3smp31pckrzqbb3x"))))
+    (properties `((upstream-name . "LPDynR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-virtualspecies r-terra r-magrittr r-dplyr
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/xavi-rp/LPDynR")
+    (synopsis "Land Productivity Dynamics Indicator")
+    (description
+     "It uses phenological and productivity-related variables derived from time series
+of vegetation indexes, such as the Normalized Difference Vegetation Index, to
+assess ecosystem dynamics and change, which eventually might drive to land
+degradation.  The final result of the Land Productivity Dynamics indicator is a
+categorical map with 5 classes of land productivity dynamics, ranging from
+declining to increasing productivity.  See
+www.sciencedirect.com/science/article/pii/S1470160X21010517/ for a description
+of the methods used in the package to calculate the indicator.")
+    (license license:gpl3)))
 
 (define-public r-lpdensity
   (package
@@ -5137,13 +5165,13 @@ log-concave.  For further information see Duembgen, Rufibach and Schuhmacher
 (define-public r-logconcdead
   (package
     (name "r-logconcdead")
-    (version "1.6-9")
+    (version "1.6-10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LogConcDEAD" version))
        (sha256
-        (base32 "0m744byjlf5wrpg5pzi4229h3gdzv88bxfr60mgpg9qy4l6r1p2p"))))
+        (base32 "0vm89bdaldgcpb1x14jg64p9l54sn38q1msa0zbw7fmwb8ssf59g"))))
     (properties `((upstream-name . "LogConcDEAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-mclust r-mass))
@@ -5906,13 +5934,13 @@ in ElÃ­as, A., JimÃ©nez, R. and Yukich, J. (2020) <@code{arXiv:2007.16059>}.
 (define-public r-localcop
   (package
     (name "r-localcop")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LocalCop" version))
        (sha256
-        (base32 "0cjp2ws87ys3hf18i9hha5rs2c1k8jfya7vqkp1lygmzccvan1j4"))))
+        (base32 "0kxm4jhfyd2hbh94pzi8xaq3w7l8lb6c6bpcipdc1p0m5z93lh9h"))))
     (properties `((upstream-name . "LocalCop")))
     (build-system r-build-system)
     (propagated-inputs (list r-vinecopula r-tmb r-rcppeigen))
@@ -11972,13 +12000,13 @@ state.  Data comes from the LODES FTP server
 (define-public r-legocolors
   (package
     (name "r-legocolors")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "legocolors" version))
        (sha256
-        (base32 "0ds9c2x0x590yk7mrjm4hh7k72p51slssg7jlprd71mw6hry91ma"))))
+        (base32 "12ak1dfssqdzn0j9ag35kl26qqvzd84b78s640gxsn057viw1q1f"))))
     (properties `((upstream-name . "legocolors")))
     (build-system r-build-system)
     (home-page "https://github.com/leonawicz/legocolors")
@@ -14227,13 +14255,13 @@ machines.")
 (define-public r-lcars
   (package
     (name "r-lcars")
-    (version "0.3.8")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lcars" version))
        (sha256
-        (base32 "0c68f9l69brdjpiabpjwpfjll7hmgfn3mi6zrjpgzc8jvvlfxi44"))))
+        (base32 "1v1fdnni4smkmsvsf09k96hf2503djlkyrglb5dc6yz66dsdg2bj"))))
     (properties `((upstream-name . "lcars")))
     (build-system r-build-system)
     (propagated-inputs (list r-trekcolors r-shiny r-ggplot2))
@@ -14967,6 +14995,47 @@ the @code{DiagrammeR} package. @code{DiagrammeR} provides nice path diagrams via
 Graphviz', and these functions make it easy to generate these diagrams from a
 lavaan path model without having to write the DOT language graph specification.")
     (license license:gpl2+)))
+
+(define-public r-lavaangui
+  (package
+    (name "r-lavaangui")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lavaangui" version))
+       (sha256
+        (base32 "075zly1my5jhs4n7ylqx0lm4mky3z6ylirsd7smih3nkxn2y854m"))))
+    (properties `((upstream-name . "lavaangui")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny
+                             r-readxl
+                             r-readr
+                             r-qgraph
+                             r-promises
+                             r-plyr
+                             r-lavaan
+                             r-jsonlite
+                             r-igraph
+                             r-htmlwidgets
+                             r-haven
+                             r-future
+                             r-dt
+                             r-digest
+                             r-colorspace
+                             r-base64enc))
+    (home-page "https://solo-fsw.shinyapps.io/lavaangui/")
+    (synopsis
+     "Graphical User Interface with Integrated 'Diagrammer' for 'Lavaan'")
+    (description
+     "This package provides a graphical user interface with an integrated diagrammer
+for latent variables from the lavaan package.  It offers two core functions:
+first, lavaangui() launches a web application that allows users to specify
+models by drawing path diagrams, fitting them, assessing model fit, and more;
+second, plot_interactive() creates interactive path diagrams from models
+specified in lavaan'.  Karch (2024) <doi: 10.31234/osf.io/f4ary> contains a
+tutorial.")
+    (license license:gpl3+)))
 
 (define-public r-lavaanextra
   (package
@@ -15729,13 +15798,13 @@ visualization tools.")
 (define-public r-lares
   (package
     (name "r-lares")
-    (version "5.2.8")
+    (version "5.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lares" version))
        (sha256
-        (base32 "1859nwb7ymdamk7akwrmq011var821cww0bg6k89d5sjhs529jd7"))))
+        (base32 "01f84919xak8fc5y0zxispkg6m8577cwjffz03yb0ary3r766bpa"))))
     (properties `((upstream-name . "lares")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15758,9 +15827,9 @@ visualization tools.")
     (description
      "Auxiliary package for better/faster analytics, visualization, data mining, and
 machine learning tasks.  With a wide variety of family functions, like Machine
-Learning, Data Wrangling, Exploratory, API, and Scrapper, it helps the analyst
-or data scientist to get quick and robust results, without the need of
-repetitive coding or extensive R programming skills.")
+Learning, Data Wrangling, MMM, Exploratory, API, and Scrapper, it helps the
+analyst or data scientist to get quick and robust results, without the need of
+repetitive coding or advanced R programming skills.")
     (license license:agpl3)))
 
 (define-public r-lar

@@ -6383,6 +6383,33 @@ Details can be found in Box et al. (2015, ISBN: 978-1-118-67502-1) and
 Hochreiter and Schmidhuber (1997) <doi:10.1162/neco.1997.9.8.1735>.")
     (license license:gpl3)))
 
+(define-public r-arlclustering
+  (package
+    (name "r-arlclustering")
+    (version "1.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arlclustering" version))
+       (sha256
+        (base32 "0w36hkcdq0wv9yvkxd27jq4546j9x76i30vapa0vgps9k7lxn7p9"))))
+    (properties `((upstream-name . "arlclustering")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-igraph r-arules))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/assuom44/arlclustering")
+    (synopsis
+     "Exploring Social Network Structures Through Friendship-Driven Community Detection with Association Rules Mining")
+    (description
+     "This package implements an innovative approach to community detection in social
+networks using Association Rules Learning.  The package provides tools for
+processing graph and rules objects, generating association rules, and detecting
+communities based on node interactions.  Designed to facilitate advanced
+research in Social Network Analysis, this package leverages association rules
+learning for enhanced community detection.  This approach is described in
+El-Moussaoui et al. (2021) <doi:10.1007/978-3-030-66840-2_3>.")
+    (license license:gpl3)))
+
 (define-public r-arkhe
   (package
     (name "r-arkhe")
@@ -7397,13 +7424,13 @@ which can be then easily used for further analysis.")
 (define-public r-archive
   (package
     (name "r-archive")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "archive" version))
        (sha256
-        (base32 "1ia4i59iadfvbndynk6pysnrs575s1b58gf1gpbxqra2sf0niskm"))))
+        (base32 "134ydd85saczsanklxwj4pwzgc328xm9fksc3wrpg4zp337rlkkx"))))
     (properties `((upstream-name . "archive")))
     (build-system r-build-system)
     (inputs (list zlib openssl libarchive libarchive libarchive))
@@ -8142,6 +8169,33 @@ Oller, R., Martori J.C. (2017) <doi:10.2436/20.8080.02.55>.  The data structures
 are created following the guidelines for grid datasets from the European Forum
 for Geography and Statistics.")
     (license license:expat)))
+
+(define-public r-aquaanalytix
+  (package
+    (name "r-aquaanalytix")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AquaAnalytix" version))
+       (sha256
+        (base32 "0basx8alcbzxwgizkgnwaii4g8j6jzbybnf9fq4dz573kjqb9285"))))
+    (properties `((upstream-name . "AquaAnalytix")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=AquaAnalytix")
+    (synopsis "Water Quality Analysis")
+    (description
+     "This package provides a varied array of mathematical derivations from various
+titrimetric and colorimetric methods for analyzing water quality parameters were
+condensed and integrated for the better physicochemical analysis.  It is
+indispensable for managing any aquatic ecosystem, including aquaculture
+facilities.  By substituting titrant and spectrophotometric absorbance readings,
+accurate determination of the concentrations of critical parameters such as
+Dissolved Oxygen, Free Carbon Dioxide, Total Alkalinity, Water Hardness,
+Hydrogen Sulfide, Total Ammonia Nitrogen, Nitrite, Nitrate, Chlorinity,
+Salinity, Inorganic Phosphate, and Transparency can be facilitated
+APHA(2017,ISBN:9780875532875).")
+    (license license:gpl3)))
 
 (define-public r-aqp
   (package
@@ -10279,13 +10333,13 @@ online: <https://www.who.int/tools/child-growth-standards>.")
 (define-public r-antaresread
   (package
     (name "r-antaresread")
-    (version "2.7.1")
+    (version "2.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "antaresRead" version))
        (sha256
-        (base32 "1zcxhc1yanp9a91fxnhancanbxcg6bz22yngf80fsmrynq14yvq3"))))
+        (base32 "1ihz7hdfq640sbdmq55mrsp070mwkpa97bn2l2bkn1qia1bxa2rn"))))
     (properties `((upstream-name . "antaresRead")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -16132,25 +16186,17 @@ estimating the additive hazards model.  For details see Chengyuan Lu(2021)
 (define-public r-ahmbook
   (package
     (name "r-ahmbook")
-    (version "0.2.9")
+    (version "0.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AHMbook" version))
        (sha256
-        (base32 "06qc5fkvrjmalr4sxqn0y75fk0pcy68qx41w2d2sz0xjp4j9v9nd"))))
+        (base32 "02hfwd9jyml2z05nkjvs1vwpdcbj3jqscgvpfc1hhrv4819vsf2d"))))
     (properties `((upstream-name . "AHMbook")))
     (build-system r-build-system)
-    (propagated-inputs (list r-unmarked
-                             r-spdep
-                             r-sp
-                             r-raster
-                             r-plotrix
-                             r-mvtnorm
-                             r-fields
-                             r-coda))
-    (home-page
-     "https://sites.google.com/site/appliedhierarchicalmodeling/home")
+    (propagated-inputs (list r-unmarked r-mvtnorm))
+    (home-page "https://www.mbr-pwrc.usgs.gov/pubanalysis/keryroylebook/")
     (synopsis
      "Functions and Data for the Book 'Applied Hierarchical Modeling in Ecology' Vols 1 and 2")
     (description

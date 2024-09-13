@@ -3832,13 +3832,13 @@ Vilmarest (2022) <https://theses.hal.science/tel-03716104/>.")
 (define-public r-vigor
   (package
     (name "r-vigor")
-    (version "1.1.4")
+    (version "1.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VIGoR" version))
        (sha256
-        (base32 "02s2xpx37aszny89pp22p5rkdf35xsbzn67rgsdxp531rswhzvcw"))))
+        (base32 "13xxzlpznxvvvflqrhyh5m8v6x3q5ifrwx8dmm9hl0h8sr6i0lvp"))))
     (properties `((upstream-name . "VIGoR")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=VIGoR")
@@ -4306,13 +4306,13 @@ ENc.GC3plot() and PR2.plot().")
 (define-public r-vglmer
   (package
     (name "r-vglmer")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vglmer" version))
        (sha256
-        (base32 "0wfl1n6xp6qiv34d4p5qy3mwzrvf3n324hrlksdpa68j5xfw9w0f"))))
+        (base32 "0rq8kq2if70a1yg752mkkn11ng8wyfl4mw02h6v2j4kff98fzxij"))))
     (properties `((upstream-name . "vglmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
@@ -4332,7 +4332,8 @@ it can estimate logistic, linear, and negative binomial models.  It can
 accommodate models with an arbitrary number of random effects and requires no
 integration to estimate.  It also provides the ability to improve the quality of
 the approximation using marginal augmentation.  Goplerud (2022)
-<doi:10.1214/21-BA1266> provides details on the variational algorithms.")
+<doi:10.1214/21-BA1266> and Goplerud (2024) <doi:10.1017/S0003055423000035>
+provide details on the variational algorithms.")
     (license license:gpl2+)))
 
 (define-public r-vgamextra
@@ -5658,13 +5659,13 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
 (define-public r-vdiver
   (package
     (name "r-vdiver")
-    (version "1.2.1")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vDiveR" version))
        (sha256
-        (base32 "1rxygl5micg07p7la9wyvp4dmfwkjdbhqp660mrq6a3drr4x5bj2"))))
+        (base32 "142zzjxzkjal1kq6id36ly93imyl99whpdlagv1zcbjlb4gsz68f"))))
     (properties `((upstream-name . "vDiveR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5672,7 +5673,6 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
                              r-scales
                              r-rlang
                              r-rentrez
-                             r-readr
                              r-plyr
                              r-maps
                              r-magrittr
@@ -5681,7 +5681,6 @@ publication DN Olivieri (2014) <doi:10.1007/s00251-014-0784-3>.")
                              r-ggpubr
                              r-ggplot2
                              r-gghalves
-                             r-dt
                              r-dplyr))
     (home-page "https://cran.r-project.org/package=vDiveR")
     (synopsis "Visualization of Viral Protein Sequence Diversity Dynamics")

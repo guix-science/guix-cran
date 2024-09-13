@@ -6991,13 +6991,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "1mb23j6yhlakzmz2ph6w3wbasjl5wv2l3i8qjg8knkm2h1yg3kgc"))))
+        (base32 "0aifdrnard3q4g9njb3dywq2vbzy88s76fh5bmhq1ch7n1rcp4b3"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -7016,7 +7016,7 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
                              r-ggh4x
                              r-ggdist
                              r-ggbeeswarm))
-    (home-page "https://cran.r-project.org/package=esci")
+    (home-page "https://github.com/rcalinjageman/esci/")
     (synopsis "Estimation Statistics with Confidence Intervals")
     (description
      "This package provides a collection of functions and jamovi module for the
@@ -8612,13 +8612,13 @@ from climate changes using data from Global Climate Models ('GCM').")
 (define-public r-epubr
   (package
     (name "r-epubr")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epubr" version))
        (sha256
-        (base32 "0cv1zkv27ab4h2lq8s4lgizvdrw0238lr042aw8rns27zbqz7is1"))))
+        (base32 "13szfghy4zdbz4wakrnkr5vgliy4qdnvbad41ypdahdwhbjdh2d9"))))
     (properties `((upstream-name . "epubr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xslt
@@ -8628,8 +8628,7 @@ from climate changes using data from Global Climate Models ('GCM').")
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page
-     "https://docs.ropensci.org/epubr/https://github.com/ropensci/epubr")
+    (home-page "https://docs.ropensci.org/epubr/")
     (synopsis "Read EPUB File Metadata and Text")
     (description
      "This package provides functions supporting the reading and parsing of internal
@@ -10799,13 +10798,13 @@ to extract colors from all types of figures and pdf files.")
 (define-public r-eodhdr2
   (package
     (name "r-eodhdr2")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eodhdR2" version))
        (sha256
-        (base32 "1ynshnjawbfs54l3h36kixb2aiq6z095f4wf251fxc1lh3v130s7"))))
+        (base32 "1r1fxgqh9sv6gkcggjjrbby2jjz2bv5pm9kq46rkq1arfsmagxr7"))))
     (properties `((upstream-name . "eodhdR2")))
     (build-system r-build-system)
     (home-page
@@ -19025,13 +19024,13 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
 (define-public r-ecorest
   (package
     (name "r-ecorest")
-    (version "1.0.0")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecorest" version))
        (sha256
-        (base32 "13x95z99yqld1fvfgzbm6ahrnvfvcqwlb23yjr187yg83iynh79v"))))
+        (base32 "0s523zj537bdz47x2lcfd72cqdzz0gwbi6vg79ckz0sjzaiy51kk"))))
     (properties `((upstream-name . "ecorest")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis))
@@ -19040,14 +19039,14 @@ System (ECOS) of the Bank of Korea <https://ecos.bok.or.kr/api/#/>.")
     (description
      "Three sets of data and functions for informing ecosystem restoration decisions,
 particularly in the context of the U.S. Army Corps of Engineers.  First, model
-parameters are compiled as a data set and associated metadata for over 500
+parameters are compiled as a data set and associated metadata for over 300
 habitat suitability models developed by the U.S. Fish and Wildlife Service
-(USFWS 1980) <https://www.fws.gov/policy/ESMindex.html>.  Second, functions for
-conducting habitat suitability analyses both for the models described above as
-well as generic user-specified model parameterizations.  Third, a suite of
+(USFWS 1980, <https://www.fws.gov/policy-library/870fw1>).  Second, functions
+for conducting habitat suitability analyses both for the models described above
+as well as generic user-specified model parameterizations.  Third, a suite of
 decision support tools for conducting cost-effectiveness and incremental cost
-analyses (Robinson et al.  1995)
-<https://www.iwr.usace.army.mil/Portals/70/docs/iwrreports/95-R-1.pdf>.")
+analyses (Robinson et al.  1995, IWR Report 95-R-1, U.S. Army Corps of
+Engineers).")
     (license license:cc0)))
 
 (define-public r-ecoregime
@@ -22250,6 +22249,34 @@ These functions can be helpful to reduce internal codes everywhere in package
 development.")
     (license license:expat)))
 
+(define-public r-easy-glmnet
+  (package
+    (name "r-easy-glmnet")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "easy.glmnet" version))
+       (sha256
+        (base32 "0yxfydyi6q5qx157gf1sdambfbq33zvldsydsjbkzn5fqv03g7h5"))))
+    (properties `((upstream-name . "easy.glmnet")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-glmnet r-foreach r-doparallel))
+    (home-page "https://cran.r-project.org/package=easy.glmnet")
+    (synopsis "Functions to Simplify the Use of 'glmnet' for Machine Learning")
+    (description
+     "This package provides several functions to simplify using the glmnet package:
+converting data frames into matrices ready for glmnet'; b) imputing missing
+variables multiple times; c) fitting and applying prediction models
+straightforwardly; d) assigning observations to folds in a balanced way; e)
+cross-validate the models; f) selecting the most representative model across
+imputations and folds; and g) getting the relevance of the model regressors; as
+described in several publications: Solanes et al. (2022)
+<doi:10.1038/s41537-022-00309-w>, Palau et al. (2023)
+<doi:10.1016/j.rpsm.2023.01.001>, Sobregrau et al. (2024)
+<doi:10.1016/j.jpsychores.2024.111656>.")
+    (license license:gpl3)))
+
 (define-public r-ease
   (package
     (name "r-ease")
@@ -22436,13 +22463,13 @@ size.  These might aid in deciding what design to use for the early phase trial.
 (define-public r-eanalytics
   (package
     (name "r-eanalytics")
-    (version "0.3")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eAnalytics" version))
        (sha256
-        (base32 "0kh2mnn4piy30ya0z9hrk10x14pz4li5l0gs8c2by9vkq54cq53i"))))
+        (base32 "1hphh2b8il1gj5kyz7xgq195gldq3xpkslaxz1rcc9kgqw1dyd5x"))))
     (properties `((upstream-name . "eAnalytics")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -22454,7 +22481,7 @@ size.  These might aid in deciding what design to use for the early phase trial.
                              r-energyr
                              r-dt
                              r-dplyr))
-    (home-page "https://github.com/paulgovan/eanalytics")
+    (home-page "http://paulgovan.github.io/eAnalytics/")
     (synopsis "Dynamic Web-Based Analytics for the Energy Industry")
     (description
      "This package provides a Shiny web application for energy industry analytics.

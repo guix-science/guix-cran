@@ -6683,17 +6683,17 @@ react and interact as well as generate code to create reproducible analyses.")
 (define-public r-formatters
   (package
     (name "r-formatters")
-    (version "0.5.8")
+    (version "0.5.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formatters" version))
        (sha256
-        (base32 "0skfmizlr028j2cy2f03vgs1gdsvlk5r67cj1pmm9zky5nymdh1k"))))
+        (base32 "0j17k51gnydp9x71xlfsbvl412y2dyg8kqax9dwl103pp0lzpw2w"))))
     (properties `((upstream-name . "formatters")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lifecycle r-htmltools r-checkmate))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-stringi r-lifecycle r-htmltools r-checkmate))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/formatters/")
     (synopsis "ASCII Formatting for Values and Tables")
     (description
@@ -8342,6 +8342,32 @@ data analysis, compositional data analysis, diversity measurement, etc.).")
     (home-page "https://github.com/deohs/folders")
     (synopsis "Standardized Folder Names")
     (description "Supports the use of standardized folder names.")
+    (license license:expat)))
+
+(define-public r-folda
+  (package
+    (name "r-folda")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "folda" version))
+       (sha256
+        (base32 "1zk0zzcyrxik2c3hgabaifa4s3kl2rx7v3w9mlg3nlgw4dqjhpmf"))))
+    (properties `((upstream-name . "folda")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Moran79/folda")
+    (synopsis "Forward Stepwise Discriminant Analysis with Pillai's Trace")
+    (description
+     "This package provides a novel forward stepwise discriminant analysis framework
+that integrates Pillai's trace with Uncorrelated Linear Discriminant Analysis
+(ULDA), providing an improvement over traditional stepwise LDA methods that rely
+on Wilks Lambda.  A stand-alone ULDA implementation is also provided, offering a
+more general solution than the one available in the MASS package.  It
+automatically handles missing values and provides visualization tools.  For more
+details, see Wang (2024) <doi:10.48550/@code{arXiv.2409.03136>}.")
     (license license:expat)))
 
 (define-public r-foghorn
@@ -16338,13 +16364,13 @@ from the actual target variable.  S. Chatterjee, A. S. Hadi (2006)
 (define-public r-featureextraction
   (package
     (name "r-featureextraction")
-    (version "3.7.0")
+    (version "3.7.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FeatureExtraction" version))
        (sha256
-        (base32 "0hiflcxh39v6jlnbd9gq59q4v3qkvkifmns7ihjidi9rdyplk72n"))))
+        (base32 "1qv9qqhwgjgcbla91ma2k9q9n1hzyjg8gy8qvf39ss1fq6y0ynv3"))))
     (properties `((upstream-name . "FeatureExtraction")))
     (build-system r-build-system)
     (propagated-inputs (list r-sqlrender
@@ -16770,6 +16796,26 @@ brings a certain loss of flexibility, but also a gain of simplicity.  The
 package name came from the French \"Fouille de DonnÃ©es en Master 2 Informatique
 DÃ©cisionnelle\".")
     (license license:gpl3)))
+
+(define-public r-fdicdata
+  (package
+    (name "r-fdicdata")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fdicdata" version))
+       (sha256
+        (base32 "116i6r65n3kqp0mpy6y1krcap03q965hp1vpc765iphflpv9ysf6"))))
+    (properties `((upstream-name . "fdicdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml r-httr r-dplyr))
+    (home-page "https://github.com/visbanking/fdicdata")
+    (synopsis "Accessing FDIC Bank Data")
+    (description
+     "Retrieves financial data from Federal Deposit Insurance Corporation
+(FDIC)-insured institutions and provides access to the FDIC data taxonomy.")
+    (license license:expat)))
 
 (define-public r-fdesigns
   (package
@@ -19058,6 +19104,34 @@ Multiple image formats are supported including raster, native rasters, and
 integer and numeric arrays at color depths of 1, 2, 3 or 4.  16-bit images are
 also supported.  This implementation uses the libspng C library which is
 available from <https://github.com/randy408/libspng/>.")
+    (license license:expat)))
+
+(define-public r-fastplyr
+  (package
+    (name "r-fastplyr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fastplyr" version))
+       (sha256
+        (base32 "0x1fgswximj83kbkaq5iy2hzdqn4sz642igg4ylgkfqybnqyphqk"))))
+    (properties `((upstream-name . "fastplyr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tidyselect
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-dplyr
+                             r-cpp11
+                             r-collapse
+                             r-cheapr))
+    (home-page "https://cran.r-project.org/package=fastplyr")
+    (synopsis "Fast Alternatives to 'tidyverse' Functions")
+    (description
+     "This package provides a full set of fast data manipulation tools with a tidy
+front-end and a fast back-end using collapse and cheapr'.")
     (license license:expat)))
 
 (define-public r-fastpcs

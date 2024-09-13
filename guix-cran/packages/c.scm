@@ -3739,13 +3739,13 @@ slice.")
 (define-public r-csranks
   (package
     (name "r-csranks")
-    (version "1.2.2")
+    (version "1.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "csranks" version))
        (sha256
-        (base32 "0rnwgi7446cz54lsgpnl6j6qdd4hfcwhcvvbks2hxyq5a0hr3gh3"))))
+        (base32 "0banz6a5w083jm072lzygrha6l7s419qp9g79ab3fr7k0xvzbm72"))))
     (properties `((upstream-name . "csranks")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-mass r-lifecycle r-ggplot2 r-cli))
@@ -3758,7 +3758,7 @@ consistently in linear regression with ranked variables.  Construct confidence
 sets of various kinds for positions of populations in a ranking based on values
 of a certain feature and their estimation errors.  Theory based on Mogstad,
 Romano, Shaikh, and Wilhelm (2023)<doi:10.1093/restud/rdad006> and Chetverikov
-and Wilhelm (2023) <@code{arXiv:2310.15512>}.")
+and Wilhelm (2023) <doi:10.48550/@code{arXiv.2310.15512>}.")
     (license license:gpl3+)))
 
 (define-public r-csquares
@@ -12300,6 +12300,26 @@ Gentle Introduction for Computational Linguists and Similar Creatures\"
 ('SIGIL').")
     (license license:gpl3)))
 
+(define-public r-corpmetrics
+  (package
+    (name "r-corpmetrics")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corpmetrics" version))
+       (sha256
+        (base32 "0v4gwd0szzyl7wqcncy5259g05fcagk2zdc6mxrqvdqlf921zn67"))))
+    (properties `((upstream-name . "corpmetrics")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=corpmetrics")
+    (synopsis
+     "Tools for Valuation, Financial Metrics and Modeling in Corporate Finance")
+    (description
+     "Balance sheet and income statement metrics, investment analysis methods,
+valuation methods, loan amortization schedules, and Capital Asset Pricing Model.")
+    (license license:gpl2+)))
+
 (define-public r-coronavirus
   (package
     (name "r-coronavirus")
@@ -12931,6 +12951,28 @@ http://arxiv.org/abs/1508.01939 for more details.")
      "Perform a correlational class analysis of the data, resulting in a partition of
 the data into separate modules.")
     (license license:gpl2)))
+
+(define-public r-corbouli
+  (package
+    (name "r-corbouli")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "corbouli" version))
+       (sha256
+        (base32 "02q0akkscd0xjg6wplawaar8k444n1bv8ajy8kibv10yw3b56r2d"))))
+    (properties `((upstream-name . "corbouli")))
+    (build-system r-build-system)
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/corbouli")
+    (synopsis "Corbae-Ouliaris Frequency Domain Filtering")
+    (description
+     "Corbae-Ouliaris frequency domain filtering.  According to Corbae and Ouliaris
+(2006) <doi:10.1017/CBO9781139164863.008>, this is a solution for taking into
+account characteristics of the time series, like business cycles etc.  when
+filtering, both stationary and non-stationary time series.")
+    (license license:gpl3)))
 
 (define-public r-corbin
   (package
@@ -20011,13 +20053,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.1.3")
+    (version "1.1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0basdf31595vvb6vj5v53jbpwg0zixzczvd6jdmvi9758m65fx6n"))))
+        (base32 "0snrw5vk2hbdqvrrykrj9nd58jpbnjy48yxakwymapjkmvii9lry"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (inputs (list))
@@ -29771,6 +29813,27 @@ Bayesian hierarchical framework as described by Culpepper and Balamuta (2015)
 <doi:10.1007/s11336-015-9484-7>.  In addition, the package contains the datasets
 used within the analysis of the paper.")
     (license license:gpl2+)))
+
+(define-public r-cirls
+  (package
+    (name "r-cirls")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cirls" version))
+       (sha256
+        (base32 "0aw5cvn7841ayr2sb4qafjz2jy03i9k8nvpcls3zivjymynn2cx4"))))
+    (properties `((upstream-name . "cirls")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal r-quadprog r-osqp r-coneproj))
+    (home-page "https://github.com/PierreMasselot/cirls")
+    (synopsis "Constrained Iteratively Reweighted Least Squares")
+    (description
+     "Routines to fit generalized linear models with constrained coefficients, along
+with inference on the coefficients.  Designed to be used in conjunction with the
+base glm() function.")
+    (license license:gpl3+)))
 
 (define-public r-circumplex
   (package

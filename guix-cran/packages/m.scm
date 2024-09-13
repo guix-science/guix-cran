@@ -9314,6 +9314,40 @@ parallel using mclapply() or future_lapply()
 <https://cran.r-project.org/package=future.apply>.")
     (license license:gpl2+)))
 
+(define-public r-mrg
+  (package
+    (name "r-mrg")
+    (version "0.2.14")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MRG" version))
+       (sha256
+        (base32 "07db15gpxpyq5ai5gj292kywissw42czm2l2wdnr6xczw6wjpmq8"))))
+    (properties `((upstream-name . "MRG")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vardpoor
+                             r-tidyselect
+                             r-tidyr
+                             r-terra
+                             r-stars
+                             r-sjmisc
+                             r-sf
+                             r-rlang
+                             r-purrr
+                             r-plyr
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MRG")
+    (synopsis "Create Non-Confidential Multi-Resolution Grids")
+    (description
+     "Functionality for creating gridded data, respecting the confidentiality rules,
+such as a minimum number of units and dominance by one or more units in the grid
+cell.  The functions also include the possibility for contextual suppression of
+data.")
+    (license license:gpl3+)))
+
 (define-public r-mrfse
   (package
     (name "r-mrfse")
@@ -13041,13 +13075,13 @@ submit tips directly to the competition from R.")
 (define-public r-monan
   (package
     (name "r-monan")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MoNAn" version))
        (sha256
-        (base32 "1w33dsvwl359n9a97cvcp8c6j3js0d8q4j0w2daqllk9swnbw8i8"))))
+        (base32 "1swa9wmcnlf63sjv92vp0v24di809syp48d79pzanvwwhiflwh27"))))
     (properties `((upstream-name . "MoNAn")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall))
@@ -14054,6 +14088,42 @@ on the multivariate normal model or uses nearest neighbour donors.  The
 algorithms take sample designs, in particular weighting, into account.  The
 methods are described in Bill and Hulliger (2016) <doi:10.17713/ajs.v45i1.86>.")
     (license license:expat)))
+
+(define-public r-modgo
+  (package
+    (name "r-modgo")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "modgo" version))
+       (sha256
+        (base32 "03c48akfdmnr47i88pzix7kz11nyrmppb94grjvy98yp4c1phnl9"))))
+    (properties `((upstream-name . "modgo")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wesanderson
+                             r-survival
+                             r-psych
+                             r-patchwork
+                             r-matrix
+                             r-mass
+                             r-gridextra
+                             r-gp
+                             r-gldex
+                             r-ggplot2
+                             r-ggcorrplot))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=modgo")
+    (synopsis "Mock Data Generation")
+    (description
+     "Generation of synthetic data from a real dataset using the combination of rank
+normal inverse transformation with the calculation of correlation matrix
+<doi:10.1055/a-2048-7692>.  Completely artificial data may be generated through
+the use of Generalized Lambda Distribution and Generalized Poisson Distribution
+<doi:10.1201/9781420038040>.  Quantitative, binary, ordinal categorical, and
+survival data may be simulated.  Functionalities are offered to generate
+synthetic data sets according to user's needs.")
+    (license license:gpl3)))
 
 (define-public r-modgetxl
   (package
@@ -17748,13 +17818,13 @@ composed to form preprocessing pipelines.")
 (define-public r-mlr3torch
   (package
     (name "r-mlr3torch")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3torch" version))
        (sha256
-        (base32 "100fwy1qg14z4wxv8gvq3aib4a59r2hviij9mkdd3vamkbjbf827"))))
+        (base32 "1j1hzpacs79cannsjq4qp6qr8130gp01d6k7sj7v81kv92r5yga7"))))
     (properties `((upstream-name . "mlr3torch")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -17768,7 +17838,7 @@ composed to form preprocessing pipelines.")
                              r-data-table
                              r-checkmate
                              r-backports))
-    (home-page "https://cran.r-project.org/package=mlr3torch")
+    (home-page "https://mlr3torch.mlr-org.com/")
     (synopsis "Deep Learning with 'mlr3'")
     (description
      "Deep Learning library that extends the mlr3 framework by building upon the torch
@@ -17930,13 +18000,13 @@ framework.")
 (define-public r-mlr3resampling
   (package
     (name "r-mlr3resampling")
-    (version "2024.7.7")
+    (version "2024.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3resampling" version))
        (sha256
-        (base32 "114vcxrmkr37yzlc14454phgl7mr49j482pcwa6c700k6d5l00ja"))))
+        (base32 "0mw30yhin2j4r695xn14mnnsyf7mrih96r6vx4dycdpq6lzrprj7"))))
     (properties `((upstream-name . "mlr3resampling")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6
@@ -32368,13 +32438,13 @@ are studied using neutral genetic variation.")
 (define-public r-memery
   (package
     (name "r-memery")
-    (version "0.5.7")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "memery" version))
        (sha256
-        (base32 "1c0gv5853klzq90w4s2bxdribak8jpczmsxvi5ij4kkqq911siz1"))))
+        (base32 "0rz8pcxvfxg4iz1l46jkf95yyfn831zh31x28hmpi8i4hsj0607a"))))
     (properties `((upstream-name . "memery")))
     (build-system r-build-system)
     (propagated-inputs (list r-sysfonts
@@ -42145,23 +42215,23 @@ Huband, et al. (2005) <doi:10.1109/TEVC.2005.861417>.")
 (define-public r-manynet
   (package
     (name "r-manynet")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "manynet" version))
        (sha256
-        (base32 "0xzbcdimx8vjpwqh7zdd9mafi3vr7rlg0xgx91sgfjpd1k22bsq7"))))
+        (base32 "0wm62y7kdp1j39asrgj51qy90yfsqw5qhmcraw6ym0jh07jd8vi7"))))
     (properties `((upstream-name . "manynet")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidygraph
                              r-pillar
                              r-network
-                             r-minmse
                              r-igraph
                              r-ggraph
                              r-ggplot2
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://stocnet.github.io/manynet/")
     (synopsis
      "Many Ways to Make, Modify, Map, Mark, and Measure Myriad Networks")
@@ -42936,13 +43006,13 @@ different file formats of mass spectrometry data into/from MALDIquant objects.")
 (define-public r-maldipickr
   (package
     (name "r-maldipickr")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maldipickr" version))
        (sha256
-        (base32 "1k534c8x3ygf44r7q1nybd8b6gl3pw0h0r6ddwc35jxq1vmxx6qi"))))
+        (base32 "1324dgmkigdynkph52afwyn5iycw37ndl6jfsqjgarm9hyr72dy2"))))
     (properties `((upstream-name . "maldipickr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect

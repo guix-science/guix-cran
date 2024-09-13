@@ -11644,13 +11644,13 @@ adverse events and REDCap study information.")
 (define-public r-biostats101
   (package
     (name "r-biostats101")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biostats101" version))
        (sha256
-        (base32 "1s8hhj9g8590zz4a07mqsaflhyxfqf0v5yi9vii27d1li23igjvq"))))
+        (base32 "035qk9n4drdhv7g37gq26z5idfxkg8h8b3shagjcsxyar5s5hcfh"))))
     (properties `((upstream-name . "biostats101")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-ggplot2 r-dplyr))
@@ -17139,18 +17139,19 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betareg
   (package
     (name "r-betareg")
-    (version "3.2-0")
+    (version "3.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betareg" version))
        (sha256
-        (base32 "1r5k0y6lyrygbwzjf5y882rdwf1dr17cppj1vy8fiyysn6zrxd0h"))))
+        (base32 "1izp7nirsziwx8803ckbgwyj4r1vf4ixgx5nlin7d5pkjy13c9mv"))))
     (properties `((upstream-name . "betareg")))
     (build-system r-build-system)
     (propagated-inputs (list r-sandwich r-modeltools r-lmtest r-formula
                              r-flexmix))
-    (home-page "https://betareg.R-Forge.R-project.org/")
+    (native-inputs (list r-quarto))
+    (home-page "https://topmodels.R-Forge.R-project.org/betareg/")
     (synopsis "Beta Regression")
     (description
      "Beta regression for modeling beta-distributed dependent variables on the open
@@ -26935,13 +26936,13 @@ Gelman's R.")
 (define-public r-bammtools
   (package
     (name "r-bammtools")
-    (version "2.1.11")
+    (version "2.1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAMMtools" version))
        (sha256
-        (base32 "0ymb1vwrzwg7gs4n3zjikg10ajk75r18j5rlgs25n4ab4fp6sibp"))))
+        (base32 "0hijnx2rlfhwxm2jvyam6nzfcxyff9fq69nz7cnnw2wald8y6s7y"))))
     (properties `((upstream-name . "BAMMtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-gplots r-ape))

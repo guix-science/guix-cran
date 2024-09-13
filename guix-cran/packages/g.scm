@@ -2310,16 +2310,17 @@ regularization.  Journal of Machine Learning Research, to appear, 2017\".")
 (define-public r-gsodr
   (package
     (name "r-gsodr")
-    (version "4.1.1")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GSODR" version))
        (sha256
-        (base32 "1q4jpv38x4z7bdqy49iaxgsfvy0iiicfvc4w8mpj0qjm9cj81gym"))))
+        (base32 "1kaz9pwrbzjwa5q0k6xhzm2x0hfldz9flckx6kd1i5ddqmlhfh92"))))
     (properties `((upstream-name . "GSODR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-r-utils r-data-table r-curl r-countrycode))
+    (propagated-inputs (list r-withr r-r-utils r-data-table r-curl
+                             r-countrycode))
     (native-inputs (list r-knitr))
     (home-page "https://docs.ropensci.org/GSODR/")
     (synopsis "Global Surface Summary of the Day ('GSOD') Weather Data Client")
@@ -2507,13 +2508,13 @@ National Football League players.")
 (define-public r-gsignal
   (package
     (name "r-gsignal")
-    (version "0.3-6")
+    (version "0.3-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gsignal" version))
        (sha256
-        (base32 "13cn82lh0jknhqbql6zcp70ls1f7lq8407lb47qig3ip01a01zxp"))))
+        (base32 "1chkzv3bx1nas1yc6l5i3hgc8m40n1lm1y3c8577l8sqi89hnhs3"))))
     (properties `((upstream-name . "gsignal")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-pracma))
@@ -23976,6 +23977,36 @@ from discrete random variables with prescribed correlation matrix and marginal
 distributions.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-genopop
+  (package
+    (name "r-genopop")
+    (version "0.9.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenoPop" version))
+       (sha256
+        (base32 "1vcd17x7bj0br31s8khiv6np2xmr5c1382lmlbyydfhj7407qzw4"))))
+    (properties `((upstream-name . "GenoPop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsamtools
+                             r-missforest
+                             r-iranges
+                             r-genomicranges
+                             r-foreach
+                             r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GenoPop")
+    (synopsis
+     "Genotype Imputation and Population Genomics Efficiently from Variant Call Formatted (VCF) Files")
+    (description
+     "This package provides tools for efficient processing of large, whole genome
+genotype data sets in variant call format (VCF).  It includes several functions
+to calculate commonly used population genomic metrics and a method for reference
+panel free genotype imputation, which is described in the preprint Gurke & Mayer
+(2024) <doi:10.22541/au.172515591.10119928/v1>.")
+    (license license:gpl3+)))
+
 (define-public r-genoplotr
   (package
     (name "r-genoplotr")
@@ -24017,6 +24048,43 @@ files that can be sent as such to journals.")
      "This package provides a collection of I/O tools for handling the most commonly
 used genomic datafiles, like fasta/-q, bed, gff, gtf, ped/map and vcf.")
     (license license:gpl2+)))
+
+(define-public r-genomicsig
+  (package
+    (name "r-genomicsig")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GenomicSig" version))
+       (sha256
+        (base32 "0l4sl2f90c4vgz24fn805jcqk1llzhqlf5qj4dpdls3zfdmcd9qq"))))
+    (properties `((upstream-name . "GenomicSig")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seqinr r-kaos r-entropy r-biostrings))
+    (home-page "https://cran.r-project.org/package=GenomicSig")
+    (synopsis "Computation of Genomic Signatures")
+    (description
+     "Genomic signatures represent unique features within a species DNA, enabling the
+differentiation of species and offering broad applications across various
+fields.  This package provides essential tools for calculating these specific
+signatures, streamlining the process for researchers and offering a
+comprehensive and time-saving solution for genomic analysis.The amino acid
+contents are identified based on the work published by Sandberg et al. (2003)
+<doi:10.1016/s0378-1119(03)00581-x> and Xiao et al. (2015)
+<doi:10.1093/bioinformatics/btv042>.  The Average Mutual Information Profiles
+(AMIP) values are calculated based on the work of Bauer et al. (2008)
+<doi:10.1186/1471-2105-9-48>.  The Chaos Game Representation (CGR) plot
+visualization was done based on the work of Deschavanne et al. (1999)
+<doi:10.1093/oxfordjournals.molbev.a026048> and Jeffrey et al. (1990)
+<doi:10.1093/nar/18.8.2163>.  The GC content is calculated based on the work
+published by Nakabachi et al. (2006) <doi:10.1126/science.1134196> and Barbu et
+al. (1956) <https://pubmed.ncbi.nlm.nih.gov/13363015>.  The Oligonucleotide
+Frequency Derived Error Gradient (OFDEG) values are computed based on the work
+published by Saeed et al. (2009) <doi:10.1186/1471-2164-10-S3-S10>.  The
+Relative Synonymous Codon Usage (RSCU) values are calculated based on the work
+published by Elek (2018) <https://urn.nsk.hr/urn:nbn:hr:217:686131>.")
+    (license license:gpl3)))
 
 (define-public r-genomicper
   (package
@@ -26475,19 +26543,20 @@ pathway level analyses.")
 (define-public r-geds
   (package
     (name "r-geds")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeDS" version))
        (sha256
-        (base32 "01zi5q78chcd6a3v3506nhnm5nlnpgglaazsf2cr1zdi7xrxgnyr"))))
+        (base32 "02c3hrpgp2y2il1db1da73zi3jikzihaaafp8snsdfw516q0a1pc"))))
     (properties `((upstream-name . "GeDS")))
     (build-system r-build-system)
     (propagated-inputs (list r-th-data
                              r-rmpfr
                              r-rcpp
                              r-plot3d
+                             r-mi
                              r-mboost
                              r-matrix
                              r-mass
