@@ -74,6 +74,46 @@
     (description "Read and write @code{GraphPad} Prism .pzfx files in R.")
     (license license:expat)))
 
+(define-public r-pytrendslongitudinalr
+  (package
+    (name "r-pytrendslongitudinalr")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PytrendsLongitudinalR" version))
+       (sha256
+        (base32 "1a458h95f6ka4qaxfgsin3cc98bcwf0b87bj7nbhq62931hf0wjf"))))
+    (properties `((upstream-name . "PytrendsLongitudinalR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-lubridate r-jsonlite))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PytrendsLongitudinalR")
+    (synopsis "Create Longitudinal Google Trends Data")
+    (description
+     "Google Trends provides cross-sectional and time-series data on searches, but
+lacks readily available longitudinal data.  Researchers, who want to create
+longitudinal Google Trends on their own, face practical challenges, such as
+normalized counts that make it difficult to combine cross-sectional and
+time-series data and limitations in data formats and timelines that limit data
+granularity over extended time periods.  This package addresses these issues and
+enables researchers to generate longitudinal Google Trends data.  This package
+is built on pytrends', a Python library that acts as the unofficial Google
+Trends API to collect Google Trends data.  As long as the Google Trends API',
+pytrends and all their dependencies are working, this package will work.  During
+testing, we noticed that for the same input (keyword, topic, data_format,
+timeline), the output index can vary from time to time.  Besides, if the keyword
+is not very popular, then the resulting dataset will contain a lot of zeros,
+which will greatly affect the final result.  While this package has no control
+over the accuracy or quality of Google Trends data, once the data is created,
+this package coverts it to longitudinal data.  In addition, the user may
+encounter a 429 Too Many Requests error when using cross_section() and
+time_series() to collect Google Trends data.  This error indicates that the user
+has exceeded the rate limits set by the Google Trends API'.  For more
+information about the Google Trends API - pytrends', visit
+<https://pypi.org/project/pytrends/>.")
+    (license license:expat)))
+
 (define-public r-pysparklyr
   (package
     (name "r-pysparklyr")
@@ -4497,13 +4537,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "04200m3bcqlb9q5rpgnd1h6nwbaxhb09ciwrpfss1airzhip5505"))))
+        (base32 "1kg9jz0jhcivll0pgmxdkgb2z9x9x2zyamb56inhy8hsa8ys8xbx"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -12974,6 +13014,30 @@ Federal Ministry of Education and Research (No.  03WIR4805).")
 bioequivalence studies in Two-Stage Designs (TSD) via simulations.")
     (license license:gpl2+)))
 
+(define-public r-power-transform
+  (package
+    (name "r-power-transform")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "power.transform" version))
+       (sha256
+        (base32 "0jfpza0bvjgn4zh5shzi6lhcqv0z9dz0qlsad9kdvankjn1l24kr"))))
+    (properties `((upstream-name . "power.transform")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-nloptr r-data-table))
+    (home-page "https://github.com/oncoray/power.transform")
+    (synopsis "Location and Scale Invariant Power Transformations")
+    (description
+     "Location- and scale-invariant Box-Cox and Yeo-Johnson power transformations
+allow for transforming variables with distributions distant from 0 to normality.
+ Transformers are implemented as S4 objects.  These allow for transforming new
+instances to normality after optimising fitting parameters on other data.  A
+test for central normality allows for rejecting transformations that fail to
+produce a suitably normal distribution, independent of sample number.")
+    (license (license:fsdg-compatible "EUPL"))))
+
 (define-public r-powdr
   (package
     (name "r-powdr")
@@ -13702,26 +13766,26 @@ Nadarajah,Song and Si (2019) <DOI:10.1080/03610926.2019.1576893>.")
 (define-public r-posologyr
   (package
     (name "r-posologyr")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "posologyr" version))
        (sha256
-        (base32 "1rpk46hiaxrxd49ggi1kmvjxir8272ysx5d5gcgbnbnv2yiw922n"))))
+        (base32 "0cwqcsbp5mafimrvwmha78nqggssm3dm9n50cqkc5rfjcyxi953g"))))
     (properties `((upstream-name . "posologyr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2 r-mvtnorm r-data-table))
-    (native-inputs (list r-knitr))
     (home-page "https://levenc.github.io/posologyr/")
     (synopsis "Individual Dose Optimization using Population Pharmacokinetics")
     (description
-     "Personalize drug regimens using individual pharmacokinetic and
-pharmacokinetic-pharmacodynamic profiles.  Using combining therapeutic drug
-monitoring (TDM) data and a population model, posologyr provides accurate a
-posteriori estimates and allows you to compute the optimal individualized dosing
-regimen.  The empirical Bayes estimates are computed as described in Kang et al.
-(2012) <doi:10.4196/kjpp.2012.16.2.97>.")
+     "Optimize drug regimens through model-informed precision dosing, using individual
+pharmacokinetic (PK) and pharmacokinetic-pharmacodynamic (PK-PD) profiles.  By
+integrating therapeutic drug monitoring (TDM) data with population models,
+posologyr provides accurate posterior estimates and enables the calculation of
+personalized dosing regimens.  The empirical Bayes estimates are computed
+following the method described by Kang et al. (2012)
+<doi:10.4196/kjpp.2012.16.2.97>.")
     (license license:agpl3)))
 
 (define-public r-posiadjrsquared
@@ -14249,13 +14313,13 @@ presented in van Wieringen, Binder, 2022, <doi:10.1080/10618600.2022.2035231>)."
 (define-public r-poputils
   (package
     (name "r-poputils")
-    (version "0.3.1")
+    (version "0.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "poputils" version))
        (sha256
-        (base32 "1bd9zb1kmzw1xfrslnp89iw2ilgxy5vv6r918dss76lwab9qja5c"))))
+        (base32 "01g7zca29pfizi3gjk4jpbjrx36dbnp3qgcmfwrcp3mzz4bs0znn"))))
     (properties `((upstream-name . "poputils")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -24607,13 +24671,13 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
 (define-public r-photobiologyinout
   (package
     (name "r-photobiologyinout")
-    (version "0.4.27")
+    (version "0.4.28-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "photobiologyInOut" version))
        (sha256
-        (base32 "1z5vyh44mp4nfp3b2piv6fs8b6k963yw0zb2dgiz8qfgzsyfhnzr"))))
+        (base32 "0c5smimj3jinw0h2fv0dqwq7rpklwm1r0mxzrs5wh0hfcinzc7wm"))))
     (properties `((upstream-name . "photobiologyInOut")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -24624,6 +24688,7 @@ r4photobiology suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.")
                              r-readr
                              r-photobiology
                              r-lubridate
+                             r-jsonlite
                              r-dplyr
                              r-colorspec
                              r-anytime))
@@ -25907,13 +25972,13 @@ to Bladt and Nielsen (2017, ISBN: 978-1-4939-8377-3) and Campillo Navarro (2019)
 (define-public r-phasetype
   (package
     (name "r-phasetype")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PhaseType" version))
        (sha256
-        (base32 "0bqnz6rn0x8xg9qlcn2yqdkmvddc96xasnq9pb36gb8gx19p68fy"))))
+        (base32 "1ls652wiy8wfzj08pyi76ghfiv55i5x40drb547hnnh1f0583i0x"))))
     (properties `((upstream-name . "PhaseType")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape r-ggplot2 r-coda))
@@ -37452,13 +37517,13 @@ in the household (<http://www.mics.unicef.org/surveys>).")
 (define-public r-pakpmics2018
   (package
     (name "r-pakpmics2018")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PakPMICS2018" version))
        (sha256
-        (base32 "0jjch9nhwif01j6avbyr4ajpfnxb51idq6pnywfjhn46wn0by756"))))
+        (base32 "0r72gbsaprcxnw88z4gg852gg8k18bg6xid3y5rh5y9dr988mnvk"))))
     (properties `((upstream-name . "PakPMICS2018")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble))
@@ -37483,8 +37548,8 @@ questionnaire for individual men administered in every second household to all
 men age 15-49 years; (5) an under-5 questionnaire, administered to mothers (or
 caretakers) of all children under 5 living in the household; and (6) a
 questionnaire for children age 5-17 years, administered to the mother (or
-caretaker) of one randomly selected child age 5-17 years living in the household
-(<http://www.mics.unicef.org/surveys>).")
+caretaker) of one randomly selected child age 5-17 years living in the
+household.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-pakpmics2014wm

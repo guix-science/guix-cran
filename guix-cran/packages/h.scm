@@ -1245,6 +1245,39 @@ hyperbolic space.  This uses the strain-minimizing hyperbolic embedding of
 Keller-Ressel and Nargang (2019), see <@code{arXiv:1903.08977>}.")
     (license license:gpl2)))
 
+(define-public r-hydflood
+  (package
+    (name "r-hydflood")
+    (version "0.5.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hydflood" version))
+       (sha256
+        (base32 "02v71lb2y0a5ybmzfs10p2x6gcl20ih4ynyfxwyf35dnf6zbriz5"))))
+    (properties `((upstream-name . "hydflood")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rdpack
+                             r-raster
+                             r-hyd1d
+                             r-httr2
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://hydflood.bafg.de")
+    (synopsis "Flood Extents and Duration along the Rivers Elbe and Rhine")
+    (description
+     "Raster based flood modelling internally using hyd1d', an R package to
+interpolate 1d water level and gauging data.  The package computes flood extent
+and duration through strategies originally developed for INFORM', an
+@code{ArcGIS'-based} hydro-ecological modelling framework.  It does not provide
+a full, physical hydraulic modelling algorithm, but a simplified, near real time
+GIS approach for flood extent and duration modelling.  Computationally demanding
+annual flood durations have been computed already and data products were
+published by Weber (2022) <doi:10.1594/PANGAEA.948042>.")
+    (license license:gpl2)))
+
 (define-public r-hyd1d
   (package
     (name "r-hyd1d")
@@ -9701,6 +9734,38 @@ Mergers\" <doi:10.1111/ecin.12454>.")
     (description
      "Health Calculator helps to find different parameters like basal metabolic rate,
 body mass index etc.  related to fitness and health of a person.")
+    (license license:expat)))
+
+(define-public r-healthatlas
+  (package
+    (name "r-healthatlas")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "healthatlas" version))
+       (sha256
+        (base32 "0yl2rvz92cb4y3k408gi66dgv835h4k86vgf258h87psmg3kr6md"))))
+    (properties `((upstream-name . "healthatlas")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-sf
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-curl))
+    (native-inputs (list r-knitr))
+    (home-page "https://ryanzomorrodi.github.io/healthatlas/")
+    (synopsis
+     "Explore and Import 'Metopio' Health Atlas Data and Spatial Layers")
+    (description
+     "Allows for painless use of the Metopio health atlas APIs
+<https://metopio.com/how-it-works/atlas/> to explore and import data.  Metopio
+health atlases store open public health data.  See what topics (or indicators)
+are available among specific populations, periods, and geographic layers.
+Download relevant data along with geographic boundaries or point datasets.
+Spatial datasets are returned as sf objects.")
     (license license:expat)))
 
 (define-public r-headliner

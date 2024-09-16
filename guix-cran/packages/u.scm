@@ -729,16 +729,16 @@ for a given data set.")
 (define-public r-usefun
   (package
     (name "r-usefun")
-    (version "0.5.0")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "usefun" version))
        (sha256
-        (base32 "1gpyix8xpn4jmfjrycan6r1qvp7z7mhcngp02fcws6k2hvd7jajr"))))
+        (base32 "0w8l35a9kpk735s6j7xc9cb8nr7s3gkywjgvhhk6zycr6f50cx67"))))
     (properties `((upstream-name . "usefun")))
     (build-system r-build-system)
-    (propagated-inputs (list r-prroc r-dplyr))
+    (propagated-inputs (list r-tibble r-prroc r-precrec r-dplyr r-checkmate))
     (home-page "https://github.com/bblodfon/usefun")
     (synopsis "Collection of Useful Functions by John")
     (description

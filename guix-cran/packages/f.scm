@@ -6987,13 +6987,13 @@ functions such as stats::lm(), stats::glm() and survival::coxph().")
 (define-public r-forestmangr
   (package
     (name "r-forestmangr")
-    (version "0.9.6")
+    (version "0.9.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forestmangr" version))
        (sha256
-        (base32 "0l8av1vg8dyrb15m08gby13qfalwcfizfn3jc2avvga8inyag0c5"))))
+        (base32 "05zfxdcj12yc61qiz4s6y8akah743hfmr5wd76kqnp3hcphiigja"))))
     (properties `((upstream-name . "forestmangr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

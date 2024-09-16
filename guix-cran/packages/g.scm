@@ -956,17 +956,24 @@ Validation of Linear Model Assumptions,\" J. American Statistical Association,
 (define-public r-gvcr
   (package
     (name "r-gvcr")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gvcR" version))
        (sha256
-        (base32 "0r54924b9a65k11p8y3p7jxbvmpb7s7vs87v65hhl98gxacj5hk8"))))
+        (base32 "1ibgv4armyn6lyp3v3sixbgrj92hh1fjbdvyiikgw8mrcn97908q"))))
     (properties `((upstream-name . "gvcR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-magrittr r-lme4 r-eda4treer r-dplyr))
-    (home-page "https://github.com/MYaseen208/gvcR")
+    (propagated-inputs (list r-tibble
+                             r-supernova
+                             r-rlang
+                             r-r6
+                             r-magrittr
+                             r-lme4
+                             r-eda4treer
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=gvcR")
     (synopsis "Genotypic Variance Components")
     (description
      "Functionalities to compute model based genetic components i.e.  genotypic
@@ -15718,13 +15725,13 @@ draw the scatter plot.")
 (define-public r-ggspectra
   (package
     (name "r-ggspectra")
-    (version "0.3.12")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggspectra" version))
        (sha256
-        (base32 "0kq029w14w3z7qscrasxv289iizcxc7lvkbn5ysiz4jgrvgyc55g"))))
+        (base32 "08kvym2h07093jfnc12ivr04275931qrczvfqyrsfp718s8nwnn7"))))
     (properties `((upstream-name . "ggspectra")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -19642,6 +19649,36 @@ without the need to do the alignment in each run which is a big limitation in
 other available packages.")
     (license license:gpl3)))
 
+(define-public r-ggalign
+  (package
+    (name "r-ggalign")
+    (version "0.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggalign" version))
+       (sha256
+        (base32 "173slwijh4ni4yrp41mr01iqy19fij9fh8hzysd3hk6ybbv7csnh"))))
+    (properties `((upstream-name . "ggalign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-gtable
+                             r-ggplot2
+                             r-ggh4x
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Yunuuuu/ggalign")
+    (synopsis "Align Multiple 'ggplot' Objects")
+    (description
+     "This package provides a ggplot2 extension offers various tools for organizing
+and arranging plots.  It is designed to consistently align a specific axis
+across multiple ggplot objects, making it especially useful for plots requiring
+data order manipulation.  A typical use case includes organizing combinations
+like a dendrogram and a heatmap.")
+    (license license:expat)))
+
 (define-public r-gfunctions
   (package
     (name "r-gfunctions")
@@ -21666,13 +21703,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.2")
+    (version "3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "1i62mz80mcxhb3xc1rs1yahmnhvdrirm0pq8a905krhv446av1m7"))))
+        (base32 "0r0h4knd4f0lfvbv728zbncaw7f7xzfxhw9rypynnin3pgd56fys"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -28914,13 +28951,13 @@ native functions that work on simple arrays.")
 (define-public r-garma
   (package
     (name "r-garma")
-    (version "0.9.22")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "garma" version))
        (sha256
-        (base32 "07m6n4520p465mc6a8nb7b96p1i4n6ljssmak4ia4f8i3zrhlbdh"))))
+        (base32 "0rm77ig8payprd715z635h35338mc71pd0k7fk46s4jqlwaqkybd"))))
     (properties `((upstream-name . "garma")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -29481,6 +29518,33 @@ models and generalized additive models are also handled as special cases of
 generalized additive mixed models.  The methodology and software is described in
 Pham, T.H. and Wand, M.P. (2018).  Australian and New Zealand Journal of
 Statistics, 60, 279-330 <DOI:10.1111/ANZS.12241>.")
+    (license license:gpl2+)))
+
+(define-public r-gammi
+  (package
+    (name "r-gammi")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gammi" version))
+       (sha256
+        (base32 "1zvmfkbjj70h7aq0yx3gchq17klgfwbjqd468pnq7wfrpvg04dgy"))))
+    (properties `((upstream-name . "gammi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-matrix r-lme4))
+    (home-page "https://cran.r-project.org/package=gammi")
+    (synopsis "Generalized Additive Mixed Model Interface")
+    (description
+     "An interface for fitting generalized additive models (GAMs) and generalized
+additive mixed models (GAMMs) using the lme4 package as the computational
+engine, as described in Helwig (2024) <doi:10.3390/stats7010003>.  Supports
+default and formula methods for model specification, additive and tensor product
+splines for capturing nonlinear effects, and automatic determination of spline
+type based on the class of each predictor.  Includes an S3 plot method for
+visualizing the (nonlinear) model terms, an S3 predict method for forming
+predictions from a fit model, and an S3 summary method for conducting
+significance testing using the Bayesian interpretation of a smoothing spline.")
     (license license:gpl2+)))
 
 (define-public r-gammareg

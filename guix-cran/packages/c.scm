@@ -18776,18 +18776,19 @@ pages, including providing new figure components.")
 (define-public r-comparegroups
   (package
     (name "r-comparegroups")
-    (version "4.8.0")
+    (version "4.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareGroups" version))
        (sha256
-        (base32 "0v747rxg864gml937zizp80sf15jw2v4svcafdysna62shp4rypv"))))
+        (base32 "1kfnwyi41l11nvmjjays23k8lwc1wzh6q65rmjff2s7sxx994cin"))))
     (properties `((upstream-name . "compareGroups")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-survival
                              r-rmarkdown
+                             r-pmcmrplus
                              r-officer
                              r-knitr
                              r-kableextra
@@ -18795,7 +18796,7 @@ pages, including providing new figure components.")
                              r-flextable
                              r-chron))
     (native-inputs (list r-knitr))
-    (home-page "https://isubirana.github.io/compareGroups/")
+    (home-page "https://isubirana.github.io/compareGroups/index.html")
     (synopsis "Descriptive Analysis by Groups")
     (description
      "Create data summaries for quality control, extensive reports for exploring data,
@@ -21397,6 +21398,43 @@ demonstrated.  A more detailed description of the design can be found in Meyer
 et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 <@code{arXiv:2202.02182>}.")
     (license license:expat)))
+
+(define-public r-cohortgenerator
+  (package
+    (name "r-cohortgenerator")
+    (version "0.11.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CohortGenerator" version))
+       (sha256
+        (base32 "06h46xx4p7f33xxrwwhcxhz2i76awd7g7skq7fmj7zsi5vmzsk5x"))))
+    (properties `((upstream-name . "CohortGenerator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringi
+                             r-sqlrender
+                             r-rlang
+                             r-rjsonio
+                             r-resultmodelmanager
+                             r-readr
+                             r-r6
+                             r-parallellogger
+                             r-lubridate
+                             r-jsonlite
+                             r-dplyr
+                             r-digest
+                             r-databaseconnector
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://ohdsi.github.io/CohortGenerator/")
+    (synopsis "Cohort Generation for the OMOP Common Data Model")
+    (description
+     "Generate cohorts and subsets using an Observational Medical Outcomes Partnership
+(OMOP) Common Data Model (CDM) Database.  Cohorts are defined using CIRCE
+(<https://github.com/ohdsi/circe-be>) or SQL compatible with @code{SqlRender}
+(<https://github.com/OHDSI/@code{SqlRender>}).")
+    (license (license:fsdg-compatible "Apache License"))))
 
 (define-public r-cohortexplorer
   (package
@@ -25264,13 +25302,13 @@ partitioning algorithms.")
 (define-public r-clustersim
   (package
     (name "r-clustersim")
-    (version "0.51-4")
+    (version "0.51-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clusterSim" version))
        (sha256
-        (base32 "1bvjhbwxxn7mxdspjyly36d258p8js9l1zxsm15kj7nplj4pnkkn"))))
+        (base32 "1lkq2dylimigfpvl4981a6xnn9bi462g0bbfkjz90sak9azzlnwx"))))
     (properties `((upstream-name . "clusterSim")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-e1071 r-cluster r-ade4))
@@ -30364,13 +30402,13 @@ means, based on Nguyen (2009) <doi:10.15760/etd.7798>.")
 (define-public r-cinterpolate
   (package
     (name "r-cinterpolate")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cinterpolate" version))
        (sha256
-        (base32 "1viv904x4sbs8q2vz8a0aagamvs7n5i2xkscnxzz5csrdwr4mmai"))))
+        (base32 "06l82lvwn706jx5c7wx629y5hihqivjvypjrkmwbpypi6adq24qj"))))
     (properties `((upstream-name . "cinterpolate")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33299,13 +33337,13 @@ season Y sales\".")
 (define-public r-charlesschwabapi
   (package
     (name "r-charlesschwabapi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charlesschwabapi" version))
        (sha256
-        (base32 "0pmf25d6vvfyxxwh7g29iwd5di3b82vw128n15amakxfjibb8rjs"))))
+        (base32 "1qqii54np02df2livqr9ajj71zrws9njfbx7ad8b0wh9zbz2kdy4"))))
     (properties `((upstream-name . "charlesschwabapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -33353,13 +33391,13 @@ range.")
 (define-public r-charcuterie
   (package
     (name "r-charcuterie")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "charcuterie" version))
        (sha256
-        (base32 "0rlls8naq43v0qgnjyz6raaqkws3vm7dpdzcnns7qm0m6wqr5ffa"))))
+        (base32 "12yw4p3ffdl7pzyxqyg1gmwd387m5wxaj9vq4ix6b2cmfvmzsc1c"))))
     (properties `((upstream-name . "charcuterie")))
     (build-system r-build-system)
     (propagated-inputs (list r-generics))
@@ -34362,13 +34400,13 @@ displays of results are emphasized.")
 (define-public r-cftime
   (package
     (name "r-cftime")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CFtime" version))
        (sha256
-        (base32 "0sl7rccd2kgfv8y46x0mpg1m28y2lgn1mjar8shrg68m9lszwzj5"))))
+        (base32 "171xbi6jb2d88i15gian5p4lfjhrsyp3j99mbcrg3196dw1dfrjq"))))
     (properties `((upstream-name . "CFtime")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -39793,13 +39831,13 @@ et al. (2024) <doi:10.48550/@code{arXiv.2404.06978>}.")
 (define-public r-cassowaryr
   (package
     (name "r-cassowaryr")
-    (version "2.0.0")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cassowaryr" version))
        (sha256
-        (base32 "1gk54haciy3vj7xj6cji1v90xh7g8790zq1rykyispx09jr2dpx3"))))
+        (base32 "1zyna3nqkdb9f2cq2k41g2nbvw35gwz6yidz3ma1rpkha5cqdi1r"))))
     (properties `((upstream-name . "cassowaryr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -41860,6 +41898,34 @@ canonical correlation analysis when all predictors are quantitative.")
      "Retrieve cancer screening data for cervical, breast and colorectal cancers from
 the Kenya Health Information System <https://hiskenya.org> in a consistent way.")
     (license license:expat)))
+
+(define-public r-cancerr
+  (package
+    (name "r-cancerr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "cancerR" version))
+       (sha256
+        (base32 "02k4d7z565xlmwv5kl7dqqdm27zvmwm2pyfqpp7czdji17agkji0"))))
+    (properties `((upstream-name . "cancerR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/giancarlodigi/cancerR")
+    (synopsis "Classification of Cancer Using Administrative Data")
+    (description
+     "Classifies the type of cancer using routinely collected data commonly found in
+cancer registries from pathology reports.  The package implements the
+International Classification of Diseases for Oncology, 3rd Edition site
+(topography), histology (morphology), and behaviour codes of neoplasms to
+classify cancer type
+<https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology>.
+ Classification in children utilize the International Classification of
+Childhood Cancer by Steliarova-Foucher et al. (2005) <doi:10.1002/cncr.20910>.
+Adolescent and young adult cancer classification is based on Barr et al. (2020)
+<doi:10.1002/cncr.33041>.")
+    (license license:gpl2+)))
 
 (define-public r-cancergram
   (package

@@ -2055,6 +2055,29 @@ manufacturing process modeling, spectroscopic analyses, and data mining.")
 with univariate or multivariate responses.")
     (license license:gpl3)))
 
+(define-public r-mvcor
+  (package
+    (name "r-mvcor")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mvcor" version))
+       (sha256
+        (base32 "0i9g2h05cwhkiaryzb2ghr1ix3i27bpxmvnay5vgrc36k5dmllyr"))))
+    (properties `((upstream-name . "mvcor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=mvcor")
+    (synopsis "Correlation Coefficients for Multivariate Data")
+    (description
+     "Correlation coefficients for multivariate data, namely the squared correlation
+coefficient and the RV coefficient (multivariate generalization of the squared
+Pearson correlation coefficient).  References include Mardia K.V., Kent J.T. and
+Bibby J.M. (1979). \"Multivariate Analysis\".  ISBN: 978-0124712522.  London:
+Academic Press.")
+    (license license:gpl2+)))
+
 (define-public r-mvcauchy
   (package
     (name "r-mvcauchy")
@@ -20624,6 +20647,26 @@ assumed over the single variables.")
 by Max Kuhn.  It also provides a plot routine using ggplot2 and patchwork'.")
     (license license:gpl2)))
 
+(define-public r-mixopt
+  (package
+    (name "r-mixopt")
+    (version "0.1.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mixopt" version))
+       (sha256
+        (base32 "0zgdkazsfmrqn5k4qanc18mw0scjwjyfzh9jwgjrbamv36ygry6n"))))
+    (properties `((upstream-name . "mixopt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splitfngr r-ggplot2 r-dplyr))
+    (home-page "https://github.com/CollinErickson/mixopt")
+    (synopsis "Mixed Variable Optimization")
+    (description
+     "Mixed variable optimization for non-linear functions.  Can optimize function
+whose inputs are a combination of continuous, ordered, and unordered variables.")
+    (license license:lgpl3+)))
+
 (define-public r-mixoofa
   (package
     (name "r-mixoofa")
@@ -20819,13 +20862,13 @@ developed in this package.")
 (define-public r-mixhvg
   (package
     (name "r-mixhvg")
-    (version "0.2.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixhvg" version))
        (sha256
-        (base32 "1gpjab7cg6xj1wgd3sbrp30mafhxv24d4rpxfsrq0rybm4frir43"))))
+        (base32 "1n41k5jrx5ffxsxaw22smy2gdmx8qr8bdawwmhg0v2qyswny3kdi"))))
     (properties `((upstream-name . "mixhvg")))
     (build-system r-build-system)
     (propagated-inputs (list r-singlecellexperiment r-seurat r-scuttle r-scran
@@ -23554,6 +23597,50 @@ factorial points (half replicate) and Box Behnken designs (BBD) with minimally
 changed run sequence.")
     (license license:gpl2+)))
 
+(define-public r-minilnm
+  (package
+    (name "r-minilnm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "miniLNM" version))
+       (sha256
+        (base32 "1ljs6av8lhghib5kn9lq9pzmfjv18l4vqx2qyw8jg4wm2lck3ln3"))))
+    (properties `((upstream-name . "miniLNM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-stanheaders
+                             r-rstantools
+                             r-rstan
+                             r-rcppparallel
+                             r-rcppeigen
+                             r-rcpp
+                             r-posterior
+                             r-glue
+                             r-formula-tools
+                             r-fansi
+                             r-dplyr
+                             r-cli
+                             r-bh))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/krisrs1128/miniLNM/")
+    (synopsis "Miniature Logistic-Normal Multinomial Models")
+    (description
+     "Logistic-normal Multinomial (LNM) models are common in problems with
+multivariate count data.  This package gives a simple implementation with a 30
+line Stan script.  This lightweight implementation makes it an easy starting
+point for other projects, in particular for downstream tasks that require
+analysis of \"compositional\" data.  It can be applied whenever a multinomial
+probability parameter is thought to depend linearly on inputs in a transformed,
+log ratio space.  Additional utilities make it easy to inspect, create
+predictions, and draw samples using the fitted models.  More about the LNM can
+be found in Xia et al. (2013) \"A Logistic Normal Multinomial Regression Model
+for Microbiome Compositional Data Analysis\" <doi:10.1111/biom.12079> and
+Sankaran and Holmes (2023) \"Generative Models: An Interdisciplinary Perspective\"
+<doi:10.1146/annurev-statistics-033121-110134>.")
+    (license license:cc0)))
+
 (define-public r-minigui
   (package
     (name "r-minigui")
@@ -23633,13 +23720,13 @@ slow (or zero) Internet access.")
 (define-public r-minic
   (package
     (name "r-minic")
-    (version "1.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "minic" version))
        (sha256
-        (base32 "1n7xhgwlfyy18y1d0rjnkrvfdblkd4n55c673fyrkdc1q8lpmngw"))))
+        (base32 "0p95vzld2v7j4z25hxi0vkx9y7xdzxnjhsh11k4v63yqfl6iiikx"))))
     (properties `((upstream-name . "minic")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))

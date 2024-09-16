@@ -9715,13 +9715,13 @@ and functions for various c-structuredness indices.")
 (define-public r-stoppingrule
   (package
     (name "r-stoppingrule")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stoppingrule" version))
        (sha256
-        (base32 "07gchj75hj1sjgp6nx1hry563vcd33q1j0iw1w1z9qaf3ivqby5a"))))
+        (base32 "026464lkdxi6s79csb1fgm705yvszxxwq6993p92843zr344cffi"))))
     (properties `((upstream-name . "stoppingrule")))
     (build-system r-build-system)
     (propagated-inputs (list r-pracma r-matrixstats))
@@ -11776,6 +11776,33 @@ components from multiple estimates; -other functions useful in ICA.")
     (description
      "Allows the creation and manipulation of C++ std::vector's in R.")
     (license license:gpl2+)))
+
+(define-public r-stdreg2
+  (package
+    (name "r-stdreg2")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stdReg2" version))
+       (sha256
+        (base32 "0vbiqm4cg4wnn94gl9f8616k6h6p92bn1myh4apak88c3vajhmyy"))))
+    (properties `((upstream-name . "stdReg2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-generics r-drgee r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://sachsmc.github.io/stdReg2/")
+    (synopsis "Regression Standardization for Causal Inference")
+    (description
+     "This package contains more modern tools for causal inference using regression
+standardization.  Four general classes of models are implemented; generalized
+linear models, conditional generalized estimating equation models, Cox
+proportional hazards models, and shared frailty gamma-Weibull models.
+Methodological details are described in SjÃ¶lander, A. (2016)
+<doi:10.1007/s10654-016-0157-3>.  Also includes functionality for doubly robust
+estimation for generalized linear models in some special cases, and the ability
+to implement custom models.")
+    (license license:agpl3+)))
 
 (define-public r-stdreg
   (package
@@ -21332,6 +21359,28 @@ MCMC).  It uses R environments to store GP objects as references/pointers.")
      "This package performs cluster analysis of mixed-type data using Spectral
 Clustering, see F. Mbuga and, C. Tortora (2022) <doi:10.3390/stats5010001>.")
     (license license:gpl2+)))
+
+(define-public r-spectralanomaly
+  (package
+    (name "r-spectralanomaly")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spectralAnomaly" version))
+       (sha256
+        (base32 "0gfgnbl2awliw94xy7q269n5dzj2sh95wz470cynr1m035kp51s1"))))
+    (properties `((upstream-name . "spectralAnomaly")))
+    (build-system r-build-system)
+    (home-page "https://al-obrien.github.io/spectralAnomaly/")
+    (synopsis "Detect Anomalies Using the Spectral Residual Algorithm")
+    (description
+     "Apply the spectral residual algorithm to data, such as a time series, to detect
+anomalies.  Anomaly scores can be used to determine outliers based upon a
+threshold or fed into more sophisticated prediction models.  Methods are based
+upon \"Time-Series Anomaly Detection Service at Microsoft\", Ren, H., Xu, B.,
+Wang, Y., et al., (2019) <doi:10.48550/@code{arXiv.1906.03821>}.")
+    (license license:expat)))
 
 (define-public r-spectralanalysis
   (package
@@ -44670,13 +44719,13 @@ al. (2001) <doi:10.1111/j.1365-2745.2001.00615.x>.")
 (define-public r-shapviz
   (package
     (name "r-shapviz")
-    (version "0.9.4")
+    (version "0.9.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shapviz" version))
        (sha256
-        (base32 "024xzyfr5m88njqzjkzbascnnmyss6h5vmjp3agn26xrswg2pfib"))))
+        (base32 "078jrbi0830x1x98wa19sxmchbjhd10q5qaq0iq53fqb3m93kq9a"))))
     (properties `((upstream-name . "shapviz")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -46271,13 +46320,13 @@ Technometrics, <doi:10.1080/00401706.2015.1108233>).")
 (define-public r-sfdep
   (package
     (name "r-sfdep")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sfdep" version))
        (sha256
-        (base32 "0b8dk5rs0xvgnmwsnli2xgw5qgp80a4xffh6aqd6sxg3dyw1z9g4"))))
+        (base32 "0x3wwa3s5aa402ab0p07lx0cs3vg5qhhrhz4p3sdjw4lxwfw1hks"))))
     (properties `((upstream-name . "sfdep")))
     (build-system r-build-system)
     (propagated-inputs (list r-spdep r-sf r-rlang r-cli))
@@ -46316,6 +46365,32 @@ comparison with the GEOS lib which since version 3.10.0 includes a low quality
 polygon triangulation method that starts with ear clipping and refines to
 Delaunay.")
     (license (license:fsdg-compatible "CC BY-NC-SA 4.0"))))
+
+(define-public r-sfcurve
+  (package
+    (name "r-sfcurve")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sfcurve" version))
+       (sha256
+        (base32 "02r87znczsvx8k4yrwjyayg9hynk97dgy5i3xbhal0cc6rlf1h5m"))))
+    (properties `((upstream-name . "sfcurve")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp r-colorramp2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jokergoo/sfcurve")
+    (synopsis "2x2, 3x3 and Nxn Space-Filling Curves")
+    (description
+     "Implementation of all possible forms of 2x2 and 3x3 space-filling curves, i.e.,
+the generalized forms of the Hilbert curve
+<https://en.wikipedia.org/wiki/Hilbert_curve>, the Peano curve
+<https://en.wikipedia.org/wiki/Peano_curve> and the Peano curve in the meander
+type (Figure 5 in <https://eudml.org/doc/141086>).  It can generates nxn curves
+expanded from any specific level-1 units.  It also implements the H-curve and
+the three-dimensional Hilbert curve.")
+    (license license:expat)))
 
 (define-public r-sfcr
   (package
@@ -52356,13 +52431,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "106arvv5qsz2b1qj5fag995iiydvzc76vqg913h2l86z7v6m0s3n"))))
+        (base32 "1jxhzs720wh459xyi8xdr45qd8g3d2fvblws214f9w6irhjqr139"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

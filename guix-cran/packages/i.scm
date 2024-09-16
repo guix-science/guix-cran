@@ -1854,13 +1854,13 @@ either be used offline, or hosted on a server to provide online access to the
 (define-public r-isoplotr
   (package
     (name "r-isoplotr")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotR" version))
        (sha256
-        (base32 "0n4xlxs4swl5b11b9ks9f4g2m8cpnb2gdq7zbvjvgsx5d6fw9m29"))))
+        (base32 "0a109xgs16wwjjvzvm5x9kqsc0ic4zsfbmsgcclxs8bq1w4maj70"))))
     (properties `((upstream-name . "IsoplotR")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -12011,13 +12011,13 @@ algorithm of Huang et al. (1992) <doi:10.1139/x92-172> and Zeide et al. (1993)
 (define-public r-imf-data
   (package
     (name "r-imf-data")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imf.data" version))
        (sha256
-        (base32 "081p2vv022c3585j9dqalqgk8y1gnx0z7h0mwh57dmk8adbb1zb0"))))
+        (base32 "1ynpb95nqcdcd9pfrpj6zppany2q46dlrx9j4ddq20861rh1cr7y"))))
     (properties `((upstream-name . "imf.data")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl))
@@ -13797,13 +13797,13 @@ association data, especially with large controls re-sequenced data.")
 (define-public r-iforecast
   (package
     (name "r-iforecast")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "iForecast" version))
        (sha256
-        (base32 "03g15xps3bymx2jj6j02pr1llk3lcb5lc3s5r0i2c86qc92lprch"))))
+        (base32 "065jgpm8cv7r9856ag9l8ps0i7fmblmi66q41kjcf5wj1sj49f8l"))))
     (properties `((upstream-name . "iForecast")))
     (build-system r-build-system)
     (propagated-inputs (list r-magrittr r-caret))

@@ -2299,13 +2299,13 @@ given parallel corpus.")
 (define-public r-worcs
   (package
     (name "r-worcs")
-    (version "0.1.14")
+    (version "0.1.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "worcs" version))
        (sha256
-        (base32 "1l18xf9lhp1ba36an46ii3gdcaf01xm6c2v70cswsyf05x61kzsy"))))
+        (base32 "0hqsviiznr5rp3bg1fajpcpcnnb9819h96i198vslqn9qjr10a9q"))))
     (properties `((upstream-name . "worcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml

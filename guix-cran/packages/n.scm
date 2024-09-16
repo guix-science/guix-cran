@@ -2915,20 +2915,19 @@ error and statistical power.")
 (define-public r-npboottprm
   (package
     (name "r-npboottprm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "npboottprm" version))
        (sha256
-        (base32 "0ipicpy1hfxbj7mw18slykxwyyav8r2z8rsnqhhvxw3f9w656nhd"))))
+        (base32 "0f9l97fbna8gghl7yzk65w4zss8kk10rmmi67d8y75mhp2bvk4ir"))))
     (properties `((upstream-name . "npboottprm")))
     (build-system r-build-system)
     (propagated-inputs (list r-sn
                              r-shinythemes
                              r-shiny
-                             r-rpostgres
-                             r-pool
+                             r-mmints
                              r-mkinfer
                              r-mass
                              r-lmperm

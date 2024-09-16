@@ -10594,6 +10594,28 @@ infinite degree of freedom on the denominator.  See Laurencelle and Cousineau
 (2023) <doi:10.3389/fpsyg.2022.1045436>.")
     (license license:gpl3)))
 
+(define-public r-anomo
+  (package
+    (name "r-anomo")
+    (version "0.5.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "anomo" version))
+       (sha256
+        (base32 "12c1y2l6c2vhiairl5cxf0f2scyj2iwjgvagm7mhr8ingchxkvgm"))))
+    (properties `((upstream-name . "anomo")))
+    (build-system r-build-system)
+    (native-inputs (list r-rmarkdown r-markdown r-knitr))
+    (home-page "https://cran.r-project.org/package=anomo")
+    (synopsis
+     "Analysis of Moderation with the Monte Carlo Confidence Interval Method")
+    (description
+     "Analysis of Moderation (anomo) uses the Monte Carlo confidence interval (MCCI)
+method to test the difference and equivalence of two effects with summary
+statistics from two studies.")
+    (license license:gpl3)))
+
 (define-public r-anomaly
   (package
     (name "r-anomaly")
@@ -17259,6 +17281,34 @@ p-value offered in this package is based on the Kolmogorov-type supremum test
 and the variance of the proposed test statistics is estimated through the
 re-sampling method.  Furthermore, a graphical technique to compare the shape of
 the observed residual to a number of the approximated realizations is provided.")
+    (license license:gpl3+)))
+
+(define-public r-aftsem
+  (package
+    (name "r-aftsem")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "aftsem" version))
+       (sha256
+        (base32 "00rsrwv57z0inpqrgihbbm57dzbw01idi8axbhhc09z51bnbksxc"))))
+    (properties `((upstream-name . "aftsem")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-rcpparmadillo r-rcpp r-quantreg
+                             r-optimx))
+    (home-page "https://github.com/benedma2/aftsem-package")
+    (synopsis "Semiparametric Accelerated Failure Time Model")
+    (description
+     "This package implements several basic algorithms for estimating regression
+parameters for semiparametric accelerated failure time (AFT) model.  The main
+methods are: Jin rank-based method (Jin (2003) <doi:10.1093/biomet/90.2.341>),
+Hellerâs estimating method (Heller (2012) <doi:10.1198/016214506000001257>),
+Polynomial smoothed Gehan function method (Chung (2013)
+<doi:10.1007/s11222-012-9333-9>), Buckley-James method (Buckley (1979)
+<doi:10.2307/2335161>) and Jin`s improved least squares method (Jin (2006)
+<doi:10.1093/biomet/93.1.147>).  This package can be used for modeling
+right-censored data and for comparing different estimation algorithms.")
     (license license:gpl3+)))
 
 (define-public r-aftr2

@@ -1869,13 +1869,13 @@ MÃ¼ller (2022) <https://CRAN.R-project.org/package=dplyr>.")
 (define-public r-rvec
   (package
     (name "r-rvec")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rvec" version))
        (sha256
-        (base32 "15wwpkhnzib5nnyv15mdv8avxrzwc57xrpk7xr6qx440ibsg60x9"))))
+        (base32 "0m30jyzrbywlbhqc6k2178fmq7z6169qwr8pckijnx63al3qsyxn"))))
     (properties `((upstream-name . "rvec")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17507,13 +17507,13 @@ and Feng Tian (2014) <DOI:10.1371/journal.pone.0107684>), and HE regression
 (define-public r-rmvl
   (package
     (name "r-rmvl")
-    (version "1.1.0.0")
+    (version "1.1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RMVL" version))
        (sha256
-        (base32 "1fypvlg8qi4kn3awii244vqcn9zzsci5bqv8ywpnfigph26din6f"))))
+        (base32 "13wyp4ri6b73j8vn787rzf5532maqmq8slv743c69rzgs2vw9hjn"))))
     (properties `((upstream-name . "RMVL")))
     (build-system r-build-system)
     (home-page "https://academictorrents.com/collection/mvl-datasets")
@@ -21099,13 +21099,13 @@ implemented here.")
 (define-public r-rjsdmx
   (package
     (name "r-rjsdmx")
-    (version "3.3-0")
+    (version "3.4-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJSDMX" version))
        (sha256
-        (base32 "08llfpyj85nnqn07vw3i7hjs3hn84s8grg6cjjqynn38kw1849ry"))))
+        (base32 "029lvrk3p54r9h9r0vlcqlpa276c69v5nxiwfdb77wnykxa4qb1p"))))
     (properties `((upstream-name . "RJSDMX")))
     (build-system r-build-system)
     (inputs (list openjdk))
@@ -21343,13 +21343,13 @@ citation(\"RJcluster\")'.")
 (define-public r-rjavaenv
   (package
     (name "r-rjavaenv")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rJavaEnv" version))
        (sha256
-        (base32 "0clivhqgrg2irh03bfcsf4p70hnvv2x3g3kk6sy38wlk02bw3144"))))
+        (base32 "1shh4w3lw5lgjqxwbkggafsa9kj2fdfsymd4jjfs9vm7kzz8l75d"))))
     (properties `((upstream-name . "rJavaEnv")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-curl r-cli r-checkmate))
@@ -35427,47 +35427,6 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 <doi:10.1111/anae.13938>.")
     (license license:expat)))
 
-(define-public r-ream
-  (package
-    (name "r-ream")
-    (version "1.0-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "ream" version))
-       (sha256
-        (base32 "1knf8v71y6dw63i8pfvlsdg45q2vg20wmmpk0za72m2h84ddx4il"))))
-    (properties `((upstream-name . "ream")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/RaphaelHartmann/ream")
-    (synopsis
-     "Density, Distribution, and Sampling Functions for Evidence Accumulation Models")
-    (description
-     "Calculate the probability density functions (PDFs) for two threshold evidence
-accumulation models (EAMs).  These are defined using the following Stochastic
-Differential Equation (SDE), dx(t) = v(x(t),t)*dt+D(x(t),t)*@code{dW}, where
-x(t) is the accumulated evidence at time t, v(x(t),t) is the drift rate,
-D(x(t),t) is the noise scale, and W is the standard Wiener process.  The
-boundary conditions of this process are the upper and lower decision thresholds,
-represented by b_u(t) and b_l(t), respectively.  Upper threshold b_u(t) > 0,
-while lower threshold b_l(t) < 0.  The initial condition of this process x(0) =
-z where b_l(t) < z < b_u(t).  We represent this as the relative start point w =
-z/(b_u(0)-b_l(0)), defined as a ratio of the initial threshold location.  This
-package generates the PDF using the same approach as the python package it is
-based upon, @code{PyBEAM} by Murrow and Holmes (2023)
-<doi:10.3758/s13428-023-02162-w>.  First, it converts the SDE model into the
-forwards Fokker-Planck equation dp(x,t)/dt =
-d(v(x,t)*p(x,t))/dt-0.5*d^2(D(x,t)^2*p(x,t))/dx^2, then solves this equation
-using the Crank-Nicolson method to determine p(x,t).  Finally, it calculates the
-flux at the decision thresholds, f_i(t) = 0.5*d(D(x,t)^2*p(x,t))/dx evaluated at
-x = b_i(t), where i is the relevant decision threshold, either upper (i = u) or
-lower (i = l).  The flux at each thresholds f_i(t) is the PDF for each
-threshold, specifically its PDF. We discuss further details of this approach in
-this package and @code{PyBEAM} publications.  Additionally, one can calculate
-the cumulative distribution functions of and sampling from the EAMs.")
-    (license license:gpl2+)))
-
 (define-public r-realvams
   (package
     (name "r-realvams")
@@ -36282,13 +36241,13 @@ porous media, in estuaries, and in bodies with variable shape.")
 (define-public r-reactr
   (package
     (name "r-reactr")
-    (version "0.6.0")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "reactR" version))
        (sha256
-        (base32 "0mi9zfy50njvykmp4rfgpvsmf7q8l92n2196jw9sc06q7ybjn92v"))))
+        (base32 "14nqaxgfnqrwl67b705jna8vljhx9xlakvkdl76bwk759myhsscv"))))
     (properties `((upstream-name . "reactR")))
     (build-system r-build-system)
     (arguments
@@ -39165,13 +39124,13 @@ Apache 2.0 license and provided here for use by other R packages via a simple
 (define-public r-rcppfastad
   (package
     (name "r-rcppfastad")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastAD" version))
        (sha256
-        (base32 "020hw5p3vjsi00fmrbwnkdjc4lajpfjp1j0f5wiyk2d61yypfz2i"))))
+        (base32 "1hdwpvdyprcihwy9n5b72pd5ql7czaz0pm9cwcy5n9bh3p2clc8a"))))
     (properties `((upstream-name . "RcppFastAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -43874,6 +43833,34 @@ Hydrologic Modelling Framework method can be referenced with Craig et al. (2020)
 files, as well as serialize/deserialize data.frames/@code{DataFrames}.")
     (license (license:fsdg-compatible "Apache License (== 2)"))))
 
+(define-public r-ravelry
+  (package
+    (name "r-ravelry")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ravelRy" version))
+       (sha256
+        (base32 "07mywv57rw2b309i2qisbpx1x3sb3z6n2b5gia9bdmb2m4hhpdai"))))
+    (properties `((upstream-name . "ravelRy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-purrr
+                             r-jsonlite
+                             r-httr
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=ravelRy")
+    (synopsis "An Interface to the 'Ravelry' API")
+    (description
+     "This package provides access to the Ravelry API
+<https://www.ravelry.com/groups/ravelry-api>.  An R wrapper for pulling data
+from Ravelry.com', an organizational tool for crocheters, knitters, spinners,
+and weavers.  You can retrieve pattern, yarn, author, and shop information by
+search or by a given id.")
+    (license license:expat)))
+
 (define-public r-ravages
   (package
     (name "r-ravages")
@@ -46312,6 +46299,35 @@ reduced matrix.  The projection matrix can be generated using the projection
 function that is independent to the original data.  Then finally apply the
 classification task on the projected data.")
     (license license:gpl2+)))
+
+(define-public r-randomwalker
+  (package
+    (name "r-randomwalker")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RandomWalker" version))
+       (sha256
+        (base32 "0yv6bkfm0dqp5zwxr3k38m57434pfsrpfq9qckfslkxwydmhf074"))))
+    (properties `((upstream-name . "RandomWalker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-patchwork
+                             r-nns
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://www.spsanderson.com/RandomWalker/")
+    (synopsis "Generate Random Walks Compatible with the 'tidyverse'")
+    (description
+     "Generates random walks of various types by providing a set of functions that are
+compatible with the tidyverse'.  The functions provided in the package make it
+simple to create random walks with a variety of properties, such as how many
+simulations to run, how many steps to take, and the distribution of random walk
+itself.")
+    (license license:expat)))
 
 (define-public r-randomuseragent
   (package

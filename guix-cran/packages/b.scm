@@ -4540,16 +4540,16 @@ calculated statistics on the Parquet files and returns easy-to-use data.frames."
 (define-public r-brcal
   (package
     (name "r-brcal")
-    (version "0.0.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BRcal" version))
        (sha256
-        (base32 "0i24bgmj3px40j86yqp9rdx1s2xjbxckfbr8qsclbkzh6xl73ra0"))))
+        (base32 "05d0m9rjl8y103lz3jv3gh83pa6cmil4q56z3fdx0pk7yzikzn7y"))))
     (properties `((upstream-name . "BRcal")))
     (build-system r-build-system)
-    (propagated-inputs (list r-nloptr r-ggplot2 r-fields))
+    (propagated-inputs (list r-nloptr r-lifecycle r-ggplot2 r-fields))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/apguthrie/BRcal")
     (synopsis "Boldness-Recalibration of Binary Events")
@@ -4612,13 +4612,13 @@ analysis more parsimonious.")
 (define-public r-brazilcrime
   (package
     (name "r-brazilcrime")
-    (version "0.2")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BrazilCrime" version))
        (sha256
-        (base32 "17p8fgv7pqdx19fpgjax95bl90918w34qxfnhw6xy2wsmp28y6fn"))))
+        (base32 "194ckp3b6yini9z6nh953n7x0yp6x1zwvxg42z6pq5wsd07g76n5"))))
     (properties `((upstream-name . "BrazilCrime")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-openxlsx r-janitor r-geobr r-dplyr))
@@ -11309,13 +11309,13 @@ biplots.")
 (define-public r-biplotez
   (package
     (name "r-biplotez")
-    (version "2.0")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "biplotEZ" version))
        (sha256
-        (base32 "0wdsxipgfjdfa09zilqzzhpa36wg48z4alf3p7a8vgg9458igblb"))))
+        (base32 "195hccdark20b0gmddm7nnx63nk4bpdvds2vjv3g44pxq5nhfna4"))))
     (properties `((upstream-name . "biplotEZ")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-plotrix))
@@ -11324,12 +11324,13 @@ biplots.")
     (synopsis "EZ-to-Use Biplots")
     (description
      "This package provides users with an EZ-to-use platform for representing data
-with biplots.  Currently principal component analysis (PCA) and canonical
-variate analysis (CVA) biplots are included.  This is accompanied by various
-formatting options for the samples and axes.  Alpha-bags and concentration
-ellipses are included for visual enhancements and interpretation.  For an
-extensive discussion on the topic, see Gower, J.C., Lubbe, S. and le Roux, N.J.
-(2011, ISBN: 978-0-470-01255-0) Understanding Biplots.  Wiley: Chichester.")
+with biplots.  Currently principal component analysis (PCA), canonical variate
+analysis (CVA) and simple correspondence analysis (CA) biplots are included.
+This is accompanied by various formatting options for the samples and axes.
+Alpha-bags and concentration ellipses are included for visual enhancements and
+interpretation.  For an extensive discussion on the topic, see Gower, J.C.,
+Lubbe, S. and le Roux, N.J. (2011, ISBN: 978-0-470-01255-0) Understanding
+Biplots.  Wiley: Chichester.")
     (license license:expat)))
 
 (define-public r-biplotbootgui
@@ -24201,16 +24202,17 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "0klmlrglkisf82q050vnf8hpgj2yfnrpag43lff8z1yiqa4hzngi"))))
+        (base32 "1yzv0xm44jzmxgbrif3h34wrv47kx8k40ignwlhzby446zvpiifc"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
+                             r-survival
                              r-rcpparmadillo
                              r-rcpp
                              r-mclust
@@ -24225,16 +24227,17 @@ WI or WP as the underlying CVI.")
     (description
      "This package provides a fully Bayesian approach in order to estimate a general
 family of cure rate models under the presence of covariates, see Papastamoulis
-and Milienos (2023) <doi:10.48550/@code{arXiv.2310.06926>}.  The promotion time
-can be modelled (a) parametrically using typical distributional assumptions for
-time to event data (including the Weibull, Exponential, Gompertz, log-Logistic
-distributions), or (b) semiparametrically using finite mixtures of Gamma
-distributions.  Posterior inference is carried out by constructing a
-Metropolis-coupled Markov chain Monte Carlo (MCMC) sampler, which combines Gibbs
-sampling for the latent cure indicators and Metropolis-Hastings steps with
-Langevin diffusion dynamics for parameter updates.  The main MCMC algorithm is
-embedded within a parallel tempering scheme by considering heated versions of
-the target posterior distribution.")
+and Milienos (2024) <doi:10.1007/s11749-024-00942-w>.  The promotion time can be
+modelled (a) parametrically using typical distributional assumptions for time to
+event data (including the Weibull, Exponential, Gompertz, log-Logistic
+distributions), or (b) semiparametrically using finite mixtures of
+distributions.  In both cases, user-defined families of distributions are
+allowed under some specific requirements.  Posterior inference is carried out by
+constructing a Metropolis-coupled Markov chain Monte Carlo (MCMC) sampler, which
+combines Gibbs sampling for the latent cure indicators and Metropolis-Hastings
+steps with Langevin diffusion dynamics for parameter updates.  The main MCMC
+algorithm is embedded within a parallel tempering scheme by considering heated
+versions of the target posterior distribution.")
     (license license:gpl2)))
 
 (define-public r-bayesctdesign

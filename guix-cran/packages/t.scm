@@ -12519,6 +12519,30 @@ Effects can be displayed both numerically and graphically in both the original
 and the transformed space of the variables.")
     (license license:gpl2+)))
 
+(define-public r-tlic
+  (package
+    (name "r-tlic")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "TLIC" version))
+       (sha256
+        (base32 "1s98i65zs9v69x2j3vr30pshrvswyg1iawhzdf5i54ixka1vix4j"))))
+    (properties `((upstream-name . "TLIC")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=TLIC")
+    (synopsis "The LIC for T Distribution Regression Analysis")
+    (description
+     "This comprehensive toolkit for T-distribution regression, known as the analysis
+of \"TLIC\" (T-distribution Linear regression Integrated Corrector), adopts
+ordinary least squares method and assumes that errors follow a T-distribution.
+This approach gives it an advantage when dealing with small samples or
+non-normal error distributions, and can provide more robust parameter estimation
+and hypothesis testing results.The philosophy of the package is described in Guo
+G. (2020) <doi:10.1080/02664763.2022.2053949>.")
+    (license license:expat)))
+
 (define-public r-tldr
   (package
     (name "r-tldr")
@@ -12925,13 +12949,13 @@ series, which are compatible with FAME frequencies.")
 (define-public r-tipsae
   (package
     (name "r-tipsae")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tipsae" version))
        (sha256
-        (base32 "14x5g5qc1lnc2p0vkmf8vs7gkjlbkahgaf38j9q23xx8dizym6w9"))))
+        (base32 "1lpjygkk1syjji9hkj8fysmqhja2b5019c11xp9b3iyvnjkfg6z0"))))
     (properties `((upstream-name . "tipsae")))
     (build-system r-build-system)
     (propagated-inputs (list r-stanheaders
@@ -13924,6 +13948,28 @@ basis.  Thus timeseriesdb is optimized to handle updates caused by data revision
 as well as elaborate, multi-lingual meta information.")
     (license license:gpl3)))
 
+(define-public r-timeseriesdatasets
+  (package
+    (name "r-timeseriesdatasets")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "timeSeriesDataSets" version))
+       (sha256
+        (base32 "0wjsc72j7imm42w4s72qxh6z3d4clafv2xv1ala0gdz7n702732n"))))
+    (properties `((upstream-name . "timeSeriesDataSets")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/lightbluetitan/timeseriesdatasets_R")
+    (synopsis "Time Series Data Sets")
+    (description
+     "This package provides a diverse collection of time series datasets spanning
+various fields such as economics, finance, energy, healthcare, and more.
+Designed to support time series analysis in R by offering datasets from multiple
+disciplines, making it a valuable resource for researchers and analysts.")
+    (license license:gpl3)))
+
 (define-public r-timeroc
   (package
     (name "r-timeroc")
@@ -14057,13 +14103,13 @@ month, quarter and year.")
 (define-public r-timeordered
   (package
     (name "r-timeordered")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "timeordered" version))
        (sha256
-        (base32 "0gcf2mvqzqrqxf7qqfhvxb42y32vxaz5nc29vnyig1lh6bnywkhq"))))
+        (base32 "1ag58dk5b6fjdpcppn66vq9ybn4xz480whn14gq49fmjk9ci3s6m"))))
     (properties `((upstream-name . "timeordered")))
     (build-system r-build-system)
     (propagated-inputs (list r-plyr r-igraph))
@@ -17392,13 +17438,13 @@ EspaÃ±a'.")
 (define-public r-tidybayes
   (package
     (name "r-tidybayes")
-    (version "3.0.6")
+    (version "3.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidybayes" version))
        (sha256
-        (base32 "146vmb3sf3ld6n20bbd8lj972g6xcclmisqsmnjq99jmg3hl8q3h"))))
+        (base32 "02i9113vp8va60057k024ad4daajq9cmsn9j9l9z0iq58cd4ik0w"))))
     (properties `((upstream-name . "tidybayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -20950,15 +20996,16 @@ form.")
 (define-public r-testfunctions
   (package
     (name "r-testfunctions")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestFunctions" version))
        (sha256
-        (base32 "0119ajbmgcfwd7axvx47x3aw3j1hnc2i3fvgrixfd1rgj99hz2vj"))))
+        (base32 "1vjkdwfb8mb8sdr06dgkkirvd6699qgampah9hc1ac9giq7g9bkr"))))
     (properties `((upstream-name . "TestFunctions")))
     (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown r-numderiv r-contourfunctions))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=TestFunctions")
     (synopsis
@@ -24305,13 +24352,13 @@ method.  Draxler, C., & Alexandrowicz, R. W. (2015),
 (define-public r-tciu
   (package
     (name "r-tciu")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCIU" version))
        (sha256
-        (base32 "0gbzpd0yadxrlsmnwk4kzf6bvm504k18i0sf2bq6zjaczdhc0vkp"))))
+        (base32 "1l4n0h4vvhwr10pb8g042ss92ka99zdzy3z4h0n397v5n68cnlc3"))))
     (properties `((upstream-name . "TCIU")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

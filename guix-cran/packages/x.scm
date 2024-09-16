@@ -1426,13 +1426,13 @@ pharmacokinetics and pharmacodynamics (PKPD) datasets.")
 (define-public r-xgrove
   (package
     (name "r-xgrove")
-    (version "0.1-11")
+    (version "0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xgrove" version))
        (sha256
-        (base32 "12mbgrn10ydqb6zy1zgypaww4mrz3npswmykq7babwm34bl826w7"))))
+        (base32 "1w9dki21vy6jg1s63scj9rib3w6l97r1xl8r58sgz43arlrhmnlk"))))
     (properties `((upstream-name . "xgrove")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot r-rpart r-gbm r-dplyr))
@@ -1933,33 +1933,17 @@ associated collection of files that defines its Discoverable Taxonomy Set
 (define-public r-xaringanthemer
   (package
     (name "r-xaringanthemer")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xaringanthemer" version))
        (sha256
-        (base32 "074lq9m61647ac7crjmpf8qjj4l60ps0ic4c4b83g47drar79v2z"))))
+        (base32 "006cqs42r4i6s73kf59n9yg7zwpliq9wsxac473rq48yal7nja46"))))
     (properties `((upstream-name . "xaringanthemer")))
     (build-system r-build-system)
-    (arguments
-     (list
-      #:modules '((guix build r-build-system)
-                  (guix build minify-build-system)
-                  (guix build utils)
-                  (ice-9 match))
-      #:imported-modules `(,@%r-build-system-modules (guix build
-                                                      minify-build-system))
-      #:phases '(modify-phases %standard-phases
-                  (add-after 'unpack 'process-javascript
-                    (lambda* (#:key inputs #:allow-other-keys)
-                      (with-directory-excursion "inst/"
-                        (for-each (match-lambda
-                                    ((source . target) (minify source
-                                                               #:target target)))
-                                  '())))))))
     (propagated-inputs (list r-whisker r-purrr r-glue r-colorspace))
-    (native-inputs (list r-knitr esbuild))
+    (native-inputs (list r-knitr))
     (home-page "https://pkg.garrickadenbuie.com/xaringanthemer/")
     (synopsis "Custom 'xaringan' CSS Themes")
     (description

@@ -2281,13 +2281,13 @@ and reference).")
 (define-public r-dttr2
   (package
     (name "r-dttr2")
-    (version "0.5.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dttr2" version))
        (sha256
-        (base32 "0fniydls6c541xhd902a6gczmhigprg0kh74cfmcx8hgknp7fm42"))))
+        (base32 "18mksibzwr4515cqwkc3f4819p08yl5vmj9gvfmrjhvcn4j7v40k"))))
     (properties `((upstream-name . "dttr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-hms r-chk))
@@ -3508,6 +3508,39 @@ the current R session.  The purpose of this is primarily for lightweight
      "Dynamic slicing is a method designed for dependency detection between a
 categorical variable and a continuous variable.  It could be applied for
 non-parametric hypothesis testing and gene set enrichment analysis.")
+    (license license:gpl2+)))
+
+(define-public r-dsld
+  (package
+    (name "r-dsld")
+    (version "0.2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dsld" version))
+       (sha256
+        (base32 "1qx5lj7fiaksfp4vc0n0dxjcjpijx5lp4c0ifmzrfsd67d5zhlbb"))))
+    (properties `((upstream-name . "dsld")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sandwich
+                             r-rmarkdown
+                             r-regtools
+                             r-ranger
+                             r-qeml
+                             r-plotly
+                             r-kendall
+                             r-gtools
+                             r-ggplot2
+                             r-freqparcoord
+                             r-fairness
+                             r-fairml))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/matloff/dsld")
+    (synopsis "Data Science Looks at Discrimination")
+    (description
+     "Statistical and graphical tools for detecting and measuring discrimination and
+bias, be it racial, gender, age or other.  Detection and remediation of bias in
+machine learning algorithms.  Python interfaces available.")
     (license license:gpl2+)))
 
 (define-public r-dslabs
@@ -6454,6 +6487,48 @@ data and the name of the variable which you'll make the group(s) out of and it
 will make univariate, bivariate analysis and parse it into HTML. It also allows
 you to visualize all your data with graphic representation.")
     (license license:gpl3+)))
+
+(define-public r-douconca
+  (package
+    (name "r-douconca")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "douconca" version))
+       (sha256
+        (base32 "01zalzv3cafgb76y3m4vibj8nwrrzd66ss8hq6yx13y7akp99fk6"))))
+    (properties `((upstream-name . "douconca")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-rlang
+                             r-permute
+                             r-gridextra
+                             r-ggrepel
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CajoterBraak/douconca")
+    (synopsis
+     "Double Constrained Correspondence Analysis for Trait-Environment Analysis in Ecology")
+    (description
+     "Double constrained correspondence analysis (dc-CA) analyzes (multi-)trait
+(multi-)environment ecological data by using the vegan package and native R
+code.  Throughout the two step algorithm of ter Braak et al. (2018) is used.
+This algorithm combines and extends community- (sample-) and species-level
+analyses, i.e.  the usual community weighted means (CWM)-based regression
+analysis and the species-level analysis of species-niche centroids (SNC)-based
+regression analysis.  The two steps use canonical correspondence analysis to
+regress the abundance data on to the traits and (weighted) redundancy analysis
+to regress the CWM of the orthonormalized traits on to the environmental
+predictors.  The function dc_CA() has an option to divide the abundance data of
+a site by the site total, giving equal site weights.  This division has the
+advantage that the multivariate analysis corresponds with an unweighted
+(multi-trait) community-level analysis, instead of being weighted.  The first
+step of the algorithm uses vegan::cca().  The second step uses wrda() but
+vegan::rda() if the site weights are equal.  This version has a predict()
+function.  For details see ter Braak et al.  2018
+<doi:10.1007/s10651-017-0395-x>.")
+    (license license:gpl3)))
 
 (define-public r-doubt
   (package
@@ -10682,6 +10757,31 @@ attractive, reader-friendly typography, flexible layout options for
 visualizations, and full support for footnotes and citations.")
     (license license:asl2.0)))
 
+(define-public r-distfromq
+  (package
+    (name "r-distfromq")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "distfromq" version))
+       (sha256
+        (base32 "0wls5151kcih7rljbk0zrhz2lqx0npr4l6s61whh70w958h9jshg"))))
+    (properties `((upstream-name . "distfromq")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zeallot r-purrr r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "http://reichlab.io/distfromq/")
+    (synopsis "Reconstruct a Distribution from a Collection of Quantiles")
+    (description
+     "Given a set of predictive quantiles from a distribution, estimate the
+distribution and create `d`, `p`, `q`, and `r` functions to evaluate its density
+function, distribution function, and quantile function, and generate random
+samples.  On the interior of the provided quantiles, an interpolation method
+such as a monotonic cubic spline is used; the tails are approximated by a
+location-scale family.")
+    (license license:gpl3+)))
+
 (define-public r-distfree-cr
   (package
     (name "r-distfree-cr")
@@ -11741,6 +11841,28 @@ discrete support under their nulls.  A shortcut function to obtain such p-values
 and supports is also provided, along with a wrapper allowing to apply discrete
 procedures directly to data.")
     (license license:gpl3)))
+
+(define-public r-discretedists
+  (package
+    (name "r-discretedists")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DiscreteDists" version))
+       (sha256
+        (base32 "1cag5z4ag1n21ya2fiwrxvflnn4fnqgqfqxgg48r68jvmzdglhbn"))))
+    (properties `((upstream-name . "DiscreteDists")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp r-pracma r-gamlss-dist r-gamlss))
+    (home-page "https://github.com/fhernanb/DiscreteDists")
+    (synopsis "Discrete Statistical Distributions")
+    (description
+     "Implementation of new discrete statistical distributions.  Each distribution
+includes the traditional functions as well as an additional function called the
+family function, which can be used to estimate parameters within the gamlss
+framework.")
+    (license license:expat)))
 
 (define-public r-discretedatasets
   (package
@@ -13365,13 +13487,13 @@ sensitivity and the copy number per well in the initial dilute.")
 (define-public r-digitaldlsorter
   (package
     (name "r-digitaldlsorter")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "digitalDLSorteR" version))
        (sha256
-        (base32 "05wcvv68p55hxf9babr19528khky1pmgfbvm502qhk7ba1arzivf"))))
+        (base32 "1rlp4a52x47a365k7pbfm799wii1i0012g7mpfps8l3pb8sh2hzi"))))
     (properties `((upstream-name . "digitalDLSorteR")))
     (build-system r-build-system)
     (inputs (list tensorflow python))
@@ -14921,58 +15043,6 @@ dice.")
 dimensional tibble'), and allows broadcasting by dimensional names.")
     (license license:expat)))
 
-(define-public r-diathor
-  (package
-    (name "r-diathor")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "diathor" version))
-       (sha256
-        (base32 "0nbqjaxb2fzcg9w67nbrszwv9swr1kjmg4dximfc8qdya1kmv8z9"))))
-    (properties `((upstream-name . "diathor")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tidyr
-                             r-tibble
-                             r-stringr
-                             r-stringdist
-                             r-purrr
-                             r-ggplot2
-                             r-data-table))
-    (home-page "https://cran.r-project.org/package=diathor")
-    (synopsis "Calculate Ecological Information and Diatom Based Indices")
-    (description
-     "Calculates ecological information and biotic indices for diatoms in a sample.
-It includes number/shape of chloroplasts diversity indices, size classes,
-ecological guilds, and multiple biotic indices.  It outputs both a dataframe
-with all the results and plots of all the obtained data in a defined output
-folder.  Sample data was taken from Nicolosi Gelis, Cochero & GÃ³mez (2020,
-<doi:10.1016/j.ecolind.2019.105951>).  The package uses the Diat.Barcode
-database to calculate morphological and ecological information by Rimet &
-Couchez (2012, <doi:10.1051/kmae/2012018>), and the combined classification of
-guilds and size classes established by B-BÃ©res et al. (2017,
-<doi:10.1016/j.ecolind.2017.07.007>).  Current diatom-based biotic indices
-include the DES index by Descy (1979,
-<https://pascal-francis.inist.fr/vibad/index.php?action=@code{getRecordDetail&idt=PASCAL8060205402>}),
-the EPID index by Dell'Uomo (1996, ISBN: 3950009002), the IDAP index by Prygiel
-& Coste (1993, <doi:10.1007/BF00028033>), the ID-CH index by HÃ¼rlimann &
-Niederhauser (2007,
-<https://www.bafu.admin.ch/bafu/fr/home/themes/eaux/publications/publications-eaux/methodes-analyse-appreciation-cours-eau-diatomees.html>),
-the IDP index by GÃ³mez & Licursi (2001, <doi:10.1023/A:1011415209445>), the ILM
-index by Leclercq & Maquet (1987,
-<https://www.vliz.be/imisdocs/publications/286641.pdf>), the IPS index by Coste
-(1982,
-<https://www.oieau.org/eaudoc/notice/ETUDE-DES-METHODES-BIOLOGIQUES-DAPPRECIATION-QUANTITATIVE-DE-LA-QUALITE-DES-EAUX>),
-the LOBO index by Lobo, Callegaro, & Bender (2002, ISBN:9788585869908), the SLA
-by SlÃ¡deÄek (1986, <doi:10.1002/aheh.19860140519>), the TDI index by Kelly, &
-Whitton (1995, <doi:10.1007/BF00003802>), the SPEAR(herbicide) index by Wood,
-Mitrovic, Lim, Warne, Dunlop, & Kefford (2019,
-<doi:10.1016/j.ecolind.2018.12.035>), the PBIDW index by Castro-Roa &
-Pinilla-Agudelo (2014), and the DISP index by Stenger-KovÃ¡csa et al. (2018).")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-diaplt
   (package
     (name "r-diaplt")
@@ -15038,13 +15108,13 @@ libphonenumber java library, <https://github.com/google/libphonenumber>.")
 (define-public r-diallelanalysisr
   (package
     (name "r-diallelanalysisr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiallelAnalysisR" version))
        (sha256
-        (base32 "0w053vqp23hqixgn32g5d8a0l9hcxp6w2fm1sx3ysxr4p0yz7g14"))))
+        (base32 "042i84pxm3gy59r94m0pk7gb04kxl9l8w43b9h7g70dyxi6hf89x"))))
     (properties `((upstream-name . "DiallelAnalysisR")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2))
@@ -19608,6 +19678,36 @@ library (<https://www.dask.org/>), for the Python language.")
 data based on a negative binomial regression model, as described by Keene et al
 (2014) <doi:10.1002/pst.1624>.")
     (license license:gpl2+)))
+
+(define-public r-dehogt
+  (package
+    (name "r-dehogt")
+    (version "0.99.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEHOGT" version))
+       (sha256
+        (base32 "01r45xzy1bhh3fprcqnnibhlmn5nhv08l897js137k4gnb1jc5mn"))))
+    (properties `((upstream-name . "DEHOGT")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mass r-foreach r-doparallel))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/ahshen26/DEHOGT")
+    (synopsis
+     "Differentially Expressed Heterogeneous Overdispersion Gene Test for Count Data")
+    (description
+     "This package implements a generalized linear model approach for detecting
+differentially expressed genes across treatment groups in count data.  The
+package supports both quasi-Poisson and negative binomial models to handle
+over-dispersion, ensuring robust identification of differential expression.  It
+allows for the inclusion of treatment effects and gene-wise covariates, as well
+as normalization factors for accurate scaling across samples.  Additionally, it
+incorporates statistical significance testing with options for p-value
+adjustment and log2 fold range thresholds, making it suitable for RNA-seq
+analysis as described in by Xu et al., (2024)
+<doi:10.1371/journal.pone.0300565>.")
+    (license license:gpl3)))
 
 (define-public r-degross
   (package
@@ -25324,13 +25424,13 @@ ability to get this data from supported sources.")
 (define-public r-datanugget
   (package
     (name "r-datanugget")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datanugget" version))
        (sha256
-        (base32 "0l39yxvbxnzmxq1zjrm30a34ipwhjh5vnn7bqmsivbjci4z7mbyi"))))
+        (base32 "13y0plgkjnis7xmswqr5gmyygm7137kscbdkamfmahbw1qbi097i"))))
     (properties `((upstream-name . "datanugget")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast r-foreach r-dosnow))

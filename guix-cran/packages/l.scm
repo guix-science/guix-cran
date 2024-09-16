@@ -1509,13 +1509,13 @@ inference for linear combinations of regression functions from different groups.
 (define-public r-lsnstat
   (package
     (name "r-lsnstat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lsnstat" version))
        (sha256
-        (base32 "1ydda46j5yv51yq1pgf4nihsg5ihayk603vn3yxzhnnb1r3azh4w"))))
+        (base32 "0ig1ndbnng052ww0fmw5k7lwb0whzg9ychww40h7mdg3dpiyswi5"))))
     (properties `((upstream-name . "lsnstat")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-httr r-dplyr))
@@ -3158,13 +3158,13 @@ functions for estimating linear and geometric morphometric data.")
 (define-public r-lorme
   (package
     (name "r-lorme")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LorMe" version))
        (sha256
-        (base32 "19vb0rg8xffzhfwrwnnhaa5h8c1yyjygmndfkvlhbngkvv6408n6"))))
+        (base32 "0jvdbz82n657rq6fnvhq45l2qvm66ivmqhf34yn9q66pq24yl1qi"))))
     (properties `((upstream-name . "LorMe")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -5415,13 +5415,13 @@ package has no external dependencies.")
 (define-public r-locuszoomr
   (package
     (name "r-locuszoomr")
-    (version "0.3.4")
+    (version "0.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "locuszoomr" version))
        (sha256
-        (base32 "0ynm49xbhn0dcqvw22g106vdwg09gckfcn4iwbjq8hm108qdr1m0"))))
+        (base32 "0g9cgj8rkq44n2s0yv6dh2viw6n2hgmjj88lrziq5vffhhxbpj4j"))))
     (properties `((upstream-name . "locuszoomr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -7101,13 +7101,13 @@ directional and fluctuating selection in age-structured populations.")
 (define-public r-lmest
   (package
     (name "r-lmest")
-    (version "3.2.1")
+    (version "3.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LMest" version))
        (sha256
-        (base32 "14p5l50jqbi1zqzkxhs9hlks23007si8xnj3cil02kmyy0v88gnz"))))
+        (base32 "10qb4v76ky86cy3lyq3b4v76l8hafp3h4zkqmyhqar3fq7yalcq5"))))
     (properties `((upstream-name . "LMest")))
     (build-system r-build-system)
     (propagated-inputs (list r-scatterplot3d
@@ -10649,13 +10649,13 @@ data clustering.")
 (define-public r-liblinear
   (package
     (name "r-liblinear")
-    (version "2.10-23")
+    (version "2.10-24")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LiblineaR" version))
        (sha256
-        (base32 "0c8sj8gyrfycqi75xxf7fpy5kbffbw3aw3xj34x90sj47vg0sr09"))))
+        (base32 "1j17y1bky1ymhxy1yynxih2v5haj7f3q8ddap5w7a33fydkaaj9r"))))
     (properties `((upstream-name . "LiblineaR")))
     (build-system r-build-system)
     (home-page "<https://dnalytics.com/software/liblinear/>")
@@ -11093,13 +11093,13 @@ and produces plots similar to the ones in the manual.")
 (define-public r-lfproqc
   (package
     (name "r-lfproqc")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfproQC" version))
        (sha256
-        (base32 "00d6jcn6p9qdhxwnl2zijy638bayg76h1zspassia0dv4npmzsx4"))))
+        (base32 "181hmhpqwg24bhymz8ahrdbd7cqggvnxv402fjs1b590czdziphx"))))
     (properties `((upstream-name . "lfproQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-vsn
@@ -11119,7 +11119,7 @@ and produces plots similar to the ones in the manual.")
                              r-ggplot2
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=lfproQC")
+    (home-page "https://github.com/kabilansbio/lfproQC")
     (synopsis "Quality Control for Label-Free Proteomics Expression Data")
     (description
      "Label-free bottom-up proteomics expression data is often affected by data
@@ -15080,6 +15080,31 @@ and script sharing workflow.")
 variable analysis, with the lavaan package.  Graphical output for models are
 provided and different estimators are supported.")
     (license license:gpl3)))
+
+(define-public r-lavaan-printer
+  (package
+    (name "r-lavaan-printer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "lavaan.printer" version))
+       (sha256
+        (base32 "1913bk8vqffa3jywgwyf01wq9vb038c0j7fvjnf2rmy9jrvwskl6"))))
+    (properties `((upstream-name . "lavaan.printer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-lavaan))
+    (native-inputs (list r-knitr))
+    (home-page "https://sfcheung.github.io/lavaan.printer/")
+    (synopsis "Helper Functions for Printing 'lavaan' Outputs")
+    (description
+     "Helpers for customizing selected outputs from lavaan by Rosseel (2012)
+<doi:10.18637/jss.v048.i02> and print them.  The functions are intended to be
+used by package developers in their packages and so are not designed to be
+user-friendly.  They are designed to be let developers customize the tables by
+other functions.  Currently the parameter estimates tables of a fitted object
+are supported.")
+    (license license:gpl3+)))
 
 (define-public r-latticekrig
   (package

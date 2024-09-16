@@ -8144,6 +8144,41 @@ saturation\" <doi:10.1016/s0022-5347(17)47703-2> to R. The Visual Basic code was
 kindly provided by Dr. John Lieske of the Mayo Clinic.")
     (license license:expat)))
 
+(define-public r-equibspd
+  (package
+    (name "r-equibspd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "equiBSPD" version))
+       (sha256
+        (base32 "0hdch7w3i5a7gvs0lckzhqr0adz82w25kn5jdzg3zaazh5lmmhbl"))))
+    (properties `((upstream-name . "equiBSPD")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=equiBSPD")
+    (synopsis "Equivalent Estimation Balanced Split Plot Designs")
+    (description
+     "In agricultural, post-harvest and processing, engineering and industrial
+experiments factors are often differentiated with ease with which they can
+change from experimental run to experimental run.  This is due to the fact that
+one or more factors may be expensive or time consuming to change i.e.
+hard-to-change factors.  These factors restrict the use of complete
+randomization as it may make the experiment expensive and time consuming.  Split
+plot designs can be used for such situations.  In general model estimation of
+split plot designs require the use of generalized least squares (GLS).  However
+for some split-plot designs ordinary least squares (OLS) estimates are
+equivalent to generalized least squares (GLS) estimates.  These types of designs
+are known in literature as equivalent-estimation split-plot design.  For method
+details see, Macharia, H. and Goos, P.(2010)
+<doi:10.1080/00224065.2010.11917833>.Balanced split plot designs are designs
+which have an equal number of subplots within every whole plot.  This package
+used to construct equivalent estimation balanced split plot designs for
+different experimental set ups along with different statistical criteria to
+measure the performance of these designs.  It consist of the function
+equivalent_BSPD().")
+    (license license:gpl3)))
+
 (define-public r-equatiomatic
   (package
     (name "r-equatiomatic")
@@ -8170,23 +8205,31 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equatemultiple
   (package
     (name "r-equatemultiple")
-    (version "0.1.2")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateMultiple" version))
        (sha256
-        (base32 "150srrf8msr6jzyri6632xws0g2lnj34kvj7hqrvbiwkad1aqq7m"))))
+        (base32 "14310xmbqvyr398w051naycc3vikdyryi8hcipqyyjgbd1ljsf8f"))))
     (properties `((upstream-name . "equateMultiple")))
     (build-system r-build-system)
-    (propagated-inputs (list r-statmod r-rcpparmadillo r-rcpp r-numderiv
-                             r-equateirt))
+    (propagated-inputs (list r-statmod
+                             r-rcppdist
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-numderiv
+                             r-mvtnorm
+                             r-matrix
+                             r-equateirt
+                             r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=equateMultiple")
     (synopsis "Equating of Multiple Forms")
     (description
      "Equating of multiple forms using Item Response Theory (IRT) methods (Battauz M.
-(2017) <doi:10.1007/s11336-016-9517-x> and Haberman S. J. (2009)
+(2017) <doi:10.1007/s11336-016-9517-x>, Battauz and Leoncio (2023)
+<doi:10.1177/01466216231151702>, Haberman S. J. (2009)
 <doi:10.1002/j.2333-8504.2009.tb02197.x>).")
     (license license:gpl3)))
 
@@ -8926,13 +8969,13 @@ two-step estimator.  For technical details, see Naghi, Varadi and Zhelonkin
 (define-public r-epm
   (package
     (name "r-epm")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epm" version))
        (sha256
-        (base32 "1zziy07ydrxma5qhnxha5g2zm02yi6bvw2vv3w6sanrj9p4kakav"))))
+        (base32 "1qd23jvx2i1n2ykxzci3xkr1rqp6mwa9s3a485mgxnfa68b1zsqg"))))
     (properties `((upstream-name . "epm")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -9487,13 +9530,13 @@ vignette.")
 (define-public r-epir
   (package
     (name "r-epir")
-    (version "2.0.75")
+    (version "2.0.76")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "epiR" version))
        (sha256
-        (base32 "162px7cscy791pgfci45jh3gl3hm60v3ha088kc8vydn8cvfn4kr"))))
+        (base32 "1lzcqm77yq5vijnwhahnjdgqk39vjrprva5m4p0qqq4f89b8j3xi"))))
     (properties `((upstream-name . "epiR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -11311,13 +11354,13 @@ Vandekerkhove, P. (2013) <doi:10.1051/ps/2012004> and next articles.")
 (define-public r-entropyestimation
   (package
     (name "r-entropyestimation")
-    (version "1.2")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EntropyEstimation" version))
        (sha256
-        (base32 "13kb83lfpkw6yq687j0ci23yn5c9dqjibybyyaplk6jixy08lrvy"))))
+        (base32 "1cvbmd745fv3xlxx81zbjf14qlf9avr7wia5r3ish05z7yhv9g2r"))))
     (properties `((upstream-name . "EntropyEstimation")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=EntropyEstimation")
@@ -13674,13 +13717,13 @@ eventually with solar position covariate as a daytime indicator,
 (define-public r-embayes
   (package
     (name "r-embayes")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "emBayes" version))
        (sha256
-        (base32 "1ycr91r0zh75whpf4l9hxrm07rks589bmy994nby88r5yrv34wwg"))))
+        (base32 "0v2yj9gmalm5dwxfi64zlpa4gk7r2v12sls0jy6dj3r3rv0hsyyw"))))
     (properties `((upstream-name . "emBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-glmnet))
@@ -13689,16 +13732,18 @@ eventually with solar position covariate as a daytime indicator,
      "Robust Bayesian Variable Selection via Expectation-Maximization")
     (description
      "Variable selection methods have been extensively developed for analyzing
-high-dimensional omics data within both the frequentist and Bayesian frameworks.
- This package implemented the spike-and-slab quantile LASSO which has been
-developed along the line of Bayesian hierarchical model but deeply rooted in the
-frequentist regularization methods by utilizing the ExpectationâMaximization
-(EM) algorithm.  Therefore, the proposed method borrows strength from both the
-frequentist and Bayesian frameworks while overcoming their respective
-limitations.  The spike-and-slab quantile LASSO can handle data irregularity in
-terms of skewness and outliers in the disease trait, compared to its nonrobust
-alternative, the spike-and-slab LASSO, which has also been implemented in the
-package.  The core module of this package is developed in C++'.")
+highdimensional omics data within both the frequentist and Bayesian frameworks.
+This package provides implementations of the spike-and-slab quantile (group)
+LASSO which have been developed along the line of Bayesian hierarchical models
+but deeply rooted in frequentist regularization methods by utilizing
+ExpectationâMaximization (EM) algorithm.  The spike-and-slab quantile LASSO
+can handle data irregularity in terms of skewness and outliers in response
+variables, compared to its non-robust alternative, the spike-and-slab LASSO,
+which has also been implemented in the package.  In addition, procedures for
+fitting the spike-and-slab quantile group LASSO and its non-robust counterpart
+have been implemented in the form of quantile/least-square varying coefficient
+mixed effect models for high-dimensional longitudinal data.  The core module of
+this package is developed in C++'.")
     (license license:gpl2)))
 
 (define-public r-emayili
@@ -18316,13 +18361,13 @@ about @code{EdBuild} data processing please see @code{EdBuild} (2020)
 (define-public r-eda4treer
   (package
     (name "r-eda4treer")
-    (version "0.6.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eda4treeR" version))
        (sha256
-        (base32 "0dah3pamlkc6iqskj0cp645l9hrinsmh678adxprsw0yp30727ab"))))
+        (base32 "1r84xldi872kh2msfhab1pa6j577gw47vvh0jqjbps3hdii9dwh4"))))
     (properties `((upstream-name . "eda4treeR")))
     (build-system r-build-system)
     (propagated-inputs (list r-supernova

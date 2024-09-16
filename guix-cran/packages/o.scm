@@ -5551,20 +5551,19 @@ graphics, or ggplot2.  This package is not affiliated with the
 (define-public r-openspecy
   (package
     (name "r-openspecy")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OpenSpecy" version))
        (sha256
-        (base32 "05vzc4vswdd1k4b0gs01rhf8lp7lspygw1m6rw9d49l5ag7hq9if"))))
+        (base32 "1vg3z7rqwlx4dfab8ka8a4mvpvrdp2mmh86xxlhiyqcgabycm6ry"))))
     (properties `((upstream-name . "OpenSpecy")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
                              r-signal
                              r-shiny
                              r-plotly
-                             r-osfr
                              r-mmand
                              r-jsonlite
                              r-jpeg
