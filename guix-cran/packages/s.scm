@@ -2729,6 +2729,41 @@ machine <doi:10.1007/s11634-008-0020-9>.  This algorithm uses two efficient
 updates, one for linear kernel and one for the nonlinear kernel.")
     (license license:gpl2)))
 
+(define-public r-svmd
+  (package
+    (name "r-svmd")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SVMD" version))
+       (sha256
+        (base32 "0g6cp3zazfx70c0ahfymwxwsinkhrd0hcvh464sch8k77m81asbf"))))
+    (properties `((upstream-name . "SVMD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vmdecomp))
+    (home-page "https://cran.r-project.org/package=SVMD")
+    (synopsis "Spearman Variational Mode Decomposition")
+    (description
+     "In practice, it is difficult to determine the number of decomposition modes, K,
+for Variational Mode Decomposition (VMD).  To overcome this issue, this study
+offers Spearman Variational Mode Decomposition (SVMD), a method that uses the
+Spearman correlation coefficient to calculate the ideal mode number.  Unlike the
+Pearson correlation coefficient, which only returns a perfect value when X and Y
+are linearly connected, the Spearman correlation can be calculated without
+knowing the probability distributions of X and Y. The Spearman correlation
+coefficient, also called Spearman's rank correlation coefficient, is a subset of
+a wider correlation coefficient.  As VMD decomposes a signal, the Spearman
+correlation coefficient between the reconstructed and original sequences rises
+as the mode number K increases.  Once the signal has been fully decomposed,
+subsequent increases in K cause the correlation to gradually level off.  When
+the correlation reaches a specific level, VMD is said to have adequately
+decomposed the signal.  Numerous experiments revealed that a threshold of 0.997
+produces the best denoising effect, so the threshold is set at 0.997.  This
+package has been developed using concept of Yang et al.
+(2021)<doi:10.1016/j.aej.2021.01.055>.")
+    (license license:gpl3)))
+
 (define-public r-svkomodo
   (package
     (name "r-svkomodo")
@@ -27629,6 +27664,30 @@ and sunset.")
     (description "Calculation of solar zenith and azimuth angles.")
     (license license:gpl2)))
 
+(define-public r-solar2
+  (package
+    (name "r-solar2")
+    (version "0.10")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "solaR2" version))
+       (sha256
+        (base32 "0bs9pwskdi9pw2d1bkdb8gdsgvwwj4s9f8i2py8588qrjrrxn5wn"))))
+    (properties `((upstream-name . "solaR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcolorbrewer r-latticeextra r-lattice
+                             r-data-table))
+    (home-page "https://solarization.github.io/solaR2/")
+    (synopsis "Radiation and Photovoltaic Systems")
+    (description
+     "This package provides tools for calculating solar geometry, solar radiation on
+horizontal and inclined planes, and simulating the performance of various
+photovoltaic (PV) systems.  Supports daily and intradaily irradiation data,
+enabling detailed analysis of grid-connected and water-pumping PV systems,
+including shading effects and solar angle calculations.")
+    (license license:gpl3)))
+
 (define-public r-solar
   (package
     (name "r-solar")
@@ -40399,6 +40458,38 @@ with core functions as needed for troubleshooting.  Note, 0.1.1 support
 deprecated 2023-05-31.")
     (license license:expat)))
 
+(define-public r-shrinktvpvar
+  (package
+    (name "r-shrinktvpvar")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shrinkTVPVAR" version))
+       (sha256
+        (base32 "0938fmh45nnvvkpxskqrzgkv25yghzy8pq8313l8q50xxpskp1rm"))))
+    (properties `((upstream-name . "shrinkTVPVAR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-stochvol
+                             r-shrinktvp
+                             r-rcppprogress
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-rcolorbrewer
+                             r-lattice
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=shrinkTVPVAR")
+    (synopsis
+     "Efficient Bayesian Inference for TVP-VAR-SV Models with Shrinkage")
+    (description
+     "Efficient Markov chain Monte Carlo (MCMC) algorithms for fully Bayesian
+estimation of time-varying parameter vector autoregressive models with shrinkage
+priors.  Details on the algorithms used are provided in Cadonna et al. (2020)
+<doi:10.3390/econometrics8020020> and Knaus et al. (2021)
+<doi:10.18637/jss.v100.i13>.")
+    (license license:gpl2+)))
+
 (define-public r-shrinktvp
   (package
     (name "r-shrinktvp")
@@ -49792,6 +49883,40 @@ technique.  Runtime examples are provided in the package function as well as at
 <https://kartikeyab.shinyapps.io/semwebappk/> .")
     (license license:gpl2)))
 
+(define-public r-semdeep
+  (package
+    (name "r-semdeep")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SEMdeep" version))
+       (sha256
+        (base32 "0jwaliqxcw2rja7h87j096z02fkvrmfv8ssn10m16lcng9xy5gmm"))))
+    (properties `((upstream-name . "SEMdeep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-torch
+                             r-shapr
+                             r-semgraph
+                             r-ranger
+                             r-nnet
+                             r-neuralnettools
+                             r-mgcv
+                             r-lavaan
+                             r-igraph
+                             r-corpcor
+                             r-cito))
+    (home-page "https://github.com/BarbaraTarantino/SEMdeep")
+    (synopsis
+     "Structural Equation Modeling with Deep Neural Network and Machine Learning")
+    (description
+     "Training and validation of a custom (or data-driven) Structural Equation Models
+using layer-wise Deep Neural Networks or node-wise Machine Learning algorithms,
+which extend the fitting procedures of the	'SEMgraph R package
+<doi:10.32614/CRAN.package.SEMgraph>.")
+    (license license:gpl3+)))
+
 (define-public r-semblance
   (package
     (name "r-semblance")
@@ -57748,13 +57873,13 @@ topic, see the paper by Minsker (2015) <doi:10.3150/14-BEJ645>.")
 (define-public r-sbm
   (package
     (name "r-sbm")
-    (version "0.4.6")
+    (version "0.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sbm" version))
        (sha256
-        (base32 "1cnf4d5xrfsvsy56sh4nz83j82j8yp09hlnvddfgi15zf4md7glx"))))
+        (base32 "1gx8nii5r2651crc0dfns2ir3pps8lbkxymlj1ngjwl7yhh8lksw"))))
     (properties `((upstream-name . "sbm")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -57780,8 +57905,9 @@ topic, see the paper by Minsker (2015) <doi:10.3150/14-BEJ645>.")
 stochastic blockmodels (SBM).  Supports at the moment Simple, Bipartite,
 Multipartite and Multiplex SBM (undirected or directed with Bernoulli, Poisson
 or Gaussian emission laws on the edges, and possibly covariate for Simple and
-Bipartite SBM).  See LÃ©ger (2016) <arxiv:1602.07587>, Barbillon et al. (2020)
-<doi:10.1111/rssa.12193> and Bar-Hen et al. (2020) <arxiv:1807.10138>.")
+Bipartite SBM).  See LÃ©ger (2016) <doi:10.48550/@code{arXiv.1602.07587>},
+Barbillon et al. (2020) <doi:10.1111/rssa.12193> and Bar-Hen et al. (2020)
+<doi:10.48550/@code{arXiv.1807.10138>}.")
     (license license:gpl3+)))
 
 (define-public r-sbl
@@ -60626,13 +60752,13 @@ within the constrained space.")
 (define-public r-salso
   (package
     (name "r-salso")
-    (version "0.3.41")
+    (version "0.3.42")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "salso" version))
        (sha256
-        (base32 "1va5plx45bfy8mfciq7hv8jqhs6b8zal9ls1ac0jjazxms5fmd0s"))))
+        (base32 "0j4ygcdjs241fcixzvas77rkqynrrzf84w35g791gsxgilpsl0zc"))))
     (properties `((upstream-name . "salso")))
     (build-system r-build-system)
     (inputs (list))

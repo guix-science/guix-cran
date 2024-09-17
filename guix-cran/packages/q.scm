@@ -3177,6 +3177,32 @@ hardware <https://quantum-computing.ibm.com/>.")
      "Molecular descriptors and outcomes for several public domain data sets.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-qs2
+  (package
+    (name "r-qs2")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "qs2" version))
+       (sha256
+        (base32 "0aa5b2dcnkrmknki72frm3qvigz6z6yl14i174yzgxyzw6kgbs6c"))))
+    (properties `((upstream-name . "qs2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringfish r-rcppparallel r-rcpp))
+    (native-inputs (list pkg-config r-knitr))
+    (home-page "https://github.com/traversc/qs2")
+    (synopsis "Efficient Serialization of R Objects")
+    (description
+     "Streamlines and accelerates the process of saving and loading R objects,
+improving speed and compression compared to other methods.  The package provides
+two compression formats: the qs2 format, which uses R serialization via the C
+API while optimizing compression and disk I/O, and the qdata format, featuring
+custom serialization for slightly faster performance and better compression.
+Additionally, the qs2 format can be directly converted to the standard RDS
+format, ensuring long-term compatibility with future versions of R.")
+    (license license:gpl3)))
+
 (define-public r-qrnn
   (package
     (name "r-qrnn")

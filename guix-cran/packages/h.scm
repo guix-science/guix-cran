@@ -13339,13 +13339,13 @@ articles and other items in form of convenient R objects.")
 (define-public r-hac
   (package
     (name "r-hac")
-    (version "1.1-0")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HAC" version))
        (sha256
-        (base32 "1k19qrirhzl8qaa4svf7qa90r7gphbbvm9m0977z9gd704n8b62a"))))
+        (base32 "041nlm48c69kv20hsvnrwljbr2yh7d7v209iqvd26x2i0fmnx3zn"))))
     (properties `((upstream-name . "HAC")))
     (build-system r-build-system)
     (propagated-inputs (list r-copula))

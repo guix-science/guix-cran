@@ -386,13 +386,13 @@ bounded-variable least squares.")
 (define-public r-bvhar
   (package
     (name "r-bvhar")
-    (version "2.0.1")
+    (version "2.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bvhar" version))
        (sha256
-        (base32 "1qbws3xa93ladgwfqdyk3qzmijhdam3lhdzwpbb5q5397mqkyfbp"))))
+        (base32 "098swv96rhxjf1k6q8xww479cq3v0m9991li9zqs3yd2irzlimly"))))
     (properties `((upstream-name . "bvhar")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -413,10 +413,11 @@ bounded-variable least squares.")
     (home-page "https://ygeunkim.github.io/package/bvhar/")
     (synopsis "Bayesian Vector Heterogeneous Autoregressive Modeling")
     (description
-     "This package provides tools to research Bayesian Vector heterogeneous
-autoregressive (VHAR) model, referring to Kim & Baek (2023)
-(<doi:10.1080/00949655.2023.2281644>).  bvhar can model Vector Autoregressive
-(VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR) models.")
+     "This package provides tools to model and forecast multivariate time series
+including Bayesian Vector heterogeneous autoregressive (VHAR) model by Kim &
+Baek (2023) (<doi:10.1080/00949655.2023.2281644>).  bvhar can model Vector
+Autoregressive (VAR), VHAR, Bayesian VAR (BVAR), and Bayesian VHAR (BVHAR)
+models.")
     (license license:gpl3+)))
 
 (define-public r-bvarverse
@@ -5875,13 +5876,13 @@ random effects.")
 (define-public r-box-lsp
   (package
     (name "r-box-lsp")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.lsp" version))
        (sha256
-        (base32 "1w3v2c469sqn7llydxi85vm3lwm27x9pzxh62n3h6gdp5f1yn7cf"))))
+        (base32 "1a4p7h4g55wx5lpyq25rp8l659r9k90w1iqp4bqjrrhkkaqbjgrg"))))
     (properties `((upstream-name . "box.lsp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-fs r-cli r-box))
@@ -5891,7 +5892,7 @@ random effects.")
      "This package provides a box compatible custom language parser for the
 languageserver package to provide completion and signature hints in code
 editors.")
-    (license license:lgpl3+)))
+    (license license:lgpl3)))
 
 (define-public r-box-linters
   (package
@@ -21540,13 +21541,13 @@ uncertainty quantification.")
 (define-public r-bayessurv
   (package
     (name "r-bayessurv")
-    (version "3.7")
+    (version "3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesSurv" version))
        (sha256
-        (base32 "1mqsnvqrivyl28d5fjh7alqsxr06wnhkjhhhrahmngmvgnmmnd1b"))))
+        (base32 "0yys80bps7567av16yw6ndj6vvx1kn8pnd7wa4xz521bjby4wsjz"))))
     (properties `((upstream-name . "bayesSurv")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-smoothsurv r-coda))
@@ -23825,13 +23826,13 @@ to use and research on Bayesian Neural Networks.")
 (define-public r-bayesfbhborrow
   (package
     (name "r-bayesfbhborrow")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BayesFBHborrow" version))
        (sha256
-        (base32 "1s291ins320iqfbrqixxaxvizc8ili27xqp0syy21cjc8y6yl2nn"))))
+        (base32 "0kaw4pmy2mjawsfs8s0h2m32p0cvg8wg33vfznpzvc40xymy2g4l"))))
     (properties `((upstream-name . "BayesFBHborrow")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -23849,7 +23850,8 @@ to use and research on Bayesian Neural Networks.")
 flexible baseline hazard function is achieved via a piecewise exponential
 likelihood with time varying split points and smoothing prior on the historic
 baseline hazards.  The method is described in Scott and Lewin (2024)
-<doi:10.48550/@code{arXiv.2401.06082>}.")
+<doi:10.48550/@code{arXiv.2401.06082>}, and the software paper is in Axillus et
+al. (2024) <doi:10.48550/@code{arXiv.2408.04327>}.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-bayesess
@@ -26046,17 +26048,17 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.7.1")
+    (version "1.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "1j76r9wl2limr7adlyr05n22q75sk8n03ar5bblpckcyrrqvpgr8"))))
+        (base32 "0sbiq200h02h3zha4npms3l5rq2lzsri7m6vgv359mxapp4bqfcm"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://www.r-project.org")
+    (native-inputs (list r-knitr gfortran))
+    (home-page "https://merliseclyde.github.io/BAS/")
     (synopsis
      "Bayesian Variable Selection and Model Averaging using Bayesian Adaptive Sampling")
     (description
@@ -26251,13 +26253,13 @@ effect.  For more information, see Kim et al. (2023) <doi:10.1111/biom.13833>.")
 (define-public r-bartcause
   (package
     (name "r-bartcause")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bartCause" version))
        (sha256
-        (base32 "05g6xmlryksbl4812krz3h8kkkz41i58l1q25wcklw4nvafpjc0v"))))
+        (base32 "1nvb3ljzh4l8bq1nixvphr0aww1zxi3bcv6jfa54qs4iq9mgqxsv"))))
     (properties `((upstream-name . "bartCause")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbarts))

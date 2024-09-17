@@ -2648,42 +2648,6 @@ al. (2017a) <doi:10.1016/j.csda.2016.08.002> and LÃ³pez-Cheda et al. (2017b)
 <doi:10.1007/s11749-016-0515-1>.")
     (license license:gpl2+)))
 
-(define-public r-npcs
-  (package
-    (name "r-npcs")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "npcs" version))
-       (sha256
-        (base32 "0bd81fi1zg06s39msdrnhh0yv7y7zr2nn110w8fm9vdlcx100gam"))))
-    (properties `((upstream-name . "npcs")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-smotefamily
-                             r-nnet
-                             r-magrittr
-                             r-ggplot2
-                             r-formatr
-                             r-foreach
-                             r-forcats
-                             r-dplyr
-                             r-dfoptim
-                             r-caret))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=npcs")
-    (synopsis "Neyman-Pearson Classification via Cost-Sensitive Learning")
-    (description
-     "We connect the multi-class Neyman-Pearson classification (NP) problem to the
-cost-sensitive learning (CS) problem, and propose two algorithms (NPMC-CX and
-NPMC-ER) to solve the multi-class NP problem through cost-sensitive learning
-tools.  Under certain conditions, the two algorithms are shown to satisfy
-multi-class NP properties.  More details are available in the paper
-\"Neyman-Pearson Multi-class Classification via Cost-sensitive Learning\" (Ye Tian
-and Yang Feng, 2021).")
-    (license license:gpl2)))
-
 (define-public r-npcp
   (package
     (name "r-npcp")
@@ -15378,13 +15342,13 @@ sequentially observed data.")
 (define-public r-nanotime
   (package
     (name "r-nanotime")
-    (version "0.3.9")
+    (version "0.3.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nanotime" version))
        (sha256
-        (base32 "1n3rz8zvrq5kxkfiv4gc64lmn72fm2jjgb9f2j23my38zpnnaafc"))))
+        (base32 "0iql143mv58j7i1v97ana17q25qssyivrm6pclyf58slvashndiy"))))
     (properties `((upstream-name . "nanotime")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-rcppdate r-rcppcctz r-rcpp r-bit64))

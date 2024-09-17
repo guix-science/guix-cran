@@ -2463,6 +2463,29 @@ Intervals for Model-free Robust Inference on Optimal Treatment Regimes\",
 Biometrics, 77: 465â 476, <doi:10.1111/biom.13337>.")
     (license license:gpl2+)))
 
+(define-public r-dtreg
+  (package
+    (name "r-dtreg")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtreg" version))
+       (sha256
+        (base32 "02rplyjzdn4liipgi73qhanqn2lqdk1hymrrsfvvyarzyba3yiwr"))))
+    (properties `((upstream-name . "dtreg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-r6 r-jsonlite r-httr2))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/TIBHannover/orkg/dtreg-r")
+    (synopsis
+     "Interact with Data Type Registries and Create Machine-Readable Data")
+    (description
+     "You can load a schema from a DTR (data type registry) as an R object.  Use this
+schema to write your data in JSON-LD (@code{JavaScript} Object Notation for
+Linked Data) format to make it machine readable.")
+    (license license:expat)))
+
 (define-public r-dtrackr
   (package
     (name "r-dtrackr")
@@ -2575,6 +2598,31 @@ Chain(s) based on transition probabilities and an initial distribution.  The
 function FPTime determines the first passage time into each state.  The function
 statdistr determines the stationary distribution of a Markov Chain.")
     (license license:gpl2+)))
+
+(define-public r-dtmapi
+  (package
+    (name "r-dtmapi")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dtmapi" version))
+       (sha256
+        (base32 "051n7bvnnzza8m7gfr4bpn29vllna1lhxmk28ij1fw0fmkpjgsbz"))))
+    (properties `((upstream-name . "dtmapi")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-jsonlite r-httr r-config))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/Displacement-Tracking-Matrix/dtmapi-R")
+    (synopsis "Fetching Data from the 'Displacement Tracking Matrix'")
+    (description
+     "Allows humanitarian community, academia, media, government, and non-governmental
+organizations to utilize the data collected by the `Displacement Tracking
+Matrix` (<https://dtm.iom.int>), a unit in the International Organization for
+Migration.  This also provides non-sensitive Internally Displaced Person
+figures, aggregated at the country, Admin 1 (states, provinces, or equivalent),
+and Admin 2 (smaller administrative areas) levels.")
+    (license license:expat)))
 
 (define-public r-dti
   (package
@@ -6733,35 +6781,6 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 <doi:10.2307/2533008>].")
     (license license:gpl2)))
 
-(define-public r-dotwhisker
-  (package
-    (name "r-dotwhisker")
-    (version "0.8.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dotwhisker" version))
-       (sha256
-        (base32 "1hry5c2w6y5h0il5plj2mp3gmlzjq0cw6klbmlh0ka56nv9b9bcg"))))
-    (properties `((upstream-name . "dotwhisker")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-stringr
-                             r-rlang
-                             r-purrr
-                             r-performance
-                             r-patchwork
-                             r-parameters
-                             r-gtable
-                             r-gridextra
-                             r-ggstance
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://fsolt.org/dotwhisker/")
-    (synopsis "Dot-and-Whisker Plots of Regression Results")
-    (description "Quick and easy dot-and-whisker plots of regression results.")
-    (license license:expat)))
-
 (define-public r-dotty
   (package
     (name "r-dotty")
@@ -8868,6 +8887,47 @@ summary ROC curve and some related AUC-based inference methods are available
 (Noma et al. (2021) <doi:10.1080/23737484.2021.1894408>).")
     (license license:gpl3)))
 
+(define-public r-dmcfun
+  (package
+    (name "r-dmcfun")
+    (version "4.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DMCfun" version))
+       (sha256
+        (base32 "0r68ax8yic138wwy5ndf72vfsjlw12f3v5afyn748is86s6vnj76"))))
+    (properties `((upstream-name . "DMCfun")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rcpp
+                             r-pbapply
+                             r-dplyr
+                             r-deoptim
+                             r-bh))
+    (home-page "https://github.com/igmmgi/DMCfun")
+    (synopsis "Diffusion Model of Conflict (DMC) in Reaction Time Tasks")
+    (description
+     "DMC model simulation detailed in Ulrich, R., Schroeter, H., Leuthold, H., &
+Birngruber, T. (2015).  Automatic and controlled stimulus processing in conflict
+tasks: Superimposed diffusion processes and delta functions.  Cognitive
+Psychology, 78, 148-174.  Ulrich et al. (2015)
+<doi:10.1016/j.cogpsych.2015.02.005>.  Decision processes within choice
+reaction-time (CRT) tasks are often modelled using evidence accumulation models
+(EAMs), a variation of which is the Diffusion Decision Model (DDM, for a review,
+see Ratcliff & @code{McKoon}, 2008).  Ulrich et al. (2015) introduced a
+Diffusion Model for Conflict tasks (DMC).  The DMC model combines common
+features from within standard diffusion models with the addition of superimposed
+controlled and automatic activation.  The DMC model is used to explain
+distributional reaction time (and error rate) patterns in common behavioural
+conflict-like tasks (e.g., Flanker task, Simon task).  This R-package implements
+the DMC model and provides functionality to fit the model to observed data.
+Further details are provided in the following paper: Mackenzie, I.G., &
+Dudschig, C. (2021).  DMCfun: An R package for fitting Diffusion Model of
+Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
+100074. <doi:10.1016/j.metip.2021.100074>.")
+    (license license:expat)))
+
 (define-public r-dmbc
   (package
     (name "r-dmbc")
@@ -9687,13 +9747,13 @@ convert them to N@code{IfTI-1} format.")
 (define-public r-diversityforest
   (package
     (name "r-diversityforest")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diversityForest" version))
        (sha256
-        (base32 "1yp9lwr5sj8mv1sxrrjsx00m2aq02xcs3q06v51h29g686rdij0f"))))
+        (base32 "0p4kk896y6cidy9nh8blvg9ghcy21dhjnw9hcpg90bq4j8s82gms"))))
     (properties `((upstream-name . "diversityForest")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9704,6 +9764,7 @@ convert them to N@code{IfTI-1} format.")
                              r-rcppeigen
                              r-rcpp
                              r-rcolorbrewer
+                             r-patchwork
                              r-nnet
                              r-matrix
                              r-mapgam
@@ -9714,23 +9775,29 @@ convert them to N@code{IfTI-1} format.")
     (synopsis
      "Innovative Complex Split Procedures in Random Forests Through Candidate Split Sampling")
     (description
-     "This package implements interaction forests [1], which are specific diversity
-forests and the basic form of diversity forests that uses univariable, binary
-splitting [2].  Interaction forests (IFs) are ensembles of decision trees that
-model quantitative and qualitative interaction effects using bivariable
-splitting.  IFs come with the Effect Importance Measure (EIM), which can be used
-to identify variable pairs that feature quantitative and qualitative interaction
-effects with high predictive relevance.  IFs and EIM focus on well interpretable
-forms of interactions.  The package also offers plot functions for visualising
-the estimated forms of interaction effects.  Categorical, metric, and survival
-outcomes are supported.  This is a fork of the R package ranger (main author:
-Marvin N. Wright) that implements random forests using an efficient C++
-implementation.  References: [1] Hornung, R. & Boulesteix, A.-L. (2022)
-Interaction Forests: Identifying and exploiting interpretable quantitative and
-qualitative interaction effects.  Computational Statistics & Data Analysis
-171:107460, <doi:10.1016/j.csda.2022.107460>. [2] Hornung, R. (2022) Diversity
-forests: Using split sampling to enable innovative complex split procedures in
-random forests.  SN Computer Science 3(2):1, <doi:10.1007/s42979-021-00920-1>.")
+     "Implementations of three diversity forest (DF) (Hornung, 2022,
+<doi:10.1007/s42979-021-00920-1>) variants.  The DF algorithm is a split-finding
+approach that allows complex split procedures to be realized in random forest
+variants.  The three DF variants implemented are: 1.  interaction forests (IFs)
+(Hornung & Boulesteix, 2022, <doi:10.1016/j.csda.2022.107460>): Model
+quantitative and qualitative interaction effects using bivariable splitting.
+Come with the Effect Importance Measure (EIM), which can be used to identify
+variable pairs that have well-interpretable quantitative and qualitative
+interaction effects with high predictive relevance.  2.  multi forests
+(@code{MuFs}) (Hornung & Hapfelmeier, 2024,
+<doi:10.48550/@code{arXiv.2409.08925>}): Model multi-class outcomes using
+multi-way and binary splitting.  Come with two variable importance measures
+(VIMs): The multi-class VIM measures the degree to which the variables are
+specifically associated with one or more outcome classes, and the discriminatory
+VIM, similar to conventional VIMs, measures the overall influence strength of
+the variables.  3.  the basic form of diversity forests that uses conventional
+univariable, binary splitting (Hornung, 2022).  Except for multi forests, which
+are tailored for multi-class outcomes, all included diversity forest variants
+support categorical, metric, and survival outcomes.  The package also includes
+plotting functions that make it possible to learn about the forms of the effects
+identified using IFs and @code{MuFs}.  This is a fork of the R package ranger
+(main author: Marvin N. Wright), which implements random forests using an
+efficient C++ implementation.")
     (license license:gpl3)))
 
 (define-public r-diversificationr
@@ -10288,16 +10355,16 @@ description and application of methods available in this package.")
 (define-public r-distributions3
   (package
     (name "r-distributions3")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "distributions3" version))
        (sha256
-        (base32 "19c8s5qshqzhvl01c7nd9912vyy0nnmc7rfg8iih2jlcpqrdql86"))))
+        (base32 "0av16mpnr18ijj4g8fk85mdvvv7qxqj1i9cn1dm585qgg1q8hd0z"))))
     (properties `((upstream-name . "distributions3")))
     (build-system r-build-system)
-    (propagated-inputs (list r-glue r-ggplot2 r-ellipsis))
+    (propagated-inputs (list r-rlang r-glue r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/alexpghayes/distributions3")
     (synopsis "Probability Distributions as S3 Objects")
@@ -14367,13 +14434,13 @@ required for usage.")
 (define-public r-dietr
   (package
     (name "r-dietr")
-    (version "1.1.4")
+    (version "1.1.5-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dietr" version))
        (sha256
-        (base32 "0l0pf55xhfzk7il7cvcasf6gi8nvcckygvryhfqldyq7zmr1pgyh"))))
+        (base32 "10b290iccx5wa3krjssy29j4p2wz0qkks0a8ih4mhxnry554xjb7"))))
     (properties `((upstream-name . "dietr")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfishbase))

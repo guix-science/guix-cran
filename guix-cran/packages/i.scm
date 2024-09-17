@@ -14051,6 +14051,43 @@ file for the reference copyright information and for the complete citations of
 the reference sources, respectively.")
     (license (license:fsdg-compatible "Artistic License 2.0"))))
 
+(define-public r-ieegio
+  (package
+    (name "r-ieegio")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ieegio" version))
+       (sha256
+        (base32 "1zgj67dwrp5n9gmwihhx180yw9dhzp492qqs6mjmxsrsc32yih8w"))))
+    (properties `((upstream-name . "ieegio")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-stringr
+                             r-rpyants
+                             r-readnsx
+                             r-r6
+                             r-r-matlab
+                             r-oro-nifti
+                             r-jsonlite
+                             r-hdf5r
+                             r-gifti
+                             r-fst
+                             r-fs
+                             r-freesurferformats
+                             r-filearray
+                             r-fastmap
+                             r-digest
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "http://dipterix.org/ieegio/")
+    (synopsis "File IO for Intracranial Electroencephalography")
+    (description
+     "Integrated toolbox supporting common file formats used for intracranial
+Electroencephalography (@code{iEEG}) and deep-brain stimulation (DBS) study.")
+    (license license:expat)))
+
 (define-public r-ieeeround
   (package
     (name "r-ieeeround")

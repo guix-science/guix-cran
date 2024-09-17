@@ -559,13 +559,13 @@ format.  Visual acuity conversion is based on Schulze-Bonsel et al. (2006)
 (define-public r-exvatools
   (package
     (name "r-exvatools")
-    (version "0.8.0")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "exvatools" version))
        (sha256
-        (base32 "090bxz71jc18h2nnmk4ja5irkh9qdihxa5pngq3c0ci7xhk6x52a"))))
+        (base32 "1k3jsaczzzvs9h72i6ldinv0byjs5wvqzy3qc0mn66lyq9gwrxg7"))))
     (properties `((upstream-name . "exvatools")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-openxlsx r-data-table r-cli))
@@ -22100,13 +22100,13 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
 (define-public r-easybio
   (package
     (name "r-easybio")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easybio" version))
        (sha256
-        (base32 "1k6qpr8m3ijxnfb0laqydfscmi0m0ca41vx07jxy0120rkavm01w"))))
+        (base32 "0alnbb1pjvykagpgmw7wmn8bp0pkx3wx62nl97yvw9fwwdkg56hn"))))
     (properties `((upstream-name . "easybio")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-limma r-ggplot2 r-data-table))
@@ -22116,13 +22116,14 @@ Census APIs (<https://www.census.gov/data/developers/data-sets.html>).")
      "Comprehensive Single-Cell Annotation and Transcriptomic Analysis Toolkit")
     (description
      "This package provides a comprehensive toolkit for single-cell annotation with
-the @code{CellMarker2.0} database
-<http://bio-bigdata.hrbmu.edu.cn/@code{CellMarker/>}.  Streamlines biological
-label assignment in single-cell RNA-seq data and facilitates transcriptomic
-analysis, including preparation of TCGA<https://portal.gdc.cancer.gov/> and
+the @code{CellMarker2.0} database (see Xia Li, Peng Wang, Yunpeng Zhang (2023)
+<doi: 10.1093/nar/gkac947>).  Streamlines biological label assignment in
+single-cell RNA-seq data and facilitates transcriptomic analysis, including
+preparation of TCGA<https://portal.gdc.cancer.gov/> and
 GEO<https://www.ncbi.nlm.nih.gov/geo/> datasets, differential expression
 analysis and visualization of enrichment analysis results.  Additional utility
-functions support various bioinformatics workflows.")
+functions support various bioinformatics workflows.  See Wei Cui (2024) <doi:
+10.1101/2024.09.14.609619> for more details.")
     (license license:expat)))
 
 (define-public r-easybgm
@@ -22160,13 +22161,13 @@ comes with an extensive suite for visualizing results.")
 (define-public r-easyanova
   (package
     (name "r-easyanova")
-    (version "10.0")
+    (version "11.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easyanova" version))
        (sha256
-        (base32 "0r8qyfhbipyj4j13g1h3p3gag3i3mmpxq2zzq0cighamqbcbmvaf"))))
+        (base32 "12w7d2n4mpaf8zii07gcp6bv7hi4k72xkyd6wvifdwhfi55zkvrr"))))
     (properties `((upstream-name . "easyanova")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))

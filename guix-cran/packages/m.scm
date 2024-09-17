@@ -2228,6 +2228,40 @@ Applied Multivariate Analysis with R (Brian S. Everitt and Torsten Hothorn,
 Springer, 2011).")
     (license license:gpl2)))
 
+(define-public r-muvr2
+  (package
+    (name "r-muvr2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MUVR2" version))
+       (sha256
+        (base32 "1w5y8vc0bxbgrn276f7yvjkq27nmlwpxnyswmqiqp87wqwjq2ni4"))))
+    (properties `((upstream-name . "MUVR2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger
+                             r-randomforest
+                             r-psych
+                             r-proc
+                             r-mgcv
+                             r-magrittr
+                             r-glmnet
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-caret))
+    (home-page "https://github.com/MetaboComp/MUVR2")
+    (synopsis "Multivariate Methods with Unbiased Variable Selection")
+    (description
+     "Predictive multivariate modelling for metabolomics.  Types: Classification and
+regression.  Methods: Partial Least Squares, Random Forest ans Elastic Net Data
+structures: Paired and unpaired Validation: repeated double cross-validation
+(Westerhuis et al. (2008)<doi:10.1007/s11306-007-0099-6>, Filzmoser et al.
+(2009)<doi:10.1002/cem.1225>) Variable selection: Performed internally, through
+tuning in the inner cross-validation loop.")
+    (license license:gpl3)))
+
 (define-public r-muvicp
   (package
     (name "r-muvicp")
@@ -4209,13 +4243,13 @@ available at <DOI:10.18637/jss.v005.i06>.")
 (define-public r-multinma
   (package
     (name "r-multinma")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multinma" version))
        (sha256
-        (base32 "0p0bw7kz1i7bnmwzyzn7gbblpq05rf2axcklppj9h072ysh1x7mn"))))
+        (base32 "1k4a0rgbxwnbkhdksjh25cp2m26qjl0rsqhbz3d6v7s1nms4aikz"))))
     (properties `((upstream-name . "multinma")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncdist
@@ -5502,13 +5536,13 @@ system.  Bai, Lumsdaine, and Stock (1998) <doi:10.1111/1467-937X.00051>.")
 (define-public r-multiblock
   (package
     (name "r-multiblock")
-    (version "0.8.8.1")
+    (version "0.8.8.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiblock" version))
        (sha256
-        (base32 "0b4xk6pr4ffs44iras74mswligfyrx52fgm5yvcs5f4y94bsd6pp"))))
+        (base32 "05z6zf9vh94as4m2si5kam101swhyfyv2vm0k9js1pxakwziavkq"))))
     (properties `((upstream-name . "multiblock")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools
@@ -7714,6 +7748,40 @@ Khismatullina and Vogt (2022) <doi:10.48550/@code{arXiv.2209.10841>} and
 Khismatullina and Vogt (2023) <doi:10.1016/j.jeconom.2021.04.010> for more
 details on theory and applications.")
     (license license:gpl2+)))
+
+(define-public r-msimst
+  (package
+    (name "r-msimst")
+    (version "1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MSIMST" version))
+       (sha256
+        (base32 "1n8jx4narzxyghn5xdmn1vm5b4nyd2n24dkrb34p29bwlnqyhdf9"))))
+    (properties `((upstream-name . "MSIMST")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-rdpack
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-mass
+                             r-fields))
+    (home-page "https://github.com/rh8liuqy/MSIMST")
+    (synopsis
+     "Bayesian Monotonic Single-Index Regression Model with the Skew-T Likelihood")
+    (description
+     "Incorporates a Bayesian monotonic single-index mixed-effect model with a
+multivariate skew-t likelihood, specifically designed to handle survey weights
+adjustments.  Features include a simulation program and an associated Gibbs
+sampler for model estimation.  The single-index function is constrained to be
+monotonic increasing, utilizing a customized Gaussian process prior for precise
+estimation.  The model assumes random effects follow a canonical skew-t
+distribution, while residuals are represented by a multivariate Student-t
+distribution.  Offers robust Bayesian adjustments to integrate survey weight
+information effectively.")
+    (license license:gpl3+)))
 
 (define-public r-msimcc
   (package
@@ -15068,16 +15136,16 @@ supported.")
 (define-public r-modelbpp
   (package
     (name "r-modelbpp")
-    (version "0.1.3")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modelbpp" version))
        (sha256
-        (base32 "1mji4i8xpl833lhs6prbvfy6vz4276qhi4zidy8rhdl6szvq8r6s"))))
+        (base32 "02qy1y57dsgl9sl275ansbnliaafjijg49iakw32jycpf7zfh0rx"))))
     (properties `((upstream-name . "modelbpp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pbapply r-lavaan r-igraph))
+    (propagated-inputs (list r-pbapply r-manymome r-lavaan r-igraph))
     (native-inputs (list r-knitr))
     (home-page "https://sfcheung.github.io/modelbpp/")
     (synopsis "Model BIC Posterior Probability")
@@ -21527,13 +21595,13 @@ missing values.")
 (define-public r-mixak
   (package
     (name "r-mixak")
-    (version "5.7")
+    (version "5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixAK" version))
        (sha256
-        (base32 "08n6shkibidqjmxjpjny48drxk3lmmnylh9l9ad3lrf8i2ixriqp"))))
+        (base32 "16prqmlhy462glp3n73f0fvcqajnqf89jibicsdjzg08g9gqb08w"))))
     (properties `((upstream-name . "mixAK")))
     (build-system r-build-system)
     (propagated-inputs (list r-mnormt r-lme4 r-fastghquad r-colorspace r-coda))
@@ -21545,7 +21613,16 @@ missing values.")
 methods to analyze normal mixtures.  Additionally, model based clustering
 methods are implemented to perform classification based on (multivariate)
 longitudinal (or otherwise correlated) data.  The basis for such clustering is a
-mixture of multivariate generalized linear mixed models.")
+mixture of multivariate generalized linear mixed models.  The package is
+primarily related to the publications KomÃ¡rek (2009, Comp.  Stat.  and Data
+Anal.) <doi:10.1016/j.csda.2009.05.006> and KomÃ¡rek and KomÃ¡rkovÃ¡ (2014, J.
+of Stat.  Soft.) <doi:10.18637/jss.v059.i12>.  It also implements methods
+published in KomÃ¡rek and KomÃ¡rkovÃ¡ (2013, Ann.  of Appl.  Stat.)
+<doi:10.1214/12-AOAS580>, Hughes, KomÃ¡rek, Bonnett, Czanner, GarcÃ­a-FiÃ±ana
+(2017, Stat.  in Med.) <doi:10.1002/sim.7397>, Jaspers, KomÃ¡rek, Aerts (2018,
+Biom.  J.) <doi:10.1002/bimj.201600253> and Hughes, KomÃ¡rek, Czanner,
+GarcÃ­a-FiÃ±ana (2018, Stat.  Meth.  in Med.  Res)
+<doi:10.1177/0962280216674496>.")
     (license license:gpl3+)))
 
 (define-public r-mix
@@ -25879,6 +25956,31 @@ validation can be performed in order to investigate the mostly selected
 microbiome and for internal validation.  During the evaluation process,
 validation is accessed using the hazard ratios (HR) distribution of the test set
 and inference is mainly based on resampling and permutations technique.")
+    (license license:gpl3)))
+
+(define-public r-microbiomemqc
+  (package
+    (name "r-microbiomemqc")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "microbiomeMQC" version))
+       (sha256
+        (base32 "1wnx3j85k2hb21382kakmn6ly9wvskffwha1qm0z8kzb726v9wxi"))))
+    (properties `((upstream-name . "microbiomeMQC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan r-readxl))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=microbiomeMQC")
+    (synopsis "Calculate 4 Key Reporting Measures")
+    (description
+     "Perform calculations for the WHO International Reference Reagents for the
+microbiome.  Using strain, species or genera abundance tables generated through
+analysis of 16S ribosomal RNA sequencing or shotgun sequencing which included a
+reference reagent.  This package will calculate measures of sensitivity, False
+positive relative abundance, diversity, and similarity based on mean average
+abundances with respect to the reference reagent.")
     (license license:gpl3)))
 
 (define-public r-microbial

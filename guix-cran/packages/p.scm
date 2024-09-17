@@ -10084,6 +10084,30 @@ Characteristic (@code{mROC}) based on Sadatsafavi et al (2021)
 <@code{arXiv:2003.00316>}.")
     (license (list license:gpl2+ license:gpl3+))))
 
+(define-public r-predtest
+  (package
+    (name "r-predtest")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PredTest" version))
+       (sha256
+        (base32 "0f199gyhr91kddgkg84yplmfv865dq3lcb4ikvlsk559vlv3pxj9"))))
+    (properties `((upstream-name . "PredTest")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=PredTest")
+    (synopsis "Preparing Data For, and Calculating the Prediction Test")
+    (description
+     "Global hypothesis tests combine information across multiple endpoints to test a
+single hypothesis.  The prediction test is a recently proposed global hypothesis
+test with good performance for small sample sizes and many endpoints of
+interest.  The test is also flexible in the types and combinations of expected
+results across the individual endpoints.  This package provides functions for
+data processing and calculation of the prediction test.")
+    (license license:expat)))
+
 (define-public r-predrupdate
   (package
     (name "r-predrupdate")
@@ -21608,17 +21632,17 @@ al (2015) <doi:10.1093/nar/gku1267>.")
 (define-public r-pks
   (package
     (name "r-pks")
-    (version "0.6-0")
+    (version "0.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pks" version))
        (sha256
-        (base32 "1wmpnpssmipkzfwsvdq33yhl9cba0i81w3rmwd4fbjvphx8bf7ax"))))
+        (base32 "1c0g160c8d2bqlhg5qwbdzfx5whnwin8hwywzyfzv14qk7dalb2p"))))
     (properties `((upstream-name . "pks")))
     (build-system r-build-system)
     (propagated-inputs (list r-sets))
-    (home-page "http://www.mathpsy.uni-tuebingen.de/wickelmaier/")
+    (home-page "https://www.mathpsy.uni-tuebingen.de/wickelmaier/")
     (synopsis "Probabilistic Knowledge Structures")
     (description
      "Fitting and testing probabilistic knowledge structures, especially the basic
@@ -29942,13 +29966,13 @@ likelihoods and forrel for estimating pairwise relatedness.")
 (define-public r-pedbp
   (package
     (name "r-pedbp")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedbp" version))
        (sha256
-        (base32 "1cs03920am54c944ca8xif5k154zwzrvb8pa8kr0j03nxymkp7dm"))))
+        (base32 "0yrlmwiizdwpyvdd4dlhq6s9bjs3xjcrpzp6wx3vr4sbzfjjqmwm"))))
     (properties `((upstream-name . "pedbp")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rcpparmadillo r-rcpp r-ggplot2))
@@ -29971,13 +29995,13 @@ source comes from Martin et.al. (2022) <doi:10.1542/hpeds.2021-005998>.")
 (define-public r-pedalfast-data
   (package
     (name "r-pedalfast-data")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pedalfast.data" version))
        (sha256
-        (base32 "027npj067r4cv0mdgd26x6ilrfz9a0hd0yagkkl3b06nx292pba5"))))
+        (base32 "0dr1zfg3sxmah2zghwpmv3a6znap7hbkkz88z0668ki34lf22pvm"))))
     (properties `((upstream-name . "pedalfast.data")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

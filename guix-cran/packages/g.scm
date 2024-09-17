@@ -12624,13 +12624,13 @@ Gaussian quadrature rule; Jose C. Pinheiro and Douglas M. Bates (1995)
 (define-public r-glmm-hp
   (package
     (name "r-glmm-hp")
-    (version "0.1-4")
+    (version "0.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm.hp" version))
        (sha256
-        (base32 "1xxp960irvrk8s0q4kggzzzgxnpcpribk6x0dlyv2xa90429l9mz"))))
+        (base32 "0jmjh219klgmz28ds0kjy1kzcz9jwjcz12bnp5l9cmh4l1jhzpmb"))))
     (properties `((upstream-name . "glmm.hp")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mumin r-lme4 r-ggplot2))
@@ -13986,6 +13986,26 @@ vignette(\"efficiency\", package = \"git2rdata\") provides some insight into the
 efficiency of file storage, git repository size and speed for writing and
 reading.")
     (license license:gpl3)))
+
+(define-public r-gistools
+  (package
+    (name "r-gistools")
+    (version "1.0-0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GISTools" version))
+       (sha256
+        (base32 "103hka7rr5fjh9qxgk5yccijx9mydcps40w9187pkvmsf2mixiyn"))))
+    (properties `((upstream-name . "GISTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-mass))
+    (home-page "https://cran.r-project.org/package=GISTools")
+    (synopsis "Further Capabilities in Geographic Information Science")
+    (description
+     "Mapping and spatial data manipulation tools - in particular drawing thematic
+maps with nice looking legends, and aggregation of point data to polygons.")
+    (license license:gpl2+)))
 
 (define-public r-gissb
   (package
@@ -26772,19 +26792,19 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.0.0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0bk04p0zlgapg04yvydzys59h3i19v8jrlpnlnqq8ymdbsp80lam"))))
+        (base32 "0a8901bhypfydc70x7b6qxh5j9c8dj0w91qd46vnrjvvw7iwj7i4"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tibble
-                             r-spdep
                              r-sf
+                             r-sdsfun
                              r-scatterpie
                              r-rpart
                              r-reticulate
@@ -26799,7 +26819,7 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
                              r-classint))
     (native-inputs (list r-knitr))
     (home-page "https://ausgis.github.io/gdverse/")
-    (synopsis "Geographical Detector Models")
+    (synopsis "Analysis of Spatial Stratified Heterogeneity")
     (description
      "Analyzing spatial factors and exploring spatial associations based on the
 concept of spatial stratified heterogeneity, and also takes into account local

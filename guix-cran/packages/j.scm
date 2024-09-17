@@ -4133,18 +4133,16 @@ Dixon elliptic functions.  Complex values of the variable are supported.")
 (define-public r-jackstraw
   (package
     (name "r-jackstraw")
-    (version "1.3.15")
+    (version "1.3.17")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jackstraw" version))
        (sha256
-        (base32 "08420qhy5ffxq36dy0krjsjkb02jraw2xcqj4zdwqpz9giy3mpir"))))
+        (base32 "12n3n759wb1p51y27hx7rnw5qy1apbakc2aphgbn68hsy9vvlnw6"))))
     (properties `((upstream-name . "jackstraw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rsvd
-                             r-qvalue
-                             r-lfa
                              r-irlba
                              r-genio
                              r-corpcor

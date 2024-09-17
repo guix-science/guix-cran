@@ -1845,13 +1845,13 @@ audio in general.")
 (define-public r-voi
   (package
     (name "r-voi")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "voi" version))
        (sha256
-        (base32 "0fxaspvy64791dh9d00slfqi8wwip7353cf68kya0rkm2b12kr4m"))))
+        (base32 "1d72g5wpyfq92gc7bp42xbiafbl4q769bxq8awifsc93haawrwqm"))))
     (properties `((upstream-name . "voi")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -1871,8 +1871,9 @@ audio in general.")
 from a decision-analytic model.  This includes the expected value of perfect
 information (EVPI), partial perfect information (EVPPI) and sample information
 (EVSI), and the expected net benefit of sampling (ENBS).  A range of alternative
-computational methods are provided under the same user interface.  See Jackson
-et al. (2022) <doi:10.1146/annurev-statistics-040120-010730>.")
+computational methods are provided under the same user interface.  See Heath et
+al. (2024) <doi:10.1201/9781003156109>, Jackson et al. (2022)
+<doi:10.1146/annurev-statistics-040120-010730>.")
     (license license:gpl3)))
 
 (define-public r-vocaldia

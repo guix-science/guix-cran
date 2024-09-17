@@ -9043,31 +9043,6 @@ unfolding.  Restrictions (fixed coordinates or model restrictions) are available
 for both row and column coordinates in all combinations.")
     (license license:bsd-2)))
 
-(define-public r-fmdates
-  (package
-    (name "r-fmdates")
-    (version "0.1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmdates" version))
-       (sha256
-        (base32 "1bbcwkh65nf2gak9b81zgg32c5ihwhmai3nc43ayf6ivhqsxw8x0"))))
-    (properties `((upstream-name . "fmdates")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-lubridate r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/imanuelcostigan/fmdates")
-    (synopsis "Financial Market Date Calculations")
-    (description
-     "This package implements common date calculations relevant for specifying the
-economic nature of financial market contracts that are typically defined by
-International Swap Dealer Association (ISDA, <http://www2.isda.org>) legal
-documentation.  This includes methods to check whether dates are business days
-in certain locales, functions to adjust and shift dates and time length (or day
-counter) calculations.")
-    (license license:gpl2)))
-
 (define-public r-fmcmc
   (package
     (name "r-fmcmc")
@@ -9139,30 +9114,6 @@ methodology to analyze such complex data.")
      "Generate cost effective minimally changed run sequences for symmetrical as well
 as asymmetrical factorial designs.")
     (license license:gpl2+)))
-
-(define-public r-fmbasics
-  (package
-    (name "r-fmbasics")
-    (version "0.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "fmbasics" version))
-       (sha256
-        (base32 "1dnf09rgwpc7n7ydlp7r5cwy2fa4vh1h9mbjqzfhk0208kz6jpl0"))))
-    (properties `((upstream-name . "fmbasics")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-lubridate r-fmdates r-assertthat))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/imanuelcostigan/fmbasics")
-    (synopsis "Financial Market Building Blocks")
-    (description
-     "This package implements basic financial market objects like currencies, currency
-pairs, interest rates and interest rate indices.  You will be able to use
-Benchmark instances of these objects which have been defined using their most
-common conventions or those defined by International Swap Dealer Association
-(ISDA, <https://www.isda.org>) legal documentation.")
-    (license license:gpl2)))
 
 (define-public r-fmat
   (package
@@ -14735,13 +14686,13 @@ equations (Smalian, Newton and Huber) as well stacking factor and form.")
 (define-public r-fhmm
   (package
     (name "r-fhmm")
-    (version "1.4.0")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fHMM" version))
        (sha256
-        (base32 "1d7x63xylfcdm5y9kfpmi31g73f7j0xp409x0z54hnrikh3bdyq0"))))
+        (base32 "08crmc9g42s2p2bczp73sdvllsrbnqg4ksyjwxpcdcdb0cqqz01y"))))
     (properties `((upstream-name . "fHMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -14751,7 +14702,10 @@ equations (Smalian, Newton and Huber) as well stacking factor and form.")
                              r-padr
                              r-oeli
                              r-mass
+                             r-jsonlite
+                             r-httr
                              r-foreach
+                             r-curl
                              r-cli
                              r-checkmate))
     (native-inputs (list r-knitr))

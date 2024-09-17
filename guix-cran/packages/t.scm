@@ -7895,13 +7895,13 @@ running the vignette, install fwelnet from @code{GitHub}
 (define-public r-transport
   (package
     (name "r-transport")
-    (version "0.15-2")
+    (version "0.15-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transport" version))
        (sha256
-        (base32 "0pf0lza2qf0alwphiy978fyp58k3lz5i44kcw86a3rrf7cpf4rwa"))))
+        (base32 "1kr03iqyfv2icxdalj06rfwrjj6k281wn87dvz4kkp35zpv454sf"))))
     (properties `((upstream-name . "transport")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-data-table))
@@ -15546,13 +15546,13 @@ filtering, joining and summarising Earth Engine image collections.")
 (define-public r-tidyredcap
   (package
     (name "r-tidyredcap")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyREDCap" version))
        (sha256
-        (base32 "1k06bnxvq5k4j005h269n5ivxn1vr2i8nkdg048q8m7vmpanwz4m"))))
+        (base32 "12h1z0cs2lbni48y3bwgfj3z7wlkl1iid8ayni295fyz5lxa7bgq"))))
     (properties `((upstream-name . "tidyREDCap")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -16443,13 +16443,13 @@ other data frame.  The main function is predict_gam().")
 (define-public r-tidyfst
   (package
     (name "r-tidyfst")
-    (version "1.8.0")
+    (version "1.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfst" version))
        (sha256
-        (base32 "0z4mblhh3jlf1111r68ykhr17z049w10r69w2zx782n1qid0b3d3"))))
+        (base32 "0zwp4vbvgmd65fjjdpdyvhj9zzvdjmg7wkh4y5sdazbabj75088p"))))
     (properties `((upstream-name . "tidyfst")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-fst r-data-table))
@@ -18221,13 +18221,13 @@ contemplating them.")
 (define-public r-thor
   (package
     (name "r-thor")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "thor" version))
        (sha256
-        (base32 "1bpcyzw5xwl4vdld7ysrychcz35lz8g8qhpq0ca3bkkihj62v04r"))))
+        (base32 "12gpqs02gh4zvrxh862s64ba5shp4h30vddgplf67qzd8sijmx5q"))))
     (properties `((upstream-name . "thor")))
     (build-system r-build-system)
     (propagated-inputs (list r-storr r-r6))
@@ -24306,13 +24306,13 @@ and described in Athanasopoulos et al. (2011)
 (define-public r-tcl
   (package
     (name "r-tcl")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcl" version))
        (sha256
-        (base32 "0n735xyl0fr3zgigw68xpy1ky3rfd2djwg9qhgbgif0cvgrrki1n"))))
+        (base32 "0mawx6ynpjfbqaq53l61rq61wmiqhsgg428aivraiycyyvbqnr59"))))
     (properties `((upstream-name . "tcl")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang

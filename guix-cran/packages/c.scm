@@ -6487,13 +6487,13 @@ user input for use in downstream applications.")
 (define-public r-crm12comb
   (package
     (name "r-crm12comb")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crm12Comb" version))
        (sha256
-        (base32 "18pmsrgpc9yy3zwhdfcks5863r2cz756vrblls9s1j7pvsl4jszm"))))
+        (base32 "08jbalbz43qjwjk9lmibp7fyhic41zvfc1frmkdar7p6fnzb8xc4"))))
     (properties `((upstream-name . "crm12Comb")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-ggforce r-dplyr))
@@ -7295,13 +7295,13 @@ al. (2023) <doi:10.1002/sim.9831>.")
 (define-public r-crch
   (package
     (name "r-crch")
-    (version "1.2-0")
+    (version "1.2-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crch" version))
        (sha256
-        (base32 "1h8z2gsnrds3k1003fgw95j6dr95vc4nixna8zg6l221kk70ar0i"))))
+        (base32 "181yczk269nw7d1pprs5662lj1423lni0id0k3pg37ifqhjjdqzn"))))
     (properties `((upstream-name . "crch")))
     (build-system r-build-system)
     (propagated-inputs (list r-scoringrules r-sandwich r-ordinal r-formula))
@@ -24601,17 +24601,16 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "1ap8gs9dfkyk5nrq21r2a4h2y040i91n1i20sb4wwhx4n377kh0d"))))
+        (base32 "1pk7d3cipngs06h3v5jc0xw9ij3ikrk2l340jqfwvq8bxs3bk915"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-reshape2 r-ggplot2))
-    (native-inputs (list r-knitr))
+    (propagated-inputs (list r-reshape2 r-mice r-ggplot2))
     (home-page "https://cran.r-project.org/package=cmahalanobis")
     (synopsis
      "Calculate Distance Measures for a Given List of Data Frames with Factors")
@@ -43334,6 +43333,56 @@ described in Lee, Kim, Perera, @code{McLachlan} and Bae (2015)
 <doi:10.1007/s00431-015-2581-x>.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-caesar-suite
+  (package
+    (name "r-caesar-suite")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CAESAR.Suite" version))
+       (sha256
+        (base32 "1ijyza7i7pw2mpqlg502crd7kmk0xg8ksbj0d9dnsddi87d7wy0y"))))
+    (properties `((upstream-name . "CAESAR.Suite")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-scater
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-progress
+                             r-profast
+                             r-pbapply
+                             r-matrix
+                             r-irlba
+                             r-ggrepel
+                             r-ggplot2
+                             r-future
+                             r-furrr
+                             r-desctools
+                             r-ade4))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/XiaoZhangryy/CAESAR.Suite")
+    (synopsis
+     "CAESAR: a Cross-Technology and Cross-Resolution Framework for Spatial Omics Annotation")
+    (description
+     "Biotechnology in spatial omics has advanced rapidly over the past few years,
+enhancing both throughput and resolution.  However, existing annotation
+pipelines in spatial omics predominantly rely on clustering methods, lacking the
+flexibility to integrate extensive annotated information from single-cell RNA
+sequencing (@code{scRNA-seq}) due to discrepancies in spatial resolutions,
+species, or modalities.  Here we introduce the CAESAR suite, an open-source
+software package that provides image-based spatial co-embedding of locations and
+genomic features.  It uniquely transfers labels from @code{scRNA-seq} reference,
+enabling the annotation of spatial omics datasets across different technologies,
+resolutions, species, and modalities, based on the conserved relationship
+between signature genes and cells/locations at an appropriate level of
+granularity.  Notably, CAESAR enriches location-level pathways, allowing for the
+detection of gradual biological pathway activation within spatially defined
+domain types.  More details on the methods related to our paper currently under
+submission.  A full reference to the paper will be provided in future versions
+once the paper is published.")
+    (license license:gpl2+)))
 
 (define-public r-caesar
   (package

@@ -2095,6 +2095,39 @@ can also be used to improve efficiency.  From version 1.2.0 the Rcpp package
 <https://cran.r-project.org/package=Rcpp> can be used to improve efficiency.")
     (license license:gpl2+)))
 
+(define-public r-rusquant
+  (package
+    (name "r-rusquant")
+    (version "1.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rusquant" version))
+       (sha256
+        (base32 "1573sbzv2zy1k0bqqillwr2lzvy05kbv6qvil9dhwahjcn38x6j6"))))
+    (properties `((upstream-name . "rusquant")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xts
+                             r-xml
+                             r-stringr
+                             r-rvest
+                             r-quantmod
+                             r-jsonlite
+                             r-jose
+                             r-httr
+                             r-data-table
+                             r-base64enc))
+    (home-page "https://rusquant.ru")
+    (synopsis "Quantitative Trading Framework")
+    (description
+     "Collection of functions to retrieve financial data from various sources,
+including brokerage and exchange platforms, financial websites, and data
+providers.  Includes functions to retrieve account information, portfolio
+information, and place/cancel orders from different brokers.  Additionally,
+allows users to download historical data such as earnings, dividends, stock
+splits.")
+    (license license:gpl3)))
+
 (define-public r-rusk
   (package
     (name "r-rusk")
@@ -5797,32 +5830,6 @@ statements.")
     (description
      "Allows the user to generate and execute select, insert, update and delete SQL
 queries the underlying database without having to explicitly write SQL code.")
-    (license license:expat)))
-
-(define-public r-rsprite2
-  (package
-    (name "r-rsprite2")
-    (version "0.2.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rsprite2" version))
-       (sha256
-        (base32 "1j1v9d5h2p9574zsl8gi4lkmq1yblklmpd40fd19bw1p67fqhpm0"))))
-    (properties `((upstream-name . "rsprite2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rdpack r-checkmate))
-    (home-page "https://lukaswallrich.github.io/rsprite2/")
-    (synopsis
-     "Identify Distributions that Match Reported Sample Parameters (SPRITE)")
-    (description
-     "The SPRITE algorithm creates possible distributions of discrete responses based
-on reported sample parameters, such as mean, standard deviation and range
-(Heathers et al., 2018, <doi:10.7287/peerj.preprints.26968v1>).  This package
-implements it, drawing heavily on the code for Nick Brown's @code{rSPRITE} Shiny
-app <https://shiny.ieis.tue.nl/sprite/>.  In addition, it supports the modeling
-of distributions based on multi-item (Likert-type) scales and the use of
-restrictions on the frequency of particular responses.")
     (license license:expat)))
 
 (define-public r-rsppfp
@@ -32194,6 +32201,30 @@ linear unbiased predictors, BLUPs).  Clifford and @code{McCullagh} (2006)
 <https://www.r-project.org/doc/Rnews/Rnews_2006-2.pdf>.")
     (license license:gpl2)))
 
+(define-public r-regreplacer
+  (package
+    (name "r-regreplacer")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "regreplaceR" version))
+       (sha256
+        (base32 "1f3szaxvfqvcapb20xfbdyk4d8qyyabkkym71mw4hd2j5vg5gr6d"))))
+    (properties `((upstream-name . "regreplaceR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/gwangjinkim/regreplaceR")
+    (synopsis
+     "Match and Replace Strings Based on Named Groups in Regular Expressions")
+    (description
+     "An R6 class \"Replacer\" provided by the package simplifies working with regex
+patterns containing named groups.  It allows easy retrieval of matched portions
+and targeted replacements by group name, improving both code clarity and
+maintainability.")
+    (license license:expat)))
+
 (define-public r-regrap
   (package
     (name "r-regrap")
@@ -35426,6 +35457,47 @@ Cooper DJ, Grey A. (2023) <doi:10.1016/j.jclinepi.2022.12.018>.  Carlisle JB,
 Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 <doi:10.1111/anae.13938>.")
     (license license:expat)))
+
+(define-public r-ream
+  (package
+    (name "r-ream")
+    (version "1.0-2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ream" version))
+       (sha256
+        (base32 "11dam68flf3yanaaaiav85gh6cs11r3cag767461aylamk0q3dfv"))))
+    (properties `((upstream-name . "ream")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RaphaelHartmann/ream")
+    (synopsis
+     "Density, Distribution, and Sampling Functions for Evidence Accumulation Models")
+    (description
+     "Calculate the probability density functions (PDFs) for two threshold evidence
+accumulation models (EAMs).  These are defined using the following Stochastic
+Differential Equation (SDE), dx(t) = v(x(t),t)*dt+D(x(t),t)*@code{dW}, where
+x(t) is the accumulated evidence at time t, v(x(t),t) is the drift rate,
+D(x(t),t) is the noise scale, and W is the standard Wiener process.  The
+boundary conditions of this process are the upper and lower decision thresholds,
+represented by b_u(t) and b_l(t), respectively.  Upper threshold b_u(t) > 0,
+while lower threshold b_l(t) < 0.  The initial condition of this process x(0) =
+z where b_l(t) < z < b_u(t).  We represent this as the relative start point w =
+z/(b_u(0)-b_l(0)), defined as a ratio of the initial threshold location.  This
+package generates the PDF using the same approach as the python package it is
+based upon, @code{PyBEAM} by Murrow and Holmes (2023)
+<doi:10.3758/s13428-023-02162-w>.  First, it converts the SDE model into the
+forwards Fokker-Planck equation dp(x,t)/dt =
+d(v(x,t)*p(x,t))/dt-0.5*d^2(D(x,t)^2*p(x,t))/dx^2, then solves this equation
+using the Crank-Nicolson method to determine p(x,t).  Finally, it calculates the
+flux at the decision thresholds, f_i(t) = 0.5*d(D(x,t)^2*p(x,t))/dx evaluated at
+x = b_i(t), where i is the relevant decision threshold, either upper (i = u) or
+lower (i = l).  The flux at each thresholds f_i(t) is the PDF for each
+threshold, specifically its PDF. We discuss further details of this approach in
+this package and @code{PyBEAM} publications.  Additionally, one can calculate
+the cumulative distribution functions of and sampling from the EAMs.")
+    (license license:gpl2+)))
 
 (define-public r-realvams
   (package
@@ -49134,6 +49206,26 @@ size, diagnosticity ratio, homogeneity of the diagnosticity ratio, ROC curves
 for confidence x accuracy data and the degree of similarity of faces in a
 lineup.")
     (license license:cc0)))
+
+(define-public r-r4hcr
+  (package
+    (name "r-r4hcr")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "R4HCR" version))
+       (sha256
+        (base32 "01lsig6z38mrlrmc63ys0cfp0x7w4i7nkqpyf14allla1jlfh0fk"))))
+    (properties `((upstream-name . "R4HCR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-metafor r-meta r-mada r-irr))
+    (home-page "https://cran.r-project.org/package=R4HCR")
+    (synopsis "R for Health Care Research")
+    (description
+     "This package provides a collection of datasets that accompany the forthcoming
+book \"R for Health Care Research\".")
+    (license license:expat)))
 
 (define-public r-r4googleads
   (package
