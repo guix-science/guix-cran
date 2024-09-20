@@ -6,6 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages cran)
   #:use-module (gnu packages statistics)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages web)
@@ -554,6 +556,30 @@ can be found in: Brown et al. (2020) <doi:10.1111/2041-210X.13363> .")
 random matrix theory.  This is an implementation of Koev & Edelman's algorithm
 (2006) <doi:10.1090/S0025-5718-06-01824-2>.")
     (license license:gpl3)))
+
+(define-public r-hypergeo2
+  (package
+    (name "r-hypergeo2")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hypergeo2" version))
+       (sha256
+        (base32 "0h42xl4yq88jzyk99rr7lfljm9rw3ln0bglq93p6g6fc1wfg6yqv"))))
+    (properties `((upstream-name . "hypergeo2")))
+    (build-system r-build-system)
+    (inputs (list mpfr gmp))
+    (propagated-inputs (list r-rcpp r-bh))
+    (native-inputs (list pkg-config))
+    (home-page "https://github.com/zhuxr11/hypergeo2")
+    (synopsis
+     "Generalized Hypergeometric Function with Tunable High Precision")
+    (description
+     "Computation of generalized hypergeometric function with tunable high precision
+in a vectorized manner, with the floating-point datatypes from mpfr or gmp
+library.  The computation is limited to real numbers.")
+    (license license:expat)))
 
 (define-public r-hypergate
   (package
@@ -2097,6 +2123,41 @@ hue, chroma, and lightness.")
      "This package provides functions to access data from the US Department of Housing
 and Urban Development <https://www.huduser.gov/portal/dataset/fmr-api.html>.")
     (license license:gpl3+)))
+
+(define-public r-hubutils
+  (package
+    (name "r-hubutils")
+    (version "0.1.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hubUtils" version))
+       (sha256
+        (base32 "125smlfffs9mrpms8pxvri6fyww7ybawf7s3b7gf1vapji0z3mc6"))))
+    (properties `((upstream-name . "hubUtils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-memoise
+                             r-magrittr
+                             r-lifecycle
+                             r-jsonlite
+                             r-glue
+                             r-gh
+                             r-fs
+                             r-curl
+                             r-cli
+                             r-checkmate))
+    (home-page "https://github.com/hubverse-org/hubUtils")
+    (synopsis "Core 'hubverse' Utilities")
+    (description
+     "Core set of low-level utilities common across the hubverse'.  Used to interact
+with hubverse schema, Hub configuration files and model outputs and designed to
+be primarily used internally by other hubverse packages.  See Reich et al.
+(2022) <doi:10.2105/AJPH.2022.306831> for an overview of Collaborative Hubs.")
+    (license license:expat)))
 
 (define-public r-hubeau
   (package
@@ -8500,13 +8561,13 @@ Akritas (2010b) <doi:10.1016/j.jmva.2010.03.012>.")
 (define-public r-hesim
   (package
     (name "r-hesim")
-    (version "0.5.4")
+    (version "0.5.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hesim" version))
        (sha256
-        (base32 "1fx55wwzk2w3zxnk96821bxrsklln7r6px19m7iv0f376iaamiq7"))))
+        (base32 "0r3hwn60z0ypxw7ylvkkd0kh9kgk0rxhghckla77h2505h7wq2x6"))))
     (properties `((upstream-name . "hesim")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -9390,13 +9451,13 @@ up to, and adjusting for files that have already been downloaded.")
 (define-public r-healthyverse
   (package
     (name "r-healthyverse")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "healthyverse" version))
        (sha256
-        (base32 "1h3d8wq6if1nkqc1d3n6y0g7i7xsvx9ci09z3jvhqx62f464ybgm"))))
+        (base32 "0l7fwlfr1kzrwmb8g9vln0bhdig9sqi27sdxx8ydpl9pgqwqv1vx"))))
     (properties `((upstream-name . "healthyverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidydensity
@@ -9404,6 +9465,7 @@ up to, and adjusting for files that have already been downloaded.")
                              r-tibble
                              r-rstudioapi
                              r-rlang
+                             r-randomwalker
                              r-purrr
                              r-magrittr
                              r-healthyr-ts
@@ -9414,7 +9476,7 @@ up to, and adjusting for files that have already been downloaded.")
                              r-crayon
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/spsanderson/healthyverse")
+    (home-page "https://www.spsanderson.com/healthyverse/")
     (synopsis "Easily Install and Load the 'healthyverse'")
     (description
      "The healthyverse is a set of packages that work in harmony because they share

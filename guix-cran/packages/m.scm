@@ -4455,6 +4455,53 @@ missing information, Computational Statistics & Data Analysis, 41(3-4),
 429--440.")
     (license license:gpl2+)))
 
+(define-public r-multimedia
+  (package
+    (name "r-multimedia")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "multimedia" version))
+       (sha256
+        (base32 "0rh7z5wn3ndg03hkd42kk43ydxcdyhrsfxbvlxb3bir6pvwa9s6m"))))
+    (properties `((upstream-name . "multimedia")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tidygraph
+                             r-summarizedexperiment
+                             r-s4vectors
+                             r-rlang
+                             r-ranger
+                             r-purrr
+                             r-progress
+                             r-phyloseq
+                             r-patchwork
+                             r-minilnm
+                             r-mass
+                             r-glue
+                             r-glmnetutils
+                             r-ggplot2
+                             r-formula-tools
+                             r-fansi
+                             r-dplyr
+                             r-cli
+                             r-brms))
+    (native-inputs (list r-knitr))
+    (home-page "https://krisrs1128.github.io/multimedia/")
+    (synopsis "Multimodal Mediation Analysis")
+    (description
+     "Multimodal mediation analysis is an emerging problem in microbiome data
+analysis.  Multimedia make advanced mediation analysis techniques easy to use,
+ensuring that all statistical components are transparent and adaptable to
+specific problem contexts.  The package provides a uniform interface to direct
+and indirect effect estimation, synthetic null hypothesis testing, bootstrap
+confidence interval construction, and sensitivity analysis.  More details are
+available in Jiang et al. (2024) \"multimedia: Multimodal Mediation Analysis of
+Microbiome Data\" <doi:10.1101/2024.03.27.587024>.")
+    (license license:cc0)))
+
 (define-public r-multimarker
   (package
     (name "r-multimarker")
@@ -8983,13 +9030,13 @@ applying the Then-Test method.")
 (define-public r-mrpostman
   (package
     (name "r-mrpostman")
-    (version "1.1.2")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mRpostman" version))
        (sha256
-        (base32 "0ss00mxk0s3lpxrhy3hszx6hmf7qiycl8vdif1fdzxz5yglki4xa"))))
+        (base32 "0jg1mgcqcsms0ggirxxwphjhmwbwsjsb05frzwlnrri3iz4sdym0"))))
     (properties `((upstream-name . "mRpostman")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -9920,13 +9967,13 @@ routines included.  Open population size by the Horvitz-Thompson (1959)
 (define-public r-mr-rgm
   (package
     (name "r-mr-rgm")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MR.RGM" version))
        (sha256
-        (base32 "0m1v1nrnd944l5hr6h7jxai6rjx8m3p09yjl2k8q2hd0kancbqdd"))))
+        (base32 "116jbzjzkf2d366r4k3j4wjk5i8k4x57k3b4nsvlb6s7yhwwq9a4"))))
     (properties `((upstream-name . "MR.RGM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -11941,6 +11988,44 @@ expelled tags in aquatic acoustic telemetry arrays.  Designed for arrays with
 non-overlapping receivers.")
     (license license:gpl3+)))
 
+(define-public r-morse
+  (package
+    (name "r-morse")
+    (version "3.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "morse" version))
+       (sha256
+        (base32 "1cq1xmabx4glgkxh6vn33ma1mb97079p5mmlydrm07h7r542k4vz"))))
+    (properties `((upstream-name . "morse")))
+    (build-system r-build-system)
+    (inputs (list jags))
+    (propagated-inputs (list r-zoo
+                             r-tidyr
+                             r-tibble
+                             r-rjags
+                             r-reshape2
+                             r-magrittr
+                             r-gridextra
+                             r-ggplot2
+                             r-epitools
+                             r-dplyr
+                             r-desolve
+                             r-coda))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.in2p3.fr/mosaic-software/morse")
+    (synopsis "Modelling Reproduction and Survival Data in Ecotoxicology")
+    (description
+     "Advanced methods for a valuable quantitative environmental risk assessment using
+Bayesian inference of survival and reproduction Data.  Among others, it
+facilitates Bayesian inference of the general unified threshold model of
+survival (GUTS).  See our companion paper Baudrot and Charles (2021)
+<doi:10.21105/joss.03200>, as well as complementary details in Baudrot et al.
+(2018) <doi:10.1021/acs.est.7b05464> and Delignette-Muller et al. (2017)
+<doi:10.1021/acs.est.6b05326>.")
+    (license license:expat)))
+
 (define-public r-morrowplots
   (package
     (name "r-morrowplots")
@@ -12518,6 +12603,33 @@ examples and a shiny app.")
 elements taking advantage of the power that R offers.  In this first version, it
 allows the definition of questions to be included in the question bank.")
     (license license:expat)))
+
+(define-public r-moocore
+  (package
+    (name "r-moocore")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "moocore" version))
+       (sha256
+        (base32 "0qn95fv5j3z2vgks9y0kny1pq99ixadfmyr0ff1a778blgn7w7jf"))))
+    (properties `((upstream-name . "moocore")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-matrixstats))
+    (home-page "https://multi-objective.github.io/moocore/r/")
+    (synopsis "Core Mathematical Functions for Multi-Objective Optimization")
+    (description
+     "Fast implementation of mathematical operations and performance metrics for
+multi-objective optimization, including filtering and ranking of dominated
+vectors according to Pareto optimality, computation of the empirical attainment
+function, V.G. da Fonseca, C.M. Fonseca, A.O. Hall (2001)
+<doi:10.1007/3-540-44719-9_15>, hypervolume metric, C.M. Fonseca, L. Paquete, M.
+LÃ³pez-IbÃ¡Ã±ez (2006) <doi:10.1109/CEC.2006.1688440>, epsilon indicator,
+inverted generational distance, and Vorob'ev threshold, expectation and
+deviation, M. Binois, D. Ginsbourger, O. Roustant (2015)
+<doi:10.1016/j.ejor.2014.07.032>, among others.")
+    (license license:lgpl2.0+)))
 
 (define-public r-montecarlosem
   (package
@@ -17941,13 +18053,13 @@ can be created using the graph language defined in mlr3pipelines'.")
 (define-public r-mlr3superlearner
   (package
     (name "r-mlr3superlearner")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlr3superlearner" version))
        (sha256
-        (base32 "090d6524rf1f4gpmkhgqzfs1zxhnlqwd9wc1x8lvvlx22246xj6h"))))
+        (base32 "1dvqkfijl3r87smx46x4ycjmqzprk45pmkd5gf538jmkrjg3rid0"))))
     (properties `((upstream-name . "mlr3superlearner")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr
@@ -21812,13 +21924,13 @@ full technical documentation.  All data is sourced from
 (define-public r-misty
   (package
     (name "r-misty")
-    (version "0.6.6")
+    (version "0.6.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "misty" version))
        (sha256
-        (base32 "0cdcx9d2pbfd3whdyh9h14s0j07a2jkb0k1lw30sfxggsc8qzkyj"))))
+        (base32 "06b169407x067fsypjxcjqvmadmb8nx6f9ppvjlxrybr8js6i1z9"))))
     (properties `((upstream-name . "misty")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
@@ -24538,13 +24650,13 @@ al(2007)<doi:10.1093/biostatistics/kxl024>.")
 (define-public r-miic
   (package
     (name "r-miic")
-    (version "1.5.3")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "miic" version))
        (sha256
-        (base32 "1wrvgzi91jirn5n5fvvbhhpcga7l75h149sz1g1r1wbci181l3bg"))))
+        (base32 "1862sdlp4bk4ih0522yi4mxkccylwnvgm272dvm8iqqd9cnzmnkd"))))
     (properties `((upstream-name . "miic")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rcpp r-ppcor))
@@ -24552,19 +24664,35 @@ al(2007)<doi:10.1093/biostatistics/kxl024>.")
     (synopsis
      "Learning Causal or Non-Causal Graphical Models Using Information Theory")
     (description
-     "We report an information-theoretic method which learns a large class of causal
-or non-causal graphical models from purely observational data, while including
-the effects of unobserved latent variables, commonly found in many datasets.
+     "Multivariate Information-based Inductive Causation, better known by its acronym
+MIIC, is a causal discovery method, based on information theory principles,
+which learns a large class of causal or non-causal graphical models from purely
+observational data, while including the effects of unobserved latent variables.
 Starting from a complete graph, the method iteratively removes dispensable
 edges, by uncovering significant information contributions from indirect paths,
 and assesses edge-specific confidences from randomization of available data.
 The remaining edges are then oriented based on the signature of causality in
-observational data.  This approach can be applied on a wide range of datasets
-and provide new biological insights on regulatory networks from single cell
-expression data, genomic alterations during tumor development and co-evolving
-residues in protein structures.  For more information you can refer to: Cabeli
-et al.  P@code{LoS} Comp.  Bio.  2020 <doi:10.1371/journal.pcbi.1007866>, Verny
-et al.  P@code{LoS} Comp.  Bio.  2017 <doi:10.1371/journal.pcbi.1005662>.")
+observational data.  The recent more interpretable MIIC extension (@code{iMIIC})
+further distinguishes genuine causes from putative and latent causal effects,
+while scaling to very large datasets (hundreds of thousands of samples).  Since
+the version 2.0, MIIC also includes a temporal mode (@code{tMIIC}) to learn
+temporal causal graphs from stationary time series data.  MIIC has been applied
+to a wide range of biological and biomedical data, such as single cell gene
+expression data, genomic alterations in tumors, live-cell time-lapse imaging
+data (@code{CausalXtract}), as well as medical records of patients.  MIIC brings
+unique insights based on causal interpretation and could be used in a broad
+range of other data science domains (technology, climatology, economy, ...).
+For more information, you can refer to: Simon et al., @code{eLife} 2024,
+<doi:10.1101/2024.02.06.579177>, Ribeiro-Dantas et al., @code{iScience} 2024,
+<doi:10.1016/j.isci.2024.109736>, Cabeli et al., @code{NeurIPS} 2021,
+<https://why21.causalai.net/papers/WHY21_24.pdf>, Cabeli et al., Comput.  Biol.
+2020, <doi:10.1371/journal.pcbi.1007866>, Li et al., @code{NeurIPS} 2019,
+<https://papers.nips.cc/paper/9573-constraint-based-causal-structure-learning-with-consistent-separating-sets>,
+Verny et al., P@code{LoS} Comput.  Biol.  2017,
+<doi:10.1371/journal.pcbi.1005662>, Affeldt et al., UAI 2015,
+<https://auai.org/uai2015/proceedings/papers/293.pdf>.  Changes from the
+previous 1.5.3 release on CRAN are available at
+<https://github.com/@code{miicTeam/miic_R_package/blob/master/NEWS.md>}.")
     (license license:gpl2+)))
 
 (define-public r-migui
@@ -41663,6 +41791,26 @@ coordinates and to aggregate variables based on the spatial hierarchy of units.
 The object returned from the package can be used for thematic maps with the
 build-in functions provided in mapping or with other packages already available.")
     (license license:gpl2+)))
+
+(define-public r-mapperalgo
+  (package
+    (name "r-mapperalgo")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MapperAlgo" version))
+       (sha256
+        (base32 "0a4mn0hc2znys81cmydn4xsmcv5cgvjvm8hfjvlyjk89yv1nfrw5"))))
+    (properties `((upstream-name . "MapperAlgo")))
+    (build-system r-build-system)
+    (home-page "https://github.com/kennywang112/MapperAlgo/")
+    (synopsis "Topological Data Analysis: Mapper Algorithm")
+    (description
+     "The Mapper algorithm from Topological Data Analysis, the steps are as follows 1.
+ Define a filter (lens) function on the data.  2.  Perform clustering within
+each level set.  3.  Generate a complex from the clustering results.")
+    (license license:expat)))
 
 (define-public r-mapmixture
   (package

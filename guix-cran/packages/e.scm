@@ -4449,13 +4449,13 @@ existence of cured population are as described in : Chen, Tai-Tsang(2016)
 (define-public r-eventpred
   (package
     (name "r-eventpred")
-    (version "0.2.5")
+    (version "0.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eventPred" version))
        (sha256
-        (base32 "1zpl609aka3pnxvam2l94ja4j5mskml7p7gbx7s6zpj49aggkvcf"))))
+        (base32 "0l605vf15da32j2x55i01gy8nyr1pcmsrg2cvw9vrq3zf41k2cmb"))))
     (properties `((upstream-name . "eventPred")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -6504,13 +6504,13 @@ variable given a set of covariates, see Dimitriadis and Bayer (2019)
 (define-public r-esquisse
   (package
     (name "r-esquisse")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esquisse" version))
        (sha256
-        (base32 "0w37x5w6kvscwbr6d157ahmaigafj3ccn3zjasqazrzzlwjns3lm"))))
+        (base32 "1j01vvkjy3l948yw908yh3phdqpb6lmrykxvz52ynx3qk7y66nk2"))))
     (properties `((upstream-name . "esquisse")))
     (build-system r-build-system)
     (arguments
@@ -11786,6 +11786,47 @@ associations based on, for example, the mix-lasso model (Zhao et al., 2022
 <doi:10.1016/j.isci.2022.104767>) or similar methods.")
     (license license:expat)))
 
+(define-public r-enrichdo
+  (package
+    (name "r-enrichdo")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EnrichDO" version))
+       (sha256
+        (base32 "0xqr7zdll90a8097ylhp00m873h7vh0y55i7n6a7bgkagy61k1zg"))))
+    (properties `((upstream-name . "EnrichDO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringr
+                             r-s4vectors
+                             r-rgraphviz
+                             r-readr
+                             r-rcolorbrewer
+                             r-purrr
+                             r-pheatmap
+                             r-magrittr
+                             r-hash
+                             r-graph
+                             r-ggplot2
+                             r-dplyr
+                             r-clusterprofiler
+                             r-biocgenerics))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=EnrichDO")
+    (synopsis
+     "a Global Weighted Model for Disease Ontology Enrichment Analysis")
+    (description
+     "To implement disease ontology (DO) enrichment analysis, this package is designed
+and presents a double weighted model based on the latest annotations of the
+human genome with DO terms, by integrating the DO graph topology on a global
+scale.  This package exhibits high accuracy that it can identify more specific
+DO terms, which alleviates the over enriched problem.  The package includes
+various statistical models and visualization schemes for discovering the
+associations between genes and diseases from biological big data.")
+    (license license:expat)))
+
 (define-public r-enpls
   (package
     (name "r-enpls")
@@ -13229,13 +13270,13 @@ functionalities through the R framework.")
 (define-public r-emissv
   (package
     (name "r-emissv")
-    (version "0.665.6.6")
+    (version "0.665.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmissV" version))
        (sha256
-        (base32 "184992191pk82q9yd0wb00r94rw7f23di7ckb86gbsr1pr1dkabl"))))
+        (base32 "090xjvb5n05nd1rapqp2jaa23k3jzmys004bzfpn4nckb5nfs2nc"))))
     (properties `((upstream-name . "EmissV")))
     (build-system r-build-system)
     (propagated-inputs (list r-units r-sf r-raster r-ncdf4 r-data-table))
@@ -13248,7 +13289,7 @@ Emissions can be calculated both using emission factors and activity data
 (Schuch et al., 2018) <doi:10.30564/jasr.v1i1.347>.  Functions to process
 individual point emissions, line emissions and area emissions of pollutants are
 available as well as methods to incorporate alternative data for Spatial
-distribution of emissions such as satellite images (Gavidia Calderon et.  al,
+distribution of emissions such as satellite images (Gavidia-Calderon et.  al,
 2018) <doi:10.1016/j.atmosenv.2018.09.026> or openstreetmap data (Andrade et al,
 2015) <doi:10.3389/fenvs.2015.00009>.")
     (license license:expat)))
@@ -15001,6 +15042,46 @@ details on this framework see Srivastava and Klassen (2016,
 <doi:10.1007/978-1-4939-4020-2>).  For more theoretical details on our methods
 and algorithms see Steyer et al. (2023, <doi:10.1111/biom.13706>) and Steyer et
 al. (2023, <@code{arXiv:2305.02075>}).")
+    (license license:gpl3)))
+
+(define-public r-elaborator
+  (package
+    (name "r-elaborator")
+    (version "1.3.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "elaborator" version))
+       (sha256
+        (base32 "0a59wp50gszyx4q2qsfq8yjkqk4kz3bnlk5r95sjgc4rj8zg8vxf"))))
+    (properties `((upstream-name . "elaborator")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-shinywidgets
+                             r-shinydashboard
+                             r-shiny
+                             r-shape
+                             r-seriation
+                             r-rlang
+                             r-reshape2
+                             r-rcolorbrewer
+                             r-purrr
+                             r-here
+                             r-haven
+                             r-forcats
+                             r-dt
+                             r-dplyr
+                             r-dendextend
+                             r-bsplus))
+    (home-page "https://github.com/openpharma/elaborator")
+    (synopsis "'shiny' Application for Exploring Laboratory Data")
+    (description
+     "This package provides a novel concept for generating knowledge and gaining
+insights into laboratory data.  You will be able to efficiently and easily
+explore your laboratory data from different perspectives.  Janitza, S.,
+Majumder, M., Mendolia, F., Jeske, S., & Kulmann, H. (2021)
+<doi:10.1007/s43441-021-00318-4>.")
     (license license:gpl3)))
 
 (define-public r-el2surv
@@ -18317,46 +18398,6 @@ Collection and Processing\" course.")
      "This package provides a convenient toolbox to import data exported from
 Electronic Data Capture (EDC) software @code{TrialMaster}'.")
     (license license:gpl3)))
-
-(define-public r-edbuildmapr
-  (package
-    (name "r-edbuildmapr")
-    (version "0.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "edbuildmapr" version))
-       (sha256
-        (base32 "0hc5vfpilqxva88dzgp57j9cgsq64r75vhm3hhl8lhi2wwapwk1d"))))
-    (properties `((upstream-name . "edbuildmapr")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tmap
-                             r-tidyselect
-                             r-tibble
-                             r-stringr
-                             r-spdep
-                             r-sf
-                             r-magrittr
-                             r-dplyr))
-    (home-page "https://github.com/EdBuild/edbuildmapr")
-    (synopsis
-     "Download School District Geospatial Data, Perform Spatial Analysis, and Create Formatted Exportable Maps")
-    (description
-     "Import US Census Bureau, Education Demographic and Geographic Estimates Program,
-Composite School District Boundaries Files for 2013-2019 with the option to
-attach the @code{EdBuild} master dataset of school district finance, student
-demographics, and community economic indicators for every school district in the
-United States.  The master dataset is built from the US Census, Annual Survey of
-School System Finances (F33) and joins data from the National Center for
-Education Statistics, Common Core of Data; the US Census, Small Area Income and
-Poverty Estimates; and the US Census, Education Demographic and Geographic
-Estimates.  Additional functions in the package create a dataset of all pairs of
-school district neighbors as either a dataframe or a shapefile and create
-formatted maps of selected districts at the state or neighbor level, symbolized
-by a selected variable in the @code{EdBuild} master dataset.  For full details
-about @code{EdBuild} data processing please see @code{EdBuild} (2020)
-<http://data.edbuild.org/>.")
-    (license license:cc0)))
 
 (define-public r-eda4treer
   (package

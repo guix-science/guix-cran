@@ -319,13 +319,13 @@ in this package were inspired by James Allen's interval algebra, Allen (1983)
 (define-public r-ivreg
   (package
     (name "r-ivreg")
-    (version "0.6-3")
+    (version "0.6-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ivreg" version))
        (sha256
-        (base32 "1ccxs6bblknss41605vvvb473s936rvgj7ls7sd9ismxgq83ad5k"))))
+        (base32 "10navv8n1hivr5s5916fss8lywnzgpkjk10va37vfa6xn03hyag2"))))
     (properties `((upstream-name . "ivreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-lmtest r-formula r-car))
@@ -1815,13 +1815,13 @@ normal profiles.")
 (define-public r-isoplotrgui
   (package
     (name "r-isoplotrgui")
-    (version "6.2")
+    (version "6.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IsoplotRgui" version))
        (sha256
-        (base32 "12mrfpij1sv6631lx32p1l9dc7g279zw21s13m6b0q4ic1cjsv9v"))))
+        (base32 "0rf39zbkliayxvpb5lgg2c0r9j50f0x5xrsj97qfa0a5n5h29m1z"))))
     (properties `((upstream-name . "IsoplotRgui")))
     (build-system r-build-system)
     (arguments

@@ -1847,6 +1847,34 @@ gt'.  The functions are generally wrappers around boilerplate or adding
 opinionated niche capabilities and helpers functions.")
     (license license:expat)))
 
+(define-public r-gtexr
+  (package
+    (name "r-gtexr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gtexr" version))
+       (sha256
+        (base32 "18g7138mzr4hk5h6k13zkc3vy7pmidva0vplfd6vbgqbm9p79yf8"))))
+    (properties `((upstream-name . "gtexr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-purrr
+                             r-httr2
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://rmgpanw.github.io/gtexr/")
+    (synopsis "Query the GTEx Portal API")
+    (description
+     "This package provides a convenient R interface to the Genotype-Tissue Expression
+(GTEx) Portal API. For more information on the API, see
+<https://gtexportal.org/api/v2/redoc>.")
+    (license license:expat)))
+
 (define-public r-gtestsmulti
   (package
     (name "r-gtestsmulti")
@@ -4698,6 +4726,33 @@ variables), as well as least-squares regression, quantile regression, and
 survival regression, all with support for missing covariates.")
     (license license:gpl3)))
 
+(define-public r-greyzones
+  (package
+    (name "r-greyzones")
+    (version "0.0.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GreyZones" version))
+       (sha256
+        (base32 "1mjnfiqc4zj08n8j899zqxkvxd6ryp6sg1n46isy0ni7ghbng38w"))))
+    (properties `((upstream-name . "GreyZones")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-irrcac))
+    (home-page "https://cran.r-project.org/package=GreyZones")
+    (synopsis
+     "Detection of Grey Zones in Two-Way Inter-Rater Agreement Tables")
+    (description
+     "Grey zones locally occur in an agreement table due to the subjective evaluation
+of raters based on various factors such as not having uniform guidelines, the
+differences between the raters level of expertise or low variability among the
+level of the categorical variable.  It is important to detect grey zones since
+they cause a negative bias in the estimate of the agreement level.  This package
+provides a function for detecting the existence of grey zones in two-way
+inter-rater agreement tables (Demirhan and Yilmaz (2023)
+<doi:10.1186/s12874-022-01759-7>).")
+    (license license:gpl3)))
+
 (define-public r-greymodels
   (package
     (name "r-greymodels")
@@ -5260,13 +5315,13 @@ Additional functions are provided for automatic cutting and diagnostic plotting.
 (define-public r-greeks
   (package
     (name "r-greeks")
-    (version "1.4.2")
+    (version "1.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "greeks" version))
        (sha256
-        (base32 "11ps312r6nhda5a2d7mjxzjnlvfj2kz31hyvnfngfpwdg3ndw1hr"))))
+        (base32 "0vhb3k3fs57kx24bh3dnk3qgzrvn4qxnqakb2g8h1ah22i0qnvcs"))))
     (properties `((upstream-name . "greeks")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13990,13 +14045,13 @@ reading.")
 (define-public r-gistools
   (package
     (name "r-gistools")
-    (version "1.0-0")
+    (version "1.0-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GISTools" version))
        (sha256
-        (base32 "103hka7rr5fjh9qxgk5yccijx9mydcps40w9187pkvmsf2mixiyn"))))
+        (base32 "1jdhmvwi7cs9dnmngn5iqim245r3mdd4jscvy9j65q89znh76wl9"))))
     (properties `((upstream-name . "GISTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-mass))
@@ -15591,6 +15646,27 @@ the University of Ljubljana.")
      "This package provides a collection of palettes and themes for ggplot2', offering
 a light, pastel aesthetic.  Syntax follows the viridis package.")
     (license license:gpl3+)))
+
+(define-public r-ggtangle
+  (package
+    (name "r-ggtangle")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggtangle" version))
+       (sha256
+        (base32 "0wgz6hffpmnvrs0kkxmgc6mnmjh4w6a5ifik8bz7axc3adlwyk5z"))))
+    (properties `((upstream-name . "ggtangle")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yulab-utils r-rlang r-igraph r-ggplot2 r-ggfun))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ggtangle")
+    (synopsis "Draw Network with Data")
+    (description
+     "Extends the ggplot2 plotting system to support network visualization.  Inspired
+by ggtree', ggtangle is designed to work with network associated data.")
+    (license license:artistic2.0)))
 
 (define-public r-ggswissmaps
   (package
@@ -21502,37 +21578,6 @@ bootstrap variograms.")
     (description "This package provides tools.")
     (license (list license:gpl2+ license:gpl3+))))
 
-(define-public r-geothinner
-  (package
-    (name "r-geothinner")
-    (version "1.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GeoThinneR" version))
-       (sha256
-        (base32 "1lrhf6j50sig1jyxy8b1ad9c17sj6q1nn78kyyqp97jdmb8kc6ny"))))
-    (properties `((upstream-name . "GeoThinneR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-terra
-                             r-rcpp
-                             r-nabor
-                             r-matrixstats
-                             r-fields
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/jmestret/GeoThinneR")
-    (synopsis "Simple Spatial Thinning for Ecological and Spatial Analysis")
-    (description
-     "This package provides efficient geospatial thinning algorithms to reduce the
-density of coordinate data while maintaining spatial relationships.  Implements
-K-D Tree Approximate Nearest Neighbors (ANN), R-Tree, and brute force thinning
-methods.  It uses a modified version of the R-tree structure from the rtree
-package <https://github.com/akoyabio/rtree>.  The modified version can be
-downloaded from <https://github.com/jmestret/rtree>.  For more information on
-the methods, see Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
-    (license license:expat)))
-
 (define-public r-geostatsp
   (package
     (name "r-geostatsp")
@@ -21592,13 +21637,13 @@ Theoretical background and worked examples are available at
 (define-public r-geostan
   (package
     (name "r-geostan")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geostan" version))
        (sha256
-        (base32 "078lk4c9igkm3il0yfcv2i64rj1fr3b5qz3d3szly2jh2ba5zdgh"))))
+        (base32 "0s35rcjcimc00fsaiy7dbpg2nncyy4y2h8bpqgdcy3933xsz3jqm"))))
     (properties `((upstream-name . "geostan")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -22671,16 +22716,22 @@ format.")
 (define-public r-geoidep
   (package
     (name "r-geoidep")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoidep" version))
        (sha256
-        (base32 "0pcdxbwkar45dgc5bbvpyzga31kyy70ic48rajl1663m6kn1fjpx"))))
+        (base32 "17vpnd3frnvyx4ddgmai09504zg9drcbxsl2kbr8nvymcbvlvm0p"))))
     (properties `((upstream-name . "geoidep")))
     (build-system r-build-system)
-    (propagated-inputs (list r-sf r-httr r-archive))
+    (propagated-inputs (list r-tidyr
+                             r-sf
+                             r-jsonlite
+                             r-httr
+                             r-dplyr
+                             r-cli
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://geografo.pe/geoidep/")
     (synopsis
@@ -26667,6 +26718,30 @@ ecology and conservation science studies, allowing processing of both point and
 raster data.  Future versions will integrate species threat datasets developed
 by the authors.")
     (license license:gpl2)))
+
+(define-public r-gecal
+  (package
+    (name "r-gecal")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GECal" version))
+       (sha256
+        (base32 "0c96ilmd2pwr9cwlsiyqzpm2wam1g3gn03hl6h1y857ahsab7c96"))))
+    (properties `((upstream-name . "GECal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nleqslv))
+    (home-page "https://github.com/yonghyun-K/GECal")
+    (synopsis "Generalized Entropy Calibration")
+    (description
+     "Generalized Entropy Calibration produces calibration weights using generalized
+entropy as the objective function for optimization.  This approach, as
+implemented in the GECal package, is based on Kwon, Kim, and Qiu (2024)
+<doi:10.48550/@code{arXiv.2404.01076>}.  Unlike traditional methods, GECal
+incorporates design weights into the constraints to maintain design consistency,
+rather than including them in the objective function itself.")
+    (license license:expat)))
 
 (define-public r-gec
   (package

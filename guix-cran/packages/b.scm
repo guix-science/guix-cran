@@ -254,13 +254,13 @@ repository <https://forgemia.inra.fr/umr-gdec/bwgs> and modified as a R package.
 (define-public r-bwgr
   (package
     (name "r-bwgr")
-    (version "2.2.9")
+    (version "2.2.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bWGR" version))
        (sha256
-        (base32 "02g5dm23diihrgggk1azl8ds2hyrc950swl6rianbh52bbznr58g"))))
+        (base32 "0irr0imyni5m43mzlyd4fymj78nbwmmvbqrs8ksk5hyznjcfn9wp"))))
     (properties `((upstream-name . "bWGR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp r-matrix))
@@ -5876,13 +5876,13 @@ random effects.")
 (define-public r-box-lsp
   (package
     (name "r-box-lsp")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "box.lsp" version))
        (sha256
-        (base32 "1a4p7h4g55wx5lpyq25rp8l659r9k90w1iqp4bqjrrhkkaqbjgrg"))))
+        (base32 "0rayi6fsnk2cjzvx7i3bmih9d5x93ssm0kg3r6w1dqk0djj0xrsj"))))
     (properties `((upstream-name . "box.lsp")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-fs r-cli r-box))
@@ -26048,13 +26048,13 @@ shrinking and diffusing priors studied in Narisetty & He (2014)
 (define-public r-bas
   (package
     (name "r-bas")
-    (version "1.7.2")
+    (version "1.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BAS" version))
        (sha256
-        (base32 "0sbiq200h02h3zha4npms3l5rq2lzsri7m6vgv359mxapp4bqfcm"))))
+        (base32 "0f34mna1h0wc3b8qc76jjgwjddfkasq7b2rvg2y93dyz9bq33cpc"))))
     (properties `((upstream-name . "BAS")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))

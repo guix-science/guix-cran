@@ -2957,13 +2957,13 @@ functionalities for interfacing with Julia from R powered by the
 (define-public r-jlme
   (package
     (name "r-jlme")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jlme" version))
        (sha256
-        (base32 "0yyymf4aidkkc80v4fgjhzywk7zkbq4jj129rmw95wnp7ndq0l9m"))))
+        (base32 "0w51szi6w6bpp1lzypr7kg0vx8z39vxyp55948bib9mzgrxn2b45"))))
     (properties `((upstream-name . "jlme")))
     (build-system r-build-system)
     (inputs (list julia))
@@ -4062,6 +4062,33 @@ Liability.  Russell A. Stultz (âThe option strategy desk reference: an
 essential reference for option traders (First edition.)â, 2019, ISBN:
 9781949443912).")
     (license license:gpl3)))
+
+(define-public r-jacquard
+  (package
+    (name "r-jacquard")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Jacquard" version))
+       (sha256
+        (base32 "12v7vpis5gw9gqainmk15gkk15fqp7wak20bzcjx1rnshg5xngrp"))))
+    (properties `((upstream-name . "Jacquard")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rsolnp))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://www.r-project.org")
+    (synopsis "Estimation of Jacquard's Genetic Identity Coefficients")
+    (description
+     "This package contains procedures to estimate the nine condensed Jacquard genetic
+identity coefficients (Jacquard, 1974) <doi:10.1007/978-3-642-88415-3> by
+constrained least squares (Graffelman et al., 2024)
+<doi:10.1101/2024.03.25.586682> and by the method of moments (Csuros, 2014)
+<doi:10.1016/j.tpb.2013.11.001>.  These procedures require previous estimation
+of the allele frequencies.  Functions are supplied that estimate relationship
+parameters that derive from the Jacquard coefficients, such as individual
+inbreeding coefficients and kinship coefficients.")
+    (license license:gpl2+)))
 
 (define-public r-jacpop
   (package

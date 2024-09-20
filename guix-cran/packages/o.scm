@@ -948,6 +948,32 @@ N. 2014. <doi:10.1371/journal.pcbi.1003457>.  Campbell, F, Cori A, Ferguson N,
 Jombart T. 2019. <doi:10.1371/journal.pcbi.1006930>.")
     (license license:expat)))
 
+(define-public r-ouladformat
+  (package
+    (name "r-ouladformat")
+    (version "1.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ouladFormat" version))
+       (sha256
+        (base32 "1m8m5nrf2y42yvz9f0j976dvq5jrmyswiznq7iv32bppm0jwz92m"))))
+    (properties `((upstream-name . "ouladFormat")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-magrittr r-httr r-dplyr))
+    (home-page "https://cran.r-project.org/package=ouladFormat")
+    (synopsis
+     "Loads and Formats the Open University Learning Analytics Dataset for Data Analysis")
+    (description
+     "The Open University Learning Analytics Dataset (OULAD) is available from Kuzilek
+et al. (2017) <doi:10.1038/sdata.2017.171>.  The @code{ouladFormat} package
+loads, cleans and formats the OULAD for data analysis (each row of the returned
+data set is an individual student).  The packageâs main function,
+combined_dataset(), allows the user to choose whether the returned data set
+includes assessment, demographics, virtual learning environment (VLE), or
+registration variables etc.")
+    (license license:gpl2+)))
+
 (define-public r-otutable
   (package
     (name "r-otutable")
@@ -2175,6 +2201,35 @@ dimension reduction methods such as @code{hMave} by Xia, Zhang, & Xu (2010)
 optimization solver for problems with orthogonality constraints, i.e., in
 Stiefel manifold.  Parallel computing for approximating the gradient is enabled
 through @code{OpenMP}'.")
+    (license license:gpl2+)))
+
+(define-public r-orthgs
+  (package
+    (name "r-orthgs")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "orthGS" version))
+       (sha256
+        (base32 "03hx6z6li49m8b51kqii6ixygw95h31fnvj7z29j8iyzjq96jqga"))))
+    (properties `((upstream-name . "orthGS")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-treetools
+                             r-seqinr
+                             r-phytools
+                             r-phangorn
+                             r-igraph
+                             r-castor
+                             r-bio3d
+                             r-ape))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=orthGS")
+    (synopsis
+     "Orthology vs Paralogy Relationships among Glutamine Synthetase from Plants")
+    (description
+     "This package provides tools to analyze and infer orthology and paralogy
+relationships between glutamine synthetase proteins in seed plants.")
     (license license:gpl2+)))
 
 (define-public r-orth-ord
@@ -3855,13 +3910,13 @@ are also included.")
 (define-public r-optmatch
   (package
     (name "r-optmatch")
-    (version "0.10.7")
+    (version "0.10.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "optmatch" version))
        (sha256
-        (base32 "07bx6bs5kk9pv0a2nsvq5y4bq4z17sa5f54kpxpim476xd8w43rk"))))
+        (base32 "14a93plyhm3j009lcqwvh94zcd5i90kvp92y0kjb0ahn1bmanc2i"))))
     (properties `((upstream-name . "optmatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble r-rlemon r-rcpp r-dplyr))
@@ -6537,13 +6592,13 @@ philosophy of the package is described in Guo G. (2018)
 (define-public r-opalr
   (package
     (name "r-opalr")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "opalr" version))
        (sha256
-        (base32 "14pv1rbmmhgcid2gcs1hxwr8a84jn6cyrqpfjlw10ia76qd63qkk"))))
+        (base32 "08jh04m6bpcfidibgl6qb01fii6smb5wvjxji6fp19iahcl9wn6h"))))
     (properties `((upstream-name . "opalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -7011,13 +7066,13 @@ with new theme and colors.")
 (define-public r-onpoint
   (package
     (name "r-onpoint")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onpoint" version))
        (sha256
-        (base32 "1ib7bj8y1ykrsl84bjz0y6ncc9rj5pazad9541vpn3xpr7c11xj1"))))
+        (base32 "0v45r1sjlhh17xcrw5498k3g82ar2y83b83qp1hfpv5hybghvr5x"))))
     (properties `((upstream-name . "onpoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random r-spatstat-geom
@@ -8368,13 +8423,13 @@ types of omics data or samples with two types.")
 (define-public r-omnibus
   (package
     (name "r-omnibus")
-    (version "1.2.13")
+    (version "1.2.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omnibus" version))
        (sha256
-        (base32 "0a528lk2snhav6yw6z1sx6il5sazjqwfs2vb2c6smy9frs3vlgq7"))))
+        (base32 "16lzx1acbl6nbjg21dv2g3n934bvial7nkbbs15pm00aliclws7p"))))
     (properties `((upstream-name . "omnibus")))
     (build-system r-build-system)
     (home-page "https://github.com/adamlilith/omnibus")
@@ -9703,18 +9758,19 @@ code interface is described in Huling and Chien (2022)
 (define-public r-oeli
   (package
     (name "r-oeli")
-    (version "0.5.2")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "oeli" version))
        (sha256
-        (base32 "0a9bk8dch6852nkddxwjyrs24knpx09sb5dyfakb9fpmksrv4f3p"))))
+        (base32 "18fvzkykn5m39shvzhj3jlgndbzkdfpdfakv5ydgcalhmlk003cs"))))
     (properties `((upstream-name . "oeli")))
     (build-system r-build-system)
     (propagated-inputs (list r-usethis
                              r-testthat
                              r-sysfonts
+                             r-simmulticorrdata
                              r-showtext
                              r-rprojroot
                              r-rcpparmadillo
@@ -9725,14 +9781,11 @@ code interface is described in Huling and Chien (2022)
                              r-cli
                              r-checkmate
                              r-benchmarkme))
-    (native-inputs (list r-knitr))
     (home-page "https://github.com/loelschlaeger/oeli")
-    (synopsis "My Utilities for Developing Data Science Software")
+    (synopsis "Utilities for Developing Data Science Software")
     (description
-     "Some general helper functions that I and maybe others find useful when
-developing data science software.  Functionality includes argument validation,
-density calculation, sampling, matrix printing, user interaction, storage
-helpers and more.  The vignettes illustrate use cases.")
+     "Some general helper functions that I (and maybe others) find useful when
+developing data science software.")
     (license license:gpl3+)))
 
 (define-public r-oefpil

@@ -592,21 +592,22 @@ burden of recompiling rxode2'.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "2.1.3")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "0r6j4wxkzxw4dabz2z1lssbw98mfk7sb64br01bmsqr1d19p5n1v"))))
+        (base32 "1vb1zdaad86m58vd95r5ychqmv6bf6wb0jyf72k95dsjvzsdn09b"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
-                             r-rxode2random
-                             r-rxode2parse
+                             r-stanheaders
+                             r-sitmo
                              r-rxode2ll
-                             r-rxode2et
                              r-rex
+                             r-rcppparallel
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-qs
@@ -616,6 +617,7 @@ burden of recompiling rxode2'.")
                              r-lotri
                              r-inline
                              r-ggplot2
+                             r-dparser
                              r-data-table
                              r-cli
                              r-checkmate
@@ -844,40 +846,6 @@ evaluation.")
      "High resolution vector country boundaries derived from Natural Earth data, can
 be plotted in rworldmap.")
     (license license:gpl2+)))
-
-(define-public r-rworkflows
-  (package
-    (name "r-rworkflows")
-    (version "1.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rworkflows" version))
-       (sha256
-        (base32 "1ys66dcl5k61bkzvz8pxw08hr987jy3xpgm8akha5s4vp3jdkpqc"))))
-    (properties `((upstream-name . "rworkflows")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-renv
-                             r-here
-                             r-desc
-                             r-data-table
-                             r-biocmanager
-                             r-badger))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/neurogenomics/rworkflows")
-    (synopsis "Test, Document, Containerise, and Deploy R Packages")
-    (description
-     "Reproducibility is essential to the progress of research, yet achieving it
-remains elusive even in computational fields.  Continuous Integration (CI)
-platforms offer a powerful way to launch automated workflows to check and
-document code, but often require considerable time, effort, and technical
-expertise to setup.  We therefore developed the rworkflows suite to make robust
-CI workflows easy and freely accessible to all R package developers.  rworkflows
-consists of 1) a CRAN/Bioconductor-compatible R package template, 2) an R
-package to quickly implement a standardised workflow, and 3) a centrally
-maintained @code{GitHub} Action.")
-    (license license:gpl3)))
 
 (define-public r-rwofost
   (package
@@ -4928,13 +4896,13 @@ summarizing model outputs.  rsyncrosim requires @code{SyncroSim} 2.3.5 or higher
 (define-public r-rswipl
   (package
     (name "r-rswipl")
-    (version "9.3.7.2")
+    (version "9.3.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rswipl" version))
        (sha256
-        (base32 "1wyyvv8nrgfk811vbsixyiyhz0yq65bls420d5fl9rrcwzdv3rkj"))))
+        (base32 "0lvffadr54bx5j20ip3mg13dkd8ygjfl9jpq4dxd44iilvf8f77i"))))
     (properties `((upstream-name . "rswipl")))
     (build-system r-build-system)
     (arguments
@@ -5759,6 +5727,30 @@ related to SRD including the computation of the SRD scores, validation options,
 input preprocessing and plotting tools.")
     (license license:gpl3)))
 
+(define-public r-rsquaredmi
+  (package
+    (name "r-rsquaredmi")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RSquaredMI" version))
+       (sha256
+        (base32 "0wvyad08014zsh1q0csna185x96p5kixasm9zw5knd0bsnp18sba"))))
+    (properties `((upstream-name . "RSquaredMI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mice r-matrixstats r-lm-beta r-altr2))
+    (home-page "https://github.com/karchjd/RsquaredMI")
+    (synopsis "R-Squared with Multiply Imputed Data")
+    (description
+     "This package provides R-squared values and standardized regression coefficients
+for linear models applied to multiply imputed datasets as obtained by mice'.
+Confidence intervals, zero-order correlations, and alternative adjusted
+R-squared estimates are also available.  The methods are described in Van Ginkel
+and Karch (2024) <doi:10.1111/bmsp.12344> and in Van Ginkel (2020)
+<doi:10.1007/s11336-020-09696-4>.")
+    (license license:agpl3+)))
+
 (define-public r-rsqmed
   (package
     (name "r-rsqmed")
@@ -5830,6 +5822,32 @@ statements.")
     (description
      "Allows the user to generate and execute select, insert, update and delete SQL
 queries the underlying database without having to explicitly write SQL code.")
+    (license license:expat)))
+
+(define-public r-rsprite2
+  (package
+    (name "r-rsprite2")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rsprite2" version))
+       (sha256
+        (base32 "1j1v9d5h2p9574zsl8gi4lkmq1yblklmpd40fd19bw1p67fqhpm0"))))
+    (properties `((upstream-name . "rsprite2")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-checkmate))
+    (home-page "https://lukaswallrich.github.io/rsprite2/")
+    (synopsis
+     "Identify Distributions that Match Reported Sample Parameters (SPRITE)")
+    (description
+     "The SPRITE algorithm creates possible distributions of discrete responses based
+on reported sample parameters, such as mean, standard deviation and range
+(Heathers et al., 2018, <doi:10.7287/peerj.preprints.26968v1>).  This package
+implements it, drawing heavily on the code for Nick Brown's @code{rSPRITE} Shiny
+app <https://shiny.ieis.tue.nl/sprite/>.  In addition, it supports the modeling
+of distributions based on multi-item (Likert-type) scales and the use of
+restrictions on the frequency of particular responses.")
     (license license:expat)))
 
 (define-public r-rsppfp
@@ -19568,13 +19586,13 @@ Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
 (define-public r-rmacrostrat
   (package
     (name "r-rmacrostrat")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rmacrostrat" version))
        (sha256
-        (base32 "1db884smxz6vymvm7ihm63gvwiv8hpragk0cmjzpfw6qrl76sn40"))))
+        (base32 "175b2bzdvi1nfh7yppb598cym7b90ivb10ayj81yfsf02v4mi916"))))
     (properties `((upstream-name . "rmacrostrat")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-jsonlite r-httr r-geojsonsf r-curl))
@@ -19582,9 +19600,10 @@ Y. Luo (2023) <doi:10.14708/ma.v51i2.7259>.")
     (home-page "https://rmacrostrat.palaeoverse.org")
     (synopsis "Fetch Geologic Data from the 'Macrostrat' Platform")
     (description
-     "Work with the Macrostrat Web Service (<https://macrostrat.org/>) to fetch
-geological data relevant to the spatial and temporal distribution of
-sedimentary, igneous, and metamorphic rocks as well as data extracted from them.")
+     "Work with the Macrostrat (<https://macrostrat.org/>) Web Service (v.2,
+<https://macrostrat.org/api/v2>) to fetch geological data relevant to the
+spatial and temporal distribution of sedimentary, igneous, and metamorphic rocks
+as well as data extracted from them.")
     (license license:gpl3+)))
 
 (define-public r-rma-exact
@@ -27998,13 +28017,13 @@ and DMS-2015552.")
 (define-public r-resultmodelmanager
   (package
     (name "r-resultmodelmanager")
-    (version "0.5.10")
+    (version "0.5.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ResultModelManager" version))
        (sha256
-        (base32 "0azmc0dqsk4r4ln2rp2w9dsmmlnx6axjw40lk3b2ib51czdr37vp"))))
+        (base32 "14m9nb4pq3c5wasz7npmc2yhf3n8w100nl3hk8105jcwwkddk478"))))
     (properties `((upstream-name . "ResultModelManager")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -31392,6 +31411,31 @@ with fewer PCA factors.  References: Yuri Balasanov (2017) <https://ilykei.com>.
 importance of predictors in a linear or generalized linear model, and a couple
 of useful Tcl/Tk widgets.")
     (license license:gpl2+)))
+
+(define-public r-reliagrowr
+  (package
+    (name "r-reliagrowr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ReliaGrowR" version))
+       (sha256
+        (base32 "1ml5k9ya4xf0a3d6i73323riyr6hn09dyvgaf3yjv0mpjx2ci506"))))
+    (properties `((upstream-name . "ReliaGrowR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-segmented))
+    (native-inputs (list r-knitr))
+    (home-page "https://paulgovan.github.io/ReliaGrowR/")
+    (synopsis "Reliability Growth Analysis")
+    (description
+     "Modeling and plotting functions for Reliability Growth Analysis (RGA).  Models
+include the Duane (1962) <doi:10.1109/TA.1964.4319640>, Non-Homogeneous Poisson
+Process (NHPP) by Crow (1975) <https://apps.dtic.mil/sti/citations/ADA020296>,
+Piecewise Weibull NHPP by Guo et al. (2010) <doi:10.1109/RAMS.2010.5448029>, and
+Piecewise Weibull NHPP with Change Point Detection based on the segmented
+package by Muggeo (2024) <https://cran.r-project.org/package=segmented>.")
+    (license (license:fsdg-compatible "CC BY 4.0"))))
 
 (define-public r-reliabilitytheory
   (package
@@ -35461,13 +35505,13 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 (define-public r-ream
   (package
     (name "r-ream")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ream" version))
        (sha256
-        (base32 "11dam68flf3yanaaaiav85gh6cs11r3cag767461aylamk0q3dfv"))))
+        (base32 "1q0vgzszhlh33r0ifl5j7qc9hvn63lfp63z2yc95p372rw56aqbj"))))
     (properties `((upstream-name . "ream")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -36010,6 +36054,33 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
     (description
      "Convert README.md to vignettes when installing packages without vignettes.")
     (license license:expat)))
+
+(define-public r-readmdtable
+  (package
+    (name "r-readmdtable")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "readMDTable" version))
+       (sha256
+        (base32 "0ah5c8p3sz7v8s91f7s4k1ghmxl5jvmvgi8qa50886i02jwwcvfq"))))
+    (properties `((upstream-name . "readMDTable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-readr
+                             r-lubridate
+                             r-httr2
+                             r-cli))
+    (home-page "https://github.com/jrdnbradford/readMDTable")
+    (synopsis "Read Markdown Tables into Tibbles")
+    (description
+     "This package provides functions for reading raw markdown tables from a string,
+file, or URL into tibbles.  It includes options to warn users about potential
+issues with the markdown table format, ensuring robust data handling even if the
+table has minor formatting errors.")
+    (license license:gpl3+)))
 
 (define-public r-readjdx
   (package
@@ -42199,13 +42270,13 @@ loglinear models.")
 (define-public r-rcan
   (package
     (name "r-rcan")
-    (version "1.3.82")
+    (version "1.3.90")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcan" version))
        (sha256
-        (base32 "0asmlhh786c9gfgxkqybv8xzz8bqzirxvq8nr4gglx1pc812idkb"))))
+        (base32 "092mxnk6ahlvxwynsw5axwjh11zr4kjha1vl648jrjp52l5mcm5g"))))
     (properties `((upstream-name . "Rcan")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2 r-data-table))
@@ -42712,13 +42783,13 @@ possible to link behavioral labels extracted from BORIS software
 (define-public r-rblpapi
   (package
     (name "r-rblpapi")
-    (version "0.3.14")
+    (version "0.3.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rblpapi" version))
        (sha256
-        (base32 "1xrfz5f7vibsfdn0v3mg7rvbn31j9znqk902cb1fwbqfqnkxw9yx"))))
+        (base32 "02fjk0b7drsqfjxxiacvp3b9rvygbxnf1n1b9dc4n4jws2s0bnq1"))))
     (properties `((upstream-name . "Rblpapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bh))

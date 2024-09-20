@@ -5575,13 +5575,13 @@ based on the First Passage Time Location (FPTL) function.")
 (define-public r-fpp3
   (package
     (name "r-fpp3")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fpp3" version))
        (sha256
-        (base32 "15kgllix1syi7974d5mrfa20zgx8s0hj2wq6wz1mlpzkaa6w2i9j"))))
+        (base32 "1dcv1xfpwlq7mcsw0zs2l8i3xn848nxbymncg9y2csy6l9s4wglq"))))
     (properties `((upstream-name . "fpp3")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibbledata
@@ -5598,7 +5598,7 @@ based on the First Passage Time Location (FPTL) function.")
                              r-dplyr
                              r-crayon
                              r-cli))
-    (home-page "https://pkg.robjhyndman.com/fpp3package/")
+    (home-page "https://pkg.robjhyndman.com/fpp3/")
     (synopsis
               "Data for \"Forecasting: Principles and Practice\" (3rd Edition)")
     (description
@@ -8131,27 +8131,6 @@ via grep.  Missed penalties can easily be included or excluded, depending on the
 user's wishes.")
     (license (list license:gpl2 license:gpl3))))
 
-(define-public r-foolbox
-  (package
-    (name "r-foolbox")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "foolbox" version))
-       (sha256
-        (base32 "06lcr5v6bcqqxskrwdm16b46zq4h67x8bwqya88jxs5bgi5w0hj3"))))
-    (properties `((upstream-name . "foolbox")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/mailund/foolbox")
-    (synopsis "Function Manipulation Toolbox")
-    (description
-     "This package provides functionality for manipulating functions and translating
-them in metaprogramming.")
-    (license license:gpl3)))
-
 (define-public r-foodwebwrapper
   (package
     (name "r-foodwebwrapper")
@@ -10397,22 +10376,28 @@ of the project: <https://metabarcoding.org/flimo>.")
 (define-public r-flightsbr
   (package
     (name "r-flightsbr")
-    (version "0.4.1")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flightsbr" version))
        (sha256
-        (base32 "0rb14dfs8sckp4r0wxwbgi8zs2a9r879xhbgdi5nzpmhpsy62xma"))))
+        (base32 "0cvgbh65amrhgyq7inmvhyhg42bf9r5rmynkkk0hvng8qga9d04p"))))
     (properties `((upstream-name . "flightsbr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rvest r-pbapply r-parzer r-httr r-data-table))
+    (propagated-inputs (list r-rvest
+                             r-pbapply
+                             r-parzer
+                             r-fs
+                             r-data-table
+                             r-curl
+                             r-archive))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/flightsbr")
     (synopsis "Download Flight and Airport Data from Brazil")
     (description
      "Download flight and airport data from Brazilâs Civil Aviation Agency (ANAC)
-<https://www.gov.br/anac>.  The data includes detailed information on all
+<https://www.gov.br/anac/pt-br>.  The data includes detailed information on all
 aircrafts, aerodromes, airports, and airport movements registered in ANAC, on
 airfares and on every international flight to and from Brazil, as well as
 domestic flights within the country.")
@@ -16374,13 +16359,13 @@ coefficient, Intraclass correlation and Cramer's V.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feasts" version))
        (sha256
-        (base32 "19lgycbnbvv2rwd9svm43bprivalk8p5v0bfwzsmnayikk1wws59"))))
+        (base32 "0qw6w1xwh08gixfarhjgjzwnhggnb6b1m0zrl2wmx43l40rsr4fr"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -17017,13 +17002,13 @@ Journal of Computational and Graphical Statistics.
 (define-public r-fdapde
   (package
     (name "r-fdapde")
-    (version "1.1-19")
+    (version "1.1-20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fdaPDE" version))
        (sha256
-        (base32 "0vd1rhh2ks6s738g4d687v3ndpjvb8lypzfpfqpwbkjzx29g60wn"))))
+        (base32 "1w4zgjy0bqg6njdx3dcxi1rcifn6vgb33l6aif3hg5jc9x2ww5kc"))))
     (properties `((upstream-name . "fdaPDE")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-rcppeigen r-rcpp r-plot3d r-matrix))
@@ -20513,13 +20498,13 @@ documentation on CRAN (now very dated).")
 (define-public r-far
   (package
     (name "r-far")
-    (version "0.6-6")
+    (version "0.6-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "far" version))
        (sha256
-        (base32 "0p0731vg1y57z8dmbrsa5gbnpf754q8yi5mm5h9480x1f8nk38bi"))))
+        (base32 "1r9zpm9ck7had4ikmg3fdch92hx0wgsgach9a9m0ngwxyrhqnh39"))))
     (properties `((upstream-name . "far")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme))
@@ -22545,13 +22530,13 @@ Representatives algorithm (Papastamoulis and Iliopoulos (2010)
 (define-public r-fabletools
   (package
     (name "r-fabletools")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fabletools" version))
        (sha256
-        (base32 "12s6x32m9nn6jriy7biqkzp62njbmih6h2hybx5jmcy17pccw5rr"))))
+        (base32 "1qw05xh56sjk19a0qaslw0qnwa074pms60zgl0sbxnh8538ba0xh"))))
     (properties `((upstream-name . "fabletools")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

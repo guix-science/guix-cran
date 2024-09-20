@@ -5743,20 +5743,22 @@ follow tidyverse philosophy.")
 (define-public r-qbms
   (package
     (name "r-qbms")
-    (version "1.0.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "QBMS" version))
        (sha256
-        (base32 "0kxhww5vvl4giap8fyymmk873j73waixa1dzg9cb6hqk3816vwqm"))))
+        (base32 "1b75qvcwm7c1f0387igw5ayafl66k8yrp1b78cb0yczhmaxx3bvm"))))
     (properties `((upstream-name . "QBMS")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
                              r-rsqlite
                              r-rnetcdf
                              r-jsonlite
-                             r-httr
+                             r-httr2
+                             r-future-apply
+                             r-future
                              r-dbi))
     (native-inputs (list r-knitr))
     (home-page "https://icarda-git.github.io/QBMS/")

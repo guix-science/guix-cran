@@ -791,13 +791,13 @@ documented in Kumar et al (2013) <https://www.nature.com/articles/jes201352)>.")
 (define-public r-ltsa
   (package
     (name "r-ltsa")
-    (version "1.4.6")
+    (version "1.4.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltsa" version))
        (sha256
-        (base32 "10wmw9r00400ng2zlysd8jqgypjclshxj83x32002j2a9cz4f186"))))
+        (base32 "0apiknfi0jhd2pn27ybid60ws8xbj5pgv5gak4y619g2jzmy0229"))))
     (properties `((upstream-name . "ltsa")))
     (build-system r-build-system)
     (home-page "http://www.stats.uwo.ca/faculty/aim")
@@ -3107,24 +3107,26 @@ lottery games.")
 (define-public r-lotri
   (package
     (name "r-lotri")
-    (version "0.4.3")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lotri" version))
        (sha256
-        (base32 "1r24ldi8asa2n1w4czrwl5kp6b7xq27prrsxf23f436zfc4hhjvl"))))
+        (base32 "15myyigrlfc8gmasaf3z9g3dy44c19814ydvql4pi4867cfmgi4x"))))
     (properties `((upstream-name . "lotri")))
     (build-system r-build-system)
-    (propagated-inputs (list r-crayon))
+    (propagated-inputs (list r-crayon r-cpp11armadillo r-cpp11 r-checkmate))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/nlmixr2/lotri")
+    (home-page "https://nlmixr2.github.io/lotri/")
     (synopsis "Simple Way to Specify Symmetric, Block Diagonal Matrices")
     (description
      "This package provides a simple mechanism to specify a symmetric block diagonal
 matrices (often used for covariance matrices).  This is based on the domain
 specific language implemented in nlmixr2 but expanded to create matrices in R
-generally instead of specifying parts of matrices to estimate.")
+generally instead of specifying parts of matrices to estimate.  It has expanded
+to include some matrix manipulation functions that are generally useful for
+rxode2 and nlmixr2'.")
     (license license:gpl2+)))
 
 (define-public r-lost
@@ -7810,36 +7812,6 @@ details, see: Eder M, van Zundert J, Lensink S, van Dalen-Oskam K (2022).
 Replicating The Riddle of Literary Quality: The @code{litRiddle} package for R.
 In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
     (license license:gpl3+)))
-
-(define-public r-literanger
-  (package
-    (name "r-literanger")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "literanger" version))
-       (sha256
-        (base32 "19y8vp1ggy7ndj3w4247m23b21k3693a1d3z524h6g6mykq27236"))))
-    (properties `((upstream-name . "literanger")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rcereal r-cpp11))
-    (home-page "https://gitlab.com/stephematician/literanger")
-    (synopsis "Random Forests for Multiple Imputation Based on 'ranger'")
-    (description
-     "An updated implementation of R package ranger by Wright et al, (2017)
-<doi:10.18637/jss.v077.i01> for training and predicting from random forests,
-particularly suited to high-dimensional data, and for embedding in Multiple
-Imputation by Chained Equations (MICE) by van Buuren (2007)
-<doi:10.1177/0962280206074463>.  Ensembles of classification and regression
-trees are currently supported.  Sparse data of class @code{dgCMatrix} (R package
-Matrix') can be directly analyzed.  Conventional bagged predictions are
-available alongside an efficient prediction for MICE via the algorithm proposed
-by Doove et al (2014) <doi:10.1016/j.csda.2013.10.025>.  Survival and
-probability forests are not supported in the update, nor is data of class
-gwaa.data (R package @code{GenABEL}'); use the original ranger package for these
-analyses.")
-    (license license:gpl3)))
 
 (define-public r-liteq
   (package
@@ -14451,13 +14423,13 @@ convergence issues.")
 (define-public r-lbi
   (package
     (name "r-lbi")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LBI" version))
        (sha256
-        (base32 "1fh121dl4d3i67blgibq087zs5li8zg7j284xgcgk5i789a80ksh"))))
+        (base32 "1s96gpf032yi489r33bnlcz0k0fq32i9yqwvf9fsiz44pyd4b5mk"))))
     (properties `((upstream-name . "LBI")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=LBI")
@@ -14471,13 +14443,13 @@ Reference: Pawitan Y. (2001, ISBN:0-19-850765-8).")
 (define-public r-lbfgsb3c
   (package
     (name "r-lbfgsb3c")
-    (version "2024-3.4")
+    (version "2024-3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lbfgsb3c" version))
        (sha256
-        (base32 "1dsacah7srkg0i9anl283244mvi8chkjkfplzj00dfzcj8nv2cgm"))))
+        (base32 "0rgikv5p05rv4r55mihlbk1953jiwd95wp2rn05xqi4ix33y3vxj"))))
     (properties `((upstream-name . "lbfgsb3c")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-numderiv))

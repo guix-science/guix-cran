@@ -4372,13 +4372,13 @@ subject to change; see the NEWS for further details on the latest changes.")
 (define-public r-vgamdata
   (package
     (name "r-vgamdata")
-    (version "1.1-9")
+    (version "1.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VGAMdata" version))
        (sha256
-        (base32 "1bk4c22rwpcm5aa1kdg0dh8c87pb54639xhlh4dkxwx2idn6s9b5"))))
+        (base32 "10s0jinzwpb9wjvzkl0dihm3byr8q2mzmq4z86zpmnlw0blvkkvy"))))
     (properties `((upstream-name . "VGAMdata")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam))
@@ -8334,13 +8334,13 @@ paper \"The Future of Data Analysis\", Tukey, John W. (1962)
 (define-public r-vachette
   (package
     (name "r-vachette")
-    (version "0.40.0")
+    (version "0.40.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vachette" version))
        (sha256
-        (base32 "1210zajbg73z0ahyylgk2y9jzkybyf7h5wpyvvzjrbanpamlq9ng"))))
+        (base32 "1w8nc8rmp6d2553dc4gflqzh2cksd437daqcm5hzzs4w1vzp95qa"))))
     (properties `((upstream-name . "vachette")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

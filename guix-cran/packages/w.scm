@@ -8222,6 +8222,36 @@ more details about warabandi system you can found elsewhere in Bandaragoda
 DJ(1995) <https://publications.iwmi.org/pdf/H_17571i.pdf>.")
     (license license:gpl3)))
 
+(define-public r-wanova
+  (package
+    (name "r-wanova")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "WAnova" version))
+       (sha256
+        (base32 "1c4fpl8n5ynp3fwrpqnwb2v16gv8slchy3pffga9yldr0hfn957a"))))
+    (properties `((upstream-name . "WAnova")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-suppdists r-car))
+    (home-page "https://cran.r-project.org/package=WAnova")
+    (synopsis "Welch's Anova from Summary Statistics")
+    (description
+     "This package provides the functions to perform a Welch's one-way Anova with
+fixed effects based on summary statistics (sample size, means, standard
+deviation) and the Games-Howell post hoc test for multiple comparisons and
+provides the effect size estimator adjusted omega squared.  In addition sample
+size estimation can be computed based on Levy's method, and a Monte Carlo
+simulation is included to bootstrap residual normality and homoscedasticity
+Welch, B. L. (1951) <doi:10.1093/biomet/38.3-4.330> Kirk, R. E. (1996)
+<doi:10.1177/0013164496056005002> Carroll, R. M., & Nordholm, L. A. (1975)
+<doi:10.1177/001316447503500304> Albers, C., & Lakens, D. (2018)
+<doi:10.1016/j.jesp.2017.09.004> Games, P. A., & Howell, J. F. (1976)
+<doi:10.2307/1164979> Levy, K. J. (1978a) <doi:10.1080/00949657808810246>
+Show-Li, J., & Gwowen, S. (2014) <doi:10.1111/bmsp.12006>.")
+    (license license:gpl3+)))
+
 (define-public r-wand
   (package
     (name "r-wand")

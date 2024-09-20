@@ -7686,6 +7686,43 @@ genetic algorithms, brute force, or random sampling.  Schultze (2017)
 <doi:10.17169/refubium-622>.")
     (license license:gpl3)))
 
+(define-public r-sts
+  (package
+    (name "r-sts")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sts" version))
+       (sha256
+        (base32 "10jza1c0813yhjybw4g9fq21m7ypwhzzp1v9yf26ah4b828zb2m8"))))
+    (properties `((upstream-name . "sts")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stm
+                             r-slam
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mvtnorm
+                             r-matrixstats
+                             r-matrix
+                             r-glmnet
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=sts")
+    (synopsis
+     "Estimation of the Structural Topic and Sentiment-Discourse Model for Text Analysis")
+    (description
+     "The Structural Topic and Sentiment-Discourse (STS) model allows researchers to
+estimate topic models with document-level metadata that determines both topic
+prevalence and sentiment-discourse.  The sentiment-discourse is modeled as a
+document-level latent variable for each topic that modulates the word frequency
+within a topic.  These latent topic sentiment-discourse variables are controlled
+by the document-level metadata.  The STS model can be useful for regression
+analysis with text data in addition to topic modelingâs traditional use of
+descriptive analysis.  The method was developed in Li and Mankad (2024)
+<doi:10.2139/ssrn.4020651>.")
+    (license license:expat)))
+
 (define-public r-strvalidator
   (package
     (name "r-strvalidator")
@@ -8752,6 +8789,28 @@ variable follows a continuous distribution, namely, Pareto, Triangular,
 Right-triangular, Weibull, Gamma, Exponential, Uniform, Normal, Log-normal and
 Cauchy distributions.")
     (license license:gpl2)))
+
+(define-public r-stratifiedyh
+  (package
+    (name "r-stratifiedyh")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stratifiedyh" version))
+       (sha256
+        (base32 "03hj2zap6cks74nk3al66dpphlinp10bi1pzpcc51ycb1n95gw95"))))
+    (properties `((upstream-name . "stratifiedyh")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=stratifiedyh")
+    (synopsis "Stratified Sampling and Labeling of Data in R")
+    (description
+     "This package provides functions for stratified sampling and assigning custom
+labels to data, ensuring randomness within groups.  The package supports various
+sampling methods such as stratified, cluster, and systematic sampling.  It
+allows users to apply transformations and customize the sampling process.  This
+package can be useful for statistical analysis and data preparation tasks.")
+    (license license:expat)))
 
 (define-public r-stratifiedrf
   (package
@@ -11172,13 +11231,13 @@ Nichol, S. (2017). <DOI: 10.13140/RG.2.2.27686.22085>.")
 (define-public r-stepreg
   (package
     (name "r-stepreg")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StepReg" version))
        (sha256
-        (base32 "1v7inw48dg5mhhlmqvlj7s97w93sjha0djgrl1ninhgp08fl2njh"))))
+        (base32 "1sm8lzn2pin86srs9kq6d44kam85ydk056mbigca89jn8v7y70fb"))))
     (properties `((upstream-name . "StepReg")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12561,6 +12620,27 @@ August-Roche-Magnus formula, which was adapted from Alduchov and Eskridge (1996)
 <doi:10.1175%2F1520-0450%281996%29035%3C0601%3AIMFAOS%3E2.0.CO%3B2>.")
     (license license:expat)))
 
+(define-public r-staticryptr
+  (package
+    (name "r-staticryptr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "staticryptR" version))
+       (sha256
+        (base32 "1ki3kpjvwbradgr3nip8cxgasxcys1qyryh0gq9kmx9f0dbql5y2"))))
+    (properties `((upstream-name . "staticryptR")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=staticryptR")
+    (synopsis "Encrypt HTML Files Using 'staticrypt'")
+    (description
+     "This package provides a convenient interface to the staticrypt by Robin Moisson
+<https://github.com/robinmoisson/staticrypt>---'Node.js package for adding a
+password protection layer to static HTML pages.  This package can be integrated
+into the post-render process of quarto documents to secure them with a password.")
+    (license license:expat)))
+
 (define-public r-statgraph
   (package
     (name "r-statgraph")
@@ -12768,13 +12848,13 @@ software, which can be obtained upon purchase from VSN international
 (define-public r-statgengxe
   (package
     (name "r-statgengxe")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "statgenGxE" version))
        (sha256
-        (base32 "16ngsxg3vhbg1kg0zs6ddfbcfgkz40ybxll2jfyc1n4l4ip9j52q"))))
+        (base32 "0p2z8qf0gjznkcp99dzrdjkbv9433h62iwcj3h01dpx2f6v0f6zb"))))
     (properties `((upstream-name . "statgenGxE")))
     (build-system r-build-system)
     (inputs (list))
@@ -12796,7 +12876,7 @@ analyses described in Malosetti, Ribaut, and van Eeuwijk (2013),
 for streamlining the analysis of typical plant breeding experiments developed by
 Biometris.  Some functions have been created to be used in conjunction with the
 R package asreml for the ASReml software, which can be obtained upon purchase
-from VSN international (<https://vsni.co.uk/software/asreml-r>).")
+from VSN international (<https://vsni.co.uk/software/asreml-r/>).")
     (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-statgengwas
@@ -13398,13 +13478,13 @@ are also provided, see Luedtke, Robitzsch and Wagner (2018)
 (define-public r-startr
   (package
     (name "r-startr")
-    (version "2.3.1")
+    (version "2.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "startR" version))
        (sha256
-        (base32 "03wdaqiyrjhihsnw33z87baplv854znh4l7ww4ywmp17hl6hr7l8"))))
+        (base32 "1p1yrwcmzzln5qjpsdsz3a8a3d6dlq5fvibx0zq3njmvbffwsh24"))))
     (properties `((upstream-name . "startR")))
     (build-system r-build-system)
     (propagated-inputs (list r-s2dv
@@ -14754,13 +14834,13 @@ distributions.")
 (define-public r-ssw
   (package
     (name "r-ssw")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssw" version))
        (sha256
-        (base32 "1dqdh0rs82frck4z3bafhimc6bdasjw45fyl96mzk1kajb92y16y"))))
+        (base32 "0593w6zq59770r3hm7wbsbc71sw0hc9mzz1dmlpdnzgkgb6x7lqh"))))
     (properties `((upstream-name . "ssw")))
     (build-system r-build-system)
     (inputs (list python))
@@ -14771,7 +14851,7 @@ distributions.")
      "Striped Smith-Waterman Algorithm for Sequence Alignment using SIMD")
     (description
      "This package provides an R interface for SSW (Striped Smith-Waterman) via its
-Python binding ssw-py'.  SSW is a fast C/C++ implementation of the
+Python binding ssw-py'.  SSW is a fast C and C++ implementation of the
 Smith-Waterman algorithm for pairwise sequence alignment using
 Single-Instruction-Multiple-Data (SIMD) instructions.  SSW enhances the standard
 algorithm by efficiently returning alignment information and suboptimal
@@ -14780,7 +14860,7 @@ various bioinformatics tasks, including protein database searches, short-read
 alignments, primary and split-read mapping, structural variant detection, and
 read-overlap graph generation.  These features make SSW particularly useful for
 genomic applications.  Zhao et al. (2013) <doi:10.1371/journal.pone.0082138>
-developed the original C/C++ implementation.")
+developed the original C and C++ implementation.")
     (license license:expat)))
 
 (define-public r-ssvs
@@ -15783,13 +15863,13 @@ analyzes the allele frequency data described by Solberg et al. (2008)
 (define-public r-ssh
   (package
     (name "r-ssh")
-    (version "0.9.2")
+    (version "0.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ssh" version))
        (sha256
-        (base32 "06lalzlh0kis4jlhlgyqbq5xzqy0dr8b4nh5z50qjks9jzai7qyv"))))
+        (base32 "1gnkpb2xqh0ahqbhm1zb0wxwy3gdis32pwdgv5vf9sdcj4q35zik"))))
     (properties `((upstream-name . "ssh")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh))
@@ -19195,6 +19275,29 @@ is provided for the handling of lists, such as the easy splitting of lists into
 equally sized groups, and the unnesting of data.frames within fully named lists.")
     (license license:expat)))
 
+(define-public r-splustimeseries
+  (package
+    (name "r-splustimeseries")
+    (version "1.5.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "splusTimeSeries" version))
+       (sha256
+        (base32 "1q2ldyfz27dam033gki3f8chp87qy8f0s985hn762fv2cpi5p02m"))))
+    (properties `((upstream-name . "splusTimeSeries")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splustimedate))
+    (home-page "https://github.com/spkaluzny/splusTimeSeries")
+    (synopsis "Time Series from 'S-PLUS'")
+    (description
+     "This package provides a collection of classes and methods for working with
+indexed rectangular data.  The index values can be calendar (@code{timeSeries}
+class) or numeric (@code{signalSeries} class).  Methods are included for
+aggregation, alignment, merging, and summaries.  The code was originally
+available in S-PLUS'.")
+    (license license:bsd-3)))
+
 (define-public r-splustimedate
   (package
     (name "r-splustimedate")
@@ -21813,19 +21916,21 @@ available.")
 (define-public r-speccurvier
   (package
     (name "r-speccurvier")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speccurvieR" version))
        (sha256
-        (base32 "01lxyc2v7schci37m1lafjqxqas9dxy614ia742i1g4mb530cch8"))))
+        (base32 "1q0sy53fkdqm63rhi0l99hfzv1r16gr8mxsv1gr3x814f9j5c2qv"))))
     (properties `((upstream-name . "speccurvieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
+                             r-sandwich
                              r-pbapply
                              r-magrittr
+                             r-lmtest
                              r-ggplot2
                              r-fixest
                              r-dplyr
@@ -24987,34 +25092,6 @@ for information criteria rather than cross-validation with very large data.
 Finally, the interface to compiled code avoids unnecessary copies and allows for
 the use of long integers.")
     (license license:expat)))
-
-(define-public r-sparsegam
-  (package
-    (name "r-sparsegam")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "sparseGAM" version))
-       (sha256
-        (base32 "0qqfsgrp0ll11mws0s54g5nsqxwn2j5kbs60q2zrviv6n8bs8xf0"))))
-    (properties `((upstream-name . "sparseGAM")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-pracma r-mass r-grpreg))
-    (home-page "https://cran.r-project.org/package=sparseGAM")
-    (synopsis "Sparse Generalized Additive Models")
-    (description
-     "Fits sparse frequentist GAMs (SF-GAM) for continuous and discrete responses in
-the exponential dispersion family with the group lasso, group smoothly clipped
-absolute deviation (SCAD), and group minimax concave (MCP) penalties
-<doi:10.1007/s11222-013-9424-2>.  Also fits sparse Bayesian generalized additive
-models (SB-GAM) with the spike-and-slab group lasso (SSGL) penalty of Bai et al.
-(2021) <doi:10.1080/01621459.2020.1765784>.  B-spline basis functions are used
-to model the sparse additive functions.  Stand-alone functions for
-group-regularized negative binomial regression, group-regularized gamma
-regression, and group-regularized regression in the exponential dispersion
-family with the SSGL penalty are also provided.")
-    (license license:gpl3)))
 
 (define-public r-sparsefunclust
   (package
@@ -30608,13 +30685,13 @@ self-explaining structure.")
 (define-public r-smof
   (package
     (name "r-smof")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smof" version))
        (sha256
-        (base32 "0sysqz2jxzfpiril7i6496in43zpk5nrvybzz40rb5dashwwh4nv"))))
+        (base32 "1029vziss8is702d384fql78mpvl047xidrmn4qji31lnak6rkkk"))))
     (properties `((upstream-name . "smof")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=smof")
@@ -30625,7 +30702,9 @@ of model classes) whose linear predictor includes some ordered factor(s) among
 the explanatory variables, a new model is constructed and fitted where each
 named factor is replaced by a single numeric score, suitably chosen so that the
 new variable produces a fit comparable with the standard methodology based on a
-set of polynomial contrasts.  Reference: Azzalini (2023) <doi:10.1002/sta4.624>.")
+set of polynomial contrasts.  Two variants of the present approach have been
+developed, one in each of the next references: Azzalini (2023)
+<doi:10.1002/sta4.624>, (2024) <doi:10.48550/@code{arXiv.2406.15933>}.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-smncensreg
@@ -36232,18 +36311,18 @@ parallel computations.")
 (define-public r-sims
   (package
     (name "r-sims")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sims" version))
        (sha256
-        (base32 "0wsq8plbrmk4xrs8i3g3pqwp2xkhfh1pffva1bwyx44l1r5imzs2"))))
+        (base32 "0iqqzmgxlldiqbl5dc4yfc6g6p4ayw3mzsy3gdrpb4yxmharhfrk"))))
     (properties `((upstream-name . "sims")))
     (build-system r-build-system)
     (propagated-inputs (list r-yesno r-nlist r-future-apply r-chk))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=sims")
+    (home-page "https://github.com/poissonconsulting/sims")
     (synopsis "Simulate Data from R or 'JAGS' Code")
     (description
      "Generates data from R or JAGS code for use in simulation studies.  The data are
@@ -38200,13 +38279,13 @@ shape constraints including different smoothness conditions.")
 (define-public r-simer
   (package
     (name "r-simer")
-    (version "0.9.0.4")
+    (version "0.9.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simer" version))
        (sha256
-        (base32 "1mgkmfv1mm4paxvzq43rdxjxf13csxizl8v1gc47y7h21hq2f5sx"))))
+        (base32 "00080aqr66qh86rp5yy7zmymy6rh1k0ihqm1y0jbfcqd51sch48i"))))
     (properties `((upstream-name . "simer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -38215,7 +38294,6 @@ shape constraints including different smoothness conditions.")
                              r-matrix
                              r-mass
                              r-jsonlite
-                             r-igraph
                              r-bigmemory
                              r-bh))
     (home-page "https://github.com/xiaolei-lab/SIMER")
@@ -43970,6 +44048,28 @@ package prioritizes user experience, ensuring clarity and consistency even when
 data is not available to display.")
     (license license:lgpl3)))
 
+(define-public r-shiny-destroy
+  (package
+    (name "r-shiny-destroy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shiny.destroy" version))
+       (sha256
+        (base32 "07hn079pmyilmjh7gjlz608987j4z42l7s3fskwpc5asnjnx2brq"))))
+    (properties `((upstream-name . "shiny.destroy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shiny r-rlang r-purrr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=shiny.destroy")
+    (synopsis "Create Destroyable Modules in 'Shiny'")
+    (description
+     "Enables the complete removal of various Shiny components, such as inputs,
+outputs and modules.  It also aids in the removal of observers that have been
+created in dynamically created modules.")
+    (license license:expat)))
+
 (define-public r-shiny-blueprint
   (package
     (name "r-shiny-blueprint")
@@ -45347,13 +45447,13 @@ and sampling approaches.")
 (define-public r-sgs
   (package
     (name "r-sgs")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sgs" version))
        (sha256
-        (base32 "1vkg7pw83hf12j8sjxpc9n6c6cpc7w2llry263lcw7a6293j69vr"))))
+        (base32 "0n8vyia3k3lafl7kd6dqrrgp6vjr954jxc74kchncaqx8p7ays3d"))))
     (properties `((upstream-name . "sgs")))
     (build-system r-build-system)
     (propagated-inputs (list r-slope
@@ -45374,9 +45474,10 @@ and sampling approaches.")
 models are supported, both of which can be fit using k-fold cross-validation.
 Dense and sparse input matrices are supported.  In addition, a general adaptive
 three operator splitting (ATOS) implementation is provided.  Group SLOPE
-(@code{gSLOPE}) (Brzyski et al. (2019) <doi:10.1080/01621459.2017.1411269>)
-models are also implemented.  Both @code{gSLOPE} and SGS are available with
-strong screening rules (Feser and Evangelou (2024)
+(@code{gSLOPE}) (Brzyski et al. (2019) <doi:10.1080/01621459.2017.1411269>) and
+group-based OSCAR models (Feser and Evangelou (2024)
+<doi:10.48550/@code{arXiv.2405.15357>}) are also implemented.  All models are
+available with strong screening rules (Feser and Evangelou (2024)
 <doi:10.48550/@code{arXiv.2405.15357>}) for computational speed-up.")
     (license license:gpl3+)))
 
@@ -54794,13 +54895,13 @@ the accompanying paper (<doi:10.48550/@code{arXiv.2205.07090>}).")
 (define-public r-scoringrules
   (package
     (name "r-scoringrules")
-    (version "1.1.2")
+    (version "1.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scoringRules" version))
        (sha256
-        (base32 "0vd1zk09spkn3mibag7nyr0kycp280vx942g1fk1dj31mrfngkh9"))))
+        (base32 "01p918qj6gmnkyh79b2hhd1h6a5v3b7ssnnx5a1ppf1a5xmx2ps6"))))
     (properties `((upstream-name . "scoringRules")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mass r-knitr))
@@ -54969,6 +55070,29 @@ taking into account the genetic relatedness and population structure.  And then
 all the potentially associated markers were selected with a less stringent
 criterion.  Finally, all the selected markers were placed into a multi-locus
 model to identify the true quantitative trait nucleotide.")
+    (license license:gpl3)))
+
+(define-public r-scoredec
+  (package
+    (name "r-scoredec")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "scoredec" version))
+       (sha256
+        (base32 "02dypr3kakha8rfhjmp5pzqlxd9mz0p1x5gk4hfc0ps8vn226xwh"))))
+    (properties `((upstream-name . "scoredec")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-rcpp r-igraph))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/cadam00/scoredec")
+    (synopsis "S-Core Graph Decomposition")
+    (description
+     "S-Core Graph Decomposition algorithm for graphs.  This is a method for
+decomposition of a weighted graph, as proposed by Eidsaa and Almaas (2013)
+<doi:10.1103/@code{PhysRevE.88.062819>}.  The high speed and the low memory
+usage make it suitable for large graphs.")
     (license license:gpl3)))
 
 (define-public r-scorecardmodelutils
@@ -55434,13 +55558,13 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.1.8")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "1dkp4ch2n3j09b49pp0wsnx7pd9c3007kjm4jm72mpk1z17w5c9f"))))
+        (base32 "106daflr4l5g9xphhnad945xi9i22jmqcd971w5xjl7xrfgv2ymg"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-reshape2 r-nortest r-mass r-ggplot2))
@@ -56224,6 +56348,48 @@ correspondence even between evolutionarily distant species.")
 estimation in the multivariate context.  Covariates can also be grouped in
 themes.")
     (license (list (license:fsdg-compatible "CeCILL-2") license:gpl2))))
+
+(define-public r-scfmonitor
+  (package
+    (name "r-scfmonitor")
+    (version "0.3.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SCFMonitor" version))
+       (sha256
+        (base32 "0gr84vj7n4vz61a5pqq3iqx0ng4j7dn11smhb93rdglj0v76kdf9"))))
+    (properties `((upstream-name . "SCFMonitor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-readr
+                             r-magrittr
+                             r-ggplot2
+                             r-dplyr))
+    (home-page "https://github.com/AzuleneG/SCFMonitor")
+    (synopsis
+     "Clear Monitor and Graphing Software Processing Gaussian .log File")
+    (description
+     "Self-Consistent Field(SCF) calculation method is one of the most important steps
+in the calculation methods of quantum chemistry.  Ehrenreich, H., & Cohen, M. H.
+(1959). <doi:10.1103/@code{PhysRev.115.786>} However, the most prevailing
+software in this area, Gaussian''s SCF convergence process is hard to monitor,
+especially while the job is still running, causing researchers difficulty in
+knowing whether the oscillation has started or not, wasting time and energy on
+useless configurations or abandoning the jobs that can actually work.  M.J.
+Frisch, G.W. Trucks, H.B. Schlegel et al. (2016). <https://gaussian.com>
+SCFMonitor enables Gaussian quantum chemistry calculation software users to
+easily read the Gaussian .log files and monitor the SCF convergence and geometry
+optimization process with little effort and clear, beautiful, and clean outputs.
+ It can generate graphs using tidyverse to let users check SCF convergence and
+geometry optimization processes in real-time.  The software supports processing
+.log files remotely using with rbase::url().  This software is a suitcase for
+saving time and energy for the researchers, supporting multiple versions of
+Gaussian'.")
+    (license license:expat)))
 
 (define-public r-scepterbinary
   (package
@@ -58892,6 +59058,46 @@ computation of all pairwise ratio, construction of a p-value matrix of all
 pairwise tests of these ratios between conditions, conversion of this matrix to
 a network.")
     (license license:artistic2.0)))
+
+(define-public r-saros-base
+  (package
+    (name "r-saros-base")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "saros.base" version))
+       (sha256
+        (base32 "0c0h6v5r81gylz9xhd2ibf0mn78lpqslgbjb7dkwmscwc8s7ky7w"))))
+    (properties `((upstream-name . "saros.base")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-zip
+                             r-yaml
+                             r-vctrs
+                             r-tidyselect
+                             r-tidyr
+                             r-stringi
+                             r-rstudioapi
+                             r-rlang
+                             r-glue
+                             r-fs
+                             r-forcats
+                             r-dplyr
+                             r-cli
+                             r-bcrypt))
+    (home-page "https://nifu-no.github.io/saros.base/")
+    (synopsis "Base Tools for Semi-Automatic Reporting of Ordinary Surveys")
+    (description
+     "Scaffold an entire web-based report using template chunks, based on a small
+chapter overview and a dataset.  Highly adaptable with prefixes, suffixes,
+translations, etc.  Also contains tools for password-protecting, e.g. for each
+organization's report on a website.  Developed for the common case of a survey
+across multiple organizations/sites where each organization wants to obtain
+results for their organization compared with everyone else.  See saros
+(<https://CRAN.R-project.org/package=saros>) for tools used for authors in the
+drafted reports.")
+    (license license:expat)))
 
 (define-public r-saros
   (package

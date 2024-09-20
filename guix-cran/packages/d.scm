@@ -2602,26 +2602,26 @@ statdistr determines the stationary distribution of a Markov Chain.")
 (define-public r-dtmapi
   (package
     (name "r-dtmapi")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dtmapi" version))
        (sha256
-        (base32 "051n7bvnnzza8m7gfr4bpn29vllna1lhxmk28ij1fw0fmkpjgsbz"))))
+        (base32 "1a0a5dff82igzxsz0ma3j2w7waqq2nrv3cy0df2nh7sgqvcldk4m"))))
     (properties `((upstream-name . "dtmapi")))
     (build-system r-build-system)
-    (propagated-inputs (list r-jsonlite r-httr r-config))
+    (propagated-inputs (list r-magrittr r-jsonlite r-httr2))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Displacement-Tracking-Matrix/dtmapi-R")
     (synopsis "Fetching Data from the 'Displacement Tracking Matrix'")
     (description
      "Allows humanitarian community, academia, media, government, and non-governmental
-organizations to utilize the data collected by the `Displacement Tracking
-Matrix` (<https://dtm.iom.int>), a unit in the International Organization for
-Migration.  This also provides non-sensitive Internally Displaced Person
-figures, aggregated at the country, Admin 1 (states, provinces, or equivalent),
-and Admin 2 (smaller administrative areas) levels.")
+organizations to utilize the data collected by the Displacement Tracking Matrix
+(<https://dtm.iom.int>), a unit in the International Organization for Migration.
+ This also provides non-sensitive Internally Displaced Person figures,
+aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
+2 (smaller administrative areas) levels.")
     (license license:expat)))
 
 (define-public r-dti
@@ -5948,13 +5948,13 @@ Mueller, Telesca (2016) <doi:10.1111/biom.12482>.")
 (define-public r-dppack
   (package
     (name "r-dppack")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DPpack" version))
        (sha256
-        (base32 "1kip6n4pxpk5byjdn5m6l8s5l49dvkh78wn6n85dri0c2snkvs17"))))
+        (base32 "1r82lmzqyis781pqsj8y2nmdilsrwai4bhsi0jamak25hi2y66rl"))))
     (properties `((upstream-name . "DPpack")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil
@@ -5977,11 +5977,14 @@ implements some statistical models and machine learning algorithms such as
 linear regression (Kifer et al., 2012)
 <https://proceedings.mlr.press/v23/kifer12.html> and SVM (Chaudhuri et al.,
 2011) <https://jmlr.org/papers/v12/chaudhuri11a.html>.  In addition, it
-implements some popular randomization mechanisms such as the Laplace mechanism
-(Dwork et al., 2006a) <doi:10.1007/11681878_14>, Gaussian mechanism (Dwork et
-al., 2006b) <doi:10.1007/11761679_29>, and exponential mechanism
-(@code{McSherry} & Talwar, 2007) <doi:10.1109/FOCS.2007.66>.")
-    (license license:gpl3)))
+implements some popular randomization mechanisms, including the Laplace
+mechanism (Dwork et al., 2006a) <doi:10.1007/11681878_14>, Gaussian mechanism
+(Dwork et al., 2006b) <doi:10.1007/11761679_29>, analytic Gaussian mechanism
+(Balle & Wang, 2018) <https://proceedings.mlr.press/v80/balle18a.html>, and
+exponential mechanism (@code{McSherry} & Talwar, 2007)
+<doi:10.1109/FOCS.2007.66>.")
+    (license (list license:gpl3
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-dpp
   (package
@@ -6264,13 +6267,13 @@ covariates.")
 (define-public r-dparser
   (package
     (name "r-dparser")
-    (version "1.3.1-11")
+    (version "1.3.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dparser" version))
        (sha256
-        (base32 "1xb4gfqcb4598wry3i1mfp9a3rjy74z2wy3ga9daaam155vcdbp8"))))
+        (base32 "108hzzcvczfbcf3ldl3dg51cf9mr8sdpn9m0chiz48awngvjc9hh"))))
     (properties `((upstream-name . "dparser")))
     (build-system r-build-system)
     (propagated-inputs (list r-digest))
@@ -16816,6 +16819,38 @@ educational and psychological tests.")
 analysis of data from educational and psychological tests.")
     (license license:lgpl3)))
 
+(define-public r-dexir
+  (package
+    (name "r-dexir")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "DEXiR" version))
+       (sha256
+        (base32 "1a1z5pcw6mcm04fww498mbxxv677wk00dv9xhgniixasnnsmmysl"))))
+    (properties `((upstream-name . "DEXiR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-stringr))
+    (home-page "https://cran.r-project.org/package=DEXiR")
+    (synopsis "'DEXi' Library")
+    (description
+     "This package provides a software package for using DEXi models.  DEXi models are
+hierarchical qualitative multi-criteria decision models developed according to
+the method DEX (Decision EXpert,
+<https://dex.ijs.si/documentation/DEX_Method/DEX_Method.html>), using the
+program DEXi (<https://kt.ijs.si/@code{MarkoBohanec/dexi.html>}) or
+DE@code{XiWin} (<https://dex.ijs.si/dexisuite/dexiwin.html>).  A typical
+workflow with DE@code{XiR} consists of: (1) reading a .dxi file, previously made
+using the DEXi software (function read_dexi()), (2) making a data frame
+containing input values of one or more decision alternatives, (3) evaluating
+those alternatives (function evaluate()), (4) analyzing alternatives
+(selective_explanation(), plus_minus(), compare_alternatives()), (5) drawing
+charts.  DE@code{XiR} is restricted to using models produced externally by the
+DEXi software and does not provide functionality for creating and/or editing
+DEXi models directly in R'.")
+    (license license:expat)))
+
 (define-public r-devtreatrules
   (package
     (name "r-devtreatrules")
@@ -19334,13 +19369,13 @@ fertility rates, net migration numbers; and stochastic population forecasting.")
 (define-public r-demographictable
   (package
     (name "r-demographictable")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemographicTable" version))
        (sha256
-        (base32 "1nsq0hcb5s6garwjnknnab92fn5w5z721m3ai4j91nbwcs08jwqj"))))
+        (base32 "1vxz426ryi8mdvcyzs7lckv4yy7r8mai0y3jw2hzhpgnx6gb59sp"))))
     (properties `((upstream-name . "DemographicTable")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable r-flextable r-e1071))
@@ -25357,13 +25392,13 @@ painless.")
 (define-public r-datapackager
   (package
     (name "r-datapackager")
-    (version "0.16.0")
+    (version "0.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataPackageR" version))
        (sha256
-        (base32 "0sm3b5xjj6dx4ckjdzklxr5j386iaiczx6xass4azkjwvj2y5bvb"))))
+        (base32 "0hq45yyfcw87p93qrivyx341hsamfx4m3bs1ii97h35mb4926k86"))))
     (properties `((upstream-name . "DataPackageR")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -25377,7 +25412,7 @@ painless.")
                              r-futile-logger
                              r-digest
                              r-desc
-                             r-crayon))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ropensci/DataPackageR")
     (synopsis "Construct Reproducible Analytic Data Sets as R Packages")
@@ -26658,19 +26693,20 @@ the @code{dartRverse} suit of packages.  Gruber et al. (2018)
 (define-public r-dartr-base
   (package
     (name "r-dartr-base")
-    (version "0.65")
+    (version "0.98")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dartR.base" version))
        (sha256
-        (base32 "1887ksyszlp65i4z6zhh6j1pihfkkimiwrv6bqav5z7gmw2i0pi7"))))
+        (base32 "0ndl0319pidlkk5fv49zqr8kbib51v60h32k906rwc57jf60xbjk"))))
     (properties `((upstream-name . "dartR.base")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-stampp
                              r-snprelate
+                             r-snpassoc
                              r-reshape2
                              r-plyr
                              r-patchwork

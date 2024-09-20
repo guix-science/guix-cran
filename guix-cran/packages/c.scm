@@ -1924,6 +1924,39 @@ subscription.  You can find the full API documentation at
 <https://currencyapi.com/docs> .")
     (license license:expat)))
 
+(define-public r-curesurv
+  (package
+    (name "r-curesurv")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "curesurv" version))
+       (sha256
+        (base32 "12c22m8slw0pj38yxphwf8j9lsjwsim4gmxgs4wqivcgycvjxbqc"))))
+    (properties `((upstream-name . "curesurv")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-statmod
+                             r-randtoolbox
+                             r-optimx
+                             r-numderiv
+                             r-formula
+                             r-deriv
+                             r-bbmle))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=curesurv")
+    (synopsis
+     "Mixture and Non Mixture Parametric Cure Models to Estimate Cure Indicators")
+    (description
+     "Fits a variety of cure models using excess hazard modeling methodology such as
+the mixture model proposed by Phillips et al. (2002) <doi:10.1002/sim.1101> The
+Weibull distribution is used to represent the survival function of the uncured
+patients; Fits also non-mixture cure model such as the time-to-null excess
+hazard model proposed by Boussari et al. (2020) <doi:10.1111/biom.13361>.")
+    (license license:gpl3+)))
+
 (define-public r-cureplots
   (package
     (name "r-cureplots")
@@ -4909,6 +4942,48 @@ analysts can interact with and manipulate Crunch datasets from within R.
 Importantly, this allows technical researchers to collaborate naturally with
 team members, managers, and clients who prefer a point-and-click interface.")
     (license license:lgpl3+)))
+
+(define-public r-crumble
+  (package
+    (name "r-crumble")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "crumble" version))
+       (sha256
+        (base32 "1yiq4fjx605802h570bk90m1160lyj8ffsvcp8js5cnp86xw4k7s"))))
+    (properties `((upstream-name . "crumble")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-torch
+                             r-s7
+                             r-rsymphony
+                             r-purrr
+                             r-progressr
+                             r-origami
+                             r-mlr3superlearner
+                             r-matrix
+                             r-lmtp
+                             r-generics
+                             r-data-table
+                             r-coro
+                             r-cli
+                             r-checkmate))
+    (home-page "https://cran.r-project.org/package=crumble")
+    (synopsis
+     "Flexible and General Mediation Analysis Using Riesz Representers")
+    (description
+     "This package implements a modern, unified estimation strategy for common
+mediation estimands (natural effects, organic effects, interventional effects,
+and recanting twins) in combination with modified treatment policies as
+described in Liu, Williams, Rudolph, and DÃ­az (2024)
+<doi:10.48550/@code{arXiv.2408.14620>}.  Estimation makes use of recent
+advancements in Riesz-learning to estimate a set of required nuisance parameters
+with deep learning.  The result is the capability to estimate mediation effects
+with binary, categorical, continuous, or multivariate exposures with
+high-dimensional mediators and mediator-outcome confounders using machine
+learning.")
+    (license license:gpl3+)))
 
 (define-public r-crtspat
   (package
@@ -11000,13 +11075,13 @@ correspond to Feb 2011 preprint
 (define-public r-cotram
   (package
     (name "r-cotram")
-    (version "0.5-1")
+    (version "0.5-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cotram" version))
        (sha256
-        (base32 "0ckbkhgg7026nf9xkqq3lnfi8gzb78vj4crpxms8ljxxbgv6zai1"))))
+        (base32 "19z3nsv1cy737mma4q1i8pr8zgnhv8pyrb2airxchbwlf4dxv2vb"))))
     (properties `((upstream-name . "cotram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -20185,6 +20260,42 @@ your data, and it gives you a color for each data point.  You can then use these
 colors to make plots in base R', ggplot2', or other graphics frameworks.")
     (license license:expat)))
 
+(define-public r-colorrepel
+  (package
+    (name "r-colorrepel")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "colorrepel" version))
+       (sha256
+        (base32 "0cmjnnp91rzpmq8mdkvdagnkyf16fivg34kvmkb2ihqdhrr5nqmn"))))
+    (properties `((upstream-name . "colorrepel")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-purrr
+                             r-matrixstats
+                             r-matrix
+                             r-gtools
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggalt
+                             r-dqrng
+                             r-dplyr
+                             r-distances))
+    (home-page "https://github.com/raysinensis/color_repel")
+    (synopsis
+     "Repel Visually Similar Colors for Colorblind Users in Various Plots")
+    (description
+     "Iterate and repel visually similar colors away in various ggplot2 plots.  When
+many groups are plotted at the same time on multiple axes, for instance stacked
+bars or scatter plots, effectively ordering colors becomes difficult.  This tool
+iterates through color combinations to find the best solution to maximize visual
+distinctness of nearby groups, so plots are more friendly toward colorblind
+users.  This is achieved by two distance measurements, distance between groups
+within the plot, and CIELAB color space distances between colors as described in
+Carter et al., (2018) <doi:10.25039/TR.015.2018>.")
+    (license license:expat)))
+
 (define-public r-colorramp2
   (package
     (name "r-colorramp2")
@@ -20581,6 +20692,39 @@ deuteranopia, protanopia, and tritanopia.  It includes calculation of distances
 between colors, and creating summaries of differences between a color palette
 and simulations of color vision deficiencies.  This work was inspired by the
 blog post at <http://www.vis4.net/blog/2018/02/automate-colorblind-checking/>.")
+    (license license:expat)))
+
+(define-public r-colopendata
+  (package
+    (name "r-colopendata")
+    (version "0.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ColOpenData" version))
+       (sha256
+        (base32 "10nb1mgxxxwbbq9s39dml89q8rk6xnfanklcrvqcphgafm91sf8d"))))
+    (properties `((upstream-name . "ColOpenData")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-stringdist
+                             r-sf
+                             r-rlang
+                             r-magrittr
+                             r-dplyr
+                             r-config
+                             r-checkmate))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/epiverse-trace/ColOpenData")
+    (synopsis "Download Colombian Demographic, Climate and Geospatial Data")
+    (description
+     "Downloads wrangled Colombian socioeconomic, geospatial,population and climate
+data from DANE <https://www.dane.gov.co/> (National Administrative Department of
+Statistics) and IDEAM <https://ideam.gov.co> (Institute of Hydrology,
+Meteorology and Environmental Studies).  It solves the problem of Colombian data
+being issued in different web pages and sources by using functions that allow
+the user to select the desired database and download it without having to do the
+exhausting acquisition process.")
     (license license:expat)))
 
 (define-public r-colocr
@@ -27881,13 +28025,13 @@ computes occurrence probabilities), first- or higher-order Markov chains.")
 (define-public r-clickr
   (package
     (name "r-clickr")
-    (version "0.9.39")
+    (version "0.9.43")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clickR" version))
        (sha256
-        (base32 "0kqv3kwj1dbq6d7010gdy003v11ww0bx2zr7yv93ag060viv956d"))))
+        (base32 "00qd4m6w5q99v6rm9wcxc8mwwi9ik8iiis0pzydb3qwrx0bfaj5m"))))
     (properties `((upstream-name . "clickR")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-future-apply r-future r-beeswarm))
@@ -29619,13 +29763,13 @@ set in log returns or levels, and making a Dynamic graph.")
 (define-public r-citmic
   (package
     (name "r-citmic")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CITMIC" version))
        (sha256
-        (base32 "1dr8i1hpc5hq8jbv59frh8yxa8nykkwfi4hpa9rmlycqwwy9xp16"))))
+        (base32 "0zq2gkayspb6bffrpjnhwb4njkm6iz3yg740njabdlszr53l3ayd"))))
     (properties `((upstream-name . "CITMIC")))
     (build-system r-build-system)
     (propagated-inputs (list r-igraph r-fastmatch))
@@ -29634,10 +29778,10 @@ set in log returns or levels, and making a Dynamic graph.")
     (synopsis "Estimation of Cell Infiltration Based on Cell Crosstalk")
     (description
      "This package provides a systematic biology tool was developed to identify cell
-infiltration via Individualized Cell-Cell interaction network.  CITMIC first
-constructed a weighted cell interaction network through integrating Cell-target
-interaction information, molecular function data from Gene Ontology (GO)
-database and gene transcriptomic data in specific sample, and then, it used a
+infiltration via an Individualized Cell crosstalk network.  CITMIC first
+constructed a weighted cell crosstalk network by integrating Cell-target
+interaction information, biological process data from the Gene Ontology (GO)
+database, and gene transcriptomic data in a specific sample, and then, it used a
 network propagation algorithm on the network to identify cell infiltration for
 the sample.  Ultimately, cell infiltration in the patient dataset was obtained
 by normalizing the centrality scores of the cells.")
@@ -36786,13 +36930,13 @@ assumption of two multivariate variable.")
 (define-public r-cdcplaces
   (package
     (name "r-cdcplaces")
-    (version "1.1.7")
+    (version "1.1.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CDCPLACES" version))
        (sha256
-        (base32 "0z751pk8mf8a7csrbyv76183q34ffjfg386jlf30mip8kn0nmi2s"))))
+        (base32 "1hy6x2qicf1k7p00hpagm03h79xvw1d2wk04v74c4hlxxczyz29n"))))
     (properties `((upstream-name . "CDCPLACES")))
     (build-system r-build-system)
     (propagated-inputs (list r-zctacrosswalk r-yyjsonr r-tigris r-sf r-curl))
@@ -41008,6 +41152,46 @@ contexts.")
      "Identification of cardinal dates (begin, time of maximum, end of mass
 developments) in ecological time series using fitted Weibull functions.")
     (license license:gpl2+)))
+
+(define-public r-card-pro
+  (package
+    (name "r-card-pro")
+    (version "2.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "card.pro" version))
+       (sha256
+        (base32 "11ln2y03ld6l5q2r57s1zb5ndy7jzz0vvf2ldy1mbi95w0pd5254"))))
+    (properties `((upstream-name . "card.pro")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shiny r-quickcode r-htmltools))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://cardpro.rpkg.net")
+    (synopsis "Lightweight Modern & Responsive Card Component for 'shiny'")
+    (description
+     "Responsive and modern HTML card essentials for shiny dashboard.  This novel card
+component in Bootstrap provides a flexible and extensible content container with
+multiple variants and options for build robust apps e.g for graph build or
+machine learning projects.  The features rely on a combine JQuery
+<https://jquery.com> and CSS styles to improve the card functionality.")
+    (license license:expat)))
 
 (define-public r-card
   (package

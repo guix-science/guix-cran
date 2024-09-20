@@ -4053,13 +4053,13 @@ processes; periodic and stochastic time series analysis.")
 (define-public r-astrochron
   (package
     (name "r-astrochron")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "astrochron" version))
        (sha256
-        (base32 "1vviz16yfqnqkvrb0sb7348a7xqvqi3cfdyxhlksm08g4rr3w8ar"))))
+        (base32 "1ba5sbg7z3jayphm6qp0v1ir4pr14jw1rfn3b4sz0vl8h2vpcmsi"))))
     (properties `((upstream-name . "astrochron")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridislite
@@ -4137,17 +4137,17 @@ R. Hoots, Paul W. Schumacher Jr.  and Robert A. Glover (2014)
 (define-public r-aster2
   (package
     (name "r-aster2")
-    (version "0.3")
+    (version "0.3-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "aster2" version))
        (sha256
-        (base32 "17d200sg0vn1fj6lb480dhszm70q6ipjldilb3x0jp72hiczakk9"))))
+        (base32 "1dcmfirgy85ca9v542szjhxp5660kcp4lq07q7bdv1ghc3l2l7qs"))))
     (properties `((upstream-name . "aster2")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
-    (home-page "http://www.stat.umn.edu/geyer/aster/")
+    (home-page "https://www.stat.umn.edu/geyer/aster/")
     (synopsis "Aster Models")
     (description
      "Aster models are exponential family regression models for life history analysis.
@@ -7311,6 +7311,27 @@ manipulating and converting @code{ArcGIS} objects from R are also provided.")
 to retrieve data.  Simple Feature (sf) objects are utilized to perform spatial
 queries.  This package was neither produced nor is maintained by Esri.")
     (license license:gpl3)))
+
+(define-public r-arcpbf
+  (package
+    (name "r-arcpbf")
+    (version "0.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcpbf" version))
+       (sha256
+        (base32 "1g8x46r8angcvcgwvmfm8afs3yrzisdsnr1pckknjng3w1jp0v42"))))
+    (properties `((upstream-name . "arcpbf")))
+    (build-system r-build-system)
+    (inputs (list))
+    (propagated-inputs (list r-rlang r-arcgisutils))
+    (home-page "https://r.esri.com/arcpbf/")
+    (synopsis "Process ArcGIS Protocol Buffer FeatureCollections")
+    (description
+     "Fast processing of @code{ArcGIS} @code{FeatureCollection} protocol buffers in R.
+It is designed to work seamlessly with httr2 and integrates with sf'.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcokrig
   (package

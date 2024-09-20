@@ -514,13 +514,13 @@ remember and easy to deploy.")
 (define-public r-numero
   (package
     (name "r-numero")
-    (version "1.9.7")
+    (version "1.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Numero" version))
        (sha256
-        (base32 "04pf6x7qmgkfyj98c23maxcvlwwwfw6jas7l72xp0713lyndjl15"))))
+        (base32 "038nyc1chis326kgdbwzl0w24v7pk3cdwb5x94q2g6lvf5ffh5y3"))))
     (properties `((upstream-name . "Numero")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -2648,6 +2648,42 @@ al. (2017a) <doi:10.1016/j.csda.2016.08.002> and LÃ³pez-Cheda et al. (2017b)
 <doi:10.1007/s11749-016-0515-1>.")
     (license license:gpl2+)))
 
+(define-public r-npcs
+  (package
+    (name "r-npcs")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "npcs" version))
+       (sha256
+        (base32 "0bd81fi1zg06s39msdrnhh0yv7y7zr2nn110w8fm9vdlcx100gam"))))
+    (properties `((upstream-name . "npcs")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-smotefamily
+                             r-nnet
+                             r-magrittr
+                             r-ggplot2
+                             r-formatr
+                             r-foreach
+                             r-forcats
+                             r-dplyr
+                             r-dfoptim
+                             r-caret))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=npcs")
+    (synopsis "Neyman-Pearson Classification via Cost-Sensitive Learning")
+    (description
+     "We connect the multi-class Neyman-Pearson classification (NP) problem to the
+cost-sensitive learning (CS) problem, and propose two algorithms (NPMC-CX and
+NPMC-ER) to solve the multi-class NP problem through cost-sensitive learning
+tools.  Under certain conditions, the two algorithms are shown to satisfy
+multi-class NP properties.  More details are available in the paper
+\"Neyman-Pearson Multi-class Classification via Cost-sensitive Learning\" (Ye Tian
+and Yang Feng, 2021).")
+    (license license:gpl2)))
+
 (define-public r-npcp
   (package
     (name "r-npcp")
@@ -4173,17 +4209,16 @@ nonlinear mixed effects modeling.  See package?nonmemica'.")
 (define-public r-nonmem2rx
   (package
     (name "r-nonmem2rx")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonmem2rx" version))
        (sha256
-        (base32 "08yyh7jwlqfxprwrs2f3pgjzlii66p98ixnd5r2jliqdzxbx1ciy"))))
+        (base32 "033anh6cb54yj3s42zs01695qbmj2qcrdjgnk72svqd08gkw2bz9"))))
     (properties `((upstream-name . "nonmem2rx")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
-                             r-rxode2parse
                              r-rxode2
                              r-rcpp
                              r-qs
@@ -7114,13 +7149,13 @@ outputs (e.g. R Markdown).")
 (define-public r-nlmixr2plot
   (package
     (name "r-nlmixr2plot")
-    (version "2.0.9")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2plot" version))
        (sha256
-        (base32 "0n0crjmb5mwnrq52hf9hwi36ggvwrpyxsr9gm608dwwxky8zmrwg"))))
+        (base32 "1f5pga8v3rs6vdbmk2m06swkn6d90l2i6pgnm1y9k9mk0324v9qz"))))
     (properties `((upstream-name . "nlmixr2plot")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgxr
@@ -7169,13 +7204,13 @@ composition and modification functions to make model updates easier.")
 (define-public r-nlmixr2extra
   (package
     (name "r-nlmixr2extra")
-    (version "2.0.10")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2extra" version))
        (sha256
-        (base32 "03k8f6v6qqgbl8ngga0n6xyx2kz98xfv6kvi7rad9n90fpdqiaxl"))))
+        (base32 "1n2f9x8k6nbmsdiv2gmpa59nwxnpp5jfy85r9rzvwpbf56k9ba4b"))))
     (properties `((upstream-name . "nlmixr2extra")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
@@ -7188,6 +7223,7 @@ composition and modification functions to make model updates easier.")
                              r-knitr
                              r-ggtext
                              r-ggplot2
+                             r-dplyr
                              r-digest
                              r-data-table
                              r-crayon
@@ -7210,20 +7246,19 @@ covariate selection.")
 (define-public r-nlmixr2est
   (package
     (name "r-nlmixr2est")
-    (version "2.2.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2est" version))
        (sha256
-        (base32 "1g25cqh3yybq9lxbxma3fd11jw1wgpnadxjx78sqqbzwx54xiawf"))))
+        (base32 "15mf94sa489y9fcbrc669i9df8pfbjrx98y3ffqi5lkgsf97birr"))))
     (properties `((upstream-name . "nlmixr2est")))
     (build-system r-build-system)
     (propagated-inputs (list r-symengine
-                             r-rxode2random
-                             r-rxode2parse
                              r-rxode2
                              r-rex
+                             r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
                              r-nlmixr2data
@@ -7277,13 +7312,13 @@ Hallow, and James 2015 <doi:10.1002/psp4.12052>).")
 (define-public r-nlmixr2
   (package
     (name "r-nlmixr2")
-    (version "2.1.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nlmixr2" version))
        (sha256
-        (base32 "1mfc9gyz21796j7h9g18hrkisrd6vyw4nc5dpfdd9r0abp8x61aw"))))
+        (base32 "06za2hn8rd8plmphp0j1y82hzqhpqjb1mj2r6gc92lpyc2dd5a6a"))))
     (properties `((upstream-name . "nlmixr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxode2
@@ -16120,13 +16155,13 @@ in Korea.")
 (define-public r-n1qn1
   (package
     (name "r-n1qn1")
-    (version "6.0.1-11")
+    (version "6.0.1-12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "n1qn1" version))
        (sha256
-        (base32 "17p48wm0wcw46lk9382yd9xpzx4rygdjyrbfdi6xnph1k5phjxpj"))))
+        (base32 "1rgmvmawvrac0b2k4r39429yvw7vidkhln68q2llr2k81ns58b32"))))
     (properties `((upstream-name . "n1qn1")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))

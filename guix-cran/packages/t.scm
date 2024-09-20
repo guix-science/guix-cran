@@ -8610,13 +8610,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-5")
+    (version "1.0-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "12466rha6h7i034pwqjl37isga6lzxagjj7ppaffqg3aajzdlzss"))))
+        (base32 "059qzfmrx24n4lznjwp6b5cr848w5qpvbrwg5jnxhk9wdx014ld7"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -8674,21 +8674,16 @@ for 3-dimensional trajectories. @code{McLean} & Skowron Volponi (2018)
 (define-public r-trajmsm
   (package
     (name "r-trajmsm")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "trajmsm" version))
        (sha256
-        (base32 "0yf95azpikzhh7c7nbjjnx0f3ksk1myj8y7axy91kapykg0f3j34"))))
+        (base32 "019aa2cdnccsws7wf3ks49pfk7szc8m5lly5br4j15bwig8z1b1y"))))
     (properties `((upstream-name . "trajmsm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-sandwich
-                             r-ggplot2
-                             r-flexmix
-                             r-e1071
-                             r-class))
+    (propagated-inputs (list r-survival r-sandwich r-ggplot2 r-flexmix r-e1071))
     (home-page "https://github.com/awamaeva/R-package-trajmsm")
     (synopsis
      "Marginal Structural Models with Latent Class Growth Analysis of Treatment Trajectories")
@@ -11628,13 +11623,13 @@ contingency table for each threshold (Pontius Jr., R.G., Si, K. 2014.
 (define-public r-toastui
   (package
     (name "r-toastui")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "toastui" version))
        (sha256
-        (base32 "1m6l3acvsznhm22gvc9jjl8jnlxa3l6l6s42mdv04kwzw1qqm6xp"))))
+        (base32 "1pyrw9wnrnkfxdyjq5k8n4brk6l2mrhqdbqb3y1ayfnby82n154v"))))
     (properties `((upstream-name . "toastui")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinywidgets
@@ -16350,13 +16345,13 @@ fuzzyjoin package.")
 (define-public r-tidygate
   (package
     (name "r-tidygate")
-    (version "1.0.13")
+    (version "1.0.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidygate" version))
        (sha256
-        (base32 "1ighc3193ifvk3qisxinlgkw3p70ap64w7skspms648x7n89bb4a"))))
+        (base32 "1wfrcna9k67n23p1kyr7cc8illj6nvml2cxf0xb42i0fxlniyqb8"))))
     (properties `((upstream-name . "tidygate")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -20956,13 +20951,13 @@ Medical Outcomes Partnership (OMOP) Common Data Model.")
 (define-public r-testgardener
   (package
     (name "r-testgardener")
-    (version "3.3.3")
+    (version "3.3.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TestGardener" version))
        (sha256
-        (base32 "1iybx4h46shyki0ihnaxn968lkplnp88l0ld09cx632vhlpis0iv"))))
+        (base32 "1057v6jm7jfw6zq9190837hg4kq0pi86s24j0iip7zsnn6294q1h"))))
     (properties `((upstream-name . "TestGardener")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -21298,13 +21293,13 @@ stepdown versions, and four FDR procedures.")
 (define-public r-testcomparer
   (package
     (name "r-testcomparer")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testCompareR" version))
        (sha256
-        (base32 "09pfdnc0hfaj8f3vgsprm5pjlwygliflm40dk3cnr71v89ihddxg"))))
+        (base32 "0gaqzxghz5lahvdaq5w3l9j2gjrvzpwqqmczh3yrkmlfqpvgwvbw"))))
     (properties `((upstream-name . "testCompareR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

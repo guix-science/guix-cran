@@ -6,6 +6,8 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
+  #:use-module (gnu packages python-science)
+  #:use-module (gnu packages python)
   #:use-module (gnu packages gcc)
   #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages algebra)
@@ -17,7 +19,6 @@
   #:use-module (gnu packages geo)
   #:use-module (gnu packages compression)
   #:use-module (gnu packages graphviz)
-  #:use-module (gnu packages python)
   #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages version-control)
   #:use-module (gnu packages gettext)
@@ -25,7 +26,6 @@
   #:use-module (gnu packages bioinformatics)
   #:use-module (gnu packages haskell-xyz)
   #:use-module (gnu packages maths)
-  #:use-module (gnu packages python-science)
   #:use-module (gnu packages pdf)
   #:use-module (gnu packages gtk)
   #:use-module (gnu packages java)
@@ -77,15 +77,16 @@
 (define-public r-pytrendslongitudinalr
   (package
     (name "r-pytrendslongitudinalr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PytrendsLongitudinalR" version))
        (sha256
-        (base32 "1a458h95f6ka4qaxfgsin3cc98bcwf0b87bj7nbhq62931hf0wjf"))))
+        (base32 "00y9v9kv8a4cyfkxzzr8cbq6l2b8cfp2svnkkmq3rbrn3wrwl6d6"))))
     (properties `((upstream-name . "PytrendsLongitudinalR")))
     (build-system r-build-system)
+    (inputs (list python python-pandas))
     (propagated-inputs (list r-reticulate r-lubridate r-jsonlite))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=PytrendsLongitudinalR")
@@ -3722,13 +3723,13 @@ survey 2014-15 from Pakistan Bureau of Statistics (<http://www.pbs.gov.pk/>).")
 (define-public r-psinference
   (package
     (name "r-psinference")
-    (version "0.1.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PSinference" version))
        (sha256
-        (base32 "19y3pbb75rkgx9dlykrq6aa0pbn968d83bsl1d3qlnb06b6gncx6"))))
+        (base32 "0smhh9gnaiwhjxmkzwd63c30l9frs8svkfaz4kw9lxn9i906py77"))))
     (properties `((upstream-name . "PSinference")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -3768,6 +3769,37 @@ minimum test.  For details on this method see: Sulewski (2017)
 <doi:10.1080/02664763.2018.1424122>, Sulewski (2019)
 <doi:10.2478/bile-2019-0003>, Sulewski (2021)
 <doi:10.1080/00949655.2021.1908286>.")
+    (license license:gpl3)))
+
+(define-public r-psim
+  (package
+    (name "r-psim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PSIM" version))
+       (sha256
+        (base32 "0d36yvihc24bb3djzsgc5hsbdmjxnpfn4jx513l1kscq1r6hcidd"))))
+    (properties `((upstream-name . "PSIM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyverse r-matrixstats r-magrittr r-dplyr))
+    (home-page "https://github.com/luana1909/PSIM")
+    (synopsis "Preference Selection Index Method (PSIM)")
+    (description
+     "The Preference Selection Index Method was created in (2010) and provides an
+innovative approach to determining the relative importance of criteria without
+pairwise comparisons, unlike the Analytic Hierarchy Process.  The Preference
+Selection Index Method uses statistical methods to calculate the criteria
+weights and reflects their relative importance in the final decision-making
+process, offering an objective and non-subjective solution.  This method is
+beneficial in multi-criteria decision analysis.  The PSIM package provides a
+practical and accessible tool for implementing the Preference Selection Index
+Method in R. It calculates the weights of criteria and makes the method
+available to researchers, analysts, and professionals without the need to
+develop complex calculations manually.  More details about the Preference
+Selection Index Method can be found in Maniya K. and Bhatt M. G.(2010)
+<doi:10.1016/j.matdes.2009.11.020>.")
     (license license:gpl3)))
 
 (define-public r-psidread
@@ -10784,13 +10816,13 @@ by Yadlowsky et al. (2020) <doi:10.1080/01621459.2020.1772080>.")
 (define-public r-precisesums
   (package
     (name "r-precisesums")
-    (version "0.6")
+    (version "0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PreciseSums" version))
        (sha256
-        (base32 "16ycz7rcslhfc9g4z04klq9hb9fpzmrn4rysyl4zky85mlhs60gk"))))
+        (base32 "10fnr0b159ym001hdnkr7cir5vaaglcxrbyrxmky430f5nhhcv0f"))))
     (properties `((upstream-name . "PreciseSums")))
     (build-system r-build-system)
     (home-page "https://github.com/nlmixr2/PreciseSums")
@@ -16930,13 +16962,13 @@ and Hong (2022) <DOI:10.1007/s00180-022-01299-0>.")
 (define-public r-poissonbinomial
   (package
     (name "r-poissonbinomial")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PoissonBinomial" version))
        (sha256
-        (base32 "1g77mkz63fl8hr3fhb71l0zywgg20djzjb88sjzpzsng73mz682h"))))
+        (base32 "0vv1hmskd1ri3p9w7hxvs62jghia76l5y0b1m7vh600qqyg45k30"))))
     (properties `((upstream-name . "PoissonBinomial")))
     (build-system r-build-system)
     (inputs (list fftw))
@@ -17549,6 +17581,56 @@ regression models using spike and slab priors.")
      "Estimate large covariance matrices in approximate factor models by thresholding
 principal orthogonal complements.")
     (license license:gpl2)))
+
+(define-public r-poems
+  (package
+    (name "r-poems")
+    (version "1.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "poems" version))
+       (sha256
+        (base32 "0pfiv55ql9kjqgkc4dblc5l36626mxknga2gbh1xw5wwzpbiw7xm"))))
+    (properties `((upstream-name . "poems")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-trend
+                             r-raster
+                             r-r6
+                             r-qs
+                             r-metrology
+                             r-lhs
+                             r-gdistance
+                             r-fossil
+                             r-foreach
+                             r-doparallel
+                             r-abc))
+    (native-inputs (list r-rmarkdown r-knitr))
+    (home-page "https://github.com/GlobalEcologyLab/poems")
+    (synopsis "Pattern-Oriented Ensemble Modeling System")
+    (description
+     "This package provides a framework of interoperable R6 classes (Chang, 2020,
+<https://CRAN.R-project.org/package=R6>) for building ensembles of viable models
+via the pattern-oriented modeling (POM) approach (Grimm et al.,2005,
+<doi:10.1126/science.1116681>).  The package includes classes for encapsulating
+and generating model parameters, and managing the POM workflow.  The workflow
+includes: model setup; generating model parameters via Latin hyper-cube sampling
+(Iman & Conover, 1980, <doi:10.1080/03610928008827996>); running multiple
+sampled model simulations; collating summary results; and validating and
+selecting an ensemble of models that best match known patterns.  By default,
+model validation and selection utilizes an approximate Bayesian computation
+(ABC) approach (Beaumont et al., 2002, <doi:10.1093/genetics/162.4.2025>),
+although alternative user-defined functionality could be employed.  The package
+includes a spatially explicit demographic population model simulation engine,
+which incorporates default functionality for density dependence, correlated
+environmental stochasticity, stage-based transitions, and distance-based
+dispersal.  The user may customize the simulator by defining functionality for
+translocations, harvesting, mortality, and other processes, as well as defining
+the sequence order for the simulator processes.  The framework could also be
+adapted for use with other model simulators by utilizing its extendable
+(inheritable) base classes.")
+    (license license:gpl3)))
 
 (define-public r-podcleaner
   (package
@@ -22227,6 +22309,51 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
 10.1177/019262339502300203>; \"Mould and Upton\" (2012) <DOI: 10.1038/psp.2012.4>;
 \"Mould and Upton\" (2013) <DOI: 10.1038/psp.2013.14>.")
     (license license:gpl2+)))
+
+(define-public r-pkbioanalysis
+  (package
+    (name "r-pkbioanalysis")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PKbioanalysis" version))
+       (sha256
+        (base32 "11ykay7c500i8y78qv73irqpgch5warl50xz3d1fwh303brcvisn"))))
+    (properties `((upstream-name . "PKbioanalysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyselect
+                             r-tidyr
+                             r-stringr
+                             r-shinywidgets
+                             r-shinyjs
+                             r-shinyalert
+                             r-shiny
+                             r-rlang
+                             r-rappdirs
+                             r-htmltools
+                             r-glue
+                             r-ggplot2
+                             r-ggforce
+                             r-duckdb
+                             r-dt
+                             r-dplyr
+                             r-diagrammer
+                             r-dbi
+                             r-checkmate
+                             r-bslib
+                             r-bsicons))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/OmarAshkar/PKbioanalysis")
+    (synopsis "Pharmacokinetic Bioanalysis Experiments Design and Exploration")
+    (description
+     "Automate pharmacokinetic/pharmacodynamic bioanalytical procedures based on best
+practices and regulatory recommendations.  The package impose regulatory
+constrains and sanity checking for common bioanalytical procedures.
+Additionally, PKbioanalysis provides a relational infrastructure for plate
+management and injection sequence.")
+    (license license:agpl3+)))
 
 (define-public r-pk4adi
   (package
@@ -28157,13 +28284,13 @@ size is large (>200).")
 (define-public r-permchacko
   (package
     (name "r-permchacko")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "permChacko" version))
        (sha256
-        (base32 "0wnq6wgh78cp8d0xab00fb94p9sm67412dvxrki56rajjsagclqq"))))
+        (base32 "0djmhbmjxq1id1qdnalndmvb9zqy5vhbsapk9zf2mv5z4rnkycyk"))))
     (properties `((upstream-name . "permChacko")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -35723,6 +35850,49 @@ persists in the parallel threads.  Additional functions support function call
 automation with delayed execution (e.g. for executing functions in parallel).")
     (license license:asl2.0)))
 
+(define-public r-parafac4microbiome
+  (package
+    (name "r-parafac4microbiome")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "parafac4microbiome" version))
+       (sha256
+        (base32 "1gma8y87ck66kd723ndjpvwp2s0nd6k6l6cjxd4jlz15d2g9lf8q"))))
+    (properties `((upstream-name . "parafac4microbiome")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rtensor
+                             r-rlang
+                             r-pracma
+                             r-multiway
+                             r-mize
+                             r-magrittr
+                             r-lifecycle
+                             r-ggpubr
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cowplot
+                             r-compositions))
+    (native-inputs (list r-knitr))
+    (home-page "https://grvanderploeg.github.io/parafac4microbiome/")
+    (synopsis
+     "Parallel Factor Analysis Modelling of Longitudinal Microbiome Data")
+    (description
+     "Creation and selection of PARAllel FACtor Analysis (PARAFAC) models of
+longitudinal microbiome data.  You can import your own data with our import
+functions or use one of the example datasets to create your own PARAFAC models.
+Selection of the optimal number of components can be done using
+@code{assessModelQuality}() and @code{assessModelStability}().  The selected
+model can then be plotted using @code{plotPARAFACmodel}().  The Parallel Factor
+Analysis method was originally described by Caroll and Chang (1970)
+<doi:10.1007/BF02310791> and Harshman (1970)
+<https://www.psychology.uwo.ca/faculty/harshman/wpppfac0.pdf>.")
+    (license license:expat)))
+
 (define-public r-parade
   (package
     (name "r-parade")
@@ -37194,6 +37364,33 @@ et al (2016) <doi:10.1111/2041-210X.12526>.")
 functions to visualize and process the fossil data.  The API documentation for
 the Paleobiology Database can be found at <https://paleobiodb.org/data1.2/>.")
     (license license:gpl2)))
+
+(define-public r-paleoam
+  (package
+    (name "r-paleoam")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paleoAM" version))
+       (sha256
+        (base32 "1svl2nqdflk65ppvlrdr07w66lzgj9g5mx8n2mamwrs9k1pv9gg8"))))
+    (properties `((upstream-name . "paleoAM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan))
+    (home-page "https://cran.r-project.org/package=paleoAM")
+    (synopsis
+     "Simulating Assemblage Models of Abundance for the Fossil Record")
+    (description
+     "This package provides functions for fitting abundance distributions over
+environmental gradients to the species in ecological communities, and tools for
+simulating the fossil assemblages from those abundance models for such
+communities, as well as simulating assemblages across various patterns of
+sedimentary history and sampling.  These tools are for particular use with
+fossil records with detailed age models and abundance distributions used for
+calculating environmental gradients from ordinations or other indices based on
+fossil assemblages.")
+    (license license:cc0)))
 
 (define-public r-pald
   (package
