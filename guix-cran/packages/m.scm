@@ -1837,13 +1837,13 @@ scheduling.")
 (define-public r-mvgb
   (package
     (name "r-mvgb")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgb" version))
        (sha256
-        (base32 "1928mfbhlhwh03xiwlf5mvn6yp0i95rlknqb132b5hdsd3y5xin3"))))
+        (base32 "1j83n786fiqxp7509mappck8iad5rzzvbb1mqf7fzpzmbh1dinmi"))))
     (properties `((upstream-name . "mvgb")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -12887,6 +12887,54 @@ Polson, & Scott), and ridge regression with model selection via Reversible Jump,
 and student-t errors (from Geweke) is also provided.")
     (license license:lgpl2.0+)))
 
+(define-public r-monolix2rx
+  (package
+    (name "r-monolix2rx")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "monolix2rx" version))
+       (sha256
+        (base32 "03hwmyp0vgm6a1q8jiy57abwnk5bqnra97cy5sazxfza6f3lbdxc"))))
+    (properties `((upstream-name . "monolix2rx")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-stringi
+                             r-rxode2
+                             r-rcpp
+                             r-magrittr
+                             r-lotri
+                             r-ggplot2
+                             r-ggforce
+                             r-dparser
+                             r-crayon
+                             r-cli
+                             r-checkmate))
+    (home-page "https://nlmixr2.github.io/monolix2rx/")
+    (synopsis "Converts 'Monolix' Models to 'rxode2'")
+    (description
+     "Monolix is a tool for running mixed effects model using saem'.  This tool allows
+you to convert Monolix models to rxode2 (Wang, Hallow and James (2016)
+<doi:10.1002/psp4.12052>) using the form compatible with nlmixr2 (Fidler et al
+(2019) <doi:10.1002/psp4.12445>).  If available, the rxode2 model will read in
+the Monolix data and compare the simulation for the population model individual
+model and residual model to immediately show how well the translation is
+performing.  This saves the model development time for people who are creating
+an rxode2 model manually.  Additionally, this package reads in all the
+information to allow simulation with uncertainty (that is the number of
+observations, the number of subjects, and the covariance matrix) with a rxode2
+model.  This is complementary to the babelmixr2 package that translates nlmixr2
+models to Monolix and can convert the objects converted from monolix2rx to a
+full nlmixr2 fit.  While not required, you can get/install the
+@code{lixoftConnectors} package in the Monolix installation, as described at the
+following url
+<https://monolixsuite.slp-software.com/r-functions/2024R1/installation-and-initialization>.
+ When @code{lixoftConnectors} is available, Monolix can be used to load its
+model library instead manually setting up text files (which only works with old
+versions of Monolix').")
+    (license license:expat)))
+
 (define-public r-monoinc
   (package
     (name "r-monoinc")
@@ -17733,13 +17781,13 @@ classification evaluation metrics based on confusion matrix.")
 (define-public r-mlt-docreg
   (package
     (name "r-mlt-docreg")
-    (version "1.1-8")
+    (version "1.1-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt.docreg" version))
        (sha256
-        (base32 "1hyzfz2s27n4bavz9b9g50w5fdhinj4dgijadbll52dih7v97dnl"))))
+        (base32 "0sgrzaqadi9nld3dap8rf3ykjhlc7jrcvqvsihr3pn5x68vn06ig"))))
     (properties `((upstream-name . "mlt.docreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -36421,17 +36469,25 @@ detailed description, see Meila, M. (2005) <doi:10.1145/1102351.1102424>.")
 (define-public r-mclustaddons
   (package
     (name "r-mclustaddons")
-    (version "0.8")
+    (version "0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mclustAddons" version))
        (sha256
-        (base32 "12wlj1rl5d384fydk27rpm62ghmwv3iax4nfsrcpczxrfk8zshc9"))))
+        (base32 "0vj84i1lrk6kxz1ymi164mb2hkjga6kydi6d0vb4c269kr7gi38j"))))
     (properties `((upstream-name . "mclustAddons")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-mclust r-iterators
-                             r-foreach))
+    (propagated-inputs (list r-rmarkdown
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-mclust
+                             r-knitr
+                             r-iterators
+                             r-foreach
+                             r-dorng
+                             r-doparallel
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://mclust-org.github.io/mclustAddons/")
     (synopsis "Addons for the 'mclust' Package")
@@ -42285,13 +42341,13 @@ the R console, in R Markdown documents and in Shiny apps.")
 (define-public r-mapboxapi
   (package
     (name "r-mapboxapi")
-    (version "0.6")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mapboxapi" version))
        (sha256
-        (base32 "1nvs5ikg3vrcvbidpl50gp84vjig7j3k1wjkhqk6jpr4dspi4p60"))))
+        (base32 "1sf01288m3hix7mgkp529vasnmxs1qw508v9i5w931nla03wsl3h"))))
     (properties `((upstream-name . "mapboxapi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units

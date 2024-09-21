@@ -15113,6 +15113,50 @@ dice.")
 dimensional tibble'), and allows broadcasting by dimensional names.")
     (license license:expat)))
 
+(define-public r-diathor
+  (package
+    (name "r-diathor")
+    (version "0.1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "diathor" version))
+       (sha256
+        (base32 "12m174r2z2vwxqwpayd8fz5hgrgx87bzfklpsksfm4zma64xwmxb"))))
+    (properties `((upstream-name . "diathor")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vegan
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-stringdist
+                             r-purrr
+                             r-ggplot2
+                             r-data-table))
+    (home-page "https://cran.r-project.org/package=diathor")
+    (synopsis "Calculate Ecological Information and Diatom Based Indices")
+    (description
+     "Calculate multiple biotic indices using diatoms from environmental samples.
+Diatom species are identified by their species names through a heuristic search,
+and ecological data is retrieved from multiple sources.  The package includes
+the calculation of chloroplast diversity indices, size classes, ecological
+guilds, and various biotic indices.  It outputs both a dataframe with all the
+results and plots of the obtained data in a specified output folder.  Sample
+data is sourced from Nicolosi Gelis, Cochero, & GÃ³mez (2020,
+<doi:10.1016/j.ecolind.2019.105951>).  The package utilizes the Diat.Barcode
+database for morphological and ecological information by Rimet & Couchez (2012,
+<doi:10.1051/kmae/2012018>), along with the combined classification of guilds
+and size classes from B-Beres et al. (2017,
+<doi:10.1016/j.ecolind.2017.07.007>).  Currently supported diatom-based biotic
+indices include DES index (Descy, 1979); EPID index (Dell'Uomo, 1996); IDAP
+index (Prygiel & Coste, 1993); ID-CH index (HÃ¼rlimann & Niederhauser, 2007);
+IDP index (GÃ³mez & Licursi, 2001); ILM index (Leclercq & Maquet, 1987); IPS
+index (Coste, 1982); LOBO index (Lobo, Callegaro, & Bender, 2002); SLA index
+(Sladecek, 1986); TDI index (Kelly & Whitton, 1995); SPEAR(herbicide) index
+(Wood et al., 2019); PBIDW index (Castro-Roa & Pinilla-Agudelo, 2014); DISP
+index (Stenger-KovÃ¡csa et al., 2018).")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-diaplt
   (package
     (name "r-diaplt")
@@ -19493,23 +19537,24 @@ equations using R\" by John Zobitz (2021)
 (define-public r-demodecomp
   (package
     (name "r-demodecomp")
-    (version "1.0.1")
+    (version "1.14.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DemoDecomp" version))
        (sha256
-        (base32 "0m24ld8s3ph8qcbkqma5y5k5nv0d0vgb7wz8q20gxnfbj2kbcvjv"))))
+        (base32 "1ks0lqnq811gkx6k1440v5wkh9pjrbpdkw5c5hc0iclx3lfs6g7n"))))
     (properties `((upstream-name . "DemoDecomp")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdpack))
+    (propagated-inputs (list r-rdpack r-numderiv))
     (home-page "https://cran.r-project.org/package=DemoDecomp")
     (synopsis "Decompose Demographic Functions")
     (description
-     "Two general demographic decomposition methods are offered: Pseudo-continuous
-decomposition proposed by Horiuchi, Wilmoth, and Pletcher (2008)
-<doi:10.1353/dem.0.0033> and stepwise replacement decomposition proposed by
-Andreev, Shkolnikov and Begun (2002) <doi:10.4054/@code{DemRes.2002.7.14>}.")
+     "Three general demographic decomposition methods: Pseudo-continuous decomposition
+proposed by Horiuchi, Wilmoth, and Pletcher (2008) <doi:10.1353/dem.0.0033>,
+stepwise replacement decomposition proposed by Andreev, Shkolnikov and Begun
+(2002) <doi:10.4054/@code{DemRes.2002.7.14>}, and lifetable response experiments
+proposed by Caswell (1989) <doi:10.1016/0304-3800(89)90019-7>.")
     (license license:gpl3)))
 
 (define-public r-demic
@@ -27964,13 +28009,13 @@ from Aitkin (1964) <doi:10.1007/BF02289723> and Liu & Wang (in prep).")
 (define-public r-dacc
   (package
     (name "r-dacc")
-    (version "0.0-4")
+    (version "0.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dacc" version))
        (sha256
-        (base32 "09mnmlh3b0xlh3qcf7k0cfaszybj9dgpxczlllwjyymx7zmi1pmk"))))
+        (base32 "19gk3dgkhr6vzyh6bravanzbvykhnp6yippicx7wmcdwi9mhzqvb"))))
     (properties `((upstream-name . "dacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp

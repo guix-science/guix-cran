@@ -3612,13 +3612,13 @@ classification.")
 (define-public r-orca
   (package
     (name "r-orca")
-    (version "1.1-2")
+    (version "1.1-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "orca" version))
        (sha256
-        (base32 "0nzm0i0ms2l4n10pgs1jg7mb9pd1k3pg7nvyd0w3ivq490g2py79"))))
+        (base32 "1bcksv7rrrpxjaj42ddcfn2v9gi70233p7lrik5rv0dvl4wblbhf"))))
     (properties `((upstream-name . "orca")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=orca")
@@ -8371,13 +8371,13 @@ common data model.")
 (define-public r-omock
   (package
     (name "r-omock")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omock" version))
        (sha256
-        (base32 "14qqvjviwr45x5g9i036pkd9y0qjaqhx27win3j1xb4c8mj20k02"))))
+        (base32 "06ap41g7kgscqcpa1ylzash699xbxm2asp9vh8pbdpr9lwk6d4jv"))))
     (properties `((upstream-name . "omock")))
     (build-system r-build-system)
     (propagated-inputs (list r-snakecase
@@ -8388,7 +8388,7 @@ common data model.")
                              r-dplyr
                              r-cli))
     (native-inputs (list r-knitr))
-    (home-page "https://oxford-pharmacoepi.github.io/omock/")
+    (home-page "https://ohdsi.github.io/omock/")
     (synopsis
      "Creation of Mock Observational Medical Outcomes Partnership Common Data Model")
     (description

@@ -974,13 +974,13 @@ available at the following URL:
 (define-public r-jsmodule
   (package
     (name "r-jsmodule")
-    (version "1.5.7")
+    (version "1.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "jsmodule" version))
        (sha256
-        (base32 "0xg76j82v1yqm69i0qwnnys2mf1wqvm4wafdjp8cixl8yw8c0995"))))
+        (base32 "0lzinsgyz6pbiivdpi4bj7gfnnn72va47ipc0xi9c40j3rr87ns5"))))
     (properties `((upstream-name . "jsmodule")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeroc
@@ -1008,6 +1008,7 @@ available at the following URL:
                              r-jskm
                              r-hmisc
                              r-haven
+                             r-ggrepel
                              r-ggpubr
                              r-ggplot2
                              r-ggally

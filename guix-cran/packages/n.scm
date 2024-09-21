@@ -10044,13 +10044,13 @@ Annals of Applied Statistics.  A preprint may be found at
 (define-public r-neuroimagene
   (package
     (name "r-neuroimagene")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "neuroimaGene" version))
        (sha256
-        (base32 "1axdb20zv7y1rkazm6ppmkf09czff2bp2ylcl1ahn5sw5fi7adcc"))))
+        (base32 "1r85vfy8pim0kys5g8z7il7kf91s1m1l7g730psc52abxqr16xs5"))))
     (properties `((upstream-name . "neuroimaGene")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -14108,13 +14108,13 @@ or output).  A quick start guide for using this package can be found here:
 (define-public r-nc
   (package
     (name "r-nc")
-    (version "2024.2.21")
+    (version "2024.9.20")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nc" version))
        (sha256
-        (base32 "00m2128n3mpl9i77qcdrr49swpj2lr5wif8xxkfimhm3fciw2fgh"))))
+        (base32 "0q1xf2mf0si8j80ppddnn88x0mnx4ij0bf8azpv781m5sl6dklyx"))))
     (properties `((upstream-name . "nc")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))
@@ -16084,13 +16084,13 @@ clustering (CAclustering) and semidefinite programming (SDP).")
 (define-public r-naaccr
   (package
     (name "r-naaccr")
-    (version "3.0.1")
+    (version "3.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naaccr" version))
        (sha256
-        (base32 "0ngrkhkz6880mpza6kbwnszvgabrkd8ag2706v19synrwpigarn8"))))
+        (base32 "09g3kk2ahd051fn4pw7r9pycvqbn1m7glqjh3c4qla1wsiksn2ih"))))
     (properties `((upstream-name . "naaccr")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml r-stringi r-data-table))

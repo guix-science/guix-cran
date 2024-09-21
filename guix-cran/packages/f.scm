@@ -6644,13 +6644,13 @@ plugin: <https://github.com/qlands/formshare_sql_plugin> .")
 (define-public r-formods
   (package
     (name "r-formods")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "formods" version))
        (sha256
-        (base32 "1qawvl10g9zpbph8psndqwizx10pl74d0bhizqcl509zaws4pb95"))))
+        (base32 "012mkdv5ifi4jpx35saadiakz2i1457xyrf08c4dv59bvkj17j85"))))
     (properties `((upstream-name . "formods")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -13830,13 +13830,13 @@ Explore models and export directly to PDF and Word using RMarkdown'.")
 (define-public r-fimport
   (package
     (name "r-fimport")
-    (version "4032.87")
+    (version "4041.88")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fImport" version))
        (sha256
-        (base32 "1vcfzivsv88k9827dlm93radm0m33cwlhx8vqnz81ib5b65amqsx"))))
+        (base32 "0bgnk8s3mlgm90bz40zkv4hfcndv1ym1wwxqs86bs2fbc35h6pdh"))))
     (properties `((upstream-name . "fImport")))
     (build-system r-build-system)
     (propagated-inputs (list r-timeseries r-timedate))
@@ -15108,13 +15108,13 @@ accepts fundamental items and digital elevation models.")
 (define-public r-fftw
   (package
     (name "r-fftw")
-    (version "1.0-8")
+    (version "1.0-9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fftw" version))
        (sha256
-        (base32 "0846s0ix2qj4dg8r9gpydsymbh2qyqnadgsaaph7dvd0cqb02zlc"))))
+        (base32 "167n8yhfai13375lqm1j24ncngrg0m6spj0y0z5187832xydix1y"))))
     (properties `((upstream-name . "fftw")))
     (build-system r-build-system)
     (inputs (list fftw))

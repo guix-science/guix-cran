@@ -4142,6 +4142,37 @@ the package every time (the most recent version available at that date).  Load
 packages from CRAN, @code{GitHub}, or Gitlab.")
     (license license:gpl3)))
 
+(define-public r-groqr
+  (package
+    (name "r-groqr")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "groqR" version))
+       (sha256
+        (base32 "0q03yad36mlrm8yqavdssb9h55vphxnb3vp6kman78nm2nkf6zmq"))))
+    (properties `((upstream-name . "groqR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinywidgets
+                             r-shiny
+                             r-rstudioapi
+                             r-miniui
+                             r-jsonlite
+                             r-httr
+                             r-clipr))
+    (home-page "https://github.com/GabrielKaiserQFin/groqR")
+    (synopsis "Coding Assistant using the Fast AI Inference 'Groq'")
+    (description
+     "This package provides a comprehensive suite of functions and RStudio Add-ins
+leveraging the capabilities of open-source Large Language Models (LLMs) to
+support R developers.  These functions offer a range of utilities, including
+text rewriting, translation, and general query capabilities.  Additionally, the
+programming-focused functions provide assistance with debugging, translating,
+commenting, documenting, and unit testing code, as well as suggesting variable
+and function names, thereby streamlining the development process.")
+    (license license:gpl3+)))
+
 (define-public r-gromovlab
   (package
     (name "r-gromovlab")
@@ -8000,13 +8031,13 @@ Taillandier, A. Habbal (2020) <@code{arXiv:1902.06565v2>}.")
 (define-public r-gpg
   (package
     (name "r-gpg")
-    (version "1.2.9")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gpg" version))
        (sha256
-        (base32 "0k2f00l400dcxa8akhy48a34w7nhbdmpq3nz6lbwp0cqa7aj678z"))))
+        (base32 "04hnmxvnxligd93vzvp38wpxpyxvqz5qd5084awklim846v3dg03"))))
     (properties `((upstream-name . "gpg")))
     (build-system r-build-system)
     (propagated-inputs (list r-curl r-askpass))
@@ -12479,13 +12510,13 @@ LASSO penalties.")
 (define-public r-glmmml
   (package
     (name "r-glmmml")
-    (version "1.1.6")
+    (version "1.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmmML" version))
        (sha256
-        (base32 "0n3r1cpz7rgiighykbjfw1k5s1xgr1vdli960hmaadyy61jza417"))))
+        (base32 "07w6b1i9fkv8dxcmvky81f87ysbrrry3d4jczwkg953g9lankr5j"))))
     (properties `((upstream-name . "glmmML")))
     (build-system r-build-system)
     (native-inputs (list r-knitr gfortran))
@@ -12825,16 +12856,16 @@ inference.")
 (define-public r-glmcat
   (package
     (name "r-glmcat")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GLMcat" version))
        (sha256
-        (base32 "0izxa3ifwpqyyzy69hhhzf379ns1hswfa36ky2izawpyqk5h15ci"))))
+        (base32 "0a9gvnrzrhpywmy4zzm0pyah6dflim4zfg4hqj8kh1ks0wynmjbr"))))
     (properties `((upstream-name . "GLMcat")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-ordinal r-bh))
+    (propagated-inputs (list r-stringr r-rcppeigen r-rcpp r-bh))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ylleonv/GLMcat")
     (synopsis "Generalized Linear Models for Categorical Responses")

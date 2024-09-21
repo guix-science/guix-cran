@@ -970,18 +970,18 @@ was not considered.")
 (define-public r-ltertools
   (package
     (name "r-ltertools")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ltertools" version))
        (sha256
-        (base32 "1jfldvhhzxnpvssgzwjyjg442hwkg04zw7f1g2723mij73byk3dd"))))
+        (base32 "1xjcpwniaim9kxrydqnjbl8fchsxnisr44acxzdr7s0xbjz8lvmi"))))
     (properties `((upstream-name . "ltertools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
-                             r-rlang
+                             r-rjsonio
                              r-readxl
                              r-purrr
                              r-magrittr
@@ -1787,16 +1787,17 @@ quaternions.")
 (define-public r-lsdsensitivity
   (package
     (name "r-lsdsensitivity")
-    (version "1.2.3")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LSDsensitivity" version))
        (sha256
-        (base32 "1qq19f7k6klq7xpa1iq6spm8kbiy229r2wbwkng6rkn7jj2kcd70"))))
+        (base32 "0r308ja0nd239bwfz537qz6q4a1y8iirb0fmg9qq6s6hdfzwhz80"))))
     (properties `((upstream-name . "LSDsensitivity")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tseries
+    (propagated-inputs (list r-xml
+                             r-tseries
                              r-sensitivity
                              r-rgenoud
                              r-randtoolbox
@@ -8847,13 +8848,13 @@ authoring with R Markdown is also provided.")
 (define-public r-lingtypology
   (package
     (name "r-lingtypology")
-    (version "1.1.18")
+    (version "1.1.19")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lingtypology" version))
        (sha256
-        (base32 "041l20dsp2jdnpvdlawb0xn6hawym5wkxyhhvbl5y8mfxibdq37h"))))
+        (base32 "1z0rivwklmfd2g3xl8kcllpm9416hfp1dd4p12a9j4cgss43j950"))))
     (properties `((upstream-name . "lingtypology")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringdist r-leaflet-minicharts r-leaflet
@@ -15217,25 +15218,24 @@ available from <https://github.com/MAnalytics/akmedoids>.")
 (define-public r-latexsymb
   (package
     (name "r-latexsymb")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "latexSymb" version))
        (sha256
-        (base32 "174awf6wznmp2klp287n1x0hhx61004mw054pli73ypx7cmwdjwc"))))
+        (base32 "0p12dag85zvrzk3z3chynf2fbwwgf1fzypxgv6av013jgn0rdqcn"))))
     (properties `((upstream-name . "latexSymb")))
     (build-system r-build-system)
     (propagated-inputs (list r-purrr))
     (native-inputs (list r-rmarkdown r-knitr))
-    (home-page "https://cran.r-project.org/package=latexSymb")
-    (synopsis "Use 'R' to Write 'LaTeX' Code")
+    (home-page "https://nicoesve.github.io/latexSymb/")
+    (synopsis "Write Equations in a Way that You Can Read")
     (description
-     "Simplify the task of writing @code{LaTeX} code by using R'.  Instead of using
-@code{LaTeX} utilities like newcommand', write R functions for more flexibility
-and readability.  Also, additional support for grouping makes it easier to write
-complicated expressions.")
-    (license license:gpl2+)))
+     "Utilities to help you write @code{LaTeX} in a more readable way.  Instead of
+using plain code or a series of newcommand statements, use R functions.  You
+will be able to write what you mean and make fewer mistakes.")
+    (license license:gpl3+)))
 
 (define-public r-latexpdf
   (package

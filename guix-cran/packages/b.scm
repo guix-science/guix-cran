@@ -7977,6 +7977,38 @@ expression data.  Finally, the impacted pathways were enriched by Fisherâs
 Exact Test on significant parameters.")
     (license license:gpl2+)))
 
+(define-public r-bnrep
+  (package
+    (name "r-bnrep")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "bnRep" version))
+       (sha256
+        (base32 "01gzcwgsrl9is25sh3y41zy5xbbb11abwcisncz11nrzvnsqs1js"))))
+    (properties `((upstream-name . "bnRep")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-shinythemes
+                             r-shinyjs
+                             r-shiny
+                             r-qgraph
+                             r-dt
+                             r-dplyr
+                             r-bnlearn))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/manueleleonelli/bnRep")
+    (synopsis "Repository of Bayesian Networks from the Academic Literature")
+    (description
+     "This package provides a collection of Bayesian networks (discrete, Gaussian, and
+conditional linear Gaussian) collated from recent academic literature.  The
+@code{bnRep_summary} object provides an overview of the Bayesian networks in the
+repository and the package documentation includes details about the variables in
+each network.  A Shiny app to explore the repository can be launched with
+@code{bnRep_app}()'.  For details see
+<https://github.com/manueleleonelli/@code{bnRep>}.")
+    (license license:expat)))
+
 (define-public r-bnptsclust
   (package
     (name "r-bnptsclust")
@@ -8145,13 +8177,13 @@ package is used to speed up the computation.")
 (define-public r-bnmonitor
   (package
     (name "r-bnmonitor")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnmonitor" version))
        (sha256
-        (base32 "0ygsk817x5m474kk1vfnzkr23gj3cbsj69jxbsbvzwwimmhz0094"))))
+        (base32 "0k6mrdglx55mqp4icdscr90gpskgc6lcvvwwxh8maaah5b9bixgc"))))
     (properties `((upstream-name . "bnmonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12370,13 +12402,13 @@ under perturbation, and the other on higher criticism.")
 (define-public r-biom2
   (package
     (name "r-biom2")
-    (version "1.0.10")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BioM2" version))
        (sha256
-        (base32 "09zi2cfd61gn3k8fvn8my9wxy4bg3s9bq3yqkw9rl27p9z4qwins"))))
+        (base32 "0p0gzmb3kdfpa3w48f1g5s71z14w1g3m000ka7p9ifilajy9hrnh"))))
     (properties `((upstream-name . "BioM2")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud2
@@ -14497,13 +14529,13 @@ compact format is also now available.")
 (define-public r-bigsnpr
   (package
     (name "r-bigsnpr")
-    (version "1.12.2")
+    (version "1.12.15")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigsnpr" version))
        (sha256
-        (base32 "1xl7456xnid6pvvcppm4297vmgln7f4n15ziz0yfp5i5mqlmafj4"))))
+        (base32 "1cs3i68fdbihyl2p2k4dbw6c0r8mq0m66bs42npyhkgazzg1q77j"))))
     (properties `((upstream-name . "bigsnpr")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -27057,13 +27089,13 @@ Simon, Zeileis (2021) <doi:10.18637/jss.v100.i04>.")
 (define-public r-bamdit
   (package
     (name "r-bamdit")
-    (version "3.4.1")
+    (version "3.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bamdit" version))
        (sha256
-        (base32 "01530avwkhhvpdwr0kc50y67klqlzr6zxc2njfwy8imgy3yvg842"))))
+        (base32 "09gbli5jpzv9ndpbgmck8kfpb6gxafa8jnfkmsg7qls004qg6k7y"))))
     (properties `((upstream-name . "bamdit")))
     (build-system r-build-system)
     (inputs (list jags))

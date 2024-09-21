@@ -806,6 +806,28 @@ maps and built-in support for LDAvis'.")
 National Science Foundation grants DMREF-1921873 and CMMI-1921646.")
     (license license:gpl2+)))
 
+(define-public r-twingp
+  (package
+    (name "r-twingp")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "twingp" version))
+       (sha256
+        (base32 "0mjhvvgbv1vj5h8pwhlhn2hyk6h2rnghk7qrn62h9863phc3jz2g"))))
+    (properties `((upstream-name . "twingp")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcppeigen r-rcpp r-nloptr))
+    (home-page "https://cran.r-project.org/package=twingp")
+    (synopsis "Fast Global-Local Gaussian Process Approximation")
+    (description
+     "This package provides a global-local approximation framework for large-scale
+Gaussian process modeling.  Please see Vakayil and Joseph (2024)
+<doi:10.1080/00401706.2023.2296451> for details.  This work is supported by U.S.
+NSF grants CMMI-1921646 and DMREF-1921873.")
+    (license license:asl2.0)))
+
 (define-public r-twilio
   (package
     (name "r-twilio")
@@ -17215,13 +17237,13 @@ packages.")
 (define-public r-tidycensus
   (package
     (name "r-tidycensus")
-    (version "1.6.5")
+    (version "1.6.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidycensus" version))
        (sha256
-        (base32 "08pi8pzxvlprjii11xrfw1kyqpyvx9wh9zkcbw1zh77jxxp40imq"))))
+        (base32 "0p6r174y4axpi9rqkc0rhhx34zilk911g3n3gq8b470h9p8g4r8l"))))
     (properties `((upstream-name . "tidycensus")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -24466,13 +24488,13 @@ and Gregg (1993) <doi:10.1007/BF01070999>; Schnider et al. (1998)
 (define-public r-tchazards
   (package
     (name "r-tchazards")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TCHazaRds" version))
        (sha256
-        (base32 "1jqw1k9pfywc3971lsjwh51f1qar7l7hcphqgk9y1c9nwr0nl6f2"))))
+        (base32 "1jrfrx9ndjn380spshqnxjilvfxd1xkx9pkbc94cia55ffis9vnm"))))
     (properties `((upstream-name . "TCHazaRds")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -27181,13 +27203,13 @@ first table (i.e. \"Table 1\") in a medical/epidemiological journal article.")
 (define-public r-table-glue
   (package
     (name "r-table-glue")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "table.glue" version))
        (sha256
-        (base32 "1viaz9swdhgk4ysjhyvl9fr4m430qvmwwblij2b2dadwbdl0z9k4"))))
+        (base32 "05d77b9mw99w2pdqhk0dis70znafcnz60mf1l1cjpcx02k8bgbjr"))))
     (properties `((upstream-name . "table.glue")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-glue))

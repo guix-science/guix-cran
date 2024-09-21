@@ -3556,16 +3556,16 @@ electric power transmission network) in the UK since 2011.")
 (define-public r-ukfe
   (package
     (name "r-ukfe")
-    (version "0.3.6")
+    (version "0.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "UKFE" version))
        (sha256
-        (base32 "1h1vw9ncq4pbbwlbsag50yflfcxvjlkcdi4am6m5b49fwv8x4f0d"))))
+        (base32 "16amj4pfa936akkysh61v2qx7z35a7m2pmav03waw331glhh45gq"))))
     (properties `((upstream-name . "UKFE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xml2))
+    (propagated-inputs (list r-xml2 r-sf))
     (home-page "https://cran.r-project.org/package=UKFE")
     (synopsis "UK Flood Estimation")
     (description

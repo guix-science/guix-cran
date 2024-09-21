@@ -3001,13 +3001,13 @@ survival, species richness and distance measures.")
 (define-public r-wintime
   (package
     (name "r-wintime")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wintime" version))
        (sha256
-        (base32 "0jr3xwamknlkqnahl78jsdc9pk1q6hj8zfay8fmqpvsl8ydki9ll"))))
+        (base32 "19zm8k1n2idi42vih61rbdhgdcvly6a1k0mb1p210i1iyqn3zvnn"))))
     (properties `((upstream-name . "wintime")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))

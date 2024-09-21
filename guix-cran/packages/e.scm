@@ -6890,13 +6890,13 @@ seismic data, and generate reports of the processing history.")
 (define-public r-esdm
   (package
     (name "r-esdm")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eSDM" version))
        (sha256
-        (base32 "14h353kw32lb3ik8fqqsb7bb1sxf445js8mw07almq9hpl3srcbn"))))
+        (base32 "1k4d4craw59z318cylvwlaqnaljj1bn28rxf45n87wzmwandj5zn"))))
     (properties `((upstream-name . "eSDM")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -7865,6 +7865,30 @@ expectile regression, proposed by Yang, Y., Qian, W. and Zou, H. (2018)
 <doi:10.1080/00949655.2013.876024>.  The code is based on the gbm package
 originally developed by Greg Ridgeway.")
     (license license:gpl3)))
+
+(define-public r-eratosthenes
+  (package
+    (name "r-eratosthenes")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "eratosthenes" version))
+       (sha256
+        (base32 "1kfgqb6bd0i39k4k5wg3p33ir13wnfvdyh2ld0gmcgfl2gjks7pa"))))
+    (properties `((upstream-name . "eratosthenes")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdpack r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=eratosthenes")
+    (synopsis "Archaeological Synchronism")
+    (description
+     "Estimates unknown historical or archaeological dates subject to relationships
+with other dates and absolute constraints, derived as marginal densities from
+the full joint conditional distribution.  Includes rule-based estimation of the
+production dates of artifact types.  Collins-Elliott (2024)
+<https://volweb.utk.edu/~scolli46/@code{sceGUTChronology.pdf>}.")
+    (license license:gpl3+)))
 
 (define-public r-erah
   (package
@@ -16047,13 +16071,13 @@ Error (NMSE).")
 (define-public r-eha
   (package
     (name "r-eha")
-    (version "2.11.4")
+    (version "2.11.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eha" version))
        (sha256
-        (base32 "147i34fipb0qbamvs45918ci2nihvbsxvbqd8k7wv73rmgb1nw5v"))))
+        (base32 "0ps8a5q47m2yd67hap7886dwanlqlsdx1v2nh3immq61ym9zbrpv"))))
     (properties `((upstream-name . "eha")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival))
@@ -18810,13 +18834,13 @@ respect to reference conditions [Sturbois et al. (2023) ].")
 (define-public r-ecotoxr
   (package
     (name "r-ecotoxr")
-    (version "1.0.9")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ECOTOXr" version))
        (sha256
-        (base32 "0n5vfzg2drffw7yrbvi1rkhkydsmyd8v0scqqrx0cdx84y21l5fl"))))
+        (base32 "0saxpf51wszrk42dv45lv905dia7llrvwkpasdkr15gygasfcfq2"))))
     (properties `((upstream-name . "ECOTOXr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -18843,7 +18867,8 @@ respect to reference conditions [Sturbois et al. (2023) ].")
 aquatic and terrestrial ecotoxicological data.  As the online search interface
 doesn't come with an API, this package provides the means to easily access and
 search the database in R. To this end, all raw tables are downloaded from the
-EPA website and stored in a local SQLite database.")
+EPA website and stored in a local SQLite database
+<doi:10.1016/j.chemosphere.2024.143078>.")
     (license license:gpl3+)))
 
 (define-public r-ecotoxicology
@@ -19872,13 +19897,13 @@ represents the results of the previous function.")
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
-    (version "2.0.0")
+    (version "2.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecmwfr" version))
        (sha256
-        (base32 "1lfz5924nxknadfi1vg112wjn32i09wj2gg5gkgdx42pxc7hm17l"))))
+        (base32 "0nar2g4xqyjn5m4v089kw5y3q7xdvny99pf5z8fgdif13ws94nyc"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-memoise r-keyring r-httr r-getpass))

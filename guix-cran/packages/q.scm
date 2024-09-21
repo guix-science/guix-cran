@@ -192,16 +192,21 @@ measures of approximation error.")
 (define-public r-qval
   (package
     (name "r-qval")
-    (version "0.1.7")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Qval" version))
        (sha256
-        (base32 "02wvj7n3zbn13mn48gxd57kfkcbx9740ca2nl0yl15nfj45c21zh"))))
+        (base32 "1pq2w268si3dxnzf436d2lzz7k09x7k6mydl0b8wpjjzbpqpbayp"))))
     (properties `((upstream-name . "Qval")))
     (build-system r-build-system)
-    (propagated-inputs (list r-plyr r-nloptr r-matrix r-glmnet r-gdina))
+    (propagated-inputs (list r-plyr
+                             r-nloptr
+                             r-matrix
+                             r-mass
+                             r-glmnet
+                             r-gdina))
     (home-page "https://cran.r-project.org/package=Qval")
     (synopsis "The Q-Matrix Validation Methods Framework")
     (description

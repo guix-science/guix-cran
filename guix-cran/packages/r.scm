@@ -467,34 +467,6 @@ now have more options.")
 study with RNA-seq data.")
     (license license:gpl2+)))
 
-(define-public r-rxode2random
-  (package
-    (name "r-rxode2random")
-    (version "2.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rxode2random" version))
-       (sha256
-        (base32 "1zrddjq1i2wfx6ai4wwp1l0vnyk5i19dcr7f2q3f66jhlj9fqp27"))))
-    (properties `((upstream-name . "rxode2random")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sitmo
-                             r-rxode2parse
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-lotri
-                             r-checkmate
-                             r-bh))
-    (home-page "https://nlmixr2.github.io/rxode2random/")
-    (synopsis "Random Number Generation Functions for 'rxode2'")
-    (description
-     "This package provides the random number generation (in parallel) needed for
-rxode2 (Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>) and nlmixr2
-(Fidler et al (2019) <doi:10.1002/psp4.12445>).  This split will reduce
-computational burden of recompiling rxode2'.")
-    (license license:gpl3+)))
-
 (define-public r-rxode2parse
   (package
     (name "r-rxode2parse")
@@ -558,35 +530,6 @@ estimation in nlmixr2 (Fidler et al (2019) <doi:10.1002/psp4.12445>).  This is
 split of to reduce computational burden of recompiling rxode2 (Wang, Hallow and
 James (2016) <doi:10.1002/psp4.12052>) which runs the nlmixr2 models during
 estimation.")
-    (license license:gpl3+)))
-
-(define-public r-rxode2et
-  (package
-    (name "r-rxode2et")
-    (version "2.0.13")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rxode2et" version))
-       (sha256
-        (base32 "1pprky6j5vzijichr7kzfavc8ly3k272xnzvwix60v77z9zn5kyw"))))
-    (properties `((upstream-name . "rxode2et")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-rxode2random
-                             r-rxode2parse
-                             r-rcpp
-                             r-magrittr
-                             r-lotri
-                             r-crayon
-                             r-cli
-                             r-checkmate))
-    (home-page "https://nlmixr2.github.io/rxode2et/")
-    (synopsis "Event Table Functions for 'rxode2'")
-    (description
-     "This package provides the event table and support functions needed for rxode2
-(Wang, Hallow and James (2016) <doi:10.1002/psp4.12052>) and nlmixr2 (Fidler et
-al (2019) <doi:10.1002/psp4.12445>).  This split will reduce computational
-burden of recompiling rxode2'.")
     (license license:gpl3+)))
 
 (define-public r-rxode2
@@ -4674,13 +4617,13 @@ computational time.  See Llaberia-Robledillo et al., (2023)
 (define-public r-rtables
   (package
     (name "r-rtables")
-    (version "0.6.9")
+    (version "0.6.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rtables" version))
        (sha256
-        (base32 "137c8ks15v1w19a3g7pvnwabzpj1vj277r46npr6ymr90ddb5ha7"))))
+        (base32 "1kjzxj5rgcpzyr86sq375j4hy322lfw6cnid7hfyxzwirmhzi684"))))
     (properties `((upstream-name . "rtables")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -4689,7 +4632,7 @@ computational time.  See Llaberia-Robledillo et al., (2023)
                              r-htmltools
                              r-formatters
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/insightsengineering/rtables")
     (synopsis "Reporting Tables")
     (description
@@ -11333,13 +11276,13 @@ display summary plots that are easy to interpret for a clinician.")
 (define-public r-roxytypes
   (package
     (name "r-roxytypes")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roxytypes" version))
        (sha256
-        (base32 "02i2ki8s2dfnr3qdvgmklgsh0aidrymi46gp2x1xx2xfs6bi4mrv"))))
+        (base32 "1r789frfxg803a7as5ih6g93q3hi4l2ws7g55yxagr3aysvjy33m"))))
     (properties `((upstream-name . "roxytypes")))
     (build-system r-build-system)
     (propagated-inputs (list r-roxygen2 r-glue r-cli))
@@ -24267,13 +24210,13 @@ Monte Carlo.  Automatic parameter selection is not supported.")
 (define-public r-rhino
   (package
     (name "r-rhino")
-    (version "1.10.0")
+    (version "1.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rhino" version))
        (sha256
-        (base32 "0v0qi6kmc5v07llg88pkbbd5kkf2bn2m1phpp9qji20xvy6iibci"))))
+        (base32 "15lbn4ymhjqhhklprs2zxx8qm1gy0vx54zycn25jpq633i7jczsf"))))
     (properties `((upstream-name . "rhino")))
     (build-system r-build-system)
     (arguments
@@ -30400,13 +30343,13 @@ analysis, gene-set tests, and binary random data generation.")
 (define-public r-repeated
   (package
     (name "r-repeated")
-    (version "1.1.8")
+    (version "1.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repeated" version))
        (sha256
-        (base32 "07bm52dwkd4hpk57k7rlmcac2kfb8ri2znss2bcvjasy4pacm3jd"))))
+        (base32 "0agq3f1py5qif5vcfa14k3phg7i3bh82kss3h86znisc196iypcv"))))
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
@@ -32901,13 +32844,13 @@ object-specific set of plots based on the object class using S3.")
 (define-public r-refund
   (package
     (name "r-refund")
-    (version "0.1-35")
+    (version "0.1-37")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "refund" version))
        (sha256
-        (base32 "0hdm8ycgxzmmpgp885w49fxzvn6j5078x42gf7hh1ms7w0k4k72g"))))
+        (base32 "1lkdgpxnvnr9d9kmwdnk4wx656c1lhi353s64f065l6qg837kmw6"))))
     (properties `((upstream-name . "refund")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlrsim
@@ -34069,16 +34012,16 @@ programming.")
 (define-public r-redcapexporter
   (package
     (name "r-redcapexporter")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapExporter" version))
        (sha256
-        (base32 "0w7c1y58vnkbd11ndkcn5s5c54pmvyqhflwgg2q6dc3n671yp9wx"))))
+        (base32 "1mpjfppj2p4qcsz05fa4rf9ywg34qzjpzczwg0zm63qnqpyr62i1"))))
     (properties `((upstream-name . "REDCapExporter")))
     (build-system r-build-system)
-    (propagated-inputs (list r-lubridate r-keyring r-data-table r-curl))
+    (propagated-inputs (list r-rjson r-lubridate r-keyring r-curl))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/dewittpe/REDCapExporter")
     (synopsis "Automated Construction of R Data Packages from REDCap Projects")
@@ -35505,13 +35448,13 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 (define-public r-ream
   (package
     (name "r-ream")
-    (version "1.0-3")
+    (version "1.0-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ream" version))
        (sha256
-        (base32 "1q0vgzszhlh33r0ifl5j7qc9hvn63lfp63z2yc95p372rw56aqbj"))))
+        (base32 "0xns0fwkwcmcgs1niknv7s3jbj34bbbvfbgsr148b0j0g2k5q5sw"))))
     (properties `((upstream-name . "ream")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -38838,13 +38781,13 @@ calculating moments, densities, and entropies are provided at both levels.")
 (define-public r-rcpptimer
   (package
     (name "r-rcpptimer")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcpptimer" version))
        (sha256
-        (base32 "0dpny4b5r9nxll5pwlwd7jvjmk0ixi6wgcm9v49dxm3cax2p7jlg"))))
+        (base32 "0r3a6bgx0qnkhdid6iwg91azz644nf1k1cg7p3z49vfimi5d0sjw"))))
     (properties `((upstream-name . "rcpptimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -38856,7 +38799,7 @@ calculating moments, densities, and entropies are provided at both levels.")
 for benchmarking C++ code <https://github.com/@code{BerriJ/cpptimer>}.  It's not
 just simple, it's blazing fast! This sleek tic-toc timer class supports
 overlapping timers as well as @code{OpenMP} parallelism
-<https://www.openmp.org/>.  It boasts a microsecond-level time resolution.  We
+<https://www.openmp.org/>.  It boasts a nanosecond-level time resolution.  We
 did not find any overhead of the timer itself at this resolution.  Results (with
 summary statistics) are automatically passed back to R as a data frame.")
     (license license:gpl3+)))
@@ -40228,13 +40171,13 @@ R code as input, and returns R code as output.")
 (define-public r-rcnv
   (package
     (name "r-rcnv")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rCNV" version))
        (sha256
-        (base32 "07c47qz5ma0g9nr0qdsmwhiw1fq3a7r40siavgkhd2in9rb5fzrw"))))
+        (base32 "19wgvaqivhh1mm68i1286a650c5fplqx134g2sgw6cw7wwx6277y"))))
     (properties `((upstream-name . "rCNV")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-r-utils r-qgraph r-data-table
@@ -41677,25 +41620,26 @@ Brazil's public sector external control activity.")
 (define-public r-rcereal
   (package
     (name "r-rcereal")
-    (version "1.2.1.1")
+    (version "1.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcereal" version))
        (sha256
-        (base32 "16gak1kgsnla89b6nbhfb5w9xfjhdpxza8sfc2isbhfggvl1h79j"))))
+        (base32 "1zp6dsfwrpyy2iycybjlx34kn79236ack3b60kz77rjrz4m8h2vd"))))
     (properties `((upstream-name . "Rcereal")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/wush978/Rcereal")
-    (synopsis "C++11 Header Files for 'cereal'")
+    (home-page "https://github.com/wush978/Rcereal/")
+    (synopsis "\"Cereal Headers for R and C++ Serialization\"")
     (description
-     "To facilitate using cereal with Rcpp.  cereal is a header-only C++11
-serialization library.  cereal takes arbitrary data types and reversibly turns
-them into different representations, such as compact binary encodings, XML, or
-JSON. cereal was designed to be fast, light-weight, and easy to extend - it has
-no external dependencies and can be easily bundled with other code or used
-standalone.  Please see <http://uscilab.github.io/cereal> for more information.")
+     "To facilitate using cereal with R via cpp11 or Rcpp'.  cereal is a header-only
+C++11 serialization library.  cereal takes arbitrary data types and reversibly
+turns them into different representations, such as compact binary encodings,
+XML', or JSON'.  cereal was designed to be fast, light-weight, and easy to
+extend - it has no external dependencies and can be easily bundled with other
+code or used standalone.  Please see <https://uscilab.github.io/cereal/> for
+more information.")
     (license license:bsd-2)))
 
 (define-public r-rcens
@@ -45081,16 +45025,17 @@ Neyman', Rosenberger Rosenberger et al. (2001)
 (define-public r-rarestr
   (package
     (name "r-rarestr")
-    (version "1.0.0")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rarestR" version))
        (sha256
-        (base32 "0zpzxg960yk55fbqqbx0vrm5275f88p9cqbh4wy3rv6ckhbmbygc"))))
+        (base32 "01vfpnca7n3pz2hqibvviiimv7sxzwkkwlbkvzavw9fr1x33cwr8"))))
     (properties `((upstream-name . "rarestR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/pzhaonet/rarestR")
     (synopsis "Rarefaction-Based Species Richness Estimator")
     (description

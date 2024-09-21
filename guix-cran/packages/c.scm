@@ -14552,6 +14552,44 @@ to preserve decimals exactly, as opposed to the binary rounding errors inherent
 in \"numeric\" or \"floating-point\" formats.")
     (license license:lgpl3)))
 
+(define-public r-conversim
+  (package
+    (name "r-conversim")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conversim" version))
+       (sha256
+        (base32 "19s4hy1v7ib4zg393cp0b5hwalw999n2szcigcfijrhfycyk8nsy"))))
+    (properties `((upstream-name . "conversim")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-word2vec
+                             r-topicmodels
+                             r-tm
+                             r-slam
+                             r-sentimentr
+                             r-lsa
+                             r-lme4
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/chaoliu-cl/conversim")
+    (synopsis "Conversation Similarity Analysis")
+    (description
+     "Analyze and compare conversations using various similarity measures including
+topic, lexical, semantic, structural, stylistic, sentiment, participant, and
+timing similarities.  Supports both pairwise conversation comparisons and
+analysis of multiple dyads.  Methods are based on established research: Topic
+modeling: Blei et al. (2003) <doi:10.1162/jmlr.2003.3.4-5.993>; Landauer et al.
+(1998) <doi:10.1080/01638539809545028>; Lexical similarity: Jaccard (1912)
+<doi:10.1111/j.1469-8137.1912.tb05611.x>; Semantic similarity: Salton & Buckley
+(1988) <doi:10.1016/0306-4573(88)90021-0>; Mikolov et al. (2013)
+<doi:10.48550/@code{arXiv.1301.3781>}; Pennington et al. (2014)
+<doi:10.3115/v1/D14-1162>; Structural and stylistic analysis: Graesser et al.
+(2004) <doi:10.1075/target.21131.ryu>; Sentiment analysis: Rinker (2019)
+<https://github.com/trinker/sentimentr>.")
+    (license license:gpl3+)))
+
 (define-public r-convergeu
   (package
     (name "r-convergeu")
@@ -17743,13 +17781,13 @@ referenced at Environmental Protection Agency, United States as follows: EPA
 (define-public r-comtradr
   (package
     (name "r-comtradr")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comtradr" version))
        (sha256
-        (base32 "0mdckqnsx8xgidbw1sa39y9l6kbsvv41vbw65jfk0irlxqs11v9q"))))
+        (base32 "1ljqw9i32p06yq16sbww1la7gnfgbajbs8l5hqbhxqgxk1qfxr0a"))))
     (properties `((upstream-name . "comtradr")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -19506,13 +19544,13 @@ to absolute humidity and evaluates the performance of comfort indices.")
 (define-public r-comets
   (package
     (name "r-comets")
-    (version "0.0-2")
+    (version "0.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "comets" version))
        (sha256
-        (base32 "13ni4c0szfizgad56ydxz8i5w25vr76h18jspc260z2mzcns084z"))))
+        (base32 "1rkw49b0pxn0vg3ahrk3i2xd61v2px00b8jbws8s40r19ak27a19"))))
     (properties `((upstream-name . "comets")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-ranger r-glmnet r-formula r-coin))
@@ -19524,7 +19562,7 @@ conditional covariance and nonlinear conditional mean alternatives.  Contains
 versions of the generalised covariance measure test (Shah and Peters, 2020,
 <doi:10.1214/19-aos1857>) and projected covariance measure test (Lundborg et
 al., 2023, <doi:10.48550/@code{arXiv.2211.02039>}).  Applications can be found
-in Kook and Lundborg (2024, <doi:10.48550/@code{arXiv.2402.14416>}).")
+in Kook and Lundborg (2024, <doi:10.1093/bib/bbae475>).")
     (license license:gpl3)))
 
 (define-public r-cometr
@@ -20129,13 +20167,13 @@ custom colour palettes.")
 (define-public r-colossus
   (package
     (name "r-colossus")
-    (version "1.1.3.1")
+    (version "1.1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Colossus" version))
        (sha256
-        (base32 "0snrw5vk2hbdqvrrykrj9nd58jpbnjy48yxakwymapjkmvii9lry"))))
+        (base32 "0kbs9msk15i87krly51s2gr4qjj5xijk6ki6njgl3xj9z01lcw34"))))
     (properties `((upstream-name . "Colossus")))
     (build-system r-build-system)
     (inputs (list))
@@ -30825,13 +30863,13 @@ technical details.")
 (define-public r-ciftitools
   (package
     (name "r-ciftitools")
-    (version "0.15.1")
+    (version "0.16.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ciftiTools" version))
        (sha256
-        (base32 "0wf2yqpdccriww942lyic13rsxylx4zcl670gyd81d41lj0xf5rc"))))
+        (base32 "07d7iws9d8r9ir37q8h1k2yl13sy4p9xnnlqlxhlyyfsz7pb23l3"))))
     (properties `((upstream-name . "ciftiTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -35773,23 +35811,33 @@ fitting a bivariate copula.")
 (define-public r-censobr
   (package
     (name "r-censobr")
-    (version "0.3.2")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "censobr" version))
        (sha256
-        (base32 "0bjrlcfzdymkp2nhrnr8ilw2xcgl9fkv47m2wlffb8ay5mlkar26"))))
+        (base32 "1rgl8qbhrj0yv3gw6rqx0zj5gpwwhgfja28pcqmnkglyzf8d8i5n"))))
     (properties `((upstream-name . "censobr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-httr r-dplyr r-checkmate r-arrow))
+    (propagated-inputs (list r-fs
+                             r-duckplyr
+                             r-duckdb
+                             r-dplyr
+                             r-dbi
+                             r-curl
+                             r-checkmate
+                             r-arrow))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ipeaGIT/censobr")
     (synopsis "Download Data from Brazil's Population Census")
     (description
-     "Download data from Brazil's population census.  The package is built on top of
-the Arrow platform <https://arrow.apache.org/docs/r/>, which allows users to
-work with larger-than-memory census data using dplyr familiar functions.
+     "Easy access to data from Brazil's population censuses.  The package provides a
+simple and efficient way to download and read the data sets and the
+documentation of all the population censuses taken in and after 1960 in the
+country.  The package is built on top of the Arrow platform
+<https://arrow.apache.org/docs/r/>, which allows users to work with
+larger-than-memory census data using dplyr familiar functions.
 <https://arrow.apache.org/docs/r/articles/arrow.html#analyzing-arrow-data-with-dplyr>.")
     (license license:expat)))
 

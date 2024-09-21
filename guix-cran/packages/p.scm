@@ -4750,13 +4750,13 @@ run the reverse-dependency tests in parallel.")
 (define-public r-prqlr
   (package
     (name "r-prqlr")
-    (version "0.8.1")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prqlr" version))
        (sha256
-        (base32 "00i9y7yb0czhr7853v9syrcjr74v6x1a022nawjmryl831f4bl9g"))))
+        (base32 "05k2wj5dyqrbscc3dg1400i5zg0fvx1hgxq9djm9wiskmha2scj5"))))
     (properties `((upstream-name . "prqlr")))
     (build-system r-build-system)
     (inputs (list))

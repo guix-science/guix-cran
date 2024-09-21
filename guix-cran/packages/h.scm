@@ -8962,6 +8962,32 @@ existing currently
 geographic location.")
     (license license:gpl3)))
 
+(define-public r-hellorust
+  (package
+    (name "r-hellorust")
+    (version "1.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hellorust" version))
+       (sha256
+        (base32 "1y6pd37y3wsicfki8rxjj25dcqbvf985vjcl91szax5v97nqvvcn"))))
+    (properties `((upstream-name . "hellorust")))
+    (build-system r-build-system)
+    (inputs (list))
+    (home-page "https://github.com/r-rust/hellorust")
+    (synopsis "Minimal Examples of Using Rust Code in R")
+    (description
+     "Template R package with minimal setup to use Rust code in R without hacks or
+frameworks.  Includes basic examples of importing cargo dependencies, spawning
+threads and passing numbers or strings from Rust to R. Cargo crates are
+automatically vendored in the R source package to support offline installation.
+The @code{GitHub} repository for this package has more details and also explains
+how to set up CI. This project was first presented at Erum2018 to showcase
+R-Rust integration <https://jeroen.github.io/erum2018/>; for a real world
+use-case, see the gifski package on CRAN'.")
+    (license license:expat)))
+
 (define-public r-hellojavaworld
   (package
     (name "r-hellojavaworld")
@@ -10999,13 +11025,13 @@ large number of attributes but no more than a few hundred observations.")
 (define-public r-hdclust
   (package
     (name "r-hdclust")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HDclust" version))
        (sha256
-        (base32 "18l4qp261gj3kscfxs3s03kmb9y5ml31vnpgpm1iy125bks4mr2y"))))
+        (base32 "1v8q8xf9nlxq0x8m5xlnrp3f3hdzlxraxf8g22cadi1162d6vfg1"))))
     (properties `((upstream-name . "HDclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-rtsne r-rcppprogress r-rcpp))
@@ -11017,7 +11043,7 @@ large number of attributes but no more than a few hundred observations.")
      "Clustering of high dimensional data with Hidden Markov Model on Variable Blocks
 (HMM-VB) fitted via Baum-Welch algorithm.  Clustering is performed by the Modal
 Baum-Welch algorithm (MBW), which finds modes of the density function.  Lin Lin
-and Jia Li (2017) <http://jmlr.org/papers/v18/16-342.html>.")
+and Jia Li (2017) <https://jmlr.org/papers/v18/16-342.html>.")
     (license license:gpl2+)))
 
 (define-public r-hdclassif

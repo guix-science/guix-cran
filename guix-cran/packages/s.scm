@@ -13686,13 +13686,13 @@ providing the user with options to create and customise plots and tables.")
 (define-public r-starnet
   (package
     (name "r-starnet")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "starnet" version))
        (sha256
-        (base32 "0gbg8svyj4nh846q7986ap7jjry599kb1348k9lifz19kvyr4rn4"))))
+        (base32 "1rzssz1gj1bsfshk4a89vk7lllmq23334a8rahvivqkm1jvpxwnj"))))
     (properties `((upstream-name . "starnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix r-glmnet r-cornet))
@@ -13700,7 +13700,7 @@ providing the user with options to create and customise plots and tables.")
     (home-page "https://github.com/rauschenberger/starnet")
     (synopsis "Stacked Elastic Net")
     (description
-     "This package implements stacked elastic net regression (Rauschenberger 2020,
+     "This package implements stacked elastic net regression (Rauschenberger 2021,
 <doi:10.1093/bioinformatics/btaa535>).  The elastic net generalises ridge and
 lasso regularisation (Zou 2005, <doi:10.1111/j.1467-9868.2005.00503.x>).
 Instead of fixing or tuning the mixing parameter alpha, we combine multiple
@@ -16345,13 +16345,13 @@ better than classical supervised classifiers.")
 (define-public r-ssbtools
   (package
     (name "r-ssbtools")
-    (version "1.5.2")
+    (version "1.5.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SSBtools" version))
        (sha256
-        (base32 "1rkmnlgs3car1allc7cr8sq2skgq3bpa274a797rmq8zjkqky16q"))))
+        (base32 "1vxdmy2kqpnlbpnkgry1i58vda1b0pc3y9p8ncr47gxdbfxk9yn2"))))
     (properties `((upstream-name . "SSBtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-matrix r-mass))
@@ -16360,8 +16360,9 @@ better than classical supervised classifiers.")
     (description
      "This package provides functions used by other packages from Statistics Norway
 are gathered.  General data manipulation functions, algorithms for statistical
-disclosure control and functions for hierarchical computations by sparse model
-matrices are included (Langsrud, 2023) <doi:10.32614/RJ-2023-088>.")
+disclosure control (Langsrud, 2024) <doi:10.1007/978-3-031-69651-0_6> and
+functions for hierarchical computations by sparse model matrices are included
+(Langsrud, 2023) <doi:10.32614/RJ-2023-088>.")
     (license license:expat)))
 
 (define-public r-ssanv
@@ -36598,13 +36599,13 @@ Network, DFID Trust Fund TF011722 and funds from the World bank.")
 (define-public r-simplybee
   (package
     (name "r-simplybee")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SIMplyBee" version))
        (sha256
-        (base32 "0cjj61366y1h8bg93lygfdqrbd3rzs9vf0hdiarnw87jc6lwlh9s"))))
+        (base32 "05vdrzddq57jzh2dyddf2yi09k6fddkgl83qd8c0fb14zqn9ix76"))))
     (properties `((upstream-name . "SIMplyBee")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo
@@ -46185,6 +46186,27 @@ chosen resolution from Office for National Statistics Open Geography
 <https://geoportal.statistics.gov.uk/>.")
     (license license:expat)))
 
+(define-public r-sg
+  (package
+    (name "r-sg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "sg" version))
+       (sha256
+        (base32 "10g06yzprblgaxdbjd0r58wgf4jivl4zcfxgpwndpjcfp70qhi52"))))
+    (properties `((upstream-name . "sg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-mime r-httr2 r-base64enc))
+    (home-page "https://github.com/botan/sg")
+    (synopsis "'SendGrid' Email API Client")
+    (description
+     "Minimalistic @code{SendGrid} Email API client for creating and sending emails.
+For more information, visit the official @code{SendGrid} Email API
+documentation: <https://sendgrid.com/en-us/solutions/email-api>.")
+    (license license:expat)))
+
 (define-public r-sftrack
   (package
     (name "r-sftrack")
@@ -48180,13 +48202,13 @@ includes integration with the Plumber package.")
 (define-public r-sentopics
   (package
     (name "r-sentopics")
-    (version "0.7.3")
+    (version "0.7.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sentopics" version))
        (sha256
-        (base32 "1n9z2k4nwzd7j2nliar4v1as1vixx6cbmcysf4phjmh7qfay8bqk"))))
+        (base32 "1sqlblsy75i0bqn5jplmc6ghrak9d6whn0xzx5mbr6vc3802r28d"))))
     (properties `((upstream-name . "sentopics")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress
@@ -56532,19 +56554,22 @@ need to install them.")
 (define-public r-scdtb
   (package
     (name "r-scdtb")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scdtb" version))
        (sha256
-        (base32 "0f79lrdrfn064gsgjpj9mr4sx2wyc5z2d6kkz42kb67rqpk23ibl"))))
+        (base32 "1gb5asgqgymczih5x4078m3ksnvm9j06pqhyl37cxrzxx4ahw87s"))))
     (properties `((upstream-name . "scdtb")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shinythemes
+    (propagated-inputs (list r-sn
+                             r-shinythemes
                              r-shiny
                              r-nlme
+                             r-mmints
                              r-mmcards
+                             r-mass
                              r-ggplot2
                              r-dt
                              r-broom-mixed))
