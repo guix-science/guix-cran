@@ -2183,53 +2183,6 @@ package also provides the translated code for educational purposes so that users
 can review working examples of coding syntax and calculations.")
     (license license:gpl3)))
 
-(define-public r-dtwclust
-  (package
-    (name "r-dtwclust")
-    (version "6.0.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "dtwclust" version))
-       (sha256
-        (base32 "0by01x4qpf1pin5l61wmm600bmsnlnns9knwb0qmjlj72pmwfkqh"))))
-    (properties `((upstream-name . "dtwclust")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-shinyjs
-                             r-shiny
-                             r-rspectra
-                             r-rlang
-                             r-reshape2
-                             r-rcppthread
-                             r-rcppparallel
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-proxy
-                             r-matrix
-                             r-ggrepel
-                             r-ggplot2
-                             r-foreach
-                             r-flexclust
-                             r-dtw
-                             r-dplyr
-                             r-cluster
-                             r-clue))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/asardaes/dtwclust")
-    (synopsis
-     "Time Series Clustering Along with Optimizations for the Dynamic Time Warping Distance")
-    (description
-     "Time series clustering along with optimized techniques related to the Dynamic
-Time Warping distance and its corresponding lower bounds.  Implementations of
-partitional, hierarchical, fuzzy, k-Shape and TADPole clustering are available.
-Functionality can be easily extended with custom distance measures and centroid
-definitions.  Implementations of DTW barycenter averaging, a distance based on
-global alignment kernels, and the soft-DTW distance and centroid routines are
-also provided.  All included distance functions have custom loops optimized for
-the calculation of cross-distance matrices, including parallelization support.
-Several cluster validity indices are included.")
-    (license license:gpl3)))
-
 (define-public r-dtwbi
   (package
     (name "r-dtwbi")
@@ -14507,22 +14460,20 @@ the sales information.")
 (define-public r-didmultiplegtdyn
   (package
     (name "r-didmultiplegtdyn")
-    (version "1.0.15")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DIDmultiplegtDYN" version))
        (sha256
-        (base32 "050cjc66ydidqc633kyw5l7s7jlcpjj8nyaqkcwkgcxx349rag5m"))))
+        (base32 "0mcvac2p0sd0prxaj1ajigil4k9k9bm3y68lxxbrmhjrcn8n5n18"))))
     (properties `((upstream-name . "DIDmultiplegtDYN")))
     (build-system r-build-system)
     (propagated-inputs (list r-xlsx
                              r-sandwich
                              r-rnames
-                             r-rlang
                              r-plm
                              r-matlib
-                             r-magrittr
                              r-lmtest
                              r-haven
                              r-ggplot2

@@ -11738,13 +11738,13 @@ feature analysis, missing value imputation methods, and correlation analysis.")
 (define-public r-analogue
   (package
     (name "r-analogue")
-    (version "0.17-6")
+    (version "0.17-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "analogue" version))
        (sha256
-        (base32 "0c5h8nnbflydv35ja1pfhyx7ifwlriwgcnrmxj5il5lvcr70y1vi"))))
+        (base32 "0l8q2nyl03l1vcm6gy8ax287vh8jy0rd9cc7rwzjv8lfjq1dv2zh"))))
     (properties `((upstream-name . "analogue")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -17580,6 +17580,28 @@ relationship between the AF and heritability depends on several other factors.
 The app is ran by the function @code{runShinyApp}().  For more information see
 Dahlqwist E et al. (2019) <doi:10.1007/s00439-019-02006-8>.")
     (license (list license:gpl2 license:gpl3))))
+
+(define-public r-affluenceindex
+  (package
+    (name "r-affluenceindex")
+    (version "2.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "affluenceIndex" version))
+       (sha256
+        (base32 "0g5nykvkv6qyrsr861wdbsxh6qlpmqp17c327qm0y2rb2gs8ywri"))))
+    (properties `((upstream-name . "affluenceIndex")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-univar))
+    (home-page "https://cran.r-project.org/package=affluenceIndex")
+    (synopsis "Affluence (Richness) Indices")
+    (description
+     "Enables to compute the statistical indices of affluence (richness) with
+bootstrap errors, and inequality and polarization indices.  Moreover, gives the
+possibility of calculation of affluence line.  Some simple errors are fixed and
+it works with new version of Spatial Statistics packaged.")
+    (license license:gpl2)))
 
 (define-public r-affinitymatrix
   (package

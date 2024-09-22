@@ -6735,13 +6735,13 @@ also time series of carbon fluxes, energy balances and soil water are available.
 (define-public r-profoc
   (package
     (name "r-profoc")
-    (version "1.3.2")
+    (version "1.3.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "profoc" version))
        (sha256
-        (base32 "1vs5l6f18maga6v27wschxzsbr5i4wqwsd64mz4z666rf92d7l60"))))
+        (base32 "0iknp4mjz3q2nzfy3ysnhxwrf3qbylzggl5jp6azc488gln2wfhq"))))
     (properties `((upstream-name . "profoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -6760,14 +6760,15 @@ also time series of carbon fluxes, energy balances and soil water are available.
     (synopsis "Probabilistic Forecast Combination Using CRPS Learning")
     (description
      "Combine probabilistic forecasts using CRPS learning algorithms proposed in
-Berrisch, Ziel (2021) <@code{arXiv:2102.00968>}
+Berrisch, Ziel (2021) <doi:10.48550/@code{arXiv.2102.00968>}
 <doi:10.1016/j.jeconom.2021.11.008>.  The package implements multiple online
 learning algorithms like Bernstein online aggregation; see Wintenberger (2014)
-<@code{arXiv:1404.1356>}.  Quantile regression is also implemented for
-comparison purposes.  Model parameters can be tuned automatically with respect
-to the loss of the forecast combination.  Methods like predict(), update(),
-plot() and print() are available for convenience.  This package utilizes the
-optim C++ library for numeric optimization <https://github.com/kthohr/optim>.")
+<doi:10.48550/@code{arXiv.1404.1356>}.  Quantile regression is also implemented
+for comparison purposes.  Model parameters can be tuned automatically with
+respect to the loss of the forecast combination.  Methods like predict(),
+update(), plot() and print() are available for convenience.  This package
+utilizes the optim C++ library for numeric optimization
+<https://github.com/kthohr/optim>.")
     (license license:gpl3+)))
 
 (define-public r-profiplots

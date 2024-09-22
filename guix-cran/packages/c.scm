@@ -18173,6 +18173,46 @@ squares simplicial-simplicial regression\".
 <doi:10.48550/@code{arXiv.2403.19835>}.")
     (license license:gpl2+)))
 
+(define-public r-compositereliabilityinnesteddesigns
+  (package
+    (name "r-compositereliabilityinnesteddesigns")
+    (version "1.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "compositeReliabilityInNestedDesigns" version))
+       (sha256
+        (base32 "13936214rr398758sw3l534fr4qr8b83bm4ygjbvfj9k33df2xby"))))
+    (properties `((upstream-name . "compositeReliabilityInNestedDesigns")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rsolnp
+                             r-reshape2
+                             r-psych
+                             r-plyr
+                             r-magrittr
+                             r-lme4
+                             r-ggplot2
+                             r-dplyr))
+    (home-page
+     "https://github.com/jmoonen/compositeReliabilityInNestedDesigns")
+    (synopsis
+     "Optimizing the Composite Reliability in Multivariate Nested Designs")
+    (description
+     "The reliability of assessment tools is a crucial aspect of monitoring student
+performance in various educational settings.  It ensures that the assessment
+outcomes accurately reflect a student's true level of performance.  However,
+when assessments are combined, determining composite reliability can be
+challenging, especially for naturalistic and unbalanced datasets in nested
+design as is often the case for Workplace-Based Assessments.  This package is
+designed to estimate composite reliability in nested designs using multivariate
+generalizability theory and enhance the analysis of assessment data.  The
+package allows for the inclusion of weight per assessment type and produces
+extensive G- and D-study results with graphical interpretations, and options to
+find the set of weights that maximizes the composite reliability or minimizes
+the standard error of measurement (SEM).")
+    (license license:gpl3+)))
+
 (define-public r-compositereliability
   (package
     (name "r-compositereliability")
@@ -24783,13 +24823,13 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "1pk7d3cipngs06h3v5jc0xw9ij3ikrk2l340jqfwvq8bxs3bk915"))))
+        (base32 "1v34r700qhy1ldzgq8a800xbpm2slq1l28xdk63zpf1j58730csw"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-mice r-ggplot2))

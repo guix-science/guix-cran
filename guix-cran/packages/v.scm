@@ -2651,13 +2651,13 @@ Also provided on the graph is the mean and variance of the distribution.")
 (define-public r-visualfields
   (package
     (name "r-visualfields")
-    (version "1.0.1")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visualFields" version))
        (sha256
-        (base32 "1z62xappwjdv9f7ql5spydkb626rdj3hvpvzy3d71fwm0y3qwki3"))))
+        (base32 "0p8a3xjhw6sjhnq5gscz5nsqk9fnzp6si5k2sa00qw6x70ihw0gk"))))
     (properties `((upstream-name . "visualFields")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
@@ -2686,7 +2686,7 @@ loss and its change over time.  It is intended to be a tool for collaborative
 research.  The package is described in Marin-Franch and Swanson (2013)
 <doi:10.1167/13.4.10> and is part of the Open Perimetry Initiative (OPI)
 [Turpin, Artes, and @code{McKendrick} (2012) <doi:10.1167/12.11.22>].")
-    (license license:gpl3)))
+    (license license:asl2.0)))
 
 (define-public r-visualdom
   (package

@@ -1351,6 +1351,40 @@ refers to an overall clustering result.  Jia Li, Beomseok Seo, and Lin Lin
 <doi:10.1093/bioinformatics/btaa165>.")
     (license license:gpl2+)))
 
+(define-public r-otargen
+  (package
+    (name "r-otargen")
+    (version "1.1.5")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "otargen" version))
+       (sha256
+        (base32 "1akqdz0qcc5clj2mqn71zqi7d93l5yihzr9d4wsk4pv9rsw3vqry"))))
+    (properties `((upstream-name . "otargen")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-magrittr
+                             r-jsonlite
+                             r-janitor
+                             r-ghql
+                             r-ggrepel
+                             r-ggplot2
+                             r-ggiraphextra
+                             r-dplyr
+                             r-cli))
+    (home-page "https://amirfeizi.github.io/otargen/")
+    (synopsis "Access Open Target Genetics")
+    (description
+     "Interact seamlessly with Open Target Genetics @code{GraphQL} endpoint to query
+and retrieve tidy data tables, facilitating the analysis of genetic data.  For
+more information about the Open Target Genetics API
+(<https://genetics.opentargets.org/api>).")
+    (license license:expat)))
+
 (define-public r-osum
   (package
     (name "r-osum")
@@ -8339,13 +8373,13 @@ more information, documentation and examples.")
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "omopgenerics" version))
        (sha256
-        (base32 "07w2k4hp33ll0adlcnpi7pbv3zqq806dish1vghigcx4wzvpsfgi"))))
+        (base32 "0k98m4ibj4m2rqkirwkqkx91p08adjm3qqj86mhdalp4vhz9x3kg"))))
     (properties `((upstream-name . "omopgenerics")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

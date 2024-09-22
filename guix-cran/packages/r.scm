@@ -2101,13 +2101,13 @@ queues, local caching, and sophisticated error handling.")
 (define-public r-runuran
   (package
     (name "r-runuran")
-    (version "0.38")
+    (version "0.39")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Runuran" version))
        (sha256
-        (base32 "1fjr9pbjih6ahbsd557p3d5j8klj11wnnn7jkhjcry1spwlzdkhr"))))
+        (base32 "13bqv8y5472bx2hn5ph7g532jrqwigqc3pijs5bw4y0zv4fklpy3"))))
     (properties `((upstream-name . "Runuran")))
     (build-system r-build-system)
     (home-page "https://statmath.wu.ac.at/unuran/")

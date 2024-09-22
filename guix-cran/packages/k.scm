@@ -4853,13 +4853,13 @@ development (<https://en.wikipedia.org/wiki/Don%27t_repeat_yourself>).")
 (define-public r-kdml
   (package
     (name "r-kdml")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "kdml" version))
        (sha256
-        (base32 "07vx0crgfzl8yhvvgi50lmpyywk0xhml86salnvnp5fz7hmdfsw7"))))
+        (base32 "042rzbrjmypxp7gb501hwnyr90c90g16pycakj4xbwky9bqb7c8a"))))
     (properties `((upstream-name . "kdml")))
     (build-system r-build-system)
     (propagated-inputs (list r-np r-mass r-markdown))
