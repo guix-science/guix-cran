@@ -1426,13 +1426,13 @@ pharmacokinetics and pharmacodynamics (PKPD) datasets.")
 (define-public r-xgrove
   (package
     (name "r-xgrove")
-    (version "0.1-12")
+    (version "0.1-13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "xgrove" version))
        (sha256
-        (base32 "1w9dki21vy6jg1s63scj9rib3w6l97r1xl8r58sgz43arlrhmnlk"))))
+        (base32 "1x2fwg7n0k1lxjy53la5xacphx14ak49v3wd5cha2qsrsm9pdrl0"))))
     (properties `((upstream-name . "xgrove")))
     (build-system r-build-system)
     (propagated-inputs (list r-rpart-plot r-rpart r-gbm r-dplyr))

@@ -6928,19 +6928,18 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
 (define-public r-grain
   (package
     (name "r-grain")
-    (version "1.4.1")
+    (version "1.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gRain" version))
        (sha256
-        (base32 "11b40ngfzqqx9pgfbgx7qr63ikccxh1hg9snw55anw32hym2dyfr"))))
+        (base32 "0x6fmjc6hxmvy1v661gkm6j6cwy7zx27fccnvpl77d6qw63m4za8"))))
     (properties `((upstream-name . "gRain")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen
                              r-rcpparmadillo
                              r-rcpp
-                             r-magrittr
                              r-igraph
                              r-grbase
                              r-broom))
@@ -6948,10 +6947,10 @@ Doctolero (2020) <doi:10.1111/2041-210X.13350>).")
     (home-page "https://people.math.aau.dk/~sorenh/software/gR/")
     (synopsis "Graphical Independence Networks")
     (description
-     "Probability propagation in graphical independence networks, also known as
-Bayesian networks or probabilistic expert systems.  Documentation of the package
-is provided in vignettes included in the package and in the paper by HÃ¸jsgaard
-(2012, <doi:10.18637/jss.v046.i10>).  See citation(\"@code{gRain}\") for details.")
+     "Probability propagation in Bayesian networks, also known as graphical
+independence networks.  Documentation of the package is provided in vignettes
+included in the package and in the paper by HÃ¸jsgaard (2012,
+<doi:10.18637/jss.v046.i10>).  See citation(\"@code{gRain}\") for details.")
     (license license:gpl2+)))
 
 (define-public r-grafzahl
@@ -12736,13 +12735,13 @@ Ecology,15(6)1302-1307<doi:10.1093/jpe/rtac096>.")
 (define-public r-glmm
   (package
     (name "r-glmm")
-    (version "1.4.4")
+    (version "1.4.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmm" version))
        (sha256
-        (base32 "0v8iill3503piyx3wjxd602hs6hgz9818ipqlvg34963hh4b4ixi"))))
+        (base32 "0wl1ca4brlqp5dn2zi5c49y2i21b22ag88cxzzwb8nx10snlr9p1"))))
     (properties `((upstream-name . "glmm")))
     (build-system r-build-system)
     (propagated-inputs (list r-trust
@@ -22747,13 +22746,13 @@ format.")
 (define-public r-geoidep
   (package
     (name "r-geoidep")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geoidep" version))
        (sha256
-        (base32 "17vpnd3frnvyx4ddgmai09504zg9drcbxsl2kbr8nvymcbvlvm0p"))))
+        (base32 "1cjga1s2ffxhk0ki7rfmacwr39qi738pxaphvfg6nfgxm09j42v8"))))
     (properties `((upstream-name . "geoidep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

@@ -6002,13 +6002,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.4.6")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "19qw5x92v15x6cyamigf4fq36h5cw573fp0ln9n2bwsy89px5ghm"))))
+        (base32 "0cz8kdhgzk1mgs3dscww3j7kwyrs06qpibxph54217ahfqf9ib11"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

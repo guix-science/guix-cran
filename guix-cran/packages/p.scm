@@ -3440,13 +3440,13 @@ incorporating the prevalence of disease.  You can also use the online version at
 (define-public r-psqn
   (package
     (name "r-psqn")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "psqn" version))
        (sha256
-        (base32 "05nzyapilhzwjgc3lizg424i28mshmwirpggg79hssjqmqraflpj"))))
+        (base32 "0zy5h7v9fh07kjqjk5vc1d4354xk56227gkvq9jn8cy8igdb6lyg"))))
     (properties `((upstream-name . "psqn")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcppeigen r-rcpp r-matrix))
@@ -11180,13 +11180,13 @@ double input symmetrical relevance ('DISR') method by Meyer and Bontempi (2006)
 (define-public r-prana
   (package
     (name "r-prana")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRANA" version))
        (sha256
-        (base32 "0y7hrb1lx6mbkpayic20sr08x410cgwfvmx2a5nrssfzvxqbk5y1"))))
+        (base32 "1q902pnlan8f5ds9kwrl45im12xq44nr4x64x3xn3w2lhzq159dw"))))
     (properties `((upstream-name . "PRANA")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase r-minet r-dplyr))
@@ -21303,13 +21303,13 @@ saving output from the website.")
 (define-public r-planr
   (package
     (name "r-planr")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planr" version))
        (sha256
-        (base32 "0qk8m235qja26g02rkg4sla6998mswqsy3hjwq39zdsmh88zy6bi"))))
+        (base32 "1dw4n4jmpqmrklpcxi2yfcbqbf81kbrqr6sw3fwrg2ppn3hiz9af"))))
     (properties `((upstream-name . "planr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-rcpproll r-magrittr r-lubridate r-dplyr))
@@ -36670,25 +36670,24 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
 (define-public r-pamscapes
   (package
     (name "r-pamscapes")
-    (version "0.6.0")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PAMscapes" version))
        (sha256
-        (base32 "0w8jrlr4j6fagzgqksbcrxn7zjqkwh4f5vaf958r48k8y6nfqpih"))))
+        (base32 "1wk827dlpp4266mpvm7zhw94dxmm95xam4xx8znp7ricsr0fz1x3"))))
     (properties `((upstream-name . "PAMscapes")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-tdigest
+                             r-shiny
                              r-sf
                              r-scales
                              r-rlang
-                             r-readr
                              r-purrr
                              r-pammisc
                              r-ncdf4
-                             r-magrittr
                              r-lubridate
                              r-httr
                              r-ggplot2
@@ -36700,7 +36699,7 @@ personalized oncology.  Bioinformatics <doi:10.1093/bioinformatics/btad022>.")
     (description
      "This package provides a variety of tools relevant to the analysis of marine
 soundscape data.  There are tools for downloading AIS (automatic identification
-system) data from Marine Cadastre <https://marinecadastre.gov/ais/>, connecting
+system) data from Marine Cadastre <https://hub.marinecadastre.gov>, connecting
 AIS data to GPS coordinates, plotting summaries of various soundscape
 measurements, and downloading relevant environmental variables (wind, swell
 height) from the National Center for Atmospheric Research data server

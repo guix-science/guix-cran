@@ -9749,13 +9749,13 @@ application-specific functionality rather than Storm/R communications plumbing."
 (define-public r-stops
   (package
     (name "r-stops")
-    (version "1.6-2")
+    (version "1.8-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stops" version))
        (sha256
-        (base32 "1fn1xbxq1ls5xw38hnv0kh5gx9pd4myspkj146q6w83yzzrwjnry"))))
+        (base32 "0nc4c371rq144f1ci5ppxnbjr9qchp2a2knsp3hiyyvg2mfax241"))))
     (properties `((upstream-name . "stops")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -9763,6 +9763,7 @@ application-specific functionality rather than Storm/R communications plumbing."
                              r-smacofx
                              r-smacof
                              r-scagnostics
+                             r-registry
                              r-pso
                              r-pomp
                              r-nloptr
@@ -11924,13 +11925,13 @@ shared frailty gamma-Weibull models.  Sjolander, A. (2016)
 (define-public r-stdmod
   (package
     (name "r-stdmod")
-    (version "0.2.10")
+    (version "0.2.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stdmod" version))
        (sha256
-        (base32 "1rjky1llvj1w883xj2dicdqw9qz06az5aqj0ls9lhdnz9ipqp6i6"))))
+        (base32 "1vr4r62hyikpj0kg4rzhbj3jp2aaqxk7khj0v1afwz28lsdxjp9k"))))
     (properties `((upstream-name . "stdmod")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-manymome r-lavaan r-ggplot2 r-boot))
@@ -30761,40 +30762,6 @@ package's idea and use case is discussed in the following article:
 <doi:10.1111/spsr.12487>.")
     (license license:gpl3)))
 
-(define-public r-smmr
-  (package
-    (name "r-smmr")
-    (version "1.0.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "smmR" version))
-       (sha256
-        (base32 "0b6w2k5j65jdngc871ch9ragr7qgwbkl4nhk3gqnbpvkr9m4x88f"))))
-    (properties `((upstream-name . "smmR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-seqinr r-rcpparmadillo r-rcpp r-discreteweibull))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=smmR")
-    (synopsis "Simulation, Estimation and Reliability of Semi-Markov Models")
-    (description
-     "This package performs parametric and non-parametric estimation and simulation
-for multi-state discrete-time semi-Markov processes.  For the parametric
-estimation, several discrete distributions are considered for the sojourn times:
-Uniform, Geometric, Poisson, Discrete Weibull and Negative Binomial.  The
-non-parametric estimation concerns the sojourn time distributions, where no
-assumptions are done on the shape of distributions.  Moreover, the estimation
-can be done on the basis of one or several sample paths, with or without
-censoring at the beginning or/and at the end of the sample paths.  Reliability
-indicators such as reliability, maintainability, availability, BMP-failure rate,
-RG-failure rate, mean time to failure and mean time to repair are available as
-well.  The implemented methods are described in Barbu, V.S., Limnios, N. (2008)
-<doi:10.1007/978-0-387-73173-5>, Barbu, V.S., Limnios, N. (2008)
-<doi:10.1080/10485250701261913> and Trevezas, S., Limnios, N. (2011)
-<doi:10.1080/10485252.2011.555543>.  Estimation and simulation of discrete-time
-k-th order Markov chains are also considered.")
-    (license (list license:gpl2+ license:gpl3+))))
-
 (define-public r-smme
   (package
     (name "r-smme")
@@ -32120,13 +32087,13 @@ statistic, and q nearest neighbors of cases.")
 (define-public r-smacofx
   (package
     (name "r-smacofx")
-    (version "1.5-3")
+    (version "1.6-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smacofx" version))
        (sha256
-        (base32 "19pb825b7fx6ah0njap03yg763swhbfw79vhk25d37yvcidj7nm3"))))
+        (base32 "112457wqdyj4ld083ibzkfjww6xilyamcj7v6mal2gh1jxcf2r8k"))))
     (properties `((upstream-name . "smacofx")))
     (build-system r-build-system)
     (propagated-inputs (list r-weights
@@ -53838,13 +53805,13 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 (define-public r-scrutiny
   (package
     (name "r-scrutiny")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scrutiny" version))
        (sha256
-        (base32 "0f8z5iz37h227ik5191p7yi8wqjq4lz57vi3z0sh6w0v6qdm250a"))))
+        (base32 "0f03nd378ks6cr15gkjmq0756cbzvrz5gp912nvdgc5r59q7j665"))))
     (properties `((upstream-name . "scrutiny")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -53870,7 +53837,7 @@ Scryfall card data API <https://scryfall.com/docs/api>.")
 <https://aurelienallard.netlify.app/post/anaytic-grimmer-possibility-standard-deviations/>;
 Heathers and Brown, 2019, <https://osf.io/5vb3u/>).  The package also provides
 infrastructure for implementing new error detection techniques.")
-    (license license:gpl3+)))
+    (license license:expat)))
 
 (define-public r-scrt
   (package

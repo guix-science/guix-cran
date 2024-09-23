@@ -18961,16 +18961,28 @@ probability (transprob()).")
 (define-public r-denguedatahub
   (package
     (name "r-denguedatahub")
-    (version "1.0.4")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "denguedatahub" version))
        (sha256
-        (base32 "0h7w7qnvh7cq9v6m9axmip0nkbas3sdhccq5h5n4yny5r1jilbq4"))))
+        (base32 "1s7in7hh90gs9lzdijdl8q2xx24dbvslyd0ykdl7l3sn7qf4cp92"))))
     (properties `((upstream-name . "denguedatahub")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-dplyr))
+    (inputs (list))
+    (propagated-inputs (list r-xml2
+                             r-tidyr
+                             r-tibble
+                             r-tabulapdf
+                             r-stringr
+                             r-rvest
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-lifecycle
+                             r-here
+                             r-dplyr))
     (home-page "https://denguedatahub.netlify.app/")
     (synopsis "Tidy Format Datasets of Dengue by Country")
     (description

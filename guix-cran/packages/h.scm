@@ -8965,13 +8965,13 @@ geographic location.")
 (define-public r-hellorust
   (package
     (name "r-hellorust")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hellorust" version))
        (sha256
-        (base32 "1y6pd37y3wsicfki8rxjj25dcqbvf985vjcl91szax5v97nqvvcn"))))
+        (base32 "1dh22ip3cqz7gp2viywdrxsh9bhgmvs2jxkksic8xs9670rzf674"))))
     (properties `((upstream-name . "hellorust")))
     (build-system r-build-system)
     (inputs (list))

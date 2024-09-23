@@ -535,13 +535,13 @@ estimation.")
 (define-public r-rxode2
   (package
     (name "r-rxode2")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rxode2" version))
        (sha256
-        (base32 "1vb1zdaad86m58vd95r5ychqmv6bf6wb0jyf72k95dsjvzsdn09b"))))
+        (base32 "0nspvz7l1dppkwvljzp9ka0pz5yd7p51h7r0lhz9xrmsx3ylrr6j"))))
     (properties `((upstream-name . "rxode2")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys
@@ -789,6 +789,40 @@ evaluation.")
      "High resolution vector country boundaries derived from Natural Earth data, can
 be plotted in rworldmap.")
     (license license:gpl2+)))
+
+(define-public r-rworkflows
+  (package
+    (name "r-rworkflows")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rworkflows" version))
+       (sha256
+        (base32 "1gl223swngk3v5q3s0drv245nxj8bbbxyhmawzj7n8da7y4a3pwx"))))
+    (properties `((upstream-name . "rworkflows")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-renv
+                             r-here
+                             r-desc
+                             r-data-table
+                             r-biocmanager
+                             r-badger))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/neurogenomics/rworkflows")
+    (synopsis "Test, Document, Containerise, and Deploy R Packages")
+    (description
+     "Reproducibility is essential to the progress of research, yet achieving it
+remains elusive even in computational fields.  Continuous Integration (CI)
+platforms offer a powerful way to launch automated workflows to check and
+document code, but often require considerable time, effort, and technical
+expertise to setup.  We therefore developed the rworkflows suite to make robust
+CI workflows easy and freely accessible to all R package developers.  rworkflows
+consists of 1) a CRAN/Bioconductor-compatible R package template, 2) an R
+package to quickly implement a standardised workflow, and 3) a centrally
+maintained @code{GitHub} Action.")
+    (license license:gpl3)))
 
 (define-public r-rwofost
   (package
@@ -2597,13 +2631,13 @@ This package fixes incorrect annotations in the original data sets.")
 (define-public r-rugarch
   (package
     (name "r-rugarch")
-    (version "1.5-2")
+    (version "1.5-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rugarch" version))
        (sha256
-        (base32 "0xmckgsdid7fq4637kyk5jyzg39l1cvy3vc8hlqayxsa0xljk21l"))))
+        (base32 "150rw7hyfxcrrhpnwjq5zqk54jrqkj8pjzm65nb5077qjicd7yf0"))))
     (properties `((upstream-name . "rugarch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -2616,8 +2650,8 @@ This package fixes incorrect annotations in the original data sets.")
                              r-numderiv
                              r-nloptr
                              r-ks
+                             r-fracdiff
                              r-chron))
-    (native-inputs (list gfortran))
     (home-page "http://www.unstarched.net")
     (synopsis "Univariate GARCH Models")
     (description
@@ -38781,13 +38815,13 @@ calculating moments, densities, and entropies are provided at both levels.")
 (define-public r-rcpptimer
   (package
     (name "r-rcpptimer")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rcpptimer" version))
        (sha256
-        (base32 "0r3a6bgx0qnkhdid6iwg91azz644nf1k1cg7p3z49vfimi5d0sjw"))))
+        (base32 "120ml0s0lrz920ixwrgfw8blggb829zaikwbw5csb2wkg0alz0kj"))))
     (properties `((upstream-name . "rcpptimer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))

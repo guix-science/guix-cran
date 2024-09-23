@@ -7814,6 +7814,36 @@ Replicating The Riddle of Literary Quality: The @code{litRiddle} package for R.
 In _Digital Humanities 2022: Conference Abstracts_, 636-637.")
     (license license:gpl3+)))
 
+(define-public r-literanger
+  (package
+    (name "r-literanger")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "literanger" version))
+       (sha256
+        (base32 "15y9jmpml0a5j5fafg7i7zgjxy17bcm7il8gb3cjj8nn2zphamy4"))))
+    (properties `((upstream-name . "literanger")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcereal r-cpp11))
+    (home-page "https://gitlab.com/stephematician/literanger")
+    (synopsis "Random Forests for Multiple Imputation Based on 'ranger'")
+    (description
+     "An updated implementation of R package ranger by Wright et al, (2017)
+<doi:10.18637/jss.v077.i01> for training and predicting from random forests,
+particularly suited to high-dimensional data, and for embedding in Multiple
+Imputation by Chained Equations (MICE) by van Buuren (2007)
+<doi:10.1177/0962280206074463>.  Ensembles of classification and regression
+trees are currently supported.  Sparse data of class @code{dgCMatrix} (R package
+Matrix') can be directly analyzed.  Conventional bagged predictions are
+available alongside an efficient prediction for MICE via the algorithm proposed
+by Doove et al (2014) <doi:10.1016/j.csda.2013.10.025>.  Survival and
+probability forests are not supported in the update, nor is data of class
+gwaa.data (R package @code{GenABEL}'); use the original ranger package for these
+analyses.")
+    (license license:gpl3)))
+
 (define-public r-liteq
   (package
     (name "r-liteq")

@@ -15353,21 +15353,26 @@ hydrographs and models internal variables.")
 (define-public r-airgriwrm
   (package
     (name "r-airgriwrm")
-    (version "0.6.2")
+    (version "0.7.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "airGRiwrm" version))
        (sha256
-        (base32 "09hcs5qhs3mykdarznqwiqd2vjdc5fqmp8lvfpmf4s2b3yqvydax"))))
+        (base32 "1vb8s0jylrn9prc4s2a8427xw7jc9v8axsid0f1ckwflp1mpm40g"))))
     (properties `((upstream-name . "airGRiwrm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-dplyr r-diagrammer r-airgr))
+    (propagated-inputs (list r-zlib
+                             r-rlang
+                             r-png
+                             r-jsonlite
+                             r-dplyr
+                             r-airgr))
     (native-inputs (list r-knitr))
-    (home-page "https://airgriwrm.g-eau.fr/")
+    (home-page "https://inrae.github.io/airGRiwrm/")
     (synopsis "'airGR' Integrated Water Resource Management")
     (description
-     "Semi-distributed Precipitation-Runoff Modelling based on @code{airGR} package
+     "Semi-distributed Precipitation-Runoff Modeling based on @code{airGR} package
 models integrating human infrastructures and their managements.")
     (license license:agpl3)))
 

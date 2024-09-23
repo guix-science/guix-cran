@@ -6496,41 +6496,6 @@ Hoeffding's D; see, e.g., Nelsen (2006) <doi:10.1007/0-387-28678-0> and
 Hollander et al. (2015, ISBN:9780470387375).")
     (license license:expat)))
 
-(define-public r-wdi2
-  (package
-    (name "r-wdi2")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "wdi2" version))
-       (sha256
-        (base32 "11whxldy58dnl54x8nvrjmwn21y35qlpgsqlwrn1a7sjafyg4qzd"))))
-    (properties `((upstream-name . "wdi2")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-purrr
-                             r-httr2
-                             r-dplyr
-                             r-cli))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/tidy-intelligence/r-wdi2")
-    (synopsis
-     "Download World Development Indicators from the World Bank Indicators API")
-    (description
-     "This package provides a modern, flexible interface for accessing the World
-Bankâs World Development Indicators (WDI) API
-<https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api-documentation>.
- Similar to the existing WDI package, wdi2 allows users to download, process,
-and analyze indicator data for multiple countries and years.  However, wdi2
-differs by relying on httr2 for multi-page request and error handling, providing
-support for downloading multiple indicators with a single function call, using
-progress bars to keep users informed about the data processing, and returning
-the processed data in a tidy data format in line with Wickham (2014)
-<doi:10.18637/jss.v059.i10>.")
-    (license license:expat)))
-
 (define-public r-wdi
   (package
     (name "r-wdi")

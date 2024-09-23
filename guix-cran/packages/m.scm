@@ -5683,16 +5683,16 @@ attenuate the results to the null or by a given amount?")
 (define-public r-multibias
   (package
     (name "r-multibias")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multibias" version))
        (sha256
-        (base32 "0jbp9fg38488wx5bypmmicbjnkpf70qja52jnybjz2db632gjbkm"))))
+        (base32 "0hqcb3adzl3m6cyvj2khqdpvj5akkwr4vsbas8v88476mp48q1wn"))))
     (properties `((upstream-name . "multibias")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rlang r-magrittr r-dplyr))
+    (propagated-inputs (list r-rlang r-magrittr r-lifecycle r-dplyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/pcbrendel/multibias")
     (synopsis "Simultaneous Multi-Bias Adjustment")
@@ -16076,13 +16076,13 @@ future package versions.")
 (define-public r-mniw
   (package
     (name "r-mniw")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mniw" version))
        (sha256
-        (base32 "0cb2jr0kq82pw0ai74w9a3lfhiqx4snwha5ygmc6z664i9q2wr1w"))))
+        (base32 "10l4nrnjx8hrn2iqkh57ncqjma9mqbfbnkxzb7nw24i611pvxhcx"))))
     (properties `((upstream-name . "mniw")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -28964,13 +28964,13 @@ to evaluate bias, precision and compare methods.")
 (define-public r-methevolsim
   (package
     (name "r-methevolsim")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MethEvolSIM" version))
        (sha256
-        (base32 "0ldn5alsxv8bsr1107628ajl95jfshk05ljshw2l87jkxfqi3q5v"))))
+        (base32 "18sgbmbkhk4q2wf95j80sgbn9zcs665y2r2wmghyisnvyf5i1cqj"))))
     (properties `((upstream-name . "MethEvolSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6))

@@ -1319,18 +1319,19 @@ level citizen voting age population from block group data.")
 (define-public r-cv
   (package
     (name "r-cv")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cv" version))
        (sha256
-        (base32 "0ng9fvc2xizmbn0fn9nkkj2ryf0xnx95nvwsxa71awjzs7zjd2ai"))))
+        (base32 "0d0js2sfffb7k3dl89j166c90sk1a1zh1rsyx04y9grhspahiqli"))))
     (properties `((upstream-name . "cv")))
     (build-system r-build-system)
     (propagated-inputs (list r-nlme
                              r-mass
                              r-lme4
+                             r-lattice
                              r-insight
                              r-gtools
                              r-glmmtmb
@@ -12962,13 +12963,13 @@ machines, or submitting grid engine jobs.")
 (define-public r-cordillera
   (package
     (name "r-cordillera")
-    (version "1.0-0")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cordillera" version))
        (sha256
-        (base32 "047sl2pvfh800ggc8v62p06nfbdz8rwn4alviplf5kbvi0k3s85n"))))
+        (base32 "0fr08yzag8a866939bx3l9lqi98kvj3vi7llax1m39nlsr0ihrdk"))))
     (properties `((upstream-name . "cordillera")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbscan))
@@ -12980,8 +12981,8 @@ machines, or submitting grid engine jobs.")
 OPTICS Cordillera measures the amount of clusteredness in a numeric data matrix
 within a distance-density based framework for a given minimum number of points
 comprising a cluster, as described in Rusch, Hornik, Mair (2018)
-<doi:10.1080/10618600.2017.1349664>.  There is an R native version with methods
-for printing, summarizing, and plotting the result.")
+<doi:10.1080/10618600.2017.1349664>.  We provide an R native version with
+methods for printing, summarizing, and plotting the result.")
     (license (list license:gpl2 license:gpl3))))
 
 (define-public r-cord
@@ -13612,13 +13613,13 @@ copula adopted in particular.")
 (define-public r-cops
   (package
     (name "r-cops")
-    (version "1.11-3")
+    (version "1.12-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cops" version))
        (sha256
-        (base32 "04rmi45yjzll52dsdf4qci0a06v5a9kslr36c16ginkf3w64s48y"))))
+        (base32 "0wcan46qnij8qp089ff0g7wr6byv91zd517hkmxg1zmcidcna0ys"))))
     (properties `((upstream-name . "cops")))
     (build-system r-build-system)
     (propagated-inputs (list r-subplex

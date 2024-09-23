@@ -3175,16 +3175,16 @@ Pearson VII, Slash or Contaminated Normal).")
 (define-public r-tsmethods
   (package
     (name "r-tsmethods")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsmethods" version))
        (sha256
-        (base32 "062n1zcl4v16nai0bpzvc7pjax4gdh8rgyq04pb9b5spy7pcx0n1"))))
+        (base32 "0zalax4bhaf11nhvxk1sxlixgizf4bkfpwaa81v24q4x5y9b2acn"))))
     (properties `((upstream-name . "tsmethods")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zoo r-xts))
+    (propagated-inputs (list r-zoo r-xts r-data-table))
     (home-page "https://www.nopredict.com/packages/tsmethods")
     (synopsis "Time Series Methods")
     (description
@@ -9535,17 +9535,16 @@ sign series for trace regression (ASSIST) algorithm.")
 (define-public r-tr8
   (package
     (name "r-tr8")
-    (version "0.9.22")
+    (version "0.9.23")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TR8" version))
        (sha256
-        (base32 "12miq65yl39pngpsa30qjcwp21vn93a4wvid03pmbf6x6hq0v4k7"))))
+        (base32 "0n9qkkdarhhivsbg9y55h42dqfpbd5sah6w2fa3rziv38jzc7z9d"))))
     (properties `((upstream-name . "TR8")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml
-                             r-taxize
                              r-shiny
                              r-reshape
                              r-readxl
@@ -9559,11 +9558,11 @@ sign series for trace regression (ASSIST) algorithm.")
      "Plant ecologists often need to collect \"traits\" data about plant species which
 are often scattered among various databases: TR8 contains a set of tools which
 take care of automatically retrieving some of those functional traits data for
-plant species from publicly available databases (Biolflor, The Ecological Flora
-of the British Isles, LEDA traitbase, Ellenberg values for Italian Flora,
-Mycorrhizal intensity databases, Catminat, BROT, PLANTS, Jepson Flora Project).
-The TR8 name, inspired by \"car plates\" jokes, was chosen since it both reminds
-of the main object of the package and is extremely short to type.")
+plant species from publicly available databases (The Ecological Flora of the
+British Isles, LEDA traitbase, Ellenberg values for Italian Flora, Mycorrhizal
+intensity databases, BROT, PLANTS, Jepson Flora Project).  The TR8 name,
+inspired by \"car plates\" jokes, was chosen since it both reminds of the main
+object of the package and is extremely short to type.")
     (license license:gpl2+)))
 
 (define-public r-tr-iatgen
