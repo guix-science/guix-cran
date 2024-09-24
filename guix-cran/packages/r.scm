@@ -467,42 +467,6 @@ now have more options.")
 study with RNA-seq data.")
     (license license:gpl2+)))
 
-(define-public r-rxode2parse
-  (package
-    (name "r-rxode2parse")
-    (version "2.0.19")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rxode2parse" version))
-       (sha256
-        (base32 "01q3chhq7nl1jl50w623m1nik9jdrizpc4hi792ynsr27lsqlhcx"))))
-    (properties `((upstream-name . "rxode2parse")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-symengine
-                             r-stanheaders
-                             r-rex
-                             r-rcppeigen
-                             r-rcpp
-                             r-qs
-                             r-knitr
-                             r-dparser
-                             r-digest
-                             r-data-table
-                             r-crayon
-                             r-checkmate
-                             r-bh))
-    (home-page "https://nlmixr2.github.io/rxode2parse/")
-    (synopsis "Parsing and Code Generation Functions for 'rxode2'")
-    (description
-     "This package provides the parsing needed for rxode2 (Wang, Hallow and James
-(2016) <doi:10.1002/psp4.12052>).  It also provides the stan based advan linear
-compartment model solutions with gradients (Carpenter et al (2015),
-<doi:10.48550/@code{arXiv.1509.07164>}) needed in nlmixr2 (Fidler et al (2019)
-<doi:10.1002/psp4.12445>).  This split will reduce computational burden of
-recompiling rxode2'.")
-    (license license:gpl3+)))
-
 (define-public r-rxode2ll
   (package
     (name "r-rxode2ll")
@@ -4646,6 +4610,51 @@ to identify the associations, terminals, and nodes that maximize phylogenetic
 confidence intervals of classification metrics and plot results, reducing
 computational time.  See Llaberia-Robledillo et al., (2023)
 <doi:10.1093/sysbio/syad016>.")
+    (license license:expat)))
+
+(define-public r-rtabulator
+  (package
+    (name "r-rtabulator")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rtabulator" version))
+       (sha256
+        (base32 "0z2l8zxhx12pyhffz4x3n5glmg4ikjm1ijmq8dwwz0y7k3j82wri"))))
+    (properties `((upstream-name . "rtabulator")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shiny
+                             r-readr
+                             r-purrr
+                             r-htmlwidgets
+                             r-htmltools
+                             r-glue))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=rtabulator")
+    (synopsis "R Bindings for 'Tabulator JS'")
+    (description
+     "This package provides R bindings for Tabulator JS <https://tabulator.info/>.
+Makes it a breeze to create highly customizable interactive tables in rmarkdown
+documents and shiny applications.  It includes filtering, grouping, editing,
+input validation, history recording, column formatters, packaged themes and
+more.")
     (license license:expat)))
 
 (define-public r-rtables
@@ -14950,6 +14959,28 @@ the Copas-like selection model of Ning et al. (2017)
 <doi:10.1093/biostatistics/kxx004>.")
     (license license:gpl3)))
 
+(define-public r-robustarima
+  (package
+    (name "r-robustarima")
+    (version "0.2.7")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "robustarima" version))
+       (sha256
+        (base32 "1f1bp9mqkrz91j1jfq2w4wp1dps0rni9l0jpa0r0pflbqlhjhdz3"))))
+    (properties `((upstream-name . "robustarima")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-splustimeseries r-splustimedate))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/spkaluzny/robustarima")
+    (synopsis "Robust ARIMA Modeling")
+    (description
+     "This package provides functions for fitting a linear regression model with ARIMA
+errors using a filtered tau-estimate.  The methodology is described in Maronna
+et al (2017, ISBN:9781119214687).")
+    (license license:bsd-3)))
+
 (define-public r-robustanova
   (package
     (name "r-robustanova")
@@ -21597,13 +21628,13 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
 (define-public r-rivnet
   (package
     (name "r-rivnet")
-    (version "0.4.2")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rivnet" version))
        (sha256
-        (base32 "1mzhxf3xirblbrz13w29970ja9ldhsfjk2pszj86z39dyby17dj0"))))
+        (base32 "19ncnyfhh1rmq2xp0779j9fp7cfv99jam7ac5l0wzyp087f4w9g0"))))
     (properties `((upstream-name . "rivnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-traudem
@@ -21612,6 +21643,7 @@ BA (2015). \"Open-channel computation with R.\" The R Journal, 7(2), 249â26
                              r-sf
                              r-rcpp
                              r-raster
+                             r-parallelly
                              r-ocnet
                              r-fields
                              r-elevatr
@@ -22670,13 +22702,13 @@ Algorithms and Applications, for a reference.")
 (define-public r-rintcal
   (package
     (name "r-rintcal")
-    (version "0.6.4")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rintcal" version))
        (sha256
-        (base32 "0gc6wzmhvbmhvcxl17bhdzcms5zqvc7bl2s2jbhcqr010zignybs"))))
+        (base32 "1n757cibw87gsy3dviv1l5h6inalwan156kbi509ldyhh0y02mf3"))))
     (properties `((upstream-name . "rintcal")))
     (build-system r-build-system)
     (propagated-inputs (list r-jsonlite r-data-table))
@@ -22688,9 +22720,8 @@ Algorithms and Applications, for a reference.")
 <doi:10.1017/RDC.2020.68>) are provided as a data package, together with
 previous @code{IntCal} curves (@code{IntCal13}, @code{IntCal09},
 @code{IntCal04}, @code{IntCal98}) and postbomb curves.  Also provided are
-functions to copy the curves into memory, to plot the curves and their
-underlying data, to calibrate radiocarbon dates and to transform between
-different radiocarbon domains'.")
+functions to copy the curves into memory, and to read, query and plot the data
+underlying the @code{IntCal20} curves.")
     (license license:gpl2+)))
 
 (define-public r-rinsp
@@ -39393,13 +39424,13 @@ needed.")
 (define-public r-rcppcwb
   (package
     (name "r-rcppcwb")
-    (version "0.6.4")
+    (version "0.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppCWB" version))
        (sha256
-        (base32 "17w4jz6rngwm3kqwz0v547s43xvjlxc86y9yy4hnc7blkqcp4w2g"))))
+        (base32 "0igkmm0qbj2gb0m18f6pjnvxdqraiypvlpz8qyc4hng2l6im5wih"))))
     (properties `((upstream-name . "RcppCWB")))
     (build-system r-build-system)
     (inputs (list pcre2 pcre2))
@@ -46581,13 +46612,13 @@ other consolidated methods as Random Forests (Maia M, et.  al, 2021)
 (define-public r-randomlca
   (package
     (name "r-randomlca")
-    (version "1.1-3")
+    (version "1.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "randomLCA" version))
        (sha256
-        (base32 "1hjkglqdr9czjr91iwshcdb0acrlk461x896rca4bzc9jv8in9cy"))))
+        (base32 "04qb2r4mpgsi077npf05gw1mf5halbc2r275mx4dil7s4d29javb"))))
     (properties `((upstream-name . "randomLCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-rfast
@@ -47519,13 +47550,13 @@ several spectra of plastic colorants.")
 (define-public r-ralsa
   (package
     (name "r-ralsa")
-    (version "1.4.7")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RALSA" version))
        (sha256
-        (base32 "1m9fp1y5fgyngm5n6kgwfdpr8pnczs250hy63dd3ld3n50qdmc4l"))))
+        (base32 "1mvggmprqpgyj8d0fpyma44jkpx32dbfagjrh8mg5hny0bzzz5vm"))))
     (properties `((upstream-name . "RALSA")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

@@ -488,28 +488,6 @@ weighted observations, one sample tests, etc).  We also include the permutation
 scheme to make test building simple for others.")
     (license license:gpl2+)))
 
-(define-public r-twophaseind
-  (package
-    (name "r-twophaseind")
-    (version "1.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "TwoPhaseInd" version))
-       (sha256
-        (base32 "1ifdj17rlr8nd0pqpcqi6835ymdhngif279i27s6lvwha924l81c"))))
-    (properties `((upstream-name . "TwoPhaseInd")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival))
-    (home-page "https://cran.r-project.org/package=TwoPhaseInd")
-    (synopsis "Estimate Gene-Treatment Interaction Exploiting Randomization")
-    (description
-     "Estimation of gene-treatment interactions in randomized clinical trials
-exploiting gene-treatment independence.  Methods used in the package refer to J.
-Y. Dai, M. @code{LeBlanc}, and C. Kooperberg (2009) Biometrics
-<doi:10.1111/j.1541-0420.2008.01046.x>.")
-    (license license:gpl2+)))
-
 (define-public r-twopexp
   (package
     (name "r-twopexp")
@@ -11672,13 +11650,13 @@ rmarkdown HTML documents.")
 (define-public r-tntpr
   (package
     (name "r-tntpr")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tntpr" version))
        (sha256
-        (base32 "09vxsv5f5inl8pdlz4lap4zfry90lb58h3bypvj9grd2n75qxsrf"))))
+        (base32 "082yz37kisxl8zn39b3r0s7nbw31hm0cjgnxi3g3qmzvgdrnkgvi"))))
     (properties `((upstream-name . "tntpr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -11699,6 +11677,7 @@ rmarkdown HTML documents.")
                              r-formattable
                              r-extrafont
                              r-dplyr
+                             r-colorspace
                              r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/tntp/tntpr")
@@ -21726,13 +21705,13 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
 (define-public r-tern-mmrm
   (package
     (name "r-tern-mmrm")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern.mmrm" version))
        (sha256
-        (base32 "1jklh18fmhcjpkp85cpf4q1xcgidp8rr9py5qfns2iwkac530sdn"))))
+        (base32 "0xw0ikqi352sg8nvh1g0pmychhagq6lzvawqv25qvb66mw5ayhpc"))))
     (properties `((upstream-name . "tern.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21750,7 +21729,7 @@ An alternative to ggtern', which uses the ggplot2 family of plotting functions."
                              r-dplyr
                              r-cowplot
                              r-checkmate))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/insightsengineering/tern.mmrm")
     (synopsis
      "Tables and Graphs for Mixed Models for Repeated Measures (MMRM)")
@@ -24240,26 +24219,29 @@ medical diagnostics, risk assessment, or predictive modeling.")
 (define-public r-tcplfit2
   (package
     (name "r-tcplfit2")
-    (version "0.1.6")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tcplfit2" version))
        (sha256
-        (base32 "1znhma87nyy36m3viyh80m6gygqh4iwwh1xj0nw6wh88qal4935p"))))
+        (base32 "0ay9lylizr91piif5gynykp8mnw59sy3sqjmilrbp6r53f8w33cc"))))
     (properties `((upstream-name . "tcplfit2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-stringr r-rcolorbrewer r-numderiv))
+    (propagated-inputs (list r-stringr r-reshape2 r-rcolorbrewer r-numderiv
+                             r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=tcplfit2")
-    (synopsis "Concentration-Response Modeling of HTS or Transcriptomics Data")
+    (home-page "https://github.com/USEPA/CompTox-ToxCast-tcplFit2")
+    (synopsis "Concentration-Response Modeling Utility")
     (description
-     "This package performs the basic concentration response curve fitting used in the
-tcpl package.  It is a substitute for the original @code{tcplFit}() function
-(and sub-functions) and allows a wider variety of concentration-response models.
- All of the models included in the BMDExpress package are now part of this
-package, and the output includes a calculation of the bmd (Benchmark Dose or
-concentration) value.")
+     "The tcplfit2 R package performs basic concentration-response curve fitting.  The
+original @code{tcplFit}() function in the tcpl R package performed basic
+concentration-response curvefitting to 3 models.  With tcplfit2, the core tcpl
+concentration-response functionality has been expanded to process diverse
+high-throughput screen (HTS) data generated at the US Environmental Protection
+Agency, including targeted @code{ToxCast}, high-throughput transcriptomics
+(HTTr) and high-throughput phenotypic profiling (HTPP).  tcplfit2 can be used
+independently to support analysis for diverse chemical screening efforts.")
     (license license:expat)))
 
 (define-public r-tcpl

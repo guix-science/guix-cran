@@ -11292,6 +11292,44 @@ GIF images / MP4 videos, as Shiny apps (with interactivity) or as HTML documents
 through embedding into R Markdown documents.")
     (license license:expat)))
 
+(define-public r-animalsequences
+  (package
+    (name "r-animalsequences")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AnimalSequences" version))
+       (sha256
+        (base32 "0aw51hailpv07qwsb1wjqnbn409l2w250naxic2zm0k670jam3m2"))))
+    (properties `((upstream-name . "AnimalSequences")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidytext
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-ranger
+                             r-naivebayes
+                             r-mclust
+                             r-magrittr
+                             r-kernlab
+                             r-igraph
+                             r-ggraph
+                             r-ggplot2
+                             r-fpc
+                             r-dplyr
+                             r-dbscan
+                             r-apcluster))
+    (home-page "https://cran.r-project.org/package=AnimalSequences")
+    (synopsis "Analyse Animal Sequential Behaviour and Communication")
+    (description
+     "All animal behaviour occurs sequentially.  The package has a number of functions
+to format sequence data from different sources, to analyse sequential behaviour
+and communication in animals.  It also has functions to plot the data and to
+calculate the entropy of sequences.")
+    (license license:asl2.0)))
+
 (define-public r-animalhabitatnetwork
   (package
     (name "r-animalhabitatnetwork")
@@ -21120,13 +21158,13 @@ plot the activity in a variety of ways.")
 (define-public r-activanalyzer
   (package
     (name "r-activanalyzer")
-    (version "2.1.1")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "activAnalyzer" version))
        (sha256
-        (base32 "0jbzbn9y9lwhy4003ym4w680glj9mdq3gwkk64hfsh94c52xihk3"))))
+        (base32 "1f4q96liacxi21i8zmgacaz91zvrvk5jwd5x2ld8fwbjx33bx02s"))))
     (properties `((upstream-name . "activAnalyzer")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

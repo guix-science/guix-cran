@@ -3792,6 +3792,32 @@ Bellavance F (2017) <doi:10.1007/s10985-016-9372-1>) for different evaluation
 metrics.")
     (license license:gpl2+)))
 
+(define-public r-survma
+  (package
+    (name "r-survma")
+    (version "1.6.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SurvMA" version))
+       (sha256
+        (base32 "1nypjx7ds135ffgyxvjrqfqk0cissw27dmslqf11m9jajm7brqja"))))
+    (properties `((upstream-name . "SurvMA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-quadprog r-pec r-maxlik))
+    (home-page "<https://github.com/Stat-WangXG/SurvMA>")
+    (synopsis
+     "Model Averaging Prediction of Personalized Survival Probabilities")
+    (description
+     "Provide model averaging-based approaches that can be used to predict
+personalized survival probabilities.  The key underlying idea is to approximate
+the conditional survival function using a weighted average of multiple candidate
+models.  Two scenarios of candidate models are allowed: (Scenario 1) partial
+linear Cox model and (Scenario 2) time-varying coefficient Cox model.  A
+reference of the underlying methods is Li and Wang (2023)
+<doi:10.1016/j.csda.2023.107759>.")
+    (license license:gpl2+)))
+
 (define-public r-survlong
   (package
     (name "r-survlong")
@@ -14462,31 +14488,6 @@ efficient way to combine multiple gradient boosting models to improve predictive
 model performance and robustness.")
     (license license:expat)))
 
-(define-public r-stabreg
-  (package
-    (name "r-stabreg")
-    (version "0.1.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "stabreg" version))
-       (sha256
-        (base32 "1jrxyv0d33vd9vdlj1cv1a2qdz8iqgr726f54dgazwsz3cpyy2ia"))))
-    (properties `((upstream-name . "stabreg")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-numderiv))
-    (home-page "https://cran.r-project.org/package=stabreg")
-    (synopsis "Linear Regression with the Stable Distribution")
-    (description
-     "Efficient regression for heavy-tailed and skewed data following a stable
-distribution.  Generalized regression where the skewness and tail parameter of
-residuals are dependent on regressors is also available.  Includes fast
-calculation of stable densities.  Calculation of densities is based on efficient
-numerical methods from Ament and O'Neil (2017) <doi:10.1007/s11222-017-9725-y>.
-Parts of the code have been ported to C from Ament's Matlab code available at
-<https://gitlab.com/s_ament/qastable>.")
-    (license license:gpl3)))
-
 (define-public r-stablespec
   (package
     (name "r-stablespec")
@@ -15610,26 +15611,6 @@ unlabeled data are used to train a classifier.  The package includes a
 collection of semi-supervised learning techniques: self-training, co-training,
 democratic, decision tree, random forest, S3VM ...  etc, with a fairly intuitive
 interface that is easy to use.")
-    (license license:gpl3)))
-
-(define-public r-sslasso
-  (package
-    (name "r-sslasso")
-    (version "1.2-2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SSLASSO" version))
-       (sha256
-        (base32 "0vnn9ksdf0qgjflgx1sfj6q6j9jfnarbx2222rh9kb10jy8b16jv"))))
-    (properties `((upstream-name . "SSLASSO")))
-    (build-system r-build-system)
-    (home-page "http://faculty.chicagobooth.edu/veronika.rockova/ssl.pdf")
-    (synopsis "The Spike-and-Slab LASSO")
-    (description
-     "Efficient coordinate ascent algorithm for fitting regularization paths for
-linear models penalized by Spike-and-Slab LASSO of Rockova and George (2018)
-<doi:10.1080/01621459.2016.1260469>.")
     (license license:gpl3)))
 
 (define-public r-ssizerna
@@ -18900,13 +18881,13 @@ retrieving species occurrence data, and combining those data.")
 (define-public r-spnngp
   (package
     (name "r-spnngp")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spNNGP" version))
        (sha256
-        (base32 "0z09hxmm2pbxsbm3zqk839z2gb3g2n2hqkahcbvcgywrqn3v8cal"))))
+        (base32 "1qanar1b3avlw8q18yisl4yjwbvzmz8kir8q21rnjdx612wmgsll"))))
     (properties `((upstream-name . "spNNGP")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann r-formula r-coda))
@@ -21856,13 +21837,13 @@ the degree of niche overlapping between species.  See Kleparski and Beaugrand
 (define-public r-species
   (package
     (name "r-species")
-    (version "1.1.4")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SPECIES" version))
        (sha256
-        (base32 "18x779wh9g4fskggkiz6ggvgis4wipf1nf6bygc1v5n2yvni4fsw"))))
+        (base32 "0fyl8794hfdlhghskdv4gif88rdppd4a2jm3dyfdlwdj5zv5l12w"))))
     (properties `((upstream-name . "SPECIES")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -22604,13 +22585,13 @@ Watanabe-Akaike information criterion (WAIC).  See Zhou, Hanson and Zhang (2020)
 (define-public r-spbayes
   (package
     (name "r-spbayes")
-    (version "0.4-7")
+    (version "0.4-8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spBayes" version))
        (sha256
-        (base32 "18rb4k7yfnz07ilrgdipbl30a78zzl3yaikd999l482v1a95hibr"))))
+        (base32 "17jnbwafk5kky0zwjni9nvbcllxr5ww0jrrq5gzzddjrp1x1ybhd"))))
     (properties `((upstream-name . "spBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-matrix r-magic r-formula r-coda))
@@ -30761,6 +30742,40 @@ working with datasets that are based on different spatial references.  The
 package's idea and use case is discussed in the following article:
 <doi:10.1111/spsr.12487>.")
     (license license:gpl3)))
+
+(define-public r-smmr
+  (package
+    (name "r-smmr")
+    (version "1.0.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "smmR" version))
+       (sha256
+        (base32 "0b6w2k5j65jdngc871ch9ragr7qgwbkl4nhk3gqnbpvkr9m4x88f"))))
+    (properties `((upstream-name . "smmR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seqinr r-rcpparmadillo r-rcpp r-discreteweibull))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=smmR")
+    (synopsis "Simulation, Estimation and Reliability of Semi-Markov Models")
+    (description
+     "This package performs parametric and non-parametric estimation and simulation
+for multi-state discrete-time semi-Markov processes.  For the parametric
+estimation, several discrete distributions are considered for the sojourn times:
+Uniform, Geometric, Poisson, Discrete Weibull and Negative Binomial.  The
+non-parametric estimation concerns the sojourn time distributions, where no
+assumptions are done on the shape of distributions.  Moreover, the estimation
+can be done on the basis of one or several sample paths, with or without
+censoring at the beginning or/and at the end of the sample paths.  Reliability
+indicators such as reliability, maintainability, availability, BMP-failure rate,
+RG-failure rate, mean time to failure and mean time to repair are available as
+well.  The implemented methods are described in Barbu, V.S., Limnios, N. (2008)
+<doi:10.1007/978-0-387-73173-5>, Barbu, V.S., Limnios, N. (2008)
+<doi:10.1080/10485250701261913> and Trevezas, S., Limnios, N. (2011)
+<doi:10.1080/10485252.2011.555543>.  Estimation and simulation of discrete-time
+k-th order Markov chains are also considered.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-smme
   (package
@@ -41000,13 +41015,13 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
 (define-public r-shinywidgets
   (package
     (name "r-shinywidgets")
-    (version "0.8.6")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyWidgets" version))
        (sha256
-        (base32 "1dv0bwp3rxc1c3n05sczvshg5i9mffqxb61r1z2radwmj5c28g46"))))
+        (base32 "08kpf98spkyx7vq9jk5g3wnhdhzfmkkzq04p8gv44hjw2b2v9m5d"))))
     (properties `((upstream-name . "shinyWidgets")))
     (build-system r-build-system)
     (arguments
@@ -41030,8 +41045,7 @@ like a bivariate slider.  It allows to pick up a pair of numbers.")
                              r-rlang
                              r-jsonlite
                              r-htmltools
-                             r-bslib
-                             r-anytime))
+                             r-bslib))
     (native-inputs (list esbuild))
     (home-page "https://github.com/dreamRs/shinyWidgets")
     (synopsis "Custom Inputs Widgets for Shiny")
@@ -43302,6 +43316,47 @@ in Shiny apps or viewed from Rstudio Viewer. @code{shinyCyJS} includes API to
 build Graph model like node or edge with customized attributes for R.
 @code{shinyCyJS} is built with cytoscape.js and htmlwidgets R package.")
     (license license:expat)))
+
+(define-public r-shinycroneditor
+  (package
+    (name "r-shinycroneditor")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinycroneditor" version))
+       (sha256
+        (base32 "14z2yzzsycy5vplrim40j295mcw74rk3bxwpncavk3widjbmvjhx"))))
+    (properties `((upstream-name . "shinycroneditor")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-htmlwidgets r-htmltools))
+    (native-inputs (list esbuild))
+    (home-page "https://cran.r-project.org/package=shinycroneditor")
+    (synopsis "'shiny' Cron Expression Input Widget")
+    (description
+     "This package provides a widget for shiny apps to handle schedule expression
+input, using the cron-expression-input @code{JavaScript} component.  Note that
+this does not edit the crontab file, it is just an input element for the
+schedules.  See
+<https://github.com/@code{DatalabFabriek/shinycroneditor/blob/main/inst/examples/shiny-app.R>}
+for an example implementation.")
+    (license license:gpl3+)))
 
 (define-public r-shinycox
   (package
@@ -50188,13 +50243,13 @@ R client implementing the W3C specification.")
 (define-public r-selenium
   (package
     (name "r-selenium")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "selenium" version))
        (sha256
-        (base32 "1v1bh9a1ybzwyzfsy7q82cjjaz2011zi9i80y275ayjwdsw1rfyf"))))
+        (base32 "0dnz7zz1rxkf80ayxmp56kcx3blbl5hxwcy66rhrs1s090mbhyxr"))))
     (properties `((upstream-name . "selenium")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
@@ -50203,7 +50258,8 @@ R client implementing the W3C specification.")
                              r-processx
                              r-lifecycle
                              r-jsonlite
-                             r-httr2))
+                             r-httr2
+                             r-base64enc))
     (home-page "https://ashbythorpe.github.io/selenium-r/")
     (synopsis "Low-Level Browser Automation Interface")
     (description
@@ -52646,13 +52702,13 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "1jxhzs720wh459xyi8xdr45qd8g3d2fvblws214f9w6irhjqr139"))))
+        (base32 "113kfb4pg77y3yd4ags55y03gm45jkyp1vawvkx525r685wbj9zi"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble

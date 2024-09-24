@@ -1222,13 +1222,13 @@ identify the optimal estimator from among a prespecified set of candidates.")
 (define-public r-cvasi
   (package
     (name "r-cvasi")
-    (version "1.1.3")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cvasi" version))
        (sha256
-        (base32 "0915nxf2g2v2z8mdah2cshba2ji00v3m3mbj4djfnqjcvnj8p829"))))
+        (base32 "0j4r92b8n4fqd16s2549a13098dwi76vsyb67n8jv6xcxy9yxw9w"))))
     (properties `((upstream-name . "cvasi")))
     (build-system r-build-system)
     (propagated-inputs (list r-units
@@ -1241,8 +1241,10 @@ identify the optimal estimator from among a prespecified set of candidates.")
                              r-lubridate
                              r-lifecycle
                              r-lemna
+                             r-gridextra
                              r-glue
                              r-ggplot2
+                             r-ggally
                              r-furrr
                              r-dplyr
                              r-desolve
@@ -5089,13 +5091,13 @@ Causal Hypotheses in Conjoint Analysis\" <@code{arXiv:2201.08343>}.")
 (define-public r-crt2power
   (package
     (name "r-crt2power")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crt2power" version))
        (sha256
-        (base32 "00clnxyf381qhjpv8r7z0ff9jmid027izvmkpzijmx2d31mm3cr1"))))
+        (base32 "115davxwq7lxwl4qqxq28bb9q7ybhwrrmmyb6kwrl0vb848q5n7b"))))
     (properties `((upstream-name . "crt2power")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -9048,6 +9050,26 @@ making use of the weighting option.")
      "Estimate coefficients of Cox proportional hazards model using stochastic
 gradient descent algorithm for batch data.")
     (license license:gpl2)))
+
+(define-public r-coxphm
+  (package
+    (name "r-coxphm")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "coxphm" version))
+       (sha256
+        (base32 "0q1vzpqh1cijv1x7n16p7mnbdspbd17h9q6lhhklrk00lcyhinbd"))))
+    (properties `((upstream-name . "coxphm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival r-mass))
+    (home-page "https://cran.r-project.org/package=coxphm")
+    (synopsis "Time-to-Event Data Analysis with Missing Survival Times")
+    (description
+     "Fits a pseudo Cox proprotional hazards model that allow us to analyze
+time-to-event data when survival times are missing for control groups.")
+    (license license:gpl2+)))
 
 (define-public r-coxphf
   (package
@@ -20205,48 +20227,6 @@ palette of the most frequent colours used in the image.  Also provides some
 custom colour palettes.")
     (license license:gpl2+)))
 
-(define-public r-colossus
-  (package
-    (name "r-colossus")
-    (version "1.1.4.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Colossus" version))
-       (sha256
-        (base32 "0kbs9msk15i87krly51s2gr4qjj5xijk6ki6njgl3xj9z01lcw34"))))
-    (properties `((upstream-name . "Colossus")))
-    (build-system r-build-system)
-    (inputs (list))
-    (propagated-inputs (list r-testthat
-                             r-stringr
-                             r-rlang
-                             r-rcppeigen
-                             r-rcpp
-                             r-processx
-                             r-data-table
-                             r-callr))
-    (native-inputs (list r-knitr))
-    (home-page "https://ericgiunta.github.io/Colossus/")
-    (synopsis
-     "\"Risk Model Regression and Analysis with Complex Non-Linear Models\"")
-    (description
-     "This package performs survival analysis using general non-linear models.  Risk
-models can be the sum or product of terms.  Each term is the product of
-exponential/linear functions of covariates.  Additionally sub-terms can be
-defined as a sum of exponential, linear threshold, and step functions.  Cox
-Proportional hazards <https://en.wikipedia.org/wiki/Proportional_hazards_model>,
-Poisson <https://en.wikipedia.org/wiki/Poisson_regression>, and Fine-Grey
-competing risks
-<https://www.publichealth.columbia.edu/research/population-health-methods/competing-risk-analysis>
-regression are supported.  This work was sponsored by NASA Grant 80NSSC19M0161
-through a subcontract from the National Council on Radiation Protection and
-Measurements (NCRP).  The computing for this project was performed on the Beocat
-Research Cluster at Kansas State University, which is funded in part by NSF
-grants CNS-1006860, EPS-1006860, EPS-0919443, ACI-1440548, CHE-1726332, and NIH
-P20GM113109.")
-    (license license:gpl3+)))
-
 (define-public r-colorspec
   (package
     (name "r-colorspec")
@@ -21481,13 +21461,13 @@ data.")
 (define-public r-cohortsymmetry
   (package
     (name "r-cohortsymmetry")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortSymmetry" version))
        (sha256
-        (base32 "13qv4fa673lnq3jyp97bbrcax0sw0lk2w2xxy8vyb8jnf5ajlydr"))))
+        (base32 "15rmz8r3q52mmmr7h639az3ayiylxwiqny5kl6ksdlg4pb0hiw9q"))))
     (properties `((upstream-name . "CohortSymmetry")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -22443,13 +22423,13 @@ adverse events after hip and knee replacement surgery.")
 (define-public r-codep
   (package
     (name "r-codep")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "codep" version))
        (sha256
-        (base32 "05k7g9nji076zzzyzpp2klr89sllmwz043pcfyiddxifgr77glk3"))))
+        (base32 "04i31h2qf5yvh593vr1fdi9yymldby7g2mmz6vc0ww2rlhwq6bzd"))))
     (properties `((upstream-name . "codep")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=codep")
@@ -24824,13 +24804,13 @@ plot.")
 (define-public r-cmahalanobis
   (package
     (name "r-cmahalanobis")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmahalanobis" version))
        (sha256
-        (base32 "1v34r700qhy1ldzgq8a800xbpm2slq1l28xdk63zpf1j58730csw"))))
+        (base32 "1lbw1ffn3lhillzmgg8q4klqybw4hka1jn37b3npzixc0mij8ywb"))))
     (properties `((upstream-name . "cmahalanobis")))
     (build-system r-build-system)
     (propagated-inputs (list r-reshape2 r-mice r-ggplot2))
@@ -31767,13 +31747,13 @@ Press.")
 (define-public r-cholwishart
   (package
     (name "r-cholwishart")
-    (version "1.1.2")
+    (version "1.1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CholWishart" version))
        (sha256
-        (base32 "0lms6bnd0czb25ir4ls0lxv4d2ygqiq8ampnv9j7l6hj28xmqyjj"))))
+        (base32 "0b88q16cylqvr8gy18szyaalpi545a31gzm8p6676b3jbh122zf2"))))
     (properties `((upstream-name . "CholWishart")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -33807,13 +33787,13 @@ automates this task.")
 (define-public r-changepointtests
   (package
     (name "r-changepointtests")
-    (version "0.1.5")
+    (version "0.1.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "changepointTests" version))
        (sha256
-        (base32 "1s6vi879h96qds2khfcv4n2rh5vp09m074mr5knlhhm0lhxf111g"))))
+        (base32 "0pq689xwkaqx8kqpdhfxxr9jwy3kdj82sg5182w8kmpd7x405k56"))))
     (properties `((upstream-name . "changepointTests")))
     (build-system r-build-system)
     (propagated-inputs (list r-foreach r-doparallel))
@@ -40266,13 +40246,13 @@ statistical matching methods.")
 (define-public r-casecohortcoxsurvival
   (package
     (name "r-casecohortcoxsurvival")
-    (version "0.0.34")
+    (version "0.0.36")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CaseCohortCoxSurvival" version))
        (sha256
-        (base32 "0qb9sqqycdqk89qxm4cch0x62d004ybsxrrv6q0yzg6bc581jx0j"))))
+        (base32 "13qb83x566m41kqy7jql6pfha2p9sr26bxqmkga7nwx6ddl7270p"))))
     (properties `((upstream-name . "CaseCohortCoxSurvival")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-nnet))
@@ -40281,7 +40261,8 @@ statistical matching methods.")
     (description
      "Cox model inference for relative hazard and covariate-specific pure risk
 estimated from stratified and unstratified case-cohort data as described in
-Etievant, L., Gail, M.H. (2023) <@code{arXiv:2304.03396>}.")
+Etievant, L., Gail, M.H. (Lifetime Data Analysis, 2024)
+<doi:10.1007/s10985-024-09621-2>.")
     (license license:gpl2)))
 
 (define-public r-casebasedreasoning
@@ -42719,31 +42700,6 @@ Automatically save the plots made to a specified directory, previewing them as
 they would be saved.  Then combine all plots generated into a gif to show the
 plot refinement over time.")
     (license license:expat)))
-
-(define-public r-caman
-  (package
-    (name "r-caman")
-    (version "0.78")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "CAMAN" version))
-       (sha256
-        (base32 "10llppi2k3jq36mpig2djaf5kdx3ils2i1zvcypdry8xpkz80h9l"))))
-    (properties `((upstream-name . "CAMAN")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-sp r-mvtnorm))
-    (home-page "https://cran.r-project.org/package=CAMAN")
-    (synopsis
-     "Finite Mixture Models and Meta-Analysis Tools - Based on C.A.MAN")
-    (description
-     "This package provides tools for the analysis of finite semiparametric mixtures.
-These are useful when data is heterogeneous, e.g. in pharmacokinetics or
-meta-analysis.  The NPMLE and VEM algorithms (flexible support size) and EM
-algorithms (fixed support size) are provided for univariate (Bohning et al.,
-1992; <doi:10.2307/2532756>) and bivariate data (Schlattmann et al., 2015;
-<doi:10.1016/j.jclinepi.2014.08.013>).")
-    (license license:gpl2+)))
 
 (define-public r-calsim
   (package

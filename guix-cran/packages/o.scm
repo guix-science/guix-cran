@@ -3845,6 +3845,29 @@ Marinela Capanu, Mihai Giurcanu, Colin B Begg, Mithat Gonen, Subsampling based
 variable selection for generalized linear models.")
     (license license:gpl2)))
 
+(define-public r-optrf
+  (package
+    (name "r-optrf")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "optRF" version))
+       (sha256
+        (base32 "02imgfmfigcps4z4028r7jp61153m4ircb4l1axszcaag0181gba"))))
+    (properties `((upstream-name . "optRF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ranger r-minpack-lm r-irr))
+    (home-page "https://cran.r-project.org/package=optRF")
+    (synopsis
+     "Optimising Random Forest Stability Through Selection of the Optimal Number of Trees")
+    (description
+     "Calculating the stability of random forest with certain numbers of trees.  The
+non-linear relationship between stability and numbers of trees is described
+using a logistic regression model and used to estimate the optimal number of
+trees.")
+    (license license:gpl2+)))
+
 (define-public r-optrefine
   (package
     (name "r-optrefine")
@@ -8130,13 +8153,13 @@ data with a single line of code.")
 (define-public r-onbrand
   (package
     (name "r-onbrand")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "onbrand" version))
        (sha256
-        (base32 "1iyizky2vrdpl325qg4mllzgs2aabshpp7cshvldfyxnlw4dxvrn"))))
+        (base32 "1hnhnhzfmd3cjl9ibkydzcy9i7if1f1ykqj0a74wmawh37cv4iiv"))))
     (properties `((upstream-name . "onbrand")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -10028,13 +10051,13 @@ submission_url'.")
 (define-public r-odin
   (package
     (name "r-odin")
-    (version "1.2.5")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "odin" version))
        (sha256
-        (base32 "1fczgf3x35inlyhkw1h4mf8j9alrv4w98b9jfmbc2a9q29gi161p"))))
+        (base32 "0rr3sg96z7f64pz84pfrcaaz8sqa6lgp4z7dj2pyrvzgjxjr3fjm"))))
     (properties `((upstream-name . "odin")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -11689,29 +11712,6 @@ models.")
     (synopsis "Arrays with Arbitrary Offsets")
     (description "Generalise the starting point of the array index.")
     (license (list license:gpl2+ license:gpl3+))))
-
-(define-public r-oaqc
-  (package
-    (name "r-oaqc")
-    (version "1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "oaqc" version))
-       (sha256
-        (base32 "1rc0l79xygmr2rp5sjadzigbj65a13z5xlvrxzy26cl0wsxwhmjf"))))
-    (properties `((upstream-name . "oaqc")))
-    (build-system r-build-system)
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=oaqc")
-    (synopsis "Computation of the Orbit-Aware Quad Census")
-    (description
-     "This package implements the efficient algorithm by Ortmann and Brandes (2017)
-<doi:10.1007/s41109-017-0027-2> to compute the orbit-aware frequency
-distribution of induced and non-induced quads, i.e.  subgraphs of size four.
-Given an edge matrix, data frame, or a graph object (e.g., igraph'), the
-orbit-aware counts are computed respective each of the edges and nodes.")
-    (license license:gpl3)))
 
 (define-public r-oaplots
   (package

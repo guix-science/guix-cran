@@ -1016,13 +1016,13 @@ those values that are true.")
 (define-public r-extrafrail
   (package
     (name "r-extrafrail")
-    (version "1.11")
+    (version "1.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "extrafrail" version))
        (sha256
-        (base32 "154c2xzspzdz72n5j1w4pn1nd4bzwqjhvvqy9z33w713lmyys9kw"))))
+        (base32 "1j2i21mqqim3x8bn4fs7kb9dvzzvkjyhmwfgj459h4x39ih5pbmb"))))
     (properties `((upstream-name . "extrafrail")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-pracma r-msm r-expint))
@@ -5867,13 +5867,13 @@ feature.")
 (define-public r-etas
   (package
     (name "r-etas")
-    (version "0.6.1")
+    (version "0.6.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ETAS" version))
        (sha256
-        (base32 "1ivnv05cfbrrmglz319202nssghaq15h6l35k1pbal9gg7izd7xm"))))
+        (base32 "09nmajzjdrbmq5bh5zg53vmvv9580gi8v8g92ipzzih7a1xvrcgh"))))
     (properties `((upstream-name . "ETAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random
@@ -6991,13 +6991,13 @@ this method, please see Dang et al. (2022) <@code{arXiv:2210.05802>}.")
 (define-public r-esci
   (package
     (name "r-esci")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "esci" version))
        (sha256
-        (base32 "0aifdrnard3q4g9njb3dywq2vbzy88s76fh5bmhq1ch7n1rcp4b3"))))
+        (base32 "1vyrx2ga32mgc6rlmywxm7wpmhcv8rwhaiddq03wgyn9515addn9"))))
     (properties `((upstream-name . "esci")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -8364,13 +8364,13 @@ equality of intercepts.  For more information, see Yuan, K. H., & Chan, W.
 (define-public r-equalstats
   (package
     (name "r-equalstats")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EQUALSTATS" version))
        (sha256
-        (base32 "0lp99zgz2vggv4pwxdwbnm9mwf7pwsr683cpkpzl3gnvfsirdhnz"))))
+        (base32 "0vv2p4757sqjf9k2iynbigsa4n4pzd1wkrli3gbgnx6rk8b0r77b"))))
     (properties `((upstream-name . "EQUALSTATS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -15203,13 +15203,13 @@ algorithm within Gibbs sampler based on the Bayesian framework.")
 (define-public r-eixport
   (package
     (name "r-eixport")
-    (version "0.6.0")
+    (version "0.6.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "eixport" version))
        (sha256
-        (base32 "18jybscxh051h5y31gb7ywr9n5a471l6krcl95wznfvc2ba1k8pc"))))
+        (base32 "00zx8qk6zh31979vsnl857cr8yicj3j879k64p57iqxb8a9kaf79"))))
     (properties `((upstream-name . "eixport")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf r-raster r-ncdf4 r-data-table r-cptcity))

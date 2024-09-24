@@ -2743,28 +2743,6 @@ standard errors.  More details can be found in Lu Tian et al. (2005)
 <doi:10.1198/016214504000000845>.")
     (license license:gpl3)))
 
-(define-public r-npcoptest
-  (package
-    (name "r-npcoptest")
-    (version "1.03")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "npcopTest" version))
-       (sha256
-        (base32 "1kpa3avi95aa93y038f4zqhhdp8vdscdk0c6397qmqjg34hf1dnr"))))
-    (properties `((upstream-name . "npcopTest")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=npcopTest")
-    (synopsis "Non Parametric Test for Detecting Changes in the Copula")
-    (description
-     "This package provides a non parametric test for change points detection in the
-dependence between the components of multivariate data, with or without
-(multiple) changes in the marginal distributions.  The full details,
-justification and examples are published in Rohmer (2016)
-<doi:10.1016/j.spl.2016.06.026>.")
-    (license license:gpl3+)))
-
 (define-public r-npclust
   (package
     (name "r-npclust")
@@ -2820,6 +2798,38 @@ intervals.")
 circular data, including the estimation of the mean regression function and
 other conditional characteristics.")
     (license license:gpl2+)))
+
+(define-public r-npcdtools
+  (package
+    (name "r-npcdtools")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NPCDTools" version))
+       (sha256
+        (base32 "1m8npqn0a4662nmq5w7hxphwxp2jcrv90xzsx5y4sbdal5irnpqn"))))
+    (properties `((upstream-name . "NPCDTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-simdesign r-psych r-npcd r-gtools r-gdina))
+    (home-page "https://cran.r-project.org/package=NPCDTools")
+    (synopsis
+     "The Nonparametric Classification Methods for Cognitive Diagnosis")
+    (description
+     "Statistical tools for analyzing cognitive diagnosis (CD) data collected from
+small settings using the nonparametric classification (NPCD) framework.  The
+core methods of the NPCD framework includes the nonparametric classification
+(NPC) method developed by Chiu and Douglas (2013)
+<DOI:10.1007/s00357-013-9132-9> and the general NPC (GNPC) method developed by
+Chiu, Sun, and Bian (2018) <DOI:10.1007/s11336-017-9595-4> and Chiu and KÃ¶hn
+(2019) <DOI:10.1007/s11336-019-09660-x>.  An extension of the NPCD framework
+included in the package is the nonparametric method for multiple-choice items
+(MC-NPC) developed by Wang, Chiu, and Koehn (2023)
+<DOI:10.3102/10769986221133088>.  Functions associated with various extensions
+concerning the evaluation, validation, and feasibility of the CD analysis are
+also provided.  These topics include the completeness of Q-matrix, Q-matrix
+refinement method, as well as Q-matrix estimation.")
+    (license license:gpl3)))
 
 (define-public r-npcd
   (package
@@ -3347,13 +3357,13 @@ development.")
 (define-public r-not
   (package
     (name "r-not")
-    (version "1.5")
+    (version "1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "not" version))
        (sha256
-        (base32 "0g40500h2cwimzf7w3zqas924i4cvxddmqv0ysqrm4r7y2dpv48i"))))
+        (base32 "1cf3hnms3n3ipnsrbgjfjpqsixgwi9amcx2ws3ki8479b5wcxxng"))))
     (properties `((upstream-name . "not")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=not")
@@ -4288,13 +4298,13 @@ goodness of fit (GOF) plots, and simulate with parameter uncertainty.")
 (define-public r-nonlineartseries
   (package
     (name "r-nonlineartseries")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nonlinearTseries" version))
        (sha256
-        (base32 "1qzg5azydivxp04bs1s3m21bigacyrv6cak3cx7xpgq2w4fnb3br"))))
+        (base32 "1rvjklmja5ak2mkg5vp97pilghgxk789b8p1n1rcd69qv3nl1hlw"))))
     (properties `((upstream-name . "nonlinearTseries")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

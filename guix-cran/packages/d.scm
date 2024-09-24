@@ -14412,13 +14412,13 @@ and calculates electivity indices in R. Borstein (2020)
 (define-public r-diemr
   (package
     (name "r-diemr")
-    (version "1.4")
+    (version "1.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diemr" version))
        (sha256
-        (base32 "1s7ljcgrffb11cd0w2amrdyp75a8m9cv3g8zwizk2gll6p0yqpgg"))))
+        (base32 "1rrqqj8ks4n457nammnkrvwzic69m6a2d52ac4x29kx9bgp4qwqa"))))
     (properties `((upstream-name . "diemr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo r-vcfr))
@@ -22226,13 +22226,13 @@ Discrimination: Reduced Form and Structural Estimates.\".")
 (define-public r-dde
   (package
     (name "r-dde")
-    (version "1.0.5")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dde" version))
        (sha256
-        (base32 "1288zbhmh383b8z01yzblgs0lvq18vz4hzw63hjsaiaynqaj4hiw"))))
+        (base32 "1lvv4avajd14ph5kr7fhagigfjdyvx6077gaks9l24dwgqh6gpj2"))))
     (properties `((upstream-name . "dde")))
     (build-system r-build-system)
     (propagated-inputs (list r-ring))

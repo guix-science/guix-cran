@@ -12321,13 +12321,13 @@ psychometric quality standards (see Blum & Holling, 2018)
 (define-public r-imagine
   (package
     (name "r-imagine")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "imagine" version))
        (sha256
-        (base32 "0kf6fka9zplp8r9rdndd5n7hypf1lp8hbv2djswav1wp95knzqhg"))))
+        (base32 "0ifg21d4hp4zx64p3jhspb3rf3jyfifn61fibg0bwb635qvmdzd8"))))
     (properties `((upstream-name . "imagine")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -14634,13 +14634,13 @@ identity metrics\".")
 (define-public r-idmc
   (package
     (name "r-idmc")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "idmc" version))
        (sha256
-        (base32 "1z5v3r2ckcw7bwpbysd1pw3x7b9fw3clyhrw8p70g29kpnxwpy3k"))))
+        (base32 "0niffzlfm6437524hamhn95l011c8wm425nnabd5qs8zs9sgbniv"))))
     (properties `((upstream-name . "idmc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14655,8 +14655,9 @@ identity metrics\".")
     (synopsis "Load and Wrangle IDMC Displacement Data")
     (description
      "Utilities to work with data from the Internal Displacement Monitoring Centre
-(IDMC), with convenient functions for loading events data from the IDMC API and
-transforming events data to daily displacement estimates.")
+(IDMC) (<https://www.internal-displacement.org/>), with convenient functions for
+loading events data from the IDMC API and transforming events data to daily
+displacement estimates.")
     (license license:gpl3+)))
 
 (define-public r-idmact

@@ -336,13 +336,13 @@ documents via hypothes.is'.")
 (define-public r-hyporf
   (package
     (name "r-hyporf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hypoRF" version))
        (sha256
-        (base32 "1yyq1pjxm9p395wq4zfimvcagspl8vlk0kzpa92pr084q5f7jcyr"))))
+        (base32 "0876i9x2s0vzhki7sp5f62akvjkpksd88k09yd9iaczixvbiwisy"))))
     (properties `((upstream-name . "hypoRF")))
     (build-system r-build-system)
     (propagated-inputs (list r-ranger))
@@ -350,7 +350,7 @@ documents via hypothes.is'.")
     (synopsis "Random Forest Two-Sample Tests")
     (description
      "An implementation of Random Forest-based two-sample tests as introduced in
-Hediger & Michel & Naef (2020) <@code{arXiv:1903.06287>}.")
+Hediger & Michel & Naef (2022).")
     (license license:gpl3)))
 
 (define-public r-hypetools
@@ -5650,27 +5650,6 @@ Wolfgang Karl HÃ¤rdle, Sigbert Klinke, and Bernd RÃ¶nz (2015)
 <doi:10.1007/978-3-319-17704-5>.")
     (license license:gpl3)))
 
-(define-public r-hkprocess
-  (package
-    (name "r-hkprocess")
-    (version "0.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "HKprocess" version))
-       (sha256
-        (base32 "0kn84ccaypknxymynp6lnr8asd85rlzbk073z7511rriyz96hyj7"))))
-    (properties `((upstream-name . "HKprocess")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mcmcpack r-gtools))
-    (home-page "https://cran.r-project.org/package=HKprocess")
-    (synopsis "Hurst-Kolmogorov Process")
-    (description
-     "This package provides methods to make inference about the Hurst-Kolmogorov
-(fractional Gaussian noise, @code{fGn}) and the AR(1) process.  Related time
-series trend tests are also included.")
-    (license license:gpl3)))
-
 (define-public r-hkevp
   (package
     (name "r-hkevp")
@@ -8073,6 +8052,32 @@ of the artificial scripts in the (Under-)@code{ConScript} Unicode Registry
 loading in several of them at the same time as a bittermelon bitmap font object
 for easy rendering of the glyphs in an R terminal or graphics device.")
     (license license:gpl2+)))
+
+(define-public r-hexdensity
+  (package
+    (name "r-hexdensity")
+    (version "1.4.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hexDensity" version))
+       (sha256
+        (base32 "1z54w8a3skfias45il2clarskwzck4s98mf9k8iaa3fx36bqwbpk"))))
+    (properties `((upstream-name . "hexDensity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-geom r-hexbin))
+    (native-inputs (list gfortran))
+    (home-page "https://github.com/ChenLaboratory/hexDensity")
+    (synopsis "Fast Kernel Density Estimation with Hexagonal Grid")
+    (description
+     "Kernel density estimation with hexagonal grid for bivariate data.  Hexagonal
+grid has many beneficial properties like equidistant neighbours and less edge
+bias, making it better for spatial analyses than the more commonly used
+rectangular grid.  Carr, D. B. et al. (1987) <doi:10.2307/2289444>.  Diggle, P.
+J. (2010) <doi:10.1201/9781420072884>.  Hill, B. (2017)
+<https://blog.bruce-hill.com/meandering-triangles>.  Jones, M. C. (1993)
+<doi:10.1007/BF00147776>.")
+    (license (list license:gpl2+ license:gpl3+))))
 
 (define-public r-heuristicsminer
   (package
@@ -11901,13 +11906,13 @@ various computational models with a single line of coding (Ahn et al., 2017)
 (define-public r-hbamr
   (package
     (name "r-hbamr")
-    (version "2.3.1")
+    (version "2.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hbamr" version))
        (sha256
-        (base32 "1cch2l4dazny7p5hn16v0fp5mir10fy4qa8ibpgx3j2vi8w05c1x"))))
+        (base32 "1rl1sd46r1pk1mikczladgwszynr3p50ydbd6hl8ixczkvadgldm"))))
     (properties `((upstream-name . "hbamr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

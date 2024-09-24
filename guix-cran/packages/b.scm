@@ -4318,13 +4318,13 @@ Priyadarshana and Sofronov (2012b)).")
 (define-public r-breakfast
   (package
     (name "r-breakfast")
-    (version "2.4")
+    (version "2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "breakfast" version))
        (sha256
-        (base32 "0sxila1l2pk1z8lmskqppd8qm7wg08vvyyqxfyxcffvwhzqaf3rj"))))
+        (base32 "027q949qqyxlj58a4qpn6a2qcaqzawgzmck8ab1dnfgpyi0vkrpm"))))
     (properties `((upstream-name . "breakfast")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-plyr r-ggplot2))
@@ -7551,30 +7551,31 @@ statistics.")
 (define-public r-boiwsa
   (package
     (name "r-boiwsa")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "boiwsa" version))
        (sha256
-        (base32 "1xyxx6xf9az62zxczybl6iizswq7h4i55v4apll8kh0xh6nqlzr7"))))
+        (base32 "1ys3s4f2ydf5m1ab7y9yf1lvbjlarffn5cjcycq0yfis45gs8xqj"))))
     (properties `((upstream-name . "boiwsa")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rlang
                              r-lubridate
                              r-hmisc
+                             r-gridextra
                              r-ggplot2
                              r-dplyr))
     (home-page "https://github.com/timginker/boiwsa")
     (synopsis "Seasonal Adjustment of Weekly Data")
     (description
-     "Perform seasonal adjustment of weekly data.  The package offers a user-friendly
-interface for computing seasonally adjusted estimates of weekly data and also
-includes diagnostic tools to assess the quality of the adjustments.
-Furthermore, it incorporates tools uniquely tailored to the specific
-characteristics of Israeli data.  The method is described in more detail in
-Ginker (2023) <doi:10.13140/RG.2.2.12221.44000>.")
+     "Perform seasonal adjustment of weekly data.  The package provides a
+user-friendly interface for computing seasonally adjusted estimates of weekly
+data and includes functions for the creation of country-specific prior
+adjustment variables, as well as diagnostic tools to assess the quality of the
+adjustments.  The method is described in more detail in Ginker (2023)
+<doi:10.13140/RG.2.2.12221.44000>.")
     (license license:expat)))
 
 (define-public r-boinet
@@ -8177,13 +8178,13 @@ package is used to speed up the computation.")
 (define-public r-bnmonitor
   (package
     (name "r-bnmonitor")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnmonitor" version))
        (sha256
-        (base32 "0k6mrdglx55mqp4icdscr90gpskgc6lcvvwwxh8maaah5b9bixgc"))))
+        (base32 "081j10b6akgya5f1hpfg2ccnlc26igf6crmhv96asachs1c5662d"))))
     (properties `((upstream-name . "bnmonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -12144,34 +12145,6 @@ the A-learning and weight-learning methods, see Chen et al. (2017)
 <doi:10.1111/biom.12676>.")
     (license license:gpl3)))
 
-(define-public r-biopn
-  (package
-    (name "r-biopn")
-    (version "1.2.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bioPN" version))
-       (sha256
-        (base32 "0mvqgsfc7d4h6npgg728chyp5jcsf49xhnq8cgjxfzmdayr1fwr8"))))
-    (properties `((upstream-name . "bioPN")))
-    (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=bioPN")
-    (synopsis
-     "Simulation of deterministic and stochastic biochemical reaction networks using Petri Nets")
-    (description
-     "@code{bioPN} is a package suited to perform simulation of deterministic and
-stochastic systems of biochemical reaction networks.  Models are defined using a
-subset of Petri Nets, in a way that is close at how chemical reactions are
-defined.  For deterministic solutions, @code{bioPN} creates the associated
-system of differential equations \"on the fly\", and solves it with a Runge Kutta
-Dormand Prince 45 explicit algorithm.  For stochastic solutions, @code{bioPN}
-offers variants of Gillespie algorithm, or SSA. For hybrid
-deterministic/stochastic, it employs the Haseltine and Rawlings algorithm, that
-partitions the system in fast and slow reactions. @code{bioPN} algorithms are
-developed in C to achieve adequate performance.")
-    (license license:gpl2+)))
-
 (define-public r-biopixr
   (package
     (name "r-biopixr")
@@ -15224,13 +15197,13 @@ synchronicity'.")
 (define-public r-bigalgebra
   (package
     (name "r-bigalgebra")
-    (version "1.1.1")
+    (version "1.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigalgebra" version))
        (sha256
-        (base32 "07xzgddnqxn8l41p79qqsvvg4rj03qdqlr3jhfpnra6c82wlhspw"))))
+        (base32 "0zk0n3lxqrhxzwdm47yhvv8n0m30bp9b7bvany3gg7a6vrz43yqn"))))
     (properties `((upstream-name . "bigalgebra")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-bigmemory r-bh))
@@ -15936,34 +15909,6 @@ and Hamilton (2015) <doi:10.3982/ECTA12356>, Baumeister and Hamilton (2017)
 historical decompositions, and posterior distributions of model parameters are
 also provided.")
     (license license:gpl3+)))
-
-(define-public r-bhpm
-  (package
-    (name "r-bhpm")
-    (version "1.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bhpm" version))
-       (sha256
-        (base32 "0fhk2gmghibf7la864dzm19bm76525gzbj03vw0y0zwbv9shbpcp"))))
-    (properties `((upstream-name . "bhpm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-coda))
-    (home-page "https://cran.r-project.org/package=bhpm")
-    (synopsis
-     "Bayesian Hierarchical Poisson Models for Multiple Grouped Outcomes with Clustering")
-    (description
-     "Bayesian hierarchical methods for the detection of differences in rates of
-related outcomes for multiple treatments for clustered observations.
-Theoretical background for the models is given in Carragher (2017)
-<https://ethos.bl.uk/@code{OrderDetails.do?uin=uk.bl.ethos.736866>}.  The models
-in this package are extensions for multiple treatments and clusters.  This
-software was developed for the Precision Drug Theraputics: Risk Prediction in
-Pharmacoepidemiology project as part of a Rutherford Fund Fellowship at Health
-Data Research (UK), Medical Research Council (UK) award reference MR/S003967/1
-(<https://gtr.ukri.org/>).  Principal Investigator: Raymond Carragher.")
-    (license license:gpl2+)))
 
 (define-public r-bhmsmafmri
   (package
@@ -28247,17 +28192,16 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (define-public r-babelmixr2
   (package
     (name "r-babelmixr2")
-    (version "0.1.2")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "babelmixr2" version))
        (sha256
-        (base32 "0b6xa7hwx9h5n7z8xw4q7shwpzjf7kf9cfrsy68qvm8mhns0j9x1"))))
+        (base32 "1dkc6i7dcxqc5v7w8sn54zy582dhgl5nakzndvh25qylhkakp4bc"))))
     (properties `((upstream-name . "babelmixr2")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rxode2parse
-                             r-rxode2
+    (propagated-inputs (list r-rxode2
                              r-rex
                              r-rcppeigen
                              r-rcpparmadillo
@@ -28266,6 +28210,7 @@ Bayesian phylogenetics easily and reproducibly from R'.")
                              r-nonmem2rx
                              r-nlmixr2est
                              r-nlmixr2
+                             r-monolix2rx
                              r-lotri
                              r-digest
                              r-cli
@@ -28279,9 +28224,9 @@ Bayesian phylogenetics easily and reproducibly from R'.")
 (2019) <doi:10.1002/psp4.12445>) interface including PKNCA', NONMEM and
 Monolix'.  While not required, you can get/install the @code{lixoftConnectors}
 package in the Monolix installation, as described at the following url
-<https://monolix.lixoft.com/monolix-api/lixoftconnectors_installation/>.  When
-@code{lixoftConnectors} is available, Monolix can be run directly instead of
-setting up command line usage.")
+<https://monolixsuite.slp-software.com/r-functions/2024R1/installation-and-initialization>.
+ When @code{lixoftConnectors} is available, Monolix can be run directly instead
+of setting up command line usage.")
     (license license:gpl3+)))
 
 (define-public r-babel

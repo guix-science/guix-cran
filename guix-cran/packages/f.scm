@@ -12591,13 +12591,13 @@ a backbone the phylogenetic tree proposed by Rabosky et al. (2018)
 (define-public r-fishmod
   (package
     (name "r-fishmod")
-    (version "0.29")
+    (version "0.29.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishMod" version))
        (sha256
-        (base32 "0pbs4z27vwa3c42xdw3mr6l2i581bgvn2pk52kawbcnnlsff92ar"))))
+        (base32 "020fqfg93m8aizfa7aibhmsfj77lpklccfql5z808mwgs41nblgk"))))
     (properties `((upstream-name . "fishMod")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fishMod")
@@ -20948,13 +20948,13 @@ implementation is described in Egeland, Mostad and Olaisen (1997)
 (define-public r-familiar
   (package
     (name "r-familiar")
-    (version "1.4.8")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "familiar" version))
        (sha256
-        (base32 "1rlnp027r02d7hr2ppal6ljnbkp6xbw86gm2wfp2gsjmckrf7lp7"))))
+        (base32 "1r1dbwv2k15w1rs8n26x11mfw8nr23f2sdjvinxdi90wpcxg77fj"))))
     (properties `((upstream-name . "familiar")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-rstream r-rlang r-data-table))

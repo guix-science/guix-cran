@@ -593,13 +593,13 @@ Hejblum, Weber, Palmer, Churchill, Szolovits, Murphy, Liao, Kohane & Cai (2021)
 (define-public r-lucidus
   (package
     (name "r-lucidus")
-    (version "3.0.2")
+    (version "3.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LUCIDus" version))
        (sha256
-        (base32 "0wy35s0cnnx04ic8gpf4ikm4mpxm72x4k3hrp2h6gz8fmb6iw1qm"))))
+        (base32 "1gxhad64hwyfq2ff21mphlbawclxap684717x4jg5bnnbphihi4d"))))
     (properties `((upstream-name . "LUCIDus")))
     (build-system r-build-system)
     (propagated-inputs (list r-progress
@@ -624,7 +624,8 @@ integration).  Automated model selection for each LUCID model is available to
 obtain the optimal number of latent clusters, and an integrated imputation
 approach is implemented to handle sporadic and list-wise missingness in
 multi-omics data.  Lasso-type regularity for exposure and omics features were
-added.  S3 methods for summary and plotting functions were fixed.")
+added.  S3 methods for summary and plotting functions were fixed.  Fixed minor
+bugs.")
     (license license:expat)))
 
 (define-public r-lucid
@@ -4949,13 +4950,13 @@ binary outcome.  Wolf, B.J., Slate, E.H., Hill, E.G. (2010)
 (define-public r-logicdt
   (package
     (name "r-logicdt")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "logicDT" version))
        (sha256
-        (base32 "0i60wqhhmscwhbcyril4n2g1hxja5w225s4vvnk778kd7s1ig6g2"))))
+        (base32 "1ghs7qp1sjsxrj1a96vb1h7bxrvy208i9dqjy9fb6gj101ssjvj9"))))
     (properties `((upstream-name . "logicDT")))
     (build-system r-build-system)
     (propagated-inputs (list r-glmnet))
@@ -16040,13 +16041,13 @@ time series from given drift and diffusion coefficients.")
 (define-public r-landsepi
   (package
     (name "r-landsepi")
-    (version "1.5.0")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "landsepi" version))
        (sha256
-        (base32 "1p194nqfpc50sspj75s63mzhjxpgx9v4mcnpkxz6sxhpf1lslpvx"))))
+        (base32 "1n0ymmycgpfmv7drlazkws7vyw868lwkdyw2gfsb7fl615qwg6j3"))))
     (properties `((upstream-name . "landsepi")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -16079,32 +16080,6 @@ economic outcomes.  Loup Rimbaud, Julien PapaÃ¯x, Jean-FranÃ§ois Rey, Luke G
 Barrett, Peter H Thrall (2018) <doi:10.1371/journal.pcbi.1006067>.")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-landscapetools
-  (package
-    (name "r-landscapetools")
-    (version "0.5.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "landscapetools" version))
-       (sha256
-        (base32 "11zp6r414nkj8vhsbryzhkxmpal2bva8msaxf1v69xax70ilxyf1"))))
-    (properties `((upstream-name . "landscapetools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble r-rcpp r-raster r-ggplot2))
-    (native-inputs (list r-knitr))
-    (home-page "https://ropensci.github.io/landscapetools/")
-    (synopsis "Landscape Utility Toolbox")
-    (description
-     "This package provides utility functions for some of the less-glamorous tasks
-involved in landscape analysis.  It includes functions to coerce raster data to
-the common tibble format and vice versa, it helps with flexible reclassification
-tasks of raster data and it provides a function to merge multiple raster.
-Furthermore, landscapetools helps landscape scientists to visualize their data
-by providing optional themes and utility functions to plot single landscapes,
-rasterstacks, -bricks and lists of raster.")
-    (license license:gpl3)))
 
 (define-public r-landscaper
   (package

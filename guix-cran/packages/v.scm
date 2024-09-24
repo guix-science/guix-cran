@@ -2889,18 +2889,19 @@ glm', coxph', rlm', gam', locfit', lmer', @code{randomForest}', etc.).")
 (define-public r-visomopresults
   (package
     (name "r-visomopresults")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "visOmopResults" version))
        (sha256
-        (base32 "1lfvihny8r8x0qhzlqhq3wysijypkqz3mgd70j9cy71m5hhypx6z"))))
+        (base32 "15b6dbh6nbzwn4x7w28kyhn9l26ncrhp07bn73sff3p1n29ir9bl"))))
     (properties `((upstream-name . "visOmopResults")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-stringr
                              r-rlang
+                             r-purrr
                              r-omopgenerics
                              r-lifecycle
                              r-glue
@@ -5491,13 +5492,13 @@ the items) tools functionality.")
 (define-public r-vecctmvn
   (package
     (name "r-vecctmvn")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "VeccTMVN" version))
        (sha256
-        (base32 "0yv324h14gmdllapfr17h2jkixrpzwdgjq002xm0gjpwqhg3qd0p"))))
+        (base32 "0dicks108vxg40q9l8c63nb2ckahr2l1vvr3ik9gg7m0094m1fha"))))
     (properties `((upstream-name . "VeccTMVN")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm

@@ -14236,13 +14236,13 @@ multivariate seasonal time series models.")
 (define-public r-portalr
   (package
     (name "r-portalr")
-    (version "0.4.2")
+    (version "0.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "portalr" version))
        (sha256
-        (base32 "17djwiid9mp16ch7yyyqpg7ixm61wqhgb1h4k8gqnyh399wjkazc"))))
+        (base32 "1n6p1ighh5m209snfsy7fr71mz7bg9lyg4lnscaczaq9x91sjk9d"))))
     (properties `((upstream-name . "portalr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

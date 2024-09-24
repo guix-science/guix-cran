@@ -977,30 +977,6 @@ calculating conditional and unconditional expectations, and calculating marginal
 effects on conditional and unconditional expectations.")
     (license license:gpl2+)))
 
-(define-public r-mvpot
-  (package
-    (name "r-mvpot")
-    (version "0.1.6")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "mvPot" version))
-       (sha256
-        (base32 "18cx02wg6nkgmh2ba2gp37z838xr70w354wbkfgl5jnyirl5g9xz"))))
-    (properties `((upstream-name . "mvPot")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-numbers r-mass r-gmp r-evd))
-    (home-page "https://github.com/r-fndv/mvPot")
-    (synopsis
-     "Multivariate Peaks-over-Threshold Modelling for Spatial Extreme Events")
-    (description
-     "This package provides tools for high-dimensional peaks-over-threshold inference
-and simulation of spatial extremal processes.  Key references include de
-Fondeville and Davison (2018) <doi:10.1093/biomet/asy026>, Thibaud and Opitz
-(2015) <doi:10.1093/biomet/asv045>, Wadsworth and Tawn
-<doi:10.1093/biomet/ast042>.")
-    (license license:gpl2)))
-
 (define-public r-mvpd
   (package
     (name "r-mvpd")
@@ -8117,13 +8093,13 @@ Graphics''.")
 (define-public r-msetool
   (package
     (name "r-msetool")
-    (version "3.7.1")
+    (version "3.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MSEtool" version))
        (sha256
-        (base32 "16m8q5h9ciydlg6gqpvwaxam2q7d327v7z40h7cwc0chh43wjysz"))))
+        (base32 "1k3df2xpzm41dsqxpvdki5hmar1azz24zfhkl9nlrr2jbb8p8pjr"))))
     (properties `((upstream-name . "MSEtool")))
     (build-system r-build-system)
     (propagated-inputs (list r-snowfall
@@ -8134,7 +8110,7 @@ Graphics''.")
                              r-ggplot2
                              r-dplyr
                              r-abind))
-    (home-page "https://cran.r-project.org/package=MSEtool")
+    (home-page "https://msetool.openmse.com/")
     (synopsis "Management Strategy Evaluation Toolkit")
     (description
      "Development, simulation testing, and implementation of management procedures for
@@ -12858,13 +12834,13 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
 (define-public r-monomvn
   (package
     (name "r-monomvn")
-    (version "1.9-20")
+    (version "1.9-21")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "monomvn" version))
        (sha256
-        (base32 "0if2b13yak9x0sfcwghhih901hk8n762w59r53k0949vf5f336yd"))))
+        (base32 "1wjbxd0zzfpjlqin4f69f3vzjksjyafr3mbyi3hjkh64pv3kpgph"))))
     (properties `((upstream-name . "monomvn")))
     (build-system r-build-system)
     (propagated-inputs (list r-quadprog r-pls r-mvtnorm r-mass r-lars))
@@ -12875,7 +12851,7 @@ package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
     (description
      "Estimation of multivariate normal (MVN) and student-t data of arbitrary
 dimension where the pattern of missing data is monotone.  See Pantaleo and
-Gramacy (2010) <@code{arXiv:0907.2135>}.  Through the use of
+Gramacy (2010) <doi:10.48550/@code{arXiv.0907.2135>}.  Through the use of
 parsimonious/shrinkage regressions (plsr, pcr, lasso, ridge, etc.), where
 standard regressions fail, the package can handle a nearly arbitrary amount of
 missing data.  The current version supports maximum likelihood inference and a
@@ -14030,20 +14006,19 @@ instance on pokemon, world of warcraft, house tasks or food nutrition analyses."
 (define-public r-modsem
   (package
     (name "r-modsem")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "modsem" version))
        (sha256
-        (base32 "1qab2lqj6p3lkfnyf72a2sk18lclnlisl3ky59998nylx3raanan"))))
+        (base32 "1fh0nw5vckfpl3s6jjl87dc6yidv97x8q6l29qz3avlkgjhd1j6a"))))
     (properties `((upstream-name . "modsem")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-rlang
                              r-rcpparmadillo
                              r-rcpp
-                             r-r6
                              r-purrr
                              r-nlme
                              r-mvtnorm
@@ -16384,19 +16359,20 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.12")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "0bgvh7bjijsfv6rb8syhmiqd600pdc3kg9z1dx2iskghxjwiww93"))))
+        (base32 "1pwg251r3fviqhqnjscj5np0p00v57v1f2ac6lhm37n5a56z27m9"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-tibble
                              r-testthat
                              r-stringr
+                             r-rlang
                              r-rdpack
                              r-rcppeigen
                              r-rcpp
@@ -17810,13 +17786,13 @@ mlt.")
 (define-public r-mlt
   (package
     (name "r-mlt")
-    (version "1.5-2")
+    (version "1.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlt" version))
        (sha256
-        (base32 "1bgq5g05b4va4772y974blm9chr0qyax56wgfcig7c28va35zs8g"))))
+        (base32 "0d0ca5ap0lh69fgqri9cjlw52ca9z582bvmq843fi686cplrkv9w"))))
     (properties `((upstream-name . "mlt")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -17824,6 +17800,7 @@ mlt.")
                              r-sandwich
                              r-numderiv
                              r-nloptr
+                             r-mvtnorm
                              r-matrix
                              r-coneproj
                              r-bb
@@ -17834,7 +17811,10 @@ mlt.")
     (description
      "Likelihood-based estimation of conditional transformation models via the most
 likely transformation approach described in Hothorn et al. (2018)
-<DOI:10.1111/sjos.12291> and Hothorn (2020) <DOI:10.18637/jss.v092.i01>.")
+<DOI:10.1111/sjos.12291> and Hothorn (2020) <DOI:10.18637/jss.v092.i01>.
+Shift-scale (Siegfried et al, 2023, <DOI:10.1080/00031305.2023.2203177>) and
+multivariate (Klein et al, 2022, <DOI:10.1111/sjos.12501>) transformation models
+are part of this package.")
     (license license:gpl2)))
 
 (define-public r-mlsurvlrnrs
@@ -19893,13 +19873,13 @@ designs.")
 (define-public r-mkpower
   (package
     (name "r-mkpower")
-    (version "0.9")
+    (version "1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MKpower" version))
        (sha256
-        (base32 "1q04cs2qrjivyiig8nz3s8fl9b4g0smj390vb8jy67p9rq4nhjjz"))))
+        (base32 "1bsagc422wkbx5sy5azx167xmrv3h0jlb8yg8vxibrjb8hv3wcvd"))))
     (properties `((upstream-name . "MKpower")))
     (build-system r-build-system)
     (propagated-inputs (list r-qqplotr
@@ -19925,8 +19905,9 @@ et al. (2003), ISBN:978-0-471-52629-2; Piegorsch (2004),
 comparing two negative binomial rates (Zhu and Lakkis (2014),
 <doi:10.1002/sim.5947>), ANCOVA (Shieh (2020),
 <doi:10.1007/s11336-019-09692-3>), reference ranges (Jennen-Steinmetz and Wellek
-(2005), <doi:10.1002/sim.2177>), and multiple primary endpoints (Sozu et al.
-(2015), ISBN:978-3-319-22005-5).")
+(2005), <doi:10.1002/sim.2177>), multiple primary endpoints (Sozu et al. (2015),
+ISBN:978-3-319-22005-5), and AUC (Hanley and @code{McNeil} (1982),
+<doi:10.1148/radiology.143.1.7063747>).")
     (license license:lgpl3)))
 
 (define-public r-mkomics
@@ -22493,13 +22474,13 @@ mechanism as described in Marbach (2021) <@code{arXiv:2107.05427>}.")
 (define-public r-missdeaths
   (package
     (name "r-missdeaths")
-    (version "2.7")
+    (version "2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "missDeaths" version))
        (sha256
-        (base32 "1c8vbc7r1g4dkngmal6iqg7piw656h1vc6cmpkv16vjn4j0w2n2c"))))
+        (base32 "1qwrzb5nhbigyg7ivhsh3yqhrp0qaq3abgfffy808fry5rkz6sj6"))))
     (properties `((upstream-name . "missDeaths")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -35549,13 +35530,13 @@ relevant plots are constructed by ggplot2'.")
 (define-public r-mcr
   (package
     (name "r-mcr")
-    (version "1.3.3")
+    (version "1.3.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mcr" version))
        (sha256
-        (base32 "1blaswdd1754fg6xdznkqq1igj6i6x8r3r9vdn3jpfq41qba5d40"))))
+        (base32 "0gbpnbs8mgqpyiayddcaf1xwh908gk1n375bqpnvfppyj0wz3yr9"))))
     (properties `((upstream-name . "mcr")))
     (build-system r-build-system)
     (propagated-inputs (list r-robslopes))
@@ -37902,13 +37883,13 @@ variables measured on the same individuals.")
 (define-public r-mba
   (package
     (name "r-mba")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MBA" version))
        (sha256
-        (base32 "16yyjwnl78j6an8jqsxj9pq0d31plzhm0fifmgd6s2bzyhbfqbx2"))))
+        (base32 "14jfy9wqm4k2ljn2rz4lm1zzzkjm7nn4g92lrb1a7gm7gysa3dd5"))))
     (properties `((upstream-name . "MBA")))
     (build-system r-build-system)
     (propagated-inputs (list r-bh))
@@ -38478,6 +38459,31 @@ by information criteria, such as AICc (Akaike, 1974
 characteristic (AUC) (Fielding and Bell, 1997 <DOI:10.1017/S0376892997000088>).
 Users of this package should be familiar with Maxent niche modelling.")
     (license license:gpl2+)))
+
+(define-public r-maxent-ot
+  (package
+    (name "r-maxent-ot")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "maxent.ot" version))
+       (sha256
+        (base32 "1pqbrc1x98hf363rmlfyxlbdxq67p05nz6v3b5rkalym9hrzfybg"))))
+    (properties `((upstream-name . "maxent.ot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/connormayer/maxent.ot")
+    (synopsis
+     "Perform Phonological Analyses using Maximum Entropy Optimality Theory")
+    (description
+     "Fit Maximum Entropy Optimality Theory models to data sets, generate the
+predictions made by such models for novel data, and compare the fit of different
+models using a variety of metrics.  The package is described in Mayer, C., Tan,
+A., Zuraw, K. (in press)
+<https://sites.socsci.uci.edu/~cjmayer/papers/cmayer_et_al_maxent_ot_accepted.pdf>.")
+    (license license:gpl3+)))
 
 (define-public r-maxcombo
   (package
@@ -42899,13 +42905,13 @@ samples.  Refer to Tu et al. (2021) <doi:10.1101/gr.262675.120> and Chen et al.
 (define-public r-manlymix
   (package
     (name "r-manlymix")
-    (version "0.1.15")
+    (version "0.1.15.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ManlyMix" version))
        (sha256
-        (base32 "10knb2gzzsq5dkm7h70qvcw2cx7m7ra00vlkqbs36y6vw2gcjwmn"))))
+        (base32 "1f39y2xq9vn060v4myynwsrxx9f40vn4kq16jzn76lj99shvcvkg"))))
     (properties `((upstream-name . "ManlyMix")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ManlyMix")
@@ -44523,23 +44529,25 @@ sensitivity analyses, scenario analyses, etc.")
 (define-public r-maestro
   (package
     (name "r-maestro")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "maestro" version))
        (sha256
-        (base32 "1n3jnrqdg8m1q3hvjqqnbzi10sa2jdw0xjg70hfcsj66q60wnmn9"))))
+        (base32 "1z5x5gnkynl51116na8lzqqqwniskqpsdds5dy0mwh1qndi5j3c2"))))
     (properties `((upstream-name . "maestro")))
     (build-system r-build-system)
     (propagated-inputs (list r-timechange
                              r-tictoc
                              r-roxygen2
                              r-rlang
+                             r-r6
                              r-r-utils
                              r-purrr
                              r-lubridate
                              r-logger
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-cli))

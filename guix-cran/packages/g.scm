@@ -7446,6 +7446,34 @@ barrier to use the API inside of your development environment.  For more on the
 API, see <https://platform.openai.com/docs/introduction>.")
     (license license:expat)))
 
+(define-public r-gptreeo
+  (package
+    (name "r-gptreeo")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPTreeO" version))
+       (sha256
+        (base32 "0nwvylx9sazc4dv1mca1lfkz482f2vn591ajafwip61mkjkf6mac"))))
+    (properties `((upstream-name . "GPTreeO")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-r6 r-mlegp r-hash r-dicekriging))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=GPTreeO")
+    (synopsis
+     "Dividing Local Gaussian Processes for Online Learning Regression")
+    (description
+     "We implement and extend the Dividing Local Gaussian Process algorithm by Lederer
+et al. (2020) <doi:10.48550/@code{arXiv.2006.09446>}.  Its main use case is in
+online learning where it is used to train a network of local GPs (referred to as
+tree) by cleverly partitioning the input space.  In contrast to a single GP,
+GP@code{TreeO} is able to deal with larger amounts of data.  The package
+includes methods to create the tree and set its parameter, incorporating data
+points from a data stream as well as making joint predictions based on all
+relevant local GPs.")
+    (license license:expat)))
+
 (define-public r-gptr
   (package
     (name "r-gptr")
@@ -8111,6 +8139,29 @@ described by Md Aktar Ul Karim and Amiya Ranjan Bhowmick (2022) in
 application is also available at [GPEMR Web
 App](<https://gpem-r.shinyapps.io/GPEM-R/>).")
     (license license:expat)))
+
+(define-public r-gpcsign
+  (package
+    (name "r-gpcsign")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GPCsign" version))
+       (sha256
+        (base32 "0qijvdk6l8gjmikvq8bgglj5kp83b1qv7d860hrd2kw22s0gv0l7"))))
+    (properties `((upstream-name . "GPCsign")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncatednormal r-tmvtnorm r-future-apply
+                             r-future r-dicekriging))
+    (home-page "https://cran.r-project.org/package=GPCsign")
+    (synopsis
+     "Gaussian Process Classification as Described in Bachoc et al. (2020)")
+    (description
+     "Parameter estimation and prediction of Gaussian Process Classifier models as
+described in Bachoc et al. (2020) <doi:10.1007/S10898-020-00920-0>.  Important
+functions : gpcm(), predict.gpcm(), update.gpcm().")
+    (license license:gpl3)))
 
 (define-public r-gpcmlasso
   (package
@@ -13131,28 +13182,6 @@ can easily specify their own sub-models, or re-parameterizations, and obtain the
 maximum-likelihood estimates and confidence intervals of their own custom
 models.")
     (license license:gpl3)))
-
-(define-public r-glide
-  (package
-    (name "r-glide")
-    (version "1.0.5")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "GLIDE" version))
-       (sha256
-        (base32 "01164gh0j4g0hambiq92bxrd3j3z2psg19faj32mvhmn4c3k2m8i"))))
-    (properties `((upstream-name . "GLIDE")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-mass r-foreach r-doparallel))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=GLIDE")
-    (synopsis "Global and Individual Tests for Direct Effects")
-    (description
-     "Global and individual tests for pleiotropy and direct effects in Mendelian
-randomization studies.  Refer to J. Y. Dai, U. Peters, X. Wang, J. Kocarnik et
-al.  AJE (2018) <doi:10.1093/aje/kwy177>.")
-    (license license:gpl2+)))
 
 (define-public r-gldrm
   (package
@@ -18331,13 +18360,13 @@ operate; 4.  Optimization of clustering tree visualization.")
 (define-public r-gghdx
   (package
     (name "r-gghdx")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gghdx" version))
        (sha256
-        (base32 "01y0c9mlk1c25r5v0kjyhmsgb77qaq4ykg8hhjr1kn1w5gfylnbk"))))
+        (base32 "0lsa84afs31jch7wgamsg721wyac64qm5wxk12iiwkyxcmlv7234"))))
     (properties `((upstream-name . "gghdx")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -26500,13 +26529,13 @@ variance estimators for improving the finite small-sample performance.")
 (define-public r-geepack
   (package
     (name "r-geepack")
-    (version "1.3.11.1")
+    (version "1.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geepack" version))
        (sha256
-        (base32 "11jkg00sx89glrgwmng6rkbfc7h3nwr4hny26rhcr9wdkqk6q352"))))
+        (base32 "0k856hw7zh553yrqp9g3s19hjviadh36drg2vvaddv2ma5ayj6z0"))))
     (properties `((upstream-name . "geepack")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-magrittr r-broom))
@@ -26897,13 +26926,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "0a8901bhypfydc70x7b6qxh5j9c8dj0w91qd46vnrjvvw7iwj7i4"))))
+        (base32 "04lgn2bxhgpw5nfmfy95fn6m313ad60iv2z2iav9irg64s9xy0s1"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29695,13 +29724,13 @@ follows lineal regression structures.")
 (define-public r-gamma
   (package
     (name "r-gamma")
-    (version "1.0.5")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamma" version))
        (sha256
-        (base32 "1n4jd0xvn6ld5adhhanqxhl7nndj4cqf17jp18s6jmrx7jbc3k5f"))))
+        (base32 "0wsxy97kdfmlvrflp9l3fqn5ckdraxb7lbjpq1znqgj304g0j45n"))))
     (properties `((upstream-name . "gamma")))
     (build-system r-build-system)
     (propagated-inputs (list r-rxylib r-rlang r-isoplotr r-ggplot2))
@@ -29711,10 +29740,10 @@ follows lineal regression structures.")
      "Dose Rate Estimation from in-Situ Gamma-Ray Spectrometry Measurements")
     (description
      "Process in-situ Gamma-Ray Spectrometry for Luminescence Dating.  This package
-allows to import, inspect and correct the energy shifts of Gamma-ray spectra.
+allows to import, inspect and correct the energy shifts of gamma-ray spectra.
 It provides methods for estimating the gamma dose rate by the use of a
 calibration curve as described in Mercier and FalguÃ¨res (2007).  The package
-only supports Canberra CNF and TKA files.")
+only supports Canberra CNF and TKA and Kromek SPE files.")
     (license license:gpl3)))
 
 (define-public r-gamlssx
