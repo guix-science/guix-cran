@@ -3491,15 +3491,16 @@ stratified sample of 80 talkers of Dutch.")
 (define-public r-hqm
   (package
     (name "r-hqm")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "HQM" version))
        (sha256
-        (base32 "1q959qdakwzf07zbyxkvrslyc4kgd47g4wij2fgm7l4w3xm34lwz"))))
+        (base32 "1qrga27vpcvmc7pdkvpgqab133fqk3nnwiahr08chhzpdrm4rr40"))))
     (properties `((upstream-name . "HQM")))
     (build-system r-build-system)
+    (propagated-inputs (list r-survival))
     (home-page "https://cran.r-project.org/package=HQM")
     (synopsis
      "Superefficient Estimation of Future Conditional Hazards Based on Marker Information")

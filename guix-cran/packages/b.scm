@@ -6578,13 +6578,13 @@ Prediction Intervals for Autoregressive Time Series.")
 (define-public r-bootpls
   (package
     (name "r-bootpls")
-    (version "0.9.9")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bootPLS" version))
        (sha256
-        (base32 "1i0bzykwjimyswb0z23sqbhm98b9lxifnkby682khva7yfk7k8qr"))))
+        (base32 "1sk7327fwqhy9arxn2shlxhflg4i99864wqs782jh325z18nqxwb"))))
     (properties `((upstream-name . "bootPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-spls
@@ -6608,7 +6608,8 @@ that were published in a book chapter (Magnanensi et al.  2016, The Multiple
 Facets of Partial Least Squares and Related Methods',
 <doi:10.1007/978-3-319-40643-5_18>) and two articles (Magnanensi et al.  2017,
 Statistics and Computing', <doi:10.1007/s11222-016-9651-4>) and (Magnanensi et
-al.  2021, Frontiers in Applied Mathematics and Statistics', accepted.).")
+al.  2021, Frontiers in Applied Mathematics and Statistics',
+<doi:10.3389/fams.2021.693126>).")
     (license license:gpl3)))
 
 (define-public r-bootnet
@@ -17336,13 +17337,13 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
 (define-public r-betaclust
   (package
     (name "r-betaclust")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "betaclust" version))
        (sha256
-        (base32 "1w76c7yxgnc98p6lwh5mxrrgv1kk5dgjgp12g0vs25l4fb7advqp"))))
+        (base32 "1kw8ri4244z7ckn4gizz0zbqzwx7dypv6qb974lmj6dzzyjp6922"))))
     (properties `((upstream-name . "betaclust")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales
@@ -17357,9 +17358,9 @@ package and code examples are presented in Pesigan, Sun, and Cheung (2023)
      "Family of Beta Mixture Models for Clustering Beta-Valued DNA Methylation Data")
     (description
      "This package provides a family of novel beta mixture models (BMMs) has been
-developed by Majumdar et al. (2022) <@code{arXiv:2211.01938v1>} to appositely
-model the beta-valued cytosine-guanine dinucleotide (@code{CpG}) sites, to
-objectively identify methylation state thresholds and to identify the
+developed by Majumdar et al. (2022) <doi:10.48550/@code{arXiv.2211.01938>} to
+appositely model the beta-valued cytosine-guanine dinucleotide (@code{CpG})
+sites, to objectively identify methylation state thresholds and to identify the
 differentially methylated @code{CpG} (DMC) sites using a model-based clustering
 approach.  The family of beta mixture models employs different parameter
 constraints applicable to different study settings.  The EM algorithm is used

@@ -17446,6 +17446,30 @@ examples is available on the Webpage
     (description "Automatically suggests a correction when a typo occurs.")
     (license license:gpl3)))
 
+(define-public r-fctutils
+  (package
+    (name "r-fctutils")
+    (version "0.0.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fctutils" version))
+       (sha256
+        (base32 "02zwnn1k2zp2k8x6vc3jwfq91f5szkmf4c4rqsny1xclmr4n7k5b"))))
+    (properties `((upstream-name . "fctutils")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-stringdist))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fctutils")
+    (synopsis "Advanced Factor Manipulation Utilities")
+    (description
+     "This package provides a collection of utility functions for manipulating and
+analyzing factor vectors in R. It offers tools for filtering, splitting,
+combining, and reordering factor levels based on various criteria.  The package
+is designed to simplify common tasks in categorical data analysis, making it
+easier to work with factors in a flexible and efficient manner.")
+    (license license:gpl3)))
+
 (define-public r-fctbases
   (package
     (name "r-fctbases")
@@ -22672,13 +22696,13 @@ components (remainder, level, trend and seasonal).")
 (define-public r-fable
   (package
     (name "r-fable")
-    (version "0.3.4")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fable" version))
        (sha256
-        (base32 "0bzw9c68dpx048ihff9sy40d7aiqdqrspfrfyj9pd1pj3brn3blv"))))
+        (base32 "0dlxvfyxvphbzlr4w2kfqk2icb15p415ld9p7lpws25yv4p7gnhd"))))
     (properties `((upstream-name . "fable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tsibble

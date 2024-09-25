@@ -8895,13 +8895,13 @@ sampling and characterizing price data.")
 (define-public r-priceindices
   (package
     (name "r-priceindices")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PriceIndices" version))
        (sha256
-        (base32 "01r2pcq26kbz861gw2dg2crvc1dla8h7aknz7ym9ndk10v3gyl6r"))))
+        (base32 "1k55brhkmcx5xc2sw3yllcm67a7x8kaldy5wm73i78vk09lp1s2p"))))
     (properties `((upstream-name . "PriceIndices")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -21267,16 +21267,17 @@ Cowan-Farquhar optimization, humidity unit conversions.  See Duursma (2015)
 (define-public r-planscorer
   (package
     (name "r-planscorer")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "planscorer" version))
        (sha256
-        (base32 "0jyjbi36bn6biw6h99w6s8zx7wllx5argfhhx8lqq5wmh9vb8vl1"))))
+        (base32 "1dhhdzbkjchfkdg7ylda6hi7zsc0g9i5fc66mccg6a8vcf4nk3p6"))))
     (properties `((upstream-name . "planscorer")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-webshot2
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-sf
@@ -32724,13 +32725,13 @@ original dataset.")
 (define-public r-pcadapt
   (package
     (name "r-pcadapt")
-    (version "4.3.5")
+    (version "4.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcadapt" version))
        (sha256
-        (base32 "106h6xvqixi1lgrx1280f7jmdyc5k6da6j9vy49iq2gyma6v2q9v"))))
+        (base32 "1b5sk6dy51465n96qyycy1i1lkiky7lwxycdmynv66xrkyyn3gas"))))
     (properties `((upstream-name . "pcadapt")))
     (build-system r-build-system)
     (propagated-inputs (list r-rspectra
@@ -33497,15 +33498,16 @@ image segmentation.")
 (define-public r-patterncausality
   (package
     (name "r-patterncausality")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "patterncausality" version))
        (sha256
-        (base32 "1drsg9yxqki867slnlw54rvxsalk1fxyqlpxyn76a2f8msdqmnza"))))
+        (base32 "01k4sg4vab8263vxyx7bc1phv1lj2x85wqw7nrpv4mzcq0pywr9d"))))
     (properties `((upstream-name . "patterncausality")))
     (build-system r-build-system)
+    (propagated-inputs (list r-plot3d r-corrplot))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/skstavroglou/pattern_causality/")
     (synopsis "Pattern Causality Algorithm")
@@ -35854,13 +35856,13 @@ automation with delayed execution (e.g. for executing functions in parallel).")
 (define-public r-parafac4microbiome
   (package
     (name "r-parafac4microbiome")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "parafac4microbiome" version))
        (sha256
-        (base32 "1gma8y87ck66kd723ndjpvwp2s0nd6k6l6cjxd4jlz15d2g9lf8q"))))
+        (base32 "1l60qpx5k6h7ba6g4crl5f3gclyrmn5xlvpp2jg0hbqav5qn4418"))))
     (properties `((upstream-name . "parafac4microbiome")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -37270,6 +37272,30 @@ translate simulated ancestor-descendant data from @code{simFossilRecord} into
 standard time-scaled phylogenies or unscaled cladograms that reflect the
 relationships among taxon units.")
     (license license:cc0)))
+
+(define-public r-paleopop
+  (package
+    (name "r-paleopop")
+    (version "2.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "paleopop" version))
+       (sha256
+        (base32 "0cxwx159krfdhf1ifdaidhsqq27y6ladmi1s70cw27aipmylrlrn"))))
+    (properties `((upstream-name . "paleopop")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-trend r-sf r-r6 r-poems))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/GlobalEcologyLab/paleopop/")
+    (synopsis
+     "Pattern-Oriented Modeling Framework for Coupled Niche-Population Paleo-Climatic Models")
+    (description
+     "This extension of the poems pattern-oriented modeling (POM) framework provides a
+collection of modules and functions customized for paleontological time-scales,
+and optimized for single-generation transitions and large populations, across
+multiple generations.")
+    (license license:gpl3+)))
 
 (define-public r-paleomorph
   (package

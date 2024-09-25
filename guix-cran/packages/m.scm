@@ -708,13 +708,13 @@ Estrada (2009) <DOI: 10.1080/03610920802474465>.")
 (define-public r-mvt
   (package
     (name "r-mvt")
-    (version "0.3-8")
+    (version "0.3-81")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MVT" version))
        (sha256
-        (base32 "0j3xjxrjy72dcdphlwdzfpnmxx0vs3f0jnk3w4vkp7rx01c1wbd3"))))
+        (base32 "0g4h0r17sn5xmdkln4sllwmqp1r5wc8y6idfilbz7zp9bz6i53zj"))))
     (properties `((upstream-name . "MVT")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
@@ -6183,13 +6183,13 @@ are also several sample data sets.")
 (define-public r-mulea
   (package
     (name "r-mulea")
-    (version "1.0.1")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mulea" version))
        (sha256
-        (base32 "0mgwhf24raycj01cyw835a843pgfi7nkhzjj73ln3xhkk42np3km"))))
+        (base32 "012g9pjfhzwfcswkjs5wmxdhv72zkxhigsggp95h93vsj4p26xw1"))))
     (properties `((upstream-name . "mulea")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyverse
@@ -6210,27 +6210,33 @@ are also several sample data sets.")
     (native-inputs (list r-knitr))
     (home-page "https://github.com/ELTEbioinformatics/mulea")
     (synopsis
-     "Enrichment Analysis using Multiple Ontologies and FDR Correction")
+     "Enrichment Analysis using Multiple Ontologies and False Discovery Rate")
     (description
-     "Traditional gene set enrichment analyses are typically limited to a few
-ontologies and do not account for the interdependence of gene sets or terms,
+     "Background - Traditional gene set enrichment analyses are typically limited to a
+few ontologies and do not account for the interdependence of gene sets or terms,
 resulting in overcorrected p-values.  To address these challenges, we introduce
-mulea', an R package offering comprehensive overrepresentation and functional
-enrichment analysis.  mulea employs an innovative empirical false discovery rate
-(@code{eFDR}) correction method, specifically designed for interconnected
+mulea, an R package offering comprehensive overrepresentation and functional
+enrichment analysis.  Results - mulea employs a progressive empirical false
+discovery rate (@code{eFDR}) method, specifically designed for interconnected
 biological data, to accurately identify significant terms within diverse
-ontologies.  Beyond conventional tools, mulea incorporates a wide range of
-ontologies encompassing Gene Ontology, pathways, regulatory elements, genomic
-locations, and protein domains.  This flexibility empowers researchers to tailor
-enrichment analysis to their specific questions, such as identifying enriched
-transcriptional regulators in gene expression data or overrepresented protein
-domains in protein sets.  To facilitate seamless analysis, mulea provides gene
-sets (in standardized GMT format) for 27 model organisms, covering 16 databases
-and various identifiers.  Additionally, the @code{muleaData}
-@code{ExperimentData} Bioconductor package simplifies access to these 879
-pre-defined ontologies.  Furthermore, mulea''s architecture allows for easy
-integration of user-defined ontologies, expanding its applicability across
-diverse research areas.")
+ontologies.  mulea expands beyond traditional tools by incorporating a wide
+range of ontologies, encompassing Gene Ontology, pathways, regulatory elements,
+genomic locations, and protein domains.  This flexibility enables researchers to
+tailor enrichment analysis to their specific questions, such as identifying
+enriched transcriptional regulators in gene expression data or overrepresented
+protein domains in protein sets.  To facilitate seamless analysis, mulea
+provides gene sets (in standardised GMT format) for 27 model organisms, covering
+22 ontology types from 16 databases and various identifiers resulting in almost
+900 files.  Additionally, the @code{muleaData} @code{ExperimentData}
+Bioconductor package simplifies access to these pre-defined ontologies.
+Finally, mulea's architecture allows for easy integration of user-defined
+ontologies, or GMT files from external sources (e.g., M@code{SigDB} or Enrichr),
+expanding its applicability across diverse research areas.  Conclusions - mulea
+is distributed as a CRAN R package.  It offers researchers a powerful and
+flexible toolkit for functional enrichment analysis, addressing limitations of
+traditional tools with its progressive @code{eFDR} and by supporting a variety
+of ontologies.  Overall, mulea fosters the exploration of diverse biological
+questions across various model organisms.")
     (license license:gpl2)))
 
 (define-public r-muir
@@ -19212,13 +19218,13 @@ increments (BAI) was described by JevÅ¡enak and Skudnik (2021)
 (define-public r-mlflow
   (package
     (name "r-mlflow")
-    (version "2.14.1")
+    (version "2.16.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlflow" version))
        (sha256
-        (base32 "17rdg8admwih6dhmci089l8kwidbbjni98fl2al5480abhm63n74"))))
+        (base32 "0mqyssdvp0ccfclmjh7ms8v86vgzirq0vm0bs3zr77as6bz1rqca"))))
     (properties `((upstream-name . "mlflow")))
     (build-system r-build-system)
     (propagated-inputs (list r-zeallot
@@ -30822,33 +30828,35 @@ Stackoverflow (2018) <https://stats.stackexchange.com/q/338043>.")
 (define-public r-metahd
   (package
     (name "r-metahd")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MetaHD" version))
        (sha256
-        (base32 "1fciy4zarl9gx1zdvrsgzq8y7jl59z8ljl2s2faqigsyd3nw3mbk"))))
+        (base32 "05a4m2byc5d16l3nv1b1j3hzhxw2pxyg5zr6sdsvyin4vqzsk7c7"))))
     (properties `((upstream-name . "MetaHD")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
                              r-rcpparmadillo
                              r-rcpp
+                             r-nloptr
                              r-metafor
                              r-matrixcalc
                              r-matrix
                              r-dplyr
                              r-corpcor))
     (home-page "https://cran.r-project.org/package=MetaHD")
-    (synopsis "Multivariate Meta-Analysis Model for Metabolomics Data")
+    (synopsis
+     "Multivariate Meta-Analysis Model for High-Dimensional Metabolomics Data")
     (description
      "This package performs multivariate meta-analysis for high-dimensional
 metabolomics data for integrating and collectively analysing individual-level
-metabolomics data generated from multiple studies as well as for combining
-summary estimates.  This approach accounts for correlation between metabolites,
-considers variability within and between studies, handles missing values and
-uses shrinkage estimation to allow for high dimensionality.  A detailed vignette
-with example datasets and code to prepare data and analyses are available on
+data generated from multiple studies as well as for combining summary estimates.
+ This approach accounts for correlation between outcomes, considers variability
+within and between studies, handles missing values and uses shrinkage estimation
+to allow for high dimensionality.  A detailed vignette with example datasets and
+code to prepare data and analyses are available on
 <https://bookdown.org/a2delivera/@code{MetaHD/>}.")
     (license license:gpl3)))
 

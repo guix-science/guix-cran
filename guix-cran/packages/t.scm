@@ -21784,13 +21784,13 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
 (define-public r-tern
   (package
     (name "r-tern")
-    (version "0.9.5")
+    (version "0.9.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tern" version))
        (sha256
-        (base32 "0pmx2f9xjw463jnnbdbpvlwjaq5c04lry8iavisxniwshr5piqfm"))))
+        (base32 "1psvwx3ylwxdd2v5li8c9ymc4a303gci0b9k4bh4wd2nbikb4wfl"))))
     (properties `((upstream-name . "tern")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21815,7 +21815,7 @@ builds on geepack <doi:10.18637/jss.v015.i02> (HÃ¸jsgaard, Halekoh and Yan,
                              r-checkmate
                              r-car
                              r-broom))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://insightsengineering.github.io/tern/")
     (synopsis "Create Common TLGs Used in Clinical Trials")
     (description

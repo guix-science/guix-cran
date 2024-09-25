@@ -22343,13 +22343,13 @@ coupled-to-MCMC schemes are implemented.")
 (define-public r-easy-utils
   (package
     (name "r-easy-utils")
-    (version "0.0.4")
+    (version "0.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "easy.utils" version))
        (sha256
-        (base32 "1rhdpqnhr1nv5jm3dcs8ikn35d911pi46sfsflk4f73m9fzyj9s1"))))
+        (base32 "1f9iz4jssb4ail8sp18mnfbkvsxz4rx1inry60z6zi4jswr3q25m"))))
     (properties `((upstream-name . "easy.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rlang r-polychrome r-fastmatch r-dplyr))

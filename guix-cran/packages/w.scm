@@ -832,13 +832,13 @@ supported, too.")
 (define-public r-wrightmap
   (package
     (name "r-wrightmap")
-    (version "1.3")
+    (version "1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WrightMap" version))
        (sha256
-        (base32 "0c1v8wjqbr9y447h9iz9h2izrm1msdaz3mx1ry47qlcrq6ddlj9v"))))
+        (base32 "1ncng7mj207h50s8kc1c0d8z20qvzqxf28rbnbaddaj41bns23id"))))
     (properties `((upstream-name . "WrightMap")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcolorbrewer))
@@ -4606,13 +4606,13 @@ association scan, candidate region scan and single window test.")
 (define-public r-wget
   (package
     (name "r-wget")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "wget" version))
        (sha256
-        (base32 "1mrnkiipbrzss5ljdxmdvh7cga8596vc4fmimrwnc88mdi488nc8"))))
+        (base32 "0vnrnfcsacic57r730cjhrrb743qiq2yga9abhqi9w3fd5vixsni"))))
     (properties `((upstream-name . "wget")))
     (build-system r-build-system)
     (propagated-inputs (list r-yulab-utils))

@@ -1013,6 +1013,30 @@ their primary word (e.g., centers_by()) act on multiple columns of a data.frame.
      "Translate SQL SELECT statements into lists of R expressions.")
     (license license:asl2.0)))
 
+(define-public r-querybuilder
+  (package
+    (name "r-querybuilder")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "queryBuilder" version))
+       (sha256
+        (base32 "1d06qmnni2mbn63fxbfj23sql82wmn9ziqf5891wbb88xa0wp4mi"))))
+    (properties `((upstream-name . "queryBuilder")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-magrittr r-glue r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=queryBuilder")
+    (synopsis "Programmatic Way to Construct Complex Filtering Queries")
+    (description
+     "Syntax for defining complex filtering expressions in a programmatic way.  A
+filtering query, built as a nested list configuration, can be easily stored in
+other formats like YAML or JSON'.  What's more, it's possible to convert such
+configuration to a valid expression that can be applied to popular dplyr package
+operations.")
+    (license license:expat)))
+
 (define-public r-quclu
   (package
     (name "r-quclu")

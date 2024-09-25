@@ -12679,29 +12679,6 @@ convolutional neural network based on
 faces which have size greater than 10x10 pixels.")
     (license license:bsd-3)))
 
-(define-public r-image-dlib
-  (package
-    (name "r-image-dlib")
-    (version "0.1.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "image.dlib" version))
-       (sha256
-        (base32 "0wrg6cwnrqwvgs5w1wjhc8ald7fij76xr2qbv6yb217v13ahwskm"))))
-    (properties `((upstream-name . "image.dlib")))
-    (build-system r-build-system)
-    (inputs (list zlib))
-    (propagated-inputs (list r-rcpp))
-    (home-page "https://github.com/bnosac/image")
-    (synopsis "Image Processing Functionality using the 'dlib' Package")
-    (description
-     "Facility wrappers around the image processing functionality of dlib'.  Dlib
-<http://dlib.net> is a C++ toolkit containing machine learning algorithms and
-computer vision tools.  Currently the package allows to find feature descriptors
-of digital images, in particular SURF and HOG descriptors.")
-    (license (license:fsdg-compatible "BSL-1.0"))))
-
 (define-public r-image-cornerdetectionharris
   (package
     (name "r-image-cornerdetectionharris")

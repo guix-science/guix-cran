@@ -8191,6 +8191,42 @@ are created following the guidelines for grid datasets from the European Forum
 for Geography and Statistics.")
     (license license:expat)))
 
+(define-public r-aquabeher
+  (package
+    (name "r-aquabeher")
+    (version "1.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "AquaBEHER" version))
+       (sha256
+        (base32 "0dq5dsd043lhifwwi9b052yxp5xlzvcc39jhbc84l6n78nhj01h2"))))
+    (properties `((upstream-name . "AquaBEHER")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-terra
+                             r-sp
+                             r-rlang
+                             r-magrittr
+                             r-lubridate
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/RobelTakele/AquaBEHER")
+    (synopsis
+     "Estimation and Prediction of Wet Season Calendar and Soil Water Balance for Agriculture")
+    (description
+     "Computes and integrates daily potential evapotranspiration (PET) and a soil
+water balance model.  It allows users to estimate and predict the wet season
+calendar, including onset, cessation, and duration, based on an agroclimatic
+approach for a specified period.  This functionality helps in managing
+agricultural water resources more effectively.  For detailed methodologies,
+users can refer to Allen et al. (1998, ISBN:92-5-104219-5); Allen (2005,
+ISBN:9780784408056); Doorenbos and Pruitt (1975, ISBN:9251002797); Guo et al.
+(2016) <doi:10.1016/j.envsoft.2015.12.019>; Hargreaves and Samani (1985)
+<doi:10.13031/2013.26773>; Priestley and Taylor (1972)
+<https://journals.ametsoc.org/view/journals/apme/18/7/1520-0450_1979_018_0898_tptema_2_0_co_2.xml>.")
+    (license license:gpl3+)))
+
 (define-public r-aquaanalytix
   (package
     (name "r-aquaanalytix")

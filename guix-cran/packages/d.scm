@@ -1946,13 +1946,13 @@ S3 file system also generalizes to any list of http URLs.")
 (define-public r-duckdb
   (package
     (name "r-duckdb")
-    (version "1.0.0-2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "duckdb" version))
        (sha256
-        (base32 "00dzrjwpd94k11gqvdafxkd8pqlwav6l4haim88p8ann48gxad9p"))))
+        (base32 "09z3grv2g8frzr5cffsifjkvwq85lbgz5b0y0kxr8a5rb7c4bpws"))))
     (properties `((upstream-name . "duckdb")))
     (build-system r-build-system)
     (propagated-inputs (list r-dbi))
@@ -1961,7 +1961,7 @@ S3 file system also generalizes to any list of http URLs.")
     (description
      "The @code{DuckDB} project is an embedded analytical data management system with
 support for the Structured Query Language (SQL).  This package includes all of
-@code{DuckDB} and a R Database Interface (DBI) connector.")
+@code{DuckDB} and an R Database Interface (DBI) connector.")
     (license license:expat)))
 
 (define-public r-dub
@@ -2722,16 +2722,16 @@ methods includes simulation and estimation of the parameters.")
 (define-public r-dtcompair
   (package
     (name "r-dtcompair")
-    (version "1.2.4")
+    (version "1.2.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DTComPair" version))
        (sha256
-        (base32 "1p1s0fslylykhmvwc962jcifkbb77ah0lxah596akvxlyrqkjpqk"))))
+        (base32 "1ajmzap56vpfxn0x57alb6h2g94z132i96jsmczjl6zajm5yr6y4"))))
     (properties `((upstream-name . "DTComPair")))
     (build-system r-build-system)
-    (propagated-inputs (list r-propcis r-gee r-ellipse))
+    (propagated-inputs (list r-propcis r-gee r-ellipse r-assertthat))
     (home-page "https://github.com/chstock/DTComPair")
     (synopsis "Comparison of Binary Diagnostic Tests in a Paired Study Design")
     (description
@@ -8151,6 +8151,35 @@ outliers to the fore-front using fewer basis vectors (Kandanaarachchi, Hyndman
 2020) <doi:10.1080/10618600.2020.1807353>.")
     (license license:expat)))
 
+(define-public r-do3pca
+  (package
+    (name "r-do3pca")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "do3PCA" version))
+       (sha256
+        (base32 "11ilwy7iqia6nxqphycq526crg5q1y0giqfy8q66ibj3zzql8xbs"))))
+    (properties `((upstream-name . "do3PCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rdimtools
+                             r-ratematrix
+                             r-phytools
+                             r-nloptr
+                             r-mclust
+                             r-matrixcalc
+                             r-ape))
+    (home-page "https://cran.r-project.org/package=do3PCA")
+    (synopsis "Probabilistic Phylogenetic Principal Component Analysis")
+    (description
+     "Estimates probabilistic phylogenetic Principal Component Analysis (PCA) and
+non-phylogenetic probabilistic PCA. Provides methods to implement alternative
+models of trait evolution including Brownian motion (BM), Ornstein-Uhlenbeck
+(OU), Early Burst (EB), and Pagel's lambda.  Also provides flexible biplot
+functions.")
+    (license license:gpl2+)))
+
 (define-public r-do
   (package
     (name "r-do")
@@ -8887,13 +8916,13 @@ Conflict (DMC) to reaction time and error rate data.  Methods in Psychology,
 (define-public r-dmbc
   (package
     (name "r-dmbc")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dmbc" version))
        (sha256
-        (base32 "0crwmprmn4k565zwvwwqkf70j6f166rvhssx0pwrmch935ascpsf"))))
+        (base32 "0rbahb7590sy6d975wd0g00x5xxfxjzsgywzcc7wqd6lyqkmn3v3"))))
     (properties `((upstream-name . "dmbc")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustx
@@ -12778,16 +12807,15 @@ the sequential g-estimation estimator described in Vansteelandt (2009)
 (define-public r-directedclustering
   (package
     (name "r-directedclustering")
-    (version "0.1.1")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DirectedClustering" version))
        (sha256
-        (base32 "1shdqz0c5bbgknvfqr3ais26cb5mpywnah3d3584w97sy8v7gxm2"))))
+        (base32 "0ac5dn0mi8j6jvl7zsv9k9mbanfs2h65haqy2lyqzh5s6vw61i2y"))))
     (properties `((upstream-name . "DirectedClustering")))
     (build-system r-build-system)
-    (propagated-inputs (list r-igraph))
     (home-page "https://cran.r-project.org/package=DirectedClustering")
     (synopsis "Directed Weighted Clustering Coefficient")
     (description
@@ -14237,18 +14265,18 @@ structure.  Useful for diffing slowly mutating data.")
 (define-public r-diffdf
   (package
     (name "r-diffdf")
-    (version "1.0.4")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "diffdf" version))
        (sha256
-        (base32 "03cr0gvspchdj49kiggsm6i9h5d9z07aswggj4n46lnyz52ihivj"))))
+        (base32 "0i9wq31cshxcmg61p610s2r4phi43bxmffbzh74yp9y4f1difil0"))))
     (properties `((upstream-name . "diffdf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble))
+    (propagated-inputs (list r-tibble r-assertthat))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/gowerc/diffdf")
+    (home-page "https://gowerc.github.io/diffdf/")
     (synopsis "Dataframe Difference Tool")
     (description
      "This package provides functions for comparing two data.frames against each
@@ -26181,19 +26209,20 @@ resulting paper of that study will be published soon.")
 (define-public r-dataclass
   (package
     (name "r-dataclass")
-    (version "0.3.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dataclass" version))
        (sha256
-        (base32 "1byjxwk3jlm3jaa8q2ppr5i0y98hriky7rrff9gb8nk6yvv9jgmq"))))
+        (base32 "1mx2yqxahsqdxp238q1i285q9g9mcvlfi6prchgk3cydqmqshrhy"))))
     (properties `((upstream-name . "dataclass")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-purrr
                              r-magrittr
+                             r-lifecycle
                              r-glue
                              r-dplyr
                              r-cli))

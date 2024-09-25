@@ -23679,23 +23679,25 @@ position type and the chromosome number.")
 (define-public r-rice
   (package
     (name "r-rice")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rice" version))
        (sha256
-        (base32 "0sncfrw8a927jarwzaclzjrh73jlclzw2z29xfzwzxsdm6sb5c0i"))))
+        (base32 "08m1d79zjr47x6zvy4n11hs5p4a897fn9dn2ks0ihyrrx75ynw69"))))
     (properties `((upstream-name . "rice")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rintcal r-jsonlite r-data-table))
+    (propagated-inputs (list r-rnaturalearthdata r-rnaturalearth r-rlang
+                             r-rintcal r-ggplot2))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=rice")
-    (synopsis "Radiocarbon Calibration Equations")
+    (synopsis "Radiocarbon Equations")
     (description
      "This package provides functions for the calibration of radiocarbon dates, as
 well as options to calculate different radiocarbon realms (C14 age, F14C,
-@code{pMC}, D14C) and estimating the effects of contamination.  The methods
+@code{pMC}, D14C) and estimating the effects of contamination or local reservoir
+offsets (Reimer and Reimer 2001 <doi:10.1017/S0033822200038339>).  The methods
 follow long-established recommendations such as Stuiver and Polach (1977)
 <doi:10.1017/S0033822200003672> and Reimer et al. (2004)
 <doi:10.1017/S0033822200033154>.  This package accompanies the data package
@@ -25164,13 +25166,13 @@ type, and taxonomic name.")
 (define-public r-rgl2gltf
   (package
     (name "r-rgl2gltf")
-    (version "1.0.3")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgl2gltf" version))
        (sha256
-        (base32 "0krn4dp8xf6z5363agz42v4dwhhxdrxpqzhmf9yd8xl2l3yj6pfp"))))
+        (base32 "1idly42kc1qbaiziwdzk3ka0lc6gwi7xzanq9kf3h4wkx3882rsv"))))
     (properties `((upstream-name . "rgl2gltf")))
     (build-system r-build-system)
     (propagated-inputs (list r-rgl r-r6 r-jsonlite r-base64enc))
@@ -39275,13 +39277,13 @@ Apache 2.0 license and provided here for use by other R packages via a simple
 (define-public r-rcppfastad
   (package
     (name "r-rcppfastad")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcppFastAD" version))
        (sha256
-        (base32 "1hdwpvdyprcihwy9n5b72pd5ql7czaz0pm9cwcy5n9bh3p2clc8a"))))
+        (base32 "1vzdwixcqgb510lbyz62vmpy5ghr87i8qbgn696dmx7fvsgf4dkw"))))
     (properties `((upstream-name . "RcppFastAD")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
@@ -42279,13 +42281,13 @@ loglinear models.")
 (define-public r-rcan
   (package
     (name "r-rcan")
-    (version "1.3.90")
+    (version "1.3.91")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Rcan" version))
        (sha256
-        (base32 "092mxnk6ahlvxwynsw5axwjh11zr4kjha1vl648jrjp52l5mcm5g"))))
+        (base32 "1himszrwppswwi7ghjs9v4yim55ia4qgi9lphdibgnz8x9bwk2li"))))
     (properties `((upstream-name . "Rcan")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-ggplot2 r-data-table))

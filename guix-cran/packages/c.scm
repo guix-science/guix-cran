@@ -6047,13 +6047,13 @@ identification of outlier elements.")
 (define-public r-crosscarry
   (package
     (name "r-crosscarry")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CrossCarry" version))
        (sha256
-        (base32 "1nzps0b63p44402m4vsjiz35bbishpgdmggy0wfmvh5clpfwnswy"))))
+        (base32 "1nls5knpjfdbzwg8mapkinmmpafs4lpk6x0fayh16f6g5yvk2dr8"))))
     (properties `((upstream-name . "CrossCarry")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-ggplot2 r-gee r-dplyr))
@@ -22525,13 +22525,13 @@ utilities to generate this metadata with a minimum of dependencies.")
 (define-public r-codelistgenerator
   (package
     (name "r-codelistgenerator")
-    (version "3.1.0")
+    (version "3.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CodelistGenerator" version))
        (sha256
-        (base32 "045jkffcyawk72w7x1gxh6i0y8aigj59g2cn6qflr0x8jpxwg4x9"))))
+        (base32 "1s96r05dilyb3g4f8vikh7fr2jpjqz8n7layck94nrx2xswhccd6"))))
     (properties `((upstream-name . "CodelistGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -32566,6 +32566,36 @@ create reporting tables using rtables and tern with standardized input arguments
 to enable quick generation of standard outputs.  In addition, it also provides
 comprehensive data checks and script generation functionality.")
     (license license:asl2.0)))
+
+(define-public r-chestvolume
+  (package
+    (name "r-chestvolume")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ChestVolume" version))
+       (sha256
+        (base32 "01mg1a3cbsajdp5qnlswx89skq036p76racz5lmjpd5s9bwlclax"))))
+    (properties `((upstream-name . "ChestVolume")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-readxl
+                             r-plotly
+                             r-ggplot2
+                             r-geometry
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ChestVolume")
+    (synopsis "Estimate the Chest Volume with Markers Data")
+    (description
+     "This package provides tools to process and analyze chest expansion using 3D
+marker data from motion capture systems.  Includes functions for data
+processing, marker position adjustment, volume calculation using convex hulls,
+and visualization in 2D and 3D. Barber et al. (1996)
+<doi:10.1145/235815.235821>.  TAMIYA Hiroyuki et al. (2021)
+<doi:10.1038/s41598-021-01033-8>.")
+    (license license:expat)))
 
 (define-public r-chest
   (package

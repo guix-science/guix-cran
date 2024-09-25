@@ -16542,13 +16542,13 @@ for easy label generation and placement, automatic map coloring, and themes.")
 (define-public r-ggrcs
   (package
     (name "r-ggrcs")
-    (version "0.4.1")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggrcs" version))
        (sha256
-        (base32 "01gvxrpp9a9kbkgc4qqg4rzkk55j9n9hdp9mq7zmap5i0rpx47f9"))))
+        (base32 "16ywi8dgsp000w0869mwrn61lwk3gb40bb0i7yh9i1ch2cyc05v1"))))
     (properties `((upstream-name . "ggrcs")))
     (build-system r-build-system)
     (propagated-inputs (list r-scales r-rms r-ggplot2 r-cowplot))
@@ -23462,6 +23462,45 @@ Datasets are based off of the @code{GeoDa} software workbook and data site
 at the University of Chicago.  Datasets are stored as sf objects.")
     (license license:cc0)))
 
+(define-public r-geocomplexity
+  (package
+    (name "r-geocomplexity")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "geocomplexity" version))
+       (sha256
+        (base32 "1kiq5yg698c1gh23mdhynlkd6kpf2s1rlah0wyvy0g9zjwlz6v2w"))))
+    (properties `((upstream-name . "geocomplexity")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-terra
+                             r-sf
+                             r-sdsfun
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-purrr
+                             r-pander
+                             r-magrittr
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://ausgis.github.io/geocomplexity/")
+    (synopsis "Mitigating Spatial Bias Through Geographical Complexity")
+    (description
+     "The geographical complexity of individual variables can be characterized by the
+differences in local attribute variables, while the common geographical
+complexity of multiple variables can be represented by fluctuations in the
+similarity of vectors composed of multiple variables.  In spatial regression
+tasks, the goodness of fit can be improved by incorporating a geographical
+complexity representation vector during modeling, using a geographical
+complexity-weighted spatial weight matrix, or employing local geographical
+complexity kernel density.  Similarly, in spatial sampling tasks, samples can be
+selected more effectively by using a method that weights based on geographical
+complexity.  By optimizing performance in spatial regression and spatial
+sampling tasks, the spatial bias of the model can be effectively reduced.")
+    (license license:gpl3)))
+
 (define-public r-geocmeans
   (package
     (name "r-geocmeans")
@@ -28533,13 +28572,13 @@ an analytic or a numerical solution, both available in the function.")
 (define-public r-gausssuppression
   (package
     (name "r-gausssuppression")
-    (version "0.8.8")
+    (version "0.9.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GaussSuppression" version))
        (sha256
-        (base32 "0alfkb9bbixs1h7i2b0vdmkx8g8ncv9wsdkfb6hx9yl4vj9033ra"))))
+        (base32 "0hygyj4l1ah31h7dlh54z5zni08cgzaxsn6zzh8xvcm2hnlvs54r"))))
     (properties `((upstream-name . "GaussSuppression")))
     (build-system r-build-system)
     (propagated-inputs (list r-ssbtools r-regsdc r-matrix))
@@ -28548,9 +28587,10 @@ an analytic or a numerical solution, both available in the function.")
     (synopsis "Tabular Data Suppression using Gaussian Elimination")
     (description
      "This package provides a statistical disclosure control tool to protect tables by
-suppression using the Gaussian elimination secondary suppression algorithm.  A
-suggestion is to start by working with functions @code{SuppressSmallCounts}()
-and @code{SuppressDominantCells}().  These functions use primary suppression
+suppression using the Gaussian elimination secondary suppression algorithm
+(Langsrud, 2024) <doi:10.1007/978-3-031-69651-0_6>.  A suggestion is to start by
+working with functions @code{SuppressSmallCounts}() and
+@code{SuppressDominantCells}().  These functions use primary suppression
 functions for the minimum frequency rule and the dominance rule, respectively.
 Novel functionality for suppression of disclosive cells is also included.
 General primary suppression functions can be supplied as input to the general
@@ -29534,13 +29574,13 @@ calculation of density values.  These tasks are executed using package
 (define-public r-gamstransfer
   (package
     (name "r-gamstransfer")
-    (version "3.0.3")
+    (version "3.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamstransfer" version))
        (sha256
-        (base32 "0ashdicnkrvbsddqajhnqrwrpw8y3ikzibm4y3gn5ywg7y3dbp2k"))))
+        (base32 "1xfrykgfd0xw1z2fs1ay1d7wq87ak78qrfgw8vsxf0lg8lvmjqpp"))))
     (properties `((upstream-name . "gamstransfer")))
     (build-system r-build-system)
     (inputs (list zlib))
@@ -29585,13 +29625,13 @@ He and Wand (2023) <@code{arXiv:2201.00412>}.")
 (define-public r-gamsel
   (package
     (name "r-gamsel")
-    (version "1.8-4")
+    (version "1.8-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gamsel" version))
        (sha256
-        (base32 "1w6s19fwrqldacw4qlx3xcq33v0vx332hcyfg2qdcni6yi80fdkg"))))
+        (base32 "17c3k72absrfzj8qqjgf9rni7p3s0d1jdw5hf94d03jds00n4w21"))))
     (properties `((upstream-name . "gamsel")))
     (build-system r-build-system)
     (propagated-inputs (list r-mda r-foreach))

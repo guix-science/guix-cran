@@ -14220,30 +14220,27 @@ B.R., & Wood D.J. <doi:10.2307/259247> Hester, P.T., & Adams, K.M. (2013)
 (define-public r-staggered
   (package
     (name "r-staggered")
-    (version "1.1")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "staggered" version))
        (sha256
-        (base32 "0z9358qbgn637j8iz5qwr4nyrlvi9w85l325vxpc61mcwksx5ip8"))))
+        (base32 "1v19sf51rfl58irr4six6j7pj61i46mbpwczx9p3z0cs37r92kyj"))))
     (properties `((upstream-name . "staggered")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-reshape2
-                             r-rcppeigen
+    (propagated-inputs (list r-rcppeigen
                              r-rcpp
                              r-purrr
                              r-mass
                              r-magrittr
-                             r-dplyr
-                             r-coop))
+                             r-data-table))
     (home-page "https://cran.r-project.org/package=staggered")
     (synopsis "Efficient Estimation Under Staggered Treatment Timing")
     (description
      "Efficiently estimates treatment effects in settings with randomized staggered
 rollouts, using tools proposed by Roth and Sant'Anna (2021)
-<@code{arXiv:2102.01291>}.")
+<doi:10.48550/@code{arXiv.2102.01291>}.")
     (license license:gpl2)))
 
 (define-public r-stagepop
@@ -19030,13 +19027,13 @@ are defined by spdep package.")
 (define-public r-spmoran
   (package
     (name "r-spmoran")
-    (version "0.2.3")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spmoran" version))
        (sha256
-        (base32 "0gjniczvggcpgyriskcbry8hn5pbf4ga4nx6hj98kvy5qrv5dcnj"))))
+        (base32 "1fi59jggzbiz3r2j6gnim7ys3qg5vvjnkivw9414jv17s6lhbzvp"))))
     (properties `((upstream-name . "spmoran")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -19051,15 +19048,14 @@ are defined by spdep package.")
                              r-fields
                              r-doparallel))
     (native-inputs (list r-r-rsp))
-    (home-page "https://cran.r-project.org/package=spmoran")
-    (synopsis "Fast Spatial Regression using Moran Eigenvectors")
+    (home-page "https://github.com/dmuraka/spmoran")
+    (synopsis
+     "Fast Spatial and Spatio-Temporal Regression using Moran Eigenvectors")
     (description
-     "This package provides functions for estimating spatial varying coefficient
-models, mixed models, and other spatial regression models for Gaussian and
-non-Gaussian data.  Moran eigenvectors are used to an approximate spatial
-Gaussian processes.  These processes are used for modeling the spatial processes
-in residuals and regression coefficients.  For details see Murakami (2021)
-<@code{arXiv:1703.04467>}.")
+     "This package provides functions for estimating spatio-temporally varying
+coefficient models, mixed models, and other spatial regression models for
+Gaussian and non-Gaussian data.  Moran eigenvectors are used to approximate
+spatial and spatio-temporal processes in residuals and regression coefficients.")
     (license license:gpl2+)))
 
 (define-public r-spmodel
@@ -19087,27 +19083,6 @@ statistics are used to summarize, visualize, and compare models.  Predictions at
 unobserved locations are readily obtainable.  For additional details, see
 Dumelle et al. (2023) <doi:10.1371/journal.pone.0282524>.")
     (license license:gpl3)))
-
-(define-public r-spmlficmcm
-  (package
-    (name "r-spmlficmcm")
-    (version "1.4")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "SPmlficmcm" version))
-       (sha256
-        (base32 "1acs3560a7h6xx286m40abr9b7i5qihn6wni8flj0biahmsszzx6"))))
-    (properties `((upstream-name . "SPmlficmcm")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-nleqslv))
-    (home-page "https://cran.r-project.org/package=SPmlficmcm")
-    (synopsis
-     "Semiparametric Maximum Likelihood Method for Interactions Gene-Environment in Case-Mother Control-Mother Designs")
-    (description
-     "This package implements the method of general semiparametric maximum likelihood
-estimation for logistic models in case-mother control-mother designs.")
-    (license license:gpl2)))
 
 (define-public r-spmc
   (package
@@ -22005,13 +21980,13 @@ designed to bring reproducible phonetic research into R.")
 (define-public r-speakeasyr
   (package
     (name "r-speakeasyr")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speakeasyR" version))
        (sha256
-        (base32 "1v893sxxdmzp3c0n727jas6l2ppgb3pjc5rf6rrp1lgf29fzrm3z"))))
+        (base32 "0jrndx1cjxg7f0p7v5z7frpfi8bs6nxpdv21v8ld6n4ffl0vvrbq"))))
     (properties `((upstream-name . "speakeasyR")))
     (build-system r-build-system)
     (inputs (list))

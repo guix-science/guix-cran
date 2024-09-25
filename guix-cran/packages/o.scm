@@ -5892,16 +5892,23 @@ entity extraction, chunking, parsing, and coreference resolution.  See
 (define-public r-openmse
   (package
     (name "r-openmse")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "openMSE" version))
        (sha256
-        (base32 "15jp9hybnkwmnkcqawhpd3y3imq6wfxxzxzh90yx4cvzky36hf89"))))
+        (base32 "1yd5p92w9l4vag591slnxvj8zzljilv7idv52978z2gsrihy5lsb"))))
     (properties `((upstream-name . "openMSE")))
     (build-system r-build-system)
-    (propagated-inputs (list r-samtool r-msetool r-dlmtool r-crayon))
+    (propagated-inputs (list r-tidyr
+                             r-samtool
+                             r-purrr
+                             r-msetool
+                             r-ggplot2
+                             r-dplyr
+                             r-dlmtool
+                             r-crayon))
     (home-page "https://openmse.com/")
     (synopsis "Easily Install and Load the 'openMSE' Packages")
     (description
@@ -8989,17 +8996,16 @@ you run open-source large language models locally on your machine.")
 (define-public r-olinkanalyze
   (package
     (name "r-olinkanalyze")
-    (version "3.8.2")
+    (version "4.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "OlinkAnalyze" version))
        (sha256
-        (base32 "0i8bpx3baq6x2hkk2zf45yxjk4mzhrw6wbksw1z1w11hghyld6vs"))))
+        (base32 "0xb7dg4ncqvypl27rb8s05ck1zjxs2j49f4lnpl3hqjvh0da6p3x"))))
     (properties `((upstream-name . "OlinkAnalyze")))
     (build-system r-build-system)
-    (propagated-inputs (list r-zip
-                             r-tidyselect
+    (propagated-inputs (list r-tidyselect
                              r-tidyr
                              r-tibble
                              r-stringr
@@ -9007,8 +9013,6 @@ you run open-source large language models locally on your machine.")
                              r-rlang
                              r-readxl
                              r-magrittr
-                             r-lmertest
-                             r-lme4
                              r-ggrepel
                              r-ggpubr
                              r-ggplot2
@@ -9016,6 +9020,8 @@ you run open-source large language models locally on your machine.")
                              r-forcats
                              r-emmeans
                              r-dplyr
+                             r-data-table
+                             r-cli
                              r-car
                              r-broom))
     (native-inputs (list r-knitr r-kableextra))
