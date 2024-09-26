@@ -10772,13 +10772,13 @@ k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).
 (define-public r-ocf
   (package
     (name "r-ocf")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ocf" version))
        (sha256
-        (base32 "04d0j863a2zqj3v9s9iwlc4v7fxpp6cydpphxcfr6n22f8ciq5bd"))))
+        (base32 "1vzpiy7dby61yydszgm2magdq9dah7c0pw9zl7bsrycrzs5qfxgs"))))
     (properties `((upstream-name . "ocf")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -10792,11 +10792,13 @@ k-means clustering (Steinley and Hubert, 2008, <doi:10.1007/s11336-008-9058-z>).
     (home-page "https://riccardo-df.github.io/ocf/")
     (synopsis "Ordered Correlation Forest")
     (description
-     "Nonparametric estimator for ordered non-numeric outcomes.  The estimator
-modifies a standard random forest splitting criterion to build a collection of
-forests, each estimating the conditional probability of a single class.  The
-package also implements a nonparametric estimator of the covariatesâ marginal
-effects.")
+     "Machine learning estimator specifically optimized for predictive modeling of
+ordered non-numeric outcomes.  ocf provides forest-based estimation of the
+conditional choice probabilities and the covariatesâ marginal effects.  Under
+an \"honesty\" condition, the estimates are consistent and asymptotically normal
+and standard errors can be obtained by leveraging the weight-based
+representation of the random forest predictions.  Please reference the use as Di
+Francesco (2023) <doi:10.48550/@code{arXiv.2309.08755>}.")
     (license license:gpl3)))
 
 (define-public r-ocedata

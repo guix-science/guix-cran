@@ -2570,6 +2570,37 @@ downloadable from the Ministry of Agriculture, Forestry and Fisheries website
 <https://open.fude.maff.go.jp>.")
     (license license:expat)))
 
+(define-public r-fucom
+  (package
+    (name "r-fucom")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "fucom" version))
+       (sha256
+        (base32 "162dnk554can240q6v8dz280qvgs336mkjklbsgnhlvj1vvd62lj"))))
+    (properties `((upstream-name . "fucom")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nloptr))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=fucom")
+    (synopsis "Full Consistency Method (FUCOM)")
+    (description
+     "Full Consistency Method (FUCOM) for multi-criteria decision-making (MCDM),
+developed by Dragam Pamucar in 2018 (<doi:10.3390/sym10090393>).  The goal of
+the method is to determine the weights of criteria such that the deviation from
+full consistency is minimized.  Users provide a character vector specifying the
+ranking of each criterion according to its significance, starting from the
+criterion expected to have the highest weight to the least significant one.
+Additionally, users provide a numeric vector specifying the priority values for
+each criterion.  The comparison is made with respect to the first-ranked (most
+significant) criterion.  The function returns the optimized weights for each
+criterion (summing to 1), the comparative priority (Phi) values, the
+mathematical transitivity condition (w) value, and the minimum deviation from
+full consistency (DFC).")
+    (license license:gpl3+)))
+
 (define-public r-ftsspec
   (package
     (name "r-ftsspec")
@@ -15770,13 +15801,13 @@ is transformed to work with sf'.")
 (define-public r-felp
   (package
     (name "r-felp")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "felp" version))
        (sha256
-        (base32 "12crd3rqkh1wj18x2nhq19v3jh4595qp1ll977ki0i6xmg5vhgfb"))))
+        (base32 "1sv52hs457shlckc2c9104ww51xap1ijvhkvq8vdbmlnjlv4q7qz"))))
     (properties `((upstream-name . "felp")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi
@@ -15786,6 +15817,7 @@ is transformed to work with sf'.")
                              r-reactable
                              r-prettycode
                              r-miniui
+                             r-memoise
                              r-matrixstats
                              r-magrittr
                              r-htmltools
@@ -15794,7 +15826,7 @@ is transformed to work with sf'.")
                              r-curl
                              r-callr))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/atusy/felp")
+    (home-page "https://felp.atusy.net/")
     (synopsis "Functional Help for Functions, Objects, and Packages")
     (description
      "Enhance R help system by fuzzy search and preview interface, pseudo-postfix
@@ -16359,13 +16391,13 @@ coefficient, Intraclass correlation and Cramer's V.")
 (define-public r-feasts
   (package
     (name "r-feasts")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "feasts" version))
        (sha256
-        (base32 "0qw6w1xwh08gixfarhjgjzwnhggnb6b1m0zrl2wmx43l40rsr4fr"))))
+        (base32 "18xysg5vp29n0nbz2zdq7n8pbdggkjjifx40q839pvaij6sk4mp3"))))
     (properties `((upstream-name . "feasts")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs

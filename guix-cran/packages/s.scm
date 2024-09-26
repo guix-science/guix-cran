@@ -7920,33 +7920,35 @@ strings.")
 (define-public r-stroupglmm
   (package
     (name "r-stroupglmm")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StroupGLMM" version))
        (sha256
-        (base32 "1w0xizdmwqflfhqwygyq7fw5ci7pdzmr8dfv3j0g3ljbj84kndzd"))))
+        (base32 "1z426k5hv4q81frni5ng41c3s603qa0mlyzg4h3wk188kkw2abw4"))))
     (properties `((upstream-name . "StroupGLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
+                             r-scatterplot3d
                              r-phia
-                             r-pbkrtest
+                             r-parameters
                              r-nlme
                              r-mutoss
                              r-mass
-                             r-lsmeans
+                             r-magrittr
                              r-lmertest
-                             r-lme4
                              r-ggplot2
+                             r-emmeans
+                             r-dplyr
                              r-car
-                             r-broom
+                             r-broom-mixed
                              r-aod))
-    (home-page "https://github.com/MYaseen208/StroupGLMM")
+    (home-page "https://cran.r-project.org/package=StroupGLMM")
     (synopsis
      "R Codes and Datasets for Generalized Linear Mixed Models: Modern Concepts, Methods and Applications by Walter W. Stroup")
     (description
-     "R Codes and Datasets for Stroup, W. W. (2012).  Generalized Linear Mixed Models:
+     "R Codes and Datasets for Stroup, W. W. (2012).  Generalized Linear Mixed Models
 Modern Concepts, Methods and Applications, CRC Press.")
     (license license:gpl2)))
 
@@ -15286,6 +15288,41 @@ package utilizes the SMM framework to provide functions for training SVMs with
 hinge loss, squared-hinge loss, and logistic loss.")
     (license license:gpl3)))
 
+(define-public r-ssnbler
+  (package
+    (name "r-ssnbler")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SSNbler" version))
+       (sha256
+        (base32 "0h5cvl32hkdw39ky00r528qsab2zqa1922adgx1fjnqwswqvqy2i"))))
+    (properties `((upstream-name . "SSNbler")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-withr
+                             r-ssn2
+                             r-sf
+                             r-rsqlite
+                             r-pdist
+                             r-igraph
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/pet221/SSNbler")
+    (synopsis "Assemble 'SSN' Objects")
+    (description
+     "Import, create and assemble data needed to fit spatial-statistical
+stream-network models using the SSN2 package for R'.  Streams, observations, and
+prediction locations are represented as simple features and specific tools
+provided to define topological relationships between features; calculate the
+hydrologic distances (with flow-direction preserved) and the spatial additive
+function used to weight converging stream segments; and export the topological,
+spatial, and attribute information to an `SSN` (spatial stream network) object,
+which can be efficiently stored, accessed and analysed in R'.  A detailed
+description of methods used to calculate and format the spatial data can be
+found in Peterson, E.E. and Ver Hoef, J.M., (2014) <doi:10.18637/jss.v056.i02>.")
+    (license license:gpl3+)))
+
 (define-public r-ssnbayes
   (package
     (name "r-ssnbayes")
@@ -19083,6 +19120,27 @@ statistics are used to summarize, visualize, and compare models.  Predictions at
 unobserved locations are readily obtainable.  For additional details, see
 Dumelle et al. (2023) <doi:10.1371/journal.pone.0282524>.")
     (license license:gpl3)))
+
+(define-public r-spmlficmcm
+  (package
+    (name "r-spmlficmcm")
+    (version "1.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SPmlficmcm" version))
+       (sha256
+        (base32 "1acs3560a7h6xx286m40abr9b7i5qihn6wni8flj0biahmsszzx6"))))
+    (properties `((upstream-name . "SPmlficmcm")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-nleqslv))
+    (home-page "https://cran.r-project.org/package=SPmlficmcm")
+    (synopsis
+     "Semiparametric Maximum Likelihood Method for Interactions Gene-Environment in Case-Mother Control-Mother Designs")
+    (description
+     "This package implements the method of general semiparametric maximum likelihood
+estimation for logistic models in case-mother control-mother designs.")
+    (license license:gpl2)))
 
 (define-public r-spmc
   (package
@@ -33481,13 +33539,13 @@ analyses more reproducible.  For details, see Morgan-Wall et al. (2021)
 (define-public r-sknn
   (package
     (name "r-sknn")
-    (version "3.1")
+    (version "4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SKNN" version))
        (sha256
-        (base32 "1qqf2l4gvwnfdi0z5bk211nax8pcc09xbc4nw09lq7fy0icd2585"))))
+        (base32 "0dsc85ndk9nn998ijq4xiksgc38adpdsmqxwv9gfmagkr17f6nf0"))))
     (properties `((upstream-name . "SKNN")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=SKNN")
@@ -52160,13 +52218,13 @@ seasonal package.")
 (define-public r-seasonalityplot
   (package
     (name "r-seasonalityplot")
-    (version "1.2.1")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "seasonalityPlot" version))
        (sha256
-        (base32 "03gfbpzy97kjw1mxm9xqh384ilyap2nqn4j5ir22rdyg60rfj2mp"))))
+        (base32 "17a5i6gs1bb10fklmb8rkhpss56bp82nz96z5xz5a8qx81k08iww"))))
     (properties `((upstream-name . "seasonalityPlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -55578,13 +55636,13 @@ S., Hannachi, A., Trendafilov, N. T., & Jolliffe, I. T. (2011)
 (define-public r-scitb
   (package
     (name "r-scitb")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scitb" version))
        (sha256
-        (base32 "106daflr4l5g9xphhnad945xi9i22jmqcd971w5xjl7xrfgv2ymg"))))
+        (base32 "11gv2whjc62vxrgk3hc175pz3f56zfpnyk62hxg4hvqlypl6g75r"))))
     (properties `((upstream-name . "scitb")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringi r-reshape2 r-nortest r-mass r-ggplot2))

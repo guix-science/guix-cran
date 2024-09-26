@@ -16897,6 +16897,56 @@ omegas are provided.  To speed up the analyses, some of the iterative
 procedures, like principal axis factoring (PAF), are implemented in C++.")
     (license license:gpl3)))
 
+(define-public r-efafactors
+  (package
+    (name "r-efafactors")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "EFAfactors" version))
+       (sha256
+        (base32 "1ab0d5z4myszcvjzy4i75wxfiirk2wcy36cxlxrr4dq3i0if93zd"))))
+    (properties `((upstream-name . "EFAfactors")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xgboost
+                             r-simcormultres
+                             r-reticulate
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-ranger
+                             r-psych
+                             r-proxy
+                             r-paramhelpers
+                             r-mlr
+                             r-matrix
+                             r-mass
+                             r-ineq
+                             r-ddpcr
+                             r-bbmisc))
+    (home-page "https://cran.r-project.org/package=EFAfactors")
+    (synopsis
+     "Determining the Number of Factors in Exploratory Factor Analysis")
+    (description
+     "This package provides a collection of standard factor retention methods in
+Exploratory Factor Analysis (EFA), making it easier to determine the number of
+factors.  Traditional methods such as the scree plot by Cattell (1966)
+<doi:10.1207/s15327906mbr0102_10>, Kaiser-Guttman Criterion (KGC) by Guttman
+(1954) <doi:10.1007/BF02289162> and Kaiser (1960)
+<doi:10.1177/001316446002000116>, and flexible Parallel Analysis (PA) by Horn
+(1965) <doi:10.1007/BF02289447> based on eigenvalues form PCA or EFA are readily
+available.  This package also implements several newer methods, such as the
+Empirical Kaiser Criterion (EKC) by Braeken and van Assen (2017)
+<doi:10.1037/met0000074>, Comparison Data (CD) by Ruscio and Roche (2012)
+<doi:10.1037/a0025697>, and Hull method by Lorenzo-Seva et al. (2011)
+<doi:10.1080/00273171.2011.564527>, as well as some AI-based methods like
+Comparison Data Forest (CDF) by Goretzko and Ruscio (2024)
+<doi:10.3758/s13428-023-02122-4> and Factor Forest (FF) by Goretzko and Buhner
+(2020) <doi:10.1037/met0000262 >.  Additionally, it includes a deep neural
+network (DNN) trained on large-scale datasets that can efficiently and reliably
+determine the number of factors.")
+    (license license:gpl3)))
+
 (define-public r-efa-mrfa
   (package
     (name "r-efa-mrfa")
@@ -21207,13 +21257,13 @@ thresholding, are also implemented within the package.")
 (define-public r-ebase
   (package
     (name "r-ebase")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBASE" version))
        (sha256
-        (base32 "0y36xsh639chsrzb3r6kla6mi34klrqb4x05ixhk4kh4jx2rb63i"))))
+        (base32 "0g9hhkbld6f5iasj56d539q9px6s6pb2mwhzl337bbvxcd7pf59w"))))
     (properties `((upstream-name . "EBASE")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21224,7 +21274,8 @@ thresholding, are also implemented within the package.")
                              r-lubridate
                              r-ggplot2
                              r-foreach
-                             r-dplyr))
+                             r-dplyr
+                             r-doparallel))
     (native-inputs (list r-knitr))
     (home-page "https://fawda123.github.io/EBASE/")
     (synopsis

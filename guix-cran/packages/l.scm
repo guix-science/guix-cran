@@ -12240,6 +12240,35 @@ movement potential within a landscape (Lewis, 2021)
 <doi:10.1007/s10816-021-09522-w>.")
     (license license:gpl3)))
 
+(define-public r-learnvizlmm
+  (package
+    (name "r-learnvizlmm")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "LearnVizLMM" version))
+       (sha256
+        (base32 "15yqy96mm1ignzpwsnjpzg3lm37k976254c1wk61089z9wb7l185"))))
+    (properties `((upstream-name . "LearnVizLMM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsvg
+                             r-dplyr
+                             r-diagrammersvg
+                             r-diagrammer
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/kzavez/LearnVizLMM")
+    (synopsis "Learning and Communicating Linear Mixed Models Without Data")
+    (description
+     "Summarizes characteristics of linear mixed effects models without data or a
+fitted model by converting code for fitting lmer() from lme4 and lme() from nlme
+into tables, equations, and visuals.  Outputs can be used to learn how to fit
+linear mixed effects models in R and to communicate about these models in
+presentations, manuscripts, and analysis plans.")
+    (license license:gpl3+)))
+
 (define-public r-learnsl
   (package
     (name "r-learnsl")

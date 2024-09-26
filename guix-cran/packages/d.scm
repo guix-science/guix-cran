@@ -2234,13 +2234,13 @@ and reference).")
 (define-public r-dttr2
   (package
     (name "r-dttr2")
-    (version "0.5.1")
+    (version "0.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dttr2" version))
        (sha256
-        (base32 "18mksibzwr4515cqwkc3f4819p08yl5vmj9gvfmrjhvcn4j7v40k"))))
+        (base32 "1fh154phspzwkx8mqk5v1xfq93z6x15kqv7s5xm7ky2rj27wdmin"))))
     (properties `((upstream-name . "dttr2")))
     (build-system r-build-system)
     (propagated-inputs (list r-lifecycle r-hms r-chk))
@@ -4131,17 +4131,18 @@ prescriptions.  Based on Pye et al (2018) <doi:10.1002/pds.4440>.")
 (define-public r-drugexposurediagnostics
   (package
     (name "r-drugexposurediagnostics")
-    (version "1.0.8")
+    (version "1.0.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DrugExposureDiagnostics" version))
        (sha256
-        (base32 "1w0a9jcfzf92vl1a3fpywh1hkwcvkig3pbhrqghijri4cv935f28"))))
+        (base32 "1isn6q7k8ll2w9nbizj46c287hacwpc31a0kh20qrif9xa4akwp0"))))
     (properties `((upstream-name . "DrugExposureDiagnostics")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
                              r-tidyr
+                             r-shiny
                              r-rlang
                              r-omopgenerics
                              r-magrittr
@@ -6495,13 +6496,13 @@ you to visualize all your data with graphic representation.")
 (define-public r-douconca
   (package
     (name "r-douconca")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "douconca" version))
        (sha256
-        (base32 "01zalzv3cafgb76y3m4vibj8nwrrzd66ss8hq6yx13y7akp99fk6"))))
+        (base32 "17hdmmik25n04hs7h1s7dhgkkvw8avmp6d26qyjnvgch3xs72rdn"))))
     (properties `((upstream-name . "douconca")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -6511,7 +6512,7 @@ you to visualize all your data with graphic representation.")
                              r-ggrepel
                              r-ggplot2))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/CajoterBraak/douconca")
+    (home-page "https://github.com/Biometris/douconca")
     (synopsis
      "Double Constrained Correspondence Analysis for Trait-Environment Analysis in Ecology")
     (description
@@ -19880,13 +19881,13 @@ for details.")
 (define-public r-degreenet
   (package
     (name "r-degreenet")
-    (version "1.3-5")
+    (version "1.3-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "degreenet" version))
        (sha256
-        (base32 "0mv3zp5yzyf19ph6pi550g1bd2vw1hds2nfj42hidjdzjj5wqm1j"))))
+        (base32 "1z9b91c5ngjs3rngfvnk3j5q5vjnj08y8amd2xm50xyvlkcblgxh"))))
     (properties `((upstream-name . "degreenet")))
     (build-system r-build-system)
     (propagated-inputs (list r-network r-igraph))

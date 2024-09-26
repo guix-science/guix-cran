@@ -5930,6 +5930,28 @@ functions expect.  It has preset arrowheads and a collection of functions to
 create and transform data for customizing arrows.")
     (license license:cc0)))
 
+(define-public r-arrg
+  (package
+    (name "r-arrg")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arrg" version))
+       (sha256
+        (base32 "11n0qd51ab8hmm6axzzpx3dg4n43g7fh72x8p3ixbj0k11id02ph"))))
+    (properties `((upstream-name . "arrg")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ore))
+    (home-page "https://github.com/jonclayden/arrg")
+    (synopsis "Flexible Argument Parsing for R Scripts")
+    (description
+     "Argument parsing for R scripts, with support for long and short Unix-style
+options including option clustering, positional arguments including those of
+variable length, and multiple usage patterns which may take different subsets of
+options.")
+    (license license:gpl2)))
+
 (define-public r-arrayhelpers
   (package
     (name "r-arrayhelpers")

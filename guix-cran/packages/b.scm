@@ -27938,6 +27938,38 @@ Lefebvre, Atherton and Talbot (2014).")
 from Goodman-Bacon (2018) <doi:10.3386/w25018>.")
     (license license:expat)))
 
+(define-public r-baclava
+  (package
+    (name "r-baclava")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "baclava" version))
+       (sha256
+        (base32 "1jpb59g23cmxc8c07fx9y810sx58gm6n1v6cgkmsf8m7592di1bb"))))
+    (properties `((upstream-name . "baclava")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-rcppnumerical
+                             r-rcppeigen
+                             r-rcpp
+                             r-ggplot2
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-coda))
+    (home-page "https://cran.r-project.org/package=baclava")
+    (synopsis
+     "Bayesian Analysis of Cancer Latency with Auxiliary Variable Augmentation")
+    (description
+     "This package provides a novel data-augmentation Markov chain Monte Carlo
+sampling algorithm to fit a progressive compartmental model of disease in a
+Bayesian framework Morsomme, R.N., Holloway, S.T., Ryser, M.D. and Xu J. (2024)
+<doi:10.48550/@code{arXiv.2408.14625>}.")
+    (license license:gpl3)))
+
 (define-public r-backtest
   (package
     (name "r-backtest")

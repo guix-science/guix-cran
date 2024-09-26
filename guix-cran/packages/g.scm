@@ -11601,13 +11601,13 @@ analysis under heterogeneity.")
 (define-public r-glow
   (package
     (name "r-glow")
-    (version "0.11.0")
+    (version "0.13.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glow" version))
        (sha256
-        (base32 "1q8zci8jv71xzcxsg9b0h04mx11ykpsh4lnvkgg74zfsrf3sib0f"))))
+        (base32 "0hzjvc70syb0n771fnvxayfgjcpqxbp4pm5c9451n519m9j0srk1"))))
     (properties `((upstream-name . "glow")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppparallel r-rcppeigen r-rcpp r-r6 r-ggplot2))
@@ -26820,13 +26820,13 @@ by the authors.")
 (define-public r-gecal
   (package
     (name "r-gecal")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GECal" version))
        (sha256
-        (base32 "0c96ilmd2pwr9cwlsiyqzpm2wam1g3gn03hl6h1y857ahsab7c96"))))
+        (base32 "0i5l15v3g0mpr3byhg55pib5x84fjhp7yxwzm3hb04dfn1dx07lj"))))
     (properties `((upstream-name . "GECal")))
     (build-system r-build-system)
     (propagated-inputs (list r-nleqslv))

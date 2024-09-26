@@ -870,6 +870,28 @@ use a variety of command-line tools to perform these operations such as exiftool
 pdftk <https://gitlab.com/pdftk-java/pdftk>.")
     (license license:expat)))
 
+(define-public r-xmlwriter
+  (package
+    (name "r-xmlwriter")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "xmlwriter" version))
+       (sha256
+        (base32 "1gk74blg5ghnhk51lj3q6m5vzzpl19m5zqy1bg0lz6ibivzvy9mg"))))
+    (properties `((upstream-name . "xmlwriter")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rcpp))
+    (home-page "https://edwindj.github.io/xmlwriter/")
+    (synopsis "Fast and Elegant XML Generation")
+    (description
+     "This package provides a fast and elegant interface for generating XML fragments
+and documents.  It can be used in companion with R packages XML or xml2 to
+generate XML documents.  The fast XML generation is implemented using the Rcpp
+package.")
+    (license license:expat)))
+
 (define-public r-xmlrpc2
   (package
     (name "r-xmlrpc2")

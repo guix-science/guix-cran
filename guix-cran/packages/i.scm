@@ -12971,6 +12971,29 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
 @code{ImageJ} <https://imagej.net/ij/>.  Also supports text image I/O.")
     (license license:gpl3)))
 
+(define-public r-ijse
+  (package
+    (name "r-ijse")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IJSE" version))
+       (sha256
+        (base32 "1412m881dswl3ah4wdc7nhlb9ihn0aqywak1my6hc48a7pggdbnk"))))
+    (properties `((upstream-name . "IJSE")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-posterior r-brms))
+    (home-page "https://cran.r-project.org/package=IJSE")
+    (synopsis "Infinite-Jackknife-Based Standard Errors for 'brms' Models")
+    (description
+     "This package provides a function to calculate infinite-jackknife-based standard
+errors for fixed effects parameters in brms models, handling both clustered and
+non-clustered data.  References: Ji et al. (2024)
+<doi:10.48550/@code{arXiv.2407.09772>}; Giordano et al. (2024)
+<doi:10.48550/@code{arXiv.2305.06466>}.")
+    (license license:expat)))
+
 (define-public r-iivpredictor
   (package
     (name "r-iivpredictor")

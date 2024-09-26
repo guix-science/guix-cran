@@ -11527,6 +11527,33 @@ in R uses the IEC 60559 standard and therefore it rounds 0.5 to 0 and rounds
 to 1.")
     (license license:expat)))
 
+(define-public r-roundwork
+  (package
+    (name "r-roundwork")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "roundwork" version))
+       (sha256
+        (base32 "0pi2gr1qn4sw0ganysi78cbrnnhss9ha0rfs0jvx9pd3j4n1j6gz"))))
+    (properties `((upstream-name . "roundwork")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://lhdjung.github.io/roundwork/")
+    (synopsis "Rounding Infrastructure")
+    (description
+     "Flexible rounding functions for use in error detection.  They were outsourced
+from the scrutiny package.")
+    (license license:expat)))
+
 (define-public r-roundhouse
   (package
     (name "r-roundhouse")
@@ -21560,6 +21587,32 @@ others discovered during ongoing testing and code simplification.")
 implemented with @code{JavaScript} for node and browsers.")
     (license license:expat)))
 
+(define-public r-rix
+  (package
+    (name "r-rix")
+    (version "0.12.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rix" version))
+       (sha256
+        (base32 "14kp29xa0zdafnclc5vz01vl0hpnaxll7cg146ajizdf0d3q1kpq"))))
+    (properties `((upstream-name . "rix")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sys r-jsonlite r-curl r-codetools))
+    (native-inputs (list r-knitr))
+    (home-page "https://docs.ropensci.org/rix/")
+    (synopsis "Reproducible Data Science Environments with 'Nix'")
+    (description
+     "Simplifies the creation of reproducible development environments using the Nix
+package manager.  The included `rix()` function generates a complete description
+of the development environment as a `default.nix` file, which can then be built
+using Nix'.  This results in project specific software environments with pinned
+versions of R, packages, linked system dependencies, and other tools.
+Additional helpers make it easy to run R code in Nix software environments for
+testing and production.")
+    (license license:gpl3+)))
+
 (define-public r-rivretrieve
   (package
     (name "r-rivretrieve")
@@ -31450,13 +31503,13 @@ package by Muggeo (2024) <https://cran.r-project.org/package=segmented>.")
 (define-public r-reliabilitytheory
   (package
     (name "r-reliabilitytheory")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ReliabilityTheory" version))
        (sha256
-        (base32 "1vj09a2gc36cp98kai4m0wyjg6h9yldawhjimjqr5nrf70i60bg5"))))
+        (base32 "0844p7fxbj1c5zazli32kmz7sdffcf4nya3z5g2xhib90iswc2kk"))))
     (properties `((upstream-name . "ReliabilityTheory")))
     (build-system r-build-system)
     (propagated-inputs (list r-sfsmisc
@@ -36068,28 +36121,23 @@ formats: akterm, dmna, Scintec Format-1, and Campbell Scientific TOA5.")
 (define-public r-readmdtable
   (package
     (name "r-readmdtable")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readMDTable" version))
        (sha256
-        (base32 "0ah5c8p3sz7v8s91f7s4k1ghmxl5jvmvgi8qa50886i02jwwcvfq"))))
+        (base32 "0bwhf02sb1v6p7mck93sk1vl1q73la38lwq2gs3a5g8mi11a3ykv"))))
     (properties `((upstream-name . "readMDTable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-stringr
-                             r-readr
-                             r-lubridate
-                             r-httr2
-                             r-cli))
+    (propagated-inputs (list r-stringr r-readr r-httr2 r-cli))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/jrdnbradford/readMDTable")
     (synopsis "Read Markdown Tables into Tibbles")
     (description
-     "This package provides functions for reading raw markdown tables from a string,
-file, or URL into tibbles.  It includes options to warn users about potential
-issues with the markdown table format, ensuring robust data handling even if the
-table has minor formatting errors.")
+     "Efficient reading of raw markdown tables into tibbles.  Designed to accept
+content from strings, files, and URLs with the ability to extract and read
+multiple tables from markdown for analysis.")
     (license license:gpl3+)))
 
 (define-public r-readjdx
@@ -48003,6 +48051,36 @@ abbreviation of R @code{agGrid}'.")
 matrix population models ('MPMs').  Described in Jones et al. (2021)
 <doi:10.1101/2021.04.26.441330>.")
     (license license:gpl3)))
+
+(define-public r-rafsi
+  (package
+    (name "r-rafsi")
+    (version "0.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "rafsi" version))
+       (sha256
+        (base32 "03f5svk6y2by7sja9clf7pmmb4mz6k4mx7qzh6bq87fgfcngq89g"))))
+    (properties `((upstream-name . "rafsi")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=rafsi")
+    (synopsis "Ranking of Alternatives with the RAFSI Method")
+    (description
+     "Ranking of Alternatives through Functional mapping of criterion sub-intervals
+into a Single Interval Method is designed to perform multi-criteria
+decision-making (MCDM), developed by MaliÅ¡a Å½iÅ¾ovic in 2020
+(<doi:10.3390/math8061015>).  It calculates the final sorted rankings based on a
+decision matrix where rows represent alternatives and columns represent
+criteria.  The method uses: - A numeric vector of weights for each criterion
+(the sum of weights must be 1). - A numeric vector of ideal values for each
+criterion. - A numeric vector of anti-ideal values for each criterion. - Numeric
+values representing the extent to which the ideal value is preferred over the
+anti-ideal value, and the extent to which the anti-ideal value is considered
+worse.  The function standardizes the decision matrix, normalizes the data,
+applies weights, and returns the final sorted rankings.")
+    (license license:gpl3+)))
 
 (define-public r-rafs
   (package

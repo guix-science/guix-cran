@@ -12517,15 +12517,16 @@ and the transformed space of the variables.")
 (define-public r-tlic
   (package
     (name "r-tlic")
-    (version "0.1")
+    (version "0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TLIC" version))
        (sha256
-        (base32 "1s98i65zs9v69x2j3vr30pshrvswyg1iawhzdf5i54ixka1vix4j"))))
+        (base32 "0dddz4zdhvg238ycaa7zn6xn383ydd4ay8va6qr1wlsh3ggy7myz"))))
     (properties `((upstream-name . "TLIC")))
     (build-system r-build-system)
+    (propagated-inputs (list r-laplacesdemon r-fbasics))
     (home-page "https://cran.r-project.org/package=TLIC")
     (synopsis "The LIC for T Distribution Regression Analysis")
     (description

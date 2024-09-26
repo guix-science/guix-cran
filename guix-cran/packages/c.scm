@@ -13053,13 +13053,13 @@ the data into separate modules.")
 (define-public r-corbouli
   (package
     (name "r-corbouli")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "corbouli" version))
        (sha256
-        (base32 "02q0akkscd0xjg6wplawaar8k444n1bv8ajy8kibv10yw3b56r2d"))))
+        (base32 "048il7yvlsz39ph76hw5qa4fpknpvp11h1fsg0y623ykk9cava93"))))
     (properties `((upstream-name . "corbouli")))
     (build-system r-build-system)
     (native-inputs (list r-rmarkdown r-knitr))
@@ -13067,9 +13067,9 @@ the data into separate modules.")
     (synopsis "Corbae-Ouliaris Frequency Domain Filtering")
     (description
      "Corbae-Ouliaris frequency domain filtering.  According to Corbae and Ouliaris
-(2006) <doi:10.1017/CBO9781139164863.008>, this is a solution for taking into
-account characteristics of the time series, like business cycles etc.  when
-filtering, both stationary and non-stationary time series.")
+(2006) <doi:10.1017/CBO9781139164863.008>, this is a solution for extracting
+cycles from time series, like business cycles etc.  when filtering.  This method
+is valid for both stationary and non-stationary time series.")
     (license license:gpl3)))
 
 (define-public r-corbin
@@ -15198,13 +15198,13 @@ data.table package.")
 (define-public r-contactdata
   (package
     (name "r-contactdata")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "contactdata" version))
        (sha256
-        (base32 "0lh3m5aln47clyc5pmz75sggqnzgkg68wyrla11zbg9isyh581nw"))))
+        (base32 "1dbh13p03md2gvgmsdrdg3b1c5fb2mi6p1jqygvw8kfw1468i1k1"))))
     (properties `((upstream-name . "contactdata")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -21674,13 +21674,13 @@ profiles.")
 (define-public r-cohortconstructor
   (package
     (name "r-cohortconstructor")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortConstructor" version))
        (sha256
-        (base32 "0wpfawsvdbllbr7vm83agyzcw64fjn4pwl1hzqm966iim118ch7n"))))
+        (base32 "1yfsg2h6hpgql21pmz5w66ygbbpp6qrz84kf383qxjjdi3m4y8fg"))))
     (properties `((upstream-name . "CohortConstructor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21739,13 +21739,13 @@ Observational Medical Outcomes Partnership (OMOP) common data model (CDM).")
 (define-public r-cohortbuilder
   (package
     (name "r-cohortbuilder")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cohortBuilder" version))
        (sha256
-        (base32 "117gdqga61h24xa1h534837pz34ym5hnfz6731rrm3lnlzd171w6"))))
+        (base32 "0rwqi9sh69j1bx116q41gby7j0lrh81j232xlp003vs4i7pwwx4k"))))
     (properties `((upstream-name . "cohortBuilder")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21988,16 +21988,16 @@ inhabit only freshwater.")
 (define-public r-coffee
   (package
     (name "r-coffee")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coffee" version))
        (sha256
-        (base32 "1980dqc8qp6v6d3x9iflbccrlniy8xscjarqdll8p8f6divc9zga"))))
+        (base32 "1i5jical8rvv7v5mbni619z664c290wniqca82gymqvvdx0c67av"))))
     (properties `((upstream-name . "coffee")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rice r-data-table))
+    (propagated-inputs (list r-rintcal r-rice r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/Maarten14C/coffee")
     (synopsis "Chronological Ordering for Fossils and Environmental Events")
@@ -22012,7 +22012,8 @@ Another example is sites where the relative chronological position of the dates
 is taken into account - the ages of dates further down a site must be older than
 those of dates further up (Buck, Kenworthy, Litton and Smith 1991
 <doi:10.1017/S0003598X00080534>; Nicholls and Jones 2001
-<doi:10.1111/1467-9876.00250>).")
+<doi:10.1111/1467-9876.00250>).  The paper accompanying this R package is Blaauw
+et al.  2024 <doi:10.1017/RDC.2024.56>.")
     (license license:gpl2+)))
 
 (define-public r-cofeaturer
@@ -29027,16 +29028,16 @@ analysis, applied to isotope data extracted from clams.")
 (define-public r-clam
   (package
     (name "r-clam")
-    (version "2.6.0")
+    (version "2.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "clam" version))
        (sha256
-        (base32 "0a292s1prw757ivgmxdcvqa77gnqymhjbml6rn4j0q6jg24d7g6x"))))
+        (base32 "0kfkr5rnzmfj1jjf2jwkaxnddalid982gbd44pgz4y1nw00kj71c"))))
     (properties `((upstream-name . "clam")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rice r-data-table))
+    (propagated-inputs (list r-rintcal r-rice r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=clam")
     (synopsis "Classical Age-Depth Modelling of Cores from Deposits")
@@ -29046,7 +29047,7 @@ prior to applying more sophisticated techniques such as Bayesian age-depth
 modelling.  Any radiocarbon dated depths are calibrated.  Age-depth models are
 constructed by sampling repeatedly from the dated levels, each time drawing
 age-depth curves.  Model types include linear interpolation, linear or
-polynomial regression, and a range of splines.  See Blaauw (2010).
+polynomial regression, and a range of splines.  See Blaauw (2010)
 <doi:10.1016/j.quageo.2010.01.002>.")
     (license license:gpl2+)))
 
@@ -38070,13 +38071,13 @@ information, see Lee, Glaze, Bradlow, and Kable
 (define-public r-cbsodatar
   (package
     (name "r-cbsodatar")
-    (version "1.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cbsodataR" version))
        (sha256
-        (base32 "0p3bchkvib7jmr5qd3x36kcpajz6i2himk5s294z74hvc9vdkc7d"))))
+        (base32 "0pj3c8jgdfqz5m4ws2g6jzx4xghsyji8fmm1vk5l2w07pcm1xs9a"))))
     (properties `((upstream-name . "cbsodataR")))
     (build-system r-build-system)
     (propagated-inputs (list r-whisker r-jsonlite))

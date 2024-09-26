@@ -5889,13 +5889,13 @@ suitable for mapping, quantitative analysis, and network analysis.")
 (define-public r-historicalborrowlong
   (package
     (name "r-historicalborrowlong")
-    (version "0.0.8")
+    (version "0.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "historicalborrowlong" version))
        (sha256
-        (base32 "05kk4m80xvmlra9dlkcq2ww5llyg9r8bqhh8p7i8kzma6c31w4qa"))))
+        (base32 "024dq8kyw67bz4p58d99r1ldhh3wjhpjzgqdmi25ncgxq7k9ylva"))))
     (properties `((upstream-name . "historicalborrowlong")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo

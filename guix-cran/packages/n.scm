@@ -14306,18 +14306,18 @@ check the R package <https://CRAN.R-project.org/package=nlme>.")
 (define-public r-nbpmatching
   (package
     (name "r-nbpmatching")
-    (version "1.5.5")
+    (version "1.5.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nbpMatching" version))
        (sha256
-        (base32 "0r9q4vkqsrb1m0kzwgih797r3shy04fd185z3rwdi3w4cs03xydp"))))
+        (base32 "0hl1plld7b0kjwiwwsiwlwfhv790w2kg660956zvw4jdnwqhfadk"))))
     (properties `((upstream-name . "nbpMatching")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass r-hmisc))
     (native-inputs (list gfortran))
-    (home-page "https://biostat.app.vumc.org/wiki/Main/MatchedRandomization")
+    (home-page "https://github.com/couthcommander/nbpMatching")
     (synopsis "Functions for Optimal Non-Bipartite Matching")
     (description
      "Perform non-bipartite matching and matched randomization.  A \"bipartite\"

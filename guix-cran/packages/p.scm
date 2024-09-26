@@ -12475,35 +12475,33 @@ test-taker is needed.")
 (define-public r-powriclpm
   (package
     (name "r-powriclpm")
-    (version "0.1.1")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powRICLPM" version))
        (sha256
-        (base32 "01mccy1s0sl3haz4q26vv1dfrgzdrkds8b1c38iv6zy5am68s9iy"))))
+        (base32 "1l6gdafy5mmfdixn7wsjz1lnaqibfjy0zdsr1cjmvik93x173l9w"))))
     (properties `((upstream-name . "powRICLPM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang
-                             r-purrr
                              r-progressr
+                             r-lifecycle
                              r-lavaan
                              r-ggplot2
+                             r-future-apply
                              r-future
-                             r-furrr
-                             r-dplyr))
+                             r-cli))
     (native-inputs (list r-knitr))
     (home-page "https://jeroendmulder.github.io/powRICLPM/")
-    (synopsis
-     "Perform Power Analysis for the Random Intercept Cross-Lagged Panel Model")
+    (synopsis "Perform Power Analysis for the RI-CLPM and STARTS Model")
     (description
-     "Perform user-friendly power analyses for the bivariate random intercept
-cross-lagged panel model (RI-CLPM).  The strategy as proposed by Mulder (2022)
-<doi:10.1080/10705511.2022.2122467> is implemented.  Extended power analysis
-options include the use of bounded estimation, inclusion of measurement error in
-the data generating model and estimation model (i.e., the stable trait
-autoregressive trait state, STARTS, model), imposing various constraints over
-time on the parameters of the estimation model, among others.")
+     "Perform user-friendly power analyses for the random intercept cross-lagged panel
+model (RI-CLPM) and the bivariate stable trait autoregressive trait state
+(STARTS) model.  The strategy as proposed by Mulder (2023)
+<doi:10.1080/10705511.2022.2122467> is implemented.  Extensions include the use
+of parameter constraints over time, bounded estimation, generation of data with
+skewness and kurtosis, and the option to setup the power analysis for Mplus.")
     (license license:expat)))
 
 (define-public r-powerupr
@@ -16297,13 +16295,13 @@ experimental situations.")
 (define-public r-polyapost
   (package
     (name "r-polyapost")
-    (version "1.7")
+    (version "1.7-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "polyapost" version))
        (sha256
-        (base32 "1inq3b8qq17w5zx2lrkrxjzb7drfajsp4qgy0194971m6x2j4cfx"))))
+        (base32 "1q1ack0wpn21d8p4wfm0xyinw0lc0506x3zxyiqdwppgq9491r8n"))))
     (properties `((upstream-name . "polyapost")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcdd r-boot))
@@ -22025,13 +22023,13 @@ CRAN/Bioconductor ecosystems for many old R versions.")
 (define-public r-pkglite
   (package
     (name "r-pkglite")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pkglite" version))
        (sha256
-        (base32 "1781gkzz5p1rbksyxaznqp7n0ixig8lzjg88bj3v24r0zg5wwdwc"))))
+        (base32 "1ldz68c09192qy8k52fcx1k714dzwcjck9gla16z2g3zcyijizyi"))))
     (properties `((upstream-name . "pkglite")))
     (build-system r-build-system)
     (propagated-inputs (list r-remotes r-magrittr r-crayon))
@@ -27700,26 +27698,28 @@ matrices/networks.")
 (define-public r-persval
   (package
     (name "r-persval")
-    (version "1.0.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "persval" version))
        (sha256
-        (base32 "0208f33yhsvipy52b4931v4iqzgmapb4i14mnnq6cshpi4s6cp0q"))))
+        (base32 "12gij3lvd8lvdpcmnyzxjwy4060xv3q5smvaz3ni82165f90dw47"))))
     (properties `((upstream-name . "persval")))
     (build-system r-build-system)
+    (propagated-inputs (list r-fmsb))
     (home-page "https://github.com/g-corbelli/persval")
     (synopsis "Computing Personal Values Scores")
     (description
      "Compute personal values scores from various questionnaires based on the
 theoretical constructs proposed by professor Shalom H. Schwartz.  Designed for
 researchers and practitioners in psychology, sociology, and related fields, the
-package facilitates the quantification of different dimensions related to
-personal values from survey data.  It incorporates the recommended statistical
-adjustment to enhance the accuracy and interpretation of the results.  Note: The
-package persval is independently developed based on the personal values
-theoretical framework, and is not directly endorsed by professor Schwartz.")
+package facilitates the quantification and visualization of different dimensions
+related to personal values from survey data.  It incorporates the recommended
+statistical adjustment to enhance the accuracy and interpretation of the
+results.  Note: The package persval is independently developed based on the
+personal values theoretical framework, and is not directly endorsed by professor
+Schwartz.")
     (license license:gpl3)))
 
 (define-public r-perspectev
@@ -32489,25 +32489,23 @@ Cancer subtyping.")
 (define-public r-pcaone
   (package
     (name "r-pcaone")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pcaone" version))
        (sha256
-        (base32 "0lpi4y8alddaplq2pjpgkbias1k08y02jg1zd236dh3n2qkfmamw"))))
+        (base32 "0ds64x9g2jbxhk2qdgpshr8lkksklaswjxphyw43jimz5lslds11"))))
     (properties `((upstream-name . "pcaone")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppeigen r-rcpp))
     (home-page "https://github.com/Zilong-Li/PCAoneR")
     (synopsis
-     "Randomized Singular Value Decomposition Algorithms with 'RcppEigen'")
+     "Fast and Accurate Randomized Singular Value Decomposition Algorithms with 'PCAone'")
     (description
-     "Randomized Singular Value Decomposition (RSVD) methods proposed in the PCAone
-paper by Li (2022) <doi:10.1101/2022.05.25.493261>, where we implement and
-propose two RSVD methods.  One is based on Yu (2017) <@code{arXiv:1704.07669>}
-single pass RSVD but with power iteration scheme.  The other is our new window
-based RSVD.")
+     "Fast and Accurate Randomized Singular Value Decomposition (RSVD) methods
+proposed in the PCAone paper by Li (2023)
+<https://genome.cshlp.org/content/33/9/1599>.")
     (license license:gpl3+)))
 
 (define-public r-pcamixdata
@@ -32848,13 +32846,13 @@ effectively.")
 (define-public r-pbsmapping
   (package
     (name "r-pbsmapping")
-    (version "2.73.4")
+    (version "2.74.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PBSmapping" version))
        (sha256
-        (base32 "1g4gnqwjq45xfrymmyn89zn2gry1l142cc084qp5pv2f400qfmnc"))))
+        (base32 "0flyqb7p6y9k0zbdnnw0ym9qm2mamw8ajd42b3s03vpmsnc5ja8c"))))
     (properties `((upstream-name . "PBSmapping")))
     (build-system r-build-system)
     (home-page "https://github.com/pbs-software/pbs-mapping")
@@ -33940,6 +33938,50 @@ and saving directory structure in YAML configuration files via config package.
 The file structure you created during exploration can be transformed into
 legible section in the config file, and then easily loaded for further usage.")
     (license license:expat)))
+
+(define-public r-path-analysis
+  (package
+    (name "r-path-analysis")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Path.Analysis" version))
+       (sha256
+        (base32 "0xpr05qhlc20i2k8g61jq7grvdvlvai3fx827l77x6z1kcxcbzwa"))))
+    (properties `((upstream-name . "Path.Analysis")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pastecs
+                             r-metan
+                             r-mathjaxr
+                             r-hmisc
+                             r-gplots
+                             r-diagrammer
+                             r-corrr
+                             r-corrplot
+                             r-complexheatmap))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/abeyran/Path.Analysis")
+    (synopsis "Path Coefficient Analysis")
+    (description
+     "Facilitates the performance of several analyses, including simple and sequential
+path coefficient analysis, correlation estimate, drawing correlogram, Heatmap,
+and path diagram.  When working with raw data, that includes one or more
+dependent variables along with one or more independent variables are available,
+the path coefficient analysis can be conducted.  It allows for testing direct
+effects, which can be a vital indicator in path coefficient analysis.  The
+process of preparing the dataset rule is explained in detail in the vignette
+file \"Path.Analysis_manual.Rmd\".  You can find this in the folders labelled
+\"data\" and \"~/inst/extdata\".  Also see: 1)the lavaan', 2)a sample of sequential
+path analysis in metan suggested by Olivoto and LÃºcio (2020)
+<doi:10.1111/2041-210X.13384>, 3)the simple PATHSAS macro written in SAS by
+Cramer et al. (1999) <doi:10.1093/jhered/90.1.260>, and 4)the @code{semPlot}()
+function of @code{OpenMx} as initial tools for conducting path coefficient
+analyses and SEM (Structural Equation Modeling).  To gain a comprehensive
+understanding of path coefficient analysis, both in theory and practice, see a
+Minitab macro developed by Arminian, A. in the paper by Arminian et al. (2008)
+<doi:10.1080/15427520802043182>.")
+    (license license:gpl3)))
 
 (define-public r-patentsview
   (package
