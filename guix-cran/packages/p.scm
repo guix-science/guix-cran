@@ -2016,13 +2016,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.0.1")
+    (version "2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "06762lf01d82sq2n34qwx53qiwhvfdqhpxw00f9zhrm4k7g6ms7l"))))
+        (base32 "13x5rw3v82hsqy40ar62v1lrgw5zfvh51bv9lancfja5h2k92p0p"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8432,13 +8432,13 @@ problems.")
 (define-public r-prior3d
   (package
     (name "r-prior3d")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "prior3D" version))
        (sha256
-        (base32 "08w461526hfm1vgsyx2p69jv60k2jv8x5bz0jr0a6bilg67fb6yv"))))
+        (base32 "1l3ikdkgzlgqqk48hkfz5z37jnf54ws7b0zfcdl51zcmv43yra19"))))
     (properties `((upstream-name . "prior3D")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -8453,13 +8453,12 @@ problems.")
     (home-page "https://github.com/cadam00/prior3D")
     (synopsis "3D Prioritization Algorithm")
     (description
-     "3D systematic conservation planning, conducting nested prioritization analyses
-across multiple depth levels and ensuring efficient resource allocation
-throughout the water column (Doxa et al.  2024 <doi:10.1111/gcb.16268>).  It
-provides a structured workflow designed to address biodiversity conservation and
-management challenges in the 3 dimensions, such as the incorporation of multiple
-costs at different depth levels, while facilitating usersâ choices and
-parameterization.")
+     "Three-dimensional systematic conservation planning, conducting nested
+prioritization analyses across multiple depth levels and ensuring efficient
+resource allocation throughout the water column (Doxa et al.  2024
+<doi:10.1111/gcb.16268>).  It provides a structured workflow designed to address
+biodiversity conservation and management challenges in the 3 dimensions, while
+facilitating usersâ choices and parameterization.")
     (license license:gpl3)))
 
 (define-public r-priogene
@@ -12695,13 +12694,13 @@ power family and the three-parameter model.")
 (define-public r-powernlsem
   (package
     (name "r-powernlsem")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerNLSEM" version))
        (sha256
-        (base32 "08l8yfry95zdfdi809vyymv71gal54jb8jlyxkpa08iwj7zyybc4"))))
+        (base32 "1iy5jkrn5lr8h64rv33jyv5qdn4jymwv80xp0ii3hirscv3pssbd"))))
     (properties `((upstream-name . "powerNLSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -12724,7 +12723,7 @@ to find the optimal N for given effect sizes and type I error rates.  Plots can
 be used to visualize the power relation to N for different parameters of
 interest (POI).  Theoretical justifications are given in Irmer et al. (2024a)
 <doi:10.31219/osf.io/pe5bj> and detailed description are given in Irmer et al.
-(2024b).")
+(2024b) <doi:10.3758/s13428-024-02476-3>.")
     (license license:gpl3)))
 
 (define-public r-powermediation
@@ -19540,13 +19539,13 @@ site is completed.")
 (define-public r-plotor
   (package
     (name "r-plotor")
-    (version "0.4.1")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plotor" version))
        (sha256
-        (base32 "1cn1sa1m4afcszlxj5rq89i876d2pnmxinaiizc9hdzdmwciswjn"))))
+        (base32 "1wfhdmlc6042yvqnj3lv34swfnkr75ygsd48yg2mldxjm2b8ma09"))))
     (properties `((upstream-name . "plotor")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -28019,6 +28018,27 @@ with model selection in regression problems.")
      "This package provides a coding assistant using Perplexity's Large Language
 Models <https://www.perplexity.ai/> API. A set of functions and RStudio add-ins
 that aim to help R developers.")
+    (license license:gpl3+)))
+
+(define-public r-permutest
+  (package
+    (name "r-permutest")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "permutest" version))
+       (sha256
+        (base32 "1y34l09bh4l7mjzdbm0dycsx7021icqj9wla6v1lpfid4lbr6y1p"))))
+    (properties `((upstream-name . "permutest")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=permutest")
+    (synopsis
+     "Run Permutation Tests and Construct Associated Confidence Intervals")
+    (description
+     "This package implements permutation tests for any test statistic and
+randomization scheme and constructs associated confidence intervals as described
+in Glazer and Stark (2024) <doi:10.48550/@code{arXiv.2405.05238>}.")
     (license license:gpl3+)))
 
 (define-public r-permutes
@@ -37490,23 +37510,25 @@ community networks and displays of cohesion against distance.")
 (define-public r-palasso
   (package
     (name "r-palasso")
-    (version "0.0.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "palasso" version))
        (sha256
-        (base32 "1qx6xa1csa4dz4vjr0q83pr22yxy01dzzqrjp5mxqqm6265wxqdh"))))
+        (base32 "1lc258dfigfnafafm1h4v935wl0gjdw3ay14g1y0iw06b4r7x436"))))
     (properties `((upstream-name . "palasso")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-matrix r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rauschenberger/palasso")
-    (synopsis "Paired Lasso Regression")
+    (synopsis "Sparse Regression with Paired Covariates")
     (description
-     "This package implements sparse regression with paired covariates (Rauschenberger
-et al.  2020 <doi:10.1007/s11634-019-00375-6>).  For the optional shrinkage,
-install ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
+     "This package implements sparse regression with paired covariates
+(<doi:10.1007/s11634-019-00375-6>).  The paired lasso is designed for settings
+where each covariate in one set forms a pair with a covariate in the other set
+(one-to-one correspondence).  For the optional correlation shrinkage, install
+ashr (<https://github.com/stephens999/ashr>) and @code{CorShrink}
 (<https://github.com/kkdey/@code{CorShrink>}) from @code{GitHub} (see README).")
     (license license:gpl3)))
 
@@ -38541,13 +38563,13 @@ information, please see Gruenstaeudl and Jenke (2020)
 (define-public r-pacs
   (package
     (name "r-pacs")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pacs" version))
        (sha256
-        (base32 "0vqmck5jajlbn3iazb7s6jpfgbwvl7aa084ag25cahsmajczg2v7"))))
+        (base32 "0afsci8qknvhg0zlc6fli87dn1pcs5jhyzddg7fad4qqyyy41sqx"))))
     (properties `((upstream-name . "pacs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-stringi r-memoise r-jsonlite r-curl))

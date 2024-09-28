@@ -5725,16 +5725,17 @@ minimal causal configuration associated with a given phenomenon.")
 (define-public r-qbr
   (package
     (name "r-qbr")
-    (version "1.2.3")
+    (version "1.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qbr" version))
        (sha256
-        (base32 "0d6rhzi1kcd0q7vfnwdrvywyxavc97kmkbfza82srz3n91zjkjrb"))))
+        (base32 "0licmg1599dvzc6h9s9h29m9zx1l4wd7mwnwl13wcsp7mwdr4s6j"))))
     (properties `((upstream-name . "qbr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
                              r-tibble
                              r-stringr
                              r-purrr

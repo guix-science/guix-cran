@@ -2159,6 +2159,34 @@ be primarily used internally by other hubverse packages.  See Reich et al.
 (2022) <doi:10.2105/AJPH.2022.306831> for an overview of Collaborative Hubs.")
     (license license:expat)))
 
+(define-public r-hubensembles
+  (package
+    (name "r-hubensembles")
+    (version "0.1.8")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "hubEnsembles" version))
+       (sha256
+        (base32 "0fcx8kvf9g85am34fcb48lvw1ljjvv7lmn8c8lvlv832mr62p1mx"))))
+    (properties `((upstream-name . "hubEnsembles")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-rlang
+                             r-purrr
+                             r-matrixstats
+                             r-hubutils
+                             r-dplyr
+                             r-distfromq
+                             r-cli))
+    (home-page "https://github.com/hubverse-org/hubEnsembles")
+    (synopsis "Ensemble Methods for Combining Hub Model Outputs")
+    (description
+     "This package provides functions for combining model outputs (e.g. predictions or
+estimates) from multiple models into an aggregated ensemble model output.")
+    (license license:expat)))
+
 (define-public r-hubeau
   (package
     (name "r-hubeau")
@@ -3449,21 +3477,23 @@ analytics.  Get started with workforce planning using a simple Shiny app.")
 (define-public r-hqreg
   (package
     (name "r-hqreg")
-    (version "1.4")
+    (version "1.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hqreg" version))
        (sha256
-        (base32 "1j6zp3rmpjx409vm7kq159mlawg87wsq0ypdkan34yxxv9py2jmi"))))
+        (base32 "1srr7vw5w2qpzxlhybbri2qj9gdk5yqamh33xxl58b65spdkiwds"))))
     (properties `((upstream-name . "hqreg")))
     (build-system r-build-system)
-    (home-page "http://arxiv.org/abs/1509.02957")
+    (home-page "https://github.com/CY-dev/hqreg")
     (synopsis
      "Regularization Paths for Lasso or Elastic-Net Penalized Huber Loss Regression and Quantile Regression")
     (description
-     "Efficient algorithms for fitting regularization paths for lasso or elastic-net
-penalized regression models with Huber loss, quantile loss or squared loss.")
+     "Offers efficient algorithms for fitting regularization paths for lasso or
+elastic-net penalized regression models with Huber loss, quantile loss or
+squared loss.  Reference: Congrui Yi and Jian Huang (2017)
+<doi:10.1080/10618600.2016.1256816>.")
     (license license:gpl3)))
 
 (define-public r-hqmisc
@@ -9089,13 +9119,13 @@ alpha-helical oligopeptides.  See Wadhwa RR, et al. (2018)
 (define-public r-heiscore
   (package
     (name "r-heiscore")
-    (version "0.1.3")
+    (version "0.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "heiscore" version))
        (sha256
-        (base32 "1yh4khm83aw56f8xkjan0a3v0xcc7idg6agpp2mk39dwzaqmxbk0"))))
+        (base32 "0q4zz4h6554h1z6d1ikhlb6ghfqgbz2yrlp4pa5svyyhpir7y6n2"))))
     (properties `((upstream-name . "heiscore")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis

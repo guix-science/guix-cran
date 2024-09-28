@@ -12539,24 +12539,24 @@ matrices.  For more details see the project website
 (define-public r-cornet
   (package
     (name "r-cornet")
-    (version "0.0.9")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cornet" version))
        (sha256
-        (base32 "1gd0sbf3kqzd8zwkbwbj9d8cyz52iglh1czv5ydf7nw1z8hx33r4"))))
+        (base32 "1lh6fszgxzyvxfqpl8fnxxhw521g5pg9ah9jwy9fsj06sa9yrp8i"))))
     (properties `((upstream-name . "cornet")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-glmnet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rauschenberger/cornet")
-    (synopsis "Elastic Net with Dichotomised Outcomes")
+    (synopsis "Penalised Regression for Dichotomised Outcomes")
     (description
      "This package implements lasso and ridge regression for dichotomised outcomes
-(Rauschenberger et al.  2023, <doi:10.1080/02664763.2023.2233057>).  Such
-outcomes are not naturally but artificially binary.  They indicate whether an
-underlying measurement is greater than a threshold.")
+(<doi:10.1080/02664763.2023.2233057>), i.e., numerical outcomes that were
+transformed to binary outcomes.  Such artificial binary outcomes indicate
+whether an underlying measurement is greater than a threshold.")
     (license license:gpl3)))
 
 (define-public r-cornerstoner
@@ -18655,13 +18655,13 @@ to uncover insightful growth dynamics and make informed decisions.")
 (define-public r-compexpdes
   (package
     (name "r-compexpdes")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CompExpDes" version))
        (sha256
-        (base32 "1szc3vwq3b5pxcz4vbb7vl89858wg2jxzkfrcdm2mdlvdalsq943"))))
+        (base32 "0asr1ghsdqnxp7bvzypx3zyr0i1gcx1c0g973zz9gizpvym6q5j8"))))
     (properties `((upstream-name . "CompExpDes")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=CompExpDes")
@@ -18676,7 +18676,9 @@ provided algorithms for generate efficient LHDs and UDs.  Here, generated LHDs
 are efficient as they possess lower value of Maxpro measure, Phi_p value and
 Maximum Absolute Correlation (MAC) value based on the weightage given to each
 criterion.  On the other hand, the produced UDs are having good space-filling
-property as they attained the lower bound of Discrete Discrepancy measure.")
+property as they always attain the lower bound of Discrete Discrepancy measure.
+Further, some useful functions added in this package for adding more value to
+this package.")
     (license license:gpl2+)))
 
 (define-public r-competitiontoolbox
@@ -24066,13 +24068,13 @@ are provided on the CM SAF webpage (<http://www.cmsaf.eu/R_toolbox>).")
 (define-public r-cmsaf
   (package
     (name "r-cmsaf")
-    (version "3.5.1")
+    (version "3.5.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsaf" version))
        (sha256
-        (base32 "1h4h30k72nclpi8siha050kp8i0va2r1kvwhh3nczb3lhx11zmwl"))))
+        (base32 "19mp8hf34xnw71facrb7xq081x1lclpp84p1pd8n7fy2jmp6r767"))))
     (properties `((upstream-name . "cmsaf")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -34697,13 +34699,13 @@ insight.  Web interface for USGS API can be found at
 (define-public r-cfr
   (package
     (name "r-cfr")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cfr" version))
        (sha256
-        (base32 "0gvajvwriiird3symkln0z52k9v1rz3bh4yvdg0xh1lqhylr165b"))))
+        (base32 "0sgjdapsiqn436xswl06p3m84j9z1savbyibxqzs2zc9x3imjfqr"))))
     (properties `((upstream-name . "cfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-checkmate))
@@ -35680,6 +35682,27 @@ Median center methodology based off of Kuhn and Kuenne (1962)
      "Calculates centrality indices additional to the igraph package centrality
 functions.")
     (license license:gpl2+)))
+
+(define-public r-centerline
+  (package
+    (name "r-centerline")
+    (version "0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "centerline" version))
+       (sha256
+        (base32 "00bpl7qz5hm69mnbi5278bx7v676ni8c3xyq3kmb7z7pzjgx3g83"))))
+    (properties `((upstream-name . "centerline")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-wk r-sfnetworks r-sf r-geos))
+    (home-page "https://github.com/atsyplenkov/centerline")
+    (synopsis "Extract Centerline from Closed Polygons")
+    (description
+     "Generates skeletons of closed 2D polygons using Voronoi diagrams.  It provides
+methods for sf', terra', and geos objects to compute polygon centerlines based
+on the generated skeletons.  Voronoi, G. (1908) <doi:10.1515/crll.1908.134.198>.")
+    (license license:expat)))
 
 (define-public r-censusr
   (package
@@ -37856,19 +37879,54 @@ and discriminant analysis (CCDA).  Environmental Modelling & Software.
 <doi:10.1016/j.envsoft.2014.01.010>.")
     (license license:gpl2)))
 
+(define-public r-ccd
+  (package
+    (name "r-ccd")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CCd" version))
+       (sha256
+        (base32 "168yaz1vg0hp7vsi2mxrpds0qrwn6zhp299bmi40dxg28fxzmn8w"))))
+    (properties `((upstream-name . "CCd")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast))
+    (home-page "https://cran.r-project.org/package=CCd")
+    (synopsis "The Cauchy-Cacoullos (Discrete Cauchy) Distribution")
+    (description
+     "Maximum likelihood estimation of the Cauchy-Cacoullos (discrete Cauchy)
+distribution.  Probability mass, distribution and quantile function are also
+included.  The reference paper is: Papadatos N. (2022). \"The Characteristic
+Function of the Discrete Cauchy Distribution in Memory of T. Cacoullos\".
+Journal of Statistical Theory Practice, 16(3): 47.
+<doi:10.1007/s42519-022-00268-6>.")
+    (license license:gpl2+)))
+
 (define-public r-cccrm
   (package
     (name "r-cccrm")
-    (version "2.2.2")
+    (version "3.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cccrm" version))
        (sha256
-        (base32 "1byrz0npvchdzbp10z7blz13680x7d5yak9mmagn4q3w8wclpl7x"))))
+        (base32 "0lgmj3x3l0bv39is0hl1q6r7964wagafbzaxx9z7aysk1f1b06wl"))))
     (properties `((upstream-name . "cccrm")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyselect r-nlme r-dplyr r-deriv))
+    (propagated-inputs (list r-tidyselect
+                             r-tidyr
+                             r-purrr
+                             r-progressr
+                             r-parallelly
+                             r-nlmeu
+                             r-nlme
+                             r-lifecycle
+                             r-future
+                             r-furrr
+                             r-dplyr
+                             r-deriv))
     (home-page "https://cran.r-project.org/package=cccrm")
     (synopsis
      "Concordance Correlation Coefficient for Repeated (and Non-Repeated) Measures")

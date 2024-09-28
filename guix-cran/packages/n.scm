@@ -3563,29 +3563,41 @@ mixtures via smart parametrization using the LDL (Cholesky) decomposition, see
 (define-public r-normfluodbf
   (package
     (name "r-normfluodbf")
-    (version "1.5.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "normfluodbf" version))
        (sha256
-        (base32 "1xhvwrkjhdxdzh9p1wmnxmskn6q5658s0v63p9x67b30g5s2bsca"))))
+        (base32 "0q110lyp5hjxg0zi9176s9a7b167l19d8xic8zx5yddaxpnplphz"))))
     (properties `((upstream-name . "normfluodbf")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
+    (propagated-inputs (list r-wesanderson
+                             r-tidyr
                              r-tibble
+                             r-testthat
                              r-stringr
-                             r-rio
-                             r-ggthemes
+                             r-shiny
+                             r-rstudioapi
+                             r-rlang
+                             r-purrr
+                             r-plotly
+                             r-pkgsearch
+                             r-magrittr
+                             r-hexsticker
+                             r-gridextra
                              r-ggplot2
                              r-foreign
+                             r-forcats
                              r-emojifont
                              r-dplyr
                              r-data-table
-                             r-badger))
+                             r-badger
+                             r-assertthat))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/AlphaPrime7/normfluodbf")
-    (synopsis "Cleans and Normalizes FLUOstar DBF and DAT Files")
+    (synopsis
+     "Cleans and Normalizes FLUOstar DBF and DAT Files from 'Liposome' Flux Assays")
     (description
      "Cleans and Normalizes FLUOstar DBF and DAT Files obtained from liposome flux
 assays.  Users should verify extended usage of the package on files from other
@@ -15233,13 +15245,13 @@ and the Earth Observatory Natural Event Tracker (EONET) webservice.")
 (define-public r-naryn
   (package
     (name "r-naryn")
-    (version "2.6.26")
+    (version "2.6.30")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "naryn" version))
        (sha256
-        (base32 "0v41cmmg19w2rfyndxzsv3k9h1clfc0p2py3mq47zl79qv79vqbr"))))
+        (base32 "0d4w1y6g2dzcs98x7lqnhjadzqcrw2wvn5lbkbsrs1xkf23z6rjh"))))
     (properties `((upstream-name . "naryn")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml
@@ -15856,6 +15868,35 @@ outcomes to immune repertoires based on their network properties, or to
 particular clusters and clones within a repertoire.  Yang et al. (2023)
 <doi:10.3389/fimmu.2023.1181825>.")
     (license license:gpl3+)))
+
+(define-public r-nailer
+  (package
+    (name "r-nailer")
+    (version "1.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "NaileR" version))
+       (sha256
+        (base32 "0lqrspf7zjnhsna4x2c2iyiik68vbjccg6yvyizgpqc36scwa2si"))))
+    (properties `((upstream-name . "NaileR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-sensominer
+                             r-ollamar
+                             r-magrittr
+                             r-glue
+                             r-factominer
+                             r-dplyr))
+    (home-page "https://cran.r-project.org/package=NaileR")
+    (synopsis "Interpreting Latent Variables with AI")
+    (description
+     "This package provides a small package designed for interpreting continuous and
+categorical latent variables.  You provide a data set with a latent variable you
+want to understand and some other explanatory variables.  It provides a
+description of the latent variable based on the explanatory variables.  It also
+provides a name to the latent variable.")
+    (license license:gpl2+)))
 
 (define-public r-naijr
   (package

@@ -4244,13 +4244,13 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
 (define-public r-lomar
   (package
     (name "r-lomar")
-    (version "0.4.0")
+    (version "0.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LOMAR" version))
        (sha256
-        (base32 "148n4fmz3j0i042kc6jmf839ylsgxapfx9zx8999mlg77scwmdzi"))))
+        (base32 "18hj7f5gmkikahb7v120n79qg01zk9a58isdz4z8gr1ba1y31zlj"))))
     (properties `((upstream-name . "LOMAR")))
     (build-system r-build-system)
     (inputs (list gmp fftw))
@@ -4270,8 +4270,8 @@ and unequally spaced time-series.  Biological Rhythm Research, 30(2), 178-201.")
                              r-dbscan
                              r-data-table
                              r-bh
-                             r-aws
-                             r-alphashape3d))
+                             r-alphashape3d
+                             r-abind))
     (home-page "https://git.embl.de/heriche/lomar")
     (synopsis "Localization Microscopy Data Analysis")
     (description
@@ -7405,13 +7405,13 @@ component analysis (pca) and multidimensional unfolding (mdu).")
 (define-public r-lm-br
   (package
     (name "r-lm-br")
-    (version "2.9.7")
+    (version "2.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lm.br" version))
        (sha256
-        (base32 "15ddkfy4166qkll6sf23v139mkgv67vw45haiqvf1zxfi5gc53md"))))
+        (base32 "1v9izpyklxsm8bi2kaksgbzzpdrj33p4dxx01mxgal3dk5101v0b"))))
     (properties `((upstream-name . "lm.br")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp))
@@ -16703,13 +16703,13 @@ conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
 (define-public r-lahman
   (package
     (name "r-lahman")
-    (version "11.0-0")
+    (version "12.0-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Lahman" version))
        (sha256
-        (base32 "0jzxk9ykjm4mxwf2adqdy6gbv80569ynkqsrppfn8ag9d5a3k8bv"))))
+        (base32 "0va8aq63knhwm2dk87bi0c94q0yqbmrplwih4za0mkdmv8r5i7lb"))))
     (properties `((upstream-name . "Lahman")))
     (build-system r-build-system)
     (propagated-inputs (list r-dplyr))
@@ -16719,7 +16719,7 @@ conversion equations in Bajocco et al.  2022 <doi:10.3390/rs14153554>.")
     (description
      "This package provides the tables from the Sean Lahman Baseball Database as a set
 of R data.frames.  It uses the data on pitching, hitting and fielding
-performance and other tables from 1871 through 2022, as recorded in the 2023
+performance and other tables from 1871 through 2023, as recorded in the 2024
 version of the database.  Documentation examples show how many baseball
 questions can be investigated.")
     (license (list license:gpl2+ license:gpl3+))))

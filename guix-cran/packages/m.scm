@@ -7502,35 +7502,6 @@ original name of this book will be \"R Uygulamalari ile Cok Degiskenli
 Istatistiksel Yontemler\".")
     (license license:gpl3)))
 
-(define-public r-msmtools
-  (package
-    (name "r-msmtools")
-    (version "2.0.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "msmtools" version))
-       (sha256
-        (base32 "09an9bpr0gnqbglb8kj4x8bb7f5dm2lc3d01wx6dh7j1d99vrrdk"))))
-    (properties `((upstream-name . "msmtools")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-survival
-                             r-scales
-                             r-patchwork
-                             r-msm
-                             r-ggplot2
-                             r-data-table))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/contefranz/msmtools")
-    (synopsis
-     "Building Augmented Data to Run Multi-State Models with 'msm' Package")
-    (description
-     "This package provides a fast and general method for restructuring classical
-longitudinal data into augmented ones.  The reason for this is to facilitate the
-modeling of longitudinal data under a multi-state framework using the msm
-package.")
-    (license license:gpl3)))
-
 (define-public r-msml
   (package
     (name "r-msml")
@@ -16365,20 +16336,19 @@ Rosenbaum and Rubin (1985).")
 (define-public r-mmrm
   (package
     (name "r-mmrm")
-    (version "0.3.13")
+    (version "0.3.14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mmrm" version))
        (sha256
-        (base32 "1pwg251r3fviqhqnjscj5np0p00v57v1f2ac6lhm37n5a56z27m9"))))
+        (base32 "04rzb1bww8rdnpawwcx16kp5x0zfdhi23q4v7avb3c6ilw641s65"))))
     (properties `((upstream-name . "mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
                              r-tibble
                              r-testthat
                              r-stringr
-                             r-rlang
                              r-rdpack
                              r-rcppeigen
                              r-rcpp
@@ -21501,13 +21471,13 @@ Gaussian copula model.  The methods are described in Yoon, Carroll and Gaynanova
 (define-public r-mixedbayes
   (package
     (name "r-mixedbayes")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mixedBayes" version))
        (sha256
-        (base32 "0aywgn8qhnkcq45w6vsrwarjm7mqfh4x7vqpwcp3vkygr3ykvcla"))))
+        (base32 "1jcbkbai1sm0nncixkmfbzphf1x2gnwi52bri31bay9d591p4w9h"))))
     (properties `((upstream-name . "mixedBayes")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp))
@@ -29724,13 +29694,13 @@ et al. (2018) <DOI:10.1097/XEB.0000000000000141>.")
 (define-public r-metasem
   (package
     (name "r-metasem")
-    (version "1.4.0")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "metaSEM" version))
        (sha256
-        (base32 "1gkgcczdm14cz2z4ys9qxy068g1ma6sik5ycas3z6m5rgwbd2amy"))))
+        (base32 "1dhlpi67m0mjmid8s2zma1y4p2g7fisnxfm5ff6i30qxrphryv9m"))))
     (properties `((upstream-name . "metaSEM")))
     (build-system r-build-system)
     (propagated-inputs (list r-openmx
@@ -35590,6 +35560,31 @@ additional part of the package is the presence of the performance evaluation of
 the tests (Type I error per experiment and the power).  This will assist the
 user in making the decision for the chosen test.")
     (license license:gpl2+)))
+
+(define-public r-mcprogress
+  (package
+    (name "r-mcprogress")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mcprogress" version))
+       (sha256
+        (base32 "1b1g92sw5x2rz21hl6fnfqc9q1bhawmbj8f4pbq6llljxb85k0id"))))
+    (properties `((upstream-name . "mcprogress")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/myles-lewis/mcprogress")
+    (synopsis "Progress Bars and Messages for Parallel Processes")
+    (description
+     "This package provides tools for monitoring progress during parallel processing.
+Lightweight package which acts as a wrapper around mclapply() and adds a
+progress bar to it in RStudio or Linux environments.  Simply replace your
+original call to mclapply() with pmclapply().  A progress bar can also be
+displayed during parallelisation via the foreach package.  Also included are
+functions to safely print messages (including error messages) from within
+parallelised code, which can be useful for debugging parallelised R code.")
+    (license license:gpl3+)))
 
 (define-public r-mcprofile
   (package
@@ -44568,6 +44563,27 @@ data order in calculations).")
     (license (list license:lgpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-mafr
+  (package
+    (name "r-mafr")
+    (version "1.1.6")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mafR" version))
+       (sha256
+        (base32 "1cqqrgn9br1rpn6zqngammdwrzx32nds7f2nn151nwn1hwg9xin7"))))
+    (properties `((upstream-name . "mafR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate))
+    (home-page "https://github.com/f-rousset/mafR")
+    (synopsis "Interface for Masked Autoregressive Flows")
+    (description
+     "Interfaces the Python library zuko implementing Masked Autoregressive Flows.
+See Rozet, Divo and Schnake (2023) <doi:10.5281/zenodo.7625672> and
+Papamakarios, Pavlakou and Murray (2017) <doi:10.48550/@code{arXiv.1705.07057>}.")
+    (license license:gpl2+)))
+
 (define-public r-maeswrap
   (package
     (name "r-maeswrap")
@@ -45402,18 +45418,25 @@ equivalency.")
 (define-public r-mable
   (package
     (name "r-mable")
-    (version "3.1.3")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mable" version))
        (sha256
-        (base32 "1ilhs04hiqdqwc13sp9szl5rgnc4vv6jczzq92dc7d70a5vr7m40"))))
+        (base32 "1990x699aq0j5qqzx8wz99lc1m9rnijqnkzglddflx0lfpi1yb9a"))))
     (properties `((upstream-name . "mable")))
     (build-system r-build-system)
-    (propagated-inputs (list r-survival r-iterators r-icenreg r-foreach
+    (propagated-inputs (list r-survival
+                             r-rlang
+                             r-quadprog
+                             r-mnormt
+                             r-lowrankqp
+                             r-iterators
+                             r-icenreg
+                             r-foreach
                              r-doparallel))
-    (native-inputs (list r-rmarkdown r-knitr))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=mable")
     (synopsis "Maximum Approximate Bernstein/Beta Likelihood Estimation")
     (description

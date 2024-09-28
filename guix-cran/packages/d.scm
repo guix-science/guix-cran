@@ -2580,13 +2580,13 @@ aggregated at the country, Admin 1 (states, provinces, or equivalent), and Admin
 (define-public r-dti
   (package
     (name "r-dti")
-    (version "1.5.4")
+    (version "1.5.4.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dti" version))
        (sha256
-        (base32 "065cmp4fcwb94ajg7p971jiw705kvmmygxzwscxgyqfhw2ad8hrj"))))
+        (base32 "058qny6hv3lcirjmc7kbldyy1i333p9vmvpz4jl9dyrcz5h6qmjh"))))
     (properties `((upstream-name . "dti")))
     (build-system r-build-system)
     (inputs (list gsl))
@@ -6738,6 +6738,44 @@ Gruttola & Stephen W. Lagakos (1989) <doi:10.2307/2532030>] [Jianguo Sun (1995)
 <doi:10.2307/2533008>].")
     (license license:gpl2)))
 
+(define-public r-dotwhisker
+  (package
+    (name "r-dotwhisker")
+    (version "0.8.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dotwhisker" version))
+       (sha256
+        (base32 "0p1l0750cy31ray9f9xm8yrc0zin4zb93rvbix51m3r4snhvjlnl"))))
+    (properties `((upstream-name . "dotwhisker")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rlang
+                             r-purrr
+                             r-performance
+                             r-patchwork
+                             r-parameters
+                             r-gtable
+                             r-gridextra
+                             r-ggstance
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://fsolt.org/dotwhisker/")
+    (synopsis "Dot-and-Whisker Plots of Regression Results")
+    (description
+     "Create quick and easy dot-and-whisker plots of regression results.  It takes as
+input either (1) a coefficient table in standard form or (2) one (or a list of)
+fitted model objects (of any type that has methods implemented in the parameters
+package).  It returns ggplot objects that can be further customized using tools
+from the ggplot2 package.  The package also includes helper functions for tasks
+such as rescaling coefficients or relabeling predictor variables.  See more
+methodological discussion of the visualization and data management methods used
+in this package in Kastellec and Leoni (2007) <doi:10.1017/S1537592707072209>
+and Gelman (2008) <doi:10.1002/sim.3107>.")
+    (license license:expat)))
+
 (define-public r-dotty
   (package
     (name "r-dotty")
@@ -8481,13 +8519,13 @@ impose further restrictions on the parameters.")
 (define-public r-dnamotif
   (package
     (name "r-dnamotif")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DNAmotif" version))
        (sha256
-        (base32 "0w7fzvssnvymrpx3444svawkags6bvcbajasvk5n0fvyyx1i1jhz"))))
+        (base32 "1cdbickgjdf766m4cka9vl3x4zdw071w54ycj3l60xhcd8gxn8b1"))))
     (properties `((upstream-name . "DNAmotif")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-biostrings))
@@ -16134,6 +16172,36 @@ is dichotomized and observed sparsely.  This package provides smooth estimations
 of functional regression coefficients and principal components for the
 dichotomized functional response regression (dfrr) model.")
     (license license:gpl3)))
+
+(define-public r-dfr
+  (package
+    (name "r-dfr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dfr" version))
+       (sha256
+        (base32 "1n8k7v2hwcva8pjx3bxld87iy6crf0ca03d0pay1xcryf6knk3zp"))))
+    (properties `((upstream-name . "dfr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sgs r-matrix r-faux r-caret))
+    (home-page "https://github.com/ff1201/dfr")
+    (synopsis "Dual Feature Reduction for SGL")
+    (description
+     "Implementation of the Dual Feature Reduction (DFR) approach for the Sparse Group
+Lasso (SGL) and the Adaptive Sparse Group Lasso (@code{aSGL}) (Feser and
+Evangelou (2024) <doi:10.48550/@code{arXiv.2405.17094>}).  The DFR approach is a
+feature reduction approach that applies strong screening to reduce the feature
+space before optimisation, leading to speed-up improvements for fitting SGL
+(Simon et al. (2013) <doi:10.1080/10618600.2012.681250>) and @code{aSGL}
+(Mendez-Civieta et al. (2020) <doi:10.1007/s11634-020-00413-8> and Poignard
+(2020) <doi:10.1007/s10463-018-0692-7>) models.  DFR is implemented using the
+Adaptive Three Operator Splitting (ATOS) (Pedregosa and Gidel (2018)
+<doi:10.48550/@code{arXiv.1804.02339>}) algorithm, with linear and logistic SGL
+models supported, both of which can be fit using k-fold cross-validation.  Dense
+and sparse input matrices are supported.")
+    (license license:gpl3+)))
 
 (define-public r-dfphase1
   (package

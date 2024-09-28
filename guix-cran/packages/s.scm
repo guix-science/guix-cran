@@ -1419,13 +1419,13 @@ environmental decision making.")
 (define-public r-switchselection
   (package
     (name "r-switchselection")
-    (version "1.1.2")
+    (version "2.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "switchSelection" version))
        (sha256
-        (base32 "0mgl3s02pz9nbhdnm7fhyd8vbrfl718rv7bardlqc448qyb78hb8"))))
+        (base32 "0lgicakwcmvjhvy1sqvv4rasxyyx2s1gadxnz81s7ii1865lbryk"))))
     (properties `((upstream-name . "switchSelection")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-mnorm r-hpa r-gena))
@@ -5436,58 +5436,6 @@ incremental value of the surrogate outcome information.")
      "This package provides functions to estimate the proportion of treatment effect
 explained by the surrogate marker using a Bayesian Model Averaging approach.
 Duan and Parast (2023) <doi:10.1002/sim.9986>.")
-    (license license:gpl2+)))
-
-(define-public r-surrogate
-  (package
-    (name "r-surrogate")
-    (version "3.3.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "Surrogate" version))
-       (sha256
-        (base32 "1r4i12f6kmbszrm8v17gp2396ybwv913ngr3mnhqmvsl91fnpwi6"))))
-    (properties `((upstream-name . "Surrogate")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-tibble
-                             r-survival
-                             r-rvinecopulib
-                             r-rms
-                             r-purrr
-                             r-pbapply
-                             r-optimx
-                             r-numderiv
-                             r-nlme
-                             r-msm
-                             r-mbess
-                             r-maxlik
-                             r-mass
-                             r-logistf
-                             r-lme4
-                             r-latticeextra
-                             r-lattice
-                             r-ks
-                             r-flexsurv
-                             r-extradistr
-                             r-dplyr))
-    (home-page "https://github.com/florianstijven/Surrogate-development")
-    (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
-    (description
-     "In a clinical trial, it frequently occurs that the most credible outcome to
-evaluate the effectiveness of a new therapy (the true endpoint) is difficult to
-measure.  In such a situation, it can be an effective strategy to replace the
-true endpoint by a (bio)marker that is easier to measure and that allows for a
-prediction of the treatment effect on the true endpoint (a surrogate endpoint).
-The package Surrogate allows for an evaluation of the appropriateness of a
-candidate surrogate endpoint based on the meta-analytic, information-theoretic,
-and causal-inference frameworks.  Part of this software has been developed using
-funding provided from the European Union's Seventh Framework Programme for
-research, technological development and demonstration (Grant Agreement no
-602552), the Special Research Fund (BOF) of Hasselt University (BOF-number:
-BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
-(HBC.2022.0145), and Johnson & Johnson Innovative Medicine.")
     (license license:gpl2+)))
 
 (define-public r-surreal
@@ -21932,13 +21880,13 @@ available.")
 (define-public r-speccurvier
   (package
     (name "r-speccurvier")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "speccurvieR" version))
        (sha256
-        (base32 "1q0sy53fkdqm63rhi0l99hfzv1r16gr8mxsv1gr3x814f9j5c2qv"))))
+        (base32 "186vhcw2m6xn3a6pggh9pha37y21pg0bqyh5g3g10lawhf4p75fk"))))
     (properties `((upstream-name . "speccurvieR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24563,21 +24511,22 @@ for time series 		chain graphical models.  Fentaw Abegaz and Ernst Wit
 (define-public r-sparsesvm
   (package
     (name "r-sparsesvm")
-    (version "1.1-6")
+    (version "1.1-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sparseSVM" version))
        (sha256
-        (base32 "0b0qiikjyyh9qfd4jl69zqnlp7adxq63mwsxvgwvyc0pv5ccg8i0"))))
+        (base32 "1zyil9sc8bxs99n3bhfxhcd59ng0qvlcwk3ff2sbh4bykqlcxya8"))))
     (properties `((upstream-name . "sparseSVM")))
     (build-system r-build-system)
-    (home-page "https://cran.r-project.org/package=sparseSVM")
+    (home-page "https://github.com/CY-dev/sparseSVM")
     (synopsis
      "Solution Paths of Sparse High-Dimensional Support Vector Machine with Lasso or Elastic-Net Regularization")
     (description
-     "Fast algorithm for fitting solution paths of sparse SVM models with lasso or
-elastic-net regularization.")
+     "Offers a fast algorithm for fitting solution paths of sparse SVM models with
+lasso or elastic-net regularization.  Reference: Congrui Yi and Jian Huang
+(2017) <doi:10.1080/10618600.2016.1256816>.")
     (license license:gpl3)))
 
 (define-public r-sparsestep
@@ -26353,13 +26302,13 @@ ggplot2 package.")
 (define-public r-spabundance
   (package
     (name "r-spabundance")
-    (version "0.1.3")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spAbundance" version))
        (sha256
-        (base32 "02qvgyiyrwaz2jgfp746fyr1bwd8m4lwjijaml9ychq4rdmrfjli"))))
+        (base32 "1xgva4kyxz6rb4my6lkis2fadb5qfy64bvmmqzx6vrr0vxqzvhrj"))))
     (properties `((upstream-name . "spAbundance")))
     (build-system r-build-system)
     (propagated-inputs (list r-rann
@@ -26368,7 +26317,7 @@ ggplot2 package.")
                              r-doparallel
                              r-coda
                              r-abind))
-    (home-page "https://www.jeffdoser.com/files/spabundance-web")
+    (home-page "https://cran.r-project.org/package=spAbundance")
     (synopsis
      "Univariate and Multivariate Spatial Modeling of Species Abundance")
     (description
@@ -26377,7 +26326,7 @@ and spatial abundance models in a Bayesian framework using Markov Chain Monte
 Carlo (MCMC).  Spatial models are fit using Nearest Neighbor Gaussian Processes
 (NNGPs).  Details on NNGP models are given in Datta, Banerjee, Finley, and
 Gelfand (2016) <doi:10.1080/01621459.2015.1044091> and Finley, Datta, and
-Banerjee (2020) <doi:10.18637/jss.v103.i05>.  Fits single-species and
+Banerjee (2022) <doi:10.18637/jss.v103.i05>.  Fits single-species and
 multi-species spatial and non-spatial versions of generalized linear mixed
 models (Gaussian, Poisson, Negative Binomial), N-mixture models (Royle 2004
 <doi:10.1111/j.0006-341X.2004.00142.x>) and hierarchical distance sampling
@@ -37578,13 +37527,13 @@ trajectories.")
 (define-public r-simmer
   (package
     (name "r-simmer")
-    (version "4.4.6.4")
+    (version "4.4.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simmer" version))
        (sha256
-        (base32 "110wjmhr4645nrrjx4vk8inpz543qkrz8zg4avv4i05zrad2393x"))))
+        (base32 "0lj9jrbs3p9ya8xyxvbwpxhkfxvvd1zaphqsvjxyin2l5a1waydc"))))
     (properties `((upstream-name . "simmer")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-magrittr r-codetools))
@@ -38838,13 +38787,13 @@ package vignette for more information, documentation and examples.")
 (define-public r-simcat
   (package
     (name "r-simcat")
-    (version "1.0.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simCAT" version))
        (sha256
-        (base32 "1ngdfzackzm82v7qs8809w3k70hayzan4zsvf061w04wvlhgzllp"))))
+        (base32 "0p82v24b7y3fbbyk4mxva6kzg0pxyxrnp739npcspira9d4v0ypa"))))
     (properties `((upstream-name . "simCAT")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinycssloaders r-shiny r-mirtcat r-mirt
@@ -41865,6 +41814,52 @@ be used throughout the entire app development process.")
     (license (list license:gpl3
                    (license:fsdg-compatible "file://LICENSE")))))
 
+(define-public r-shinyquerybuilder
+  (package
+    (name "r-shinyquerybuilder")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "shinyQueryBuilder" version))
+       (sha256
+        (base32 "1v6za6xpl91dfbqp5pzdgxrwcs26y0qlwj19av00ggmjgzdca29c"))))
+    (properties `((upstream-name . "shinyQueryBuilder")))
+    (build-system r-build-system)
+    (arguments
+     (list
+      #:modules '((guix build r-build-system)
+                  (guix build minify-build-system)
+                  (guix build utils)
+                  (ice-9 match))
+      #:imported-modules `(,@%r-build-system-modules (guix build
+                                                      minify-build-system))
+      #:phases '(modify-phases %standard-phases
+                  (add-after 'unpack 'process-javascript
+                    (lambda* (#:key inputs #:allow-other-keys)
+                      (with-directory-excursion "inst/"
+                        (for-each (match-lambda
+                                    ((source . target) (minify source
+                                                               #:target target)))
+                                  '())))))))
+    (propagated-inputs (list r-shiny
+                             r-rlang
+                             r-r6
+                             r-querybuilder
+                             r-purrr
+                             r-magrittr
+                             r-jsonlite
+                             r-htmltools
+                             r-glue))
+    (native-inputs (list r-knitr esbuild))
+    (home-page "https://cran.r-project.org/package=shinyQueryBuilder")
+    (synopsis "Construct Complex Filtering Queries in 'Shiny'")
+    (description
+     "Input widget that allows to construct complex filtering queries in Shiny'.  It's
+a wrapper for @code{JavaScript} library @code{jQuery-QueryBuilder}', check
+<https://querybuilder.js.org/>.")
+    (license license:expat)))
+
 (define-public r-shinypredict
   (package
     (name "r-shinypredict")
@@ -43418,13 +43413,13 @@ visualization and presentation of predicted survival curves.")
 (define-public r-shinycohortbuilder
   (package
     (name "r-shinycohortbuilder")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyCohortBuilder" version))
        (sha256
-        (base32 "1ld8sing87s5r2yxhd5w9wybacx508hgp1crbrpnirq80jnmrazy"))))
+        (base32 "0fvn2azapa4vqd4kby2j2kspj5vf22jlb2wmwa4dnnm50k4v7gdr"))))
     (properties `((upstream-name . "shinyCohortBuilder")))
     (build-system r-build-system)
     (arguments
@@ -43463,7 +43458,7 @@ visualization and presentation of predicted survival curves.")
                              r-cohortbuilder
                              r-bslib))
     (native-inputs (list r-knitr esbuild))
-    (home-page "https://cran.r-project.org/package=shinyCohortBuilder")
+    (home-page "https://r-world-devs.github.io/shinyCohortBuilder/")
     (synopsis "Modular Cohort-Building Framework for Analytical Dashboards")
     (description
      "You can easily add advanced cohort-building component to your analytical
@@ -48684,13 +48679,13 @@ al. (2022) <doi:10.18637/jss.v102.i05>.")
 (define-public r-sensmediation
   (package
     (name "r-sensmediation")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sensmediation" version))
        (sha256
-        (base32 "0pmhlc5aqz1vwl4fpn38nkqy63pbq6q62fk9xjja4khrq35zh9yb"))))
+        (base32 "10m5z651nij61rh9pq7yh03q06crdhl9p9msiangd8r3lkm77sbi"))))
     (properties `((upstream-name . "sensmediation")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm r-maxlik))
@@ -48700,10 +48695,11 @@ al. (2022) <doi:10.18637/jss.v102.i05>.")
     (description
      "We implement functions to estimate and perform sensitivity analysis to
 unobserved confounding of direct and indirect effects introduced in Lindmark, de
-Luna and Eriksson (2018) <doi:10.1002/sim.7620>.  The estimation and sensitivity
-analysis are parametric, based on probit and/or linear regression models.
-Sensitivity analysis is implemented for unobserved confounding of the
-exposure-mediator, mediator-outcome and exposure-outcome relationships.")
+Luna and Eriksson (2018) <doi:10.1002/sim.7620> and Lindmark (2022)
+<doi:10.1007/s10260-021-00611-4>.  The estimation and sensitivity analysis are
+parametric, based on probit and/or linear regression models.  Sensitivity
+analysis is implemented for unobserved confounding of the exposure-mediator,
+mediator-outcome and exposure-outcome relationships.")
     (license license:gpl2)))
 
 (define-public r-sensmap
@@ -51938,13 +51934,13 @@ packages, using public key cryptography.")
 (define-public r-secrdesign
   (package
     (name "r-secrdesign")
-    (version "2.9.1")
+    (version "2.9.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secrdesign" version))
        (sha256
-        (base32 "03aibck9r4rs9cc9rywm8rs9s9swp7wil1xgfgy6fxpxypapqfvx"))))
+        (base32 "12n0xy838r2a1ilgf4d8kxmpbhrzwnx64r14194ma8v6sdj44xqi"))))
     (properties `((upstream-name . "secrdesign")))
     (build-system r-build-system)
     (propagated-inputs (list r-sf
@@ -60288,13 +60284,13 @@ population using simple random, stratified, systematic and cluster sampling.")
 (define-public r-samplingin
   (package
     (name "r-samplingin")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "samplingin" version))
        (sha256
-        (base32 "0a7c078vz4p5x5r29xsvab630pq3p7fwsn31qdcjdcl7n4475rhr"))))
+        (base32 "0alcfy69wgdcp0mizw17qnd79v448if8yy98kl0frf2kmjkc7hlj"))))
     (properties `((upstream-name . "samplingin")))
     (build-system r-build-system)
     (propagated-inputs (list r-sampling r-rlang r-magrittr r-dplyr

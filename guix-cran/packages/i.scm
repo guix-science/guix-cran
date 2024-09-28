@@ -8681,33 +8681,37 @@ separates the responsibilities of use and construction.")
 (define-public r-infusion
   (package
     (name "r-infusion")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Infusion" version))
        (sha256
-        (base32 "0dmbqwgavbfp54l47p6zdy75k9wi9zw3ai18q4gy8l4ag5vldzhi"))))
+        (base32 "13jj8ivxigk8k6fl8m2dbniv08vfd87ry8vbpzcj9mxk7kg9p75l"))))
     (properties `((upstream-name . "Infusion")))
     (build-system r-build-system)
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-viridislite
                              r-spamm
                              r-ranger
                              r-proxy
                              r-pbapply
                              r-numderiv
+                             r-nloptr
                              r-mvtnorm
                              r-matrixstats
+                             r-geometry
                              r-foreach
+                             r-cli
+                             r-boot
                              r-blackbox))
-    (home-page "https://www.R-project.org")
+    (home-page "https://gitlab.mbb.univ-montp2.fr/francois/Infusion")
     (synopsis "Inference Using Simulation")
     (description
      "This package implements functions for simulation-based inference.  In
 particular, implements functions to perform likelihood inference from data
-summaries whose distributions are simulated.  A first approach was described in
-Rousset et al. (2017 <doi:10.1111/1755-0998.12627>) but the package implements
-more advanced methods.")
+summaries whose distributions are simulated.  The package implements more
+advanced methods than the ones first described in: Rousset, Gouy, Almoyna and
+Courtiol (2017) <doi:10.1111/1755-0998.12627>.")
     (license (license:fsdg-compatible "CeCILL-2"))))
 
 (define-public r-infrafdtd-assist
@@ -12974,13 +12978,13 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
 (define-public r-ijse
   (package
     (name "r-ijse")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "IJSE" version))
        (sha256
-        (base32 "1412m881dswl3ah4wdc7nhlb9ihn0aqywak1my6hc48a7pggdbnk"))))
+        (base32 "1xnip7c4q2czcbpz488b6n26n3yvsvannjicd1v2h23hl7578ga8"))))
     (properties `((upstream-name . "IJSE")))
     (build-system r-build-system)
     (propagated-inputs (list r-posterior r-brms))
@@ -12989,7 +12993,7 @@ saved from @code{ImageJ} and write TIFF files than can be correctly read by
     (description
      "This package provides a function to calculate infinite-jackknife-based standard
 errors for fixed effects parameters in brms models, handling both clustered and
-non-clustered data.  References: Ji et al. (2024)
+independent data.  References: Ji et al. (2024)
 <doi:10.48550/@code{arXiv.2407.09772>}; Giordano et al. (2024)
 <doi:10.48550/@code{arXiv.2305.06466>}.")
     (license license:expat)))

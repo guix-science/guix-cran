@@ -4797,13 +4797,13 @@ package additionally allows for a doubly truncated normal distribution.")
 (define-public r-truncexpfam
   (package
     (name "r-truncexpfam")
-    (version "1.1.1")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TruncExpFam" version))
        (sha256
-        (base32 "0y5vlfv5q1fphamwr3as14hc1rvz3f15x7vl0kimmmkk0pvpdxya"))))
+        (base32 "0lqx04pzj66b0x6wa4rswrlrlk0zyi0zzybk370h9gz1zdzzdjy6"))))
     (properties `((upstream-name . "TruncExpFam")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil r-invgamma))
@@ -7871,24 +7871,25 @@ data-adaptive weights.  Reference: Ren, M., Zhen Y., and Wang J. (2022).
 (define-public r-transreg
   (package
     (name "r-transreg")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "transreg" version))
        (sha256
-        (base32 "1kh106kgnjliw84p219g317img4aaas8s2bm5x6pakvswqf2qjxw"))))
+        (base32 "1xyvyj2l846hxknlf9h4dfidf85rnn1wa9m43kf3p3csfhfh6ahm"))))
     (properties `((upstream-name . "transreg")))
     (build-system r-build-system)
     (propagated-inputs (list r-starnet r-joinet r-glmnet))
     (native-inputs (list r-knitr))
-    (home-page "https://lcsb-bds.github.io/transreg/")
-    (synopsis "Penalised Regression with Multiple Sets of Prior Effects")
+    (home-page "https://github.com/rauschenberger/transreg")
+    (synopsis
+     "Penalised Regression with Multiple Sets of Prior Effects ('Transfer Learning')")
     (description
      "Improves the predictive performance of ridge and lasso regression exploiting one
 or more sources of prior information on the importance and direction of effects
 (Rauschenberger and others 2023, <doi:10.1093/bioinformatics/btad680>).  For
-running the vignette, install fwelnet from @code{GitHub}
+running the vignette (optional), install fwelnet from @code{GitHub}
 <https://github.com/kjytay/fwelnet>.")
     (license license:gpl3)))
 
@@ -8610,13 +8611,13 @@ in Kook et al. (2023, <doi:10.48550/@code{arXiv.2309.12833>}).")
 (define-public r-tram
   (package
     (name "r-tram")
-    (version "1.0-6")
+    (version "1.1-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tram" version))
        (sha256
-        (base32 "059qzfmrx24n4lznjwp6b5cr848w5qpvbrwg5jnxhk9wdx014ld7"))))
+        (base32 "1y89v0n0ipjhnl2shh9pygy8wlql3lx48zisyrf6jkpx7dxs3ia9"))))
     (properties `((upstream-name . "tram")))
     (build-system r-build-system)
     (propagated-inputs (list r-variables
@@ -9672,13 +9673,13 @@ three-state progressive model.")
 (define-public r-tpmplt
   (package
     (name "r-tpmplt")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPMplt" version))
        (sha256
-        (base32 "0zy6y9k7cqyflzma5567sn2jkvbmvl86zlrxiqlnga03hvsvw8a0"))))
+        (base32 "134qacc5szmx6gcy5vsjrx4rh15yv69vs7cvq6yrjcsrzavvpd04"))))
     (properties `((upstream-name . "TPMplt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vbtree

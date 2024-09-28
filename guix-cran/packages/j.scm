@@ -2192,27 +2192,28 @@ also available.")
 (define-public r-joinet
   (package
     (name "r-joinet")
-    (version "0.0.10")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "joinet" version))
        (sha256
-        (base32 "1jjx1rvg2x9zdfdqsjk04hcn7qsf8g7pq8q0x9q83kd8sb1ikjk5"))))
+        (base32 "1r285jymjqqpzfj8cw7p6pc8fp33wih4y9i4zqc9w8517zx54agr"))))
     (properties `((upstream-name . "joinet")))
     (build-system r-build-system)
     (propagated-inputs (list r-palasso r-glmnet r-cornet))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/rauschenberger/joinet")
-    (synopsis "Multivariate Elastic Net Regression")
+    (synopsis "Penalised Multivariate Regression ('Multi-Target Learning')")
     (description
-     "This package implements high-dimensional multivariate regression by stacked
-generalisation (Rauschenberger 2021 <doi:10.1093/bioinformatics/btab576>).  For
-positively correlated outcomes, a single multivariate regression is typically
-more predictive than multiple univariate regressions.  Includes functions for
-model fitting, extracting coefficients, outcome prediction, and performance
-measurement.  If required, install MRCE or @code{remMap} from @code{GitHub}
-(<https://github.com/cran/MRCE>, <https://github.com/cran/@code{remMap>}).")
+     "This package implements penalised multivariate regression (i.e., for multiple
+outcomes and many features) by stacked generalisation
+(<doi:10.1093/bioinformatics/btab576>).  For positively correlated outcomes, a
+single multivariate regression is typically more predictive than multiple
+univariate regressions.  Includes functions for model fitting, extracting
+coefficients, outcome prediction, and performance measurement.  For optional
+comparisons, install @code{remMap} from @code{GitHub}
+(<https://github.com/cran/@code{remMap>}).")
     (license license:gpl3)))
 
 (define-public r-joinerml

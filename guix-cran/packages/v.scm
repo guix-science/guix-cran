@@ -1727,13 +1727,13 @@ Futures, and Other Derivatives (11th ed.)â, 2022, ISBN: 9780136939979).")
 (define-public r-vol2birdr
   (package
     (name "r-vol2birdr")
-    (version "1.0.4")
+    (version "1.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vol2birdR" version))
        (sha256
-        (base32 "1rk5c5ckdk20d4bpxivin7v8szriy6qp1p1yrha75qbrsagixhqh"))))
+        (base32 "08vcq5i7i3mm6pzzai6fnmm0phb0zxxbv1mav70jn2qs09ailm8q"))))
     (properties `((upstream-name . "vol2birdR")))
     (build-system r-build-system)
     (inputs (list zlib
@@ -2768,13 +2768,13 @@ associated inner nodes.")
 (define-public r-vistla
   (package
     (name "r-vistla")
-    (version "2.0.2")
+    (version "2.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vistla" version))
        (sha256
-        (base32 "06mjzm00q3zfw3a7a7pivdnn47zxi0qrqlv47izhy6baqlrxp3mr"))))
+        (base32 "0r4l1jdphq3d075ypbc5ab7rsj77qpi43600b6sqqw418za5fqkz"))))
     (properties `((upstream-name . "vistla")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=vistla")

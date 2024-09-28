@@ -11235,13 +11235,13 @@ reconstruction <doi:10.1111/2041-210X.13683>.")
 (define-public r-rpact
   (package
     (name "r-rpact")
-    (version "4.0.0")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rpact" version))
        (sha256
-        (base32 "1mwsy5y917sihyq3i001hzz98zx5zvm8042inv072vxik2pybngc"))))
+        (base32 "1cjdrj1sbn4xv6mrkvr0n3cx3zqh1lqg1kp0vppndz3qqwxjql4w"))))
     (properties `((upstream-name . "rpact")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-r6 r-knitr))
@@ -15629,13 +15629,13 @@ Zhang, Sha Cao (2020) <@code{arXiv:2005.11599>}.")
 (define-public r-robmixglm
   (package
     (name "r-robmixglm")
-    (version "1.2-3")
+    (version "1.2-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "robmixglm" version))
        (sha256
-        (base32 "18xcbxj3jl9w5i74vy5i2ha7zsln4sgh8anv9n7haa7zilflvrx3"))))
+        (base32 "10l0w7a2p5lids1idw8z6qc6rqahbbidgkqk3fb0b0yakcppvycn"))))
     (properties `((upstream-name . "robmixglm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam
@@ -16389,13 +16389,13 @@ time-steps without rebuilding a graph at each time-step.")
 (define-public r-roadoi
   (package
     (name "r-roadoi")
-    (version "0.7.2")
+    (version "0.7.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "roadoi" version))
        (sha256
-        (base32 "1q2mkd7r5aqvahx7rrzv58nd6d13gvlw7kjidqhm7z89na94pn8w"))))
+        (base32 "1hx297xfy4j12a74m2b4rnbalhaavlywb11q1frfsmzdiakxsfjg"))))
     (properties `((upstream-name . "roadoi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -21590,13 +21590,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.12.1")
+    (version "0.12.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "14kp29xa0zdafnclc5vz01vl0hpnaxll7cg146ajizdf0d3q1kpq"))))
+        (base32 "0njfyznxyvy7dhjvw4x5h3bsi14nf81cv522whj2p3vdh1950w6m"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys r-jsonlite r-curl r-codetools))
@@ -21604,13 +21604,13 @@ implemented with @code{JavaScript} for node and browsers.")
     (home-page "https://docs.ropensci.org/rix/")
     (synopsis "Reproducible Data Science Environments with 'Nix'")
     (description
-     "Simplifies the creation of reproducible development environments using the Nix
-package manager.  The included `rix()` function generates a complete description
-of the development environment as a `default.nix` file, which can then be built
-using Nix'.  This results in project specific software environments with pinned
-versions of R, packages, linked system dependencies, and other tools.
-Additional helpers make it easy to run R code in Nix software environments for
-testing and production.")
+     "Simplifies the creation of reproducible data science environments using the Nix
+package manager, as described in Dolstra (2006) <ISBN 90-393-4130-3>.  The
+included `rix()` function generates a complete description of the environment as
+a `default.nix` file, which can then be built using Nix'.  This results in
+project specific software environments with pinned versions of R, packages,
+linked system dependencies, and other tools.  Additional helpers make it easy to
+run R code in Nix software environments for testing and production.")
     (license license:gpl3+)))
 
 (define-public r-rivretrieve
@@ -22671,13 +22671,13 @@ Breiger (2024) <doi:10.1017/9781108887205>.")
 (define-public r-rioja
   (package
     (name "r-rioja")
-    (version "1.0-6")
+    (version "1.0-7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rioja" version))
        (sha256
-        (base32 "029p70d3ih5prnjxrk60rnqnfky1xkajmq6ldf6sz8bq6idkn2d3"))))
+        (base32 "1xmw12hg8q37bxzh0x9wbk9nbi9mx9q40v734ap1azq0c4bf2k0k"))))
     (properties `((upstream-name . "rioja")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan r-mgcv))
@@ -23819,29 +23819,6 @@ kinship coefficients, multi-person coefficients and two-locus coefficients
 available through the online app @code{QuickPed} at
 <https://magnusdv.shinyapps.io/quickped>; see Vigeland (2022)
 <doi:10.1186/s12859-022-04759-y>.")
-    (license license:gpl3)))
-
-(define-public r-rib
-  (package
-    (name "r-rib")
-    (version "0.20.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "rib" version))
-       (sha256
-        (base32 "03nj88x8zbspadprqhzcs8781cmp5bkl4gdrncbl4lzcjdi4mn0h"))))
-    (properties `((upstream-name . "rib")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-r6))
-    (home-page "https://github.com/lbilli/rib")
-    (synopsis "An Implementation of 'Interactive Brokers' API")
-    (description
-     "Allows interaction with Interactive Brokers Trader Workstation
-<https://interactivebrokers.github.io/tws-api/>.  Handles the connection over
-the network and the exchange of messages.  Data is encoded and decoded between
-user and wire formats.  Data structures and functionality closely mirror the
-official implementations.")
     (license license:gpl3)))
 
 (define-public r-riaftbart
@@ -25920,13 +25897,13 @@ expression data (Microarray/RNA-seq etc).")
 (define-public r-rgbif
   (package
     (name "r-rgbif")
-    (version "3.8.0")
+    (version "3.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rgbif" version))
        (sha256
-        (base32 "1s1cdls4sv2ncxp8c9a2rah9yw95rlvfskzcg2bx74a282bd0p4b"))))
+        (base32 "0vmnccwy3dd043c59s9k7y6r40bb7blvn94hiz7sb1vqc37jiphc"))))
     (properties `((upstream-name . "rgbif")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -35568,13 +35545,13 @@ Loadsman JA. (2017) <doi:10.1111/anae.13650>.  Carlisle JB. (2017)
 (define-public r-ream
   (package
     (name "r-ream")
-    (version "1.0-4")
+    (version "1.0-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ream" version))
        (sha256
-        (base32 "0xns0fwkwcmcgs1niknv7s3jbj34bbbvfbgsr148b0j0g2k5q5sw"))))
+        (base32 "11m1n8hqx1sszbrcw87kaahzyyrq10vmfbi9fhwkzkw5b316y9bi"))))
     (properties `((upstream-name . "ream")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -35883,13 +35860,13 @@ datasets from providers like the Roper Center <https://ropercenter.cornell.edu>.
 (define-public r-readrba
   (package
     (name "r-readrba")
-    (version "0.1.10")
+    (version "0.1.11")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readrba" version))
        (sha256
-        (base32 "16g1zwib8f4vm4jb8lc9w2rfvszajfrs978gbgdgqz0raw7h4grf"))))
+        (base32 "0ja8di5jmiiq9kkigwahhhdfkppfqfkan7iqgrxa3gp838dxlq2r"))))
     (properties `((upstream-name . "readrba")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -37048,13 +37025,13 @@ conduct exploratory data analysis (RD plots).")
 (define-public r-rdracor
   (package
     (name "r-rdracor")
-    (version "1.0.3")
+    (version "1.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rdracor" version))
        (sha256
-        (base32 "014xa4n6av0g3ffplna8z25b00176war3h2pv20wclx9lq8wz9hs"))))
+        (base32 "1bypz0llvr05zvhfw76yinvr2qsbqnbws0mkif2mmckd57a7395x"))))
     (properties `((upstream-name . "rdracor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -40349,13 +40326,13 @@ developed to show work flows and scripts for first-time users.")
 (define-public r-rcmdrplugin-uca
   (package
     (name "r-rcmdrplugin-uca")
-    (version "5.1-1")
+    (version "5.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RcmdrPlugin.UCA" version))
        (sha256
-        (base32 "15z2pyi92vznkbfqycc33b39dl2wx0kf2l5w1wv8pr85i5449dzq"))))
+        (base32 "0m46318z7rrdh3amw5rs6crkpdrn1kkbn9hvqswky9swjj6ckrry"))))
     (properties `((upstream-name . "RcmdrPlugin.UCA")))
     (build-system r-build-system)
     (propagated-inputs (list r-tseries
@@ -43385,13 +43362,13 @@ on tree characteristics and sorting information.  See Kublin (2003)
 (define-public r-rbch
   (package
     (name "r-rbch")
-    (version "0.1-1")
+    (version "0.1-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rbch" version))
        (sha256
-        (base32 "0n2s5qfgjvg7vv65myz6dcmmaf37z883z1sw4hryngz2z6w4zz5q"))))
+        (base32 "1zzcjfd5djk790gbdzv7y4zn7sjfr8400awp74qbqz7ismsc63z4"))))
     (properties `((upstream-name . "rbch")))
     (build-system r-build-system)
     (inputs (list))
@@ -45140,13 +45117,13 @@ Neyman', Rosenberger Rosenberger et al. (2001)
 (define-public r-rarestr
   (package
     (name "r-rarestr")
-    (version "1.0.3")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rarestR" version))
        (sha256
-        (base32 "01vfpnca7n3pz2hqibvviiimv7sxzwkkwlbkvzavw9fr1x33cwr8"))))
+        (base32 "1hyk3c4m6v19v30728mlxlq36hkirm6isi2j1lbzkvbs6k54pc7x"))))
     (properties `((upstream-name . "rarestR")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdpack))

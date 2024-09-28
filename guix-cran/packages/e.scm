@@ -3915,13 +3915,13 @@ periods.")
 (define-public r-evola
   (package
     (name "r-evola")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evola" version))
        (sha256
-        (base32 "1hji6pzvahqk2kww30fkk2p7j5157w3jbvi5b92r3avjrvvmfzp5"))))
+        (base32 "14vpr9rds2z0pcxnhwq7w5p6h4xfsngwq34l037i5a017afh7nrr"))))
     (properties `((upstream-name . "evola")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix r-crayon r-alphasimr))
@@ -6556,13 +6556,13 @@ formats, and retrieve the code to reproduce the plot.")
 (define-public r-espadon
   (package
     (name "r-espadon")
-    (version "1.7.4")
+    (version "1.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "espadon" version))
        (sha256
-        (base32 "057c321ww1fiwpsybrgyn9rs18j28xq3smv5bbxk370zz7fn9mch"))))
+        (base32 "0lrsgk1nqjky56m1smf5xhb9yz5r5g2i5gba5cgp77hsa6yjd1j4"))))
     (properties `((upstream-name . "espadon")))
     (build-system r-build-system)
     (propagated-inputs (list r-sodium
@@ -6575,7 +6575,6 @@ formats, and retrieve the code to reproduce the plot.")
                              r-qs
                              r-progress
                              r-openxlsx
-                             r-morpho
                              r-misc3d
                              r-matrix
                              r-mathjaxr
@@ -7798,6 +7797,28 @@ estimate corresponds to the classical fixed-effect within-estimator when the
 asymmetric point is 0.5.  The paper by Barry, Oualkacha, and Charpentier (2021,
 <@code{arXiv:2108.04737>}) gives more details about the ERFE model.")
     (license license:gpl3)))
+
+(define-public r-erer
+  (package
+    (name "r-erer")
+    (version "4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "erer" version))
+       (sha256
+        (base32 "011f655f9q3grpy607svswpw4qpbqvchmpws5fm6yg6179l4w9w2"))))
+    (properties `((upstream-name . "erer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urca r-tseries r-systemfit r-lmtest))
+    (home-page "https://cran.r-project.org/package=erer")
+    (synopsis "Empirical Research in Economics with R")
+    (description
+     "Several functions, datasets, and sample codes related to empirical research in
+economics are included.  They cover the marginal effects for binary or ordered
+choice models, static and dynamic Almost Ideal Demand System (AIDS) models, and
+a typical event analysis in finance.")
+    (license license:gpl2+)))
 
 (define-public r-erdbuilder
   (package
@@ -11808,47 +11829,6 @@ analysis applicable to various types of data from different scientific fields.
 @code{EnrichIntersect} also enables an interactive means to visualize identified
 associations based on, for example, the mix-lasso model (Zhao et al., 2022
 <doi:10.1016/j.isci.2022.104767>) or similar methods.")
-    (license license:expat)))
-
-(define-public r-enrichdo
-  (package
-    (name "r-enrichdo")
-    (version "0.1-1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "EnrichDO" version))
-       (sha256
-        (base32 "0xqr7zdll90a8097ylhp00m873h7vh0y55i7n6a7bgkagy61k1zg"))))
-    (properties `((upstream-name . "EnrichDO")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tidyr
-                             r-stringr
-                             r-s4vectors
-                             r-rgraphviz
-                             r-readr
-                             r-rcolorbrewer
-                             r-purrr
-                             r-pheatmap
-                             r-magrittr
-                             r-hash
-                             r-graph
-                             r-ggplot2
-                             r-dplyr
-                             r-clusterprofiler
-                             r-biocgenerics))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=EnrichDO")
-    (synopsis
-     "a Global Weighted Model for Disease Ontology Enrichment Analysis")
-    (description
-     "To implement disease ontology (DO) enrichment analysis, this package is designed
-and presents a double weighted model based on the latest annotations of the
-human genome with DO terms, by integrating the DO graph topology on a global
-scale.  This package exhibits high accuracy that it can identify more specific
-DO terms, which alleviates the over enriched problem.  The package includes
-various statistical models and visualization schemes for discovering the
-associations between genes and diseases from biological big data.")
     (license license:expat)))
 
 (define-public r-enpls
@@ -16393,13 +16373,13 @@ root tests are supported, and an improved unit root test is included.")
 (define-public r-eganet
   (package
     (name "r-eganet")
-    (version "2.0.7")
+    (version "2.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EGAnet" version))
        (sha256
-        (base32 "1hqzvdp0h3xrkr673i73c04g17hj9ajzqh81gc236hi455c46dnh"))))
+        (base32 "0d16j27znwi94bpyirs63inl5lalqdc4b6gj33wpj437750b99cn"))))
     (properties `((upstream-name . "EGAnet")))
     (build-system r-build-system)
     (propagated-inputs (list r-sna
@@ -19947,13 +19927,13 @@ represents the results of the previous function.")
 (define-public r-ecmwfr
   (package
     (name "r-ecmwfr")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ecmwfr" version))
        (sha256
-        (base32 "0nar2g4xqyjn5m4v089kw5y3q7xdvny99pf5z8fgdif13ws94nyc"))))
+        (base32 "0ryyx11685vnz2fkrzslp259l3k2iiczj7r70fbf7q0rcp0k7k94"))))
     (properties `((upstream-name . "ecmwfr")))
     (build-system r-build-system)
     (propagated-inputs (list r-r6 r-memoise r-keyring r-httr r-getpass))
@@ -19965,9 +19945,9 @@ represents the results of the previous function.")
 dataset web services (ECMWF; <https://www.ecmwf.int/>) and Copernicus's Data
 Stores.  Allows for easy downloads of weather forecasts and climate reanalysis
 data in R. Data stores covered include the Climate Data Store (CDS;
-<https://cds-beta.climate.copernicus.eu>), Atmosphere Data Store (ADS;
-<https://ads-beta.atmosphere.copernicus.eu>) and Early Warning Data Store (CEMS;
-<https://ewds-beta.climate.copernicus.eu>).")
+<https://cds.climate.copernicus.eu>), Atmosphere Data Store (ADS;
+<https://ads.atmosphere.copernicus.eu>) and Early Warning Data Store (CEMS;
+<https://ewds.climate.copernicus.eu>).")
     (license license:agpl3)))
 
 (define-public r-ecm
@@ -21156,13 +21136,13 @@ Bayes estimation procedure based on Dynamic Bayesian Networks.")
 (define-public r-ebcobart
   (package
     (name "r-ebcobart")
-    (version "1.0.2")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EBcoBART" version))
        (sha256
-        (base32 "1m1zp2zvsk6jlbgvfffkfdfwbaksqg7zxydg94nhz316rrnb13ic"))))
+        (base32 "1vys4wb35pgh03331glbbiiw4kyis04d2ygyqng9l7h9jjh7d5xj"))))
     (properties `((upstream-name . "EBcoBART")))
     (build-system r-build-system)
     (propagated-inputs (list r-univariateml r-posterior r-loo r-extradistr

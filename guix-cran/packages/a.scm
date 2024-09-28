@@ -3488,13 +3488,13 @@ More information available at <https://shahlab.stanford.edu/start>.")
 (define-public r-atime
   (package
     (name "r-atime")
-    (version "2024.4.23")
+    (version "2024.9.25")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atime" version))
        (sha256
-        (base32 "0sh98yvzm4l2zzjsgw6g1hi0valn51lm5jm0c66swy83mgia66ny"))))
+        (base32 "0nxdks274b9bd5dq0z4xdka0rspjxcpq2c2lqascwg20f29xjmvz"))))
     (properties `((upstream-name . "atime")))
     (build-system r-build-system)
     (propagated-inputs (list r-lattice r-git2r r-data-table r-bench))
@@ -7732,13 +7732,13 @@ as described in Philippe and Vibet (2020) <doi:10.18637/jss.v093.c01>.")
 (define-public r-arcgisutils
   (package
     (name "r-arcgisutils")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisutils" version))
        (sha256
-        (base32 "0553xmamgcaswnjyq0ayyfgvwl1kijrq0jan80m23kgydgi46hkv"))))
+        (base32 "0da7m2fw3hfqd2wj2lrm1l9dw0zqiqqaxbip0h05g4vj9rcr5vw3"))))
     (properties `((upstream-name . "arcgisutils")))
     (build-system r-build-system)
     (inputs (list))
@@ -7757,7 +7757,7 @@ functionality for authorization, Esri JSON construction and parsing, as well as
 other utilities pertaining to geometry and Esri type conversions.  To support
 @code{ArcGIS} Pro users, authorization can be done via arcgisbinding'.
 Installation instructions for arcgisbinding can be found at
-<https://r.esri.com/r-bridge-site/arcgisbinding/installing-arcgisbinding.html>.")
+<https://r.esri.com/r-bridge-site/docs/installation.html>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
 (define-public r-arcgisplaces
@@ -7786,19 +7786,50 @@ compatibility with other spatial libraries.  Learn more in the Places service
 API reference <https://developers.arcgis.com/rest/places/>.")
     (license (license:fsdg-compatible "Apache License (>= 2)"))))
 
+(define-public r-arcgislayers
+  (package
+    (name "r-arcgislayers")
+    (version "0.3.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "arcgislayers" version))
+       (sha256
+        (base32 "1bzrnkrj08zv7sb2phpnpimmb224g5z9jm5s067l8ajbxp7gainv"))))
+    (properties `((upstream-name . "arcgislayers")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-sf
+                             r-rlang
+                             r-rcppsimdjson
+                             r-lifecycle
+                             r-jsonify
+                             r-httr2
+                             r-cli
+                             r-arcpbf
+                             r-arcgisutils))
+    (home-page "https://r.esri.com/arcgislayers/")
+    (synopsis "An Interface to ArcGIS Data Services")
+    (description
+     "Enables users of @code{ArcGIS} Enterprise', @code{ArcGIS} Online', or
+@code{ArcGIS} Platform to read, write, publish, or manage vector and raster data
+via @code{ArcGIS} location services REST API endpoints
+<https://developers.arcgis.com/rest/>.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-arcgisgeocode
   (package
     (name "r-arcgisgeocode")
-    (version "0.2.1")
+    (version "0.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcgisgeocode" version))
        (sha256
-        (base32 "0mnkp50k02p10nk4wbwyilldzwdhcfkiqv2w85spir5kip670j8m"))))
+        (base32 "1ld880zppwz9wrwjhyhgdrh8hx8s0azv3iyv3kvjndhfai4psiz7"))))
     (properties `((upstream-name . "arcgisgeocode")))
     (build-system r-build-system)
-    (inputs (list openssl))
+    (inputs (list))
     (propagated-inputs (list r-sf
                              r-rlang
                              r-rcppsimdjson
@@ -10447,6 +10478,44 @@ simulate and study electric power systems (more information about Antares here :
 <https://antares-simulator.org/>).")
     (license (list license:gpl2+
                    (license:fsdg-compatible "file://LICENSE")))))
+
+(define-public r-antareseditobject
+  (package
+    (name "r-antareseditobject")
+    (version "0.7.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "antaresEditObject" version))
+       (sha256
+        (base32 "06r23dgz0fbqxrk2j9i78jv7i2pi8wf6qc1a0d8igal4mzxv0v88"))))
+    (properties `((upstream-name . "antaresEditObject")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-yaml
+                             r-whisker
+                             r-progressr
+                             r-plyr
+                             r-pbapply
+                             r-memuse
+                             r-lifecycle
+                             r-jsonlite
+                             r-httr
+                             r-future
+                             r-doparallel
+                             r-dofuture
+                             r-data-table
+                             r-cli
+                             r-assertthat
+                             r-antaresread))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/rte-antares-rpackage/antaresEditObject")
+    (synopsis "Edit an 'Antares' Simulation")
+    (description
+     "Edit an Antares simulation before running it : create new areas, links, thermal
+clusters or binding constraints or edit existing ones.  Update Antares general &
+optimization settings.  Antares is an open source power system generator, more
+information available here : <https://antares-simulator.org/>.")
+    (license license:gpl2+)))
 
 (define-public r-antangiocool
   (package
@@ -15357,13 +15426,13 @@ License.")
 (define-public r-airmonitor
   (package
     (name "r-airmonitor")
-    (version "0.4.0")
+    (version "0.4.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "AirMonitor" version))
        (sha256
-        (base32 "1lxdnplv06g5j5lwiydgx3yimrpkm85i88cxq7yrpv2gcffalj4p"))))
+        (base32 "0plnxpxr5b1bsnbnqahfcqg7w11hc2ndxhmb9328c5n3cd2nyyrb"))))
     (properties `((upstream-name . "AirMonitor")))
     (build-system r-build-system)
     (propagated-inputs (list r-xts
@@ -15391,7 +15460,7 @@ datetime column followed by columns of measurements associated with each
 \"device-deployment\".  Algorithms to calculate @code{NowCast} and the associated
 Air Quality Index (AQI) are defined at the US Environmental Projection Agency
 @code{AirNow} program:
-<https://www.airnow.gov/sites/default/files/2020-05/aqi-technical-assistance-document-sept2018.pdf>.")
+<https://document.airnow.gov/technical-assistance-document-for-the-reporting-of-daily-air-quailty.pdf>.")
     (license license:gpl3)))
 
 (define-public r-airly

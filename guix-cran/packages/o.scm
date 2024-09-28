@@ -8400,6 +8400,44 @@ functions.  See the ompr website <https://dirkschumacher.github.io/ompr/> for
 more information, documentation and examples.")
     (license license:expat)))
 
+(define-public r-omopsketch
+  (package
+    (name "r-omopsketch")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "OmopSketch" version))
+       (sha256
+        (base32 "1pggf9r4l453hbijbirabvymc2x1iy6p6yx79scpf4g035xxnnm6"))))
+    (properties `((upstream-name . "OmopSketch")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-visomopresults
+                             r-tidyr
+                             r-tibble
+                             r-stringr
+                             r-rlang
+                             r-purrr
+                             r-patientprofiles
+                             r-omopgenerics
+                             r-omock
+                             r-ggplot2
+                             r-dplyr
+                             r-cohortconstructor
+                             r-cohortcharacteristics
+                             r-clock
+                             r-cli
+                             r-cdmconnector))
+    (native-inputs (list r-knitr))
+    (home-page "https://OHDSI.github.io/OmopSketch/")
+    (synopsis "Characterise Tables of an OMOP Common Data Model Instance")
+    (description
+     "Summarises key information in data mapped to the Observational Medical Outcomes
+Partnership (OMOP) common data model.  Assess suitability to perform specific
+epidemiological studies and explore the different domains to obtain feasibility
+counts and trends.")
+    (license (license:fsdg-compatible "Apache License (>= 2)"))))
+
 (define-public r-omopgenerics
   (package
     (name "r-omopgenerics")

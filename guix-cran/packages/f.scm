@@ -778,13 +778,13 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
 (define-public r-fuzzyimputationtest
   (package
     (name "r-fuzzyimputationtest")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyImputationTest" version))
        (sha256
-        (base32 "0iplqirwrfxahf3akzmgl9lnw52fgh1mfz6dpchmnfzg3pc5gqys"))))
+        (base32 "1f7v4a552qkgdjwpdacgz7r45c9ipfqpxyswjz31gm4jfdx72rx0"))))
     (properties `((upstream-name . "FuzzyImputationTest")))
     (build-system r-build-system)
     (propagated-inputs (list r-vim r-missforest r-miceranger r-fuzzysimres
@@ -794,9 +794,9 @@ Zimmermann, Werners and Tanaka), fuzzy costs, and fuzzy technological matrix.")
     (description
      "Special procedures for the imputation of missing fuzzy numbers are still
 underdeveloped.  The goal of the package is to provide the new d-imputation
-method (DIMP for short, Romaniuk, M. and Grzegorzewski, P. \"Fuzzy Data
-Imputation with DIMP and FGAIN\" RB/23/2023 (2023)) and covert some classical
-ones applied in R packages ('@code{missForest','miceRanger','knn}') for use with
+method (DIMP for short, Romaniuk, M. and Grzegorzewski, P. (2023) \"Fuzzy Data
+Imputation with DIMP and FGAIN\" RB/23/2023) and covert some classical ones
+applied in R packages ('@code{missForest','miceRanger','knn}') for use with
 fuzzy datasets.  Additionally, specially tailored benchmarking tests are
 provided to check and compare these imputation procedures with fuzzy datasets.")
     (license license:gpl3)))
@@ -6377,13 +6377,13 @@ June 27 - June 30 2016.")
 (define-public r-forward
   (package
     (name "r-forward")
-    (version "1.0.6")
+    (version "1.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "forward" version))
        (sha256
-        (base32 "12yk2l9cjmlr9089a8qw8arpdq997c9d9nx5xsy2x76ik65r6i3l"))))
+        (base32 "1alm7yvk0r2nv1zm6avll3pn28wbflgbqq6q3vx96vmpb0qkl6jl"))))
     (properties `((upstream-name . "forward")))
     (build-system r-build-system)
     (propagated-inputs (list r-mass))
@@ -9838,13 +9838,13 @@ style-polymorphic plant populations.\".")
 (define-public r-flowchart
   (package
     (name "r-flowchart")
-    (version "0.4.0")
+    (version "0.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "flowchart" version))
        (sha256
-        (base32 "1h34phpgx139v28rxgiyjl696k08lp7frh3sxizj97pix29j5yds"))))
+        (base32 "1znq9l3i4szib2qnz4y3vm9z4nyk2a7n1bpy17f80y89h55gc7j6"))))
     (properties `((upstream-name . "flowchart")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -9865,7 +9865,7 @@ in clinical trials, is essential to assess the generalisability and validity of
 the results.  This package provides a set of functions that can be combined with
 a pipe operator to create all kinds of flowcharts from a data frame in an easy
 way.")
-    (license license:expat)))
+    (license license:gpl3+)))
 
 (define-public r-flow
   (package
@@ -20159,13 +20159,13 @@ Senescence Test (FAST) workflow.")
 (define-public r-fasstr
   (package
     (name "r-fasstr")
-    (version "0.5.2")
+    (version "0.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fasstr" version))
        (sha256
-        (base32 "1r2xgxzzjc78d5grlpapc52b11qw0d01c1fahcvfccxjby51dywx"))))
+        (base32 "11aygczi9vi85kmymrnm544iz3i6s811pzbqidcm7ijwhlp757bi"))))
     (properties `((upstream-name . "fasstr")))
     (build-system r-build-system)
     (propagated-inputs (list r-zyp
@@ -20788,13 +20788,13 @@ and Andros (2022+) <doi:10.48550/@code{arXiv.2207.13824>}.")
 (define-public r-fancycut
   (package
     (name "r-fancycut")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fancycut" version))
        (sha256
-        (base32 "1xg5qjxf77g10h07x6rvb8c3klc9gbr77bkw352qpas268pkswl2"))))
+        (base32 "1vfd7vhl4wmdia8zh6fkpmw64rkfqdmadvrnaqyf72kw5gpck8li"))))
     (properties `((upstream-name . "fancycut")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fancycut")

@@ -4257,6 +4257,37 @@ Components Analysis (PCA) and features importance for Support Vector Machines
 (SVMs), which expand other R packages like kernlab'.")
     (license license:gpl3+)))
 
+(define-public r-kernstadapt
+  (package
+    (name "r-kernstadapt")
+    (version "0.4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kernstadapt" version))
+       (sha256
+        (base32 "1va9ykbimjl3i02hdnwp41sjsxrqrnpp5lkq34sqnzcbyz87y47s"))))
+    (properties `((upstream-name . "kernstadapt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-spatstat-utils
+                             r-spatstat-univar
+                             r-spatstat-random
+                             r-spatstat-linnet
+                             r-spatstat-geom
+                             r-spatstat-explore
+                             r-sparr
+                             r-misc3d))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=kernstadapt")
+    (synopsis
+     "Adaptive Kernel Estimators for Point Process Intensities on Linear Networks")
+    (description
+     "Adaptive estimation of the first-order intensity function of a spatio-temporal
+point process using kernels and variable bandwidths.  The methodology used for
+estimation is presented in GonzÃ¡lez and Moraga (2022).
+<doi:10.48550/@code{arXiv.2208.12026>}.")
+    (license license:expat)))
+
 (define-public r-kernsmoothirt
   (package
     (name "r-kernsmoothirt")

@@ -4989,21 +4989,25 @@ the Haskell library combinat', and is based on Birman and Brendle (2005)
 (define-public r-braidrm
   (package
     (name "r-braidrm")
-    (version "0.71")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braidrm" version))
        (sha256
-        (base32 "1cn0rdlw775pmzbjmhny7gkm901a3qgz7infqb5s9az606xg54d3"))))
+        (base32 "16wj2bnjpr93vsiyngn4agyiizslzpglld5kr3xxhmn8n2dfmc3k"))))
     (properties `((upstream-name . "braidrm")))
     (build-system r-build-system)
+    (propagated-inputs (list r-basicdrm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=braidrm")
-    (synopsis "Fitting Dose Response with the BRAID Combined Action Model")
+    (synopsis "Fitting Combined Action with the BRAID Response Surface Model")
     (description
      "This package contains functions for evaluating, analyzing, and fitting combined
 action dose response surfaces with the Bivariate Response to Additive
-Interacting Dose (BRAID) model of combined action.")
+Interacting Doses (BRAID) model of combined action, along with tools for
+implementing other combination analysis methods, including Bliss independence,
+combination index, and additional response surface methods.")
     (license license:gpl3+)))
 
 (define-public r-braidreports
@@ -7213,13 +7217,13 @@ inverse Gaussian distribution\" Luc Devroye (2012)
 (define-public r-bonsaiforest
   (package
     (name "r-bonsaiforest")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bonsaiforest" version))
        (sha256
-        (base32 "1k8k2vnn3cxl1nlkls5w1yvvr1qk28j8gak7m2p85gr6nlxfy4p4"))))
+        (base32 "1h16bwwl14ikyx489n8bx63qnp7k982lxm1xlrdr8jnaq6kc7fgp"))))
     (properties `((upstream-name . "bonsaiforest")))
     (build-system r-build-system)
     (propagated-inputs (list r-vdiffr
@@ -16655,18 +16659,17 @@ the bfsl solution.")
 (define-public r-bfs
   (package
     (name "r-bfs")
-    (version "0.5.8")
+    (version "0.5.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BFS" version))
        (sha256
-        (base32 "0s3q9v61msb5cn7pjbkppdf6bcfn6r40jjr8d289m95q1rr5wkn5"))))
+        (base32 "1g7zx4qy3zb2xrblywxfxc2xgg8mzgg4l406nxw0d6s634ds41hi"))))
     (properties `((upstream-name . "BFS")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
                              r-xml2
-                             r-tidyrss
                              r-tibble
                              r-sf
                              r-rvest
@@ -28286,13 +28289,13 @@ fragment counts given @code{mRNA} counts.")
 (define-public r-b64
   (package
     (name "r-b64")
-    (version "0.1.2")
+    (version "0.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "b64" version))
        (sha256
-        (base32 "0r4g2xikfczfhhv74jz8pp0q7rxzi789s3qqrfrq2rvi6pm9lnna"))))
+        (base32 "0alr0q2zfxni31rb3m1676kwhwwg91xaq9fsfhjgcycn7r06rjpl"))))
     (properties `((upstream-name . "b64")))
     (build-system r-build-system)
     (inputs (list))

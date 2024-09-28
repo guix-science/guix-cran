@@ -1694,13 +1694,13 @@ package is free and lightweight.")
 (define-public r-gto
   (package
     (name "r-gto")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gto" version))
        (sha256
-        (base32 "111jla0acxpb749ncr77lnbxk7hmsv8syin1p2cs1d1fr2jxkzs1"))))
+        (base32 "0j8yflfibqa9lypvblb6l25wmwfi5mypr20gp7fqy5hadaliy3d6"))))
     (properties `((upstream-name . "gto")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-rlang r-officer r-magrittr r-gt))
@@ -22325,13 +22325,13 @@ classes and functions.")
 (define-public r-geomodels
   (package
     (name "r-geomodels")
-    (version "2.0.4")
+    (version "2.0.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GeoModels" version))
        (sha256
-        (base32 "0hqj4ddil9qf15vi65lrs6qk4y9v4mdj70iajm734skm95pi1l0l"))))
+        (base32 "10kr33vjzlp5013s2z4mk3xxx1iwcg3yxyha3yhx5anc13ssdsik"))))
     (properties `((upstream-name . "GeoModels")))
     (build-system r-build-system)
     (propagated-inputs (list r-zipfr
@@ -27116,13 +27116,13 @@ components required for a given reconstruction accuracy.")
 (define-public r-gdm
   (package
     (name "r-gdm")
-    (version "1.6.0-1")
+    (version "1.6.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdm" version))
        (sha256
-        (base32 "1a0lc2yh8hbjxr6yrgilg6bx87vjx1nav9640n8911rhi9pnjqa4"))))
+        (base32 "0m8jr7l5vif1p119pqb9kj101gi44pjl64gsz0qshrwhgn55fk2w"))))
     (properties `((upstream-name . "gdm")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -28791,6 +28791,39 @@ Simple methods for fitting Lotka-Volterra models describing Gause's Struggle for
 Existence in the journal Ecology and Evolution.")
     (license license:gpl3)))
 
+(define-public r-gaupro
+  (package
+    (name "r-gaupro")
+    (version "0.2.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GauPro" version))
+       (sha256
+        (base32 "0l1sizyzrmxl9svdx1hhfg4aq00g1ss9ply3i2ll344nd9j54fvz"))))
+    (properties `((upstream-name . "GauPro")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-rmarkdown
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-r6
+                             r-numderiv
+                             r-mixopt
+                             r-lbfgs
+                             r-ggplot2))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CollinErickson/GauPro")
+    (synopsis "Gaussian Process Fitting")
+    (description
+     "Fits a Gaussian process model to data.  Gaussian processes are commonly used in
+computer experiments to fit an interpolating model.  The model is stored as an
+R6 object and can be easily updated with new data.  There are options to run in
+parallel, and Rcpp has been used to speed up calculations.  For more info about
+Gaussian process software, see Erickson et al. (2018)
+<doi:10.1016/j.ejor.2017.10.002>.")
+    (license license:gpl3)))
+
 (define-public r-gators
   (package
     (name "r-gators")
@@ -28883,13 +28916,13 @@ Bithell (1991) <doi:10.1002/sim.4780101112>.")
 (define-public r-gastempt
   (package
     (name "r-gastempt")
-    (version "0.5.5")
+    (version "0.6.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gastempt" version))
        (sha256
-        (base32 "0pz580nhr9hnpzdi59l00jv34jmy5iyh5skbwslq6gzjdw3jgsf4"))))
+        (base32 "1fy6scbgi9qq78rfwq58p7f9x6mgam6lvrlmz224mz99qf3lz6s1"))))
     (properties `((upstream-name . "gastempt")))
     (build-system r-build-system)
     (propagated-inputs (list r-utf8
@@ -30550,6 +30583,28 @@ breeds, tissues, statistical models, studies, etc.), and QTL enrichment in
 different livestock species including cattle, pigs, sheep, and chicken, among
 others.")
     (license license:gpl3)))
+
+(define-public r-gallery
+  (package
+    (name "r-gallery")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "gallery" version))
+       (sha256
+        (base32 "1mp247z0vh4n2xh3nwkgkxq7rrc6vcfkcx39c4z80vvvdx3rvw1m"))))
+    (properties `((upstream-name . "gallery")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-pracma r-matrix))
+    (home-page "https://cran.r-project.org/package=gallery")
+    (synopsis "Generate Test Matrices for Numerical Experiments")
+    (description
+     "Generates a variety of structured test matrices commonly used in numerical
+linear algebra and computational experiments.  Includes well-known matrices for
+benchmarking and testing the performance, stability, and accuracy of linear
+algebra algorithms.  Inspired by MATLAB gallery functions.")
+    (license license:expat)))
 
 (define-public r-galigor
   (package
