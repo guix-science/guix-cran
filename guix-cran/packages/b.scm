@@ -4785,13 +4785,13 @@ processes.")
 (define-public r-branchglm
   (package
     (name "r-branchglm")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BranchGLM" version))
        (sha256
-        (base32 "17chkg72zbf5ydz813yjc6ldv5y0q5nw2y8ipmnjhhibz63s0i4d"))))
+        (base32 "1d0cqrfh4p5wfljys3xm8brpmvycl6ix28qwillq1zyvbik9r1js"))))
     (properties `((upstream-name . "BranchGLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpparmadillo r-rcpp r-bh))
@@ -5013,24 +5013,30 @@ combination index, and additional response surface methods.")
 (define-public r-braidreports
   (package
     (name "r-braidreports")
-    (version "0.5.4")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "braidReports" version))
        (sha256
-        (base32 "1455pswcbz3zscvk6rgvgrjcp154l5lfx5m7s24m91rpjmc2y7pk"))))
+        (base32 "1w6bxvpkh8wslnzickwlxk6sw793x142cinn6sn6836ldlhgzlg9"))))
     (properties `((upstream-name . "braidReports")))
     (build-system r-build-system)
-    (propagated-inputs (list r-ggplot2 r-braidrm))
+    (propagated-inputs (list r-scales
+                             r-gtable
+                             r-ggplot2
+                             r-cowplot
+                             r-braidrm
+                             r-basicdrm))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=braidReports")
     (synopsis
      "Visualize Combined Action Response Surfaces and Report BRAID Analyses")
     (description
-     "This package provides functions to generate, format, and style surface plots for
-visualizing combined action data.  Also provides functions for reporting on a
-BRAID analysis, including plotting curve-shifts, calculating IAE values, and
-producing full BRAID analysis reports.")
+     "This package provides functions to visualize combined action data in ggplot2'.
+Also provides functions for producing full BRAID analysis reports with custom
+layouts and aesthetics, using the BRAID method originally described in Twarog et
+al. (2016) <doi:10.1038/srep25523>.")
     (license license:gpl3+)))
 
 (define-public r-braggr
@@ -16112,13 +16118,13 @@ is clear citation of the original publication (see above).")
 (define-public r-bgvar
   (package
     (name "r-bgvar")
-    (version "2.5.7")
+    (version "2.5.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BGVAR" version))
        (sha256
-        (base32 "1djccjwknghq33kzdyisfk0gxcqd54fmwad59kadgp39fah9hz9k"))))
+        (base32 "124vy9dx91sa42z6x4g4drai0gxz2l36p0nn4ng2r0hxj6z2m34x"))))
     (properties `((upstream-name . "BGVAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -21923,16 +21929,16 @@ model ('Lee', 2007, <doi:10.1002/9780470024737>).")
 (define-public r-bayesreg
   (package
     (name "r-bayesreg")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesreg" version))
        (sha256
-        (base32 "0yrx7y39xxmm0z4myj6ma24dkkhgcily5baxr6yf9balgvhd5wf4"))))
+        (base32 "0xx49lqmrxcygbl4znjdlamjqfc6raskm5k54lfp9l8lfd5rmq91"))))
     (properties `((upstream-name . "bayesreg")))
     (build-system r-build-system)
-    (propagated-inputs (list r-pgdraw))
+    (propagated-inputs (list r-pgdraw r-foreach r-doparallel))
     (home-page "https://cran.r-project.org/package=bayesreg")
     (synopsis "Bayesian Regression Models with Global-Local Shrinkage Priors")
     (description
@@ -21942,7 +21948,7 @@ shrinkage prior hierarchies as described in Polson and Scott (2010)
 implementation of ridge, lasso, horseshoe and horseshoe+ regression with
 logistic, Gaussian, Laplace, Student-t, Poisson or geometric distributed targets
 using the algorithms summarized in Makalic and Schmidt (2016)
-<@code{arXiv:1611.06649>}.")
+<doi:10.48550/@code{arXiv.1611.06649>}.")
     (license license:gpl3+)))
 
 (define-public r-bayesrecon

@@ -6856,6 +6856,31 @@ S.C. (2019) <doi:10.1038/s41598-019-41559-6>; Yang, S., Ning, S. and Kou, S.C.
 (2021) <doi:10.1038/s41598-021-83084-5>.")
     (license license:gpl2)))
 
+(define-public r-argentum
+  (package
+    (name "r-argentum")
+    (version "0.5.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Argentum" version))
+       (sha256
+        (base32 "0f0d69hrx5a1wf6cx3m11q9cq8igmd28rc9gl1c1x9n8ys0gv2f0"))))
+    (properties `((upstream-name . "Argentum")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2 r-sf r-readr r-httr))
+    (home-page "https://cran.r-project.org/package=Argentum")
+    (synopsis
+     "Access and Import WMS and WFS Data from Argentine Organizations")
+    (description
+     "This package provides functions to retrieve information from Web Feature Service
+(WFS) and Web Map Service (WMS) layers from various Argentine organizations and
+import them into R for further analysis.  WFS and WMS are standardized protocols
+for serving georeferenced map data over the internet.  For more information on
+these services, see <https://www.ogc.org/standard/wfs/> and
+<https://www.ogc.org/standard/wms/>.")
+    (license license:expat)))
+
 (define-public r-arfima
   (package
     (name "r-arfima")
@@ -19824,13 +19849,13 @@ during continuous walking activity.")
 (define-public r-adepro
   (package
     (name "r-adepro")
-    (version "4.1.0")
+    (version "4.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adepro" version))
        (sha256
-        (base32 "06zj8vq7py41g0bjpnd4fczwxcr4k1lb1cxjxfc92fhj0wk51k36"))))
+        (base32 "117piz0vxfd5qrfn1c9zb3mrivd6l0rbm0h8jfgcrnps5rkb7pmb"))))
     (properties `((upstream-name . "adepro")))
     (build-system r-build-system)
     (propagated-inputs (list r-v8
@@ -19847,6 +19872,7 @@ during continuous walking activity.")
                              r-here
                              r-haven
                              r-forcats
+                             r-dt
                              r-dplyr
                              r-cairo
                              r-audio))

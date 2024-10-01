@@ -4569,13 +4569,13 @@ Mitteroecker et al. (2020) <doi:10.5061/dryad.j6q573n8s> and Grunstra et al.
 (define-public r-prtree
   (package
     (name "r-prtree")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PRTree" version))
        (sha256
-        (base32 "1kg9jz0jhcivll0pgmxdkgb2z9x9x2zyamb56inhy8hsa8ys8xbx"))))
+        (base32 "1m1npdajyrc6hcdfl8qpj0zi5wa4sh4mxsi37yz0i9v24ygdw5r8"))))
     (properties `((upstream-name . "PRTree")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -12619,13 +12619,13 @@ month).")
 (define-public r-powerpls
   (package
     (name "r-powerpls")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "powerPLS" version))
        (sha256
-        (base32 "03y06wnd8i3lkw5fakihgrb9karjfw496vfygqgl8b6fxb2nz2yw"))))
+        (base32 "1g36snvgm38g0x22b1ldryx331zir2yw5p2pvmk8i38n0fy6hqlc"))))
     (properties `((upstream-name . "powerPLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-simukde
@@ -12634,12 +12634,13 @@ month).")
                              r-mass
                              r-ks
                              r-foreach
+                             r-fksum
                              r-compositions))
     (home-page "https://github.com/angeella/powerPLS")
     (synopsis "Power Analysis for PLS Classification")
     (description
      "It estimates power and sample size for Partial Least Squares-based methods
-described in Andreella, et al., (2024) <@code{arXiv:2403.10289>}.")
+described in Andreella, et al., (2024), <doi:10.48550/@code{arXiv.2403.10289>}.")
     (license license:gpl2+)))
 
 (define-public r-powerpkg
@@ -13706,13 +13707,13 @@ randomized objective functions\" <@code{arXiv:1806.11544>}.")
 (define-public r-postdoc
   (package
     (name "r-postdoc")
-    (version "1.2.2")
+    (version "1.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "postdoc" version))
        (sha256
-        (base32 "1d9d82z72jh2g777pzxfnav7nq14c4q93jiwcsp3plvgfkj0sfl8"))))
+        (base32 "0169wgld7snnfm447nw3hsjxy8sw9vkvlh6cmvdz30wpb869c8xm"))))
     (properties `((upstream-name . "postdoc")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2 r-prismjs r-katex r-jsonlite r-curl))
@@ -18481,6 +18482,34 @@ Environmental Mesonet web page of Iowa State University ASOS-AWOS-METAR
 <http://mesonet.agron.iastate.edu/AWOS/>.")
     (license license:gpl3+)))
 
+(define-public r-pmem
+  (package
+    (name "r-pmem")
+    (version "0.1-1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pMEM" version))
+       (sha256
+        (base32 "0y18s0y3mh1jx43gpx32awysgxbh9gyyb5mp7kpj5asi98bwmzjj"))))
+    (properties `((upstream-name . "pMEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sf r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=pMEM")
+    (synopsis "Predictive Moran's Eigenvector Maps")
+    (description
+     "Calculation of Predictive Moran's eigenvector maps (@code{pMEM}), as defined by
+GuÃ©nard and Legendre (In Press) \"Spatially-explicit predictions using spatial
+eigenvector maps\" <doi:10.5281/zenodo.13356457>.  Methods in Ecology and
+Evolution.  This method enables scientists to predict the values of
+spatially-structured environmental variables.  Multiple types of @code{pMEM} are
+defined, each one implemented on the basis of spatial weighting function taking
+a range parameter, and sometimes also a shape parameter.  The code's modular
+nature enables programers to implement new @code{pMEM} by defining new spatial
+weighting functions.")
+    (license license:gpl3)))
+
 (define-public r-pmd
   (package
     (name "r-pmd")
@@ -19369,13 +19398,13 @@ described in Queiroz and Ferrari (2022) <@code{arXiv:2202.01697>}.")
 (define-public r-plpoisson
   (package
     (name "r-plpoisson")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "plpoisson" version))
        (sha256
-        (base32 "15g5z07m0rf4hm6nynrb3bmsiakg7j790lsy30ksxswxrzwb9a1k"))))
+        (base32 "0cyp8j6diafkadjav2bj64f01gr3c74p4psygna7kfzwx92mygv9"))))
     (properties `((upstream-name . "plpoisson")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=plpoisson")
@@ -23226,6 +23255,39 @@ Higgins et al. (2009) <doi:10.1111/j.1467-985X.2008.00552.x>, Partlett and Riley
 has changed in this new version.  The old version is still available at R-Forge.")
     (license license:gpl2+)))
 
+(define-public r-pikchr
+  (package
+    (name "r-pikchr")
+    (version "0.97")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "pikchr" version))
+       (sha256
+        (base32 "072wnyv28wldncsqyhl7wgqsc80jy9gc0k04mf47x6mf96yikl15"))))
+    (properties `((upstream-name . "pikchr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-rsvg
+                             r-rlang
+                             r-purrr
+                             r-knitr
+                             r-htmltools
+                             r-brio))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/StrategicProjects/pikchr>")
+    (synopsis "R Wrapper for 'pikchr' (PIC) Diagram Language")
+    (description
+     "An R interface to pikchr (<https://pikchr.org>, pronounced âpictureâ), a
+PIC'-like markup language for creating diagrams within technical documentation.
+Originally developed by Brian Kernighan, PIC has been adapted into pikchr by D.
+Richard Hipp, the creator of SQLite'.  pikchr is designed to be embedded in
+fenced code blocks of Markdown or other documentation markup languages, making
+it ideal for generating diagrams in text-based formats.  This package allows R
+users to seamlessly integrate the descriptive syntax of pikchr for diagram
+creation directly within the R environment.")
+    (license license:gpl2+)))
+
 (define-public r-pijavski
   (package
     (name "r-pijavski")
@@ -24235,13 +24297,13 @@ prevalence.")
 (define-public r-phylolm
   (package
     (name "r-phylolm")
-    (version "2.6.2")
+    (version "2.6.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "phylolm" version))
        (sha256
-        (base32 "04pz7i44s8w6py4nk2zilzjlkrf1c5dbb6jij7zfkk49hvslbynn"))))
+        (base32 "0sg2a7isy5f5phk2db4v2b78apdmd3k9c8jdwpkrm3lw7vxj52v5"))))
     (properties `((upstream-name . "phylolm")))
     (build-system r-build-system)
     (propagated-inputs (list r-future-apply r-ape))
@@ -31076,13 +31138,13 @@ README'-file.")
 (define-public r-pdfetch
   (package
     (name "r-pdfetch")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pdfetch" version))
        (sha256
-        (base32 "134m00nw3k9bv2inpc3wxihyh17m3mbvqra9ajmj1b726xk4n41b"))))
+        (base32 "19c4xylyvx9fxk9bxvbsvzkbl2hwgfk9l5xnykdx951kh8ssd274"))))
     (properties `((upstream-name . "pdfetch")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -31092,12 +31154,12 @@ README'-file.")
                              r-tidyr
                              r-stringr
                              r-readr
+                             r-quantmod
                              r-magrittr
                              r-lubridate
                              r-jsonlite
                              r-httr
-                             r-dplyr
-                             r-curl))
+                             r-dplyr))
     (home-page "https://github.com/abielr/pdfetch")
     (synopsis
      "Fetch Economic and Financial Time Series Data from Public Sources")

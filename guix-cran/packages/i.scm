@@ -13637,6 +13637,29 @@ so, the model allows understanding the economic influence of different urban
 policies.")
     (license license:expat)))
 
+(define-public r-igc-csm
+  (package
+    (name "r-igc-csm")
+    (version "0.2.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "IGC.CSM" version))
+       (sha256
+        (base32 "0wv19hqsdx264m7wxh63krrw10ccv3axz44zfbk02m53p5v5vh58"))))
+    (properties `((upstream-name . "IGC.CSM")))
+    (build-system r-build-system)
+    (home-page "https://cran.r-project.org/package=IGC.CSM")
+    (synopsis
+     "Simulate Impact of Different Urban Policies Through a General Equilibrium Model")
+    (description
+     "Develops a General Equilibrium (GE) Model, which estimates key variables such as
+wages, the number of residents and workers, the prices of the floor space, and
+its distribution between commercial and residential use, as in Ahlfeldt et al.,
+(2015) <doi:10.3982/ECTA10876>.  By doing so, the model allows understanding the
+economic influence of different urban policies.")
+    (license license:expat)))
+
 (define-public r-igate
   (package
     (name "r-igate")
@@ -17746,28 +17769,30 @@ Montesinos-LÃ³pez et al. (2017) <doi:10.1534/g3.117.300309>.")
 (define-public r-ibawds
   (package
     (name "r-ibawds")
-    (version "0.6.0")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ibawds" version))
        (sha256
-        (base32 "1x1l3a94sjxzadaxfchc0zkaq9hjpj0y2b8crg3253v708m0h7r5"))))
+        (base32 "0hkpp21gk980n6gii7444kms3bnxyj9qcapigk1x5xya3djybj7c"))))
     (properties `((upstream-name . "ibawds")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
                              r-scales
+                             r-rstudioapi
                              r-rlang
                              r-remotes
                              r-magrittr
                              r-ggplot2
                              r-dslabs
-                             r-dplyr))
+                             r-dplyr
+                             r-cli))
     (home-page "https://stibu81.github.io/ibawds/")
     (synopsis "Functions and Datasets for the Data Science Course at IBAW")
     (description
      "This package provides a collection of useful functions and datasets for the Data
-Science Course at IBAW in Lucerne.")
+Science Course at IBAW.")
     (license license:expat)))
 
 (define-public r-ibart

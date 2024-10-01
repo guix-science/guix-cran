@@ -2651,30 +2651,6 @@ interaction model, effect compartment model, drug-drug interaction model,
 receptor occupancy model, and rebound phenomena model.")
     (license license:gpl3)))
 
-(define-public r-wmwssp
-  (package
-    (name "r-wmwssp")
-    (version "0.4.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "WMWssp" version))
-       (sha256
-        (base32 "16m4hvjqdcpkvswvqwgm0pq9nm7vjrlqldzi4i69izlwccp37v47"))))
-    (properties `((upstream-name . "WMWssp")))
-    (build-system r-build-system)
-    (home-page "http://github.com/happma/WMWssp")
-    (synopsis "Wilcoxon-Mann-Whitney Sample Size Planning")
-    (description
-     "Calculates the minimal sample size for the Wilcoxon-Mann-Whitney test that is
-needed for a given power and two sided type I error rate.  The method works for
-metric data with and without ties, count data, ordered categorical data, and
-even dichotomous data.  But data is needed for the reference group to generate
-synthetic data for the treatment group based on a relevant effect.  For details,
-see Brunner, E., Bathke A. C. and Konietschke, F: Rank- and Pseudo-Rank
-Procedures in Factorial Designs - Using R and SAS, Springer Verlag, to appear.")
-    (license license:gpl3)))
-
 (define-public r-wmwpow
   (package
     (name "r-wmwpow")

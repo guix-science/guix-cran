@@ -2027,13 +2027,13 @@ Embedding Association Test (Caliskan et al., 2017),
 (define-public r-swdpwr
   (package
     (name "r-swdpwr")
-    (version "1.9")
+    (version "1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swdpwr" version))
        (sha256
-        (base32 "12ynji4qg30gypldmcqrj2m89ip0biqvy525kgi7s38a3ian3fhn"))))
+        (base32 "0qvzv03i70f0ma8p50r9w396avxw50k324mc1wjpbn0yvdvdzyxa"))))
     (properties `((upstream-name . "swdpwr")))
     (build-system r-build-system)
     (propagated-inputs (list r-spatstat-random))
@@ -2046,13 +2046,14 @@ randomized trials, we developed this software.  Different parameters can be
 specified by users for different scenarios, including: cross-sectional and
 cohort designs, binary and continuous outcomes, marginal (GEE) and conditional
 models (mixed effects model), three link functions (identity, log, logit links),
-with and without time effects under exchangeable, nested exchangeable and block
-exchangeable correlation structures.  Unequal numbers of clusters per sequence
-are also allowed.  The methods included in this package: Zhou et al. (2020)
+with and without time effects (the default specification assumes no-time-effect)
+under exchangeable, nested exchangeable and block exchangeable correlation
+structures.  Unequal numbers of clusters per sequence are also allowed.  The
+methods included in this package: Zhou et al. (2020)
 <doi:10.1093/biostatistics/kxy031>, Li et al. (2018) <doi:10.1111/biom.12918>.
 Supplementary documents can be found at:
-<https://ysph.yale.edu/cmips/research/software/swdpwr/>.  The Shiny app for
-swdpwr can be accessed at:
+<https://ysph.yale.edu/cmips/research/software/study-design-power-calculation/swdpwr/>.
+ The Shiny app for swdpwr can be accessed at:
 <https://jiachenchen322.shinyapps.io/swdpwr_shinyapp/>.  The package also
 includes functions that perform calculations for the intra-cluster correlation
 coefficients based on the random effects variances as input variables for
@@ -3036,13 +3037,13 @@ Monte Carlo simulation from a given SV model.")
 (define-public r-svd
   (package
     (name "r-svd")
-    (version "0.5.6")
+    (version "0.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "svd" version))
        (sha256
-        (base32 "02gw8avdi2n0kvw3jnzb3813dvabq13dwzp1m475q5dxyl3szqkp"))))
+        (base32 "050m8hjddgygm7q1lvz2lqvq9r6xrbi4cy4kpbvypnwdf1w4x6ah"))))
     (properties `((upstream-name . "svd")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -5436,6 +5437,58 @@ incremental value of the surrogate outcome information.")
      "This package provides functions to estimate the proportion of treatment effect
 explained by the surrogate marker using a Bayesian Model Averaging approach.
 Duan and Parast (2023) <doi:10.1002/sim.9986>.")
+    (license license:gpl2+)))
+
+(define-public r-surrogate
+  (package
+    (name "r-surrogate")
+    (version "3.3.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Surrogate" version))
+       (sha256
+        (base32 "1r4i12f6kmbszrm8v17gp2396ybwv913ngr3mnhqmvsl91fnpwi6"))))
+    (properties `((upstream-name . "Surrogate")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-survival
+                             r-rvinecopulib
+                             r-rms
+                             r-purrr
+                             r-pbapply
+                             r-optimx
+                             r-numderiv
+                             r-nlme
+                             r-msm
+                             r-mbess
+                             r-maxlik
+                             r-mass
+                             r-logistf
+                             r-lme4
+                             r-latticeextra
+                             r-lattice
+                             r-ks
+                             r-flexsurv
+                             r-extradistr
+                             r-dplyr))
+    (home-page "https://github.com/florianstijven/Surrogate-development")
+    (synopsis "Evaluation of Surrogate Endpoints in Clinical Trials")
+    (description
+     "In a clinical trial, it frequently occurs that the most credible outcome to
+evaluate the effectiveness of a new therapy (the true endpoint) is difficult to
+measure.  In such a situation, it can be an effective strategy to replace the
+true endpoint by a (bio)marker that is easier to measure and that allows for a
+prediction of the treatment effect on the true endpoint (a surrogate endpoint).
+The package Surrogate allows for an evaluation of the appropriateness of a
+candidate surrogate endpoint based on the meta-analytic, information-theoretic,
+and causal-inference frameworks.  Part of this software has been developed using
+funding provided from the European Union's Seventh Framework Programme for
+research, technological development and demonstration (Grant Agreement no
+602552), the Special Research Fund (BOF) of Hasselt University (BOF-number:
+BOF2OCPO3), @code{GlaxoSmithKline} Biologicals, Baekeland Mandaat
+(HBC.2022.0145), and Johnson & Johnson Innovative Medicine.")
     (license license:gpl2+)))
 
 (define-public r-surreal
@@ -10750,6 +10803,31 @@ spreadsheets, or text files generation from XML files by using xslt
 transformation.")
     (license license:lgpl3+)))
 
+(define-public r-sticr
+  (package
+    (name "r-sticr")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "STICr" version))
+       (sha256
+        (base32 "0ai5hgq6r3jzklz1wsd3dj5psc4n0rzqlnzrhdqblvbcmrqmhynn"))))
+    (properties `((upstream-name . "STICr")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-stringr r-lubridate r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/HEAL-KGS/STICr")
+    (synopsis
+     "Process Stream Temperature, Intermittency, and Conductivity (STIC) Sensor Data")
+    (description
+     "This package provides a collection of functions for processing raw data from
+Stream Temperature, Intermittency, and Conductivity (STIC) loggers.  STICr
+(pronounced \"sticker\") includes functions for tidying, calibrating, classifying,
+and doing quality checks on data from STIC sensors.  Some package functionality
+is described in Wheeler/Zipper et al. (2023) <doi:10.31223/X5636K>.")
+    (license license:agpl3+)))
+
 (define-public r-stickyr
   (package
     (name "r-stickyr")
@@ -14617,13 +14695,13 @@ predictiveness of individual predictors.")
 (define-public r-stability
   (package
     (name "r-stability")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "stability" version))
        (sha256
-        (base32 "0mz7ikfhpfbdcp72klq7fi4zfmx2w18gz46yhwywcc4dyi277m11"))))
+        (base32 "1a44pn3dyxz39jxnb286p2vrq6rrmhw6snmsn80c53wnga9fihda"))))
     (properties `((upstream-name . "stability")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -14637,19 +14715,20 @@ predictiveness of individual predictors.")
                              r-ggplot2
                              r-ggfortify
                              r-dplyr))
-    (home-page "https://github.com/myaseen208/stability")
+    (home-page "https://cran.r-project.org/package=stability")
     (synopsis
      "Stability Analysis of Genotype by Environment Interaction (GEI)")
     (description
-     "Functionalities to perform Stability Analysis of Genotype by Environment
-Interaction (GEI) to identify superior and stable genotypes under diverse
-environments.  It performs Eberhart & Russel's ANOVA (1966)
-(<doi:10.2135/cropsci1966.0011183X000600010011x>), Finlay and Wilkinson (1963)
-Joint Linear Regression (<doi:10.1071/AR9630742>), Wricke (1962, 1964)
-Ecovalence, Shukla's stability variance parameter (1972)
-(<doi:10.1038/hdy.1972.87>) and Kang's (1991)
-(<doi:10.2134/agronj1991.00021962008300010037x>) simultaneous selection for high
-yielding and stable parameter.")
+     "This package provides functionalities for performing stability analysis of
+genotype by environment interaction (GEI) to identify superior and stable
+genotypes across diverse environments.  It implements Eberhart and Russellâs
+ANOVA method (1966)(<doi:10.2135/cropsci1966.0011183X000600010011x>), Finlay and
+Wilkinsonâs Joint Linear Regression method (1963) (<doi:10.1071/AR9630742>),
+Wrickeâs Ecovalence (1962, 1964), Shuklaâs stability variance parameter
+(1972) (<doi:10.1038/hdy.1972.87>), Kangâs simultaneous selection for high
+yield and stability (1991) (<doi:10.2134/agronj1991.00021962008300010037x>),
+Additive Main Effects and Multiplicative Interaction (AMMI) method and Genotype
+plus Genotypes by Environment (GGE) Interaction methods.")
     (license license:gpl2)))
 
 (define-public r-stabiliser
@@ -23480,13 +23559,13 @@ spatially varying relationships among the variables.")
 (define-public r-spatialpack
   (package
     (name "r-spatialpack")
-    (version "0.4")
+    (version "0.4-1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SpatialPack" version))
        (sha256
-        (base32 "138q209gyggpfa1ha1yc6czpv0lxp6acggvp4yc4nbcnkxnvqzwb"))))
+        (base32 "1cz6i5ws2d3nyfds02xwjzi7yyrn8a1wz0h4kr8v3h5ldfbp1abf"))))
     (properties `((upstream-name . "SpatialPack")))
     (build-system r-build-system)
     (propagated-inputs (list r-fastmatrix))
@@ -26298,6 +26377,45 @@ summary statistics for simulated networks and provides simple to use plotting
 methods for its classes that return plots which can be further refined with the
 ggplot2 package.")
     (license license:expat)))
+
+(define-public r-spacci
+  (package
+    (name "r-spacci")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SpaCCI" version))
+       (sha256
+        (base32 "06crifqyjvnywqx7x9f3iazq3ilp2d756wjqmmavjykbzfhbi98j"))))
+    (properties `((upstream-name . "SpaCCI")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seurat
+                             r-reshape2
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-pheatmap
+                             r-patchwork
+                             r-nnls
+                             r-matrix
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr
+                             r-circlize))
+    (home-page "https://cran.r-project.org/package=SpaCCI")
+    (synopsis "Spatially Aware Cell-Cell Interaction Analysis")
+    (description
+     "This package provides tools for analyzing spatial cell-cell interactions based
+on ligand-receptor pairs, including functions for local, regional, and global
+analysis using spatial transcriptomics data.  Integrates with databases like
+@code{CellChat} <http://www.cellchat.org/>, @code{CellPhoneDB}
+<https://www.cellphonedb.org/>, Cellinker
+<https://www.rna-society.org/cellinker/>, ICELLNET
+<https://github.com/soumelis-lab/ICELLNET>, and @code{ConnectomeDB}
+<https://humanconnectome.org/software/connectomedb/> to identify ligand-receptor
+pairs, visualize interactions through heatmaps, chord diagrams, and infer
+interactions on different spatial scales.")
+    (license license:gpl2+)))
 
 (define-public r-spabundance
   (package
@@ -29534,13 +29652,13 @@ package.")
 (define-public r-snotelr
   (package
     (name "r-snotelr")
-    (version "1.4")
+    (version "1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snotelr" version))
        (sha256
-        (base32 "1sr5ihr8qsa0lcihx8cgkr3q9qhc9grjyjp2fbf4siv7j3p21xzp"))))
+        (base32 "0yx8a2jf98w8gwsk00bws45h3gzwr6qbrw0iywx3x4bb9imh2bhb"))))
     (properties `((upstream-name . "snotelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rvest r-memoise r-httr r-dplyr))
@@ -38873,13 +38991,13 @@ provides functions to plot and summarise the outputs.")
 (define-public r-simaerep
   (package
     (name "r-simaerep")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "simaerep" version))
        (sha256
-        (base32 "1r0hgf8i7grpiww42l28az4pr81s998ghyrmbrva8ap27vj3r269"))))
+        (base32 "0sjq6lrs9fawgwpyr8p97c36m9a6yw16ww247kw86qncnb1ya4vx"))))
     (properties `((upstream-name . "simaerep")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -38895,6 +39013,7 @@ provides functions to plot and summarise the outputs.")
                              r-furrr
                              r-forcats
                              r-dplyr
+                             r-dbplyr
                              r-cowplot))
     (home-page "https://openpharma.github.io/simaerep/")
     (synopsis "Find Clinical Trial Sites Under-Reporting Adverse Events")
@@ -46239,22 +46358,22 @@ chosen resolution from Office for National Statistics Open Geography
 (define-public r-sg
   (package
     (name "r-sg")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sg" version))
        (sha256
-        (base32 "10g06yzprblgaxdbjd0r58wgf4jivl4zcfxgpwndpjcfp70qhi52"))))
+        (base32 "1nbj4qrhm8kqcd5620hjdz57yfc3dkchvrxrp9qdrqaf6k1kc5vq"))))
     (properties `((upstream-name . "sg")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-mime r-httr2 r-base64enc))
     (home-page "https://github.com/botan/sg")
     (synopsis "'SendGrid' Email API Client")
     (description
-     "Minimalistic @code{SendGrid} Email API client for creating and sending emails.
-For more information, visit the official @code{SendGrid} Email API
-documentation: <https://sendgrid.com/en-us/solutions/email-api>.")
+     "Simple @code{SendGrid} Email API client for creating and sending emails.  For
+more information, visit the official @code{SendGrid} Email API documentation:
+<https://sendgrid.com/en-us/solutions/email-api>.")
     (license license:expat)))
 
 (define-public r-sftrack
@@ -48070,6 +48189,34 @@ D. (1970) \"A general method applicable to the search for similarities in the
 amino acid sequence of two proteins\" <doi:10.1016/0022-2836(70)90057-4>.")
     (license license:gpl3)))
 
+(define-public r-seq2r
+  (package
+    (name "r-seq2r")
+    (version "2.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "seq2R" version))
+       (sha256
+        (base32 "1g5zg3v5fjv2vnnskv4az8kk3cm0spnnz6q8b5wa4ic5izlg4fcf"))))
+    (properties `((upstream-name . "seq2R")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-seqinr))
+    (native-inputs (list gfortran))
+    (home-page "https://cran.r-project.org/package=seq2R")
+    (synopsis
+     "Simple Method to Detect Compositional Changes in Genomic Sequences")
+    (description
+     "This software is useful for loading .fasta or .gbk files, and for retrieving
+sequences from @code{GenBank} dataset <https://www.ncbi.nlm.nih.gov/genbank/>.
+This package allows to detect differences or asymmetries based on nucleotide
+composition by using local linear kernel smoothers.  Also, it is possible to
+draw inference about critical points (i.  e.  maximum or minimum points) related
+with the derivative curves.  Additionally, bootstrap methods have been used for
+estimating confidence intervals and speed computational techniques (binning
+techniques) have been implemented in seq2R'.")
+    (license (list license:gpl2+ license:gpl3+))))
+
 (define-public r-sepkoski
   (package
     (name "r-sepkoski")
@@ -49285,13 +49432,13 @@ the functions to be chained by a pipe operator.")
 (define-public r-sempower
   (package
     (name "r-sempower")
-    (version "2.1.0")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "semPower" version))
        (sha256
-        (base32 "17smfaslw1nnps3ibkqjqdklwd1k7ckvl4zqngvv78r40jcmq6xv"))))
+        (base32 "000daccgvw0ld4iihj6zih85wirsfmj5wk7r8zhbzkmjyiw3xf3s"))))
     (properties `((upstream-name . "semPower")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -52731,18 +52878,20 @@ package?SDT for an overview.")
 (define-public r-sdsfun
   (package
     (name "r-sdsfun")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sdsfun" version))
        (sha256
-        (base32 "113kfb4pg77y3yd4ags55y03gm45jkyp1vawvkx525r685wbj9zi"))))
+        (base32 "0w0gj8858wxbmzr8m00v1z6ac4gxhag7r1jk5bzf8g5bnbxwflhx"))))
     (properties `((upstream-name . "sdsfun")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-spdep
                              r-sf
+                             r-rcpp
+                             r-purrr
                              r-magrittr
                              r-geosphere
                              r-dplyr))

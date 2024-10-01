@@ -5385,13 +5385,13 @@ analyses.")
 (define-public r-vectorsurvr
   (package
     (name "r-vectorsurvr")
-    (version "0.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vectorsurvR" version))
        (sha256
-        (base32 "17h634yb4fqc3xgp48qxvrfzn0ly2x91j76i8cap90rhidq0vqxx"))))
+        (base32 "0n4k7mrwdj8y6dd7wlvl7i4rkbw37rsxal509h4l697ranvd1mq6"))))
     (properties `((upstream-name . "vectorsurvR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -6003,13 +6003,13 @@ Volume 5, <https://dgbonett.sites.ucsc.edu/>.")
 (define-public r-vcfppr
   (package
     (name "r-vcfppr")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "vcfppR" version))
        (sha256
-        (base32 "0cz8kdhgzk1mgs3dscww3j7kwyrs06qpibxph54217ahfqf9ib11"))))
+        (base32 "1xq3l8qirr37w0j3dwvbpz30mvih3grzsbsa12s4wy6pszy5wk3b"))))
     (properties `((upstream-name . "vcfppR")))
     (build-system r-build-system)
     (inputs (list zlib openssl openssh curl))

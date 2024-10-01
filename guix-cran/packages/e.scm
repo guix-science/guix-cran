@@ -1729,20 +1729,22 @@ e1071'.")
 (define-public r-explainer
   (package
     (name "r-explainer")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "explainer" version))
        (sha256
-        (base32 "13gx8yicc0vglljhjhqb42vhsv1zcv1mpyy5yr4cvvg96s9r1wi4"))))
+        (base32 "0zv7miyii983ang9vr23gdrghr7ki6dpll231m1sfpcm0plfrvnd"))))
     (properties `((upstream-name . "explainer")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl
                              r-tidyr
                              r-tibble
+                             r-scales
                              r-plotly
                              r-magrittr
+                             r-gridextra
                              r-ggpubr
                              r-ggpmisc
                              r-ggplot2
@@ -1750,6 +1752,7 @@ e1071'.")
                              r-dplyr
                              r-data-table
                              r-cvms))
+    (native-inputs (list r-knitr))
     (home-page "https://persimune.github.io/explainer/")
     (synopsis "Machine Learning Model Explainer")
     (description
@@ -12765,13 +12768,13 @@ data.")
 (define-public r-empiricalcalibration
   (package
     (name "r-empiricalcalibration")
-    (version "3.1.2")
+    (version "3.1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EmpiricalCalibration" version))
        (sha256
-        (base32 "013k43mwsjr5sgrvcp9dqcpylls0qm3ppn7xbgw7l46w22yik5hi"))))
+        (base32 "1lw7wvf0v73wm84x9amymxy2jnzrqndby1k4b580qwvcq7sz49x9"))))
     (properties `((upstream-name . "EmpiricalCalibration")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-rcpp r-gridextra r-ggplot2))
@@ -16880,13 +16883,13 @@ procedures, like principal axis factoring (PAF), are implemented in C++.")
 (define-public r-efafactors
   (package
     (name "r-efafactors")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EFAfactors" version))
        (sha256
-        (base32 "1ab0d5z4myszcvjzy4i75wxfiirk2wcy36cxlxrr4dq3i0if93zd"))))
+        (base32 "0g6xg8pgayn11rpxm808i6048dsdvgvyz4v3back2s0kl24znh5v"))))
     (properties `((upstream-name . "EFAfactors")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -16922,7 +16925,7 @@ Empirical Kaiser Criterion (EKC) by Braeken and van Assen (2017)
 <doi:10.1080/00273171.2011.564527>, as well as some AI-based methods like
 Comparison Data Forest (CDF) by Goretzko and Ruscio (2024)
 <doi:10.3758/s13428-023-02122-4> and Factor Forest (FF) by Goretzko and Buhner
-(2020) <doi:10.1037/met0000262 >.  Additionally, it includes a deep neural
+(2020) <doi:10.1037/met0000262>.  Additionally, it includes a deep neural
 network (DNN) trained on large-scale datasets that can efficiently and reliably
 determine the number of factors.")
     (license license:gpl3)))

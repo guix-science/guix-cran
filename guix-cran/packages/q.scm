@@ -3674,13 +3674,13 @@ time series.  The Annals of Statistics, 46(3), 1138-1166.")
 (define-public r-qrcode
   (package
     (name "r-qrcode")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "qrcode" version))
        (sha256
-        (base32 "07dkvga60532ngqg77icdfzv1wmx1qdn02js7pwyjf55xgim3fvn"))))
+        (base32 "0jzam1wb7mhjr35jq4xplnm3abbvhc0dngn0jaaqz87habd0v9wq"))))
     (properties `((upstream-name . "qrcode")))
     (build-system r-build-system)
     (propagated-inputs (list r-assertthat))

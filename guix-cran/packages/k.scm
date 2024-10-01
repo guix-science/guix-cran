@@ -5283,13 +5283,13 @@ energy supply.")
 (define-public r-katex
   (package
     (name "r-katex")
-    (version "1.4.1")
+    (version "1.5.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "katex" version))
        (sha256
-        (base32 "18cziglz8qy1v9gfcjiixq2d3l3na5p51zrxpy3x8asjiddq13d3"))))
+        (base32 "1fvijk4jp7svvkqd5p6c8z2xv23a5w8syhv262l6py7qqw69cbpl"))))
     (properties `((upstream-name . "katex")))
     (build-system r-build-system)
     (arguments
@@ -5619,6 +5619,29 @@ with Cohen's and Fleiss Kappa.  The calculation of kappa statistics is done
 using the R package irr', so that @code{KappaGUI} is essentially a Shiny
 front-end for irr'.")
     (license license:gpl2+)))
+
+(define-public r-kappagold
+  (package
+    (name "r-kappagold")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "kappaGold" version))
+       (sha256
+        (base32 "10kh8rkcp2xpg055yv5zivi9c07agffhxnwkbwjhnknx74389a5v"))))
+    (properties `((upstream-name . "kappaGold")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr r-tibble r-purrr r-future-apply))
+    (home-page "https://cran.r-project.org/package=kappaGold")
+    (synopsis "Agreement of Nominal Scale Raters with a Gold Standard")
+    (description
+     "Estimate agreement of a group of raters with a gold standard rating on a nominal
+scale.  For a single gold standard rater the average pairwise agreement of
+raters with this gold standard is provided.  For a group of gold standard raters
+the approach of S. Vanbelle, A. Albert (2009) <doi:10.1007/s11336-009-9116-1> is
+implemented.  Bias and standard error are estimated via delete-1 jackknife.")
+    (license license:expat)))
 
 (define-public r-kaphom
   (package

@@ -912,6 +912,27 @@ into a new excel and text file according to the format from the U.S. Copyright
 Office SR Audit Data online database.")
     (license license:gpl2+)))
 
+(define-public r-usaidplot
+  (package
+    (name "r-usaidplot")
+    (version "2.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "usaidplot" version))
+       (sha256
+        (base32 "0ar4raxmmsy8v4qakq2bff9dr85mnbpid5z94nqk43nxwcrhs7lx"))))
+    (properties `((upstream-name . "usaidplot")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2 r-extrafontdb r-extrafont))
+    (home-page "https://github.com/jacobpstein/usaid_plot")
+    (synopsis
+     "Make Graphs with US Agency for International Development Colors")
+    (description
+     "Automatically apply the United States Agency for International Development's
+color palette and fonts for either discrete or continuous variables.")
+    (license license:expat)))
+
 (define-public r-usa-state-boundaries
   (package
     (name "r-usa-state-boundaries")

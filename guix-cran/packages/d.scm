@@ -865,27 +865,24 @@ and Xie (2021) <@code{arXiv:1906.07757v2>} and Li, Sung and Xie (2021)
 (define-public r-dynaspec
   (package
     (name "r-dynaspec")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dynaSpec" version))
        (sha256
-        (base32 "0wzfy50602wlsh4sbfjadsr01f3az2lvk5c4px3qmcvv5gybd6w0"))))
+        (base32 "1mkc74jd25ydfl3ssl5kvcwjrvi6wdlm76v1m4sf4fm3vag37jyc"))))
     (properties `((upstream-name . "dynaSpec")))
     (build-system r-build-system)
     (inputs (list ffmpeg))
-    (propagated-inputs (list r-viridis
+    (propagated-inputs (list r-warbler
+                             r-viridis
                              r-tuner
                              r-seewave
                              r-scales
                              r-png
-                             r-pbapply
-                             r-naturesounds
-                             r-magrittr
                              r-ggplot2
                              r-gganimate
-                             r-av
                              r-ari))
     (home-page "https://github.com/maRce10/dynaSpec")
     (synopsis "Dynamic Spectrogram Visualizations")
@@ -4426,13 +4423,13 @@ datasets, thereby enhancing the quality and reliability of research findings.")
 (define-public r-dromics
   (package
     (name "r-dromics")
-    (version "2.5-2")
+    (version "2.6-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DRomics" version))
        (sha256
-        (base32 "0nzxrsgid7w63ybya389nqn8bqkbp29fiz2g6v3nhk5l2hr001p6"))))
+        (base32 "0av2n2f70b55xx4v2yhx3srs7dzz75yj1xhabckvln3lxrm3p57l"))))
     (properties `((upstream-name . "DRomics")))
     (build-system r-build-system)
     (propagated-inputs (list r-summarizedexperiment
@@ -14327,16 +14324,17 @@ help narrow down the source of problems and differences.")
 (define-public r-diffcorr
   (package
     (name "r-diffcorr")
-    (version "0.4.3")
+    (version "0.4.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DiffCorr" version))
        (sha256
-        (base32 "1wzk5lfkrz12xxmyapmq6midb6ld6p624i8qzf299dlfsz5i3n5h"))))
+        (base32 "05rvyfgr9f5x0dcgwcsvnpcmgmg5hcsgyxspjzxkmbyfk8wzwaf7"))))
     (properties `((upstream-name . "DiffCorr")))
     (build-system r-build-system)
     (propagated-inputs (list r-pcamethods r-multtest r-igraph r-fdrtool))
+    (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=DiffCorr")
     (synopsis
      "Analyzing and Visualizing Differential Correlation Networks in Biological Data")
@@ -16371,13 +16369,13 @@ Described in Guiterman et al. (2020) <doi:10.1016/j.dendro.2020.125750>.")
 (define-public r-dfmta
   (package
     (name "r-dfmta")
-    (version "1.7-3")
+    (version "1.7-6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfmta" version))
        (sha256
-        (base32 "0n9056vd75vqxddagj4k23znvwv58db306xm4vv9sq044jc7kkg6"))))
+        (base32 "0g1fi9m9j5z43n9037qq2a4i88y3p3h2q00x3q3xvhzhnqc5lrns"))))
     (properties `((upstream-name . "dfmta")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpparmadillo r-rcpp r-bh))
@@ -16644,13 +16642,13 @@ deleted records.")
 (define-public r-dfcomb
   (package
     (name "r-dfcomb")
-    (version "3.1-1")
+    (version "3.1-4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "dfcomb" version))
        (sha256
-        (base32 "04ply2jfbkrf5zylii24qfzhrnyksdxfj6647mkxq26a9j9r65x1"))))
+        (base32 "1h5x9759ljlyv9h7bmybm2ygw60ivnfrqc1f7drx700m71cwc6kk"))))
     (properties `((upstream-name . "dfcomb")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcppprogress r-rcpp r-bh))
@@ -27275,6 +27273,43 @@ provides functionality to access the entire cleaned NID data.")
      "Loads behavioural data from the widely used Drosophila Activity Monitor System
 (DAMS, @code{TriKinetics} <https://trikinetics.com/>) into the rethomics
 framework.")
+    (license license:gpl3)))
+
+(define-public r-dampack
+  (package
+    (name "r-dampack")
+    (version "1.0.2.1000")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "dampack" version))
+       (sha256
+        (base32 "0zbxl1m4rhf69qwvhxph18wim0hwnhqijkfkwm2nfgv9nnyi3m0k"))))
+    (properties `((upstream-name . "dampack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-truncnorm
+                             r-triangle
+                             r-tidyr
+                             r-stringr
+                             r-scales
+                             r-rlang
+                             r-mgcv
+                             r-ggrepel
+                             r-ggplot2
+                             r-ellipse
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/DARTH-git/dampack")
+    (synopsis "Decision-Analytic Modeling Package")
+    (description
+     "This package provides a suite of functions for analyzing and visualizing the
+health economic outputs of mathematical models.  This package was developed with
+funding from the National Institutes of Allergy and Infectious Diseases of the
+National Institutes of Health under award no.  R01AI138783.  The content of this
+package is solely the responsibility of the authors and does not necessarily
+represent the official views of the National Institutes of Health.  The
+theoretical underpinnings of dampack''s functionality are detailed in Hunink et
+al. (2014) <doi:10.1017/CBO9781139506779>.")
     (license license:gpl3)))
 
 (define-public r-damocles

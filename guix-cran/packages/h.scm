@@ -11334,13 +11334,13 @@ package.")
 (define-public r-hdar
   (package
     (name "r-hdar")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hdar" version))
        (sha256
-        (base32 "1yzbx5b4c8ihq9f7xg5rv67sm2a4aq1gby234nyjjyh8z893n228"))))
+        (base32 "0xk1kf3dwkhlid5lp3yfvprgwzxg2j3wlampadrdfd20b6g20n0c"))))
     (properties `((upstream-name . "hdar")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

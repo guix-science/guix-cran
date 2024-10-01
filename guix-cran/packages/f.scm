@@ -16022,13 +16022,13 @@ these three matches via the tier matching function.")
 (define-public r-fedirt
   (package
     (name "r-fedirt")
-    (version "0.1.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FedIRT" version))
        (sha256
-        (base32 "0qihs2m1qdp9kfw8f7a76r6cppfi9bxlj2mk4670v4ds2mqyq7xw"))))
+        (base32 "0h7xmzqyd8brnii3xr1njwg5psw3cpn5jqmn59fqaa4xm7mx242r"))))
     (properties `((upstream-name . "FedIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinyjs
@@ -16046,10 +16046,7 @@ these three matches via the tier matching function.")
 traditional IRT models, including the 2-Parameter Logistic (2PL) and the Graded
 Response Models, with enhanced privacy.  It allows for the estimation in a
 distributed manner without compromising accuracy.  A user-friendly shiny
-application is included.  For more details, see Biying Zhou, Feng Ji (2024)
-\"'@code{FedIRT}': An R package and shiny app for estimating federated item
-response theory models\"
-<https://github.com/Feng-Ji-Lab/@code{FedIRT/blob/main/paper/paper.pdf>}.")
+application is included.")
     (license license:expat)))
 
 (define-public r-federalregister
@@ -17481,13 +17478,13 @@ examples is available on the Webpage
 (define-public r-fctutils
   (package
     (name "r-fctutils")
-    (version "0.0.6")
+    (version "0.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fctutils" version))
        (sha256
-        (base32 "02zwnn1k2zp2k8x6vc3jwfq91f5szkmf4c4rqsny1xclmr4n7k5b"))))
+        (base32 "0bm1ip8y1knx34yr46df35m7vafwzqb128l46bj69m995srmv58d"))))
     (properties `((upstream-name . "fctutils")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr r-stringdist))
@@ -19729,13 +19726,13 @@ Statistics.")
 (define-public r-fastfmm
   (package
     (name "r-fastfmm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fastFMM" version))
        (sha256
-        (base32 "1crgl5961c0k1bq4d3xsl38hrwi3cayf1lj7pprbvdd1y3nyvz8b"))))
+        (base32 "0zpfsvwnz1mp024mf2nq8jb0nxh5r1yqyp13hhbbsix6va8rblb5"))))
     (properties `((upstream-name . "fastFMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr

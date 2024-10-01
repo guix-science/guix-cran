@@ -4121,13 +4121,13 @@ of the grouping regarding an outcome of interest, as described in Becker et.  al
 (define-public r-groundhog
   (package
     (name "r-groundhog")
-    (version "3.2.0")
+    (version "3.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "groundhog" version))
        (sha256
-        (base32 "1pswzqn15dz4b0s2a79pi5y45jn1l3amsn3qpfm47nmb80dynfgh"))))
+        (base32 "00lp733avwjxap5drc3p3763y4xhhphlck7zp7g5cijcbga4k54s"))))
     (properties `((upstream-name . "groundhog")))
     (build-system r-build-system)
     (home-page "https://groundhogr.com/")
@@ -10669,33 +10669,37 @@ polynomials with rational coefficients.")
 (define-public r-gmotree
   (package
     (name "r-gmotree")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gmoTree" version))
        (sha256
-        (base32 "1f8n3j0rzps3pfi4ps71f6jn51mlnvk3chi5khnfqydz4ifhwal5"))))
+        (base32 "07n3qy3i7yyb0z3i49x0pa3z697gppixk7jz31zk5d0144hxl4zi"))))
     (properties `((upstream-name . "gmoTree")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
+                             r-rmarkdown
                              r-rlist
                              r-rlang
                              r-plyr
+                             r-pander
                              r-openxlsx
+                             r-knitr
                              r-dplyr
                              r-data-table))
     (native-inputs (list r-knitr))
     (home-page "https://zauchnerp.github.io/gmoTree/")
     (synopsis "Get and Modify 'oTree' Data")
     (description
-     "Manage data from @code{oTree} experiments.  Import @code{oTree} data and clean
-them by using functions to deal with messy data, dropouts, and other problematic
-cases.  Create IDs, calculate the time, transfer variables between app data
-frames, and delete sensitive information.  You can also check your experimental
-data before running the experiment.  Information on @code{oTree} is found in
-Chen, D. L., Schonger, M., & Wickens, C. (2016)
-<doi:10.1016/j.jbef.2015.12.001>.")
+     "Efficiently manage and process data from @code{oTree} experiments.  Import
+@code{oTree} data and clean them by using functions that handle messy data,
+dropouts, and other problematic cases.  Create IDs, calculate the time, transfer
+variables between app data frames, and delete sensitive information.  Review
+your experimental data prior to running the experiment and automatically
+generate a detailed summary of the variables used in your @code{oTree} code.
+Information on @code{oTree} is found in Chen, D. L., Schonger, M., & Wickens, C.
+(2016) <doi:10.1016/j.jbef.2015.12.001>.")
     (license license:gpl3+)))
 
 (define-public r-gmoog
@@ -21827,13 +21831,13 @@ simple features access like sf but running on Spark distributed system.")
 (define-public r-geosimilarity
   (package
     (name "r-geosimilarity")
-    (version "3.3")
+    (version "3.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geosimilarity" version))
        (sha256
-        (base32 "0r0h4knd4f0lfvbv728zbncaw7f7xzfxhw9rypynnin3pgd56fys"))))
+        (base32 "0ix0hj85ssw7ir4if847ba4p7yqkaqapjldh1kas7z1g4jb34jjq"))))
     (properties `((upstream-name . "geosimilarity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -22849,92 +22853,6 @@ coordinate system, including API for interacting with other common R GIS
 libraries.")
     (license (list (license:fsdg-compatible "MPL-2.0")
                    (license:fsdg-compatible "file://LICENSE")))))
-
-(define-public r-geohabnet
-  (package
-    (name "r-geohabnet")
-    (version "2.1.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "geohabnet" version))
-       (sha256
-        (base32 "16a1qvmlynsvws3kl1l1apds8gxgf4yx1c7z92qcp73kilbmgp3x"))))
-    (properties `((upstream-name . "geohabnet")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-yaml
-                             r-viridislite
-                             r-terra
-                             r-stringr
-                             r-rnaturalearth
-                             r-rlang
-                             r-patchwork
-                             r-memoise
-                             r-magrittr
-                             r-igraph
-                             r-ggplot2
-                             r-geosphere
-                             r-geodata
-                             r-future-apply
-                             r-future
-                             r-easycsv
-                             r-config
-                             r-beepr))
-    (native-inputs (list r-knitr))
-    (home-page "https://garrettlab.github.io/HabitatConnectivity/")
-    (synopsis "Geographical Risk Analysis Based on Habitat Connectivity")
-    (description
-     "The geohabnet package is designed to perform a geographically or spatially
-explicit risk analysis of habitat connectivity.  Xing et al (2021)
-<doi:10.1093/biosci/biaa067> proposed the concept of cropland connectivity as a
-risk factor for plant pathogen or pest invasions.  As the functions in geohabnet
-were initially developed thinking on cropland connectivity, users are
-recommended to first be familiar with the concept by looking at the Xing et al
-paper.  In a nutshell, a habitat connectivity analysis combines information from
-maps of host density, estimates the relative likelihood of pathogen movement
-between habitat locations in the area of interest, and applies network analysis
-to calculate the connectivity of habitat locations.  The functions of geohabnet
-are built to conduct a habitat connectivity analysis relying on geographic
-parameters (spatial resolution and spatial extent), dispersal parameters (in two
-commonly used dispersal kernels: inverse power law and negative exponential
-models), and network parameters (link weight thresholds and network metrics).
-The functionality and main extensions provided by the functions in geohabnet to
-habitat connectivity analysis are a) Capability to easily calculate the
-connectivity of locations in a landscape using a single function, such as
-sensitivity_analysis() or msean().  b) As backbone datasets, the geohabnet
-package supports the use of two publicly available global datasets to calculate
-cropland density.  The backbone datasets in the geohabnet package include crop
-distribution maps from Monfreda, C., N. Ramankutty, and J. A. Foley (2008)
-<doi:10.1029/2007gb002947> \"Farming the planet: 2.  Geographic distribution of
-crop areas, yields, physiological types, and net primary production in the year
-2000, Global Biogeochem.  Cycles, 22, GB1022\" and International Food Policy
-Research Institute (2019) <doi:10.7910/DVN/PRFF8V> \"Global
-Spatially-Disaggregated Crop Production Statistics Data for 2010 Version 2.0,
-Harvard Dataverse, V4\".  Users can also provide any other geographic dataset
-that represents host density.  c) Because the geohabnet package allows R users
-to provide maps of host density (as originally in Xing et al (2021)), host
-landscape density (representing the geographic distribution of either crops or
-wild species), or habitat distribution (such as host landscape density adjusted
-by climate suitability) as inputs, we propose the term habitat connectivity.  d)
-The geohabnet package allows R users to customize parameter values in the
-habitat connectivity analysis, facilitating context-specific (pathogen- or
-pest-specific) analyses.  e) The geohabnet package allows users to automatically
-visualize maps of the habitat connectivity of locations resulting from a
-sensitivity analysis across all customized parameter combinations.  The primary
-function is sean() and sensitivity analysis().  Most functions in geohabnet
-provide as three main outcomes: i) A map of mean habitat connectivity across
-parameters selected by the user, ii) a map of variance of habitat connectivity
-across the selected parameters, and iii) a map of the difference between the
-ranks of habitat connectivity and habitat density.  Each function can be used to
-generate these maps as final outcomes.  Each function can also provide
-intermediate outcomes, such as the adjacency matrices built to perform the
-analysis, which can be used in other network analysis.  Refer to article at
-<https://garrettlab.github.io/@code{HabitatConnectivity/articles/analysis.html>}
-to see examples of each function and how to access each of these outcome types.
-To change parameter values, the file called parameters.yaml stores the
-parameters and their values, can be accessed using get_parameters() and set new
-parameter values with set_parameters().  Users can modify up to ten parameters.")
-    (license license:gpl3)))
 
 (define-public r-geogrid
   (package
@@ -26965,13 +26883,13 @@ gdxrrw'.  The gdxrrw package is available on the GAMS wiki:
 (define-public r-gdverse
   (package
     (name "r-gdverse")
-    (version "1.0-2")
+    (version "1.0-3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gdverse" version))
        (sha256
-        (base32 "04lgn2bxhgpw5nfmfy95fn6m313ad60iv2z2iav9irg64s9xy0s1"))))
+        (base32 "0qr0b73zxrf14i6psq5ryinffn7knpn7gblqq0sdx2xpykqmjizk"))))
     (properties `((upstream-name . "gdverse")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -29552,13 +29470,13 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 (define-public r-gangenerativedata
   (package
     (name "r-gangenerativedata")
-    (version "2.0.2")
+    (version "2.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ganGenerativeData" version))
        (sha256
-        (base32 "0bwka0i9afc9vdw94mbjvqz54w4bfywm84c7mchazr4jwc5p309g"))))
+        (base32 "0xzib4g6rivfnnsz6c752cnzcf2yv1h98gyspcfb7mpak65ycizg"))))
     (properties `((upstream-name . "ganGenerativeData")))
     (build-system r-build-system)
     (inputs (list tensorflow))
@@ -29570,7 +29488,7 @@ Weidong Tian and Hongbin Ji (2012) <doi:10.1038/cr.2011.149>.")
 data source.  A generative model consisting of a generator and a discriminator
 network is trained.  During iterative training the distribution of generated
 data is converging to that of the data source.  Direct applications of
-generative data are the created functions for data classifying and missing data
+generative data are the created functions for data evaluation and missing data
 completion.  A software service for accelerated training of generative models on
 graphics processing units is available.  Reference: Goodfellow et al. (2014)
 <doi:10.48550/@code{arXiv.1406.2661>}.")

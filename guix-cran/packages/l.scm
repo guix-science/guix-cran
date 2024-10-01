@@ -511,13 +511,13 @@ modelling in R.")
 (define-public r-lulab-utils
   (package
     (name "r-lulab-utils")
-    (version "0.0.2")
+    (version "0.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lulab.utils" version))
        (sha256
-        (base32 "01mr0piqcass0fxa0x9qgczwn3cnbng5vn8i7bmsv00wi5lr6lc9"))))
+        (base32 "1mq27pgvmydcfwz3cidgd6kpicvv1lr4f96zcwc7l0f1iya1hmvf"))))
     (properties `((upstream-name . "lulab.utils")))
     (build-system r-build-system)
     (propagated-inputs (list r-table1
@@ -6355,25 +6355,25 @@ scores of the gene list of each pathway can be printed.")
 (define-public r-lncfinder
   (package
     (name "r-lncfinder")
-    (version "1.1.5")
+    (version "1.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "LncFinder" version))
        (sha256
-        (base32 "0mb41fjph4svn2amdx6fb2j8pzgll17c0xxwnsan9vjipnmj59hi"))))
+        (base32 "183l5dqwsh0519qyy2kz5qns5kcqf6dr9h0da6hl57bf2wwngkjd"))))
     (properties `((upstream-name . "LncFinder")))
     (build-system r-build-system)
     (propagated-inputs (list r-seqinr r-e1071 r-caret))
-    (home-page "https://bmbl.bmi.osumc.edu/lncfinder/")
+    (home-page "https://lncfinder.osubmi.org/")
     (synopsis "LncRNA Identification and Analysis Using Heterologous Features")
     (description
      "Long non-coding RNAs identification and analysis.  Default models are trained
 with human, mouse and wheat datasets by employing SVM. Features are based on
 intrinsic composition of sequence, EIIP value (electron-ion interaction
 pseudopotential), and secondary structure.  This package can also extract other
-classic features and build new classifiers.  Reference: Han SY., Liang YC., Li
-Y., et al. (2018) <doi:10.1093/bib/bby065>.")
+classic features and build new classifiers.  Reference: Han S., et al. (2019)
+<doi:10.1093/bib/bby065>.")
     (license license:gpl3)))
 
 (define-public r-lncdiff
@@ -6645,13 +6645,13 @@ LMP data and metadata (codelists).")
 (define-public r-lmomrfa
   (package
     (name "r-lmomrfa")
-    (version "3.6")
+    (version "3.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lmomRFA" version))
        (sha256
-        (base32 "1av113gxif93v26g2x4c4l4fbax42w5bv3560p5sgdxbnb7sdmqp"))))
+        (base32 "125svks0i6yig6ydllgzyi5jaywaj8l9mmbv95wv2dzw4h7i37k9"))))
     (properties `((upstream-name . "lmomRFA")))
     (build-system r-build-system)
     (propagated-inputs (list r-lmom))
@@ -10362,13 +10362,13 @@ dataset (@code{myHouseID}) from the BHPS.")
 (define-public r-lifecontingencies
   (package
     (name "r-lifecontingencies")
-    (version "1.3.11")
+    (version "1.3.12")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lifecontingencies" version))
        (sha256
-        (base32 "1wz0v7abl3g3kgbp613rx5rw2ryxahk1h8bk8d3p5v7wyfwqignh"))))
+        (base32 "03kcfvm01il451hy9rg7adwg5vllv9kr61n58kkqkyvx7cj0xk5b"))))
     (properties `((upstream-name . "lifecontingencies")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcpp r-markovchain))
@@ -11097,13 +11097,13 @@ and produces plots similar to the ones in the manual.")
 (define-public r-lfproqc
   (package
     (name "r-lfproqc")
-    (version "0.3.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "lfproQC" version))
        (sha256
-        (base32 "181hmhpqwg24bhymz8ahrdbd7cqggvnxv402fjs1b590czdziphx"))))
+        (base32 "0c5q12fq1v1qa8a4h1j86zwafhzkr4wzqq7wgrkpq0fz50zciqjb"))))
     (properties `((upstream-name . "lfproQC")))
     (build-system r-build-system)
     (propagated-inputs (list r-vsn

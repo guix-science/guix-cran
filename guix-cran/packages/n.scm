@@ -3915,13 +3915,13 @@ equilibrium along a one-dimensional space.")
 (define-public r-nopaco
   (package
     (name "r-nopaco")
-    (version "1.0.7")
+    (version "1.0.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nopaco" version))
        (sha256
-        (base32 "0ffcbrk3l2xprd4jiilvk6i5l39x4mi7vrx4irzqnf3m9nwsz6w5"))))
+        (base32 "09k7kljk8anv83pms8wm9fs9iakhpn16a75a0ds11m3khqlb3nvz"))))
     (properties `((upstream-name . "nopaco")))
     (build-system r-build-system)
     (propagated-inputs (list r-matrix))
@@ -8382,13 +8382,13 @@ al. (1999) <doi:10.1126/science.285.5431.1265>, SoberÃ³n and Peterson (2005)
 (define-public r-nichetools
   (package
     (name "r-nichetools")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "nichetools" version))
        (sha256
-        (base32 "0ddajk6i0r93316liw3vglf7vrwp5akpcjycdhkffj6p51jk61yn"))))
+        (base32 "1fis4vp5kjid2b9qv0wvi9m5y1d9ij7z9n5j2lhlsb6r3jn37l56"))))
     (properties `((upstream-name . "nichetools")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr

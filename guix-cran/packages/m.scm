@@ -3729,13 +3729,13 @@ datasets for calculating efficiency and cross efficiency.")
 (define-public r-multiplex
   (package
     (name "r-multiplex")
-    (version "3.4")
+    (version "3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "multiplex" version))
        (sha256
-        (base32 "00dxlign3l34vjjpzasj6jiyzr53lppq7hw5xb5rm9zqiw31cd2w"))))
+        (base32 "0j941parx94iik14nf2kxixdnwang2clvj7g1b5x08sp96lh6wr9"))))
     (properties `((upstream-name . "multiplex")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
@@ -11234,13 +11234,13 @@ units where possible.  Data import directly from movebank
 (define-public r-move
   (package
     (name "r-move")
-    (version "4.2.4")
+    (version "4.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "move" version))
        (sha256
-        (base32 "1i6qyx4i8vb2g7i8c2hwjia81m2wd3pyvp6hf6f64j4lcrnafqz7"))))
+        (base32 "01yc69xy35byl0mnr8f9578175zvil2z201bwzf0zkw1m72jwjzc"))))
     (properties `((upstream-name . "move")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2
@@ -12006,13 +12006,13 @@ untreated soil.")
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")
-    (version "1.0.1.1")
+    (version "1.0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MorphoTools2" version))
        (sha256
-        (base32 "08n9l905pfls50p278sypf8xxq6bs56f5a5b5wlxwy11flccpyia"))))
+        (base32 "15iwshs19l9k8wb1zaa8gk0arnj72pyhpngkirifmmh2949vgmdi"))))
     (properties `((upstream-name . "MorphoTools2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -13948,6 +13948,49 @@ The method has its own advantages for that it can provide robust ED50
 estimation.  This package contains the modified function of Choi's turning point
 method.")
     (license license:gpl3)))
+
+(define-public r-modtools
+  (package
+    (name "r-modtools")
+    (version "0.9.13")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ModTools" version))
+       (sha256
+        (base32 "0xp2kzfp1vqly18md52a0bhk43ds3b8yfi3bxj08vibcfg1jp78r"))))
+    (properties `((upstream-name . "ModTools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-sandwich
+                             r-rpart-plot
+                             r-rpart
+                             r-robustbase
+                             r-relaimpo
+                             r-randomforest
+                             r-pscl
+                             r-proc
+                             r-nnet
+                             r-neuralnettools
+                             r-naivebayes
+                             r-mass
+                             r-lmtest
+                             r-lattice
+                             r-e1071
+                             r-desctools
+                             r-class
+                             r-car
+                             r-c50
+                             r-boot
+                             r-aer))
+    (home-page "https://andrisignorell.github.io/ModTools/")
+    (synopsis "Building Regression and Classification Models")
+    (description
+     "Consistent user interface to the most common regression and classification
+algorithms, such as random forest, neural networks, C5 trees and support vector
+machines, complemented with a handful of auxiliary functions, such as variable
+importance and a tuning function for the parameters.")
+    (license license:gpl2+)))
 
 (define-public r-modstatr
   (package
@@ -20905,16 +20948,16 @@ dose-response models.")
 (define-public r-mixmatrix
   (package
     (name "r-mixmatrix")
-    (version "0.2.6")
+    (version "0.2.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MixMatrix" version))
        (sha256
-        (base32 "007vx59v5h3pfawg6slqgbs3b8dvbhcfh4cvasfydidiiyaggjdc"))))
+        (base32 "0idrci3gksvm0am02dqlj9yfnfk64rnj8hd3hqkx7amcxpv30i7z"))))
     (properties `((upstream-name . "MixMatrix")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rcpparmadillo r-rcpp r-cholwishart))
+    (propagated-inputs (list r-rcpparmadillo r-rcpp r-glue r-cholwishart))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/gzt/MixMatrix/")
     (synopsis "Classification with Matrix Variate Normal and t Distributions")
@@ -28896,6 +28939,50 @@ more. [1] Allen, R. G., Pereira, L. S., Raes, D., & Smith, M. (1998).  Crop
 evapotranspiration-Guidelines for computing crop water requirements-FAO
 Irrigation and drainage paper 56.  FAO, Rome, 300(9).")
     (license license:gpl2+)))
+
+(define-public r-methodopt
+  (package
+    (name "r-methodopt")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MethodOpt" version))
+       (sha256
+        (base32 "09v4ixrfjk7bz1zm29g1fzsdq5xl1q9jc73kyk5f4dh4k6936686"))))
+    (properties `((upstream-name . "MethodOpt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-zoo
+                             r-zip
+                             r-tibble
+                             r-shinyjs
+                             r-shinyfeedback
+                             r-shinybs
+                             r-shinyalert
+                             r-shiny
+                             r-rlang
+                             r-purrr
+                             r-magrittr
+                             r-htmltools
+                             r-gtools
+                             r-glue
+                             r-ggplot2
+                             r-frf2
+                             r-dt
+                             r-dplyr
+                             r-doe-wrapper))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=MethodOpt")
+    (synopsis
+     "Advanced Method Optimization for Spectra-Generating Sampling and Analysis Instrumentation")
+    (description
+     "This package provides a graphical user interface to apply an advanced method
+optimization algorithm to various sampling and analysis instruments.  This
+includes generating experimental designs, uploading and viewing data, and
+performing various analyses to determine the optimal method.  Details of the
+techniques used in this package are published in Gamble, Granger, & Mannion
+(2024) <doi:10.1021/acs.analchem.3c05763>.")
+    (license license:gpl3+)))
 
 (define-public r-methodcompare
   (package
@@ -41039,17 +41126,17 @@ inspired by the \"comment\" window of <https://github.com/>.")
 (define-public r-mark
   (package
     (name "r-mark")
-    (version "0.8.0")
+    (version "0.8.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mark" version))
        (sha256
-        (base32 "16gzi253s6mdqr5axhp1fk0vcqc2sslnb8nmwjxarrcgh8d22ba3"))))
+        (base32 "0azc4smx9l77wb8qdr8n4gzrngg3ffwqr4pb5g1p7gmch1w1s1pf"))))
     (properties `((upstream-name . "mark")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-magrittr r-fuj r-fs r-cli))
-    (home-page "https://github.com/jmbarbone/mark")
+    (home-page "https://CRAN.R-project.org/package=mark")
     (synopsis "Miscellaneous, Analytic R Kernels")
     (description
      "Miscellaneous functions and wrappers for development in other packages created,
@@ -43339,16 +43426,16 @@ vignette in this package and
 (define-public r-mams
   (package
     (name "r-mams")
-    (version "2.0.2")
+    (version "3.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MAMS" version))
        (sha256
-        (base32 "16j24z18z7dc25sk4jfnqgglw8gvv6ddhvl6v8lswm3ib4l6chvb"))))
+        (base32 "1w55vysw5n1wapaz0x3zyyzlyn7l1764d32b09p45yzfv2wdwr6v"))))
     (properties `((upstream-name . "MAMS")))
     (build-system r-build-system)
-    (propagated-inputs (list r-mvtnorm r-knitr r-future-apply r-future))
+    (propagated-inputs (list r-mvtnorm r-future-apply r-future r-cli))
     (home-page "https://tjaki.github.io/MAMS/")
     (synopsis "Designing Multi-Arm Multi-Stage Studies")
     (description

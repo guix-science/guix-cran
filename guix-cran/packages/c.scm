@@ -5304,13 +5304,13 @@ correlation, autocorrelation, and volatility clustering without power loss.")
 (define-public r-crs
   (package
     (name "r-crs")
-    (version "0.15-37")
+    (version "0.15-38")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crs" version))
        (sha256
-        (base32 "12zj49mkz769gbdacnzrn64faiqdx53yz5zyhhq7g7bpxyac7fl1"))))
+        (base32 "1wcjqpz17rcpxqixjz5a505yzp6wjnxy4mlmbxwyrfzaganpid4x"))))
     (properties `((upstream-name . "crs")))
     (build-system r-build-system)
     (propagated-inputs (list r-quantreg r-np r-boot))
@@ -5746,13 +5746,13 @@ ISBN:978-1-118-14640-8).")
 (define-public r-crosstable
   (package
     (name "r-crosstable")
-    (version "0.7.0")
+    (version "0.8.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "crosstable" version))
        (sha256
-        (base32 "1xghynjnrk89952sa9i6rxjqnnw2w2bdf722n91k1jgcg15gkvy9"))))
+        (base32 "134aadk2smdy6nwk2883840h4fjwb58hdr92pbf9djj237g2sq3v"))))
     (properties `((upstream-name . "crosstable")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -13145,17 +13145,17 @@ are extracted from the colorffy website.  See
 (define-public r-coranking
   (package
     (name "r-coranking")
-    (version "0.2.4")
+    (version "0.2.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "coRanking" version))
        (sha256
-        (base32 "1c1b005q7dr4868wm6vcs3x0849vf8xj7aacxnyc9wzb4lgkd2lb"))))
+        (base32 "1pl44pk6z1zri3lwp6cqhphvxnm02dbmijgfnwp2919jahgk48gc"))))
     (properties `((upstream-name . "coRanking")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://www.guido-kraemer.com/software/coranking/")
+    (home-page "https://coranking.guido-kraemer.com/")
     (synopsis "Co-Ranking Matrix")
     (description
      "Calculates the co-ranking matrix to assess the quality of a dimensionality
@@ -20324,18 +20324,22 @@ colors to make plots in base R', ggplot2', or other graphics frameworks.")
 (define-public r-colorrepel
   (package
     (name "r-colorrepel")
-    (version "0.1.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "colorrepel" version))
        (sha256
-        (base32 "0cmjnnp91rzpmq8mdkvdagnkyf16fivg34kvmkb2ihqdhrr5nqmn"))))
+        (base32 "0p5zfcmyrs567ddn7jilzbvs2k1qr213ims5m0zx1swylxpvjda7"))))
     (properties `((upstream-name . "colorrepel")))
     (build-system r-build-system)
-    (propagated-inputs (list r-purrr
+    (propagated-inputs (list r-stringr
+                             r-purrr
+                             r-png
+                             r-plotly
                              r-matrixstats
                              r-matrix
+                             r-knitr
                              r-gtools
                              r-ggrepel
                              r-ggplot2
@@ -21607,13 +21611,13 @@ et al. <DOI:10.1002/pst.2194> and a manual in Meyer et al.
 (define-public r-cohortgenerator
   (package
     (name "r-cohortgenerator")
-    (version "0.11.1")
+    (version "0.11.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortGenerator" version))
        (sha256
-        (base32 "06h46xx4p7f33xxrwwhcxhz2i76awd7g7skq7fmj7zsi5vmzsk5x"))))
+        (base32 "02fsdwswdpgv0cf2naqj9p0fv8qxvcsani68dl05hcnsj7qrhgs6"))))
     (properties `((upstream-name . "CohortGenerator")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23985,13 +23989,13 @@ function as well as at
 (define-public r-cmsafvis
   (package
     (name "r-cmsafvis")
-    (version "1.2.8")
+    (version "1.2.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cmsafvis" version))
        (sha256
-        (base32 "1l1gsbadwgvxvbv37kzsnns4xvhzpmhfrqnzcgd97l7fqwr3yng4"))))
+        (base32 "021dhsa84np86cjbgri0a0z1ymmxs7gr6107c4qq0xyjvh0r427m"))))
     (properties `((upstream-name . "cmsafvis")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp
@@ -31750,17 +31754,17 @@ Press.")
 (define-public r-cholwishart
   (package
     (name "r-cholwishart")
-    (version "1.1.2.1")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CholWishart" version))
        (sha256
-        (base32 "0b88q16cylqvr8gy18szyaalpi545a31gzm8p6676b3jbh122zf2"))))
+        (base32 "1rnd0f2vx43fi6x4xqgaxlyl64s8l474zv1wj1wqvkfg0njglzb2"))))
     (properties `((upstream-name . "CholWishart")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=CholWishart")
+    (home-page "https://gzt.github.io/CholWishart/")
     (synopsis "Cholesky Decomposition of the Wishart Distribution")
     (description
      "Sampling from the Cholesky factorization of a Wishart random variable, sampling
@@ -41315,13 +41319,13 @@ developments) in ecological time series using fitted Weibull functions.")
 (define-public r-card-pro
   (package
     (name "r-card-pro")
-    (version "2.1.0")
+    (version "2.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "card.pro" version))
        (sha256
-        (base32 "11ln2y03ld6l5q2r57s1zb5ndy7jzz0vvf2ldy1mbi95w0pd5254"))))
+        (base32 "1qhca4lyzqwwkf6q2kni3d8wns0wjm1dpxrj40dfnh76ixrpqldg"))))
     (properties `((upstream-name . "card.pro")))
     (build-system r-build-system)
     (arguments
@@ -41347,9 +41351,9 @@ developments) in ecological time series using fitted Weibull functions.")
     (description
      "Responsive and modern HTML card essentials for shiny dashboard.  This novel card
 component in Bootstrap provides a flexible and extensible content container with
-multiple variants and options for build robust apps e.g for graph build or
-machine learning projects.  The features rely on a combine JQuery
-<https://jquery.com> and CSS styles to improve the card functionality.")
+multiple variants and options for building robust R based apps e.g for graph
+build or machine learning projects.  The features rely on a combination of
+JQuery <https://jquery.com> and CSS styles to improve the card functionality.")
     (license license:expat)))
 
 (define-public r-card

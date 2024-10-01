@@ -2285,13 +2285,13 @@ with buttons allowing folding and unfolding the levels.")
 (define-public r-tsxtreme
   (package
     (name "r-tsxtreme")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tsxtreme" version))
        (sha256
-        (base32 "1725rkdq377z3c06hc2g9l0dwgfy5gz3pgygpz1pyy83s5c7j869"))))
+        (base32 "0k35kavamz8s9c2na2f01i74wxid4lf4h8w71hk0nxzdm1qv3i45"))))
     (properties `((upstream-name . "tsxtreme")))
     (build-system r-build-system)
     (propagated-inputs (list r-tictoc r-mvtnorm r-mass r-evd))
@@ -18680,86 +18680,6 @@ Theia (<https://theia.cnes.fr>), download it, and manage it.  Data can be
 downloaded based on a search result or from a cart file downloaded from Theia
 website.")
     (license license:gpl3+)))
-
-(define-public r-theftdlc
-  (package
-    (name "r-theftdlc")
-    (version "0.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "theftdlc" version))
-       (sha256
-        (base32 "0zv9ihzs41dk4q4wsfyi2v6g9z8gglak17l71bhvqs207rl923d1"))))
-    (properties `((upstream-name . "theftdlc")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-umap
-                             r-tidyr
-                             r-tibble
-                             r-theft
-                             r-scales
-                             r-rtsne
-                             r-rlang
-                             r-reshape2
-                             r-purrr
-                             r-normaliser
-                             r-mclust
-                             r-mass
-                             r-janitor
-                             r-ggplot2
-                             r-e1071
-                             r-dplyr
-                             r-correctr
-                             r-broom))
-    (native-inputs (list r-knitr))
-    (home-page "https://hendersontrent.github.io/theftdlc/")
-    (synopsis "Analyse and Interpret Time Series Features")
-    (description
-     "This package provides a suite of functions for analysing, interpreting, and
-visualising time-series features calculated from different feature sets from the
-theft package.  Implements statistical learning methodologies described in
-Henderson, T., Bryant, A., and Fulcher, B. (2023) <@code{arXiv:2303.17809>}.")
-    (license license:expat)))
-
-(define-public r-theft
-  (package
-    (name "r-theft")
-    (version "0.6.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "theft" version))
-       (sha256
-        (base32 "0fapqgbr3mnag8nvciz6cv7i0xadj8madjzqrd67if3z37afhn0p"))))
-    (properties `((upstream-name . "theft")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tsibble
-                             r-tsfeatures
-                             r-tidyr
-                             r-tibble
-                             r-rlang
-                             r-reticulate
-                             r-rcatch22
-                             r-r-matlab
-                             r-purrr
-                             r-feasts
-                             r-fabletools
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://hendersontrent.github.io/theft/")
-    (synopsis "Tools for Handling Extraction of Features from Time Series")
-    (description
-     "Consolidates and calculates different sets of time-series features from multiple
-R and Python packages including Rcatch22 Henderson, T. (2021)
-<doi:10.5281/zenodo.5546815>, feasts O'Hara-Wild, M., Hyndman, R., and Wang, E.
-(2021) <https://CRAN.R-project.org/package=feasts>, tsfeatures Hyndman, R.,
-Kang, Y., Montero-Manso, P., Talagala, T., Wang, E., Yang, Y., and O'Hara-Wild,
-M. (2020) <https://CRAN.R-project.org/package=tsfeatures>, tsfresh Christ, M.,
-Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
-<doi:10.1016/j.neucom.2018.03.067>, TSFEL Barandas, M., et al. (2020)
-<doi:10.1016/j.softx.2020.100456>, and Kats Facebook Infrastructure Data Science
-(2021) <https://facebookresearch.github.io/Kats/>.")
-    (license license:expat)))
 
 (define-public r-thankyoustars
   (package
