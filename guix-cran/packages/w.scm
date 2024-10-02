@@ -1542,6 +1542,33 @@ syntax.  wpa is built with the beginner-to-intermediate R users in mind, and is
 optimised for simplicity.")
     (license license:expat)))
 
+(define-public r-woylier
+  (package
+    (name "r-woylier")
+    (version "0.0.9")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "woylier" version))
+       (sha256
+        (base32 "12hn1jn5q1gnc71w7mcbxq8zkaf2y3vwy8i06s7cakpdcrs0971z"))))
+    (properties `((upstream-name . "woylier")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tourr r-tibble r-geozoo r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://numbats.github.io/woylier/")
+    (synopsis "Alternative Tour Frame Interpolation Method")
+    (description
+     "This method generates a tour path by interpolating between d-D frames in p-D
+using Givens rotations.  The algorithm arises from the problem of zeroing
+elements of a matrix.  This interpolation method is useful for showing specific
+d-D frames in the tour, as opposed to d-D planes, as done by the geodesic
+interpolation.  It is useful for projection pursuit indexes which are not s
+invariant.  See more details in Buj, Cook, Asimov and Hurley (2005)
+<doi:10.1016/S0169-7161(04)24014-7> and Batsaikhan, Cook and Laa (2023)
+<doi:10.48550/@code{arXiv.2311.08181>}.")
+    (license license:expat)))
+
 (define-public r-wowa
   (package
     (name "r-wowa")
@@ -6092,6 +6119,37 @@ static and dynamic content via HTTP methods, includes the html5 package to
 create HTML pages, and offers other utility functions for common tasks related
 to web development.")
     (license license:gpl2+)))
+
+(define-public r-webdav
+  (package
+    (name "r-webdav")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "webdav" version))
+       (sha256
+        (base32 "0pjciivgpvrqrfq7y3ccpnyz13hyqhb298sf7rvgfz9h1b5zm3li"))))
+    (properties `((upstream-name . "webdav")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-xml2
+                             r-tibble
+                             r-stringr
+                             r-magrittr
+                             r-httr2
+                             r-httpuv
+                             r-glue
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/StrategicProjects/webdav>")
+    (synopsis "Simple Interface for Interacting with 'WebDAV' Servers")
+    (description
+     "An easy-to-use interface for interacting with @code{WebDAV} servers, including
+@code{OwnCloud}'.  It simplifies the use of @code{WebDAV} methods such as COPY,
+MKCOL, MOVE, and others.  With built-in authentication and request handling, it
+allows for easy management of files and directories over the @code{WebDAV}
+protocol.")
+    (license license:gpl3)))
 
 (define-public r-webanalytics
   (package

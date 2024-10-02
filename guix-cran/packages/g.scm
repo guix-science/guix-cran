@@ -956,13 +956,13 @@ Validation of Linear Model Assumptions,\" J. American Statistical Association,
 (define-public r-gvcr
   (package
     (name "r-gvcr")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gvcR" version))
        (sha256
-        (base32 "1ibgv4armyn6lyp3v3sixbgrj92hh1fjbdvyiikgw8mrcn97908q"))))
+        (base32 "1gp13980yqfyqgjj19445vyva2769wsa1kfq7h7y366g4knygnlp"))))
     (properties `((upstream-name . "gvcR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -17121,13 +17121,13 @@ make sure that they work reliably.")
 (define-public r-ggplate
   (package
     (name "r-ggplate")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggplate" version))
        (sha256
-        (base32 "0n2c9g6rl5vn5gki43xcc22p8hv2gyj7qr6jdbmllx22ld7zsz43"))))
+        (base32 "15q78hl9fngjx1xyccwzny78rg169zv10fvzl6an9silcgwrw2ak"))))
     (properties `((upstream-name . "ggplate")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -19886,13 +19886,13 @@ analysed using rules developed for analysing multiple synthetic datasets.")
 (define-public r-gformula
   (package
     (name "r-gformula")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gfoRmula" version))
        (sha256
-        (base32 "0g9d3z031f4ya3xkm82c4qy0548p38x8c6j0m3vdfx414y4k8mih"))))
+        (base32 "09bjc5wp8rc7wmjcx8vkk7vg386j1wq5hkf6v63fpfpcsb887251"))))
     (properties `((upstream-name . "gfoRmula")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncreg
@@ -19904,20 +19904,24 @@ analysed using rules developed for analysing multiple synthetic datasets.")
                              r-ggpubr
                              r-ggplot2
                              r-data-table))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/CausalInference/gfoRmula")
     (synopsis "Parametric G-Formula")
     (description
-     "This package implements the parametric g-formula algorithm of Robins (1986)
-<doi:10.1016/0270-0255(86)90088-6>.  The g-formula can be used to estimate the
-causal effects of hypothetical time-varying treatment interventions on the mean
-or risk of an outcome from longitudinal data with time-varying confounding.
-This package allows: 1) binary or continuous/multi-level time-varying
-treatments; 2) different types of outcomes (survival or continuous/binary end of
-follow-up); 3) data with competing events or truncation by death and loss to
-follow-up and other types of censoring events; 4) different options for handling
-competing events in the case of survival outcomes; 5) a random measurement/visit
-process; 6) joint interventions on multiple treatments; and 7) general
-incorporation of a priori knowledge of the data structure.")
+     "This package implements the non-iterative conditional expectation (NICE)
+algorithm of the g-formula algorithm (Robins (1986)
+<doi:10.1016/0270-0255(86)90088-6>, HernÃ¡n and Robins (2024,
+ISBN:9781420076165)).  The g-formula can estimate an outcome's counterfactual
+mean or risk under hypothetical treatment strategies (interventions) when there
+is sufficient information on time-varying treatments and confounders.  This
+package can be used for discrete or continuous time-varying treatments and for
+failure time outcomes or continuous/binary end of follow-up outcomes.  The
+package can handle a random measurement/visit process and a priori knowledge of
+the data structure, as well as censoring (e.g., by loss to follow-up) and two
+options for handling competing events for failure time outcomes.  Interventions
+can be flexibly specified, both as interventions on a single treatment or as
+joint interventions on multiple treatments.  See @code{McGrath} et al. (2020)
+<doi:10.1016/j.patter.2020.100008> for a guide on how to use the package.")
     (license license:gpl3)))
 
 (define-public r-gfm
@@ -28168,13 +28172,13 @@ representation.")
 (define-public r-gbm-auto
   (package
     (name "r-gbm-auto")
-    (version "2023.08.31")
+    (version "2024.10.01")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "gbm.auto" version))
        (sha256
-        (base32 "14gahb13p9wpsf8a8mb6a7ikas9jcd4hwh4jn4rg1mray4pgj7in"))))
+        (base32 "1dyx937ajm461kpigbfgasb7ay96abw7s3lda8g54nfn3mxl82sq"))))
     (properties `((upstream-name . "gbm.auto")))
     (build-system r-build-system)
     (propagated-inputs (list r-viridis
@@ -28207,7 +28211,7 @@ machine) functions in dismo (Hijmans, Phillips, Leathwick & Jane Elith, 2020 &
 ongoing), itself built around gbm (Greenwell, Boehmke, Cunningham & Metcalfe,
 2020 & ongoing, originally by Ridgeway).  Indebted to Elith/Leathwick/Hastie
 2008 Working Guide <doi:10.1111/j.1365-2656.2008.01390.x>; workflow follows
-Appendix S3.  See <http://www.simondedman.com/> for published guides and papers
+Appendix S3.  See <https://www.simondedman.com/> for published guides and papers
 using this package.")
     (license license:expat)))
 

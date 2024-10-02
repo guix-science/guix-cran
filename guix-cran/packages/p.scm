@@ -2016,13 +2016,13 @@ is for educational purposes only.")
 (define-public r-pubchemr
   (package
     (name "r-pubchemr")
-    (version "2.1")
+    (version "2.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PubChemR" version))
        (sha256
-        (base32 "13x5rw3v82hsqy40ar62v1lrgw5zfvh51bv9lancfja5h2k92p0p"))))
+        (base32 "0gsxw00v5qfgbwdxksp7fxnsdp9h899pz9wn4wskvy4xy4cg41pm"))))
     (properties `((upstream-name . "PubChemR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -8199,13 +8199,13 @@ visualizations are also provided.")
 (define-public r-priorsense
   (package
     (name "r-priorsense")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "priorsense" version))
        (sha256
-        (base32 "1gilv3w1nn7ika226p78lj4fba7icp5xc8wgf1vg3fg8m2jjq356"))))
+        (base32 "1lmqwby7j8x5y2g7pmrd5770drck4xhwx8ajn1kxw23b9hbx5wxs"))))
     (properties `((upstream-name . "priorsense")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -11808,13 +11808,13 @@ using power prior approaches (Pawel et al., 2023)
 (define-public r-pprank
   (package
     (name "r-pprank")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ppRank" version))
        (sha256
-        (base32 "1843cnrdiwns14471dnjq8i5wxkp3p1sj4rw74zzy9w3ydcc3v1z"))))
+        (base32 "0qjdxzacg9c118w8fq8sjvkfxyahhbdqfd3ab7qdlfrxkilzc29b"))))
     (properties `((upstream-name . "ppRank")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=ppRank")

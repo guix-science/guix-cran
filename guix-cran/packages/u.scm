@@ -1109,17 +1109,17 @@ analytic functions.  Specifically developed for Bit.ly (which requires OAuth
 (define-public r-urbin
   (package
     (name "r-urbin")
-    (version "0.1-12")
+    (version "0.1-14")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "urbin" version))
        (sha256
-        (base32 "18zskhpcngpw0zanya88l8znhbac5f7a89kq231w59yml9ll7y52"))))
+        (base32 "1061a7n9yrpz6ixy88zwiam6amy7jg2l2hv7c5n8cqg33j32lf22"))))
     (properties `((upstream-name . "urbin")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
-    (home-page "http://r-forge.r-project.org/projects/urbin/")
+    (home-page "https://r-forge.r-project.org/projects/urbin/")
     (synopsis "Unifying Estimation Results with Binary Dependent Variables")
     (description
      "Calculate unified measures that quantify the effect of a covariate on a binary
@@ -4357,13 +4357,13 @@ introductory statistics courses.")
 (define-public r-ubms
   (package
     (name "r-ubms")
-    (version "1.2.6")
+    (version "1.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ubms" version))
        (sha256
-        (base32 "10jr2nb8pq0rxx1h0zci4zybbj108maa5kdzgf9bj87pzsrxhda7"))))
+        (base32 "0q2fz2nz5k1jvyh57c3wlagrb5ik0d7w4imm5yx473aii3a963n7"))))
     (properties `((upstream-name . "ubms")))
     (build-system r-build-system)
     (propagated-inputs (list r-unmarked
@@ -4372,6 +4372,7 @@ introductory statistics courses.")
                              r-rstan
                              r-rspectra
                              r-rlang
+                             r-reformulas
                              r-rcppparallel
                              r-rcppeigen
                              r-rcpparmadillo
@@ -4379,12 +4380,11 @@ introductory statistics courses.")
                              r-pbapply
                              r-matrix
                              r-loo
-                             r-lme4
                              r-gridextra
                              r-ggplot2
                              r-bh))
     (native-inputs (list r-knitr))
-    (home-page "https://kenkellner.com/ubms/")
+    (home-page "https://biodiverse.github.io/ubms/")
     (synopsis "Bayesian Models for Data from Unmarked Animals using 'Stan'")
     (description
      "Fit Bayesian hierarchical models of animal abundance and occurrence via the

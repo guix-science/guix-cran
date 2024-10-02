@@ -7362,13 +7362,13 @@ queries.  This package was neither produced nor is maintained by Esri.")
 (define-public r-arcpbf
   (package
     (name "r-arcpbf")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "arcpbf" version))
        (sha256
-        (base32 "1g8x46r8angcvcgwvmfm8afs3yrzisdsnr1pckknjng3w1jp0v42"))))
+        (base32 "1csy9jwdgr5anhp7cd5dxwadvskv1ky3f1wkq8vyjww1kxjxhz1s"))))
     (properties `((upstream-name . "arcpbf")))
     (build-system r-build-system)
     (inputs (list))
@@ -8522,6 +8522,27 @@ values and true positive fractions at the specified marker cut-off values, and a
 plot of the time-dependent AP versus time (available for event time data).")
     (license license:lgpl3)))
 
+(define-public r-apt
+  (package
+    (name "r-apt")
+    (version "4.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "apt" version))
+       (sha256
+        (base32 "0rrwlm67dyzai0fdy6j8bk1vww2xm29sijb9c9s482lxiyc2hv24"))))
+    (properties `((upstream-name . "apt")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-urca r-erer r-car))
+    (home-page "https://cran.r-project.org/package=apt")
+    (synopsis "Asymmetric Price Transmission")
+    (description
+     "The transmission between two time-series prices is assessed.  It contains
+several functions for linear and nonlinear threshold co-integration, and
+furthermore, symmetric and asymmetric error correction models.")
+    (license license:gpl2+)))
+
 (define-public r-apsimx
   (package
     (name "r-apsimx")
@@ -8948,13 +8969,13 @@ see the bibliography in the CGAL documentation at
 (define-public r-apollo
   (package
     (name "r-apollo")
-    (version "0.3.3")
+    (version "0.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "apollo" version))
        (sha256
-        (base32 "0mlvizr7kf308y431vkdf04p64srkgd7hwbypkw68yz37r1k13za"))))
+        (base32 "1d9dbf0i0wqvxyfvnpp3p1asppgy0sch7w0w1k86wd0vqiarqgzv"))))
     (properties `((upstream-name . "apollo")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -10317,16 +10338,16 @@ simulate the effects of mergers under different competitive regimes.")
 (define-public r-anticlust
   (package
     (name "r-anticlust")
-    (version "0.8.5")
+    (version "0.8.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "anticlust" version))
        (sha256
-        (base32 "1y3mb8l9p5dh843i2k6b5j0yvq1kvykax6fxavcacsa55lfcl3y2"))))
+        (base32 "1rmgyscggir90rw34ksw9rd2snbi4zxxrhh4fdcpk4y931x312py"))))
     (properties `((upstream-name . "anticlust")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rann r-matrix))
+    (propagated-inputs (list r-rann r-matrix r-lpsolve))
     (native-inputs (list r-rmarkdown r-knitr))
     (home-page "https://github.com/m-Py/anticlust")
     (synopsis "Subset Partitioning via Anticlustering")
@@ -10339,25 +10360,29 @@ clear separation between groups.  Computationally, anticlustering is
 accomplished by maximizing instead of minimizing a clustering objective
 function, such as the intra-cluster variance (used in k-means clustering) or the
 sum of pairwise distances within clusters.  The main function anticlustering()
-gives access to exact and heuristic anticlustering methods described in
+gives access to optimal and heuristic anticlustering methods described in
 Papenberg and Klau (2021; <doi:10.1037/met0000301>), Brusco et al. (2020;
 <doi:10.1111/bmsp.12186>), and Papenberg (2024; <doi:10.1111/bmsp.12315>).  The
-exact algorithms require that an integer linear programming solver is installed,
-either the GNU linear programming kit
-(<https://www.gnu.org/software/glpk/glpk.html>) together with the interface
-package Rglpk (<https://cran.R-project.org/package=Rglpk>), or the SYMPHONY ILP
-solver (<https://github.com/coin-or/SYMPHONY>) together with the interface
-package Rsymphony (<https://cran.r-project.org/package=Rsymphony>).  Full access
-to the bicriterion anticlustering method proposed by Brusco et al. (2020) is
-given via the function bicriterion_anticlustering(), while
-kplus_anticlustering() implements the full functionality of the k-plus
-anticlustering approach proposed by Papenberg (2024).  Some other functions are
-available to solve classical clustering problems.  The function
-balanced_clustering() applies a cluster analysis under size constraints, i.e.,
-creates equal-sized clusters.  The function matching() can be used for
-(unrestricted, bipartite, or K-partite) matching.  The function wce() can be
-used optimally solve the (weighted) cluster editing problem, also known as
-correlation clustering, clique partitioning problem or transitivity clustering.")
+optimal algorithms require that an integer linear programming solver is
+installed.  This package will install @code{lpSolve}
+(<https://cran.r-project.org/package=@code{lpSolve>}) as a default solver, but
+it is also possible to use the package Rglpk
+(<https://cran.r-project.org/package=Rglpk>), which requires the GNU linear
+programming kit (<https://www.gnu.org/software/glpk/glpk.html>), or the package
+Rsymphony (<https://cran.r-project.org/package=Rsymphony>), which requires the
+SYMPHONY ILP solver (<https://github.com/coin-or/SYMPHONY>).  Rglpk and
+Rsymphony have to be manually installed by the user because they are only
+\"suggested\" dependencies.  Full access to the bicriterion anticlustering method
+proposed by Brusco et al. (2020) is given via the function
+bicriterion_anticlustering(), while kplus_anticlustering() implements the full
+functionality of the k-plus anticlustering approach proposed by Papenberg
+(2024).  Some other functions are available to solve classical clustering
+problems.  The function balanced_clustering() applies a cluster analysis under
+size constraints, i.e., creates equal-sized clusters.  The function matching()
+can be used for (unrestricted, bipartite, or K-partite) matching.  The function
+wce() can be used optimally solve the (weighted) cluster editing problem, also
+known as correlation clustering, clique partitioning problem or transitivity
+clustering.")
     (license license:expat)))
 
 (define-public r-antibodytiters
@@ -14505,61 +14530,6 @@ See <https://community.algolia.com/places/>.")
      "Two unordered pairs of data of two different snips positions is haplotyped by
 resolving a small number ob closed equations.")
     (license license:gpl2)))
-
-(define-public r-algaeclassify
-  (package
-    (name "r-algaeclassify")
-    (version "2.0.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "algaeClassify" version))
-       (sha256
-        (base32 "08jg210aas3bxjqgsapba8fzc133nh9afl0lzy784ywdx96lfmm0"))))
-    (properties `((upstream-name . "algaeClassify")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-taxize
-                             r-ritis
-                             r-rcurl
-                             r-lubridate
-                             r-jsonlite
-                             r-curl))
-    (home-page "https://doi.org/10.5066/F7S46Q3F")
-    (synopsis
-     "Tools to Standardize Phytoplankton Taxonomic Data and Perform Functional Group Classifications")
-    (description
-     "This package provides functions that facilitate the use of accepted taxonomic
-nomenclature, collection of functional trait data, and assignment of functional
-group classifications to phytoplankton species.  Possible classifications
-include Morpho-functional group (MFG; Salmaso et al.  2015
-<doi:10.1111/fwb.12520>) and CSR (Reynolds 1988; Functional morphology and the
-adaptive strategies of phytoplankton.  In C.D. Sandgren (ed).  Growth and
-reproductive strategies of freshwater phytoplankton, 388-433.  Cambridge
-University Press, New York).  Versions 2.0.0 and later includes new functions
-for querying the algaebase online taxonomic database (www.algaebase.org),
-however these functions require a valid API key that must be acquired from the
-algaebase admin.  Note that none of the @code{algaeClassify} authors are
-affiliated with algaebase in any way.  Taxonomic names can also be checked
-against a variety of taxonomic databases using the geographic name resolution
-service (GNRS) via wrapper functions for the taxize package, with convenient
-output format and unlikely names for phytoplankton taxa removed.  In addition,
-currently accepted and outdated synonyms, and higher taxonomy, can be extracted
-for lists of species from the ITIS database using wrapper functions for the
-ritis package.  The @code{algaeClassify} package is a product of the GEISHA
-(Global Evaluation of the Impacts of Storms on freshwater Habitat and Structure
-of phytoplankton Assemblages), funded by CESAB (Centre for Synthesis and
-Analysis of Biodiversity) and the USGS John Wesley Powell Center for Synthesis
-and Analysis, with data and other support provided by members of GLEON (Global
-Lake Ecology Observation Network).  DISCLAIMER: This software has been approved
-for release by the U.S. Geological Survey (USGS).  Although the software has
-been subjected to rigorous review, the USGS reserves the right to update the
-software as needed pursuant to further analysis and review.  No warranty,
-expressed or implied, is made by the USGS or the U.S. Government as to the
-functionality of the software and related material nor shall the fact of release
-constitute any such warranty.  Furthermore, the software is released on
-condition that neither the USGS nor the U.S. Government shall be held liable for
-any damages resulting from its authorized or unauthorized use.")
-    (license license:cc0)))
 
 (define-public r-alfred
   (package

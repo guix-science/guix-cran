@@ -795,13 +795,13 @@ history data (e.g. FHX).  Described in Malevich et al. (2018)
 (define-public r-burgle
   (package
     (name "r-burgle")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "burgle" version))
        (sha256
-        (base32 "05i5n3a9l087wcyvgdf638961i19d939zfv3d58h3cxhxsnyn4c4"))))
+        (base32 "0166pqcyhzlk8xv58hql5szanyh47blpwnawxmwxwqysfrm0w7xj"))))
     (properties `((upstream-name . "burgle")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival r-riskregression r-mass))
@@ -7992,18 +7992,19 @@ Exact Test on significant parameters.")
 (define-public r-bnrep
   (package
     (name "r-bnrep")
-    (version "0.0.1")
+    (version "0.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bnRep" version))
        (sha256
-        (base32 "01gzcwgsrl9is25sh3y41zy5xbbb11abwcisncz11nrzvnsqs1js"))))
+        (base32 "09ri3ms49w6qxck78cj5qw48jqd8vs544yw46fmz4vhq9ng08m7w"))))
     (properties `((upstream-name . "bnRep")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
                              r-shinyjs
                              r-shiny
+                             r-rgraphviz
                              r-qgraph
                              r-dt
                              r-dplyr
@@ -8017,8 +8018,9 @@ conditional linear Gaussian) collated from recent academic literature.  The
 @code{bnRep_summary} object provides an overview of the Bayesian networks in the
 repository and the package documentation includes details about the variables in
 each network.  A Shiny app to explore the repository can be launched with
-@code{bnRep_app}()'.  For details see
-<https://github.com/manueleleonelli/@code{bnRep>}.")
+@code{bnRep_app}() and is available online at
+<https://manueleleonelli.shinyapps.io/@code{bnRep>}.  Reference: M. Leonelli
+(2024) <doi:10.48550/@code{arXiv.2409.19158>}.")
     (license license:expat)))
 
 (define-public r-bnptsclust
@@ -13591,19 +13593,19 @@ authors of these publications are thanked for allowing the use of their data.")
 (define-public r-bingsd
   (package
     (name "r-bingsd")
-    (version "0.0.1")
+    (version "1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BinGSD" version))
        (sha256
-        (base32 "0ygr5na7s82xa6vv9f3j6ns5sfhdacyykl1fg422lpkwbss39dnn"))))
+        (base32 "0986203jjszha7sm7n63lwi9zlfwrla9g8mi1fm84dzjn9bc9dgi"))))
     (properties `((upstream-name . "BinGSD")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))
     (home-page "https://cran.r-project.org/package=BinGSD")
     (synopsis
-     "Calculation for Single Arm Group Sequential Test with Binary Endpoint")
+     "Calculate Boundaries and Conditional Power for Single Arm Group Sequential Test with Binary Endpoint")
     (description
      "Consider an at-most-K-stage group sequential design with only an upper bound for
 the last analysis and non-binding lower bounds.With binary endpoint, two kinds
@@ -14574,24 +14576,22 @@ utilizes the Julia package Bigsimr.jl for its core routines.")
 (define-public r-bigrquerystorage
   (package
     (name "r-bigrquerystorage")
-    (version "1.1.0")
+    (version "1.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigrquerystorage" version))
        (sha256
-        (base32 "1idhaf6i7sbrdmzzc0ks76yr47lpl63lcjprsnjzwkyc124nx606"))))
+        (base32 "1bfn9w0jw40iplpwz9x2wwv8xvwc2kx2pgqa8gbl2k1w21479chi"))))
     (properties `((upstream-name . "bigrquerystorage")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
                              r-rlang
                              r-rcpp
+                             r-nanoarrow
                              r-lifecycle
-                             r-dbi
                              r-bit64
-                             r-bigrquery
-                             r-assertthat
-                             r-arrow))
+                             r-assertthat))
     (native-inputs (list pkg-config))
     (home-page "https://github.com/meztez/bigrquerystorage")
     (synopsis "An Interface to Google's 'BigQuery Storage' API")
@@ -19188,37 +19188,6 @@ Laplace (Lasso), Gaussian (ridge), Uniform, Cauchy and customized priors like a
 mixture of priors.  An extensive visual toolbox is included to check the
 validity of the results as well as several measures of goodness-of-fit.")
     (license license:lgpl2.0+)))
-
-(define-public r-bdvis
-  (package
-    (name "r-bdvis")
-    (version "0.2.37")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "bdvis" version))
-       (sha256
-        (base32 "0mhvc1lbnkbawx3yj9h8h4l6bwawg1dfgyjvllhknyldxy8a7bjk"))))
-    (properties `((upstream-name . "bdvis")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-treemap
-                             r-taxize
-                             r-sqldf
-                             r-sf
-                             r-plyr
-                             r-plotrix
-                             r-maps
-                             r-lattice
-                             r-ggplot2
-                             r-chron))
-    (home-page "https://cran.r-project.org/package=bdvis")
-    (synopsis "Biodiversity Data Visualizations")
-    (description
-     "This package provides a set of functions to create basic visualizations to
-quickly preview different aspects of biodiversity information such as inventory
-completeness, extent of coverage (taxonomic, temporal and geographic), gaps and
-biases.  Barve & Otegui (2016) <DOI:10.1093/bioinformatics/btw333>.")
-    (license license:gpl3)))
 
 (define-public r-bdsvd
   (package

@@ -12622,13 +12622,13 @@ a backbone the phylogenetic tree proposed by Rabosky et al. (2018)
 (define-public r-fishmod
   (package
     (name "r-fishmod")
-    (version "0.29.1")
+    (version "0.29.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "fishMod" version))
        (sha256
-        (base32 "020fqfg93m8aizfa7aibhmsfj77lpklccfql5z808mwgs41nblgk"))))
+        (base32 "0niglwj6ic5c454ihcjn1v1li87jqwnfhpjf3a28z9msxgnzxl3c"))))
     (properties `((upstream-name . "fishMod")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=fishMod")

@@ -5606,34 +5606,6 @@ walking, cycling, driving, or transit routes.  This package has been
 peer-reviewed by @code{rOpenSci} (v.  0.2.0.0).")
     (license license:gpl3)))
 
-(define-public r-opentreechronograms
-  (package
-    (name "r-opentreechronograms")
-    (version "2022.1.28")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "OpenTreeChronograms" version))
-       (sha256
-        (base32 "0si5aaami2x705fmzp9357h1nwhdm3sb829cbvf7zfyicqyaihkg"))))
-    (properties `((upstream-name . "OpenTreeChronograms")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-usethis
-                             r-treebase
-                             r-taxize
-                             r-stringr
-                             r-rotl
-                             r-plyr
-                             r-paleotree
-                             r-knitcitations
-                             r-geiger
-                             r-ape))
-    (home-page "https://cran.r-project.org/package=OpenTreeChronograms")
-    (synopsis "Open Tree of Life Chronograms")
-    (description
-     "Chronogram database constructed from Open Tree of Life's phylogenetic store.")
-    (license license:gpl2+)))
-
 (define-public r-openstreetmap
   (package
     (name "r-openstreetmap")

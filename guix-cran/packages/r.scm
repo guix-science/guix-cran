@@ -21329,18 +21329,18 @@ and trading day adjustment models made with RJDemetra'.")
 (define-public r-rjdemetra
   (package
     (name "r-rjdemetra")
-    (version "0.2.6")
+    (version "0.2.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RJDemetra" version))
        (sha256
-        (base32 "17wfzv3gknx2x90bhlq09yk6wggrq67ylbxn6biiy1qrpipyw4jj"))))
+        (base32 "0q1jxcg95r1av0glqapvn9np3gv8gvpwrh4pm70kb2d03yhycv7p"))))
     (properties `((upstream-name . "RJDemetra")))
     (build-system r-build-system)
     (inputs (list openjdk))
     (propagated-inputs (list r-rjava))
-    (home-page "https://jdemetra.github.io/rjdemetra/")
+    (home-page "https://rjdverse.github.io/rjdemetra/")
     (synopsis "Interface to 'JDemetra+' Seasonal Adjustment Software")
     (description
      "Interface around JDemetra+ (<https://github.com/jdemetra/jdemetra-app>), the

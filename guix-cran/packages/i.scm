@@ -8093,31 +8093,6 @@ of the output.")
 bdm macroeconomic database.")
     (license license:expat)))
 
-(define-public r-insectdisease
-  (package
-    (name "r-insectdisease")
-    (version "1.2.2")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "insectDisease" version))
-       (sha256
-        (base32 "1ncj5fgmx19caf8m2p3ij5iamk941m9y725gs0nqpa9m6zfnzgf8"))))
-    (properties `((upstream-name . "insectDisease")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-taxize r-plyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=insectDisease")
-    (synopsis "Ecological Database of the World's Insect Pathogens")
-    (description
-     "David Onstad provided us with this insect disease database, sometimes referred
-to as the Ecological Database of the Worlds Insect Pathogens or EDWIP. Files
-have been converted from SQL to csv, and ported into R for easy exploration and
-analysis.  Thanks to the Macroecology of Infectious Disease Research
-Coordination Network (RCN) for funding and support.  Data are also served online
-in a static format at <https://edwip.ecology.uga.edu/>.")
-    (license license:gpl3)))
-
 (define-public r-insect
   (package
     (name "r-insect")

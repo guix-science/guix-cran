@@ -1697,13 +1697,13 @@ the package.")
 (define-public r-huxtable
   (package
     (name "r-huxtable")
-    (version "5.5.6")
+    (version "5.5.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "huxtable" version))
        (sha256
-        (base32 "04hbnc8gij28523b6kiyibc05sjn1z4y1r8z9j4f5ghyl8hm0mdx"))))
+        (base32 "0piaa4zcx3xsr25yf15cv3vindsksxwwqvsjgvk47p1nvw1f0k6y"))))
     (properties `((upstream-name . "huxtable")))
     (build-system r-build-system)
     (inputs (list calc))
@@ -1719,8 +1719,9 @@ the package.")
                              r-generics
                              r-fansi
                              r-commonmark
+                             r-base64enc
                              r-assertthat))
-    (native-inputs (list r-knitr))
+    (native-inputs (list r-r-rsp))
     (home-page "https://hughjonesd.github.io/huxtable/")
     (synopsis
      "Easily Create and Style Tables for LaTeX, HTML and Other Formats")
@@ -8964,39 +8965,6 @@ Bayesian MCMC analysis, plot graphs or boxplot with error bars, search files in
 disk by there names or their content, read the contents of all files from a
 folder at one time.")
     (license license:gpl2)))
-
-(define-public r-helminthr
-  (package
-    (name "r-helminthr")
-    (version "1.0.10")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "helminthR" version))
-       (sha256
-        (base32 "0ssw0smxc5zx3d189fq8c6kdg6d7db1sd5iblhz54pg41j9fvqhq"))))
-    (properties `((upstream-name . "helminthR")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-xml2
-                             r-taxize
-                             r-rvest
-                             r-plyr
-                             r-magrittr
-                             r-httr))
-    (native-inputs (list r-knitr))
-    (home-page "https://docs.ropensci.org/helminthR/")
-    (synopsis
-     "Access London Natural History Museum Host-Helminth Record Database")
-    (description
-     "Access to large host-parasite data is often hampered by the availability of data
-and difficulty in obtaining it in a programmatic way to encourage analyses.
-@code{helminthR} provides a programmatic interface to the London Natural History
-Museum's host-parasite database, one of the largest host-parasite databases
-existing currently
-<https://www.nhm.ac.uk/research-curation/scientific-resources/taxonomy-systematics/host-parasites/>.
- The package allows the user to query by host species, parasite species, and
-geographic location.")
-    (license license:gpl3)))
 
 (define-public r-hellorust
   (package

@@ -8620,13 +8620,13 @@ sites.")
 (define-public r-cpfa
   (package
     (name "r-cpfa")
-    (version "1.1-4")
+    (version "1.1-5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cpfa" version))
        (sha256
-        (base32 "075bbp56sx6n1bzdign9iyk2q9j35b6mrqpjwk9aiw27k4n6wmxj"))))
+        (base32 "0bga39lipzcam6pr9sm1rij31b5la59arjjhsydh826gdfmnlqg9"))))
     (properties `((upstream-name . "cpfa")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -14934,6 +14934,37 @@ distribution of an outcome variable given any set of joint input predictor
 variable values.")
     (license license:asl2.0)))
 
+(define-public r-contrastable
+  (package
+    (name "r-contrastable")
+    (version "1.0.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "contrastable" version))
+       (sha256
+        (base32 "0m14p86rhim5lbs3fdx0hwpm87z2sjjf4a1h03cw33f68adqv773"))))
+    (properties `((upstream-name . "contrastable")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-rlang
+                             r-purrr
+                             r-mass
+                             r-glue
+                             r-crayon
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/tsostarics/contrastable")
+    (synopsis "Consistent Contrast Coding for Factors")
+    (description
+     "Quickly set and summarize contrasts for factors prior to regression analyses.
+Intended comparisons, baseline conditions, and intercepts can be explicitly set
+and documented without the user needing to directly manipulate matrices.
+Reviews and introductions for contrast coding are available in Brehm and Alday
+(2022)<doi:10.1016/j.jml.2022.104334> and Schad et al.
+(2020)<doi:10.1016/j.jml.2019.104038>.")
+    (license license:expat)))
+
 (define-public r-contrast
   (package
     (name "r-contrast")
@@ -18922,21 +18953,24 @@ More details about @code{AllMetrics} can be found in Garai (2023)
 (define-public r-comparemcmcs
   (package
     (name "r-comparemcmcs")
-    (version "0.5.0")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "compareMCMCs" version))
        (sha256
-        (base32 "0g3fzazfs6f8ni251ilzk0q65hvgfhglly7v4rmkl4jwhzvsz1yr"))))
+        (base32 "0h55azjbz7lr78y65ypjmqri6g69cwmjwpj50kgk3kw2phla1pqw"))))
     (properties `((upstream-name . "compareMCMCs")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
+                             r-rlang
                              r-reshape2
                              r-r6
                              r-nimble
                              r-ggplot2
+                             r-dplyr
                              r-coda))
+    (native-inputs (list r-knitr))
     (home-page "https://github.com/nimble-dev/compareMCMCs")
     (synopsis
      "Compare MCMC Efficiency from 'nimble' and/or Other MCMC Engines")
@@ -19324,13 +19358,13 @@ for details under the FGM and general copulas, respectively.")
 (define-public r-commondatamodel
   (package
     (name "r-commondatamodel")
-    (version "0.2.0")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CommonDataModel" version))
        (sha256
-        (base32 "1yxksxv9dma2f6l3asg165f6hn9f6w4ws04xfprnb100sm0zq1z0"))))
+        (base32 "01q9z1pmji87pk0bcign3p9fj8f5zvx1b2whpxv8mkh01zw28wdm"))))
     (properties `((upstream-name . "CommonDataModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -21712,13 +21746,13 @@ Outcomes Partnership Common Data Model.")
 (define-public r-cohortcharacteristics
   (package
     (name "r-cohortcharacteristics")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CohortCharacteristics" version))
        (sha256
-        (base32 "11cg3shf62njzpqh6wahgpg2c1ymqf4xkn6ip6ymab7dvq2w12wh"))))
+        (base32 "017yflwvfnsvkm03m5p31hx1f4wmws14nab1n493ingmhmxaqbfs"))))
     (properties `((upstream-name . "CohortCharacteristics")))
     (build-system r-build-system)
     (propagated-inputs (list r-visomopresults
@@ -21726,12 +21760,12 @@ Outcomes Partnership Common Data Model.")
                              r-stringr
                              r-snakecase
                              r-rlang
+                             r-purrr
                              r-patientprofiles
                              r-omopgenerics
-                             r-magrittr
+                             r-lifecycle
                              r-dplyr
                              r-cli
-                             r-checkmate
                              r-cdmconnector))
     (native-inputs (list r-knitr))
     (home-page "https://darwin-eu-dev.github.io/CohortCharacteristics/")
@@ -39324,13 +39358,13 @@ numpyro python package.")
 (define-public r-cauphy
   (package
     (name "r-cauphy")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cauphy" version))
        (sha256
-        (base32 "1jyw6pq17fzpkp6c68cbc7y5bs1y1xhnvd49j7kkypn7ziglpm9s"))))
+        (base32 "1rb5fjlh91k229a0hcw8d7x7wjf3m7p9apschq83xgpv4d5a0b2m"))))
     (properties `((upstream-name . "cauphy")))
     (build-system r-build-system)
     (propagated-inputs (list r-robustbase
@@ -39482,18 +39516,18 @@ selection, all calculations are done in compiled C++ code.")
 (define-public r-catsim
   (package
     (name "r-catsim")
-    (version "0.2.3")
+    (version "0.2.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "catsim" version))
        (sha256
-        (base32 "1gz38xrzbray5ciiimkzdass8bhmiqxh6bcngjm5i8dvafk5gf9g"))))
+        (base32 "1lwc13xf7794fln5ylwwb9w9s1ah7y2h7wil1hjhz9vxhfpa044w"))))
     (properties `((upstream-name . "catsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat r-rcpp))
     (native-inputs (list r-knitr))
-    (home-page "https://github.com/gzt/catsim")
+    (home-page "https://gzt.github.io/catsim/")
     (synopsis "Binary and Categorical Image Similarity Index")
     (description
      "Computes a structural similarity metric (after the style of MS-SSIM for images)
@@ -39502,7 +39536,7 @@ matching), Cohen's kappa, Rand index, adjusted Rand index, Jaccard index, Dice
 index, normalized mutual information, or adjusted mutual information.  In
 addition, has fast computation of Cohen's kappa, the Rand indices, and the two
 mutual informations.  Implements the methods of Thompson and Maitra (2020)
-<@code{arXiv:2004.09073>}.")
+<doi:10.48550/@code{arXiv.2004.09073>}.")
     (license license:gpl3)))
 
 (define-public r-catseyes

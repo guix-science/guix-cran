@@ -404,26 +404,26 @@ experiences.  Reference: Avanzi B, Taylor G, Wang M, Wong B (2020)
 (define-public r-synthesizer
   (package
     (name "r-synthesizer")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "synthesizer" version))
        (sha256
-        (base32 "1d676d75bf6nh535iz9wp8887203xzfggnvw1z95l599jz6mbymr"))))
+        (base32 "00n21mh9yyfdxlwrmawi950dmikh0iq10a4yrmbpj2l255qns6hh"))))
     (properties `((upstream-name . "synthesizer")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest))
     (native-inputs (list r-simplermarkdown))
-    (home-page "https://cran.r-project.org/package=synthesizer")
+    (home-page "https://github.com/markvanderloo/synthesizer")
     (synopsis
-     "Synthesize Data Based on Emperical Multivariate Distributions and Rank Order Matching")
+     "Synthesize Data Based on Empirical Quantile Functions and Rank Order Matching")
     (description
      "Data is synthesized using a combination of inverse transform sampling from the
-emperical quantile functions for each variable, and then copying the rank order
+empirical quantile functions for each variable, and then copying the rank order
 structure from the original dataset.  The package also includes a number of
 functions to measure the utility of synthesized datasets.")
-    (license license:gpl3+)))
+    (license (license:fsdg-compatible "EUPL"))))
 
 (define-public r-synthesisr
   (package
@@ -4812,13 +4812,13 @@ possibility of crossings or alternative orderings among the survival functions."
 (define-public r-surveillance
   (package
     (name "r-surveillance")
-    (version "1.23.1")
+    (version "1.24.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "surveillance" version))
        (sha256
-        (base32 "1y2m2ia287vz8gapriwxzihxhj5kag50yf0wskmsd074gwph65a4"))))
+        (base32 "0lqh2c1qkf3qgxdyvrziha9hpl7xgmd40szd4adp5jgn3lvi0zng"))))
     (properties `((upstream-name . "surveillance")))
     (build-system r-build-system)
     (propagated-inputs (list r-xtable
@@ -7921,13 +7921,13 @@ strings.")
 (define-public r-stroupglmm
   (package
     (name "r-stroupglmm")
-    (version "0.2.0")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "StroupGLMM" version))
        (sha256
-        (base32 "1z426k5hv4q81frni5ng41c3s603qa0mlyzg4h3wk188kkw2abw4"))))
+        (base32 "1vif5kwra18kq83f56rkcshqzmddmfl1ln6rwx54c0hwhpvnhszm"))))
     (properties `((upstream-name . "StroupGLMM")))
     (build-system r-build-system)
     (propagated-inputs (list r-survey
@@ -7939,6 +7939,7 @@ strings.")
                              r-mass
                              r-magrittr
                              r-lmertest
+                             r-lattice
                              r-ggplot2
                              r-emmeans
                              r-dplyr
@@ -7951,7 +7952,7 @@ strings.")
     (description
      "R Codes and Datasets for Stroup, W. W. (2012).  Generalized Linear Mixed Models
 Modern Concepts, Methods and Applications, CRC Press.")
-    (license license:gpl2)))
+    (license license:gpl3)))
 
 (define-public r-stroke
   (package
@@ -28148,6 +28149,42 @@ representation described in Sierra and others (2012)
     (description "Basic and model-based soil physical analyses.")
     (license license:gpl2+)))
 
+(define-public r-soilmanager
+  (package
+    (name "r-soilmanager")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SoilManageR" version))
+       (sha256
+        (base32 "13qp3z09wgsfkgy8bzg79qzpy9hd0ir7hggcy5x0wl13988b5bg2"))))
+    (properties `((upstream-name . "SoilManageR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-readxl
+                             r-rdpack
+                             r-magrittr
+                             r-lubridate
+                             r-ggthemes
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://gitlab.com/SoilManageR/")
+    (synopsis
+     "Calculate Soil Management Indicators for Agricultural Practice Assessment")
+    (description
+     "Calculate numerical agricultural soil management indicators from on a management
+timeline of an arable field.  Currently, indicators for carbon (C) input into
+the soil system, soil tillage intensity rating (STIR), number of soil cover and
+living plant cover days, N fertilization and livestock intensity, and plant
+diversity are implemented.  The functions can also be used independently of the
+management timeline to calculate some indicators.  The package contains tables
+with reference information for the functions, as well as a *.xlsx template to
+collect the management data.")
+    (license license:expat)))
+
 (define-public r-soilhypfit
   (package
     (name "r-soilhypfit")
@@ -30705,13 +30742,13 @@ effects, smooth one-dimensional period effects and random errors.")
 (define-public r-smooth
   (package
     (name "r-smooth")
-    (version "4.0.2")
+    (version "4.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "smooth" version))
        (sha256
-        (base32 "1q0sgn30hsak9nyy30nbslh39byhqygypi1kp6gp99qfdrgxflva"))))
+        (base32 "14yprj4kwqad9a4vhspxcgjiqzfya3x9hhmvcw8h4s6s6r2wjxiq"))))
     (properties `((upstream-name . "smooth")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -42929,13 +42966,13 @@ and Ulrich, 2023 <https://CRAN.R-project.org/package=quantmod>).")
 (define-public r-shinyhugeplot
   (package
     (name "r-shinyhugeplot")
-    (version "0.2.6")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "shinyHugePlot" version))
        (sha256
-        (base32 "1sf26jz2jbyrs11a1gricnb3iq4106cpf10kbhqx0hy12q47lk1y"))))
+        (base32 "0i5qgj24ar1ig5p7wmd5acf4k3yb879k4zsm7575jnz8cs3z13vl"))))
     (properties `((upstream-name . "shinyHugePlot")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -42952,7 +42989,9 @@ and Ulrich, 2023 <https://CRAN.R-project.org/package=quantmod>).")
                              r-lazyeval
                              r-jsonlite
                              r-htmltools
+                             r-duckdb
                              r-dplyr
+                             r-dbi
                              r-data-table
                              r-bit64
                              r-assertthat))
@@ -53955,13 +53994,13 @@ cells.")
 (define-public r-scspatialsim
   (package
     (name "r-scspatialsim")
-    (version "0.1.3.3")
+    (version "0.1.3.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "scSpatialSIM" version))
        (sha256
-        (base32 "09pzdh8zygza3d5ld0j7xm7mks2x158iy1i3p3yrhdhrldx7llfy"))))
+        (base32 "04r3fqsv0ycjycy11r03ga05s4wzjlmhxifw8cm92qkcl8h4av40"))))
     (properties `((upstream-name . "scSpatialSIM")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -56342,13 +56381,13 @@ focus is set to prime-calculation.")
 (define-public r-schooldatait
   (package
     (name "r-schooldatait")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SchoolDataIT" version))
        (sha256
-        (base32 "1yi65xzi4h0aviisswrn78zgqzp17y4vvjnfcvphlgyr67nh3g6k"))))
+        (base32 "0mgxhj5xz9nf7if7qiif3x4dbjjblvb96riyn327s920pzwy9f2l"))))
     (properties `((upstream-name . "SchoolDataIT")))
     (build-system r-build-system)
     (propagated-inputs (list r-xml2

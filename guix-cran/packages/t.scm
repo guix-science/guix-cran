@@ -9673,13 +9673,13 @@ three-state progressive model.")
 (define-public r-tpmplt
   (package
     (name "r-tpmplt")
-    (version "0.1.5")
+    (version "0.1.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "TPMplt" version))
        (sha256
-        (base32 "134qacc5szmx6gcy5vsjrx4rh15yv69vs7cvq6yrjcsrzavvpd04"))))
+        (base32 "17nnymcaxh294fz8kbiazzfqf1pn09a3kzjznqxflqbxlxin8kl9"))))
     (properties `((upstream-name . "TPMplt")))
     (build-system r-build-system)
     (propagated-inputs (list r-vbtree

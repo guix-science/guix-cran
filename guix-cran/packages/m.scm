@@ -6,10 +6,10 @@
                 #:prefix license:)
   #:use-module (gnu packages statistics)
   #:use-module (gnu packages cran)
-  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages java)
   #:use-module (gnu packages maths)
   #:use-module (gnu packages gcc)
+  #:use-module (gnu packages bioconductor)
   #:use-module (gnu packages pkg-config)
   #:use-module (gnu packages multiprecision)
   #:use-module (gnu packages python-xyz)
@@ -78,47 +78,6 @@ instantaneously.  Alternatively, bootstrap standard errors can be used.  We also
 provide functions for cases with exposure-mediator interactions with four-way
 decomposition of total effect.")
     (license license:expat)))
-
-(define-public r-mytai
-  (package
-    (name "r-mytai")
-    (version "0.9.3")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "myTAI" version))
-       (sha256
-        (base32 "0fd6srvwzqir8zif56cnyi02c952fgc67xzc17wn7xvmvljfvh4x"))))
-    (properties `((upstream-name . "myTAI")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-tibble
-                             r-taxize
-                             r-scales
-                             r-reshape2
-                             r-readr
-                             r-rcpparmadillo
-                             r-rcpp
-                             r-rcolorbrewer
-                             r-nortest
-                             r-gridextra
-                             r-ggplot2
-                             r-foreach
-                             r-fitdistrplus
-                             r-edger
-                             r-dplyr
-                             r-doparallel
-                             r-cpp11))
-    (native-inputs (list r-knitr))
-    (home-page "https://github.com/drostlab/myTAI")
-    (synopsis "Evolutionary Transcriptomics")
-    (description
-     "Investigate the evolution of biological processes by capturing evolutionary
-signatures in transcriptomes (Drost et al. (2017)
-<doi:10.1093/bioinformatics/btx835>).  The aim of this tool is to provide a
-transcriptome analysis environment to quantify the average evolutionary age of
-genes contributing to a transcriptome of interest (Drost et al. (2016)
-<doi:10.1101/051565>).")
-    (license license:gpl3)))
 
 (define-public r-mycran
   (package
@@ -12781,32 +12740,6 @@ Detailed discussion of the methodologies used can be found in Murray, Mueller
 and Turlach (2013) <doi:10.1007/s00180-012-0390-5> and Murray, Mueller and
 Turlach (2016) <doi:10.1080/00949655.2016.1139582>.")
     (license license:gpl2+)))
-
-(define-public r-monophy
-  (package
-    (name "r-monophy")
-    (version "1.3.1")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "MonoPhy" version))
-       (sha256
-        (base32 "120vpz40iil4j6rdhnnhss4rmpfcyh3h0dpw3qkmzadb7mywr7dr"))))
-    (properties `((upstream-name . "MonoPhy")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-taxize r-rcolorbrewer r-phytools r-phangorn
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://cran.r-project.org/package=MonoPhy")
-    (synopsis "Explore Monophyly of Taxonomic Groups in a Phylogeny")
-    (description
-     "Requires rooted phylogeny as input and creates a table of genera, their
-monophyly-status, which taxa cause problems in monophyly etc.  Different
-information can be extracted from the output and a plot function allows
-visualization of the results in a number of ways. \"@code{MonoPhy}: a simple R
-package to find and visualize monophyly issues.\" Schwery, O. & O'Meara, B.C.
-(2016) <doi:10.7717/peerj-cs.56>.")
-    (license license:gpl3)))
 
 (define-public r-monomvn
   (package
@@ -31439,47 +31372,6 @@ includes functions to visualize ecological networks, and to calculate modularity
 as a replacement to boundary clumping.")
     (license license:gpl2)))
 
-(define-public r-metacoder
-  (package
-    (name "r-metacoder")
-    (version "0.3.7")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "metacoder" version))
-       (sha256
-        (base32 "0f7y7yzkqblqal71lp2kip8lzismdzlj3cpw0mb15hvca9dz12x4"))))
-    (properties `((upstream-name . "metacoder")))
-    (build-system r-build-system)
-    (propagated-inputs (list r-vegan
-                             r-tibble
-                             r-taxize
-                             r-stringr
-                             r-seqinr
-                             r-rlang
-                             r-readr
-                             r-rcurl
-                             r-rcpp
-                             r-r6
-                             r-magrittr
-                             r-lazyeval
-                             r-igraph
-                             r-ggplot2
-                             r-ggfittext
-                             r-ga
-                             r-dplyr
-                             r-crayon
-                             r-cowplot
-                             r-ape))
-    (native-inputs (list r-knitr))
-    (home-page "https://grunwaldlab.github.io/metacoder_documentation/")
-    (synopsis
-     "Tools for Parsing, Manipulating, and Graphing Taxonomic Abundance Data")
-    (description
-     "This package provides a set of tools for parsing, manipulating, and graphing
-data classified by a hierarchy (e.g. a taxonomy).")
-    (license (list license:gpl2 license:gpl3))))
-
 (define-public r-metacluster
   (package
     (name "r-metacluster")
@@ -45505,13 +45397,13 @@ equivalency.")
 (define-public r-mable
   (package
     (name "r-mable")
-    (version "4.1.0")
+    (version "4.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mable" version))
        (sha256
-        (base32 "1990x699aq0j5qqzx8wz99lc1m9rnijqnkzglddflx0lfpi1yb9a"))))
+        (base32 "1sq0i4zdd0r55qzlsmx9p88hxyvbzhaga2bx2akxmz7x7crqbz2j"))))
     (properties `((upstream-name . "mable")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
