@@ -9122,6 +9122,43 @@ time-dependent exposures.  See Wang et al (2020)
 <doi:10.1186/s12940-020-00644-4> for an overview.")
     (license license:expat)))
 
+(define-public r-epizootic
+  (package
+    (name "r-epizootic")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "epizootic" version))
+       (sha256
+        (base32 "1s8j5h860wvvl3yjij0vb52nihswnb90jx1jk2d6ifvksmdg05a5"))))
+    (properties `((upstream-name . "epizootic")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tibble
+                             r-rcpparmadillo
+                             r-rcpp
+                             r-raster
+                             r-r6
+                             r-qs
+                             r-purrr
+                             r-poems
+                             r-foreach
+                             r-dplyr
+                             r-doparallel
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/viralemergence/epizootic")
+    (synopsis
+     "Spatially Explicit Population Models of Disease Transmission in Wildlife")
+    (description
+     "This extension of the pattern-oriented modeling framework of the poems package
+provides a collection of modules and functions customized for modeling disease
+transmission on a population scale in a spatiotemporally explicit manner.  This
+includes seasonal time steps, dispersal functions that track disease state of
+dispersers, results objects that store disease states, and a population
+simulator that includes disease dynamics.")
+    (license license:gpl3+)))
+
 (define-public r-epiworldrshiny
   (package
     (name "r-epiworldrshiny")
@@ -9671,13 +9708,13 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
 (define-public r-epinow2
   (package
     (name "r-epinow2")
-    (version "1.5.2")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "EpiNow2" version))
        (sha256
-        (base32 "0nqa7dvp04ysqgdd5cjzfcd5vshk7jca251ljn8j55va186frmn5"))))
+        (base32 "106g3k6w4zzgz8kw8bkdfxp5h10fhb6pwi53myv9mf4adpl8bgl6"))))
     (properties `((upstream-name . "EpiNow2")))
     (build-system r-build-system)
     (propagated-inputs (list r-truncnorm
@@ -9692,16 +9729,14 @@ described by Keil et al., (2019) <doi:10.1289/EHP5838>).")
                              r-rcpp
                              r-r-utils
                              r-purrr
-                             r-progressr
                              r-posterior
                              r-patchwork
                              r-lubridate
                              r-lifecycle
                              r-ggplot2
-                             r-future-apply
-                             r-future
                              r-futile-logger
                              r-data-table
+                             r-cli
                              r-checkmate
                              r-bh))
     (native-inputs (list r-knitr))
@@ -17630,13 +17665,13 @@ and conditional mean independence tests in Shao, X., and Zhang, J. (2014)
 (define-public r-edmdata
   (package
     (name "r-edmdata")
-    (version "1.2.0")
+    (version "1.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "edmdata" version))
        (sha256
-        (base32 "042imrnn242jzb9wb4ghjganqmx61zjwspqy9qpkxqi9nr7zxr75"))))
+        (base32 "18818m3f5abr8srw6fdp0fxh53s6w0vlbjasynn56ri1isvzsfsw"))))
     (properties `((upstream-name . "edmdata")))
     (build-system r-build-system)
     (home-page "https://tmsalab.github.io/edmdata/")
@@ -17644,8 +17679,10 @@ and conditional mean independence tests in Shao, X., and Zhang, J. (2014)
     (description
      "Collection of data sets from various assessments that can be used to evaluate
 psychometric models.  These data sets have been analyzed in the following papers
-that introduced new methodology as part of the application section: Yinghan Chen
-et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
+that introduced new methodology as part of the application section: Jimenez, A.,
+Balamuta, J. J., & Culpepper, S. A. (2023) <doi:10.1111/bmsp.12307>, Culpepper,
+S. A., & Balamuta, J. J. (2021) <doi:10.1080/00273171.2021.1985949>, Yinghan
+Chen et al. (2021) <doi:10.1007/s11336-021-09750-9>, Yinyin Chen et al. (2020)
 <doi:10.1007/s11336-019-09693-2>, Culpepper, S. A. (2019a)
 <doi:10.1007/s11336-019-09683-4>, Culpepper, S. A. (2019b)
 <doi:10.1007/s11336-018-9643-8>, Culpepper, S. A., & Chen, Y. (2019)

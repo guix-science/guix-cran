@@ -12637,16 +12637,15 @@ allows for both mean and overdispersion covariates.")
 (define-public r-cormid
   (package
     (name "r-cormid")
-    (version "0.1.9")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "CorMID" version))
        (sha256
-        (base32 "08dr6c3pvich7arbq0ak9s356s29ynw4v6s1mz5bw9kddrrlswlq"))))
+        (base32 "1hj5sr9ig3qaqvc0ah8bqizyjrmwn9c8lm6b9hpamfnm1m9llcy8"))))
     (properties `((upstream-name . "CorMID")))
     (build-system r-build-system)
-    (propagated-inputs (list r-rdisop r-plyr))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/janlisec/CorMID")
     (synopsis "Correct Mass Isotopologue Distribution Vectors")
@@ -18111,6 +18110,29 @@ sensitivity analyses under dependent censoring (Yeh et al 2023)
 <DOI:10.3390/biomedicines11030797>.")
     (license license:gpl2)))
 
+(define-public r-compositionalrf
+  (package
+    (name "r-compositionalrf")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CompositionalRF" version))
+       (sha256
+        (base32 "0brm03d9ypdc9k1klwmwb818gj7b1jr2z3968gs1qnnd8r8sr0bn"))))
+    (properties `((upstream-name . "CompositionalRF")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rfast r-multivariaterandomforest r-foreach
+                             r-doparallel r-compositional))
+    (home-page "https://cran.r-project.org/package=CompositionalRF")
+    (synopsis "Multivariate Random Forest with Compositional Responses")
+    (description
+     "Non linear regression with compositional responses and Euclidean predictors is
+performed.  The compositional data are first transformed using the additive
+log-ratio transformation, and then the multivariate random forest of Rahman R.,
+Otridge J. and Pal R. (2017), <doi:10.1093/bioinformatics/btw765>, is applied.")
+    (license license:gpl2+)))
+
 (define-public r-compositionalml
   (package
     (name "r-compositionalml")
@@ -18907,6 +18929,38 @@ category, Kappa (unweighted), Kappa (quadratic weighted) and symmetry tests
 Edelstein DW, Castle PE. Estimating the agreement and diagnostic accuracy of two
 diagnostic tests when one test is conducted on only a subsample of specimens.
 Stat Med.  2012 Feb 28; 31(5) <doi:10.1002/sim.4422>.")
+    (license license:gpl3)))
+
+(define-public r-comparer
+  (package
+    (name "r-comparer")
+    (version "0.2.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "comparer" version))
+       (sha256
+        (base32 "0jyqnma93z9fihcnpgxm6d6r2dah15ap5ii3l1d3ddbhs1b56y37"))))
+    (properties `((upstream-name . "comparer")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-r6
+                             r-progress
+                             r-plyr
+                             r-mixopt
+                             r-gaupro))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/CollinErickson/comparer")
+    (synopsis "Compare Output and Run Time")
+    (description
+     "Quickly run experiments to compare the run time and output of code blocks.  The
+function mbc() can make fast comparisons of code, and will calculate statistics
+comparing the resulting outputs.  It can be used to compare model fits to the
+same data or see which function runs faster.  The R6 class ffexp$new() runs a
+function using all possible combinations of selected inputs.  This is useful for
+comparing the effect of different parameter values.  It can also run in parallel
+and automatically save intermediate results, which is very useful for long
+computations.")
     (license license:gpl3)))
 
 (define-public r-comparemultiplemodels
@@ -30574,6 +30628,38 @@ estimates for both, and additional utilities such as plotting dose-response
 data.  For dev version and change history, see @code{GitHub} assaforon/cir.")
     (license license:gpl2)))
 
+(define-public r-cipostselect
+  (package
+    (name "r-cipostselect")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "CIpostSelect" version))
+       (sha256
+        (base32 "199rci0cm584zfqv264vvid0bmc8k6dj3nknia4i6c18331jg5sx"))))
+    (properties `((upstream-name . "CIpostSelect")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tictoc
+                             r-mlbench
+                             r-mass
+                             r-magrittr
+                             r-glmnet
+                             r-ggplot2
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=CIpostSelect")
+    (synopsis "Confidence Interval Post-Selection of Variable")
+    (description
+     "Calculates confidence intervals after variable selection using repeated data
+splits.  The package offers methods to address the challenges of post-selection
+inference, ensuring more accurate confidence intervals in models involving
+variable selection.  The two main functions are lmps', which records the
+different models selected across multiple data splits as well as the
+corresponding coefficient estimates, and cips', which takes the lmps object as
+input to select variables and perform inferences using two types of voting.")
+    (license license:expat)))
+
 (define-public r-ciplot
   (package
     (name "r-ciplot")
@@ -33463,13 +33549,13 @@ your local computer.")
 (define-public r-cheapr
   (package
     (name "r-cheapr")
-    (version "0.9.3")
+    (version "0.9.8")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cheapr" version))
        (sha256
-        (base32 "1zf9jnwcvpw9zlh7dyrmw4wwjc3fxll0q3mkivd5q5vikmzvy0y7"))))
+        (base32 "0lgnsaq2p9vxi1fshnziag57fy9ajr5jxykkhk6dbx88z4if9dxq"))))
     (properties `((upstream-name . "cheapr")))
     (build-system r-build-system)
     (propagated-inputs (list r-cpp11 r-collapse))
@@ -37312,13 +37398,13 @@ convolution kernel density estimator.")
 (define-public r-cctest
   (package
     (name "r-cctest")
-    (version "1.0.0")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cctest" version))
        (sha256
-        (base32 "1zw5f7rsswsh30g21jz6fql7brislgrpd3icld5p9mqqi1zy55x5"))))
+        (base32 "1pcfilz9a06vlgj4g25aghpacdqmfwghqahlsf3h1hnxfzi50y4z"))))
     (properties `((upstream-name . "cctest")))
     (build-system r-build-system)
     (home-page "https://cran.r-project.org/package=cctest")
@@ -37327,7 +37413,7 @@ convolution kernel density estimator.")
      "This package provides a simple interface for multivariate correlation analysis
 that unifies various classical statistical procedures including t-tests, tests
 in univariate and multivariate linear models, parametric and nonparametric tests
-for correlation, Kruskal-Wallis tests, standard non-exact versions of Wilcoxon
+for correlation, Kruskal-Wallis tests, common approximate versions of Wilcoxon
 rank-sum and signed rank tests, chi-squared tests of independence, score tests
 of particular hypotheses in generalized linear models, canonical correlation
 analysis and linear discriminant analysis.")

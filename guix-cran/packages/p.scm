@@ -22341,16 +22341,17 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
 (define-public r-pkbioanalysis
   (package
     (name "r-pkbioanalysis")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PKbioanalysis" version))
        (sha256
-        (base32 "11ykay7c500i8y78qv73irqpgch5warl50xz3d1fwh303brcvisn"))))
+        (base32 "104sm6wpplc0cljm6xdaif6ck4macix880nzx0hp9kb0w9f91066"))))
     (properties `((upstream-name . "PKbioanalysis")))
     (build-system r-build-system)
-    (propagated-inputs (list r-units
+    (propagated-inputs (list r-yaml
+                             r-units
                              r-tidyselect
                              r-tidyr
                              r-stringr
@@ -22359,7 +22360,6 @@ detailed explanation of pharmacokinetic parameters, see \"Gabrielsson and Weiner
                              r-shinyalert
                              r-shiny
                              r-rlang
-                             r-rappdirs
                              r-htmltools
                              r-glue
                              r-ggplot2
@@ -29350,13 +29350,13 @@ in Signorelli et al. (2021) <doi:10.1002/sim.9178>.")
 (define-public r-penaltylearning
   (package
     (name "r-penaltylearning")
-    (version "2024.1.25")
+    (version "2024.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "penaltyLearning" version))
        (sha256
-        (base32 "0nvh5szn27dsvdr80ldgq9d2bqvfplp4hdcwgv5f6g2lfcsmiil8"))))
+        (base32 "0fip36rx11w9n3q17139gxdm12bknclx287r1qlxandr7hwpac9g"))))
     (properties `((upstream-name . "penaltyLearning")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-data-table))
@@ -30344,13 +30344,13 @@ random detachment.")
 (define-public r-peaksegoptimal
   (package
     (name "r-peaksegoptimal")
-    (version "2024.1.24")
+    (version "2024.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegOptimal" version))
        (sha256
-        (base32 "0xh7z8h74jiz5yaj3hkgm1j3my6518fyj5235w54462ahdsafz7m"))))
+        (base32 "1vrfj0kv8lhhw72zd9c4r27bhm0l1db1b1c5a9xxjsqx2bsjs68v"))))
     (properties `((upstream-name . "PeakSegOptimal")))
     (build-system r-build-system)
     (propagated-inputs (list r-penaltylearning))
@@ -30360,21 +30360,21 @@ random detachment.")
      "Computes optimal changepoint models using the Poisson likelihood for
 non-negative count data, subject to the @code{PeakSeg} constraint: the first
 change must be up, second change down, third change up, etc.  For more info
-about the models and algorithms, read \"A log-linear time algorithm for
-constrained changepoint detection\" <@code{arXiv:1703.03352>} by TD Hocking et
-al.")
+about the models and algorithms, read \"Constrained Dynamic Programming and
+Supervised Penalty Learning Algorithms for Peak Detection\"
+<https://jmlr.org/papers/v21/18-843.html> by TD Hocking et al.")
     (license license:gpl3)))
 
 (define-public r-peaksegjoint
   (package
     (name "r-peaksegjoint")
-    (version "2024.6.27")
+    (version "2024.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegJoint" version))
        (sha256
-        (base32 "0rlm9adjrnbh58j7vb6lvqam13crgcrdcfs7rl7cbarfj3k9d8nr"))))
+        (base32 "176pzc2qhnv6xq00chjnavlbav42nmr64hiib73h3cia4x7v9693"))))
     (properties `((upstream-name . "PeakSegJoint")))
     (build-system r-build-system)
     (propagated-inputs (list r-penaltylearning r-peakerror))
@@ -30417,13 +30417,13 @@ ICML2015.")
 (define-public r-peaksegdisk
   (package
     (name "r-peaksegdisk")
-    (version "2023.11.27")
+    (version "2024.10.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "PeakSegDisk" version))
        (sha256
-        (base32 "133ig07ah1hxzn3hlxhd3g1j5kizpsxf5z8h5d071gk7f9l3yy9c"))))
+        (base32 "05lvfcrm51cnz1phxmmz7kgk18951jm4pkmsjzypph1q7sfr1pvk"))))
     (properties `((upstream-name . "PeakSegDisk")))
     (build-system r-build-system)
     (propagated-inputs (list r-data-table))

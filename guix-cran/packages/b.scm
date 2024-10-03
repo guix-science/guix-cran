@@ -3661,13 +3661,13 @@ effects if necessary (see for example <doi:10.1186/s12874-015-0046-6> and
 (define-public r-brms-mmrm
   (package
     (name "r-brms-mmrm")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "brms.mmrm" version))
        (sha256
-        (base32 "1v64wx6nylzrfzby8p7l3s1dn6naqnjw7vamlwm12xvq303xgap1"))))
+        (base32 "0y0bhdkpfs5xx9a5dcs00a69bzwiarf90ap34j07ym0f19fsnj0n"))))
     (properties `((upstream-name . "brms.mmrm")))
     (build-system r-build-system)
     (propagated-inputs (list r-zoo
@@ -3798,13 +3798,13 @@ each group can be compared.  Some plotting capabilities are also included.")
 (define-public r-brisc
   (package
     (name "r-brisc")
-    (version "1.0.5")
+    (version "1.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BRISC" version))
        (sha256
-        (base32 "06ppm03clgnsqj6r9qq6fmz609sbigz35iw1qp1lijc4yvwlpr49"))))
+        (base32 "1pmi34xfiij053pqr04r13679khrilqmhw7jj527hbqdwnk53gjr"))))
     (properties `((upstream-name . "BRISC")))
     (build-system r-build-system)
     (propagated-inputs (list r-rdist r-rann r-pbapply r-matrixstats))
@@ -24890,13 +24890,13 @@ original set of variables.")
 (define-public r-batss
   (package
     (name "r-batss")
-    (version "0.7.14")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "BATSS" version))
        (sha256
-        (base32 "1252hxqdplbk12m6ri9fh4p4zy8q561n8ix6m2qy404idggklnxc"))))
+        (base32 "1rkzw4sz3qn09ihjwnwj35gafh196gcnl75xqjjimga5bd7y7m7s"))))
     (properties `((upstream-name . "BATSS")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-r-utils r-plyr r-cli r-abind))

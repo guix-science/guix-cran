@@ -2804,6 +2804,47 @@ Classification of Occupations which is used to organise information on labour
 and jobs.")
     (license license:gpl2+)))
 
+(define-public r-isca
+  (package
+    (name "r-isca")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ISCA" version))
+       (sha256
+        (base32 "1n0p009r1296354vd7k8xg9yiy8a8xzqa1a2y4d2ig5wyhnypnzx"))))
+    (properties `((upstream-name . "ISCA")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyselect
+                             r-tibble
+                             r-stringr
+                             r-plyr
+                             r-magrittr
+                             r-hmisc
+                             r-e1071
+                             r-dplyr
+                             r-data-table
+                             r-broom))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=ISCA")
+    (synopsis "Compare Heterogeneous Social Groups")
+    (description
+     "The Inductive Subgroup Comparison Approach ('ISCA') offers a way to compare
+groups that are internally differentiated and heterogeneous.  It starts by
+identifying the social structure of a reference group against which a minority
+or another group is to be compared, yielding empirical subgroups to which
+minority members are then matched based on how similar they are.  The modelling
+of specific outcomes then occurs within specific subgroups in which majority and
+minority members are matched.  ISCA is characterized by its data-driven,
+probabilistic, and iterative approach and combines fuzzy clustering, Monte Carlo
+simulation, and regression analysis.  ISCA_random_assignments() assigns subjects
+probabilistically to subgroups.  ISCA_clustertable() provides summary statistics
+of each cluster across iterations.  ISCA_modeling() provides Ordinary Least
+Squares regression results for each cluster across iterations.  For further
+details please see Drouhot (2021) <doi:10.1086/712804>.")
+    (license license:gpl3+)))
+
 (define-public r-isatabr
   (package
     (name "r-isatabr")
@@ -7794,13 +7835,13 @@ hashtag, popularity, user or location, and to access public users profile data."
 (define-public r-instantiate
   (package
     (name "r-instantiate")
-    (version "0.2.2")
+    (version "0.2.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "instantiate" version))
        (sha256
-        (base32 "0nmx2r0hkzbm5bzz28yvzdphkxhzcnd9dgi88wixzkbnmhny83d2"))))
+        (base32 "1myd80di5w6d3qxfhhnwkhr98ck8xqybxz7rw37q89m8ik2n9yfz"))))
     (properties `((upstream-name . "instantiate")))
     (build-system r-build-system)
     (propagated-inputs (list r-rlang r-fs r-callr))

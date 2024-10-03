@@ -5215,21 +5215,23 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
 (define-public r-weightedcluster
   (package
     (name "r-weightedcluster")
-    (version "1.6-4")
+    (version "1.8-0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "WeightedCluster" version))
        (sha256
-        (base32 "1ayi50wjy7grzapfnyvmbi6rz7amfhdd1nxh56h1s4anv7rf20c4"))))
+        (base32 "1sgaz5r92xslhcr2wsc020938fzj0j0b3zl3bpr8npdwz1bwhim0"))))
     (properties `((upstream-name . "WeightedCluster")))
     (build-system r-build-system)
-    (propagated-inputs (list r-traminer
+    (propagated-inputs (list r-vegclust
+                             r-traminer
                              r-rcolorbrewer
                              r-progressr
                              r-nnet
                              r-future
                              r-foreach
+                             r-fastcluster
                              r-dofuture
                              r-cluster))
     (native-inputs (list r-knitr))
@@ -5240,7 +5242,8 @@ weights.  This package has been developed using algorithm of Armstrong (1989)
 PAM algorithm as well as functions for aggregating replicated cases, computing
 cluster quality measures for a range of clustering solutions and plotting
 (fuzzy) clusters of state sequences.  Parametric bootstraps methods to validate
-typology of sequences are also provided.")
+typology of sequences are also provided.  Finally, it provides a fuzzy and crisp
+CLARA algorithm to cluster large database with sequence analysis.")
     (license license:gpl2+)))
 
 (define-public r-weightedcl

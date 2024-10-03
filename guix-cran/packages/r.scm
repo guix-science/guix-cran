@@ -6742,13 +6742,13 @@ An overview of these models is given in Snijders (2017),
 (define-public r-rsi
   (package
     (name "r-rsi")
-    (version "0.2.1")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rsi" version))
        (sha256
-        (base32 "03vipq6ykq5px705r1ixaj02770rh6wpmk0zjw73zr04dzrg878n"))))
+        (base32 "1d71nfal751xa5inairgh7qhmm1qfpbnvhz9vhdnzwffwfbdz9m9"))))
     (properties `((upstream-name . "rsi")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -20076,13 +20076,13 @@ information about using the API please visit <https://developer.linkedin.com/>."
 (define-public r-rlibkriging
   (package
     (name "r-rlibkriging")
-    (version "0.9-0.1")
+    (version "0.9-0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rlibkriging" version))
        (sha256
-        (base32 "0jr2dwsbsb18v2mp3pdzqjv9knxrrj4aypi9sb0fgv5pkfdyv3rp"))))
+        (base32 "1d1i1xk2vd80nc8w6n8gxy3a5mxxvbb7vkk425mh68c5qlwgxhrk"))))
     (properties `((upstream-name . "rlibkriging")))
     (build-system r-build-system)
     (inputs (list gfortran gcc cmake))
@@ -21593,13 +21593,13 @@ implemented with @code{JavaScript} for node and browsers.")
 (define-public r-rix
   (package
     (name "r-rix")
-    (version "0.12.3")
+    (version "0.12.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "rix" version))
        (sha256
-        (base32 "0njfyznxyvy7dhjvw4x5h3bsi14nf81cv522whj2p3vdh1950w6m"))))
+        (base32 "0m2njhb9cbl9qvrvwxjjh07416diw4r5zbdnrdxv0szpb7s58i09"))))
     (properties `((upstream-name . "rix")))
     (build-system r-build-system)
     (propagated-inputs (list r-sys r-jsonlite r-curl r-codetools))
@@ -30479,13 +30479,13 @@ analysis, gene-set tests, and binary random data generation.")
 (define-public r-repeated
   (package
     (name "r-repeated")
-    (version "1.1.9")
+    (version "1.1.10")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "repeated" version))
        (sha256
-        (base32 "0agq3f1py5qif5vcfa14k3phg7i3bh82kss3h86znisc196iypcv"))))
+        (base32 "09zpjw2f44vabhxdk2mgcr8xx8hyxgfmszgdnavg2xj77dc948wr"))))
     (properties `((upstream-name . "repeated")))
     (build-system r-build-system)
     (propagated-inputs (list r-rmutil))
@@ -36331,13 +36331,13 @@ using the open-source experiment builder @code{OpenSesame}
 (define-public r-readbrukerflexdata
   (package
     (name "r-readbrukerflexdata")
-    (version "1.9.2")
+    (version "1.9.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "readBrukerFlexData" version))
        (sha256
-        (base32 "1zp7ml0rf7ary0lmg6b3hjpivpws4fn3gg4ppg842zcq5nrrzy0i"))))
+        (base32 "122q01l08isdkhlf013drcyjnc5rqr8wnavj2xr465r58xk79bwj"))))
     (properties `((upstream-name . "readBrukerFlexData")))
     (build-system r-build-system)
     (home-page "https://strimmerlab.github.io/software/maldiquant/")
@@ -42261,6 +42261,28 @@ and continuous treatment settings.  A description of the methods is given in Liu
 (2022) <@code{arXiv:2212.05925>}.")
     (license license:expat)))
 
+(define-public r-rcatch22
+  (package
+    (name "r-rcatch22")
+    (version "0.2.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "Rcatch22" version))
+       (sha256
+        (base32 "1lj8md9s9c56w26h2sapvvzlxhgdxwb41xs75fcxzj3mdzvm1ywl"))))
+    (properties `((upstream-name . "Rcatch22")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-rcpp))
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=Rcatch22")
+    (synopsis "Calculation of 22 Canonical Time-Series Characteristics")
+    (description
+     "Calculate 22 summary statistics coded in C on time-series vectors to enable
+pattern detection, classification, and regression applications in the feature
+space as proposed by <doi:10.1007/s10618-019-00647-x>.")
+    (license license:gpl3)))
+
 (define-public r-rcartocolor
   (package
     (name "r-rcartocolor")
@@ -46881,13 +46903,13 @@ are described in Bladen (2022) <https://digitalcommons.usu.edu/etd/8587/>.")
 (define-public r-randomforestsgls
   (package
     (name "r-randomforestsgls")
-    (version "0.1.4")
+    (version "0.1.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "RandomForestsGLS" version))
        (sha256
-        (base32 "1viq8vv4f0l0ywcr9s1n1vk23a917yj35lgvrpac9rf0vvk70an7"))))
+        (base32 "0xyryzlqc1miradkhj2z717ws02iasz0xnc95k1iiaw0xrpybkmz"))))
     (properties `((upstream-name . "RandomForestsGLS")))
     (build-system r-build-system)
     (propagated-inputs (list r-randomforest r-pbapply r-matrixstats r-brisc))
@@ -46897,7 +46919,7 @@ are described in Bladen (2022) <https://digitalcommons.usu.edu/etd/8587/>.")
     (description
      "Fits non-linear regression models on dependant data with Generalised Least
 Square (GLS) based Random Forest (RF-GLS) detailed in Saha, Basu and Datta
-(2020) <@code{arXiv:2007.15421>}.")
+(2021) <doi:10.1080/01621459.2021.1950003>.")
     (license license:gpl2+)))
 
 (define-public r-randomforestexplainer

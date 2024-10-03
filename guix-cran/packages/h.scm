@@ -2163,13 +2163,13 @@ be primarily used internally by other hubverse packages.  See Reich et al.
 (define-public r-hubensembles
   (package
     (name "r-hubensembles")
-    (version "0.1.8")
+    (version "0.1.9")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "hubEnsembles" version))
        (sha256
-        (base32 "0fcx8kvf9g85am34fcb48lvw1ljjvv7lmn8c8lvlv832mr62p1mx"))))
+        (base32 "1kl3m41mfi1r47sv1m4w8kdk6zqq3jizr2hjv5wbvsgdrcxqc7nx"))))
     (properties `((upstream-name . "hubEnsembles")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -5214,6 +5214,30 @@ fixed effects and random effects.  We provide a fast, stable, and scalable
 solver to the HMME without computing matrix inverse.  See Kim (2017)
 <@code{arXiv:1710.09663>} for more details.")
     (license license:gpl3+)))
+
+(define-public r-hmmcopula
+  (package
+    (name "r-hmmcopula")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "HMMcopula" version))
+       (sha256
+        (base32 "0ja2lyviswy327713hlrdwx7m9h2fbcv46f4sln0baqgglx739pj"))))
+    (properties `((upstream-name . "HMMcopula")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-mvtnorm r-foreach r-doparallel r-copula))
+    (home-page "https://cran.r-project.org/package=HMMcopula")
+    (synopsis
+     "Markov Regime Switching Copula Models Estimation and Goodness-of-Fit")
+    (description
+     "Estimation procedures and goodness-of-fit test for several Markov regime
+switching models and mixtures of bivariate copula models.  The goodness-of-fit
+test is based on a Cramer-von Mises statistic and uses Rosenblatt's transform
+and parametric bootstrap to estimate the p-value.  The proposed methodologies
+are described in Nasri, Remillard and Thioub (2020) <doi:10.1002/cjs.11534>.")
+    (license license:gpl2+)))
 
 (define-public r-hmm-discnp
   (package

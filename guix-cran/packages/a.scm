@@ -2242,6 +2242,29 @@ in different, independent functions, in order to let the user decide which steps
 of the analysis to perform and which plot to produce.")
     (license license:expat)))
 
+(define-public r-autogam
+  (package
+    (name "r-autogam")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "autogam" version))
+       (sha256
+        (base32 "15wvyiya6hawkw1zz6q672rzwlgwzficja7q4fg1p1hsvj8dhp7j"))))
+    (properties `((upstream-name . "autogam")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-purrr r-mgcv r-dplyr))
+    (home-page "https://github.com/tripartio/autogam")
+    (synopsis "Automate the Creation of Generalized Additive Models (GAMs)")
+    (description
+     "This wrapper package for mgcv makes it easier to create high-performing
+Generalized Additive Models (GAMs).  With its central function autogam(), by
+entering just a dataset and the name of the outcome column as inputs,
+@code{AutoGAM} tries to automate the procedure of configuring a highly accurate
+GAM which performs at reasonably high speed, even for large datasets.")
+    (license license:expat)))
+
 (define-public r-autofrk
   (package
     (name "r-autofrk")
@@ -9221,13 +9244,13 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
 (define-public r-apis
   (package
     (name "r-apis")
-    (version "2.0.4")
+    (version "2.0.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "APIS" version))
        (sha256
-        (base32 "02s7cpzsp53wk3k4cm6l3hpkc3f191zhg22vwbf8va7dni3d24rq"))))
+        (base32 "13q8bynli3ajdbv95p2c73m693fh6js7x4gwb2lkw31vqy3m0q8x"))))
     (properties `((upstream-name . "APIS")))
     (build-system r-build-system)
     (propagated-inputs (list r-shinythemes
@@ -9250,7 +9273,7 @@ exposure/outcome, or both.  See <https://cran.r-project.org/package=episensr>.")
     (description
      "Parentage assignment package.  Parentage assignment is performed based on
 observed average Mendelian transmission probability distributions or Exclusion.
-The main functions of this package are the function APIS_2n(), APIS_3n and
+The main functions of this package are the function APIS_2n(), APIS_3n() and
 launch_APIShiny(), which perform parentage assignment.")
     (license (list license:gpl2+ license:gpl3+))))
 
@@ -16098,6 +16121,28 @@ packages ALDEx2', @code{edgeR} and DESeq2 (Fernandes et al (2014)
 <doi:10.1186/2049-2618-2-15>, Anders et al. (2013)<doi:10.1038/nprot.2013.099>).")
     (license license:gpl3+)))
 
+(define-public r-ai
+  (package
+    (name "r-ai")
+    (version "1.0.4.44")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ai" version))
+       (sha256
+        (base32 "1wdvia9gnr70wvdqfg3kh4ndfr0lwsyv1mccklfpyybj90pc1gds"))))
+    (properties `((upstream-name . "ai")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-party r-metrics r-mass r-class r-catools))
+    (home-page "https://github.com/urniaz/ai")
+    (synopsis "Build, Predict and Analyse Artificial Intelligence Models")
+    (description
+     "An interface for data processing, building models, predicting values and
+analysing outcomes.  Fitting Linear Models, Robust Fitting of Linear Models,
+k-Nearest Neighbor Classification, 1-Nearest Neighbor Classification, and
+Conditional Inference Trees are available.")
+    (license license:gpl3)))
+
 (define-public r-ahw
   (package
     (name "r-ahw")
@@ -18660,13 +18705,13 @@ Kislev (2020) <doi:10.5539/ijms.v12n4p63>.")
 (define-public r-adoptr
   (package
     (name "r-adoptr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "adoptr" version))
        (sha256
-        (base32 "12ihlvnnpnkc6w12bhrppf6cc9y5qb3x9k21n558i9h929l7052i"))))
+        (base32 "1l3llwc0pp468kj4548yx9syj7qfvwqbxs655lc58k5qzwlk73xk"))))
     (properties `((upstream-name . "adoptr")))
     (build-system r-build-system)
     (propagated-inputs (list r-nloptr r-glue))
@@ -21571,6 +21616,35 @@ output that cannot be published because of substantial disclosure risk.  A paper
 about the tool was presented at the UNECE Expert Meeting on Statistical Data
 Confidentiality 2023; see
 <https://uwe-repository.worktribe.com/output/11060964>.")
+    (license license:expat)))
+
+(define-public r-acorn
+  (package
+    (name "r-acorn")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "acoRn" version))
+       (sha256
+        (base32 "0p1a6qn8hhgc6sqprzs2xy3858llmv9q74b06q16rkb5vqi16bkk"))))
+    (properties `((upstream-name . "acoRn")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr r-stringi r-data-table))
+    (home-page "https://cran.r-project.org/package=acoRn")
+    (synopsis
+     "Exclusion-Based Parentage Assignment Using Multilocus Genotype Data")
+    (description
+     "Exclusion-based parentage assignment is essential for studies in biodiversity
+conservation and breeding programs - Kang Huang, Rui Mi, Derek W Dunn, Tongcheng
+Wang, Baoguo Li, (2018), <doi:10.1534/genetics.118.301592>.  The tool compares
+multilocus genotype data of potential parents and offspring, identifying likely
+parentage relationships while accounting for genotyping errors, missing data,
+and duplicate genotypes. @code{acoRn} includes two algorithms: one generates
+synthetic genotype data based on user-defined parameters, while the other
+analyzes existing genotype data to identify parentage patterns.  The package is
+versatile, applicable to diverse organisms, and offers clear visual outputs,
+making it a valuable resource for researchers.")
     (license license:expat)))
 
 (define-public r-acne

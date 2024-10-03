@@ -915,16 +915,22 @@ package is implementation of method proposed in Xu et al (2019)
 (define-public r-gwalkr
   (package
     (name "r-gwalkr")
-    (version "0.1.5")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GWalkR" version))
        (sha256
-        (base32 "0j81m6x6w654kd659jswj4283ps6z12r4jpav2qyzslkhhxbmp2a"))))
+        (base32 "0d6f1br5g28z6qbi41y3sfglci941lzs38hm9cjr1vlxg65dnzav"))))
     (properties `((upstream-name . "GWalkR")))
     (build-system r-build-system)
-    (propagated-inputs (list r-shiny r-openssl r-jsonlite r-htmlwidgets))
+    (propagated-inputs (list r-shinycssloaders
+                             r-shiny
+                             r-openssl
+                             r-jsonlite
+                             r-htmlwidgets
+                             r-duckdb
+                             r-dbi))
     (home-page "https://github.com/Kanaries/GWalkR/")
     (synopsis "Interactive Exploratory Data Analysis Tool")
     (description
@@ -10321,13 +10327,13 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 (define-public r-gnar
   (package
     (name "r-gnar")
-    (version "1.1.3")
+    (version "1.1.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GNAR" version))
        (sha256
-        (base32 "1kffr4yxfl7af5vc06nx3zw1zcwbj3mxcsn44zgdz9yfvw3ppcjq"))))
+        (base32 "0ma7cp0ikpihmjmi3m8h51pg897287xbkwiinpairrsmiz0l711i"))))
     (properties `((upstream-name . "GNAR")))
     (build-system r-build-system)
     (propagated-inputs (list r-wordcloud
@@ -10345,8 +10351,8 @@ e.g. Kanzow and Facchinei (2010), <doi:10.1007/s10479-009-0653-x>.")
 time series models which take account of network structure, potentially with
 exogenous variables.  Such models are described in Knight et al. (2020)
 <doi:10.18637/jss.v096.i05> and Nason and Wei (2021) <doi:10.1111/rssa.12875>.
-Diagnostic tools for GNAR(X) models can be found in Nason et al (2023)
-<@code{arXiv:2312.00530>}.")
+Diagnostic tools for GNAR(X) models can be found in Nason et al. (2023)
+<doi:10.48550/@code{arXiv.2312.00530>}.")
     (license license:gpl2)))
 
 (define-public r-gmwt
@@ -12071,13 +12077,13 @@ generalized estimating equations for cluster correlated data.")
 (define-public r-glmtlp
   (package
     (name "r-glmtlp")
-    (version "2.0.1")
+    (version "2.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "glmtlp" version))
        (sha256
-        (base32 "0ax3jhbib75gzp5a2y4nj80qss4qmn65rra8bsnkmwgcn4qg8xja"))))
+        (base32 "1kdjhm29wglpn3xpr10ypx953m4y82ipf2q3qqfqk50k2g0gcy0k"))))
     (properties `((upstream-name . "glmtlp")))
     (build-system r-build-system)
     (propagated-inputs (list r-ggplot2 r-foreach r-doparallel))
@@ -14108,13 +14114,13 @@ reading.")
 (define-public r-gistools
   (package
     (name "r-gistools")
-    (version "1.0-1")
+    (version "1.0-2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "GISTools" version))
        (sha256
-        (base32 "1jdhmvwi7cs9dnmngn5iqim245r3mdd4jscvy9j65q89znh76wl9"))))
+        (base32 "024ngx3r0c38ss9qzali6nw55sgl2jqksspjz6v2drgaadkxczlz"))))
     (properties `((upstream-name . "GISTools")))
     (build-system r-build-system)
     (propagated-inputs (list r-sp r-sf r-rcolorbrewer r-mass))
@@ -15458,6 +15464,28 @@ differential expression results, commonly used in RNA-seq and similar analyses.
 This tool helps create high-quality visual representations of data using the
 ggplot2 framework Wickham (2016) <doi:10.1007/978-3-319-24277-4>.")
     (license license:expat)))
+
+(define-public r-ggview
+  (package
+    (name "r-ggview")
+    (version "0.2.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggview" version))
+       (sha256
+        (base32 "0jdpr4bmw9kzq41h42r1i4ravfvkv65n2xkmqn6gm23bhdwyngmj"))))
+    (properties `((upstream-name . "ggview")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi r-ggplot2))
+    (home-page "https://github.com/idmn/ggview")
+    (synopsis "'ggplot2' Picture Previewer")
+    (description
+     "Preview what a ggplot2 plot would look like if you save it to a file.  Attach
+picture dimensions as a canvas() element and get an instant preview.  These
+dimensions will then be used when you save the plot.")
+    (license (list license:gpl2
+                   (license:fsdg-compatible "file://LICENSE")))))
 
 (define-public r-ggversa
   (package
@@ -18771,13 +18799,13 @@ and radii.")
 (define-public r-ggfacto
   (package
     (name "r-ggfacto")
-    (version "0.3.1")
+    (version "0.3.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ggfacto" version))
        (sha256
-        (base32 "15q2v52i0dsp8skcgznsy6mp7jwfh9qrball7vh3n1xc3d01yl8s"))))
+        (base32 "1cdj34y5saf2d5cwnigmxlfyny9alcl84cyhrybv5yqykc75sim8"))))
     (properties `((upstream-name . "ggfacto")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -19237,6 +19265,33 @@ visualizations as required.  Users can create corset plots using data in either
 wide or long format using the functions gg_corset() or gg_corset_elongated(),
 respectively.")
     (license license:expat)))
+
+(define-public r-ggcompare
+  (package
+    (name "r-ggcompare")
+    (version "0.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "ggcompare" version))
+       (sha256
+        (base32 "074zg2bnalfy0in9cz83b0di23hnapzq1rfap08dwn36g7clr938"))))
+    (properties `((upstream-name . "ggcompare")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-ggplot2))
+    (home-page "https://hmu-wh.github.io/ggcompare/")
+    (synopsis "Mean Comparison in 'ggplot2'")
+    (description
+     "Add mean comparison annotations to a ggplot'.  This package provides an easy way
+to indicate if two or more groups are significantly different in a ggplot'.
+Usually you do not need to specify the test method, you only need to tell
+stat_compare() whether you want to perform a parametric test or a nonparametric
+test, and stat_compare() will automatically choose the appropriate test method
+based on your data.  For comparisons between two groups, the p-value is
+calculated by t-test (parametric) or Wilcoxon rank sum test (nonparametric).
+For comparisons among more than two groups, the p-value is calculated by One-way
+ANOVA (parametric) or Kruskal-Wallis test (nonparametric).")
+    (license license:artistic2.0)))
 
 (define-public r-ggcleveland
   (package

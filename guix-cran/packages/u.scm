@@ -3190,13 +3190,13 @@ procedures based on UMP test and two-tailed procedures based on UMPU test).")
 (define-public r-umoments
   (package
     (name "r-umoments")
-    (version "0.1.1")
+    (version "1.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Umoments" version))
        (sha256
-        (base32 "089d0xmsp0419mxjp6fs0s1palvdkr0i5dzqckcn6r2kjqj7izjg"))))
+        (base32 "0g19371lg3rk2gsfjxxbb9j6nrq20gn5m3vdh2z86756yyhcn0yy"))))
     (properties `((upstream-name . "Umoments")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))

@@ -15,7 +15,6 @@
   #:use-module (gnu packages libreoffice)
   #:use-module (gnu packages docker)
   #:use-module (gnu packages python)
-  #:use-module (gnu packages machine-learning)
   #:use-module (gnu packages julia)
   #:use-module (gnu packages java)
   #:use-module (gnu packages pkg-config)
@@ -12504,13 +12503,13 @@ flow.")
 (define-public r-disaggregation
   (package
     (name "r-disaggregation")
-    (version "0.3.0")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "disaggregation" version))
        (sha256
-        (base32 "052l1bky89a9cb6bh22lcksijbri9wdv3pw4wh51c7a8ah9zdqbr"))))
+        (base32 "02sn3byrw2smflimycdlax8yd0wf42qlmyjlknc74v1zc69xaw1h"))))
     (properties `((upstream-name . "disaggregation")))
     (build-system r-build-system)
     (propagated-inputs (list r-tmb
@@ -12519,6 +12518,7 @@ flow.")
                              r-splancs
                              r-sparsemvn
                              r-sf
+                             r-rspde
                              r-rcppeigen
                              r-matrix
                              r-ggplot2
@@ -13570,50 +13570,6 @@ can detect.  Users provide serial dilution results in the format of counts of
 positive and total reaction wells.  The output is the estimated assay
 sensitivity and the copy number per well in the initial dilute.")
     (license license:gpl2)))
-
-(define-public r-digitaldlsorter
-  (package
-    (name "r-digitaldlsorter")
-    (version "1.1.0")
-    (source
-     (origin
-       (method url-fetch)
-       (uri (cran-uri "digitalDLSorteR" version))
-       (sha256
-        (base32 "1rlp4a52x47a365k7pbfm799wii1i0012g7mpfps8l3pb8sh2hzi"))))
-    (properties `((upstream-name . "digitalDLSorteR")))
-    (build-system r-build-system)
-    (inputs (list tensorflow python))
-    (propagated-inputs (list r-zinbwave
-                             r-tidyr
-                             r-tensorflow
-                             r-summarizedexperiment
-                             r-singlecellexperiment
-                             r-scuttle
-                             r-scran
-                             r-s4vectors
-                             r-rlang
-                             r-reticulate
-                             r-reshape2
-                             r-pbapply
-                             r-matrix
-                             r-keras
-                             r-gtools
-                             r-grr
-                             r-ggpubr
-                             r-ggplot2
-                             r-dplyr))
-    (native-inputs (list r-knitr))
-    (home-page "https://diegommcc.github.io/digitalDLSorteR/")
-    (synopsis "Deconvolution of Bulk RNA-Seq Data Based on Deep Learning")
-    (description
-     "Deconvolution of bulk RNA-Seq data using context-specific deconvolution models
-based on Deep Neural Networks using @code{scRNA-Seq} data as input.  These
-models are able to make accurate estimates of the cell composition of bulk
-RNA-Seq samples from the same context using the advances provided by Deep
-Learning and the meaningful information provided by @code{scRNA-Seq} data.  See
-Torroja and Sanchez-Cabo (2019) <doi:10.3389/fgene.2019.00978> for more details.")
-    (license license:gpl3)))
 
 (define-public r-digirhythm
   (package
@@ -18719,6 +18675,48 @@ explanations on the subject can be found in papers Liebscher (2014)
 Liebscher (2019, submitted).")
     (license license:gpl2)))
 
+(define-public r-depcensoring
+  (package
+    (name "r-depcensoring")
+    (version "0.1.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "depCensoring" version))
+       (sha256
+        (base32 "0nbh8177iwdgq1c9qyklhr7zvizd51w9lanii35m2lyx7x5mzy7h"))))
+    (properties `((upstream-name . "depCensoring")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-survival
+                             r-stringr
+                             r-semipar-depcens
+                             r-rvinecopulib
+                             r-rafalib
+                             r-pbivnorm
+                             r-openmx
+                             r-numderiv
+                             r-nloptr
+                             r-nleqslv
+                             r-mvtnorm
+                             r-matrixcalc
+                             r-mass
+                             r-foreach
+                             r-doparallel))
+    (home-page "https://cran.r-project.org/package=depCensoring")
+    (synopsis "Statistical Methods for Survival Data with Dependent Censoring")
+    (description
+     "Several statistical methods for analyzing survival data under various forms of
+dependent censoring are implemented in the package.  In addition to accounting
+for dependent censoring, it offers tools to adjust for unmeasured confounding
+factors.  The implemented approaches allow users to estimate the dependency
+between survival time and dependent censoring time, based solely on observed
+survival data.  For more details on the methods, refer to Deresa and Van
+Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
+<doi:10.1093/biomet/asac067>, Crommen et al. (2024)
+<doi:10.1007/s11749-023-00903-9> and Willems et al. (2024+)
+<https:arxiv.org/abs/2403.11860>.")
+    (license license:gpl3)))
+
 (define-public r-depcens
   (package
     (name "r-depcens")
@@ -22083,13 +22081,13 @@ H.-P., KrÃ¶ger, P., Schubert, E., & Zimek, A. (2009)
 (define-public r-ddml
   (package
     (name "r-ddml")
-    (version "0.2.2")
+    (version "0.3.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "ddml" version))
        (sha256
-        (base32 "0362sr8ivx3jcf0l28a6d1kb0zrcb0jqm2dcy9s9qq5d843r79xz"))))
+        (base32 "1b0cl31l0zl02mxxqjqakr3q92frjy45qs41im5yb7hky29mkk70"))))
     (properties `((upstream-name . "ddml")))
     (build-system r-build-system)
     (propagated-inputs (list r-xgboost
@@ -25711,13 +25709,13 @@ data manipulation challenges.")
 (define-public r-datamods
   (package
     (name "r-datamods")
-    (version "1.5.2")
+    (version "1.5.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "datamods" version))
        (sha256
-        (base32 "0g0s3lbz8kdpciq9ra7v719f8q10q23mp12w4lr9p50742zm10bd"))))
+        (base32 "1f516wh3jrpwb4xv5wwghlk1j8q4p9yrwc1d7b99z9f0kpy83i8j"))))
     (properties `((upstream-name . "datamods")))
     (build-system r-build-system)
     (propagated-inputs (list r-writexl

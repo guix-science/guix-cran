@@ -11586,6 +11586,32 @@ in computational mass spectrometry and the knockoff construction in linear
 regression.")
     (license license:expat)))
 
+(define-public r-stepcount
+  (package
+    (name "r-stepcount")
+    (version "0.3.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "stepcount" version))
+       (sha256
+        (base32 "1isa817lqkb5a1rl2kb7nm6gbfp6c2kqk399mrw4j2ysbhcjgiq7"))))
+    (properties `((upstream-name . "stepcount")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate
+                             r-readr
+                             r-magrittr
+                             r-lubridate
+                             r-curl
+                             r-assertthat))
+    (home-page "https://cran.r-project.org/package=stepcount")
+    (synopsis "Estimate Step Counts from 'Accelerometry' Data")
+    (description
+     "Interfaces the stepcount Python module
+<https://github.com/@code{OxWearables/stepcount>} to estimate step counts and
+other activities from accelerometry data.")
+    (license license:expat)))
+
 (define-public r-stepcam
   (package
     (name "r-stepcam")
@@ -17283,13 +17309,13 @@ Puente-SÃ¡nchez et al., (2020) <doi:10.1186/s12859-020-03703-2>.")
 (define-public r-sqltargets
   (package
     (name "r-sqltargets")
-    (version "0.2.0")
+    (version "0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sqltargets" version))
        (sha256
-        (base32 "08jwbpdzs686yx433l066qpyxb2c2nv0vpbhj5ybsm6x7q8nsb9a"))))
+        (base32 "1wncxgjcaxn8dqc78vpqmp0hv7hvmyhp8i32k0992wrmvnghh1l3"))))
     (properties `((upstream-name . "sqltargets")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr
@@ -23225,13 +23251,13 @@ Wilson et al. <doi:10.1101/2021.04.27.21256104>.")
 (define-public r-spatialsample
   (package
     (name "r-spatialsample")
-    (version "0.5.1")
+    (version "0.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "spatialsample" version))
        (sha256
-        (base32 "0pcwf15ani4r8j3zgqz093jkimazzwi0218qx18xglymk180hhcp"))))
+        (base32 "0ywcdk7fbaqbk016c3wa1f62c4h2y3s4l14g4v6vnsh1i6y32410"))))
     (properties `((upstream-name . "spatialsample")))
     (build-system r-build-system)
     (propagated-inputs (list r-vctrs
@@ -26667,13 +26693,13 @@ the website <https://southpark.fandom.com/wiki/South_Park_Archives>.")
 (define-public r-soundshape
   (package
     (name "r-soundshape")
-    (version "1.3.0")
+    (version "1.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SoundShape" version))
        (sha256
-        (base32 "1inp1255mdhbr0sfqwdmb6g0ab625c98q3avfk6w36gb0c77b5ry"))))
+        (base32 "12v0r42vcbmxznqlrsag59zdrkjsb86hxjn890j59n4bqnz7blr8"))))
     (properties `((upstream-name . "SoundShape")))
     (build-system r-build-system)
     (propagated-inputs (list r-tuner
@@ -27465,6 +27491,32 @@ using the Henderson-based average information algorithm for the problem c x c (c
 being the number of coefficients to estimate).  Spatial models can also be
 fitted using the two-dimensional spline functionality available.")
     (license license:gpl2+)))
+
+(define-public r-sommd
+  (package
+    (name "r-sommd")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "SOMMD" version))
+       (sha256
+        (base32 "1sx1qvd9hn4fxg7nrv5ra7z2rn1a27iicgpi0m29in097wf0xlm5"))))
+    (properties `((upstream-name . "SOMMD")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-kohonen r-igraph r-cluster r-bio3d r-abind))
+    (home-page "https://cran.r-project.org/package=SOMMD")
+    (synopsis
+     "Self Organising Maps for the Analysis of Molecular Dynamics Data")
+    (description
+     "Processes data from Molecular Dynamics simulations using Self Organising Maps.
+Features include the ability to read different input formats.  Trajectories can
+be analysed to identify groups of important frames.  Output visualisation can be
+generated for maps and pathways.  Methodological details can be found in Motta S
+et al (2022) <doi:10.1021/acs.jctc.1c01163>.  I/O functions for xtc format files
+were implemented using the xdrfile library available under open source license.
+The relevant information can be found in inst/COPYRIGHT.")
+    (license license:gpl3)))
 
 (define-public r-somenv
   (package
@@ -29599,13 +29651,13 @@ are described in Jombart (2008) <doi:10.1093/bioinformatics/btn129>.")
 (define-public r-snowquery
   (package
     (name "r-snowquery")
-    (version "1.2.0")
+    (version "1.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snowquery" version))
        (sha256
-        (base32 "1q9qbz35pid2y010gs69yqb4x2cq56xkgxk1grl8hhvp4fb1iszg"))))
+        (base32 "1dp4hwsrn7k6d3cvhqspi0g6p7m70rb4s3pk5yljnfx3fisig9pk"))))
     (properties `((upstream-name . "snowquery")))
     (build-system r-build-system)
     (propagated-inputs (list r-yaml r-rsqlite r-rpostgres r-reticulate r-dbi))
@@ -29689,13 +29741,13 @@ package.")
 (define-public r-snotelr
   (package
     (name "r-snotelr")
-    (version "1.5")
+    (version "1.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "snotelr" version))
        (sha256
-        (base32 "0yx8a2jf98w8gwsk00bws45h3gzwr6qbrw0iywx3x4bb9imh2bhb"))))
+        (base32 "1972rnaxxhv3jns4y5chy3x2qqyh6fixay0irpn1yk70ka6r6jga"))))
     (properties `((upstream-name . "snotelr")))
     (build-system r-build-system)
     (propagated-inputs (list r-shiny r-rvest r-memoise r-httr r-dplyr))
@@ -52148,13 +52200,13 @@ detector spacing.")
 (define-public r-secr
   (package
     (name "r-secr")
-    (version "4.6.10")
+    (version "5.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "secr" version))
        (sha256
-        (base32 "12gr4agc1nlrg3g041q3qd5h29pcyzj1xpff98nvar3gi05a6fdw"))))
+        (base32 "1s34k8z91dq3iijgwnm2w3mcapf4mmcfyc17w518wsynpir7k576"))))
     (properties `((upstream-name . "secr")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -52166,6 +52218,7 @@ detector spacing.")
                              r-rcpp
                              r-raster
                              r-nlme
+                             r-mvtnorm
                              r-mgcv
                              r-mass
                              r-bh
@@ -56500,13 +56553,13 @@ between colour spaces.")
 (define-public r-sched
   (package
     (name "r-sched")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sched" version))
        (sha256
-        (base32 "1cpc9apvn5479vddvadh66dnwlhkqp80hb3762dd26jwmpfmq43h"))))
+        (base32 "1n6r8g5cd3y6yiplhf0jlb8zm8z37cz1ds66qqpipiva4vx26xr3"))))
     (properties `((upstream-name . "sched")))
     (build-system r-build-system)
     (propagated-inputs (list r-rcurl
@@ -59013,13 +59066,13 @@ Institute.")
 (define-public r-saslm
   (package
     (name "r-saslm")
-    (version "0.10.4")
+    (version "0.10.5")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sasLM" version))
        (sha256
-        (base32 "0saw3n0n1yw32ajnvp4g2gk4ikhgxc83rnyzqrndji39kc9qffkq"))))
+        (base32 "1m44rf8mpw9pc5jlxw8ab5z62knj0fjfvbrs53yvfvlbh39xjbq4"))))
     (properties `((upstream-name . "sasLM")))
     (build-system r-build-system)
     (propagated-inputs (list r-mvtnorm))

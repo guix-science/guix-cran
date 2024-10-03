@@ -3288,13 +3288,13 @@ single-index model.")
 (define-public r-fselectorrcpp
   (package
     (name "r-fselectorrcpp")
-    (version "0.3.11")
+    (version "0.3.13")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FSelectorRcpp" version))
        (sha256
-        (base32 "008zc270injmjhr2zqs0jw21f7vrmmclzjnin9xsx8drfk8bhdvn"))))
+        (base32 "0129zzwfxn5dib5v27g2227wd5nkkwy0hxqj8ljc5gsia05m7klx"))))
     (properties `((upstream-name . "FSelectorRcpp")))
     (build-system r-build-system)
     (propagated-inputs (list r-testthat
@@ -6282,16 +6282,21 @@ speciation, preservation and sampling.")
 (define-public r-fossilsim
   (package
     (name "r-fossilsim")
-    (version "2.4.0")
+    (version "2.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FossilSim" version))
        (sha256
-        (base32 "1f86hmdykdzq9jg95zzsxh6dlg03wgadp6s7pkgq2fihq0zaxqsz"))))
+        (base32 "0k5rs7p85pcwzjv9gkgrg1dp24ri1shcyr9p1r0xd7axvzpmpj4w"))))
     (properties `((upstream-name . "FossilSim")))
     (build-system r-build-system)
-    (propagated-inputs (list r-tidytree r-rlang r-ggtree r-ggplot2 r-ape))
+    (propagated-inputs (list r-tidytree
+                             r-rlang
+                             r-ggtree
+                             r-ggplot2
+                             r-ggfun
+                             r-ape))
     (native-inputs (list r-knitr))
     (home-page "https://cran.r-project.org/package=FossilSim")
     (synopsis "Simulation and Plots for Fossil and Taxonomy Data")

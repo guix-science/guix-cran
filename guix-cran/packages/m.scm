@@ -11965,13 +11965,13 @@ untreated soil.")
 (define-public r-morphotools2
   (package
     (name "r-morphotools2")
-    (version "1.0.2.0")
+    (version "1.0.2.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "MorphoTools2" version))
        (sha256
-        (base32 "15iwshs19l9k8wb1zaa8gk0arnj72pyhpngkirifmmh2949vgmdi"))))
+        (base32 "18fvkklh4p89mcvjbnxb7cimylpj46ipslqsxkkpyzrb88wwlsjk"))))
     (properties `((upstream-name . "MorphoTools2")))
     (build-system r-build-system)
     (propagated-inputs (list r-vegan
@@ -24985,6 +24985,41 @@ Range ('MGR test).  The first two tests were published by Batista and Ferreira
 (2020) <doi:10.1590/1413-7054202044008020>.  The last two are being published.")
     (license license:gpl2+)))
 
+(define-public r-midoc
+  (package
+    (name "r-midoc")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "midoc" version))
+       (sha256
+        (base32 "17ycy3wj02a88l0wj1bhpgjd45j3mn4kijxj8lz2fyzg156yn1kw"))))
+    (properties `((upstream-name . "midoc")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rmarkdown
+                             r-rlang
+                             r-mice
+                             r-mfp2
+                             r-lifecycle
+                             r-glue
+                             r-dagitty
+                             r-blorr
+                             r-arm))
+    (native-inputs (list r-knitr))
+    (home-page "https://elliecurnow.github.io/midoc/")
+    (synopsis "Decision-Making System for Multiple Imputation")
+    (description
+     "This package provides a guidance system for analysis with missing data.  It
+incorporates expert, up-to-date methodology to help researchers choose the most
+appropriate analysis approach when some data are missing.  You provide the
+available data and the assumed causal structure, including the likely causes of
+missing data.  midoc will advise which analysis approaches can be used, and how
+best to perform them.  midoc follows the framework for the treatment and
+reporting of missing data in observational studies (TARMOS).  Lee et al (2021).
+<doi:10.1016/j.jclinepi.2021.01.008>.")
+    (license license:expat)))
+
 (define-public r-midn
   (package
     (name "r-midn")
@@ -25814,6 +25849,35 @@ micro-macro situations, wherein individual-level (micro) predictors (and other
 group-level predictors) are used to predict a group-level (macro) outcome
 variable in an unbiased way.")
     (license license:gpl2+)))
+
+(define-public r-microinverterdata
+  (package
+    (name "r-microinverterdata")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "microinverterdata" version))
+       (sha256
+        (base32 "0l73n1g07ckjcmzc7w8vw74k4lchli6i1xb2zbd9k813n4zlwvqs"))))
+    (properties `((upstream-name . "microinverterdata")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-units
+                             r-tidyr
+                             r-rlang
+                             r-readr
+                             r-purrr
+                             r-httr2
+                             r-glue
+                             r-dplyr
+                             r-cli))
+    (native-inputs (list r-knitr))
+    (home-page "https://camembr.github.io/microinverterdata/")
+    (synopsis "Collect your Microinverter Data")
+    (description
+     "Collect and normalize local microinverter energy and power production data
+through off-cloud API requests.  Currently supports APSystems microinverters.")
+    (license license:expat)))
 
 (define-public r-microhaplot
   (package
@@ -26657,13 +26721,13 @@ al. (2019; <doi:10.1002/ece3.5654>).")
 (define-public r-mi4p
   (package
     (name "r-mi4p")
-    (version "1.1")
+    (version "1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mi4p" version))
        (sha256
-        (base32 "1fl5vbykgw3wihv1gqbnqrfjiyng8mzfdg469x6y12mxdrgl4myj"))))
+        (base32 "0xjbjjfm9ypa8qz1d2aq0zlkwdrr2c9642476i2d63p4aqipx2kb"))))
     (properties `((upstream-name . "mi4p")))
     (build-system r-build-system)
     (propagated-inputs (list r-stringr
@@ -26679,8 +26743,8 @@ al. (2019; <doi:10.1002/ece3.5654>).")
     (description
      "This package provides a framework for multiple imputation for proteomics is
 proposed by Marie Chion, Christine Carapito and Frederic Bertrand (2021)
-<arxiv:2108.07086>.  It is dedicated to dealing with multiple imputation for
-proteomics.")
+<doi:10.1371/journal.pcbi.1010420>.  It is dedicated to dealing with multiple
+imputation for proteomics.")
     (license license:gpl2+)))
 
 (define-public r-mhurdle
@@ -38326,6 +38390,29 @@ and regularization options.  See the Maxent website
 <http://biodiversityinformatics.amnh.org/open_source/maxent> for more details.")
     (license license:expat)))
 
+(define-public r-maxmc
+  (package
+    (name "r-maxmc")
+    (version "0.1.2")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "MaxMC" version))
+       (sha256
+        (base32 "04zvdnm2j3dfxh03d771vxs5q0qvizx69fqxghnx1kzv64fv5pny"))))
+    (properties `((upstream-name . "MaxMC")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-scales r-pso r-nmof r-gensa r-ga))
+    (home-page "https://github.com/julienneves/MaxMC")
+    (synopsis "Maximized Monte Carlo")
+    (description
+     "An implementation of the Monte Carlo techniques described in details by Dufour
+(2006) <doi:10.1016/j.jeconom.2005.06.007> and Dufour and Khalaf (2007)
+<doi:10.1002/9780470996249.ch24>.  The two main features available are the Monte
+Carlo method with tie-breaker, mc(), for discrete statistics, and the Maximized
+Monte Carlo, mmc(), for statistics with nuisance parameters.")
+    (license license:gpl3+)))
+
 (define-public r-maxmatching
   (package
     (name "r-maxmatching")
@@ -39289,16 +39376,23 @@ development of items.")
 (define-public r-matlib
   (package
     (name "r-matlib")
-    (version "0.9.8")
+    (version "1.0.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "matlib" version))
        (sha256
-        (base32 "0nknc17wxdf7svp91ak6y1h83yyacqfz528lwyqg9zdfcnax08nm"))))
+        (base32 "1cbip4xnd854zb42pkr44094bg9jm4gxq37pf3837p1mwkb0w4vc"))))
     (properties `((upstream-name . "matlib")))
     (build-system r-build-system)
-    (propagated-inputs (list r-xtable r-rgl r-mass r-dplyr r-car))
+    (propagated-inputs (list r-xtable
+                             r-rstudioapi
+                             r-rmarkdown
+                             r-rgl
+                             r-mass
+                             r-knitr
+                             r-dplyr
+                             r-car))
     (native-inputs (list r-knitr))
     (home-page "https://github.com/friendly/matlib")
     (synopsis
@@ -45433,6 +45527,35 @@ semiparametric regression models such as Cox proportional hazards model and the
 accelerated failure time model, the baseline survival function can be estimated
 smoothly based on general interval censored data.")
     (license (license:fsdg-compatible "LGPL (>= 2.0, < 3)"))))
+
+(define-public r-mabacr
+  (package
+    (name "r-mabacr")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "mabacR" version))
+       (sha256
+        (base32 "1km8yi69xc5n2ksyps2ggw21b7zy972bw3hyazj026619j71dlqg"))))
+    (properties `((upstream-name . "mabacR")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/slabaverse/mabacR")
+    (synopsis "Assisting Decision Makers")
+    (description
+     "Easy implementation of the MABAC multi-criteria decision method, that was
+introduced by PamuÄar and ÄiroviÄ in the work entitled: \"The selection of
+transport and handling resources in logistics centers using Multi-Attributive
+Border Approximation area Comparison (MABAC)\" - <doi:10.1016/j.eswa.2014.11.057>
+- which aimed to choose implements for logistics centers.  This package receives
+data, preferably in a spreadsheet, reads it and applies the mathematical
+algorithms inherent to the MABAC method to generate a ranking with the optimal
+solution according to the established criteria, weights and type of criteria.
+The data will be normalized, weighted by the weights, the border area will be
+determined, the distances to this border area will be calculated and finally a
+ranking with the optimal option will be generated.")
+    (license license:gpl2+)))
 
 (define-public r-maat
   (package

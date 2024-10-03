@@ -21215,13 +21215,13 @@ stepdown versions, and four FDR procedures.")
 (define-public r-testcomparer
   (package
     (name "r-testcomparer")
-    (version "1.0.4")
+    (version "1.1.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "testCompareR" version))
        (sha256
-        (base32 "0gaqzxghz5lahvdaq5w3l9j2gjrvzpwqqmczh3yrkmlfqpvgwvbw"))))
+        (base32 "0864zih2r10777z3ig2vf5p5nl6k2x4id1jcimvq9ifrbpj75cxm"))))
     (properties `((upstream-name . "testCompareR")))
     (build-system r-build-system)
     (native-inputs (list r-knitr))
