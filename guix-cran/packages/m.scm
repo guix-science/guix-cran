@@ -1772,13 +1772,13 @@ scheduling.")
 (define-public r-mvgb
   (package
     (name "r-mvgb")
-    (version "0.0.5")
+    (version "0.0.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mvgb" version))
        (sha256
-        (base32 "1j83n786fiqxp7509mappck8iad5rzzvbb1mqf7fzpzmbh1dinmi"))))
+        (base32 "1qlbhs9lyzrgfiyqyhfnpwfzb2snjmbxv1rk5cg7h00hsdhdc890"))))
     (properties `((upstream-name . "mvgb")))
     (build-system r-build-system)
     (native-inputs (list gfortran))
@@ -18433,17 +18433,16 @@ Intelligence, IJCAI20, pages 2640â2646, 2020. <doi:10.24963/ijcai.2020/366>
 (define-public r-mlpwr
   (package
     (name "r-mlpwr")
-    (version "1.1.0")
+    (version "1.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "mlpwr" version))
        (sha256
-        (base32 "18w0vklxy61v0r33xi57j3s76iwsb2cs2cjhg1gjyxzl07byj89j"))))
+        (base32 "0pxlqmpsyzb0s5h0mj16xx09xkvjc7h6r8a6nbk8rk8rbmzxszl0"))))
     (properties `((upstream-name . "mlpwr")))
     (build-system r-build-system)
-    (propagated-inputs (list r-weightsvm
-                             r-rlist
+    (propagated-inputs (list r-rlist
                              r-rgenoud
                              r-randtoolbox
                              r-ggplot2
@@ -18454,11 +18453,12 @@ Intelligence, IJCAI20, pages 2640â2646, 2020. <doi:10.24963/ijcai.2020/366>
     (synopsis "Power Analysis Toolbox to Find Cost-Efficient Study Designs")
     (description
      "We implement a surrogate modeling algorithm to guide simulation-based sample
-size planning.  The method is described in detail in a recent preprint (Zimmer &
-Debelak (2022) <doi:10.31234/osf.io/tnhb2>).  It supports multiple study design
-parameters and optimization with respect to a cost function.  It can find
-optimal designs that correspond to a desired statistical power or that fulfill a
-cost constraint.")
+size planning.  The method is described in detail in our paper (Zimmer & Debelak
+(2023) <doi:10.1037/met0000611>).  It supports multiple study design parameters
+and optimization with respect to a cost function.  It can find optimal designs
+that correspond to a desired statistical power or that fulfill a cost
+constraint.  We also provide a tutorial paper (Zimmer et al. (2023)
+<doi:10.3758/s13428-023-02269-0>).")
     (license license:gpl3+)))
 
 (define-public r-mlpugs
@@ -33788,13 +33788,13 @@ Smet, Buysse, Steen and Vansteelandt (2013) <DOI:10.1080/00273171.2013.832132>."
 (define-public r-medfateland
   (package
     (name "r-medfateland")
-    (version "2.4.5")
+    (version "2.4.6")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "medfateland" version))
        (sha256
-        (base32 "0rklmkq53c1xi8i89422c0jvfvhppr1a52f5xc87xzfh5z3jnhmk"))))
+        (base32 "1mq70p0j3a2vff4ybl8lgqflp4fbl4clg4y266hm6d0wnali6a1r"))))
     (properties `((upstream-name . "medfateland")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyterra

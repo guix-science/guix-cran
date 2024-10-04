@@ -16489,13 +16489,13 @@ from Wickham, Hadley (2019) <doi:10.1201/9781351201315>.")
 (define-public r-tidyfit
   (package
     (name "r-tidyfit")
-    (version "0.7.1")
+    (version "0.7.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "tidyfit" version))
        (sha256
-        (base32 "117x0cmrs0hhp0k4c2c6dx80jjvar7bfgipjzx5d977l4343fhx7"))))
+        (base32 "10zsyr7mimqp7pb7yb6lcs8p83s7fzn46pysswgp4bkz6kib4xl6"))))
     (properties `((upstream-name . "tidyfit")))
     (build-system r-build-system)
     (propagated-inputs (list r-yardstick
@@ -18680,6 +18680,46 @@ Theia (<https://theia.cnes.fr>), download it, and manage it.  Data can be
 downloaded based on a search result or from a cart file downloaded from Theia
 website.")
     (license license:gpl3+)))
+
+(define-public r-theft
+  (package
+    (name "r-theft")
+    (version "0.6.3")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "theft" version))
+       (sha256
+        (base32 "03ppazjwjg30a01nkawxg8bb2gzv7qnkbav5c25allsbw8gfbshh"))))
+    (properties `((upstream-name . "theft")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tsibble
+                             r-tsfeatures
+                             r-tidyr
+                             r-tibble
+                             r-rlang
+                             r-reticulate
+                             r-rcatch22
+                             r-r-matlab
+                             r-purrr
+                             r-feasts
+                             r-fabletools
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "https://hendersontrent.github.io/theft/")
+    (synopsis "Tools for Handling Extraction of Features from Time Series")
+    (description
+     "Consolidates and calculates different sets of time-series features from multiple
+R and Python packages including Rcatch22 Henderson, T. (2021)
+<doi:10.5281/zenodo.5546815>, feasts O'Hara-Wild, M., Hyndman, R., and Wang, E.
+(2021) <https://CRAN.R-project.org/package=feasts>, tsfeatures Hyndman, R.,
+Kang, Y., Montero-Manso, P., Talagala, T., Wang, E., Yang, Y., and O'Hara-Wild,
+M. (2020) <https://CRAN.R-project.org/package=tsfeatures>, tsfresh Christ, M.,
+Braun, N., Neuffer, J., and Kempa-Liehr A.W. (2018)
+<doi:10.1016/j.neucom.2018.03.067>, TSFEL Barandas, M., et al. (2020)
+<doi:10.1016/j.softx.2020.100456>, and Kats Facebook Infrastructure Data Science
+(2021) <https://facebookresearch.github.io/Kats/>.")
+    (license license:expat)))
 
 (define-public r-thankyoustars
   (package

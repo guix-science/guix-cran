@@ -18678,13 +18678,13 @@ Liebscher (2019, submitted).")
 (define-public r-depcensoring
   (package
     (name "r-depcensoring")
-    (version "0.1.1")
+    (version "0.1.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "depCensoring" version))
        (sha256
-        (base32 "0nbh8177iwdgq1c9qyklhr7zvizd51w9lanii35m2lyx7x5mzy7h"))))
+        (base32 "1dqimkmh9aiz94dhx37cx8krgz4dbmx3aywpazqr9kbqhs3qgiwb"))))
     (properties `((upstream-name . "depCensoring")))
     (build-system r-build-system)
     (propagated-inputs (list r-survival
@@ -18714,7 +18714,7 @@ survival data.  For more details on the methods, refer to Deresa and Van
 Keilegom (2021) <doi:10.1093/biomet/asaa095>, Czado and Van Keilegom (2023)
 <doi:10.1093/biomet/asac067>, Crommen et al. (2024)
 <doi:10.1007/s11749-023-00903-9> and Willems et al. (2024+)
-<https:arxiv.org/abs/2403.11860>.")
+<doi:10.48550/@code{arXiv.2403.11860>}.")
     (license license:gpl3)))
 
 (define-public r-depcens
@@ -25744,13 +25744,13 @@ and to manipulate them after that.")
 (define-public r-datametprocess
   (package
     (name "r-datametprocess")
-    (version "1.0.2")
+    (version "1.0.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "DataMetProcess" version))
        (sha256
-        (base32 "1hkp0gldpqrfjnw6cwvrmgs034kdk7igy170640zkwhcsvd6hr4a"))))
+        (base32 "0xg0g6rj46m99gkk3xp7h0la96hzp2ykli2pq7aim9fdjgzqyz05"))))
     (properties `((upstream-name . "DataMetProcess")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-shiny r-rlang r-lubridate r-dplyr))

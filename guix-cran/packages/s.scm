@@ -1850,13 +1850,13 @@ the package.")
 (define-public r-swfscairdas
   (package
     (name "r-swfscairdas")
-    (version "0.3.0")
+    (version "0.3.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "swfscAirDAS" version))
        (sha256
-        (base32 "1x9k883hv10ki6lbcp14j4808hj6krr0jd4cmkni0jbsj0sv0d81"))))
+        (base32 "0y52ishci4djp1izanzh6psrmnqrpcgvkq28vxs61gdgrgxqp5lk"))))
     (properties `((upstream-name . "swfscAirDAS")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -1870,7 +1870,7 @@ the package.")
                              r-lubridate
                              r-dplyr))
     (native-inputs (list r-knitr))
-    (home-page "https://smwoodman.github.io/swfscAirDAS/")
+    (home-page "https://swfsc.github.io/swfscAirDAS/")
     (synopsis "Southwest Fisheries Science Center Aerial DAS Data Processing")
     (description
      "Process and summarize aerial survey DAS data (@code{AirDAS})
@@ -1880,7 +1880,7 @@ Center (SWFSC)
 <https://www.fisheries.noaa.gov/west-coast/science-data/california-current-marine-mammal-assessment-program>.
  PDF files detailing the relevant @code{AirDAS} data formats are included in
 this package.")
-    (license license:cc0)))
+    (license (license:fsdg-compatible "Apache License (== 2)"))))
 
 (define-public r-swephr
   (package
@@ -14540,6 +14540,32 @@ efficient way to combine multiple gradient boosting models to improve predictive
 model performance and robustness.")
     (license license:expat)))
 
+(define-public r-staccuracy
+  (package
+    (name "r-staccuracy")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "staccuracy" version))
+       (sha256
+        (base32 "0ghf7d53dm205jbf7nyw7n77k1cgsq83mr43wbdjj0h3sj3grzps"))))
+    (properties `((upstream-name . "staccuracy")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rlang r-purrr r-dplyr r-cli))
+    (home-page "https://github.com/tripartio/staccuracy")
+    (synopsis "Standardized Accuracy and Other Model Performance Metrics")
+    (description
+     "Standardized accuracy (staccuracy) is framework for expressing accuracy scores
+such that 50% represents a reference level of performance and 100% is perfect
+prediction.  The staccuracy package provides tools for creating staccuracy
+functions as well as some recommended staccuracy measures.  It also provides
+functions for some classic performance metrics such as mean absolute error
+(MAE), root mean squared error (RMSE), and area under the receiver operating
+characteristic curve (AUCROC), as well as their winsorized versions when
+applicable.")
+    (license license:expat)))
+
 (define-public r-stablespec
   (package
     (name "r-stablespec")
@@ -18023,6 +18049,40 @@ models can be found in next references Minguez, R., Lopez, F.A., and Mur, J.
 (2022) <doi:10.18637/jss.v104.i11> Mur, J., Lopez, F.A., and Herrera, M. (2010)
 <doi:10.1080/17421772.2010.516443> Lopez, F.A., Mur, J., and Angulo, A. (2014)
 <doi:10.1007/s00168-014-0624-2>.")
+    (license license:gpl3)))
+
+(define-public r-spstack
+  (package
+    (name "r-spstack")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "spStack" version))
+       (sha256
+        (base32 "1g8ycya1i979v3k5kmybz07h3wfr0d097337zzyplwf9vnddp5v8"))))
+    (properties `((upstream-name . "spStack")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-rstudioapi
+                             r-mba
+                             r-ggplot2
+                             r-future-apply
+                             r-future
+                             r-cvxr))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/SPan-18/spStack-dev")
+    (synopsis "Bayesian Geostatistics Using Predictive Stacking")
+    (description
+     "Fits Bayesian hierarchical spatial process models for point-referenced Gaussian,
+Poisson, binomial, and binary data using stacking of predictive densities.  It
+involves sampling from analytically available posterior distributions
+conditional upon some candidate values of the spatial process parameters and,
+subsequently assimilate inference from these individual posterior distributions
+using Bayesian predictive stacking.  Our algorithm is highly parallelizable and
+hence, much faster than traditional Markov chain Monte Carlo algorithms while
+delivering competitive predictive performance.  See Zhang, Tang, and Banerjee
+(2024) <doi:10.48550/@code{arXiv.2304.12414>}, and, Pan, Zhang, Bradley, and
+Banerjee (2024) <doi:10.48550/@code{arXiv.2406.04655>} for details.")
     (license license:gpl3)))
 
 (define-public r-spsp
@@ -57106,13 +57166,13 @@ bivariate Poisson-Gamma model from Zhen Yang, Yen-Yi Ho (2022)
 (define-public r-scdb
   (package
     (name "r-scdb")
-    (version "0.4.0")
+    (version "0.4.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "SCDB" version))
        (sha256
-        (base32 "0n6vmn7jjl8lp5yf53kxh2d3660sbwjnl7chiv4x7dkidi81lfnr"))))
+        (base32 "0cvb69vh5s74827ni61yp5s6kflijf0zf1q2nl82ik3cv4gjpszx"))))
     (properties `((upstream-name . "SCDB")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyselect
@@ -59214,17 +59274,18 @@ simulating POMDP problems and their solutions.")
 (define-public r-sars
   (package
     (name "r-sars")
-    (version "1.3.6")
+    (version "1.3.7")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "sars" version))
        (sha256
-        (base32 "198dz3gbzm7iqa2p813anifzpjkna3blf4yzyy73j43h8w4k5v0b"))))
+        (base32 "1rv69i8p8bkcn2av5sa86mz4m70cn6bd1kdbvhfigg05h2kw070w"))))
     (properties `((upstream-name . "sars")))
     (build-system r-build-system)
     (propagated-inputs (list r-numderiv
                              r-nortest
+                             r-minpack-lm
                              r-foreach
                              r-doparallel
                              r-crayon

@@ -766,6 +766,42 @@ variable, a more efficient algorithm is used and the output includes crossover
 indicators.")
     (license license:gpl2+)))
 
+(define-public r-pvstatem
+  (package
+    (name "r-pvstatem")
+    (version "0.0.4")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "PvSTATEM" version))
+       (sha256
+        (base32 "18jk2kwzd2avym5mslagvxvs31m0awqnafl21ad8mva0gr5c8shc"))))
+    (properties `((upstream-name . "PvSTATEM")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-stringr
+                             r-stringi
+                             r-readxl
+                             r-readr
+                             r-r6
+                             r-png
+                             r-nplr
+                             r-ggrepel
+                             r-ggplot2
+                             r-dplyr))
+    (native-inputs (list r-knitr))
+    (home-page "<https://github.com/mini-pw/PvSTATEM>")
+    (synopsis
+     "Reading, Quality Control and Preprocessing of MBA (Multiplex Bead Assay) Data")
+    (description
+     "Speeds up the process of loading raw data from MBA (Multiplex Bead Assay)
+examinations, performs quality control checks, and automatically normalizes the
+data, preparing it for more advanced, downstream tasks.  The main objective of
+the package is to create a simple environment for a user, who does not
+necessarily have experience with R language.  The package is developed within
+the project of the same name - @code{PvSTATEM}', which is an international
+project aiming for malaria elimination.")
+    (license license:bsd-3)))
+
 (define-public r-pvr
   (package
     (name "r-pvr")
@@ -37674,13 +37710,13 @@ mixed-effect regression from Heegaard et al (2005)
 (define-public r-pakret
   (package
     (name "r-pakret")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "pakret" version))
        (sha256
-        (base32 "0mky2nrb6jrfjda1ds81qjmvj5fcl94qaq5idnm08llssy6zjnv8"))))
+        (base32 "0m1a1zsb3rclhxapbm184arrjyd1mbdyrdvp14prwkrrgcnrmn72"))))
     (properties `((upstream-name . "pakret")))
     (build-system r-build-system)
     (propagated-inputs (list r-withr r-rmarkdown r-readr r-knitr))

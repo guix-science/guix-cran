@@ -19860,6 +19860,30 @@ on Zhu, Zeng & Kosorok (2015) <doi:10.1080/01621459.2015.1036994>, subject
 weight, variable weight, tracking subjects used in each tree, etc.")
     (license license:gpl2+)))
 
+(define-public r-rloptimal
+  (package
+    (name "r-rloptimal")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "RLoptimal" version))
+       (sha256
+        (base32 "12ac1py0sayhlmnbxahrqzj71kf4z078fxk65k69jhi5rg3hbd61"))))
+    (properties `((upstream-name . "RLoptimal")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-reticulate r-r6 r-glue r-dosefinding))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/MatsuuraKentaro/RLoptimal")
+    (synopsis "Optimal Adaptive Allocation Using Deep Reinforcement Learning")
+    (description
+     "An implementation to compute an optimal adaptive allocation rule using deep
+reinforcement learning in a dose-response study (Matsuura et al. (2022)
+<doi:10.1002/sim.9247>).  The adaptive allocation rule can directly optimize a
+performance metric, such as power, accuracy of the estimated target dose, or
+mean absolute error over the estimated dose-response curve.")
+    (license license:expat)))
+
 (define-public r-rlogicalops
   (package
     (name "r-rlogicalops")
@@ -34216,13 +34240,13 @@ or settings within REDCap, such as importing or exporting data.")
 (define-public r-redcapcast
   (package
     (name "r-redcapcast")
-    (version "24.6.1")
+    (version "24.10.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "REDCapCAST" version))
        (sha256
-        (base32 "18s85ryg5mr7cv1j4938ax7v3b8fsrbaaa5lv191h0ixwkyz5cp9"))))
+        (base32 "0xv1ry70q8dzvlrkl3a6vgfk6z2pkx4g86g59fa1wf4402z2qs5r"))))
     (properties `((upstream-name . "REDCapCAST")))
     (build-system r-build-system)
     (propagated-inputs (list r-zip
@@ -49141,6 +49165,45 @@ to the minimally informative reference prior and the proper prior benchmarks.
 The functions operate on data sets which are compatible with the bayesmeta
 package.")
     (license license:gpl2+)))
+
+(define-public r-r6qualitytools
+  (package
+    (name "r-r6qualitytools")
+    (version "1.0.1")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "r6qualitytools" version))
+       (sha256
+        (base32 "06yrh6ladbrclg8dsi9a31yx38zx4lg1kx9bxn6rnafim9ijgb82"))))
+    (properties `((upstream-name . "r6qualitytools")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tidyr
+                             r-tibble
+                             r-scales
+                             r-rsolnp
+                             r-rcolorbrewer
+                             r-r6
+                             r-plotly
+                             r-patchwork
+                             r-mass
+                             r-gridextra
+                             r-ggplot2
+                             r-envstats
+                             r-dplyr))
+    (home-page "https://github.com/Fabianenc/r6qualitytools")
+    (synopsis "R6-Based Statistical Methods for Quality Science")
+    (description
+     "This package provides a comprehensive suite of statistical tools for Quality
+Management, designed around the Define, Measure, Analyze, Improve, and Control
+(DMAIC) cycle used in Six Sigma methodology.  Based on the discontinued CRAN
+package qualitytools', this package refactors its original design by
+incorporating R6 object-oriented programming for increased flexibility and
+performance.  It replaces traditional graphics with modern, interactive
+visualizations using ggplot2 and plotly'.  Built on tidyverse principles, it
+simplifies data manipulation and visualization, offering an intuitive approach
+to quality science.")
+    (license license:gpl3+)))
 
 (define-public r-r6p
   (package

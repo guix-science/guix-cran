@@ -3221,13 +3221,13 @@ ARIMA in SAS.")
 (define-public r-atrrr
   (package
     (name "r-atrrr")
-    (version "0.0.3")
+    (version "0.0.4")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "atrrr" version))
        (sha256
-        (base32 "1y965xpipmd23c0a7rp14v8kw0n6bvxq20rq6ribl1rx5xjd2fhl"))))
+        (base32 "1zcifxzx15p4v2nlpz7jvrcnvnqgzc3mbjqk2xqlsyb5g316v52i"))))
     (properties `((upstream-name . "atrrr")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -18830,13 +18830,13 @@ A., Barberena R., Thomas M. G., Mendez C., Manning K. (2020)
 (define-public r-admtools
   (package
     (name "r-admtools")
-    (version "0.3.1")
+    (version "0.4.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "admtools" version))
        (sha256
-        (base32 "1dh1bgzq5z3xjcxwy6szkf5rh4pfvj2ynw7yrz7llbc3rvczr1kx"))))
+        (base32 "08g8v5c6s2d0alpkpznh97xr5lfznmgr0w4zpplbv8m7apbk5mrq"))))
     (properties `((upstream-name . "admtools")))
     (build-system r-build-system)
     (propagated-inputs (list r-ape))

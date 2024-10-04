@@ -665,13 +665,13 @@ et al. (2020, <doi:10.1101/2020.08.12.247502>).")
 (define-public r-fuzzypovertyr
   (package
     (name "r-fuzzypovertyr")
-    (version "3.0.0")
+    (version "3.0.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "FuzzyPovertyR" version))
        (sha256
-        (base32 "0xv9h1vdp5lvriz97ljjb9kzikawmb1xln1jsbp0gafk6jcbmsvk"))))
+        (base32 "1h9mffavz11r7vmswls1gfvarrh35kxcvi6j0jgwpa1mq4n0nvzc"))))
     (properties `((upstream-name . "FuzzyPovertyR")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-sampling r-ggplot2 r-ecp r-dplyr))
@@ -2623,6 +2623,38 @@ functional time series (FTS) and comparing the spectral density operator of two
 functional time series, in a way that allows detection of differences of the
 spectral density operator in frequencies and along the curve length.")
     (license license:gpl2)))
+
+(define-public r-ftsgof
+  (package
+    (name "r-ftsgof")
+    (version "1.0.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "FTSgof" version))
+       (sha256
+        (base32 "0rirhr1d6qmwch5ia7z1bipbvgr99b4cxgj7ix3jl996lmvyc2rj"))))
+    (properties `((upstream-name . "FTSgof")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-sfsmisc
+                             r-sde
+                             r-rgl
+                             r-nloptr
+                             r-mass
+                             r-fda))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/veritasmih/FTSgof")
+    (synopsis
+     "White Noise and Goodness-of-Fit Tests for Functional Time Series")
+    (description
+     "It offers comprehensive tools for the analysis of functional time series data,
+focusing on white noise hypothesis testing and goodness-of-fit evaluations,
+alongside functions for simulating data and advanced visualization techniques,
+such as 3D rainbow plots.  These methods are described in Kokoszka, Rice, and
+Shang (2017) <doi:10.1016/j.jmva.2017.08.004>, Yeh, Rice, and Dubin (2023)
+<doi:10.1214/23-EJS2112>, Kim, Kokoszka, and Rice (2023) <doi:10.1214/23-ss143>,
+and Rice, Wirjanto, and Zhao (2020) <doi:10.1111/jtsa.12532>.")
+    (license license:gpl3)))
 
 (define-public r-ftsa
   (package

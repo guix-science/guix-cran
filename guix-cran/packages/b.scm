@@ -14952,13 +14952,13 @@ back/forwardsolve, crossproduct, and matrix multiplication.")
 (define-public r-bigergm
   (package
     (name "r-bigergm")
-    (version "1.2.1")
+    (version "1.2.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bigergm" version))
        (sha256
-        (base32 "0x8y7aijidpka117zjc80yvjlxv8cdiwxhqzy0mw33halavm10k8"))))
+        (base32 "1gcb4hz399fdcrvjhmimsvzlf2rp6k79mq2jgq5hahgbc76xdg71"))))
     (properties `((upstream-name . "bigergm")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -24160,13 +24160,13 @@ WI or WP as the underlying CVI.")
 (define-public r-bayescureratemodel
   (package
     (name "r-bayescureratemodel")
-    (version "1.2")
+    (version "1.3")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "bayesCureRateModel" version))
        (sha256
-        (base32 "1yzv0xm44jzmxgbrif3h34wrv47kx8k40ignwlhzby446zvpiifc"))))
+        (base32 "0h3sq3yydzkr9f0j0n32w8x8an0ckl5q85yiz7c63c535wxhhdg0"))))
     (properties `((upstream-name . "bayesCureRateModel")))
     (build-system r-build-system)
     (propagated-inputs (list r-vgam

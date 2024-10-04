@@ -20200,6 +20200,44 @@ nested designs with up to three factors.  Ditzhaus, Dobler and Pauly (2020)
 2004.10818v2> Dobler and Pauly (2019) <doi:10.1177/0962280219831316>.")
     (license license:gpl3+)))
 
+(define-public r-gfdrmtl
+  (package
+    (name "r-gfdrmtl")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GFDrmtl" version))
+       (sha256
+        (base32 "1kdfgz8y0bfnq40ab083z4ra8f7sv2s2ng94mfa3fcjh6ixk2fvj"))))
+    (properties `((upstream-name . "GFDrmtl")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-tippy
+                             r-shinywidgets
+                             r-shinythemes
+                             r-shinymatrix
+                             r-shinyjs
+                             r-shiny
+                             r-plyr
+                             r-mvtnorm
+                             r-mass
+                             r-lpsolve
+                             r-gfdrmst
+                             r-gfdmcv))
+    (home-page "https://cran.r-project.org/package=GFDrmtl")
+    (synopsis
+     "Multiple RMTL-Based Tests for Competing Risks Data in General Factorial Designs")
+    (description
+     "We implemented multiple tests based on the restricted mean time lost (RMTL) for
+general factorial designs as described in Munko et al. (2024)
+<doi:10.48550/@code{arXiv.2409.07917>}.  Therefore, an asymptotic test and a
+permutation test are incorporated with a Wald-type test statistic.  The
+asymptotic test takes the asymptotic exact dependence structure of the test
+statistics into account to gain more power.  Furthermore, confidence intervals
+for RMTL contrasts can be calculated and plotted and a stepwise extension that
+can improve the power of the multiple tests is available.")
+    (license license:gpl3+)))
+
 (define-public r-gfdrmst
   (package
     (name "r-gfdrmst")
@@ -21699,6 +21737,35 @@ bootstrap variograms.")
     (synopsis "Geo tools")
     (description "This package provides tools.")
     (license (list license:gpl2+ license:gpl3+))))
+
+(define-public r-geothinner
+  (package
+    (name "r-geothinner")
+    (version "1.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "GeoThinneR" version))
+       (sha256
+        (base32 "0fsiik19cck9pmfk4nwwfy3vyj19s1x0m2y9a14jlrqy40v98lza"))))
+    (properties `((upstream-name . "GeoThinneR")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-terra
+                             r-rcpp
+                             r-nabor
+                             r-matrixstats
+                             r-fields
+                             r-data-table))
+    (native-inputs (list r-knitr))
+    (home-page "https://github.com/jmestret/GeoThinneR")
+    (synopsis "Simple Spatial Thinning for Ecological and Spatial Analysis")
+    (description
+     "This package provides efficient geospatial thinning algorithms to reduce the
+density of coordinate data while maintaining spatial relationships.  Implements
+K-D Tree and brute-force distance-based thinning, as well as grid-based and
+precision-based thinning methods.  For more information on the methods, see
+Elseberg et al. (2012) <https://hdl.handle.net/10446/86202>.")
+    (license license:expat)))
 
 (define-public r-geostatsp
   (package
@@ -23442,13 +23509,13 @@ at the University of Chicago.  Datasets are stored as sf objects.")
 (define-public r-geocomplexity
   (package
     (name "r-geocomplexity")
-    (version "0.1.0")
+    (version "0.2.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "geocomplexity" version))
        (sha256
-        (base32 "1kiq5yg698c1gh23mdhynlkd6kpf2s1rlah0wyvy0g9zjwlz6v2w"))))
+        (base32 "1b5sbr973nqc6jkv6lmdlp3ry9gx52hsp77sg8pxy041plx0hk69"))))
     (properties `((upstream-name . "geocomplexity")))
     (build-system r-build-system)
     (propagated-inputs (list r-tibble
@@ -23458,7 +23525,6 @@ at the University of Chicago.  Datasets are stored as sf objects.")
                              r-rcpparmadillo
                              r-rcpp
                              r-purrr
-                             r-pander
                              r-magrittr
                              r-dplyr))
     (native-inputs (list r-knitr))

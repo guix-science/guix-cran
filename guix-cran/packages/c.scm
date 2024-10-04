@@ -17218,6 +17218,33 @@ conditions are thrown (shown to the user).  Includes control of warnings and
 messages.")
     (license license:expat)))
 
+(define-public r-conditionalprobnspades
+  (package
+    (name "r-conditionalprobnspades")
+    (version "1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "conditionalProbNspades" version))
+       (sha256
+        (base32 "0z621mnwxcv51r2x6jhp0r2b4d7gbi1095f9cjpwp0cwwvpcazw2"))))
+    (properties `((upstream-name . "conditionalProbNspades")))
+    (build-system r-build-system)
+    (native-inputs (list r-knitr))
+    (home-page "https://cran.r-project.org/package=conditionalProbNspades")
+    (synopsis "Conditional Probabilities of Distributions Across Hearts Hands")
+    (description
+     "This package provides some tabulated data to be be referred to in a discussion
+in a vignette accompanying my upcoming R package
+@code{playWholeHandDriverPassParams}'.  In addition to that specific purpose,
+these may also provide data and illustrate some computational approaches that
+are relevant to card games like hearts or bridge.This package refers to
+authentic data from Gregory Stoll
+<https://gregstoll.com/~gregstoll/bridge/math.html>, and details of performing
+the probability calculations from Jeremy L. Martin
+<https://jlmartin.ku.edu/~jlmartin/bridge/basics.pdf>.")
+    (license license:gpl2+)))
+
 (define-public r-condis
   (package
     (name "r-condis")
@@ -43972,13 +43999,13 @@ across interactive R sessions, R scripts and Rmarkdown documents.")
 (define-public r-cacc
   (package
     (name "r-cacc")
-    (version "0.1.0")
+    (version "0.1.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "cacc" version))
        (sha256
-        (base32 "0dl2n5shjagr7zjsl6cyw3jxz29h9dbjfwrhphqdaymjv6yaxxj9"))))
+        (base32 "0lyczm8zdd80np7xljvvgakscbivxvpdr0vp71f40l04nx3aijxg"))))
     (properties `((upstream-name . "cacc")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr r-tibble r-rlang r-ggplot2 r-dplyr))

@@ -959,6 +959,34 @@ et al, (2017) <doi:10.3390/life7040040> are included in the extraterrestrial
 package.")
     (license license:gpl3)))
 
+(define-public r-extrasteps
+  (package
+    (name "r-extrasteps")
+    (version "0.1.0")
+    (source
+     (origin
+       (method url-fetch)
+       (uri (cran-uri "extrasteps" version))
+       (sha256
+        (base32 "074bxlr22dbh6br7vrj7wimp9mbq3777dlswjkprqsmxv3fb2qa9"))))
+    (properties `((upstream-name . "extrasteps")))
+    (build-system r-build-system)
+    (propagated-inputs (list r-vctrs
+                             r-tibble
+                             r-rlang
+                             r-recipes
+                             r-purrr
+                             r-magrittr
+                             r-generics
+                             r-dplyr))
+    (home-page "https://github.com/EmilHvitfeldt/extrasteps")
+    (synopsis "More Miscellaneous Steps for the 'recipes' Package")
+    (description
+     "This package contains additional miscellaneous steps for the recipes package.
+These steps are useful, but doesn't have a good home in other recipes packages
+or its extensions.")
+    (license license:expat)))
+
 (define-public r-extras
   (package
     (name "r-extras")
@@ -3575,13 +3603,13 @@ estimators are implemented.")
 (define-public r-evsim
   (package
     (name "r-evsim")
-    (version "1.5.0")
+    (version "1.6.0")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "evsim" version))
        (sha256
-        (base32 "0v057l0qb3x16kw5xdjmw724kg9zlflagkkdvhwgc39z1by1ahbd"))))
+        (base32 "04w9yz96m9sqhk9xc92ss3vjnqqm2lqm8j833n8wyn7ns8i7hg8q"))))
     (properties `((upstream-name . "evsim")))
     (build-system r-build-system)
     (propagated-inputs (list r-tidyr
@@ -5470,13 +5498,13 @@ hand.")
 (define-public r-euclimatch
   (package
     (name "r-euclimatch")
-    (version "1.0.1")
+    (version "1.0.2")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "Euclimatch" version))
        (sha256
-        (base32 "09nydlqdxpfcvfaznpjchw3zlz05a03n7picn419ivvjmf6hrx8x"))))
+        (base32 "0n0vxhl2d8in0z67sn4xm9gjmjyn9a7vhkwnjsf3s5vw775dllfr"))))
     (properties `((upstream-name . "Euclimatch")))
     (build-system r-build-system)
     (propagated-inputs (list r-terra
@@ -8284,13 +8312,13 @@ corresponding @code{LaTeX} code for the model.")
 (define-public r-equateirt
   (package
     (name "r-equateirt")
-    (version "2.5.0")
+    (version "2.5.1")
     (source
      (origin
        (method url-fetch)
        (uri (cran-uri "equateIRT" version))
        (sha256
-        (base32 "09g4wk41fi6sav71cnkj1gy43cb1jc8yz408kxhccyb22z8ib4z0"))))
+        (base32 "0w9n77ivk5v5bnr8sc7qgsaq9zkmzsc9s29j6a51qj3l4i1rsqfd"))))
     (properties `((upstream-name . "equateIRT")))
     (build-system r-build-system)
     (propagated-inputs (list r-statmod r-mirt))
